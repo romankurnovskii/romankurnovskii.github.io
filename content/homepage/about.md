@@ -3,7 +3,7 @@ title: Роман Курновский
 draft: false
 role: <a href="https://www.youtube.com/watch?v=3ygPF-Qshkc" target="_blank">Разработчик Athena Core</a>
 avatar: images/avatar.jpg
-bio: Тут нужно что-то написать о себе, но я не придумал, что такого уникального написать...
+bio: 
 organization:
   name: J.P. Morgan
   url: https://www.jpmorganchase.com/
