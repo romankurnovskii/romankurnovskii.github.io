@@ -14,27 +14,27 @@ draft: false
 Цель: Сконвертировать данные для приложения ФСФР из иаблицы в json
 ---
 
-### Задача
+## Задача
 
 Есть таблица google. Необходимо конвертировать ее в JSON и не делать каждый раз ручной экспорт.
 
-### **Условия**
+## **Условия**
 
 - таблица закрыта для общего просмотра
 - json отображение читать по ссылке
 
-### План
+## План
 
 Использовать [webapps](https://developers.google.com/apps-script/guides/web) от google. Парсить google таблицу и выдавать готовый url с json.
 
-### Подготовка
+## Подготовка
 
 1. Открываем Таблицу Google
 2. Extensions → Apps Script
 
 ![Screen Shot 2022-03-12 at 12.26.28.png](01.png)
 
-### Создаем скрипт
+## Создаем скрипт
 
 Как работает endpoint. [Документация](https://developers.google.com/apps-script/guides/web?hl=en#request_parameters)
 
@@ -48,7 +48,7 @@ draft: false
 
 Итого функция с получением массива и функция с выдачей результата:
 
-```jsx
+```js
 const sheetName = 's1' // название листа
 const sheetRange = 'A:J' // диапазон
 
@@ -76,13 +76,13 @@ function doGet() {
 }
 ```
 
-### Публикуем приложение
+## Публикуем приложение
 
 ![Google Sheets публикаиця приложения](02.png)
 
 ![Google Sheets публикаиця приложения](03.png)
 ![Google Sheets публикаиця приложения](04.png)
 
-### Результат
+## Результат
 
 ![Google Sheets api json](05.png)
