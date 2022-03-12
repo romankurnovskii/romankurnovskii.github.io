@@ -2,7 +2,7 @@
 title: Отображение таблицы Google Sheets в JSON
 description: Экспорт google sheet в JSON, с моментальным обновлением данных
 toc: true
-authors: ["Роман Курновский"]
+authors: ["roman-kurnovskii"]
 tags: ["google sheets", "google script"]
 categories: ["разбор"]
 series: []
