@@ -1,6 +1,6 @@
 ---
 title: Российские аналоги зарубежного ПО
-description: 
+description: досутпные приложения, альтернативы привычным
 toc: true
 tags: ["импортозамещение", "аналог"]
 categories: ["ссылки"]
@@ -8,13 +8,10 @@ series: []
 date: 2022-03-17T11:55:25+02:00
 lastmod: 2022-03-17T11:55:25+02:00
 featuredVideo:
-featuredImage:
+featuredImage: /posts/rus-software-alternatives/image.png
 draft: false
 Цель: 
 ---
-
-
-![image.png](image.png)
 
 **Портал приложений** - [https://importhub.ru/](https://importhub.ru/)
 
