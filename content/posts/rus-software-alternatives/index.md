@@ -14,6 +14,7 @@ draft: false
 ---
 
 **Портал приложений** - [https://importhub.ru/](https://importhub.ru/)
+**Легкие станы для релокации** - [https://habr.com/ru/company/gms/blog/657211/](https://habr.com/ru/company/gms/blog/657211/)
 
 - Acronis — [Paragon Software](https://www.paragon-software.com/ru/main-page/), [Clonezilla](https://sourceforge.net/projects/clonezilla/), [GParted](https://gparted.org/), "[Кибер Бэкап](https://cyberprotect.ru/products/backup/)" от "[Киберпротект](https://cyberprotect.ru/)".
 - Adobe Acrobat Pro DC — [PDF24 Creator](https://tools.pdf24.org/ru/creator).
