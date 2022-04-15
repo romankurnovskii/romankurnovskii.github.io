@@ -1,5 +1,5 @@
 ---
-title: Российские/ и прочие аналоги зарубежного ПО
+title: Аналоги ПО
 description: доступные приложения, альтернативы привычным
 toc: true
 tags: ["импортозамещение", "аналог"]
@@ -8,14 +8,14 @@ series: []
 date: 2022-03-17T11:55:25+02:00
 lastmod: 2022-03-17T11:55:25+02:00
 featuredVideo:
-featuredImage: /posts/rus-software-alternatives/image.png
+featuredImage: 
 draft: false
 Цель: 
 ---
 
 **Портал приложений** - [https://importhub.ru/](https://importhub.ru/)
 
-**Легкие станы для релокации** - [https://habr.com/ru/company/gms/blog/657211/](https://habr.com/ru/company/gms/blog/657211/)
+**Легкие страны для релокации** - [https://habr.com/ru/company/gms/blog/657211/](https://habr.com/ru/company/gms/blog/657211/)
 
 - Acronis — [Paragon Software](https://www.paragon-software.com/ru/main-page/), [Clonezilla](https://sourceforge.net/projects/clonezilla/), [GParted](https://gparted.org/), "[Кибер Бэкап](https://cyberprotect.ru/products/backup/)" от "[Киберпротект](https://cyberprotect.ru/)".
 - Adobe Acrobat Pro DC — [PDF24 Creator](https://tools.pdf24.org/ru/creator).
