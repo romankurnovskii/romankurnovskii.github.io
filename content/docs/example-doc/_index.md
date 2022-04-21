@@ -1,5 +1,5 @@
 ---
-title: Example Doc
+title: 90 дней DevOps
 description: This is an example doc layout of Eureka theme
 toc: true
 authors:

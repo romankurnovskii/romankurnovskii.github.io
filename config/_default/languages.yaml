@@ -1,16 +1,14 @@
 ru:
   languageCode: ru
-  languageName: Russian
+  languageName: Русский
   # Uncomment for multilingual sites, and move the default content into corresponding sub-folder.
-  # contentDir: content/en
+  contentDir: content/ru
 
-  
-# en:
-#   languageCode: en
-#   languageName: English
+en:
+  languageCode: en
+  languageName: English
   # Uncomment for multilingual sites, and move the default content into corresponding sub-folder.
-  # contentDir: content/en
-
+  contentDir: content/en
 # Uncomment for multilingual sites, and customize the following config.
 # zh:
 #   languageCode: zh
