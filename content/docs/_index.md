@@ -1,4 +1,4 @@
 ---
-title: Docs
+title: Sprints
 layout: doc-list
 ---
