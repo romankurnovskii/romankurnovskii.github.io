@@ -17,8 +17,19 @@ draft: false
  <img src="./Images/logo.png?raw=true" alt="90DaysOfDevOps Logo" width="50%" height="50%" />
 </p>
 
-Оригинальный репозиторий на <a href="https://github.com/MichaelCade/90DaysOfDevOps">GitHub</a>
-Цель данного цикла статей - быстрый обзол и прохождение по всему тьюториалу по DevOps.
+Оригинальный репозиторий на <a href="https://github.com/MichaelCade/90DaysOfDevOps">GitHub</a>. Автор версии на английском - **Michael Cade**
+Цель данного цикла статей - быстрый обзор и прохождение по всему тьюториалу по DevOps.
+
+
+## Progress 
+
+- [✔️] ♾️ 1 > [Введение](day01)
+
+### Что такое и почему нам нужен DevOps
+
+- [✔️] ♾️ 2 > [Responsibilities of a DevOps Engineer](day02)
+- [✔️] ♾️ 3 > [DevOps Lifecycle - Application Focused](day03)
+
 
 <!-- This is commented out. 
 

@@ -15,4 +15,9 @@ params:
   enableInlineShortcodes: true
   enableRobotsTXT: true
 
-baseURL: https://romankurnovskii.github.io
+baseURL: https://romankurnovskii.com
+
+sitemap:
+  changefreq: always
+  filename: sitemap.xml
+  priority: 0.5
