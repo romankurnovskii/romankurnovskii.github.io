@@ -7,7 +7,7 @@ tags: ["github"]
 categories: ["разбор"]
 series: []
 date: 2022-03-07T15:31:25+02:00
-lastmod: 2022-03-07T15:31:25+02:00
+lastmod: 2022-03-07
 featuredVideo:
 featuredImage:
 draft: false
