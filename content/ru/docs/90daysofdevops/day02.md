@@ -3,7 +3,7 @@ title: День 2 - Responsibilities of a DevOps Engineer
 description: Responsibilities of a DevOps Engineer
 toc: true
 authors:
-tags: ['devops, 90daysofdevops, learning']
+tags: [devops, 90daysofdevops, learning]
 categories:
 series:
 date: "2022-04-21"
@@ -70,5 +70,5 @@ draft: false
 - [What is DevOps? - AWS ](https://aws.amazon.com/devops/what-is-devops/)
 - [What is DevOps? - Microsoft](https://docs.microsoft.com/en-us/devops/what-is-devops)
 
-Если вы зашли так далеко, то поймете, хотите ли вы быть здесь или нет. До встречи в День 3. [День 3](../day03)
+Если вы зашли так далеко, то поймете, хотите ли вы быть здесь или нет. До встречи в [День 3](../day03)
 
