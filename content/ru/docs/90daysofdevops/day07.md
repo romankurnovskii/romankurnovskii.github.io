@@ -1,6 +1,6 @@
 ---
-title: День 7 - The Big Picture: Learning a Programming Language
-description: The Big Picture: Learning a Programming Language
+title: День 7 - The Big Picture - Learning a Programming Language
+description: The Big Picture - Learning a Programming Language
 toc: true
 authors:
 tags: [devops, cicd, tests, learning]
