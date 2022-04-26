@@ -14,7 +14,7 @@ draft: false
 ---
 
 <p align="center">
- <img src="./Images/logo.png?raw=true" alt="90DaysOfDevOps Logo" width="50%" height="50%" />
+ <img src="./images/logo.png?raw=true" alt="90DaysOfDevOps Logo" width="50%" height="50%" />
 </p>
 
 Оригинальный репозиторий на <a href="https://github.com/MichaelCade/90DaysOfDevOps">GitHub</a>. Автор версии на английском - **Michael Cade**
@@ -29,7 +29,9 @@ draft: false
 
 - [✔️] ♾️ 2 > [Responsibilities of a DevOps Engineer](day02)
 - [✔️] ♾️ 3 > [DevOps Lifecycle - Application Focused](day03)
-
+- [✔️] ♾️ 4 > [DevOps & Agile](day04)
+- [✔️] ♾️ 5 > [Plan > Code > Build > Testing > Release > Deploy > Operate > Monitor >](day05)
+- [✔️] ♾️ 6 > [DevOps - The real stories](day06)
 
 <!-- This is commented out. 
 
