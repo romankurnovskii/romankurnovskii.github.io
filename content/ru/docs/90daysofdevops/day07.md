@@ -3,7 +3,7 @@ title: День 7 - The Big Picture - Learning a Programming Language
 description: The Big Picture - Learning a Programming Language
 toc: true
 authors:
-tags: [devops, cicd, tests, learning]
+tags: [devops, golang, python]
 categories:
 series:
 date: "2022-04-21"
@@ -12,6 +12,7 @@ featuredImage:
 draft: false
 id: 1048856
 ---
+
 ## Общая картина: DevOps и изучение языка программирования
 
 Я думаю, будет справедливо сказать, что для достижения успеха в качестве инженера DevOps в долгосрочной перспективе необходимо знать хотя бы один язык программирования на базовом уровне. Я хочу провести это первое занятие в этой статье, чтобы выяснить, почему это такой важный навык, и, надеюсь, к концу этой недели или раздела вы будете лучше понимать, почему, как и что делать. делайте, чтобы продвигаться в своем учебном путешествии.
