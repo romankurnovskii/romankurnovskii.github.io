@@ -3,7 +3,7 @@ title: День 8 - Setting up your DevOps environment for Go & Hello World
 description: Setting up your DevOps environment for Go & Hello World
 toc: true
 authors:
-tags: [devops, golang, python]
+tags: [devops, golang, hello-world]
 categories:
 series:
 date: "2022-04-21"
@@ -14,8 +14,6 @@ id: 1048857
 ---
 
 ## Настройка DevOps окружения для запуска Hello World на Go
-
-Before we get into some of the fundamentals of Go we should get Go installed on our workstation and do what every "learning programming 101" module teaches us which is to create the Hello World app. As this one is going to be walking through the steps to get Go installed on your workstation we are going to attempt to document the process in pictures so people can easily follow along. 
 
 Прежде чем мы приступим к некоторым основам Go, мы должны установить Go на нашу рабочую станцию и сделать то, чему нас учит каждый модуль [«Изучение программирования 101»](https://www.udemy.com/course/programming-101/), а именно создать приложение Hello World. Так как здесь будут описаны шаги по установке Go на ваш ПК, мы попытаемся задокументировать процесс в картинках, чтобы людям было легко следовать за ним.
 
@@ -42,11 +40,6 @@ brew install go
 Также обратите внимание, что если у вас установлена более старая версия Go, вам придется удалить ее перед установкой, поскольку в Windows она встроена в установщик, и она будет удалена и установлена как единое целое.
 
 После завершения вы должны открыть командную строку / терминал, и мы хотим проверить, установлен ли Go. Если вы не получите вывод, который мы видим ниже, значит, Go не установлен, и вам нужно будет повторить свои шаги.
-
-
-Also note if you do have an older version of Go installed you will have to remove this before installing, Windows has this built into the installer and will remove and install as one. 
-
-Once finished you should now open a command prompt/terminal and we want to check that we have Go installed. If you do not get the output that we see below then Go is not installed and you will need to retrace your steps. 
 
 ```
 go version
