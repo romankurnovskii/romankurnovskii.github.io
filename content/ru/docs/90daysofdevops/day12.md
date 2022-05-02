@@ -188,7 +188,7 @@ func main() {
 ![](../images/Day12_Go4.png)
 
 ## Ресурсы
-
+- [Введение в Golang](http://golang-book.ru/)
 - [StackOverflow 2021 Developer Survey](https://insights.stackoverflow.com/survey/2021)
 - [Why we are choosing Golang to learn](https://www.youtube.com/watch?v=7pLqIIAqZD4&t=9s)
 - [Jake Wright - Learn Go in 12 minutes](https://www.youtube.com/watch?v=C8LgvuEBraI&t=312s) 
