@@ -7,6 +7,8 @@
                 {{ template "doc-sidebar" (dict "context" . "permalink" .Permalink) }}
             </div>
 
+
+
         </div>
         <div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8">
             <div class="flex">
@@ -22,7 +24,7 @@
 
                     {{ partial "components/post-edit" . }}
 
-                    {{ partial "components/post-footer" . }}
+                    {{ partial "components/post-doc-footer" . }}
                     {{ partial "comment" . }}
                 </div>
                 {{ if $hasSidebar}}
@@ -115,7 +117,7 @@
 
 {{ define "list-items"}}
 <ul class="ps-6">
-    {{ range .context.Pages }}
+    {{ range .context.Pages.Reverse }}
     {{ $version := findRE "v?(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?/$" .Permalink }}
     {{ if eq (len $version) 0 }}
     <li class="py-2">

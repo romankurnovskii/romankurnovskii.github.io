@@ -5,8 +5,8 @@ toc: true
 authors:
 tags: [devops, golang, hello-world]
 categories:
-series:
-date: "2022-04-21"
+series: 
+date: "2022-04-29"
 lastmod: "2022-04-29"
 featuredImage:
 draft: false

@@ -1,20 +1,17 @@
 ---
-title: Chapter 2
-description: Chapter 2 of example doc
+title: День 13 - Tweet your progress with our new App
+description: Tweet your progress with our new App
 toc: true
 authors:
-tags:
+tags: [devops, golang]
 categories:
-series:
-date: '2020-10-16'
-lastmod: '2020-10-16'
-draft: true
+series: 
+date: "2022-05-03"
+lastmod: "2022-05-03"
+featuredImage:
+draft: false
+id: 1048865
 ---
-
-This is chapter 2 of example doc.
-
-<!--more-->
-
 ## Tweet your progress with our new App
 
 On the final day of looking into this programming language, we have only just touched the surface here of the language but it is that start that I think we need to get interested and excited and want to dive more into it. 
@@ -26,29 +23,29 @@ The first thing we need to do is set up our developer API access with Twitter fo
 
 Head to the [Twitter Developer Platform](https://developer.twitter.com) and sign in with your Twitter handle and details. Once in you should see something like the below without the app that I already have created. 
 
-![](../Images/Day13_Go1.png)
+![](../images/Day13_Go1.png)
 
 From here you may also want to request elevated access, this might take some time but it was very fast for me. 
 
 Next, we should select Projects & Apps and create our App. Limits are depending on the account access you have, with essential you only have one app and one project and with elevated you can have 3 apps. 
 
-![](Images/Day13_Go2.png)
+![](../images/Day13_Go2.png)
 
 Give your application a name 
 
-![](Images/Day13_Go3.png)
+![](../images/Day13_Go3.png)
 
 You will be then given these API tokens, it is important that you save these somewhere secure. (I have since deleted this app) We will need these later with our Go Application. 
 
-![](Images/Day13_Go4.png)
+![](../images/Day13_Go4.png)
 
 Now we have our app created,(I did have to change my app name as the one in the screenshot above was already taken, these names need to be unique) 
 
-![](Images/Day13_Go5.png)
+![](../images/Day13_Go5.png)
 
 The keys that we gathered before are known as our consumer keys and we will also need our access token and secrets. We can gather this information using the "Keys & Tokens" tab. 
 
-![](Images/Day13_Go6.png)
+![](../images/Day13_Go6.png)
 
 Ok, we are done in the Twitter developer portal for now. Make sure you keep your keys safe because we will need them later. 
 
@@ -58,7 +55,7 @@ Remember the code we are starting within our application as well [day13_example1
 
 We now need to think about the code to get our output or message to Twitter in the form of a tweet. We are going to be using [go-twitter](https://github.com/dghubble/go-twitter) This is a Go client library for the Twitter API. 
 
-To test this before putting this into our main application, I created a new directory in our `src` folder called go-twitter-bot, issued the `go mod init github.com/michaelcade/go-twitter-bot on the folder which then created a `go.mod` file and then we can start writing our new main.go and test this out. 
+To test this before putting this into our main application, I created a new directory in our `src` folder called go-twitter-bot, issued the `go mod init github.com/michaelcade/go-twitter-bot` on the folder which then created a `go.mod` file and then we can start writing our new main.go and test this out. 
 
 We now need those keys, tokens and secrets we gathered from the Twitter developer portal. We are going to set these in our environment variables. This will depend on the OS you are running: 
 
@@ -271,15 +268,15 @@ func main() {
 ```
 The outcome of this should be a tweet but if you did not supply your environment variables then you should get an error like the one below. 
 
-![](Images/Day13_Go7.png)
+![](../images/Day13_Go7.png)
 
 Once you have fixed that or if you choose not to authenticate with Twitter then you can use the code we finished with yesterday. The terminal output on success will look similar to this: 
 
-![](Images/Day13_Go8.png)
+![](../images/Day13_Go8.png)
 
 The resulting tweet should look something like this: 
 
-![](Images/Day13_Go9.png)
+![](../images/Day13_Go9.png)
 
 ## How to compile for multiple OSs
 
