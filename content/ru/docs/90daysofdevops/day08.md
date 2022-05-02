@@ -6,7 +6,7 @@ authors:
 tags: [devops, golang, hello-world]
 categories:
 series:
-date: "2022-04-21"
+date: "2022-04-28"
 lastmod: "2022-04-28"
 featuredImage:
 draft: false

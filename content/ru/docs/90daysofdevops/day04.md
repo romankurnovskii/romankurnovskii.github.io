@@ -6,7 +6,7 @@ authors:
 tags: [devops, agile, scrum, kanban]
 categories:
 series:
-date: "2022-04-21"
+date: "2022-04-24"
 lastmod: "2022-04-24"
 featuredImage:
 draft: false

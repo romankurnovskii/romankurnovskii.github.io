@@ -1,3 +1,5 @@
+module wangchucheng.com/hugo-eureka
+
 go 1.17
 
 require (

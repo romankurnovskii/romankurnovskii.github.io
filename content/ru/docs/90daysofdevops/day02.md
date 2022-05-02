@@ -6,7 +6,7 @@ authors:
 tags: [devops, 90daysofdevops, learning]
 categories:
 series:
-date: "2022-04-21"
+date: "2022-04-22"
 lastmod: "2022-04-22"
 featuredImage:
 draft: false
