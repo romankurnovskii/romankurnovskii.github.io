@@ -1,5 +1,5 @@
 ---
-title: День 1 - Diagram Support
+title: 1 - Diagram Support
 description: Diagram Support
 toc: true
 authors:

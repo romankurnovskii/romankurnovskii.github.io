@@ -1,5 +1,5 @@
 ---
-title: День 4 - DevOps & Agile
+title: 4 - DevOps & Agile
 description: DevOps & Agile
 toc: true
 authors:

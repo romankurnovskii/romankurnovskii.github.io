@@ -1,5 +1,5 @@
 ---
-title: День 3 - Application Focused
+title: 3 - Application Focused
 description: Application Focused
 toc: true
 authors:
