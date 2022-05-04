@@ -1,5 +1,5 @@
 ---
-title: День 2 - Responsibilities of a DevOps Engineer
+title: 2 - Responsibilities of a DevOps Engineer
 description: Responsibilities of a DevOps Engineer
 toc: true
 authors:

@@ -1,117 +1,132 @@
 ---
-title: '#90DaysOfDevOps - Linux Commands for DevOps (Actually everyone) - Day 15'
-published: false
-description: 90DaysOfDevOps - Linux Commands for DevOps (Actually everyone)
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+title: 15 - Linux Commands for DevOps
+description: Linux Commands for DevOps
+toc: true
+authors:
+tags: [devops, linux]
+categories:
+series: 
+date: "2022-05-05"
+lastmod: "2022-05-04"
+featuredImage:
+draft: false
 id: 1048834
 ---
-## Linux Commands for DevOps (Actually everyone)
 
-I mentioned it [yesterday](day14.md) that we are going to be spending a lot of time in the terminal with some commands to get stuff done. 
+## Команды Linux для DevOps
 
-I also mentioned that with our vagrant provisioned VM we can use `vagrant ssh` and gain access to our box. You will need to be in the same directory as we provisioned it from.
+Я упомянул [вчера](../day14), что мы собираемся провести много времени в терминале с некоторыми командами, чтобы что-то сделать.
 
-For SSH you won't need the username and password, you will only need that if you decide to login to the Virtual Box console. 
+Я также упомянул, что с нашей виртуальной машиной, подготовленной  с помощью vagrant, мы можем использовать `vagrant ssh` и получить доступ к нашей машине. Вам нужно будет находиться в том же каталоге, из которого мы его предоставили.
 
-This is where we want to be as per below: 
+Для SSH нам не понадобятся имя пользователя и пароль, они понадобятся нам только в том случае, если решим войти в консоль Virtual Box.
+
+Вот где мы хотим быть, как показано ниже:
 
 ![](../images/Day15_Linux1.png)
 
-## Commands 
+## Команды
 
-Obviously I cannot cover all the commands here, there are  pages and pages of documentation that cover these but also if you are ever in your terminal and you just need to understand options to a specific command we have the `man` pages short for manual. We can use this to go through each of the commands we touch on during this post to find out more options for each one. We can run `man man` which will give you the help for manual pages. To escape the man pages you should press `q` for quit. 
+Очевидно, что я не могу охватить здесь все команды. Есть тонны документации, которые охватывают их, но также, если вы находитесь в своем терминале, и вам просто нужно понять параметры конкретной команды, у нас есть команда `man`, сокращенная от manual. Мы можем использовать это, чтобы просмотреть каждую из команд, которые мы коснемся в этом посте, чтобы узнать больше вариантов для каждой из них. Мы можем запустить `man man`, который поможет вам со страницами руководства. Чтобы выйти из справочных страниц, вы должны нажать `q` для выхода.
+
+Примеры:
+```
+man ls
+man whoami
+...
+```
 
 ![](../images/Day15_Linux2.png)
 ![](../images/Day15_Linux3.png)
 
-`sudo` If you are familar with Windows and the right click `run as administrator` we can think of `sudo` as very much this. When you run a command with this command you will be running it as `root` it will prompt you for the password before running the command. 
+`sudo` Если вы знакомы с Windows и щелкаете правой кнопкой мыши по `запустить от имени администратора`, мы можем думать о `sudo` как об этом. Когда вы запускаете команду с помощью этой команды, вы будете запускать ее как «root», она запросит у вас пароль перед запуском команды.
 
 ![](../images/Day15_Linux4.png)
 
-For one off jobs like installing applications or services you might need that `sudo command` but what if you have several tasks to deal with and you want to live as `sudo` for a while? This is where you can use `sudo su` again the same as `sudo` once entered you will be prompted for your `root` password. In a test VM like ours this is fine but I would find it very hard for us to be rolling around as `root` for prolonged periods, bad things can happen. To get out of this elevated position you simply type in `exit` 
+Для разовых работ, таких как установка приложений или служб, вам может понадобиться эта команда sudo, но что, если у вас есть несколько задач, и вы хотите какое-то время пожить как sudo? Здесь вы можете снова использовать `sudo su` так же, как `sudo`, после ввода вам будет предложено ввести пароль `root`. В тестовой виртуальной машине, такой как наша, это нормально, но мне было бы очень сложно работать как «root» в течение длительного времени, могут произойти плохие вещи. Чтобы выйти из этого возвышенного положения, вы просто набираете «exit».
 
 ![](../images/Day15_Linux5.png)
 
-I find myself using `clear` all the time, the `clear` command does exactly what it says it is going to clear the screen of all previous commands, putting your prompt to the top and giving you a nice clean workspace. Windows I think is `cls` in the .mdprompt. 
+Я ловлю себя на том, что все время использую `clear`. Команда `clear` делает именно то, о чем говорит: она очищает экран от всех предыдущих команд, помещая курсор наверх и предоставляя вам красивое чистое рабочее пространство. Windows, это «cls» в .mdprompt.
 
 ![](../images/Day15_Linux6.png)
 
-Let's now look at some commands where we can actually create things within our system and then visualise them in our terminal, first of all we have `mkdir` this will allow us to create a folder in our system. With the following command we can create a folder in our home directory called Day15 `mkdir Day15`
+Давайте теперь посмотрим на некоторые команды, с помощью которых мы можем создавать вещи в нашей системе, а затем визуализировать их в нашем терминале. Прежде всего, у нас есть `mkdir`, это позволит нам создать папку в нашей системе. С помощью следующей команды мы можем создать папку в нашем домашнем каталоге с именем Day15 `mkdir Day15`
 
 ![](../images/Day15_Linux7.png)
 
-With `cd` this allows us to change directory, so for us to move into our newly created directory we can do this with `cd Day15` tab can also be used to autocomplete the directory available. If we want to get back to where we started we can use `cd ..`
+С помощью `cd` это позволяет нам изменить каталог, поэтому для перехода в наш вновь созданный каталог мы можем сделать это с помощью вкладки `cd Day15`, которая также может использоваться для автозаполнения доступного каталога. Если мы хотим вернуться к тому, с чего начали, мы можем использовать `cd ..`
 
 ![](../images/Day15_Linux8.png)
 
-`rmdir` allows for us to remove the directory, if we run `rmdir Day15` then the folder will be removed (note that this will only work if you have nothing in the folder)
+`rmdir` позволяет нам удалить каталог, если мы запустим `rmdir Day15`, тогда папка будет удалена (обратите внимание, что это будет работать, только если у вас ничего нет в папке)
 
 ![](../images/Day15_Linux9.png)
 
-I am sure we have all done it where we have navigated to the depths of our file system to a directory and not known where we are. `pwd` gives us the print out of the working directory, pwd as much as it looks like password it stands for print working directory. 
+Я уверен, что все мы делали это, когда мы переходили в глубины нашей файловой системы в каталог и не знали, где мы находимся. `pwd` дает нам распечатку рабочего каталога, pwd, насколько это похоже на пароль, означает печать рабочего каталога.
 
 ![](../images/Day15_Linux10.png)
 
-We know how to create folders and directories but how do we create files? We can create files using the `touch` command if we were to run `touch Day15` this would create a file. Ignore `mkdir` we are going see this again later.
+Мы знаем, как создавать папки и каталоги, но как мы создаем файлы? Мы можем создавать файлы с помощью команды «touch», если бы мы запускали «touch Day15», это создало бы файл. Игнорируйте `mkdir`, мы еще увидим это позже.
 
 ![](../images/Day15_Linux11.png)
 
-`ls` I can put my house on this, you will use this command so many times, this is going to list the all the files and folders in the current directory. Let's see if we can see that file we just created. 
+`ls` Я могу поставить на это свой дом, вы будете использовать эту команду так много раз, что она выведет список всех файлов и папок в текущем каталоге. Давайте посмотрим, сможем ли мы увидеть тот файл, который мы только что создали.
 
 ![](../images/Day15_Linux12.png)
 
-How can we find files on our Linux system? `locate` is going to allow us to search our file system. If we use `locate Day15` it will report back that location of the file. Bonus round is that if you know that the file does exist but you get a blank result then run `sudo updatedb` which will index all the files in the file system then run your `locate` again. If you do not have `locate` available to you, you can install it using this command `sudo apt install mlocate` 
+Как мы можем найти файлы в нашей системе Linux? `locate` позволит нам искать в нашей файловой системе. Если мы используем `locate Day15`, он сообщит о местонахождении файла. Бонусом является то, что если вы знаете, что файл существует, но вы получаете пустой результат, запустите `sudo updatedb`, который проиндексирует все файлы в файловой системе, а затем снова запустите `locate`. Если у вас нет `locate`, вы можете установить его с помощью этой команды `sudo apt install mlocate`
 
 ![](../images/Day15_Linux13.png)
 
-What about moving files from one location to another? `mv` is going to allow you to move your files. Example `mv Day15 90DaysOfDevOps` will move your file to the 90DaysOfDevOps folder. 
+Как насчет перемещения файлов из одного места в другое? `mv` позволит вам перемещать ваши файлы. Пример `mv Day15 90DaysOfDevOps` переместит ваш файл в папку 90DaysOfDevOps.
 
 ![](../images/Day15_Linux14.png)
 
-We have moved our file but what if we want to rename it now to something else? We can do that using the `mv` command again... WOT!!!? yep we can simply use `mv Day15 day15` to change to upper case or we could use `mv day15 AnotherDay` to change it altogether, now use `ls` to check the file. 
+Мы переместили наш файл, но что, если мы хотим переименовать его сейчас во что-то другое? Мы можем сделать это снова с помощью команды `mv`. Мы можем просто использовать `mv Day15 day15`, чтобы перейти к верхнему регистру, или мы могли бы использовать `mv day15 AnotherDay`, чтобы полностью изменить его, теперь используйте `ls` для проверки файла.
+
+
 
 ![](../images/Day15_Linux15.png)
 
-Enough is enough, let's now get rid (delete)of our file and maybe even our directory if we have one created. `rm` simply `rm AnotherDay` will remove our file. We will also use quite a bit `rm -R` which will recursively work through a folder or location. We might also use `rm -R -f` to force the removal of all of those files. Spoiler if you run `rm -R -f /` add sudo to it and you can say goodbye to your system....! 
+Хватит, теперь давайте избавимся (удалим) от нашего файла и, возможно, даже от нашего каталога, если он у нас есть. `rm` просто `rm AnotherDay` удалит наш файл. Мы также будем использовать `rm -R`, который будет рекурсивно работать через папку или местоположение. Мы также можем использовать `rm -R -f`, чтобы принудительно удалить все эти файлы. Спойлер, если вы запустите `rm -R -f /`, добавьте к нему sudo, и вы можете попрощаться со своей системой ....!
 
 ![](../images/Day15_Linux16.png)
 
-We have looked at moving files around but what if I just want to copy files from one folder to another, simply put its very similar to the `mv` command but we use `cp` so we can now say `cp Day15 Desktop` 
+Мы рассмотрели перемещение файлов, но что, если я просто хочу скопировать файлы из одной папки в другую, просто скажу, что это очень похоже на команду `mv`, но мы используем `cp`, чтобы теперь мы могли сказать `cp Day15 Desktop`
 
 ![](../images/Day15_Linux17.png)
 
-We have created folders and files but we haven't actually put any contents into our folder, we can add contents a few ways but an easy way is `echo` we can also use `echo` to print out a lot of things in our terminal, I personally use echo a lot to print out system variables to know if they are set or not at least. we can use `echo "Hello #90DaysOfDevOps" > Day15` and this will add this to our file. We can also append to our file using `echo "Commands are fun!" >> Day15` 
+Мы создали папки и файлы, но на самом деле мы не поместили никакого содержимого в нашу папку, мы можем добавить содержимое несколькими способами, но самый простой способ - это `echo`, мы также можем использовать `echo`, чтобы распечатать много вещей в нашей папке. терминал, я лично часто использую эхо для вывода системных переменных, чтобы узнать, установлены они или нет. мы можем использовать `echo "Hello #90DaysOfDevOps" > Day15`, и это добавит это в наш файл. Мы также можем добавить к нашему файлу, используя `echo "Commands are fun!" >> День15`
 
 ![](../images/Day15_Linux18.png)
 
-Another one of those commands you will use a lot! `cat` short for concatenate. We can use `cat Day15` to see the contents inside the file. Great for quickly reading those configuration files. 
+Еще одна из тех команд, которые вы будете часто использовать! `кошка` сокращение от конкатенации. Мы можем использовать `cat Day15`, чтобы увидеть содержимое внутри файла. Отлично подходит для быстрого чтения этих файлов конфигурации.
 
 ![](../images/Day15_Linux19.png)
 
-If you have a long complex configuration file and you want or need to find something fast in that file vs reading every line then `grep` is your friend, this will allow us to search your file for a specific word using `cat Day15 | grep "#90DaysOfDevOps"`
+Если у вас есть длинный сложный файл конфигурации, и вы хотите или вам нужно найти что-то быстрое в этом файле, а не читать каждую строку, тогда `grep` вам в помощь, это позволит нам искать в вашем файле определенное слово, используя `cat Day15 | grep "#90DaysOfDevOps"`
 
 ![](../images/Day15_Linux20.png)
 
-If you are like me and you use that `clear` command a lot then you might miss some of the commands previously ran, we can use `history` to find out all those commands we have run prior. `history -c` will remove the history. 
+Если вы похожи на меня и часто используете эту команду `clear`, то вы можете пропустить некоторые из ранее запущенных команд, мы можем использовать «историю», чтобы узнать все те команды, которые мы запускали ранее. `history -c` удалит историю.
 
-When you run `history` and you would like to pick a specific command you can use `!3` to choose the 3rd command in the list. 
+Когда вы запускаете `history` и хотите выбрать конкретную команду, вы можете использовать `!3`, чтобы выбрать 3-ю команду в списке.
 
-You are also able to use `history | grep "Command` to search for something specific. 
+Вы также можете использовать `history | grep "Команда"` для поиска чего-то определенного.
 
-On servers to trace back when was a command executed, it can be useful to append the date and time to each command in the history file.
+На серверах для отслеживания времени выполнения команды может быть полезно добавлять дату и время к каждой команде в файле истории.
 
-The following system variable controls this behaviour:
+Следующая системная переменная управляет этим поведением:
+
 ```
 HISTTIMEFORMAT="%d-%m-%Y %T "
 ```
-You can easily add to your bash_profile:
+Вы можете легко добавить ее в свой bash_profile:
 ```
 echo 'export HISTTIMEFORMAT="%d-%m-%Y %T "' >> ~/.bash_profile
 ```
-So as useful to allow the history file grow bigger:
-
+Можем увеличить размер файла для хранения истории:
 ```
 echo 'export HISTSIZE=100000' >> ~/.bash_profile
 echo 'export HISTFILESIZE=10000000' >> ~/.bash_profile
@@ -119,25 +134,25 @@ echo 'export HISTFILESIZE=10000000' >> ~/.bash_profile
 
 ![](../images/Day15_Linux21.png)
 
-Need to change your password? `passwd` is going allow us to change our password. Note that when you add your password in like this when it is hidden it will not be shown in `history` however if your command has `-p PASSWORD` then this will be visible in your `history`. 
+Нужно сменить пароль? `passwd` позволит нам изменить наш пароль. Обратите внимание, что когда вы добавляете свой пароль таким образом, когда он скрыт, он не будет отображаться в `history`, однако, если ваша команда имеет `-p ПАРОЛЬ`, тогда он будет виден в вашей `history`.
 
 ![](../images/Day15_Linux22.png)
 
-We might also want to add new users to our system, we can do this with `useradd` we have to add the user using our `sudo` command, we can add a new user with `sudo useradd NewUser`
+Мы также можем добавить новых пользователей в нашу систему, мы можем сделать это с помощью `useradd`, мы должны добавить пользователя с помощью нашей команды `sudo`, мы можем добавить нового пользователя с помощью `sudo useradd NewUser`
 
 ![](../images/Day15_Linux23.png)
 
-Creating a group again requires `sudo` and we can use `sudo groupadd DevOps` then if we want to add our new user to that group we can do this by running `sudo usermod -a -G DevOps` `-a` is add and `-G` is group name. 
+Для повторного создания группы требуется `sudo`, и мы можем использовать `sudo groupadd DevOps`, тогда, если мы хотим добавить нашего нового пользователя в эту группу, мы можем сделать это, запустив `sudo usermod -a -G DevOps` `-a` is add а `-G` это имя группы.
 
 ![](../images/Day15_Linux24.png)
 
-How do we add users to the `sudo` group, this would be a very rare occassion for this to happen but in order to do this it would be `usermod -a -G sudo NewUser` 
+Как добавить пользователей в группу `sudo`? Это было бы очень редким случаем но для того, чтобы сделать это, выполним: `usermod -a -G sudo NewUser`
 
-### Permissions 
+### Права / Permissions 
 
-read, write and execute are the permissions we have on all of our files and folders on our Linux system. 
+read, write and execute - — это права доступа ко всем нашим файлам и папкам в нашей системе Linux.
 
-A full list: 
+Полный список: 
 
 - 0 = None `---`
 - 1 = Execute only `--X`
@@ -148,51 +163,44 @@ A full list:
 - 6 = Read & Write `RW-`
 - 7 = Read, Write & Execute `RWX`
 
-You will also see `777` or `775` and these represent the same numbers as the list above but each one represents **User - Group - Everyone**
+Вы также увидите «777» или «775», и они представляют те же числа, что и в приведенном выше списке, но каждый из них представляет **User - Group - Everyone***
 
-Let's take a look at our file. `ls -al Day15` you can see the 3 groups mentioned above, user and group has read & write but everyone only has read. 
+Давайте посмотрим на наш файл. `ls -al Day15` вы можете увидеть 3 группы, упомянутые выше, пользователь и группа могут читать и изменять (write), но все остальыне только читать (read).
 
 ![](../images/Day15_Linux25.png)
 
-We can change this using `chmod` you might find yourself doing this if you are creating binaries a lot on your systems as well and you need to give the ability to execute those binaries. `chmod 750 Day15` now run `ls -al Day15` if you want to run this for a whole folder then you can use `-R` to recursively do that. 
+Мы можем изменить это с помощью `chmod`, вы можете сделать это, если вы также создаете двоичные файлы в своих системах, и вам нужно дать возможность запускать эти двоичные файлы. `chmod 750 Day15` теперь запустите `ls -la Day15`, если вы хотите запустить это для всей папки, вы можете использовать `-R`, чтобы сделать это рекурсивно.
 
 ![](../images/Day15_Linux26.png)
 
-What about changing the owner of the file? We can use `chown` for this operation, if we wanted to change the ownership of our `Day15` from user `vagrant` to `NewUser` we can run `sudo chown NewUser Day15` again `-R` can be used. 
+Как насчет смены владельца файла? Мы можем использовать «chown» для этой операции, если мы хотим изменить владельца нашего «Day15» с пользователя «vagrant» на «NewUser», мы можем запустить «sudo chown NewUser Day15» снова, можно использовать «-R».
 
 ![](../images/Day15_Linux27.png)
 
-A command that you will come across is `awk` where this comes in real use is when you have an output that you only need specific data from. like running `who` we get lines with information, but maybe we only need the names. We can run `who | awk '{print $1}'` to get just a list of that first column. 
+Команда, с которой вы столкнетесь, это `awk`, где она реально используется, когда у вас есть выходные данные, из которых вам нужны только определенные данные. например, запуская who, мы получаем строки с информацией, но, возможно, нам нужны только имена. Мы можем запустить `кто | awk '{print $1}'`, чтобы получить только список этого первого столбца.
 
 ![](../images/Day15_Linux28.png)
 
-If you are looking to read streams of data from standard input, then generates and executes command lines; meaning it can take output of a command and passes it as argument of another command. `xargs` is a useful tool for this use case. If for example I want a list of all the Linux user accounts on the system I can run. `cut -d: -f1 < /etc/passwd` and get the long list we see below. 
+Если вы хотите читать потоки данных из стандартного ввода, то генерирует и выполняет командные строки; это означает, что он может принимать вывод команды и передавать его в качестве аргумента другой команды. `xargs` — полезный инструмент для этого случая использования. Если, например, мне нужен список всех учетных записей пользователей Linux в системе, которую я могу запустить. `cut -d: -f1 < /etc/passwd` и получите длинный список, который мы видим ниже.
 
 ![](../images/Day15_Linux29.png)
 
-If I want to compact that list I can do so by using `xargs` in a command like this `cut -d: -f1 < /etc/passwd | sort | xargs` 
+Если я хочу заархивировать этот список, я могу сделать это, используя `xargs` в команде вроде этой `cut -d: -f1 < /etc/passwd | sort | xargs`
 
 ![](../images/Day15_Linux30.png)
 
-I didn't mention the `cut` command either, this allows us to remove sections from each line of a file. It can be used to cut parts of a line by byte position, character and field. The `cut -d " " -f 2 list.txt` command allows us to remove that first letter we have and just display our numbers. There are so many combinations that can be used here with this command, I am sure I have spent too much time trying to use this command when I could have extracted data quicker manually. 
+Я также не упомянул команду `cut`, которая позволяет нам удалять разделы из каждой строки файла. Его можно использовать для вырезания частей строки по положению байта, символу и полю. Команда `cut -d " " -f 2 list.txt` позволяет нам удалить первую букву, которая у нас есть, и просто отобразить наши числа. Есть так много комбинаций, которые можно использовать здесь с этой командой, я уверен, что потратил слишком много времени, пытаясь использовать эту команду, когда я мог бы быстрее извлечь данные вручную.
 
 ![](../images/Day15_Linux31.png)
 
-Also to note if you type a command and you are no longer with happy with it and you want to start again just hit control + c and this will cancel that line and start you fresh. 
+Также обратите внимание, если вы вводите команду, и вы больше не довольны ею, и вы хотите начать снова, просто нажмите Ctrl + c, и это отменит эту строку и начнет все заново.
 
-## Resources 
+## Ресурсы 
 
 - [Learn the Linux Fundamentals - Part 1](https://www.youtube.com/watch?v=kPylihJRG70)
 - [Linux for hackers (don't worry you don't need be a hacker!)](https://www.youtube.com/watch?v=VbEx7B_PTOE)
 
-See you on [Day16](day16.md)
-
-This is a pretty heavy list already but I can safely say that I have used all of these commands in my day to day, be it from an administering Linux servers or in my Linux Desktop, it is very easy when you are in Windows or macOS to navigate the UI but in Linux Servers they are not there, everything is done through the terminal. 
-
-
-
-
-
+Это уже довольно большой список, но я могу с уверенностью сказать, что я использую все эти команды в своей повседневной жизни, будь то администрирование серверов Linux или мой рабочий стол Linux, это очень легко, когда вы находитесь в Windows или macOS для навигации по пользовательскому интерфейсу, но в Linux Servers их нет, все делается через терминал.
 
 
 

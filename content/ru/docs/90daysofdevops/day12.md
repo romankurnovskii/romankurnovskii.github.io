@@ -1,5 +1,5 @@
 ---
-title: День 12 - Getting user input with Pointers and a finished program
+title: 12 - Getting user input with Pointers and a finished program
 description: Получение пользовательского ввода с помощью указателей и готовой программы
 toc: true
 authors:

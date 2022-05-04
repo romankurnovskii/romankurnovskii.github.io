@@ -1,5 +1,5 @@
 ---
-title: День 9 - Let's explain the Hello World code 
+title: 9 - Let's explain the Hello World code 
 description: Let's explain the Hello World code
 toc: true
 authors:

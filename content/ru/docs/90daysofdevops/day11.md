@@ -1,5 +1,5 @@
 ---
-title: День 11 - Variables & Constants in Go
+title: 11 - Variables & Constants in Go
 description: Переменные и константы в Go
 toc: true
 authors:

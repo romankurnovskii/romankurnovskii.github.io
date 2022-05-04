@@ -1,5 +1,5 @@
 ---
-title: День 13 - Tweet your progress with our new App
+title: 13 - Tweet your progress with our new App
 description: Tweet your progress with our new App
 toc: true
 authors:
@@ -12,52 +12,84 @@ featuredImage:
 draft: false
 id: 1048865
 ---
-## Tweet your progress with our new App
+## Твитните о своем прогрессе с нашим новым приложением
 
-On the final day of looking into this programming language, we have only just touched the surface here of the language but it is that start that I think we need to get interested and excited and want to dive more into it. 
+В последний день изучения этого языка программирования мы только коснулись его основ, но я думаю, что это начало.
 
-Over the last few days, we have taken a small idea for an application and we have added functionality to it, in this session I want to take advantage of those packages we mentioned and create the functionality for our app to not only give you the update of your progress on screen but also send a tweet with the details of the challenge and your status. 
+За последние несколько дней мы взяли небольшую идею для приложения и добавили функциональность, в этой статье я хочу воспользоваться преимуществами тех пакетов, которые мы упомянули, и создать функциональность для нашего приложения, чтобы не только дать вам обновление вашего прогресса на экране, но также отправьте твит с подробностями задачи и вашим статусом.
 
-## Adding the ability to tweet your progress 
-The first thing we need to do is set up our developer API access with Twitter for this to work. 
+## Добавление возможности твитить свой прогресс
+Первое, что нам нужно сделать, это настроить доступ API разработчика к Twitter, чтобы это работало.
 
-Head to the [Twitter Developer Platform](https://developer.twitter.com) and sign in with your Twitter handle and details. Once in you should see something like the below without the app that I already have created. 
+Перейдите на [Платформу разработчиков Twitter] (https://developer.twitter.com) и войдите в систему, используя свой идентификатор Twitter и данные. Оказавшись внутри, вы должны увидеть что-то вроде приведенного ниже без приложения, которое я уже создал.
 
 ![](../images/Day13_Go1.png)
 
-From here you may also want to request elevated access, this might take some time but it was very fast for me. 
+Здесь вы также можете запросить дополнительный доступ. Это может занять некоторое время, но для меня это было очень быстро.
 
-Next, we should select Projects & Apps and create our App. Limits are depending on the account access you have, with essential you only have one app and one project and with elevated you can have 3 apps. 
+Затем мы должны выбрать «Projects & Apps» и создать наше приложение. Ограничения зависят от доступа к вашей учетной записи, при этом у вас должно быть только одно приложение и один проект, а с повышенными правами у вас может быть 3 приложения.
 
 ![](../images/Day13_Go2.png)
 
-Give your application a name 
+Дайте вашему приложению имя
 
 ![](../images/Day13_Go3.png)
 
-You will be then given these API tokens, it is important that you save these somewhere secure. (I have since deleted this app) We will need these later with our Go Application. 
+Затем вам будут предоставлены эти токены API, важно сохранить их в безопасном месте. (С тех пор я удалил это приложение) Они понадобятся нам позже с нашим приложением Go.
 
 ![](../images/Day13_Go4.png)
 
-Now we have our app created,(I did have to change my app name as the one in the screenshot above was already taken, these names need to be unique) 
+Теперь у нас создано наше приложение (мне пришлось изменить имя моего приложения, так как то, что на скриншоте выше, уже было сделано, эти имена должны быть уникальными)
 
 ![](../images/Day13_Go5.png)
 
-The keys that we gathered before are known as our consumer keys and we will also need our access token and secrets. We can gather this information using the "Keys & Tokens" tab. 
+Ключи, которые мы собрали ранее, известны как наши потребительские ключи, и нам также понадобятся наш токен доступа и секреты. Мы можем собрать эту информацию, используя вкладку «Ключи и токены».
 
 ![](../images/Day13_Go6.png)
 
-Ok, we are done in the Twitter developer portal for now. Make sure you keep your keys safe because we will need them later. 
+Хорошо, на данный момент мы закончили работу с порталом для разработчиков Twitter. Убедитесь, что вы сохранили свои ключи, потому что они понадобятся нам позже.
 
-## Go Twitter Bot 
+## Перейти Twitter бот
 
-Remember the code we are starting within our application as well [day13_example1](Go/day13_example1.go) but first, we need to check we have the correct code to make something tweet 
+Помните код, который мы запускаем в нашем приложении?
+```
+package main
 
-We now need to think about the code to get our output or message to Twitter in the form of a tweet. We are going to be using [go-twitter](https://github.com/dghubble/go-twitter) This is a Go client library for the Twitter API. 
+import "fmt"
 
-To test this before putting this into our main application, I created a new directory in our `src` folder called go-twitter-bot, issued the `go mod init github.com/michaelcade/go-twitter-bot` on the folder which then created a `go.mod` file and then we can start writing our new main.go and test this out. 
+func main() {
 
-We now need those keys, tokens and secrets we gathered from the Twitter developer portal. We are going to set these in our environment variables. This will depend on the OS you are running: 
+	const DaysTotal int = 90
+	var remainingDays uint = 90
+	challenge := "#90DaysOfDevOps"
+
+	fmt.Printf("Welcome to the %v challenge.\nThis challenge consists of %v days\n", challenge, DaysTotal)
+
+	var TwitterName string
+	var DaysCompleted uint
+
+	// asking for user input
+	fmt.Println("Enter Your Twitter Handle: ")
+	fmt.Scanln(&TwitterName)
+
+	fmt.Println("How many days have you completed?: ")
+	fmt.Scanln(&DaysCompleted)
+
+	// calculate remaining days
+	remainingDays = remainingDays - DaysCompleted
+
+	fmt.Printf("Thank you %v for taking part and completing %v days.\n", TwitterName, DaysCompleted)
+	fmt.Printf("You have %v days remaining for the %v challenge\n", remainingDays, challenge)
+	fmt.Println("Good luck")
+}
+
+```
+
+Теперь нам нужно подумать о коде для отправки нашего вывода или сообщения в Twitter в виде твита. Мы будем использовать [go-twitter](https://github.com/dghubble/go-twitter). Это клиентская библиотека Go для Twitter API.
+
+Чтобы проверить это, прежде чем помещать это в наше основное приложение, я создал новый каталог в нашей папке `src` с именем go-twitter-bot, запустил `go mod init github.com/michaelcade/go-twitter-bot` в папке который затем создал файл `go.mod`, а затем мы можем начать писать наш новый main.go и протестировать его.
+
+Теперь нам нужны те ключи, токены и секреты, которые мы собрали на портале разработчиков Twitter. Мы собираемся установить их в наших переменных среды. Это будет зависеть от ОС, которую вы используете:
 
 Windows
 ```
@@ -80,27 +112,29 @@ We then have a `func` to parse those credentials and make that connection to the
 
 Then based on the success we will then send a tweet. 
 
+
+На этом этапе вы можете взглянуть на следующий код
 ```
 package main
 
 import (
-    // other imports
-    "fmt"
-    "log"
-    "os"
+	// other imports
+	"fmt"
+	"log"
+	"os"
 
-    "github.com/dghubble/go-twitter/twitter"
-    "github.com/dghubble/oauth1"
+	"github.com/dghubble/go-twitter/twitter"
+	"github.com/dghubble/oauth1"
 )
 
 // Credentials stores all of our access/consumer tokens
 // and secret keys needed for authentication against
 // the twitter REST API.
 type Credentials struct {
-    ConsumerKey       string
-    ConsumerSecret    string
-    AccessToken       string
-    AccessTokenSecret string
+	ConsumerKey       string
+	ConsumerSecret    string
+	AccessToken       string
+	AccessTokenSecret string
 }
 
 // getClient is a helper function that will return a twitter client
@@ -109,61 +143,69 @@ type Credentials struct {
 // everything needed to authenticate and return a pointer to a twitter Client
 // or an error
 func getClient(creds *Credentials) (*twitter.Client, error) {
-    // Pass in your consumer key (API Key) and your Consumer Secret (API Secret)
-    config := oauth1.NewConfig(creds.ConsumerKey, creds.ConsumerSecret)
-    // Pass in your Access Token and your Access Token Secret
-    token := oauth1.NewToken(creds.AccessToken, creds.AccessTokenSecret)
+	// Pass in your consumer key (API Key) and your Consumer Secret (API Secret)
+	config := oauth1.NewConfig(creds.ConsumerKey, creds.ConsumerSecret)
+	// Pass in your Access Token and your Access Token Secret
+	token := oauth1.NewToken(creds.AccessToken, creds.AccessTokenSecret)
 
-    httpClient := config.Client(oauth1.NoContext, token)
-    client := twitter.NewClient(httpClient)
+	httpClient := config.Client(oauth1.NoContext, token)
+	client := twitter.NewClient(httpClient)
 
-    // Verify Credentials
-    verifyParams := &twitter.AccountVerifyParams{
-        SkipStatus:   twitter.Bool(true),
-        IncludeEmail: twitter.Bool(true),
-    }
+	// Verify Credentials
+	verifyParams := &twitter.AccountVerifyParams{
+		SkipStatus:   twitter.Bool(true),
+		IncludeEmail: twitter.Bool(true),
+	}
 
-    // we can retrieve the user and verify if the credentials
-    // we have used successfully allow us to log in!
-    user, _, err := client.Accounts.VerifyCredentials(verifyParams)
-    if err != nil {
-        return nil, err
-    }
+	// we can retrieve the user and verify if the credentials
+	// we have used successfully allow us to log in!
+	user, _, err := client.Accounts.VerifyCredentials(verifyParams)
+	if err != nil {
+		return nil, err
+	}
 
-    log.Printf("User's ACCOUNT:\n%+v\n", user)
-    return client, nil
+	log.Printf("User's ACCOUNT:\n%+v\n", user)
+	return client, nil
 }
 func main() {
-    fmt.Println("Go-Twitter Bot v0.01")
-    creds := Credentials{
-        AccessToken:       os.Getenv("ACCESS_TOKEN"),
-        AccessTokenSecret: os.Getenv("ACCESS_TOKEN_SECRET"),
-        ConsumerKey:       os.Getenv("CONSUMER_KEY"),
-        ConsumerSecret:    os.Getenv("CONSUMER_SECRET"),
-    }
+	fmt.Println("Go-Twitter Bot v0.01")
+	creds := Credentials{
+		AccessToken:       os.Getenv("ACCESS_TOKEN"),
+		AccessTokenSecret: os.Getenv("ACCESS_TOKEN_SECRET"),
+		ConsumerKey:       os.Getenv("CONSUMER_KEY"),
+		ConsumerSecret:    os.Getenv("CONSUMER_SECRET"),
+	}
 
-    client, err := getClient(&creds)
-    if err != nil {
-        log.Println("Error getting Twitter Client")
-        log.Println(err)
-    }
+	client, err := getClient(&creds)
+	if err != nil {
+		log.Println("Error getting Twitter Client")
+		log.Println(err)
+	}
 
-    tweet, resp, err := client.Statuses.Update("A Test Tweet from the future, testing a #90DaysOfDevOps Program that tweets, tweet tweet", nil)
-    if err != nil {
-        log.Println(err)
-    }
-    log.Printf("%+v\n", resp)
-    log.Printf("%+v\n", tweet)
+	tweet, resp, err := client.Statuses.Update("A Test Tweet from the future, testing a #90DaysOfDevOps Program that tweets, tweet tweet", nil)
+	if err != nil {
+		log.Println(err)
+	}
+	log.Printf("%+v\n", resp)
+	log.Printf("%+v\n", tweet)
 }
 
 ```
-The above will either give you an error based on what is happening or it will succeed and you will have a tweet sent with the message outlined in the code. 
+Здесь вы увидите, что мы используем структуру для определения наших ключей, секретов и токенов.
 
-## Pairing the two together - Go-Twitter-Bot + Our App 
+Затем у нас есть `func`, чтобы проанализировать эти учетные данные и установить это соединение с API Twitter.
 
-Now we need to merge these two in our `main.go` I am sure someone out there is screaming that there is a better way of doing this and please comment on this as you can have more than one `.go` file in a project it might make sense but this works. 
+Затем, в зависимости от успеха, мы отправим твит.
 
-You can see the merged codebase [day13_example3](Go/day13_example3.go) but I will also show it below. 
+
+
+Код выше либо выдаст вам ошибку в зависимости от того, что происходит, либо будет выполнен успешно, и вам будет отправлен твит с сообщением, указанным в коде.
+
+## Соединение двух вместе - Go-Twitter-Bot + наше приложение
+
+Теперь нам нужно объединить эти два файла в наш `main.go`. Я уверен, что кто-то кричит, что есть лучший способ сделать это, и, пожалуйста, прокомментируйте это, поскольку вы можете иметь более одного файла `.go` в одном файле. project это может иметь смысл, но это работает.
+
+Так выглядит итоговый рзультат:
 
 ```
 package main
@@ -266,26 +308,29 @@ func main() {
 
 }
 ```
-The outcome of this should be a tweet but if you did not supply your environment variables then you should get an error like the one below. 
+
+Результатом этого должен быть твит, но если вы не указали свои переменные среды, вы должны получить сообщение об ошибке, подобное приведенному ниже.
 
 ![](../images/Day13_Go7.png)
 
-Once you have fixed that or if you choose not to authenticate with Twitter then you can use the code we finished with yesterday. The terminal output on success will look similar to this: 
+После того, как вы исправите это или решите не проходить аутентификацию в Twitter, вы можете использовать код, с которым мы закончили вчера. Вывод терминала в случае успеха будет выглядеть примерно так:
 
 ![](../images/Day13_Go8.png)
 
-The resulting tweet should look something like this: 
+Полученный твит должен выглядеть примерно так:
 
 ![](../images/Day13_Go9.png)
 
-## How to compile for multiple OSs
+## Как скомпилировать для нескольких ОС
 
-I next want to cover the question, "How do you compile for multiple Operating Systems?" The great thing about Go is that it can easily compile for many different Operating Systems. You can get a full list by running the following command: 
+Далее я хочу затронуть вопрос: «Как компилировать для нескольких операционных систем?» Отличительной особенностью Go является то, что он может легко компилироваться для многих различных операционных систем. Вы можете получить полный список, выполнив следующую команду:
 
 ```
 go tool dist list
 ```
-Using our `go build` commands so far is great and it will use the `GOOS` and `GOARCH` environment variables to determine the host machine and what the build should be built for. But we can also create other binaries by using the code below as an example. 
+
+Использование наших команд `go build` до сих пор было замечательным, и оно будет использовать переменные среды `GOOS` и `GOARCH`, чтобы определить хост-компьютер и то, для чего должна быть собрана сборка. Но мы также можем создавать другие двоичные файлы, используя приведенный ниже код в качестве примера.
+
 
 ```
 GOARCH=amd64 GOOS=darwin go build -o ${BINARY_NAME}_0.1_darwin main.go
@@ -295,11 +340,31 @@ GOARCH=arm64 GOOS=linux go build -o ${BINARY_NAME}_0.1_linux_arm64 main.go
 GOARCH=arm64 GOOS=darwin go build -o ${BINARY_NAME}_0.1_darwin_arm64 main.go
 ```
 
-This will then give you binaries in your directory for all of the above platforms. You can then take this and create a makefile to build these binaries whenever you add new features and functionality to your code. I have included the [makefile](Go/makefile)
+Это даст вам двоичные файлы в вашем каталоге для всех вышеперечисленных платформ. Затем вы можете взять это и создать make-файл для создания этих двоичных файлов всякий раз, когда вы добавляете новые функции и функции в свой код.
 
-This is what I have used to create the releases you can now see on the [repository](https://github.com/MichaelCade/90DaysOfDevOps/releases)
+Файл: `makefile`
+```
+BINARY_NAME=90DaysOfDevOps
 
-## Resources
+build:
+	GOARCH=amd64 GOOS=darwin go build -o ${BINARY_NAME}_0.2_darwin main.go
+	GOARCH=amd64 GOOS=linux go build -o ${BINARY_NAME}_0.2_linux main.go
+	GOARCH=amd64 GOOS=windows go build -o ${BINARY_NAME}_0.2_windows main.go
+	GOARCH=arm64 GOOS=linux go build -o ${BINARY_NAME}_0.2_linux_arm64 main.go
+	GOARCH=arm64 GOOS=darwin go build -o ${BINARY_NAME}_0.2_darwin_arm64 main.go
+
+run:
+	./${BINARY_NAME}
+
+build_and_run: build run
+
+clean:
+	go clean
+	rm ${BINARY_NAME}-darwin
+	rm ${BINARY_NAME}-linux
+	rm ${BINARY_NAME}-windows
+```
+## Источники
 
 - [StackOverflow 2021 Developer Survey](https://insights.stackoverflow.com/survey/2021)
 - [Why we are choosing Golang to learn](https://www.youtube.com/watch?v=7pLqIIAqZD4&t=9s)
@@ -313,8 +378,6 @@ This is what I have used to create the releases you can now see on the [reposito
 - [go.dev/tour/list](https://go.dev/tour/list)
 - [go.dev/learn](https://go.dev/learn/)
 
-This wraps up the Programming language for 7 days! So much more that can be covered and I hope you have been able to continue through the content above and be able to understand some of the other aspects of the Go programming language. 
+На этом блок "язык программирования". Так много всего, что можно охватить, и я надеюсь, что вы смогли продолжить изучение вышеизложенного и понять некоторые другие аспекты языка программирования Go.
 
-Next, we take our focus into Linux and some of the fundamentals that we should all know there. 
-
-See you on [Day 14](day14.md).
+Затем мы сосредоточимся на Linux и некоторых основах, которые мы все должны знать.

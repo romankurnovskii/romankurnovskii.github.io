@@ -1,5 +1,5 @@
 ---
-title: День 8 - Setting up your DevOps environment for Go & Hello World
+title: 8 - Setting up your DevOps environment for Go & Hello World
 description: Setting up your DevOps environment for Go & Hello World
 toc: true
 authors:
