@@ -15,7 +15,7 @@ There are a lot of products that make up the Ansible Automation platform.
 
 Red Hat Ansible Automation Platform is a foundation for building and operating automation across an organization. The platform includes all the tools needed to implement enterprise-wide automation.
 
-![](../images/Day69_config1.png)
+![](../images/Day69_config1.png?v1)
 
 I will try and cover some of these in this post. But for more information then the official Red Hat Ansible site is going to have lots more information. [Ansible.com](https://www.ansible.com/?hsLang=en-us)
 
@@ -44,7 +44,7 @@ AWX does not need to be deployed to a Kubernetes cluster, the [github](https://g
 
 First of all we need a minikube cluster. We can do this if you followed along during the Kubernetes section by creating a new minikube cluster with the `minikube start --cpus=4 --memory=6g --addons=ingress` command. 
 
-![](../images/Day69_config2.png)
+![](../images/Day69_config2.png?v1)
 
 The official [Ansible AWX Operator](https://github.com/ansible/awx-operator) can be found here. As stated in the install instructions you should clone this repository and then run through the deployment. 
 
@@ -64,33 +64,33 @@ spec:
 
 The next step is to define our namespace where we will be deploying the awx operator, using the `export NAMESPACE=awx` command then followed by `make deploy` we will start the deployment. 
 
-![](../images/Day69_config3.png)
+![](../images/Day69_config3.png?v1)
 
 In checking we have our new namespace and we have our awx-operator-controller pod running in our namespace. `kubectl get pods -n awx`
 
-![](../images/Day69_config4.png)
+![](../images/Day69_config4.png?v1)
 
 Within the cloned repository you will find a file called awx-demo.yml we now want to deploy this into our Kubernetes cluser and our awx namespace. `kubectl create -f awx-demo.yml -n awx`
 
-![](../images/Day69_config5.png)
+![](../images/Day69_config5.png?v1)
 
 You can keep an eye on the progress with `kubectl get pods -n awx -w` which will keep a visual watch on what is happening. 
 
 You should have something that resembles the image you see below when everything is running. 
 
-![](../images/Day69_config6.png)
+![](../images/Day69_config6.png?v1)
 
 Now we should be able to access our awx deployment after running in a new terminal `minikube service awx-demo-service --url -n $NAMESPACE` to expose this through the minikube ingress. 
 
-![](../images/Day69_config7.png)
+![](../images/Day69_config7.png?v1)
 
 If we then open a browser to that address [] you can see we are prompted for username and password. 
 
-![](../images/Day69_config8.png)
+![](../images/Day69_config8.png?v1)
 
 The username by default is admin, to get the password we can run the following command to get this `kubectl get secret awx-demo-admin-password -o jsonpath="{.data.password}" -n awx| base64 --decode`
 
-![](../images/Day69_config9.png)
+![](../images/Day69_config9.png?v1)
 
 Obviously this then gives you a UI to manage your playbook and configuration management tasks in a centralised location, it also allows you as a team to work together vs what we have been doing so far here where we have been running from one ansible control station. 
 
@@ -106,7 +106,7 @@ In this video he also goes into great detail on the differences between Automati
 
 Built in to the Ansible binary is `ansible-vault` which allows us to mask away this sensitive information. 
 
-![](../images/Day69_config10.png)
+![](../images/Day69_config10.png?v1)
 
 Secrets Management has progressively become another area in which more time should have been spent alongside tools such as HashiCorp Vault or the AWS Key Management Service. I will mark this as an area to dive deeper into.
 

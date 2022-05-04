@@ -71,12 +71,12 @@ The key paradigm of Kubernetes is its declarative model. You provide the state t
 
 Every Kubernetes cluster requires a Control Plane node, the control plane's components make global decisions about the cluster (for example, scheduling), as well as detecting and responding to cluster events. 
 
-![](../images/Day49_Kubernetes1.png)
+![](../images/Day49_Kubernetes1.png?v1)
 
 **Worker Node**
  A worker machine that runs Kubernetes workloads. It can be a physical (bare metal) machine or a virtual machine (VM). Each node can host one or more pods. Kubernetes nodes are managed by a control plane
 
-![](../images/Day49_Kubernetes2.png)
+![](../images/Day49_Kubernetes2.png?v1)
 
 There are other node types but I won't be covering them here. 
 
@@ -86,7 +86,7 @@ An agent that runs on each node in the cluster. It makes sure that containers ar
 
 The kubelet takes a set of PodSpecs that are provided through various mechanisms and ensures that the containers described in those PodSpecs are running and healthy. The kubelet doesn't manage containers which were not created by Kubernetes.​
 
-![](../images/Day49_Kubernetes3.png)
+![](../images/Day49_Kubernetes3.png?v1)
 
 **kube-proxy​**
 
@@ -96,7 +96,7 @@ kube-proxy maintains network rules on nodes. These network rules allow network c
 
 kube-proxy uses the operating system packet filtering layer if there is one and it's available. Otherwise, kube-proxy forwards the traffic itself.​
 
-![](../images/Day49_Kubernetes4.png)
+![](../images/Day49_Kubernetes4.png?v1)
 
 **Container runtime**​
 
@@ -104,7 +104,7 @@ The container runtime is the software that is responsible for running containers
 
 Kubernetes supports several container runtimes: Docker, containerd, CRI-O, and any implementation of the Kubernetes CRI (Container Runtime Interface).​
 
-![](../images/Day49_Kubernetes5.png)
+![](../images/Day49_Kubernetes5.png?v1)
 ​
 ### Cluster
 
@@ -128,7 +128,7 @@ The Kubernetes controller manager is a daemon that embeds the core control loops
 
 Consistent and highly-available key value store used as Kubernetes' backing store for all cluster data.
 
-![](../images/Day49_Kubernetes6.png)
+![](../images/Day49_Kubernetes6.png?v1)
 
 **kubectl**
 
@@ -136,7 +136,7 @@ In order to manage this from a CLI point of view we have kubectl, kubectl intera
 
 The Kubernetes command-line tool, kubectl, allows you to run commands against Kubernetes clusters. You can use kubectl to deploy applications, inspect and manage cluster resources, and view logs.
 
-![](../images/Day49_Kubernetes7.png)
+![](../images/Day49_Kubernetes7.png?v1)
 
 ### Pods
 
@@ -150,7 +150,7 @@ A Pod is a group of containers that form a logical application. For e.g. If you 
 
 - Pods live on Worker Nodes.​
 
-![](../images/Day49_Kubernetes8.png)
+![](../images/Day49_Kubernetes8.png?v1)
 ​
 ### Deployments
 
@@ -162,7 +162,7 @@ A Pod is a group of containers that form a logical application. For e.g. If you 
 
 - Deployments also specify a strategy to restart Pods when they die
 
-![](../images/Day49_Kubernetes9.png)
+![](../images/Day49_Kubernetes9.png?v1)
 
 ### ReplicaSets
 
@@ -187,7 +187,7 @@ A Pod is a group of containers that form a logical application. For e.g. If you 
 
 - Each Pod has a unique, persistent identifier that the controller maintains over any rescheduling.​
 
-![](../images/Day49_Kubernetes10.png)
+![](../images/Day49_Kubernetes10.png?v1)
 
 ### DaemonSets
 
@@ -201,7 +201,7 @@ A Pod is a group of containers that form a logical application. For e.g. If you 
 
 ​- Each Pod has a unique, persistent identifier that the controller maintains over any rescheduling.
 
-![](../images/Day49_Kubernetes11.png)
+![](../images/Day49_Kubernetes11.png?v1)
 
 ### Services 
 
@@ -213,7 +213,7 @@ A Pod is a group of containers that form a logical application. For e.g. If you 
 
 This is just a quick overview and notes around the fundamental building blocks of Kubernetes, we can take this knowledge and add in some other areas around Storage and Ingress to enhance our applications but we then also have a lot of choices on where our Kubernetes cluster runs. The next session will focus on those options on where can I run a Kubernetes cluster, whilst also exploring some specifics around Storage.
 
-![](../images/Day49_Kubernetes12.png)
+![](../images/Day49_Kubernetes12.png?v1)
 
 ### What we will cover in the series on Kubernetes 
 

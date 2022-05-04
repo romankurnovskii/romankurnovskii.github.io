@@ -33,7 +33,7 @@ Azure AD Connect also allows you to not only see Windows AD servers but also oth
 
 Authentication options between Active Directory Domain Services and Microsoft Azure Active Directory are possible with both identity sync with a password hash.
 
-![](../images/Day30_Cloud1.png)
+![](../images/Day30_Cloud1.png?v1)
 
 The passing of the password hash is optional, if this is not used then pass-through authentication is required. 
 
@@ -41,7 +41,7 @@ There is a video linked below that goes into detail about Passthrough authentica
 
 [User sign-in with Azure Active Directory Pass-through Authentication](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-pta)
 
-![](../images/Day30_Cloud2.png)
+![](../images/Day30_Cloud2.png?v1)
 
 ### Federation 
 
@@ -51,11 +51,11 @@ Azure AD can act as a federation broker to these other Non-Microsoft apps and ot
 
 This will be seen in the Azure Portal as Enterprise Applications of which there are a large number of options. 
 
-![](../images/Day30_Cloud3.png)
+![](../images/Day30_Cloud3.png?v1)
 
 If you scroll down on the enterprise application page you are going to see a long list of featured applications. 
 
-![](../images/Day30_Cloud4.png)
+![](../images/Day30_Cloud4.png?v1)
 
 This option also allows for "bring your own" integration, an application you are developing or a non-gallery application. 
 
@@ -86,15 +86,15 @@ Permissions are inherited.
 
 If we go back and look at the "90DaysOfDevOps" Resource group we created and check the Access Control (IAM) within you can see we have a list of contributors and a customer User Access Administrator, and we do have a list of owners (But I cannot show this)
 
-![](../images/Day30_Cloud5.png)
+![](../images/Day30_Cloud5.png?v1)
 
 We can also check the roles we have assigned here if they are BuiltInRoles and which category they fall under. 
 
-![](../images/Day30_Cloud6.png)
+![](../images/Day30_Cloud6.png?v1)
 
 We can also use the check access tab if we want to check an account against this resource group and make sure that the account we wish to have that access to has the correct permissions or maybe we want to check if a user has too much access. 
 
-![](../images/Day30_Cloud7.png)
+![](../images/Day30_Cloud7.png?v1)
 
 ### Microsoft Defender for Cloud 
 
@@ -108,7 +108,7 @@ We can also use the check access tab if we want to check an account against this
 
 I have switched to another subscription to view the Azure Security Center and you can see here based on very few resources that I have some recommendations in one place. 
 
-![](../images/Day30_Cloud8.png)
+![](../images/Day30_Cloud8.png?v1)
 
 ### Azure Policy
 
@@ -126,43 +126,43 @@ I have switched to another subscription to view the Azure Security Center and yo
 
 I have gone out and I have purchased www.90DaysOfDevOps.com and I would like to add this domain to my Azure Active Directory portal, [Add your custom domain name using the Azure Active Directory Portal](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/add-custom-domain)
 
-![](../images/Day30_Cloud9.png)
+![](../images/Day30_Cloud9.png?v1)
 
 With that now we can create a new user on our new Active Directory Domain. 
 
-![](../images/Day30_Cloud10.png)
+![](../images/Day30_Cloud10.png?v1)
 
 Now we want to create a group for all of our new 90DaysOfDevOps users in one group. We can create a group as per the below, notice that I am using "Dynamic User" this means Azure AD will query user accounts and add them dynamically vs assigned which is where you manually add the user to your group. 
 
-![](../images/Day30_Cloud11.png)
+![](../images/Day30_Cloud11.png?v1)
 
 There are lots of options when it comes to creating your query, my plan is to simply find the principal name and make sure that the name contains @90DaysOfDevOps.com. 
 
-![](../images/Day30_Cloud12.png)
+![](../images/Day30_Cloud12.png?v1)
 
 Now because we have created our user account already for michael.cade@90DaysOfDevOps.com we can validate the rules are working. For comparison I have also added another account I have associated to another domain here and you can see that because of this rule our user will not land in this group.  
 
-![](../images/Day30_Cloud13.png)
+![](../images/Day30_Cloud13.png?v1)
 
 I have since added a new user1@90DaysOfDevOps.com and if we go and check the group we can see our members. 
 
-![](../images/Day30_Cloud14.png)
+![](../images/Day30_Cloud14.png?v1)
 
 If we have this requirement x100 then we are not going to want to do this all in the console we are going to want to take advantage of either bulk options to create, invite, delete users or you are going to want to look into PowerShell to achieve this automated approach to scale. 
 
 Now we can go to our Resource Group and specify that on the 90DaysOfDevOps resource group we want the owner to be the group we just created. 
 
-![](../images/Day30_Cloud15.png)
+![](../images/Day30_Cloud15.png?v1)
 
 We can equally go in here and deny assignments access to our resource group as well. 
 
 Now if we login to the Azure Portal with our new user account, you can see that we only have access to our 90DaysOfDevOps resource group and not the others seen in previous pictures because we do not have the access. 
 
-![](../images/Day30_Cloud16.png)
+![](../images/Day30_Cloud16.png?v1)
 
 The above is great if this is a user that has access to resources inside of your Azure portal but not every user needs to be aware of the portal, but in order to check access we can use the [Apps Portal](https://myapps.microsoft.com/) This is a single sign on portal for us to test. 
 
-![](../images/Day30_Cloud17.png)
+![](../images/Day30_Cloud17.png?v1)
 
 You are able to customise this portal with your own branding and this might be something we come back to later on. 
 

@@ -13,13 +13,13 @@ When it comes to cloud computing and what is offered, it goes very nicely with t
 
 But to start with that cloud learning journey is a steep one and making sure you know and understand all elements or the best service to choose for the right price point is confusing. 
 
-![](../images/Day28_Cloud1.png)
+![](../images/Day28_Cloud1.png?v1)
 
 Does the public cloud require a DevOps mindset? My answer here is not, but to really take advantage of cloud computing and possibly avoid those large cloud bills that so many people have been hit with then it is important to think of Cloud Computing and DevOps together. 
 
 If we look at what we mean by the Public Cloud at a 40,000ft view, it is about removing some responsibility to a managed service to enable you and your team to focus on more important aspects which name should be the application and the end-users. After all the Public Cloud is just someone else's computer. 
 
-![](../images/Day28_Cloud2.png)
+![](../images/Day28_Cloud2.png?v1)
 
 In this first section, I want to get into and describe a little more of what Public Cloud is and some of the building blocks that get referred to as the Public Cloud overall. 
 
@@ -35,17 +35,17 @@ Other SaaS applications are widely adopted, such as Salesforce, SAP, Oracle, Goo
 
 I am sure there is a story with DevOps and SaaS-based applications but I am struggling to find out what they may be. I know Azure DevOps has some great integrations with Microsoft 365 that I might have a look into and report back. 
 
-![](../images/Day28_Cloud3.png)
+![](../images/Day28_Cloud3.png?v1)
 
 ### Public Cloud
 
 Next up we have the public cloud, most people would think of this in a few different ways, some would see this as the hyper scalers only such as Microsoft Azure, Google Cloud Platform and AWS. 
 
-![](../images/Day28_Cloud4.png)
+![](../images/Day28_Cloud4.png?v1)
 
 Some will also see the public cloud as a much wider offering that includes those hyper scalers but also the thousands of MSPs all over the world as well. For this post, we are going to consider Public Cloud including hyper scalers and MSPs, although later on, we will specifically dive into one or more of the hyper scalers to get that foundational knowledge. 
 
-![](../images/Day28_Cloud5.png)
+![](../images/Day28_Cloud5.png?v1)
 *thousands more companies could land on this, I am merely picking from local, regional, telco and global brands I have worked with and am aware of.* 
 
 We mentioned in the SaaS section that Cloud removed the responsibility or the burden of having to administer parts of a system. If SaaS we see a lot of the abstraction layers removed i.e the physical systems, network, storage, operating system, even application to some degree. When it comes to the cloud there are various levels of abstraction we can remove or keep depending on your requirements. 
@@ -60,7 +60,7 @@ There are many other aaS offerings out there but these are the two fundamentals.
 
 There are many ways in which the public cloud can provide abstraction layers of control that you wish to pass up and pay for. 
 
-![](../images/Day28_Cloud6.png)
+![](../images/Day28_Cloud6.png?v1)
 
 ### Private Cloud
 
@@ -70,21 +70,21 @@ The important thing to note here is the public cloud is likely now going to be y
 
 We have some interesting things happening in this space not only with VMware that dominated the virtualisation era and on-premises infrastructure environments. We also have the hyper scalers offering an on-premises version of their public clouds.
 
-![](../images/Day28_Cloud7.png)
+![](../images/Day28_Cloud7.png?v1)
 
 ### Hybrid Cloud
 
 To follow on from the Public and Private cloud mentions we also can span across both of these environments to provide flexibility between the two, maybe take advantage of services available in the public cloud but then also take advantage of features and functionality of being on-premises or it might be a regulation that dictates you having to store data locally. 
 
-![](../images/Day28_Cloud8.png)
+![](../images/Day28_Cloud8.png?v1)
 
 Putting this all together we have a lot of choices for where we store and run our workloads. 
 
-![](../images/Day28_Cloud9.png)
+![](../images/Day28_Cloud9.png?v1)
 
 Before we get into a specific hyper-scale, I have asked the power of Twitter where we should go? 
 
-![](../images/Day28_Cloud10.png)
+![](../images/Day28_Cloud10.png?v1)
 
 [Link to Twitter Poll](https://twitter.com/MichaelCade1/status/1486814904510259208?s=20&t=x2n6QhyOXSUs7Pq0itdIIQ)
 

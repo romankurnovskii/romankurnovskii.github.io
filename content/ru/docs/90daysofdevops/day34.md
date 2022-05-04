@@ -35,29 +35,29 @@ At this first stage we have no virtual network or virtual machines created in ou
 
 I first of all run my [PowerShell script](Cloud/01VirtualNetworking/Module4_90DaysOfDevOps.ps1)
 
- ![](../images/Day34_Cloud1.png)
+ ![](../images/Day34_Cloud1.png?v1)
  
 - Task 1: Create and configure a virtual network
 
- ![](../images/Day34_Cloud2.png)
+ ![](../images/Day34_Cloud2.png?v1)
 
 - Task 2: Deploy virtual machines into the virtual network
 
- ![](../images/Day34_Cloud3.png)
+ ![](../images/Day34_Cloud3.png?v1)
 
 - Task 3: Configure private and public IP addresses of Azure VMs
   
- ![](../images/Day34_Cloud4.png)
+ ![](../images/Day34_Cloud4.png?v1)
 
 - Task 4: Configure network security groups
 
-![](../images/Day34_Cloud5.png)
-![](../images/Day34_Cloud6.png)
+![](../images/Day34_Cloud5.png?v1)
+![](../images/Day34_Cloud6.png?v1)
 
 - Task 5: Configure Azure DNS for internal name resolution
 
-![](../images/Day34_Cloud7.png)
-![](../images/Day34_Cloud8.png)
+![](../images/Day34_Cloud7.png?v1)
+![](../images/Day34_Cloud8.png?v1)
 
 ### Network Traffic Management 
 Following [Module 06](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_06-Implement_Network_Traffic_Management.html):
@@ -72,19 +72,19 @@ For this lab I have also created a PowerShell script and some references from th
 
 I first of all run my [PowerShell script](Cloud/02TrafficManagement/Mod06_90DaysOfDevOps.ps1)
 
-![](../images/Day34_Cloud9.png)
+![](../images/Day34_Cloud9.png?v1)
 
 - Task 2: Configure the hub and spoke network topology
 
-![](../images/Day34_Cloud10.png)
+![](../images/Day34_Cloud10.png?v1)
 
 - Task 3: Test transitivity of virtual network peering
 
 For this my 90DaysOfDevOps group did not have access to the Network Watcher because of permissions, I expect this is because Network Watchers are one of those resources that are not tied to a resource group which is where our RBAC was covered for this user. I added the East US Network Watcher contributer role to the 90DaysOfDevOps group. 
 
-![](../images/Day34_Cloud11.png)
-![](../images/Day34_Cloud12.png)
-![](../images/Day34_Cloud13.png)
+![](../images/Day34_Cloud11.png?v1)
+![](../images/Day34_Cloud12.png?v1)
+![](../images/Day34_Cloud13.png?v1)
 
 ^  This is expected, since the two spoke virtual networks are not peered with each other (virtual network peering is not transitive).
 
@@ -92,22 +92,22 @@ For this my 90DaysOfDevOps group did not have access to the Network Watcher beca
 
 I had another issue here with my account not being able to run the script as my user within the group 90DaysOfDevOps which I am unsure of so I did jump back into my main admin account. The 90DaysOfDevOps group is an owner of everything in the 90DaysOfDevOps Resource Group so would love to understand why I cannot run a command inside the VM? 
 
-![](../images/Day34_Cloud14.png)
-![](../images/Day34_Cloud15.png)
+![](../images/Day34_Cloud14.png?v1)
+![](../images/Day34_Cloud15.png?v1)
 
 I then was able to go back into my michael.cade@90DaysOfDevOps.com account and continue this section. Here we are running the same test again but now with the result being reachable. 
 
-![](../images/Day34_Cloud16.png)
+![](../images/Day34_Cloud16.png?v1)
 
 - Task 5: Implement Azure Load Balancer
 
-![](../images/Day34_Cloud17.png)
-![](../images/Day34_Cloud18.png)
+![](../images/Day34_Cloud17.png?v1)
+![](../images/Day34_Cloud18.png?v1)
 
 - Task 6: Implement Azure Application Gateway
 
-![](../images/Day34_Cloud19.png)
-![](../images/Day34_Cloud20.png)
+![](../images/Day34_Cloud19.png?v1)
+![](../images/Day34_Cloud20.png?v1)
 
 ### Azure Storage 
 Following [Module 07](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_07-Manage_Azure_Storage.html):
@@ -119,38 +119,38 @@ For this lab I have also created a PowerShell script and some references from th
 
 I first of all run my [PowerShell script](Cloud/03Storage/Mod07_90DaysOfDeveOps.ps1)
 
-![](../images/Day34_Cloud21.png)
+![](../images/Day34_Cloud21.png?v1)
 
 - Task 2: Create and configure Azure Storage accounts
 
-![](../images/Day34_Cloud22.png)
+![](../images/Day34_Cloud22.png?v1)
 
 - Task 3: Manage blob storage
 
-![](../images/Day34_Cloud23.png)
+![](../images/Day34_Cloud23.png?v1)
 
 - Task 4: Manage authentication and authorization for Azure Storage
 
-![](../images/Day34_Cloud24.png)
-![](../images/Day34_Cloud25.png)
+![](../images/Day34_Cloud24.png?v1)
+![](../images/Day34_Cloud25.png?v1)
 
 I was a little impatient waiting for this to be allowed but it did work eventually. 
 
-![](../images/Day34_Cloud26.png)
+![](../images/Day34_Cloud26.png?v1)
 
 
 - Task 5: Create and configure an Azure Files shares
 
 On the run command this would not work with michael.cade@90DaysOfDevOps.com so I used my elevated account. 
 
-![](../images/Day34_Cloud27.png)
-![](../images/Day34_Cloud28.png)
-![](../images/Day34_Cloud29.png)
+![](../images/Day34_Cloud27.png?v1)
+![](../images/Day34_Cloud28.png?v1)
+![](../images/Day34_Cloud29.png?v1)
 
 
 - Task 6: Manage network access for Azure Storage
 
-![](../images/Day34_Cloud30.png)
+![](../images/Day34_Cloud30.png?v1)
 
 ### Serverless (Implement Web Apps)
 Following [Module 09a](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_09a-Implement_Web_Apps.html):
@@ -158,29 +158,29 @@ Following [Module 09a](https://microsoftlearning.github.io/AZ-104-MicrosoftAzure
 
 - Task 1: Create an Azure web app
 
-![](../images/Day34_Cloud31.png)
+![](../images/Day34_Cloud31.png?v1)
 
 - Task 2: Create a staging deployment slot
 
-![](../images/Day34_Cloud34.png)
+![](../images/Day34_Cloud34.png?v1)
 
 - Task 3: Configure web app deployment settings
 
-![](../images/Day34_Cloud33.png)
+![](../images/Day34_Cloud33.png?v1)
 
 - Task 4: Deploy code to the staging deployment slot
 
-![](../images/Day34_Cloud32.png)
+![](../images/Day34_Cloud32.png?v1)
 
 - Task 5: Swap the staging slots
 
-![](../images/Day34_Cloud35.png)
+![](../images/Day34_Cloud35.png?v1)
 
 - Task 6: Configure and test autoscaling of the Azure web app
 
 This script I am using can be found in (Cloud/05Serverless)
 
-![](../images/Day34_Cloud36.png)
+![](../images/Day34_Cloud36.png?v1)
 
 This wraps up the section on Microsoft Azure and the public cloud in general. I will say that I had lots of fun attacking and working through this scenarios. 
 

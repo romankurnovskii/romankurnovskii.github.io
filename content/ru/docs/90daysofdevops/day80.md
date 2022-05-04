@@ -34,7 +34,7 @@ On top of the above mentioned components you might also see Beats which are ligh
 
 - Kibana uses Elasticsearch DB to Explore, Visualize, and Share
 
-![](../images/Day80_Monitoring8.png)
+![](../images/Day80_Monitoring8.png?v1)
 
 [Picture taken from Guru99](https://www.guru99.com/elk-stack-tutorial.html)
 
@@ -46,33 +46,33 @@ For the hands-on scenario there are many places you can deploy the Elastic Stack
 
 [Start the Elastic Stack with Docker Compose](https://www.elastic.co/guide/en/elastic-stack-get-started/current/get-started-stack-docker.html#get-started-docker-tls)
 
-![](../images/Day80_Monitoring1.png)
+![](../images/Day80_Monitoring1.png?v1)
 
 You will find the original files and walkthrough that I used here [ deviantony/docker-elk](https://github.com/deviantony/docker-elk)
 
 Now we can run `docker-compose up -d`, the first time this has been ran will require the pulling of images. 
 
-![](../images/Day80_Monitoring2.png)
+![](../images/Day80_Monitoring2.png?v1)
 
 If you follow either this repository or the one that I used you will have either have the password of "changeme" or in my repository the password of "90DaysOfDevOps". The username is "elastic"
 
 After a few minutes we can navigate to http://localhost:5601/ which is our Kibana server / Docker container.
 
-![](../images/Day80_Monitoring3.png)
+![](../images/Day80_Monitoring3.png?v1)
 
 Your initial home screen is going to look something like this. 
 
-![](../images/Day80_Monitoring4.png)
+![](../images/Day80_Monitoring4.png?v1)
 
 Under the section titled "Get started by adding integrations" there is a "try sample data" click this and we can add one of the shown below. 
 
-![](../images/Day80_Monitoring5.png)
+![](../images/Day80_Monitoring5.png?v1)
 
 I am going to select "Sample web logs" but this is really to get a look and feel of what data sets you can get into the ELK stack. 
 
 When you have selected "Add Data" it takes a while to populate some of that data and then you have the "View Data" option and a list of the available ways to view that data in the drop down. 
 
-![](../images/Day80_Monitoring6.png)
+![](../images/Day80_Monitoring6.png?v1)
 
 As it states on the dashboard view: 
 
@@ -80,7 +80,7 @@ As it states on the dashboard view:
 
 *This dashboard contains sample data for you to play with. You can view it, search it, and interact with the visualizations. For more information about Kibana, check our docs.*
 
-![](../images/Day80_Monitoring7.png)
+![](../images/Day80_Monitoring7.png?v1)
 
 This is using Kibana to visualise data that has been added into ElasticSearch via Logstash. This is not the only option but I personally wanted to deploy and look at this. 
 

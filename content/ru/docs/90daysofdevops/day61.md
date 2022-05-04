@@ -95,23 +95,23 @@ resource "kubernetes_service" "test" {
 
 The first thing we have to do in our new project folder is run the `terraform init` command. 
 
-![](../images/Day61_IAC1.png)
+![](../images/Day61_IAC1.png?v1)
 
 And then before we run the `terraform apply` command, let me show you that we have no namespaces. 
 
-![](../images/Day61_IAC2.png)
+![](../images/Day61_IAC2.png?v1)
 
 When we run our apply command this is going to create those 3 new resources, namespace, deployment and service within our Kubernetes cluster. 
 
-![](../images/Day61_IAC3.png)
+![](../images/Day61_IAC3.png?v1)
 
 We can now take a look at the deployed resources within our cluster. 
 
-![](../images/Day61_IAC4.png)
+![](../images/Day61_IAC4.png?v1)
 
 Now because we are using minikube and you will have seen in the previous section this has its own limitations when we try and play with the docker networking for ingress. But if we simply issue the `kubectl port-forward -n nginx svc/nginx 30201:80` command and open a browser to http://localhost:30201/ we should see our NGINX page. 
 
-![](../images/Day61_IAC5.png)
+![](../images/Day61_IAC5.png?v1)
 
 If you want to try out more detailed demos with Terraform and Kubernetes then the [HashiCorp Learn site](https://learn.hashicorp.com/tutorials/terraform/kubernetes-provider) is fantastic to run through. 
 

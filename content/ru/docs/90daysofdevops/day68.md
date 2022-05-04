@@ -38,11 +38,11 @@ In our playbook file, in this case we are using [ansible-scenario5](Configmgmt/a
 ```
 We can then confirm this by using the `ansible-playbook playbook5.yml --list-tags` and the list tags is going to outline the tags we have defined in our playbook. 
 
-![](../images/Day68_config1.png)
+![](../images/Day68_config1.png?v1)
 
 Now if we wanted to target just the proxy we could do this by running `ansible-playbook playbook5.yml --tags proxy` and this will as you can see below only run the playbook against the proxy. 
 
-![](../images/Day68_config2.png)
+![](../images/Day68_config2.png?v1)
 
 tags can be added at the task level as well so we can get really granular on where and what you want to happen. It could be application focused tags, we could go through tasks for example and tag our tasks based on installation, configuration or removal. Another very useful tag you can use is 
 
@@ -63,11 +63,11 @@ There are two main types of variables within Ansible.
 
 Each time we have ran our playbooks, we have had a task that we have not defined called "Gathering facts" we can use these variables or facts to make things happen with our automation tasks. 
 
-![](../images/Day68_config3.png)
+![](../images/Day68_config3.png?v1)
 
 If we were to run the following `ansible proxy -m setup` command we should see a lot of output in JSON format. There is going to be a lot of information on your terminal though to really use this so we would like to output this to a file using `ansible proxy -m setup >> facts.json` you can see this file in this repository, [ansible-scenario5](Configmgmt/ansible-scenario5/facts.json)
 
-![](../images/Day68_config4.png)
+![](../images/Day68_config4.png?v1)
 
 If you open this file you can see all sorts of information for our command. We can get our IP addresses, architecture, bios version. A lot of useful information if we want to leverage this and use this in our playbooks. 
 
@@ -171,7 +171,7 @@ We can also define an ansible fact in our roles/apache2/templates/index.html.j2 
 ```
 The results of running the `ansible-playbook playbook6.yml` command with our variable changes means that when we hit our loadbalancer you can see that we hit either of the webservers we have in our group. 
 
-![](../images/Day68_config5.png)
+![](../images/Day68_config5.png?v1)
 
 We could also add a folder called host_vars and create a web01.yml and have a specific message or change what that looks like on a per host basis if we wish. 
 
@@ -314,11 +314,11 @@ Now we have our VM up and running and we have our configuration files in place, 
 
 I ran only against the database tag but I stumbled across an error. This error tells me that we do not have pip3 (Python) installed. We can fix this by adding this to our common tasks and install 
 
-![](../images/Day68_config6.png)
+![](../images/Day68_config6.png?v1)
 
 We fixed the above and ran the playbook again and we have a successful change. 
 
-![](../images/Day68_config7.png)
+![](../images/Day68_config7.png?v1)
 
 We should probably make sure that everything is how we want it to be on our newly configured db01 server. We can do this from our control node using the `ssh db01` command. 
 
@@ -326,11 +326,11 @@ To connect to mySQL I used `sudo /usr/bin/mysql -u root -p` and gave the vagrant
 
 When we have connected let's first make sure we have our user created called devops. `select user, host from mysql.user;`
 
-![](../images/Day68_config8.png)
+![](../images/Day68_config8.png?v1)
 
 Now we can issue the `SHOW DATABASES;` command  to see our new database that has also been created. 
 
-![](../images/Day68_config9.png)
+![](../images/Day68_config9.png?v1)
 
 I actually used root to connect but we could also now log in with our devops account in the same way using `sudo /usr/bin/mysql -u devops -p` but the password here is DevOps90. 
 

@@ -39,45 +39,45 @@ I am going to be using my already created GitHub account during this walkthrough
 
 When you first login to your GitHub account you get a page containing a lot of widgets giving you options of where and what you would like to see or do. First up we have the "All Activity" this is going to give you a look into what is happening with your repositories or activity in general associated to your organisation or account. 
 
-![](../images/Day40_Git1.png)
+![](../images/Day40_Git1.png?v1)
 
 Next we have our Code Repositories, either our own or repositories that we have interacted with recently. We can also quickly create new repositories or search repositories. 
 
-![](../images/Day40_Git2.png)
+![](../images/Day40_Git2.png?v1)
 
 We then have our recent activity, these for me are issues and pull requests that I have created or contributed to recently. 
 
-![](../images/Day40_Git3.png)
+![](../images/Day40_Git3.png?v1)
 
 Over on the right side of the page we have some referrals for repositories that we might be interested in, most likely based on your recent activity or own projects. 
 
-![](../images/Day40_Git4.png)
+![](../images/Day40_Git4.png?v1)
 
 To be honest I am very rarely on my home page that we just saw and described, although I now see that the feed could be really useful to help interacting with the community a little better on certain projects. 
 
 Next up if we want to head into our GitHub Profile we can navigate to the top right corner and on your image there is a drop down which allows you to navigate through your account. From here to access your Profile select "Your Profile" 
 
-![](../images/Day40_Git5.png)
+![](../images/Day40_Git5.png?v1)
 
 Next, your profile page will appear, by default unless you change your configuration you are not going to see what I have, I have added some functionality that shows my recent blog posts over on [vZilla](https://vzilla.co.uk) and then also my latest videos on my [YouTube](https://m.youtube.com/c/MichaelCade1) Channel. 
 
 Personally you are not going to be spending much time looking at your own profile, but this is a good profile page to share around your network so they can see the cool projects you are working on. 
 
-![](../images/Day40_Git6.png)
+![](../images/Day40_Git6.png?v1)
 
 We can then drill down into the building block of GitHub, the repositories. Here you are going to see your own repositories and if you have private repositories they are also going to be shown in this long list. 
 
-![](../images/Day40_Git7.png)
+![](../images/Day40_Git7.png?v1)
 
 As the repository is so important to GitHub let me choose a pretty busy one of late and run through some of the core functionality that we can use here on top of everything I am already using when it comes to editing our "code" in git on my local system. 
 
 First of all from the previous window I have selected the 90DaysOfDevOps repository and we get to see this view. You can see from this view we have a lot of information, we have our main code structure in the middle showing our files and folders that are stored in our repository. We have our readme.mdbeing displayed down at the bottom. Over to the right of the page we have an about section where the repository has a description and purpose. Then we have lot of information underneath this showing how many people have starred the project, forked, and watching. 
 
-![](../images/Day40_Git8.png)
+![](../images/Day40_Git8.png?v1)
 
 If we scroll down a little further you will also see that we have Releases, these are from the golang part of the challenge. We do not have any packages in our project, we have our contributers listed here. (Thank you community for assisting in my spelling and fact checking) We then have languages used again these are from different sections in the challenge.  
 
-![](../images/Day40_Git9.png)
+![](../images/Day40_Git9.png?v1)
 
 A the top of the page you are going to see a list of tabs. These may vary and these can be modified to only show the ones you require. You will see here that I am not using all of these and I should remove them to make sure my whole repository is tidy. 
 
@@ -87,43 +87,43 @@ Issues let you track your work on GitHub, where development happens. In this spe
 
 If this was a code repository then this is a great place to raise concerns or issues with the maintainers, but remember be mindful and detailed about what you are reporting, give as much detail as possible. 
 
-![](../images/Day40_Git10.png)
+![](../images/Day40_Git10.png?v1)
 
 The next tab is Pull Requests, Pull requests let you tell others about changes you've pushed to a branch in a repository. This is where someone may have forked your repository, made changes such as bug fixes or feature enhancements or just typos a lot of the case in this repository. 
 
 We will cover forking later on. 
 
-![](../images/Day40_Git11.png)
+![](../images/Day40_Git11.png?v1)
 
 I believe the next tab is quite new? But I thought for a project like #90DaysOfDevOps this could really help guide the content journey but also help the community as they walk through their own learning journey. I have created some discussion groups for each section of the challenge so people can jump in and discuss. 
 
-![](../images/Day40_Git12.png)
+![](../images/Day40_Git12.png?v1)
 
 The Actions tab is going to enable you to build, test and deploy code and a lot more right from within GitHub. GitHub Actions will be something we cover in the CI/CD section of the challenge but this is where we can set some configuration here to automate steps for us. 
 
 On my main GitHub Profile I am using GitHub Actions to fetch the latest blog posts and YouTube videos to keep things up to date on that home screen. 
 
-![](../images/Day40_Git13.png)
+![](../images/Day40_Git13.png?v1)
 
 I mentioned above about how GitHub is not just a source code repository but it is also a project management tool, The Project tab enables us to build out project tables kanban type boards so that we can link issues and PRs to better collaborate on the project and have a visibility of those tasks. 
 
-![](../images/Day40_Git14.png)
+![](../images/Day40_Git14.png?v1)
 
 I know that issues to me seems like a good place to log feature requests and they are but the wiki page allows for a comprehensive roadmap for the project to be outlined with the current status and in general better document your project be it troubleshooting or how-to type content. 
 
-![](../images/Day40_Git15.png)
+![](../images/Day40_Git15.png?v1)
 
 Not so applicable to this project but the Security tab is really there to make sure that contributers know how to deal with certain tasks, we can define a policy here but also code scanning add-ons to make sure your code for example does not contain secret environment variables. 
 
-![](../images/Day40_Git16.png)
+![](../images/Day40_Git16.png?v1)
 
 For me the insights tab is great, it provides so much information about the repository from how much activity has been going on down to commits and issues, but it also reports on traffic to the repository. You can see a list on the left side that allows you to go into great detail about metrics on the repository. 
 
-![](../images/Day40_Git17.png)
+![](../images/Day40_Git17.png?v1)
 
 Finally we have the Settings tab, this is where we can get into the details of how we run our repository, I am currently the only maintainer of the repository but we could share this responsibility here. We can define integrations and other such tasks here. 
 
-![](../images/Day40_Git18.png)
+![](../images/Day40_Git18.png?v1)
 
 This was a super quick overview of GitHub, I think there are some other areas that I might have mentioned that need explaining in a little more detail. As mentioned GitHub houses millions of repositories mostly these are holding source code and these can be public or privately accessible. 
 
@@ -133,11 +133,11 @@ I am going to get more into Open-Source in the session tomorrow but a big part o
 
 Let me head back to the opening page after login and see one of those suggested repositories. 
 
-![](../images/Day40_Git19.png)
+![](../images/Day40_Git19.png?v1)
 
 If we click on that repository we are going to get the same look as we have just walked through on the 90DaysOfDevOps repository. 
 
-![](../images/Day40_Git20.png)
+![](../images/Day40_Git20.png?v1)
 
 If we notice below we have 3 options, we have watch, fork and star. 
 
@@ -145,15 +145,15 @@ If we notice below we have 3 options, we have watch, fork and star.
 - Fork - copy of a repository.
 - Star - "I think your project is cool"
 
-![](../images/Day40_Git21.png)
+![](../images/Day40_Git21.png?v1)
 
 Given our scenario of wanting a copy of this repository to work on we are going to hit the fork option. If you are a member of multiple organisations then you will have to choose where the fork will take place, I am going to choose my profile. 
 
-![](../images/Day40_Git22.png)
+![](../images/Day40_Git22.png?v1)
 
 Now we have our own copy of the repository that we can freely work on and change as we see fit. This would be the start of the pull request process that we mentioned briefly before but we will cover in more detail tomorrow. 
 
-![](../images/Day40_Git23.png)
+![](../images/Day40_Git23.png?v1)
 
 Ok I hear you say, but how do I make changes to this repository and code if its on a website, well you can go through and edit on the website but its not going to be the same as using your favourite IDE on your local system with your favourite colour theme. In order for us to get a copy of this repository on our local machine we will perform a clone of the repository. This will allow us to work on things locally and then push our changes back into our forked copy of the repository. 
 
@@ -163,29 +163,29 @@ There is a local version available of GitHub Desktop which gives you a visual de
 
 For the purpose of this little demo I am going to use the HTTPS url we see on there. 
 
-![](../images/Day40_Git24.png)
+![](../images/Day40_Git24.png?v1)
 
 Now on our local machine, I am going to navigate to a directory I am happy to download this repository to and then run `git clone url` 
 
-![](../images/Day40_Git25.png)
+![](../images/Day40_Git25.png?v1)
 
 Now we could take to VScode to really make some changes to this. 
 
-![](../images/Day40_Git26.png)
+![](../images/Day40_Git26.png?v1)
 
 Let's now make some changes, I want to make a change to all those links and replace that with something else. 
 
-![](../images/Day40_Git27.png)
+![](../images/Day40_Git27.png?v1)
 
 Now if we check back on GitHub and we find our readme.mdin that repository, you should be able to see a few changes that I made to the file. 
 
-![](../images/Day40_Git28.png)
+![](../images/Day40_Git28.png?v1)
 
 At this stage this might be complete and we might be happy with our change as we are the only people going to use our new change but maybe it was a bug change and if that is the case then we will want to contribute via a Pull Request to notify the original repository maintainers of our change and see if they accept our changes. 
 
 We can do this by using the contribute button highlighted below. I will cover more on this tomorrow when we look into Open-Source workflows. 
 
-![](../images/Day40_Git29.png)
+![](../images/Day40_Git29.png?v1)
 
 I have spent a long time looking through GitHub and I hear some of you cry but what about other options! 
 

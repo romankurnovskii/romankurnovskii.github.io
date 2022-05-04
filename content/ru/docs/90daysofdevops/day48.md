@@ -41,15 +41,15 @@ Run a system update and upgrade with the `sudo apt-get update && sudo apt-get up
 
 We can now use a lot of the same commands we have been using for docker, note though that we do not have that nice docker desktop UI. You can see below I used `podman images` and I have nothing after install then I used `podman pull ubuntu` to pull down the ubuntu container image. 
 
-![](../images/Day48_Containers1.png)
+![](../images/Day48_Containers1.png?v1)
 
 We can then run our Ubuntu image using `podman run -dit ubuntu` and `podman ps` to see our running image. 
 
-![](../images/Day48_Containers2.png)
+![](../images/Day48_Containers2.png?v1)
 
 To then get into that container we can run `podman attach dazzling_darwin` your container name will most likely be different. 
 
-![](../images/Day48_Containers3.png)
+![](../images/Day48_Containers3.png?v1)
 
 If you are moving from docker to podman it is also common to change your config file to have `alias docker=podman` that way any command you run with docker will in fact use podman. 
 

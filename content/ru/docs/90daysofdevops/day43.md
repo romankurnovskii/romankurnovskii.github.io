@@ -52,7 +52,7 @@ A dockerfile is a text file that contains commands you would normally execute ma
 
 The [docker documenation](https://docs.docker.com/engine/install/) is amazing and if you are only just diving in then you should take a look and have a read through. We will be using Docker Desktop on Windows with WSL2. I had already ran through the installation on my machine we are using here. 
 
-![](../images/Day43_Containers1.png)
+![](../images/Day43_Containers1.png?v1)
 
 Take note before you go ahead and install at the system requirements, [Install Docker Desktop on Windows](https://docs.docker.com/desktop/windows/install/) if you are using macOS including the M1 based CPU architecture you can also take a look at [Install Docker Desktop on macOS](https://docs.docker.com/desktop/mac/install/)
 

@@ -56,30 +56,30 @@ output "IPAddr_2" {
 
 Now that we have our code defined we can now perform the `terraform init` on our folder to download the provider for virtualbox. 
 
-![](../images/Day59_IAC1.png)
+![](../images/Day59_IAC1.png?v1)
 
 
 Obviously you will also need to have virtualbox installed on your system as well. We can then next run `terraform plan` to see what our code will create for us. Followed by `terraform apply` the below image shows your completed process.
 
-![](../images/Day59_IAC2.png)
+![](../images/Day59_IAC2.png?v1)
 
 In Virtualbox you will now see your 2 virtual machines. 
 
-![](../images/Day59_IAC3.png)
+![](../images/Day59_IAC3.png?v1)
 
 ### Change configuration 
 
 Lets add another node to our deployment. We can simply change the count line to show our newly desired number of nodes. When we run our `terraform apply` it will look something like below. 
 
-![](../images/Day59_IAC4.png)
+![](../images/Day59_IAC4.png?v1)
 
 Once complete in virtualbox you can see we now have 3 nodes up and running. 
 
-![](../images/Day59_IAC5.png)
+![](../images/Day59_IAC5.png?v1)
 
 When we are finished we can clear this up using the `terraform destroy` and our machines will be removed. 
 
-![](../images/Day59_IAC6.png)
+![](../images/Day59_IAC6.png?v1)
 
 ### Variables & Outputs 
 

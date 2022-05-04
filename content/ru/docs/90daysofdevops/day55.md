@@ -106,7 +106,7 @@ This command uses the csi-hostpath-driver which is what gives us our storageclas
 
 The build out of the application looks like the below: 
 
-![](../images/Day55_Kubernetes1.png)
+![](../images/Day55_Kubernetes1.png?v1)
 
 You can find the YAML configuration file for this application here[pacman-stateful-demo.yaml](Days/Kubernetes/pacman-stateful-demo.yaml)
 
@@ -122,27 +122,27 @@ This command will remove the default annotation from the standard StorageClass.
 
 `kubectl patch storageclass standard -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'`
 
-![](../images/Day55_Kubernetes2.png)
+![](../images/Day55_Kubernetes2.png?v1)
 
 We start with no pacman namespace in our cluster. `kubectl get namespace`
 
-![](../images/Day55_Kubernetes3.png)
+![](../images/Day55_Kubernetes3.png?v1)
 
 We will then deploy our YAML file. `kubectl create -f pacman-stateful-demo.yaml` you can see from this command we are creating a number of objects within our Kubernetes cluster. 
 
-![](../images/Day55_Kubernetes4.png)
+![](../images/Day55_Kubernetes4.png?v1)
 
 We now have our newly created namespace. 
 
-![](../images/Day55_Kubernetes5.png)
+![](../images/Day55_Kubernetes5.png?v1)
 
 You can then see from the next image and command `kubectl get all -n pacman` that we have a number of things happening inside of our namespace. We have our pods running our NodeJS web front end, we have mongo running our backend database. There are services for both pacman and mongo to access those pods. We have a deployment for pacman and a statefulset for mongo. 
 
-![](../images/Day55_Kubernetes6.png)
+![](../images/Day55_Kubernetes6.png?v1)
 
 We also have our persistent volume and persistent volume claim by running `kubectl get pv` will give us our non namespaced persistent volumes and running `kubectl get pvc -n pacman` will give us our namespaced persistent volume claims. 
 
-![](../images/Day55_Kubernetes7.png)
+![](../images/Day55_Kubernetes7.png?v1)
 
 ### Playing the game | I mean accessing our mission critical application
 
@@ -150,23 +150,23 @@ Because we are using Minikube as mentioned in the stateless application we have 
 
 For this demo we are going to use the port forward method to access our application. By opening a new terminal and running the following  `kubectl port-forward svc/pacman 9090:80 -n pacman` command, opening a browser we will now have access to our application. If you are running this in AWS or specific locations then this will also report on the cloud and zone as well as the host which equals your pod within Kubernetes, again you can look back and see this pod name in our screenshots above. 
 
-![](../images/Day55_Kubernetes8.png)
+![](../images/Day55_Kubernetes8.png?v1)
 
 Now we can go and create a high score which will then be stored in our database. 
 
-![](../images/Day55_Kubernetes9.png)
+![](../images/Day55_Kubernetes9.png?v1)
 
 Ok, great we have a high score but what happens if we go and delete our `mongo-0` pod? by running `kubectl delete pod mongo-0 -n pacman` I can delete that and if you are still in the app you will see that high score not available at least for a few seconds. 
 
-![](../images/Day55_Kubernetes10.png)
+![](../images/Day55_Kubernetes10.png?v1)
 
 Now if I go back to my game I can create a new game and see my high scores. The only way you can truly believe me on this though is if you give it a try and share on social media your high scores! 
 
-![](../images/Day55_Kubernetes11.png)
+![](../images/Day55_Kubernetes11.png?v1)
 
 With the deployment we can scale this up using the commands that we covered in the previous session but in particular here, especially if you want to host a huge pacman party then you can scale this up using `kubectl scale deployment pacman --replicas=10 -n pacman`
 
-![](../images/Day55_Kubernetes12.png)
+![](../images/Day55_Kubernetes12.png?v1)
 
 
 ### Ingress explained 
@@ -193,21 +193,21 @@ On my particular running cluster called mc-demo I can run the following command 
 
 `minikube --profile='mc-demo' addons enable ingress`
 
-![](../images/Day55_Kubernetes13.png)
+![](../images/Day55_Kubernetes13.png?v1)
 
 If we check our namespaces now you will see that we have a new ingress-nginx namespace. `kubectl get ns`
 
-![](../images/Day55_Kubernetes14.png)
+![](../images/Day55_Kubernetes14.png?v1)
 
 Now we must create our ingress YAML configuration to hit our Pacman service I have added this file to the repository [pacman-ingress.yaml](Days/Kubernetes/pacman-ingress.yaml)
 
 We can then create this in our ingress namespace with `kubectl create -f pacman-ingress.yaml` 
 
-![](../images/Day55_Kubernetes15.png)
+![](../images/Day55_Kubernetes15.png?v1)
 
 Then if we run `kubectl get ingress -n pacman` 
 
-![](../images/Day55_Kubernetes16.png)
+![](../images/Day55_Kubernetes16.png?v1)
 
 I am then told because we are using minikube running on WSL2 in Windows we have to create the minikube tunnel using `minikube tunnel --profile=mc-demo` 
 

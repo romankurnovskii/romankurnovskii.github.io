@@ -28,15 +28,15 @@ I would also say that if you were starting and you were developing an applicatio
 
 We have many different choices then when it comes to downloading a given piece of software, there are a variety of different operating systems that we might be using. And specific instructions for what we need to do to install our applications. 
 
-![](../images/Day42_Containers1.png)
+![](../images/Day42_Containers1.png?v1)
 
 More and more recently I am finding that the applications we might have once needed a full server OS, A VM, Physical or cloud instance are now releasing container-based versions of their software. I find this interesting as this opens the world of containers and then Kubernetes to everyone and not just a focus on application developers. 
 
-![](../images/Day42_Containers2.png)
+![](../images/Day42_Containers2.png?v1)
 
 As you can probably tell as I have said before, I am not going to advocate that the answer is containers, what's the question! But I would like to discuss how this is another option for us to be aware of when we deploy our applications. 
 
-![](../images/Day42_Containers4.png)
+![](../images/Day42_Containers4.png?v1)
 
 We have had container technology for a long time, so why now over the last say 10 years has this become popular, I would say even more popular in the last 5. We have had containers for decades. It comes down to the challenge containers or should I say images as well, to how we distribute our software, because if we just have container technology, then we still will have many of the same problems we've had with software management. 
 
@@ -81,19 +81,19 @@ Ok, probably sounds great and exciting but we still need to understand what is a
 
 Another thing you might have seen a lot when we talk about Containers for software development is the analogy used alongside shipping containers, shipping containers are used to ship various goods across the seas using large vessels. 
 
-![](../images/Day42_Containers5.png)
+![](../images/Day42_Containers5.png?v1)
 
 What does this have to do with our topic of containers? Think about the code that software developers write, how can we ship that particular code from one machine to another machine?
 
 If we think about what we touched on before about software distribution, installation and operations but now we start to build this out into an environment visual. We have hardware and an operating system where you will run multiple applications. For example, nodejs has certain dependencies and needs certain libraries. If you then want to install MySQL then it needs its required libraries and dependencies. Each software application will have its library and dependency. We might be massively lucky and not have any conflicts between any of our applications where specific libraries and dependencies are clashing causing issues but the more applications the more chance or risk of conflicts. However, this is not about that one deployment when everything fixes your software applications are going to be updated and then we can also introduce these conflicts. 
 
-![](../images/Day42_Containers6.png)
+![](../images/Day42_Containers6.png?v1)
 
 Containers can help solve this problem. Containers help **build** your application, **ship** the application, **deploy** and **scale** these applications with ease independently. let's look at the architecture, you will have hardware and operating system then on top of it you will have a container engine like docker which we will cover later. The container engine software helps create containers that package the libraries and dependencies along with it so that you can move this container seamlessly from one machine to another machine without worrying about the libraries and dependencies since they come as a part of a package which is nothing but the container so you can have different containers this container can be moved across the systems without worrying about the underlying dependencies that the application
 needs to run because everything the application needs to run is packaged as
 a container that you can move. 
 
-![](../images/Day42_Containers7.png)
+![](../images/Day42_Containers7.png?v1)
 
 ### The advantages of these containers 
 

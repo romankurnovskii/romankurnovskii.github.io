@@ -17,11 +17,11 @@ Git is not the only version control system so here we want to cover what options
 
 The most obvious and a big benefit of Version Control is the ability to track a project's history. We can look back over this repository using `git log` and see that we have many commits and many comments and what has happened so far in the project. Don't worry we will get into the commands later. Now think if this was an actual software project full of source code and multiple people are committing to our software at different times, different authors and then reviewers all are logged here so that we know what has happened, when, by whom and who reviewed. 
 
-![](../images/Day35_Git1.png)
+![](../images/Day35_Git1.png?v1)
 
 Version Control before it was cool, would have been something like manually creating a copy of your version before you made changes. It might be that you also comment out old useless code with the just in case mentality. 
 
-![](../images/Day35_Git2.png)
+![](../images/Day35_Git2.png?v1)
 
 I have started using version control over not just source code but pretty much anything, talks about projects like this (90DaysOfDevOps) because why would you not want that rollback and log of everything that has gone on. 
 
@@ -33,11 +33,11 @@ The premium app is where we are going to have additional features, let's call th
 
 The way this is achieved in Version Control is through branching. 
 
-![](../images/Day35_Git3.png)
+![](../images/Day35_Git3.png?v1)
 
 Branching allows for two code streams for the same app as we stated above. But we will still want new features that land in our source code free version to be in our premium and to achieve this we have something called merging. 
 
-![](../images/Day35_Git4.png)
+![](../images/Day35_Git4.png?v1)
 
 Now, this same easy but merging can be complicated because you could have a team working on the free edition and you could have another team working on the premium paid for version and what if both change code that affects aspects of the overall code. Maybe a variable gets updated and breaks something. Then you have a conflict that breaks one of the features. Version Control cannot fix the conflicts that are down to you. But version control allows this to be easily managed. 
 
@@ -47,7 +47,7 @@ Without version control how did teams of software developers even handle this? I
 
 With version control, we have a single source of truth. We might all still work on different modules but it enables us to collaborate better. 
 
-![](../images/Day35_Git5.png)
+![](../images/Day35_Git5.png?v1)
 
 Another thing to mention here is that it's not just developers that can benefit from Version Control, it's all members of the team to have visibility but also tools all having awareness or leverage, Project Management tools can be linked here, tracking the work. We might also have a build machine for example Jenkins which we will talk about in another module. A tool that Builds and Packages the system, automating the deployment tests and metrics. 
 
@@ -61,59 +61,59 @@ Now we are going to run through a high-level overview before we even get Git ins
 
 Let's take the folder we created earlier. 
 
-![](../images/Day35_Git2.png)
+![](../images/Day35_Git2.png?v1)
 
 To use this folder with version control we first need to initiate this directory using the `git init command. For now, just think that this command puts our directory as a repository in a database somewhere on our computer. 
 
-![](../images/Day35_Git6.png)
+![](../images/Day35_Git6.png?v1)
 
 Now we can create some files and folders and our source code can begin or maybe it already has and we have something in here already. We can use the `git add .` command which puts all files and folders in our directory into a snapshot but we have not yet committed anything to that database. We are just saying all files with the `.` are ready to be added.   
 
-![](../images/Day35_Git7.png)
+![](../images/Day35_Git7.png?v1)
 
 Then we want to go ahead and commit our files, we do this with the `git commit -m "My First Commit"` command. We can give a reason for our commit and this is suggested so we know what has happened for each commit. 
 
-![](../images/Day35_Git8.png)
+![](../images/Day35_Git8.png?v1)
 
 We can now see what has happened within the history of the project. Using the `git log` command.
 
-![](../images/Day35_Git9.png)
+![](../images/Day35_Git9.png?v1)
 
 We can also check the status of our repository by using `git status` this shows we have nothing to commit and we can add a new file called samplecode.ps1. If we then run the same `git status you will see that we file to be committed. 
 
-![](../images/Day35_Git10.png)
+![](../images/Day35_Git10.png?v1)
 
 Add our new file using the `git add samplecode.ps1` command and then we can run `git status` again and see our file is ready to be committed. 
 
-![](../images/Day35_Git11.png)
+![](../images/Day35_Git11.png?v1)
 
 Then issue `git commit -m "My Second Commit"` command.
 
-![](../images/Day35_Git12.png)
+![](../images/Day35_Git12.png?v1)
 
 Another `git status` now shows everything is clean again.
 
-![](../images/Day35_Git13.png)
+![](../images/Day35_Git13.png?v1)
 
 We can then use the `git log` command which shows the latest changes and first commit. 
 
-![](../images/Day35_Git14.png)
+![](../images/Day35_Git14.png?v1)
 
 If we wanted to see the changes between our commits i.e what files have been added or modified we can use the `git diff b8f8 709a`
 
-![](../images/Day35_Git15.png)
+![](../images/Day35_Git15.png?v1)
 
 Which then displays what has changed in our case we added a new file. 
 
-![](../images/Day35_Git16.png)
+![](../images/Day35_Git16.png?v1)
 
 We can also and we will go deeper into this later on but we can jump around our commits i.e we can go time travelling! By using our commit number we can use the `git checkout 709a` command to jump back in time without losing our new file. 
 
-![](../images/Day35_Git17.png)
+![](../images/Day35_Git17.png?v1)
 
 But then equally we will want to move forward as well and we can do this the same way with the commit number or you can see here we are using the `git switch -` command to undo our operation. 
 
-![](../images/Day35_Git18.png)
+![](../images/Day35_Git18.png?v1)
 
 The TLDR; 
 

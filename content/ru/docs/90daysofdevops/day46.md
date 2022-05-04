@@ -26,7 +26,7 @@ As mentioned Docker Compose is a tool, If you are on macOS or Windows then compo
 
 To confirm we have `docker-compose` installed on our system we can open a terminal and simply type the above command. 
 
-![](../images/Day46_Containers1.png)
+![](../images/Day46_Containers1.png?v1)
 
 ### Docker-Compose.yml (YAML)
 
@@ -92,57 +92,57 @@ From the terminal we can simply run `docker-compose up -d` this will start the p
 
 The `-d` in this command means detached mode, which means that the Run command is or will be in the background.
 
-![](../images/Day46_Containers2.png)
+![](../images/Day46_Containers2.png?v1)
 
 If we now run the `docker ps` command, you can see we have 2 containers running, one being wordpress and the other being mySQL. 
 
-![](../images/Day46_Containers3.png)
+![](../images/Day46_Containers3.png?v1)
 
 Next we can validate that we have WordPress up and running by opening a browser and going to `http://localhost:8000` and you should see the wordpress set up page. 
 
-![](../images/Day46_Containers4.png)
+![](../images/Day46_Containers4.png?v1)
 
 We can run through the setup of WordPress, and then we can start building our website as we see fit in the console below. 
 
-![](../images/Day46_Containers5.png)
+![](../images/Day46_Containers5.png?v1)
 
 If we then open a new tab and navigate to that same address we did before `http://localhost:8000` we will now see a simple default theme with our site title "90DaysOfDevOps" and then a sample post. 
 
-![](../images/Day46_Containers6.png)
+![](../images/Day46_Containers6.png?v1)
 
 Before we make any changes, open Docker Desktop and navigate to the volumes tab and here you will see two volumes associated to our containers, one for wordpress and one for db. 
 
-![](../images/Day46_Containers7.png)
+![](../images/Day46_Containers7.png?v1)
 
 My Current theme for wordpress is "Twenty Twenty-Two" and I want to change this to "Twenty Twenty" Back in the dashboard we can make those changes. 
 
-![](../images/Day46_Containers8.png)
+![](../images/Day46_Containers8.png?v1)
 
 I am also going to add a new post to my site, and here below you see the latest version of our new site. 
 
-![](../images/Day46_Containers9.png)
+![](../images/Day46_Containers9.png?v1)
 
 ### Clean Up or not
 
 If we were now to use the command `docker-compose down` this would bring down our containers. But will leave our volumes in place. 
 
-![](../images/Day46_Containers10.png)
+![](../images/Day46_Containers10.png?v1)
 
 We can just confirm in Docker Desktop that our volumes are still there though. 
 
-![](../images/Day46_Containers11.png)
+![](../images/Day46_Containers11.png?v1)
 
 If we then want to bring things back up then we can issue the `docker up -d` command from within the same directory and we have our application back up and running. 
 
-![](../images/Day46_Containers12.png)
+![](../images/Day46_Containers12.png?v1)
 
 We then navigate in our browser to that same address of `http://localhost:8000` and notice that our new post and our theme change is all still in place. 
 
-![](../images/Day46_Containers13.png)
+![](../images/Day46_Containers13.png?v1)
 
 If we want to get rid of the containers and those volumes then issueing the `docker-compose down --volumes` will also destroy the volumes. 
 
-![](../images/Day46_Containers14.png)
+![](../images/Day46_Containers14.png?v1)
 
 Now when we use `docker-compose up -d` again we will be starting again, however the images will still be local on our system so you won't need to re pull them from the DockerHub repository. 
 
@@ -156,15 +156,15 @@ In the above repository there is a great example which will deploy an Elasticsea
 
 I have uploaded the files to the [Containers folder](/Days/Containers/elasticsearch-logstash-kibana/) When you have this folder locally, navigate there and you can simply use `docker-compose up -d` 
 
-![](../images/Day46_Containers15.png)
+![](../images/Day46_Containers15.png?v1)
 
 We can then check we have those running containers with `docker ps` 
 
-![](../images/Day46_Containers16.png)
+![](../images/Day46_Containers16.png?v1)
 
 Now we can open a browser for each of containers: 
 
-![](../images/Day46_Containers17.png)
+![](../images/Day46_Containers17.png?v1)
 
 To remove everything we can use the `docker-compose down` command. 
 

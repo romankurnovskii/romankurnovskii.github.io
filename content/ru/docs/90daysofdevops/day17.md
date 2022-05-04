@@ -20,11 +20,11 @@ There are lots of options out there but I think we should cover probably the two
 
 If you run `nano 90DaysOfDevOps.txt` we will create a new file with nothing in, from here we can add our text and we have our instructions below for what we want to do with that file. 
 
-![](../images/Day17_Linux1.png)
+![](../images/Day17_Linux1.png?v1)
 
 We can now use `control x + enter` and then run `ls` you can now see our new text file. 
 
-![](../images/Day17_Linux2.png)
+![](../images/Day17_Linux2.png?v1)
 
 We can now run `cat` against that file to read our file. We can then use that same `nano 90DaysOfDevOps.txt` to add additional text or modify your file. 
 
@@ -41,27 +41,27 @@ We can jump into vim with the `vim` command or if we want to edit our new txt fi
 
 The first question might be "How do I exit vim?" that is going to be `escape` and if we have not made any changes then it will be `:q`  
 
-![](../images/Day17_Linux3.png)
+![](../images/Day17_Linux3.png?v1)
 
 You start in `normal` mode, there are other modes `command, normal, visual, insert` , if we want to add the text we will need to switch from `normal` to `insert` we need to press `i` if you have added some text and would like to save these changes then you would hit escape and then `:wq` 
 
-![](../images/Day17_Linux4.png)
+![](../images/Day17_Linux4.png?v1)
 
-![](../images/Day17_Linux5.png)
+![](../images/Day17_Linux5.png?v1)
 
 You can confirm this with the `cat` command to check you have saved those changes. 
 
 There is some cool fast functionality with vim that allows you to do menial tasks very quickly if you know the shortcuts which is a lecture in itself. Let's say we have added a list of repeated words and we now need to change that, maybe it's a configuration file and we repeat a network name and now this has changed and we quickly want to change this. I am using the word day for this example. 
 
-![](../images/Day17_Linux6.png)
+![](../images/Day17_Linux6.png?v1)
 
 Now we want to replace that word with 90DaysOfDevOps, we can do this by hitting `esc` and typing `:%s/Day/90DaysOfDevOps`
 
-![](../images/Day17_Linux7.png)
+![](../images/Day17_Linux7.png?v1)
 
 The outcome when you hit enter is that the word day is then replaced with 90DaysOfDevOps. 
 
-![](../images/Day17_Linux8.png)
+![](../images/Day17_Linux8.png?v1)
 
 Copy and Paste was a big eye-opener for me. Copy is not copy it is yank. we can copy using `yy` on our keyboard in normal mode. `p` paste on the same line, `P` paste on a new line. 
 

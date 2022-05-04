@@ -23,7 +23,7 @@ An example of a Key-Value database is Redis.
 
 *Redis is an in-memory data structure store, used as a distributed, in-memory key–value database, cache and message broker, with optional durability. Redis supports different kinds of abstract data structures, such as strings, lists, maps, sets, sorted sets, HyperLogLogs, bitmaps, streams, and spatial indices.*
 
-![](../images/Day85_Data1.png)
+![](../images/Day85_Data1.png?v1)
 
 As you can see from the description of Redis this means that our database is fast but we are limited on space as a trade off. Also no queries or joins which means data modelling options are very limited. 
 
@@ -41,7 +41,7 @@ A wide-column database is a NoSQL database that organises data storage into flex
 
 *Cassandra is a free and open-source, distributed, wide-column store, NoSQL database management system designed to handle large amounts of data across many commodity servers, providing high availability with no single point of failure.*
 
-![](../images/Day85_Data2.png)
+![](../images/Day85_Data2.png?v1)
 
 No schema which means can handle unstructured data however this can be seen as a benefit to some workloads. 
 
@@ -56,7 +56,7 @@ A document database (also known as a document-oriented database or a document st
 
 *MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas. MongoDB is developed by MongoDB Inc. and licensed under the Server Side Public License.*
 
-![](../images/Day85_Data3.png)
+![](../images/Day85_Data3.png?v1)
 
 NoSQL document databases allow businesses to store simple data without using complex SQL codes. Quickly store with no compromise to reliability. 
 
@@ -76,7 +76,7 @@ A relational database is a digital database based on the relational model of dat
 
 MySQL is one example of a relational database there are lots of other options. 
 
-![](../images/Day85_Data4.png)
+![](../images/Day85_Data4.png?v1)
 
 Whilst researching relational databases the term or abbreviation **ACID** has been mentioned a lot, (atomicity, consistency, isolation, durability) is a set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps. In the context of databases, a sequence of database operations that satisfies the ACID properties (which can be perceived as a single logical operation on the data) is called a transaction. For example, a transfer of funds from one bank account to another, even involving multiple changes such as debiting one account and crediting another, is a single transaction. 
 

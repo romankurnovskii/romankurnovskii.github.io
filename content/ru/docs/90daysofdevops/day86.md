@@ -19,7 +19,7 @@ We have all done it, deleted something we shouldn't have and had that instant re
 
 With all of the technology and automation we have discussed during the challenge, the requirement to protect any stateful data or even complex stateless configuration is still there, regardless of platform. 
 
-![](../images/Day86_Data1.png)
+![](../images/Day86_Data1.png?v1)
 
 But we should be able to perform that protection of the data with automation in mind and being able to integrate into our workflows. 
 
@@ -35,13 +35,13 @@ Now seems a good time to talk about the 3-2-1 rule or backup methodology. I actu
 
 We have already mentioned before some of the extreme ends of why we need to protect our data but a few more are listed below: 
 
-![](../images/Day86_Data2.png)
+![](../images/Day86_Data2.png?v1)
 
 Which then allows me to talk about the 3-2-1 methodology. My first copy or backup of my data should be as close to my production system as possible, the reason for this is based on speed to recovery and again going back to that original point about accidental deletion this is going to be the most common reason for recovery. But I want to be storing that on a suitable second media outside of the original or production system. 
 
 We then want to make sure we also send a copy of our data external or offsite this is where a second location comes in be it another house, building, data centre or the public cloud. 
 
-![](../images/Day86_Data3.png)
+![](../images/Day86_Data3.png?v1)
 
 ### Backup Responsibility 
 
@@ -69,7 +69,7 @@ I want to now start building on a scenario to protect some data, specifically I 
 
 I want to backup this important data, it just so happens to be the repository for the 90DaysOfDevOps, which yes this is also being sent to GitHub which is probably where you are reading this now but what if my machine was to die and GitHub was down? How would anyone be able to read the content but also how would I potentially be able to restore that data to another service. 
 
-![](../images/Day86_Data5.png)
+![](../images/Day86_Data5.png?v1)
 
 There are lots of tools that can help us achieve this but I am going to be using a a tool called [Kopia](https://kopia.io/) an Open-Source backup tool which will enable us to encrypt, dedupe and compress our backups whilst being able to send them to many locations. 
 
@@ -83,45 +83,45 @@ I will be using `KopiaUI-Setup-0.10.6.exe`
 
 Really quick next next installation and then when you open the application you are greeted with the choice of selecting your storage type that you wish to use as your backup repository. 
 
-![](../images/Day86_Data6.png)
+![](../images/Day86_Data6.png?v1)
 
 ### Setting up a Repository 
 
 Firstly we would like to setup a repository using our local NAS device and we are going to do this using SMB, but we could also use NFS I believe. 
 
-![](../images/Day86_Data7.png)
+![](../images/Day86_Data7.png?v1)
 
 On the next screen we are going to define a password, this password is used to encrypt the repository contents. 
 
-![](../images/Day86_Data8.png)
+![](../images/Day86_Data8.png?v1)
 
 Now that we have the repository configured we can trigger an adhoc snapshot to start writing data to our it. 
 
-![](../images/Day86_Data9.png)
+![](../images/Day86_Data9.png?v1)
 
 First up we need to enter a path to what we want to snapshot and our case we want to take a copy of our `90DaysOfDevOps` folder. We will get back to the scheduling aspect shortly. 
 
-![](../images/Day86_Data10.png)
+![](../images/Day86_Data10.png?v1)
 
 We can define our snapshot retention. 
 
-![](../images/Day86_Data11.png)
+![](../images/Day86_Data11.png?v1)
 
 Maybe there are files or file types that we wish to exclude. 
 
-![](../images/Day86_Data12.png)
+![](../images/Day86_Data12.png?v1)
 
 If we wanted to define a schedule we could this on this next screen, when you first create this snapshot this is the opening page to define. 
 
-![](../images/Day86_Data13.png)
+![](../images/Day86_Data13.png?v1)
 
 And you will see a number of other settings that can be handled here. 
 
-![](../images/Day86_Data14.png)
+![](../images/Day86_Data14.png?v1)
 
 Select snapshot now and the data will be written to your repository. 
 
-![](../images/Day86_Data15.png)
+![](../images/Day86_Data15.png?v1)
 
 ### Offsite backup to S3 
 
@@ -129,25 +129,25 @@ With Kopia we can through the UI it seems only have one repository configured at
 
 The Object Storage I am choosing to send my data to is going to Google Cloud Storage. I firstly logged into my Google Cloud Platform account and created myself a storage bucket. I already had the Google Cloud SDK installed on my system but running the `gcloud auth application-default login` authenticated me with my account. 
 
-![](../images/Day86_Data16.png)
+![](../images/Day86_Data16.png?v1)
 
 I then used the CLI of Kopia to show me the current status of my repository after we added our SMB repository in the previous steps. I did this using the `"C:\Program Files\KopiaUI\resources\server\kopia.exe" --config-file=C:\Users\micha\AppData\Roaming\kopia\repository.config repository status` command. 
 
-![](../images/Day86_Data17.png)
+![](../images/Day86_Data17.png?v1)
 
 We are now ready to replace for the purpose of the demo the configuration for the repository, what we would probably do if we wanted a long term solution to hit both of these repositories is we would create an `smb.config` file and a `object.config` file and be able to run both of these commands to send our copies of data to each location. To add our repository we ran `"C:\Program Files\KopiaUI\resources\server\kopia.exe" --config-file=C:\Users\micha\AppData\Roaming\kopia\repository.config repository create gcs --bucket 90daysofdevops`
 
 The above command is taking into account that the Google Cloud Storage bucket we created is called `90daysofdevops`
 
-![](../images/Day86_Data18.png)
+![](../images/Day86_Data18.png?v1)
 
 Now that we have created our new repository we can then run the `"C:\Program Files\KopiaUI\resources\server\kopia.exe" --config-file=C:\Users\micha\AppData\Roaming\kopia\repository.config repository status` command again and will now show the GCS repository configuration. 
 
-![](../images/Day86_Data19.png)
+![](../images/Day86_Data19.png?v1)
 
 Next thing we need to do is create a snapshot and send that to our newly created repository. Using the `"C:\Program Files\KopiaUI\resources\server\kopia.exe" --config-file=C:\Users\micha\AppData\Roaming\kopia\repository.config kopia snapshot create "C:\Users\micha\demo\90DaysOfDevOps"` command we can kick off this process. You can see in the below browser that our Google Cloud Storage bucket now has kopia files based on our backup in place.  
 
-![](../images/Day86_Data20.png)
+![](../images/Day86_Data20.png?v1)
 
 With the above process we are able to settle our requirement of sending our important data to 2 different locations, 1 of which is offsite in Google Cloud Storage and of course we still have our production copy of our data on a different media type. 
 
@@ -157,11 +157,11 @@ Restore is another consideration and is very important, Kopia gives us the capab
 
 If we run the command `"C:\Program Files\KopiaUI\resources\server\kopia.exe" --config-file=C:\Users\micha\AppData\Roaming\kopia\repository.config snapshot list` this will list the snapshots that we have currently in our configured repository (GCS) 
 
-![](../images/Day86_Data21.png)
+![](../images/Day86_Data21.png?v1)
 
 We can then mount those snapshots directly from GCS using the `"C:\Program Files\KopiaUI\resources\server\kopia.exe" --config-file=C:\Users\micha\AppData\Roaming\kopia\repository.config mount all Z:` command.
 
-![](../images/Day86_Data22.png)
+![](../images/Day86_Data22.png?v1)
 
 We could also restore the snapshot contents using `kopia snapshot restore kdbd9dff738996cfe7bcf99b45314e193` 
 

@@ -23,7 +23,7 @@ Pull approach - If you are talking to thousands of microservices or systems and 
 
 Once again we see YAML for configuration for Prometheus. 
 
-![](../images/Day78_Monitoring7.png)
+![](../images/Day78_Monitoring7.png?v1)
 
 Later on you are going to see how this looks when deployed into Kubernetes, in particular we have the **PushGateway** which pulls our metrics from our jobs/exporters. 
 
@@ -51,19 +51,19 @@ We will be using our minikube cluster locally again for this quick and simple in
 
 `helm repo add prometheus-community https://prometheus-community.github.io/helm-charts` 
 
-![](../images/Day78_Monitoring1.png)
+![](../images/Day78_Monitoring1.png?v1)
 
 As you can see from the above we have also ran a helm repo update, we are now ready to deploy Prometheus into our minikube environment using the `helm install stable prometheus-community/prometheus` command. 
 
-![](../images/Day78_Monitoring2.png)
+![](../images/Day78_Monitoring2.png?v1)
 
 After a couple of minutes you will see a number of new pods appear, for this demo I have deployed into the default namespace, I would normally push this to its own namespace. 
 
-![](../images/Day78_Monitoring3.png)
+![](../images/Day78_Monitoring3.png?v1)
 
 Once all the pods are running we can also take a look at all the deployed aspects of Prometheus. 
 
-![](../images/Day78_Monitoring4.png)
+![](../images/Day78_Monitoring4.png?v1)
 
 Now for us to access the Prometheus Server UI we can use the following command to port forward. 
 
@@ -73,11 +73,11 @@ export POD_NAME=$(kubectl get pods --namespace default -l "app=prometheus,compon
 ```
 When we first open our browser to http://localhost:9090 we see the following very blank screen. 
 
-![](../images/Day78_Monitoring5.png)
+![](../images/Day78_Monitoring5.png?v1)
 
 Because we have deployed to our Kubernetes cluster we will automatically be picking up metrics from our Kubernetes API so we can use some PromQL to at least make sure we are capturing metrics `container_cpu_usage_seconds_total`
 
-![](../images/Day78_Monitoring6.png)
+![](../images/Day78_Monitoring6.png?v1)
 
 Short on learning PromQL and putting that into practice this is very much like I mentioned previously in that gaining metrics is great, so is monitoring but you have to know what you are monitoring and why and what you are not monitoring and why! 
 

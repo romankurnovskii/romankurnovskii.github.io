@@ -44,7 +44,7 @@ We also have Virtual Network Peering. This enables virtual networks across tenan
 - Network security groups applied to subnets or VMs. 
 - When applied to a subnet it is still enforced at the Virtual Machine NIC it is not an "Edge" device. 
 
-![](../images/Day33_Cloud1.png)
+![](../images/Day33_Cloud1.png?v1)
 
 - Rules are combined in a Network Security Group. 
 - Based on the priority, flexible configurations are possible. 
@@ -89,11 +89,11 @@ We have spent most of our theory time walking through the Azure Portal, I would 
 
 The Microsoft Azure Portal is a web-based console, that provides an alternative to command-line tools. You can manage your subscriptions within the Azure Portal. Build, Manage, Monitor everything from a simple web app to complex cloud deployments. Another thing you will find within the portal are these breadcrumbs, JSON as mentioned before is the underpinning of all Azure Resources, It might be that you start in the Portal to understand the features, services and functionality but then later understand the JSON underneath to incorporate into your automated workflows. 
 
-![](../images/Day33_Cloud2.png)
+![](../images/Day33_Cloud2.png?v1)
 
 There is also the Azure Preview portal, this can be used to view and test new and upcoming services and enhancements. 
 
-![](../images/Day33_Cloud3.png)
+![](../images/Day33_Cloud3.png?v1)
 
 ### PowerShell 
 
@@ -103,11 +103,11 @@ Azure PowerShell is a set of cmdlets for managing Azure resources directly from 
 
 We can see from below that you can connect to your subscription using the PowerShell command `Connect-AzAccount` 
 
-![](../images/Day33_Cloud4.png)
+![](../images/Day33_Cloud4.png?v1)
 
 Then if we wanted to find some specific commands associated with Azure VMs we can run the following command. You could spend hours learning and understanding more about this PowerShell programming language. 
 
-![](../images/Day33_Cloud5.png)
+![](../images/Day33_Cloud5.png?v1)
 
 There are some great quickstarts from Microsoft on getting started and provisioning services from PowerShell [here](https://docs.microsoft.com/en-us/powershell/azure/get-started-azureps?view=azps-7.1.0)
 
@@ -119,23 +119,23 @@ Visual Studio Code is a free source-code editor made by Microsoft for Windows, L
 
 You will see from below that there are lots of integrations and tools built into Visual Studio Code that you can use to interact with Microsoft Azure and the services within. 
 
-![](../images/Day33_Cloud6.png)
+![](../images/Day33_Cloud6.png?v1)
 
 ### Cloud Shell 
 
 Azure Cloud Shell is an interactive, authenticated, browser-accessible shell for managing Azure resources. It provides the flexibility of choosing the shell experience that best suits the way you work. 
 
-![](../images/Day33_Cloud7.png)
+![](../images/Day33_Cloud7.png?v1)
 
 You can see from the below when we first launch Cloud Shell within the portal we can choose between Bash and PowerShell. 
 
-![](../images/Day33_Cloud8.png)
+![](../images/Day33_Cloud8.png?v1)
 
 To use the cloud shell you will have to provide a bit of storage in your subscription. 
 
 When you select to use the cloud shell it is spinning up a machine, these machines are temporary but your files are persisted in two ways; through a disk image and a mounted file share. 
 
-![](../images/Day33_Cloud9.png)
+![](../images/Day33_Cloud9.png?v1)
 
   - Cloud Shell runs on a temporary host provided on a per-session, per-user basis
   - Cloud Shell times out after 20 minutes without interactive activity
@@ -161,7 +161,7 @@ For example, creating a virtual machine from PowerShell would use the `New-AzVM`
 
 You saw previously that I have the Azure PowerShell module installed on my system but then I also have the Azure CLI installed that can be called through PowerShell on my Windows machine. 
 
-![](../images/Day33_Cloud10.png)
+![](../images/Day33_Cloud10.png?v1)
 
 The takeaway here as we already mentioned is about choosing the right tool. Azure runs on automation. Every action you take inside the portal translates somewhere to code being executed to read, create, modify, or delete resources.
 

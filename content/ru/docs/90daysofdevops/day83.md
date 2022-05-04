@@ -35,39 +35,39 @@ With that visualisation we can create custom charts, graphs and alerts for our e
 
 We are going to start by cloning this down to our local system. Using `git clone https://github.com/prometheus-operator/kube-prometheus.git` and `cd kube-prometheus`
 
-![](../images/Day83_Monitoring1.png)
+![](../images/Day83_Monitoring1.png?v1)
 
 First job is to create our namespace within our minikube cluster `kubectl create -f manifests/setup` if you have not been following along in previous sections we can use `minikube start` to bring up a new cluster here. 
 
-![](../images/Day83_Monitoring2.png)
+![](../images/Day83_Monitoring2.png?v1)
 
 Next we are going to deploy everything we need for our demo using the `kubectl create -f manifests/` command, as you can see this is going to deploy a lot of different resources within our cluster. 
 
-![](../images/Day83_Monitoring3.png)
+![](../images/Day83_Monitoring3.png?v1)
 
 We then need to wait for our pods to come up and being in the running state we can use the `kubectl get pods -n monitoring -w` command to keep an eye on the pods. 
 
-![](../images/Day83_Monitoring4.png)
+![](../images/Day83_Monitoring4.png?v1)
 
 When everything is running we can check all pods are in a running and healthy state using the `kubectl get pods -n monitoring` command. 
 
-![](../images/Day83_Monitoring5.png)
+![](../images/Day83_Monitoring5.png?v1)
 
 With the deployment, we deployed  a number of services that we are going to be using later on in the demo you can check these by using the `kubectl get svc -n monitoring` command. 
 
-![](../images/Day83_Monitoring6.png)
+![](../images/Day83_Monitoring6.png?v1)
 
 And finally lets check on all resources deployed in our new monitoring namespace using the `kubectl get all -n monitoring` command. 
 
-![](../images/Day83_Monitoring7.png)
+![](../images/Day83_Monitoring7.png?v1)
 
 Opening a new terminal we are now ready to access our Grafana tool and start gathering and visualising some of our metrics, the command to use is`kubectl --namespace monitoring port-forward svc/grafana 3000`
 
-![](../images/Day83_Monitoring8.png)
+![](../images/Day83_Monitoring8.png?v1)
 
 Open a browser and navigate to http://localhost:3000 you will be prompted for a username and password. 
 
-![](../images/Day83_Monitoring9.png)
+![](../images/Day83_Monitoring9.png?v1)
 The default username and password to access is 
 ```
 Username: admin 
@@ -75,51 +75,51 @@ Password: admin
 ```
 However you will be asked to provide a new password at first login. The initial screen or home page you will see will give you some areas to explore as well as some useful resources to get up to speed with Grafana and its capabilities. Notice the "Add your first data source" and "create your first dashboard" widgets we will be using them later. 
 
-![](../images/Day83_Monitoring10.png)
+![](../images/Day83_Monitoring10.png?v1)
 
 You will find that there is already a prometheus data source already added to our Grafana data sources, however because we are using minikube we need to also port forward prometheus so that this is available on our localhost, opening a new terminal we can run the following command. `kubectl --namespace monitoring port-forward svc/prometheus-k8s 9090` if on the home page of Grafana we now enter into the widget "Add your first data source" and from here we are going to select Prometheus. 
 
-![](../images/Day83_Monitoring11.png)
+![](../images/Day83_Monitoring11.png?v1)
 
 For our new data source we can use the address http://localhost:9090 and we will also need to change the dropdown to browser as highlighted below.
 
-![](../images/Day83_Monitoring12.png)
+![](../images/Day83_Monitoring12.png?v1)
 
 At the bottom of the page, we can now hit save and test. This should give us the outcome you see below if the port forward for prometheus is working. 
 
-![](../images/Day83_Monitoring13.png)
+![](../images/Day83_Monitoring13.png?v1)
 
 Head back to the home page and find the option to "Create your first dashboard" select "Add a new panel"
 
-![](../images/Day83_Monitoring14.png)
+![](../images/Day83_Monitoring14.png?v1)
 
 You will see from below that we are already gathering from our Grafana data source, but we would like to gather metrics from our Prometheus data source, select the data source drop down and select our newly created "Prometheus-1" 
 
-![](../images/Day83_Monitoring15.png)
+![](../images/Day83_Monitoring15.png?v1)
 
 If you then select the Metrics browser you will have a long list of metrics being gathered from Prometheus related to our minikube cluster. 
 
-![](../images/Day83_Monitoring16.png)
+![](../images/Day83_Monitoring16.png?v1)
 
 For the purpose of the demo I am going to find a metric that gives us some output around our system resources, `cluster:node_cpu:ratio{}` gives us some detail on the nodes in our cluster and proves that this integration is working. 
 
-![](../images/Day83_Monitoring17.png)
+![](../images/Day83_Monitoring17.png?v1)
 
 Once you are happy with this as your visualisation then you can hit the apply button in the top right and you will then add this graph to your dashboard. Obviously you can go ahead and add additional graphs and other charts to give you the visual that you need. 
 
-![](../images/Day83_Monitoring18.png)
+![](../images/Day83_Monitoring18.png?v1)
 
 We can however take advantage of thousands of previously created dashboards that we can use so that we do not need to reinvent the wheel. 
 
-![](../images/Day83_Monitoring19.png)
+![](../images/Day83_Monitoring19.png?v1)
 
 If we do a search for Kubernetes we will see a long list of pre built dashboards that we can choose from. 
 
-![](../images/Day83_Monitoring20.png)
+![](../images/Day83_Monitoring20.png?v1)
 
 We have chosen the Kubernetes API Server dashboard and changed the data source to suit our newly added Prometheus-1 data source and we get to see some of the metrics displayed as per below. 
 
-![](../images/Day83_Monitoring21.png)
+![](../images/Day83_Monitoring21.png?v1)
 
 ### Alerting
 

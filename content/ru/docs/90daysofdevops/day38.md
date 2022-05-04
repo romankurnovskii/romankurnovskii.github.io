@@ -13,11 +13,11 @@ We have already covered some of the basics but putting things into a walkthrough
 
 We are going to take the project folder we created at the start of the git session and we are going to walk through some of the simple steps we can do with git. We created a folder on our local machine and we initialised it with the `git init` command 
 
-![](../images/Day38_Git1.png)
+![](../images/Day38_Git1.png?v1)
 
 We can also see now that we have initialised the folder we have a hidden folder in our directory. 
 
-![](../images/Day38_Git2.png)
+![](../images/Day38_Git2.png?v1)
 
 This is where the details of the git repository are stored as well as the information regarding our branches and commits. 
 
@@ -25,15 +25,15 @@ This is where the details of the git repository are stored as well as the inform
 
 We then start working on our empty folder and maybe we add some source code as a first days work. We create our readme.mdfile and we can see that file in the directory, next we check our `git status` and it knows about the new readme.mdfile but we have not committed the file yet. 
 
-![](../images/Day38_Git3.png)
+![](../images/Day38_Git3.png?v1)
 
 We can stage our readme.mdfile with the `git add README.md` command then we can see changes to be committed which we did not have before and a green new file.
 
-![](../images/Day38_Git4.png)
+![](../images/Day38_Git4.png?v1)
 
 Next up we want to commit this, our first commit or our first snapshot of our project. We can do this by using the `git commit -m "Meaningful message"` command so that we can easily see what has changed for each commit. Also, notice the yellow cross changes now to a green tick. This is something I have within my terminal with the theme I use, something we covered in the Linux section. 
 
-![](../images/Day38_Git5.png)
+![](../images/Day38_Git5.png?v1)
 
 ### Committing Changes
 
@@ -43,11 +43,11 @@ We could repeat our process from before, create or edit our file > `git add .` t
 
 If we run `git commit` after running `git add` it will open our default text editor which in my case here is nano. Here are the steps I took to add some changes to the file, ran `git status` to show what is and what is not staged. Then I used `git add` to add the file to the staging area, then ran `git commit` which opened nano.
 
-![](../images/Day38_Git6.png)
+![](../images/Day38_Git6.png?v1)
 
 When nano opens you can then add your short and long description and then save the file. 
 
-![](../images/Day38_Git7.png)
+![](../images/Day38_Git7.png?v1)
 
 ### Committing Best Practices
 
@@ -63,7 +63,7 @@ Do we always have to stage our changes before committing them?
 
 The answer is yes but don't see this as a shortcut, you have to be sure 100% that you are not needing that snapshot to roll back to, it is a risky thing to do. 
 
-![](../images/Day38_Git8.png)
+![](../images/Day38_Git8.png?v1)
 
 ### Removing Files
 
@@ -71,21 +71,21 @@ What about removing files from our project, maybe we have another file in our di
 
 Just because we remove the file from the directory, git is still aware of this file and we also need to remove it from the repository. You can see the workflow for this below. 
 
-![](../images/Day38_Git9.png)
+![](../images/Day38_Git9.png?v1)
 
 That could be a bit of a pain to either remember or have to deal with if you have a large project which has many moving files and folders. We can do this with one command with `git rm oldcode.ps1` 
 
-![](../images/Day38_Git10.png)
+![](../images/Day38_Git10.png?v1)
 
 ### Renaming or Moving Files
 
 Within our operating system, we can rename and move our files. We will no doubt need to do this from time to time with our projects. Similar to removing though there is a two-step process, we change our files on our OS and then we have to modify and make sure that the staging area or that the files are added correctly. Steps as follows: 
 
-![](../images/Day38_Git11.png)
+![](../images/Day38_Git11.png?v1)
 
 However, like removing files from the operating system and then the git repository we can perform this rename using a git command too. 
 
-![](../images/Day38_Git12.png)
+![](../images/Day38_Git12.png?v1)
 
 ### Ignoring Files
 
@@ -93,15 +93,15 @@ We may have the requirement to ignore files or folders within our project that w
 
 We can ignore files by adding folders or files to the `.gitignore` file in our project directory. 
 
-![](../images/Day38_Git13.png)
+![](../images/Day38_Git13.png?v1)
 
 You can then open the `.gitignore` file and see that we have the logs/ directory present. But we could also add additional files and folders here to ignore. 
 
-![](../images/Day38_Git14.png)
+![](../images/Day38_Git14.png?v1)
 
 We can then see `git status` and then see what has happened. 
 
-![](../images/Day38_Git15.png)
+![](../images/Day38_Git15.png?v1)
 
 There are also ways in which you might need to go back and ignore files and folders, maybe you did want to share the logs folder but then later realised that you didn't want to. You will have to use `git rm --cached ` to remove files and folders from the staging area if you have a previously tracked folder that you now want to ignore. 
 
@@ -109,7 +109,7 @@ There are also ways in which you might need to go back and ignore files and fold
 
 We have been using `git status` a lot to understand what we have in our staging area and what we do not, it's a very comprehensive command with lots of detail. Most of the time you will just want to know what has been modified or what is new? We can use `git status -s` for a short status of this detail. I would usually set an alias on my system to just use `git status -s` vs the more detailed command. 
 
-![](../images/Day38_Git16.png)
+![](../images/Day38_Git16.png?v1)
 
 In the post tomorrow we will continue to look through these short examples of these common git commands. 
 

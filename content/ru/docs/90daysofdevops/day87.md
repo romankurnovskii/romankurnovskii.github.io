@@ -34,7 +34,7 @@ kubectl patch storageclass csi-hostpath-sc -p '{"metadata": {"annotations":{"sto
 kubectl patch storageclass standard -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
 ```
 
-![](../images/Day87_Data1.png)
+![](../images/Day87_Data1.png?v1)
 
 ### Deploy Kasten K10 
 
@@ -48,13 +48,13 @@ Create the namespace and deploy K10, note that this will take around 5 mins
 
 `helm install k10 kasten/k10 --namespace=kasten-io --set auth.tokenAuth.enabled=true --set injectKanisterSidecar.enabled=true --set-string injectKanisterSidecar.namespaceSelector.matchLabels.k10/injectKanisterSidecar=true --create-namespace`
 
-![](../images/Day87_Data1.png)
+![](../images/Day87_Data1.png?v1)
 
 You can watch the pods come up by running the following command.
 
 `kubectl get pods -n kasten-io -w`
 
-![](../images/Day87_Data3.png)
+![](../images/Day87_Data3.png?v1)
 
 Port forward to access the K10 dashboard, open a new terminal to run the below command
 
@@ -62,7 +62,7 @@ Port forward to access the K10 dashboard, open a new terminal to run the below c
 
 The Kasten dashboard will be available at: `http://127.0.0.1:8080/k10/#/`
 
-![](../images/Day87_Data4.png)
+![](../images/Day87_Data4.png?v1)
 
 To authenticate with the dashboard we now need the token which we can get with the following commands. 
 
@@ -74,39 +74,39 @@ echo "Token value: "
 echo $TOKEN
 ```
 
-![](../images/Day87_Data5.png)
+![](../images/Day87_Data5.png?v1)
 
 Now we take this token and we input that into our browser, you will then be prompted for an email and company name. 
 
-![](../images/Day87_Data6.png)
+![](../images/Day87_Data6.png?v1)
 
 Then we get access to the Kasten K10 dashboard. 
 
-![](../images/Day87_Data7.png)
+![](../images/Day87_Data7.png?v1)
 
 ### Deploy our stateful application 
 
 Use the stateful application that we used in the Kubernetes section. 
 
-![](../images/Day55_Kubernetes1.png)
+![](../images/Day55_Kubernetes1.png?v1)
 
 You can find the YAML configuration file for this application here[pacman-stateful-demo.yaml](Days/Kubernetes/pacman-stateful-demo.yaml)
 
-![](../images/Day87_Data8.png)
+![](../images/Day87_Data8.png?v1)
 
 We can use `kubectl get all -n pacman` to check on our pods coming up. 
 
-![](../images/Day87_Data9.png)
+![](../images/Day87_Data9.png?v1)
 
 In a new terminal we can then port forward the pacman front end. `kubectl port-forward svc/pacman 9090:80 -n pacman`
 
 Open another tab on your browser to http://localhost:9090/ 
 
-![](../images/Day87_Data10.png)
+![](../images/Day87_Data10.png?v1)
 
 Take the time to clock up some high scores in the backend MongoDB database. 
 
-![](../images/Day87_Data11.png)
+![](../images/Day87_Data11.png?v1)
 
 ### Protect our High Scores 
 
@@ -114,11 +114,11 @@ Now we have some mission critical data in our database and we do not want to los
 
 If we head back into the Kasten K10 dashboard tab you will see that our number of application has now increased from 1 to 2 with the addition of our pacman application to our Kubernetes cluster. 
 
-![](../images/Day87_Data12.png)
+![](../images/Day87_Data12.png?v1)
 
 If you click on the Applications card you will see the automatically discovered applications in our cluster. 
 
-![](../images/Day87_Data13.png)
+![](../images/Day87_Data13.png?v1)
 
 With Kasten K10 we have the ability to leverage storage based snapshots as well export our copies out to object storage options. 
 
@@ -126,15 +126,15 @@ For the purpose of the demo, we will create a manual storage snapshot in our clu
 
 Firstly we can use the manual snapshot option below. 
 
-![](../images/Day87_Data14.png)
+![](../images/Day87_Data14.png?v1)
 
 For the demo I am going to leave everything as the default 
 
-![](../images/Day87_Data15.png)
+![](../images/Day87_Data15.png?v1)
 
 Back on the dashboard you get a status report on the job as it is running and then when complete it should look as successful as this one. 
 
-![](../images/Day87_Data16.png)
+![](../images/Day87_Data16.png?v1)
 
 ### Failure Scenario 
 
@@ -142,7 +142,7 @@ We can now make that fatal change to our mission critical data by simply adding 
 
 As you can see below we have two inputs that we probably dont want in our production mission critical database.
 
-![](../images/Day87_Data17.png)
+![](../images/Day87_Data17.png?v1)
 
 ### Restore the data
 
@@ -152,27 +152,27 @@ Now we want to get that high score list looking a little cleaner and how we had 
 
 Back in the Applications card and on the pacman tab we now have 1 restore point we can use to restore from. 
 
-![](../images/Day87_Data18.png)
+![](../images/Day87_Data18.png?v1)
 
 When you select restore you can see all the associated snapshots and exports to that application. 
 
-![](../images/Day87_Data19.png)
+![](../images/Day87_Data19.png?v1)
 
 Select that restore and a side window will appear, we will keep the default settings and hit restore. 
 
-![](../images/Day87_Data20.png)
+![](../images/Day87_Data20.png?v1)
 
 Confirm that you really want to make this happen. 
 
-![](../images/Day87_Data21.png)
+![](../images/Day87_Data21.png?v1)
 
 You can then go back to the dashboard and see the progress of the restore. You should see something like this. 
 
-![](../images/Day87_Data22.png)
+![](../images/Day87_Data22.png?v1)
 
 But more importantly how is our High-Score list looking in our mission critical application. You will have to start the port forward again to pacman as we previously covered. 
 
-![](../images/Day87_Data23.png)
+![](../images/Day87_Data23.png?v1)
 
 A super simple demo and only really touching the surface of what Kasten K10 can really achieve when it comes to backup. I will be creating some more in depth video content on some of these areas in the future. We will also be using Kasten K10 to highlight some of the other prominent areas around Data Management when it comes to Disaster Recovery and the mobility of your data. 
 

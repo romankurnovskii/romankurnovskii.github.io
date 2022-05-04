@@ -13,7 +13,7 @@ In our last section we started with creating our small lab using a Vagrantfile t
 
 We also ran through a few scenarios of playbooks and at the end we had a playbook that made our web01 and web02 individual webservers. 
 
-![](../images/Day66_config1.png)
+![](../images/Day66_config1.png?v1)
 
 ### Keeping things tidy
 
@@ -57,11 +57,11 @@ then within our playbook now named `playbook2.yml` we point to these files. All 
 
 You can test this on your control machine. If you have copied the files from the repository you should have noticed something changed in the "write a basic index.html file"
 
-![](../images/Day66_config2.png)
+![](../images/Day66_config2.png?v1)
 
 Let's find out what simple change I made. Using `curl web01:8000` 
 
-![](../images/Day66_config3.png)
+![](../images/Day66_config3.png?v1)
 
 We have just tidied up our playbook and started to separate areas that could make a playbook very overwhelming at scale.
 
@@ -71,15 +71,15 @@ At the moment we have deployed 4 VMs and we have configured 2 of these VMs as ou
 
 To do this we will use the `ansible-galaxy` command which is there to manage ansible roles in shared repositories. 
 
-![](../images/Day66_config4.png)
+![](../images/Day66_config4.png?v1)
 
 We are going to use `ansible-galaxy` to create a role for apache2 which is where we are going to put our specifics for our webservers. 
 
-![](../images/Day66_config5.png)
+![](../images/Day66_config5.png?v1)
 
 The above command `ansible-galaxy init roles/apache2` will create the folder structure that we have shown above. Our next step is we need to move our existing tasks and templates to the relevant folders in the new structure. 
 
-![](../images/Day66_config6.png)
+![](../images/Day66_config6.png?v1)
 
 Copy and paste is easy to move those files but we also need to make a change to the tasks/main.yml so that we point this to the apache2_install.yml. 
 
@@ -96,15 +96,15 @@ We also need to change our playbook now to refer to our new role. In the playboo
     - apache2
 ```
 
-![](../images/Day66_config7.png)
+![](../images/Day66_config7.png?v1)
 
 We can now run our playbook again this time with the new playbook name `ansible-playbook playbook3.yml` you will notice the depreciation, we can fix that next.  
 
-![](../images/Day66_config8.png)
+![](../images/Day66_config8.png?v1)
 
 Ok, the depreciation although our playbook ran we should fix our ways now, in order to do that I have changed the include option in the tasks/main.yml to now be import_tasks as per below. 
 
-![](../images/Day66_config9.png)
+![](../images/Day66_config9.png?v1)
 
 You can find these files in the [ansible-scenario3](Days/Configmgmt/ansible-scenario3)
 
@@ -113,7 +113,7 @@ We are also going to create a few more roles whilst using `ansible-galaxy` we ar
 - common = for all of our servers (`ansible-galaxy init roles/common`)
 - nginx = for our loadbalancer (`ansible-galaxy init roles/nginx`)
 
-![](../images/Day66_config10.png)
+![](../images/Day66_config10.png?v1)
 
 I am going to leave this one here and in the next session we will start working on those other nodes we have deployed but have not done anything with yet. 
 

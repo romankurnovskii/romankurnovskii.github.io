@@ -36,24 +36,24 @@ Let's forget the DevOps side of things to begin with here and we now need to loo
 
 **Host** are any devices which sends or recieve traffic. 
 
-![](../images/Day21_Networking1.png)
+![](../images/Day21_Networking1.png?v1)
 
 **IP Address** the identity of each host. 
 
-![](../images/Day21_Networking2.png)
+![](../images/Day21_Networking2.png?v1)
 
 **Network** is what transports traffic between hosts. If we did not have networks there would be a lot of manual movement of data! 
 
 A logical group of hosts which require similar connectivity. 
 
-![](../images/Day21_Networking3.png)
+![](../images/Day21_Networking3.png?v1)
 
 **Switches** facilitate communication ***within*** a network. A switch forwards data packets between hosts. A switch sends packets directly to hosts. 
 
 - Network: A Grouping of hosts which require similar connectivity. 
 - Hosts on a Network share the same IP address space. 
 
-![](../images/Day21_Networking4.png)
+![](../images/Day21_Networking4.png?v1)
 
 **Router** facilitate communication between networks. If we said before that a switch looks after communication within a network a router allows us to join these networks together or at least give them access to each other if permitted. 
 
@@ -65,7 +65,7 @@ A router has an IP address in the networks they are attached to. This IP is also
 
 Routers also create the hierarchy in networks I mentioned earlier. 
 
-![](../images/Day21_Networking5.png)
+![](../images/Day21_Networking5.png?v1)
 
 ## Switches vs Routers 
 

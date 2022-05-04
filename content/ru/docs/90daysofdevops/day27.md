@@ -17,11 +17,11 @@ We will be using an SSH tunnel to connect to our devices from our client vs teln
 
 For us to interact with our switches we either need a workstation inside the EVE-NG network and you can deploy a Linux box there with Python installed to perform your automation ([Resource for setting up Linux inside EVE-NG](https://www.youtube.com/watch?v=3Qstk3zngrY)) or you can do something like me and define a cloud for access from your workstation. 
 
-![](../images/Day27_Networking3.png)
+![](../images/Day27_Networking3.png?v1)
 
 To do this, we have right-clicked on our canvas and we have selected network and then selected "Management(Cloud0)" this will bridge out to our home network. 
 
-![](../images/Day27_Networking4.png)
+![](../images/Day27_Networking4.png?v1)
 
 However, we do not have anything inside this network so we need to add connections from the new network to each of our devices. (My networking knowledge needs more attention and I feel that you could just do this next step to the top router and then have connectivity to the rest of the network through this one cable?)
 
@@ -54,7 +54,7 @@ With the above in place, we can now connect to our devices on our home network u
 
 Below you can see we have an SSH connection to our router device. (R1)
 
-![](../images/Day27_Networking5.png)
+![](../images/Day27_Networking5.png?v1)
 
 ### Using Python to gather information from our devices 
 
@@ -62,7 +62,7 @@ The first example of how we can leverage Python is to gather information from al
 
 Now when I run this I can see each port configuration over all of my devices. 
 
-![](../images/Day27_Networking6.png)
+![](../images/Day27_Networking6.png?v1)
 
 This could be handy if you have a lot of different devices, create this one script so that you can centrally control and understand quickly all of the configurations in one place. 
 
@@ -72,11 +72,11 @@ The above is useful but what about using Python to configure our devices, in our
 
 We can use [netmiko_sendchange.py](Networking/netmiko_sendchange.py) to achieve this. This will connect over SSH and perform that change on our `SW1` which will also change to `SW2`. 
 
-![](../images/Day27_Networking7.png)
+![](../images/Day27_Networking7.png?v1)
 
 Now for those that look at the code, you will see the message appears and tells us `sending configuration to device` but there is no confirmation that this has happened to we could add additional code to our script to perform that check and validation on our switch or we could modify our script before to show us this. [netmiko_con_multi_vlan.py](Networking/netmiko_con_multi_vlan.py)
 
-![](../images/Day27_Networking8.png)
+![](../images/Day27_Networking8.png?v1)
 
 ### backing up your device configurations 
 
@@ -84,11 +84,11 @@ Another use case would be to capture our network configurations and make sure we
 
 Run your script and you should see something like the below. 
 
-![](../images/Day27_Networking9.png)
+![](../images/Day27_Networking9.png?v1)
 
 That could be me just writing a simple print script in python so I should show you the backup files as well. 
 
-![](../images/Day27_Networking10.png)
+![](../images/Day27_Networking10.png?v1)
 
 ### Paramiko 
 
@@ -96,11 +96,11 @@ A widely used Python module for SSH. You can find out more at the official GitHu
 
 We can install this module using the `pip install paramiko` command. 
 
-![](../images/Day27_Networking1.png)
+![](../images/Day27_Networking1.png?v1)
 
 We can verify the installation by entering the Python shell and importing the paramiko module. 
 
-![](../images/Day27_Networking2.png)
+![](../images/Day27_Networking2.png?v1)
 
 ### Netmiko 
 

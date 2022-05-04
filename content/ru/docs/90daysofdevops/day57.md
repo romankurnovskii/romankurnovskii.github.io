@@ -56,7 +56,7 @@ Another thing to mention is that there are also modules available, and this is s
 The Terraform workflow looks like this: (*taken from the terraform site*)
 
 
-![](../images/Day57_IAC3.png)
+![](../images/Day57_IAC3.png?v1)
 
 ### Terraform vs Vagrant
 
@@ -75,12 +75,12 @@ There is really not much to the installation of Terraform.
 
 Terraform is cross platform and you can see below on my Linux machine we have several options to download and install the CLI 
 
-![](../images/Day57_IAC2.png)
+![](../images/Day57_IAC2.png?v1)
 
 
 Using `arkade` to install Terraform, arkade is a handy little tool for getting your required tools, apps and clis onto your system. A simple `arkade get terraform` will allow for an update of terraform if available or this same command will also install the Terraform CLI
 
-![](../images/Day57_IAC1.png)
+![](../images/Day57_IAC1.png?v1)
 
 We are going to get into more around HCL and then also start using Terraform to create some infrastructure resources in various different platforms. 
 

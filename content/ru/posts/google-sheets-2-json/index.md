@@ -32,7 +32,7 @@ draft: false
 1. Открываем Таблицу Google
 2. Extensions → Apps Script
 
-![Screen Shot 2022-03-12 at 12.26.28.png](01.png)
+![Screen Shot 2022-03-12 at 12.26.28.png](01.png?v1)
 
 ## Создаем скрипт
 
@@ -78,11 +78,11 @@ function doGet() {
 
 ## Публикуем приложение
 
-![Google Sheets публикаиця приложения](02.png)
+![Google Sheets публикаиця приложения](02.png?v1)
 
-![Google Sheets публикаиця приложения](03.png)
-![Google Sheets публикаиця приложения](04.png)
+![Google Sheets публикаиця приложения](03.png?v1)
+![Google Sheets публикаиця приложения](04.png?v1)
 
 ## Результат
 
-![Google Sheets api json](05.png)
+![Google Sheets api json](05.png?v1)

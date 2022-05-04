@@ -27,11 +27,11 @@ I have uploaded in [Kubernetes folder](days/kubernetes) the vagrantfile that we 
 
 When you are in your directory then you can simply run `vagrant up` and if all is configured correctly then you should see the following kick off in your terminal. 
 
-![](../images/Day52_Kubernetes1.png)
+![](../images/Day52_Kubernetes1.png?v1)
 
  In the terminal you are going to see a number of steps taking place, but in the meantime let's take a look at what we are actually building here. 
 
-![](../images/Day52_Kubernetes2.png)
+![](../images/Day52_Kubernetes2.png?v1)
 
 From the above you can see that we are going to build out 3 virtual machines, we will have a control plane node and then two worker nodes. If you head back to [Day 49](Days/day49.md) You will see some more description on these areas we see in the image. 
 
@@ -45,11 +45,11 @@ Once complete we can then ssh to one of our nodes `vagrant ssh master` from the 
 
 You can also use `vagrant ssh node01` and `vagrant ssh node02` to gain access to the worker nodes should you wish. 
 
-![](../images/Day52_Kubernetes3.png)
+![](../images/Day52_Kubernetes3.png?v1)
 
 Now we are in one of the above nodes in our new cluster we can issue `kubectl get nodes` to show our 3 node cluster and the status of this. 
 
-![](../images/Day52_Kubernetes4.png)
+![](../images/Day52_Kubernetes4.png?v1)
 
 At this point we have a running 3 node cluster, with 1 control plane node and 2 worker nodes. 
 
@@ -121,7 +121,7 @@ This is simply going to take the config created by the master and join our nodes
 
  Before we show that let me touch on the context. 
 
-![](../images/Day52_Kubernetes5.png)
+![](../images/Day52_Kubernetes5.png?v1)
 
 Context is important, the ability to access your Kubernetes cluster from your desktop or laptop is required. Lots of different options out there and people use obviously different operating systems as their daily drivers.
 
@@ -129,15 +129,15 @@ By default, the Kubernetes CLI client (kubectl) uses the C:\Users\username\.kube
 
 We then need to grab the kubeconfig file from the cluster or we can also get this from our config file once deployed, grab the contents of this file either via SCP or just open a console session to your master node and copy to the local windows machine. 
 
-![](../images/Day52_Kubernetes6.png)
+![](../images/Day52_Kubernetes6.png?v1)
 
 We then want to take a copy of that config file and move to our `$HOME/.kube/config` location. 
 
-![](../images/Day52_Kubernetes7.png)
+![](../images/Day52_Kubernetes7.png?v1)
 
 Now from your local workstation you will be able to run `kubectl cluster-info` and `kubectl get nodes` to validate that you have access to your cluster. 
 
-![](../images/Day52_Kubernetes8.png)
+![](../images/Day52_Kubernetes8.png?v1)
 
 This not only allows for connectivity and control from your windows machine but this then also allows us to do some port forwarding to access certain services from our windows machine
 

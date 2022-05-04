@@ -19,11 +19,11 @@ id: 1048775
 
 We can create our storage group by simply searching for Storage Group in the search bar at the top of the Azure Portal. 
 
-![](../images/Day32_Cloud1.png)
+![](../images/Day32_Cloud1.png?v1)
 
 We can then run through the steps to create our storage account remembering that this name needs to be unique and it also needs to be all lower case, no spaces but can include numbers. 
 
-![](../images/Day32_Cloud2.png)
+![](../images/Day32_Cloud2.png?v1)
 
 We can also choose the level of redundancy we would like against our storage account and anything we store within here. The further down the list the more expensive option but also the spread of your data. 
 
@@ -41,15 +41,15 @@ Summary of the above link down below:
   
 - **Geo-zone-redundant storage** - combines the high availability provided by redundancy across availability zones with protection from regional outages provided by geo-replication. Data in a GZRS storage account is copied across three Azure availability zones in the primary region and is also replicated to a second geographic region for protection from regional disasters.
 
-![](../images/Day32_Cloud3.png)
+![](../images/Day32_Cloud3.png?v1)
 
 Just moving back up to performance options. We have Standard and Premium to choose from. We have chosen Standard in our walkthrough but premium gives you some specific options. 
 
-![](../images/Day32_Cloud4.png)
+![](../images/Day32_Cloud4.png?v1)
 
 Then in the drop-down, you can see we have these three options to choose from. 
 
-![](../images/Day32_Cloud5.png)
+![](../images/Day32_Cloud5.png?v1)
 
 There are lots more advanced options available for your storage account but for now, we do not need to get into these areas. These options are around encryption and data protection. 
 
@@ -103,7 +103,7 @@ Managed Disks are durable block storage that can be used with Azure Virtual Mach
 
 From the above creation of our storage account, we can now create file shares.
 
-![](../images/Day32_Cloud6.png)
+![](../images/Day32_Cloud6.png?v1)
 
 This will provide SMB2.1 and 3.0 file shares in Azure. 
 
@@ -137,7 +137,7 @@ These database instances can be accessed like regular SQL instances.
 
 Additional managed offerings for MySQL, PostgreSQL and MariaDB. 
 
-![](../images/Day32_Cloud7.png)
+![](../images/Day32_Cloud7.png?v1)
 
 ### NoSQL Solutions 
 
@@ -153,11 +153,11 @@ Supports various data models (documents, key-value, graph, column-friendly)
 
 Supports various APIs (DocumentDB SQL, MongoDB, Azure Table Storage and Gremlin) 
 
-![](../images/Day32_Cloud9.png)
+![](../images/Day32_Cloud9.png?v1)
 
 Various consistency models are available based around [CAP theorem](https://en.wikipedia.org/wiki/CAP_theorem). 
 
-![](../images/Day32_Cloud8.png)
+![](../images/Day32_Cloud8.png?v1)
 
 ### Caching 
 
@@ -172,7 +172,7 @@ Azure Cache for Redis provides an in-memory data store based on the Redis softwa
     - Aimed for an application that has high read requirements compared to writes. 
     - Key-Value store based.  
 
-![](../images/Day32_Cloud10.png)
+![](../images/Day32_Cloud10.png?v1)
 
 I appreciate the last few days have been a lot of note-taking and theory on Microsoft Azure but I wanted to cover the building blocks before we get into the hands-on aspects of how these components come together and work. 
 

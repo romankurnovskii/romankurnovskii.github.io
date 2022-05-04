@@ -23,15 +23,15 @@ It goes without saying that  google or any search engine is likely to be your fi
 
 Secondly the next place is going to be the official git site and the documentation. [git-scm.com/docs](http://git-scm.com/docs) Here you will find not only a solid reference to all the commands available but also lots of different resources. 
 
-![](../images/Day37_Git1.png)
+![](../images/Day37_Git1.png?v1)
 
 We can also access this same documentation which is super useful if you are without connectivity from the terminal. If we chose the `git add` command for example we can run `git add --help` and we see below the manual. 
 
-![](../images/Day37_Git2.png)
+![](../images/Day37_Git2.png?v1)
 
 We can also in the shell use `git add -h` which is going to give us a short summary of the options we have available. 
 
-![](../images/Day37_Git3.png)
+![](../images/Day37_Git3.png?v1)
 
 ### Myths surrounding Git
 

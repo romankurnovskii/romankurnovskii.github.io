@@ -19,11 +19,11 @@ Monitoring is the process of keeping a close eye on the entire infrastructure
 
 Let's assume we're managing a thousand servers these include a variety of specialised servers like application servers, database servers and web servers. We could also complicate this further with additional services and different platforms including public cloud offerings and Kubernetes. 
 
-![](../images/Day77_Monitoring1.png)
+![](../images/Day77_Monitoring1.png?v1)
 
 We are responsible for ensuring that all the services, applications and resources on the servers are running as they should be. 
 
-![](../images/Day77_Monitoring2.png)
+![](../images/Day77_Monitoring2.png?v1)
 
 How do we do it? there are three ways: 
 
@@ -42,7 +42,7 @@ Nagios is an infrastructure monitoring tool that is made by a company that goes 
 
 The tool allows us to monitor our servers and see if they are being sufficiently utilised or if there are any tasks of failure that need addressing. 
 
-![](../images/Day77_Monitoring3.png)
+![](../images/Day77_Monitoring3.png?v1)
 
 Essentially monitoring allows us to achieve these two goals, check the status of our servers and services and determine the health of our infrastructure it also gives us a 40,000ft view of the complete infrastructure to see if our servers are up and running, if the applications are working properly and the web servers are reachable or not. 
 

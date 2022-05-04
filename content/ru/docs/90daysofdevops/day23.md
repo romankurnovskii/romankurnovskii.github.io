@@ -17,37 +17,37 @@ If you want to get really into the weeds on ARP you can read the Internet Standa
 
 Connects IP addresses to fixed physical machine addresses, also known as MAC addresses across a layer 2 network. 
 
-![](../images/Day23_Networking1.png)
+![](../images/Day23_Networking1.png?v1)
 
 - FTP - File Transfer Protocol 
 
 Allows for the transfer of files from source to destination. Generally this process is authenticated but there is the ability if configured to use anonymous access. You will more frequently now see FTPS which provides SSL/TLS connectivity to FTP servers from the client for better security. This protocol would be found in the Application layer of the OSI Model. 
 
-![](../images/Day23_Networking2.png)
+![](../images/Day23_Networking2.png?v1)
 
 - SMTP - Simple Mail Transfer Protocol 
 
 Used for email transmission, mail servers use SMTP to send and recieve mail messages. You will still find even with Microsoft 365 that the SMTP protocol is used for the same purpose. 
 
-![](../images/Day23_Networking3.png)
+![](../images/Day23_Networking3.png?v1)
 
 - HTTP - Hyper Text Transfer Protocol 
 
 HTTP is the foundation of the internet and browsing content. Giving us the ability to easily access our favourite websites. HTTP is still heavily used but HTTPS is more so used or should be used on most of your favourite sites. 
 
-![](../images/Day23_Networking4.png)
+![](../images/Day23_Networking4.png?v1)
 
 - SSL - Secure Sockets Layer | TLS - Transport Layer Security 
 
 TLS has taken over from SSL, TLS is a [Cryptographic Protocol]() that provides security communications over a network. It can and will be found in mail, im and other applications but most commonly it is used to secure HTTPS.  
 
-![](../images/Day23_Networking5.png)
+![](../images/Day23_Networking5.png?v1)
 
 - HTTPS - HTTP secured with SSL/TLS 
 
 An extension of HTTP, used for secure communications over a network, HTTPS is encrypted with TLS as mentioned above. The focus here was to bring authenticaion, privacy and integrity whilst data is exchanged between hosts. 
 
-![](../images/Day23_Networking6.png)
+![](../images/Day23_Networking6.png?v1)
 
 - DNS - Domain Name System 
 
@@ -57,7 +57,7 @@ This is where DNS comes in, it ensures that hosts, services and other resources 
 
 On all hosts, if they require internet connectivity then they must have DNS to be able to resolve those domain names. DNS is an area you could spend Days and Years on learning. I would also say from experience that DNS is mostly the common cause of all errors when it comes to Networking. Not sure if a Network engineer would agree there though. 
 
-![](../images/Day23_Networking7.png)
+![](../images/Day23_Networking7.png?v1)
 
 - DHCP - Dynamic Host Configuration Protocol 
 
@@ -82,7 +82,7 @@ As I said each host requires these 4 things, if you have 1000 or 10,000 hosts th
 
 Another example, you head into a coffee shop, grab a coffee and sit down with your laptop or your phone lets call that your host. You connect your host to the coffee shop wifi and you gain access to the internet, messages and mail start pinging through and you can navigate web pages and social media. When you connected to the coffee shop wifi your machine would have picked up a DHCP address either from a dedicated DHCP server or most likely from the router also handling DHCP. 
 
-![](../images/Day23_Networking8.png)
+![](../images/Day23_Networking8.png?v1)
 
 ### Subnetting 
 
@@ -106,7 +106,7 @@ reallocation and relieves network congestion, streamlining, network communicatio
 Subnets can also improve network security.
 If a section of a network is compromised, it can be quarantined, making it difficult for bad actors to move around the larger network. 
 
-![](../images/Day23_Networking9.png)
+![](../images/Day23_Networking9.png?v1)
 
 
 ## Resources 
