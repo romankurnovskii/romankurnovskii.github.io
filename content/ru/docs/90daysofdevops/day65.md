@@ -39,7 +39,7 @@ Let’s take a look at a simple playbook called playbook.yml.
 
 You will find the above file [simple_play](days/../Configmgmt/simple_play.yml). If we then use the `ansible-playbook simple_play.yml` command we will walk through the following steps. 
 
-![](../images/Day65_config1.png)
+![](../images/Day65_config1.png?v1)
 
 You can see the first task of "gathering steps" happened, but we didn't trigger or ask for this? This module is automatically called by playbooks to gather useful variables about remote hosts. [ansible.builtin.setup](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/setup_module.html)
 
@@ -136,7 +136,7 @@ web02
 db01
 
 ```
-![](../images/Day65_config2.png)
+![](../images/Day65_config2.png?v1)
 
 Before moving on we want to make sure we can run a command against our nodes, let’s run `ansible nodes -m command -a hostname` this simple command will test that we have connectivity and report back our host names.
 
@@ -149,7 +149,7 @@ Also note that I have added these nodes and IPs to my Ubuntu control node within
 192.168.169.132 web02
 192.168.169.133 loadbalancer
 ```
-![](../images/Day65_config3.png)
+![](../images/Day65_config3.png?v1)
 
 At this stage we want to run through setting up SSH keys between your control and your server nodes. This is what we are going to do next, another way here could be to add variables into your hosts file to give username and password. I would advise against this as this is never going to be a best practice. 
 
@@ -157,21 +157,21 @@ To set up SSH and share amongst your nodes, follow the steps below, you will be 
 
 `ssh-keygen`
 
-![](../images/Day65_config5.png)
+![](../images/Day65_config5.png?v1)
 
 `ssh-copy-id localhost`
 
-![](../images/Day65_config6.png)
+![](../images/Day65_config6.png?v1)
 
 Now if you have all of your VMs switched on then you can run the `ssh-copy-id web01 && ssh-copy-id web02 && ssh-copy-id loadbalancer && ssh-copy-id db01` this will prompt you for your password in our case our password is `vagrant`
 
 I am not running all my VMs and only running the webservers so I issued `ssh-copy-id web01 && ssh-copy-id web02` 
 
-![](../images/Day65_config7.png)
+![](../images/Day65_config7.png?v1)
 
 Before running any playbooks I like to make sure that I have simple connectivity with my groups so I have ran `ansible webservers -m ping` to test connectivity. 
 
-![](../images/Day65_config4.png)
+![](../images/Day65_config4.png?v1)
 
 
 ### Our First "real" Ansible Playbook
@@ -181,7 +181,7 @@ Before we run our playbook we can confirm that our web01 and web02 do not have a
 
 Then we SSH into web01 to check if we have apache installed? 
 
-![](../images/Day65_config8.png)
+![](../images/Day65_config8.png?v1)
 
 You can see from the above that we have not got apache installed on our web01 so we can fix this by running the below playbook. 
 
@@ -249,15 +249,15 @@ We are now ready to run our playbook against our nodes. To run our playbook we c
 
 When the command is complete we get an output showing our plays and tasks, this may take some time you can see from the below image that this took a while to go and install our desired state. 
 
-![](../images/Day65_config9.png)
+![](../images/Day65_config9.png?v1)
 
 We can then double check this by jumping into a node and checking we have the installed software on our node.
 
-![](../images/Day65_config10.png)
+![](../images/Day65_config10.png?v1)
 
 Just to round this out as we have deployed two standalone webservers with the above we can now navigate to the respective IPs that we defined and get our new website. 
 
-![](../images/Day65_config11.png)
+![](../images/Day65_config11.png?v1)
 
 We are going to build on this playbook as we move through the rest of this section. I am interested as well in taking our Ubuntu desktop and seeing if we could actually bootstrap our applications and configuration using Ansible so we might also touch this. You saw that we can use local host in our commands we can also run playbooks against our local host for example.
 

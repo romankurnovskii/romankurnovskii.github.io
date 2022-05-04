@@ -29,7 +29,7 @@ If our remote machine was not on the same system as our workstation and was in a
 
 SSH provides a secure tunnel between client and server so that nothing can be intercepted by bad actors. 
 
-![](../images/Day18_Linux1.png)
+![](../images/Day18_Linux1.png?v1)
 
 The server has a server-side SSH service always running and listening on a specific TCP port (22). 
 
@@ -41,7 +41,7 @@ In order for us to use this with our current virtual box VM, we need to add a br
 
 Power down your virtual machine, right-click on your machine within Virtual Box and select settings. In the new window then select networking. 
 
-![](../images/Day18_Linux2.png)
+![](../images/Day18_Linux2.png?v1)
 
 Now power your machine back on and you will now have an IP address on your local machine. You can confirm this with the `ip addr` command. 
 
@@ -51,7 +51,7 @@ We know SSH is already configured on our machine as we have been using it with v
 
 `sudo systemctl status ssh`
 
-![](../images/Day18_Linux3.png)
+![](../images/Day18_Linux3.png?v1)
 
 If your system does not have the SSH server then you can install it by issuing this command `sudo apt install openssh-server` 
 
@@ -61,15 +61,15 @@ You then want to make sure that our SSH is allowed if the firewall is running. W
 
 Now that we have our SSH Server listening out on port 22 for any incoming connection requests and we have added the bridged networking we could use putty or an SSH client on our local machine to connect into our system using SSH. 
 
-![](../images/Day18_Linux4.png)
+![](../images/Day18_Linux4.png?v1)
 
 Then hit open, if this is the first time you have connected to this system via this IP address you will get this warning. We know that this is our system so you can choose yes. 
 
-![](../images/Day18_Linux5.png)
+![](../images/Day18_Linux5.png?v1)
 
 We are then prompted for our username (vagrant) and password (default password - vagrant) Below you will see we are now using our SSH client (Putty) to connect to our machine using username and password. 
 
-![](../images/Day18_Linux6.png)
+![](../images/Day18_Linux6.png?v1)
 
 At this stage, we are connected to our VM from our remote client and we can issue our commands on our system. 
 
@@ -85,7 +85,7 @@ Creating a key is easy. On our local machine (Windows) We can issue the followin
 
 I am not going to get into what `ed25519` is and means here but you can have a search if you want to learn more about [cryptography](https://en.wikipedia.org/wiki/EdDSA#Ed25519) 
 
-![](../images/Day18_Linux7.png)
+![](../images/Day18_Linux7.png?v1)
 
 At this point we have our created SSH key stored in `C:\Users\micha/.ssh/`
 
@@ -93,13 +93,13 @@ But in order to link this with our Linux VM we need to copy the key. We can do t
 
 I used Powershell to create my keys on my Windows client but there is no `ssh-copy-id` available here. There are ways in which you can do this on Windows and a small search online will find you an alternative, but I will just use git bash on my Windows machine to make the copy. 
 
-![](../images/Day18_Linux8.png)
+![](../images/Day18_Linux8.png?v1)
 
 We can now go back to Powershell to test that our connection now works with our SSH Keys and no password is required. 
 
 `ssh vagrant@192.168.169.135`
 
-![](../images/Day18_Linux9.png)
+![](../images/Day18_Linux9.png?v1)
 
 We could secure this further if needed by using a passphrase. We could also go one step further saying that no passwords at all meaning only key pairs over SSH would be allowed. You can make this happen in the following configuration file. 
 
@@ -129,7 +129,7 @@ To confirm that apache2 is installed correctly we can run `sudo service apache2 
 
 Then using the bridged network address from the SSH walkthrough open a browser and go to that address. Mine was `http://192.168.169.135/`
 
-![](../images/Day18_Linux10.png)
+![](../images/Day18_Linux10.png?v1)
 
 ### mySQL
 MySQL is a database in which we will be storing our data for our simple website. To get MySQL installed we should use the following command `sudo apt-get install mysql-server`
@@ -141,7 +141,7 @@ The first configuration change we want to make it out of the box apache is using
 
 We are going to use `sudo nano /etc/apache2/mods-enabled/dir.conf` and we are going to move index.php to the first item in the list. 
 
-![](../images/Day18_Linux11.png)
+![](../images/Day18_Linux11.png?v1)
 
 Restart the apache2 service `sudo systemctl restart apache2`
 
@@ -159,7 +159,7 @@ phpinfo();
 
 Now navigate to your Linux VM IP again with the additional 90Days.php on the end of the URL. `http://192.168.169.135/90Days.php` you should see something similar to the below if PHP is configured correctly. 
 
-![](../images/Day18_Linux12.png)
+![](../images/Day18_Linux12.png?v1)
 
 ### WordPress Installation
 

@@ -27,13 +27,13 @@ Each time docker launches a container from an image (like we ran yesterday) it a
 
 Back to the example we used yesterday with the Ubuntu image. We could run that same command multiple times and on the first container we could go and install pinta and on the second we could install figlet two different applications, different purpose, different size etc etc. Each container that we deployed share the same image but not the same state and then that state is then gone when we remove the container. 
 
-![](../images/Day45_Containers1.png)
+![](../images/Day45_Containers1.png?v1)
 
 Following the example above with the Ubuntu image, but also many other ready built container images available on DockerHub and other third party repositories. These images are generally known as the parent image. It is the foundations upon which all other layers are build and provides the basic building blocks for our container environments. 
 
 Together with a set of individual layer files, a Docker image also includes an additional file known as a manifest. This is essentially a description of the image in JSON format and comprises information such as image tags, a digital signature, and details on how to configure the container for different types of host platforms.
 
-![](../images/Day45_Containers2.png)
+![](../images/Day45_Containers2.png?v1)
 
 ### How to create a docker image 
 
@@ -83,29 +83,29 @@ RUN rm -rf /var/lib/apt/lists/*
 
 Navigate to this directory in your terminal, and then run `docker build -t 90daysofdevops:0.1 .` we are using the `-t` and then setting an image name and tag. 
 
-![](../images/Day45_Containers3.png)
+![](../images/Day45_Containers3.png?v1)
 
 Now we have created our image we can then go and run our image using Docker Desktop or we could use the docker command line. I have used Docker Desktop I have fired up a container and you can see that we have `curl` available to us in the cli of the container. 
 
-![](../images/Day45_Containers4.png)
+![](../images/Day45_Containers4.png?v1)
 
 Whilst in Docker Desktop there is also the ability to leverage the UI to do some more tasks with this new image. 
 
-![](../images/Day45_Containers5.png)
+![](../images/Day45_Containers5.png?v1)
 
 We can inspect our image, in doing so you see very much the dockerfile and the lines of code that we wanted to run within our container. 
 
-![](../images/Day45_Containers6.png)
+![](../images/Day45_Containers6.png?v1)
 
 We have a pull option, now this would fail for us because this image is not hosted anywhere so we would get that as an error. However we do have a Push to hub which would enable us to push our image to DockerHub. 
 
 If you are using the same `docker build` we ran earlier then this would not work either, you would need the build command to be `docker build -t {{username}}/{{imagename}}:{{version}}`
 
-![](../images/Day45_Containers7.png)
+![](../images/Day45_Containers7.png?v1)
 
 Then if we go and take a look in our DockerHub repository you can see that we just pushed a new image. Now in Docker Desktop we would be able to use that pull tab. 
 
-![](../images/Day45_Containers8.png)
+![](../images/Day45_Containers8.png?v1)
 
 
 ## Resources 

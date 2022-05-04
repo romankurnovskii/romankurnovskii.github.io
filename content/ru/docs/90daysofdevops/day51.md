@@ -21,17 +21,17 @@ To begin with regardless of your workstation OS, you can run minikube. First, he
 
 mentioned below it states that you need to have a “Container or virtual machine manager, such as: Docker, Hyperkit, Hyper-V, KVM, Parallels, Podman, VirtualBox, or VMware” this is where MiniKube will run and the easy option and unless stated in the repository I am using Docker. You can install Docker on your system using the following [link](https://docs.docker.com/get-docker/).
 
-![](../images/Day51_Kubernetes1.png)
+![](../images/Day51_Kubernetes1.png?v1)
 
 ### My way of installing minikube and other prereqs…
 
 I have been using arkade for some time now to get all those Kubernetes tools and CLIs, you can see the installation steps on this [github repository](https://github.com/alexellis/arkade) for getting started with Arkade. I have also mentioned this in other blog posts where I needed something installing. The simplicity of just hitting arkade get and then seeing if your tool or cli is available is handy. In the Linux section we spoke about package manager and the process for getting our software, you can think about Arkade as that marketplace for all your apps and clis for Kubernetes. A very handy little tool to have on your systems, written in Golang and cross platform. 
 
-![](../images/Day51_Kubernetes2.png)
+![](../images/Day51_Kubernetes2.png?v1)
 
 As part of the long list of available apps within arkade minikube is one of them so with a simple `arkade get minikube` command we are now downloading the binary and we are good to go.
 
-![](../images/Day51_Kubernetes3.png)
+![](../images/Day51_Kubernetes3.png?v1)
 
 We will also need kubectl as part of our tooling so you can also get this via arkade or I believe that the minikube documentation brings this down as part of the curl commands mentioned above. We will cover more on kubectl later on in the post. 
 
@@ -43,21 +43,21 @@ minikube is used on the command line, and simply put once you have everything in
 
 A single Minikube cluster is going to consist of a single docker container in this instance which will have the control plane node and worker node in one instance. Where as typically you would separate those nodes out. Something we will cover in the next section where we look at still home lab type Kubernetes environments but a little closer to production architecture. 
 
-![](../images/Day51_Kubernetes4.png)
+![](../images/Day51_Kubernetes4.png?v1)
 
 I have mentioned this a few times now, I really like minikube because of the addons available, the ability to deploy a cluster with a simple command including all the required addons from the start really helps me deploy the same required setup everytime.
 
 Below you can see a list of those addons, I generally use the `csi-hostpath-driver` and the `volumesnapshots` addons but you can see the long list below. Sure these addons can generally be deployed using Helm again something we will cover later on in the Kubernetes section but this makes things much simpler. 
 
-![](../images/Day51_Kubernetes5.png)
+![](../images/Day51_Kubernetes5.png?v1)
 
 I am also defining in our project some additional configuration, apiserver is set to 6433 instead of a random API port, I define the container runtime also to containerd however docker is default and CRI-O is also available. I am also setting a specific Kubernetes version. 
 
-![](../images/Day51_Kubernetes6.png)
+![](../images/Day51_Kubernetes6.png?v1)
 
 Now we are ready to deploy our first Kubernetes cluster using minikube. I mentioned before though that you will also need `kubectl` to interact with your cluster. You can get kubectl installed using arkade with the command `arkade get kubectl`  
 
-![](../images/Day51_Kubernetes7.png)
+![](../images/Day51_Kubernetes7.png?v1)
 
 or you can download cross platform from the following 
 
@@ -67,7 +67,7 @@ or you can download cross platform from the following
 
 Once you have kubectl installed we can then interact with our cluster with a simple command like `kubectl get nodes`
 
-![](../images/Day51_Kubernetes8.png)
+![](../images/Day51_Kubernetes8.png?v1)
 
 ### What is kubectl?
 

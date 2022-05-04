@@ -23,11 +23,11 @@ You could also use `winget` on your Windows machine, think of this as your Windo
 
 Before we install anything lets see what version we have on our Windows Machine. Open a PowerShell window and run `git --version` 
 
-![](../images/Day36_Git1.png)
+![](../images/Day36_Git1.png?v1)
 
 We can also check our WSL Ubuntu version of Git as well. 
 
-![](../images/Day36_Git2.png)
+![](../images/Day36_Git2.png?v1)
 
 At the time of writing the latest Windows release is `2.35.1` so we have some updating to do there which I will run through. I expect the same for Linux. 
 
@@ -37,33 +37,33 @@ Meaning that the process shown below is also the same process for the most part 
 
 It is a very simple installation. Once downloaded double click and get started. Read through the GNU license agreement. But remember this is free and open source software. 
 
-![](../images/Day36_Git3.png)
+![](../images/Day36_Git3.png?v1)
 
 Now we can choose additional components that we would like to also install but also associate with git. On Windows I always make sure I install Git Bash as this allows us to run bash scripts on Windows. 
 
-![](../images/Day36_Git4.png)
+![](../images/Day36_Git4.png?v1)
 
 We can then choose which SSH Executable we wish to use. IN leave this as the bundled OpenSSH that you might have seen in the Linux section. 
 
-![](../images/Day36_Git5.png)
+![](../images/Day36_Git5.png?v1)
 
 We then have experimental features that we may wish to enable, for me I don't need them so I don't enable, you can always come back in through the installation and enable these later on. 
 
-![](../images/Day36_Git6.png)
+![](../images/Day36_Git6.png?v1)
 
 Installation complete, we can now choose to open Git Bash and or the latest release notes. 
 
-![](../images/Day36_Git7.png)
+![](../images/Day36_Git7.png?v1)
 
 The final check is to take a look in our PowerShell window what version of git we have now. 
 
-![](../images/Day36_Git8.png)
+![](../images/Day36_Git8.png?v1)
 
 Super simple stuff and now we are on the latest version. On our Linux machine we seemed to be a little behind so we can also walk through that update process. 
 
 I simply run the `sudo apt-get install git` command. 
 
-![](../images/Day36_Git9.png)
+![](../images/Day36_Git9.png?v1)
 
 You could also run the following which will add the git repository for software installations. 
 
@@ -99,11 +99,11 @@ now if we want to be able to see all git configuration then we can use the follo
 
 `git config --global -e` 
 
-![](../images/Day36_Git10.png)
+![](../images/Day36_Git10.png?v1)
 
 On any machine this file will be named `.gitconfig` on my Windows machine you will find this in your user account directory. 
 
-![](../images/Day36_Git11.png)
+![](../images/Day36_Git11.png?v1)
 
 ### Git Theory
 
@@ -115,15 +115,15 @@ Before git was around Client-Server was the defacto method for version control. 
 
 In this model of Client-Server version control, the first step the developer downloads the source code, the actual files from the server. This doesnt remove the conflicts but it does remove the complexity of the conflicts and how to resolve them. 
 
-![](../images/Day36_Git12.png)
+![](../images/Day36_Git12.png?v1)
 
 Now for example lets say we have two developers working on the same files and one wins the race and commits or uploads their file back to the server first with their new changes. When the second developer goes to update they have a conflict. 
 
-![](../images/Day36_Git13.png)
+![](../images/Day36_Git13.png?v1)
 
 So now the Dev needs to pull down the first devs code change next to theirs check and then commit once those conflicts have been settled. 
 
-![](../images/Day36_Git15.png)
+![](../images/Day36_Git15.png?v1)
 
 ### Distributed Version Control 
 
@@ -138,7 +138,7 @@ Some of the major benefits of Git are:
 
 Unlike the Client-Server version control model, each developer downloads the the source repository meaning everything. History of commits, all the branches etc. etc. 
 
-![](../images/Day36_Git16.png)
+![](../images/Day36_Git16.png?v1)
 
 ## Resources 
 

@@ -54,15 +54,15 @@ Kubernetes annotations can be used within the configuration YAML of our applicat
 
 First of all we can deploy from the fluent helm repository. `helm repo add fluent https://fluent.github.io/helm-charts` and then install using the `helm install fluent-bit fluent/fluent-bit` command. 
 
-![](../images/Day81_Monitoring1.png)
+![](../images/Day81_Monitoring1.png?v1)
 
 In my cluster I am also running prometheus in my default namespace (for test purposes) we need to make sure our fluent-bit pod is up and running. we can do this using `kubectl get all | grep fluent` this is going to show us our running pod, service and daemonset that we mentioned earlier. 
 
-![](../images/Day81_Monitoring2.png)
+![](../images/Day81_Monitoring2.png?v1)
 
 So that fluentbit knows where to get logs from we have a configuration file, in this Kubernetes deployment of fluentbit we have a configmap which resembles the configuration file. 
 
-![](../images/Day81_Monitoring3.png)
+![](../images/Day81_Monitoring3.png?v1)
 
 That ConfigMap will look something like: 
 
@@ -143,7 +143,7 @@ Events:  <none>
 
 We can now port-forward our pod to our localhost to ensure that we have connectivity. Firstly get the name of your pod with `kubectl get pods | grep fluent` and then use `kubectl port-forward fluent-bit-8kvl4 2020:2020` open a web browser to http://localhost:2020/ 
 
-![](../images/Day81_Monitoring4.png)
+![](../images/Day81_Monitoring4.png?v1)
 
 I also found this really great medium article covering more about [Fluent Bit](https://medium.com/kubernetes-tutorials/exporting-kubernetes-logs-to-elasticsearch-using-fluent-bit-758e8de606af)
 

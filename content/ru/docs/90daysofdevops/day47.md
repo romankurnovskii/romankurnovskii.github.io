@@ -17,19 +17,19 @@ Open a terminal, and type the command `docker network` this is the main command 
 
 From the below you can see this is how we can use the command, and all of the sub commands available. We can create new networks, list existing, inspect and remove networks. 
 
-![](../images/Day47_Containers1.png)
+![](../images/Day47_Containers1.png?v1)
 
 Lets take a look at the existing networks we have since our installation, so the out of box Docker networking looks like using the `docker network list` command. 
 
 Each network gets a unique ID and NAME. Each network is also associated with a single driver. Notice that the "bridge" network and the "host" network have the same name as their respective drivers.
 
-![](../images/Day47_Containers2.png)
+![](../images/Day47_Containers2.png?v1)
 
 Next we can take a deeper look into our networks with the `docker network inspect` command. 
 
 With me running `docker network inspect bridge` I can get all the configuration details of that specific network name. This includes name, ID, drivers, connected containers and as you can see quite a lot more. 
 
-![](../images/Day47_Containers3.png)
+![](../images/Day47_Containers3.png?v1)
 
 ### Docker: Bridge Networking 
 
@@ -47,17 +47,17 @@ Lets create a new container with the command `docker run -dt ubuntu sleep infini
 
 The sleep command above is just going to keep the container running in the background so we can mess around with it. 
 
-![](../images/Day47_Containers4.png)
+![](../images/Day47_Containers4.png?v1)
 
 If we then check our bridge network with `docker network inspect bridge` you will see that we have a container matching what we have just deployed because we did not specify a network. 
 
-![](../images/Day47_Containers5.png)
+![](../images/Day47_Containers5.png?v1)
 
 We can also dive into the container using `docker exec -it 3a99af449ca2 bash` you will have to use `docker ps` to get your container ID. 
 
 From here our image doesn't have anything to ping so we need to run the following command.`apt-get update && apt-get install -y iputils-ping` then ping an external interfacing address. `ping -c5 www.90daysofdevops.com`
 
-![](../images/Day47_Containers6.png)
+![](../images/Day47_Containers6.png?v1)
 
 To clear this up we can run `docker stop 3a99af449ca2` again use `docker ps` to find your container ID but this will remove our container. 
 
@@ -67,22 +67,22 @@ In this step we'll start a new NGINX container and map port 8080 on the Docker h
 
 Start a new container based off the official NGINX image by running `docker run --name web1 -d -p 8080:80 nginx`
 
-![](../images/Day47_Containers7.png)
+![](../images/Day47_Containers7.png?v1)
 
 
 Review the container status and port mappings by running `docker ps`
 
-![](../images/Day47_Containers8.png)
+![](../images/Day47_Containers8.png?v1)
 
 The top line shows the new web1 container running NGINX. Take note of the command the container is running as well as the port mapping - `0.0.0.0:8080->80/tcp` maps port 8080 on all host interfaces to port 80 inside the web1 container. This port mapping is what effectively makes the containers web service accessible from external sources (via the Docker hosts IP address on port 8080).
 
 Now we need our IP address for our actual host, we can do this by going into our WSL terminal and using the `ip addr` command. 
 
-![](../images/Day47_Containers9.png)
+![](../images/Day47_Containers9.png?v1)
 
 Then we can take this IP and open a browser and head to `http://172.25.218.154:8080/` Your IP might be different. This confirms that NGINX is accessible. 
 
-![](../images/Day47_Containers10.png)
+![](../images/Day47_Containers10.png?v1)
 
 I have taken these instructions from this site from way back in 2017 DockerCon but they are still relevant today. However the rest of the walkthrough goes into Docker Swarm and I am not going to be looking into that here. [Docker Networking - DockerCon 2017](https://github.com/docker/labs/tree/master/dockercon-us-2017/docker-networking)
 
@@ -124,7 +124,7 @@ This is also my major concern with pulling the `latest` images because that can 
 
 Checking `docker image` is a great command to see the size of your images. 
 
-![](../images/Day47_Containers11.png)
+![](../images/Day47_Containers11.png?v1)
 
 ## Resources 
 

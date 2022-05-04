@@ -46,7 +46,7 @@ In the next line in our script, I like to add a comment and add the purpose of t
 
 I sometimes use figlet, a program we installed earlier in the Linux section to create some asci art to kick things off in our scripts. 
 
-![](../images/Day19_Linux1.png)
+![](../images/Day19_Linux1.png?v1)
 
 All of the commands we have been through earlier in this Linux section ([Day15](Day15.md)) could be used here as a simple command to test our script. 
 
@@ -60,15 +60,15 @@ ls
 ```
 You can then save this and exit your text editor, if we run our script with `./90DaysOfDevOps.sh` you should get a permission denied message. You can check the permissions of this file using the `ls -al` command and you can see highlighted we do not have executable rights on this file. 
 
-![](../images/Day19_Linux2.png)
+![](../images/Day19_Linux2.png?v1)
 
 We can change this using `chmod +x 90DaysOfDevOps.sh` and then you will see the `x` meaning we can now execute our script. 
 
-![](../images/Day19_Linux3.png)
+![](../images/Day19_Linux3.png?v1)
 
 Now we can run our script again using `./90DaysOfDevOps.sh` after running the script has now created a new directory, changed into that directory and then created a new file. 
 
-![](../images/Day19_Linux4.png)
+![](../images/Day19_Linux4.png?v1)
 
 Pretty basic stuff but you can start to see hopefully how this could be used to call on other tools as part of ways to make your life easier and automate things. 
 
@@ -85,11 +85,11 @@ To add a variable you simply add it like this to a clean line in your script.
 
 This way when and where we use `$challenge` in our code, if we change the variable it will be reflected throughout.
 
-![](../images/Day19_Linux5.png)
+![](../images/Day19_Linux5.png?v1)
 
 If we now run our `sh` script you will see the printout that was added to our script. 
 
-![](../images/Day19_Linux5.png)
+![](../images/Day19_Linux5.png?v1)
 
 We can also ask for user input that can set our variables using the following: 
 
@@ -166,11 +166,11 @@ else
 fi
 ```
 
-![](../images/Day19_Linux7.png)
+![](../images/Day19_Linux7.png?v1)
 
 Providing we have that file still in our directory we should get the first echo command back. But if we remove that file then we should get the second echo command. 
 
-![](../images/Day19_Linux8.png)
+![](../images/Day19_Linux8.png?v1)
 
 You can hopefully see how this can be used to save you time when searching through a system for specific items. 
 
@@ -202,11 +202,11 @@ We can take a look at the first requirement "A user can be passed in as a comman
 echo "$1"
 ```
 
-![](../images/Day19_Linux9.png)
+![](../images/Day19_Linux9.png?v1)
 
 Go ahead and run this using `./create_user.sh Michael` replace Michael with your name when you run the script. 
 
-![](../images/Day19_Linux10.png)
+![](../images/Day19_Linux10.png?v1)
 
 Next up we can take that second requirement "A user is created with the name of command line argument" this can be done with the `useradd` command. The `-m` option is to create the user home directory as /home/username
 
@@ -225,7 +225,7 @@ Warning: If you do not provide a user account name then it will error as we have
 
 We can then check this account has been created with the `awk -F: '{ print $1}' /etc/passwd` command. 
 
-![](../images/Day19_Linux11.png)
+![](../images/Day19_Linux11.png?v1)
 
 Our next requirement is "A password can be parsed in as a command line argument." First of all we are not going to ever do this in production it is more for us to work through a list of requirements in the lab to understand. 
 
@@ -246,7 +246,7 @@ If we then run this script with the two parameters `./create_user.sh 90DaysOfDev
 
 You can see from the below image that we executed our script it created our user and password and then we manually jumped into that user and confirmed with the `whoami` command. 
 
-![](../images/Day19_Linux12.png)
+![](../images/Day19_Linux12.png?v1)
 
 The final requirement is "A message of successful account creation is displayed." We actually already have this in the top line of our code and we can see on the above screen shot that we have `90DaysOfDevOps user account being created` is shown. This was left from our testing with the `$1` parameter. 
 
@@ -272,15 +272,15 @@ sudo chpasswd <<< $username:$password
 
 With the steps being more interactive, 
 
-![](../images/Day19_Linux14.png)
+![](../images/Day19_Linux14.png?v1)
 
 Just to finish this off maybe we do want to output a successful output to say that our new user account has finished being created.
 
-![](../images/Day19_Linux15.png)
+![](../images/Day19_Linux15.png?v1)
 
 One thing I did notice was that we are displaying the password on our input we can hide this by using the `-s` flag in the line of code `read -s password`
 
-![](../images/Day19_Linux16.png)
+![](../images/Day19_Linux16.png?v1)
 
 If you do want to delete the user you have created for lab purposes then you can do that with `sudo userdel test_user`
 

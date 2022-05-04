@@ -11,7 +11,7 @@ id: 1048705
 
 Before we get going, the winner of the Twitter poll was Microsoft Azure, hence the title of the page. It was close and also quite interesting to see the results come in over the 24 hours. 
 
-![](../images/Day29_Cloud1.png)
+![](../images/Day29_Cloud1.png?v1)
 
 I would say in terms of covering this topic is going to give me a better understanding and update around the services available on Microsoft Azure, I lean towards Amazon AWS when it comes to my day today. I have however left resources I had lined up for all three of the major cloud providers. 
 
@@ -36,7 +36,7 @@ The best way to get started and follow along is by clicking the link, which will
 
 I linked the interactive map above, but we can see the image below the breadth of regions being offered in the Microsoft Azure platform worldwide. 
 
-![](../images/Day29_Cloud2.png)
+![](../images/Day29_Cloud2.png?v1)
 *image taken from [Microsoft Docs - 01/05/2021](https://docs.microsoft.com/en-us/azure/networking/microsoft-global-network)*
 
 You will also see several "sovereign" clouds meaning they are not linked or able to speak to the other regions, for example, these would be associated with governments such as the `AzureUSGovernment` also `AzureChinaCloud` and others. 
@@ -49,7 +49,7 @@ Behind the scenes, a region may be made up of more than one data centre. These w
 
 In the below image you will see and again this is taken from the Microsoft official documentation it describes what a region is and how it is made up of Availability Zones. However not all regions have multiple Availability Zones. 
 
-![](../images/Day29_Cloud3.png)
+![](../images/Day29_Cloud3.png?v1)
 
 The Microsoft Documentation is very good, and you can read up more on [Regions and Availability Zones](https://docs.microsoft.com/en-us/azure/availability-zones/az-overview) here. 
 
@@ -96,37 +96,37 @@ Let's go and get connected and make sure we have a **Subscription** available to
 
 When we first login to our [Azure portal](https://portal.azure.com/#home) you will see at the top the ability to search for resources, services and docs. 
 
-![](../images/Day29_Cloud4.png)
+![](../images/Day29_Cloud4.png?v1)
 
 We are going to first look at our subscription, you will see here that I am using a Visual Studio Professional subscription which gives me some free credit each month. 
 
-![](../images/Day29_Cloud5.png)
+![](../images/Day29_Cloud5.png?v1)
 
 If we go into that you will get a wider view and a look into what is happening or what can be done with the subscription, we can see billing information with control functions on the left where you can define IAM Access Control and further down there are more resources available. 
 
-![](../images/Day29_Cloud6.png)
+![](../images/Day29_Cloud6.png?v1)
 
 There might be a scenario where you have multiple subscriptions and you want to manage them all under one, this is where management groups can be used to segregate responsibility groups. In mine below, you can see there is just my tenant root group with my subscription. 
 
 You will also see in the previous image that the parent management group is the same id used on the tenant root group. 
 
-![](../images/Day29_Cloud7.png)
+![](../images/Day29_Cloud7.png?v1)
 
 Next up we have Resource groups, this is where we combine our resources and we can easily manage them in one place. I have a few created for various other projects. 
 
-![](../images/Day29_Cloud8.png)
+![](../images/Day29_Cloud8.png?v1)
 
 With what we are going to be doing over the next few days, we want to create our resource group. This is easily done in this console by hitting the create option on the previous image. 
 
-![](../images/Day29_Cloud9.png)
+![](../images/Day29_Cloud9.png?v1)
 
 A validation step takes place and then you have the chance to review your creation and then create. You will also see down the bottom "Download a template for automation" this allows us to grab the JSON format so that we can perform this simple in an automated fashion later on if we wanted, we will cover this later on as well. 
 
-![](../images/Day29_Cloud10.png)
+![](../images/Day29_Cloud10.png?v1)
 
 Hit create, then in our list of resource groups, we now have our "90DaysOfDevOps" group ready for what we do in the next session. 
 
-![](../images/Day29_Cloud11.png)
+![](../images/Day29_Cloud11.png?v1)
 
 ## Resources 
 

@@ -28,11 +28,11 @@ sudo apt install ansible
 ```
 Now we should have ansible installed on our control node, you can check this by running `ansible --version` and you should see something similar to this below. 
 
-![](../images/Day64_config1.png)
+![](../images/Day64_config1.png?v1)
 
 Before we then start to look at controlling other nodes in our environment, we can also check functionality of ansible by running a command against our local machine `ansible localhost -m ping` will use an [Ansible Module](https://docs.ansible.com/ansible/2.9/user_guide/modules_intro.html) and this is a quick way to perform a single task across many different systems. I mean it is not much fun with just the local host but imagine you wanted to get something or make sure all your systems were up and you had 1000+ servers and devices. 
 
-![](../images/Day64_config2.png)
+![](../images/Day64_config2.png?v1)
 
 Or an actual real life use for a module might be something like `ansible webservers --m service -a "name=httpd state=started"` this will tell us if all of our webservers have the httpd service running. I have glossed over the webservers term used in that command. 
 
@@ -40,27 +40,27 @@ Or an actual real life use for a module might be something like `ansible webserv
 
 The way I used localhost above to run a simple ping module against the system, I cannot specify another machine on my network, for example in the environment I am using my Windows host where VirtualBox is running has a network adapter with the IP 10.0.0.1 but you can see below that I can reach by pinging but I cannot use ansible to perform that task. 
 
-![](../images/Day64_config3.png)
+![](../images/Day64_config3.png?v1)
 
 In order for us to specify our hosts or the nodes that we want to automate with these tasks we need to define them. We can define them by navigating to the /etc/ansible directory on your system. 
 
-![](../images/Day64_config4.png)
+![](../images/Day64_config4.png?v1)
 
 The file we want to edit is the hosts file, using a text editor we can jump in and define our hosts. The hosts file contains lots of great instructions on how to use and modify the file. We want to scroll down to the bottom and we are going to create a new group called [windows] and we are going to add our `10.0.0.1` IP address for that host. Save the file. 
 
-![](../images/Day64_config5.png)
+![](../images/Day64_config5.png?v1)
 
 However remember I said you will need to have SSH available to enable ansible to connect to your system. As you can see below when I run `ansible windows -m ping` we get an unreachable because things failed to connect via SSH. 
 
-![](../images/Day64_config6.png)
+![](../images/Day64_config6.png?v1)
 
 I have now also started adding some additional hosts to our inventory, another name for this file as this is where you are going to define all of your devices, could be network devices, switches and routers for example also would be added here and grouped. In our hosts file though I have also added in my credentials for accessing the linux group of systems. 
 
-![](../images/Day64_config7.png)
+![](../images/Day64_config7.png?v1)
 
 Now if we run `ansible linux -m ping` we get a success as per below. 
 
-![](../images/Day64_config8.png)
+![](../images/Day64_config8.png?v1)
 
 We then have the node requirements, these are the target systems you wish to automate the configuration on. We are not installing anything for Ansible on these (I mean we might be installing software but there is no client from Ansible we need) Ansible will make a connection over SSH and send anything over SFTP. (If you so desire though and you have SSH configured you could use SCP vs SFTP.) 
 

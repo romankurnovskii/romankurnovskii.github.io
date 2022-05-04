@@ -79,11 +79,11 @@ Since yesterday we have added the common role which will now install some packag
 
 Let's run our playbook4.yml using the `ansible-playbook playbook4.yml`
 
-![](../images/Day67_config1.png)
+![](../images/Day67_config1.png?v1)
 
 Now that we have our webservers and loadbalancer configured we should now be able to go to http://192.168.169.134/ which is the IP address of our loadbalancer. 
 
-![](../images/Day67_config2.png)
+![](../images/Day67_config2.png?v1)
 
 If you are following along and you do not have this state then it could be down to the server IP addresses you have in your environment. The file can be found in `templates\mysite.j2` and looks similar to the below: You would need to update with your webserver IP addresses. 
 
@@ -105,7 +105,7 @@ I am pretty confident that what we have installed is all good but let's use an a
 
 `ansible loadbalancer -m command -a neofetch`
 
-![](../images/Day67_config3.png)
+![](../images/Day67_config3.png?v1)
 
 ## Resources 
 

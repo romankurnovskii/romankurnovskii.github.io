@@ -61,7 +61,7 @@ The community edition comes in ISO and OVF formats for [download](https://www.ev
 
 We will be using the OVF download but with the ISO there is the option to build out on a bare metal server without the need of a hypervisor. 
 
-![](../images/Day25_Networking1.png)
+![](../images/Day25_Networking1.png?v1)
 
 For our walkthrough, we will be using VMware Workstation as I have a license via my vExpert but you can equally use VMware Player or any of the other options mentioned in the [documentation](https://www.eve-ng.net/index.php/documentation/installation/system-requirement/)Unfortunately we cannot use our previously used Virtual box! 
 
@@ -79,23 +79,23 @@ We are now ready to get things configured.
 
 Open VMware Workstation and then select `file` and `open` 
 
-![](../images/Day25_Networking2.png)
+![](../images/Day25_Networking2.png?v1)
 
 When you download the EVE-NG OVF Image it is going to be within a compressed file. Extract the contents out into its folder so it looks like. 
 
-![](../images/Day25_Networking3.png)
+![](../images/Day25_Networking3.png?v1)
 
 Navigate to the location that you downloaded the EVE-NG OVF image to and begin the import. 
 
 Give it a recognisable name and store the virtual machine somewhere on your system. 
 
-![](../images/Day25_Networking4.png)
+![](../images/Day25_Networking4.png?v1)
 
 When the import is complete increase the number of processors to 4 and the memory allocated to 8 GB. (This should be the case after import with the latest version if not then edit VM settings)
 
 Also, make sure the Virtualise Intel VT-x/EPT or AMD-V/RVI checkbox is enabled. This option instructs VMware workstation to pass the virtualisation flags to the guest OS (nested virtualisation) This was the issue I was having with GNS3 with Virtual Box even though my CPU allows this. 
 
-![](../images/Day25_Networking5.png)
+![](../images/Day25_Networking5.png?v1)
 
 ### Power on & Access 
 
@@ -115,7 +115,7 @@ Both of these commands should be ran as administrator!
 
 Ok back to the show, You should now have a powered-on machine in VMware Workstation and you should have a prompt looking similar to this. 
 
-![](../images/Day25_Networking6.png)
+![](../images/Day25_Networking6.png?v1)
 
 On the prompt above you can use: 
 
@@ -126,29 +126,29 @@ You will then be asked to provide the root password again, this will be used to 
 
 We then can change the hostname. 
 
-![](../images/Day25_Networking7.png)
+![](../images/Day25_Networking7.png?v1)
 
 Next, we define a DNS Domain Name, I have used the one below but I am not sure if this will need to be changed later on. 
 
-![](../images/Day25_Networking8.png)
+![](../images/Day25_Networking8.png?v1)
 
 We then configure networking, I am selecting static so that the IP address given will be persistent after reboots. 
 
-![](../images/Day25_Networking9.png)
+![](../images/Day25_Networking9.png?v1)
 
 The final step, provide a static IP address from a network that is reachable from your workstation. 
 
-![](../images/Day25_Networking10.png)
+![](../images/Day25_Networking10.png?v1)
 
 There are some additional steps here where you will have to provide a subnet mask for your network, default gateway and DNS. 
 
 Once finished it will reboot, when it is back up you can take your static IP address and put this into your browser. 
 
-![](../images/Day25_Networking11.png)
+![](../images/Day25_Networking11.png?v1)
 
 The default username for the GUI is `admin` and the password is `eve` while the default username for SSH is `root` and the password is `eve` but this would have been changed if you changed during the setup. 
 
-![](../images/Day25_Networking12.png)
+![](../images/Day25_Networking12.png?v1)
 
 I chose HTML5 for the console vs native as this will open a new tab in your browser when you are navigating through different consoles. 
 

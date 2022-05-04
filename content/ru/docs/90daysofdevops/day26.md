@@ -17,7 +17,7 @@ There is also a client pack that allows us to choose which application is used w
 
 [EVE-NG Client Download](https://www.eve-ng.net/index.php/download/)
 
-![](../images/Day26_Networking1.png)
+![](../images/Day26_Networking1.png?v1)
 
 Quick Tip: If you are using Linux as your client then there is this [client pack](https://github.com/SmartFinn/eve-ng-integration).
 
@@ -55,17 +55,17 @@ Inside the EVE-NG web interface, we are going to create our new network topology
 
 When you first log in to EVE-NG you will see a screen like below, we want to start by creating our first lab. 
 
-![](../images/Day26_Networking2.png)
+![](../images/Day26_Networking2.png?v1)
 
 Give your lab a name and the other fields are optional. 
 
-![](../images/Day26_Networking3.png)
+![](../images/Day26_Networking3.png?v1)
 
 You will be then greeted with a blank canvas to start creating your network. Right-click on your canvas and choose add node. 
 
 From here you will have a long list of node options, If you have followed along above you will have the two in blue shown below and the others are going to be grey and unselectable. 
 
-![](../images/Day26_Networking4.png)
+![](../images/Day26_Networking4.png?v1)
 
 We want to add the following to our lab: 
 
@@ -74,23 +74,23 @@ We want to add the following to our lab:
 
 Run through the simple wizard to add them to your lab and it should look something like this. 
 
-![](../images/Day26_Networking5.png)
+![](../images/Day26_Networking5.png?v1)
 
 #### Connecting our nodes 
 
 We now need to add our connectivity between our routers and switches. We can do this quite easily by hovering over the device and seeing the connection icon as per below and then connecting that to the device we wish to connect to. 
 
-![](../images/Day26_Networking6.png)
+![](../images/Day26_Networking6.png?v1)
 
 When you have finished connecting your environment you may also want to add some way to define physical boundaries or locations using boxes or circles which can also be found in the right-click menu. You can also add text which is useful when we want to define our naming or IP addresses in our labs. 
 
 I went ahead and made my lab look like the below. 
 
-![](../images/Day26_Networking7.png)
+![](../images/Day26_Networking7.png?v1)
 
 You will also notice that the lab above is all powered off, we can start our lab by selecting everything and right-clicking and selecting start selected. 
 
-![](../images/Day26_Networking8.png)
+![](../images/Day26_Networking8.png?v1)
 
 Once we have our lab up and running you will be able to console into each device and you will notice at this stage they are pretty dumb with no configuration. We can add some configuration to each node by copying or creating your own in each terminal. 
 

@@ -15,15 +15,15 @@ I have been using a Linux Desktop for almost a year now and I have it configured
 
 I have put together a YouTube video walking through the rest as some people might be able to better follow along: 
 
-[![Click to access YouTube Video](../images/Day20_YouTube.png)](https://youtu.be/jeEslAtHfKc)
+[![Click to access YouTube Video](../images/Day20_YouTube.png?v1)](https://youtu.be/jeEslAtHfKc)
 
 Out of the box our system will look something like the below: 
 
-![](../images/Day20_Linux1.png)
+![](../images/Day20_Linux1.png?v1)
 
 We can also see our default bash shell below, 
 
-![](../images/Day20_Linux2.png)
+![](../images/Day20_Linux2.png?v1)
 
 A lot of this comes down to dotfiles something we will cover in this final Linux session of the series. 
 
@@ -38,7 +38,7 @@ Each dotfile starts with a `.` You can probably guess where the naming came from
 
 So far we have been using bash as our shell which means you will have a .bashrc and .bash_profile in our home folder. You can see below a few dotfiles we have on our system. 
 
-![](../images/Day20_Linux3.png)
+![](../images/Day20_Linux3.png?v1)
 
 We are going to be changing our shell, so we will later be seeing a new `.zshrc` configuration dotfile. 
 
@@ -53,11 +53,11 @@ We can use our `apt` package manager to get zsh installed on our system. Let's g
 
 When the installation command is complete you can run `zsh` inside your terminal, this will then start a shell configuration script. 
 
-![](../images/Day20_Linux4.png)
+![](../images/Day20_Linux4.png?v1)
 
 I selected `1` to the above question and now we have some more options. 
 
-![](../images/Day20_Linux5.png)
+![](../images/Day20_Linux5.png?v1)
 
 You can see from this menu you we can make some out of the box edits to make ZSH configured to our needs. 
 
@@ -67,7 +67,7 @@ Now we want to make zsh our default shell every time we open our terminal, we ca
 
 When you log back and open a terminal it should look something like this. We can also confirm our shell has now been changed over by running `which $SHELL`
 
-![](../images/Day20_Linux6.png)
+![](../images/Day20_Linux6.png?v1)
 
 I generally perform this step on each Ubuntu desktop I spin up and find in general without going any further that the zsh shell is a little faster than bash. 
 
@@ -85,7 +85,7 @@ Let's get Oh My ZSH installed, we have a few options with `curl` `wget` or `fetc
 
 When you have run the above command you should see some output like below.
 
-![](../images/Day20_Linux7.png)
+![](../images/Day20_Linux7.png?v1)
 
  Now we can move on to start putting a theme in for our experience, there are well over 100 bundled with Oh My ZSH but my go to for all of my applications and everything is the dracula theme. 
 
@@ -135,13 +135,13 @@ From the link above we can search for zsh on the site and you will find at least
 
 Follow the instructions listed to insall either manually or using git. Then you will need to finally edit your `.zshrc` configuration file as per below. 
 
-![](../images/Day20_Linux8.png)
+![](../images/Day20_Linux8.png?v1)
 
 You are next going to want the [Gnome Terminal Dracula theme](https://draculatheme.com/gnome-terminal) with all instructions available here as well. 
 
 It would actually take a long time for me to document each and every step so I created a video walkthrough of the process. (**Click on the image below**)
 
-[![](../images/Day20_YouTube.png)](https://youtu.be/jeEslAtHfKc)
+[![](../images/Day20_YouTube.png?v1)](https://youtu.be/jeEslAtHfKc)
 
 If you made it this far, then we have now finished our Linux section of the #90DaysOfDevOps. Once again I am open for feedback and additions to resources here. 
 

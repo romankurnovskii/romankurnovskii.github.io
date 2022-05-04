@@ -23,7 +23,7 @@ All through this section and the Container section we have discussed about image
 
 In this first step we are simply going to create a stateless application within our minikube cluster. We will be using the defacto standard stateless application in our first demonostration `nginx` we will configure a Deployment, which will provide us with our pods and then we will also create a service which will allow us to navigate to the simple web server hosted by the nginx pod. All of this will be contained in a namespace. 
 
-![](../images/Day54_Kubernetes1.png)
+![](../images/Day54_Kubernetes1.png?v1)
 
 ### Creating the YAML
 
@@ -78,7 +78,7 @@ spec:
 
 Before we deploy anything we should just make sure that we have no existing namespaces called `nginx` we can do this by running the `kubectl get namespace` command and as you can see below we do not have a namespace called `nginx`
 
-![](../images/Day54_Kubernetes2.png)
+![](../images/Day54_Kubernetes2.png?v1)
 
 ### Time to deploy our App
 
@@ -86,45 +86,45 @@ Now we are ready to deploy our application to our minikube cluster, this same pr
 
 We need to navigate to our yaml file location and then we can run `kubectl create -f nginx-stateless-demo.yaml` which you then see that 3 objects have been created, we have a namespace, deployment and service. 
 
-![](../images/Day54_Kubernetes3.png)
+![](../images/Day54_Kubernetes3.png?v1)
 
 Let's run the command again to see our available namespaces in our cluster `kubectl get namespace` and you can now see that we have our new namespace. 
 
-![](../images/Day54_Kubernetes5.png)
+![](../images/Day54_Kubernetes5.png?v1)
 
 If we then check our namespace for pods using `kubectl get pods -n nginx` you will see that we have 1 pod in a ready and running state.
 
-![](../images/Day54_Kubernetes4.png)
+![](../images/Day54_Kubernetes4.png?v1)
 
 We can also check our service is created by running `kubectl get service -n nginx` 
 
-![](../images/Day54_Kubernetes6.png)
+![](../images/Day54_Kubernetes6.png?v1)
 
 Finally we can then go and check our deployment, the deployment is where and how we keep our desired configuration. 
 
-![](../images/Day54_Kubernetes7.png)
+![](../images/Day54_Kubernetes7.png?v1)
 
 The above takes a few commands that are worth knowing but you can also use `kubectl get all -n nginx` to see everything we deployed with that one YAML file. 
 
-![](../images/Day54_Kubernetes8.png)
+![](../images/Day54_Kubernetes8.png?v1)
 
 You will notice in the above that we also have a replicaset, in our deployment we define how many replicas of our image we would like to deploy. This was set to 1 initially, but if we wanted to quickly scale our application then we can do this several ways. 
 
 We can edit our file using `kubectl edit deployment nginx-deployment -n nginx` which will open a text editor within your terminal and enable you to modify you deployment. 
 
-![](../images/Day54_Kubernetes9.png)
+![](../images/Day54_Kubernetes9.png?v1)
 
 Upon saving the above in your text editor within the terminal if there was no issues and the correct formatting was used then you should see additional deployed in your namespace. 
 
-![](../images/Day54_Kubernetes10.png)
+![](../images/Day54_Kubernetes10.png?v1)
 
 We can also make a change to the number of replicas using kubectl and the `kubectl scale deployment nginx-deployment --replicas=10 -n nginx` 
 
-![](../images/Day54_Kubernetes11.png)
+![](../images/Day54_Kubernetes11.png?v1)
 
 We can equally use this method to scale our application down back to 1 again if we wish using either method. I used the edit option but you can also use the scale command above. 
 
-![](../images/Day54_Kubernetes12.png)
+![](../images/Day54_Kubernetes12.png?v1)
 
 Hopefully here you can see the use case not only are things super fast to spin up and down but we have the ability to quickly scale up and down our applications. If this was a web server we could scale up during busy times and down when load is quiet. 
 
@@ -149,11 +149,11 @@ We could simply run the following command to port forward our access using our l
 
 `kubectl port-forward deployment/nginx-deployment -n nginx 8090:80`
 
-![](../images/Day54_Kubernetes13.png)
+![](../images/Day54_Kubernetes13.png?v1)
 
 note that when you run the above command this terminal is now unusable as this is acting as your port forward to your local machine and port. 
 
-![](../images/Day54_Kubernetes14.png)
+![](../images/Day54_Kubernetes14.png?v1)
 
 We are now going to run through specifically with Minikube how we can expose our application. We can also use minikube to create a URL to connect to a service [More details](https://minikube.sigs.k8s.io/docs/commands/service/) 
 
@@ -161,15 +161,15 @@ First of all we will delete our service using `kubectl delete service nginx-serv
 
 Next we are going to create a new service using `kubectl expose deployment nginx-deployment --name nginx-service --namespace nginx --port=80 --type=NodePort` notice here we are going to use the expose and change the type to NodePort. 
 
-![](../images/Day54_Kubernetes15.png)
+![](../images/Day54_Kubernetes15.png?v1)
 
 Finally in a new terminal run `minikube --profile='mc-demo' service nginx-service --url -n nginx` to create a tunnel for our service.
 
-![](../images/Day54_Kubernetes16.png)
+![](../images/Day54_Kubernetes16.png?v1)
 
 Open a browser or control and click on the link in your terminal.
 
-![](../images/Day54_Kubernetes17.png)
+![](../images/Day54_Kubernetes17.png?v1)
 
 ### Helm 
 

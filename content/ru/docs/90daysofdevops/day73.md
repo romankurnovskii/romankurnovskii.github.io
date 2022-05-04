@@ -13,7 +13,7 @@ In the last section we got Jenkins deployed to our Minikube cluster and we set u
 
 You might have also seen that there are some example scripts available for us to run in the Jenkins Pipeline creation. 
 
-![](../images/Day73_CICD1.png)
+![](../images/Day73_CICD1.png?v1)
 
 The first demo script is "Declartive (Kubernetes)" and you can see the stages below. 
 
@@ -60,7 +60,7 @@ spec:
 ```
 You can see below the outcome of what happens when this Pipeline is ran. 
 
-![](../images/Day73_CICD2.png)
+![](../images/Day73_CICD2.png?v1)
 
 ### Job creation 
 
@@ -90,23 +90,23 @@ However if you were on a Jenkins system unlike ours then you will likely want to
 
 First of all select "Manage Jenkins" and then "Manage Credentials"
 
-![](../images/Day73_CICD3.png)
+![](../images/Day73_CICD3.png?v1)
 
 You will see in the centre of the page, Stores scoped to Jenkins click on Jenkins here. 
 
-![](../images/Day73_CICD4.png)
+![](../images/Day73_CICD4.png?v1)
 
 Now select Global Credentials (Unrestricted)
 
-![](../images/Day73_CICD5.png)
+![](../images/Day73_CICD5.png?v1)
 
 Then in the top left you have Add Credentials 
 
-![](../images/Day73_CICD6.png)
+![](../images/Day73_CICD6.png?v1)
 
 Fill in your details for your account and then select OK, remember the ID is what you will refer to when you want to call this credential. My advice here also is that you use specific token access vs passwords. 
 
-![](../images/Day73_CICD7.png)
+![](../images/Day73_CICD7.png?v1)
 
 For GitHub you should use a [Personal Access Token](https://vzilla.co.uk/vzilla-blog/creating-updating-your-github-personal-access-token)
 
@@ -176,35 +176,35 @@ podTemplate(yaml: '''
 
 To kick things on the Jenkins dashboard we need to select "New Item" 
 
-![](../images/Day73_CICD8.png)
+![](../images/Day73_CICD8.png?v1)
 
 We are then going to give our item a name, select Pipeline and then hit ok. 
 
-![](../images/Day73_CICD9.png)
+![](../images/Day73_CICD9.png?v1)
 
 We are not going to be selecting any of the general or build triggers but have a play with these as there are some interesting schedules and other configurations that might be useful. 
 
-![](../images/Day73_CICD10.png)
+![](../images/Day73_CICD10.png?v1)
 
 We are only interested in the Pipeline tab at the end. 
 
-![](../images/Day73_CICD11.png)
+![](../images/Day73_CICD11.png?v1)
 
 In the Pipeline definition we are going to copy and paste the pipeline script that we have above into the Script section and hit save. 
 
-![](../images/Day73_CICD12.png)
+![](../images/Day73_CICD12.png?v1)
 
 Next we will select the "Build Now" option on the left side of the page. 
 
-![](../images/Day73_CICD13.png)
+![](../images/Day73_CICD13.png?v1)
 
 You should now wait a short amount of time, less than a minute really. and you should see under status the stages that we defined above in our script. 
 
-![](../images/Day73_CICD14.png)
+![](../images/Day73_CICD14.png?v1)
 
 More importantly if we now head on over to our DockerHub and check that we have a new build. 
 
-![](../images/Day73_CICD15.png)
+![](../images/Day73_CICD15.png?v1)
 
 This overall did take a while to figure out but I wanted to stick with it for the purpose of getting hands on and working through a scenario that anyone can run through using minikube and access to github and dockerhub. 
 

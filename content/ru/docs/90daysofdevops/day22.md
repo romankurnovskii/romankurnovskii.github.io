@@ -21,26 +21,26 @@ The rules for networking are divided into seven different layers and those layer
 
 The OSI Model (Open Systems Interconnection Model) is a framework used to describe the functions of a networking system. The OSI model characterises computing functions into a universal set of rules and requirements in order to support interoperability between different products and software. In the OSI reference model, the communications between a computing system are split into seven different abstraction layers: **Physical, Data Link, Network, Transport, Session, Presentation, and Application**.
 
-![](../images/Day22_Networking1.png)
+![](../images/Day22_Networking1.png?v1)
 
 ### Physical
 Layer 1 in the OSI model and this is known as physical, the premise of being able to get data from one host to another through a means be it physical cable or we could also consider Wi-Fi in this layer as well. We might also see some more legacy hardware seen here around hubs and repeaters in order to transport the data from one host to another. 
 
-![](../images/Day22_Networking2.png)
+![](../images/Day22_Networking2.png?v1)
 
 ### Data Link 
 Layer 2, the data link enables node to node transfer where data is packaged into frames. There is also a level of error correcting that might have occurred at the physical layer. This is also where we introduce or first see MAC addresses. 
 
 This is where we see the first mention of switches that we covered in our first day of networking on [Day 21](day21.md)
 
-![](../images/Day22_Networking3.png)
+![](../images/Day22_Networking3.png?v1)
 
 ### Network 
 You have likely heard the term layer 3 switches or layer 2 switches. In our OSI model Layer 3, the Network has a goal of end to end delivery, this is where we see our IP addresses also mentioned in the first day overview. 
 
 Routers and hosts exist at layer 3, remember the router is the ability to route between multiple networks. Anything with an IP could be considered Layer 3. 
 
-![](../images/Day22_Networking4.png)
+![](../images/Day22_Networking4.png?v1)
 
 So why do we need addressing schemes on both Layer 2 and 3? (MAC Addresses vs IP Addresses) 
 
@@ -57,7 +57,7 @@ Now there is a network protocol that we will get into but not today called ARP(A
 ### Transport 
 Service to Service delivery, Layer 4 is there to distinguish data streams. In the same way that Layer 3 and Layer 2 both had their addressing schemes in Layer 4 we have ports. 
 
-![](../images/Day22_Networking5.png)
+![](../images/Day22_Networking5.png?v1)
 
 ### Session, Presentation, Application 
 Distinction between Layers 5,6,7 is or had become somewhat vague. 
@@ -80,15 +80,15 @@ This is known as a frame when you have the layer 2 header and data.
 
 That frame then gets converted into ones and zeros and sent over the Layer 1 Physical cable or wifi. 
 
-![](../images/Day22_Networking6.png)
+![](../images/Day22_Networking6.png?v1)
 
 I did mention above the naming for each layer of header plus data but decided to draw this out as well. 
 
-![](../images/Day22_Networking7.png)
+![](../images/Day22_Networking7.png?v1)
 
 Obviously the Application sending the data is being sent somewhere so the receiving in some what in reverse to get that back up the stack and into the receiving host. 
 
-![](../images/Day22_Networking8.png)
+![](../images/Day22_Networking8.png?v1)
 
 ## Resources 
 

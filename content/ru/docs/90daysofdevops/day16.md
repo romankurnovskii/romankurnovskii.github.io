@@ -23,7 +23,7 @@ Generally, at least on dev workstations, I run this command to make sure that I 
 
 `sudo apt-get update`
 
-![](../images/Day16_Linux1.png)
+![](../images/Day16_Linux1.png?v1)
 
 Now we have an updated Ubuntu VM with the latest OS updates installed. We now want to get some software installed here. 
 
@@ -31,31 +31,31 @@ Let's choose `figlet` which is a program that generates text banners.
 
 If we type `figlet` in our terminal you are going to see that we do not have it installed on our system. 
 
-![](../images/Day16_Linux2.png)
+![](../images/Day16_Linux2.png?v1)
 
 You will see from the above though that it does give us some `apt` install options that we could try. This is because in the default repositories there is a program called figlet.  Let's try `sudo apt install figlet`
 
-![](../images/Day16_Linux3.png)
+![](../images/Day16_Linux3.png?v1)
 
 We can now use our `figlet` app as you can see below. 
 
-![](../images/Day16_Linux4.png)
+![](../images/Day16_Linux4.png?v1)
 
 If we want to remove that or any of our software installations we can also do that via the `apt` package manager. 
 
 `sudo apt remove figlet`
 
-![](../images/Day16_Linux5.png)
+![](../images/Day16_Linux5.png?v1)
 
 There are third party repositories that we can also add to our system, the ones we have access to out of the box are the Ubuntu default repositories. 
 
 If for example, we wanted to install vagrant on our Ubuntu VM we would not be able to right now and you can see this below on the first command issued. We then add the key to trust the HashiCorp repository, then add the repository to our system.  
 
-![](../images/Day16_Linux6.png)
+![](../images/Day16_Linux6.png?v1)
 
 Once we have the HashiCorp repository added we can go ahead and run `sudo apt install vagrant` and get vagrant installed on our system. 
 
-![](../images/Day16_Linux7.png)
+![](../images/Day16_Linux7.png?v1)
 
 There are so many options when it comes to software installation, different options for package managers, built into Ubuntu we could also use snaps for our software installations. 
 
@@ -67,71 +67,71 @@ Linux is made up of configuration files, if you want to change anything then you
 
 On Windows, you have C: drive and that is what we consider the root. On Linux we have `/` this is where we are going to find the important folders on our Linux system. 
 
-![](../images/Day16_Linux8.png)
+![](../images/Day16_Linux8.png?v1)
 
 - `/bin` - Short for binary, the bin folder is where our binaries that your system needs, executables and tools will mostly be found here.  
 
-![](../images/Day16_Linux9.png)
+![](../images/Day16_Linux9.png?v1)
 
 - `/boot` - All the files your system needs to boot up. How to boot up, and what drive to boot from. 
 
-![](../images/Day16_Linux10.png)
+![](../images/Day16_Linux10.png?v1)
 
 - `/dev` - You can find device information here, this is where you will find pointers to your disk drives `sda` will be your main OS disk. 
 
-![](../images/Day16_Linux11.png)
+![](../images/Day16_Linux11.png?v1)
 
 - `/etc` Likely the most important folder on your Linux system, this is where the majority of your configuration files. 
 
-![](../images/Day16_Linux12.png)
+![](../images/Day16_Linux12.png?v1)
 
 - `/home` - this is where you will find your user folders and files. We have our vagrant user folder. This is where you will find your `Documents` and `Desktop` folders that we worked in for the commands section. 
 
-![](../images/Day16_Linux13.png)
+![](../images/Day16_Linux13.png?v1)
 
 - `/lib` - We mentioned that `/bin` is where our binaries and executables live, `/lib` is where you will find the shared libraries for those. 
 
-![](../images/Day16_Linux14.png)
+![](../images/Day16_Linux14.png?v1)
 
 - `/media` - This is where we will find removable devices. 
 
-![](../images/Day16_Linux15.png)
+![](../images/Day16_Linux15.png?v1)
 
 - `/mnt` - This is a temporary mount point. We will cover more here in the next storage section. 
 
-![](../images/Day16_Linux16.png)
+![](../images/Day16_Linux16.png?v1)
 
 - `/opt` - Optional software packages. You will notice here that we have some vagrant and virtual box software stored here. 
 
-![](../images/Day16_Linux17.png)
+![](../images/Day16_Linux17.png?v1)
 
 - `/proc` - Kernel & process information, similar to `/dev`
 
-![](../images/Day16_Linux18.png)
+![](../images/Day16_Linux18.png?v1)
 
 - `/root` - To gain access you will need to sudo into this folder. The home folder for root. 
 
-![](../images/Day16_Linux19.png)
+![](../images/Day16_Linux19.png?v1)
 
 - `/run` -Placeholder for application states.
 
-![](../images/Day16_Linux20.png)
+![](../images/Day16_Linux20.png?v1)
 
 - `/sbin` - Sudo bin, similar to the bin folder but these tools are intended for elevated superuser privileges on the system.
 
-![](../images/Day16_Linux21.png)
+![](../images/Day16_Linux21.png?v1)
 
 - `/tmp` - temporary files. 
 
-![](../images/Day16_Linux22.png)
+![](../images/Day16_Linux22.png?v1)
 
 - `/usr` - If we as a standard user have installed software packages it would generally be installed in the `/usr/bin` location. 
 
-![](../images/Day16_Linux23.png)
+![](../images/Day16_Linux23.png?v1)
 
 - `/var` - Our applications get installed in a `bin` folder. We need somewhere to store all of the log files this is `/var`   
 
-![](../images/Day16_Linux24.png)
+![](../images/Day16_Linux24.png?v1)
 
 ## Storage 
 
@@ -139,11 +139,11 @@ When we come to a Linux system or any system we might want to know the available
 
 - `lsblk` List Block devices. `sda` is our physical disk and then `sda1, sda2, sda3` are our partitions on that disk. 
 
-![](../images/Day16_Linux25.png)
+![](../images/Day16_Linux25.png?v1)
 
 - `df` gives us a little more detail about those partitions, total, used and available. You can parse other flags here I generally use `df -h` to give us a human output of the data. 
 
-![](../images/Day16_Linux26.png)
+![](../images/Day16_Linux26.png?v1)
 
 If you were adding a new disk to your system and this is the same in Windows you would need to format the disk in disk management, in the Linux terminal you can do this by using the `sudo mkfs -t ext4 /dev/sdb` with sdb relating to our newly added disk. 
 

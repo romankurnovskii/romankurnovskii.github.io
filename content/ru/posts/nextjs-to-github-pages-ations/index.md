@@ -41,7 +41,7 @@ Settings → Deploy keys →Add new
 
 из файла [gh-pages.pub](http://gh-pages.pub) вставляю текст публичного ключа
 
-![Screen Shot 2022-03-05 at 19.50.08.png](Screen_Shot_2022-03-05_at_19.50.08.png)
+![Screen Shot 2022-03-05 at 19.50.08.png](Screen_Shot_2022-03-05_at_19.50.08.png?v1)
 
 Settings → Secrets
 
@@ -51,7 +51,7 @@ Settings → Secrets
 
 [https://github.com/romankurnovskii/notion-project/settings/secrets/actions/new](https://github.com/romankurnovskii/notion-project/settings/secrets/actions/new)
 
-![Screen Shot 2022-03-05 at 19.52.04.png](Screen_Shot_2022-03-05_at_19.52.04.png)
+![Screen Shot 2022-03-05 at 19.52.04.png](Screen_Shot_2022-03-05_at_19.52.04.png?v1)
 
 Удаляю ключи файлы чтобы случайно не закоммитить
 
@@ -191,7 +191,7 @@ module.exports = withBundleAnalyzer({
 });
 ```
 
-![Screen Shot 2022-03-05 at 19.35.50.png](Screen_Shot_2022-03-05_at_19.35.50.png)
+![Screen Shot 2022-03-05 at 19.35.50.png](Screen_Shot_2022-03-05_at_19.35.50.png?v1)
 
 Редактирую \***\*[next.config.js](https://github.com/romankurnovskii/notion-project)\*\***
 

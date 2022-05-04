@@ -26,29 +26,29 @@ kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 ```
 
-![](../images/Day76_CICD1.png)
+![](../images/Day76_CICD1.png?v1)
 
 Make sure all the ArgoCD pods are up and running with `kubectl get pods -n argocd`
 
-![](../images/Day76_CICD2.png)
+![](../images/Day76_CICD2.png?v1)
 
 Also let's check everything that we deployed in the namespace with `kubectl get all -n argocd` 
 
-![](../images/Day76_CICD3.png)
+![](../images/Day76_CICD3.png?v1)
 
 When the above is looking good, we then should consider accessing this via the port forward. Using the `kubectl port-forward svc/argocd-server -n argocd 8080:443` command. Do this in a new terminal. 
 
 Then open a new web browser and head to https://localhost:8080 
 
-![](../images/Day76_CICD4.png)
+![](../images/Day76_CICD4.png?v1)
 
 To log in you will need a username of admin and then to grab your created secret as your password use the `kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d && echo` 
 
-![](../images/Day76_CICD5.png)
+![](../images/Day76_CICD5.png?v1)
 
 Once you have logged in you will have your blank CD canvas. 
 
-![](../images/Day76_CICD6.png)
+![](../images/Day76_CICD6.png?v1)
 
 ### Deploying our application 
 

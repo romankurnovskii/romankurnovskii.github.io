@@ -148,7 +148,7 @@ When in that folder we are going to run `terraform init`
 
 We need to perform this on any directory where we have or before we run any terraform code. Initialising a configuration directory downloads and installs the providers defined in the configuration, in this case we have no providers but in the example above this would download the aws provider for this configuration.  
 
-![](../images/Day58_IAC1.png)
+![](../images/Day58_IAC1.png?v1)
 
 The next command will be `terraform plan` 
 
@@ -156,17 +156,17 @@ The `terraform plan` command creates an execution plan, which lets you preview t
 
 You can simply see below that with our hello-world example we are going to see an output if this was an AWS ec2 instance we would see all the steps that we will be creating. 
 
-![](../images/Day58_IAC2.png)
+![](../images/Day58_IAC2.png?v1)
 
 At this point we have initialised our repository and we have our providers downloaded where required, we have run a test walkthrough to make sure this is what we want to see so now we can run and deploy our code. 
 
 `terraform apply` allows us to do this there is a built in safety measure to this command and this will again give you a plan view on what is going to happen which warrants a response from you to say yes to continue. 
 
-![](../images/Day58_IAC3.png)
+![](../images/Day58_IAC3.png?v1)
 
 When we type in yes to the enter a value, and our code is deployed. Obviously not that exciting but you can see we have the output that we defined in our code. 
 
-![](../images/Day58_IAC4.png)
+![](../images/Day58_IAC4.png?v1)
 
 Now we have not deployed anything, we have not added, changed or destroyed anything but if we did then we would see that indicated also in the above. If however we had deployed something and we wanted to get rid of everything we deployed we can use the `terraform destroy` command. Again this has that safety where you have to type yes although you can use `--auto-approve` on the end of your `apply` and `destroy` commands to bypass that manual intervention. But I would advise only using this shortcut when in learning and testing as everything will dissappear sometimes faster than it was built. 
 

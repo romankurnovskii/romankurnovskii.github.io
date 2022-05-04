@@ -13,15 +13,15 @@ Jenkins is a continous integration tool that allows continous development, test 
 
 There are two ways we can achieve this with either nightly builds or continous development. The first option is that our developers are developing throughout the day on their tasks and come the end of the set day they push their changes to the source code repository. Then during the night we run our unit tests and build of the software. This could be deemed as the old way to integrate all code. 
 
-![](../images/Day71_CICD1.png)
+![](../images/Day71_CICD1.png?v1)
 
 The other option and the preferred way is that our developers are still committing their changes to source code, then when that code commit has been made there is a build process kicked off continously. 
 
-![](../images/Day71_CICD2.png)
+![](../images/Day71_CICD2.png?v1)
 
 The above methods means that with distributed developers across the world we don't have a set time each day where we have to stop committing our code changes. This is where Jenkins comes in to act as that CI server to control those tests and build processes. 
 
-![](../images/Day71_CICD3.png)
+![](../images/Day71_CICD3.png?v1)
 
 I know we are talking about Jenkins here but I also want to add a few more to maybe look into later on down the line to get an understanding why I am seeing Jenkins as the overall most popular, why is that and what can the others do over Jenkins. 
 
@@ -55,7 +55,7 @@ You will have seen this pipeline but used in a much broader and we have not spok
 
 You are going to be committing code to Jenkins, which then will build out your application, with all automated tests, it will then release and deploy that code when each step is completed. Jenkins is what allows for the automation of this process. 
 
-![](../images/Day71_CICD4.png)
+![](../images/Day71_CICD4.png?v1)
 
 ### Jenkins Architecture 
 
@@ -83,7 +83,7 @@ Step 7 - If the tests are successful then we can release to production.
 
 This cycle is continous, this is what allows applications to be updated in minutes vs hours, days, months, years! 
 
-![](../images/Day71_CICD5.png)
+![](../images/Day71_CICD5.png?v1)
 
 There is a lot more to the architecture of Jenkins if you require it, they have a master-slave capability, which enables a master to distribute the tasks to slave jenkins environment. 
 

@@ -49,7 +49,7 @@ A runner is a server that runs the workflow, each runner runs a single job at a 
 
 Below you can see how this looks, we have our event triggering our workflow > our workflow consists of two jobs > within our jobs we then have steps and then we have actions. 
 
-![](../images/Day75_CICD1.png)
+![](../images/Day75_CICD1.png?v1)
 
 ### YAML 
 
@@ -125,21 +125,21 @@ We will use our repository that we used in our Jenkins demo to test against.[Jen
 
 Here is our repository as we left it in the Jenkins sessions. 
 
-![](../images/Day75_CICD2.png)
+![](../images/Day75_CICD2.png?v1)
 
 In order for us to take advantage we have to use the Actions tab above to choose from the marketplace which I will cover shortly or we can create our own files using our super-linter code above, in order to create your own you must create a new file in your repository at this exact location. `.github/workflows/workflow_name` obviously making sure the workflow_name is something useful for you recognise, within here we can have many different workflows performing different jobs and tasks against our repository. 
 
 We are going to create `.github/workflows/super-linter.yml`
 
-![](../images/Day75_CICD3.png)
+![](../images/Day75_CICD3.png?v1)
 
 We can then paste our code and commit the code to our repository, if we then head to the Actions tab we will now see our Super-Linter workflow listed as per below, 
 
-![](../images/Day75_CICD4.png)
+![](../images/Day75_CICD4.png?v1)
 
 We defined in our code that this workflow would run when we pushed anything to our repository, so in pushing the super-linter.yml to our repository we triggered the workflow. 
 
-![](../images/Day75_CICD5.png)
+![](../images/Day75_CICD5.png?v1)
 
 As you can see from the above we have some errors most likely with my hacking ability vs coding ability. 
 
@@ -147,25 +147,25 @@ Although actually it was not my code at least not yet, in running this and getti
 
 Take #2 I changed the version of Super-Linter from version 3 to 4 and have ran the task again. 
 
-![](../images/Day75_CICD6.png)
+![](../images/Day75_CICD6.png?v1)
 
 As expected my hacker coding brought up some issues and you can see them here in the [workflow](https://github.com/MichaelCade/Jenkins-HelloWorld/runs/5600278515?check_suite_focus=true)
 
 I wanted to show the look now on our repository when something within the workflow has failed or reported back an error.
 
-![](../images/Day75_CICD7.png)
+![](../images/Day75_CICD7.png?v1)
 
 Now if we resolve the issue with my code and push the changes our workflow will run again (you can see from the image it took a while to iron out our "bugs") Deleting a file is probably not recommended but it is a very quick way to show the issue being resolved. 
 
-![](../images/Day75_CICD8.png)
+![](../images/Day75_CICD8.png?v1)
 
 If you hit the new workflow button highlighted above, this is going to open the door to a huge plethora of actions. One thing you might have noticed throughout this challenge is that we don't want to reinvent the wheel we want to stand on the shoulders of giants and share our code, automations and skills far and wide to make our lives easier. 
 
-![](../images/Day75_CICD9.png)
+![](../images/Day75_CICD9.png?v1)
 
 Oh, I didn't show you the green tick on the repository when our workflow was successful. 
 
-![](../images/Day75_CICD10.png)
+![](../images/Day75_CICD10.png?v1)
 
 I think that covers things from a foundational point of view for GitHub Actions but if you are anything like me then you are probably seeing how else GitHub Actions can be used to automate a lot of tasks. 
 

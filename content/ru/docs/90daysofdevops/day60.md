@@ -44,15 +44,15 @@ resource "docker_container" "nginx" {
 
 The first task is to use `terraform init` command to download the provider to our local machine. 
 
-![](../images/Day60_IAC1.png)
+![](../images/Day60_IAC1.png?v1)
 
 We then run our `terraform apply` followed by `docker ps` and you can see we have a running container. 
 
-![](../images/Day60_IAC2.png)
+![](../images/Day60_IAC2.png?v1)
 
 If we then open a browser we can navigate to http://localhost:8000/ and you will see we have access to our NGINX container. 
 
-![](../images/Day60_IAC3.png)
+![](../images/Day60_IAC3.png?v1)
 
 You can find out more information on the [Docker Provider](https://registry.terraform.io/providers/kreuzwerker/docker/latest/docs/resources/container) 
 
@@ -122,15 +122,15 @@ resource "docker_container" "wordpress" {
 
 We again put this is in a new folder and then run our `terraform init` command to pull down our provisioners required. 
 
-![](../images/Day60_IAC4.png)
+![](../images/Day60_IAC4.png?v1)
 
 We then run our `terraform apply` command and then take a look at our docker ps output we should see our newly created containers. 
 
-![](../images/Day60_IAC5.png)
+![](../images/Day60_IAC5.png?v1)
 
 We can then also navigate to our WordPress front end. Much like when we went through this process with docker-compose in the containers section we can now run through the setup and our wordpress posts would be living in our MySQL database. 
 
-![](../images/Day60_IAC6.png)
+![](../images/Day60_IAC6.png?v1)
 
 Obviously now we have covered containers and Kubernetes in some detail, we probably know that this is ok for testing but if you were really going to be running a website you would not do this with containers alone and you would look at using Kubernetes to achieve this, Next up we are going to take a look using Terraform with Kubernetes. 
 

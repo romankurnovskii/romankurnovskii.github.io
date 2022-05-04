@@ -27,7 +27,7 @@ What happens if their system fails, if there's a fire, a server goes down well? 
 
 There are a variety of configuration management tools available, and each has specific features that make it better for some situations than others. 
 
-![](../images/Day63_config1.png)
+![](../images/Day63_config1.png?v1)
 
 At this stage we will take a quick fire look at the options in the above picture before making our choice on which one we will use and why. 
 
