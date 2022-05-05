@@ -1,165 +1,166 @@
 ---
-title: '#90DaysOfDevOps - Managing your Linux System, Filesystem & Storage - Day 16'
-published: false
-description: '90DaysOfDevOps - Managing your Linux System, Filesystem & Storage'
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+title: 16 - Managing your Linux System, Filesystem & Storage
+description: Управление системой, файловой системой и хранилищем в Linux
+toc: true
+authors:
+tags: [devops, linux,  файловая ситема linux]
+categories:
+series: 
+date: "2022-05-06"
+lastmod: "2022-05-05"
+featuredImage:
+draft: false
 id: 1048702
 ---
-## Managing your Linux System, Filesystem & Storage
+## Управление системой, файловой системой и хранилищем в Linux
 
-So far we have had a brief overview of Linux and DevOps and then we got our lab environment set up using vagant [(Day 14)](day14.md), we then touched on a small portion of commands that will be in your daily toolkit when in the terminal and getting things done [(Day 15)](day15.md). 
+К этому времени мы кратко рассмотрели Linux и DevOps, а затем мы настроили нашу лабораторную среду с помощью vagant [14-й день)](../day14), а затем коснулись небольшой части команд, которые будут в вашем ежедневном набор инструментов во время использования терминала - [(День 15)](../day15).
 
-Here we are going to look into three key areas of looking after your Linux systems with updates, installing software, understanding what system folders are used for and we will also take a look at storage. 
+Сегодня мы рассмотрим три ключевые области обслуживания систем Linux с помощью обновлений, установки программного обеспечения. Поймем для чего используются системные папки, а также рассмотрим хранилище.
+## Управление Ubuntu и программным обеспечением
+Первое, что мы собираемся рассмотреть, это то, как мы обновляем нашу операционную систему. Большинству из вас этот процесс знаком в ОС Windows и macOS, он немного отличается на рабочем столе и сервере Linux.
 
-## Managing Ubuntu & Software
+Мы рассмотрим диспетчер пакетов apt - утилита, которую мы собираемся использовать на нашей виртуальной машине Ubuntu для обновлений и установки программного обеспечения.
 
-The first thing we are going to look at is how we update our operating system. Most of you will be familiar with this process in a Windows OS and macOS, this looks slightly different on a Linux desktop and server.  
-
-We are going to be looking at the apt package manager, this is what we are going to use on our Ubuntu VM for updates and software installation. 
-
-Generally, at least on dev workstations, I run this command to make sure that I have the latest available updates from the central repositories, before any software installation.  
+Как правило, по крайней мере на рабочих станциях разработчиков, мы запускаем эту команду, чтобы убедиться, что у нас есть последние доступные обновления из центральных репозиториев перед установкой любого программного обеспечения.
 
 `sudo apt-get update`
 
 ![](../images/Day16_Linux1.png?v1)
 
-Now we have an updated Ubuntu VM with the latest OS updates installed. We now want to get some software installed here. 
-
-Let's choose `figlet` which is a program that generates text banners.
-
-If we type `figlet` in our terminal you are going to see that we do not have it installed on our system. 
+Теперь у нас есть обновленная виртуальная машина Ubuntu с установленными последними обновлениями ОС. Теперь мы хотим установить здесь некоторое программное обеспечение.
+Давайте выберем  `figlet` — программу, генерирующую текстовые баннеры.
+Если мы введем «figlet» в наш терминал, вы увидите, что приложение не установлен в нашей системе.
 
 ![](../images/Day16_Linux2.png?v1)
-
-You will see from the above though that it does give us some `apt` install options that we could try. This is because in the default repositories there is a program called figlet.  Let's try `sudo apt install figlet`
-
+Однако из вышеизложенного вы увидите, что утилита `apt` предлагает нам некотоыре опции установки `apt install ... `, которые мы можем попробовать. Это потому, что в репозиториях по умолчанию есть программа figlet. Давайте попробуем `sudo apt install figlet`
 ![](../images/Day16_Linux3.png?v1)
-
-We can now use our `figlet` app as you can see below. 
-
+Теперь мы можем использовать наше приложение figlet
 ![](../images/Day16_Linux4.png?v1)
 
-If we want to remove that or any of our software installations we can also do that via the `apt` package manager. 
-
+Если мы хотим удалить эту или любую из наших установок программного обеспечения, мы также можем сделать это с помощью менеджера пакетов «apt».
 `sudo apt remove figlet`
 
 ![](../images/Day16_Linux5.png?v1)
 
-There are third party repositories that we can also add to our system, the ones we have access to out of the box are the Ubuntu default repositories. 
+Существуют сторонние репозитории, которые мы также можем добавить в нашу систему, те, к которым у нас есть доступ из коробки, являются репозиториями Ubuntu по умолчанию.
 
-If for example, we wanted to install vagrant on our Ubuntu VM we would not be able to right now and you can see this below on the first command issued. We then add the key to trust the HashiCorp repository, then add the repository to our system.  
-
+Если бы, например, мы хотели установить vagrant на нашу виртуальную машину Ubuntu, мы не смогли бы сделать это прямо сейчас, и вы можете увидеть это ниже в первой введенной команде. Затем мы добавляем ключ к репозиторию HashiCorp, а затем добавляем репозиторий в нашу систему.
+```
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+```
 ![](../images/Day16_Linux6.png?v1)
-
-Once we have the HashiCorp repository added we can go ahead and run `sudo apt install vagrant` and get vagrant installed on our system. 
+Как только мы добавим репозиторий HashiCorp, мы можем запустить `sudo apt install vagrant` и установить vagrant в нашей системе.
 
 ![](../images/Day16_Linux7.png?v1)
 
-There are so many options when it comes to software installation, different options for package managers, built into Ubuntu we could also use snaps for our software installations. 
+Существует много вариантов, когда дело доходит до установки программного обеспечения, различных вариантов менеджеров пакетов, встроенных в Ubuntu, мы также могли бы использовать сохраненные темплейты (snapshots) для установки нашего программного обеспечения.
 
-Hopefully, this gives you a feel about how to manage your OS and software installations on Linux. 
+Надеюсь, это даст вам представление о том, как управлять установками ОС и программного обеспечения в Linux.
+## Файловая система
+Linux состоит из файлов конфигурации, и если вы хотите что-то изменить, вы меняете эти файлы конфигурации.
 
-## File System Explained 
-
-Linux is made up of configuration files, if you want to change anything then you change these configuration files. 
-
-On Windows, you have C: drive and that is what we consider the root. On Linux we have `/` this is where we are going to find the important folders on our Linux system. 
+В Windows у вас есть диск `C:`, и это то, что мы считаем корнем. В Linux у нас есть `/`, где мы собираемся найти важные папки в нашей системе Linux.
 
 ![](../images/Day16_Linux8.png?v1)
 
-- `/bin` - Short for binary, the bin folder is where our binaries that your system needs, executables and tools will mostly be found here.  
+- `/bin` - Сокращенно от binary, папка bin — это место, где в основном находятся наши двоичные файлы, которые нужны вашей системе, исполняемые файлы и инструменты.
 
 ![](../images/Day16_Linux9.png?v1)
 
-- `/boot` - All the files your system needs to boot up. How to boot up, and what drive to boot from. 
+- `/boot` - Все файлы, необходимые вашей системе для загрузки. Как загрузиться и с какого диска загрузиться.
 
 ![](../images/Day16_Linux10.png?v1)
 
-- `/dev` - You can find device information here, this is where you will find pointers to your disk drives `sda` will be your main OS disk. 
+- `/dev` - Вы можете найти информацию об устройстве здесь, здесь вы найдете указатели на ваши диски `sda`, которые будут вашим основным диском ОС.
 
 ![](../images/Day16_Linux11.png?v1)
 
-- `/etc` Likely the most important folder on your Linux system, this is where the majority of your configuration files. 
+- `/etc` - Вероятно, это самая важная папка в вашей системе Linux, где находится большинство ваших файлов конфигурации.
 
 ![](../images/Day16_Linux12.png?v1)
 
-- `/home` - this is where you will find your user folders and files. We have our vagrant user folder. This is where you will find your `Documents` and `Desktop` folders that we worked in for the commands section. 
+- `/home` - здесь вы найдете свои пользовательские папки и файлы. У нас есть пользовательская папка `vagrant`. В ней вы найдете папки "Documents" и «Desktop», с которыми мы работали для раздела команд. 
 
 ![](../images/Day16_Linux13.png?v1)
 
-- `/lib` - We mentioned that `/bin` is where our binaries and executables live, `/lib` is where you will find the shared libraries for those. 
+- `/lib` - Мы упомянули, что `/bin` — это место, где находятся наши бинарные и исполняемые файлы, а `/lib` — это место, где вы найдете разделяемые библиотеки для них.
 
 ![](../images/Day16_Linux14.png?v1)
 
-- `/media` - This is where we will find removable devices. 
+- `/media` - Съемные носители. Флешки, диски и тд).
 
 ![](../images/Day16_Linux15.png?v1)
 
-- `/mnt` - This is a temporary mount point. We will cover more here in the next storage section. 
+- `/mnt` - Mount. Это временная точка монтирования. Подробнее мы расскажем в следующем разделе о хранении данных.
 
 ![](../images/Day16_Linux16.png?v1)
 
-- `/opt` - Optional software packages. You will notice here that we have some vagrant and virtual box software stored here. 
+- `/opt` - Дополнительные пакеты программного обеспечения. Вы заметите, что здесь хранится некоторое программное обеспечение для vagrant и virtual box.
 
 ![](../images/Day16_Linux17.png?v1)
 
-- `/proc` - Kernel & process information, similar to `/dev`
+- `/proc` - Информация о ядре (kernel) и процессе (process), аналогичная `/dev`
 
 ![](../images/Day16_Linux18.png?v1)
 
-- `/root` - To gain access you will need to sudo into this folder. The home folder for root. 
+- `/root` - Домашняя папка для root. Чтобы получить доступ, вам нужно войти в эту папку с помощью sudo.
 
 ![](../images/Day16_Linux19.png?v1)
 
-- `/run` -Placeholder for application states.
+- `/run` - Каталог, содержащий PID файлы процессов, похожий на /var/run, но в отличие от него, он размещен в TMPFS, а поэтому после перезагрузки все файлы теряются. Сохраняет состояния текущих процессов
 
 ![](../images/Day16_Linux20.png?v1)
 
-- `/sbin` - Sudo bin, similar to the bin folder but these tools are intended for elevated superuser privileges on the system.
+- `/sbin` - System binaries. Так же как и /bin, содержит двоичные исполняемые файлы, которые доступны на ранних этапах загрузки, когда не примонтирован каталог /usr. Но здесь находятся программы, которые можно выполнять только с правами суперпользователя. Это разные утилиты для обслуживания системы. Например, iptables, reboot, fdisk, ifconfig,swapon и т д.
 
 ![](../images/Day16_Linux21.png?v1)
 
-- `/tmp` - temporary files. 
+- `/tmp` - Содержит временные файлы, созданные системой, любыми программами или пользователями
 
 ![](../images/Day16_Linux22.png?v1)
 
-- `/usr` - If we as a standard user have installed software packages it would generally be installed in the `/usr/bin` location. 
+- `/usr` - User Aplications. Если бы мы, как обычный пользователь, установили пакеты программного обеспечения, они обычно устанавливались бы в папку `/usr/bin`. Здесь находятся исполняемые файлы, исходники программ, различные ресурсы приложений, картинки, музыка и документация
+
+- `/usr/bin` - Содержит исполняемые файлы различных программ, которые не нужны на первых этапах загрузки системы, например, музыкальные плееры, графические редакторы, браузеры и т.д.
 
 ![](../images/Day16_Linux23.png?v1)
 
-- `/var` - Our applications get installed in a `bin` folder. We need somewhere to store all of the log files this is `/var`   
+- `/var` - Variable. Переменные файлы. Наши приложения устанавливаются в папку `bin`. Нам нужно где-то хранить все файлы журналов, это `/var`. Здесь содержатся файлы системных журналов, различные кеши, базы данных и так далее
 
 ![](../images/Day16_Linux24.png?v1)
 
-## Storage 
+- `/var/log` - Logs. Здесь содержатся большинство файлов логов всех программ, установленных в операционной системе. У многих программ есть свои подкаталоги в этой папке, например, /var/log/apache - логи веб-сервера, /var/log/squid - файлы журналов кеширующего сервера squid. Если в системе что-либо сломалось, скорее всего, ответы вы найдете здесь.
 
-When we come to a Linux system or any system we might want to know the available disks and how much free space we have on those disks. The next few commands will help us identify and use and manage storage. 
+- `/var/run` - Содержит файлы с PID процессов, которые могут быть использованы, для взаимодействия между программами. В отличие от каталога /run данные сохраняются после перезагрузки.
+- `/sys` - System. Информация о системе. Назначение каталогов Linux из этой папки - получение информации о системе непосредственно от ядра. Это еще одна файловая система организуемая ядром и позволяющая просматривать и изменить многие параметры работы системы, например, работу swap, контролировать вентиляторы и многое другое.
+## Хранение 
 
-- `lsblk` List Block devices. `sda` is our physical disk and then `sda1, sda2, sda3` are our partitions on that disk. 
+Когда мы подходим к системе Linux или любой другой системе, мы можем захотеть узнать о доступных дисках и о том, сколько свободного места у нас есть на этих дисках. Следующие несколько команд помогут нам идентифицировать, использовать и управлять хранилищем.
+
+- `lsblk` Список заблокированных устройств. «sda» — это наш физический диск, а затем «sda1, sda2, sda3» — наши разделы на этом диске.
 
 ![](../images/Day16_Linux25.png?v1)
 
-- `df` gives us a little more detail about those partitions, total, used and available. You can parse other flags here I generally use `df -h` to give us a human output of the data. 
-
+- `df` дает нам немного больше информации об этих разделах, сколько всего, используется и доступно. Здесь вы можете использовать и другие флаги. Я обычно использую `df -h`, чтобы дать нам "человеческий (понятный" (human) вывод данных.
 ![](../images/Day16_Linux26.png?v1)
 
-If you were adding a new disk to your system and this is the same in Windows you would need to format the disk in disk management, in the Linux terminal you can do this by using the `sudo mkfs -t ext4 /dev/sdb` with sdb relating to our newly added disk. 
+Если вы добавляли новый диск в свою систему, и это то же самое в Windows, вам нужно было бы отформатировать диск в управлении дисками, в терминале Linux вы можете сделать это с помощью `sudo mkfs -t ext4 /dev/sdb` с sdb, относящимся к нашему недавно добавленному диску.
 
-We would then need to mount our newly formatted disk so that it was useable. We would do this in our `/mnt` folder previously mentioned and we would create a directory there with `sudo mkdir NewDisk` we would then use `sudo mount /dev/sdb newdisk` to mount the disk to that location. 
+Затем нам нужно будет смонтировать наш недавно отформатированный диск, чтобы его можно было использовать. Мы сделали бы это в нашей ранее упомянутой папке `/mnt` и создали бы там каталог с `sudo mkdir NewDisk`, а затем использовали бы `sudo mount /dev/sdb newdisk` для монтирования диска в это место.
 
-It is also possible that you will need to unmount storage from your system safely vs just pulling it from the configuration. We can do this with `sudo umount /dev/sdb` 
+Также возможно, что вам нужно будет безопасно отключить хранилище из вашей системы, а не просто вытащить его из конфигурации. Мы можем сделать это с помощью sudo umount /dev/sdb.
 
-If you did not want to unmount that disk and you were going to be using this disk for a database or some other persistent use case then you want it to be there when you reboot your system. For this to happen we need to add this disk to our `/etc/fstab` configuration file for it to persist, if you don't it won't be useable when the machine reboots and you would manually have to go through the above process. The data will still be there on the disk but it won't automount unless you add the configuration to this file. 
+Если вы не хотите размонтировать этот диск и собираетесь использовать этот диск для базы данных или какого-либо другого варианта постоянного использования, тогда вы хотите, чтобы он был там при перезагрузке системы. Чтобы это произошло, нам нужно добавить этот диск в наш файл конфигурации `/etc/fstab`, чтобы он сохранялся, если вы этого не сделаете, его нельзя будет использовать при перезагрузке машины, и вам придется вручную выполнить описанное выше. процесс. Данные по-прежнему будут на диске, но они не будут автоматически монтироваться, пока вы не добавите конфигурацию в этот файл.
 
-Once you have edited the `fstab` configuration file you can check your workings with `sudo mount -a` if no errors then your changes will now be persistent across restarts. 
+После того, как вы отредактировали файл конфигурации `fstab`, вы можете проверить свою работу с помощью `sudo mount -a`, если ошибок нет, тогда ваши изменения теперь будут сохраняться при перезапусках.
 
-We will cover how you would edit a file using a text editor in a future session. 
+Мы расскажем, как вы будете редактировать файл с помощью текстового редактора в будущем сеансе.
 
-## Resources 
+## Ресурсы 
 
+- [Структура файловой системы Linux](https://losst.ru/ctruktura-fajlovoj-sistemy-linux)
 - [Learn the Linux Fundamentals - Part 1](https://www.youtube.com/watch?v=kPylihJRG70)
 - [Linux for hackers (don't worry you don't need to be a hacker!)](https://www.youtube.com/watch?v=VbEx7B_PTOE)
 
-See you on [Day17](day17.md)
