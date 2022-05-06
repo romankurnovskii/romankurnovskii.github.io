@@ -1,10 +1,15 @@
 ---
-title: '#90DaysOfDevOps - Automate tasks with bash scripts - Day 19'
-published: false
-description: 90DaysOfDevOps - Automate tasks with bash scripts
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+title: 19 - Automate tasks with bash scripts
+description: Automate tasks with bash scripts
+toc: true
+authors:
+tags: [devops, bash]
+categories:
+series: 
+date: "2022-05-09"
+lastmod: "2022-05-06"
+featuredImage:
+draft: false
 id: 1048774
 ---
 ## Automate tasks with bash scripts

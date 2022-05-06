@@ -43,8 +43,6 @@ draft: false
 - [✔️] ⌨️ 12 > [Getting user input with Pointers and a finished program](day12)
 - [✔️] ⌨️ 13 > [Tweet your progress with our new App](day13)
 
-<!-- This is commented out. 
-
 ### Knowing Linux Basics
 
 - [✔️] 🐧 14 > [The Big Picture: DevOps and Linux](day14)
@@ -55,6 +53,8 @@ draft: false
 - [✔️] 🐧 19 > [Automate tasks with bash scripts](day19)
 - [✔️] 🐧 20 > [Dev workstation setup - All the pretty things](day20)
 
+
+<!-- This is commented out. 
 ### Understand Networking
 
 - [✔️] 🌐 21 > [The Big Picture: DevOps and Networking](day21)
