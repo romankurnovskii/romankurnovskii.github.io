@@ -42,3 +42,8 @@ taxonomies:
 
 build:
   useResourceCacheWhen: always
+
+sitemap:
+  changefreq: always
+  filename: sitemap.xml
+  priority: 0.5
