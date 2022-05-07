@@ -1,6 +1,6 @@
 ---
-title: 19 - Automate tasks with bash scripts
-description: Automate tasks with bash scripts
+title: 19 - Автоматизация задачи с помощью bash-скриптов
+description: Автоматизация задачи с помощью bash-скриптов
 toc: true
 authors:
 tags: [devops, bash]
@@ -12,50 +12,49 @@ featuredImage:
 draft: false
 id: 1048774
 ---
-## Automate tasks with bash scripts
+## Автоматизация задачи с помощью bash-скриптов
 
-The shell that we are going to use today is the bash but we will cover another shell tomorrow when we dive into ZSH. 
+Оболочка, которую мы собираемся использовать сегодня, — это bash, но мы рассмотрим другую оболочку завтра, когда будем углубляться в ZSH.
 
-BASH - **B**ourne **A**gain **Sh**ell
+BASH - **B**ourne **A**gain **Sh**ell («возрождённый» shell)
 
-We could almost dedicate a whole section of 7 days to shell scripting much like the programming languages, bash gives us the capability of working alongside other automation tools to get things done. 
+Мы могли бы почти посвятить целую секцию из 7 дней написанию сценариев оболочки, как и языкам программирования. Bash дает нам возможность работать вместе с другими инструментами автоматизации для достижения цели.
 
-I still speak to a lot of people where they have set up some complex shell scripts to make something happen and they rely on this script for some of the most important things in the business, I am not saying we need to understand shell/bash scripting for this purpose, this is not the way. But we should learn shell/bash scripting to work alongside our automation tools and for ad-hoc tasks. 
+Я до сих пор разговариваю со многими людьми, которые настроили несколько сложных сценариев оболочки, чтобы что-то произошло, и они полагаются на этот сценарий для некоторых из наиболее важных вещей в бизнесе, я не говорю, что нам нужно понимать сценарии оболочки/bash. для этой цели это не путь. Но мы должны изучить сценарии оболочки/bash, чтобы работать вместе с нашими инструментами автоматизации и для специальных задач.
 
-An example of this that we have used in this section could be the VAGRANTFILE we used to create our VM, we could wrap this into a simple bash script that deleted and renewed this every Monday morning so that we have a fresh copy of our Linux VM every week, we could also add all the software stack that we need on said Linux machine and so on all through this one bash script. 
+Одним из примеров, который мы использовали, может быть VAGRANTFILE, который мы использовали для создания нашей виртуальной машины, мы могли бы обернуть его в простой сценарий bash, который удалял и обновлял его каждый понедельник утром, чтобы у нас была свежая копия нашей виртуальной машины Linux. каждую неделю мы могли бы также добавлять весь программный стек, который нам нужен, на указанную машину с Linux и так далее с помощью одного сценария bash.
 
-I think another thing I am at least hearing is that hands-on scripting questions are becoming more and more apparent in all lines of interviews. 
+Я думаю, что еще одна вещь, которую я, по крайней мере, слышу, это то, что практические вопросы по скриптам становятся все более и более очевидными во всех интервью.
 
-### Getting started 
+### Начало
 
-As with a lot of things we are covering in this whole 90 days, the only real way to learn is through doing. Hands-on experience is going to help soak all of this into your muscle memory. 
+Как и в случае со многим, что мы рассмотрим за все эти 90 дней, единственный реальный способ научиться — это делать. Практический опыт поможет впитать все это в вашу мышечную память.
 
-First of all, we are going to need a text editor. On [Day 17](Day17.md) we covered probably the two most common text editors and a little on how to use them. 
+Прежде всего, нам понадобится текстовый редактор. В [День 17](../Day17) мы рассказали, наверное, о двух самых распространенных текстовых редакторах и немного о том, как их использовать.
 
-Let's get straight into it and create our first shell script. 
+Давайте приступим прямо к делу и создадим наш первый сценарий оболочки.
 
-`touch 90DaysOfDevOps.sh`
+`touch 90DaysOfDevOps.sh` - создает файл 90DaysOfDevOps.sh
 
-Followed by `nano 90DaysOfDevOps.sh` this will open our new blank shell script in nano. Again you can choose your text editor of choice here. 
+За ним следует `nano 90DaysOfDevOps.sh`, это откроет наш новый пустой сценарий оболочки в nano. Опять же, вы можете выбрать другой текстовый редактор.
 
-The first line of all bash scripts will need to look something like this `#!/usr/bin/bash` this is the path to your bash binary. 
+Первая строка всех скриптов bash должна выглядеть примерно так: `#!/usr/bin/bash`, это путь к вашему двоичному файлу bash.
 
-You should however check this in the terminal by running `which bash` if you are not using Ubuntu then you might also try `whereis bash` from the terminal. 
+Однако вы должны проверить это в терминале, запустив `which bash`, если вы не используете Ubuntu, вы также можете попробовать `whereis bash` из терминала.
 
-However, you may see other paths listed in already created shell scripts which could include: 
+Однако вы можете увидеть другие пути, перечисленные в уже созданных сценариях оболочки, которые могут включать:
 
 - `#!/bin/bash`
 - `#!/usr/bin/env bash`
 
-In the next line in our script, I like to add a comment and add the purpose of the script or at least some information about me. You can do this by using the `#` This allows us to comment out particular lines in our code and provide descriptions for what the upcoming commands will be doing. I find the more notes the better for the user experience especially if you are sharing this. 
+В следующей строке нашего скрипта я хотел бы добавить комментарий и добавить цель скрипта или хотя бы какую-то информацию обо мне. Вы можете сделать это, используя `#`. Это позволяет нам комментировать определенные строки в нашем коде и предоставлять описания того, что будут делать следующие команды. Я считаю, что чем больше заметок, тем лучше для пользователя, особенно если вы делитесь этим.
 
-I sometimes use figlet, a program we installed earlier in the Linux section to create some asci art to kick things off in our scripts. 
+Иногда я использую figlet, программу, которую мы установили ранее в разделе Linux, для создания аски-арта, чтобы начать что-то в наших скриптах.
 
 ![](../images/Day19_Linux1.png?v1)
+Все команды, которые мы использовали ранее в этом разделе Linux ([День 15](../Day15)) можно использовать здесь как простую команду для тестирования нашего скрипта.
 
-All of the commands we have been through earlier in this Linux section ([Day15](Day15.md)) could be used here as a simple command to test our script. 
-
-Let's add a simple block of code to our script. 
+Давайте добавим в наш скрипт простой блок кода.
 
 ``` 
 mkdir 90DaysOfDevOps
@@ -63,51 +62,50 @@ cd 90DaysOfDevOps
 touch Day19
 ls 
 ```
-You can then save this and exit your text editor, if we run our script with `./90DaysOfDevOps.sh` you should get a permission denied message. You can check the permissions of this file using the `ls -al` command and you can see highlighted we do not have executable rights on this file. 
+Затем вы можете сохранить это и выйти из текстового редактора. Если мы запустим наш скрипт с `./90DaysOfDevOps.sh`, вы должны получить сообщение об отказе в разрешении. Вы можете проверить права доступа к этому файлу с помощью команды `ls -la`, и вы увидите, что у нас нет прав на выполнение этого файла.
 
 ![](../images/Day19_Linux2.png?v1)
 
-We can change this using `chmod +x 90DaysOfDevOps.sh` and then you will see the `x` meaning we can now execute our script. 
+Мы можем изменить это, используя `chmod +x 90DaysOfDevOps.sh`, и тогда вы увидите `x`, означающий, что теперь мы можем запустить (execute) наш скрипт.
 
 ![](../images/Day19_Linux3.png?v1)
 
-Now we can run our script again using `./90DaysOfDevOps.sh` after running the script has now created a new directory, changed into that directory and then created a new file. 
+Теперь мы можем снова запустить наш скрипт, используя `./90DaysOfDevOps.sh` после того, как запуск скрипта создал новый каталог, перешел в этот каталог, а затем создал новый файл.
 
 ![](../images/Day19_Linux4.png?v1)
 
-Pretty basic stuff but you can start to see hopefully how this could be used to call on other tools as part of ways to make your life easier and automate things. 
+Довольно простые вещи, но вы можете начать понимать, как это можно использовать для вызова других инструментов, как часть способов сделать вашу жизнь проще и автоматизировать вещи.
 
-### Variables, Conditionals
-A lot of this section is really a repeat to what we covered when we were learning Golang but I think its worth us diving in here again. 
+### Переменные, условные операторы
+Большая часть этого раздела на самом деле является повторением того, что мы рассмотрели, когда изучали Golang, но я думаю, что нам стоит углубиться в это снова.
 
-- ### Variables 
+- ### Переменные
 
-Variables enable us to define once a particular repeated term that is used throughout a potentially complex script. 
+Переменные позволяют нам один раз определить конкретный повторяющийся термин, который используется в потенциально сложном сценарии.
 
-To add a variable you simply add it like this to a clean line in your script. 
+Чтобы добавить переменную, вы просто добавляете ее вот так на чистую строку в вашем скрипте.
 
 `challenge="90DaysOfDevOps"`
 
-This way when and where we use `$challenge` in our code, if we change the variable it will be reflected throughout.
+Таким образом, когда и где мы используем `$challenge` в нашем коде, если мы изменим переменную, это будет отражено повсюду.
 
 ![](../images/Day19_Linux5.png?v1)
 
-If we now run our `sh` script you will see the printout that was added to our script. 
+Если мы сейчас запустим наш скрипт `sh`, вы увидите распечатку, которая была добавлена к нашему скрипту.
 
 ![](../images/Day19_Linux5.png?v1)
 
-We can also ask for user input that can set our variables using the following: 
+Мы также можем запросить пользовательский ввод, который может установить наши переменные, используя следующее:
 
 ``` 
 echo "Enter your name"
 read name
 ```
+Затем это определило бы ввод как переменную `$name`. Затем мы могли бы использовать это позже.
 
-This would then define the input as the variable `$name` We could then use this later on. 
+- ### Условные операторы
 
-- ### Conditionals 
-
-Maybe we want to find out who we have on our challenge and how many days they have completed, we can define this using `if` `if-else` `else-if` conditionals, this is what we have defined below in our script. 
+Может быть, мы хотим узнать, кто участвует в нашем марафоне "90 дней" и сколько дней они прошли, мы можем определить это, используя условные выражения `if` `if-else` `else-if`, это то, что мы определили ниже в нашем скрипте. .
 
 ```
 #!/bin/bash
@@ -143,7 +141,7 @@ else
   echo "You have entered the wrong amount of days"
 fi
 ```
-You can also see from the above that we are running some comparisons or checking values against each other to move on to the next stage. We have different options here worth noting. 
+Вы также можете видеть из вышеприведенного, что мы проводим некоторые сравнения или сверяем значения друг с другом, чтобы перейти к следующему этапу. У нас есть разные варианты, которые стоит отметить.
 
 - `eq` - if the two values are equal will return TRUE
 - `ne` - if the two values are not equal will return TRUE
@@ -152,7 +150,7 @@ You can also see from the above that we are running some comparisons or checking
 - `lt` - if the first value is less than the second value will return TRUE
 - `le` - if the first value is less than or equal to the second value will return TRUE
 
-We might also use bash scripting to determine information about files and folders, this is known as file conditions. 
+Мы также можем использовать сценарии bash для получения информации о файлах и папках, это называется условиями файлов.
 
 - `-d file` True if the file is a directory
 - `-e file` True if the file exists
@@ -172,33 +170,30 @@ fi
 ```
 
 ![](../images/Day19_Linux7.png?v1)
-
-Providing we have that file still in our directory we should get the first echo command back. But if we remove that file then we should get the second echo command. 
+При условии, что этот файл все еще находится в нашем каталоге, мы должны вернуть первую команду `echo`. Но если мы удалим этот файл, мы должны получить вторую команду `echo`.
 
 ![](../images/Day19_Linux8.png?v1)
+Надеюсь, вы увидите, как это можно использовать для экономии времени при поиске в системе определенных элементов.
 
-You can hopefully see how this can be used to save you time when searching through a system for specific items. 
+Я нашел этот удивительный репозиторий на GitHub, в котором, кажется, бесконечное количество скриптов [DevOps Bash Tools] (https://github.com/HariSekhon/DevOps-Bash-tools/blob/master/README.md)
+### Пример 
 
-I found this amazing repository on GitHub that has what seems to be an endless amount of scripts [DevOps Bash Tools](https://github.com/HariSekhon/DevOps-Bash-tools/blob/master/README.md)
-
-### Example 
-
-**Scenario**: We have our company called "90DaysOfDevOps" and we have been running a while and now it is time to expand the team from 1 person to lots more over the coming weeks, I am the only one so far that knows the onboarding process so we want to reduce that bottleneck by automating some of these tasks. 
+**Scenario**: У нас есть наша компания под названием «90DaysOfDevOps», и мы работаем некоторое время, и теперь пришло время расширить команду с 1 человека до гораздо большего в ближайшие недели. Я пока единственный, кто знает процесс адаптации, поэтому мы хотим чтобы уменьшить это узкое место, автоматизировав некоторые из этих задач.
 
 **Requirements**: 
-- A user can be passed in as a command line argument. 
-- A user is created with the name of command line argument. 
-- A password can be parsed in as a command line argument. 
-- The password is set for the user 
-- A message of successful account creation is displayed. 
+- Пользователь может быть передан в качестве аргумента командной строки.
+- Пользователь создается с именем аргумента командной строки.
+- Пароль может быть проанализирован как аргумент командной строки.
+- Пароль установлен для пользователя
+- Отображается сообщение об успешном создании учетной записи.
 
-Let's start with creating our shell script with `touch create_user.sh`
+Давайте начнем с создания нашего сценария оболочки с помощью `touch create_user.sh`.
 
-Before we move on lets also make this executable using `chmod +x create_user.sh`
+Прежде чем мы двинемся дальше, давайте также создадим этот исполняемый файл, используя `chmod +x create_user.sh`
 
-then we can use `nano create_user.sh` to start editing our script for the scenario we have been set. 
+затем мы можем использовать `nano create_user.sh`, чтобы начать редактирование нашего скрипта для сценария, который мы установили.
 
-We can take a look at the first requirement "A user can be passed in as a command line argument" we can use the following 
+Мы можем взглянуть на первое требование «Пользователь может быть передан в качестве аргумента командной строки», мы можем использовать следующее
 
 ```
 #! /usr/bin/bash
@@ -209,12 +204,10 @@ echo "$1"
 
 ![](../images/Day19_Linux9.png?v1)
 
-Go ahead and run this using `./create_user.sh Michael` replace Michael with your name when you run the script. 
-
+Идем далее и запускаем `./create_user.sh Michael`, замените Michael своим именем при запуске скрипта.
 ![](../images/Day19_Linux10.png?v1)
 
-Next up we can take that second requirement "A user is created with the name of command line argument" this can be done with the `useradd` command. The `-m` option is to create the user home directory as /home/username
-
+Далее мы можем выполнить второе требование: «Пользователь создается с именем аргумента командной строки», это можно сделать с помощью команды `useradd`. Опция `-m` предназначена для создания домашнего каталога пользователя как /home/username.
 ```
 #! /usr/bin/bash
 
@@ -225,15 +218,15 @@ echo "$1 user account being created."
 sudo useradd -m "$1"
 
 ```
+Предупреждение: если вы не укажете имя учетной записи пользователя, произойдет ошибка, поскольку мы не заполнили переменную `$1`
 
-Warning: If you do not provide a user account name then it will error as we have not filled the variable `$1`
+Затем мы можем проверить, была ли создана эта учетная запись с помощью команды `awk -F: '{print $1}' /etc/passwd`.
 
-We can then check this account has been created with the `awk -F: '{ print $1}' /etc/passwd` command. 
+[More about awk linux command](https://www.freecodecamp.org/news/the-linux-awk-command-linux-and-unix-usage-syntax-examples/)
 
 ![](../images/Day19_Linux11.png?v1)
 
-Our next requirement is "A password can be parsed in as a command line argument." First of all we are not going to ever do this in production it is more for us to work through a list of requirements in the lab to understand. 
-
+Наше следующее требование: «Пароль может быть проанализирован как аргумент командной строки». Во-первых, мы никогда не собираемся делать это в продакшене, нам нужно проработать список требований в лаборатории, чтобы понять.
 ```
 #! /usr/bin/bash
 
@@ -246,16 +239,15 @@ sudo useradd -m "$1"
 #A password can be parsed in as a command line argument.
 sudo chpasswd <<< "$1":"$2"
 ```
+Если мы затем запустим этот скрипт с двумя параметрами `./create_user.sh пароль 90DaysOfDevOps`
 
-If we then run this script with the two parameters `./create_user.sh 90DaysOfDevOps password`
-
-You can see from the below image that we executed our script it created our user and password and then we manually jumped into that user and confirmed with the `whoami` command. 
+На изображении ниже вы можете видеть, что мы выполнили наш скрипт, он создал нашего пользователя и пароль, а затем мы вручную перешли к этому пользователю и подтвердили это с помощью команды whoami.
 
 ![](../images/Day19_Linux12.png?v1)
 
-The final requirement is "A message of successful account creation is displayed." We actually already have this in the top line of our code and we can see on the above screen shot that we have `90DaysOfDevOps user account being created` is shown. This was left from our testing with the `$1` parameter. 
+Последнее требование: «Отображается сообщение об успешном создании учетной записи». На самом деле у нас уже есть это в верхней строке нашего кода, и мы можем видеть на снимке экрана выше, что у нас есть «созданная учетная запись пользователя 90DaysOfDevOps». Это осталось от нашего тестирования с параметром `$1`.
 
-Now this script can be used to quickly onboard and set up new users on to our Linux systems. But maybe instead of a few of the historic people having to work through this and then having to get other people their new usernames or passwords we could add some user input that we have previously covered earlier on to capture our variables. 
+Теперь этот сценарий можно использовать для быстрого подключения и настройки новых пользователей в наших системах Linux. Но, может быть, вместо того, чтобы некоторым историческим людям приходилось работать с этим, а затем получать новые имена пользователей или пароли для других людей, мы могли бы добавить некоторый пользовательский ввод, который мы ранее рассмотрели ранее, для захвата наших переменных.
 
 ``` 
 #! /usr/bin/bash
@@ -275,29 +267,27 @@ sudo useradd -m $username
 sudo chpasswd <<< $username:$password
 ```
 
-With the steps being more interactive, 
+Шаги стали более интерактивными,
 
 ![](../images/Day19_Linux14.png?v1)
 
-Just to finish this off maybe we do want to output a successful output to say that our new user account has finished being created.
+Просто чтобы закончить это, возможно, мы хотим вывести успешный вывод, чтобы сказать, что наша новая учетная запись пользователя завершена.
 
 ![](../images/Day19_Linux15.png?v1)
 
-One thing I did notice was that we are displaying the password on our input we can hide this by using the `-s` flag in the line of code `read -s password`
+Одна вещь, которую я заметил, это то, что мы отображаем пароль на нашем входе, мы можем скрыть это, используя флаг `-s` в строке кода `read -s password`
 
 ![](../images/Day19_Linux16.png?v1)
 
-If you do want to delete the user you have created for lab purposes then you can do that with `sudo userdel test_user`
+Если вы хотите удалить пользователя, которого вы создали для лабораторных целей, вы можете сделать это с помощью `sudo userdel test_user`
 
-[Example Script](Linux/create-user.sh)
+Еще раз, я не говорю, что это будет то, что вы будете создавать в своей повседневной жизни, но я думал, что это то, что подчеркнет гибкость того, для чего вы можете использовать сценарии оболочки.
 
-Once again I am not saying this is going to be something that you do create in your day to day but it was something I thought of that would highlight the flexibility of what you could use shell scripting for. 
+Подумайте о любых повторяющихся задачах, которые вы выполняете каждый день, неделю или месяц, и о том, как вы могли бы лучше автоматизировать это. Первым вариантом, вероятно, будет использование сценария bash, прежде чем переходить к более сложной территории.
 
-Think about any repeatable tasks that you do every day or week or month and how could you better automate that, first option is likely going to be using a bash script before moving into more complex territory. 
+Я создал очень простой bash-файл, который помогает мне развернуть кластер Kubernetes с помощью minikube на моем локальном компьютере вместе со службами данных и Kasten K10, чтобы продемонстрировать требования и нужды, связанные с управлением данными. [Project Pace](https://github.com/MichaelCade/project_pace/blob/main/singlecluster_demo.sh). Но я не счел уместным поднимать вопрос здесь, поскольку мы еще не рассмотрели Kubernetes.
 
-I have created a very simple bash file that helps me spin up a Kubernetes cluster using minikube on my local machine along with data services and Kasten K10 to help demonstrate the requirements and needs around data management. [Project Pace](https://github.com/MichaelCade/project_pace/blob/main/singlecluster_demo.sh) But I did not feel this appropriate to raise here as we have not covered Kubernetes yet. 
-
-## Resources 
+## Ресурсы 
 
 - [Bash in 100 seconds](https://www.youtube.com/watch?v=I4EWvMFj37g)
 - [Bash script with practical examples - Full Course](https://www.youtube.com/watch?v=TPRSJbtfK4M)
@@ -307,5 +297,3 @@ I have created a very simple bash file that helps me spin up a Kubernetes cluste
 - [Vim tutorial](https://www.youtube.com/watch?v=IiwGbcd8S7I)
 - [Learn the Linux Fundamentals - Part 1](https://www.youtube.com/watch?v=kPylihJRG70)
 - [Linux for hackers (don't worry you don't need to be a hacker!)](https://www.youtube.com/watch?v=VbEx7B_PTOE)
-
-See you on [Day20](day20.md)
