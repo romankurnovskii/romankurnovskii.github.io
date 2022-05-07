@@ -226,7 +226,7 @@ This is just a quick overview and notes around the fundamental building blocks o
 - Persistant Storage 
 - Stateful Apps 
 
-## Resources 
+## Ресурсы 
 
 - [Kubernetes Documentation](https://kubernetes.io/docs/home/)
 - [TechWorld with Nana - Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]](https://www.youtube.com/watch?v=X48VuDVv0do)

@@ -1,10 +1,15 @@
 ---
-title: '#90DaysOfDevOps - Getting Hands-On with Python & Network - Day 27'
-published: false
-description: 90DaysOfDevOps - Getting Hands-On with Python & Network
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+title: 27 - Getting Hands-On with Python & Network
+description: Getting Hands-On with Python & Network
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-05-17"
+lastmod: "2022-05-07"
+featuredImage:
+draft: false
 id: 1048735
 ---
 ## Getting Hands-On with Python & Network
@@ -122,7 +127,7 @@ Some more use cases where network automation can be used that I have not had the
 
 I think this wraps up our Networking section of the #90DaysOfDevOps, Networking is one area that I have not touched for a while really and there is so much more to cover but I am hoping between my notes and the resources shared throughout it is helpful for some. 
 
-## Resources 
+## Ресурсы 
 
 - [Free Course: Introduction to EVE-NG](https://www.youtube.com/watch?v=g6B0f_E0NMg)
 - [EVE-NG - Creating your first lab](https://www.youtube.com/watch?v=9dPWARirtK8)

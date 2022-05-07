@@ -81,7 +81,7 @@ Then a quick look at DockerHub, we can see that we have our tagged version 2 and
 
 It is worth noting here that I have added into my Kubernetes cluster a secret that enables my access and authentication to push my docker builds into DockerHub. If you are following along you should repeat this process for your account, and also make a change to the Jenkinsfile that is associated to my repository and account. 
 
-## Resources
+## Ресурсы
 
 - [Jenkins is the way to build, test, deploy](https://youtu.be/_MXtbjwsz3A)
 - [Jenkins.io](https://www.jenkins.io/)

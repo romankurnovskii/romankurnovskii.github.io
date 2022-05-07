@@ -152,7 +152,7 @@ If you made it this far, then we have now finished our Linux section of the #90D
 
 I also thought on this it was easier to show you a lot of the steps through video vs writing them down here, what do you think to this? I do have a goal to work back through these days and where possible creating video walkthroughs to add in and better maybe explain and show some of the things we have covered. What do you think? 
 
-## Resources 
+## Ресурсы 
 
 - [Bash in 100 seconds](https://www.youtube.com/watch?v=I4EWvMFj37g)
 - [Bash script with practical examples - Full Course](https://www.youtube.com/watch?v=TPRSJbtfK4M)

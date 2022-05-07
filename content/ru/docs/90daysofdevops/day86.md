@@ -169,7 +169,7 @@ Obviously the commands above are very long and this is because I was using the K
 
 In the next session we will be focusing in on protecting workloads within Kubernetes. 
 
-## Resources 
+## Ресурсы 
 
 - [Kubernetes Backup and Restore made easy!](https://www.youtube.com/watch?v=01qcYSck1c4&t=217s)
 - [Kubernetes Backups, Upgrades, Migrations - with Velero](https://www.youtube.com/watch?v=zybLTQER0yY)

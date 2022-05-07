@@ -1,10 +1,15 @@
 ---
-title: '#90DaysOfDevOps - Building our Lab - Day 26'
-published: false
-description: 90DaysOfDevOps - Building our Lab
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+title: 26 - Building our Lab
+description: Building our Lab
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-05-16"
+lastmod: "2022-05-07"
+featuredImage:
+draft: false
 id: 1048762
 ---
 ## Building our Lab
@@ -104,7 +109,7 @@ I will leave my configuration in the Networking folder of the repository for ref
 | Switch3     | [SW3](Networking/SW3) |
 | Switch4     | [SW4](Networking/SW4) |
 
-## Resources 
+## Ресурсы 
 
 - [Free Course: Introduction to EVE-NG](https://www.youtube.com/watch?v=g6B0f_E0NMg)
 - [EVE-NG - Creating your first lab](https://www.youtube.com/watch?v=9dPWARirtK8)

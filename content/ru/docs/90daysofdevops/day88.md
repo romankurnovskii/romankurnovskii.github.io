@@ -279,7 +279,7 @@ Now we are inside the MySQL Client, we can issue the `echo "SHOW DATABASES;" |  
 
 In the next post we take a look at Disaster Recovery within Kubernetes. 
 
-## Resources 
+## Ресурсы 
 
 - [Kanister Overview - An extensible open-source framework for app-lvl data management on Kubernetes](https://www.youtube.com/watch?v=wFD42Zpbfts)
 - [Application Level Data Operations on Kubernetes](https://community.cncf.io/events/details/cncf-cncf-online-programs-presents-cncf-live-webinar-kanister-application-level-data-operations-on-kubernetes/)

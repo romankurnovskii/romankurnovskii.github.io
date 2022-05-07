@@ -103,7 +103,7 @@ Azure Logic App provides a graphical-based workflow and integration.
 
 We can also look at Azure Batch which can run large-scale jobs on both Windows and Linux nodes with consistent management & scheduling. 
 
-## Resources 
+## Ресурсы 
 
 - [Hybrid Cloud and MultiCloud](https://www.youtube.com/watch?v=qkj5W98Xdvw)
 - [Microsoft Azure Fundamentals](https://www.youtube.com/watch?v=NKEFWyqJ5XA&list=WL&index=130&t=12s)

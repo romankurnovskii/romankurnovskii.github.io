@@ -217,7 +217,7 @@ If anyone has or can get this working on Windows and WSL I would appreciate the 
 
 UPDATE: I feel like this blog helps identify maybe the cause of this not working with WSL [Configuring Ingress to run Minikube on WSL2 using Docker runtime](https://hellokube.dev/posts/configure-minikube-ingress-on-wsl2/)
 
-## Resources 
+## Ресурсы 
 
 If you have FREE resources that you have used then please feel free to add them in here via a PR to the repository and I will be happy to include them. 
 

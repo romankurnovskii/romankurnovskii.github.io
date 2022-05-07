@@ -1,10 +1,15 @@
 ---
-title: '#90DaysOfDevOps - Network Automation - Day 24'
-published: false
-description: 90DaysOfDevOps - Network Automation
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+title: 24 - Network Automation
+description: Network Automation
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-05-14"
+lastmod: "2022-05-07"
+featuredImage:
+draft: false
 id: 1048805
 ---
 ## Network Automation 
@@ -135,7 +140,7 @@ Over the next 3 days, I am planning to get more hands-on around some of the thin
 
 We have nowhere near covered all of the networking topics so far but wanted to make this broad enough to follow along and still keep learning from the resources I am adding below. 
 
-## Resources 
+## Ресурсы 
 
 - [3 Necessary Skills for Network Automation](https://www.youtube.com/watch?v=KhiJ7Fu9kKA&list=WL&index=122&t=89s)
 - [Computer Networking full course](https://www.youtube.com/watch?v=IPvYjXCsTg8)

@@ -64,7 +64,7 @@ Cloud providers also provide logging such as AWS CloudWatch Logs, Microsoft Azur
 
 Log Management is a key aspect of the overall observability of your applications and instracture environment for diagnosing problems in production it's relatively simple to install a turnkey solution like ELK or CloudWatch and it makes diagnosing and triaging problems in production significantly easier. 
 
-## Resources 
+## Ресурсы 
 
 - [The Importance of Monitoring in DevOps](https://www.devopsonline.co.uk/the-importance-of-monitoring-in-devops/)
 - [Understanding Continuous Monitoring in DevOps?](https://medium.com/devopscurry/understanding-continuous-monitoring-in-devops-f6695b004e3b) 

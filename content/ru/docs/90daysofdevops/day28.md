@@ -1,10 +1,15 @@
 ---
-title: '#90DaysOfDevOps - The Big Picture: DevOps & The Cloud - Day 28'
-published: false
-description: 90DaysOfDevOps - The Big Picture DevOps & The Cloud
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+title: 28 - The Big Picture DevOps & The Cloud
+description: The Big Picture DevOps & The Cloud
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-05-18"
+lastmod: "2022-05-07"
+featuredImage:
+draft: false
 id: 1048737
 ---
 ## The Big Picture: DevOps & The Cloud
@@ -94,7 +99,7 @@ Either way, I am going to share some great **FREE** resources that cover all thr
 
 I am also going to build out a scenario as I have done in the other sections where we can build something as we move through the days. 
 
-## Resources 
+## Ресурсы 
 
 - [Hybrid Cloud and MultiCloud](https://www.youtube.com/watch?v=qkj5W98Xdvw)
 - [Microsoft Azure Fundamentals](https://www.youtube.com/watch?v=NKEFWyqJ5XA&list=WL&index=130&t=12s)

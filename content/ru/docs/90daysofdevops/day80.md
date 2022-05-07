@@ -90,7 +90,7 @@ The key takeaway I have had between the Elastic Stack and Prometheus + Grafana i
 
 I was reading this article from MetricFire [Prometheus vs. ELK](https://www.metricfire.com/blog/prometheus-vs-elk/) to get a better understanding of the different offerings. 
 
-## Resources 
+## Ресурсы 
 
 - [Understanding Logging: Containers & Microservices](https://www.youtube.com/watch?v=MMVdkzeQ848)
 - [The Importance of Monitoring in DevOps](https://www.devopsonline.co.uk/the-importance-of-monitoring-in-devops/)

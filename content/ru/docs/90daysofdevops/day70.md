@@ -19,6 +19,19 @@ Continous Integration (CI) is a more modern software development practice in whi
 
 That code / Application is then delivered quickly and seamlessly as part of the Continuous Deployment process. 
 
+
+Реализация конвейера CI/CD (непрерывная интеграция/непрерывное развертывание) является основой современной среды DevOps.
+
+Он устраняет разрыв между разработкой и эксплуатацией, автоматизируя сборку, тестирование и развертывание приложений.
+
+Мы рассмотрели много этой непрерывной мантры в начальной части испытания. Но повторюсь:
+
+Непрерывная интеграция (CI) — это более современная практика разработки программного обеспечения, при которой добавочные изменения кода вносятся чаще и надежнее. Автоматизированные этапы рабочего процесса сборки и тестирования, запускаемые непрерывной интеграцией, гарантируют надежность изменений кода, объединяемых в репозиторий.
+
+Затем этот код/приложение доставляется быстро и беспрепятственно в рамках процесса непрерывного развертывания.
+
+
+
 ### The importance of CI/CD? 
 
 - Ship software quickly and efficiently 
@@ -26,6 +39,15 @@ That code / Application is then delivered quickly and seamlessly as part of the 
 - A continous flow of bug fixes and new features without waiting months or years for version releases. 
 
 The ability for developers to make small impactful changes regular means we get faster fixes and more features quicker. 
+
+### Важность CI/CD?
+
+- Доставка программного обеспечения быстро и эффективно
+- Облегчает эффективный процесс вывода приложений на рынок как можно быстрее.
+- Непрерывный поток исправлений ошибок и новых функций без ожидания месяцев или лет выпуска версии.
+
+Возможность для разработчиков регулярно вносить небольшие важные изменения означает, что мы быстрее получаем исправления и новые функции.
+
 
 ### Ok, so what does this mean? 
 
@@ -89,6 +111,9 @@ It is most likely that this is not done at the same time. i.e we would go to a s
 
 Then after this when v2 of the application comes out we rinse and repeat the steps this time we ensure our application + configuration is deployed to staging ensure everything is good and then we deploy to production. 
 
+
+
+
 ### Why use CI/CD? 
 
 I think we have probably covered the benefits a number of time but it is because it automates things that otherwise would have to be done manually it finds small problems before it sneaks into the main codebase, you can probably imagine that if you push bad code out to your customers then you're going to have a bad time! 
@@ -107,7 +132,26 @@ My plan is to look at the following:
 - ArgoCD 
 - GitHub Actions 
 
-## Resources
+### Зачем использовать CI/CD?
+
+Я думаю, что мы, вероятно, уже несколько раз рассмотрели преимущества, но это потому, что он автоматизирует вещи, которые в противном случае пришлось бы делать вручную, он находит небольшие проблемы, прежде чем проникнуть в основную кодовую базу, вы, вероятно, можете себе представить, что если вы вытолкнете плохой код вашим клиентам, то вы будете иметь плохое время!
+
+Это также помогает предотвратить то, что мы называем техническим долгом, то есть идею о том, что, поскольку основные репозитории кода постоянно достраиваются с течением времени, то быстрое исправление, сделанное в первый день, теперь становится экспоненциально более дорогим исправлением годы спустя, потому что теперь эта полоса- помощь исправления была бы настолько глубоко переплетена и запечена во всех основах кода и логике.
+
+### Инструменты
+
+Как и в других разделах, мы познакомимся с некоторыми инструментами, которые обеспечивают конвейерный процесс CI/CD.
+
+Я думаю, также важно отметить, что не все инструменты должны выполнять как CI, так и CD. Мы рассмотрим ArgoCD, который, как вы уже догадались, отлично подходит для элемента CD развертывания нашего программного обеспечения в кластере Kubernetes. Но что-то вроде Jenkins может работать на разных платформах.
+
+Мой план состоит в том, чтобы посмотреть на следующее:
+
+- Дженкинс
+- АргоCD
+- Действия на гитхабе
+
+
+## Ресурсы
 
 - [Jenkins is the way to build, test, deploy](https://youtu.be/_MXtbjwsz3A)
 - [Jenkins.io](https://www.jenkins.io/)

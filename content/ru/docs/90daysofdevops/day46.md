@@ -168,7 +168,7 @@ Now we can open a browser for each of containers:
 
 To remove everything we can use the `docker-compose down` command. 
 
-## Resources 
+## Ресурсы 
 
 - [TechWorld with Nana - Docker Tutorial for Beginners](https://www.youtube.com/watch?v=3c-iBn73dDE)
 - [Programming with Mosh - Docker Tutorial for Beginners](https://www.youtube.com/watch?v=pTFZFxd4hOI)

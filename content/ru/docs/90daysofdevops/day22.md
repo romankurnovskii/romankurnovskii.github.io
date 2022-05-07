@@ -1,10 +1,15 @@
 ---
-title: '#90DaysOfDevOps - The OSI Model - The 7 Layers - Day 22'
-published: false
-description: 90DaysOfDevOps - The OSI Model - The 7 Layers
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
+title: 22 - The OSI Model - The 7 Layers
+description: The OSI Model - The 7 Layers
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-05-12"
+lastmod: "2022-05-07"
+featuredImage:
+draft: false
 id: 1049037
 ---
 ## The OSI Model - The 7 Layers
@@ -90,7 +95,7 @@ Obviously the Application sending the data is being sent somewhere so the receiv
 
 ![](../images/Day22_Networking8.png?v1)
 
-## Resources 
+## Ресурсы 
 
 - [Computer Networking full course](https://www.youtube.com/watch?v=IPvYjXCsTg8)
 - [Practical Networking](http://www.practicalnetworking.net/)

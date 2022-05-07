@@ -1,10 +1,15 @@
 ---
-title: '#90DaysOfDevOps - Microsoft Azure Fundamentals - Day 29'
-published: false
-description: 90DaysOfDevOps - Microsoft Azure Fundamentals
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+title: 29 - Microsoft Azure Fundamentals
+description: Microsoft Azure Fundamentals
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-05-19"
+lastmod: "2022-05-07"
+featuredImage:
+draft: false
 id: 1048705
 ---
 ## Microsoft Azure Fundamentals 
@@ -128,7 +133,7 @@ Hit create, then in our list of resource groups, we now have our "90DaysOfDevOps
 
 ![](../images/Day29_Cloud11.png?v1)
 
-## Resources 
+## Ресурсы 
 
 - [Hybrid Cloud and MultiCloud](https://www.youtube.com/watch?v=qkj5W98Xdvw)
 - [Microsoft Azure Fundamentals](https://www.youtube.com/watch?v=NKEFWyqJ5XA&list=WL&index=130&t=12s)

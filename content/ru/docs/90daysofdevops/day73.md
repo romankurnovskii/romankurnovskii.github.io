@@ -210,7 +210,7 @@ This overall did take a while to figure out but I wanted to stick with it for th
 
 The DockerHub repository I used for this demo was a private one. But in the next section I want to advance some of these stages and actually have them do something vs just printing out `pwd` and actually run some tests and build stages. 
 
-## Resources
+## Ресурсы
 
 - [Jenkins is the way to build, test, deploy](https://youtu.be/_MXtbjwsz3A)
 - [Jenkins.io](https://www.jenkins.io/)

@@ -83,7 +83,7 @@ Short on learning PromQL and putting that into practice this is very much like I
 
 I want to come back to Prometheus but for now I think we need to think about Log Management and Data Visualisation to bring us back to Prometheus later on. 
 
-## Resources 
+## Ресурсы 
 
 - [The Importance of Monitoring in DevOps](https://www.devopsonline.co.uk/the-importance-of-monitoring-in-devops/)
 - [Understanding Continuous Monitoring in DevOps?](https://medium.com/devopscurry/understanding-continuous-monitoring-in-devops-f6695b004e3b) 

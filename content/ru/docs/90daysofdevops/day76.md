@@ -68,7 +68,7 @@ This wraps up the CICD Pipelines section, I feel there is a lot of focus on this
 
 The next section we move into is around Observability, another concept or area that is not new but it is more and more important as we look at our environments in a different way. 
 
-## Resources
+## Ресурсы
 
 - [Jenkins is the way to build, test, deploy](https://youtu.be/_MXtbjwsz3A)
 - [Jenkins.io](https://www.jenkins.io/)

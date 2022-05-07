@@ -1,10 +1,15 @@
 ---
-title: '#90DaysOfDevOps - Network Protocols - Day 23'
-published: false
-description: 90DaysOfDevOps - Network Protocols
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+title: 23 - Network Protocols
+description: Network Protocols
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-05-13"
+lastmod: "2022-05-07"
+featuredImage:
+draft: false
 id: 1048704
 ---
 ## Network Protocols 
@@ -109,7 +114,7 @@ If a section of a network is compromised, it can be quarantined, making it diffi
 ![](../images/Day23_Networking9.png?v1)
 
 
-## Resources 
+## Ресурсы 
 
 - [Computer Networking full course](https://www.youtube.com/watch?v=IPvYjXCsTg8)
 - [Practical Networking](http://www.practicalnetworking.net/)

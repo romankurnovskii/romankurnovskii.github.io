@@ -61,7 +61,7 @@ Better Data = Better Decisions
 
 During the next 6 sessions we are going to be taking a closer look at Databases, Backup & Recovery, Disaster Recovery, Application Mobility all with an element of demo and hands on throughout. 
 
-## Resources 
+## Ресурсы 
 
 - [Kubernetes Backup and Restore made easy!](https://www.youtube.com/watch?v=01qcYSck1c4&t=217s)
 - [Kubernetes Backups, Upgrades, Migrations - with Velero](https://www.youtube.com/watch?v=zybLTQER0yY)

@@ -131,7 +131,7 @@ Or maybe we want to install some software into our container, I have chosen a re
 
 I wanted that to hopefully give you an overview of Docker Desktop and the not so scary world of containers when you break it down with simple use cases, we do need to cover some networking, security and other options we have vs just downloading container images and using them like this. By the end of the section we want to have made something and uploaded to our DockerHub repository and be able to deploy it. 
 
-## Resources 
+## Ресурсы 
 
 - [TechWorld with Nana - Docker Tutorial for Beginners](https://www.youtube.com/watch?v=3c-iBn73dDE)
 - [Programming with Mosh - Docker Tutorial for Beginners](https://www.youtube.com/watch?v=pTFZFxd4hOI)

@@ -178,7 +178,7 @@ A super simple demo and only really touching the surface of what Kasten K10 can 
 
 Next we will take a look at Application consistency. 
 
-## Resources 
+## Ресурсы 
 
 - [Kubernetes Backup and Restore made easy!](https://www.youtube.com/watch?v=01qcYSck1c4&t=217s)
 - [Kubernetes Backups, Upgrades, Migrations - with Velero](https://www.youtube.com/watch?v=zybLTQER0yY)

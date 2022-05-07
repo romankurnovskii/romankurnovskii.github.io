@@ -179,7 +179,7 @@ If there is a reason you cannot use PowerShell in your environment but you can u
 
 Next up we take all the theory we have been through and create some scenarios and get hands-on in Azure. 
 
-## Resources 
+## Ресурсы 
 
 - [Hybrid Cloud and MultiCloud](https://www.youtube.com/watch?v=qkj5W98Xdvw)
 - [Microsoft Azure Fundamentals](https://www.youtube.com/watch?v=NKEFWyqJ5XA&list=WL&index=130&t=12s)

@@ -171,7 +171,7 @@ I think that covers things from a foundational point of view for GitHub Actions 
 
 Next up we will cover another area of CD, we will be looking into ArgoCD to deploy our applications out into our environments. 
 
-## Resources
+## Ресурсы
 
 - [Jenkins is the way to build, test, deploy](https://youtu.be/_MXtbjwsz3A)
 - [Jenkins.io](https://www.jenkins.io/)

@@ -129,7 +129,7 @@ That is going to wrap up this database overview session, no matter what industry
 
 There are a ton of resources I have linked below, you could honestly spend 90 years probably deep diving into all database types and everything that comes with this. 
 
-## Resources 
+## Ресурсы 
 
 - [Redis Crash Course - the What, Why and How to use Redis as your primary database](https://www.youtube.com/watch?v=OqCK95AS-YE)
 - [Redis: How to setup a cluster - for beginners](https://www.youtube.com/watch?v=GEg7s3i6Jak)

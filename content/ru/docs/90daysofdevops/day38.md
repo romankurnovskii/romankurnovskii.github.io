@@ -113,7 +113,7 @@ We have been using `git status` a lot to understand what we have in our staging 
 
 In the post tomorrow we will continue to look through these short examples of these common git commands. 
 
-## Resources 
+## Ресурсы 
 
 - [What is Version Control?](https://www.youtube.com/watch?v=Yc8sCSeMhi4)
 - [Types of Version Control System](https://www.youtube.com/watch?v=kr62e_n6QuQ)
