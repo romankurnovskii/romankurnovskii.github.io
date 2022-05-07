@@ -111,7 +111,7 @@ I am going to publish this before the merge and pull request is accepted so mayb
 
 This then wraps up our look into Git and GitHub, next we are diving into containers which starts with a big picture look into how, why containers and also a look into virtualisation and how we got here. 
 
-## Resources 
+## Ресурсы 
 
 - [Learn GitLab in 3 Hours | GitLab Complete Tutorial For Beginners](https://www.youtube.com/watch?v=8aV5AxJrHDg)
 - [BitBucket Tutorials Playlist](https://www.youtube.com/watch?v=OMLh-5O6Ub8&list=PLaD4FvsFdarSyyGl3ooAm-ZyAllgw_AM5)

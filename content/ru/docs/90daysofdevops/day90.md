@@ -93,7 +93,7 @@ The important thing to note about Kasten K10 is that on deployment it is deploye
 
 This then brings us to a close on the section around Storing and Protecting your data. 
 
-## Resources 
+## Ресурсы 
 
 - [Kubernetes Backup and Restore made easy!](https://www.youtube.com/watch?v=01qcYSck1c4&t=217s)
 - [Kubernetes Backups, Upgrades, Migrations - with Velero](https://www.youtube.com/watch?v=zybLTQER0yY)

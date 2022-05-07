@@ -1,10 +1,15 @@
 ---
-title: '#90DaysOfDevOps - Python for Network Automation - Day 25'
-published: false
-description: 90DaysOfDevOps - Python for Network Automation
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
+title: 25 - Python for Network Automation
+description: Python for Network Automation
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-05-15"
+lastmod: "2022-05-07"
+featuredImage:
+draft: false
 id: 1049038
 ---
 ## Python for Network Automation 
@@ -162,7 +167,7 @@ Next up we are going to:
 - Start building Python Scripts 
 - Look at telnetlib, Netmiko, Paramiko and Pexpect
 
-## Resources 
+## Ресурсы 
 
 - [Free Course: Introduction to EVE-NG](https://www.youtube.com/watch?v=g6B0f_E0NMg)
 - [EVE-NG - Creating your first lab](https://www.youtube.com/watch?v=9dPWARirtK8)

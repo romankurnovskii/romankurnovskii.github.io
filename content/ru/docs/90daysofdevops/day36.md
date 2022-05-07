@@ -140,7 +140,7 @@ Unlike the Client-Server version control model, each developer downloads the the
 
 ![](../images/Day36_Git16.png?v1)
 
-## Resources 
+## Ресурсы 
 
 - [What is Version Control?](https://www.youtube.com/watch?v=Yc8sCSeMhi4)
 - [Types of Version Control System](https://www.youtube.com/watch?v=kr62e_n6QuQ)

@@ -93,7 +93,7 @@ There is also the option to gather APM (Application Performance Monitoring) whic
 I am not going to get into APM here but you can find out more on the [Elastic site](https://www.elastic.co/observability/application-performance-monitoring)
 
 
-## Resources 
+## Ресурсы 
 
 - [Understanding Logging: Containers & Microservices](https://www.youtube.com/watch?v=MMVdkzeQ848)
 - [The Importance of Monitoring in DevOps](https://www.devopsonline.co.uk/the-importance-of-monitoring-in-devops/)

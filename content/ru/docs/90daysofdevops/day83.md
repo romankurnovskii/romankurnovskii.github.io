@@ -132,7 +132,7 @@ That wraps up our section on all things observability, I have personally found t
 
 Next up we are going to be taking a look into data management and how DevOps principles also needs to be considered when it comes to Data Management. 
 
-## Resources 
+## Ресурсы 
 
 - [Understanding Logging: Containers & Microservices](https://www.youtube.com/watch?v=MMVdkzeQ848)
 - [The Importance of Monitoring in DevOps](https://www.devopsonline.co.uk/the-importance-of-monitoring-in-devops/)

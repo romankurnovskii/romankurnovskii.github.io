@@ -126,7 +126,7 @@ Checking `docker image` is a great command to see the size of your images.
 
 ![](../images/Day47_Containers11.png?v1)
 
-## Resources 
+## Ресурсы 
 
 - [TechWorld with Nana - Docker Tutorial for Beginners](https://www.youtube.com/watch?v=3c-iBn73dDE)
 - [Programming with Mosh - Docker Tutorial for Beginners](https://www.youtube.com/watch?v=pTFZFxd4hOI)

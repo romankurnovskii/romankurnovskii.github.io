@@ -164,7 +164,7 @@ We have started covering some of these mentioned below but we are going to get m
 - Persistant Storage 
 - Stateful Apps 
 
-## Resources 
+## Ресурсы 
 
 If you have FREE resources that you have used then please feel free to add them in here via a PR to the repository and I will be happy to include them. 
 

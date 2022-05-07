@@ -108,7 +108,7 @@ Then if we go and take a look in our DockerHub repository you can see that we ju
 ![](../images/Day45_Containers8.png?v1)
 
 
-## Resources 
+## Ресурсы 
 
 - [TechWorld with Nana - Docker Tutorial for Beginners](https://www.youtube.com/watch?v=3c-iBn73dDE)
 - [Programming with Mosh - Docker Tutorial for Beginners](https://www.youtube.com/watch?v=pTFZFxd4hOI)

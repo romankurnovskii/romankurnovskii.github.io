@@ -1,12 +1,18 @@
 ---
-title: '#90DaysOfDevOps - The Big Picture: DevOps and Networking - Day 21'
-published: false
-description: 90DaysOfDevOps - The Big Picture DevOps and Networking
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+title: 21 - The Big Picture DevOps and Networking
+description: The Big Picture DevOps and Networking
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-05-11"
+lastmod: "2022-05-07"
+featuredImage:
+draft: false
 id: 1048761
 ---
+
 ## The Big Picture: DevOps and Networking
 
 Welcome to Day 21! We are going to be getting into Networking over the next 7 days, Networking and DevOps is the overarching theme but we will need to get into some of the networking fundamentals as well. 
@@ -99,7 +105,7 @@ Over the next few days we are going to get to know a little more about this list
 - DHCP
 - Subnets 
 
-## Resources 
+## Ресурсы 
 
 [Computer Networking full course](https://www.youtube.com/watch?v=IPvYjXCsTg8)
 

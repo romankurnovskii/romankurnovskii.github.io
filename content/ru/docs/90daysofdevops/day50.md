@@ -67,7 +67,7 @@ I have been through a bit of a journey with my learning around Kubernetes so I a
 - Persistant Storage 
 - Stateful Apps 
 
-## Resources 
+## Ресурсы 
 
 - [Kubernetes Documentation](https://kubernetes.io/docs/home/)
 - [TechWorld with Nana - Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]](https://www.youtube.com/watch?v=X48VuDVv0do)

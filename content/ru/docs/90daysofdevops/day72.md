@@ -148,7 +148,7 @@ Ok, very simple stuff but we can now see that our Jenkins deployment and install
 
 In the next section we will be building a Jenkins Pipeline. 
 
-## Resources
+## Ресурсы
 
 - [Jenkins is the way to build, test, deploy](https://youtu.be/_MXtbjwsz3A)
 - [Jenkins.io](https://www.jenkins.io/)

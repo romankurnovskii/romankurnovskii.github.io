@@ -159,7 +159,7 @@ I have taken these from [atlassian](https://www.atlassian.com/git/tutorials/atla
 | git push <remote> --all          | `git push <remote> --all`          | Push all of your local branches to the specified remote.                        |
 | git push <remote> --tags        | `git push <remote> --tags`        | Tags aren’t automatically pushed when you push a branch or use the --all flag. The --tags flag sends all of your local tags to the remote repo. |
 
-## Resources 
+## Ресурсы 
 
 - [What is Version Control?](https://www.youtube.com/watch?v=Yc8sCSeMhi4)
 - [Types of Version Control System](https://www.youtube.com/watch?v=kr62e_n6QuQ)

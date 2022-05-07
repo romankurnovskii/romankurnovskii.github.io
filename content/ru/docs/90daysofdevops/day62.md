@@ -91,7 +91,7 @@ A quick overview [Introduction to Pulumi: Modern Infrastructure as Code](https:/
 
 This wraps up the Infrastructure as code section and next we move on to that little bit of overlap with configuration management and in particular as we get past the big picture of configuration management we are going to be using Ansible for some of those tasks and demos. 
 
-## Resources 
+## Ресурсы 
 I have listed a lot of resources down below and I think this topic has been covered so many times out there, If you have additional resources be sure to raise a PR with your resources and I will be happy to review and add them to the list. 
 
 - [What is Infrastructure as Code? Difference of Infrastructure as Code Tools ](https://www.youtube.com/watch?v=POPP2WTJ8es)

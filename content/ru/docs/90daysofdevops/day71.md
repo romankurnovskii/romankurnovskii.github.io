@@ -93,7 +93,7 @@ An example of this in a customer is Bosch, you can find the Bosch case study [he
 
 I am going to be looking for a step by step example of an application that we can use to walkthrough using Jenkins and then also use this with some other tools.
 
-## Resources
+## Ресурсы
 
 - [Jenkins is the way to build, test, deploy](https://youtu.be/_MXtbjwsz3A)
 - [Jenkins.io](https://www.jenkins.io/)

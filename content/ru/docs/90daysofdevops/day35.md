@@ -130,7 +130,7 @@ Next up we will be getting git installed and set up on your local machine and di
 
 
 
-## Resources 
+## Ресурсы 
 
 - [What is Version Control?](https://www.youtube.com/watch?v=Yc8sCSeMhi4)
 - [Types of Version Control System](https://www.youtube.com/watch?v=kr62e_n6QuQ)

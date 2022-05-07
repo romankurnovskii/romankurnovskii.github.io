@@ -336,7 +336,7 @@ I actually used root to connect but we could also now log in with our devops acc
 
 One thing I have found that in our `setup_mysql.yml` I had to add the line `login_unix_socket: /var/run/mysqld/mysqld.sock` in order to successfully connect to my db01 mysql instance and now everytime I run this it reports a change when creating the user, any suggestions would be greatly appreciated. 
 
-## Resources 
+## Ресурсы 
 
 - [What is Ansible](https://www.youtube.com/watch?v=1id6ERvfozo)
 - [Ansible 101 - Episode 1 - Introduction to Ansible](https://www.youtube.com/watch?v=goclfp6a2IQ)

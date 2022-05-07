@@ -117,7 +117,7 @@ We are also going to create a few more roles whilst using `ansible-galaxy` we ar
 
 I am going to leave this one here and in the next session we will start working on those other nodes we have deployed but have not done anything with yet. 
 
-## Resources 
+## Ресурсы 
 
 - [What is Ansible](https://www.youtube.com/watch?v=1id6ERvfozo)
 - [Ansible 101 - Episode 1 - Introduction to Ansible](https://www.youtube.com/watch?v=goclfp6a2IQ)

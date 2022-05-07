@@ -1,10 +1,15 @@
 ---
-title: '#90DaysOfDevOps - Microsoft Azure Security Models - Day 30'
-published: false
-description: 90DaysOfDevOps - Microsoft Azure Security Models
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
+title: 30 - Microsoft Azure Security Models
+description: Microsoft Azure Security Models
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-05-20"
+lastmod: "2022-05-07"
+featuredImage:
+draft: false
 id: 1049039
 ---
 ## Microsoft Azure Security Models
@@ -166,7 +171,7 @@ The above is great if this is a user that has access to resources inside of your
 
 You are able to customise this portal with your own branding and this might be something we come back to later on. 
 
-## Resources 
+## Ресурсы 
 
 - [Hybrid Cloud and MultiCloud](https://www.youtube.com/watch?v=qkj5W98Xdvw)
 - [Microsoft Azure Fundamentals](https://www.youtube.com/watch?v=NKEFWyqJ5XA&list=WL&index=130&t=12s)

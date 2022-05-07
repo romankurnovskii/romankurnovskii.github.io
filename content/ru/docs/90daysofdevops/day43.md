@@ -60,7 +60,7 @@ I will run through the Docker Desktop installation for Windows on another Window
 
 
 
-## Resources 
+## Ресурсы 
 
 - [TechWorld with Nana - Docker Tutorial for Beginners](https://www.youtube.com/watch?v=3c-iBn73dDE)
 - [Programming with Mosh - Docker Tutorial for Beginners](https://www.youtube.com/watch?v=pTFZFxd4hOI)

@@ -70,7 +70,7 @@ We could turn on a monitoring solution in any of our platforms and it will start
 
 In the next session we will get hands on with a monitoring tool and see what we can start monitoring. 
 
-## Resources 
+## Ресурсы 
 
 - [The Importance of Monitoring in DevOps](https://www.devopsonline.co.uk/the-importance-of-monitoring-in-devops/)
 - [Understanding Continuous Monitoring in DevOps?](https://medium.com/devopscurry/understanding-continuous-monitoring-in-devops-f6695b004e3b) 

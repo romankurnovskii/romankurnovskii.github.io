@@ -128,7 +128,7 @@ Now, we have already used `ansible-galaxy` to create some of our roles and file 
 
 - [Ansible Documentation](https://docs.ansible.com/ansible/latest/index.html)
 
-## Resources 
+## Ресурсы 
 
 - [What is Ansible](https://www.youtube.com/watch?v=1id6ERvfozo)
 - [Ansible 101 - Episode 1 - Introduction to Ansible](https://www.youtube.com/watch?v=goclfp6a2IQ)

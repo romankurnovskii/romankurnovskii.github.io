@@ -184,7 +184,7 @@ This script I am using can be found in (Cloud/05Serverless)
 
 This wraps up the section on Microsoft Azure and the public cloud in general. I will say that I had lots of fun attacking and working through this scenarios. 
 
-## Resources 
+## Ресурсы 
 
 - [Hybrid Cloud and MultiCloud](https://www.youtube.com/watch?v=qkj5W98Xdvw)
 - [Microsoft Azure Fundamentals](https://www.youtube.com/watch?v=NKEFWyqJ5XA&list=WL&index=130&t=12s)
