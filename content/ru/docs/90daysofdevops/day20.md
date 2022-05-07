@@ -1,10 +1,15 @@
 ---
-title: '#90DaysOfDevOps - Dev workstation setup - All the pretty things - Day 20'
-published: false
-description: 90DaysOfDevOps - Dev workstation setup - All the pretty things
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+title: 20 - Dev workstation setup - All the pretty things
+description: Dev workstation setup - All the pretty things
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-05-10"
+lastmod: "2022-05-06"
+featuredImage:
+draft: false
 id: 1048734
 ---
 ## Dev workstation setup - All the pretty things
