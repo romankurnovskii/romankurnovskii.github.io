@@ -1,112 +1,106 @@
 ---
 title: 20 - Dev workstation setup - All the pretty things
-description: Dev workstation setup - All the pretty things
+description: Настройка рабочей среды
 toc: true
 authors:
 tags: [devops]
 categories:
 series: 
 date: "2022-05-10"
-lastmod: "2022-05-06"
+lastmod: "2022-05-10"
 featuredImage:
 draft: false
 id: 1048734
 ---
-## Dev workstation setup - All the pretty things
+## Настройка рабочей среды
 
-Not to be confused with us setting Linux servers up this way but I wanted to also show off the choice and flexibility that we have within the Linux desktop. 
+Не путать с тем, как мы настраиваем серверы Linux таким образом. Я хочу продемонстрировать возможности выбора и гибкость, которые у нас есть при настройке настольного компьютера Linux.
 
-I have been using a Linux Desktop for almost a year now and I have it configured just the way I want from a look and feel perspective. Using our Ubuntu VM on Virtual Box we can run through some of the customisations I have made to my daily driver. 
+Я использую рабочий стол Linux уже почти год, и я настроил его именно так, как я хочу с точки зрения внешнего вида. Используя нашу виртуальную машину Ubuntu в Virtual Box, мы можем выполнить некоторые настройки, которые я сделал для своего ежедневного драйвера.
 
-I have put together a YouTube video walking through the rest as some people might be able to better follow along: 
+Я собрал видео на YouTube, показывающее остальные, так как некоторые люди могли бы лучше следовать за ним:
 
-[![Click to access YouTube Video](../images/Day20_YouTube.png?v1)](https://youtu.be/jeEslAtHfKc)
+[![Нажмите для доступа к видео YouTube](../images/Day20_YouTube.png?v1)](https://youtu.be/jeEslAtHfKc)
 
-Out of the box our system will look something like the below: 
+Из коробки наша система будет выглядеть примерно так:
 
 ![](../images/Day20_Linux1.png?v1)
 
-We can also see our default bash shell below, 
-
+Мы также можем увидеть нашу оболочку bash по умолчанию:
 ![](../images/Day20_Linux2.png?v1)
 
-A lot of this comes down to dotfiles something we will cover in this final Linux session of the series. 
-
+Многое из этого сводится к точечным файлам, которые мы рассмотрим в этой заключительной статье Linux из этой серии.
 ### dotfiles 
-First up I want to dig into dotfiles, I have said in a previous day that Linux is made up of configuration files. These dotfiles are configuration files for your Linux system and applications. 
+Сначала я хочу покопаться в dotfiles, я сказал в предыдущий день, что Linux состоит из файлов конфигурации. Эти файлы представляют собой файлы конфигурации для вашей системы Linux и приложений.
 
-I will also add that dotfiles are not just used to customise and make your desktop look pretty, there are also dotfile changes and configurations that will help you with productivity. 
+Я также добавлю, что dotfiles используются не только для настройки и придания красивого вида вашему рабочему столу, но и для изменения и конфигурации dotfile, которые помогут вам повысить производительность.
 
-As I mentioned many software programs store their configurations in these dotfiles. These dotfiles assist in managing functionality. 
+Как я уже упоминал, многие программы хранят свои конфигурации в этих точечных файлах. Эти файлы помогают управлять функциональностью.
 
-Each dotfile starts with a `.` You can probably guess where the naming came from? 
+Каждый файл начинается с `.` Вы, наверное, догадались, откуда взялось название?
 
-So far we have been using bash as our shell which means you will have a .bashrc and .bash_profile in our home folder. You can see below a few dotfiles we have on our system. 
+До сих пор мы использовали bash в качестве нашей оболочки, что означает, что у вас будут .bashrc и .bash_profile в нашей домашней папке. Ниже вы можете увидеть несколько точечных файлов, которые есть в нашей системе.
 
 ![](../images/Day20_Linux3.png?v1)
+Мы собираемся изменить нашу оболочку, поэтому позже мы увидим новый точечный файл конфигурации `.zshrc`.
 
-We are going to be changing our shell, so we will later be seeing a new `.zshrc` configuration dotfile. 
-
-But now you know if we refer to dotfiles you know they are configuration files. We can use them to add aliases to our command prompt as well as paths to different locations. Some people publish their dotfiles so they are publicly available. You will find mine here on my GitHub [MichaelCade/dotfiles](https://github.com/MichaelCade/dotfiles) here you will find my custom `.zshrc` file, my terminal of choice is terminator which also has some configuration files in the folder and then also some background options. 
+Но теперь вы знаете, если мы ссылаемся на точечные файлы, вы знаете, что это файлы конфигурации. Мы можем использовать их для добавления псевдонимов в нашу командную строку, а также путей к различным местоположениям. Некоторые люди публикуют свои точечные файлы, чтобы они были общедоступными. Вы найдете мой здесь, на моем GitHub [MichaelCade/dotfiles](https://github.com/MichaelCade/dotfiles), здесь вы найдете мой пользовательский файл `.zshrc`, мой предпочтительный терминал - терминатор, который также имеет некоторые файлы конфигурации в папке, а затем также некоторые параметры фона.
 
 ### ZSH 
-As I mentioned throughout our interactions so far we have been using a bash shell the default shell with Ubuntu. ZSH is very similar but it does have some benefits over bash.  
+Как я упоминал во время наших взаимодействий, до сих пор мы использовали оболочку bash по умолчанию с Ubuntu. ZSH очень похож, но имеет некоторые преимущества перед bash.
 
-Zsh has features like interactive Tab completion, automated file searching, regex integration, advanced shorthand for defining command scope, and a rich theme engine.
+Zsh имеет такие функции, как интерактивное завершение с помощью табуляции, автоматический поиск файлов, интеграция с регулярными выражениями, расширенное сокращение для определения области действия команды и богатый движок тем.
 
-We can use our `apt` package manager to get zsh installed on our system. Let's go ahead and run `sudo apt install zsh` from our bash terminal. I am going to do this from within the VM console vs being connected over SSH. 
+Мы можем использовать наш менеджер пакетов «apt», чтобы установить zsh в нашей системе. Давайте продолжим и запустим `sudo apt install zsh` с нашего терминала bash. Я собираюсь сделать это из консоли виртуальной машины, а не через SSH.
 
-When the installation command is complete you can run `zsh` inside your terminal, this will then start a shell configuration script. 
+Когда команда установки завершена, вы можете запустить `zsh` внутри вашего терминала, это запустит сценарий настройки оболочки.
 
 ![](../images/Day20_Linux4.png?v1)
 
-I selected `1` to the above question and now we have some more options. 
-
+Я выбрал «1» на вопрос выше, и теперь у нас есть еще несколько вариантов.
 ![](../images/Day20_Linux5.png?v1)
 
-You can see from this menu you we can make some out of the box edits to make ZSH configured to our needs. 
+Из этого меню видно, что мы можем внести некоторые готовые изменения, чтобы настроить ZSH в соответствии с нашими потребностями.
 
-If you exit the wizard with a `0` and then use the `ls -al | grep .zshrc` you should see we have a new configuration file. 
+Если вы выходите из мастера с `0`, а затем используете `ls -la | grep .zshrc` вы должны увидеть, что у нас есть новый файл конфигурации.
 
-Now we want to make zsh our default shell every time we open our terminal, we can do this by running the following command to change our shell `chsh -s $(which zsh)` we then need to log out and back in again for the changes to take place. 
+Теперь мы хотим сделать zsh нашей оболочкой по умолчанию каждый раз, когда мы открываем наш терминал, мы можем сделать это, выполнив следующую команду, чтобы изменить нашу оболочку `chsh -s $(which zsh)`, нам затем нужно выйти из системы и снова войти в нее для грядут изменения.
 
-When you log back and open a terminal it should look something like this. We can also confirm our shell has now been changed over by running `which $SHELL`
+Когда вы снова войдете в систему и откроете терминал, он должен выглядеть примерно так. Мы также можем подтвердить, что наша оболочка теперь изменена, запустив `which $SHELL`
 
 ![](../images/Day20_Linux6.png?v1)
 
-I generally perform this step on each Ubuntu desktop I spin up and find in general without going any further that the zsh shell is a little faster than bash. 
-
+Обычно я выполняю этот шаг на каждом рабочем столе Ubuntu, который я запускаю, и в целом, не заходя дальше, обнаруживаю, что оболочка `zsh` немного быстрее, чем bash.
 ### OhMyZSH 
 
-Next up we want to make things look a little better and also add some functionality to help us move around within the terminal. 
+Далее мы хотим немного улучшить внешний вид, а также добавить некоторые функции, которые помогут нам перемещаться по терминалу.
 
-OhMyZSH is a free and open source framework for managing your zsh configuration. There are lots of plugins, themes and other things that just make interacting with the zsh shell a lot nicer. 
+OhMyZSH — это бесплатная платформа с открытым исходным кодом для управления вашей конфигурацией zsh. Существует множество плагинов, тем и других вещей, которые просто делают взаимодействие с оболочкой zsh намного приятнее.
 
-You can find out more about [ohmyzsh](https://ohmyz.sh/)
+Вы можете узнать больше о [ohmyzsh](https://ohmyz.sh/)
 
-Let's get Oh My ZSH installed, we have a few options with `curl` `wget` or `fetch` we have the first two available on our system but I will lead with `curl`
+Давайте установим Oh My ZSH, у нас есть несколько вариантов с `curl`, `wget` или `fetch`, у нас есть первые два, доступные в нашей системе, но я начну с `curl`.
 
 `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 
-When you have run the above command you should see some output like below.
-
+Когда вы запустите приведенную выше команду, вы должны увидеть вывод, как показано ниже.
 ![](../images/Day20_Linux7.png?v1)
 
- Now we can move on to start putting a theme in for our experience, there are well over 100 bundled with Oh My ZSH but my go to for all of my applications and everything is the dracula theme. 
+Теперь мы можем перейти к добавлению темы для нашего опыта, в комплекте с Oh My ZSH более 100, но я выбираю для всех своих приложений, и все это тема Дракулы.
 
- I also want to add that these two plugins are a must when using Oh My ZSH. 
+Я также хочу добавить, что эти два плагина являются обязательными при использовании Oh My ZSH.
 
- `git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions`
+`git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions`
 
- `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting`
+`git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting`
 
- `nano ~/.zshrc`
+`nano ~/.zshrc`
 
- edit the plugins to now include `plugins=(git zsh-autosuggestions zsh-syntax-highlighting)`
+отредактируйте `plugins`, чтобы включить `plugins=(git zsh-autosuggestions zsh-syntax-highlighting)`
 
-## Gnome Extensions
+## Расширения Gnome
 
-I also use Gnome extensions, and in particular the list below 
+Я также использую расширения Gnome, и в частности список ниже
 
 [Gnome extensions](https://extensions.gnome.org)
 
@@ -116,9 +110,9 @@ I also use Gnome extensions, and in particular the list below
     - Desktop Icons 
     - User Themes 
 
-## Software Installation
+## Установка программ
 
-A short list of the programs I install on the machine using `apt` 
+Краткий список программ, которые я устанавливаю на машину с помощью `apt`
 
     - VSCode 
     - azure-cli 
@@ -132,25 +126,23 @@ A short list of the programs I install on the machine using `apt`
     - terraform 
     - vagrant
 
-### Dracula theme
+### тема Dracula
+Этот сайт - единственная тема, которую я использую в данный момент. Выглядит четким, чистым и все выглядит отлично. [Dracula Theme](https://draculatheme.com/)
 
-This site is the only theme I am using at the moment. Looks clear, clean and everything looks great. [Dracula Theme](https://draculatheme.com/) It also has you covered when you have lots of other programs you use on your machine. 
+По ссылке выше можем поискать zsh на сайте и найдем как минимум два варианта.
 
-From the link above we can search for zsh on the site and you will find at least two options. 
-
-Follow the instructions listed to insall either manually or using git. Then you will need to finally edit your `.zshrc` configuration file as per below. 
+Следуйте приведенным инструкциям, чтобы выполнить установку вручную или с помощью git. Затем вам нужно будет, наконец, отредактировать файл конфигурации `.zshrc`, как показано ниже.
 
 ![](../images/Day20_Linux8.png?v1)
+Далее нам понадобится [тема Gnome Terminal Dracula](https://draculatheme.com/gnome-terminal) со всеми инструкциями
 
-You are next going to want the [Gnome Terminal Dracula theme](https://draculatheme.com/gnome-terminal) with all instructions available here as well. 
-
-It would actually take a long time for me to document each and every step so I created a video walkthrough of the process. (**Click on the image below**)
+На самом деле мне потребовалось бы много времени, чтобы задокументировать каждый шаг, поэтому я создал пошаговое видео процесса. (**Нажмите на изображение ниже**)
 
 [![](../images/Day20_YouTube.png?v1)](https://youtu.be/jeEslAtHfKc)
 
-If you made it this far, then we have now finished our Linux section of the #90DaysOfDevOps. Once again I am open for feedback and additions to resources here. 
+Если вы дочитали до этого момента, значит, мы закончили наш раздел Linux в #90DaysOfDevOps. Я снова открыт для отзывов и дополнений к ресурсам здесь.
 
-I also thought on this it was easier to show you a lot of the steps through video vs writing them down here, what do you think to this? I do have a goal to work back through these days and where possible creating video walkthroughs to add in and better maybe explain and show some of the things we have covered. What do you think? 
+Я также подумал, что было проще показать вам многие шаги с помощью видео, чем записывать их здесь, что вы думаете об этом? У меня есть цель вернуться к этим дням и, где это возможно, создать видео-пошаговые руководства, чтобы добавить и, возможно, лучше объяснить и показать некоторые вещи, которые мы рассмотрели. Что вы думаете?
 
 ## Ресурсы 
 
@@ -163,6 +155,4 @@ I also thought on this it was easier to show you a lot of the steps through vide
 - [Learn the Linux Fundamentals - Part 1](https://www.youtube.com/watch?v=kPylihJRG70)
 - [Linux for hackers (don't worry you don't need to be a hacker!)](https://www.youtube.com/watch?v=VbEx7B_PTOE)
 
-Tomorrow we start our 7 days of diving into Networking, we will be looking to give ourselves the foundational knowledge and understanding of Networking around DevOps. 
-
-See you on [Day21](day21.md)
+Завтра мы начинаем наши 7 дней погружения в сетевое взаимодействие, мы будем стараться получить базовые знания и понимание сетевого взаимодействия (Networking) в DevOps.
