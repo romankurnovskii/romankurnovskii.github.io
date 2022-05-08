@@ -1,89 +1,79 @@
 ---
 title: 21 - The Big Picture DevOps and Networking
-description: The Big Picture DevOps and Networking
+description: Общая картина - DevOps и Сеть
 toc: true
 authors:
 tags: [devops]
 categories:
 series: 
 date: "2022-05-11"
-lastmod: "2022-05-07"
+lastmod: "2022-05-08"
 featuredImage:
 draft: false
 id: 1048761
 ---
+## Общая картина: DevOps и Сеть
 
-## The Big Picture: DevOps and Networking
+Добро пожаловать в День 21! Мы собираемся заняться сетевыми технологиями в течение следующих 7 дней. Сеть и DevOps являются всеобъемлющей темой, но нам также необходимо изучить некоторые основы сетевых технологий.
 
-Welcome to Day 21! We are going to be getting into Networking over the next 7 days, Networking and DevOps is the overarching theme but we will need to get into some of the networking fundamentals as well. 
+В конечном счете, как мы уже говорили ранее, DevOps — это культура и изменение процессов в ваших организациях. Как мы уже говорили, это могут быть виртуальные машины, контейнеры, Kubernetes, но это также может быть и сеть. Если мы используем эти принципы DevOps для нашей инфраструктуры, которая чтобы включить сеть более точно с точки зрения DevOps, вам также необходимо знать о сети, а также о различных топологиях, сетевых инструментах и ​​стеках, которые у нас есть.
 
-Ultimately as we have said previously DevOps is about a culture and process change within your organisations this as we have discussed can be Virtual Machines, Containers, Kubernetes but it can also be the network, If we are using those DevOps principles for our infrastructure that has to include the network more to the point from a DevOps point of view you also need to know about the network as in the different topologies and networking tools and stacks that we have available. 
+Я бы сказал, что наши сетевые устройства должны быть настроены с использованием инфраструктуры как кода, и все должно быть автоматизировано, как и наши виртуальные машины, но для этого мы должны хорошо понимать, что мы автоматизируем.
+### Что такое NetDevOps | Сетевой DevOps?
 
-I would argue that we should have our networking devices configured using infrastructure as code and have everything automated like we would our virtual machines, but in order to do that we have to have a good understanding of what we are automating. 
+Вы также можете услышать термины Network DevOps или NetDevOps. Возможно, вы уже являетесь сетевым инженером (network engineer) и хорошо разбираетесь в сетевых компонентах в инфраструктуре, вы понимаете элементы, используемые в сети, такие как DHCP, DNS, NAT и т. д. и т. д. У вас также будет хорошее понимание аппаратных или программно-определяемых сетей. опции, коммутаторы, маршрутизаторы и т.д. и т.п.
 
-### What is NetDevOps | Network DevOps?
+Но если вы не сетевой инженер, то нам, вероятно, необходимо получить базовые знания по всем направлениям в некоторых из этих областей, чтобы мы могли понять конечную цель Network DevOps.
 
-You may also hear the terms Network DevOps or NetDevOps. Maybe you are already a Network engineer and have a great grasp on the network components within the infrastructure you understand the elements used around networking such as DHCP, DNS, NAT etc etc. You will also have a good understanding around the hardware or software defined networking options, switches, routers etc etc. 
+Но в отношении этих терминов мы можем думать о NetDevOps или Network DevOps как о применении принципов и практик DevOps к сети, применении инструментов управления версиями и автоматизации к созданию, тестированию, мониторингу и развертыванию сети.
 
-But if you are not a network engineer then we probably need to get a foundational knowledge across the board on some of those areas so that we can understand the end goal of Network DevOps. 
+Если мы думаем о сетевой DevOps как о необходимости автоматизации, мы упоминали ранее о том, что DevOps разрушает разрозненность между командами. Если сетевые команды не перейдут на аналогичную модель и процесс, они станут узким местом или даже полным провалом.
 
-But in regards to those terms we can think of NetDevOps or Network DevOps as applying the DevOps Principles and Practices to the network, applying version control and automation tools to the network creation, testing, monitoring, and deployments. 
+Использование принципов автоматизации подготовки, настройки, тестирования, контроля версий и развертывания — отличное начало. Автоматизация в целом обеспечит скорость развертывания, стабильность сетевой инфраструктуры и последовательное улучшение, а также процесс, который будет совместно использоваться в нескольких средах после их тестирования. Например, полностью протестированная сетевая политика, которая была полностью протестирована в одной среде, может быть быстро использована в другом месте из-за характера этого в коде, а не в процессе, созданном вручную, как это могло быть раньше.
+Действительно хорошую точку зрения и схему этого мышления можно найти здесь. [Сетевой DevOps] (https://www.thousandeyes.com/learning/techtorials/network-devops)
+## Networking - основы 
 
-If we think of Network DevOps of having to require automation, we mentioned before about DevOps breaking down the siloes between teams. If the networking teams do not change to a similar model and process then they become the bottleneck or even the failure overall. 
+Давайте для начала забудем о стороне DevOps, и теперь нам нужно очень кратко взглянуть на некоторые основы работы в сети.
+### Сетевые устройства
 
-Using the automation principles around provisioning, configuration, testing, version control and deployment is a great start. Automation is overall going to enable speed of deployment, stability of the networking infrastructure and consistent improvement as well as the process being shared across multiple environments once they have been tested. Such as a fully tested Network Policy that has been fully tested on one environment can be used quickly in another location because of the nature of this being in code vs a manually authored process which it might have been before. 
-A really good view point and outline of this thinking can be found here. [Network DevOps](https://www.thousandeyes.com/learning/techtorials/network-devops)
-
-## Networking The Basics 
-
-Let's forget the DevOps side of things to begin with here and we now need to look very briefly into some of the Networking fundamentals. 
-
-### Network Devices 
-
-**Host** are any devices which sends or recieve traffic. 
-
+**Host** — это любые устройства, которые отправляют или получают трафик.
 ![](../images/Day21_Networking1.png?v1)
 
-**IP Address** the identity of each host. 
+**IP Address** "определение" каждого хоста. (адрес)
 
 ![](../images/Day21_Networking2.png?v1)
 
-**Network** is what transports traffic between hosts. If we did not have networks there would be a lot of manual movement of data! 
-
-A logical group of hosts which require similar connectivity. 
-
+**Network**  — (Сеть) это то, что транспортирует трафик между хостами. Если бы у нас не было сетей, было бы много ручного перемещения данных!
+Логическая группа хостов, для которых требуется аналогичное подключение.
 ![](../images/Day21_Networking3.png?v1)
 
-**Switches** facilitate communication ***within*** a network. A switch forwards data packets between hosts. A switch sends packets directly to hosts. 
-
-- Network: A Grouping of hosts which require similar connectivity. 
-- Hosts on a Network share the same IP address space. 
-
+**Switches** (Коммутаторы) облегчают связь ***внутри*** сети. Коммутатор пересылает пакеты данных между хостами. Коммутатор отправляет пакеты напрямую хостам.
+- Сеть: группа хостов, которым требуется одинаковое подключение.
+- Хосты в сети используют одно и то же пространство IP-адресов.
 ![](../images/Day21_Networking4.png?v1)
+**Маршрутизатор** (Router) облегчает связь между сетями. Если мы сказали ранее, что коммутатор следит за связью внутри сети, маршрутизатор позволяет нам объединить эти сети или, по крайней мере, предоставить им доступ друг к другу, если это разрешено.
 
-**Router** facilitate communication between networks. If we said before that a switch looks after communication within a network a router allows us to join these networks together or at least give them access to each other if permitted. 
+Маршрутизатор может обеспечить точку контроля трафика (безопасность, фильтрация, перенаправление). Все больше и больше коммутаторов теперь также предоставляют некоторые из этих функций.
 
-A router can provide a traffic contol point (security, filtering, redirting) More and more switches also provide some of these functions now. 
+Маршрутизаторы узнают, к каким сетям они подключены. Это известно как маршруты, таблица маршрутизации — это все сети, о которых знает маршрутизатор.
 
-Routers learn which networks they are attached to. This is known as routes, a routing table is all the networks a router knows about. 
+Маршрутизатор имеет IP-адрес в сетях, к которым он подключен. Этот IP-адрес также будет использоваться каждым хостом за пределами их локальной сети, также известной как шлюз.
 
-A router has an IP address in the networks they are attached to. This IP is also going to be each hosts way out of their local network also known as a gateway. 
-
-Routers also create the hierarchy in networks I mentioned earlier. 
+Маршрутизаторы также создают иерархию в сетях, о которой я упоминал ранее.
 
 ![](../images/Day21_Networking5.png?v1)
 
-## Switches vs Routers 
+## Коммутаторы и маршрутизаторы (Switches vs Routers )
 
-**Routing** is the process of moving data between networks. 
+**Маршрутизация** – это процесс перемещения данных между сетями.
     
-- A router is a device whose primary purpose is Routing.
+- Маршрутизатор — это устройство, основной задачей которого является маршрутизация.
 
-**Switching** is the process of moving data within networks. 
+**Коммутация** — это процесс перемещения данных в сети.
 
-- A Switch is a device who's primary purpose is switching. 
+- Коммутатор — это устройство, основное назначение которого — коммутация.
 
-This is very much a foundational overview of devices as we know there are many different Network Devices such as: 
+Это во многом базовый обзор устройств, поскольку мы знаем, что существует множество различных сетевых устройств, таких как:
 
 - Access Points 
 - Firewalls 
@@ -94,9 +84,9 @@ This is very much a foundational overview of devices as we know there are many d
 - Virtual Switches 
 - Virtual Routers 
 
-Although all of these devices are going to perform Routing and/or Switching. 
+Хотя все эти устройства будут выполнять маршрутизацию и/или коммутацию.
 
-Over the next few days we are going to get to know a little more about this list. 
+В течение следующих нескольких дней мы собираемся узнать немного больше об этом списке.
 
 - OSI Model 
 - Network Protocols 
@@ -108,5 +98,3 @@ Over the next few days we are going to get to know a little more about this list
 ## Ресурсы 
 
 [Computer Networking full course](https://www.youtube.com/watch?v=IPvYjXCsTg8)
-
-See you on [Day22](day22.md)
