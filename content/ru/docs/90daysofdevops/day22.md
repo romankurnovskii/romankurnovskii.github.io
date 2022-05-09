@@ -12,87 +12,75 @@ featuredImage:
 draft: false
 id: 1049037
 ---
-## The OSI Model - The 7 Layers
+## Модель OSI — 7 уровней
 
-The overall purpose of networking as an industry is to allow two hosts to share data before networking if I want to get data from this host to this host I'd have to plug something into this host walk it over to the other host plug it into the other host.
+Общая цель сети как отрасли состоит в том, чтобы позволить двум хостам обмениваться данными. Если я хочу передать данные от одного хоста к другому хосту, мне нужно будет что-то подключить к этому хосту, перейти к другому хосту, подключить его к первому хосту.
 
-Networking allows us to automate this by allowing the host to share data automatically across the wire for these hosts to do this they must follow a set of rules.
+Сеть позволяет нам автоматизировать это, позволяя хосту автоматически обмениваться данными по сети, и для этого эти хосты должны следовать набору правил.
 
-This is no different than any language English has a set of rules that two English speakers must follow Spanish has its own set of rules French has its own set of rules while networking also has its own set of rules
+Это ничем не отличается от любого другого языка. У английского есть набор правил, которым должны следовать два носителя английского языка. У испанского есть свой собственный набор правил.
 
-The rules for networking are divided into seven different layers and those layers are known as the OSI model. 
+Правила организации сети разделены на семь разных уровней, и эти уровни известны как модель OSI.
+### Введение в модель OSI
 
-### Introduction to the OSI Model 
-
-The OSI Model (Open Systems Interconnection Model) is a framework used to describe the functions of a networking system. The OSI model characterises computing functions into a universal set of rules and requirements in order to support interoperability between different products and software. In the OSI reference model, the communications between a computing system are split into seven different abstraction layers: **Physical, Data Link, Network, Transport, Session, Presentation, and Application**.
-
+Модель OSI (модель взаимодействия открытых систем)/(Open Systems Interconnection Model) — это структура, используемая для описания функций сетевой системы. Модель OSI характеризует вычислительные функции в виде универсального набора правил и требований для обеспечения функциональной совместимости между различными продуктами и программным обеспечением. В эталонной модели OSI обмен данными между вычислительной системой разделен на семь различных уровней абстракции: **физический, канальный, сетевой, транспортный, сеансовый, презентационный и прикладной** (**Physical, Data Link, Network, Transport, Session, Presentation, Application**).
 ![](../images/Day22_Networking1.png?v1)
-
-### Physical
-Layer 1 in the OSI model and this is known as physical, the premise of being able to get data from one host to another through a means be it physical cable or we could also consider Wi-Fi in this layer as well. We might also see some more legacy hardware seen here around hubs and repeaters in order to transport the data from one host to another. 
-
+### Физический
+Уровень 1 в модели OSI, известный как физический, предполагает возможность передачи данных с одного хоста на другой с помощью средств, будь то физический кабель или мы также можем рассмотреть Wi-Fi на этом уровне. Мы также можем увидеть здесь более устаревшее оборудование вокруг концентраторов и повторителей для передачи данных с одного хоста на другой.
 ![](../images/Day22_Networking2.png?v1)
+### Канал передачи данных
+Уровень 2, канал передачи данных обеспечивает передачу данных от узла к узлу, где данные упакованы в кадры. Существует также уровень исправления ошибок, которые могли возникнуть на физическом уровне. Здесь мы также вводим или впервые видим MAC-адреса.
 
-### Data Link 
-Layer 2, the data link enables node to node transfer where data is packaged into frames. There is also a level of error correcting that might have occurred at the physical layer. This is also where we introduce or first see MAC addresses. 
-
-This is where we see the first mention of switches that we covered in our first day of networking on [Day 21](day21.md)
-
+Здесь мы видим первое упоминание о коммутаторах, о которых мы рассказали в первый день нашей работы с сетью [День 21](../day21)
 ![](../images/Day22_Networking3.png?v1)
+### Сеть
+Вы, вероятно, слышали термин «коммутаторы уровня 3» или «коммутаторы уровня 2». В нашей модели OSI уровень 3. Цель сети — прямая(end to end) доставка, именно здесь мы видим наши IP-адреса, также упомянутые в обзоре первого дня.
 
-### Network 
-You have likely heard the term layer 3 switches or layer 2 switches. In our OSI model Layer 3, the Network has a goal of end to end delivery, this is where we see our IP addresses also mentioned in the first day overview. 
-
-Routers and hosts exist at layer 3, remember the router is the ability to route between multiple networks. Anything with an IP could be considered Layer 3. 
-
+Маршрутизаторы и хосты существуют на уровне 3, помните, что маршрутизатор — это возможность маршрутизации между несколькими сетями. Все, что имеет IP, может считаться уровнем 3.
 ![](../images/Day22_Networking4.png?v1)
+Так зачем же нам нужны схемы адресации как на уровне 2, так и на уровне 3? (MAC-адреса и IP-адреса)
 
-So why do we need addressing schemes on both Layer 2 and 3? (MAC Addresses vs IP Addresses) 
+Если мы подумаем о передаче данных с одного хоста на другой, каждый хост имеет IP-адрес, но между ними есть несколько коммутаторов и маршрутизаторов. Каждое из устройств имеет этот MAC-адрес уровня 2.
 
-If we think about getting data from one host to another, each host has an IP address but there are several switches and routers in between. Each of the devices has that layer 2 MAC address. 
+MAC-адрес уровня 2 будет передаваться только от хоста к коммутатору/маршрутизатору, он ориентирован на переходы, где IP-адреса уровня 3 будут оставаться с этим пакетом данных, пока он не достигнет своего конечного хоста. (Концы с концами)
 
-The layer 2 MAC address will go from host to switch/router only, it is focused on hops where as the layer 3 IP addresses will stay with that packet of data until it reaches its end host. (End to End)
+IP-адреса — уровень 3 = сквозная доставка
 
-IP Addresses - Layer 3 = End to End Delivery 
+MAC-адреса — уровень 2 = доставка между переходами
 
-MAC Addresses - Layer 2 = Hop to Hop Delivery 
-
-Now there is a network protocol that we will get into but not today called ARP(Address Resolution Protocol) which links our Layer3 and Layer2 addresses. 
-
-### Transport 
-Service to Service delivery, Layer 4 is there to distinguish data streams. In the same way that Layer 3 and Layer 2 both had their addressing schemes in Layer 4 we have ports. 
+Теперь есть сетевой протокол, который мы рассмотрим, но не сегодня, называемый ARP (протокол разрешения адресов), который связывает наши адреса Layer3 и Layer2.
+### Транспорт
+Предоставление услуг между услугами, уровень 4 предназначен для различения потоков данных. Точно так же, как уровни 3 и 2 имели свои схемы адресации, на уровне 4 у нас есть порты.
 
 ![](../images/Day22_Networking5.png?v1)
 
-### Session, Presentation, Application 
-Distinction between Layers 5,6,7 is or had become somewhat vague. 
+### Сессия, Презентация, Приложение
+Различие между слоями 5, 6, 7 немного расплывчато
 
-It is worth looking at the [TCP IP Model](https://www.geeksforgeeks.org/tcp-ip-model/) to get a more recent understanding. 
+Стоит взглянуть на [IP-модель TCP](https://www.geeksforgeeks.org/tcp-ip-model/), чтобы получить более свежее представление.
 
-Let's now try and explain what's actually happening when hosts are communicating to each other using this networking stack. This host has an application that's going to generate data that is meant to be sent to another host.
+Давайте теперь попробуем объяснить, что на самом деле происходит, когда хосты общаются друг с другом, используя этот сетевой стек. На одном хосте есть приложение, которое будет генерировать данные, предназначенные для отправки на другой хост.
 
-The source host is going to go through is what's known as the encapsulation process. That data will be first sent to layer 4.
+Исходный хост будет проходить так называемый процесс инкапсуляции. Эти данные будут сначала отправлены на уровень 4.
 
-Layer 4 is going to add a header to that data which can facilitate the goal of layer 4 which is service to service delivery. This is going to be a port using either TCP or UDP. It is also going to include the source port and destination port. 
+Уровень 4 добавит заголовок к этим данным, что может облегчить задачу уровня 4, которая заключается в доставке услуг. Это будет порт, использующий либо TCP, либо UDP. Он также будет включать исходный порт и порт назначения.
 
-This may also be known as a segment (Data and Port)
+Это также может быть известно как сегмент (данные и порт).
 
-This segment is going to be passed down the osi stack to layer 3, the network layer, the network layer is going to add another header to this data.
-This header is going to facilitate the goal of layer 3 which is end to end delivery meaning in this header you will have a source ip address and a destination ip, the header plus data may also be referred to as a packet. 
+Этот сегмент будет передан по стеку osi на уровень 3, сетевой уровень, сетевой уровень добавит к этим данным еще один заголовок.
+Этот заголовок будет способствовать цели уровня 3, который является сквозной доставкой, что означает, что в этом заголовке у вас будет IP-адрес источника и IP-адрес назначения, заголовок плюс данные также могут называться пакетом.
 
-Layer 3 will then take that packet and hand it off to layer 2, layer 2 will once again add another header to that data to accomplish layer 2's goal of hop to hop delivery meaning this header will include a source and destination mac address. 
-This is known as a frame when you have the layer 2 header and data.
+Затем уровень 3 возьмет этот пакет и передаст его уровню 2, уровень 2 еще раз добавит еще один заголовок к этим данным для достижения цели уровня 2 по доставке переходов, что означает, что этот заголовок будет включать в себя MAC-адреса источника и получателя.
+Это называется кадром, когда у вас есть заголовок и данные уровня 2.
 
-That frame then gets converted into ones and zeros and sent over the Layer 1 Physical cable or wifi. 
+Затем этот кадр преобразуется в единицы и нули и отправляется по физическому кабелю уровня 1 или Wi-Fi.
 
 ![](../images/Day22_Networking6.png?v1)
-
-I did mention above the naming for each layer of header plus data but decided to draw this out as well. 
+Выше я упомянул названия для каждого уровня заголовка и данных, но решил нарисовать и это.
 
 ![](../images/Day22_Networking7.png?v1)
 
-Obviously the Application sending the data is being sent somewhere so the receiving in some what in reverse to get that back up the stack and into the receiving host. 
-
+Очевидно, что приложение, отправляющее данные, отправляется куда-то, поэтому получение происходит в обратном порядке, чтобы получить эту резервную копию в стеке и на принимающем хосте.
 ![](../images/Day22_Networking8.png?v1)
 
 ## Ресурсы 
@@ -100,4 +88,3 @@ Obviously the Application sending the data is being sent somewhere so the receiv
 - [Computer Networking full course](https://www.youtube.com/watch?v=IPvYjXCsTg8)
 - [Practical Networking](http://www.practicalnetworking.net/)
 
-See you on [Day23](day23.md)
