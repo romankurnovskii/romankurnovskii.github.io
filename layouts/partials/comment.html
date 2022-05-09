@@ -10,6 +10,7 @@
 {{- if $commentHandler }}
 {{- $bundles := partial "utils/get-bundles" . }}
 {{- $enableComment = true }}
+
 {{- range $bundles.Reverse }}
 {{- if and (ne .Params.enableComment nil) (ne .Params.enableComment "") }}
 {{- $enableComment = .Params.enableComment }}

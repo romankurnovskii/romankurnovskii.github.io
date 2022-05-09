@@ -12,6 +12,7 @@ featuredVideo:
 featuredImage:
 draft: false
 Цель: Сконвертировать данные для приложения ФСФР из иаблицы в json
+enableComment: true
 ---
 
 ## Задача
