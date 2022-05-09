@@ -17,7 +17,7 @@ experiences:
     writeup: >
       Полное погружение в новую IT среду.
 
-      - Учеба <a href="https://en.tel-ran.com/" target="_blank">Tel-ran</a>
+      - Учеба <a href="https://en.tel-ran.com/" target="_blank">Tel-Ran</a>
 
       - Учеба <a href="https://rs.school/" target="_blank">RS School (Epam)</a>
 
