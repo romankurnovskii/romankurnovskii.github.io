@@ -1,10 +1,15 @@
 ---
-title: '#90DaysOfDevOps - Microsoft Azure Storage Models - Day 32'
-published: false
-description: 90DaysOfDevOps - Microsoft Azure Storage Models
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+title: 32 - Microsoft Azure Storage Models
+description: Microsoft Azure Storage Models
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-05-22"
+lastmod: "2022-05-22"
+featuredImage:
+draft: false
 id: 1048775
 ---
 ## Microsoft Azure Storage Models

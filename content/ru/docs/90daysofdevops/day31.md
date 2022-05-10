@@ -1,10 +1,15 @@
 ---
-title: '#90DaysOfDevOps - Microsoft Azure Compute Models - Day 31'
-published: false
-description: 90DaysOfDevOps - Microsoft Azure Compute Models
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
+title: 31 - Microsoft Azure Compute Models
+description: Microsoft Azure Compute Models
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-05-21"
+lastmod: "2022-05-21"
+featuredImage:
+draft: false
 id: 1049040
 ---
 ## Microsoft Azure Compute Models
