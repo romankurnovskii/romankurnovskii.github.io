@@ -7,118 +7,114 @@ tags: [devops]
 categories:
 series: 
 date: "2022-05-13"
-lastmod: "2022-05-07"
+lastmod: "2022-05-13"
 featuredImage:
 draft: false
 id: 1048704
 ---
 ## Network Protocols 
+Набор правил и сообщений, образующих стандарт.
 
-A set of rules and messages that form a standard. An Internet Standard. 
+- ARP - Address Resolution Protocol - протокол разрешения адресов
 
-- ARP - Address Resolution Protocol 
+Если вы хотите по-настоящему разобраться в ARP, вы можете прочитать Internet Standard здесь [RFC 826](https://datatracker.ietf.org/doc/html/rfc826)
 
-If you want to get really into the weeds on ARP you can read the Internet Standard here. [RFC 826](https://datatracker.ietf.org/doc/html/rfc826) 
+ARP соединяет IP-адреса с фиксированными физическими адресами машин, также известными как MAC-адреса, в сети уровня 2.
 
-Connects IP addresses to fixed physical machine addresses, also known as MAC addresses across a layer 2 network. 
 
 ![](../images/Day23_Networking1.png?v1)
 
-- FTP - File Transfer Protocol 
+- FTP - File Transfer Protocol - протокол передачи файлов
 
-Allows for the transfer of files from source to destination. Generally this process is authenticated but there is the ability if configured to use anonymous access. You will more frequently now see FTPS which provides SSL/TLS connectivity to FTP servers from the client for better security. This protocol would be found in the Application layer of the OSI Model. 
+Позволяет передавать файлы из источника в место назначения. Как правило, этот процесс аутентифицируется, но при настройке можно использовать анонимный доступ. Теперь вы будете чаще видеть FTPS, который обеспечивает подключение SSL/TLS к FTP-серверам от клиента для повышения безопасности. Этот протокол можно найти на прикладном уровне модели OSI.
 
 ![](../images/Day23_Networking2.png?v1)
 
-- SMTP - Simple Mail Transfer Protocol 
+- SMTP - Simple Mail Transfer Protocol -  протокол передачи почты
 
-Used for email transmission, mail servers use SMTP to send and recieve mail messages. You will still find even with Microsoft 365 that the SMTP protocol is used for the same purpose. 
+Почтовые серверы, используемые для передачи электронной почты, используют SMTP для отправки и получения почтовых сообщений. Вы по-прежнему обнаружите, что даже с Microsoft 365 протокол SMTP используется для той же цели.
 
 ![](../images/Day23_Networking3.png?v1)
 
-- HTTP - Hyper Text Transfer Protocol 
+- HTTP - Hyper Text Transfer Protocol - Протокол передачи гипертекста
 
-HTTP is the foundation of the internet and browsing content. Giving us the ability to easily access our favourite websites. HTTP is still heavily used but HTTPS is more so used or should be used on most of your favourite sites. 
+HTTP является основой Интернета и просмотра контента. Дает нам возможность легко получить доступ к нашим любимым веб-сайтам. HTTP по-прежнему широко используется, но HTTPS используется или должен использоваться на большинстве ваших любимых сайтов.
 
 ![](../images/Day23_Networking4.png?v1)
 
-- SSL - Secure Sockets Layer | TLS - Transport Layer Security 
+- SSL - Secure Sockets Layer | TLS - Transport Layer Security - Уровень защищенных сокетов | TLS — безопасность транспортного уровня
 
-TLS has taken over from SSL, TLS is a [Cryptographic Protocol]() that provides security communications over a network. It can and will be found in mail, im and other applications but most commonly it is used to secure HTTPS.  
+TLS заменил SSL, TLS — это криптографический протокол, который обеспечивает безопасность связи по сети. Его можно найти в почте, мессенджерах и других приложениях, но чаще всего он используется для защиты HTTPS.
 
 ![](../images/Day23_Networking5.png?v1)
 
-- HTTPS - HTTP secured with SSL/TLS 
+- HTTPS - HTTP secured with SSL/TLS - HTTP, защищенный с помощью SSL/TLS
 
-An extension of HTTP, used for secure communications over a network, HTTPS is encrypted with TLS as mentioned above. The focus here was to bring authenticaion, privacy and integrity whilst data is exchanged between hosts. 
+Расширение HTTP, используемое для безопасной связи по сети, HTTPS шифруется с помощью TLS, как упоминалось выше. Основное внимание здесь уделялось обеспечению аутентификации, конфиденциальности и целостности при обмене данными между хостами.
 
 ![](../images/Day23_Networking6.png?v1)
 
-- DNS - Domain Name System 
+- DNS - Domain Name System - система доменных имен
 
-The DNS is used to map human-freindly domain names for example we all know [google.com](https://google.com) but if you were to open a browser and put in [8.8.8.8](https://8.8.8.8) you would get Google as we pretty much know it. However good luck trying to remember all of the IP addresses for all of your websites where some of them we even use google to find information. 
+DNS используется для сопоставления удобных для человека доменных имен, например, все мы знаем [google.com](https://google.com), но если вы откроете браузер и введете [8.8.8.8](https:/ /8.8.8.8) вы получите Google в том виде, в каком мы его знаем. Однако удачи вам в попытках запомнить все IP-адреса всех ваших веб-сайтов, на некоторых из них мы даже используем Google для поиска информации.
 
-This is where DNS comes in, it ensures that hosts, services and other resources are reachable. 
+Именно здесь в дело вступает DNS, он гарантирует доступность хостов, служб и других ресурсов.
 
-On all hosts, if they require internet connectivity then they must have DNS to be able to resolve those domain names. DNS is an area you could spend Days and Years on learning. I would also say from experience that DNS is mostly the common cause of all errors when it comes to Networking. Not sure if a Network engineer would agree there though. 
+На всех хостах, если им требуется подключение к Интернету, они должны иметь DNS, чтобы иметь возможность разрешать эти доменные имена. DNS — это область, на изучение которой вы можете потратить дни и годы. Я бы также сказал по опыту, что DNS в основном является распространенной причиной всех ошибок, когда речь идет о сети. Однако не уверен, что сетевой инженер согласится с этим.
 
 ![](../images/Day23_Networking7.png?v1)
 
-- DHCP - Dynamic Host Configuration Protocol 
+- DHCP - Dynamic Host Configuration Protocol - Протокол динамического конфигурирования сервера
 
-We have discussed a lot about protocols that are required to make our hosts work, be it accessing the internet or transferring files between each other. 
+Мы много обсуждали протоколы, необходимые для работы наших хостов, будь то доступ в Интернет или передача файлов между собой.
 
-There are 4 things that we need on every host for it to be able to achieve both of those tasks. 
+На каждом хосте нам нужны 4 вещи, чтобы он мог выполнять обе эти задачи.
 
 - IP Address 
 - Subnet Mask 
 - Default Gateway 
 - DNS 
 
-We have covered IP address being a unique address for your host on the network it resides, we can think of this as our house number. 
+Мы рассмотрели IP-адрес, являющийся уникальным адресом для вашего хоста в сети, в которой он находится, мы можем думать об этом как о нашем домашнем номере.
 
-Subnet mask we will cover shortly, but you can think of this as post code or zip code. 
+Маску подсети мы скоро рассмотрим, но вы можете думать об этом как о почтовом индексе или почтовом индексе.
 
-Default gateway is the IP of our router generally on our network providing us with that Layer 3 connectivity. You could think of this as the single road that allows us out of our street.  
+Шлюз по умолчанию — это IP-адрес нашего маршрутизатора, как правило, в нашей сети, предоставляющий нам возможность подключения уровня 3. Вы могли бы думать об этом как о единственной дороге, которая позволяет нам покинуть нашу улицу.
 
-Then we have DNS as we just covered to help us convert complicated public IP addresses to more suitable and rememberable domain names. Maybe we can think of this as the giant sorting office to make sure we get the right post. 
+Затем у нас есть DNS, как мы только что рассмотрели, чтобы помочь нам преобразовать сложные общедоступные IP-адреса в более подходящие и запоминающиеся доменные имена. Может быть, мы можем думать об этом как о гигантском сортировочном офисе, чтобы убедиться, что мы получаем правильный пост.
 
-As I said each host requires these 4 things, if you have 1000 or 10,000 hosts then that is going to take you a very long time to determine each one of these individually. This is where DHCP comes in and allows you to determine a scope for your network and then this protocol will distribute to all available hosts in your network. 
+Как я уже сказал, каждому хосту требуются эти 4 вещи, если у вас 1000 или 10 000 хостов, вам потребуется очень много времени, чтобы определить каждый из них по отдельности. Здесь в дело вступает DHCP, который позволяет вам определить область действия вашей сети, а затем этот протокол будет распространяться на все доступные хосты в вашей сети.
 
-Another example, you head into a coffee shop, grab a coffee and sit down with your laptop or your phone lets call that your host. You connect your host to the coffee shop wifi and you gain access to the internet, messages and mail start pinging through and you can navigate web pages and social media. When you connected to the coffee shop wifi your machine would have picked up a DHCP address either from a dedicated DHCP server or most likely from the router also handling DHCP. 
+Другой пример: вы идете в кафе, берете кофе и садитесь за свой ноутбук, или ваш телефон позволяет назвать это вашим хостом. Вы подключаете свой хост к Wi-Fi в кофейне, и вы получаете доступ к Интернету, сообщения и почта начинают пинговаться, и вы можете просматривать веб-страницы и социальные сети. Когда вы подключались к Wi-Fi в кофейне, ваша машина получала DHCP-адрес либо от выделенного DHCP-сервера, либо, скорее всего, от маршрутизатора, который также обрабатывает DHCP.
 
 ![](../images/Day23_Networking8.png?v1)
 
-### Subnetting 
+### Subnetting - Подсети
 
-A subnet is a logical subdivision of an IP network.
+Подсеть — это логическое подразделение IP-сети.
 
-Subnets break large networks into smaller, more manageable networks that run more efficiently. 
+Подсети разбивают большие сети на более мелкие, более управляемые сети, которые работают более эффективно.
 
-Each subnet is a logical subdivision of the bigger network. Connected devices with enough subnet share common IP address identifier, enabling them to communicate with each other. 
+Каждая подсеть является логическим подразделением большей сети. Подключенные устройства с достаточным количеством подсетей имеют общий идентификатор IP-адреса, что позволяет им взаимодействовать друг с другом.
 
-Routers manage communication between subnets. 
+Маршрутизаторы управляют связью между подсетями.
 
-The size of a subnet depends on the connectivity requirements and the network technology used. 
+Размер подсети зависит от требований к подключению и используемой сетевой технологии.
 
-An organisation is responsible for determining its number and size of the subnets within the limits of address space
-available, and the details remain local to that organisation. Subnets can also be segmented into even smaller subnets for things like Point to Point links, or for sub networks supporting a few devices. 
+Организация несет ответственность за определение своего количества и размера подсетей в пределах адресного пространства.
+доступны, и детали остаются локальными для этой организации. Подсети также могут быть сегментированы на еще более мелкие подсети для таких вещей, как соединения «точка-точка», или для подсетей, поддерживающих несколько устройств.
 
-Among other advantages, segmenting large
-networks into subnets enables IP address
-reallocation and relieves network congestion, streamlining, network communication and efficiency. 
+Среди прочих преимуществ сегментация крупных
+сети в подсети включает IP-адрес
+перераспределение и уменьшает перегрузку сети, оптимизацию, сетевую связь и эффективность.
 
-Subnets can also improve network security.
-If a section of a network is compromised, it can be quarantined, making it difficult for bad actors to move around the larger network. 
+Подсети также могут повысить безопасность сети.
+Если часть сети скомпрометирована, ее можно поместить в карантин, что затруднит перемещение злоумышленников по более крупной сети.
 
 ![](../images/Day23_Networking9.png?v1)
-
 
 ## Ресурсы 
 
 - [Computer Networking full course](https://www.youtube.com/watch?v=IPvYjXCsTg8)
 - [Practical Networking](http://www.practicalnetworking.net/)
-
-See you on [Day 24](day24.md)
-
 
