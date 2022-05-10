@@ -7,7 +7,7 @@ tags: [devops, linux]
 categories:
 series: 
 date: "2022-05-05"
-lastmod: "2022-05-04"
+lastmod: "2022-05-05"
 featuredImage:
 draft: false
 id: 1048834
