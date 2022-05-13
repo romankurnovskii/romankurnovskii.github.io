@@ -14,73 +14,72 @@ id: 1048805
 ---
 ## Network Automation 
 
-### Basics of network automation
+### Основы сетевой автоматизации
 
-Primary drivers for Network Automation 
-- Achieve Agility 
-- Reduce Cost 
-- Eliminate Errors 
-- Ensure Compliance 
-- Centralised Management 
+Основные задачи для сетевой автоматизации
+- Достичь ловкости
+- Снизить стоимость
+- Устранить ошибки
+- Гарантируйте соблюдение
+- Централизованное управление
 
-The automation adoption process is specific to each business. There's no one size fits all when it comes to deploying automation, the ability to identify and embrace the approach that works best for your organisation is critical in advancing towards maintaining or creating a more agile environment, the focus should always be on business value and end-user experience. (We said something similar right at the start in regards to the whole of DevOps and the culture change and the automated process that this brings)
+Процесс внедрения автоматизации специфичен для каждого бизнеса. Когда дело доходит до развертывания автоматизации, не существует универсального решения. Способность определить и использовать подход, который лучше всего подходит для вашей организации, имеет решающее значение для продвижения к поддержке и созданию более гибкой среды для пользователей. (Мы обсуждали что-то подобное в самом начале в отношении всего DevOps, изменения культуры и автоматизированного процесса, который это приносит)
 
-To break this down you would need to identify how the task or process that you're trying to automate is going to achieve and improve the end-user experience or business value whilst following a step-by-step systematic approach.
+Чтобы разобраться во всем, вам нужно будет определить, как задача или процесс, которые вы пытаетесь автоматизировать, будут улучшать опыт конечного пользователя или ценность для бизнеса, следуя пошаговому систематическому подходу.
 
-"If you don't know where you are going, any road will take you there."
+«Если не знаешь, куда идешь, любая дорога приведет тебя туда».
 
-Having a framework or design structure that you're trying to achieve knowing what your end goal is and then working step by step towards achieving that goal measuring the automation success at various stages based on the business outcomes.
+Имея структуру или структуру проекта, которую вы пытаетесь достичь, зная, какова ваша конечная цель, а затем шаг за шагом работая над достижением этой цели, измеряйте успех автоматизации на различных этапах на основе бизнес-результатов.
 
-Build concepts modelled around existing applications there's no need to design the concepts around automation in a bubble because they need to be applied to your application, your service, your infrastructure, so begin to build the concepts and model them around your existing infrastructure, you're existing applications. 
+Создавайте концепции, моделируя существующие приложения. Нет необходимости разрабатывать концепции автоматизации в пузыре, потому что их нужно применять к вашему приложению, вашему сервису, вашей инфраструктуре, поэтому начните создавать концепции и моделировать их вокруг вашей существующей инфраструктуры, вы повторно существующие приложения.
 
-### Approach to Networking Automation 
+### Подход к автоматизации сети
 
-We should identify the tasks and perform a discovery on network change requests so that you have the most common issues and problems to automate a solution to. 
+Мы должны определить задачи и выполнить обнаружение запросов на изменение сети, чтобы у вас были наиболее распространенные проблемы и проблемы, решение которых нужно автоматизировать.
 
-- Make a list of all the change requests and workflows that are currently being addressed manually. 
-- Determine the most common, time-consuming and error-prone activities. 
-- Prioritise the requests by taking a business-driven approach. 
-- This is the framework for building an automation process, what must be automated and what must not. 
+- Составьте список всех запросов на изменение и рабочих процессов, которые в настоящее время обрабатываются вручную.
+- Определить наиболее распространенные, трудоемкие и подверженные ошибкам действия.
+- Приоритизируйте запросы, используя бизнес-ориентированный подход.
+- Это основа построения процесса автоматизации, что нужно автоматизировать, а что нет.
 
-We should then divide tasks and analyse how different network functions work and interact with each other. 
+Затем мы должны разделить задачи и проанализировать, как разные сетевые функции работают и взаимодействуют друг с другом.
 
-- Infrastructure/Network team receives change tickets at multiple layers to deploy applications. 
-- Based on Network services, divide them into different areas and understand how they interact with each other. 
-    - Application Optimisation 
-    - ADC (Application Delivery Controller)
-    - Firewall 
-    - DDI (DNS, DHCP, IPAM etc)
-    - Routing 
-    - Others
-- Identify various dependencies to address business and cultural differences and bring in cross-team collaboration. 
+- Команда инфраструктуры/сети получает заявки на изменения на нескольких уровнях для развертывания приложений.
+- На основе сетевых сервисов разделить их на разные области и понять, как они взаимодействуют друг с другом.
+    - Оптимизация приложений
+    - ADC (контроллер доставки приложений)
+    - Межсетевой экран
+    - DDI (DNS, DHCP, IPAM и т. д.)
+    - Маршрутизация
+    - Другие
+- Определите различные зависимости, чтобы устранить деловые и культурные различия и обеспечить сотрудничество между командами.
 
-Reusable policies, define and simplify reusable service tasks, processes and input/outputs. 
+Повторно используемые политики, определение и упрощение повторно используемых сервисных задач, процессов и ввода/вывода.
 
-- Define offerings for various services, processes and input/outputs. 
-- Simplifying the deployment process will reduce the time to market for both new and existing workloads. 
-- Once you have a standard process, it can be sequenced and aligned to individual requests for a multi-threaded approach and delivery. 
+- Определить предложения для различных услуг, процессов и ввода/вывода.
+- Упрощение процесса развертывания сократит время выхода на рынок как новых, так и существующих рабочих нагрузок.
+- Когда у вас есть стандартный процесс, его можно упорядочить и согласовать с отдельными запросами для многопоточного подхода и доставки.
 
-Combine the policies with business-specific activities. How does implementing this policy help the business? Saves time? Saves Money? Provides better business outcome? 
+Объедините политики со специфическими для бизнеса действиями. Как внедрение этой политики помогает бизнесу? Экономит время? Экономит деньги? Обеспечивает лучший бизнес-результат?
 
-- Ensure that service tasks are interoperable. 
-- Associate the incremental service tasks so that they align to create business services. 
-- Allow for the flexibility to associate and re-associate service tasks on demand. 
-- Deploy Self-Service capabilities and pave the way for improved operational efficiency. 
-- Allow for the multiple technology skillsets to continue to contribute with oversight and compliance. 
+- Убедитесь, что сервисные задачи совместимы.
+- Свяжите добавочные сервисные задачи, чтобы они соответствовали созданию бизнес-сервисов.
+- Обеспечьте гибкость связывания и повторного связывания сервисных задач по запросу.
+- Разверните возможности самообслуживания и проложите путь к повышению операционной эффективности.
+- Разрешить несколько наборов технологических навыков продолжать вносить свой вклад в надзор и соответствие.
 
-**Iterate** on the policies and process, adding and improving while maintaining availability and service. 
+**Управляйте** политиками и процессами, добавляя и улучшая их, сохраняя при этом доступность и обслуживание.
 
-- Start small by automating existing tasks. 
-- Get familiar with the automation process, so that you can identify other areas that can benefit from automation. 
-- iterate your automation initiatives, adding agility incrementally while maintaining the required availability. 
-- Taking an incremental approach paves the way for success! 
+- Начните с малого, автоматизировав существующие задачи.
+- Ознакомьтесь с процессом автоматизации, чтобы вы могли определить другие области, которые могут выиграть от автоматизации.
+- повторяйте свои инициативы по автоматизации, постепенно добавляя гибкость при сохранении требуемой доступности.
+- Использование поэтапного подхода прокладывает путь к успеху!
 
-Orchestrate the network service!
+Оркестрируйте сетевой сервис!
 
-- Automation of the deployment process is required to deliver applications rapidly. 
-- Creating an agile service environment requires different elements to be managed across technology skillsets. 
-- Prepare for an end to end orchestration that provides for control over automation and the order of deployments. 
-
+- Для быстрой доставки приложений требуется автоматизация процесса развертывания.
+- Создание гибкой сервисной среды требует управления различными элементами в рамках набора технологических навыков.
+- Подготовьтесь к комплексной оркестровке, обеспечивающей контроль над автоматизацией и порядком развертывания.
 ## Network Automation Tools 
 
 The good news here is that for the most part, the tools we use here for Network automation are generally the same that we will use for other areas of automation or what we have already covered so far or what we will cover in future sessions. 
