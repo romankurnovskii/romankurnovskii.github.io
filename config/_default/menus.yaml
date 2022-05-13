@@ -2,16 +2,16 @@ main:
     # - name: About
     #   url: '#about'
     #   weight: 1
-    - name: Заметки
+    - name: Notes
       url: /posts/
       weight: 2
     - name: Docs
       url: /docs/
       weight: 3
-    - name: Публикации
+    - name: Paper
       url: /p/publications
       weight: 4
-    - name: Ссылки
+    - name: Links
       url: https://rom8ski.notion.site/Pub-da00c595e6774e3da994be193dcde653
       weight: 5
     # - name: Docs
