@@ -42,6 +42,7 @@ taxonomies:
 
 build:
   useResourceCacheWhen: always
+  writeStats: true
 
 sitemap:
   changefreq: always

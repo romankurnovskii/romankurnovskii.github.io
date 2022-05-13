@@ -1,5 +1,5 @@
 .sticky-toc {
-  @apply sticky top-32 z-0 duration-300 ease-in-out;
+  @apply sticky top-24 z-0 duration-300 ease-in-out;
 }
 
 .sticky-toc a {
@@ -23,7 +23,7 @@
 }
 
 .sticky-toc li > p + p {
-  @apply mt-6;
+  @apply mt-2;
 }
 
 .object-contain {
