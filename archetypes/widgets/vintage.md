@@ -1,7 +1,7 @@
 ---
 title: {{ replace .Name "-" " " | title }}
-draft: true
-slogan: "---"
+draft: false
+slogan:
 imgLeft:
 imgRight:
 

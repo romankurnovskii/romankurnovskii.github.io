@@ -1,4 +1,5 @@
 const themeDir = __dirname + "/../../";
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   important: true,
@@ -8,11 +9,29 @@ module.exports = {
     themeDir + "exampleSite/content/**/*.html",
     "layouts/**/*.html",
     "content/**/*.html",
+    "content/**/*.md"
   ],
   theme: {
     fontFamily: {
-      serif: ["Lora", "Noto Serif SC", "serif"],
-      mono: ["SFMono-Regular", "Menlo", "monospace"],
+      eureka: ["var(--fonts-eureka)", ...defaultTheme.fontFamily.serif],
+    },
+    fontSize: {
+      'xs': '.75rem',
+      'sm': ['0.875rem', {
+        lineHeight: 'leading-4',
+      }],
+      'tiny': '.875rem',
+      'base': ['0.85rem', {
+        lineHeight: 'leading-4',
+      }],
+      'lg': '1.125rem',
+      'xl': '1.25rem',
+      '2xl': '1.5rem',
+      '3xl': '1.875rem',
+      '4xl': '2.25rem',
+      '5xl': '3rem',
+      '6xl': '4rem',
+      '7xl': '5rem',
     },
     extend: {
       height: {
@@ -30,6 +49,7 @@ module.exports = {
       },
       lineHeight: {
         "(16-4px)": "calc(4rem - 4px)",
+
       },
       inset: {
         16: "4rem",
