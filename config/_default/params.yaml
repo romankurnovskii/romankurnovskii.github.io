@@ -41,7 +41,10 @@ math:
 
 comment:
   # Options: disqus, commento, valine and utterances.
-  handler: disqus
+  handler: telegram
+
+  telegram:
+    siteid: Qu__K6Sj
 
   disqus:
     shortname: romankurnovskii
