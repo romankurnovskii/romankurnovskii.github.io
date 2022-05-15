@@ -3,20 +3,22 @@ title: 24 - Network Automation
 description: Network Automation
 toc: true
 authors:
-tags: [devops]
+tags: [devops, Ansible]
 categories:
-series: 
+series:
 date: "2022-05-14"
 lastmod: "2022-05-14"
 featuredImage:
 draft: false
 id: 1048805
 ---
-## Network Automation 
+
+## Network Automation
 
 ### Основы сетевой автоматизации
 
 Основные задачи для сетевой автоматизации
+
 - Достичь ловкости
 - Снизить стоимость
 - Устранить ошибки
@@ -46,12 +48,12 @@ id: 1048805
 
 - Команда инфраструктуры/сети получает заявки на изменения на нескольких уровнях для развертывания приложений.
 - На основе сетевых сервисов разделить их на разные области и понять, как они взаимодействуют друг с другом.
-    - Оптимизация приложений
-    - ADC (контроллер доставки приложений)
-    - Межсетевой экран
-    - DDI (DNS, DHCP, IPAM и т. д.)
-    - Маршрутизация
-    - Другие
+  - Оптимизация приложений
+  - ADC (контроллер доставки приложений)
+  - Межсетевой экран
+  - DDI (DNS, DHCP, IPAM и т. д.)
+  - Маршрутизация
+  - Другие
 - Определите различные зависимости, чтобы устранить деловые и культурные различия и обеспечить сотрудничество между командами.
 
 Повторно используемые политики, определение и упрощение повторно используемых сервисных задач, процессов и ввода/вывода.
@@ -80,54 +82,46 @@ id: 1048805
 - Для быстрой доставки приложений требуется автоматизация процесса развертывания.
 - Создание гибкой сервисной среды требует управления различными элементами в рамках набора технологических навыков.
 - Подготовьтесь к комплексной оркестровке, обеспечивающей контроль над автоматизацией и порядком развертывания.
-## Network Automation Tools 
 
-The good news here is that for the most part, the tools we use here for Network automation are generally the same that we will use for other areas of automation or what we have already covered so far or what we will cover in future sessions. 
+## Инструменты автоматизации сети
 
-Operating System - As I have throughout this challenge, I am focusing on doing most of my learning with a Linux OS, those reasons were given in the Linux section but almost all of the tooling that we will touch albeit cross-OS platform maybe today they all started as Linux based applications or tools, to begin with. 
+Хорошей новостью здесь является то, что по большей части инструменты, которые мы используем для автоматизации сети, как правило, те же, что мы будем использовать для других областей автоматизации.
 
-Integrated Development Environment (IDE) - Again not much to say here other than throughout I would suggest Visual Studio Code as your IDE, based on the extensive plugins that are available for so many different languages. 
+**Опреационная система.** Большую часть своего обучения я сосредоточился на использовании инструментов под Linux. Но почти все инструменты, которых мы коснемся, кросплатформенные.
 
-Configuration Management - We have not got to the Configuration management section yet, but it is very clear that Ansible is a favourite in this area for managing and automating configurations. Ansible is written in Python but you do not need to know Python. 
-    
-- Agentless 
-- Only requires SSH
-- Large Support Community 
-- Lots of Network Modules
-- Push only model 
-- Configured with YAML 
-- Open Source!  
+**Интегрированная среда разработки (IDE).** Опять же, здесь особо нечего сказать, кроме всего прочего, я бы предложил Visual Studio Code в качестве вашей IDE, основываясь на обширных подключаемых модулях, доступных для стольких разных языков.
 
+**Управление конфигурацией.** Мы еще не добрались до раздела «Управление конфигурацией», но совершенно очевидно, что Ansible является фаворитом в этой области для управления и автоматизации конфигураций. Ansible написан на Python, но вам не нужно знать Python.
 [Link to Ansible Network Modules](https://docs.ansible.com/ansible/2.9/modules/list_of_network_modules.html)
 
-We will also touch on **Ansible Tower** in the configuration management section, see this as the GUI front end for Ansible. 
+Мы также коснемся **Ansible Tower** в разделе управления конфигурацией, рассматривая его как внешний интерфейс с графическим интерфейсом (GUI) для Ansible.
 
-CI/CD - Again we will cover more about the concepts and tooling around this but it's important to at least mention here as this spans not only networking but all provisioning of service and platform. 
+**CI/CD.** Мы рассмотрим больше концепций и инструментов, связанных с этим, но важно хотя бы упомянуть здесь, поскольку это охватывает не только сеть, но и все предоставление услуг и платформ.
 
-In particular, Jenkins provides or seems to be a popular tool for Network Automation.
+В частности, **Jenkins** предоставляет или кажется популярным инструментом для сетевой автоматизации.
 
-- Monitors git repository for changes and then initiates them. 
+- Отслеживает репозиторий git на наличие изменений, а затем инициирует их.
 
-Version Control - Again something we will dive deeper into later on. 
+Контроль версий (Version Control). Углубимся в это позже.
 
-- Git provides version control of your code on your local device - Cross-Platform
-- GitHub, GitLab, BitBucket etc are online websites where you define your repositories and upload your code. 
+- Git обеспечивает контроль версий вашего кода на локальном устройстве - Кроссплатформенность
+- GitHub, GitLab, BitBucket и т. д. — это онлайн-сайты, на которых вы определяете свои репозитории и загружаете свой код.
 
-Language | Scripting - Something we have not covered here is Python as a language, I decided to dive into Go instead as the programming language based on my circumstances, I would say that it was a close call between Golang and Python and Python it seems to be the winner for Network Automation. 
+**Language | Scripting.** Что-то, что мы здесь не рассмотрели, это Python как язык, я решил вместо этого погрузиться в Go как язык программирования, исходя из моих обстоятельств, я бы сказал, что это был тесный контакт между Golang и Python и Python, кажется, Победитель в категории «Сетевая автоматизация».
 
-- Nornir is something to mention here, an automation framework written in Python. This seems to take the role of Ansible but specifically around Network Automation. [Nornir documentation](https://nornir.readthedocs.io/en/latest/) 
+- Здесь стоит упомянуть Nornir, фреймворк автоматизации, написанный на Python. Кажется, что это берет на себя роль Ansible, но особенно в отношении сетевой автоматизации. [Документация Nornir](https://nornir.readthedocs.io/en/latest/)
 
-Analyse APIs - Postman is a great tool for analysing RESTful APIs. Helps to build, test and modify APIs.
+**Анализ API.** **Postman** — отличный инструмент для анализа RESTful API. Помогает создавать, тестировать и изменять API.
 
-- POST >>> To create resources objects.
-- GET  >>> To retrieve a resources.
-- PUT  >>> To create or replace the resources.
-- PATCH >>> To create or update the resources object.
-- Delete >>> To delete a resources
+- POST >>> Для создания объектов ресурсов.
+- GET >>> Для получения ресурсов.
+- PUT >>> Для создания или замены ресурсов.
+- PATCH >>> Для создания или обновления объекта ресурсов.
+- Delete >>> Чтобы удалить ресурс
 
 [Postman tool Download](https://www.postman.com/downloads/)
 
-### Other tools to mention
+### Еще инструменты
 
 [Cisco NSO (Network Services Orchestrator)](https://www.cisco.com/c/en/us/products/cloud-systems-management/network-services-orchestrator/index.html)
 
@@ -135,15 +129,13 @@ Analyse APIs - Postman is a great tool for analysing RESTful APIs. Helps to buil
 
 [Network Test Automation](https://pubhub.devnetcloud.com/media/genie-feature-browser/docs/#/)
 
-Over the next 3 days, I am planning to get more hands-on around some of the things we have covered and put some work in around Python and Network automation. 
+В течение следующих 3 дней я планирую более подробно изучить некоторые вещи, которые мы рассмотрели, и поработать над Python и сетевой автоматизацией.
 
-We have nowhere near covered all of the networking topics so far but wanted to make this broad enough to follow along and still keep learning from the resources I am adding below. 
+До сих пор мы далеко не охватили все сетевые темы, но хотели сделать это достаточно широким, чтобы следовать за ним и продолжать учиться на ресурсах, которые я добавляю ниже.
 
-## Ресурсы 
+## Ресурсы
 
 - [3 Necessary Skills for Network Automation](https://www.youtube.com/watch?v=KhiJ7Fu9kKA&list=WL&index=122&t=89s)
 - [Computer Networking full course](https://www.youtube.com/watch?v=IPvYjXCsTg8)
 - [Practical Networking](http://www.practicalnetworking.net/)
 - [Python Network Automation](https://www.youtube.com/watch?v=xKPzLplPECU&list=WL&index=126)
-
-See you on [Day 25](day25.md)
