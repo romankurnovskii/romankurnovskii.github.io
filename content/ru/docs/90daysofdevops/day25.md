@@ -5,169 +5,155 @@ toc: true
 authors:
 tags: [devops]
 categories:
-series: 
+series:
 date: "2022-05-15"
 lastmod: "2022-05-07"
 featuredImage:
 draft: false
 id: 1049038
 ---
-## Python for Network Automation 
 
-Python is the standard language used for automated network operations. 
+## Python для автоматизации сети
 
-Whilst it is not only for network automation it seems to be everywhere when you are looking for resources and as previously mentioned if it's not Python then it's generally Ansible which is written also in Python. 
+Python — это стандартный язык, используемый для автоматизированных сетевых операций.
 
-I think I have mentioned this already but during the "Learn a programming language" section I chose Golang over Python for reasons around my company are developing in Go so that was a good reason for me to learn but if that was not the case then Python would have taken that time. 
+Хотя это не только автоматизация сети, кажется, что оно везде, когда вы ищете ресурсы, и, как упоминалось ранее, если это не Python, то обычно это Ansible, который также написан на Python.
 
-- Readability and ease of use - It seems that Python seems to just make sense. There doesn't seem to be the requirements around `{}` in the code to start and end blocks. Couple this with a strong IDE like VS Code you have a pretty easy start when wanting to run some python code. 
+Я думаю, что уже упоминал об этом, но в разделе «Изучение языка программирования» я выбрал Golang, а не Python, по причинам, связанным с тем, что моя компания разрабатывает Go, так что это было хорошей причиной для меня, чтобы учиться, но если это не так, тогда Python взял бы это время.
 
-Pycharm might be another IDE worth mentioning here. 
+- Удобочитаемость и простота использования. Кажется, что Python просто имеет смысл. Похоже, что в коде нет требований к `{}` для начального и конечного блоков. Соедините это с сильной IDE, такой как VS Code, у вас будет довольно легкий старт, если вы хотите запустить какой-либо код Python.
 
-- Libraries - The extensibility of Python is the real gold mine here, I mentioned before that this is not just for Network Automation but in fact, there are libraries plenty for all sorts of devices and configurations. You can see the vast amount here [PyPi](https://pypi.python.org/pypi)
+Pycharm может быть еще одной IDE, о которой стоит упомянуть.
 
-When you want to download the library to your workstation, then you use a tool called `pip` to connect to PyPI and download it locally. Network vendors such as Cisco, Juniper, and Arista developed libraries to facilitate access to their devices.
+- Библиотеки. Расширяемость Python - это настоящая золотая жила, я упоминал ранее, что это не только для сетевой автоматизации, но на самом деле существует множество библиотек для всех видов устройств и конфигураций. Вы можете увидеть огромное количество здесь [PyPi](https://pypi.python.org/pypi)
 
-- Powerful & Efficient - Remember during the Go days I went through the "Hello World" scenario and we went through I think 6 lines of code? In Python it is
+Если вы хотите загрузить библиотеку на свою рабочую станцию, вы используете инструмент под названием «pip», чтобы подключиться к PyPI и загрузить его локально. Сетевые поставщики, такие как Cisco, Juniper и Arista, разработали библиотеки для облегчения доступа к своим устройствам.
 
-``` 
+- Мощный и эффективный - Помните, во времена Go я прошел сценарий "Hello World", и мы прошли, кажется, 6 строк кода? В Питоне это
+
+```
 print('hello world')
 ```
 
-Put all of the above points together and it should be easy to see why Python is generally mentioned as the de-facto tool when working on automating. 
+Сложите все вышеперечисленные пункты вместе, и должно быть легко понять, почему Python обычно упоминается как инструмент де-факто при работе над автоматизацией.
 
-I think it's important to note that it's possible that several years back there were scripts that might have interacted with your network devices to maybe automate the backup of configuration or to gather logs and other insights into your devices. The automation we are talking about here is a little different and that's because the overall networking landscape has also changed to suit this way of thinking better and enabled more automation. 
+Я думаю, важно отметить, что, возможно, несколько лет назад существовали сценарии, которые могли взаимодействовать с вашими сетевыми устройствами, чтобы, возможно, автоматизировать резервное копирование конфигурации или собирать журналы и другую информацию о ваших устройствах. Автоматизация, о которой мы здесь говорим, немного отличается, потому что общий сетевой ландшафт также изменился, чтобы лучше соответствовать этому образу мышления и обеспечить большую автоматизацию.
 
-- Software-Defined Network - SDN Controllers take the responsibility of delivering the control plane configuration to all devices on the network, meaning just a single point of contact for any network changes, no longer having to telnet or SSH into every device and also relying on humans to do this which has a repeatable chance of failure or misconfiguration. 
+- Программно-определяемая сеть (Software-Defined Network). Контроллеры SDN несут ответственность за доставку конфигурации уровня управления на все устройства в сети, что означает только единую точку контакта для любых изменений в сети, больше не требуется telnet или SSH для доступа к каждому устройству, а также полагаются на люди, чтобы сделать это, что имеет повторяющийся шанс отказа или неправильной конфигурации.
 
-- High-Level Orchestration - Go up a level from those SDN controllers and this allows for orchestration of service levels then there is the integration of this orchestration layer into your platforms of choice, VMware, Kubernetes, Public Clouds etc. 
+- Оркестрация высокого уровня (High-Level Orchestration ). Поднимитесь на уровень выше этих контроллеров SDN, и это позволит оркестровать уровни обслуживания, а затем интегрировать этот уровень оркестровки в выбранные вами платформы, VMware, Kubernetes, общедоступные облака и т. д.
 
-- Policy-based management - What do you want to have? What is the desired state? You describe this and the system has all the details on how to figure it out to become the desired state. 
+- Управление на основе политик (Policy-based management) - Что вы хотите иметь? Какое желаемое состояние? Вы описываете это, и в системе есть все детали, как это понять, чтобы стать желаемым состоянием.
 
-## Setting up the lab environment
+## Настройка рабочей среды
 
-Not everyone has access to physical routers, switches and other networking devices. 
+Не у всех есть доступ к физическим маршрутизаторам, коммутаторам и другим сетевым устройствам.
 
-I wanted to make it possible for us to look at some of the tooling pre-mentioned but also get hands-on and learn how to automate the configuration of our networks. 
+Я хотел дать нам возможность ознакомиться с некоторыми из ранее упомянутых инструментов, а также получить практические навыки и научиться автоматизировать настройку наших сетей.
 
-When it comes to options there are a few that we can choose from.  
+Когда дело доходит до вариантов, есть несколько, из которых мы можем выбрать.
 
 - [GNS3 VM](https://www.gns3.com/software/download-vm)
 - [Eve-ng](https://www.eve-ng.net/)
-- [Unimus](https://unimus.net/) Not a lab environment but an interesting concept. 
+- [Unimus](https://unimus.net/)
 
-We will build our lab out using [Eve-ng](https://www.eve-ng.net/) as mentioned before you can use a physical device but to be honest a virtual environment means that we can have a sandbox environment to test many different scenarios. Plus being able to play with different devices and topologies might be of interest. 
+Мы построим нашу среду, используя [Eve-ng](https://www.eve-ng.net/), как упоминалось ранее, вы можете использовать физическое устройство, но, честно говоря, виртуальная среда означает, что у нас может быть среда-песочница. для тестирования множества различных сценариев. Кроме того, может быть интересна возможность играть с различными устройствами и топологиями.
 
-We are going to do everything on EVE-NG with the community edition. 
+Мы собираемся делать все на EVE-NG с изданием сообщества.
 
-### Getting started 
+### Начало
 
-The community edition comes in ISO and OVF formats for [download](https://www.eve-ng.net/index.php/download/)
+Издание сообщества поставляется в форматах ISO и OVF для [загрузки](https://www.eve-ng.net/index.php/download/).
 
-We will be using the OVF download but with the ISO there is the option to build out on a bare metal server without the need of a hypervisor. 
+Мы будем использовать загрузку в формате OVF, но в случае с ISO есть возможность сборки на «голом железе» без использования гипервизора.
 
 ![](../images/Day25_Networking1.png?v1)
 
-For our walkthrough, we will be using VMware Workstation as I have a license via my vExpert but you can equally use VMware Player or any of the other options mentioned in the [documentation](https://www.eve-ng.net/index.php/documentation/installation/system-requirement/)Unfortunately we cannot use our previously used Virtual box! 
+Для нашего пошагового руководства мы будем использовать VMware Workstation, поскольку у меня есть лицензия через мой vExpert, но вы в равной степени можете использовать VMware Player или любой другой вариант, упомянутый в [документации](https://www.eve-ng.net/index.php/documentation/installation/system-requirement/). К сожалению, мы не можем использовать нашу ранее созданную среду в Virtual box!
 
-This is also where I had an issue with GNS3 with Virtual Box even though supported. 
+Здесь также у меня возникла проблема с GNS3 с Virtual Box, хотя он и поддерживается.
 
-[Download VMware Workstation Player - FREE](https://www.vmware.com/uk/products/workstation-player.html) 
+[Download VMware Workstation Player - FREE](https://www.vmware.com/uk/products/workstation-player.html)
 
-[VMware Workstation PRO](https://www.vmware.com/uk/products/workstation-pro.html) Also noted that there is an evaluation period for free! 
+[VMware Workstation PRO](https://www.vmware.com/uk/products/workstation-pro.html). Есть бесплатный пробный период.
 
-### Installation on VMware Workstation PRO 
+### Установка на VMware Workstation PRO
 
-Now we have our hypervisor software downloaded and installed, and we have the EVE-NG OVF downloaded. If you are using VMware Player please let me know if this process is the same. 
-
-We are now ready to get things configured. 
-
-Open VMware Workstation and then select `file` and `open` 
+Теперь у нас загружено и установлено программное обеспечение hypervisor, а также загружен файл EVE-NG OVF.
+Теперь мы готовы к настройке.
+Откройте VMware Workstation, а затем выберите `file` -> `open`.
 
 ![](../images/Day25_Networking2.png?v1)
 
-When you download the EVE-NG OVF Image it is going to be within a compressed file. Extract the contents out into its folder so it looks like. 
-
+Когда вы загружаете образ EVE-NG OVF, он будет находиться в сжатом файле. Извлеките содержимое в свою папку, чтобы оно выглядело так.
 ![](../images/Day25_Networking3.png?v1)
 
-Navigate to the location that you downloaded the EVE-NG OVF image to and begin the import. 
-
-Give it a recognisable name and store the virtual machine somewhere on your system. 
+Перейдите в папку, в которую вы загрузили образ EVE-NG OVF, и начните импорт.
+Дайте ему узнаваемое имя и сохраните виртуальную машину где-нибудь в вашей системе.
 
 ![](../images/Day25_Networking4.png?v1)
 
-When the import is complete increase the number of processors to 4 and the memory allocated to 8 GB. (This should be the case after import with the latest version if not then edit VM settings)
+Когда процесс импорта завершится, увеличьте количество процессоров до 4 и объем выделенной памяти до 8 ГБ. (Это должно быть после импорта с последней версией, если нет, то отредактируйте настройки ВМ)
 
-Also, make sure the Virtualise Intel VT-x/EPT or AMD-V/RVI checkbox is enabled. This option instructs VMware workstation to pass the virtualisation flags to the guest OS (nested virtualisation) This was the issue I was having with GNS3 with Virtual Box even though my CPU allows this. 
+Также убедитесь, что установлен флажок Virtualise Intel VT-x/EPT или AMD-V/RVI. Этот параметр указывает рабочей станции VMware передавать флаги виртуализации гостевой ОС (вложенная виртуализация). Это была проблема, с которой я столкнулся с GNS3 с Virtual Box, хотя мой процессор это позволяет.
 
 ![](../images/Day25_Networking5.png?v1)
 
-### Power on & Access 
+### Включение и доступ
 
-Sidenote & Rabbit hole: Remember I mentioned that this would not work with VirtualBox! Well yeah had the same issue with VMware Workstation and EVE-NG but it was not the fault of the virtualisation platform! 
+_Примечание и кроличья нора_: помните, я упоминал, что это не будет работать с VirtualBox! Ну да, была такая же проблема с VMware Workstation и EVE-NG, но это не вина платформы виртуализации!
 
-I have WSL2 running on my Windows Machine and this seems to remove the capability of being able to run anything nested inside of your environment. I am confused as to why the Ubuntu VM does run as it seems to take out the Intel VT-d virtualisation aspect of the CPU when using WSL2. 
+У меня есть WSL2, работающий на моей машине с Windows, и это, похоже, лишает возможности запускать что-либо, вложенное в вашу среду. Я смущен тем, почему виртуальная машина Ubuntu работает, поскольку она, кажется, устраняет аспект виртуализации Intel VT-d ЦП при использовании WSL2.
 
-To resolve this we can run the following command on our Windows machine and reboot the system, note that whilst this is off then you will not be able to use WSL2. 
+Чтобы решить эту проблему, мы можем запустить следующую команду на нашем компьютере с Windows и перезагрузить систему, обратите внимание, что, пока она отключена, вы не сможете использовать WSL2.
 
 `bcdedit /set hypervisorlaunchtype off`
 
-When you want to go back and use WSL2 then you will need to run this command and reboot. 
+Если вы хотите вернуться и использовать WSL2, вам нужно будет запустить эту команду и перезагрузиться.
 
 `bcdedit /set hypervisorlaunchtype auto`
 
-Both of these commands should be ran as administrator! 
+Обе эти команды нужно запускать от имени администратора!
 
-Ok back to the show, You should now have a powered-on machine in VMware Workstation and you should have a prompt looking similar to this. 
+Хорошо, вернемся к шоу. Теперь у вас должна быть включенная машина в VMware Workstation, и у вас должно появиться приглашение, похожее на это.
 
 ![](../images/Day25_Networking6.png?v1)
 
-On the prompt above you can use: 
+Данные для входа:
 
 username = root
 password = eve
 
-You will then be asked to provide the root password again, this will be used to SSH into the host later on.  
-
-We then can change the hostname. 
+Затем вас попросят снова ввести пароль root, который позже будет использоваться для SSH-соединения с хостом.
+Затем мы можем изменить имя хоста.
 
 ![](../images/Day25_Networking7.png?v1)
-
-Next, we define a DNS Domain Name, I have used the one below but I am not sure if this will need to be changed later on. 
+Затем мы определяем доменное имя DNS, я использовал имя ниже, но я не уверен, нужно ли будет его изменить позже.
 
 ![](../images/Day25_Networking8.png?v1)
-
-We then configure networking, I am selecting static so that the IP address given will be persistent after reboots. 
-
+Затем мы настраиваем сеть, я выбираю статический, чтобы указанный IP-адрес оставался постоянным после перезагрузки.
 ![](../images/Day25_Networking9.png?v1)
-
-The final step, provide a static IP address from a network that is reachable from your workstation. 
-
+На последнем шаге укажите статический IP-адрес из сети, доступной с вашей рабочей станции.
 ![](../images/Day25_Networking10.png?v1)
-
-There are some additional steps here where you will have to provide a subnet mask for your network, default gateway and DNS. 
-
-Once finished it will reboot, when it is back up you can take your static IP address and put this into your browser. 
-
+Здесь есть несколько дополнительных шагов, где вам нужно будет указать маску подсети для вашей сети, шлюз по умолчанию и DNS.
+После завершения он перезагрузится, когда будет выполнено резервное копирование, вы можете взять свой статический IP-адрес и ввести его в свой браузер.
 ![](../images/Day25_Networking11.png?v1)
-
-The default username for the GUI is `admin` and the password is `eve` while the default username for SSH is `root` and the password is `eve` but this would have been changed if you changed during the setup. 
-
+Имя пользователя по умолчанию для графического интерфейса — «admin», пароль — «eve», а имя пользователя по умолчанию для SSH — «root» и пароль — «eve», но это было бы изменено, если бы вы изменили его во время установки.
 ![](../images/Day25_Networking12.png?v1)
 
-I chose HTML5 for the console vs native as this will open a new tab in your browser when you are navigating through different consoles. 
+Я выбрал HTML5 для консоли вместо нативной, так как это откроет новую вкладку в вашем браузере, когда вы будете перемещаться по разным консолям.
 
-Next up we are going to: 
+Далее мы собираемся:
 
-- Install the EVE-NG client pack 
-- Load some network images into EVE-NG
-- Build a Network Topology 
-- Adding Nodes 
-- Connecting Nodes 
-- Start building Python Scripts 
-- Look at telnetlib, Netmiko, Paramiko and Pexpect
+- Установить клиентский пакет EVE-NG
+- Загрузить некоторые сетевые образы в EVE-NG.
+- Построить топологию сети
+- Добавить "ноды" (машины/хосты, Nodes)
+- Соединить ноды между собой
+- Начнем создавать скрипты Python
+- Посмотрим на telnetlib, Netmiko, Paramiko и Pexpect
 
-## Ресурсы 
+## Ресурсы
 
 - [Free Course: Introduction to EVE-NG](https://www.youtube.com/watch?v=g6B0f_E0NMg)
 - [EVE-NG - Creating your first lab](https://www.youtube.com/watch?v=9dPWARirtK8)
@@ -175,5 +161,3 @@ Next up we are going to:
 - [Computer Networking full course](https://www.youtube.com/watch?v=IPvYjXCsTg8)
 - [Practical Networking](http://www.practicalnetworking.net/)
 - [Python Network Automation](https://www.youtube.com/watch?v=xKPzLplPECU&list=WL&index=126)
-
-See you on [Day 26](day26.md)
