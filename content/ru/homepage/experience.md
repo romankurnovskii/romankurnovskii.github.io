@@ -15,7 +15,7 @@ experiences:
     dates: "2019-2020"
     location: Израиль
     writeup: >
-      Полное погружение в новую IT среду.
+      Погружение в IT среду.
 
       - Учеба <a href="https://en.tel-ran.com/" target="_blank">Tel-Ran</a>
 
