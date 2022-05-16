@@ -12,41 +12,41 @@ featuredImage:
 draft: false
 id: 1048762
 ---
-## Building our Lab
 
-We are going to continue our setup of our emulated network using EVE-NG and then hopefully get some devices deployed and start thinking about how we can automate the configuration of these devices. On [Day 25](day25.md) we covered the installation of EVE-NG onto our machine using VMware Workstation. 
+## Создание нашей лаборатории
 
-### Installing EVE-NG Client
+Мы собираемся продолжить настройку нашей эмулируемой сети с помощью EVE-NG, а затем, надеюсь, развернуть несколько устройств и начать думать о том, как мы можем автоматизировать настройку этих устройств. В [День 25](../day25) мы рассказали об установке EVE-NG на нашу машину с помощью VMware Workstation.
+### Установка клиента EVE-NG
 
-There is also a client pack that allows us to choose which application is used when we SSH to the devices. It will also set up Wireshark for packet captures between links. You can grab the client pack for your OS (Windows, macOS, Linux). 
+Существует также клиентский пакет, который позволяет нам выбирать, какое приложение используется при подключении к устройствам по SSH. Он также настроит [Wireshark](https://ru.wikipedia.org/wiki/Wireshark) для захвата пакетов между ссылками. Вы можете установить клиентский пакет для своей ОС (Windows, macOS, Linux).
 
 [EVE-NG Client Download](https://www.eve-ng.net/index.php/download/)
 
 ![](../images/Day26_Networking1.png?v1)
 
-Quick Tip: If you are using Linux as your client then there is this [client pack](https://github.com/SmartFinn/eve-ng-integration).
+Подсказка: если вы используете Linux в качестве клиента, то есть этот [клиентский пакет](https://github.com/SmartFinn/eve-ng-integration).
 
-The install is a straightforward next,next and I would suggest leaving the defaults. 
+Установка проста: next, next и я бы посоветовал оставить значения по умолчанию.
+### Получение сетевых образов
 
-### Obtaining network images
+Этот шаг непростой, я просмотрел несколько видеороликов, на которые я дам ссылки в конце, которые ссылаются на некоторые ресурсы и загрузки для нашего маршрутизатора и переключают изображения, рассказывая нам, как и куда их загрузить.
 
-This step has been a challenge, I have followed some videos that I will link at the end that links to some resources and downloads for our router and switch images whilst telling us how and where to upload them. 
-
-It is important to note that I using everything for education purposes. I would suggest downloading official images from network vendors. 
+Важно отметить, что я использую все в образовательных целях. Я бы предложил загрузить официальные образы от сетевых поставщиков.
 
 [Blog & Links to YouTube videos](https://loopedback.com/2019/11/15/setting-up-eve-ng-for-ccna-ccnp-ccie-level-studies-includes-multiple-vendor-node-support-an-absolutely-amazing-study-tool-to-check-out-asap/) 
 
 [How To Add Cisco VIRL vIOS image to Eve-ng](https://networkhunt.com/how-to-add-cisco-virl-vios-image-to-eve-ng/)
 
-Overall the steps here are a little complicated and could be much easier but the above blogs and videos walk through the process of adding the images to your EVE-NG box. 
+В целом шаги здесь немного сложны и могли бы быть намного проще, но приведенные выше блоги и видео показывают процесс добавления изображений в вашу коробку EVE-NG.
 
-I used FileZilla to transfer the qcow2 to the VM over SFTP. 
+Я использовал [FileZilla](https://filezilla-project.org/) для передачи [qcow2](https://ru.wikipedia.org/wiki/Qcow2) на виртуальную машину через SFTP.
 
-For our lab, we need Cisco vIOS L2 (switches) and Cisco vIOS (router) 
+Для нашей лаборатории нам нужны Cisco vIOS L2 (коммутаторы) и Cisco vIOS (маршрутизатор).
 
-### Create a Lab
+### Создаем лабораторию
 
-Inside the EVE-NG web interface, we are going to create our new network topology. We will have four switches and one router that will act as our gateway to outside networks. 
+Внутри веб-интерфейса EVE-NG мы собираемся создать нашу новую топологию сети. У нас будет четыре коммутатора и один маршрутизатор, который будет нашим шлюзом во внешние сети.
+
 
 | Node        | IP Address  |
 | ----------- | ----------- |
@@ -56,50 +56,44 @@ Inside the EVE-NG web interface, we are going to create our new network topology
 | Switch3     | 10.10.88.113|
 | Switch4     | 10.10.88.114|
 
-#### Adding our Nodes to EVE-NG
+#### Добавление наших узлов в EVE-NG
 
-When you first log in to EVE-NG you will see a screen like below, we want to start by creating our first lab. 
+Когда вы впервые войдете в EVE-NG, вы увидите экран, как показано ниже, мы хотим начать с создания нашей первой лаборатории.
 
 ![](../images/Day26_Networking2.png?v1)
 
-Give your lab a name and the other fields are optional. 
+Дайте вашей лаборатории имя, а остальные поля являются необязательными.
 
 ![](../images/Day26_Networking3.png?v1)
 
-You will be then greeted with a blank canvas to start creating your network. Right-click on your canvas and choose add node. 
+Затем увидим пустой экран, чтобы начать создание вашей сети. Щелкните правой кнопкой мыши на своем холсте и выберите 'add node'.
 
-From here you will have a long list of node options, If you have followed along above you will have the two in blue shown below and the others are going to be grey and unselectable. 
+Далее появляется длинный список опций. Если вы следовали вышеизложенному, у вас будут два синих, показанных ниже, а остальные будут серыми и недоступными для выбора.
 
 ![](../images/Day26_Networking4.png?v1)
 
-We want to add the following to our lab: 
-
+Мы хотим добавить следующее в нашу лабораторию:
 - 1 x Cisco vIOS Router 
 - 4 x Cisco vIOS Switch
 
-Run through the simple wizard to add them to your lab and it should look something like this. 
-
 ![](../images/Day26_Networking5.png?v1)
 
-#### Connecting our nodes 
+#### Соединяем наши ноды
 
-We now need to add our connectivity between our routers and switches. We can do this quite easily by hovering over the device and seeing the connection icon as per below and then connecting that to the device we wish to connect to. 
+Теперь нам нужно добавить возможность подключения между нашими маршрутизаторами и коммутаторами. Мы можем сделать это довольно легко, наведя курсор на устройство и увидев значок подключения, как показано ниже, а затем подключив его к устройству, к которому мы хотим подключиться.
 
 ![](../images/Day26_Networking6.png?v1)
+Когда вы закончите подключение своей среды, вы также можете добавить способ определения физических границ или местоположений с помощью прямоугольников или кругов, которые также можно найти в контекстном меню. Вы также можете добавить текст, который полезен, когда мы хотим определить наши имена или IP-адреса в наших лабораториях.
 
-When you have finished connecting your environment you may also want to add some way to define physical boundaries or locations using boxes or circles which can also be found in the right-click menu. You can also add text which is useful when we want to define our naming or IP addresses in our labs. 
-
-I went ahead and made my lab look like the below. 
-
+Я пошел дальше и сделал свою лабораторию такой, как показано ниже.
 ![](../images/Day26_Networking7.png?v1)
 
 You will also notice that the lab above is all powered off, we can start our lab by selecting everything and right-clicking and selecting start selected. 
 
 ![](../images/Day26_Networking8.png?v1)
+Как только мы запустим нашу лабораторию, вы сможете подключаться к консоли на каждом устройстве, и вы заметите, что на этом этапе они довольно тупые без настройки. Мы можем добавить некоторую конфигурацию к каждому узлу, скопировав или создав свою собственную в каждом терминале.
 
-Once we have our lab up and running you will be able to console into each device and you will notice at this stage they are pretty dumb with no configuration. We can add some configuration to each node by copying or creating your own in each terminal. 
-
-I will leave my configuration in the Networking folder of the repository for reference. 
+Я оставлю свою конфигурацию в сетевой папке репозитория для справки.
 
 | Node        | Configuration         |
 | ----------- | -----------           |
@@ -118,8 +112,5 @@ I will leave my configuration in the Networking folder of the repository for ref
 - [Practical Networking](http://www.practicalnetworking.net/)
 - [Python Network Automation](https://www.youtube.com/watch?v=xKPzLplPECU&list=WL&index=126)
 
-Most of the examples I am using here as I am not a Network Engineer have come from this extensive book which is not free but I am using some of the scenarios to help understand Network Automation. 
-
+Большинство примеров, которые я использую здесь, поскольку я не сетевой инженер, взяты из этой обширной книги, которая не является бесплатной, но я использую некоторые примеры оттуда, чтобы помочь понять автоматизацию сети.
 - [Hands-On Enterprise Automation with Python (Book)](https://www.packtpub.com/product/hands-on-enterprise-automation-with-python/9781788998512)
-
-See you on [Day 27](day27.md)
