@@ -93,4 +93,4 @@ I want to come back to Prometheus but for now I think we need to think about Log
 - [Introduction to Prometheus monitoring](https://www.youtube.com/watch?v=5o37CGlNLr8)
 - [Promql cheat sheet with examples](https://www.containiq.com/post/promql-cheat-sheet-with-examples)
 
-See you on [Day 79](day79.md)
+See you on [Day 79](../day79)

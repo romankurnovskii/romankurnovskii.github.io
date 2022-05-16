@@ -15,7 +15,7 @@ The use case being "I want to move my workload, application and data from one lo
 
 In this session we are going to take our workload and we are going to look at moving a Kubernetes workload from one cluster to another, but in doing so we are going to change how our application is on the target location. 
 
-It in fact uses a lot of the characteristics that we went through with [Disaster Recovery](day89.md)
+It in fact uses a lot of the characteristics that we went through with [Disaster Recovery](../day89)
 
 ### **The Requirement**
 

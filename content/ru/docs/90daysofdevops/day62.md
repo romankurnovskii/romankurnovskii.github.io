@@ -106,4 +106,4 @@ I have listed a lot of resources down below and I think this topic has been cove
 - [Awesome Terraform](https://github.com/shuaibiyy/awesome-terraform)
 - [Pulumi - IaC in your favorite programming language!](https://www.youtube.com/watch?v=vIjeiDcsR3Q&t=51s)
 
-See you on [Day 63](day63.md)
+See you on [Day 63](../day63)

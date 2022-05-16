@@ -51,7 +51,7 @@ The ability for developers to make small impactful changes regular means we get 
 
 ### Ok, so what does this mean? 
 
-On [Day 5](day5.md) we covered a lot of the theory behind DevOps and as already mentioned here already that the CI/CD Pipeline is the backbone of the modern DevOps environment. 
+On [Day 5](../day5) we covered a lot of the theory behind DevOps and as already mentioned here already that the CI/CD Pipeline is the backbone of the modern DevOps environment. 
 
 ![DevOps](../images/Day5_DevOps8.png?v1)
 
@@ -162,4 +162,4 @@ My plan is to look at the following:
 - [GitHub Actions](https://www.youtube.com/watch?v=R8_veQiYBjI)
 - [GitHub Actions CI/CD](https://www.youtube.com/watch?v=mFFXuXjVgkU)
 
-See you on [Day 71](day71.md)
+See you on [Day 71](../day71)

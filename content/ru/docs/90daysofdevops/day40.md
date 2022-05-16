@@ -207,4 +207,4 @@ You will also come across hosted options. Most commonly here I have seen GitLab 
 - [Git cheatsheet](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
 
 
-See you on [Day 41](day41.md) 
+See you on [Day 41](../day41) 

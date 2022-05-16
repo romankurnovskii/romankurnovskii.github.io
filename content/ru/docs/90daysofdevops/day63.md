@@ -105,4 +105,4 @@ I think it is important to touch on some of the differences between Ansible and 
 - [NetworkChuck - You need to learn Ansible right now!](https://www.youtube.com/watch?v=5hycyr-8EKs&t=955s)
 
 
-See you on [Day 64](day64.md)
+See you on [Day 64](../day64)

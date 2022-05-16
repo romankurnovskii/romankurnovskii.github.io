@@ -221,4 +221,4 @@ The DockerHub repository I used for this demo was a private one. But in the next
 - [GitHub Actions](https://www.youtube.com/watch?v=R8_veQiYBjI)
 - [GitHub Actions CI/CD](https://www.youtube.com/watch?v=mFFXuXjVgkU)
 
-See you on [Day 74](day74.md)
+See you on [Day 74](../day74)

@@ -12,11 +12,17 @@ featuredImage:
 draft: false
 id: 1048735
 ---
+## Практическое знакомство с Python и сетью
+
+В этом заключительном разделе основ работы с сетью мы рассмотрим некоторые задачи и инструменты автоматизации с помощью нашей лабораторной среды, созданной [День 26](../day26)
+
+Мы будем использовать туннель SSH для подключения к нашим устройствам с нашего клиента по сравнению с telnet. Туннель SSH, созданный между клиентом и устройством, зашифрован. Мы также рассмотрели SSH в разделе Linux в [День 18](../day18)
+
 ## Getting Hands-On with Python & Network
 
-In this final section of Networking fundamentals, we are going to cover some automation tasks and tools with our lab environment created on [Day 26](day26.md) 
+In this final section of Networking fundamentals, we are going to cover some automation tasks and tools with our lab environment created on [Day 26](../day26) 
 
-We will be using an SSH tunnel to connect to our devices from our client vs telnet. The SSH tunnel created between client and device is encrypted. We also covered SSH in the Linux section on [Day 18](day18.md)
+We will be using an SSH tunnel to connect to our devices from our client vs telnet. The SSH tunnel created between client and device is encrypted. We also covered SSH in the Linux section on [Day 18](../day18)
 
 ## Access our virtual emulated environment
 
@@ -140,4 +146,4 @@ Most of the examples I am using here as I am not a Network Engineer have come fr
 
 - [Hands-On Enterprise Automation with Python (Book)](https://www.packtpub.com/product/hands-on-enterprise-automation-with-python/9781788998512)
 
-See you on [Day 28](day28.md) where will start looking into cloud computing and get a good grasp and foundational knowledge of the topic and what is available. 
+See you on [Day 28](../day28) where will start looking into cloud computing and get a good grasp and foundational knowledge of the topic and what is available. 

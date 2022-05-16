@@ -49,7 +49,7 @@ The next phase is for us to install and configure nginx on our loadbalancer vm. 
 
 First of all we are going to add a host block to our playbook. This block will include our common role and then our new nginx role. 
 
-The playbook can be found here. [playbook4.yml](Days/../Configmgmt/ansible-scenario4/playbook4.yml)
+The playbook can be found here. [playbook4.yml](../days/../Configmgmt/ansible-scenario4/playbook4.yml)
 
 ```
 - hosts: webservers
@@ -71,7 +71,7 @@ The playbook can be found here. [playbook4.yml](Days/../Configmgmt/ansible-scena
 
 In order for this to mean anything, we have to define our tasks that we wish to run, in the same way we will modify the main.yml in tasks to point to two files this time, one for installation and one for configuration. 
 
-There are some other files that I have modified based on the outcome we desire, take a look in the folder [ansible-scenario4](Days/Configmgmt/ansible-scenario4) for all the files changed. You should check the folders tasks, handlers and templates in the nginx folder and you will find those additional changes and files. 
+There are some other files that I have modified based on the outcome we desire, take a look in the folder [ansible-scenario4](../days/Configmgmt/ansible-scenario4) for all the files changed. You should check the folders tasks, handlers and templates in the nginx folder and you will find those additional changes and files. 
 
 ### Run the updated playbook 
 
@@ -116,4 +116,4 @@ I am pretty confident that what we have installed is all good but let's use an a
 
 This final playlist listed above is where a lot of the code and ideas came from for this section, a great resource and walkthrough in video format. 
 
-See you on [Day 68](day68.md)
+See you on [Day 68](../day68)

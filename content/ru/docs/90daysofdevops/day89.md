@@ -93,7 +93,7 @@ Next, we select the application by either name or labels, I am going to choose b
 
 ![](../images/Day89_Data9.png?v1)
 
-Under Advanced settings we are not going to be using any of these but based on our [walkthrough of Kanister yesterday](https://github.com/MichaelCade/90DaysOfDevOps/blob/main/Days/day88.md), we can leverage Kanister as part of Kasten K10 as well to take those application consistent copies of our data. 
+Under Advanced settings we are not going to be using any of these but based on our [walkthrough of Kanister yesterday](https://github.com/MichaelCade/90DaysOfDevOps/blob/main/Days/day88), we can leverage Kanister as part of Kasten K10 as well to take those application consistent copies of our data. 
 
 ![](../images/Day89_Data10.png?v1)
 
@@ -172,7 +172,7 @@ Now we go back to the dashboard and into the policies tab to create a new policy
 
 ![](../images/Day89_Data17.png?v1)
 
-Create the import policy as per the below image. When complete, we can create policy. There are options here to restore after import and some people might want this option, this will go and restore into our standby cluster on completion. We also have the ability to change the configuration of the application as it is restored and this is what I have documented in [Day 90](day90.md). 
+Create the import policy as per the below image. When complete, we can create policy. There are options here to restore after import and some people might want this option, this will go and restore into our standby cluster on completion. We also have the ability to change the configuration of the application as it is restored and this is what I have documented in [Day 90](../day90). 
 
 ![](../images/Day89_Data18.png?v1)
 
@@ -218,4 +218,4 @@ Next, we will take a look at Application mobility and transformation.
 - [Disaster Recovery vs. Backup: What's the difference?](https://www.youtube.com/watch?v=07EHsPuKXc0)
 - [Veeam Portability & Cloud Mobility](https://www.youtube.com/watch?v=hDBlTdzE6Us&t=3s)
 
-See you on [Day 90](day90.md)
+See you on [Day 90](../day90)

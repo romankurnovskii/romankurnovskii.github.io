@@ -124,4 +124,4 @@ This then wraps up our look into Git and GitHub, next we are diving into contain
 - [Git cheatsheet](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
 
 
-See you on [Day 42](day42.md) 
+See you on [Day 42](../day42) 
