@@ -97,11 +97,11 @@ You will also notice that the lab above is all powered off, we can start our lab
 
 | Node        | Configuration         |
 | ----------- | -----------           |
-| Router      | [R1](Networking/R1)   |
-| Switch1     | [SW1](Networking/SW1) |
-| Switch2     | [SW2](Networking/SW2) |
-| Switch3     | [SW3](Networking/SW3) |
-| Switch4     | [SW4](Networking/SW4) |
+| Router      | [R1](../networking/R1)   |
+| Switch1     | [SW1](../networking/SW1) |
+| Switch2     | [SW2](../networking/SW2) |
+| Switch3     | [SW3](../networking/SW3) |
+| Switch4     | [SW4](../networking/SW4) |
 
 ## Ресурсы 
 
