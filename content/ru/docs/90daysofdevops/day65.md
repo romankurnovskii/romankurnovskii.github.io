@@ -37,7 +37,7 @@ Let’s take a look at a simple playbook called playbook.yml.
         msg: "{{ ansible_os_family }}"
 ```
 
-You will find the above file [simple_play](days/../Configmgmt/simple_play.yml). If we then use the `ansible-playbook simple_play.yml` command we will walk through the following steps. 
+You will find the above file [simple_play](../days/../Configmgmt/simple_play.yml). If we then use the `ansible-playbook simple_play.yml` command we will walk through the following steps. 
 
 ![](../images/Day65_config1.png?v1)
 
@@ -272,4 +272,4 @@ Another thing to add here is that we are only really working with Ubuntu VMs but
 
 This final playlist listed above is where a lot of the code and ideas came from for this section, a great resource and walkthrough in video format. 
 
-See you on [Day 66](day66.md)
+See you on [Day 66](../day66)

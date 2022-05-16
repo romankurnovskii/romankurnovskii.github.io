@@ -9,7 +9,7 @@ id: 1048749
 ---
 ## Application Focused Backups
 
-We have already spent some time talking about data services or data intensive applications such as databases on [Day 85](day85.md). For these data services we have to consider how we manage consistency, especially when it comes application consistency. 
+We have already spent some time talking about data services or data intensive applications such as databases on [Day 85](../day85). For these data services we have to consider how we manage consistency, especially when it comes application consistency. 
 
 In this post we are going to dive into that requirement around protecting the application data in a consistent manner. 
 
@@ -289,4 +289,4 @@ In the next post we take a look at Disaster Recovery within Kubernetes.
 - [Disaster Recovery vs. Backup: What's the difference?](https://www.youtube.com/watch?v=07EHsPuKXc0)
 - [Veeam Portability & Cloud Mobility](https://www.youtube.com/watch?v=hDBlTdzE6Us&t=3s)
 
-See you on [Day 89](day89.md)
+See you on [Day 89](../day89)

@@ -208,4 +208,4 @@ Although it's still not a forgone conclusion, because choosing the cleaner histo
 - [Exploring the Git command line – A getting started guide](https://veducate.co.uk/exploring-the-git-command-line/)
 
 
-See you on [Day40](day40.md) 
+See you on [Day40](../day40) 

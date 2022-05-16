@@ -164,5 +164,5 @@ I also found this really great medium article covering more about [Fluent Bit](h
 - [ Fluent Bit explained | Fluent Bit vs Fluentd ](https://www.youtube.com/watch?v=B2IS-XS-cc0)
 
 
-See you on [Day 82](day82.md)
+See you on [Day 82](../day82)
 

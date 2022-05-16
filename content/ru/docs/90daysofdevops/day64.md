@@ -9,14 +9,14 @@ id: 1048765
 ---
 ## Ansible: Getting Started
 
-We covered a little what Ansible is in the [big picture session yesterday](day63.md) But we are going to get started with a little more information on top of that here. Firstly Ansible comes from RedHat. Secondly it is agentles, connects via SSH and runs commands. Thirdly it is cross platform (Linux & macOS, WSL2) and open-source (there is also a paid for enterprise option) Ansible pushes configuration vs other models. 
+We covered a little what Ansible is in the [big picture session yesterday](../day63) But we are going to get started with a little more information on top of that here. Firstly Ansible comes from RedHat. Secondly it is agentles, connects via SSH and runs commands. Thirdly it is cross platform (Linux & macOS, WSL2) and open-source (there is also a paid for enterprise option) Ansible pushes configuration vs other models. 
 
 ### Ansible Installation 
 As you might imagine, RedHat and the Ansible team have done a fantastic job around documenting Ansible. This generally starts with the installation steps which you can find [here](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) Remember we said that Ansible is an agentless automation tool, the tool is deployed to a system referred to as a "Control Node" from this control node is manages machines and other devices (possibly network) over SSH. 
 
 It does state in the above linked documentation that the Windows OS cannot be used as the control node. 
 
-For my control node and for at least this demo I am going to use the Linux VM we created way back in the [Linux section](day20.md) as my control node. 
+For my control node and for at least this demo I am going to use the Linux VM we created way back in the [Linux section](../day20) as my control node. 
 
 This system was running Ubuntu and the installation steps simply needs the following commands. 
 
@@ -82,7 +82,7 @@ Ad hoc commands use a declarative model, calculating and executing the actions r
 - [NetworkChuck - You need to learn Ansible right now!](https://www.youtube.com/watch?v=5hycyr-8EKs&t=955s)
 
 
-See you on [Day 65](day65.md)
+See you on [Day 65](../day65)
 
 
 

@@ -29,7 +29,7 @@ In this first step we are simply going to create a stateless application within 
 
 In the first demo we want to define everything we do with YAML, we could have a whole section on YAML but I am going to skim over this and leave some resources at the end that will cover YAML in more detail. 
 
-We could create the following as one YAML file or we could break this down for each aspect of our application, i.e this could be separate files for namespace, deployment and service creation but in this file below we separate these by using `---` in one file. You can find this file located [here](Days\Kubernetes\nginx-stateless-demo.yaml)
+We could create the following as one YAML file or we could break this down for each aspect of our application, i.e this could be separate files for namespace, deployment and service creation but in this file below we separate these by using `---` in one file. You can find this file located [here](../days\Kubernetes\nginx-stateless-demo.yaml)
 
 ```
 apiVersion: v1
@@ -219,4 +219,4 @@ If you have FREE resources that you have used then please feel free to add them 
 - [TechWorld with Nana - Kubernetes Crash Course for Absolute Beginners](https://www.youtube.com/watch?v=s_o8dwzRlu4)
 - [Kunal Kushwaha - Kubernetes Tutorial for Beginners | What is Kubernetes? Architecture Simplified!](https://www.youtube.com/watch?v=KVBON1lA9N8)
 
-See you on [Day 55](day55.md) 
+See you on [Day 55](../day55) 

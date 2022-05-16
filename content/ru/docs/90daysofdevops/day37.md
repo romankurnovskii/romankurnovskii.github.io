@@ -11,7 +11,7 @@ id: 1048707
 
 Apoligies for the terrible puns in the title and throughout. I am surely not the first person to turn Git into a dad joke! 
 
-In the last two posts we learnt about version control systems, and some of the fundamental workflows of git as a version control system [Day 35](day35.md) Then we got git installed on our system, updated and configured. We also went a little deeper on the theory between Client-Server version control system and Git which is a distributed version control system [Day 36](day36.md).
+In the last two posts we learnt about version control systems, and some of the fundamental workflows of git as a version control system [Day 35](../day35) Then we got git installed on our system, updated and configured. We also went a little deeper on the theory between Client-Server version control system and Git which is a distributed version control system [Day 36](../day36).
 
 Now we are going to run through some of the commands and use cases that we will all commonly see with git.
 
@@ -170,4 +170,4 @@ I have taken these from [atlassian](https://www.atlassian.com/git/tutorials/atla
 - [Git cheatsheet](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
 
 
-See you on [Day 38](day38.md) 
+See you on [Day 38](../day38) 

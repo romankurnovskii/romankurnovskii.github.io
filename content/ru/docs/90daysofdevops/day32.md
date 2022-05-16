@@ -128,7 +128,7 @@ Azure Media Services, provides media transcoding technologies in addition to pla
 
 ## Microsoft Azure Database Models
 
-Back on [Day 28](day28.md), we covered various service options. One of these was PaaS (Platform as a Service) where you abstract a large amount of the infrastructure and operating system away and you are left with the control of the application or in this case the database models. 
+Back on [Day 28](../day28), we covered various service options. One of these was PaaS (Platform as a Service) where you abstract a large amount of the infrastructure and operating system away and you are left with the control of the application or in this case the database models. 
 
 ### Relational Databases
 
@@ -190,4 +190,4 @@ We have one more bit of theory remaining around networking before we can get som
 - [Google Cloud Digital Leader Certification Course](https://www.youtube.com/watch?v=UGRDM86MBIQ&list=WL&index=131&t=10s)
 - [AWS Basics for Beginners - Full Course](https://www.youtube.com/watch?v=ulprqHHWlng&t=5352s)
 
-See you on [Day 33](day33.md) 
+See you on [Day 33](../day33) 

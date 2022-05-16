@@ -68,7 +68,7 @@ I have not looked into this before but I can see that this is quite the feature 
 
 ### Role-Based Access Control 
 
-We have already covered on [Day 29](day29.md) the scopes we are going to cover here, we can set our role-based access control according to one of these areas. 
+We have already covered on [Day 29](../day29) the scopes we are going to cover here, we can set our role-based access control according to one of these areas. 
 
 - Subscriptions
 - Management Group
@@ -178,4 +178,4 @@ You are able to customise this portal with your own branding and this might be s
 - [Google Cloud Digital Leader Certification Course](https://www.youtube.com/watch?v=UGRDM86MBIQ&list=WL&index=131&t=10s)
 - [AWS Basics for Beginners - Full Course](https://www.youtube.com/watch?v=ulprqHHWlng&t=5352s)
 
-See you on [Day 31](day31.md)
+See you on [Day 31](../day31)

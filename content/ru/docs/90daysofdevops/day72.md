@@ -37,7 +37,7 @@ The first step is to get our minikube cluster up and running, we can simply do t
 
 ![](../images/Day72_CICD1.png?v1)
 
-I have added a folder with all the YAML configuration and values that can be found [here](days/CICD/Jenkins) Now that we have our cluster we can run the following to create our jenkins namespace. `kubectl create -f jenkins-namespace.yml`
+I have added a folder with all the YAML configuration and values that can be found [here](../days/CICD/Jenkins) Now that we have our cluster we can run the following to create our jenkins namespace. `kubectl create -f jenkins-namespace.yml`
 
 ![](../images/Day72_CICD2.png?v1)
 
@@ -91,7 +91,7 @@ From here, I would suggest heading to "Manage Jenkins" and you will see "Manage 
 
 ![](../images/Day72_CICD14.png?v1)
 
-If you want to go even further and automate the deployment of Jenkins using a shell script this great repository was shared with me on twitter [mehyedes/nodejs-k8s](https://github.com/mehyedes/nodejs-k8s/blob/main/docs/automated-setup.md)
+If you want to go even further and automate the deployment of Jenkins using a shell script this great repository was shared with me on twitter [mehyedes/nodejs-k8s](https://github.com/mehyedes/nodejs-k8s/blob/main/docs/automated-setup)
 
 
 ### Jenkinsfile 
@@ -159,4 +159,4 @@ In the next section we will be building a Jenkins Pipeline.
 - [GitHub Actions](https://www.youtube.com/watch?v=R8_veQiYBjI)
 - [GitHub Actions CI/CD](https://www.youtube.com/watch?v=mFFXuXjVgkU)
 
-See you on [Day 73](day73.md)
+See you on [Day 73](../day73)

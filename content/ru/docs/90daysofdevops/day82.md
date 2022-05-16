@@ -33,7 +33,7 @@ We will be using our trusty minikube cluster to deploy our EFK stack. Let's star
 
 ![](../images/Day82_Monitoring2.png?v1)
 
-I have created [efk-stack.yaml](Days/Monitoring/../../Monitoring/EFK%20Stack/efk-stack.yaml) which contains everything we need to deploy the EFK stack into our cluster, using the `kubectl create -f efk-stack.yaml` command we can see everything being deployed.
+I have created [efk-stack.yaml](../days/Monitoring/../../Monitoring/EFK%20Stack/efk-stack.yaml) which contains everything we need to deploy the EFK stack into our cluster, using the `kubectl create -f efk-stack.yaml` command we can see everything being deployed.
 
 ![](../images/Day82_Monitoring3.png?v1)
 
@@ -108,5 +108,5 @@ I am not going to get into APM here but you can find out more on the [Elastic si
 - [What is ELK Stack?](https://www.youtube.com/watch?v=4X0WLg05ASw)
 - [Fluentd simply explained](https://www.youtube.com/watch?v=5ofsNyHZwWE&t=14s) 
 
-See you on [Day 83](day83.md)
+See you on [Day 83](../day83)
 

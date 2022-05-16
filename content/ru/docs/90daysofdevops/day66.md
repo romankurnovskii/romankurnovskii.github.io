@@ -53,7 +53,7 @@ and the same for the handlers.
     state: restarted
 ```
 
-then within our playbook now named `playbook2.yml` we point to these files. All of which can be found at [ansible-scenario2](Days/../Configmgmt/ansible-scenario2/)
+then within our playbook now named `playbook2.yml` we point to these files. All of which can be found at [ansible-scenario2](../days/../Configmgmt/ansible-scenario2/)
 
 You can test this on your control machine. If you have copied the files from the repository you should have noticed something changed in the "write a basic index.html file"
 
@@ -106,7 +106,7 @@ Ok, the depreciation although our playbook ran we should fix our ways now, in or
 
 ![](../images/Day66_config9.png?v1)
 
-You can find these files in the [ansible-scenario3](Days/Configmgmt/ansible-scenario3)
+You can find these files in the [ansible-scenario3](../days/Configmgmt/ansible-scenario3)
 
 We are also going to create a few more roles whilst using `ansible-galaxy` we are going to create: 
 
@@ -126,4 +126,4 @@ I am going to leave this one here and in the next session we will start working 
 
 This final playlist listed above is where a lot of the code and ideas came from for this section, a great resource and walkthrough in video format. 
 
-See you on [Day 67](day67.md)
+See you on [Day 67](../day67)

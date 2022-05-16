@@ -177,4 +177,4 @@ In the next session we will be focusing in on protecting workloads within Kubern
 - [Disaster Recovery vs. Backup: What's the difference?](https://www.youtube.com/watch?v=07EHsPuKXc0)
 - [Veeam Portability & Cloud Mobility](https://www.youtube.com/watch?v=hDBlTdzE6Us&t=3s)
 
-See you on [Day 87](day87.md)
+See you on [Day 87](../day87)
