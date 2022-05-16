@@ -54,7 +54,6 @@ draft: false
 - [✔️] 🐧 20 > [Dev workstation setup - All the pretty things](day20)
 
 
-<!-- This is commented out. 
 ### Understand Networking
 
 - [✔️] 🌐 21 > [The Big Picture: DevOps and Networking](day21)
@@ -64,6 +63,8 @@ draft: false
 - [✔️] 🌐 25 > [Python for Network Automation](day25)
 - [✔️] 🌐 26 > [Building our Lab](day26)
 - [✔️] 🌐 27 > [Getting Hands-On with Python & Network](day27)
+
+<!-- This is commented out. 
 
 ### Stick to one Cloud Provider
 
