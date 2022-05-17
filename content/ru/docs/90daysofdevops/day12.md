@@ -168,7 +168,7 @@ func main() {
 
 Указатель — это (специальная) переменная, которая указывает на адрес памяти другой переменной.
 
-Отличное объяснение этого можно найти здесь [geeksforgeeks] (https://www.geeksforgeeks.org/pointers-in-golang/)
+Отличное объяснение этого можно найти здесь [geeksforgeeks](https://www.geeksforgeeks.org/pointers-in-golang/)
 
 ```
 package main

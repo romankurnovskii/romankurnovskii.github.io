@@ -39,7 +39,7 @@ id: 1048856
 
 ## Почему Go 
 
-Почему Golang — следующий язык программирования для DevOps? В последние годы Go стал очень популярным языком программирования. Согласно опросу StackOverflow за 2021 год, Go занял четвертое место среди самых востребованных языков программирования, сценариев и разметки, а Python был на первом месте, но выслушайте меня. [StackOverflow 2021 Developer Survey – Most Wanted Link] (https://insights.stackoverflow.com/survey/2021#section-most-loved-dreaded-and-wanted-programming-scripting-and-markup-languages)
+Почему Golang — следующий язык программирования для DevOps? В последние годы Go стал очень популярным языком программирования. Согласно опросу StackOverflow за 2021 год, Go занял четвертое место среди самых востребованных языков программирования, сценариев и разметки, а Python был на первом месте, но выслушайте меня. [StackOverflow 2021 Developer Survey – Most Wanted Link](https://insights.stackoverflow.com/survey/2021#section-most-loved-dreaded-and-wanted-programming-scripting-and-markup-languages)
 
 Как я уже упоминал, некоторые из самых известных инструментов и платформ DevOps написаны на Go, такие как Kubernetes, Docker, Grafana и Prometheus.
 
