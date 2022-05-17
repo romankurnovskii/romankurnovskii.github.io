@@ -129,7 +129,7 @@ Go статически типизирован, а это означает, чт
 - **Numeric**: представляет целые типы, значения с плавающей запятой и сложные типы.
 - **string**: представляет строковое значение.
 
-Я нашел этот ресурс очень подробным о типах данных [Golang by example] (https://golangbyexample.com/all-data-types-in-golang-with-examples/)
+Я нашел этот ресурс очень подробным о типах данных [Golang by example](https://golangbyexample.com/all-data-types-in-golang-with-examples/)
 
 Я бы также посоветовал [Techworld with Nana](https://www.youtube.com/watch?v=yyUHQIec83I&t=2023s) на этом этапе довольно подробно рассказать о типах данных в Go.
 
