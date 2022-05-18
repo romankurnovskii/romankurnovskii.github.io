@@ -17,9 +17,9 @@ draft: false
 
 # MacBook Pro Specification
 
-* 14-inch
-* Apple M1 Pro mit 10‑Core CPU, 16‑Core GPU und 16‑Core Neural Engine
-* 32 GB RAM
+* 13-inch
+* Apple M1 Pro M1 2020
+* 16 GB RAM
 * 512 GB SSD
-* QWERTY = English (International)
+* QWERTY = English/Hebrew
 * macOS Monterey

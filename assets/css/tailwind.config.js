@@ -17,32 +17,32 @@ module.exports = {
     },
     fontSize: {
       'xs': '.75rem',
-      'sm': ['0.875rem', {
-        lineHeight: 'leading-4',
+      'sm': ['0.95rem', {
+        lineHeight: 'leading-7',
       }],
       'tiny': '.875rem',
-      'base': ['0.85rem', {
-        lineHeight: 'leading-4',
+      'base': ['1rem', {
+        lineHeight: '1.2',
       }],
       'lg': '1.125rem',
       'xl': '1.25rem',
-      '2xl': '1.5rem', // h1
-      '3xl': '1.875rem',
-      '4xl': '2.0rem',
-      '5xl': '3rem',
-      '6xl': '4rem',
-      '7xl': '5rem',
+      '2xl': '1.5rem', // h1 
+      '3xl': '0.875rem',
+      '4xl': '0.2.0rem',
+      '5xl': '0.3rem',
+      '6xl': '0.4rem',
+      '7xl': '0.5rem',
     },
     fontWeight: {
       thin: '100',
       extralight: '200',
       light: '300',
       normal: '400',
-      medium: '500',
-      semibold: '600',
-      bold: '650',
-      extrabold: '700',
-      black: '900',
+      medium: '400',
+      semibold: '500',
+      bold: '400',
+      extrabold: '400',
+      black: '800',
     },
     extend: {
       height: {
