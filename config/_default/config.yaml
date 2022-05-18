@@ -41,8 +41,8 @@ taxonomies:
   author: authors
 
 build:
-  useResourceCacheWhen: always
-  writeStats: true
+  useResourceCacheWhen: never
+  writeStats: false
 
 sitemap:
   changefreq: always

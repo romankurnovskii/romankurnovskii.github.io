@@ -14,3 +14,15 @@
   padding-top: 4rem;
   margin-top: -4rem;
 }
+
+.prose h1 {
+  @apply text-2xl font-bold leading-3;
+}
+
+.prose p, ul, li {
+  @apply text-base leading-7 ;
+}
+
+.prose li {
+  @apply leading-3 ;
+}
