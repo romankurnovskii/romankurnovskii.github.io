@@ -8,8 +8,8 @@ authors:
 tags:
 categories:
 series:
-date: '2022-04-21'
-lastmod: '2022-04-21'
+date: "2022-04-21"
+lastmod: "2022-04-21"
 draft: false
 ---
 
@@ -20,8 +20,7 @@ draft: false
 Оригинальный репозиторий на <a href="https://github.com/MichaelCade/90DaysOfDevOps">GitHub</a>. Автор версии на английском - **Michael Cade**
 Цель данного цикла статей - быстрый обзор и прохождение по всему тьюториалу по DevOps.
 
-
-## Progress 
+## Progress
 
 - [✔️] ♾️ 1 > [Введение](day01)
 
@@ -53,7 +52,6 @@ draft: false
 - [✔️] 🐧 19 > [Automate tasks with bash scripts](day19)
 - [✔️] 🐧 20 > [Dev workstation setup - All the pretty things](day20)
 
-
 ### Understand Networking
 
 - [✔️] 🌐 21 > [The Big Picture: DevOps and Networking](day21)
@@ -63,8 +61,6 @@ draft: false
 - [✔️] 🌐 25 > [Python for Network Automation](day25)
 - [✔️] 🌐 26 > [Building our Lab](day26)
 - [✔️] 🌐 27 > [Getting Hands-On with Python & Network](day27)
-
-<!-- This is commented out. 
 
 ### Stick to one Cloud Provider
 
@@ -76,6 +72,8 @@ draft: false
 - [✔️] ☁️ 33 > [Microsoft Azure Networking Models + Azure Management](day33)
 - [✔️] ☁️ 34 > [Microsoft Azure Hands-On Scenarios](day34)
 
+<!-- This is commented out.
+
 ### Use Git Effectively
 
 - [✔️] 📚 35 > [The Big Picture: Git - Version Control](day35)
@@ -86,7 +84,7 @@ draft: false
 - [✔️] 📚 40 > [Social Network for code](day40)
 - [✔️] 📚 41 > [The Open Source Workflow](day41)
 
-### Containers 
+### Containers
 
 - [✔️] 🏗️ 42 > [The Big Picture: Containers](day42)
 - [✔️] 🏗️ 43 > [What is Docker & Getting installed](day43)
@@ -126,7 +124,7 @@ draft: false
 - [✔️] 📜 68 > [Tags, Variables, Inventory & Database Server config](day68)
 - [✔️] 📜 69 > [All other things Ansible - Automation Controller, AWX, Vault](day69)
 
-### Create CI/CD Pipelines 
+### Create CI/CD Pipelines
 
 - [✔️] 🔄 70 > [The Big Picture: CI/CD Pipelines](day70)
 - [✔️] 🔄 71 > [What is Jenkins?](day71)
@@ -156,6 +154,9 @@ draft: false
 - [✔️] 🗃️ 89 > [Disaster Recovery](day89)
 - [✔️] 🗃️ 90 > [Data & Application Mobility](day90)
 
+
+-->
+
 ## License
 
 Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
@@ -168,7 +169,3 @@ This work is licensed under a
 [cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
 [cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
 [cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
-
-
-
--->
