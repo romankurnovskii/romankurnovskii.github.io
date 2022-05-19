@@ -15,8 +15,29 @@
   margin-top: -4rem;
 }
 
+.prose h1,
+h2,
+h3,
+h4 {
+  @apply mt-4 text-center font-bold uppercase leading-7;
+}
+
 .prose h1 {
-  @apply mt-4 text-2xl font-bold leading-7;
+  @apply text-left text-2xl;
+}
+.prose h2 {
+  @apply text-2xl;
+}
+.prose h2 {
+  @apply text-xl;
+}
+.prose h3 {
+  @apply text-lg;
+}
+
+.prose .doc,
+.doc-list-title {
+  @apply text-left;
 }
 
 .prose p,
@@ -26,5 +47,5 @@ li {
 }
 
 .prose li {
-  @apply leading-3;
+  @apply leading-4;
 }
