@@ -22,10 +22,21 @@ defaultContentLanguageInSubdir: false
 # googleAnalytics: UA-123-45
 
 markup:
+  highlight22:
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: true
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    noHl: false
+    style: monokai
+    tabWidth: 4
   # Do not modify markup.highlight
-  # highlight:
-  #   codeFences: false
-  #   noClasses: false
+  highlight3:
+    codeFences: false
+    noClasses: false
   tableOfContents:
     startLevel: 2
     endLevel: 6
