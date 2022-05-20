@@ -23,9 +23,9 @@ defaultContentLanguageInSubdir: false
 
 markup:
   # Do not modify markup.highlight
-  highlight:
-    codeFences: false
-    noClasses: false
+  # highlight:
+  #   codeFences: false
+  #   noClasses: false
   tableOfContents:
     startLevel: 2
     endLevel: 6
