@@ -29,7 +29,7 @@ PyScript является открытым исходным кодом с исп
 
 Упрощение использования в браузере порадует не только ученых, разрабатывающих аналитические приложения, но и программистов любого профиля, ищущих альтернативу JavaScript — хотя разработчики проекта предупреждают, что это «чрезвычайно экспериментальный проект» и что он только проверен в веб-браузере Google Chrome.
 
-_Please be advised that PyScript is very alpha and under heavy development. There are many known issues, from usability to loading times, and you should expect things to change often. We encourage people to play and explore with PyScript, but at this time we do not recommend using it for production._
+> Please be advised that PyScript is very alpha and under heavy development. There are many known issues, from usability to loading times, and you should expect things to change often. We encourage people to play and explore with PyScript, but at this time we do not recommend using it for production.
 
 ## Туториал PyScript
 
@@ -68,7 +68,7 @@ _Please be advised that PyScript is very alpha and under heavy development. Ther
 
 Тег `<py-script>` позволяет писать многострочный код
 
-```
+```html
 <html>
 <head>
     <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
@@ -94,7 +94,7 @@ _Please be advised that PyScript is very alpha and under heavy development. Ther
 
 Важно соблюдать отступы в самом блоке Python. Но Начальную строку кода можно начинать и с начала строки
 
-```python
+```html
 <html>
 <head>
     <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
@@ -125,7 +125,7 @@ print(s)
 
 Например, мы добавим некоторые элементы стиля и предоставим заполнители для тега `<py-script>` для записи.
 
-```
+```html
 <html>
     <head>
       <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
@@ -162,7 +162,7 @@ pyscript.write('my-custom-pi', f'π is approximately {pi:.3f}')
 
 В дополнение к стандартной библиотеке Python и модулю pyscript, многие сторонние пакеты работают с PyScript. Чтобы их использовать, нужно объявить зависимости с помощью тега `<py-env>` в заголовке HTML. Вы также можете ссылаться на файлы `.whl` прямо на диске
 
-```
+```html
 <py-env>
  - './static/wheels/travertino-0.1.3-py3-none-any.whl'
  - './static/wheels/my-other-package-0.0.1-py3-none-any.whl'
@@ -174,7 +174,7 @@ pyscript.write('my-custom-pi', f'π is approximately {pi:.3f}')
 
 **Пример с NumPy**
 
-```
+```html
 <html>
     <head>
       <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
@@ -209,7 +209,7 @@ fig
 
 Например, создадим файл `data.py' и запишем в него собственную функцию
 
-```
+```python
 # data.py
 import numpy as np
 
@@ -221,7 +221,7 @@ def make_x_and_y(n):
 
 Внутри тега `<py-env>` добавим стандартные модули и путь до нашего локального модуля
 
-```
+```html
 <html>
     <head>
       <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
@@ -259,7 +259,7 @@ fig
 
 Тег `<py-config>` используется для установки и настройки общих метаданных о вашем приложении PyScript в формате YAML.
 
-```
+```html
 <py-config>
   - autoclose_loader: false
   - runtimes:
@@ -285,3 +285,7 @@ fig
 ### Тег py-button
 
 Добавляет кнопку, к которой авторы могут добавлять метки и обработчики событий для действий на кнопке, таких как on_focus или on_click.
+
+## Ресурсы
+- [Примеры использования PyScript](https://pyscript.net/examples/)
+- [Вопросы по PyScript](https://community.anaconda.cloud/c/tech-topics/pyscript/)
