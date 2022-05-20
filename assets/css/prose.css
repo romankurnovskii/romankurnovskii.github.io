@@ -53,3 +53,8 @@ li {
 /* .prose li {
   @apply leading-4;
 } */
+
+/* for markdown code blocks */
+code {
+  white-space : pre-wrap !important;
+}
