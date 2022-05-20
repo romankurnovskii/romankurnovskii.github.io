@@ -26,8 +26,8 @@ draft: false
 
 ### Что такое и почему нам нужен DevOps
 
-- [✔️] ♾️ 2 > [Responsibilities of a DevOps Engineer](day02)
-- [✔️] ♾️ 3 > [DevOps Lifecycle - Application Focused](day03)
+- [✔️] ♾️ 2 > [Задачи DevOps-инженера](day02)
+- [✔️] ♾️ 3 > [DevOps Lifecycle - Ориентированность на приложения](day03)
 - [✔️] ♾️ 4 > [DevOps & Agile](day04)
 - [✔️] ♾️ 5 > [Plan > Code > Build > Testing > Release > Deploy > Operate > Monitor >](day05)
 - [✔️] ♾️ 6 > [DevOps - The real stories](day06)
@@ -66,7 +66,7 @@ draft: false
 
 - [✔️] ☁️ 28 > [The Big Picture: DevOps & The Cloud](day28)
 - [✔️] ☁️ 29 > [Microsoft Azure Fundamentals](day29)
-- [✔️] ☁️ 30 > [Microsoft Azure Security Models](day30)
+- [✔️] ☁️ 30 > [Модули безопасности Microsoft Azure](day30)
 - [✔️] ☁️ 31 > [Microsoft Azure Compute Models](day31)
 - [✔️] ☁️ 32 > [Microsoft Azure Storage & Database Models](day32)
 - [✔️] ☁️ 33 > [Microsoft Azure Networking Models + Azure Management](day33)

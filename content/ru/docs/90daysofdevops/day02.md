@@ -1,6 +1,6 @@
 ---
-title: 2 - Responsibilities of a DevOps Engineer
-description: Responsibilities of a DevOps Engineer
+title: 2 - Задачи DevOps-инженера
+description: Задачи DevOps-инженера
 toc: true
 authors:
 tags: [devops, 90daysofdevops, learning]
