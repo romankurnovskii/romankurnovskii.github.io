@@ -2,13 +2,13 @@
 
 # highlight.js
 highlightjs:
-  version: 11.4.0
+  version: 11.5.1
   css:
-    url: https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@%s/build/styles/%s.min.css
+    url: https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css
   js:
-    url: https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@%s/build/highlight.min.js
+    url: https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js
   languages:
-    url: https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@%s/build/languages/%s.min.js
+    url: https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.0-beta1/languages/%s.min.js
 
 # KaTeX
 katex:
