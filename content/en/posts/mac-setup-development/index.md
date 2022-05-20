@@ -21,7 +21,7 @@ draft: false
 - 16 GB RAM
 - 512 GB SSD
 - QWERTY = English/Hebrew
-- macOS Monterey
+- macOS Monterey (Update always)
 
 ## Homebrew
 
@@ -176,5 +176,56 @@ npm list -g --depth=0
 ```
 
 That's it. You have a running version of Node.js and its package manager.
+
+## OH MY ZSH
+
+MacOS already comes with zsh as default shell. Install [Oh My Zsh](https://ohmyz.sh/#install) for an improved (plugins, themes, ...) experience. Oh My Zsh is an open source, community-driven framework for managing your zsh configuration. It comes with a bunch of features out of the box and improves your terminal experience.
+
+Install:
+
+```bash
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+Update everything (e.g. plugins) in Oh My Zsh to recent version:
+
+```bash
+omz update
+```
+
+## Terminal Script and Aliases
+
+Update `.zprofile`. Еhe changes will take effect after restarting the terminal
+
+```
+vi ~/.zprofile
+```
+
+Add script to zprofile that updates everything:
+
+1. Update, upgrade all and cleanup
+2. softwareupdate - system software update tool
+
+We can execute this command on strartup, but i prefer handle it. When I kick of `upd` command in terminal, it will update everythin I need:
+
+```
+alias upd='brew update; brew upgrade; brew cu -a --cleanup -y -v; brew cleanup; softwareupdate -i -a; i'
+```
+
+Add aliases to latest versions pip & python
+
+```
+alias pip=pip3
+alias python=python3
+```
+
+Final view of .zprofile
+
+```
+...
+alias pip=pip3
+alias python=python3
+alias upd='omz update; brew update; brew upgrade; brew cu -a --cleanup -y -v; brew cleanup; softwareupdate -i -a; i'
+```
 
 [inspiration](https://www.robinwieruch.de/mac-setup-web-development/)
