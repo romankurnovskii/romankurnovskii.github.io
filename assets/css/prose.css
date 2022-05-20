@@ -43,7 +43,11 @@ h4 {
 .prose p,
 ul,
 li {
-  @apply text-base leading-7;
+  @apply text-base;
+}
+
+.prose li p {
+  @apply mt-0 mb-0  ;
 }
 
 .prose li {

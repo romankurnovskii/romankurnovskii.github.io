@@ -1,9 +1,13 @@
 # Normal(400), semibold(600), bold(700) font weight needed.
 fonts: 
-  - name: Lora
-    googleFonts: Lora:wght@400;600;700
-  - name: Noto Serif SC
-    googleFonts: Noto+Serif+SC:wght@400;600;700
+  - name: Raleway 
+    googleFonts: Raleway:ital,wght@0,100;0,200;0,300;0,400;1,100
+  # - name: IBM Plex Serif
+  #   googleFonts: IBM+Plex+Serif:wght@100;200;300
+  # - name: Lora
+  #   googleFonts: Lora:wght@400;600;700
+  # - name: Noto Serif SC
+  #   googleFonts: Noto+Serif+SC:wght@400;600;700
 
 colors:
   light:
