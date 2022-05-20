@@ -97,7 +97,7 @@ There is also the Azure Preview portal, this can be used to view and test new an
 
 ### PowerShell 
 
-Before we get into Azure PowerShell it is worth introducing PowerShell first. PowerShell is a task automation and configuration management framework, a command-line shell and a scripting language. We might and dare I say this liken this to what we have covered in the Linux section around shell scripting. PowerShell was very much first found on Windows OS but it is now cross-platform. 
+Before we get into Azure [PowerShell](https://docs.microsoft.com/ru-ru/powershell/) it is worth introducing PowerShell first. PowerShell is a task automation and configuration management framework, a command-line shell and a scripting language. We might and dare I say this liken this to what we have covered in the Linux section around shell scripting. PowerShell was very much first found on Windows OS but it is now cross-platform. 
 
 Azure PowerShell is a set of cmdlets for managing Azure resources directly from the PowerShell command line. 
 

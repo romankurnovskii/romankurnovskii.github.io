@@ -1,181 +1,177 @@
 ---
-title: 30 - Microsoft Azure Security Models
-description: Microsoft Azure Security Models
+title: 30 - Модули безопасности Microsoft Azure
+description: Модули безопасности Microsoft Azure
 toc: true
 authors:
 tags: [devops]
 categories:
-series: 
+series:
 date: "2022-05-20"
 lastmod: "2022-05-20"
 featuredImage:
 draft: false
 id: 1049039
 ---
-## Microsoft Azure Security Models
-
-Following on from the Microsoft Azure Overview, we are going to start with Azure Security and see where this can help in our day today. For the most part, I have found the built-in roles have been sufficient but knowing that we can create and work with many different areas of authentication and configurations. I have found Microsoft Azure to be quite advanced with its Active Directory background compared to other public clouds. 
 
 ## Microsoft Azure Security Models
 
-This is one area that Microsoft Azure seemingly works differently from other public cloud providers, in Azure there is ALWAYS Azure AD. 
+Следуя обзору Microsoft Azure, мы начнем с безопасности Azure и посмотрим, как это может помочь в наши дни. По большей части я обнаружил, что встроенных ролей было достаточно, и зная это, мы можем создавать и работать со многими различными областями аутентификации и конфигураций. Я обнаружил, что Microsoft Azure довольно продвинута с ее инструментом [Active Directory](https://docs.microsoft.com/ru-ru/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview) по сравнению с другими общедоступными облаками.
 
-### Directory Services 
+Это одна из областей, в которой Microsoft Azure, по-видимому, работает иначе, чем другие поставщики общедоступных облаков, в Azure ВСЕГДА есть Azure AD.
 
-- Azure Active Directory hosts the security principles used by Microsoft Azure and other Microsoft cloud services. 
-- Authentication is accomplished through protocols such as SAML, WS-Federation, OpenID Connect and OAuth2. 
-- Queries are accomplished through REST API called Microsoft Graph API. 
-- Tenants have a tenant.onmicrosoft.com default name but can also have custom domain names. 
-- Subscriptions are associated with an Azure Active Directory tenant. 
+### Службы каталогов (Directory Services )
 
-If we think about AWS to compare the equivalent offering would be AWS IAM (Identity & Access Management) Although still very different 
+- Azure Active Directory содержит принципы безопасности, используемые Microsoft Azure и другими облачными службами Microsoft.
+- Аутентификация осуществляется с помощью таких протоколов, как SAML, WS-Federation, OpenID Connect и OAuth2.
+- Запросы выполняются через REST API, который называется Microsoft Graph API.
+- У арендаторов по умолчанию есть имя tenant.onmicrosoft.com, но они также могут иметь собственные доменные имена.
+- Подписки связаны с арендатором Azure Active Directory.
 
-Azure AD Connect provides the ability to replicate accounts from AD to Azure AD. This can also include groups and sometimes objects. This can be granular and filtered. Supports multiple forests and domains. 
+Если мы сравним с AWS, эквивалентным предложением будет [AWS IAM](https://aws.amazon.com/iam/) (управление идентификацией и доступом), хотя все еще очень разные
 
-It is possible to create cloud accounts in Microsoft Azure Active Directory (AD) but most organisations already have accounted for their users in their own Active Directory being on-premises. 
+Azure AD Connect предоставляет возможность репликации учетных записей из AD в Azure AD. Сюда также могут входить группы и иногда объекты. Это может быть гранулировано и отфильтровано. Поддерживает несколько лесов и доменов.
 
-Azure AD Connect also allows you to not only see Windows AD servers but also other Azure AD, Google and others. This also provides the ability to collaborate with external people and organisations this is called Azure B2B. 
+В Microsoft Azure Active Directory (AD) можно создавать облачные учетные записи, но большинство организаций уже учли своих пользователей в собственной локальной Active Directory.
 
-Authentication options between Active Directory Domain Services and Microsoft Azure Active Directory are possible with both identity sync with a password hash.
+Azure AD Connect также позволяет вам видеть не только серверы Windows AD, но и другие Azure AD, Google и другие. Это также дает возможность сотрудничать с внешними людьми и организациями, что называется Azure B2B.
+
+Варианты аутентификации между доменными службами Active Directory и Microsoft Azure Active Directory возможны с синхронизацией удостоверений с хэшем пароля.
 
 ![](../images/Day30_Cloud1.png?v1)
+Передача хэша пароля необязательна, если он не используется, требуется сквозная аутентификация.
 
-The passing of the password hash is optional, if this is not used then pass-through authentication is required. 
-
-There is a video linked below that goes into detail about Passthrough authentication. 
+Ниже приведено видео, в котором подробно рассказывается о сквозной аутентификации.
 
 [User sign-in with Azure Active Directory Pass-through Authentication](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-pta)
 
 ![](../images/Day30_Cloud2.png?v1)
 
-### Federation 
+### Федерации (Federation)
 
-It's fair to say that if you are using Microsoft 365, Microsoft Dynamics and on-premises Active Directory it is quite easy to understand and integrate into Azure AD for federation. However, you might be using other services outside of the Microsoft ecosystem. 
+Справедливости ради стоит сказать, что если вы используете Microsoft 365, Microsoft Dynamics и локальную Active Directory, их довольно легко понять и интегрировать в Azure AD для федерации. Однако вы можете использовать другие службы за пределами экосистемы Microsoft.
 
-Azure AD can act as a federation broker to these other Non-Microsoft apps and other directory services. 
+Azure AD может выступать в качестве посредника федерации для этих других приложений сторонних производителей и других служб каталогов.
 
-This will be seen in the Azure Portal as Enterprise Applications of which there are a large number of options. 
+Это будет отображаться на портале Azure как корпоративные приложения, для которых существует большое количество вариантов.
 
 ![](../images/Day30_Cloud3.png?v1)
 
-If you scroll down on the enterprise application page you are going to see a long list of featured applications. 
+Если вы прокрутите вниз страницу корпоративного приложения, вы увидите длинный список рекомендуемых приложений.
 
 ![](../images/Day30_Cloud4.png?v1)
 
-This option also allows for "bring your own" integration, an application you are developing or a non-gallery application. 
+Эта опция также позволяет «принести свою» интеграцию, приложение, которое вы разрабатываете, или приложение, не являющееся галереей.
 
-I have not looked into this before but I can see that this is quite the feature set when compared to the other cloud providers and capabilities. 
+Я не изучал это раньше, но вижу, что это вполне подходящий набор функций по сравнению с другими облачными провайдерами и возможностями.
 
-### Role-Based Access Control 
+### Управление доступом на основе ролей
 
-We have already covered on [Day 29](../day29) the scopes we are going to cover here, we can set our role-based access control according to one of these areas. 
+Мы уже рассмотрели в [День 29](../day29) области, которые мы собираемся охватить здесь, мы можем настроить управление доступом на основе ролей в соответствии с одной из этих областей.
 
 - Subscriptions
 - Management Group
-- Resource Group 
-- Resources 
+- Resource Group
+- Resources
 
-Roles can be split into three, there are many built-in roles in Microsoft Azure. Those three are: 
+Роли можно разделить на три, в Microsoft Azure много встроенных ролей. Эти три:
 
-- Owner 
-- Contributor 
-- Reader 
+- Owner
+- Contributor
+- Reader
 
-Owner and Contributor are very similar in their boundaries of scope however the owner can change permissions. 
+Владелец и участник очень похожи по своим границам, однако владелец может изменять разрешения.
 
-Other roles are specific to certain types of Azure Resources as well as custom roles. 
+Другие роли относятся к определенным типам ресурсов Azure, а также к пользовательским ролям.
 
-We should focus on assigning permissions to groups vs users. 
+Мы должны сосредоточиться на назначении разрешений группам и пользователям.
 
-Permissions are inherited. 
+Разрешения наследуются.
 
-If we go back and look at the "90DaysOfDevOps" Resource group we created and check the Access Control (IAM) within you can see we have a list of contributors and a customer User Access Administrator, and we do have a list of owners (But I cannot show this)
+Если мы вернемся назад и посмотрим на группу ресурсов «90DaysOfDevOps», которую мы создали, и проверим контроль доступа (IAM) внутри, вы увидите, что у нас есть список участников и администратор доступа пользователей клиента, и у нас есть список владельцев (но Я не могу это показать)
 
 ![](../images/Day30_Cloud5.png?v1)
 
-We can also check the roles we have assigned here if they are BuiltInRoles and which category they fall under. 
+Мы также можем проверить роли, которые мы назначили здесь, являются ли они встроенными ролями и к какой категории они относятся.
 
 ![](../images/Day30_Cloud6.png?v1)
 
-We can also use the check access tab if we want to check an account against this resource group and make sure that the account we wish to have that access to has the correct permissions or maybe we want to check if a user has too much access. 
+Мы также можем использовать вкладку проверки доступа, если мы хотим проверить учетную запись по этой группе ресурсов и убедиться, что учетная запись, к которой мы хотим иметь этот доступ, имеет правильные разрешения, или, может быть, мы хотим проверить, не имеет ли пользователь слишком много доступа.
 
 ![](../images/Day30_Cloud7.png?v1)
 
-### Microsoft Defender for Cloud 
+### Microsoft Defender for Cloud
 
-- Microsoft Defender for Cloud (formerly known as Azure Security Center) provides insight into the security of the entire Azure environment. 
+- Microsoft Defender for Cloud (ранее известный как Azure Security Center) предоставляет информацию о безопасности всей среды Azure.
 
-- A single dashboard for visibility into the overall security health of all Azure and non-Azure resources (via Azure Arc) and security hardening guidance.
+- Единая панель мониторинга для просмотра общего состояния безопасности всех ресурсов Azure и других ресурсов (через Azure Arc) и рекомендации по усилению безопасности.
 
-- Free tier includes continuous assessment and security recommendations.
+- Уровень бесплатного пользования включает постоянную оценку и рекомендации по безопасности.
 
-- Paid plans for protected resources types (e.g. Servers, AppService, SQL, Storage, Containers, KeyVault).
+- Платные планы для защищенных типов ресурсов (например, серверы, AppService, SQL, хранилище, контейнеры, KeyVault).
 
-I have switched to another subscription to view the Azure Security Center and you can see here based on very few resources that I have some recommendations in one place. 
+Я перешел на другую подписку для просмотра Центра безопасности Azure, и вы можете увидеть здесь, основываясь на очень небольшом количестве ресурсов, что у меня есть некоторые рекомендации в одном месте.
 
 ![](../images/Day30_Cloud8.png?v1)
 
 ### Azure Policy
 
-- Azure Policy is an Azure native service that helps to enforce organizational standards and assess compliance at-scale.
+- Azure Policy — это собственная служба Azure, которая помогает применять организационные стандарты и оценивать соответствие в масштабе.
 
-- Integrated into Microsoft Defender for Cloud. Azure Policy audits non-compliant resources and applies remediation.
+- Интегрирован в Microsoft Defender для облака. Azure Policy проверяет несоответствующие ресурсы и применяет исправления.
 
-- Commonly used for governing resource consistency, regulatory compliance, security, cost, and management standards.
+- Обычно используется для управления согласованностью ресурсов, соблюдением нормативных требований, безопасностью, стоимостью и стандартами управления.
 
-- Uses JSON format to store evaluation logic and determine whether a resource is compliant or not, and any actions to take for non-compliance (e.g. Audit, AuditIfNotExists, Deny, Modify, DeployIfNotExists).
+- Использует формат JSON для хранения логики оценки и определения того, соответствует ли ресурс требованиям или нет, а также любых действий, которые необходимо предпринять в случае несоответствия (например, аудит, аудит, если не существует, запретить, изменить, развернуть, если не существует).
 
-- Free for use. The exception being Azure Arc connected resources charged per server/month for Azure Policy Guest Configuration usage.
+- Бесплатно для использования. Исключение составляют подключенные ресурсы Azure Arc, взимаемые за сервер в месяц за использование гостевой конфигурации политики Azure.
 
-### Hands-On
+### Практика
 
-I have gone out and I have purchased www.90DaysOfDevOps.com and I would like to add this domain to my Azure Active Directory portal, [Add your custom domain name using the Azure Active Directory Portal](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/add-custom-domain)
+Я купил домен и хотел бы добавить этот на свой портал Azure Active Directory, [Add your custom domain name using the Azure Active Directory Portal](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/add-custom-domain)
 
 ![](../images/Day30_Cloud9.png?v1)
 
-With that now we can create a new user on our new Active Directory Domain. 
+Теперь мы можем создать нового пользователя в нашем новом домене Active Directory.
 
 ![](../images/Day30_Cloud10.png?v1)
 
-Now we want to create a group for all of our new 90DaysOfDevOps users in one group. We can create a group as per the below, notice that I am using "Dynamic User" this means Azure AD will query user accounts and add them dynamically vs assigned which is where you manually add the user to your group. 
+Теперь мы хотим создать группу для всех наших новых пользователей 90DaysOfDevOps в одной группе. Мы можем создать группу, как показано ниже, обратите внимание, что я использую «Динамический пользователь», это означает, что Azure AD будет запрашивать учетные записи пользователей и добавлять их динамически по сравнению с назначенными, когда вы вручную добавляете пользователя в свою группу.
 
 ![](../images/Day30_Cloud11.png?v1)
 
-There are lots of options when it comes to creating your query, my plan is to simply find the principal name and make sure that the name contains @90DaysOfDevOps.com. 
+Существует множество вариантов создания вашего запроса, мой план состоит в том, чтобы просто найти основное имя и убедиться, что оно содержит мой запрос.
 
 ![](../images/Day30_Cloud12.png?v1)
 
-Now because we have created our user account already for michael.cade@90DaysOfDevOps.com we can validate the rules are working. For comparison I have also added another account I have associated to another domain here and you can see that because of this rule our user will not land in this group.  
+Теперь, поскольку мы уже создали нашу учетную запись пользователя, мы можем проверить, работают ли правила. Для сравнения я также добавил здесь еще одну учетную запись, связанную с другим доменом, и вы можете видеть, что из-за этого правила наш пользователь не попадет в эту группу.
 
 ![](../images/Day30_Cloud13.png?v1)
 
-I have since added a new user1@90DaysOfDevOps.com and if we go and check the group we can see our members. 
+С тех пор я добавил нового пользователя, и если мы пойдем и проверим группу, мы увидим наших участников.
 
 ![](../images/Day30_Cloud14.png?v1)
 
-If we have this requirement x100 then we are not going to want to do this all in the console we are going to want to take advantage of either bulk options to create, invite, delete users or you are going to want to look into PowerShell to achieve this automated approach to scale. 
+Если у нас есть это требование x100, то мы не собираемся делать все это в консоли, мы собираемся воспользоваться либо массовыми параметрами для создания, приглашения, удаления пользователей, либо вы захотите изучить [PowerShell](https://docs.microsoft.com/ru-ru/powershell/) для достичь этого автоматизированного подхода к масштабированию.
 
-Now we can go to our Resource Group and specify that on the 90DaysOfDevOps resource group we want the owner to be the group we just created. 
+Теперь мы можем перейти к нашей группе ресурсов и указать, что в группе ресурсов 90DaysOfDevOps мы хотим, чтобы владельцем была группа, которую мы только что создали.
 
 ![](../images/Day30_Cloud15.png?v1)
 
-We can equally go in here and deny assignments access to our resource group as well. 
+Мы также можем войти сюда и запретить доступ назначений к нашей группе ресурсов.
 
-Now if we login to the Azure Portal with our new user account, you can see that we only have access to our 90DaysOfDevOps resource group and not the others seen in previous pictures because we do not have the access. 
+Теперь, если мы войдем на портал Azure с нашей новой учетной записью пользователя, вы увидите, что у нас есть доступ только к нашей группе ресурсов 90DaysOfDevOps, а не к другим, показанным на предыдущих рисунках, потому что у нас нет доступа.
 
 ![](../images/Day30_Cloud16.png?v1)
 
-The above is great if this is a user that has access to resources inside of your Azure portal but not every user needs to be aware of the portal, but in order to check access we can use the [Apps Portal](https://myapps.microsoft.com/) This is a single sign on portal for us to test. 
+Вышеприведенное замечательно, если это пользователь, имеющий доступ к ресурсам внутри вашего портала Azure, но не каждый пользователь должен знать о портале, но для проверки доступа мы можем использовать [Портал приложений] (https:// myapps.microsoft.com/) Это портал единого входа, который мы тестируем.
 
 ![](../images/Day30_Cloud17.png?v1)
 
-You are able to customise this portal with your own branding and this might be something we come back to later on. 
+Вы можете настроить этот портал под своим собственным брендом, и мы, возможно, вернемся к этому позже.
 
-## Ресурсы 
+## Ресурсы
 
 - [Hybrid Cloud and MultiCloud](https://www.youtube.com/watch?v=qkj5W98Xdvw)
 - [Microsoft Azure Fundamentals](https://www.youtube.com/watch?v=NKEFWyqJ5XA&list=WL&index=130&t=12s)
 - [Google Cloud Digital Leader Certification Course](https://www.youtube.com/watch?v=UGRDM86MBIQ&list=WL&index=131&t=10s)
 - [AWS Basics for Beginners - Full Course](https://www.youtube.com/watch?v=ulprqHHWlng&t=5352s)
-
-See you on [Day 31](../day31)
