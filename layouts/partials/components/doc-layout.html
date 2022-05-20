@@ -44,7 +44,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             {{/* highlight.js */}}
             {{- if eq .Site.Params.highlight.handler "highlightjs" }}
-            hljs.highlightAll();
+                hljs.highlightAll();
             {{- end }}
             changeSidebarHeight();
             switchDocToc();
