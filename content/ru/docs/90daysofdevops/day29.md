@@ -40,7 +40,7 @@ id: 1048705
 
 Я связал интерактивную карту выше, но мы можем видеть изображение под широтой регионов, предлагаемых на платформе Microsoft Azure по всему миру.
 ![](../images/Day29_Cloud2.png?v1)
-_image taken from [Microsoft Docs - 01/05/2021](https://docs.microsoft.com/en-us/azure/networking/microsoft-global-network)_
+_image taken from [Microsoft Docs - 01/05/2021](https://docs.microsoft.com/ru-ru/azure/networking/microsoft-global-network)_
 
 Вы также увидите несколько sovereign облаков, что означает, что они не связаны или не могут взаимодействовать с другими регионами, например, они будут связаны с правительствами, такими как «AzureUSGovernment», а также «AzureChinaCloud» и другими.
 
@@ -54,7 +54,7 @@ _image taken from [Microsoft Docs - 01/05/2021](https://docs.microsoft.com/en-us
 
 ![](../images/Day29_Cloud3.png?v1)
 
-Документация Microsoft очень хороша, и вы можете прочитать больше о [Регионах и зонах доступности](https://docs.microsoft.com/en-us/azure/availability-zones/az-overview) здесь.
+В Microsoft хорошая документация, и вы можете прочитать больше о [Регионах и зонах доступности](https://docs.microsoft.com/ru-ru/azure/availability-zones/az-overview) здесь.
 
 ### Подписки
 

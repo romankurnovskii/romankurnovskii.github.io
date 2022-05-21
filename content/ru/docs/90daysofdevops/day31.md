@@ -1,6 +1,6 @@
 ---
-title: 31 - Microsoft Azure Compute Models
-description: Microsoft Azure Compute Models
+title: 31 - Microsoft Azure Среда выполнения приложений
+description: Microsoft Azure Среда выполнения приложений
 toc: true
 authors:
 tags: [devops]
@@ -11,102 +11,94 @@ lastmod: "2022-05-21"
 featuredImage:
 draft: false
 id: 1049040
+todo: сделать линк какпоявится статься - Инфраструктура как код
 ---
-## Microsoft Azure Compute Models
+Вслед за вчерашним обзором основ моделей безопасности в Microsoft Azure, сегодня мы собираемся изучить различные службы вычислений, доступные нам в Azure.
 
-Following on from covering the basics around security models within Microsoft Azure yesterday today we are going to look into the various compute services available to us in Azure. 
+### Параметры службы доступности
 
-### Service Availability Options 
+Этот раздел мне близок, учитывая мою роль в управлении данными. Как и в случае с локальной средой, очень важно обеспечить доступность ваших служб.
 
-This section is close to my heart given my role within Data Management. As with on-premises, it is critical to ensure the availability of your services. 
+- Высокая доступность (Защита в пределах региона)
+- Аварийное восстановление (Защита между регионами)
+- Резервное копирование (Восстановление с момента времени)
 
-- High Availability (Protection within a region)
-- Disaster Recovery (Protection between regions)
-- Backup (Recovery from a point in time)
+Microsoft развертывает несколько регионов в пределах геополитических границ.
 
-Microsoft deploys multiple regions within a geopolitical boundary. 
+Две концепции Azure для доступности услуг.
 
-Two concepts with Azure for Service Availability. Both sets and zones. 
+Наборы доступности (виртуальных машин)  — обеспечивают отказоустойчивость в центре обработки данных.
 
-Availability Sets - Provide resiliency within a datacenter 
+Зоны доступности — обеспечивают отказоустойчивость между центрами обработки данных в пределах региона.
 
-Availability Zones - Provide resiliency between data centres within a region.  
+### Виртуальные машины
 
-### Virtual Machines 
+- Предоставляет виртуальные машины различных серий и размеров с различными возможностями (иногда огромными) [Размеры виртуальных машин в Azure](https://docs.microsoft.com/ru-ru/azure/virtual-machines/sizes)
+- Существует множество различных вариантов и фокусов для виртуальных машин, от высокопроизводительных, с малой задержкой до виртуальных машин с большим объемом памяти.
+- У нас также есть расширяемый тип ВМ, который можно найти в серии B. Это отлично подходит для рабочих нагрузок, где у вас могут быть низкие требования к ЦП по большей части, но требуется, чтобы, возможно, один раз в месяц требовалась всплеск производительности.
+- Виртуальные машины размещаются в виртуальной сети, которая может обеспечить подключение к любой сети.
+- Поддержка гостевых ОС Windows и Linux.
+- Существуют также ядра, настроенные для Azure, если речь идет о конкретных дистрибутивах Linux. [Ядра, настроенные Azure](https://docs.microsoft.com/ru-ru/azure/virtual-machines/linux/endorsed-distros#azure-tuned-kernels)
 
-Most likely the starting point for anyone in the public cloud. 
+### Шаблоны
+В Microsoft Azure шаблоны исполнений можно конфигурировать с помощью JSON.
 
-- Provides a VM from a variety of series and sizes with different capabilities (Sometimes an overwhelming) [Sizes for Virtual machines in Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/sizes)
-- There are many different options and focuses for VMs from high performance, low latency to high memory option VMs. 
-- We also have a burstable VM type which can be found under the B-Series. This is great for workloads where you can have a low CPU requirement for the most part but require that maybe once a month performance spike requirement. 
--  Virtual Machines are placed on a virtual network that can provide connectivity to any network. 
--  Windows and Linux guest OS support. 
--  There are also Azure-tuned kernels when it comes to specific Linux distributions. [Azure Tuned Kernals](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/endorsed-distros#azure-tuned-kernels)
+Существует несколько различных порталов и консолей управления, которые мы можем использовать для создания наших ресурсов. Предпочтительнее будет через шаблоны JSON.
 
-### Templating 
+Идемпотентные развертывания в инкрементном или полном режиме — т.е. повторяемое желаемое состояние.
 
-I have mentioned before that everything behind or underneath Microsoft Azure is JSON. 
+Существует большой выбор шаблонов, которые могут экспортировать развернутые определения ресурсов. Мне нравится думать об этой функции шаблонов как о чем-то вроде AWS CloudFormation или, возможно, о Terraform для мультиоблачного варианта. Подробнее о Terraform мы расскажем в разделе «Инфраструктура как код».
 
-There are several different management portals and consoles we can use to create our resources the preferred route is going to be via JSON templates. 
+### Масштабирование
 
-Idempotent deployments in incremental or complete mode - i.e repeatable desired state. 
+Автоматическое масштабирование — это крупная функция общедоступного облака, позволяющая сократить ресурсы, которые вы не используете, или активировать, когда они вам нужны.
 
-There is a large selection of templates that can export deployed resource definitions. I like to think about this templating feature to something like AWS CloudFormation or could be Terraform for a multi-cloud option. We will cover Terraform more in the Infrastructure as code section. 
+В Azure у нас есть так называемые масштабируемые наборы виртуальных машин (VMSS) для IaaS. Это позволяет автоматически создавать и масштабировать изображение золотого стандарта на основе расписаний и показателей.
 
-### Scaling
+Это идеально подходит для обновления окон, чтобы вы могли обновлять свои образы и развертывать их с наименьшими последствиями.
 
-Automatic scaling is a large feature of the Public Cloud, being able to spin down resources you are not using or spinning up when you need them. 
+В другие службы, такие как службы приложений Azure, встроено автоматическое масштабирование.
 
-In Azure, we have something called Virtual Machine Scale Sets (VMSS) for IaaS. This enables the automatic creation and scale from a gold standard image based on schedules and metrics. 
+### Контейнеры
 
-This is ideal for updating windows so that you can update your images and roll those out with the least impact. 
+Мы не рассмотрели контейнеры как пример использования и то, что и как они могут и должны быть необходимы в нашем учебном путешествии по DevOps, но мы должны упомянуть, что у Azure есть некоторые конкретные службы, ориентированные на контейнеры, которые следует упомянуть.
 
-Other services such as Azure App Services have auto-scaling built-in. 
+[Служба Azure Kubernetes](https://azure.microsoft.com/ru-ru/services/kubernetes-service/) (AKS) (Azure Kubernetes Service) — предоставляет управляемое решение Kubernetes.
 
-### Containers 
+Экземпляры контейнеров Azure — контейнеры как услуга с посекундной оплатой. Запустите образ и интегрируйте его с вашей виртуальной сетью, не нуждаясь в оркестровке контейнеров.
 
-We have not covered containers as a use case and what and how they can and should be needed in our DevOps learning journey but we need to mention that Azure have some specific container focused services to mention. 
+Service Fabric — имеет множество возможностей, но включает оркестрацию для экземпляров контейнеров.
 
-Azure Kubernetes Service (AKS) - Provides a managed Kubernetes solution, no need to worry about the control plane or management of the underpinning cluster management. More on Kubernetes also later on. 
+Azure также имеет реестр контейнеров, который предоставляет частный реестр для образов Docker, диаграмм [Helm](https://helm.sh/), [артефактов Open Container Initiative (OCI)](https://docs.microsoft.com/ru-ru/azure/container-registry/container-registry-oci-artifacts) и образов. Подробнее об этом снова, когда мы дойдем до раздела контейнеров.
 
-Azure Container Instances - Containers as a service with Per-Second Billing. Run an image and integrate with your virtual network, no need for Container Orchestration. 
+Многие службы контейнеров действительно могут использовать контейнеры "под капотом", но это абстрагируется от наших требований к управлению.
 
-Service Fabric - Has many capabilities but includes orchestration for container instances. 
+### Службы приложений
 
-Azure also has the Container Registry which provides a private registry for Docker Images, Helm charts, OCI Artifacts and images. More on this again when we reach the containers section. 
+- Службы приложений Azure предоставляют решение для размещения приложений, которое обеспечивает простой способ установки служб.
+- Автоматическое развертывание и масштабирование.
+- Поддерживает решения на базе Windows и Linux.
+- Службы выполняются в плане службы приложений, который имеет тип и размер.
+- Количество различных сервисов, включая веб-приложения, приложения API и мобильные приложения.
+- Поддержка слотов развертывания для надежного тестирования и продвижения.
 
-We should also mention that a lot of the container services may indeed also leverage containers under the hood but this is abstracted away from your requirement to manage. 
+### Бессерверные вычисления
 
-These mentioned container focused services we also find similar services in all other public clouds. 
+Цель бессерверных вычислений заключается в том, что мы платим только за время выполнения функции, и нам не нужно постоянно запускать виртуальные машины или приложения PaaS. Мы просто запускаем нашу функцию, когда она нам нужна, а затем она исчезает.
 
-### Application Services 
+Функции Azure — предоставляет бессерверный код. Если мы вернемся к нашему первому взгляду на общедоступное облако, вы вспомните уровень абстракции управления, с бессерверными функциями вы будете управлять только кодом.
 
-- Azure Application Services provides an application hosting solution that provides an easy method to establish services. 
-- Automatic Deployment and Scaling. 
-- Supports Windows & Linux based solutions. 
-- Services run in an App Service Plan which has a type and size. 
-- Number of different services including web apps, API apps and mobile apps. 
-- Support for Deployment slots for reliable testing and promotion. 
+У меня есть план, ориентированный на события в больших масштабах, когда я получу здесь немного практики, надеюсь, позже.
 
-### Serverless Computing 
+Обеспечивает входную и выходную привязку ко многим Azure и сторонним службам.
 
-Serverless for me is an exciting next step that I am extremely interested in learning more about. 
+Поддерживает множество различных языков программирования. (C#, NodeJS, Python, PHP, bash, Golang, Rust или любой исполняемый файл)
 
-The goal with serverless is that we only pay for the runtime of the function and do not have to have running virtual machines or PaaS applications running all the time. We simply run our function when we need it and then it goes away. 
+Сетка событий Azure позволяет запускать логику из служб и событий.
 
-Azure Functions - Provides serverless code. If we remember back to our first look into the public cloud you will remember the abstraction layer of management, with serverless functions you are only going to be managing the code. 
+Приложение Azure Logic обеспечивает графический рабочий процесс и интеграцию.
 
-Event-Driven with massive scale, I have a plan to build something when I get some hands-on here hopefully later on. 
-
-Provides input and output binding to many Azure and 3rd Party Services. 
-
-Supports many different programming languages. (C#, NodeJS, Python, PHP, batch, bash, Golang and Rust. Or any Executable)
-
-Azure Event Grid enables logic to be triggered from services and events. 
-
-Azure Logic App provides a graphical-based workflow and integration. 
-
-We can also look at Azure Batch which can run large-scale jobs on both Windows and Linux nodes with consistent management & scheduling. 
+Мы также можем рассмотреть пакетную службу Azure, которая может выполнять крупномасштабные задания на узлах Windows и Linux с согласованным управлением и планированием.
 
 ## Ресурсы 
 
@@ -114,6 +106,4 @@ We can also look at Azure Batch which can run large-scale jobs on both Windows a
 - [Microsoft Azure Fundamentals](https://www.youtube.com/watch?v=NKEFWyqJ5XA&list=WL&index=130&t=12s)
 - [Google Cloud Digital Leader Certification Course](https://www.youtube.com/watch?v=UGRDM86MBIQ&list=WL&index=131&t=10s)
 - [AWS Basics for Beginners - Full Course](https://www.youtube.com/watch?v=ulprqHHWlng&t=5352s)
-
-See you on [Day 32](../day32) 
 

@@ -197,7 +197,7 @@ omz update
 
 Update `.zprofile`. Еhe changes will take effect after restarting the terminal
 
-```
+```bash
 vi ~/.zprofile
 ```
 
@@ -208,19 +208,19 @@ Add script to zprofile that updates everything:
 
 We can execute this command on strartup, but i prefer handle it. When I kick of `upd` command in terminal, it will update everythin I need:
 
-```
+```bash
 alias upd='brew update; brew upgrade; brew cu -a --cleanup -y -v; brew cleanup; softwareupdate -i -a; i'
 ```
 
 Add aliases to latest versions pip & python
 
-```
+```bash
 alias pip=pip3
 alias python=python3
 ```
 
 Final view of .zprofile
-```
+```bash
 ...
 alias pip=pip3
 alias python=python3

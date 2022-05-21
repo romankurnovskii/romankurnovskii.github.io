@@ -17,11 +17,11 @@ experiences:
     writeup: >
       Погружение в IT среду.
 
-      - Учеба <a href="https://en.tel-ran.com/" target="_blank">Tel-Ran</a>
+      - Курсы <a href="https://en.tel-ran.com/" target="_blank">Tel-Ran</a>
 
-      - Учеба <a href="https://rs.school/" target="_blank">RS School (Epam)</a>
+      - Курсы <a href="https://rs.school/" target="_blank">RS School (Epam)</a>
 
-      - Учеба <a href="https://gb.ru/" target="_blank">GeekBrains</a>
+      - Курсы <a href="https://gb.ru/" target="_blank">GeekBrains</a>
 
       - <a href="/posts/diploma/">Промежуточные итоги</a>
 

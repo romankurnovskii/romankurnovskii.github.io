@@ -1,6 +1,6 @@
 ---
-title: 32 - Microsoft Azure Storage Models
-description: Microsoft Azure Storage Models
+title: 32 - Модели хранилища Microsoft Azure
+description: Модели хранилища Microsoft Azure
 toc: true
 authors:
 tags: [devops]
@@ -12,8 +12,6 @@ featuredImage:
 draft: false
 id: 1048775
 ---
-## Microsoft Azure Storage Models
-
 ### Storage Services
 
 - Azure storage services are provided by storage accounts. 
@@ -34,7 +32,7 @@ We can also choose the level of redundancy we would like against our storage acc
 
 Even the default redundancy option gives us 3 copies of our data. 
 
-[Azure Storage Redundancy](https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy)
+[Azure Storage Redundancy](https://docs.microsoft.com/ru-ru/azure/storage/common/storage-redundancy)
 
 Summary of the above link down below: 
 
