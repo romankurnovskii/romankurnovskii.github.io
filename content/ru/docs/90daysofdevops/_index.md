@@ -8,14 +8,15 @@ authors:
 tags:
 categories:
 series:
+featuredImage: docs/90daysofdevops/images/logo.png
 date: "2022-04-21"
 lastmod: "2022-04-21"
 draft: false
 ---
 
-<p align="center">
+<!-- <p align="center">
  <img src="./images/logo.png?raw=true" alt="90DaysOfDevOps Logo" width="50%" height="50%" />
-</p>
+</p> -->
 
 Оригинальный репозиторий на <a href="https://github.com/MichaelCade/90DaysOfDevOps">GitHub</a>. Автор версии на английском - **Michael Cade**
 Цель данного цикла статей - быстрый обзор и прохождение по всему тьюториалу по DevOps.

@@ -63,6 +63,7 @@ brew install --cask \
   yandex-disk \
   zoom \
   mongodb-compass \
+  obs
 ```
 
 Install terminal applications (read more about these in Terminal Applications):
@@ -99,8 +100,12 @@ brew install \
   - use as default for video files
 * [Maccy](https://maccy.app/) (clipboard manager)
   - enable "Launch at Login"
-
-## Terminal Applications
+* [OBS](https://obsproject.com/) (for video recording and live streaming)
+  - for Native Mac Screen recorder
+    - Base (Canvas) 2880x1800 (Ratio: 16:10)
+    - Output 1728x1080
+![](images/obs-base-canvas.png)
+ ## Terminal Applications
 
 - [nvm](https://github.com/nvm-sh/nvm) (node version manager)
 
