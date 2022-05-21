@@ -145,7 +145,7 @@ When you select to use the cloud shell it is spinning up a machine, these machin
   - Cloud Shell persists $HOME using a 5-GB image held in your file share
   - Permissions are set as a regular Linux user in Bash
 
-The above was copied from [Cloud Shell Overview](https://docs.microsoft.com/en-us/azure/cloud-shell/overview)
+The above was copied from [Cloud Shell Overview](https://docs.microsoft.com/ru-ru/azure/cloud-shell/overview)
 
 ### Azure CLI 
 

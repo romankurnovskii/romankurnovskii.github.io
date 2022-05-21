@@ -42,7 +42,7 @@ Azure AD Connect также позволяет вам видеть не толь
 
 Ниже приведено видео, в котором подробно рассказывается о сквозной аутентификации.
 
-[User sign-in with Azure Active Directory Pass-through Authentication](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-pta)
+[User sign-in with Azure Active Directory Pass-through Authentication](https://docs.microsoft.com/ru-ru/azure/active-directory/hybrid/how-to-connect-pta)
 
 ![](../images/Day30_Cloud2.png?v1)
 
@@ -127,7 +127,7 @@ Azure AD может выступать в качестве посредника 
 
 ### Практика
 
-Я купил домен и хотел бы добавить этот на свой портал Azure Active Directory, [Add your custom domain name using the Azure Active Directory Portal](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/add-custom-domain)
+Я купил домен и хотел бы добавить этот на свой портал Azure Active Directory, [Add your custom domain name using the Azure Active Directory Portal](https://docs.microsoft.com/ru-ru/azure/active-directory/fundamentals/add-custom-domain)
 
 ![](../images/Day30_Cloud9.png?v1)
 

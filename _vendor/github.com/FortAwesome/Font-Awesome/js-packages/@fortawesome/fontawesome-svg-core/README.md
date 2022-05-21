@@ -6,13 +6,13 @@
 
 ## Installation
 
-```
+```bash
 $ npm i --save @fortawesome/fontawesome-svg-core
 ```
 
 Or
 
-```
+```bash
 $ yarn add @fortawesome/fontawesome-svg-core
 ```
 
