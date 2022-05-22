@@ -154,13 +154,13 @@ Azure Cosmos DB — это реализация NoSQL, не зависящая �
 
 ![](../images/Day32_Cloud9.png?v1)
 
-Доступны различные модели согласованности, основанные на [теореме CAP] (https://en.wikipedia.org/wiki/CAP_theorem).
+Доступны различные модели согласованности, основанные на [теореме CAP](https://en.wikipedia.org/wiki/CAP_theorem).
 
 ![](../images/Day32_Cloud8.png?v1)
 
 ### Кэширование
 
-Не вдаваясь в подробности о системах кэширования, таких как Redis, я хотел добавить, что у Microsoft Azure есть служба под названием Azure Cache for Redis.
+Не вдаваясь в подробности о системах кэширования, таких как Redis, я хотел добавить, что у Microsoft Azure есть служба под названием [Azure Cache for Redis](https://azure.microsoft.com/ru-ru/services/cache/).
 
 Кэш Azure для Redis предоставляет хранилище данных в памяти на основе программного обеспечения Redis.
 
@@ -182,4 +182,3 @@ Azure Cosmos DB — это реализация NoSQL, не зависящая �
 - [Hybrid Cloud and MultiCloud](https://www.youtube.com/watch?v=qkj5W98Xdvw)
 - [Microsoft Azure Fundamentals](https://www.youtube.com/watch?v=NKEFWyqJ5XA&list=WL&index=130&t=12s)
 - [Google Cloud Digital Leader Certification Course](https://www.youtube.com/watch?v=UGRDM86MBIQ&list=WL&index=131&t=10s)
-- [AWS Basics for Beginners - Full Course](https://www.youtube.com/watch?v=ulprqHHWlng&t=5352s)
