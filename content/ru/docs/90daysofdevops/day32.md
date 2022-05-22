@@ -12,174 +12,170 @@ featuredImage:
 draft: false
 id: 1048775
 ---
-### Storage Services
+### Службы хранилища
 
-- Azure storage services are provided by storage accounts. 
-- Storage accounts are primarily accessed via REST API. 
-- A storage account must have a unique name that is part of a DNS name `<Storage Account name>.core.windows.net`
-- Various replication and encryption options.
-- Sits within a resource group
+- Службы хранилища Azure предоставляются учетными записями хранения.
+- Доступ к учетным записям хранения в основном осуществляется через REST API.
+- Учетная запись хранения должна иметь уникальное имя, являющееся частью DNS-имени `<Storage Account name>.core.windows.net`.
+- Различные варианты репликации и шифрования.
+- Находится в группе ресурсов
 
-We can create our storage group by simply searching for Storage Group in the search bar at the top of the Azure Portal. 
+Мы можем создать нашу группу хранения, просто выполнив поиск группы хранения в строке поиска в верхней части портала Azure.
 
 ![](../images/Day32_Cloud1.png?v1)
-
-We can then run through the steps to create our storage account remembering that this name needs to be unique and it also needs to be all lower case, no spaces but can include numbers. 
+Затем мы можем выполнить шаги по созданию нашей учетной записи хранения, помня, что это имя должно быть уникальным, а также оно должно быть написано строчными буквами, без пробелов, но может включать цифры.
 
 ![](../images/Day32_Cloud2.png?v1)
+Мы также можем выбрать уровень избыточности, который мы хотели бы использовать для нашей учетной записи хранения и всего, что мы здесь храним. Чем дальше по списку, тем дороже вариант, но также и распространение ваших данных.
 
-We can also choose the level of redundancy we would like against our storage account and anything we store within here. The further down the list the more expensive option but also the spread of your data. 
-
-Even the default redundancy option gives us 3 copies of our data. 
+Даже опция избыточности по умолчанию дает нам 3 копии наших данных.
 
 [Azure Storage Redundancy](https://docs.microsoft.com/ru-ru/azure/storage/common/storage-redundancy)
 
-Summary of the above link down below: 
+Концепции из ссылки выше:
 
-- **Locally-redundant storage** - replicates your data three times within a single data centre in the primary region.
+- **Локально-избыточное хранилище** — трижды реплицирует ваши данные в пределах одного центра обработки данных в основном регионе.
   
-- **Geo-redundant storage** - copies your data synchronously three times within a single physical location in the primary region using LRS.
+- **Геоизбыточное хранилище** — трижды синхронно копирует ваши данные в одном физическом расположении в основном регионе с помощью LRS.
   
-- **Zone-redundant storage** - replicates your Azure Storage data synchronously across three Azure availability zones in the primary region.
+- **Хранилище с избыточностью в пределах зоны** — синхронно реплицирует данные службы хранилища Azure в трех зонах доступности Azure в основном регионе.
   
-- **Geo-zone-redundant storage** - combines the high availability provided by redundancy across availability zones with protection from regional outages provided by geo-replication. Data in a GZRS storage account is copied across three Azure availability zones in the primary region and is also replicated to a second geographic region for protection from regional disasters.
+- **Хранилище с избыточностью в геозонах** — сочетает в себе высокую доступность, обеспечиваемую избыточностью в зонах доступности, с защитой от региональных сбоев, обеспечиваемой георепликацией. Данные в учетной записи хранения GZRS копируются в три зоны доступности Azure в основном регионе, а также реплицируются во второй географический регион для защиты от региональных аварий.
 
 ![](../images/Day32_Cloud3.png?v1)
 
-Just moving back up to performance options. We have Standard and Premium to choose from. We have chosen Standard in our walkthrough but premium gives you some specific options. 
-
+Просто возвращаюсь к параметрам производительности. У нас есть Стандарт и Премиум на выбор. В нашем пошаговом руководстве мы выбрали «Стандартный», но «Премиум» дает вам некоторые специфические опции.
 ![](../images/Day32_Cloud4.png?v1)
 
-Then in the drop-down, you can see we have these three options to choose from. 
-
+Затем в раскрывающемся списке вы можете увидеть, что у нас есть эти три варианта на выбор.
 ![](../images/Day32_Cloud5.png?v1)
 
-There are lots more advanced options available for your storage account but for now, we do not need to get into these areas. These options are around encryption and data protection. 
+Для учетной записи хранения доступно множество дополнительных параметров, но пока нам не нужно вдаваться в это. Эти параметры связаны с шифрованием и защитой данных.
 
-### Managed Disks 
+### Управляемые диски
 
-Storage access can be achieved in a few different ways. 
+Доступ к хранилищу можно получить несколькими способами.
 
-Authenticated access via: 
-- A shared key for full control. 
-- Shared Access Signature for delegated, granular access.
-- Azure Active Directory (Where Available)
+Аутентифицированный доступ через:
+- Общий ключ для полного контроля.
+- Shared Access Signature для делегированного, детализированного доступа.
+- Azure Active Directory (где доступно)
 
-Public Access: 
-- Public access can also be granted to enable anonymous access including via HTTP. 
-- An example of this could be to host basic content and files in a block blob so a browser can view and download this data. 
+Публичный доступ:
+- Общий доступ также может быть предоставлен для включения анонимного доступа, в том числе через HTTP.
+— Примером этого может быть размещение базового контента и файлов в блочном BLOB-объекте, чтобы браузер мог просматривать и скачивать эти данные.
 
-If you are accessing your storage from another Azure service, traffic stays within Azure. 
+Если вы получаете доступ к своему хранилищу из другой службы Azure, трафик остается в Azure.
 
-When it comes to storage performance we have two different types: 
-- **Standard** - Maximum number of IOPS
-- **Premium** - Guaranteed number of IOPS
+Когда дело доходит до производительности хранилища, у нас есть два разных типа:
+- **Standard** - Максимальное количество операций ввода-вывода в секунду
+- **Premium** - Гарантированное количество операций ввода-вывода в секунду
 
-There is also a difference between unmanaged and managed disks to consider when choosing the right storage for the task you have. 
+Существует также разница между неуправляемыми и управляемыми дисками, которую следует учитывать при выборе правильного хранилища для поставленной задачи.
 
-### Virtual Machine Storage 
+### Хранилище виртуальной машины
 
-- Virtual Machine OS disks are typically stored on persistent storage. 
-- Some stateless workloads do not require persistent storage and reduced latency is a larger benefit. 
-- There are VMs that support ephemeral OS managed disks that are created on the node-local storage. 
-  - These can also be used with VM Scale Sets.
+- Диски ОС виртуальной машины обычно хранятся в постоянном хранилище.
+- Некоторым рабочим нагрузкам без сохранения состояния не требуется постоянное хранилище, и уменьшение задержки является большим преимуществом.
+- Существуют виртуальные машины, поддерживающие эфемерные управляемые диски ОС, созданные в локальном хранилище узла.
+   - Их также можно использовать с масштабируемыми наборами виртуальных машин.
 
-Managed Disks are durable block storage that can be used with Azure Virtual Machines. You can have Ultra Disk Storage, Premium SSD, Standard SSD, Standard HDD. They also carry some characteristics. 
+Управляемые диски — это надежное блочное хранилище, которое можно использовать с виртуальными машинами Azure. Вы можете иметь Ultra Disk Storage, Premium SSD, Standard SSD, Standard HDD. Они также несут некоторые характеристики.
 
-- Snapshot and Image support 
-- Simple movement between SKUs 
-- Better availability when combined with availability sets 
-- Billed based on disk size not on consumed storage.  
+- Поддержка снимков и изображений
+- Простое перемещение между SKU
+- Лучшая доступность в сочетании с наборами доступности
+- Плата взимается в зависимости от размера диска, а не от использованного хранилища.
 
-## Archive Storage 
+## Хранилище архивов
 
-- **Cool Tier** - A cool tier of storage is available to block and append BLOBs. 
-  - Lower Storage cost
-  - Higher transaction cost.  
-- **Archive Tier** - Archive storage is available for block BLOBs. 
-  - This is configured on a per-BLOB basis. 
-  - Cheaper cost, Longer Data retrieval latency. 
-  - Same Data Durability as regular Azure Storage. 
-  - Custom Data tiering can be enabled as required.  
+- **Cool Tier** — доступен классный уровень хранилища для блокировки и добавления больших двоичных объектов.
+   - Более низкая стоимость хранения
+   - Более высокая стоимость сделки.
+- **Archive Tier*** — Архивное хранилище доступно для блочных больших двоичных объектов.
+   - Это настраивается для каждого BLOB-объекта.
+   - Более низкая стоимость, более длительная задержка поиска данных.
+   - Такая же надежность данных, как и в обычном хранилище Azure.
+   - Пользовательские уровни данных могут быть включены по мере необходимости.
 
-### File Sharing 
+### Общий доступ к файлам
 
-From the above creation of our storage account, we can now create file shares.
+Из вышеописанного создания нашей учетной записи хранения теперь мы можем создавать общие файловые ресурсы.
 
 ![](../images/Day32_Cloud6.png?v1)
 
-This will provide SMB2.1 and 3.0 file shares in Azure. 
+Это обеспечит файловые ресурсы SMB2.1 и 3.0 в Azure.
 
-Useable within the Azure and externally via SMB3 and port 445 open to the internet. 
+Можно использовать в Azure и извне через SMB3 и порт 445, открытый для Интернета.
 
-Provides shared file storage in Azure. 
+Предоставляет общее хранилище файлов в Azure.
 
-Can be mapped using standard SMB clients in addition to REST API. 
+Можно сопоставить с помощью стандартных клиентов SMB в дополнение к REST API.
 
-You might also notice [Azure NetApp Files](https://vzilla.co.uk/vzilla-blog/azure-netapp-files-how) (SMB and NFS) 
+Вы также можете почитать [Azure NetApp Files](https://vzilla.co.uk/vzilla-blog/azure-netapp-files-how) (SMB и NFS)
 
-### Caching & Media Services 
+### Службы кэширования и мультимедиа
 
-The Azure Content Delivery Network provides a cache of static web content with locations throughout the world. 
+Сеть доставки содержимого Azure предоставляет кэш статического веб-содержимого с местоположениями по всему миру.
 
-Azure Media Services, provides media transcoding technologies in addition to playback services. 
+Службы мультимедиа Azure предоставляют технологии транскодирования мультимедиа в дополнение к службам воспроизведения.
 
-## Microsoft Azure Database Models
+## Модели баз данных Microsoft Azure
 
-Back on [Day 28](../day28), we covered various service options. One of these was PaaS (Platform as a Service) where you abstract a large amount of the infrastructure and operating system away and you are left with the control of the application or in this case the database models. 
+Еще в [День 28](../day28) мы рассмотрели различные варианты обслуживания. Одним из них была PaaS (Platform as a Service) (платформа как услуга), где вы абстрагируете большую часть инфраструктуры и операционной системы, и вам остается контролировать приложение или, в данном случае, модели базы данных.
 
-### Relational Databases
+### Реляционные базы данных
 
-Azure SQL Database provides a relational database as a service based on Microsoft SQL Server. 
+База данных SQL Azure предоставляет реляционную базу данных как службу на основе Microsoft SQL Server.
 
-This is SQL running the latest SQL branch with database compatibility level available where specific functionality version is required. 
+Это SQL, работающий с последней веткой SQL с доступным уровнем совместимости базы данных, где требуется конкретная версия функциональности.
 
-There are a few options on how this can be configured, we can provide a single database that provides one database in the instance, while an elastic pool enables multiple databases that share a pool of capacity and collectively scale. 
+Есть несколько вариантов того, как это можно настроить: мы можем предоставить единую базу данных, которая предоставляет одну базу данных в экземпляре, в то время как эластичный пул позволяет использовать несколько баз данных, которые совместно используют пул емкости и совместно масштабируются.
 
-These database instances can be accessed like regular SQL instances. 
+Доступ к этим экземплярам базы данных можно получить как к обычным экземплярам SQL.
 
-Additional managed offerings for MySQL, PostgreSQL and MariaDB. 
+Дополнительные управляемые предложения для MySQL, PostgreSQL и MariaDB.
 
 ![](../images/Day32_Cloud7.png?v1)
 
-### NoSQL Solutions 
+### Решения NoSQL
 
-Azure Cosmos DB is a scheme agnostic NoSQL implementation. 
+Azure Cosmos DB — это реализация NoSQL, не зависящая от схемы.
 
-99.99% SLA 
+99,99% SLA
 
-Globally distributed database with single-digit latencies at the 99th percentile anywhere in the world with automatic homing. 
+Глобально распределенная база данных с однозначными задержками на 99-м процентиле в любой точке мира с автоматическим возвратом в исходное положение.
 
-Partition key leveraged for the partitioning/sharding/distribution of data. 
+Ключ раздела, используемый для разделения/разбиения/распределения данных.
 
-Supports various data models (documents, key-value, graph, column-friendly)
+Поддерживает различные модели данных (документы, ключ-значение, график, удобный для столбцов)
 
-Supports various APIs (DocumentDB SQL, MongoDB, Azure Table Storage and Gremlin) 
+Поддерживает различные API (DocumentDB SQL, MongoDB, Azure Table Storage и Gremlin).
 
 ![](../images/Day32_Cloud9.png?v1)
 
-Various consistency models are available based around [CAP theorem](https://en.wikipedia.org/wiki/CAP_theorem). 
+Доступны различные модели согласованности, основанные на [теореме CAP] (https://en.wikipedia.org/wiki/CAP_theorem).
 
 ![](../images/Day32_Cloud8.png?v1)
 
-### Caching 
+### Кэширование
 
-Without getting into the weeds about caching systems such as Redis I wanted to include that Microsoft Azure have their service called Azure Cache for Redis. 
+Не вдаваясь в подробности о системах кэширования, таких как Redis, я хотел добавить, что у Microsoft Azure есть служба под названием Azure Cache for Redis.
 
-Azure Cache for Redis provides an in-memory data store based on the Redis software. 
+Кэш Azure для Redis предоставляет хранилище данных в памяти на основе программного обеспечения Redis.
 
-- It is an implementation of the open-source Redis Cache. 
-    - A hosted, secure Redis cache instance.
-    - Different tiers are available
-    - Application must be updated to leverage the cache. 
-    - Aimed for an application that has high read requirements compared to writes. 
-    - Key-Value store based.  
+- Это реализация Redis Cache с открытым исходным кодом.
+    - Размещенный безопасный экземпляр кэша Redis.
+    - Доступны разные уровни
+    - Приложение должно быть обновлено, чтобы использовать кеш.
+    - Предназначен для приложения, которое имеет высокие требования к чтению по сравнению с записью.
+    - На основе хранилища ключей-значений.
 
 ![](../images/Day32_Cloud10.png?v1)
 
-I appreciate the last few days have been a lot of note-taking and theory on Microsoft Azure but I wanted to cover the building blocks before we get into the hands-on aspects of how these components come together and work. 
+Я ценю, что за последние несколько дней было много заметок и теории о Microsoft Azure, но я хотел охватить строительные блоки, прежде чем мы перейдем к практическим аспектам того, как эти компоненты объединяются и работают.
 
-We have one more bit of theory remaining around networking before we can get some scenario-based deployments of services up and running. We also want to take a look at some of the different ways we can interact with Microsoft Azure vs just using the portal that we have been using so far. 
+У нас есть еще немного теории, связанной с сетью, прежде чем мы сможем запустить и запустить некоторые основанные на сценариях развертывания сервисов. Мы также хотим взглянуть на некоторые различные способы взаимодействия с Microsoft Azure по сравнению с порталом, который мы использовали до сих пор.
 
 ## Ресурсы 
 
@@ -187,5 +183,3 @@ We have one more bit of theory remaining around networking before we can get som
 - [Microsoft Azure Fundamentals](https://www.youtube.com/watch?v=NKEFWyqJ5XA&list=WL&index=130&t=12s)
 - [Google Cloud Digital Leader Certification Course](https://www.youtube.com/watch?v=UGRDM86MBIQ&list=WL&index=131&t=10s)
 - [AWS Basics for Beginners - Full Course](https://www.youtube.com/watch?v=ulprqHHWlng&t=5352s)
-
-See you on [Day 33](../day33) 
