@@ -9,7 +9,7 @@ categories:
 series:
 date: "2022-05-20"
 lastmod: "2022-05-20"
-featuredImage:
+featuredImage: 
 draft: false
 ---
 
