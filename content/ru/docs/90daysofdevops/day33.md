@@ -1,183 +1,186 @@
 ---
-title: '#90DaysOfDevOps - Microsoft Azure Networking Models + Azure Management - Day 33'
-published: false
-description: 90DaysOfDevOps - Microsoft Azure Networking Models + Azure Management
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+title: 33 - Сетевые модели Microsoft Azure + Управление Azure
+description: Сетевые модели Microsoft Azure + Управление Azure
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-05-23"
+lastmod: "2022-05-23"
+featuredImage:
+draft: false
 id: 1048706
 ---
-## Microsoft Azure Networking Models + Azure Management
 
-As if today marks the anniversary of Microsoft Azure and its 12th Birthday! (1st February 2022) Anyway, we are going to cover the networking models within Microsoft Azure and some of the management options for Azure. So far we have only used the Azure portal but we have mentioned other areas that can be used to drive and create our resources within the platform. 
+Мы рассмотрим сетевые модели в Microsoft Azure и некоторые варианты управления для Azure. До сих пор мы использовали только платформу Azure, но упомянули и другие области, которые можно использовать для управления и создания наших ресурсов на платформе.
 
-## Azure Network Models 
+## Сетевые модели Azure
 
-### Virtual Networks 
+### Виртуальные сети
 
-- A virtual network is a construct created in Azure. 
-- A virtual network has one or more IP ranges assigned to it.
-- Virtual networks live within a subscription within a region.
-- Virtual subnets are created in the virtual network to break up the network range. 
-- Virtual machines are placed in virtual subnets. 
-- All virtual machines within a virtual network can communicate.
-- 65,536 Private IPs per Virtual Network.
-- Only pay for egress traffic from a region. (Data leaving the region)
-- IPv4 & IPv6 Supported. 
-  - IPv6 for public-facing and within virtual networks.
+- Виртуальная сеть — это конструкция, созданная в Azure.
+- Виртуальной сети назначен один или несколько диапазонов IP-адресов.
+- Виртуальные сети живут в рамках подписки внутри региона.
+- В виртуальной сети создаются виртуальные подсети для разбиения сетевого диапазона.
+- Виртуальные машины размещаются в виртуальных подсетях.
+- Все виртуальные машины в виртуальной сети могут обмениваться данными.
+- 65 536 частных IP-адресов на виртуальную сеть.
+- Платите только за исходящий трафик из региона. (данные покидают регион)
+- Поддерживаются IPv4 и IPv6.
+  - IPv6 для общедоступных и внутри виртуальных сетей.
 
-We can liken Azure Virtual Networks to AWS VPCs. However, there are some differences to note: 
+Мы можем сравнить [виртуальные сети Azure](https://docs.microsoft.com/ru-ru/azure/virtual-network/virtual-networks-overview) с [AWS VPC](https://aws.amazon.com/ru/vpc/). Однако следует отметить некоторые отличия:
 
-- In AWS a default VNet is created that is not the case in Microsoft Azure, you have to create your first virtual network to your requirements. 
-- All Virtual Machines by default in Azure have NAT access to the internet. No NAT Gateways as per AWS. 
-- In Microsoft Azure, there is no concept of Private or Public subnets. 
-- Public IPs is a resource that can be assigned to vNICs or Load Balancers. 
-- The Virtual Network and Subnets have their own ACLs enabling subnet level delegation. 
-- Subnets across Availability Zones whereas in AWS you have subnets per Availability Zones. 
+- В AWS создается виртуальная сеть по умолчанию, чего нет в Microsoft Azure, вам необходимо создать свою первую виртуальную сеть в соответствии с вашими требованиями.
+- Все виртуальные машины в Azure по умолчанию имеют доступ к Интернету через NAT. Нет шлюзов NAT в соответствии с AWS.
+- В Microsoft Azure нет понятия частных или общедоступных подсетей.
+- Общедоступные IP-адреса — это ресурс, который может быть назначен виртуальным сетевым адаптерам или балансировщикам нагрузки.
+- Виртуальная сеть и подсети имеют свои собственные списки управления доступом, позволяющие делегировать уровень подсети.
+- Подсети в зонах доступности, тогда как в AWS у вас есть подсети для каждой зоны доступности.
 
-We also have Virtual Network Peering. This enables virtual networks across tenants and regions to be connected using the Azure backbone. Not transitive but can be enabled via Azure Firewall in the hub virtual network. Using a gateway transit allows peered virtual networks to the connectivity of the connected network and an example of this could ExpressRoute to On-Premises. 
+У нас также есть [виртуальный сетевой пиринг](https://docs.microsoft.com/ru-ru/azure/virtual-network/virtual-network-peering-overview). Пиринг между виртуальными сетями позволяет эффективно соединить две [Виртуальные сети Azure](https://docs.microsoft.com/ru-ru/azure/virtual-network/virtual-networks-overview). После создания пиринговой связи две виртуальные сети выглядят как одна сеть в плане подключения. Точно так же трафик между виртуальными машинами в одноранговых виртуальных сетях использует магистральную инфраструктуру Майкрософт. Как и трафик между виртуальными машинами в одной сети, трафик направляется только через частную сеть корпорации Майкрософт.
 
-### Access Control 
+### Контроль доступа
 
-- Azure utilises Network Security Groups, these are stateful. 
-- Enable rules to be created then assigned to a network security group 
-- Network security groups applied to subnets or VMs. 
-- When applied to a subnet it is still enforced at the Virtual Machine NIC it is not an "Edge" device. 
+- Azure использует группы безопасности сети, они сохраняют состояние.
+- Разрешить создавать правила, а затем назначать их группе безопасности сети.
+- Группы безопасности сети применяются к подсетям или виртуальным машинам.
+- При применении к подсети он по-прежнему применяется к сетевой карте виртуальной машины и не является "Edge" устройством.
 
 ![](../images/Day33_Cloud1.png?v1)
 
-- Rules are combined in a Network Security Group. 
-- Based on the priority, flexible configurations are possible. 
-- Lower priority number means high priority. 
-- Most logic is built by IP Addresses but some tags and labels can also be used. 
+- Правила объединены в группу безопасности сети.
+- В зависимости от приоритета возможны гибкие конфигурации.
+- Более низкий номер приоритета означает высокий приоритет.
+- Большая часть логики построена на IP-адресах, но также могут использоваться некоторые теги и метки.
 
-| Description      | Priority |   Source Address   | Source Port | Destination Address | Destination Port | Action | 
-| -----------      | ---------|   --------------   | ----------- | ------------------- | ---------------- | ------ |
+
+| Description      | Priority | Source Address     | Source Port | Destination Address | Destination Port | Action |
+| ---------------- | -------- | ------------------ | ----------- | ------------------- | ---------------- | ------ |
 | Inbound 443      | 1005     | *                  | *           | *                   | 443              | Allow  |
 | ILB              | 1010     | Azure LoadBalancer | *           | *                   | 10000            | Allow  |
 | Deny All Inbound | 4000     | *                  | *           | *                   | *                | DENY   |
 
-We also have Application Security Groups (ASGs) 
 
-- Where NSGs are focused on the IP address ranges which may be difficult to maintain for growing environments. 
-- ASGs enable real names (Monikers) for different application roles to be defined (Webservers, DB servers, WebApp1 etc.)
-- The Virtual Machine NIC is made a member of one or more ASGs. 
+У нас также есть [группы безопасности приложений](https://docs.microsoft.com/ru-ru/azure/virtual-network/application-security-groups) (Application Security Groups) (ASG) .
 
-The ASGs can then be used in rules that are part of Network Security Groups to control the flow of communication and can still use NSG features like service tags. 
+- Где [журналы потоков групп безопасности](https://docs.microsoft.com/ru-ru/azure/network-watcher/network-watcher-nsg-flow-logging-overview)) (NSG) (Network Security Groups) сети сосредоточены на диапазонах IP-адресов, которые может быть сложно поддерживать для растущих сред.
+- ASG позволяют определять настоящие имена (моникеры) для различных ролей приложений (веб-серверы, серверы БД, WebApp1 и т. д.).
+- Сетевая карта виртуальной машины становится членом одной или нескольких групп ASG.
 
-| Action| Name               | Source     | Destination | Port         |  
-| ------| ------------------ | ---------- | ----------- | ------------ |
-| Allow | AllowInternettoWeb | Internet   | WebServers  | 443(HTTPS)   |
-| Allow | AllowWebToApp      | WebServers | AppServers  | 443(HTTPS)   |
-| Allow | AllowAppToDB       | AppServers | DbServers   | 1443 (MSSQL) |
-| Deny  | DenyAllinbound     | Any        | Any         | Any          |
+Затем группы ASG можно использовать в правилах, которые являются частью групп безопасности сети, для управления потоком связи и по-прежнему могут использовать функции NSG, такие как теги обслуживания.
 
-### Load Balancing 
 
-Microsoft Azure has two separate load balancing solutions. (the first party, there are third parties available in the Azure marketplace.) Both can operate with externally facing or internally facing endpoints. 
+| Action | Name               | Source     | Destination | Port         |
+| ------ | ------------------ | ---------- | ----------- | ------------ |
+| Allow  | AllowInternettoWeb | Internet   | WebServers  | 443(HTTPS)   |
+| Allow  | AllowWebToApp      | WebServers | AppServers  | 443(HTTPS)   |
+| Allow  | AllowAppToDB       | AppServers | DbServers   | 1443 (MSSQL) |
+| Deny   | DenyAllinbound     | Any        | Any         | Any          |
 
-- Load Balancer (Layer 4) supporting hash-based distribution and port-forwarding. 
-- App Gateway (Layer 7) supports features such as SSL offload, cookie-based session affinity and URL-based content routing. 
+### Балансировщики нагрузки
 
-Also with the App Gateway, you can optionally use the Web Application firewall component. 
+Load Balancing. В Microsoft Azure есть два отдельных решения для балансировки нагрузки. (От Microsoft Azure и сторонние на маркетплейсе) Оба могут работать с внешними или внутренними конечными ендпоинтами.
 
-## Azure Management Tools 
+- Балансировщик нагрузки (Layer 4), поддерживающий распределение на основе хэшей и переадресацию портов.
+- Шлюз приложений (Layer 7) поддерживает такие функции, как разгрузка SSL, сопоставление сеансов на основе файлов cookie и маршрутизация контента на основе URL-адресов.
 
-We have spent most of our theory time walking through the Azure Portal, I would suggest that when it comes to following a DevOps culture and process a lot of these tasks especially around provisioning will be done via an API or a command-line tool. I wanted to touch on some of those other management tools that we have available to us as we need to know this for when we are automating the provisioning of our Azure environments. 
+Кроме того, с помощью шлюза приложений вы можете дополнительно использовать компонент брандмауэра веб-приложения.
 
-### Azure Portal 
+## Средства управления Azure
 
-The Microsoft Azure Portal is a web-based console, that provides an alternative to command-line tools. You can manage your subscriptions within the Azure Portal. Build, Manage, Monitor everything from a simple web app to complex cloud deployments. Another thing you will find within the portal are these breadcrumbs, JSON as mentioned before is the underpinning of all Azure Resources, It might be that you start in the Portal to understand the features, services and functionality but then later understand the JSON underneath to incorporate into your automated workflows. 
+Мы потратили большую часть нашего теоретического времени на изучение портала Azure, я бы предположил, что когда дело доходит до следования культуре DevOps и обработки многих этих задач, особенно связанных с подготовкой, будет выполняться через API или инструмент командной строки. Я хотел коснуться некоторых из тех других инструментов управления, которые у нас есть, поскольку нам нужно знать это, когда мы автоматизируем подготовку наших сред Azure.
+
+### Портал Azure
+
+Портал Microsoft Azure — это веб-консоль, которая представляет собой альтернативу инструментам командной строки. Вы можете управлять своими подписками на портале Azure. Создавайте, управляйте и контролируйте все, от простого веб-приложения до сложных облачных развертываний. Еще одна вещь, которую вы найдете на портале, — это хлебные крошки. JSON, как упоминалось ранее, является основой всех ресурсов Azure. Возможно, вы начнете с портала, чтобы понять функции, службы и функциональные возможности, а затем позже поймете JSON внизу, чтобы включить в ваши автоматизированные рабочие процессы.
 
 ![](../images/Day33_Cloud2.png?v1)
 
-There is also the Azure Preview portal, this can be used to view and test new and upcoming services and enhancements. 
+Существует также портал Azure Preview, который можно использовать для просмотра и тестирования новых и предстоящих услуг и улучшений.
 
 ![](../images/Day33_Cloud3.png?v1)
 
 ### PowerShell 
 
-Before we get into Azure [PowerShell](https://docs.microsoft.com/ru-ru/powershell/) it is worth introducing PowerShell first. PowerShell is a task automation and configuration management framework, a command-line shell and a scripting language. We might and dare I say this liken this to what we have covered in the Linux section around shell scripting. PowerShell was very much first found on Windows OS but it is now cross-platform. 
+Прежде чем мы перейдем к Azure PowerShell, стоит сначала познакомиться с PowerShell. PowerShell — это среда автоматизации задач и управления конфигурацией, оболочка командной строки и язык сценариев. Мы могли бы и осмелились сказать это, сравнив это с тем, что мы рассмотрели в разделе Linux, посвященном сценариям оболочки. PowerShell впервые появился в ОС Windows, но теперь он кроссплатформенный.
 
-Azure PowerShell is a set of cmdlets for managing Azure resources directly from the PowerShell command line. 
+Azure PowerShell — это набор командлетов для управления ресурсами Azure непосредственно из командной строки PowerShell.
 
-We can see from below that you can connect to your subscription using the PowerShell command `Connect-AzAccount` 
+При желании мы можеем подключиться к подписке с помощью команды PowerShell «Connect-AzAccount».
 
 ![](../images/Day33_Cloud4.png?v1)
-
-Then if we wanted to find some specific commands associated with Azure VMs we can run the following command. You could spend hours learning and understanding more about this PowerShell programming language. 
-
+Затем, если мы хотим найти некоторые конкретные команды, связанные с виртуальными машинами Azure, мы можем запустить следующую команду. Вы можете потратить часы на изучение и понимание этого языка программирования PowerShell.
 ![](../images/Day33_Cloud5.png?v1)
 
-There are some great quickstarts from Microsoft on getting started and provisioning services from PowerShell [here](https://docs.microsoft.com/en-us/powershell/azure/get-started-azureps?view=azps-7.1.0)
+Microsoft предлагает отличные краткие руководства по началу работы и подготовке служб из PowerShell [здесь](https://docs.microsoft.com/en-us/powershell/azure/get-started-azureps)
 
 ### Visual Studio Code 
 
-Like many, and as you have all seen my go-to IDE is Visual Studio Code. 
+Visual Studio Code — это бесплатный редактор исходного кода, созданный Microsoft для Windows, Linux и macOS.
 
-Visual Studio Code is a free source-code editor made by Microsoft for Windows, Linux and macOS. 
-
-You will see from below that there are lots of integrations and tools built into Visual Studio Code that you can use to interact with Microsoft Azure and the services within. 
-
+В Visual Studio Code встроено множество интеграций и инструментов, которые вы можете использовать для взаимодействия с Microsoft Azure и службами внутри.
 ![](../images/Day33_Cloud6.png?v1)
 
 ### Cloud Shell 
-
-Azure Cloud Shell is an interactive, authenticated, browser-accessible shell for managing Azure resources. It provides the flexibility of choosing the shell experience that best suits the way you work. 
+Azure Cloud Shell — это интерактивная, аутентифицированная, доступная через браузер оболочка для управления ресурсами Azure. Это обеспечивает гибкость выбора оболочки, которая лучше всего подходит для вашей работы.
 
 ![](../images/Day33_Cloud7.png?v1)
 
-You can see from the below when we first launch Cloud Shell within the portal we can choose between Bash and PowerShell. 
+Как видно из рисунка ниже, когда мы впервые запускаем Cloud Shell на портале, мы можем выбирать между Bash и PowerShell.
 
 ![](../images/Day33_Cloud8.png?v1)
 
-To use the cloud shell you will have to provide a bit of storage in your subscription. 
+Чтобы использовать облачную оболочку, вам нужно будет предоставить немного места в своей подписке.
 
-When you select to use the cloud shell it is spinning up a machine, these machines are temporary but your files are persisted in two ways; through a disk image and a mounted file share. 
+Когда вы выбираете использование облачной оболочки, она запускает компьютер, эти компьютеры являются временными, но ваши файлы сохраняются двумя способами; через образ диска и подключенный файловый обменник.
 
 ![](../images/Day33_Cloud9.png?v1)
 
-  - Cloud Shell runs on a temporary host provided on a per-session, per-user basis
-  - Cloud Shell times out after 20 minutes without interactive activity
-  - Cloud Shell requires an Azure file share to be mounted
-  - Cloud Shell uses the same Azure file share for both Bash and PowerShell
-  - Cloud Shell is assigned one machine per user account
-  - Cloud Shell persists $HOME using a 5-GB image held in your file share
-  - Permissions are set as a regular Linux user in Bash
+- Cloud Shell работает на временном хосте, предоставляемом для каждого сеанса и каждого пользователя.
+- Время ожидания Cloud Shell истекает через 20 минут без интерактивной активности.
+- Cloud Shell требует подключения общего файлового ресурса Azure.
+— Cloud Shell использует один и тот же файловый ресурс Azure как для Bash, так и для PowerShell.
+- Cloud Shell назначается по одному компьютеру для каждой учетной записи пользователя.
+- Cloud Shell сохраняет $HOME, используя образ размером 5 ГБ, хранящийся в вашей общей папке.
+- Разрешения установлены как у обычного пользователя Linux в Bash
 
-The above was copied from [Cloud Shell Overview](https://docs.microsoft.com/ru-ru/azure/cloud-shell/overview)
+[Подробнее о Cloud Shell](https://docs.microsoft.com/ru-ru/azure/cloud-shell/overview)
 
 ### Azure CLI 
 
-Finally, I want to cover the Azure CLI, The Azure CLI can be installed on Windows, Linux and macOS. Once installed you can type `az` followed by other commands to create, update, delete and view Azure resources. 
+Azure CLI можно установить в Windows, Linux и macOS. После установки вы можете ввести «az», а затем другие команды для создания, обновления, удаления и просмотра ресурсов Azure.
 
-When I initially came into my Azure learning I was a little confused by there being Azure PowerShell and the Azure CLI. 
+Когда я впервые приступил к изучению Azure, меня немного смутило наличие Azure PowerShell и Azure CLI.
 
-I would love some feedback from the community on this as well. But the way I see it is that Azure PowerShell is a module added to Windows PowerShell or PowerShell Core (Also available on other OS but not all) Whereas Azure CLI is a cross-platform command-line program that connects to Azure and executes those commands. 
+Я также хотел бы получить отзывы от сообщества по этому поводу. Но я вижу, что Azure PowerShell — это модуль, добавленный в Windows PowerShell или PowerShell Core (также доступен в других ОС, но не во всех), тогда как Azure CLI — это кроссплатформенная программа командной строки, которая подключается к Azure и выполняет эти команды. .
 
-Both of these options have a different syntax, although they can from what I can see and what I have done do very similar tasks. 
+Обе эти опции имеют разный синтаксис, хотя, насколько я вижу и что я сделал, они могут выполнять очень похожие задачи.
 
-For example, creating a virtual machine from PowerShell would use the `New-AzVM` cmdlet whereas Azure CLI would use `az VM create`. 
+Например, для создания виртуальной машины из PowerShell будет использоваться командлет New-AzVM, а в Azure CLI — az VM create.
 
-You saw previously that I have the Azure PowerShell module installed on my system but then I also have the Azure CLI installed that can be called through PowerShell on my Windows machine. 
+Ранее вы видели, что в моей системе установлен модуль Azure PowerShell, но затем у меня также установлен Azure CLI, который можно вызывать через PowerShell на моем компьютере с Windows.
 
 ![](../images/Day33_Cloud10.png?v1)
 
-The takeaway here as we already mentioned is about choosing the right tool. Azure runs on automation. Every action you take inside the portal translates somewhere to code being executed to read, create, modify, or delete resources.
+Вывод здесь, как мы уже упоминали, заключается в выборе правильного инструмента. Azure работает на основе автоматизации. Каждое действие, которое вы совершаете внутри портала, где-то преобразуется в код, выполняемый для чтения, создания, изменения или удаления ресурсов.
 
-Azure CLI
+### Azure CLI / Azure PowerShell
 
-- Cross-platform command-line interface, installable on Windows, macOS, Linux
-- Runs in Windows PowerShell, Cmd, or Bash and other Unix shells.
+#### Azure CLI
 
-Azure PowerShell
+- Кроссплатформенный интерфейс командной строки, устанавливаемый на Windows, macOS, Linux
+- Работает в Windows PowerShell, Cmd или Bash и других оболочках Unix.
 
-- Cross-platform PowerShell module, runs on Windows, macOS, Linux
-- Requires Windows PowerShell or PowerShell
+#### Azure PowerShell
 
-If there is a reason you cannot use PowerShell in your environment but you can use .mdor bash then the Azure CLI is going to be your choice. 
+- Кроссплатформенный модуль PowerShell, работает на Windows, macOS, Linux
+- Требуется Windows PowerShell или PowerShell
 
-Next up we take all the theory we have been through and create some scenarios and get hands-on in Azure. 
+Если по какой-то причине вы не можете использовать PowerShell в своей среде, но можете использовать .mdor bash, тогда Azure CLI будет вашим выбором.
+
+Завтра попробуем создать несколько сценариев и приступим к работе в Azure.
 
 ## Ресурсы 
 
@@ -185,5 +188,3 @@ Next up we take all the theory we have been through and create some scenarios an
 - [Microsoft Azure Fundamentals](https://www.youtube.com/watch?v=NKEFWyqJ5XA&list=WL&index=130&t=12s)
 - [Google Cloud Digital Leader Certification Course](https://www.youtube.com/watch?v=UGRDM86MBIQ&list=WL&index=131&t=10s)
 - [AWS Basics for Beginners - Full Course](https://www.youtube.com/watch?v=ulprqHHWlng&t=5352s)
-
-See you on [Day 34](../day34) 
