@@ -1,10 +1,15 @@
 ---
-title: '#90DaysOfDevOps - The Big Picture: Git - Version Control - Day 35'
-published: false
-description: 90DaysOfDevOps - The Big Picture Git - Version Control
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
+title: 35 - The Big Picture Git - Version Control
+description: The Big Picture Git - Version Control
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-05-25"
+lastmod: "2022-05-25"
+featuredImage:
+draft: false
 id: 1049041
 ---
 ## The Big Picture: Git - Version Control

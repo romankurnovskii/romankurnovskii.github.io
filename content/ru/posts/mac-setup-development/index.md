@@ -96,22 +96,23 @@ brew install \
     - [30 Seconds of Knowledge](https://chrome.google.com/webstore/search/https%3A%2F%2F30secondsofknowledge.com%2F) (random code snippet on a new tab)
     - [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa)
 - [Firefox](https://www.google.com/chrome/) (web development)
-
-* [Visual Studio Code](https://code.visualstudio.com/) (web development IDE)
-* [Sublime Text](https://www.sublimetext.com/) (editor)
-* [Docker](https://www.docker.com/products/docker-desktop) (Docker, see [setup](/docker-macos/))
+- [UTM](https://mac.getutm.app/) (Virtual machines UI using QEMU)
+  - download ubuntu for arm, [doc](https://mac.getutm.app/gallery/ubuntu-20-04)
+- [Visual Studio Code](https://code.visualstudio.com/) (web development IDE)
+- [Sublime Text](https://www.sublimetext.com/) (editor)
+- [Docker](https://www.docker.com/products/docker-desktop) (Docker, see [setup](/docker-macos/))
   - used for running databases (e.g. PostgreSQL, MongoDB) in container without cluttering the Mac
   - Preferences
     - enable "Use Docker Compose"
-* [VLC](https://www.videolan.org/vlc/) (video player)
+- [VLC](https://www.videolan.org/vlc/) (video player)
   - use as default for video files
-* [Maccy](https://maccy.app/) (clipboard manager)
+- [Maccy](https://maccy.app/) (clipboard manager)
   - enable "Launch at Login"
-* [OBS](https://obsproject.com/) (for video recording and live streaming)
+- [OBS](https://obsproject.com/) (for video recording and live streaming)
   - for Native Mac Screen recorder
     - Base (Canvas) 2880x1800 (Ratio: 16:10)
     - Output 1728x1080
-![](images/obs-base-canvas.png)
+    ![](images/obs-base-canvas.png)
  ## Terminal Applications
 
 - [nvm](https://github.com/nvm-sh/nvm) (node version manager)

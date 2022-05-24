@@ -1,10 +1,15 @@
 ---
-title: '#90DaysOfDevOps - Installing & Configuring Git - Day 36'
-published: false
-description: 90DaysOfDevOps - Installing & Configuring Git
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+title: 36 - Installing & Configuring Git
+description: Installing & Configuring Git
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-05-26"
+lastmod: "2022-05-26"
+featuredImage:
+draft: false
 id: 1048738
 ---
 ## Installing & Configuring Git
