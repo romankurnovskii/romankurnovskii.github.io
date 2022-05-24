@@ -1,10 +1,15 @@
 ---
-title: '#90DaysOfDevOps - Viewing, unstaging, discarding & restoring - Day 39'
-published: false
-description: '90DaysOfDevOps - Viewing, unstaging, discarding & restoring'
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+title: 39 - Viewing, unstaging, discarding & restoring
+description: Viewing, unstaging, discarding & restoring
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-05-29"
+lastmod: "2022-05-29"
+featuredImage:
+draft: false
 id: 1048827
 ---
 ## Viewing, unstaging, discarding & restoring

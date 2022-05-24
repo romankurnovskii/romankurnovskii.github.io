@@ -1,10 +1,15 @@
 ---
-title: '#90DaysOfDevOps - Gitting to know Git - Day 37'
-published: false
-description: 90DaysOfDevOps - Gitting to know Git
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+title: 37 - Gitting to know Git
+description: Gitting to know Git
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-05-27"
+lastmod: "2022-05-27"
+featuredImage:
+draft: false
 id: 1048707
 ---
 ## Gitting to know Git

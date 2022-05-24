@@ -1,188 +1,401 @@
 ---
-title: '#90DaysOfDevOps - Microsoft Azure Hands-On Scenarios - Day 34'
-published: false
-description: 90DaysOfDevOps - Microsoft Azure Hands-On Scenarios
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+title: 34 - Практические сценарии Microsoft Azure
+description: Практические сценарии Microsoft Azure
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-05-24"
+lastmod: "2022-05-24"
+featuredImage:
+draft: false
 id: 1048763
+TODO: aps/json scripts
 ---
-## Microsoft Azure Hands-On Scenarios
 
-The last 6 days have been focused on Microsoft Azure and the public cloud in general, a lot of this foundation had to contain a lot of theory to understand the building blocks of Azure but also this will nicely translate to the other major cloud providers as well. 
+Последние 6 дней были сосредоточены на Microsoft Azure и общедоступном облаке в целом, большая часть этой основы должна была содержать много теории, чтобы понять строительные блоки Azure, но также это будет хорошо перенесено на других крупных облачных провайдеров. .
 
-I mentioned at the very beginning about getting a foundational knowledge of the public cloud and choosing one provider to at least begin with, if you are dancing between different clouds then I believe you can get lost quite easily whereas choosing one you get to understand the fundamentals and when you have those it is quite easy to jump into the other clouds and accelerate your learning. 
+В самом начале я упомянул о базовых знаний об общедоступном облаке и выборе одного провайдера, по крайней мере, для начала. Если вы танцуете между разными облаками, я считаю, что вы можете довольно легко заблудиться, тогда как выбрав одно, вы поймете основы. и когда они у вас есть, довольно легко прыгнуть в другие облака и ускорить свое обучение.
 
-In this final session, I am going to be picking and choosing my hands-on scenarios from this page here which is a reference created by Microsoft and is used for preparations for the [AZ-104 Microsoft Azure Administrator](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/) 
+На этом заключительном занятии я буду выбирать свои практические сценарии с этой страницы, которая является справочной информацией, созданной Microsoft и используемой для подготовки к [AZ-104 Администратор Microsoft Azure](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/)
 
-There are some here such as Containers and Kubernetes that we have not covered in any detail as of yet so I don't want to jump in there just yet. 
+Здесь есть некоторые из них, такие как контейнеры и Kubernetes, которые мы еще не рассмотрели подробно, поэтому я не хочу пока вдаваться в них.
 
-In previous posts, we have created most of Modules 1,2 and 3. 
+В предыдущих постах мы создали большинство модулей 1,2 и 3.
 
-### Virtual Networking 
-Following [Module 04](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_04-Implement_Virtual_Networking.html):
+### Виртуальная сеть
+Microsoft предлагает пройти обучение по [модулю 04](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_04-Implement_Virtual_Networking.html):
 
-I went through the above and changed a few namings for the purpose of #90DaysOfDevOps. I also instead of using the Cloud Shell went ahead and logged in with my new user created on previous days with the Azure CLI on my Windows machine. 
+Я прошел по инструкции и изменил несколько названий на #90DaysOfDevOps. Я также вместо использования Cloud Shell вошел в систему с моим новым пользователем, созданным в предыдущие дни с помощью Azure CLI на моем компьютере с Windows.
 
-You can do this using the `az login` which will open a browser and let you authenticate to your account. 
+Вы можете сделать это, используя `az login`, который откроет браузер и позволит вам аутентифицировать свою учетную запись.
 
-I have then created a PowerShell script and some references from the module to use to build out some of the tasks below. You can find the associated files in this folder.
- (Cloud\01VirtualNetworking) 
+Затем я создал сценарий PowerShell и несколько ссылок из модуля, чтобы использовать их для выполнения некоторых из приведенных ниже задач. Вы можете найти связанные файлы в этой папке.
+  (Облако\01Виртуальная сеть)
 
- Please make sure you change the file location in the script to suit your environment. 
+  Убедитесь, что вы изменили расположение файла в скрипте в соответствии с вашей средой.
 
-At this first stage we have no virtual network or virtual machines created in our environment, I only have a cloudshell storage location configured in my resource group. 
+На этом первом этапе у нас нет виртуальной сети или виртуальных машин, созданных в нашей среде, у меня есть только место хранения облачной оболочки, настроенное в моей группе ресурсов.
 
-I first of all run my [PowerShell script](Cloud/01VirtualNetworking/Module4_90DaysOfDevOps.ps1)
+Сначала я запускаю свой [скрипт в PowerShell](https://github.com/MichaelCade/90DaysOfDevOps/blob/main/Days/Cloud/01VirtualNetworking/Module4_90DaysOfDevOps.ps1)
+```ps
+$rgName = '90DaysOfDevOps'
 
- ![](../images/Day34_Cloud1.png?v1)
+New-AzResourceGroupDeployment `
+-ResourceGroupName $rgName `
+-TemplateFile C:\Users\micha\demo\90DaysOfDevOps\Days\Cloud\01VirtualNetworking\Mod04_90DaysOfDevOps-vms-loop-template.json `
+-TemplateParameterFile C:\Users\micha\demo\90DaysOfDevOps\Days\Cloud\01VirtualNetworking\Mod04_90DaysOfDevOps-vms-loop-parameters.json
+```
+  ![](../images/Day34_Cloud1.png?v1)
  
-- Task 1: Create and configure a virtual network
+- Задача 1: Создать и настроить виртуальную сеть
 
- ![](../images/Day34_Cloud2.png?v1)
+  ![](../images/Day34_Cloud2.png?v1)
 
-- Task 2: Deploy virtual machines into the virtual network
+- Задача 2. Развернуть виртуальные машины в виртуальной сети.
 
- ![](../images/Day34_Cloud3.png?v1)
+  ![](../images/Day34_Cloud3.png?v1)
 
-- Task 3: Configure private and public IP addresses of Azure VMs
+- Задача 3. Настройка частных и общедоступных IP-адресов виртуальных машин Azure.
   
- ![](../images/Day34_Cloud4.png?v1)
+  ![](../images/Day34_Cloud4.png?v1)
 
-- Task 4: Configure network security groups
+- Задача 4: Настройка групп безопасности сети
 
 ![](../images/Day34_Cloud5.png?v1)
 ![](../images/Day34_Cloud6.png?v1)
 
-- Task 5: Configure Azure DNS for internal name resolution
+- Задача 5. Настройка Azure DNS для внутреннего разрешения имен.
 
 ![](../images/Day34_Cloud7.png?v1)
 ![](../images/Day34_Cloud8.png?v1)
 
-### Network Traffic Management 
-Following [Module 06](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_06-Implement_Network_Traffic_Management.html):
+### Управление сетевым трафиком
+Переходим к [модулю 06](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_06-Implement_Network_Traffic_Management.html):
 
-Next walkthrough, from the last one we have gone into our resource group and deleted our resources, if you had not set up the user account like me to only have access to that one resource group you could follow the module changing the name to `90Days*` this will delete all resources and resource group. This will be my process for each of the following lab. 
+Для этого практического занятия я создал сценарий PowerShell и несколько ссылок из модуля, чтобы использовать их для создания некоторых из приведенных ниже задач.
 
-For this lab I have also created a PowerShell script and some references from the module to use to build out some of the tasks below. You can find the associated files in this folder.
- (Cloud\02TrafficManagement) 
+- Задача 1: Обеспечение лабораторной среды
 
-
-- Task 1: Provision the lab environment
-
-I first of all run my [PowerShell script](Cloud/02TrafficManagement/Mod06_90DaysOfDevOps.ps1)
+Запустим [PowerShell скрипт](https://github.com/MichaelCade/90DaysOfDevOps/blob/main/Days/Cloud/02TrafficManagement/Mod06_90DaysOfDevOps.ps1)
 
 ![](../images/Day34_Cloud9.png?v1)
 
-- Task 2: Configure the hub and spoke network topology
-
+- Задача 2. Настройка топологии узловой сети
 ![](../images/Day34_Cloud10.png?v1)
 
-- Task 3: Test transitivity of virtual network peering
+- Задача 3. Проверка транзитивности пиринга виртуальной сети.
 
-For this my 90DaysOfDevOps group did not have access to the Network Watcher because of permissions, I expect this is because Network Watchers are one of those resources that are not tied to a resource group which is where our RBAC was covered for this user. I added the East US Network Watcher contributer role to the 90DaysOfDevOps group. 
+Для этого моя группа 90DaysOfDevOps не имела доступа к Network Watcher из-за разрешений, я ожидаю, что это связано с тем, что Network Watcher  — это один из тех ресурсов, которые не привязаны к группе ресурсов, где наш RBAC был покрыт для этого пользователя. Я добавил в группу 90DaysOfDevOps роль участника Network Watcher из восточной части США.
 
 ![](../images/Day34_Cloud11.png?v1)
 ![](../images/Day34_Cloud12.png?v1)
 ![](../images/Day34_Cloud13.png?v1)
 
-^  This is expected, since the two spoke virtual networks are not peered with each other (virtual network peering is not transitive).
+^  Это ожидаемо, поскольку виртуальные сети с двумя лучами не связаны друг с другом (пиринг виртуальных сетей не является транзитивным).
 
-- Task 4: Configure routing in the hub and spoke topology
+- Задача 4. Настройка маршрутизации в топологии «концентратор-луч».
 
-I had another issue here with my account not being able to run the script as my user within the group 90DaysOfDevOps which I am unsure of so I did jump back into my main admin account. The 90DaysOfDevOps group is an owner of everything in the 90DaysOfDevOps Resource Group so would love to understand why I cannot run a command inside the VM? 
+У меня была еще одна проблема: моя учетная запись не могла запустить скрипт от имени моего пользователя в группе 90DaysOfDevOps, в чем я не уверен, поэтому я вернулся в свою основную учетную запись администратора. Группа 90DaysOfDevOps является владельцем всего в группе ресурсов 90DaysOfDevOps, поэтому хотелось бы понять, почему я не могу запустить команду внутри виртуальной машины?
 
 ![](../images/Day34_Cloud14.png?v1)
 ![](../images/Day34_Cloud15.png?v1)
-
-I then was able to go back into my michael.cade@90DaysOfDevOps.com account and continue this section. Here we are running the same test again but now with the result being reachable. 
-
 ![](../images/Day34_Cloud16.png?v1)
 
-- Task 5: Implement Azure Load Balancer
+- Task 5: Подключаем Azure Load Balancer
 
 ![](../images/Day34_Cloud17.png?v1)
 ![](../images/Day34_Cloud18.png?v1)
 
-- Task 6: Implement Azure Application Gateway
+- Task 6: Подключаем Azure Application Gateway
 
 ![](../images/Day34_Cloud19.png?v1)
 ![](../images/Day34_Cloud20.png?v1)
 
-### Azure Storage 
-Following [Module 07](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_07-Manage_Azure_Storage.html):
+### Хранищиле Azure 
+Переходим к [модулю 07](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_07-Manage_Azure_Storage.html):
 
-For this lab I have also created a PowerShell script and some references from the module to use to build out some of the tasks below. You can find the associated files in this folder.
- (Cloud\03Storage) 
+Для этого практического занятия я также создал сценарий PowerShell и несколько ссылок из модуля, чтобы использовать их для создания некоторых из приведенных ниже задач. 
 
-- Task 1: Provision the lab environment
+- Задача 1: Обеспечение лабораторной среды
 
-I first of all run my [PowerShell script](Cloud/03Storage/Mod07_90DaysOfDeveOps.ps1)
+Сначала запускаем PowerShell script
+```ps1
+$rgName = '90DaysOfDevOps'
+
+New-AzResourceGroupDeployment `
+   -ResourceGroupName $rgName `
+   -TemplateFile C:\Users\micha\demo\90DaysOfDevOps\Days\Cloud\03Storage\Mod07_90DaysOfDevOps-vm-template.json `
+   -TemplateParameterFile C:\Users\micha\demo\90DaysOfDevOps\Days\Cloud\03Storage\Mod07_90DaysOfDevOps-vm-parameters.json `
+   -AsJob
+```
+
+
+<details>
+<summary>Файл `Mod07_90DaysOfDevOps-vm-template.json`</summary>
+```
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "vmSize": {
+        "type": "string",
+        "defaultValue": "Standard_D2s_v3",
+        "metadata": {
+          "description": "Virtual machine size"
+        }
+      },
+      "adminUsername": {
+        "type": "string",
+        "metadata": {
+          "description": "Admin username"
+        }
+      },
+      "adminPassword": {
+        "type": "securestring",
+        "metadata": {
+          "description": "Admin password"
+        }
+      }
+    },
+  "variables": {
+    "vmName": "90Days-vm0",
+    "nicName": "90Days-nic0",
+    "virtualNetworkName": "90Days-vnet0",
+    "publicIPAddressName": "90Days-pip0",
+    "nsgName": "90Days-nsg0",
+    "vnetIpPrefix": "10.70.0.0/22", 
+    "subnetIpPrefix": "10.70.0.0/24", 
+    "subnetName": "subnet0",
+    "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]",
+    "computeApiVersion": "2018-06-01",
+    "networkApiVersion": "2018-08-01"
+  },
+    "resources": [
+        {
+            "name": "[variables('vmName')]",
+            "type": "Microsoft.Compute/virtualMachines",
+            "apiVersion": "[variables('computeApiVersion')]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[variables('nicName')]"
+            ],
+            "properties": {
+                "osProfile": {
+                    "computerName": "[variables('vmName')]",
+                    "adminUsername": "[parameters('adminUsername')]",
+                    "adminPassword": "[parameters('adminPassword')]",
+                    "windowsConfiguration": {
+                        "provisionVmAgent": "true"
+                    }
+                },
+                "hardwareProfile": {
+                    "vmSize": "[parameters('vmSize')]"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "MicrosoftWindowsServer",
+                        "offer": "WindowsServer",
+                        "sku": "2019-Datacenter",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "createOption": "fromImage"
+                    },
+                    "dataDisks": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "properties": {
+                                "primary": true
+                            },
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', variables('nicName'))]"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Network/virtualNetworks",
+            "name": "[variables('virtualNetworkName')]",
+            "apiVersion": "[variables('networkApiVersion')]",
+            "location": "[resourceGroup().location]",
+            "comments": "Virtual Network",
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "[variables('vnetIpPrefix')]"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "[variables('subnetName')]",
+                        "properties": {
+                            "addressPrefix": "[variables('subnetIpPrefix')]"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "[variables('nicName')]",
+            "type": "Microsoft.Network/networkInterfaces",
+            "apiVersion": "[variables('networkApiVersion')]",
+            "location": "[resourceGroup().location]",
+            "comments": "Primary NIC",
+            "dependsOn": [
+                "[variables('publicIpAddressName')]",
+                "[variables('nsgName')]",
+                "[variables('virtualNetworkName')]"
+            ],
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "properties": {
+                            "subnet": {
+                                "id": "[variables('subnetRef')]"
+                            },
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIpAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIpAddresses', variables('publicIpAddressName'))]"
+                            }
+                        }
+                    }
+                ],
+                "networkSecurityGroup": {
+                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('nsgName'))]"
+                }
+            }
+        },
+        {
+            "name": "[variables('publicIpAddressName')]",
+            "type": "Microsoft.Network/publicIpAddresses",
+            "apiVersion": "[variables('networkApiVersion')]",
+            "location": "[resourceGroup().location]",
+            "comments": "Public IP for Primary NIC",
+            "properties": {
+                "publicIpAllocationMethod": "Dynamic"
+            }
+        },
+        {
+            "name": "[variables('nsgName')]",
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "apiVersion": "[variables('networkApiVersion')]",
+            "location": "[resourceGroup().location]",
+            "comments": "Network Security Group (NSG) for Primary NIC",
+            "properties": {
+                "securityRules": [
+                    {
+                        "name": "default-allow-rdp",
+                        "properties": {
+                            "priority": 1000,
+                            "sourceAddressPrefix": "*",
+                            "protocol": "Tcp",
+                            "destinationPortRange": "3389",
+                            "access": "Allow",
+                            "direction": "Inbound",
+                            "sourcePortRange": "*",
+                            "destinationAddressPrefix": "*"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "outputs": {}
+}
+```
+</details>
+
+<details>
+<summary>Файл `Mod07_90DaysOfDevOps-vm-parameters.json`</summary>
+```
+{
+"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+"contentVersion": "1.0.0.0",
+"parameters": {
+"vmSize": {
+"value": "Standard_D2s_v3"
+},
+"adminUsername": {
+"value": "Student"
+},
+"adminPassword": {
+"value": "Pa55w.rd1234"
+}
+}
+}
+```
+</details>
+
 
 ![](../images/Day34_Cloud21.png?v1)
 
-- Task 2: Create and configure Azure Storage accounts
+- Задача 2. Создание и настройка учетных записей хранения Azure.
 
 ![](../images/Day34_Cloud22.png?v1)
 
-- Task 3: Manage blob storage
+- Задача 3. Управление хранилищем BLOB-объектов
 
 ![](../images/Day34_Cloud23.png?v1)
 
-- Task 4: Manage authentication and authorization for Azure Storage
+- Задача 4. Управление проверкой подлинности и авторизацией для службы хранилища Azure.
 
 ![](../images/Day34_Cloud24.png?v1)
 ![](../images/Day34_Cloud25.png?v1)
 
-I was a little impatient waiting for this to be allowed but it did work eventually. 
+Я был немного нетерпелив, ожидая, что это все сработает, но в конце концов это сработало.
 
 ![](../images/Day34_Cloud26.png?v1)
 
+- Задача 5. Создание и настройка общих папок Azure Files.
 
-- Task 5: Create and configure an Azure Files shares
-
-On the run command this would not work with michael.cade@90DaysOfDevOps.com so I used my elevated account. 
+В команде запуска это не сработает с michael.cade@90DaysOfDevOps.com, поэтому я использовал свою учетную запись с повышенными правами.
 
 ![](../images/Day34_Cloud27.png?v1)
 ![](../images/Day34_Cloud28.png?v1)
 ![](../images/Day34_Cloud29.png?v1)
 
-
-- Task 6: Manage network access for Azure Storage
+- Задача 6. Управление сетевым доступом для службы хранилища Azure.
 
 ![](../images/Day34_Cloud30.png?v1)
 
-### Serverless (Implement Web Apps)
-Following [Module 09a](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_09a-Implement_Web_Apps.html):
+### Serverless (внедрение веб-приложений)
+Переходим к [модулю 09a](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_09a-Implement_Web_Apps.html):
 
-
-- Task 1: Create an Azure web app
+- Задача 1. Создание веб-приложения Azure.
 
 ![](../images/Day34_Cloud31.png?v1)
 
-- Task 2: Create a staging deployment slot
+- Задача 2. Создание промежуточного слота развертывания.
 
 ![](../images/Day34_Cloud34.png?v1)
 
-- Task 3: Configure web app deployment settings
+- Задача 3. Настройка параметров развертывания веб-приложений.
 
 ![](../images/Day34_Cloud33.png?v1)
 
-- Task 4: Deploy code to the staging deployment slot
+- Задача 4. Развертывание кода в промежуточном слоте развертывания.
 
 ![](../images/Day34_Cloud32.png?v1)
 
-- Task 5: Swap the staging slots
+- Задача 5: Поменять промежуточные слоты местами
 
 ![](../images/Day34_Cloud35.png?v1)
 
-- Task 6: Configure and test autoscaling of the Azure web app
-
-This script I am using can be found in (Cloud/05Serverless)
-
+- Задача 6. Настройка и тестирование автоматического масштабирования веб-приложения Azure.
+```
+$rgName = '90DaysOfDevOps'
+$webapp = Get-AzWebApp -ResourceGroupName $rgName
+#The following following will start an infinite loop that sends the HTTP requests to the web app
+while ($true) { Invoke-WebRequest -Uri $webapp.DefaultHostName }
+```
 ![](../images/Day34_Cloud36.png?v1)
 
-This wraps up the section on Microsoft Azure and the public cloud in general. I will say that I had lots of fun attacking and working through this scenarios. 
+На этом мы завершаем раздел о Microsoft Azure и public cloud в целом.
 
 ## Ресурсы 
 
@@ -191,6 +404,4 @@ This wraps up the section on Microsoft Azure and the public cloud in general. I 
 - [Google Cloud Digital Leader Certification Course](https://www.youtube.com/watch?v=UGRDM86MBIQ&list=WL&index=131&t=10s)
 - [AWS Basics for Beginners - Full Course](https://www.youtube.com/watch?v=ulprqHHWlng&t=5352s)
 
-Next we will be diving into version control systems, specifically around git and then also code repository overviews and we will be choosing GitHub as this is my preferred option. 
-
-See you on [Day 35](../day35) 
+Далее мы углубимся в системы контроля версий, особенно в git, а затем также рассмотрим обзоры репозиториев кода, и мы выберем GitHub, так как это мой предпочтительный вариант.
