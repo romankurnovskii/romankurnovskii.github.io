@@ -11,9 +11,9 @@ lastmod: "2022-05-24"
 featuredImage:
 draft: false
 id: 1048763
-TODO: aps/json scripts
 ---
 
+## Практические сценарии Microsoft Azure
 Последние 6 дней были сосредоточены на Microsoft Azure и общедоступном облаке в целом, большая часть этой основы должна была содержать много теории, чтобы понять строительные блоки Azure, но также это будет хорошо перенесено на других крупных облачных провайдеров. .
 
 В самом начале я упомянул о базовых знаний об общедоступном облаке и выборе одного провайдера, по крайней мере, для начала. Если вы танцуете между разными облаками, я считаю, что вы можете довольно легко заблудиться, тогда как выбрав одно, вы поймете основы. и когда они у вас есть, довольно легко прыгнуть в другие облака и ускорить свое обучение.
@@ -25,7 +25,7 @@ TODO: aps/json scripts
 В предыдущих постах мы создали большинство модулей 1,2 и 3.
 
 ### Виртуальная сеть
-Microsoft предлагает пройти обучение по [модулю 04](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_04-Implement_Virtual_Networking.html):
+Мы пройдем пройти [модуль 04](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_04-Implement_Virtual_Networking.html):
 
 Я прошел по инструкции и изменил несколько названий на #90DaysOfDevOps. Я также вместо использования Cloud Shell вошел в систему с моим новым пользователем, созданным в предыдущие дни с помощью Azure CLI на моем компьютере с Windows.
 
@@ -34,7 +34,217 @@ Microsoft предлагает пройти обучение по [модулю 
 Затем я создал сценарий PowerShell и несколько ссылок из модуля, чтобы использовать их для выполнения некоторых из приведенных ниже задач. Вы можете найти связанные файлы в этой папке.
   (Облако\01Виртуальная сеть)
 
-  Убедитесь, что вы изменили расположение файла в скрипте в соответствии с вашей средой.
+<details>
+<summary>
+Mod04_90DaysOfDevOps-vms-loop-parameters.json
+</summary>
+
+```
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vmSize": {
+            "value": "Standard_D2s_v3"
+        },
+        "adminUsername": {
+            "value": "Student"
+        },
+        "adminPassword": {
+            "value": "Pa55w.rd1234"
+        }
+    }
+}
+```
+</details>
+
+<details>
+<summary>
+Mod04_90DaysOfDevOps-vms-loop-template.json
+</summary>
+
+```
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vmSize": {
+            "type": "string",
+            "defaultValue": "Standard_D2s_v3",
+            "metadata": {
+                "description": "VM size"
+            }
+        },
+        "vmName": {
+            "type": "string",
+            "defaultValue": "90day-vm",
+            "metadata": {
+                "description": "VM name Prefix"
+            }
+        },
+        "vmCount": {
+            "type": "int",
+            "defaultValue": 2,
+            "metadata": {
+                "description": "Number of VMs"
+            }
+        },
+        "adminUsername": {
+            "type": "string",
+            "metadata": {
+                "description": "Admin username"
+            }
+        },
+        "adminPassword": {
+            "type": "securestring",
+            "metadata": {
+                "description": "Admin password"
+            }
+        },
+        "virtualNetworkName": {
+            "type": "string",
+            "defaultValue": "90daysofdevops",
+            "metadata": {
+                "description": "Virtual network name"
+            }
+        }
+    },
+    "variables": {
+        "nic": "90daysofdevops",
+        "virtualNetworkName": "[parameters('virtualNetworkName')]",
+        "subnetName": "subnet",
+        "subnet0Name": "subnet0",
+        "subnet1Name": "subnet1",
+        "computeApiVersion": "2018-06-01",
+        "networkApiVersion": "2018-08-01"
+    },
+    "resources": [
+        {
+            "name": "[concat(parameters('vmName'),copyIndex())]",
+            "copy": {
+                "name": "VMcopy",
+                "count": "[parameters('vmCount')]"
+            },
+            "type": "Microsoft.Compute/virtualMachines",
+            "apiVersion": "[variables('computeApiVersion')]",
+            "location": "[resourceGroup().location]",
+            "comments": "Creating VMs",
+            "dependsOn": [
+                "[concat(variables('nic'),copyIndex())]"
+            ],
+            "properties": {
+                "osProfile": {
+                    "computerName": "[concat(parameters('vmName'),copyIndex())]",
+                    "adminUsername": "[parameters('adminUsername')]",
+                    "adminPassword": "[parameters('adminPassword')]",
+                    "windowsConfiguration": {
+                        "provisionVmAgent": "true"
+                    }
+                },
+                "hardwareProfile": {
+                    "vmSize": "[parameters('vmSize')]"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "MicrosoftWindowsServer",
+                        "offer": "WindowsServer",
+                        "sku": "2019-Datacenter",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "createOption": "fromImage"
+                    },
+                    "dataDisks": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "properties": {
+                                "primary": true
+                            },
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', concat(variables('nic'),copyIndex()))]"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Network/virtualNetworks",
+            "name": "[variables('virtualNetworkName')]",
+            "apiVersion": "[variables('networkApiVersion')]",
+            "location": "[resourceGroup().location]",
+            "comments": "Virtual Network",
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "10.40.0.0/22"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "[variables('subnet0Name')]",
+                        "properties": {
+                            "addressPrefix": "10.40.0.0/24"
+                        }
+                    },
+                    {
+                        "name": "[variables('subnet1Name')]",
+                        "properties": {
+                            "addressPrefix": "10.40.1.0/24"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "[concat(variables('nic'),copyIndex())]",
+            "copy":{
+                "name": "nicCopy",
+                "count": "[parameters('vmCount')]"
+            },
+            "type": "Microsoft.Network/networkInterfaces",
+            "apiVersion": "[variables('networkApiVersion')]",
+            "location": "[resourceGroup().location]",
+            "comments": "Primary NIC",
+            "dependsOn": [
+                "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
+            ],
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "properties": {
+                            "subnet": {
+                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), concat(variables('subnetName'),copyIndex()))]"
+                            },
+                            "privateIPAllocationMethod": "Dynamic"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "outputs": {}
+}
+```
+</details>
+
+<details>
+<summary>
+Module4_90DaysOfDevOps.ps1
+</summary>
+
+```
+$rgName = '90DaysOfDevOps'
+
+New-AzResourceGroupDeployment `
+-ResourceGroupName $rgName `
+-TemplateFile C:\Users\micha\demo\90DaysOfDevOps\Days\Cloud\01VirtualNetworking\Mod04_90DaysOfDevOps-vms-loop-template.json `
+-TemplateParameterFile C:\Users\micha\demo\90DaysOfDevOps\Days\Cloud\01VirtualNetworking\Mod04_90DaysOfDevOps-vms-loop-parameters.json
+```
+</details>
+
+Убедитесь, что вы изменили расположение файла в скрипте в соответствии с вашей средой.
 
 На этом первом этапе у нас нет виртуальной сети или виртуальных машин, созданных в нашей среде, у меня есть только место хранения облачной оболочки, настроенное в моей группе ресурсов.
 
@@ -80,6 +290,28 @@ New-AzResourceGroupDeployment `
 
 Запустим [PowerShell скрипт](https://github.com/MichaelCade/90DaysOfDevOps/blob/main/Days/Cloud/02TrafficManagement/Mod06_90DaysOfDevOps.ps1)
 
+```
+$rgName = '90DaysOfDevOps'
+
+New-AzResourceGroupDeployment `
+   -ResourceGroupName $rgName `
+   -TemplateFile C:\Users\micha\demo\90DaysOfDevOps\Days\Cloud\02TrafficManagement\Mod06_90DaysOfDevOps-vms-loop-template.json `
+   -TemplateParameterFile C:\Users\micha\demo\90DaysOfDevOps\Days\Cloud\02TrafficManagement\Mod06_90DaysOfDevOps-vms-loop-parameters.json
+
+   $location = (Get-AzResourceGroup -ResourceGroupName $rgName).location
+   $vmNames = (Get-AzVM -ResourceGroupName $rgName).Name
+   
+   foreach ($vmName in $vmNames) {
+     Set-AzVMExtension `
+     -ResourceGroupName $rgName `
+     -Location $location `
+     -VMName $vmName `
+     -Name 'networkWatcherAgent' `
+     -Publisher 'Microsoft.Azure.NetworkWatcher' `
+     -Type 'NetworkWatcherAgentWindows' `
+     -TypeHandlerVersion '1.4'
+   }
+```
 ![](../images/Day34_Cloud9.png?v1)
 
 - Задача 2. Настройка топологии узловой сети
@@ -93,7 +325,7 @@ New-AzResourceGroupDeployment `
 ![](../images/Day34_Cloud12.png?v1)
 ![](../images/Day34_Cloud13.png?v1)
 
-^  Это ожидаемо, поскольку виртуальные сети с двумя лучами не связаны друг с другом (пиринг виртуальных сетей не является транзитивным).
+> Это ожидаемо, поскольку виртуальные сети с двумя лучами не связаны друг с другом (пиринг виртуальных сетей не является транзитивным).
 
 - Задача 4. Настройка маршрутизации в топологии «концентратор-луч».
 
@@ -402,6 +634,5 @@ while ($true) { Invoke-WebRequest -Uri $webapp.DefaultHostName }
 - [Hybrid Cloud and MultiCloud](https://www.youtube.com/watch?v=qkj5W98Xdvw)
 - [Microsoft Azure Fundamentals](https://www.youtube.com/watch?v=NKEFWyqJ5XA&list=WL&index=130&t=12s)
 - [Google Cloud Digital Leader Certification Course](https://www.youtube.com/watch?v=UGRDM86MBIQ&list=WL&index=131&t=10s)
-- [AWS Basics for Beginners - Full Course](https://www.youtube.com/watch?v=ulprqHHWlng&t=5352s)
 
 Далее мы углубимся в системы контроля версий, особенно в git, а затем также рассмотрим обзоры репозиториев кода, и мы выберем GitHub, так как это мой предпочтительный вариант.
