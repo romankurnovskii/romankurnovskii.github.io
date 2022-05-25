@@ -1,9 +1,9 @@
 ---
-title: 35 - The Big Picture Git - Version Control
-description: The Big Picture Git - Version Control
+title: 35 - Git — контроль версий
+description: Git — контроль версий
 toc: true
 authors:
-tags: [devops]
+tags: [devops, git]
 categories:
 series: 
 date: "2022-05-25"
@@ -12,128 +12,126 @@ featuredImage:
 draft: false
 id: 1049041
 ---
-## The Big Picture: Git - Version Control
+## Общая картина: Git — контроль версий
 
-Before we get into git, we need to understand what version control is and why? In this opener for Git, we will take a look at what version control is, the basics of git.  
+Прежде чем мы перейдем к git, нам нужно понять, что такое контроль версий? В этой статье мы рассмотрим, что такое контроль версий и основы git.
 
-### What is Version Control? 
+### Что такое контроль версий?
 
-Git is not the only version control system so here we want to cover what options and what methodologies are available around version control. 
+Git — не единственная система контроля версий, поэтому рассмотрим, какие варианты и какие методологии доступны для контроля версий.
 
-The most obvious and a big benefit of Version Control is the ability to track a project's history. We can look back over this repository using `git log` and see that we have many commits and many comments and what has happened so far in the project. Don't worry we will get into the commands later. Now think if this was an actual software project full of source code and multiple people are committing to our software at different times, different authors and then reviewers all are logged here so that we know what has happened, when, by whom and who reviewed. 
+Наиболее очевидным и большим преимуществом контроля версий является возможность отслеживать историю проекта. Мы можем посмотреть на этот репозиторий с помощью `git log` и увидеть, что у нас есть много коммитов и много комментариев, а также то, что произошло на данный момент в проекте. Не волнуйтесь, мы перейдем к командам позже. А теперь подумайте, если бы это был настоящий программный проект, полный исходного кода, и несколько человек в разное время принимают участие в нашем программном обеспечении, разные авторы, а затем и рецензенты, все регистрируются здесь, чтобы мы знали, что произошло, когда, кем и кто рецензировал.
 
 ![](../images/Day35_Git1.png?v1)
 
-Version Control before it was cool, would have been something like manually creating a copy of your version before you made changes. It might be that you also comment out old useless code with the just in case mentality. 
+Управление версиями, прежде чем это стало крутым, было чем-то вроде ручного создания копии вашей версии, прежде чем вы вносили изменения. Возможно, вы также закомментируете старый бесполезный код на всякий случай.
 
 ![](../images/Day35_Git2.png?v1)
 
-I have started using version control over not just source code but pretty much anything, talks about projects like this (90DaysOfDevOps) because why would you not want that rollback and log of everything that has gone on. 
+Тем не менее, **Управление версиями не является резервной копией!**
 
-However, a big disclaimer **Version Control is not a Backup!**
+Еще одним преимуществом контроля версий является возможность управления несколькими версиями проекта. Давайте создадим пример, у нас есть бесплатное приложение, доступное во всех операционных системах, а затем у нас есть платное приложение, также доступное во всех операционных системах. БОльшая часть кода используется обоими приложениями. Мы могли бы копировать и вставлять наш код при каждом коммите в каждое приложение, но это будет очень грязно, особенно если вы масштабируете свою разработку более чем на одного человека, а также будут допущены ошибки.
 
-Another benefit of Version Control is the ability to manage multiple versions of a project, Let's create an example, we have a free app that is available on all operating systems and then we have a paid-for app also available on all operating systems. The majority of the code is shared between both applications. We could copy and paste our code each commit to each app but that is going to be very messy especially as you scale your development to more than just one person, also mistakes will be made. 
+В премиум-приложении у нас будут дополнительные функции, назовем их премиальными коммитами, бесплатная версия будет содержать только обычные коммиты.
 
-The premium app is where we are going to have additional features, let's call them premium commits, the free edition will just contain the normal commits. 
-
-The way this is achieved in Version Control is through branching. 
+Способ, которым это достигается в системе управления версиями, — это ветвление (branching).
 
 ![](../images/Day35_Git3.png?v1)
 
-Branching allows for two code streams for the same app as we stated above. But we will still want new features that land in our source code free version to be in our premium and to achieve this we have something called merging. 
+Ветвление позволяет использовать два потока кода для одного и того же приложения, как мы указали выше. Но мы по-прежнему хотим, чтобы новые функции, которые появляются в нашей бесплатной версии исходного кода, были в нашей премиум-версии, и для этого у нас есть то, что называется слиянием.
 
 ![](../images/Day35_Git4.png?v1)
 
-Now, this same easy but merging can be complicated because you could have a team working on the free edition and you could have another team working on the premium paid for version and what if both change code that affects aspects of the overall code. Maybe a variable gets updated and breaks something. Then you have a conflict that breaks one of the features. Version Control cannot fix the conflicts that are down to you. But version control allows this to be easily managed. 
+Теперь это такое же простое, но слияние может быть сложным, потому что у вас может быть команда, работающая над бесплатной версией, и другая команда, работающая над платной премиальной версией, и что, если обе они изменят код, который влияет на аспекты общего кода. Может быть, переменная обновляется и что-то ломает. Тогда у вас есть конфликт, который нарушает одну из функций. Контроль версий не может устранить конфликты, которые зависят от вас. Но контроль версий позволяет легко управлять этим.
 
-The primary reason if you have not picked up so far for version control, in general, is the ability to collaborate. The ability to share code amongst developers and when I say code as I said before more and more we are seeing much more use cases for other reasons to use source control, maybe its a joint presentation you are working on with a colleague or a 90DaysOfDevOps challenge where you have the community offering their corrections and updates throughout the project. 
+Основная причина, по которой вы до сих пор не взялись за управление версиями, — это возможность совместной работы. Возможность делиться кодом между разработчиками, и когда я говорю код, как я уже говорил раньше, все чаще и чаще мы видим гораздо больше вариантов использования по другим причинам для использования системы управления версиями, может быть, это совместная презентация, над которой вы работаете с коллегой, или вызов 90DaysOfDevOps. где у вас есть сообщество, предлагающее свои исправления и обновления на протяжении всего проекта.
 
-Without version control how did teams of software developers even handle this? I find it hard enough when I am working on my projects to keep track of things. I expect they would split out the code into each functional module. Maybe a little part of the puzzle then was bringing the pieces together and then problems and issues before anything would get released. 
+Без контроля версий, как команды разработчиков программного обеспечения вообще справились с этим? Когда я работаю над своими проектами, мне достаточно трудно следить за вещами. Я ожидаю, что они разделят код на каждый функциональный модуль. Возможно, небольшая часть головоломки заключалась в том, чтобы собрать воедино кусочки, а затем решить проблемы и проблемы, прежде чем что-либо было выпущено.
 
-With version control, we have a single source of truth. We might all still work on different modules but it enables us to collaborate better. 
+С контролем версий у нас есть единственный источник правды. Мы все еще можем работать над разными модулями, но это позволяет нам лучше взаимодействовать.
 
 ![](../images/Day35_Git5.png?v1)
 
 Another thing to mention here is that it's not just developers that can benefit from Version Control, it's all members of the team to have visibility but also tools all having awareness or leverage, Project Management tools can be linked here, tracking the work. We might also have a build machine for example Jenkins which we will talk about in another module. A tool that Builds and Packages the system, automating the deployment tests and metrics. 
 
-### What is Git? 
+Еще одна вещь, которую следует упомянуть здесь, это то, что не только разработчики могут извлечь выгоду из контроля версий. Все члены команды должны иметь представление, но также и инструменты управления проектом и т.д. 
+У нас также может быть build машина, например Jenkins, о которой мы поговорим в другом модуле. Зада подобных инструментов - создать и упаковывать систему, автоматизируя тесты и предоставляя метрики.
+### Что такое Git?
 
-Git is a tool that tracks changes to source code or any file, or we could also say Git is an open-source distributed version control system. 
+Git — это инструмент, который отслеживает изменения в исходном коде или любом файле, или мы могли бы также сказать, что Git — это распределенная система контроля версий с открытым исходным кодом.
 
-There are many ways in which git can be used on our systems, most commonly or at least for me I have seen it in at the command line, but we also have graphical user interfaces and tools like Visual Studio Code that have git aware operations we can take advantage of. 
+Есть много способов, которыми git можно использовать в наших системах, чаще всего или, по крайней мере, для меня я видел его в командной строке, но у нас также есть графические пользовательские интерфейсы и инструменты, такие как Visual Studio Code, которые имеют операции с поддержкой git, которые мы может воспользоваться.
 
-Now we are going to run through a high-level overview before we even get Git installed on our local machine. 
+Теперь мы пройдемся по общему обзору еще до того, как установим Git на нашу локальную машину.
 
-Let's take the folder we created earlier. 
+Возьмем папку, которую мы создали ранее.
 
 ![](../images/Day35_Git2.png?v1)
 
-To use this folder with version control we first need to initiate this directory using the `git init command. For now, just think that this command puts our directory as a repository in a database somewhere on our computer. 
+Чтобы использовать эту папку с контролем версий, нам сначала нужно инициировать этот каталог с помощью команды `git init. А пока представьте, что эта команда помещает наш каталог в качестве репозитория в базу данных где-то на нашем компьютере.
 
 ![](../images/Day35_Git6.png?v1)
 
-Now we can create some files and folders and our source code can begin or maybe it already has and we have something in here already. We can use the `git add .` command which puts all files and folders in our directory into a snapshot but we have not yet committed anything to that database. We are just saying all files with the `.` are ready to be added.   
+Теперь мы можем создать несколько файлов и папок, и наш исходный код может начаться, или, может быть, он уже есть, и у нас уже есть что-то здесь. Мы можем использовать команду `git add .`, которая помещает все файлы и папки в нашем каталоге в снимок, но мы еще ничего не зафиксировали в этой базе данных. Мы просто говорим, что все файлы с `.` готовы к добавлению.
 
 ![](../images/Day35_Git7.png?v1)
 
-Then we want to go ahead and commit our files, we do this with the `git commit -m "My First Commit"` command. We can give a reason for our commit and this is suggested so we know what has happened for each commit. 
+Затем мы хотим продолжить и зафиксировать наши файлы, мы делаем это с помощью команды `git commit -m "My First Commit"`. Мы можем указать причину нашей фиксации, и это предлагается, чтобы мы знали, что произошло для каждой фиксации.
 
 ![](../images/Day35_Git8.png?v1)
 
-We can now see what has happened within the history of the project. Using the `git log` command.
+Теперь мы можем увидеть, что произошло в истории проекта. С помощью команды `git log`.
 
 ![](../images/Day35_Git9.png?v1)
 
-We can also check the status of our repository by using `git status` this shows we have nothing to commit and we can add a new file called samplecode.ps1. If we then run the same `git status you will see that we file to be committed. 
+Мы также можем проверить состояние нашего репозитория с помощью `git status`, это показывает, что нам нечего коммитить, и мы можем добавить новый файл с именем samplecode.ps1. Если мы затем запустим тот же статус `git, вы увидите, что мы файл для фиксации.
 
 ![](../images/Day35_Git10.png?v1)
 
-Add our new file using the `git add samplecode.ps1` command and then we can run `git status` again and see our file is ready to be committed. 
+Добавьте наш новый файл с помощью команды `git add samplecode.ps1`, а затем мы снова запустим `git status` и увидим, что наш файл готов к фиксации.
+
 
 ![](../images/Day35_Git11.png?v1)
 
-Then issue `git commit -m "My Second Commit"` command.
+Затем выполните команду git commit -m "My Second Commit".
 
 ![](../images/Day35_Git12.png?v1)
 
-Another `git status` now shows everything is clean again.
+Другой `git status` теперь показывает, что все снова чисто.
 
 ![](../images/Day35_Git13.png?v1)
 
-We can then use the `git log` command which shows the latest changes and first commit. 
+Затем мы можем использовать команду `git log`, которая показывает последние изменения и первую фиксацию.
 
 ![](../images/Day35_Git14.png?v1)
 
-If we wanted to see the changes between our commits i.e what files have been added or modified we can use the `git diff b8f8 709a`
+Если мы хотим увидеть изменения между нашими коммитами, то есть какие файлы были добавлены или изменены, мы можем использовать `git diff b8f8 709a`
 
 ![](../images/Day35_Git15.png?v1)
 
-Which then displays what has changed in our case we added a new file. 
+Затем отображается то, что изменилось, в нашем случае мы добавили новый файл.
 
 ![](../images/Day35_Git16.png?v1)
 
-We can also and we will go deeper into this later on but we can jump around our commits i.e we can go time travelling! By using our commit number we can use the `git checkout 709a` command to jump back in time without losing our new file. 
+Мы также можем, и мы углубимся в это позже, но мы можем прыгать вокруг наших коммитов, то есть мы можем путешествовать во времени! Используя наш номер фиксации, мы можем использовать команду `git checkout 709a`, чтобы вернуться назад во времени, не теряя наш новый файл.
 
 ![](../images/Day35_Git17.png?v1)
 
-But then equally we will want to move forward as well and we can do this the same way with the commit number or you can see here we are using the `git switch -` command to undo our operation. 
+Но в равной степени мы также захотим двигаться вперед, и мы можем сделать это таким же образом с номером коммита, или вы можете видеть здесь, что мы используем команду `git switch -`, чтобы отменить нашу операцию.
 
 ![](../images/Day35_Git18.png?v1)
 
-The TLDR; 
 
-- Tracking a projects history
-- Managing multiple versions of a project
-- Sharing code amongst developers and a wider scope of teams and tools
-- Coordinating teamwork
-- Oh and there is some time travel! 
+[TLDR](https://ru.wikipedia.org/wiki/TL;DR); 
 
+- Отслеживание истории проектов
+- Управление несколькими версиями проекта
+- Обмен кодом между разработчиками и более широкий круг команд и инструментов
+- Координация работы в команде
 
-This might have seemed a jump around but hopefully, you can see without really knowing the commands used the powers and the big picture behind Version Control. 
+Это могло показаться прыжком, но, надеюсь, вы можете увидеть, даже не зная, что команды использовали возможности и общую картину, лежащую в основе контроля версий.
 
-Next up we will be getting git installed and set up on your local machine and diving a little deeper into some other use cases and commands that we can achieve in Git. 
-
-
+Далее мы установим и настроим git на вашем локальном компьютере и немного углубимся в некоторые другие варианты использования и команды, которые мы можем реализовать в Git.
 
 ## Ресурсы 
 
@@ -143,6 +141,4 @@ Next up we will be getting git installed and set up on your local machine and di
 - [Git for Professionals Tutorial](https://www.youtube.com/watch?v=Uszj_k0DGsg) 
 - [Git and GitHub for Beginners - Crash Course](https://www.youtube.com/watch?v=RGOj5yH7evk&t=8s) 
 - [Complete Git and GitHub Tutorial](https://www.youtube.com/watch?v=apGV9Kg7ics)
-
-See you on [Day 36](../day36) 
 
