@@ -1,6 +1,6 @@
 ---
-title: 4 - DevOps & Agile
-description: DevOps & Agile
+title: 4 - DevOps и Agile
+description: DevOps и Agile
 toc: true
 authors:
 tags: [devops, agile, scrum, kanban]

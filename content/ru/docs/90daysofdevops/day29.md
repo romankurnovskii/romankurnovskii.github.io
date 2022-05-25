@@ -1,6 +1,6 @@
 ---
-title: 29 - Microsoft Azure Fundamentals
-description: Microsoft Azure Fundamentals
+title: 29 - Знакомство с Microsoft Azure
+description: Туториал по Microsoft Azure с нуля
 toc: true
 authors:
 tags: [devops]

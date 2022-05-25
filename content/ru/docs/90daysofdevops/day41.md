@@ -1,10 +1,15 @@
 ---
-title: '#90DaysOfDevOps - The Open Source Workflow - Day 41'
-published: false
-description: 90DaysOfDevOps - The Open Source Workflow
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+title: 41 - The Open Source Workflow
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-05-31"
+lastmod: "2022-05-31"
+featuredImage:
+draft: false
 id: 1048806
 ---
 ## The Open Source Workflow 

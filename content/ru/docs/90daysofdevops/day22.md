@@ -1,6 +1,6 @@
 ---
-title: 22 - The OSI Model - The 7 Layers
-description: The OSI Model - The 7 Layers
+title: 22 - Открытая сетевая модель OSI
+description: 7 уровней модели OSI 
 toc: true
 authors:
 tags: [devops]

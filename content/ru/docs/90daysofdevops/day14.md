@@ -1,6 +1,6 @@
 ---
-title: 14 - The Big Picture - DevOps and Linux
-description: The Big Picture - DevOps and Linux
+title: 14 - DevOps и Linux
+description: DevOps и Linux
 toc: true
 authors:
 tags: [devops, linux, virtualbox, vagrant]
@@ -55,23 +55,14 @@ VAGRANTFILE описывает тип машины, которую мы хоти
 Давайте взглянем на этот VAGRANTFILE и посмотрим, что мы строим.
 
 ``` 
-
 Vagrant.configure("2") do |config|
-
   config.vm.box = "chenhan/ubuntu-desktop-20.04"
-
   config.vm.provider :virtualbox do |v|
-
    v.memory  = 8096
-
    v.cpus    = 4
-
    v.customize ["modifyvm", :id, "--vram", "128mb"]
-
+  end
 end
-
-end
-
 ```
 Это очень простой VAGRANTFILE. В целом, мы говорим, что нам нужна конкретная «сборка». Сборка, возможно, является либо общедоступным образом, либо частной сборкой системы, которую вы ищете. Вы можете найти длинный список здесь, в [общедоступном каталоге Vagrant](https://app.vagrantup.com/boxes/search)
 
@@ -104,7 +95,6 @@ v.customize ["modifyvm", :id, "--vram", ""]
 О, и если вы зашли так далеко и спрашивали: «ЧТО ТАКОЕ ИМЯ ПОЛЬЗОВАТЕЛЯ И ПАРОЛЬ?»
 
 - Username = vagrant 
-
 - Password = vagrant 
 
 Завтра мы рассмотрим некоторые команды и то, что они делают. Терминал станет местом, где все произойдет.

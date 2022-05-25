@@ -52,8 +52,6 @@ Git — не единственная система контроля верси
 
 ![](../images/Day35_Git5.png?v1)
 
-Another thing to mention here is that it's not just developers that can benefit from Version Control, it's all members of the team to have visibility but also tools all having awareness or leverage, Project Management tools can be linked here, tracking the work. We might also have a build machine for example Jenkins which we will talk about in another module. A tool that Builds and Packages the system, automating the deployment tests and metrics. 
-
 Еще одна вещь, которую следует упомянуть здесь, это то, что не только разработчики могут извлечь выгоду из контроля версий. Все члены команды должны иметь представление, но также и инструменты управления проектом и т.д. 
 У нас также может быть build машина, например Jenkins, о которой мы поговорим в другом модуле. Зада подобных инструментов - создать и упаковывать систему, автоматизируя тесты и предоставляя метрики.
 ### Что такое Git?

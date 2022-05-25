@@ -1,6 +1,6 @@
 ---
-title: 26 - Building our Lab
-description: Building our Lab
+title: 26 - Развертывание виртуальной лаборатории EVE-NG в домашних условиях
+description: Развертывание виртуальной лаборатории EVE-NG в домашних условиях
 toc: true
 authors:
 tags: [devops]

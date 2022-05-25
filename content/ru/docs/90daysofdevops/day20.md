@@ -1,5 +1,5 @@
 ---
-title: 20 - Dev workstation setup - All the pretty things
+title: 20 - Настройка рабочей среды DevOps
 description: Настройка рабочей среды
 toc: true
 authors:

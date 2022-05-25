@@ -1,6 +1,6 @@
 ---
-title: 7 - The Big Picture - Learning a Programming Language
-description: The Big Picture - Learning a Programming Language
+title: 7 - DevOps - изучение языка программирования
+description: DevOps - изучение языка программирования
 toc: true
 authors:
 tags: [devops, golang, python]
