@@ -1,6 +1,6 @@
 ---
-title: 13 - Tweet your progress with our new App
-description: Tweet your progress with our new App
+title: 13 - Go - подключение Twitter API
+description: Go - подключение Twitter API
 toc: true
 authors:
 tags: [devops, golang]

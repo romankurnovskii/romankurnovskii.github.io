@@ -1,6 +1,6 @@
 ---
-title: 15 - Linux Commands for DevOps
-description: Linux Commands for DevOps
+title: 15 - Команды Linux в DevOps
+description: Команды Linux в DevOps
 toc: true
 authors:
 tags: [devops, linux]

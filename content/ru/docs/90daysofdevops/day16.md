@@ -1,5 +1,5 @@
 ---
-title: 16 - Managing your Linux System, Filesystem & Storage
+title: 16 - Управление системой, файловой системой и хранилищем в Linux
 description: Управление системой, файловой системой и хранилищем в Linux
 toc: true
 authors:

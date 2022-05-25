@@ -1,6 +1,6 @@
 ---
-title: 8 - Setting up your DevOps environment for Go & Hello World
-description: Setting up your DevOps environment for Go & Hello World
+title: 8 - Настройка DevOps окружения для запуска Hello World на Go
+description: Настройка DevOps окружения для запуска Hello World на Go
 toc: true
 authors:
 tags: [devops, golang, hello-world]

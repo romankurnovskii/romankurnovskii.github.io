@@ -1,13 +1,13 @@
 ---
-title: 25 - Python for Network Automation
-description: Python for Network Automation
+title: 25 - Автоматизация сети с помощью Python
+description: Автоматизация сети с помощью Python
 toc: true
 authors:
 tags: [devops]
 categories:
 series:
 date: "2022-05-15"
-lastmod: "2022-05-07"
+lastmod: "2022-05-25"
 featuredImage:
 draft: false
 id: 1049038

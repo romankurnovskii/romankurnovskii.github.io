@@ -1,6 +1,6 @@
 ---
-title: 9 - Let's explain the Hello World code 
-description: Let's explain the Hello World code
+title: 9 - Как работает hello-world на Golang
+description: Как работает hello-world на Golang
 toc: true
 authors:
 tags: [devops, golang, hello-world]

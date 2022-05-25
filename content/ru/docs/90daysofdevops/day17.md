@@ -1,5 +1,5 @@
 ---
-title: 17 - Text Editors - nano vs vim
+title: 17 - Текстовые редакторы Nano/Vim
 description: Текстовые редакторы nano и vim
 toc: true
 authors:

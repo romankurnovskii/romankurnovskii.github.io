@@ -1,5 +1,5 @@
 ---
-title: 10 - The Go Workspace 
+title: 10 - Окружение Go
 description: Окружение Go
 toc: true
 authors:

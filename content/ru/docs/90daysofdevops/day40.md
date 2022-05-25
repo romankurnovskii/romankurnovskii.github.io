@@ -1,10 +1,15 @@
 ---
-title: '#90DaysOfDevOps - Social Network for code - Day 40'
-published: false
-description: 90DaysOfDevOps - Social Network for code
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
+title: 40 - Social Network for code
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-05-30"
+lastmod: "2022-05-30"
+featuredImage:
+draft: false
 id: 1049044
 ---
 ## Social Network for code

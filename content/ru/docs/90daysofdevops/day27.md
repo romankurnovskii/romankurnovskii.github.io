@@ -1,6 +1,6 @@
 ---
-title: 27 - Getting Hands-On with Python & Network
-description: Getting Hands-On with Python & Network
+title: 27 - Работа с сетью в Python
+description: Работа с сетью в Python
 toc: true
 authors:
 tags: [devops]

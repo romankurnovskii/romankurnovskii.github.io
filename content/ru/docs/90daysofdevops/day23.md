@@ -1,6 +1,6 @@
 ---
-title: 23 - Network Protocols
-description: Network Protocols
+title: 23 - Протоколы сети
+description: Протоколы сети
 toc: true
 authors:
 tags: [devops]
@@ -12,7 +12,7 @@ featuredImage:
 draft: false
 id: 1048704
 ---
-## Network Protocols 
+## Протоколы сети
 Набор правил и сообщений, образующих стандарт.
 
 - ARP - Address Resolution Protocol - протокол разрешения адресов
