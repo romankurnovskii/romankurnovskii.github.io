@@ -1,6 +1,6 @@
 ---
-title: 36 - Installing & Configuring Git
-description: Installing & Configuring Git
+title: 36 - Установка и настройка Git
+description: Установка и настройка Git
 toc: true
 authors:
 tags: [devops]
@@ -12,65 +12,62 @@ featuredImage:
 draft: false
 id: 1048738
 ---
-## Installing & Configuring Git
+## Установка и настройка Git
 
-Git is a open source, cross platform tool for version control. If I like me you are using Ubuntu or most Linux environments you might find that you already git installed but we are going to run through the install and configuration. 
+Git — это кроссплатформенный инструмент с открытым исходным кодом для контроля версий. Если я нравлюсь вам, вы используете Ubuntu или большинство сред Linux, вы можете обнаружить, что у вас уже установлен git, но мы собираемся выполнить установку и настройку.
 
-Even if you already have git installed on your system it is also a good idea to make sure we are up to date. 
+Даже если у вас уже установлен git в вашей системе, также рекомендуется убедиться, что мы в курсе последних событий.
+### Установка Git
 
-### Installing Git
+Мы будем работать с Windows и Linux, но вы также можете найти macOS в списке [здесь](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
-As already mentioned Git is cross platform, we will be running through Windows and Linux but you can find macOS also listed [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+Для [Windows](https://git-scm.com/download/win) мы можем загрузить наши установщики с официального сайта.
 
-For [Windows](https://git-scm.com/download/win) we can grab our installers from the official site. 
+Вы также можете использовать `winget` на своем компьютере с Windows, думайте об этом как о своем диспетчере пакетов приложений Windows.
 
-You could also use `winget` on your Windows machine, think of this as your Windows Application Package Manager. 
-
-Before we install anything lets see what version we have on our Windows Machine. Open a PowerShell window and run `git --version` 
+Прежде чем мы что-либо установим, давайте посмотрим, какая версия у нас есть на нашей машине с Windows. Откройте окно PowerShell и запустите  `git --version` 
 
 ![](../images/Day36_Git1.png?v1)
 
-We can also check our WSL Ubuntu version of Git as well. 
+Мы также можем проверить нашу версию Git для Ubuntu.
 
 ![](../images/Day36_Git2.png?v1)
 
-At the time of writing the latest Windows release is `2.35.1` so we have some updating to do there which I will run through. I expect the same for Linux. 
+Загружаем последнюю версию установщика. Важно отметить, что git удалит предыдущие версии перед установкой последней.
 
-I went ahead and downloaded the latest installer and ran through the wizard and will document that here. The important thing to note is that git will uninstall previous versions before installing the latest. 
+Это означает, что процесс, показанный ниже, по большей части такой же, как если бы вы устанавливали не из git.
 
-Meaning that the process shown below is also the same process for the most part as if you were installing from no git. 
-
-It is a very simple installation. Once downloaded double click and get started. Read through the GNU license agreement. But remember this is free and open source software. 
+Это очень простая установка. После загрузки дважды щелкните и начните. Прочтите лицензионное соглашение GNU. Но помните, что это бесплатное программное обеспечение с открытым исходным кодом.
 
 ![](../images/Day36_Git3.png?v1)
 
-Now we can choose additional components that we would like to also install but also associate with git. On Windows I always make sure I install Git Bash as this allows us to run bash scripts on Windows. 
+Теперь мы можем выбрать дополнительные компоненты, которые мы хотели бы также установить, но также связать с git. В Windows я всегда устанавливаю Git Bash, так как это позволяет нам запускать сценарии bash в Windows.
 
 ![](../images/Day36_Git4.png?v1)
 
-We can then choose which SSH Executable we wish to use. IN leave this as the bundled OpenSSH that you might have seen in the Linux section. 
+Затем мы можем выбрать, какой исполняемый файл SSH мы хотим использовать. IN оставьте это как пакетный OpenSSH, который вы могли видеть в разделе Linux.
 
 ![](../images/Day36_Git5.png?v1)
 
-We then have experimental features that we may wish to enable, for me I don't need them so I don't enable, you can always come back in through the installation and enable these later on. 
+Затем у нас есть экспериментальные функции, которые мы можем захотеть включить, мне они не нужны, поэтому я не включаю, вы всегда можете вернуться во время установки и включить их позже.
 
 ![](../images/Day36_Git6.png?v1)
 
-Installation complete, we can now choose to open Git Bash and or the latest release notes. 
+Установка завершена, теперь мы можем открыть Git Bash или последние примечания к выпуску.
 
 ![](../images/Day36_Git7.png?v1)
 
-The final check is to take a look in our PowerShell window what version of git we have now. 
+Последняя проверка — посмотреть в нашем окне PowerShell, какая у нас сейчас версия git.
 
 ![](../images/Day36_Git8.png?v1)
 
-Super simple stuff and now we are on the latest version. On our Linux machine we seemed to be a little behind so we can also walk through that update process. 
+Супер простые вещи, и теперь мы на последней версии. На нашей машине с Linux мы немного отстали, поэтому мы также можем пройти этот процесс обновления.
 
-I simply run the `sudo apt-get install git` command. 
+Я просто запускаю команду `sudo apt-get install git`.
 
 ![](../images/Day36_Git9.png?v1)
 
-You could also run the following which will add the git repository for software installations. 
+Вы также можете запустить следующее, которое добавит репозиторий git для установки программного обеспечения.
 
 ```
 sudo add-apt-repository ppa:git-core/ppa -y
@@ -78,70 +75,66 @@ sudo apt-get update
 sudo apt-get install git -y
 git --version
 ``` 
-### Configuring Git
+### Настройка Git
 
-When we first use git we have to define some settings, 
+Когда мы впервые используем git, нам нужно определить некоторые настройки,
 
-- Name
-- Email 
-- Default Editor
-- Line Ending
+- Имя
+- Эл. адрес
+- Редактор по умолчанию
+- Окончание строки
 
-This can be done at three levels 
+Это можно сделать на трех уровнях
 
-- System = All users 
-- Global = All repositories of the current user 
-- Local = The current repository
+- System = Все пользователи
+- Global = все репозитории текущего пользователя
+- Local = текущий репозиторий
 
-Example: 
-`git config --global user.name "Michael Cade"` 
-`git config --global user.email Michael.Cade@90DaysOfDevOPs.com"`
-Depending on your Operating System will determine the default text editor. In my Ubuntu machine without setting the next command is using nano. The below command will change this to visual studio code. 
+Пример: 
+`git config --global user.name "My Name"` 
+`git config --global user.email email@example.com"`
+
+В зависимости от вашей операционной системы будет определять текстовый редактор по умолчанию. На моей машине с Ubuntu без настройки следующая команда использует Тano. Приведенная ниже команда изменит это на код Visual Studio.
 
 `git config --global core.editor "code --wait"`
 
-now if we want to be able to see all git configuration then we can use the following command. 
-
-`git config --global -e` 
+Чтобы увидеть всю конфигурацию git, мы можем использовать команду `git config --global -e` 
 
 ![](../images/Day36_Git10.png?v1)
 
-On any machine this file will be named `.gitconfig` on my Windows machine you will find this in your user account directory. 
-
+На любом компьютере этот файл будет называться `.gitconfig`, на моем компьютере с Windows вы найдете его в каталоге своей учетной записи пользователя.
 ![](../images/Day36_Git11.png?v1)
 
-### Git Theory
+### Теория Git
 
-I mentioned in the post yesterday that there were other version control types and we can split these down into two different types. One is Client Server and the other is Distributed. 
+Я упомянул во вчерашнем посте, что существуют и другие типы контроля версий, и мы можем разделить их на два разных типа. Один клиент-сервер, а другой распределенный.
+### Клиент-серверный контроль версий
 
-### Client-Server Version Control 
+До появления git клиент-сервер был де-факто методом контроля версий. Примером этого может быть [Apache Subversion](https://subversion.apache.org/), которая представляет собой систему управления версиями с открытым исходным кодом, основанную в 2000 году.
 
-Before git was around Client-Server was the defacto method for version control. An example of this would be [Apache Subversion](https://subversion.apache.org/) which is an open source version control system founded in 2000. 
-
-In this model of Client-Server version control, the first step the developer downloads the source code, the actual files from the server. This doesnt remove the conflicts but it does remove the complexity of the conflicts and how to resolve them. 
+В этой модели управления версиями клиент-сервер на первом этапе разработчик загружает исходный код, фактические файлы с сервера. Это не устраняет конфликты, но устраняет сложность конфликтов и способы их разрешения.
 
 ![](../images/Day36_Git12.png?v1)
 
-Now for example lets say we have two developers working on the same files and one wins the race and commits or uploads their file back to the server first with their new changes. When the second developer goes to update they have a conflict. 
+Теперь, например, скажем, у нас есть два разработчика, работающих над одними и теми же файлами, и один из них выигрывает гонку и первым фиксирует или загружает свой файл обратно на сервер со своими новыми изменениями. Когда второй разработчик идет на обновление, у них возникает конфликт.
 
 ![](../images/Day36_Git13.png?v1)
 
-So now the Dev needs to pull down the first devs code change next to theirs check and then commit once those conflicts have been settled. 
+Итак, теперь разработчику нужно вывести первое изменение кода разработчика рядом с его проверкой, а затем зафиксировать, как только эти конфликты будут урегулированы.
 
 ![](../images/Day36_Git15.png?v1)
 
-### Distributed Version Control 
+### Распределенный контроль версий
 
-Git is not the only distributed version control system. But it is very much the defacto. 
+Git — не единственная распределенная система контроля версий. Но это очень де-факто.
 
-Some of the major benefits of Git are: 
+Некоторые из основных преимуществ Git:
 
-- Fast 
-- Smart 
-- Flexible 
-- Safe & Secure
+- Быстрый
+- Гибкий
+- Безопасный и надежный
 
-Unlike the Client-Server version control model, each developer downloads the the source repository meaning everything. History of commits, all the branches etc. etc. 
+В отличие от модели управления версиями клиент-сервер, каждый разработчик загружает исходный репозиторий, то есть все. История коммитов, все ветки и т.д. и т.п.
 
 ![](../images/Day36_Git16.png?v1)
 
@@ -154,4 +147,3 @@ Unlike the Client-Server version control model, each developer downloads the the
 - [Git and GitHub for Beginners - Crash Course](https://www.youtube.com/watch?v=RGOj5yH7evk&t=8s) 
 - [Complete Git and GitHub Tutorial](https://www.youtube.com/watch?v=apGV9Kg7ics)
 
-See you on [Day 37](../day37) 
