@@ -8,7 +8,7 @@ categories:
 series:
 date: "2022-04-22"
 lastmod: "2022-04-22"
-featuredImage:
+featuredImage: docs/90daysofdevops/images/feature/devops-cycle.png
 draft: false
 ---
 
