@@ -84,13 +84,13 @@ If we scroll down a little further you will also see that we have Releases, thes
 
 ![](../images/Day40_Git9.png?v1)
 
-A the top of the page you are going to see a list of tabs. These may vary and these can be modified to only show the ones you require. You will see here that I am not using all of these and I should remove them to make sure my whole repository is tidy. 
+В верхней части страницы вы увидите список вкладок. Они могут различаться, и их можно изменить, чтобы отображались только те, которые вам нужны. Вы увидите здесь, что я не использую все это, и я должен удалить их, чтобы убедиться, что весь мой репозиторий в порядке.
 
-First up we had the code tab which we just discussed but these tabs are always available when navigating through a repository which is super useful so we can jump between sections quickly and easily. Next we have the issues tab. 
+Во-первых, у нас была вкладка кода, которую мы только что обсуждали, но эти вкладки всегда доступны при навигации по репозиторию, что очень полезно, так что мы можем быстро и легко переходить между разделами. Далее у нас есть вкладка вопросов.
 
-Issues let you track your work on GitHub, where development happens. In this specific repository you can see I have some issues focused on adding diagrams or typos but also we have an issue stating a need or requirement for a Chinese version of the repository. 
+Проблемы позволяют отслеживать вашу работу на GitHub, где происходит разработка. В этом конкретном репозитории вы можете увидеть, что у меня есть некоторые проблемы, связанные с добавлением диаграмм или опечаток, но также у нас есть проблема, указывающая на необходимость или требование для китайской версии репозитория.
 
-If this was a code repository then this is a great place to raise concerns or issues with the maintainers, but remember be mindful and detailed about what you are reporting, give as much detail as possible. 
+Если это был репозиторий кода, то это отличное место, чтобы сообщить о проблемах или проблемах с сопровождающими, но помните, будьте внимательны и подробны в отношении того, о чем вы сообщаете, давайте как можно больше подробностей.
 
 ![](../images/Day40_Git10.png?v1)
 
@@ -104,9 +104,9 @@ If this was a code repository then this is a great place to raise concerns or is
 
 ![](../images/Day40_Git12.png?v1)
 
-The Actions tab is going to enable you to build, test and deploy code and a lot more right from within GitHub. GitHub Actions will be something we cover in the CI/CD section of the challenge but this is where we can set some configuration here to automate steps for us. 
+Вкладка "Actions" позволит вам создавать, тестировать и развертывать код и многое другое прямо из GitHub. GitHub Actions будет чем-то, что мы рассмотрим в разделе задачи, посвященном CI/CD, но именно здесь мы можем установить некоторую конфигурацию, чтобы автоматизировать шаги для нас.
 
-On my main GitHub Profile I am using GitHub Actions to fetch the latest blog posts and YouTube videos to keep things up to date on that home screen. 
+В моем основном профиле GitHub я использую GitHub Actions для получения последних сообщений в блогах и видео на YouTube, чтобы обновлять информацию на этом домашнем экране.
 
 ![](../images/Day40_Git13.png?v1)
 

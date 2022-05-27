@@ -91,8 +91,11 @@ git --version
 - Local = текущий репозиторий
 
 Пример: 
-`git config --global user.name "My Name"` 
-`git config --global user.email email@example.com"`
+
+```bash
+git config --global user.name "My Name"
+git config --global user.email email@example.com"
+```
 
 В зависимости от вашей операционной системы будет определять текстовый редактор по умолчанию. На моей машине с Ubuntu без настройки следующая команда использует Тano. Приведенная ниже команда изменит это на код Visual Studio.
 
