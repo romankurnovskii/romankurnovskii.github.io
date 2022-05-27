@@ -12,19 +12,20 @@ featuredImage:
 draft: false
 id: 1049042
 ---
-## Staging & Changing
 
-We have already covered some of the basics but putting things into a walkthrough makes it better for me to learn and understand how and why we are doing it this way. Before we get into any git-based services such as GitHub, git has its powers that we can take advantage of on our local workstation. 
+## Staging и Changing
 
-We are going to take the project folder we created at the start of the git session and we are going to walk through some of the simple steps we can do with git. We created a folder on our local machine and we initialised it with the `git init` command 
+Мы уже рассмотрели некоторые основы, но добавление вещей в пошаговое руководство помогает мне лучше узнать и понять, как и почему мы делаем это таким образом. Прежде чем мы перейдем к каким-либо службам на основе git, таким как GitHub, у git есть свои возможности, которыми мы можем воспользоваться на нашей локальной рабочей станции.
+
+Мы возьмем папку проекта, созданную нами в начале сеанса git, и пройдемся по некоторым простым шагам, которые мы можем выполнить с помощью git. Мы создали папку на нашей локальной машине и инициализировали ее с помощью команды git init.
 
 ![](../images/Day38_Git1.png?v1)
 
-We can also see now that we have initialised the folder we have a hidden folder in our directory. 
+Теперь мы также можем видеть, что мы инициализировали папку, у нас есть скрытая папка в нашем каталоге.
 
 ![](../images/Day38_Git2.png?v1)
 
-This is where the details of the git repository are stored as well as the information regarding our branches and commits. 
+Здесь хранятся сведения о репозитории git, а также информация о наших ветках и коммитах.
 
 ### Staging Files
 
@@ -128,4 +129,3 @@ In the post tomorrow we will continue to look through these short examples of th
 - [Complete Git and GitHub Tutorial](https://www.youtube.com/watch?v=apGV9Kg7ics)
 - [Git cheatsheet](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
 
-See you on [Day 39](../day39) 

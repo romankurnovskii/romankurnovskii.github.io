@@ -12,45 +12,45 @@ featuredImage:
 draft: false
 id: 1049044
 ---
-## Social Network for code
-Exploring GitHub | GitLab | BitBucket 
+## Социальная сеть для кода
+Изучение GitHub | GitLab | BitBucket 
 
-Today I want to cover off some of the git based services that we have likely all heard of and expect we also use on a daily basis. 
+Сегодня я хочу рассказать о некоторых сервисах на основе git, о которых мы, вероятно, все слышали и ожидаем, что будем использовать их ежедневно.
 
-We will then use some of our prior session knowledge to move copies of our data to each of the main services. 
+Затем мы воспользуемся некоторыми знаниями из предыдущего сеанса, чтобы переместить копии наших данных в каждую из основных служб.
 
-I called this section "Social Network for Code" let me explain why? 
+Я назвал этот раздел «Социальная сеть для кода», поясню почему?
 
-### GitHub 
+### GitHub
 
-Most common at least for me is GitHub, GitHub is a web based hosting service for git. It is most commonly used by software developers to store their code in. Source Code Management with the git version control features as well as a lot of additional features. It allows for teams or open contributors to easily communicate and provides a social aspect to coding. (hence the social networking title) Since 2018 GitHub is part of Microsoft. 
+Наиболее распространенным, по крайней мере для меня, является GitHub, GitHub — это веб-хостинг для git. Чаще всего он используется разработчиками программного обеспечения для хранения своего кода. Управление исходным кодом с функциями контроля версий git, а также множеством дополнительных функций. Это позволяет командам или открытым участникам легко общаться и обеспечивает социальный аспект кодирования. (отсюда и название социальной сети) С 2018 года GitHub является частью Microsoft.
 
-GitHub has been around for quite some time and was founded in 2007/2008. With Over 40 million users on the platform today. 
+GitHub существует уже довольно давно и был основан в 2007-2008 годах. Сегодня на платформе более 40 миллионов пользователей.
 
-GitHub Main Features 
+Основные возможности GitHub
 
 - Code Repository 
 - Pull Requests 
 - Project Management toolset - Issues 
 - CI / CD Pipeline - GitHub Actions 
 
-In terms of pricing GitHub have various different levels of pricing for their users. More can be found on [Pricing](https://github.com/pricing) 
+С точки зрения ценообразования GitHub предлагает различные уровни ценообразования для своих пользователей. Дополнительную информацию можно найти на странице [Цены](https://github.com/pricing).
 
-For the purpose of this we will cover the free tier. 
+Для этого мы рассмотрим бесплатный уровень.
 
-I am going to be using my already created GitHub account during this walkthrough, if you do not have an account then on the opening GitHub page there is a sign up option and some easy steps to get set up. 
+Я собираюсь использовать свою уже созданную учетную запись GitHub во время этого пошагового руководства, если у вас нет учетной записи, то на открывающейся странице GitHub есть вариант регистрации и несколько простых шагов для настройки.
 
 ### GitHub opening page
 
-When you first login to your GitHub account you get a page containing a lot of widgets giving you options of where and what you would like to see or do. First up we have the "All Activity" this is going to give you a look into what is happening with your repositories or activity in general associated to your organisation or account. 
+Когда вы впервые входите в свою учетную запись GitHub, вы получаете страницу, содержащую множество виджетов, дающих вам варианты того, где и что вы хотели бы увидеть или сделать. Во-первых, у нас есть «All Activity», это даст вам представление о том, что происходит с вашими репозиториями или действиями в целом, связанными с вашей организацией или учетной записью.
 
 ![](../images/Day40_Git1.png?v1)
 
-Next we have our Code Repositories, either our own or repositories that we have interacted with recently. We can also quickly create new repositories or search repositories. 
+Затем у нас есть наши репозитории кода, либо наши собственные, либо репозитории, с которыми мы недавно взаимодействовали. Мы также можем быстро создавать новые репозитории или репозитории поиска.
 
 ![](../images/Day40_Git2.png?v1)
 
-We then have our recent activity, these for me are issues and pull requests that I have created or contributed to recently. 
+Затем у нас есть наша недавняя активность, для меня это проблемы и  pull requests, которые я недавно создал или в которых участвовал.
 
 ![](../images/Day40_Git3.png?v1)
 
@@ -74,9 +74,9 @@ We can then drill down into the building block of GitHub, the repositories. Here
 
 ![](../images/Day40_Git7.png?v1)
 
-As the repository is so important to GitHub let me choose a pretty busy one of late and run through some of the core functionality that we can use here on top of everything I am already using when it comes to editing our "code" in git on my local system. 
+Поскольку этот репозиторий так важен для GitHub, позвольте мне выбрать довольно загруженный в последнее время и просмотреть некоторые основные функции, которые мы можем использовать здесь, в дополнение ко всему, что я уже использую, когда дело доходит до редактирования нашего кода в git. моя локальная система.
 
-First of all from the previous window I have selected the 90DaysOfDevOps repository and we get to see this view. You can see from this view we have a lot of information, we have our main code structure in the middle showing our files and folders that are stored in our repository. We have our readme.mdbeing displayed down at the bottom. Over to the right of the page we have an about section where the repository has a description and purpose. Then we have lot of information underneath this showing how many people have starred the project, forked, and watching. 
+Прежде всего, в предыдущем окне я выбрал репозиторий 90DaysOfDevOps, и мы видим это представление. Вы можете видеть из этого представления, что у нас есть много информации, у нас есть наша основная структура кода в середине, показывающая наши файлы и папки, которые хранятся в нашем репозитории. Наш файл readme.md отображается внизу. Справа от страницы у нас есть раздел о репозитории, где у репозитория есть описание и назначение. Затем у нас есть много информации под этим, показывающей, сколько людей отметили проект, разветвились и смотрят.
 
 ![](../images/Day40_Git8.png?v1)
 
@@ -94,13 +94,13 @@ If this was a code repository then this is a great place to raise concerns or is
 
 ![](../images/Day40_Git10.png?v1)
 
-The next tab is Pull Requests, Pull requests let you tell others about changes you've pushed to a branch in a repository. This is where someone may have forked your repository, made changes such as bug fixes or feature enhancements or just typos a lot of the case in this repository. 
+Следующая вкладка — Pull Requests. Pull Requests позволяют вам сообщать другим об изменениях, которые вы отправили в ветку в репозитории. Здесь кто-то мог разветвить ваш репозиторий, внести изменения, такие как исправления ошибок или улучшения функций, или просто опечататься во многих случаях в этом репозитории.
 
-We will cover forking later on. 
+Мы рассмотрим разветвление позже.
 
 ![](../images/Day40_Git11.png?v1)
 
-I believe the next tab is quite new? But I thought for a project like #90DaysOfDevOps this could really help guide the content journey but also help the community as they walk through their own learning journey. I have created some discussion groups for each section of the challenge so people can jump in and discuss. 
+Я считаю, что следующая вкладка совершенно новая? Но я подумал, что для такого проекта, как #90DaysOfDevOps, это может действительно помочь направить контент, а также помочь сообществу, когда они проходят свой собственный путь обучения. Я создал несколько дискуссионных групп для каждого раздела задачи, чтобы люди могли присоединиться и обсудить.
 
 ![](../images/Day40_Git12.png?v1)
 
@@ -134,13 +134,13 @@ This was a super quick overview of GitHub, I think there are some other areas th
 
 ### Forking 
 
-I am going to get more into Open-Source in the session tomorrow but a big part of any code repository is the ability to collaborate with the community. Let's think of the scenario I want a copy of a repository because I want to make some changes to it, maybe I want to fix a bug or maybe I want to change something to use it for a use case that I have that was maybe not the intended use case for the original maintainer of the code. This is what we would call forking a repository. A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project. 
+Я собираюсь больше рассказать об Open-Source на завтрашней сессии, но большая часть любого репозитория кода — это возможность сотрудничать с сообществом. Давайте подумаем о сценарии: мне нужна копия репозитория, потому что я хочу внести в него некоторые изменения, может быть, я хочу исправить ошибку или, может быть, я хочу что-то изменить, чтобы использовать его для моего варианта использования, который, возможно, не был предполагаемый вариант использования для первоначального сопровождающего кода. Это то, что мы бы назвали разветвлением репозитория. Форк — это копия репозитория. Разветвление репозитория позволяет вам свободно экспериментировать с изменениями, не затрагивая исходный проект.
 
-Let me head back to the opening page after login and see one of those suggested repositories. 
+Позвольте мне вернуться на начальную страницу после входа в систему и увидеть один из предложенных репозиториев.
 
 ![](../images/Day40_Git19.png?v1)
 
-If we click on that repository we are going to get the same look as we have just walked through on the 90DaysOfDevOps repository. 
+Если мы нажмем на этот репозиторий, мы получим тот же вид, что и репозиторий 90DaysOfDevOps.
 
 ![](../images/Day40_Git20.png?v1)
 
@@ -160,13 +160,13 @@ Now we have our own copy of the repository that we can freely work on and change
 
 ![](../images/Day40_Git23.png?v1)
 
-Ok I hear you say, but how do I make changes to this repository and code if its on a website, well you can go through and edit on the website but its not going to be the same as using your favourite IDE on your local system with your favourite colour theme. In order for us to get a copy of this repository on our local machine we will perform a clone of the repository. This will allow us to work on things locally and then push our changes back into our forked copy of the repository. 
+Хорошо, я слышу, как вы говорите, но как мне внести изменения в этот репозиторий и код, если он находится на веб-сайте, ну, вы можете просматривать и редактировать на веб-сайте, но это не будет таким же, как использование вашей любимой IDE в вашей локальной системе. с вашей любимой цветовой темой. Чтобы получить копию этого репозитория на нашем локальном компьютере, мы выполним клонирование репозитория. Это позволит нам работать над вещами локально, а затем отправлять наши изменения обратно в нашу разветвленную копию репозитория.
 
-We have several options when it comes to getting a copy of this code as you can see below. 
+У нас есть несколько вариантов получения копии этого кода, как вы можете видеть ниже.
 
-There is a local version available of GitHub Desktop which gives you a visual desktop application to track changes and push and pull changes between local and github. 
+Доступна локальная версия GitHub Desktop, которая дает вам визуальное настольное приложение для отслеживания изменений и отправки и получения изменений между локальным и github.
 
-For the purpose of this little demo I am going to use the HTTPS url we see on there. 
+Для этой небольшой демонстрации я буду использовать URL-адрес HTTPS, который мы видим там.
 
 ![](../images/Day40_Git24.png?v1)
 
@@ -186,18 +186,17 @@ Now if we check back on GitHub and we find our readme.mdin that repository, you 
 
 ![](../images/Day40_Git28.png?v1)
 
-At this stage this might be complete and we might be happy with our change as we are the only people going to use our new change but maybe it was a bug change and if that is the case then we will want to contribute via a Pull Request to notify the original repository maintainers of our change and see if they accept our changes. 
+На данном этапе это может быть завершено, и мы можем быть довольны нашим изменением, поскольку мы единственные люди, которые будут использовать наше новое изменение, но, возможно, это было изменение ошибки, и если это так, то мы захотим внести свой вклад через Pull Request  чтобы уведомить сопровождающих исходного репозитория о наших изменениях и посмотреть, примут ли они наши изменения.
 
-We can do this by using the contribute button highlighted below. I will cover more on this tomorrow when we look into Open-Source workflows. 
+Мы можем сделать это, используя кнопку вклада, выделенную ниже. Я расскажу об этом подробнее завтра, когда мы рассмотрим рабочие процессы с открытым исходным кодом.
 
 ![](../images/Day40_Git29.png?v1)
 
-I have spent a long time looking through GitHub and I hear some of you cry but what about other options! 
+Я долго просматривал GitHub и слышал, как некоторые из вас плачут, но как насчет других вариантов!
 
-Well there are and I am going to find some resources that cover the basics for some of those as well. You are going to come across GitLab and BitBucket amongst others in your travels and whilst they are git based services they have their differences. 
+Ну, есть, и я собираюсь найти некоторые ресурсы, которые охватывают основы для некоторых из них. В своих путешествиях вы столкнетесь с GitLab и BitBucket, и хотя они основаны на git, у них есть свои отличия.
 
-You will also come across hosted options. Most commonly here I have seen GitLab as a hosted version vs GitHub Enterprise (Don't believe there is a free hosted GitHub?)
-
+Вы также столкнетесь с размещенными вариантами. Чаще всего здесь я видел GitLab как размещенную версию по сравнению с GitHub Enterprise (не верите, что есть бесплатный размещенный GitHub?)
 
 ## Ресурсы 
 
@@ -211,5 +210,3 @@ You will also come across hosted options. Most commonly here I have seen GitLab 
 - [Complete Git and GitHub Tutorial](https://www.youtube.com/watch?v=apGV9Kg7ics)
 - [Git cheatsheet](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
 
-
-See you on [Day 41](../day41) 
