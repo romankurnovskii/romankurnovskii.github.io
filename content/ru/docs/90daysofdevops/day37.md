@@ -3,7 +3,7 @@ title: 37 - Шпаргалка по Git
 description: Знакомство с Git
 toc: true
 authors:
-tags: [devops]
+tags: [devops, git]
 categories:
 series: 
 date: "2022-05-27"
@@ -11,7 +11,6 @@ lastmod: "2022-05-27"
 featuredImage:
 draft: false
 id: 1048707
-#TODO: перевод
 ---
 ## Знакомство с Git
 
@@ -104,13 +103,9 @@ Git не удобен для пользователя, тот факт, что �
 
 | Command      | Example                    | Description                                                                                                   |
 | ------------ | -------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| git branch   | `git branch`               | List all of the branches in your repo. Add a <branch> argument to create a new branch with the name <branch>. |
-| git checkout | `git checkout -b <branch>` | Create and check out a new branch named <branch>. Drop the -b flag to checkout an existing branch.            |
-| git merge    | `git merge <branch>`       | Merge <branch> into the current branch.                                                                       |
-
 | git branch | `git branch`   | Перечислите все ветки в вашем репо. Добавьте аргумент <branch>, чтобы создать новую ветку с именем <branch>. |
 | git checkout  | `git checkout -b <branch>` | Создайте и извлеките новую ветку с именем <branch>. Отбросьте флаг -b, чтобы проверить существующую ветку. |
-| git merge | `git merge <branch>`   | Объединить <branch> с текущей веткой. |
+| git merge | `git merge <branch>`   | Объединить ветку <branch> с текущей веткой. |
 ### Git Remote Repositories
 
 | Command        | Example                       | Description                                                                                                                                               |
