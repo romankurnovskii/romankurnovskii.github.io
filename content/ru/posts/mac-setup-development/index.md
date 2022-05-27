@@ -95,6 +95,7 @@ brew install \
     - [RSS Feed Reader](https://chrome.google.com/webstore/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp) (Easy to subscribe/unsubscribe to blogs/no need email)
     - [30 Seconds of Knowledge](https://chrome.google.com/webstore/search/https%3A%2F%2F30secondsofknowledge.com%2F) (random code snippet on a new tab)
     - [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa)
+    - [picture-in-picture](https://chrome.google.com/webstore/detail/picture-in-picture-extens/hkgfoiooedgoejojocmhlaklaeopbecg) (yutube/video above other screens)
 - [Firefox](https://www.google.com/chrome/) (web development)
 - [UTM](https://mac.getutm.app/) (Virtual machines UI using QEMU)
   - download ubuntu for arm, [doc](https://mac.getutm.app/gallery/ubuntu-20-04)
