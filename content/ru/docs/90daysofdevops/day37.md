@@ -1,6 +1,6 @@
 ---
-title: 37 - Gitting to know Git
-description: Gitting to know Git
+title: 37 - Шпаргалка по Git 
+description: Знакомство с Git
 toc: true
 authors:
 tags: [devops]
@@ -11,158 +11,159 @@ lastmod: "2022-05-27"
 featuredImage:
 draft: false
 id: 1048707
+#TODO: перевод
 ---
-## Gitting to know Git
+## Знакомство с Git
 
-Apoligies for the terrible puns in the title and throughout. I am surely not the first person to turn Git into a dad joke! 
+В последних двух постах мы узнали о системах контроля версий и некоторых основных рабочих процессах git как системы контроля версий [День 35](../day35). Затем мы установили git в нашу систему, обновили и настроили. Мы также немного углубились в теорию между системой контроля версий клиент-сервер и Git, которая является распределенной системой контроля версий [День 36](../day36).
 
-In the last two posts we learnt about version control systems, and some of the fundamental workflows of git as a version control system [Day 35](../day35) Then we got git installed on our system, updated and configured. We also went a little deeper on the theory between Client-Server version control system and Git which is a distributed version control system [Day 36](../day36).
+Теперь мы пройдемся по некоторым командам и вариантам использования, которые мы все обычно видим в git.
 
-Now we are going to run through some of the commands and use cases that we will all commonly see with git.
+### Где получить помощь по git?
 
-### Where to git help with git? 
+Будут времена, когда вы просто не сможете вспомнить или просто не знаете команду, которая вам нужна для работы с git. Вам понадобится помощь.
 
-There is going to be times where you just cannot remember or just don't know the command you need to get things done with git. You are going to need help. 
+Само собой разумеется, что Google или любая другая поисковая система, вероятно, будет вашим первым портом захода при поиске помощи.
 
-It goes without saying that  google or any search engine is likely to be your first port of call when searching help. 
-
-Secondly the next place is going to be the official git site and the documentation. [git-scm.com/docs](http://git-scm.com/docs) Here you will find not only a solid reference to all the commands available but also lots of different resources. 
+Во-вторых, следующим местом будет официальный сайт git и документация. [git-scm.com/docs](http://git-scm.com/docs) Здесь вы найдете не только подробные ссылки на все доступные команды, но и множество различных ресурсов.
 
 ![](../images/Day37_Git1.png?v1)
 
-We can also access this same documentation which is super useful if you are without connectivity from the terminal. If we chose the `git add` command for example we can run `git add --help` and we see below the manual. 
+Мы также можем получить доступ к этой же документации, которая очень полезна, если у вас нет подключения к терминалу. Например, если мы выбрали команду `git add`, мы можем запустить `git add --help`, и мы увидим ниже руководство.
 
 ![](../images/Day37_Git2.png?v1)
 
-We can also in the shell use `git add -h` which is going to give us a short summary of the options we have available. 
+Мы также можем в оболочке использовать `git add -h`, который даст нам краткий обзор доступных опций.
 
 ![](../images/Day37_Git3.png?v1)
+![](../images/Day37_Git3.png?v1)
 
-### Myths surrounding Git
+### Мифы Git
 
-"Git has no access control" - You can empower a leader to maintain source code. 
+«У Git нет контроля доступа» — вы можете уполномочить "лидера" поддерживать исходный код.
 
-"Git is too heavy" - Git has the ability to provide shallow repositories which basically means a reduced amount of history if you have large projects. 
+«Git слишком тяжелый» — у Git есть возможность предоставлять неглубокие репозитории, что в основном означает меньший объем истории, если у вас большие проекты.
 
-### Real shortcomings
+### Реальные недостатки
 
-Not ideal for Binary files. Great for source code but not great for executable files or videos for example. 
+Не идеально подходит для двоичных файлов. Отлично подходит для исходного кода, но не подходит, например, для исполняемых файлов или видео.
 
-Git is not user friendly, the fact that we have to spend time talking about commands and functions of the tool is probably a key sign of that. 
+Git не удобен для пользователя, тот факт, что нам приходится тратить время на обсуждение команд и функций инструмента, вероятно, является ключевым признаком этого.
 
-Overall though, git is hard to learn, but easy to use. 
+В целом, git сложно освоить, но легко использовать.
+### Экосистема git
 
-### The git ecosystem 
+Я хочу кратко рассказать об экосистеме вокруг git, но не углубляться в некоторые из этих областей, но я думаю, что важно отметить их здесь на высоком уровне.
 
-I want to briefly cover the ecosystem around git but not deep dive into some of these areas but I think its important to note these here at a high level. 
+Почти все современные инструменты разработки поддерживают Git.
 
-Almost all modern development tools support Git. 
-
-- Developer tools - We have already mentioned visual studio code but you will find git plugins and integrations into sublime text and other text editors and IDEs. 
+- Инструменты разработчика. Мы уже упоминали код Visual Studio, но вы найдете плагины git и интеграции в возвышенный текст и другие текстовые редакторы и IDE.
   
-- Team tools - Also mentioned around tools like Jenkins from a CI/CD point of view, Slack from a messaging framework and Jira for project management and issue tracking. 
+- Командные инструменты. Также упоминаются такие инструменты, как [Jenkins](https://www.jenkins.io/) с точки зрения CI/CD, [Slack](https://slack.com/features) из среды обмена сообщениями и [Jira](https://www.atlassian.com/ru/software/jira) для управления проектами и отслеживания проблем.
 
-- Cloud Providers - All the large cloud providers support git, Microsoft Azure, Amazon AWS, Google Cloud Platform. 
+- Облачные провайдеры. Все крупные облачные провайдеры поддерживают git, Microsoft Azure, Amazon AWS, Google Cloud Platform.
   
-- Git-Based services - Then we have the GitHub, GitLab and BitBucket of which we will cover in more detail later on. I have heard these services as the social network for code! 
+- Сервисы на основе Git. Затем у нас есть GitHub, GitLab и BitBucket, о которых мы поговорим более подробно позже. Я слышал об этих сервисах как о социальной сети для кода!
 
-### The Git Cheatsheet 
+### Шпаргалка по Git 
 
-We have not covered most of these commands but having looked at some cheatsheets available online I wanted to document some of the git commands and what their purpose are. We don't need to remember these all, and with more hands on practice and using you will pick at least the git basics. 
+Мы не рассмотрели большинство этих команд, но просмотрев некоторые шпаргалки, доступные в Интернете, я хотел задокументировать некоторые из команд git и их назначение. Нам не нужно запоминать все это, и с большей практикой и использованием вы выберете, по крайней мере, основы git.
 
-I have taken these from [atlassian](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet) but writing them down and reading the description is a good way to get to know what the commands are as well as getting hands on in every day tasks. 
+### Основы Git
 
-### Git Basics 
+| Command       | Example                     | Description                                                                                                                                                           |
+| ------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| git init      | `git init <directory>`      | создает пустой репозиторий git в указанном каталоге.                                                                                                                  |
+| git clone     | `git clone <repo>`          | клонирует репозиторий, расположенный в <repo>, на локальный компьютер.                                                                                                |
+| git config    | `git config user.name`      | определяет имя автора, которое будет использоваться для всех коммитов в текущем репозитории,  `system`, `global`, `local` флаг для установки параметров конфигурации. |
+| git add       | `git add <directory>`       | он подготовит все изменения в <directory> для следующего коммита. Мы также можем добавить <files> и <.> для добавления всех изменененных файлов всего.                |
+| git commit -m | `git commit -m "<message>"` | фиксирует промежуточный коммит, запишет <message>, чтобы подробно описать, что точно сохраняем.                                                                       |
+| git status    | `git status`                | выведит список файлов, которые помещены в архив, не помещены в архив и не отслеживаются.                                                                              |
+| git log       | `git log`                   | Отображение всей истории коммитов в формате по умолчанию. У этой команды есть дополнительные параметры.                                                               |
+| git diff      | `git diff`                  | Показать неустановленные изменения между вашим индексом и рабочим каталогом.                                                                                          |
 
-| Command           |           Example                       |           Description                                                                                                       | 
-| ---------------   |   ------------------------------------- |   ------------------------------------------------------------------------------------------------------------------------- |
-| git init          | `git init <directory>`                  | Create an empty git repository in specified directory.                                                                      |
-| git clone         | `git clone <repo>`                      | Clone repository located at <repo> onto local machine.                                                                      |
-| git config        | `git config user.name`                  | Define author name to be used for all commits in current repository `system`, `global`, `local` flag to set config options. |
-| git add           | `git add <directory>`                   | Stage all changes in <directory> for the next commit. We can also add <files> and <.> for everything.                       |
-| git commit -m     | `git commit -m "<message>"`             | Commit the staged snapshot, use <message> to detail what is being committed.                                                |
-| git status        | `git status`                            | List files that are staged, unstaged and untracked.                                                                         |
-| git log           | `git log`                               | Display all commit history using the default format. There are additional options with this command.                        |
-| git diff          | `git diff`                              | Show unstaged changes between your index and working directory.                                                             |
+### Git Отмена изменений 
 
-### Git Undoing Changes 
+| Command    | Example               | Description                                                                                                         |
+| ---------- | --------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| git revert | `git revert <commit>` | создает новую фиксацию, которая отменяет все изменения, сделанные в <commit>, а затем примените ее к текущей ветке. |
+| git reset  | `git reset <file>`    | убрать <file> из индекса коммита (изменения не теряются).                                                           |
+| git clean  | `git clean -n`        | увидеть, какие файлы являются лишними, перед их непосредственным удалением                                          |
+| git clean  | `git clean -f`        | удалить неотслеживаемые файлы и папки из рабочей копии                                                              |
+| git clean  | `git clean -fd`       | удалить их                                                                                                          |
 
-| Command           |           Example                       |           Description                                                                                                                 | 
-| ---------------   |   ------------------------------------- |   ----------------------------------------------------------------------------------------------------------------------------------- |
-| git revert        | `git revert <commit>`                   | Create a new commit that undoes all of the changes made in <commit> then apply it to the current branch.                              |
-| git reset         | `git reset <file>`                      | Remove <file> from the staging area, but leave the working directory unchanged. This unstages a file without overwriting any changes. |
-| git clean         | `git clean -n`                          | Shows which files would be removed from the working directory. Use `-f` in place of `-n` to execute the clean.                        |
+### Git переписать историю
 
-### Git Rewriting History
-
-| Command           |           Example                       |           Description                                                                                                                 | 
-| ---------------   |   ------------------------------------- |   ----------------------------------------------------------------------------------------------------------------------------------- |
-| git commit        | `git commit --amend`                    | Replace the last commit with the staged changes and last commit combined. Use with nothing staged to edit the last commit’s message.  |
-| git rebase        | `git rebase <base>`                     | Rebase the current branch onto <base>. <base> can be a commit ID, branch name, a tag, or a relative reference to HEAD.                |
-| git reflog        | `git reflog`                            | Show a log of changes to the local repository’s HEAD. Add --relative-date flag to show date info or --all to show all refs.           |
+| Command    | Example              | Description                                                                                                                                                     |
+| ---------- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| git commit | `git commit --amend` | Заменяет последний коммит поэтапными изменениями и последним коммитом. Используйте без статуса *stage*, чтобы отредактировать сообщение последнего коммита.     |
+| git rebase | `git rebase <base>`  | Перебазировать текущую ветку на <base>. <base> может быть идентификатором фиксации, именем ветки, тегом или относительной ссылкой на HEAD.                      |
+| git reflog | `git reflog`         | Показать журнал изменений в HEAD локального репозитория. Добавьте флаг --relative-date для отображения информации о дате или --all для отображения всех ссылок. |
 
 ### Git Branches
 
-| Command           |           Example                       |           Description                                                                                                                 | 
-| ---------------   |   ------------------------------------- |   ----------------------------------------------------------------------------------------------------------------------------------- |
-| git branch        | `git branch`                            | List all of the branches in your repo. Add a <branch> argument to create a new branch with the name <branch>.                         |
-| git checkout      | `git checkout -b <branch>`              | Create and check out a new branch named <branch>. Drop the -b flag to checkout an existing branch.                                    |
-| git merge         | `git merge <branch>`                    | Merge <branch> into the current branch.                                                                                               |
+| Command      | Example                    | Description                                                                                                   |
+| ------------ | -------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| git branch   | `git branch`               | List all of the branches in your repo. Add a <branch> argument to create a new branch with the name <branch>. |
+| git checkout | `git checkout -b <branch>` | Create and check out a new branch named <branch>. Drop the -b flag to checkout an existing branch.            |
+| git merge    | `git merge <branch>`       | Merge <branch> into the current branch.                                                                       |
 
+| git branch | `git branch`   | Перечислите все ветки в вашем репо. Добавьте аргумент <branch>, чтобы создать новую ветку с именем <branch>. |
+| git checkout  | `git checkout -b <branch>` | Создайте и извлеките новую ветку с именем <branch>. Отбросьте флаг -b, чтобы проверить существующую ветку. |
+| git merge | `git merge <branch>`   | Объединить <branch> с текущей веткой. |
 ### Git Remote Repositories
 
-| Command           |           Example                       |           Description                                                                                                                 | 
-| ---------------   |   ------------------------------------- |   ----------------------------------------------------------------------------------------------------------------------------------- |
-| git remote add    | `git remote add <name> <url>`           | Create a new connection to a remote repo. After adding a remote, you can use <name> as a shortcut for <url> in other commands.        |
-| git fetch         | `git fetch <remote> <branch>`           | Fetches a specific <branch>, from the repo. Leave off <branch> to fetch all remote refs.                                              |
-| git pull          | `git pull <remote>`                     | Fetch the specified remote’s copy of current branch and immediately merge it into the local copy.                                     |
-| git push          | `git push <remote> <branch>`            | Push the branch to <remote>, along with necessary commits and objects. Creates named branch in the remote repo if it doesn’t exist.   |
-
+| Command        | Example                       | Description                                                                                                                                               |
+| -------------- | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| git remote add | `git remote add <name> <url>` | Создайте новое подключение к удаленному репозиторию. После добавления пульта вы можете использовать <name> в качестве ярлыка для <url> в других командах. |
+| git fetch      | `git fetch <remote> <branch>` | Выбирает конкретную <ветку> из репозитория. Оставьте <branch>, чтобы получить все удаленные ссылки.                                                       |
+| git pull       | `git pull <remote>`           | Получить указанную удаленную копию текущей ветки и немедленно объединить ее с локальной копией.                                                           |
+| git push       | `git push <remote> <branch>`  | Отправьте ветку на <remote> вместе с необходимыми коммитами и объектами. Создает именованную ветку в удаленном репо, если она не существует.              |
 ### Git Diff
 
-| Command           |           Example                       |           Description                                                                                                                 | 
-| ---------------   |   ------------------------------------- |   ----------------------------------------------------------------------------------------------------------------------------------- |
-| git diff HEAD     | `git diff HEAD`                         | Show difference between working directory and last commit.                                                                            |
-| git diff --cached | `git diff --cached`                     | Show difference between staged changes and last commit                                                                                |
-
+| Command           | Example             | Description                                                         |
+| ----------------- | ------------------- | ------------------------------------------------------------------- |
+| git diff HEAD     | `git diff HEAD`     | Показать разницу между рабочим каталогом и последним коммитом.      |
+| git diff --cached | `git diff --cached` | Показать разницу между поэтапными изменениями и последней фиксацией |
 ### Git Config
 
-| Command                                               |           Example                                      |           Description                                                                                                                         | 
-| ----------------------------------------------------- |   ---------------------------------------------------- |   ------------------------------------------------------------------------------------------------------------------------------------------- |
-| git config --global user.name <name>                  | `git config --global user.name <name>`                 | Define the author name to be used for all commits by the current user.                                                                        |
-| git config --global user.email <email>                | `git config --global user.email <email>`               | Define author email to be used for all commits by the current user.                                                                           |
-| git config --global alias <alias-name> <git-command>  | `git config --global alias <alias-name> <git-command>` | Create shortcut for a git command .                                                                                                           |
-| git config --system core.editor <editor>              | `git config --system core.editor <editor>`             | Set the text editor to be used by commands for all users on the machine. <editor> arg should be the comamnd that launches the desired editor. |
-| git config --global --edit                            | `git config --global --edit `                          | Open the global configuration file in a text editor for manual editing.                                                                       |
-
+| Command                                             | Example                                                | Description                                                                                                                                                                  |
+| --------------------------------------------------- | ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| git config --global user.name <имя>                 | `git config --global user.name <имя>`                  | Определите имя автора, которое будет использоваться для всех коммитов текущим пользователем.                                                                                 |
+| git config --global user.email <email>              | `git config --global user.email <email>`               | Определите адрес электронной почты автора, который будет использоваться для всех коммитов текущего пользователя.                                                             |
+| git config --global alias <алиас-имя> <git-command> | `git config --global alias <alias-name> <git-command>` | Создать ярлык для команды git.                                                                                                                                               |
+| git config --system core.editor <редактор>          | `git config --system core.editor <редактор>`           | Установите текстовый редактор, который будет использоваться командами для всех пользователей на машине. Аргумент <editor> должен быть командой, запускающей нужный редактор. |
+| git config --global --edit                          | `git config --global --edit `                          | Откройте файл глобальной конфигурации в текстовом редакторе для редактирования вручную.                                                                                      |
 ### Git Rebase
 
-| Command                               |           Example                      |           Description                                                                                                                         | 
-| ------------------------------------- |   ------------------------------------ |   ------------------------------------------------------------------------------------------------------------------------------------------- |
-| git rebase -i <base>                  | `git rebase -i <base>`                 | Interactively rebase current branch onto <base>. Launches editor to enter commands for how each commit will be transferred to the new base.   |
+| Command              | Example                | Description                                                                                                                                    |
+| -------------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| git rebase -i <base> | `git rebase -i <base>` | Интерактивно перебазировать текущую ветку на <base>. Запускает редактор для ввода команд того, как каждый коммит будет перенесен в новую базу. |
 
 ### Git Pull
 
-| Command                               |           Example                      |           Description                                                                                                                         | 
-| ------------------------------------- |   ------------------------------------ |   ------------------------------------------------------------------------------------------------------------------------------------------- |
-| git pull --rebase <remote>            | `git pull --rebase <remote>`           | Fetch the remote’s copy of current branch and rebases it into the local copy. Uses git rebase instead of merge to integrate the branches.     |
+| Command                    | Example                      | Description                                                                                                                              |
+| -------------------------- | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| git pull --rebase <remote> | `git pull --rebase <remote>` | Получить удаленную копию текущей ветки и перебазировать ее в локальную копию. Использует git rebase вместо слияния для интеграции веток. |
 
 ### Git Reset
 
-| Command                   |           Example           |           Description                                                                                                                           | 
-| ------------------------- |   --------------------------|   --------------------------------------------------------------------------------------------------------------------------------------------- |
-| git reset                 | `git reset `                | Reset staging area to match most recent commit, but leave the working directory unchanged.                                                      |
-| git reset --hard          | `git reset --hard`          | Reset staging area and working directory to match most recent commit and overwrites all changes in the working directory                        |
-| git reset <commit>        | `git reset <commit>`        | Move the current branch tip backward to <commit>, reset the staging area to match, but leave the working directory alone                        |
-| git reset --hard <commit> | `git reset --hard <commit>` | Same as previous, but resets both the staging area & working directory to match. Deletes uncommitted changes, and all commits after <commit>.   |
+| Command                   | Example                     | Description                                                                                                                                                                |
+| ------------------------- | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| git reset                 | `git reset`                 | Сбросьте промежуточную область, чтобы она соответствовала самой последней фиксации, но оставьте рабочий каталог без изменений.                                             |
+| git reset --hard          | `git reset --hard`          | Сбросить промежуточную область и рабочий каталог, чтобы они соответствовали самой последней фиксации, и перезаписать все изменения в рабочем каталоге                      |
+| git reset <commit>        | `git reset <commit>`        | Переместите конец текущей ветки назад к <commit>, сбросьте промежуточную область, чтобы она соответствовала, но оставьте рабочий каталог в покое                           |
+| git reset --hard <commit> | `git reset --hard <commit>` | То же, что и предыдущее, но сбрасывает и промежуточную область, и рабочий каталог, чтобы они совпадали. Удаляет незафиксированные изменения и все фиксации после <commit>. |
 
 ### Git Push
 
-| Command                   |           Example           |           Description                                                                                                                           | 
-| ------------------------- |   --------------------------|   --------------------------------------------------------------------------------------------------------------------------------------------- |
-| git push <remote> --force                 | `git push <remote> --force`                | Forces the git push even if it results in a non-fast-forward merge. Do not use the --force flag unless you’re absolutely sure you know what you’re doing. |
-| git push <remote> --all          | `git push <remote> --all`          | Push all of your local branches to the specified remote.                        |
-| git push <remote> --tags        | `git push <remote> --tags`        | Tags aren’t automatically pushed when you push a branch or use the --all flag. The --tags flag sends all of your local tags to the remote repo. |
+| Command                   | Example                     | Description                                                                                                                                                         |
+| ------------------------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| git push <remote> --force | `git push <remote> --force` | Делает git push, даже если это приводит к слиянию без быстрой перемотки вперед. Не используйте флаг --force, если вы абсолютно не уверены, что знаете, что делаете. |
+| git push <remote> --all   | `git push <remote> --all`   | Переместите все свои локальные ветки на указанный удаленный сервер.                                                                                                 |
+| git push <remote> --tags  | `git push <remote> --tags`  | Теги не добавляются автоматически при отправке ветки или использовании флага --all. Флаг --tags отправляет все ваши локальные теги в удаленное репо.                |
+
+
 
 ## Ресурсы 
 
@@ -174,5 +175,3 @@ I have taken these from [atlassian](https://www.atlassian.com/git/tutorials/atla
 - [Complete Git and GitHub Tutorial](https://www.youtube.com/watch?v=apGV9Kg7ics)
 - [Git cheatsheet](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
 
-
-See you on [Day 38](../day38) 

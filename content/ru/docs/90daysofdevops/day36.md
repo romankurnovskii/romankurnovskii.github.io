@@ -146,4 +146,3 @@ Git — не единственная распределенная систем�
 - [Git for Professionals Tutorial](https://www.youtube.com/watch?v=Uszj_k0DGsg) 
 - [Git and GitHub for Beginners - Crash Course](https://www.youtube.com/watch?v=RGOj5yH7evk&t=8s) 
 - [Complete Git and GitHub Tutorial](https://www.youtube.com/watch?v=apGV9Kg7ics)
-
