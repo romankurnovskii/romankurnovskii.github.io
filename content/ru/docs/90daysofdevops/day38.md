@@ -1,6 +1,6 @@
 ---
-title: 38 - Staging & Changing
-description: Staging & Changing
+title: 38 - Staging и Изменение
+description: Git Staging и Изменение файлов
 toc: true
 authors:
 tags: [devops]
@@ -11,79 +11,139 @@ lastmod: "2022-05-28"
 featuredImage:
 draft: false
 id: 1049042
+TODO: translate
 ---
 
-## Staging и Changing
+## Staging
 
-Мы уже рассмотрели некоторые основы, но добавление вещей в пошаговое руководство помогает мне лучше узнать и понять, как и почему мы делаем это таким образом. Прежде чем мы перейдем к каким-либо службам на основе git, таким как GitHub, у git есть свои возможности, которыми мы можем воспользоваться на нашей локальной рабочей станции.
+Git - это система трёх основных стадий: working directory, staging area и repository.
+[![](../images/day38_git01.png)](../images/day38_git01.png)
 
-Мы возьмем папку проекта, созданную нами в начале сеанса git, и пройдемся по некоторым простым шагам, которые мы можем выполнить с помощью git. Мы создали папку на нашей локальной машине и инициализировали ее с помощью команды git init.
+Возьмем папку проекта, созданную нами в начале [курса статей по git](../day35), и пройдемся по некоторым простым шагам, которые мы можем выполнить с помощью git. Мы создали папку на нашей локальной машине и инициализировали ее с помощью команды `git init`.
 
-![](../images/Day38_Git1.png?v1)
+[![](../images/Day38_Git1.png)](../images/Day38_Git1.png)
 
-Теперь мы также можем видеть, что мы инициализировали папку, у нас есть скрытая папка в нашем каталоге.
+После инициализации папки создается скрытая папка `.git`
 
 ![](../images/Day38_Git2.png?v1)
 
 Здесь хранятся сведения о репозитории git, а также информация о наших ветках и коммитах.
 
-### Staging Files
+### Staging
 
-We then start working on our empty folder and maybe we add some source code as a first days work. We create our readme.mdfile and we can see that file in the directory, next we check our `git status` and it knows about the new readme.mdfile but we have not committed the file yet. 
+Сейчас у нас пустая папка. Создадим пустой файл `README.md`. Выполним команду
+```
+git status
+```
+Git знает о новом файле, но этот файл еще не зафиксирован в *staging*. Текущее расположение файла - *Working directory*, директория, где проиниализирован .git проект.
 
 ![](../images/Day38_Git3.png?v1)
 
-We can stage our readme.mdfile with the `git add README.md` command then we can see changes to be committed which we did not have before and a green new file.
+Чтобы файл перешел в *staging*, необходимо его добавить. Для этого выполним команду
+```
+git add README.md
+```
+После добавления файла в *staging area*, цвет поменялся на зеленый
 
 ![](../images/Day38_Git4.png?v1)
 
-Next up we want to commit this, our first commit or our first snapshot of our project. We can do this by using the `git commit -m "Meaningful message"` command so that we can easily see what has changed for each commit. Also, notice the yellow cross changes now to a green tick. This is something I have within my terminal with the theme I use, something we covered in the Linux section. 
+Можно добавить все измененные файлы с помощью команды
+```
+git add .
+```
+Знак `.` означает, что мы хотим добавить всё.
 
+Далее необходимо зафиксировать изменения в репозитории. Для этого выполним команду
+```
+git commit -m "Add README.md (или другой значимый комментарий)"
+```
 ![](../images/Day38_Git5.png?v1)
 
-### Committing Changes
+### Коммит изменений
 
-We are going to most likely want to add more files or even change the files we have in our directory. We have already done our first commit above. But now we are going to add more details and more files. 
-
-We could repeat our process from before, create or edit our file > `git add .` to add all files to the staging area then `git commit -m "meaningful message"` and this would work just fine. But to be able to offer a meaningful message on commit of what has changed you might not want to write something out like `git commit -m "Well, I changed some code because it did not work and when I fixed that I also added something new to the readme.mdto ensure everyone knew about the user experience and then I made a tea."` I mean this would work as well although probably make it descriptive but the preferred way here is to add this with a text editor. 
-
-If we run `git commit` after running `git add` it will open our default text editor which in my case here is nano. Here are the steps I took to add some changes to the file, ran `git status` to show what is and what is not staged. Then I used `git add` to add the file to the staging area, then ran `git commit` which opened nano.
-
+В процессе работы мы добавляем много различных файлов. Если мы захотим добавить более длинный и осмысленный коммит, то можно запусть команду без комментария
+```
+git commit
+```
 ![](../images/Day38_Git6.png?v1)
-
-When nano opens you can then add your short and long description and then save the file. 
-
+Откроется стандартный редактор текста. Записываем комментарий и сохраняем.
 ![](../images/Day38_Git7.png?v1)
 
-### Committing Best Practices
+Проверим результат
+```
+git status
+```
 
-There is a balance here to when to commit, commit often. We do not want to be waiting to be finished the project before committing, each commit should be meaningful and they also should not be coupled with non-relevant tasks with each other. If you have a bug fix and a typo make sure they are two separate commits as a best practice. 
+### Требования к именам коммитов
 
-Make the commit message mean something. 
+У каждой компании/проекта есть свои требования к именам коммитов. В компании может быть несколько проектов, каждый из которых должен иметь свои требования к именам коммитов. В проекте может быть несколько веток, каждая из которых должна иметь свои требования к именам коммитов. 
 
-In terms of wording, the team or yourself should be sticking to the same wording for each commit. 
+Существует [гайдлайн](https://www.conventionalcommits.org/en/v1.0.0/), на который можно ориентироваться. Такой подход точно будет понятен для всех новых проектов.
 
-### Skipping the Staging Area
+Коммит:
+- Должен использоваться present tense ("add feature" not "added feature")
+- Должен использоваться imperative mood ("move cursor to..." not "moves cursor to...")
 
-Do we always have to stage our changes before committing them? 
+#### Примеры имен коммитов
+`init:` - используется для начала проекта/таска. Примеры:
+```
+init: start youtube-task
+init: start mentor-dashboard task
+```
+`feat:` - это реализованная новая функциональность из технического задания (добавил поддержку зумирования, добавил footer, добавил карточку продукта). Примеры:
+```
+feat: add basic page layout
+feat: implement search box 
+feat: implement request to youtube API
+feat: implement swipe for horizontal list
+feat: add additional navigation button
+feat: add banner
+feat: add social links
+feat: add physical security section
+feat: add real social icons
+```
+`fix:` - исправил ошибку в ранее реализованной функциональности. Примеры:
+```
+fix: implement correct loading data from youtube
+fix: change layout for video items to fix bugs
+fix: relayout header for firefox
+fix: adjust social links for mobile
+```
+`refactor:` - новой функциональности не добавлял / поведения не менял. Файлы в другие места положил, удалил, добавил. Изменил форматирование кода (white-space, formatting, missing semi-colons, etc). Улучшил алгоритм, без изменения функциональности. Примеры:
+```
+refactor: change structure of the project
+refactor: rename vars for better readability
+refactor: apply eslint
+refactor: apply prettier
+```
+`docs:` - используется при работе с документацией/readme проекта. Примеры:
+```
+docs: update readme with additional information
+docs: update description of run() method
+```
 
-The answer is yes but don't see this as a shortcut, you have to be sure 100% that you are not needing that snapshot to roll back to, it is a risky thing to do. 
+### Пропуск Staging Area
+
+Можно сразу добавить коммит, добавим параметр `-a` в `git commit`:
 
 ![](../images/Day38_Git8.png?v1)
 
-### Removing Files
+### Удаление файлов
 
-What about removing files from our project, maybe we have another file in our directory that we have committed but now the project no longer needs or using it, as a best practice we should remove it. 
+Как насчет удаления файлов из нашего проекта, возможно, у нас есть другой файл в нашем каталоге, который мы зафиксировали, но теперь проект больше не нуждается или не использует его, в качестве наилучшей практики мы должны удалить его.
 
-Just because we remove the file from the directory, git is still aware of this file and we also need to remove it from the repository. You can see the workflow for this below. 
+Просто потому, что мы удаляем файл из каталога, git все еще знает об этом файле, и нам также нужно удалить его из репозитория. Вы можете увидеть рабочий процесс для этого ниже.
 
 ![](../images/Day38_Git9.png?v1)
 
-That could be a bit of a pain to either remember or have to deal with if you have a large project which has many moving files and folders. We can do this with one command with `git rm oldcode.ps1` 
 
+Это может быть немного сложно запомнить или иметь дело с большим проектом, в котором много перемещаемых файлов и папок. Мы можем сделать это с помощью одной команды
+```
+git rm oldcode.ps1
+```
 ![](../images/Day38_Git10.png?v1)
 
-### Renaming or Moving Files
+### Переименование/Перемещение файлов
 
 Within our operating system, we can rename and move our files. We will no doubt need to do this from time to time with our projects. Similar to removing though there is a two-step process, we change our files on our OS and then we have to modify and make sure that the staging area or that the files are added correctly. Steps as follows: 
 
