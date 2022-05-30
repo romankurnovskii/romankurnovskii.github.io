@@ -73,7 +73,6 @@ draft: false
 - [✔️] ☁️ 33 > [Microsoft Azure Networking Models + Azure Management](day33)
 - [✔️] ☁️ 34 > [Microsoft Azure Hands-On Scenarios](day34)
 
-<!-- This is commented out.
 
 ### Use Git Effectively
 
@@ -84,6 +83,9 @@ draft: false
 - [✔️] 📚 39 > [Viewing, unstaging, discarding & restoring](day39)
 - [✔️] 📚 40 > [Social Network for code](day40)
 - [✔️] 📚 41 > [The Open Source Workflow](day41)
+
+
+<!-- This is commented out.
 
 ### Containers
 
