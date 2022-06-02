@@ -1,10 +1,15 @@
 ---
 title: '#90DaysOfDevOps - The Big Picture: Kubernetes - Day 49'
-published: false
-description: 90DaysOfDevOps - The Big Picture Kubernetes
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-06-08"
+lastmod: "2022-06-08"
+featuredImage:
+draft: false
 id: 1049049
 ---
 ## The Big Picture: Kubernetes

@@ -1,10 +1,15 @@
 ---
 title: '#90DaysOfDevOps - Create a VM with Terraform & Variables - Day 59'
-published: false
-description: 90DaysOfDevOps - Create a VM with Terraform & Variables
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-06-18"
+lastmod: "2022-06-18"
+featuredImage:
+draft: false
 id: 1049051
 ---
 ## Create a VM with Terraform & Variables

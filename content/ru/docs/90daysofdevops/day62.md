@@ -1,10 +1,15 @@
 ---
 title: '#90DaysOfDevOps - Testing, Tools & Alternatives - Day 62'
-published: false
-description: '90DaysOfDevOps - Testing, Tools & Alternatives'
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-06-21"
+lastmod: "2022-06-21"
+featuredImage:
+draft: false
 id: 1049053
 ---
 ## Testing, Tools & Alternatives

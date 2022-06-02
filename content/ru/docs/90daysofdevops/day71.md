@@ -1,10 +1,15 @@
 ---
 title: '#90DaysOfDevOps - What is Jenkins? - Day 71'
-published: false
-description: 90DaysOfDevOps - What is Jenkins?
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-06-30"
+lastmod: "2022-06-30"
+featuredImage:
+draft: false
 id: 1048745
 ---
 ## What is Jenkins?

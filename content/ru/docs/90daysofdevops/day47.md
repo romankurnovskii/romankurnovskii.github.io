@@ -1,10 +1,15 @@
 ---
 title: '#90DaysOfDevOps - Docker Networking & Security - Day 47'
-published: false
-description: 90DaysOfDevOps - Docker Networking & Security
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-06-06"
+lastmod: "2022-06-06"
+featuredImage:
+draft: false
 id: 1049078
 ---
 ## Docker Networking & Security

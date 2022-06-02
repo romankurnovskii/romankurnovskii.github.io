@@ -1,10 +1,15 @@
 ---
 title: '#90DaysOfDevOps - Ansible: Getting Started - Day 64'
-published: false
-description: '90DaysOfDevOps - Ansible: Getting Started'
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-06-23"
+lastmod: "2022-06-23"
+featuredImage:
+draft: false
 id: 1048765
 ---
 ## Ansible: Getting Started

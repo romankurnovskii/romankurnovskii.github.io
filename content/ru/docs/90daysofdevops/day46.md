@@ -1,10 +1,15 @@
 ---
 title: '#90DaysOfDevOps - Docker Compose - Day 46'
-published: false
-description: 90DaysOfDevOps - Docker Compose
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-06-05"
+lastmod: "2022-06-05"
+featuredImage:
+draft: false
 id: 1048740
 ---
 ## Docker Compose 

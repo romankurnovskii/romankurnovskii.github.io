@@ -1,10 +1,15 @@
 ---
 title: '#90DaysOfDevOps - The Big Picture: IaC - Day 56'
-published: false
-description: 90DaysOfDevOps - The Big Picture IaC
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-06-15"
+lastmod: "2022-06-15"
+featuredImage:
+draft: false
 id: 1048709
 ---
 ## The Big Picture: IaC

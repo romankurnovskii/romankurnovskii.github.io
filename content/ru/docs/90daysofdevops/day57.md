@@ -1,10 +1,15 @@
 ---
 title: '#90DaysOfDevOps - An intro to Terraform - Day 57'
-published: false
-description: 90DaysOfDevOps - An intro to Terraform
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-06-16"
+lastmod: "2022-06-16"
+featuredImage:
+draft: false
 id: 1048710
 ---
 ## An intro to Terraform 

@@ -1,10 +1,15 @@
 ---
 title: '#90DaysOfDevOps - Kubernetes Application Deployment - Day 54'
-published: false
-description: 90DaysOfDevOps - Kubernetes Application Deployment
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-06-13"
+lastmod: "2022-06-13"
+featuredImage:
+draft: false
 id: 1048764
 ---
 ## Kubernetes Application Deployment 

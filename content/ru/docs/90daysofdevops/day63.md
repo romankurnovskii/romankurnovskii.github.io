@@ -1,10 +1,15 @@
 ---
 title: '#90DaysOfDevOps - The Big Picture: Configuration Management - Day 63'
-published: false
-description: 90DaysOfDevOps - The Big Picture Configuration Management
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-06-22"
+lastmod: "2022-06-22"
+featuredImage:
+draft: false
 id: 1048711
 ---
 ## The Big Picture: Configuration Management
