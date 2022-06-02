@@ -10,7 +10,7 @@ categories: ['Code Snippets']
 series: ['JavaScript']
 date: "2022-06-02"
 lastmod: "2022-06-02"
-featuredImage:
+featuredImage: /en/assets/img/deepclone.jpg
 draft: false
 ---
 
