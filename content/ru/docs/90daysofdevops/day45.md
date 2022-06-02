@@ -1,10 +1,15 @@
 ---
 title: '#90DaysOfDevOps - The anatomy of a Docker Image - Day 45'
-published: false
-description: 90DaysOfDevOps - The anatomy of a Docker Image
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-06-04"
+lastmod: "2022-06-04"
+featuredImage:
+draft: false
 id: 1048777
 ---
 ## The anatomy of a Docker Image

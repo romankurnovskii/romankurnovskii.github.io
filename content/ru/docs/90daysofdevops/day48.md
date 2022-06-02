@@ -1,10 +1,15 @@
 ---
 title: '#90DaysOfDevOps - Alternatives to Docker - Day 48'
-published: false
-description: 90DaysOfDevOps - Alternatives to Docker
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-06-07"
+lastmod: "2022-06-07"
+featuredImage:
+draft: false
 id: 1048807
 ---
 ## Alternatives to Docker

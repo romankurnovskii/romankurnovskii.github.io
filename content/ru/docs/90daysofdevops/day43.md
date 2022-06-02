@@ -1,10 +1,15 @@
 ---
-title: '#90DaysOfDevOps - What is Docker & Getting installed - Day 43'
-published: false
-description: 90DaysOfDevOps - What is Docker & Getting installed
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+title: 43 - TWhat is Docker & Getting installed
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-06-02"
+lastmod: "2022-06-02"
+featuredImage:
+draft: false
 id: 1048739
 ---
 ## What is Docker & Getting installed

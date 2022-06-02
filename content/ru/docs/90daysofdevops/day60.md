@@ -1,10 +1,15 @@
 ---
 title: '#90DaysOfDevOps - Docker Containers, Provisioners & Modules - Day 60'
-published: false
-description: '90DaysOfDevOps - Docker Containers, Provisioners & Modules'
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-06-19"
+lastmod: "2022-06-19"
+featuredImage:
+draft: false
 id: 1049052
 ---
 ## Docker Containers, Provisioners & Modules 

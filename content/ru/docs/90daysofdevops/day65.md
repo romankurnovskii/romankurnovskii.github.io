@@ -1,10 +1,15 @@
 ---
 title: '#90DaysOfDevOps - Ansible Playbooks - Day 65'
-published: false
-description: 90DaysOfDevOps - Ansible Playbooks
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-06-24"
+lastmod: "2022-06-24"
+featuredImage:
+draft: false
 id: 1049054
 ---
 ### Ansible Playbooks 

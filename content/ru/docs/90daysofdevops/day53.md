@@ -1,10 +1,15 @@
 ---
 title: '#90DaysOfDevOps - Rancher Overview - Hands On - Day 53'
-published: false
-description: 90DaysOfDevOps - Rancher Overview - Hands On
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-06-12"
+lastmod: "2022-06-12"
+featuredImage:
+draft: false
 id: 1048742
 ---
 ## Rancher Overview - Hands On

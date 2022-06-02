@@ -1,10 +1,15 @@
 ---
 title: '#90DaysOfDevOps - Setting up a multinode Kubernetes Cluster - Day 52'
-published: false
-description: 90DaysOfDevOps - Setting up a multinode Kubernetes Cluster
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-06-11"
+lastmod: "2022-06-11"
+featuredImage:
+draft: false
 id: 1049050
 ---
 ## Setting up a multinode Kubernetes Cluster 

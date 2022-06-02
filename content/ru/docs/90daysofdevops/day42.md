@@ -1,10 +1,15 @@
 ---
-title: '#90DaysOfDevOps - The Big Picture: Containers - Day 42'
-published: false
-description: 90DaysOfDevOps - The Big Picture Containers
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+title: 42 - The Big Picture - Containers
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-06-01"
+lastmod: "2022-06-01"
+featuredImage:
+draft: false
 id: 1048826
 ---
 ## The Big Picture: Containers
