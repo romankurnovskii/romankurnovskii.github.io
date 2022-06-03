@@ -38,6 +38,12 @@ Update everything in Homebrew to recent version:
 brew update
 ```
 
+Add additional [source for casks](https://github.com/Homebrew/homebrew-cask-versions):
+
+```bash
+brew tap homebrew/cask-versions
+```
+
 Install GUI applications (read more about these in GUI Applications):
 
 ```bash
@@ -63,6 +69,7 @@ brew install --cask \
   yandex-disk \
   zoom \
   mongodb-compass \
+  obs
 ```
 
 Install terminal applications (read more about these in Terminal Applications):
@@ -72,8 +79,11 @@ brew install \
   git \
   ffmpeg \
   nvm \
-
+  jupyterlab
 ```
+## Additional GUI Applications
+
+- [Kotatogram](https://kotatogram.github.io/) - Experimental fork of Telegram Desktop. Folders with features
 
 ## GUI Applications
 
@@ -85,25 +95,57 @@ brew install \
   - Chrome Developer Tools
     - Network -> only "Fetch/XHR"
   - Chrome Extensions
-    - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
-    - [Pocket](https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj?hl=en)
+    - [Google Translate](https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb)
+    - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
+    - [Pocket](https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj)
+    - [Session Buddy](https://chrome.google.com/webstore/detail/session-buddy/edacconmaakjimmfgnblocblbcdcpbko) (Manage Browser Tabs and Bokmarks)
+    - [LanguageTool](https://chrome.google.com/webstore/detail/grammar-spell-checker-%E2%80%94-l/oldceeleldhonbafppcapldpdifcinji) (multilingual grammar, style, and spell checker)
+    - [RSS Feed Reader](https://chrome.google.com/webstore/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp) (Easy to subscribe/unsubscribe to blogs/no need email + iOS/Android)
+    - [30 Seconds of Knowledge](https://chrome.google.com/webstore/search/https%3A%2F%2F30secondsofknowledge.com%2F) (random code snippet on a new tab)
+    - [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa)
+    - [picture-in-picture](https://chrome.google.com/webstore/detail/picture-in-picture-extens/hkgfoiooedgoejojocmhlaklaeopbecg) (yutube/video above other screens)
 - [Firefox](https://www.google.com/chrome/) (web development)
-
-* [Visual Studio Code](https://code.visualstudio.com/) (web development IDE)
-* [Sublime Text](https://www.sublimetext.com/) (editor)
-* [Docker](https://www.docker.com/products/docker-desktop) (Docker, see [setup](/docker-macos/))
+- [UTM](https://mac.getutm.app/) (Virtual machines UI using QEMU)
+  - download ubuntu for arm, [doc](https://mac.getutm.app/gallery/ubuntu-20-04)
+- [Visual Studio Code](https://code.visualstudio.com/) (web development IDE
+- [Transmission](https://www.transmissionbt.com/) (A torrent client that I use. Very minimal in its UI but very powerful and has all the features that I need)
+- [Sublime Text](https://www.sublimetext.com/) (editor)
+- [Docker](https://www.docker.com/products/docker-desktop) (Docker, see [setup](/docker-macos/))
   - used for running databases (e.g. PostgreSQL, MongoDB) in container without cluttering the Mac
   - Preferences
     - enable "Use Docker Compose"
-* [VLC](https://www.videolan.org/vlc/) (video player)
+- [VLC](https://www.videolan.org/vlc/) (video player)
   - use as default for video files
-* [Maccy](https://maccy.app/) (clipboard manager)
+- [Maccy](https://maccy.app/) (clipboard manager)
   - enable "Launch at Login"
-
-## Terminal Applications
+- [OBS](https://obsproject.com/) (for video recording and live streaming)
+  - for Native Mac Screen recorder
+    - Base (Canvas) 2880x1800 (Ratio: 16:10)
+    - Output 1728x1080
+    ![](images/obs-base-canvas.png)
+ ## Terminal Applications
 
 - [nvm](https://github.com/nvm-sh/nvm) (node version manager)
-
+- [jupyterlab](https://jupyter.org/) (Jupyter - python development, fast code snippets)
+  - jupyter run / jupyter server - to start jupyter localhost:8888
+- [ffmpeg](https://ffmpeg.org/) (Converting video and audio)
+  - compress video:
+  ```bash
+  ffmpeg -i input.mp4 -c:v libx264 -crf 23 -preset slow -c:a aac -b:a 192k output.mp4
+  # or
+  ffmpeg -i input.mp4 output.avi
+  ```
+  - convert video to .gif:
+  ```bash
+  - ffmpeg \
+  -i input.mp4 \
+  -ss 00:00:00.000 \
+  -pix_fmt rgb24 \
+  -r 10 \
+  -s 960x540 \ 
+  -t 00:00:10.000 \
+  output.gif
+  ```
 ## NVM for Node/npm
 
 The [node version manager (NVM)](https://github.com/nvm-sh/nvm) is used to install and manage multiple Node versions. After you have installed it via Homebrew in a previous step, type the following commands to complete the installation:
@@ -201,6 +243,8 @@ Update `.zprofile`. Еhe changes will take effect after restarting the terminal
 vi ~/.zprofile
 ```
 
+### Atomatic update all software
+
 Add script to zprofile that updates everything:
 
 1. Update, upgrade all and cleanup
@@ -228,5 +272,4 @@ alias upd='omz update; brew update; brew upgrade; brew cu -a --cleanup -y -v; br
 ```
 
 [inspiration](https://www.robinwieruch.de/mac-setup-web-development/)
-
 
