@@ -42,13 +42,3 @@ a:hover,
 a:hover * {
   @apply text-eureka transition duration-300 ease-in-out;
 }
-
-/* for markdown code blocks */
-code {
-  direction: ltr;
-  white-space : pre-wrap !important;
-}
-pre > code {
-  font-size: 90%;
-}
-

@@ -6,14 +6,16 @@ module.exports = {
   darkMode: "class",
   content: [
     themeDir + "layouts/**/*.html",
-    themeDir + "exampleSite/content/**/*.html",
     "layouts/**/*.html",
     "content/**/*.html",
     "content/**/*.md"
   ],
   theme: {
     fontFamily: {
-      eureka: ["var(--fonts-eureka)", ...defaultTheme.fontFamily.serif],
+      'eureka': ["var(--fonts-eureka)", ...defaultTheme.fontFamily.serif],
+      'sans': ['Montserrat', 'sans-serif'],
+      'serif': ['Lora', 'Merriweather', 'Noto Serif SC', 'serif'],
+      'mono': ['Trispace', 'monospace', 'SFMono-Regular', 'Menlo'],
     },
     fontSize: {
       'xs': '.75rem',
@@ -71,7 +73,7 @@ module.exports = {
         scrollbar: "calc(100vw - 100%)",
       },
       colors: {
-        eureka: "var(--color-eureka)",
+        "eureka": "var(--color-eureka)",
         "primary-bg": "var(--color-primary-bg)",
         "secondary-bg": "var(--color-secondary-bg)",
         "tertiary-bg": "var(--color-tertiary-bg)",
@@ -103,5 +105,8 @@ module.exports = {
       }),
     },
   },
-  plugins: [require("@tailwindcss/typography"), require("tailwindcss-rtl")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("tailwindcss-rtl")
+  ],
 };
