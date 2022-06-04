@@ -1,0 +1,21 @@
+{{ range . }}
+<div class="mb-6">
+  <div onclick="window.location='{{ .Permalink}}'" style="cursor: pointer;" class="summary-card bg-secondary-bg rounded border hover:shadow-lg transition ease-in-out duration-200 px-6 pt-6 pb-4">
+    <div class="">
+      {{ $featured := partial "utils/get-featured" . }}
+      {{ with $featured }}
+      <div class="w-full mb-4">
+        {{ . }}
+      </div>
+      {{ end }}
+      <!--<div class="w-full {{ with $featured }}lg:w-2/3{{ end }}">
+        {{ partial "utils/get-summary" . }}
+      </div>-->
+      <div class="summary content">
+        {{ .Summary }}
+      </div>
+      {{ partial "components/photo-metadata" . }}
+    </div>
+  </div>
+</div>
+{{ end }}
