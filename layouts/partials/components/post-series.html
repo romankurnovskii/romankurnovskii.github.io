@@ -3,7 +3,7 @@
   <h3>{{ i18n "seriesOfPosts" }}</h3>
   {{ range (.GetTerms "series") }}
     {{ range .Pages }}
-      <a href="{{ .Permalink }}" class="no-underline">{{ .LinkTitle }}</a>
+      - <a href="{{ .Permalink }}" class="no-underline">{{ .LinkTitle }}</a>
       <br />
     {{ end }}
   {{ end }}
