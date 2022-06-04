@@ -3,6 +3,7 @@
     <i class="fas fa-calendar me-1"></i>
     <span>
       {{- if .GitInfo }}
+      {{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02") }} | Updated:
       {{ .GitInfo.CommitDate.Format (.Site.Params.dateFormat | default "2006-01-02") }}
       {{- else }}
       {{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02") }}
