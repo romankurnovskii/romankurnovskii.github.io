@@ -9,7 +9,7 @@ categories:
 series:
 date: "2022-05-22"
 lastmod: "2022-05-21"
-draft: false
+draft: true
 ---
 
 [Документация AWS Elastic Beanstalk](https://aws.amazon.com/ru/elasticbeanstalk/)

@@ -9,7 +9,7 @@ categories:
 series:
 date: "2022-05-23"
 lastmod: "2022-05-21"
-draft: false
+draft: true
 ---
 
 [https://docs.aws.amazon.com/lambda/?id=docs_gateway](https://docs.aws.amazon.com/lambda/?id=docs_gateway)
