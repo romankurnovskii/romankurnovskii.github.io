@@ -8,8 +8,8 @@ tags:
   ["tar", ]
 categories: ['Code Snippets']
 series: ['bash']
-date: "2022-06-03"
-lastmod: "2022-06-03"
+date: "2022-06-05"
+lastmod: "2022-06-05"
 featuredImage: 
 draft: false
 ---
