@@ -1,5 +1,5 @@
 ---
-title: Как переименовывать файлы в Python 
+title: Как переименовать файлы в Python 
 description: Различные способы переименовывания файлов в Python
 toc: true
 authors:
@@ -10,35 +10,55 @@ categories: ['Code Snippets']
 series: ['JavaScript']
 date: "2022-06-04"
 lastmod: "2022-06-04"
-featuredImage: /posts/howto-create-deepclone-js/img/deepclone.jpg
+featuredImage: 
 draft: false
 ---
 
-Learn different ways to rename files in Python using the os and pathlib modules.
+## os.rename
 
-Rename files with os
-You can use
+Если имеется весь путь до пути файла:
 ```python
-os.rename(old_name, new_name)
+old_source = '/Users/r/Desktop/old_source.txt'
+new_source = '/Users/r/Desktop/new_source.txt'
+os.rename("old_source", "new_source")
 ```
-For example we can combine it with os.path.splitext() to get the base name and file extension, and then combine it to a new name:
+
+Если имеется только имя файла, воспользуемся `os.path.splitext()`, который возвращает кортеж из имени файла и расширения:
 ```python
 import os
 for file in os.listdir():
-    name, ext = os.path.splitext(file)
+    name, ext = os.path.splitext(file) # return ('путь до файла без расщирения', '.txt')
     new_name = f"{name}_new{ext}"
     os.rename(file, new_name)
 ```
-Rename files with pathlib
-The same could be achieved with the pathlib module and
+
+## pathlib
+С помощью встроенного модуля [pathlib](https://docs.python.org/3/library/pathlib.html)
+
 ```python
 Path.rename(new_name)
 ```
-With a Path object we can access .stem and .suffix:
+
 ```python
 from pathlib import Path
 for file in os.listdir():
     f = Path(file)
     new_name = f"{f.stem}_new{f.suffix}"
     f.rename(new_name)
+```
+
+
+## shutil.move
+Модуль [Shutil](https://docs.python.org/3/library/shutil.html) предлагает ряд высокоуровневых операций с файлами и коллекциями файлов. В частности, предусмотрены функции, поддерживающие копирование и удаление файлов.
+
+```python
+import shutil
+
+old_source = '/Users/r/Desktop/old_source.txt'
+new_source = '/Users/r/Desktop/new_source.txt'
+
+newFileName = shutil.move(old_source, new_source)
+
+print ("Новый файл:", newFileName)
+# Новый файл: /Users/r/Desktop/new_source.txt
 ```
