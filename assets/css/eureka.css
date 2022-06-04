@@ -6,5 +6,6 @@
 /* Site Specific */
 @import "prose.css";
 @import "site.css";
+@import "markdown.css";
 /* Tailwind's utility classes - generated based on config file */
 @tailwind utilities;
