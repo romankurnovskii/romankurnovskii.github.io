@@ -1,5 +1,5 @@
 ---
-title: 38 - Staging и Изменение
+title: 38 - Staging и Изменения
 description: Git Staging и Изменение файлов
 toc: true
 authors:
@@ -11,66 +11,78 @@ lastmod: "2022-05-28"
 featuredImage:
 draft: false
 id: 1049042
-TODO: translate
 ---
 
-## Staging
+## Working directory
 
 Git - это система трёх основных стадий: working directory, staging area и repository.
-[![](../images/day38_git01.png)](../images/day38_git01.png)
+[![](../images/day38_git01.png?v2)](../images/day38_git01.png?v2)
 
-Возьмем папку проекта, созданную нами в начале [курса статей по git](../day35), и пройдемся по некоторым простым шагам, которые мы можем выполнить с помощью git. Мы создали папку на нашей локальной машине и инициализировали ее с помощью команды `git init`.
+Пройдем поэтапно каждую стадию.
+
+Создадим пустую папку.
+```bash
+mkdir my_fodler
+cd my_folder
+```
+
+Сделаем инициализацию git проекта.
+```bash
+git init
+```
 
 [![](../images/Day38_Git1.png)](../images/Day38_Git1.png)
 
-После инициализации папки создается скрытая папка `.git`
+После инициализации git репозитория создается скрытая папка `.git`
 
-![](../images/Day38_Git2.png?v1)
+![](../images/Day38_Git2.png?v2)
 
 Здесь хранятся сведения о репозитории git, а также информация о наших ветках и коммитах.
 
-### Staging
+### Staging/Stage
 
-Сейчас у нас пустая папка. Создадим пустой файл `README.md`. Выполним команду
-```
+Сейчас у нас пустая папка. Создадим пустой файл `README.md` и выполним команду
+```bash
 git status
 ```
 Git знает о новом файле, но этот файл еще не зафиксирован в *staging*. Текущее расположение файла - *Working directory*, директория, где проиниализирован .git проект.
 
-![](../images/Day38_Git3.png?v1)
+*staging* - это хранилище для файлов с изменениями, информация о которых попадет в единый коммит
+
+![](../images/Day38_Git3.png?v3)
 
 Чтобы файл перешел в *staging*, необходимо его добавить. Для этого выполним команду
-```
+```bash
 git add README.md
 ```
 После добавления файла в *staging area*, цвет поменялся на зеленый
 
-![](../images/Day38_Git4.png?v1)
+![](../images/Day38_Git4.png?v2)
 
 Можно добавить все измененные файлы с помощью команды
-```
+```bash
 git add .
 ```
-Знак `.` означает, что мы хотим добавить всё.
+Знак `.` означает, что мы хотим добавить все обновленные файлы и папки.
 
 Далее необходимо зафиксировать изменения в репозитории. Для этого выполним команду
-```
+```bash
 git commit -m "Add README.md (или другой значимый комментарий)"
 ```
-![](../images/Day38_Git5.png?v1)
+![](../images/Day38_Git5.png?v2)
 
 ### Коммит изменений
 
 В процессе работы мы добавляем много различных файлов. Если мы захотим добавить более длинный и осмысленный коммит, то можно запусть команду без комментария
-```
+
+```bash
 git commit
 ```
-![](../images/Day38_Git6.png?v1)
 Откроется стандартный редактор текста. Записываем комментарий и сохраняем.
-![](../images/Day38_Git7.png?v1)
+![](../images/Day38_Git7.png?v2)
 
 Проверим результат
-```
+```bash
 git status
 ```
 
@@ -126,58 +138,65 @@ docs: update description of run() method
 
 Можно сразу добавить коммит, добавим параметр `-a` в `git commit`:
 
-![](../images/Day38_Git8.png?v1)
+![](../images/Day38_Git8.png?v2)
 
 ### Удаление файлов
 
-Как насчет удаления файлов из нашего проекта, возможно, у нас есть другой файл в нашем каталоге, который мы зафиксировали, но теперь проект больше не нуждается или не использует его, в качестве наилучшей практики мы должны удалить его.
+Фиксация удаления как и добавления файлов происхоит через комит
 
-Просто потому, что мы удаляем файл из каталога, git все еще знает об этом файле, и нам также нужно удалить его из репозитория. Вы можете увидеть рабочий процесс для этого ниже.
+Создадим файл -> Добавим в stage -> Удалим файл
 
-![](../images/Day38_Git9.png?v1)
-
-
-Это может быть немного сложно запомнить или иметь дело с большим проектом, в котором много перемещаемых файлов и папок. Мы можем сделать это с помощью одной команды
+```bash
+touch old_file.txt
+git add old_file.txt
+git commit -m "add old_file to be removed"
 ```
-git rm oldcode.ps1
+
+Удаляем файл
+    
+```bash
+git rm old_file.txt
+git status
 ```
-![](../images/Day38_Git10.png?v1)
+
+![](../images/Day38_Git9.png?v2)
 
 ### Переименование/Перемещение файлов
 
-Within our operating system, we can rename and move our files. We will no doubt need to do this from time to time with our projects. Similar to removing though there is a two-step process, we change our files on our OS and then we have to modify and make sure that the staging area or that the files are added correctly. Steps as follows: 
+Мы можем переименовывать или перемещать файлы в проекте средствами операционной системы. Таке это можно делать командами git. 
 
-![](../images/Day38_Git11.png?v1)
+Пример:
 
-However, like removing files from the operating system and then the git repository we can perform this rename using a git command too. 
+```bash
+git mv old_file.txt new_file.txt
+```
 
-![](../images/Day38_Git12.png?v1)
+### Пропуск/игнорирование файлов
 
-### Ignoring Files
+В Git это можно сделать рзличными способами:
+- Игнорировать изменения в неотслеченных файлах с помощью `.gitignore` файла
+- Игнорировать изменения в неотслеченных файлах с помощью `exclude` файла
+- Остановка отслеживания файла и пропуск изменений с помощью `git update-index`
+- Остановка отслеживания файла и пропуск изменений с помощью `git rm`
 
-We may have the requirement to ignore files or folders within our project that we might be using locally or that will be just wasted space if we were to share with the overall project, a good example of this could be logs. I also think using this for secrets that you do not want to be shared out in public or across teams. 
+#### .gitignore
 
-We can ignore files by adding folders or files to the `.gitignore` file in our project directory. 
+Достаточно в файл `.gitignore` добавить путь до файлов или папок, которые необходимо игнорировать
 
-![](../images/Day38_Git13.png?v1)
+![](../images/Day38_Git13.png?v2)
 
-You can then open the `.gitignore` file and see that we have the logs/ directory present. But we could also add additional files and folders here to ignore. 
+После обновления файл переходит в категорию **Untracked files**
 
-![](../images/Day38_Git14.png?v1)
+![](../images/Day38_Git14.png?v2)
 
-We can then see `git status` and then see what has happened. 
+Если файлы уже добавлены в stage, но нужно убрать файл, то можно использовать команду `git rm --cached`
 
-![](../images/Day38_Git15.png?v1)
+### Status сокращенно
 
-There are also ways in which you might need to go back and ignore files and folders, maybe you did want to share the logs folder but then later realised that you didn't want to. You will have to use `git rm --cached ` to remove files and folders from the staging area if you have a previously tracked folder that you now want to ignore. 
-
-### Short Status
-
-We have been using `git status` a lot to understand what we have in our staging area and what we do not, it's a very comprehensive command with lots of detail. Most of the time you will just want to know what has been modified or what is new? We can use `git status -s` for a short status of this detail. I would usually set an alias on my system to just use `git status -s` vs the more detailed command. 
-
+```bash
+git status -s
+```
 ![](../images/Day38_Git16.png?v1)
-
-In the post tomorrow we will continue to look through these short examples of these common git commands. 
 
 ## Ресурсы 
 
