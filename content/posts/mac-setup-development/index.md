@@ -129,7 +129,7 @@ brew install \
 
 - [nvm](https://github.com/nvm-sh/nvm) (node version manager)
 - [jupyterlab](https://jupyter.org/) (Jupyter - python development, fast code snippets)
-  - jupyter run / jupyter server - to start jupyter localhost:8888
+  - `jupyter run` or `jupyter server` - to start jupyter localhost:8888
 - [ffmpeg](https://ffmpeg.org/) (Converting video and audio)
   - compress video:
   ```bash
