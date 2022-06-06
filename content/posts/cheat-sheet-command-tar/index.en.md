@@ -11,7 +11,7 @@ categories: ['Code Snippets']
 series: ['bash']
 date: "2022-06-05"
 lastmod: "2022-06-05"
-featuredImage: 
+featuredImage: /posts/cheat-sheet-command-tar/featured.en.jpg
 draft: false
 ---
 

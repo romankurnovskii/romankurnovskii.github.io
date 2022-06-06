@@ -10,7 +10,7 @@ categories: ['Code Snippets']
 series: ['JavaScript']
 date: "2022-06-06"
 lastmod: "2022-06-06"
-featuredImage: 
+featuredImage: /posts/howto-redirect-to-url/featured.jpg
 draft: false
 ---
 

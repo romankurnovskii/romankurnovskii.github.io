@@ -9,7 +9,7 @@ categories:
 series:
 date: "2022-05-20"
 lastmod: "2022-05-20"
-featuredImage: 
+featuredImage: /posts/pyscript-python-embedded-in-html/images/pyscript-featured.jpg
 draft: false
 ---
 
