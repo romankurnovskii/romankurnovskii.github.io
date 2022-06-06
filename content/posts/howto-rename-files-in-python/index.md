@@ -10,7 +10,7 @@ categories: ['Code Snippets']
 series: ['JavaScript']
 date: "2022-06-04"
 lastmod: "2022-06-04"
-featuredImage: 
+featuredImage: /posts/howto-rename-files-in-python/featured.en.jpg
 draft: false
 ---
 
