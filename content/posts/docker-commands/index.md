@@ -15,20 +15,12 @@ draft: false
 TODO: translate
 ---
 
-## [docker build](https://docs.docker.com/engine/reference/commandline/build/)
-
+## docker build
+[Документация](https://docs.docker.com/engine/reference/commandline/build/)
 Построить образ из Dockerfile.
 
 ```sh
 docker build [DOCKERFILE PATH]
-```
-
-### Примеры
-
-Построить образ с меткой `my-org/my-image`, используя Dockerfile в `/tmp/Dockerfile`.
-
-```sh
-docker build -t my-org:my-image -f /tmp/Dockerfile
 ```
 
 ### Флаги
@@ -39,28 +31,56 @@ docker build -t my-org:my-image -f /tmp/Dockerfile
 - `--rm` Удалить временные контейнеры после успешного построения.
 - `--tag -t` Название и возможный тег в формате `name:tag` или просто тег `my_tag` (опционально)
 
-## [docker exec](https://docs.docker.com/engine/reference/commandline/exec/)
+### Примеры
 
+Построить образ с меткой `my-org/my-image`, используя Dockerfile в `/tmp/Dockerfile`.
+
+```sh
+docker build -t my-org:my-image -f /tmp/Dockerfile
+```
+
+## docker run
+[Документация](https://docs.docker.com/engine/reference/commandline/run/)
+
+Создает и запускает контейнер за один операционный шаг. 
+
+### Примеры
+
+```sh
+docker run -it ubuntu:latest /bin/bash
+```
+Данная команда запустит контейнер ubuntu и при старте сразу запустит `/bin/bash`. Если  образ ubuntu не был загружен ранее, он загрузится перед запуском.
+
+### Флаги
+
+- `-it` This will not make the container you started shut down immediately, as
+it will create a pseudo-TTY session (`-t`) and keep STDIN open (`-i`)
+- `--rm` Automatically remove the container when it exit. Otherwise it will be
+stored and visible running `docker ps -a`.
+- `--detach -d` Run container in background and print container ID
+- `--volume -v` Bind mount a volume. Useful for accessing folders on your local
+disk inside your docker container, like configuration files or storage that
+should be persisted (database, logs etc.).
+
+## docker exec
+[Документация](https://docs.docker.com/engine/reference/commandline/exec/)
 Выполнить команду внутри **запущенного** контейнера.
 
 ```sh
 docker exec [CONTAINER ID]
 ```
+### Флаги
+
+- `--detach -d` Detached mode: запуск в фоновом режиме
+- `-it` запуск в интерактивном режиме. запуск псевдотерминала pseudo-TTY  (`-t`) и перенаправление ввода-вывода (STDIN) (`-i`). Даёт доступ к выполнению команд в терминале контейнера.
 
 ### Примеры
 
 ```sh
 docker exec [CONTAINER ID] touch /tmp/exec_works
 ```
-
-### Флаги
-
-- `--detach -d` Detached mode: запуск в фоновом режиме
-- `-it` запуск в интерактивном режиме. запуск псевдотерминала pseudo-TTY  (`-t`) и перенаправление ввода-вывода (STDIN) (`-i`). Даёт доступ к выполнению команд в терминале контейнера.
-
-
-## [docker images](https://docs.docker.com/engine/reference/commandline/images/)
-
+## docker images
+[Документация](https://docs.docker.com/engine/reference/commandline/images/)
 список всех загруженных/созданных образов
 
 ```sh
@@ -71,7 +91,8 @@ docker images
 
 - `-q` показать только ID образов
 
-## [docker inspect](https://docs.docker.com/engine/reference/commandline/inspect)
+## docker inspect
+[Документация](https://docs.docker.com/engine/reference/commandline/inspect)
 
 Показать всю информацию о контейнере.
 
@@ -79,7 +100,8 @@ docker images
 docker inspect [CONTAINER ID]
 ```
 
-## [docker logs](https://docs.docker.com/engine/reference/commandline/logs/)
+## docker logs
+[Документация](https://docs.docker.com/engine/reference/commandline/logs/)
 
 Вывести логи контейнера.
 
@@ -93,7 +115,8 @@ docker logs [CONTAINER ID]
 - `--follow -f` Следить за выводом журнала
 - `--timestamps -t` Показать журналы с меткой времени
 
-## [docker ps](https://docs.docker.com/engine/reference/commandline/ps/)
+## docker ps
+[Документация](https://docs.docker.com/engine/reference/commandline/ps/)
 
 Показывает информацию о всех запущенных контейнерах.
 
@@ -108,9 +131,10 @@ docker ps
 - `--filter -f` Filter output based on conditions provided, `docker ps -f="name="example"`
 - `--quiet -q` Only display numeric IDs
 
-## [docker rmi](https://docs.docker.com/engine/reference/commandline/rmi/)
+## docker rmi
+[Документация](https://docs.docker.com/engine/reference/commandline/rmi/)
 
-Remove one or more images.
+Удалить один или несколько образов.
 
 ```sh
 docker rmi [IMAGE ID]
@@ -120,35 +144,10 @@ docker rmi [IMAGE ID]
 
 - `--force -f` Force removal of the image
 
-## [docker run](https://docs.docker.com/engine/reference/commandline/run/)
-
-Creates and starts a container in one operation. Could be used to execute a
-single command as well as start a long-running container.
-
-Example:
-
-```sh
-docker run -it ubuntu:latest /bin/bash
-```
-
-This will start a ubuntu container with the entrypoint `/bin/bash`. Note that
-if you do not have the `ubuntu` image downloaded it will download it before
-running it.
-
-### Флаги
-
-- `-it` This will not make the container you started shut down immediately, as
-it will create a pseudo-TTY session (`-t`) and keep STDIN open (`-i`)
-- `--rm` Automatically remove the container when it exit. Otherwise it will be
-stored and visible running `docker ps -a`.
-- `--detach -d` Run container in background and print container ID
-- `--volume -v` Bind mount a volume. Useful for accessing folders on your local
-disk inside your docker container, like configuration files or storage that
-should be persisted (database, logs etc.).
 
 ## Советы и рекомендации по докеру
 
-Сборник полезных советов и хитростей для Docker.
+Сборник полезных советов по Docker.
 
 ### Удалить все контейнеры
 
@@ -170,7 +169,7 @@ docker rm $(docker ps -a -q)
 docker image prune
 ```
 
-### Посмомтреть сколько памяти занимает Docker
+### Вывести сколько памяти занимает Docker
 
 ```sh
 docker system df
@@ -182,17 +181,29 @@ docker system df
 docker inspect [CONTAINER ID] | grep -wm1 IPAddress | cut -d '"' -f 4
 ```
 
-### Kill all running containers
+### Сгенерировать образ на основе файла Dockerfile и добавить этому образу имя и версию
+  
+```sh
+docker build -t new_image_name:v1 .
+```
+
+`.` означает текущую директорию, где расположен файл Dockerfile.
+
+### Сгенерировать из запущенного контейнера новый образ
+  
+```sh
+docker commit [CONTAINER ID] [NEW IMAGE NAME]
+```
+
+### "Убить" все запущенные контейнеры
 
 ```sh
 docker kill $(docker ps -q)
 ```
 
-
 ## Ссылки
 
 - [docs.docker.com](https://docs.docker.com/engine/reference/run/)
-- A list of more useful Docker commands can be found in the
-[docker-cheat-sheet](https://github.com/wsargent/docker-cheat-sheet)
+- [docker-cheat-sheet](https://github.com/wsargent/docker-cheat-sheet)
 - [https://sourabhbajaj.com/mac-setup/Docker/](https://sourabhbajaj.com/mac-setup/Docker/)
 
