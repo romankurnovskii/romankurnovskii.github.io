@@ -6,7 +6,7 @@ authors:
   - roman-kurnovskii
 tags:
   ["mac setup development", "mac setup web developer", "mac setup javascript"]
-categories:
+categories: ['setup']
 series:
 date: "2022-05-18"
 lastmod: "2022-05-18"
@@ -70,7 +70,9 @@ brew install --cask \
   zoom \
   mongodb-compass \
   disk-inventory-x \
-  obs
+  obs \
+  spotify \
+  iterm2
 ```
 
 Install terminal applications (read more about these in Terminal Applications):
@@ -95,6 +97,14 @@ brew install \
     - import bookmarks from previous machine
   - Chrome Developer Tools
     - Network -> only "Fetch/XHR"
+  - Search Shortcuts. Add Shortucts for different search engines. 
+    - chrome://settings/searchEngines
+    - Yandex, search only in Russia. 
+        - Shortcut: `vv`
+        - url: `https://yandex.ru/{yandex:searchPath}?text=%s&{yandex:referralID}&lr=101443&rstr=-225`
+    - Yutube
+      - Shortcut: `yy`
+      - url: `https://www.youtube.com/results?search_query=%s&page={startPage?}&utm_source=opensearch`
   - Chrome Extensions
     - [Google Translate](https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb)
     - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
@@ -124,6 +134,7 @@ brew install \
     - Base (Canvas) 2880x1800 (Ratio: 16:10)
     - Output 1728x1080
     ![](images/obs-base-canvas.png)
+- [Spotify](https://www.spotify.com/)
 - [Disk Inventory X](http://www.derlien.com/) (disk usage utility for macOS)
  ## Terminal Applications
 
@@ -212,7 +223,7 @@ Optionally install [yarn](https://yarnpkg.com/) if you use it as alternative to 
 npm install -g yarn
 yarn -v
 ```
-
+****
 If you want to list all globally installed packages, run this command:
 
 ```text
@@ -236,6 +247,32 @@ Update everything (e.g. plugins) in Oh My Zsh to recent version:
 ```bash
 omz update
 ```
+
+Install fonts for themes:
+
+```bash
+brew tap homebrew/cask-fonts
+brew install --cask font-hack-nerd-font
+```
+
+## iTerm2
+
+### Install theme
+
+[Theme description ](https://github.com/romkatv/powerlevel10k#batteries-included)
+
+```bash
+brew install romkatv/powerlevel10k/powerlevel10k
+echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
+```
+
+### Enable suggestions
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+echo "plugins=(zsh-autosuggestions)" >>~/.zshrc
+```
+
+Open new tab(CMD+T)/restart iTerm to proceed with theme setup
 
 ## Terminal Script and Aliases
 
@@ -273,6 +310,7 @@ alias python=python3
 alias upd='omz update; brew update; brew upgrade; brew cu -a --cleanup -y -v; brew cleanup; softwareupdate -i -a; i'
 ```
 
-[inspiration](https://www.robinwieruch.de/mac-setup-web-development/)
-
-
+## Links
+- [https://www.robinwieruch.de/mac-setup-web-development/](https://www.robinwieruch.de/mac-setup-web-development/)
+- [https://sourabhbajaj.com/mac-setup/iTerm/ack.html](https://sourabhbajaj.com/mac-setup/iTerm/ack.html)
+- [https://www.engineeringwithutsav.com/blog/spice-up-your-macos-terminal](https://www.engineeringwithutsav.com/blog/spice-up-your-macos-terminal)

@@ -5,9 +5,9 @@ toc: true
 authors:
   - roman-kurnovskii
 tags:
-  ["tar", ]
+  ["tar", "cheatsheet"]
 categories: ['Code Snippets']
-series: ['bash']
+series: ['bash', 'шпаргалки']
 date: "2022-06-05"
 lastmod: "2022-06-05"
 featuredImage: /posts/cheat-sheet-command-tar/featured.jpg
