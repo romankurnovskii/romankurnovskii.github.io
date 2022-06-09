@@ -6,8 +6,8 @@ authors:
   - roman-kurnovskii
 tags:
   ["docker", "cheatsheet"]
-categories: ['шпаргалки']
-series: ['шпаргалки']
+categories: ['cheatsheet']
+series: ['cheatsheet']
 date: "2022-06-07"
 lastmod: "2022-06-07"
 featuredImage: /posts/docker-commands/featured.en.jpg

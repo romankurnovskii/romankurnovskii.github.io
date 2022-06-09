@@ -25,20 +25,14 @@ Git - это система трёх основных стадий: working dire
 mkdir my_fodler
 cd my_folder
 ```
-
 Сделаем инициализацию git проекта.
 ```bash
 git init
 ```
-
 [![](../images/Day38_Git1.png)](../images/Day38_Git1.png)
-
 После инициализации git репозитория создается скрытая папка `.git`
-
 ![](../images/Day38_Git2.png?v2)
-
 Здесь хранятся сведения о репозитории git, а также информация о наших ветках и коммитах.
-
 ### Staging/Stage
 
 Сейчас у нас пустая папка. Создадим пустой файл `README.md` и выполним команду
@@ -70,9 +64,7 @@ git add .
 git commit -m "Add README.md (или другой значимый комментарий)"
 ```
 ![](../images/Day38_Git5.png?v2)
-
 ### Коммит изменений
-
 В процессе работы мы добавляем много различных файлов. Если мы захотим добавить более длинный и осмысленный коммит, то можно запусть команду без комментария
 
 ```bash
@@ -93,8 +85,8 @@ git status
 Существует [гайдлайн](https://www.conventionalcommits.org/ru/v1.0.0/), на который можно ориентироваться. Такой подход точно будет понятен для всех новых проектов. Некоторые проекты, соблюдабщие данную конвенцию: [angular](https://github.com/angular/angular/commits/main), [electron](https://github.com/electron/electron/commits/)
 
 Коммит:
-- Должен использоваться present tense ("add feature" not "added feature")
-- Должен использоваться imperative mood ("move cursor to..." not "moves cursor to...")
+* Должен использоваться present tense ("add feature" not "added feature")
+* Должен использоваться imperative mood ("move cursor to..." not "moves cursor to...")
 
 #### Примеры имен коммитов
 `init:` - используется для начала проекта/таска. Примеры:
@@ -123,15 +115,15 @@ fix: adjust social links for mobile
 ```
 `refactor:` - новой функциональности не добавлял / поведения не менял. Файлы в другие места положил, удалил, добавил. Изменил форматирование кода (white-space, formatting, missing semi-colons, etc). Улучшил алгоритм, без изменения функциональности. Примеры:
 ```
-refactor: change structure of the project
-refactor: rename vars for better readability
-refactor: apply eslint
-refactor: apply prettier
+refactor: изменение структуры проекта
+refactor: переименование переменных для лучшей читабельности
+refactor: применить eslint
+refactor: применить prettier
 ```
 `docs:` - используется при работе с документацией/readme проекта. Примеры:
 ```
-docs: update readme with additional information
-docs: update description of run() method
+docs: обновить readme с дополнительной информацией
+docs: обновить описание метода run()
 ```
 
 ### Пропуск Staging Area
@@ -141,7 +133,6 @@ docs: update description of run() method
 ![](../images/Day38_Git8.png?v2)
 
 ### Удаление файлов
-
 Фиксация удаления как и добавления файлов происхоит через комит
 
 Создадим файл -> Добавим в stage -> Удалим файл
@@ -197,7 +188,6 @@ git mv old_file.txt new_file.txt
 git status -s
 ```
 ![](../images/Day38_Git16.png?v1)
-
 ## Ресурсы 
 
 - [What is Version Control?](https://www.youtube.com/watch?v=Yc8sCSeMhi4)

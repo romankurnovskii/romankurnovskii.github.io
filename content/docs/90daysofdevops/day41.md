@@ -1,5 +1,5 @@
 ---
-title: 41 - The Open Source Workflow
+title: 41 - Рабочий процесс с открытым исходным кодом
 description: 
 toc: true
 authors:
@@ -12,109 +12,104 @@ featuredImage:
 draft: false
 id: 1048806
 ---
-## The Open Source Workflow 
+## Рабочий процесс с открытым исходным кодом 
     
-Hopefully through the last 7 sections of Git we have a better understanding of what git is and then how a git based service such as GitHub integrates with git to provide a source code repository but also a way in which the wider community can collaborate on code and projects together. 
+Когда мы изучали основы GitHub, мы проходили процесс форка произвольного проекта и внесения изменений в наш локальный репозиторий. Здесь мы хотим сделать еще один шаг вперед и внести свой вклад в проект с открытым исходным кодом. Помните, что вклад не обязательно должен заключаться в исправлении ошибок, кодировании функций, это может быть и документация. Каждая мелочь помогает, и это также позволит вам поработать с некоторыми функциями git, которые мы рассмотрели. 
+## Форк проекта 
 
-When we went through the GitHub fundamentals we went through the process of forking a random project and making a change to our local repository. Here we want to go one step further and contribute to an open source project. Remember that contributing doesn't need to be bug fixes, coding features but it could also be documentation. Every little helps and it also allows you to get hands on with some of the git functionality we have covered. 
+Первое, что нам нужно сделать, это найти проект, в который мы можем внести свой вклад. Я недавно выступал с презентациями в [Kanister Project](https://github.com/kanisterio/kanister) и хотел бы поделиться своими презентациями, которые теперь есть на YouTube, с основным readme.mdf-файлом проекта. 
 
-## Fork a Project 
-
-The first thing we have to do is find a project we can contribute to. I have recently been presenting on the [Kanister Project](https://github.com/kanisterio/kanister) and I would like to share my presentations that are now on YouTube to the main readme.mdfile in the project. 
-
-First of all we need to fork the project. Let's run through that process. I am going to navigate to the link share above and fork the repository. 
+Прежде всего, нам нужно форкнуть проект. Давайте проделаем этот процесс. Я собираюсь перейти по ссылке, указанной выше, и форкнуть репозиторий. 
 
 ![](../images/Day41_Git1.png?v1)
 
-We now have our copy of the whole repository. 
+Теперь у нас есть наша копия всего репозитория. 
 
 ![](../images/Day41_Git2.png?v1)
 
-For reference on the Readme.mdfile the original Presenations listed are just these two so we need to fix this with our process. 
+Для справки в файле Readme.mdfile в списке оригинальных Presenations указаны только эти два, поэтому нам нужно исправить это в нашем процессе. 
 
 ![](../images/Day41_Git3.png?v1)
 
-## Clones to local machine 
+## Клонирование на локальную машину 
 
-Now we have our own fork we can bring that down to our local and we can then start making our edits to the files. Using the code button on our repo we can grab the URL and then use `git clone url` in a directory we wish to place the repository. 
+Теперь у нас есть собственный форк, который мы можем перенести на локальную машину и начать вносить правки в файлы. Используя кнопку code на нашем репозитории, мы можем получить URL, а затем использовать `git clone url` в каталоге, куда мы хотим поместить репозиторий. 
 
 ![](../images/Day41_Git4.png?v1)
 
-## Make our changes 
+## Вносим изменения 
 
-We have our project local so we can open VSCode or an IDE or text editor of your choice to add your modifications. 
+У нас есть локальный проект, поэтому мы можем открыть VSCode или IDE или текстовый редактор по вашему выбору, чтобы добавить свои изменения. 
 
 ![](../images/Day41_Git5.png?v1)
 
-The readme.mdfile is written in markdown language and because I am modifying someone else's project I am going to follow the existing project formatting to add our content. 
+Файл readme.mdfile написан на языке markdown, и поскольку я изменяю чужой проект, я собираюсь следовать существующему форматированию проекта для добавления нашего содержимого. 
 
 ![](../images/Day41_Git6.png?v1)
 
-## Test your changes
+## Тестируем свои изменения
 
-We must as a best practice test our changes, this makes total sense if this was a code change to an application you would want to ensure that the application still functions after code change, well we also must make sure that documentation is formatted and looks correct. 
+В качестве лучшей практики мы должны тестировать наши изменения, это совершенно логично, если бы это было изменение кода приложения, вы бы хотели убедиться, что приложение продолжает функционировать после изменения кода, но мы также должны убедиться, что документация отформатирована и выглядит правильно. 
 
-In VScode we have the ability to add a lot of plugins one of these is the ability to preview markdown pages. 
+В VScode у нас есть возможность добавить множество плагинов, одним из которых является возможность предварительного просмотра страниц в формате markdown. 
 
 ![](../images/Day41_Git7.png?v1)
 
-## Push changes back to our forked repository
+## Верните изменения в наш форкнутый репозиторий
 
-We do not have the authentication to push our changes directly back to the Kanister repository so we have to take this route. Now that I am happy with our changes we can run through some of those now well known git commands.
+У нас нет аутентификации, чтобы отправить наши изменения непосредственно в репозиторий Kanister, поэтому мы должны пойти этим путем. Теперь, когда я доволен нашими изменениями, мы можем выполнить некоторые из этих хорошо известных команд git.
 
 ![](../images/Day41_Git8.png?v1)
 
-Now we go back into GitHub to check the changes once more and then contribute back to the master project. 
-
-Looks good. 
+Теперь мы возвращаемся в GitHub, чтобы еще раз проверить изменения и затем внести вклад в мастер-проект. 
 
 ![](../images/Day41_Git9.png?v1)
 
-Now we can go back to the top of our forked repository for Kanister and we can see that we are 1 commit ahead of the kanisterio:master branch. 
+Теперь мы можем вернуться в верхнюю часть нашего форкнутого репозитория для Kanister и увидеть, что мы на 1 коммит опережаем ветку kanisterio:master. 
 
 ![](../images/Day41_Git10.png?v1)
 
-Next we hit that contribute button highlighted above. We see the option to "Open Pull Request"
+Далее мы нажимаем на кнопку "Внести вклад", выделенную выше. Мы видим опцию "Open Pull Request".
 
 ![](../images/Day41_Git11.png?v1)
 
 ## Open a pull request 
 
-There is quite a bit going on in this next image, top left you can now see we are in the original or the master repository. then you can see what we are comparing and that is the original master and our forked repository. We then have a create pull request button which we will come back to shortly. We have our single commit but if this was more changes you might have multiple commits here. then we have the changes we have made in the readme.mdfile. 
+На следующем изображении происходит довольно много всего: слева вверху вы видите, что мы находимся в оригинальном или основном репозитории. Затем вы можете увидеть, что мы сравниваем, а это оригинальный основной и наш форкнутый репозиторий. Затем у нас есть кнопка создания запроса на притяжение, к которой мы скоро вернёмся. У нас есть единственный коммит, но если бы изменений было больше, то здесь могло бы быть несколько коммитов. Затем у нас есть изменения, которые мы внесли в readme.mdfile. 
 
 ![](../images/Day41_Git12.png?v1)
 
-We have reviewed the above changes and we are ready to create pull request hitting the green button. 
+Мы просмотрели вышеуказанные изменения и готовы создать pull request, нажав на зеленую кнопку. 
 
-Then depending on how the maintainer of a project has set out their Pull Request functionality on their repository you may or may not have a template that gives you pointers on what the maintainer wants to see. 
+Затем, в зависимости от того, как мейнтейнер проекта настроил функциональность Pull Request в своём репозитории, у вас может быть или не быть шаблона, который даст вам указания на то, что хочет видеть мейнтейнер. 
 
-This again where you want to make a meaningful description of what you have done, clear and concise but enough detail. You can see I have made a simple change overview and I have ticked documentation. 
+Здесь вам снова нужно составить содержательное описание того, что вы сделали, четкое и краткое, но достаточно подробное. Вы можете видеть, что я сделал простой обзор изменений и отметил документацию. 
 
 ![](../images/Day41_Git13.png?v1)
 
-## Create pull request
+## Создайте запрос на исправление
 
-We are now ready to create our pull request. After hitting the "Create Pull Request" at the top of the page you will get a summary of your pull request. 
+Теперь мы готовы к созданию запроса на исправление. После нажатия кнопки "Create Pull Request" в верхней части страницы вы получите краткое описание вашего запроса. 
 
 ![](../images/Day41_Git14.png?v1)
 
-Scrolling down you are likely to see some automation taking place, in this instance we require a review and some checks are taking place. We can see that Travis CI is in progress and a build has started and this will check our update, making sure that before anything is merged we are not breaking things with our additions. 
+Прокручивая страницу вниз, вы, вероятно, увидите, что происходит автоматизация, в данном случае нам требуется рецензия, и происходят некоторые проверки. Мы видим, что Travis CI находится в процессе и началась сборка, которая проверит наше обновление и убедится, что перед тем, как что-то будет слито, мы не сломаем что-то своими добавлениями. 
 
 ![](../images/Day41_Git15.png?v1)
 
-Another thing to note here is that the red in the screen shot above, can look a little daunting and look as if you have made mistakes! Don't worry you have not broken anything, my biggest tip here is this process is there to help you and the maintainers of the project. If you have made a mistake at least from my experience the maintainer will contact and advise on what to do next. 
+Еще одна вещь, которую следует отметить, это то, что красный цвет на снимке экрана выше, может выглядеть немного пугающе и выглядеть так, как будто вы совершили ошибки! Не волнуйтесь, вы ничего не нарушили, мой главный совет - этот процесс поможет вам и сопровождающим проекта. Если вы допустили ошибку, по крайней мере, по моему опыту, сопровождающий свяжется с вами и посоветует, что делать дальше. 
 
-This pull request is now public for everyone to see [added Kanister presentation/resource #1237](https://github.com/kanisterio/kanister/pull/1237)
+Этот запрос на исправление теперь общедоступен для всех [added Kanister presentation/resource #1237](https://github.com/kanisterio/kanister/pull/1237).
 
-I am going to publish this before the merge and pull request is accepted so maybe we can get a little prize for anyone that is still following along and is able to add a picture in of the successful PR? 
+Я собираюсь опубликовать это до того, как слияние и запрос на исправление будут приняты, так что, возможно, мы сможем получить небольшой приз для тех, кто всё ещё следит за развитием событий и сможет добавить картинку к успешному PR? 
 
-1. Fork this repository to your own GitHub account 
-2. Add your picture and possibly text 
-3. Push the changes to your forked repository 
-4. Create a PR that I will see and approve. 
-5. I will think of some sort of prize 
+1. Форкните этот репозиторий на свой собственный аккаунт GitHub 
+2. Добавьте свою картинку и, возможно, текст 
+3. Внесите изменения в свой форкнутый репозиторий. 
+4. Создайте PR, который я увижу и одобрю. 
+5. Я придумаю какой-нибудь приз. 
 
-This then wraps up our look into Git and GitHub, next we are diving into containers which starts with a big picture look into how, why containers and also a look into virtualisation and how we got here. 
+На этом мы завершаем знакомство с Git и GitHub, далее мы погружаемся в контейнеры, что начинается с рассмотрения общей картины того, как, почему контейнеры, а также с рассмотрения виртуализации и того, как мы к ней пришли. 
 
 ## Ресурсы 
 
@@ -127,6 +122,3 @@ This then wraps up our look into Git and GitHub, next we are diving into contain
 - [Git and GitHub for Beginners - Crash Course](https://www.youtube.com/watch?v=RGOj5yH7evk&t=8s) 
 - [Complete Git and GitHub Tutorial](https://www.youtube.com/watch?v=apGV9Kg7ics)
 - [Git cheatsheet](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
-
-
-See you on [Day 42](../day42) 
