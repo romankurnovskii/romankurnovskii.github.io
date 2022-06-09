@@ -72,7 +72,8 @@ brew install --cask \
   disk-inventory-x \
   obs \
   spotify \
-  iterm2
+  iterm2 \
+  deepl
 ```
 
 Install terminal applications (read more about these in Terminal Applications):
@@ -107,6 +108,7 @@ brew install \
       - url: `https://www.youtube.com/results?search_query=%s&page={startPage?}&utm_source=opensearch`
   - Chrome Extensions
     - [Google Translate](https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb)
+    - [DeepL Translate](https://chrome.google.com/webstore/detail/deepl-translate-beta-vers/cofdbpoegempjloogbagkncekinflcnj/related?hl=en) - AI translator
     - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
     - [Pocket](https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj)
     - [Session Buddy](https://chrome.google.com/webstore/detail/session-buddy/edacconmaakjimmfgnblocblbcdcpbko) (Manage Browser Tabs and Bokmarks)

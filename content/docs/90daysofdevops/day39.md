@@ -1,6 +1,6 @@
 ---
-title: 39 - Viewing, unstaging, discarding & restoring
-description: Viewing, unstaging, discarding & restoring
+title: 39 - Просмотр, удаление, отмена и восстановление
+description: Просмотр, удаление, отмена и восстановление версий в Git
 toc: true
 authors:
 tags: [devops]
@@ -12,196 +12,165 @@ featuredImage:
 draft: false
 id: 1048827
 ---
-## Viewing, unstaging, discarding & restoring
+## GIT - Просмотр, удаление, отмена и восстановление
 
-Continuing on from where we finished yesterday around some of the commands that we have with git and how to leverage git with your projects. Remember we have not touched GitHub or any other git based services yet this is all to help you keep control of your projects locally at the moment, but they will all become useful when we start to integrate into those tools. 
+### Просмотр файлов в Stagig area и Working area
 
-### Viewing the Staged and Unstaged Changes 
-
-It is good practice to make sure you view the staged and unstaged code before committing. We can do this by running the `git diff --staged` command 
+Если некоторые файлы/папки уже добавлены в `staging area`, то можно просмотреть их рахницу по отношению в главной ветке комадой:  `git diff --staged`
 
 ![](../images/Day39_Git1.png?v1)
 
-This then shows us all the changes we have made and all new files we have added or deleted. 
+Это покажет нам все внесенные изменения и все новые файлы, которые мы добавили или удалили. 
 
-changes in the modified files are indicated with `---` or `+++` you can see below that we just added +add some text below which means they are new lines. 
+Изменения в измененных файлах обозначаются символами `---` или `+++` Вы можете видеть ниже, что мы только что добавили `+add some text`, что означает, что это новые строки. 
 
 ![](../images/Day39_Git2.png?v1)
 
-We can also run `git diff` to compare our staging area with our working directory. If we make some changes to our newly added file code.txt and add some lines of text. 
+Мы также можем запустить `git diff`, чтобы сравнить наш staging area с нашим рабочим каталогом. Если мы внесем некоторые изменения в наш только что добавленный файл code.txt и добавим несколько строк текста. 
 
 ![](../images/Day39_Git3.png?v1)
 
-If we then run `git diff` we compare and see the output below. 
-
 ![](../images/Day39_Git4.png?v1)
 
-### Visual Diff Tools
+### Инструменты для визуального отображения
 
-For me the above is more confusing so I would much rather use a visual tool, 
-
-To name a few visual diff tools: 
+Вот несколько инструментов для визуального сравнения коммитов и веток: 
 
 - KDiff3
 - P4Merge 
-- WinMerge (Windows Only)
+- WinMerge (только для Windows)
 - VSCode
 
-To set this in git we run the following command `git config --global diff.tool vscode`
-
-We are going to run the above and we are going to set some parameters when we launch VScode. 
-
-![](../images/Day39_Git5.png?v1)
-
-We can also check our configuration with `git config --global -e` 
-
-![](../images/Day39_Git6.png?v1)
-
-We can then use `git difftool` to now open our diff visual tool. 
-
+Если запустим `git difftool` то запустится визуальный инструмент сравнения по умолчанию.
 ![](../images/Day39_Git7.png?v1)
-
-Which then opens our VScode editor on the diff page and compares the two, we have only modified one file from nothing to now adding a line of code on the right side. 
-
+Проверить текущие настройки `git config --global -e` 
+![](../images/Day39_Git6.png?v1)
+Чтобы установить инструмент в git, выполним следующую команду `git config --global diff.tool vscode`.
+![](../images/Day39_Git5.png?v1)
+Теперь при запуске `git difftool` откроется vscode
+После этого открывается редактор VScode на странице diff и сравнивает их, мы изменили только один файл, добавив строку кода с правой стороны. 
 ![](../images/Day39_Git8.png?v1)
-
-I find this method much easier to track changes and this is something similar to what we will see when we look into git based services such as GitHub. 
-
-We can also use `git difftool --staged` to compare stage with committed files. 
-
+Можем использовать `git difftool --staged` для сравнения файлов в `staging area` с "прокомиченными" файлами. 
 ![](../images/Day39_Git9.png?v1)
+VScode, как и большинство IDE, имеют встроенную функциональность, поэтому очень редко вам понадобится запускать эти команды из терминала, хотя это полезно, если у вас по какой-то причине не установлена IDE. 
 
-Then we can cycle through our changed files before we commit. 
+### Просмотр истории изменений
 
-![](../images/Day39_Git10.png?v1)
-
-I am using VScode as my IDE and like most IDEs they have this functionality built in it is very rare you would need to run these commands from the terminal, although helpful if you don't have an IDE installed for some reason. 
-
-### Viewing the History
-
-We previously touched on `git log` which will provide us a comprehensive view on all commits we have made in our repository. 
+Просмотреть историю изменений в Git можно командой `git log`
 
 ![](../images/Day39_Git11.png?v1)
+Каждый коммит имеет свою шестнадцатеричную строку, уникальную для репозитория. Здесь вы можете увидеть, над какой веткой мы работаем, а также автора, дату и комментарий коммита. 
 
-Each commit has its own hexadecimal string, unique to the repository. Here you can see which branch we are working on and then also the author, date and commit message. 
-
-We also have `git log --oneline` and this gives us a much smaller version of the hexadecimal string whcih we can use in other `diff` commands. We also only have the one line description or commit message. 
+У нас также есть `git log --oneline`, и это даёт нам гораздо меньшую версию шестнадцатеричной строки, которую мы можем использовать в других командах `diff`. 
 
 ![](../images/Day39_Git12.png?v1)
-
-We can reverse this into a start with the first commit by running `git log --oneline --reverse` and now we see our first commit at the top of our page. 
+Чтобы просмотреть коммиты с самого первого, а не послденего, как по умолчанию, запустим   `git log --oneline --reverse`, и теперь мы видим наш первый коммит в верхней части страницы. 
 
 ![](../images/Day39_Git13.png?v1)
 
-### Viewing a Commit
+### Просмотр коммита
 
-Being able to look at the commit message is great if you have been concious about following best practices and you have added a meaningful commit message, however there is also `git show` command which allows us to inspect and view a commit. 
-
-We can use `git log --oneline --reverse` to get a list of our commits. and then we can take those and run `git show <commit ID>`
+Можно просмотреть данные ко конкретном коммите более детально: `git show` или `git show <commit ID>`
 
 ![](../images/Day39_Git14.png?v1)
 
-The output of that command will look like below with the detail of the commit, author and what actually changed. 
-
 ![](../images/Day39_Git15.png?v1)
 
-We can also use `git show HEAD~1` where 1 is how many steps back from the current version we want to get back to. 
+Мы также можем использовать `git show HEAD~1`, где 1 - это количество шагов назад от текущей версии, к которой мы хотим вернуться. 
 
-This is great if you want some detail on your files, but if we want to list all the files in a tree for the whole snapshot directory. We can achieve this by using the `git ls-tree HEAD~1` command, again going back one snapshot from the last commit. We can see below we have two blobs, these indicate files where as tree would indicate a directory. You can also see commits and tags in this information. 
+Это отличный вариант, если вам нужна подробная информация о файлах, но если мы хотим получить список всех файлов в дереве для всего каталога снимков. Мы можем добиться этого, используя команду `git ls-tree HEAD~1`, снова вернувшись на один снимок назад от последнего коммита. Ниже мы видим два пятна, которые обозначают файлы, в то время как дерево обозначает каталог. В этой информации вы также можете увидеть коммиты и теги. 
 
 ![](../images/Day39_Git16.png?v1)
 
-We can then use the above to drill in and see the contents of our file (blobs) using the `git show` command. 
+Проверим коммит
 
 ![](../images/Day39_Git17.png?v1)
 
-Then the contents of that specific version of the file will be shown. 
-
 ![](../images/Day39_Git18.png?v1)
 
-### Unstaging Files
+### Unstaging
 
-There will be a time where you have maybe used `git add .` but actually there are files you do not wish to commit to that snapshot just yet. In this example below I have added newfile.txt to my staging area but I am not ready to commit this file so I am going to use the `git restore --staged newfile.txt` to undo the `git add` step. 
+Бывают случаи, когда вы, возможно, использовали `git add .`, но на самом деле есть файлы, которые вы пока не хотите фиксировать в этом снапшоте. В этом примере ниже я добавил newfile.txt в область staging, но я не готов зафиксировать этот файл, поэтому я собираюсь использовать `git restore --staged newfile.txt`, чтобы отменить шаг `git add`. 
 
 ![](../images/Day39_Git19.png?v1)
 
-We can also do the same to modified files such as main.js and unstage the commit, see above we have a greem M for modified and then below we are unstaging those changes. 
+Мы также можем сделать то же самое с изменёнными файлами, такими как main.js, и снять фиксацию, см. выше у нас есть greem M для modified, а ниже мы снимаем фиксацию этих изменений. 
 
 ![](../images/Day39_Git20.png?v1)
 
-I have actually found this command quite useful during the 90DaysOfDevOps as I sometimes work ahead of the days where I feel I want to make notes for the following day but I don't want to commit and push to the public GitHub repository. 
+Я нашел эту команду весьма полезной во время 90DaysOfDevOps, поскольку иногда я работаю заранее, когда чувствую, что хочу сделать заметки для следующего дня, но не хочу фиксировать и выкладывать в публичный репозиторий GitHub. 
 
-### Discarding Local Changes
+### Отмена локальных изменений
 
-Some times we might make changes but we are not happy with those changes and we want to throw them away. We are going to use the `git restore` command again and we are going to be able to restore files from our snapshots or previous versions. We can run `git restore .` against our directory and we will restore everything from our snapshot but notice that our untracked file is still present. There is no previous file being tracked called newfile.txt. 
+Иногда мы можем вносить изменения, но эти изменения нас не устраивают, и мы хотим их отбросить. Мы снова воспользуемся командой `git restore` и сможем восстановить файлы из наших снимков или предыдущих версий. Мы можем запустить команду `git restore .` для нашего каталога, и мы восстановим все из нашего снимка, но обратите внимание, что наш неотслеживаемый файл все еще присутствует. Нет предыдущего отслеживаемого файла под названием newfile.txt. 
 
 ![](../images/Day39_Git21.png?v1)
 
-Now to remove newfile.txt or any untracked files. We can use `git clean` we will get a warning alone. 
+Теперь, чтобы удалить newfile.txt или любой другой неотслеживаемый файл. Мы можем использовать `git clean`, но получим только предупреждение. 
 
 ![](../images/Day39_Git22.png?v1)
 
-Or if we know the consequences then we might want to run `git clean -fd` to force and remove all directories. 
+Или, если мы знаем о последствиях, мы можем запустить `git clean -fd`, чтобы принудительно удалить все каталоги. 
 
 ![](../images/Day39_Git23.png?v1)
 
-### Restoring a File to an Earlier Version 
+### Восстановление файла до более ранней версии 
 
-As we have alluded to throughout a big portion of what Git is able to help with is being able to restore copies of your files from your snapshots (this is not a backup but it is a very fast restore point) My advice is that you also save copies of your code in other locations using a backup solution for this. 
+Как мы уже упоминали, большая часть того, чем может помочь Git, - это возможность восстановления копий файлов из снимков (это не резервное копирование, но это очень быстрая точка восстановления). Я советую вам также сохранять копии вашего кода в других местах, используя для этого решение для резервного копирования. 
 
-As an example let's go and delete our most important file in our directory, notice we are using unix based commands to remove this from the directory, not git commands. 
+В качестве примера давайте удалим наш самый важный файл в каталоге, обратите внимание, что мы используем команды на базе unix для удаления этого файла из каталога, а не команды git. 
 
 ![](../images/Day39_Git24.png?v1)
 
-Now we have no readme.mdin our working directory. We could have used `git rm readme.md` and this would then be reflected in our git database. Let's also delete from here to simiulate it being removed completely. 
+Теперь у нас нет readme.mdin в нашей рабочей директории. Мы могли бы использовать `git rm readme.md` и тогда это было бы отражено в нашей базе данных git. Давайте также удалим его отсюда, чтобы имитировать его полное удаление. 
 
 ![](../images/Day39_Git25.png?v1)
 
-Let's now commit this with a message and prove that we no longer have anything in our working directory or staging area. 
+Теперь зафиксируем это с сообщением и докажем, что у нас больше нет ничего в рабочем каталоге или в области постановки. 
 
 ![](../images/Day39_Git26.png?v1)
 
-Mistakes were made and we now need this file back! 
+Была допущена ошибка, и теперь нам нужно вернуть этот файл! 
 
-We could use the `git undo` command which will undo the last commit, but what if it was a while back? We can use our `git log` command to find our commits and then we find that our file is in the last commit but we don't all of those commits to be undone so we can then use this command `git restore --source=HEAD~1 README.md` to specifically find the file and restore it from our snapshot. 
+Мы можем использовать команду `git undo`, которая отменит последний коммит, но что если это было давно? Мы можем использовать команду `git log`, чтобы найти наши коммиты, и тогда мы обнаружим, что наш файл находится в последнем коммите, но мы не хотим, чтобы все эти коммиты были отменены, поэтому мы можем использовать эту команду `git restore --source=HEAD~1 README.md`, чтобы найти файл и восстановить его из нашего снимка. 
 
-You can see using this process we now have the file back in our working directory. 
+Вы можете видеть, что с помощью этого процесса мы вернули файл в наш рабочий каталог. 
 
 ![](../images/Day39_Git27.png?v1)
 
-We now have a new untracked file and we can use our commands previously mentioned to track, stage and commit our files and changes. 
+Теперь у нас есть новый неотслеживаемый файл, и мы можем использовать наши команды, упомянутые ранее, для отслеживания, этапа и фиксации наших файлов и изменений. 
 
-### Rebase vs Merge 
+### Rebase / Merge 
 
-This seems to be the biggest headache when it comes to Git and when to use rebase vs using merge on your git repositories. 
+Это, кажется, самая большая головная боль, когда речь заходит о Git и о том, когда использовать rebase, а когда использовать merge в ваших git-репозиториях. 
 
-The first thing to know is that both `git rebase` and `git merge` solve the same problem. Both are to integrate changes from one brance into another branch. However they do this in different ways. 
+Прежде всего, нужно знать, что и `git rebase`, и `git merge` решают одну и ту же задачу. Оба они интегрируют изменения из одной ветки в другую. Однако они делают это по-разному. 
 
-Let's start with a new feature in a new dedicated branch. The Main branch continues on with new commits. 
+Давайте начнем с новой функции в новой выделенной ветке. Основная ветку продолжает работу с новыми коммитами. 
 
 ![](../images/Day39_Git28.png?v1)
 
-The easy option here is to use `git merge feature main` which will merge the main branch into the feature branch. 
+Простой вариант здесь - использовать `git merge feature main`, который объединит основную ветку с веткую feature. 
 
 ![](../images/Day39_Git29.png?v1)
 
-Merging is easy because it is non-destructive. The existing branches are not changed in any way. However this also means that the feature branch will have an irrellevant merge commit every time you need to incorporate upstream changes. If main is very busy or active this will or can pollute the feature branch history. 
+Слияние простое, потому что оно неразрушающее. Существующие ветви никак не изменяются. Однако это также означает, что функциональная ветку будет иметь неактуальный коммит слияния каждый раз, когда вам нужно будет включить изменения, внесённые выше по течению. Если main очень занят или активен, это может привести к загрязнению истории функциональной ветви. 
 
-As an alternate option we can rebase the feature branch onto the main branch using 
+В качестве альтернативного варианта мы можем перебазировать функциональную ветку на основную ветку с помощью команды 
 
 ```
 git checkout feature
 git rebase main
 ``` 
-This moves the feature branch (the entire feature branch) effectively incorporating all of the new commits in main. But, instead of using a merge commit, rebasing re-writes the project history by creating brand new commits for each commit in the original branch.
+Это перемещает ветку feature (всю ветку feature), эффективно включая все новые коммиты в main. Но вместо использования коммита слияния, rebasing переписывает историю проекта, создавая совершенно новые коммиты для каждого коммита в исходной ветке.
 
 ![](../images/Day39_Git30.png?v1)
 
-The biggest benefit of rebasing is a much cleaner project history. It also eliminates unnecessary merge commits. and as you compare the last two images, you can follow arguably a much cleaner linear project history. 
+Самым большим преимуществом ребасинга является гораздо более чистая история проекта. Это также устраняет ненужные коммиты слияния. и если сравнить последние два изображения, то можно увидеть, что история проекта намного чище. 
 
-Although it's still not a forgone conclusion, because choosing the cleaner history also comes with tradeoffs, If you do not follow the [The Golden rule of rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing#the-golden-rule-of-rebasing) re-writing project history can be potentially catastrophic for your collaboration workflow. And, less importantly, rebasing loses the context provided by a merge commit—you can’t see when upstream changes were incorporated into the feature.  
+Хотя это еще не окончательный вывод, потому что выбор более чистой истории также связан с компромиссами. Если вы не будете следовать [The Golden rule of rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing#the-golden-rule-of-rebasing), переписывание истории проекта может стать потенциально катастрофой для вашего рабочего процесса совместной работы. И, что менее важно, при пересборке теряется контекст, предоставляемый коммитом слияния - вы не можете увидеть, когда изменения, внесенные выше по течению, были включены в функцию.  
 
-## Ресурсы 
+## Ссылки 
 
 - [What is Version Control?](https://www.youtube.com/watch?v=Yc8sCSeMhi4)
 - [Types of Version Control System](https://www.youtube.com/watch?v=kr62e_n6QuQ)
@@ -211,6 +180,3 @@ Although it's still not a forgone conclusion, because choosing the cleaner histo
 - [Complete Git and GitHub Tutorial](https://www.youtube.com/watch?v=apGV9Kg7ics)
 - [Git cheatsheet](https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet)
 - [Exploring the Git command line – A getting started guide](https://veducate.co.uk/exploring-the-git-command-line/)
-
-
-See you on [Day40](../day40) 

@@ -72,7 +72,8 @@ brew install --cask \
   disk-inventory-x \
   obs \
   spotify \
-  iterm2
+  iterm2 \
+  deepl
 ```
 
 Install terminal applications (read more about these in Terminal Applications):
@@ -107,6 +108,7 @@ brew install \
       - url: `https://www.youtube.com/results?search_query=%s&page={startPage?}&utm_source=opensearch`
   - Chrome Extensions
     - [Google Translate](https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb)
+    - [DeepL Translate](https://chrome.google.com/webstore/detail/deepl-translate-beta-vers/cofdbpoegempjloogbagkncekinflcnj/related?hl=en) - AI translator
     - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
     - [Pocket](https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj)
     - [Session Buddy](https://chrome.google.com/webstore/detail/session-buddy/edacconmaakjimmfgnblocblbcdcpbko) (Manage Browser Tabs and Bokmarks)
@@ -259,6 +261,8 @@ brew install --cask font-hack-nerd-font
 
 ### Install theme
 
+[Theme description ](https://github.com/romkatv/powerlevel10k#batteries-included)
+
 ```bash
 brew install romkatv/powerlevel10k/powerlevel10k
 echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
@@ -308,4 +312,7 @@ alias python=python3
 alias upd='omz update; brew update; brew upgrade; brew cu -a --cleanup -y -v; brew cleanup; softwareupdate -i -a; i'
 ```
 
-[inspiration](https://www.robinwieruch.de/mac-setup-web-development/)
+## Links
+- [https://www.robinwieruch.de/mac-setup-web-development/](https://www.robinwieruch.de/mac-setup-web-development/)
+- [https://sourabhbajaj.com/mac-setup/iTerm/ack.html](https://sourabhbajaj.com/mac-setup/iTerm/ack.html)
+- [https://www.engineeringwithutsav.com/blog/spice-up-your-macos-terminal](https://www.engineeringwithutsav.com/blog/spice-up-your-macos-terminal)

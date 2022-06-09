@@ -1,6 +1,6 @@
 ---
-title: 40 - Social Network for code
-description: 
+title: 40 - GitHub | GitLab | BitBucket
+description: Обзор онлайн репозиториев для Git
 toc: true
 authors:
 tags: [devops]
@@ -16,11 +16,6 @@ id: 1049044
 Изучение GitHub | GitLab | BitBucket 
 
 Сегодня я хочу рассказать о некоторых сервисах на основе git, о которых мы, вероятно, все слышали и ожидаем, что будем использовать их ежедневно.
-
-Затем мы воспользуемся некоторыми знаниями из предыдущего сеанса, чтобы переместить копии наших данных в каждую из основных служб.
-
-Я назвал этот раздел «Социальная сеть для кода», поясню почему?
-
 ### GitHub
 
 Наиболее распространенным, по крайней мере для меня, является GitHub, GitHub — это веб-хостинг для git. Чаще всего он используется разработчиками программного обеспечения для хранения своего кода. Управление исходным кодом с функциями контроля версий git, а также множеством дополнительных функций. Это позволяет командам или открытым участникам легко общаться и обеспечивает социальный аспект кодирования. (отсюда и название социальной сети) С 2018 года GitHub является частью Microsoft.
@@ -54,23 +49,23 @@ GitHub существует уже довольно давно и был осн�
 
 ![](../images/Day40_Git3.png?v1)
 
-Over on the right side of the page we have some referrals for repositories that we might be interested in, most likely based on your recent activity or own projects. 
+В правой части страницы есть несколько ссылок на репозитории, которые могут нас заинтересовать, скорее всего, на основе вашей недавней активности или собственных проектов. 
 
 ![](../images/Day40_Git4.png?v1)
 
-To be honest I am very rarely on my home page that we just saw and described, although I now see that the feed could be really useful to help interacting with the community a little better on certain projects. 
+Честно говоря, я очень редко бываю на своей домашней странице, которую мы только что видели и описали, хотя теперь я вижу, что лента может быть действительно полезной, чтобы помочь взаимодействовать с сообществом немного лучше в определенных проектах. 
 
-Next up if we want to head into our GitHub Profile we can navigate to the top right corner and on your image there is a drop down which allows you to navigate through your account. From here to access your Profile select "Your Profile" 
+Далее, если мы хотим зайти в наш профиль на GitHub, мы можем перейти в правый верхний угол, и на вашем изображении будет выпадающий список, который позволит вам перемещаться по вашему аккаунту. Отсюда для доступа к своему профилю выберите "Ваш профиль" 
 
 ![](../images/Day40_Git5.png?v1)
 
-Next, your profile page will appear, by default unless you change your configuration you are not going to see what I have, I have added some functionality that shows my recent blog posts over on [vZilla](https://vzilla.co.uk) and then also my latest videos on my [YouTube](https://m.youtube.com/c/MichaelCade1) Channel. 
+Далее появится страница вашего профиля, по умолчанию, если вы не измените свою конфигурацию, вы не увидите того, что есть у меня, я добавил некоторые функции, которые показывают мои последние записи в блоге на [vZilla](https://vzilla.co.uk), а также мои последние видео на моем канале [YouTube](https://m.youtube.com/c/MichaelCade1). 
 
-Personally you are not going to be spending much time looking at your own profile, but this is a good profile page to share around your network so they can see the cool projects you are working on. 
+Лично вы не собираетесь тратить много времени на просмотр своего профиля, но это хорошая страница профиля, которой можно поделиться со своей сетью, чтобы они могли увидеть крутые проекты, над которыми вы работаете. 
 
 ![](../images/Day40_Git6.png?v1)
 
-We can then drill down into the building block of GitHub, the repositories. Here you are going to see your own repositories and if you have private repositories they are also going to be shown in this long list. 
+Затем мы можем перейти к основному элементу GitHub - репозиториям. Здесь вы увидите свои собственные репозитории, а если у вас есть частные репозитории, они также будут показаны в этом длинном списке. 
 
 ![](../images/Day40_Git7.png?v1)
 
@@ -80,7 +75,7 @@ We can then drill down into the building block of GitHub, the repositories. Here
 
 ![](../images/Day40_Git8.png?v1)
 
-If we scroll down a little further you will also see that we have Releases, these are from the golang part of the challenge. We do not have any packages in our project, we have our contributers listed here. (Thank you community for assisting in my spelling and fact checking) We then have languages used again these are from different sections in the challenge.  
+Если мы прокрутим вниз немного дальше, вы также увидите, что у нас есть Releases, они относятся к части задачи golang. У нас нет никаких пакетов в нашем проекте, здесь перечислены наши соавторы. Затем у нас есть используемые языки, опять же из разных разделов задачи.  
 
 ![](../images/Day40_Git9.png?v1)
 
@@ -110,27 +105,26 @@ If we scroll down a little further you will also see that we have Releases, thes
 
 ![](../images/Day40_Git13.png?v1)
 
-I mentioned above about how GitHub is not just a source code repository but it is also a project management tool, The Project tab enables us to build out project tables kanban type boards so that we can link issues and PRs to better collaborate on the project and have a visibility of those tasks. 
-
+Я уже говорил о том, что GitHub - это не только хранилище исходного кода, но и инструмент управления проектами. Вкладка "Проект" позволяет нам создавать проектные таблицы типа канбан, чтобы мы могли связывать проблемы и PR для лучшего сотрудничества над проектом и иметь видимость этих задач. 
 ![](../images/Day40_Git14.png?v1)
 
-I know that issues to me seems like a good place to log feature requests and they are but the wiki page allows for a comprehensive roadmap for the project to be outlined with the current status and in general better document your project be it troubleshooting or how-to type content. 
+Я знаю, что проблемы, как мне кажется, являются хорошим местом для регистрации запросов о возможностях, и это так, но страница вики позволяет составить полную дорожную карту проекта с указанием текущего состояния и в целом лучше документировать ваш проект, будь то устранение неполадок или контент типа how-to. 
 
 ![](../images/Day40_Git15.png?v1)
 
-Not so applicable to this project but the Security tab is really there to make sure that contributers know how to deal with certain tasks, we can define a policy here but also code scanning add-ons to make sure your code for example does not contain secret environment variables. 
+Не совсем применимо к этому проекту, но вкладка Security действительно существует для того, чтобы убедиться, что участники проекта знают, как обращаться с определенными задачами, здесь мы можем определить политику, а также дополнения для сканирования кода, чтобы убедиться, что ваш код, например, не содержит секретных переменных окружения. 
 
 ![](../images/Day40_Git16.png?v1)
 
-For me the insights tab is great, it provides so much information about the repository from how much activity has been going on down to commits and issues, but it also reports on traffic to the repository. You can see a list on the left side that allows you to go into great detail about metrics on the repository. 
+Для меня вкладка insights очень важна, она предоставляет так много информации о репозитории, начиная от того, сколько активности происходило и заканчивая коммитами и проблемами, а также сообщает о посещаемости репозитория. В левой части вы можете увидеть список, который позволяет вам подробно ознакомиться с метриками репозитория. 
 
 ![](../images/Day40_Git17.png?v1)
 
-Finally we have the Settings tab, this is where we can get into the details of how we run our repository, I am currently the only maintainer of the repository but we could share this responsibility here. We can define integrations and other such tasks here. 
+Наконец, у нас есть вкладка Settings, где мы можем подробно описать, как мы управляем нашим репозиторием, в настоящее время я единственный сопровождающий репозитория, но мы можем разделить эту ответственность. Здесь мы можем определить интеграции и другие подобные задачи. 
 
 ![](../images/Day40_Git18.png?v1)
 
-This was a super quick overview of GitHub, I think there are some other areas that I might have mentioned that need explaining in a little more detail. As mentioned GitHub houses millions of repositories mostly these are holding source code and these can be public or privately accessible. 
+Это был очень быстрый обзор GitHub, я думаю, что есть еще несколько областей, которые я, возможно, упомянул и которые нуждаются в более подробном объяснении. Как уже упоминалось, GitHub содержит миллионы репозиториев, в которых в основном хранится исходный код, и они могут быть общедоступными или частными. 
 
 ### Forking 
 
@@ -144,20 +138,19 @@ This was a super quick overview of GitHub, I think there are some other areas th
 
 ![](../images/Day40_Git20.png?v1)
 
-If we notice below we have 3 options, we have watch, fork and star. 
+Если мы обратим внимание, ниже у нас есть 3 варианта: watch, fork и star. 
 
-- Watch - Updates when things happen to the repository.  
-- Fork - copy of a repository.
-- Star - "I think your project is cool"
+- Watch - обновление, когда что-то происходит с хранилищем.  
+- Fork - копия репозитория.
+- Star - "Я думаю, что ваш проект крутой".
 
 ![](../images/Day40_Git21.png?v1)
 
-Given our scenario of wanting a copy of this repository to work on we are going to hit the fork option. If you are a member of multiple organisations then you will have to choose where the fork will take place, I am going to choose my profile. 
+Учитывая наш сценарий, когда нам нужна копия репозитория для работы, мы воспользуемся опцией fork. Если вы являетесь членом нескольких организаций, то вам придётся выбрать, где будет происходить форк, я выберу свой профиль. 
 
 ![](../images/Day40_Git22.png?v1)
 
-Now we have our own copy of the repository that we can freely work on and change as we see fit. This would be the start of the pull request process that we mentioned briefly before but we will cover in more detail tomorrow. 
-
+Теперь у нас есть собственная копия репозитория, над которой мы можем свободно работать и изменять по своему усмотрению. Это начало процесса подачи запросов на исправление, о котором мы уже вкратце упоминали, но более подробно рассмотрим завтра. 
 ![](../images/Day40_Git23.png?v1)
 
 Хорошо, я слышу, как вы говорите, но как мне внести изменения в этот репозиторий и код, если он находится на веб-сайте, ну, вы можете просматривать и редактировать на веб-сайте, но это не будет таким же, как использование вашей любимой IDE в вашей локальной системе. с вашей любимой цветовой темой. Чтобы получить копию этого репозитория на нашем локальном компьютере, мы выполним клонирование репозитория. Это позволит нам работать над вещами локально, а затем отправлять наши изменения обратно в нашу разветвленную копию репозитория.
@@ -170,19 +163,19 @@ Now we have our own copy of the repository that we can freely work on and change
 
 ![](../images/Day40_Git24.png?v1)
 
-Now on our local machine, I am going to navigate to a directory I am happy to download this repository to and then run `git clone url` 
+Теперь на нашей локальной машине я перейду в каталог, в который я хочу загрузить этот репозиторий, а затем выполню команду `git clone url`. 
 
 ![](../images/Day40_Git25.png?v1)
 
-Now we could take to VScode to really make some changes to this. 
+Теперь мы можем обратиться к VScode, чтобы действительно внести некоторые изменения. 
 
 ![](../images/Day40_Git26.png?v1)
 
-Let's now make some changes, I want to make a change to all those links and replace that with something else. 
+Теперь давайте сделаем некоторые изменения, я хочу изменить все эти ссылки и заменить их на что-то другое. 
 
 ![](../images/Day40_Git27.png?v1)
 
-Now if we check back on GitHub and we find our readme.mdin that repository, you should be able to see a few changes that I made to the file. 
+Теперь, если мы вернемся на GitHub и найдем наш readme.mdin в этом репозитории, вы сможете увидеть несколько изменений, которые я внес в файл. 
 
 ![](../images/Day40_Git28.png?v1)
 
