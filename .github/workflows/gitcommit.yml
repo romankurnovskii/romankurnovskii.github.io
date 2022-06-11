@@ -37,7 +37,7 @@ jobs:
           git config --global user.email "test@test.com"
           git config --global user.name "test"
           git config pull.rebase true
-          git branch -D comments
+          git branch -d comments
           echo "removed"
           git checkout -b comments
           git pull --force origin main
