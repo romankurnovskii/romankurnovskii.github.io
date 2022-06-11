@@ -62,7 +62,7 @@ jobs:
 
           echo "working on file"
           mv comments.json comments.json.bak || echo "{}" > comments.json.bak
-          jq '. |= . + {\"$(date +%s)\": "${{ github.event.inputs.message }}" }' comments.json.bak  >| comments.json
+          jq '. |= . + {"$(date +%s)": "${{ github.event.inputs.message }}" }' comments.json.bak  >| comments.json
           rm -rf comments.json.bak
 
           git add .
