@@ -36,10 +36,9 @@ jobs:
           rm -rf comments.json.bak
           git config --global user.email "test@test.com"
           git config --global user.name "test"
-          git add .
           git checkout -b comments
           git reset --hard origin/main
-          git add .
+          git pull --force origin comments
           mv comments.json comments.json.bak
           jq '. |= . + {"b": "${{ github.event.inputs.message }}" }' comments.json.bak  >| comments.json
           git add comments.json
