@@ -68,7 +68,7 @@ jobs:
           # rm -rf comments.json.bak
 
           test $COMMENTS_FILE || echo "[]" > $COMMENTS_FILE 
-          python -c 'import json;a_file = open($COMMENTS_FILE, "r");json_object = json.load(a_file);a_file.close();json_object.append({"name": "John", "message": "${{ github.event.inputs.message }}" });a_file = open($COMMENTS_FILE, "w");json.dump(json_object, a_file);a_file.close()'
+          python -c 'import json;a_file = open(${{ COMMENTS_FILE }}, "r");json_object = json.load(a_file);a_file.close();json_object.append({"name": "John", "message": "${{ github.event.inputs.message }}" });a_file = open(${{ COMMENTS_FILE }}, "w");json.dump(json_object, a_file);a_file.close()'
           
           ls -la
 
