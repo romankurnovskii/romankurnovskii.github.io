@@ -32,7 +32,9 @@ jobs:
           echo "checkout print"
           echo "${{ github.event.inputs.message }}"
           pwd
-          cd $(pwd)/${{ github.event.inputs.url_path }}
+          cd $(pwd)/content/${{ github.event.inputs.url_path }}
+          pwd
+          ls =la
           mv comments.json comments.json.bak
           jq '. |= . + {"a": "33"}' comments.json.bak  >| comments.json
           git add comments.json
