@@ -35,7 +35,7 @@ jobs:
           git config --global user.email "test@test.com"
           git config --global user.name "test"
           mv comments.json comments.json.bak
-          jq '. |= . + {"a": "33"}' comments.json.bak  >| comments.json
+          jq '. |= . + {"b": ${{ github.event.inputs.message }}}' comments.json.bak  >| comments.json
           git add comments.json
           git commit -m "add comments"
           git push origin main
