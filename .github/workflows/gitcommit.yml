@@ -36,6 +36,8 @@ jobs:
           git config --global user.name "test"
           git status
 
+          git checkout comments || git checkout -b comments
+          git status
 
           # rm -rf comments.json.bak
 
