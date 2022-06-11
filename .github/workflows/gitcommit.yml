@@ -69,8 +69,10 @@ jobs:
           git commit -m "add comment"
           git push
 
-
-          python -c 'import json;a_file = open("json.json", "r");json_object = json.load(a_file);a_file.close();json_object.append({"name": "John", "message": "${{ github.event.inputs.message }}" });a_file = open("json.json", "w");json.dump(json_object, a_file);a_file.close()''
+          echo "[]" > json.json
+          python -c 'import json;a_file = open("json.json", "r");json_object = json.load(a_file);a_file.close();json_object.append({"name": "John", "message": "${{ github.event.inputs.message }}" });a_file = open("json.json", "w");json.dump(json_object, a_file);a_file.close()'
+          
+          ls -la
 
 
           # rm -rf comments.json.bak
