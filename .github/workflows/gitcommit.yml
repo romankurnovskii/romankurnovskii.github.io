@@ -29,9 +29,7 @@ jobs:
           echo "${{ github.event.inputs.message }}"
           echo "${{  github.event.inputs.url_path }}"
           pwd
-          export url_path=${{ github.event.inputs.url_path }}
-          echo $(url_path)
-          cd $(pwd)/content/$(url_path)
+          cd $(pwd)/content/${{ github.event.inputs.url_path }}
           pwd
           ls -la
           mv comments.json comments.json.bak
