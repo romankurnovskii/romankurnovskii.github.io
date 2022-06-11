@@ -5,20 +5,8 @@ on:
     branches:
       - main  # Set a branch to deploy
   pull_request:
-  workflow_dispatch:
-    inputs:
-      message:
-        description: 'test check'
-        required: true
 
 jobs:
-  predeploy:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: check inputs
-        run: |
-          echo "inputs print"
-          echo "${{ github.event.inputs.message }}"
   deploy:
     runs-on: ubuntu-20.04
     steps:
