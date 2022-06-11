@@ -1,0 +1,36 @@
+name: github pages
+
+on:
+  push:
+    branches:
+      - main  # Set a branch to deploy
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      url_path:
+        description: The path to page
+        required: true
+      message:
+        description: 'test check'
+        required: true
+
+jobs:
+  predeploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: check inputs
+        run: |
+          echo "inputs print"
+          echo "${{ github.event.inputs.message }}"
+          ls -la ./public
+          pwd
+
+      - name: Checkout repository
+        uses: actions/checkout@v2.3.2
+
+        run : |
+          echo "checkout print"
+          echo "${{ github.event.inputs.message }}"
+          pwd
+
+
