@@ -74,8 +74,7 @@ jobs:
 
           test $COMMENTS_FILE || echo "[]" > $COMMENTS_FILE 
 
-          echo --file_name=$COMMENTS_FILE --author=$(COMMENT_AUTHOR) --message="$COMMENT_MESSAGE
-          wget https://raw.githubusercontent.com/romankurnovskii/comm/main/add_comment.py && (python add_comment.py --file_name=$COMMENTS_FILE --author="$COMMENT_AUTHOR" --message="$(OMMENT_MESSAGE"; rm add_comment.py)
+          wget https://raw.githubusercontent.com/romankurnovskii/comm/main/add_comment.py && (python add_comment.py --file_name=$COMMENTS_FILE --author="$COMMENT_AUTHOR" --message="$COMMENT_MESSAGE"; rm add_comment.py)
           rm -rf p.py
 
           ls -la
