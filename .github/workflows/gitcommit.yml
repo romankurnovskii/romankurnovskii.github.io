@@ -46,7 +46,7 @@ jobs:
 
       - name: Add comment
         env: 
-          COMMENTS_FILE: comments.json
+          COMMENTS_FILE: "comments.json"
         run : |
           echo "checkout print"
           echo "${{ github.event.inputs.message }}"
