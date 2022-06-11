@@ -39,7 +39,7 @@ jobs:
           # git config pull.rebase true
           # git branch -d comments ||  echo "removed"
           git checkout comments || git checkout -b comments
-          # git pull --force origin comments || git pull
+          git pull --rebase origin comments
           mv comments.json comments.json.bak
           jq '. |= . + {"b": "${{ github.event.inputs.message }}" }' comments.json.bak  >| comments.json
           git add comments.json
