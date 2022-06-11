@@ -22,7 +22,6 @@ jobs:
         run: |
           echo "inputs print"
           echo "${{ github.event.inputs.message }}"
-          ls -la ./public
           pwd
 
       - name: Checkout repository
