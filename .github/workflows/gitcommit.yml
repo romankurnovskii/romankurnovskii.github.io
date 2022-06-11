@@ -45,6 +45,8 @@ jobs:
           ref: comments
 
       - name: Add comment
+        env: 
+          COMMENTS_FILE: comments.json
         run : |
           echo "checkout print"
           echo "${{ github.event.inputs.message }}"
@@ -65,13 +67,8 @@ jobs:
           # jq '. |= . + {"$(date +%s)": "${{ github.event.inputs.message }}" }' comments.json.bak  >| comments.json
           # rm -rf comments.json.bak
 
-
-
-          test json.json || echo "[]" > json.json
-          echo "[]" > comments.json 
-          ls -la
-          cat json.json
-          python -c 'import json;a_file = open("json.json", "r");json_object = json.load(a_file);a_file.close();json_object.append({"name": "John", "message": "${{ github.event.inputs.message }}" });a_file = open("json.json", "w");json.dump(json_object, a_file);a_file.close()'
+          test $COMMENTS_FILE || echo "[]" > $COMMENTS_FILE 
+          python -c 'import json;a_file = open("$COMMENTS_FILE", "r");json_object = json.load(a_file);a_file.close();json_object.append({"name": "John", "message": "${{ github.event.inputs.message }}" });a_file = open("$COMMENTS_FILE", "w");json.dump(json_object, a_file);a_file.close()'
           
           ls -la
 
