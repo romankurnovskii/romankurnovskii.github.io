@@ -27,8 +27,9 @@ jobs:
         run : |
           echo "checkout print"
           echo "${{ github.event.inputs.message }}"
+          echo "${{  github.event.inputs.url_path }}"
           pwd
-          url_path=${{ github.event.inputs.url_path }}
+          export url_path=${{ github.event.inputs.url_path }}
           echo $(url_path)
           cd $(pwd)/content/$(url_path)
           pwd
