@@ -61,17 +61,16 @@ jobs:
           git status
 
           echo "working on file"
-          mv comments.json comments.json.bak || echo "{}" > comments.json.bak
-          jq '. |= . + {"$(date +%s)": "${{ github.event.inputs.message }}" }' comments.json.bak  >| comments.json
-          rm -rf comments.json.bak
+          # mv comments.json comments.json.bak || echo "{}" > comments.json.bak
+          # jq '. |= . + {"$(date +%s)": "${{ github.event.inputs.message }}" }' comments.json.bak  >| comments.json
+          # rm -rf comments.json.bak
 
           git add .
           git commit -m "add comment"
           git push
 
 
-          python --version
-          python -c "print('hello world')"
+          python -c 'import json;a_file = open("json.json", "r");json_object = json.load(a_file);a_file.close();json_object.append({"name": "John", "message": "${{ github.event.inputs.message }}" });a_file = open("json.json", "w");json.dump(json_object, a_file);a_file.close()''
 
 
           # rm -rf comments.json.bak
