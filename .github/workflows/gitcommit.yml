@@ -28,6 +28,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2.3.2
 
+      - name: checks
         run : |
           echo "checkout print"
           echo "${{ github.event.inputs.message }}"
