@@ -30,19 +30,19 @@ jobs:
       - name: checks
         with:
           url_path: ${{ github.event.inputs.url_path }}
-        run : |
-          echo "checkout print"
-          echo "${{ github.event.inputs.message }}"
-          pwd
-          echo $(url_path)
-          cd $(pwd)/content/$(url_path)
-          pwd
-          ls -la
-          mv comments.json comments.json.bak
-          jq '. |= . + {"a": "33"}' comments.json.bak  >| comments.json
-          git add comments.json
-          git commit -m "add comments"
-          git push origin main
+          run : |
+            echo "checkout print"
+            echo "${{ github.event.inputs.message }}"
+            pwd
+            echo $(url_path)
+            cd $(pwd)/content/$(url_path)
+            pwd
+            ls -la
+            mv comments.json comments.json.bak
+            jq '. |= . + {"a": "33"}' comments.json.bak  >| comments.json
+            git add comments.json
+            git commit -m "add comments"
+            git push origin main
 
 
 
