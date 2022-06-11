@@ -47,9 +47,10 @@ jobs:
       - name: Add comment
         env: 
           COMMENTS_FILE: comments.json
+          COMMENT_MESSAGE: "${{ github.event.inputs.message }}"
         run : |
           echo "checkout print"
-          echo "${{ github.event.inputs.message }}"
+          echo $COMMENT_MESSAGE
           echo "${{ github.event.inputs.url_path }}"
           cd $(pwd)/content/${{ github.event.inputs.url_path }}
           pwd
@@ -70,9 +71,8 @@ jobs:
           test $COMMENTS_FILE || echo "[]" > $COMMENTS_FILE 
 
           echo $COMMENTS_FILE
-          wget https://raw.githubusercontent.com/romankurnovskii/comm/main/add_comment.py && (python add_comment.py comments.json author; rm add_comment.py)
+          wget https://raw.githubusercontent.com/romankurnovskii/comm/main/add_comment.py && (python add_comment.py $COMMENTS_FILE $COMMENT_MESSAGE; rm add_comment.py)
           rm -rf p.py
-
 
           ls -la
 
@@ -80,9 +80,7 @@ jobs:
           git commit -m "add comment"
           git push
 
-
           # rm -rf comments.json.bak
-
           # # git config pull.rebase true
           # # git branch -d comments ||  echo "removed"
           # git rebase --skip
