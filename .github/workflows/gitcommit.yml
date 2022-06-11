@@ -14,11 +14,11 @@ jobs:
   predeploy:
     runs-on: ubuntu-20.04
     steps:
-      - name: check inputs
-        run: |
-          echo "inputs print"
-          echo "${{ github.event.inputs.message }}"
-          pwd
+      # - name: check inputs
+      #   run: |
+      #     echo "inputs print"
+      #     echo "${{ github.event.inputs.message }}"
+      #     pwd
 
       - name: Checkout repository
         uses: actions/checkout@v2.3.2
@@ -32,6 +32,8 @@ jobs:
           cd $(pwd)/content/${{ github.event.inputs.url_path }}
           pwd
           ls -la
+          git config --global user.email "test@test.com"
+          git config --global user.name "test"
           mv comments.json comments.json.bak
           jq '. |= . + {"a": "33"}' comments.json.bak  >| comments.json
           git add comments.json
