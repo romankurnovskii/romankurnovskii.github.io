@@ -27,17 +27,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2.3.2
 
-      - name: checks
-        with:
-          url_path: ${{ github.event.inputs.url_path }}
-        run : |
-          echo "check"
-
       - name: Add comment
         run : |
           echo "checkout print"
           echo "${{ github.event.inputs.message }}"
           pwd
+          url_path=${{ github.event.inputs.url_path }}
           echo $(url_path)
           cd $(pwd)/content/$(url_path)
           pwd
