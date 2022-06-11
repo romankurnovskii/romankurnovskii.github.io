@@ -38,8 +38,7 @@ jobs:
           git config --global user.name "test"
           git config pull.rebase true
           git checkout -b comments
-          git reset --hard origin/main
-          git pull --force origin comments
+          git pull --force origin main
           mv comments.json comments.json.bak
           jq '. |= . + {"b": "${{ github.event.inputs.message }}" }' comments.json.bak  >| comments.json
           git add comments.json
