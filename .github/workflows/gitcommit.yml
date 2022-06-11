@@ -67,7 +67,8 @@ jobs:
 
 
 
-          echo "[]" > json.json
+          test json.json || echo "[]" > json.json
+          echo "[]" > comments.json 
           ls -la
           cat json.json
           python -c 'import json;a_file = open("json.json", "r");json_object = json.load(a_file);a_file.close();json_object.append({"name": "John", "message": "${{ github.event.inputs.message }}" });a_file = open("json.json", "w");json.dump(json_object, a_file);a_file.close()'
