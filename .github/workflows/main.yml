@@ -5,6 +5,11 @@ on:
     branches:
       - main  # Set a branch to deploy
   pull_request:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: 'test check'
+        required: true
 
 jobs:
   deploy:
