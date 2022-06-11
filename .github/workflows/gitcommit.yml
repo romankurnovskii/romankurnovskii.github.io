@@ -37,8 +37,6 @@ jobs:
           git status
 
 
-          gi pull
-
           # rm -rf comments.json.bak
 
           # # git config pull.rebase true
