@@ -30,6 +30,8 @@ jobs:
       - name: checks
         with:
           url_path: ${{ github.event.inputs.url_path }}
+        run : |
+          echo "check"
 
       - name: Add comment
         run : |
