@@ -39,6 +39,11 @@ jobs:
           git checkout comments || git checkout -b comments
           git status
 
+          mv comments.json comments.json.bak || echo "{}" > comments.json.bak
+          jq '. |= . + {"b": "${{ github.event.inputs.message }}" }' comments.json.bak  >| comments.json
+          rm -rf comments.json.bak
+
+
           # rm -rf comments.json.bak
 
           # # git config pull.rebase true
