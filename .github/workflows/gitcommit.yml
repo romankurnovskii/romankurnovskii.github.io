@@ -15,23 +15,23 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       
-      - name: setup branch
-        uses: actions/checkout@v3
+      # - name: setup branch
+      #   uses: actions/checkout@v3
 
-      - name: create branch comments
-        run: |
-          git config --global user.email "test@test.com"
-          git config --global user.name "test"
-          git status
-          echo "working on file"
-          git checkout comments || git checkout -b comments
-          cd $(pwd)/content/${{ github.event.inputs.url_path }}
-          mv comments.json comments.json.bak || echo "{}" > comments.json.bak
-          jq '. |= . + {"b": "${{ github.event.inputs.message }}" }' comments.json.bak  >| comments.json
-          rm -rf comments.json.bak
-          git add .
-          git commit -m "add comment"
-          git push --set-upstream origin comments
+      # - name: create branch comments
+      #   run: |
+      #     git config --global user.email "test@test.com"
+      #     git config --global user.name "test"
+      #     git status
+      #     echo "working on file"
+      #     git checkout comments || git checkout -b comments
+      #     cd $(pwd)/content/${{ github.event.inputs.url_path }}
+      #     mv comments.json comments.json.bak || echo "{}" > comments.json.bak
+      #     jq '. |= . + {"b": "${{ github.event.inputs.message }}" }' comments.json.bak  >| comments.json
+      #     rm -rf comments.json.bak
+      #     git add .
+      #     git commit -m "add comment"
+      #     git push --set-upstream origin comments
 
       - name: check inputs
         run: |
