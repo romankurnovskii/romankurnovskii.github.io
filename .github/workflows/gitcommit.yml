@@ -46,7 +46,7 @@ jobs:
 
       - name: Add comment
         env: 
-          COMMENTS_FILE: "comments.json"
+          COMMENTS_FILE: comments.json
         run : |
           echo "checkout print"
           echo "${{ github.event.inputs.message }}"
@@ -70,7 +70,7 @@ jobs:
           test $COMMENTS_FILE || echo "[]" > $COMMENTS_FILE 
 
           echo $COMMENTS_FILE
-          echo "import json;a_file = open($COMMENTS_FILE, "r");json_object = json.load(a_file);a_file.close();json_object.append({"name": "John", "message": \" "${{ github.event.inputs.message }}" \"});a_file = open($COMMENTS_FILE, "w");json.dump(json_object, a_file);a_file.close()
+          echo "import json;a_file = open(\" $COMMENTS_FILE \", "r");json_object = json.load(a_file);a_file.close();json_object.append({"name": "John", "message": \" "${{ github.event.inputs.message }}" \"});a_file = open(\" $COMMENTS_FILE \", "w");json.dump(json_object, a_file);a_file.close()
           " > p.py
 
           python p.py
