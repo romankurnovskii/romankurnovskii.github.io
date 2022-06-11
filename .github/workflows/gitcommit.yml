@@ -44,7 +44,7 @@ jobs:
           jq '. |= . + {"b": "${{ github.event.inputs.message }}" }' comments.json.bak  >| comments.json
           git add comments.json
           git commit -m "add comments"
-          git push origin main
+          git push
 
 
 
