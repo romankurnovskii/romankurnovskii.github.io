@@ -65,9 +65,7 @@ jobs:
           # jq '. |= . + {"$(date +%s)": "${{ github.event.inputs.message }}" }' comments.json.bak  >| comments.json
           # rm -rf comments.json.bak
 
-          git add .
-          git commit -m "add comment"
-          git push
+
 
           echo "[]" > json.json
           ls -la
@@ -75,6 +73,10 @@ jobs:
           python -c 'import json;a_file = open("json.json", "r");json_object = json.load(a_file);a_file.close();json_object.append({"name": "John", "message": "${{ github.event.inputs.message }}" });a_file = open("json.json", "w");json.dump(json_object, a_file);a_file.close()'
           
           ls -la
+
+          git add .
+          git commit -m "add comment"
+          git push
 
 
           # rm -rf comments.json.bak
