@@ -9,6 +9,9 @@ on:
       message:
         description: 'test check'
         required: true
+      author:
+        description: 'test check'
+        required: true
 
 jobs:
   predeploy:
@@ -48,6 +51,7 @@ jobs:
         env: 
           COMMENTS_FILE: comments.json
           COMMENT_MESSAGE: "${{ github.event.inputs.message }}"
+          COMMENT_AUTHOR: "${{ github.event.inputs.author }}"
         run : |
           echo "checkout print"
           echo $COMMENT_MESSAGE
@@ -70,8 +74,8 @@ jobs:
 
           test $COMMENTS_FILE || echo "[]" > $COMMENTS_FILE 
 
-          echo --file_name=$COMMENTS_FILE --author=AUTHOR --message="$COMMENT_MESSAGE"
-          wget https://raw.githubusercontent.com/romankurnovskii/comm/main/add_comment.py && (python add_comment.py --file_name=$COMMENTS_FILE --author=AUTHOR --message="$COMMENT_MESSAGE"; rm add_comment.py)
+          echo --file_name=$COMMENTS_FILE --author=$(COMMENT_AUTHOR) --message="$COMMENT_MESSAGE
+          wget https://raw.githubusercontent.com/romankurnovskii/comm/main/add_comment.py && (python add_comment.py --file_name=$COMMENTS_FILE --author="$(COMMENT_AUTHOR)" --message="$(COMMENT_MESSAGE)"; rm add_comment.py)
           rm -rf p.py
 
           ls -la
