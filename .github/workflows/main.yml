@@ -12,6 +12,13 @@ on:
         required: true
 
 jobs:
+  predeploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: check inputs
+        run: |
+          echo "{{ message }}"
+          echo "{{ github.event.inputs.message }}"
   deploy:
     runs-on: ubuntu-20.04
     steps:
