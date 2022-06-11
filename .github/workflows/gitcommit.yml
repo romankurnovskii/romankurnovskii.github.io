@@ -21,7 +21,9 @@ jobs:
       #     pwd
 
       - name: Checkout repository
-        uses: actions/checkout@v2.3.2
+        uses: actions/checkout@v3.0.2
+        with:
+          ref: 'comments'
 
       - name: Add comment
         run : |
