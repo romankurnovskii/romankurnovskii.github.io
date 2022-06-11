@@ -48,7 +48,7 @@ jobs:
 
           git add .
           git commit -m "add comment"
-          git push
+          # git push
 
 
           # rm -rf comments.json.bak
