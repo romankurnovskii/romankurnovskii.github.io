@@ -57,7 +57,7 @@ jobs:
           # # git branch -d comments ||  echo "removed"
           # git rebase --skip
           # mv comments.json comments.json.bak
-          # jq '. |= . + {"b": "${{ github.event.inputs.message }}" }' comments.json.bak  >| comments.json
+          # jq '. |= . + {"$(date +%s)": "${{ github.event.inputs.message }}" }' comments.json.bak  >| comments.json
           # git add comments.json
           # git commit -m "add comments"
           # git push --set-upstream origin comments
