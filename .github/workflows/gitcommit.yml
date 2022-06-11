@@ -48,7 +48,7 @@ jobs:
         run : |
           echo "checkout print"
           echo "${{ github.event.inputs.message }}"
-          echo "${{  github.event.inputs.url_path }}"
+          echo "${{ github.event.inputs.url_path }}"
           cd $(pwd)/content/${{ github.event.inputs.url_path }}
           pwd
           ls -la
@@ -62,12 +62,16 @@ jobs:
 
           echo "working on file"
           mv comments.json comments.json.bak || echo "{}" > comments.json.bak
-          jq '. |= . + {"$(date +%s)": "${{ github.event.inputs.message }}" }' comments.json.bak  >| comments.json
+          jq '. |= . + {\"$(date +%s)\": "${{ github.event.inputs.message }}" }' comments.json.bak  >| comments.json
           rm -rf comments.json.bak
 
           git add .
           git commit -m "add comment"
           git push
+
+
+          python --version
+          python -c "print('hello world')"
 
 
           # rm -rf comments.json.bak
