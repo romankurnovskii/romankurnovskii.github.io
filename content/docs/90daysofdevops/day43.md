@@ -1,5 +1,5 @@
 ---
-title: 43 - TWhat is Docker & Getting installed
+title: 43 - Установка Docker
 description: 
 toc: true
 authors:
@@ -12,58 +12,56 @@ featuredImage:
 draft: false
 id: 1048739
 ---
-## What is Docker & Getting installed
+## Что такое Docker и его установка
 
-In the previous post I mentioned Docker at least once and that is because Docker is really innovative in the making containers popular even though they have been around for such a long time. 
+В предыдущей статье я хотя бы раз упомянул Docker, и это потому, что Docker действительно является новатором в создании популярности контейнеров, несмотря на то, что они существуют уже очень давно. 
 
-We are going to be using and explaining docker here but we should also mention the [Open Container Initiative (OCI)](https://www.opencontainers.org/) which is an industry standards organization that encourages innovation while avoiding the danger of vendor lock-in. Thanks to the OCI, we have a choice when choosing a container toolchain, including Docker, [CRI-O](https://cri-o.io/), [Podman](http://podman.io/), [LXC](https://linuxcontainers.org/), and others.
+Здесь мы будем использовать и объяснять docker, но мы также должны упомянуть [Open Container Initiative (OCI)] (https://www.opencontainers.org/), которая является организацией по отраслевым стандартам, поощряющей инновации и избегающей опасности блокировки поставщиков. Благодаря OCI у нас есть выбор при выборе инструментария для контейнеров, включая Docker, [CRI-O](https://cri-o.io/), [Podman](http://podman.io/), [LXC](https://linuxcontainers.org/) и другие.
 
-Docker is a software framework for building, running, and managing containers. The term "docker" may refer to either the tools (the commands and a daemon) or to the Dockerfile file format.
+Docker - это программная среда для создания, запуска и управления контейнерами. Термин "docker" может относиться как к инструментам (командам и демону), так и к формату файлов Dockerfile.
 
-We are going to be using Docker Personal here which is free (fir education and learning). This includes all the essentials that we need to cover to get a good foundation of knowledge of containers and tooling. 
+Мы будем использовать Docker Personal, который является бесплатным (для образования и обучения). Он включает в себя все самое необходимое, что нам нужно для получения хорошего фундамента знаний о контейнерах и инструментах. 
 
-It is probably worth breaking down some of the "docker" tools that we will be using and what they are used for. The term docker can be referring to the docker project overall, which is a platform for devs and admins to develop, ship and run applications. It might also be a reference to the docker daeemon process running on the host which manages images and containers also called Docker Engine. 
+Возможно, стоит разделить некоторые инструменты "docker", которые мы будем использовать и для чего они нужны. Термин docker может относиться к проекту docker в целом, который является платформой для разработчиков и администраторов для разработки, доставки и запуска приложений. Также это может быть ссылка на процесс docker daeemon, запущенный на хосте, который управляет образами и контейнерами и называется Docker Engine. 
 
 ### Docker Engine 
 
-Docker Engine is an open source containerization technology for building and containerizing your applications. Docker Engine acts as a client-server application with:
+Docker Engine - это технология контейнеризации с открытым исходным кодом для создания и контейнеризации приложений. Docker Engine действует как клиент-серверное приложение:
 
-- A server with a long-running daemon process dockerd.
-- APIs which specify interfaces that programs can use to talk to and instruct the Docker daemon.
-- A command line interface (CLI) client docker.
+- Сервер с долго работающим процессом-демоном dockerd.
+- API, определяющие интерфейсы, которые программы могут использовать для общения и обучения демона Docker.
+- Клиент docker с интерфейсом командной строки (CLI).
 
-The above was taken from the official Docker documentation and the specific [Docker Engine Overview](https://docs.docker.com/engine/)
+Вышеизложенное было взято из официальной документации Docker и конкретного [Docker Engine Overview](https://docs.docker.com/engine/)
 
 ### Docker Desktop 
-We have a docker desktop for both Windows and macOS systems. An easy to install, lightweight docker development environment. A native OS application that leverages virtualisation capabilities on the host operating system. 
+У нас есть рабочий стол docker для систем Windows и macOS. Простая в установке, легковесная среда разработки docker. Нативное приложение для ОС, использующее возможности виртуализации на хостовой операционной системе. 
 
-It’s the best solution if you want to build, debug, test, package, and ship Dockerized applications on Windows or macOS. 
+Это лучшее решение, если вы хотите создавать, отлаживать, тестировать, упаковывать и отправлять Docker-приложения на Windows или macOS. 
 
-On Windows we are able to also take advantage of WSL2 and Microsoft Hyper-V. We will cover some of the WSL2 benefits as we go through. 
+На Windows мы также можем воспользоваться преимуществами WSL2 и Microsoft Hyper-V. Мы рассмотрим некоторые преимущества WSL2 по ходу дела. 
 
-Because of the integration with hypervisor capabilities on the host operating system docker provides the ability to run your containers with Linux Operating systems. 
+Благодаря интеграции с возможностями гипервизора на хостовой операционной системе docker предоставляет возможность запускать ваши контейнеры с операционными системами Linux. 
 
 ### Docker Compose 
-Docker compose is a tool that allows you to run more complex apps over multiple containers. With the benefit of being able to use a single file and command to spin up your application. 
+Docker compose - это инструмент, позволяющий запускать более сложные приложения в нескольких контейнерах. Преимуществом является возможность использования одного файла и команды для запуска приложения. 
 
 ### Docker Hub 
-A centralised resource for working with Docker and its components. Most commonly known as a registry to host docker images. But there is a lot of additional services here which can be used in part with automation or integrated into GitHub as well as security scanning. 
+Централизованный ресурс для работы с Docker и его компонентами. Чаще всего он известен как реестр для размещения образов Docker. Но здесь есть множество дополнительных сервисов, которые можно использовать для автоматизации или интеграции в GitHub, а также для сканирования безопасности. 
 
 ### Dockerfile 
 
-A dockerfile is a text file that contains commands you would normally execute manually in order to build a docker image. Docker can build images automatically by reading the instructions we have in our dockerfile. 
+Dockerfile - это текстовый файл, содержащий команды, которые обычно выполняются вручную для создания образа docker. Docker может собирать образы автоматически, читая инструкции, которые содержатся в нашем dockerfile. 
 
-## Installing Docker Desktop 
+## Установка Docker Desktop 
 
-The [docker documenation](https://docs.docker.com/engine/install/) is amazing and if you are only just diving in then you should take a look and have a read through. We will be using Docker Desktop on Windows with WSL2. I had already ran through the installation on my machine we are using here. 
+Документация [docker documenation](https://docs.docker.com/engine/install/) просто потрясающая, и если вы только начинаете в нее погружаться, то вам стоит ее просмотреть и прочитать. Мы будем использовать Docker Desktop на Windows с WSL2. Я уже выполнил установку на своей машине, которую мы используем здесь. 
 
 ![](../images/Day43_Containers1.png?v1)
 
-Take note before you go ahead and install at the system requirements, [Install Docker Desktop on Windows](https://docs.docker.com/desktop/windows/install/) if you are using macOS including the M1 based CPU architecture you can also take a look at [Install Docker Desktop on macOS](https://docs.docker.com/desktop/mac/install/)
+Обратите внимание перед установкой на системные требования, [Install Docker Desktop on Windows](https://docs.docker.com/desktop/windows/install/), если вы используете macOS, включая архитектуру процессора на базе M1, вы также можете взглянуть на [Install Docker Desktop on macOS](https://docs.docker.com/desktop/mac/install/).
 
-I will run through the Docker Desktop installation for Windows on another Windows Machine and log the process down below. 
-
-
+Я проведу установку Docker Desktop для Windows на другой машине Windows и запишу процесс ниже.  
 
 ## Ресурсы 
 
@@ -72,4 +70,3 @@ I will run through the Docker Desktop installation for Windows on another Window
 - [Docker Tutorial for Beginners - What is Docker? Introduction to Containers](https://www.youtube.com/watch?v=17Bl31rlnRM&list=WL&index=128&t=61s)
 - [WSL 2 with Docker getting started](https://www.youtube.com/watch?v=5RQbdMn04Oc)
 
-See you on [Day 44](../day44) 

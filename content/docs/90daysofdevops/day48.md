@@ -12,100 +12,98 @@ featuredImage:
 draft: false
 id: 1048807
 ---
-## Alternatives to Docker
+## Альтернативы Docker
 
-I did say at the very beginning of this section that we were going to be using Docker, simply because resource wise there is so much and the community is very big, but also this was really where the indents to making containers popular really came from. I would encourage you to go and watch some of the history around Docker and how it came to be, I found it very useful. 
+В самом начале этого раздела я говорил, что мы будем использовать Docker, просто потому, что ресурсов очень много, а сообщество очень большое, но также именно с него начался толчок к популярности контейнеров. Я бы посоветовал вам пойти и посмотреть немного истории о Docker и о том, как он появился, я нашел это очень полезным. 
 
-But as I have alluded to there are other alternatives to Docker. If we think about what Docker is and what we have covered. It is a platform for developing, testing, deploying, and managing applications.
+Но, как я уже упоминал, существуют и другие альтернативы Docker. Если мы подумаем о том, что такое Docker и что мы уже рассмотрели. Это платформа для разработки, тестирования, развертывания и управления приложениями.
 
-I want to highlight a few alternatives to Docker that you might or will in the future see out in the wild. 
+Я хочу выделить несколько альтернатив Docker, которые вы можете увидеть или увидите в будущем. 
 
 ### Podman
 
-What is Podman? Podman is a daemonless container engine for developing, managing, and running OCI Containers on your Linux System. Containers can either be run as root or in rootless mode. 
+Что такое Podman? Podman - это контейнерный движок без демонов для разработки, управления и запуска OCI-контейнеров в вашей системе Linux. Контейнеры могут быть запущены от имени root или в режиме rootless. 
 
-I am going to be looking at this from a Windows point of view but know that like Docker there is no requirement for virtualisation there as it will use the underlying OS which is cannot do in the Windows world. 
+Я буду рассматривать это с точки зрения Windows, но знаю, что, как и в случае с Docker, здесь не требуется виртуализация, поскольку он будет использовать базовую ОС, чего нельзя сделать в мире Windows. 
 
-Podman can be ran under WSL2 although not as sleak as the experience with Docker Desktop. There is also a Windows remote client where you can connect to a Linux VM where your containers will run. 
+Podman может быть запущен под WSL2, хотя и не так гладко, как в случае с Docker Desktop. Существует также удаленный клиент Windows, с помощью которого можно подключиться к виртуальной машине Linux, где будут запущены ваши контейнеры. 
 
-My Ubuntu on WSL2 is the 20.04 release. Following the next steps will enable you to install Podman on your WSL instance. 
+Мой Ubuntu на WSL2 - это версия 20.04. Следуя следующим шагам, вы сможете установить Podman на свой экземпляр WSL. 
 
 ```
 echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_20.04/ /" |
 sudo tee /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list
 ```
 
-Add the GPG Key 
+Добавим ключ GPG 
+
 
 ``` 
 curl -L "https://download.opensuse.org/repositories/devel:/kubic:\
 /libcontainers:/stable/xUbuntu_20.04/Release.key" | sudo apt-key add -
 ```
 
-Run a system update and upgrade with the `sudo apt-get update && sudo apt-get upgrade` command. Finally we can install podman using `sudo apt install podman` 
+Запустите обновление системы с помощью команды `sudo apt-get update && sudo apt-get upgrade`. Наконец, мы можем установить podman с помощью команды `sudo apt install podman`. 
 
-We can now use a lot of the same commands we have been using for docker, note though that we do not have that nice docker desktop UI. You can see below I used `podman images` and I have nothing after install then I used `podman pull ubuntu` to pull down the ubuntu container image. 
+Теперь мы можем использовать многие из тех же команд, которые мы использовали для docker, однако обратите внимание, что у нас нет красивого пользовательского интерфейса рабочего стола docker. Вы можете видеть ниже, я использовал `podman images` и у меня ничего не появилось после установки, затем я использовал `podman pull ubuntu` для извлечения образа контейнера ubuntu. 
 
 ![](../images/Day48_Containers1.png?v1)
 
-We can then run our Ubuntu image using `podman run -dit ubuntu` and `podman ps` to see our running image. 
+Затем мы можем запустить наш образ Ubuntu с помощью `podman run -dit ubuntu` и `podman ps`, чтобы увидеть наш запущенный образ. 
 
 ![](../images/Day48_Containers2.png?v1)
 
-To then get into that container we can run `podman attach dazzling_darwin` your container name will most likely be different. 
+Чтобы попасть в этот контейнер, мы можем выполнить команду `podman attach dazzling_darwin`, имя вашего контейнера, скорее всего, будет другим. 
 
 ![](../images/Day48_Containers3.png?v1)
 
-If you are moving from docker to podman it is also common to change your config file to have `alias docker=podman` that way any command you run with docker will in fact use podman. 
+Если вы переходите от docker к podman, то обычно также необходимо изменить ваш конфигурационный файл на `alias docker=podman`, тогда любая команда, запущенная с помощью docker, будет использовать podman. 
 
 ### LXC 
 
-LXC is a containerisation engine that enables users again to create multiple isolateed Linux container environments. Unlike Docker LXC acts as a hypervisor for create multiple Linux machines with separeate system files, networking features. Was around before Docker and then made a short comeback due to Docker shortcomings. 
+LXC - это механизм контейнеризации, который позволяет пользователям снова создавать несколько изолированных контейнерных сред Linux. В отличие от Docker LXC действует как гипервизор для создания нескольких Linux-машин с отдельными системными файлами, сетевыми функциями. Появился еще до Docker, а затем сделал короткое возвращение из-за недостатков Docker. 
 
-LXC is as lightweight though as docker, and easily deployed. 
+LXC такой же легкий, как и docker, и легко развертывается. 
 
 ### Containerd 
 
-A standalone container runtime. Containerd brings simplicity and robustness as well as of course portability. Containerd was formerly a tool that runs as part of Docker container services until Docker decided to graduate its components into standalone components.
+Автономная среда выполнения контейнеров. Containerd обеспечивает простоту и надежность, а также, конечно, переносимость. Ранее Containerd был инструментом, работающим как часть контейнерных сервисов Docker, пока Docker не решил вывести свои компоненты в самостоятельные.
 
-A project in the Cloud Native Computing Foundation, placing it in the same class with popular container tools like Kubernetes, Prometheus, and CoreDNS.
+Проект в Cloud Native Computing Foundation, что ставит его в один ряд с такими популярными контейнерными инструментами, как Kubernetes, Prometheus и CoreDNS.
 
-### Other Docker tooling
+### Другие инструменты Docker
 
-We could also mention toolings and options around Rancher, VirtualBox but we can cover them off in more detail another time.  
+Мы могли бы также упомянуть инструменты и опции вокруг Rancher, VirtualBox, но мы можем рассказать о них более подробно в другой раз.  
 
 [**Gradle**](https://gradle.org/) 
 
-- Build scans allow teams to collaboratively debug their scripts and track the history of all builds.
-- Execution options give teams the ability to continuously build so that whenever changes are inputted, the task is automatically executed.
-- The custom repository layout gives teams the ability to treat any file directory structure as an artifact repository.
+- Сканирование сборки позволяет командам совместно отлаживать свои скрипты и отслеживать историю всех сборок.
+- Опции выполнения дают командам возможность непрерывной сборки так, чтобы при каждом вводе изменений задание выполнялось автоматически.
+- Настраиваемый макет репозитория дает командам возможность рассматривать любую структуру файловых каталогов как хранилище артефактов.
 
 [**Packer**](https://packer.io/) 
 
-- Ability to create multiple machine images in parallel to save developer time and increase efficiency.
-- Teams can easily debug builds using Packer’s debugger, which inspects failures and allows teams to try out solutions before restarting builds.
-- Support with many platforms via plugins so teams can customize their builds.
+- Возможность параллельного создания нескольких машинных образов для экономии времени разработчиков и повышения эффективности.
+- Команды могут легко отлаживать сборки с помощью отладчика Packer, который проверяет сбои и позволяет командам опробовать решения перед перезапуском сборки.
+- Поддержка многих платформ с помощью плагинов, что позволяет командам настраивать свои сборки.
 
 [**Logspout**](https://github.com/gliderlabs/logspout) 
 
-- Logging tool - The tool’s customisability allows teams to ship the same logs to multiple destinations.
-- Teams can easily manage their files because the tool only requires access to the Docker socket.
-- Completely open-sourced and easy to deploy.
+- Инструмент для ведения логов - настраиваемость инструмента позволяет командам отправлять одни и те же логи в несколько мест назначения.
+- Команды могут легко управлять своими файлами, поскольку инструмент требует только доступа к сокету Docker.
+- Полностью с открытым исходным кодом и прост в развертывании.
 
 [**Logstash**](https://www.elastic.co/products/logstash)
 
-- Customize your pipeline using Logstash’s pluggable framework.
-- Easily parse and transform your data for analysis and to deliver business value.
-- Logstash’s variety of outputs let you route your data where you want.
+- Настройте свой конвейер с помощью подключаемой структуры Logstash.
+- Легко анализируйте и преобразуйте данные для анализа и повышения ценности бизнеса.
+- Разнообразие выходов Logstash позволяет направлять данные туда, куда вам нужно.
 
 [**Portainer**](https://www.portainer.io/)
 
-- Utilise pre-made templates or create your own to deploy applications.
-- Create teams and assign roles and permissions to team members.
-- Know what is running in each environment using the tool’s dashboard.
-
-
-
+- Используйте готовые шаблоны или создавайте свои собственные для развертывания приложений.
+- Создавайте команды и назначайте роли и разрешения для членов команды.
+- Узнайте, что запущено в каждой среде, используя приборную панель инструмента.
 
 ## Ресурсы 
 
@@ -118,7 +116,4 @@ We could also mention toolings and options around Rancher, VirtualBox but we can
 - [YAML Tutorial: Everything You Need to Get Started in Minute](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started)
 - [Podman | Daemonless Docker | Getting Started with Podman](https://www.youtube.com/watch?v=Za2BqzeZjBk)
 - [LXC - Guide to building a LXC Lab](https://www.youtube.com/watch?v=cqOtksmsxfg)
-- 
 
-
-See you on [Day 49](../day49) 

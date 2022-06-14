@@ -1,5 +1,5 @@
 ---
-title: '#90DaysOfDevOps - Choosing your Kubernetes platform - Day 50'
+title: 50 - Выбор платформы Kubernetes для проекта
 description: 
 toc: true
 authors:
@@ -12,44 +12,46 @@ featuredImage:
 draft: false
 id: 1049046
 ---
-## Choosing your Kubernetes platform 
+## Выбор платформы Kubernetes 
 
-I wanted to use this session to breakdown some of the platforms or maybe distributions is a better term to use here, one thing that has been a challenge in the Kubernetes world is removing complexity. 
+Я хотел бы использовать эту сессию для разбора некоторых платформ или, может быть, дистрибутивов - более подходящий термин для этого, одна вещь, которая была проблемой в мире Kubernetes - это устранение сложности. 
 
-Kubernetes the hard way walks through how to build out from nothing to a full blown functional Kubernetes cluster, obviously this is to the extreme but more and more at least the people I am speaking to are wanting to remove that complexity and run a managed Kubernetes cluster. The issue there is that it costs more money but the benefits could be if you use a managed service do you really need to know the underpinning node architecture and what is happening from a Control Plane node point of view when generally you do not have access to this. 
+Kubernetes the hard way рассказывает о том, как построить из ничего полноценный функциональный кластер Kubernetes, очевидно, что это крайность, но все больше и больше людей, по крайней мере, тех, с кем я общаюсь, хотят устранить эту сложность и запустить управляемый кластер Kubernetes. Проблема в том, что это стоит больше денег, но преимущества могут быть следующими: если вы используете управляемый сервис, действительно ли вам нужно знать архитектуру узлов и то, что происходит с точки зрения плоскости управления узлов, когда обычно у вас нет к этому доступа. 
 
-Then we have the local development distributions that enable us to use our own systems and run a local version of Kubernetes so developers can have the full working environment to run their apps in the platform they are intended for. 
+Затем у нас есть локальные дистрибутивы для разработки, которые позволяют нам использовать наши собственные системы и запускать локальную версию Kubernetes, чтобы разработчики могли иметь полную рабочую среду для запуска своих приложений на платформе, для которой они предназначены. 
 
-The general basis of all of these concepts is that they are all a flavour of Kubernetes which means we should be able to freely migrate and move our workloads where we need them to suit our requirements. 
+Общая основа всех этих концепций заключается в том, что все они являются разновидностью Kubernetes, что означает, что мы должны иметь возможность свободно мигрировать и перемещать наши рабочие нагрузки туда, куда нам нужно, в соответствии с нашими требованиями. 
 
-A lot of our choice will also depend on what investments have been made. I mentioned the developer experience as well but some of those local Kubernetes environments that run our laptops are great for getting to grips with the technology without spending any money. 
+Во многом наш выбор будет зависеть от того, какие инвестиции были сделаны. Я уже упоминал об опыте разработчиков, но некоторые из локальных сред Kubernetes, в которых работают наши ноутбуки, отлично подходят для ознакомления с технологией без затрат денег. 
 
 ### Bare-Metal Clusters 
 
-An option for many could be running your Linux OS straight onto a number of physical servers to create our cluster, it could also be Windows but I have not heard much about the adoption rate around Windows, Containers and Kubernetes. Obviously if you are a business and you have made a CAPEX decision to buy your physical servers then this might be the way in which you go when building out your Kubernetes cluster, the management and admin side here means you are going to have to build yourself and manage everything from the ground up. 
+Вариантом для многих может быть запуск ОС Linux прямо на нескольких физических серверах для создания кластера, это также может быть Windows, но я не слышал о темпах внедрения Windows, контейнеров и Kubernetes. Очевидно, что если вы - компания, и вы приняли решение о покупке физических серверов, то это может быть способом создания кластера Kubernetes, но управление и администрирование здесь означает, что вам придется создавать и управлять всем с нуля. 
 
-### Virtualisation 
+### Виртуализация 
 
-Regardless of test and learning environments or enterprise ready Kubernetes clusters virtualisation is a great way to go, typically the ability to spin up virtual machines to act as your nodes and then cluster those together. You have the underpinning architecture, effciency and speed of virtualisation as well as leveraging that existing spend. VMware for example offers a great solution for both Virtual Machines and Kubernetes in various different flavours. 
+Независимо от тестовых и учебных сред или готовых корпоративных кластеров Kubernetes виртуализация является отличным способом продвижения, обычно это возможность запускать виртуальные машины в качестве узлов и затем объединять их в кластер. Вы получаете базовую архитектуру, эффективность и скорость виртуализации, а также возможность эффективно использовать существующие затраты. Например, VMware предлагает отличное решение для виртуальных машин и Kubernetes в различных вариантах. 
 
-My first ever Kubernetes cluster was build based on Virtualisation using Microsoft Hyper-V on an old server that I had which was capable of running a few VMs as my nodes. 
+Мой первый кластер Kubernetes был создан на основе виртуализации с использованием Microsoft Hyper-V на старом сервере, который был способен запускать несколько виртуальных машин в качестве узлов. 
 
-### Local Desktop options 
+### Варианты локального рабочего стола 
 
-There are a number of options when it comes to running a local Kubernetes cluster on your desktop or laptop. This as previously said gives developers the ability to see what their app will look like without having to have multiple costly or complex clusters. Personally this has been one that I have used a lot and in particular I have been using minikube. It has some great functionality and add ons which changes the way you get something up and running. 
+Существует несколько вариантов запуска локального кластера Kubernetes на вашем настольном компьютере или ноутбуке. Как уже говорилось ранее, это дает разработчикам возможность увидеть, как будет выглядеть их приложение, без необходимости создавать несколько дорогостоящих или сложных кластеров. Лично я часто использую этот кластер, в частности, я использую minikube. Он обладает отличной функциональностью и дополнениями, которые меняют способ создания и запуска приложений. 
 
 ### Kubernetes Managed Services 
-I have mentioned virtualisation, and this can be achieved with hypervisors locally but we know from previous sections we could also leverage VMs in the public cloud to act as our nodes. What I am talking about here with Kubernetes managed services are the offerings we see from the large hyperscalers but also from MSPs removing layers of management and control away from the end user, this could be removing the control plane from the end user this is what happens with Amazon EKS, Microsoft AKS and Google Kubernetes Engine. (GKE)
+Я уже упоминал о виртуализации, и это может быть достигнуто с помощью гипервизоров локально, но мы знаем из предыдущих разделов, что мы также можем использовать виртуальные машины в публичном облаке в качестве узлов. Я говорю об управляемых сервисах Kubernetes - это предложения, которые мы видим у крупных гипермасштабирующих компаний, а также у MSP, которые убирают уровни управления и контроля от конечного пользователя; это может быть удаление плоскости управления от конечного пользователя, что происходит с Amazon EKS, Microsoft AKS и Google Kubernetes Engine. (GKE)
+ Переведено с помощью www.DeepL.com/Translator (бесплатная версия)
+### Непреодолимый выбор  
 
-### Overwhelming choice  
+Выбор - это здорово, но есть момент, когда он становится чрезмерным, и это не глубокий обзор всех вариантов в каждой из перечисленных выше категорий. В дополнение к вышеперечисленному у нас есть OpenShift от Red Hat, и этот вариант действительно может быть использован во всех вышеперечисленных вариантах у всех основных облачных провайдеров и, вероятно, сегодня обеспечивает наилучшее общее удобство для администраторов независимо от того, где развернуты кластеры. 
 
-I mean choice is great but there is a point where things become overwhelming and this is really not an depth look into all options within each catagory listed above. On top of the above we also have OpenShift which is from Red Hat and this option can really be ran across the options above in all the major cloud providers and probably today gives the best overall useability to the admins regardless where clusters are deployed. 
+Итак, с чего вы начнете свое обучение, как я уже сказал, я начал с пути виртуализации, но это было потому, что у меня был доступ к физическому серверу, который я мог использовать для этой цели, я ценю и фактически с тех пор у меня больше нет такой возможности. 
 
-So where do you start from your learning perspective, as I said I started with the virtualisation route but that was because I had access to a physical server which I could use for the purpose, I appreciate and in fact since then I no longer have this option. 
+Сейчас я бы посоветовал использовать Minikube в качестве первого варианта или Kind (Kubernetes в Docker), но Minikube дает нам некоторые дополнительные преимущества, которые почти абстрагируют сложность, так как мы можем просто использовать дополнительные модули и быстро создавать вещи, а затем разрушать их, когда мы закончим, мы можем запускать несколько кластеров, мы можем запускать их почти везде, кросс-платформенные и аппаратно-агностические. 
 
-My actual advice now would be to use Minikube as a first option or Kind (Kubernetes in Docker) but Minikube gives us some additional benefits which almost abstracts the complexity out as we can just use add ons and get things built out really quickly and we can then blow it away when we are finished, we can run multiple clusters, we can run it almost anywhere, cross platform and hardware agnostic. 
+Я проделал небольшой путь в изучении Kubernetes, поэтому я собираюсь оставить выбор платформы и конкретику здесь, чтобы перечислить варианты, которые я пробовал, чтобы дать мне лучшее понимание платформы Kubernetes и того, где она может работать. Что я мог бы сделать с нижеприведенными записями в блоге, так это еще раз взглянуть на них, обновить их и перенести сюда, вместо того, чтобы они были ссылками на записи в блоге. 
 
-I have been through a bit of a journey with my learning around Kubernetes so I am going to leave the platform choice and specifics here to list out the options that i have tried to give me a better understanding around Kubernetes the platform and where it can run. What I might do with the below blog posts is take another look at these update them and bring them more into here vs them being links to blog posts. 
+## Ресурсы 
 
 - [Kubernetes playground – How to choose your platform](https://vzilla.co.uk/vzilla-blog/building-the-home-lab-kubernetes-playground-part-1)
 - [Kubernetes playground – Setting up your cluster](https://vzilla.co.uk/vzilla-blog/building-the-home-lab-kubernetes-playground-part-2)
@@ -60,23 +62,3 @@ I have been through a bit of a journey with my learning around Kubernetes so I a
 - [Kubernetes, How to – AWS Bottlerocket + Amazon EKS](https://vzilla.co.uk/vzilla-blog/kubernetes-how-to-aws-bottlerocket-amazon-eks)
 - [Getting started with CIVO Cloud](https://vzilla.co.uk/vzilla-blog/getting-started-with-civo-cloud)
 - [Minikube - Kubernetes Demo Environment For Everyone](https://vzilla.co.uk/vzilla-blog/project_pace-kasten-k10-demo-environment-for-everyone)
-
-### What we will cover in the series on Kubernetes 
-
-- Kubernetes Architecture 
-- Kubectl Commands 
-- Kubernetes YAML 
-- Kubernetes Ingress 
-- Kubernetes Services
-- Helm Package Manager 
-- Persistant Storage 
-- Stateful Apps 
-
-## Ресурсы 
-
-- [Kubernetes Documentation](https://kubernetes.io/docs/home/)
-- [TechWorld with Nana - Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]](https://www.youtube.com/watch?v=X48VuDVv0do)
-- [TechWorld with Nana - Kubernetes Crash Course for Absolute Beginners](https://www.youtube.com/watch?v=s_o8dwzRlu4)
-- [Kunal Kushwaha - Kubernetes Tutorial for Beginners | What is Kubernetes? Architecture Simplified!](https://www.youtube.com/watch?v=KVBON1lA9N8)
-
-See you on [Day 51](../day51) 

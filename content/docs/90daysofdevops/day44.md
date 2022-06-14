@@ -1,5 +1,5 @@
 ---
-title: 44 - Docker Images & Hands-On with Docker Desktop
+title: 44 - Установка образов Docker в Docker Desktop
 description: 
 toc: true
 authors:
@@ -13,129 +13,129 @@ draft: false
 id: 1048708
 ---
 
-## Docker Images & Hands-On with Docker Desktop
+## Образы Docker и практическая работа с Docker Desktop
 
-We now have Docker Desktop installed on our system. (If you are running Linux then you still have options but no GUI but docker obviously does work on Linux.)[Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/) (Other distributions also available.)
+Теперь у нас в системе установлен Docker Desktop. (Если вы используете Linux, у вас все еще есть опции, но нет графического интерфейса, но docker, очевидно, работает на Linux)[Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/) (Другие дистрибутивы также доступны).
 
-In this post we are going to get started with deploying some images into our environment. A recap on what a Docker Image is - A Docker image is a file used to execute code in a Docker container. Docker images act as a set of instructions to build a Docker container, like a template. Docker images also act as the starting point when using Docker.
+В этом посте мы собираемся начать с развертывания некоторых образов в нашей среде. Напомним, что такое образ Docker - образ Docker - это файл, используемый для выполнения кода в контейнере Docker. Образы Docker действуют как набор инструкций для создания контейнера Docker, как шаблон. Образы Docker также служат отправной точкой при использовании Docker.
 
-Now is a good time to go and create your account on [DockerHub](https://hub.docker.com/) 
+Сейчас самое время пойти и создать свой аккаунт на [DockerHub](https://hub.docker.com/) 
 
 ![](../images/Day44_Containers1.png?v1)
 
-DockerHub is a centralised resource for working with Docker and its components. Most commonly known as a registry to host docker images. But there is a lot of additional services here which can be used in part with automation or integrated into GitHub as well as security scanning.
+DockerHub - это централизованный ресурс для работы с Docker и его компонентами. Наиболее известен как реестр для размещения образов докеров. Но здесь есть множество дополнительных сервисов, которые можно использовать для автоматизации или интеграции в GitHub, а также для сканирования безопасности.
 
-If you scroll down once logged in you are going to see a list of container images, You might see database images for mySQL, hello-world etc etc. Think of these as great baseline images or you might in fact just need a database image and you are best to use the official one which means you don't need to create your own. 
+Если вы прокрутите вниз после входа в систему, вы увидите список образов контейнеров, вы можете увидеть образы баз данных для mySQL, hello-world и т.д. и т.п. Рассматривайте их как отличные базовые образы, или вам может понадобиться просто образ базы данных, и вам лучше всего использовать официальный образ, что означает, что вам не нужно создавать свой собственный. 
 
 ![](../images/Day44_Containers2.png?v1)
 
-We can drill deeper into the view of available images and search across categories, operating systems and architectures. The one thing I highlight below is the Office Image, this should give you peace of mind of the origin of this container image.  
+Мы можем углубиться в просмотр доступных изображений и осуществлять поиск по категориям, операционным системам и архитектурам. Единственное, что я выделил ниже, это Office Image, это должно дать вам уверенность в происхождении этого образа контейнера.  
 
 ![](../images/Day44_Containers3.png?v1)
 
-We can also search for a specific image, for example wordpress might be a good base image that we want we can do that in the top and find all container images related to wordpress. Below notice that we also have verified publisher. 
+Мы также можем искать конкретное изображение, например, wordpress может быть хорошим базовым изображением, которое нам нужно, мы можем сделать это в верхней части и найти все изображения контейнеров, связанные с wordpress. Ниже обратите внимание, что у нас также есть проверенный издатель. 
 
-- Official Image - Docker Official images are a curated set of Docker open source and "drop-in" solution repositories. 
+- Официальные образы - Официальные образы Docker - это курируемый набор открытых исходных кодов Docker и репозиториев решений "drop-in". 
 
-- Verified Publisher - High-quality Docker content from verified publishers. These products are published and maintained directly by a commercial entity. 
+- Проверенный издатель - высококачественный контент Docker от проверенных издателей. Эти продукты публикуются и поддерживаются непосредственно коммерческой организацией. 
 
 ![](../images/Day44_Containers4.png?v1)
 
-### Exploring Docker Desktop 
+### Изучение Docker Desktop 
 
-We have Docker Desktop installed on our system and if open this I expect unless you had this already installed you will see something similar to the image below. As you can see we have no containers running and our docker engine is running. 
+У нас в системе установлен Docker Desktop, и если открыть его, то, если он у вас еще не установлен, вы увидите нечто похожее на изображение ниже. Как вы можете видеть, у нас нет запущенных контейнеров, но наш движок docker запущен. 
 
 ![](../images/Day44_Containers5.png?v1)
 
-Because this was not a fresh install for me, I do have some images already downloaded and available on my system. You will likely see nothing in here. 
+Поскольку это была не свежая установка для меня, у меня есть некоторые изображения, которые уже загружены и доступны в моей системе. Скорее всего, здесь вы ничего не увидите. 
 
 ![](../images/Day44_Containers6.png?v1)
 
-Under remote repositories this is where you will find any container images you have stored in your docker hub. You can see from the below I do not have any images. 
+В разделе удаленных репозиториев вы найдете все образы контейнеров, которые хранятся в вашем хабе docker. Ниже показано, что у меня нет никаких образов. 
 
 ![](../images/Day44_Containers7.png?v1)
 
-We can also clarify this on our dockerhub site and confirm that we have no repositories there.
+Мы также можем уточнить это на нашем сайте dockerhub и подтвердить, что у нас там нет репозиториев.
 
 ![](../images/Day44_Containers8.png?v1)
 
-Next we have the Volumes tab, If you have containers that require persistence then this is where we can add these volumes on your local file system or a shared file system. 
+Далее у нас есть вкладка Volumes, если у вас есть контейнеры, которым требуется постоянство, то здесь мы можем добавить эти тома в вашу локальную файловую систему или общую файловую систему. 
 
 ![](../images/Day44_Containers9.png?v1)
 
-At the time of writing there is also a Dev Environments tab, this is going to help you collaborate with your team instead of moving between different git branches. We won't be covering this. 
+На момент написания статьи также существует вкладка Dev Environments, которая поможет вам сотрудничать с вашей командой вместо того, чтобы перемещаться между различными ветками git. Мы не будем ее рассматривать. 
 
 ![](../images/Day44_Containers10.png?v1)
 
-Going back to the first tab you can see that there is a command we can run which is a getting started container. Let's run `docker run -d -p 80:80 docker/getting-started` in our terminal. 
+Вернувшись на первую вкладку, вы увидите, что там есть команда, которую мы можем запустить - это контейнер для запуска. Давайте запустим `docker run -d -p 80:80 docker/getting-started` в нашем терминале.  
 
 ![](../images/Day44_Containers11.png?v1)
 
-If we go and check our docker desktop window again, we are going to see that we have a running container. 
+Если мы снова проверим окно рабочего стола docker, то увидим, что у нас есть запущенный контейнер. 
 
 ![](../images/Day44_Containers12.png?v1)
 
-You might have noticed that I am using WSL2 and in order for you to be able to use that you will need to make sure this is enabled in the settings. 
+Вы могли заметить, что я использую WSL2, и для того, чтобы вы могли использовать его, вам нужно убедиться, что он включен в настройках. 
 
 ![](../images/Day44_Containers13.png?v1)
 
-If we now go and check our Images tab again, you should now see an in use image called docker/getting-started. 
+Если теперь мы снова перейдем на вкладку Images, вы должны увидеть используемый образ под названием docker/getting-started. 
 
 ![](../images/Day44_Containers14.png?v1)
 
-Back to the Containers/Apps tab, click on your running container. You are going to see the logs by default and along the top you have some options to choose from, in our case I am pretty confident that this is going to be a web page running in this container so we are going to choose the open in browser. 
+Вернитесь на вкладку Containers/Apps, нажмите на ваш запущенный контейнер. По умолчанию вы увидите журналы, а в верхней части есть несколько опций на выбор, в нашем случае я уверен, что это будет веб-страница, запущенная в этом контейнере, поэтому мы выберем опцию "Открыть в браузере". 
 
 ![](../images/Day44_Containers15.png?v1)
 
-When we hit that button above sure enough a web page should open hitting your localhost and display something similar to below. 
+Когда мы нажмем на кнопку выше, конечно же, откроется веб-страница на вашем локальном хосте и отобразится что-то похожее на то, что показано ниже. 
 
-This container also has some more detail on what are containers and images. 
+Этот контейнер также содержит более подробную информацию о том, что такое контейнеры и изображения. 
 
 ![](../images/Day44_Containers16.png?v1)
 
-We have now ran our first container. Nothing too scary just yet. What about if we wanted to pull one of the container images down from DockerHub? Maybe there is a `hello world` docker container we could use. 
+Теперь мы запустили наш первый контейнер. Пока ничего страшного. А что если мы захотим вытащить один из образов контейнера из DockerHub? Может быть, там есть докер-контейнер `hello world`, который мы могли бы использовать. 
 
-I went ahead and stopped the getting started container not that it's taking up any mass amount of resources but for tidyness as we walk through some more steps. 
+Я остановил начальный контейнер, не то чтобы он занимал много ресурсов, но для аккуратности, пока мы проходим еще несколько шагов. 
 
-Back in our terminal lets go ahead and run `docker run hello-world` and see what happens. 
+Вернемся в терминал и выполним команду `docker run hello-world` и посмотрим, что произойдет. 
 
-You can see we did not have the image locally so we pulled that down and then we got a message that is written into the container image with some information on what it did to get up and running and some links to reference points. 
+Вы можете видеть, что у нас не было локального образа, поэтому мы стянули его, а затем получили сообщение, записанное в образ контейнера, с информацией о том, что он сделал, чтобы запуститься, и некоторые ссылки на точки отсчета. 
 
 ![](../images/Day44_Containers17.png?v1)
 
-However, if we go and look in Docker Desktop now we have no running containers but we do have an exited container that used the hello-world message, meaning it came up, it delivered the message and then it terminated. 
+Однако, если мы посмотрим в Docker Desktop, у нас нет запущенных контейнеров, но есть вышедший контейнер, который использовал сообщение hello-world, то есть он появился, передал сообщение и затем завершился. 
 
 ![](../images/Day44_Containers18.png?v1)
 
-And for the last time, let's just go and check the images tab and see that we have a new hello-world image locally on our system, meaning that if we run the `docker run hello-world` command again in our terminal we would not have to pull anything unless a version changes. 
+И в последний раз, давайте просто проверим вкладку images и увидим, что у нас есть новый образ hello-world локально в нашей системе, что означает, что если мы снова выполним команду `docker run hello-world` в нашем терминале, нам не придется ничего вытаскивать, если только версия не изменится. 
 
 ![](../images/Day44_Containers19.png?v1)
 
-In the message from the hello-world container it set down a challenge of running something a little more ambitious. 
+В сообщении от контейнера hello-world была поставлена задача запустить что-то более амбициозное. 
 
-Challenge Accepted!
+Вызов принят!
 
 ![](../images/Day44_Containers20.png?v1)
 
-In running `docker run -it ubuntu bash` in our terminal we are going to run a containerised version of Ubuntu well not a full copy of the Operating system. You can find out more about this particular image on [DockerHub](https://hub.docker.com/_/ubuntu)
+Запустив `docker run -it ubuntu bash` в нашем терминале, мы собираемся запустить контейнерную версию Ubuntu, а не полную копию операционной системы. Вы можете узнать больше об этом конкретном образе на [DockerHub](https://hub.docker.com/_/ubuntu).
 
-You can see below when we run the command we now have an interactive prompt (`-it`) and we have bash shell into our container. 
+Вы можете видеть ниже, когда мы выполним команду, у нас появится интерактивная подсказка (`-it`) и мы запустим оболочку bash в нашем контейнере. 
 
 ![](../images/Day44_Containers21.png?v1)
 
-We have a bash shell but we don't have much more which is why this container image is less than 30mb. 
+У нас есть оболочка bash, но у нас не так много больше, поэтому образ этого контейнера занимает менее 30 мб. 
 
 ![](../images/Day44_Containers22.png?v1)
 
-But we can still use this image and we can still install software using our apt package manager, we can update our container image and upgrade also. 
+Но мы все еще можем использовать этот образ, и мы все еще можем установить программное обеспечение, используя наш менеджер пакетов apt, мы можем обновить наш образ контейнера и обновить также. 
 
 ![](../images/Day44_Containers23.png?v1)
 
-Or maybe we want to install some software into our container, I have chosen a really bad example here as pinta is an image editor and its over 200mb but hopefully you get where I am going with this. This would increase the size of our container considerably but still we are going to be in the mb and not into the gb. 
+Или, может быть, мы хотим установить какое-то программное обеспечение в наш контейнер, я выбрал очень плохой пример, поскольку pinta - это редактор изображений, и его размер превышает 200мб, но, надеюсь, вы поняли, к чему я веду. Это значительно увеличит размер нашего контейнера, но все же мы будем находиться в мб, а не в гб. 
 
 ![](../images/Day44_Containers24.png?v1)
 
-I wanted that to hopefully give you an overview of Docker Desktop and the not so scary world of containers when you break it down with simple use cases, we do need to cover some networking, security and other options we have vs just downloading container images and using them like this. By the end of the section we want to have made something and uploaded to our DockerHub repository and be able to deploy it. 
+Я хотел, чтобы вы получили общее представление о Docker Desktop и не таком уж страшном мире контейнеров, когда вы разбиваете его на простые сценарии использования, но нам нужно рассказать о некоторых сетевых возможностях, безопасности и других вариантах, которые у нас есть по сравнению с просто загрузкой образов контейнеров и их использованием таким образом. К концу раздела мы хотим создать что-то, загрузить в наш репозиторий DockerHub и иметь возможность развернуть это.  
 
 ## Ресурсы 
 
@@ -144,4 +144,3 @@ I wanted that to hopefully give you an overview of Docker Desktop and the not so
 - [Docker Tutorial for Beginners - What is Docker? Introduction to Containers](https://www.youtube.com/watch?v=17Bl31rlnRM&list=WL&index=128&t=61s)
 - [WSL 2 with Docker getting started](https://www.youtube.com/watch?v=5RQbdMn04Oc)
 
-See you on [Day 45](../day45) 
