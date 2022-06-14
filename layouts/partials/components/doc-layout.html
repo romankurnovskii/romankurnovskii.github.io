@@ -119,9 +119,9 @@
         {{ range .context.Pages.Reverse }}
         {{ $version := findRE "v?(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?/$" .Permalink }}
         {{ if eq (len $version) 0 }}
-        <li class="py-2">
+        <li class="py-1 text-sm ">
             <div class="{{ if .IsSection }} pb-2 {{ end }}">
-                <a class="{{ if eq .Permalink $.permalink }} text-eureka {{ end }} hover:text-eureka"
+               <a class="{{ if eq .Permalink $.permalink }} text-eureka {{ end }} hover:text-eureka"
                     href="{{ .Permalink }}">{{ .LinkTitle }}</a>
             </div>
             {{ if .IsSection }}
