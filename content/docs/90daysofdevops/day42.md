@@ -1,6 +1,6 @@
 ---
-title: 42 - The Big Picture - Containers
-description: 
+title: 42 - Контейнеры
+description: Контенеры Docker для запуска приложений
 toc: true
 authors:
 tags: [devops]
@@ -12,161 +12,121 @@ featuredImage:
 draft: false
 id: 1048826
 ---
-## The Big Picture: Containers
+## Контейнеры
 
-We are now starting the next section and this section is going to be focused on containers in particular we are going to be looking into Docker getting into some of the key areas to understand more about Containers. 
+Этот раздел будет посвящен контейнерам. Будем рассматривать Docker, вникая в некоторые ключевые области, чтобы понять больше о контейнерах. 
 
-I will also be trying to get some hands-on here to create the container that we can use during this section but also future sections later on in the challenge. 
+Я также попытаюсь провести практические занятия по созданию контейнера, который мы сможем использовать не только в этом разделе, но и в последующих. 
 
-As always this first post is going to be focused on the big picture of how we got here and what it all means. 
+### Почему другой способ запуска приложений? 
 
-#History of platforms and application development
-#do we want to talk about Virtualisation & Containerisation 
+Первое, на что мы должны обратить внимание, - зачем нам нужен другой способ запуска программ или приложений? Просто выбор велик, мы можем запускать наши приложения в разных формах, мы можем видеть приложения, развернутые на физическом оборудовании с операционной системой и одним приложением, мы можем видеть виртуальную машину или облачные IaaS экземпляры, запускающие наше приложение, которое затем интегрируется в базу данных снова в виртуальной машине или как PaaS предложение в публичном облаке. Или мы можем увидеть наши приложения, работающие в контейнерах. 
 
-### Why another way to run applications? 
+Ни один из перечисленных вариантов не является неправильным или правильным, но у каждого из них есть свои причины для существования, и я также твердо уверен, что ни один из них не исчезнет. Я видел много материалов, в которых обсуждаются контейнеры и виртуальные машины, и на самом деле здесь не должно быть спора, поскольку это больше похоже на спор между яблоками и грушами, где они оба являются фруктами (способы запуска наших приложений), но это не одно и то же. 
 
-The first thing we have to take a look at is why do we need another way to run our software or applications? Well it is just that choice is great, we can run our applications in many different forms, we might see applications deployed on physical hardware with an operating system and a single application deployed there, we might see the virtual machine or cloud-based IaaS instances running our application which then integrate into a database again in a VM or as PaaS offering in the public cloud. Or we might see our applications running in containers. 
+Я бы также сказал, что если вы начинаете и разрабатываете приложение, вам следует склониться к контейнерам просто потому, что мы рассмотрим некоторые из этих областей позже, но речь идет об эффективности, скорости и размере. Но за это тоже приходится платить, если вы не имеете представления о контейнерах, то вам придется учиться, чтобы понять, зачем это нужно, и вжиться в этот образ мышления. Если вы разрабатывали свои приложения особым образом или вы не работаете в новой среде, то у вас может быть больше болевых точек, с которыми нужно справиться, прежде чем рассматривать контейнеры. 
 
-None of the above options is wrong or right, but they each have their reasons to exist and I also strongly believe that none of these is going away. I have seen a lot of content that walks into Containers vs Virtual Machines and there really should not be an argument as that is more like apples vs pears argument where they are both fruit (ways to run our applications) but they are not the same. 
-
-I would also say that if you were starting and you were developing an application you should lean towards containers simply because we will get into some of these areas later, but it's about efficiency, speed and size. But that also comes with a price, if you have no idea about containers then it's going to be a learning curve to force yourself to understand the why and get into that mindset. If you have developed your applications a particular way or you are not in a greenfield environment then you might have more pain points to deal with before even considering containers. 
-
-We have many different choices then when it comes to downloading a given piece of software, there are a variety of different operating systems that we might be using. And specific instructions for what we need to do to install our applications. 
+У нас есть много различных вариантов, когда нужно загрузить ту или иную часть программного обеспечения, есть множество различных операционных систем, которые мы можем использовать. И конкретные инструкции о том, что нам нужно сделать, чтобы установить наши приложения. 
 
 ![](../images/Day42_Containers1.png?v1)
 
-More and more recently I am finding that the applications we might have once needed a full server OS, A VM, Physical or cloud instance are now releasing container-based versions of their software. I find this interesting as this opens the world of containers and then Kubernetes to everyone and not just a focus on application developers. 
+В последнее время я все чаще замечаю, что приложения, для которых раньше требовалась полноценная серверная ОС, виртуальная машина, физический или облачный экземпляр, теперь выпускают версии своего программного обеспечения на основе контейнеров. Я нахожу это интересным, поскольку это открывает мир контейнеров и Kubernetes для всех, а не только для разработчиков приложений. 
 
 ![](../images/Day42_Containers2.png?v1)
 
-As you can probably tell as I have said before, I am not going to advocate that the answer is containers, what's the question! But I would like to discuss how this is another option for us to be aware of when we deploy our applications. 
+Как вы уже, наверное, поняли, я не собираюсь утверждать, что ответ - это контейнеры, в чем вопрос! Но я хотел бы обсудить, что это еще один вариант, о котором мы должны знать при развертывании наших приложений. 
 
 ![](../images/Day42_Containers4.png?v1)
 
-We have had container technology for a long time, so why now over the last say 10 years has this become popular, I would say even more popular in the last 5. We have had containers for decades. It comes down to the challenge containers or should I say images as well, to how we distribute our software, because if we just have container technology, then we still will have many of the same problems we've had with software management. 
+У нас уже давно существует контейнерная технология, так почему же именно сейчас, за последние 10 лет, она стала популярной, я бы сказал, даже более популярной в последние 5 лет. У нас были контейнеры в течение десятилетий. Все сводится к вызову контейнеров или, лучше сказать, образов, тому, как мы распространяем наше программное обеспечение, потому что если у нас будет только контейнерная технология, то у нас останется много тех же проблем, которые были с управлением программным обеспечением. 
 
-If we think about Docker as a tool, the reason that it took off, is because of the ecosystem of images that are easy to find and use. Simple to get on your systems and get up and running. A major part of this is consistency across the entire space, of all these different challenges that we face with software. It doesn't matter if it's MongoDB or nodeJS, the process to get either of those up and running will be the same. The process to stop either of those is the same. All of these issues will still exist, but the nice thing is, when we bring good container and image technology together, we now have a single set of tools to help us tackle all of these different problems. Some of those issues are listed below: 
+Если мы подумаем о Docker как об инструменте, то причина его взлета заключается в экосистеме образов, которые легко найти и использовать. Их легко установить на свои системы и запустить в работу. Важной частью этого является согласованность во всем пространстве, во всех этих различных проблемах, с которыми мы сталкиваемся при работе с программным обеспечением. Неважно, MongoDB это или nodeJS, процесс запуска любого из них будет одинаковым. Процесс остановки любого из них одинаков. Все эти проблемы будут существовать, но самое приятное, что когда мы объединяем хорошие технологии контейнеров и образов, у нас появляется единый набор инструментов для решения всех этих различных проблем. Некоторые из этих проблем перечислены ниже: 
 
-- We first have to find software on the internet. 
-- We then have to download this software. 
-- Do we trust the source? 
-- Do we then need a license? Which License? 
-- Is it compatible with different platforms? 
-- What is the package? binary? Executable? Package manager? 
-- How do we configure the software? 
-- Dependencies? Did the overall download have us covered or do we need them as well? 
-- Dependencies of Dependencies? 
-- How do we start the application? 
-- How do we stop the application? 
-- Will it auto-restart? 
-- Start on boot? 
-- Resource conflicts? 
-- Conflicting libraries? 
-- Port Conflicts
-- Security for the software? 
-- Software updates? 
-- How can I remove the software? 
+- Сначала нам нужно найти программное обеспечение в Интернете. 
+- Затем мы должны загрузить это программное обеспечение. 
+- Доверяем ли мы источнику? 
+- Нужна ли нам лицензия? Какая лицензия? 
+- Совместима ли она с различными платформами? 
+- Что представляет собой пакет? Бинарный? Исполняемый? Менеджер пакетов? 
+- Как сконфигурировать программу? 
+- Зависимости? Были ли они учтены при загрузке или они нам тоже нужны? 
+- Зависимости зависимостей? 
+- Как нам запустить приложение? 
+- Как мы остановим приложение? 
+- Будет ли оно автозапускаться? 
+- Запускаться при загрузке? 
+- Конфликты ресурсов? 
+- Конфликтующие библиотеки? 
+- Конфликты портов
+- Безопасность программного обеспечения? 
+- Обновления программного обеспечения? 
+- Как удалить программное обеспечение? 
 
-We can split the above into 3 areas of the complexity of the software that containers and images do help with these. 
+Мы можем разделить вышеперечисленное на 3 области сложности программного обеспечения, с которыми помогают справиться контейнеры и образы. 
 
-| Distribution | Installation | Operation          |
-| ------------ | ------------ | -----------------  |
-| Find         | Install      | Start              |
-| Download     | Configuration| Security           |
-| License      | Uninstall    | Ports              |
-| Package      | Dependencies | Resource Conflicts |
-| Trust        | Platform     | Auto-Restart       |
-| Find         | Libraries    | Updates            |
 
-Containers and images are going to help us remove some of these challenges that we have with possibly other software and applications. 
+| Распространение | Установка     | Эксплуатация          |
+| --------------- | ------------- | --------------------- |
+| Найти           | Установить    | Запустить             |
+| Скачать         | Конфигурация  | Безопасность          |
+| Лицензия        | Деинсталляция | Порты                 |
+| Пакет           | Зависимости   | Конфликты с ресурсами |
+| Доверие         | Платформа     | Автоперезагрузка      |
+| Поиск           | Библиотеки    | Обновления            |
 
-At a high level we could move installation and operation into the same list, Images are going to help us from a distribution point of view and containers help with the installation and operations. 
+Контейнеры и образы помогут нам устранить некоторые из этих проблем, с которыми мы сталкиваемся при работе с другими программами и приложениями. 
 
-Ok, probably sounds great and exciting but we still need to understand what is a container and now I have mentioned images so let's cover those areas next. 
+На высоком уровне мы можем перенести установку и эксплуатацию в один список: образы помогут нам с точки зрения распространения, а контейнеры помогут с установкой и эксплуатацией. 
 
-Another thing you might have seen a lot when we talk about Containers for software development is the analogy used alongside shipping containers, shipping containers are used to ship various goods across the seas using large vessels. 
+Хорошо, возможно, звучит здорово и захватывающе, но нам все еще нужно понять, что такое контейнер, и теперь я упомянул образы, поэтому давайте рассмотрим эти области далее. 
+
+Еще одна вещь, которую вы могли часто видеть, когда мы говорили о контейнерах для разработки программного обеспечения, - это аналогия с морскими контейнерами: морские контейнеры используются для перевозки различных товаров по морю с помощью больших судов. 
 
 ![](../images/Day42_Containers5.png?v1)
 
-What does this have to do with our topic of containers? Think about the code that software developers write, how can we ship that particular code from one machine to another machine?
+Какое отношение это имеет к нашей теме о контейнерах? Подумайте о коде, который пишут разработчики программного обеспечения, как мы можем перенести этот код с одной машины на другую?
 
-If we think about what we touched on before about software distribution, installation and operations but now we start to build this out into an environment visual. We have hardware and an operating system where you will run multiple applications. For example, nodejs has certain dependencies and needs certain libraries. If you then want to install MySQL then it needs its required libraries and dependencies. Each software application will have its library and dependency. We might be massively lucky and not have any conflicts between any of our applications where specific libraries and dependencies are clashing causing issues but the more applications the more chance or risk of conflicts. However, this is not about that one deployment when everything fixes your software applications are going to be updated and then we can also introduce these conflicts. 
+Если мы подумаем о том, что мы уже говорили о распространении программного обеспечения, установке и операциях, то теперь мы начнем выстраивать это в визуальную среду. У нас есть аппаратное обеспечение и операционная система, на которой вы будете запускать несколько приложений. Например, nodejs имеет определенные зависимости и нуждается в определенных библиотеках. Если вы хотите установить MySQL, то ему нужны необходимые библиотеки и зависимости. Каждое программное приложение будет иметь свою библиотеку и зависимость. Нам может крупно повезти, и у нас не будет конфликтов между приложениями, где определенные библиотеки и зависимости сталкиваются, вызывая проблемы, но чем больше приложений, тем больше вероятность или риск конфликтов. Однако речь не идет об одном развертывании, когда все исправления ваших программных приложений будут обновлены, и тогда мы также можем столкнуться с этими конфликтами. 
 
 ![](../images/Day42_Containers6.png?v1)
 
-Containers can help solve this problem. Containers help **build** your application, **ship** the application, **deploy** and **scale** these applications with ease independently. let's look at the architecture, you will have hardware and operating system then on top of it you will have a container engine like docker which we will cover later. The container engine software helps create containers that package the libraries and dependencies along with it so that you can move this container seamlessly from one machine to another machine without worrying about the libraries and dependencies since they come as a part of a package which is nothing but the container so you can have different containers this container can be moved across the systems without worrying about the underlying dependencies that the application
-needs to run because everything the application needs to run is packaged as
-a container that you can move. 
+Контейнеры могут помочь решить эту проблему. Контейнеры помогают **создать** ваше приложение, **отправить** приложение, **развернуть** и **масштабировать** эти приложения с легкостью самостоятельно. Давайте рассмотрим архитектуру, у вас есть аппаратное обеспечение и операционная система, а поверх них - контейнерный движок, такой как docker, который мы рассмотрим позже. Программное обеспечение контейнерного движка помогает создавать контейнеры, которые упаковывают библиотеки и зависимости вместе с ними, так что вы можете легко перемещать этот контейнер с одной машины на другую, не беспокоясь о библиотеках и зависимостях, поскольку они поставляются как часть пакета, который является ничем иным, как контейнером, так что вы можете иметь различные контейнеры, которые можно перемещать между системами, не беспокоясь о базовых зависимостях, которые необходимы приложению.
+потому что все, что нужно приложению для работы, упаковано как
+контейнер, который можно перемещать. 
 
 ![](../images/Day42_Containers7.png?v1)
 
-### The advantages of these containers 
-
-- Containers help package all the dependencies within the container and
-isolate it. 
-
-- It is easy to manage the containers 
-
-- The ability to move from one system to another. 
-
-- Containers help package the software and you can easily ship it without any duplicate efforts 
-
-- Containers are easily scalable.
-
-Using containers you can scale independent containers and use a load balancer
-or a service which help split the traffic and you can scale the applications horizontally. Containers offer a lot of flexibility and ease how you manage your applications 
-
-### Преимущества этих контейнеров
+### Преимущества контейнеров 
 
 - Контейнеры помогают упаковать все зависимости внутри контейнера и
-изолировать его.
+изолировать его. 
 
-- Легко управлять контейнерами
+- Контейнерами легко управлять 
 
-- Возможность перехода из одной системы в другую.
+- Возможность перехода от одной системы к другой. 
 
-- Контейнеры помогают упаковать программное обеспечение, и вы можете легко отправить его без каких-либо дублирующих усилий.
+- Контейнеры помогают упаковать программное обеспечение, и вы можете легко отправить его без каких-либо дублирующих усилий. 
 
 - Контейнеры легко масштабируются.
 
-Используя контейнеры, вы можете масштабировать независимые контейнеры и использовать балансировщик нагрузки.
-или сервис, который помогает разделить трафик, и вы можете масштабировать приложения по горизонтали. Контейнеры предлагают большую гибкость и упрощают управление приложениями.
+Используя контейнеры, вы можете масштабировать независимые контейнеры и использовать балансировщик нагрузки
+или сервис, который поможет разделить трафик, и вы сможете масштабировать приложения горизонтально. Контейнеры обеспечивают большую гибкость и облегчают управление приложениями. 
 
+### Что такое контейнер? 
 
+Когда мы запускаем приложения на нашем компьютере, это может быть веб-браузер или VScode, который вы используете для чтения этого сообщения. Это приложение работает как процесс или то, что известно как процесс. На наших ноутбуках или системах мы обычно запускаем несколько приложений или, как мы сказали, процессов. Когда мы открываем новое приложение или нажимаем на значок приложения, это приложение, которое мы хотим запустить, иногда это приложение может быть службой, которую мы просто хотим запустить в фоновом режиме, наша операционная система полна служб, которые работают в фоновом режиме, предоставляя вам возможность пользоваться системой. 
 
+Значок приложения представляет собой ссылку на исполняемый файл в файловой системе, после чего операционная система загружает этот файл в память. Интересно, что этот исполняемый файл иногда называют образом, когда речь идет о процессе. 
 
+Контейнеры - это процессы, а контейнер - это стандартная единица программного обеспечения, которая упаковывает код и все его зависимости, чтобы приложение быстро и надежно работало в разных вычислительных средах. 
 
-### What is a container? 
+Контейнерное программное обеспечение всегда будет работать одинаково, независимо от инфраструктуры. Контейнеры изолируют программное обеспечение от его окружения и обеспечивают его единообразную работу, несмотря на различия, например, между разработкой и постановкой на хранение.
 
-When we run applications on our computer, this could be the web browser or VScode that you are using to read this post. That application is running as a process or what is known as a process. On our laptops or systems, we tend to run multiple applications or as we said processes. When we open a new application or click on the application icon this is an application we would like to run, sometimes this application might be a service that we just want to run in the background, our operating system is full of services that are running in the background providing you with the user experience you get with your system. 
+Я упоминал образы в последнем разделе, когда речь шла о том, как и почему контейнеры и образы вместе сделали контейнеры популярными в нашей экосистеме. 
 
-That application icon represents a link to an executable somewhere on your file system, the operating system then loads that executable into memory. Interestingly, that executable is sometimes referred to as an image when we're talking about a process. 
+### Что такое образ? 
 
-Containers are processes, A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another. 
-
-Containerised software will always run the same, regardless of the infrastructure. Containers isolate software from its environment and ensure that it works uniformly despite differences for instance between development and staging.
-
-I mentioned images in the last section when it comes to how and why containers and images combined made containers popular in our ecosystem. 
-
-### What is an Image? 
-
-A container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings. Container images become containers at runtime. 
-
-### Преимущества этих контейнеров
-
-- Контейнеры помогают упаковать все зависимости внутри контейнера и
-изолировать его.
-
-- Легко управлять контейнерами
-
-- Возможность перехода из одной системы в другую.
-
-- Контейнеры помогают упаковать программное обеспечение, и вы можете легко отправить его без каких-либо дублирующих усилий.
-
-- Контейнеры легко масштабируются.
-
-Используя контейнеры, вы можете масштабировать независимые контейнеры и использовать балансировщик нагрузки.
-или сервис, который помогает разделить трафик, и вы можете масштабировать приложения по горизонтали. Контейнеры предлагают большую гибкость и упрощают управление приложениями.
+Образ контейнера - это легкий, автономный, исполняемый пакет программного обеспечения, который включает все необходимое для запуска приложения: код, время выполнения, системные инструменты, системные библиотеки и настройки. Образы контейнеров становятся контейнерами во время выполнения. 
 
 ### Что такое контейнер?
 
@@ -180,16 +140,9 @@ A container image is a lightweight, standalone, executable package of software t
 
 Я упомянул изображения в предыдущем разделе, когда речь шла о том, как и почему сочетание контейнеров и изображений сделало контейнеры популярными в нашей экосистеме.
 
-### Что такое изображение?
 
-Образ контейнера — это легкий, автономный исполняемый пакет программного обеспечения, который включает в себя все необходимое для запуска приложения: код, среду выполнения, системные инструменты, системные библиотеки и настройки. Образы контейнеров становятся контейнерами во время выполнения.
-
-
-
-## Ресурсы 
+## Ссылки 
 
 - [TechWorld with Nana - Docker Tutorial for Beginners](https://www.youtube.com/watch?v=3c-iBn73dDE)
 - [Programming with Mosh - Docker Tutorial for Beginners](https://www.youtube.com/watch?v=pTFZFxd4hOI)
 - [Docker Tutorial for Beginners - What is Docker? Introduction to Containers](https://www.youtube.com/watch?v=17Bl31rlnRM&list=WL&index=128&t=61s)
-
-See you on [Day 43](../day43) 

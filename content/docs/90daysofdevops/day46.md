@@ -1,5 +1,5 @@
 ---
-title: '#90DaysOfDevOps - Docker Compose - Day 46'
+title: 46 - Docker Compose
 description: 
 toc: true
 authors:
@@ -14,42 +14,42 @@ id: 1048740
 ---
 ## Docker Compose 
 
-The ability to run one container could be great if you have a self contained image that has everything you need for your single use case, where things get interesting is when you are looking to build multiple applications between different container images. For example if I had a website front end but had a requirement for a backend database I could put everything in one container but better and more efficient would be to have its own container for the database. 
+Возможность запуска одного контейнера может быть отличной, если у вас есть самодостаточный образ, в котором есть все, что вам нужно для одного случая использования, но все становится интересным, когда вы ищете возможность создания нескольких приложений между различными образами контейнеров. Например, если у меня есть фронт-энд сайта, но есть потребность в базе данных бэкенда, я могу поместить все в один контейнер, но лучше и эффективнее было бы иметь собственный контейнер для базы данных. 
 
-This is where Docker compose comes in which is a tool that allows you to run more complex apps over multiple containers. With the benefit of being able to use a single file and command to spin up your application. The example I am going to walkthrough in this post is from the [Docker QuickStart sample apps (Quickstart: Compose and WordPress)](https://docs.docker.com/samples/wordpress/).
+Именно здесь на помощь приходит Docker compose - инструмент, позволяющий запускать более сложные приложения в нескольких контейнерах. Преимущество заключается в том, что для запуска приложения можно использовать один файл и команду. Пример, который я собираюсь рассмотреть в этой заметке, взят из [Docker QuickStart sample apps (Quickstart: Compose and WordPress)] (https://docs.docker.com/samples/wordpress/).
 
-In this first example we are going to: 
+В этом первом примере мы собираемся: 
 
-- Use Docker compose to bring up WordPress and a separate MySQL instance. 
-- Use a YAML file which will be called `docker-compose.yml`
-- Build the project 
-- Configure WordPress via a Browser
-- Shutdown and Clean up
+- Использовать Docker compose для создания WordPress и отдельного экземпляра MySQL. 
+- Использовать YAML файл, который будет называться `docker-compose.yml`.
+- Соберите проект 
+- Настроить WordPress через браузер
+- Выключение и очистка
 
-### Install Docker Compose 
-As mentioned Docker Compose is a tool, If you are on macOS or Windows then compose is included in your Docker Desktop installation. However you might be wanting to run your containers on a Windows server host or Linux server and in which case you can install using these instructions [Install Docker Compose](https://docs.docker.com/compose/install/) 
+### Установка Docker Compose 
+Как уже упоминалось, Docker Compose - это инструмент, если вы работаете на macOS или Windows, то compose включен в вашу установку Docker Desktop. Однако вы можете захотеть запустить свои контейнеры на сервере Windows или Linux, и в этом случае вы можете установить их, используя эти инструкции [Install Docker Compose](https://docs.docker.com/compose/install/). 
 
-To confirm we have `docker-compose` installed on our system we can open a terminal and simply type the above command. 
+Чтобы убедиться, что `docker-compose` установлен в нашей системе, мы можем открыть терминал и просто ввести приведенную выше команду. 
 
 ![](../images/Day46_Containers1.png?v1)
 
 ### Docker-Compose.yml (YAML)
 
-The next thing to talk about is the docker-compose.yml which you can find in the container folder of the repository. But more importantly we need to discuss YAML in general a little. 
+Следующее, о чем нужно поговорить, это docker-compose.yml, который вы можете найти в папке container репозитория. Но что более важно, нам нужно немного обсудить YAML в целом. 
 
-YAML could almost have its own session as you are going to find it in so many different places. But for the most part 
+YAML можно было бы посвятить отдельную сессию, поскольку вы можете встретить его в самых разных местах. Но по большей части 
 
-"YAML is a human-friendly data serialization language for all programming languages."
+"YAML - это удобный для человека язык сериализации данных для всех языков программирования".
 
-It is commonly used for configuration files and in some applications where data is being stored or transmitted. You have no doubt come across XML files that tend to offer that same configuration file. YAML provides a minimal syntax but is aimed at those same use cases. 
+Он обычно используется для файлов конфигурации и в некоторых приложениях, где данные хранятся или передаются. Вы, несомненно, сталкивались с XML-файлами, которые обычно предлагают тот самый файл конфигурации. YAML предоставляет минимальный синтаксис, но нацелен на те же случаи использования. 
 
-YAML Ain't Markup Language (YAML) is a serialisation language that has steadily increased in popularity over the last few years. The object serialisation abilities make it a viable replacement for languages like JSON.
+YAML Ain't Markup Language (YAML) - это язык сериализации, популярность которого неуклонно растет в течение последних нескольких лет. Возможности сериализации объектов делают его реальной заменой таким языкам, как JSON.
 
-The YAML acronym was shorthand for Yet Another Markup Language. But the maintainers renamed it to YAML Ain't Markup Language to place more emphasis on its data-oriented features.
+Аббревиатура YAML была сокращением от Yet Another Markup Language. Но сопровождающие переименовали его в YAML Ain't Markup Language, чтобы сделать больший акцент на его функциях, ориентированных на данные.
 
-Anyway, back to the docker-compose.yml file. This is a configuration file of what we want to do when it comes to multiple containers being deployed on our single system. 
+В любом случае, вернемся к файлу docker-compose.yml. Это файл конфигурации того, что мы хотим сделать, когда речь идет о развертывании нескольких контейнеров на нашей единой системе. 
 
-Straight from the tuturial linked above you can see the contents of the file looks like this: 
+Прямо из приведенного выше руководства вы можете увидеть, что содержимое файла выглядит следующим образом:  
 
 ```
 version: "3.9"
@@ -85,93 +85,93 @@ volumes:
   wordpress_data: {}
 ```
 
-We declare a version and then a large part of this docker-compose.yml file is made up of our services, we have a db service and a wordpress service. You can see each of those have an image defined wiht a version tag associated. We are now also introducing state into our configuration unlike our first walkthroughs, but now we are going to create volumes so we can store our databases there. 
+Мы объявляем версию, а затем большая часть этого файла docker-compose.yml состоит из наших служб, у нас есть служба db и служба wordpress. Вы можете видеть, что для каждого из них определено изображение, с которым связан тег версии. В отличие от наших первых прохождений, сейчас мы также вводим состояние в нашу конфигурацию, но теперь мы собираемся создать тома, чтобы мы могли хранить там наши базы данных. 
 
-We then have some environmental variables such as passwords and usernames. Obviously these files can get very complicated but the YAML configuration file simplifies what these look like overall. 
+Затем у нас есть некоторые переменные окружения, такие как пароли и имена пользователей. Очевидно, что эти файлы могут стать очень сложными, но конфигурационный файл YAML упрощает то, как они выглядят в целом. 
 
-### Build the project 
+### Сборка проекта 
 
-Next up we can head back into our terminal and we can use some commands with our docker-compose tool. Navigate to your directory, where your docker-compose.yml file is located. 
+Далее мы можем вернуться в терминал и использовать некоторые команды с помощью нашего инструмента docker-compose. Перейдите в каталог, где находится ваш файл docker-compose.yml. 
 
-From the terminal we can simply run `docker-compose up -d` this will start the process of pulling those images and standing up your multi container application. 
+В терминале мы можем просто выполнить команду `docker-compose up -d`, которая запустит процесс извлечения образов и создания вашего многоконтейнерного приложения. 
 
-The `-d` in this command means detached mode, which means that the Run command is or will be in the background.
+Символ `-d` в этой команде означает отделенный режим, что означает, что команда Run выполняется или будет выполняться в фоновом режиме.
 
 ![](../images/Day46_Containers2.png?v1)
 
-If we now run the `docker ps` command, you can see we have 2 containers running, one being wordpress and the other being mySQL. 
+Если теперь мы выполним команду `docker ps`, вы увидите, что у нас запущено 2 контейнера, один из которых - wordpress, а другой - mySQL. 
 
 ![](../images/Day46_Containers3.png?v1)
 
-Next we can validate that we have WordPress up and running by opening a browser and going to `http://localhost:8000` and you should see the wordpress set up page. 
+Далее мы можем проверить, что у нас запущен WordPress, открыв браузер и перейдя по адресу `http://localhost:8000`, вы должны увидеть страницу установки wordpress. 
 
 ![](../images/Day46_Containers4.png?v1)
 
-We can run through the setup of WordPress, and then we can start building our website as we see fit in the console below. 
+Мы можем выполнить настройку WordPress, а затем начать создавать наш сайт по своему усмотрению в консоли ниже. 
 
 ![](../images/Day46_Containers5.png?v1)
 
-If we then open a new tab and navigate to that same address we did before `http://localhost:8000` we will now see a simple default theme with our site title "90DaysOfDevOps" and then a sample post. 
+Если мы откроем новую вкладку и перейдем по тому же адресу, что и раньше `http://localhost:8000`, то увидим простую тему по умолчанию с названием нашего сайта "90DaysOfDevOps", а затем образец поста. 
 
 ![](../images/Day46_Containers6.png?v1)
 
-Before we make any changes, open Docker Desktop and navigate to the volumes tab and here you will see two volumes associated to our containers, one for wordpress and one for db. 
+Прежде чем мы сделаем какие-либо изменения, откройте Docker Desktop и перейдите на вкладку volumes, здесь вы увидите два тома, связанных с нашими контейнерами, один для wordpress и один для db. 
 
 ![](../images/Day46_Containers7.png?v1)
 
-My Current theme for wordpress is "Twenty Twenty-Two" and I want to change this to "Twenty Twenty" Back in the dashboard we can make those changes. 
+Моя текущая тема для wordpress - "Twenty Twenty-Two", и я хочу изменить ее на "Twenty Twenty" Вернувшись в панель управления, мы можем внести эти изменения. 
 
 ![](../images/Day46_Containers8.png?v1)
 
-I am also going to add a new post to my site, and here below you see the latest version of our new site. 
+Я также собираюсь добавить новый пост на свой сайт, и здесь ниже вы видите последнюю версию нашего нового сайта. 
 
-![](../images/Day46_Containers9.png?v1)
+![](../images/Day46_Containers9.png?v1) 
 
-### Clean Up or not
+### Очищать или нет
 
-If we were now to use the command `docker-compose down` this would bring down our containers. But will leave our volumes in place. 
+Если мы сейчас используем команду `docker-compose down`, это приведет к остановке наших контейнеров. Но наши тома останутся на месте. 
 
 ![](../images/Day46_Containers10.png?v1)
 
-We can just confirm in Docker Desktop that our volumes are still there though. 
+Мы можем просто подтвердить в Docker Desktop, что наши тома все еще там. 
 
 ![](../images/Day46_Containers11.png?v1)
 
-If we then want to bring things back up then we can issue the `docker up -d` command from within the same directory and we have our application back up and running. 
+Если мы захотим вернуть все обратно, мы можем выполнить команду `docker up -d` из той же директории, и наше приложение снова будет запущено. 
 
 ![](../images/Day46_Containers12.png?v1)
 
-We then navigate in our browser to that same address of `http://localhost:8000` and notice that our new post and our theme change is all still in place. 
+Затем мы переходим в браузере по тому же адресу `http://localhost:8000` и замечаем, что наш новый пост и смена темы все еще на месте. 
 
 ![](../images/Day46_Containers13.png?v1)
 
-If we want to get rid of the containers and those volumes then issueing the `docker-compose down --volumes` will also destroy the volumes. 
+Если мы хотим избавиться от контейнеров и этих томов, то выполнение команды `docker-compose down --volumes` также уничтожит тома. 
 
 ![](../images/Day46_Containers14.png?v1)
 
-Now when we use `docker-compose up -d` again we will be starting again, however the images will still be local on our system so you won't need to re pull them from the DockerHub repository. 
+Теперь, когда мы снова используем `docker-compose up -d`, мы начнем все сначала, однако образы все еще будут локальными в нашей системе, поэтому вам не нужно будет повторно брать их из репозитория DockerHub. 
 
-I know that when I started diving into docker-compose and its capabilities I was then confused as to where this sits alongside or with Container Orchestration tools such as Kubernetes, well everything we have done here in this short demo is focused on one host we have wordpress and db running on the local desktop machine. We don't have multiple virtual machines or multiple physical machines, we also don't have the ability to easily scale up and down the requirements of our application. 
+Я знаю, что когда я начал погружаться в docker-compose и его возможности, я был в замешательстве относительно того, где он находится рядом с инструментами оркестровки контейнеров, такими как Kubernetes, ну, все, что мы сделали здесь в этой короткой демонстрации, сосредоточено на одном хосте, у нас есть wordpress и db, запущенные на локальной настольной машине. У нас нет нескольких виртуальных машин или нескольких физических машин, у нас также нет возможности легко увеличивать и уменьшать требования нашего приложения. 
 
-Our next section is going to cover Kubernetes but we have a few more days of Containers in general first. 
+В следующем разделе мы рассмотрим Kubernetes, но сначала у нас есть еще несколько дней, посвященных контейнерам в целом. 
 
-This is also a great resource for samples of docker compose applications with multiple integrations. [Awesome-Compose](https://github.com/docker/awesome-compose)
+Это также отличный ресурс для примеров приложений docker compose с множеством интеграций. [Awesome-Compose](https://github.com/docker/awesome-compose).
 
-In the above repository there is a great example which will deploy an Elasticsearch, Logstash, and Kibana (ELK) in single-node. 
+В вышеупомянутом репозитории есть отличный пример, который развернет Elasticsearch, Logstash и Kibana (ELK) на одном узле. 
 
-I have uploaded the files to the [Containers folder](/Days/Containers/elasticsearch-logstash-kibana/) When you have this folder locally, navigate there and you can simply use `docker-compose up -d` 
+Я загрузил файлы в папку [Containers](https://github.com/MichaelCade/90DaysOfDevOps/tree/main/Days/Containers/elasticsearch-logstash-kibana) Когда у вас есть эта папка локально, перейдите туда и вы можете просто использовать `docker-compose up -d`. 
 
 ![](../images/Day46_Containers15.png?v1)
 
-We can then check we have those running containers with `docker ps` 
+Затем мы можем проверить наличие запущенных контейнеров с помощью `docker ps`. 
 
 ![](../images/Day46_Containers16.png?v1)
 
-Now we can open a browser for each of containers: 
+Теперь мы можем открыть браузер для каждого из контейнеров: 
 
 ![](../images/Day46_Containers17.png?v1)
 
-To remove everything we can use the `docker-compose down` command. 
+Чтобы удалить все, мы можем использовать команду `docker-compose down`.  
 
 ## Ресурсы 
 
@@ -183,4 +183,3 @@ To remove everything we can use the `docker-compose down` command.
 - [Docker documentation for building an image](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 - [YAML Tutorial: Everything You Need to Get Started in Minute](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started)
 
-See you on [Day 47](../day47) 

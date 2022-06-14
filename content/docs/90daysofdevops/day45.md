@@ -1,5 +1,5 @@
 ---
-title: '#90DaysOfDevOps - The anatomy of a Docker Image - Day 45'
+title: 45 - Что из себя представляет оьбраз Docker
 description: 
 toc: true
 authors:
@@ -12,70 +12,71 @@ featuredImage:
 draft: false
 id: 1048777
 ---
-## The anatomy of a Docker Image
+## Анатомия образа Docker
 
-In the last session we covered some basics of how we can use Docker Desktop combined with DockerHub to deploy and run some verified images. A recap on what an image is, you won't forget things if I keep mentioning. 
+На прошлом занятии мы рассмотрели некоторые основы использования Docker Desktop в сочетании с DockerHub для развертывания и запуска некоторых проверенных образов. Вкратце о том, что такое образ, вы не забудете, если я продолжу упоминать. 
 
-A Docker image is a read-only template that contains a set of instructions for creating a container that can run on the Docker platform. It provides a convenient way to package up applications and preconfigured server environments, which you can use for your own private use or share publicly with other Docker users. Docker images are also the starting point for anyone using Docker for the first time.
+Образ Docker - это шаблон, доступный только для чтения, содержащий набор инструкций для создания контейнера, который может работать на платформе Docker. Это удобный способ упаковки приложений и предварительно сконфигурированных серверных сред, которые вы можете использовать для личного пользования или публично делиться ими с другими пользователями Docker. Образы Docker также являются отправной точкой для тех, кто впервые использует Docker.
 
-What happens if we want to create our own Docker image? For us to do this we would create a Dockerfile. You saw how we could take that Ubuntu container image and we could add our software and we would have our container image with the software that we wanted and everything is good, however if that container is shut down or thrown away then all those software updates and installations go away there is no repeatable version of what we had done. So that is great for showing off the capabilities but it doesn't help with the transport of images across multiple environments with the same set of software installed each time the container is ran. 
+Что произойдет, если мы захотим создать свой собственный образ Docker? Для этого мы создадим Dockerfile. Вы видели, как мы могли взять образ контейнера Ubuntu и добавить наше программное обеспечение, и у нас получился образ контейнера с программным обеспечением, которое мы хотели, и все хорошо, но если этот контейнер выключить или выбросить, то все эти обновления и установки программного обеспечения пропадут, и не будет повторяющейся версии того, что мы сделали. Это отлично подходит для демонстрации возможностей, но не помогает при транспортировке образов в несколько сред с одним и тем же набором программного обеспечения, устанавливаемого при каждом запуске контейнера. 
+****
+### Что такое Dockerfile 
 
-### What is a Dockerfile 
+Dockerfile - это текстовый файл, содержащий команды, которые обычно выполняются вручную для создания образа docker. Docker может собирать образы автоматически, читая инструкции, содержащиеся в нашем dockerfile.
 
-A dockerfile is a text file that contains commands you would normally execute manually in order to build a docker image. Docker can build images automatically by reading the instructions we have in our dockerfile.
+Каждый из файлов, составляющих образ docker, называется слоем. Эти слои образуют серию образов, поэтапно создаваемых друг над другом. Каждый слой зависит от слоя, расположенного непосредственно под ним. Порядок расположения слоев является ключевым фактором эффективности управления жизненным циклом образов docker. 
 
-Each of the files that make up a docker image is known as a layer. these layers form a series of images, built on top of each other in stages. Each layer is dependant on the layer immediatly below it. The order of your layers is key to the effciency of the lifecycle management of your docker images. 
+Мы должны расположить слои, которые меняются чаще всего, как можно выше в стеке, потому что при внесении изменений в слой образа Docker перестраивает не только этот слой, но и все слои, созданные на его основе. Поэтому изменение слоя на самом верху требует наименьшего объема работы по пересборке всего образа. 
 
-We should organise our layers that change most often as high in the stack as possible, this is because when you make changes to a layer in your image, Docker not only rebuilds that particular layer but all layers built from it. Therefore a change to a layer at the top involves the least amount of work to rebuild the entire image. 
+Каждый раз, когда docker запускает контейнер из образа (как мы делали вчера), он добавляет слой, доступный для записи, известный как слой контейнера. В нем хранятся все изменения, вносимые в контейнер в течение всего времени его работы. Этот слой - единственное различие между работающим контейнером и исходным образом. Любое количество подобных контейнеров может иметь общий доступ к одному и тому же базовому образу, сохраняя при этом свое индивидуальное состояние. 
 
-Each time docker launches a container from an image (like we ran yesterday) it adds a writeable layer, known as the container layer. This stores all changes to the container throughout its runtime. This layer is the only difference between a live operational container and the source image itself. Any number of like for like containers can share access to the same underlying image while maintaining their own individual state. 
-
-Back to the example we used yesterday with the Ubuntu image. We could run that same command multiple times and on the first container we could go and install pinta and on the second we could install figlet two different applications, different purpose, different size etc etc. Each container that we deployed share the same image but not the same state and then that state is then gone when we remove the container. 
+Вернемся к примеру, который мы использовали вчера с образом Ubuntu. Мы можем выполнить одну и ту же команду несколько раз и на первый контейнер установить pinta, а на второй - figlet. Это два разных приложения, разного назначения, разного размера и т.д. и т.п.. Каждый контейнер, который мы установили, имеет один и тот же образ, но не одно и то же состояние, и это состояние исчезает, когда мы удаляем контейнер. 
 
 ![](../images/Day45_Containers1.png?v1)
 
-Following the example above with the Ubuntu image, but also many other ready built container images available on DockerHub and other third party repositories. These images are generally known as the parent image. It is the foundations upon which all other layers are build and provides the basic building blocks for our container environments. 
+В приведенном выше примере используется образ Ubuntu, но также существует множество других готовых образов контейнеров, доступных на DockerHub и в других сторонних репозиториях. Эти образы обычно называют родительским образом. Это фундамент, на котором строятся все остальные слои, и базовые строительные блоки для наших контейнерных сред. 
 
-Together with a set of individual layer files, a Docker image also includes an additional file known as a manifest. This is essentially a description of the image in JSON format and comprises information such as image tags, a digital signature, and details on how to configure the container for different types of host platforms.
+Наряду с набором отдельных файлов слоев, образ Docker также включает дополнительный файл, известный как манифест. Это, по сути, описание образа в формате JSON, содержащее такую информацию, как теги образа, цифровая подпись и подробные сведения о том, как настроить контейнер для различных типов хост-платформ. 
 
 ![](../images/Day45_Containers2.png?v1)
 
-### How to create a docker image 
+### Как создать образ docker 
 
- There are two ways we can create a docker image. We can do it a little on the fly with the process that we started yesterday, we pick our base image we spin up that container, we install all of the software and depenancies that we wish to have on our container. 
+ Есть два способа создания образа docker. Мы можем сделать это на лету, используя процесс, который мы начали вчера, мы выбираем наш базовый образ, раскручиваем контейнер, устанавливаем все программное обеспечение и депенансы, которые мы хотим иметь на нашем контейнере. 
 
- Then we can use the `docker commit container name` then we have a local copy of this image under docker images and in our docker desktop images tab. 
+ Затем мы можем использовать команду `docker commit container name`, после чего у нас будет локальная копия этого образа в разделе docker images и на вкладке docker desktop images. 
 
- Super simple, I would not recommend this method unless you want to understand the process, it is going to be very difficult to manage lifecycle management this way and a lot of manual configuration/reconfiguration. But it is the quickest and most simple ways to build a docker image. Great for testing, troubleshooting, validating dependencies etc. 
+ Супер просто, я бы не рекомендовал этот метод, если вы не хотите понять процесс, будет очень сложно управлять жизненным циклом таким образом и много ручной настройки/переконфигурации. Но это самый быстрый и простой способ создания образа docker. Отлично подходит для тестирования, устранения неполадок, проверки зависимостей и т.д. 
 
-The way we intend to build our image is through a dockerfile. Which gives us a clean, compact and repeatable way to create our images. Much easier lifecycle management and easy integration into Continous integration and Continous delivery procesess. But as you might gathered it is a little more difficult than the first mentioned process. 
+Мы собираемся создать наш образ с помощью dockerfile. Это дает нам чистый, компактный и повторяемый способ создания образов. Намного проще управлять жизненным циклом и легко интегрировать в процессы непрерывной интеграции и непрерывной доставки. Но, как вы уже поняли, это немного сложнее, чем первый упомянутый процесс. 
 
-Using the dockerfile method is much more in tune with real-world, enterprise grade container deployments. 
+Использование метода dockerfile гораздо больше соответствует реальным развертываниям контейнеров корпоративного уровня. 
 
-A dockerfile is a three-step process whereby you create the dockerfile and add the commands you need to assemble the image. 
+Создание dockerfile - это трехэтапный процесс, в ходе которого вы создаете dockerfile и добавляете команды, необходимые для сборки образа. 
 
-The following table shows some of the dockerfile statements we will be using or that you will most likely be using. 
-
-| Command    | Purpose                                                                                                                                     |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| FROM       | To specify the parent image.                                                                                                                |
-| WORKDIR    | To set the working directory for any commands that follow in the Dockerfile.                                                                |
-| RUN        | To install any applications and packages required for your container.                                                                       |
-| COPY       | To copy over files or directories from a specific location.                                                                                 |
-| ADD        | As COPY, but also able to handle remote URLs and unpack compressed files.                                                                   |
-| ENTRYPOINT | Command that will always be executed when the container starts. If not specified, the default is /bin/sh -c                                 |
-| .md       | Arguments passed to the entrypoint. If ENTRYPOINT is not set (defaults to /bin/sh -c), the .mdwill be the commands the container executes. |
-| EXPOSE     | To define which port through which to access your container application.                                                                    |
-| LABEL      | To add metadata to the image.                                                                                                               |
+В следующей таблице приведены некоторые из утверждений dockerfile, которые мы будем использовать или которые вы, скорее всего, будете использовать. 
 
 
-Now we have the detail on how to build our first dockerfile we can create a working directory and create our dockerfile. I have created a working directory within this repository where you can see the files and folders I have to walk through. [Containers](../days/Containers)
 
-In this directory I am going to create a .dockerignore file similar to the .gitignore we used in the last section. This file will list any files that would otherwise be created during the Docker build process, which you want to exclude from the final build.
+| Команда    | Задача                                                                                                                                                                                                                                                                  |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| FROM       | Чтобы указать родительский образ                                                                                                                                                                                                                                        |
+| WORKDIR    | Чтобы задать рабочий каталог для всех последующих команд в Dockerfile.                                                                                                                                                                                                  |
+| RUN        | Для установки любых приложений и пакетов, необходимых для контейнера.                                                                                                                                                                                                   |
+| COPY       | Для копирования файлов или каталогов из определенного места.                                                                                                                                                                                                            |
+| ADD        | Как COPY, но также может работать с удаленными URL и распаковывать сжатые файлы.                                                                                                                                                                                        |
+| ENTRYPOINT | Команда, которая всегда будет выполняться при запуске контейнера. Если она не указана, по умолчанию используется /bin/sh -c. Аргументы, передаваемые точке входа. Если ENTRYPOINT не задан (по умолчанию /bin/sh -c), .md будут командами, которые выполняет контейнер. |
+| EXPOSE     | Для определения порта, через который будет осуществляться доступ к вашему контейнерному приложению.                                                                                                                                                                     |
+| LABEL      | Чтобы добавить метаданные к образу.                                                                                                                                                                                                                                     |
 
-Remember everything about containers is about being compact, as fast as possible with no bloat. 
 
-I want to create a very simple Dockerfile with the below layout also can be found in the folder linked above. 
+Теперь у нас есть подробная информация о том, как создать наш первый dockerfile, мы можем создать рабочий каталог и создать наш dockerfile. Я создал рабочий каталог в этом репозитории, где вы можете увидеть файлы и папки, которые мне предстоит пройти. [Containers](https://github.com/MichaelCade/90DaysOfDevOps/tree/main/Days/Containers)
+
+В этом каталоге я собираюсь создать файл .dockerignore, аналогичный .gitignore, который мы использовали в предыдущем разделе. В этом файле будут перечислены все файлы, которые могут быть созданы в процессе сборки Docker и которые вы хотите исключить из окончательной сборки.
+
+Помните, что все, что связано с контейнерами, - это компактность, максимальная скорость и отсутствие лишнего объема. 
+
+Создадим простой Dockerfile с приведенной ниже схемой, которую также можно найти в папке по ссылке выше. 
 
 ```
 # Use the official Ubuntu 18.04 as base
@@ -86,29 +87,29 @@ RUN apt-get install -y nginx curl
 RUN rm -rf /var/lib/apt/lists/*
 ```
 
-Navigate to this directory in your terminal, and then run `docker build -t 90daysofdevops:0.1 .` we are using the `-t` and then setting an image name and tag. 
+Перейдите в этот каталог в терминале, а затем выполните команду `docker build -t 90daysofdevops:0.1 .` мы используем `-t`, а затем задаем имя и тег изображения. 
 
 ![](../images/Day45_Containers3.png?v1)
 
-Now we have created our image we can then go and run our image using Docker Desktop or we could use the docker command line. I have used Docker Desktop I have fired up a container and you can see that we have `curl` available to us in the cli of the container. 
+Теперь, когда мы создали наш образ, мы можем запустить его с помощью Docker Desktop или командной строки docker. Я использовал Docker Desktop Я запустил контейнер, и вы можете видеть, что у нас есть `curl`, доступный нам в cli контейнера. 
 
 ![](../images/Day45_Containers4.png?v1)
 
-Whilst in Docker Desktop there is also the ability to leverage the UI to do some more tasks with this new image. 
+В Docker Desktop также есть возможность использовать пользовательский интерфейс для выполнения некоторых других задач с этим новым образом. 
 
 ![](../images/Day45_Containers5.png?v1)
 
-We can inspect our image, in doing so you see very much the dockerfile and the lines of code that we wanted to run within our container. 
+Мы можем проинспектировать наш образ, при этом очень хорошо виден dockerfile и строки кода, которые мы хотели запустить в нашем контейнере. 
 
 ![](../images/Day45_Containers6.png?v1)
 
-We have a pull option, now this would fail for us because this image is not hosted anywhere so we would get that as an error. However we do have a Push to hub which would enable us to push our image to DockerHub. 
+У нас есть опция pull, теперь она не работает, потому что это изображение нигде не размещено, поэтому мы получим ошибку. Однако у нас есть Push to hub, который позволит нам отправить наш образ на DockerHub. 
 
-If you are using the same `docker build` we ran earlier then this would not work either, you would need the build command to be `docker build -t {{username}}/{{imagename}}:{{version}}`
+Если вы используете ту же `docker build`, которую мы запустили ранее, то это тоже не сработает, вам понадобится команда сборки `docker build -t {{username}}/{{imagename}}:{{version}}`.
 
 ![](../images/Day45_Containers7.png?v1)
 
-Then if we go and take a look in our DockerHub repository you can see that we just pushed a new image. Now in Docker Desktop we would be able to use that pull tab. 
+Если мы посмотрим на наш репозиторий DockerHub, то увидим, что мы только что выложили новый образ. Теперь в Docker Desktop мы сможем использовать эту вкладку pull. 
 
 ![](../images/Day45_Containers8.png?v1)
 
@@ -122,4 +123,3 @@ Then if we go and take a look in our DockerHub repository you can see that we ju
 - [Blog on gettng started building a docker image](https://stackify.com/docker-build-a-beginners-guide-to-building-docker-images/)
 - [Docker documentation for building an image](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 
-See you on [Day 46](../day46) 

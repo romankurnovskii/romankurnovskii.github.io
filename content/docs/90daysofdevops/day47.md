@@ -1,5 +1,5 @@
 ---
-title: '#90DaysOfDevOps - Docker Networking & Security - Day 47'
+title: 47 - Сетевое взаимодействие Docker и безопасность
 description: 
 toc: true
 authors:
@@ -14,120 +14,119 @@ id: 1049078
 ---
 ## Docker Networking & Security
 
-During this container session so far we have made things happen but we have not really looked at how things have worked behind the scenes either from a networking point of view but also we have not touched on security, that is the plan for this session. 
+Во время этой сессии по контейнерам мы уже кое-что сделали, но не рассмотрели, как все работает за кулисами с точки зрения сетевых технологий, а также не затронули безопасность, поэтому мы планируем эту сессию. 
 
-### Docker Networking Basics 
+### Основы сетевого взаимодействия Docker 
 
-Open a terminal, and type the command `docker network` this is the main command for configuring and managing container networks. 
+Откройте терминал и введите команду `docker network` - это основная команда для настройки и управления сетями контейнеров. 
 
-From the below you can see this is how we can use the command, and all of the sub commands available. We can create new networks, list existing, inspect and remove networks. 
+Ниже показано, как мы можем использовать эту команду и все доступные подкоманды. Мы можем создавать новые сети, составлять список существующих, проверять и удалять сети. 
 
 ![](../images/Day47_Containers1.png?v1)
 
-Lets take a look at the existing networks we have since our installation, so the out of box Docker networking looks like using the `docker network list` command. 
+Давайте посмотрим на существующие сети, которые у нас есть с момента установки, поэтому из коробки Docker networking выглядит как использование команды `docker network list`. 
 
-Each network gets a unique ID and NAME. Each network is also associated with a single driver. Notice that the "bridge" network and the "host" network have the same name as their respective drivers.
+Каждая сеть получает уникальный ID и NAME. Каждая сеть также связана с одним драйвером. Обратите внимание, что сеть "bridge" и сеть "host" имеют те же имена, что и их соответствующие драйверы.
 
 ![](../images/Day47_Containers2.png?v1)
 
-Next we can take a deeper look into our networks with the `docker network inspect` command. 
+Далее мы можем более детально рассмотреть наши сети с помощью команды `docker network inspect`. 
 
-With me running `docker network inspect bridge` I can get all the configuration details of that specific network name. This includes name, ID, drivers, connected containers and as you can see quite a lot more. 
+Запустив команду `docker network inspect bridge`, я могу получить все детали конфигурации конкретного имени сети. Сюда входят имя, ID, драйверы, подключенные контейнеры и, как вы можете видеть, многое другое. 
 
 ![](../images/Day47_Containers3.png?v1)
 
 ### Docker: Bridge Networking 
 
-As you have seen above a standard installation of Docker Desktop gives us a pre-built network called `bridge` If you look back up to the `docker network list` command, you will see that the networked called bridge is associated with the `bridge` driver. Just because they have the same name doesn't they are the same thing. Connected but not the same thing. 
+Как вы видели выше, стандартная установка Docker Desktop дает нам предварительно созданную сеть под названием `bridge` Если вы обратитесь к команде `docker network list`, то увидите, что сеть под названием bridge связана с драйвером `bridge`. То, что у них одинаковое имя, не означает, что это одно и то же. Связаны, но не одно и то же. 
 
-The output above also shows that the bridge network is scoped locally. This means that the network only exists on this Docker host. This is true of all networks using the bridge driver - the bridge driver provides single-host networking.
+Вывод выше также показывает, что сеть bridge имеет локальную привязку. Это означает, что сеть существует только на этом хосте Docker. Это справедливо для всех сетей, использующих драйвер моста - драйвер моста обеспечивает работу сети на одном хосте.
 
-All networks created with the bridge driver are based on a Linux bridge (a.k.a. a virtual switch).
+Все сети, созданные с помощью драйвера моста, основаны на мосте Linux (он же виртуальный коммутатор).
 
-### Connect a Container
+### Подключение контейнера
 
-By default the bridge network is assigned to new containers, meaning unless you specify a network all containers will be connected to the bridge network. 
+По умолчанию новым контейнерам назначается сеть bridge, то есть, если вы не укажете сеть, все контейнеры будут подключены к сети bridge. 
 
-Lets create a new container with the command `docker run -dt ubuntu sleep infinity`
+Давайте создадим новый контейнер командой `docker run -dt ubuntu sleep infinity`.
 
-The sleep command above is just going to keep the container running in the background so we can mess around with it. 
+Команда sleep выше просто будет поддерживать работу контейнера в фоновом режиме, чтобы мы могли возиться с ним. 
 
 ![](../images/Day47_Containers4.png?v1)
 
-If we then check our bridge network with `docker network inspect bridge` you will see that we have a container matching what we have just deployed because we did not specify a network. 
+Если мы затем проверим нашу сеть моста с помощью `docker network inspect bridge`, вы увидите, что у нас есть контейнер, соответствующий тому, что мы только что развернули, потому что мы не указали сеть. 
 
 ![](../images/Day47_Containers5.png?v1)
 
-We can also dive into the container using `docker exec -it 3a99af449ca2 bash` you will have to use `docker ps` to get your container ID. 
+Мы также можем погрузиться в контейнер, используя `docker exec -it 3a99af449ca2 bash`, вам придется использовать `docker ps`, чтобы получить идентификатор контейнера. 
 
-From here our image doesn't have anything to ping so we need to run the following command.`apt-get update && apt-get install -y iputils-ping` then ping an external interfacing address. `ping -c5 www.90daysofdevops.com`
+Отсюда наш образ не имеет ничего для пинга, поэтому нам нужно выполнить следующую команду.`apt-get update && apt-get install -y iputils-ping` затем пингуем внешний адрес интерфеса. `ping -c5 www.90daysofdevops.com`
 
 ![](../images/Day47_Containers6.png?v1)
 
-To clear this up we can run `docker stop 3a99af449ca2` again use `docker ps` to find your container ID but this will remove our container. 
+Чтобы устранить эту проблему, мы можем запустить `docker stop 3a99af449ca2` и снова использовать `docker ps` для поиска ID вашего контейнера, но это приведет к удалению нашего контейнера. 
+### Настройте NAT для внешнего подключения 
 
-### Configure NAT for external connectivity 
+На этом шаге мы запустим новый контейнер NGINX и назначим порт 8080 на хосте Docker на порт 80 внутри контейнера. Это означает, что трафик, поступающий на хост Docker по порту 8080, будет передаваться на порт 80 внутри контейнера.
 
-In this step we'll start a new NGINX container and map port 8080 on the Docker host to port 80 inside of the container. This means that traffic that hits the Docker host on port 8080 will be passed on to port 80 inside the container.
-
-Start a new container based off the official NGINX image by running `docker run --name web1 -d -p 8080:80 nginx`
+Запустите новый контейнер на основе официального образа NGINX, выполнив команду `docker run --name web1 -d -p 8080:80 nginx`.
 
 ![](../images/Day47_Containers7.png?v1)
 
 
-Review the container status and port mappings by running `docker ps`
+Просмотрите состояние контейнера и сопоставление портов, выполнив команду `docker ps`.
 
 ![](../images/Day47_Containers8.png?v1)
 
-The top line shows the new web1 container running NGINX. Take note of the command the container is running as well as the port mapping - `0.0.0.0:8080->80/tcp` maps port 8080 on all host interfaces to port 80 inside the web1 container. This port mapping is what effectively makes the containers web service accessible from external sources (via the Docker hosts IP address on port 8080).
+Верхняя строка показывает новый контейнер web1, запущенный NGINX. Обратите внимание на команду, которую запускает контейнер, а также на сопоставление портов - `0.0.0.0:8080->80/tcp` сопоставляет порт 8080 на всех интерфейсах хоста с портом 80 внутри контейнера web1. Это сопоставление портов делает веб-сервис контейнера доступным из внешних источников (через IP-адрес хоста Docker на порту 8080).
 
-Now we need our IP address for our actual host, we can do this by going into our WSL terminal and using the `ip addr` command. 
+Теперь нам нужен IP-адрес нашего реального хоста, мы можем сделать это, зайдя в терминал WSL и используя команду `ip addr`. 
 
 ![](../images/Day47_Containers9.png?v1)
 
-Then we can take this IP and open a browser and head to `http://172.25.218.154:8080/` Your IP might be different. This confirms that NGINX is accessible. 
+Затем мы можем взять этот IP, открыть браузер и перейти по адресу `http://172.25.218.154:8080/` Ваш IP может быть другим. Это подтверждает, что NGINX доступен. 
 
 ![](../images/Day47_Containers10.png?v1)
 
-I have taken these instructions from this site from way back in 2017 DockerCon but they are still relevant today. However the rest of the walkthrough goes into Docker Swarm and I am not going to be looking into that here. [Docker Networking - DockerCon 2017](https://github.com/docker/labs/tree/master/dockercon-us-2017/docker-networking)
+Я взял эти инструкции с этого сайта с далекого 2017 DockerCon, но они актуальны и сегодня. Однако остальная часть руководства посвящена Docker Swarm, и я не собираюсь рассматривать его здесь. [Docker Networking - DockerCon 2017](https://github.com/docker/labs/tree/master/dockercon-us-2017/docker-networking)
 
-### Securing your containers 
+### Обеспечение безопасности контейнеров 
 
-Containers provide a secure environment for your workloads vs a full server configuration. They offer the ability to break up your applications into much smaller, loosly coupled components each isolated from one another which helps resude the attack surface overall. 
+Контейнеры обеспечивают безопасную среду для рабочих нагрузок по сравнению с полной конфигурацией сервера. Они позволяют разбить ваши приложения на более мелкие, слабо связанные компоненты, изолированные друг от друга, что помогает уменьшить поверхность атаки в целом. 
 
-But they are not immune from hackers that are looking to exploit systems. We still need to understand the security pitfalls of the technology and maintain best practices. 
+Но они не застрахованы от хакеров, которые хотят использовать системы в своих целях. Нам по-прежнему необходимо понимать подводные камни безопасности этой технологии и придерживаться лучших практик. 
 
-### Move away from root permission 
+### Откажитесь от прав root 
 
-All of the containers we have deployed have been using the root permission to the process within your containers. Which means they have full administrative access to your container and host environments. Now for the purposes of walking through we knew these systems were not going to be up and running for long. But you saw how easy it was to get up and running. 
+Все контейнеры, которые мы развернули, использовали права root для процессов внутри контейнеров. Это означает, что они имеют полный административный доступ к вашим контейнерам и хост-средам. Теперь для целей прохождения мы знали, что эти системы не будут работать долго. Но вы видели, как легко их запустить. 
 
-We can add a few steps to our process to enable non root users to be our preferred best practice. When creating our dockerfile we can create user accounts. You can find this example also in the containers folder in the repository. 
+Мы можем добавить несколько шагов к нашему процессу, чтобы дать возможность не root-пользователям быть предпочтительной лучшей практикой. При создании нашего dockerfile мы можем создать учетные записи пользователей. Вы можете найти этот пример также в папке containers в репозитории. 
 
 ```
-# Use the official Ubuntu 18.04 as base
+# Используем официальную версию Ubuntu 18.04 в качестве базовой
 FROM ubuntu:18.04
 RUN apt-get update && apt-get upgrade -y
 RUN groupadd -g 1000 basicuser && useradd -r -u 1000 -g basicuser basicuser
-USER basicuser
+пользователь basicuser
 ```
 
-We can also use `docker run --user 1009 ubuntu` the Docker run command overrides any user specified in your Dockerfile. Therefore, in the following example, your container will always run with the least privilege—provided user identifier 1009 also has the lowest permission level.
+Мы также можем использовать `docker run --user 1009 ubuntu` Команда Docker run переопределяет любого пользователя, указанного в вашем Dockerfile. Поэтому в следующем примере ваш контейнер всегда будет запускаться с наименьшими привилегиями при условии, что идентификатор пользователя 1009 также имеет самый низкий уровень прав.
 
-However, this method doesn’t address the underlying security flaw of the image itself. Therefore it’s better to specify a non-root user in your Dockerfile so your containers always run securely.
+Однако этот метод не устраняет основной недостаток безопасности самого образа. Поэтому лучше указать в Dockerfile пользователя, не являющегося root, чтобы ваши контейнеры всегда запускались безопасно.
 
-### Private Registry
+### Частный репозитории
 
-Another area we have used heavily is public registries in DockerHub, with a private registry of container images set up by your organisation means that you can host where you wish or there are managed services for this as well, but all in all this gives you complete control of the images available for you and your team. 
+Еще одна область, которую мы активно используем, - это публичные реестры в DockerHub, а частный реестр образов контейнеров, созданный вашей организацией, означает, что вы можете размещать их там, где пожелаете, или же для этого существуют управляемые сервисы, но в целом это дает вам полный контроль над образами, доступными для вас и вашей команды. 
 
-DockerHub is great to give you a baseline, but its only going to be providing you with a basic service where you have to put a lot of trust into the image publisher. 
+DockerHub отлично подходит для создания базового уровня, но он предоставляет только базовый сервис, где вам придется во многом доверять издателю образа. 
 
 ### Lean & Clean 
 
-Have mentioned this throughout, although not related to security. But the size of your container can also affect security in terms of attack surface if you have resources you do not use in your application then you do not need them in your container. 
+Мы уже упоминали об этом, хотя это и не связано с безопасностью. Но размер вашего контейнера также может влиять на безопасность с точки зрения поверхности атаки, если у вас есть ресурсы, которые вы не используете в своем приложении, то они не нужны в вашем контейнере. 
 
-This is also my major concern with pulling the `latest` images because that can bring a lot of bloat to your images as well. DockerHub does show the compressed size for each of the images in a repository. 
+Это также является моей основной проблемой при использовании `последних` образов, потому что это может принести много лишнего в ваши образы. DockerHub показывает сжатый размер для каждого образа в хранилище. 
 
-Checking `docker image` is a great command to see the size of your images. 
+`docker image` - отличная команда для просмотра размера ваших образов.  
 
 ![](../images/Day47_Containers11.png?v1)
 
@@ -141,4 +140,3 @@ Checking `docker image` is a great command to see the size of your images.
 - [Docker documentation for building an image](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 - [YAML Tutorial: Everything You Need to Get Started in Minute](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started)
 
-See you on [Day 48](../day48) 
