@@ -15,6 +15,18 @@ draft: false
 TODO: translate
 ---
 
+## Топ 10 комманд Docker
+1. docker ps — смотрим список запущенных контейнеров
+2. docker pull — загрузка образа
+3. docker build — собирает образ
+4. docker logs — смотрим логи
+5. docker run — запускаем контейнер
+6. docker stop — останавливает контейнер
+7. docker kill — «убивает» контейнер
+8. docker rm — удаляет контейнер
+9. docker rmi — удаляет образ
+10. docker volume ls — список томов
+
 ## docker build
 [Документация](https://docs.docker.com/engine/reference/commandline/build/)
 Построить образ из Dockerfile.
@@ -42,7 +54,7 @@ docker build -t my-org:my-image -f /tmp/Dockerfile
 ## docker run
 [Документация](https://docs.docker.com/engine/reference/commandline/run/)
 
-Создает и запускает контейнер за один операционный шаг. 
+Создает и запускает контейнер за один операционный шаг
 
 ### Примеры
 
@@ -81,7 +93,7 @@ docker exec [CONTAINER ID] touch /tmp/exec_works
 ```
 ## docker images
 [Документация](https://docs.docker.com/engine/reference/commandline/images/)
-список всех загруженных/созданных образов
+Вывести список всех загруженных/созданных образов
 
 ```sh
 docker images
