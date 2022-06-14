@@ -24,7 +24,7 @@ module.exports = {
       }],
       'tiny': '.875rem',
       'base': ['1rem', {
-        lineHeight: '1.4',
+        lineHeight: '1.2',
       }],
       'lg': '1.125rem',
       'xl': '1.25rem',
