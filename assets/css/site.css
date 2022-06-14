@@ -1,3 +1,4 @@
+
 .sticky-toc {
   @apply sticky top-24 z-0 duration-300 ease-in-out;
 }
@@ -11,7 +12,11 @@
 }
 
 .sticky-toc ul {
-  @apply ps-8 text-tertiary-text list-disc text-base;
+  @apply ps-0.5 text-tertiary-text  text-base ;
+}
+
+.sticky-toc ul > li {
+  @apply ps-2 py-0.5;
 }
 
 .sticky-toc ol {
