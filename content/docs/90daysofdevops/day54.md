@@ -202,22 +202,10 @@ Helm so far seems to be the go-to way to get different test applications downloa
 
 A good resource to link here would be [ArtifactHUB](https://artifacthub.io/) which is a resource to find, install and publish Kubernetes packages. I will also give a shout out to [KubeApps](https://kubeapps.com/) which is a UI to display helm charts. 
 
-### What we will cover in the series on Kubernetes 
-
-We have started covering some of these mentioned below but we are going to get more hands on tomorrow with our second cluster deployment then we can start deploying applications into our clusters. 
-
-- Kubernetes Architecture 
-- Kubectl Commands 
-- Kubernetes YAML 
-- Kubernetes Ingress 
-- Kubernetes Services
-- Helm Package Manager 
-- Persistant Storage 
-- Stateful Apps 
 
 ## Ресурсы 
 
-If you have FREE resources that you have used then please feel free to add them in here via a PR to the repository and I will be happy to include them. 
+ 
 
 - [Kubernetes Documentation](https://kubernetes.io/docs/home/)
 - [TechWorld with Nana - Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]](https://www.youtube.com/watch?v=X48VuDVv0do)

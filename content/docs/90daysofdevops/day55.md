@@ -224,7 +224,7 @@ UPDATE: I feel like this blog helps identify maybe the cause of this not working
 
 ## Ресурсы 
 
-If you have FREE resources that you have used then please feel free to add them in here via a PR to the repository and I will be happy to include them. 
+ 
 
 - [Kubernetes StatefulSet simply explained](https://www.youtube.com/watch?v=pPQKAR1pA9U)
 - [Kubernetes Volumes explained](https://www.youtube.com/watch?v=0swOh5C3OVM)

@@ -1,5 +1,5 @@
 ---
-title: '#90DaysOfDevOps - Setting up a multinode Kubernetes Cluster - Day 52'
+title: Настройка многоузлового кластера Kubernetes
 description: 
 toc: true
 authors:
@@ -12,55 +12,55 @@ featuredImage:
 draft: false
 id: 1049050
 ---
-## Setting up a multinode Kubernetes Cluster 
+## Настройка многоузлового кластера Kubernetes 
 
-I wanted this title to be "Setting up a multinode Kubernetes cluster with Vagrant" but thought it might be a little too long! 
+Я хотел назвать эту статью "Настройка многоузлового кластера Kubernetes с помощью Vagrant", но подумал, что это будет слишком длинно! 
 
-In the session yesterday we used a cool project to deploy our first Kubernetes cluster and get a little hands on with the most important CLI tool you will come across when using Kubernetes (kubectl). 
+На вчерашней сессии мы использовали классный проект для развертывания нашего первого кластера Kubernetes и немного поработали с самым важным инструментом CLI, с которым вы столкнетесь при использовании Kubernetes (kubectl). 
 
-Here we are going to use VirtualBox as our base but as mentioned the last time we spoke about Vagrant back in the Linux section we can really use any hypervisor or virtualisation tool supported. It was [Day 14](../day14) when we went through and deployed an Ubuntu machine for the Linux section. 
+Здесь мы будем использовать VirtualBox в качестве основы, но, как мы уже говорили о Vagrant в разделе Linux, мы можем использовать любой гипервизор или инструмент виртуализации. Это был [День 14](../day14), когда мы прошли и развернули машину Ubuntu для раздела Linux. 
 
-### A quick recap on Vagrant 
+### Краткая информация о Vagrant 
 
-Vagrant is a CLI utility that manages the lifecyle of your virtual machines. We can use vagrant to spin up and down virtual machines across many different platforms including vSphere, Hyper-v, Virtual Box and also Docker. It does have other providers but we will stick with that we are using Virtual Box here so we are good to go. 
+Vagrant - это утилита CLI, которая управляет жизненным циклом ваших виртуальных машин. Мы можем использовать vagrant для запуска и разворачивания виртуальных машин на различных платформах, включая vSphere, Hyper-v, Virtual Box и Docker. У него есть и другие поставщики, но мы будем придерживаться этого, мы используем Virtual Box, так что все готово. 
 
-I am going to be using a baseline this [blog and repository](https://devopscube.com/kubernetes-cluster-vagrant/) to walk through the configuration. I would however advise that if this is your first time deploying a Kubernetes cluster then maybe also look into how you would do this manually and then at least you know what this looks like. Although I will say that this Day 0 operations and effort is being made more efficient with every release of Kubernetes. I liken this very much to the days of VMware and ESX and how you would need at least a day to deploy 3 ESX servers now we can have that up and running in an hour. We are heading in that direction when it comes to Kubernetes. 
+Я собираюсь использовать базовый уровень этого [блога и репозитория] (https://devopscube.com/kubernetes-cluster-vagrant/), чтобы пройтись по конфигурации. Однако я бы посоветовал, если вы впервые развертываете кластер Kubernetes, посмотреть, как это делается вручную, и тогда вы хотя бы будете знать, как это выглядит. Хотя я должен сказать, что эти операции и усилия дня 0 становятся все более эффективными с каждым выпуском Kubernetes. Я сравниваю это с временами VMware и ESX, когда для развертывания 3 серверов ESX требовался по меньшей мере день, а теперь мы можем сделать это за час. Мы движемся в этом направлении, когда речь идет о Kubernetes". 
 
-### Kubernetes Lab environment 
+### Лабораторная среда Kubernetes 
 
-I have uploaded in [Kubernetes folder](../days/kubernetes) the vagrantfile that we will be using to build out our environment. Grab this and navigate to this directory in your terminal. I am again using Windows so I will be using PowerShell to perform my workstation commands with vagrant. If you do not have vagrant then you can use arkade, we covered this yesterday when installing minikube and other tools. A simple command `arkade get vagrant` should see you download and install the latest version of vagrant. 
+Я загрузил в [папку Kubernetes](../days/kubernetes) vagrantfile, который мы будем использовать для создания нашей среды. Возьмите его и перейдите в этот каталог в терминале. Я снова использую Windows, поэтому я буду использовать PowerShell для выполнения команд рабочей станции с vagrant. Если у вас нет vagrant, вы можете использовать arkade, о котором мы говорили вчера при установке minikube и других инструментов. Простая команда `arkade get vagrant` должна заставить вас загрузить и установить последнюю версию vagrant. 
 
-When you are in your directory then you can simply run `vagrant up` and if all is configured correctly then you should see the following kick off in your terminal. 
+Когда вы окажетесь в своей директории, вы можете просто запустить `vagrant up`, и если все настроено правильно, вы должны увидеть в терминале следующее. Переведено с помощью www.DeepL.com/Translator (бесплатная версия) 
 
 ![](../images/Day52_Kubernetes1.png?v1)
 
- In the terminal you are going to see a number of steps taking place, but in the meantime let's take a look at what we are actually building here. 
+ В терминале вы увидите ряд шагов, но тем временем давайте посмотрим, что мы на самом деле создаем. 
 
 ![](../images/Day52_Kubernetes2.png?v1)
 
-From the above you can see that we are going to build out 3 virtual machines, we will have a control plane node and then two worker nodes. If you head back to [Day 49](../days/day49) You will see some more description on these areas we see in the image. 
+Из приведенного выше изображения видно, что мы собираемся создать 3 виртуальные машины, у нас будет узел плоскости управления и два рабочих узла. Если вы вернетесь к [День 49](.../days/day49), вы увидите более подробное описание этих областей, которые мы видим на изображении. 
 
-Also in the image we indicate that our kubectl access will come from outside of the cluster and hit that kube apiserver when in fact as part of the vagrant provisioning we are deploying kubectl on each of these nodes so that we can access the cluster from within each of our nodes. 
+Также на изображении мы указываем, что наш доступ к kubectl будет происходить извне кластера и попадать в kube apiserver, в то время как на самом деле в рамках инициализации vagrant мы развертываем kubectl на каждом из этих узлов, чтобы мы могли получить доступ к кластеру изнутри каждого из наших узлов. 
 
-The process of building out this lab could take anything from 5 minutes to 30 minutes depending on your setup. 
+Процесс создания этой лаборатории может занять от 5 до 30 минут в зависимости от вашей установки. 
 
-I am going to cover the scripts shortly as well but you will notice if you look into the vagrant file that we are calling on 3 scripts as part of the deployment and this is really where the cluster is created. We have seen how easy it is to use vagrant to deploy our virtual machines and OS installations using vagrant boxes but having the ability to run a shell script as part of the deployment process is where it gets quite interesting around automating these lab build outs. 
+Я собираюсь в ближайшее время рассказать о скриптах, но если вы посмотрите в файл vagrant, то заметите, что мы вызываем 3 скрипта как часть развертывания, и именно здесь создается кластер. Мы видели, как легко использовать vagrant для развертывания наших виртуальных машин и установки ОС с помощью боксов vagrant, но возможность запуска сценария оболочки как часть процесса развертывания - это то, что становится довольно интересным в автоматизации этих лабораторных сборок. 
 
-Once complete we can then ssh to one of our nodes `vagrant ssh master` from the terminal should get you access, default username and password is `vagrant/vagrant` 
+После завершения мы можем подключиться по ssh к одному из наших узлов `vagrant ssh master` из терминала должен получить доступ, имя пользователя и пароль по умолчанию - `vagrant/vagrant`. 
 
-You can also use `vagrant ssh node01` and `vagrant ssh node02` to gain access to the worker nodes should you wish. 
+Вы также можете использовать `vagrant ssh node01` и `vagrant ssh node02` для получения доступа к рабочим узлам, если хотите. 
 
 ![](../images/Day52_Kubernetes3.png?v1)
 
-Now we are in one of the above nodes in our new cluster we can issue `kubectl get nodes` to show our 3 node cluster and the status of this. 
+Теперь мы находимся на одном из вышеуказанных узлов нашего нового кластера, мы можем выдать команду `kubectl get nodes`, чтобы показать наш 3-узловой кластер и его статус. 
 
 ![](../images/Day52_Kubernetes4.png?v1)
 
-At this point we have a running 3 node cluster, with 1 control plane node and 2 worker nodes. 
+На данный момент у нас есть запущенный 3-узловой кластер, с 1 узлом плоскости управления и 2 рабочими узлами. 
 
-### Vagrantfile and Shell Script walkthrough 
+### Vagrantfile и Shell Script walkthrough 
 
-If we take a look at our vagrantfile, you will see that we are defining a number of worker nodes, networking IP addresses for the bridged network within VirtualBox and then some naming. Another you will notice is that we are also calling upon some scripts that we want to run on specific hosts. 
+Если мы посмотрим на наш vagrantfile, вы увидите, что мы определяем количество рабочих узлов, сетевые IP-адреса для мостовой сети в VirtualBox, а также некоторые именования. Еще вы заметите, что мы также вызываем некоторые скрипты, которые мы хотим запустить на определенных хостах.  Переведено с помощью www.DeepL.com/Translator (бесплатная версия)
 
 ``` 
 NUM_WORKER_NODES=2
@@ -104,51 +104,51 @@ Vagrant.configure("2") do |config|
     end
   end
   ```
-Lets break down those scripts that are being ran. We have three scripts listed in the above VAGRANTFILE to run on specific nodes. 
+Давайте разберем эти выполняемые сценарии. У нас есть три сценария, перечисленные в вышеуказанном VAGRANTFILE для запуска на определенных узлах. 
 
 `master.vm.provision "shell", path: "scripts/common.sh"`
 
-This script above is going to focus on getting the nodes ready, it is going to be ran on all 3 of our nodes and it will remove any existing Docker components and reinstall Docker and ContainerD as well as kubeadm, kubelet and kubectl. This script will also update existing software packages on the system. 
+Приведенный выше скрипт будет направлен на подготовку узлов, он будет запущен на всех трех наших узлах и удалит все существующие компоненты Docker и переустановит Docker и ContainerD, а также kubeadm, kubelet и kubectl. Этот скрипт также обновит существующие пакеты программного обеспечения в системе. 
 
 `master.vm.provision "shell", path: "scripts/master.sh"`
 
-The master.sh script will only run on the control plane node, this script is going to create the Kubernetes cluster using kubeadm commands. It will also prepare the config context for access to this cluster which we will cover next. 
+Скрипт master.sh будет выполняться только на узле плоскости управления, этот скрипт создаст кластер Kubernetes с помощью команд kubeadm. Он также подготовит контекст конфигурации для доступа к этому кластеру, о чем мы расскажем далее. 
 
 `node.vm.provision "shell", path: "scripts/node.sh"`
 
-This is simply going to take the config created by the master and join our nodes to the Kubernetes cluster, this join process again uses kubeadm and another script which can be found in the config folder. 
+Это просто возьмет конфиг, созданный мастером, и присоединит наши узлы к кластеру Kubernetes, этот процесс присоединения снова использует kubeadm и другой скрипт, который можно найти в папке config. 
 
-### Access to the Kubernetes cluster 
+### Доступ к кластеру Kubernetes 
 
- Now we have two clusters deployed we have our minikube cluster that we deployed in the previous section and we have the new 3 node cluster we just deployed to VirtualBox.
+ Теперь у нас есть два развернутых кластера: кластер minikube, который мы развернули в предыдущем разделе, и новый 3-узловой кластер, который мы только что развернули на VirtualBox.
 
- Also in that config file that you will also have access to on the machine you ran vagrant from consists of how we can gain access to our cluster from our workstation. 
+ Также в этом конфигурационном файле, к которому у вас будет доступ на машине, с которой вы запускали vagrant, описано, как мы можем получить доступ к нашему кластеру с нашей рабочей станции. 
 
- Before we show that let me touch on the context. 
+ Прежде чем мы покажем это, позвольте мне коснуться контекста. 
 
 ![](../images/Day52_Kubernetes5.png?v1)
 
-Context is important, the ability to access your Kubernetes cluster from your desktop or laptop is required. Lots of different options out there and people use obviously different operating systems as their daily drivers.
+Контекст важен, необходима возможность доступа к кластеру Kubernetes с рабочего стола или ноутбука. Существует множество различных вариантов, и люди используют различные операционные системы в качестве повседневных драйверов.
 
-By default, the Kubernetes CLI client (kubectl) uses the C:\Users\username\.kube\config to store the Kubernetes cluster details such as endpoint and credentials. If you have deployed a cluster you will be able to see this file in that location. But if you have been using maybe the master node to run all of your kubectl commands so far via SSH or other methods then this post will hopefully help you get to grips with being able to connect with your workstation.
+По умолчанию клиент Kubernetes CLI (kubectl) использует папку C:\Users\username\.kube\config для хранения информации о кластере Kubernetes, такой как конечная точка и учетные данные. Если вы развернули кластер, вы сможете увидеть этот файл в этом месте. Но если вы до сих пор использовали главный узел для выполнения всех команд kubectl через SSH или другими способами, то эта статья, надеюсь, поможет вам освоить возможность подключения к рабочей станции.
 
-We then need to grab the kubeconfig file from the cluster or we can also get this from our config file once deployed, grab the contents of this file either via SCP or just open a console session to your master node and copy to the local windows machine. 
+Затем нам нужно получить файл kubeconfig из кластера или мы также можем получить его из нашего файла конфигурации после развертывания, получить содержимое этого файла либо через SCP, либо просто открыть консольный сеанс на главном узле и скопировать на локальную машину windows. 
 
 ![](../images/Day52_Kubernetes6.png?v1)
 
-We then want to take a copy of that config file and move to our `$HOME/.kube/config` location. 
+Затем мы хотим взять копию этого файла конфигурации и переместить в место `$HOME/.kube/config`. 
 
 ![](../images/Day52_Kubernetes7.png?v1)
 
-Now from your local workstation you will be able to run `kubectl cluster-info` and `kubectl get nodes` to validate that you have access to your cluster. 
+Теперь с локальной рабочей станции вы сможете запустить `kubectl cluster-info` и `kubectl get nodes`, чтобы убедиться, что у вас есть доступ к вашему кластеру. 
 
 ![](../images/Day52_Kubernetes8.png?v1)
 
-This not only allows for connectivity and control from your windows machine but this then also allows us to do some port forwarding to access certain services from our windows machine
+Это не только обеспечивает подключение и управление с вашей windows-машины, но и позволяет нам выполнить проброс портов для доступа к определенным сервисам с нашей windows-машины.
 
-If you are interested in how you would manage multiple clusters on your workstation then I have a more detailed walkthrough [here](https://vzilla.co.uk/vzilla-blog/building-the-home-lab-kubernetes-playground-part-6). 
+Если вам интересно, как управлять несколькими кластерами на рабочей станции, у меня есть более подробное описание [здесь] (https://vzilla.co.uk/vzilla-blog/building-the-home-lab-kubernetes-playground-part-6). 
 
-I have added this list which are walkthrough blogs I have done around different Kubernetes clusters being deployed. 
+Я добавил этот список, в котором представлены блоги, посвященные различным развертываемым кластерам Kubernetes. 
 
 - [Kubernetes playground – How to choose your platform](https://vzilla.co.uk/vzilla-blog/building-the-home-lab-kubernetes-playground-part-1)
 - [Kubernetes playground – Setting up your cluster](https://vzilla.co.uk/vzilla-blog/building-the-home-lab-kubernetes-playground-part-2)
@@ -160,26 +160,9 @@ I have added this list which are walkthrough blogs I have done around different 
 - [Getting started with CIVO Cloud](https://vzilla.co.uk/vzilla-blog/getting-started-with-civo-cloud)
 - [Minikube - Kubernetes Demo Environment For Everyone](https://vzilla.co.uk/vzilla-blog/project_pace-kasten-k10-demo-environment-for-everyone)
 
-### What we will cover in the series on Kubernetes 
-
-We have started covering some of these mentioned below but we are going to get more hands on tomorrow with our second cluster deployment then we can start deploying applications into our clusters. 
-
-- Kubernetes Architecture 
-- Kubectl Commands 
-- Kubernetes YAML 
-- Kubernetes Ingress 
-- Kubernetes Services
-- Helm Package Manager 
-- Persistant Storage 
-- Stateful Apps 
-
 ## Ресурсы 
-
-If you have FREE resources that you have used then please feel free to add them in here via a PR to the repository and I will be happy to include them. 
 
 - [Kubernetes Documentation](https://kubernetes.io/docs/home/)
 - [TechWorld with Nana - Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]](https://www.youtube.com/watch?v=X48VuDVv0do)
 - [TechWorld with Nana - Kubernetes Crash Course for Absolute Beginners](https://www.youtube.com/watch?v=s_o8dwzRlu4)
 - [Kunal Kushwaha - Kubernetes Tutorial for Beginners | What is Kubernetes? Architecture Simplified!](https://www.youtube.com/watch?v=KVBON1lA9N8)
-
-See you on [Day 53](../day53) 
