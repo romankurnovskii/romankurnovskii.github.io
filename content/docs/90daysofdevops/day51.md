@@ -1,9 +1,9 @@
 ---
-title: '#90DaysOfDevOps - Deploying your first Kubernetes Cluster - Day 51'
+title: 51 - Установка minikube
 description: 
 toc: true
 authors:
-tags: [devops]
+tags: [devops, minikube]
 categories:
 series: 
 date: "2022-06-10"
@@ -12,81 +12,81 @@ featuredImage:
 draft: false
 id: 1048778
 ---
-## Deploying your first Kubernetes Cluster 
+## Развертывание вашего первого кластера Kubernetes 
 
-In this post we are going get a Kubernetes cluster up and running on our local machine using minikube, this will give us a baseline Kubernetes cluster for the rest of the Kubernetes section, although we will look at deploying a Kubernetes cluster also in VirtualBox later on. The reason for choosing this method vs spinning a managed Kubernetes cluster up in the public cloud is that this is going to cost money even with the free tier, I shared some blogs though if you would like to spin up that environment in the previous section [Day 50](../day50). 
+В этом посте мы собираемся запустить кластер Kubernetes на нашей локальной машине с помощью minikube, это даст нам базовый кластер Kubernetes для остальной части раздела Kubernetes, хотя позже мы рассмотрим развертывание кластера Kubernetes и в VirtualBox. Причина, по которой мы выбрали этот метод, а не развертывание управляемого кластера Kubernetes в публичном облаке, заключается в том, что это будет стоить денег даже при бесплатном уровне, однако я поделился некоторыми блогами, если вы захотите развернуть такую среду в предыдущем разделе [День 50](../day50). 
 
-### What is Minikube? 
+### Что такое Minikube? 
 
-*“minikube quickly sets up a local Kubernetes cluster on macOS, Linux, and Windows. We proudly focus on helping application developers and new Kubernetes users.”*
+Minikube быстро создает локальный кластер Kubernetes на macOS, Linux и Windows.
 
-You might not fit into the above but I have found minikube is a great little tool if you just want to test something out in a Kubernetes fashion, you can easily deploy and app and they have some amazing add ons which I will also cover. 
+Для начала, независимо от ОС вашей рабочей станции, вы можете запустить minikube. Сначала перейдите на [страницу проекта](https://minikube.sigs.k8s.io/docs/start/). Первая опция, которая у вас есть, это выбор метода установки. Я не использовал этот метод, но вы можете выбрать мой способ (о моем способе речь впереди). 
 
-To begin with regardless of your workstation OS, you can run minikube. First, head over to the [project page here](https://minikube.sigs.k8s.io/docs/start/). The first option you have is choosing your installation method. I did not use this method, but you might choose to vs my way (my way is coming up). 
+Ниже упоминается, что вам необходимо иметь "Менеджер контейнеров или виртуальных машин, такой как: Docker, Hyperkit, Hyper-V, KVM, Parallels, Podman, VirtualBox или VMware" - это то, где будет работать MiniKube, и это простой вариант, и если не указано в репозитории, я использую Docker. Вы можете установить Docker на свою систему, используя следующую [ссылку](https://docs.docker.com/get-docker/).
 
-mentioned below it states that you need to have a “Container or virtual machine manager, such as: Docker, Hyperkit, Hyper-V, KVM, Parallels, Podman, VirtualBox, or VMware” this is where MiniKube will run and the easy option and unless stated in the repository I am using Docker. You can install Docker on your system using the following [link](https://docs.docker.com/get-docker/).
+[Понятное руководство по установке minikube](https://kubernetes.io/ru/docs/tasks/tools/install-minikube/)
 
 ![](../images/Day51_Kubernetes1.png?v1)
 
-### My way of installing minikube and other prereqs…
+### Мой способ установки minikube и других предварительных требований...
 
-I have been using arkade for some time now to get all those Kubernetes tools and CLIs, you can see the installation steps on this [github repository](https://github.com/alexellis/arkade) for getting started with Arkade. I have also mentioned this in other blog posts where I needed something installing. The simplicity of just hitting arkade get and then seeing if your tool or cli is available is handy. In the Linux section we spoke about package manager and the process for getting our software, you can think about Arkade as that marketplace for all your apps and clis for Kubernetes. A very handy little tool to have on your systems, written in Golang and cross platform. 
+Я уже некоторое время использую arkade, чтобы получить все эти инструменты Kubernetes и CLI, вы можете посмотреть шаги установки на этом [github репозитории](https://github.com/alexellis/arkade) для начала работы с Arkade. Я также упоминал об этом в других записях блога, когда мне нужно было что-то установить. Простота установки: достаточно нажать arkade get и посмотреть, доступен ли ваш инструмент или cli, очень удобна. В разделе Linux мы говорили о менеджере пакетов и процессе получения нашего программного обеспечения, вы можете думать об Arkade как о рынке для всех ваших приложений и clis для Kubernetes. Очень удобный инструмент, который нужно иметь в своих системах, написанный на Golang и кроссплатформенный. 
 
 ![](../images/Day51_Kubernetes2.png?v1)
 
-As part of the long list of available apps within arkade minikube is one of them so with a simple `arkade get minikube` command we are now downloading the binary and we are good to go.
+В длинном списке доступных приложений в arkade minikube является одним из них, поэтому с помощью простой команды `arkade get minikube` мы загружаем бинарник и можем приступать.
 
 ![](../images/Day51_Kubernetes3.png?v1)
 
-We will also need kubectl as part of our tooling so you can also get this via arkade or I believe that the minikube documentation brings this down as part of the curl commands mentioned above. We will cover more on kubectl later on in the post. 
+Нам также понадобится kubectl как часть нашего инструментария, поэтому вы можете получить его через arkade или, как я полагаю, в документации по minikube он представлен как часть команд curl, упомянутых выше. Подробнее о kubectl мы расскажем позже в этом посте. 
 
-### Getting a Kubernetes cluster up and running
+### Получение и запуск кластера Kubernetes
 
-For this particular section I want to cover the options available to us when it comes to getting a Kubernetes cluster up and running on your local machine. We could simply run the following command and it would spin up a cluster for you to use.
+В этом конкретном разделе я хочу рассказать о доступных нам вариантах запуска кластера Kubernetes на вашей локальной машине. Мы можем просто выполнить следующую команду, и она запустит кластер для использования.
 
-minikube is used on the command line, and simply put once you have everything installed you can run `minikube start` to deploy your first Kubernetes cluster. You will see below that the Docker Driver is the default as to where we will be running our nested virtualisation node. I mentioned at the start of the post the other options available, the other options help when you want to expand what this local Kubernetes cluster needs to look like. 
+minikube используется в командной строке, и, проще говоря, после того как вы все установили, вы можете выполнить команду `minikube start` для развертывания вашего первого кластера Kubernetes. Ниже вы увидите, что драйвер Docker по умолчанию является местом, где мы будем запускать наш вложенный узел виртуализации. В начале статьи я упомянул о других доступных опциях, которые помогут вам расширить вид локального кластера Kubernetes. 
 
-A single Minikube cluster is going to consist of a single docker container in this instance which will have the control plane node and worker node in one instance. Where as typically you would separate those nodes out. Something we will cover in the next section where we look at still home lab type Kubernetes environments but a little closer to production architecture. 
+Один кластер Minikube будет состоять из одного контейнера docker, в котором будут находиться узел плоскости управления и рабочий узел в одном экземпляре. Обычно вы разделяете эти узлы по отдельности. Об этом мы расскажем в следующем разделе, где мы рассмотрим домашние лабораторные среды Kubernetes, но немного ближе к производственной архитектуре. 
 
 ![](../images/Day51_Kubernetes4.png?v1)
 
-I have mentioned this a few times now, I really like minikube because of the addons available, the ability to deploy a cluster with a simple command including all the required addons from the start really helps me deploy the same required setup everytime.
+Я уже несколько раз говорил об этом, мне очень нравится minikube из-за доступных дополнений, возможность развернуть кластер с помощью простой команды, включающей все необходимые дополнения с самого начала, действительно помогает мне каждый раз развертывать одну и ту же необходимую установку.
 
-Below you can see a list of those addons, I generally use the `csi-hostpath-driver` and the `volumesnapshots` addons but you can see the long list below. Sure these addons can generally be deployed using Helm again something we will cover later on in the Kubernetes section but this makes things much simpler. 
+Ниже представлен список этих аддонов, я обычно использую аддоны `csi-hostpath-driver` и `volumesnapshots`, но вы можете увидеть длинный список ниже. Конечно, эти аддоны могут быть развернуты с помощью Helm, о чем мы расскажем позже в разделе Kubernetes, но это значительно упрощает работу. 
 
 ![](../images/Day51_Kubernetes5.png?v1)
 
-I am also defining in our project some additional configuration, apiserver is set to 6433 instead of a random API port, I define the container runtime also to containerd however docker is default and CRI-O is also available. I am also setting a specific Kubernetes version. 
+Я также определяю в нашем проекте некоторые дополнительные конфигурации, apiserver установлен на 6433 вместо случайного порта API, я определяю время выполнения контейнера также на containerd, однако docker используется по умолчанию, и CRI-O также доступен. Я также устанавливаю определенную версию Kubernetes. 
 
 ![](../images/Day51_Kubernetes6.png?v1)
 
-Now we are ready to deploy our first Kubernetes cluster using minikube. I mentioned before though that you will also need `kubectl` to interact with your cluster. You can get kubectl installed using arkade with the command `arkade get kubectl`  
+Теперь мы готовы развернуть наш первый кластер Kubernetes с помощью minikube. Я уже упоминал, что вам также понадобится `kubectl` для взаимодействия с вашим кластером. Вы можете установить kubectl с помощью arkade, выполнив команду `arkade get kubectl`.  
 
 ![](../images/Day51_Kubernetes7.png?v1)
 
-or you can download cross platform from the following 
+или вы можете загрузить кросс-платформенную версию со следующих сайтов 
 
 - [Linux](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux)
 - [macOS](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos)
 - [Windows](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows)
 
-Once you have kubectl installed we can then interact with our cluster with a simple command like `kubectl get nodes`
-
+После установки kubectl мы можем взаимодействовать с нашим кластером с помощью простой команды `kubectl get nodes`.
+ 
 ![](../images/Day51_Kubernetes8.png?v1)
 
-### What is kubectl?
+### Что такое kubectl?
 
-We now have our minikube | Kubernetes cluster up and running and I have asked you to install both Minikube where I have explained at least what it does but I have not really explained what kubectl is and what it does. 
+Теперь у нас есть наш кластер minikube | Kubernetes, и я попросил вас установить Minikube, где я объяснил, что он делает, но я не объяснил, что такое kubectl и что он делает. 
 
-kubectl is a cli that is used or allows you to interact with Kubernetes clusters, we are using it here for interacting with our minikube cluster but we would also use kubectl for interacting with our enterprise clusters across the public cloud. 
+kubectl - это программа, которая используется или позволяет вам взаимодействовать с кластерами Kubernetes, мы используем ее здесь для взаимодействия с нашим кластером minikube, но мы также используем kubectl для взаимодействия с нашими корпоративными кластерами в публичном облаке. 
 
-We use kubectl to deploy applications, inspect and manage cluster resources. A much better [Overview of kubectl](https://kubernetes.io/docs/reference/kubectl/overview/) can be found here on the Kubernetes official documentation. 
+Мы используем kubectl для развертывания приложений, проверки и управления ресурсами кластера. Гораздо лучший [Обзор kubectl](https://kubernetes.io/docs/reference/kubectl/overview/) можно найти здесь, в официальной документации Kubernetes. 
 
-kubectl interacts with the API server found on the Control Plane node which we breifly covered in an earlier post. 
+kubectl взаимодействует с сервером API, расположенным на узле Control Plane, о котором мы вкратце рассказывали в одном из предыдущих постов. 
 
-### kubectl cheat sheet
+### kubectl шпаргалка
 
-Along with the official documentation, I have also found myself with this page open all the time when looking for kubectl commands. [Unofficial Kubernetes](https://unofficial-kubernetes.readthedocs.io/en/latest/)
+Наряду с официальной документацией я также обнаружил, что при поиске команд kubectl у меня постоянно открыта эта страница. [Unofficial Kubernetes](https://unofficial-kubernetes.readthedocs.io/en/latest/)
 
 |Listing Resources               |                                           |
 | ------------------------------ | ----------------------------------------- |
@@ -113,7 +113,7 @@ Along with the official documentation, I have also found myself with this page o
 | ------------------------------ | ------------------------------------------------------ |
 |kubectl delete pod              | Remove resources, this can be from stdin or file       |
 
-You will find yourself wanting to know the short names for some of the kubectl commands, for example `-n` is the short name for `namespace` which makes it easier to type a command but also if you are scripting anything you can have much tidier code.
+Вы захотите узнать краткие названия некоторых команд kubectl, например, `-n` - это краткое название для `namespace`, что облегчает ввод команды, а также, если вы пишете сценарии, вы можете получить гораздо более аккуратный код.
 
 | Short name           | Full name                    |
 | -------------------- | ---------------------------- |
@@ -140,11 +140,11 @@ You will find yourself wanting to know the short names for some of the kubectl c
 |  sa                  |  serviceaccounts             |
 |  svc                 |  services                    |
 
-The final thing to add here is that I created another project around minikube to help me quickly spin up demo environments to display data services and protecting those workloads with Kasten K10, [Project Pace](https://github.com/MichaelCade/project_pace) can be found there and would love your feedback or interaction, it also displays or includes some automated ways of deploying your minikube clusters and creating different data services applications. 
+В заключение хочу добавить, что я создал еще один проект на основе minikube, чтобы помочь мне быстро развернуть демонстрационные среды для демонстрации сервисов данных и защиты этих рабочих нагрузок с помощью Kasten K10, [Project Pace](https://github.com/MichaelCade/project_pace) можно найти там и буду рад вашим отзывам или взаимодействию, он также показывает или включает некоторые автоматизированные способы развертывания кластеров minikube и создания различных приложений сервисов данных. 
 
-Next up, we will get in to deploying multiple nodes into virtual machines using VirtualBox but we are going to hit the easy button there like we did in the Linux section where we used vagrant to quickly spin up the machines and deploy our software how we want them. 
+Далее мы перейдем к развертыванию нескольких узлов в виртуальные машины с помощью VirtualBox, но здесь мы будем действовать проще, как мы делали в разделе Linux, где мы использовали vagrant для быстрого запуска машин и развертывания нашего программного обеспечения, как мы хотим. 
 
-I added this list to the post yesterday which are walkthrough blogs I have done around different Kubernetes clusters being deployed. 
+Я добавил этот список к вчерашнему посту, который представляет собой блоги с описанием развертывания различных кластеров Kubernetes. 
 
 - [Kubernetes playground – How to choose your platform](https://vzilla.co.uk/vzilla-blog/building-the-home-lab-kubernetes-playground-part-1)
 - [Kubernetes playground – Setting up your cluster](https://vzilla.co.uk/vzilla-blog/building-the-home-lab-kubernetes-playground-part-2)
@@ -156,26 +156,10 @@ I added this list to the post yesterday which are walkthrough blogs I have done 
 - [Getting started with CIVO Cloud](https://vzilla.co.uk/vzilla-blog/getting-started-with-civo-cloud)
 - [Minikube - Kubernetes Demo Environment For Everyone](https://vzilla.co.uk/vzilla-blog/project_pace-kasten-k10-demo-environment-for-everyone)
 
-### What we will cover in the series on Kubernetes 
-
-We have started covering some of these mentioned below but we are going to get more hands on tomorrow with our second cluster deployment then we can start deploying applications into our clusters. 
-
-- Kubernetes Architecture 
-- Kubectl Commands 
-- Kubernetes YAML 
-- Kubernetes Ingress 
-- Kubernetes Services
-- Helm Package Manager 
-- Persistant Storage 
-- Stateful Apps 
-
 ## Ресурсы 
-
-If you have FREE resources that you have used then please feel free to add them in here via a PR to the repository and I will be happy to include them. 
 
 - [Kubernetes Documentation](https://kubernetes.io/docs/home/)
 - [TechWorld with Nana - Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]](https://www.youtube.com/watch?v=X48VuDVv0do)
 - [TechWorld with Nana - Kubernetes Crash Course for Absolute Beginners](https://www.youtube.com/watch?v=s_o8dwzRlu4)
 - [Kunal Kushwaha - Kubernetes Tutorial for Beginners | What is Kubernetes? Architecture Simplified!](https://www.youtube.com/watch?v=KVBON1lA9N8)
 
-See you on [Day 52](../day52) 

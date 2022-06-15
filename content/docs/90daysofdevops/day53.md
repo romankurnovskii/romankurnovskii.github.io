@@ -108,26 +108,11 @@ Over the last 3 sessions we have used a few different ways to get up and running
 
 I have been told since that the requirements around bootstrapping rancher nodes requires those VMs to have 4GB ram or they will crash-loop, I have since updated as our worker nodes had 2GB. 
 
-### What we will cover in the series on Kubernetes 
-
-We have started covering some of these mentioned below but we are going to get more hands on tomorrow with our second cluster deployment then we can start deploying applications into our clusters. 
-
-- Kubernetes Architecture 
-- Kubectl Commands 
-- Kubernetes YAML 
-- Kubernetes Ingress 
-- Kubernetes Services
-- Helm Package Manager 
-- Persistant Storage 
-- Stateful Apps 
 
 ## Ресурсы 
 
-If you have FREE resources that you have used then please feel free to add them in here via a PR to the repository and I will be happy to include them. 
 
 - [Kubernetes Documentation](https://kubernetes.io/docs/home/)
 - [TechWorld with Nana - Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]](https://www.youtube.com/watch?v=X48VuDVv0do)
 - [TechWorld with Nana - Kubernetes Crash Course for Absolute Beginners](https://www.youtube.com/watch?v=s_o8dwzRlu4)
 - [Kunal Kushwaha - Kubernetes Tutorial for Beginners | What is Kubernetes? Architecture Simplified!](https://www.youtube.com/watch?v=KVBON1lA9N8)
-
-See you on [Day 54](../day54) 
