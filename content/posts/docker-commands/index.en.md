@@ -14,8 +14,7 @@ featuredImage: /posts/docker-commands/featured.en.jpg
 draft: false
 ---
 
-Here follows a list of useful Docker commands with useful flags for each
-command.
+Here follows a list of useful Docker commands with useful flags for each command.
 
 ## docker build
 [Docs](https://docs.docker.com/engine/reference/commandline/build/)
