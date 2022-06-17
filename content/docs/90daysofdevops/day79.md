@@ -7,62 +7,62 @@ cover_image: null
 canonical_url: null
 id: 1049057
 ---
-## The Big Picture: Log Management
+## Большая картина: Управление журналами
 
-A continuation to the infrastructure monitoring challenges and solutions, log management is another puzzle peice to the overall observability jigsaw. 
+В продолжение проблем и решений в области мониторинга инфраструктуры, управление журналами - это еще один пазл в общей картине наблюдаемости. 
 
-### Log Management & Aggregation 
+### Управление и агрегация журналов 
 
-Let's talk about two core concepts the first of which is log aggregation and it's a way of collecting and tagging application logs from many different services and to a single dashboard that can easily be searched. 
+Давайте поговорим о двух основных концепциях, первая из которых - агрегация журналов, это способ сбора и маркировки журналов приложений от множества различных служб в единую приборную панель, по которой можно легко осуществлять поиск. 
 
-One of the first systems that have to be built out in an application performance management system is log aggregation. Application performance management is the part of the devops lifecycle where things have been built and deployed and you need to make sure that they're continuously working so they have enough resources allocated to them and errors aren't being shown to users. In most production deployments there are many related events that emit logs across services at google a single search might hit ten different services before being returned to the user if you got unexpected search results that might mean a logic problem in any of the ten services and log aggregation helps companies like google diagnose problems in production, they've built a single dashboard where they can map every request to unique id so if you search something your search will get a unique id and then every time that search is passing through a different service that service will connect that id to what they're currently doing. 
+Одной из первых систем, которые должны быть построены в системе управления производительностью приложений, является агрегация журналов. Управление производительностью приложений - это та часть жизненного цикла devops, когда все было создано и развернуто, и вам нужно убедиться, что они постоянно работают, что им выделено достаточно ресурсов и что ошибки не показываются пользователям. В большинстве производственных развертываний существует множество связанных событий, которые передают журналы по сервисам, в google один поиск может попасть в десять различных сервисов, прежде чем будет возвращен пользователю, если вы получили неожиданные результаты поиска, это может означать логическую проблему в любом из десяти сервисов, и агрегация журналов помогает таким компаниям, как google, диагностировать проблемы в производстве. 
 
-This is the essence of a good log aggregation platform efficiently collect logs from everywhere that emits them and make them easily searchable in the case of a fault again. 
+В этом суть хорошей платформы для агрегации журналов, которая эффективно собирает журналы отовсюду, откуда они исходят, и делает их легко доступными для поиска в случае повторного возникновения неисправности. 
 
-### Example App 
+### Пример приложения 
 
-Our example application is a web app, we have a typical front end and backend storing our critical data to a MongoDB database. 
+Наш пример приложения - это веб-приложение, у нас есть типичный фронт-энд и бэк-энд, хранящий наши важные данные в базе данных MongoDB. 
 
-If a user told us the page turned all white and printed an error message we would be hard-pressed to diagnose the problem with our current stack the user would need to manually send us the error and we'd need to match it with relevant logs in the other three services. 
+Если бы пользователь сказал нам, что страница стала белой и вывела сообщение об ошибке, мы бы с трудом диагностировали проблему с помощью нашего текущего стека. Пользователь должен вручную отправить нам ошибку, а мы должны сопоставить ее с соответствующими журналами в трех других сервисах. 
 
 ### ELK 
 
-Let's take a look at ELK, a popular open source log aggregation stack named after its three components elasticsearch, logstash and kibana if we installed it in the same environment as our example app. 
+Давайте посмотрим на ELK, популярный стек агрегации логов с открытым исходным кодом, названный в честь его трех компонентов elasticsearch, logstash и kibana, если мы установим его в той же среде, что и наше приложение. 
 
-The web application would connect to the frontend which then connects to the backend, the backend would send logs to logstash and then the way that these three components work 
+Веб-приложение подключается к фронтенду, который затем подключается к бэкенду, бэкенд отправляет журналы в logstash, а затем то, как работают эти три компонента. 
 
-### The components of elk 
+### Компоненты elk 
 
-Elasticsearch, logstash and Kibana is that all of  services send logs to logstash, logstash takes these logs which are text emitted by the application. For example the web application when you visit a web page, the web page might log this visitor access to this page at this time and that's an example of a log message those logs would be sent to logstash.
+Elasticsearch, logstash и Kibana заключается в том, что все сервисы отправляют журналы в logstash, logstash принимает эти журналы, которые являются текстом, испускаемым приложением. Например, веб-приложение, когда вы посещаете веб-страницу, может зарегистрировать доступ посетителя к этой странице в это время, и это пример сообщения журнала, которое будет отправлено в logstash.
 
-Logstash would then extract things from them so for that log message user did **thing**, at **time**. It would extract the time and extract the message and extract the user and include those all as tags so the message would be an object of tags and message so that you could search them easily you could find all of the requests made by a specific user but logstash doesn't store things itself it stores things in elasticsearch which is a efficient database for querying text and elasticsearch exposes the results as Kibana and Kibana is a web server that connects to elasticsearch and allows administrators as the devops person or other people on your team, the on-call engineer to view the logs in production whenever there's a major fault. You as the administrator would connect to Kibana, Kibana would query elasticsearch for logs matching whatever you wanted. 
+Затем Logstash извлекает из них информацию, так что для этого сообщения пользователь сделал **что-то**, в **время**. Он извлечет время, извлечет сообщение, извлечет пользователя и включит все это в качестве тегов, так что сообщение будет объектом тегов и сообщений, так что вы можете легко искать по ним, вы можете найти все запросы, сделанные определенным пользователем, но logstash не хранит вещи самостоятельно, он хранит вещи в elasticsearch, который является эффективной базой данных для запроса текста, и elasticsearch раскрывает результаты как Kibana, а Kibana - это веб-сервер, который подключается к elasticsearch и позволяет администраторам, таким как devops или другим людям в вашей команде, дежурному инженеру просматривать журналы в производстве при возникновении серьезных неполадок. Вы, как администратор, подключаетесь к Kibana, Kibana запрашивает elasticsearch на предмет журналов, соответствующих тому, что вы хотите. 
 
-You could say hey Kibana in the search bar I want to find errors and kibana would say elasticsearch find the messages which contain the string error and then elasticsearch would return results that had been populated by logstash. Logstash would have been sent those results from all of the other services.
+Вы можете сказать: "Эй, Kibana, в строке поиска я хочу найти ошибки", и Kibana скажет elasticsearch найти сообщения, которые содержат строку error, а затем elasticsearch вернет результаты, которые были заполнены logstash. Logstash получил бы эти результаты от всех других служб.
 
-### how would we use elk to diagnose a production problem
+### как бы мы использовали elk для диагностики производственной проблемы
 
-A user says i saw error code one two three four five six seven when i tried to do this with elk setup we'd have to go to kibana enter one two three four five six seven in the search bar press enter and then that would show us the logs that corresponded to that and one of the logs might say internal server error returning one two three four five six seven and we'd see that the service that emitted that log was the backend and we'd see what time that log was emitted at so we could go to the time in that log and we could look at the messages above and below it in the backend and then we could see a better picture of what happened for the user's request and we'd be able to repeat this process going to other services until we found what actually caused the problem for the user.
+Пользователь говорит, что я увидел код ошибки один два три четыре пять шесть семь, когда я попытался сделать это с помощью настройки elk, мы должны зайти в kibana, ввести один два три четыре пять шесть семь в строке поиска, нажать enter, а затем это покажет нам журналы, которые соответствуют этому, и один из журналов может сказать внутреннюю ошибку сервера, возвращающую один два три четыре пять шесть семь, и мы увидим, что служба, которая выдала этот журнал. и мы увидим, что служба, которая выдала этот журнал, была backend, и мы увидим, в какое время был выдан этот журнал, поэтому мы можем перейти ко времени в этом журнале и посмотреть на сообщения выше и ниже него в backend, и тогда мы сможем увидеть лучшую картину того, что произошло для запроса пользователя, и мы сможем повторить этот процесс, переходя к другим службам, пока не найдем, что на самом деле вызвало проблему у пользователя.
 
-### Security and Access to Logs 
+### Безопасность и доступ к журналам 
 
-An important peice of the puzzle is ensuring that logs are only visible to administrators (or the users and groups that absolutely need to have access), logs can contain sensitive information like tokens it's important that only authenticated users can access them you wouldn't want to expose Kibana to the internet without some way of authenticating.
+Важной частью головоломки является обеспечение того, чтобы журналы были видны только администраторам (или пользователям и группам, которым абсолютно необходим доступ). Журналы могут содержать конфиденциальную информацию, такую как токены, поэтому важно, чтобы только аутентифицированные пользователи могли получить к ним доступ. Вы не захотите выставлять Kibana в интернет без какого-либо способа аутентификации.
 
-### Examples of Log Management Tools
+### Примеры инструментов управления журналами
 
-Examples of log management platforms there's
+Примерами платформ для управления журналами являются
 
 - Elasticsearch 
 - Logstash 
 - Kibana 
-- Fluentd - popular open source choice
-- Datadog - hosted offering, commonly used at larger enterprises, 
-- LogDNA - hosted offering 
+- Fluentd - популярный вариант с открытым исходным кодом
+- Datadog - хостинговое предложение, обычно используется на крупных предприятиях, 
+- LogDNA - хостируемое предложение 
 - Splunk 
 
-Cloud providers also provide logging such as AWS CloudWatch Logs, Microsoft Azure Monitor and Google Cloud Logging. 
+Облачные провайдеры также предоставляют протоколирование, например, AWS CloudWatch Logs, Microsoft Azure Monitor и Google Cloud Logging. 
 
 
-Log Management is a key aspect of the overall observability of your applications and instracture environment for diagnosing problems in production it's relatively simple to install a turnkey solution like ELK or CloudWatch and it makes diagnosing and triaging problems in production significantly easier. 
+Управление журналами является ключевым аспектом общей наблюдаемости ваших приложений и среды инфраструктур для диагностики проблем в производстве. Относительно просто установить готовое решение, такое как ELK или CloudWatch, и это значительно упрощает диагностику и устранение проблем в производстве.
 
 ## Ресурсы 
 
@@ -76,6 +76,4 @@ Log Management is a key aspect of the overall observability of your applications
 - [Log Management for DevOps | Manage application, server, and cloud logs with Site24x7](https://www.youtube.com/watch?v=J0csO_Shsj0)
 - [Log Management what DevOps need to know](https://devops.com/log-management-what-devops-teams-need-to-know/)
 - [What is ELK Stack?](https://www.youtube.com/watch?v=4X0WLg05ASw)
-- [Fluentd simply explained](https://www.youtube.com/watch?v=5ofsNyHZwWE&t=14s) 
-
-See you on [Day 80](../day80)
+- [Fluentd simply explained](https://www.youtube.com/watch?v=5ofsNyHZwWE&t=14s)

@@ -7,130 +7,130 @@ cover_image: null
 canonical_url: null
 id: 1048767
 ---
-## Data Visualisation - Grafana
+## Визуализация данных - Grafana
 
-We saw a lot of Kibana over this section around Observability. But we have to also take some time to cover Grafana. But also they are not the same and they are not completely competing against each other. 
+Мы много говорили о Kibana в этом разделе, посвященном Observability. Но мы также должны уделить некоторое время Grafana. Но это не одно и то же, и они не полностью конкурируют друг с другом. 
 
-Kibana’s core feature is data querying and analysis. Using various methods, users can search the data indexed in Elasticsearch for specific events or strings within their data for root cause analysis and diagnostics. Based on these queries, users can use Kibana’s visualisation features which allow users to visualize data in a variety of different ways, using charts, tables, geographical maps and other types of visualizations.
+Основной функцией Kibana является запрос и анализ данных. Используя различные методы, пользователи могут искать в данных, проиндексированных в Elasticsearch, определенные события или строки в данных для анализа и диагностики первопричин. На основе этих запросов пользователи могут использовать функции визуализации Kibana, которые позволяют визуализировать данные различными способами, используя графики, таблицы, географические карты и другие виды визуализации.
 
-Grafana actually started as a fork of Kibana, Grafana had an aim to supply support for metrics aka monitoring, which at that time Kibana did not provide. 
+Grafana фактически началась как форк Kibana, целью Grafana была поддержка метрик и мониторинга, которые в то время Kibana не предоставляла. 
 
-Grafana is a free and Open-Source data visualisation tool. We commonly see Prometheus and Grafana together out in the field but we might also see Grafana alongside Elasticsearch and Graphite. 
+Grafana - это бесплатный инструмент визуализации данных с открытым исходным кодом. Обычно мы видим Prometheus и Grafana вместе в полевых условиях, но мы также можем увидеть Grafana вместе с Elasticsearch и Graphite. 
 
-The key difference between the two tools is Logging vs Monitoring, we started the section off covering monitoring with Nagios and then into Prometheus before moving into Logging where we covered the ELK and EFK stacks. 
+Ключевое различие между этими двумя инструментами - это логирование и мониторинг. В начале раздела мы рассмотрели мониторинг с помощью Nagios, затем Prometheus и перешли к логированию, где мы рассмотрели стеки ELK и EFK. 
 
-Grafana caters to analysing and visualising metrics such as system CPU, memory, disk and I/O utilisation. The platform does not allow full-text data querying. Kibana runs on top of Elasticsearch and is used primarily for analyzing log messages. 
+Grafana предназначена для анализа и визуализации таких показателей, как использование системного процессора, памяти, дисков и ввода-вывода. Платформа не позволяет выполнять полнотекстовые запросы данных. Kibana работает поверх Elasticsearch и используется в основном для анализа сообщений журнала. 
 
-As we have already discovered with Kibana it is quite easy to deploy as well as having the choice of where to deploy, this is the same for Grafana. 
+Как мы уже выяснили, Kibana довольно проста в развертывании, а также в выборе места установки, то же самое можно сказать и о Grafana. 
 
-Both support installation on Linux, Mac, Windows, Docker or building from source. 
+Оба поддерживают установку на Linux, Mac, Windows, Docker или сборку из исходников. 
 
-There are no doubt others but Grafana is a tool that I have seen spanning the virtual, cloud and cloud-native platforms so I wanted to cover this here in this section. 
+Несомненно, есть и другие, но Grafana - это инструмент, который, по моим наблюдениям, охватывает виртуальные, облачные и облачно-нативные платформы, поэтому я хотел рассказать о нем в этом разделе. 
 
-### Prometheus Operator + Grafana Deployment 
+### Оператор Prometheus + развертывание Grafana 
 
-We have covered Prometheus already in this section but as we see these paired so often I wanted to spin up an environment that would allow us to at least see what metrics we could have displayed in a visualisation. We know that monitoring our environments is important but going through those metrics alone in Prometheus or any metric tool is going to be cumbersome and it is not going to scale. This is where Grafana comes in and provides us that interactive visualisation of those metrics collected and stored in the Prometheus database. 
+Мы уже рассказывали о Prometheus в этом разделе, но поскольку мы так часто видим эти пары, я хотел создать среду, которая позволила бы нам хотя бы увидеть, какие метрики мы могли бы отображать в визуализации. Мы знаем, что мониторинг наших сред очень важен, но просмотр этих метрик в Prometheus или любом другом метрическом инструменте будет громоздким и не будет масштабироваться. Именно здесь на помощь приходит Grafana, которая предоставляет нам интерактивную визуализацию этих метрик, собранных и сохраненных в базе данных Prometheus. 
 
-With that visualisation we can create custom charts, graphs and alerts for our environment. In this walkthrough we will be using our minikube cluster. 
+С помощью этой визуализации мы можем создавать пользовательские графики, диаграммы и оповещения для нашей среды. В этом руководстве мы будем использовать наш кластер minikube. 
 
-We are going to start by cloning this down to our local system. Using `git clone https://github.com/prometheus-operator/kube-prometheus.git` and `cd kube-prometheus`
+Для начала мы клонируем его в нашу локальную систему. Используя `git clone https://github.com/prometheus-operator/kube-prometheus.git` и `cd kube-prometheus`.
 
 ![](../images/Day83_Monitoring1.png?v1)
 
-First job is to create our namespace within our minikube cluster `kubectl create -f manifests/setup` if you have not been following along in previous sections we can use `minikube start` to bring up a new cluster here. 
+Первая задача - создать наше пространство имен в кластере minikube `kubectl create -f manifests/setup`, если вы не следили за предыдущими разделами, мы можем использовать `minikube start` для создания нового кластера. 
 
 ![](../images/Day83_Monitoring2.png?v1)
 
-Next we are going to deploy everything we need for our demo using the `kubectl create -f manifests/` command, as you can see this is going to deploy a lot of different resources within our cluster. 
+Далее мы собираемся развернуть все необходимое для нашего демо с помощью команды `kubectl create -f manifests/`, как вы можете видеть, это развернет множество различных ресурсов в нашем кластере. 
 
 ![](../images/Day83_Monitoring3.png?v1)
 
-We then need to wait for our pods to come up and being in the running state we can use the `kubectl get pods -n monitoring -w` command to keep an eye on the pods. 
+Затем нам нужно подождать, пока наши стручки поднимутся, и, находясь в запущенном состоянии, мы можем использовать команду `kubectl get pods -n monitoring -w`, чтобы следить за стручками. 
 
 ![](../images/Day83_Monitoring4.png?v1)
 
-When everything is running we can check all pods are in a running and healthy state using the `kubectl get pods -n monitoring` command. 
+Когда все запущено, мы можем проверить, что все pods находятся в рабочем и здоровом состоянии, используя команду `kubectl get pods -n monitoring`. 
 
 ![](../images/Day83_Monitoring5.png?v1)
 
-With the deployment, we deployed  a number of services that we are going to be using later on in the demo you can check these by using the `kubectl get svc -n monitoring` command. 
+При развертывании мы развернули ряд сервисов, которые мы будем использовать позже в демо, вы можете проверить их с помощью команды `kubectl get svc -n monitoring`. 
 
 ![](../images/Day83_Monitoring6.png?v1)
 
-And finally lets check on all resources deployed in our new monitoring namespace using the `kubectl get all -n monitoring` command. 
+И, наконец, давайте проверим все ресурсы, развернутые в нашем новом пространстве имен мониторинга, используя команду `kubectl get all -n monitoring`. 
 
 ![](../images/Day83_Monitoring7.png?v1)
 
-Opening a new terminal we are now ready to access our Grafana tool and start gathering and visualising some of our metrics, the command to use is`kubectl --namespace monitoring port-forward svc/grafana 3000`
+Открыв новый терминал, мы готовы получить доступ к нашему инструменту Grafana и начать собирать и визуализировать некоторые из наших метрик, команда для использования - `kubectl --namespace monitoring port-forward svc/grafana 3000`.
 
 ![](../images/Day83_Monitoring8.png?v1)
 
-Open a browser and navigate to http://localhost:3000 you will be prompted for a username and password. 
+Откройте браузер и перейдите по адресу http://localhost:3000, вам будет предложено ввести имя пользователя и пароль. 
 
 ![](../images/Day83_Monitoring9.png?v1)
-The default username and password to access is 
+По умолчанию имя пользователя и пароль для доступа следующие
 ```
-Username: admin 
-Password: admin
+Имя пользователя: admin 
+Пароль: admin
 ```
-However you will be asked to provide a new password at first login. The initial screen or home page you will see will give you some areas to explore as well as some useful resources to get up to speed with Grafana and its capabilities. Notice the "Add your first data source" and "create your first dashboard" widgets we will be using them later. 
+Однако при первом входе в систему вам будет предложено ввести новый пароль. На начальном экране или домашней странице вы увидите несколько областей для изучения, а также некоторые полезные ресурсы для ознакомления с Grafana и ее возможностями. Обратите внимание на виджеты "Добавить свой первый источник данных" и "Создать свою первую приборную панель", мы будем использовать их позже. 
 
 ![](../images/Day83_Monitoring10.png?v1)
 
-You will find that there is already a prometheus data source already added to our Grafana data sources, however because we are using minikube we need to also port forward prometheus so that this is available on our localhost, opening a new terminal we can run the following command. `kubectl --namespace monitoring port-forward svc/prometheus-k8s 9090` if on the home page of Grafana we now enter into the widget "Add your first data source" and from here we are going to select Prometheus. 
+Вы увидите, что источник данных prometheus уже добавлен в источники данных Grafana, однако, поскольку мы используем minikube, нам нужно также перенаправить prometheus, чтобы он был доступен на нашем localhost, открыв новый терминал, мы можем выполнить следующую команду. `kubectl --namespace monitoring port-forward svc/prometheus-k8s 9090` если на главной странице Grafana мы теперь заходим в виджет "Add your first data source" и отсюда выбираем Prometheus. 
 
 ![](../images/Day83_Monitoring11.png?v1)
 
-For our new data source we can use the address http://localhost:9090 and we will also need to change the dropdown to browser as highlighted below.
+Для нашего нового источника данных мы можем использовать адрес http://localhost:9090, и нам также нужно будет изменить выпадающий список на браузер, как показано ниже.
 
 ![](../images/Day83_Monitoring12.png?v1)
 
-At the bottom of the page, we can now hit save and test. This should give us the outcome you see below if the port forward for prometheus is working. 
+Внизу страницы мы можем нажать кнопку сохранить и протестировать. Это должно дать нам результат, который вы видите ниже, если проброс порта для prometheus работает. 
 
 ![](../images/Day83_Monitoring13.png?v1)
 
-Head back to the home page and find the option to "Create your first dashboard" select "Add a new panel"
+Вернитесь на главную страницу и найдите опцию "Create your first dashboard", выберите "Add a new panel".
 
 ![](../images/Day83_Monitoring14.png?v1)
 
-You will see from below that we are already gathering from our Grafana data source, but we would like to gather metrics from our Prometheus data source, select the data source drop down and select our newly created "Prometheus-1" 
+Ниже вы увидите, что мы уже собираем данные из нашего источника данных Grafana, но мы хотели бы собирать метрики из нашего источника данных Prometheus, выберите выпадающий список источников данных и выберите наш недавно созданный "Prometheus-1" 
 
 ![](../images/Day83_Monitoring15.png?v1)
 
-If you then select the Metrics browser you will have a long list of metrics being gathered from Prometheus related to our minikube cluster. 
+Если затем выбрать браузер Metrics, то появится длинный список метрик, собираемых из Prometheus, связанных с нашим кластером minikube. 
 
 ![](../images/Day83_Monitoring16.png?v1)
 
-For the purpose of the demo I am going to find a metric that gives us some output around our system resources, `cluster:node_cpu:ratio{}` gives us some detail on the nodes in our cluster and proves that this integration is working. 
+Для целей демонстрации я собираюсь найти метрику, которая дает нам некоторые данные о наших системных ресурсах, `cluster:node_cpu:ratio{}` дает нам некоторые подробности об узлах в нашем кластере и доказывает, что эта интеграция работает. 
 
 ![](../images/Day83_Monitoring17.png?v1)
 
-Once you are happy with this as your visualisation then you can hit the apply button in the top right and you will then add this graph to your dashboard. Obviously you can go ahead and add additional graphs and other charts to give you the visual that you need. 
+Если вас устраивает такая визуализация, нажмите кнопку "Применить" в правом верхнем углу, и вы добавите этот график на свою приборную панель. Разумеется, вы можете добавлять дополнительные графики и другие диаграммы, чтобы обеспечить нужную вам визуализацию. 
 
 ![](../images/Day83_Monitoring18.png?v1)
 
-We can however take advantage of thousands of previously created dashboards that we can use so that we do not need to reinvent the wheel. 
+Однако мы можем воспользоваться тысячами ранее созданных приборных панелей, которые мы можем использовать, чтобы не изобретать велосипед. 
 
 ![](../images/Day83_Monitoring19.png?v1)
 
-If we do a search for Kubernetes we will see a long list of pre built dashboards that we can choose from. 
+Если мы выполним поиск по Kubernetes, то увидим длинный список готовых приборных панелей, из которых мы можем выбирать. 
 
 ![](../images/Day83_Monitoring20.png?v1)
 
-We have chosen the Kubernetes API Server dashboard and changed the data source to suit our newly added Prometheus-1 data source and we get to see some of the metrics displayed as per below. 
+Мы выбрали приборную панель Kubernetes API Server и изменили источник данных, чтобы соответствовать нашему недавно добавленному источнику данных Prometheus-1, и мы видим некоторые метрики, отображаемые как показано ниже. 
 
 ![](../images/Day83_Monitoring21.png?v1)
 
-### Alerting
+### Оповещение
 
-You could also leverage the alertmanager that we deployed to then send alerts out to slack or other integrations, in order to do this you would need to port foward the alertmanager service using the below details. 
+Вы также можете использовать развернутый нами alertmanager для отправки оповещений в slack или другие интеграции, для этого вам нужно перенести сервис alertmanager, используя следующие данные. 
 
 `kubectl --namespace monitoring port-forward svc/alertmanager-main 9093`
 http://localhost:9093
 
-That wraps up our section on all things observability, I have personally found that this section has highlighted how broad this topic is but equally how important this is for our roles and that be it metrics, logging or tracing you are going to need to have a good idea of what is happening in our broad environments moving forward, especially when they can change so dramatically with all the automation that we have already covered in the other sections. 
+На этом мы завершаем наш раздел о наблюдаемости. Лично я считаю, что этот раздел подчеркнул, насколько широка эта тема, но в равной степени, насколько она важна для наших ролей, и что будь то метрика, логирование или трассировка, вам необходимо иметь хорошее представление о том, что происходит в наших широких средах в будущем, особенно когда они могут так сильно измениться благодаря автоматизации, которую мы уже рассмотрели в других разделах. 
 
-Next up we are going to be taking a look into data management and how DevOps principles also needs to be considered when it comes to Data Management. 
+Далее мы рассмотрим управление данными и то, как принципы DevOps также необходимо учитывать, когда речь идет об управлении данными.
 
 ## Ресурсы 
 
@@ -145,6 +145,4 @@ Next up we are going to be taking a look into data management and how DevOps pri
 - [Log Management for DevOps | Manage application, server, and cloud logs with Site24x7](https://www.youtube.com/watch?v=J0csO_Shsj0)
 - [Log Management what DevOps need to know](https://devops.com/log-management-what-devops-teams-need-to-know/)
 - [What is ELK Stack?](https://www.youtube.com/watch?v=4X0WLg05ASw)
-- [Fluentd simply explained](https://www.youtube.com/watch?v=5ofsNyHZwWE&t=14s) 
-
-See you on [Day 84](../day84)
+- [Fluentd simply explained](https://www.youtube.com/watch?v=5ofsNyHZwWE&t=14s)

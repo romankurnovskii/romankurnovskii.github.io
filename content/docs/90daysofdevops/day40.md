@@ -1,5 +1,5 @@
 ---
-title: 40 - GitHub | GitLab | BitBucket
+title: 40. GitHub | GitLab | BitBucket
 description: Обзор онлайн репозиториев для Git
 toc: true
 authors:

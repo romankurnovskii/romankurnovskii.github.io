@@ -1,5 +1,5 @@
 ---
-title: '#90DaysOfDevOps - Rancher Overview - Hands On - Day 53'
+title: 53. Обзор Rancher
 description: 
 toc: true
 authors:
@@ -12,107 +12,104 @@ featuredImage:
 draft: false
 id: 1048742
 ---
-## Rancher Overview - Hands On
+## Обзор Rancher - практическое применение
 
-In this section we are going to take a look at Rancher, so far everything we have done has been in the cli and using kubectl but we have  a few really good UIs and multi cluster management tools to give our operations teams  good visibility into our cluster management. 
+В этом разделе мы рассмотрим Rancher, до сих пор все, что мы делали, было в cli и с использованием kubectl, но у нас есть несколько действительно хороших пользовательских интерфейсов и инструментов управления несколькими кластерами, чтобы дать нашим операционным командам хорошую видимость управления кластером. 
 
-Rancher is according to their [site](https://rancher.com/)
+Rancher, согласно их [сайту](https://rancher.com/)
 
-*Rancher is a complete software stack for teams adopting containers. It addresses the operational and security challenges of managing multiple Kubernetes clusters across any infrastructure, while providing DevOps teams with integrated tools for running containerized workloads.*
+*Rancher - это полный программный стек для команд, внедряющих контейнеры. Он решает операционные проблемы и проблемы безопасности при управлении несколькими кластерами Kubernetes в любой инфраструктуре, обеспечивая команды DevOps интегрированными инструментами для запуска контейнерных рабочих нагрузок*.
 
-Rancher enables us to deploy production grade Kubernetes clusters from pretty much any location and then provides centralised authentication, access control and observability. I mentioned in a previous section that there is almost an overwhelming choice when it comes to Kubernetes and where you should or could run them, looking at Rancher it really doesn't matter where they are. 
+Rancher позволяет нам развертывать кластеры Kubernetes производственного уровня практически из любого места, а затем обеспечивает централизованную аутентификацию, контроль доступа и наблюдаемость. Я упоминал в предыдущем разделе, что существует почти непреодолимый выбор, когда речь идет о Kubernetes и о том, где вы должны или можете их запустить, но с Rancher действительно не имеет значения, где они находятся. 
 
-### Deploy Rancher
+### Развертывание Rancher
 
-The first thing we need to do is deploy Rancher on our local workstation, there are few ways and locations you can choose to proceed with this step, for me I want to use my local workstation and run rancher as a docker container. By running the command below we will pull down a container image and then have access to the rancher UI.  
+Первое, что нам нужно сделать, это развернуть Rancher на нашей локальной рабочей станции, есть несколько способов и мест, которые вы можете выбрать для выполнения этого шага, я хочу использовать свою локальную рабочую станцию и запустить Rancher как контейнер docker. Выполнив приведенную ниже команду, мы получим образ контейнера и доступ к пользовательскому интерфейсу rancher.  
 
-Other rancher deployment methods are available [Rancher Quick-Start-Guide](https://rancher.com/docs/rancher/v2.6/en/quick-start-guide/deployment/)
+Доступны и другие методы развертывания rancher [Rancher Quick-Start-Guide](https://rancher.com/docs/rancher/v2.6/en/quick-start-guide/deployment/)
+`sudo docker run -d --restart=unless-stopped -p 80:80 -p 443:443 --privileged rancher/rancher`.
 
-`sudo docker run -d --restart=unless-stopped -p 80:80 -p 443:443 --privileged rancher/rancher`
-
-As you can see in our Docker Desktop we have a running rancher container. 
+Как вы можете видеть на нашем рабочем столе Docker, у нас есть запущенный контейнер rancher. 
 
 ![](../images/Day53_Kubernetes1.png?v1)
+### Доступ к пользовательскому интерфейсу Rancher
 
-### Accessing Rancher UI
-
-With the above container running we should be able to navigate to it via a web page. `https://localhost` will bring up a login page as per below. 
+Запустив вышеуказанный контейнер, мы должны иметь возможность перейти к нему через веб-страницу. По адресу `https://localhost` откроется страница входа в систему, как показано ниже. 
 
 ![](../images/Day53_Kubernetes2.png?v1)
 
-Follow the instructions below to get the password required. Because I am using Windows I chose to use bash for Windows because of the grep command required. 
+Следуйте инструкциям ниже, чтобы получить требуемый пароль. Поскольку я использую Windows, я решил использовать bash для Windows, так как для этого требуется команда grep. 
 
 ![](../images/Day53_Kubernetes3.png?v1)
 
-We can then take the above password and login, the next page is where we can define a new password. 
+Затем мы можем взять указанный выше пароль и войти в систему, на следующей странице мы можем задать новый пароль. 
 
 ![](../images/Day53_Kubernetes4.png?v1)
 
-Once we have done the above we will then be logged in and we can see our opening screen. As part of the Rancher deployment we will also see a local K3s cluster provisioned. 
+После выполнения вышеуказанных действий мы войдем в систему и увидим наш начальный экран. В рамках развертывания Rancher мы также увидим локальный кластер K3s. 
 
 ![](../images/Day53_Kubernetes5.png?v1)
 
-### A quick tour of rancher
+### Краткий экскурс по rancher
 
-The first thing for us to look at is our locally deployed K3S cluster You can see below that we get a good visual on what is happening inside our cluster. This is the default deployment and we have not yet deployed anything to this cluster. You can see it is made up of 1 node and has 5 deployments. Then you can also see that there are some stats on pods, cores and memory.  
+Первое, на что мы посмотрим, это наш локально развернутый кластер K3S. Вы можете видеть ниже, что мы получаем хорошее представление о том, что происходит внутри нашего кластера. Это развертывание по умолчанию, и мы еще ничего не развертывали в этом кластере. Видно, что он состоит из 1 узла и имеет 5 развертываний. Также вы можете видеть, что есть некоторые статистические данные по стручкам, ядрам и памяти.  
 
 ![](../images/Day53_Kubernetes6.png?v1)
 
-On the left hand menu we also have an Apps & Marketplace tab, this allows us to choose applications we would like to run on our clusters, as mentioned previously Rancher gives us the capability of running or managing a number of different clusters. With the marketplace we can deploy our applications very easily.  
+В меню слева есть вкладка Apps & Marketplace, которая позволяет нам выбрать приложения, которые мы хотели бы запустить на наших кластерах. Как уже упоминалось ранее, Rancher дает нам возможность запускать и управлять несколькими различными кластерами. С помощью рынка мы можем очень легко развернуть наши приложения.  
 
 ![](../images/Day53_Kubernetes7.png?v1)
 
-Another thing to mention is that if you did need to get access to any cluster being managed by Rancher in the top right you have the ability to open a kubectl shell to the selected cluster. 
+Еще одна вещь, о которой стоит упомянуть, это то, что если вам понадобится получить доступ к любому кластеру, управляемому Rancher, в правом верхнем углу есть возможность открыть оболочку kubectl для выбранного кластера. 
 
 ![](../images/Day53_Kubernetes8.png?v1)
 
-### Create a new cluster
+### Создание нового кластера
 
-Over the past two sessions we have created a minikube cluster locally and we have used Vagrant with VirtualBox to create a 3 node Kubernetes cluster, with Rancher we can also create clusters. In the [Rancher Folder](../days/Kubernetes/Rancher) you will find additional vagrant files that will build out the same 3 nodes but without the steps for creating our Kubernetes cluster (we want Rancher to do this for us)
+На последних двух занятиях мы создали кластер minikube локально и использовали Vagrant с VirtualBox для создания 3-узлового кластера Kubernetes, с помощью Rancher мы также можем создавать кластеры. В папке [Rancher Folder](../Kubernetes/Rancher) вы найдете дополнительные файлы vagrant, которые создадут те же 3 узла, но без шагов по созданию нашего кластера Kubernetes (мы хотим, чтобы Rancher сделал это за нас).
 
-We do however want docker installed and for the OS to be updated so you will still see the `common.sh` script being ran on each of our nodes. This will also install Kubeadm, Kubectl etc. But it will not run the Kubeadm commands to create and join our nodes into a cluster. 
+Тем не менее, мы хотим установить docker и обновить ОС, поэтому вы увидите скрипт `common.sh`, запускаемый на каждом из наших узлов. Это также установит Kubeadm, Kubectl и т.д. Но он не запустит команды Kubeadm для создания и объединения наших узлов в кластер. 
 
-We can navigate to our vagrant folder location and we can simply run `vagrant up` and this will begin that process of creating our 3 VMs in virtualbox. 
+Мы можем перейти в папку vagrant и просто запустить `vagrant up`, и это начнет процесс создания наших 3 виртуальных машин в virtualbox. 
 
 ![](../images/Day53_Kubernetes9.png?v1)
 
-Now that we have our nodes or VMs in place and ready, we can then use Rancher to create our new Kubernetes cluster. The first screen to create your cluster gives you some options as to where your cluster is, i.e are you using the public cloud managed Kubernetes services, vSphere or something else. 
+Теперь, когда у нас есть наши узлы или ВМ на месте и готовы, мы можем использовать Rancher для создания нашего нового кластера Kubernetes. Первый экран для создания кластера дает вам несколько вариантов того, где находится ваш кластер, то есть используете ли вы службы Kubernetes, управляемые публичным облаком, vSphere или что-то еще. 
 
 ![](../images/Day53_Kubernetes10.png?v1)
 
-We will be choosing "custom" as we are not using one of the integrated platforms. The opening page is where you define your cluster name (it says local below but you cannot use local, our cluster is called vagrant.) you can define Kubernetes versions here, network providers and some other configuration options to get your Kubernetes cluster up and running. 
+Мы выберем "custom", так как не используем ни одну из интегрированных платформ. На открывшейся странице вы определяете имя вашего кластера (ниже написано local, но вы не можете использовать local, наш кластер называется vagrant). Здесь вы можете определить версии Kubernetes, сетевых провайдеров и некоторые другие параметры конфигурации, чтобы запустить ваш кластер Kubernetes. 
 
 ![](../images/Day53_Kubernetes11.png?v1)
 
-The next page is going to give you the registration code that needs to be ran on each of your nodes with the appropriate services to be enabled. etcd, controlplane and worker. For our master node we want etcd and controlplane so the command can be seen below. 
+На следующей странице вы найдете регистрационный код, который необходимо запустить на каждом из узлов и включить соответствующие службы: etcd, controlplane и worker. Для нашего главного узла нам нужны etcd и controlplane, поэтому команду можно увидеть ниже. 
 
 ![](../images/Day53_Kubernetes12.png?v1)
 
-```
-sudo docker run -d --privileged --restart=unless-stopped --net=host -v /etc/kubernetes:/etc/kubernetes -v /var/run:/var/run  rancher/rancher-agent:v2.6.3 --server https://10.0.0.1 --token mpq8cbjjwrj88z4xmf7blqxcfmwdsmq92bmwjpphdkklfckk5hfwc2 --ca-checksum a81944423cbfeeb92be0784edebba1af799735ebc30ba8cbe5cc5f996094f30b --etcd --controlplane
+```bash
+sudo docker run -d --privileged --restart=unless-stopped --net=host -v /etc/kubernetes:/etc/kubernetes -v /var/run:/var/run rancher/rancher-agent:v2.6.3 --server https://10. 0.0.1 --token mpq8cbjjwrj88z4xmf7blqxcfmwdsmq92bmwjpphdkklfckk5hfwc2 --ca-checksum a81944423cbfeeb92be0784edebba1af799735ebc30ba8cbe5cc5f996094f30b --etcd --controlplane
 ```
 
-If networking is configured correctly then you should pretty quickly see the following in your rancher dashboard, indicating that the first master node is now being registered and the cluster is being created. 
+Если сетевое взаимодействие настроено правильно, то вы должны довольно быстро увидеть следующее на приборной панели rancher, указывающее на то, что первый мастер-узел сейчас регистрируется и кластер создается. 
 
 ![](../images/Day53_Kubernetes13.png?v1)
 
-We can then repeat the registration process for each of the worker nodes with the following command and after some time you will have your cluster up and running with the ability to leverage the marketplace to deploy your applications. 
+Затем мы можем повторить процесс регистрации для каждого из рабочих узлов с помощью следующей команды, и через некоторое время вы получите свой кластер, способный использовать рынок для развертывания приложений. 
 
-```
-sudo docker run -d --privileged --restart=unless-stopped --net=host -v /etc/kubernetes:/etc/kubernetes -v /var/run:/var/run  rancher/rancher-agent:v2.6.3 --server https://10.0.0.1 --token mpq8cbjjwrj88z4xmf7blqxcfmwdsmq92bmwjpphdkklfckk5hfwc2 --ca-checksum a81944423cbfeeb92be0784edebba1af799735ebc30ba8cbe5cc5f996094f30b --worker
+```bash
+sudo docker run -d --privileged --restart=unless-stopped --net=host -v /etc/kubernetes:/etc/kubernetes -v /var/run:/var/run rancher/rancher-agent:v2.6.3 --server https://10. 0.0.1 --token mpq8cbjjwrj88z4xmf7blqxcfmwdsmq92bmwjpphdkklfckk5hfwc2 --ca-checksum a81944423cbfeeb92be0784edebba1af799735ebc30ba8cbe5cc5f996094f30b --worker
 ```
 
 ![](../images/Day53_Kubernetes14.png?v1)
 
-Over the last 3 sessions we have used a few different ways to get up and running with a Kubernetes cluster, over the remaining days we are going to look at the application side of the platform arguably the most important. We will look into services and being able to provision and use our service in Kubernetes. 
+За последние 3 занятия мы использовали несколько различных способов запуска кластера Kubernetes, в оставшиеся дни мы рассмотрим прикладную сторону платформы, вероятно, самую важную. Мы рассмотрим сервисы и возможность предоставления и использования наших сервисов в Kubernetes. 
 
-I have been told since that the requirements around bootstrapping rancher nodes requires those VMs to have 4GB ram or they will crash-loop, I have since updated as our worker nodes had 2GB. 
-
+Мне сказали, что требования к загрузке узлов rancher требуют, чтобы эти виртуальные машины имели 4 ГБ оперативной памяти, иначе они будут работать с ошибками, с тех пор я обновил информацию, так как наши рабочие узлы имели 2 ГБ.
 
 ## Ресурсы 
-
 
 - [Kubernetes Documentation](https://kubernetes.io/docs/home/)
 - [TechWorld with Nana - Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]](https://www.youtube.com/watch?v=X48VuDVv0do)
 - [TechWorld with Nana - Kubernetes Crash Course for Absolute Beginners](https://www.youtube.com/watch?v=s_o8dwzRlu4)
 - [Kunal Kushwaha - Kubernetes Tutorial for Beginners | What is Kubernetes? Architecture Simplified!](https://www.youtube.com/watch?v=KVBON1lA9N8)
+

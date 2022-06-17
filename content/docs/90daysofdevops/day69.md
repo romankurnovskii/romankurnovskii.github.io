@@ -12,51 +12,50 @@ featuredImage:
 draft: false
 id: 1048714
 ---
-## All other things Ansible - Automation Controller (Tower), AWX, Vault
+## Все остальное Ansible - контроллер автоматизации (Tower), AWX, Vault
 
-Rounding out the section on Configuration Management I wanted to have a look into the other areas that you might come across when dealing with Ansible.  
+Завершая раздел об управлении конфигурацией, я хотел бы рассмотреть другие области, с которыми вы можете столкнуться при работе с Ansible.  
 
-There are a lot of products that make up the Ansible Automation platform. 
+Существует множество продуктов, составляющих платформу Ansible Automation. 
 
-Red Hat Ansible Automation Platform is a foundation for building and operating automation across an organization. The platform includes all the tools needed to implement enterprise-wide automation.
+Red Hat Ansible Automation Platform - это основа для создания и эксплуатации автоматизации в организации. Платформа включает в себя все инструменты, необходимые для внедрения автоматизации в масштабах предприятия.
 
 ![](../images/Day69_config1.png?v1)
 
-I will try and cover some of these in this post. But for more information then the official Red Hat Ansible site is going to have lots more information. [Ansible.com](https://www.ansible.com/?hsLang=en-us)
+Я постараюсь осветить некоторые из них в этом посте. Но для получения более подробной информации на официальном сайте Red Hat Ansible есть много другой информации. [Ansible.com](https://www.ansible.com/?hsLang=en-us)
 
 ### Ansible Automation Controller | AWX 
 
-I have bundled these two together because the Automation Controller and AWX are very similar in what they offer. 
+Я объединил эти два продукта вместе, потому что Automation Controller и AWX очень похожи в том, что они предлагают. 
 
-The AWX project or AWX for short is an open-source community project, sponsored by Red Hat that enables you to better control your Ansible projects within your environments. AWX is the upstream project from which the automation controller component is derived. 
+Проект AWX или сокращенно AWX - это проект сообщества с открытым исходным кодом, спонсируемый Red Hat, который позволяет вам лучше контролировать ваши проекты Ansible в ваших средах. AWX - это основной проект, из которого взят компонент контроллера автоматизации. 
 
-If you are looking for an enterprise solution then you will be looking for the Automation Controller or you might have previously heard this as Ansible Tower. The Ansible Automation Controller is the control plane for the Ansible Automation Platform. 
+Если вы ищете корпоративное решение, то вам нужен контроллер автоматизации, или вы могли слышать его как Ansible Tower. Контроллер автоматизации Ansible - это плоскость управления для платформы автоматизации Ansible. 
 
-Both AWX and the Automation Controller bring the following features above everything else we have covered in this section thus far. 
+И AWX, и контроллер автоматизации обладают следующими характеристиками, превосходящими все, что мы рассмотрели в этом разделе до сих пор. 
 
-- User Interface 
-- Role Based Access Control 
-- Workflows 
-- CI/CD integration 
+- Пользовательский интерфейс 
+- Управление доступом на основе ролей 
+- Рабочие процессы 
+- Интеграция CI/CD 
 
-The Automation Controller is the enterprise offering where you pay for your support. 
+Automation Controller - это корпоративное предложение, в котором вы платите за поддержку. 
 
-We are going to take a look at deploying AWX within our minikube Kubernetes environment. 
+Мы рассмотрим развертывание AWX в нашей среде minikube Kubernetes. 
 
-### Deploying Ansible AWX 
+### Развертывание Ansible AWX 
 
-AWX does not need to be deployed to a Kubernetes cluster, the [github](https://github.com/ansible/awx) for AWX from ansible will give you that detail. However starting in version 18.0, the AWX Operator is the preferred way to install AWX. 
+AWX не нужно развертывать в кластере Kubernetes, [github](https://github.com/ansible/awx) для AWX от ansible даст вам эту подробную информацию. Однако, начиная с версии 18.0, AWX Operator является предпочтительным способом установки AWX. 
 
-First of all we need a minikube cluster. We can do this if you followed along during the Kubernetes section by creating a new minikube cluster with the `minikube start --cpus=4 --memory=6g --addons=ingress` command. 
+Прежде всего, нам нужен кластер minikube. Мы можем сделать это, если вы следили за разделом Kubernetes, создав новый кластер minikube с помощью команды `minikube start --cpus=4 --memory=6g --addons=ingress`. 
 
 ![](../images/Day69_config2.png?v1)
 
-The official [Ansible AWX Operator](https://github.com/ansible/awx-operator) can be found here. As stated in the install instructions you should clone this repository and then run through the deployment. 
+Официальный [Ansible AWX Operator](https://github.com/ansible/awx-operator) можно найти здесь. Как указано в инструкции по установке, вы должны клонировать этот репозиторий, а затем выполнить развертывание. 
 
-I forked the repo above and then ran `git clone https://github.com/MichaelCade/awx-operator.git` my advice is you do the same and do not use my repository as I might change things or it might not be there. 
+Я сделал форк вышеуказанного репозитория, а затем выполнил команду `git clone https://github.com/MichaelCade/awx-operator.git`. Я советую вам сделать то же самое и не использовать мой репозиторий, так как я могу что-то изменить или его там может не быть. 
 
-In the cloned repository you will find a awx-demo.yml file we need to change `NodePort` for `ClusterIP` as per below: 
-
+В клонированном репозитории вы найдете файл awx-demo.yml, в котором нам нужно изменить `NodePort` на `ClusterIP`, как показано ниже:
 ```
 ---
 apiVersion: awx.ansible.com/v1beta1
@@ -67,72 +66,70 @@ spec:
   service_type: ClusterIP
 ```
 
-The next step is to define our namespace where we will be deploying the awx operator, using the `export NAMESPACE=awx` command then followed by `make deploy` we will start the deployment. 
+Следующим шагом будет определение нашего пространства имен, в котором мы будем развертывать оператор awx, используя команду `export NAMESPACE=awx`, а затем команду `make deploy`, мы начнем развертывание. 
 
 ![](../images/Day69_config3.png?v1)
 
-In checking we have our new namespace and we have our awx-operator-controller pod running in our namespace. `kubectl get pods -n awx`
+При проверке у нас есть наше новое пространство имен, и у нас есть наш awx-operator-controller pod, запущенный в нашем пространстве имен. `kubectl get pods -n awx`.
 
 ![](../images/Day69_config4.png?v1)
 
-Within the cloned repository you will find a file called awx-demo.yml we now want to deploy this into our Kubernetes cluser and our awx namespace. `kubectl create -f awx-demo.yml -n awx`
+В клонированном репозитории вы найдете файл awx-demo.yml. Теперь мы хотим развернуть его в нашем кластере Kubernetes и нашем пространстве имен awx. `kubectl create -f awx-demo.yml -n awx`.
 
 ![](../images/Day69_config5.png?v1)
 
-You can keep an eye on the progress with `kubectl get pods -n awx -w` which will keep a visual watch on what is happening. 
+Вы можете следить за прогрессом с помощью `kubectl get pods -n awx -w`, который будет визуально следить за происходящим. 
 
-You should have something that resembles the image you see below when everything is running. 
+У вас должно получиться что-то похожее на изображение, которое вы видите ниже, когда все работает. 
 
 ![](../images/Day69_config6.png?v1)
 
-Now we should be able to access our awx deployment after running in a new terminal `minikube service awx-demo-service --url -n $NAMESPACE` to expose this through the minikube ingress. 
+Теперь мы должны иметь доступ к нашей awx установке после запуска в новом терминале `minikube service awx-demo-service --url -n $NAMESPACE`, чтобы открыть ее через minikube ingress. 
 
 ![](../images/Day69_config7.png?v1)
 
-If we then open a browser to that address [] you can see we are prompted for username and password. 
+Если мы откроем браузер по этому адресу [], вы увидите, что нам будет предложено ввести имя пользователя и пароль. 
 
 ![](../images/Day69_config8.png?v1)
 
-The username by default is admin, to get the password we can run the following command to get this `kubectl get secret awx-demo-admin-password -o jsonpath="{.data.password}" -n awx| base64 --decode`
+По умолчанию имя пользователя - admin, чтобы получить пароль, мы можем выполнить следующую команду `kubectl get secret awx-demo-admin-password -o jsonpath="{.data.password}" -n awx| base64 --decode`.
 
 ![](../images/Day69_config9.png?v1)
+Очевидно, что это дает вам пользовательский интерфейс для централизованного управления плейбуком и задачами управления конфигурацией, а также позволяет вам работать вместе, в отличие от того, что мы делали до сих пор, когда мы работали с одной станции управления ansible. 
 
-Obviously this then gives you a UI to manage your playbook and configuration management tasks in a centralised location, it also allows you as a team to work together vs what we have been doing so far here where we have been running from one ansible control station. 
+Это еще одна из тех областей, где вы, вероятно, могли бы провести еще много времени, изучая возможности этого инструмента. 
 
-This is another one of those areas where you could probably go and spend another length of time walking through the capabilities within this tool. 
+Я приведу отличный ресурс от Джеффа Гирлинга, который более подробно рассказывает об использовании Ansible AWX. [Ansible 101 - Episode 10 - Ansible Tower and AWX](https://www.youtube.com/watch?v=iKmY4jEiy_A&t=752s) 
 
-I will call out a great resource from Jeff Geerling, which goes into more detail on using Ansible AWX. [Ansible 101 - Episode 10 - Ansible Tower and AWX](https://www.youtube.com/watch?v=iKmY4jEiy_A&t=752s) 
-
-In this video he also goes into great detail on the differences between Automation Controller (Previously Ansible Tower) and Ansible AWX (Free and Open Source).
+В этом видео он также подробно рассказывает о различиях между Automation Controller (ранее Ansible Tower) и Ansible AWX (Free and Open Source).
 
 ### Ansible Vault 
 
-`ansible-vault` allows us to encrypt and decrypt Ansible data files. Throughout this section we have skipped over and we have put some of our sensitive information in plain text. 
+`ansible-vault` позволяет нам шифровать и расшифровывать файлы данных Ansible. На протяжении всего этого раздела мы пропустили и поместили часть нашей конфиденциальной информации в открытый текст. 
 
-Built in to the Ansible binary is `ansible-vault` which allows us to mask away this sensitive information. 
+Встроенный в двоичный файл Ansible `ansible-vault` позволяет нам скрыть эту конфиденциальную информацию. 
 
 ![](../images/Day69_config10.png?v1)
 
-Secrets Management has progressively become another area in which more time should have been spent alongside tools such as HashiCorp Vault or the AWS Key Management Service. I will mark this as an area to dive deeper into.
+Управление секретами постепенно становится еще одной областью, которой следовало бы уделить больше времени наряду с такими инструментами, как HashiCorp Vault или AWS Key Management Service. Я отмечу эту область как ту, в которую следует погрузиться глубже.
 
-I am going to link a great resource and demo to run through from Jeff Geerling again [Ansible 101 - Episode 6 - Ansible Vault and Roles](https://www.youtube.com/watch?v=JFweg2dUvqM)
+Я собираюсь дать ссылку на отличный ресурс и демонстрационный пример от Jeff Geerling [Ansible 101 - Episode 6 - Ansible Vault and Roles](https://www.youtube.com/watch?v=JFweg2dUvqM)
 
 ### Ansible Galaxy (Docs)
 
-Now, we have already used `ansible-galaxy` to create some of our roles and file structure for our demo project. But we also have [Ansible Galaxy documentation](https://galaxy.ansible.com/docs/)
+Итак, мы уже использовали `ansible-galaxy` для создания некоторых ролей и файловой структуры для нашего демо-проекта. Но у нас также есть [документация по Ansible Galaxy](https://galaxy.ansible.com/docs/)
 
-"Galaxy is a hub for finding and sharing Ansible content."
+"Galaxy - это центр для поиска и обмена содержимым Ansible".
 
-### Ansible Testing
+### Тестирование Ansible
 
-- [Ansible Molecule](https://molecule.readthedocs.io/en/latest/) - Molecule project is designed to aid in the development and testing of Ansible roles
+- [Ansible Molecule](https://molecule.readthedocs.io/en/latest/) - проект Molecule предназначен для помощи в разработке и тестировании ролей Ansible.
 
-- [Ansible Lint](https://ansible-lint.readthedocs.io/en/latest/) - CLI tool for linting playbooks, roles and collections
+- [Ansible Lint](https://ansible-lint.readthedocs.io/en/latest/) - CLI-инструмент для линтинга плейбуков, ролей и коллекций.
 
-### Other Resource 
+### Другой ресурс 
 
-- [Ansible Documentation](https://docs.ansible.com/ansible/latest/index.html)
-
+- [Документация Ansible](https://docs.ansible.com/ansible/latest/index.html)
 ## Ресурсы 
 
 - [What is Ansible](https://www.youtube.com/watch?v=1id6ERvfozo)
@@ -140,8 +137,5 @@ Now, we have already used `ansible-galaxy` to create some of our roles and file 
 - [NetworkChuck - You need to learn Ansible right now!](https://www.youtube.com/watch?v=5hycyr-8EKs&t=955s)
 - [Your complete guide to Ansible](https://www.youtube.com/playlist?list=PLnFWJCugpwfzTlIJ-JtuATD2MBBD7_m3u)
 
-This final playlist listed above is where a lot of the code and ideas came from for this section, a great resource and walkthrough in video format. 
-
-This post wraps up our look into configuration management, we next move into CI/CD Pipelines and some of the tools and processes that we might see and use out there to achieve this workflow for our application development and release. 
-
-See you on [Day 70](../day70)
+Этот последний плейлист, приведенный выше, является тем местом, откуда было взято много кода и идей для этого раздела, отличным ресурсом и руководством в видеоформате.
+В этом посте мы завершаем рассмотрение управления конфигурацией, далее мы перейдем к CI/CD Pipelines и некоторым инструментам и процессам, которые мы можем увидеть и использовать для достижения этого рабочего процесса при разработке и выпуске приложений.

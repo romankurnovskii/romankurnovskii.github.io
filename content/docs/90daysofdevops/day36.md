@@ -1,5 +1,5 @@
 ---
-title: 36 - Установка и настройка Git
+title: 36. Установка и настройка Git
 description: Установка и настройка Git
 toc: true
 authors:

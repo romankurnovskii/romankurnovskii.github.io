@@ -1,5 +1,5 @@
 ---
-title: 13 - Go - подключение Twitter API
+title: 13. Go - подключение Twitter API
 description: Go - подключение Twitter API
 toc: true
 authors:

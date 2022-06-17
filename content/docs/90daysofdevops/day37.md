@@ -1,5 +1,5 @@
 ---
-title: 37 - Шпаргалка по Git 
+title: 37. Шпаргалка по Git 
 description: Знакомство с Git
 toc: true
 authors:

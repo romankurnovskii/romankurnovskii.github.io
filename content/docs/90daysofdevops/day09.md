@@ -1,5 +1,5 @@
 ---
-title: 9 - Как работает hello-world на Golang
+title: 9. Как работает hello-world на Golang
 description: Как работает hello-world на Golang
 toc: true
 authors:

@@ -12,16 +12,15 @@ featuredImage:
 draft: false
 id: 1048780
 ---
-## Tags, Variables, Inventory & Database Server config
+## Теги, переменные, инвентаризация и конфигурация сервера базы данных
 
-### Tags 
+### Теги 
 
-As we left our playbook in the session yesterday we would need to run every tasks and play within that playbook. Which means we would have to run the webservers and loadbalancer plays and tasks to completion. 
+Поскольку мы оставили наш плейбук во время вчерашней сессии, нам нужно будет запустить все задачи и пьесы в рамках этого плейбука. Это означает, что нам придется запустить веб-серверы и балансировщик нагрузки до конца. 
 
-However tags can enable us to seperate these out if we want. This could be an effcient move if we have extra large and long playbooks in our environments. 
+Однако теги могут позволить нам отделить их друг от друга, если мы захотим. Это может быть эффективным шагом, если в нашей среде есть очень большие и длинные плейбуки. 
 
-In our playbook file, in this case we are using [ansible-scenario5](Configmgmt/ansible-scenario5/playbook5.yml)
-
+В нашем файле плейбука, в данном случае мы используем [ansible-scenario5](Configmgmt/ansible-scenario5/playbook5.yml)
 ```
 - hosts: webservers
   become: yes
@@ -41,43 +40,42 @@ In our playbook file, in this case we are using [ansible-scenario5](Configmgmt/a
     - nginx
   tags: proxy
 ```
-We can then confirm this by using the `ansible-playbook playbook5.yml --list-tags` and the list tags is going to outline the tags we have defined in our playbook. 
+Затем мы можем подтвердить это с помощью команды `ansible-playbook playbook5.yml --list-tags`, а список тегов будет содержать теги, которые мы определили в нашем плейбуке. 
 
 ![](../images/Day68_config1.png?v1)
 
-Now if we wanted to target just the proxy we could do this by running `ansible-playbook playbook5.yml --tags proxy` and this will as you can see below only run the playbook against the proxy. 
+Теперь, если мы хотим нацелиться только на прокси, мы можем сделать это, выполнив `ansible-playbook playbook5.yml --tags proxy`, и это, как вы можете видеть ниже, запустит плейбук только против прокси. 
 
 ![](../images/Day68_config2.png?v1)
 
-tags can be added at the task level as well so we can get really granular on where and what you want to happen. It could be application focused tags, we could go through tasks for example and tag our tasks based on installation, configuration or removal. Another very useful tag you can use is 
+Теги могут быть добавлены и на уровне задач, так что мы можем получить действительно подробную информацию о том, где и что вы хотите, чтобы произошло. Это могут быть теги, ориентированные на приложения, например, мы можем пройтись по задачам и пометить наши задачи на основе установки, настройки или удаления. Еще один очень полезный тег, который вы можете использовать, это 
 
-`tag: always` this will ensure no matter what --tags you are using in your command if something is tagged with the always value then it will always be ran when you run the ansible-playbook command. 
+`tag: always`, который гарантирует, что независимо от того, какие -теги вы используете в вашей команде, если что-то помечено значением always, то оно всегда будет запущено при выполнении команды ansible-playbook. 
 
-With tags we can also bundle multiple tags together and if we choose to run `ansible-playbook playbook5.yml --tags proxy,web` this will run all of the items with those tags. Obviously in our instance that would mean the same as running the the playbook but if we had multiple other plays then this would make sense. 
+С помощью тегов мы также можем объединить несколько тегов вместе, и если мы выполним команду `ansible-playbook playbook5.yml --tags proxy,web`, то будут запущены все элементы с этими тегами. Очевидно, что в нашем случае это будет означать то же самое, что и запуск самого плейбука, но если бы у нас было несколько других плейбуков, то это имело бы смысл. 
 
-You can also define more than one tag. 
+Вы также можете определить более одного тега. 
 
-### Variables 
+### Переменные 
 
-There are two main types of variables within Ansible. 
+В Ansible существует два основных типа переменных. 
 
-- User created 
-- Ansible Facts 
+- Созданная пользователем (User created)
+- Факты Ansible (Ansible Facts)
 
-### Ansible Facts
+### Факты Ansible
 
-Each time we have ran our playbooks, we have had a task that we have not defined called "Gathering facts" we can use these variables or facts to make things happen with our automation tasks. 
+Каждый раз, когда мы запускали наши плейбуки, у нас была задача, которую мы не определяли, называемая "Сбор фактов", мы можем использовать эти переменные или факты, чтобы заставить вещи происходить с нашими задачами автоматизации. 
 
 ![](../images/Day68_config3.png?v1)
 
-If we were to run the following `ansible proxy -m setup` command we should see a lot of output in JSON format. There is going to be a lot of information on your terminal though to really use this so we would like to output this to a file using `ansible proxy -m setup >> facts.json` you can see this file in this repository, [ansible-scenario5](Configmgmt/ansible-scenario5/facts.json)
+Если мы выполним следующую команду `ansible proxy -m setup`, то увидим много выходных данных в формате JSON. Однако на вашем терминале будет много информации, чтобы действительно использовать ее, поэтому мы хотим вывести ее в файл, используя команду `ansible proxy -m setup >> facts.json`, вы можете увидеть этот файл в этом репозитории, [ansible-scenario5](Configmgmt/ansible-scenario5/facts.json)
 
 ![](../images/Day68_config4.png?v1)
 
-If you open this file you can see all sorts of information for our command. We can get our IP addresses, architecture, bios version. A lot of useful information if we want to leverage this and use this in our playbooks. 
+Если открыть этот файл, то можно увидеть всевозможную информацию для нашей команды. Мы можем получить наши IP-адреса, архитектуру, версию биоса. Много полезной информации, если мы захотим использовать ее в наших плейбуках. 
 
-An idea would be to potentially use one of these variables within our nginx template mysite.j2 where we hard coded the IP addresses of our webservers. You can do this by creating a for loop in your mysite.j2 and this is going to cycle through the group [webservers] this enables us to have more than our 2 webservers automatically and dynamically created or added to this load balancer configuration. 
-
+Идея заключается в том, чтобы потенциально использовать одну из этих переменных в шаблоне nginx mysite.j2, где мы жестко закодировали IP-адреса наших веб-серверов. Вы можете сделать это, создав цикл for в вашем mysite.j2, который будет проходить через группу [webservers], что позволит нам иметь более двух веб-серверов, автоматически и динамически созданных или добавленных в эту конфигурацию балансировщика нагрузки.
 ```
 #Dynamic Config for server {{ ansible_facts['nodename'] }}
     upstream webservers {
@@ -94,11 +92,11 @@ An idea would be to potentially use one of these variables within our nginx temp
         }
     }
 ```
-The outcome of the above will look the same as it does right now but if we added more webservers or removed one this would dynamically change the proxy configuration. For this to work you will need to have name resolution configured. 
+Результат вышеописанных действий будет выглядеть так же, как и сейчас, но если мы добавим больше веб-серверов или удалим один, это динамически изменит конфигурацию прокси. Чтобы это работало, необходимо настроить разрешение имен. 
 
-### User created
+### Созданные пользователем
 
-User created variables are what we have created ourselves. If you take a look in our playbook you will see we have `vars:` and then a list of 3 variables we are using there. 
+Переменные, созданные пользователем, - это то, что мы создали сами. Если вы посмотрите в наш playbook, то увидите, что у нас есть `vars:`, а затем список из трех переменных, которые мы используем.  
 
 ```
 - hosts: webservers
@@ -120,16 +118,14 @@ User created variables are what we have created ourselves. If you take a look in
   tags: proxy
 ```
 
-We can however keep our playbook clear of variables by moving them to their own file. We are going to do this but we will move into the [ansible-scenario6](Configmgmt/ansible-scenario6) folder. In the root of that folder we are going to create a group_vars folder. We are then going to create another folder called all (all groups are going to get these variables). In there we will create a file called `common_variables.yml` and we will copy our variables from our playbook into this file. Removing them from the playbook along with vars: as well. 
-
+Однако мы можем очистить наш плейбук от переменных, переместив их в собственный файл. Мы так и сделаем, но перенесем их в папку [ansible-scenario6](Configmgmt/ansible-scenario6). В корне этой папки мы создадим папку group_vars. Затем мы создадим еще одну папку под названием all (все группы получат эти переменные). В ней мы создадим файл под названием `common_variables.yml` и скопируем в него наши переменные из нашего плейбука. Удалим их из плейбука вместе с vars:.
 ```
 http_port: 8000
 https_port: 4443
 html_welcome_msg: "Hello 90DaysOfDevOps - Welcome to Day 68!"
 ```
 
-Because we are associating this as a global variable we could also add in our NTP and DNS servers here as well. The variables are set from the folder structure that we have created. You can see below how clean our Playbook now looks. 
-
+Поскольку мы связываем это с глобальной переменной, мы также можем добавить сюда наши серверы NTP и DNS. Переменные устанавливаются из созданной нами структуры папок. Ниже вы можете видеть, как чисто выглядит наш Playbook.
 ```
 - hosts: webservers
   become: yes
@@ -146,8 +142,7 @@ Because we are associating this as a global variable we could also add in our NT
   tags: proxy
 ```
 
-One of those variables was the http_port, we can use this again in our for loop within the mysite.j2 as per below: 
-
+Одной из этих переменных был http_port, мы можем использовать его снова в нашем цикле for в файле mysite.j2, как показано ниже:
 ```
 #Dynamic Config for server {{ ansible_facts['nodename'] }}
     upstream webservers {
@@ -165,8 +160,7 @@ One of those variables was the http_port, we can use this again in our for loop 
     }
 ```
 
-We can also define an ansible fact in our roles/apache2/templates/index.html.j2 file so that we can understand which webserver we are on. 
-
+Мы также можем определить ansible fact в нашем файле roles/apache2/templates/index.html.j2, чтобы мы могли понять, на каком веб-сервере мы находимся.
 ```
 <html>
 
@@ -174,28 +168,26 @@ We can also define an ansible fact in our roles/apache2/templates/index.html.j2 
 
 </html>
 ```
-The results of running the `ansible-playbook playbook6.yml` command with our variable changes means that when we hit our loadbalancer you can see that we hit either of the webservers we have in our group. 
-
+Результаты выполнения команды `ansible-playbook playbook6.yml` с нашими изменениями переменных означают, что когда мы нажимаем на наш loadbalancer, вы можете увидеть, что мы нажимаем на любой из веб-серверов, которые есть в нашей группе.
 ![](../images/Day68_config5.png?v1)
 
-We could also add a folder called host_vars and create a web01.yml and have a specific message or change what that looks like on a per host basis if we wish. 
+Мы также можем добавить папку host_vars и создать web01.yml и иметь определенное сообщение или изменить то, как это выглядит для каждого хоста, если захотим. 
 
-### Inventory Files
+### Файлы инвентаризации
 
-So far we have used the default hosts file in the /etc/ansible folder to determine our hosts. We could however have different files for different environments, for example production and staging. I am not going to create more environments. But we are able to create our own host files. 
+До сих пор мы использовали файл hosts по умолчанию в папке /etc/ansible для определения наших хостов. Однако мы можем иметь разные файлы для разных окружений, например, production и staging. Я не собираюсь создавать больше окружений. Но мы можем создавать свои собственные файлы хостов. 
 
-We can create multiple files for our different inventory of servers and nodes. We would call these using `ansible-playbook -i dev playbook.yml` you can also define variables within your hosts file and then print that out or leverage that variable somewhere else in your playbooks for example in the example and training course I am following along to below they have added the environment variable created in the host file to the loadbalancer web page template to show the environment as part of the web page message. 
+Мы можем создать несколько файлов для нашего различного количества серверов и узлов. Мы будем вызывать их с помощью `ansible-playbook -i dev playbook.yml` Вы также можете определить переменные в файле hosts и затем распечатать их или использовать эти переменные где-нибудь еще в своих плейбуках. Например, в примере и учебном курсе, за которым я слежу ниже, они добавили переменную окружения, созданную в файле host, в шаблон веб-страницы loadbalancer, чтобы показать окружение как часть сообщения веб-страницы. 
 
-### Deploying our Database server
+### Развертывание нашего сервера базы данных
 
-We still have one more machine we have not powered up yet and configured. We can do this using `vagrant up db01` from where our Vagrantfile is located. When this is up and accessible we then need to make sure the SSH key is copied over using `ssh-copy-id db01` so that we can access. 
+У нас осталась еще одна машина, которую мы еще не включили и не настроили. Мы можем сделать это с помощью команды `vagrant up db01` из места, где находится наш Vagrantfile. Когда машина будет запущена и доступна, нам нужно убедиться, что SSH-ключ скопирован с помощью `ssh-copy-id db01`, чтобы мы могли получить доступ. 
 
-We are going to be working from the [ansible-scenario7](Configmgmt/ansible-scenario7) folder
+Мы будем работать из папки [ansible-scenario7](Configmgmt/ansible-scenario7).
 
-Let's then use `ansible-galaxy init roles/mysql` to create a new folder structure for a new role called "mysql" 
+Затем воспользуемся командой `ansible-galaxy init roles/mysql`, чтобы создать новую структуру папок для новой роли под названием "mysql". 
 
-In our playbook we are going to add a new play block for the database configuration. We have our group database defined in our /etc/ansible/hosts file. We then instruct our database group to have the role common and a new role called mysql which we created in the previous step. We are also tagging our database group with database, this means as we discussed earlier we can choose to only run against these tags if we wish. 
-
+В нашем плейбуке мы собираемся добавить новый блок для конфигурации базы данных. В файле /etc/ansible/hosts мы определили нашу группу базы данных. Затем мы указываем нашей группе базы данных роль common и новую роль mysql, которую мы создали в предыдущем шаге. Мы также помечаем нашу группу базы данных тегами database, что означает, как мы обсуждали ранее, что мы можем выбрать запуск только с этими тегами, если захотим.
 ```
 - hosts: webservers
   become: yes
@@ -221,10 +213,9 @@ In our playbook we are going to add a new play block for the database configurat
   tags: database
 ```
 
-Within our roles folder structure you will now have the tree automatically created, we need to populate the following: 
+Теперь в структуре папок с нашими ролями автоматически создается дерево, в котором нам нужно заполнить следующее: 
 
-Handlers - main.yml 
-
+Handlers - main.yml
 ```
 # handlers file for roles/mysql
 - name: restart mysql
@@ -293,8 +284,7 @@ setup_mysql.yml - This task will create our database and database user.
     state: present
 ```
 
-You can see from the above we are using some variables to determine some of our configuration such as passwords, usernames and databases, this is all stored in our group_vars/all/common_variables.yml file. 
-
+Вы можете видеть, что мы используем некоторые переменные для определения некоторых конфигураций, таких как пароли, имена пользователей и базы данных, все это хранится в файле group_vars/all/common_variables.yml.
 ```
 http_port: 8000
 https_port: 4443
@@ -306,41 +296,40 @@ db_user: devops
 db_pass: DevOps90
 db_name: 90DaysOfDevOps
 ```
-We also have the my.cnf.j2 file in the templates folder, which looks like below: 
+У нас также есть файл my.cnf.j2 в папке templates, который выглядит следующим образом: 
 
 ```
 [mysql]    
 bind-address = 0.0.0.0
 ``` 
 
-### Running the playbook 
+### Запуск плейбука 
 
-Now we have our VM up and running and we have our configuration files in place, we are now ready to run our playbook which will include everything we have done before if we run the following `ansible-playbook playbook7.yml` or we could choose to just deploy to our database group with the `ansible-playbook playbook7.yml --tags database` command, which will just run our new configuration files. 
+Теперь наша виртуальная машина запущена и работает, и у нас есть наши конфигурационные файлы на месте, теперь мы готовы запустить наш плейбук, который будет включать все, что мы сделали раньше, если мы запустим следующий `ansible-playbook playbook7.yml` или мы можем выбрать просто развертывание на нашу группу баз данных с помощью команды `ansible-playbook playbook7.yml --tags database`, которая просто запустит наши новые конфигурационные файлы. 
 
-I ran only against the database tag but I stumbled across an error. This error tells me that we do not have pip3 (Python) installed. We can fix this by adding this to our common tasks and install 
+Я запустил только тег database, но наткнулся на ошибку. Эта ошибка говорит мне, что у нас не установлен pip3 (Python). Мы можем исправить это, добавив это в наши общие задачи и установив 
 
 ![](../images/Day68_config6.png?v1)
 
-We fixed the above and ran the playbook again and we have a successful change. 
+Мы исправили вышеуказанное и запустили плейбук снова, и у нас получилось успешное изменение. 
 
 ![](../images/Day68_config7.png?v1)
 
-We should probably make sure that everything is how we want it to be on our newly configured db01 server. We can do this from our control node using the `ssh db01` command. 
+Мы должны убедиться, что на нашем новом настроенном сервере db01 все так, как мы хотим. Мы можем сделать это с нашего узла управления с помощью команды `ssh db01`. 
 
-To connect to mySQL I used `sudo /usr/bin/mysql -u root -p` and gave the vagrant password for root at the prompt. 
+Для подключения к MySQL я использовал команду `sudo /usr/bin/mysql -u root -p` и указал пароль vagrant для root. 
 
-When we have connected let's first make sure we have our user created called devops. `select user, host from mysql.user;`
+Когда мы подключились, давайте сначала убедимся, что у нас создан пользователь devops. `select user, host from mysql.user;`
 
 ![](../images/Day68_config8.png?v1)
 
-Now we can issue the `SHOW DATABASES;` command  to see our new database that has also been created. 
+Теперь мы можем выполнить команду `SHOW DATABASES;`, чтобы увидеть нашу новую базу данных, которая также была создана. 
 
 ![](../images/Day68_config9.png?v1)
 
-I actually used root to connect but we could also now log in with our devops account in the same way using `sudo /usr/bin/mysql -u devops -p` but the password here is DevOps90. 
+На самом деле я использовал root для подключения, но теперь мы можем войти в систему под учетной записью devops, используя команду `sudo /usr/bin/mysql -u devops -p`, но пароль здесь будет DevOps90. 
 
-One thing I have found that in our `setup_mysql.yml` I had to add the line `login_unix_socket: /var/run/mysqld/mysqld.sock` in order to successfully connect to my db01 mysql instance and now everytime I run this it reports a change when creating the user, any suggestions would be greatly appreciated. 
-
+Я обнаружил, что в нашем `setup_mysql.yml` мне пришлось добавить строку `login_unix_socket: /var/run/mysqld/mysqld.sock` для успешного подключения к моему экземпляру db01 mysql, и теперь каждый раз, когда я запускаю это, он сообщает об изменении при создании пользователя, любые предложения будут очень признательны.
 ## Ресурсы 
 
 - [What is Ansible](https://www.youtube.com/watch?v=1id6ERvfozo)
@@ -348,6 +337,4 @@ One thing I have found that in our `setup_mysql.yml` I had to add the line `logi
 - [NetworkChuck - You need to learn Ansible right now!](https://www.youtube.com/watch?v=5hycyr-8EKs&t=955s)
 - [Your complete guide to Ansible](https://www.youtube.com/playlist?list=PLnFWJCugpwfzTlIJ-JtuATD2MBBD7_m3u)
 
-This final playlist listed above is where a lot of the code and ideas came from for this section, a great resource and walkthrough in video format. 
-
-See you on [Day 69](../day69)
+Этот последний плейлист, приведенный выше, является тем местом, откуда было взято много кода и идей для этого раздела, отличным ресурсом и руководством в видеоформате.

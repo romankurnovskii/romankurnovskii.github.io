@@ -1,5 +1,5 @@
 ---
-title: 42 - Контейнеры
+title: 42. Контейнеры
 description: Контенеры Docker для запуска приложений
 toc: true
 authors:

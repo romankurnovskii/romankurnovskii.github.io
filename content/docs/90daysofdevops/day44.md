@@ -1,5 +1,5 @@
 ---
-title: 44 - Установка образов Docker в Docker Desktop
+title: 44. Установка образов Docker в Docker Desktop
 description: 
 toc: true
 authors:

@@ -7,127 +7,127 @@ cover_image: null
 canonical_url: null
 id: 1048781
 ---
-## Data Services
+## Службы данных
 
-Databases are going to be the most common data service that we come across in our environments. I wanted to take this session to explore some of those different types of Databases and some of the use cases they each have. Some we have used and seen throughout the course of the challenge. 
+Базы данных являются наиболее распространенными службами данных, с которыми мы сталкиваемся в наших средах. На этом занятии я хотел бы рассмотреть некоторые из этих различных типов баз данных и некоторые случаи их использования. Некоторые из них мы уже использовали и видели в ходе решения задачи. 
 
-From an application development point of view choosing the right data service or database is going to be a huge decision when it comes to the performance and scalability of your application. 
+С точки зрения разработки приложений выбор правильной службы данных или базы данных будет иметь огромное значение для производительности и масштабируемости вашего приложения. 
 
 https://www.youtube.com/watch?v=W2Z7fbCLSTw
 
-### Key-value
+### Ключ-значение
 
-A key-value database is a type of nonrelational database that uses a simple key-value method to store data. A key-value database stores data as a collection of key-value pairs in which a key serves as a unique identifier. Both keys and values can be anything, ranging from simple objects to complex compound objects. Key-value databases are highly partitionable and allow horizontal scaling at scales that other types of databases cannot achieve.
+База данных "ключ-значение" - это тип нереляционной базы данных, которая использует простой метод "ключ-значение" для хранения данных. База данных "ключ-значение" хранит данные в виде набора пар "ключ-значение", в которых ключ служит уникальным идентификатором. И ключи, и значения могут быть любыми, от простых объектов до сложных составных объектов. Базы данных "ключ-значение" хорошо поддаются разделению и позволяют горизонтальное масштабирование в таких масштабах, которые недостижимы для других типов баз данных.
 
-An example of a Key-Value database is Redis. 
+Примером базы данных типа "ключ-значение" является Redis. 
 
-*Redis is an in-memory data structure store, used as a distributed, in-memory key–value database, cache and message broker, with optional durability. Redis supports different kinds of abstract data structures, such as strings, lists, maps, sets, sorted sets, HyperLogLogs, bitmaps, streams, and spatial indices.*
+*Redis - это хранилище структур данных в памяти, используемое как распределенная база данных ключей-значений в памяти, кэш и брокер сообщений с возможностью долговечности. Redis поддерживает различные виды абстрактных структур данных, таких как строки, списки, карты, множества, сортированные множества, HyperLogLogs, растровые изображения, потоки и пространственные индексы.
 
 ![](../images/Day85_Data1.png?v1)
 
-As you can see from the description of Redis this means that our database is fast but we are limited on space as a trade off. Also no queries or joins which means data modelling options are very limited. 
+Как вы можете видеть из описания Redis, это означает, что наша база данных работает быстро, но мы ограничены в пространстве в качестве компромисса. Также нет запросов или объединений, что означает, что возможности моделирования данных очень ограничены. 
 
-Best for: 
-- Caching 
+Лучше всего подходит для: 
+- Кэширование 
 - Pub/Sub
-- Leaderboards 
-- Shopping carts
+- Лидерборды 
+- корзины покупок
 
-Generally used as a cache above another persistent data layer. 
+Обычно используется в качестве кэша над другим постоянным слоем данных. 
 
-### Wide Column
+### Широкий столбец
 
-A wide-column database is a NoSQL database that organises data storage into flexible columns that can be spread across multiple servers or database nodes, using multi-dimensional mapping to reference data by column, row, and timestamp.
+База данных с широкими колонками - это база данных NoSQL, которая организует хранение данных в гибких колонках, которые могут быть распределены по нескольким серверам или узлам базы данных, используя многомерное отображение для ссылки на данные по столбцам, строкам и временным меткам.
 
-*Cassandra is a free and open-source, distributed, wide-column store, NoSQL database management system designed to handle large amounts of data across many commodity servers, providing high availability with no single point of failure.*
+*Cassandra - это бесплатная система управления базами данных NoSQL с открытым исходным кодом, распределенная, с широким хранилищем колонок, разработанная для обработки больших объемов данных на множестве серверов, обеспечивающая высокую доступность без единой точки отказа.*
 
 ![](../images/Day85_Data2.png?v1)
 
-No schema which means can handle unstructured data however this can be seen as a benefit to some workloads. 
+Нет схемы, что означает возможность работы с неструктурированными данными, однако это может рассматриваться как преимущество для некоторых рабочих нагрузок. 
 
-Best for: 
-- Time-Series 
-- Historical Records 
-- High-Write, Low-Read 
+Лучше всего подходит для: 
+- Временные ряды 
+- Исторические записи 
+- Высокая запись, низкий уровень чтения 
 
-### Document
+### Документ
 
-A document database (also known as a document-oriented database or a document store) is a database that stores information in documents. 
+База данных документов (также известная как документо-ориентированная база данных или хранилище документов) - это база данных, которая хранит информацию в документах. 
 
-*MongoDB is a source-available cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas. MongoDB is developed by MongoDB Inc. and licensed under the Server Side Public License.*
+*MongoDB - это кросс-платформенная кросс-платформенная программа базы данных, ориентированная на документы. Классифицируемая как NoSQL база данных, MongoDB использует JSON-подобные документы с необязательными схемами. MongoDB разработана компанией MongoDB Inc. и лицензирована по лицензии Server Side Public License.*.
 
 ![](../images/Day85_Data3.png?v1)
 
-NoSQL document databases allow businesses to store simple data without using complex SQL codes. Quickly store with no compromise to reliability. 
+Документальные базы данных NoSQL позволяют предприятиям хранить простые данные без использования сложных кодов SQL. Быстрое хранение без ущерба для надежности. 
 
-Best for: 
+Лучше всего подходит для: 
 
-- Most Applications 
-- Games 
-- Internet of Things 
+- Большинство приложений 
+- Игры 
+- Интернет вещей
 
-### Relational
+### Реляционная
 
-If you are new to databases but you know of them my guess is that you have absolutely come across a relational database. 
+Если вы новичок в области баз данных, но знаете о них, то, скорее всего, вы сталкивались с реляционной базой данных. 
 
-A relational database is a digital database based on the relational model of data, as proposed by E. F. Codd in 1970. A system used to maintain relational databases is a relational database management system. Many relational database systems have an option of using the SQL for querying and maintaining the database.
+Реляционная база данных - это цифровая база данных, основанная на реляционной модели данных, предложенной Э. Ф. Коддом в 1970 году. Система, используемая для ведения реляционных баз данных, - это система управления реляционными базами данных. Многие системы реляционных баз данных имеют возможность использования SQL для запросов и ведения базы данных.
 
-*MySQL is an open-source relational database management system. Its name is a combination of "My", the name of co-founder Michael Widenius's daughter, and "SQL", the abbreviation for Structured Query Language.*
+*MySQL - это система управления реляционными базами данных с открытым исходным кодом. Ее название представляет собой комбинацию слов "My", имя дочери соучредителя Майкла Видениуса, и "SQL", аббревиатура для языка структурированных запросов*.
 
-MySQL is one example of a relational database there are lots of other options. 
+MySQL является одним из примеров реляционной базы данных, существует множество других вариантов. 
 
 ![](../images/Day85_Data4.png?v1)
 
-Whilst researching relational databases the term or abbreviation **ACID** has been mentioned a lot, (atomicity, consistency, isolation, durability) is a set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps. In the context of databases, a sequence of database operations that satisfies the ACID properties (which can be perceived as a single logical operation on the data) is called a transaction. For example, a transfer of funds from one bank account to another, even involving multiple changes such as debiting one account and crediting another, is a single transaction. 
+При изучении реляционных баз данных часто упоминается термин или аббревиатура **ACID** (atomicity, consistency, isolation, durability) - это набор свойств транзакций базы данных, призванных гарантировать достоверность данных, несмотря на ошибки, сбои питания и другие казусы. В контексте баз данных последовательность операций с базой данных, удовлетворяющая свойствам ACID (которую можно воспринимать как одну логическую операцию над данными), называется транзакцией. Например, перевод средств с одного банковского счета на другой, даже включающий несколько изменений, таких как дебетование одного счета и кредитование другого, является одной транзакцией. 
 
-Best for: 
-- Most Applications (It has been around for years, doesn't mean it is the best)
+Лучше всего подходит для: 
+- Большинство приложений (существует уже много лет, но это не значит, что он лучший).
 
-It is not ideal for unstructured data or the ability to scale is where some of the other NoSQL mentions give a better ability to scale for certain workloads. 
+Она не идеальна для неструктурированных данных или способности к масштабированию - некоторые из других NoSQL обеспечивают лучшую способность к масштабированию для определенных рабочих нагрузок. 
 
 ### Graph
 
-A graph database stores nodes and relationships instead of tables, or documents. Data is stored just like you might sketch ideas on a whiteboard. Your data is stored without restricting it to a pre-defined model, allowing a very flexible way of thinking about and using it.
+Графовая база данных хранит узлы и отношения вместо таблиц или документов. Данные хранятся так же, как вы можете набросать идеи на доске. Ваши данные хранятся без ограничения их заранее определенной моделью, что позволяет очень гибко подходить к их осмыслению и использованию.
 
-*Neo4j is a graph database management system developed by Neo4j, Inc. Described by its developers as an ACID-compliant transactional database with native graph storage and processing*
+*Neo4j - это система управления графовыми базами данных, разработанная компанией Neo4j, Inc. Разработчики описывают ее как ACID-совместимую транзакционную базу данных со встроенными средствами хранения и обработки графов*.
 
-Best for: 
+Лучшая для: 
 
-- Graphs
-- Knowledge Graphs
-- Recommendation Engines
+- Графы
+- Графы знаний
+- Рекомендательные движки
 
-### Search Engine
+### Поисковая система
 
-In the last section we actually used a Search Engine database in the way of Elasticsearch. 
+В предыдущем разделе мы фактически использовали базу данных поисковой системы на пути к Elasticsearch. 
 
-A search-engine database is a type of non-relational database that is dedicated to the search of data content. Search-engine databases use indexes to categorise the similar characteristics among data and facilitate search capability.
+База данных поисковой системы - это тип нереляционной базы данных, предназначенной для поиска данных. Базы данных поисковых систем используют индексы для категоризации схожих характеристик данных и облегчения поиска.
 
-*Elasticsearch is a search engine based on the Lucene library. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents.*
+*Elasticsearch - это поисковая система, основанная на библиотеке Lucene. Она представляет собой распределенную полнотекстовую поисковую систему с поддержкой многопользовательского доступа, веб-интерфейсом HTTP и документами JSON без схем.*
 
-Best for: 
+Лучшее для: 
 
-- Search Engines 
+- Поисковые системы 
 - Typeahead 
-- Log search
+- Поиск по журналу
 
-### Multi-model
+### Мультимодель
 
-A multi-model database is a database management system designed to support multiple data models against a single, integrated backend. In contrast, most database management systems are organized around a single data model that determines how data can be organized, stored, and manipulated.Document, graph, relational, and key–value models are examples of data models that may be supported by a multi-model database. 
+Многомодельная база данных - это система управления базой данных, разработанная для поддержки нескольких моделей данных на основе единого интегрированного бэкенда. В отличие от этого, большинство систем управления базами данных организованы вокруг одной модели данных, которая определяет, как данные могут быть организованы, храниться и манипулироваться. Документ, граф, реляционная модель и модель ключ-значение - это примеры моделей данных, которые могут поддерживаться многомодельной базой данных. 
 
-*Fauna is a flexible, developer-friendly, transactional database delivered as a secure and scalable cloud API with native GraphQL.*
+*Fauna - это гибкая, удобная для разработчиков, транзакционная база данных, предоставляемая в виде безопасного и масштабируемого облачного API со встроенным GraphQL.*.
 
-Best for: 
+Лучшее решение для: 
 
-- You are not stuck to having to choose a data model
-- ACID Compliant
-- Fast 
-- No provisioning overhead
-- How do you want to consume your data and let the cloud do the heavy lifting
+- Вы не привязаны к выбору модели данных.
+- Соответствует стандарту ACID
+- Быстрая 
+- Отсутствие накладных расходов на инициализацию
+- Как вы хотите использовать свои данные и предоставить облаку выполнять всю работу.
 
-That is going to wrap up this database overview session, no matter what industry you are in you are going to come across one area of databases. We are then going to take some of these examples and look at the data management and in particular the protection and storing of these data services later on in the section. 
+На этом мы закончим обзор баз данных, независимо от того, в какой отрасли вы работаете, вы обязательно столкнетесь с одной из областей баз данных. Далее в этом разделе мы рассмотрим некоторые из этих примеров и управление данными и, в частности, защиту и хранение этих сервисов данных. 
 
-There are a ton of resources I have linked below, you could honestly spend 90 years probably deep diving into all database types and everything that comes with this. 
+Существует масса ресурсов, ссылки на которые я привел ниже, и вы можете потратить 90 лет на глубокое погружение во все типы баз данных и все, что с этим связано.
 
 ## Ресурсы 
 
@@ -144,6 +144,3 @@ There are a ton of resources I have linked below, you could honestly spend 90 ye
 - [What is Elasticsearch?](https://www.youtube.com/watch?v=ZP0NmfyfsoM)
 - [FaunaDB Basics - The Database of your Dreams](https://www.youtube.com/watch?v=2CipVwISumA)
 - [Fauna Crash Course - Covering the Basics](https://www.youtube.com/watch?v=ihaB7CqJju0)
-
-
-See you on [Day 86](../day86)

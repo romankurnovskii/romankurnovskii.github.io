@@ -1,5 +1,5 @@
 ---
-title: 29 - Знакомство с Microsoft Azure
+title: 29. Знакомство с Microsoft Azure
 description: Туториал по Microsoft Azure с нуля
 toc: true
 authors:

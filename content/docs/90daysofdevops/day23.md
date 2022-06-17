@@ -1,5 +1,5 @@
 ---
-title: 23 - Протоколы сети
+title: 23. Протоколы сети
 description: Протоколы сети
 toc: true
 authors:

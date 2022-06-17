@@ -1,5 +1,5 @@
 ---
-title: 28 - DevOps в облаке
+title: 28. DevOps в облаке
 description: Обзор применения инфрастуктуры DevOps в облаке
 toc: true
 authors:

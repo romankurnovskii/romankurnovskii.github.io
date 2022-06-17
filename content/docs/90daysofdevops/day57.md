@@ -1,5 +1,5 @@
 ---
-title: '#90DaysOfDevOps - An intro to Terraform - Day 57'
+title: 57. Введение в Terraform
 description: 
 toc: true
 authors:
@@ -12,21 +12,19 @@ featuredImage:
 draft: false
 id: 1048710
 ---
-## An intro to Terraform 
 
-"Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently" 
+"Terraform - это инструмент для безопасного и эффективного создания, изменения и управления версиями инфраструктуры". 
+«Приведенная выше цитата взята из HashiCorp, HashiCorp - это компания, стоящая за Terraform. 
 
-The above quote is from HashiCorp, HashiCorp is the company behind Terraform. 
+"Terraform - это программный инструмент "инфраструктура как код" с открытым исходным кодом, который обеспечивает последовательный рабочий процесс CLI для управления сотнями облачных сервисов. Terraform кодирует облачные API в декларативные конфигурационные файлы".
 
-"Terraform is an open-source infrastructure as code software tool that provides a consistent CLI workflow to manage hundreds of cloud services. Terraform codifies cloud APIs into declarative configuration files."
+У HashiCorp есть отличный ресурс [HashiCorp Learn](https://learn.hashicorp.com/terraform?utm_source=terraform_io&utm_content=terraform_io_hero), который охватывает все их продукты и дает несколько отличных демонстрационных примеров, когда вы пытаетесь достичь чего-то с помощью инфраструктуры как кода. 
 
-HashiCorp have a great resource in [HashiCorp Learn](https://learn.hashicorp.com/terraform?utm_source=terraform_io&utm_content=terraform_io_hero) which covers all of their products and gives some great walkthrough demos when you are trying to achieve something with Infrastructure as Code. 
+Все облачные провайдеры и локальные платформы обычно предоставляют нам доступ к консолям управления, которые позволяют нам создавать наши ресурсы с помощью пользовательского интерфейса, обычно эти платформы также предоставляют доступ к CLI или API для создания тех же ресурсов, но с API у нас есть возможность быстрого предоставления ресурсов. 
 
-All cloud providers and on prem platforms generally give us access to management consoles which enables us to create our resources via a UI, generally these platforms also provide a CLI or API access to also create the same resources but with an API we have the ability to provision fast. 
+Инфраструктура как код позволяет нам подключаться к этим API для развертывания наших ресурсов в нужном состоянии. 
 
-Infrastructure as Code allows us to hook into those APIs to deploy our resources in a desired state. 
-
-Other tools but not exclusive or exhaustive below. If you have other tools then please share via a PR.  
+Ниже перечислены и другие инструменты, но они не являются исключительными или исчерпывающими. Если у вас есть другие инструменты, пожалуйста, поделитесь с нами через PR.  
 
 | Cloud Specific                  | Cloud Agnostic | 
 | ------------------------------- | -------------- |
@@ -34,64 +32,58 @@ Other tools but not exclusive or exhaustive below. If you have other tools then 
 | Azure Resource Manager          | Pulumi         | 
 | Google Cloud Deployment Manager |                | 
 
-This is another reason why we are using Terraform, we want to be agnostic to the clouds and platforms that we wish to use for our demos but also in general. 
+Это еще одна причина, почему мы используем Terraform, мы хотим быть независимыми от облаков и платформ, которые мы хотим использовать для наших демонстраций, а также в целом. 
 
-## Terraform Overview 
+## Обзор Terraform 
 
-Terraform is a provisioning focused tool, Terraform is a CLI that gives the capabilities of being able to provision complex infrastructure environments. With Terraform we can define complex infrastructure requirements that exist locally or remote (cloud) Terraform not only enables us to build things initially but also to maintain and update those resources for their lifetime.  
+Terraform - это инструмент, ориентированный на обеспечение, Terraform - это CLI, который предоставляет возможности для обеспечения сложных инфраструктурных сред. С помощью Terraform мы можем определить сложные требования к инфраструктуре, существующей локально или удаленно (облако). Terraform позволяет нам не только создавать вещи на начальном этапе, но и поддерживать и обновлять эти ресурсы в течение всего срока их службы.  
 
-We are going to cover the high level here but for more details and loads of resources you can head to [terraform.io](https://www.terraform.io/)
+Здесь мы рассмотрим основные моменты, но для получения более подробной информации и множества ресурсов вы можете посетить сайт [terraform.io](https://www.terraform.io/).
 
-### Write
+### Запись
 
-Terraform allows us to create declaritive configuration files that will build our environments. The files are written using the HashiCorp Configuration Language (HCL) which allows for concise descriptions of resources using blocks, arguments, and expressions. We will of course be looking into these in detail in deploying VMs, Containers and within Kubernetes. 
+Terraform позволяет нам создавать декларативные конфигурационные файлы, которые будут создавать наше окружение. Файлы пишутся с помощью языка HashiCorp Configuration Language (HCL), который позволяет кратко описывать ресурсы с помощью блоков, аргументов и выражений. Мы, конечно, будем подробно рассматривать их при развертывании виртуальных машин, контейнеров и в Kubernetes. 
 
+### План
 
-### Plan
+Возможность проверить, что вышеуказанные конфигурационные файлы развернут то, что мы хотим видеть, используя определенные функции terraform cli, чтобы иметь возможность протестировать этот план перед развертыванием чего-либо или изменением чего-либо. Помните, что Terraform - это инструмент для продолжения вашей инфраструктуры, если вы хотите изменить аспект вашей инфраструктуры, вы должны сделать это через terraform, чтобы все это было зафиксировано в коде. 
 
-The ability to check that the above configuration files are going to deploy what we want to see using specific functions of the terraform cli to be able to test that plan before deploying anything or changing anything. Remember Terraform is a continued tool for your infrastructure if you would like to change aspect of your infrastructure you should do that via terraform so that it is captured all in code. 
+### Применить
 
-### Apply
+Очевидно, что когда вы будете довольны, вы сможете применить эту конфигурацию к множеству провайдеров, доступных в Terraform. Вы можете увидеть большое количество доступных провайдеров [здесь](https://registry.terraform.io/browse/providers).
 
-Obviously once you are happy you can go ahead and apply this configuration to the many providers that are available within Terraform. You can see the large amount of providers available [here](https://registry.terraform.io/browse/providers)
+Еще одна вещь, о которой следует упомянуть, это то, что также доступны модули, и это похоже на образы контейнеров в том, что эти модули были созданы и выложены в открытый доступ, так что вам не придется создавать их снова и снова, просто используйте лучшую практику развертывания определенного ресурса инфраструктуры одинаковым способом везде. Вы можете найти доступные модули [здесь](https://registry.terraform.io/browse/modules).
 
-Another thing to mention is that there are also modules available, and this is similar to container images in that these modules have been created and shared in public so you do not have to create it again and again just re use the best practice of deploying a specific infrastructure resource the same way everywhere. You can find the modules available [here](https://registry.terraform.io/browse/modules)
-
-
-The Terraform workflow looks like this: (*taken from the terraform site*)
-
+Рабочий процесс Terraform выглядит следующим образом: (*взято с сайта terraform*)
 
 ![](../images/Day57_IAC3.png?v1)
 
 ### Terraform vs Vagrant
 
-During this challenge we have used Vagrant which happens to be another Hashicorp open source tool which concentrates on the development environments. 
+Во время этого испытания мы использовали Vagrant, который является еще одним инструментом с открытым исходным кодом от Hashicorp, сконцентрированным на средах разработки. 
 
-- Vagrant is a tool focused for managing development environments
+- Vagrant - это инструмент, ориентированный на управление средами разработки.
 
-- Terraform is a tool for building infrastructure. 
+- Terraform - это инструмент для создания инфраструктуры. 
 
-A great comparison of the two tools can be found here on the official [Hashicorp site](https://www.vagrantup.com/intro/vs/terraform)
+Отличное сравнение этих двух инструментов можно найти здесь на официальном сайте [Hashicorp](https://www.vagrantup.com/intro/vs/terraform)
 
+## Установка Terraform 
 
-## Terraform Installation 
+В установке Terraform нет ничего сложного. 
 
-There is really not much to the installation of Terraform. 
-
-Terraform is cross platform and you can see below on my Linux machine we have several options to download and install the CLI 
+Terraform является кроссплатформенным, и вы можете видеть ниже на моей Linux машине у нас есть несколько вариантов загрузки и установки CLI 
 
 ![](../images/Day57_IAC2.png?v1)
 
 
-Using `arkade` to install Terraform, arkade is a handy little tool for getting your required tools, apps and clis onto your system. A simple `arkade get terraform` will allow for an update of terraform if available or this same command will also install the Terraform CLI
+Использование `arkade` для установки Terraform, arkade - это удобный инструмент для получения необходимых инструментов, приложений и clis на вашу систему. Простая команда `arkade get terraform` позволит обновить terraform, если он доступен, или эта же команда также установит Terraform CLI
 
 ![](../images/Day57_IAC1.png?v1)
 
-We are going to get into more around HCL and then also start using Terraform to create some infrastructure resources in various different platforms. 
+Мы собираемся больше узнать о HCL, а также начать использовать Terraform для создания некоторых инфраструктурных ресурсов на различных платформах. 
 
 ## Ресурсы 
-I have listed a lot of resources down below and I think this topic has been covered so many times out there, If you have additional resources be sure to raise a PR with your resources and I will be happy to review and add them to the list. 
-
 - [What is Infrastructure as Code? Difference of Infrastructure as Code Tools ](https://www.youtube.com/watch?v=POPP2WTJ8es)
 - [Terraform Tutorial | Terraform Course Overview 2021](https://www.youtube.com/watch?v=m3cKkYXl-8o)
 - [Terraform explained in 15 mins | Terraform Tutorial for Beginners ](https://www.youtube.com/watch?v=l5k1ai_GBDE)
@@ -103,4 +95,3 @@ I have listed a lot of resources down below and I think this topic has been cove
 - [Terraform Tutorial - The Best Project Ideas](https://www.youtube.com/watch?v=oA-pPa0vfks)
 - [Awesome Terraform](https://github.com/shuaibiyy/awesome-terraform)
 
-See you on [Day 58](../day58)

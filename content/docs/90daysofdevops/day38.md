@@ -1,5 +1,5 @@
 ---
-title: 38 - Staging и Изменения
+title: 38. Staging и Изменения
 description: Git Staging и Изменение файлов
 toc: true
 authors:

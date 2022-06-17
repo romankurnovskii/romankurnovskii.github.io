@@ -1,5 +1,5 @@
 ---
-title: 15 - Команды Linux в DevOps
+title: 15. Команды Linux в DevOps
 description: Команды Linux в DevOps
 toc: true
 authors:

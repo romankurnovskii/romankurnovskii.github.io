@@ -12,26 +12,25 @@ featuredImage:
 draft: false
 id: 1048743
 ---
-## Kubernetes & Multiple Environments 
+## Kubernetes и множественные среды 
 
-So far during this section on Infrastructure as code we have looked at deploying virtual machines albeit to virtualbox but the premise is the same really as we define in code what we want our virtual machine to look like and then we deploy. The same for Docker containers and in this session we are going to take a look at how Terraform can be used to interact with resources supported by Kubernetes.
+До сих пор в этом разделе, посвященном инфраструктуре как коду, мы рассматривали развертывание виртуальных машин, хотя и с помощью virtualbox, но суть одна и та же: мы определяем в коде, как должна выглядеть наша виртуальная машина, а затем развертываем ее. То же самое касается контейнеров Docker, и на этом занятии мы рассмотрим, как Terraform можно использовать для взаимодействия с ресурсами, поддерживаемыми Kubernetes.
 
-I have been using Terraform to deploy my Kubernetes clusters for demo purposes across the 3 main cloud providers and you can find the repository [tf_k8deploy](https://github.com/MichaelCade/tf_k8deploy)
+Я использовал Terraform для развертывания своих кластеров Kubernetes в демонстрационных целях на трех основных облачных провайдерах, и вы можете найти репозиторий [tf_k8deploy](https://github.com/MichaelCade/tf_k8deploy).
 
-However you can also use Terraform to interact with objects within the Kubernetes cluster, this could be using the [Kubernetes provider](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs) or it could be using the [Helm provider](https://registry.terraform.io/providers/hashicorp/helm/latest) to manage your chart deployments. 
+Однако вы также можете использовать Terraform для взаимодействия с объектами внутри кластера Kubernetes, это может быть использование [Kubernetes provider](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs) или [Helm provider](https://registry.terraform.io/providers/hashicorp/helm/latest) для управления развертыванием диаграмм. 
 
-Now we could use `kubectl` as we have showed in previous sections. But there are some benefits to using Terraform in your Kubernetes environment. 
+Теперь мы можем использовать `kubectl`, как мы показывали в предыдущих разделах. Но есть некоторые преимущества использования Terraform в вашей среде Kubernetes. 
 
-- Unified workflow - if you have used terraform to deploy your clusters, you could use the same workflow and tool to deploy within your Kubernetes clusters
+- Унифицированный рабочий процесс - если вы использовали Terraform для развертывания кластеров, вы можете использовать тот же рабочий процесс и инструмент для развертывания в кластерах Kubernetes.
 
-- Lifecycle management - Terraform is not just a provisioning tool, its going to enable change, updates and deletions. 
+- Управление жизненным циклом - Terraform - это не просто инструмент инициализации, он позволяет вносить изменения, обновления и удаления. 
 
-### Simple Kubernetes Demo
+### Простая демонстрация Kubernetes
 
-Much like the demo we created in the last session we can now deploy nginx into our Kubernetes cluster, I will be using minikube here again for demo purposes. We create our Kubernetes.tf file and you can find this in the [folder](/Days/IaC/Kubernetes/kubernetes.tf)
+Подобно демо, которое мы создали на прошлом занятии, мы можем развернуть nginx в нашем кластере Kubernetes, я снова буду использовать minikube в демонстрационных целях. Мы создаем наш файл Kubernetes.tf, который вы можете найти в [папке](/Days/IaC/Kubernetes/kubernetes.tf).
 
-In that file we are going to define our Kubernetes provider, we are going to point to our kubeconfig file, create a namespace called nginx, then we will create a deployment which contains 2 replicas and finally a service. 
-
+В этом файле мы определим нашего провайдера Kubernetes, укажем на наш файл kubeconfig, создадим пространство имен nginx, затем создадим развертывание, содержащее 2 реплики и, наконец, сервис.
 ```
 terraform {
   required_providers {
@@ -98,66 +97,64 @@ resource "kubernetes_service" "test" {
 }
 ```
 
-The first thing we have to do in our new project folder is run the `terraform init` command. 
+Первое, что мы должны сделать в папке нашего нового проекта, это выполнить команду `terraform init`. 
 
 ![](../images/Day61_IAC1.png?v1)
 
-And then before we run the `terraform apply` command, let me show you that we have no namespaces. 
+А затем, прежде чем мы выполним команду `terraform apply`, позвольте мне показать вам, что у нас нет пространств имен. 
 
 ![](../images/Day61_IAC2.png?v1)
 
-When we run our apply command this is going to create those 3 new resources, namespace, deployment and service within our Kubernetes cluster. 
+Когда мы запустим нашу команду apply, она создаст эти 3 новых ресурса, пространство имен, развертывание и сервис в нашем кластере Kubernetes. 
 
 ![](../images/Day61_IAC3.png?v1)
 
-We can now take a look at the deployed resources within our cluster. 
+Теперь мы можем взглянуть на развернутые ресурсы в нашем кластере. 
 
 ![](../images/Day61_IAC4.png?v1)
 
-Now because we are using minikube and you will have seen in the previous section this has its own limitations when we try and play with the docker networking for ingress. But if we simply issue the `kubectl port-forward -n nginx svc/nginx 30201:80` command and open a browser to http://localhost:30201/ we should see our NGINX page. 
+Теперь, поскольку мы используем minikube, и вы видели в предыдущем разделе, это имеет свои собственные ограничения, когда мы пытаемся играть с сетью docker для ingress. Но если мы просто выполним команду `kubectl port-forward -n nginx svc/nginx 30201:80` и откроем браузер на http://localhost:30201/, мы увидим нашу страницу NGINX. 
 
 ![](../images/Day61_IAC5.png?v1)
 
-If you want to try out more detailed demos with Terraform and Kubernetes then the [HashiCorp Learn site](https://learn.hashicorp.com/tutorials/terraform/kubernetes-provider) is fantastic to run through. 
+Если вы хотите попробовать более подробные демонстрации с Terraform и Kubernetes, то на сайте [HashiCorp Learn site](https://learn.hashicorp.com/tutorials/terraform/kubernetes-provider) вы сможете ознакомиться с ними. 
 
 
-### Multiple Environments 
+### Множественные окружения 
 
-If we wanted to take any of the demos we have ran through but wanted to now have specific production, staging and development environments looking exactly the same and leveraging this code there are two approaches to achieve this with Terraform 
+Если мы хотим взять любой из демонстрационных примеров, которые мы проверили, но теперь хотим, чтобы определенные среды производства, постановки и разработки выглядели одинаково и использовали этот код, есть два подхода для достижения этого с помощью Terraform 
 
-- `terraform workspaces` - multiple named sections within a single backend 
+- `терраформенные рабочие пространства` - несколько именованных разделов в рамках одного бэкенда 
 
-- file structure - Directory layout provides separation, modules provide reuse. 
+- файловая структура - расположение каталогов обеспечивает разделение, модули обеспечивают повторное использование. 
 
-Each of the above do have their pros and cons though. 
+Каждый из этих подходов имеет свои плюсы и минусы. 
 
 ### terraform workspaces 
 
-Pros 
-- Easy to get started 
-- Convenient terraform.workspace expression 
-- Minimises code duplication 
+Плюсы 
+- Легко начать работу 
+- Удобное выражение terraform.workspace 
+- Минимизирует дублирование кода 
 
-Cons
-- Prone to human error (we were trying to eliminate this by using TF)
-- State stored within the same backend 
-- Codebase doesnt unambiguously show deployment configurations.
+Минусы
+- Склонность к человеческим ошибкам (мы пытались устранить это, используя TF)
+- Состояние хранится в одном бэкенде 
+- Кодовая база не показывает однозначно конфигурации развертывания.
 
-### File Structure 
+### Файловая структура 
 
-Pros 
-- Isolation of backends 
-    - improved security 
-    - decreased potential for human error 
-- Codebase fully represents deployed state
+Плюсы 
+- Изоляция бэкендов 
+    - повышенная безопасность 
+    - снижен потенциал для человеческих ошибок 
+- Кодовая база полностью представляет развернутое состояние
 
-Cons 
-- Multiple terraform apply required to provision environments 
-- More code duplication, but can be minimised with modules. 
+Минусы 
+- Требуется многократное применение terraform для обеспечения окружения 
+- больше дублирования кода, но его можно минимизировать с помощью модулей. 
 
 ## Ресурсы 
-I have listed a lot of resources down below and I think this topic has been covered so many times out there, If you have additional resources be sure to raise a PR with your resources and I will be happy to review and add them to the list. 
-
 - [What is Infrastructure as Code? Difference of Infrastructure as Code Tools ](https://www.youtube.com/watch?v=POPP2WTJ8es)
 - [Terraform Tutorial | Terraform Course Overview 2021](https://www.youtube.com/watch?v=m3cKkYXl-8o)
 - [Terraform explained in 15 mins | Terraform Tutorial for Beginners ](https://www.youtube.com/watch?v=l5k1ai_GBDE)
@@ -168,5 +165,3 @@ I have listed a lot of resources down below and I think this topic has been cove
 - [Terraform Simple Projects](https://terraform.joshuajebaraj.com/)
 - [Terraform Tutorial - The Best Project Ideas](https://www.youtube.com/watch?v=oA-pPa0vfks)
 - [Awesome Terraform](https://github.com/shuaibiyy/awesome-terraform)
-
-See you on [Day 62](../day62)

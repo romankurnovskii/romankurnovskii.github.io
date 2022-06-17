@@ -1,5 +1,5 @@
 ---
-title: 22 - Открытая сетевая модель OSI
+title: 22. Открытая сетевая модель OSI
 description: 7 уровней модели OSI 
 toc: true
 authors:

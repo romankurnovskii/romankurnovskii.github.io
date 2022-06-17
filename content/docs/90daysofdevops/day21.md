@@ -1,5 +1,5 @@
 ---
-title: 21 - DevOps настройка сети
+title: 21. DevOps настройка сети
 description: Общая картина - DevOps и Сеть
 toc: true
 authors:

@@ -1,5 +1,5 @@
 ---
-title: 1 - DevOps - общее представление
+title: 1. DevOps - общее представление
 description: DevOps - общее представление
 toc: true
 authors:

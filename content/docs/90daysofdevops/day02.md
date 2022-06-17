@@ -1,5 +1,5 @@
 ---
-title: 2 - Задачи DevOps-инженера
+title: 2. Задачи DevOps-инженера
 description: Задачи DevOps-инженера
 toc: true
 authors:

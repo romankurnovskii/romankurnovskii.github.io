@@ -1,5 +1,5 @@
 ---
-title: 24 - Автоматизация сети
+title: 24. Автоматизация сети
 description: Автоматизация сети
 toc: true
 authors:

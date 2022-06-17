@@ -1,5 +1,5 @@
 ---
-title: 30 - Модули безопасности Microsoft Azure
+title: 30. Модули безопасности Microsoft Azure
 description: Модули безопасности Microsoft Azure
 toc: true
 authors:

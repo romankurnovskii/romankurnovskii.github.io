@@ -1,5 +1,5 @@
 ---
-title: 4 - DevOps и Agile
+title: 4. DevOps и Agile
 description: DevOps и Agile
 toc: true
 authors:

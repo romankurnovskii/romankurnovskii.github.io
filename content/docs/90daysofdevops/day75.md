@@ -7,56 +7,55 @@ cover_image: null
 canonical_url: null
 id: 1049070
 ---
-## GitHub Actions Overview
+## Обзор действий GitHub
 
-In this section I wanted to move on and take a look at maybe a different approach to what we just spent time on. GitHub Actions is where we will focus on in this session. 
+В этом разделе я хотел бы перейти к рассмотрению, возможно, другого подхода, чем тот, на который мы только что потратили время. На этом занятии мы сосредоточимся на GitHub Actions. 
 
-GitHub Actions is a CI/CD platform that allows us to build, test and deploy amongst other tasks our pipeline. It has the concept of workflows that build and test against a GitHub repository. You could also use GitHub Actions to drive other workflows based on events that happen within your repository. 
+GitHub Actions - это платформа CI/CD, которая позволяет нам строить, тестировать и развертывать, помимо прочих задач, наш конвейер. В ней есть концепция рабочих процессов, которые собираются и тестируются на основе репозитория GitHub. Вы также можете использовать GitHub Actions для управления другими рабочими процессами на основе событий, происходящих в вашем репозитории. 
 
-### Workflows
+### Рабочие процессы
 
-Overall, in GitHub Actions our task is called a **Workflow**. 
+В целом, в GitHub Actions наша задача называется **рабочий процесс**. 
 
-- A **workflow** is the configurable automated process. 
-- Defined as YAML files.
-- Contain and run one or more **jobs**
-- Will run when triggered by an **event** in your repository or can be ran manually 
-- You can multiple workflows per repository
-- A **workflow** will contain a **job** and then **steps** to achieve that **job**
-- Within our **workflow** we will also have a **runner** on which our **workflow** runs. 
+- Рабочий процесс** - это настраиваемый автоматизированный процесс. 
+- Определяется как файлы YAML.
+- Содержит и запускает одно или несколько **заданий**.
+- Запускается при срабатывании **события** в вашем хранилище или может быть запущен вручную. 
+- Вы можете использовать несколько рабочих процессов для каждого хранилища.
+- **рабочий процесс** содержит **задание**, а затем **шаги** для достижения этого **задания**.
+- В рамках **рабочего процесса** у нас также будет **запускающий механизм**, на котором будет выполняться наш **рабочий процесс**. 
 
-For example, you can have one **workflow** to build and test pull requests, another **workflow** to deploy your application every time a release is created, and still another **workflow** that adds a label every time someone opens a new issue.
+Например, у вас может быть один **рабочий процесс** для создания и тестирования запросов, другой **рабочий процесс** для развертывания вашего приложения каждый раз, когда создается релиз, и еще один **рабочий процесс**, который добавляет метку каждый раз, когда кто-то открывает новую проблему.
 
-### Events 
+### События 
 
-Events are a specific event in a repository that triggers the workflow to run. 
+События - это определенные события в хранилище, которые запускают рабочий процесс на выполнение. 
 
-### Jobs 
+### Задания 
 
-A job is a set of steps in the workflow that execute on a runner. 
+Задание - это набор шагов рабочего процесса, которые выполняются на бегунке. 
 
-### Steps
+### Шаги
 
-Each step within the job can be a shell script that gets executed, or an action. Steps are executed in order and they are dependant on each other. 
+Каждый шаг в задании может быть скриптом оболочки, который выполняется, или действием. Шаги выполняются по порядку и зависят друг от друга. 
 
-### Actions 
+### Действия 
 
-A repeatable custom application used for frequently repeated tasks. 
+Повторяющееся пользовательское приложение, используемое для часто повторяющихся задач. 
 
-### Runners
+### Бегуны
 
-A runner is a server that runs the workflow, each runner runs a single job at a time. GitHub Actions provides the ability to run Ubuntu Linux, Microsoft Windows, and macOS runners. You can also host your own on specific OS or hardware. 
+Бегунок - это сервер, который запускает рабочий процесс, каждый бегунок выполняет одно задание за раз. GitHub Actions предоставляет возможность запуска бегунов для Ubuntu Linux, Microsoft Windows и macOS. Вы также можете разместить свой собственный на определенной ОС или оборудовании. 
 
-Below you can see how this looks, we have our event triggering our workflow > our workflow consists of two jobs > within our jobs we then have steps and then we have actions. 
+Ниже вы можете увидеть, как это выглядит: у нас есть событие, запускающее наш рабочий процесс > наш рабочий процесс состоит из двух заданий > внутри наших заданий есть шаги, а затем действия. 
 
 ![](../images/Day75_CICD1.png?v1)
 
 ### YAML 
 
-Before we get going with a real use case lets take a quick look at the above image in the form of an example YAML file. 
+Прежде чем мы приступим к рассмотрению реального случая использования, давайте взглянем на приведенное выше изображение в виде примера YAML-файла. 
 
-I have added # to comment in where we can find the components of the YAML workflow. 
-
+Я добавил #, чтобы прокомментировать, где мы можем найти компоненты рабочего процесса YAML.
 ```
 #Workflow
 name: 90DaysOfDevOps
@@ -78,18 +77,17 @@ jobs:
       - run: bats -v
 ```
 
-### Getting Hands-On with GitHub Actions 
+### Приступаем к работе с GitHub Actions 
 
-I think there are a lot of options when it comes to GitHub Actions, yes it will satisfy your CI/CD needs when it comes to Build, Test, Deploying your code and the continued steps thereafter. 
+Я думаю, что у GitHub Actions есть много возможностей, да, они удовлетворят ваши потребности в CI/CD, когда речь идет о сборке, тестировании, развертывании вашего кода и последующих шагах. 
 
-I can see lots of options and other automated tasks that we could use GitHub Actions for. 
+Я вижу множество вариантов и других автоматизированных задач, для которых мы могли бы использовать GitHub Actions. 
 
-### Using GitHub Actions for Linting your code 
+### Использование GitHub Actions для линтинга вашего кода 
 
-One option is making sure your code is clean and tidy within your repository. This will be our first example demo. 
+Один из вариантов - убедиться, что ваш код чист и аккуратен в вашем репозитории. Это будет наш первый демонстрационный пример. 
 
-I am going to be using some example code linked in one of the resources for this section, we are going to use `github/super-linter` to check against our code. 
-
+Я собираюсь использовать некоторый пример кода, связанный в одном из ресурсов для этого раздела, мы будем использовать `github/super-linter` для проверки нашего кода.
 ```
 name: Super-Linter
 
@@ -111,65 +109,66 @@ jobs:
 ```
 
 **github/super-linter**
-You can see from the above that for one of our steps we have an action called github/super-linter and this is referring to a step that has already been written by the community. You can find out more about this here [Super-Linter](https://github.com/github/super-linter)
+Вы можете видеть, что для одного из наших шагов у нас есть действие под названием github/super-linter, которое ссылается на шаг, уже написанный сообществом. Вы можете узнать больше об этом здесь [Super-Linter](https://github.com/github/super-linter)
 
-"This repository is for the GitHub Action to run a Super-Linter. It is a simple combination of various linters, written in bash, to help validate your source code."
+"Этот репозиторий предназначен для GitHub Action для запуска Super-Linter. Это простая комбинация различных линтеров, написанных на bash, чтобы помочь проверить ваш исходный код."
 
-Also in the code snippet above it mentions GITHUB_TOKEN so I was interested to find out why and what this does and needed for. 
+Также в приведенном фрагменте кода упоминается GITHUB_TOKEN, поэтому мне было интересно узнать, зачем и для чего это нужно. 
 
-"NOTE: If you pass the Environment variable `GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}` in your workflow, then the GitHub Super-Linter will mark the status of each individual linter run in the Checks section of a pull request. Without this you will only see the overall status of the full run. **There is no need to set the GitHub Secret as it is automatically set by GitHub, it only needs to be passed to the action.**" 
+"ПРИМЕЧАНИЕ: Если вы передадите переменную окружения `GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}` в вашем рабочем процессе, то GitHub Super-Linter будет отмечать статус каждого отдельного запуска линтера в разделе "Проверки" запроса на выгрузку. Без этого вы будете видеть только общий статус всего прогона. **Не нужно устанавливать GitHub Secret, так как он автоматически устанавливается GitHub, его нужно только передать в действие.**". 
 
-The bold text being important to note at this stage. We are using it but we do not need to set any environment variable within our repository. 
+Выделенный жирным текст важно отметить на данном этапе. Мы используем его, но нам не нужно устанавливать какую-либо переменную окружения в нашем репозитории. 
 
-We will use our repository that we used in our Jenkins demo to test against.[Jenkins-HelloWorld](https://github.com/MichaelCade/Jenkins-HelloWorld)
+Для тестирования мы будем использовать наш репозиторий, который мы использовали в нашей демонстрации Jenkins.[Jenkins-HelloWorld](https://github.com/MichaelCade/Jenkins-HelloWorld).
 
-Here is our repository as we left it in the Jenkins sessions. 
+Вот наш репозиторий в том виде, в котором мы оставили его в сессии Jenkins. 
 
 ![](../images/Day75_CICD2.png?v1)
 
-In order for us to take advantage we have to use the Actions tab above to choose from the marketplace which I will cover shortly or we can create our own files using our super-linter code above, in order to create your own you must create a new file in your repository at this exact location. `.github/workflows/workflow_name` obviously making sure the workflow_name is something useful for you recognise, within here we can have many different workflows performing different jobs and tasks against our repository. 
+Для того, чтобы воспользоваться преимуществами, мы должны использовать вкладку Actions выше, чтобы выбрать из рынка, о котором я расскажу в ближайшее время, или мы можем создать наши собственные файлы, используя наш код супер-лайнера выше, чтобы создать свой собственный, вы должны создать новый файл в вашем репозитории именно в этом месте. `.github/workflows/workflow_name`, очевидно, убедившись, что имя workflow_name - это что-то полезное для вас, узнаваемое. Здесь мы можем иметь множество различных рабочих процессов, выполняющих различные задания и задачи в нашем репозитории. 
 
-We are going to create `.github/workflows/super-linter.yml`
+Мы создадим `.github/workflows/super-linter.yml`.
 
 ![](../images/Day75_CICD3.png?v1)
 
-We can then paste our code and commit the code to our repository, if we then head to the Actions tab we will now see our Super-Linter workflow listed as per below, 
+Затем мы можем вставить наш код и зафиксировать его в нашем репозитории, если мы перейдем на вкладку Actions, то увидим наш рабочий процесс Super-Linter в списке, как показано ниже, 
 
 ![](../images/Day75_CICD4.png?v1)
 
-We defined in our code that this workflow would run when we pushed anything to our repository, so in pushing the super-linter.yml to our repository we triggered the workflow. 
+Мы определили в нашем коде, что этот рабочий процесс будет запускаться, когда мы будем перемещать что-либо в наш репозиторий, поэтому при перемещении файла super-linter.yml в наш репозиторий мы запустили рабочий процесс. 
 
 ![](../images/Day75_CICD5.png?v1)
 
-As you can see from the above we have some errors most likely with my hacking ability vs coding ability. 
+Как вы можете видеть из вышеприведенного, у нас есть некоторые ошибки, скорее всего, из-за моих способностей к взлому и кодированию. 
 
-Although actually it was not my code at least not yet, in running this and getting an error I found this [issue](https://github.com/github/super-linter/issues/2255)
+Хотя на самом деле это был не мой код, по крайней мере пока, запустив его и получив ошибку, я обнаружил вот это [issue](https://github.com/github/super-linter/issues/2255)
 
-Take #2 I changed the version of Super-Linter from version 3 to 4 and have ran the task again. 
+Дубль #2 Я изменил версию Super-Linter с версии 3 на 4 и запустил задачу снова. 
 
 ![](../images/Day75_CICD6.png?v1)
 
-As expected my hacker coding brought up some issues and you can see them here in the [workflow](https://github.com/MichaelCade/Jenkins-HelloWorld/runs/5600278515?check_suite_focus=true)
+Как и ожидалось, мой хакерский кодинг вызвал некоторые проблемы, и вы можете увидеть их здесь, в [рабочем процессе](https://github.com/MichaelCade/Jenkins-HelloWorld/runs/5600278515?check_suite_focus=true).
 
-I wanted to show the look now on our repository when something within the workflow has failed or reported back an error.
+Я хотел показать, как теперь выглядит наш репозиторий, когда что-то в рабочем процессе не сработало или сообщило об ошибке.
 
 ![](../images/Day75_CICD7.png?v1)
 
-Now if we resolve the issue with my code and push the changes our workflow will run again (you can see from the image it took a while to iron out our "bugs") Deleting a file is probably not recommended but it is a very quick way to show the issue being resolved. 
+Теперь, если мы решим проблему с моим кодом и внесем изменения, наш рабочий процесс снова запустится (как видно из изображения, потребовалось некоторое время, чтобы устранить наши "ошибки"). Удаление файла, вероятно, не рекомендуется, но это очень быстрый способ показать, что проблема решена. 
 
 ![](../images/Day75_CICD8.png?v1)
 
-If you hit the new workflow button highlighted above, this is going to open the door to a huge plethora of actions. One thing you might have noticed throughout this challenge is that we don't want to reinvent the wheel we want to stand on the shoulders of giants and share our code, automations and skills far and wide to make our lives easier. 
+Если вы нажмете кнопку "Новый рабочий процесс", выделенную выше, это откроет вам дверь к огромному количеству действий. Вы, наверное, заметили, что мы не хотим изобретать колесо, мы хотим стоять на плечах гигантов и делиться нашим кодом, автоматизацией и навыками, чтобы сделать нашу жизнь проще. 
 
 ![](../images/Day75_CICD9.png?v1)
 
-Oh, I didn't show you the green tick on the repository when our workflow was successful. 
+О, я не показал вам зеленую галочку на репозитории, когда наш рабочий процесс был успешным. 
 
 ![](../images/Day75_CICD10.png?v1)
 
-I think that covers things from a foundational point of view for GitHub Actions but if you are anything like me then you are probably seeing how else GitHub Actions can be used to automate a lot of tasks. 
+Я думаю, что на этом основы GitHub Actions исчерпаны, но если вы похожи на меня, то вы наверняка видите, как еще можно использовать GitHub Actions для автоматизации множества задач. 
 
-Next up we will cover another area of CD, we will be looking into ArgoCD to deploy our applications out into our environments. 
+Далее мы рассмотрим другую область CD, мы рассмотрим ArgoCD для развертывания наших приложений в наших средах.
+
 
 ## Ресурсы
 
@@ -181,5 +180,3 @@ Next up we will cover another area of CD, we will be looking into ArgoCD to depl
 - [Complete Jenkins Tutorial](https://www.youtube.com/watch?v=nCKxl7Q_20I&t=3s)
 - [GitHub Actions](https://www.youtube.com/watch?v=R8_veQiYBjI)
 - [GitHub Actions CI/CD](https://www.youtube.com/watch?v=mFFXuXjVgkU)
-
-See you on [Day 76](../day76)

@@ -7,59 +7,59 @@ cover_image: null
 canonical_url: null
 id: 1048747
 ---
-## The Big Picture: Data Management
+## Большая картина: Управление данными
 
 ![](../images/Day84_Data1.png?v1)
 
-Data Management is by no means a new wall to climb, although we do know that data is more important than it maybe was a few years ago. Valuable and ever changing it can also be a massive nightmare when we are talking about automation and continuously integrate, test and deploy frequent software releases. Enter the persistent data and underlying data services often the main culprit when things go wrong. 
+Управление данными - это далеко не новая стена, на которую нужно карабкаться, хотя мы знаем, что данные стали более важными, чем несколько лет назад. Ценные и постоянно меняющиеся, они также могут стать огромным кошмаром, когда мы говорим об автоматизации и непрерывной интеграции, тестировании и развертывании частых выпусков программного обеспечения. Вводим постоянные данные и базовые службы данных, которые часто являются главным виновником, когда что-то идет не так. 
 
-But before I get into the Cloud-Native Data Management, we need to go up a level. We have touched on many different platforms throughout this challenge. Be it Physical, Virtual, Cloud and Cloud-Native obviously including Kubernetes there is none of these platforms that provide the lack of requirement for data management. 
+Но прежде чем я перейду к управлению данными в облаке, нам нужно подняться на уровень выше. В ходе этой задачи мы затронули множество различных платформ. Будь то физические, виртуальные, облачные и Cloud-Native, включая Kubernetes, ни одна из этих платформ не обеспечивает отсутствие требований к управлению данными. 
 
-Whatever our business it is more than likely you will find a database lurking in the environment somewhere, be it for the most mission critical system in the business or at least some cog in the chain is storing that persistent data on some level of system. 
+Каким бы ни был наш бизнес, более чем вероятно, что вы найдете базу данных, скрывающуюся где-то в среде, будь то для самой критически важной системы в бизнесе или, по крайней мере, какой-то винтик в цепи хранит эти постоянные данные на каком-то уровне системы. 
 
-### DevOps and Data 
+### DevOps и данные 
 
-Much like the very start of this series where we spoke about the DevOps principles, in order for a better process when it comes to data you have to include the right people. This might be the DBAs but equally that is going to include people that care about the backup of those data services as well. 
+Как и в самом начале этой серии статей, где мы говорили о принципах DevOps, для улучшения процесса работы с данными вам необходимо привлечь нужных людей. Это могут быть DBA, но в равной степени это должны быть и люди, которые заботятся о резервном копировании этих сервисов данных. 
 
-Secondly we also need to identify the different data types, domains, boundaries that we have associated with our data. This way it is not just dealt with in a silo approach amongst Database administrators, storage engineers or Backup focused engineers. This way the whole team can determine the best route of action when it comes to developing and hosting applications for the wider business and focus on the data architecture vs it being an after thought. 
+Во-вторых, нам также необходимо определить различные типы данных, домены, границы, которые мы связываем с нашими данными. Таким образом, данные не будут рассматриваться изолированно среди администраторов баз данных, инженеров по хранению данных или инженеров, специализирующихся на резервном копировании. Таким образом, вся команда может определить наилучший маршрут действий при разработке и размещении приложений для более широкого бизнеса и сосредоточиться на архитектуре данных, а не на том, о чем подумали позже. 
 
-Now, this can span many different areas of the data lifecycle, we could be talking about data ingest, where and how will data be ingested into our service or application? How will the service, application or users access this data. But then it also requires us to understand how we will secure the data and then how will we protect that data. 
+Это может охватывать множество различных областей жизненного цикла данных, мы можем говорить о вводе данных, где и как данные будут вводиться в наш сервис или приложение? Как сервис, приложение или пользователи будут получать доступ к этим данным. Но затем нам также необходимо понять, как мы будем защищать данные, и как мы будем защищать эти данные. 
 
-### Data Management 101 
+### Управление данными 101 
 
-Data management according to the [Data Management Body of Knowledge](https://www.dama.org/cpages/body-of-knowledge) is “the development, execution and supervision of plans, policies, programs and practices that control, protect, deliver and enhance the value of data and information assets.” 
+Управление данными, согласно [Data Management Body of Knowledge](https://www.dama.org/cpages/body-of-knowledge), - это "разработка, выполнение и контроль планов, политик, программ и практик, которые контролируют, защищают, предоставляют и повышают ценность данных и информационных активов". 
 
-- Data is the most important aspect of your business - Data is only one part of your overall business. I have seen the term "Data is the lifeblood of our business" and most likely absolutely true. Which then got me thinking about blood being pretty important to the body but alone it is nothing we still need the aspects of the body to make the blood something other than a liquid. 
+- Данные - самый важный аспект вашего бизнеса - Данные - это только одна часть вашего бизнеса в целом. Я встречал выражение "Данные - это жизненная сила нашего бизнеса", и, скорее всего, это абсолютно верно. Это заставило меня задуматься о том, что кровь очень важна для организма, но сама по себе она ничего не значит, нам все еще нужны аспекты организма, чтобы сделать кровь чем-то другим, кроме жидкости. 
 
-- Data quality is more important than ever - We are having to treat data as a business asset, meaning that we have to give it the considerations it needs and requires to work with our automation and DevOps principles. 
+- Качество данных важно как никогда - Мы должны относиться к данным как к бизнес-активу, что означает, что мы должны уделять им должное внимание, чтобы они работали с нашими принципами автоматизации и DevOps. 
 
-- Accessing data in a timely fashion - Nobody has the patience to not have access to the right data at the right time to make effective decisions. Data must be available in a streamlined and timely manher regardless of presentation. 
+- Своевременный доступ к данным - Ни у кого не хватит терпения не иметь доступа к нужным данным в нужное время для принятия эффективных решений. Данные должны быть доступны в упорядоченном и своевременном виде независимо от формы представления. 
 
-- Data Management has to be an enabler to DevOps - I mentioned streamline previously, we have to include the data management requirements into our cycle and ensure not just availablity of that data but also include other important policy based protection of those data points along with fully tested recovery models with that as well. 
+- Управление данными должно стать помощником DevOps - я уже упоминал о рационализации, мы должны включить требования к управлению данными в наш цикл и обеспечить не только доступность этих данных, но и другие важные политические меры защиты этих точек данных, а также полностью протестированные модели восстановления. 
 
 ### DataOps 
 
-Both DataOps and DevOps apply the best practices of technology development and operations to improve quality, increase speed, reduce security threats, delight customers and provide meaningful and challenging work for skilled professionals. DevOps and DataOps share goals to accelerate product delivery by automating as many process steps as possible. For DataOps, the objective is a resilient data pipeline and trusted insights from data analytics. 
+DataOps и DevOps применяют лучшие практики разработки и эксплуатации технологий для повышения качества, увеличения скорости, снижения угроз безопасности, восхищения клиентов и обеспечения значимой и сложной работы для квалифицированных специалистов. DevOps и DataOps имеют общие цели - ускорить доставку продукта путем автоматизации как можно большего количества этапов процесса. Для DataOps целью является устойчивый конвейер данных и надежные выводы из аналитики данных. 
 
-Some of the most common higher level areas that focus on DataOps are going to be Machine Learning, Big Data and Data Analytics including Artifical Intelligence. 
+Некоторые из наиболее распространенных областей более высокого уровня, которые фокусируются на DataOps, - это машинное обучение, большие данные и аналитика данных, включая искусственный интеллект. 
 
-### Data Management is the management of information
+### Управление данными - это управление информацией
 
-My focus throughout this section is not going to be getting into Machine Learning or Articial Intelligence but to focus on the protecting the data from a data protection point of view, the title of this subsection is "Data management is the management of information" and we can relate that information = data. 
+В этом разделе я не буду углубляться в машинное обучение или искусственный интеллект, а сосредоточусь на защите данных с точки зрения защиты информации. Этот подраздел называется "Управление данными - это управление информацией", и мы можем считать, что информация = данные. 
 
-Three key areas that we should consider along this journey with data are: 
+Три ключевые области, которые мы должны рассмотреть на этом пути с данными, следующие:
 
-- Accuracy - Making sure that production data is accurate, equally we need to ensure that our data in the form of backups are also working and tested against recovery to be sure if a failure or a reason comes up we need to be able to get back up and running as fast as possible. 
+- Точность - Убедитесь в том, что производственные данные точны, также нам необходимо убедиться в том, что наши данные в виде резервных копий также работают и протестированы на восстановление, чтобы быть уверенными в том, что в случае сбоя или возникновения причины нам необходимо иметь возможность восстановить работоспособность как можно быстрее. 
   
-- Consistent - If our data services span multiple locations then for production we need to make sure we have consistency across all data locations so that we are getting accurate data, this also spans into data protection when it comes to protecting these data services especially data services we need to ensure consistency at different levels to make sure we are taking a good clean copy of that data for our backups, replicas etc. 
+- Последовательность - Если наши службы данных расположены в нескольких местах, то для производства нам необходимо обеспечить последовательность во всех местах расположения данных, чтобы мы получали точные данные. Это также относится к защите данных, когда речь идет о защите этих служб данных, особенно служб данных, нам необходимо обеспечить последовательность на разных уровнях, чтобы убедиться, что мы делаем хорошую чистую копию этих данных для наших резервных копий, реплик и т. д. 
 
-- Secure - Access Control but equally just keeping data in general is a topical theme at the moment across the globe. Making sure the right people have access to your data is paramount, again this leads into data protection where we must make sure that only the required personnel have access to backups and the ability to restore from those as well clone and provide other versions of the business data. 
+- Безопасность - контроль доступа, а также просто хранение данных в целом - актуальная тема в настоящее время во всем мире. Убедиться в том, что нужные люди имеют доступ к вашим данным, - первостепенная задача, и это опять же относится к защите данных, где мы должны убедиться, что только необходимый персонал имеет доступ к резервным копиям и возможность восстановления из них, а также клонирования и предоставления других версий бизнес-данных. 
 
-Better Data = Better Decisions 
+Лучшие данные = лучшие решения 
 
-### Data Management Days 
+### Дни управления данными 
 
-During the next 6 sessions we are going to be taking a closer look at Databases, Backup & Recovery, Disaster Recovery, Application Mobility all with an element of demo and hands on throughout. 
+В течение следующих 6 занятий мы рассмотрим базы данных, резервное копирование и восстановление, аварийное восстановление, мобильность приложений с элементами демонстрации и практической работы.
 
 ## Ресурсы 
 
@@ -68,9 +68,3 @@ During the next 6 sessions we are going to be taking a closer look at Databases,
 - [7 Database Paradigms](https://www.youtube.com/watch?v=W2Z7fbCLSTw&t=520s)
 - [Disaster Recovery vs. Backup: What's the difference?](https://www.youtube.com/watch?v=07EHsPuKXc0)
 - [Veeam Portability & Cloud Mobility](https://www.youtube.com/watch?v=hDBlTdzE6Us&t=3s)
-
-See you on [Day 85](../day85)
-
-
-
-

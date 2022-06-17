@@ -1,5 +1,5 @@
 ---
-title: 25 - Автоматизация сети с помощью Python
+title: 25. Автоматизация сети с помощью Python
 description: Автоматизация сети с помощью Python
 toc: true
 authors:

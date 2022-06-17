@@ -1,5 +1,5 @@
 ---
-title: 27 - Работа с сетью в Python
+title: 27. Работа с сетью в Python
 description: Работа с сетью в Python
 toc: true
 authors:

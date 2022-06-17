@@ -1,5 +1,5 @@
 ---
-title: 45 - Что из себя представляет оьбраз Docker
+title: 45. Что из себя представляет оьбраз Docker
 description: 
 toc: true
 authors:

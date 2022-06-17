@@ -1,5 +1,5 @@
 ---
-title: 14 - DevOps и Linux
+title: 14. DevOps и Linux
 description: DevOps и Linux
 toc: true
 authors:
