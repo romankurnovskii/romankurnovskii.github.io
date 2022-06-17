@@ -7,38 +7,37 @@ cover_image: null
 canonical_url: null
 id: 1048718
 ---
-## Disaster Recovery
+## Аварийное восстановление
 
-We have mentioned already how different failure scenarios will warrant different recovery requirements. When it comes to Fire, Flood and Blood scenarios we can consider these mostly disaster situations where we might need our workloads up and running in a completely different location as fast as possible or at least with near-zero recovery time objectives (RTO). 
+Мы уже упоминали о том, что различные скрипты сбоев требуют различных требований к восстановлению. Когда речь идет о скриптах пожара, наводнения и крови, мы можем рассматривать их как аварийные ситуации, в которых нам может потребоваться, чтобы наши рабочие нагрузки были запущены в совершенно другом месте как можно быстрее или, по крайней мере, с почти нулевым временем восстановления (RTO). 
 
-This can only be achieved at scale when you automate the replication of the complete application stack to a standby environment. 
+Этого можно достичь только в масштабе, если автоматизировать репликацию всего стека приложений в резервную среду. 
 
-This allows for fast failovers across cloud regions, cloud providers or between on-premises and cloud infrastructure. 
+Это позволяет быстро переходить от одного облачного региона к другому, облачным провайдерам или между локальной и облачной инфраструктурой. 
 
-Keeping with the theme so far, we are going to concentrate on how this can be achieved using Kasten K10 using our minikube cluster that we deployed and configured a few sessions ago. 
+Продолжая тему, мы сосредоточимся на том, как этого можно достичь с помощью Kasten K10, используя наш кластер minikube, который мы развернули и настроили несколько занятий назад. 
 
-We will then create another minikube cluster with Kasten K10 also installed to act as our standby cluster which in theory could be any location. 
+Затем мы создадим еще один кластер minikube с установленным Kasten K10 в качестве резервного кластера, который теоретически может находиться в любом месте. 
 
-Kasten K10 also has built in functionality to ensure if something was to happen to the Kubernetes cluster it is running on that the catalog data is replicated and available in a new one [K10 Disaster Recovery](https://docs.kasten.io/latest/operating/dr.html).
+Kasten K10 также имеет встроенную функциональность для обеспечения того, что если что-то случится с кластером Kubernetes, на котором он работает, данные каталога будут реплицированы и доступны на новом [K10 Disaster Recovery](https://docs.kasten.io/latest/operating/dr.html).
 
-### Add object storage to K10 
+### Добавление объектного хранилища в K10 
 
-The first thing we need to do is add an object storage bucket as a target location for our backups to land. Not only does this act as an offsite location but we can also leverage this as our disaster recovery source data to recover from. 
+Первое, что нам нужно сделать, это добавить ведро объектного хранилища в качестве целевого местоположения для наших резервных копий. Это не только выступает в качестве удаленного хранилища, но мы также можем использовать его в качестве исходных данных для аварийного восстановления. 
 
-I have cleaned out the S3 bucket that we created for the Kanister demo in the last session. 
+Я очистил ведро S3, которое мы создали для демонстрации Kanister на прошлом занятии. 
 
 ![](../images/Day89_Data1.png?v1)
 
-Port forward to access the K10 dashboard, open a new terminal to run the below command:
+Чтобы получить доступ к приборной панели K10, откройте новый терминал и выполните следующую команду:
 
-`kubectl --namespace kasten-io port-forward service/gateway 8080:8000`
+`kubectl --namespace kasten-io port-forward service/gateway 8080:8000`.
 
-The Kasten dashboard will be available at: `http://127.0.0.1:8080/k10/#/`
+Приборная панель Kasten будет доступна по адресу: `http://127.0.0.1:8080/k10/#/`
 
 ![](../images/Day87_Data4.png?v1)
 
-To authenticate with the dashboard, we now need the token which we can get with the following commands. 
-
+Для аутентификации на приборной панели нам теперь нужен токен, который мы можем получить с помощью следующих команд.
 ```
 TOKEN_NAME=$(kubectl get secret --namespace kasten-io|grep k10-k10-token | cut -d " " -f 1)
 TOKEN=$(kubectl get secret --namespace kasten-io $TOKEN_NAME -o jsonpath="{.data.token}" | base64 --decode)
@@ -49,99 +48,98 @@ echo $TOKEN
 
 ![](../images/Day87_Data5.png?v1)
 
-Now we take this token and we input that into our browser, you will then be prompted for an email and company name. 
+Теперь мы берем этот токен и вводим его в браузер, после чего вам будет предложено ввести email и название компании. 
 
 ![](../images/Day87_Data6.png?v1)
 
-Then we get access to the Kasten K10 dashboard. 
+Затем мы получаем доступ к приборной панели Kasten K10. 
 
 ![](../images/Day87_Data7.png?v1)
 
-Now that we are back in the Kasten K10 dashboard we can add our location profile, select "Settings" at the top of the page and "New Profile".
+Теперь, когда мы вернулись в приборную панель Kasten K10, мы можем добавить наш профиль местоположения, выберите "Настройки" в верхней части страницы и "Новый профиль".
 
 ![](../images/Day89_Data2.png?v1)
 
-You can see from the image below that we have choice when it comes to where this location profile is, we are going to select Amazon S3, and we are going to add our sensitive access credentials, region and bucket name. 
+На изображении ниже видно, что у нас есть выбор, где будет находиться этот профиль местоположения, мы выбираем Amazon S3, и добавляем наши учетные данные доступа, регион и имя ведра. 
 
 ![](../images/Day89_Data3.png?v1)
 
-If we scroll down on the New Profile creation window you will see, we also have the ability to enable immutable backups which leverages the S3 Object Lock API. For this demo we won't be using that. 
+Если мы прокрутим окно создания нового профиля вниз, то увидим, что у нас также есть возможность включить неизменяемое резервное копирование, которое использует API блокировки объектов S3. В данном демо мы не будем использовать эту возможность. 
 
 ![](../images/Day89_Data4.png?v1)
 
-Hit "Save Profile" and you can now see our newly created or added location profile as per below. 
+Нажмите "Сохранить профиль", и теперь вы можете увидеть наш только что созданный или добавленный профиль местоположения, как показано ниже. 
 
 ![](../images/Day89_Data5.png?v1)
 
-### Create a policy to protect Pac-Man app to object storage
+### Создание политики для защиты приложения Pac-Man в объектном хранилище
 
-In the previous session we created only an ad-hoc snapshot of our Pac-Man application, therefore we need to create a backup policy that will send our application backups to our newly created object storage location. 
+В предыдущем сеансе мы создали только специальный снимок нашего приложения Pac-Man, поэтому нам нужно создать политику резервного копирования, которая будет отправлять резервные копии нашего приложения в наше недавно созданное объектное хранилище. 
 
-If you head back to the dashboard and select the Policy card you will see a screen as per below. Select "Create New Policy". 
+Если вы вернетесь на приборную панель и выберете карточку Policy, вы увидите окно, как показано ниже. Выберите "Создать новую политику". 
 
 ![](../images/Day89_Data6.png?v1)
 
-First, we can give our policy a useful name and description. We can also define our backup frequency for demo purposes I am using on-demand. 
+Во-первых, мы можем дать нашей политике полезное имя и описание. Мы также можем определить частоту резервного копирования, для демонстрационных целей я использую "по требованию". 
 
 ![](../images/Day89_Data7.png?v1)
 
-Next, we want to enable backups via Snapshot exports meaning that we want to send our data out to our location profile. If you have multiple you can select which one you would like to send your backups to.
+Далее мы хотим включить резервное копирование через Snapshot exports, что означает, что мы хотим отправлять наши данные в наш профиль местоположения. Если у вас их несколько, вы можете выбрать, в какой из них вы хотите отправлять резервные копии.
 
 ![](../images/Day89_Data8.png?v1)
 
-Next, we select the application by either name or labels, I am going to choose by name and all resources. 
+Далее выбираем приложение по имени или по меткам, я собираюсь выбрать по имени и все ресурсы. 
 
 ![](../images/Day89_Data9.png?v1)
 
-Under Advanced settings we are not going to be using any of these but based on our [walkthrough of Kanister yesterday](https://github.com/MichaelCade/90DaysOfDevOps/blob/main/Days/day88), we can leverage Kanister as part of Kasten K10 as well to take those application consistent copies of our data. 
+В разделе Advanced settings мы не будем использовать ничего из этого, но, основываясь на нашем вчерашнем [walkthrough of Kanister](https://github.com/MichaelCade/90DaysOfDevOps/blob/main/Days/day88), мы можем использовать Kanister как часть Kasten K10 для создания согласованных с приложением копий наших данных. 
 
 ![](../images/Day89_Data10.png?v1)
 
-Finally select "Create Policy" and you will now see the policy in our Policy window. 
+Наконец, выберите "Создать политику", и теперь вы увидите политику в нашем окне политики. 
 
 ![](../images/Day89_Data11.png?v1)
 
-At the bottom of the created policy, you will have "Show import details" we need this string to be able to import into our standby cluster. Copy this somewhere safe for now. 
+В нижней части созданной политики появится "Show import details", нам нужна эта строка, чтобы иметь возможность импортировать в наш резервный кластер. Скопируйте ее в безопасное место. 
 
 ![](../images/Day89_Data12.png?v1)
 
-Before we move on, we just need to select "run once" to get a backup sent our object storage bucket. 
+Прежде чем двигаться дальше, нам нужно выбрать "run once", чтобы получить резервную копию, отправленную нашему ведру объектного хранилища. 
 
 ![](../images/Day89_Data13.png?v1)
 
-Below, the screenshot is just to show the successful backup and export of our data. 
+Ниже, на скриншоте просто показано успешное резервное копирование и экспорт наших данных. 
 
 ![](../images/Day89_Data14.png?v1)
 
 
-### Create a new MiniKube cluster & deploy K10
+### Создание нового кластера MiniKube и развертывание K10
 
-We then need to deploy a second Kubernetes cluster and where this could be any supported version of Kubernetes including OpenShift, for the purpose of education we will use the very free version of MiniKube with a different name. 
+Затем нам нужно развернуть второй кластер Kubernetes, и где это может быть любая поддерживаемая версия Kubernetes, включая OpenShift, в целях обучения мы будем использовать очень бесплатную версию MiniKube с другим названием. 
 
-Using `minikube start --addons volumesnapshots,csi-hostpath-driver --apiserver-port=6443 --container-runtime=containerd -p standby --kubernetes-version=1.21.2` we can create our new cluster. 
+Используя `minikube start --addons volumesnapshots,csi-hostpath-driver --apiserver-port=6443 --container-runtime=containerd -p standby --kubernetes-version=1.21.2` мы можем создать наш новый кластер. 
 
 ![](../images/Day89_Data15.png?v1)
 
-We then can deploy Kasten K10 in this cluster using:
+Затем мы можем развернуть Kasten K10 в этом кластере, используя:
 
-`helm install k10 kasten/k10 --namespace=kasten-io --set auth.tokenAuth.enabled=true --set injectKanisterSidecar.enabled=true --set-string injectKanisterSidecar.namespaceSelector.matchLabels.k10/injectKanisterSidecar=true --create-namespace`
+`helm install k10 kasten/k10 --namespace=kasten-io --set auth.tokenAuth.enabled=true --set injectKanisterSidecar.enabled=true --set-string injectKanisterSidecar.namespaceSelector.matchLabels.k10/injectKanisterSidecar=true --create-namespace`.
 
-This will take a while but in the meantime, we can use `kubectl get pods -n kasten-io -w` to watch the progress of our pods getting to the running status. 
+Это займет некоторое время, но тем временем мы можем использовать `kubectl get pods -n kasten-io -w`, чтобы наблюдать за прогрессом перехода наших pods в статус запущенных. 
 
-It is worth noting that because we are using MiniKube our application will just run when we run our import policy, our storageclass is the same on this standby cluster. However, something we will cover in the final session is about mobility and transformation. 
+Стоит отметить, что поскольку мы используем MiniKube, наше приложение будет запущено, когда мы запустим политику импорта, наш класс хранилища будет таким же на этом резервном кластере. Однако то, что мы рассмотрим на последнем занятии, касается мобильности и трансформации. 
 
-When the pods are up and running, we can follow the steps we went through on the previous steps in the other cluster. 
+Когда капсулы запущены, мы можем выполнить шаги, которые мы проделали в предыдущих шагах на другом кластере. 
 
-Port forward to access the K10 dashboard, open a new terminal to run the below command
+Перенесите порт вперед для доступа к приборной панели K10, откройте новый терминал и выполните следующую команду
 
-`kubectl --namespace kasten-io port-forward service/gateway 8080:8000`
+`kubectl --namespace kasten-io port-forward service/gateway 8080:8000`.
 
-The Kasten dashboard will be available at: `http://127.0.0.1:8080/k10/#/`
+Приборная панель Kasten будет доступна по адресу: `http://127.0.0.1:8080/k10/#/`
 
 ![](../images/Day87_Data4.png?v1)
 
-To authenticate with the dashboard, we now need the token which we can get with the following commands. 
-
+Для аутентификации на приборной панели нам теперь нужен токен, который мы можем получить с помощью следующих команд.
 ```
 TOKEN_NAME=$(kubectl get secret --namespace kasten-io|grep k10-k10-token | cut -d " " -f 1)
 TOKEN=$(kubectl get secret --namespace kasten-io $TOKEN_NAME -o jsonpath="{.data.token}" | base64 --decode)
@@ -152,63 +150,63 @@ echo $TOKEN
 
 ![](../images/Day87_Data5.png?v1)
 
-Now we take this token and we input that into our browser, you will then be prompted for an email and company name. 
+Теперь мы берем этот токен и вводим его в браузер, после чего вам будет предложено ввести email и название компании. 
 
 ![](../images/Day87_Data6.png?v1)
 
-Then we get access to the Kasten K10 dashboard. 
+Затем мы получаем доступ к приборной панели Kasten K10. 
 
 ![](../images/Day87_Data7.png?v1)
 
-### Import Pac-Man into new the MiniKube cluster
+### Импортируем Pac-Man в новый кластер MiniKube
 
-At this point we are now able to create an import policy in that standby cluster and connect to the object storage backups and determine what and how we want this to look. 
+На данном этапе мы можем создать политику импорта в резервном кластере, подключиться к резервным копиям объектного хранилища и определить, что и как мы хотим, чтобы выглядело. 
 
-First, we add in our Location Profile that we walked through earlier on the other cluster, showing off dark mode here to show the difference between our production system and our DR standby location. 
+Во-первых, мы добавляем наш профиль местоположения, который мы рассмотрели ранее на другом кластере, используя темный режим, чтобы показать разницу между нашей производственной системой и резервным местоположением DR. 
 
 ![](../images/Day89_Data16.png?v1)
 
-Now we go back to the dashboard and into the policies tab to create a new policy. 
+Теперь вернемся к приборной панели и перейдем на вкладку политик, чтобы создать новую политику. 
 
 ![](../images/Day89_Data17.png?v1)
 
-Create the import policy as per the below image. When complete, we can create policy. There are options here to restore after import and some people might want this option, this will go and restore into our standby cluster on completion. We also have the ability to change the configuration of the application as it is restored and this is what I have documented in [Day 90](../day90). 
+Создайте политику импорта в соответствии с приведенным ниже изображением. После завершения мы можем создать политику. Здесь есть опция восстановления после импорта, и некоторые люди могут захотеть воспользоваться этой опцией, которая будет восстановлена в нашем резервном кластере по завершении. У нас также есть возможность изменить конфигурацию приложения при восстановлении, и это то, что я описал в [Day 90](../day90). 
 
 ![](../images/Day89_Data18.png?v1)
 
-I selected to import on demand, but you can obviously set a schedule on when you want this import to happen. Because of this I am going to run once. 
+Я выбрал импорт по требованию, но вы, очевидно, можете установить расписание, когда вы хотите, чтобы этот импорт происходил. В связи с этим я собираюсь выполнить один раз. 
 
 ![](../images/Day89_Data19.png?v1)
 
-You can see below the successful import policy job. 
+Ниже вы можете видеть успешное выполнение задания политики импорта. 
 
 ![](../images/Day89_Data20.png?v1)
 
-If we now head back to the dashboard and into the Applications card, we can then select the drop down where you see below "Removed" you will see our application here. Select Restore 
+Если мы теперь вернемся на приборную панель и зайдем в карточку Applications, мы можем выбрать выпадающий список, где вы видите ниже "Removed", здесь вы увидите наше приложение. Выберите "Восстановить 
 
 ![](../images/Day89_Data21.png?v1)
 
-Here we can see the restore points we have available to us; this was the backup job that we ran on the primary cluster against our Pac-Man application. 
+Здесь мы видим доступные нам точки восстановления; это было задание резервного копирования, которое мы выполнили на первичном кластере для нашего приложения Pac-Man. 
 
 ![](../images/Day89_Data22.png?v1)
 
-I am not going to change any of the defaults as I want to cover this in more detail in the next session. 
+Я не буду менять никаких настроек по умолчанию, так как хочу рассмотреть это более подробно на следующем занятии. 
 
 ![](../images/Day89_Data23.png?v1)
 
-When you hit "Restore" it will prompt you with a confirmation. 
+Когда вы нажмете кнопку "Восстановить", появится запрос на подтверждение. 
 
 ![](../images/Day89_Data24.png?v1)
 
-We can see below that we are in the standby cluster and if we check on our pods, we can see that we have our running application. 
+Ниже мы видим, что мы находимся в резервном кластере, и если мы проверим наши pods, мы увидим, что у нас есть наше запущенное приложение. 
 
 ![](../images/Day89_Data25.png?v1)
 
-We can then port forward (in real life/production environments, you would not need this step to access the application, you would be using ingress)
+Затем мы можем перенаправить порт (в реальной жизни/производственной среде вам не понадобится этот шаг для доступа к приложению, вы будете использовать ingress)
 
 ![](../images/Day89_Data26.png?v1)
 
-Next, we will take a look at Application mobility and transformation. 
+Далее мы рассмотрим мобильность и трансформацию приложений.
 
 ## Ресурсы 
 
@@ -217,5 +215,3 @@ Next, we will take a look at Application mobility and transformation.
 - [7 Database Paradigms](https://www.youtube.com/watch?v=W2Z7fbCLSTw&t=520s)
 - [Disaster Recovery vs. Backup: What's the difference?](https://www.youtube.com/watch?v=07EHsPuKXc0)
 - [Veeam Portability & Cloud Mobility](https://www.youtube.com/watch?v=hDBlTdzE6Us&t=3s)
-
-See you on [Day 90](../day90)

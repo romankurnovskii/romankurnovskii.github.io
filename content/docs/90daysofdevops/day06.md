@@ -1,5 +1,5 @@
 ---
-title: 6 - DevOps - Истории
+title: 6. DevOps - Истории
 description: DevOps - Истории
 toc: true
 authors:

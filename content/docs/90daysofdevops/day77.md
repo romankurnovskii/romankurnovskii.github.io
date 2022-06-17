@@ -7,69 +7,68 @@ cover_image: null
 canonical_url: null
 id: 1048715
 ---
-## The Big Picture: Monitoring
+## Большая картина: Мониторинг
 
-In this section we are going to talk about monitoring, what is it why do we need it? 
+В этом разделе мы поговорим о мониторинге, что это такое, зачем он нам нужен? 
 
-### What is Monitoring? 
+### Что такое мониторинг? 
 
-Monitoring is the process of keeping a close eye on the entire infrastructure  
+Мониторинг - это процесс пристального наблюдения за всей инфраструктурой.  
 
-### and why do we need it? 
+### и зачем он нам нужен? 
 
-Let's assume we're managing a thousand servers these include a variety of specialised servers like application servers, database servers and web servers. We could also complicate this further with additional services and different platforms including public cloud offerings and Kubernetes. 
+Предположим, что мы управляем тысячей серверов, которые включают в себя множество специализированных серверов, таких как серверы приложений, серверы баз данных и веб-серверы. Мы также можем усложнить эту задачу за счет дополнительных сервисов и различных платформ, включая публичные облачные предложения и Kubernetes. 
 
 ![](../images/Day77_Monitoring1.png?v1)
 
-We are responsible for ensuring that all the services, applications and resources on the servers are running as they should be. 
+Мы отвечаем за то, чтобы все сервисы, приложения и ресурсы на серверах работали так, как должны. 
 
 ![](../images/Day77_Monitoring2.png?v1)
 
-How do we do it? there are three ways: 
+Как мы это делаем? Есть три способа: 
 
-- Login manually to all of our servers and check all the data pertaining to services processes and resources. 
-- Write a script that logs in to the servers for us and checks on the data.  
+- Войти вручную на все наши серверы и проверить все данные, относящиеся к процессам и ресурсам служб. 
+- Написать скрипт, который заходит на серверы за нас и проверяет данные.  
 
-Both of these options would require considerable amount of work on our part, 
+Оба варианта потребуют от нас значительного объема работы, 
 
-The third option is easier, we could use a monitoring solution that is available in the market.  
+Третий вариант проще, мы можем использовать решение для мониторинга, которое доступно на рынке.  
 
-Nagios and Zabbix are possible solutions that are readily available which allow us to upscale our monitoring infrastructure to include as many servers as we want. 
+Nagios и Zabbix - это возможные решения, которые легко доступны и позволяют нам расширить нашу инфраструктуру мониторинга, чтобы включить столько серверов, сколько мы захотим. 
 
 ### Nagios
 
-Nagios is an infrastructure monitoring tool that is made by a company that goes by the same name. The open-source version of this tool is called Nagios core while the commercial version is called Nagios XI. [Nagios Website](https://www.nagios.org/)
+Nagios - это инструмент мониторинга инфраструктуры, созданный одноименной компанией. Версия этого инструмента с открытым исходным кодом называется Nagios core, а коммерческая версия называется Nagios XI. [Сайт Nagios](https://www.nagios.org/)
 
-The tool allows us to monitor our servers and see if they are being sufficiently utilised or if there are any tasks of failure that need addressing. 
+Этот инструмент позволяет нам следить за нашими серверами и видеть, достаточно ли они используются или есть какие-либо задачи, требующие решения. 
 
 ![](../images/Day77_Monitoring3.png?v1)
 
-Essentially monitoring allows us to achieve these two goals, check the status of our servers and services and determine the health of our infrastructure it also gives us a 40,000ft view of the complete infrastructure to see if our servers are up and running, if the applications are working properly and the web servers are reachable or not. 
+По сути, мониторинг позволяет нам достичь этих двух целей, проверить состояние наших серверов и сервисов и определить здоровье нашей инфраструктуры. Он также дает нам возможность увидеть всю инфраструктуру с высоты 40 000 метров, чтобы увидеть, работают ли наши серверы, правильно ли работают приложения, доступны или нет веб-серверы. 
 
-It will tell us that our disk has been increasing by 10 percent for the last 10 weeks in a particular server, that it will exhaust entirely within the next four or five days and we'll fail to respond soon it will alert us when your disk or server is in a critical state so that we can take appropriate actions to avoid possible outages. 
+Он сообщит нам, что объем нашего диска увеличивался на 10 процентов в течение последних 10 недель на определенном сервере, что он будет полностью исчерпан в течение следующих четырех или пяти дней, и мы не сможем ответить в ближайшее время. Он предупредит нас, когда ваш диск или сервер находится в критическом состоянии, чтобы мы могли принять соответствующие меры, чтобы избежать возможных сбоев. 
 
-In this case we can free up some disk space and ensure that our servers don't fail and that our users are not affected. 
+В этом случае мы можем освободить некоторое дисковое пространство и гарантировать, что наши серверы не выйдут из строя и наши пользователи не пострадают. 
 
-The difficult question for most monitoring engineers is what do we monitor? and alternately what do we not? 
+Сложный вопрос для большинства инженеров по мониторингу - что мы отслеживаем, а что нет? 
 
-Every system has a number of resources, which of these should we keep a close eye on and which ones can we turn a blind eye to for instance is it necessary to monitor CPU usage the answer is yes obviously nevertheless it is still a decision that has to be made is it necessary to monitor the number of open ports in the system we may or may not have to depending on the situation if it is a general-purpose server we probably won't have to but then again if it is a webserver we probably would have to.  
+Каждая система имеет ряд ресурсов, за какими из них мы должны внимательно следить, а на какие можем закрыть глаза, например, нужно ли следить за использованием процессора, ответ "да" очевиден, тем не менее, это все равно решение, которое нужно принять, нужно ли следить за количеством открытых портов в системе, мы можем следить или не следить в зависимости от ситуации, если это сервер общего назначения, то, вероятно, не нужно, но если это веб-сервер, то, вероятно, нужно.  
 
-### Continous Monitoring
+### Постоянный мониторинг
 
-Monitoring is not a new item and even continous monitoring has been an ideal that many enterprises have adopted for many years. 
+Мониторинг не является чем-то новым, и даже непрерывный мониторинг был идеалом, который многие предприятия приняли в течение многих лет. 
 
-There are three key areas of focus when it comes to monitoring. 
+Есть три ключевых области, на которых необходимо сосредоточиться, когда речь заходит о мониторинге. 
 
-- Infrastructure Monitoring
-- Application Monitoring 
-- Network Monitoring 
+- Мониторинг инфраструктуры
+- Мониторинг приложений 
+- Мониторинг сети 
 
-The important thing to note is that there are many tools available we have mentioned two generic systems and tools in this session but there are lots. The real benefit of a monitoring solution comes when you have really spent the time making sure you are answering that question of what should we be monitoring and what shouldn't we? 
+Важно отметить, что существует множество доступных инструментов, мы упомянули две общие системы и инструменты в этой сессии, но их очень много. Реальная польза от решения для мониторинга появляется тогда, когда вы действительно потратили время на то, чтобы убедиться, что вы ответили на вопрос, что мы должны отслеживать, а что нет? 
 
-We could turn on a monitoring solution in any of our platforms and it will start grabbing information but if that information is simply too much then you are going to struggle to benefit from that solution, you have to spend the time to configure. 
+Мы можем включить решение мониторинга в любой из наших платформ, и оно начнет собирать информацию, но если этой информации просто слишком много, вам будет трудно извлечь пользу из этого решения, вам придется потратить время на настройку. 
 
-In the next session we will get hands on with a monitoring tool and see what we can start monitoring. 
-
+На следующем занятии мы попробуем использовать инструмент мониторинга и посмотрим, что мы можем начать отслеживать.
 ## Ресурсы 
 
 - [The Importance of Monitoring in DevOps](https://www.devopsonline.co.uk/the-importance-of-monitoring-in-devops/)
@@ -78,5 +77,3 @@ In the next session we will get hands on with a monitoring tool and see what we 
 - [Top 5 - DevOps Monitoring Tools](https://www.youtube.com/watch?v=4t71iv_9t_4)
 - [How Prometheus Monitoring works](https://www.youtube.com/watch?v=h4Sl21AKiDg) 
 - [Introduction to Prometheus monitoring](https://www.youtube.com/watch?v=5o37CGlNLr8)
-
-See you on [Day 78](../day78)

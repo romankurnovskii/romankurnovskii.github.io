@@ -1,5 +1,5 @@
 ---
-title: 46 - Docker Compose
+title: 46. Docker Compose
 description: 
 toc: true
 authors:

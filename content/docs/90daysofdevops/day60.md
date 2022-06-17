@@ -1,5 +1,5 @@
 ---
-title: '#90DaysOfDevOps - Docker Containers, Provisioners & Modules - Day 60'
+title: 60. Контейнеры, провайдеры и модули Docker
 description: 
 toc: true
 authors:
@@ -12,13 +12,13 @@ featuredImage:
 draft: false
 id: 1049052
 ---
-## Docker Containers, Provisioners & Modules 
+## Контейнеры и модули Docker 
 
-On [Day 59](../day59) we provisioned a virtual machine using Terraform to our local FREE virtualbox environment. In this section we are going to be deploy a Docker container with some configuration to our local Docker environment. 
+[Вчера](../day59) мы развернули виртуальную машину с помощью Terraform в нашей локальной среде FREE virtualbox. В этом разделе мы собираемся развернуть контейнер Docker с некоторой конфигурацией в нашей локальной среде Docker. 
 
 ### Docker Demo
 
-First up we are going to use the code block below, the outcome of the below is that we would like a simple web app to be deployed into docker and to publish this so that it is available to our network. We will be using nginx and we will make this available externally on our laptop over localhost and port 8000. We are using a docker provider from the community and you can see the docker image we are using also stated in our configuration. 
+Для начала мы используем приведенный ниже блок кода, суть которого заключается в том, что мы хотим развернуть простое веб-приложение в docker и опубликовать его, чтобы оно было доступно в нашей сети. Мы будем использовать nginx и сделаем его доступным извне на нашем ноутбуке через localhost и порт 8000. Мы используем провайдера docker из сообщества, и вы можете видеть образ docker, который мы используем, также указанный в нашей конфигурации.
 
 ```
 terraform {
@@ -47,25 +47,25 @@ resource "docker_container" "nginx" {
 }
 ```
 
-The first task is to use `terraform init` command to download the provider to our local machine. 
+Первой задачей является использование команды `terraform init` для загрузки провайдера на нашу локальную машину. 
 
 ![](../images/Day60_IAC1.png?v1)
 
-We then run our `terraform apply` followed by `docker ps` and you can see we have a running container. 
+Затем мы запускаем команду `terraform apply`, а затем `docker ps`, и вы можете увидеть, что у нас есть запущенный контейнер. 
 
 ![](../images/Day60_IAC2.png?v1)
 
-If we then open a browser we can navigate to http://localhost:8000/ and you will see we have access to our NGINX container. 
+Если мы откроем браузер, то перейдем по адресу http://localhost:8000/ и увидим, что у нас есть доступ к нашему контейнеру NGINX. 
 
 ![](../images/Day60_IAC3.png?v1)
 
-You can find out more information on the [Docker Provider](https://registry.terraform.io/providers/kreuzwerker/docker/latest/docs/resources/container) 
+Вы можете узнать больше информации о [Docker Provider](https://registry.terraform.io/providers/kreuzwerker/docker/latest/docs/resources/container). 
 
-The above is a very simple demo of what can be done with Terraform plus Docker and how we can now manage this under the Terraform state. We covered docker compose in the containers section and there is a little crossover in a way between this, infrastructure as code as well as then Kubernetes. 
+Выше приведена очень простая демонстрация того, что можно сделать с помощью Terraform плюс Docker и как мы теперь можем управлять этим в состоянии Terraform. Мы рассматривали docker compose в разделе о контейнерах, и есть небольшое пересечение между этим, инфраструктурой как код, а также Kubernetes. 
 
-For the purpose of showing this and how Terraform can handle a little more complexity, we are going to take the docker compose file for wordpress and mysql that we created with docker compose and we will put this to Terraform. You can find the [docker-wordpress.tf](/Days/IaC/Docker-Wordpress/docker-wordpress.tf)
+Для демонстрации того, как Terraform может справиться с более сложными задачами, мы возьмем файл docker compose для wordpress и mysql, который мы создали с помощью docker compose, и поместим его в Terraform. Вы можете найти [docker-wordpress.tf](/Days/IaC/Docker-Wordpress/docker-wordpress.tf)
 
-```
+```tf
 terraform {
   required_providers {
     docker = {
@@ -125,30 +125,28 @@ resource "docker_container" "wordpress" {
 }
 ```
 
-We again put this is in a new folder and then run our `terraform init` command to pull down our provisioners required. 
+Мы снова помещаем это в новую папку и затем запускаем команду `terraform init`, чтобы извлечь необходимые нам провайдеры. 
 
 ![](../images/Day60_IAC4.png?v1)
 
-We then run our `terraform apply` command and then take a look at our docker ps output we should see our newly created containers. 
+Затем мы запускаем команду `terraform apply` и смотрим на вывод docker ps, мы должны увидеть наши только что созданные контейнеры. 
 
 ![](../images/Day60_IAC5.png?v1)
 
-We can then also navigate to our WordPress front end. Much like when we went through this process with docker-compose in the containers section we can now run through the setup and our wordpress posts would be living in our MySQL database. 
+Затем мы можем перейти к нашему фронт-энду WordPress. Точно так же, как мы проходили этот процесс с docker-compose в разделе о контейнерах, теперь мы можем выполнить установку, и наши посты wordpress будут жить в нашей базе данных MySQL. 
 
 ![](../images/Day60_IAC6.png?v1)
 
-Obviously now we have covered containers and Kubernetes in some detail, we probably know that this is ok for testing but if you were really going to be running a website you would not do this with containers alone and you would look at using Kubernetes to achieve this, Next up we are going to take a look using Terraform with Kubernetes. 
-
+Очевидно, что теперь мы рассмотрели контейнеры и Kubernetes в некоторых деталях, мы, вероятно, знаем, что это подходит для тестирования, но если бы вы действительно собирались запустить веб-сайт, вы бы не стали делать это только с помощью контейнеров и рассмотрели бы использование Kubernetes для достижения этой цели, Далее мы рассмотрим использование Terraform с Kubernetes. 
 
 ### Provisioners 
 
-Provisioners are there so that if something cannot be declartive we have a way in which to parse this to our deployment. 
+Провайдеры существуют для того, чтобы если что-то не может быть декларировано, у нас был способ разобрать это для нашего развертывания. 
 
-If you have no other alternative and adding this complexity to your code is the place to go then you can do this by running something similar to the following block of code. 
+Если у вас нет другой альтернативы, и добавление такой сложности в ваш код - это то, что вам нужно, то вы можете сделать это, выполнив что-то похожее на следующий блок кода. 
 
 ```
-resource "docker_container" "db" {
-  # ...
+ресурс "docker_container" "db" {  # ...
 
   provisioner "local-exec" {
     command = "echo The server's IP address is ${self.private_ip}"
@@ -157,10 +155,11 @@ resource "docker_container" "db" {
 
 ```
 
-The remote-exec provisioner invokes a script on a remote resource after it is created. This could be used for something OS specific or it could be used to wrap in a configuration management tool. Although notice that we have some of these covered in their own provisioners. 
+Удаленный исполнительный провайдер вызывает скрипт на удаленном ресурсе после его создания. Это может быть использовано для чего-то специфического для ОС, или это может быть использовано для обертывания в инструмент управления конфигурацией. Хотя заметьте, что некоторые из них мы уже рассмотрели в собственных провайдерах.
 
-[More details on provisioners](https://www.terraform.io/language/resources/provisioners/syntax)
 
+Средство подготовки удаленных исполняемых файлов вызывает скрипт на удаленном ресурсе после его создания. Это может быть использовано для чего-то определенного для ОС или может быть использовано для включения инструмента управления конфигурацией. Хотя обратите внимание, что у нас есть некоторые из них, покрытые их собственными провизорами.
+Подробнее о провизорах](https://www.terraform.io/language/resources/provisioners/syntax)	
 - file
 - local-exec 
 - remote-exec 
@@ -169,20 +168,19 @@ The remote-exec provisioner invokes a script on a remote resource after it is cr
     - chef
     - puppet 
 
-### Modules 
+### Модули 
 
-Modules are containers for multiple resources that are used together. A module consists of a collection of .tf files in the same directory. 
+Модули - это контейнеры для нескольких ресурсов, которые используются вместе. Модуль состоит из коллекции файлов .tf в одном каталоге. 
 
-Modules are a good way to separate your infrastructure resources as well as being able to pull in third party modules that have already been created so you do not have to re invent the wheel. 
+Модули - это хороший способ разделить ресурсы инфраструктуры, а также возможность использовать уже созданные сторонние модули, чтобы не изобретать колесо. 
 
-For example if we wanted to use the same project to build out some VMs, VPCs, Security Groups and then also a Kubernetes cluster we would likely want to split our resources out into modules to better define our resources and where they are grouped. 
+Например, если бы мы хотели использовать один и тот же проект для создания нескольких виртуальных машин, VPC, групп безопасности, а затем кластера Kubernetes, мы бы, вероятно, захотели разделить наши ресурсы на модули, чтобы лучше определить наши ресурсы и их группировку. 
 
-Another benefit to modules is that you can take these modules and use them on other projects or share publicly to help the community. 
+Еще одним преимуществом модулей является то, что вы можете взять эти модули и использовать их в других проектах или публично поделиться ими, чтобы помочь сообществу. 
 
-We are breaking down our infrastructure into components, components are known here as modules.
+Мы разбиваем нашу инфраструктуру на компоненты, компоненты известны здесь как модули.
 
 ## Ресурсы 
-I have listed a lot of resources down below and I think this topic has been covered so many times out there, If you have additional resources be sure to raise a PR with your resources and I will be happy to review and add them to the list. 
 
 - [What is Infrastructure as Code? Difference of Infrastructure as Code Tools ](https://www.youtube.com/watch?v=POPP2WTJ8es)
 - [Terraform Tutorial | Terraform Course Overview 2021](https://www.youtube.com/watch?v=m3cKkYXl-8o)
@@ -194,5 +192,3 @@ I have listed a lot of resources down below and I think this topic has been cove
 - [Terraform Simple Projects](https://terraform.joshuajebaraj.com/)
 - [Terraform Tutorial - The Best Project Ideas](https://www.youtube.com/watch?v=oA-pPa0vfks)
 - [Awesome Terraform](https://github.com/shuaibiyy/awesome-terraform)
-
-See you on [Day 61](../day61)

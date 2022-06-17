@@ -1,5 +1,5 @@
 ---
-title: 7 - DevOps - изучение языка программирования
+title: 7. DevOps - изучение языка программирования
 description: DevOps - изучение языка программирования
 toc: true
 authors:

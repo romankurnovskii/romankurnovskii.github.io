@@ -1,5 +1,5 @@
 ---
-title: 8 - Настройка DevOps окружения для запуска Hello World на Go
+title: 8. Настройка DevOps окружения для запуска Hello World на Go
 description: Настройка DevOps окружения для запуска Hello World на Go
 toc: true
 authors:

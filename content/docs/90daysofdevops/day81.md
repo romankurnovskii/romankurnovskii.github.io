@@ -7,65 +7,64 @@ cover_image: null
 canonical_url: null
 id: 1048716
 ---
-## Fluentd & FluentBit
+## Fluentd и FluentBit
 
-Another data collector that I wanted to explore as part of this observability section was [Fluentd](https://docs.fluentd.org/). An Open-Source unified logging layer. 
+Еще одним коллектором данных, который я хотел изучить в рамках раздела о наблюдаемости, был [Fluentd](https://docs.fluentd.org/). Это унифицированный уровень протоколирования с открытым исходным кодом. 
 
-Fluentd has four key features that makes it suitable to build clean, reliable logging pipelines:
+Fluentd имеет четыре ключевые особенности, которые делают его подходящим для создания чистых, надежных конвейеров протоколирования:
 
-Unified Logging with JSON: Fluentd tries to structure data as JSON as much as possible. This allows Fluentd to unify all facets of processing log data: collecting, filtering, buffering, and outputting logs across multiple sources and destinations. The downstream data processing is much easier with JSON, since it has enough structure to be accessible without forcing rigid schemas.
+Унифицированное протоколирование с JSON: Fluentd старается структурировать данные в виде JSON, насколько это возможно. Это позволяет Fluentd унифицировать все аспекты обработки данных журналов: сбор, фильтрацию, буферизацию и вывод журналов из нескольких источников и мест назначения. Последующая обработка данных намного проще с JSON, так как он имеет достаточную структуру, чтобы быть доступным без принуждения к жестким схемам.
 
-Pluggable Architecture: Fluentd has a flexible plugin system that allows the community to extend its functionality. Over 300 community-contributed plugins connect dozens of data sources to dozens of data outputs, manipulating the data as needed. By using plugins, you can make better use of your logs right away.
+Подключаемая архитектура: Fluentd имеет гибкую систему плагинов, которая позволяет сообществу расширять его функциональность. Более 300 плагинов, созданных сообществом, соединяют десятки источников данных с десятками выходных данных, манипулируя данными по мере необходимости. Используя плагины, вы можете сразу же повысить эффективность использования ваших журналов.
 
-Minimum Resources Required: A data collector should be lightweight so that it runs comfortably on a busy machine. Fluentd is written in a combination of C and Ruby, and requires minimal system resources. The vanilla instance runs on 30-40MB of memory and can process 13,000 events/second/core.
+Требуется минимум ресурсов: Коллектор данных должен быть легким, чтобы его можно было легко запустить на загруженной машине. Fluentd написан на комбинации C и Ruby и требует минимальных системных ресурсов. Ванильный экземпляр работает на 30-40 МБ памяти и может обрабатывать 13 000 событий/секунду/ядро.
 
-Built-in Reliability: Data loss should never happen. Fluentd supports memory- and file-based buffering to prevent inter-node data loss. Fluentd also supports robust failover and can be set up for high availability.
+Встроенная надежность: Потеря данных никогда не должна произойти. Fluentd поддерживает буферизацию на основе памяти и файлов для предотвращения потери данных между узлами. Fluentd также поддерживает надежное восстановление после отказа и может быть настроен на высокую доступность.
 
-[Installing Fluentd](https://docs.fluentd.org/quickstart#step-1-installing-fluentd)
+[Установка Fluentd](https://docs.fluentd.org/quickstart#step-1-installing-fluentd)
 
-### How apps log data? 
+### Как приложения записывают данные в журнал? 
 
-- Write to files. `.log` files (difficult to analyse without a tool and at scale)
-- Log directly to a database (each application must be configured with the correct format)
-- Third party applications (NodeJS, NGINX, PostgreSQL)
+- Запись в файлы. Файлы `.log` (трудно анализировать без инструмента и в масштабе)
+- Вести журнал непосредственно в базу данных (каждое приложение должно быть настроено на правильный формат)
+- Сторонние приложения (NodeJS, NGINX, PostgreSQL).
 
-This is why we want a unified logging layer. 
+Вот почему нам нужен единый уровень логирования. 
 
-FluentD allows for the 3 logging data types shown above and gives us the ability to collect, process and send those to a destination, this could be sending them logs to Elastic, MongoDB, Kafka databases for example. 
+FluentD позволяет использовать 3 типа данных, показанных выше, и дает нам возможность собирать, обрабатывать и отправлять их по назначению, это может быть отправка логов в базы данных Elastic, MongoDB, Kafka, например. 
 
-Any Data, Any Data source can be sent to FluentD and that can be sent to any destination. FluentD is not tied to any particular source or destination. 
+Любые данные, любой источник данных может быть отправлен в FluentD, и эти данные могут быть отправлены в любое место назначения. FluentD не привязан к какому-либо конкретному источнику или месту назначения. 
 
-In my research of Fluentd I kept stumbling across Fluent bit as another option and it looks like if you were looking to deploy a logging tool into your Kubernetes environment then fluent bit would give you that capability, even though fluentd can also be deployed to containers as well as servers. 
+Изучая Fluentd, я постоянно натыкался на Fluent bit как еще один вариант, и похоже, что если вы хотите развернуть инструмент протоколирования в среде Kubernetes, то Fluent bit даст вам такую возможность, хотя Fluentd также может быть развернут как на контейнерах, так и на серверах. 
 
 [Fluentd & Fluent Bit](https://docs.fluentbit.io/manual/about/fluentd-and-fluent-bit)
 
-Fluentd and Fluentbit will use the input plugins to transform that data to Fluent Bit format, then we have output plugins to whatever that output target is such as elasticsearch. 
+Fluentd и Fluentbit будут использовать входные плагины для преобразования данных в формат Fluent Bit, затем у нас есть выходные плагины для любой цели вывода, например, elasticsearch. 
 
-We can also use tags and matches between configurations. 
+Мы также можем использовать теги и соответствия между конфигурациями. 
 
-I cannot see a good reason for using fluentd and it sems that Fluent Bit is the best way to get started. Although they can be used together in some architectures. 
+Я не вижу веских причин для использования Fluentd, и кажется, что Fluent Bit - лучший способ начать работу. Хотя в некоторых архитектурах они могут использоваться вместе. 
 
-### Fluent Bit in Kubernetes 
+### Fluent Bit в Kubernetes 
 
-Fluent Bit in Kubernetes is deployed as a DaemonSet, which means it will run on each node in the cluster. Each Fluent Bit pod on each node will then read each container on that node and gather all of the logs available. It will also gather the metadata from the Kubernetes API Server.  
+Fluent Bit в Kubernetes развертывается как DaemonSet, что означает, что он будет запущен на каждом узле кластера. Каждая капсула Fluent Bit на каждом узле будет читать каждый контейнер на этом узле и собирать все доступные журналы. Он также будет собирать метаданные с сервера Kubernetes API Server.  
 
-Kubernetes annotations can be used within the configuration YAML of our applications. 
+Аннотации Kubernetes можно использовать в конфигурационном YAML наших приложений. 
 
 
-First of all we can deploy from the fluent helm repository. `helm repo add fluent https://fluent.github.io/helm-charts` and then install using the `helm install fluent-bit fluent/fluent-bit` command. 
+Прежде всего, мы можем развернуть приложение из репозитория fluent helm. `helm repo add fluent https://fluent.github.io/helm-charts`, а затем установить с помощью команды `helm install fluent-bit fluent/fluent-bit`. 
 
 ![](../images/Day81_Monitoring1.png?v1)
 
-In my cluster I am also running prometheus in my default namespace (for test purposes) we need to make sure our fluent-bit pod is up and running. we can do this using `kubectl get all | grep fluent` this is going to show us our running pod, service and daemonset that we mentioned earlier. 
+В моем кластере я также запускаю prometheus в моем пространстве имен по умолчанию (в тестовых целях), нам нужно убедиться, что наш fluent-bit pod запущен и работает. Мы можем сделать это с помощью команды `kubectl get all | grep fluent`, которая покажет нам наш запущенный pod, сервис и набор демонов, о которых мы говорили ранее. 
 
 ![](../images/Day81_Monitoring2.png?v1)
 
-So that fluentbit knows where to get logs from we have a configuration file, in this Kubernetes deployment of fluentbit we have a configmap which resembles the configuration file. 
+Чтобы Fluentbit знал, откуда получать журналы, у нас есть конфигурационный файл, в этом развертывании Fluentbit на Kubernetes у нас есть configmap, который напоминает конфигурационный файл. 
 
 ![](../images/Day81_Monitoring3.png?v1)
 
-That ConfigMap will look something like: 
-
+Эта ConfigMap будет выглядеть примерно так:
 ```
 Name:         fluent-bit
 Namespace:    default
@@ -141,11 +140,11 @@ fluent-bit.conf:
 Events:  <none>
 ```
 
-We can now port-forward our pod to our localhost to ensure that we have connectivity. Firstly get the name of your pod with `kubectl get pods | grep fluent` and then use `kubectl port-forward fluent-bit-8kvl4 2020:2020` open a web browser to http://localhost:2020/ 
+Теперь мы можем перенаправить наш pod на наш localhost, чтобы убедиться, что у нас есть соединение. Сначала узнайте имя вашего pod с помощью `kubectl get pods | grep fluent` и затем используйте `kubectl port-forward fluent-bit-8kvl4 2020:2020` откройте веб-браузер на http://localhost:2020/. 
 
 ![](../images/Day81_Monitoring4.png?v1)
 
-I also found this really great medium article covering more about [Fluent Bit](https://medium.com/kubernetes-tutorials/exporting-kubernetes-logs-to-elasticsearch-using-fluent-bit-758e8de606af)
+Я также нашел эту замечательную статью на Medium, в которой рассказывается о [Fluent Bit](https://medium.com/kubernetes-tutorials/exporting-kubernetes-logs-to-elasticsearch-using-fluent-bit-758e8de606af).
 
 ## Ресурсы 
 
@@ -161,8 +160,4 @@ I also found this really great medium article covering more about [Fluent Bit](h
 - [Log Management what DevOps need to know](https://devops.com/log-management-what-devops-teams-need-to-know/)
 - [What is ELK Stack?](https://www.youtube.com/watch?v=4X0WLg05ASw)
 - [Fluentd simply explained](https://www.youtube.com/watch?v=5ofsNyHZwWE&t=14s) 
-- [ Fluent Bit explained | Fluent Bit vs Fluentd ](https://www.youtube.com/watch?v=B2IS-XS-cc0)
-
-
-See you on [Day 82](../day82)
-
+- [ Fluent Bit explained | Fluent Bit vs Fluentd ](https://www.youtube.com/watch?v=B2IS-XS-cc0))

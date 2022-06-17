@@ -12,87 +12,84 @@ featuredImage:
 draft: false
 id: 1048711
 ---
-## The Big Picture: Configuration Management
+## Большая картина: Управление конфигурацией
 
-Coming straight off the back of the section covering Infrastructure as Code, there is likely going to be some crossover as we talk about Configuration Management or Application Configuration Management. 
+Сразу после раздела, посвященного инфраструктуре как коду, мы, вероятно, будем говорить об управлении конфигурацией или управлении конфигурацией приложений. 
 
-Configuration Management is the process of maintaining applications, systems and servers in a desired state. The overlap with Infrastructure as code is that IaC is going to make sure your infrastructure is at the desired state but after that especially terraform is not going to look after the desired state of your OS settings or Application and that is where Configuration Management tools come in. Making sure that system and applications perform the way it is expected as changes occur over Deane. 
+Управление конфигурацией - это процесс поддержания приложений, систем и серверов в требуемом состоянии. Пересечение с Infrastructure as code заключается в том, что IaC гарантирует, что ваша инфраструктура находится в желаемом состоянии, но после этого, особенно terraform, не будет заботиться о желаемом состоянии настроек вашей ОС или приложений, и именно здесь на помощь приходят инструменты управления конфигурацией. Убедитесь, что система и приложения работают так, как ожидается, поскольку изменения происходят в Deane. 
 
-Configuration management keeps you from making small or large changes that go undocumented. 
+Управление конфигурацией убережет вас от внесения мелких или крупных изменений, которые останутся недокументированными. 
 
-### Scenario: Why would you want to use Configuration Management
+### Сценарий: Почему вы хотите использовать управление конфигурацией
 
-The scenario or why you'd want to use Configuration Management, meet Dean he's our system administrator and Dean is a happy camper pretty and
-working on all of the systems in his environement. 
+Сценарий или почему вы хотите использовать управление конфигурацией, познакомьтесь с Дином, он наш системный администратор, и Дин - счастливый турист, который работает над всеми своими системами.
+работает над всеми системами в своем окружении. 
 
-What happens if their system fails, if there's a fire, a server goes down well? Dean knows exactly what to do he can fix that fire really easily the problems become really difficult for Dean however if multiple servers start failing particularly when you have large and expanding environments, this is why Dean really needs to have a configuration management tool. Configuration Management tools can help make Dean look like a rockstar, all he has to do is configure the right codes that allows him to push out the instructions on how to set up each of the servers quickly effectively and at scale. 
+Что произойдет, если их система выйдет из строя, если случится пожар, сервер выйдет из строя? Дин точно знает, что делать, он может легко устранить пожар, но если несколько серверов начнут выходить из строя, особенно если у вас большая и расширяющаяся среда, вот почему Дину действительно необходимо иметь инструмент управления конфигурацией. Инструменты управления конфигурацией могут помочь Дину выглядеть как рок-звезда, все, что ему нужно сделать, это настроить правильные коды, которые позволят ему быстро, эффективно и масштабно передать инструкции по настройке каждого из серверов. 
 
 
-### Configuration Management tools 
+### Инструменты управления конфигурацией 
 
-There are a variety of configuration management tools available, and each has specific features that make it better for some situations than others. 
+Существует множество инструментов управления конфигурацией, и каждый из них имеет специфические особенности, которые делают его лучше для одних ситуаций, чем для других. 
 
 ![](../images/Day63_config1.png?v1)
 
-At this stage we will take a quick fire look at the options in the above picture before making our choice on which one we will use and why. 
+На этом этапе мы быстро рассмотрим варианты, показанные на рисунке выше, прежде чем сделать выбор, какой из них мы будем использовать и почему. 
 
 - **Chef**
-  - Chef ensures configuration is applied consistently in every environment, at any scale with infrastructure automation. 
-  - Chef is an open-source tool developed by OpsCode written in Ruby and Erlang.
-  - Chef is best suited for organisations that have a hetrogenous infrastructure and are looking for mature solutions. 
-  - Recipes and Cookbooks determine the configuration code for your systems. 
-  - Pro - A large collection of recipes are available
-  - Pro - Integrates well with Git which provides a strong version control
-  - Con - Steep learning curve, a considerable amount of time required. 
-  - Con - The main server doesn't have much control. 
-  - Architecture - Server / Clients 
-  - Ease of setup  - Moderate
-  - Language - Procedural - Specify how to do a task
-
+  - Chef обеспечивает последовательное применение конфигурации в любой среде, в любом масштабе с помощью автоматизации инфраструктуры. 
+  - Chef - это инструмент с открытым исходным кодом, разработанный компанией OpsCode и написанный на Ruby и Erlang.
+  - Chef лучше всего подходит для организаций, которые имеют гетерогенную инфраструктуру и ищут зрелые решения. 
+  - Рецепты и Cookbooks определяют код конфигурации для ваших систем. 
+  - Pro - Доступна большая коллекция рецептов
+  - Pro - Хорошо интегрируется с Git, что обеспечивает надежный контроль версий.
+  - Против - Крутая кривая обучения, требуется значительное количество времени. 
+  - Против - Главный сервер не имеет большого контроля. 
+  - Архитектура - сервер / клиенты 
+  - Простота настройки - Умеренная
+  - Язык - Процедурный - Указать, как выполнить задачу
 - **Puppet**
-  - Puppet is a configuration management tool that supports automatic deployment. 
-  - Puppet is built in Ruby and uses DSL for writing manifests. 
-  - Puppet also works well with hetrogenous infrastructure where the focus is on scalability.  
-  - Pro - Large community for support. 
-  - Pro - Well developed reporting mechanism. 
-  - Con - Advance tasks require knowledge of Ruby language.
-  - Con - The main server doesn't have much control. 
-  - Architecture - Server / Clients 
-  - Ease of setup  - Moderate
-  - Language - Declartive - Specify only what to do
+  - Puppet - это инструмент управления конфигурацией, который поддерживает автоматическое развертывание. 
+  - Puppet построен на Ruby и использует DSL для написания манифестов. 
+  - Puppet также хорошо работает с гетерогенной инфраструктурой, где основное внимание уделяется масштабируемости.  
+  - За - Большое сообщество поддержки. 
+  - За - Хорошо развитый механизм отчетности. 
+  - Против - Продвинутые задачи требуют знания языка Ruby.
+  - Против - Главный сервер не имеет большого контроля. 
+  - Архитектура - сервер / клиенты 
+  - Простота установки - Умеренная
+  - Язык - Декларативный - указывать только то, что нужно делать
   
 - **Ansible**
-  - Ansible is an IT automation tool that automates configuration management, cloud provisioning, deployment and orchestration. 
-  - The core of Ansible playbooks are written in YAML. (Should really do a section on YAML as we have seen this a few times)
-  - Ansible works well when there are environments that focus on getting things up and running fast. 
-  - Works on playbooks which provide instructions to your servers.
-  - Pro - No agents needed on remote nodes.
-  - Pro - YAML is easy to learn. 
-  - Con - Performance speed is often less than other tools (Faster than Dean doing it himself manually)
-  - Con - YAML not as powerful as Ruby but less of a learning curve. 
-  - Architecture - Client Only
-  - Ease of setup  - Very Easy  
-  - Language - Procedural - Specify how to do a task
+  - Ansible - это инструмент автоматизации ИТ, который автоматизирует управление конфигурацией, предоставление облака, развертывание и оркестровку. 
+  - Ядро плейбуков Ansible написано на языке YAML. (Следует сделать раздел о YAML, так как мы уже несколько раз сталкивались с этим).
+  - Ansible хорошо работает в средах, где основное внимание уделяется быстрой настройке и запуску. 
+  - Работает на основе плейбуков, которые предоставляют инструкции вашим серверам.
+  - Pro - Не нужны агенты на удаленных узлах.
+  - Pro - YAML легко изучить. 
+  - Против - Скорость работы часто ниже, чем у других инструментов (быстрее, чем Дин делает это сам вручную).
+  - Против - YAML не такой мощный, как Ruby, но его легче освоить. 
+  - Архитектура - Только клиент
+  - Простота настройки - Очень просто  
+  - Язык - Процедурный - Указать, как выполнить задачу
 
 - **SaltStack**
-  - SaltStack is a CLI based tool that automates configuration management and remote execution. 
-  - SaltStack is Python based whilst the instructions are written in YAML or its own DSL. 
-  - Perfect for environments with scalability and resilience as the priority. 
-  - Pro - Easy to use when up and running 
-  - Pro - Good reporting mechanism 
-  - Con - Setup phase is tough
-  - Con - New web ui which is much less developed than the others. 
-  - Architecture - Server / Clients
-  - Ease of setup  - Moderate
-  - Language - Declartive - Specify only what to do
+  - SaltStack - это инструмент на основе CLI, который автоматизирует управление конфигурацией и удаленное выполнение. 
+  - SaltStack основан на Python, а инструкции написаны на YAML или собственном DSL. 
+  - Идеально подходит для сред, где приоритетом является масштабируемость и отказоустойчивость. 
+  - Плюсы - Простота использования при запуске 
+  - Плюсы - Хороший механизм отчетности 
+  - Против - Фаза установки сложная
+  - Против - Новый веб-уи, который гораздо менее проработан, чем другие. 
+  - Архитектура - сервер / клиенты
+  - Простота установки - Умеренная
+  - Язык - Декларативный - указывайте только то, что нужно делать
 
 ### Ansible vs Terraform
 
-The tool that we will be using for this section is going to be Ansible. (Easy to use and easier language basics required.)
+Инструментом, который мы будем использовать для этого раздела, будет Ansible. (Простой в использовании и требуются основы языка).
 
-I think it is important to touch on some of the differences between Ansible and Terraform before we look into the tooling a little further. 
-
-|               |Ansible                                                        |Terraform                                                          |
+Я думаю, что важно коснуться некоторых различий между Ansible и Terraform, прежде чем мы рассмотрим инструментарий немного подробнее. |               |Ansible                                                        |Terraform                                                          |
 | ------------- | ------------------------------------------------------------- | ----------------------------------------------------------------- |
 |Type           |Ansible is a configuration management tool                     |Terraform is a an orchestration tool                               |
 |Infrastructure |Ansible provides support for mutable infrastructure            |Terraform provides support for immutable infrastructure            |
@@ -108,6 +105,3 @@ I think it is important to touch on some of the differences between Ansible and 
 - [What is Ansible](https://www.youtube.com/watch?v=1id6ERvfozo)
 - [Ansible 101 - Episode 1 - Introduction to Ansible](https://www.youtube.com/watch?v=goclfp6a2IQ)
 - [NetworkChuck - You need to learn Ansible right now!](https://www.youtube.com/watch?v=5hycyr-8EKs&t=955s)
-
-
-See you on [Day 64](../day64)

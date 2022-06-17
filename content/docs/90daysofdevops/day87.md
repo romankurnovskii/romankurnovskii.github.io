@@ -7,176 +7,177 @@ cover_image: null
 canonical_url: null
 id: 1048717
 ---
-## Hands-On Backup & Recovery
+## Резервное копирование и восстановление своими руками
 
-In the last session we touched on [Kopia](https://kopia.io/) an Open-Source backup tool that we used to get some important data off to a local NAS and off to some cloud based object storage. 
+На прошлом занятии мы рассмотрели [Kopia](https://kopia.io/) - инструмент резервного копирования с открытым исходным кодом, который мы использовали для переноса важных данных на локальный NAS и в облачное хранилище объектов. 
 
-In this section, I want to get into the world of Kubernetes backup. It is a platform we covered [The Big Picture: Kubernetes](../days/day49) earlier in the challenge. 
+В этом разделе я хочу погрузиться в мир резервного копирования Kubernetes. Это платформа, которую мы рассматривали в [The Big Picture: Kubernetes](.../day49) ранее в этой задаче. 
 
-We will again be using our minikube cluster but this time we are going to take advantage of some of those addons that are available. 
+Мы снова будем использовать наш кластер minikube, но на этот раз мы воспользуемся некоторыми из доступных аддонов. 
 
-### Kubernetes cluster setup 
+### Настройка кластера Kubernetes 
 
-To set up our minikube cluster we will be issuing the `minikube start --addons volumesnapshots,csi-hostpath-driver --apiserver-port=6443 --container-runtime=containerd -p 90daysofdevops --kubernetes-version=1.21.2` you will notice that we are using the `volumesnapshots` and `csi-hostpath-driver` as we will take full use of these for when we are taking our backups. 
+Для настройки нашего кластера minikube мы выполним команду `minikube start --addons volumesnapshots,csi-hostpath-driver --apiserver-port=6443 --container-runtime=containerd -p 90daysofdevops --kubernetes-version=1.21.2`. Вы заметите, что мы используем `volumesnapshots` и `csi-hostpath-driver`, поскольку мы будем использовать их для создания резервных копий. 
 
-At this point I know we have not deployed Kasten K10 yet but we want to issue the following command when your cluster is up, but we want to annotate the volumesnapshotclass so that Kasten K10 can use this. 
+На данном этапе я знаю, что мы еще не развернули Kasten K10, но мы хотим выполнить следующую команду, когда ваш кластер будет запущен, но мы хотим аннотировать класс volumesnapshotclass, чтобы Kasten K10 мог использовать его. 
 
 ```
 kubectl annotate volumesnapshotclass csi-hostpath-snapclass \
     k10.kasten.io/is-snapshot-class=true
 ```
 
-We are also going to change over the default storageclass from the standard default storageclass to the csi-hostpath storageclass using the following. 
+Мы также собираемся изменить класс хранения по умолчанию со стандартного класса хранения по умолчанию на класс хранения csi-hostpath, используя следующее. 
 
 ```
-kubectl patch storageclass csi-hostpath-sc -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+kubectl patch storageclass csi-hostpath-sc -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class": "true"}}}}''
 
-kubectl patch storageclass standard -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
+kubectl patch storageclass standard -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class": "false"}}}}''
 ```
 
 ![](../images/Day87_Data1.png?v1)
 
-### Deploy Kasten K10 
+### Развертывание Kasten K10 
 
-Add the Kasten Helm repository
+Добавьте репозиторий Kasten Helm
 
-`helm repo add kasten https://charts.kasten.io/`
+`helm repo add kasten https://charts.kasten.io/`.
 
-We could use `arkade kasten install k10` here as well but for the purpose of the demo we will run through the following steps. [More Details](https://blog.kasten.io/kasten-k10-goes-to-the-arkade)
+Мы могли бы использовать `arkade kasten install k10` и здесь, но для целей демонстрации мы выполним следующие шаги. [Подробнее](https://blog.kasten.io/kasten-k10-goes-to-the-arkade)
 
-Create the namespace and deploy K10, note that this will take around 5 mins 
+Создайте пространство имен и разверните K10, обратите внимание, что это займет около 5 минут 
 
-`helm install k10 kasten/k10 --namespace=kasten-io --set auth.tokenAuth.enabled=true --set injectKanisterSidecar.enabled=true --set-string injectKanisterSidecar.namespaceSelector.matchLabels.k10/injectKanisterSidecar=true --create-namespace`
+`helm install k10 kasten/k10 --namespace=kasten-io --set auth.tokenAuth.enabled=true --set injectKanisterSidecar.enabled=true --set-string injectKanisterSidecar.namespaceSelector.matchLabels.k10/injectKanisterSidecar=true --create-namespace`.
 
 ![](../images/Day87_Data1.png?v1)
 
-You can watch the pods come up by running the following command.
+Вы можете наблюдать за появлением стручков, выполнив следующую команду.
 
 `kubectl get pods -n kasten-io -w`
 
 ![](../images/Day87_Data3.png?v1)
 
-Port forward to access the K10 dashboard, open a new terminal to run the below command
+Чтобы получить доступ к приборной панели K10, откройте новый терминал и выполните следующую команду
 
-`kubectl --namespace kasten-io port-forward service/gateway 8080:8000`
+`kubectl --namespace kasten-io port-forward service/gateway 8080:8000`.
 
-The Kasten dashboard will be available at: `http://127.0.0.1:8080/k10/#/`
+Приборная панель Kasten будет доступна по адресу: `http://127.0.0.1:8080/k10/#/`
 
 ![](../images/Day87_Data4.png?v1)
 
-To authenticate with the dashboard we now need the token which we can get with the following commands. 
+Для аутентификации на приборной панели нам теперь нужен токен, который мы можем получить с помощью следующих команд. 
 
 ```
 TOKEN_NAME=$(kubectl get secret --namespace kasten-io|grep k10-k10-token | cut -d " " -f 1)
 TOKEN=$(kubectl get secret --namespace kasten-io $TOKEN_NAME -o jsonpath="{.data.token}" | base64 --decode)
 
-echo "Token value: "
+echo "Значение токена: "
 echo $TOKEN
 ```
 
 ![](../images/Day87_Data5.png?v1)
 
-Now we take this token and we input that into our browser, you will then be prompted for an email and company name. 
+Теперь мы берем этот токен и вводим его в браузер, после чего вам будет предложено ввести email и название компании. 
 
 ![](../images/Day87_Data6.png?v1)
 
-Then we get access to the Kasten K10 dashboard. 
+Затем мы получаем доступ к приборной панели Kasten K10. 
 
 ![](../images/Day87_Data7.png?v1)
 
-### Deploy our stateful application 
+### Развертывание нашего stateful-приложения 
 
-Use the stateful application that we used in the Kubernetes section. 
+Используйте stateful-приложение, которое мы использовали в разделе Kubernetes. 
 
 ![](../images/Day55_Kubernetes1.png?v1)
 
-You can find the YAML configuration file for this application here[pacman-stateful-demo.yaml](../days/Kubernetes/pacman-stateful-demo.yaml)
+Вы можете найти конфигурационный файл YAML для этого приложения здесь[pacman-stateful-demo.yaml](../Kubernetes/pacman-stateful-demo.yaml)
 
 ![](../images/Day87_Data8.png?v1)
 
-We can use `kubectl get all -n pacman` to check on our pods coming up. 
+Мы можем использовать `kubectl get all -n pacman`, чтобы проверить появление наших стручков. 
 
 ![](../images/Day87_Data9.png?v1)
 
-In a new terminal we can then port forward the pacman front end. `kubectl port-forward svc/pacman 9090:80 -n pacman`
+В новом терминале мы можем перенаправить фронт-енд pacman. `kubectl port-forward svc/pacman 9090:80 -n pacman`.
 
-Open another tab on your browser to http://localhost:9090/ 
+Откройте другую вкладку в браузере на http://localhost:9090/ 
 
 ![](../images/Day87_Data10.png?v1)
 
-Take the time to clock up some high scores in the backend MongoDB database. 
+Найдите время, чтобы записать несколько высоких результатов в базе данных backend MongoDB. 
 
 ![](../images/Day87_Data11.png?v1)
 
-### Protect our High Scores 
+### Защитите наши высокие баллы 
 
-Now we have some mission critical data in our database and we do not want to lose it. We can use Kasten K10 to protect this whole application. 
+Теперь у нас есть некоторые важные данные в нашей базе данных, и мы не хотим их потерять. Мы можем использовать Kasten K10 для защиты всего приложения. 
 
-If we head back into the Kasten K10 dashboard tab you will see that our number of application has now increased from 1 to 2 with the addition of our pacman application to our Kubernetes cluster. 
+Если мы вернемся на вкладку приборной панели Kasten K10, вы увидите, что количество наших приложений увеличилось с 1 до 2 с добавлением нашего приложения pacman в наш кластер Kubernetes. 
 
 ![](../images/Day87_Data12.png?v1)
 
-If you click on the Applications card you will see the automatically discovered applications in our cluster. 
+Если вы нажмете на карточку Applications, вы увидите автоматически обнаруженные приложения в нашем кластере. 
 
 ![](../images/Day87_Data13.png?v1)
 
-With Kasten K10 we have the ability to leverage storage based snapshots as well export our copies out to object storage options. 
+В Kasten K10 у нас есть возможность использовать моментальные снимки на основе хранилища, а также экспортировать наши копии в объектные хранилища. 
 
-For the purpose of the demo, we will create a manual storage snapshot in our cluster and then we can add some rogue data to our high scores to simulate an accidental mistake being made or is it? 
+Для целей демонстрации мы создадим ручной снимок хранилища в нашем кластере, а затем добавим некоторые неавторизованные данные в наши высокие результаты, чтобы имитировать случайную ошибку или нет? 
 
-Firstly we can use the manual snapshot option below. 
+Для начала мы можем воспользоваться приведенным ниже вариантом ручного снапшота. 
 
 ![](../images/Day87_Data14.png?v1)
 
-For the demo I am going to leave everything as the default 
+Для демонстрации я собираюсь оставить все по умолчанию 
 
 ![](../images/Day87_Data15.png?v1)
 
-Back on the dashboard you get a status report on the job as it is running and then when complete it should look as successful as this one. 
+Вернувшись на приборную панель, вы получите отчет о состоянии задания в процессе его выполнения, а после завершения оно должно выглядеть так же успешно, как и здесь. 
 
 ![](../images/Day87_Data16.png?v1)
 
-### Failure Scenario 
+### Сценарий неудачи 
 
-We can now make that fatal change to our mission critical data by simply adding in a prescriptive bad change to our application. 
+Теперь мы можем внести фатальное изменение в наши критически важные данные, просто добавив предписывающее плохое изменение в наше приложение. 
 
-As you can see below we have two inputs that we probably dont want in our production mission critical database.
+Как вы можете видеть ниже, у нас есть два входа, которые мы, вероятно, не хотим видеть в нашей производственной критически важной базе данных.
 
 ![](../images/Day87_Data17.png?v1)
 
-### Restore the data
+### Восстановление данных
 
-Obviously this is a simple demo and in a way not realistic although have you seen how easy it is to drop databases? 
+Очевидно, что это простая демонстрация и в некотором роде нереалистичная, хотя вы видели, как легко можно сбросить базы данных? 
 
-Now we want to get that high score list looking a little cleaner and how we had it before the mistakes were made. 
+Теперь мы хотим, чтобы список высоких результатов выглядел немного чище и как он выглядел до того, как были допущены ошибки. 
 
-Back in the Applications card and on the pacman tab we now have 1 restore point we can use to restore from. 
+Вернемся в карточку приложений и на вкладку pacman, теперь у нас есть 1 точка восстановления, которую мы можем использовать для восстановления. 
 
 ![](../images/Day87_Data18.png?v1)
 
-When you select restore you can see all the associated snapshots and exports to that application. 
+При выборе восстановления вы можете увидеть все связанные снимки и экспорты для этого приложения. 
 
 ![](../images/Day87_Data19.png?v1)
 
-Select that restore and a side window will appear, we will keep the default settings and hit restore. 
+Выберите восстановление и появится боковое окно, мы сохраним настройки по умолчанию и нажмем восстановить. 
 
 ![](../images/Day87_Data20.png?v1)
 
-Confirm that you really want to make this happen. 
+Подтвердите, что вы действительно хотите, чтобы это произошло. 
 
 ![](../images/Day87_Data21.png?v1)
 
-You can then go back to the dashboard and see the progress of the restore. You should see something like this. 
+Затем вы можете вернуться на приборную панель и просмотреть ход восстановления. Вы должны увидеть что-то вроде этого. 
 
 ![](../images/Day87_Data22.png?v1)
 
-But more importantly how is our High-Score list looking in our mission critical application. You will have to start the port forward again to pacman as we previously covered. 
+Но более важно то, как выглядит наш список High-Score в нашем критически важном приложении. Вам придется снова запустить проброс портов в pacman, как мы уже рассказывали ранее. 
 
 ![](../images/Day87_Data23.png?v1)
 
-A super simple demo and only really touching the surface of what Kasten K10 can really achieve when it comes to backup. I will be creating some more in depth video content on some of these areas in the future. We will also be using Kasten K10 to highlight some of the other prominent areas around Data Management when it comes to Disaster Recovery and the mobility of your data. 
+Это очень простая демонстрация, которая лишь слегка касается того, чего Kasten K10 может достичь в области резервного копирования. В будущем я буду создавать более подробные видеоматериалы по некоторым из этих областей. Мы также будем использовать Kasten K10 для освещения некоторых других важных областей управления данными, когда речь идет об аварийном восстановлении и мобильности ваших данных. 
 
-Next we will take a look at Application consistency. 
+Далее мы рассмотрим согласованность приложений. 
+
 
 ## Ресурсы 
 
@@ -185,5 +186,3 @@ Next we will take a look at Application consistency.
 - [7 Database Paradigms](https://www.youtube.com/watch?v=W2Z7fbCLSTw&t=520s)
 - [Disaster Recovery vs. Backup: What's the difference?](https://www.youtube.com/watch?v=07EHsPuKXc0)
 - [Veeam Portability & Cloud Mobility](https://www.youtube.com/watch?v=hDBlTdzE6Us&t=3s)
-
-See you on [Day 88](../day88)

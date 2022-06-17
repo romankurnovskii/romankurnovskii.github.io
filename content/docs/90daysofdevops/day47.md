@@ -1,5 +1,5 @@
 ---
-title: 47 - Сетевое взаимодействие Docker и безопасность
+title: 47. Сетевое взаимодействие Docker и безопасность
 description: 
 toc: true
 authors:

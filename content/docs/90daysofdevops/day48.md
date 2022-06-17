@@ -1,5 +1,5 @@
 ---
-title: '#90DaysOfDevOps - Alternatives to Docker - Day 48'
+title: 48. Альтернативы Docker
 description: 
 toc: true
 authors:

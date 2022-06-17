@@ -7,80 +7,79 @@ cover_image: null
 canonical_url: null
 id: 1048744
 ---
-## Hello World - Jenkinsfile App Pipeline
+## Здравствуй мир - Jenkinsfile App Pipeline
 
-In the last section we built a simple Pipeline in Jenkins that would push our docker image from our dockerfile in a public GitHub repository to our private Dockerhub repository. 
+В предыдущем разделе мы построили простой конвейер в Jenkins, который будет перемещать наш образ докера из нашего dockerfile в публичном репозитории GitHub в наш частный репозиторий Dockerhub. 
 
-In this section we want to take this one step further and we want to achieve the following with our simple application. 
+В этом разделе мы хотим сделать еще один шаг вперед и добиться следующего с помощью нашего простого приложения. 
 
-### Objective 
+### Цель 
 
 - Dockerfile (Hello World)
 - Jenkinsfile 
-- Jenkins Pipeline to trigger when GitHub Repository is updated 
-- Use GitHub Repository as source. 
-- Run - Clone/Get Repository, Build, Test, Deploy Stages
-- Deploy to DockerHub with incremental version numbers
-- Stretch Goal to deploy to our Kubernetes Cluster (This will involve another job and manifest repository using GitHub credentials)
+- Jenkins Pipeline для запуска при обновлении репозитория GitHub 
+- Используйте репозиторий GitHub в качестве источника. 
+- Запуск - Clone/Get Repository, Build, Test, Deploy Stages
+- Развертывание на DockerHub с инкрементными номерами версий
+- Stretch Goal для развертывания на нашем кластере Kubernetes (для этого потребуется еще одно задание и репозиторий манифеста с использованием учетных данных GitHub).
 
-### Step One 
+### Шаг первый 
 
-We have our [GitHub repository](https://github.com/MichaelCade/Jenkins-HelloWorld) This currently contains our Dockerfile and our index.html 
+У нас есть наш [GitHub репозиторий](https://github.com/MichaelCade/Jenkins-HelloWorld) В настоящее время он содержит наш Dockerfile и наш index.html 
 
 ![](../images/Day74_CICD1.png?v1)
 
-With the above this is what we were using as our source in our Pipeline, now we want to add that Jenkins Pipeline script to our GitHub repository as well. 
+Это то, что мы использовали в качестве источника в нашем конвейере, теперь мы хотим добавить этот скрипт Jenkins Pipeline в наш репозиторий GitHub. 
 
 ![](../images/Day74_CICD2.png?v1)
 
-Now back in our Jenkins dashboard, we are going to create a new pipeline but now instead of pasting our script we are going to use "Pipeline script from SCM" We are then going to use the configuration options below. 
+Теперь вернемся к нашей приборной панели Jenkins и создадим новый пайплайн, но теперь вместо вставки нашего скрипта мы будем использовать "Pipeline script from SCM" Мы будем использовать приведенные ниже параметры конфигурации. 
 
-For reference we are going to use https://github.com/MichaelCade/Jenkins-HelloWorld.git as the repository URL.  
+Для справки мы будем использовать https://github.com/MichaelCade/Jenkins-HelloWorld.git в качестве URL репозитория.  
 
 ![](../images/Day74_CICD3.png?v1)
 
-We could at this point hit save and apply and we would then be able to manually run our Pipeline building our new Docker image that is uploaded to our DockerHub repository. 
+На этом этапе мы можем нажать кнопку сохранить и применить, после чего мы сможем вручную запустить наш Pipeline для сборки нового образа Docker, загруженного в наш репозиторий DockerHub. 
 
-However, I also want to make sure that we set a schedule that whenever our repository or our source code is changed, I want to trigger a build. we could use webhooks or we could use a scheduled pull. 
+Однако я также хочу убедиться, что мы установили расписание, по которому при каждом изменении нашего репозитория или исходного кода будет запускаться сборка. Мы можем использовать веб-крючки или запланированное извлечение. 
 
-This is a big consideration because if you are using costly cloud resources to hold your pipeline and you have lots of changes to your code repository then you will incur a lot of costs. We know that this is a demo environment which is why I am using the "poll scm" option. (Also I believe that using minikube I am lacking the ability to use webhooks)
+Это важный момент, потому что если вы используете дорогостоящие облачные ресурсы для хранения конвейера и у вас много изменений в репозитории кода, то вы понесете большие расходы. Мы знаем, что это демонстрационная среда, поэтому я использую опцию "poll scm". (Также я считаю, что при использовании minikube мне не хватает возможности использовать webhooks)
 
 ![](../images/Day74_CICD4.png?v1)
 
-One thing I have changed since yesterdays session is I want to now upload my image to a public repository which in this case would be michaelcade1\90DaysOfDevOps, my Jenkinsfile has this change already. And from previous sections I have removed any existing demo container images. 
+Одна вещь, которую я изменил со вчерашней сессии, это то, что теперь я хочу загружать изображение в публичный репозиторий, который в данном случае будет michaelcade1\90DaysOfDevOps, мой Jenkinsfile уже содержит это изменение. И из предыдущих разделов я удалил все существующие образы демо-контейнеров. 
 
 ![](../images/Day74_CICD5.png?v1)
 
-Going backwards here, we created our Pipeline and then as previously shown we added our configuration. 
+Двигаясь назад, мы создали наш Pipeline, а затем, как было показано ранее, добавили нашу конфигурацию. 
 
 ![](../images/Day74_CICD6.png?v1)
 
-At this stage our Pipeline has never ran and your stage view will look something like this. 
+На данном этапе наш конвейер еще не запущен, и вид сцены будет выглядеть примерно так. 
 
 ![](../images/Day74_CICD7.png?v1)
 
-Now lets trigger the "Build Now" button. and our stage view will display our stages. 
+Теперь нажмем кнопку "Build Now". и в представлении этапа будут отображены наши этапы. 
 
 ![](../images/Day74_CICD8.png?v1)
 
-If we then head over to our DockerHub repository, we should have 2 new Docker images. We should have a Build ID of 1 and a latest because every build that we create based on the "Upload to DockerHub" is we send a version using the Jenkins Build_ID environment variable and we also issue a latest. 
+Если мы перейдем к нашему репозиторию DockerHub, у нас должно быть 2 новых образа Docker. У нас должен быть идентификатор сборки 1 и последняя версия, потому что каждая сборка, которую мы создаем на основе команды "Upload to DockerHub", отправляет версию, используя переменную окружения Jenkins Build_ID, а также выпускает последнюю версию. 
 
 ![](../images/Day74_CICD9.png?v1)
 
-Let's go and create an update to our index.html file in our GitHub repository as per below, I will let you go and find out what version 1 of the index.html was saying. 
+Давайте создадим обновление файла index.html в нашем репозитории GitHub, как показано ниже, я позволю вам пойти и узнать, что говорила версия 1 файла index.html. 
 
 ![](../images/Day74_CICD10.png?v1)
 
-If we head back to Jenkins and select "Build Now" again. We will see our #2 build is successful. 
+Если мы вернемся в Jenkins и снова выберем "Build Now". Мы увидим, что наша сборка #2 прошла успешно. 
 
 ![](../images/Day74_CICD11.png?v1)
 
-Then a quick look at DockerHub, we can see that we have our tagged version 2 and our latest tag.  
+Затем быстро взглянув на DockerHub, мы увидим, что у нас есть наш тег версии 2 и наш последний тег.  
 
 ![](../images/Day74_CICD12.png?v1)
 
-It is worth noting here that I have added into my Kubernetes cluster a secret that enables my access and authentication to push my docker builds into DockerHub. If you are following along you should repeat this process for your account, and also make a change to the Jenkinsfile that is associated to my repository and account. 
-
+Здесь стоит отметить, что я добавил в свой кластер Kubernetes секрет, который позволяет мне получить доступ и аутентификацию для отправки моих сборок docker в DockerHub. Если вы следуете этому примеру, вам следует повторить этот процесс для своей учетной записи, а также внести изменения в Jenkinsfile, связанный с моим репозиторием и учетной записью.
 ## Ресурсы
 
 - [Jenkins is the way to build, test, deploy](https://youtu.be/_MXtbjwsz3A)
@@ -91,5 +90,3 @@ It is worth noting here that I have added into my Kubernetes cluster a secret th
 - [Complete Jenkins Tutorial](https://www.youtube.com/watch?v=nCKxl7Q_20I&t=3s)
 - [GitHub Actions](https://www.youtube.com/watch?v=R8_veQiYBjI)
 - [GitHub Actions CI/CD](https://www.youtube.com/watch?v=mFFXuXjVgkU)
-
-See you on [Day 75](../day75)

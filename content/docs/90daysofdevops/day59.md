@@ -1,5 +1,5 @@
 ---
-title: '#90DaysOfDevOps - Create a VM with Terraform & Variables - Day 59'
+title: 59. Создание виртуальной машины с помощью Terraform
 description: 
 toc: true
 authors:
@@ -12,17 +12,17 @@ featuredImage:
 draft: false
 id: 1049051
 ---
-## Create a VM with Terraform & Variables
+## Создание виртуальной машины с помощью Terraform и переменных
 
-In this session we are going to be creating a VM or two VMs using terraform inside VirtualBox. This is not the normal, VirtualBox is a workstation virtualisation option and really this would not be a use case for Terraform but I am currently 36,000ft in the air and as much as I have deployed public cloud resources this high in the clouds it is much faster to do this locally on my laptop. 
+В этой сессии мы будем создавать виртуальную машину или две виртуальные машины с помощью Terraform внутри VirtualBox. Это не совсем обычно, VirtualBox - это вариант виртуализации рабочих станций, и на самом деле это не было бы вариантом использования Terraform, но я сейчас нахожусь на высоте 36 000 футов в воздухе, и как бы я ни развертывал ресурсы публичного облака так высоко в облаках, гораздо быстрее сделать это локально на моем ноутбуке. 
 
-Purely demo purpose but the concept is the same we are going to have our desired state configuration code and then we are going to run that against the virtualbox provider. In the past we have used vagrant here and I covered off the differences between vagrant and terraform at the beginning of the section. 
+Чисто демонстрационная цель, но концепция та же, мы собираемся иметь наш желаемый код конфигурации состояния, а затем мы собираемся запустить его против провайдера virtualbox. В прошлом мы использовали здесь vagrant, и я рассказал о различиях между vagrant и terraform в начале раздела. 
 
-### Create virtual machine in VirtualBox 
+### Создание виртуальной машины в VirtualBox 
 
-The first thing we are going to do is create a new folder called virtualbox, we can then create a virtualbox.tf file and this is going to be where we define our resources. The code below which can be found in the VirtualBox folder as virtualbox.tf this is going to create 2 VMs in Virtualbox. 
+Первое, что мы сделаем, это создадим новую папку под названием virtualbox, затем мы можем создать файл virtualbox.tf, в котором мы определим наши ресурсы. Приведенный ниже код, который можно найти в папке VirtualBox под названием virtualbox.tf, создаст 2 виртуальные машины в Virtualbox. 
 
-You can find more about the community virtualbox provider [here](https://registry.terraform.io/providers/terra-farm/virtualbox/latest/docs/resources/vm)
+Вы можете узнать больше о сообществе провайдера Virtualbox [здесь](https://registry.terraform.io/providers/terra-farm/virtualbox/latest/docs/resources/vm)
 
 ```
 terraform {
@@ -34,8 +34,7 @@ terraform {
   }
 }
 
-# There are currently no configuration options for the provider itself.
-
+# В настоящее время нет никаких опций конфигурации для самого провайдера.
 resource "virtualbox_vm" "node" {
   count     = 2
   name      = format("node-%02d", count.index + 1)
@@ -56,57 +55,56 @@ output "IPAddr" {
 output "IPAddr_2" {
   value = element(virtualbox_vm.node.*.network_adapter.0.ipv4_address, 2)
 }
-
 ```
 
-Now that we have our code defined we can now perform the `terraform init` on our folder to download the provider for virtualbox. 
+Теперь, когда мы определили наш код, мы можем выполнить `terraform init` для нашей папки, чтобы загрузить провайдер для virtualbox. 
 
 ![](../images/Day59_IAC1.png?v1)
 
 
-Obviously you will also need to have virtualbox installed on your system as well. We can then next run `terraform plan` to see what our code will create for us. Followed by `terraform apply` the below image shows your completed process.
+Очевидно, что в вашей системе также должен быть установлен virtualbox. Затем мы можем запустить `terraform plan`, чтобы посмотреть, что наш код создаст для нас. Затем следует `terraform apply`. На рисунке ниже показан завершенный процесс.
 
 ![](../images/Day59_IAC2.png?v1)
 
-In Virtualbox you will now see your 2 virtual machines. 
+Теперь в Virtualbox вы увидите две виртуальные машины. 
 
 ![](../images/Day59_IAC3.png?v1)
 
-### Change configuration 
+### Изменение конфигурации 
 
-Lets add another node to our deployment. We can simply change the count line to show our newly desired number of nodes. When we run our `terraform apply` it will look something like below. 
+Давайте добавим еще один узел в наше развертывание. Мы можем просто изменить строку count, чтобы показать новое желаемое количество узлов. Когда мы запустим нашу `terraform apply`, она будет выглядеть примерно так, как показано ниже. 
 
 ![](../images/Day59_IAC4.png?v1)
 
-Once complete in virtualbox you can see we now have 3 nodes up and running. 
+После завершения работы в virtualbox вы можете увидеть, что у нас теперь есть 3 узла. 
 
 ![](../images/Day59_IAC5.png?v1)
 
-When we are finished we can clear this up using the `terraform destroy` and our machines will be removed. 
+Когда мы закончим, мы можем очистить все это с помощью команды `terraform destroy`, и наши машины будут удалены. 
 
 ![](../images/Day59_IAC6.png?v1)
 
-### Variables & Outputs 
+### Переменные и выходные данные 
 
-We did mention outputs when we ran our hello-world example in the last session. But we can get into more detail here. 
+Мы упоминали о выводах, когда выполняли пример hello-world на прошлом занятии. Но здесь мы можем остановиться на этом более подробно. 
 
-But there are many other variables that we can use here as well, there are also a few different ways in which we can define variables. 
+Но есть много других переменных, которые мы можем использовать здесь, также есть несколько различных способов, которыми мы можем определить переменные. 
 
-- We can manually enter our variables with the `terraform plan` or `terraform apply` command
+- Мы можем вручную ввести наши переменные с помощью команды `terraform plan` или `terraform apply`.
 
-- We can define them in the .tf file within the block 
+- Мы можем определить их в .tf-файле внутри блока 
 
-- We can use environment variables within our system using `TF_VAR_NAME` as the format. 
+- Мы можем использовать переменные окружения в нашей системе, используя `TF_VAR_NAME` в качестве формата. 
 
-- My preference is to use a terraform.tfvars file in our project folder. 
+- Я предпочитаю использовать файл terraform.tfvars в папке нашего проекта. 
 
-- There is an *auto.tfvars file option 
+- Существует опция *auto.tfvars файла 
 
-- or we can define when we run the `terraform plan` or `terraform apply` with the `-var` or `-var-file`. 
+- или мы можем определить, когда запускаем `terraform plan` или `terraform apply` с помощью `var` или `var-file`. 
 
-Starting from the bottom moving up would be the order in which the variables are defined. 
+Порядок определения переменных будет начинаться снизу вверх. 
 
-We have also mentioned that the state file will contain sensitive information. We can define our sensitive information as a variable and we can define this as being sensitive. 
+Мы также упоминали, что файл состояния будет содержать конфиденциальную информацию. Мы можем определить нашу чувствительную информацию как переменную и определить ее как чувствительную. 
 
 ```
 variable "some resource"  {
@@ -118,7 +116,6 @@ variable "some resource"  {
 ```
 
 ## Ресурсы 
-I have listed a lot of resources down below and I think this topic has been covered so many times out there, If you have additional resources be sure to raise a PR with your resources and I will be happy to review and add them to the list. 
 
 - [What is Infrastructure as Code? Difference of Infrastructure as Code Tools ](https://www.youtube.com/watch?v=POPP2WTJ8es)
 - [Terraform Tutorial | Terraform Course Overview 2021](https://www.youtube.com/watch?v=m3cKkYXl-8o)
@@ -130,5 +127,3 @@ I have listed a lot of resources down below and I think this topic has been cove
 - [Terraform Simple Projects](https://terraform.joshuajebaraj.com/)
 - [Terraform Tutorial - The Best Project Ideas](https://www.youtube.com/watch?v=oA-pPa0vfks)
 - [Awesome Terraform](https://github.com/shuaibiyy/awesome-terraform)
-
-See you on [Day 60](../day60)

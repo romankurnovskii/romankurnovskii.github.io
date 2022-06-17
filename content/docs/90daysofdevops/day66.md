@@ -12,20 +12,19 @@ featuredImage:
 draft: false
 id: 1048712
 ---
-## Ansible Playbooks Continued...
+## Ansible Playbooks Продолжение...
 
-In our last section we started with creating our small lab using a Vagrantfile to deploy 4 machines and we used our Linux machine we created in that section as our ansible control system. 
+В нашем последнем разделе мы начали с создания небольшой лаборатории, используя файл Vagrant для развертывания 4 машин, и мы использовали нашу Linux-машину, которую мы создали в этом разделе, в качестве нашей системы управления Ansible. 
 
-We also ran through a few scenarios of playbooks and at the end we had a playbook that made our web01 and web02 individual webservers. 
+Мы также проверили несколько скриптов плейбуков, и в конце у нас был плейбук, который сделал наши web01 и web02 отдельными веб-серверами. 
 
 ![](../images/Day66_config1.png?v1)
 
-### Keeping things tidy
+### Наведение порядка
 
-Before we get into further automation and deployment we should cover the ability to keep our playbook lean and tidy and how we can separate our taks and handlers into subfolders. 
+Прежде чем перейти к дальнейшей автоматизации и развертыванию, мы должны рассказать о том, как сохранить наш плейбук аккуратным и опрятным и как мы можем разделить наши такты и обработчики по подпапкам. 
 
-we are basically going to copy our tasks into their own file within a folder.
-
+В основном мы собираемся копировать наши задачи в их собственный файл в папке.
 ```
 - name: ensure apache is at the latest version
   apt: name=apache2 state=latest
@@ -49,7 +48,7 @@ we are basically going to copy our tasks into their own file within a folder.
     state: started
 ```
 
-and the same for the handlers. 
+и то же для обработчиков.
 
 ```
 - name: restart apache
@@ -58,38 +57,37 @@ and the same for the handlers.
     state: restarted
 ```
 
-then within our playbook now named `playbook2.yml` we point to these files. All of which can be found at [ansible-scenario2](../days/../Configmgmt/ansible-scenario2/)
+Затем в нашем плейбуке, который теперь называется `playbook2.yml`, мы указываем на эти файлы. Все эти файлы можно найти по адресу [ansible-scenario2](../../Configmgmt/ansible-scenario2/).
 
-You can test this on your control machine. If you have copied the files from the repository you should have noticed something changed in the "write a basic index.html file"
+Вы можете проверить это на своей контрольной машине. Если вы скопировали файлы из репозитория, вы должны были заметить, что кое-что изменилось в пункте "написать основной файл index.html"
 
 ![](../images/Day66_config2.png?v1)
 
-Let's find out what simple change I made. Using `curl web01:8000` 
+Давайте выясним, какое простое изменение я сделал. Использование `curl web01:8000` 
 
 ![](../images/Day66_config3.png?v1)
 
-We have just tidied up our playbook and started to separate areas that could make a playbook very overwhelming at scale.
+Мы только что привели в порядок наш плейбук и начали разделять области, которые могут сделать плейбук очень перегруженным в масштабе.
 
-### Roles and Ansible Galaxy
+### Роли и Ansible Galaxy
 
-At the moment we have deployed 4 VMs and we have configured 2 of these VMs as our webservers but we have some more specific functions namely, a database server and a loadbalancer or proxy. In order for us to do this and tidy up our repository we can use roles within Ansible. 
+На данный момент мы развернули 4 виртуальные машины и настроили 2 из них как веб-серверы, но у нас есть еще несколько специфических функций, а именно: сервер базы данных и балансировщик нагрузки или прокси. Для того чтобы сделать это и привести в порядок наш репозиторий, мы можем использовать роли в Ansible. 
 
-To do this we will use the `ansible-galaxy` command which is there to manage ansible roles in shared repositories. 
+Для этого мы воспользуемся командой `ansible-galaxy`, которая предназначена для управления ролями Ansible в общих репозиториях. 
 
 ![](../images/Day66_config4.png?v1)
 
-We are going to use `ansible-galaxy` to create a role for apache2 which is where we are going to put our specifics for our webservers. 
+Мы собираемся использовать `ansible-galaxy` для создания роли для apache2, где мы собираемся разместить специфику наших веб-серверов. 
 
 ![](../images/Day66_config5.png?v1)
 
-The above command `ansible-galaxy init roles/apache2` will create the folder structure that we have shown above. Our next step is we need to move our existing tasks and templates to the relevant folders in the new structure. 
+Приведенная выше команда `ansible-galaxy init roles/apache2` создаст структуру папок, которую мы показали выше. Следующим шагом нам нужно переместить существующие задачи и шаблоны в соответствующие папки в новой структуре. 
 
 ![](../images/Day66_config6.png?v1)
 
-Copy and paste is easy to move those files but we also need to make a change to the tasks/main.yml so that we point this to the apache2_install.yml. 
+Копировать и вставить легко для перемещения этих файлов, но нам также нужно внести изменения в tasks/main.yml, чтобы указать его на apache2_install.yml. 
 
-We also need to change our playbook now to refer to our new role. In the playbook1.yml and playbook2.yml we determine our tasks and handlers in different ways as we changed these between the two versions. We need to change our playbook to use this role as per below: 
-
+Нам также нужно изменить наш playbook, чтобы он ссылался на нашу новую роль. В playbook1.yml и playbook2.yml мы определяем наши задачи и обработчики по-разному, так как мы изменили их между двумя версиями. Нам нужно изменить наш плейбук, чтобы использовать эту роль, как показано ниже:
 ```
 - hosts: webservers
   become: yes
@@ -103,25 +101,23 @@ We also need to change our playbook now to refer to our new role. In the playboo
 
 ![](../images/Day66_config7.png?v1)
 
-We can now run our playbook again this time with the new playbook name `ansible-playbook playbook3.yml` you will notice the depreciation, we can fix that next.  
+Теперь мы можем запустить наш плейбук снова, на этот раз с новым именем плейбука `ansible-playbook playbook3.yml` Вы заметите обесценивание, мы можем исправить это дальше.  
 
 ![](../images/Day66_config8.png?v1)
 
-Ok, the depreciation although our playbook ran we should fix our ways now, in order to do that I have changed the include option in the tasks/main.yml to now be import_tasks as per below. 
+Хорошо, амортизация хотя наш плейбук запустился, теперь мы должны исправить наши пути, для этого я изменил опцию include в tasks/main.yml на import_tasks, как показано ниже. 
 
 ![](../images/Day66_config9.png?v1)
 
-You can find these files in the [ansible-scenario3](../days/Configmgmt/ansible-scenario3)
+Вы можете найти эти файлы в папке [ansible-scenario3](../Configmgmt/ansible-scenario3).
 
-We are also going to create a few more roles whilst using `ansible-galaxy` we are going to create: 
-
+Мы также собираемся создать еще несколько ролей, используя `ansible-galaxy`, которые мы собираемся создать:
 - common = for all of our servers (`ansible-galaxy init roles/common`)
 - nginx = for our loadbalancer (`ansible-galaxy init roles/nginx`)
 
 ![](../images/Day66_config10.png?v1)
 
-I am going to leave this one here and in the next session we will start working on those other nodes we have deployed but have not done anything with yet. 
-
+Я собираюсь оставить этот вариант здесь, а в следующей сессии мы начнем работать над другими узлами, которые мы развернули, но еще ничего не сделали.
 ## Ресурсы 
 
 - [What is Ansible](https://www.youtube.com/watch?v=1id6ERvfozo)
@@ -129,6 +125,4 @@ I am going to leave this one here and in the next session we will start working 
 - [NetworkChuck - You need to learn Ansible right now!](https://www.youtube.com/watch?v=5hycyr-8EKs&t=955s)
 - [Your complete guide to Ansible](https://www.youtube.com/playlist?list=PLnFWJCugpwfzTlIJ-JtuATD2MBBD7_m3u)
 
-This final playlist listed above is where a lot of the code and ideas came from for this section, a great resource and walkthrough in video format. 
-
-See you on [Day 67](../day67)
+Этот последний плейлист, приведенный выше, является тем местом, откуда было взято много кода и идей для этого раздела, отличным ресурсом и руководством в видеоформате.

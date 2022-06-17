@@ -1,5 +1,5 @@
 ---
-title: 11 - Переменные и константы в Go
+title: 11. Переменные и константы в Go
 description: Переменные и константы в Go
 toc: true
 authors:

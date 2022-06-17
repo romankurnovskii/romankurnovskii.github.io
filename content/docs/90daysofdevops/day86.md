@@ -7,167 +7,210 @@ cover_image: null
 canonical_url: null
 id: 1049058
 ---
-## Backup all the platforms
+## Резервное копирование всех платформ
 
-During this whole challenge we have discussed many different platforms and environments. One thing all of those have in common is the fact they all need some level of data protection!
+В ходе всего этого задания мы обсудили множество различных платформ и сред. Всех их объединяет то, что все они нуждаются в определенном уровне защиты данных!
 
-Data Protection has been around for many many years but the wealth of data that we have today and the value that this data brings means we have to make sure we are not only resilient to infrastructure failure by having multiple nodes and high availablity across applications but we must also consider that we need a copy of that data, that important data in a safe and secure location if a failure scenario was to occur. 
+Защита данных существует уже много лет, но богатство данных, которые мы имеем сегодня, и ценность, которую эти данные приносят, означает, что мы должны быть уверены не только в устойчивости к сбоям инфраструктуры за счет наличия нескольких узлов и высокой доступности приложений, но мы также должны учитывать, что нам нужна копия этих данных, этих важных данных в безопасном и надежном месте, если произойдет сбой. 
 
-We hear a lot these days it seems about cybercrime and ransomware, and don't get me wrong this is a massive threat and I stand by the fact that you will be attacked by ransomware. It is not a matter of if it is a matter of when. So even more reason to make sure you have your data secure for when that time arises. However the most common cause for data loss is not ransomware or cybercrime it is simply accidental deletion! 
+В наши дни мы часто слышим о киберпреступности и программах-выкупах, и не поймите меня неправильно - это серьезная угроза, и я уверен, что вы подвергнетесь атаке программ-выкупов. Это не вопрос "если", это вопрос "когда". Поэтому еще больше причин убедиться в том, что ваши данные надежно защищены на тот случай, если такое время настанет. Однако самой распространенной причиной потери данных является не выкупное ПО или киберпреступность, а просто случайное удаление! 
 
-We have all done it, deleted something we shouldn't have and had that instant regret. 
+Мы все это делали, удаляли то, что не должны были удалять, и тут же сожалели об этом. 
 
-With all of the technology and automation we have discussed during the challenge, the requirement to protect any stateful data or even complex stateless configuration is still there, regardless of platform. 
+Несмотря на все технологии и автоматизацию, о которых мы говорили в этой статье, требование защищать любые данные с состоянием или даже сложные конфигурации без состояния все еще существует, независимо от платформы.
 
 ![](../images/Day86_Data1.png?v1)
 
-But we should be able to perform that protection of the data with automation in mind and being able to integrate into our workflows. 
+Но мы должны быть в состоянии выполнить эту защиту данных с учетом автоматизации и возможности интеграции в наши рабочие процессы. 
 
-If we look at what backup is: 
+Если мы посмотрим, что такое резервное копирование: 
 
-*In information technology, a backup, or data backup is a copy of computer data taken and stored elsewhere so that it may be used to restore the original after a data loss event. The verb form, referring to the process of doing so, is "back up", whereas the noun and adjective form is "backup".*
+В информационных технологиях резервная копия или резервное копирование данных - это копия компьютерных данных, снятая и сохраненная в другом месте, чтобы ее можно было использовать для восстановления оригинала после потери данных. Глагольная форма, обозначающая процесс создания такой копии, - "резервное копирование", а существительное и прилагательное - "резервное копирование".
 
-If we break this down to the simplest form, a backup is a copy and paste of data to a new location. Simply put I could take a backup right now by copying a file from my C: drive to my D: drive and I would then have a copy in case something happened to the C: drive or something was edited wrongly within the files. I could revert back to the copy I have on the D: drive. Now if my computer dies where both the C & D drives live then I am not protected so I have to consider a solution or a copy of data outside of my system maybe onto a NAS drive in my house? But then what happens if something happens to my house, maybe I need to consider storing it on another system in another location, maybe the cloud is an option. Maybe I could store a copy of my important files in several locations to mitigate against the risk of failure? 
+Если мы разберем это в самой простой форме, то резервное копирование - это копирование и вставка данных в новое место. Проще говоря, я могу сделать резервную копию прямо сейчас, скопировав файл с диска C: на диск D:, и у меня будет копия на случай, если что-то случится с диском C: или что-то будет неправильно отредактировано в файлах. Я могу вернуться к копии, которая находится на диске D:. Теперь, если мой компьютер умрет, где находятся оба диска C и D, я не буду защищен, поэтому мне придется искать решение или копировать данные вне моей системы, может быть, на NAS-накопитель у себя дома? Но тогда что произойдет, если что-то случится с моим домом, может быть, мне нужно подумать о хранении данных на другой системе в другом месте, может быть, облако - это вариант. Может быть, я могу хранить копии важных файлов в нескольких местах, чтобы снизить риск сбоя? 
 
-### 3-2-1 Backup Methodolgy 
+### 3-2-1 Методика резервного копирования 
 
-Now seems a good time to talk about the 3-2-1 rule or backup methodology. I actually did a [lightening talk](https://www.youtube.com/watch?v=5wRt1bJfKBw) covering this topic. 
+Сейчас самое время поговорить о правиле 3-2-1 или методологии резервного копирования. На самом деле я провел [lightening talk](https://www.youtube.com/watch?v=5wRt1bJfKBw), посвященный этой теме. 
 
-We have already mentioned before some of the extreme ends of why we need to protect our data but a few more are listed below: 
+Мы уже упоминали о некоторых крайностях того, почему нам нужно защищать наши данные, но ниже перечислены еще несколько: 
 
 ![](../images/Day86_Data2.png?v1)
 
-Which then allows me to talk about the 3-2-1 methodology. My first copy or backup of my data should be as close to my production system as possible, the reason for this is based on speed to recovery and again going back to that original point about accidental deletion this is going to be the most common reason for recovery. But I want to be storing that on a suitable second media outside of the original or production system. 
+Это позволяет мне рассказать о методологии 3-2-1. Моя первая копия или резервная копия данных должна быть как можно ближе к моей производственной системе, причина этого заключается в скорости восстановления и, опять же, возвращаясь к исходному пункту о случайном удалении, это будет наиболее распространенной причиной для восстановления. Но я хочу хранить эти данные на подходящем втором носителе за пределами исходной или рабочей системы. 
 
-We then want to make sure we also send a copy of our data external or offsite this is where a second location comes in be it another house, building, data centre or the public cloud. 
+Затем мы хотим убедиться, что мы также отправляем копию наших данных на внешний носитель или за пределы системы, и здесь нам на помощь приходит второе место, будь то другой дом, здание, центр обработки данных или публичное облако. 
 
 ![](../images/Day86_Data3.png?v1)
+Ответственность за резервное копирование 
 
-### Backup Responsibility 
+Мы, скорее всего, слышали все мифы о том, что резервное копирование не нужно, например, такие как "Все не имеет состояния". Если все не имеет состояния, то что тогда бизнес? Нет баз данных? документов? Очевидно, что каждый человек в компании несет определенную ответственность за обеспечение своей защиты, но, скорее всего, именно операционные команды должны обеспечить процесс резервного копирования критически важных приложений и данных. 
 
-We have most likely heard all of the myths when it comes to not having to backup, things like "Everything is stateless" I mean if everything is stateless then what is the business? no databases? word documents? Obviously there is a level of responsibility on every individual within the business to ensure they are protected but it is going to come down most likely to the operations teams to provide the backup process for the mission critical applications and data. 
+Еще одна хорошая фраза: "Высокая доступность - это моя резервная копия, мы встроили несколько узлов в наш кластер, поэтому он ни за что не выйдет из строя!", кроме тех случаев, когда вы допускаете ошибку в базе данных, и она реплицируется на все узлы кластера, или когда происходит пожар, наводнение, что означает, что кластер больше недоступен, а вместе с ним и важные данные. Речь идет не об упрямстве, а о том, чтобы быть в курсе данных и сервисов, абсолютно все должны учитывать высокую доступность и отказоустойчивость в своей архитектуре, но это не заменяет необходимости резервного копирования! 
 
-Another good one is that "High availability is my backup, we have built in multiple nodes into our cluster there is no way this is going down!" apart from when you make a mistake to the database and this is replicated over all the nodes in the cluster, or there is fire, flood or blood scenario that means the cluster is no longer available and with it the important data. It's not about being stubborn it is about being aware of the data and the services, absolutely everyone should factor in high availability and fault tollerance into their architecture but that does not substitute the need for backup! 
+Репликация также может дать нам копию данных вне офиса, и, возможно, упомянутый выше кластер действительно живет в нескольких местах, однако первая случайная ошибка все равно будет реплицирована туда. Но, опять же, требование резервного копирования должно стоять в одном ряду с репликацией приложений или системной репликацией в среде. 
 
-Replication can also seem to give us the offsite copy of the data and maybe that cluster mentioned above does live across multiple locations, however the first accidental mistake would still be replicated there. But again a Backup requirement should stand alongside application replication or system replication within the environment. 
+Теперь, учитывая все вышесказанное, можно впасть в крайность и отправить копии данных в слишком большое количество мест, что приведет не только к большим затратам, но и к увеличению риска подвергнуться атаке, поскольку площадь вашей поверхности теперь значительно увеличилась. 
 
-Now with all this said you can go to the extreme the other end as well and send copies of data to too many locations which is going to not only cost but also increase risk about being attacked as your surface area is now massively expanded. 
+В любом случае, кто заботится о резервном копировании? В каждом предприятии это будет по-разному, но кто-то должен понимать требования к резервному копированию. Но также необходимо понимать план восстановления! 
 
-Anyway, who looks after backup? It will be different within each business but someone should be taking it upon themselves to understand the backup requirements. But also understand the recovery plan! 
+### Никому нет дела, пока всем нет дела 
 
-### Nobody cares till everybody cares 
+Резервное копирование является ярким примером: никто не заботится о резервном копировании, пока вам не понадобится что-то восстановить. Наряду с требованием резервного копирования данных нам также необходимо подумать о том, как мы будем восстанавливать данные! 
 
-Backup is a prime example, nobody cares about backup until you need to restore something. Alongside the requirement to back our data up we also need to consider how we restore! 
+В нашем примере с текстовыми документами речь идет об очень маленьких файлах, поэтому возможность копирования туда и обратно является простой и быстрой. Но если речь идет о файлах размером более 100 ГБ, то на это потребуется время. Также необходимо учитывать уровень, на котором требуется восстановление, например, если мы возьмем виртуальную машину. 
 
-With our text document example we are talking very small files so the ability to copy back and forth is easy and fast. But if we are talking about 100GB plus files then this is going to take time. Also we have to consider the level in which we need to recover, if we take a virtual machine for example. 
+У нас есть вся виртуальная машина, у нас есть операционная система, установка приложений, а если это сервер баз данных, то у нас есть и некоторые файлы баз данных. Если мы допустили ошибку и вставили неправильную строку кода в нашу базу данных, мне, вероятно, не нужно восстанавливать всю виртуальную машину, я хочу быть детальным в том, что я восстанавливаю. 
 
-We have the whole Virtual Machine, we have the Operating System, Application installation and then if this is a database server then we will have some database files as well. If we have made a mistake and inserted the wrong line of code into our database I probably don't need to restore the whole virtual machine, I want to be granular on what I recover back. 
+### Сценарий резервного копирования 
 
-### Backup Scenario 
+Теперь я хочу начать строить скрипт защиты некоторых данных, в частности, я хочу защитить некоторые файлы на моей локальной машине (в данном случае Windows, но инструмент, который я собираюсь использовать, на самом деле не только бесплатный и с открытым исходным кодом, но и кроссплатформенный). Я хочу убедиться, что они защищены на устройстве NAS, которое у меня есть дома, а также в облачном хранилище Object Storage bucket. 
 
-I want to now start building on a scenario to protect some data, specifically I want to protect some files on my local machine (in this case Windows but the tool I am going to use is in fact not only free and open-source but also cross platform) I would like to make sure they are protected to a NAS device I have locally in my home but also into an Object Storage bucket in the cloud. 
-
-I want to backup this important data, it just so happens to be the repository for the 90DaysOfDevOps, which yes this is also being sent to GitHub which is probably where you are reading this now but what if my machine was to die and GitHub was down? How would anyone be able to read the content but also how would I potentially be able to restore that data to another service. 
+Я хочу сделать резервную копию этих важных данных, так получилось, что это репозиторий для 90DaysOfDevOps, который, да, также отправляется на GitHub, где вы, вероятно, сейчас это читаете, но что, если моя машина умрет, а GitHub будет закрыт? Как бы кто-нибудь смог прочитать содержимое, а также как бы я мог восстановить эти данные на другом сервисе. 
 
 ![](../images/Day86_Data5.png?v1)
 
-There are lots of tools that can help us achieve this but I am going to be using a a tool called [Kopia](https://kopia.io/) an Open-Source backup tool which will enable us to encrypt, dedupe and compress our backups whilst being able to send them to many locations. 
+Существует множество инструментов, которые могут помочь нам достичь этого, но я собираюсь использовать инструмент под названием [Kopia](https://kopia.io/) - это инструмент резервного копирования с открытым исходным кодом, который позволит нам шифровать, дедупировать и сжимать наши резервные копии, а также отправлять их во многие места. 
 
-You will find the releases to download [here](https://github.com/kopia/kopia/releases) at the time of writing I will be using v0.10.6. 
+Вы найдете релизы для загрузки [здесь](https://github.com/kopia/kopia/releases) на момент написания статьи я буду использовать версию 0.10.6. 
 
-### Installing Kopia 
+### Установка Kopia 
 
-There is a Kopia CLI and GUI, we will be using the GUI but know that you can have a CLI version of this as well for those Linux servers that do not give you a GUI. 
+Существует Kopia CLI и GUI, мы будем использовать GUI, но знайте, что вы можете иметь и CLI версию для тех Linux серверов, которые не дают вам GUI. 
 
-I will be using `KopiaUI-Setup-0.10.6.exe`
+Я буду использовать `KopiaUI-Setup-0.10.6.exe`.
 
-Really quick next next installation and then when you open the application you are greeted with the choice of selecting your storage type that you wish to use as your backup repository. 
+Действительно быстрая установка, а затем, когда вы откроете приложение, вам предложат выбрать тип хранилища, которое вы хотите использовать в качестве хранилища резервных копий. 
 
 ![](../images/Day86_Data6.png?v1)
 
-### Setting up a Repository 
+### Настройка хранилища 
 
-Firstly we would like to setup a repository using our local NAS device and we are going to do this using SMB, but we could also use NFS I believe. 
+Сначала мы хотим создать хранилище на локальном NAS-устройстве и собираемся сделать это с помощью SMB, но можно использовать и NFS. 
 
 ![](../images/Day86_Data7.png?v1)
 
-On the next screen we are going to define a password, this password is used to encrypt the repository contents. 
+На следующем экране мы собираемся определить пароль, этот пароль используется для шифрования содержимого хранилища. 
 
 ![](../images/Day86_Data8.png?v1)
 
-Now that we have the repository configured we can trigger an adhoc snapshot to start writing data to our it. 
+Теперь, когда хранилище настроено, мы можем запустить adhoc snapshot, чтобы начать запись данных в хранилище.
+[18:26, 16.06.2022] evgschegolkova: [](../images/Day86_Data9.png?v1)
 
-![](../images/Day86_Data9.png?v1)
-
-First up we need to enter a path to what we want to snapshot and our case we want to take a copy of our `90DaysOfDevOps` folder. We will get back to the scheduling aspect shortly. 
+Прежде всего, нам нужно ввести путь к тому, что мы хотим сделать снимок, и в нашем случае мы хотим сделать копию папки `90DaysOfDevOps`. Вскоре мы вернемся к аспекту планирования. 
 
 ![](../images/Day86_Data10.png?v1)
 
-We can define our snapshot retention. 
+Мы можем определить хранение наших снимков. 
 
 ![](../images/Day86_Data11.png?v1)
 
-Maybe there are files or file types that we wish to exclude. 
+Возможно, есть файлы или типы файлов, которые мы хотим исключить. 
 
 ![](../images/Day86_Data12.png?v1)
 
-If we wanted to define a schedule we could this on this next screen, when you first create this snapshot this is the opening page to define. 
+Если бы мы хотели определить расписание, мы могли бы сделать это на следующем экране, когда вы впервые создаете этот снимок, это начальная страница для определения. 
 
 ![](../images/Day86_Data13.png?v1)
 
-And you will see a number of other settings that can be handled here. 
+И вы увидите ряд других настроек, которые могут быть обработаны здесь. 
 
 ![](../images/Day86_Data14.png?v1)
 
-Select snapshot now and the data will be written to your repository. 
+Выберите snapshot now, и данные будут записаны в ваше хранилище. 
 
 ![](../images/Day86_Data15.png?v1)
 
-### Offsite backup to S3 
+### Внесетевое резервное копирование на S3 
 
-With Kopia we can through the UI it seems only have one repository configured at a time. But through the UI we can be creative and basically have multiple repository configuration files to choose from to achieve our goal of having a copy local and offsite in Object Storage. 
+С помощью Kopia мы можем настроить только одно хранилище одновременно. Но через пользовательский интерфейс мы можем проявить творческий подход и, по сути, иметь несколько файлов конфигурации хранилища на выбор для достижения нашей цели - иметь локальную и внесетевую копию в Object Storage. 
 
-The Object Storage I am choosing to send my data to is going to Google Cloud Storage. I firstly logged into my Google Cloud Platform account and created myself a storage bucket. I already had the Google Cloud SDK installed on my system but running the `gcloud auth application-default login` authenticated me with my account. 
+Хранилище Object Storage, в которое я решил отправить свои данные, будет Google Cloud Storage. Сначала я вошел в свой аккаунт Google Cloud Platform и создал себе ведро хранения. В моей системе уже был установлен Google Cloud SDK, но выполнение команды `gcloud auth application-default login` позволило мне аутентифицироваться в моей учетной записи. 
 
 ![](../images/Day86_Data16.png?v1)
 
-I then used the CLI of Kopia to show me the current status of my repository after we added our SMB repository in the previous steps. I did this using the `"C:\Program Files\KopiaUI\resources\server\kopia.exe" --config-file=C:\Users\micha\AppData\Roaming\kopia\repository.config repository status` command. 
+Затем я использовал CLI Kopia, чтобы показать мне текущее состояние моего хранилища после того, как мы добавили наше SMB хранилище в предыдущих шагах. Я сделал это с помощью команды `"C:\Program Files\KopiaUI\resources\server\kopia.exe" --config-file=C:\Users\micha\AppData\Roaming\kopia\repository.config repository status`. 
 
 ![](../images/Day86_Data17.png?v1)
 
-We are now ready to replace for the purpose of the demo the configuration for the repository, what we would probably do if we wanted a long term solution to hit both of these repositories is we would create an `smb.config` file and a `object.config` file and be able to run both of these commands to send our copies of data to each location. To add our repository we ran `"C:\Program Files\KopiaUI\resources\server\kopia.exe" --config-file=C:\Users\micha\AppData\Roaming\kopia\repository.config repository create gcs --bucket 90daysofdevops`
+Теперь мы готовы заменить конфигурацию хранилища для целей демонстрации. Если бы мы хотели получить долгосрочное решение для обоих хранилищ, мы бы создали файл `smb.config` и файл `object.config` и могли бы запускать обе эти команды для отправки наших копий данных в каждое место. Для добавления нашего хранилища мы выполнили команду `"C:\Program Files\KopiaUI\resources\server\kopia.exe" --config-file=C:\Users\micha\AppData\Roaming\kopia\repository.config repository create gcs --bucket 90daysofdevops`.
 
-The above command is taking into account that the Google Cloud Storage bucket we created is called `90daysofdevops`
+Приведенная выше команда учитывает, что ведро Google Cloud Storage, которое мы создали, называется `90daysofdevops`.
 
 ![](../images/Day86_Data18.png?v1)
 
-Now that we have created our new repository we can then run the `"C:\Program Files\KopiaUI\resources\server\kopia.exe" --config-file=C:\Users\micha\AppData\Roaming\kopia\repository.config repository status` command again and will now show the GCS repository configuration. 
+Теперь, когда мы создали наше новое хранилище, мы можем снова запустит
+[18:27, 16.06.2022] evgschegolkova: [](../images/Day86_Data9.png?v1)
+
+Прежде всего, нам нужно ввести путь к тому, что мы хотим сделать снимок, и в нашем случае мы хотим сделать копию папки `90DaysOfDevOps`. Вскоре мы вернемся к аспекту планирования. 
+
+![](../images/Day86_Data10.png?v1)
+
+Мы можем определить хранение наших снимков. 
+
+![](../images/Day86_Data11.png?v1)
+
+Возможно, есть файлы или типы файлов, которые мы хотим исключить. 
+
+![](../images/Day86_Data12.png?v1)
+
+Если бы мы хотели определить расписание, мы могли бы сделать это на следующем экране, когда вы впервые создаете этот снимок, это начальная страница для определения. 
+
+![](../images/Day86_Data13.png?v1)
+
+И вы увидите ряд других настроек, которые могут быть обработаны здесь. 
+
+![](../images/Day86_Data14.png?v1)
+
+Выберите snapshot now, и данные будут записаны в ваше хранилище. 
+
+![](../images/Day86_Data15.png?v1)
+
+### Внесетевое резервное копирование на S3 
+
+С помощью Kopia мы можем настроить только одно хранилище одновременно. Но через пользовательский интерфейс мы можем проявить творческий подход и, по сути, иметь несколько файлов конфигурации хранилища на выбор для достижения нашей цели - иметь локальную и внесетевую копию в Object Storage. 
+
+Хранилище Object Storage, в которое я решил отправить свои данные, будет Google Cloud Storage. Сначала я вошел в свой аккаунт Google Cloud Platform и создал себе ведро хранения. В моей системе уже был установлен Google Cloud SDK, но выполнение команды `gcloud auth application-default login` позволило мне аутентифицироваться в моей учетной записи. 
+
+![](../images/Day86_Data16.png?v1)
+
+Затем я использовал CLI Kopia, чтобы показать мне текущее состояние моего хранилища после того, как мы добавили наше SMB хранилище в предыдущих шагах. Я сделал это с помощью команды `"C:\Program Files\KopiaUI\resources\server\kopia.exe" --config-file=C:\Users\micha\AppData\Roaming\kopia\repository.config repository status`. 
+
+![](../images/Day86_Data17.png?v1)
+
+Теперь мы готовы заменить конфигурацию хранилища для целей демонстрации. Если бы мы хотели получить долгосрочное решение для обоих хранилищ, мы бы создали файл `smb.config` и файл `object.config` и могли бы запускать обе эти команды для отправки наших копий данных в каждое место. Для добавления нашего хранилища мы выполнили команду `"C:\Program Files\KopiaUI\resources\server\kopia.exe" --config-file=C:\Users\micha\AppData\Roaming\kopia\repository.config repository create gcs --bucket 90daysofdevops`.
+
+Приведенная выше команда учитывает, что ведро Google Cloud Storage, которое мы создали, называется `90daysofdevops`.
+
+![](../images/Day86_Data18.png?v1)
+
+Теперь, когда мы создали наше новое хранилище, мы можем снова запустить команду `"C:\Program Files\KopiaUI\resources\server\kopia.exe" --config-file=C:\Users\micha\AppData\Roaming\kopia\repository.config repository status`, которая теперь покажет конфигурацию хранилища GCS. 
 
 ![](../images/Day86_Data19.png?v1)
 
-Next thing we need to do is create a snapshot and send that to our newly created repository. Using the `"C:\Program Files\KopiaUI\resources\server\kopia.exe" --config-file=C:\Users\micha\AppData\Roaming\kopia\repository.config kopia snapshot create "C:\Users\micha\demo\90DaysOfDevOps"` command we can kick off this process. You can see in the below browser that our Google Cloud Storage bucket now has kopia files based on our backup in place.  
+Следующее, что нам нужно сделать, это создать снимок и отправить его в наш только что созданный репозиторий. Используя команду `"C:\Program Files\KopiaUI\resources\server\kopia.exe" --config-file=C:\Users\micha\AppData\Roaming\kopia\repository.config kopia snapshot create "C:\Users\micha\demo\90DaysOfDevOps"` мы можем запустить этот процесс. В браузере ниже вы можете увидеть, что в нашем ведре Google Cloud Storage теперь есть файлы kopia, основанные на нашей резервной копии.  
 
 ![](../images/Day86_Data20.png?v1)
 
-With the above process we are able to settle our requirement of sending our important data to 2 different locations, 1 of which is offsite in Google Cloud Storage and of course we still have our production copy of our data on a different media type. 
+С помощью вышеописанного процесса мы смогли решить нашу задачу по отправке важных данных в 2 разных места, одно из которых находится вне помещения в Google Cloud Storage, и, конечно же, у нас все еще есть наша производственная копия данных на другом типе носителя. 
 
-### Restore
+### Восстановление
 
-Restore is another consideration and is very important, Kopia gives us the capability to not only restore to the existing location but also to a new location. 
+Восстановление - это еще один важный момент, Kopia дает нам возможность не только восстанавливать данные в существующее местоположение, но и в новое. 
 
-If we run the command `"C:\Program Files\KopiaUI\resources\server\kopia.exe" --config-file=C:\Users\micha\AppData\Roaming\kopia\repository.config snapshot list` this will list the snapshots that we have currently in our configured repository (GCS) 
+Если мы выполним команду `"C:\Program Files\KopiaUI\resources\server\kopia.exe" --config-file=C:\Users\micha\AppData\Roaming\kopia\repository.config snapshot list`, это приведет к списку снимков, которые в настоящее время находятся в нашем настроенном хранилище (GCS). 
 
 ![](../images/Day86_Data21.png?v1)
 
-We can then mount those snapshots directly from GCS using the `"C:\Program Files\KopiaUI\resources\server\kopia.exe" --config-file=C:\Users\micha\AppData\Roaming\kopia\repository.config mount all Z:` command.
+Затем мы можем смонтировать эти снимки непосредственно из GCS, используя команду ``C:\Program Files\KopiaUI\resources\server\kopia.exe'' --config-file=C:\Users\micha\AppData\Roaming\kopia\repository.config mount all Z:`.
 
 ![](../images/Day86_Data22.png?v1)
 
-We could also restore the snapshot contents using `kopia snapshot restore kdbd9dff738996cfe7bcf99b45314e193` 
+Мы также можем восстановить содержимое снимка с помощью команды `kopia snapshot restore kdbd9dff738996cfe7bcf99b45314e193`. 
 
-Obviously the commands above are very long and this is because I was using the KopiaUI version of the kopia.exe as explained at the top of the walkthrough you can download the kopia.exe and put into a path so you can just use the `kopia` command. 
+Очевидно, что приведенные выше команды очень длинные, и это потому, что я использовал KopiaUI версию kopia.exe, как объяснялось в верхней части руководства, вы можете скачать kopia.exe и поместить в путь, чтобы вы могли просто использовать команду `kopia`. 
 
-In the next session we will be focusing in on protecting workloads within Kubernetes. 
+На следующем занятии мы сосредоточимся на защите рабочих нагрузок в Kubernetes.
 
 ## Ресурсы 
 
@@ -176,5 +219,3 @@ In the next session we will be focusing in on protecting workloads within Kubern
 - [7 Database Paradigms](https://www.youtube.com/watch?v=W2Z7fbCLSTw&t=520s)
 - [Disaster Recovery vs. Backup: What's the difference?](https://www.youtube.com/watch?v=07EHsPuKXc0)
 - [Veeam Portability & Cloud Mobility](https://www.youtube.com/watch?v=hDBlTdzE6Us&t=3s)
-
-See you on [Day 87](../day87)

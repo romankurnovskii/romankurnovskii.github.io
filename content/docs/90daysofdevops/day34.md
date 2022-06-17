@@ -1,5 +1,5 @@
 ---
-title: 34 - Практические сценарии Microsoft Azure
+title: 34. Практические сценарии Microsoft Azure
 description: Практические сценарии Microsoft Azure
 toc: true
 authors:

@@ -7,93 +7,92 @@ cover_image: null
 canonical_url: null
 id: 1048748
 ---
-## Data & Application Mobility
+## Мобильность данных и приложений
 
-Day 90 of the #90DaysOfDevOps Challenge! In this final session I am going to cover mobility of our data and applications. I am specifically going to focus on Kubernetes but the requirement across platforms and between platforms is something that is an ever-growing requirement and is seen in the field. 
+День 90 из #90DaysOfDevOps Challenge! В этой заключительной сессии я собираюсь рассказать о мобильности наших данных и приложений. Я сосредоточусь конкретно на Kubernetes, но потребность в мобильности между платформами и между платформами - это то, что является постоянно растущей потребностью и встречается на практике. 
 
-The use case being "I want to move my workload, application and data from one location to another" for many different reasons, could be cost, risk or to provide the business with a better service. 
+Сценарий использования таков: "Я хочу переместить рабочую нагрузку, приложение и данные из одного места в другое" по разным причинам, будь то стоимость, риск или предоставление бизнесу более качественных услуг. 
 
-In this session we are going to take our workload and we are going to look at moving a Kubernetes workload from one cluster to another, but in doing so we are going to change how our application is on the target location. 
+На этом занятии мы возьмем нашу рабочую нагрузку и рассмотрим перемещение рабочей нагрузки Kubernetes с одного кластера на другой, но при этом мы изменим то, как наше приложение находится в целевом месте. 
 
-It in fact uses a lot of the characteristics that we went through with [Disaster Recovery](../day89)
+Фактически, здесь используются многие характеристики, которые мы рассмотрели в [Disaster Recovery](.../day89)
 
-### **The Requirement**
+### **Требование**
 
-Our current Kubernetes cluster cannot handle demand and our costs are rocketing through the roof, it is a business decision that we wish to move our production Kubernetes cluster to our Disaster Recovery location, located on a different public cloud which will provide the ability to expand but also at a cheaper rate. We could also take advantage of some of the native cloud services available in the target cloud. 
+Наш текущий кластер Kubernetes не справляется со спросом, а наши затраты стремительно растут, поэтому мы хотим переместить наш производственный кластер Kubernetes в место аварийного восстановления, расположенное в другом публичном облаке, которое обеспечит возможность расширения, но при этом будет дешевле. Мы также сможем воспользоваться некоторыми собственными облачными сервисами, доступными в целевом облаке. 
 
-Our current mission critical application (Pac-Man) has a database (MongoDB) and is running on slow storage, we would like to move to a newer faster storage tier. 
+Наше текущее критически важное приложение (Pac-Man) имеет базу данных (MongoDB) и работает на медленном хранилище, мы хотели бы перейти на новый более быстрый уровень хранения. 
 
-The current Pac-Man (NodeJS) front-end is not scaling very well, and we would like to increase the number of available pods in the new location. 
+Текущий фронтенд Pac-Man (NodeJS) не очень хорошо масштабируется, и мы хотели бы увеличить количество доступных стручков в новом месте. 
 
-### Getting to IT
+### Приступаем к ИТ
 
-We have our brief and in fact we have our imports already hitting the Disaster Recovery Kubernetes cluster. 
+У нас есть бриф, и на самом деле мы уже импортировали наши импорты в кластер Disaster Recovery Kubernetes. 
 
-The first job we need to do is remove the restore operation we carried out on Day 89 for the Disaster Recovery testing. 
+Первое, что нам нужно сделать, это удалить операцию восстановления, которую мы выполнили в день 89 для тестирования Disaster Recovery. 
 
-We can do this using `kubectl delete ns pacman` on the "standby" minikube cluster. 
+Мы можем сделать это с помощью команды `kubectl delete ns pacman` на "резервном" кластере minikube. 
 
 ![](../images/Day90_Data1.png?v1)
 
-To get started head into the Kasten K10 Dashboard, select the Applications card. From the dropdown choose "Removed"
+Чтобы начать работу, зайдите в Kasten K10 Dashboard, выберите карточку Applications. Из выпадающего списка выберите "Удаленные"
 
 ![](../images/Day90_Data2.png?v1)
 
-We then get a list of the available restore points. We will select the one that is available as this contains our mission critical data. (In this example we only have a single restore point.)
+Затем мы получим список доступных точек восстановления. Мы выберем ту, которая доступна, так как она содержит важные данные. (В этом примере у нас только одна точка восстановления).
 
 ![](../images/Day90_Data3.png?v1)
 
-When we worked on the Disaster Recovery process, we left everything as default. However these additional restore options are there if you have a Disaster Recovery process that requires the transformation of your application. In this instance we have the requirement to change our storage and number of replicas. 
-
+Когда мы работали над процессом аварийного восстановления, мы оставили все по умолчанию. Однако эти дополнительные опции восстановления существуют, если у вас есть процесс Disaster Recovery, который требует преобразования вашего приложения. В данном случае нам требуется изменить хранилище и количество реплик.
 ![](../images/Day90_Data4.png?v1)
 
-Select the "Apply transforms to restored resources" option. 
+Выберите опцию "Применить преобразования к восстановленным ресурсам". 
 
 ![](../images/Day90_Data5.png?v1)
 
-It just so happens that the two built in examples for the transformation that we want to perform are what we need for our requirements. 
+Так получилось, что два встроенных примера преобразования, которые мы хотим выполнить, соответствуют нашим требованиям. 
 
 ![](../images/Day90_Data6.png?v1)
 
-The first requirement is that on our primary cluster we were using a Storage Class called `csi-hostpath-sc` and in our new cluster we would like to use `standard` so we can make that change here. 
+Первое требование заключается в том, что на нашем основном кластере мы использовали класс хранения под названием `csi-hostpath-sc`, а в нашем новом кластере мы хотим использовать `standard`, поэтому мы можем сделать это изменение здесь. 
 
 ![](../images/Day90_Data7.png?v1)
 
-Looks good, hit the create transform button at the bottom. 
+Выглядит хорошо, нажимаем кнопку create transform внизу. 
 
 ![](../images/Day90_Data8.png?v1)
 
-The next requirement is that we would like to scale our Pac-Man frontend deployment to "5"
+Следующее требование заключается в том, что мы хотим масштабировать развертывание нашего фронтенда Pac-Man до "5"
 
 ![](../images/Day90_Data9.png?v1)
 
-If you are following along you should see both of our transforms as per below. 
+Если вы следите за развитием событий, вы должны увидеть оба наших преобразования, как показано ниже. 
 
 ![](../images/Day90_Data10.png?v1)
 
-You can now see from the below image that we are going to restore all of the artifacts listed below, if we wanted to we could also be granular about what we wanted to restore. Hit the "Restore" button
+Теперь вы можете видеть на изображении ниже, что мы собираемся восстановить все артефакты, перечисленные ниже, если бы мы захотели, мы могли бы также детализировать то, что мы хотим восстановить. Нажмите кнопку "Восстановить"
 
 ![](../images/Day90_Data11.png?v1)
 
-Again, we will be asked to confirm the actions. 
+Снова нам будет предложено подтвердить действия. 
 
 ![](../images/Day90_Data12.png?v1)
 
-The final thing to show is now if we head back into the terminal and we take a look at our cluster, you can see we have 5 pods now for the pacman pods and our storageclass is now set to standard vs the csi-hostpath-sc 
+И последнее, что мы покажем, если мы вернемся в терминал и посмотрим на наш кластер, вы увидите, что у нас теперь 5 стручков для стручков pacman и наш класс хранения теперь установлен на стандартный, а не на csi-hostpath-sc 
 
 ![](../images/Day90_Data13.png?v1)
 
-There are many different options that can be achieved through transformation. This can span not only migration but also Disaster Recovery, test and development type scenarios and more. 
+Существует множество различных вариантов, которые могут быть достигнуты с помощью трансформации. Это может охватывать не только миграцию, но и аварийное восстановление, скрипты типа тестирования и разработки и т.д. 
 
-### API and Automation 
+### API и автоматизация 
 
-I have not spoken about the ability to leverage the API and to automate some of these tasks, but these options are present and throughout the UI there are breadcrumbs that provide the command sets to take advantage of the APIs for automation tasks. 
+Я не говорил о возможности использовать API и автоматизировать некоторые из этих задач, но эти опции присутствуют, и во всем пользовательском интерфейсе есть хлебные крошки, которые предоставляют наборы команд для использования API для задач автоматизации. 
 
-The important thing to note about Kasten K10 is that on deployment it is deployed inside the Kubernetes cluster and then can be called through the Kubernetes API. 
+Важно отметить, что при развертывании Kasten K10 развертывается внутри кластера Kubernetes и затем может быть вызван через API Kubernetes. 
 
-This then brings us to a close on the section around Storing and Protecting your data. 
+На этом мы завершаем раздел о хранении и защите данных. 
 
-## Ресурсы 
+## Ресурсы
 
 - [Kubernetes Backup and Restore made easy!](https://www.youtube.com/watch?v=01qcYSck1c4&t=217s)
 - [Kubernetes Backups, Upgrades, Migrations - with Velero](https://www.youtube.com/watch?v=zybLTQER0yY)
@@ -101,25 +100,25 @@ This then brings us to a close on the section around Storing and Protecting your
 - [Disaster Recovery vs. Backup: What's the difference?](https://www.youtube.com/watch?v=07EHsPuKXc0)
 - [Veeam Portability & Cloud Mobility](https://www.youtube.com/watch?v=hDBlTdzE6Us&t=3s)
 
-### **Closing**
+### **Закрытие**
 
-As I wrap up this challenge, I want to continue to ask for feedback to make sure that the information is always relevant. 
+Заканчивая эту задачу, я хочу продолжить просить об обратной связи, чтобы убедиться, что информация всегда актуальна. 
 
-I also appreciate there are a lot of topics that I was not able to cover or not able to dive deeper into around the topics of DevOps. 
+Я также ценю, что есть много тем, которые я не смог охватить или не смог глубже погрузиться в тему DevOps. 
 
-This means that we can always take another attempt that this challenge next year and find another 90 day's worth of content and walkthroughs to work through. 
+Это означает, что мы всегда можем предпринять еще одну попытку в следующем году и найти еще 90 дней контента и прохождений для работы. 
 
-### What is next? 
+### Что дальше? 
 
-Firstly, a break from writing for a little while, I started this challenge on the 1st January 2022 and I have finished on the 31st March 2022 19:50 BST! It has been a slog. But as I say and have said for a long time, if this content helps one person, then it is always worth learning in public! 
+Во-первых, немного отдохнем от писанины, я начал этот вызов 1 января 2022 года и закончил 31 марта 2022 года в 19:50 BST! Это был тяжелый труд. Но, как я говорю и говорил уже давно, если этот контент поможет одному человеку, то всегда стоит учиться публично!
+У меня есть несколько идей, куда двигаться дальше, и я надеюсь, что у него будет жизнь за пределами репозитория GitHub, и мы сможем рассмотреть возможность создания электронной книги и, возможно, даже физической книги. 
 
-I have some ideas on where to take this next and hopefully it has a life outside of a GitHub repository and we can look at creating an eBook and possibly even a physical book. 
+Я также знаю, что нам нужно пересмотреть каждый пост и убедиться, что все грамматически правильно, прежде чем делать что-то подобное. Если кто-то знает о том, как использовать формат markdown для печати или создания электронной книги, я буду очень признателен за ответ. 
 
-I also know that we need to revisit each post and make sure everything is grammatically correct before making anything like that happen. If anyone does know about how to take markdown to print or to an eBook it would be greatly appreciated feedback. 
+Как всегда, продолжайте обсуждать вопросы и PR. 
 
-As always keep the issues and PRs coming. 
+Спасибо! 
 
-Thanks! 
 @MichaelCade1
 - [GitHub](https://github.com/MichaelCade)
 - [Twitter](https://twitter.com/MichaelCade1)

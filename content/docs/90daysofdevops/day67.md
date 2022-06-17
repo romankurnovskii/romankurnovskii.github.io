@@ -12,19 +12,18 @@ featuredImage:
 draft: false
 id: 1048713
 ---
-## Using Roles & Deploying a Loadbalancer
+## Использование ролей и развертывание балансировщика нагрузки
 
-In the last session we covered roles and used the `ansible-galaxy` command to help create our folder structures for some roles that we are going to use. We finished up with a much tidier working repository for our configuration code as everything is hidden away in our role folders. 
+На последнем занятии мы рассмотрели роли и использовали команду `ansible-galaxy`, чтобы помочь создать структуру папок для некоторых ролей, которые мы будем использовать. В итоге мы получили гораздо более аккуратное рабочее хранилище для нашего кода конфигурации, поскольку все спрятано в папках ролей. 
 
-However we have only used the apache2 role and have a working playbook3.yaml to handle our webservers. 
+Однако мы использовали только роль apache2 и получили рабочий playbook3.yaml для работы с нашими веб-серверами. 
 
-At this point if you have only used `vagrant up web01 web02` now is the time to run `vagrant up loadbalancer` this will bring up another Ubuntu system that we will use as our Load Balancer/Proxy. 
+На данном этапе, если вы использовали только `vagrant up web01 web02`, пришло время запустить `vagrant up loadbalancer`, который откроет другую систему Ubuntu, которую мы будем использовать в качестве балансировщика нагрузки/прокси. 
 
-We have already defined this new machine in our hosts file, but we do not have the ssh key configured until it is available, so we need to also run `ssh-copy-id loadbalancer` when the system is up and ready. 
+Мы уже определили эту новую машину в нашем файле hosts, но у нас нет настроенного ssh-ключа, пока он не доступен, поэтому нам нужно также запустить `ssh-copy-id loadbalancer`, когда система будет запущена и готова. 
 
-### Common role
-I created at the end of yesterdays session the role of `common`, common will be used across all of our servers where as the other roles are specific to use cases, now the applications I am going to install as common as spurious and I cannot see many reasons for this to be the case but it shows the objective. In our common role folder structure, navigate to tasks folder and you will have a main.yml. In this yaml we need to point this to our install_tools.yml file and we do this by adding a line `- import_tasks: install_tools.yml` this used to be `include` but this is going to be depreciated soon enough so we are using import_tasks. 
-
+### Общая роль
+В конце вчерашней сессии я создал роль `common`, роль common будет использоваться на всех наших серверах, в то время как другие роли специфичны для конкретных случаев использования, сейчас приложения, которые я собираюсь установить в качестве common, не так просты, и я не вижу много причин для этого, но это показывает цель. В структуре папок нашей общей роли перейдите в папку tasks, и у вас появится файл main.yml. В этом yaml нам нужно указать на наш файл install_tools.yml, и мы делаем это, добавляя строку `- import_tasks: install_tools.yml`. Раньше это был `include`, но он скоро будет устаревшим, поэтому мы используем import_tasks.
 ```
 - name: "Install Common packages"
   apt: name={{ item }} state=latest
@@ -34,8 +33,7 @@ I created at the end of yesterdays session the role of `common`, common will be 
    - figlet
 ```
 
-In our playbook we then add in the common role for each host block. 
-
+Затем в нашем плейбуке мы добавляем общую роль для каждого блока хоста.
 ```
 - hosts: webservers
   become: yes
@@ -50,12 +48,11 @@ In our playbook we then add in the common role for each host block.
 
 ### nginx
 
-The next phase is for us to install and configure nginx on our loadbalancer vm. Like the common folder structure, we have the nginx based on the last session. 
+Следующим этапом будет установка и настройка nginx на нашем виртуальном компьютере loadbalancer. Как и в общей структуре папок, у нас есть nginx, основанный на последнем сеансе. 
 
-First of all we are going to add a host block to our playbook. This block will include our common role and then our new nginx role. 
+Прежде всего, мы добавим блок host в наш playbook. Этот блок будет включать нашу общую роль, а затем нашу новую роль nginx. 
 
-The playbook can be found here. [playbook4.yml](../days/../Configmgmt/ansible-scenario4/playbook4.yml)
-
+Плейбук можно найти здесь. [playbook4.yml](.../.../Configmgmt/ansible-scenario4/playbook4.yml)
 ```
 - hosts: webservers
   become: yes
@@ -74,24 +71,23 @@ The playbook can be found here. [playbook4.yml](../days/../Configmgmt/ansible-sc
     - nginx
 ```
 
-In order for this to mean anything, we have to define our tasks that we wish to run, in the same way we will modify the main.yml in tasks to point to two files this time, one for installation and one for configuration. 
+Для того чтобы это что-то значило, мы должны определить наши задачи, которые мы хотим запустить, таким же образом мы изменим main.yml в задачах, чтобы указать на два файла, один для установки и один для конфигурации. 
 
-There are some other files that I have modified based on the outcome we desire, take a look in the folder [ansible-scenario4](../days/Configmgmt/ansible-scenario4) for all the files changed. You should check the folders tasks, handlers and templates in the nginx folder and you will find those additional changes and files. 
+Есть и другие файлы, которые я изменил в зависимости от желаемого результата, посмотрите в папке [ansible-scenario4](../Configmgmt/ansible-scenario4) все измененные файлы. Вам следует проверить папки tasks, handlers и templates в папке nginx, и вы найдете эти дополнительные изменения и файлы. 
 
-### Run the updated playbook 
+### Запустите обновленный плейбук 
 
-Since yesterday we have added the common role which will now install some packages on our system and then we have also added our nginx role which includes installation and configuration. 
+Со вчерашнего дня мы добавили роль common, которая теперь будет устанавливать некоторые пакеты в нашей системе, а затем мы также добавили роль nginx, которая включает установку и настройку. 
 
-Let's run our playbook4.yml using the `ansible-playbook playbook4.yml`
+Давайте запустим наш playbook4.yml, используя `ansible-playbook playbook4.yml`.
 
 ![](../images/Day67_config1.png?v1)
 
-Now that we have our webservers and loadbalancer configured we should now be able to go to http://192.168.169.134/ which is the IP address of our loadbalancer. 
+Теперь, когда мы настроили наши веб-серверы и loadbalancer, мы должны иметь возможность перейти по адресу http://192.168.169.134/, который является IP-адресом нашего loadbalancer. 
 
 ![](../images/Day67_config2.png?v1)
 
-If you are following along and you do not have this state then it could be down to the server IP addresses you have in your environment. The file can be found in `templates\mysite.j2` and looks similar to the below: You would need to update with your webserver IP addresses. 
-
+Если вы следите за развитием событий и у вас нет такого состояния, то это может быть связано с IP-адресами серверов в вашем окружении. Файл находится в `templates\mysite.j2` и выглядит примерно так, как показано ниже: Вам необходимо обновить IP-адреса ваших веб-серверов.
 ```
     upstream webservers {
         server 192.168.169.131:8000;
@@ -106,12 +102,11 @@ If you are following along and you do not have this state then it could be down 
         }
     }
 ```
-I am pretty confident that what we have installed is all good but let's use an adhoc command using ansible to check these common tools installation. 
+Я уверен, что все, что мы установили, в порядке, но давайте воспользуемся специальной командой с помощью ansible, чтобы проверить установку этих общих инструментов. 
 
-`ansible loadbalancer -m command -a neofetch`
+`ansible loadbalancer -m command -a neofetch`.
 
 ![](../images/Day67_config3.png?v1)
-
 ## Ресурсы 
 
 - [What is Ansible](https://www.youtube.com/watch?v=1id6ERvfozo)
@@ -119,6 +114,4 @@ I am pretty confident that what we have installed is all good but let's use an a
 - [NetworkChuck - You need to learn Ansible right now!](https://www.youtube.com/watch?v=5hycyr-8EKs&t=955s)
 - [Your complete guide to Ansible](https://www.youtube.com/playlist?list=PLnFWJCugpwfzTlIJ-JtuATD2MBBD7_m3u)
 
-This final playlist listed above is where a lot of the code and ideas came from for this section, a great resource and walkthrough in video format. 
-
-See you on [Day 68](../day68)
+TЭтот последний плейлист, приведенный выше, является тем местом, откуда было взято много кода и идей для этого раздела, отличным ресурсом и руководством в видеоформате.

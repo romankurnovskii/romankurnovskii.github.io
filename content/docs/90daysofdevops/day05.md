@@ -1,5 +1,5 @@
 ---
-title: 5 - Plan > Code > Build > Testing > Release > Deploy > Operate > Monitor
+title: 5. Plan > Code > Build > Testing > Release > Deploy > Operate > Monitor
 description: Plan > Code > Build > Testing > Release > Deploy > Operate > Monitor
 toc: true
 authors:

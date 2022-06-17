@@ -1,5 +1,5 @@
 ---
-title: 33 - Сетевые модели Microsoft Azure + Управление Azure
+title: 33. Сетевые модели Microsoft Azure + Управление Azure
 description: Сетевые модели Microsoft Azure + Управление Azure
 toc: true
 authors:

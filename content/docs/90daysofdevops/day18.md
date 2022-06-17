@@ -1,5 +1,5 @@
 ---
-title: 18 - Web Сервер и SSH
+title: 18. Web Сервер и SSH
 description: Web Сервер и SSH
 toc: true
 authors:

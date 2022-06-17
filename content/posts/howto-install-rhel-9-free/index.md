@@ -168,6 +168,8 @@ sudo dnf install code
 ```
 
 ![](img/07-10.png)
+![](img/07-11.png)
+![](img/07-12.png)
 
 
 

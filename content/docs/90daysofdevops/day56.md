@@ -1,5 +1,5 @@
 ---
-title: '#90DaysOfDevOps - The Big Picture: IaC - Day 56'
+title: 56. Обзор IaC
 description: 
 toc: true
 authors:
@@ -12,110 +12,110 @@ featuredImage:
 draft: false
 id: 1048709
 ---
-## The Big Picture: IaC
+## Обзор IaC
 
-Humans make mistakes! Automation is the way to go! 
+Люди совершают ошибки! Автоматизация - это путь к успеху! 
 
-How do you build your systems today? 
+Как вы строите свои системы сегодня? 
 
-What would be your plan if you were to lose everything today, Physical machines, Virtual Machines, Cloud VMs, Cloud PaaS etc etc.? 
+Каков был бы ваш план, если бы вы потеряли все, физические машины, виртуальные машины, облачные виртуальные машины, облачные PaaS и т.д. и т.п.? 
 
-How long would it take you to replace everything? 
+Сколько времени у вас уйдет на замену всего? 
 
-Infrastructure as code provides a solution to be able to do this whilst also being able to test this, we should not confuse this with backup and recovery but in terms of your infrastructure and environments, your platforms we should be able to spin them up and treat them as cattle vs pets. 
+Инфраструктура как код предоставляет решение, позволяющее сделать это и одновременно протестировать, не путайте это с резервным копированием и восстановлением, но что касается вашей инфраструктуры и сред, ваших платформ, мы должны быть в состоянии раскрутить их и обращаться с ними как со скотом и домашними животными. 
 
-The TLDR; is that we can use code to rebuild our whole entire environment. 
+TLDR; заключается в том, что мы можем использовать код для восстановления всей нашей среды. 
 
-If we also remember from the start we said about DevOps in general is a way in which to break down barriers to deliver systems into production safely and rapidly. 
+Если мы также вспомним, что с самого начала мы говорили о DevOps в целом - это способ преодоления барьеров для безопасной и быстрой доставки систем в производство. 
 
-Infrastructure as code helps us deliver the systems, we have spoken a lot of processes and tools. IaC brings us more tools to be familiar with to enable this part of the process. 
+Infrastructure as code помогает нам поставлять системы, мы говорили о множестве процессов и инструментов. IaC предлагает нам больше инструментов, с которыми мы должны быть знакомы, чтобы обеспечить эту часть процесса. 
 
-We are going to concentrate on Infrastructure as code in this section. You might also hear this mentioned as Infrastructure from code or configuration as code. I think the most well known term is likely Infrastructure as code. 
+В этом разделе мы сосредоточимся на инфраструктуре как коде. Вы также можете услышать упоминание этого термина как "инфраструктура из кода" или "конфигурация как код". Я думаю, что наиболее известным термином является Инфраструктура как код. 
 
-### Pets vs Cattle 
+### Домашние животные против крупного рогатого скота 
 
-If we take a look at pre DevOps, if we had the requirement to build a new Application, we would need to prepare our servers manually for the most part. 
+Если мы посмотрим на до DevOps, то при необходимости создания нового приложения мы должны были подготовить наши серверы вручную. 
 
-- Deploy VMs | Physical Servers and install operating system
-- Configure networking 
-- Create routing tables 
-- Install software and updates 
-- Configure software 
-- Install database 
+- Развернуть виртуальные машины | физические серверы и установить операционную систему
+- Настроить сеть 
+- Создать таблицы маршрутизации 
+- Установить программное обеспечение и обновления 
+- Настроить программное обеспечение 
+- Установка базы данных 
 
-This would be a manual process performed by Systems Administrators. The bigger the application the more resource and servers required the more manual effort it would take to bring up those systems. This would take a huge amount of human effort and time but also as a business you would have to pay for that resource to build out this environment. As I opened the section with "Humans make mistakes! Automation is the way to go!"
+Это ручной процесс, выполняемый системными администраторами. Чем больше приложение, тем больше ресурсов и серверов требуется, тем больше ручных усилий потребуется для создания этих систем. Это потребует огромного количества человеческих усилий и времени, но, кроме того, как компания, вы должны будете заплатить за эти ресурсы, чтобы создать эту среду. Как я уже говорил в начале раздела "Люди совершают ошибки! Автоматизация - это путь к успеху!".
 
-Ongoing from the above initial setup phase you then have maintenance of these servers. 
+После вышеупомянутой фазы начальной установки вам предстоит обслуживание этих серверов. 
 
-- Update versions 
-- Deploy new releases 
-- Data Management 
-- Recovery of Applications 
-- Add, Remove and Scale Servers 
-- Network Configuration
+- Обновление версий 
+- Развертывание новых релизов 
+- Управление данными 
+- Восстановление приложений 
+- Добавление, удаление и масштабирование серверов 
+- Конфигурация сети
 
-Add the complexity of multiple test and dev environments. 
+Добавьте сюда сложность нескольких сред тестирования и разработки. 
 
-This is where Infrastructure as Code comes in, the above was very much a time where we would look after those servers as if they were pets, people even called them servers pet names or at least named them something because they were going to be around for a while, they were going to hopefully be part of the "family" for a while. 
+Именно здесь на помощь приходит Infrastructure as Code. Выше было время, когда мы заботились об этих серверах, как о домашних животных, люди даже называли их домашними именами или, по крайней мере, давали им какие-то имена, потому что они должны были находиться рядом какое-то время, они должны были стать частью "семьи" на какое-то время. 
 
-With Infrastructure as Code we have the ability to automate all these tasks end to end. Infrastructure as code is a concept and there are tools that carry out this automated provisioning of infrastructure, at this point if something bad happens to a server you throw it away and you spin up a new one. This process is automated and the server is exactly as defined in code. At this point we don't care what they are called they are there in the field serving their purpose until they are no longer in the field and we have another to replace it either because of a failure or because we updated part or all of our application. 
+С Infrastructure as Code у нас есть возможность автоматизировать все эти задачи от конца до конца. Инфраструктура как код - это концепция, и есть инструменты, которые выполняют автоматическое обеспечение инфраструктуры. На данный момент, если с сервером случается что-то плохое, вы выбрасываете его и запускаете новый. Этот процесс автоматизирован, и сервер точно такой же, как определено в коде. В этот момент нам не важно, как они называются, они находятся в поле и служат своей цели до тех пор, пока их больше нет в поле, и нам нужно заменить их либо из-за сбоя, либо из-за обновления части или всего нашего приложения. 
 
-This can be used in almost all platforms, virtualisation, cloud based workloads and also cloud-native infrastructure such as Kubernetes and containers. 
+Это может быть использовано практически во всех платформах, виртуализации, облачных рабочих нагрузках, а также в облачной нативной инфраструктуре, такой как Kubernetes и контейнеры. 
 
-### Infrastructure Provisioning 
-Not all IaC cover all of the below, You will find that the tool we are going to be using during this section only really covers the the first 2 areas of below; Terraform is that tool we will be covering and this allows us to start from nothing and define in code what our infrastructure should look like and then deploy that, it will also enable us to manage that infrastructure and also initially deploy an application but at that point it is going to lose track of the application which is where the next section comes in and something like Ansible as a configuration management tool might work better on that front. 
+### Обеспечение инфраструктуры 
+Не все IaC охватывают все перечисленное ниже, вы увидите, что инструмент, который мы будем использовать в этом разделе, охватывает только первые две области; Terraform - это тот инструмент, который мы будем рассматривать, и он позволяет нам начать с нуля и определить в коде, как должна выглядеть наша инфраструктура, а затем развернуть ее, он также позволит нам управлять этой инфраструктурой и первоначально развернуть приложение, но в этот момент он потеряет контроль над приложением, и здесь на помощь приходит следующий раздел, и что-то вроде Ansible как инструмент управления конфигурацией может работать лучше на этом фронте. 
 
-Without jumping ahead tools like chef, puppet and ansible are best suited to deal with the initial application setup and then to manage those applications and their configuration. 
+Без забегания вперед такие инструменты, как chef, puppet и ansible, лучше всего подходят для начальной установки приложений, а затем для управления этими приложениями и их конфигурацией. 
 
-Initial installation & configuration of software 
+Первоначальная установка и настройка программного обеспечения 
 
-- Spinning up new servers 
-- Network configuration 
-- Creating load balancers 
-- Configuration on infrastructure level
+- Развертывание новых серверов 
+- Конфигурация сети 
+- Создание балансировщиков нагрузки 
+- Конфигурация на уровне инфраструктуры
 
-### Configuration of provisioned infrastructure 
+### Конфигурация инфраструктуры с провизией 
 
-- Installing application on servers 
-- Prepare the servers to deploy your application. 
+- Установка приложения на серверы 
+- Подготовьте серверы для развертывания приложения. 
 
-### Deployment of Application 
+### Развертывание приложения 
 
-- Deploy and Manage Application 
-- Maintain phase
-- Software updates 
-- Reconfiguration 
+- Развертывание и управление приложением 
+- Этап обслуживания
+- Обновления программного обеспечения 
+- Реконфигурация 
 
-### Difference of IaC tools 
+### Различия инструментов IaC
 
-Declarative vs procedural 
+Декларативный и процедурный 
 
-Procedural 
-- Step by step instruction 
-- Create a server > Add a server > Make this change 
+Процедурный 
+- Пошаговая инструкция 
+- Создайте сервер > Добавьте сервер > Внесите это изменение 
 
-Declartive 
-- declare end result 
-- 2 Servers 
+Декларативный 
+- объявить конечный результат 
+- 2 сервера 
 
-Mutable (pets) vs Immutable (cattle)
+Изменяемые (домашние животные) против неизменяемых (крупный рогатый скот)
 
-Mutable 
-- Change instead of replace
-- Generally long lived 
+Мутабельный 
+- Изменение вместо замены
+- Как правило, долгоживущие 
 
-Immutable
-- Replace instead of change
-- Possibly short lived 
+Неизменяемые
+- Замена вместо изменения
+- Возможно, недолговечна 
 
-This is really why we have lots of different options for Infrastructure as Code because there is no one tool to rule them all. 
+Именно поэтому у нас есть множество различных вариантов Infrastructure as Code, потому что не существует одного инструмента, который бы управлял всеми. 
 
-We are going to be mostly using terraform and getting hands on as this is the best way to start seeing the benefits of Infrastructure as Code when it is in action. Getting hands on is also the best way to pick up the skills as you are going to be writing code. 
+Мы будем в основном использовать terraform и работать с ним, поскольку это лучший способ начать видеть преимущества инфраструктуры как кода в действии. Практическая работа - это также лучший способ приобрести навыки, так как вы будете писать код. 
 
-Next up we will start looking into Terraform with a 101 before we get some hands on get using. 
+Далее мы начнем изучать Terraform со 101-го урока, прежде чем приступим к практическому использованию. 
 
 ## Ресурсы 
-I have listed a lot of resources down below and I think this topic has been covered so many times out there, If you have additional resources be sure to raise a PR with your resources and I will be happy to review and add them to the list. 
+Я перечислил множество ресурсов ниже, и я думаю, что эта тема уже много раз освещалась, если у вас есть дополнительные ресурсы, обязательно поднимите PR с вашими ресурсами, и я буду рад просмотреть и добавить их в список.
 
 - [What is Infrastructure as Code? Difference of Infrastructure as Code Tools ](https://www.youtube.com/watch?v=POPP2WTJ8es)
 - [Terraform Tutorial | Terraform Course Overview 2021](https://www.youtube.com/watch?v=m3cKkYXl-8o)
@@ -128,4 +128,3 @@ I have listed a lot of resources down below and I think this topic has been cove
 - [Terraform Tutorial - The Best Project Ideas](https://www.youtube.com/watch?v=oA-pPa0vfks)
 - [Awesome Terraform](https://github.com/shuaibiyy/awesome-terraform)
 
-See you on [Day 57](../day57)

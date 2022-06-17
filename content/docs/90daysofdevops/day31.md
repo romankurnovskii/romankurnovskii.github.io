@@ -1,5 +1,5 @@
 ---
-title: 31 - Microsoft Azure Среда выполнения приложений
+title: 31. Microsoft Azure Среда выполнения приложений
 description: Microsoft Azure Среда выполнения приложений
 toc: true
 authors:

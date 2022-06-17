@@ -1,5 +1,5 @@
 ---
-title: 43 - Установка Docker
+title: 43. Установка Docker
 description: 
 toc: true
 authors:

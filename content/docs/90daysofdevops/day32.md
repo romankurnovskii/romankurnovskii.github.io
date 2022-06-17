@@ -1,5 +1,5 @@
 ---
-title: 32 - Модели хранилища Microsoft Azure
+title: 32. Модели хранилища Microsoft Azure
 description: Модели хранилища Microsoft Azure
 toc: true
 authors:

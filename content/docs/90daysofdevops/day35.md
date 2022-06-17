@@ -1,5 +1,5 @@
 ---
-title: 35 - Git — контроль версий
+title: 35. Git — контроль версий
 description: Git — контроль версий
 toc: true
 authors:
