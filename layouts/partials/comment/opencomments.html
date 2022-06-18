@@ -1,0 +1,33 @@
+{{ if .Site.Params.comment.opencomments.server }}
+
+{{ $opencommentsServer := .Site.Params.comment.opencomments.server }}
+
+<!--- opencomments comments  --->
+<div id="article__comments" style="padding-top: 28px; margin-bottom:10px">
+    <h2>Комментарии</h2>
+    <div id="opencomments" style="display:flex"></div>
+    <div id="react-block"></div>
+
+    <label for="comment" class="sr-only">Отправить комментарий</label>
+    <div class="flex items-center py-2 px-3 bg-gray-50 rounded-lg dark:bg-gray-700">
+        <input type="text" id="form__comment_author"
+            class="block p-2.5 text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Имя: Anonymous" required>
+
+        <textarea id="comment" rows="2"
+            class="block mx-4 p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Комментарий..."></textarea>
+
+        <button id="comment-send"
+            class="justify-start bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
+            Отправить
+        </button>
+    </div>
+</div>
+
+
+<script async src="/js/opencomments.js" server={{ $opencommentsServer }}></script>
+<!--- opencomments comments  --->
+
+
+{{ end }}
