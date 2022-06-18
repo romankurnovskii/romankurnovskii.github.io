@@ -60,6 +60,11 @@
 {{- $eurekaJS := resources.Get "js/eureka.js" | resources.ExecuteAsTemplate "js/eureka.js" . | minify | fingerprint "sha384" }}
 <script defer src="{{ $eurekaJS.Permalink }}"></script>
 
+{{/*  React, axios  */}}
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
 {{ $googleFonts := "" }}
 {{ range $index, $value := partial "utils/get-style-fonts" (dict "context" . "param" "googleFonts") }}
 {{ with $value }}
