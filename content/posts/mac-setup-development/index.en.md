@@ -10,7 +10,7 @@ categories: ['setup']
 series:
 date: "2022-05-18"
 lastmod: "2022-05-18"
-featuredImage:
+featuredImage: /posts/mac-setup-development/img/featured.jpg
 draft: false
 ---
 
@@ -86,12 +86,13 @@ brew install \
   jupyterlab
 ```
 ## Additional GUI Applications
-
-- [Kotatogram](https://kotatogram.github.io/) - Experimental fork of Telegram Desktop. Folders with features
+### Kotatogram
+ [Kotatogram](https://kotatogram.github.io/) - Experimental fork of Telegram Desktop. Folders with features
 
 ## GUI Applications
 
-- [Google Chrome](https://www.google.com/chrome/) (web development, web browsing)
+### Google Chrome
+ [Google Chrome](https://www.google.com/chrome/) (web development, web browsing)
   - Preferences
     - set default browser
     - always show bookmarks
@@ -117,33 +118,47 @@ brew install \
     - [30 Seconds of Knowledge](https://chrome.google.com/webstore/search/https%3A%2F%2F30secondsofknowledge.com%2F) (random code snippet on a new tab)
     - [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa)
     - [picture-in-picture](https://chrome.google.com/webstore/detail/picture-in-picture-extens/hkgfoiooedgoejojocmhlaklaeopbecg) (yutube/video above other screens)
-- [Firefox](https://www.google.com/chrome/) (web development)
-- [UTM](https://mac.getutm.app/) (Virtual machines UI using QEMU)
+### Firefox
+[Firefox](https://www.google.com/chrome/) (web development)
+### UTM
+[UTM](https://mac.getutm.app/) (Virtual machines UI using QEMU)
   - download ubuntu for arm, [doc](https://mac.getutm.app/gallery/ubuntu-20-04)
-- [Visual Studio Code](https://code.visualstudio.com/) (web development IDE
-- [Transmission](https://www.transmissionbt.com/) (A torrent client that I use. Very minimal in its UI but very powerful and has all the features that I need)
-- [Sublime Text](https://www.sublimetext.com/) (editor)
-- [Docker](https://www.docker.com/products/docker-desktop) (Docker, see [setup](/docker-macos/))
+### Visual Studio Code
+[Visual Studio Code](https://code.visualstudio.com/) (web development IDE
+### Transmission
+ [Transmission](https://www.transmissionbt.com/) (A torrent client that I use. Very minimal in its UI but very powerful and has all the features that I need)
+### Sublime Text
+[Sublime Text](https://www.sublimetext.com/) (editor)
+### Docker
+[Docker](https://www.docker.com/products/docker-desktop) (Docker, see [setup](/docker-macos/))
   - used for running databases (e.g. PostgreSQL, MongoDB) in container without cluttering the Mac
   - Preferences
     - enable "Use Docker Compose"
-- [VLC](https://www.videolan.org/vlc/) (video player)
+### VLC
+[VLC](https://www.videolan.org/vlc/) (video player)
   - use as default for video files
-- [Maccy](https://maccy.app/) (clipboard manager)
+### Maccy
+ [Maccy](https://maccy.app/) (clipboard manager)
   - enable "Launch at Login"
-- [OBS](https://obsproject.com/) (for video recording and live streaming)
+### OBS
+[OBS](https://obsproject.com/) (for video recording and live streaming)
   - for Native Mac Screen recorder
     - Base (Canvas) 2880x1800 (Ratio: 16:10)
     - Output 1728x1080
-    ![](images/obs-base-canvas.png)
-- [Spotify](https://www.spotify.com/)
-- [Disk Inventory X](http://www.derlien.com/) (disk usage utility for macOS)
+    ![](img/obs-base-canvas.png)
+### Spotify
+[Spotify](https://www.spotify.com/)
+### Disk Inventory X
+[Disk Inventory X](http://www.derlien.com/) (disk usage utility for macOS)
  ## Terminal Applications
 
-- [nvm](https://github.com/nvm-sh/nvm) (node version manager)
-- [jupyterlab](https://jupyter.org/) (Jupyter - python development, fast code snippets)
+### nvm
+[nvm](https://github.com/nvm-sh/nvm) (node version manager)
+### jupyterlab
+[jupyterlab](https://jupyter.org/) (Jupyter - python development, fast code snippets)
   - `jupyter notebook` - to start jupyter notebook
-- [ffmpeg](https://ffmpeg.org/) (Converting video and audio)
+### ffmpeg
+[ffmpeg](https://ffmpeg.org/) (Converting video and audio)
   - compress video:
   ```bash
   ffmpeg -i input.mp4 -c:v libx264 -crf 23 -preset slow -c:a aac -b:a 192k output.mp4
