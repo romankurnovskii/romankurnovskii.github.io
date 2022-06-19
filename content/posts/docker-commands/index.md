@@ -12,7 +12,6 @@ date: "2022-06-07"
 lastmod: "2022-06-07"
 featuredImage: /posts/docker-commands/featured.jpg
 draft: false
-TODO: translate
 ---
 
 ## Топ 10 комманд Docker
