@@ -24,7 +24,7 @@ id: 1049051
 
 Вы можете узнать больше о сообществе провайдера Virtualbox [здесь](https://registry.terraform.io/providers/terra-farm/virtualbox/latest/docs/resources/vm)
 
-```
+```terraform
 terraform {
   required_providers {
     virtualbox = {
