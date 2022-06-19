@@ -19,7 +19,7 @@ const renderComments = (comments) => {
 
 
         // set data
-        var author = document.createTextNode(comment.author);
+        var author = document.createTextNode(comment.author + ": ");
         var text = document.createTextNode(comment.comment);
 
 
