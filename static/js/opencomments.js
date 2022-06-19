@@ -43,7 +43,6 @@ const renderComments = (comments) => {
 const e = React.createElement;
 
 function Example() {
-    const [count, setCount] = React.useState(0);
     const url = window.location.href
 
 
@@ -62,7 +61,6 @@ function Example() {
     const loadPageComments = () => {
         const requestUrl = `${openCommentsServer}?page=${url}`
         axios.get(requestUrl).then(response => {
-            console.log(response.data)
             renderComments(response.data['comments'])
         })
     }
