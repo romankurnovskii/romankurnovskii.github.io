@@ -18,6 +18,7 @@
 {{ $fasIcons = $fasIcons | append (partial "utils/camelize" "fa-th-list") }}
 {{ $fasIcons = $fasIcons | append (partial "utils/camelize" "fa-user") }}
 {{ $fasIcons = $fasIcons | append (partial "utils/camelize" "fa-user-circle") }}
+{{ $fasIcons = $fasIcons | append (partial "utils/camelize" "fa-check") }}
 
 {{/* authors */}}
 {{ range (.Site.GetPage "taxonomyTerm" "authors").Pages }}

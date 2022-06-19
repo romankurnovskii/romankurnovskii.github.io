@@ -103,7 +103,7 @@
 
 {{ $fontawesomeJS := resources.Get "js/fontawesome.js" | resources.ExecuteAsTemplate "js/fontawesome.js" . | js.Build (dict "minify" true) | minify | fingerprint "sha384" }}
 <script defer type="text/javascript" src="{{ $fontawesomeJS.Permalink }}"></script>
-
+<script src="https://kit.fontawesome.com/25e9694749.js" crossorigin="anonymous"></script>
 
 {{- $enableMath := false }}
 {{- if .Site.Params.math.handler }}
