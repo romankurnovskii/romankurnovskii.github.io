@@ -115,7 +115,6 @@ Infrastructure as code помогает нам поставлять систем
 Далее мы начнем изучать Terraform со 101-го урока, прежде чем приступим к практическому использованию. 
 
 ## Ресурсы 
-Я перечислил множество ресурсов ниже, и я думаю, что эта тема уже много раз освещалась, если у вас есть дополнительные ресурсы, обязательно поднимите PR с вашими ресурсами, и я буду рад просмотреть и добавить их в список.
 
 - [What is Infrastructure as Code? Difference of Infrastructure as Code Tools ](https://www.youtube.com/watch?v=POPP2WTJ8es)
 - [Terraform Tutorial | Terraform Course Overview 2021](https://www.youtube.com/watch?v=m3cKkYXl-8o)

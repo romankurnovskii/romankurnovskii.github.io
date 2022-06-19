@@ -87,7 +87,7 @@ resource "aws_instance" "90daysofdevops" {
 
 Если мы теперь посмотрим на полный файл main.tf, он может выглядеть примерно так.
 
-```
+```terraform
 terraform {
   required_providers {
     aws = {
@@ -178,18 +178,17 @@ output "hello_world" {
 
 Таким образом, мы рассмотрели всего 4 команды из Terraform CLI.
 
-- `terraform init` = get your project folder ready with providers 
-- `terraform plan` = show what is going to be created, changed during the next command based on our code. 
-- `terraform apply` = will go and deploy the resources defined in our code. 
-- `terraform destroy` = will destroy the resources we have created in our project
+- `terraform init` = подготовить папку проекта с провайдерами 
+- `terraform plan` = показать, что будет создано, изменено во время следующей команды на основе нашего кода. 
+- `terraform apply` = развернет ресурсы, определенные в нашем коде. 
+- `terraform destroy` = уничтожит ресурсы, которые мы создали в нашем проекте.
 
 Мы также рассмотрели два важных аспекта наших кодовых файлов. 
 
-- providers = how does terraform speak to the end platform via APIs 
-- resources = what it is we want to deploy with code
+- providers = как terraform общается с конечной платформой через API-интерфейсы 
+- resources = что именно мы хотим развернуть с помощью кода
 
 Еще одна вещь, которую следует отметить, когда мы запускаем `terraform init`, посмотрите на дерево в папке до и после, чтобы увидеть, что происходит и где мы храним провайдеры и модули. 
-
 ### Terraform state 
 
 Нам также необходимо знать о файле состояния, который создается также внутри нашей директории, и для этого примера hello world наш файл состояния прост. Это JSON-файл, который является представлением мира в соответствии с Terraform. Состояние будет радостно демонстрировать ваши конфиденциальные данные, поэтому будьте осторожны и в качестве лучшей практики помещайте файлы `.tfstate` в папку `.gitignore` перед загрузкой на GitHub. 
@@ -216,8 +215,6 @@ output "hello_world" {
 }
 ```
 ## Ресурсы 
-Я перечислил множество ресурсов ниже, и я думаю, что эта тема уже много раз освещалась, если у вас есть дополнительные ресурсы, обязательно напишите PR с вашими ресурсами, и я буду рад рассмотреть и добавить их в список.
-
 
 - [What is Infrastructure as Code? Difference of Infrastructure as Code Tools ](https://www.youtube.com/watch?v=POPP2WTJ8es)
 - [Terraform Tutorial | Terraform Course Overview 2021](https://www.youtube.com/watch?v=m3cKkYXl-8o)
