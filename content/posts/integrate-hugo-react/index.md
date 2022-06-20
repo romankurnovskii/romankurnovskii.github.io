@@ -74,22 +74,20 @@ ReactDOM.render(React.createElement(MyCountButton), document.getElementById("my_
 
 {{< rawhtml >}}
   Нажми на счетчик:
-  <div id="my_react_app" style="display:inline-block"  class='inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka' ></div>
+  <div id="_post_my_react_app" style="display:inline-block"  class='inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka' ></div>
   <script>
-    const e = React.createElement;
+    const _post_e = React.createElement;
 
 const MyCountButton = () => {
   const [count, setCount] = React.useState(Math.round(Math.random() * 100));
-  return e(
+  return _post_e(
     'button',
     { onClick: () => setCount(count + 1) },
     count
   );
 }
 
-// Выведем на экран компонент
-// ищем блок my_react_app и отрисовываем внутри него компонент
-ReactDOM.render(React.createElement(MyCountButton), document.getElementById("my_react_app"));
+ReactDOM.render(React.createElement(MyCountButton), document.getElementById("_post_my_react_app"));
 </script>
 {{< /rawhtml >}}
 
