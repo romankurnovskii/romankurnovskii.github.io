@@ -175,3 +175,4 @@ sudo dnf install code
 
 ## Ссылки
 - [https://developers.redhat.com/products/rhel/getting-started](https://developers.redhat.com/products/rhel/getting-started)
+- [https://www.redhat.com/sysadmin/install-linux-rhel-9](https://www.redhat.com/sysadmin/install-linux-rhel-9)
