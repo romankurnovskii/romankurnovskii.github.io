@@ -53,16 +53,3 @@ li {
 /* .prose li {
   @apply leading-4;
 } */
-
-#opencomments ul {
-  all: none;
-}
-
-#opencomments li {
-  list-style-type: square;
-}
-
-#opencomments .comment-text {
-  flex: 1 1 auto;
-  margin: 0 10px;
-}
