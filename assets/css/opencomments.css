@@ -14,3 +14,18 @@
 #opencomments .author {
   font-weight: 800;
 }
+
+#opencomments__v2 {
+  @apply md:flex;
+}
+
+#opencomments__v2 li {
+  @apply mt-2 flex cursor-pointer items-center justify-between rounded bg-white p-2 transition hover:shadow-lg;
+}
+
+#opencomments__v2 .author {
+  @apply font-medium text-black
+}
+#opencomments__v2 .comment-text {
+  @apply text-sm text-gray-600  
+}

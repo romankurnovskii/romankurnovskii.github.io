@@ -2,29 +2,49 @@
 {{ $opencommentsServer := .Site.Params.comment.opencomments.server }}
 
 <!--- opencomments comments  --->
-<div id="article__comments" style="padding-top: 28px; margin-bottom:10px">
+<div id="article__comments" style="padding-top: 10px; margin-bottom:2px">
     <h2>Комментарии</h2>
-    <div id="opencomments" style="display:flex"></div>
-    <div id="react-block"></div>
 
-    <label for="comment" class="sr-only">Отправить комментарий</label>
-    <div class="flex items-center py-2 px-3 bg-gray-50 rounded-lg dark:bg-gray-700">
-        <input type="text" id="form__comment_author"
-            class="block p-2.5 text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Имя: Anonymous" required>
-
-        <textarea id="comment" rows="2"
-            class="block mx-4 p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Комментарий..."></textarea>
-
-        <button id="comment-send"
-            class="justify-start bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
-            Отправить
-        </button>
+    <div id="opencomments__v2">
+        <div class="w-full p-4">
+            <div class="relative"> </div>
+            <ul id="opencomments__v2__list">
+            </ul>
+        </div>
     </div>
+
+    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-4" for="username">
+                Имя
+            </label>
+            <input id="form__comment_author"
+                class="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="username" type="text" placeholder="Anonymous">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                Комментарий
+            </label>
+            <textarea
+                class="shadow appearance-none border border-red-500 rounded w-full py-3 px-3 text-gray-700 mb- leading-tight focus:outline-none focus:shadow-outline"
+                id="comment" type="text" placeholder="Комментарий"></textarea>
+        </div>
+        <div class="flex items-center justify-between">
+            <button id="comment-send"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                type="button">
+                Отправить
+            </button>
+
+        </div>
+    </form>
+
 </div>
 
-<script async src="/js/opencomments.js" server={{ $opencommentsServer }}></script>
+
+<div id="react-block"></div>
+<script async src="/js/opencomments.js?v3" server={{ $opencommentsServer }}></script>
 <!--- opencomments comments  --->
 
 

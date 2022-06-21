@@ -40,6 +40,61 @@ const renderComments = (comments) => {
 }
 
 
+const renderCommentsV2 = (comments) => {
+    let commentsDiv = document.getElementById('opencomments__v2__list');
+    commentsDiv.innerHTML = '' // TODO, not good
+
+    // let commentUlElement = document.createElement('ul')
+
+    for (let comment of comments) {
+        let commentBlock = document.createElement('li')
+
+
+        commentBlock.innerHTML = `
+<div class="flex ml-2">
+    <div class="flex flex-col ml-2">
+        <span class="author">${comment.author}</span>
+        <span class="comment-text">${comment.comment}</span>
+    </div>
+</div>
+<div class="flex flex-col items-center">
+    <span class="text-gray-300">00:00</span>
+</div>
+        `
+
+
+        // let authorBlock = document.createElement("div");
+        // let textBlock = document.createElement("div");
+
+
+        // // set class names
+        // commentBlock.classList.add('flex')
+        // authorBlock.classList.add("author")
+        // textBlock.classList.add('comment-text')
+
+
+        // // set data
+        // var author = document.createTextNode(comment.author + ": ");
+        // var text = document.createTextNode(comment.comment);
+
+
+        // // insert to block
+        // authorBlock.appendChild(author);
+        // textBlock.appendChild(text);
+
+        // // combine comment
+        // commentBlock.appendChild(authorBlock);
+        // commentBlock.appendChild(textBlock);
+
+        // commentUlElement.appendChild(commentBlock)
+
+        // add comment to comments list
+        commentsDiv.appendChild(commentBlock)
+
+    }
+}
+
+
 const e = React.createElement;
 
 function Example() {
@@ -55,13 +110,16 @@ function Example() {
         axios.post(requestUrl, {
             author,
             comment
-        }).then(loadPageComments)
+        })
+            .then(e => document.getElementById('comment').value = "")
+            .then(loadPageComments)
     }
 
     const loadPageComments = () => {
         const requestUrl = `${openCommentsServer}?page=${url}`
         axios.get(requestUrl).then(response => {
-            renderComments(response.data['comments'])
+            // renderComments(response.data['comments'])
+            renderCommentsV2(response.data['comments'])
         })
     }
 
