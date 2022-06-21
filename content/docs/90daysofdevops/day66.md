@@ -1,5 +1,5 @@
 ---
-title: '#90DaysOfDevOps - Ansible Playbooks Continued... - Day 66'
+title: 66. Ansible Playbooks - Часть 2
 description: 
 toc: true
 authors:
@@ -25,6 +25,7 @@ id: 1048712
 Прежде чем перейти к дальнейшей автоматизации и развертыванию, мы должны рассказать о том, как сохранить наш плейбук аккуратным и опрятным и как мы можем разделить наши такты и обработчики по подпапкам. 
 
 В основном мы собираемся копировать наши задачи в их собственный файл в папке.
+
 ```
 - name: ensure apache is at the latest version
   apt: name=apache2 state=latest
