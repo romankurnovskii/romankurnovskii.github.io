@@ -23,9 +23,11 @@ module.exports = {
         lineHeight: 'leading-7',
       }],
       'tiny': '.875rem',
-      'base': ['1rem', {
-        lineHeight: '1.2',
-      }],
+      'base': [
+        '1.15rem',
+        {
+          lineHeight: '1.3'
+        }],
       'lg': '1.125rem',
       'xl': '1.25rem',
       '2xl': '1.5rem', // h1 
