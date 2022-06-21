@@ -1,5 +1,5 @@
 ---
-title: '#90DaysOfDevOps - Testing, Tools & Alternatives - Day 62'
+title: 62. Terraform - Тестирование, инструменты и альтернативы
 description: 
 toc: true
 authors:
@@ -95,7 +95,7 @@ id: 1049053
 На этом мы завершаем раздел "Инфраструктура как код" и переходим к тому, что немного пересекается с управлением конфигурацией, и, в частности, по мере того, как мы переходим к общей картине управления конфигурацией, мы будем использовать Ansible для некоторых из этих задач и демонстраций. 
 
 ## Ресурсы 
-Ниже я перечислил множество ресурсов, и я думаю, что эта тема уже много раз освещалась, если у вас есть дополнительные ресурсы, обязательно поднимите PR со своими ресурсами, и я буду рад рассмотреть и добавить их в список.
+
 - [What is Infrastructure as Code? Difference of Infrastructure as Code Tools ](https://www.youtube.com/watch?v=POPP2WTJ8es)
 - [Terraform Tutorial | Terraform Course Overview 2021](https://www.youtube.com/watch?v=m3cKkYXl-8o)
 - [Terraform explained in 15 mins | Terraform Tutorial for Beginners ](https://www.youtube.com/watch?v=l5k1ai_GBDE)
