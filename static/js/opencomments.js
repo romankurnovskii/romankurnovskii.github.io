@@ -40,6 +40,14 @@ const renderComments = (comments) => {
 }
 
 
+function getDatePrintFormat(date) {
+    return new Date(date).toLocaleDateString('ru-RU', {
+        year: 'numeric',
+        month: '2-digit',
+        day: 'numeric',
+    });
+}
+
 const renderCommentsV2 = (comments) => {
     let commentsDiv = document.getElementById('opencomments__v2__list');
     commentsDiv.innerHTML = '' // TODO, not good
@@ -58,7 +66,7 @@ const renderCommentsV2 = (comments) => {
     </div>
 </div>
 <div class="flex flex-col items-center">
-    <span class="text-gray-300">00:00</span>
+    <span class="text-sm text-gray-300">${getDatePrintFormat(comment.date)}</span>
 </div>
         `
 
