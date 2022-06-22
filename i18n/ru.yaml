@@ -1,7 +1,7 @@
 readMore:
   other: Читать далее
 readingTime:
-  other: 'Чтение занимает {{ .Count }} мин'
+  other: '{{ .Count }} мин'
 toc:
   other: Содержание
 seriesOfPosts:
@@ -16,10 +16,14 @@ recent:
   other: Последнее
 onThisPage:
   other: Содержание
+pageUpdated:
+  other: Обновлено
 editThisPage:
   other: Редактировать страницу
 requestChangeThisPage:
   other: Запросить изменения
+pageViews:
+  other: Просмотров
 light:
   other: Светлая
 dark:
