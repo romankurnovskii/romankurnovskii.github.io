@@ -69,38 +69,18 @@ const renderCommentsV2 = (comments) => {
     <span class="text-sm text-gray-300">${getDatePrintFormat(comment.date)}</span>
 </div>
         `
-
-
-        // let authorBlock = document.createElement("div");
-        // let textBlock = document.createElement("div");
-
-
-        // // set class names
-        // commentBlock.classList.add('flex')
-        // authorBlock.classList.add("author")
-        // textBlock.classList.add('comment-text')
-
-
-        // // set data
-        // var author = document.createTextNode(comment.author + ": ");
-        // var text = document.createTextNode(comment.comment);
-
-
-        // // insert to block
-        // authorBlock.appendChild(author);
-        // textBlock.appendChild(text);
-
-        // // combine comment
-        // commentBlock.appendChild(authorBlock);
-        // commentBlock.appendChild(textBlock);
-
-        // commentUlElement.appendChild(commentBlock)
-
         // add comment to comments list
         commentsDiv.appendChild(commentBlock)
 
     }
 }
+
+
+const setPageViews = (views) => {
+    const pageViewsBlock = document.getElementById('page__views')
+    pageViewsBlock.innerText += views
+}
+
 
 
 const e = React.createElement;
@@ -128,6 +108,7 @@ function Example() {
         axios.get(requestUrl).then(response => {
             // renderComments(response.data['comments'])
             renderCommentsV2(response.data['comments'])
+            setPageViews(response.data['page_views'])
         })
     }
 
