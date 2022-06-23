@@ -7,7 +7,7 @@ cover_image: null
 canonical_url: null
 id: 1048747
 ---
-## Большая картина: Управление данными
+## Введение: Управление данными
 
 ![](../images/Day84_Data1.png?v1)
 
