@@ -1,5 +1,5 @@
 ---
-title: Заметки
+title: Posts
 draft: false
 # Section you want to display
 section: posts
@@ -13,7 +13,7 @@ widget:
   handler: pages
 
   # Options: sm, md, lg and xl. Default is md.
-  width:
+  width: lg
 
   sidebar:
     # Options: left and right. Leave blank to hide.
