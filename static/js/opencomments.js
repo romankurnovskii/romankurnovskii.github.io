@@ -78,7 +78,7 @@ const renderCommentsV2 = (comments) => {
 
 const setPageViews = (views) => {
     const pageViewsBlock = document.getElementById('page__views')
-    pageViewsBlock.innerText += views
+    pageViewsBlock.innerText += " " + views
 }
 
 

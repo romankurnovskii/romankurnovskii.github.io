@@ -1,23 +1,23 @@
 <div class="text-tertiary-text text-sm not-prose mt-2 flex flex-row flex-wrap items-center">
   <div class="me-6 my-2">
-    <i class="fas fa-calendar me-1"></i>
+    <i class="fa-regular fa-calendar-days"></i>
     <span>
       {{- if .GitInfo }}
-      {{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02") }} | {{ i18n "pageUpdated" }}:
-      {{ .GitInfo.CommitDate.Format (.Site.Params.dateFormat | default "2006-01-02") }}
+      {{/* {{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02") }} */}}
+      {{ i18n "pageUpdated" }}: {{ .GitInfo.CommitDate.Format (.Site.Params.dateFormat | default "2006-01-02") }}
       {{- else }}
       {{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02") }}
       {{- end }}
     </span>
   </div>
   <div class="me-6 my-2">
-    <i class="fas fa-clock me-1"></i>
+    <i class="fa-regular fa-clock"></i>
     <span>{{ i18n "readingTime" .ReadingTime }}</span>
   </div>
 
   {{ with .GetTerms "categories" }}
   <div class="me-6 my-2">
-    <i class="fas fa-folder me-1"></i>
+    <i class="fa-regular fa-folder me-1"></i>
     {{ range $index, $value := . }}
     {{ if gt $index 0 }}
     <span>, </span>
@@ -29,7 +29,7 @@
 
   {{ with .GetTerms "series" }}
   <div class="me-6 my-2">
-    <i class="fas fa-th-list me-1"></i>
+    <i class="fa-regular fa-rectangle-list"></i>
     {{ range $index, $value := . }}
     {{ if gt $index 0 }}
     <span>, </span>
@@ -39,9 +39,9 @@
   </div>
   {{ end }}
 
-  <div class="me-6 my-2">
-    <i class="fa-solid fa-eye"></i>
-    {{/*  <span id="page__views">{{ i18n "pageViews"}}</span>  */}}
+  <div class="page__views__div me-6 my-2">
+    <i class="fa-regular fa-eye"></i>
+    {{/* <span id="page__views">{{ i18n "pageViews"}}</span> */}}
     <span id="page__views"> </span>
   </div>
 
