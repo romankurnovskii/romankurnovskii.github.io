@@ -1,5 +1,5 @@
 ---
-title: Путь
+title: Path
 draft: false
 experiences:
   - title: J.P. Morgan

@@ -1,47 +1,47 @@
 ---
-title: Путь
+title: Path
 draft: false
 experiences:
   - title: J.P. Morgan
     organization:
-      name: Разработчик в команде Athena Core
+      name: Athena Core Engineer
       url: https://www.jpmorganchase.com/
     dates: "2021 - Present"
-    location: Израиль
+    location: Israel
     writeup: >
-      Athena - продукт компании J.P. Morgan. Система для определения и контроля рисков. Когда мы читаем в новостях "Эксперты инвестиционного банка JPMorgan спрогнозировали....", вероятно, в расчетах использовались и инструменты платформы Athena.
+      Athena is a product of J.P. Morgan. A system for identifying and controlling risks. When we read in the news "JPMorgan investment bank experts predicted....", probably, Athena platform tools were used in the calculations.
 
-  - title: Эмиграция
+  - title: Relocation
     dates: "2019-2020"
-    location: Израиль
+    location: Israel
     writeup: >
-      Погружение в IT среду.
+      Deep dive into IT
 
-      - Курсы <a href="https://en.tel-ran.com/" target="_blank">Tel-Ran</a>
+      - <a href="https://en.tel-ran.com/" target="_blank">Tel-Ran</a>
+       
+      - <a href="https://rs.school/" target="_blank">RS School (Epam)</a>
+       
+      - <a href="https://gb.ru/" target="_blank">GeekBrains</a>
+       
+      - <a href="/posts/diploma/">Process</a>
 
-      - Курсы <a href="https://rs.school/" target="_blank">RS School (Epam)</a>
-
-      - Курсы <a href="https://gb.ru/" target="_blank">GeekBrains</a>
-
-      - <a href="/posts/diploma/">Промежуточные итоги</a>
-
-  - title: Стартап
+  - title: Start Up
     organization:
       name: iPlace
       url: https://iplace163.ru
     dates: "2014 - 2019"
-    location: Россия
+    location: Russia
     writeup: >
-      Сервис для мастерских / розничная сеть
+      Service for workshops / retail
 
-  - title: Аналитик
+  - title: Analyst
     organization:
-      name: АО "РМГ"
+      name: JSC RMG
       url: https://xn--c1aauit.xn--p1ai/
     dates: "2009 - 2011"
     location: Россия
     writeup: >
-      тендеры, тендеры, тендеры
+      The construction and industrial group of companies "RMG" successfully implements projects in the sector of civil, industrial, transport construction, and high-tech production, using all types of technologies.
 
 weight: 4
 widget:
