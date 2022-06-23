@@ -24,8 +24,16 @@
 }
 
 #opencomments__v2 .author {
-  @apply font-medium text-black
+  @apply font-medium text-black;
 }
 #opencomments__v2 .comment-text {
-  @apply text-sm text-gray-600  
+  @apply text-sm text-gray-600;
+}
+
+#pages .page__views__div {
+  display: none;
+}
+
+.posts__list .page__views__div {
+  display: none;
 }
