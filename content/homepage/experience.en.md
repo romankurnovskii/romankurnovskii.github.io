@@ -39,7 +39,7 @@ experiences:
       name: JSC RMG
       url: https://xn--c1aauit.xn--p1ai/
     dates: "2009 - 2011"
-    location: Россия
+    location: Russia
     writeup: >
       The construction and industrial group of companies "RMG" successfully implements projects in the sector of civil, industrial, transport construction, and high-tech production, using all types of technologies.
 
