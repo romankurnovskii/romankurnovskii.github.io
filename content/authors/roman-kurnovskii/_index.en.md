@@ -1,6 +1,6 @@
 ---
-title: Роман Курновский
-role: Разработчик Athena Core
+title: Roman Kurnovskii
+role: Athena Core Developer
 avatar: images/avatar.jpg
 bio: 
 organization:
