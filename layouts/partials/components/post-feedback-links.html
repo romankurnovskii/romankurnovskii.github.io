@@ -2,8 +2,8 @@
 {{- if or .Site.Params.repoEditURL $editMap.repoEditURL }}
 
 <div class="feedback-links mt-4 text-sm">
-  {{- $repoEditURL := path.Join .Site.Params.repoURL "/blob/master/" }}
-  {{ $contentDir := cond .Site.IsMultiLingual .Site.Params.contentDir "/content/" }}
+  {{- $repoEditURL := path.Join .Site.Params.repoEditURL }}
+  {{ $contentDir := "/content/" }}
   {{ $path := path.Join $repoEditURL $contentDir .File.Path }}
   {{ $path = replace $path "http:/" "http://" 1 }}
   {{ $path = replace $path "https:/" "https://" 1 }}
