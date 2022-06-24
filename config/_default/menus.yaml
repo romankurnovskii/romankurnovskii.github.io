@@ -1,19 +1,19 @@
 main:
-    # - name: About
-    #   url: '#about'
-    #   weight: 1
-    - name: Notes
+    - name: Заметки
       url: /posts/
       weight: 2
-    - name: Roadmaps
-      url: /docs/
+    - name: Руководства
+      url: /series/Руководства/
       weight: 3
-    - name: Research
-      url: /p/publications
+    - name: Туториалы
+      url: /docs/
       weight: 4
-    - name: Links
-      url: https://rom8ski.notion.site/Pub-da00c595e6774e3da994be193dcde653
+    - name: Публикации
+      url: /p/publications
       weight: 5
-    # - name: Docs
-    #   url: /docs/
-    #   weight: 3
+    - name: Ссылки
+      url: https://rom8ski.notion.site/Pub-da00c595e6774e3da994be193dcde653
+      weight: 8
+
+
+# eng menu in languages

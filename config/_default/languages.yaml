@@ -1,17 +1,21 @@
 ru:
   languageCode: ru
   languageName: Русский
-  # Uncomment for multilingual sites, and move the default content into corresponding sub-folder.
-  #contentDir: content/ru
 
 en:
   languageCode: en
   languageName: English
-  # Uncomment for multilingual sites, and move the default content into corresponding sub-folder.
-  #contentDir: content/en
-# Uncomment for multilingual sites, and customize the following config.
-# zh:
-#   languageCode: zh
-#   languageName: 简体中文
-#   contentDir: content/zh
-#   title: 中文标题
+  menu:
+    main:
+      - name: Notes
+        url: /posts/
+        weight: 2
+      - name: Roadmaps
+        url: /docs/
+        weight: 3
+      - name: Research
+        url: /p/publications
+        weight: 4
+      - name: Links
+        url: https://rom8ski.notion.site/Pub-da00c595e6774e3da994be193dcde653
+        weight: 5
