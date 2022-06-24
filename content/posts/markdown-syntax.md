@@ -1,9 +1,8 @@
 ---
-title: Markdown Syntax Guide
-description: Sample article showcasing basic Markdown syntax and formatting for HTML elements.
+title: Руководство по оформлению Markdown файлов
+description: Руководство по оформлению Markdown файлов
 toc: true
 authors:
-  - Hugo Authors
 tags:
   - markdown
   - css
@@ -14,18 +13,40 @@ categories:
   - syntax
 series:
   - Themes Guide
-date: '2019-03-11'
-lastmod: '2019-03-11'
-draft: true
+date: '2022-04-21'
+lastmod: '2022-04-21'
+draft: false
 ---
 
 This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
 <!--more-->
 
-## Headings
+## Заголовки
 
-The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
+Заголовки первого и второго уровней, выполненные с помощью подчеркивания, выглядят следующим образом:
 
+```
+Заголовок первого уровня
+========================
+Заголовок второго уровня
+-------------------------
+```
+Заголовок первого уровня
+========================
+Заголовок второго уровня
+-------------------------
+
+
+Заголовки всех шести уровней можно обозначать и с помощью символа («#»)
+
+```
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
+```
 # H1
 ## H2
 ### H3
@@ -33,13 +54,19 @@ The following HTML `<h1>`—`<h6>` elements represent six levels of section head
 ##### H5
 ###### H6
 
-## Paragraph
+## Параграфы
 
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
+Для оформления абзацев в html используются теги `<p></p>`, но в Markdown блок текста автоматически преобразуется в параграф. 
 
-Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
+Для вставки пустой строки необходимо два раза поставить символ переноса строки (нажать на Enter)
 
-## Blockquotes
+```
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur eius in labore quidem, sequi suscipit! 
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aut commodi debitis ipsam nobis perspiciatis sequi, sint unde vitae.
+```
+
+## Цитаты
 
 The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
 
@@ -55,9 +82,48 @@ The blockquote element represents content that is quoted from another source, op
 
 [^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
 
-## Tables
+```
+>Это пример цитаты,
+>в которой перед каждой строкой
+>ставится угловая скобка.
+
+>Это пример цитаты,
+в которой угловая скобка
+ставится только перед началом нового параграфа.
+>Второй параграф.
+```
+>Это пример цитаты,
+>в которой перед каждой строкой
+>ставится угловая скобка.
+
+> Это пример цитаты, в которой угловая скобка ставится только перед началом нового параграфа.
+> Второй параграф.
+
+
+```
+> Первый уровень цитирования
+>> Второй уровень цитирования
+>>> Третий уровень цитирования
+>
+>Первый уровень цитирования
+```
+
+> Первый уровень цитирования
+>> Второй уровень цитирования
+>>> Третий уровень цитирования
+>
+>Первый уровень цитирования
+
+## Таблицы
 
 Tables aren't part of the core Markdown spec, but Hugo supports supports them out-of-the-box.
+
+```
+   Name | Age
+--------|------
+    Bob | 27
+  Alice | 23
+```
 
    Name | Age
 --------|------
@@ -65,6 +131,12 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
   Alice | 23
 
 #### Inline Markdown within tables
+
+```
+| Italics   | Bold     | Code   |
+| --------  | -------- | ------ |
+| *italics* | **bold** | `code` |
+```
 
 | Italics   | Bold     | Code   |
 | --------  | -------- | ------ |
@@ -149,3 +221,9 @@ X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
 Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the session.
 
 Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
+
+
+
+💡 _Структура данных_ — это контейнер, который хранит данные в определённом формате. Этот контейнер решает, каким образом внешний мир может эти данные считать или изменить.
+
+

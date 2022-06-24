@@ -7,7 +7,7 @@ authors:
   - roman-kurnovskii
 tags:
 categories:
-series:
+series: [Руководства]
 featuredImage: docs/90daysofdevops/images/logo.png
 date: "2022-04-21"
 lastmod: "2022-04-21"
@@ -85,7 +85,7 @@ draft: false
 - [✔️] 📚 41 > [The Open Source Workflow](day41)
 
 
-<!-- This is commented out.
+
 
 ### Containers
 
@@ -157,8 +157,6 @@ draft: false
 - [✔️] 🗃️ 89 > [Disaster Recovery](day89)
 - [✔️] 🗃️ 90 > [Data & Application Mobility](day90)
 
-
--->
 
 ## License
 
