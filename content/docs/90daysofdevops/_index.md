@@ -7,7 +7,7 @@ authors:
   - roman-kurnovskii
 tags:
 categories:
-series: [Руководства]
+series: []
 featuredImage: docs/90daysofdevops/images/logo.png
 date: "2022-04-21"
 lastmod: "2022-04-21"
