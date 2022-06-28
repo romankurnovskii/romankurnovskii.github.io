@@ -11,6 +11,7 @@ lastmod: "2022-04-28"
 featuredImage:
 draft: false
 id: 1048857
+weight: 8
 ---
 
 ## Настройка DevOps окружения для запуска Hello World на Go

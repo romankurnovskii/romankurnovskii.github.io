@@ -11,6 +11,7 @@ lastmod: "2022-05-25"
 featuredImage:
 draft: false
 id: 1049041
+weight: 35
 ---
 ## Общая картина: Git — контроль версий
 

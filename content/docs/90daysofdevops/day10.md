@@ -11,6 +11,7 @@ lastmod: "2022-05-01"
 featuredImage:
 draft: false
 id: 1048701
+weight: 10
 ---
 
 ### Окружение Go 

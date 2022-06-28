@@ -11,6 +11,7 @@ lastmod: "2022-05-22"
 featuredImage:
 draft: false
 id: 1048775
+weight: 32
 ---
 ## Модели хранилища 
 ### Службы хранилища

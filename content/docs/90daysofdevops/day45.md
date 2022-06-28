@@ -11,6 +11,7 @@ lastmod: "2022-06-04"
 featuredImage:
 draft: false
 id: 1048777
+weight: 45
 ---
 ## Анатомия образа Docker
 

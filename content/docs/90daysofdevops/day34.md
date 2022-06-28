@@ -11,6 +11,7 @@ lastmod: "2022-05-24"
 featuredImage:
 draft: false
 id: 1048763
+weight: 34
 ---
 
 ## Практические скрипты Microsoft Azure

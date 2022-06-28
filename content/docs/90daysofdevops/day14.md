@@ -11,6 +11,7 @@ lastmod: "2022-05-04"
 featuredImage:
 draft: false
 id: 1049033
+weight: 14
 ---
 
 ## Общая картина: DevOps и Linux

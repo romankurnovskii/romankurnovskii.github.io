@@ -11,6 +11,7 @@ lastmod: "2022-06-01"
 featuredImage:
 draft: false
 id: 1048826
+weight: 42
 ---
 ## Контейнеры
 

@@ -11,6 +11,7 @@ lastmod: "2022-06-17"
 featuredImage:
 draft: false
 id: 1048741
+weight: 58
 ---
 
 ## Язык конфигурации HashiCorp (HCL)

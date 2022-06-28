@@ -11,6 +11,7 @@ lastmod: "2022-06-11"
 featuredImage:
 draft: false
 id: 1049050
+weight: 52
 ---
 ## Настройка многоузлового кластера Kubernetes 
 
