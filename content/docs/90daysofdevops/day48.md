@@ -11,6 +11,7 @@ lastmod: "2022-06-07"
 featuredImage:
 draft: false
 id: 1048807
+weight: 48
 ---
 ## Альтернативы Docker
 

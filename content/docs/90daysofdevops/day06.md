@@ -11,6 +11,7 @@ lastmod: "2022-04-26"
 featuredImage:
 draft: false
 id: 1048855
+weight: 6
 ---
 
 ## DevOps - Истории компаний

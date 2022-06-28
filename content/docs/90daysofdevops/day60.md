@@ -11,6 +11,7 @@ lastmod: "2022-06-19"
 featuredImage:
 draft: false
 id: 1049052
+weight: 60
 ---
 ## Контейнеры и модули Docker 
 

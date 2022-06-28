@@ -11,6 +11,7 @@ lastmod: "2022-04-24"
 featuredImage:
 draft: false
 id: 1048700
+weight: 4
 ---
 
 ## DevOps и Agile

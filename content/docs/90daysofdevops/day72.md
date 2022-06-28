@@ -11,6 +11,7 @@ lastmod: "2022-07-01"
 featuredImage:
 draft: false
 id: 1048829
+weight: 72
 ---
 ## Работа с Jenkins 
 

@@ -11,6 +11,7 @@ lastmod: "2022-05-08"
 featuredImage:
 draft: false
 id: 1048733
+weight: 18
 ---
 
 ## SSH

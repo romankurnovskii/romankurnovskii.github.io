@@ -11,6 +11,7 @@ lastmod: "2022-05-30"
 featuredImage:
 draft: false
 id: 1049044
+weight: 40
 ---
 ## Социальная сеть для кода
 Изучение GitHub | GitLab | BitBucket 

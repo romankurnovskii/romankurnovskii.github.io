@@ -11,6 +11,7 @@ lastmod: "2022-06-25"
 featuredImage:
 draft: false
 id: 1048712
+weight: 66
 ---
 ## Ansible Playbooks Продолжение...
 

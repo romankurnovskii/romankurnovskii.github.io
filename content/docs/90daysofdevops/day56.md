@@ -11,6 +11,7 @@ lastmod: "2022-06-15"
 featuredImage:
 draft: false
 id: 1048709
+weight: 56
 ---
 ## Обзор IaC
 

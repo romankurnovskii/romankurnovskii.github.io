@@ -11,6 +11,7 @@ lastmod: "2022-05-19"
 featuredImage:
 draft: false
 id: 1048705
+weight: 29
 ---
 
 ## Знакомство с Microsoft Azure

@@ -11,6 +11,7 @@ lastmod: "2022-06-29"
 featuredImage:
 draft: false
 id: 1048836
+weight: 70
 ---
 ## The Big Picture: Конвейеры CI/CD
 
