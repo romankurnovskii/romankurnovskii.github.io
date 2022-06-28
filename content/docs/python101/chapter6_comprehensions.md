@@ -1,17 +1,16 @@
 ---
-title: Глава 6 - Генераторы в Python
+title: 6. Генераторы в Python
 description: Python 101
 toc: true
 authors:
-  - michael-cade
-  - roman-kurnovskii
 tags:
 categories:
-series: [руководства]
-featuredImage: docs/python101/images/logo.png
+series:
+featuredImage:
 date: "2022-06-28"
 lastmod: "2022-06-28"
 draft: false
+weight: 8
 ---
 
 В языке Python есть несколько методов создания списков и словарей, которые известны как генераторы. Существует также третий тип генератора для создания набора в Python. В этой главе мы узнаем, как использовать каждый тип генераторов. Вы увидите, что конструкция генератора основываются на знаниях, полученных из предыдущих глав, поскольку они содержат циклы и условия.

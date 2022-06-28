@@ -1,18 +1,16 @@
 ---
-title: Глава 5 - Циклы
+title: 5. Циклы
 description: Python 101
 toc: true
 authors:
-  - michael-cade
-  - roman-kurnovskii
 tags:
 categories:
-series: [руководства]
-featuredImage: docs/python101/images/logo.png
+series:
+featuredImage:
 date: "2022-06-28"
 lastmod: "2022-06-28"
 draft: false
-weight: 55
+weight: 7
 ---
 
 
