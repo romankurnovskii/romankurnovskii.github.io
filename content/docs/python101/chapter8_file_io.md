@@ -1,17 +1,16 @@
 ---
-title: Глава 8 - Работа с файлами
+title: 8. Работа с файлами
 description: Python 101
 toc: true
 authors:
-  - michael-cade
-  - roman-kurnovskii
 tags:
 categories:
-series: [руководства]
-featuredImage: docs/python101/images/logo.png
+series:
+featuredImage:
 date: "2022-06-28"
 lastmod: "2022-06-28"
 draft: false
+weight: 10
 ---
 
 Эта глава знакомит с темой чтения и записи данных в файлы на жестком диске. Вы увидите, что читать и записывать файлы в Python очень просто. Давайте приступим!

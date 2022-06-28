@@ -3,12 +3,12 @@ title: Python 101
 description: Python 101
 toc: true
 authors:
-  - michael-cade
+  - michael-driscoll
   - roman-kurnovskii
 tags: 
 categories:
 series: [руководства]
-featuredImage: docs/python101/images/logo.png
+featuredImage:
 date: "2022-06-28"
 lastmod: "2022-06-28"
 draft: false

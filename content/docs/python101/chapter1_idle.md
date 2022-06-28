@@ -1,18 +1,16 @@
 ---
-title: Глава 1 - Программирование IDLE
+title: 1. Программирование IDLE
 description: Python 101
 toc: true
 authors:
-  - michael-cade
-  - roman-kurnovskii
 tags:
 categories:
-series: [руководства]
-featuredImage: docs/python101/images/logo.png
+series:
+featuredImage:
 date: "2022-06-22"
 lastmod: "2022-06-27"
 draft: false
-weight: 88
+weight: 3
 ---
 
 # Глава 1 - Программирование IDLE
