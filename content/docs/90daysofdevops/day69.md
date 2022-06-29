@@ -1,5 +1,5 @@
 ---
-title: '#90DaysOfDevOps - All other things Ansible - Automation Controller (Tower), AWX, Vault - Day 69'
+title: 69. Ansible - контроллер автоматизации (Tower), AWX, Vault
 description: 
 toc: true
 authors:
@@ -13,7 +13,6 @@ draft: false
 id: 1048714
 weight: 69
 ---
-## Все остальное Ansible - контроллер автоматизации (Tower), AWX, Vault
 
 Завершая раздел об управлении конфигурацией, я хотел бы рассмотреть другие области, с которыми вы можете столкнуться при работе с Ansible.  
 

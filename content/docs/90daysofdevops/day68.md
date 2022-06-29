@@ -1,5 +1,5 @@
 ---
-title: '#90DaysOfDevOps - Tags, Variables, Inventory & Database Server config - Day 68'
+title: 68. Теги, переменные, инвентаризация и конфигурация сервера базы данных
 description: 
 toc: true
 authors:
@@ -13,7 +13,6 @@ draft: false
 id: 1048780
 weight: 68
 ---
-## Теги, переменные, инвентаризация и конфигурация сервера базы данных
 
 ### Теги 
 
@@ -22,7 +21,8 @@ weight: 68
 Однако теги могут позволить нам отделить их друг от друга, если мы захотим. Это может быть эффективным шагом, если в нашей среде есть очень большие и длинные плейбуки. 
 
 В нашем файле плейбука, в данном случае мы используем [ansible-scenario5](Configmgmt/ansible-scenario5/playbook5.yml)
-```
+
+```ansible
 - hosts: webservers
   become: yes
   vars:
@@ -41,6 +41,7 @@ weight: 68
     - nginx
   tags: proxy
 ```
+
 Затем мы можем подтвердить это с помощью команды `ansible-playbook playbook5.yml --list-tags`, а список тегов будет содержать теги, которые мы определили в нашем плейбуке. 
 
 ![](../images/Day68_config1.png?v1)
@@ -127,7 +128,8 @@ html_welcome_msg: "Hello 90DaysOfDevOps - Welcome to Day 68!"
 ```
 
 Поскольку мы связываем это с глобальной переменной, мы также можем добавить сюда наши серверы NTP и DNS. Переменные устанавливаются из созданной нами структуры папок. Ниже вы можете видеть, как чисто выглядит наш Playbook.
-```
+
+```yaml
 - hosts: webservers
   become: yes
   roles:
@@ -144,6 +146,7 @@ html_welcome_msg: "Hello 90DaysOfDevOps - Welcome to Day 68!"
 ```
 
 Одной из этих переменных был http_port, мы можем использовать его снова в нашем цикле for в файле mysite.j2, как показано ниже:
+
 ```
 #Dynamic Config for server {{ ansible_facts['nodename'] }}
     upstream webservers {
@@ -162,7 +165,8 @@ html_welcome_msg: "Hello 90DaysOfDevOps - Welcome to Day 68!"
 ```
 
 Мы также можем определить ansible fact в нашем файле roles/apache2/templates/index.html.j2, чтобы мы могли понять, на каком веб-сервере мы находимся.
-```
+
+```html
 <html>
 
 <h1>{{ html_welcome_msg }}! I'm webserver {{ ansible_facts['nodename'] }} </h1>

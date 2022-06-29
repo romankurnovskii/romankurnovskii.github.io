@@ -11,7 +11,7 @@ lastmod: "2022-05-10"
 featuredImage:
 draft: false
 id: 1048734
-weight: ${s}
+weight: 20
 ---
 ## Настройка рабочей среды
 

@@ -1,5 +1,5 @@
 ---
-title: '#90DaysOfDevOps - The Big Picture: CI/CD Pipelines - Day 70'
+title: 70. Конвейеры CI/CD
 description: 
 toc: true
 authors:
@@ -13,7 +13,6 @@ draft: false
 id: 1048836
 weight: 70
 ---
-## The Big Picture: Конвейеры CI/CD
 
 Реализация конвейера CI/CD (Continous Integration/Continous Deployment) является основой современной среды DevOps. 
 

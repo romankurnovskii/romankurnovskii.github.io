@@ -1,13 +1,18 @@
 ---
-title: '#90DaysOfDevOps - Building a Jenkins Pipeline - Day 73'
-published: false
-description: 90DaysOfDevOps - Building a Jenkins Pipeline
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
-id: 1048766
+title: 73. Построение конвейера Jenkins 
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-07-01"
+lastmod: "2022-07-01"
+featuredImage:
+draft: false
+id: 1048829
+weight: 73
 ---
-## Построение конвейера Jenkins 
 
 В предыдущем разделе мы развернули Jenkins на нашем кластере Minikube и создали очень простой Jenkins Pipeline, который не делал ничего особенного, кроме как повторял этапы Pipeline. 
 
