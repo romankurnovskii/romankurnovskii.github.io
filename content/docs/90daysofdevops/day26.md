@@ -11,6 +11,7 @@ lastmod: "2022-05-16"
 featuredImage:
 draft: false
 id: 1048762
+weight: 26
 ---
 
 ## Создание нашей лаборатории

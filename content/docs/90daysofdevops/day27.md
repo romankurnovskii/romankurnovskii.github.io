@@ -11,6 +11,7 @@ lastmod: "2022-05-17"
 featuredImage:
 draft: false
 id: 1048735
+weight: 27
 ---
 ## Практическое знакомство с Python и сетью
 

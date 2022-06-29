@@ -11,6 +11,7 @@ lastmod: "2022-05-29"
 featuredImage:
 draft: false
 id: 1048827
+weight: 39
 ---
 ## GIT - Просмотр, удаление, отмена и восстановление
 

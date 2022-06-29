@@ -11,6 +11,7 @@ lastmod: "2022-06-03"
 featuredImage:
 draft: false
 id: 1048708
+weight: 44
 ---
 
 ## Образы Docker и практическая работа с Docker Desktop

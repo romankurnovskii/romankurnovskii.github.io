@@ -116,7 +116,7 @@
     
     {{ define "list-items"}}
     <ul class="ps-6 mb-10 ">
-        {{ range .context.Pages.Reverse }}
+        {{ range .context.Pages.ByWeight }}
         {{ $version := findRE "v?(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?/$" .Permalink }}
         {{ if eq (len $version) 0 }}
         <li class="py-1 text-sm ">
@@ -138,7 +138,7 @@
     {{ $parentLayout := partial "utils/hyphenate" (.context.Parent.Layout | default .context.Parent.Type) }}
     {{/*  Deprecation warning(v1.0.0) ends */}}
     {{ if eq $parentLayout "doc-list" }}
-    {{ range .context.Pages.Reverse }}
+    {{ range .context.Pages.ByWeight }}
     {{ $hasVersion := findRE "v?(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?/$" .Permalink }}
     {{ if $hasVersion}}
     {{ $version := slice .Permalink }}
@@ -146,7 +146,7 @@
     {{ end }}
     {{ end }}
     {{ else }}
-    {{ range .context.Parent.Pages.Reverse }}
+    {{ range .context.Parent.Pages.ByWeight }}
     {{ $hasVersion := findRE "v?(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?/$" .Permalink }}
     {{ if $hasVersion }}
     {{ $version := slice .Permalink }}

@@ -11,6 +11,7 @@ lastmod: "2022-05-20"
 featuredImage:
 draft: false
 id: 1049039
+weight: 30
 ---
 
 ## Microsoft Azure Security Models

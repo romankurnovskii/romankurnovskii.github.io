@@ -12,6 +12,7 @@ featuredImage: docs/90daysofdevops/images/logo.png
 date: "2022-04-21"
 lastmod: "2022-04-21"
 draft: false
+weight: 0
 ---
 
 <!-- <p align="center">

@@ -11,6 +11,7 @@ lastmod: "2022-06-02"
 featuredImage:
 draft: false
 id: 1048739
+weight: 43
 ---
 ## Что такое Docker и его установка
 

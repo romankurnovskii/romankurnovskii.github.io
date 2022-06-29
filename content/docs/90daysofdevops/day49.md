@@ -11,6 +11,7 @@ lastmod: "2022-06-08"
 featuredImage:
 draft: false
 id: 1049049
+weight: 49
 ---
 ## Общая картина: Kubernetes
 

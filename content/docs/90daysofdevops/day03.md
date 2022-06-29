@@ -11,6 +11,7 @@ lastmod: "2022-04-23"
 featuredImage:
 draft: false
 id: 1048825
+weight: 3
 ---
 
 ## Жизненный цикл DevOps — ориентированность на приложения

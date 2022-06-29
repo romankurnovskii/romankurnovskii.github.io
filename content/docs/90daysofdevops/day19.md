@@ -11,6 +11,7 @@ lastmod: "2022-05-09"
 featuredImage:
 draft: false
 id: 1048774
+weight: 19
 ---
 ## Автоматизация задачи с помощью bash-скриптов
 

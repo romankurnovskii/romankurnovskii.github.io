@@ -11,6 +11,7 @@ lastmod: "2022-05-12"
 featuredImage:
 draft: false
 id: 1049037
+weight: 22
 ---
 ## Модель OSI — 7 уровней
 

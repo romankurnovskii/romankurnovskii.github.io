@@ -11,6 +11,7 @@ lastmod: "2022-05-05"
 featuredImage:
 draft: false
 id: 1048834
+weight: 15
 ---
 
 ## Команды Linux для DevOps

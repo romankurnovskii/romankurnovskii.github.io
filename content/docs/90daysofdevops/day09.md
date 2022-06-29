@@ -11,6 +11,7 @@ lastmod: "2022-04-29"
 featuredImage:
 draft: false
 id: 1048732
+weight: 9
 ---
 
 ## Разберемся как работает hello-world
