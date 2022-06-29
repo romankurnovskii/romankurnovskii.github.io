@@ -1,4 +1,17 @@
-# Глава 19 - Модуль subprocess
+---
+title: 19. Модуль subprocess
+description: Python 101
+toc: true
+authors:
+tags:
+categories:
+series:
+featuredImage:
+date: "2022-06-28"
+lastmod: "2022-06-28"
+draft: false
+weight: 19
+---
 
 Модуль **subprocess** дает разработчику возможность запускать процессы или программы из Python. Другими словами, вы можете запускать приложения и передавать им аргументы с помощью модуля subprocess. Модуль subprocess был добавлен в Python 2.4, чтобы заменить модули **os**, состоящие из os.popen, os.spawn и os.system, а также заменить popen2 и старый модуль **commands**. Мы рассмотрим следующие аспекты модуля subprocess:
 
@@ -14,7 +27,7 @@
 
 Рассмотрим простой пример:
 
-```sh
+```python
 >>> import subprocess
 >>> subprocess.call("notepad.exe")
 0
@@ -24,7 +37,7 @@
 
 Обычно, когда вы вызываете эту функцию, вы хотите присвоить полученный код возврата переменной, чтобы вы могли проверить, соответствует ли результат ожиданию. Давайте сделаем это:
 
-```sh
+```python
 >>> code = subprocess.call("notepad.exe")
 >>> if code == 0:
         print("Success!")
@@ -35,7 +48,7 @@ Success!
 
 Если вы запустите этот код, вы увидите, что он выводит на экран сообщение **Success!**. Метод **call** также принимает аргументы для передачи в выполняемую программу. Давайте посмотрим, как это работает:
 
-```sh
+```python
 >>> code = subprocess.call(["ping", "www.yahoo.com"])
 
 Pinging ds-any-fp3-real.wa1.b.yahoo.com [98.139.180.149] with 32 bytes of data:
@@ -64,7 +77,7 @@ Approximate round trip times in milli-seconds:
 
 Класс **Popen** выполняет дочернюю программу в новом процессе. В отличие от метода call, он не ждет завершения вызванного процесса, если вы не попросите его об этом с помощью метода **wait**. Давайте попробуем запустить Notepad через Popen и посмотрим, в чем разница:
 
-```sh
+```python
 >>> program = "notepad.exe"
 >>> subprocess.Popen(program)
 <subprocess.Popen object at 0x01EE0430>
@@ -72,7 +85,7 @@ Approximate round trip times in milli-seconds:
 
 Здесь мы создаем переменную **program** и присваиваем ей значение "notepad.exe". Затем мы передаем ее классу Popen. Когда вы запустите эту программу, вы увидите, что она немедленно возвращает объект **subprocess.Popen** и вызванное приложение выполняется. Давайте заставим Popen ждать завершения работы программы:
 
-```sh
+```python
 >>> program = "notepad.exe"
 >>> process = subprocess.Popen(program)
 >>> code = process.wait()
@@ -86,7 +99,7 @@ Approximate round trip times in milli-seconds:
 
 Теперь давайте попробуем запустить Popen, используя несколько аргументов:
 
-```sh
+```python
 >>> subprocess.Popen(["ls", "-l"])
 <subprocess.Popen object at 0xb7451001>
 ```
@@ -97,7 +110,7 @@ Approximate round trip times in milli-seconds:
 
 Существует несколько способов взаимодействия с процессом, который вы вызвали. Мы остановимся на том, как использовать метод **communicate** модуля subprocess. Давайте посмотрим:
 
-```sh
+```python
 args = ["ping", "www.yahoo.com"]
 process = subprocess.Popen(args,
                            stdout=subprocess.PIPE)
@@ -108,7 +121,7 @@ print(data)
 
 В этом примере кода мы создаем переменную **args** для хранения нашего списка аргументов. Затем мы перенаправляем стандартный выход (stdout) на наш subprocess, чтобы мы могли общаться с ним. Сам метод **communicate** позволяет нам общаться с процессом, который мы только что создали. На самом деле мы можем передавать процессу входные данные с помощью этого метода. Но в нашем примере, мы используем этот метод для чтения stdout. Обратите внимание на то, что когда вы запускаете этот код, цель которого – поддержка связи, он будет дожидаться финиша процесса, После чего выдаст кортеж, состоящий из двух элементов, которые являются содержимым stdout и stderr. Вот результат:
 
-```sh
+```python
 ('Pinging ds-any-fp3-real.wa1.b.yahoo.com [98.139.180.149] with 32 bytes of data:
 Reply from 98.139.180.149: bytes=32 time=139ms TTL=45
 Reply from 98.139.180.149: bytes=32 time=162ms TTL=45
@@ -124,7 +137,7 @@ Minimum = 110ms, Maximum = 164ms, Average = 143ms
 
 Это довольно некрасиво. Давайте заставим его вывести результат в более читабельном формате?
 
-```sh
+```python
 import subprocess
 
 args = ["ping", "www.yahoo.com"]
@@ -137,7 +150,7 @@ for line in data:
 
 Если вы запустите этот код, на экране должно появиться нечто похожее на следующее:
 
-```sh
+```python
 Pinging ds-any-fp3-real.wa1.b.yahoo.com [98.139.180.149] with 32 bytes of data:
 Reply from 98.139.180.149: bytes=32 time=67ms TTL=45
 Reply from 98.139.180.149: bytes=32 time=68ms TTL=45
@@ -153,7 +166,7 @@ None
 ```
 Последняя строка, в которой написано "None", является результатом stderr, что означает, что ошибок не было.
 
-##Подведение итогов
+## Подведение итогов
 
 На данный момент у вас есть знания, позволяющие эффективно использовать модуль subprocess. Вы можете открыть процесс двумя различными способами, знаете, как дождаться кода возврата, и знаете, как взаимодействовать с созданным вами дочерним процессом.
 

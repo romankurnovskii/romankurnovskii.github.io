@@ -1,4 +1,17 @@
-# Глава 39 - Python wheels
+---
+title: 39. Python wheels
+description: Python 101
+toc: true
+authors:
+tags:
+categories:
+series:
+featuredImage:
+date: "2022-06-28"
+lastmod: "2022-06-28"
+draft: false
+weight: 39
+---
 
 Первым распространенным форматом упаковки Python был файл .egg. Теперь в городе появился новый формат под названием **wheel** *(.whl). Согласно описанию в Python Packaging Index, wheel предназначен для содержания всех файлов для установки, совместимой с PEP 376, в формате, очень близком к формату на диске.* В этой главе мы узнаем, как создать wheel и затем установить его в **virtualenv**.
 
@@ -29,7 +42,7 @@ pip wheel --wheel-dir=my_wheels Unidecode
 
 Вот скриншот вывода, который я получил при запуске этой программы:
 
-![](wheel_creation.jpg)
+![](../img/wheel_creation.jpg)
 
 Теперь у вас должно быть wheel с именем **Unidecode-0.04.14-py26-none-any.whl** в папке my_wheels. Давайте узнаем, как установить наше новое wheel!
 

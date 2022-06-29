@@ -10,7 +10,7 @@ featuredImage:
 date: "2022-06-28"
 lastmod: "2022-06-28"
 draft: false
-weight: 14
+weight: 12
 ---
 
 # Часть II - Обучение с помощью библиотеки
