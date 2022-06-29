@@ -11,6 +11,7 @@ lastmod: "2022-06-10"
 featuredImage:
 draft: false
 id: 1048778
+weight: 51
 ---
 ## Развертывание первого кластера Kubernetes 
 

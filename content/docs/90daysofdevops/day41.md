@@ -11,6 +11,7 @@ lastmod: "2022-05-31"
 featuredImage:
 draft: false
 id: 1048806
+weight: 41
 ---
 ## Рабочий процесс с открытым исходным кодом 
     

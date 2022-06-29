@@ -11,6 +11,7 @@ lastmod: "2022-05-01"
 featuredImage:
 draft: false
 id: 1048862
+weight: 11
 ---
 
 Прежде чем мы перейдем к темам сегодняшнего дня, я хочу выразить огромную благодарность [Techworld with Nana](https://www.youtube.com/watch?v=yyUHQIec83I) и этому фантастическому краткому путешествию по основам Go.

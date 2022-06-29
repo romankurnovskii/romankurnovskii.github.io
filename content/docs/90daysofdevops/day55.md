@@ -11,6 +11,7 @@ lastmod: "2022-06-14"
 featuredImage:
 draft: false
 id: 1048779
+weight: 55
 ---
 ## State и Ingress в Kubernetes
 В этом заключительном разделе, посвященном Kubernetes, мы рассмотрим State и ingress. 

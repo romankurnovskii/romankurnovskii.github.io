@@ -11,6 +11,7 @@ lastmod: "2022-06-18"
 featuredImage:
 draft: false
 id: 1049051
+weight: 59
 ---
 ## Создание виртуальной машины с помощью Terraform и переменных
 

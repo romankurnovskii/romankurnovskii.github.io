@@ -11,6 +11,7 @@ lastmod: "2022-06-28"
 featuredImage:
 draft: false
 id: 1048714
+weight: 69
 ---
 ## Все остальное Ansible - контроллер автоматизации (Tower), AWX, Vault
 

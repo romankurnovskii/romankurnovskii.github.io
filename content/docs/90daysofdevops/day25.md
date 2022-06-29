@@ -11,6 +11,7 @@ lastmod: "2022-05-25"
 featuredImage:
 draft: false
 id: 1049038
+weight: 25
 ---
 
 ## Python для автоматизации сети

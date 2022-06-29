@@ -11,6 +11,7 @@ lastmod: "2022-06-13"
 featuredImage:
 draft: false
 id: 1048764
+weight: 54
 ---
 ## Развертывание приложений Kubernetes 
 

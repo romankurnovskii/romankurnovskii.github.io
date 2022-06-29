@@ -11,6 +11,7 @@ lastmod: "2022-06-05"
 featuredImage:
 draft: false
 id: 1048740
+weight: 46
 ---
 ## Docker Compose 
 

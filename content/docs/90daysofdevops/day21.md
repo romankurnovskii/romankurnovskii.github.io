@@ -11,6 +11,7 @@ lastmod: "2022-05-11"
 featuredImage:
 draft: false
 id: 1048761
+weight: 21
 ---
 ## Общая картина: DevOps и Сеть
 

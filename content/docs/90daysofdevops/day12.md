@@ -11,6 +11,7 @@ lastmod: "2022-05-02"
 featuredImage:
 draft: false
 id: 1048864
+weight: 12
 ---
 
 ## Получение данных с клавиуатуры

@@ -11,6 +11,7 @@ lastmod: "2022-05-26"
 featuredImage:
 draft: false
 id: 1048738
+weight: 36
 ---
 ## Установка и настройка Git
 

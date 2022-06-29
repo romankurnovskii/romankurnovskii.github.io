@@ -11,6 +11,7 @@ lastmod: "2022-05-06"
 featuredImage:
 draft: false
 id: 1048702
+weight: 16
 ---
 ## Управление системой, файловой системой и хранилищем в Linux
 

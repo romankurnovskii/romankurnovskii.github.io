@@ -11,6 +11,7 @@ lastmod: "2022-06-22"
 featuredImage:
 draft: false
 id: 1048711
+weight: 63
 ---
 ## Введение: Управление конфигурацией
 

@@ -11,6 +11,7 @@ lastmod: "2022-06-09"
 featuredImage:
 draft: false
 id: 1049046
+weight: 50
 ---
 ## Выбор платформы Kubernetes 
 

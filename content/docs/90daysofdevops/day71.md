@@ -11,6 +11,7 @@ lastmod: "2022-06-30"
 featuredImage:
 draft: false
 id: 1048745
+weight: 71
 ---
 ## Что такое Jenkins?
 

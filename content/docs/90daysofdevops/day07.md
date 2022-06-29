@@ -11,6 +11,7 @@ lastmod: "2022-04-27"
 featuredImage:
 draft: false
 id: 1048856
+weight: 7
 ---
 
 ## Общая картина: DevOps и изучение языка программирования

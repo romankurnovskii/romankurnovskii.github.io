@@ -11,6 +11,7 @@ lastmod: "2022-05-14"
 featuredImage:
 draft: false
 id: 1048805
+weight: 24
 ---
 
 ## Автоматизация сети

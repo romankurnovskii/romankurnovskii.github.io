@@ -11,6 +11,7 @@ lastmod: "2022-05-27"
 featuredImage:
 draft: false
 id: 1048707
+weight: 37
 ---
 ## Знакомство с Git
 

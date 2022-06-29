@@ -11,6 +11,7 @@ lastmod: "2022-06-23"
 featuredImage:
 draft: false
 id: 1048765
+weight: 64
 ---
 
 Основы Ansible

@@ -11,6 +11,7 @@ lastmod: "2022-06-12"
 featuredImage:
 draft: false
 id: 1048742
+weight: 53
 ---
 ## Обзор Rancher - практическое применение
 

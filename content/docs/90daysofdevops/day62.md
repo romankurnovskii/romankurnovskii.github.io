@@ -11,6 +11,7 @@ lastmod: "2022-06-21"
 featuredImage:
 draft: false
 id: 1049053
+weight: 62
 ---
 ## Тестирование, инструменты и альтернативы
 

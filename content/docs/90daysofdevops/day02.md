@@ -10,6 +10,7 @@ date: "2022-04-22"
 lastmod: "2022-04-22"
 featuredImage: docs/90daysofdevops/images/feature/devops-cycle.png
 draft: false
+weight: 2
 ---
 
 ## Обязанности DevOps специалиста

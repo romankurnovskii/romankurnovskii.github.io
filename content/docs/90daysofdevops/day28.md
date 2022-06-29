@@ -11,6 +11,7 @@ lastmod: "2022-05-18"
 featuredImage:
 draft: false
 id: 1048737
+weight: 28
 ---
 ## Общая картина: DevOps и облака
 

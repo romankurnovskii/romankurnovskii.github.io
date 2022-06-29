@@ -11,6 +11,7 @@ lastmod: "2022-06-20"
 featuredImage:
 draft: false
 id: 1048743
+weight: 61
 ---
 ## Kubernetes и множественные среды
 
