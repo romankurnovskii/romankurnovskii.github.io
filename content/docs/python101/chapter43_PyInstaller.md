@@ -1,4 +1,17 @@
-# Глава 43 - PyInstaller
+---
+title: 43. PyInstaller
+description: Python 101
+toc: true
+authors:
+tags:
+categories:
+series:
+featuredImage:
+date: "2022-06-28"
+lastmod: "2022-06-28"
+draft: false
+weight: 43
+---
 
 PyInstaller - это последний инструмент, который мы рассмотрим для создания двоичных файлов. Он поддерживает Python 2.4 - 2.7. Мы продолжим использовать наши простые консольные и wxPython GUI скрипты для тестирования. PyInstaller должен работать на Windows, Linux, Mac, Solaris и AIX. Поддержка Solaris и AIX является экспериментальной. PyInstaller поддерживает подпись кода (Windows), eggs, скрытый импорт, один исполняемый файл, один каталог и многое другое!
 
@@ -14,7 +27,7 @@ python setup.py install
 
 Вы также можете установить PyInstaller с помощью pip. Мы начнем с нашего маленького кусочка кода создания конфигурации:
 
-```sh
+```python
 # config_1.py
 import configobj
 
@@ -68,7 +81,7 @@ Please install from http://sourceforge.net/projects/pywin32/
 
 Чтобы использовать PyInstaller в Windows, вам нужно сначала установить **PyWin32**! После установки PyWin32 попробуйте повторно запустить эту команду. Вы должны увидеть много вывода на экран, а также две папки рядом с вашим скриптом: **build** и **dist**. Если вы перейдете в папку ***dist**, а затем в ее папку **config_1**, вы должны увидеть что-то вроде этого:
 
-![](pyinstaller.jpg)
+![](../img/pyinstaller.jpg)
 
 Когда я запустил исполняемый файл, он создал файл конфигурации, как и должен был. Вы заметите, что PyInstaller смог захватить **configobj** без вашего указания.
 
@@ -76,7 +89,7 @@ Please install from http://sourceforge.net/projects/pywin32/
 
 Теперь давайте попробуем создать двоичный файл из простого скрипта wxPython. Вот код wxPython, который мы использовали в предыдущих главах:
 
-```sh
+```python
 import wx
 
 class DemoPanel(wx.Panel):
@@ -151,7 +164,7 @@ pyi-makespec sampleApp.py
 
 Вы можете передать pyi-makespec те же команды, что и PyInstaller, который изменит спецификацию соответствующим образом. Вот содержимое спецификации, созданной с помощью предыдущей команды:
 
-```sh
+```python
 
 
 # -*- mode: python -*-

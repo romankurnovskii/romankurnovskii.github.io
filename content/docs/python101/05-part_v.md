@@ -1,17 +1,31 @@
-# Часть V - Упаковка и распространение
+---
+title: Часть V - Упаковка и распространение
+description: Python 101
+toc: true
+authors:
+tags:
+categories:
+series:
+featuredImage:
+date: "2022-06-28"
+lastmod: "2022-06-28"
+draft: false
+weight: 36
+---
+
 
 В части V вы узнаете об упаковке Python и различных методах распространения вашего кода. Вы узнаете о следующем:
 
-      -  Как создать модуль и пакет
-      -  Публикация пакетов в Python Packaging Index (PyPI)
-      -  Python eggs
-      -  Python wheels
-      -  py2exe
-      -  bb_freeze
-      -  cx_Freeze
-      -  PyInstaller
-      -  GUI2Exe
-      -  Как создать инсталлятор с помощью InnoSetup
+-  Как создать модуль и пакет
+-  Публикация пакетов в Python Packaging Index (PyPI)
+-  Python eggs
+-  Python wheels
+-  py2exe
+-  bb_freeze
+-  cx_Freeze
+-  PyInstaller
+-  GUI2Exe
+-  Как создать инсталлятор с помощью InnoSetup
 
 В первой главе этого раздела описано, как создать модуль или пакет. Затем, в следующей главе, мы рассмотрим публикацию нашего пакета в PyPI. Далее мы узнаем, как создать и установить Python egg и Python wheel.
 
