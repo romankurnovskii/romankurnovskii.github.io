@@ -22,16 +22,27 @@ h4 {
   @apply mt-4 text-center font-bold uppercase leading-7;
 }
 
+.prose h5,
+h6 {
+  @apply text-center font-bold uppercase;
+}
+
 .prose h1 {
   @apply text-left text-2xl;
 }
 .prose h2 {
   @apply text-2xl;
 }
-.prose h2 {
+.prose h3 {
   @apply text-xl;
 }
-.prose h3 {
+.prose h4 {
+  @apply text-lg;
+}
+.prose h5 {
+  @apply text-lg;
+}
+.prose h6 {
   @apply text-lg;
 }
 
@@ -47,7 +58,7 @@ li {
 }
 
 .prose li p {
-  @apply mt-0 mb-0  ;
+  @apply mt-0 mb-0;
 }
 
 /* .prose li {
