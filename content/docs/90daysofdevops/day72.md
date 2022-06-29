@@ -1,5 +1,5 @@
 ---
-title: '#90DaysOfDevOps - Getting hands on with Jenkins - Day 72'
+title: 72. Работа с Jenkins
 description: 
 toc: true
 authors:
@@ -13,7 +13,6 @@ draft: false
 id: 1048829
 weight: 72
 ---
-## Работа с Jenkins 
 
 Сегодня мы планируем немного поработать с Jenkins и сделать что-то в рамках нашего конвейера CI, рассматривая некоторые примеры кодовых баз, которые мы можем использовать. 
 

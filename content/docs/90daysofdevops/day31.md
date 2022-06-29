@@ -11,6 +11,7 @@ lastmod: "2022-05-21"
 featuredImage:
 draft: false
 id: 1049040
+weight: 31
 TODO: сделать линк как появится статься - Инфраструктура как код
 ---
 
