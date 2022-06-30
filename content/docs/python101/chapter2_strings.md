@@ -85,13 +85,6 @@ TypeError: 'str' object does not support item assignment
 ```
 Проверяя id объекта, мы можем определить, что каждый раз, когда мы присваиваем переменной новое значение, ее идентификатор меняется.
 
-Обратите внимание, что в Python 2.x строки могут содержать только символы **ASCII**. Если вам требуется **юникод** в Python 2.x, то перед строкой нужно поставить символ u. Вот пример:
-
-```sh
-my_unicode_string = u"This is unicode!"
-```
-Приведенный выше пример не содержит никакого юникода, но он должен дать вам общее представление. В Python 3.x все строки являются юникодом.
-
 ## Конкатенация строк
 
 Конкатенация - это большое слово, которое означает объединение или сложение двух вещей вместе. В данном случае мы хотим узнать, как сложить две строки вместе. Как вы уже догадались, эта операция очень проста в Python:
@@ -268,8 +261,8 @@ TypeError: %d format: a number is required, not str
 ```sh
 >>> int_float_err = "%i + %f" % (1, "2.00")
 Traceback (most recent call last):
-  File "<string>", line 1, in <fragment>
-TypeError: float argument required, not str
+  File "<stdin>", line 1, in <module>
+TypeError: must be real number, not str
 ```
 Неа. Мы получаем ту же ошибку, но другое сообщение, которое говорит нам, что мы должны были передать плавающее число. Как видите, Python дает нам довольно хорошую информацию о том, что пошло не так и как это исправить. Если вы правильно исправите входные данные, то сможете запустить этот пример.
 
@@ -289,10 +282,12 @@ Python is fun!
 ```sh
 >>> print("%(value)s %(value)s %(value)s !" % {"value":"SPAM"})
 SPAM SPAM SPAM !
+
 >>> print("%(x)i + %(y)i = %(z)i" % {"x":1, "y":2})
 Traceback (most recent call last):
-  File "<string>", line 1, in <fragment>
+  File "<stdin>", line 1, in <module>
 KeyError: 'z'
+
 >>> print("%(x)i + %(y)i = %(z)i" % {"x":1, "y":2, "z":3})
 1 + 2 = 3
 ```
@@ -302,9 +297,12 @@ KeyError: 'z'
 ```sh
 >>> "Python is as simple as {0}, {1}, {2}".format("a", "b", "c")
 'Python is as simple as a, b, c'
+
 >>> "Python is as simple as {1}, {0}, {2}".format("a", "b", "c")
 'Python is as simple as b, a, c'
+
 >>> xy = {"x":0, "y":10}
+
 >>> print("Graph a point at where x={x} and y={y}".format(**xy))
 Graph a point at where x=0 and y=10
 ```
@@ -316,7 +314,6 @@ Graph a point at where x=0 and y=10
 - [Официальная документация Python по типу str](https://docs.python.org/3/library/functions.html#func-str)
 - [Форматирование строк](https://docs.python.org/3/library/string.html#string-formatting)
 - [Подробнее о форматировании строк(https://docs.python.org/3/library/string.html#formatexamples)
-- Документация Python 2.x по [юникоду](http://docs.python.org/2/library/functions.html#unicode)
 
 ## Подведение итогов
 

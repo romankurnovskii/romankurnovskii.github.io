@@ -42,7 +42,6 @@ weight: 11
 Создать класс в Python очень просто. Вот очень простой пример:
 
 ```sh
-# Python 2.x syntax
 class Vehicle(object):
     """docstring"""
 
