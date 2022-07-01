@@ -125,6 +125,11 @@ brew install \
 ### UTM
 [UTM](https://mac.getutm.app/) (Virtual machines UI using QEMU)
   - download ubuntu for arm, [doc](https://mac.getutm.app/gallery/ubuntu-20-04)
+  - On error with shared folder: *Could not connect: Connection refused* open in browser: http://127.0.0.1:9843/
+  - For Debian install `spice-webdavd` for shared folder. https://packages.debian.org/search?keywords=spice-webdavd, https://github.com/utmapp/UTM/issues/1204
+```sh
+sudo apt install spice-vdagent spice-webdavd -y
+```
 ### Visual Studio Code
 [Visual Studio Code](https://code.visualstudio.com/) (web development IDE
 ### Transmission
