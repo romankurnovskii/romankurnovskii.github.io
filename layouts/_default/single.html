@@ -15,7 +15,7 @@
       {{ with .GetTerms "authors" }}
       {{ partial "components/post-author" . }}
       {{ end }}
-
+      {{ partial "components/share-buttons" . }}
       {{ partial "components/post-footer" . }}
       {{ partial "comment.html" . }}
     </div>
