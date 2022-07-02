@@ -1,5 +1,5 @@
 ---
-title: 29. становка пакетов
+title: 29. Установка пакетов
 description: Python 101
 toc: true
 authors:
