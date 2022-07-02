@@ -23,6 +23,9 @@ draft: false
 P2P соединение настраивается через интерфейс `RTCPeerConnection`. Это ключевой пункт для установления и управления соединением между двумя узлами в WebRTC.
 
 
+## Ресурсы:
+- [https://webrtc.org/getting-started/overview](https://webrtc.org/getting-started/overview)
+- [https://codelabs.developers.google.com/codelabs/webrtc-web](https://codelabs.developers.google.com/codelabs/webrtc-web)
 
 
 
