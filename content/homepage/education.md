@@ -2,7 +2,7 @@
 title: Образование
 draft: false
 experiences:
-  - title: Прикладная информатика по экономике
+  - title: Прикладная информатика в экономике
     organization:
       name: Самарский государственный экономический университет
       url: https://sseu.ru/
