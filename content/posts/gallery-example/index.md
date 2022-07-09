@@ -6,7 +6,7 @@ tags:
 categories:
 date: '2022-07-09'
 featuredImage:
-draft: false
+draft: true
 type: gallery
 ---
 
