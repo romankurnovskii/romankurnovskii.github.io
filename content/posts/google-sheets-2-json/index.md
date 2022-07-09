@@ -2,17 +2,15 @@
 title: Отображение таблицы Google Sheets в JSON
 description: Экспорт google sheet в JSON, с моментальным обновлением данных
 toc: true
-authors: ["roman-kurnovskii"]
 tags: ["google sheets", "google script"]
-categories: ["разбор"]
+categories: []
 series: []
 date: 2022-03-12T11:55:25+02:00
 lastmod: 2022-03-12T11:55:25+02:00
 featuredVideo:
 featuredImage:
-draft: false
 Цель: Сконвертировать данные для приложения ФСФР из иаблицы в json
-enableComment: true
+authors: ["roman-kurnovskii"]
 ---
 
 ## Задача

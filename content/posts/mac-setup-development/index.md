@@ -2,16 +2,12 @@
 title: Mac Setup 2022
 description: How I set up my M1 MacBook Pro software development...
 toc: true
-authors:
-  - roman-kurnovskii
-tags:
-  ["mac setup development", "mac setup web developer", "mac setup javascript"]
-categories: ['setup']
+tags: ["mac", "mac setup web developer", "mac setup javascript"]
+categories:
 series:
 date: "2022-05-18"
-lastmod: "2022-05-18"
 featuredImage: /posts/mac-setup-development/img/featured.jpg
-draft: false
+authors: [roman-kurnovskii]
 ---
 
 ## MacBook Pro Specification

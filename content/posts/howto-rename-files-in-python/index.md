@@ -2,16 +2,13 @@
 title: Как переименовать файлы в Python 
 description: Различные способы переименовывания файлов в Python
 toc: true
-authors:
-  - roman-kurnovskii
-tags:
-  ["Python", ]
-categories: ['Code Snippets']
-series: ['JavaScript']
+tags: [Python]
+series:
+categories: [Python]
 date: "2022-06-04"
 lastmod: "2022-06-04"
-featuredImage: /posts/howto-rename-files-in-python/featured.en.jpg
-draft: false
+featuredImage: /posts/howto-rename-files-in-python/featured.jpg
+authors: [roman-kurnovskii]
 ---
 
 ## os.rename

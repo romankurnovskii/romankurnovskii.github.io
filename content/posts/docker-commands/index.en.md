@@ -2,16 +2,13 @@
 title: Most Popular Docker Commands
 description: Most Popular Docker Commands
 toc: true
-authors:
-  - roman-kurnovskii
-tags:
-  ["docker", "cheatsheet"]
-categories: ['cheatsheet']
-series: ['cheatsheet']
+tags: ["docker", "cheatsheet"]
+series: ['шпаргалки']
+categories: [Docker]
 date: "2022-06-07"
 lastmod: "2022-06-07"
 featuredImage: /posts/docker-commands/featured.en.jpg
-draft: false
+authors: [roman-kurnovskii]
 ---
 
 Here follows a list of useful Docker commands with useful flags for each command.

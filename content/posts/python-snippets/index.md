@@ -2,16 +2,12 @@
 title: Сниппеты Python
 description: Сниппеты Python
 toc: true
-authors:
-  - roman-kurnovskii
-tags:
-  ["python"]
-categories: ['шпаргалки']
-series: ['шпаргалки']
+tags:  ["python"]
+series:
+categories: [Python]
 date: "2022-06-16"
-lastmod: "2022-06-07"
 featuredImage:
-draft: true
+draft: false
 ---
 
 

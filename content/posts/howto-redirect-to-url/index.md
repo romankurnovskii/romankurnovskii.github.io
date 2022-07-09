@@ -2,16 +2,13 @@
 title: Как сделать редирект на другой URL в JavaScript
 description: Как сделать редирект на другой URL в JavaScript
 toc: true
-authors:
-  - roman-kurnovskii
-tags:
-  ["JavaScript", 'redirect url']
-categories: ['Code Snippets']
-series: ['JavaScript']
+tags:  ["JavaScript", 'redirect url']
+series:
+categories: [JavaScript]
 date: "2022-06-06"
 lastmod: "2022-06-06"
 featuredImage: /posts/howto-redirect-to-url/featured.jpg
-draft: false
+authors: [roman-kurnovskii]
 ---
 
 Пользователя можно перенаправлять с одной веб-страницы на любую другую несколькими способами.

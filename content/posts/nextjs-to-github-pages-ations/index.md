@@ -2,16 +2,14 @@
 title: Публикация next.js приложения на github pages
 description: Сайт на next.js использует данные из Notion. Сделать публикацию на github pages с помощью github actions
 toc: true
-authors: []
-tags: ["github"]
-categories: ["разбор"]
-series: []
+tags: [github, deploy]
+categories: [React]
+series:
 date: 2022-03-07T15:31:25+02:00
-lastmod: 2022-03-07
 featuredVideo:
 featuredImage:
-draft: false
 Цель: Публикация постов
+authors: [roman-kurnovskii]
 ---
 
 ## Подготовка

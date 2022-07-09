@@ -2,13 +2,13 @@
 title: Увеличение картинки по нажатию в Hugo
 description: Добавляем скрипт, который будет увеличивать картинку в статье при нажатии
 toc: true
-authors: [roman-kurnovskii]
-tags:
-categories:
+tags: [hugo]
+series: 
+categories: [Hugo]
 date: 2022-07-09
 featuredImage: /posts/hugo-add-image-zoomin/img/featured.jpg
+authors: [roman-kurnovskii]
 ---
-
 
 ## Введение
 
