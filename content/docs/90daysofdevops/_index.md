@@ -6,7 +6,7 @@ authors:
   - michael-cade
   - roman-kurnovskii
 tags:
-categories:
+categories: [треки]
 series: []
 featuredImage: docs/90daysofdevops/images/logo.png
 date: "2022-04-21"
