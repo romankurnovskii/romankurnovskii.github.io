@@ -10,7 +10,7 @@
 
   {{ if eq .Type "docs" }}
   <div class="mx-6 text-left ">
-    {{ range $index, $value := first 2 .Pages }}   {{/* Doc list pages count */}}
+    {{ range $index, $value := first 1 .Pages }}   {{/* Doc list pages count */}}
     {{ if gt $index 0 }}
     <div class="-mx-4 my-4 border-t"></div>
     {{ end -}}

@@ -2,16 +2,13 @@
 title: Как сделать глубокое клонирование объекта в JavaScript
 description: Как сделать глубокое клонирование объекта в JavaScript
 toc: true
-authors:
-  - roman-kurnovskii
-tags:
-  ["JavaScript", ]
-categories: ['Code Snippets']
-series: ['JavaScript']
+tags: [JavaScript]
+series:
+categories: [JavaScript]
 date: "2022-06-02"
 lastmod: "2022-06-02"
 featuredImage: /posts/howto-create-deepclone-js/img/deepclone.jpg
-draft: false
+authors: [roman-kurnovskii]
 ---
 
 В JavaScript объекты копируются по ссылке. Это означает, что фактически две(или более) ссылок ссылается на *один* объект

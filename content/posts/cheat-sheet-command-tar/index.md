@@ -1,17 +1,13 @@
 ---
 title: Шпаргалка tar архиватор
-description: Необходиые команды для работы с архиватором tar
+description: Необходимые команды для работы с архиватором tar
 toc: true
-authors:
-  - roman-kurnovskii
-tags:
-  ["tar", "cheatsheet"]
-categories: ['Code Snippets']
-series: ['bash', 'шпаргалки']
+tags: ["Linux", "CLI", "tar", "cheatsheet"]
+series:
+categories: [Linux, CLI]
 date: "2022-06-05"
-lastmod: "2022-06-05"
 featuredImage: /posts/cheat-sheet-command-tar/featured.jpg
-draft: false
+authors: [roman-kurnovskii]
 ---
 
 ## Кратко

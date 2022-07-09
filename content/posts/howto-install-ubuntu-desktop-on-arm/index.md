@@ -2,16 +2,13 @@
 title: Установка Ubuntu Desktop 22.10 (Kinetic Kudu) на ARM CPU
 description: Быстрая базовая установка Ubuntu Desktop 22.10 на виртуальную машину UTM с процессором ARM M1
 toc: true
-authors:
-  - roman-kurnovskii
-tags:
-  []
-categories: []
-series: []
+tags: [linux, ubuntu]
+series: ['Установка ОС']
+categories: [Linux]
 date: "2022-06-23"
 lastmod: "2022-06-23"
 featuredImage: /posts/howto-install-ubuntu-desktop-on-arm/img/featured.jpg
-draft: false
+authors: [roman-kurnovskii]
 ---
 
 Ubuntu - одна из популярных Linux систем и достаточно много [обзоров по установке Ubuntu](https://mac.getutm.app/gallery/ubuntu-20-04). В этой статье мы будем устанавливать образ Ubuntu для ARM процессора на виртуальную машину UTM. Вся установка будет проходить на Mac OS.

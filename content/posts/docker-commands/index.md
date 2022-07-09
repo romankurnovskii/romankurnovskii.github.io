@@ -2,16 +2,13 @@
 title: Популярные команды Docker
 description: Основные команды Docker, которыми пользуюсь в процессе разработки.
 toc: true
-authors:
-  - roman-kurnovskii
-tags:
-  ["docker", "cheatsheet"]
-categories: ['шпаргалки']
+tags: ["docker", "cheatsheet"]
 series: ['шпаргалки']
+categories: [Docker]
 date: "2022-06-07"
 lastmod: "2022-06-07"
 featuredImage: /posts/docker-commands/featured.jpg
-draft: false
+authors: [roman-kurnovskii]
 ---
 
 ## Топ 10 комманд Docker

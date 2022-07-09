@@ -2,15 +2,12 @@
 title: PyScript - Python, встроенный в HTML
 description: PyScript - Python, встроенный в HTML
 toc: true
-authors:
-  - roman-kurnovskii
-tags: ["pyscript", "Pyodide", "python"]
-categories:
-series:
+tags: [pyscript, Pyodide, python]
+series: 
+categories: [Python]
 date: "2022-05-20"
-lastmod: "2022-05-20"
 featuredImage: /posts/pyscript-python-embedded-in-html/images/pyscript-featured.jpg
-draft: false
+authors: [roman-kurnovskii]
 ---
 
 ## PyScript

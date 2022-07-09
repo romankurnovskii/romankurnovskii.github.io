@@ -2,16 +2,13 @@
 title: How to rename files in Python
 description: How to rename files in Python
 toc: true
-authors:
-  - roman-kurnovskii
-tags:
-  ["Python", ]
-categories: ['Code Snippets']
-series: ['JavaScript']
+tags: [Python]
+series:
+categories: [Python]
 date: "2022-06-04"
 lastmod: "2022-06-04"
 featuredImage: 
-draft: false
+authors: [roman-kurnovskii]
 ---
 
 Learn different ways to rename files in Python using the os and pathlib modules.

@@ -1,18 +1,13 @@
-
 ---
 title: Tar Files Cheat Sheet
 description: tar command Cheat Sheet
 toc: true
-authors:
-  - roman-kurnovskii
-tags:
-  ["tar", "cheatsheet"]
-categories: ['Code Snippets']
-series: ['bash', "cheatsheet"]
+tags: ["Linux", "CLI", "tar", "cheatsheet"]
+series:
+categories: [Linux, CLI]
 date: "2022-06-05"
-lastmod: "2022-06-05"
 featuredImage: /posts/cheat-sheet-command-tar/featured.en.jpg
-draft: false
+authors: [roman-kurnovskii]
 ---
 
 ## Create tar named archive.tar containing directory

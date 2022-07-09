@@ -7,6 +7,7 @@ authors:
   - roman-kurnovskii
 tags: 
 categories:
+categories: [Python]
 series: [руководства]
 featuredImage:
 date: "2022-06-28"

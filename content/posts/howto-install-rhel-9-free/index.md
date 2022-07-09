@@ -2,16 +2,13 @@
 title: Установка Linux RHEL 9
 description: Скачать и установить Linux RHEL 9 бесплатно
 toc: true
-authors:
-  - roman-kurnovskii
-tags:
-  []
-categories: []
-series: []
+tags: [linux, rhel]
+series: ['Установка ОС']
+categories: [Linux]
 date: "2022-06-17"
 lastmod: "2022-06-17"
 featuredImage: /posts/howto-install-rhel-9-free/img/featured.jpg
-draft: false
+authors: [roman-kurnovskii]
 ---
 
 

@@ -2,16 +2,12 @@
 title: Как подключить React в проект на Hugo
 description: Подключение react компонентов в hugo проект
 toc: true
-authors:
-  - roman-kurnovskii
-tags:
-  ["react", "hugo"]
-categories: ['']
-series: ['']
+tags: [react, hugo]
+series: 
+categories: [Hugo, React]
 date: "2022-06-19"
-lastmod: "2022-06-19"
 featuredImage: /posts/integrate-hugo-react/img/featured.jpg
-draft: false
+authors: [roman-kurnovskii]
 ---
 
 Hugo предлагает подключение различных JS библиотек в проект. Такие изменения влекут за собой полное обновление проекта.

@@ -2,16 +2,12 @@
 title: Mac Setup 2022
 description: How I set up my M1 MacBook Pro software development...
 toc: true
-authors:
-  - roman-kurnovskii
-tags:
-  ["mac setup development", "mac setup web developer", "mac setup javascript"]
-categories: ['setup']
+tags: ["mac", "mac setup web developer", "mac setup javascript"]
+categories:
 series:
 date: "2022-05-18"
-lastmod: "2022-05-18"
 featuredImage: /posts/mac-setup-development/img/featured.jpg
-draft: false
+authors: [roman-kurnovskii]
 ---
 
 ## MacBook Pro Specification
@@ -120,11 +116,17 @@ brew install \
     - [30 Seconds of Knowledge](https://chrome.google.com/webstore/search/https%3A%2F%2F30secondsofknowledge.com%2F) (random code snippet on a new tab)
     - [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa)
     - [picture-in-picture](https://chrome.google.com/webstore/detail/picture-in-picture-extens/hkgfoiooedgoejojocmhlaklaeopbecg) (yutube/video above other screens)
+    - [Visual CSS Editor](https://chrome.google.com/webstore/detail/visual-css-editor/cibffnhhlfippmhdmdkcfecncoaegdkh) (Customize any website visually)
 ### Firefox
 [Firefox](https://www.google.com/chrome/) (web development)
 ### UTM
 [UTM](https://mac.getutm.app/) (Virtual machines UI using QEMU)
   - download ubuntu for arm, [doc](https://mac.getutm.app/gallery/ubuntu-20-04)
+  - On error with shared folder: *Could not connect: Connection refused* open in browser: http://127.0.0.1:9843/
+  - For Debian install `spice-webdavd` for shared folder. https://packages.debian.org/search?keywords=spice-webdavd, https://github.com/utmapp/UTM/issues/1204
+```sh
+sudo apt install spice-vdagent spice-webdavd -y
+```
 ### Visual Studio Code
 [Visual Studio Code](https://code.visualstudio.com/) (web development IDE
 ### Transmission

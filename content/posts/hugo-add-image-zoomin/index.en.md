@@ -2,11 +2,12 @@
 title: Hugo resize a picture on click
 description: Script will zoom in on a picture on click in Hugo
 toc: true
-authors: [roman-kurnovskii]
-tags:
-categories:
+tags: [hugo]
+series: 
+categories: [Hugo]
 date: 2022-07-09
 featuredImage: /en/posts/hugo-add-image-zoomin/img/featured.en.jpg
+authors: [roman-kurnovskii]
 ---
 
 
