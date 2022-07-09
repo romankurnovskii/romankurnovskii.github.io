@@ -6,7 +6,7 @@ authors: [roman-kurnovskii]
 tags:
 categories:
 date: 2022-07-09
-featuredImage: /posts/hugo-add-image-zoomin/img/featured.en.jpg
+featuredImage: /en/posts/hugo-add-image-zoomin/img/featured.en.jpg
 ---
 
 
