@@ -3,9 +3,11 @@
 
   {{ partial "components/post-metadata" . }}
 
-  {{ $featured := partial "utils/get-featured" . }}
-  {{ with $featured }}
-  {{ . }}
+  {{ if ne .Page.Params.type "500px" }} {{/*  {{ don't show for gallery post }}  */}}
+    {{ $featured := partial "utils/get-featured" . }}
+    {{ with $featured }}
+    {{ . }}
+    {{ end }}
   {{ end }}
 
   <div class="block lg:hidden">
