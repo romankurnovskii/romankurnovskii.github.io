@@ -1,5 +1,5 @@
 ---
-title: Resize a picture on click in Hugo
+title: Hugo resize a picture on click
 description: Script will zoom in on a picture on click in Hugo
 toc: true
 authors: [roman-kurnovskii]
