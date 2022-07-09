@@ -170,3 +170,8 @@ Hugo позволяет изменить поведение при парсин�
   <source src="img/gallery.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
+
+
+### Процесс
+
+{{< youtube dHwGdSaO-tk >}}
