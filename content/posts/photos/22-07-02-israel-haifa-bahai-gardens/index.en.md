@@ -5,7 +5,7 @@ toc: false
 tags:
 series:
 categories: [Photos]
-date: "2022-07-09"
+date: "2022-07-02"
 featuredImage: featured.jpg
 authors: [roman-kurnovskii]
 type: 500px
