@@ -6,3 +6,16 @@
         <a href="https://romankurnovskii.com/index.xml">RSS</a>
     </p>
 </div>
+
+
+{{/* search service */}}
+{{ $languageMode := .Site.Language }}
+<script src="https://unpkg.com/lunr/lunr.min.js"></script>
+<script src="/js/search.js?1" languageMode={{ $languageMode }} ></script>
+
+{{ partial "components/search-list-popup.html" . }}
+{{/* end search service */}}
+
+{{/* search service for page view */}}
+{{ partial "search-index.html" . }}
+{{/* end search service for page view  */}}
