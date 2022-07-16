@@ -1,0 +1,28 @@
+{{ $translatedCount := 0 }}
+{
+  "ru": [
+    {{- range $index, $page := .Site.RegularPages.ByTitle -}}
+      {{- if gt $index 0 -}} , {{- end -}}
+      {{- $entry := dict "uri" $page.RelPermalink "title" $page.Title -}}
+      {{- $entry = merge $entry (dict "description" .Description) -}}
+      {{- $entry = merge $entry (dict "content" (.Plain | htmlUnescape)) -}}
+      {{- $entry | jsonify -}}
+    {{- end -}}
+  ],
+  "en": [
+    {{- range $index, $page := .Site.RegularPages.ByTitle -}}
+        {{- if $page.IsTranslated -}}
+          {{ if gt (index $page.Translations 0).WordCount 0 }}
+              {{ range .Translations }}
+                {{- if gt $translatedCount 0 -}} , {{- end -}}
+                {{- $entry := dict "uri" .RelPermalink "title" .Title -}}
+                {{- $entry = merge $entry (dict "description" .Description) -}}
+                {{- $entry = merge $entry (dict "content" (.Plain | htmlUnescape)) -}}
+                {{- $entry | jsonify -}}
+                {{ $translatedCount = add $translatedCount 1 }}
+              {{ end}}
+          {{ end }}
+        {{- end -}}
+    {{- end -}}
+  ]
+}
