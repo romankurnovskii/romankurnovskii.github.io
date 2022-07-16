@@ -39,7 +39,6 @@ const renderComments = (comments) => {
     }
 }
 
-
 function getDatePrintFormat(date) {
     return new Date(date).toLocaleDateString('ru-RU', {
         year: 'numeric',
@@ -82,12 +81,10 @@ const setPageViews = (views) => {
 }
 
 
-
 const e = React.createElement;
 
 function Example() {
     const url = window.location.href
-
 
     const handleSendComment = () => {
         let comment = document.getElementById('comment').value
@@ -125,7 +122,6 @@ function Example() {
     )
 
 }
-
 
 
 ReactDOM.render(React.createElement(Example), document.getElementById("react-block"));
