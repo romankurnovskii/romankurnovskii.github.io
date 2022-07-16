@@ -2,8 +2,10 @@
 {{ $hasToc := and (in .TableOfContents "<li>" ) (.Params.toc) }}
   {{ $hasSidebar := or ($hasToc) (.Params.series) }}
   <div class="grid grid-cols-2 gap-4 lg:grid-cols-8 lg:pt-12">
+
     <div class="{{ if not $hasSidebar }}
-        {{- print " lg:col-start-2" -}} {{ end }} bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6">
+      {{- print " lg:col-start-2" -}} {{ end }} bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6">
+
       {{ partial "components/post-article" . }}
 
       {{ with .GetTerms "tags" }}
@@ -51,4 +53,6 @@
     });
   </script>
   {{- end }}
+  {{/* end highlight.js */}}
+
   {{ end }}
