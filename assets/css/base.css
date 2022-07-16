@@ -45,3 +45,11 @@ a:hover,
 a:hover * {
   @apply text-eureka transition duration-300 ease-in-out;
 }
+
+.share-buttons {
+  all: none
+}
+.resp-sharing-button {
+  max-height: 48px;
+  max-width: 48px
+}

@@ -1,11 +1,11 @@
 const languageMode = window.document.currentScript.getAttribute('languageMode');
 
-let idx = {}
+let searchIndex = {}
 let pagesStore = {}
 
 // Need to create ONLY once , maybe before push | during build
 const createIndex = (documents, lang) => {
-    idx[lang] = lunr(function () {
+    searchIndex[lang] = lunr(function () {
         this.field("title");
         this.field("content");
         this.field("description");
@@ -43,18 +43,22 @@ const loadIndexData = () => {
 }
 
 const search = (text, languageMode) => {
-    let result = idx[languageMode].search(text)
+    let result = searchIndex[languageMode].search(text)
     return result
 }
 
+// TODO refactor
 const renderSearchResults = (results) => {
     const searchResultsViewBlock = document.getElementById('search-result')
     searchResultsViewBlock.style.display = 'initial';
     searchResultsViewBlock.removeAttribute('hidden')
+    searchResultsViewBlock.setAttribute('aria-hidden', 'false')
 
-    document.addEventListener('mouseup', function(e) {
+    document.addEventListener('mouseup', function (e) {
+        console.log(1111, e.target)
         if (!searchResultsViewBlock.contains(e.target)) {
             searchResultsViewBlock.style.display = 'none';
+            searchResultsViewBlock.setAttribute('class','hidden')
         }
     });
 
