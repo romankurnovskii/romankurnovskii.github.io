@@ -21,3 +21,15 @@ baseURL: https://romankurnovskii.github.io
 #   changefreq: always
 #   filename: sitemap.xml
 #   priority: 0.5
+
+# need for search popup service / creates search.json index fo lunr.js
+outputFormats:
+  SearchIndex:
+    baseName: search
+    mediaType: application/json
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - SearchIndex

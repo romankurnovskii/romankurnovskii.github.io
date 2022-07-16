@@ -1,0 +1,18 @@
+{{ define "main" }}
+
+<div class="max-w-md pt-4"> 
+    <form id="search" action='{{ with .GetPage "/search" }}{{.Permalink}}{{end}}' method="get" class="pt-30 mt-15">
+        <label hidden for="search-input">Search site</label>
+        <input type="text" id="search-input" name="query"
+            class="border bg-gray-50 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 block p-2.5 "
+            placeholder="Search">
+    </form>
+</div>
+
+<ul id="results" class="prose">
+    <li>
+        Enter a keyword above to search this site.
+    </li>
+</ul>
+
+{{ end }}
