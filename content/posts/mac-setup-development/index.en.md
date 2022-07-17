@@ -2,12 +2,12 @@
 title: Mac Setup 2022
 description: How I set up my M1 MacBook Pro software development...
 toc: true
-tags: ["mac", "mac setup web developer", "mac setup javascript"]
-categories:
-series:
-date: "2022-05-18"
+tags: [mac, mac setup web developer, mac setup javascript]
+date: 2022-05-18T00:00:00+03:00
 featuredImage: /posts/mac-setup-development/img/featured.jpg
 authors: [roman-kurnovskii]
+categories: null
+series: null
 ---
 
 ## MacBook Pro Specification
@@ -85,6 +85,7 @@ brew install \
 ## Additional GUI Applications
 ### Kotatogram
  [Kotatogram](https://kotatogram.github.io/) - Experimental fork of Telegram Desktop. Folders with features
+
 
 ## GUI Applications
 
