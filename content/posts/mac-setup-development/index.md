@@ -70,7 +70,8 @@ brew install --cask \
   obs \
   spotify \
   iterm2 \
-  deepl
+  deepl \
+  syncthing
 ```
 
 Install terminal applications (read more about these in Terminal Applications):
@@ -111,39 +112,38 @@ brew install \
     - [Pocket](https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj)
     - [Session Buddy](https://chrome.google.com/webstore/detail/session-buddy/edacconmaakjimmfgnblocblbcdcpbko) (Manage Browser Tabs and Bokmarks)
     - [LanguageTool](https://chrome.google.com/webstore/detail/grammar-spell-checker-%E2%80%94-l/oldceeleldhonbafppcapldpdifcinji) (multilingual grammar, style, and spell checker)
-    - ~~[RSS Feed Reader](https://chrome.google.com/webstore/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp) (Easy to subscribe/unsubscribe to blogs/no need email + iOS/Android)~~
+    - [RSS Feed Reader](https://chrome.google.com/webstore/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp) (Easy to subscribe/unsubscribe to blogs/no need email + iOS/Android)
     - [Inoreader](https://inoreader.com) (Easy to subscribe/unsubscribe to blogs/no need email + iOS/Android)
     - [30 Seconds of Knowledge](https://chrome.google.com/webstore/search/https%3A%2F%2F30secondsofknowledge.com%2F) (random code snippet on a new tab)
     - [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa)
     - [picture-in-picture](https://chrome.google.com/webstore/detail/picture-in-picture-extens/hkgfoiooedgoejojocmhlaklaeopbecg) (yutube/video above other screens)
     - [Visual CSS Editor](https://chrome.google.com/webstore/detail/visual-css-editor/cibffnhhlfippmhdmdkcfecncoaegdkh) (Customize any website visually)
-### Firefox
-[Firefox](https://www.google.com/chrome/) (web development)
-### UTM
-[UTM](https://mac.getutm.app/) (Virtual machines UI using QEMU)
-  - download ubuntu for arm, [doc](https://mac.getutm.app/gallery/ubuntu-20-04)
-  - On error with shared folder: *Could not connect: Connection refused* open in browser: http://127.0.0.1:9843/
-  - For Debian install `spice-webdavd` for shared folder. https://packages.debian.org/search?keywords=spice-webdavd, https://github.com/utmapp/UTM/issues/1204
-```sh
-sudo apt install spice-vdagent spice-webdavd -y
-```
-### Visual Studio Code
-[Visual Studio Code](https://code.visualstudio.com/) (web development IDE
-### Transmission
- [Transmission](https://www.transmissionbt.com/) (A torrent client that I use. Very minimal in its UI but very powerful and has all the features that I need)
-### Sublime Text
-[Sublime Text](https://www.sublimetext.com/) (editor)
+    - [Opus●Guide](https://chrome.google.com/webstore/detail/opus%E2%97%8Fguide/fpnkogmkokahibbdbfoligochippakeb) (Step-by-step for instructions)
+
+### Disk Inventory X
+[Disk Inventory X](http://www.derlien.com/) (disk usage utility for macOS)
+
 ### Docker
 [Docker](https://www.docker.com/products/docker-desktop) (Docker, see [setup](/docker-macos/))
   - used for running databases (e.g. PostgreSQL, MongoDB) in container without cluttering the Mac
   - Preferences
     - enable "Use Docker Compose"
-### VLC
-[VLC](https://www.videolan.org/vlc/) (video player)
-  - use as default for video files
+
+
+### Firefox
+[Firefox](https://www.google.com/chrome/) (web development)
+
+### Visual Studio Code
+[Visual Studio Code](https://code.visualstudio.com/) (web development IDE
+
+### Sublime Text
+[Sublime Text](https://www.sublimetext.com/) (editor)
+
 ### Maccy
  [Maccy](https://maccy.app/) (clipboard manager)
   - enable "Launch at Login"
+
+
 ### OBS
 [OBS](https://obsproject.com/) (for video recording and live streaming)
   - for Native Mac Screen recorder
@@ -152,9 +152,28 @@ sudo apt install spice-vdagent spice-webdavd -y
     ![](img/obs-base-canvas.png)
 ### Spotify
 [Spotify](https://www.spotify.com/)
-### Disk Inventory X
-[Disk Inventory X](http://www.derlien.com/) (disk usage utility for macOS)
- ## Terminal Applications
+
+### Syncthing
+[syncthing](https://syncthing.net/) - Sync folders/files between devices. I use to backup all photos/video from mobile to PC
+
+### Transmission
+ [Transmission](https://www.transmissionbt.com/) (A torrent client that I use. Very minimal in its UI but very powerful and has all the features that I need)
+
+### UTM
+[UTM](https://mac.getutm.app/) (Virtual machines UI using QEMU)
+  - download ubuntu for arm, [doc](https://mac.getutm.app/gallery/ubuntu-20-04)
+  - On error with shared folder: *Could not connect: Connection refused* open in browser: http://127.0.0.1:9843/
+  - For Debian install `spice-webdavd` for shared folder. https://packages.debian.org/search?keywords=spice-webdavd, https://github.com/utmapp/UTM/issues/1204
+```sh
+sudo apt install spice-vdagent spice-webdavd -y
+```
+
+### VLC
+[VLC](https://www.videolan.org/vlc/) (video player)
+  - use as default for video files
+
+
+## Terminal Applications
 
 ### nvm
 [nvm](https://github.com/nvm-sh/nvm) (node version manager)
