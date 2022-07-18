@@ -7,7 +7,7 @@ series:
 categories: [JavaScript]
 date: "2022-06-02"
 lastmod: "2022-06-02"
-featuredImage: /posts/howto-create-deepclone-js/img/deepclone.jpg
+featuredImage: /ru/posts/howto-create-deepclone-js/img/deepclone.jpg
 authors: [roman-kurnovskii]
 ---
 

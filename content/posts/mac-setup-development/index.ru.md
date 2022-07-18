@@ -6,7 +6,7 @@ tags: ["mac", "mac setup web developer", "mac setup javascript"]
 categories:
 series:
 date: "2022-05-18"
-featuredImage: /posts/mac-setup-development/img/featured.jpg
+featuredImage: /ru/posts/mac-setup-development/img/featured.jpg
 authors: [roman-kurnovskii]
 ---
 

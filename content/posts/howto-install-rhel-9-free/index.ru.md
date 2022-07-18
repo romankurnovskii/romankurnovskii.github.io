@@ -7,7 +7,7 @@ series: ['Установка ОС']
 categories: [Linux]
 date: "2022-06-17"
 lastmod: "2022-06-17"
-featuredImage: /posts/howto-install-rhel-9-free/img/featured.jpg
+featuredImage: /ru/posts/howto-install-rhel-9-free/img/featured.jpg
 authors: [roman-kurnovskii]
 ---
 

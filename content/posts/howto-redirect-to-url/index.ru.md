@@ -7,7 +7,7 @@ series:
 categories: [JavaScript]
 date: "2022-06-06"
 lastmod: "2022-06-06"
-featuredImage: /posts/howto-redirect-to-url/featured.jpg
+featuredImage: /ru/posts/howto-redirect-to-url/featured.jpg
 authors: [roman-kurnovskii]
 ---
 

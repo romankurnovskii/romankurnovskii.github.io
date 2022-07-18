@@ -7,7 +7,7 @@ series: ['Установка ОС']
 categories: [Linux]
 date: "2022-06-23"
 lastmod: "2022-06-23"
-featuredImage: /posts/howto-install-ubuntu-desktop-on-arm/img/featured.jpg
+featuredImage: /ru/posts/howto-install-ubuntu-desktop-on-arm/img/featured.jpg
 authors: [roman-kurnovskii]
 ---
 

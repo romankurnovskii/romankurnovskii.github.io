@@ -48,14 +48,6 @@ This is how the logic looks like:
 **Files to change/create:**
 
 
-
-
-
-
-
-
-
-
 <details>
 <summary>1.  `/layouts/partials/header.html`</summary>
 
