@@ -14,9 +14,9 @@ enableEmoji: true
 enableGitInfo: true
 summaryLength: 75
 
-defaultContentLanguage: nodefault
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: true
 hasCJKLanguage: false # Set `true` for Chinese/Japanese/Korean.
-defaultContentLanguageInSubdir: false
 
 # Uncomment for google analytics
 googleAnalytics: G-26F2C5ZR4Y
