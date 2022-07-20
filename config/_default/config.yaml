@@ -34,9 +34,10 @@ markup:
     style: monokai
     tabWidth: 4
   # Do not modify markup.highlight
-  highlight3:
+  highlight:
     codeFences: false
     noClasses: false
+    guessSyntax: true
   tableOfContents:
     startLevel: 2
     endLevel: 6
