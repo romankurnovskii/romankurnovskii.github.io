@@ -1,16 +1,14 @@
 # When the asset version is updated, its sri needs to be updated simultaneously.
 
-# highlight.js
 highlightjs:
-  version: 11.5.1
+  version: 11.6.0
   css:
-    url: https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css
+    url: https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css
   js:
-    url: https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js
+    url: https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js
   languages:
     url: https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.0-beta1/languages/%s.min.js
 
-# KaTeX
 katex:
   version: 0.15.2
   css:
@@ -23,7 +21,6 @@ katex:
     url: https://cdn.jsdelivr.net/npm/katex@%s/dist/contrib/auto-render.min.js
     sri: sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR
 
-# Mermaid
 mermaid:
   version: 8.14.0
   js:

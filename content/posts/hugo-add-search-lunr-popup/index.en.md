@@ -209,7 +209,6 @@ const renderSearchResults = (results) => {
     searchResultsViewBlock.setAttribute('aria-hidden', 'false')
 
     document.addEventListener('mouseup', function (e) {
-        console.log(1111, e.target)
         if (!searchResultsViewBlock.contains(e.target)) {
             searchResultsViewBlock.style.display = 'none';
             searchResultsViewBlock.setAttribute('class','hidden')
@@ -448,7 +447,7 @@ const createIndex = (documents, lang) => {
 }
 
 const loadIndexData = () => {
-    const url = "/search.json";
+    const url = "search.json";
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -479,7 +478,6 @@ const renderSearchResults = (results) => {
     searchResultsViewBlock.setAttribute('aria-hidden', 'false')
 
     document.addEventListener('mouseup', function (e) {
-        console.log(1111, e.target)
         if (!searchResultsViewBlock.contains(e.target)) {
             searchResultsViewBlock.style.display = 'none';
             searchResultsViewBlock.setAttribute('class','hidden')
