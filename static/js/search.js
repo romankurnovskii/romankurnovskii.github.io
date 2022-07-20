@@ -1,4 +1,5 @@
 const languageMode = window.document.currentScript.getAttribute('languageMode');
+const MAX_SEARCH_RESULTS = 10
 
 let searchIndex = {}
 let pagesStore = {}
@@ -47,22 +48,28 @@ const search = (text, languageMode) => {
     return result
 }
 
+const hideSearchResults = (event, divBlock) => {
+    event.preventDefault()
+    if (!divBlock.contains(event.target)) {
+        divBlock.style.display = 'none';
+        divBlock.setAttribute('hidden')
+    }
+}
+
 // TODO refactor
 const renderSearchResults = (results) => {
     const searchResultsViewBlock = document.getElementById('search-result')
-    searchResultsViewBlock.style.display = 'initial';
-    searchResultsViewBlock.removeAttribute('hidden')
-    searchResultsViewBlock.setAttribute('aria-hidden', 'false')
 
-    document.addEventListener('mouseup', function (e) {
-        if (!searchResultsViewBlock.contains(e.target)) {
-            searchResultsViewBlock.style.display = 'none';
-            searchResultsViewBlock.setAttribute('class','hidden')
-        }
-    });
+    // hide on move mouse from results block
+    document.addEventListener('mouseup', (e) => hideSearchResults(e, searchResultsViewBlock));
 
     const searchResultsDiv = document.getElementById('search-results')
     searchResultsDiv.innerHTML = ''
+
+    searchResultsViewBlock.style.display = 'initial';
+    searchResultsViewBlock.removeAttribute('hidden')
+
+
     const resultsBlock = document.createElement('ul')
 
     for (let post of results) {
@@ -96,14 +103,13 @@ const searchFormObserver = () => {
 
     form.addEventListener("submit", function (event) {
         event.preventDefault();
-
         var term = input.value.trim();
         if (!term) {
             return
         }
 
         const search_results = search(term, getPageLanguage());
-        renderSearchResults(search_results)
+        renderSearchResults(search_results.slice(0, MAX_SEARCH_RESULTS))
 
     }, false);
 }
@@ -112,4 +118,8 @@ const searchFormObserver = () => {
 loadIndexData()
 
 searchFormObserver()
+
+
+
+
 
