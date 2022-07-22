@@ -1,25 +1,23 @@
+{{ $languageMode := .Site.Language }}
+
 <div class="text-center p-6 pin-b">
     <p class="text-sm text-tertiary-text">{{ with .Site.Copyright }}{{ replace . "{year}" now.Year | safeHTML }}
         &middot; {{ end }} Powered by the <a href="https://github.com/wangchucheng/hugo-eureka"
             class="hover:text-eureka">Eureka</a> customized theme for <a href="https://gohugo.io">Hugo</a>
         &middot;
-        <a href="https://romankurnovskii.com/index.xml">RSS</a>
+        <a href="https://romankurnovskii.com/{{ $languageMode }}/index.xml">RSS</a>
     </p>
 </div>
 
 
 {{/* search service */}}
-{{ $languageMode := .Site.Language }}
 <script src="https://unpkg.com/lunr/lunr.min.js"></script>
-<script src="/js/search.js?2222" languageMode={{ $languageMode }} ></script>
-
+<script src="/js/search.js?2222" languageMode={{ $languageMode }}></script>
 {{ partial "components/search-list-popup.html" . }}
 {{/* end search service */}}
 
 {{/* search service for page view */}}
 {{ partial "search-index.html" . }}
-{{/* end search service for page view  */}}
+{{/* end search service for page view */}}
 
-
-
-<script src="/js/base.js?2" languageMode={{ $languageMode }} ></script>
+<script src="/js/base.js?2" languageMode={{ $languageMode }}></script>
