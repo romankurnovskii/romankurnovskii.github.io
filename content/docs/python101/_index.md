@@ -6,7 +6,6 @@ authors:
   - michael-driscoll
   - roman-kurnovskii
 tags: 
-categories:
 categories: [Python]
 series: [руководства]
 featuredImage:

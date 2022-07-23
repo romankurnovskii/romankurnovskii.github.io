@@ -13,6 +13,7 @@ social:
     url:
 
 weight:
+
 widget:
   handler: about
 

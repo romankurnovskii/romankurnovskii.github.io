@@ -9,6 +9,7 @@ count:
 style:
 
 weight:
+
 widget:
   handler: pages
 

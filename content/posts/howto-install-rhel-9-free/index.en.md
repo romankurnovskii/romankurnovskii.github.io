@@ -112,15 +112,21 @@ The first thing that seems unusual about using the GUI is that there are no butt
 ![](img/07-02.png)
 
 Install the necessary package
-```
+
+```sh
 yum install gnome-tweaks -y
 ```
+
 ![](img/07-06.png)
+
 After installation, the Tweaks application will appear. Find it by searching.
+
 ![](img/07-07.png)
+
 There are many other tweaks in the app as well. We will show you the minimize buttons for the applications.
 
 Let's go to **Windows titlebars** and set the Maximize, Minimize options
+
 ![](img/07-08.png)
 
 #### User access to install applications
@@ -129,15 +135,16 @@ To avoid constantly switching to a root user to install applications, we can giv
 We will continue to do this as ***root***.
 Open /etc/sudoers and add the user
 
-```
+```sh
 sudo vi /etc/sudoers
 ```
 
 Add user data to the end of the file. My user name: ***rhel-user***
 
-```
+```sh
 rhel-user ALL= NOPASSWD: /usr/sbin/synaptic, /usr/bin/software-center, /usr/bin/apt-get, /usr/bin/dnf
 ```
+
 ![](img/07-09.png)
 
 
@@ -151,7 +158,7 @@ Go to [https://code.visualstudio.com/docs/setup/linux](https://code.visualstudio
 
 Copy the code and run it in the terminal
 
-```
+```sh
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 ```

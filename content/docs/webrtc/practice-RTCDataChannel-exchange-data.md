@@ -24,7 +24,7 @@ weight: 14
 
 Удалите элементы video и button из index.html и замените их следующим HTML-кодом:
 
-```
+```html
 <textarea id="dataChannelSend" disabled
     placeholder="Press Start, enter some text, then press Send."></textarea>
 <textarea id="dataChannelReceive" disabled></textarea>
@@ -38,7 +38,8 @@ weight: 14
 
 Одна текстовая область будет предназначена для ввода текста, другая будет отображать текст в потоковом режиме между узлами.
 Теперь index.html должен выглядеть так:
-```
+
+```html
 <!DOCTYPE html>
 <html>
 

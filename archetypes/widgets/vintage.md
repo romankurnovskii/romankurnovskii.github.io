@@ -6,6 +6,7 @@ imgLeft:
 imgRight:
 
 weight:
+
 widget:
   handler: vintage
 
