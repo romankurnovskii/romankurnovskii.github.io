@@ -10,24 +10,3 @@ module:
           target: assets/js/fontawesome/free-regular-svg-icons
         - source: js-packages/@fortawesome/free-solid-svg-icons
           target: assets/js/fontawesome/free-solid-svg-icons
-
-params:
-  enableInlineShortcodes: true
-  enableRobotsTXT: true
-
-# sitemap:
-#   changefreq: always
-#   filename: sitemap.xml
-#   priority: 0.5
-
-# need for search popup service / creates search.json index fo lunr.js
-outputFormats:
-  SearchIndex:
-    baseName: search
-    mediaType: application/json
-
-outputs:
-  home:
-    - HTML
-    - RSS
-    - SearchIndex
