@@ -1,4 +1,4 @@
-baseURL: /
+baseURL: https://romankurnovskii.com/
 title: Roman Kurnovskii
 
 # Uncomment when not installing with Hugo Modules
@@ -56,7 +56,23 @@ build:
   useResourceCacheWhen: never
   writeStats: false
 
+params:
+  enableInlineShortcodes: true
+  enableRobotsTXT: true
+
 sitemap:
   changefreq: always
   filename: sitemap.xml
   priority: 0.5
+
+# need for search popup service / creates search.json index fo lunr.js
+outputFormats:
+  SearchIndex:
+    baseName: search
+    mediaType: application/json
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - SearchIndex
