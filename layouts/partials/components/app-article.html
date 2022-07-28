@@ -1,0 +1,20 @@
+<article class="prose">
+  <center>
+    {{ $featured := partial "utils/get-featured" . }}
+    {{ with $featured }}
+    {{ . }}
+    {{ end }}
+
+    <h1 class="text-center">{{ .Title }}</h1>
+    <h4 class="text-center">{{ .Description }}</h4>
+
+    {{ partial "components/app-metadata" . }}
+
+    {{ if eq .Params.packageType "npm" }}
+    <a href="{{ .Params.packageUrl }}" target="_blank"><img src="/images/npmjs-bage.png" width="128px"></a>
+    {{ end }}
+    
+  </center>
+
+  {{ .Content }}
+</article>

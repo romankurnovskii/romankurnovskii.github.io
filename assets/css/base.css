@@ -24,6 +24,8 @@
   --color-primary-text: {{ partial "utils/get-style-color" (dict "context" . "path" (slice "dark" "primaryText")) }};
   --color-secondary-text: {{ partial "utils/get-style-color" (dict "context" . "path" (slice "dark" "secondaryText")) }};
   --color-tertiary-text: {{ partial "utils/get-style-color" (dict "context" . "path" (slice "dark" "tertiaryText")) }};
+  --bs-body-bg: {{ partial "utils/get-style-color" (dict "context" . "path" (slice "dark" "tertiaryBackground")) }};
+  --bs-body-color: {{ partial "utils/get-style-color" (dict "context" . "path" (slice "dark" "tertiaryText")) }};
 }
 
 body {
@@ -53,3 +55,5 @@ a:hover * {
   max-height: 48px;
   max-width: 48px
 }
+
+

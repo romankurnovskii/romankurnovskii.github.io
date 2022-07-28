@@ -1,0 +1,43 @@
+{{ define "main" }}
+<h2>{{ .Title }}</h2>
+
+<div class="flex flex-wrap">
+    {{ range where site.RegularPages "Type" "apps" }}
+    <div class="w-[48%] m-1">
+        {{/* <div class="border-1 m-1 h-48 w-[50%]"> */}}
+            {{/* <div style="height: 200px; width: 50%; border: 1"> */}}
+                <a href="{{ .RelPermalink }}">
+                    <div class="p-4 border-1 h-36">
+                        <article class="flex columns-2">
+                            <div class="media-left" style="align-self: center">
+                                {{ $image := partial "utils/get-image" (dict "context" . "url" .Params.iconImage
+                                "keyword" "*featured*") }}
+
+                                <img class="max-h-32" src="{{ $image }}" width="56" height="56">
+                            </div>
+                            <div class="media-content" style="align-self: center">
+                                <h2 class="mt-0 text-left">{{ .LinkTitle }} </h2>
+                                <p class="subtitle is-5" style="margin-bottom: 0.2rem">{{ .Description | plainify |
+                                    htmlUnescape
+                                    }}</p>
+
+
+                                {{ if eq .Params.packageType "npm" }}
+                                <div class="my-4 text-right">
+                                    <img src="/images/npmjs-bage.png" width="56px">
+                                </div>
+                                {{ end }}
+
+                            </div>
+                        </article>
+                    </div>
+                </a>
+            </div>
+
+
+            {{ end }}
+
+        </div>
+
+
+        {{ end }}
