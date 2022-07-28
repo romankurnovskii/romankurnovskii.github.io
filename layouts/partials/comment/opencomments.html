@@ -8,26 +8,25 @@
     <div id="opencomments__v2">
         <div class="w-full p-4">
             <div class="relative"> </div>
-            <ul id="opencomments__v2__list">
-            </ul>
+            <ul id="opencomments__v2__list"></ul>
         </div>
     </div>
 
-    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <form class="bg-tertiary-bg sdow-md rounded px-8 pt-6 pb-8 mb-4">
         <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-4" for="username">
+            <label class="block  text-sm font-bold mb-4" for="username">
                 {{ i18n "name" }}
             </label>
             <input id="form__comment_author"
-                class="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                class="shadow appearance-none border rounded w-full py-3 px-3  leading-tight focus:outline-none focus:shadow-outline"
                 id="username" type="text" placeholder="Anonymous">
         </div>
         <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+            <label class="block  text-sm font-bold mb-2" for="password">
                 {{ i18n "comment" }}
             </label>
             <textarea
-                class="shadow appearance-none border border-red-500 rounded w-full py-3 px-3 text-gray-700 mb- leading-tight focus:outline-none focus:shadow-outline"
+                class="shadow appearance-none border border-red-500 rounded w-full py-3 px-3  mb- leading-tight focus:outline-none focus:shadow-outline"
                 id="comment" type="text" placeholder="{{ i18n "comment" }}"></textarea>
         </div>
         <div class="flex items-center justify-between">

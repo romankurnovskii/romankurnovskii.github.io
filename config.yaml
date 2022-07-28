@@ -10,3 +10,5 @@ module:
           target: assets/js/fontawesome/free-regular-svg-icons
         - source: js-packages/@fortawesome/free-solid-svg-icons
           target: assets/js/fontawesome/free-solid-svg-icons
+
+ignoreErrors: ["error-remote-getjson"]

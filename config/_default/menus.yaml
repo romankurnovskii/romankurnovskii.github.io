@@ -8,12 +8,11 @@ main:
     - name: Треки
       url: /categories/треки/
       weight: 4
+    - name: Приложения
+      url: apps/
+      weight: 5
     - name: Публикации
       url: /p/publications
-      weight: 5
-    - name: Фото
-      url: categories/photos/
       weight: 8
-
 
 # eng menu in languages
