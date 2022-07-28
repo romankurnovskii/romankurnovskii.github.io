@@ -1,43 +1,5 @@
 const openCommentsServer = window.document.currentScript.getAttribute('server');
-
-const renderComments = (comments) => {
-    var commentsDiv = document.getElementById('opencomments');
-    commentsDiv.innerHTML = '' // TODO, not good
-
-    let commentUlElement = document.createElement('ul')
-
-    for (let comment of comments) {
-        let commentBlock = document.createElement('li')
-        let authorBlock = document.createElement("div");
-        let textBlock = document.createElement("div");
-
-
-        // set class names
-        commentBlock.classList.add('flex')
-        authorBlock.classList.add("author")
-        textBlock.classList.add('comment-text')
-
-
-        // set data
-        var author = document.createTextNode(comment.author + ": ");
-        var text = document.createTextNode(comment.comment);
-
-
-        // insert to block
-        authorBlock.appendChild(author);
-        textBlock.appendChild(text);
-
-        // combine comment
-        commentBlock.appendChild(authorBlock);
-        commentBlock.appendChild(textBlock);
-
-        commentUlElement.appendChild(commentBlock)
-
-        // add comment to comments list
-        commentsDiv.appendChild(commentUlElement)
-
-    }
-}
+const renderDivId = window.document.currentScript.getAttribute('renderDivId');
 
 function getDatePrintFormat(date) {
     return new Date(date).toLocaleDateString('ru-RU', {
@@ -47,43 +9,35 @@ function getDatePrintFormat(date) {
     });
 }
 
-const renderCommentsV2 = (comments) => {
-    let commentsDiv = document.getElementById('opencomments__v2__list');
+const renderComments = (comments) => {
+    let commentsDiv = document.getElementById('opencomments__list');
     commentsDiv.innerHTML = '' // TODO, not good
-
-    // let commentUlElement = document.createElement('ul')
 
     for (let comment of comments) {
         let commentBlock = document.createElement('li')
 
-
         commentBlock.innerHTML = `
-<div class="flex ml-2">
-    <div class="flex flex-col ml-2">
-        <span class="author">${comment.author}</span>
-        <span class="comment-text">${comment.comment}</span>
-    </div>
+<div class="comment__block ">
+        <span class="comment_author">${comment.author}</span>
+        <span class="comment_text">${comment.comment}</span>
 </div>
-<div class="flex flex-col items-center">
-    <span class="text-sm text-gray-300">${getDatePrintFormat(comment.date)}</span>
+<div class="comment_date__div">
+    <span class="comment_date">${getDatePrintFormat(comment.date)}</span>
 </div>
         `
         // add comment to comments list
         commentsDiv.appendChild(commentBlock)
-
     }
 }
-
 
 const setPageViews = (views) => {
     const pageViewsBlock = document.getElementById('page__views')
     pageViewsBlock.innerText += views
 }
 
-
 const e = React.createElement;
 
-function Example() {
+function OpenCommentsRender() {
     const url = window.location.href
 
     const handleSendComment = () => {
@@ -103,8 +57,7 @@ function Example() {
     const loadPageComments = () => {
         const requestUrl = `${openCommentsServer}?page=${url}`
         axios.get(requestUrl).then(response => {
-            // renderComments(response.data['comments'])
-            renderCommentsV2(response.data['comments'])
+            renderComments(response.data['comments'])
             setPageViews(response.data['page_views'])
         })
     }
@@ -124,5 +77,5 @@ function Example() {
 }
 
 
-ReactDOM.render(React.createElement(Example), document.getElementById("react-block"));
+ReactDOM.render(React.createElement(OpenCommentsRender), document.getElementById(renderDivId));
 
