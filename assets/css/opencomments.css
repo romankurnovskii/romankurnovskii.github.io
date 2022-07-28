@@ -1,33 +1,32 @@
-#opencomments ul {
-  all: none;
-}
-
-#opencomments li {
-  list-style-type: square;
-}
-
-#opencomments .comment-text {
-  flex: 1 1 auto;
-  margin: 0 10px;
-}
-
-#opencomments .author {
-  font-weight: 800;
-}
-
-#opencomments__v2 {
+#opencomments {
   @apply md:flex;
 }
 
-#opencomments__v2 li {
+#opencomments li {
   @apply mt-2 flex cursor-pointer items-center justify-between rounded bg-white p-2 transition hover:shadow-lg;
 }
 
-#opencomments__v2 .author {
+#opencomments .comment__block {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.5rem;
+}
+
+#opencomments .comment_author {
   @apply font-medium text-black;
 }
-#opencomments__v2 .comment-text {
+
+#opencomments .comment_text {
   @apply text-sm text-gray-600;
+}
+
+#opencomments .comment_date__div {
+  /* flex flex-col items-center */
+  @apply text-sm;
+}
+
+#opencomments .comment_date {
+  @apply text-sm;
 }
 
 #pages .page__views__div {
