@@ -6,7 +6,7 @@ tags: [react, hugo]
 series: 
 categories: [Hugo, React]
 date: "2022-06-19"
-featuredImage: /ru/posts/integrate-hugo-react/img/featured.jpg
+featuredImage: img/featured.jpg
 authors: [roman-kurnovskii]
 ---
 

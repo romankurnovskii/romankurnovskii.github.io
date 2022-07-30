@@ -7,7 +7,7 @@ series: ['шпаргалки']
 categories: [Docker]
 date: "2022-06-07"
 lastmod: "2022-06-07"
-featuredImage: /ru/posts/docker-commands/featured.jpg
+featuredImage: featured.jpg
 authors: [roman-kurnovskii]
 ---
 
