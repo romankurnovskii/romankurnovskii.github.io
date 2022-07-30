@@ -7,7 +7,7 @@ series:
 categories: [Python]
 date: "2022-06-04"
 lastmod: "2022-06-04"
-featuredImage: /ru/posts/howto-rename-files-in-python/featured.jpg
+featuredImage: featured.jpg
 authors: [roman-kurnovskii]
 ---
 

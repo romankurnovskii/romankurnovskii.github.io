@@ -6,8 +6,9 @@ tags: [hugo]
 series: 
 categories: [Hugo]
 date: 2022-07-09
-featuredImage: /en/posts/hugo-add-image-zoomin/img/featured.en.jpg
 authors: [roman-kurnovskii]
+featuredImage2: /en/posts/hugo-add-image-zoomin/img/featured.en.jpg
+featuredImage: img/static-scripts.png
 ---
 
 
