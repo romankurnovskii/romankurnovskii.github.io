@@ -7,8 +7,7 @@ series:
 categories: [Hugo]
 date: 2022-07-09
 authors: [roman-kurnovskii]
-featuredImage2: /ru/posts/hugo-add-image-zoomin/img/featured.jpg
-featuredImage: img/static-scripts.png
+featuredImage: img/featured.jpg
 ---
 
 ## Введение

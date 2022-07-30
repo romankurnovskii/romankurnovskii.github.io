@@ -10,7 +10,7 @@ series:
 date: "2022-05-21"
 lastmod: "2022-05-21"
 draft: true
-featuredImage: "docs/aws-certified-developer-associate/images/mem-01.png"
+featuredImage: "images/mem-01.png"
 ---
 
 ## Изучение вопроса
