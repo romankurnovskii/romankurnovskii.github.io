@@ -8,11 +8,11 @@ authors:
 tags:
 categories: [треки]
 series: []
-featuredImage: /ru/docs/90daysofdevops/images/logo.png
 date: "2022-04-21"
 lastmod: "2022-04-21"
 draft: false
 weight: 0
+featuredImage: images/logo.png
 ---
 
 <!-- <p align="center">
