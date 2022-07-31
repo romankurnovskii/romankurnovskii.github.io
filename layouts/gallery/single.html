@@ -18,8 +18,8 @@
             {{- $image = .Fill (printf "%dx%d" .Width .Width) -}}
             {{- end -}}
             <div class="col-6 col-md-4 col-xl-3 pb-3 px-2">
-                <img src="{{ $image.RelPermalink }}" id="zoom-default" alt="Gallery Image" class="img-fluid" width="{{ $image.Width }}"
-                    height="{{ $image.Height }}">
+                <img src="{{ $image.RelPermalink }}" id="zoom-default" alt="Gallery Image" class="img-fluid"
+                    width="{{ $image.Width }}" height="{{ $image.Height }}" loading="lazy">
             </div>
             {{ end }}
         </div>
@@ -27,5 +27,3 @@
 </section>
 
 {{ end }}
-
-
