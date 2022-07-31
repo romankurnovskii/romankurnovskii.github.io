@@ -15,7 +15,7 @@ We can use recursion.
 Use `Object.assign()` and an empty object ({}) to create a shallow clone of the original. 
 `Use Object.keys()` and `Array.prototype.forEach()` to determine which key-value pairs need to be deep cloned.
 
-```js
+```javascript
 const deepClone = obj => {
   let clone = Object.assign({}, obj);
   Object.keys(clone).forEach(
@@ -29,7 +29,7 @@ const deepClone = obj => {
 };
 ```
 
-```js
+```javascript
 const a = { foo: 'bar', obj: { a: 1, b: 2 } };
 const b = deepClone(a); // a !== b, a.obj !== b.obj
 ```

@@ -43,7 +43,7 @@ React будет искать данный блок и отрисует внут
 Создадим файл `static/js/my_react_component.js` и запишем код:
 > Важно: сркипт должен подключиться в проекте **после** блока `<div id="my_react_app"></div>`
 
-```js
+```javascript
 const e = React.createElement;
 
 const MyCountButton = () => {

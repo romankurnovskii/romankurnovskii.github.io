@@ -86,7 +86,7 @@ weight: 14
 Большая часть кода на этом шаге такая же, как и в примере RTCPeerConnection.
 Функции sendData() и createConnection() содержат большую часть нового кода:
 
-```js
+```javascript
 function createConnection() {
   dataChannelSend.placeholder = '';
   var servers = null;

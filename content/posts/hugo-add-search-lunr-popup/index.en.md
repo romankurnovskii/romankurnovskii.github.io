@@ -154,7 +154,7 @@ outputs:
 <details>
 <summary>6. `static/js/search.js`</summary>
 
-```js
+```javascript
 const languageMode = window.document.currentScript.getAttribute('languageMode');
 
 let idx = {}
@@ -429,7 +429,7 @@ outputs:
 
 Create file in the path: `static/js/search.js`
 
-```js
+```javascript
 const languageMode = window.document.currentScript.getAttribute('languageMode');
 
 let idx = {}

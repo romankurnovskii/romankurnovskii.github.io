@@ -44,7 +44,7 @@ weight: 12
 
 Добавьте следующее в main.js в вашей папке js:
 
-```js
+```javascript
 'use strict';
 
 // On this codelab, you will be streaming only video (video: true).
@@ -85,7 +85,7 @@ navigator.mediaDevices.getUserMedia(mediaStreamConstraints)
 
 Следуя запросу `getUserMedia()`, браузер запрашивает у пользователя разрешение на доступ к своей камере (если это впервые, когда запрашивается доступ к камере для текущего источника). В случае успеха возвращается MediaStream, который может быть использован элементов мультимедиа через атрибут srcObject:
 
-```js
+```javascript
 navigator.mediaDevices.getUserMedia(mediaStreamConstraints)
   .then(gotLocalMediaStream).catch(handleLocalMediaStreamError);
 
@@ -96,7 +96,7 @@ function gotLocalMediaStream(mediaStream) {
 
 Аргумент constraints позволяет указать, какой тип мультимедиа получать. В этом примере используется только видео, т.к. звук по умолчанию отключен:
 
-```js
+```javascript
 const mediaStreamConstraints = {
   video: true,
 };
@@ -104,7 +104,7 @@ const mediaStreamConstraints = {
 
 Вы можете использовать ограничения для дополнительных требований, таких как разрешение видео:
 
-```js
+```javascript
 const hdConstraints = {
   video: {
     width: {
@@ -123,7 +123,7 @@ const hdConstraints = {
 
 Если `getUserMedia()` сработал успешно, в качестве источника элемента video устанавливается видеопоток с веб-камеры:
 
-```js
+```javascript
 function gotLocalMediaStream(mediaStream) {
   localVideo.srcObject = mediaStream;
 }

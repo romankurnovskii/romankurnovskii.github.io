@@ -21,7 +21,7 @@ weight: 7
 
 Объект конфигурации также поддерживает свойства username и credentials для защиты доступа к серверу. Они необходимы при подключении к TURN-серверу.
 
-```js
+```javascript
 const iceConfiguration = {
     iceServers: [
         {

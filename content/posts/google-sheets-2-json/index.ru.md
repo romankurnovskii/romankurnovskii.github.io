@@ -47,7 +47,7 @@ authors: ["roman-kurnovskii"]
 
 Итого функция с получением массива и функция с выдачей результата:
 
-```js
+```javascript
 const sheetName = 's1' // название листа
 const sheetRange = 'A:J' // диапазон
 

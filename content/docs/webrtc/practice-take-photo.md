@@ -33,7 +33,7 @@ weight: 17
 1.	Установите канал передачи данных. Обратите внимание, что на этом шаге вы не добавляете никаких медиапотоков к одноранговому соединению.
 2.	Захватите видеопоток пользователя с веб-камеры с помощью getUserMedia():
 
-```js
+```javascript
 var video = document.getElementById('video');
 
 function grabWebCamVideo() {
@@ -49,7 +49,7 @@ function grabWebCamVideo() {
 ```
 3.	Когда пользователь нажимает кнопку Snap, получает снимок (видеокадр) из видеопотока и отображает его в элементе canvas:
 
-```js
+```javascript
 var photo = document.getElementById('photo');
 var photoContext = photo.getContext('2d');
 
@@ -60,7 +60,7 @@ function snapPhoto() {
 ```
 4.	Когда пользователь нажимает кнопку Send, преобразуйте изображение в байты и отправьте их по каналу передачи данных:
 
-```js
+```javascript
 function sendPhoto() {
   // Split data channel message in chunks of this byte length.
   var CHUNK_LEN = 64000;
@@ -88,7 +88,7 @@ function sendPhoto() {
 ```
 5.	Принимающая сторона преобразует байты сообщений канала передачи данных обратно в изображение и отображает изображение пользователю:
 
-```js
+```javascript
 function receiveDataChromeFactory() {
   var buf, count;
 

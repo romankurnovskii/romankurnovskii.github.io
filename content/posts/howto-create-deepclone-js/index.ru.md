@@ -17,7 +17,7 @@ authors: [roman-kurnovskii]
 Воспользуемся методом `Object.assign()` и возьмем пустой объект `({})`, чтобы создать клон оригинального объекта.
 Используем `Object.keys()` и `Array.prototype.forEach()` для определения ключей-значений, которые нужно полностью клонировать (не ссылаться на них).
 
-```js
+```javascript
 const deepClone = obj => {
   let clone = Object.assign({}, obj);
   Object.keys(clone).forEach(
@@ -31,7 +31,7 @@ const deepClone = obj => {
 };
 ```
 
-```js
+```javascript
 const a = { foo: 'bar', obj: { a: 1, b: 2 } };
 const b = deepClone(a); // a !== b, a.obj !== b.obj
 ```
