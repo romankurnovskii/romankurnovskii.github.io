@@ -1,6 +1,13 @@
 const openCommentsServer = window.document.currentScript.getAttribute('server');
 const renderDivId = window.document.currentScript.getAttribute('renderDivId');
 
+const setPageViews = (views) => {
+    const pageViewsDiv= document.getElementById('page__views__div')
+    const pageViewsBlock = document.getElementById('page__views')
+    pageViewsBlock.innerText += views
+    pageViewsDiv.style.display = 'initial'
+}
+
 function getDatePrintFormat(date) {
     return new Date(date).toLocaleDateString('ru-RU', {
         year: 'numeric',
@@ -28,11 +35,6 @@ const renderComments = (comments) => {
         // add comment to comments list
         commentsDiv.appendChild(commentBlock)
     }
-}
-
-const setPageViews = (views) => {
-    const pageViewsBlock = document.getElementById('page__views')
-    pageViewsBlock.innerText += views
 }
 
 const e = React.createElement;
