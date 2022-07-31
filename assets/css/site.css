@@ -60,3 +60,7 @@
   border-top-color: var(--color-eureka);
   border-bottom-color: transparent;
 }
+
+#page__views__div {
+  display: none;
+}

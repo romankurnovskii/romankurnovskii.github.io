@@ -28,15 +28,3 @@
 #opencomments .comment_date {
   @apply text-sm;
 }
-
-#pages .page__views__div {
-  display: none;
-}
-
-#pages\.en .page__views__div {
-  display: none;
-}
-
-.posts__list .page__views__div {
-  display: none;
-}
