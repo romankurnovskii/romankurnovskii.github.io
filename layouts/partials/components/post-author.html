@@ -2,7 +2,7 @@
   {{ range . }}
     <div class="my-8 flex flex-col items-center md:flex-row">
       <a href="{{ .Permalink }}" class="md:me-4 text-primary-text h-24 w-24">
-        {{ $img := partial "utils/get-image" (dict "context" . "url" .Params.avatar "keyword" "*avatar*") }}
+        {{ $img := partial "utils/get-image" (dict "context" . "imgUrl" .Params.avatar "keyword" "*avatar*") }}
         {{ with $img }}
           <img
             src="{{ . }}"

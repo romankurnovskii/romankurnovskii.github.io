@@ -1,5 +1,5 @@
 <div class="grid grid-cols-9 grid-rows-5 h-(screen-16)">
-  {{- $imgLeft := partial "utils/get-image" (dict "context" . "url" .Params.imgLeft)}}
+  {{- $imgLeft := partial "utils/get-image" (dict "context" . "imgUrl" .Params.imgLeft)}}
   {{- with $imgLeft }}
   <div class="col-start-2 col-span-4 row-start-3 row-span-2 bg-local bg-cover z-10 shadow-2xl"
     style="background-image: url({{ . }});"></div>
@@ -12,7 +12,7 @@
       </div>
     </div>
   </div>
-  {{- $imgRight := partial "utils/get-image" (dict "context" . "url" .Params.imgRight)}}
+  {{- $imgRight := partial "utils/get-image" (dict "context" . "imgUrl" .Params.imgRight)}}
   {{- with $imgRight }}
   <div class="col-start-5 col-span-4 row-start-2 row-span-2 bg-local bg-cover shadow-2xl"
     style="background-image: url({{ . }});">
