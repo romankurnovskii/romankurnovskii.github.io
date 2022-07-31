@@ -125,7 +125,7 @@ jobs:
 
 найти поле scripts, если нет создать:
 
-```jsx
+```javascriptx
 {
 ...,
 
@@ -146,7 +146,7 @@ jobs:
 
 Не отработала, ошибка:
 
-```jsx
+```javascriptx
 info  - Copying "static build" directory
 info  - No "exportPathMap" found in "next.config.js". Generating map from "./pages"
 Error: Image Optimization using Next.js' default loader is not compatible with `next export`.
@@ -162,7 +162,7 @@ Error: Image Optimization using Next.js' default loader is not compatible with `
 
 пример кода из документации
 
-```jsx
+```javascriptx
 module.exports = {
   exportPathMap: async function (
     defaultPathMap,
@@ -181,7 +181,7 @@ module.exports = {
 
 мой:
 
-```jsx
+```javascriptx
 module.exports = withBundleAnalyzer({
   images: {
     domains: ["pbs.twimg.com"],
@@ -195,7 +195,7 @@ module.exports = withBundleAnalyzer({
 
 Добавляю:
 
-```jsx
+```javascriptx
 const repoName = '/notion-project'
 module.exports = {
     basePath: repoName,

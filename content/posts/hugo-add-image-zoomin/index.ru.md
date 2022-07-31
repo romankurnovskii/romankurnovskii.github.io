@@ -56,7 +56,7 @@ featuredImage: img/featured.jpg
 
 #### static/js/zoom-image/index.js
 
-```js
+```javascript
 const zoomDefault = mediumZoom('#zoom-default')
 const zoomMargin = mediumZoom('#zoom-margin', { margin: 48 })
 const zoomBackground = mediumZoom('#zoom-background', { background: '#212530' })
@@ -104,7 +104,7 @@ observedZooms.forEach(zoom => {
 
 #### static/js/zoom-image/placeholders.js
 
-```js
+```javascript
 // Show placeholders for paragraphs
 const paragraphs = [].slice.call(document.querySelectorAll('p.placeholder'))
 

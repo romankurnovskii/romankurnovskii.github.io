@@ -70,7 +70,7 @@ AWS Lambda автоматически запускает программный 
 - cook_secs - время варки (микроволновки)
 - req_secs - время приготовления
 
-```js
+```javascript
 console.log('Loading function');
 exports.handler = function(event, context) {
   console.log(JSON.stringify(event, null, 2));

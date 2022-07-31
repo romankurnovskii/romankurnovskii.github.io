@@ -20,7 +20,7 @@ weight: 2
 Чаще всего для этого используют функцию getUserMedia(), которая возвращает промис, который будет преобразован в MediaStream для соответствующих мультимедийных устройств. Эта функция принимает один объект MediaStreamConstraints, который определяет имеющиеся требования. Например, чтобы просто открыть микрофон и камеру по умолчанию, мы должны сделать следующее:
 
 _Через промисы:_
-```js
+```javascript
 const constraints = {
     'video': true,
     'audio': true
@@ -35,7 +35,7 @@ navigator.mediaDevices.getUserMedia(constraints)
 ```
 
 _Через async/await_
-```js
+```javascript
 const openMediaDevices = async (constraints) => {
     return await navigator.mediaDevices.getUserMedia(constraints);
 }
@@ -57,7 +57,7 @@ try {
 
 _Через промисы_
 
-```js
+```javascript
 function getConnectedDevices(type, callback) {
     navigator.mediaDevices.enumerateDevices()
         .then(devices => {
@@ -70,7 +70,7 @@ getConnectedDevices('videoinput', cameras => console.log('Cameras found', camera
 ```
 
 _через async/await_
-```js
+```javascript
 async function getConnectedDevices(type) {
     const devices = await navigator.mediaDevices.enumerateDevices();
     return devices.filter(device => device.kind === type)
@@ -84,7 +84,7 @@ console.log('Cameras found:', videoCameras);
 
 Большинство компьютеров поддерживают подключение различных устройств прямо во время работы. Это может быть веб-камера, подключенная через USB, Bluetooth-гарнитура или внешние динамики. Чтобы должным образом поддерживать все это, веб-приложение должно отслеживать изменения в статусах мультимедиа-устройств. Это можно сделать, добавив «отслеживатель» в navigator.mediaDevices для события devicechange.
 
-```js
+```javascript
 // Updates the select element with the provided set of cameras
 function updateCameraList(cameras) {
     const listElement = document.querySelector(‘select#availableCameras’);
@@ -117,7 +117,7 @@ navigator.mediaDevices.addEventListener(‘devicechange’, event => {
 
 Объект ограничений, осуществляющий интерфейс MediaStreamConstraints и который мы отправляем в качестве параметра в getUserMedia(), позволяет нам открывать мультимедиа-устройство, которое отвечает определенным требованиям. Эти требования могут быть как очень расплывчатыми (аудио и/или видео), так и очень специфичными (минимальное разрешение камеры или точный ID устройства). Рекомендуем, чтобы приложения, использующие `getUserMedia()` API, сначала проверяли существующие устройства, а затем определяли ограничения, которые соответствуют точному устройству через deviceID-ограничение. Устройства, по возможности, будут настроены в соответствии с ограничениями. Мы можем включить эхоподавление на микрофоне, установить определенную или минимальную ширину и высоту видео с камеры.
 
-```js
+```javascript
 async function getConnectedDevices(type) {
     const devices = await navigator.mediaDevices.enumerateDevices();
     return devices.filter(device => device.kind === type)
@@ -149,7 +149,7 @@ if (cameras && cameras.length > 0) {
 ## Локальное воспроизведение
 Как только мультимедиа-устройство открыто и есть доступный MediaStream, мы можем назначить его для его видео- или аудио-элемента локальное воспроизведение потока.
 
-```js
+```javascript
 async function playVideoFromCamera() {
     try {
         const constraints = {'video': true, 'audio': true};

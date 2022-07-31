@@ -22,7 +22,7 @@ weight: 4
 Спецификации WebRTC включают API для коммуникации с ICE-сервером (ICE =Internet Connectivity Establishment, установление интерактивного подключения), но компонент сигналинга не является частью этого сервера. Сигналинг необходим, чтобы два узла могли использовать один и тот же способ подключения. Обычно это можно решить через обычный Web API на базе HTTP (то есть службу REST или другой механизм RPC), где веб-приложения могут передавать необходимую информацию до того, как будет установлено соединение.
 Следующий фрагмент кода показывает, как эту придуманную службу сигналинга можно использовать для отправки и получения асинхронных сообщений. Мы будем использовать по необходимости этот прием в оставшихся примерах в этом гайде.
 
-```js
+```javascript
 // Set up an asynchronous communication channel that will be
 // used during the peer connection setup
 const signalingChannel = new SignalingChannel(remoteClientId);
@@ -43,7 +43,7 @@ signalingChannel.send('Hello!');
 
 Для установки однорангового соединения с вызывающей стороны, мы создаем объект RTCPeerConnection, и затем вызываем createOffer() для создания объекта RTCSessionDescription. Описание этого сеанса устанавливается как локальное описание с использованием setLocalDescription(), и затем отправляется через наш сигналинг-канал получающей стороне. Мы также устанавливаем «прослушиватель» для нашего сигналинг-канала, чтобы знать, когда получающей стороной будет получен ответ на описание нашего запрошенного сеанса.
 
-```js
+```javascript
 async function makeCall() {
     const configuration = {'iceServers': [{'urls': 'stun:stun.l.google.com:19302'}]}
     const peerConnection = new RTCPeerConnection(configuration);
@@ -63,7 +63,7 @@ async function makeCall() {
 
 Далее, мы делаем запрос createAnswer() для создания ответа на полученный запрос. Этот ответ устанавливается как локальное описание через использование setLocalDescription() и затем отправляется набирающей стороне через наш сигналинг-сервер.
 
-```js
+```javascript
 const peerConnection = new RTCPeerConnection(configuration);
 signalingChannel.addEventListener('message', async message => {
     if (message.offer) {
@@ -94,7 +94,7 @@ API WebRTC напрямую поддерживает как STUN, так и TURN
 
 Для сбора ICE-кандидатов, просто добавьте «прослушиватель» в событие icecandidate. Объект RTCPeerConnectionIceEvent, созданный этим «прослушивателем», будет содержать свойство candidate, представляющее нового кандидата, которого нужно отправить удаленному узлу (см. Сигналинг)
 
-```js
+```javascript
 // Listen for local ICE candidates on the local RTCPeerConnection
 peerConnection.addEventListener(‘icecandidate’, event => {
     if (event.candidate) {

@@ -30,7 +30,7 @@ peerConnection.addEventListener('datachannel', event => {
 
 Прежде чем канал данных можно будет использовать для отправки данных, клиент должен дождаться его открытия. Это происходит через прослушивание события open. Точно так же существует событие close, когда одна из сторон закрывает канал.
 
-```js
+```javascript
 const messageBox = document.querySelector('#messageBox');
 const sendButton = document.querySelector('#sendButton');
 const peerConnection = new RTCPeerConnection(configuration);
@@ -54,7 +54,7 @@ dataChannel.addEventListener('close', event => {
 
 Отправка сообщения в RTCDataChannel выполняется через вызов функции send() с данными, которые мы хотим отправить. Параметр data для этой функции может быть типа String, Blob, ArrayBuffer или ArrayBufferView.
 
-```js
+```javascript
 const messageBox = document.querySelector('#messageBox');
 const sendButton = document.querySelector('#sendButton');
 
@@ -67,7 +67,7 @@ sendButton.addEventListener('click', event => {
 
 Удаленный узел будет получать сообщения, отправленные на RTCDataChannel, через отслеживание события message.
 
-```js
+```javascript
 const incomingMessages = document.querySelector('#incomingMessages');
 
 const peerConnection = new RTCPeerConnection(configuration);
