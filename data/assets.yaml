@@ -10,7 +10,7 @@ highlightjs:
     url: https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@%s/build/languages/%s.min.js
 
 katex:
-  version: 0.15.2
+  version: 0.16.0
   css:
     url: https://cdn.jsdelivr.net/npm/katex@%s/dist/katex.min.css
     sri: sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ
@@ -22,14 +22,14 @@ katex:
     sri: sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR
 
 mermaid:
-  version: 8.14.0
+  version: 9.1.3
   js:
     url: https://cdn.jsdelivr.net/npm/mermaid@%s/dist/mermaid.min.js
     sri: sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0
 
 # Valine
 valine:
-  version: 1.4.16
+  version: 1.5.1
   js:
     url: https://cdn.jsdelivr.net/npm/valine@%s/dist/Valine.min.js
     sri: sha384-e0+DNUCJo75aOAzHQbFWYBCM9/S4f0BhRJXvEgbE3mMS85RM20MSSGStHuNdY2QK
