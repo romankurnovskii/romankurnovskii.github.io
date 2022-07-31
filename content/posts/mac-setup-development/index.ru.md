@@ -20,6 +20,7 @@ authors: [roman-kurnovskii]
 - macOS Monterey (Update always)
 
 ![](img/mac-monitors.png)
+
 ## Homebrew
 
 Install [Homebrew](https://brew.sh) as package manager for macOS:
@@ -45,33 +46,40 @@ Install GUI applications (read more about these in GUI Applications):
 
 ```bash
 brew install --cask \
-  google-chrome  \
-  firefox \
-  visual-studio-code \
-  all-in-one-messenger \
-  sublime-text \
-  docker \
-  rectangle \
-  discord \
-  vlc \
-  figma \
-  grammarly \
-  macx-youtube-downloader \
-  notion \
-  postman \
-  tor-browser \
-  transmission \
-  utm \
-  viber \
-  yandex-disk \
-  zoom \
-  mongodb-compass \
-  disk-inventory-x \
-  obs \
-  spotify \
-  iterm2 \
-  deepl \
-  syncthing
+ all-in-one-messenger \
+ deepl \
+ canva \
+ dbeaver-community \
+ deepl \
+ discord \
+ disk-inventory-x \
+ docker \
+ figma \
+ firefox \
+ google-chrome  \
+ google-drive \
+ grammarly \
+ iterm2 \
+ macx-youtube-downloader \
+ mongodb-compass \
+ notion \
+ obs \
+ postman \
+ rectangle \
+ reverso \
+ spark-ar-studio
+ spotify \
+ sublime-text \
+ syncthing \
+ tor-browser \
+ transmission \
+ utm \
+ viber \
+ visual-studio-code \
+ vlc \
+ yandex-disk \
+ zettlr \
+ zoom
 ```
 
 Install terminal applications (read more about these in Terminal Applications):
@@ -83,13 +91,17 @@ brew install \
   nvm \
   jupyterlab
 ```
+
 ## Additional GUI Applications
+
 ### Kotatogram
+
  [Kotatogram](https://kotatogram.github.io/) - Experimental fork of Telegram Desktop. Folders with features
 
 ## GUI Applications
 
 ### Google Chrome
+
  [Google Chrome](https://www.google.com/chrome/) (web development, web browsing)
   - Preferences
     - set default browser
@@ -121,9 +133,11 @@ brew install \
     - [Opus●Guide](https://chrome.google.com/webstore/detail/opus%E2%97%8Fguide/fpnkogmkokahibbdbfoligochippakeb) (Step-by-step for instructions)
 
 ### Disk Inventory X
+
 [Disk Inventory X](http://www.derlien.com/) (disk usage utility for macOS)
 
 ### Docker
+
 [Docker](https://www.docker.com/products/docker-desktop) (Docker, see [setup](/docker-macos/))
   - used for running databases (e.g. PostgreSQL, MongoDB) in container without cluttering the Mac
   - Preferences
@@ -131,35 +145,45 @@ brew install \
 
 
 ### Firefox
+
 [Firefox](https://www.google.com/chrome/) (web development)
 
 ### Visual Studio Code
+
 [Visual Studio Code](https://code.visualstudio.com/) (web development IDE
 
 ### Sublime Text
+
 [Sublime Text](https://www.sublimetext.com/) (editor)
 
 ### Maccy
+
  [Maccy](https://maccy.app/) (clipboard manager)
   - enable "Launch at Login"
 
 
 ### OBS
+
 [OBS](https://obsproject.com/) (for video recording and live streaming)
   - for Native Mac Screen recorder
     - Base (Canvas) 2880x1800 (Ratio: 16:10)
     - Output 1728x1080
     ![](img/obs-base-canvas.png)
+    
 ### Spotify
+
 [Spotify](https://www.spotify.com/)
 
 ### Syncthing
+
 [syncthing](https://syncthing.net/) - Sync folders/files between devices. I use to backup all photos/video from mobile to PC
 
 ### Transmission
+
  [Transmission](https://www.transmissionbt.com/) (A torrent client that I use. Very minimal in its UI but very powerful and has all the features that I need)
 
 ### UTM
+
 [UTM](https://mac.getutm.app/) (Virtual machines UI using QEMU)
   - download ubuntu for arm, [doc](https://mac.getutm.app/gallery/ubuntu-20-04)
   - On error with shared folder: *Could not connect: Connection refused* open in browser: http://127.0.0.1:9843/
@@ -169,6 +193,7 @@ sudo apt install spice-vdagent spice-webdavd -y
 ```
 
 ### VLC
+
 [VLC](https://www.videolan.org/vlc/) (video player)
   - use as default for video files
 
@@ -176,11 +201,16 @@ sudo apt install spice-vdagent spice-webdavd -y
 ## Terminal Applications
 
 ### nvm
+
 [nvm](https://github.com/nvm-sh/nvm) (node version manager)
+
 ### jupyterlab
+
 [jupyterlab](https://jupyter.org/) (Jupyter - python development, fast code snippets)
   - `jupyter notebook` - to start jupyter notebook
+  - 
 ### ffmpeg
+
 [ffmpeg](https://ffmpeg.org/) (Converting video and audio)
   - compress video:
   ```bash
@@ -307,6 +337,7 @@ echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zs
 ```
 
 ### Enable suggestions
+
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 echo "plugins=(zsh-autosuggestions)" >>~/.zshrc
@@ -343,6 +374,7 @@ alias python=python3
 ```
 
 Final view of .zprofile
+
 ```bash
 ...
 alias pip=pip3
@@ -351,6 +383,7 @@ alias upd='omz update; brew update; brew upgrade; brew cu -a --cleanup -y -v; br
 ```
 
 ## Links
+
 - [https://www.robinwieruch.de/mac-setup-web-development/](https://www.robinwieruch.de/mac-setup-web-development/)
 - [https://sourabhbajaj.com/mac-setup/iTerm/ack.html](https://sourabhbajaj.com/mac-setup/iTerm/ack.html)
 - [https://www.engineeringwithutsav.com/blog/spice-up-your-macos-terminal](https://www.engineeringwithutsav.com/blog/spice-up-your-macos-terminal)
