@@ -206,7 +206,7 @@ const hideSearchResults = (event, divBlock) => {
     event.preventDefault()
     if (!divBlock.contains(event.target)) {
         divBlock.style.display = 'none';
-        divBlock.setAttribute('hidden')
+        divBlock.setAttribute('class', 'hidden')
     }
 }
 
