@@ -13,7 +13,7 @@
     <div class="bg-secondary-bg pl-scrollbar">
       <div class="mx-auto max-w-screen-xl">
         <div class="h-(screen-16) grid grid-cols-9 grid-rows-5">
-          {{- $imgLeft := partial "utils/get-image" (dict "context" . "url" .Site.Params.hero.imgLeft) }}
+          {{- $imgLeft := partial "utils/get-image" (dict "context" . "imgUrl" .Site.Params.hero.imgLeft) }}
           {{- with $imgLeft }}
             <div
               class="z-10 col-span-4 col-start-2 row-span-2 row-start-3 bg-cover bg-local shadow-2xl"
@@ -32,7 +32,7 @@
               </div>
             </div>
           </div>
-          {{- $imgRight := partial "utils/get-image" (dict "context" . "url" .Site.Params.hero.imgRight) }}
+          {{- $imgRight := partial "utils/get-image" (dict "context" . "imgUrl" .Site.Params.hero.imgRight) }}
           {{- with $imgRight }}
             <div
               class="col-span-4 col-start-5 row-span-2 row-start-2 bg-cover bg-local shadow-2xl"
@@ -65,7 +65,7 @@
   {{ $backgroundStyle := "" }}
 
   {{ if $widget.background.image }}
-    {{ $image := partial "utils/get-image.html" (dict "context" . "url" $widget.background.image) }}
+    {{ $image := partial "utils/get-image.html" (dict "context" . "imgUrl" $widget.background.image) }}
     {{ $backgroundStyle = print $backgroundStyle "background-image: url(" $image ");" }}
     {{/* background size */}}
     {{ $size := $widget.background.size }}

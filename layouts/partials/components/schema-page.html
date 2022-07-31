@@ -7,7 +7,7 @@
         "@id": {{ .Permalink }}
     },
     "headline": "{{ partial "get-title" . }}",
-    {{- $img := partial "utils/get-image" (dict "context" . "url" .Params.featuredImage "keyword" "*featured*") }}
+    {{- $img := partial "utils/get-image" (dict "context" . "imgUrl" .Params.featuredImage "keyword" "*featured*") }}
     {{- with $img }}
     "image": {{ . }},
     {{ end -}}
@@ -43,8 +43,8 @@
         {{ else -}}
         "name": {{ .Site.Title }},
         {{ end -}}
-        {{ $publisherLogo := partial "utils/get-image" (dict "context" . "url" .Site.Params.publisherLogo) -}}
-        {{ $icon := partial "utils/get-image" (dict "context" . "url" .Site.Params.icon) -}}
+        {{ $publisherLogo := partial "utils/get-image" (dict "context" . "imgUrl" .Site.Params.publisherLogo) -}}
+        {{ $icon := partial "utils/get-image" (dict "context" . "imgUrl" .Site.Params.icon) -}}
         {{ if $publisherLogo -}}
         "logo": {
             "@type": "ImageObject",

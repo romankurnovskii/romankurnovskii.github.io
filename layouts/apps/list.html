@@ -10,7 +10,7 @@
                     <div class="p-4 border-1 h-36">
                         <article class="flex columns-2">
                             <div class="media-left" style="align-self: center">
-                                {{ $image := partial "utils/get-image" (dict "context" . "url" .Params.iconImage
+                                {{ $image := partial "utils/get-image" (dict "context" . "imgUrl" .Params.iconImage
                                 "keyword" "*featured*") }}
 
                                 <img class="max-h-32" src="{{ $image }}" width="56" height="56">
