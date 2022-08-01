@@ -65,10 +65,9 @@ sitemap:
   filename: sitemap.xml
   priority: 0.5
 
-# need for search popup service / creates search.json index fo lunr.js
 outputFormats:
   SearchIndex:
-    baseName: search
+    baseName: search # creates search.json for each language
     mediaType: application/json
 
 outputs:

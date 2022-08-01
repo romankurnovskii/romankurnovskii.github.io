@@ -5,8 +5,8 @@ let searchIndex = {}
 let pagesStore = {}
 
 // Need to create ONLY once , maybe before push | during build
-const createIndex = (documents, lang) => {
-    searchIndex[lang] = lunr(function () {
+const createIndex = (documents) => {
+    searchIndex = lunr(function () {
         this.field("title");
         this.field("content");
         this.field("description");
@@ -29,13 +29,7 @@ const loadIndexData = () => {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             const pages_content = JSON.parse(this.responseText);
-
-            const ru_pages = pages_content['ru']
-            const en_pages = pages_content['en']
-
-            createIndex(ru_pages, 'ru')
-            createIndex(en_pages, 'en')
-
+            createIndex(pages_content)
         }
     };
 
@@ -43,8 +37,8 @@ const loadIndexData = () => {
     xmlhttp.send();
 }
 
-const search = (text, languageMode) => {
-    let result = searchIndex[languageMode].search(text)
+const search = (text) => {
+    let result = searchIndex.search(text)
     return result
 }
 
@@ -91,11 +85,6 @@ const renderSearchResults = (results) => {
 
 }
 
-const getPageLanguage = () => {
-    // var languageMode = document.getElementById("languageMode");
-    // languageMode = 'English' == languageMode.innerText ? 'en' : 'ru'
-    return languageMode
-}
 
 const searchFormObserver = () => {
     var form = document.getElementById("search");
@@ -108,7 +97,7 @@ const searchFormObserver = () => {
             return
         }
 
-        const search_results = search(term, getPageLanguage());
+        const search_results = search(term, languageMode);
         renderSearchResults(search_results.slice(0, MAX_SEARCH_RESULTS))
 
     }, false);
@@ -118,8 +107,3 @@ const searchFormObserver = () => {
 loadIndexData()
 
 searchFormObserver()
-
-
-
-
-
