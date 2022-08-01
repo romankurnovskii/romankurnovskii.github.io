@@ -1,5 +1,5 @@
 ---
-title: '#90DaysOfDevOps - EFK Stack - Day 82'
+title: 'EFK Stack - Day 82'
 published: false
 description: 90DaysOfDevOps - EFK Stack
 tags: 'devops, 90daysofdevops, learning'

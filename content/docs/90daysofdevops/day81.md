@@ -1,5 +1,5 @@
 ---
-title: '#90DaysOfDevOps - Fluentd & FluentBit - Day 81'
+title: 'Fluentd & FluentBit - Day 81'
 published: false
 description: 90DaysOfDevOps - Fluentd & FluentBit
 tags: "devops, 90daysofdevops, learning"
@@ -65,6 +65,7 @@ Fluent Bit в Kubernetes развертывается как DaemonSet, что �
 ![](../images/Day81_Monitoring3.png?v1)
 
 Эта ConfigMap будет выглядеть примерно так:
+
 ```
 Name:         fluent-bit
 Namespace:    default

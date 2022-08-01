@@ -1,5 +1,5 @@
 ---
-title: "#90DaysOfDevOps - Data Services - Day 85"
+title: Data Services - Day 85
 published: false
 description: "90DaysOfDevOps - Data Services"
 tags: "devops, 90daysofdevops, learning"
