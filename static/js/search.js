@@ -2,41 +2,9 @@ const languageMode = window.document.currentScript.getAttribute('languageMode');
 const MAX_SEARCH_RESULTS = 10;
 
 let searchIndex = {};
-const pagesStore = {};
+let pagesStore = {};
 
-// Need to create ONLY once , maybe before push | during build
-const createIndex = documents => {
-	searchIndex = lunr(function () {
-		this.field('title');
-		this.field('content');
-		this.field('description');
-		this.field('uri');
-
-		this.ref('uri');
-
-		documents.forEach(function (doc) {
-			pagesStore[doc.uri] = doc.title;
-			this.add(doc);
-		}, this);
-	});
-};
-
-const loadIndexData = () => {
-	const url = `/${languageMode}/search.json`;
-
-	const xmlhttp = new XMLHttpRequest();
-	xmlhttp.addEventListener('readystatechange', function () {
-		if (this.readyState == 4 && this.status == 200) {
-			const pages_content = JSON.parse(this.responseText);
-			createIndex(pages_content);
-		}
-	});
-
-	xmlhttp.open('GET', url, true);
-	xmlhttp.send();
-};
-
-const search = text => {
+const searchDEPR = text => {
 	const result = searchIndex.search(text);
 	return result;
 };
@@ -45,7 +13,7 @@ const hideSearchResults = (event, divBlock) => {
 	event.preventDefault();
 	if (!divBlock.contains(event.target)) {
 		divBlock.style.display = 'none';
-		divBlock.setAttribute('class', 'hidden');
+		divBlock.setAttribute('type', 'hidden')
 	}
 };
 
@@ -64,16 +32,14 @@ const renderSearchResults = results => {
 
 	const resultsBlock = document.createElement('ul');
 
-	for (const post of results) {
-		const url = post.ref;
-		const title = pagesStore[url];
+	for (const [uri, title] of results) {
 
 		const commentBlock = document.createElement('li');
 
 		const link = document.createElement('a');
 		const linkText = document.createTextNode(title);
 		link.append(linkText);
-		link.href = url;
+		link.href = uri;
 
 		commentBlock.append(link);
 		resultsBlock.append(commentBlock);
@@ -81,6 +47,42 @@ const renderSearchResults = results => {
 
 	searchResultsDiv.append(resultsBlock);
 };
+
+
+const getIndexData = async () => {
+	let response = await fetch(`/search/lunr-index.json?v2`)
+	if (response.status != 200) {
+		throw new Error("Server Error");
+	}
+	// read response stream as text
+	let text_data = await response.text();
+	const idxData = JSON.parse(text_data)
+	const lngIdx = idxData[languageMode]
+	const idx = lunr.Index.load(lngIdx)
+	pagesStore = idxData['contentMap'][languageMode]
+	return idx
+}
+
+const searchResults = (idx, text) => {
+	return idx.search(text);
+}
+
+const prepareResultsForRender = (results) => {
+	const renderResults = []
+	for (const res of results) {
+		let uri = '/' + languageMode + res.ref
+		let title = pagesStore[res.ref]
+		renderResults.push([uri, title])
+	}
+	return renderResults
+}
+
+const searchHandler = async (text) => {
+	const idx = await getIndexData()
+	const results = searchResults(idx, text)
+	const resultsToRender = prepareResultsForRender(results)
+	renderSearchResults(resultsToRender.slice(0, MAX_SEARCH_RESULTS));
+}
 
 const searchFormObserver = () => {
 	const form = document.querySelector('#search');
@@ -92,13 +94,11 @@ const searchFormObserver = () => {
 		if (!term) {
 			return;
 		}
-
-		const search_results = search(term, languageMode);
-		renderSearchResults(search_results.slice(0, MAX_SEARCH_RESULTS));
+		searchHandler(term)
 	}, false);
 };
 
 // Create indexes
-loadIndexData();
+// loadIndexData();
 
 searchFormObserver();
