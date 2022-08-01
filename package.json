@@ -9,7 +9,7 @@
     "@tailwindcss/typography": "^0.5.4",
     "autoprefixer": "^10.4.8",
     "cssnano": "5.1.12",
-    "hugo-lunr-ml": "^1.0.3",
+    "hugo-lunr-ml": "^2.0.1",
     "postcss": "^8.4.14",
     "postcss-cli": "10.0.0",
     "postcss-import": "^14.1.0",
@@ -20,7 +20,7 @@
     "xo": "^0.51.0"
   },
   "scripts": {
-    "hugo-lunr-ml": "hugo-lunr-ml -o public/ru/search.json",
+    "hugo-lunr-ml": "hugo-lunr-ml",
     "xo": "xo --cwd=static/js --workspace=static/js",
     "xo-fix": "xo --fix --env=browser --cwd=static/js --workspace=static/js"
   },
