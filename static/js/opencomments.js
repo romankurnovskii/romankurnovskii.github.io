@@ -37,7 +37,7 @@ const renderComments = comments => {
 	}
 };
 
-// const e = React.createElement;
+const renderElement = React.createElement;
 
 function OpenCommentsRender() {
 	const url = window.location.href;
@@ -71,7 +71,7 @@ function OpenCommentsRender() {
 	const buttonSend = document.querySelector('#comment-send');
 	buttonSend.addEventListener('click', handleSendComment);
 
-	return e(
+	return renderElement(
 		'div',
 		null,
 	);
