@@ -13,7 +13,7 @@
     "postcss": "^8.4.14",
     "postcss-cli": "10.0.0",
     "postcss-import": "^14.1.0",
-    "prettier": "2.7.1",
+    "prettier": "^2.7.1",
     "prettier-plugin-go-template": "^0.0.13",
     "prettier-plugin-tailwindcss": "^0.1.13",
     "tailwindcss": "^3.1.7",
@@ -23,7 +23,7 @@
   "scripts": {
     "hugo-lunr-ml": "hugo-lunr-ml -o public/ru/search.json",
     "xo": "xo --cwd=static/js --workspace=static/js",
-    "xo-fix": "xo --env=browser --fix --cwd=static/js --workspace=static/js"
+    "xo-fix": "xo --fix --env=browser --cwd=static/js --workspace=static/js"
   },
   "browserslist": [
     "last 1 version",

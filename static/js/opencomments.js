@@ -1,29 +1,29 @@
 const openCommentsServer = window.document.currentScript.getAttribute('server');
 const renderDivId = window.document.currentScript.getAttribute('renderDivId');
 
-const setPageViews = (views) => {
-    const pageViewsDiv= document.getElementById('page__views__div')
-    const pageViewsBlock = document.getElementById('page__views')
-    pageViewsBlock.innerText += views
-    pageViewsDiv.style.display = 'initial'
-}
+const setPageViews = views => {
+	const pageViewsDiv = document.querySelector('#page__views__div');
+	const pageViewsBlock = document.querySelector('#page__views');
+	pageViewsBlock.innerText += views;
+	pageViewsDiv.style.display = 'initial';
+};
 
 function getDatePrintFormat(date) {
-    return new Date(date).toLocaleDateString('ru-RU', {
-        year: 'numeric',
-        month: '2-digit',
-        day: 'numeric',
-    });
+	return new Date(date).toLocaleDateString('ru-RU', {
+		year: 'numeric',
+		month: '2-digit',
+		day: 'numeric',
+	});
 }
 
-const renderComments = (comments) => {
-    let commentsDiv = document.getElementById('opencomments__list');
-    commentsDiv.innerHTML = '' // TODO, not good
+const renderComments = comments => {
+	const commentsDiv = document.querySelector('#opencomments__list');
+	commentsDiv.innerHTML = ''; // TODO, not good
 
-    for (let comment of comments) {
-        let commentBlock = document.createElement('li')
+	for (const comment of comments) {
+		const commentBlock = document.createElement('li');
 
-        commentBlock.innerHTML = `
+		commentBlock.innerHTML = `
 <div class="comment__block ">
         <span class="comment_author">${comment.author}</span>
         <span class="comment_text">${comment.comment}</span>
@@ -31,53 +31,51 @@ const renderComments = (comments) => {
 <div class="comment_date__div">
     <span class="comment_date">${getDatePrintFormat(comment.date)}</span>
 </div>
-        `
-        // add comment to comments list
-        commentsDiv.appendChild(commentBlock)
-    }
-}
+        `;
+		// Add comment to comments list
+		commentsDiv.append(commentBlock);
+	}
+};
 
-const e = React.createElement;
+// const e = React.createElement;
 
 function OpenCommentsRender() {
-    const url = window.location.href
+	const url = window.location.href;
 
-    const handleSendComment = () => {
-        let comment = document.getElementById('comment').value
-        let author = document.getElementById('form__comment_author').value
+	const handleSendComment = () => {
+		const comment = document.querySelector('#comment').value;
+		const author = document.querySelector('#form__comment_author').value;
 
-        const requestUrl = `${openCommentsServer}?page=${url}`
+		const requestUrl = `${openCommentsServer}?page=${url}`;
 
-        axios.post(requestUrl, {
-            author,
-            comment
-        })
-            .then(e => document.getElementById('comment').value = "")
-            .then(loadPageComments)
-    }
+		axios.post(requestUrl, {
+			author,
+			comment,
+		})
+			.then(e => document.querySelector('#comment').value = '')
+			.then(loadPageComments);
+	};
 
-    const loadPageComments = () => {
-        const requestUrl = `${openCommentsServer}?page=${url}`
-        axios.get(requestUrl).then(response => {
-            renderComments(response.data['comments'])
-            setPageViews(response.data['page_views'])
-        })
-    }
+	const loadPageComments = () => {
+		const requestUrl = `${openCommentsServer}?page=${url}`;
+		axios.get(requestUrl).then(response => {
+			renderComments(response.data.comments);
+			setPageViews(response.data.page_views);
+		});
+	};
 
-    React.useEffect(() => {
-        loadPageComments()
-    }, [])
+	React.useEffect(() => {
+		loadPageComments();
+	}, []);
 
-    let buttonSend = document.getElementById('comment-send')
-    buttonSend.addEventListener('click', handleSendComment)
+	const buttonSend = document.querySelector('#comment-send');
+	buttonSend.addEventListener('click', handleSendComment);
 
-    return e(
-        'div',
-        null,
-    )
-
+	return e(
+		'div',
+		null,
+	);
 }
-
 
 ReactDOM.render(React.createElement(OpenCommentsRender), document.getElementById(renderDivId));
 
