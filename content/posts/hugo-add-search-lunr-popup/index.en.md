@@ -98,9 +98,7 @@ This is how the logic looks like:
 <summary>4. `/layouts/_default/index.json`</summary>
 
 ```go
-{{ $translatedCount := 0 }}
-{
-  "ru": [
+[
     {{- range $index, $page := .Site.RegularPages.ByTitle -}}
       {{- if gt $index 0 -}} , {{- end -}}
       {{- $entry := dict "uri" $page.RelPermalink "title" $page.Title -}}
@@ -108,24 +106,7 @@ This is how the logic looks like:
       {{- $entry = merge $entry (dict "content" (.Plain | htmlUnescape)) -}}
       {{- $entry | jsonify -}}
     {{- end -}}
-  ],
-  "en": [
-    {{- range $index, $page := .Site.RegularPages.ByTitle -}}
-        {{- if $page.IsTranslated -}}
-          {{ if gt (index $page.Translations 0).WordCount 0 }}
-              {{ range .Translations }}
-                {{- if gt $translatedCount 0 -}} , {{- end -}}
-                {{- $entry := dict "uri" .RelPermalink "title" .Title -}}
-                {{- $entry = merge $entry (dict "description" .Description) -}}
-                {{- $entry = merge $entry (dict "content" (.Plain | htmlUnescape)) -}}
-                {{- $entry | jsonify -}}
-                {{ $translatedCount = add $translatedCount 1 }}
-              {{ end}}
-          {{ end }}
-        {{- end -}}
-    {{- end -}}
-  ]
-}
+]
 ```
 
 </details>
@@ -156,12 +137,14 @@ outputs:
 
 ```javascript
 const languageMode = window.document.currentScript.getAttribute('languageMode');
+const MAX_SEARCH_RESULTS = 10
 
-let idx = {}
+let searchIndex = {}
 let pagesStore = {}
 
-const createIndex = (documents, lang) => {
-    idx[lang] = lunr(function () {
+// Need to create ONLY once , maybe before push | during build
+const createIndex = (documents) => {
+    searchIndex = lunr(function () {
         this.field("title");
         this.field("content");
         this.field("description");
@@ -178,18 +161,13 @@ const createIndex = (documents, lang) => {
 }
 
 const loadIndexData = () => {
-    const url = "/search.json";
+    const url = `/${languageMode}/search.json`;
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             const pages_content = JSON.parse(this.responseText);
-
-            const ru_pages = pages_content['ru']
-            const en_pages = pages_content['en']
-
-            createIndex(ru_pages, 'ru')
-            createIndex(en_pages, 'en')
+            createIndex(pages_content)
         }
     };
 
@@ -197,8 +175,8 @@ const loadIndexData = () => {
     xmlhttp.send();
 }
 
-const search = (text, languageMode) => {
-    let result = idx[languageMode].search(text)
+const search = (text) => {
+    let result = searchIndex.search(text)
     return result
 }
 
@@ -210,6 +188,7 @@ const hideSearchResults = (event, divBlock) => {
     }
 }
 
+// TODO refactor
 const renderSearchResults = (results) => {
     const searchResultsViewBlock = document.getElementById('search-result')
 
@@ -244,30 +223,28 @@ const renderSearchResults = (results) => {
 
 }
 
+
 const searchFormObserver = () => {
     var form = document.getElementById("search");
     var input = document.getElementById("search-input");
 
     form.addEventListener("submit", function (event) {
         event.preventDefault();
-
         var term = input.value.trim();
         if (!term) {
             return
         }
 
         const search_results = search(term, languageMode);
-        renderSearchResults(search_results)
+        renderSearchResults(search_results.slice(0, MAX_SEARCH_RESULTS))
 
     }, false);
 }
-
 
 // create indexes
 loadIndexData()
 
 searchFormObserver()
-
 ```
 
 </details>
@@ -360,30 +337,19 @@ Hugo can generate the search index the same way it generates RSS feeds for examp
 **1. Generate script**
 
 This generator is for multilingual site
-Creates json in format:
+
+Creates json in each language catalog in format:
 
 ```json
-{
-    "ru": [{"title":"title01"}],
-    "en": [{"title":"title01"}],
-}
+[{"title":"title01",...}]
 ```
+
+*Fepends on fileds inckluded in the layout `/layouts/_default/index.json`*
 
 Create file `/layouts/_default/index.json`
 
 ```go
-{{ $translatedCount := 0 }}
-{
-  "ru": [
-    {{- range $index, $page := .Site.RegularPages.ByTitle -}}
-      {{- if gt $index 0 -}} , {{- end -}}
-      {{- $entry := dict "uri" $page.RelPermalink "title" $page.Title -}}
-      {{- $entry = merge $entry (dict "description" .Description) -}}
-      {{- $entry = merge $entry (dict "content" (.Plain | htmlUnescape)) -}}
-      {{- $entry | jsonify -}}
-    {{- end -}}
-  ],
-  "en": [
+[
     {{- range $index, $page := .Site.RegularPages.ByTitle -}}
         {{- if $page.IsTranslated -}}
           {{ if gt (index $page.Translations 0).WordCount 0 }}
@@ -399,7 +365,6 @@ Create file `/layouts/_default/index.json`
         {{- end -}}
     {{- end -}}
   ]
-}
 ```
 
 Creates search.json file with page indexes in `/public/search.json`
@@ -431,12 +396,14 @@ Create file in the path: `static/js/search.js`
 
 ```javascript
 const languageMode = window.document.currentScript.getAttribute('languageMode');
+const MAX_SEARCH_RESULTS = 10
 
-let idx = {}
+let searchIndex = {}
 let pagesStore = {}
 
-const createIndex = (documents, lang) => {
-    idx[lang] = lunr(function () {
+// Need to create ONLY once , maybe before push | during build
+const createIndex = (documents) => {
+    searchIndex = lunr(function () {
         this.field("title");
         this.field("content");
         this.field("description");
@@ -453,18 +420,13 @@ const createIndex = (documents, lang) => {
 }
 
 const loadIndexData = () => {
-    const url = "search.json";
+    const url = `/${languageMode}/search.json`;
 
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             const pages_content = JSON.parse(this.responseText);
-
-            const ru_pages = pages_content['ru']
-            const en_pages = pages_content['en']
-
-            createIndex(ru_pages, 'ru')
-            createIndex(en_pages, 'en')
+            createIndex(pages_content)
         }
     };
 
@@ -472,26 +434,33 @@ const loadIndexData = () => {
     xmlhttp.send();
 }
 
-const search = (text, languageMode) => {
-    let result = idx[languageMode].search(text)
+const search = (text) => {
+    let result = searchIndex.search(text)
     return result
 }
 
+const hideSearchResults = (event, divBlock) => {
+    event.preventDefault()
+    if (!divBlock.contains(event.target)) {
+        divBlock.style.display = 'none';
+        divBlock.setAttribute('class', 'hidden')
+    }
+}
+
+// TODO refactor
 const renderSearchResults = (results) => {
     const searchResultsViewBlock = document.getElementById('search-result')
-    searchResultsViewBlock.style.display = 'initial';
-    searchResultsViewBlock.removeAttribute('hidden')
-    searchResultsViewBlock.setAttribute('aria-hidden', 'false')
 
-    document.addEventListener('mouseup', function (e) {
-        if (!searchResultsViewBlock.contains(e.target)) {
-            searchResultsViewBlock.style.display = 'none';
-            searchResultsViewBlock.setAttribute('class','hidden')
-        }
-    });
+    // hide on move mouse from results block
+    document.addEventListener('mouseup', (e) => hideSearchResults(e, searchResultsViewBlock));
 
     const searchResultsDiv = document.getElementById('search-results')
     searchResultsDiv.innerHTML = ''
+
+    searchResultsViewBlock.style.display = 'initial';
+    searchResultsViewBlock.removeAttribute('hidden')
+
+
     const resultsBlock = document.createElement('ul')
 
     for (let post of results) {
@@ -507,11 +476,12 @@ const renderSearchResults = (results) => {
 
         commentBlock.appendChild(link)
         resultsBlock.appendChild(commentBlock)
-
     }
 
     searchResultsDiv.appendChild(resultsBlock)
+
 }
+
 
 const searchFormObserver = () => {
     var form = document.getElementById("search");
@@ -519,18 +489,16 @@ const searchFormObserver = () => {
 
     form.addEventListener("submit", function (event) {
         event.preventDefault();
-
         var term = input.value.trim();
         if (!term) {
             return
         }
 
         const search_results = search(term, languageMode);
-        renderSearchResults(search_results)
+        renderSearchResults(search_results.slice(0, MAX_SEARCH_RESULTS))
 
     }, false);
 }
-
 
 // create indexes
 loadIndexData()

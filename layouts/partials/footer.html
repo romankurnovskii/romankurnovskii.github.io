@@ -10,7 +10,6 @@
 </div>
 
 {{/* search service */}}
-<script src="https://unpkg.com/lunr/lunr.min.js"></script>
 <script src="/js/search.js?v3" languageMode={{ $languageMode }}></script>
 {{ partial "components/search-list-popup.html" . }}
 {{/* end search service */}}
@@ -18,5 +17,3 @@
 {{/* search service for page view */}}
 {{ partial "search-index.html" . }}
 {{/* end search service for page view */}}
-
-<script src="/js/base.js?2" languageMode={{ $languageMode }}></script>
