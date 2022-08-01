@@ -1,11 +1,17 @@
 ---
-title: 'Fluentd & FluentBit - Day 81'
-published: false
-description: 90DaysOfDevOps - Fluentd & FluentBit
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+title: 81. Fluentd и FluentBit
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-07-01"
+lastmod: "2022-07-01"
+featuredImage:
+draft: false
 id: 1048716
+weight: 81
 ---
 ## Fluentd и FluentBit
 

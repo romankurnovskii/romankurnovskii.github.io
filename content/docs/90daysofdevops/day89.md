@@ -1,11 +1,17 @@
 ---
-title: ' Disaster Recovery - Day 89'
-published: false
-description: 90DaysOfDevOps - Disaster Recovery
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
+title: 89. Аварийное восстановление
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-07-01"
+lastmod: "2022-07-01"
+featuredImage:
+draft: false
 id: 1048718
+weight: 89
 ---
 ## Аварийное восстановление
 

@@ -1,11 +1,17 @@
 ---
-title: 'Backup all the platforms - Day 86'
-published: false
-description: 90DaysOfDevOps - Backup all the platforms
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
+title: 86. Резервное копирование всех платформ
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-07-01"
+lastmod: "2022-07-01"
+featuredImage:
+draft: false
 id: 1049058
+weight: 86
 ---
 ## Резервное копирование всех платформ
 

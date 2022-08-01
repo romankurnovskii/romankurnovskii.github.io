@@ -1,11 +1,17 @@
 ---
-title: ' Application Focused Backup - Day 88'
-published: false
-description: 90DaysOfDevOps - Application Focused Backups
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+title: 88. Резервное копирование, ориентированное на приложения
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-07-01"
+lastmod: "2022-07-01"
+featuredImage:
+draft: false
 id: 1048749
+weight: 88
 ---
 ## Резервное копирование, ориентированное на приложения
 

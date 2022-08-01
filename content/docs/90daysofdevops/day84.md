@@ -1,12 +1,19 @@
 ---
-title: ' The Big Picture: Data Management - Day 84'
-published: false
-description: 90DaysOfDevOps - The Big Picture Data Management
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+title: 84. Управление данными
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-07-01"
+lastmod: "2022-07-01"
+featuredImage:
+draft: false
 id: 1048747
+weight: 84
 ---
+
 ## Введение: Управление данными
 
 ![](../images/Day84_Data1.png?v1)

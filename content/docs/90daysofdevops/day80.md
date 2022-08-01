@@ -1,11 +1,17 @@
 ---
-title: ' ELK Stack - Day 80'
-published: false
-description: 90DaysOfDevOps - ELK Stack
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
+title: 80. ELK Stack
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-07-01"
+lastmod: "2022-07-01"
+featuredImage:
+draft: false
 id: 1048746
+weight: 80
 ---
 ## ELK Stack  
 

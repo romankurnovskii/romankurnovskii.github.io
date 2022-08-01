@@ -1,11 +1,17 @@
 ---
-title: ' GitHub Actions Overview - Day 75'
-published: false
-description: 90DaysOfDevOps - GitHub Actions Overview
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
+title: 75. Обзор GitHub Actions
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-07-01"
+lastmod: "2022-07-01"
+featuredImage:
+draft: false
 id: 1049070
+weight: 75
 ---
 ## Обзор действий GitHub
 
