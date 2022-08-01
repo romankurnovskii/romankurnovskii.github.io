@@ -1,5 +1,5 @@
 ---
-title: '#90DaysOfDevOps - The Big Picture: Monitoring - Day 77'
+title: ' The Big Picture: Monitoring - Day 77'
 published: false
 description: 90DaysOfDevOps - The Big Picture Monitoring
 tags: "devops, 90daysofdevops, learning"

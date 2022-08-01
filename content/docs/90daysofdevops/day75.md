@@ -1,5 +1,5 @@
 ---
-title: '#90DaysOfDevOps - GitHub Actions Overview - Day 75'
+title: ' GitHub Actions Overview - Day 75'
 published: false
 description: 90DaysOfDevOps - GitHub Actions Overview
 tags: 'devops, 90daysofdevops, learning'
