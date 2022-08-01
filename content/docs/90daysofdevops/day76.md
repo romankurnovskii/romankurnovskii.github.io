@@ -1,12 +1,19 @@
 ---
-title: ' ArgoCD Overview - Day 76'
-published: false
-description: 90DaysOfDevOps - ArgoCD Overview
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
+title: 76. Обзор ArgoCD
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-07-01"
+lastmod: "2022-07-01"
+featuredImage:
+draft: false
 id: 1048809
+weight: 76
 ---
+
 ## Обзор ArgoCD
 
 "Argo CD - это декларативный инструмент непрерывной доставки GitOps для Kubernetes".

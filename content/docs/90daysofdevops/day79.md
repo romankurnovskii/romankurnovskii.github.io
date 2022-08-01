@@ -1,11 +1,17 @@
 ---
-title: ' The Big Picture: Log Management - Day 79'
-published: false
-description: 90DaysOfDevOps - The Big Picture Log Management
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
+title: 79. Log Management
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-07-01"
+lastmod: "2022-07-01"
+featuredImage:
+draft: false
 id: 1049057
+weight: 79
 ---
 ## Введение: Управление журналами
 

@@ -1,11 +1,17 @@
 ---
-title: ' Data & Application Mobility - Day 90'
-published: false
-description: 90DaysOfDevOps - Data & Application Mobility
-tags: 'devops, 90daysofdevops, learning'
-cover_image: null
-canonical_url: null
+title: 90. Мобильность данных и приложений
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-07-01"
+lastmod: "2022-07-01"
+featuredImage:
+draft: false
 id: 1048748
+weight: 90
 ---
 ## Мобильность данных и приложений
 
@@ -15,7 +21,7 @@ id: 1048748
 
 На этом занятии мы возьмем нашу рабочую нагрузку и рассмотрим перемещение рабочей нагрузки Kubernetes с одного кластера на другой, но при этом мы изменим то, как наше приложение находится в целевом месте. 
 
-Фактически, здесь используются многие характеристики, которые мы рассмотрели в [Disaster Recovery](.../day89)
+Фактически, здесь используются многие характеристики, которые мы рассмотрели в статье [Аварийное восстановление](.../day89)
 
 ### **Требование**
 
@@ -118,7 +124,3 @@ id: 1048748
 Как всегда, продолжайте обсуждать вопросы и PR. 
 
 Спасибо! 
-
-@MichaelCade1
-- [GitHub](https://github.com/MichaelCade)
-- [Twitter](https://twitter.com/MichaelCade1)

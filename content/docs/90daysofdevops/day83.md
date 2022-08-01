@@ -1,11 +1,17 @@
 ---
-title: ' Data Visualisation - Grafana - Day 83'
-published: false
-description: 90DaysOfDevOps - Data Visualisation - Grafana
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+title: 83. Визуализация данных - Grafana
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-07-01"
+lastmod: "2022-07-01"
+featuredImage:
+draft: false
 id: 1048767
+weight: 83
 ---
 ## Визуализация данных - Grafana
 

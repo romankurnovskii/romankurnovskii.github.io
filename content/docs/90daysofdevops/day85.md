@@ -1,11 +1,17 @@
 ---
-title: Data Services - Day 85
-published: false
-description: "90DaysOfDevOps - Data Services"
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+title: 85. Службы данных
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-07-01"
+lastmod: "2022-07-01"
+featuredImage:
+draft: false
 id: 1048781
+weight: 85
 ---
 ## Службы данных
 

@@ -1,12 +1,19 @@
 ---
-title: ' Hello World - Jenkinsfile App Pipeline - Day 74'
-published: false
-description: 90DaysOfDevOps - Hello World - Jenkinsfile App Pipeline
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+title: 74. Hello World - Jenkinsfile App Pipeline
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-07-01"
+lastmod: "2022-07-01"
+featuredImage:
+draft: false
 id: 1048744
+weight: 74
 ---
+
 ## Здравствуй мир - Jenkinsfile App Pipeline
 
 В предыдущем разделе мы построили простой конвейер в Jenkins, который будет перемещать наш образ докера из нашего dockerfile в публичном репозитории GitHub в наш частный репозиторий Dockerhub. 

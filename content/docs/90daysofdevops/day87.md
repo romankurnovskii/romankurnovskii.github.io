@@ -1,11 +1,17 @@
 ---
-title: Hands-On Backup & Recovery - Day 87
-published: false
-description: "90DaysOfDevOps - Hands-On Backup & Recovery"
-tags: "devops, 90daysofdevops, learning"
-cover_image: null
-canonical_url: null
+title: 87. Резервное копирование и восстановление
+description: 
+toc: true
+authors:
+tags: [devops]
+categories:
+series: 
+date: "2022-07-01"
+lastmod: "2022-07-01"
+featuredImage:
+draft: false
 id: 1048717
+weight: 87
 ---
 ## Резервное копирование и восстановление своими руками
 
