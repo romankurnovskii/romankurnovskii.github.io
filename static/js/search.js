@@ -1,7 +1,7 @@
 const languageMode = window.document.currentScript.getAttribute('languageMode');
 const MAX_SEARCH_RESULTS = 10;
 
-let searchIndex = {};
+const searchIndex = {};
 let pagesStore = {};
 
 const searchDEPR = text => {
@@ -13,7 +13,7 @@ const hideSearchResults = (event, divBlock) => {
 	event.preventDefault();
 	if (!divBlock.contains(event.target)) {
 		divBlock.style.display = 'none';
-		divBlock.setAttribute('type', 'hidden')
+		divBlock.setAttribute('type', 'hidden');
 	}
 };
 
@@ -33,7 +33,6 @@ const renderSearchResults = results => {
 	const resultsBlock = document.createElement('ul');
 
 	for (const [uri, title] of results) {
-
 		const commentBlock = document.createElement('li');
 
 		const link = document.createElement('a');
@@ -48,41 +47,40 @@ const renderSearchResults = results => {
 	searchResultsDiv.append(resultsBlock);
 };
 
-
 const getIndexData = async () => {
-	let response = await fetch(`/search/lunr-index.json?v2`)
-	if (response.status != 200) {
-		throw new Error("Server Error");
+	const response = await fetch('/search/lunr-index.json?v2');
+	if (response.status !== 200) {
+		throw new Error('Server Error');
 	}
-	// read response stream as text
-	let text_data = await response.text();
-	const idxData = JSON.parse(text_data)
-	const lngIdx = idxData[languageMode]
-	const idx = lunr.Index.load(lngIdx)
-	pagesStore = idxData['contentMap'][languageMode]
-	return idx
-}
 
-const searchResults = (idx, text) => {
-	return idx.search(text);
-}
+	// Read response stream as text
+	const textData = await response.text();
+	const idxData = JSON.parse(textData);
+	const lngIdx = idxData[languageMode];
+	const idx = lunr.Index.load(lngIdx);
+	pagesStore = idxData.contentMap[languageMode];
+	return idx;
+};
 
-const prepareResultsForRender = (results) => {
-	const renderResults = []
+const searchResults = (idx, text) => idx.search(text);
+
+const prepareResultsForRender = results => {
+	const renderResults = [];
 	for (const res of results) {
-		let uri = '/' + languageMode + res.ref
-		let title = pagesStore[res.ref]
-		renderResults.push([uri, title])
+		const uri = '/' + languageMode + res.ref;
+		const title = pagesStore[res.ref];
+		renderResults.push([uri, title]);
 	}
-	return renderResults
-}
 
-const searchHandler = async (text) => {
-	const idx = await getIndexData()
-	const results = searchResults(idx, text)
-	const resultsToRender = prepareResultsForRender(results)
+	return renderResults;
+};
+
+const searchHandler = async text => {
+	const idx = await getIndexData();
+	const results = searchResults(idx, text);
+	const resultsToRender = prepareResultsForRender(results);
 	renderSearchResults(resultsToRender.slice(0, MAX_SEARCH_RESULTS));
-}
+};
 
 const searchFormObserver = () => {
 	const form = document.querySelector('#search');
@@ -94,7 +92,8 @@ const searchFormObserver = () => {
 		if (!term) {
 			return;
 		}
-		searchHandler(term)
+
+		searchHandler(term);
 	}, false);
 };
 

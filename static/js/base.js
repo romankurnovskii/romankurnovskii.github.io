@@ -1,39 +1,33 @@
 const setLanguage = window.document.currentScript.getAttribute('languageMode');
-var userLang = setLanguage || navigator.language || navigator.userLanguage;
+const userLang = setLanguage || navigator.language || navigator.userLanguage;
 
 const docsDropdownMenuHandler = () => {
-    var dropdown = window.document.getElementsByClassName("dropdown-btn");
-    var i;
-    for (i = 0; i < dropdown.length; i++) {
-        const dropdownLink = dropdown[i]
-   
-        dropdownLink.addEventListener("click", function () {
-            this.classList.toggle("active");
+	const dropdown = window.document.querySelectorAll('.dropdown-btn');
+	let i;
+	for (i = 0; i < dropdown.length; i++) {
+		const dropdownLink = dropdown[i];
 
-            var dropdownContent = this.nextElementSibling;
+		dropdownLink.addEventListener('click', function () {
+			this.classList.toggle('active');
 
-            if (dropdownContent.style.display === "block") {
-                dropdownContent.style.display = "none";
-            } else {
-                dropdownContent.style.display = "block";
-            }
-        });
+			const dropdownContent = this.nextElementSibling;
 
-        if (dropdownLink.classList.contains("active")) {
-            console.log(132312)
-            const dropdownContent = dropdownLink.nextElementSibling;
-            dropdownContent.style.display = "block";
+			dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+		});
 
+		if (dropdownLink.classList.contains('active')) {
+			console.log(132_312);
+			const dropdownContent = dropdownLink.nextElementSibling;
+			dropdownContent.style.display = 'block';
 
-            dropdownLink.parentElement.style.display = "block";
-            dropdownLink.parentElement.parentElement.style.display = "block";
+			dropdownLink.parentElement.style.display = 'block';
+			dropdownLink.parentElement.parentElement.style.display = 'block';
 
-            console.log(dropdownLink.parentElement.parentElement)
-        }
-    }
-}
+			console.log(dropdownLink.parentElement.parentElement);
+		}
+	}
+};
 
+docsDropdownMenuHandler();
 
-docsDropdownMenuHandler()
-
-console.log('Language mode:', userLang)
+console.log('Language mode:', userLang);

@@ -28,7 +28,7 @@ if (query) {
 	if (results.length > 0) { // Length greater than 0 is truthy
 		let resultList = '';
 		for (const n in results) {
-			const item = store[results[n].ref];
+			const item = window.store[results[n].ref];
 			resultList += '<li><p><a href="' + item.url + '">' + item.title + '</a></p>';
 			// Add a short clip of the content
 			resultList += '<p>' + item.content.slice(0, 150) + '...</p></li>';
