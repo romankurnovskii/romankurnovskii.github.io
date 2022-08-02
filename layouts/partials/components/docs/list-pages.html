@@ -1,0 +1,54 @@
+{{ $currentPage := .permalink }}
+
+<div id="sidebar-title" class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text">
+    <span class="font-semibold">{{ i18n "toc" }}</span>
+    <i class='fas {{ cond (eq .Site.Language.LanguageDirection "rtl") "fa-caret-left" "fa-caret-right" }} ms-1'></i>
+</div>
+
+<div id="sidebar-toc"
+    class="hidden md:block overflow-y-auto mx-6 md:mx-0 pe-2 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent">
+    <div class="flex flex-wrap ms-1 -me-2 p-1 bg-secondary-bg md:bg-primary-bg rounded">
+        <a class="{{ if eq .context.Permalink $currentPage }}text-eureka{{ end }} hover:text-eureka"
+            href="{{ .context.Permalink }}">{{ .context.LinkTitle }}</a>
+
+        {{ $versions := partial "get-versions" (dict "context" .context) }}
+        {{ if $versions }}
+        <div class="relative ms-2 cursor-pointer">
+            <div id="doc-version" class="flex items-center bg-primary-bg md:bg-secondary-bg">
+                {{ $version := findRE
+                "v?(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?"
+                .context.Permalink }}
+                <span class="ms-2 me-1">{{ cond (gt (len $version) 0) (index $version 0) "latest" }}</span>
+                <i
+                    class='fas {{ cond (eq .Site.Language.LanguageDirection "rtl") "fa-caret-left" "fa-caret-right" }} w-4 h-4 me-1'></i>
+            </div>
+            <div id="version-options" class="hidden absolute start-0 bg-secondary-bg rounded z-40">
+                {{ range $index, $value := $versions }}
+                {{ if eq $index 0 }}
+                <div class="ms-2 me-8 my-1">
+                    <a class="" href="{{ $.context.Parent.Permalink }}">latest</a>
+                </div>
+                {{ end }}
+                {{ $version := findRE
+                "v?(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?"
+                . }}
+                <div class="ms-2 me-8 my-1">
+                    <a class="" href="{{ . }}">{{ index $version 0 }}</a>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+        <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="switch-canvas">
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                switchDocVersion();
+            })
+        </script>
+        {{ end }}
+
+    </div>
+
+    {{ partial "components/doc-menu-list" (dict "context" .context "permalink" $currentPage ) }}
+
+</div>
