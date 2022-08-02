@@ -13,23 +13,23 @@ katex:
   version: 0.16.0
   css:
     url: https://cdn.jsdelivr.net/npm/katex@%s/dist/katex.min.css
-    sri: sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ
+    # sri: sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ
   js:
     url: https://cdn.jsdelivr.net/npm/katex@%s/dist/katex.min.js
-    sri: sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY
+    # sri: sha256-6xggdIcWFnTnFwh8MX2xSsGmLa2uzMuAJJnOFzv+tzk=
   autoRender:
     url: https://cdn.jsdelivr.net/npm/katex@%s/dist/contrib/auto-render.min.js
-    sri: sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR
+    # sri: sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR
 
 mermaid:
   version: 9.1.3
   js:
-    url: https://cdn.jsdelivr.net/npm/mermaid@%s/dist/mermaid.min.js
-    sri: sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0
+    url: https://cdn.jsdelivr.net/npm/mermaid@9.1.3/dist/mermaid.core.min.js
+    # sri: sha384-atOyb0FxAgN9LyAc6PEf9BjgwLISyansgdH8/VXQH8p2o5vfrRgmGIJ2Sg22L0A0
 
 # Valine
 valine:
   version: 1.5.1
   js:
     url: https://cdn.jsdelivr.net/npm/valine@%s/dist/Valine.min.js
-    sri: sha384-e0+DNUCJo75aOAzHQbFWYBCM9/S4f0BhRJXvEgbE3mMS85RM20MSSGStHuNdY2QK
+    # sri: sha384-e0+DNUCJo75aOAzHQbFWYBCM9/S4f0BhRJXvEgbE3mMS85RM20MSSGStHuNdY2QK

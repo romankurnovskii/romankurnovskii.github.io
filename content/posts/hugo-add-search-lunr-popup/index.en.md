@@ -340,7 +340,7 @@ This generator is for multilingual site
 
 Creates json in each language catalog in format:
 
-```json
+```javascripton
 [{"title":"title01",...}]
 ```
 
