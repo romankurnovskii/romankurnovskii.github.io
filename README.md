@@ -5,3 +5,4 @@ type with -k KIND:
 hugo new -k authors authors/new-author
 
 9176
+9511
