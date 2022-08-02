@@ -16,3 +16,14 @@
 
   {{ .Content }}
 </article>
+
+
+{{/* highlight.js */}}
+{{- if eq .Site.Params.highlight.handler "highlightjs" }}
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    hljs.highlightAll();
+  });
+</script>
+{{- end }}
+{{/* end highlight.js */}}

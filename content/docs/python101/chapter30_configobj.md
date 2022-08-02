@@ -26,7 +26,7 @@ pip install configobj
 
 После того как вы установили его, мы можем двигаться дальше. Для начала откройте текстовый редактор и создайте файл с таким содержимым:
 
-```sh
+```python
 product = Sony PS3
 accessories = controller, eye, memory stick
 # This is a comment that will be ignored

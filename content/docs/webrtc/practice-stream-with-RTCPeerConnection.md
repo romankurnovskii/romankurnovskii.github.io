@@ -177,7 +177,7 @@ function handleConnection(event) {
 Узлам WebRTC также необходимо узнавать и обмениваться информацией о локальных и удаленных аудио- и видеоматериалах, такими как разрешение и возможности кодеков, и обмениваться ими. Сигналинг для обмена информацией о конфигурации мультимедиа осуществляется путем обмена большими двоичными объектами метаданных, известными как offer и answer, с использованием формата Session Description Protocol, известного как SDP (http://en.wikipedia.org/wiki/Session_Description_Protocol):
 1.	Алиса запускает метод RTCPeerConnectioncreateOffer(). Возвращенный промис обеспечивает RTCSessionDescription: Alice’s local session description:
 
-```
+```javascript
 trace('localPeerConnection createOffer start.');
 localPeerConnection.createOffer(offerOptions)
   .then(createdOffer).catch(setSessionDescriptionError);
@@ -187,7 +187,8 @@ localPeerConnection.createOffer(offerOptions)
 3.	Боб принимает описание, отправленное ему Алисой, в качестве удаленного описания, используя setRemoteDescription().
 4.	Боб запускает метод `RTCPeerConnection` `createAnswer()`, передавая ему удаленное описание, которое он получил от Алисы, чтобы можно было создать локальный сеанс, совместимый с ее сеансом. Промис `createAnswer()` передает описание `RTCSessionDescription`: Боб устанавливает это как локальное описание и отправляет его Алисе.
 5.	Когда Алиса получает описание сеанса Боба, она устанавливает его в качестве удаленного описания с помощью `setRemoteDescription()`.
-```
+
+```javascript
 // Logs offer creation and sets peer connection session descriptions.
 function createdOffer(description) {
   trace(`Offer from localPeerConnection:\n${description.sdp}`);
