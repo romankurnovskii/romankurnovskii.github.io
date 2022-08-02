@@ -28,7 +28,7 @@ weight: 3
 
 Конкретные ограничения определяются в объекте `MediaTrackConstraint` (одно для аудио, одно для видео). Атрибуты в этом объекте типа `ConstraintLong`, `ConstraintBoolean`, `ConstraintDouble` или `ConstraintDOMString`. Данные могут быть как конкретным значением (например, число, Boolean или String), диапазоном (LongRange или DoubleRange с минимальным и максимальным значением) или объектом c ideal или exact определением. Для конкретных значений браузер будет пытаться выбрать что-то наиболее близкое. Для диапазонных будет использоваться лучшее значение из диапазона. Для exact – будет передаваться только тот медиа-поток, который точно соответствует заданным ограничениям.
 
-```json
+```javascripton
 NEAR
 // Camera with a resolution as close to 640x480 as possible
 {
@@ -77,7 +77,7 @@ EXACT
 
 Ограничения для getDisplayMedia() отличаются от ограничений, используемых для обычных входящих видео- и аудио-потоков.
 
-```json
+```javascripton
 {
     video: {
         cursor: ‘always’ | ‘motion’ | ‘never’,
