@@ -1,5 +1,5 @@
 ---
-title: 37. Как добавить свой код в PyPI
+title: 37. Как добавить пакет в PyPI
 description: Python 101
 toc: true
 authors:
@@ -34,7 +34,7 @@ mymath/
 Мы начнем с создания очень простого скрипта **setup.py**. Вот самый простой из них:
 
 ```python
-из distutils.core import setup
+from distutils.core import setup
 
 setup(name='mymath',
       version='0.1',
@@ -122,3 +122,6 @@ python setup.py --help-commands
 ## Подведение итогов
 
 Теперь вы знаете основы добавления вашего пакета в Python Packaging Index. Если вы хотите добавить Python-яйцо в PyPI, вам нужно будет использовать easy_install вместо distutils. Когда вы выпустите свою следующую версию, вы, возможно, захотите добавить файл **CHANGES.txt**, в котором перечислены изменения в вашем коде. Существует отличный сайт под названием **The Hitchhiker's Guide to Packaging**, на котором вы можете найти дополнительную информацию по этой интересной теме. Кроме того, вы можете ознакомиться с этим [руководством](http://www.scotttorborg.com/python-packaging/index.html) Скотта Торборга, чтобы взглянуть на процесс с другой стороны.
+
+## Ссылки
+[https://pylint.pycqa.org/en/latest](https://pylint.pycqa.org/en/latest)
