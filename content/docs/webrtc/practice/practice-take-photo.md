@@ -145,9 +145,7 @@ function renderPhoto(data) {
 </head>
 
 <body>
-
   <h1>Realtime communication with WebRTC</h1>
-
   <h2>
     <span>Room URL: </span><span id="url">...</span>
   </h2>
@@ -210,4 +208,5 @@ node index.js
 
 - Как делать фото и получать из нее данные с помощью элемента canvas.
 - Как обмениваться этими данными с удаленным пользователем.
+  
 Полная версия этого шага находится в папке step-06.

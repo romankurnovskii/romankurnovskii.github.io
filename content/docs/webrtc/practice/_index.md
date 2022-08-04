@@ -1,5 +1,5 @@
 ---
-title: v--- Практика ---v
+title: Практика
 description: Карманная книга по WebRTC
 toc: true
 authors:
