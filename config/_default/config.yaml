@@ -1,11 +1,16 @@
 baseURL: https://romankurnovskii.com/
 title: Roman Kurnovskii
 
+module:
+  imports:
+    path: github.com/romankurnovskii/hugo-theme-yalla
+    
+
 # manual theme update or gitsubmodules
-theme: hugo-theme-yalla
+# theme: hugo-theme-yalla
 
 # update/install with Hugo Modules
-# theme: github.com/romankurnovskii/hugo-theme-yalla
+theme: github.com/romankurnovskii/hugo-theme-yalla
 
 defaultContentLanguage: ru
 defaultContentLanguageInSubdir: true
@@ -75,3 +80,4 @@ outputs:
 
 
 ignoreErrors: ["error-remote-getjson"]
+
