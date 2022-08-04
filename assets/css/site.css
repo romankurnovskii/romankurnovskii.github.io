@@ -1,4 +1,3 @@
-
 .sticky-toc {
   @apply sticky top-24 z-0 duration-300 ease-in-out;
 }
@@ -12,7 +11,7 @@
 }
 
 .sticky-toc ul {
-  @apply ps-0.5 text-tertiary-text  text-base ;
+  @apply ps-0.5 text-tertiary-text  text-base;
 }
 
 .sticky-toc ul > li {
@@ -64,3 +63,23 @@
 #page__views__div {
   display: none;
 }
+
+/* DOCS SIDEBAR */
+
+.doc__nav__section a {
+  @apply  rounded-lg transition duration-75;
+}
+
+.doc__nav__section button {
+  @apply hover:bg-tertiary-bg w-7 rounded-lg text-base font-normal transition duration-75  dark:hover:bg-gray-100;
+}
+
+#doc__nav__dropdown {
+  @apply ml-3 space-y-2 py-2;
+}
+
+#doc__nav__dropdown a {
+  @apply hover:bg-tertiary-bg flex w-full items-center rounded-lg text-base font-normal transition  duration-75;
+}
+
+/* END DOCS SIDEBAR */

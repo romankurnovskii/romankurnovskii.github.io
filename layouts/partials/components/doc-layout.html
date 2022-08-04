@@ -1,36 +1,3 @@
-<style>
-    /* Фиксированный боковых навигационных ссылок, полной высоты */
-    .sidenav {
-        height: 100%;
-        /* width: 200px; */
-        top: 0;
-        left: 0;
-    }
-
-    .sidenav a,
-    .dropdown-btn {
-        padding: 2px 3px 2px 10px;
-        text-decoration: none;
-        display: block;
-        border: none;
-        width: 100%;
-        text-align: left;
-        cursor: pointer;
-        outline: none;
-    }
-
-
-    .dropdown-container {
-        display: none;
-        padding-left: 8px;
-    }
-
-</style>
-
-
-
-
-
 {{ $hasToc := and (in .TableOfContents "<li>" ) (.Params.toc) }}
 
     {{ $hasSidebar := or ($hasToc) (.Params.series) }}
@@ -40,8 +7,8 @@
                 <div class="sticky top-16 pt-6">
                     {{ template "doc-sidebar" (dict "context" . "permalink" .Permalink) }}
                 </div>
-
             </div>
+
             <div class="w-full md:w-3/4 lg:w-4/5 pb-2 pt-2 md:pt-2">
                 <div class="flex">
                     <div class="w-full lg:w-3/4 px-6">
@@ -67,31 +34,22 @@
                     </div>
                     {{ end }}
                 </div>
-
             </div>
-
 
         </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            {
-                {/* highlight.js  // comment while toc toggle
-                {{- if eq .Site.Params.highlight.handler "highlightjs" }}
-                    hljs.highlightAll();
-                {{- end }}
-            */}
-            }
             changeSidebarHeight();
-            switchDocToc();
+            switchDocToc(); // in mobile view
         })
     </script>
 
+
     {{ define "doc-sidebar" }}
-    {{/* Deprecation warning(v1.0.0) starts */}}
     {{ $parentLayout := partial "utils/hyphenate" (.context.Parent.Layout | default .context.Parent.Type) }}
-    {{/* Deprecation warning(v1.0.0) ends */}}
+
     {{ if eq $parentLayout "doc-list" }}
 
     {{ partial "components/docs/list-pages" (dict "context" .context "permalink" .permalink) }}
@@ -106,7 +64,8 @@
     {{ end }}
 
     {{ end }}
-    
+
+
     {{ define "partials/get-versions" }}
     {{/* Deprecation warning(v1.0.0) starts */}}
     {{ $parentLayout := partial "utils/hyphenate" (.context.Parent.Layout | default .context.Parent.Type) }}
