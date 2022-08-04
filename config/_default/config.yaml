@@ -1,6 +1,6 @@
 baseURL: https://romankurnovskii.com/
 title: Roman Kurnovskii
-   
+
 # manual theme update or gitsubmodules
 # theme: hugo-theme-yalla
 
@@ -10,11 +10,9 @@ module:
     path: github.com/romankurnovskii/hugo-theme-yalla
 theme: github.com/romankurnovskii/hugo-theme-yalla
 
-
 defaultContentLanguage: ru
 defaultContentLanguageInSubdir: true
 hasCJKLanguage: false # Set `true` for Chinese/Japanese/Korean.
-
 
 paginate: 10
 copyright: >
@@ -77,6 +75,4 @@ outputs:
     - RSS
     - SearchIndex
 
-
 ignoreErrors: ["error-remote-getjson"]
-
