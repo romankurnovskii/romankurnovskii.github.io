@@ -11,20 +11,20 @@ draft: false
 ---
 
 
-### Печать текущей даты
+### Дата
+
+#### Текущая
 
 ```python
 import datetime
-x = datetime.datetime.now()
-print(x)
+x = datetime.datetime.now() # 2022-08-04 21:41:24.871910
 ```
 
-### Печать текущей даты в виде даты в формате `YYYY-MM-DD`
+#### Формат `YYYY-MM-DD`
 
 ```python
 import datetime
-x = datetime.datetime.now().strftime("%Y-%m-%d")
-print(x)
+x = datetime.datetime.now().strftime("%Y-%m-%d") # 2022-08-04
 ```
 
 ### Создать папку
@@ -38,8 +38,8 @@ if not os.path.exists(name):
 
 ```python
 import collections
-x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-print(collections.Counter(x).most_common(1)[0][0])
+x = [1, 2, 7, 4, 5, 6, 7, 10]
+print(collections.Counter(x).most_common(1)[0][0]) # 7
 ```
 
 ```python
@@ -54,10 +54,8 @@ print(most_freq(test)) # 10
 
 ```python
 import random
-x = random.randint(1, 10)
-print(x)
+x = random.randint(1, 10) # 9
 ```
-
 
 ### Одновременная проверка нескольких флагов в Python
 
