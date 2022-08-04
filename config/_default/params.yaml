@@ -21,7 +21,6 @@ highlight:
   handler: highlightjs
 
   highlightjs:
-    # highlight.js doesn't bundle every language. So please specify additional languages you want here.
     # See https://github.com/highlightjs/cdn-release/tree/master/build/languages for available languages.
     languages:
       - bash
@@ -49,20 +48,20 @@ comment:
 
   opencomments:
     server: https://opencomments.herokuapp.com/comments
-    serverLocal: http://127.0.0.1:5000/comments
+    # serverLocal: http://127.0.0.1:5000/comments
 
-  telegram:
-    siteid: Qu__K6Sj
+  # telegram: #comments.app
+  #   siteid: # e.g. Qu__K123
 
-  disqus:
-    shortname: romankurnovskii
+  # disqus:
+  #   shortname:
 
-  utterances:
-    # Browse https://utteranc.es/ to see the options available.
-    # If you want the color scheme of utterances to follow eureka's, you can set `theme: eureka`.
-    repo: https://github.com/romankurnovskii/romankurnovskii.github.io
-    issue-term: pathname
-    theme: github-light
+  # utterances:
+  #   # Browse https://utteranc.es/ to see the options available.
+  #   # If you want the color scheme of utterances to follow eureka's, you can set `theme: eureka`.
+  #   repo: https://github.com/romankurnovskii/romankurnovskii.github.io
+  #   issue-term: pathname
+  #   theme: github-light
 
   # commento:
   #   # If self-hosting, please enter the url (e.g. https://commento.example.com) here. Otherwise leave empty.

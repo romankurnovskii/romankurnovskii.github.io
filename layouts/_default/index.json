@@ -1,9 +1,0 @@
-[
-  {{- range $index, $page := .Site.RegularPages.ByTitle -}}
-    {{- if gt $index 0 -}} , {{- end -}}
-    {{- $entry := dict "uri" $page.RelPermalink "title" $page.Title -}}
-    {{- $entry = merge $entry (dict "description" .Description) -}}
-    {{- $entry = merge $entry (dict "content" (.Plain | htmlUnescape)) -}}
-    {{- $entry | jsonify -}}
-  {{- end -}}
-]
