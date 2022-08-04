@@ -8,7 +8,7 @@
 <div id="sidebar-toc"
     class="hidden md:block overflow-y-auto mx-6 md:mx-0 pe-2 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent">
     <div class="flex flex-wrap ms-1 -me-2 p-1 bg-secondary-bg md:bg-primary-bg rounded">
-        <a class="{{ if eq .context.Permalink $currentPage }}text-eureka{{ end }} hover:text-eureka"
+        <a class="{{ if eq .context.Permalink $currentPage }}text-eureka{{ end }}  hover:text-eureka"
             href="{{ .context.Permalink }}">{{ .context.LinkTitle }}</a>
 
         {{ $versions := partial "get-versions" (dict "context" .context) }}
@@ -49,6 +49,7 @@
 
     </div>
 
-    {{ partial "components/doc-menu-list" (dict "context" .context "permalink" $currentPage ) }}
+    {{/* doc menu */}}
+    {{ partial "components/docs/menu-list" (dict "context" .context "permalink" $currentPage ) }}
 
 </div>

@@ -1,53 +1,46 @@
-{{/* TODO make abstract if needed in future */}}
-{{ $url := "" }}
-{{ $pkgStat := "" }}
-{{ $pkgReadme := "" }}
-{{ $pkgLicense := "" }}
-{{ $pkgSourceCode := "" }}
-{{ $npmPackageDownloadsStatUrl := "https://npm-trends-gateway.onrender.com/npm/downloads/point/last-year/" }}
-{{ $npmPackageFullStatUrl := "https://npm-trends-gateway.onrender.com/npm/registry/" }}
-
 {{ $pkgName := .Params.packageName }}
-{{ $pkgDownloads := "" }}
 
-{{ if $pkgName }}
-
-{{ $url = path.Join $npmPackageDownloadsStatUrl $pkgName }}
-{{ $url = replace $url "https:/" "https://" 1 }}
-{{ $pkgDownloads = getJSON $url }}
-{{ $pkgDownloads = $pkgDownloads.downloads }}
-
-{{ $url = path.Join $npmPackageFullStatUrl $pkgName }}
-{{ $url = replace $url "https:/" "https://" 1 }}
-{{ $pkgStat = getJSON $url }}
-
-{{ end }}
-
-{{ $pkgDate := .Date.Format (.Site.Params.dateFormat | default "2006-01-02") }}
-{{ if ne $pkgStat "" }}
-{{ $pkgDate = $pkgStat.time.modified | time.AsTime | time.Format "2006-01-02" }}
-{{ end }}
 
 <div class="flex flex-wrap flex-row items-center mt-2 font-mono text-tertiary-text">
-
+    <div id="pkg_date_modified" class="mr-6 my-2"></div>
     <div class="mr-6 my-2">
-        {{ $pkgDate }}
+        {{ i18n "appInstalls"}}: <span id="pkg_downloads"></span>
     </div>
-
-    {{ with $pkgDownloads }}
-
+    <div id="pkg_license" class="mr-6 my-2"></div>
     <div class="mr-6 my-2">
-        {{ i18n "appInstalls"}}: {{ $pkgDownloads }}
+        <a id="pkg_sources_url" href="#" target="_blank">Source Code</a>
     </div>
-
-    <div class="mr-6 my-2">
-        {{ $pkgStat.license }}
-    </div>
-
-    <div class="mr-6 my-2">
-        <a href="{{ $pkgStat.homepage }}" target="_blank">Source Code</a>
-    </div>
-
-    {{ end }}
-
 </div>
+
+
+<script pkgName={{ $pkgName }}>
+    const pkgName = window.document.currentScript.getAttribute('pkgName');
+
+    const smStatUrl = 'https://npm-trends-gateway.onrender.com/npm/downloads/point/last-year/' + pkgName
+    const fullStatUrl = 'https://npm-trends-gateway.onrender.com/npm/registry/' + pkgName
+
+    const renderData = (blockId, data) => {
+        const target = document.getElementById(blockId)
+        target.innerText = data
+    }
+
+    axios.get(smStatUrl).then(res => {
+        const downloads = res.data.downloads
+        renderData('pkg_downloads', downloads)
+    }
+    )
+    axios.get(fullStatUrl).then(res => {
+        const modified = new Date(res.data.time.modified).toLocaleDateString()
+        const license = res.data.license
+        const sourceCodeUrl = res.data.homepage
+
+        renderData('pkg_license', license)
+
+        let target = document.getElementById('pkg_date_modified')
+        target.innerText = modified
+
+        target = document.getElementById('pkg_sources_url')
+        target.href = sourceCodeUrl
+    }
+    )
+</script>
