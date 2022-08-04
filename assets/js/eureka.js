@@ -148,7 +148,6 @@ function getcolorscheme() {
 }
 
 {{/*  Utterances  */}}
-{{/*  Deprecation warning(v1.0.0) starts */}}
 {{- $commentHandler := .Site.Params.comment.handler | default .Site.Params.comment.platform }}
 {{/*  Deprecation warning(v1.0.0) ends  */}}
 {{ $enableUtterances := and (eq $commentHandler "utterances") (eq .Site.Params.comment.utterances.theme "eureka") }}
@@ -266,7 +265,8 @@ function switchDocToc() {
 function changeSidebarHeight() {
     let element = document.getElementById('sidebar-title');
     let target = document.getElementById('sidebar-toc');
-    target.style.setProperty('--height-doc-title', `${element.offsetHeight}px`);
+    // target.style.setProperty('--height-doc-title', `${element.offsetHeight}px`);
+    // pass for now 
 }
 
 //switch doc version
