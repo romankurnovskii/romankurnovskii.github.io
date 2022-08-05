@@ -23,7 +23,7 @@
     "hugo-lunr-ml": "hugo-lunr-ml",
     "xo": "xo --cwd=static/js --workspace=static/js",
     "xo-fix": "xo --fix --env=browser --cwd=static/js --workspace=static/js",
-    "push": "git add .; git add --force themes/hugo-theme-yalla; git commit -am 'upd'; git push",
+    "push": "git add .; git commit -am upd; git push",
     "p": "echo $1" 
   },
   "browserslist": [
