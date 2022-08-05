@@ -22,7 +22,8 @@
   "scripts": {
     "hugo-lunr-ml": "hugo-lunr-ml",
     "xo": "xo --cwd=static/js --workspace=static/js",
-    "xo-fix": "xo --fix --env=browser --cwd=static/js --workspace=static/js"
+    "xo-fix": "xo --fix --env=browser --cwd=static/js --workspace=static/js",
+    "push": "git add .; git commit -am 'content upd'; git push"
   },
   "browserslist": [
     "last 1 version",
