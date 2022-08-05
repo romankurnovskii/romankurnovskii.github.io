@@ -60,6 +60,7 @@ brew install --cask \
  google-drive \
  grammarly \
  iterm2 \
+ kap \
  macx-youtube-downloader \
  mongodb-compass \
  notion \
@@ -148,6 +149,12 @@ brew install \
 
 [Firefox](https://www.google.com/chrome/) (web development)
 
+### itsycal
+
+Itsycal is a tiny menu bar calendar.
+
+![](https://www.mowglii.com/itsycal/itsycalbanner2@2x.png)
+
 ### Visual Studio Code
 
 [Visual Studio Code](https://code.visualstudio.com/) (web development IDE
@@ -156,6 +163,9 @@ brew install \
 
 [Sublime Text](https://www.sublimetext.com/) (editor)
 
+### Kap
+
+[Screen recorder / gif maker](https://getkap.co/)
 ### Maccy
 
  [Maccy](https://maccy.app/) (clipboard manager)
