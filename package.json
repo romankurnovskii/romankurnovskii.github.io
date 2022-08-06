@@ -23,8 +23,9 @@
     "hugo-lunr-ml": "hugo-lunr-ml",
     "xo": "xo --cwd=static/js --workspace=static/js",
     "xo-fix": "xo --fix --env=browser --cwd=static/js --workspace=static/js",
+    "upd-modules": "git submodule update --remote --merge",
     "push": "git add .; git commit -am upd; git push",
-    "p": "echo $1" 
+    "p": "npm run upd-modules; npm run push"
   },
   "browserslist": [
     "last 1 version",
