@@ -32,5 +32,11 @@
     "> 1%",
     "maintained node versions",
     "not dead"
-  ]
+  ],
+  "dependencies": {
+    "html-react-parser": "^3.0.1",
+    "marked": "^4.0.18",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }
