@@ -25,7 +25,7 @@
     "xo-fix": "xo --fix --env=browser --cwd=static/js --workspace=static/js",
     "upd-modules": "git submodule update --remote --merge",
     "push": "git add .; git commit -am upd; git push",
-    "p": "npm run upd-modules; npm run push"
+    "p": "git pull; npm run upd-modules; npm run push"
   },
   "browserslist": [
     "last 1 version",
