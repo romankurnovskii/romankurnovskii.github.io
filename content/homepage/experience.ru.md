@@ -23,7 +23,7 @@ experiences:
 
       - Курсы <a href="https://gb.ru/" target="_blank">GeekBrains</a>
 
-      - <a href="/posts/diploma/">Промежуточные итоги</a>
+      - <a href="posts/diploma/">Промежуточные итоги</a>
 
   - title: Стартап
     organization:
