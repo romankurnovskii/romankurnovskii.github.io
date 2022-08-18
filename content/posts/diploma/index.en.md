@@ -1,10 +1,10 @@
 ---
-title: IT курсы 2020
-description: Подтвержденные знания по IT за 2020 год
+title: IT courses 2020
+description: Certified IT knowledge for the year 2020
 toc: true
 authors: []
-tags: ['учеба', 'it', 'эмиграция']
-categories: ['учеба']
+tags: ['study', 'it', 'emigration']
+categories: ['study']
 series: []
 date: 2021-01-01T15:31:25+02:00
 lastmod: 2021-01-01T15:31:25+02:00
@@ -14,11 +14,11 @@ draft: false
 type: gallery
 ---
 
-Промежуточные метрики еще в процессе расчетов
+Interim metrics still in process
 
-За 2020 год:
+For 2020:
 
-- Затрачено времени на учебу/практику: ~5500 часов
+- Time spent studying/practicing: ~5500 hours
 
 <!--more-->
 <!-- 
