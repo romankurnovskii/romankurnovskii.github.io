@@ -23,7 +23,7 @@ experiences:
        
       - <a href="https://gb.ru/" target="_blank">GeekBrains</a>
        
-      - <a href="/posts/diploma/">Process</a>
+      - <a href="posts/diploma/">Process</a>
 
   - title: Start Up
     organization:
