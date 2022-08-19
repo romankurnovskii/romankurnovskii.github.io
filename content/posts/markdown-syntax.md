@@ -17,9 +17,10 @@ date: 2022-04-21
 draft: false
 ---
 
-This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
+Эта статья предлагает пример базового синтаксиса Markdown, который можно использовать в файлах содержимого Hugo, а также показывает, украшаются ли основные элементы HTML с помощью CSS в теме Hugo.
 <!--more-->
 
+[Рекомендации по оформления статьи](https://github.com/yandex-cloud/docs/blob/master/guides/how-to-write.md)
 ## Заголовки
 
 Заголовки первого и второго уровней, выполненные с помощью подчеркивания, выглядят следующим образом:
@@ -66,19 +67,19 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aut commodi de
 
 ## Цитаты
 
-The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
+Элемент blockquote представляет содержимое, которое цитируется из другого источника, по желанию с цитатой, которая должна находиться в элементе `footer` или `cite`, и по желанию с изменениями в строке, такими как аннотации и сокращения.
 
-#### Blockquote without attribution
+#### Блок-цитата без указания авторства
 
 > Tiam, ad mint andaepu dandae nostion secatur sequo quae.
-> **Note** that you can use *Markdown syntax* within a blockquote.
+> **Обратите внимание**, что вы можете использовать синтаксис *Markdown* внутри блочной цитаты.
 
-#### Blockquote with attribution
+#### Блок-цитата с указанием авторства
 
 > Don't communicate by sharing memory, share memory by communicating.<br>
 > — <cite>Rob Pike[^1]</cite>
 
-[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
+[^1]: Приведенная выше цитата взята из книги Роба Пайка [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
 
 ```
 >Это пример цитаты,
@@ -114,35 +115,48 @@ The blockquote element represents content that is quoted from another source, op
 
 ## Таблицы
 
-Tables aren't part of the core Markdown spec, but Hugo supports supports them out-of-the-box.
+Таблицы не являются частью основной спецификации Markdown, но Hugo поддерживает их из коробки.
 
 ```
-   Name | Age
---------|------
-    Bob | 27
-  Alice | 23
+   | Name  | Age |
+   | ----- | --- |
+   | Bob   | 27  |
+   | Alice | 23  |
 ```
 
-   Name | Age
---------|------
-    Bob | 27
-  Alice | 23
+   | Name  | Age |
+   | ----- | --- |
+   | Bob   | 27  |
+   | Alice | 23  |
 
-#### Inline Markdown within tables
+В ячейках разделительной строки используются только символы - и :. Символ : ставится в начале, в конце или с обеих сторон содержимого ячейки разделительной строки, чтобы обозначить выравнивание текста в соответствующем столбце по левой стороне, по правой стороне или по центру.
+
+```
+Колонка по левому краю | Колонка по правому краю | Колонка по центру
+:--- | ---: | :---:
+Текст | Текст | Текст
+```
+
+| Колонка по левому краю | Колонка по правому краю | Колонка по центру |
+| :--------------------- | ----------------------: | :---------------: |
+| Текст                  |                   Текст |       Текст       |
+
+
+#### Markdown внутри таблицы
 
 ```
 | Italics   | Bold     | Code   |
-| --------  | -------- | ------ |
+| --------- | -------- | ------ |
 | *italics* | **bold** | `code` |
 ```
 
 | Italics   | Bold     | Code   |
-| --------  | -------- | ------ |
+| --------- | -------- | ------ |
 | *italics* | **bold** | `code` |
 
-## Code Blocks
+## Блоки кода
 
-#### Code block with backticks
+#### Блок кода с обратными кавычками
 
 ```html
 <!doctype html>
@@ -157,7 +171,7 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
 </html>
 ```
 
-#### Code block indented with four spaces
+#### Блок кода с отступом в четыре пробела
 
     <!doctype html>
     <html lang="en">
@@ -170,7 +184,8 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
     </body>
     </html>
 
-#### Code block with Hugo's internal highlight shortcode
+#### Блок кода с внутренним шорткодом подсветки Hugo
+
 {{< highlight html >}}
 <!doctype html>
 <html lang="en">
@@ -184,21 +199,68 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
 </html>
 {{< /highlight >}}
 
-## List Types
+## Списки
 
-#### Ordered List
+1. Оформляйте заголовки единообразно. В конце заголовка точку не ставьте. 
+
+    | Правильно                                     | Неправильно                                 |
+    | --------------------------------------------- | ------------------------------------------- |
+    | Получение сертификата <br/> Создание кластера | Получить сертификат <br/> Создание кластера |
+    | Получить сертификат <br/> Создать кластер     |
+
+1. Если требуется описать последовательность действий, используйте нумерованный список. В конце строк ставьте точку. 
+1. Если порядок пунктов неважен, используйте маркированный список. Оформляйте его одним из способов: 
+
+    * Если элементы списка — отдельные предложения, начинайте их с заглавной буквы и ставьте точку в конце. 
+    * Если вводная фраза и список составляют одно предложение, то элементы списка должны начинаться со строчной буквы и завершаться точкой с запятой. Последний элемент списка завершается точкой. 
+    * Если список состоит из названий или значений параметров (без пояснений), знаки в конце строк не ставьте. 
+
+#### Упорядоченный список
 
 1. First item
 2. Second item
 3. Third item
 
-#### Unordered List
+Чтобы оформить упорядоченный нумерованный список, используйте цифры с символом `.` или `)`. Рекомендованный формат разметки: цифра `1` и символ `.`.
+
+```
+1. Первый пункт
+1. Второй пункт
+1. Третий пункт
+```
+
+будет отображаться как:
+
+1. Первый пункт
+1. Второй пункт
+1. Третий пункт
+
+
+Чтобы оформить вложенный упорядоченный список, добавьте отступ для элементов дочернего списка. Допустимый размер отступа — от двух до пяти пробелов. Рекомендуемый размер отступа — четыре пробела.
+
+Например, разметка:
+
+```
+1. Первый пункт
+    1. Вложенный пункт
+    1. Вложенный пункт
+1. Второй пункт
+```
+
+будет отображаться как:
+
+1. Первый пункт
+    1. Вложенный пункт
+    1. Вложенный пункт
+1. Второй пункт
+
+#### Неупорядоченный список
 
 * List item
 * Another item
 * And another item
 
-#### Nested list
+#### Вложенный список
 
 * Fruit
   * Apple
@@ -208,7 +270,7 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
   * Milk
   * Cheese
 
-## Other Elements — abbr, sub, sup, kbd, mark
+## Другие элементы - abbr, sub, sup, kbd, mark
 
 <abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
 
