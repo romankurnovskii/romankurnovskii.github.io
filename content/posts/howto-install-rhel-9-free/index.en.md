@@ -7,7 +7,7 @@ series: []
 categories: [Linux]
 date: "2022-06-17"
 lastmod: "2022-06-17"
-featuredImage: img/featured.jpg
+featuredImage: img/featured.en.jpg
 authors: [roman-kurnovskii]
 ---
 
