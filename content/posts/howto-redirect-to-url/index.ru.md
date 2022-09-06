@@ -7,7 +7,7 @@ series:
 categories: [JavaScript]
 date: "2022-06-06"
 lastmod: "2022-06-06"
-featuredImage: featured.jpg
+featuredImage: featured.ru.jpg
 authors: [roman-kurnovskii]
 ---
 
