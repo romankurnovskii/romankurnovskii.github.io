@@ -12,7 +12,6 @@ theme: hugo-theme-yalla
 
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: true
-hasCJKLanguage: false # Set `true` for Chinese/Japanese/Korean.
 
 paginate: 10
 copyright: >
@@ -21,7 +20,6 @@ enableEmoji: true
 enableGitInfo: true
 summaryLength: 75
 
-# Uncomment for google analytics
 googleAnalytics: G-26F2C5ZR4Y
 
 markup:

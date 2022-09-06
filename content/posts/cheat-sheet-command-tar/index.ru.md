@@ -6,7 +6,7 @@ tags: ["Linux", "CLI", "tar", "cheatsheet"]
 series:
 categories: [Linux, CLI]
 date: "2022-06-05"
-featuredImage: featured.jpg
+featuredImage: featured.ru.jpg
 authors: [roman-kurnovskii]
 ---
 
