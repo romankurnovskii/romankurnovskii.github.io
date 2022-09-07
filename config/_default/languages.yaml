@@ -8,8 +8,49 @@ en:
   menu:
     main:
       - name: Notes
+        identifier: notes
         url: /posts/
         weight: 2
+      - name: AWS
+        identifier: aws
+        url: /categories/aws/
+        parent: notes
+        weight: 201
+      - name: OS
+        identifier: os
+        url: /categories/os/
+        parent: notes
+      - name: Docker
+        identifier: docker
+        url: /categories/docker/
+        parent: os
+      - name: Linux
+        identifier: linux
+        url: /categories/linux/
+        parent: os
+      - name: Mac
+        identifier: macos
+        url: /categories/macos/
+        parent: os
+        weight: 201
+      - name: Programming
+        identifier: programming
+        url: /categories/programming/
+        parent: notes
+      - name: Python
+        identifier: python
+        url: /categories/python/
+        parent: programming
+      - name: JavaScript
+        identifier: javascript
+        url: /categories/javascript/
+        parent: programming
+      - name: Hugo
+        identifier: hugo
+        url: /categories/hugo/
+        parent: programming
       - name: Apps
         url: apps/
         weight: 5
+
+

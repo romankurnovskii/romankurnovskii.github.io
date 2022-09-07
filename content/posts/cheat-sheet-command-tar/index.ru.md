@@ -4,7 +4,7 @@ description: Необходимые команды для работы с арх
 toc: true
 tags: ["Linux", "CLI", "tar", "cheatsheet"]
 series:
-categories: [Linux, CLI]
+categories: [Linux, MacOS, CLI]
 date: "2022-06-05"
 featuredImage: featured.ru.jpg
 authors: [roman-kurnovskii]

@@ -4,7 +4,7 @@ description: tar command Cheat Sheet
 toc: true
 tags: ["Linux", "CLI", "tar", "cheatsheet"]
 series:
-categories: [Linux, CLI]
+categories: [Linux, MacOS, CLI]
 date: "2022-06-05"
 featuredImage: featured.en.jpg
 authors: [roman-kurnovskii]
