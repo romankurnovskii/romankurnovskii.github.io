@@ -13,7 +13,7 @@ draft: false
 
 mongodb free tier vs documentdb
 
-## App Blueprint
+## Project structure
 
 ```
 - src
