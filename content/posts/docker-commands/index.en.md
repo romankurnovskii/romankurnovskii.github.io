@@ -13,7 +13,21 @@ authors: [roman-kurnovskii]
 
 Here follows a list of useful Docker commands with useful flags for each command.
 
+1. docker images - lists the images
+1. docker ps - see the list of running containers
+1. docker pull - uploads the image
+1. docker build - builds the image
+1. docker rmi - removes the image
+1. docker rm - removes the container
+1. docker run - Start the container
+1. docker stop - stops the container
+1. docker volume ls - lists the volumes
+1. docker kill - kills the container
+1. docker logs - see logs
+1. docekr inspect - shows all the info of a container
+
 ## docker build
+
 [Docs](https://docs.docker.com/engine/reference/commandline/build/)
 Build an image from a Dockerfile.
 
@@ -21,7 +35,7 @@ Build an image from a Dockerfile.
 docker build [DOCKERFILE PATH]
 ```
 
-### Example
+**Example**
 
 Build an image tagged `my-org/my-image` where the Dockerfile can be found at
 `/tmp/Dockerfile`.
@@ -30,7 +44,7 @@ Build an image tagged `my-org/my-image` where the Dockerfile can be found at
 docker build -t my-org:my-image -f /tmp/Dockerfile
 ```
 
-### Useful flags
+**Flags**
 
 - `--file -f` Path where to find the Dockerfile
 - `--force-rm` Always remove intermediate containers
@@ -46,7 +60,7 @@ docker build -t my-org:my-image -f /tmp/Dockerfile
 Creates and starts a container in one operation. Could be used to execute a
 single command as well as start a long-running container.
 
-Example:
+**Example**
 
 ```sh
 docker run -it ubuntu:latest /bin/bash
@@ -56,7 +70,7 @@ This will start a ubuntu container with the entrypoint `/bin/bash`. Note that
 if you do not have the `ubuntu` image downloaded it will download it before
 running it.
 
-### Useful flags
+**Flags**
 
 - `-it` This will not make the container you started shut down immediately, as
 it will create a pseudo-TTY session (`-t`) and keep STDIN open (`-i`)
@@ -76,13 +90,13 @@ Execute a command inside a **running** container.
 docker exec [CONTAINER ID]
 ```
 
-### Example
+**Example**
 
 ```sh
 docker exec [CONTAINER ID] touch /tmp/exec_works
 ```
 
-### Useful flags
+**Flags**
 
 - `--detach -d` Detached mode: run command in the background
 - `-it` This will not make the container you started shut down immediately, as
@@ -97,7 +111,7 @@ List all downloaded/created images.
 docker images
 ```
 
-### Useful flags
+**Flags**
 
 - `-q` Only show numeric IDs
 
@@ -119,7 +133,7 @@ Gets logs from container.
 docker logs [CONTAINER ID]
 ```
 
-### Useful flags
+**Flags**
 
 - `--details` Log extra details
 - `--follow -f` Follow log output. Do not stop when end of file is reached, but
@@ -135,7 +149,7 @@ Shows information about all running containers.
 docker ps
 ```
 
-### Useful flags
+**Flags**
 
 - `--all -a` Show all containers (default shows just running)
 - `--filter -f` Filter output based on conditions provided, `docker ps -f="name="example"`
@@ -150,7 +164,7 @@ Remove one or more images.
 docker rmi [IMAGE ID]
 ```
 
-### Useful flags
+**Flags**
 
 - `--force -f` Force removal of the image
 
@@ -204,7 +218,7 @@ docker kill $(docker ps -q)
 ```
 
 
-## Links
+## Resources
 
 - [docs.docker.com](https://docs.docker.com/engine/reference/run/)
 - [docker-cheat-sheet](https://github.com/wsargent/docker-cheat-sheet)
