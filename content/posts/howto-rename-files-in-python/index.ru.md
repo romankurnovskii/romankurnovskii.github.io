@@ -4,7 +4,7 @@ description: Различные способы переименовывания 
 toc: true
 tags: [Python]
 series:
-categories: [Python]
+categories: [программирование, Python]
 date: "2022-06-04"
 lastmod: "2022-06-04"
 featuredImage: featured.ru.jpg
