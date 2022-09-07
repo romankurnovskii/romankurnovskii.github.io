@@ -7,8 +7,6 @@ categories: [MacOS]
 date: 2022-05-18T00:00:00+03:00
 featuredImage: img/featured.jpg
 authors: [roman-kurnovskii]
-categories: null
-series: null
 ---
 
 ## MacBook Pro Specification
