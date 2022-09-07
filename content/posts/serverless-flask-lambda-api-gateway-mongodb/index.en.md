@@ -24,6 +24,7 @@ mongodb free tier vs documentdb
 - serverless.yml
 ```
 
+[Sources](https://github.com/romankurnovskii/romankurnovskii.github.io/tree/main/content/posts/serverless-flask-lambda-api-gateway-mongodb/example)
 
 ## Add AIM user
 
