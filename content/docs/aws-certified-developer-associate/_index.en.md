@@ -1,7 +1,7 @@
 ---
 title: AWS Certified Developer
 description: My plan for preparing for and taking the AWS Certified Developer exam
-# toc: true
+toc: true
 authors: [roman-kurnovskii]
 tags:
 categories: [aws]
@@ -104,7 +104,11 @@ Storage:
 
 - Amazon S3
 
-Opened a training plan for any tutorial to understand where to start learning. Chose cloudacademy service (but for example FreeCodeCamp has a free course with content)
+### Training plan
+
+Opened a training plan for any tutorial to understand where to start learning. Chose **cloudacademy** service (but for example FreeCodeCamp has a free course with content). 
+
+Another option is to use free [AWS Workshops](https://workshops.aws/)
 
 [AWS Developer - Associate (DVA-C01) Certification Preparation](https://cloudacademy.com/learning-paths/aws-developer-associate-dva-c01-certification-preparation-4364/)
 
@@ -119,11 +123,11 @@ Don't see coverage of the following services, so I add them to the block when re
 - AWS CodeArtifact
 - AWS Fault Injection Simulator
 
-### My roadmap
+## My roadmap
 
 The following is my roadmap for the study. There may be adjustments.
 
-1. [AWS Identity and Access Management (IAM)](iam)
+<!-- 1. [AWS Identity and Access Management (IAM)](iam)
 2. [Amazon EC2](ec2)
 3. [AWS Elastic Beanstalk](elasticbeanstalk)
 4. [AWS Lambda](lambda)
@@ -156,7 +160,44 @@ The following is my roadmap for the study. There may be adjustments.
 31. [Amazon EventBridge (Amazon CloudWatch Events)](eventbridge)
 32. [Amazon Simple Notification Service (Amazon SNS)](sns)
 33. [Amazon Simple Queue Service (Amazon SQS)](sqs)
-34. [AWS Step Functions](step-functions)
+34. [AWS Step Functions](step-functions) -->
+
+
+1. AWS Identity and Access Management (IAM)
+1. Amazon EC2
+1. AWS Elastic Beanstalk
+1. AWS Lambda
+1. Amazon S3
+1. Amazon DynamoDB
+1. Amazon ElastiCache
+1. Amazon RDS
+1. Amazon API Gateway
+1. Amazon CloudFront
+1. Elastic Load Balancing (ELB)
+1. Amazon Kinesis
+1. Amazon OpenSearch Service (Amazon Elasticsearch Service)
+1. Amazon CloudWatch
+1. AWS CloudFormation
+1. AWS CodeCommit
+1. AWS CodeDeploy
+1. AWS CodeBuild
+1. AWS CodePipeline
+1. Amazon CodeGuru
+1. AWS CodeStar
+1. AWS CodeArtifact
+1. AWS X-Ray
+1. AWS Fault Injection Simulator
+1. Amazon Elastic Container Registry (Amazon ECR)
+1. Amazon Elastic Container Service (Amazon ECS)
+1. AWS Fargate
+1. Amazon Elastic Kubernetes Services (Amazon EKS)
+1. Amazon Cognito
+1. AWS Key Management Service (AWS KMS)
+1. Amazon EventBridge (Amazon CloudWatch Events)
+1. Amazon Simple Notification Service (Amazon SNS)
+1. Amazon Simple Queue Service (Amazon SQS)
+1. AWS Step Functions
+
 
 ## Resources
 
@@ -169,6 +210,7 @@ The following is my roadmap for the study. There may be adjustments.
 - [FreeCodeCamp Youtube - AWS Certified Developer - Associate 2020](https://www.youtube.com/watch?v=RrKRN9zRBWs)
 - [How-To Labs from AWS](https://aws.amazon.com/getting-started/hands-on/?getting-started-all.sort-by=item.additionalFields.sortOrder&getting-started-all.sort-order=asc&awsf.getting-started-category=*all&awsf.getting-started-level=*all&awsf.getting-started-content-type=*all)
 - https://amazon.qwiklabs.com/catalog
+- https://workshops.aws
 - https://wellarchitectedlabs.com/
 - https://testseries.edugorilla.com/tests/1359/aws-certified-developer-associate
   
