@@ -9,6 +9,7 @@ weight: 200
 awsTag: EC2
 featuredImage: https://cdn.worldvectorlogo.com/logos/aws-ec2.svg
 imgWidth: 50px
+#todo: Community posts
 ---
 
 ## About
@@ -58,6 +59,8 @@ Allows:
 [Current price](https://aws.amazon.com/ec2/pricing/)
 
 ## Practice
+
+{{< youtube id="Lng4wP26_nk" >}}
 
 ### TL;DR 
 

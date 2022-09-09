@@ -287,10 +287,10 @@ Secrets Manager offers [secret rotation](https://aws.amazon.com/blogs/security/r
 
 **What is one reason that AWS does not recommend that you configure your [ElastiCache](../elasticache) so that it can be accessed from outside AWS?**
 
-- A) The metrics reported by [CloudWatch](../cloudwatch) are more difficult to report.
-- B) Security concerns and network latency over the public internet.
-- C) The [ElastiCache](../elasticache) cluster becomes more prone to failures.
-- D) The performance of the [ElastiCache](../elasticache) cluster is no longer controllable.
+1. The metrics reported by [CloudWatch](../cloudwatch) are more difficult to report.
+1. Security concerns and network latency over the public internet.
+1. The [ElastiCache](../elasticache) cluster becomes more prone to failures.
+1. The performance of the [ElastiCache](../elasticache) cluster is no longer controllable.
 
 
 <details>
@@ -299,7 +299,7 @@ Secrets Manager offers [secret rotation](https://aws.amazon.com/blogs/security/r
 
 Elasticache is a service designed to be used internally to your VPC. External access is discouraged due to the latency of Internet traffic and security concerns. However, if external access to [ElastiCache](../elasticache) is required for test or development purposes, it can be done through a VPN.
 
-<mark style="color:white">B</mark> 
+<mark style="color:white">2</mark> 
 
 </div>
 </details>
@@ -311,10 +311,10 @@ Elasticache is a service designed to be used internally to your VPC. External ac
 
 **What is the most efficient method to ensure that the cluster is deployed immediately after the EB application is deployed?**
 
-- A. Use the [AWS Management Console](../https://aws.amazon.com/console/) to create and configure the cluster.
-- B. Create a cron job to schedule the cluster deployment using the **_aws cloudformation deploy_** command
-- C. Create a configuration file with the .config extension and place it into the .ebextensions folder in the application package.
-- D. Build an [AWS Lambda](../lambda) function that polls to the ElasticBeanstalk environment deployments and create and configure the [Amazon ElastiCache](../elasticache) cluster.
+1. Use the [AWS Management Console](../https://aws.amazon.com/console/) to create and configure the cluster.
+1. Create a cron job to schedule the cluster deployment using the **_aws cloudformation deploy_** command
+1. Create a configuration file with the .config extension and place it into the .ebextensions folder in the application package.
+1. Build an [AWS Lambda](../lambda) function that polls to the ElasticBeanstalk environment deployments and create and configure the [Amazon ElastiCache](../elasticache) cluster.
   
 <details>
 <summary>Explanation</summary>
@@ -322,7 +322,7 @@ Elasticache is a service designed to be used internally to your VPC. External ac
 
 [[AWS Secrets Manager](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-resources.html)](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-resources.html)
 
-<mark style="color:white">C</mark> 
+<mark style="color:white">3</mark> 
 
 </div>
 </details>
@@ -685,10 +685,10 @@ https://docs.aws.amazon.com/kms/latest/developerguide/overview.html
 
 **When working with a published version of the [AWS Lambda](../lambda) function, you should note that the _____.**
 
-- A. Use the [AWS Management Console](../https://aws.amazon.com/console/) to create and configure the cluster.
-- B. Create a cron job to schedule the cluster deployment using the `_aws cloudformation deploy_` command
-- C. Create a configuration file with the .config extension and place it into the .ebextensions folder in the application package.
-- D. Build an [AWS Lambda](../lambda) function that polls to the ElasticBeanstalk environment deployments and create and configure the [Amazon ElastiCache](../elasticache) cluster.
+1. Use the [AWS Management Console](../https://aws.amazon.com/console/) to create and configure the cluster.
+1. Create a cron job to schedule the cluster deployment using the `_aws cloudformation deploy_` command
+1. Create a configuration file with the .config extension and place it into the .ebextensions folder in the application package.
+1. Build an [AWS Lambda](../lambda) function that polls to the ElasticBeanstalk environment deployments and create and configure the [Amazon ElastiCache](../elasticache) cluster.
   
 <details>
 <summary>Explanation</summary>
