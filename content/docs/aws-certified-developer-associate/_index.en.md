@@ -233,8 +233,14 @@ The following is my roadmap for the study. There may be adjustments.
 - [https://github.com/arnaudj/mooc-aws-certified-developer-associate-2020-notes](https://github.com/arnaudj/mooc-aws-certified-developer-associate-2020-notes)
 - [FreeCodeCamp Youtube - AWS Certified Developer - Associate 2020](https://www.youtube.com/watch?v=RrKRN9zRBWs)
 - [How-To Labs from AWS](https://aws.amazon.com/getting-started/hands-on/?getting-started-all.sort-by=item.additionalFields.sortOrder&getting-started-all.sort-order=asc&awsf.getting-started-category=*all&awsf.getting-started-level=*all&awsf.getting-started-content-type=*all)
+- [AWS Ramp-Up guides](https://aws.amazon.com/training/ramp-up-guides): Downloadable AWS Ramp-Up Guides offer a variety of resources to help you build your skills and knowledge of the AWS Cloud.
+- [Coursera's AWS Courses(Free to enroll via audit)](https://www.coursera.org/aws): AWS also provides various specializations in partnership with coursera
+- [AWS Architecture center](https://aws.amazon.com/architecture/?nc2=h_ql_le_arc&cards-all.sort-by=item.additionalFields.sortDate&cards-all.sort-order=desc&awsf.content-type=*all&awsf.methodology=*all&awsf.tech-category=*all&awsf.industries=*all): Provides reference architecture diagrams, vetted architecture solutions, Well-Architected best practices, patterns, icons, and more. This expert guidance was contributed by cloud architecture experts from AWS, including AWS Solutions Architects, Professional Services Consultants, and Partners.
+- [AWS Whitepapers](https://aws.amazon.com/whitepapers): Expand your knowledge of the cloud with AWS technical content authored by AWS and the AWS community, including technical whitepapers, technical guides, reference material, and reference architecture diagrams.
+- [Back to Basics](https://aws.amazon.com/architecture/back-to-basics): Back to Basics' is a video series that explains, examines, and decomposes basic cloud architecture pattern best practices.
+- [AWS Heroes Content Library](https://aws.amazon.com/developer/community/heroes/content-library): AWS Hero authored content including blogs, videos, slide presentations, podcasts, and more.
 - https://amazon.qwiklabs.com/catalog
-- https://workshops.aws
+- [AWS Workshops](https://workshops.aws): This website lists workshops created by the teams at Amazon Web Services (AWS). Workshops are hands-on events designed to teach or introduce practical skills, techniques, or concepts which you can use to solve business problems.
 - https://wellarchitectedlabs.com/
 - https://testseries.edugorilla.com/tests/1359/aws-certified-developer-associate
 
