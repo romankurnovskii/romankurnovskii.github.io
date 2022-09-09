@@ -8,6 +8,7 @@ categories: [Python]
 date: "2022-05-20"
 featuredImage: images/pyscript-featured.jpg
 authors: [roman-kurnovskii]
+aliases: ["/posts/pyscript-python-embedded-in-html/"]
 ---
 
 ## PyScript

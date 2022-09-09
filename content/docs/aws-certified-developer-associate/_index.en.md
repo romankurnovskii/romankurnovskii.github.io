@@ -3,7 +3,7 @@ title: AWS Certified Developer
 description: My plan for preparing for and taking the AWS Certified Developer exam
 toc: true
 authors: [roman-kurnovskii]
-tags:
+tags: [aws]
 categories: [aws]
 series:
 date: 2022-09-08
@@ -127,76 +127,100 @@ Don't see coverage of the following services, so I add them to the block when re
 
 The following is my roadmap for the study. There may be adjustments.
 
-<!-- 1. [AWS Identity and Access Management (IAM)](iam)
+<!-- 1. 
+
 2. [Amazon EC2](ec2)
 3. [AWS Elastic Beanstalk](elasticbeanstalk)
+   
 4. [AWS Lambda](lambda)
 5. [Amazon S3](s3)
+   
 6. [Amazon DynamoDB](dynamodb)
 7. [Amazon ElastiCache](elasticache)
 8. [Amazon RDS](rds)
-9. [Amazon API Gateway](api-gateway)
-10. [Amazon CloudFront](cloudfront)
-11. [Elastic Load Balancing (ELB)](elasticloadbalancing)
-12. [Amazon Kinesis](kinesis)
-13. [Amazon OpenSearch Service (Amazon Elasticsearch Service)](opensearch-service)
-14. [Amazon CloudWatch](cloudwatch)
-15. [AWS CloudFormation](cloudformation)
-16. [AWS CodeCommit](codecommit)
-17. [AWS CodeDeploy](codedeploy)
-18. [AWS CodeBuild](codebuild)
-19. [AWS CodePipeline](codepipeline)
-20. [Amazon CodeGuru](codeguru)
-21. [AWS CodeStar](codestar)
-22. [AWS CodeArtifact](codeartifact)
-23. [AWS X-Ray](xray)
-24. [AWS Fault Injection Simulator](fis)
-25. [Amazon Elastic Container Registry (Amazon ECR)](ecr)
-26. [Amazon Elastic Container Service (Amazon ECS)](ecs)
-27. [AWS Fargate](fargate)
-28. [Amazon Elastic Kubernetes Services (Amazon EKS)](eks)
-29. [Amazon Cognito](cognito)
-30. [AWS Key Management Service (AWS KMS)](kms)
-31. [Amazon EventBridge (Amazon CloudWatch Events)](eventbridge)
-32. [Amazon Simple Notification Service (Amazon SNS)](sns)
-33. [Amazon Simple Queue Service (Amazon SQS)](sqs)
-34. [AWS Step Functions](step-functions) -->
+
+10. [Amazon API Gateway](api-gateway)
+11. [Amazon CloudFront](cloudfront)
+12. [Elastic Load Balancing (ELB)](elasticloadbalancing)
+    
+13. [Amazon Kinesis](kinesis)
+14. [Amazon OpenSearch Service (Amazon Elasticsearch Service)](opensearch-service)
 
 
-1. AWS Identity and Access Management (IAM)
-1. Amazon EC2
-1. AWS Elastic Beanstalk
-1. AWS Lambda
-1. Amazon S3
-1. Amazon DynamoDB
-1. Amazon ElastiCache
-1. Amazon RDS
-1. Amazon API Gateway
-1. Amazon CloudFront
-1. Elastic Load Balancing (ELB)
-1. Amazon Kinesis
-1. Amazon OpenSearch Service (Amazon Elasticsearch Service)
-1. Amazon CloudWatch
-1. AWS CloudFormation
-1. AWS CodeCommit
-1. AWS CodeDeploy
-1. AWS CodeBuild
-1. AWS CodePipeline
-1. Amazon CodeGuru
-1. AWS CodeStar
-1. AWS CodeArtifact
-1. AWS X-Ray
-1. AWS Fault Injection Simulator
-1. Amazon Elastic Container Registry (Amazon ECR)
-1. Amazon Elastic Container Service (Amazon ECS)
-1. AWS Fargate
-1. Amazon Elastic Kubernetes Services (Amazon EKS)
-1. Amazon Cognito
-1. AWS Key Management Service (AWS KMS)
-1. Amazon EventBridge (Amazon CloudWatch Events)
-1. Amazon Simple Notification Service (Amazon SNS)
-1. Amazon Simple Queue Service (Amazon SQS)
-1. AWS Step Functions
+16. [Amazon CloudWatch](cloudwatch)
+17. [AWS CloudFormation](cloudformation)
+
+18. [AWS CodeCommit](codecommit)
+19. [AWS CodeDeploy](codedeploy)
+21. [AWS CodeBuild](codebuild)
+22. [AWS CodePipeline](codepipeline)
+
+
+23. [Amazon CodeGuru](codeguru)
+24. [AWS CodeStar](codestar)
+
+25. [AWS CodeArtifact](codeartifact)
+
+
+26. [AWS X-Ray](xray)
+27. [AWS Fault Injection Simulator](fis)
+
+29. [Amazon Elastic Container Registry (Amazon ECR)](ecr)
+30. [Amazon Elastic Container Service (Amazon ECS)](ecs)
+
+32. [AWS Fargate](fargate)
+
+
+34. [Amazon Elastic Kubernetes Services (Amazon EKS)](eks)
+
+36. [Amazon Cognito](cognito)
+
+38. [AWS Key Management Service (AWS KMS)](kms)
+
+40. [Amazon EventBridge (Amazon CloudWatch Events)](eventbridge)
+    
+41. [Amazon Simple Notification Service (Amazon SNS)](sns)
+42. [Amazon Simple Queue Service (Amazon SQS)](sqs)
+
+
+44. [AWS Step Functions](step-functions) 
+-->
+
+
+1. [AWS Identity and Access Management (IAM)](iam)
+46. Amazon EC2
+47. AWS Elastic Beanstalk
+48. AWS Lambda
+49. Amazon S3
+50. Amazon DynamoDB
+51. Amazon ElastiCache
+52. Amazon RDS
+53. Amazon API Gateway
+54. Amazon CloudFront
+55. Elastic Load Balancing (ELB)
+56. Amazon Kinesis
+57. Amazon OpenSearch Service (Amazon Elasticsearch Service)
+58. Amazon CloudWatch
+59. AWS CloudFormation
+60. AWS CodeCommit
+61. AWS CodeDeploy
+62. AWS CodeBuild
+63. AWS CodePipeline
+64. Amazon CodeGuru
+65. AWS CodeStar
+66. AWS CodeArtifact
+67. AWS X-Ray
+68. AWS Fault Injection Simulator
+69. Amazon Elastic Container Registry (Amazon ECR)
+70. Amazon Elastic Container Service (Amazon ECS)
+71. AWS Fargate
+72. Amazon Elastic Kubernetes Services (Amazon EKS)
+73. Amazon Cognito
+74. AWS Key Management Service (AWS KMS)
+75. Amazon EventBridge (Amazon CloudWatch Events)
+76. Amazon Simple Notification Service (Amazon SNS)
+77. Amazon Simple Queue Service (Amazon SQS)
+78. AWS Step Functions
 
 
 ## Resources
@@ -213,4 +237,9 @@ The following is my roadmap for the study. There may be adjustments.
 - https://workshops.aws
 - https://wellarchitectedlabs.com/
 - https://testseries.edugorilla.com/tests/1359/aws-certified-developer-associate
-  
+
+### Community posts
+
+- https://dev.to/romankurnovskii/aws-certified-developer-associate-prepare-2np
+- https://www.reddit.com/user/romankurnovskii/comments/x8rgig/what_is_the_topics_order_to_cover_to_get_prepared/?utm_source=share&utm_medium=web2x&context=3
+- https://twitter.com/romankurnovskii/status/1567746601136832512
