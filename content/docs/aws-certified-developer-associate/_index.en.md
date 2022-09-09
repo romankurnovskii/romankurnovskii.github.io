@@ -132,6 +132,7 @@ The following is my roadmap for the study. There may be adjustments.
 2. [Amazon EC2](ec2)
 3. [AWS Elastic Beanstalk](elasticbeanstalk)
    
+11
 4. [AWS Lambda](lambda)
 5. [Amazon S3](s3)
    

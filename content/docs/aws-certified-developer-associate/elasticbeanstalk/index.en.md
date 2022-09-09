@@ -7,6 +7,7 @@ categories: [aws, Elastic Beanstalk]
 date: 2022-09-10
 weight: 300
 awsTag: Elastic Beanstalk
+#todo: add digest, Community posts
 ---
 
 ## About
@@ -17,6 +18,8 @@ awsTag: Elastic Beanstalk
 AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS.
 
 Deploying **new application** versions **to existing** resources in AWS Elastic Beanstalk happens **much faster** (typically under a minute) and once again is mostly dependent on the size of the new application version.
+
+## Digest
 
 ## Price
 
@@ -57,6 +60,8 @@ You can have multiple application versions held within an application.
 An application version is a very specific reference to a section of deployable code. The application version will point typically to simple storage service (S3) where the deployable code may reside.
 
 ## Practice
+
+{{< youtube id="Kt55Q3ijoh4" >}}
 
 ### Controlled deployment with AWS Elastic Beanstalk
 
@@ -174,10 +179,6 @@ Elastic Beanstalk runs EC2 instances as well as other services to deploy applica
 
 ![17.png](./img/17.png)
 
-## Resources
-
-- [https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/tutorials.html](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/tutorials.html)
-
 ## Questions
 
 ### Q1
@@ -186,10 +187,10 @@ Elastic Beanstalk runs EC2 instances as well as other services to deploy applica
 
 **What is the most efficient method to ensure that the cluster is deployed immediately after the EB application is deployed?**
 
-- A. Use the AWS Management Console to create and configure the cluster.
-- B. Create a cron job to schedule the cluster deployment using the **_aws cloudformation deploy_** command
-- C. Create a configuration file with the .config extension and place it into the .ebextensions folder in the application package.
-- D. Build an AWS Lambda function that polls to the ElasticBeanstalk environment deployments and create and configure the Amazon ElastiCache cluster.
+1. Use the AWS Management Console to create and configure the cluster.
+1. Create a cron job to schedule the cluster deployment using the **_aws cloudformation deploy_** command
+1. Create a configuration file with the .config extension and place it into the .ebextensions folder in the application package.
+1. Build an AWS Lambda function that polls to the ElasticBeanstalk environment deployments and create and configure the Amazon ElastiCache cluster.
   
 <details>
 <summary>Explanation</summary>
@@ -197,7 +198,7 @@ Elastic Beanstalk runs EC2 instances as well as other services to deploy applica
 
 [[AWS Secrets Manager](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-resources.html)](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-resources.html)
 
-<mark style="color:white">C</mark> 
+<mark style="color:white">3</mark> 
 
 </div>
 </details>
@@ -226,4 +227,8 @@ An Amazon S3 bucket would work, but the AWS ElasticBeanstalk proxy server would 
 </div>
 </details>
 
- 
+## Resources
+
+- [https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/tutorials.html](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/tutorials.html)
+
+### Community posts
