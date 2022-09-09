@@ -42,13 +42,13 @@ There are three ways IAM authenticates a principal:
 - There is no charge to use IAM.
 - IAM is compliant with Payment Card Industry (PCI) Data Security Standard (DSS)
 - The "root account" has complete Admin access.
-- **Don't use "root account"** for every day use. Instead create users. New user will have NO permissions by default. Grant least privilege needed for their job.
-- New user will be assigned with password, Access Key ID & Secret Access Keys. Password will be used to login to AWS management console. Access Key ID & Secret Access Key will be used to login via the APls and CLI
+- **Don't use "root account"** for everyday use. Instead, create users. A new user will have NO permissions by default. Grant least privilege needed for their job.
+- New user will be assigned with password, Access Key ID & Secret Access Keys. The password will be used to login to AWS management console. Access Key ID & Secret Access Key will be used to login via the APIs and CLI
 - Always setup MFA on your root account.
 - Use Groups to assign permissions to IAM users
-- Use Roles to Delegate permissions. Role is more secure than creating individual user. Roles gives temporary credentials for access; where as User has long term credentials.
+- Use Roles to Delegate permissions. Role is more secure than creating individual user. Roles gives temporary credentials for access; whereas User has long term credentials.
 - Create and customize [password rotation policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_account-policy.html)
-- Policies can be attached to users, groups and roles. Use AWS defined policies assign permissions wherever possible. Policy is defined in JSON format and contains version, statements, - effect, action, resource, principal, and condition.
+- Policies can be attached to users, groups and roles. Use AWS defined policies, assign permissions wherever possible. Policy is defined in JSON format and contains version, statements, - effect, action, resource, principal, and condition.
 - STS [Security Token Service](https://docs.aws.amazon.com/STS/latest/APIReference/welcome.html) provides temporary security credentials to the trusted users. STS is global and there is no charge to use it.
 - Digest: https://tutorialsdojo.com/aws-identity-and-access-management-iam/
 - IAM best practices - Question might ask you to identify best practices among the given choices. https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html
@@ -120,17 +120,17 @@ After trying to create a recycle bucket, we get a window indicating no permissio
 
 **What are the best practice guidelines for use of the root account?**
 
-- Never use the root account.
-- Use the root account only to create administrator accounts.
-- Use the root account to create your first IAM user and then lock away the root account.
-- Use the root account to create all other accounts, and share the root account with one backup administrator.
+1. Never use the root account.
+2. Use the root account only to create administrator accounts.
+3. Use the root account to create your first IAM user and then lock away the root account.
+4. Use the root account to create all other accounts, and share the root account with one backup administrator.
 
 <details>
 <summary>Explanation</summary>
 <div>
 <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials" target="_blank">lock-away-credentials</a>
 
-<mark style="color:white">A</mark> 
+<mark style="color:white">1</mark> 
 
 </div>
 </details>
@@ -141,10 +141,10 @@ After trying to create a recycle bucket, we get a window indicating no permissio
 
 **Which of the following services do you need to call from AWS STS service after you authenticate with your on-premise?**
 
-- A. AssumeRoleWithSAML
-- B. GetFederationToken
-- C. AssumeRoleWithWebIdentity
-- D. GetCallerIdentity
+1. AssumeRoleWithSAML
+2. GetFederationToken
+3. AssumeRoleWithWebIdentity
+4. GetCallerIdentity
 
 <details>
 <summary>Explanation</summary>
@@ -152,7 +152,7 @@ After trying to create a recycle bucket, we get a window indicating no permissio
 <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html" target="_blank">https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html</a>
 <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html" target="_blank">https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html</a>
 
-<mark style="color:white">A</mark> 
+<mark style="color:white">1</mark> 
 
 </div>
 </details>
@@ -185,7 +185,7 @@ https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html
 
 **A leading insurance firm has several new members in its development team. The solutions architect was instructed to provision access to certain IAM users who perform application development tasks in the VPC.**
 
-**The access should allow the users to create and configure various AWS resources such as deploying Windows EC2 servers. In addition, the users should be able to see the permissions in AWS Organizations to view information about the user’s organization, including the master account email and organization limitations.**
+**The access should allow the users to create and configure various AWS resources, such as deploying Windows EC2 servers. In addition, the users should be able to see the permissions in AWS Organizations to view information about the user’s organization, including the master account email and organization limitations.**
 
 **Which of the following should the solutions architect implement to follow the standard security advice of granting the least privilege?**
 
@@ -253,3 +253,7 @@ Use policies to grant permissions to perform an operation in AWS. When you use a
 - [IAM Workshops](https://workshops.aws/categories/IAM)
 - [Security workshop](https://awssecworkshops.com/getting-started/)
 - [tutorialsdojo digest](https://tutorialsdojo.com/aws-identity-and-access-management-iam/)
+
+### Community posts
+
+- https://dev.to/romankurnovskii/aws-iam-cheet-sheet-3if4
