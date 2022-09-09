@@ -157,11 +157,11 @@ ssh -i mykey.pem ec2-user@52.24.109.78
 
 **A company is migrating a legacy application to Amazon EC2. The application uses a username and password stored in the source code to connect to a MySQL database. The database will be migrated to an Amazon RDS for MySQL DB instance. As part of the migration, the company wants to implement a secure way to store and automatically rotate the database credentials.**
 
-**Which approach meetsthese requirements?**
-- A) Store the database credentials in environment variables in an Amazon Machine Image (AMI). Rotate the credentials byreplacing the AMI.
-- B) Store the database credentials in AWS Systems Manager Parameter Store. Configure Parameter Store to automatically rotate the credentials.
-- C) Store the database credentials in environment variables on the EC2 instances. Rotate the credentialsby relaunching the EC2 instances.
-- D) Store the database credentials in AWS Secrets Manager. Configure Secrets Manager to automatically rotate the credentials
+**Which approach meets these requirements?**
+1. Store the database credentials in environment variables in an Amazon Machine Image (AMI). Rotate the credentials byreplacing the AMI.
+2. Store the database credentials in AWS Systems Manager Parameter Store. Configure Parameter Store to automatically rotate the credentials.
+3. Store the database credentials in environment variables on the EC2 instances. Rotate the credentials by relaunching the EC2 instances.
+4. Store the database credentials in AWS Secrets Manager. Configure Secrets Manager to automatically rotate the credentials
 
 <details>
 <summary>Explanation</summary>
@@ -171,7 +171,7 @@ ssh -i mykey.pem ec2-user@52.24.109.78
 
 Secrets Manager offers [secret rotation](https://aws.amazon.com/blogs/security/rotate-amazon-rds-database-credentials-automatically-with-aws-secrets-manager/)
 
-<mark style="color:white">D</mark> 
+<mark style="color:white">4</mark> 
 
 </div>
 </details>
