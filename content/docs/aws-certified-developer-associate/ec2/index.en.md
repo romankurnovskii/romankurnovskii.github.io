@@ -284,3 +284,7 @@ EBS–optimized instances deliver dedicated bandwidth to Amazon EBS. When attach
 - [EB FAQ](https://aws.amazon.com/ebs/faqs/)
 - [EC2 Digest](https://tutorialsdojo.com/amazon-elastic-compute-cloud-amazon-ec2/)
 - [EB Digest](https://tutorialsdojo.com/amazon-ebs/)
+
+### Community posts
+
+- https://dev.to/romankurnovskii/aws-ec2-cheat-sheet-2mhp
