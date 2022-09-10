@@ -204,7 +204,7 @@ https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa
 <summary>Explanation</summary>
 <div>
 
-Amazon Cognito adds user sign-up, sign-in, and access control to web and mobile applications quickly and easily. Users can also create an [[AWS Lambda](../lambda)](../lambda) function to make an API call to a custom analytics solution and then trigger that function with an Amazon Cognito post authentication trigger.
+Amazon Cognito adds user sign-up, sign-in, and access control to web and mobile applications quickly and easily. Users can also create an [AWS Lambda](../lambda) function to make an API call to a custom analytics solution and then trigger that function with an Amazon Cognito post authentication trigger.
 
 <mark style="color:white">1, 5</mark> 
 </div>
@@ -1048,13 +1048,14 @@ D. Enable AWS X-Ray tracing for the function. View the traces from the X-Ray ser
 Answer : D
 
 EC2
-A developer deployed an application to an Amazon EC2 instance. The application needs to know the public IPv4 address of the instance.
-How can the application find this information?
-A. Query the instance metadata from http://169.254.169.254/latest/meta-data/.
-B. Query the instance user data from http://169.254.169.254/latest/user-data/.
-C. Query the Amazon Machine Image (AMI) information from http://169.254 169.254/latest/meta-data/ami/.
-D. Check the hosts file of the operating system.
-Answer : A
+**A developer deployed an application to an Amazon EC2 instance. The application needs to know the public IPv4 address of the instance.**
+**How can the application find this information?**
+
+1. Query the instance metadata from http://169.254.169.254/latest/meta-data/.
+2. Query the instance user data from http://169.254.169.254/latest/user-data/.
+3. Query the Amazon Machine Image (AMI) information from http://169.254 169.254/latest/meta-data/ami/.
+4. Check the hosts file of the operating system.
+Answer : 1
 
 Lambda, Amazon EventBridge, CloudWatch
 A developer is designing an AWS Lambda function to perform a maintenance activity. The developer will use Amazon EventBridge (Amazon CloudWatch Events) to invoke the function on an hourly schedule. The developer wants the function to log information at different levels of detail according to the value of a log level variable. The developer must design the function so that the log level can be set without requiring a change to the function code.

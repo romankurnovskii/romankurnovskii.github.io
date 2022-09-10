@@ -45,7 +45,7 @@ Allows:
 **For other:**
 
 - Throughput Provisioned HDD (low cost for frequently accessed, throughput intensive workloads)
-- Cold HDD(lowest cost for less frequently workloads)
+- Cold HDD (lowest cost for less frequently workloads)
 - Instance Store - temporary storage volume in which data is deleted when you STOP or TERMINATE your instance
 
 
@@ -235,6 +235,48 @@ EBS–optimized instances deliver dedicated bandwidth to Amazon EBS. When attach
 </div>
 </details>
 
+
+### Q4
+
+**A developer deployed an application to an Amazon EC2 instance. The application needs to know the public IPv4 address of the instance.**
+
+**How can the application find this information?**
+
+1. Query the instance metadata from http://169.254.169.254/latest/meta-data/.
+1. Query the instance user data from http://169.254.169.254/latest/user-data/.
+1. Query the Amazon Machine Image (AMI) information from http://169.254 169.254/latest/meta-data/ami/.
+1. Check the hosts file of the operating system.
+
+<details>
+<summary>Explanation</summary>
+<div>
+
+<mark style="color:white">1</mark> 
+
+</div>
+</details>
+
+
+### Q5
+
+**You are configuring a Jenkins project that is installed on an Amazon [EC2](../ec2) instance running a Windows operating system. You want this Jenkins project to integrate with AWS CodePipeline.**
+
+**Which actions should you take to make this function perform correctly? (2 answers)**
+
+1. Restart all Amazon [EC2](../ec2) instances that are running a Windows operating system.
+2. Provide the IAM user credentials to integrate AWS CodePipeline.
+3. Fill out the required fields for your proxy host.
+4. Modify the PATH variable to include the directory where you installed Jenkins on all Amazon [EC2](../ec2) instance that are running a Windows operating system.
+
+<details>
+<summary>Explanation</summary>
+<div>
+
+[https://docs.aws.amazon.com/codepipeline/latest/userguide/tutorials-four-stage-pipeline.html](https://docs.aws.amazon.com/codepipeline/latest/userguide/tutorials-four-stage-pipeline.html)
+
+<mark style="color:white">2, 3</mark> 
+</div>
+</details>
 
 ## Resources
  

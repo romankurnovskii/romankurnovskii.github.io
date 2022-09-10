@@ -2,13 +2,11 @@
 title: Lambda
 description: A step-by-step guide to AWS Lambda 
 toc: true
-tags: [lambda]
-categories:
-series:
-date: "2022-05-23"
-lastmod: "2022-05-21"
+tags: [aws, lambda]
+categories: [aws, lambda]
+date: 2022-09-11
 draft: false
-weight: 4
+weight: 400
 awsTag: AWS Lambda
 featuredImage: ./img/logo.svg
 imgWidth: 50px
@@ -133,10 +131,10 @@ Since `cook_secs` in our event was less than `req_secs`, the function printed th
 
 **When working with a published version of the AWS Lambda function, you should note that the _____.**
 
-- A. Use the AWS Management Console to create and configure the cluster.
-- B. Create a cron job to schedule the cluster deployment using the `_aws cloudformation deploy_` command
-- C. Create a configuration file with the .config extension and place it into the .ebextensions folder in the application package.
-- D. Build an AWS Lambda function that polls to the ElasticBeanstalk environment deployments and create and configure the Amazon ElastiCache cluster.
+1. Use the AWS Management Console to create and configure the cluster.
+1. Create a cron job to schedule the cluster deployment using the `_aws cloudformation deploy_` command
+1. Create a configuration file with the .config extension and place it into the .ebextensions folder in the application package.
+1. Build an AWS Lambda function that polls to the ElasticBeanstalk environment deployments and create and configure the Amazon ElastiCache cluster.
   
 <details>
 <summary>Explanation</summary>
@@ -172,4 +170,77 @@ Since `cook_secs` in our event was less than `req_secs`, the function printed th
 </div>
 </details>
 
+### Q3
 
+**A developer is adding sign-up and sign-in functionality to an application. The application is required to make an API call to a custom analytics solution to log user sign-in events**
+
+**Which combination of actions should the developer take to satisfy these requirements? (Select TWO.)**
+
+1. Use Amazon Cognito to provide the sign-up and sign-in functionality
+2. Use AWS IAM to provide the sign-up and sign-in functionality
+3. Configure an AWS Config rule to make the API call triggered by the post-authentication event
+4. Invoke an Amazon API Gateway method to make the API call triggered by the post-authentication event
+5. Execute an AWS Lambda function to make the API call triggered by the post-authentication event
+
+<details>
+<summary>Explanation</summary>
+<div>
+
+Amazon Cognito adds user sign-up, sign-in, and access control to web and mobile applications quickly and easily. Users can also create an AWS Lambda function to make an API call to a custom analytics solution and then trigger that function with an Amazon Cognito post authentication trigger.
+
+<mark style="color:white">1, 5</mark> 
+</div>
+</details>
+
+
+### Q4
+
+**A developer is designing a web application that allows the users to post comments and receive nearreal-time feedback.**
+
+**Which architectures meet these requirements? (Select TWO.)**
+
+1. Create an AWS AppSync schema and corresponding APIs. Use an [Amazon DynamoDB](../dynamodb) table as the data store.
+2. Create a WebSocket API in Amazon API Gateway. Use an [AWS Lambda](../lambda) function as the backend and an [Amazon DynamoDB](../dynamodb) table as the data store
+3. Create an AWS Elastic Beanstalk application backed by an Amazon RDS database. Configure the application to allow long-lived TCP/IP sockets.
+4. Create a GraphQL endpoint in Amazon API Gateway. Use an [Amazon DynamoDB](../dynamodb) table as the data store.
+5. Enable WebSocket on Amazon CloudFront. Use an [AWS Lambda](../lambda) function as the origin and an Amazon Aurora DB cluster as the data store
+
+<details>
+<summary>Explanation</summary>
+<div>
+
+[AWS AppSync](https://aws.amazon.com/appsync/) simplifies application development by letting users create a flexible API to securely access, manipulate, and combine data from one or more data sources. AWS AppSync is a managed service that uses GraphQL to make it easy for applications to get the exact data they need. 
+
+AWS AppSync allows users to build scalable applications, including those requiring [real-time updates](https://docs.aws.amazon.com/appsync/latest/devguide/real-time-data.html), on a range of data sources, including Amazon DynamoDB. In [Amazon API Gateway](../api-gateway), users can [create a WebSocket API](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html) as a stateful frontend for an AWS service (such as [AWS Lambda](../lambda) or DynamoDB) or for an HTTP endpoint. 
+
+The WebSocket API invokes the backend based on the content of the messages it receives from client applications. Unlike a REST API, which receives and responds to requests, a WebSocket API supports two-way communication between client applications and the backend.
+
+<mark style="color:white">1, 2</mark> 
+
+</div>
+</details>
+
+### Q5
+
+**A food delivery company is building a feature that requests reviews from customers after their orders are delivered. The solution should be a short-running process that can message customers simultaneously at various contact points including email, text, and mobile push notifications.**
+
+**Which approach best meets these requirements?**
+
+1. Use EventBridge with Kinesis Data Streams to send messages. 
+2. Use a Step Function to send [SQS](../sqs) messages.
+3. Use a [Lambda function](../lambda) to send [SNS](../sns) messages.
+4. Use AWS Batch and [SNS](../sns) to send messages.
+
+<details>
+<summary>Explanation</summary>
+<div>
+
+[https://docs.aws.amazon.com/sns/latest/dg/welcome.html](https://docs.aws.amazon.com/sns/latest/dg/welcome.html)
+
+<mark style="color:white">3</mark> 
+</div>
+</details>
+
+## Resources
+
+### Community posts
