@@ -135,55 +135,68 @@ The following is my roadmap for the study. There may be adjustments.
 11
 4. [AWS Lambda](lambda)
 5. [Amazon S3](s3)
-   
+
+12
 6. [Amazon DynamoDB](dynamodb)
 7. [Amazon ElastiCache](elasticache)
 8. [Amazon RDS](rds)
-
+        13
 10. [Amazon API Gateway](api-gateway)
 11. [Amazon CloudFront](cloudfront)
 12. [Elastic Load Balancing (ELB)](elasticloadbalancing)
-    
+            14  
 13. [Amazon Kinesis](kinesis)
 14. [Amazon OpenSearch Service (Amazon Elasticsearch Service)](opensearch-service)
 
-
+        15
 16. [Amazon CloudWatch](cloudwatch)
 17. [AWS CloudFormation](cloudformation)
 
+        16
 18. [AWS CodeCommit](codecommit)
 19. [AWS CodeDeploy](codedeploy)
 21. [AWS CodeBuild](codebuild)
 22. [AWS CodePipeline](codepipeline)
 
-
+        17
 23. [Amazon CodeGuru](codeguru)
 24. [AWS CodeStar](codestar)
 
+    18
 25. [AWS CodeArtifact](codeartifact)
 
-
+        19
 26. [AWS X-Ray](xray)
 27. [AWS Fault Injection Simulator](fis)
 
+        20
 29. [Amazon Elastic Container Registry (Amazon ECR)](ecr)
 30. [Amazon Elastic Container Service (Amazon ECS)](ecs)
 
+
+        21
 32. [AWS Fargate](fargate)
 
-
+        22
 34. [Amazon Elastic Kubernetes Services (Amazon EKS)](eks)
 
+
+    23
 36. [Amazon Cognito](cognito)
 
+    24
 38. [AWS Key Management Service (AWS KMS)](kms)
 
+
+        25
 40. [Amazon EventBridge (Amazon CloudWatch Events)](eventbridge)
     
+
+        26
 41. [Amazon Simple Notification Service (Amazon SNS)](sns)
 42. [Amazon Simple Queue Service (Amazon SQS)](sqs)
 
-
+        27
 44. [AWS Step Functions](step-functions) 
 -->
 

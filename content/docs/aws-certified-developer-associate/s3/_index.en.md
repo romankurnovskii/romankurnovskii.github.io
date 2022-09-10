@@ -2,10 +2,11 @@
 title: S3
 description: Object storage built to retrieve any amount of data from anywhere
 toc: true
-tags: [s3]
-date: "2022-06-30"
+tags: [aws, s3]
+categories: [aws, s3]
+date: 2022-09-11
 draft: false
-weight: 5
+weight: 500
 featuredImage: https://www.mydraw.com/NIMG.axd?i=Shape-Libraries/Cloud/Amazon-Web-Services/AWS-Architecture/Storage/Amazon-Simple--Storage-Service-S3.png
 imgWidth: 70px
 ---
@@ -248,5 +249,24 @@ MD5 digest (or checksum)
 https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 
 <mark style="color:white">1, 3</mark> 
+</div>
+</details>
+
+### Q4
+
+**A company has an application that writes files to an Amazon S3 bucket. Whenever there is a new file, an S3 notification event invokes an AWS Lambda function to process the file. The Lambda function code works as expected. However, when a developer checks the Lambda function logs, the developer finds that multiple invocations occur for every file.**
+
+**What is causing the duplicate entries?**
+
+1. The S3 bucket name is incorrectly specified in the application and is targeting another S3 bucket.
+1. The Lambda function did not run correctly, and Lambda retried the invocation with a delay.
+1. Amazon S3 is delivering the same event multiple times.
+1. The application stopped intermittently and then resumed, splitting the logs into multiple smaller files.
+
+<details>
+<summary>Explanation</summary>
+<div>
+
+<mark style="color:white">1</mark> 
 </div>
 </details>
