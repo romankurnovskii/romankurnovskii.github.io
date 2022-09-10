@@ -9,7 +9,6 @@ weight: 200
 awsTag: EC2
 featuredImage: https://cdn.worldvectorlogo.com/logos/aws-ec2.svg
 imgWidth: 50px
-#todo: Community posts
 ---
 
 ## About

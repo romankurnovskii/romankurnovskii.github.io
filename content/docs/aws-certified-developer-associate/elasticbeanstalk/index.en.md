@@ -7,7 +7,7 @@ categories: [aws, Elastic Beanstalk]
 date: 2022-09-10
 weight: 300
 awsTag: Elastic Beanstalk
-#todo: add digest, Community posts
+#todo: logo
 ---
 
 ## About
@@ -19,21 +19,35 @@ AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web ap
 
 Deploying **new application** versions **to existing** resources in AWS Elastic Beanstalk happens **much faster** (typically under a minute) and once again is mostly dependent on the size of the new application version.
 
+![flow](./img/clearbox-flow-00.png)
 ## Digest
+
+- When you want to use new run time capabilities with elastic bean stalk, it is better to use blue-green deployment
+- Security group will not be removed when removing the stack with elastic bean stalk
+- For long running tasks - Use `Elastic Beanstalk` worker environment to process the tasks asynchronously
+- Launch configuration is used for modifying instance type, key pair, elastic block storage and other settings that can be configured only when launching the instance
+- Rolling with Additional Batch and Immutable both involve provisioning new servers to ensure capacity is not reduced. All At Once means the application will be offline for the duration of the update. Performing a Rolling Update without an additional batch of servers means a reduction in capacity. https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html
+- For Blue green deployment - Use Elastic beanstalk swap URL feature or route 53 with weighted routing policies
+- You create your own Elastic Beanstalk platform using Packer, which is an open-source tool for creating machine images for many platforms, including AMIs for use
+with Amazon Elastic Compute Cloud (Amazon EC2).
 
 ## Price
 
 There is no additional charge for AWS Elastic Beanstalk. Only the AWS resources required to store and run applications are charged.
 
-## Components
+## Concepts
 
-### Configuration Template
+- [AWS doc](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.html)
 
-This is the template that provides the baseline for creating a new, unique, environment configuration. 
+### Applications
 
-### Platform
+An application is a collection of different elements, such as environments, environment configurations, and application versions. 
 
-Culmination of components in which you can build your application upon using Elastic Beanstalk. These are comprised of the OS of the instance, the programming language, the server type (web or application), and components of Elastic Beanstalk
+You can have multiple application versions held within an application.
+
+### Application Version
+
+An application version is a very specific reference to a section of deployable code. The application version will point typically to simple storage service (S3) where the deployable code may reside.
 
 ### Environment Configurations
 
@@ -49,15 +63,26 @@ The “environment” is comprised of ALL the resources created by Elastic Beans
 
 Reflects on how Elastic Beanstalk provisions resources based on what the application is designed to do. If the application manages and handles HTTP requests, then the app will be run in a web server environment. 
 
-### Applications
+![](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-choosetier.png)
 
-An application is a collection of different elements, such as environments, environment configurations, and application versions. 
+### Configuration Template
 
-You can have multiple application versions held within an application.
+This is the template that provides the baseline for creating a new, unique, environment configuration. 
 
-### Application Version
+### Platform
 
-An application version is a very specific reference to a section of deployable code. The application version will point typically to simple storage service (S3) where the deployable code may reside.
+Culmination of components in which you can build your application upon using Elastic Beanstalk. These are comprised of the OS of the instance, the programming language, the server type (web or application), and components of Elastic Beanstalk
+
+
+## Deployment policies
+
+- **All at once** – deploys the new version to all instances simultaneously and will be out of service for a short time.
+- **Rolling** – deploys the new version in batches.
+- **Rolling with additional batch** – deploys the new version in batches, but first launch a new batch of instances.
+- **Immutable** – deploys the new version to a new set of instances.
+- **Traffic splitting** – deploys the new version to a new set of instances and temporarily split incoming client traffic.
+
+![](./img/18.png)
 
 ## Practice
 
@@ -227,8 +252,70 @@ An Amazon S3 bucket would work, but the AWS ElasticBeanstalk proxy server would 
 </div>
 </details>
 
+### Q3
+
+**An online shopping platform has been deployed to AWS using Elastic Beanstalk. They simply uploaded their Node.js application, and Elastic Beanstalk automatically handles the details of capacity provisioning, load balancing, scaling, and application health monitoring. Since the entire deployment process is automated, the DevOps team is not sure where to get the application log files of their shopping platform.**
+
+**In Elastic Beanstalk, where does it store the application files and server log files?**
+
+1. Application files are stored in S3. The server log files can only be stored in the attached EBS volumes of the EC2 instances, which were launched by AWS Elastic Beanstalk.
+2. Application files are stored in S3. The server log files can be stored directly in Glacier or in CloudWatch Logs.
+3. Application files are stored in S3. The server log files can be optionally stored in CloudTrail or in CloudWatch Logs.
+4. Application files are stored in S3. The server log files can also optionally be stored in S3 or in CloudWatch Logs.
+  
+<details>
+<summary>Explanation</summary>
+<div>
+
+AWS Elastic Beanstalk stores your application files and optionally, server log files in Amazon S3. If you are using the AWS Management Console, the AWS Toolkit for Visual Studio, or AWS Toolkit for Eclipse, an Amazon S3 bucket will be created in your account and the files you upload will be automatically copied from your local client to Amazon S3. 
+
+Optionally, you may configure Elastic Beanstalk to copy your server log files every hour to Amazon S3. You do this by editing the environment configuration settings.
+
+With CloudWatch Logs, you can monitor and archive your Elastic Beanstalk application, system, and custom log files from Amazon EC2 instances of your environments. You can also configure alarms that make it easier for you to react to specific log stream events that your metric filters extract. 
+
+The CloudWatch Logs agent installed on each Amazon EC2 instance in your environment publishes metric data points to the CloudWatch service for each log group you configure. 
+
+Each log group applies its own filter patterns to determine what log stream events to send to CloudWatch as data points. Log streams that belong to the same log group share the same retention, monitoring, and access control settings. You can configure Elastic Beanstalk to automatically stream logs to the CloudWatch service.
+
+The option that says: *Application files are stored in S3. The server log files can be optionally stored in CloudTrail or in CloudWatch Logs* is incorrect because the server log files can optionally be stored in either S3 or CloudWatch Logs, but not directly to CloudTrail as this service is primarily used for auditing API calls.
+
+<mark style="color:white">4</mark> 
+
+</div>
+</details>
+
+### Q4
+
+**A former colleague reached out to you for consultation. He uploads a Django project in Elastic Beanstalk through CLI using instructions he read in a blog post, but for some reason he could not create the environment he needs for his project. He encounters an error message saying “The instance profile aws-elasticbeanstalk-ec2-role associated with the environment does not exist.”**
+
+**What are the possible causes of this issue? (Select TWO.)**
+
+1. He selected the wrong platform for the Django code.
+2. Elastic Beanstalk CLI did not create one because your IAM role has no permission to create roles.
+3. Instance profile container for the role needs to be manually replaced every time a new environment is launched.
+4. You have not associated an Elastic Beanstalk role to your CLI.
+5. IAM role already exists but has insufficient permissions that Elastic Beanstalk needs.
+  
+<details>
+<summary>Explanation</summary>
+<div>
+
+AWS EB CLI cannot create the instance profile for your beanstalk environment if your IAM role has no access to creating roles.
+
+This error is also thrown when the instance profile has insufficient or outdates policies that beanstalk needs to function. More details on this can be seen on the references provided.
+
+<mark style="color:white">2, 5</mark> 
+
+</div>
+</details>
+
+
 ## Resources
 
 - [https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/tutorials.html](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/tutorials.html)
+- [Tutorials and samples](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/tutorials.html)
 
 ### Community posts
+
+- https://dev.to/romankurnovskii/todo-aws-aws-elastic-beanstalk-cheat-sheet-1718
+- https://dev.to/romankurnovskii/aws-elastic-beanstalk-top-questions-certified-developer-exam-478g
