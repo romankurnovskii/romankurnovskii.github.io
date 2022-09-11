@@ -10,6 +10,7 @@ weight: 400
 awsTag: AWS Lambda
 featuredImage: ./img/logo.svg
 imgWidth: 50px
+# todo: youutbe
 ---
 
 ## About
@@ -21,7 +22,7 @@ AWS Lambda is a [serverless computing service](https://aws.amazon.com/serverless
 
 AWS Lambda automatically runs program code in response to [various events](http://docs.aws.amazon.com/lambda/latest/dg/intro-core-components.html#intro-core-components-event-sources), such as HTTP requests through [Amazon API Gateway](https://aws.amazon.com/api-gateway/), changing objects in [Amazon Simple Storage Service](https://aws.amazon.com/s3/) garbage cans (Amazon S3), updating tables in [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) or changing states in [AWS Step Functions](https://aws.amazon.com/step-functions/).
 
-Supports for Java, Go, PowerShell, Node.js, C#, Python and Ruby
+Supports for Java, Go, PowerShell, Node.js, C#, Python and Ruby. It also provides a Runtime API which allows you to use any **additional programming languages** to author your functions. A runtime is a program that runs a Lambda function's handler method when the function is invoked. You can include a runtime in your function's deployment package in the form of an executable file named bootstrap
 
 ![](https://d1.awsstatic.com/product-marketing/Lambda/Diagrams/product-page-diagram_Lambda-RealTimeFileProcessing.a59577de4b6471674a540b878b0b684e0249a18c.png)
 
@@ -30,6 +31,51 @@ When you [publish a version](https://docs.aws.amazon.com/lambda/latest/dg/config
 **Lambda execution role** is an IAM role that grants the function permission to access AWS services and resources. Under Attach permissions policies, choose the AWS managed policies `AWSLambdaBasicExecutionRole` and `AWSXRayDaemonWriteAccess`.
 
 [AWS managed policies for Lambda features](https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html#permissions-executionrole-features)
+
+## Digest
+
+- Types of lambda invocation
+  - RequestResponse.
+  - Event.
+  - Dryrun.
+- Lambda execution context is a temporary runtime environment that initializes any external dependencies of our Lambda function code, such as database connections or HTTP endpoints
+- Lambda **Environment variables** are variables that enable you to dynamically pass settings to your function code and libraries, without making changes to your code. Environment variables are key-value pairs that you create and modify as part of your function configuration.
+- Lambda concurrent executions = (invocations per second) x (average execution duration in seconds). Concurrency limit of lambda execution, Default 1000 Reserved - 900 unreserved 100. Will get **throttled** if it exceeds **concurrency limit**
+- **AWS_PROXY** in API gateway is primarily used for Lambda proxy integration.
+- A Lambda **authorizer** is an API Gateway feature that uses a Lambda function to control access to your API. Lambda authorizer can be used for custom authorization scheme. 2 types:
+  - Token based.
+  - Request parameter based Lambda authorizer.
+- Lambda deployment configuration:
+  - HalfAtATime
+  - Canary
+  - Linear. 
+- AWS Lambda compute platform deployments cannot use an in-place deployment type
+- Increasing memory in lambda will increase CPU in lambda
+- Lambda Versioning: 
+  - By default, each AWS Lambda function has a single current version of the code. Clients of Lambda function can call a specific version or at the latest implementation
+- Lambda Alias: You can create one or more aliases for our AWS Lambda function. A Lambda alias is like a pointer to a specific Lambda function version. Users can access the function version using the alias ARN
+- Lambda@Edge is a feature of Amazon CloudFront that lets you run code closer to users of your application, which improves performance and reduces latency
+- Lambda Layer - Layer is a ZIP archive that contains libraries, a custom runtime, or other dependencies. With layers, you can use libraries in your function without needing to include them in your deployment package
+- **Amazon DynamoDB** is integrated with AWS Lambda so that you can trigger pieces of code that automatically respond to events in DynamoDB Streams. AWSLambdaDynamoDBExecutionRole is required to enable Lambda to work with DynamoDB
+- **API Gateway** - Stage variables are name-value pairs that you can define as configuration attributes associated with a deployment stage of a REST API.
+- Integrating **Cloud Watch Events** with lambda can be used for **scheduling events**
+- If there is an incompatible output returned from a Lambda proxy integration backend, it will return 502
+- To **resolve lambda throttled** exception when using Cognito events, perform retry on sync. 
+- Lambda Event hook running order:
+  -  start -> BeforeAllowTraffic -> AllowTraffic -> After AllowTraffic -> End
+- AWS Lambda runs function code securely within a VPC b default. To enable your Lambda function to access resources inside your private VPC, you must provide additional VPC-specific configuration information that includes VPC subnet IDs and security group IDs. AWS
+- Lambda uses this information to set up elastic network interfaces ([ENIs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html)) that enable your function to connect securely to other resources within your private VPC
+- Lambda **Asynchronous invocation** can be triggered by Amazon Simple Storage Service, Amazon Simple Notification Service, Amazon Simple Email Service, AWS CloudFormation, Amazon CloudWatch Logs, Amazon CloudWatch Events, AWS CodeCommit, AWS Config.
+- Lambda Limits: https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html
+- Lambda provides 500 MB of additional disk space as a workspace.
+- Lambda logs all stout for a lambda function to CloudWatch Logs. Any additional logging calls used in the function will also be sent to CloudWatch Logs.
+- To connect to a VPC, lambda **function execution role** must have the following permissions: ec2:Create Networkinterface, ec2:DescribeNetworkinterfaces, ec2:Delete Networkinterface. These permissions are included in the AWSLambdaVPCAccessExecutionRole managed policy
+- When lambda execution is hit by concurrency limit, you need to request AWS to increase concurrency limit
+- For stream-based services like Dynamo b streams, that don't invoke Lambda functions directly, the event source mapping configuration should be made on the Lambda side.
+- A deployment package is a ZIP archive that contains your function code and dependencies.
+- You can unload the package directly to lambda. Or you can use an Amazon S3 bucket and then upload it to lambda. If the deployment package is larger than 50 MB. you must use Amazon 53
+- Lambda can incur a first run penalty also called **cold starts.** Cold starts can cause slower than expected behavior on infrequently run functions or functions with high concurrency demands
+
 
 ## Price
 
@@ -44,6 +90,8 @@ Arm price
 - 0,20 USD for 1 million queries
 
 ## Practice
+
+{{< youtube id="Lng4wP26_nk" >}}
 
 In the AWS Management Console search bar, type Lambda and select Lambda under "****Services****":
 
@@ -195,7 +243,7 @@ Amazon Cognito adds user sign-up, sign-in, and access control to web and mobile 
 
 ### Q4
 
-**A developer is designing a web application that allows the users to post comments and receive nearreal-time feedback.**
+**A developer is designing a web application that allows the users to post comments and receive a real-time feedback.**
 
 **Which architectures meet these requirements? (Select TWO.)**
 

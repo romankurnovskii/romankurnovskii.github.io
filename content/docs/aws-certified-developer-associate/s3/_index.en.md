@@ -53,11 +53,12 @@ Pay only for what you use. There is no minimum charge.
   - Object storage
   - Scalable
   - Faster than S3, slower than EBS
+  - 
 ## Features
 
-* Amazon S3 allows people to store objects (files) fun “buckets” (directories)
+* Amazon S3 allows people to store objects (files) in “buckets” (directories)
 * Buckets must have a globally unique name
-    * Namingonvention:
+    * Naming convention:
         * No uppercase
         * No underscore
         * 3-63 characters long
@@ -101,7 +102,7 @@ Pay only for what you use. There is no minimum charge.
     * SSE-C: server-side encryption using data keys fully managed by the customer outside of AWS
         * Amazon S3 does not store the encryption key you provide
         * HTTPS must be used
-        * Encryption key must provided in HTTP headers, for every HTTP request made
+        * Encryption key must be provided in HTTP headers, for every HTTP request made
     * Client Side Encryption
         * Client library such as the amazon S3 Encryption Client
         * Clients must encrypt data themselves before sending to S3
