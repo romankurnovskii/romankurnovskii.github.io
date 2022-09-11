@@ -10,7 +10,7 @@ weight: 400
 awsTag: AWS Lambda
 featuredImage: ./img/logo.svg
 imgWidth: 50px
-# todo: youutbe
+# todo: youtbe
 ---
 
 ## About
@@ -91,7 +91,7 @@ Arm price
 
 ## Practice
 
-{{< youtube id="Lng4wP26_nk" >}}
+{{< youtube id="hxAkVn1u0cc" >}}
 
 In the AWS Management Console search bar, type Lambda and select Lambda under "****Services****":
 
