@@ -129,68 +129,70 @@ The following is my roadmap for the study. There may be adjustments.
 
 <!-- 1. 
 
-12
+                12   4
 6. [Amazon DynamoDB](dynamodb)
 7. [Amazon ElastiCache](elasticache)
 8. [Amazon RDS](rds)
-        13
-10. [Amazon API Gateway](api-gateway)
-11. [Amazon CloudFront](cloudfront)
-12. [Elastic Load Balancing (ELB)](elasticloadbalancing)
-            14  
-13. [Amazon Kinesis](kinesis)
-14. [Amazon OpenSearch Service (Amazon Elasticsearch Service)](opensearch-service)
-
-        15
-16. [Amazon CloudWatch](cloudwatch)
-17. [AWS CloudFormation](cloudformation)
-
-        16
-18. [AWS CodeCommit](codecommit)
-19. [AWS CodeDeploy](codedeploy)
-21. [AWS CodeBuild](codebuild)
-22. [AWS CodePipeline](codepipeline)
-
-        17
-23. [Amazon CodeGuru](codeguru)
-24. [AWS CodeStar](codestar)
-
-    18
-25. [AWS CodeArtifact](codeartifact)
-
-        19
-26. [AWS X-Ray](xray)
-27. [AWS Fault Injection Simulator](fis)
-
-        20
-29. [Amazon Elastic Container Registry (Amazon ECR)](ecr)
-30. [Amazon Elastic Container Service (Amazon ECS)](ecs)
 
 
-        21
-32. [AWS Fargate](fargate)
+        13              5
+9.  [Amazon API Gateway](api-gateway)
+10. [Amazon CloudFront](cloudfront)
+11. [Elastic Load Balancing (ELB)](elasticloadbalancing)
+            14                  6
+12. [Amazon Kinesis](kinesis)
+13. [Amazon OpenSearch Service (Amazon Elasticsearch Service)](opensearch-service)
 
-        22
-34. [Amazon Elastic Kubernetes Services (Amazon EKS)](eks)
+        15      7
+14. [Amazon CloudWatch](cloudwatch)
+15. [AWS CloudFormation](cloudformation)
+
+        16      7
+16. [AWS CodeCommit](codecommit)
+17. [AWS CodeDeploy](codedeploy)
+18. [AWS CodeBuild](codebuild)
+19. [AWS CodePipeline](codepipeline)
+
+        17      8
+20. [Amazon CodeGuru](codeguru)
+21. [AWS CodeStar](codestar)
+
+    18  9
+22. [AWS CodeArtifact](codeartifact)
+
+        19      10
+23. [AWS X-Ray](xray)
+24. [AWS Fault Injection Simulator](fis)
+
+        20      11
+25. [Amazon Elastic Container Registry (Amazon ECR)](ecr)
+26. [Amazon Elastic Container Service (Amazon ECS)](ecs)
 
 
-    23
-36. [Amazon Cognito](cognito)
+        21      12
+27. [AWS Fargate](fargate)
 
-    24
-38. [AWS Key Management Service (AWS KMS)](kms)
+        22      13
+28. [Amazon Elastic Kubernetes Services (Amazon EKS)](eks)
 
 
-        25
-40. [Amazon EventBridge (Amazon CloudWatch Events)](eventbridge)
+    23  14
+29. [Amazon Cognito](cognito)
+
+    24  15
+30. [AWS Key Management Service (AWS KMS)](kms)
+
+
+        25      16
+31. [Amazon EventBridge (Amazon CloudWatch Events)](eventbridge)
     
 
-        26
-41. [Amazon Simple Notification Service (Amazon SNS)](sns)
-42. [Amazon Simple Queue Service (Amazon SQS)](sqs)
+        26      17
+32. [Amazon Simple Notification Service (Amazon SNS)](sns)
+33. [Amazon Simple Queue Service (Amazon SQS)](sqs)
 
-        27
-44. [AWS Step Functions](step-functions) 
+        27      18
+34. [AWS Step Functions](step-functions) 
 -->
 
 
