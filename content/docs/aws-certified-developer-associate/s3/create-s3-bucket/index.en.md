@@ -1,14 +1,11 @@
 ---
-title: Creating an Amazon S3 Bucket
-description: A step-by-step guide to AWS Lambda 
+title: Create S3 Bucket
+description: Create an Amazon S3 Bucket
 toc: true
-authors:
-  - roman-kurnovskii
-tags:
-categories:
-series:
-date: "2022-05-23"
-lastmod: "2022-05-21"
+authors: [roman-kurnovskii]
+tags: [s3]
+categories: [s3]
+date: 2022-09-11
 draft: false
 weight: 1
 ---
@@ -80,8 +77,3 @@ A page will load with a row of tabs at the top.
 This page allows you to configure your Amazon S3 bucket in many different ways. No changes are needed in this lab at this time.
 
 Feel free to look at the other tabs and see the configuration options that are available.
-
-### Summary
-
-In this lab step, you created a new Amazon S3 bucket.
-
