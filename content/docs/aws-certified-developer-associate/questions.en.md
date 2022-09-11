@@ -1075,12 +1075,51 @@ C. Use the CloudFormation template's Mappings section to specify the log group's
 D. Pass the log group's Amazon Resource Name (ARN) as an environment variable to the Lambda function.
 Answer : D
 
+ECS
+A company is running an application on Amazon Elastic Container Service (Amazon ECS). When the company deploys a new version of the application, the company initially needs to expose 10% of live traffic to the new version. After a period of time, the company needs to immediately route all the remaining live traffic to the new version.
+Which ECS deployment should the company use to meet these requirements?
+A. Rolling update
+B. Blue/green with canary
+C. Blue/green with all at once
+D. Blue/green with linear
+Answer : B
 
+ECS, CloudTrail, X-Ray, CloudWatch
+A microservices application is deployed across multiple containers in Amazon Elastic Container Service (Amazon ECS). To improve performance, a developer wants to capture trace information between the microservices and visualize the microservices architecture.
+Which solution will meet these requirements?
+A. Build the container from the amazon/aws-xray-daemon base image. Use the AWS X-Ray SDK to instrument the application.
+B. Install the Amazon CloudWatch agent on the container image. Use the CloudWatch SDK to publish custom metrics from each of the microservices.
+C. Install the AWS X-Ray daemon on each of the ECS instances.
+D. Configure AWS CloudTrail data events to capture the traffic between the microservices.
+Answer : C
 
+CodeDeploy, ECS
+A company is planning to use AWS CodeDeploy to deploy an application to Amazon Elastic Container Service (Amazon ECS). During the deployment of a new version of the application, the company initially must expose only 10% of live traffic to the new version of the deployed application. Then, after 15 minutes elapse, the company must route all the remaining live traffic to the new version of the deployed application.
+Which CodeDeploy predefined configuration will meet these requirements?
+A. CodeDeployDefault.ECSCanary10Percent15Minutes
+B. CodeDeployDefault.LambdaCanary10Percent5Minutes
+C. CodeDeployDefault.LambdaCanary10Percent15Minutes
+D. CodeDeployDefault.ECSLinear10PercentEvery1 Minutes
+Answer : A
 
+AWS CLI
+A developer notices timeouts from the AWS CLI when the developer runs list commands.
+What should the developer do to avoid these timeouts?
+A. Use the --page-size parameter to request a smaller number of items.
+B. Use shorthand syntax to separate the list by a single space.
+C. Use the yaml-stream output for faster viewing of large datasets.
+D. Use quotation marks around strings to enclose data structure.
+Answer : A
 
-
-
+EC2
+A company has moved a legacy on-premises application to AWS by performing a lift and shift. The application exposes a REST API that can be used to retrieve billing information. The application is running on a single Amazon EC2 instance. The application code cannot support concurrent invocations. Many clients access the API, and the company adds new clients all the time.
+A developer is concerned that the application might become overwhelmed by too many requests. The developer needs to limit the number of requests to the API for all current and future clients. The developer must not change the API, the application, or the client code.
+What should the developer do to meet these requirements?
+A. Place the API behind an Amazon API Gateway API. Set the server-side throttling limits.
+B. Place the API behind a Network Load Balancer. Set the target group throttling limits.
+C. Place the API behind an Application Load Balancer. Set the target group throttling limits.
+D. Place the API behind an Amazon API Gateway API. Set the per-client throttling limits.
+Answer : D
 
 
 
