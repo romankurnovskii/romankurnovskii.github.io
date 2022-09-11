@@ -1,5 +1,5 @@
 ---
-title: Change metadata of an S3 Object
+title: Change metadata of S3 Object
 description: Changing the Metadata of an Amazon S3 Object
 toc: true
 authors: [roman-kurnovskii]

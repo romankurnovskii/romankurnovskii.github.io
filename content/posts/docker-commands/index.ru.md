@@ -11,6 +11,8 @@ featuredImage: featured.ru.jpg
 authors: [roman-kurnovskii]
 ---
 
+*[Full in english](http://localhost:1313/en/posts/docker-commands/)*
+
 ## Топ 10 комманд Docker
 1. docker ps — смотрим список запущенных контейнеров
 2. docker pull — загрузка образа

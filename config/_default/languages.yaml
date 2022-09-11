@@ -11,6 +11,10 @@ en:
         identifier: notes
         url: /posts/
         weight: 2
+      - name: Apps
+        url: apps/
+        weight: 5
+
       - name: AWS
         identifier: aws
         url: /categories/aws/
@@ -20,6 +24,17 @@ en:
         identifier: os
         url: /categories/os/
         parent: notes
+        weight: 202
+      - name: Programming
+        identifier: programming
+        url: /categories/programming/
+        parent: notes
+        weight: 203
+      - name: Cheat Sheet
+        identifier: cheatsheet
+        url: /categories/cheatsheet/
+        parent: notes
+        weight: 204
       - name: Docker
         identifier: docker
         url: /categories/docker/
@@ -32,11 +47,7 @@ en:
         identifier: macos
         url: /categories/macos/
         parent: os
-        weight: 201
-      - name: Programming
-        identifier: programming
-        url: /categories/programming/
-        parent: notes
+
       - name: Python
         identifier: python
         url: /categories/python/
@@ -49,8 +60,3 @@ en:
         identifier: hugo
         url: /categories/hugo/
         parent: programming
-      - name: Apps
-        url: apps/
-        weight: 5
-
-

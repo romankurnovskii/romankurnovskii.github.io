@@ -3,8 +3,8 @@ title: Tar Files Cheat Sheet
 description: tar command Cheat Sheet
 toc: true
 tags: ["Linux", "CLI", "tar", "cheatsheet"]
-series:
-categories: [Linux, MacOS, CLI]
+series: [cheatsheet]
+categories: [Linux, MacOS, CLI, cheatsheet]
 date: "2022-06-05"
 featuredImage: featured.en.jpg
 authors: [roman-kurnovskii]

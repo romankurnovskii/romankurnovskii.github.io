@@ -1,5 +1,5 @@
 ---
-title: Create a folder inside an S3 Bucket
+title: Create a folder inside S3 Bucket
 description: Create a Folder inside an Amazon S3 Bucket
 toc: true
 authors: [roman-kurnovskii]
