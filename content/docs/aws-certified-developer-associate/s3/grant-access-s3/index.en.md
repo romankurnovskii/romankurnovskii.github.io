@@ -1,5 +1,5 @@
 ---
-title: Grant public access to an S3 Object
+title: Grant public access to S3 Object
 description: Grant Public Access to an Amazon S3 Object
 toc: true
 authors: [roman-kurnovskii]

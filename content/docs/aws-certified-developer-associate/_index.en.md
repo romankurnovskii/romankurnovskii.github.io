@@ -129,11 +129,6 @@ The following is my roadmap for the study. There may be adjustments.
 
 <!-- 1. 
 
-
-   
-11
-
-
 12
 6. [Amazon DynamoDB](dynamodb)
 7. [Amazon ElastiCache](elasticache)

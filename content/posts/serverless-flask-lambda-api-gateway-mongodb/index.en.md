@@ -6,7 +6,7 @@ tags: [aws, flask, serverless, mongodb, lambda]
 series: []
 categories: [aws]
 date: "2022-09-06"
-featuredImage:
+featuredImage: https://picsum.photos/701/234
 authors: [roman-kurnovskii]
 draft: false
 ---

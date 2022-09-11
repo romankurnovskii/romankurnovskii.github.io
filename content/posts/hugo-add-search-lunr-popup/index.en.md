@@ -6,7 +6,7 @@ tags: [hugo, lunr, javascript]
 series: []
 categories: [Hugo]
 date: "2022-07-16"
-featuredImage:
+featuredImage: https://picsum.photos/700/250
 authors: [roman-kurnovskii]
 ---
 
