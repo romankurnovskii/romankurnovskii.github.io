@@ -53,7 +53,7 @@ Pay only for what you use. There is no minimum charge.
   - Object storage
   - Scalable
   - Faster than S3, slower than EBS
-  - 
+
 ## Features
 
 * Amazon S3 allows people to store objects (files) in “buckets” (directories)
