@@ -132,8 +132,7 @@ The following is my roadmap for the study. There may be adjustments.
 
    
 11
-4. [AWS Lambda](lambda)
-5. [Amazon S3](s3)
+
 
 12
 6. [Amazon DynamoDB](dynamodb)
@@ -203,8 +202,8 @@ The following is my roadmap for the study. There may be adjustments.
 1. [AWS Identity and Access Management (IAM)](iam)
 2. [Amazon EC2](ec2)
 3. [AWS Elastic Beanstalk](elasticbeanstalk)
-48. AWS Lambda
-49. Amazon S3
+4. [AWS Lambda](lambda)
+5. [Amazon S3](s3)
 50. Amazon DynamoDB
 51. Amazon ElastiCache
 52. Amazon RDS
