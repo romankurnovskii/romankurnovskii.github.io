@@ -9,7 +9,7 @@ series:
 date: 2022-09-08
 draft: false
 featuredImage: "images/aws-cda-intro.en.png"
-weight: 100
+weight: 1
 ---
 
 
@@ -132,12 +132,6 @@ The following is my roadmap for the study. There may be adjustments.
 
 q added to db: 4  / 1
 
-                12   4
-6. [Amazon DynamoDB](dynamodb)
-7. [Amazon ElastiCache](elasticache)
-8. [Amazon RDS](rds)
-
-
         13              5
 9.  [Amazon API Gateway](api-gateway)
 10. [Amazon CloudFront](cloudfront)
@@ -204,9 +198,9 @@ q added to db: 4  / 1
 3. [AWS Elastic Beanstalk](elasticbeanstalk)
 4. [AWS Lambda](lambda)
 5. [Amazon S3](s3)
-50. Amazon DynamoDB
-51. Amazon ElastiCache
-52. Amazon RDS
+6. [Amazon DynamoDB](dynamodb)
+7. [Amazon ElastiCache](elasticache)
+8. [Amazon RDS](rds)
 53. Amazon API Gateway
 54. Amazon CloudFront
 55. Elastic Load Balancing (ELB)

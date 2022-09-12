@@ -7,6 +7,7 @@ tags: [markdown, css, html, themes]
 categories: [cheatsheet]
 series:
 date: 2022-04-21
+featuredImage: https://picsum.photos/700/237
 draft: false
 ---
 
