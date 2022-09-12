@@ -38,22 +38,34 @@ Ecommerce Websites, gaming websites etc.
 
 - Global tables are useful for having multiple copies of tables in different region.
 - All DynamoDB tables are encrypted at rest using an AWS owned CMK by default.
+- Items - in DynamoDB is similar in many ways to rows, records, or tuples in other database systems. Each DynamoDB table contains zero or more items. An item is a collection of attributes that is uniquely identifiable for each record in that table.
+- Attributes - Each item is composed of one or more attributes. Attributes in DynamoDB are similar in many ways to fields or columns in other database systems.
+- Each item in the table has a unique identifier, a primary key, or a partition key that distinguishes the item from all of the others in the table. The primary key consists of one attribute.
+- Primary key
+- Partition key
+- Partition key and sort key (range attribute)
 - A primary key can either be a sinale-attribute partition key or a composite partition-sort key.
 - Both partition and sort keys attributes must be defined as type string, number, or binary.
-- Global secondary index:
+- Global secondary index - a partition key and a sort key that can be different from those on the base table; query at table level across all partitions; eventual consistency:
   - Different partition key and sort key from base table
   - Only eventually consistent
   - Can be created after table is created
   - Using a random prefix for the GSI partition key enables to have high cardinality for the partition key
-- Local secondary index
+- Local secondary index - same partition key as the base table, but a different sort key: query on a single partition; eventual or strong consistency:
   - Same partition key, different sort key from base table
   - Eventual and strongly consistent
   - Should be created when creating a table
 - Calculate RCU (read capacity unit) & WCU (write capacity unit):
     - 1 RCU = 2 eventual consistent read of 4 KB, 1 strongly consistent read of 4 KB
     - 1 WCU = 1 write per second for data for an item as large as 1 KB.
+- DynamoDB Streams is an optional feature that captures data modification events in DynamoDB tables. The data about these events appears in the stream in near real time and in the order that the events occurred.
 - Queries or scan on GSI consume [RCU](https://aws.amazon.com/dynamodb/pricing/provisioned/) on index **not** on table
-- Storing session state could be on elastic cache or dynamodb
+- Consistency:
+  - Auto scaling
+  - Storing session state could be on elastic cache or dynamodb
+  - Provisioned throughput - ProvisionedThroughputExceededException
+  - Reserved capacity, On-demand, Burst. Adaptive
+  - On-demand backups, point-in-time recovery
 - Best practices when using **Scan** in dynamodb - **Use parallel scan** 
   - to control the amount of data returned per request use the **Limit parameter**. This can help prevent situations where one worker consumes all the provisioned throuahput at the expense of all other workers
   - DynamoDB does not support item locking, and conditional writes are perfect for implementing optimistic concurrency.

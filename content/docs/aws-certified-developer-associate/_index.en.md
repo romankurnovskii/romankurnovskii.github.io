@@ -9,6 +9,7 @@ series:
 date: 2022-09-08
 draft: false
 featuredImage: "images/aws-cda-intro.en.png"
+weight: 100
 ---
 
 
