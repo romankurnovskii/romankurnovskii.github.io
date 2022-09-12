@@ -130,3 +130,9 @@ const Config: ConfigOptions = {
 
 export default Config;
 ```
+
+
+
+## Resources
+
+- [react cheatsheet](https://devhints.io/react)

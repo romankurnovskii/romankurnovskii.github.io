@@ -23,13 +23,12 @@ authors: [roman-kurnovskii]
     j               ##  move down
     k               ##  move up
     l               ##  move right
-    w               ##  jump by start of words (punctuation considered words)
-    W               ##  jump by words (spaces separate words)
-    e               ##  jump to end of words (punctuation considered words)
+
+    b / w           ##  Previous/next word (punctuaction)
+    B / W           ##  Previous/next word (spaces separate words)
+    ge / e          ##  Previous/next end of word
+
     E               ##  jump to end of words (no punctuation)
-    b               ##  jump backward by words (punctuation considered words)
-    B               ##  jump backward by words (no punctuation)
-    ge              ##  jump backward to end of words
     0               ##  (zero) start of line
     ^               ##  first non-blank character of line
     $               ##  end of line
@@ -150,12 +149,15 @@ authors: [roman-kurnovskii]
 ## visual mode
 
     v               ##  start visual mode, mark lines, then do command (such as y-yank)
-    V               ##  start linewise visual mode
+    V               ##  enter visual line mode
     o               ##  move to other end of marked area
     U               ##  upper case of marked area
     CTRL-v          ##  start visual block mode
     O               ##  move to other corner of block
     aw              ##  mark a word
+    d / x           ##  Delete selection
+    s               ##  Replace selection
+    y               ##  Yank selection (Copy)
     ab              ##  a () block (with braces)
     ab              ##  a {} block (with brackets)
     ib              ##  inner () block
@@ -264,3 +266,4 @@ authors: [roman-kurnovskii]
 
 - [vim faq](https://vimhelp.org/vim_faq.txt.html)
 - [vim cheat sheet](https://github.com/LeCoupa/awesome-cheatsheets/blob/master/tools/vim.txt)
+- [vim cheat sheet](https://devhints.io/vim)

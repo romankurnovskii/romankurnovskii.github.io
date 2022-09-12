@@ -61,6 +61,14 @@ Used in [CreateDBCluster](https://docs.aws.amazon.com/AmazonRDS/latest/APIRefere
 
 - When RDS detects you're running out of space, it scales automatically
 
+## Digest
+
+- To verify slowly running queries enable **slow query log**.
+- TDE (Transparent data encryption) supports encryption on Microsoft SQL server
+- AWS Systems Manager Parameter Store provides secure, hierarchical storage for confiquration data management and secrets management. You can store data such as passwords, database strings, Amazon Machine Image (AMI) IDs, and license codes as
+parameter values
+- AWS Secrets Manager is an AWS service that can be used to securely **store**, **retrieve**, and automatically **rotate** **database credentials**. AWS Secrets Manager has built-in integration for RDS databases.
+
 ## Price
 
 [Current price](https://aws.amazon.com/rds/pricing/)
