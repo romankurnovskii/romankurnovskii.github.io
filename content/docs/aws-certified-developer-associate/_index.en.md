@@ -129,7 +129,7 @@ The following is my roadmap for the study. There may be adjustments.
 
 <!-- 1. 
 
-q added to db: 4
+q added to db: 4  / 1
 
                 12   4
 6. [Amazon DynamoDB](dynamodb)

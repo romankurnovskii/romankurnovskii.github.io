@@ -101,10 +101,10 @@ Every database write will write to the cache as well. Data is never stale howeve
 
 **What is one reason that AWS does not recommend that you configure your ElastiCache so that it can be accessed from outside AWS?**
 
-- A) The metrics reported by CloudWatch are more difficult to report.
-- B) Security concerns and network latency over the public internet.
-- C) The ElastiCache cluster becomes more prone to failures.
-- D) The performance of the ElastiCache cluster is no longer controllable.
+1. The metrics reported by CloudWatch are more difficult to report.
+1. Security concerns and network latency over the public internet.
+1. The ElastiCache cluster becomes more prone to failures.
+1. The performance of the ElastiCache cluster is no longer controllable.
 
 
 <details>
@@ -113,14 +113,14 @@ Every database write will write to the cache as well. Data is never stale howeve
 
 Elasticache is a service designed to be used internally to your VPC. External access is discouraged due to the latency of Internet traffic and security concerns. However, if external access to Elasticache is required for test or development purposes, it can be done through a VPN.
 
-<mark style="color:white">B</mark> 
+<mark style="color:white">2</mark> 
 
 </div>
 </details>
 
 ### Q2
 
-**You are building a web application that will run in an AWS ElasticBeanstalk environment. You need to add and configure an [Amazon ElastiCache](../elasticache) cluster into the environment immediately after the application is deployed.**
+**You are building a web application that will run in an [AWS ElasticBeanstalk](../elasticbeanstalk) environment. You need to add and configure an [Amazon ElastiCache](../elasticache) cluster into the environment immediately after the application is deployed.**
 
 **What is the most efficient method to ensure that the cluster is deployed immediately after the EB application is deployed?**
 

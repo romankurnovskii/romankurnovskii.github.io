@@ -97,7 +97,7 @@ Amazon Relational Database Service (Amazon RDS) on [AWS Outposts](AWS Outposts) 
 
 **A company is migrating a legacy application to Amazon EC2. The application uses a username and password stored in the source code to connect to a MySQL database. The database will be migrated to an Amazon RDS for MySQL DB instance. As part of the migration, the company wants to implement a secure way to store and automatically rotate the database credentials.**
 
-**Which approach meetsthese requirements?**
+**Which approach meets these requirements?**
 
 1. Store the database credentials in environment variables in an Amazon Machine Image (AMI). Rotate the credentials by replacing the AMI.
 2. Store the database credentials in AWS Systems Manager Parameter Store. Configure Parameter Store to automatically rotate the credentials.
