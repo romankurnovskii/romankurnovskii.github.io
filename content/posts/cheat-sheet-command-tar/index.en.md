@@ -1,5 +1,5 @@
 ---
-title: Tar Files Cheat Sheet
+title: Tar command Cheat Sheet
 description: tar command Cheat Sheet
 toc: true
 tags: ["Linux", "CLI", "tar", "cheatsheet"]
