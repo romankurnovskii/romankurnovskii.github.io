@@ -130,7 +130,9 @@ The following is my roadmap for the study. There may be adjustments.
 
 <!-- 1. 
 
-q added to db: 4  / 11, 10 19
+q added to db: 4  / 11, 10
+
+        13              5
 
             14                  6
 12. [Amazon Kinesis](kinesis)
@@ -197,9 +199,9 @@ q added to db: 4  / 11, 10 19
 6. [Amazon DynamoDB](dynamodb)
 7. [Amazon ElastiCache](elasticache)
 8. [Amazon RDS](rds)
-53. Amazon API Gateway
-54. Amazon CloudFront
-55. Elastic Load Balancing (ELB)
+9. [Amazon API Gateway](api-gateway)
+10. [Amazon CloudFront](cloudfront)
+11. [Elastic Load Balancing (ELB)](elasticloadbalancing)
 56. Amazon Kinesis
 57. Amazon OpenSearch Service (Amazon Elasticsearch Service)
 58. Amazon CloudWatch
