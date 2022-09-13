@@ -154,9 +154,11 @@ Itsycal is a tiny menu bar calendar.
 
 ![](https://www.mowglii.com/itsycal/itsycalbanner2@2x.png)
 
-### Visual Studio Code
+### Visual Studio Code (VSCode)
 
-[Visual Studio Code](https://code.visualstudio.com/) (web development IDE
+[Visual Studio Code](https://code.visualstudio.com/) (web development IDE)
+
+[Settings](https://github.com/romankurnovskii/romankurnovskii.github.io/tree/main/content/posts/mac-setup-development/files/vscode)
 
 ### Sublime Text
 

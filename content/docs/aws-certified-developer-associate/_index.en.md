@@ -130,12 +130,8 @@ The following is my roadmap for the study. There may be adjustments.
 
 <!-- 1. 
 
-q added to db: 4  / 1
+q added to db: 4  / 11, 10 19
 
-        13              5
-9.  [Amazon API Gateway](api-gateway)
-10. [Amazon CloudFront](cloudfront)
-11. [Elastic Load Balancing (ELB)](elasticloadbalancing)
             14                  6
 12. [Amazon Kinesis](kinesis)
 13. [Amazon OpenSearch Service (Amazon Elasticsearch Service)](opensearch-service)

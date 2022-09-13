@@ -212,7 +212,7 @@ Amazon Cognito adds user sign-up, sign-in, and access control to web and mobile 
 
 ## Q10
 
-**A developer is designing a web application that allows the users to post comments and receive nearreal-time feedback.**
+**A developer is designing a web application that allows the users to post comments and receive in a real-time feedback.**
 
 **Which architectures meet these requirements? (Select TWO.)**
 
@@ -360,7 +360,7 @@ An Amazon S3 bucket would work, but the AWS ElasticBeanstalk proxy server would 
 
 1. [AWS X-Ray](../xray)
 2. [Amazon SQS](../sqs)
-3. [[AWS Lambda](../lambda)](../lambda)
+3. [AWS Lambda](../lambda)
 4. [Amazon API Gateway](../apigateway)
   
 <details>
@@ -1010,15 +1010,7 @@ C. Install the X-Ray daemon. Configure it to forward data to Amazon EventBridge 
 D. Deploy the X-Ray SDK with the application, and instrument the application code. Use the SDK logger to capture and send the events.
 Answer : C
 
-API Gateway, Cognito, S3
-A developer is designing a full-stack serverless application. Files for the website are stored in an Amazon S3 bucket. AWS Lambda functions that use Amazon API Gateway endpoints return results from an Amazon DynamoDB table.
-The developer must create a solution that securely provides registration and authentication for the application while minimizing the amount of configuration.
-Which solution meets these requirements?
-A. Create an Amazon Cognito user pool and an app client. Configure the app client to use the user pool and provide the hosted web UI provided for sign-up and sign-in.
-B. Configure an Amazon Cognito identity pool. Map the users with IAM roles that are configured to access the S3 bucket that stores the website.
-C. Configure and launch an Amazon EC2 instance to set up an identity provider with an Amazon Cognito user pool. Configure the user pool to provide the hosted web UI for sign-up and sign-in.
-D. Create an IAM policy that allows access to the website that is stored in the S3 bucket. Attach the policy to an IAM group. Add IAM users to the group.
-Answer : B
+
 
 s3, lambda, 
 A company has an application that writes files to an Amazon S3 bucket. Whenever there is a new file, an S3 notification event invokes an AWS Lambda function to process the file. The Lambda function code works as expected. However, when a developer checks the Lambda function logs, the developer finds that multiple invocations occur for every file.
@@ -1111,15 +1103,7 @@ C. Use the yaml-stream output for faster viewing of large datasets.
 D. Use quotation marks around strings to enclose data structure.
 Answer : A
 
-EC2
-A company has moved a legacy on-premises application to AWS by performing a lift and shift. The application exposes a REST API that can be used to retrieve billing information. The application is running on a single Amazon EC2 instance. The application code cannot support concurrent invocations. Many clients access the API, and the company adds new clients all the time.
-A developer is concerned that the application might become overwhelmed by too many requests. The developer needs to limit the number of requests to the API for all current and future clients. The developer must not change the API, the application, or the client code.
-What should the developer do to meet these requirements?
-A. Place the API behind an Amazon API Gateway API. Set the server-side throttling limits.
-B. Place the API behind a Network Load Balancer. Set the target group throttling limits.
-C. Place the API behind an Application Load Balancer. Set the target group throttling limits.
-D. Place the API behind an Amazon API Gateway API. Set the per-client throttling limits.
-Answer : D
+
 
 
 
