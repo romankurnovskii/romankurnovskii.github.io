@@ -107,7 +107,7 @@ DynamoDB supports different **consistency models** when performing reads:
 
 ### Q1
 
-**A developer is designing a web application that allows the users to post comments and receive nearreal-time feedback.**
+**A developer is designing a web application that allows the users to post comments and receive in a real-time feedback.**
 
 **Which architectures meet these requirements? (Select TWO.)**
 

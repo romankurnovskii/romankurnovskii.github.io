@@ -134,7 +134,9 @@ brew install \
 [Firefox](https://www.google.com/chrome/) (web development)
 
 ### Visual Studio Code
-[Visual Studio Code](https://code.visualstudio.com/) (web development IDE
+[Visual Studio Code](https://code.visualstudio.com/) (web development IDE)
+
+[Settings](https://github.com/romankurnovskii/romankurnovskii.github.io/tree/main/content/posts/mac-setup-development/files/vscode)
 
 ### Sublime Text
 [Sublime Text](https://www.sublimetext.com/) (editor)
