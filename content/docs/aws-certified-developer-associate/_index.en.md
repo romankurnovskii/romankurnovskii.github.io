@@ -132,12 +132,6 @@ The following is my roadmap for the study. There may be adjustments.
 
 q added to db: 4  / 11, 10
 
-        13              5
-
-            14                  6
-12. [Amazon Kinesis](kinesis)
-13. [Amazon OpenSearch Service (Amazon Elasticsearch Service)](opensearch-service)
-
         15      7
 14. [Amazon CloudWatch](cloudwatch)
 15. [AWS CloudFormation](cloudformation)
