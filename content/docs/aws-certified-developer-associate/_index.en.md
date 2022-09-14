@@ -130,7 +130,7 @@ The following is my roadmap for the study. There may be adjustments.
 
 <!-- 1. 
 
-q added to db: 4  / 11, 10
+q added to db: 4  / 10 11 28 29
 
         15      7
 14. [Amazon CloudWatch](cloudwatch)
