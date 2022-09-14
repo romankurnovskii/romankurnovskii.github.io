@@ -2,7 +2,7 @@
 title: Kinesis
 description: Easily collect, process, and analyze video and data streams in real time
 toc: true
-tags: [aws, kinesis, realtime]
+tags: [aws, kinesis]
 categories: [aws, kinesis]
 date: 2022-09-14
 weight: 1200
