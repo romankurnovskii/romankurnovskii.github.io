@@ -600,10 +600,10 @@ https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html
 
 **What steps will you take to keep a strong performance?**
 
-- A) Remove the hot shards
-- B) Merge the hot shards
-- C) Split the hot shards
-- D) Increase the shard capacity
+1. Remove the hot shards
+1. Merge the hot shards
+1. Split the hot shards
+1. Increase the shard capacity
 
 <details>
 <summary>Explanation</summary>
@@ -613,7 +613,7 @@ https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html
 
 Split the hot shards
 
-<mark style="color:white">C</mark> 
+<mark style="color:white">3</mark> 
 </div>
 </details>
 
@@ -868,7 +868,7 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 
 ## Q41
 
-**You’ve decided to use autoscaling in conjunction with [SNS](../sns) to alert you when your auto-scaling group scales. Notifications can be delivered using [SNS](../sns) in several ways.**
+**TODO--------------------------**
 
 **Which options are supported notification methods? (Choose 3 answers)**
 
@@ -881,7 +881,7 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 <summary>Explanation</summary>
 <div>
 
-[https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-sns-notifications.html](https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-sns-notifications.html)
+
 
 <mark style="color:white">1, 2, 4</mark> 
 </div>
@@ -1103,7 +1103,7 @@ C. Use the yaml-stream output for faster viewing of large datasets.
 D. Use quotation marks around strings to enclose data structure.
 Answer : A
 
-
+https://main.d33tdgi01iojga.amplifyapp.com/addQuestion
 
 
 
