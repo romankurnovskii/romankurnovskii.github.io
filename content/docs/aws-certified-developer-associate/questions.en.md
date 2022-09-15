@@ -14,7 +14,8 @@ weight: 99999
 
 On this page you can find 45 random questions. 
 
-## Q1
+## Q1 - Q10
+### Q1
 
 **You are developing an API in Amazon API Gateway that several mobile applications will use to interface with a back end service in AWS being written by another developer. You can use a(n)____ integration for your API methods to develop and test your client applications before the other developer has completed work on the back end.**
 
@@ -36,7 +37,7 @@ Amazon API Gateway supports mock integrations for API methods.
 </div>
 </details>
 
-## Q2
+### Q2
 
 **You are creating multiple resources using multiple CloudFormation templates. One of the resources (Resource B) needs the ARN value of another resource (resource A) before it is created.**
 
@@ -57,7 +58,7 @@ Amazon API Gateway supports mock integrations for API methods.
 </div>
 </details>
 
-## Q3
+### Q3
 
 **A company with global users is using a content delivery network service to ensure low latency for all customers. The company has several applications that require similar cache behavior.**
 
@@ -78,7 +79,7 @@ Amazon API Gateway supports mock integrations for API methods.
 </div>
 </details>
 
-## Q4
+### Q4
 
 **You are creating a few test functions to demonstrate the ease of developing serverless applications. You want to use the command line to deploy [AWS Lambda](../lambda) functions, an Amazon API Gateway, and [Amazon DynamoDB](../dynamodb) tables.**
 
@@ -101,7 +102,7 @@ AWS SAM - AWS Serverless Application Model
 </details>
 
 
-## Q5
+### Q5
 
 **What will happen if you delete an unused custom deployment configuration in AWS CodeDeploy?**
 
@@ -122,7 +123,7 @@ Can delete only if unused.
 </div>
 </details>
 
-## Q6
+### Q6
 
 **What happens when you delete a deployment group with the AWS CLI in AWS CodeDeploy?**
 
@@ -144,7 +145,7 @@ If you delete a deployment group, all details associated with that deployment gr
 </details>
 
 
-## Q7
+### Q7
 
 **You are configuring a Jenkins project that is installed on an Amazon [EC2](../ec2) instance running a Windows operating system. You want this Jenkins project to integrate with AWS CodePipeline.**
 
@@ -166,7 +167,7 @@ If you delete a deployment group, all details associated with that deployment gr
 </details>
 
 
-## Q8
+### Q8
 
 **You are deploying Multi-Factor Authentication (MFA) on Amazon Cognito. You have set the verification message to be by SMS. However, during testing, you do not receive the MFA SMS on your device.**
 
@@ -188,7 +189,7 @@ https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa
 </details>
 
 
-## Q9
+### Q9
 
 **A developer is adding sign-up and sign-in functionality to an application. The application is required to make an API call to a custom analytics solution to log user sign-in events**
 
@@ -210,7 +211,7 @@ Amazon Cognito adds user sign-up, sign-in, and access control to web and mobile 
 </div>
 </details>
 
-## Q10
+### Q10
 
 **A developer is designing a web application that allows the users to post comments and receive in a real-time feedback.**
 
@@ -238,32 +239,9 @@ The WebSocket API invokes the backend based on the content of the messages it re
 </details>
 
 
-## Q11
+## Q11 - Q20
 
-**A company is migrating a legacy application to Amazon EC2. The applicationuses a username and password stored in the source code to connect to a MySQL database. The database will be migrated to an Amazon RDS for MySQL DB instance. As part of the migration, the company wants to implement a secure way to store and automatically rotate the database credentials.**
-
-**Which approach meetsthese requirements?**
-
-1. Store the database credentials in environment variables in an Amazon Machine Image (AMI). Rotate the credentials byreplacing the AMI.
-2. Store the database credentials in AWS Systems Manager Parameter Store. Configure Parameter Store to automatically rotate the credentials.
-3. Store the database credentials in environment variables on the [EC2](../ec2) instances. Rotate the credentialsby relaunching the [EC2](../ec2) instances.
-4. Store the database credentials in AWS Secrets Manager. Configure Secrets Manager to automatically rotate the credentials
-
-<details>
-<summary>Explanation</summary>
-<div>
-
-[AWS Secrets Manager](https://aws.amazon.com/secrets-manager/)
-
-Secrets Manager offers [secret rotation](https://aws.amazon.com/blogs/security/rotate-amazon-rds-database-credentials-automatically-with-aws-secrets-manager/)
-
-<mark style="color:white">4</mark> 
-
-</div>
-</details>
-
-
-## Q12
+### 1
 
 **You are asked to establish a baseline for normal Amazon ECS performance in your environment by measuring performance at various times and under different load conditions. To establish a baseline, Amazon recommends that you should at a minimum monitor the CPU and ____ for your Amazon ECS clusters and the CPU and ____ metrics for your Amazon ECS services.**
 
@@ -276,14 +254,12 @@ Secrets Manager offers [secret rotation](https://aws.amazon.com/blogs/security/r
 <summary>Explanation</summary>
 <div>
 
-[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_monitoring.html](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_monitoring.html)
-
-<mark style="color:white">1, 2</mark> 
+<mark style="color:white">4</mark> 
 </div>
 </details>
 
 
-## Q13
+### 2
 
 **What is one reason that AWS does not recommend that you configure your [ElastiCache](../elasticache) so that it can be accessed from outside AWS?**
 
@@ -305,15 +281,15 @@ Elasticache is a service designed to be used internally to your VPC. External ac
 </details>
 
 
-## Q14
+### 3
 
 **You are building a web application that will run in an AWS ElasticBeanstalk environment. You need to add and configure an [Amazon ElastiCache](../elasticache) cluster into the environment immediately after the application is deployed.**
 
 **What is the most efficient method to ensure that the cluster is deployed immediately after the EB application is deployed?**
 
-1. Use the [AWS Management Console](../https://aws.amazon.com/console/) to create and configure the cluster.
+1. Use the [AWS Management Console](https://aws.amazon.com/console/) to create and configure the cluster.
 1. Create a cron job to schedule the cluster deployment using the **_aws cloudformation deploy_** command
-1. Create a configuration file with the .config extension and place it into the .ebextensions folder in the application package.
+1. Create a configuration file with the `.config` extension and place it into the `.ebextensions` folder in the application package.
 1. Build an [AWS Lambda](../lambda) function that polls to the ElasticBeanstalk environment deployments and create and configure the [Amazon ElastiCache](../elasticache) cluster.
   
 <details>
@@ -327,7 +303,7 @@ Elasticache is a service designed to be used internally to your VPC. External ac
 </div>
 </details>
 
-## Q15
+### 4
 
 **Emily is building a web application using AWS ElasticBeanstalk. The application uses static images like icons, buttons and logos. Emily is looking for a way to serve these static images in a performant way that will not disrupt user sessions.**
 
@@ -352,7 +328,7 @@ An Amazon S3 bucket would work, but the AWS ElasticBeanstalk proxy server would 
 </details>
 
  
- ## Q16
+### 5
 
 **A company is providing services to many downstream consumers. Each consumer may connect to one or more services. This has resulted in complex architecture that is difficult to manage and does not scale well. The company needs a single interface to manage these services to consumers**
 
@@ -372,7 +348,7 @@ An Amazon S3 bucket would work, but the AWS ElasticBeanstalk proxy server would 
 </div>
 </details>
 
-## Q17
+### 6
 
 **Which load balancer would you use for services which use HTTP or HTTPS traffic?**
 
@@ -384,7 +360,7 @@ Application Load Balancer (ALB).
 </div>
 </details>
 
-## Q18
+### 7
 
 **What are possible target groups for ALB (Application Load Balancer)?**
 
@@ -400,8 +376,7 @@ Application Load Balancer (ALB).
 </div>
 </details>
 
-
-## Q19
+### 8
 
 **Your would like to optimize the performance of their web application by routing inbound traffic to api.mysite.com to Compute Optimized [EC2](../ec2) instances and inbound traffic to mobile.mysite.com to Memory Optimized [EC2](../ec2) instances.**
 
@@ -409,8 +384,8 @@ Application Load Balancer (ALB).
 
 1. Enable X-Forwarded For on the web servers and use a Classic Load Balancer
 2. Configure proxy servers to forward the traffic to the correct instances
-3. Use an Application Load Balancer with path-based routing rules to forward the traffic to the correct instances
-4. Use an Application Load Balancer with host-based routing rules to forward the traffic to the correct instances
+3. Use Classic Load Balancer with path-based routing rules to forward the traffic to the correct instances
+4. Use Application Load Balancer with host-based routing rules to forward the traffic to the correct instances
 
 
 <details>
@@ -425,8 +400,7 @@ Application Load Balancer with host-based routing rules
 </div>
 </details>
 
-
-## Q20
+### 9
 
 **A company uses Amazon [DynamoDB](../dynamodb) for managing and tracking orders. DynamoDB table is partitioned based on the order date. The company receives a huge increase in orders during a sales event, causing DynamoDB writes to throttle, and the consumed throughput is below the provisioned throughput.**
 
@@ -451,8 +425,7 @@ A randomizing strategy can greatly improve write throughput. But it’s difficul
 </div>
 </details>
 
-
-## Q21
+### 10
 
 **A food delivery company is building a feature that requests reviews from customers after their orders are delivered. The solution should be a short-running process that can message customers simultaneously at various contact points including email, text, and mobile push notifications.**
 
@@ -460,7 +433,7 @@ A randomizing strategy can greatly improve write throughput. But it’s difficul
 
 1. Use EventBridge with Kinesis Data Streams to send messages. 
 2. Use a Step Function to send [SQS](../sqs) messages.
-3. Use a [Lambda function](../lambda) to send [SNS](../sns) messages.
+3. Use [Lambda function](../lambda) to send [SNS](../sns) messages.
 4. Use AWS Batch and [SNS](../sns) to send messages.
 
 <details>
@@ -473,22 +446,24 @@ A randomizing strategy can greatly improve write throughput. But it’s difficul
 </div>
 </details>
 
-## Q22
+## Q21 - Q30
 
-**How [AWS Fargate](../fargate)  different from [AWS ECS](../ecs) ?**
+### 1
+
+**How [AWS Fargate](../fargate) different from [AWS ECS](../ecs)?**
 
 <details>
 <summary>Explanation</summary>
 <div>
 
-In [AWS ECS](../ecs) , you manage the infrastructure - you need to provision and configure the [EC2](../ec2) instances.
-While in [AWS Fargate](../fargate) , you don't provision or manage the infrastructure, you simply focus on launching Docker containers. You can think of it as the serverless version of [AWS ECS](../ecs) .
+In [AWS ECS](../ecs), you manage the infrastructure - you need to provision and configure the [EC2](../ec2) instances.
+While in [AWS Fargate](../fargate), you don't provision or manage the infrastructure, you simply focus on launching Docker containers. You can think of it as the serverless version of [AWS ECS](../ecs).
 
 </div>
 </details>
 
 
-## Q23
+### 2
 
 **What is Chaos Engineering?**
 
@@ -505,29 +480,28 @@ It starts with analyzing the steady-state behavior, building an experiment hypot
 </div>
 </details>
 
-
-## Q24
+### 3
 
 **A client has contracted you to review their existing AWS environment and recommend and implement best practice changes. You begin by reviewing existing users and Identity Access Management. You found out improvements that can be made with the use of the root account and Identity Access Management.**
 
 **What are the best practice guidelines for use of the root account?**
 
-- Never use the root account.
-- Use the root account only to create administrator accounts.
-- Use the root account to create your first IAM user and then lock away the root account.
-- Use the root account to create all other accounts, and share the root account with one backup administrator.
+1. Never use the root account.
+1. Use the root account only to create administrator accounts.
+1. Use the root account to create your first IAM user and then lock away the root account.
+1. Use the root account to create all other accounts, and share the root account with one backup administrator.
 
 <details>
 <summary>Explanation</summary>
 <div>
 <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials" target="_blank">lock-away-credentials</a>
 
-<mark style="color:white">A</mark> 
+<mark style="color:white">1</mark> 
 
 </div>
 </details>
 
-## Q25
+### 4
 
 **Veronika is writing a REST service that will add items to a shopping list. The service is built on Amazon API Gateway with [AWS Lambda](../lambda) integrations. The shopping list stems are sent as query string parameters in the method request.**
 
@@ -549,16 +523,16 @@ It starts with analyzing the steady-state behavior, building an experiment hypot
 </div>
 </details>
 
-## Q26
+### 5
 
 **Your organization has an AWS setup and planning to build Single Sign-On for users to authenticate with on-premise Microsoft Active Directory Federation Services (ADFS) and let users log in to the AWS console using AWS STS Enterprise Identity Federation.**
 
 **Which of the following services do you need to call from AWS STS service after you authenticate with your on-premise?**
 
-- A. AssumeRoleWithSAML
-- B. GetFederationToken
-- C. AssumeRoleWithWebIdentity
-- D. GetCallerIdentity
+1. AssumeRoleWithSAML
+1. GetFederationToken
+1. AssumeRoleWithWebIdentity
+1. GetCallerIdentity
 
 <details>
 <summary>Explanation</summary>
@@ -566,12 +540,12 @@ It starts with analyzing the steady-state behavior, building an experiment hypot
 <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html" target="_blank">https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html</a>
 <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html" target="_blank">https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html</a>
 
-<mark style="color:white">A</mark> 
+<mark style="color:white">1</mark> 
 
 </div>
 </details>
 
-## Q27
+### 6
 
 **Alice is building a mobile application. She planned to use Multi-Factor Authentication (MFA) when accessing some AWS resources.**
 
@@ -594,7 +568,7 @@ https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html
 </div>
 </details>
 
-## Q28
+### 7
 
 **You built a data analysis application to collect and process real-time data from smart meters. Amazon Kinesis Data Streams is the backbone of your design. You received an alert that a few shards are hot.**
 
@@ -617,9 +591,9 @@ Split the hot shards
 </div>
 </details>
 
-## Q29
+### 8
 
-**Jasmin needs to perform ad-hoc business analytics queries on well-structured data. Data comes in constantly at a high velocity. Jasmin's team can understand SQL.**
+**Jasmin needs to perform ad-hoc business analytics queries on well-structured dat1. Data comes in constantly at a high velocity. Jasmin's team can understand SQL.**
 
 **What AWS service(s) should Jasmin look to first?**
 
@@ -641,7 +615,7 @@ https://aws.amazon.com/kinesis/data-firehose/features/
 </details>
 
 
-## Q30
+### 9
 
 **Key rotation is an important concept of key management. How does Key Management Service (KMS) implement key rotation?**
 
@@ -659,7 +633,7 @@ When you enable _automatic key rotation_ for a customer-managed KMS key, AWS KMS
 </div>
 </details>
 
-## Q31
+### 10
 
 **Alan is managing an environment with regulation and compliance requirements that mandate encryption at rest and in transit. The environment covers multiple accounts (Management, Development, and Production) and at some point in time, Alan might need to move encrypted snapshots and AMIs with encrypted volumes across accounts.**
 
@@ -676,12 +650,15 @@ When you enable _automatic key rotation_ for a customer-managed KMS key, AWS KMS
 
 https://docs.aws.amazon.com/kms/latest/developerguide/overview.html
 
-<mark style="color:white">2, 1</mark> 
+<mark style="color:white">1, 2</mark> 
 
 </div>
 </details>
 
-## Q32
+
+## Q31 - Q40
+
+### 1
 
 **When working with a published version of the [AWS Lambda](../lambda) function, you should note that the _____.**
 
@@ -696,14 +673,14 @@ https://docs.aws.amazon.com/kms/latest/developerguide/overview.html
 
 [AWS Secrets Manager](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-resources.html)
 
-<mark style="color:white">C</mark> 
+<mark style="color:white">3</mark> 
 
 </div>
 </details>
 
-## Q33
+### 2
 
-**A Developer wants access to make to log data of an application running on an [EC2](../ec2) instance available to systems administrators.**
+**A Developer wants access to the log data of an application running on an [EC2](../ec2) instance available to systems administrators.**
 
 **Which of the following enables monitoring of the metric in [Amazon CloudWatch](../cloudwatch)?**
 
@@ -721,9 +698,9 @@ https://docs.aws.amazon.com/kms/latest/developerguide/overview.html
 </div>
 </details>
 
-## Q34
+### 3
 
-**A developer is building a streamlined development process for Lambda functions related to S3 storage.The developer needs a consistent, reusable code blueprint that can be easily customized to manage [Lambda function](../lambda) definition and deployment, the S3 events to be managed and the Identity Access Management (IAM) policies definition.**
+**A developer is building a streamlined development process for Lambda functions related to S3 storage. The developer needs a consistent, reusable code blueprint that can be easily customized to manage [Lambda function](../lambda) definition and deployment, the S3 events to be managed and the Identity Access Management (IAM) policies definition.**
 
 **Which of the following AWS solutions offers is best suited for this objective?**
 
@@ -743,7 +720,7 @@ https://docs.aws.amazon.com/kms/latest/developerguide/overview.html
 </div>
 </details>
 
-## Q35
+### 4
 
 **Explain RDS Multi Availability Zone**
 
@@ -759,7 +736,7 @@ https://docs.aws.amazon.com/kms/latest/developerguide/overview.html
 </div>
 </details>
 
-## Q36
+### 5
 
 **Developer wants to implement a more fine-grained control of developers S3 buckets by restricting access to S3 buckets on a case-by-case basis using S3 bucket policies.**
 
@@ -783,7 +760,7 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-publi
 </div>
 </details>
 
-## Q37
+### 6
 
 **To ensure that an encryption key was not corrupted in transit, <abbr title="Amazon Elastic Transcoder is media transcoding in the cloud. It is designed to be a highly scalable, easy to use and a cost effective way for developers and businesses to convert (or “transcode”) media files from their source format into versions that will playback on devices like smartphones, tablets and PCs.">Elastic Transcoder</abbr>  uses a(n) ____ digest of the decryption key as a checksum.**
 
@@ -804,7 +781,7 @@ MD5 digest (or checksum)
 </div>
 </details>
 
-## Q38
+### 7
 
 **Dan is responsible for supporting your company’s AWS infrastructure, consisting of multiple [EC2](../ec2) instances running in a VPC, DynamoDB, SQS, and S3. You are working on provisioning a new S3 bucket, which will ultimately contain sensitive data.**
 
@@ -825,7 +802,7 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 </div>
 </details>
 
-## Q39
+### 8
 
 **In a move toward using microservices, a company’s Management team has asked all Development teams to build their services so that API requests depend only on that services data store. One team is building a Payments service that has its own database. The service floods data that originates in the Accounts database. Both are using Amazon DynamoDB.**
 
@@ -845,7 +822,7 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 </div>
 </details>
 
-## Q40
+### 9
 
 **You’ve decided to use autoscaling in conjunction with [SNS](../sns) to alert you when your auto-scaling group scales. Notifications can be delivered using [SNS](../sns) in several ways.**
 
@@ -866,28 +843,7 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 </div>
 </details>
 
-## Q41
-
-**TODO--------------------------**
-
-**Which options are supported notification methods? (Choose 3 answers)**
-
-1. HTTP or HTTPS POST notifications
-2. Email using SMTP or plain text
-3. [Kinesis Stream](../kinesis)
-4. Invoking of a [Lambda function](../lambda)
-
-<details>
-<summary>Explanation</summary>
-<div>
-
-
-
-<mark style="color:white">1, 2, 4</mark> 
-</div>
-</details>
-
-## Q42
+### 10
 
 **Which endpoint is considered to be best practice when analyzing data within a Configuration Stream of [AWS Config](https://aws.amazon.com/config/)?**
 
@@ -906,7 +862,10 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 </div>
 </details>
 
-## Q43
+
+## Q41 - Q50
+
+### 1
 
 **A developer is adding a feedback form to a website. Upon user submission, the form should create a discount code, email the user the code and display a message on the website that tells the user to check their email. The developer wants to use separate [Lambda](../lambda) functions to manage these processes and use a Step Function to orchestrate the interactions with minimal custom scripting.**
 
@@ -927,7 +886,7 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 </div>
 </details>
 
-## Q44
+### 2
 
 **You joined an application monitoring team. Your role focuses on finding system performance and bottlenecks in Lambda functions and providing specific solutions. Another teammate focuses on auditing the systems.**
 
@@ -935,7 +894,7 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 
 1. [AWS X-Ray](../xray)
 2. [AWS IAM](../iam)
-3. [AWS CloudTrail](../[CloudWatch](../cloudwatch)/#[CloudWatch](../cloudwatch)-vs-cloudtrail)
+3. AWS CloudTrail
 4. [AWS Athena](https://aws.amazon.com/athena/)
 
 <details>
@@ -948,11 +907,11 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 </div>
 </details>
 
-## Q45
+### 3
 
 **A team of Developers must migrate an application running inside an [AWS Elastic Beastalk](../elasticbeanstalk) environment from a [Classic Load Balancer](../elasticloadbalancing/#types-of-load-balancers) to an [Application Load Balancer](../elasticloadbalancing/#types-of-load-balancers).**
 
-**Which steps should be taken to accomplish the task using the [AWS Management Console](../https://aws.amazon.com/console/)?**
+**Which steps should be taken to accomplish the task using the [AWS Management Console](https://aws.amazon.com/console/)?**
 
 - 1 
    1. Select a new load balancer type before running the deployment.
@@ -979,67 +938,87 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 </div>
 </details>
 
+### 4
 
-<!-- 
+**A developer is deploying an application that will store files in an Amazon S3 bucket. The files must be encrypted at rest. The developer wants to automatically replicate the files to an S3 bucket in a different AWS Region for disaster recovery.**
 
-s3, kms
-A developer is deploying an application that will store files in an Amazon S3 bucket. The files must be encrypted at rest. The developer wants to automatically replicate the files to an S3 bucket in a different AWS Region for disaster recovery.
-How can the developer accomplish this task with the LEAST amount of configuration?
-A. Encrypt the files by using server-side encryption with S3 managed encryption keys (SSE-S3). Enable S3 bucket replication.
-B. Encrypt the files by using server-side encryption (SSE) with an AWS Key Management Service (AWS KMS) customer master key (CMK). Enable S3 bucket replication.
-C. Use the s3 sync command to sync the files to the S3 bucket in the other Region.
-D. Configure an S3 Lifecycle configuration to automatically transfer files to the S3 bucket in the other Region.
-Answer : B 
+**How can the developer accomplish this task with the LEAST amount of configuration?**
 
-step functions, lambda, 
-A serverless application is using AWS Step Functions to process data and save it to a database. The application needs to validate some data with an external service before saving the data. The application will call the external service from an AWS Lambda function, and the external service will take a few hours to validate the data. The external service will respond to a webhook when the validation is complete.
-A developer needs to pause the Step Functions workflow and wait for the response from the external service.
-What should the developer do to meet this requirement?
-A. Use the .wait ForTaskToken option in the Lambda function task state. Pass the token in the body.
-B. Use the .waitForTaskToken option in the Lambda function task state. Pass the invocation request.
-C. Call the Lambda function in synchronous mode. Wait for the external service to complete the processing.
-D. Call the Lambda function in asynchronous mode. Use the Wait state until the external service completes the processing.
-Answer : D
+1. Encrypt the files by using server-side encryption with S3 managed encryption keys (SSE-S3). Enable S3 bucket replication.
+2. Encrypt the files by using server-side encryption (SSE) with an AWS Key Management Service (AWS KMS) customer master key (CMK). Enable S3 bucket replication.
+3. Use the s3 sync command to sync the files to the S3 bucket in the other Region.
+4. Configure an S3 Lifecycle configuration to automatically transfer files to the S3 bucket in the other Region.
 
-X-Ray, ec2, CloudWatch, EventBridge
-A developer must use AWS X-Ray to monitor an application that is running on an Amazon EC2 instance. The developer has prepared the application by using the X-Ray SDK.
-What should the developer do to perform the monitoring?
-A. Configure the X-Ray SDK sampling rule and target. Activate the X-Ray daemon from the EC2 console or the AWS CLI with the modify-instance-attribute command to set the XRayEnabled flag.
-B. Install the X-Ray daemon. Assign an IAM role to the EC2 instance with a policy that allows writes to X-Ray.
-C. Install the X-Ray daemon. Configure it to forward data to Amazon EventBridge (Amazon CloudWatch Events). Grant the EC2 instance permission to write to Event Bridge (CloudWatch Events).
-D. Deploy the X-Ray SDK with the application, and instrument the application code. Use the SDK logger to capture and send the events.
-Answer : C
+<details>
+<summary>Explanation</summary>
+<div>
+
+<mark style="color:white">2</mark> 
+</div>
+</details>
+
+### 5
+
+**A serverless application is using AWS Step Functions to process data and save it to a database. The application needs to validate some data with an external service before saving the dat1. The application will call the external service from an AWS Lambda function, and the external service will take a few hours to validate the dat1. The external service will respond to a webhook when the validation is complete.**
+
+**A developer needs to pause the Step Functions workflow and wait for the response from the external service.**
+
+**What should the developer do to meet this requirement?**
+
+1. Use the `.waitForTaskToken` option in the Lambda function task state. Pass the token in the body.
+2. Use the `.waitForTaskToken` option in the Lambda function task state. Pass the invocation request.
+3. Call the Lambda function in synchronous mode. Wait for the external service to complete the processing.
+4. Call the Lambda function in asynchronous mode. Use the Wait state until the external service completes the processing.
+
+<details>
+<summary>Explanation</summary>
+<div>
+
+<mark style="color:white">4</mark> 
+</div>
+</details>
 
 
+### 6
 
-s3, lambda, 
-A company has an application that writes files to an Amazon S3 bucket. Whenever there is a new file, an S3 notification event invokes an AWS Lambda function to process the file. The Lambda function code works as expected. However, when a developer checks the Lambda function logs, the developer finds that multiple invocations occur for every file.
-What is causing the duplicate entries?
-A. The S3 bucket name is incorrectly specified in the application and is targeting another S3 bucket.
-B. The Lambda function did not run correctly, and Lambda retried the invocation with a delay.
-C. Amazon S3 is delivering the same event multiple times.
-D. The application stopped intermittently and then resumed, splitting the logs into multiple smaller files.
-Answer : A
+**A company has an application that writes files to an Amazon S3 bucket. Whenever there is a new file, an S3 notification event invokes an AWS Lambda function to process the file. The Lambda function code works as expected. However, when a developer checks the Lambda function logs, the developer finds that multiple invocations occur for every file.**
 
-AWS CLI
-A developer needs to use the AWS CLI on an on-premises development server temporarily to access AWS services while performing maintenance. The developer needs to authenticate to AWS with their identity for several hours.
-What is the MOST secure way to call AWS CLI commands with the developer's IAM identity?
-A. Specify the developer's IAM access key ID and secret access key as parameters for each CLI command
-B. Run the aws configure CLI command. Provide the developer's IAM access key ID and secret access key.
-C. Specify the developer's IAM profile as a parameter for each CLI command.
-D. Run the get-session-token CLI command with the developer's IAM user. Use the returned credentials to call the CLI
-Answer : D
+**What is causing the duplicate entries?**
 
-Lambda, DynamoDB, X-Ray, Application Load Balancer
-An AWS Lambda function accesses two Amazon DynamoDB tables. A developer wants to improve the performance of the Lambda function by identifying bottlenecks in the function.
-How can the developer inspect the timing of the DynamoDB API calls?
-A. Add DynamoDB as an event source to the Lambda function. View the performance with Amazon CloudWatch metrics
-B. Place an Application Load Balancer (ALB) in front of the two DynamoDB tables. Inspect the ALB logs
-C. Limit Lambda to no more than five concurrent invocations. Monitor from the Lambda console.
-D. Enable AWS X-Ray tracing for the function. View the traces from the X-Ray service.
-Answer : D
+1. The S3 bucket name is incorrectly specified in the application and is targeting another S3 bucket.
+1. The Lambda function did not run correctly, and Lambda retried the invocation with a delay.
+1. Amazon S3 is delivering the same event multiple times.
+1. The application stopped intermittently and then resumed, splitting the logs into multiple smaller files.
 
-EC2
+<details>
+<summary>Explanation</summary>
+<div>
+
+<mark style="color:white">1</mark> 
+</div>
+</details>
+
+### 7
+
+**An AWS Lambda function accesses two Amazon DynamoDB tables. A developer wants to improve the performance of the Lambda function by identifying bottlenecks in the function.**
+
+**How can the developer inspect the timing of the DynamoDB API calls?**
+
+1. Add DynamoDB as an event source to the Lambda function. View the performance with Amazon CloudWatch metrics
+1. Place an Application Load Balancer (ALB) in front of the two DynamoDB tables. Inspect the ALB logs
+1. Limit Lambda to no more than five concurrent invocations. Monitor from the Lambda console.
+1. Enable AWS X-Ray tracing for the function. View the traces from the X-Ray service.
+
+<details>
+<summary>Explanation</summary>
+<div>
+
+<mark style="color:white">4</mark> 
+</div>
+</details>
+
+### 8
+
 **A developer deployed an application to an Amazon EC2 instance. The application needs to know the public IPv4 address of the instance.**
 **How can the application find this information?**
 
@@ -1047,103 +1026,399 @@ EC2
 2. Query the instance user data from http://169.254.169.254/latest/user-data/.
 3. Query the Amazon Machine Image (AMI) information from http://169.254 169.254/latest/meta-data/ami/.
 4. Check the hosts file of the operating system.
-Answer : 1
 
-Lambda, Amazon EventBridge, CloudWatch
-A developer is designing an AWS Lambda function to perform a maintenance activity. The developer will use Amazon EventBridge (Amazon CloudWatch Events) to invoke the function on an hourly schedule. The developer wants the function to log information at different levels of detail according to the value of a log level variable. The developer must design the function so that the log level can be set without requiring a change to the function code.
-Which solution will meet these requirements?
-A. Add a custom log level parameter for the Lambda function. Set the parameter by using the Lambda console
-B. Set the log level in a Lambda environment variable
-C. Set the log level in the Amazon CloudWatch Logs console.
-D. Add a custom log level parameter for the Lambda function. Set the parameter by using the AWS CLI.
-Answer : B
+<details>
+<summary>Explanation</summary>
+<div>
 
-Lambda, CloudFormation, CloudWatch
-A developer is creating a serverless application that uses an AWS Lambda function The developer will use AWS CloudFormation to deploy the application The application will write logs to Amazon CloudWatch Logs. The developer has created a log group in a CloudFormation template for the application to use. The developer needs to modify the CloudFormation template to make the name of the log group available to the application at runtime.
-Which solution will meet this requirement?
-A. Use the AWS::Include transform in CloudFormation to provide the log group's name to the application.
-B. Pass the log group's name to the application in the user data section of the CloudFormation template
-C. Use the CloudFormation template's Mappings section to specify the log group's name for the application.
-D. Pass the log group's Amazon Resource Name (ARN) as an environment variable to the Lambda function.
-Answer : D
+<mark style="color:white">1</mark> 
+</div>
+</details>
 
-ECS
-A company is running an application on Amazon Elastic Container Service (Amazon ECS). When the company deploys a new version of the application, the company initially needs to expose 10% of live traffic to the new version. After a period of time, the company needs to immediately route all the remaining live traffic to the new version.
-Which ECS deployment should the company use to meet these requirements?
-A. Rolling update
-B. Blue/green with canary
-C. Blue/green with all at once
-D. Blue/green with linear
-Answer : B
+### 9
 
-ECS, CloudTrail, X-Ray, CloudWatch
-A microservices application is deployed across multiple containers in Amazon Elastic Container Service (Amazon ECS). To improve performance, a developer wants to capture trace information between the microservices and visualize the microservices architecture.
-Which solution will meet these requirements?
-A. Build the container from the amazon/aws-xray-daemon base image. Use the AWS X-Ray SDK to instrument the application.
-B. Install the Amazon CloudWatch agent on the container image. Use the CloudWatch SDK to publish custom metrics from each of the microservices.
-C. Install the AWS X-Ray daemon on each of the ECS instances.
-D. Configure AWS CloudTrail data events to capture the traffic between the microservices.
-Answer : C
+**A developer is creating a serverless application that uses an AWS Lambda function The developer will use AWS CloudFormation to deploy the application. The application will write logs to Amazon CloudWatch Logs. The developer has created a log group in a CloudFormation template for the application to use. The developer needs to modify the CloudFormation template to make the name of the log group available to the application at runtime.**
 
-CodeDeploy, ECS
-A company is planning to use AWS CodeDeploy to deploy an application to Amazon Elastic Container Service (Amazon ECS). During the deployment of a new version of the application, the company initially must expose only 10% of live traffic to the new version of the deployed application. Then, after 15 minutes elapse, the company must route all the remaining live traffic to the new version of the deployed application.
-Which CodeDeploy predefined configuration will meet these requirements?
-A. CodeDeployDefault.ECSCanary10Percent15Minutes
-B. CodeDeployDefault.LambdaCanary10Percent5Minutes
-C. CodeDeployDefault.LambdaCanary10Percent15Minutes
-D. CodeDeployDefault.ECSLinear10PercentEvery1 Minutes
-Answer : A
+**Which solution will meet this requirement?**
 
-AWS CLI
-A developer notices timeouts from the AWS CLI when the developer runs list commands.
-What should the developer do to avoid these timeouts?
-A. Use the --page-size parameter to request a smaller number of items.
-B. Use shorthand syntax to separate the list by a single space.
-C. Use the yaml-stream output for faster viewing of large datasets.
-D. Use quotation marks around strings to enclose data structure.
-Answer : A
+1. Use the `AWS::Include` transform in CloudFormation to provide the log group's name to the application.
+1. Pass the log group's name to the application in the user data section of the CloudFormation template
+1. Use the CloudFormation template's Mappings section to specify the log group's name for the application.
+1. Pass the log group's Amazon Resource Name (ARN) as an environment variable to the Lambda function.
+
+<details>
+<summary>Explanation</summary>
+<div>
+
+<mark style="color:white">4</mark> 
+</div>
+</details>
+
+### 10
+
+**A developer needs to use the AWS CLI on an on-premises development server temporarily to access AWS services while performing maintenance. The developer needs to authenticate to AWS with their identity for several hours.**
+
+**What is the MOST secure way to call AWS CLI commands with the developer's IAM identity?**
+
+1. Specify the developer's IAM access key ID and secret access key as parameters for each CLI command.
+2. Run the AWS configure CLI command. Provide the developer's IAM access key ID and secret access key.
+3. Specify the developer's IAM profile as a parameter for each CLI command.
+4. Run the get-session-token CLI command with the developer's IAM user. Use the returned credentials to call the CLI.
+
+<details>
+<summary>Explanation</summary>
+<div>
+
+<mark style="color:white">4</mark> 
+</div>
+</details>
+
+
+## Q51 - Q60
+
+
+
+### 1
+
+****
+
+****
+
+1. 
+
+<details>
+<summary>Explanation</summary>
+<div>
+
+<mark style="color:white"></mark> 
+</div>
+</details>
+
+### 2
+
+****
+
+****
+
+1. 
+
+<details>
+<summary>Explanation</summary>
+<div>
+
+<mark style="color:white"></mark> 
+</div>
+</details>
+
+### 3
+
+****
+
+****
+
+1. 
+
+<details>
+<summary>Explanation</summary>
+<div>
+
+<mark style="color:white"></mark> 
+</div>
+</details>
+
+### 4
+
+****
+
+****
+
+1. 
+
+<details>
+<summary>Explanation</summary>
+<div>
+
+<mark style="color:white"></mark> 
+</div>
+</details>
+
+### 5
+
+****
+
+****
+
+1. 
+
+<details>
+<summary>Explanation</summary>
+<div>
+
+<mark style="color:white"></mark> 
+</div>
+</details>
+
+### 6
+
+**A developer notices timeouts from the AWS CLI when the developer runs list commands.**
+
+**What should the developer do to avoid these timeouts?**
+
+1. Use the `--page-size` parameter to request a smaller number of items.
+2. Use shorthand syntax to separate the list by a single space.
+3. Use the yaml-stream output for faster viewing of large datasets.
+4. Use quotation marks around strings to enclose data structure.
+
+<details>
+<summary>Explanation</summary>
+<div>
+
+<mark style="color:white">1</mark> 
+</div>
+</details>
+
+### 7
+
+**A company is planning to use AWS CodeDeploy to deploy an application to Amazon Elastic Container Service (Amazon ECS). During the deployment of a new version of the application, the company initially must expose only 10% of live traffic to the new version of the deployed application. Then, after 15 minutes elapse, the company must route all the remaining live traffic to the new version of the deployed application.**
+
+**Which CodeDeploy predefined configuration will meet these requirements?**
+
+1. CodeDeployDefault.ECSCanary10Percent15Minutes
+1. CodeDeployDefault.LambdaCanary10Percent5Minutes
+1. CodeDeployDefault.LambdaCanary10Percent15Minutes
+1. CodeDeployDefault.ECSLinear10PercentEvery1 Minutes
+
+<details>
+<summary>Explanation</summary>
+<div>
+
+<mark style="color:white">1</mark> 
+</div>
+</details>
+
+### 8
+
+****
+
+****
+
+1. 
+
+<details>
+<summary>Explanation</summary>
+<div>
+
+<mark style="color:white"></mark> 
+</div>
+</details>
+
+### 9
+
+**A microservices application is deployed across multiple containers in Amazon Elastic Container Service (Amazon ECS). To improve performance, a developer wants to capture trace information between the microservices and visualize the microservices architecture.**
+
+**Which solution will meet these requirements?**
+
+1. Build the container from the amazon/aws-xray-daemon base image. Use the AWS X-Ray SDK to instrument the application.
+1. Install the Amazon CloudWatch agent on the container image. Use the CloudWatch SDK to publish custom metrics from each of the microservices.
+1. Install the AWS X-Ray daemon on each of the ECS instances.
+1. Configure AWS CloudTrail data events to capture the traffic between the microservices.
+
+<details>
+<summary>Explanation</summary>
+<div>
+
+<mark style="color:white">3</mark> 
+</div>
+</details>
+
+### 10
+
+**A company is running an application on Amazon Elastic Container Service (Amazon ECS). When the company deploys a new version of the application, the company initially needs to expose 10% of live traffic to the new version. After a period of time, the company needs to immediately route all the remaining live traffic to the new version.**
+
+**Which ECS deployment should the company use to meet these requirements?**
+
+1. Rolling update
+2. Blue/green with canary
+3. Blue/green with all at once
+4. Blue/green with linear
+
+<details>
+<summary>Explanation</summary>
+<div>
+
+<mark style="color:white">2</mark> 
+</div>
+</details>
+
+
+
+<!-- 
+
 
 https://main.d33tdgi01iojga.amplifyapp.com/addQuestion
 
 
 
 
+### 1
 
+****
 
+****
 
+1. 
 
+<details>
+<summary>Explanation</summary>
+<div>
 
+<mark style="color:white"></mark> 
+</div>
+</details>
 
+### 2
 
+****
 
+****
 
+1. 
 
+<details>
+<summary>Explanation</summary>
+<div>
 
+<mark style="color:white"></mark> 
+</div>
+</details>
 
+### 3
 
+****
 
+****
 
+1. 
 
+<details>
+<summary>Explanation</summary>
+<div>
 
+<mark style="color:white"></mark> 
+</div>
+</details>
 
+### 4
 
+****
 
+****
 
+1. 
 
+<details>
+<summary>Explanation</summary>
+<div>
 
+<mark style="color:white"></mark> 
+</div>
+</details>
 
+### 5
 
+****
 
+****
 
+1. 
 
+<details>
+<summary>Explanation</summary>
+<div>
 
+<mark style="color:white"></mark> 
+</div>
+</details>
 
+### 6
 
+****
 
+****
 
+1. 
 
+<details>
+<summary>Explanation</summary>
+<div>
 
+<mark style="color:white"></mark> 
+</div>
+</details>
 
+### 7
+
+****
+
+****
+
+1. 
+
+<details>
+<summary>Explanation</summary>
+<div>
+
+<mark style="color:white"></mark> 
+</div>
+</details>
+
+### 8
+
+****
+
+****
+
+1. 
+
+<details>
+<summary>Explanation</summary>
+<div>
+
+<mark style="color:white"></mark> 
+</div>
+</details>
+
+### 9
+
+****
+
+****
+
+1. 
+
+<details>
+<summary>Explanation</summary>
+<div>
+
+<mark style="color:white"></mark> 
+</div>
+</details>
+
+### 10
+
+****
+
+****
+
+1. 
+
+<details>
+<summary>Explanation</summary>
+<div>
+
+<mark style="color:white"></mark> 
+</div>
+</details>
 
 
 
