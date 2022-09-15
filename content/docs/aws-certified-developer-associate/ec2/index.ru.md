@@ -86,13 +86,13 @@ ssh -i mykey.pem ec2-user@52.24.109.78
 
 ### Вопрос 1
 
-**A company is migrating a legacy application to Amazon EC2. The applicationuses a username and password stored in the source code to connect to a MySQL database. The database will be migrated to an Amazon RDS for MySQL DB instance. As part of the migration, the company wants to implement a secure way to store and automatically rotate the database credentials.**
+**A company is migrating a legacy application to Amazon EC2. The application uses a username and password stored in the source code to connect to a MySQL database. The database will be migrated to an Amazon RDS for MySQL DB instance. As part of the migration, the company wants to implement a secure way to store and automatically rotate the database credentials.**
 
-**Which approach meetsthese requirements?**
+**Which approach meets these requirements?**
 
-- A) Store the database credentialsin environment variables in an Amazon Machine Image (AMI). Rotate the credentials byreplacing the AMI.
+- A) Store the database credentials in environment variables in an Amazon Machine Image (AMI). Rotate the credentials by replacing the AMI.
 - B) Store the database credentials in AWS Systems Manager Parameter Store. Configure Parameter Store to automatically rotate the credentials.
-- C) Store the database credentials in environment variables on the EC2 instances. Rotate the credentialsby relaunching the EC2 instances.
+- C) Store the database credentials in environment variables on the EC2 instances. Rotate the credentials by relaunching the EC2 instances.
 - D) Store the database credentials in AWS Secrets Manager. Configure Secrets Manager to automatically rotate the credentials
 
 <details>
@@ -100,7 +100,7 @@ ssh -i mykey.pem ec2-user@52.24.109.78
 <div>
 <h4>Правильный ответ: D</h4>
 
-D – [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/) helps to protect the credentialsneeded to access databases,applications,services, and other IT resources. The service enables usersto easily rotate, manage, and retrieve database credentials, API keys, and other secrets throughout their lifecycle. Users and applications retrieve secrets with a call to the Secrets Manager APIs, eliminating the need to hardcode sensitive information in plaintext. Secrets Manager offers [secret rotation](https://aws.amazon.com/blogs/security/rotate-amazon-rds-database-credentials-automatically-with-aws-secrets-manager/) with built-in integration for Amazon RDS, Amazon Redshift, and Amazon DocumentDB.
+D – [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/) helps to protect the credentialsneeded to access databases, applications,services, and other IT resources. The service enables users to easily rotate, manage, and retrieve database credentials, API keys, and other secrets throughout their lifecycle. Users and applications retrieve secrets with a call to the Secrets Manager APIs, eliminating the need to hardcode sensitive information in plaintext. Secrets Manager offers [secret rotation](https://aws.amazon.com/blogs/security/rotate-amazon-rds-database-credentials-automatically-with-aws-secrets-manager/) with built-in integration for Amazon RDS, Amazon Redshift, and Amazon DocumentDB.
 
 </div>
 </details>

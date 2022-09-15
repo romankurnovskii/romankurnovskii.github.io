@@ -130,11 +130,8 @@ The following is my roadmap for the study. There may be adjustments.
 
 <!-- 1. 
 
-q added to db: 4  / 10 11 28 29
-
         15      7
-14. [Amazon CloudWatch](cloudwatch)
-15. [AWS CloudFormation](cloudformation)
+
 
         16      7
 16. [AWS CodeCommit](codecommit)
@@ -196,29 +193,29 @@ q added to db: 4  / 10 11 28 29
 9. [Amazon API Gateway](api-gateway)
 10. [Amazon CloudFront](cloudfront)
 11. [Elastic Load Balancing (ELB)](elasticloadbalancing)
-56. Amazon Kinesis
-57. Amazon OpenSearch Service (Amazon Elasticsearch Service)
-58. Amazon CloudWatch
-59. AWS CloudFormation
-60. AWS CodeCommit
-61. AWS CodeDeploy
-62. AWS CodeBuild
-63. AWS CodePipeline
-64. Amazon CodeGuru
-65. AWS CodeStar
-66. AWS CodeArtifact
-67. AWS X-Ray
-68. AWS Fault Injection Simulator
-69. Amazon Elastic Container Registry (Amazon ECR)
-70. Amazon Elastic Container Service (Amazon ECS)
-71. AWS Fargate
-72. Amazon Elastic Kubernetes Services (Amazon EKS)
-73. Amazon Cognito
-74. AWS Key Management Service (AWS KMS)
-75. Amazon EventBridge (Amazon CloudWatch Events)
-76. Amazon Simple Notification Service (Amazon SNS)
-77. Amazon Simple Queue Service (Amazon SQS)
-78. AWS Step Functions
+12. [Amazon Kinesis](kinesis)
+13. [Amazon OpenSearch Service (Amazon Elasticsearch Service)](opensearch-service)
+14. [Amazon CloudWatch](cloudwatch)
+15. [AWS CloudFormation](cloudformation)
+16. AWS CodeCommit
+17. AWS CodeDeploy
+18. AWS CodeBuild
+19. AWS CodePipeline
+20. Amazon CodeGuru
+21. AWS CodeStar
+22. AWS CodeArtifact
+23. AWS X-Ray
+24. AWS Fault Injection Simulator
+25. Amazon Elastic Container Registry (Amazon ECR)
+26. Amazon Elastic Container Service (Amazon ECS)
+27. AWS Fargate
+28. Amazon Elastic Kubernetes Services (Amazon EKS)
+29. Amazon Cognito
+30. AWS Key Management Service (AWS KMS)
+31. Amazon EventBridge (Amazon CloudWatch Events)
+32. Amazon Simple Notification Service (Amazon SNS)
+33. Amazon Simple Queue Service (Amazon SQS)
+34. AWS Step Functions
 
 
 ## Resources
