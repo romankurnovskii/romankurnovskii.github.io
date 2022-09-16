@@ -107,7 +107,7 @@ Storage:
 
 ### Training plan
 
-Opened a training plan for any tutorial to understand where to start learning. Chose **cloudacademy** service (but for example FreeCodeCamp has a free course with content). 
+Opened a training plan for any tutorial to understand where to start learning. Have chosen **cloudacademy** service (but for example FreeCodeCamp has a free course with content). 
 
 Another option is to use free [AWS Workshops](https://workshops.aws/)
 
@@ -130,11 +130,7 @@ The following is my roadmap for the study. There may be adjustments.
 
 <!-- 1. 
 
-        15      7
-
-
         16      8
-
 
         17      9
 20. [Amazon CodeGuru](codeguru)
