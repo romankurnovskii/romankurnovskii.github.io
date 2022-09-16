@@ -13,6 +13,8 @@ draft: false
 
 ## Login
 
+[Secure Your Node.js App with JSON Web Tokens](https://blog.appsignal.com/2022/09/14/secure-your-nodejs-app-with-json-web-tokens)
+
 ### client.ts
 
 ```typescript
