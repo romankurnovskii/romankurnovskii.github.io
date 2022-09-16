@@ -133,51 +133,48 @@ The following is my roadmap for the study. There may be adjustments.
         15      7
 
 
-        16      7
-16. [AWS CodeCommit](codecommit)
-17. [AWS CodeDeploy](codedeploy)
-18. [AWS CodeBuild](codebuild)
-19. [AWS CodePipeline](codepipeline)
+        16      8
 
-        17      8
+
+        17      9
 20. [Amazon CodeGuru](codeguru)
 21. [AWS CodeStar](codestar)
 
-    18  9
+    18  10
 22. [AWS CodeArtifact](codeartifact)
 
-        19      10
+        19      11
 23. [AWS X-Ray](xray)
 24. [AWS Fault Injection Simulator](fis)
 
-        20      11
+        20      12
 25. [Amazon Elastic Container Registry (Amazon ECR)](ecr)
 26. [Amazon Elastic Container Service (Amazon ECS)](ecs)
 
 
-        21      12
+        21      13
 27. [AWS Fargate](fargate)
 
-        22      13
+        22      14
 28. [Amazon Elastic Kubernetes Services (Amazon EKS)](eks)
 
 
-    23  14
+    23  15
 29. [Amazon Cognito](cognito)
 
-    24  15
+    24  16
 30. [AWS Key Management Service (AWS KMS)](kms)
 
 
-        25      16
+        25      17
 31. [Amazon EventBridge (Amazon CloudWatch Events)](eventbridge)
     
 
-        26      17
+        26      18
 32. [Amazon Simple Notification Service (Amazon SNS)](sns)
 33. [Amazon Simple Queue Service (Amazon SQS)](sqs)
 
-        27      18
+        27      19
 34. [AWS Step Functions](step-functions) 
 -->
 
@@ -197,10 +194,10 @@ The following is my roadmap for the study. There may be adjustments.
 13. [Amazon OpenSearch Service (Amazon Elasticsearch Service)](opensearch-service)
 14. [Amazon CloudWatch](cloudwatch)
 15. [AWS CloudFormation](cloudformation)
-16. AWS CodeCommit
-17. AWS CodeDeploy
-18. AWS CodeBuild
-19. AWS CodePipeline
+16. [AWS CodeCommit](codecommit)
+17. [AWS CodeDeploy](codedeploy)
+18. [AWS CodeBuild](codebuild)
+19. [AWS CodePipeline](codepipeline)
 20. Amazon CodeGuru
 21. AWS CodeStar
 22. AWS CodeArtifact
