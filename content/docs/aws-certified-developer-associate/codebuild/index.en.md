@@ -56,7 +56,7 @@ Chapters:
 8. Recovering Automatically from a Failed Deployment
 9. Using AWS CodeDeploy Blue/Green Deployments in Your Pipeline
 
-![01.png](./img/codedeploy-codepipeline-codestar.jpg)
+![codedeploy-codepipeline-codestar overview](./img/codedeploy-codepipeline-codestar.jpg)
 
 
 

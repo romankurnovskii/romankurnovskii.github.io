@@ -130,11 +130,7 @@ The following is my roadmap for the study. There may be adjustments.
 
 <!-- 1. 
 
-        15      7
-
-
         16      8
-
 
         17      9
 20. [Amazon CodeGuru](codeguru)
