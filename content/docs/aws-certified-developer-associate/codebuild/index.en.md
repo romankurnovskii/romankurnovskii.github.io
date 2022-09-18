@@ -2,8 +2,8 @@
 title: CodeBuild
 description: Amazon CodeBuild - Build and test code with continuous scaling. Pay only for the build time you use.
 toc: true
-tags: [aws, iam]
-categories: [aws, iam]
+tags: [aws, codebuild]
+categories: [aws, codebuild]
 date: 2022-09-09
 weight: 1800
 awsTag: CodeBuild
