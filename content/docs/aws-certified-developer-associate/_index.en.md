@@ -130,15 +130,6 @@ The following is my roadmap for the study. There may be adjustments.
 
 <!-- 1. 
 
-        16      8
-
-        17      9
-20. [Amazon CodeGuru](codeguru)
-21. [AWS CodeStar](codestar)
-
-    18  10
-22. [AWS CodeArtifact](codeartifact)
-
         19      11
 23. [AWS X-Ray](xray)
 24. [AWS Fault Injection Simulator](fis)
