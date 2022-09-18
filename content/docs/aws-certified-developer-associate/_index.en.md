@@ -74,9 +74,7 @@ Developer Tools:
 
 - AWS CodeArtifact
 - AWS CodeBuild
-
-AWS CodeCommit
-
+- AWS CodeCommit
 - AWS CodeDeploy
 - Amazon CodeGuru
 - AWS CodePipeline
@@ -97,8 +95,8 @@ Networking and Content Delivery:
 
 Security, Identity, and Compliance:
 
-- Amazon Cognito
 - AWS Identity and Access Management (IAM)
+- Amazon Cognito
 - AWS Key Management Service (AWS KMS)
 
 Storage:
@@ -163,6 +161,11 @@ The following is my roadmap for the study. There may be adjustments.
 
         27      19
 34. [AWS Step Functions](step-functions) 
+
+
+next buy course: https://www.udemy.com/course/aws-certified-developer-associate-practice-exams-amazon/ or similar
+
+check questions
 -->
 
 
@@ -185,9 +188,9 @@ The following is my roadmap for the study. There may be adjustments.
 17. [AWS CodeDeploy](codedeploy)
 18. [AWS CodeBuild](codebuild)
 19. [AWS CodePipeline](codepipeline)
-20. Amazon CodeGuru
-21. AWS CodeStar
-22. AWS CodeArtifact
+20. [Amazon CodeGuru](codeguru)
+21. [AWS CodeStar](codestar)
+22. [AWS CodeArtifact](codeartifact)
 23. AWS X-Ray
 24. AWS Fault Injection Simulator
 25. Amazon Elastic Container Registry (Amazon ECR)
