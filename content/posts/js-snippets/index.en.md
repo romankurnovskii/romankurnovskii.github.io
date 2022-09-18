@@ -10,6 +10,92 @@ featuredImage: https://picsum.photos/700/238
 draft: false
 ---
 
+## Web / Browser
+
+### get the base URL
+
+```js
+const getBaseURL = url => url.replace(/[?#].*$/, '');
+
+getBaseURL('http://url.com/page?name=Adam&surname=Smith');
+// 'http://url.com/page'
+
+const url = new URL("https://example.com/login?user=someguy&page=news");
+
+url.origin
+// "https://example.com"
+url.host
+// "example.com"
+url.protocol
+// "https:"
+url.pathname
+// "/login"
+url.searchParams.get('user')
+// "someguy"
+
+```
+
+### get URL parameters as object
+
+```javascript
+const getURLParameters = url =>
+  (url.match(/([^?=&]+)(=([^&]*))/g) || []).reduce(
+    (a, v) => (
+      (a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a
+    ),
+    {}
+  );
+
+getURLParameters('google.com'); // {}
+getURLParameters('http://url.com/page?name=Adam&surname=Smith');
+// {name: 'Adam', surname: 'Smith'}
+
+// One line
+Object.fromEntries('http://url.com/page?name=Adam&surname=Smith'.split('?')[1].split('&').map(x=>x.split('=')))
+```
+
+### check if the DOC element contains another element
+
+```javascript
+const elementContains = (parent, child) =>
+  parent !== child && parent.contains(child);
+
+elementContains(
+  document.querySelector('head'),
+  document.querySelector('title')
+);
+// true
+elementContains(document.querySelector('body'), document.querySelector('body'));
+// false
+```
+
+## Date
+
+```js
+const {locale, timeZone} = Intl.DateTimeFormat().resolvedOptions();
+```
+
+### check if the Date is valid
+
+```js
+const isDateValid = (...val) => !Number.isNaN(new Date(...val).valueOf());
+
+isDateValid('December 17, 1995 03:24:00'); // true
+isDateValid('1995-12-17T03:24:00'); // true
+isDateValid('1995-12-17 T03:24:00'); // false
+isDateValid('Duck'); // false
+isDateValid(1995, 11, 17); // true
+isDateValid(1995, 11, 17, 'Duck'); // false
+isDateValid({}); // false
+```
+
+### generate UNIX timestamp from Date
+
+```js
+const getTimestamp = (date = new Date()) => Math.floor(date.getTime() / 1000);
+
+getTimestamp(); // 1602162242
+```
 
 ## Login
 
