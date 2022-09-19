@@ -129,8 +129,7 @@ The following is my roadmap for the study. There may be adjustments.
 <!-- 1. 
 
         19      11
-23. [AWS X-Ray](xray)
-24. [AWS Fault Injection Simulator](fis)
+
 
         20      12
 25. [Amazon Elastic Container Registry (Amazon ECR)](ecr)
@@ -191,8 +190,8 @@ check questions
 20. [Amazon CodeGuru](codeguru)
 21. [AWS CodeStar](codestar)
 22. [AWS CodeArtifact](codeartifact)
-23. AWS X-Ray
-24. AWS Fault Injection Simulator
+23. [AWS X-Ray](xray)
+24. [AWS Fault Injection Simulator](fis)
 25. Amazon Elastic Container Registry (Amazon ECR)
 26. Amazon Elastic Container Service (Amazon ECS)
 27. AWS Fargate
