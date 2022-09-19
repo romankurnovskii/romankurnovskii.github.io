@@ -4,7 +4,7 @@ description: Amazon CodeStar - Quickly develop, build, and deploy applications o
 toc: true
 tags: [aws, codestar]
 categories: [aws, codestar]
-date: 2022-09-16
+date: 2022-09-17
 weight: 2100
 awsTag: CodeStar
 ---
