@@ -78,10 +78,12 @@ This commands returns the command to execute to be able to login to ECR:
       --force \
       --region region
     ```
-
+    
 Labs: 
 - [Use AWS Fargate for Serverless Deployment of Container Applications](https://cloudacademy.com/lab/use-aws-fargate-serverless-deployment-container-applications/)
 - [Quick start: Publishing to Amazon ECR Public using the AWS CLI](https://docs.aws.amazon.com/AmazonECR/latest/public/getting-started-cli.html)
+
+{{< youtube id="tANNsV6bGbQ" >}}
 
 Notes: 
 - If you get a **503 Service Temporarily Unavailable** error, try again after 30 seconds to let the load balancer finish adding the task to the target group. 

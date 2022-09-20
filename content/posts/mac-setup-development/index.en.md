@@ -102,7 +102,7 @@ brew install \
     - Yandex, search only in Russia. 
         - Shortcut: `vv`
         - url: `https://yandex.ru/{yandex:searchPath}?text=%s&{yandex:referralID}&lr=101443&rstr=-225`
-    - Yutube
+    - Youtube
       - Shortcut: `yy`
       - url: `https://www.youtube.com/results?search_query=%s&page={startPage?}&utm_source=opensearch`
   - Chrome Extensions
