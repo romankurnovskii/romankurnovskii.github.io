@@ -126,48 +126,6 @@ Don't see coverage of the following services, so I add them to the block when re
 
 The following is my roadmap for the study. There may be adjustments.
 
-<!-- 1. 
-
-        19      11
-
-
-        20      12
-25. [Amazon Elastic Container Registry (Amazon ECR)](ecr)
-26. [Amazon Elastic Container Service (Amazon ECS)](ecs)
-
-
-        21      13
-27. [AWS Fargate](fargate)
-
-        22      14
-28. [Amazon Elastic Kubernetes Services (Amazon EKS)](eks)
-
-
-    23  15
-29. [Amazon Cognito](cognito)
-
-    24  16
-30. [AWS Key Management Service (AWS KMS)](kms)
-
-
-        25      17
-31. [Amazon EventBridge (Amazon CloudWatch Events)](eventbridge)
-    
-
-        26      18
-32. [Amazon Simple Notification Service (Amazon SNS)](sns)
-33. [Amazon Simple Queue Service (Amazon SQS)](sqs)
-
-        27      19
-34. [AWS Step Functions](step-functions) 
-
-
-next buy course: https://www.udemy.com/course/aws-certified-developer-associate-practice-exams-amazon/ or similar
-
-check questions
--->
-
-
 1. [AWS Identity and Access Management (IAM)](iam)
 2. [Amazon EC2](ec2)
 3. [AWS Elastic Beanstalk](elasticbeanstalk)
@@ -192,16 +150,16 @@ check questions
 22. [AWS CodeArtifact](codeartifact)
 23. [AWS X-Ray](xray)
 24. [AWS Fault Injection Simulator](fis)
-25. Amazon Elastic Container Registry (Amazon ECR)
-26. Amazon Elastic Container Service (Amazon ECS)
-27. AWS Fargate
-28. Amazon Elastic Kubernetes Services (Amazon EKS)
-29. Amazon Cognito
-30. AWS Key Management Service (AWS KMS)
-31. Amazon EventBridge (Amazon CloudWatch Events)
-32. Amazon Simple Notification Service (Amazon SNS)
-33. Amazon Simple Queue Service (Amazon SQS)
-34. AWS Step Functions
+25. [Amazon Elastic Container Registry (Amazon ECR)](ecr)               20
+26. [Amazon Elastic Container Service (Amazon ECS)](ecs)                20
+27. [AWS Fargate](fargate)                                              21
+28. [Amazon Elastic Kubernetes Services (Amazon EKS)](eks)              22
+29. [Amazon Cognito](cognito)                                           23
+30. [AWS Key Management Service (AWS KMS)](kms)                         24
+31. [Amazon EventBridge (Amazon CloudWatch Events)](eventbridge)        25
+32. [Amazon Simple Notification Service (Amazon SNS)](sns)              26
+33. [Amazon Simple Queue Service (Amazon SQS)](sqs)                     26
+34. [AWS Step Functions](step-functions)                                27
 
 
 ## Resources
