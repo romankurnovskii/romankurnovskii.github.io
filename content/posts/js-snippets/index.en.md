@@ -4,7 +4,7 @@ description: JavaScript code snippets
 toc: true
 tags:  [js, javascript, typescript]
 series: ['cheatsheet']
-categories: [js]
+categories: [JavaScript]
 date: 2022-09-15
 featuredImage: https://picsum.photos/700/238
 draft: false
@@ -12,7 +12,7 @@ draft: false
 
 ## Web / Browser
 
-### get the base URL
+### get base URL
 
 ```js
 const getBaseURL = url => url.replace(/[?#].*$/, '');
@@ -54,7 +54,7 @@ getURLParameters('http://url.com/page?name=Adam&surname=Smith');
 Object.fromEntries('http://url.com/page?name=Adam&surname=Smith'.split('?')[1].split('&').map(x=>x.split('=')))
 ```
 
-### check if the DOC element contains another element
+### if DOC element contains another element
 
 ```javascript
 const elementContains = (parent, child) =>
@@ -75,7 +75,7 @@ elementContains(document.querySelector('body'), document.querySelector('body'));
 const {locale, timeZone} = Intl.DateTimeFormat().resolvedOptions();
 ```
 
-### check if the Date is valid
+### is Date valid
 
 ```js
 const isDateValid = (...val) => !Number.isNaN(new Date(...val).valueOf());
@@ -89,7 +89,7 @@ isDateValid(1995, 11, 17, 'Duck'); // false
 isDateValid({}); // false
 ```
 
-### generate UNIX timestamp from Date
+### UNIX timestamp from Date
 
 ```js
 const getTimestamp = (date = new Date()) => Math.floor(date.getTime() / 1000);
