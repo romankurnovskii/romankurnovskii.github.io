@@ -150,8 +150,8 @@ The following is my roadmap for the study. There may be adjustments.
 22. [AWS CodeArtifact](codeartifact)
 23. [AWS X-Ray](xray)
 24. [AWS Fault Injection Simulator](fis)
-25. [Amazon Elastic Container Registry (Amazon ECR)](ecr)               20
-26. [Amazon Elastic Container Service (Amazon ECS)](ecs)                20
+25. [Amazon Elastic Container Registry (Amazon ECR)](ecr)
+26. [Amazon Elastic Container Service (Amazon ECS)](ecs)
 27. [AWS Fargate](fargate)                                              21
 28. [Amazon Elastic Kubernetes Services (Amazon EKS)](eks)              22
 29. [Amazon Cognito](cognito)                                           23
