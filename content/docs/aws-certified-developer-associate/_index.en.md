@@ -152,7 +152,7 @@ The following is my roadmap for the study. There may be adjustments.
 24. [AWS Fault Injection Simulator](fis)
 25. [Amazon Elastic Container Registry (Amazon ECR)](ecr)
 26. [Amazon Elastic Container Service (Amazon ECS)](ecs)
-27. [AWS Fargate](fargate)                                              21
+27. [AWS Fargate](fargate)
 28. [Amazon Elastic Kubernetes Services (Amazon EKS)](eks)              22
 29. [Amazon Cognito](cognito)                                           23
 30. [AWS Key Management Service (AWS KMS)](kms)                         24
