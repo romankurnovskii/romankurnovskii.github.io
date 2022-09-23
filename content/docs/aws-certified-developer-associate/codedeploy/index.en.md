@@ -54,6 +54,7 @@ The AppSpec file defines the deployment actions you want AWS CodeDeploy to execu
 
 Type: Developer Tools
 
+![](https://assets.cloudacademy.com/bakery/media/uploads/lab/blobid0-e29278ba-0b4a-4d62-8136-760167f7aafa.png)
 ## Practice
 
 - [Continuous Integration and Deployment with AWS Code Services](https://cloudacademy.com/lab/continuous-integration-deployment-aws-code-services/)

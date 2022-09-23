@@ -15,7 +15,7 @@ weight: 1
 
 ## Criteria
 
-In order to pass the exam, you must score more than 70 (unspecified) points. Criterion will be a minimum threshold of **70/100** points, unless conditions change in preparation.
+In order to pass the exam, you must score more than 70 (unspecified) points. Criterion will be a minimum threshold of **72/100%**, unless conditions change in preparation.
 
 ### Draft plan
 
@@ -153,13 +153,14 @@ The following is my roadmap for the study. There may be adjustments.
 25. [Amazon Elastic Container Registry (Amazon ECR)](ecr)
 26. [Amazon Elastic Container Service (Amazon ECS)](ecs)
 27. [AWS Fargate](fargate)
-28. [Amazon Elastic Kubernetes Services (Amazon EKS)](eks)              22
-29. [Amazon Cognito](cognito)                                           23
-30. [AWS Key Management Service (AWS KMS)](kms)                         24
-31. [Amazon EventBridge (Amazon CloudWatch Events)](eventbridge)        25
-32. [Amazon Simple Notification Service (Amazon SNS)](sns)              26
-33. [Amazon Simple Queue Service (Amazon SQS)](sqs)                     26
-34. [AWS Step Functions](step-functions)                                27
+28. [Amazon Elastic Kubernetes Services (Amazon EKS)](eks)
+29. [Amazon Cognito](cognito)
+30. [Route 53](route53)
+31. [AWS Key Management Service (AWS KMS)](kms)                         24
+32. [Amazon EventBridge (Amazon CloudWatch Events)](eventbridge)        25
+33. [Amazon Simple Notification Service (Amazon SNS)](sns)              26
+34. [Amazon Simple Queue Service (Amazon SQS)](sqs)                     26
+35. [AWS Step Functions](step-functions)                                27
 
 
 ## Resources

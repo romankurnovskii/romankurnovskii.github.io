@@ -60,3 +60,5 @@ Amazon provides the Elastic Container Service for Kubernetes (Amazon EKS) which 
 ## Practice
 
 [Building a Cloud Native Application](https://cloudacademy.com/lab/eks-voteapp/)
+
+{{< youtube id="WFyeqieik-U" >}}
