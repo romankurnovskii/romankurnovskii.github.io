@@ -90,6 +90,21 @@ diagram:
 analytic:
   yandexMetrika: 87734724
 
+homeColorButtons:
+  show: true
+  btn1Title: Python
+  btn1Url: categories/python/
+  btn1Style:
+  btn2Title: JavaScript
+  btn2Url: categories/javascript/
+  btn2Style:
+  btn3Title: Hugo
+  btn3Url: categories/hugo/
+  btn3Style:
+  btn4Title: Linux
+  btn4Url: categories/linux/
+  btn4Style:
+    
 shareButtons:
   icon: solid # normal(default) solid circle solidcircle
   size: small
