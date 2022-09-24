@@ -156,7 +156,7 @@ The following is my roadmap for the study. There may be adjustments.
 28. [Amazon Elastic Kubernetes Services (Amazon EKS)](eks)
 29. [Amazon Cognito](cognito)
 30. [Route 53](route53)
-31. [AWS Key Management Service (AWS KMS)](kms)                         24
+31. [AWS Key Management Service (AWS KMS)](kms)
 32. [Amazon EventBridge (Amazon CloudWatch Events)](eventbridge)        25
 33. [Amazon Simple Notification Service (Amazon SNS)](sns)              26
 34. [Amazon Simple Queue Service (Amazon SQS)](sqs)                     26
