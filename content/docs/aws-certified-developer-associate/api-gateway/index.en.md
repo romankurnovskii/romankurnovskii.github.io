@@ -24,7 +24,13 @@ API endpoints can be cached to accommodate for frequent similar requests.
 
 ## Use Cases
 
-Build a network for micros­ervices archit­ectures	
+Build a network for micros­ervices archit­ectures.
+
+- [**Amazon CloudWatch**](cloudwatch) metrics - Collects near-real-time metrics
+  - Examples: 4XXError (client-side errors), 5XXError(server-side errors), CacheHitCount
+- **Amazon CloudWatch Logs** - Debug issues related to request execution
+- [**AWS CloudTrail**](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html) - Record of actions taken by a user, role, or an AWS service in API Gateway
+- [**AWS X-Ray**](../xray) - Trace your request across different AWS Services
 
 ## Digests 
 
@@ -52,7 +58,6 @@ Build a network for micros­ervices archit­ectures
   - AWS_ Proxy - lambda proxy integration
   - HTTP - http custom integration
   - HTTP_PROXY - http proxy
-
 
 ## Practice
 
