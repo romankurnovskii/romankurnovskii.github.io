@@ -5,7 +5,7 @@ toc: true
 tags: [AWS, "Amazon EventBridge"]
 categories: [AWS, "Amazon EventBridge"]
 date: 2022-09-25
-weight: 3300
+weight: 3200
 awsTag: 
 ---
 

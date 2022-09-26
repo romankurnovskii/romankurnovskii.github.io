@@ -157,7 +157,7 @@ The following is my roadmap for the study. There may be adjustments.
 29. [Amazon Cognito](cognito)
 30. [Route 53](route53)
 31. [AWS Key Management Service (AWS KMS)](kms)
-32. [Amazon EventBridge (Amazon CloudWatch Events)](eventbridge)        25
+32. [Amazon EventBridge (Amazon CloudWatch Events)](eventbridge)
 33. [Amazon Simple Notification Service (Amazon SNS)](sns)              26
 34. [Amazon Simple Queue Service (Amazon SQS)](sqs)                     26
 35. [AWS Step Functions](step-functions)                                27
