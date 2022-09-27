@@ -15,7 +15,7 @@ weight: 1
 
 ## Criteria
 
-In order to pass the exam, you must score more than 70 (unspecified) points. Criterion will be a minimum threshold of **72/100%**, unless conditions change in preparation.
+In order to pass the exam, you must score more than 720/1000 (unspecified) points. Criterion will be a minimum threshold of **75/100%**, unless conditions change in preparation.
 
 ### Draft plan
 
@@ -158,7 +158,7 @@ The following is my roadmap for the study. There may be adjustments.
 30. [Route 53](route53)
 31. [AWS Key Management Service (AWS KMS)](kms)
 32. [Amazon EventBridge (Amazon CloudWatch Events)](eventbridge)
-33. [Amazon Simple Notification Service (Amazon SNS)](sns)              26
+33. [Amazon Simple Notification Service (Amazon SNS)](sns)
 34. [Amazon Simple Queue Service (Amazon SQS)](sqs)                     26
 35. [AWS Step Functions](step-functions)                                27
 
