@@ -8,7 +8,7 @@ date: 2022-09-16
 weight: 1700
 ---
 
-{{< youtube Wx-ain8UryM >}}
+
 
 ## About
 
@@ -20,6 +20,8 @@ CodeDeploy is a fully managed deployment service that automates software deployÂ
 CodeDeploy can also deploy a serverless Lambda function.
 
 CodeDeploy can be connected to CodePipeline and use artifacts from there.
+
+{{< youtube Wx-ain8UryM >}}
 
 ### Platforms
 

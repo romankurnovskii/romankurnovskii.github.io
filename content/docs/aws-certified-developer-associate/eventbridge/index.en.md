@@ -82,6 +82,8 @@ You should choose to use Amazon EventBridge over Amazon SNS when the system you 
 
 ## Practice
 
+{{< youtube OvpYjr00Bfs >}}
+
 [Processing File Uploads Asynchronously with Amazon EventBridge](processing-file-uploads-asyncronously-with-amazon-eventbridge)
 
 ## Questions
