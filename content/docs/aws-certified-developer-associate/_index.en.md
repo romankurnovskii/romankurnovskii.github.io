@@ -159,8 +159,8 @@ The following is my roadmap for the study. There may be adjustments.
 31. [AWS Key Management Service (AWS KMS)](kms)
 32. [Amazon EventBridge (Amazon CloudWatch Events)](eventbridge)
 33. [Amazon Simple Notification Service (Amazon SNS)](sns)
-34. [Amazon Simple Queue Service (Amazon SQS)](sqs)                     26
-35. [AWS Step Functions](step-functions)                                27
+34. [Amazon Simple Queue Service (Amazon SQS)](sqs)
+35. [AWS Step Functions](step-functions)
 
 
 ## Resources
