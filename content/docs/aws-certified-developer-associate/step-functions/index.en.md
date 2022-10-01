@@ -25,10 +25,10 @@ Step Functions is a serverless function orches­trator that makes it easy to seq
 
 ### Alternatives
 
-- AWS lambda
-- Airflow
-- Google Cloud Workflows
-- Microsoft Flow
+- [AWS lambda](../lambda)
+- [Airflow](https://airflow.apache.org/)
+- [Google Cloud Workflows](https://cloud.google.com/workflows)
+- [Microsoft Flow](https://powerautomate.microsoft.com/en-us/blog/welcome-to-microsoft-flow/)
 
 ## Price
 
