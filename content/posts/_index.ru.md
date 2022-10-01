@@ -2,4 +2,4 @@
 title: Заметки
 ---
 
-[*Списком*](archive)
+[*Списком*](/ru/posts/archive)
