@@ -2,4 +2,4 @@
 title: Notes
 ---
 
-[*List style view*](/posts/archive)
+[*List style view*](/en/posts/archive)
