@@ -3,8 +3,8 @@ title: JavaScript code snippets
 description: JavaScript code snippets
 toc: true
 tags:  [js, javascript, typescript]
-series: ['cheatsheet']
-categories: [JavaScript]
+series: [CheatSheet]
+categories: [JavaScript, CheatSheet]
 date: 2022-09-15
 featuredImage: https://picsum.photos/700/238
 draft: false
@@ -22,16 +22,11 @@ getBaseURL('http://url.com/page?name=Adam&surname=Smith');
 
 const url = new URL("https://example.com/login?user=someguy&page=news");
 
-url.origin
-// "https://example.com"
-url.host
-// "example.com"
-url.protocol
-// "https:"
-url.pathname
-// "/login"
-url.searchParams.get('user')
-// "someguy"
+url.origin  // "https://example.com"
+url.host  // "example.com"
+url.protocol  // "https:"
+url.pathname  // "/login"
+url.searchParams.get('user')  // "someuser"
 
 ```
 

@@ -4,7 +4,7 @@ description: Основные команды Docker, которыми польз
 toc: true
 tags: ["docker", "cheatsheet"]
 series: ['шпаргалки']
-categories: [Docker]
+categories: [Docker, CheatSheet]
 date: "2022-06-07"
 lastmod: "2022-06-07"
 featuredImage: featured.ru.jpg
