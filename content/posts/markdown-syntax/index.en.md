@@ -4,7 +4,7 @@ description: Markdown cheatsheet
 toc: true
 authors:
 tags: [markdown, css, html, themes]
-categories: [cheatsheet]
+categories: [CheatSheet]
 series:
 date: 2022-04-21
 featuredImage: https://picsum.photos/700/237

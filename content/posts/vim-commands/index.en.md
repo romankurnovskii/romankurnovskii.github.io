@@ -3,8 +3,8 @@ title: Top Vim Commands
 description: Most Popular Vim Commands
 toc: true
 tags: ["vim", "cheatsheet"]
-series: ['cheatsheet']
-categories: [vim, cheatsheet]
+series: ['CheatSheet']
+categories: [Vim, CheatSheet]
 date: 2022-09-13
 featuredImage: https://picsum.photos/701/233
 authors: [roman-kurnovskii]

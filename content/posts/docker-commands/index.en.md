@@ -3,8 +3,8 @@ title: Top Docker Commands
 description: Most Popular Docker Commands
 toc: true
 tags: ["docker", "cheatsheet"]
-series: ['cheatsheet']
-categories: [docker, cheatsheet]
+series: ['CheatSheet']
+categories: [docker, CheatSheet]
 date: "2022-06-07"
 lastmod: "2022-06-07"
 featuredImage: featured.en.jpg

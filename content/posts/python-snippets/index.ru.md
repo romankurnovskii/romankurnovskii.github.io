@@ -3,7 +3,7 @@ title: Сниппеты Python
 description: Сниппеты Python
 toc: true
 tags:  ["python"]
-series: ['cheatsheet']
+series: [CheatSheet]
 categories: [Python]
 date: "2022-06-16"
 featuredImage:
