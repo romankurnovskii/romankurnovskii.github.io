@@ -1,12 +1,12 @@
 ---
-title: Deposit InteractiveBrokers from Israel Discount bank
-description: Deposit InteractiveBrokers from Israel Discount bank
+title: Deposit Interactive Brokers from Israel Discount bank
+description: Deposit Interactive Brokers from Israel Discount bank
 toc: true
 tags: [interactivebrokers, invest]
 series: []
 categories: []
 date: "2022-10-07"
-featuredImage: https://picsum.photos/700/230
+featuredImage: img/featured.en.jpg
 authors: [roman-kurnovskii]
 ---
 
