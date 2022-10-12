@@ -1,13 +1,14 @@
 ---
-title: AWS Amplify - Initial setup with Github
+title: AWS Amplify - project setup with Github
 description: AWS Amplify - Initial setup with Github
 toc: false
 tags: ["AWS", "AWS Amplify", Github]
-series: []
-categories: []
-date: 2022-10-12
+series: ["AWS exam quizz"]
+categories: ["AWS Amplify"]
+date: 2022-10-12:07:00+03:00
 featuredImage: 
 authors: [roman-kurnovskii]
+weight: 10
 ---
 
 ## Preface
