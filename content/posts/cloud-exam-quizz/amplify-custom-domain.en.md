@@ -63,6 +63,7 @@ SSL configuration passed, waiting up to 30 min for domain activation
 
 ![amplify-add-custom-domain](../img/cloud-exam-prepare-url.png)
 
+Check url: [cloud-exam-prepare.com](https://cloud-exam-prepare.com/)
 
 **Resources:**
 

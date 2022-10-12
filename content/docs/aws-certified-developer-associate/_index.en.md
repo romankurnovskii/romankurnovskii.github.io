@@ -12,6 +12,10 @@ featuredImage: "images/aws-cda-intro.en.png"
 weight: 1
 ---
 
+## TL;DR
+
+1. Passed exam in one month.
+2. Created an [app with questions and progress](https://www.cloud-exam-prepare.com/) that helped me a lot
 
 ## Criteria
 

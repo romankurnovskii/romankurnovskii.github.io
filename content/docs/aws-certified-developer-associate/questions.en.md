@@ -12,7 +12,9 @@ featuredImage: "images/aws-cda-intro.en.png"
 weight: 99999
 ---
 
-On this page you can find 45 random questions. 
+On this page you can find 50 random questions. 
+
+To get prepared for exam you can use [cloud-exam-prepare.com](https://www.cloud-exam-prepare.com)
 
 ## Q1 - Q10
 ### Q1
