@@ -4,7 +4,7 @@ description: Set custom domain on AWS Amplify
 toc: true
 tags: ["AWS", "AWS Amplify"]
 series: ["AWS exam quizz"]
-categories: ["AWS Amplify"]
+categories: ["AWS", "AWS Amplify"]
 date: 2022-10-12:10:00+03:00
 featuredImage: 
 authors: [roman-kurnovskii]
@@ -14,6 +14,8 @@ weight: 20
 You can use any custom domain with Amplify and no need register it with [AWS Route53](/en/categories/route-53/).
 
 I am adding domain at the *setup app stage*. Another way is from console. 
+
+## Steps
 
 1. Click **Domain management**.
 
@@ -68,3 +70,8 @@ Check url: [cloud-exam-prepare.com](https://cloud-exam-prepare.com/)
 **Resources:**
 
 - https://docs.aws.amazon.com/amplify/latest/userguide/to-add-a-custom-domain-managed-by-a-third-party-dns-provider.html
+
+## Troubleshooting
+
+**DNS_PROBE_FINISHED_NXDOMAIN** for root domain(www works)
+- Setup domain with Route 53
