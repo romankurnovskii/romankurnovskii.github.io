@@ -1,5 +1,5 @@
 ---
-title: AWS Certified Developer
+title: AWS Certified Developer (DVA-C01)
 description: My plan for preparing for and taking the AWS Certified Developer exam
 toc: true
 authors: [roman-kurnovskii]
@@ -16,12 +16,28 @@ weight: 1
 
 1. Passed exam in one month.
 2. Created an [app with questions and progress](https://www.cloud-exam-prepare.com/) that helped me a lot
+![LQVKGDT16BF1Q6CX](images/AWS-Certified-Developer-Associate-certificate.jpg)
+
+## Note
+
+The AWS Certified Developer - Associate exam is changing February 28, 2023. The last date to take the current exam is February 27, 2023.
+
+To keep the docs up to date I will add new and latest information.
+
+## DVA-C01 vs DVA-C02
+
+- new domain: **Domain 3: Deployment**
+  - focus will be on testing and deploying your code into different environments including development, test, and production environments. You’ll need to know how CloudFormation, the AWS Cloud Development Kit (CDK), and AWS SAM are used to deploy applications.
+- Domains 4 and 5 (“Refactoring” along with “Monitoring and Troubleshooting”) from the DVA-C01 exam guide have been consolidated into Domain 4 (“Troubleshooting and Optimization”) in the DVA-C02 exam guide
+- Plus 2% questions in **Development with AWS Services** domain
+
+Test questions for DVA-C02 - [here](https://explore.skillbuilder.aws/learn/course/external/view/elearning/13757/aws-certified-developer-associate-official-question-set-dva-c02-english) and [here](https://d1.awsstatic.com/training-and-certification/docs-dev-associate/AWS-Certified-Developer-Associate_Sample-Questions_C02.pdf)
 
 ## Criteria
 
 In order to pass the exam, you must score more than 720/1000 (unspecified) points. Criterion will be a minimum threshold of **75/100%**, unless conditions change in preparation.
 
-### Draft plan
+### Study Plan
 
 1. Find out what the exam requirements are
 2. Have a list of topics that will be on the exam
@@ -36,21 +52,28 @@ In order to pass the exam, you must score more than 720/1000 (unspecified) point
 
 ## Prepare
 
-The AWS website has [Exam Preparation Guide](https://d1.awsstatic.com/training-and-certification/docs-dev-associate/AWS-Certified-Developer-Associate_Exam-Guide.pdf)
+The AWS website has:
+- [Exam Preparation Guide DVA-C01](https://d1.awsstatic.com/training-and-certification/docs-dev-associate/AWS-Certified-Developer-Associate_Exam-Guide.pdf)
+- *From 27 Feb 2023* [Exam Preparation Guide DVA-C02](https://d1.awsstatic.com/training-and-certification/docs-dev-associate/AWS-Certified-Developer-Associate_Exam-Guide_C02.pdf)
 
-To pass the exam, you need to know certain services from the 5 domains: `Deployment`, `Security`, `Development with AWS Services`, `Refactoring`, `Monitoring and Troubleshooting`
+
+To pass the exam, you need to know certain services from the 4 domains: `Development with AWS Services`, `Security`, `Deployment`, ~~`Refactoring`~~, `Monitoring and Troubleshooting`
 
 ### List of services on the exam
 
-> Version 2.1 DVA-C01
+> ~~Version 2.1 DVA-C01~~
+> Version 1.0 DVA-C02
+
 
 Analytics:
 
+- Amazon Athena (new in DVA-C02)
 - Amazon OpenSearch Service (Amazon Elasticsearch Service)
 - Amazon Kinesis
 
 Application Integration:
 
+- AWS AppSync (new in DVA-C02)
 - Amazon EventBridge (Amazon CloudWatch Events)
 - Amazon Simple Notification Service (Amazon SNS)
 - Amazon Simple Queue Service (Amazon SQS)
@@ -61,21 +84,27 @@ Compute:
 - Amazon EC2
 - AWS Elastic Beanstalk
 - AWS Lambda
+- AWS Serverless Application Model (AWS SAM) (new in DVA-C02)
 
 Containers:
 
+- AWS Copilot (new in DVA-C02)
 - Amazon Elastic Container Registry (Amazon ECR)
 - Amazon Elastic Container Service (Amazon ECS)
 - Amazon Elastic Kubernetes Services (Amazon EKS)
 
 Database:
 
+- Amazon Aurora (new in DVA-C02)
 - Amazon DynamoDB
 - Amazon ElastiCache
+- Amazon MemoryDB for Redis (new in DVA-C02)
 - Amazon RDS
 
 Developer Tools:
-
+- AWS Amplify (new in DVA-C02)
+- AWS Cloud9 (new in DVA-C02)
+- AWS CloudShell (new in DVA-C02)
 - AWS CodeArtifact
 - AWS CodeBuild
 - AWS CodeCommit
@@ -88,24 +117,40 @@ Developer Tools:
 
 Management and Governance:
 
+- AWS AppConfig (new in DVA-C02)
+- AWS Cloud Development Kit (AWS CDK) (new in DVA-C02)
 - AWS CloudFormation
+- AWS CloudTrail (new in DVA-C02)
 - Amazon CloudWatch
+- Amazon CloudWatch Logs (new in DVA-C02)
+- AWS Command Line Interface (AWS CLI) (new in DVA-C02)
+- AWS Systems Manager (new in DVA-C02)
 
 Networking and Content Delivery:
 
 - Amazon API Gateway
 - Amazon CloudFront
 - Elastic Load Balancing
+- Amazon Route 53 (new in DVA-C02)
+- Amazon VPC (new in DVA-C02)
 
 Security, Identity, and Compliance:
 
-- AWS Identity and Access Management (IAM)
+- AWS Certificate Manager (ACM) (new in DVA-C02)
+- AWS Certificate Manager Private Certificate Authority (new in DVA-C02)
 - Amazon Cognito
+- AWS Identity and Access Management (IAM)
 - AWS Key Management Service (AWS KMS)
+- AWS Secrets Manager (new in DVA-C02)
+- AWS Security Token Service (AWS STS) (new in DVA-C02)
+- AWS WAF (new in DVA-C02)
 
 Storage:
 
+- Amazon Elastic Block Store (Amazon EBS) (new in DVA-C02)
+- Amazon Elastic File System (Amazon EFS) (new in DVA-C02)
 - Amazon S3
+- Amazon S3 Glacier (new in DVA-C02)
 
 ### Training plan
 
