@@ -1,5 +1,5 @@
 ---
-title: Фдпщкшерьы 101
+title: Algorithms 101
 description:
 toc: false
 authors: [roman-kurnovskii]
