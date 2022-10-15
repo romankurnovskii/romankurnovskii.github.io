@@ -17,7 +17,7 @@ React - это библиотека. Чтобы она заработала на
 
 Подключить можно двумя способоами. С помощью подгрузки скрипта с CDN или загрузки пакета в package.json, чтопозволит использовать `.jsx`
 
-### Package.json
+## package.json
 
 **План:**
 
@@ -65,7 +65,7 @@ root.render(<App />);
 2. Добавим блок `div` в место в шаблоне для отрисовки react приложения
 
 ```html
-<iv id="my_render_block"></div>
+<div id="my_render_block"></div>
 ```
 
 ### Подключение в HUGO
@@ -83,8 +83,10 @@ $.Site.BaseURL)) }}
 
 ## CDN
 
-Втор
+Второй способ
+
 ### Подключение библиотеки React
+
 В проекте Hugo в шаблонах обновим файл head.html. В моем проекте это шаблон, который содержит основные теги `html и head`.
 Открываем `layouts/partials/head.html` и добавляем скрипт в раздел `<head>`:
 
@@ -135,25 +137,13 @@ ReactDOM.render(React.createElement(MyCountButton), document.getElementById("my_
 
 ![](img/01.png)
 
-### Пример
+## Пример
 
 {{< rawhtml >}}
-  Нажми на счетчик:
-  <div id="_post_my_react_app" style="display:inline-block"  class='inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka' ></div>
-  <script>
-    const _post_e = React.createElement;
-
-const MyCountButton = () => {
-  const [count, setCount] = React.useState(Math.round(Math.random() * 100));
-  return _post_e(
-    'button',
-    { onClick: () => setCount(count + 1) },
-    count
-  );
-}
-
-ReactDOM.render(React.createElement(MyCountButton), document.getElementById("_post_my_react_app"));
-</script>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 {{< /rawhtml >}}
 
+Нажми на счетчик: <div id="_react_count_example_" style="display:inline-block"  class='inline-block bg-tertiary-bg rounded px-3 py-2 my-2 me-2 hover:text-eureka text-lg' ></div>
 
+{{< reactblock src="https://romankurnovskii.com/ru/posts/integrate-hugo-react/react-count-example.jsx?423" divRender="_react_count_example_">}}
