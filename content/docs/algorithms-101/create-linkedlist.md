@@ -4,10 +4,9 @@ description: Create LinkedList in Python
 toc: false
 authors: [roman-kurnovskii]
 tags: []
-categories: [Roadmaps, Algorithms, LinkedList, Python]
+categories: [Algorithms, LinkedList, Python]
 series: ["Code Snippets"]
 date: 2022-10-15
-draft: true
 featuredImage:
 weight: 30
 ---
