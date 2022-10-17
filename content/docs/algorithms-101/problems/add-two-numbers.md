@@ -4,7 +4,7 @@ description:
 toc: false
 authors: [roman-kurnovskii]
 tags: [Linked List, Math, Recursion]
-categories: [Roadmaps, Algorithms]
+categories: [Algorithms]
 series:
 date: 2022-10-17
 featuredImage:

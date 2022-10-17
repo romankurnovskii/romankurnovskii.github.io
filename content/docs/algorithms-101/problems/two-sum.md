@@ -4,7 +4,7 @@ description:
 toc: false
 authors: [roman-kurnovskii]
 tags: [array, hash table]
-categories: [Roadmaps, Algorithms]
+categories: [Algorithms]
 series:
 date: 2022-10-16
 featuredImage:

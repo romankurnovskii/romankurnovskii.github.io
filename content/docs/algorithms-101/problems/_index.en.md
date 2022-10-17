@@ -3,7 +3,7 @@ title: Problems
 description:
 authors: [roman-kurnovskii]
 tags: []
-categories: [Roadmaps, Algorithms]
+categories: []
 series:
 date: 2022-10-15
 featuredImage:
