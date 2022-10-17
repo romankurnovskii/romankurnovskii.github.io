@@ -4,7 +4,7 @@ description: Быстрая базовая установка Ubuntu Desktop 22.
 toc: true
 tags: [linux, ubuntu]
 series: ['Установка ОС']
-categories: [Linux]
+categories: [OS, Linux]
 date: "2022-06-23"
 lastmod: "2022-06-23"
 featuredImage: img/featured.jpg

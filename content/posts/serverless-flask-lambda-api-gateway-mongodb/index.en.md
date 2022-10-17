@@ -4,7 +4,7 @@ description: Create AWS serverless application on Flask + API Gateway + Lambda +
 toc: true
 tags: [aws, flask, serverless, mongodb, lambda]
 series: []
-categories: [aws]
+categories: [AWS]
 date: "2022-09-06"
 featuredImage: https://picsum.photos/701/234
 authors: [roman-kurnovskii]
