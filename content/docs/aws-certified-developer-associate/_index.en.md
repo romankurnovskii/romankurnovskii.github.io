@@ -1,10 +1,10 @@
 ---
-title: AWS Certified Developer (DVA-C01)
+title: AWS Certified Developer (DVA-C01 -> DVA-C02)
 description: My plan for preparing for and taking the AWS Certified Developer exam
 toc: true
 authors: [roman-kurnovskii]
-tags: [aws]
-categories: [aws]
+tags: [AWS]
+categories: [Roadmaps, AWS]
 series:
 date: 2022-09-08
 draft: false

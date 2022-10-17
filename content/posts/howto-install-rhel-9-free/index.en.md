@@ -4,7 +4,7 @@ description: How to Download and Install Linux RHEL 9 for Free
 toc: true
 tags: [linux, rhel]
 series: []
-categories: [Linux]
+categories: [OS, Linux]
 date: "2022-06-17"
 lastmod: "2022-06-17"
 featuredImage: img/featured.en.jpg

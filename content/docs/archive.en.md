@@ -1,5 +1,5 @@
 ---
-title: "Posts"
+title: "Docs"
 layout: archive
 hidden: true
 type: docs
