@@ -3,7 +3,7 @@ title: 1. Two Sum
 description:
 toc: false
 authors: [roman-kurnovskii]
-tags: [array, hash table]
+tags: [Array, "Hash Table"]
 categories: [Algorithms]
 series:
 date: 2022-10-16
@@ -32,7 +32,7 @@ array, hash table
 
 > The second train of thought is, without changing the array, can we use additional space somehow? Like maybe a hash map to speed up the search?
 
-### First accepted
+## First accepted
 
 ```python
 class Solution:
@@ -59,7 +59,7 @@ Time complexity:
 4. nums.index: O(n)
 
 
-### Better solution
+## Better solution
 
 > remember indexes of "passed" `n's` from `nums`
 

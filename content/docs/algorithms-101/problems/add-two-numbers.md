@@ -23,7 +23,7 @@ You may assume the two numbers do not contain any leading zero, except the numbe
     Output: [7,0,8]
     Explanation: 342 + 465 = 807.
 
-### First accepted
+## First accepted
 
 **Idea:**
 
@@ -78,7 +78,7 @@ class Solution:
         return res
 ```
 
-### Better solution
+## Better solution
 
 ![](https://leetcode.com/problems/add-two-numbers/Figures/2_add_two_numbers.svg)
 
