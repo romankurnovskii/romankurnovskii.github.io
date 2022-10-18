@@ -112,6 +112,7 @@ print(res)
 > List of problems cis mutable. Will take first not solved until all first top 100 problems are solved. It can take + ~5-15 problems
 
 
-1. [1. Two Sum](problems/two-sum) - Easy, [array, hash table]
-2. [2. Add Two Numbers](problems/add-two-numbers) - Medium, [Linked List, Math, Recursion]
+1. [x] [1. Two Sum](problems/two-sum) - Easy, [Array, Hash Table]
+2. [x] [2. Add Two Numbers](problems/add-two-numbers) - Medium, [Linked List, Math, Recursion]
+3. [] [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) - Medium, [Hash Table, String, Sliding Window]
 
