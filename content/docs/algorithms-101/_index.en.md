@@ -8,7 +8,7 @@ categories: [Roadmaps, Algorithms]
 series:
 date: 2022-10-15
 featuredImage:
-draft: true
+draft: false
 weight: 1
 ---
 
@@ -114,5 +114,13 @@ print(res)
 
 1. [x] [1. Two Sum](problems/two-sum) - Easy, [Array, Hash Table]
 2. [x] [2. Add Two Numbers](problems/add-two-numbers) - Medium, [Linked List, Math, Recursion]
-3. [] [3. Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) - Medium, [Hash Table, String, Sliding Window]
+3. [x] [3. Longest Substring Without Repeating Characters](problems/longest-substring-without-repeating-characters) - Medium, [Hash Table, String, Sliding Window]
+4.  [x] [13. Roman to Integer](problems/roman-to-integer) - Easy, [Hash Table, Math, String]
+5. [ ] [4. Median of Two Sorted Arrays]()
+6. [ ] [5. Longest Palindromic Substring]()
+7. [ ] [7. Reverse Integer]()
+8. [ ] [8. String to Integer (atoi)]()
+9. [ ] [10. Regular Expression Matching]()
+10. [ ] [11. Container With Most Water]()
+
 
