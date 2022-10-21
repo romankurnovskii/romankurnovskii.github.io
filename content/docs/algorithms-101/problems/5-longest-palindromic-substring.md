@@ -9,6 +9,7 @@ series:
 date: 2022-10-20
 featuredImage:
 weight: 1050
+spentTime: 200min
 ---
 
 [leetcode problem](https://leetcode.com/problems/longest-palindromic-substring/)
@@ -43,10 +44,12 @@ If we use brute-force and check whether for every start and end position a subst
 
 **Idea:**
 
+We start at `index = 0` and iterate through all values until `n`. At each index we call the function `getPalindrome` that will check the values to the left and right of the provided indices. It will continue to do so until the longest palindrome within the given range is found.
+
 ![test-case](../assets/5.jpg)
 
 ![Leetcode diagram explained](../assets/5-diagram.svg)
-**[Link to diagram](https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Leetcode%205#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D17m7pbA_Ym4_Xi8JFBPSyMcr8zYzX_1FH%26export%3Ddownload)**
+**[Link to diagram](https://app.diagrams.net/#G17m7pbA_Ym4_Xi8JFBPSyMcr8zYzX_1FH)**
 
 ```python
 class Solution:
@@ -90,5 +93,10 @@ There is an `O(n)` algorithm called [Manacher's algorithm](https://en.wikipedia.
 ## Resources
 
 - [Manacher's algorithm](https://en.wikipedia.org/wiki/Longest_palindromic_substring#Manacher's_algorithm)
-- Ru: [Разбор задачи с интервью. Литкод 5. Longest Palindromic Substring](https://www.youtube.com/watch?v=sp9f7nQHqeQ&t=39s)
 - [Errichto:Leetcode problem Longest Palindromic Substring (two solutions)](https://www.youtube.com/watch?v=0CKUjDcUYYA)
+- https://redquark.org/leetcode/0005-longest-palindromic-substring/
+
+**RU**
+- [Разбор задачи с интервью. Литкод 5. Longest Palindromic Substring](https://www.youtube.com/watch?v=sp9f7nQHqeQ&t=39s)
+- [Алгоритмика: Алгоритм Манакера](https://ru.algorithmica.org/cs/string-searching/manacher/)
+- [Википедия:Алгоритм Манакера](https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9C%D0%B0%D0%BD%D0%B0%D0%BA%D0%B5%D1%80%D0%B0#:~:text=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%20%D0%9C%D0%B0%D0%BD%D0%B0%D0%BA%D0%B5%D1%80%D0%B0%20(%D0%B0%D0%BD%D0%B3%D0%BB.%20Manacher's%20algorithm),%D1%80%D0%B5%D1%88%D0%B0%D1%82%D1%8C%20%D0%B8%20%D0%B1%D0%BE%D0%BB%D0%B5%D0%B5%20%D0%BE%D0%B1%D1%89%D0%B8%D0%B5%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8)

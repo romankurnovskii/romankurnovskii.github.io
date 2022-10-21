@@ -14,6 +14,10 @@ weight: 20
 [Python template](../#template)
 
 
+## Tips I learned
+
+- Don't code before "draw" and understand the solution algorithm
+
 ## Templates
 
 ### Sliding Window
