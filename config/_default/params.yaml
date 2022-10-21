@@ -47,8 +47,10 @@ comment:
   handler: opencomments
 
   opencomments:
-    server: https://opencomments.herokuapp.com/comments
+    server: https://eyt4njm3se.execute-api.eu-west-1.amazonaws.com/comments
+    # server: https://opencomments.herokuapp.com/comments
     # serverLocal: http://127.0.0.1:5000/comments
+    # server: http://127.0.0.1:5000/comments
 
   # telegram: #comments.app
   #   siteid: # e.g. Qu__K123
