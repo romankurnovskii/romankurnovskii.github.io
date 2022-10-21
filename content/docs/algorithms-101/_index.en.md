@@ -112,12 +112,12 @@ print(res)
 > List of problems cis mutable. Will take first not solved until all first top 100 problems are solved. It can take + ~5-15 problems
 
 
-1. [x] [1. Two Sum](problems/two-sum) - Easy, [Array, Hash Table]
-2. [x] [2. Add Two Numbers](problems/add-two-numbers) - Medium, [Linked List, Math, Recursion]
-3. [x] [3. Longest Substring Without Repeating Characters](problems/longest-substring-without-repeating-characters) - Medium, [Hash Table, String, Sliding Window]
-4.  [x] [13. Roman to Integer](problems/roman-to-integer) - Easy, [Hash Table, Math, String]
-5. [ ] [4. Median of Two Sorted Arrays]()
-6. [ ] [5. Longest Palindromic Substring]()
+1. [x] [1. Two Sum](problems/1-two-sum) - Easy, [Array, Hash Table]
+2. [x] [2. Add Two Numbers](problems/2-add-two-numbers) - Medium, [Linked List, Math, Recursion]
+3. [x] [3. Longest Substring Without Repeating Characters](problems/3-longest-substring-without-repeating-characters) - Medium, [Hash Table, String, Sliding Window]
+4.  [x] [13. Roman to Integer](problems/13-roman-to-integer) - Easy, [Hash Table, Math, String]
+5. [ ] [5. Longest Palindromic Substring](5-longest-palindromic-substring) - Medium, [String, Dynamic Programming]
+6. [ ] [4. Median of Two Sorted Arrays]()
 7. [ ] [7. Reverse Integer]()
 8. [ ] [8. String to Integer (atoi)]()
 9. [ ] [10. Regular Expression Matching]()
