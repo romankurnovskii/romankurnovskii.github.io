@@ -20,9 +20,9 @@ weight: 1
 
 ## Note
 
-The AWS Certified Developer - Associate exam is changing February 28, 2023. The last date to take the current exam is February 27, 2023.
+> The AWS Certified Developer - Associate exam is changing February 28, 2023. The last date to take the current exam is February 27, 2023.
 
-To keep the docs up to date I will add new and latest information.
+> To keep the docs up to date I will add new and latest information.
 
 ## DVA-C01 vs DVA-C02
 

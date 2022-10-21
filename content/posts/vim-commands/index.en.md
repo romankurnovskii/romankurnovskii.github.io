@@ -267,3 +267,4 @@ authors: [roman-kurnovskii]
 - [vim faq](https://vimhelp.org/vim_faq.txt.html)
 - [vim cheat sheet](https://github.com/LeCoupa/awesome-cheatsheets/blob/master/tools/vim.txt)
 - [vim cheat sheet](https://devhints.io/vim)
+- https://learnxinyminutes.com/docs/vim/
