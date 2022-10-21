@@ -62,9 +62,9 @@ What is [SMART](https://www.atlassian.com/blog/productivity/how-to-write-smart-g
 1. open task
 2. read
 3. first thoughts
-4. spent 15 minutes on coding
+4. spend 15 minutes on coding
 5. finished or not, read hints
-6. spent 10 minutes on fixing if needed
+6. spend 10 minutes on fixing if needed
 7. read solution, discussions
 8. if there is a new algo, read theory the rest of first hour, practice
 9. code from scratch with comments/code snippets
@@ -115,8 +115,8 @@ print(res)
 1. [x] [1. Two Sum](problems/1-two-sum) - Easy, [Array, Hash Table]
 2. [x] [2. Add Two Numbers](problems/2-add-two-numbers) - Medium, [Linked List, Math, Recursion]
 3. [x] [3. Longest Substring Without Repeating Characters](problems/3-longest-substring-without-repeating-characters) - Medium, [Hash Table, String, Sliding Window]
-4.  [x] [13. Roman to Integer](problems/13-roman-to-integer) - Easy, [Hash Table, Math, String]
-5. [ ] [5. Longest Palindromic Substring](5-longest-palindromic-substring) - Medium, [String, Dynamic Programming]
+4. [x] [13. Roman to Integer](problems/13-roman-to-integer) - Easy, [Hash Table, Math, String]
+5. [x] [5. Longest Palindromic Substring](5-longest-palindromic-substring) - Medium, [String, Dynamic Programming]
 6. [ ] [4. Median of Two Sorted Arrays]()
 7. [ ] [7. Reverse Integer]()
 8. [ ] [8. String to Integer (atoi)]()
