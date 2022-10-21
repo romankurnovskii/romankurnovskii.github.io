@@ -116,11 +116,13 @@ print(res)
 2. [x] [2. Add Two Numbers](problems/2-add-two-numbers) - Medium, [Linked List, Math, Recursion]
 3. [x] [3. Longest Substring Without Repeating Characters](problems/3-longest-substring-without-repeating-characters) - Medium, [Hash Table, String, Sliding Window]
 4. [x] [13. Roman to Integer](problems/13-roman-to-integer) - Easy, [Hash Table, Math, String]
-5. [x] [5. Longest Palindromic Substring](5-longest-palindromic-substring) - Medium, [String, Dynamic Programming]
-6. [ ] [4. Median of Two Sorted Arrays]()
-7. [ ] [7. Reverse Integer]()
-8. [ ] [8. String to Integer (atoi)]()
-9. [ ] [10. Regular Expression Matching]()
-10. [ ] [11. Container With Most Water]()
+5. [x] [5. Longest Palindromic Substring](problems/5-longest-palindromic-substring) - Medium, [String, Dynamic Programming]
+6. [x] [14. Longest Common Prefix](problems/14-longest-common-prefix) - Easy, [String]
+7. [ ] [4. Median of Two Sorted Arrays](problems/)
+8. [ ] [7. Reverse Integer](problems/)
+9. [ ] [8. String to Integer (atoi)](problems/)
+10. [ ] [10. Regular Expression Matching](problems/)
+11. [ ] [11. Container With Most Water](problems/)
+12. [ ] [11. Container With Most Water](problems/)
 
 
