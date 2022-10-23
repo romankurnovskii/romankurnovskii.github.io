@@ -74,6 +74,5 @@ class Solution:
                     return False
             else:   # Not an opening bracket or closing bracket. Invalid string.
                 return False
-
         return stack == []
 ```
