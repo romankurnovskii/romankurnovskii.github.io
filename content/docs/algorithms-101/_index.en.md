@@ -118,11 +118,13 @@ print(res)
 4. [x] [13. Roman to Integer](problems/13-roman-to-integer) - Easy, [Hash Table, Math, String]
 5. [x] [5. Longest Palindromic Substring](problems/5-longest-palindromic-substring) - Medium, [String, Dynamic Programming]
 6. [x] [14. Longest Common Prefix](problems/14-longest-common-prefix) - Easy, [String]
-7. [ ] [4. Median of Two Sorted Arrays](problems/)
+7. [x] [20. Valid Parentheses](problems/20-valid-parentheses) - Easy, [String, Stack]
 8. [ ] [7. Reverse Integer](problems/)
-9. [ ] [8. String to Integer (atoi)](problems/)
-10. [ ] [10. Regular Expression Matching](problems/)
-11. [ ] [11. Container With Most Water](problems/)
+9. [ ] [4. Median of Two Sorted Arrays](problems/)
+10. [ ] [8. String to Integer (atoi)](problems/)
+11. [ ] [10. Regular Expression Matching](problems/)
 12. [ ] [11. Container With Most Water](problems/)
+13. [ ] [11. Container With Most Water](problems/)
+14. [ ] [11. Container With Most Water](problems/)
 
 
