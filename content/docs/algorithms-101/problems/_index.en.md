@@ -16,7 +16,7 @@ weight: 20
 
 ## Tips I learned
 
-- Don't code before "draw" and understand the solution algorithm
+- Don't code before "design" and understand the solution algorithm
 
 ## Templates
 
