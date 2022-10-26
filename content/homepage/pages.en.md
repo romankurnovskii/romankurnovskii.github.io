@@ -2,9 +2,10 @@
 title: Posts
 draft: false
 # Section you want to display
-section: posts
+section: posts # Tobe deprecated
+sections: [posts, docs, apps]
 # Pages count
-count: 3
+count: 8
 # Options: card, plain and masonry.
 style: card
 
