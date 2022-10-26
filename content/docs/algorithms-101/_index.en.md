@@ -1,6 +1,6 @@
 ---
 title: Algorithms 101
-description:
+description: LeetCode Cookbook
 toc: true
 authors: [roman-kurnovskii]
 tags: []
@@ -119,6 +119,10 @@ print(res)
 5. [x] [5. Longest Palindromic Substring](problems/5-longest-palindromic-substring) - Medium, [String, Dynamic Programming]
 6. [x] [14. Longest Common Prefix](problems/14-longest-common-prefix) - Easy, [String]
 7. [x] [20. Valid Parentheses](problems/20-valid-parentheses) - Easy, [String, Stack]
-8. [ ] [21. Merge Two Sorted Lists](problems/21-merge-two-sorted-lists) - Easy, [Linked List, Recursion]
+8. [x] [21. Merge Two Sorted Lists](problems/21-merge-two-sorted-lists) - Easy, [Linked List, Recursion]
+9. [x] [26. Merge Two Sorted Lists](problems/26-remove-duplicates-from-sorted-array) - Easy, [Array, Two points]
 
 
+## Resources
+
+- https://books.halfrost.com/leetcode/

@@ -1,5 +1,5 @@
 ---
-title: Path
+title: Experience
 draft: false
 experiences:
   - title: J.P. Morgan

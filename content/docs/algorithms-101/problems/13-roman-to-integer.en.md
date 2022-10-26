@@ -1,6 +1,6 @@
 ---
 title: 13. Roman to Integer
-description:
+description: Leetcode 13. Roman to Integer - Solution
 toc: false
 authors: [roman-kurnovskii]
 tags: ["Hash Table", Math, String]

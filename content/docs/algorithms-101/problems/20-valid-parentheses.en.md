@@ -1,6 +1,6 @@
 ---
 title: 20. Valid Parentheses
-description:
+description: Leetcode 20. Valid Parentheses solution
 toc: false
 authors: [roman-kurnovskii]
 tags: [String, Stack]
