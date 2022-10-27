@@ -11,7 +11,7 @@ featuredImage:
 weight: 1060
 ---
 
-[leetcode problem](https://leetcode.com/problems/longest-common-prefix/)
+[LeetCode problem](https://leetcode.com/problems/longest-common-prefix/)
 
 Write a function to find the longest common prefix string amongst an array of strings.
 

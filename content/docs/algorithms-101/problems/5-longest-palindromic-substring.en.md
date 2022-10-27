@@ -12,7 +12,7 @@ weight: 1050
 spentTime: 200min
 ---
 
-[leetcode problem](https://leetcode.com/problems/longest-palindromic-substring/)
+[LeetCode problem](https://leetcode.com/problems/longest-palindromic-substring/)
 
 Given a string `s`, return the longest palindromic substring in `s`.
 

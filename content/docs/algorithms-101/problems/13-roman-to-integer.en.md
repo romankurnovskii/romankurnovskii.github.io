@@ -11,7 +11,7 @@ featuredImage:
 weight: 1040
 ---
 
-[leetcode problem](https://leetcode.com/problems/roman-to-integer/)
+[LeetCode problem](https://leetcode.com/problems/roman-to-integer/)
 
 Roman numerals are represented by seven different symbols: `I`, `V`, `X`, `L`, `C`, `D` and `M`.
 
