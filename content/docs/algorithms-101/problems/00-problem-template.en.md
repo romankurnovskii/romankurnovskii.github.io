@@ -12,7 +12,7 @@ weight: 1040
 draft: true
 ---
 
-[leetcode problem]()
+[LeetCode problem]()
 
 
 **Example 1:**

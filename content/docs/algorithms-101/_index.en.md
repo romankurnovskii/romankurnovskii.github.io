@@ -120,7 +120,8 @@ print(res)
 6. [x] [14. Longest Common Prefix](problems/14-longest-common-prefix) - Easy, [String]
 7. [x] [20. Valid Parentheses](problems/20-valid-parentheses) - Easy, [String, Stack]
 8. [x] [21. Merge Two Sorted Lists](problems/21-merge-two-sorted-lists) - Easy, [Linked List, Recursion]
-9. [x] [26. Merge Two Sorted Lists](problems/26-remove-duplicates-from-sorted-array) - Easy, [Array, Two points]
+9. [x] [26. Remove Duplicates from Sorted Array](problems/26-remove-duplicates-from-sorted-array) - Easy, [Array, Two points]
+10. [x] [66. Plus One](problems/66-plus-one) - Easy, [Array, Math]
 
 
 ## Resources

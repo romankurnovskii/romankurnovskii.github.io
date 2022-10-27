@@ -11,7 +11,7 @@ featuredImage:
 weight: 1070
 ---
 
-[leetcode problem](https://leetcode.com/problems/valid-parentheses/)
+[LeetCode problem](https://leetcode.com/problems/valid-parentheses/)
 
 Given a string s containing just the characters `'('`, `')'`, `'{'`, `'}'`, `'['` and `']'`, determine if the input string is valid.
 
