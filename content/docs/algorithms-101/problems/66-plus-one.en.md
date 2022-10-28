@@ -1,6 +1,6 @@
 ---
 title: 66. Plus One
-description:
+description: LeetCode: 66. Plus One
 toc: false
 authors: [roman-kurnovskii]
 tags: [Array, Math]

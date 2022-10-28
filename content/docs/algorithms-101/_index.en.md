@@ -122,6 +122,7 @@ print(res)
 8. [x] [21. Merge Two Sorted Lists](problems/21-merge-two-sorted-lists) - Easy, [Linked List, Recursion]
 9. [x] [26. Remove Duplicates from Sorted Array](problems/26-remove-duplicates-from-sorted-array) - Easy, [Array, Two points]
 10. [x] [66. Plus One](problems/66-plus-one) - Easy, [Array, Math]
+11. [x] [69. Sqrt(x)](problems/69-sqrtx) - Easy, [Math, Binary Search]
 
 
 ## Resources
