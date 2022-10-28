@@ -1,6 +1,6 @@
 ---
 title: 69. Sqrt(x)
-description:
+description: Leetcode. 69. Sqrt(x)
 toc: false
 authors: [roman-kurnovskii]
 tags: []
