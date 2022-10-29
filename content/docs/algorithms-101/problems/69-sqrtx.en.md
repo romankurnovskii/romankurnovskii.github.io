@@ -9,7 +9,6 @@ series:
 date: 2022-10-28
 featuredImage:
 weight: 1110
-draft: true
 ---
 
 [LeetCode problem](https://leetcode.com/problems/sqrtx/)

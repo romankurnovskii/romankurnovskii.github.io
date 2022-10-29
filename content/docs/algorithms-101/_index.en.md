@@ -123,6 +123,7 @@ print(res)
 9. [x] [26. Remove Duplicates from Sorted Array](problems/26-remove-duplicates-from-sorted-array) - Easy, [Array, Two points]
 10. [x] [66. Plus One](problems/66-plus-one) - Easy, [Array, Math]
 11. [x] [69. Sqrt(x)](problems/69-sqrtx) - Easy, [Math, Binary Search]
+12. [x] [70. Climbing Stairs](problems/70-climbing-stairs) - Easy, [Math, "Dynamic Programming", Memoization]
 
 
 ## Resources
