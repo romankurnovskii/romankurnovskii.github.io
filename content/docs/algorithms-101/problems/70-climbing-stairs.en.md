@@ -1,6 +1,6 @@
 ---
 title: 70. Climbing Stairs
-description:
+description: LeetCode. 70. Climbing Stairs
 toc: false
 authors: [roman-kurnovskii]
 tags: [Math, "Dynamic Programming", Memoization]
