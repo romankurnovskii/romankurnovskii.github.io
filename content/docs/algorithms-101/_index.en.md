@@ -124,6 +124,7 @@ print(res)
 10. [x] [66. Plus One](problems/66-plus-one) - Easy, [Array, Math]
 11. [x] [69. Sqrt(x)](problems/69-sqrtx) - Easy, [Math, Binary Search]
 12. [x] [70. Climbing Stairs](problems/70-climbing-stairs) - Easy, [Math, "Dynamic Programming", Memoization]
+13. [x] [88. Merge Sorted Array](problems/88-merge-sorted-array) - Easy, []
 
 
 ## Resources
