@@ -1,6 +1,6 @@
 ---
 title: 26. Remove Duplicates from Sorted Array
-description: 26. Remove Duplicates from Sorted Array
+description: LeetCode 26. Remove Duplicates from Sorted Array
 toc: false
 authors: [roman-kurnovskii]
 tags: [Array, "Two points"]
@@ -8,7 +8,7 @@ categories: [Algorithms]
 series:
 date: 2022-10-26
 featuredImage:
-weight: 1090
+weight: 190
 ---
 
 [LeetCode problem]()

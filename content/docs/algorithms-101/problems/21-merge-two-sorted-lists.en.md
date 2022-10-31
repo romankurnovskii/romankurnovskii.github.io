@@ -8,7 +8,7 @@ categories: ["Algorithms"]
 series:
 date: 2022-10-25
 featuredImage:
-weight: 1080
+weight: 180
 ---
 
 [LeetCode problem](https://leetcode.com/problems/merge-two-sorted-lists/)

@@ -1,6 +1,6 @@
 ---
 title: 88. Merge Sorted Array
-description: LeetCode. 88. Merge Sorted Array
+description: LeetCode 88. Merge Sorted Array
 toc: false
 authors: [roman-kurnovskii]
 tags: []
@@ -8,7 +8,7 @@ categories: [Algorithms]
 series:
 date: 2022-10-30
 featuredImage:
-weight: 1112
+weight: 230
 ---
 
 [LeetCode problem](https://leetcode.com/problems/merge-sorted-array/)

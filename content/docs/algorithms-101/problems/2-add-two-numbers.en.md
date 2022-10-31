@@ -1,6 +1,6 @@
 ---
 title: 2. Add Two Numbers
-description:
+description: LeetCode 2. Add Two Numbers
 toc: false
 authors: [roman-kurnovskii]
 tags: [Linked List, Math, Recursion]
@@ -8,7 +8,7 @@ categories: [Algorithms]
 series:
 date: 2022-10-17
 featuredImage:
-weight: 1020
+weight: 120
 ---
 
 1. Before task: Create function for test data - [code snippet](../create-linkedlist)
