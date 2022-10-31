@@ -111,21 +111,7 @@ print(res)
 
 > List of problems cis mutable. Will take first not solved until all first top 100 problems are solved. It can take + ~5-15 problems
 
-
-1. [x] [1. Two Sum](problems/1-two-sum) - Easy, [Array, Hash Table]
-2. [x] [2. Add Two Numbers](problems/2-add-two-numbers) - Medium, [Linked List, Math, Recursion]
-3. [x] [3. Longest Substring Without Repeating Characters](problems/3-longest-substring-without-repeating-characters) - Medium, [Hash Table, String, Sliding Window]
-4. [x] [13. Roman to Integer](problems/13-roman-to-integer) - Easy, [Hash Table, Math, String]
-5. [x] [5. Longest Palindromic Substring](problems/5-longest-palindromic-substring) - Medium, [String, Dynamic Programming]
-6. [x] [14. Longest Common Prefix](problems/14-longest-common-prefix) - Easy, [String]
-7. [x] [20. Valid Parentheses](problems/20-valid-parentheses) - Easy, [String, Stack]
-8. [x] [21. Merge Two Sorted Lists](problems/21-merge-two-sorted-lists) - Easy, [Linked List, Recursion]
-9. [x] [26. Remove Duplicates from Sorted Array](problems/26-remove-duplicates-from-sorted-array) - Easy, [Array, Two points]
-10. [x] [66. Plus One](problems/66-plus-one) - Easy, [Array, Math]
-11. [x] [69. Sqrt(x)](problems/69-sqrtx) - Easy, [Math, Binary Search]
-12. [x] [70. Climbing Stairs](problems/70-climbing-stairs) - Easy, [Math, "Dynamic Programming", Memoization]
-13. [x] [88. Merge Sorted Array](problems/88-merge-sorted-array) - Easy, []
-
+[Problems order](./plan)
 
 ## Resources
 

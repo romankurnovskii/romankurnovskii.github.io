@@ -1,6 +1,6 @@
 ---
 title: 66. Plus One
-description: LeetCode. 66. Plus One
+description: LeetCode 66. Plus One
 toc: false
 authors: [roman-kurnovskii]
 tags: [Array, Math]
@@ -8,7 +8,7 @@ categories: [Algorithms]
 series:
 date: 2022-10-27
 featuredImage:
-weight: 1100
+weight: 200
 ---
 
 [LeetCode problem](https://leetcode.com/problems/plus-one/)

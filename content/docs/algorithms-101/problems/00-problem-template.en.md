@@ -1,6 +1,6 @@
 ---
 title: 00. Template
-description:
+description: LeetCode
 toc: false
 authors: [roman-kurnovskii]
 tags: []

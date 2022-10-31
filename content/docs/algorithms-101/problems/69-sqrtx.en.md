@@ -1,6 +1,6 @@
 ---
 title: 69. Sqrt(x)
-description: Leetcode. 69. Sqrt(x)
+description: Leetcode 69. Sqrt(x)
 toc: false
 authors: [roman-kurnovskii]
 tags: []
@@ -8,7 +8,7 @@ categories: [Algorithms]
 series:
 date: 2022-10-28
 featuredImage:
-weight: 1110
+weight: 210
 ---
 
 [LeetCode problem](https://leetcode.com/problems/sqrtx/)

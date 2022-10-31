@@ -1,6 +1,6 @@
 ---
 title: 1. Two Sum
-description:
+description: LeetCode 1. Two Sum
 toc: false
 authors: [roman-kurnovskii]
 tags: [Array, "Hash Table"]
@@ -8,7 +8,7 @@ categories: [Algorithms]
 series:
 date: 2022-10-16
 featuredImage:
-weight: 1010
+weight: 110
 ---
 
 

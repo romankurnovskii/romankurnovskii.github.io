@@ -1,6 +1,6 @@
 ---
 title: 70. Climbing Stairs
-description: LeetCode. 70. Climbing Stairs
+description: LeetCode 70. Climbing Stairs
 toc: false
 authors: [roman-kurnovskii]
 tags: [Math, "Dynamic Programming", Memoization]
@@ -8,7 +8,7 @@ categories: [Algorithms]
 series:
 date: 2022-10-29
 featuredImage:
-weight: 1111
+weight: 220
 ---
 
 [LeetCode problem](https://leetcode.com/problems/climbing-stairs/)

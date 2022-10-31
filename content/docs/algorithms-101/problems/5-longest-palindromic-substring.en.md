@@ -8,7 +8,7 @@ categories: [Algorithms]
 series:
 date: 2022-10-20
 featuredImage:
-weight: 1050
+weight: 150
 spentTime: 200min
 ---
 

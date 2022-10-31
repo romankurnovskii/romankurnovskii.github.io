@@ -8,7 +8,7 @@ categories: [Algorithms]
 series:
 date: 2022-10-23
 featuredImage:
-weight: 1070
+weight: 170
 ---
 
 [LeetCode problem](https://leetcode.com/problems/valid-parentheses/)
