@@ -6,9 +6,9 @@ authors: [roman-kurnovskii]
 tags: []
 categories: [Algorithms]
 series:
-date: 2022-10-19
+date: 2022-11-03
 featuredImage:
-weight: 1040
+weight: 260
 draft: true
 ---
 
@@ -30,6 +30,9 @@ draft: true
 
 ![test-case](../assets/.jpg)
 
+```python
+
+```
 
 ## Better solution
 
