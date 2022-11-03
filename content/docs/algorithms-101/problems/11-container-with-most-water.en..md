@@ -3,7 +3,7 @@ title: 11. Container With Most Water
 description: LeetCode 11. Container With Most Water
 toc: false
 authors: [roman-kurnovskii]
-tags: []
+tags: [Array, "Two Pointers", Greedy]
 categories: [Algorithms]
 series:
 date: 2022-11-03
@@ -39,7 +39,7 @@ Notice that you may not slant the container.
 
 **Idea:**
 
-Two Pointer
+- Two Pointer
 
 1. Max water area is limited by the height of the **shorter** line
 2. Get most left pointer and most right
@@ -48,7 +48,7 @@ Two Pointer
 ```python
 class Solution:
     def maxArea(self, height: List[int]) -> int:
-        p1 = 0
+        p1 = 0 # indexes
         p2 = len(height) - 1
 
         max_water = 0
