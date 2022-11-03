@@ -3,7 +3,7 @@ title: 88. Merge Sorted Array
 description: LeetCode 88. Merge Sorted Array
 toc: false
 authors: [roman-kurnovskii]
-tags: []
+tags: [Array, "Two Pointers", Sorting]
 categories: [Algorithms]
 series:
 date: 2022-10-30
