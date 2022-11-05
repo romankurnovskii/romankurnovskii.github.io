@@ -30,7 +30,7 @@ weight: 15
 |  14   | [94. Binary Tree Inorder Traversal](../problems/94-binary-tree-inorder-traversal)                                 | Easy       | Stack, Tree, Depth-First Search, Binary Tree |
 |  15   | [7. Reverse Integer](../problems/7-reverse-integer)                                                               | Medium     | Math                                         |
 |  16   | [11. Container With Most Water](../problems/11-container-with-most-water)                                         | Medium     | Array, Two Pointers, Greedy                  |
-|  17   |                                                                                                                   |            |                                              |
+|  17   | [15. 3Sum](../problems/15-3sum)                                                                                   | Medium     | Array, Two Pointers, Sorting                 |
 |  18   |                                                                                                                   |            |                                              |
 |  19   |                                                                                                                   |            |                                              |
 |  20   |                                                                                                                   |            |                                              |
