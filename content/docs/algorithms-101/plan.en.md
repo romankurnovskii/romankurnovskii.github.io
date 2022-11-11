@@ -31,6 +31,6 @@ weight: 15
 |  15   | [7. Reverse Integer](../problems/7-reverse-integer)                                                               | Medium     | Math                                         |
 |  16   | [11. Container With Most Water](../problems/11-container-with-most-water)                                         | Medium     | Array, Two Pointers, Greedy                  |
 |  17   | [15. 3Sum](../problems/15-3sum)                                                                                   | Medium     | Array, Two Pointers, Sorting                 |
-|  18   |                                                                                                                   |            |                                              |
+|  18   | [17. Letter Combinations of a Phone Number](../problems/17-letter-combinations-of-a-phone-number)                 | Medium     | Hash Table, String, Backtracking             |
 |  19   |                                                                                                                   |            |                                              |
 |  20   |                                                                                                                   |            |                                              |

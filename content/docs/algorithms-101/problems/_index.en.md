@@ -17,7 +17,7 @@ weight: 20
 ## Tips I learned
 
 - Don't code before "design" and understand the solution algorithm
-
+- First 20 problems. Spent 5 min for thinking. Next look for 2-3 different approaches. Understand. Decide. Write.
 ## Templates
 
 ### Sliding Window

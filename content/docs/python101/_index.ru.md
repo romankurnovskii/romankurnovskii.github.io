@@ -95,3 +95,6 @@ abcSort: true
 - Глава 42 - cx_Freeze
 - Глава 43 - PyInstaller
 - Глава 44 - Создание программы установки
+
+
+https://animator.github.io/learn-python/
