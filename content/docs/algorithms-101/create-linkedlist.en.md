@@ -3,8 +3,8 @@ title: Create LinkedList in Python
 description: Create LinkedList in Python
 toc: false
 authors: [roman-kurnovskii]
-tags: []
-categories: [Algorithms, LinkedList, Python]
+tags: ["Linked List"]
+categories: [Algorithms, Python]
 series: ["Code Snippets"]
 date: 2022-10-15
 featuredImage:
