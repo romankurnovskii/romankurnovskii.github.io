@@ -26,11 +26,11 @@ weight: 15
 |  10   | [66. Plus One](../problems/66-plus-one)                                                                           | Easy       | Array, Math                                  |
 |  11   | [69. Sqrt(x)](../problems/69-sqrtx)                                                                               | Easy       | Math, Binary Search                          |
 |  12   | [70. Climbing Stairs](../problems/70-climbing-stairs)                                                             | Easy       | Math, Dynamic Programming, Memoization       |
-|  13   | [88. Merge Sorted Array](../problems/88-merge-sorted-array)                                                       | Easy       |                                              |
+|  13   | [88. Merge Sorted Array](../problems/88-merge-sorted-array)                                                       | Easy       | Array, Two Pointers, Sorting                 |
 |  14   | [94. Binary Tree Inorder Traversal](../problems/94-binary-tree-inorder-traversal)                                 | Easy       | Stack, Tree, Depth-First Search, Binary Tree |
 |  15   | [7. Reverse Integer](../problems/7-reverse-integer)                                                               | Medium     | Math                                         |
 |  16   | [11. Container With Most Water](../problems/11-container-with-most-water)                                         | Medium     | Array, Two Pointers, Greedy                  |
 |  17   | [15. 3Sum](../problems/15-3sum)                                                                                   | Medium     | Array, Two Pointers, Sorting                 |
 |  18   | [17. Letter Combinations of a Phone Number](../problems/17-letter-combinations-of-a-phone-number)                 | Medium     | Hash Table, String, Backtracking             |
-|  19   |                                                                                                                   |            |                                              |
+|  19   | [19. Remove Nth Node From End of List](../problems/19-remove-nth-node-from-end-of-list)                           | Medium     | Linked List, Two Pointers                    |
 |  20   |                                                                                                                   |            |                                              |
