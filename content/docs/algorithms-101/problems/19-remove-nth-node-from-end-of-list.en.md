@@ -33,7 +33,7 @@ Given the 'head' of a linked list, remove the 'nth' node from the end of the lis
 
 ## First accepted
 
-[Create Linked List](../../create-linkedlist)
+[Create Linked List](../../helpers/#create-linked-list)
 
 **Idea:**
 

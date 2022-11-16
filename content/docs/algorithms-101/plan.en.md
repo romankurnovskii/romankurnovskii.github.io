@@ -33,4 +33,4 @@ weight: 15
 |  17   | [15. 3Sum](../problems/15-3sum)                                                                                   | Medium     | Array, Two Pointers, Sorting                 |
 |  18   | [17. Letter Combinations of a Phone Number](../problems/17-letter-combinations-of-a-phone-number)                 | Medium     | Hash Table, String, Backtracking             |
 |  19   | [19. Remove Nth Node From End of List](../problems/19-remove-nth-node-from-end-of-list)                           | Medium     | Linked List, Two Pointers                    |
-|  20   |                                                                                                                   |            |                                              |
+|  20   | [22. Generate Parentheses](../problems/22-generate-parentheses)                                                   | Medium     | String, Dynamic Programming, Backtracking    |
