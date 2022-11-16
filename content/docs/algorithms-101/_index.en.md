@@ -91,6 +91,7 @@ nodemon --exec python p.py
 ```python
 from typing import List
 
+
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         return 1
@@ -112,6 +113,13 @@ print(res)
 > List of problems cis mutable. Will take first not solved until all first top 100 problems are solved. It can take + ~5-15 problems
 
 [Problems order](./plan)
+
+## Tutorial subscriptions
+
+- https://leetcode.com/subscribe/
+- https://algo.monster/subscribe
+- https://www.algoexpert.io/purchase#algoexpert
+
 
 ## Resources
 

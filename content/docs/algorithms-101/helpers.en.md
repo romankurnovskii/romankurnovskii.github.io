@@ -1,16 +1,18 @@
 ---
-title: Create LinkedList in Python
-description: Create LinkedList in Python
-toc: false
+title: Help functions
+description: LeetCode Cookbook - Help functions
+toc: true
 authors: [roman-kurnovskii]
-tags: ["Linked List"]
-categories: [Algorithms, Python]
-series: ["Code Snippets"]
+tags: []
+categories: [Roadmaps, Algorithms]
+series:
 date: 2022-10-15
 featuredImage:
+draft: false
 weight: 30
 ---
 
+## Create Linked List
 
 Definition for singly-linked list:
 
