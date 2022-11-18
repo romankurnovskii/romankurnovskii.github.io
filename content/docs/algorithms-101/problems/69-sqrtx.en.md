@@ -3,12 +3,12 @@ title: 69. Sqrt(x)
 description: Leetcode 69. Sqrt(x)
 toc: false
 authors: [roman-kurnovskii]
-tags: []
+tags: [Math, "Binary Search"]
 categories: [Algorithms]
 series:
 date: 2022-10-28
 featuredImage:
-weight: 210
+weight: 80
 ---
 
 [LeetCode problem](https://leetcode.com/problems/sqrtx/)

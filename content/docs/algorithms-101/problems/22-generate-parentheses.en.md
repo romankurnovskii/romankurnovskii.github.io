@@ -8,7 +8,7 @@ categories: [Algorithms]
 series:
 date: 2022-11-16
 featuredImage:
-weight: 310
+weight: 200
 ---
 
 [LeetCode problem](https://leetcode.com/problems/generate-parentheses/)

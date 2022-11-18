@@ -8,7 +8,7 @@ categories: [Algorithms]
 series:
 date: 2022-10-16
 featuredImage:
-weight: 110
+weight: 10
 ---
 
 

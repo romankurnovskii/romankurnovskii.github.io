@@ -8,7 +8,7 @@ categories: [Algorithms]
 series:
 date: 2022-11-03
 featuredImage:
-weight: 260
+weight: 160
 ---
 
 [LeetCode problem](https://leetcode.com/problems/container-with-most-water/)

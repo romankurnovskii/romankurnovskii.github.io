@@ -18,6 +18,8 @@ weight: 30
 
 ## Two Pointers
 
+A classic way of writing a two-pointer sliding window. The right pointer keeps moving to the right until it cannot move to the right (the specific conditions depend on the topic). When the right pointer reaches the far right, start to move the left pointer to release the left boundary of the window. 
+
 - [Practice questions](/en/tags/two-pointers/)
 
 ## Sliding Window
@@ -25,23 +27,20 @@ weight: 30
 - [Practice questions](/en/tags/sliding-window/)
 
 ```js
-while(j < size()){
+while(j < size()) {
 
     // Calculation's happen's here
------------------------------------------------
     if(condition < k){
         j++;
     }
------------------------------------------------
 
------------------------------------------------
+
     else if(condition == k){
         // ans <-- calculation
         j++;
     }
-----------------------------------------------
 
-----------------------------------------------
+
     else if(condition > k){
         while(condition > k){
             // remove calculation for i
@@ -49,7 +48,6 @@ while(j < size()){
         }
         j++;
     }
-----------------------------------------------
 }
 return ans;
 ```

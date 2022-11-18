@@ -8,7 +8,7 @@ categories: [Algorithms]
 series:
 date: 2022-11-01
 featuredImage:
-weight: 250
+weight: 150
 ---
 
 [LeetCode problem](https://leetcode.com/problems/reverse-integer/)

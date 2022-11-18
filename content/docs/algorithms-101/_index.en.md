@@ -44,7 +44,7 @@ What is [SMART](https://www.atlassian.com/blog/productivity/how-to-write-smart-g
 - pass 20 problems: (4 weeks, 12 Nov 2022)
   - Ability to define algorithm/idea of solving problem.
   - participate in contest, solve minimum 1-2 problems in time.
-- next participate in contest/solve contest tasks every week:
+- next participate in contest/solve contest tasks **every week**:
   - solve minimum 1-2 problems.
   - fix results, correct next goal keys if I go ahead.
 - pass 40 problems: (10 Dec 2022)
@@ -62,7 +62,7 @@ What is [SMART](https://www.atlassian.com/blog/productivity/how-to-write-smart-g
 1. open task
 2. read
 3. first thoughts
-4. spend 15 minutes on coding
+4. spend ~~15~~10 minutes on coding/drawing/understanding algo
 5. finished or not, read hints
 6. spend 10 minutes on fixing if needed
 7. read solution, discussions
@@ -91,11 +91,9 @@ nodemon --exec python p.py
 ```python
 from typing import List
 
-
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         return 1
-
 
 nums = [1,2,3]
 target = 5
@@ -114,13 +112,12 @@ print(res)
 
 [Problems order](./plan)
 
+More info:
+
+- [Top MAANG interview questions 2022](https://docs.google.com/spreadsheets/d/1Axa5A3HrAEJx_HSOwPs1zStolnPJPmKAfIYxGTLPtQc/edit#gid=1436140231)
+
 ## Tutorial subscriptions
 
 - https://leetcode.com/subscribe/
 - https://algo.monster/subscribe
 - https://www.algoexpert.io/purchase#algoexpert
-
-
-## Resources
-
-- https://books.halfrost.com/leetcode/
