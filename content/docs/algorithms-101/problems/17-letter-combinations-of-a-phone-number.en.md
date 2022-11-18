@@ -8,7 +8,7 @@ categories: [Algorithms]
 series:
 date: 2022-11-11
 featuredImage:
-weight: 290
+weight: 180
 ---
 
 [LeetCode problem](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)

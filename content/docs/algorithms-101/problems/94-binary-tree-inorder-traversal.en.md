@@ -8,10 +8,10 @@ categories: [Algorithms]
 series:
 date: 2022-10-31
 featuredImage:
-weight: 240
+weight: 110
 ---
 
-#TODO
+##TODO
 
 - **implement**: create binary tree from list of values
 
@@ -48,8 +48,6 @@ Don't understand what needed. Why:
 In `1-null-2-3` `1` becomes the first because we loop to its left node which is `null`, then come back and first value here is `1`.
 
 ## First accepted
-
-![test-case](../assets/.jpg)
 
 ```python
 # Definition for a binary tree node.

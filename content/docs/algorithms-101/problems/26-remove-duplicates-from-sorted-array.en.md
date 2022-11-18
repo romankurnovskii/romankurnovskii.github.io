@@ -8,7 +8,7 @@ categories: [Algorithms]
 series:
 date: 2022-10-26
 featuredImage:
-weight: 190
+weight: 60
 ---
 
 [LeetCode problem]()

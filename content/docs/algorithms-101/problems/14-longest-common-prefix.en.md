@@ -8,7 +8,7 @@ categories: [Algorithms]
 series:
 date: 2022-10-21
 featuredImage:
-weight: 160
+weight: 30
 ---
 
 [LeetCode problem](https://leetcode.com/problems/longest-common-prefix/)

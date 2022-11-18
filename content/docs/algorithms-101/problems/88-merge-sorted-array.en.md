@@ -8,7 +8,7 @@ categories: [Algorithms]
 series:
 date: 2022-10-30
 featuredImage:
-weight: 230
+weight: 100
 ---
 
 [LeetCode problem](https://leetcode.com/problems/merge-sorted-array/)

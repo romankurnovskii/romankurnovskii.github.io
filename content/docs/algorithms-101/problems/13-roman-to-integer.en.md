@@ -8,7 +8,7 @@ categories: [Algorithms]
 series:
 date: 2022-10-19
 featuredImage:
-weight: 140
+weight: 20
 ---
 
 [LeetCode problem](https://leetcode.com/problems/roman-to-integer/)

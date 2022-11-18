@@ -8,7 +8,7 @@ categories: [Algorithms]
 series:
 date: 2022-10-29
 featuredImage:
-weight: 220
+weight: 90
 ---
 
 [LeetCode problem](https://leetcode.com/problems/climbing-stairs/)

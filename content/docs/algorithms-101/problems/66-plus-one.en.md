@@ -8,7 +8,7 @@ categories: [Algorithms]
 series:
 date: 2022-10-27
 featuredImage:
-weight: 200
+weight: 70
 ---
 
 [LeetCode problem](https://leetcode.com/problems/plus-one/)
