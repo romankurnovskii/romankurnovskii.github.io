@@ -50,29 +50,28 @@ Update plan by solution:
 3. Compare with your own / analyze
 4. Code
 
-<!-- ## Q2
+## Q2
 
-
-|   #   | Problem                                                                                                                      | Difficulty | Topics |
-| :---: | ---------------------------------------------------------------------------------------------------------------------------- | ---------- | ------ |
-|  21   | [28. Find the Index of the First Occurrence in a String](../problems/28-find-the-index-of-the-first-occurrence-in-a-string/) |            |        |
-|  22   | [29. Divide Two Integers](../problems/)                                                                                      |            |        |
-|  23   | [33. Search in Rotated Sorted Array](../problems/)                                                                           |            |        |
-|  24   | [34. Find First and Last Position of Element in Sorted Array](../problems/)                                                  |            |        |
-|  25   | [36. Valid Sudoku](../problems/)                                                                                             |            |        |
-|  26   | [38. Count and Say](../problems/)                                                                                            |            |        |
-|  27   | [](../problems/)                                                                                                             |            |        |
-|  28   | [](../problems/)                                                                                                             |            |        |
-|  29   | [](../problems/)                                                                                                             |            |        |
-|  30   | [](../problems/)                                                                                                             |            |        |
-|  31   | [](../problems/)                                                                                                             |            |        |
-|  32   | [](../problems/)                                                                                                             |            |        |
-|  33   | [](../problems/)                                                                                                             |            |        |
-|  34   | [](../problems/)                                                                                                             |            |        |
-|  35   | [](../problems/)                                                                                                             |            |        |
-|  36   | [](../problems/)                                                                                                             |            |        |
-|  37   | [](../problems/)                                                                                                             |            |        |
-|  38   | [](../problems/)                                                                                                             |            |        |
-|  39   | [](../problems/)                                                                                                             |            |        |
-|  40   | [](../problems/)                                                                                                             |            |        | --> |
+|   #   | Problem                                                                                                                      | Difficulty | Topics                                |
+| :---: | ---------------------------------------------------------------------------------------------------------------------------- | ---------- | ------------------------------------- |
+|  21   | [28. Find the Index of the First Occurrence in a String](../problems/28-find-the-index-of-the-first-occurrence-in-a-string/) | Medium     | String, Two pointers, String Matching |
+|  22   | [29. Divide Two Integers](../problems/)                                                                                      |            |                                       |
+|  23   | [33. Search in Rotated Sorted Array](../problems/)                                                                           |            |                                       |
+|  24   | [34. Find First and Last Position of Element in Sorted Array](../problems/)                                                  |            |                                       |
+|  25   | [36. Valid Sudoku](../problems/)                                                                                             |            |                                       |
+|  26   | [38. Count and Say](../problems/)                                                                                            |            |                                       |
+|  27   | [](../problems/)                                                                                                             |            |                                       |
+|  28   | [](../problems/)                                                                                                             |            |                                       |
+|  29   | [](../problems/)                                                                                                             |            |                                       |
+|  30   | [](../problems/)                                                                                                             |            |                                       |
+|  31   | [](../problems/)                                                                                                             |            |                                       |
+|  32   | [](../problems/)                                                                                                             |            |                                       |
+|  33   | [](../problems/)                                                                                                             |            |                                       |
+|  34   | [](../problems/)                                                                                                             |            |                                       |
+|  35   | [](../problems/)                                                                                                             |            |                                       |
+|  36   | [](../problems/)                                                                                                             |            |                                       |
+|  37   | [](../problems/)                                                                                                             |            |                                       |
+|  38   | [](../problems/)                                                                                                             |            |                                       |
+|  39   | [](../problems/)                                                                                                             |            |                                       |
+|  40   | [](../problems/)                                                                                                             |            |                                       |
 
