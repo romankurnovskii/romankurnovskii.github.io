@@ -61,7 +61,7 @@ class Solution:
         return sign * res
 ```
 
-Improve idea:
+**Improve idea:**
 
 1. Sum `divisor` after "success" subtract until result of subtract is `> 0`
 2. Subtract `divisor` back until we can subtract it from `dividend`
@@ -101,6 +101,8 @@ class Solution:
 
 ## Better idea
 
+**Idea:** [Bit manipulation](/en/posts/python-bitwise-operators/)
+
 ```python
 class Solution:
   def divide(self, dividend, divisor):
@@ -122,9 +124,10 @@ class Solution:
       return min(max(-2147483648, res), 2147483647)
 ```
 
-Description: https://leetcode.com/problems/divide-two-integers/discuss/715094/Python-fast-code-with-detailed-explanation
+Explanation: 
+- https://leetcode.com/problems/divide-two-integers/discuss/715094/Python-fast-code-with-detailed-explanation
 
-Another:
+**Another:**
 
 Time: $O(\log^2 n)$
 Space: $O(1)$
