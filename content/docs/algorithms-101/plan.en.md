@@ -55,7 +55,7 @@ Update plan by solution:
 |   #   | Problem                                                                                                                      | Difficulty | Topics                                |
 | :---: | ---------------------------------------------------------------------------------------------------------------------------- | ---------- | ------------------------------------- |
 |  21   | [28. Find the Index of the First Occurrence in a String](../problems/28-find-the-index-of-the-first-occurrence-in-a-string/) | Medium     | String, Two pointers, String Matching |
-|  22   | [29. Divide Two Integers](../problems/)                                                                                      |            |                                       |
+|  22   | [29. Divide Two Integers](../problems/29-divide-two-integers)                                                                | Medium     | Math, Bit Manipulation                |
 |  23   | [33. Search in Rotated Sorted Array](../problems/)                                                                           |            |                                       |
 |  24   | [34. Find First and Last Position of Element in Sorted Array](../problems/)                                                  |            |                                       |
 |  25   | [36. Valid Sudoku](../problems/)                                                                                             |            |                                       |
