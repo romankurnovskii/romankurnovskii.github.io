@@ -13,6 +13,8 @@ weight: 30
 
 ## Binary Search
 
+- [Binary search template](https://leetcode.com/explore/learn/card/binary-search/125/template-i/938/)
+
 ## Dynamic programming (DP)
 ## Depth-first search (DFS)
 
@@ -23,8 +25,6 @@ A classic way of writing a two-pointer sliding window. The right pointer keeps m
 - [Practice questions](/en/tags/two-pointers/)
 
 ## Sliding Window
-
-- [Practice questions](/en/tags/sliding-window/)
 
 ```js
 while(j < size()) {
@@ -52,6 +52,8 @@ while(j < size()) {
 return ans;
 ```
 
+- [Article on LeetCode](https://leetcode.com/explore/featured/card/leetcodes-interview-crash-course-data-structures-and-algorithms/703/arraystrings/4502/)
+- [Practice questions](/en/tags/sliding-window/)
 
 ## Backtracking
 
