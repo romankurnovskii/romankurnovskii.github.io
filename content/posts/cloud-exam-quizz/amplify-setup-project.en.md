@@ -8,7 +8,7 @@ categories: ["AWS", "AWS Amplify"]
 date: 2022-10-12:07:00+03:00
 featuredImage: 
 authors: [roman-kurnovskii]
-weight: 10
+# weight: 10
 ---
 
 ## Preface

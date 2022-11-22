@@ -8,7 +8,7 @@ categories: ["AWS", "AWS Amplify"]
 date: 2022-10-12:10:00+03:00
 featuredImage: 
 authors: [roman-kurnovskii]
-weight: 20
+# weight: 20
 ---
 
 You can use any custom domain with Amplify and no need register it with [AWS Route53](/en/categories/route-53/).
