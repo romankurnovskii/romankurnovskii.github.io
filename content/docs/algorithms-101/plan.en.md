@@ -56,9 +56,9 @@ Update plan by solution:
 | :---: | ---------------------------------------------------------------------------------------------------------------------------- | ---------- | ------------------------------------- |
 |  21   | [28. Find the Index of the First Occurrence in a String](../problems/28-find-the-index-of-the-first-occurrence-in-a-string/) | Medium     | String, Two pointers, String Matching |
 |  22   | [29. Divide Two Integers](../problems/29-divide-two-integers)                                                                | Medium     | Math, Bit Manipulation                |
-|  23   | [33. Search in Rotated Sorted Array](../problems/)                                                                           |            |                                       |
-|  24   | [34. Find First and Last Position of Element in Sorted Array](../problems/)                                                  |            |                                       |
-|  25   | [36. Valid Sudoku](../problems/)                                                                                             |            |                                       |
+|  23   | [33. Search in Rotated Sorted Array](../problems/33-search-in-rotated-sorted-arrays)                                         | Medium     | Array, Binary Search                  |
+|  24   | [34. Find First and Last Position of Element in Sorted Array](../problems/)                                                  | Medium     |                                       |
+|  25   | [36. Valid Sudoku](../problems/)                                                                                             | Medium     |                                       |
 |  26   | [38. Count and Say](../problems/)                                                                                            |            |                                       |
 |  27   | [](../problems/)                                                                                                             |            |                                       |
 |  28   | [](../problems/)                                                                                                             |            |                                       |
