@@ -121,3 +121,4 @@ More info:
 - https://leetcode.com/subscribe/
 - https://algo.monster/subscribe
 - https://www.algoexpert.io/purchase#algoexpert
+- https://www.scaler.com/topics/data-structures/what-is-data-structure/

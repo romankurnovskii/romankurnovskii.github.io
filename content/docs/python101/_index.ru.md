@@ -97,4 +97,5 @@ abcSort: true
 - Глава 44 - Создание программы установки
 
 
-https://animator.github.io/learn-python/
+- https://animator.github.io/learn-python/
+- https://www.scaler.com/topics/python/
