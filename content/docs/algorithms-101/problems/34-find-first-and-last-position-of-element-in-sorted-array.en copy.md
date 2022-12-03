@@ -3,7 +3,7 @@ title: 34. Find First and Last Position of Element in Sorted Array
 description: LeetCode 34. Find First and Last Position of Element in Sorted Array
 toc: false
 authors: [roman-kurnovskii]
-tags: []
+tags: [Array, "Bit Manipulation"]
 categories: [Algorithms]
 series:
 date: 2022-11-25
@@ -19,7 +19,7 @@ If `target` is not found in the array, return `[-1, -1]`.
 
 You must write an algorithm with `O(log n)` runtime complexity.
 
- 
+
 **Example 1:**
 
   Input: nums = [5,7,7,8,8,10], target = 8
@@ -40,7 +40,7 @@ You must write an algorithm with `O(log n)` runtime complexity.
 
 **Idea:**
 
-1. Find `target` index (`target_index`)
+1. Find `target` index (`target_index`) using [Binary Search](/en/docs/algorithms-101/algorithms/#binary-search)
    1. If **not exist** then return `[-1, -1]`
    2. If **exist** then goto step 2
 2. We got the middle index. For now this is the *most left* and *most right* index.
@@ -103,4 +103,20 @@ class Solution:
         right = find_most_right(target_idx)
         
         return [left, right]
+```
+
+## Code Ver2
+
+Use prebuilt Python functions:
+- [`bisect_left`](https://docs.python.org/3/library/bisect.html#bisect.bisect_left) 
+- [`bisect_right`](https://docs.python.org/3/library/bisect.html#bisect.bisect_right)
+
+```python
+class Solution:
+  def searchRange(self, nums: List[int], target: int) -> List[int]:
+    l = bisect_left(nums, target)
+    if l == len(nums) or nums[l] != target:
+      return -1, -1
+    r = bisect_right(nums, target) - 1
+    return l, r
 ```
