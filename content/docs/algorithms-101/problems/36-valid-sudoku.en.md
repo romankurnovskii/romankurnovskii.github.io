@@ -26,8 +26,7 @@ Each of the nine 3 x 3 sub-boxes of the grid must contain the digits `1-9` witho
 
 **Example 1:**
 
-https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Sudoku-by-L2G-20050714.svg/250px-Sudoku-by-L2G-20050714.svg.png
-![example]()
+![example](https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Sudoku-by-L2G-20050714.svg/250px-Sudoku-by-L2G-20050714.svg.png)
 
     Input: board = 
     [["5","3",".",".","7",".",".",".","."]
