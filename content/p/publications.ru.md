@@ -12,6 +12,9 @@ lastmod: "2021-03-31T13:11:22+08:00"
 featuredImage:
 draft: false
 ---
+[![123](https://scholar.google.ru/intl/en/scholar/images/1x/scholar_logo_24dp.png)](https://scholar.google.com/citations?user=R5xmgOgAAAAJ&authuser=1)
+https://scholar.google.com/citations?user=R5xmgOgAAAAJ&authuser=1
+
 
 ### Печатные журналы / сборники
 

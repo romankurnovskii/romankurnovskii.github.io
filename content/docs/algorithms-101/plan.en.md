@@ -58,7 +58,7 @@ Update plan by solution:
 |  22   | [29. Divide Two Integers](../problems/29-divide-two-integers)                                                                      | Medium     | Math, Bit Manipulation                |
 |  23   | [33. Search in Rotated Sorted Array](../problems/33-search-in-rotated-sorted-arrays)                                               | Medium     | Array, Binary Search                  |
 |  24   | [34. Find First and Last Position of Element in Sorted Array](../problems/find-first-and-last-position-of-element-in-sorted-array) | Medium     | Array, Binary Search                  |
-|  25   | [36. Valid Sudoku](../problems/)                                                                                                   | Medium     |                                       |
+|  25   | [36. Valid Sudoku](../problems/36-valid-sudoku)                                                                                    | Medium     | Array, Hash Table, Matrix             |
 |  26   | [38. Count and Say](../problems/)                                                                                                  |            |                                       |
 |  27   | [](../problems/)                                                                                                                   |            |                                       |
 |  28   | [](../problems/)                                                                                                                   |            |                                       |
@@ -74,4 +74,3 @@ Update plan by solution:
 |  38   | [](../problems/)                                                                                                                   |            |                                       |
 |  39   | [](../problems/)                                                                                                                   |            |                                       |
 |  40   | [](../problems/)                                                                                                                   |            |                                       |
-
