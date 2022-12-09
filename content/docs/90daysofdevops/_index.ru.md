@@ -7,7 +7,7 @@ authors:
   - roman-kurnovskii
 tags:
 categories: [треки]
-series: []
+series: [руководства]
 date: "2022-04-21"
 lastmod: "2022-04-21"
 draft: false
