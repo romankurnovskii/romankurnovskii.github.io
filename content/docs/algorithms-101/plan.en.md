@@ -59,8 +59,8 @@ Update plan by solution:
 |  23   | [33. Search in Rotated Sorted Array](../problems/33-search-in-rotated-sorted-arrays)                                               | Medium     | Array, Binary Search                  |
 |  24   | [34. Find First and Last Position of Element in Sorted Array](../problems/find-first-and-last-position-of-element-in-sorted-array) | Medium     | Array, Binary Search                  |
 |  25   | [36. Valid Sudoku](../problems/36-valid-sudoku)                                                                                    | Medium     | Array, Hash Table, Matrix             |
-|  26   | [38. Count and Say](../problems/38-count-and-say)                                           |   Medium         |               String                        |
-|  27   | [](../problems/)                                                                                                                   |            |                                       |
+|  26   | [38. Count and Say](../problems/38-count-and-say)                                                                                  | Medium     | String                                |
+|  27   | [46. Permutations](../problems/46-permutations)                                                                                    | Medium     | Array, Backtracking                   |
 |  28   | [](../problems/)                                                                                                                   |            |                                       |
 |  29   | [](../problems/)                                                                                                                   |            |                                       |
 |  30   | [](../problems/)                                                                                                                   |            |                                       |

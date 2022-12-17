@@ -1,11 +1,11 @@
 ---
-title: Подготовка диссертации
+title: Диссертация
 description: Подготовка диссертации
 toc: true
 authors: [roman-kurnovskii]
 tags: []
 categories: [Roadmaps]
-series:
+series: [руководства]
 date: 2022-12-12
 draft: false
 featuredImage:
