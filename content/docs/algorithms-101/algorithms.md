@@ -36,6 +36,8 @@ weight: 30
 ## Dynamic programming (DP)
 ## Depth-first search (DFS)
 
+
+
 ## Two Pointers
 
 A classic way of writing a two-pointer sliding window. The right pointer keeps moving to the right until it cannot move to the right (the specific conditions depend on the topic). When the right pointer reaches the far right, start to move the left pointer to release the left boundary of the window. 
@@ -52,12 +54,10 @@ while(j < size()) {
         j++;
     }
 
-
     else if(condition == k){
         // ans <-- calculation
         j++;
     }
-
 
     else if(condition > k){
         while(condition > k){
