@@ -4,7 +4,7 @@ description: LeetCode 19. Remove Nth Node From End of List
 toc: false
 authors: [roman-kurnovskii]
 tags: [Medium,  "Linked List", "Two Pointers"  ]
-categories: [Algorithms]
+categories: [Algorithms, Medium]
 series:
 date: 2022-11-13
 featuredImage:

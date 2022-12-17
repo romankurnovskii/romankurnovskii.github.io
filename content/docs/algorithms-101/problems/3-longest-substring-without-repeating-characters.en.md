@@ -4,7 +4,7 @@ description: LeetCode 3. Longest Substring Without Repeating Characters
 toc: false
 authors: [roman-kurnovskii]
 tags: ["Hash Table", String, "Sliding Window"]
-categories: [Algorithms]
+categories: [Algorithms, Medium]
 series:
 date: 2022-10-18
 featuredImage:

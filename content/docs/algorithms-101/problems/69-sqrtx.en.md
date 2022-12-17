@@ -4,7 +4,7 @@ description: Leetcode 69. Sqrt(x)
 toc: false
 authors: [roman-kurnovskii]
 tags: [Math, "Binary Search"]
-categories: [Algorithms]
+categories: [Algorithms, Easy]
 series:
 date: 2022-10-28
 featuredImage:

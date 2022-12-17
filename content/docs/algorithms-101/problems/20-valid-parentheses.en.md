@@ -4,7 +4,7 @@ description: Leetcode 20. Valid Parentheses solution
 toc: false
 authors: [roman-kurnovskii]
 tags: [String, Stack]
-categories: [Algorithms]
+categories: [Algorithms, Easy]
 series:
 date: 2022-10-23
 featuredImage:
@@ -18,8 +18,8 @@ Given a string s containing just the characters `'('`, `')'`, `'{'`, `'}'`, `'['
 An input string is valid if:
 
 1. Open brackets must be closed by the same type of brackets.
-1. Open brackets must be closed in the correct order.
-1. Every close bracket has a corresponding open bracket of the same type.
+2. Open brackets must be closed in the correct order.
+3. Every close bracket has a corresponding open bracket of the same type.
 
 **Example 1:**
 

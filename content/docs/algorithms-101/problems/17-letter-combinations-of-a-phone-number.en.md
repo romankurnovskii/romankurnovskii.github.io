@@ -4,7 +4,7 @@ description: LeetCode 17. Letter Combinations of a Phone Number
 toc: false
 authors: [roman-kurnovskii]
 tags: ["Hash Table", "String", "Backtracking"]
-categories: [Algorithms]
+categories: [Algorithms, Medium]
 series:
 date: 2022-11-11
 featuredImage:

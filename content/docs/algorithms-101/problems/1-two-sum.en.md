@@ -4,7 +4,7 @@ description: LeetCode 1. Two Sum
 toc: false
 authors: [roman-kurnovskii]
 tags: [Array, "Hash Table"]
-categories: [Algorithms]
+categories: [Algorithms, Easy]
 series:
 date: 2022-10-16
 featuredImage:

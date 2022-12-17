@@ -4,7 +4,7 @@ description: LeetCode 38. Count and Say
 toc: false
 authors: [roman-kurnovskii]
 tags: [String]
-categories: [Algorithms]
+categories: [Algorithms, Medium]
 series:
 date: 2022-12-08
 featuredImage:

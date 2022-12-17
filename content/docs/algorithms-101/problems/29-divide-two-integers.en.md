@@ -4,7 +4,7 @@ description: LeetCode 29. Divide Two Integers
 toc: false
 authors: [roman-kurnovskii]
 tags: [Math, "Bit Manipulation"]
-categories: [Algorithms]
+categories: [Algorithms, Medium]
 series:
 date: 2022-11-20
 featuredImage:

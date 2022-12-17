@@ -4,7 +4,7 @@ description: LeetCode 33. Search in Rotated Sorted Array
 toc: false
 authors: [roman-kurnovskii]
 tags: [Math, "Bit Manipulation"]
-categories: [Algorithms]
+categories: [Algorithms, Medium]
 series:
 date: 2022-11-24
 featuredImage:

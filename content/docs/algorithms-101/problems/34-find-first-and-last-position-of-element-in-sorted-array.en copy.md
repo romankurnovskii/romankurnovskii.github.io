@@ -4,7 +4,7 @@ description: LeetCode 34. Find First and Last Position of Element in Sorted Arra
 toc: false
 authors: [roman-kurnovskii]
 tags: [Array, "Bit Manipulation"]
-categories: [Algorithms]
+categories: [Algorithms, Medium]
 series:
 date: 2022-11-25
 featuredImage:

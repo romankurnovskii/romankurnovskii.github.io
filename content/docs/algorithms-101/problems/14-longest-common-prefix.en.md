@@ -4,7 +4,7 @@ description: Leetcode 14. Longest Common Prefix
 toc: false
 authors: [roman-kurnovskii]
 tags: [String]
-categories: [Algorithms]
+categories: [Algorithms, Easy]
 series:
 date: 2022-10-21
 featuredImage:
