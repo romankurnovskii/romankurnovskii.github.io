@@ -4,7 +4,7 @@ description: LeetCode 22. Generate Parentheses
 toc: false
 authors: [roman-kurnovskii]
 tags: [String, "Dynamic Programming", Backtracking]
-categories: [Algorithms]
+categories: [Algorithms, Medium]
 series:
 date: 2022-11-16
 featuredImage:

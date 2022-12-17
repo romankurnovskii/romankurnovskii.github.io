@@ -4,7 +4,7 @@ description: Leetcode 5. Longest Palindromic Substring
 toc: true
 authors: [roman-kurnovskii]
 tags: [String, "Dynamic Programming"]
-categories: [Algorithms]
+categories: [Algorithms, Medium]
 series:
 date: 2022-10-20
 featuredImage:

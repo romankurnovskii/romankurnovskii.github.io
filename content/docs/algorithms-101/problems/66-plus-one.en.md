@@ -4,7 +4,7 @@ description: LeetCode 66. Plus One
 toc: false
 authors: [roman-kurnovskii]
 tags: [Array, Math]
-categories: [Algorithms]
+categories: [Algorithms, Easy]
 series:
 date: 2022-10-27
 featuredImage:

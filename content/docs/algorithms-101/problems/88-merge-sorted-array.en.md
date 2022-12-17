@@ -4,7 +4,7 @@ description: LeetCode 88. Merge Sorted Array
 toc: false
 authors: [roman-kurnovskii]
 tags: [Array, "Two Pointers", Sorting]
-categories: [Algorithms]
+categories: [Algorithms, Easy]
 series:
 date: 2022-10-30
 featuredImage:

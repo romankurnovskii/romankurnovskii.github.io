@@ -4,7 +4,7 @@ description: Leetcode 13. Roman to Integer - Solution
 toc: false
 authors: [roman-kurnovskii]
 tags: ["Hash Table", Math, String]
-categories: [Algorithms]
+categories: [Algorithms, Easy]
 series:
 date: 2022-10-19
 featuredImage:

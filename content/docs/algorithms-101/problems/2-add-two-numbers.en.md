@@ -4,7 +4,7 @@ description: LeetCode 2. Add Two Numbers
 toc: false
 authors: [roman-kurnovskii]
 tags: [Linked List, Math, Recursion]
-categories: [Algorithms]
+categories: [Algorithms, Medium]
 series:
 date: 2022-10-17
 featuredImage:

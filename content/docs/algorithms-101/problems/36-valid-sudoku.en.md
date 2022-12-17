@@ -4,7 +4,7 @@ description: LeetCode 36. Valid Sudoku
 toc: false
 authors: [roman-kurnovskii]
 tags: [Array, "Hash Table", Matrix]
-categories: [Algorithms]
+categories: [Algorithms, Medium]
 series:
 date: 2022-12-03
 featuredImage:

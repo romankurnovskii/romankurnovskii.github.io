@@ -4,7 +4,7 @@ description: LeetCode 46. Permutations
 toc: false
 authors: [roman-kurnovskii]
 tags: [Array, Backtracking]
-categories: [Algorithms]
+categories: [Algorithms, Medium]
 series:
 date: 2022-12-17
 featuredImage:

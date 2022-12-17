@@ -4,7 +4,7 @@ description: LeetCode 11. Container With Most Water
 toc: false
 authors: [roman-kurnovskii]
 tags: [Array, "Two Pointers", Greedy]
-categories: [Algorithms]
+categories: [Algorithms, Medium]
 series:
 date: 2022-11-03
 featuredImage:

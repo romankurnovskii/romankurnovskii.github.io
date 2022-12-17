@@ -4,7 +4,7 @@ description: LeetCode 7. Reverse Integer
 toc: false
 authors: [roman-kurnovskii]
 tags: [Math]
-categories: [Algorithms]
+categories: [Algorithms, Medium]
 series:
 date: 2022-11-01
 featuredImage:
