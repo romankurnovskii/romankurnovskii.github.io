@@ -333,7 +333,7 @@ For example, markup:
   * Milk
   * Cheese
 
-## Other eleemnts - abbr, sub, sup, kbd, mark
+## Other elemnts - abbr, sub, sup, kbd, mark
 
 <abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
 
@@ -346,3 +346,7 @@ Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the ses
 Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
 
 💡 _Data structure_ is a container that stores data in a specific format. This container decides how the outside world can read or change this data.
+
+## Resources
+
+- [Style from Google](https://github.com/google/styleguide/blob/gh-pages/docguide/style.md)

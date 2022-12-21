@@ -61,8 +61,8 @@ Update plan by solution:
 |  25   | [36. Valid Sudoku](../problems/36-valid-sudoku)                                                                                    | Medium     | Array, Hash Table, Matrix             |
 |  26   | [38. Count and Say](../problems/38-count-and-say)                                                                                  | Medium     | String                                |
 |  27   | [46. Permutations](../problems/46-permutations)                                                                                    | Medium     | Array, Backtracking                   |
-|  28   | [](../problems/)                                                                                                                   |            |                                       |
-|  29   | [](../problems/)                                                                                                                   |            |                                       |
+|  28   | [48. Rotate Image](../problems/48-rotate-image)                                                                                    | Medium     | Array, Math, Matrix                   |
+|  29   | [](../problems/49-group-anagrams)                                                                                                  | Medium     | Array, Hash Table, String, Sorting    |
 |  30   | [](../problems/)                                                                                                                   |            |                                       |
 |  31   | [](../problems/)                                                                                                                   |            |                                       |
 |  32   | [](../problems/)                                                                                                                   |            |                                       |
