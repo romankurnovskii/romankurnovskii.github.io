@@ -99,416 +99,410 @@ speak.stop()
 ## Полный обзор
 
 ```python
-# Single line comments start with a number symbol.
 
-""" Multiline strings can be written
-    using three "s, and are often used
-    as documentation.
+# Однострочные комментарии начинаются с символа решётки.
+
+""" Многострочный текст может быть
+    записан, используя 3 знака " и обычно используется
+    в качестве встроенной документации
 """
 
 ####################################################
-## 1. Primitive Datatypes and Operators
+## 1. Примитивные типы данных и операторы
 ####################################################
 
-# You have numbers
+# У вас есть числа
 3  # => 3
 
-# Math is what you would expect
+# Математика работает вполне ожидаемо
 1 + 1   # => 2
 8 - 1   # => 7
 10 * 2  # => 20
 35 / 5  # => 7.0
 
-# Integer division rounds down for both positive and negative numbers.
-5 // 3       # => 1
--5 // 3      # => -2
-5.0 // 3.0   # => 1.0 # works on floats too
--5.0 // 3.0  # => -2.0
+# Результат целочисленного деления округляется в меньшую сторону
+# как для положительных, так и для отрицательных чисел.
+5 // 3      # => 1
+-5 // 3     # => -2
+5.0 // 3.0  # => 1.0 # работает и для чисел с плавающей запятой
+-5.0 // 3.0 # => -2.0
 
-# The result of division is always a float
+# # Результат деления возвращает число с плавающей запятой
 10.0 / 3  # => 3.3333333333333335
 
-# Modulo operation
-7 % 3   # => 1
-# i % j have the same sign as j, unlike C
--7 % 3  # => 2
+# Остаток от деления
+7 % 3  # => 1
 
-# Exponentiation (x**y, x to the yth power)
+# Возведение в степень
 2**3  # => 8
 
-# Enforce precedence with parentheses
+# Приоритет операций указывается скобками
 1 + 3 * 2    # => 7
 (1 + 3) * 2  # => 8
 
-# Boolean values are primitives (Note: the capitalization)
+# Булевы значения - примитивы (Обратите внимание на заглавную букву)
 True   # => True
 False  # => False
 
-# negate with not
+# Для отрицания используется ключевое слово not
 not True   # => False
 not False  # => True
 
-# Boolean Operators
-# Note "and" and "or" are case-sensitive
+# Булевы операторы
+# Обратите внимание: ключевые слова "and" и "or" чувствительны к регистру букв
 True and False  # => False
 False or True   # => True
 
-# True and False are actually 1 and 0 but with different keywords
-True + True # => 2
-True * 8    # => 8
-False - 5   # => -5
+# True и False на самом деле 1 и 0, но с разными ключевыми словами
+True + True  # => 2
+True * 8     # => 8
+False - 5    # => -5
 
-# Comparison operators look at the numerical value of True and False
-0 == False  # => True
-1 == True   # => True
-2 == True   # => False
--5 != False # => True
+# Операторы сравнения обращают внимание на числовое значение True и False
+0 == False   # => True
+1 == True    # => True
+2 == True    # => False
+-5 != False  # => True
 
-# None, 0, and empty strings/lists/dicts/tuples/sets all evaluate to False.
-# All other values are True
-bool(0)     # => False
-bool("")    # => False
-bool([])    # => False
-bool({})    # => False
-bool(())    # => False
-bool(set()) # => False
-bool(4)     # => True
-bool(-6)    # => True
+# Использование булевых логических операторов на типах int превращает их в булевы значения, но возвращаются оригинальные значения
+# Не путайте с bool(ints) и bitwise and/or (&,|)
+bool(0)   # => False
+bool(4)   # => True
+bool(-6)  # => True
+0 and 2   # => 0
+-5 or 0   # => -5
 
-# Using boolean logical operators on ints casts them to booleans for evaluation, but their non-cast value is returned
-# Don't mix up with bool(ints) and bitwise and/or (&,|)
-bool(0)     # => False
-bool(2)     # => True
-0 and 2     # => 0
-bool(-5)    # => True
-bool(2)     # => True
--5 or 0     # => -5
-
-# Equality is ==
+# Равенство — это ==
 1 == 1  # => True
 2 == 1  # => False
 
-# Inequality is !=
+# Неравенство — это !=
 1 != 1  # => False
 2 != 1  # => True
 
-# More comparisons
+# Ещё немного сравнений
 1 < 10  # => True
 1 > 10  # => False
 2 <= 2  # => True
 2 >= 2  # => True
 
-# Seeing whether a value is in a range
+# Проверка, находится ли значение в диапазоне
 1 < 2 and 2 < 3  # => True
 2 < 3 and 3 < 2  # => False
-# Chaining makes this look nicer
+
+# Сравнения могут быть записаны цепочкой
 1 < 2 < 3  # => True
 2 < 3 < 2  # => False
 
-# (is vs. ==) is checks if two variables refer to the same object, but == checks
-# if the objects pointed to have the same values.
-a = [1, 2, 3, 4]  # Point a at a new list, [1, 2, 3, 4]
-b = a             # Point b at what a is pointing to
-b is a            # => True, a and b refer to the same object
-b == a            # => True, a's and b's objects are equal
-b = [1, 2, 3, 4]  # Point b at a new list, [1, 2, 3, 4]
-b is a            # => False, a and b do not refer to the same object
-b == a            # => True, a's and b's objects are equal
+# (is vs. ==) ключевое слово is проверяет, относятся ли две переменные к одному и тому же объекту, но == проверяет если указанные объекты имеют одинаковые значения.
+a = [1, 2, 3, 4]  # a указывает на новый список, [1, 2, 3, 4]
+b = a             # b указывает на то, что указывает a
+b is a            # => True, a и b относятся к одному и тому же объекту
+b == a            # => True, Объекты a и b равны
+b = [1, 2, 3, 4]  # b указывает на новый список, [1, 2, 3, 4]
+b is a            # => False, a и b не относятся к одному и тому же объекту
+b == a            # => True, Объекты a и b равны
 
-# Strings are created with " or '
-"This is a string."
-'This is also a string.'
+# Строки определяются символом " или '
+"Это строка."
+'Это тоже строка.'
 
-# Strings can be added too
-"Hello " + "world!"  # => "Hello world!"
-# String literals (but not variables) can be concatenated without using '+'
-"Hello " "world!"    # => "Hello world!"
+# И строки тоже могут складываться! Хотя лучше не злоупотребляйте этим.
+"Привет " + "мир!"  # => "Привет мир!"
 
-# A string can be treated like a list of characters
-"Hello world!"[0]  # => 'H'
+# Строки (но не переменные) могут быть объединены без использования '+'
+"Привет " "мир!"  # => "Привет мир!"
 
-# You can find the length of a string
-len("This is a string")  # => 16
+# Со строкой можно работать, как со списком символов
+"Привет мир!"[0]  # => 'П'
 
-# You can also format using f-strings or formatted string literals (in Python 3.6+)
-name = "Reiko"
-f"She said her name is {name}." # => "She said her name is Reiko"
-# You can basically put any Python expression inside the braces and it will be output in the string.
-f"{name} is {len(name)} characters long." # => "Reiko is 5 characters long."
+# Вы можете найти длину строки
+len("Это строка")  # => 10
 
-# None is an object
+# Вы также можете форматировать, используя f-строки (в Python 3.6+)
+name = "Рейко"
+f"Она сказала, что ее зовут {name}." # => "Она сказала, что ее зовут Рейко"
+# Вы можете поместить любой оператор Python в фигурные скобки, и он будет выведен в строке.
+f"{name} состоит из {len(name)} символов." # => "Рэйко состоит из 5 символов."
+
+
+# None является объектом
 None  # => None
 
-# Don't use the equality "==" symbol to compare objects to None
-# Use "is" instead. This checks for equality of object identity.
+# Не используйте оператор равенства "==" для сравнения
+# объектов с None. Используйте для этого "is"
 "etc" is None  # => False
 None is None   # => True
 
-# None, 0, and empty strings/lists/dicts/tuples/sets all evaluate to False.
-# All other values are True
-bool(0)     # => False
-bool("")    # => False
-bool([])    # => False
-bool({})    # => False
-bool(())    # => False
-bool(set()) # => False
+# None, 0 и пустые строки/списки/словари/кортежи приводятся к False.
+# Все остальные значения равны True
+bool(0)   # => False
+bool("")  # => False
+bool([])  # => False
+bool({})  # => False
+bool(())  # => False
+
 
 ####################################################
-## 2. Variables and Collections
+## 2. Переменные и Коллекции
 ####################################################
 
-# Python has a print function
-print("I'm Python. Nice to meet you!")  # => I'm Python. Nice to meet you!
+# В Python есть функция Print
+print("Я Python. Приятно познакомиться!")  # => Я Python. Приятно познакомиться!
 
-# By default the print function also prints out a newline at the end.
-# Use the optional argument end to change the end string.
-print("Hello, World", end="!")  # => Hello, World!
+# По умолчанию функция, print() также выводит новую строку в конце.
+# Используйте необязательный аргумент end, чтобы изменить последнюю строку.
+print("Привет мир", end="!")  # => Привет мир!
 
-# Simple way to get input data from console
-input_string_var = input("Enter some data: ") # Returns the data as a string
+# Простой способ получить входные данные из консоли
+input_string_var = input("Введите данные: ")  # Возвращает данные в виде строки
+# Примечание: в более ранних версиях Python метод input() назывался raw_input()
 
-# There are no declarations, only assignments.
-# Convention is to use lower_case_with_underscores
+# Объявлять переменные перед инициализацией не нужно.
+# По соглашению используется нижний_регистр_с_подчёркиваниями
 some_var = 5
 some_var  # => 5
 
-# Accessing a previously unassigned variable is an exception.
-# See Control Flow to learn more about exception handling.
-some_unknown_var  # Raises a NameError
+# При попытке доступа к неинициализированной переменной выбрасывается исключение.
+# Об исключениях см. раздел "Поток управления и итерируемые объекты".
+some_unknown_var  # Выбрасывает ошибку NameError
 
-# if can be used as an expression
-# Equivalent of C's '?:' ternary operator
-"yay!" if 0 > 1 else "nay!"  # => "nay!"
+# if можно использовать как выражение
+# Эквивалент тернарного оператора '?:' в C
+"да!" if 0 > 1 else "нет!"  # => "нет!"
 
-# Lists store sequences
+# Списки хранят последовательности
 li = []
-# You can start with a prefilled list
+# Можно сразу начать с заполненного списка
 other_li = [4, 5, 6]
 
-# Add stuff to the end of a list with append
-li.append(1)    # li is now [1]
-li.append(2)    # li is now [1, 2]
-li.append(4)    # li is now [1, 2, 4]
-li.append(3)    # li is now [1, 2, 4, 3]
-# Remove from the end with pop
-li.pop()        # => 3 and li is now [1, 2, 4]
-# Let's put it back
-li.append(3)    # li is now [1, 2, 4, 3] again.
+# Объекты добавляются в конец списка методом append()
+li.append(1)  # [1]
+li.append(2)  # [1, 2]
+li.append(4)  # [1, 2, 4]
+li.append(3)  # [1, 2, 4, 3]
+# И удаляются с конца методом pop()
+li.pop()      # => возвращает 3 и li становится равен [1, 2, 4]
+# Положим элемент обратно
+li.append(3)  # [1, 2, 4, 3].
 
-# Access a list like you would any array
-li[0]   # => 1
-# Look at the last element
+# Обращайтесь со списком, как с обычным массивом
+li[0]  # => 1
+
+# Обратимся к последнему элементу
 li[-1]  # => 3
 
-# Looking out of bounds is an IndexError
-li[4]  # Raises an IndexError
+# Попытка выйти за границы массива приведёт к ошибке индекса
+li[4]  # Выбрасывает ошибку IndexError
 
-# You can look at ranges with slice syntax.
-# The start index is included, the end index is not
-# (It's a closed/open range for you mathy types.)
-li[1:3]   # Return list from index 1 to 3 => [2, 4]
-li[2:]    # Return list starting from index 2 => [4, 3]
-li[:3]    # Return list from beginning until index 3  => [1, 2, 4]
-li[::2]   # Return list selecting every second entry => [1, 4]
-li[::-1]  # Return list in reverse order => [3, 4, 2, 1]
-# Use any combination of these to make advanced slices
-# li[start:end:step]
+# Можно обращаться к диапазону, используя так называемые срезы
+# (Для тех, кто любит математику, это называется замкнуто-открытый интервал).
+li[1:3]   # Вернуть список из индекса с 1 по 3 => [2, 4]
+li[2:]    # Вернуть список, начиная с индекса 2 => [4, 3]
+li[:3]    # Вернуть список с начала до индекса 3  => [1, 2, 4]
+li[::2]   # Вернуть список, выбирая каждую вторую запись => [1, 4]
+li[::-1]  # Вернуть список в обратном порядке => [3, 4, 2, 1]
+# Используйте сочетания всего вышеназванного для выделения более сложных срезов
+# li[начало:конец:шаг]
 
-# Make a one layer deep copy using slices
-li2 = li[:]  # => li2 = [1, 2, 4, 3] but (li2 is li) will result in false.
+# Сделать однослойную глубокую копию, используя срезы
+li2 = li[:]  # => li2 = [1, 2, 4, 3], но (li2 is li) вернет False.
 
-# Remove arbitrary elements from a list with "del"
-del li[2]  # li is now [1, 2, 3]
+# Удаляем произвольные элементы из списка оператором del
+del li[2]  # [1, 2, 3]
 
-# Remove first occurrence of a value
-li.remove(2)  # li is now [1, 3]
-li.remove(2)  # Raises a ValueError as 2 is not in the list
+# Удалить первое вхождение значения
+li.remove(2)  # [1, 3]
+li.remove(2)  # Выбрасывает ошибку ValueError поскольку 2 нет в списке
 
-# Insert an element at a specific index
-li.insert(1, 2)  # li is now [1, 2, 3] again
+# Вставить элемент по определенному индексу
+li.insert(1, 2)  # [1, 2, 3]
 
-# Get the index of the first item found matching the argument
+# Получить индекс первого найденного элемента, соответствующего аргументу
 li.index(2)  # => 1
-li.index(4)  # Raises a ValueError as 4 is not in the list
+li.index(4)  # Выбрасывает ошибку ValueError поскольку 4 нет в списке
 
-# You can add lists
-# Note: values for li and for other_li are not modified.
+# Вы можете складывать, или, как ещё говорят, конкатенировать списки
+# Обратите внимание: значения li и other_li при этом не изменились.
 li + other_li  # => [1, 2, 3, 4, 5, 6]
 
-# Concatenate lists with "extend()"
-li.extend(other_li)  # Now li is [1, 2, 3, 4, 5, 6]
+# Объединять списки можно методом extend()
+li.extend(other_li) # Теперь li содержит [1, 2, 3, 4, 5, 6]
 
-# Check for existence in a list with "in"
+# Проверить элемент на наличие в списке можно оператором in
 1 in li  # => True
 
-# Examine the length with "len()"
+# Длина списка вычисляется функцией len
 len(li)  # => 6
 
 
-# Tuples are like lists but are immutable.
+# Кортежи похожи на списки, только неизменяемые
 tup = (1, 2, 3)
-tup[0]      # => 1
-tup[0] = 3  # Raises a TypeError
+tup[0]  # => 1
+tup[0] = 3  # Выбрасывает ошибку TypeError
 
-# Note that a tuple of length one has to have a comma after the last element but
-# tuples of other lengths, even zero, do not.
+# Обратите внимание, что кортеж длины 1 должен иметь запятую после последнего элемента, но кортежи другой длины, даже 0, не должны.
 type((1))   # => <class 'int'>
 type((1,))  # => <class 'tuple'>
 type(())    # => <class 'tuple'>
 
-# You can do most of the list operations on tuples too
+# Всё то же самое можно делать и с кортежами
 len(tup)         # => 3
 tup + (4, 5, 6)  # => (1, 2, 3, 4, 5, 6)
 tup[:2]          # => (1, 2)
 2 in tup         # => True
 
-# You can unpack tuples (or lists) into variables
-a, b, c = (1, 2, 3)  # a is now 1, b is now 2 and c is now 3
-# You can also do extended unpacking
-a, *b, c = (1, 2, 3, 4)  # a is now 1, b is now [2, 3] and c is now 4
-# Tuples are created by default if you leave out the parentheses
-d, e, f = 4, 5, 6  # tuple 4, 5, 6 is unpacked into variables d, e and f
-# respectively such that d = 4, e = 5 and f = 6
-# Now look how easy it is to swap two values
-e, d = d, e  # d is now 5 and e is now 4
+# Вы можете распаковывать кортежи (или списки) в переменные
+a, b, c = (1, 2, 3)  # a == 1, b == 2 и c == 3
+# Вы также можете сделать расширенную распаковку
+a, *b, c = (1, 2, 3, 4) # a теперь 1, b теперь [2, 3] и c теперь 4
+# Кортежи создаются по умолчанию, если опущены скобки
+d, e, f = 4, 5, 6  # кортеж 4, 5, 6 распаковывается в переменные d, e и f
+# соответственно, d = 4, e = 5 и f = 6
+# Обратите внимание, как легко поменять местами значения двух переменных
+e, d = d, e  # теперь d == 5, а e == 4
 
 
-# Dictionaries store mappings from keys to values
+# Словари содержат ассоциативные массивы
 empty_dict = {}
-# Here is a prefilled dictionary
+# Вот так описывается предзаполненный словарь
 filled_dict = {"one": 1, "two": 2, "three": 3}
 
-# Note keys for dictionaries have to be immutable types. This is to ensure that
-# the key can be converted to a constant hash value for quick look-ups.
-# Immutable types include ints, floats, strings, tuples.
-invalid_dict = {[1,2,3]: "123"}  # => Raises a TypeError: unhashable type: 'list'
-valid_dict = {(1,2,3):[1,2,3]}   # Values can be of any type, however.
+# Обратите внимание, что ключи для словарей должны быть неизменяемыми типами. Это
+# сделано для того, чтобы ключ может быть преобразован в хеш для быстрого поиска.
+# Неизменяемые типы включают целые числа, числа с плавающей запятой, строки, кортежи.
+invalid_dict = {[1,2,3]: "123"}  # => Выбрасывает ошибку TypeError: unhashable type: 'list'
+valid_dict = {(1,2,3):[1,2,3]}   # Однако значения могут быть любого типа.
 
-# Look up values with []
+# Поиск значений с помощью []
 filled_dict["one"]  # => 1
 
-# Get all keys as an iterable with "keys()". We need to wrap the call in list()
-# to turn it into a list. We'll talk about those later.  Note - for Python
-# versions <3.7, dictionary key ordering is not guaranteed. Your results might
-# not match the example below exactly. However, as of Python 3.7, dictionary
-# items maintain the order at which they are inserted into the dictionary.
-list(filled_dict.keys())  # => ["three", "two", "one"] in Python <3.7
-list(filled_dict.keys())  # => ["one", "two", "three"] in Python 3.7+
+# Все ключи в виде списка получаются с помощью метода keys().
+# Его вызов нужно обернуть в list(), так как обратно мы получаем
+# итерируемый объект, о которых поговорим позднее. Примечание - для Python
+# версии <3.7, порядок словарных ключей не гарантируется. Ваши результаты могут
+# не точно соответствовать приведенному ниже примеру. Однако, начиная с Python 3.7
+# элементы в словаре сохраняют порядок, в котором они вставляются в словарь.
+list(filled_dict.keys())  # => ["three", "two", "one"] в Python <3.7
+list(filled_dict.keys())  # => ["one", "two", "three"] в Python 3.7+
 
 
-# Get all values as an iterable with "values()". Once again we need to wrap it
-# in list() to get it out of the iterable. Note - Same as above regarding key
-# ordering.
-list(filled_dict.values())  # => [3, 2, 1]  in Python <3.7
-list(filled_dict.values())  # => [1, 2, 3] in Python 3.7+
+# Все значения в виде списка можно получить с помощью values().
+# И снова нам нужно обернуть вызов в list(), чтобы превратить
+# итерируемый объект в список.
+# То же самое замечание насчёт порядка ключей справедливо и здесь
+list(filled_dict.values())  # => [3, 2, 1] в Python <3.7
+list(filled_dict.values())  # => [1, 2, 3] в Python 3.7+
 
-# Check for existence of keys in a dictionary with "in"
+# При помощи ключевого слова in можно проверять наличие ключей в словаре
 "one" in filled_dict  # => True
 1 in filled_dict      # => False
 
-# Looking up a non-existing key is a KeyError
-filled_dict["four"]  # KeyError
+# Попытка получить значение по несуществующему ключу выбросит ошибку KeyError
+filled_dict["four"]  # Выбрасывает ошибку KeyError
 
-# Use "get()" method to avoid the KeyError
+# Чтобы избежать этого, используйте метод get()
 filled_dict.get("one")      # => 1
 filled_dict.get("four")     # => None
-# The get method supports a default argument when the value is missing
+# Метод get поддерживает аргумент по умолчанию, когда значение отсутствует
 filled_dict.get("one", 4)   # => 1
 filled_dict.get("four", 4)  # => 4
 
-# "setdefault()" inserts into a dictionary only if the given key isn't present
-filled_dict.setdefault("five", 5)  # filled_dict["five"] is set to 5
-filled_dict.setdefault("five", 6)  # filled_dict["five"] is still 5
+# Метод setdefault() вставляет пару ключ-значение, только если такого ключа нет
+filled_dict.setdefault("five", 5)  # filled_dict["five"] возвращает 5
+filled_dict.setdefault("five", 6)  # filled_dict["five"] по-прежнему возвращает 5
 
-# Adding to a dictionary
+# Добавление элементов в словарь
 filled_dict.update({"four":4})  # => {"one": 1, "two": 2, "three": 3, "four": 4}
-filled_dict["four"] = 4         # another way to add to dict
+filled_dict["four"] = 4         # Другой способ добавления элементов
 
-# Remove keys from a dictionary with del
-del filled_dict["one"]  # Removes the key "one" from filled dict
+# Удаляйте ключи из словаря с помощью ключевого слова del
+del filled_dict["one"]  # Удаляет ключ "one" из словаря
 
-# From Python 3.5 you can also use the additional unpacking options
+# После Python 3.5 вы также можете использовать дополнительные параметры распаковки
 {'a': 1, **{'b': 2}}  # => {'a': 1, 'b': 2}
 {'a': 1, **{'a': 2}}  # => {'a': 2}
 
 
 
-# Sets store ... well sets
+# Множества содержат... ну, в общем, множества
 empty_set = set()
-# Initialize a set with a bunch of values. Yeah, it looks a bit like a dict. Sorry.
-some_set = {1, 1, 2, 2, 3, 4}  # some_set is now {1, 2, 3, 4}
+# Инициализация множества набором значений.
+# Да, оно выглядит примерно как словарь. Ну извините, так уж вышло.
+filled_set = {1, 2, 2, 3, 4}  # => {1, 2, 3, 4}
 
 # Similar to keys of a dictionary, elements of a set have to be immutable.
-invalid_set = {[1], 1}  # => Raises a TypeError: unhashable type: 'list'
+# Как и ключи словаря, элементы множества должны быть неизменяемыми.
+invalid_set = {[1], 1}  # => Выбрасывает ошибку TypeError: unhashable type: 'list'
 valid_set = {(1,), 1}
 
-# Add one more item to the set
+# Множеству можно назначать новую переменную
 filled_set = some_set
-filled_set.add(5)  # filled_set is now {1, 2, 3, 4, 5}
-# Sets do not have duplicate elements
-filled_set.add(5)  # it remains as before {1, 2, 3, 4, 5}
+filled_set.add(5)  # {1, 2, 3, 4, 5}
+# В множествах нет повторяющихся элементов
+filled_set.add(5)  # {1, 2, 3, 4, 5}
 
-# Do set intersection with &
+# Пересечение множеств: &
 other_set = {3, 4, 5, 6}
 filled_set & other_set  # => {3, 4, 5}
 
-# Do set union with |
+# Объединение множеств: |
 filled_set | other_set  # => {1, 2, 3, 4, 5, 6}
 
-# Do set difference with -
+# Разность множеств: -
 {1, 2, 3, 4} - {2, 3, 5}  # => {1, 4}
 
-# Do set symmetric difference with ^
+# Симметричная разница: ^
 {1, 2, 3, 4} ^ {2, 3, 5}  # => {1, 4, 5}
 
-# Check if set on the left is a superset of set on the right
-{1, 2} >= {1, 2, 3} # => False
+# Проверить, является ли множество слева надмножеством множества справа
+{1, 2} >= {1, 2, 3}  # => False
 
-# Check if set on the left is a subset of set on the right
-{1, 2} <= {1, 2, 3} # => True
+# Проверить, является ли множество слева подмножеством множества справа
+{1, 2} <= {1, 2, 3}  # => True
 
-# Check for existence in a set with in
+# Проверка на наличие в множестве: in
 2 in filled_set   # => True
 10 in filled_set  # => False
 
-# Make a one layer deep copy
-filled_set = some_set.copy()  # filled_set is {1, 2, 3, 4, 5}
+# Сделать однослойную глубокую копию
+filled_set = some_set.copy()  # {1, 2, 3, 4, 5}
 filled_set is some_set        # => False
 
 
 ####################################################
-## 3. Control Flow and Iterables
+## 3. Поток управления и итерируемые объекты
 ####################################################
 
-# Let's just make a variable
+# Для начала создадим переменную
 some_var = 5
 
-# Here is an if statement. Indentation is significant in Python!
-# Convention is to use four spaces, not tabs.
-# This prints "some_var is smaller than 10"
+# Так выглядит выражение if. Отступы в python очень важны!
+# Конвенция заключается в использовании четырех пробелов, а не табуляции.
+# Pезультат: "some_var меньше, чем 10"
 if some_var > 10:
-    print("some_var is totally bigger than 10.")
-elif some_var < 10:    # This elif clause is optional.
-    print("some_var is smaller than 10.")
-else:                  # This is optional too.
-    print("some_var is indeed 10.")
+    print("some_var точно больше, чем 10.")
+elif some_var < 10:  # Выражение elif необязательно.
+    print("some_var меньше, чем 10.")
+else:                # Это тоже необязательно.
+    print("some_var равно 10.")
 
 
 """
-For loops iterate over lists
-prints:
-    dog is a mammal
-    cat is a mammal
-    mouse is a mammal
+Циклы For проходят по спискам.
+Выводит:
+    собака — это млекопитающее
+    кошка — это млекопитающее
+    мышь — это млекопитающее
 """
-for animal in ["dog", "cat", "mouse"]:
-    # You can use format() to interpolate formatted strings
-    print("{} is a mammal".format(animal))
+for animal in ["собака", "кошка", "мышь"]:
+    # Можете использовать format() для интерполяции форматированных строк
+    print("{} — это млекопитающее".format(animal))
 
 """
-"range(number)" returns an iterable of numbers
-from zero to the given number
-prints:
+"range(число)" возвращает список чисел
+от нуля до заданного числа
+Выводит:
     0
     1
     2
@@ -518,9 +512,9 @@ for i in range(4):
     print(i)
 
 """
-"range(lower, upper)" returns an iterable of numbers
-from the lower number to the upper number
-prints:
+"range(нижнее, верхнее)" возвращает список чисел
+от нижнего числа к верхнему
+Выводит:
     4
     5
     6
@@ -530,10 +524,10 @@ for i in range(4, 8):
     print(i)
 
 """
-"range(lower, upper, step)" returns an iterable of numbers
-from the lower number to the upper number, while incrementing
-by step. If step is not indicated, the default value is 1.
-prints:
+"range(нижнее, верхнее, шаг)" возвращает список чисел
+от нижнего числа к верхнему, от нижнего числа к верхнему, увеличивая
+шаг за шагом. Если шаг не указан, значение по умолчанию - 1.
+Выводит:
     4
     6
 """
@@ -541,19 +535,19 @@ for i in range(4, 8, 2):
     print(i)
 
 """
-To loop over a list, and retrieve both the index and the value of each item in the list
-prints:
-    0 dog
-    1 cat
-    2 mouse
+Чтобы перебрать список и получить индекс и значение каждого элемента в списке
+Выводит:
+    0 собака
+    1 кошка
+    2 мышь
 """
-animals = ["dog", "cat", "mouse"]
+animals = ["собака", "кошка", "мышь"]
 for i, value in enumerate(animals):
     print(i, value)
 
 """
-While loops go until a condition is no longer met.
-prints:
+Циклы while продолжаются до тех пор, пока указанное условие не станет ложным.
+Выводит:
     0
     1
     2
@@ -562,535 +556,540 @@ prints:
 x = 0
 while x < 4:
     print(x)
-    x += 1  # Shorthand for x = x + 1
+    x += 1  # Краткая запись для x = x + 1
 
-# Handle exceptions with a try/except block
+# Обрабатывайте исключения блоками try/except
 try:
-    # Use "raise" to raise an error
-    raise IndexError("This is an index error")
+    # Чтобы выбросить ошибку, используется raise
+    raise IndexError("Это ошибка индекса")
 except IndexError as e:
-    pass                 # Pass is just a no-op. Usually you would do recovery here.
+    pass                  # pass — это просто отсутствие оператора. Обычно здесь происходит восстановление после ошибки.
 except (TypeError, NameError):
-    pass                 # Multiple exceptions can be handled together, if required.
-else:                    # Optional clause to the try/except block. Must follow all except blocks
-    print("All good!")   # Runs only if the code in try raises no exceptions
-finally:                 # Execute under all circumstances
-    print("We can clean up resources here")
+    pass                  # Несколько исключений можно обработать вместе, если нужно.
+else:                     # Необязательное выражение. Должно следовать за последним блоком except
+    print("Всё хорошо!")  # Выполнится, только если не было никаких исключений
+finally:                  # Выполнить при любых обстоятельствах
+    print("Мы можем очистить ресурсы здесь")
 
-# Instead of try/finally to cleanup resources you can use a with statement
+# Вместо try/finally чтобы очистить ресурсы, можно использовать оператор with
 with open("myfile.txt") as f:
     for line in f:
         print(line)
 
-# Writing to a file
+# Запись в файл
 contents = {"aa": 12, "bb": 21}
 with open("myfile1.txt", "w+") as file:
-    file.write(str(contents))        # writes a string to a file
+    file.write(str(contents))        # Записывает строку в файл
 
 with open("myfile2.txt", "w+") as file:
-    file.write(json.dumps(contents)) # writes an object to a file
+    file.write(json.dumps(contents)) # Записывает объект в файл
 
-# Reading from a file
+# Чтение из файла
 with open('myfile1.txt', "r+") as file:
-    contents = file.read()           # reads a string from a file
+    contents = file.read()           # Читает строку из файла
 print(contents)
 # print: {"aa": 12, "bb": 21}
 
 with open('myfile2.txt', "r+") as file:
-    contents = json.load(file)       # reads a json object from a file
+    contents = json.load(file)       # Читает объект json из файла
 print(contents)
 # print: {"aa": 12, "bb": 21}
 
 
-# Python offers a fundamental abstraction called the Iterable.
-# An iterable is an object that can be treated as a sequence.
-# The object returned by the range function, is an iterable.
+# Python предоставляет фундаментальную абстракцию,
+# которая называется итерируемым объектом (Iterable).
+# Итерируемый объект — это объект, который воспринимается как последовательность.
+# Объект, который возвратила функция range(), итерируемый.
 
 filled_dict = {"one": 1, "two": 2, "three": 3}
 our_iterable = filled_dict.keys()
-print(our_iterable)  # => dict_keys(['one', 'two', 'three']). This is an object that implements our Iterable interface.
+print(our_iterable)  # => dict_keys(['one', 'two', 'three']). Это объект, реализующий интерфейс Iterable
 
-# We can loop over it.
+# Мы можем проходить по нему циклом.
 for i in our_iterable:
-    print(i)  # Prints one, two, three
+    print(i)  # Выводит one, two, three
 
-# However we cannot address elements by index.
-our_iterable[1]  # Raises a TypeError
+# Но мы не можем обращаться к элементу по индексу.
+our_iterable[1]  # Выбрасывает ошибку TypeError
 
-# An iterable is an object that knows how to create an iterator.
+# Итерируемый объект знает, как создавать итератор.
 our_iterator = iter(our_iterable)
 
-# Our iterator is an object that can remember the state as we traverse through it.
-# We get the next object with "next()".
+# Итератор может запоминать состояние при проходе по объекту.
+# Мы получаем следующий объект, вызывая функцию next().
 next(our_iterator)  # => "one"
 
-# It maintains state as we iterate.
+# Он сохраняет состояние при вызове next().
 next(our_iterator)  # => "two"
 next(our_iterator)  # => "three"
 
-# After the iterator has returned all of its data, it raises a StopIteration exception
-next(our_iterator)  # Raises StopIteration
+# Возвратив все данные, итератор выбрасывает исключение StopIterator
+next(our_iterator)  # Выбрасывает исключение StopIteration
 
-# We can also loop over it, in fact, "for" does this implicitly!
+# Мы можем проходить по нему циклом.
 our_iterator = iter(our_iterable)
 for i in our_iterator:
-    print(i)  # Prints one, two, three
+    print(i)  # Выводит one, two, three
 
-# You can grab all the elements of an iterable or iterator by calling list() on it.
-list(our_iterable)  # => Returns ["one", "two", "three"]
-list(our_iterator)  # => Returns [] because state is saved
+# Вы можете получить сразу все элементы итератора, вызвав на нём функцию list().
+list(our_iterable)  # => Возвращает ["one", "two", "three"]
+list(our_iterator)  # => Возвращает [] потому что состояние сохраняется
 
 
 ####################################################
-## 4. Functions
+## 4. Функции
 ####################################################
 
-# Use "def" to create new functions
+# Используйте def для создания новых функций
 def add(x, y):
-    print("x is {} and y is {}".format(x, y))
-    return x + y  # Return values with a return statement
+    print("x равен %s, а y равен %s" % (x, y))
+    return x + y  # Возвращайте результат с помощью ключевого слова return
 
-# Calling functions with parameters
-add(5, 6)  # => prints out "x is 5 and y is 6" and returns 11
+# Вызов функции с аргументами
+add(5, 6)  # => Выводит "x равен 5, а y равен 6" и возвращает 11
 
-# Another way to call functions is with keyword arguments
-add(y=6, x=5)  # Keyword arguments can arrive in any order.
+# Другой способ вызова функции — вызов с именованными аргументами
+add(y=6, x=5)  # Именованные аргументы можно указывать в любом порядке.
 
-# You can define functions that take a variable number of
-# positional arguments
+# Вы можете определить функцию, принимающую переменное число аргументов
 def varargs(*args):
     return args
 
-varargs(1, 2, 3)  # => (1, 2, 3)
+varargs(1, 2, 3)  # => (1,2,3)
 
-# You can define functions that take a variable number of
-# keyword arguments, as well
+
+# А также можете определить функцию, принимающую переменное число
+# именованных аргументов
 def keyword_args(**kwargs):
     return kwargs
 
-# Let's call it to see what happens
+# Вызовем эту функцию и посмотрим, что из этого получится
 keyword_args(big="foot", loch="ness")  # => {"big": "foot", "loch": "ness"}
 
-
-# You can do both at once, if you like
+# Если хотите, можете использовать оба способа одновременно
 def all_the_args(*args, **kwargs):
     print(args)
     print(kwargs)
 """
-all_the_args(1, 2, a=3, b=4) prints:
+all_the_args(1, 2, a=3, b=4) выводит:
     (1, 2)
     {"a": 3, "b": 4}
 """
 
-# When calling functions, you can do the opposite of args/kwargs!
-# Use * to expand tuples and use ** to expand kwargs.
+# Вызывая функции, можете сделать наоборот!
+# Используйте символ * для распаковки кортежей и ** для распаковки словарей
 args = (1, 2, 3, 4)
 kwargs = {"a": 3, "b": 4}
-all_the_args(*args)            # equivalent to all_the_args(1, 2, 3, 4)
-all_the_args(**kwargs)         # equivalent to all_the_args(a=3, b=4)
-all_the_args(*args, **kwargs)  # equivalent to all_the_args(1, 2, 3, 4, a=3, b=4)
+all_the_args(*args)            # эквивалентно all_the_args(1, 2, 3, 4)
+all_the_args(**kwargs)         # эквивалентно all_the_args(a=3, b=4)
+all_the_args(*args, **kwargs)  # эквивалентно all_the_args(1, 2, 3, 4, a=3, b=4)
 
-# Returning multiple values (with tuple assignments)
+# Возврат нескольких значений (с назначением кортежей)
 def swap(x, y):
-    return y, x  # Return multiple values as a tuple without the parenthesis.
-                 # (Note: parenthesis have been excluded but can be included)
+    return y, x  # Возвращает несколько значений в виде кортежа без скобок.
+                 # (Примечание: скобки исключены, но могут быть включены)
 
 x = 1
 y = 2
 x, y = swap(x, y)     # => x = 2, y = 1
-# (x, y) = swap(x,y)  # Again parenthesis have been excluded but can be included.
+# (x, y) = swap(x,y)  # Снова, скобки были исключены, но могут быть включены.
 
-# Function Scope
+# Область определения функций
 x = 5
 
 def set_x(num):
-    # Local var x not the same as global variable x
-    x = num    # => 43
-    print(x)   # => 43
+    # Локальная переменная x — это не то же самое, что глобальная переменная x
+    x = num   # => 43
+    print(x)  # => 43
 
 def set_global_x(num):
     global x
-    print(x)   # => 5
-    x = num    # global var x is now set to 6
-    print(x)   # => 6
+    print(x)  # => 5
+    x = num   # Глобальная переменная x теперь равна 6
+    print(x)  # => 6
 
 set_x(43)
 set_global_x(6)
 
-
-# Python has first class functions
+# Python имеет функции первого класса
 def create_adder(x):
     def adder(y):
         return x + y
     return adder
 
 add_10 = create_adder(10)
-add_10(3)   # => 13
+add_10(3)  # => 13
 
-# There are also anonymous functions
+# Также есть и анонимные функции
 (lambda x: x > 2)(3)                  # => True
 (lambda x, y: x ** 2 + y ** 2)(2, 1)  # => 5
 
-# There are built-in higher order functions
+# Есть встроенные функции высшего порядка
 list(map(add_10, [1, 2, 3]))          # => [11, 12, 13]
 list(map(max, [1, 2, 3], [4, 2, 1]))  # => [4, 2, 3]
 
 list(filter(lambda x: x > 5, [3, 4, 5, 6, 7]))  # => [6, 7]
 
-# We can use list comprehensions for nice maps and filters
-# List comprehension stores the output as a list which can itself be a nested list
+# Для удобного отображения и фильтрации можно использовать списочные интерпретации
+# Интерпретация списка сохраняет вывод в виде списка, который сам может быть вложенным списком
 [add_10(i) for i in [1, 2, 3]]         # => [11, 12, 13]
 [x for x in [3, 4, 5, 6, 7] if x > 5]  # => [6, 7]
 
-# You can construct set and dict comprehensions as well.
+# Вы также можете создавать интерпретации множеств и словарей.
 {x for x in 'abcddeef' if x not in 'abc'}  # => {'d', 'e', 'f'}
 {x: x**2 for x in range(5)}  # => {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
 
 
 ####################################################
-## 5. Modules
+## 5. Модули
 ####################################################
 
-# You can import modules
+# Вы можете импортировать модули
 import math
 print(math.sqrt(16))  # => 4.0
 
-# You can get specific functions from a module
+# Вы можете получить определенные функции из модуля
 from math import ceil, floor
 print(ceil(3.7))   # => 4.0
 print(floor(3.7))  # => 3.0
 
-# You can import all functions from a module.
-# Warning: this is not recommended
+# Вы можете импортировать все функции из модуля.
+# Предупреждение: это не рекомендуется
 from math import *
 
-# You can shorten module names
+# Вы можете сократить имена модулей
 import math as m
 math.sqrt(16) == m.sqrt(16)  # => True
 
-# Python modules are just ordinary Python files. You
-# can write your own, and import them. The name of the
-# module is the same as the name of the file.
+# Модули Python - это обычные файлы Python. Вы
+# можете писать свои собственные и импортировать их. Имя
+# модуля совпадает с именем файла.
 
-# You can find out which functions and attributes
-# are defined in a module.
+# Вы можете узнать, какие функции и атрибуты
+# определены в модуле.
 import math
 dir(math)
 
-# If you have a Python script named math.py in the same
-# folder as your current script, the file math.py will
-# be loaded instead of the built-in Python module.
-# This happens because the local folder has priority
-# over Python's built-in libraries.
+# Если у вас есть скрипт Python с именем math.py в той же папке,
+# что и ваш текущий скрипт, файл math.py будет
+# будет загружен вместо встроенного модуля Python.
+# Это происходит потому, что локальная папка имеет приоритет
+# над встроенными библиотеками Python.
 
 
 ####################################################
-## 6. Classes
+## 6. Классы
 ####################################################
 
-# We use the "class" statement to create a class
+# Мы используем оператор class для создания класса
 class Human:
 
-    # A class attribute. It is shared by all instances of this class
-    species = "H. sapiens"
+    # Атрибут класса. Он используется всеми экземплярами этого класса
+    species = "Гомосапиенс"
 
-    # Basic initializer, this is called when this class is instantiated.
-    # Note that the double leading and trailing underscores denote objects
-    # or attributes that are used by Python but that live in user-controlled
-    # namespaces. Methods(or objects or attributes) like: __init__, __str__,
-    # __repr__ etc. are called special methods (or sometimes called dunder methods)
-    # You should not invent such names on your own.
+    # Обычный конструктор, вызывается при инициализации экземпляра класса
+    # Обратите внимание, что двойное подчёркивание в начале и в конце имени
+    # означает объекты и атрибуты, которые используются Python, но находятся
+    # в пространствах имён, управляемых пользователем.
+    # Методы (или объекты или атрибуты), например:
+    # __init__, __str__, __repr__ и т. д. называются специальными методами.
+    # Не придумывайте им имена самостоятельно.
     def __init__(self, name):
-        # Assign the argument to the instance's name attribute
+        # Присваивание значения аргумента атрибуту
         self.name = name
 
-        # Initialize property
+        # Инициализация свойства
         self._age = 0
 
-    # An instance method. All methods take "self" as the first argument
+    # Метод экземпляра. Все методы принимают self в качестве первого аргумента
     def say(self, msg):
-        print("{name}: {message}".format(name=self.name, message=msg))
+        return "{name}: {message}".format(name=self.name, message=msg)
 
-    # Another instance method
+    # Другой метод экземпляра
     def sing(self):
-        return 'yo... yo... microphone check... one two... one two...'
+        return 'йо... йо... проверка микрофона... раз, два... раз, два...'
 
-    # A class method is shared among all instances
-    # They are called with the calling class as the first argument
+    # Метод класса разделяется между всеми экземплярами
+    # Они вызываются с указыванием вызывающего класса в качестве первого аргумента
     @classmethod
     def get_species(cls):
         return cls.species
 
-    # A static method is called without a class or instance reference
+    # Статический метод вызывается без ссылки на класс или экземпляр
     @staticmethod
     def grunt():
         return "*grunt*"
 
-    # A property is just like a getter.
-    # It turns the method age() into a read-only attribute of the same name.
-    # There's no need to write trivial getters and setters in Python, though.
+    # property похоже на геттер.
+    # Оно превращает метод age() в одноименный атрибут только для чтения.
+    # Однако нет необходимости писать тривиальные геттеры и сеттеры в Python.
     @property
     def age(self):
         return self._age
 
-    # This allows the property to be set
+    # Это позволяет установить свойство
     @age.setter
     def age(self, age):
         self._age = age
 
-    # This allows the property to be deleted
+    # Это позволяет удалить свойство
     @age.deleter
     def age(self):
         del self._age
 
 
-# When a Python interpreter reads a source file it executes all its code.
-# This __name__ check makes sure this code block is only executed when this
-# module is the main program.
+# Когда интерпретатор Python читает исходный файл, он выполняет весь его код.
+# Проверка __name__ гарантирует, что этот блок кода выполняется только тогда, когда
+# этот модуль - это основная программа.
 if __name__ == '__main__':
-    # Instantiate a class
-    i = Human(name="Ian")
-    i.say("hi")                     # "Ian: hi"
-    j = Human("Joel")
-    j.say("hello")                  # "Joel: hello"
-    # i and j are instances of type Human, or in other words: they are Human objects
+    # Инициализация экземпляра класса
+    i = Human(name="Иван")
+    i.say("привет")                 # Выводит: "Иван: привет"
+    j = Human("Пётр")
+    j.say("привет")                 # Выводит: "Пётр: привет"
+    # i и j являются экземплярами типа Human, или другими словами: они являются объектами Human
 
-    # Call our class method
-    i.say(i.get_species())          # "Ian: H. sapiens"
-    # Change the shared attribute
-    Human.species = "H. neanderthalensis"
-    i.say(i.get_species())          # => "Ian: H. neanderthalensis"
-    j.say(j.get_species())          # => "Joel: H. neanderthalensis"
+    # Вызов метода класса
+    i.say(i.get_species())          # "Иван: Гомосапиенс"
+    # Изменение разделяемого атрибута
+    Human.species = "Неандертальец"
+    i.say(i.get_species())          # => "Иван: Неандертальец"
+    j.say(j.get_species())          # => "Пётр: Неандертальец"
 
-    # Call the static method
+    # Вызов статического метода
     print(Human.grunt())            # => "*grunt*"
 
-    # Static methods can be called by instances too
-    print(i.grunt())                # => "*grunt*"
+    # Невозможно вызвать статический метод с экземпляром объекта
+    # потому что i.grunt() автоматически поместит "self" (объект i) в качестве аргумента
+    print(i.grunt())                # => TypeError: grunt() takes 0 positional arguments but 1 was given
 
-    # Update the property for this instance
+    # Обновить свойство для этого экземпляра
     i.age = 42
-    # Get the property
-    i.say(i.age)                    # => "Ian: 42"
-    j.say(j.age)                    # => "Joel: 0"
-    # Delete the property
+    # Получить свойство
+    i.say(i.age)                    # => "Иван: 42"
+    j.say(j.age)                    # => "Пётр: 0"
+    # Удалить свойство
     del i.age
-    # i.age                         # => this would raise an AttributeError
+    # i.age                         # => это выбрасило бы ошибку AttributeError
 
 
 ####################################################
-## 6.1 Inheritance
+## 6.1 Наследование
 ####################################################
 
-# Inheritance allows new child classes to be defined that inherit methods and
-# variables from their parent class.
+# Наследование позволяет определять новые дочерние классы, которые наследуют методы и
+# переменные от своего родительского класса.
 
-# Using the Human class defined above as the base or parent class, we can
-# define a child class, Superhero, which inherits the class variables like
-# "species", "name", and "age", as well as methods, like "sing" and "grunt"
-# from the Human class, but can also have its own unique properties.
+# Используя класс Human, определенный выше как базовый или родительский класс, мы можем
+# определить дочерний класс Superhero, который наследует переменные класса, такие как
+# "species", "name" и "age", а также методы, такие как "sing" и "grunt" из класса Human,
+# но также может иметь свои уникальные свойства.
 
-# To take advantage of modularization by file you could place the classes above in their own files,
-# say, human.py
+# Чтобы воспользоваться преимуществами модульности по файлам, вы можете поместить
+# вышеперечисленные классы в их собственные файлы, например, human.py
 
-# To import functions from other files use the following format
-# from "filename-without-extension" import "function-or-class"
+# Чтобы импортировать функции из других файлов, используйте следующий формат
+# from "имя-файла-без-расширения" import "функция-или-класс"
 
 from human import Human
 
 
-# Specify the parent class(es) as parameters to the class definition
+# Укажите родительский класс(ы) как параметры определения класса
 class Superhero(Human):
 
-    # If the child class should inherit all of the parent's definitions without
-    # any modifications, you can just use the "pass" keyword (and nothing else)
-    # but in this case it is commented out to allow for a unique child class:
+    # Если дочерний класс должен наследовать все определения родителя без каких-либо
+    # изменений, вы можете просто использовать ключевое слово pass (и ничего больше),
+    # но в этом случае оно закомментировано, чтобы разрешить уникальный дочерний класс:
     # pass
 
-    # Child classes can override their parents' attributes
-    species = 'Superhuman'
+    # Дочерние классы могут переопределять атрибуты своих родителей
+    species = 'Сверхчеловек'
 
-    # Children automatically inherit their parent class's constructor including
-    # its arguments, but can also define additional arguments or definitions
-    # and override its methods such as the class constructor.
-    # This constructor inherits the "name" argument from the "Human" class and
-    # adds the "superpower" and "movie" arguments:
+    # Дочерние классы автоматически наследуют конструктор родительского класса, включая
+    # его аргументы, но также могут определять дополнительные аргументы или определения
+    # и переопределять его методы, такие как конструктор класса.
+    # Этот конструктор наследует аргумент "name" от класса "Human"
+    # и добавляет аргументы "superpower" и "movie":
     def __init__(self, name, movie=False,
-                 superpowers=["super strength", "bulletproofing"]):
+                 superpowers=["сверхсила", "пуленепробиваемость"]):
 
-        # add additional class attributes:
+        # добавить дополнительные атрибуты класса:
         self.fictional = True
         self.movie = movie
-        # be aware of mutable default values, since defaults are shared
+        # помните об изменяемых значениях по умолчанию,
+        # поскольку значения по умолчанию являются общими
         self.superpowers = superpowers
 
-        # The "super" function lets you access the parent class's methods
-        # that are overridden by the child, in this case, the __init__ method.
-        # This calls the parent class constructor:
+        # Функция "super" позволяет вам получить доступ к методам родительского класса,
+        # которые переопределяются дочерним, в данном случае, методом __init__.
+        # Это вызывает конструктор родительского класса:
         super().__init__(name)
 
-    # override the sing method
+    # переопределить метод sing
     def sing(self):
-        return 'Dun, dun, DUN!'
+        return 'Бам, бам, БАМ!'
 
-    # add an additional instance method
+    # добавить дополнительный метод экземпляра
     def boast(self):
         for power in self.superpowers:
-            print("I wield the power of {pow}!".format(pow=power))
+            print("Я обладаю силой '{pow}'!".format(pow=power))
 
 
 if __name__ == '__main__':
-    sup = Superhero(name="Tick")
+    sup = Superhero(name="Тик")
 
-    # Instance type checks
+    # Проверка типа экземпляра
     if isinstance(sup, Human):
-        print('I am human')
+        print('Я человек')
     if type(sup) is Superhero:
-        print('I am a superhero')
+        print('Я супергерой')
 
-    # Get the Method Resolution search Order used by both getattr() and super()
-    # This attribute is dynamic and can be updated
+    # Получить порядок поиска разрешения метода (MRO),
+    # используемый как getattr(), так и super()
+    # Этот атрибут является динамическим и может быть обновлен
     print(Superhero.__mro__)    # => (<class '__main__.Superhero'>,
                                 # => <class 'human.Human'>, <class 'object'>)
 
-    # Calls parent method but uses its own class attribute
-    print(sup.get_species())    # => Superhuman
+    # Вызывает родительский метод, но использует свой собственный атрибут класса
+    print(sup.get_species())    # => Сверхчеловек
 
-    # Calls overridden method
-    print(sup.sing())           # => Dun, dun, DUN!
+    # Вызов переопределенного метода
+    print(sup.sing())           # => Бам, бам, БАМ!
 
-    # Calls method from Human
-    sup.say('Spoon')            # => Tick: Spoon
+    # Вызывает метод из Human
+    sup.say('Ложка')            # => Тик: Ложка
 
-    # Call method that exists only in Superhero
-    sup.boast()                 # => I wield the power of super strength!
-                                # => I wield the power of bulletproofing!
+    # Метод вызова, существующий только в Superhero
+    sup.boast()                 # => Я обладаю силой 'сверхсила'!
+                                # => Я обладаю силой 'пуленепробиваемость'!
 
-    # Inherited class attribute
+    # Атрибут унаследованного класса
     sup.age = 31
     print(sup.age)              # => 31
 
-    # Attribute that only exists within Superhero
-    print('Am I Oscar eligible? ' + str(sup.movie))
+    # Атрибут, который существует только в Superhero
+    print('Достоин ли я Оскара? ' + str(sup.movie))
+
 
 ####################################################
-## 6.2 Multiple Inheritance
+## 6.2 Множественное наследование
 ####################################################
 
-# Another class definition
+# Eще одно определение класса
 # bat.py
 class Bat:
 
-    species = 'Baty'
+    species = 'Летучая мышь'
 
     def __init__(self, can_fly=True):
         self.fly = can_fly
 
-    # This class also has a say method
+    # В этом классе также есть метод say
     def say(self, msg):
         msg = '... ... ...'
         return msg
 
-    # And its own method as well
+    # И свой метод тоже
     def sonar(self):
         return '))) ... ((('
 
 if __name__ == '__main__':
     b = Bat()
-    print(b.say('hello'))
+    print(b.say('привет'))
     print(b.fly)
 
 
-# And yet another class definition that inherits from Superhero and Bat
+# И еще одно определение класса, унаследованное от Superhero и Bat
 # superhero.py
 from superhero import Superhero
 from bat import Bat
 
-# Define Batman as a child that inherits from both Superhero and Bat
+# Определите Batman как дочерний класс, унаследованный от Superhero и Bat
 class Batman(Superhero, Bat):
 
     def __init__(self, *args, **kwargs):
-        # Typically to inherit attributes you have to call super:
+        # Обычно для наследования атрибутов необходимо вызывать super:
         # super(Batman, self).__init__(*args, **kwargs)
-        # However we are dealing with multiple inheritance here, and super()
-        # only works with the next base class in the MRO list.
-        # So instead we explicitly call __init__ for all ancestors.
-        # The use of *args and **kwargs allows for a clean way to pass arguments,
-        # with each parent "peeling a layer of the onion".
-        Superhero.__init__(self, 'anonymous', movie=True,
-                           superpowers=['Wealthy'], *args, **kwargs)
+        # Однако здесь мы имеем дело с множественным наследованием, а super()
+        # работает только со следующим базовым классом в списке MRO.
+        # Поэтому вместо этого мы вызываем __init__ для всех родителей.
+        # Использование *args и **kwargs обеспечивает чистый способ передачи
+        # аргументов, когда каждый родитель "очищает слой луковицы".
+        Superhero.__init__(self, 'анонимный', movie=True,
+                           superpowers=['Богатый'], *args, **kwargs)
         Bat.__init__(self, *args, can_fly=False, **kwargs)
-        # override the value for the name attribute
-        self.name = 'Sad Affleck'
+        # переопределить значение атрибута name
+        self.name = 'Грустный Бен Аффлек'
 
     def sing(self):
-        return 'nan nan nan nan nan batman!'
+        return 'на на на на на бэтмен!'
 
 
 if __name__ == '__main__':
     sup = Batman()
 
-    # Get the Method Resolution search Order used by both getattr() and super().
-    # This attribute is dynamic and can be updated
+    # Получить порядок поиска разрешения метода (MRO),
+    # используемый как getattr(), так и super()
+    # Этот атрибут является динамическим и может быть обновлен
     print(Batman.__mro__)       # => (<class '__main__.Batman'>,
                                 # => <class 'superhero.Superhero'>,
                                 # => <class 'human.Human'>,
                                 # => <class 'bat.Bat'>, <class 'object'>)
 
-    # Calls parent method but uses its own class attribute
-    print(sup.get_species())    # => Superhuman
+    # Вызывает родительский метод, но использует свой собственный атрибут класса
+    print(sup.get_species())    # => Сверхчеловек
 
-    # Calls overridden method
-    print(sup.sing())           # => nan nan nan nan nan batman!
+    # Вызов переопределенного метода
+    print(sup.sing())           # => на на на на на бэтмен!
 
-    # Calls method from Human, because inheritance order matters
-    sup.say('I agree')          # => Sad Affleck: I agree
+    # Вызывает метод из Human, потому что порядок наследования имеет значение
+    sup.say('Я согласен')          # => Грустный Бен Аффлек: Я согласен
 
-    # Call method that exists only in 2nd ancestor
+    # Вызов метода, существующий только во втором родителе
     print(sup.sonar())          # => ))) ... (((
 
-    # Inherited class attribute
+    # Атрибут унаследованного класса
     sup.age = 100
     print(sup.age)              # => 100
 
-    # Inherited attribute from 2nd ancestor whose default value was overridden.
-    print('Can I fly? ' + str(sup.fly)) # => Can I fly? False
-
+    # Унаследованный атрибут от второго родителя,
+    # значение по умолчанию которого было переопределено.
+    print('Могу ли я летать? ' + str(sup.fly)) # => Могу ли я летать? False
 
 
 ####################################################
-## 7. Advanced
+## 7. Дополнительно
 ####################################################
 
-# Generators help you make lazy code.
+# Генераторы помогут выполнить ленивые вычисления
 def double_numbers(iterable):
     for i in iterable:
         yield i + i
 
-# Generators are memory-efficient because they only load the data needed to
-# process the next value in the iterable. This allows them to perform
-# operations on otherwise prohibitively large value ranges.
-# NOTE: `range` replaces `xrange` in Python 3.
-for i in double_numbers(range(1, 900000000)):  # `range` is a generator.
+# Генераторы эффективны с точки зрения памяти, потому что они загружают только данные,
+# необходимые для обработки следующего значения в итерации.
+# Это позволяет им выполнять операции с недопустимо большими диапазонами значений.
+# ПРИМЕЧАНИЕ: "range" заменяет "xrange" в Python 3.
+for i in double_numbers(range(1, 900000000)):  # "range" - генератор.
     print(i)
     if i >= 30:
         break
 
-# Just as you can create a list comprehension, you can create generator
-# comprehensions as well.
+# Так же, как вы можете создать интерпретации списков, вы можете создать и
+# интерпретации генераторов.
 values = (-x for x in [1,2,3,4,5])
 for x in values:
-    print(x)  # prints -1 -2 -3 -4 -5 to console/terminal
+    print(x)  # Выводит -1 -2 -3 -4 -5
 
-# You can also cast a generator comprehension directly to a list.
+# Вы также можете преобразовать интерпретацию генератора непосредственно в список.
 values = (-x for x in [1,2,3,4,5])
 gen_to_list = list(values)
 print(gen_to_list)  # => [-1, -2, -3, -4, -5]
 
 
-# Decorators
-# In this example `beg` wraps `say`. If say_please is True then it
-# will change the returned message.
+# Декораторы
+# В этом примере "beg" оборачивает "say".
+# Если say_please равно True, он изменит возвращаемое сообщение.
 from functools import wraps
 
 
@@ -1099,7 +1098,7 @@ def beg(target_function):
     def wrapper(*args, **kwargs):
         msg, say_please = target_function(*args, **kwargs)
         if say_please:
-            return "{} {}".format(msg, "Please! I am poor :(")
+            return "{} {}".format(msg, "Пожалуйста! Спасибо :)")
         return msg
 
     return wrapper
@@ -1107,13 +1106,11 @@ def beg(target_function):
 
 @beg
 def say(say_please=False):
-    msg = "Can you buy me a beer?"
+    msg = "Вы не купите мне сока?"
     return msg, say_please
 
 
-print(say())                 # Can you buy me a beer?
-print(say(say_please=True))  # Can you buy me a beer? Please! I am poor :(
+print(say())                 # Вы не купите мне сока?
+print(say(say_please=True))  # Вы не купите мне сока? Пожалуйста! Спасибо :)
+
 ```
-
-
-
