@@ -6,7 +6,7 @@ authors:
   - michael-driscoll
   - roman-kurnovskii
 tags: 
-categories: [programming, Python]
+categories: [Roadmaps, programming, Python]
 series: [руководства]
 featuredImage:
 date: "2022-06-28"

@@ -7,7 +7,7 @@ authors:
   - roman-kurnovskii
 tags:
 categories: [треки]
-series: [руководства]
+series: [Roadmaps, руководства]
 date: "2022-04-21"
 lastmod: "2022-04-21"
 draft: false
