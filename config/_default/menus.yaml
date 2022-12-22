@@ -3,7 +3,8 @@ main:
       url: /posts/
       weight: 2
     - name: Руководства
-      url: /series/Руководства/
+      # url: /series/Руководства/
+      url: /categories/roadmaps/
       weight: 3
     - name: Приложения
       url: apps/
