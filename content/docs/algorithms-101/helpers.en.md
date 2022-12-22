@@ -4,7 +4,7 @@ description: LeetCode Cookbook - Help functions
 toc: true
 authors: [roman-kurnovskii]
 tags: []
-categories: [Roadmaps, Algorithms]
+categories: [Algorithms]
 series:
 date: 2022-10-15
 featuredImage:

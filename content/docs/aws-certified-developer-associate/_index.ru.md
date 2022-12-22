@@ -16,7 +16,13 @@ weight: 1
 
 1. Passed exam in one month.
 2. Created an [app with questions and progress](https://www.cloud-exam-prepare.com/) that helped me a lot
+![LQVKGDT16BF1Q6CX](/en/docs/aws-certified-developer-associate/images/AWS-Certified-Developer-Associate-certificate.jpg)
+
+![LQVKGDT16BF1Q6CX](./images/AWS-Certified-Developer-Associate-certificate.jpg)
 ![LQVKGDT16BF1Q6CX](images/AWS-Certified-Developer-Associate-certificate.jpg)
+
+![LQVKGDT16BF1Q6CX](/docs/aws-certified-developer-associate/images/AWS-Certified-Developer-Associate-certificate.jpg)
+
 
 ## Note
 

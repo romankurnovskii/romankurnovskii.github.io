@@ -62,8 +62,8 @@ Update plan by solution:
 |  26   | [38. Count and Say](../problems/38-count-and-say)                                                                                  | Medium     | String                                |
 |  27   | [46. Permutations](../problems/46-permutations)                                                                                    | Medium     | Array, Backtracking                   |
 |  28   | [48. Rotate Image](../problems/48-rotate-image)                                                                                    | Medium     | Array, Math, Matrix                   |
-|  29   | [](../problems/49-group-anagrams)                                                                                                  | Medium     | Array, Hash Table, String, Sorting    |
-|  30   | [](../problems/)                                                                                                                   |            |                                       |
+|  29   | [49. Group Anagrams](../problems/49-group-anagrams)                                                                                | Medium     | Array, Hash Table, String, Sorting    |
+|  30   | [50. Pow(x, n)](../problems/50)                                                                                                    | Medium     | Math, Recursion                       |
 |  31   | [](../problems/)                                                                                                                   |            |                                       |
 |  32   | [](../problems/)                                                                                                                   |            |                                       |
 |  33   | [](../problems/)                                                                                                                   |            |                                       |

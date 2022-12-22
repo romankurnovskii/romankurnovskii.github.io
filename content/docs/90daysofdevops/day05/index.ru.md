@@ -14,11 +14,9 @@ id: 1048830
 weight: 5
 ---
 
-## Plan > Code > Build > Testing > Release > Deploy > Operate > Monitor > 
-
 Сегодня мы сосредоточимся на отдельных шагах от начала до конца и на непрерывном цикле приложения в мире DevOps.
 
-![DevOps](../images/Day5_DevOps8.png?v1)
+![DevOps](Day5_DevOps8.png)
 
 ### План
 
