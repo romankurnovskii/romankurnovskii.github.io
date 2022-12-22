@@ -4,9 +4,9 @@ description: Подготовка диссертации
 toc: true
 authors: [roman-kurnovskii]
 tags: []
-categories: [Roadmaps]
-series: [руководства]
-date: 2022-12-12
+categories: []
+series: []
+date: 2022-12-22
 draft: false
 featuredImage:
 # weight: 1
