@@ -4,7 +4,7 @@ description: LeetCode Cookbook - Algorithms
 toc: true
 authors: [roman-kurnovskii]
 tags: []
-categories: [Roadmaps, Algorithms]
+categories: [Algorithms]
 series:
 date: 2022-10-15
 featuredImage: https://media.geeksforgeeks.org/wp-content/cdn-uploads/20221017172544/Introduction-to-Data-Structures-and-Algorithms-DSA.png

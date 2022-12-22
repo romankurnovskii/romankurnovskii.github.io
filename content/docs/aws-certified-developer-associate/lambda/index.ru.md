@@ -6,7 +6,8 @@ tags:
 categories:
 series:
 date: 2022-09-11
-draft: true
+featuredImage: ./img/logo.svg
+imgWidth: 50px
 ---
 
 [https://docs.aws.amazon.com/lambda/?id=docs_gateway](https://docs.aws.amazon.com/lambda/?id=docs_gateway)
@@ -35,7 +36,7 @@ AWS Lambda автоматически запускает программный 
 
 В строке поиска Консоли управления AWS введите Lambda и выбираем Lambda в разделе «****Services****»:
 
-![](./img/lambda-1.png)
+![Dsбор сервиса Lambda](./img/lambda-1.png)
 
 [https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2#](https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2#)
 
