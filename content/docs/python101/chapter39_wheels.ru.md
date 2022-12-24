@@ -42,7 +42,7 @@ pip wheel --wheel-dir=my_wheels Unidecode
 
 Вот скриншот вывода, который я получил при запуске этой программы:
 
-![](../img/wheel_creation.jpg)
+![](../img/wheel_creation.ru.jpg)
 
 Теперь у вас должно быть wheel с именем **Unidecode-0.04.14-py26-none-any.whl** в папке my_wheels. Давайте узнаем, как установить наше новое wheel!
 
