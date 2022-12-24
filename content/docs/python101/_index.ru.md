@@ -15,7 +15,7 @@ draft: false
 abcSort: true
 ---
 
-![](./img/py101_small.jpg)
+![](./img/py101_small.ru.jpg)
 
 > Python 101 - адаптированный перевод [книги Python 101](https://python101.pythonlibrary.org/index.html) с применением новых стандартов 
 

@@ -4,7 +4,7 @@ description: Кандидатский минимум 08.00.14 «Мировая �
 toc: true
 authors: [roman-kurnovskii]
 tags: []
-categories: [Roadmaps]
+categories: []
 series:
 date: 2022-12-12
 draft: false
