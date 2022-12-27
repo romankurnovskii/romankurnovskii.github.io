@@ -1,6 +1,7 @@
 ---
 title: 49. Group Anagrams
 description: LeetCode 49. Group Anagrams
+seoTitle: LeetCode 49. Group Anagrams python explanation
 toc: false
 authors: [roman-kurnovskii]
 tags: [Array, "Hash table", String, Sorting]

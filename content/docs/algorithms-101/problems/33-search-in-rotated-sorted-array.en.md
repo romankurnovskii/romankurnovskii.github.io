@@ -1,6 +1,7 @@
 ---
 title: 33. Search in Rotated Sorted Array
 description: LeetCode 33. Search in Rotated Sorted Array
+seoTitle: LeetCode 33. Search in Rotated Sorted Array - Python explanation
 toc: false
 authors: [roman-kurnovskii]
 tags: [Math, "Bit Manipulation"]
@@ -42,7 +43,7 @@ You must write an algorithm with `O(log n)` runtime complexity.
 
 **Idea:**
 
-1. Values in the *right* part of the array are **always lower** than in the left part.
+Values in the *right* part of the array are **always lower** than in the left part.
 
 1. Use binary search
 2. Define where to move (left or right)
