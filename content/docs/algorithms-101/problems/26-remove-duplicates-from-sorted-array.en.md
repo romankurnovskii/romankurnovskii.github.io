@@ -3,7 +3,7 @@ title: 26. Remove Duplicates from Sorted Array
 description: LeetCode 26. Remove Duplicates from Sorted Array
 toc: false
 authors: [roman-kurnovskii]
-tags: [Array, "Two points"]
+tags: [Array, "Two pointers"]
 categories: [Algorithms, Easy]
 series:
 date: 2022-10-26

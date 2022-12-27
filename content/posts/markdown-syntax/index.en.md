@@ -300,7 +300,6 @@ To create an ordered numbered list, use the digits with the symbol `.` or  `)`. 
 2. Second item
 3. Third item
 
-
 To create a nested ordered list, add a indent to the entries in the child list. The allowed indentation is from two to five spaces. The recommended indent size is four spaces.
 
 For example, markup:
@@ -344,6 +343,9 @@ X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
 Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the session.
 
 Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
+
+    Most <mark>salamanders</mark> are nocturnal
+
 
 💡 _Data structure_ is a container that stores data in a specific format. This container decides how the outside world can read or change this data.
 

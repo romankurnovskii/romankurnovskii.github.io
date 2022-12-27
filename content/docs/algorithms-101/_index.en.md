@@ -118,7 +118,8 @@ More info:
 
 ## Tutorial subscriptions
 
+- https://www.enjoyalgorithms.com/data-structures-and-algorithms-course/
+- https://www.scaler.com/topics/data-structures/
 - https://leetcode.com/subscribe/
 - https://algo.monster/subscribe
 - https://www.algoexpert.io/purchase#algoexpert
-- https://www.scaler.com/topics/data-structures/what-is-data-structure/
