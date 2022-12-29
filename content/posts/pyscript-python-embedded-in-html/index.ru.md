@@ -15,7 +15,7 @@ aliases: ["/posts/pyscript-python-embedded-in-html/"]
 
 [PyScript](https://pyscript.net/) - средство запуска Python в браузере, встроенное в HTML, был анонсирован на мероприятии PyCon в Солт-Лейк-Сити, США.
 ![PyScript](images/pyscript.jpeg)
-_Кнопка `Install` здесь для шутки, так как установка не требуется_
+_Кнопка `Instl` здесь для шутки, так как установка не требуется_
 
 PyScript зависит от существующего проекта Pyodide, который является скомпилированным в WebAssembly интерпретатором CPython 3.8, позволяющим запускать Python в браузере, а также скомпилированных научных пакетов Python.
 
@@ -48,8 +48,8 @@ PyScript является открытым исходным кодом с исп
 ```html
 <html>
   <head>
-    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
   </head>
   <body> <py-script> print('Hello, World!') </py-script> </body>
 </html>
@@ -69,8 +69,8 @@ PyScript является открытым исходным кодом с исп
 ```html
 <html>
 <head>
-    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 
 <body>
@@ -95,8 +95,8 @@ PyScript является открытым исходным кодом с исп
 ```html
 <html>
 <head>
-    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 
 <body>
@@ -126,8 +126,8 @@ print(s)
 ```html
 <html>
     <head>
-      <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-      <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+      <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+      <script defer src="https://pyscript.net/latest/pyscript.js"></script>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     </head>
 
@@ -175,8 +175,8 @@ pyscript.write('my-custom-pi', f'π is approximately {pi:.3f}')
 ```html
 <html>
     <head>
-      <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-      <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+      <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+      <script defer src="https://pyscript.net/latest/pyscript.js"></script>
       <py-env>
         - numpy
         - matplotlib
@@ -222,8 +222,8 @@ def make_x_and_y(n):
 ```html
 <html>
     <head>
-      <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-      <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+      <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+      <script defer src="https://pyscript.net/latest/pyscript.js"></script>
       <py-env>
         - numpy
         - matplotlib
