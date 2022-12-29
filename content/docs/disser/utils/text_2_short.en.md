@@ -16,7 +16,7 @@ weight: 100
 <rawhtml>
 <html>
   <head>
-    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <!-- <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" /> -->
     <script src="https://pyscript.net/latest/pyscript.js"></script>
   </head>
   <body> 
