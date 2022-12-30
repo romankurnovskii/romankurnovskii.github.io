@@ -16,7 +16,7 @@ weight: 100
 <rawhtml>
 <html>
   <head>
-    <!-- <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" /> -->
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
     <script src="https://pyscript.net/latest/pyscript.js"></script>
   </head>
   <body> 
@@ -32,10 +32,10 @@ weight: 100
     <div class="flex justify-end py-2 border-t dark:border-gray-600">
         <input
             id="pyscriptsentnums" type="text" 
-            class="m-10 p-2.5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+            class="p-2.5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
             placeholder="Sentences count" required/>
         <button
-            id="bb" py-click="text_to_short()" type="submit"
+            id="pyscriptbutton" py-click="text_to_short()" type="submit"
             class="py-button inline-flex items-center mx-10 py-2.5 px-8 border-1 text-xs font-medium text-center rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
             Create
         </button>

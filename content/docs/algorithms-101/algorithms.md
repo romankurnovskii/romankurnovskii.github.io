@@ -34,7 +34,91 @@ weight: 30
 ```
 
 ## Dynamic programming (DP)
+
+## Breadth First Search (BFS)
+
+**BFS on Tree:**
+```python
+def bfs(root):
+    queue = deque([root])
+    while len(queue) > 0:
+        node = queue.popleft()
+        for child in node.children:
+            if is_goal(child):
+                return FOUND(child)
+            queue.append(child)
+    return NOT_FOUND
+```
+
+**BFS on Graph:**
+```python
+def bfs(root):
+    queue = deque([root])
+    visited = set([root])
+    while len(queue) > 0:
+        node = queue.popleft()
+        for neighbor in get_neighbors(node):
+            if neighbor in visited:
+                continue
+            queue.append(neighbor)
+            visited.add(neighbor)
+```
+
+**BFS on a Matrix:**
+```python
+num_rows, num_cols = len(grid), len(grid[0])
+def get_neighbors(coord):
+    row, col = coord
+    delta_row = [-1, 0, 1, 0]
+    delta_col = [0, 1, 0, -1]
+    res = []
+    for i in range(len(delta_row)):
+        neighbor_row = row + delta_row[i]
+        neighbor_col = col + delta_col[i]
+        if 0 <= neighbor_row < num_rows and 0 <= neighbor_col < num_cols:
+            res.append((neighbor_row, neighbor_col))
+    return res
+
+from collections import deque
+
+def bfs(starting_node):
+    queue = deque([starting_node])
+    visited = set([starting_node])
+    while len(queue) > 0:
+        node = queue.popleft()
+        for neighbor in get_neighbors(node):
+            if neighbor in visited:
+                continue
+            # Do stuff with the node if required
+            # ...
+            queue.append(neighbor)
+            visited.add(neighbor)
+```
+
 ## Depth-first search (DFS)
+
+**DFS on Tree:**
+```python
+def dfs(root, target):
+    if root is None:
+        return None
+    if root.val == target:
+        return root
+    left = dfs(root.left, target)
+    if left is not None:
+        return left
+    return dfs(root.right, target)
+```
+
+**DFS on Graph:**
+```python
+def dfs(root, visited):
+    for neighbor in get_neighbors(root):
+        if neighbor in visited:
+            continue
+        visited.add(neighbor)
+        dfs(neighbor, visited)
+```
 
 ## Sliding Window
 
@@ -178,7 +262,7 @@ def backtrack(some_len_data):
     return result
 ```
 
-*Full with comments:*
+**Full with comments:**
 
 ```python
     def backtrack(A):
@@ -236,9 +320,26 @@ def backtrack(some_len_data):
             i += 1
 ```
 
+### Resources
+- https://algo.monster/problems/backtracking
+
+## Trie
+
+```python
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.children = {}
+
+    def insert(self, s, idx):
+        # idx: index of the current character in s
+        if idx != len(s):
+            self.children.setdefault(s[idx], Node(s[idx]))
+            self.children.get(s[idx]).insert(s, idx + 1)
+```
 
 ## Resources
 
 - https://www.geeksforgeeks.org/learn-data-structures-and-algorithms-dsa-tutorial/
-- https://algo.monster/problems/backtracking
+- https://algo.monster/templates
 - https://interviewnoodle.com/grokking-leetcode-a-smarter-way-to-prepare-for-coding-interviews-e86d5c9fe4e1
