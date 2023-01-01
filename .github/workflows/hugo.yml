@@ -42,6 +42,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           submodules: recursive
+          token: ${{ secrets.SSH_REPO }}
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v2
