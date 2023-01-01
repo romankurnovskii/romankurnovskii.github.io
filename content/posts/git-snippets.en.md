@@ -76,3 +76,4 @@ If already published to-be-deleted commit:
 - https://sethrobertson.github.io/GitFixUm/fixup.html
 - https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-clone.html
 - https://passingcuriosity.com/2017/truncating-git-history/
+- https://www.npmjs.com/package/clear-git-branch?activeTab=explore
