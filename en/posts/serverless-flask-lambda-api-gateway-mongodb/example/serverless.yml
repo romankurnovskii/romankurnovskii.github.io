@@ -1,0 +1,45 @@
+org: romankurnovskii
+app: app-name
+service: app-service-name
+
+frameworkVersion: '3'
+
+useDotenv: true
+
+custom:
+  wsgi:
+    app: src/app.app
+    packRequirements: false
+
+provider:
+  name: aws
+  deploymentMethod: direct
+  region: eu-west-1
+  runtime: python3.9
+  architecture: arm64
+  versionFunctions: false
+  memorySize: 128
+
+functions:
+  api:
+    handler: wsgi_handler.handler
+    events:
+      - httpApi: '*'
+    environment:
+      MONGO_CONNECTION_STRING: ${env:MONGO_CONNECTION_STRING}
+      MONGO_COLLECTION_DB_NAME: ${env:MONGO_COLLECTION_DB_NAME}
+
+package:
+  patterns:
+    - '!.dynamodb/**'
+    - '!.git/**'
+    - '!.vscode/**'
+    - '!.env'
+    - '!node_modules/**'
+    - '!tmp/**'
+    - '!venv/**'
+    - '!__pycache__/**'
+
+plugins:
+  - serverless-wsgi
+  - serverless-python-requirements
