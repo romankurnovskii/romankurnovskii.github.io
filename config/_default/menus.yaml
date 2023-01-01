@@ -1,5 +1,6 @@
 main:
     - name: Заметки
+      identifier: notes
       url: /posts/
       weight: 2
     - name: Руководства
@@ -12,5 +13,12 @@ main:
     - name: Публикации
       url: /p/publications
       weight: 8
+
+    - name: Links
+      identifier: links
+      url: /en/p/links/
+      parent: notes
+      weight: 201
+
 
 # eng menu in languages

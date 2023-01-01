@@ -1,14 +1,13 @@
 ---
 title: Печатные публикации
-description:
+description: Печатные журналы / сборники
 toc: true
-authors:
-  - roman-kurnovskii
+authors: [roman-kurnovskii]
 tags:
 categories:
 series:
 date: "2021-03-31T13:11:22+08:00"
-lastmod: "2021-03-31T13:11:22+08:00"
+lastmod: 2023-01-01
 featuredImage:
 draft: false
 ---

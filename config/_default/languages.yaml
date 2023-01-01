@@ -40,6 +40,11 @@ en:
         url: /categories/cheatsheet/
         parent: notes
         weight: 204
+      - name: Links
+        identifier: links
+        url: /en/p/links/
+        parent: notes
+        weight: 205
 
         # Notes -> OS ->
       - name: Docker

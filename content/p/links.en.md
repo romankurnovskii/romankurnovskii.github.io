@@ -2,7 +2,7 @@
 title: Links
 description:
 toc: true
-authors: [roman-kurnovskii]
+authors:
 tags:
 categories:
 series:
