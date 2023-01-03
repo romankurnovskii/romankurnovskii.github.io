@@ -10,9 +10,9 @@ social:
   - icon: envelope
     iconPack: fas
     url: mailto:r.kurnovskii@gmail.com
-  - icon: vk
+  - icon: linkedin
     iconPack: fab
-    url: https://vk.com/id3713267
+    url: https://www.linkedin.com/in/roman-kurnovskii/
   - icon: facebook
     iconPack: fab
     url: https://www.facebook.com/profile.php?id=100007910670422

@@ -5,7 +5,7 @@ toc: false
 authors: [roman-kurnovskii]
 tags: [Array, "Two Pointers", Sorting]
 categories: [Algorithms, Easy]
-series:
+series: [Array, "Two Pointers", Sorting]
 date: 2022-10-30
 featuredImage:
 weight: 100

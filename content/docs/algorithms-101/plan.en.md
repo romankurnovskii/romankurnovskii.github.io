@@ -74,14 +74,14 @@ Practice on each coding pattern.
 
 ## Q3
 
-|   #   | Problem                         | Difficulty | Topics                                                                                                  |
-| :---: | ------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------- |
-|  32   | [55. Jump Game](../problems/55) | Medium     | [Array](/en/tags/array), [Greedy](/en/tags/greedy), [Dynamic Programming](/en/tags/dynamic-programming) |
-|  33   | [](../problems/)                |            |                                                                                                         |
-|  34   | [](../problems/)                |            |                                                                                                         |
-|  35   | [](../problems/)                |            |                                                                                                         |
-|  36   | [](../problems/)                |            |                                                                                                         |
-|  37   | [](../problems/)                |            |                                                                                                         |
-|  38   | [](../problems/)                |            |                                                                                                         |
-|  39   | [](../problems/)                |            |                                                                                                         |
-|  40   | [](../problems/)                |            |                                                                                                         |
+|   #   | Problem                               | Difficulty | Topics                                                                                                  |
+| :---: | ------------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------- |
+|  32   | [55. Jump Game](../problems/55)       | Medium     | [Array](/en/tags/array), [Greedy](/en/tags/greedy), [Dynamic Programming](/en/tags/dynamic-programming) |
+|  33   | [56. Merge Intervals](../problems/56) | Medium     | [Array](/en/tags/array), [Sorting](/en/tags/sorting),                                                   |
+|  34   | [](../problems/)                      |            |                                                                                                         |
+|  35   | [](../problems/)                      |            |                                                                                                         |
+|  36   | [](../problems/)                      |            |                                                                                                         |
+|  37   | [](../problems/)                      |            |                                                                                                         |
+|  38   | [](../problems/)                      |            |                                                                                                         |
+|  39   | [](../problems/)                      |            |                                                                                                         |
+|  40   | [](../problems/)                      |            |                                                                                                         |

@@ -6,7 +6,7 @@ toc: false
 authors: [roman-kurnovskii]
 tags: [Array, "Hash table", String, Sorting]
 categories: [Algorithms, Medium]
-series:
+series: [Array, "Hash table", String, Sorting]
 date: 2022-12-21
 featuredImage:
 weight: 290
