@@ -14,11 +14,25 @@ main:
       url: /p/publications
       weight: 8
 
+    # notes
     - name: Links
       identifier: links
       url: /en/p/links/
       parent: notes
       weight: 201
+    - name: EN
+      identifier: enposts
+      url: /en/posts/archive/
+      parent: notes
+      weight: 202
+
+    # notes/en
+    - name: Algorithms
+      identifier: enalgorithms
+      url: /en/docs/algorithms-101/
+      parent: enposts
+      weight: 301
+
 
 
 # eng menu in languages

@@ -109,7 +109,7 @@ brew install \
     - [Google Translate](https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb)
     - [DeepL Translate](https://chrome.google.com/webstore/detail/deepl-translate-beta-vers/cofdbpoegempjloogbagkncekinflcnj/related?hl=en) - AI translator
     - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
-    - [Pocket](https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj)
+    - [Pocket](https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj) - The easiest, fastest way to capture articles, videos, and more.
     - [Session Buddy](https://chrome.google.com/webstore/detail/session-buddy/edacconmaakjimmfgnblocblbcdcpbko) (Manage Browser Tabs and Bokmarks)
     - [LanguageTool](https://chrome.google.com/webstore/detail/grammar-spell-checker-%E2%80%94-l/oldceeleldhonbafppcapldpdifcinji) (multilingual grammar, style, and spell checker)
     - [RSS Feed Reader](https://chrome.google.com/webstore/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp) (Easy to subscribe/unsubscribe to blogs/no need email + iOS/Android)
@@ -118,6 +118,9 @@ brew install \
     - [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa)
     - [picture-in-picture](https://chrome.google.com/webstore/detail/picture-in-picture-extens/hkgfoiooedgoejojocmhlaklaeopbecg) (yutube/video above other screens)
     - [Visual CSS Editor](https://chrome.google.com/webstore/detail/visual-css-editor/cibffnhhlfippmhdmdkcfecncoaegdkh) (Customize any website visually)
+    - [Squish](chrome://extensions/?id=iinmigjlcpeckfihbbfajpkiilfmakff) - AI-powered summary tool. Turn any body of text into a few sentences with one click.
+    - [Zotero](chrome://extensions/?id=ekhagklcjbdpajgpjgmbionohlpdbjgc) - Add/sync scientific PDF documents 
+    - [Video Downloader Plus](chrome://extensions/?id=cfejhehdhaaeoiahaojjhmjaihjaodcf)
     - [Opus●Guide](https://chrome.google.com/webstore/detail/opus%E2%97%8Fguide/fpnkogmkokahibbdbfoligochippakeb) (Step-by-step for instructions)
 
 ### Disk Inventory X

@@ -89,3 +89,14 @@ en:
         identifier: aws-developer-roadmaps
         url: /en/docs/aws-certified-developer-associate/
         parent: roadmaps
+      - name: RU
+        identifier: ruroadmaps
+        url: /ru/categories/roadmaps/
+        parent: roadmaps
+
+      # roadmaps -> ru 
+      - name: Диссертация
+        identifier: rudisser
+        url: /ru/docs/disser/
+        parent: ruroadmaps
+
