@@ -3,21 +3,23 @@ title: Печатные публикации
 description: Печатные журналы / сборники
 toc: true
 authors: [roman-kurnovskii]
-tags:
-categories:
-series:
-date: "2021-03-31T13:11:22+08:00"
-lastmod: 2023-01-01
-featuredImage:
+date: 2021-03-31T13:11:22+08:00
+lastmod: 2023-01-05T15:49:52+02:00
 draft: false
+tags: null
+categories: null
+series: null
+featuredImage: null
 ---
+
 [![123](https://scholar.google.ru/intl/en/scholar/images/1x/scholar_logo_24dp.png)](https://scholar.google.com/citations?user=R5xmgOgAAAAJ&authuser=1)
 https://scholar.google.com/citations?user=R5xmgOgAAAAJ&authuser=1
 
 
 ### Печатные журналы / сборники
 
-статья даша / статья катя икт экспорт
+статья даша / статья катя икт экспорт / elibrary
+
 
 > «Ключевые подходы к разработке доступного, интуитивно понятного интерфейса статистического пакета», // Научный журнал // к.т.н., профессор Суханова Е. И., канд. физ.-мат., доцент Ширяева Л. К., Курновский Р. М. // 2014 г. //
 
