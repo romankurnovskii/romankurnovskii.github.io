@@ -12,7 +12,6 @@ featuredImage:
 draft: false
 ---
 
-
 - [The curated list of AI tools for marketing](https://airadar.getinference.com/?ref=producthunt)
 - [Discover the newest AIs for any given task](https://theresanaiforthat.com/)
 
@@ -24,3 +23,4 @@ https://airtrackbot.com/
 
 [Turn any body of text into a few sentences with one click](https://chrome.google.com/webstore/detail/squish/iinmigjlcpeckfihbbfajpkiilfmakff/related?ref=producthunt) - Chrome extension
 
+- [Block Diagram Maker](https://falang.io/documents/edit/local)
