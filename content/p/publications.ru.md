@@ -12,14 +12,18 @@ series: null
 featuredImage: null
 ---
 
-[![123](https://scholar.google.ru/intl/en/scholar/images/1x/scholar_logo_24dp.png)](https://scholar.google.com/citations?user=R5xmgOgAAAAJ&authuser=1)
-https://scholar.google.com/citations?user=R5xmgOgAAAAJ&authuser=1
+
+<div style="display: flex; flex-flow: row nowrap; align-items: center; justify-content:space-evenly">
+    <a href="https://scholar.google.com/citations?user=R5xmgOgAAAAJ&authuser=1" target="_blank"><img src="https://scholar.google.ru/intl/en/scholar/images/1x/scholar_logo_24dp.png" alt="GoogleScholar"></a>
+    <a href="https://www.elibrary.ru/author_items.asp?authorid=1175655&show_refs=1&show_option=1" target="_blank"> <img src="https://www.elibrary.ru/images/elibrary_logo2.svg" width="150px" alt="eLIBRARY.RU"></a>
+</div>
 
 
-### Печатные журналы / сборники
+## Печатные журналы / сборники
 
 статья даша / статья катя икт экспорт / elibrary
 
+> [Факторы и условия, определяющие становления финансовой экосистемы в современных условиях](https://www.elibrary.ru/item.asp?id=50018215), // 	[Экономика и предпринимательство](https://www.elibrary.ru/title_about_new.asp?id=27783) // д.э.н., проф. Коновалова М.Е., Курновский Р.М., Ширяева Д.В. // Номер: [8 (145)](https://www.elibrary.ru/contents.asp?id=50018028&selid=50018215) 2022 г. Страницы: 928-931
 
 > «Ключевые подходы к разработке доступного, интуитивно понятного интерфейса статистического пакета», // Научный журнал // к.т.н., профессор Суханова Е. И., канд. физ.-мат., доцент Ширяева Л. К., Курновский Р. М. // 2014 г. //
 
@@ -48,6 +52,12 @@ https://scholar.google.com/citations?user=R5xmgOgAAAAJ&authuser=1
 > «Генетический паспорт гражданина Российской Федерации» // Сборник тезисов конкурсных работ, опубликованных Государственной Думой Федерального Собрания Российской Федерации во всероссийском конкурсе молодежи, образовательных учреждений и научных организаций на лучшую работу «Моя законотворческая инициатива». // 2007 г. //
 
 
-### Площадки
+## Площадки
 
 [How to unmount disk on Linux](https://medium.com/@romankurnovskii/how-to-unmount-disk-on-linux-78a10e42cbdb)
+
+
+## Codes
+
+- https://orcid.org/0000-0002-6040-3683
+- SCIENCE INDEX SPIN-код: 1657-2666

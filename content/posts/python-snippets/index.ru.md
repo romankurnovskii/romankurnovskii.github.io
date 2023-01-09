@@ -4,7 +4,7 @@ description: Сниппеты Python
 toc: true
 tags:  ["python"]
 series: [CheatSheet]
-categories: [Python]
+categories: [Python, CheatSheet]
 date: "2022-06-16"
 featuredImage:
 draft: false

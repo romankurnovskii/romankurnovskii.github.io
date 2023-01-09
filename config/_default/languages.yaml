@@ -19,7 +19,7 @@ en:
         url: apps/
         weight: 5
 
-        # Under Notes
+      # Under Notes
       - name: AWS
         identifier: aws
         url: /categories/aws/
@@ -46,7 +46,7 @@ en:
         parent: notes
         weight: 205
 
-        # Notes -> OS ->
+      # Notes -> OS ->
       - name: Docker
         identifier: docker
         url: /categories/docker/
@@ -61,7 +61,7 @@ en:
         parent: os
 
         # Notes -> AWS ->
-      - name: Developer exam prepare
+      - name: AWS Developer Associate
         identifier: aws-developer
         url: /en/docs/aws-certified-developer-associate/
         parent: aws
@@ -80,7 +80,7 @@ en:
         url: /categories/hugo/
         parent: programming
 
-        # Roadmaps ->
+      # Roadmaps ->
       - name: Algorithms101
         identifier: algorithms-101
         url: /en/docs/algorithms-101/
@@ -89,14 +89,8 @@ en:
         identifier: aws-developer-roadmaps
         url: /en/docs/aws-certified-developer-associate/
         parent: roadmaps
-      - name: RU
-        identifier: ruroadmaps
-        url: /ru/categories/roadmaps/
-        parent: roadmaps
-
-      # roadmaps -> ru 
-      - name: Диссертация
+      - name: Диссертация [RU]
         identifier: rudisser
         url: /ru/docs/disser/
-        parent: ruroadmaps
+        parent: roadmaps
 

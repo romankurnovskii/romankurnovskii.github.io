@@ -3,10 +3,6 @@ main:
       identifier: notes
       url: /posts/
       weight: 2
-    - name: Руководства
-      # url: /series/Руководства/
-      url: /categories/roadmaps/
-      weight: 3
     - name: Приложения
       url: apps/
       weight: 5
@@ -15,24 +11,61 @@ main:
       weight: 8
 
     # notes
-    - name: Links
-      identifier: links
-      url: /en/p/links/
+    - name: Руководства
+      identifier: docslist
+      url: /categories/roadmaps/
       parent: notes
       weight: 201
-    - name: EN
-      identifier: enposts
-      url: /en/posts/archive/
+    - name: Программирование
+      identifier: programming
+      url: /categories/programming/
       parent: notes
       weight: 202
+    - name: Links
+      identifier: links
+      url: https://romankurnovskii.com/en/p/links/
+      parent: notes
+      weight: 205
 
-    # notes/en
-    - name: Algorithms
-      identifier: enalgorithms
-      url: /en/docs/algorithms-101/
-      parent: enposts
+    # Руководства
+    - name: Algorithms [EN]
+      identifier: algorithms
+      url: https://romankurnovskii.com/en/docs/algorithms-101/
+      parent: programming
+      weight: 210
+    - name: Справочник Python
+      identifier: python101
+      url: /docs/python101/
+      parent: docslist
+      weight: 211
+    - name: Справочник WebRTC
+      identifier: WebRTC
+      url: /docs/WebRTC/
+      parent: docslist
+      weight: 212
+    - name: Диссертация
+      identifier: disser
+      url: /docs/disser/
+      parent: docslist
+      weight: 213
+
+    # Notes -> Programming ->
+    - name: Algorithms [EN]
+      identifier: algorithms
+      url: https://romankurnovskii.com/en/docs/algorithms-101/
+      parent: programming
       weight: 301
-
-
+    - name: Python
+      identifier: python
+      url: /categories/python/
+      parent: programming
+    - name: JavaScript
+      identifier: javascript
+      url: /categories/javascript/
+      parent: programming
+    - name: Hugo
+      identifier: hugo
+      url: /categories/hugo/
+      parent: programming
 
 # eng menu in languages
