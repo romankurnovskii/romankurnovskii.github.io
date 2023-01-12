@@ -23,14 +23,14 @@ main:
       weight: 202
     - name: Links
       identifier: links
-      url: https://romankurnovskii.com/en/p/links/
+      url: ./../en/p/links/
       parent: notes
       weight: 205
 
     # Руководства
     - name: Algorithms [EN]
       identifier: algorithms
-      url: https://romankurnovskii.com/en/docs/algorithms-101/
+      url: ./../en/docs/algorithms-101/
       parent: programming
       weight: 210
     - name: Справочник Python
@@ -52,7 +52,7 @@ main:
     # Notes -> Programming ->
     - name: Algorithms [EN]
       identifier: algorithms
-      url: https://romankurnovskii.com/en/docs/algorithms-101/
+      url: ./../en/docs/algorithms-101/
       parent: programming
       weight: 301
     - name: Python
