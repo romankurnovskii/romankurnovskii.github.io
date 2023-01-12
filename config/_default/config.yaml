@@ -74,3 +74,6 @@ outputs:
     - SearchIndex
 
 ignoreErrors: ["error-remote-getjson"]
+
+staticDir: # save here files for posts: pdf, img etc
+  - static_files

@@ -60,13 +60,13 @@ en:
         url: /categories/macos/
         parent: os
 
-        # Notes -> AWS ->
+      # Notes -> AWS ->
       - name: AWS Developer Associate
         identifier: aws-developer
         url: /en/docs/aws-certified-developer-associate/
         parent: aws
 
-        # Notes -> Programming ->
+      # Notes -> Programming ->
       - name: Python
         identifier: python
         url: /categories/python/
@@ -91,6 +91,6 @@ en:
         parent: roadmaps
       - name: Диссертация [RU]
         identifier: rudisser
-        url: /ru/docs/disser/
+        url: ./../ru/docs/disser/
         parent: roadmaps
 
