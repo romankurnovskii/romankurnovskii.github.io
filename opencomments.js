@@ -28591,7 +28591,7 @@
     "node_modules/html-react-parser/lib/attributes-to-props.js"(exports, module) {
       var reactProperty = require_lib9();
       var utilities = require_utilities3();
-      module.exports = function attributesToProps2(attributes) {
+      module.exports = function attributesToProps2(attributes, nodeName) {
         attributes = attributes || {};
         var valueOnlyInputs = {
           reset: true,
@@ -28614,7 +28614,7 @@
           propName = getPropName(attributeNameLowerCased);
           if (propName) {
             propertyInfo = reactProperty.getPropertyInfo(propName);
-            if ((propName === "checked" || propName === "value") && !inputIsValueOnly) {
+            if ((propName === "checked" || propName === "value") && nodeName !== "option" && !inputIsValueOnly) {
               propName = getPropName("default" + attributeNameLowerCased);
             }
             props[propName] = attributeValue;
@@ -28694,7 +28694,7 @@
           if (skipAttributesToProps(node)) {
             setStyleProp(props.style, props);
           } else if (props) {
-            props = attributesToProps2(props);
+            props = attributesToProps2(props, node.name);
           }
           children = null;
           switch (node.type) {
