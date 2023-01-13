@@ -27,7 +27,7 @@ featuredImage: null
 
 > [Факторы и условия, определяющие становления финансовой экосистемы в современных условиях](https://www.elibrary.ru/item.asp?id=50018215), // 	[Экономика и предпринимательство](https://www.elibrary.ru/title_about_new.asp?id=27783) // д.э.н., проф. Коновалова М.Е., Курновский Р.М., Ширяева Д.В. // Номер: [8 (145)](https://www.elibrary.ru/contents.asp?id=50018028&selid=50018215) 2022 г. Страницы: 928-931
 
-[Статья [pdf]](/articles/2022-8-Faktory-i-uslovija-opredeljajushhie-stanovlenija-finansovoĭ-jekosistemy-v-sovremennyh-uslovijah.pdf) | [ResearchGate](https://www.researchgate.net/publication/367052691_Faktory_i_uslovia_opredelausie_stanovlenia_finansovoj_ekosistemy_v_sovremennyh_usloviah)
+[Статья [pdf]](/articles/2022-12-faktory-i-usloviya-opredeljajushhie-stanovlenija-finansovoi-ekosistemy-v-sovremennyh-uslovijah.pdf) / [ResearchGate](https://www.researchgate.net/publication/367052691_Faktory_i_uslovia_opredelausie_stanovlenia_finansovoj_ekosistemy_v_sovremennyh_usloviah)
 
 > «Ключевые подходы к разработке доступного, интуитивно понятного интерфейса статистического пакета», // Научный журнал // к.т.н., профессор Суханова Е. И., канд. физ.-мат., доцент Ширяева Л. К., Курновский Р. М. // 2014 г. //
 
