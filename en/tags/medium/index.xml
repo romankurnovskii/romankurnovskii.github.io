@@ -5,4 +5,4 @@ Input: head = [1,2,3,4,5], n = 2 Output: [1,2,3,5] Example 2:
 Input: head = [1], n = 1 Output: [] First accepted Create Linked List
 Idea:
 Two pointers. Second pointer starts from nth position. Run while second pointer exist. First version:
-# Definition for singly-linked list. # class ListNode: # def __init__(self, val=0, next=None): # self.</description></item></channel></rss>
+1# Definition for singly-linked list. 2# class ListNode: 3# def __init__(self, val=0, next=None): 4# self.</description></item></channel></rss>

@@ -28765,8 +28765,8 @@
   });
 
   // <stdin>
-  var import_react = __toESM(require_react());
   var ReactDOM = __toESM(require_react_dom());
+  var import_react = __toESM(require_react());
   var import_client = __toESM(require_client());
 
   // node_modules/marked/lib/marked.esm.js

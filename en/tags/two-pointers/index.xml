@@ -20,7 +20,7 @@ Input: head = [1,2,3,4,5], n = 2 Output: [1,2,3,5] Example 2:
 Input: head = [1], n = 1 Output: [] First accepted Create Linked List
 Idea:
 Two pointers. Second pointer starts from nth position. Run while second pointer exist. First version:
-# Definition for singly-linked list. # class ListNode: # def __init__(self, val=0, next=None): # self.</description></item><item><title>28. Find the Index of the First Occurrence in a String</title><link>https://romankurnovskii.com/en/docs/algorithms-101/problems/28-find-the-index-of-the-first-occurrence-in-a-string.en./</link><pubDate>Sat, 19 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/docs/algorithms-101/problems/28-find-the-index-of-the-first-occurrence-in-a-string.en./</guid><description>LeetCode problem
+1# Definition for singly-linked list. 2# class ListNode: 3# def __init__(self, val=0, next=None): 4# self.</description></item><item><title>28. Find the Index of the First Occurrence in a String</title><link>https://romankurnovskii.com/en/docs/algorithms-101/problems/28-find-the-index-of-the-first-occurrence-in-a-string.en./</link><pubDate>Sat, 19 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/docs/algorithms-101/problems/28-find-the-index-of-the-first-occurrence-in-a-string.en./</guid><description>LeetCode problem
 Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
 Example 1:
 Input: haystack = &amp;ldquo;sadbutsad&amp;rdquo;, needle = &amp;ldquo;sad&amp;rdquo; Output: 0 Explanation: &amp;ldquo;sad&amp;rdquo; occurs at index 0 and 6. The first occurrence is at index 0, so we return 0.
