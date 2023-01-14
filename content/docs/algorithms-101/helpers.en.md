@@ -12,6 +12,7 @@ draft: false
 weight: 30
 ---
 
+
 ## Create Linked List
 
 Definition for singly-linked list:

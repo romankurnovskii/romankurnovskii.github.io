@@ -11,6 +11,10 @@ date: 2022-10-15
 weight: 30
 ---
 
+## Intro
+
+- [Big-O Cheat Sheet](https://www.30secondsofcode.org/articles/s/big-o-cheatsheet)
+
 ## Binary Search
 
 - [Binary search template](https://leetcode.com/explore/learn/card/binary-search/125/template-i/938/)
