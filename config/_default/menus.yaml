@@ -28,31 +28,31 @@ main:
       weight: 205
 
     # Руководства
-    - name: Algorithms [EN]
-      identifier: algorithms
-      url: ./../en/docs/algorithms-101/
-      parent: programming
-      weight: 210
     - name: Справочник Python
       identifier: python101
-      url: /docs/python101/
+      url: /tracks/python101/
       parent: docslist
       weight: 211
     - name: Справочник WebRTC
       identifier: WebRTC
-      url: /docs/WebRTC/
+      url: /tracks/WebRTC/
       parent: docslist
       weight: 212
     - name: Диссертация
       identifier: disser
-      url: /docs/disser/
+      url: /tracks/disser/
       parent: docslist
       weight: 213
-
+    - name: Algorithms [EN]
+      identifier: algorithms
+      url: ./../en/tracks/algorithms-101/
+      parent: docslist
+      weight: 210
+      
     # Notes -> Programming ->
     - name: Algorithms [EN]
       identifier: algorithms
-      url: ./../en/docs/algorithms-101/
+      url: ./../en/tracks/algorithms-101/
       parent: programming
       weight: 301
     - name: Python

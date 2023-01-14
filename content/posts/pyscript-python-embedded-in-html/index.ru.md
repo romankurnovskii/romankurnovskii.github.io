@@ -4,7 +4,7 @@ description: PyScript - Python, встроенный в HTML
 toc: true
 tags: [pyscript, Pyodide, python]
 series: 
-categories: [Python]
+categories: [programming, Python]
 date: "2022-05-20"
 featuredImage: images/pyscript-featured.jpg
 authors: [roman-kurnovskii]

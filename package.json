@@ -9,7 +9,7 @@
     "pull-git-modules": "git submodule update --init --recursive",
     "upd-modules": "git submodule update --remote --merge",
     "push": "git add .; git commit -am upd; git push",
-    "p": "git add .; git commit -am upd; git pull; npm run upd-modules; npm run push"
+    "p": "git commit -am upd; git pull; npm run upd-modules; npm run push"
   },
   "browserslist": [
     "last 1 version",
@@ -18,22 +18,22 @@
     "not dead"
   ],
   "dependencies": {
-    "html-react-parser": "^3.0.7",
-    "marked": "^4.2.5",
+    "html-react-parser": "^3.0.8",
+    "marked": "^4.2.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^5.0.0",
-    "@tailwindcss/typography": "^0.5.8",
+    "@tailwindcss/typography": "^0.5.9",
     "autoprefixer": "^10.4.13",
     "cssnano": "^5.1.14",
-    "hugo-lunr-ml": "^2.3.1",
+    "hugo-lunr-ml": "^3.0.2",
     "postcss": "^8.4.21",
     "postcss-cli": "10.1.0",
     "postcss-import": "^15.1.0",
     "prettier-plugin-go-template": "^0.0.13",
-    "prettier-plugin-tailwindcss": "^0.2.1",
+    "prettier-plugin-tailwindcss": "^0.2.2",
     "tailwindcss": "^3.2.4",
     "tailwindcss-rtl": "^0.9.0"
   }

@@ -4,9 +4,11 @@ description: How I set up my M1 MacBook Pro software development...
 toc: true
 tags: [mac, mac setup web developer, mac setup javascript]
 categories: [OS, MacOS]
-date: 2022-05-18T00:00:00+03:00
+date: 2022-05-18
 featuredImage: img/featured.jpg
 authors: [roman-kurnovskii]
+aliases:
+    - /ru/posts/mac-setup-development
 ---
 
 ## MacBook Pro Specification
@@ -19,6 +21,7 @@ authors: [roman-kurnovskii]
 - macOS Monterey (Update always)
 
 ![](img/mac-monitors.png)
+
 ## Homebrew
 
 Install [Homebrew](https://brew.sh) as package manager for macOS:
@@ -84,13 +87,14 @@ brew install \
 ```
 ## Additional GUI Applications
 ### Kotatogram
- [Kotatogram](https://kotatogram.github.io/) - Experimental fork of Telegram Desktop. Folders with features
 
+[Kotatogram](https://kotatogram.github.io/) - Experimental fork of Telegram Desktop. Folders with features
 
 ## GUI Applications
 
 ### Google Chrome
- [Google Chrome](https://www.google.com/chrome/) (web development, web browsing)
+
+[Google Chrome](https://www.google.com/chrome/) (web development, web browsing)
   - Preferences
     - set default browser
     - always show bookmarks
@@ -105,23 +109,26 @@ brew install \
     - Youtube
       - Shortcut: `yy`
       - url: `https://www.youtube.com/results?search_query=%s&page={startPage?}&utm_source=opensearch`
+
   - Chrome Extensions
-    - [Google Translate](https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb)
+    - [ChatGPT for Search Engines](https://chrome.google.com/webstore/detail/chatgpt-for-search-engine/feeonheemodpkdckaljcjogdncpiiban) - Show ChatGPT output on every search request
     - [DeepL Translate](https://chrome.google.com/webstore/detail/deepl-translate-beta-vers/cofdbpoegempjloogbagkncekinflcnj/related?hl=en) - AI translator
+    - [Google Translate](https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb)
     - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
     - [Pocket](https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj) - The easiest, fastest way to capture articles, videos, and more.
-    - [Session Buddy](https://chrome.google.com/webstore/detail/session-buddy/edacconmaakjimmfgnblocblbcdcpbko) (Manage Browser Tabs and Bokmarks)
+    - [Session Buddy](https://chrome.google.com/webstore/detail/session-buddy/edacconmaakjimmfgnblocblbcdcpbko) (Manage Browser Tabs and Bookmarks)
     - [LanguageTool](https://chrome.google.com/webstore/detail/grammar-spell-checker-%E2%80%94-l/oldceeleldhonbafppcapldpdifcinji) (multilingual grammar, style, and spell checker)
     - [RSS Feed Reader](https://chrome.google.com/webstore/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp) (Easy to subscribe/unsubscribe to blogs/no need email + iOS/Android)
     - [Inoreader](https://inoreader.com) (Easy to subscribe/unsubscribe to blogs/no need email + iOS/Android)
     - [30 Seconds of Knowledge](https://chrome.google.com/webstore/search/https%3A%2F%2F30secondsofknowledge.com%2F) (random code snippet on a new tab)
     - [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa)
-    - [picture-in-picture](https://chrome.google.com/webstore/detail/picture-in-picture-extens/hkgfoiooedgoejojocmhlaklaeopbecg) (yutube/video above other screens)
+    - [picture-in-picture](https://chrome.google.com/webstore/detail/picture-in-picture-extens/hkgfoiooedgoejojocmhlaklaeopbecg) (youtube/video above other screens)
     - [Visual CSS Editor](https://chrome.google.com/webstore/detail/visual-css-editor/cibffnhhlfippmhdmdkcfecncoaegdkh) (Customize any website visually)
     - [Squish](chrome://extensions/?id=iinmigjlcpeckfihbbfajpkiilfmakff) - AI-powered summary tool. Turn any body of text into a few sentences with one click.
     - [Zotero](chrome://extensions/?id=ekhagklcjbdpajgpjgmbionohlpdbjgc) - Add/sync scientific PDF documents 
     - [Video Downloader Plus](chrome://extensions/?id=cfejhehdhaaeoiahaojjhmjaihjaodcf)
     - [Opus●Guide](https://chrome.google.com/webstore/detail/opus%E2%97%8Fguide/fpnkogmkokahibbdbfoligochippakeb) (Step-by-step for instructions)
+
 
 ### Disk Inventory X
 [Disk Inventory X](http://www.derlien.com/) (disk usage utility for macOS)
@@ -131,7 +138,6 @@ brew install \
   - used for running databases (e.g. PostgreSQL, MongoDB) in container without cluttering the Mac
   - Preferences
     - enable "Use Docker Compose"
-
 
 ### Firefox
 [Firefox](https://www.google.com/chrome/) (web development)
@@ -145,7 +151,7 @@ brew install \
 [Sublime Text](https://www.sublimetext.com/) (editor)
 
 ### Maccy
- [Maccy](https://maccy.app/) (clipboard manager)
+[Maccy](https://maccy.app/) (clipboard manager)
   - enable "Launch at Login"
 
 
@@ -208,7 +214,7 @@ sudo apt install spice-vdagent spice-webdavd -y
 
 The [node version manager (NVM)](https://github.com/nvm-sh/nvm) is used to install and manage multiple Node versions. After you have installed it via Homebrew in a previous step, type the following commands to complete the installation:
 
-```text
+```sh
 echo "source $(brew --prefix nvm)/nvm.sh" >> ~/.zshrc
 
 source ~/.zshrc
@@ -230,13 +236,13 @@ node -v && npm -v
 
 Update npm to its latest version:
 
-```text
+```sh
 npm install -g npm@latest
 ```
 
 And set defaults for npm:
 
-```text
+```sh
 npm set init.author.name "your name"
 npm set init.author.email "you@example.com"
 npm set init.author.url "example.com"
@@ -244,19 +250,19 @@ npm set init.author.url "example.com"
 
 If you are a library author, log in to npm too:
 
-```text
+```sh
 npm adduser
 ```
 
 That's it. If you want to list all your Node.js installation, type the following:
 
-```text
+```sh
 nvm list
 ```
 
 If you want to install a newer Node.js version, then type:
 
-```text
+```sh
 nvm install <version> --reinstall-packages-from=$(nvm current)
 nvm use <version>
 nvm alias default <version>
@@ -264,14 +270,14 @@ nvm alias default <version>
 
 Optionally install [yarn](https://yarnpkg.com/) if you use it as alternative to npm:
 
-```text
+```sh
 npm install -g yarn
 yarn -v
 ```
 ****
 If you want to list all globally installed packages, run this command:
 
-```text
+```sh
 npm list -g --depth=0
 ```
 

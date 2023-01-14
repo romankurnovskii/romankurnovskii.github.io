@@ -18,18 +18,7 @@ publisherName: Roman Kurnovskii
 publisherLogo:
 
 highlight:
-  handler: highlightjs
-
-  highlightjs:
-    # See https://github.com/highlightjs/cdn-release/tree/master/build/languages for available languages.
-    languages:
-      - bash
-      - javascript
-      - python
-      - go
-      - yaml
-    # See https://github.com/highlightjs/cdn-release/tree/master/build/styles for available styles.
-    style: base16/solarized-light
+  # handler: highlightjs
 
 math:
   handler: katex
@@ -60,7 +49,6 @@ comment:
 
   # utterances:
   #   # Browse https://utteranc.es/ to see the options available.
-  #   # If you want the color scheme of utterances to follow eureka's, you can set `theme: eureka`.
   #   repo: https://github.com/romankurnovskii/romankurnovskii.github.io
   #   issue-term: pathname
   #   theme: github-light

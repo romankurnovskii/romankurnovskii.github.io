@@ -13,7 +13,7 @@ featuredImage:
 draft: true
 ---
 
-Eureka supports the rendering of diagrams by using Mermaid.
+Theme supports the rendering of diagrams by using Mermaid.
 
 <!--more-->
 

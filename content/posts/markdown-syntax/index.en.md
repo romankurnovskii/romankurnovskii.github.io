@@ -288,7 +288,7 @@ Make the headers uniform. At the end of the title, do not put a point.
 2. Second item
 3. Third item
 
-To create an ordered numbered list, use the digits with the symbol `.` or  `)`. The recommended markup format is `1` and `.`.
+To create an ordered numbered list, use the digits with the symbol `.` or `)`. The recommended markup format is `1` and `.`.
 
 ```
 1. First item
@@ -332,7 +332,7 @@ For example, markup:
   * Milk
   * Cheese
 
-## Other elemnts - abbr, sub, sup, kbd, mark
+## Other elements - abbr, sub, sup, kbd, mark
 
 <abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
 
@@ -346,8 +346,45 @@ Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and ot
 
     Most <mark>salamanders</mark> are nocturnal
 
-
 💡 _Data structure_ is a container that stores data in a specific format. This container decides how the outside world can read or change this data.
+
+## Math LaTeX syntax
+
+| Math Element                  | Code                            | Pronunciation |
+| ----------------------------- | ------------------------------- | ------------- |
+| $x_{12345}$                   | `$x_{12345}$`                   |               |
+| $\quad x_12$                  | `$\quad x_12$`                  |               |
+| $a_{ij}b_{kl}=\delta_{i}^{l}$ | `$a_{ij}b_{kl}=\delta_{i}^{l}$` |               |
+| $\alpha$                      | `$\alpha$`                      | \alpha        |
+| $\beta$                       | `$\beta$`                       | \beta         |
+| $\gamma$                      | `$\gamma$`                      | \gamma        |
+| $\delta$                      | `$\delta$`                      | \delta        |
+| $\epsilon$                    | `$\epsilon$`                    | \epsilon      |
+| $\pi$                         | `$\pi$`                         | \pi           |
+| $\theta$                      | `$\theta$`                      | \theta        |
+| $\lambda$                     | `$\lambda$`                     | \lambda       |
+| $\mu$                         | `$\mu$`                         | \mu           |
+| $\sigma$                      | `$\sigma$`                      | \sigma        |
+| $\omega$                      | `$\omega$`                      | \omega        |
+| $\Gamma$                      | `$\Gamma$`                      | \Gamma        |
+| $\Delta$                      | `$\Delta$`                      | \Delta        |
+| $\Sigma$                      | `$\Sigma$`                      | \Sigma        |
+| $\Theta$                      | `$\Theta$`                      | \Theta        |
+| $\Omega$                      | `$\Omega$`                      | \Omega        |
+| $\infty$                      | `$\infty$`                      | \infty        |
+| $\sum$                        | `$\sum$`                        | \sum          |
+| $\prod$                       | `$\prod$`                       | \prod         |
+| $\int$                        | `$\int$`                        | \int          |
+| $\oint$                       | `$\oint$`                       | \oint         |
+| $\partial$                    | `$\partial$`                    | \partial      |
+| $\nabla$                      | `$\nabla$`                      | \nabla        |
+| $\pm$                         | `$\pm$`                         | \pm           |
+| $\times$                      | `$\times$`                      | \times        |
+| $\div$                        | `$\div$`                        | \div          |
+| $\approx$                     | `$\approx$`                     | \approx       |
+| $\geq$                        | `$\geq$`                        | \geq          |
+| $\leq$                        | `$\leq$`                        | \leq          |
+| $\neq$                        | `$\neq$`                        | \neq          |
 
 ## Resources
 

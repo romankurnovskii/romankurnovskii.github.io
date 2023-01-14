@@ -2,9 +2,9 @@
 title: JavaScript code snippets
 description: JavaScript code snippets
 toc: true
-tags:  [js, javascript, typescript]
+categories: [programming, JavaScript, CheatSheet]
 series: [CheatSheet]
-categories: [JavaScript, CheatSheet]
+tags:  [js, javascript, typescript]
 date: 2022-09-15
 featuredImage: https://picsum.photos/700/238
 draft: false
@@ -216,7 +216,7 @@ export default Config;
 
 ## Cheat Sheet
 
-```js
+```javascript
 // Single-line comments start with two slashes.
 /* Multiline comments start with slash-star,
    and end with star-slash */

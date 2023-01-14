@@ -13,7 +13,7 @@ featuredImage:
 draft: true
 ---
 
-Eureka supports the rendering of mathematical formulas by using KaTeX.
+Theme supports the rendering of mathematical formulas by using KaTeX.
 
 <!--more-->
 

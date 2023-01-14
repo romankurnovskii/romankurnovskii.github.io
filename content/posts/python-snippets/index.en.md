@@ -4,12 +4,21 @@ description: Python Cheat Sheet
 toc: true
 tags:  [Python, CheatSheet]
 series: [CheatSheet]
-categories: [Python, CheatSheet]
+categories: [programming, Python, CheatSheet]
 date: 2022-06-21
 featuredImage:
 draft: false
 ---
 
+
+```python
+def sum_of_digits(n):
+    sum = 0
+    while n:
+        sum += n % 10
+        n //= 10
+    return sum
+```
 
 ```python
 # Single line comments start with a number symbol.

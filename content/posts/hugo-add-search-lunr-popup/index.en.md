@@ -4,7 +4,7 @@ description: Make your multilingual Hugo static site searchable with a client-si
 toc: true
 tags: [hugo, lunr, javascript]
 series: []
-categories: [Hugo]
+categories: [programming, Hugo]
 date: "2022-07-16"
 featuredImage: https://picsum.photos/700/250
 authors: [roman-kurnovskii]

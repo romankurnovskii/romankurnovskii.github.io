@@ -15,7 +15,7 @@ defaultContentLanguageInSubdir: true
 
 paginate: 10
 copyright: >
-  &copy; 2022 <a href="https://romankurnovskii.com">Roman Kurnovskii</a> personal page
+  &copy; 2023 <a href="https://romankurnovskii.com">Roman Kurnovskii</a> personal page
 enableEmoji: true
 enableGitInfo: true
 summaryLength: 75
@@ -28,16 +28,16 @@ markup:
     endLevel: 6
     ordered: false
   highlight:
-    codeFences: false
-    noClasses: false
+    codeFences: true
+    noClasses: true # set false use custom css
     guessSyntax: true
-
-    anchorLineNos: false
+    anchorLineNos: true #Configure anchors on line numbers. Valid values are true or false
+    lineanchors: prefix
     lineNoStart: 1
-    lineNos: false
+    lineNos: false # line numbers
     lineNumbersInTable: true
     noHl: false
-    style: monokai
+    style: friendly  # nord rose-pine-dawn  autumn monokailight lovelace emacs tango friendly manni catppuccin-latte  # https://xyproto.github.io/splash/docs/
     tabWidth: 4
   goldmark:
     renderer:
@@ -64,8 +64,11 @@ sitemap:
 
 outputFormats:
   SearchIndex:
-    baseName: search # creates search.json for each language
     mediaType: application/json
+    # baseName: search # creates search.json for each language
+    baseName: searchindex # creates search.json for each language
+    isPlainText: true
+    notAlternative: true
 
 outputs:
   home:
@@ -76,4 +79,5 @@ outputs:
 ignoreErrors: ["error-remote-getjson"]
 
 staticDir: # save here files for posts: pdf, img etc
+  - static
   - static_files

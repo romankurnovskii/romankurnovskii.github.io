@@ -4,7 +4,7 @@ description: Добавляем скрипт, который будет увел
 toc: true
 tags: [hugo]
 series: 
-categories: [Hugo]
+categories: [programming, Hugo]
 date: 2022-07-09
 authors: [roman-kurnovskii]
 featuredImage: img/featured.jpg
