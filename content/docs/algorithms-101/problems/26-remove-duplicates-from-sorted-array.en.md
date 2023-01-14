@@ -1,5 +1,6 @@
 ---
 title: 26. Remove Duplicates from Sorted Array
+seoTitle: LeetCode 26. Remove Duplicates from Sorted Array | Python soulution and explanation
 description: LeetCode 26. Remove Duplicates from Sorted Array
 toc: false
 authors: [roman-kurnovskii]

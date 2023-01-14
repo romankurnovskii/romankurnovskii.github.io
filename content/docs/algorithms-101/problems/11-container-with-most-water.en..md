@@ -39,7 +39,7 @@ Notice that you may not slant the container.
 
 **Idea:**
 
-- Two Pointer
+- Two Pointers
 
 1. Max water area is limited by the height of the **shorter** line
 2. Get most left pointer and most right
@@ -61,5 +61,4 @@ class Solution:
             else:
                 p2 -= 1
         return max_water
-    
 ```

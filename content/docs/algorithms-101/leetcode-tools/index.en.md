@@ -11,5 +11,4 @@ toc: false
 weight: 15
 ---
 
-{{< js_block src="/en/docs/algorithms-101/leetcode-tools/leetcode_tools.js" >}}
-
+<!-- {{< js_block src="/en/docs/algorithms-101/leetcode-tools/leetcode_tools.js" >}} -->

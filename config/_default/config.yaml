@@ -28,16 +28,15 @@ markup:
     endLevel: 6
     ordered: false
   highlight:
-    codeFences: false
-    noClasses: false
+    codeFences: true
+    noClasses: true # set false use custom css
     guessSyntax: true
-
-    anchorLineNos: false
+    anchorLineNos: true
     lineNoStart: 1
-    lineNos: false
-    lineNumbersInTable: true
+    lineNos: true
+    lineNumbersInTable: false
     noHl: false
-    style: monokai
+    style: autumn # monokailight lovelace emacs tango friendly manni catppuccin-latte  # https://xyproto.github.io/splash/docs/
     tabWidth: 4
   goldmark:
     renderer:

@@ -1,5 +1,6 @@
 ---
-title: Кандидатский минимум 08.00.14 «Мировая экономика»
+title: Кандидатский минимум Мировая экономика 08.00.14 
+seoTitle: Ответы на вопросы Кандидатский минимум 08.00.14 «Мировая экономика»
 description: Кандидатский минимум 08.00.14 «Мировая экономика» - Тезисы ответов
 toc: true
 authors: [roman-kurnovskii]
@@ -15,7 +16,6 @@ featuredImage:
 - РУДН - https://econ.rudn.ru/general_information/cathedras/ekonomicheskih_otnosheniy/kandidatskiy_minimum_2016_vesna_osen_voprosy/
 - ВШЭ - https://we.hse.ru/phd_programm
 - МГИМО - https://mgimo.ru/upload/2021/04/progr_kand-ehkz-08-00-14-meo-i-ves.pdf
-
 
 <details>
   <summary>Перечень вопросов, выносимых на кандидатский минимум по специальности 08.00.14 Мировая экономика</summary>
