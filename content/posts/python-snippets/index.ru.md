@@ -34,7 +34,7 @@ if not os.path.exists(name):
   os.makedirs(name)
 ```
 
-### Поиск наиболее часто встречаемого значения в списке
+### Самое часто встречаемое значение в списке
 
 ```python
 import collections

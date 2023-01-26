@@ -60,10 +60,13 @@ featuredImage: null
 *статья Катя икт экспорт / elibrary*
 - [ТРАНСФОРМАЦИЯ ЭКОНОМИКИ И УПРАВЛЕНИЯ: НОВЫЕ ВЫЗОВЫ И ПЕРСПЕКТИВЫ Сборник статей и тезисов докладов XII Международной научно-практической конференции](http://www.fa.ru/fil/spb/science/Pages/Home.aspx)
 
+- ОСОБЕННОСТИ РЕГИОНАЛЬНОЙ ПОЛИТИКИ И ЭКОНОМИЧЕСКИЕ ИНТЕГРАЦИИ ИЗРАИЛЯ
+в журнале "Наука и бизнес"
+январский номер 23
 
 ## Площадки
 
-[How to unmount disk on Linux](https://medium.com/@romankurnovskii/how-to-unmount-disk-on-linux-78a10e42cbdb)
+- [How to unmount disk on Linux](https://medium.com/@romankurnovskii/how-to-unmount-disk-on-linux-78a10e42cbdb)
 
 
 ## Codes

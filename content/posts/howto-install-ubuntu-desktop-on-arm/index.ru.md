@@ -71,3 +71,4 @@ Ubuntu - одна из популярных Linux систем и достато
 ## Ссылки
 
 - [Kinetic Kudu Release Schedule](https://discourse.ubuntu.com/t/kinetic-kudu-release-schedule/27263)
+- [Daily Builds](https://cdimage.ubuntu.com/daily-live/current/)
