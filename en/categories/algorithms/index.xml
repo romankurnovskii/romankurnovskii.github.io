@@ -178,4 +178,12 @@ Input: intervals = [[1,3],[2,6],[8,10],[15,18]] Output: [[1,6],[8,10],[15,18]] E
 Input: intervals = [[1,4],[4,5]] Output: [[1,5]] Explanation: Intervals [1,4] and [4,5] are considered overlapping. Approach 1:
 1class Solution: 2 def merge(self, intervals: List[List[int]]) -&amp;gt; List[List[int]]: 3 intervals.</description></item><item><title>62. Unique Paths</title><link>https://romankurnovskii.com/en/docs/algorithms-101/problems/62/</link><pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/docs/algorithms-101/problems/62/</guid><description>LeetCode problem
 There is a robot on an m x n grid. The robot is initially located at the top-left corner (i.e., grid[0][0]). The robot tries to move to the bottom-right corner (i.e., grid[m - 1][n - 1]). The robot can only move either down or right at any point in time.
-Given the two integers m and n, return the number of possible unique paths that the robot can take to reach the bottom-right corner.</description></item></channel></rss>
+Given the two integers m and n, return the number of possible unique paths that the robot can take to reach the bottom-right corner.</description></item><item><title>73. Set Matrix Zeroes</title><link>https://romankurnovskii.com/en/docs/algorithms-101/problems/73/</link><pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/docs/algorithms-101/problems/73/</guid><description>LeetCode problem
+Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0&amp;rsquo;s.
+You must do it in place.
+Example 1:
+Input: matrix = [[1,1,1],[1,0,1],[1,1,1]] Output: [[1,0,1],[0,0,0],[1,0,1]] Example 2:
+Input: matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]] Output: [[0,0,0,0],[0,4,5,0],[0,3,1,0]] Approach 1:
+Idea:
+LeetCode Submission
+1class Solution: 2 def setZeroes(self, matrix: List[List[int]]) -&amp;gt; None: 3 4 rows = len(matrix) 5 cols = len(matrix[0]) 6 7 # 1. Check first row/column for zero&amp;#39;s 8 first_row_has_zero = 0 in matrix[0] 9 first_col_has_zero = 0 in list(zip(*matrix))[0] 10 11 # 2.</description></item></channel></rss>

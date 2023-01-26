@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hash Table on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/hash-table/</link><description>Recent content in Hash Table on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2022 &lt;a href="https://romankurnovskii.com">Roman Kurnovskii&lt;/a> personal page</copyright><lastBuildDate>Wed, 21 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/hash-table/index.xml" rel="self" type="application/rss+xml"/><item><title>1. Two Sum</title><link>https://romankurnovskii.com/en/docs/algorithms-101/problems/1-two-sum/</link><pubDate>Sun, 16 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/docs/algorithms-101/problems/1-two-sum/</guid><description>LeetCode problem
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hash Table on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/hash-table/</link><description>Recent content in Hash Table on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2022 &lt;a href="https://romankurnovskii.com">Roman Kurnovskii&lt;/a> personal page</copyright><lastBuildDate>Mon, 09 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/hash-table/index.xml" rel="self" type="application/rss+xml"/><item><title>1. Two Sum</title><link>https://romankurnovskii.com/en/docs/algorithms-101/problems/1-two-sum/</link><pubDate>Sun, 16 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/docs/algorithms-101/problems/1-two-sum/</guid><description>LeetCode problem
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 You can return the answer in any order.
@@ -26,4 +26,12 @@ Example 1:
 Input: strs = [&amp;quot;eat&amp;quot;,&amp;quot;tea&amp;quot;,&amp;quot;tan&amp;quot;,&amp;quot;ate&amp;quot;,&amp;quot;nat&amp;quot;,&amp;quot;bat&amp;quot;] Output: [[&amp;quot;bat&amp;quot;],[&amp;quot;nat&amp;quot;,&amp;quot;tan&amp;quot;],[&amp;quot;ate&amp;quot;,&amp;quot;eat&amp;quot;,&amp;quot;tea&amp;quot;]] Example 2:
 Input: strs = [&amp;quot;&amp;quot;] Output: [[&amp;quot;&amp;quot;]] Example 3:
 Input: strs = [&amp;quot;a&amp;quot;] Output: [[&amp;quot;a&amp;quot;]] Idea:
-1class Solution: 2 def groupAnagrams(self, strs: List[str]) -&amp;gt; List[List[str]]: 3 dd = {} 4 for s in strs: 5 s_sort = &amp;#34;&amp;#34;.</description></item></channel></rss>
+1class Solution: 2 def groupAnagrams(self, strs: List[str]) -&amp;gt; List[List[str]]: 3 dd = {} 4 for s in strs: 5 s_sort = &amp;#34;&amp;#34;.</description></item><item><title>73. Set Matrix Zeroes</title><link>https://romankurnovskii.com/en/docs/algorithms-101/problems/73/</link><pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/docs/algorithms-101/problems/73/</guid><description>LeetCode problem
+Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0&amp;rsquo;s.
+You must do it in place.
+Example 1:
+Input: matrix = [[1,1,1],[1,0,1],[1,1,1]] Output: [[1,0,1],[0,0,0],[1,0,1]] Example 2:
+Input: matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]] Output: [[0,0,0,0],[0,4,5,0],[0,3,1,0]] Approach 1:
+Idea:
+LeetCode Submission
+1class Solution: 2 def setZeroes(self, matrix: List[List[int]]) -&amp;gt; None: 3 4 rows = len(matrix) 5 cols = len(matrix[0]) 6 7 # 1. Check first row/column for zero&amp;#39;s 8 first_row_has_zero = 0 in matrix[0] 9 first_col_has_zero = 0 in list(zip(*matrix))[0] 10 11 # 2.</description></item></channel></rss>
