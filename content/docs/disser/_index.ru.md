@@ -24,8 +24,7 @@ featuredImage:
 - https://scienceadmin.rudn.ru/ru/auth/ - (с корпоративной почты @rudn.ru)
 
 Ресурсы:
-- https://esystem.rudn.ru/pluginfile.php/1402513/mod_resource/content/3/_%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%208%20%D0%9F%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%D1%86.%20%D0%BF%D1%80%D0%BE%D1%84%D0%B8%D0%BB%D1%8C%20%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D0%B0.%20%D0%A0%D0%98%D0%9D%D0%A6.%20%D0%A0%D0%B5%D1%81%D1%83%D1%80%D1%81%D1%8B%20%D0%A0%D0%A3%D0%94%D0%9D%20%281%29.pdf
-
+- [Публикационные профили автора. Ресурсы РУДН (Бит.Наука, Science Admin, Репозиторий РУДН)](https://esystem.rudn.ru/pluginfile.php/1402513/mod_resource/content/3/_%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%208%20%D0%9F%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%D1%86.%20%D0%BF%D1%80%D0%BE%D1%84%D0%B8%D0%BB%D1%8C%20%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D0%B0.%20%D0%A0%D0%98%D0%9D%D0%A6.%20%D0%A0%D0%B5%D1%81%D1%83%D1%80%D1%81%D1%8B%20%D0%A0%D0%A3%D0%94%D0%9D%20%281%29.pdf)
 
 ## Оформление ссылок / источников литературы
 
@@ -43,6 +42,7 @@ featuredImage:
 • синхронизация работы со всех устройств
 • возможность интегрировать библиографические ссылки в текст исследовательской работы в Word
 
+[Оформление публикации. Библиографические менеджеры Zotero, Mendeley](https://esystem.rudn.ru/pluginfile.php/1402512/mod_resource/content/5/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%207%20%D0%9E%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8.pdf)
 ### Варианты расположения
 
 - **Алфавитное.** Как правило, сначала приводится перечень документов на кириллице, затем на латинице, далее – на других иностранных языках (при наличии)
@@ -83,9 +83,7 @@ featuredImage:
 своии словами, но близко к оригинальному тексту.
 
 
-
 Все источники транслитерируются с помощью сайта http://translit-online.ru/.
 
 ## Источники
 
-- https://esystem.rudn.ru/pluginfile.php/1402512/mod_resource/content/5/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%207%20%D0%9E%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8.pdf
