@@ -15,7 +15,7 @@ defaultContentLanguageInSubdir: true
 
 paginate: 10
 copyright: >
-  &copy; 2022 <a href="https://romankurnovskii.com">Roman Kurnovskii</a> personal page
+  &copy; 2023 <a href="https://romankurnovskii.com">Roman Kurnovskii</a> personal page
 enableEmoji: true
 enableGitInfo: true
 summaryLength: 75
@@ -63,8 +63,11 @@ sitemap:
 
 outputFormats:
   SearchIndex:
-    baseName: search # creates search.json for each language
     mediaType: application/json
+    # baseName: search # creates search.json for each language
+    baseName: searchindex # creates search.json for each language
+    isPlainText: true
+    notAlternative: true
 
 outputs:
   home:
@@ -75,4 +78,5 @@ outputs:
 ignoreErrors: ["error-remote-getjson"]
 
 staticDir: # save here files for posts: pdf, img etc
+  - static
   - static_files
