@@ -1,13 +1,10 @@
 const languageMode = window.document.currentScript.getAttribute('languageMode');
 const MAX_SEARCH_RESULTS = 10;
+const is_hugo_lunr_generator = false
 
 const searchIndex = {};
 let pagesStore = {};
 
-const searchDEPR = text => {
-	const result = searchIndex.search(text);
-	return result;
-};
 
 const hideSearchResults = (event, divBlock) => {
 	event.preventDefault();
@@ -47,23 +44,6 @@ const renderSearchResults = results => {
 	searchResultsDiv.append(resultsBlock);
 };
 
-const getIndexData = async () => {
-	const response = await fetch('/search/lunr-index.json?v2');
-	if (response.status !== 200) {
-		throw new Error('Server Error');
-	}
-
-	// Read response stream as text
-	const textData = await response.text();
-	const idxData = JSON.parse(textData);
-	const lngIdx = idxData[languageMode];
-	const idx = lunr.Index.load(lngIdx);
-	pagesStore = idxData.contentMap[languageMode];
-	return idx;
-};
-
-const searchResults = (idx, text) => idx.search(text);
-
 const prepareResultsForRender = results => {
 	const renderResults = [];
 	for (const res of results) {
@@ -74,6 +54,46 @@ const prepareResultsForRender = results => {
 
 	return renderResults;
 };
+
+const getIndexData = async () => {
+
+	// const response = await fetch('/search/lunr-index.json?v2');
+	const response = await fetch('/' + languageMode + '/searchindex.json?v2');
+	if (response.status !== 200) {
+		throw new Error('Server Error');
+	}
+
+	// Read response stream as text
+	const textData = await response.text();
+	const idxData = JSON.parse(textData);
+
+	let idx
+	if (is_hugo_lunr_generator) {
+		const lngIdx = idxData[languageMode];
+		idx = lunr.Index.load(lngIdx);
+		pagesStore = idxData.contentMap[languageMode];
+	} else {
+		idx = lunr(function () {
+			this.ref('uri')
+			this.field('title', {
+				boost: 5
+			});
+			this.field('content', {
+				boost: 1
+			});
+
+			idxData.forEach(function (doc) {
+				this.add(doc)
+				pagesStore[doc.uri] = doc.title
+			}, this)
+		})
+	}
+
+	return idx;
+};
+
+const searchResults = (idx, text) => idx.search(text);
+
 
 const searchHandler = async text => {
 	const idx = await getIndexData();
@@ -92,7 +112,6 @@ const searchFormObserver = () => {
 		if (!term) {
 			return;
 		}
-
 		searchHandler(term);
 	}, false);
 };
