@@ -181,19 +181,19 @@ class DecoratorTest(object):
         pass
 
     def doubler(self, x):
-        """"""
+        
         print("running doubler")
         return x*2
 
     @classmethod
     def class_tripler(klass, x):
-        """"""
+        
         print("running tripler: %s" % klass)
         return x*3
 
     @staticmethod
     def static_quad(x):
-        """"""
+        
         print("running quad")
         return x*4
 
@@ -253,7 +253,7 @@ with file_manager('test.txt', 'w') as f:
 
 > Настраиваем геттеры и сеттеры для классов
 
-В Python есть небольшое понятие, называемое **property**, которое может выполнять несколько полезных функций. Рассмотрим, как сделать следующее:
+В Python декоратор **property** позволяет:
 
 -  Преобразовать методы класса в атрибуты, доступные только для чтения.
 -  Реализовать сеттеры и геттеры.
@@ -262,7 +262,6 @@ with file_manager('test.txt', 'w') as f:
 
 ```python
 class Person(object):
-    """"""
 
     def __init__(self, first_name, last_name):
         """Constructor"""
@@ -271,9 +270,7 @@ class Person(object):
 
     @property
     def full_name(self):
-        """
-        Return the full name
-        """
+        """Return the full name """
         return "%s %s" % (self.first_name, self.last_name)
 ```
 
@@ -283,8 +280,10 @@ class Person(object):
 >>> person = Person("Иван", "Иванов")
 >>> person.full_name
 'Иван Иванов'
+
 >>> person.first_name
 'Иван'
+
 >>> person.full_name = "Александр Иванович"
 Traceback (most recent call last):
   File "<string>", line 1, in <fragment>
@@ -309,7 +308,7 @@ AttributeError: can't set attribute
 from decimal import Decimal
 
 class Fees(object):
-    """"""
+    
 
     def __init__(self):
         """Constructor"""
@@ -346,7 +345,7 @@ Decimal('1')
 from decimal import Decimal
 
 class Fees(object):
-    """"""
+    
 
     def __init__(self):
         """Constructor"""
@@ -388,8 +387,6 @@ Decimal('2')
 from decimal import Decimal
 
 class Fees(object):
-    """"""
-
     def __init__(self):
         """Constructor"""
         self._fee = None

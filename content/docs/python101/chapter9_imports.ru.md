@@ -1,5 +1,5 @@
 ---
-title: 9. Импортирование
+title: 9. Импорт модулей
 description: Python 101
 toc: true
 authors:
