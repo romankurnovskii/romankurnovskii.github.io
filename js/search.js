@@ -1,6 +1,6 @@
 const languageMode = window.document.currentScript.getAttribute('languageMode');
 const MAX_SEARCH_RESULTS = 10;
-const is_hugo_lunr_generator = false
+const is_hugo_lunr_generator = true
 
 const searchIndex = {};
 let pagesStore = {};
@@ -21,7 +21,7 @@ const renderSearchResults = results => {
 	// Hide on move mouse from results block
 	document.addEventListener('mouseup', e => hideSearchResults(e, searchResultsViewBlock));
 
-	const searchResultsDiv = document.querySelector('#search-results');
+	const searchResultsDiv = document.querySelector('#popup_search_results');
 	searchResultsDiv.innerHTML = '';
 
 	searchResultsViewBlock.style.display = 'initial';
@@ -35,7 +35,7 @@ const renderSearchResults = results => {
 		const link = document.createElement('a');
 		const linkText = document.createTextNode(title);
 		link.append(linkText);
-		link.href = uri;
+		link.href = uri.endsWith('/_index') ?  uri.slice(0, -6) : uri
 
 		commentBlock.append(link);
 		resultsBlock.append(commentBlock);
@@ -47,18 +47,20 @@ const renderSearchResults = results => {
 const prepareResultsForRender = results => {
 	const renderResults = [];
 	for (const res of results) {
-		const uri = '/' + languageMode + res.ref;
+		let uri = '/' + languageMode + res.ref;
 		const title = pagesStore[res.ref];
 		renderResults.push([uri, title]);
 	}
-
 	return renderResults;
 };
 
 const getIndexData = async () => {
+	let lunrIndexUrl = '/' + languageMode + '/searchindex.json?v2'
+	if (is_hugo_lunr_generator) {
+		lunrIndexUrl = '/search/lunr-index.json'
+	}
 
-	// const response = await fetch('/search/lunr-index.json?v2');
-	const response = await fetch('/' + languageMode + '/searchindex.json?v2');
+	const response = await fetch(lunrIndexUrl);
 	if (response.status !== 200) {
 		throw new Error('Server Error');
 	}
@@ -69,9 +71,9 @@ const getIndexData = async () => {
 
 	let idx
 	if (is_hugo_lunr_generator) {
-		const lngIdx = idxData[languageMode];
-		idx = lunr.Index.load(lngIdx);
-		pagesStore = idxData.contentMap[languageMode];
+		const lngIdx = idxData[languageMode]
+		idx = lunr.Index.load(lngIdx)
+		pagesStore = idxData['contentMap'][languageMode]
 	} else {
 		idx = lunr(function () {
 			this.ref('uri')
@@ -88,12 +90,10 @@ const getIndexData = async () => {
 			}, this)
 		})
 	}
-
 	return idx;
 };
 
 const searchResults = (idx, text) => idx.search(text);
-
 
 const searchHandler = async text => {
 	const idx = await getIndexData();
@@ -115,8 +115,5 @@ const searchFormObserver = () => {
 		searchHandler(term);
 	}, false);
 };
-
-// Create indexes
-// loadIndexData();
 
 searchFormObserver();
