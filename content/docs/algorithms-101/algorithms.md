@@ -2,18 +2,34 @@
 title: Algorithm Patterns
 description: LeetCode Cookbook - Algorithms
 toc: true
-authors: [roman-kurnovskii]
+authors:
+  - roman-kurnovskii
 tags: []
-categories: [Algorithms]
-series:
-date: 2022-10-15
-# featuredImage: https://media.geeksforgeeks.org/wp-content/cdn-uploads/20221017172544/Introduction-to-Data-Structures-and-Algorithms-DSA.png
+categories:
+  - Algorithms
+series: null
+date: {}
 weight: 30
+published: true
 ---
 
 ## Intro
 
 - [Big-O Cheat Sheet](https://www.30secondsofcode.org/articles/s/big-o-cheatsheet)
+
+## Sort
+
+```python
+def insertion_sort(a_list):
+ for i in range(1, len(a_list)):
+ value = a_list[i]
+ while i > 0 and a_list[i - 1] > value:
+ a_list[i] = a_list[i - 1]
+ i = i - 1
+ a_list[i] = value
+ return a_list
+```
+
 
 ## Binary Search
 
@@ -36,6 +52,17 @@ weight: 30
             
             return -1
 ```
+
+Python build-in module
+
+```pythonfrom bisect import bisect_left
+
+sorted_fruits = ['apple', 'banana', 'orange', 'plum']
+bisect_left(sorted_fruits, 'kiwi')
+
+>> 2
+```
+
 
 ## Dynamic programming (DP)
 
