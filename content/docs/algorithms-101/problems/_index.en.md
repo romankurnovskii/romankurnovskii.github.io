@@ -1,14 +1,16 @@
 ---
 title: Problems
-description:
-authors: [roman-kurnovskii]
+description: null
+authors:
+  - roman-kurnovskii
 tags: []
 categories: []
-series:
-date: 2022-10-15
-featuredImage:
+series: null
+date: {}
+featuredImage: null
 toc: true
 weight: 20
+published: true
 ---
 
 [Python template](../#template)
@@ -23,3 +25,4 @@ weight: 20
 - https://walkccc.me/LeetCode/problems/
 - https://books.halfrost.com/leetcode/
 - https://grandyang.com/leetcode/
+- [Competitive Programmer's Handbook](https://github.com/pllk/cphb/)
