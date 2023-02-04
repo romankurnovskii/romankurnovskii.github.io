@@ -12,6 +12,15 @@ draft: false
 
 
 ```python
+def sum_of_digits(n):
+    sum = 0
+    while n:
+        sum += n % 10
+        n //= 10
+    return sum
+```
+
+```python
 # Single line comments start with a number symbol.
 
 """ Multiline strings can be written
