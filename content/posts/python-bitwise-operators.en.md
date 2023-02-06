@@ -4,7 +4,7 @@ description: Python bitwise operators
 toc: true
 tags: [Python]
 series: []
-categories: [Python]
+categories: [programming, Python]
 date: 2022-11-20
 featuredImage:
 ---

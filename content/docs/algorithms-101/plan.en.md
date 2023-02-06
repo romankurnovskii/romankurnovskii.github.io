@@ -1,7 +1,6 @@
 ---
 title: Plan
 description:
-authors: [roman-kurnovskii]
 tags: []
 categories: []
 series:

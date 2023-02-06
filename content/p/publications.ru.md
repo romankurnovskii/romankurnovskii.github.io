@@ -69,3 +69,9 @@ featuredImage: null
 - [**Google Scholar**](https://scholar.google.ru/citations?hl=ru&user=R5xmgOgAAAAJ)
 - [**SSRN**](https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=5627910)
 - [**academia.edu**](https://independent.academia.edu/RomanKurnovskii)
+
+## Links
+
+- https://authors.repec.org/pro/pku734/
+- https://ideas.repec.org/
+- https://econpapers.repec.org/

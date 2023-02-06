@@ -28,11 +28,6 @@ main:
       weight: 205
 
     # Руководства
-    - name: Algorithms [EN]
-      identifier: algorithms
-      url: ./../en/docs/algorithms-101/
-      parent: programming
-      weight: 210
     - name: Справочник Python
       identifier: python101
       url: /docs/python101/
@@ -48,7 +43,12 @@ main:
       url: /docs/disser/
       parent: docslist
       weight: 213
-
+    - name: Algorithms [EN]
+      identifier: algorithms
+      url: ./../en/docs/algorithms-101/
+      parent: docslist
+      weight: 210
+      
     # Notes -> Programming ->
     - name: Algorithms [EN]
       identifier: algorithms

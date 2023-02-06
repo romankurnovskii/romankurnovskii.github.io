@@ -4,7 +4,7 @@ description: Python Cheat Sheet
 toc: true
 tags:  [Python, CheatSheet]
 series: [CheatSheet]
-categories: [Python, CheatSheet]
+categories: [programming, Python, CheatSheet]
 date: 2022-06-21
 featuredImage:
 draft: false

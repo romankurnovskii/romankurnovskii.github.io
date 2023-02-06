@@ -35,7 +35,7 @@ en:
         url: /categories/programming/
         parent: notes
         weight: 203
-      - name: Cheat Sheet
+      - name: Cheat Sheets
         identifier: cheatsheet
         url: /categories/cheatsheet/
         parent: notes
@@ -67,6 +67,11 @@ en:
         parent: aws
 
       # Notes -> Programming ->
+      - name: Algorithms
+        identifier: algorithms
+        url: /en/docs/algorithms-101/
+        parent: programming
+        weight: 301
       - name: Python
         identifier: python
         url: /categories/python/

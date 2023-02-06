@@ -2,14 +2,15 @@
 title: Algorithm Patterns
 description: LeetCode Cookbook - Algorithms
 toc: true
-authors:
-  - roman-kurnovskii
+categories: [Algorithms]
 tags: []
-categories:
-  - Algorithms
-series: null
-date: {}
+series: []
+tags: []
+date: 2022-10-15
+lastmod: 2023-02-06
+# featuredImage: https://media.geeksforgeeks.org/wp-content/cdn-uploads/20221017172544/Introduction-to-Data-Structures-and-Algorithms-DSA.png
 weight: 30
+authors:
 published: true
 ---
 
@@ -21,13 +22,13 @@ published: true
 
 ```python
 def insertion_sort(a_list):
- for i in range(1, len(a_list)):
- value = a_list[i]
- while i > 0 and a_list[i - 1] > value:
- a_list[i] = a_list[i - 1]
- i = i - 1
- a_list[i] = value
- return a_list
+    for i in range(1, len(a_list)):
+        value = a_list[i]
+        while i > 0 and a_list[i - 1] > value:
+            a_list[i] = a_list[i - 1]
+            i = i - 1
+            a_list[i] = value
+    return a_list
 ```
 
 
@@ -55,7 +56,9 @@ def insertion_sort(a_list):
 
 Python build-in module
 
-```pythonfrom bisect import bisect_left
+```python
+
+from bisect import bisect_left
 
 sorted_fruits = ['apple', 'banana', 'orange', 'plum']
 bisect_left(sorted_fruits, 'kiwi')

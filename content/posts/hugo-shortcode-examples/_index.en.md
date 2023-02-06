@@ -4,7 +4,7 @@ description:
 toc: false
 authors: [roman-kurnovskii]
 tags: [Hugo]
-categories: [Hugo, Hugo shorcodes]
+categories: [programming, Hugo, Hugo shorcodes]
 series:
 date: 2022-10-20
 featuredImage:

@@ -1,15 +1,15 @@
 ---
-title: Problems
+title: LeetCode Problems
 description: null
 authors:
-  - roman-kurnovskii
-tags: []
-categories: []
-series: null
-date: {}
-featuredImage: null
+categories: ['programming', 'leetcode']
+tags: ['leetcode']
+# series: null
+# featuredImage: null
 toc: true
 weight: 20
+date: 2022-10-16
+lastmod: 2023-02-06
 published: true
 ---
 

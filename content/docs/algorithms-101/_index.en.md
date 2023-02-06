@@ -4,7 +4,7 @@ description: LeetCode Cookbook
 toc: true
 authors: [roman-kurnovskii]
 tags: []
-categories: [Roadmaps, Algorithms]
+categories: [programming, Roadmaps, Algorithms]
 series:
 date: 2022-10-15
 featuredImage:
