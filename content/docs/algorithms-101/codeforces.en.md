@@ -17,8 +17,8 @@ weight: 40
 
 ## Codeforces Round #849 (Div. 4)
 
-[Contest problems](https://codeforces.com/contest/1791)
-
+- [Contest problems](https://codeforces.com/contest/1791)
+- [Editorial](https://codeforces.com/blog/entry/112282)
 
 ### A. Codeforces Checking
 
@@ -43,6 +43,8 @@ for _ in range(int(input())):
 ### B. Following Directions
 
 https://codeforces.com/contest/1791/problem/B
+
+>  geometry, implementation, *800
 
 **Solution:**
 
@@ -75,6 +77,8 @@ for _ in range(int(input())): # attempts
 ### C. Prepend and Append
 
 https://codeforces.com/contest/1791/problem/C
+
+> mplementation, two pointers, *800
 
 In this problem we are allowed:
 - to remove **first** letter of the binary string and **last**.
@@ -124,6 +128,8 @@ def solve(n, s):
 ### D. Distinct Split
 
 https://codeforces.com/contest/1791/problem/D
+
+>  brute force, greedy, strings, *1000
 
 If we get a string `abcabcd` we need to split into two strings.
 
@@ -228,8 +234,85 @@ def solve():
     return max_n
 ```
 
-### TODO E. Negatives and Positives
+**Explanation from Codeforces:**
+
+Let's check all splitting points `𝑖` for all (`1≤𝑖≤𝑛−1`). We denote a splitting point as the last index of the first string we take (and all the remaining characters will go to the second string). 
+We need to keep a dynamic count of the number of distinct characters in both strings `𝑎` (the first string) and `𝑏` (the second string). 
+We can do this using two frequency arrays (and adding one to the distinct count of either string `𝑎` or `𝑏` when the frequency of a character is greater than zero.
+
+### E. Negatives and Positives
+
 https://codeforces.com/contest/1791/problem/E
+
+>  dp, greedy, sortings, *1100
+
+**Explanation from Codeforces:**
+
+We can notice that by performing any number of operations, the parity of the count of negative numbers won't ever change. 
+
+Thus, if the number of negative numbers is initially even, we can make it equal to 0 by performing some operations. 
+
+So, for an even count of negative numbers, the answer is the sum of the absolute values of all numbers (since we can make all of them positive). And if the count of negative numbers is odd, we must have one negative number at the end. We will choose the one smallest by absolute value and keep the rest positive (for simplicity, we consider −0 as a negative number).
+
+**Solution:**
+
+```python
+def solve():
+    n = inpi()
+    a = inpl()
+
+    count_minus = 0
+    count_zeros = 0
+    min_val = abs(a[0])
+    s = 0 # sum
+
+    for i in range(n):
+        if a[i] < 0:
+            count_minus += 1
+        if a[i] == 0:
+            count_zeros += 1
+        v = abs(a[i])
+        s += v
+        min_val = min(min_val, v)
+
+    count_minus = count_minus % 2 # if count of odd numbers is negative 
+    count_minus -= count_zeros
+
+    if count_minus <= 0:
+        return s
+
+    if count_minus == 1:
+        s -= abs(min_val * 2)
+        return s
+
+    return s
+
+
+def run():
+    for _ in range(inpi()):
+        print(solve())
+run()
+```
+
+**Optimization:**
+
+```python
+def solve():
+    n = inpi()
+    a = inpl()
+
+    count_minus = 0
+    for i in range(n):
+        if a[i] < 0:
+            count_minus += 1
+        a[i] = abs(a[i])
+    
+    s = sum(a) # sum
+    if count_minus % 2:
+        return s - min(a) * 2
+    else:
+        return s
+```
 
 ### TODO F. Range Update Point Query
 https://codeforces.com/contest/1791/problem/F
