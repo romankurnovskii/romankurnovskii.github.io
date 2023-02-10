@@ -6,7 +6,7 @@ tags: []
 categories: [Algorithms]
 series:
 date: 2023-02-03
-lastmod: 2023-02-07
+lastmod: 2023-02-09
 featuredImage:
 draft: false
 weight: 40
@@ -315,7 +315,63 @@ def solve():
 ```
 
 ### TODO F. Range Update Point Query
+
 https://codeforces.com/contest/1791/problem/F
+
+There are two types of inputs (cases) (in addition to array `a` and `n` of test cases):
+1. line with **two** elements: `2 x`. Starts with `2`
+2. line with **three** elements: `1 l r`. Starts with `1`
+
+In 1st case: print array `a`
+
+In 2nd case: update the value of `𝑎𝑖` to the sum of its digits.
+
+**Slow Solution:**
+
+```python
+def sum_of_digits(n):
+    sum = 0
+    while n:
+        sum += n % 10
+        n //= 10
+    return sum
+
+def solve():
+    n, q = map(int, input().split())
+    a = list(map(int, input().split()))
+    while q:
+        q -= 1
+        t, *params = map(int, input().split())
+        if t == 1:
+            l, r = params
+            for i in range(l-1, r):
+                a[i] = sum_of_digits(a[i])
+        else:
+            x, = params
+            print(a[x-1])
+
+t = int(input().strip())
+for _ in range(t): # attempts
+    solve()
+```
+
+This solution is slow because of loop:
+
+    for i in range(l-1, r):
+        a[i] = sum_of_digits(a[i])
+
+The key here is the following: after the operation is applied on **a<sub>i</sub>**
+
+
+**Good to know**
+
+- [Segment Tree template tutorial](../data-structures/segment-tree)
+- [A Visual Introduction to Fenwick Tree | medium](https://medium.com/carpanese/a-visual-introduction-to-fenwick-tree-89b82cac5b3c)
+- [Fenwick Tree](https://cp-algorithms.com/data_structures/fenwick.html)
+- [Segment Tree](https://cp-algorithms.com/data_structures/segment_tree.html)
+- [Дерево отрезков | algorithmica](https://ru.algorithmica.org/cs/segment-tree/)
+- [Дерево Фенвика | algorithmica](https://ru.algorithmica.org/cs/range-queries/fenwick/)
+- [Дерево Фенвика | habr](https://habr.com/ru/post/112828/)
 
 ### TODO G1. Teleporters (Easy Version)
 https://codeforces.com/contest/1791/problem/G1
@@ -326,9 +382,21 @@ https://codeforces.com/contest/1791/problem/G2
 
 ## Links
 
+- [Python Visualize/Debug code online](https://pythontutor.com/visualize.html#mode=edit)
 - [Python collections.Counter](https://docs.python.org/3/library/collections.html#collections.Counter)
 - https://github.com/archishmanghos/DSA-Contests/
 - https://github.com/debochdilamo/Competative-Programming/tree/CodeForces-Solutions
 - https://github.com/DilamoWondimu/Competative-programming/tree/main/CodeForces-Solutions
 - https://github.com/hkirat/Algorithmic-Resources
 - https://github.com/valentk777/Competitive-Programming/
+- [Competitive Programming Library](https://github.com/cheran-senthil/PyRival)
+
+
+
+
+
+
+## Codeforces Round #850 (Div. 2)
+
+https://codeforces.com/contest/1785/
+https://codeforces.com/blog/entry/112493

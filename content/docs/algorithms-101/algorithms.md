@@ -21,14 +21,27 @@ published: true
 ## Sort
 
 ```python
-def insertion_sort(a_list):
-    for i in range(1, len(a_list)):
-        value = a_list[i]
-        while i > 0 and a_list[i - 1] > value:
-            a_list[i] = a_list[i - 1]
-            i = i - 1
-            a_list[i] = value
-    return a_list
+def insertion_sort(array):
+    for i in range(1, len(array)):
+        value = array[i]
+        while i > 0 and array[i - 1] > value:
+            array[i] = array[i - 1]
+            i -= 1
+            array[i] = value
+    return array
+```
+
+```python
+def selection_sort(array):
+    for i in range(len(array) - 1):
+        min_value = i
+        for j in range(i + 1, len(array)):
+            if array[j] < array[min_value]:
+                min_value = j
+        temp = array[min_value]
+        array[min_value] = array[i]
+        array[i] = temp
+    return array
 ```
 
 
@@ -354,26 +367,16 @@ def backtrack(some_len_data):
             i += 1
 ```
 
-### Resources
+**Links:**
+
 - https://algo.monster/problems/backtracking
 
-## Trie
-
-```python
-class Node:
-    def __init__(self, value):
-        self.value = value
-        self.children = {}
-
-    def insert(self, s, idx):
-        # idx: index of the current character in s
-        if idx != len(s):
-            self.children.setdefault(s[idx], Node(s[idx]))
-            self.children.get(s[idx]).insert(s, idx + 1)
-```
 
 ## Resources
 
 - https://www.geeksforgeeks.org/learn-data-structures-and-algorithms-dsa-tutorial/
 - https://algo.monster/templates
 - https://interviewnoodle.com/grokking-leetcode-a-smarter-way-to-prepare-for-coding-interviews-e86d5c9fe4e1
+- [data structures](https://github.com/OpenGenus/cosmos)
+- [Competitive Programming Library](https://github.com/cheran-senthil/PyRival)
+- [Algorithms for Competitive Programming](https://cp-algorithms.com/)
