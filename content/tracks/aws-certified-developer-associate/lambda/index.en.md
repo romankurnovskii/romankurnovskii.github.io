@@ -10,7 +10,6 @@ weight: 400
 awsTag: AWS Lambda
 featuredImage: ./img/logo.svg
 imgWidth: 50px
-# todo: youtbe
 ---
 
 ## About

@@ -1,5 +1,6 @@
 ---
-title: 6. Генераторы в Python
+title: 6. Генераторы
+seoTitle: 6. Генераторы в Python
 description: Python 101
 toc: true
 authors:

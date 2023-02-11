@@ -1,12 +1,12 @@
 ---
 title: В чем разница между Маржинализмом и Меркантилизмом
 description: Сравнение Меркантилизма и Маржинализма
-toc: true
+toc: false
 tags: [экономика]
 series: []
 categories: []
 date: 2023-01-26
-lastmod: 2023-01-29
+lastmod: 2023-02-12
 featuredImage:
 authors:
 ---
