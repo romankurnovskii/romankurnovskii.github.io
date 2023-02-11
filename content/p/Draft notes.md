@@ -11,7 +11,7 @@ featuredImage: null
 Цель: null
 ---
 
-- [ ] add link to prose from tablet https://prose.io/#romankurnovskii/romankurnovskii.github.io/tree/main/content/docs/algorithms-101
+- [ ] add link to prose from tablet https://prose.io/#romankurnovskii/romankurnovskii.github.io/tree/main/content/tracks/algorithms-101
 
 Code forces education tutorials 
 

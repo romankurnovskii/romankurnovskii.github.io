@@ -12,7 +12,7 @@ draft: false
 weight: 40
 ---
 
-[Python template for contests](/en/docs/algorithms-101/helpers/#python-template-for-contests)
+[Python template for contests](/en/tracks/algorithms-101/helpers/#python-template-for-contests)
 
 
 ## Codeforces Round #849 (Div. 4)

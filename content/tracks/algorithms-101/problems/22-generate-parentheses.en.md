@@ -28,7 +28,7 @@ Given n pairs of parentheses, write a function to generate all combinations of w
 
 ## Prerequirements
 
-[Backtracking pattern](/en/docs/algorithms-101/algorithms/#backtracking)
+[Backtracking pattern](/en/tracks/algorithms-101/algorithms/#backtracking)
 
 ## First accepted
 

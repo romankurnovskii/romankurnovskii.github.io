@@ -45,14 +45,14 @@ main:
       weight: 213
     - name: Algorithms [EN]
       identifier: algorithms
-      url: ./../en/docs/algorithms-101/
+      url: ./../en/tracks/algorithms-101/
       parent: docslist
       weight: 210
       
     # Notes -> Programming ->
     - name: Algorithms [EN]
       identifier: algorithms
-      url: ./../en/docs/algorithms-101/
+      url: ./../en/tracks/algorithms-101/
       parent: programming
       weight: 301
     - name: Python

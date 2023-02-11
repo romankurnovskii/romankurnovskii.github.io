@@ -81,7 +81,7 @@ Type: Containers
 
 Same type services: Elastic Container Service (ECS), Elastic Container Registry (ECR), Elastic Kubernetes Service (EKS), Fargate
 
-![ECS Auto Scaling](/ru/docs/aws-certified-developer-associate/ecs/img/amazon-ecs-service-auto-scaling.jpg)
+![ECS Auto Scaling](/ru/tracks/aws-certified-developer-associate/ecs/img/amazon-ecs-service-auto-scaling.jpg)
 
 Best practice:
 - 10 Microservices => 10 Task Definitions => 10 Task IAM Roles with individual permissions needed by each microservice

@@ -66,5 +66,32 @@ $
 -1
 ```
 
+## &
+
+```
+0 & 0 = 0
+0 & 1 = 0
+1 & 0 = 0
+1 & 1 = 0
+```
+
+For numbers:
+
+`27 & 23`
+
+1. Covert to binary
+
+
+    `27 -> 11011`
+    `23 -> 10111`
+
+2. turns to (in binary)
+
+    `11011 & 10111 = 10011` -> 19
+
+    `27 & 23 = 19`
+
+
+
 ## Resources
 - https://realpython.com/python-bitwise-operators/

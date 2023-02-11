@@ -63,13 +63,13 @@ en:
       # Notes -> AWS ->
       - name: AWS Developer Associate
         identifier: aws-developer
-        url: /en/docs/aws-certified-developer-associate/
+        url: /en/tracks/aws-certified-developer-associate/
         parent: aws
 
       # Notes -> Programming ->
       - name: Algorithms
         identifier: algorithms
-        url: /en/docs/algorithms-101/
+        url: /en/tracks/algorithms-101/
         parent: programming
         weight: 301
       - name: Python
@@ -88,14 +88,14 @@ en:
       # Roadmaps ->
       - name: Algorithms101
         identifier: algorithms-101
-        url: /en/docs/algorithms-101/
+        url: /en/tracks/algorithms-101/
         parent: roadmaps
       - name: AWS Developer Associate
         identifier: aws-developer-roadmaps
-        url: /en/docs/aws-certified-developer-associate/
+        url: /en/tracks/aws-certified-developer-associate/
         parent: roadmaps
       - name: Диссертация [RU]
         identifier: rudisser
-        url: ./../ru/docs/disser/
+        url: ./../ru/tracks/disser/
         parent: roadmaps
 

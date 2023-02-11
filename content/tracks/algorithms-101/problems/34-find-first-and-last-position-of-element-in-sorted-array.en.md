@@ -40,7 +40,7 @@ You must write an algorithm with `O(log n)` runtime complexity.
 
 **Idea:**
 
-1. Find `target` index (`target_index`) using [Binary Search](/en/docs/algorithms-101/algorithms/#binary-search)
+1. Find `target` index (`target_index`) using [Binary Search](/en/tracks/algorithms-101/algorithms/#binary-search)
    1. If **not exist** then return `[-1, -1]`
    2. If **exist** then goto step 2
 2. We got the middle index. For now this is the *most left* and *most right* index.

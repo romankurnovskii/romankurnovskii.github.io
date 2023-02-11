@@ -9,8 +9,11 @@ tags: ['Data Structures']
 toc: false
 weight: 10
 date: 2023-02-09
-lastmod: 2023-02-09
+lastmod: 2023-02-10
 published: true
+prerequisites:
+  - Бинарное дерево
+  - Префиксные суммы
 ---
 
 A Segment Tree is a data structure used for efficiently processing queries over **intervals** or **ranges**. It is commonly used for solving problems that involve finding information about a **set of elements and their sub-intervals**.

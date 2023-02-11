@@ -25,7 +25,7 @@ Minikube быстро создает локальный кластер Kubernete
 
 Ниже упоминается, что вам необходимо иметь "Менеджер контейнеров или виртуальных машин, такой как: Docker, Hyperkit, Hyper-V, KVM, Parallels, Podman, VirtualBox или VMware" - это то, где будет работать MiniKube, и это простой вариант, и если не указано в репозитории, я использую Docker. Вы можете установить Docker на свою систему, используя следующую [ссылку](https://docs.docker.com/get-docker/).
 
-[Понятное руководство по установке minikube](https://kubernetes.io/ru/docs/tasks/tools/install-minikube/)
+[Понятное руководство по установке minikube](https://kubernetes.io/ru/tracks/tasks/tools/install-minikube/)
 
 ![](../images/Day51_Kubernetes1.png?v1)
 
