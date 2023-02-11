@@ -5,9 +5,8 @@ toc: true
 categories: [Algorithms]
 tags: []
 series: []
-tags: []
 date: 2022-10-15
-lastmod: 2023-02-06
+lastmod: 2023-02-12
 # featuredImage: https://media.geeksforgeeks.org/wp-content/cdn-uploads/20221017172544/Introduction-to-Data-Structures-and-Algorithms-DSA.png
 weight: 30
 authors:
@@ -50,21 +49,21 @@ def selection_sort(array):
 - [Binary search template](https://leetcode.com/explore/learn/card/binary-search/125/template-i/938/)
 
 ```python
-        def find_target(nums, target):
-            left = 0
-            right = len(nums) - 1
-            
-            while left <= right:
-                mid = (left + right) // 2
-                if nums[mid] == target:
-                    return mid
+def find_target(nums, target):
+    left = 0
+    right = len(nums) - 1
+    
+    while left <= right:
+        mid = (left + right) // 2
+        if nums[mid] == target:
+            return mid
 
-                if nums[mid] < target:
-                    left = mid + 1
-                else:
-                    right = mid - 1
-            
-            return -1
+        if nums[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    
+    return -1
 ```
 
 Python build-in module
@@ -202,7 +201,7 @@ return ans
 3. Update the maximum if the `currentSum` is greater than the `maximumSum`, and repeat step 2.
 
 ```python
-def maxSum(arr, k):
+def max_sum(arr, k):
 	n = len(arr)    # length of the array
 
 	# length of array must be greater
@@ -228,7 +227,7 @@ def maxSum(arr, k):
 
 arr = [16, 12, 9, 19, 11, 8]
 k = 3
-print(maxSum(arr, k))
+print(max_sum(arr, k))
 ```
 
 **Problem:** Find duplicates within a range ‘k’ in an array
@@ -238,7 +237,7 @@ print(maxSum(arr, k))
     Ouput: False
 
 ```python
-def getDuplicates(nums, k):
+def get_duplicates(nums, k):
     d = {}
     count = 0
     for i in range(len(nums)):
