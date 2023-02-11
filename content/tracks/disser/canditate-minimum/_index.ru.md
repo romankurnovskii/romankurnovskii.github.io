@@ -10,7 +10,7 @@ series:
 date: 2022-12-12
 draft: false
 featuredImage:
-# weight: 1
+weight: 30
 ---
 
 Вопросы к кандидатскому минимуму:

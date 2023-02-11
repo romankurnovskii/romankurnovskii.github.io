@@ -39,18 +39,16 @@ list_to_string_list = lambda _v: " ".join(map(str, _v)) # [1,2,'3'] => '1 2 3'
 
 def solve():
     # input
-    
     return 
 
 
 def run():
-    solve()
+    # solve()
     print(solve())
 
-
 if __name__ == "__main__":
-    LOCAL_TESTS = 0
-    if os.environ.get("LOCAL_TESTS") or LOCAL_TESTS:
+    CODE_DEBUG = 0
+    if os.environ.get("CODE_DEBUG") or CODE_DEBUG:
         sys.stdin = open("./input.txt", "r")
         start_time = time.time()
         run()

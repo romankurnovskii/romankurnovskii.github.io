@@ -9,7 +9,7 @@ series:
 date: 2022-12-29
 draft: false
 featuredImage:
-weight: 100
+weight: 20
 ---
 
 
