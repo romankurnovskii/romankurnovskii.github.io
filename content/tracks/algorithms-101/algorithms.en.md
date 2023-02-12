@@ -43,7 +43,6 @@ def selection_sort(array):
     return array
 ```
 
-
 ## Binary Search
 
 - [Binary search template](https://leetcode.com/explore/learn/card/binary-search/125/template-i/938/)
@@ -69,7 +68,6 @@ def find_target(nums, target):
 Python build-in module
 
 ```python
-
 from bisect import bisect_left
 
 sorted_fruits = ['apple', 'banana', 'orange', 'plum']

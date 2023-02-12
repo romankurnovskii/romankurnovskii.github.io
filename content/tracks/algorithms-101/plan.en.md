@@ -79,8 +79,5 @@ Practice on each coding pattern.
 |  33   | [56. Merge Intervals](../problems/56) | Medium     | [Array](/en/tags/array), [Sorting](/en/tags/sorting),                                                                |
 |  34   | [62. Unique Paths](../problems/62)    | Medium     | [Math](/en/tags/math), [Dynamic Programming](/en/tags/dynamic-programming), [Combinatorics](/en/tags/combinatorics)] |
 |  35   | [73. Set Matrix Zeroes](../problems/73) | Medium     | [Array](/en/tags/array), [Hash Table,](/en/tags/hash-table), [Matrix](/en/tags/matrix)                               |
-|  36   | [](../problems/)                      |            |                                                                                                                      |
-|  37   | [](../problems/)                      |            |                                                                                                                      |
-|  38   | [](../problems/)                      |            |                                                                                                                      |
-|  39   | [](../problems/)                      |            |                                                                                                                      |
-|  40   | [](../problems/)                      |            |                                                                                                                      |
+
+Started participating in [contests](../codeforces).

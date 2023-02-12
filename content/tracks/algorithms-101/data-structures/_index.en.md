@@ -79,5 +79,6 @@ class Fenwick: #also known as Binary Indexed Tree (BIT)
 ## Resources
 
 - [data structures](https://github.com/OpenGenus/cosmos)
+- [data structures tutorial | programiz](https://www.programiz.com/dsa/algorithm)
 - [Competitive Programming Library](https://github.com/cheran-senthil/PyRival)
 - [Algorithms for Competitive Programming](https://cp-algorithms.com/)
