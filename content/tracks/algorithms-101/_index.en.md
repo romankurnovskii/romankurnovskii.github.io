@@ -123,5 +123,6 @@ More info:
 - https://leetcode.com/subscribe/
 - https://algo.monster/subscribe
 - https://www.algoexpert.io/purchase#algoexpert
-
+- [Senior Algorithms | Interactive tutorial](https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS4104/html/)
+- [01.01 Data Structures and Algorithms | Interactive](https://canvas.instructure.com/courses/3330793/assignments/24440259?module_item_id=52268669)
 - [Contests](https://clist.by/resources/)
