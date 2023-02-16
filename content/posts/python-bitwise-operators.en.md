@@ -92,6 +92,5 @@ For numbers:
     `27 & 23 = 19`
 
 
-
 ## Resources
 - https://realpython.com/python-bitwise-operators/

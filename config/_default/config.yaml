@@ -31,12 +31,13 @@ markup:
     codeFences: true
     noClasses: true # set false use custom css
     guessSyntax: true
-    anchorLineNos: true
+    anchorLineNos: true #Configure anchors on line numbers. Valid values are true or false
+    lineanchors: prefix
     lineNoStart: 1
-    lineNos: true
-    lineNumbersInTable: false
+    lineNos: false # line numbers
+    lineNumbersInTable: true
     noHl: false
-    style: autumn # monokailight lovelace emacs tango friendly manni catppuccin-latte  # https://xyproto.github.io/splash/docs/
+    style: friendly  # nord rose-pine-dawn  autumn monokailight lovelace emacs tango friendly manni catppuccin-latte  # https://xyproto.github.io/splash/docs/
     tabWidth: 4
   goldmark:
     renderer:

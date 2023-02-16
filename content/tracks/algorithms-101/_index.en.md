@@ -112,7 +112,7 @@ print(res)
 
 [Problems order](./plan)
 
-More info:
+**More info:**
 
 - [Top MAANG interview questions 2022](https://docs.google.com/spreadsheets/d/1Axa5A3HrAEJx_HSOwPs1zStolnPJPmKAfIYxGTLPtQc/edit#gid=1436140231)
 
