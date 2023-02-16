@@ -5,7 +5,7 @@ package.json План:
 Импорт пакета в package.json Создание .jsx скрипта Загрузка/build пакета в Hugo Импорт В корне проекта запускаем команду</description></item><item><title>Публикация next.js приложения на github pages</title><link>https://romankurnovskii.com/ru/posts/nextjs-to-github-pages-ations/</link><pubDate>Mon, 07 Mar 2022 15:31:25 +0200</pubDate><guid>https://romankurnovskii.com/ru/posts/nextjs-to-github-pages-ations/</guid><description>Подготовка коммит все предыдущего состояния на случай вынужденного отката
 Для того чтобы Actions имели доступ к репозиторию нужно подключить ключи шифрования
 Настройка репозитория Создаю ключи
-1ssh-keygen -t rsa -b 4096 -C &amp;#34;$(git config user.email)&amp;#34; -f gh-pages -N &amp;#34;&amp;#34; Создалось 2 файла с ключами:
+ssh-keygen -t rsa -b 4096 -C &amp;#34;$(git config user.email)&amp;#34; -f gh-pages -N &amp;#34;&amp;#34; Создалось 2 файла с ключами:
 gh-pages - приватный gh-pages.pub - публичный в Репозитории (не профиле)
 https://github.com/romankurnovskii/notion-project/settings/keys
 Settings → Deploy keys →Add new

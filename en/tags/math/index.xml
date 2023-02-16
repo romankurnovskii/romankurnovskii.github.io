@@ -41,12 +41,13 @@ You have to rotate the image in-place, which means you have to modify the input 
 Example 1:
 Input: matrix = [[1,2,3],[4,5,6],[7,8,9]] Output: [[7,4,1],[8,5,2],[9,6,3]] Example 2:
 Input: matrix = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]] Output: [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]] Idea:
-1class Solution: 2 def rotate(self, matrix: List[List[int]]) -&amp;gt; None: 3 &amp;#34;&amp;#34;&amp;#34; 4 Do not return anything, modify matrix in-place instead.</description></item><item><title>50. Pow(x, n)</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/problems/50/</link><pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/problems/50/</guid><description>LeetCode problem
+class Solution: def rotate(self, matrix: List[List[int]]) -&amp;gt; None: &amp;#34;&amp;#34;&amp;#34; Do not return anything, modify matrix in-place instead.</description></item><item><title>50. Pow(x, n)</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/problems/50/</link><pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/problems/50/</guid><description>LeetCode problem
 Implement pow(x, n), which calculates x raised to the power n (i.e., x^n).
 Example 1:
 Input: x = 2.00000, n = 10 Output: 1024.00000 Example 2:
 Input: x = 2.10000, n = 3 Output: 9.26100 Example 3:
 Input: x = 2.00000, n = -2 Output: 0.25000 Explanation: 2-2 = 1/22 = 1/4 = 0.25 Approach 1:
-1class Solution: 2 def myPow(self, x: float, n: int) -&amp;gt; float: 3 return x ** n Approach 2:</description></item><item><title>62. Unique Paths</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/problems/62/</link><pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/problems/62/</guid><description>LeetCode problem
+class Solution: def myPow(self, x: float, n: int) -&amp;gt; float: return x ** n Approach 2:
+Recursive</description></item><item><title>62. Unique Paths</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/problems/62/</link><pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/problems/62/</guid><description>LeetCode problem
 There is a robot on an m x n grid. The robot is initially located at the top-left corner (i.e., grid[0][0]). The robot tries to move to the bottom-right corner (i.e., grid[m - 1][n - 1]). The robot can only move either down or right at any point in time.
 Given the two integers m and n, return the number of possible unique paths that the robot can take to reach the bottom-right corner.</description></item></channel></rss>
