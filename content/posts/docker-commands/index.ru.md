@@ -33,7 +33,7 @@ authors: [roman-kurnovskii]
 docker build [DOCKERFILE PATH]
 ```
 
-### Флаги
+**Флаги**
 
 - `--file -f` Путь, где находится Dockerfile
 - `--force-rm` Всегда удалять временные контейнеры.
@@ -41,7 +41,7 @@ docker build [DOCKERFILE PATH]
 - `--rm` Удалить временные контейнеры после успешного построения.
 - `--tag -t` Название и возможный тег в формате `name:tag` или просто тег `my_tag` (опционально)
 
-### Примеры
+**Примеры**
 
 Построить образ с меткой `my-org/my-image`, используя Dockerfile в `/tmp/Dockerfile`.
 
@@ -54,14 +54,14 @@ docker build -t my-org:my-image -f /tmp/Dockerfile
 
 Создает и запускает контейнер за один операционный шаг
 
-### Примеры
+**Примеры**
 
 ```sh
 docker run -it ubuntu:latest /bin/bash
 ```
 Данная команда запустит контейнер ubuntu и при старте сразу запустит `/bin/bash`. Если  образ ubuntu не был загружен ранее, он загрузится перед запуском.
 
-### Флаги
+**Флаги**
 
 - `-it` This will not make the container you started shut down immediately, as
 it will create a pseudo-TTY session (`-t`) and keep STDIN open (`-i`)
@@ -79,12 +79,12 @@ should be persisted (database, logs etc.).
 ```sh
 docker exec [CONTAINER ID]
 ```
-### Флаги
+**Флаги**
 
 - `--detach -d` Detached mode: запуск в фоновом режиме
 - `-it` запуск в интерактивном режиме. запуск псевдотерминала pseudo-TTY  (`-t`) и перенаправление ввода-вывода (STDIN) (`-i`). Даёт доступ к выполнению команд в терминале контейнера.
 
-### Примеры
+**Примеры**
 
 ```sh
 docker exec [CONTAINER ID] touch /tmp/exec_works
@@ -97,7 +97,7 @@ docker exec [CONTAINER ID] touch /tmp/exec_works
 docker images
 ```
 
-### Флаги
+**Флаги**
 
 - `-q` показать только ID образов
 
@@ -119,7 +119,7 @@ docker inspect [CONTAINER ID]
 docker logs [CONTAINER ID]
 ```
 
-### Флаги
+**Флаги**
 
 - `--details`  Показывает дополнительную информацию в логе.
 - `--follow -f` Следить за выводом журнала
@@ -135,7 +135,7 @@ docker logs [CONTAINER ID]
 docker ps
 ```
 
-### Флаги
+**Флаги**
 
 - `--all -a` Show all containers (default shows just running)
 - `--filter -f` Filter output based on conditions provided, `docker ps -f="name="example"`
@@ -150,7 +150,7 @@ docker ps
 docker rmi [IMAGE ID]
 ```
 
-### Флаги
+**Флаги**
 
 - `--force -f` Force removal of the image
 
@@ -178,6 +178,7 @@ docker rm $(docker ps -a -q)
 ```sh
 docker image prune
 ```
+
 
 ### Вывести сколько памяти занимает Docker
 

@@ -32,8 +32,8 @@ sudo apt-get install python
 
 Проверить версию можно в терминале или командной строке набрав команду `python`.
 
-<img src="../../img/python_ver.ru.png" width="50%" id="zoom-default" class="medium-zoom-image" loading="lazy">
+<img src="../../img/python_ver.ru.png" width="55%" id="zoom-default" class="medium-zoom-image" loading="lazy">
 
 Как только мы запутили Python, можно писать код в терминале.
 
-<img src="../../img/print_hello.ru.png" width="50%" id="zoom-default" class="medium-zoom-image" loading="lazy">
+<img src="../../img/print_hello.ru.png" width="55%" id="zoom-default" class="medium-zoom-image" loading="lazy">

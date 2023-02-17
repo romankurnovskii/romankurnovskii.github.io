@@ -185,6 +185,7 @@ docker exec [CONTAINER ID] touch /tmp/exec_works
 it will create a pseudo-TTY session (`-t`) and keep STDIN open (`-i`)
 
 ###  docker images
+
 [Docs](https://docs.docker.com/engine/reference/commandline/images/)
 
 List all downloaded/created images.

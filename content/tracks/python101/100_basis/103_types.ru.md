@@ -1,6 +1,6 @@
 ---
 title: Типы данных
-seoTitle: Среда разработки Python
+seoTitle: Типы данных Python
 description: Python 101
 toc: true
 authors:
