@@ -13,15 +13,16 @@ draft: false
 weight: 101
 ---
 
-Для установки Python на операционную систему MacOS можно использовать менеджер пакетов brew. Для этого необходимо выполнить команду:
+Для установки Python на MacOS можно использовать менеджер пакетов brew. Для этого необходимо выполнить команду:
 
-```
+
+```sh
 brew install python
 ```
 
 Для операционных систем на базе Linux также существуют менеджеры пакетов, которые можно использовать для установки Python. Например, для Ubuntu можно использовать команду:
 
-```
+```sh
 sudo apt-get install python
 ```
 
@@ -36,4 +37,3 @@ sudo apt-get install python
 Как только мы запутили Python, можно писать код в терминале.
 
 <img src="../../img/print_hello.ru.png" width="50%" id="zoom-default" class="medium-zoom-image" loading="lazy">
-
