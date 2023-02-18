@@ -1,5 +1,5 @@
 ---
-title: draft notes
+title: notes
 description: todo
 toc: true
 series: []
