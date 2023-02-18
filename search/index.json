@@ -147,9 +147,9 @@
         },
         {
             "uri": "/p/Draft notes",
-            "title": "Draft notes",
+            "title": "draft notes",
             "description": "todo",
-            "content": "\n[ ] add link to prose from tablet https://prose.io/#romankurnovskii/romankurnovskii.github.io/tree/main/content/tracks/algorithms-101\n\nCode forces education tutorials\n\nShare but tons for doc pages\n",
+            "content": "\n[ ] add link to prose from tablet https://prose.io/#romankurnovskii/romankurnovskii.github.io/tree/main/content/tracks/algorithms-101\n[ ] Check kanban notes\n\nCode forces education tutorials\n\nShare butttons for doc pages\n\n",
             "tags": []
         },
         {
@@ -2224,7 +2224,7 @@
             "uri": "/p/links",
             "title": "Links",
             "description": null,
-            "content": "\nThe curated list of AI tools for marketing\nDiscover the newest AIs for any given task\n\nFast and simple way to visualize your story - free 1 Storyboard and 10 Frames\nhttps://airtrackbot.com/\nCreate 1,000 AI art images a day for free\n\nCreate and sell your own personalized books and journals\n\nTurn any body of text into a few sentences with one click - Chrome extension\n\nBlock Diagram Maker\n",
+            "content": "\nThe curated list of AI tools for marketing\nDiscover the newest AIs for any given task\n\nFast and simple way to visualize your story - free 1 Storyboard and 10 Frames\nhttps://airtrackbot.com/\nCreate 1,000 AI art images a day for free\n\nCreate and sell your own personalized books and journals\n\nTurn any body of text into a few sentences with one click - Chrome extension\n\nBlock Diagram Maker\n\nVideo from Screenshot\n",
             "tags": [],
             "lang": "en"
         },
@@ -3589,6 +3589,14 @@
             "content": "\n\n            Create\n\n",
             "tags": [],
             "lang": "en"
+        }
+    ],
+    "kanban": [
+        {
+            "uri": "/p/draft tasks",
+            "content": "Test",
+            "tags": [],
+            "lang": "kanban"
         }
     ]
 }

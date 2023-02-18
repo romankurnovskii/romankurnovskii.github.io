@@ -271,13 +271,14 @@ files=(*) # Loop through all files for file in &amp;#34;${files[@]}&amp;#34; do 
 Remove history files bigger than 100Kb:
 cd repo java -jar bfg-1.14.0.jar --strip-blobs-bigger-than 100K . git reflog expire --expire=now --all &amp;amp;&amp;amp; git gc --prune=now --aggressive Removing an entire commit:
 Replace &amp;ldquo;SHA&amp;rdquo; with the reference you want to get rid of. The &amp;ldquo;^&amp;rdquo; in that command is literal.
-git rebase -p --onto SHA^ SHA We want to remove commits 2 &amp;amp; 4 from the repo. (Higher the the number newer the commit; 0 is the oldest commit and 4 is the latest commit)</description></item><item><title>Links</title><link>https://romankurnovskii.com/en/p/links/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/p/links/</guid><description> The curated list of AI tools for marketing
+git rebase -p --onto SHA^ SHA We want to remove commits 2 &amp;amp; 4 from the repo. (Higher the the number newer the commit; 0 is the oldest commit and 4 is the latest commit)</description></item><item><title>Links</title><link>https://romankurnovskii.com/en/p/links/</link><pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/p/links/</guid><description>The curated list of AI tools for marketing
 Discover the newest AIs for any given task
 Fast and simple way to visualize your story - free 1 Storyboard and 10 Frames https://airtrackbot.com/
 Create 1,000 AI art images a day for free
 Create and sell your own personalized books and journals
 Turn any body of text into a few sentences with one click - Chrome extension
-Block Diagram Maker</description></item><item><title>Code style notes</title><link>https://romankurnovskii.com/en/posts/code-style/</link><pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/code-style/</guid><description>Release notes example Changed
+Block Diagram Maker
+Video from Screenshot</description></item><item><title>Code style notes</title><link>https://romankurnovskii.com/en/posts/code-style/</link><pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/code-style/</guid><description>Release notes example Changed
 feat(exports): export mergeConfig #5151 Fixed
 fix(CancelledError): include config #4922 fix(general): removing multiple/trailing/leading whitespace #5022 fix(headers): decompression for responses without Content-Length header #5306 fix(webWorker): exception to sending form data in web worker #5139 Refactors
 refactor(types): AxiosProgressEvent.event type to any #5308 refactor(types): add missing types for static AxiosError.from method #4956 Chores
@@ -355,7 +356,7 @@ brew install basictex # search for cyrillic fonts fc-list | grep к\ brew tap ho
 &lt;p>For 2020:&lt;/p>
 &lt;ul>
 &lt;li>Time spent studying/practicing: ~5500 hours&lt;/li>
-&lt;/ul></description></item><item><title/><link>https://romankurnovskii.com/en/tracks/90daysofdevops/monitoring/elastic-stack/extensions/apm-server/readme/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/90daysofdevops/monitoring/elastic-stack/extensions/apm-server/readme/</guid><description>APM Server extension The APM Server receives data from APM agents and transforms them into Elasticsearch documents that can be visualised in Kibana.
+&lt;/ul></description></item><item><title/><link>https://romankurnovskii.com/en/p/draft-tasks.kanban/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/p/draft-tasks.kanban/</guid><description>Test</description></item><item><title/><link>https://romankurnovskii.com/en/tracks/90daysofdevops/monitoring/elastic-stack/extensions/apm-server/readme/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/90daysofdevops/monitoring/elastic-stack/extensions/apm-server/readme/</guid><description>APM Server extension The APM Server receives data from APM agents and transforms them into Elasticsearch documents that can be visualised in Kibana.
 Usage To include APM Server in the stack, run Docker Compose from the root of the repository with an additional command line argument referencing the apm-server-compose.yml file:
 $ docker-compose -f docker-compose.yml -f extensions/apm-server/apm-server-compose.yml up Meanwhile, you can navigate to the APM application in Kibana and follow the setup instructions to get started.</description></item><item><title/><link>https://romankurnovskii.com/en/tracks/90daysofdevops/monitoring/elastic-stack/extensions/curator/readme/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/90daysofdevops/monitoring/elastic-stack/extensions/curator/readme/</guid><description>Curator Elasticsearch Curator helps you curate or manage your indices.
 Usage If you want to include the Curator extension, run Docker Compose from the root of the repository with an additional command line argument referencing the curator-compose.yml file:
