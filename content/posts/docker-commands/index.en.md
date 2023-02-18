@@ -125,8 +125,6 @@ Build an image tagged `my-org/my-image` where the Dockerfile can be found at
 docker build -t my-org:my-image -f /tmp/Dockerfile
 ```
 
-**Flags**
-
 - `--file -f` Path where to find the Dockerfile
 - `--force-rm` Always remove intermediate containers
 - `--no-cache` Do not use cache when building the image
@@ -151,7 +149,6 @@ This will start a ubuntu container with the entrypoint `/bin/bash`. Note that
 if you do not have the `ubuntu` image downloaded it will download it before
 running it.
 
-**Flags**
 
 - `-it` This will not make the container you started shut down immediately, as
 it will create a pseudo-TTY session (`-t`) and keep STDIN open (`-i`)
@@ -178,8 +175,6 @@ docker exec [CONTAINER ID]
 docker exec [CONTAINER ID] touch /tmp/exec_works
 ```
 
-**Flags**
-
 - `--detach -d` Detached mode: run command in the background
 - `-it` This will not make the container you started shut down immediately, as
 it will create a pseudo-TTY session (`-t`) and keep STDIN open (`-i`)
@@ -193,8 +188,6 @@ List all downloaded/created images.
 ```sh
 docker images
 ```
-
-**Flags**
 
 - `-q` Only show numeric IDs
 
@@ -216,8 +209,6 @@ Gets logs from container.
 docker logs [CONTAINER ID]
 ```
 
-**Flags**
-
 - `--details` Log extra details
 - `--follow -f` Follow log output. Do not stop when end of file is reached, but
 rather wait for additional data to be appended to the input.
@@ -232,8 +223,6 @@ Shows information about all running containers.
 docker ps
 ```
 
-**Flags**
-
 - `--all -a` Show all containers (default shows just running)
 - `--filter -f` Filter output based on conditions provided, `docker ps -f="name="example"`
 - `--quiet -q` Only display numeric IDs
@@ -246,8 +235,6 @@ Remove one or more images.
 ```sh
 docker rmi [IMAGE ID]
 ```
-
-**Flags**
 
 - `--force -f` Force removal of the image
 
