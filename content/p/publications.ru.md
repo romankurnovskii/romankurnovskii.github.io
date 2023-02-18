@@ -56,11 +56,6 @@ featuredImage: null
 в журнале "Наука и бизнес"
 январский номер 23 - http://globaljournals.ru/nauka-i-biznes/ - ВАК
 
-## Площадки
-
-- [How to unmount disk on Linux](https://medium.com/@romankurnovskii/how-to-unmount-disk-on-linux-78a10e42cbdb)
-
-
 ## Codes
 
 - **SCIENCE INDEX SPIN РИНЦ:** [1657-2666](https://www.elibrary.ru/author_profile.asp?authorid=1175655)
@@ -75,3 +70,9 @@ featuredImage: null
 - https://authors.repec.org/pro/pku734/
 - https://ideas.repec.org/
 - https://econpapers.repec.org/
+
+## Площадки
+
+- [medium.com](https://medium.com/@romankurnovskii/)
+- [dev.to](https://dev.to/romankurnovskii)
+- [vc.ru](https://vc.ru/u/1465979-roman-kurnovskii)
