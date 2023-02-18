@@ -29655,7 +29655,7 @@
       HTMLReactParser2.ProcessingInstruction = domhandler.ProcessingInstruction;
       HTMLReactParser2.Text = domhandler.Text;
       module.exports = HTMLReactParser2;
-      module.exports.default = HTMLReactParser2;
+      HTMLReactParser2.default = HTMLReactParser2;
     }
   });
 
