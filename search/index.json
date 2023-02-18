@@ -5,7 +5,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 3
+                    "timeTakenInMilliseconds": 4
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -146,7 +146,7 @@
             "lang": "ru"
         },
         {
-            "uri": "/p/Draft notes",
+            "uri": "/p/draft_notes",
             "title": "draft notes",
             "description": "todo",
             "content": "\n[ ] add link to prose from tablet https://prose.io/#romankurnovskii/romankurnovskii.github.io/tree/main/content/tracks/algorithms-101\n[ ] Check kanban notes\n\nCode forces education tutorials\n\nShare butttons for doc pages\n\n",
@@ -3593,8 +3593,10 @@
     ],
     "kanban": [
         {
-            "uri": "/p/draft tasks",
-            "content": "Test",
+            "uri": "/p/draft_tasks",
+            "title": "draft notes",
+            "description": "todo",
+            "content": "\nTest",
             "tags": [],
             "lang": "kanban"
         }
