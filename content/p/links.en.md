@@ -26,3 +26,5 @@ https://airtrackbot.com/
 - [Block Diagram Maker](https://falang.io/documents/edit/local)
 
 - [Video from Screenshot](https://screenrun.app/studio)
+
+- [Books nice covers](https://mitpress.mit.edu/search-result-list/?category=CGN)
