@@ -190,7 +190,7 @@ while j < size:
 return ans
 ```
 
-### Examples
+**Examples**
 
 **Problem:** Find the largest sum of K consecutive entries, given an array of size N
 
