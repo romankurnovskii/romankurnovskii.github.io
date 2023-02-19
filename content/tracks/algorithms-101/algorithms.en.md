@@ -377,3 +377,4 @@ def backtrack(some_len_data):
 - [data structures](https://github.com/OpenGenus/cosmos)
 - [Competitive Programming Library](https://github.com/cheran-senthil/PyRival)
 - [Algorithms for Competitive Programming](https://cp-algorithms.com/)
+- [Solutions to Introduction to Algorithms Third Edition](https://walkccc.me/CLRS/)
