@@ -18,13 +18,7 @@ Example 1:
 Input: strs = [&amp;quot;flower&amp;quot;,&amp;quot;flow&amp;quot;,&amp;quot;flight&amp;quot;] Output: &amp;quot;fl&amp;quot; Example 2:
 Input: strs = [&amp;quot;dog&amp;quot;,&amp;quot;racecar&amp;quot;,&amp;quot;car&amp;quot;] Output: &amp;quot;&amp;quot; Explanation: There is no common prefix among the input strings. First accepted Idea:
 class Solution: def longestCommonPrefix(self, strs: List[str]) -&amp;gt; str: strs.sort() l = strs[0] r = strs[-1] if l == r: return l res = &amp;#34;&amp;#34; for i in range(0, len(l)): if l[i] == r[i]: res += l[i] else: return res return res</description></item><item><title>Algorithm Patterns</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/algorithms/</link><pubDate>Sat, 15 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/algorithms/</guid><description>Intro Big-O Cheat Sheet Sort def insertion_sort(array): for i in range(1, len(array)): value = array[i] while i &amp;gt; 0 and array[i - 1] &amp;gt; value: array[i] = array[i - 1] i -= 1 array[i] = value return array def selection_sort(array): for i in range(len(array) - 1): min_value = i for j in range(i + 1, len(array)): if array[j] &amp;lt; array[min_value]: min_value = j temp = array[min_value] array[min_value] = array[i] array[i] = temp return array Binary Search Binary search template def find_target(nums, target): left = 0 right = len(nums) - 1 while left &amp;lt;= right: mid = (left + right) // 2 if nums[mid] == target: return mid if nums[mid] &amp;lt; target: left = mid + 1 else: right = mid - 1 return -1 Python build-in module</description></item><item><title>Codeforces</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/</link><pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/</guid><description>Python template for contests
-Links Python Visualize/Debug code online Python collections.Counter https://github.com/archishmanghos/DSA-Contests/ https://github.com/debochdilamo/Competative-Programming/tree/CodeForces-Solutions https://github.com/DilamoWondimu/Competative-programming/tree/main/CodeForces-Solutions https://github.com/hkirat/Algorithmic-Resources https://github.com/valentk777/Competitive-Programming/ Competitive Programming Library</description></item><item><title>Round #849/1791 (Div. 4)</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/849-div-4-1791/</link><pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/849-div-4-1791/</guid><description>Contest date: 2023-02-03
-Contest problems Editorial A. Codeforces Checking https://codeforces.com/contest/1791/problem/A
-Solution:
-def solve(letter): code = &amp;#34;codeforces&amp;#34; if letter in code: print(&amp;#34;YES&amp;#34;) else: print(&amp;#34;NO&amp;#34;) for _ in range(int(input())): letter = input() solve(letter) B. Following Directions https://codeforces.com/contest/1791/problem/B
-geometry, implementation, *800
-Solution:
-def solve(n, s): x = 0 y = 0 for move in s: if move == &amp;#39;L&amp;#39;: x -= 1 elif move == &amp;#39;R&amp;#39;: x += 1 elif move == &amp;#39;U&amp;#39;: y += 1 elif move == &amp;#39;D&amp;#39;: y -= 1 if x == 1 and y == 1: print(&amp;#34;YES&amp;#34;) break else: print(&amp;#34;NO&amp;#34;) for _ in range(int(input())): # attempts num = int(input()) letter = input() solve(num, letter) C.</description></item><item><title>20. Valid Parentheses</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/problems/20-valid-parentheses/</link><pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/problems/20-valid-parentheses/</guid><description>LeetCode problem
+Links Python Visualize/Debug code online Python collections.Counter https://github.com/archishmanghos/DSA-Contests/ https://github.com/debochdilamo/Competative-Programming/tree/CodeForces-Solutions https://github.com/DilamoWondimu/Competative-programming/tree/main/CodeForces-Solutions https://github.com/hkirat/Algorithmic-Resources https://github.com/valentk777/Competitive-Programming/ Competitive Programming Library</description></item><item><title>20. Valid Parentheses</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/problems/20-valid-parentheses/</link><pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/problems/20-valid-parentheses/</guid><description>LeetCode problem
 Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 An input string is valid if:
 Open brackets must be closed by the same type of brackets. Open brackets must be closed in the correct order. Every close bracket has a corresponding open bracket of the same type. Example 1:
@@ -194,4 +188,24 @@ Input: matrix = [[1,1,1],[1,0,1],[1,1,1]] Output: [[1,0,1],[0,0,0],[1,0,1]] Exam
 Input: matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]] Output: [[0,0,0,0],[0,4,5,0],[0,3,1,0]] Approach 1:
 Idea:
 LeetCode Submission
-class Solution: def setZeroes(self, matrix: List[List[int]]) -&amp;gt; None: rows = len(matrix) cols = len(matrix[0]) # 1. Check first row/column for zero&amp;#39;s first_row_has_zero = 0 in matrix[0] first_col_has_zero = 0 in list(zip(*matrix))[0] # 2.</description></item></channel></rss>
+class Solution: def setZeroes(self, matrix: List[List[int]]) -&amp;gt; None: rows = len(matrix) cols = len(matrix[0]) # 1. Check first row/column for zero&amp;#39;s first_row_has_zero = 0 in matrix[0] first_col_has_zero = 0 in list(zip(*matrix))[0] # 2.</description></item><item><title>Round #849/1791 (Div. 4)</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/849-div-4-1791/</link><pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/849-div-4-1791/</guid><description>Contest date: 2023-02-03
+Contest problems Editorial A. Codeforces Checking https://codeforces.com/contest/1791/problem/A
+Solution:
+def solve(letter): code = &amp;#34;codeforces&amp;#34; if letter in code: print(&amp;#34;YES&amp;#34;) else: print(&amp;#34;NO&amp;#34;) for _ in range(int(input())): letter = input() solve(letter) B. Following Directions https://codeforces.com/contest/1791/problem/B
+geometry, implementation, *800
+Solution:
+def solve(n, s): x = 0 y = 0 for move in s: if move == &amp;#39;L&amp;#39;: x -= 1 elif move == &amp;#39;R&amp;#39;: x += 1 elif move == &amp;#39;U&amp;#39;: y += 1 elif move == &amp;#39;D&amp;#39;: y -= 1 if x == 1 and y == 1: print(&amp;#34;YES&amp;#34;) break else: print(&amp;#34;NO&amp;#34;) for _ in range(int(input())): # attempts num = int(input()) letter = input() solve(num, letter) C.</description></item><item><title>Round #835/1760 (Div. 4)</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/835-div-4-1760/</link><pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/835-div-4-1760/</guid><description>Contest date: 2023-02-03
+Contest problems Editorial A. Medium Number https://codeforces.com/contest/1760/problem/A
+Solution:
+B. Atilla&amp;rsquo;s Favorite Problem https://codeforces.com/contest/1760/problem/B
+Solution:
+C. Advantage https://codeforces.com/contest/1760/problem/C
+Solution:
+D. Challenging Valleys https://codeforces.com/contest/1760/problem/D
+Solution:
+E. Binary Inversions https://codeforces.com/contest/1760/problem/E
+Solution:
+F. Quests https://codeforces.com/contest/1760/problem/F
+Slow Solution:
+Good to know
+G. SlavicG&amp;rsquo;s Favorite Problem https://codeforces.com/contest/1760/problem/G1</description></item></channel></rss>
