@@ -1,6 +1,6 @@
 ---
 title: Карманная книга по Python
-description: Карманная книга по Python 101
+description: Карманная книга по Python + Топ 100 вопросов по Python 2023
 toc: true
 authors: [roman-kurnovskii]
 tags: 
@@ -11,7 +11,19 @@ date: "2022-06-28"
 lastmod: 2023-02-15
 draft: false
 abcSort: true
+toc:
+  - depth: 1
+    value: Table of Contents
+  - depth: 1
+    value: Introduction
+  - depth: 1
+    value: Chapter 1
+  - depth: 2
+    value: My Custom Section
+    ref: '#sec:mycustomsection'
 ---
+
+<mark>[Скачать PDF](/handbooks/python-handbook.pdf)</mark>
 
 Здравствуйте!
 

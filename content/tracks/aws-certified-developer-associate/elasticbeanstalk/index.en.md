@@ -7,13 +7,12 @@ categories: [aws, Elastic Beanstalk]
 date: 2022-09-10
 weight: 300
 awsTag: Elastic Beanstalk
-#todo: logo
+featuredImage: https://cdn.worldvectorlogo.com/logos/aws-elastic-beanstalk-1.svg
 ---
 
 ## About
 
-- [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/)
-- [AWS Elastic Beanstalk User Guide](https://docs.aws.amazon.com/elasticbeanstalk/?id=docs_gateway)
+- [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/?id=docs_gateway)
 
 AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS.
 
