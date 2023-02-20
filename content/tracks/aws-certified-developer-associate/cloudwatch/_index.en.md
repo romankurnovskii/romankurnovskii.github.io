@@ -34,7 +34,6 @@ CloudWatch can provide a dependable, scalable, & flexible monitoring solution th
    | Alarms history for 14 days                              | No native alarming; can use CloudWatch alarms                            |
 
 
-
 ## Digest
 
 
