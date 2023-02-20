@@ -18,3 +18,8 @@ Code forces education tutorials
 
 Share butttons for doc pages
 
+
+
+This week reading list:
+
+[Investing in Foundational Skills First: A Case from South Korea](https://www.semanticscholar.org/paper/Investing-in-Foundational-Skills-First%3A-A-Case-from-Spindelman/af5ff12505d231dd012d541dd36d22a6dc68ef7d)
