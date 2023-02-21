@@ -6,6 +6,7 @@ categories: [programming, JavaScript, CheatSheet]
 series: [CheatSheet]
 tags:  [js, javascript, typescript]
 date: 2022-09-15
+lastmod: 2023-02-21
 featuredImage: https://picsum.photos/700/238
 draft: false
 ---
@@ -79,7 +80,7 @@ isDateValid('December 17, 1995 03:24:00'); // true
 isDateValid('1995-12-17T03:24:00'); // true
 isDateValid('1995-12-17 T03:24:00'); // false
 isDateValid('Duck'); // false
-isDateValid(1995, 11, 17); // true
+isDateValid(2023, 01, 22); // true
 isDateValid(1995, 11, 17, 'Duck'); // false
 isDateValid({}); // false
 ```
@@ -91,6 +92,37 @@ const getTimestamp = (date = new Date()) => Math.floor(date.getTime() / 1000);
 
 getTimestamp(); // 1602162242
 ```
+
+### Compare dates / sort
+
+```js
+export function compareDates(date1, date2) {
+    if (!date1) {
+        return 1; // move date1 to the end of the array
+    }
+    if (!date2) {
+        return -1; // move date2 to the end of the array
+    }
+
+    // Convert the date strings to Date objects
+    const d1 = new Date(date1);
+    const d2 = new Date(date2);
+
+    // Compare the dates
+    if (d1.getTime() === d2.getTime()) {
+        return 0; // dates are equal
+    }
+    if (d1 < d2) {
+        return -1; // date1 is earlier than date2
+    }
+    return 1; // date1 is later than date2
+}
+
+const sortedItems = allItems.sort((itemA, itemB) =>
+        compareDates(itemA.date, itemB.date)
+    );
+```
+
 
 ## Login
 
