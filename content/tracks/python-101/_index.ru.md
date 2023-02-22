@@ -7,13 +7,13 @@ tags:
 categories: [Roadmaps, programming, Python]
 series: [руководства]
 featuredImage:
-date: "2022-06-28"
+date: 2022-06-28
 lastmod: 2023-02-15
 draft: false
 abcSort: true
 ---
 
-<mark>[Скачать PDF](/handbooks/python-handbook.pdf)</mark>
+<mark>[Скачать PDF](/handbooks/python-handbook.pdf)</mark> *обновление 2023/02*
 
 Здравствуйте!
 
