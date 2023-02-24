@@ -12,7 +12,9 @@ draft: false
 weight: 40
 ---
 
-[Python template for contests](/en/tracks/algorithms-101/helpers/#python-template-for-contests)
+- [Python template for contests](./cp-template)
+- [Competitive Programming Helper (cph) | VSCode extension](https://marketplace.visualstudio.com/items?itemName=DivyanshuAgrawal.competitive-programming-helper)
+- [Competitive Programming | browser extension](https://github.com/jmerle/competitive-companion)
 
 
 ## Links
