@@ -8,7 +8,8 @@
 - clean Mac / April 2023  
   brew  remove
   
-  
+  4k-video-downloader
+  maccy
   20/63  font-m-plus-1               latest                                             latest                                                  [   OK   ]  https://fonts.google.com/specimen/M+PLUS+1
   21/63  font-m-plus-1-code          latest                                             latest                                                  [   OK   ]  https://fonts.google.com/specimen/M+PLUS+1+Code
   22/63  font-mplus
