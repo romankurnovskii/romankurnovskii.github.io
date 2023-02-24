@@ -90,6 +90,18 @@ en:
         identifier: algorithms-101
         url: /en/tracks/algorithms-101/
         parent: roadmaps
+      - name: Data Structures
+        identifier: algorithms-101-data-structures
+        url: /en/tracks/algorithms-101/data-structures
+        parent: algorithms-101
+      - name: Codeforces
+        identifier: algorithms-101-codeforces
+        url: /en/tracks/algorithms-101/codeforces
+        parent: algorithms-101
+      - name: LeetCode
+        identifier: algorithms-101-problems
+        url: /en/tracks/algorithms-101/problems
+        parent: algorithms-101
       - name: AWS Developer Associate
         identifier: aws-developer-roadmaps
         url: /en/tracks/aws-certified-developer-associate/

@@ -21,6 +21,11 @@ main:
       url: /categories/programming/
       parent: notes
       weight: 202
+    - name: Алгоритмы | EN
+      identifier: algorithms
+      url: ../en/tracks/algorithms-101/
+      parent: docslist
+      # weight: 202
     - name: Links
       identifier: links
       url: ./../en/p/links/
@@ -43,11 +48,6 @@ main:
       url: /tracks/disser/
       parent: docslist
       weight: 213
-    - name: Algorithms [EN]
-      identifier: algorithms
-      url: ./../en/tracks/algorithms-101/
-      parent: docslist
-      weight: 210
       
     # Notes -> Programming ->
     - name: Algorithms [EN]
