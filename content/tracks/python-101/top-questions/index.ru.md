@@ -1,6 +1,6 @@
 ---
 title: Топ 100 вопросов по Python
-seoTitle: Топ 100+ вопросов по Python для Junior, Middle и Senior в 2023
+seoTitle: 2023 Топ 100 вопросов по Python для Junior, Middle и Senior
 description: 100+ вопросов по Python для Junior, Middle и Senior в 2023
 toc: true
 authors:
@@ -719,7 +719,6 @@ print(string_list) #вывод: ['This', 'is', 'a', 'string.'].
 print(' '.join(string_list)) #вывод: Это строка.
 ```
 
-
 ### 37. Что означают *args и **kwargs?
 
 `*args`
@@ -771,6 +770,251 @@ print(arr[-1]) #вывод 6
 print(arr[-2]) #вывод 5
 ```
 
+## Junior/Middle+ / ООП
+
+### 39. Как создать класс в Python?
+
+Чтобы создать класс в python, используем ключевое слово `class`, как показано в примере ниже:
+
+```python
+class Employee:
+    def __init__(self, emp_name):
+        self.emp_name = emp_name
+```
+
+Чтобы инстанцировать или создать объект из класса, созданного выше, мы делаем следующее:
+
+```python
+emp_1 = Employee("Mr. Employee").
+```
+
+Чтобы получить доступ к атрибуту `name`, мы просто вызываем атрибут с помощью *точки*:
+
+```python
+print(emp_1.emp_name)
+# Mr. Employee
+```
+
+Чтобы создать методы внутри класса, мы включаем их в область видимости класса:
+
+```python
+class Employee:
+   def __init__(self, emp_name):
+       self.emp_name = emp_name
+       
+   def introduce(self):
+       print("Hello I am " + self.emp_name)
+```
+
+Параметр `self` в функциях `init` и introduce представляет собой ссылку на текущий экземпляр класса, которая используется для доступа к атрибутам и методам этого класса. Параметр `self` должен быть первым параметром любого метода, определенного внутри класса. 
+
+Доступ к методу класса `Employee` можно получить:
+
+```python
+emp_1.introduce()
+```
+
+Общая программа будет выглядеть следующим образом:
+
+```python
+class InterviewbitEmployee:
+   def __init__(self, emp_name):
+       self.emp_name = emp_name
+       
+   def introduce(self):
+       print("Hello I am " + self.emp_name)
+       
+# create an object of InterviewbitEmployee class
+emp_1 = InterviewbitEmployee("Mr Employee")
+print(emp_1.emp_name)    #print employee name
+emp_1.introduce()        #introduce the employee
+```
+
+### 40. Как работает наследование в python?
+
+Наследование дает классу право доступа ко всем атрибутам и методам другого класса. Это способствует повторному использованию кода и помогает разработчику поддерживать приложения без лишнего кода. Класс, наследующий от другого класса, является дочерним классом или также называется производным классом. Класс, от которого дочерний класс получает свои члены, называется родительским классом или суперклассом.
+
+Python поддерживает различные виды наследования, а именно:
+
+- Одиночное наследование
+- Многоуровневое наследование
+- Множественное наследование
+- Иерархическое наследование
+
+**Одиночное наследование:** Дочерний класс получает члены от одного родительского класса.
+
+![Одиночное наследование python](assets/Single_Inheritance.ru.jpg)
+
+```python
+# Parent class
+class ParentClass:
+    def par_func(self):
+         print("I am parent class function")
+
+# Child class
+class ChildClass(ParentClass):
+    def child_func(self):
+         print("I am child class function")
+
+# Driver code
+obj1 = ChildClass()
+obj1.par_func()
+obj1.child_func()
+```
+
+**Многоуровневое наследование:** Члены родительского класса `A` наследуются дочерним классом, который затем наследуется другим дочерним классом `B`. Характеристики базового и производного классов далее наследуются в новом производном классе `C`. 
+
+Здесь `A` является *дедушкой* класса `C`.
+
+![Многоуровневое наследование python](assets/Multi-level_Inheritance.ru.jpg)
+
+```python
+# Parent class
+class A:
+   def __init__(self, a_name):
+       self.a_name = a_name
+   
+# Intermediate class
+class B(A):
+   def __init__(self, b_name, a_name):
+       self.b_name = b_name
+       # invoke constructor of class A
+       A.__init__(self, a_name)
+
+# Child class
+class C(B):
+   def __init__(self,c_name, b_name, a_name):
+       self.c_name = c_name
+       # invoke constructor of class B
+       B.__init__(self, b_name, a_name)
+       
+   def display_names(self):
+       print("A name : ", self.a_name)
+       print("B name : ", self.b_name)
+       print("C name : ", self.c_name)
+
+#  Driver code
+obj1 = C('child', 'intermediate', 'parent')
+print(obj1.a_name)
+obj1.display_names()
+```
+
+**Множественное наследование:** Это достигается, когда один дочерний класс получает свойста от более чем одного родительского класса. Все свойства родительских классов наследуются в дочернем классе.
+
+![Множественное наследование python](assets/Multiple_Inheritance.ru.jpg)
+
+```python
+# Parent class1
+class Parent1:
+   def parent1_func(self):
+       print("Hi I am first Parent")
+
+# Parent class2
+class Parent2:
+   def parent2_func(self):
+       print("Hi I am second Parent")
+
+# Child class
+class Child(Parent1, Parent2):
+   def child_func(self):
+       self.parent1_func()
+       self.parent2_func()
+
+# Driver's code
+obj1 = Child()
+obj1.child_func()
+```
+
+**Иерархическое наследование:** Когда от родительского класса происходит более одного дочернего класса.
+
+![Иерархическое наследование python](assets/Hierarchical_Inheritance.ru.jpg)
+
+```python
+# Base class
+class A:
+     def a_func(self):
+         print("I am from the parent class.")
+
+# 1st Derived class
+class B(A):
+     def b_func(self):
+         print("I am from the first child.")
+
+# 2nd Derived class
+class C(A):
+     def c_func(self):
+         print("I am from the second child.")
+ 
+# Driver's code
+obj1 = B()
+obj2 = C()
+obj1.a_func()
+obj1.b_func()    #child 1 method
+obj2.a_func()
+obj2.c_func()    #child 2 method
+```
+
+### 41. Как получить доступ к членам родительского класса в дочернем классе?
+
+Ниже перечислены способы, с помощью которых вы можете получить доступ к членам родительского класса в дочернем классе:
+
+С помощью **имени родительского класса**: Вы можете использовать имя родительского класса для доступа к атрибутам, как показано в примере ниже:
+
+```python
+class Parent(object):  
+   # Constructor
+   def __init__(self, name):
+       self.name = name    
+ 
+class Child(Parent): 
+   # Constructor
+   def __init__(self, name, age):
+       Parent.name = name
+       self.age = age
+ 
+   def display(self):
+       print(Parent.name, self.age)
+ 
+# Driver Code
+obj = Child("ParentName", 6)
+obj.display()
+```
+
+С помощью метода `super()`: Члены родительского класса могут быть доступны в дочернем классе с помощью ключевого слова `super`.
+
+```python
+class Parent(object):
+   # Constructor
+   def __init__(self, name):
+       self.name = name    
+
+class Child(Parent):
+   # Constructor
+   def __init__(self, name, age):         
+       ''' 
+       In Python 3.x, we can also use super().__init__(name)
+       ''' 
+       super(Child, self).__init__(name)
+       self.age = age
+ 
+   def display(self):
+      # Note that Parent.name cant be used 
+      # here since super() is used in the constructor
+      print(self.name, self.age)
+
+# Driver Code
+obj = Child("Interviewbit", 6)
+obj.display()
+```
+
+
+
+
+
+
+
+
+
 
 
 
@@ -779,5 +1023,4 @@ print(arr[-2]) #вывод 5
 
 
 <!--  Ресурсы
-
 - [interviewbit](https://www.interviewbit.com/python-interview-questions) -->
