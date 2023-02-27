@@ -11,6 +11,39 @@ featuredImage: https://picsum.photos/700/238
 draft: false
 ---
 
+## Github Actions
+
+### Submodules Sync
+
+```yaml
+name: 'Submodules Sync'
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+
+      - name: Pull & update submodules recursively
+        run: |
+          git pull --recurse-submodules
+          git submodule update --remote --recursive
+
+      - name: Commit & push changes
+        run: |
+          git config --global user.name 'Git bot'
+          git config --global user.email 'bot@noreply.github.com'
+          git commit -am "Auto updated submodule references" && git push || echo "No changes to commit"
+```
+
 ## Free space in git repo
 
 [Download BFG](https://rtyley.github.io/bfg-repo-cleaner/)
