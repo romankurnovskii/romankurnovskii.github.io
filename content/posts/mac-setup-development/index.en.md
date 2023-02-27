@@ -47,7 +47,14 @@ Install GUI applications (read more about these in GUI Applications):
 
 ```bash
 brew install --cask \
+  appcleaner \
+  dbeaver-community \
+  deepl \
+  disk-inventory-x \
   google-chrome  \
+  google-drive \
+  grammarly \
+  itsycal \
   firefox \
   visual-studio-code \
   all-in-one-messenger \
@@ -64,16 +71,17 @@ brew install --cask \
   tor-browser \
   transmission \
   utm \
-  viber \
-  yandex-disk \
-  zoom \
   mongodb-compass \
-  disk-inventory-x \
   obs \
   spotify \
   iterm2 \
-  deepl \
-  syncthing
+  rectangle \
+  sublime-text \
+  syncthing \
+  viber \
+  visual-studio-code \
+  yandex-disk \
+  zoom
 ```
 
 Install terminal applications (read more about these in Terminal Applications):
@@ -127,7 +135,7 @@ brew install \
     - [Squish](chrome://extensions/?id=iinmigjlcpeckfihbbfajpkiilfmakff) - AI-powered summary tool. Turn any body of text into a few sentences with one click.
     - [Zotero](chrome://extensions/?id=ekhagklcjbdpajgpjgmbionohlpdbjgc) - Add/sync scientific PDF documents 
     - [Video Downloader Plus](chrome://extensions/?id=cfejhehdhaaeoiahaojjhmjaihjaodcf)
-    - [Opus●Guide](https://chrome.google.com/webstore/detail/opus%E2%97%8Fguide/fpnkogmkokahibbdbfoligochippakeb) (Step-by-step for instructions)
+    - [Opus Guide](https://chrome.google.com/webstore/detail/opus%E2%97%8Fguide/fpnkogmkokahibbdbfoligochippakeb) (Step-by-step for instructions)
 
 
 ### Disk Inventory X
@@ -145,7 +153,7 @@ brew install \
 ### Visual Studio Code
 [Visual Studio Code](https://code.visualstudio.com/) (web development IDE)
 
-[Settings](https://github.com/romankurnovskii/romankurnovskii.github.io/tree/main/content/posts/mac-setup-development/files/vscode)
+~~[Settings](https://github.com/romankurnovskii/romankurnovskii.github.io/tree/main/content/posts/mac-setup-development/files/vscode)~~ / Synced
 
 ### Sublime Text
 [Sublime Text](https://www.sublimetext.com/) (editor)
@@ -154,6 +162,11 @@ brew install \
 [Maccy](https://maccy.app/) (clipboard manager)
   - enable "Launch at Login"
 
+### Rectangle
+
+Move and resize windows in macOS using keyboard shortcuts or snap areas
+- https://rectangleapp.com
+
 
 ### OBS
 [OBS](https://obsproject.com/) (for video recording and live streaming)
@@ -161,8 +174,12 @@ brew install \
     - Base (Canvas) 2880x1800 (Ratio: 16:10)
     - Output 1728x1080
     ![](img/obs-base-canvas.png)
-### Spotify
-[Spotify](https://www.spotify.com/)
+    
+~~### Spotify~~
+~~[Spotify](https://www.spotify.com/)~~
+
+### Soundcloud
+- https://soundcloud.com
 
 ### Syncthing
 [syncthing](https://syncthing.net/) - Sync folders/files between devices. I use to backup all photos/video from mobile to PC
