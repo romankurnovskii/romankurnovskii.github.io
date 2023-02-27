@@ -9,15 +9,15 @@ categories:
 series:
 featuredImage:
 date: 2023-02-15
-lastmod: 2023-02-17
+lastmod: 2023-02-27
 draft: false
 weight: 550
 todo: добавить остальные впоросы, downloadable PDF
 ---
 
-> В процессе. Дедлайн: 28/02/2023
+> В процессе заполнения
 
-<mark>[Скачать PDF](/handbooks/top-100-python-questions.pdf)</mark>
+<mark>[Скачать | PDF](/handbooks/python-handbook.pdf)</mark> *обновление 2023/02/17*
 
 ## Junior
 
@@ -567,7 +567,7 @@ for i in xrange(1, 10, 2):    # skip by two for next
 
 Примечание: `xrange` была устаревшей начиная с Python 3.x. Теперь `range` делает то же самое, что делала `xrange` в Python 2.x, поскольку в Python 2.x было гораздо лучше использовать `xrange()`, чем оригинальную функцию `range()`.
 
-### 27. Что такое pickling и unpickling?
+### 27. Что такое `pickling` и `unpickling`?
 
 Библиотека Python предлагает **функцию сериализации** из коробки. Сериализация объекта означает преобразование его в формат, который можно хранить, чтобы впоследствии можно было десериализовать его и получить исходный объект.
 
@@ -697,7 +697,7 @@ print(next(it))
 
 ### 35. Объясните, как удалить файл в Python?
 
-Используйте команду `os.remove(имя_файла)`
+Используйте команду `os.remove(file_name)`
 
 ```python
 import os
@@ -1007,14 +1007,249 @@ obj = Child("Interviewbit", 6)
 obj.display()
 ```
 
+### 42. Используются ли спецификаторы доступа в python?
+
+Да, в Python есть спецификаторы доступа, но они не являются строгими и не работают так же, как в других языках, таких как C++ или Java.
+
+В Python есть три уровня спецификаторов доступа:
+
+- **Public** - открытый доступ. Переменные и методы, объявленные без какого-либо спецификатора доступа, считаются общедоступными и могут быть использованы в любом месте программы.
+- **Protected** - защищенный доступ. Переменные и методы, которые начинаются с символа подчеркивания (_), считаются защищенными и должны использоваться только внутри класса и его потомков.
+- **Private** - закрытый доступ. Переменные и методы, которые начинаются с двух символов подчеркивания (__), считаются закрытыми и не могут быть использованы за пределами класса, даже его потомками.
+
+Однако в Python все переменные и методы на самом деле являются общедоступными и могут быть доступны вне класса, даже если они были объявлены с использованием защищенного или закрытого спецификатора доступа. Но общепринятым правилом считается использование подчеркиваний в начале имен переменных и методов, чтобы показать, что они не предназначены для использования вне класса. 
+
+Также существует соглашение, что имена методов и переменных, начинающихся с двух символов подчеркивания, должны использоваться только внутри класса.
+
+Пример использования спецификаторов доступа в Python:
+
+```python
+class Example:
+    def __init__(self):
+        self.public_variable = "Public variable" # публичная переменная
+        self._protected_variable = "Protected variable" # защищенная переменная
+        self.__private_variable = "Private variable" # приватная переменная
+
+    def public_method(self):
+        print("Public method")
+
+    def _protected_method(self):
+        print("Protected method")
+
+    def __private_method(self):
+        print("Private method")
+
+example = Example()
+
+# Доступ к публичной переменной и методу
+print(example.public_variable) # выведет "Public variable"
+example.public_method() # выведет "Public method"
+
+# Доступ к защищенной переменной и методу
+print(example._protected_variable) # выведет "Protected variable"
+example._protected_method() # выведет "Protected method"
+
+# Доступ к приватной переменной и методу
+# Возникнет ошибка AttributeError, потому что переменная и метод приватные
+print(example.__private_variable)
+example.__private_method()
+```
+
+В этом примере мы создали класс `Example` с тремя переменными и методами, которые имеют разные уровни спецификаторов доступа. Затем мы создали объект `example` и использовали различные спецификаторы доступа, чтобы получить доступ к его переменным и методам.
+
+### 43. Можно ли вызвать родительский класс без создания его экземпляра?
+
+Да, это возможно, если базовый класс инстанцируется другими дочерними классами или если базовый класс является статическим методом.
+
+### 44. Как в python создается пустой класс?
+
+Пустой класс не имеет определенных свойств/методов, определенных внутри. Он создается с помощью ключевого слова pass (команда pass ничего не делает в python). Мы можем создавать объекты для этого класса вне класса.
+
+```python
+class MyClass:
+    pass
+```
+
+### 45. Проведите различие между модификаторами `new` и `override`.
+
+`new` используется для создания новой реализации метода в классе-наследнике, которая заменяет реализацию метода в базовом классе. Это означает, что когда метод вызывается на объекте класса-наследника, будет использоваться новая реализация метода из класса-наследника, а не из базового класса.
+
+`override` используется для переопределения реализации метода, унаследованного от базового класса. Это означает, что когда метод вызывается на объекте класса-наследника, будет использоваться новая реализация метода из класса-наследника, а не реализация метода из базового класса. 
+
+Если в классе-наследнике не определен метод с тем же именем, что и метод в базовом классе, то метод базового класса будет унаследован.
+
+```python
+class BaseClass:
+    def method(self):
+        print("BaseClass.method")
+
+class DerivedClass1(BaseClass):
+    def method(self):
+        print("DerivedClass1.method")
+
+class DerivedClass2(BaseClass):
+    def new_method(self):
+        print("DerivedClass2.new_method")
+
+class DerivedClass3(BaseClass):
+    def method(self):
+        super().method()
+        print("DerivedClass3.method")
+
+base_object = BaseClass()
+derived_object1 = DerivedClass1()
+derived_object2 = DerivedClass2()
+derived_object3 = DerivedClass3()
+
+base_object.method() # выведет "BaseClass.method"
+derived_object1.method() # выведет "DerivedClass1.method"
+derived_object2.new_method() # выведет "DerivedClass2.new_method"
+derived_object3.method() # выведет "BaseClass.method" и "DerivedClass3.method"
+```
+
+### 46. Как использовать декораторы для определения свойств (property) в Python?
+
+В Python свойства (property) позволяют использовать методы геттера (getter) и сеттера (setter) для доступа к данным объекта, скрывая реализацию от пользователя.
+
+Для определения свойства (property) в Python используются декораторы @property, @property_name.setter и @property_name.deleter. Декоратор @property указывается перед методом геттера, который должен возвращать значение свойства. Декоратор @property_name.setter указывается перед методом сеттера, который должен устанавливать значение свойства. Декоратор @property_name.deleter указывается перед методом удаления, который должен удалить свойство.
+
+Пример определения свойства (property) с помощью декораторов в Python:
+
+```python
+class Rectangle:
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    @property
+    def area(self):
+        return self.width * self.height
+
+    @property
+    def perimeter(self):
+        return 2 * (self.width + self.height)
+
+    @property
+    def width(self):
+        return self._width
+
+    @width.setter
+    def width(self, value):
+        if value <= 0:
+            raise ValueError("Width must be positive.")
+        self._width = value
+
+    @property
+    def height(self):
+        return self._height
+
+    @height.setter
+    def height(self, value):
+        if value <= 0:
+            raise ValueError("Height must be positive.")
+        self._height = value
+
+    @property
+    def dimensions(self):
+        return (self.width, self.height)
+
+    @dimensions.setter
+    def dimensions(self, values):
+        self.width, self.height = values
+
+    def __str__(self):
+        return f"Rectangle({self.width}, {self.height})"
+
+```
+
+В этом примере мы создали класс `Rectangle`, который определяет прямоугольник с шириной и высотой. Мы определили свойства (property) `area`, `perimeter`, `width`, `height` и `dimensions` с помощью декораторов. 
+
+Свойства `area` и `perimeter` используют методы геттера для вычисления площади и периметра. 
+
+Свойства `width` и `height` используют методы геттера и сеттера для доступа к ширине и высоте. 
+
+Свойство `dimensions` использует методы геттера и сеттера для доступа к ширине и высоте в виде кортежа.
+
+Теперь мы можем создать объект класса `Rectangle` и использовать свойства для доступа к данным:
+
+```python
+rect = Rectangle(3, 4)
+print(rect.width) # выведет 3
+print(rect.height) # выведет 4
+print(rect.area) # выведет 12
+print(rect.perimeter) #
+```
+
+### 47. Что такое метод `init` в python?
+
+В Python метод `__init__` является конструктором класса, который вызывается при создании нового объекта класса. Он используется для инициализации свойств объекта и может принимать параметры, которые передаются при создании объекта.
+
+```python
+class MyClass:
+    def __init__(self, name):
+        self.name = name
+
+my_object = MyClass("John")
+print(my_object.name) # выведет "John"
+```
+
+В этом примере мы создали класс `MyClass` с методом `__init__`, который инициализирует свойство `name` объекта класса. При создании объекта `my_object` мы передали ему параметр "John", который был использован для инициализации свойства `name`.
+
+### 48. Как проверить, является ли класс дочерним по отношению к другому классу?
+
+В Python можно проверить, является ли класс дочерним по отношению к другому классу с помощью функции `issubclass`. Функция `issubclass` принимает два аргумента: класс-потомок и класс-родитель, и возвращает `True`, если класс-потомок является подклассом класса-родителя, и `False` в противном случае.
+
+Вот пример использования функции `issubclass` в Python:
+
+```python
+class BaseClass:
+    pass
+
+class DerivedClass(BaseClass):
+    pass
+
+print(issubclass(DerivedClass, BaseClass)) # выведет True
+print(issubclass(BaseClass, DerivedClass)) # выведет False
+```
+
+В этом примере мы создали два класса, `BaseClass` и `DerivedClass`, где `DerivedClass` наследует `BaseClass`. Мы затем использовали функцию `issubclass`, чтобы проверить, является ли `DerivedClass` дочерним по отношению к `BaseClass`, и вывели результат на экран.
+
+В этом примере функция `issubclass(DerivedClass, BaseClass)` возвращает `True`, потому что `DerivedClass` является дочерним по отношению к `BaseClass`. 
+
+А функция `issubclass(BaseClass, DerivedClass)` возвращает `False`, потому что `BaseClass` не является дочерним по отношению к `DerivedClass`.
 
 
 
 
+### 
 
+```python
+```
 
+### 
 
+```python
+```
 
+### 
+
+```python
+```
+
+### 
+
+```python
+```
+
+### 
+
+```python
+```
+
+### 
+
+```python
+```
 
 
 
