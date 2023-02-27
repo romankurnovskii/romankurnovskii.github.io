@@ -28,3 +28,6 @@ weight: 40
 - https://github.com/valentk777/Competitive-Programming/
 - [Competitive Programming Library](https://github.com/cheran-senthil/PyRival)
 
+## 
+
+- [Codeforces rating](https://codeforces.com/ratings/country/Israel)
