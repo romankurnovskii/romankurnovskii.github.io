@@ -121,7 +121,7 @@ brew install \
   - Chrome Extensions
     - [ChatGPT for Search Engines](https://chrome.google.com/webstore/detail/chatgpt-for-search-engine/feeonheemodpkdckaljcjogdncpiiban) - Show ChatGPT output on every search request
     - [DeepL Translate](https://chrome.google.com/webstore/detail/deepl-translate-beta-vers/cofdbpoegempjloogbagkncekinflcnj/related?hl=en) - AI translator
-    - [DoubleSubs](https://chrome.google.com/webstore/detail/doublesubs/cfmeoknomhdgcbcmgmpbbjiggfboniie)  - dual subs on youtube/netflix
+    - [DoubleSubs](https://chrome.google.com/webstore/detail/doublesubs/cfmeoknomhdgcbcmgmpbbjiggfboniie)  - dual subs on youtube/netflix + web translator
     - [Google Translate](https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb)
     - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
     - [Pocket](https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj) - The easiest, fastest way to capture articles, videos, and more.
