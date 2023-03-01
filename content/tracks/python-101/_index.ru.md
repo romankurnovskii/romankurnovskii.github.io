@@ -13,7 +13,7 @@ draft: false
 abcSort: true
 ---
 
-<mark>[Скачать PDF](/handbooks/python-handbook.pdf)</mark> *обновление 2023/02/27*
+<mark>[Скачать | PDF](https://romankurnovskii.com/handbooks/python-handbook.pdf)</mark> *обновление 2023/02/27*
 
 Здравствуйте!
 

@@ -1,6 +1,6 @@
 ---
 title: Questions
-description: AWS exam questions Certified Developer 2022
+description: AWS exam questions Certified Developer 2023
 toc: true
 authors: [roman-kurnovskii]
 tags:
@@ -1080,86 +1080,6 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 
 
 
-### 1
-
-****
-
-****
-
-1. 
-
-<details>
-<summary>Explanation</summary>
-<div>
-
-<mark style="color:white"></mark> 
-</div>
-</details>
-
-### 2
-
-****
-
-****
-
-1. 
-
-<details>
-<summary>Explanation</summary>
-<div>
-
-<mark style="color:white"></mark> 
-</div>
-</details>
-
-### 3
-
-****
-
-****
-
-1. 
-
-<details>
-<summary>Explanation</summary>
-<div>
-
-<mark style="color:white"></mark> 
-</div>
-</details>
-
-### 4
-
-****
-
-****
-
-1. 
-
-<details>
-<summary>Explanation</summary>
-<div>
-
-<mark style="color:white"></mark> 
-</div>
-</details>
-
-### 5
-
-****
-
-****
-
-1. 
-
-<details>
-<summary>Explanation</summary>
-<div>
-
-<mark style="color:white"></mark> 
-</div>
-</details>
-
 ### 6
 
 **A developer notices timeouts from the AWS CLI when the developer runs list commands.**
@@ -1260,8 +1180,6 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 https://main.d33tdgi01iojga.amplifyapp.com/addQuestion
 
 
-
-
 ### 1
 
 ****
@@ -1310,136 +1228,5 @@ https://main.d33tdgi01iojga.amplifyapp.com/addQuestion
 </div>
 </details>
 
-### 4
-
-****
-
-****
-
-1. 
-
-<details>
-<summary>Explanation</summary>
-<div>
-
-<mark style="color:white"></mark> 
-</div>
-</details>
-
-### 5
-
-****
-
-****
-
-1. 
-
-<details>
-<summary>Explanation</summary>
-<div>
-
-<mark style="color:white"></mark> 
-</div>
-</details>
-
-### 6
-
-****
-
-****
-
-1. 
-
-<details>
-<summary>Explanation</summary>
-<div>
-
-<mark style="color:white"></mark> 
-</div>
-</details>
-
-### 7
-
-****
-
-****
-
-1. 
-
-<details>
-<summary>Explanation</summary>
-<div>
-
-<mark style="color:white"></mark> 
-</div>
-</details>
-
-### 8
-
-****
-
-****
-
-1. 
-
-<details>
-<summary>Explanation</summary>
-<div>
-
-<mark style="color:white"></mark> 
-</div>
-</details>
-
-### 9
-
-****
-
-****
-
-1. 
-
-<details>
-<summary>Explanation</summary>
-<div>
-
-<mark style="color:white"></mark> 
-</div>
-</details>
-
-### 10
-
-****
-
-****
-
-1. 
-
-<details>
-<summary>Explanation</summary>
-<div>
-
-<mark style="color:white"></mark> 
-</div>
-</details>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 -->
+
