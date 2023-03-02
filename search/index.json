@@ -149,7 +149,7 @@
             "uri": "/p/draft_notes",
             "title": "notes",
             "description": "todo",
-            "content": "\n[ ] add link to prose from tablet https://prose.io/#romankurnovskii/romankurnovskii.github.io/tree/main/content/tracks/algorithms-101\n[ ] Check kanban notes\n\nCode forces education tutorials\n\nShare butttons for doc pages\n\n\n\nThis week reading list:\n\nInvesting in Foundational Skills First: A Case from South Korea",
+            "content": "\n\nThis week reading list:\n\nInvesting in Foundational Skills First: A Case from South Korea",
             "tags": []
         },
         {
@@ -2593,10 +2593,18 @@
             "lang": "en"
         },
         {
+            "uri": "/tracks/algorithms-101/codeforces/827-div-4-1742",
+            "title": "Round #827/1742 (Div. 4)",
+            "description": "Codeforces Round #827 (Div. 4) / 1742",
+            "content": "\nContest date: 2022-10-13\n\nContest problems\nEditorial\n\nA. Sum\n\nhttps://codeforces.com/contest/1742/problem/A\n\nSolution:\n\n\n\ndef run():\n    for _ in range(inpi()):\n        print(solve())\n\n\nif name == \"main\":\n    CODE_DEBUG = 0\n    if os.environ.get(\"CODE_DEBUG\") or CODE_DEBUG:\n        sys.stdin = open(\"./input.txt\", \"r\")\n        start_time = time.time()\n        run()\n        print(\"\\n--- %s seconds ---\\n\" % (time.time() - start_time))\n    else:\n        run()\n\nB. Increasing\n\nhttps://codeforces.com/contest/1742/problem/B\n\n\n\nSolution:\n\n\n\nExplanation from Codeforces:\n\nC. Stripes\n\nhttps://codeforces.com/contest/1742/problem/C\n\n\nSolution:\n\n\n\nExplanation from Codeforces:\n\nD. Coprime\n\nhttps://codeforces.com/contest/1742/problem/D\n\n\nSolution:\n\nE. Scuza\n\nhttps://codeforces.com/contest/1742/problem/E\n\nSolution:\n\nF. Smaller\n\nhttps://codeforces.com/contest/1742/problem/F\n\n\nSlow Solution:\n\nG. Orray\n\nhttps://codeforces.com/contest/1742/problem/G1\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
             "uri": "/tracks/algorithms-101/codeforces/835-div-4-1760",
             "title": "Round #835/1760 (Div. 4)",
             "description": "Codeforces Round #835 (Div. 4) / 1760",
-            "content": "\nContest date: 2022-11-21\n\nContest problems\nEditorial\n\nA. Medium Number\n\nhttps://codeforces.com/contest/1760/problem/A\n\nSolution:\n\nB. Atilla's Favorite Problem\n\nhttps://codeforces.com/contest/1760/problem/B\n\nSolution:\n\nC. Advantage\n\nhttps://codeforces.com/contest/1760/problem/C\n\nSolution:\n\nD. Challenging Valleys\n\nhttps://codeforces.com/contest/1760/problem/D\n\n\nSolution:\n\nE. Binary Inversions\n\nhttps://codeforces.com/contest/1760/problem/E\n\nSolution:\n\nF. Quests\n\nhttps://codeforces.com/contest/1760/problem/F\n\n\nSlow Solution:\n\n\n\nGood to know\n\nG. SlavicG's Favorite Problem\n\nhttps://codeforces.com/contest/1760/problem/G1\n\n",
+            "content": "\nContest date: 2022-11-21\n\nContest problems\nEditorial\n\nA. Medium Number\n\nhttps://codeforces.com/contest/1760/problem/A\n\nSolution:\n\ndef solve():\n    ar = inpl()\n    ar.sort()\n    return ar[1]\n\n\ndef run():\n    for _ in range(inpi()):\n        print(solve())\n\n\nif name == \"main\":\n    CODE_DEBUG = 0\n    if os.environ.get(\"CODE_DEBUG\") or CODE_DEBUG:\n        sys.stdin = open(\"./input.txt\", \"r\")\n        start_time = time.time()\n        run()\n        print(\"\\n--- %s seconds ---\\n\" % (time.time() - start_time))\n    else:\n        run()\n\nB. Atilla's Favorite Problem\n\nhttps://codeforces.com/contest/1760/problem/B\n\n\nMinimum size of alphabet is the ordinal number of a letter in the string.\n\nGo through each letter and find the max letter's code with built-in function ord\n\nSolution:\n\ndef solve():\n    n = inp()\n    s = inp()\n\n    last_i = 0\n    for i in s:\n        last_i = max(last_i, ord(i) - 97 + 1) # for letter 'a' unicode code is 97\n\n    return last_i\n\nExplanation from Codeforces:\n\nTo solve the problem we need to find the character with the highest alphabetical order in our string, since Atilla will need at least that alphabet size and won't need more. To do this iterate through the string and find the character with the highest alphabetical order. Output the maximum alphabetical order found. The solution can be done in $𝑂(𝑛)$.\n\nC. Advantage\n\nhttps://codeforces.com/contest/1760/problem/C\n\nNeed to know the strongest participant.\nCompare current with strongest.\nIf current participant is the strongest, then compare it with the second strongest.\n\n\nSolution:\n\nFind two strongest.\nLoop and calculate diff.\n\ndef solve():\n    n = inp()\n    ar = inpl()\n\n    result = ar[:]\n\n    ar.sort()\n    strongest, strongest2 = ar[-1], ar[-1]\n    if len(ar) > 1:\n        strongest2 = ar[-2]\n\n    for i, x in enumerate(result):\n        if x == strongest:\n            result[i] = x - strongest2\n        else:\n            result[i] = x - strongest\n\n    return list_to_string_list(result)\n\nExplanation from Codeforces:\n\nMake a copy of the array 𝑠: call it 𝑡. Sort 𝑡 in non-decreasing order, so that 𝑡1 is the maximum strength and $𝑡_2$ — the second maximum strength.\n\nThen for everyone but the best person, they should compare with the best person who has strength $𝑡1$. So for all $𝑖$ such that $𝑠𝑖 ≠ 𝑡1$, we should output $𝑠𝑖−𝑡1$. Otherwise, output $𝑠𝑖−𝑡_2$ — the second highest strength, which is the next best person.\n\nD. Challenging Valleys\n\nhttps://codeforces.com/contest/1760/problem/D\n\n\nSolution:\n\nE. Binary Inversions\n\nhttps://codeforces.com/contest/1760/problem/E\n\nSolution:\n\nF. Quests\n\nhttps://codeforces.com/contest/1760/problem/F\n\n\nSlow Solution:\n\nG. SlavicG's Favorite Problem\n\nhttps://codeforces.com/contest/1760/problem/G\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -3634,7 +3642,7 @@
     "kanban": [
         {
             "uri": "/p/draft_tasks",
-            "content": "Test\nWeek 8 articles\n  https://arxiv.org/abs/2302.11212\n  https://arxiv.org/abs/2209.10206\n\n  Personal Income Taxes in the Middle East and North Africa: Prospects and Possibilities\n  https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4366678&dgcid=ejournal_htmlemail_international%3Amonetary%3Afund%3A%28imf%29%3Aresearch%3Apaper%3Aseries_abstractlink\nclean Mac / April 2023\n  brew  remove\n\n  4k-video-downloader\n  maccy\n  20/63  font-m-plus-1               latest                                             latest                                                  [   OK   ]  https://fonts.google.com/specimen/M+PLUS+1\n  21/63  font-m-plus-1-code          latest                                             latest                                                  [   OK   ]  https://fonts.google.com/specimen/M+PLUS+1+Code\n  22/63  font-mplus",
+            "content": "Test\nWeek 8 articles\n  https://arxiv.org/abs/2302.11212\n  https://arxiv.org/abs/2209.10206\n\n  Personal Income Taxes in the Middle East and North Africa: Prospects and Possibilities\n  https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4366678&dgcid=ejournal_htmlemail_international%3Amonetary%3Afund%3A%28imf%29%3Aresearch%3Apaper%3Aseries_abstractlink",
             "tags": [],
             "lang": "kanban"
         }

@@ -7,15 +7,21 @@ Solution:
 def solve(n, s): x = 0 y = 0 for move in s: if move == &amp;#39;L&amp;#39;: x -= 1 elif move == &amp;#39;R&amp;#39;: x += 1 elif move == &amp;#39;U&amp;#39;: y += 1 elif move == &amp;#39;D&amp;#39;: y -= 1 if x == 1 and y == 1: print(&amp;#34;YES&amp;#34;) break else: print(&amp;#34;NO&amp;#34;) for _ in range(int(input())): # attempts num = int(input()) letter = input() solve(num, letter) C.</description></item><item><title>Round #835/1760 (Div. 4)</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/835-div-4-1760/</link><pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/835-div-4-1760/</guid><description>Contest date: 2022-11-21
 Contest problems Editorial A. Medium Number https://codeforces.com/contest/1760/problem/A
 Solution:
-B. Atilla&amp;rsquo;s Favorite Problem https://codeforces.com/contest/1760/problem/B
+def solve(): ar = inpl() ar.sort() return ar[1] def run(): for _ in range(inpi()): print(solve()) if __name__ == &amp;#34;__main__&amp;#34;: CODE_DEBUG = 0 if os.environ.get(&amp;#34;CODE_DEBUG&amp;#34;) or CODE_DEBUG: sys.stdin = open(&amp;#34;./input.txt&amp;#34;, &amp;#34;r&amp;#34;) start_time = time.time() run() print(&amp;#34;\n--- %s seconds ---\n&amp;#34; % (time.time() - start_time)) else: run() B. Atilla&amp;rsquo;s Favorite Problem https://codeforces.com/contest/1760/problem/B
+Minimum size of alphabet is the ordinal number of a letter in the string.
+Go through each letter and find the max letter&amp;rsquo;s code with built-in function [ord](https://docs.</description></item><item><title>Round #827/1742 (Div. 4)</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/827-div-4-1742/</link><pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/827-div-4-1742/</guid><description>Contest date: 2022-10-13
+Contest problems Editorial A. Sum https://codeforces.com/contest/1742/problem/A
 Solution:
-C. Advantage https://codeforces.com/contest/1760/problem/C
+def run(): for _ in range(inpi()): print(solve()) if __name__ == &amp;#34;__main__&amp;#34;: CODE_DEBUG = 0 if os.environ.get(&amp;#34;CODE_DEBUG&amp;#34;) or CODE_DEBUG: sys.stdin = open(&amp;#34;./input.txt&amp;#34;, &amp;#34;r&amp;#34;) start_time = time.time() run() print(&amp;#34;\n--- %s seconds ---\n&amp;#34; % (time.time() - start_time)) else: run() B. Increasing https://codeforces.com/contest/1742/problem/B
 Solution:
-D. Challenging Valleys https://codeforces.com/contest/1760/problem/D
+Explanation from Codeforces:
+C. Stripes https://codeforces.com/contest/1742/problem/C
 Solution:
-E. Binary Inversions https://codeforces.com/contest/1760/problem/E
+Explanation from Codeforces:
+D. Coprime https://codeforces.com/contest/1742/problem/D
 Solution:
-F. Quests https://codeforces.com/contest/1760/problem/F
+E. Scuza https://codeforces.com/contest/1742/problem/E
+Solution:
+F. Smaller https://codeforces.com/contest/1742/problem/F
 Slow Solution:
-Good to know
-G. SlavicG&amp;rsquo;s Favorite Problem https://codeforces.com/contest/1760/problem/G1</description></item></channel></rss>
+G. Orray https://codeforces.com/contest/1742/problem/G1</description></item></channel></rss>
