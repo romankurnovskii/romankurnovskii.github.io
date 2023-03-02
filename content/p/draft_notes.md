@@ -11,14 +11,6 @@ featuredImage: null
 Цель: null
 ---
 
-- [ ] add link to prose from tablet https://prose.io/#romankurnovskii/romankurnovskii.github.io/tree/main/content/tracks/algorithms-101
-- [ ] Check kanban notes
-
-Code forces education tutorials 
-
-Share butttons for doc pages
-
-
 
 This week reading list:
 
