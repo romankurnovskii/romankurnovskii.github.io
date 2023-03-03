@@ -368,6 +368,25 @@ def backtrack(some_len_data):
 
 - https://algo.monster/problems/backtracking
 
+## Dutch National Flag problem
+
+The Dutch National Flag problem is a sorting problem that asks us to sort an array of colors, like a bunch of different colored socks. We want to put all the socks of the same color together in the array.
+
+The colors in this problem are represented by numbers. We use the numbers `0`, `1`, and `2` to represent the colors red, white, and blue. So, we have an array of numbers, and we want to sort them in such a way that all the `0's` are at the beginning of the array, then all the `1's`, and finally all the `2's` are at the end.
+
+For example, if we have an array `[2, 0, 2, 1, 1, 0]`, we want to sort it so that it becomes `[0, 0, 1, 1, 2, 2]`.
+
+One way to solve this problem is to use a technique called the Dutch National Flag algorithm. The idea behind this algorithm is to use **three pointers**: a low pointer, a mid pointer, and a high pointer.
+
+The low pointer starts at the beginning of the array, the high pointer starts at the end of the array, and the mid pointer starts at the beginning of the array.
+
+We then iterate through the array with the mid pointer. 
+- If the value at the mid pointer is `0`, we swap it with the value at the low pointer and increment both pointers. - If the value at the mid pointer is `1`, we leave it where it is and just increment the mid pointer. 
+- If the value at the mid pointer is 2, we swap it with the value at the high pointer and decrement the high pointer.
+
+We keep doing this until the mid pointer passes the high pointer, at which point the array is sorted.
+
+So, in our sock example, we start with the low pointer at the beginning of the array, the mid pointer also at the beginning of the array, and the high pointer at the end of the array. Then, we iterate through the array with the mid pointer, swapping socks as needed until the array is sorted by color.
 
 ## Resources
 

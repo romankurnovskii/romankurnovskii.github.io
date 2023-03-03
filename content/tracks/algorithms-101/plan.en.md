@@ -57,11 +57,11 @@ Update plan by solution:
 |  22   | [29. Divide Two Integers](../problems/29-divide-two-integers)                                                                      | Medium     | [Math](/en/tags/math), [Bit Manipulation](/en/tags/bit-manipulation)                                                            |
 |  23   | [33. Search in Rotated Sorted Array](../problems/33-search-in-rotated-sorted-arrays)                                               | Medium     | [Array](/en/tags/array), [Binary Search](/en/tags/binary-search),                                                               |
 |  24   | [34. Find First and Last Position of Element in Sorted Array](../problems/find-first-and-last-position-of-element-in-sorted-array) | Medium     | [Array](/en/tags/array), [Binary Search](/en/tags/binary-search),                                                               |
-|  25   | [36. Valid Sudoku](../problems/36-valid-sudoku)                                                                                    | Medium     | [Array](/en/tags/array), [Hash Table,](/en/tags/hash-table), [Matrix](/en/tags/matrix)                                          |
+|  25   | [36. Valid Sudoku](../problems/36-valid-sudoku)                                                                                    | Medium     | [Array](/en/tags/array), [Hash Table](/en/tags/hash-table), [Matrix](/en/tags/matrix)                                           |
 |  26   | [38. Count and Say](../problems/38-count-and-say)                                                                                  | Medium     | [String](/en/tags/string)                                                                                                       |
 |  27   | [46. Permutations](../problems/46-permutations)                                                                                    | Medium     | [Array](/en/tags/array), [Backtracking](/en/tags/backtracking)                                                                  |
 |  28   | [48. Rotate Image](../problems/48-rotate-image)                                                                                    | Medium     | [Array](/en/tags/array), [Math](/en/tags/math), [Matrix](/en/tags/matrix)                                                       |
-|  29   | [49. Group Anagrams](../problems/49-group-anagrams)                                                                                | Medium     | [Array](/en/tags/array), [Hash Table,](/en/tags/hash-table), [String](/en/tags/string), [Sorting](/en/tags/sorting)             |
+|  29   | [49. Group Anagrams](../problems/49-group-anagrams)                                                                                | Medium     | [Array](/en/tags/array), [Hash Table](/en/tags/hash-table), [String](/en/tags/string), [Sorting](/en/tags/sorting)              |
 |  30   | [50. Pow(x, n)](../problems/50)                                                                                                    | Medium     | [Math](/en/tags/math), [Recursion](/en/tags/recursion)                                                                          |
 |  31   | [53. Maximum Subarray](../problems/53)                                                                                             | Medium     | [Array](/en/tags/array), [Divide and Conquer](/en/tags/divide-and-conquer), [Dynamic Programming](/en/tags/dynamic-programming) |
 
@@ -73,11 +73,12 @@ Practice on each coding pattern.
 
 ## Q3
 
-|   #   | Problem                               | Difficulty | Topics                                                                                                               |
-| :---: | ------------------------------------- | ---------- | -------------------------------------------------------------------------------------------------------------------- |
-|  32   | [55. Jump Game](../problems/55)       | Medium     | [Array](/en/tags/array), [Greedy](/en/tags/greedy), [Dynamic Programming](/en/tags/dynamic-programming)              |
-|  33   | [56. Merge Intervals](../problems/56) | Medium     | [Array](/en/tags/array), [Sorting](/en/tags/sorting),                                                                |
-|  34   | [62. Unique Paths](../problems/62)    | Medium     | [Math](/en/tags/math), [Dynamic Programming](/en/tags/dynamic-programming), [Combinatorics](/en/tags/combinatorics)] |
-|  35   | [73. Set Matrix Zeroes](../problems/73) | Medium     | [Array](/en/tags/array), [Hash Table,](/en/tags/hash-table), [Matrix](/en/tags/matrix)                               |
+|   #   | Problem                                 | Difficulty | Topics                                                                                                               |
+| :---: | --------------------------------------- | ---------- | -------------------------------------------------------------------------------------------------------------------- |
+|  32   | [55. Jump Game](../problems/55)         | Medium     | [Array](/en/tags/array), [Greedy](/en/tags/greedy), [Dynamic Programming](/en/tags/dynamic-programming)              |
+|  33   | [56. Merge Intervals](../problems/56)   | Medium     | [Array](/en/tags/array), [Sorting](/en/tags/sorting),                                                                |
+|  34   | [62. Unique Paths](../problems/62)      | Medium     | [Math](/en/tags/math), [Dynamic Programming](/en/tags/dynamic-programming), [Combinatorics](/en/tags/combinatorics)] |
+|  35   | [73. Set Matrix Zeroes](../problems/73) | Medium     | [Array](/en/tags/array), [Hash Table](/en/tags/hash-table), [Matrix](/en/tags/matrix)                                |
+|  36   | [75. Sort Colors](../problems/75)       | Medium     | [Array](/en/tags/array), [Two Pointers](/en/tags/Two-Pointers), [Sorting](/en/tags/Sorting)                          |
 
 Started participating in [contests](../codeforces).
