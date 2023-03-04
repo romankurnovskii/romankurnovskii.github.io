@@ -5,7 +5,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 4
+                    "timeTakenInMilliseconds": 2
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -2257,7 +2257,7 @@
             "uri": "/p/links",
             "title": "Links",
             "description": null,
-            "content": "\nThe curated list of AI tools for marketing\nDiscover the newest AIs for any given task\n\nFast and simple way to visualize your story - free 1 Storyboard and 10 Frames\nhttps://airtrackbot.com/\nCreate 1,000 AI art images a day for free\n\nCreate and sell your own personalized books and journals\n\n-Turn any body of text into a few sentences with one click - Chrome extension\n\nBlock Diagram Maker\n\nVideo from Screenshot\n\nBooks nice covers\n\nTheme for Docs - MkDocs\n\n",
+            "content": "\nThe curated list of AI tools for marketing\nDiscover the newest AIs for any given task\nCreate 1,000 AI art images a day for free\n\nBlock Diagram Maker\n\nFast and simple way to visualize your story - free 1 Storyboard and 10 Frames\nVideo from Screenshot\n\nCreate and sell your own personalized books and journals\nBooks nice covers\nTheme for Docs - MkDocs\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -2401,6 +2401,17 @@
             "content": "\nLearn different ways to rename files in Python using the os and pathlib modules.\n\nos.rename\n\nRename files with os\n\nYou can use\n\nos.rename(old_name, new_name)\n\nFor example we can combine it with os.path.splitext() to get the base name and file extension, and then combine it to a new name:\n\nimport os\nfor file in os.listdir():\n    name, ext = os.path.splitext(file)\n    new_name = f\"{name}_new{ext}\"\n    os.rename(file, new_name)\n\npathlib\n\nRename files with pathlib\n\nThe same could be achieved with the pathlib module and\n\nPath.rename(new_name)\n\nWith a Path object we can access .stem and .suffix:\n\nfrom pathlib import Path\nfor file in os.listdir():\n    f = Path(file)\n    new_name = f\"{f.stem}_new{f.suffix}\"\n    f.rename(new_name)\n\nshutil.move\n\nThe shutil module offers a number of high-level operations on files and collections of files. In particular, functions are provided which support file copying and removal. For operations on individual files, see also the os module.\n\nimport shutil\n\nold_source = '/Users/r/Desktop/old_source.txt'\nnew_source = '/Users/r/Desktop/new_source.txt'\n\nnewFileName = shutil.move(old_source, new_source)\n\nprint(\"New file:\", newFileName)\nNew file: /Users/r/Desktop/new_source.txt\n`",
             "tags": [
                 "Python"
+            ],
+            "lang": "en"
+        },
+        {
+            "uri": "/posts/hugo-add-copy-button-on-highlight-block",
+            "title": "How to add copy code button on HUGO highligh code block",
+            "description": "Learn how to quickly add a copy button to code highlight blocks in Hugo to make it easier for users to share code snippets on your site.",
+            "content": "\n\nfunction addCopyButtonToCodeBlocks() {\n    // Get all code blocks with a class of \"language-*\"\n    const codeBlocks = document.querySelectorAll('code[class^=\"language-\"]');\n\n    // For each code block, add a copy button inside the block\n    codeBlocks.forEach(codeBlock => {\n        // Create the copy button element\n        const copyButton = document.createElement('button');\n        copyButton.classList.add('copy-code-button');\n        copyButton.innerHTML = '';\n\n        // Add a click event listener to the copy button\n        copyButton.addEventListener('click', () => {\n            // Copy the code inside the code block to the clipboard\n            const codeToCopy = codeBlock.innerText;\n            navigator.clipboard.writeText(codeToCopy);\n\n            // Update the copy button text to indicate that the code has been copied\n            copyButton.innerHTML = '';\n            setTimeout(() => {\n                copyButton.innerHTML = '';\n            }, 1500);\n        });\n\n        // Add the copy button to the code block\n        codeBlock.parentNode.insertBefore(copyButton, codeBlock);\n    });\n}\n\n\n",
+            "tags": [
+                "hugo",
+                "javascript"
             ],
             "lang": "en"
         },
