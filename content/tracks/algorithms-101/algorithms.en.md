@@ -266,15 +266,19 @@ A classic way of writing a two-pointer sliding window. The right pointer keeps m
 
 Based on [Depth-first search (DFS)](#depth-first-searchdfs)
 
-Backtracking is an algorithmic technique for solving problems recursively by trying to build a solution incrementally, one piece at a time, removing those solutions that fail to satisfy the constraints of the problem at any point of time.
-
-Backtracking algorithm is derived from the Recursion algorithm, with the option to revert if a recursive solution fails, i.e. in case a solution fails, the program traces back to the moment where it failed and builds on another solution. So basically it tries out all the possible solutions and finds the correct one.
-
-> **Backtracking == DFS on a tree**
-
 **Usage:**
 
 Finding all permutations, combinations, subsets and solving sudoku are classic combinatorial problems.
+
+Imagine you are trying to solve a puzzle, like a Sudoku. When you are solving a puzzle, sometimes you reach a point where you can't make any more progress using the current path. That's when you need to *backtrack*.
+
+Backtracking is a general algorithmic technique that is used to find all (or some) solutions to a problem by incrementally building candidates, and checking if the candidate is feasible or not. If the candidate is not feasible, the algorithm goes back (backtracks) to the previous step and tries again with a different candidate. The process continues until a solution is found, or all candidates have been tried.
+
+Backtracking is an algorithmic technique for solving problems recursively by trying to build a solution incrementally, one piece at a time, removing those solutions that fail to satisfy the constraints of the problem at any point of time.
+
+Backtracking algorithm is derived from the Recursion algorithm, with the **option to revert** if a recursive solution fails, i.e. in case a solution fails, the program traces back to the moment where it failed and builds on another solution. So basically it tries out all the possible solutions and finds the correct one.
+
+> **Backtracking == DFS on a tree**
 
 **Howto:**
 
@@ -283,90 +287,67 @@ Finding all permutations, combinations, subsets and solving sudoku are classic c
    - how do we know if we have reached a solution?
    - how do we branch (generate possible children)?
 
-![backtracking example](https://algomonster.s3.us-east-2.amazonaws.com/backtracking/ab2_combination+(1).jpg)
 
-**Template:**
+**Example:**
 
+Let's say we want to generate all possible combinations of `1`, `2`, and `3` of length `2`. The possible combinations are: `(1, 2), (1, 3), (2, 1), (2, 3), (3, 1), (3, 2)`.
 
-*Pattern template:*
-
-```python
-def backtrack(some_len_data):
-    result = []
-
-    def dfs(left, right):
-        if isCondition:
-            result.append("WhatNeeded")
-        if left > 0:
-            dfs(left-1, right)
-        if left < right:
-            dfs(left, right-1)
-
-    dfs(some_len_data)
-    return result
-```
-
-**Full with comments:**
+This process generates all possible combinations of length `k`:
 
 ```python
-    def backtrack(A):
-        # Set up a list of list to hold all possible solutions
-        result = []
-        if A == None or len(A) == 0):
-            return result
+def backtrack(nums, path, res, k):
+    # nums: the list of available numbers
+    # path: the current path of selected numbers
+    # res: the list of all valid combinations
+    # k: the length of each combination
+    
+    if len(path) == k: # base case
+        res.append(path[:])
+        return
 
-        # As we need to recursively generate every solution,
-        # a variable is needed to store single solution.
-        solution = []
+    for i in range(len(nums)):
+        path.append(nums[i])
+        backtrack(nums[:i] + nums[i+1:], path, res, k)
+        path.pop()
 
-        # The process of constructing the solution corresponds exactly to
-        # doing a Depth-First-Search of the backtrack tree. Viewing backtracking
-        # as a Depth-First-Search on a tree yields a natural recursive implementation
-        # of the algorithm.
-        dfs(result, solution, A, 0)
-        return result
 
-    def dfs(result, solution, A, pos):
-        # For recursion, the first thing we need to think about is how to terminate it, i.e., base case.
-        # Method isASolution() could be implemented as a private method which returns boolean,
-        # or for simple test we can directly use the condition replace it, e.g., generate all subsets
-        # we can write the condition: if (A.length == pos)
-        if isASolution(A, pos):
-            # Because we use the variable - 'solution' to hold partial solution,
-            # when this search is terminated, the variable must hold a complete
-            # solution.
-            # Same like isASolution, processSolution method should print, count or however
-            # process the complete solution once it is constructed.
-            processSolution(result, solution)
-            return
-
-        i = pos
-        while i < len(A):
-            # Before Depth-First-Search, we should decide whether we need to prune searching
-            # which means it's unnecessary to continue search along a wrong partial solution
-            if (!isValid(A[i])):
-                continue; # stop searching along this path
-
-            # Add the ith element of the array into the partial solution.
-            # Before searching, we need to record the latest element we are using
-            # to build the solution tree. Method makeMove should be able to add A[i]
-            # to the solution, i.e., solution.add(A[i])
-            makeMove(solution, A[i])
-
-            # Right now, we are searching all possible solutions based on ith element.
-            # Warning: remember as we've already added ith element, the last parameter
-            # must be `i + 1`.
-            dfs(result, solution, A, i + 1)
-
-            # After searching based on ith element, take back the move and search another
-            # possible partial solution.
-            unmakeMove(solution, A[i])
-            i += 1
+nums = [1, 2, 3]
+k = 2
+res = []
+backtrack(nums, [], res, k)
+print(res)
+# [[1, 2], [1, 3], [2, 1], [2, 3], [3, 1], [3, 2]]
 ```
 
-**Links:**
+**Algorithm:**
 
-- https://algo.monster/problems/backtracking
+1. We start with an empty path and empty result list.
+1. We loop through the available numbers `(1, 2, 3)` and add the first number to the path.
+1. We make a recursive call to `backtrack` with the remaining numbers `(2, 3)` and a `path` that includes the first number (e.g., `[1]`). This adds all possible combinations of length `k-1` with the first number.
+1. After the recursive call, we remove the first number from the path.
+1. We repeat this process for the other available numbers, generating all possible combinations of length k.
+1. When we reach the base case (`len(path) == k`), we add the current path to the result list.
+1. We return the result list of all possible combinations.
+
+The **base case** is when the length of the path is equal to `k`. At this point, we add the current path to the result list and return.
+
+The recursive case involves looping through the available numbers, adding the current number to the `path`, making a recursive call with the remaining numbers, and removing the current number from the `path` after the recursive call.
+
+**path:**
+
+In the `backtrack` function, `path` refers to the list of numbers that have been selected so far to form a valid combination.
+
+Initially, `path` is an empty list `[]`. In each recursive call, a number from `nums` is selected and added to `path`.
+
+For example, if `nums = [1, 2, 3]` and the current `path` is `[1]`, the function will call `backtrack([2, 3], [1], res, k)` to consider all possible combinations with `1` in the first position, followed by all possible combinations of length `k-1` of `[2, 3]` in the second position.
+
+Once all possible combinations with `1` in the first position have been explored, the number `1` will be removed from path, and the function will try the next number from `nums`, which in this case is `2`. The function continues in this way until all valid combinations of length `k` have been found and added to the res list.
+
+**Problem examples:**
+
+- [LeetCode 17. Letter Combinations of a Phone Number]()
+- [LeetCode 22. Generate Parentheses]
+- [LeetCode 46. Permutations]
 
 ## Dutch National Flag problem
 
