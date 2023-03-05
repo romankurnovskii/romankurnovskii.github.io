@@ -349,6 +349,55 @@ Once all possible combinations with `1` in the first position have been explored
 - [LeetCode 22. Generate Parentheses]
 - [LeetCode 46. Permutations]
 
+**Example** of [LeetCode 78 problem](https://leetcode.com/problems/subsets/editorial/):
+
+![](https://leetcode.com/problems/subsets/Figures/78/combinations.png)
+
+![](https://leetcode.com/problems/subsets/Figures/78/backtracking.png)
+
+**Algorithm:**
+
+We define a backtrack function named `backtrack(first, curr)` which takes the index of first element to add and a current combination as arguments.
+
+1. If the current combination is done, we add the combination to the final output.
+
+1. Otherwise, we iterate over the indexes `i` from first to the length of the entire sequence `n`.
+
+    1. Add integer `nums[i]` into the current combination `curr`.
+    2. Proceed to add more integers into the combination: `backtrack(i + 1, curr)`.
+    3. Backtrack by removing `nums[i]` from `curr`.
+
+```python
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        def backtrack(first = 0, curr = []):
+            # if the combination is done
+            if len(curr) == k:  
+                output.append(curr[:])
+                return
+            for i in range(first, n):
+                # add nums[i] into the current combination
+                curr.append(nums[i])
+                # use next integers to complete the combination
+                backtrack(i + 1, curr)
+                # backtrack
+                curr.pop()
+        
+        output = []
+        n = len(nums)
+        for k in range(n + 1):
+            backtrack()
+        return output
+
+
+# [    [], 
+#     [1], [3], [4], 
+#     [1, 3], [1, 4], [3, 4], 
+#     [1, 3, 4]
+# ]
+```
+
+
 ## Dutch National Flag problem
 
 The Dutch National Flag problem is a sorting problem that asks us to sort an array of colors, like a bunch of different colored socks. We want to put all the socks of the same color together in the array.
@@ -357,7 +406,7 @@ The colors in this problem are represented by numbers. We use the numbers `0`, `
 
 For example, if we have an array `[2, 0, 2, 1, 1, 0]`, we want to sort it so that it becomes `[0, 0, 1, 1, 2, 2]`.
 
-One way to solve this problem is to use a technique called the Dutch National Flag algorithm. The idea behind this algorithm is to use **three pointers**: a low pointer, a mid pointer, and a high pointer.
+One way to solve this problem is to use a technique called the Dutch National Flag algorithm. The idea behind this algorithm is to use **three pointers**: a <mark>low pointer</mark>, a <mark>mid pointer</mark>, and a <mark>high pointer</mark>.
 
 The low pointer starts at the beginning of the array, the high pointer starts at the end of the array, and the mid pointer starts at the beginning of the array.
 
