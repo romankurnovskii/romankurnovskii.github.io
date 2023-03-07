@@ -164,6 +164,63 @@ def dfs(root, visited):
         dfs(neighbor, visited)
 ```
 
+**DFS on two-dimensional array:**
+
+Let's imagine you have a big maze made of walls and corridors, and you want to find a way from the entrance to the exit. You can put a robot at the entrance, and you want to tell the robot what to do to find the exit.
+
+The first thing you might tell the robot is to always <mark>go as far as it can in one direction before turning.</mark> **This is what depth-first search does.** 
+
+The robot starts at the entrance and goes as far as it can down the first corridor it finds. 
+- If it comes to a dead end, it goes back to the last intersection it passed and tries the next corridor. 
+- If it comes to the exit, it stops and says "I found the exit!".
+
+Example:
+
+```python
+# Define the maze as a two-dimensional array
+maze = [
+  ['.', '.', '#', '#', '#', '#', '#', '#'],
+  ['#', '.', '.', '.', '#', '.', '.', '#'],
+  ['#', '.', '#', '.', '#', '.', '.', '#'],
+  ['#', '.', '.', '.', '.', '#', '.', '#'],
+  ['#', '#', '#', '#', '.', '#', '.', '#'],
+  ['#', '.', '.', '.', '.', '.', '.', '#'],
+  ['#', '.', '#', '#', '#', '#', '.', '.'],
+  ['#', '#', '#', '#', '#', '#', '#', '.'],
+]
+
+# Define the starting point and the destination
+start = (0, 0)
+end = (len(maze)-1, len(maze[0])-1)
+
+# Define a function to find the exit using depth-first search
+def dfs(current, visited):
+  # Mark the current cell as visited
+  visited.add(current)
+
+  # Base case: If we've reached the destination, return True
+  if current == end:
+    return True
+
+  # Try all possible directions from the current cell
+  for delta in [(0, 1), (1, 0), (0, -1), (-1, 0)]:
+    next_cell = (current[0] + delta[0], current[1] + delta[1])
+    if is_valid_cell(next_cell) and next_cell not in visited:
+      if dfs(next_cell, visited):
+        return True
+
+  # If we couldn't find the exit from this cell, backtrack to the previous cell
+  return False
+
+# Call the depth-first search function with the starting point and an empty set of visited cells
+visited = set()
+if dfs(start, visited):
+  print("I found the exit!")
+else:
+  print("I couldn't find the exit.")
+```
+
+
 ## Sliding Window
 
 <mark>**Usage:** Use when need to handle the input data in specific window size.</mark>
