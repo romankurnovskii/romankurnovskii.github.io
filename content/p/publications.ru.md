@@ -54,7 +54,7 @@ featuredImage: null
 
 - ОСОБЕННОСТИ РЕГИОНАЛЬНОЙ ПОЛИТИКИ И ЭКОНОМИЧЕСКИЕ ИНТЕГРАЦИИ ИЗРАИЛЯ
 в журнале "Наука и бизнес"
-январский номер 23 - http://globaljournals.ru/nauka-i-biznes/ - ВАК
+январский номер 23 - http://globaljournals.ru/nauka-i-biznes/ - ВАК - http://globaljournals.ru/nauka-i-biznes/arhiv/vyipuski-za-2023-god/
 
 ## Codes
 
