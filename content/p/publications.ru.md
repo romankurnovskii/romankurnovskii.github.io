@@ -4,7 +4,7 @@ description: Печатные журналы / сборники
 toc: true
 authors: [roman-kurnovskii]
 date: 2021-03-31T13:11:22+08:00
-lastmod: 2023-01-05T15:49:52+02:00
+lastmod: 2023-03-12
 draft: false
 tags: null
 categories: null
@@ -24,11 +24,19 @@ featuredImage: null
 
 **Для цитирования:**
 
-> [Факторы и условия, определяющие становления финансовой экосистемы в современных условиях](https://www.elibrary.ru/item.asp?id=50018215), // 	[Экономика и предпринимательство](https://www.elibrary.ru/title_about_new.asp?id=27783) // д.э.н., проф. Коновалова М.Е., Курновский Р.М., Ширяева Д.В. // Номер: [8 (145)](https://www.elibrary.ru/contents.asp?id=50018028&selid=50018215) 2022 г. Страницы: 928-931
+> Особенности региональной политики и экономические интеграции Израиля // [Журнал ВАК: Наука и бизнес: пути развития](https://www.elibrary.ru/title_items.asp?id=32230) // Курновский Р.М.// Номер: 1 (139) 2023 г. Страницы: 138-
+
+[Статья [pdf]](/articles/2023-01-osobennosti-regionalnoi-politiki-i-ekonomicheskie-integracii-izrailya.pdf)
+
+> Поддержка икт-экспорта как способ покрытия внутренних потребностей̆ рынка // [XII международной научно-практической конференции «Трансформация экономики и управления: новые вызовы и перспективы»](http://www.fa.ru/fil/spb/science/Pages/Home.aspx) 15-16 декабря 2022г. // Курновский Р.М., Великородная Е. А. //
+
+[Статья [pdf]](/articles/2022-12-podderzhka-ikt-eksporta-kak-sposob-pokrytiya-vnutrennih-potrebnostei-rynka.pdf)
+
+> [Факторы и условия, определяющие становления финансовой экосистемы в современных условиях](https://www.elibrary.ru/item.asp?id=50018215) // 	[Экономика и предпринимательство](https://www.elibrary.ru/title_about_new.asp?id=27783) // д.э.н., проф. Коновалова М.Е., Курновский Р.М., Ширяева Д.В. // Номер: [8 (145)](https://www.elibrary.ru/contents.asp?id=50018028&selid=50018215) 2022 г. Страницы: 928-931
 
 [Статья [pdf]](/articles/2022-12-faktory-i-usloviya-opredeljajushhie-stanovlenija-finansovoi-ekosistemy-v-sovremennyh-uslovijah.pdf) / [ResearchGate](https://www.researchgate.net/publication/367052691_Faktory_i_uslovia_opredelausie_stanovlenia_finansovoj_ekosistemy_v_sovremennyh_usloviah) / [academia.edu](https://www.academia.edu/s/b9f704001c) / [SSRN](https://ssrn.com/abstract=4346636)
 
-> «Ключевые подходы к разработке доступного, интуитивно понятного интерфейса статистического пакета», // Научный журнал // к.т.н., профессор Суханова Е. И., канд. физ.-мат., доцент Ширяева Л. К., Курновский Р. М. // 2014 г. //
+> «Ключевые подходы к разработке доступного, интуитивно понятного интерфейса статистического пакета» // Научный журнал // к.т.н., профессор Суханова Е. И., канд. физ.-мат., доцент Ширяева Л. К., Курновский Р. М. // 2014 г. //
 
 > «[Мобильность платформы 1С на базе приложения 1С:Монитор ERP](https://www.elibrary.ru/item.asp?id=22028608)» // Известия Института Систем Управления Самарского государственного экономического университета. // Курновский Р. М., Нечаев А. Н. // 2013 г. // Номер: 2 (8) // Страницы: 243-247 //
 
@@ -48,13 +56,6 @@ featuredImage: null
 
 
 ## Ожидают публикации
-
-*статья икт экспорт / elibrary*
-- [ТРАНСФОРМАЦИЯ ЭКОНОМИКИ И УПРАВЛЕНИЯ: НОВЫЕ ВЫЗОВЫ И ПЕРСПЕКТИВЫ Сборник статей и тезисов докладов XII Международной научно-практической конференции](http://www.fa.ru/fil/spb/science/Pages/Home.aspx)
-
-- ОСОБЕННОСТИ РЕГИОНАЛЬНОЙ ПОЛИТИКИ И ЭКОНОМИЧЕСКИЕ ИНТЕГРАЦИИ ИЗРАИЛЯ
-в журнале "Наука и бизнес"
-январский номер 23 - http://globaljournals.ru/nauka-i-biznes/ - ВАК - http://globaljournals.ru/nauka-i-biznes/arhiv/vyipuski-za-2023-god/
 
 ## Codes
 
