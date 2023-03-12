@@ -19,14 +19,14 @@ draft: false
 - [Create 1,000 AI art images a day for free](https://playgroundai.com/)
 - [openai examples](https://platform.openai.com/examples/default-notes-summary)
 - [openai answers from file](https://github.com/openai/openai-cookbook/tree/main/apps/file-q-and-a)
- - [AI-powered video summaries](https://www.summarize.tech/)
+- [AI-powered video summaries](https://www.summarize.tech/)
+- [Chrome extension](https://www.plasmo.com/)
 
 
 ## Soft/Architecture
 
 - [Block Diagram Maker](https://falang.io/documents/edit/local)
 - [Theme for Docs - MkDocs](https://squidfunk.github.io/mkdocs-material/getting-started/)
-
 
 
 ## Media
@@ -39,27 +39,3 @@ draft: false
 
 - [Create and sell your own personalized books and journals](https://studio.twoworlds.co/)
 - [Books nice covers](https://mitpress.mit.edu/search-result-list/?category=CGN)
-
-
-
-
-##  ------
-
-- https://tree.nathanfriend.io/
-
-Edit me to generate
-├── a
-│   └── [tree.nathanfriend](https://tree.nathanfriend.io/)
-│       └── tree
-│           ├── diagram!
-│           └── :)
-└── Use indentation
-    ├── to indicate
-    │   ├── file
-    │   ├── and
-    │   ├── folder
-    │   └── nesting.
-    └── You can even
-        └── use
-            ├── markdown
-            └── bullets!
