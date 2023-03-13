@@ -16,8 +16,6 @@ packageType: web
 type: posts
 ---
 
-**Goal:** Check if you are ready to pass Cloud exam
-
 **Goal:** Check if you are ready to pass the Cloud exam
 - The application calculates progress after each answered question.
 - Ability to answer at least one question and get a comment at the same time. No need to pass all questions before.
