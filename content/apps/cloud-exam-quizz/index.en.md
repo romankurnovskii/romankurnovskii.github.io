@@ -11,12 +11,10 @@ featuredVideo:
 featuredImage: https://d1.awsstatic.com/training-and-certification/certification-badges/AWS-Certified-Developer-Associate_badge.5c083fa855fe82c1cf2d0c8b883c265ec72a17c0.png
 imgWidth: 100px
 draft: false
-iconImage: icon.png
+# iconImage: icon.png
 packageType: web
 type: posts
 ---
-
-**Goal:** Check if you are ready to pass Cloud exam
 
 **Goal:** Check if you are ready to pass the Cloud exam
 - The application calculates progress after each answered question.
