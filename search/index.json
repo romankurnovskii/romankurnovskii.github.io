@@ -5,7 +5,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 3
+                    "timeTakenInMilliseconds": 5
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -71,10 +71,18 @@
             "lang": "ru"
         },
         {
+            "uri": "/apps/brewmate/",
+            "title": "BrewMate",
+            "description": "BrewMate Homebrew GUI Apps Manager",
+            "content": "",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
             "uri": "/apps/cloud-exam-quizz/",
             "title": "Cloud exam Quizz",
             "description": "Подготовка к сдаче экзамена AWS",
-            "content": "\nGoal: Check if you are ready to pass Cloud exam\n\nGoal: Check if you are ready to pass the Cloud exam\nThe application calculates progress after each answered question.\nAbility to answer at least one question and get a comment at the same time. No need to pass all questions before.\nIt is convenient to spend 20 min a day\nWorks from web/tablet/mobile\n\nLink: https://www.cloud-exam-prepare.com\n",
+            "content": "\nGoal: Check if you are ready to pass the Cloud exam\nThe application calculates progress after each answered question.\nAbility to answer at least one question and get a comment at the same time. No need to pass all questions before.\nIt is convenient to spend 20 min a day\nWorks from web/tablet/mobile\n\nLink: https://www.cloud-exam-prepare.com\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2195,10 +2203,18 @@
             "lang": "en"
         },
         {
+            "uri": "/apps/brewmate/",
+            "title": "BrewMate",
+            "description": "BrewMate Homebrew GUI Apps Manager",
+            "content": "\n\nBrewMate is a macOS GUI application that makes it easy to search for, install, and uninstall Homebrew casks. You can also see the top downloaded casks for the last month.\n\nInstall\n\nDownload the latest DMG file from the releases page.\nDouble-click the DMG file to open it.\nDrag the BrewMate app to your Applications folder.\nLaunch BrewMate from your Applications folder.\n\nor\nbrew install romankurnovskii/cask/brewmate --cask\n\nor\nbrew tap romankurnovskii/cask\nbrew update\nbrew install brewmate --cask\n\nFAQ\n\nIs this app free?\nYes, the app is free to download and use.\n\nWhat operating systems does this app support?\nThis app is designed for macOS, and it supports macOS 10.15 (Catalina) and newer versions.\n\n\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
             "uri": "/apps/cloud-exam-quizz/",
             "title": "Cloud exam Quizz",
             "description": "Check if you are ready to pass Cloud exam",
-            "content": "\nGoal: Check if you are ready to pass Cloud exam\n\nGoal: Check if you are ready to pass the Cloud exam\nThe application calculates progress after each answered question.\nAbility to answer at least one question and get a comment at the same time. No need to pass all questions before.\nIt is convenient to spend 20 min a day\nWorks from web/tablet/mobile\n\nLink: https://www.cloud-exam-prepare.com\n",
+            "content": "\nGoal: Check if you are ready to pass the Cloud exam\nThe application calculates progress after each answered question.\nAbility to answer at least one question and get a comment at the same time. No need to pass all questions before.\nIt is convenient to spend 20 min a day\nWorks from web/tablet/mobile\n\nLink: https://www.cloud-exam-prepare.com\n",
             "tags": [],
             "lang": "en"
         },
