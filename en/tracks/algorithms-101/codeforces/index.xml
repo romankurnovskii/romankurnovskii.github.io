@@ -10,7 +10,7 @@ Contest date: 2022-11-21
 Contest problems Editorial A. Medium Number https://codeforces.com/contest/1760/problem/A
 Solution:
 def solve(): ar = inpl() ar.sort() return ar[1] def run(): for _ in range(inpi()): print(solve()) if __name__ == &amp;#34;__main__&amp;#34;: CODE_DEBUG = 0 if os.environ.get(&amp;#34;CODE_DEBUG&amp;#34;) or CODE_DEBUG: sys.stdin = open(&amp;#34;./input.txt&amp;#34;, &amp;#34;r&amp;#34;) start_time = time.time() run() print(&amp;#34;\n--- %s seconds ---\n&amp;#34; % (time.time() - start_time)) else: run() B. Atilla&amp;rsquo;s Favorite Problem https://codeforces.com/contest/1760/problem/B
-Minimum size of alphabet is the ordinal number of a letter in the string.</description></item><item><title>Round #827/1742 (Div. 4)</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/827-div-4-1742/</link><pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/827-div-4-1742/</guid><description>#TODO
+Minimum size of alphabet is the ordinal number of a letter in the string.</description></item><item><title>Round #827/1742 (Div. 4)</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/827-div-4-1742/</link><pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/827-div-4-1742/</guid><description>#TODO A B C D E F G
 Contest date: 2022-10-13
 Contest problems Editorial A. Sum https://codeforces.com/contest/1742/problem/A
 Solution:
@@ -24,6 +24,10 @@ D. Coprime https://codeforces.com/contest/1742/problem/D
 Solution:
 E. Scuza https://codeforces.com/contest/1742/problem/E
 Solution:
-F. Smaller https://codeforces.com/contest/1742/problem/F
-Slow Solution:
-G. Orray https://codeforces.com/contest/1742/problem/G1</description></item></channel></rss>
+F. Smaller https://codeforces.</description></item><item><title>Round #859/1807 (Div. 4)</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/859-div-4-1807/</link><pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/859-div-4-1807/</guid><description>#TODO D E F G1 G2
+Contest date: 2023-03-19
+Contest problems A. Plus or Minus https://codeforces.com/contest/1807/problem/A
+Solution:
+def solve(): a, b, c = list(map(int, inp().split())) return &amp;#39;+&amp;#39; if a + b == c else &amp;#39;-&amp;#39; def run(): for _ in range(inpi()): print(solve()) if __name__ == &amp;#34;__main__&amp;#34;: CODE_DEBUG = 0 if os.environ.get(&amp;#34;CODE_DEBUG&amp;#34;) or CODE_DEBUG: sys.stdin = open(&amp;#34;./input.txt&amp;#34;, &amp;#34;r&amp;#34;) start_time = time.time() run() print(&amp;#34;\n--- %s seconds ---\n&amp;#34; % (time.time() - start_time)) else: run() B. Grab the Candies https://codeforces.com/contest/1807/problem/B
+Solution:
+def solve(): n = inpi() ar = int(inp()) m = 0 b = 0 if n == 1: return &amp;#39;YES&amp;#39; if ar[0] % 2 == 0 else &amp;#39;NO&amp;#39; for x in ar: if x % 2 == 0: m += x else: b += x return &amp;#39;YES&amp;#39; if m &amp;gt; b else &amp;#39;NO&amp;#39; C.</description></item></channel></rss>
