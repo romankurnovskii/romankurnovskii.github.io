@@ -12,3 +12,7 @@ npm run p
 
 
 [Python Handbook 2023](https://romankurnovskii.com/handbooks/python-handbook.pdf)
+
+
+git submodule add -b gh-pages https://github.com/romankurnovskii/Codeforces.git static/Codeforces
+git add .gitmodules static/Codeforces
