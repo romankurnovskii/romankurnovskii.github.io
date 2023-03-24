@@ -25,7 +25,7 @@ def solve():
 
 
 def run():
-    for _ in range(inpi()):
+    for _ in range(inp_int()):
         print(solve())
 
 

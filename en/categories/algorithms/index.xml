@@ -198,28 +198,37 @@ Initialize three pointers: left, mid, and right. Initialize left to 0, mid to 0,
 In this solution, we start with an empty list in the results array.
 For each element in the nums array, we append that element to all of the subsets in the results array to create new subsets, and then add these new subsets to the results array.
 By doing this for all elements in nums, we generate all possible subsets.
-class Solution: def subsets(self, nums: List[int]) -&amp;gt; List[List[int]]: res = [[]] for i in nums: for j in range(len(res)): cur = [] cur.</description></item><item><title>Round #827/1742 (Div. 4)</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/827-div-4-1742/</link><pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/827-div-4-1742/</guid><description>#TODO D E F G
-Contest date: 2022-10-13
-Contest problems Editorial A. Sum https://codeforces.com/contest/1742/problem/A
+class Solution: def subsets(self, nums: List[int]) -&amp;gt; List[List[int]]: res = [[]] for i in nums: for j in range(len(res)): cur = [] cur.</description></item><item><title>Round #827/1742 (Div. 4)</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/827-div-4-1742/</link><pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/827-div-4-1742/</guid><description>Contest date: 2022-10-13
+Contest problems
+Editorial
+Template with function snippets
+A. Sum https://codeforces.com/contest/1742/problem/A
 Solution:
-def inp_int_list(): return list(map(int, inp().split())) def solve(): arr = inp_int_list() arr.sort() if arr[0] + arr[1] == arr[2]: print(&amp;#39;YES&amp;#39;) else: print(&amp;#39;NO&amp;#39;) def run(): for _ in range(inp_int()): solve() if __name__ == &amp;#34;__main__&amp;#34;: CODE_DEBUG = 0 if os.environ.get(&amp;#34;CODE_DEBUG&amp;#34;) or CODE_DEBUG: sys.stdin = open(&amp;#34;./input.txt&amp;#34;, &amp;#34;r&amp;#34;) start_time = time.time() run() print(&amp;#34;\n--- %s seconds ---\n&amp;#34; % (time.time() - start_time)) else: run() B. Increasing https://codeforces.com/contest/1742/problem/B
+t = int(input()) for _ in range(t): arr = list(map(int, input().split())) arr.sort() if arr[0] + arr[1] == arr[2]: print(&amp;#39;YES&amp;#39;) else: print(&amp;#39;NO&amp;#39;) B. Increasing https://codeforces.com/contest/1742/problem/B
 Solution:
-def solve(): n = inp_int() arr = inp_int_list() unique = set(arr) if n == len(unique): print(&amp;#39;YES&amp;#39;) else: print(&amp;#39;NO&amp;#39;) Explanation from Codeforces:</description></item><item><title>Round #835/1760 (Div. 4)</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/835-div-4-1760/</link><pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/835-div-4-1760/</guid><description>#TODO D E F G
+t = int(input()) for _ in range(t): n = int(input()) arr = list(map(int, input().split())) print(&amp;#34;YES&amp;#34; if len(set(arr)) == n else &amp;#34;NO&amp;#34;) Explanation from Codeforces:
+If there are two elements with the same value, then the answer is NO, because neither of these values is less than the other.</description></item><item><title>Round #835/1760 (Div. 4)</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/835-div-4-1760/</link><pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/835-div-4-1760/</guid><description>#TODO D E F G
 Contest date: 2022-11-21
-Contest problems Editorial A. Medium Number https://codeforces.com/contest/1760/problem/A
+Contest problems
+Editorial
+Template with function snippets
+A. Medium Number https://codeforces.com/contest/1760/problem/A
 Solution:
-def solve(): ar = inpl() ar.sort() return ar[1] def run(): for _ in range(inpi()): print(solve()) if __name__ == &amp;#34;__main__&amp;#34;: CODE_DEBUG = 0 if os.environ.get(&amp;#34;CODE_DEBUG&amp;#34;) or CODE_DEBUG: sys.stdin = open(&amp;#34;./input.txt&amp;#34;, &amp;#34;r&amp;#34;) start_time = time.time() run() print(&amp;#34;\n--- %s seconds ---\n&amp;#34; % (time.time() - start_time)) else: run() B. Atilla&amp;rsquo;s Favorite Problem https://codeforces.com/contest/1760/problem/B
+def solve(): ar = inp_int_list() ar.sort() return ar[1] def run(): for _ in range(inp_int()): print(solve()) if __name__ == &amp;#34;__main__&amp;#34;: CODE_DEBUG = 0 if os.environ.get(&amp;#34;CODE_DEBUG&amp;#34;) or CODE_DEBUG: sys.stdin = open(&amp;#34;./input.txt&amp;#34;, &amp;#34;r&amp;#34;) start_time = time.time() run() print(&amp;#34;\n--- %s seconds ---\n&amp;#34; % (time.time() - start_time)) else: run() B. Atilla&amp;rsquo;s Favorite Problem https://codeforces.com/contest/1760/problem/B
 Minimum size of alphabet is the ordinal number of a letter in the string.</description></item><item><title>Round #849/1791 (Div. 4)</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/849-div-4-1791/</link><pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/849-div-4-1791/</guid><description>#TODO G2
 Contest date: 2023-02-03
-Contest problems Editorial A. Codeforces Checking https://codeforces.com/contest/1791/problem/A
+Contest problems
+Editorial
+Template with function snippets
+A. Codeforces Checking https://codeforces.com/contest/1791/problem/A
 Solution:
-def solve(letter): code = &amp;#34;codeforces&amp;#34; if letter in code: print(&amp;#34;YES&amp;#34;) else: print(&amp;#34;NO&amp;#34;) for _ in range(int(input())): letter = input() solve(letter) B. Following Directions https://codeforces.com/contest/1791/problem/B
+def solve(letter): code = &amp;#34;codeforces&amp;#34; if letter in code: print(&amp;#34;YES&amp;#34;) else: print(&amp;#34;NO&amp;#34;) for _ in range(int(inp())): letter = inp() solve(letter) B. Following Directions https://codeforces.com/contest/1791/problem/B
 geometry, implementation, *800
 Solution:
-def solve(n, s): x = 0 y = 0 for move in s: if move == &amp;#39;L&amp;#39;: x -= 1 elif move == &amp;#39;R&amp;#39;: x += 1 elif move == &amp;#39;U&amp;#39;: y += 1 elif move == &amp;#39;D&amp;#39;: y -= 1 if x == 1 and y == 1: print(&amp;#34;YES&amp;#34;) break else: print(&amp;#34;NO&amp;#34;) for _ in range(int(input())): # attempts num = int(input()) letter = input() solve(num, letter) C.</description></item><item><title>Round #859/1807 (Div. 4)</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/859-div-4-1807/</link><pubDate>Sun, 19 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/859-div-4-1807/</guid><description>#TODO D E F G1 G2
+def solve(n, s): x = 0 y = 0 for move in s: if move == &amp;#39;L&amp;#39;: x -= 1 elif move == &amp;#39;R&amp;#39;: x += 1 elif move == &amp;#39;U&amp;#39;: y += 1 elif move == &amp;#39;D&amp;#39;: y -= 1 if x == 1 and y == 1: print(&amp;#34;YES&amp;#34;) break else: print(&amp;#34;NO&amp;#34;) for _ in range(int(inp())): # attempts num = int(inp()) letter = inp() solve(num, letter) C.</description></item><item><title>Round #859/1807 (Div. 4)</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/859-div-4-1807/</link><pubDate>Sun, 19 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/859-div-4-1807/</guid><description>#TODO D E F G1 G2
 Contest date: 2023-03-19
-Contest problems A. Plus or Minus https://codeforces.com/contest/1807/problem/A
+Contest problems
+Template with function snippets
+A. Plus or Minus https://codeforces.com/contest/1807/problem/A
 Solution:
-def solve(): a, b, c = list(map(int, inp().split())) return &amp;#39;+&amp;#39; if a + b == c else &amp;#39;-&amp;#39; def run(): for _ in range(inpi()): print(solve()) if __name__ == &amp;#34;__main__&amp;#34;: CODE_DEBUG = 0 if os.environ.get(&amp;#34;CODE_DEBUG&amp;#34;) or CODE_DEBUG: sys.stdin = open(&amp;#34;./input.txt&amp;#34;, &amp;#34;r&amp;#34;) start_time = time.time() run() print(&amp;#34;\n--- %s seconds ---\n&amp;#34; % (time.time() - start_time)) else: run() B. Grab the Candies https://codeforces.com/contest/1807/problem/B
-Solution:
-def solve(): n = inpi() ar = int(inp()) m = 0 b = 0 if n == 1: return &amp;#39;YES&amp;#39; if ar[0] % 2 == 0 else &amp;#39;NO&amp;#39; for x in ar: if x % 2 == 0: m += x else: b += x return &amp;#39;YES&amp;#39; if m &amp;gt; b else &amp;#39;NO&amp;#39; C.</description></item></channel></rss>
+def solve(): a, b, c = list(map(int, inp().split())) return &amp;#39;+&amp;#39; if a + b == c else &amp;#39;-&amp;#39; def run(): for _ in range(inp_int()): print(solve()) if __name__ == &amp;#34;__main__&amp;#34;: CODE_DEBUG = 0 if os.environ.get(&amp;#34;CODE_DEBUG&amp;#34;) or CODE_DEBUG: sys.stdin = open(&amp;#34;./input.txt&amp;#34;, &amp;#34;r&amp;#34;) start_time = time.time() run() print(&amp;#34;\n--- %s seconds ---\n&amp;#34; % (time.time() - start_time)) else: run() B. Grab the Candies https://codeforces.</description></item></channel></rss>
