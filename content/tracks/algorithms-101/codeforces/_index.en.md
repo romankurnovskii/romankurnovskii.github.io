@@ -1,9 +1,9 @@
 ---
 title: Codeforces
-description: Codeforces
+description: Codeforces contests solutions
 toc: true
 tags: []
-categories: [Algorithms]
+categories: [Algorithms, Codeforces]
 series:
 date: 2023-02-03
 lastmod: 2023-02-09
