@@ -85,8 +85,7 @@ class SegmentTree:  # //O(logn) for operations and O(n) for building//
 
 def solve():
     s = inp()
-
-    return res
+    print()
 
 
 def run():
