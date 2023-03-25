@@ -1,7 +1,7 @@
 ---
 title: Bash code snippets
 seoTitle: Bash code snippets
-description: This bash code snippet provides a useful solution for renaming files in the current directory based on a specific pattern. The script loops through all files in the directory and checks if the filename contains the specified pattern (in this case, the "№" symbol). If it does, the script removes everything before and including the symbol and renames the file with the new name. The script then prints a message for each renamed file. This code snippet can be a useful time-saver for those who need to rename many files based on a certain pattern.
+description: This bash code snippet provides a useful solution for renaming files in the current directory based on a specific pattern.
 toc: true
 categories: [Linux, programming, Bash, CheatSheet]
 series: [CheatSheet]

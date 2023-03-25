@@ -6,7 +6,7 @@ tags: [Python]
 series: []
 categories: [programming, Python]
 date: 2022-11-20
-featuredImage:
+featuredImage: https://files.realpython.com/media/rshift.9d585c1c838e.gif
 ---
 
 ## << Left Shift
