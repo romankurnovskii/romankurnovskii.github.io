@@ -8,7 +8,7 @@ tags: []
 categories: [programming]
 series:
 date: 2023-03-16
-featuredImage:
+featuredImage: /assets/002.png
 weight: 0
 ---
 
