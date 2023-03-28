@@ -80,7 +80,7 @@ Tips for solving greedy problems
 2. 1807A - Plus or Minus (implementation, 800)
 3. 1807B - Grab the Candies (greedy, 800)
 4. 1807C - Find and Replace (greedy, implementation, strings, 800)
-5. 1798A - 1798A - Showstopper (greedy, implementation, sortings, 800)
+5. 1798A - Showstopper (greedy, implementation, sortings, 800)
 6. 1799A - Recent Actions (data structures, greedy, implementation, math, 800)
 7. 1788A - One and Two (brute force, implementation, math, 800)
 8. 1778A - Flip Flop Sum (greedy, implementation, 800)
