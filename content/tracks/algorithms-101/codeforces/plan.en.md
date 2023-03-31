@@ -1,5 +1,6 @@
 ---
 title: Plan
+seoTitle: Codeforces problemset plan
 description: Codeforces contests solutions
 toc: true
 tags: []
