@@ -1,5 +1,6 @@
 ---
 title: Plan
+seoTitle: Codeforces problemset plan
 description:
 tags: []
 categories: []
