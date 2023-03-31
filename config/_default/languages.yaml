@@ -94,18 +94,23 @@ en:
         identifier: algorithms-101-data-structures
         url: /en/tracks/algorithms-101/data-structures
         parent: algorithms-101
+        weight: 301
       - name: Codeforces
         identifier: algorithms-101-codeforces
         url: /en/tracks/algorithms-101/codeforces
         parent: algorithms-101
+        weight: 302
       - name: LeetCode
         identifier: algorithms-101-problems
         url: /en/tracks/algorithms-101/problems
         parent: algorithms-101
+        weight: 303
+
       - name: AWS Developer Associate
         identifier: aws-developer-roadmaps
         url: /en/tracks/aws-certified-developer-associate/
         parent: roadmaps
+
       - name: Диссертация [RU]
         identifier: rudisser
         url: ./../ru/tracks/disser/
