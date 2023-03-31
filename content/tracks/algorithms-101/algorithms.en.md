@@ -1,5 +1,6 @@
 ---
-title: Algorithm Patterns
+title: Algorithms
+seoTitle: Algorithm tutorial from scratch
 description: LeetCode Cookbook - Algorithms
 toc: true
 categories: [Algorithms]
@@ -83,60 +84,69 @@ bisect_left(sorted_fruits, 'kiwi')
 
 **BFS on Tree:**
 ```python
-def bfs(root):
+from collections import deque
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+def bfs_tree(root):
     queue = deque([root])
-    while len(queue) > 0:
+
+    while queue:
         node = queue.popleft()
-        for child in node.children:
-            if is_goal(child):
-                return FOUND(child)
-            queue.append(child)
-    return NOT_FOUND
+        print(node.val, end=' ')
+
+        if node.left:
+            queue.append(node.left)
+        if node.right:
+            queue.append(node.right)
+
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(3)
+root.left.left = TreeNode(4)
+root.left.right = TreeNode(5)
+
+bfs_tree(root)
 ```
 
 **BFS on Graph:**
 ```python
-def bfs(root):
-    queue = deque([root])
-    visited = set([root])
-    while len(queue) > 0:
-        node = queue.popleft()
-        for neighbor in get_neighbors(node):
-            if neighbor in visited:
-                continue
-            queue.append(neighbor)
-            visited.add(neighbor)
-```
+from collections import defaultdict, deque
 
-**BFS on a Matrix:**
-```python
-num_rows, num_cols = len(grid), len(grid[0])
-def get_neighbors(coord):
-    row, col = coord
-    delta_row = [-1, 0, 1, 0]
-    delta_col = [0, 1, 0, -1]
-    res = []
-    for i in range(len(delta_row)):
-        neighbor_row = row + delta_row[i]
-        neighbor_col = col + delta_col[i]
-        if 0 <= neighbor_row < num_rows and 0 <= neighbor_col < num_cols:
-            res.append((neighbor_row, neighbor_col))
-    return res
+class Graph:
+    def __init__(self):
+        self.graph = defaultdict(list)
 
-from collections import deque
+    def add_edge(self, u, v):
+        self.graph[u].append(v)
 
-def bfs(starting_node):
-    queue = deque([starting_node])
-    visited = set([starting_node])
-    while len(queue) > 0:
-        node = queue.popleft()
-        for neighbor in get_neighbors(node):
-            if neighbor in visited:
-                continue
-            # Do stuff with the node if required
-            # ...
-            queue.append(neighbor)
-            visited.add(neighbor)
+    def bfs(self, start):
+        visited = set()
+        queue = deque([start])
+
+        while queue:
+            node = queue.popleft()
+            if node not in visited:
+                print(node, end=' ')
+                visited.add(node)
+
+                for neighbor in self.graph[node]:
+                    if neighbor not in visited:
+                        queue.append(neighbor)
+
+g = Graph()
+g.add_edge(0, 1)
+g.add_edge(0, 2)
+g.add_edge(1, 2)
+g.add_edge(2, 0)
+g.add_edge(2, 3)
+g.add_edge(3, 3)
+
+g.bfs(2)
 ```
 
 ## Depth-first search (DFS)
