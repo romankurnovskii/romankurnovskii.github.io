@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Greedy on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/greedy/</link><description>Recent content in Greedy on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 31 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/greedy/index.xml" rel="self" type="application/rss+xml"/><item><title>122. Best Time to Buy and Sell Stock II</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/problems/medium/122/</link><pubDate>Fri, 31 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/problems/medium/122/</guid><description>LeetCode problem
+To solve this problem, we can use a greedy approach.
+The idea is to keep adding the profit whenever the price on the next day is higher than the price on the current day.
+This way, we will maximize profit.
+class Solution: def maxProfit(self, prices: List[int]) -&amp;gt; int: profit = 0 for i in range(1, len(prices)): if prices[i] &amp;gt; prices[i - 1]: profit += prices[i] - prices[i - 1] return profit LeetCode Editorial:
+Editorial</description></item></channel></rss>
