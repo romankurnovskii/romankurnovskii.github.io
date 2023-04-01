@@ -18,19 +18,17 @@ featuredImage: null
     <a href="https://www.elibrary.ru/author_items.asp?authorid=1175655&show_refs=1&show_option=1" target="_blank"> <img src="https://www.elibrary.ru/images/elibrary_logo2.svg" width="150px" alt="eLIBRARY.RU"></a>
 </div>
 
-
 ## Печатные журналы / сборники
-
 
 **Для цитирования:**
 
-> Особенности региональной политики и экономические интеграции Израиля // [Журнал ВАК: Наука и бизнес: пути развития](https://www.elibrary.ru/title_items.asp?id=32230) // Курновский Р.М.// Номер: 1 (139) 2023 г. Страницы: 138-
+> Особенности региональной политики и экономические интеграции Израиля // [ВАК: Наука и бизнес: пути развития](https://elibrary.ru/item.asp?id=50430997) // Курновский Р.М.// Номер: 1 (139) 2023 г. Страницы: 141-143
 
-[Статья [pdf]](/articles/2023-01-osobennosti-regionalnoi-politiki-i-ekonomicheskie-integracii-izrailya.pdf)
+[Статья [pdf]](/articles/2023-01-osobennosti-regionalnoi-politiki-i-ekonomicheskie-integracii-izrailya.pdf) / [SSRN](https://ssrn.com/abstract=4406861) 
 
 > Поддержка икт-экспорта как способ покрытия внутренних потребностей̆ рынка // [XII международной научно-практической конференции «Трансформация экономики и управления: новые вызовы и перспективы»](http://www.fa.ru/fil/spb/science/Pages/Home.aspx) 15-16 декабря 2022г. // Курновский Р.М., Великородная Е. А. //
 
-[Статья [pdf]](/articles/2022-12-podderzhka-ikt-eksporta-kak-sposob-pokrytiya-vnutrennih-potrebnostei-rynka.pdf)
+[Статья [pdf]](/articles/2022-12-podderzhka-ikt-eksporta-kak-sposob-pokrytiya-vnutrennih-potrebnostei-rynka.pdf) / [ResearchGate](https://www.researchgate.net/publication/369694048_2022-12-podderzhka-ikt-eksporta-kak-sposob-pokrytiya-vnutrennih-potrebnostei-rynka)
 
 > [Факторы и условия, определяющие становления финансовой экосистемы в современных условиях](https://www.elibrary.ru/item.asp?id=50018215) // 	[Экономика и предпринимательство](https://www.elibrary.ru/title_about_new.asp?id=27783) // д.э.н., проф. Коновалова М.Е., Курновский Р.М., Ширяева Д.В. // Номер: [8 (145)](https://www.elibrary.ru/contents.asp?id=50018028&selid=50018215) 2022 г. Страницы: 928-931
 
@@ -56,7 +54,7 @@ featuredImage: null
 
 ## Ожидают публикации
 
-- Влияние новой судебной реформы Израиля на развитие международных экономических отношений
+- Влияние новой судебной реформы Израиля на развитие международных экономических отношений / 2023/01
 ## Codes
 
 - **SCIENCE INDEX SPIN РИНЦ:** [1657-2666](https://www.elibrary.ru/author_profile.asp?authorid=1175655)
