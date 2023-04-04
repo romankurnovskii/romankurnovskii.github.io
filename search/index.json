@@ -2685,10 +2685,18 @@
             "lang": "en"
         },
         {
+            "uri": "/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1772A",
+            "title": "1772A - A+B? - 800",
+            "description": "Codeforces 1772A - A+B? (implementation, 800)",
+            "content": "\n1772A - A+B? (implementation, 800)\n\nSolution:\n\ndef solve():\n    a, b = input().split('+')\n    res = int(a) + int(b)\n    print(res)\n\nfor _ in range(int(input())):\n    solve()\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
             "uri": "/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1778A",
-            "title": "1788A - One and Two - 800",
+            "title": "1788A - Flip Flop Sum - 800",
             "description": "Codeforces 1778A - Flip Flop Sum (greedy, implementation, 800)",
-            "content": "\n1778A - Flip Flop Sum (greedy, implementation, 800)\n\nThere are three possible conditions:\n-1 -1 - all negative. In this case sum -2 becomes sum 2. Plus 4.\n-1 1 - different, no sum change.\n1 1 - all positive. 2 becomes -2. Diff is -4.\n\nSolution:\n\n\ndef solve():\n    n = int(input())\n    ar = list(map(int, input().split()))\n\n    s = 0 # sum\n\nthree conditions: all 1, all -1, at least one -1\n    has_diff = False\n    has2_positive = 0\n    has2_negative = 0\n\n    s += ar[0]\n    for idx in range(1, n):\n        if ar[idx] == ar[idx-1]:\n            if ar[idx] == -1:\n                has2_negative = 4 # -2 -> +2, diff 4\n            else:\n                has2_positive = -4 # +2 => +1, diff 1\n        else:\n            has_diff = True\n        s += ar[idx]\n\n    if has2_negative:\n        s += has2_negative\n    elif has_diff:\n        ...\n    elif has2_positive:\n        s += has2_positive\n    print(s)\n\nfor _ in range(int(input())):\n    solve()\n\nOptimized solution:\n\ndef solve():\n    n = int(input())\n    ar = list(map(int, input().split()))\n    res = sum(ar)\n\n    for i in range(n-1):\n        if ar[i] == ar[i+1] == -1:\n            print(res + 4)\n            return\n    if res == n:\n        res -= 4\n    print(res)\n\nfor _ in range(int(input())):\n    solve()\n",
+            "content": "\n1778A - Flip Flop Sum (greedy, implementation, 800)\n\nThere are three possible conditions:\n-1 -1 - all negative. In this case sum -2 becomes sum 2. Plus 4.\n-1 1 - different, no sum change.\n1 1 - all positive. 2 becomes -2. Diff is -4.\n\nSolution:\n\ndef solve():\n    n = int(input())\n    ar = list(map(int, input().split()))\n\n    s = 0 # sum\n\nthree conditions: all 1, all -1, at least one -1\n    has_diff = False\n    has2_positive = 0\n    has2_negative = 0\n\n    s += ar[0]\n    for idx in range(1, n):\n        if ar[idx] == ar[idx-1]:\n            if ar[idx] == -1:\n                has2_negative = 4 # -2 -> +2, diff 4\n            else:\n                has2_positive = -4 # +2 => +1, diff 1\n        else:\n            has_diff = True\n        s += ar[idx]\n\n    if has2_negative:\n        s += has2_negative\n    elif has_diff:\n        ...\n    elif has2_positive:\n        s += has2_positive\n    print(s)\n\nfor _ in range(int(input())):\n    solve()\n\nOptimized solution:\n\ndef solve():\n    n = int(input())\n    ar = list(map(int, input().split()))\n    res = sum(ar)\n\n    for i in range(n-1):\n        if ar[i] == ar[i+1] == -1:\n            print(res + 4)\n            return\n    if res == n:\n        res -= 4\n    print(res)\n\nfor _ in range(int(input())):\n    solve()\n",
             "tags": [],
             "lang": "en"
         },
@@ -2697,6 +2705,14 @@
             "title": "1788A - One and Two - 800",
             "description": "Codeforces 1788A - One and Two (brute force, implementation, math, 800)",
             "content": "\n1788A - One and Two (brute force, implementation, math, 800)\n\nThis problem is about finding a specific index 𝑘 in a given sequence of integers $𝑎1,𝑎_2,…,𝑎𝑛$, where each element is either 1 or 2. The goal is to determine whether there exists an integer 𝑘 such that the product of all elements from $𝑎1$ to $𝑎𝑘$ is equal to the product of all elements from $𝑎𝑘+1$ to $𝑎𝑛$.\n\nBecause of product of 1 doesn't change the result we can focus on 2. Product in left side and in the right side can be equal only if count of 2 is even or equal 0.\n\nWe can count number of 2.\nThe result will be the index of the middle 2 in array.\n\nSolution:\n\ndef solve(ar):\n    twos = ar.count(2)\n    if twos % 2 != 0:\n        return -1\n\n    passed_twos = 0\n    need_twos = twos // 2\n    for i, x in enumerate(ar):\n        if x == 2:\n            passed_twos += 1\n        if passed_twos == need_twos:\n            return i+1\n\nt = int(input())\nfor _ in range(t):\n    n = int(input())\n    ar = list(map(int, input().split()))\n    print(solve(ar))\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1796B",
+            "title": "1796A - One and Two - 800",
+            "description": "Codeforces Asterisk-Minor Template (implementation, strings, 1000)",
+            "content": "\nAsterisk-Minor Template (implementation, strings, 1000)\n\nIf the first characters of both strings are the same, create a template that consists of the common character followed by an asterisk (e.g., a*).\nIf the last characters of both strings are the same, create a template that consists of an asterisk followed by the common character (e.g., *b).\nIf neither the first nor the last characters are the same, iterate through string a and check for any 2-character substring that also appears in string b.\n   If a match is found, create a template that consists of an asterisk, the 2-character substring, and another asterisk (e.g., ab).\nIf no template is found, print NO.\n\nSolution:\n\ndef solve():\n    a = input()\n    b = input()\n\n    if a[0] == b[0]:\n        print('YES')\n        print(f'{a[0]}*')\n    elif a[-1] == b[-1]:\n        print('YES')\n        print(f'*{a[-1]}')\n    else:\n        for i in range(len(a)-1):\n            if a[i:i+2] in b:\n                print('YES')\n                print(f'{a[i:i+2]}')\n                return\n        print('NO')\n\nfor _ in range(int(input())):\n    solve()\n",
             "tags": [],
             "lang": "en"
         },

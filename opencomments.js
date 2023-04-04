@@ -24398,7 +24398,7 @@
         CharCodes2[CharCodes2["CarriageReturn"] = 13] = "CarriageReturn";
         CharCodes2[CharCodes2["Space"] = 32] = "Space";
         CharCodes2[CharCodes2["ExclamationMark"] = 33] = "ExclamationMark";
-        CharCodes2[CharCodes2["Num"] = 35] = "Num";
+        CharCodes2[CharCodes2["Number"] = 35] = "Number";
         CharCodes2[CharCodes2["Amp"] = 38] = "Amp";
         CharCodes2[CharCodes2["SingleQuote"] = 39] = "SingleQuote";
         CharCodes2[CharCodes2["DoubleQuote"] = 34] = "DoubleQuote";
@@ -24497,6 +24497,7 @@
             this.isSpecial = false;
             this.running = true;
             this.offset = 0;
+            this.currentSequence = void 0;
             this.sequenceIndex = 0;
             this.trieIndex = 0;
             this.trieCurrent = 0;
@@ -24703,6 +24704,7 @@
           Tokenizer3.prototype.stateAfterClosingTagName = function(c) {
             if (c === CharCodes.Gt || this.fastForwardTo(CharCodes.Gt)) {
               this.state = State.Text;
+              this.baseState = State.Text;
               this.sectionStart = this.index + 1;
             }
           };
@@ -24852,7 +24854,7 @@
           Tokenizer3.prototype.stateBeforeEntity = function(c) {
             this.entityExcess = 1;
             this.entityResult = 0;
-            if (c === CharCodes.Num) {
+            if (c === CharCodes.Number) {
               this.state = State.BeforeNumericEntity;
             } else if (c === CharCodes.Amp) {
             } else {
@@ -24898,12 +24900,14 @@
             }
             var valueLength = (this.entityTrie[this.entityResult] & decode_js_1.BinTrieFlags.VALUE_LENGTH) >> 14;
             switch (valueLength) {
-              case 1:
+              case 1: {
                 this.emitCodePoint(this.entityTrie[this.entityResult] & ~decode_js_1.BinTrieFlags.VALUE_LENGTH);
                 break;
-              case 2:
+              }
+              case 2: {
                 this.emitCodePoint(this.entityTrie[this.entityResult + 1]);
                 break;
+              }
               case 3: {
                 this.emitCodePoint(this.entityTrie[this.entityResult + 1]);
                 this.emitCodePoint(this.entityTrie[this.entityResult + 2]);
@@ -24984,64 +24988,122 @@
           Tokenizer3.prototype.parse = function() {
             while (this.shouldContinue()) {
               var c = this.buffer.charCodeAt(this.index - this.offset);
-              if (this.state === State.Text) {
-                this.stateText(c);
-              } else if (this.state === State.SpecialStartSequence) {
-                this.stateSpecialStartSequence(c);
-              } else if (this.state === State.InSpecialTag) {
-                this.stateInSpecialTag(c);
-              } else if (this.state === State.CDATASequence) {
-                this.stateCDATASequence(c);
-              } else if (this.state === State.InAttributeValueDq) {
-                this.stateInAttributeValueDoubleQuotes(c);
-              } else if (this.state === State.InAttributeName) {
-                this.stateInAttributeName(c);
-              } else if (this.state === State.InCommentLike) {
-                this.stateInCommentLike(c);
-              } else if (this.state === State.InSpecialComment) {
-                this.stateInSpecialComment(c);
-              } else if (this.state === State.BeforeAttributeName) {
-                this.stateBeforeAttributeName(c);
-              } else if (this.state === State.InTagName) {
-                this.stateInTagName(c);
-              } else if (this.state === State.InClosingTagName) {
-                this.stateInClosingTagName(c);
-              } else if (this.state === State.BeforeTagName) {
-                this.stateBeforeTagName(c);
-              } else if (this.state === State.AfterAttributeName) {
-                this.stateAfterAttributeName(c);
-              } else if (this.state === State.InAttributeValueSq) {
-                this.stateInAttributeValueSingleQuotes(c);
-              } else if (this.state === State.BeforeAttributeValue) {
-                this.stateBeforeAttributeValue(c);
-              } else if (this.state === State.BeforeClosingTagName) {
-                this.stateBeforeClosingTagName(c);
-              } else if (this.state === State.AfterClosingTagName) {
-                this.stateAfterClosingTagName(c);
-              } else if (this.state === State.BeforeSpecialS) {
-                this.stateBeforeSpecialS(c);
-              } else if (this.state === State.InAttributeValueNq) {
-                this.stateInAttributeValueNoQuotes(c);
-              } else if (this.state === State.InSelfClosingTag) {
-                this.stateInSelfClosingTag(c);
-              } else if (this.state === State.InDeclaration) {
-                this.stateInDeclaration(c);
-              } else if (this.state === State.BeforeDeclaration) {
-                this.stateBeforeDeclaration(c);
-              } else if (this.state === State.BeforeComment) {
-                this.stateBeforeComment(c);
-              } else if (this.state === State.InProcessingInstruction) {
-                this.stateInProcessingInstruction(c);
-              } else if (this.state === State.InNamedEntity) {
-                this.stateInNamedEntity(c);
-              } else if (this.state === State.BeforeEntity) {
-                this.stateBeforeEntity(c);
-              } else if (this.state === State.InHexEntity) {
-                this.stateInHexEntity(c);
-              } else if (this.state === State.InNumericEntity) {
-                this.stateInNumericEntity(c);
-              } else {
-                this.stateBeforeNumericEntity(c);
+              switch (this.state) {
+                case State.Text: {
+                  this.stateText(c);
+                  break;
+                }
+                case State.SpecialStartSequence: {
+                  this.stateSpecialStartSequence(c);
+                  break;
+                }
+                case State.InSpecialTag: {
+                  this.stateInSpecialTag(c);
+                  break;
+                }
+                case State.CDATASequence: {
+                  this.stateCDATASequence(c);
+                  break;
+                }
+                case State.InAttributeValueDq: {
+                  this.stateInAttributeValueDoubleQuotes(c);
+                  break;
+                }
+                case State.InAttributeName: {
+                  this.stateInAttributeName(c);
+                  break;
+                }
+                case State.InCommentLike: {
+                  this.stateInCommentLike(c);
+                  break;
+                }
+                case State.InSpecialComment: {
+                  this.stateInSpecialComment(c);
+                  break;
+                }
+                case State.BeforeAttributeName: {
+                  this.stateBeforeAttributeName(c);
+                  break;
+                }
+                case State.InTagName: {
+                  this.stateInTagName(c);
+                  break;
+                }
+                case State.InClosingTagName: {
+                  this.stateInClosingTagName(c);
+                  break;
+                }
+                case State.BeforeTagName: {
+                  this.stateBeforeTagName(c);
+                  break;
+                }
+                case State.AfterAttributeName: {
+                  this.stateAfterAttributeName(c);
+                  break;
+                }
+                case State.InAttributeValueSq: {
+                  this.stateInAttributeValueSingleQuotes(c);
+                  break;
+                }
+                case State.BeforeAttributeValue: {
+                  this.stateBeforeAttributeValue(c);
+                  break;
+                }
+                case State.BeforeClosingTagName: {
+                  this.stateBeforeClosingTagName(c);
+                  break;
+                }
+                case State.AfterClosingTagName: {
+                  this.stateAfterClosingTagName(c);
+                  break;
+                }
+                case State.BeforeSpecialS: {
+                  this.stateBeforeSpecialS(c);
+                  break;
+                }
+                case State.InAttributeValueNq: {
+                  this.stateInAttributeValueNoQuotes(c);
+                  break;
+                }
+                case State.InSelfClosingTag: {
+                  this.stateInSelfClosingTag(c);
+                  break;
+                }
+                case State.InDeclaration: {
+                  this.stateInDeclaration(c);
+                  break;
+                }
+                case State.BeforeDeclaration: {
+                  this.stateBeforeDeclaration(c);
+                  break;
+                }
+                case State.BeforeComment: {
+                  this.stateBeforeComment(c);
+                  break;
+                }
+                case State.InProcessingInstruction: {
+                  this.stateInProcessingInstruction(c);
+                  break;
+                }
+                case State.InNamedEntity: {
+                  this.stateInNamedEntity(c);
+                  break;
+                }
+                case State.BeforeEntity: {
+                  this.stateBeforeEntity(c);
+                  break;
+                }
+                case State.InHexEntity: {
+                  this.stateInHexEntity(c);
+                  break;
+                }
+                case State.InNumericEntity: {
+                  this.stateInNumericEntity(c);
+                  break;
+                }
+                default: {
+                  this.stateBeforeNumericEntity(c);
+                }
               }
               this.index++;
             }
@@ -25267,10 +25329,10 @@
           };
           Parser3.prototype.ontextentity = function(cp) {
             var _a, _b;
-            var idx = this.tokenizer.getSectionStart();
-            this.endIndex = idx - 1;
+            var index = this.tokenizer.getSectionStart();
+            this.endIndex = index - 1;
             (_b = (_a = this.cbs).ontext) === null || _b === void 0 ? void 0 : _b.call(_a, (0, decode_js_1.fromCodePoint)(cp));
-            this.startIndex = idx;
+            this.startIndex = index;
           };
           Parser3.prototype.isVoidElement = function(name) {
             return !this.options.xmlMode && voidElements.has(name);
@@ -25290,8 +25352,8 @@
             var impliesClose = !this.options.xmlMode && openImpliesClose.get(name);
             if (impliesClose) {
               while (this.stack.length > 0 && impliesClose.has(this.stack[this.stack.length - 1])) {
-                var el = this.stack.pop();
-                (_b = (_a = this.cbs).onclosetag) === null || _b === void 0 ? void 0 : _b.call(_a, el, true);
+                var element = this.stack.pop();
+                (_b = (_a = this.cbs).onclosetag) === null || _b === void 0 ? void 0 : _b.call(_a, element, true);
               }
             }
             if (!this.isVoidElement(name)) {
@@ -25393,8 +25455,8 @@
             this.attribvalue = "";
           };
           Parser3.prototype.getInstructionName = function(value) {
-            var idx = value.search(reNameEnd);
-            var name = idx < 0 ? value : value.substr(0, idx);
+            var index = value.search(reNameEnd);
+            var name = index < 0 ? value : value.substr(0, index);
             if (this.lowerCaseTagNames) {
               name = name.toLowerCase();
             }
@@ -25443,7 +25505,7 @@
             var _a, _b;
             if (this.cbs.onclosetag) {
               this.endIndex = this.startIndex;
-              for (var i = this.stack.length; i > 0; this.cbs.onclosetag(this.stack[--i], true))
+              for (var index = this.stack.length; index > 0; this.cbs.onclosetag(this.stack[--index], true))
                 ;
             }
             (_b = (_a = this.cbs).onend) === null || _b === void 0 ? void 0 : _b.call(_a);
@@ -25472,12 +25534,12 @@
             while (start - this.bufferOffset >= this.buffers[0].length) {
               this.shiftBuffer();
             }
-            var str = this.buffers[0].slice(start - this.bufferOffset, end - this.bufferOffset);
+            var slice = this.buffers[0].slice(start - this.bufferOffset, end - this.bufferOffset);
             while (end - this.bufferOffset > this.buffers[0].length) {
               this.shiftBuffer();
-              str += this.buffers[0].slice(0, end - this.bufferOffset);
+              slice += this.buffers[0].slice(0, end - this.bufferOffset);
             }
-            return str;
+            return slice;
           };
           Parser3.prototype.shiftBuffer = function() {
             this.bufferOffset += this.buffers[0].length;
@@ -25499,7 +25561,7 @@
           Parser3.prototype.end = function(chunk) {
             var _a, _b;
             if (this.ended) {
-              (_b = (_a = this.cbs).onerror) === null || _b === void 0 ? void 0 : _b.call(_a, Error(".end() after done!"));
+              (_b = (_a = this.cbs).onerror) === null || _b === void 0 ? void 0 : _b.call(_a, new Error(".end() after done!"));
               return;
             }
             if (chunk)
@@ -27469,17 +27531,19 @@
         return mod && mod.__esModule ? mod : { "default": mod };
       };
       Object.defineProperty(exports, "__esModule", { value: true });
-      exports.DefaultHandler = exports.DomUtils = exports.parseFeed = exports.getFeed = exports.ElementType = exports.Tokenizer = exports.createDomStream = exports.parseDOM = exports.parseDocument = exports.DomHandler = exports.Parser = void 0;
+      exports.DomUtils = exports.parseFeed = exports.getFeed = exports.ElementType = exports.Tokenizer = exports.createDomStream = exports.parseDOM = exports.parseDocument = exports.DefaultHandler = exports.DomHandler = exports.Parser = void 0;
       var Parser_js_1 = require_Parser();
+      var Parser_js_2 = require_Parser();
       Object.defineProperty(exports, "Parser", { enumerable: true, get: function() {
-        return Parser_js_1.Parser;
+        return Parser_js_2.Parser;
       } });
       var domhandler_1 = require_lib3();
+      var domhandler_2 = require_lib3();
       Object.defineProperty(exports, "DomHandler", { enumerable: true, get: function() {
-        return domhandler_1.DomHandler;
+        return domhandler_2.DomHandler;
       } });
       Object.defineProperty(exports, "DefaultHandler", { enumerable: true, get: function() {
-        return domhandler_1.DomHandler;
+        return domhandler_2.DomHandler;
       } });
       function parseDocument(data, options2) {
         var handler = new domhandler_1.DomHandler(void 0, options2);
@@ -27491,8 +27555,8 @@
         return parseDocument(data, options2).children;
       }
       exports.parseDOM = parseDOM;
-      function createDomStream(cb, options2, elementCb) {
-        var handler = new domhandler_1.DomHandler(cb, options2, elementCb);
+      function createDomStream(callback, options2, elementCallback) {
+        var handler = new domhandler_1.DomHandler(callback, options2, elementCallback);
         return new Parser_js_1.Parser(handler, options2);
       }
       exports.createDomStream = createDomStream;
@@ -27500,15 +27564,16 @@
       Object.defineProperty(exports, "Tokenizer", { enumerable: true, get: function() {
         return __importDefault(Tokenizer_js_1).default;
       } });
-      var ElementType = __importStar(require_lib());
-      exports.ElementType = ElementType;
+      exports.ElementType = __importStar(require_lib());
       var domutils_1 = require_lib6();
+      var domutils_2 = require_lib6();
       Object.defineProperty(exports, "getFeed", { enumerable: true, get: function() {
-        return domutils_1.getFeed;
+        return domutils_2.getFeed;
       } });
+      var parseFeedDefaultOptions = { xmlMode: true };
       function parseFeed(feed, options2) {
         if (options2 === void 0) {
-          options2 = { xmlMode: true };
+          options2 = parseFeedDefaultOptions;
         }
         return (0, domutils_1.getFeed)(parseDOM(feed, options2));
       }
@@ -29490,19 +29555,21 @@
     "node_modules/html-react-parser/lib/attributes-to-props.js"(exports, module) {
       var reactProperty = require_lib9();
       var utilities = require_utilities3();
+      var UNCONTROLLED_COMPONENT_ATTRIBUTES = ["checked", "value"];
+      var UNCONTROLLED_COMPONENT_NAMES = ["input", "select", "textarea"];
+      var VALUE_ONLY_INPUTS = {
+        reset: true,
+        submit: true
+      };
       module.exports = function attributesToProps2(attributes, nodeName) {
         attributes = attributes || {};
-        var valueOnlyInputs = {
-          reset: true,
-          submit: true
-        };
         var attributeName;
         var attributeNameLowerCased;
         var attributeValue;
         var propName;
         var propertyInfo;
         var props = {};
-        var inputIsValueOnly = attributes.type && valueOnlyInputs[attributes.type];
+        var inputIsValueOnly = attributes.type && VALUE_ONLY_INPUTS[attributes.type];
         for (attributeName in attributes) {
           attributeValue = attributes[attributeName];
           if (reactProperty.isCustomAttribute(attributeName)) {
@@ -29513,7 +29580,7 @@
           propName = getPropName(attributeNameLowerCased);
           if (propName) {
             propertyInfo = reactProperty.getPropertyInfo(propName);
-            if ((propName === "checked" || propName === "value") && nodeName !== "option" && !inputIsValueOnly) {
+            if (UNCONTROLLED_COMPONENT_ATTRIBUTES.indexOf(propName) !== -1 && UNCONTROLLED_COMPONENT_NAMES.indexOf(nodeName) !== -1 && !inputIsValueOnly) {
               propName = getPropName("default" + attributeNameLowerCased);
             }
             props[propName] = attributeValue;
