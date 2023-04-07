@@ -23546,9 +23546,9 @@
     }
   });
 
-  // node_modules/html-react-parser/node_modules/domhandler/lib/node.js
+  // node_modules/domhandler/lib/node.js
   var require_node = __commonJS({
-    "node_modules/html-react-parser/node_modules/domhandler/lib/node.js"(exports) {
+    "node_modules/domhandler/lib/node.js"(exports) {
       "use strict";
       var __extends = exports && exports.__extends || function() {
         var extendStatics = function(d, b) {
@@ -23983,9 +23983,9 @@
     }
   });
 
-  // node_modules/html-react-parser/node_modules/domhandler/lib/index.js
+  // node_modules/domhandler/lib/index.js
   var require_lib2 = __commonJS({
-    "node_modules/html-react-parser/node_modules/domhandler/lib/index.js"(exports) {
+    "node_modules/domhandler/lib/index.js"(exports) {
       "use strict";
       var __createBinding = exports && exports.__createBinding || (Object.create ? function(o, m, k, k2) {
         if (k2 === void 0)
@@ -24146,9 +24146,9 @@
     }
   });
 
-  // node_modules/htmlparser2/node_modules/entities/lib/generated/decode-data-html.js
+  // node_modules/entities/lib/generated/decode-data-html.js
   var require_decode_data_html = __commonJS({
-    "node_modules/htmlparser2/node_modules/entities/lib/generated/decode-data-html.js"(exports) {
+    "node_modules/entities/lib/generated/decode-data-html.js"(exports) {
       "use strict";
       Object.defineProperty(exports, "__esModule", { value: true });
       exports.default = new Uint16Array(
@@ -24160,9 +24160,9 @@
     }
   });
 
-  // node_modules/htmlparser2/node_modules/entities/lib/generated/decode-data-xml.js
+  // node_modules/entities/lib/generated/decode-data-xml.js
   var require_decode_data_xml = __commonJS({
-    "node_modules/htmlparser2/node_modules/entities/lib/generated/decode-data-xml.js"(exports) {
+    "node_modules/entities/lib/generated/decode-data-xml.js"(exports) {
       "use strict";
       Object.defineProperty(exports, "__esModule", { value: true });
       exports.default = new Uint16Array(
@@ -24174,9 +24174,9 @@
     }
   });
 
-  // node_modules/htmlparser2/node_modules/entities/lib/decode_codepoint.js
+  // node_modules/entities/lib/decode_codepoint.js
   var require_decode_codepoint = __commonJS({
-    "node_modules/htmlparser2/node_modules/entities/lib/decode_codepoint.js"(exports) {
+    "node_modules/entities/lib/decode_codepoint.js"(exports) {
       "use strict";
       var _a;
       Object.defineProperty(exports, "__esModule", { value: true });
@@ -24237,9 +24237,9 @@
     }
   });
 
-  // node_modules/htmlparser2/node_modules/entities/lib/decode.js
+  // node_modules/entities/lib/decode.js
   var require_decode = __commonJS({
-    "node_modules/htmlparser2/node_modules/entities/lib/decode.js"(exports) {
+    "node_modules/entities/lib/decode.js"(exports) {
       "use strict";
       var __importDefault = exports && exports.__importDefault || function(mod) {
         return mod && mod.__esModule ? mod : { "default": mod };
@@ -25593,609 +25593,9 @@
     }
   });
 
-  // node_modules/htmlparser2/node_modules/domhandler/lib/node.js
-  var require_node2 = __commonJS({
-    "node_modules/htmlparser2/node_modules/domhandler/lib/node.js"(exports) {
-      "use strict";
-      var __extends = exports && exports.__extends || function() {
-        var extendStatics = function(d, b) {
-          extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
-            d2.__proto__ = b2;
-          } || function(d2, b2) {
-            for (var p in b2)
-              if (Object.prototype.hasOwnProperty.call(b2, p))
-                d2[p] = b2[p];
-          };
-          return extendStatics(d, b);
-        };
-        return function(d, b) {
-          if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-          extendStatics(d, b);
-          function __() {
-            this.constructor = d;
-          }
-          d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-        };
-      }();
-      var __assign = exports && exports.__assign || function() {
-        __assign = Object.assign || function(t) {
-          for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s)
-              if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-          }
-          return t;
-        };
-        return __assign.apply(this, arguments);
-      };
-      Object.defineProperty(exports, "__esModule", { value: true });
-      exports.cloneNode = exports.hasChildren = exports.isDocument = exports.isDirective = exports.isComment = exports.isText = exports.isCDATA = exports.isTag = exports.Element = exports.Document = exports.CDATA = exports.NodeWithChildren = exports.ProcessingInstruction = exports.Comment = exports.Text = exports.DataNode = exports.Node = void 0;
-      var domelementtype_1 = require_lib();
-      var Node = (
-        /** @class */
-        function() {
-          function Node2() {
-            this.parent = null;
-            this.prev = null;
-            this.next = null;
-            this.startIndex = null;
-            this.endIndex = null;
-          }
-          Object.defineProperty(Node2.prototype, "parentNode", {
-            // Read-write aliases for properties
-            /**
-             * Same as {@link parent}.
-             * [DOM spec](https://dom.spec.whatwg.org)-compatible alias.
-             */
-            get: function() {
-              return this.parent;
-            },
-            set: function(parent) {
-              this.parent = parent;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          Object.defineProperty(Node2.prototype, "previousSibling", {
-            /**
-             * Same as {@link prev}.
-             * [DOM spec](https://dom.spec.whatwg.org)-compatible alias.
-             */
-            get: function() {
-              return this.prev;
-            },
-            set: function(prev) {
-              this.prev = prev;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          Object.defineProperty(Node2.prototype, "nextSibling", {
-            /**
-             * Same as {@link next}.
-             * [DOM spec](https://dom.spec.whatwg.org)-compatible alias.
-             */
-            get: function() {
-              return this.next;
-            },
-            set: function(next) {
-              this.next = next;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          Node2.prototype.cloneNode = function(recursive) {
-            if (recursive === void 0) {
-              recursive = false;
-            }
-            return cloneNode(this, recursive);
-          };
-          return Node2;
-        }()
-      );
-      exports.Node = Node;
-      var DataNode = (
-        /** @class */
-        function(_super) {
-          __extends(DataNode2, _super);
-          function DataNode2(data) {
-            var _this = _super.call(this) || this;
-            _this.data = data;
-            return _this;
-          }
-          Object.defineProperty(DataNode2.prototype, "nodeValue", {
-            /**
-             * Same as {@link data}.
-             * [DOM spec](https://dom.spec.whatwg.org)-compatible alias.
-             */
-            get: function() {
-              return this.data;
-            },
-            set: function(data) {
-              this.data = data;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          return DataNode2;
-        }(Node)
-      );
-      exports.DataNode = DataNode;
-      var Text2 = (
-        /** @class */
-        function(_super) {
-          __extends(Text3, _super);
-          function Text3() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this.type = domelementtype_1.ElementType.Text;
-            return _this;
-          }
-          Object.defineProperty(Text3.prototype, "nodeType", {
-            get: function() {
-              return 3;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          return Text3;
-        }(DataNode)
-      );
-      exports.Text = Text2;
-      var Comment2 = (
-        /** @class */
-        function(_super) {
-          __extends(Comment3, _super);
-          function Comment3() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this.type = domelementtype_1.ElementType.Comment;
-            return _this;
-          }
-          Object.defineProperty(Comment3.prototype, "nodeType", {
-            get: function() {
-              return 8;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          return Comment3;
-        }(DataNode)
-      );
-      exports.Comment = Comment2;
-      var ProcessingInstruction2 = (
-        /** @class */
-        function(_super) {
-          __extends(ProcessingInstruction3, _super);
-          function ProcessingInstruction3(name, data) {
-            var _this = _super.call(this, data) || this;
-            _this.name = name;
-            _this.type = domelementtype_1.ElementType.Directive;
-            return _this;
-          }
-          Object.defineProperty(ProcessingInstruction3.prototype, "nodeType", {
-            get: function() {
-              return 1;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          return ProcessingInstruction3;
-        }(DataNode)
-      );
-      exports.ProcessingInstruction = ProcessingInstruction2;
-      var NodeWithChildren = (
-        /** @class */
-        function(_super) {
-          __extends(NodeWithChildren2, _super);
-          function NodeWithChildren2(children) {
-            var _this = _super.call(this) || this;
-            _this.children = children;
-            return _this;
-          }
-          Object.defineProperty(NodeWithChildren2.prototype, "firstChild", {
-            // Aliases
-            /** First child of the node. */
-            get: function() {
-              var _a;
-              return (_a = this.children[0]) !== null && _a !== void 0 ? _a : null;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          Object.defineProperty(NodeWithChildren2.prototype, "lastChild", {
-            /** Last child of the node. */
-            get: function() {
-              return this.children.length > 0 ? this.children[this.children.length - 1] : null;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          Object.defineProperty(NodeWithChildren2.prototype, "childNodes", {
-            /**
-             * Same as {@link children}.
-             * [DOM spec](https://dom.spec.whatwg.org)-compatible alias.
-             */
-            get: function() {
-              return this.children;
-            },
-            set: function(children) {
-              this.children = children;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          return NodeWithChildren2;
-        }(Node)
-      );
-      exports.NodeWithChildren = NodeWithChildren;
-      var CDATA = (
-        /** @class */
-        function(_super) {
-          __extends(CDATA2, _super);
-          function CDATA2() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this.type = domelementtype_1.ElementType.CDATA;
-            return _this;
-          }
-          Object.defineProperty(CDATA2.prototype, "nodeType", {
-            get: function() {
-              return 4;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          return CDATA2;
-        }(NodeWithChildren)
-      );
-      exports.CDATA = CDATA;
-      var Document = (
-        /** @class */
-        function(_super) {
-          __extends(Document2, _super);
-          function Document2() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this.type = domelementtype_1.ElementType.Root;
-            return _this;
-          }
-          Object.defineProperty(Document2.prototype, "nodeType", {
-            get: function() {
-              return 9;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          return Document2;
-        }(NodeWithChildren)
-      );
-      exports.Document = Document;
-      var Element2 = (
-        /** @class */
-        function(_super) {
-          __extends(Element3, _super);
-          function Element3(name, attribs, children, type) {
-            if (children === void 0) {
-              children = [];
-            }
-            if (type === void 0) {
-              type = name === "script" ? domelementtype_1.ElementType.Script : name === "style" ? domelementtype_1.ElementType.Style : domelementtype_1.ElementType.Tag;
-            }
-            var _this = _super.call(this, children) || this;
-            _this.name = name;
-            _this.attribs = attribs;
-            _this.type = type;
-            return _this;
-          }
-          Object.defineProperty(Element3.prototype, "nodeType", {
-            get: function() {
-              return 1;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          Object.defineProperty(Element3.prototype, "tagName", {
-            // DOM Level 1 aliases
-            /**
-             * Same as {@link name}.
-             * [DOM spec](https://dom.spec.whatwg.org)-compatible alias.
-             */
-            get: function() {
-              return this.name;
-            },
-            set: function(name) {
-              this.name = name;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          Object.defineProperty(Element3.prototype, "attributes", {
-            get: function() {
-              var _this = this;
-              return Object.keys(this.attribs).map(function(name) {
-                var _a, _b;
-                return {
-                  name,
-                  value: _this.attribs[name],
-                  namespace: (_a = _this["x-attribsNamespace"]) === null || _a === void 0 ? void 0 : _a[name],
-                  prefix: (_b = _this["x-attribsPrefix"]) === null || _b === void 0 ? void 0 : _b[name]
-                };
-              });
-            },
-            enumerable: false,
-            configurable: true
-          });
-          return Element3;
-        }(NodeWithChildren)
-      );
-      exports.Element = Element2;
-      function isTag(node) {
-        return (0, domelementtype_1.isTag)(node);
-      }
-      exports.isTag = isTag;
-      function isCDATA(node) {
-        return node.type === domelementtype_1.ElementType.CDATA;
-      }
-      exports.isCDATA = isCDATA;
-      function isText(node) {
-        return node.type === domelementtype_1.ElementType.Text;
-      }
-      exports.isText = isText;
-      function isComment(node) {
-        return node.type === domelementtype_1.ElementType.Comment;
-      }
-      exports.isComment = isComment;
-      function isDirective(node) {
-        return node.type === domelementtype_1.ElementType.Directive;
-      }
-      exports.isDirective = isDirective;
-      function isDocument(node) {
-        return node.type === domelementtype_1.ElementType.Root;
-      }
-      exports.isDocument = isDocument;
-      function hasChildren(node) {
-        return Object.prototype.hasOwnProperty.call(node, "children");
-      }
-      exports.hasChildren = hasChildren;
-      function cloneNode(node, recursive) {
-        if (recursive === void 0) {
-          recursive = false;
-        }
-        var result;
-        if (isText(node)) {
-          result = new Text2(node.data);
-        } else if (isComment(node)) {
-          result = new Comment2(node.data);
-        } else if (isTag(node)) {
-          var children = recursive ? cloneChildren(node.children) : [];
-          var clone_1 = new Element2(node.name, __assign({}, node.attribs), children);
-          children.forEach(function(child) {
-            return child.parent = clone_1;
-          });
-          if (node.namespace != null) {
-            clone_1.namespace = node.namespace;
-          }
-          if (node["x-attribsNamespace"]) {
-            clone_1["x-attribsNamespace"] = __assign({}, node["x-attribsNamespace"]);
-          }
-          if (node["x-attribsPrefix"]) {
-            clone_1["x-attribsPrefix"] = __assign({}, node["x-attribsPrefix"]);
-          }
-          result = clone_1;
-        } else if (isCDATA(node)) {
-          var children = recursive ? cloneChildren(node.children) : [];
-          var clone_2 = new CDATA(children);
-          children.forEach(function(child) {
-            return child.parent = clone_2;
-          });
-          result = clone_2;
-        } else if (isDocument(node)) {
-          var children = recursive ? cloneChildren(node.children) : [];
-          var clone_3 = new Document(children);
-          children.forEach(function(child) {
-            return child.parent = clone_3;
-          });
-          if (node["x-mode"]) {
-            clone_3["x-mode"] = node["x-mode"];
-          }
-          result = clone_3;
-        } else if (isDirective(node)) {
-          var instruction = new ProcessingInstruction2(node.name, node.data);
-          if (node["x-name"] != null) {
-            instruction["x-name"] = node["x-name"];
-            instruction["x-publicId"] = node["x-publicId"];
-            instruction["x-systemId"] = node["x-systemId"];
-          }
-          result = instruction;
-        } else {
-          throw new Error("Not implemented yet: ".concat(node.type));
-        }
-        result.startIndex = node.startIndex;
-        result.endIndex = node.endIndex;
-        if (node.sourceCodeLocation != null) {
-          result.sourceCodeLocation = node.sourceCodeLocation;
-        }
-        return result;
-      }
-      exports.cloneNode = cloneNode;
-      function cloneChildren(childs) {
-        var children = childs.map(function(child) {
-          return cloneNode(child, true);
-        });
-        for (var i = 1; i < children.length; i++) {
-          children[i].prev = children[i - 1];
-          children[i - 1].next = children[i];
-        }
-        return children;
-      }
-    }
-  });
-
-  // node_modules/htmlparser2/node_modules/domhandler/lib/index.js
-  var require_lib3 = __commonJS({
-    "node_modules/htmlparser2/node_modules/domhandler/lib/index.js"(exports) {
-      "use strict";
-      var __createBinding = exports && exports.__createBinding || (Object.create ? function(o, m, k, k2) {
-        if (k2 === void 0)
-          k2 = k;
-        var desc = Object.getOwnPropertyDescriptor(m, k);
-        if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-          desc = { enumerable: true, get: function() {
-            return m[k];
-          } };
-        }
-        Object.defineProperty(o, k2, desc);
-      } : function(o, m, k, k2) {
-        if (k2 === void 0)
-          k2 = k;
-        o[k2] = m[k];
-      });
-      var __exportStar = exports && exports.__exportStar || function(m, exports2) {
-        for (var p in m)
-          if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports2, p))
-            __createBinding(exports2, m, p);
-      };
-      Object.defineProperty(exports, "__esModule", { value: true });
-      exports.DomHandler = void 0;
-      var domelementtype_1 = require_lib();
-      var node_js_1 = require_node2();
-      __exportStar(require_node2(), exports);
-      var defaultOpts = {
-        withStartIndices: false,
-        withEndIndices: false,
-        xmlMode: false
-      };
-      var DomHandler = (
-        /** @class */
-        function() {
-          function DomHandler2(callback, options2, elementCB) {
-            this.dom = [];
-            this.root = new node_js_1.Document(this.dom);
-            this.done = false;
-            this.tagStack = [this.root];
-            this.lastNode = null;
-            this.parser = null;
-            if (typeof options2 === "function") {
-              elementCB = options2;
-              options2 = defaultOpts;
-            }
-            if (typeof callback === "object") {
-              options2 = callback;
-              callback = void 0;
-            }
-            this.callback = callback !== null && callback !== void 0 ? callback : null;
-            this.options = options2 !== null && options2 !== void 0 ? options2 : defaultOpts;
-            this.elementCB = elementCB !== null && elementCB !== void 0 ? elementCB : null;
-          }
-          DomHandler2.prototype.onparserinit = function(parser2) {
-            this.parser = parser2;
-          };
-          DomHandler2.prototype.onreset = function() {
-            this.dom = [];
-            this.root = new node_js_1.Document(this.dom);
-            this.done = false;
-            this.tagStack = [this.root];
-            this.lastNode = null;
-            this.parser = null;
-          };
-          DomHandler2.prototype.onend = function() {
-            if (this.done)
-              return;
-            this.done = true;
-            this.parser = null;
-            this.handleCallback(null);
-          };
-          DomHandler2.prototype.onerror = function(error) {
-            this.handleCallback(error);
-          };
-          DomHandler2.prototype.onclosetag = function() {
-            this.lastNode = null;
-            var elem = this.tagStack.pop();
-            if (this.options.withEndIndices) {
-              elem.endIndex = this.parser.endIndex;
-            }
-            if (this.elementCB)
-              this.elementCB(elem);
-          };
-          DomHandler2.prototype.onopentag = function(name, attribs) {
-            var type = this.options.xmlMode ? domelementtype_1.ElementType.Tag : void 0;
-            var element = new node_js_1.Element(name, attribs, void 0, type);
-            this.addNode(element);
-            this.tagStack.push(element);
-          };
-          DomHandler2.prototype.ontext = function(data) {
-            var lastNode = this.lastNode;
-            if (lastNode && lastNode.type === domelementtype_1.ElementType.Text) {
-              lastNode.data += data;
-              if (this.options.withEndIndices) {
-                lastNode.endIndex = this.parser.endIndex;
-              }
-            } else {
-              var node = new node_js_1.Text(data);
-              this.addNode(node);
-              this.lastNode = node;
-            }
-          };
-          DomHandler2.prototype.oncomment = function(data) {
-            if (this.lastNode && this.lastNode.type === domelementtype_1.ElementType.Comment) {
-              this.lastNode.data += data;
-              return;
-            }
-            var node = new node_js_1.Comment(data);
-            this.addNode(node);
-            this.lastNode = node;
-          };
-          DomHandler2.prototype.oncommentend = function() {
-            this.lastNode = null;
-          };
-          DomHandler2.prototype.oncdatastart = function() {
-            var text = new node_js_1.Text("");
-            var node = new node_js_1.CDATA([text]);
-            this.addNode(node);
-            text.parent = node;
-            this.lastNode = text;
-          };
-          DomHandler2.prototype.oncdataend = function() {
-            this.lastNode = null;
-          };
-          DomHandler2.prototype.onprocessinginstruction = function(name, data) {
-            var node = new node_js_1.ProcessingInstruction(name, data);
-            this.addNode(node);
-          };
-          DomHandler2.prototype.handleCallback = function(error) {
-            if (typeof this.callback === "function") {
-              this.callback(error, this.dom);
-            } else if (error) {
-              throw error;
-            }
-          };
-          DomHandler2.prototype.addNode = function(node) {
-            var parent = this.tagStack[this.tagStack.length - 1];
-            var previousSibling = parent.children[parent.children.length - 1];
-            if (this.options.withStartIndices) {
-              node.startIndex = this.parser.startIndex;
-            }
-            if (this.options.withEndIndices) {
-              node.endIndex = this.parser.endIndex;
-            }
-            parent.children.push(node);
-            if (previousSibling) {
-              node.prev = previousSibling;
-              previousSibling.next = node;
-            }
-            node.parent = parent;
-            this.lastNode = null;
-          };
-          return DomHandler2;
-        }()
-      );
-      exports.DomHandler = DomHandler;
-      exports.default = DomHandler;
-    }
-  });
-
-  // node_modules/htmlparser2/node_modules/entities/lib/generated/encode-html.js
+  // node_modules/entities/lib/generated/encode-html.js
   var require_encode_html = __commonJS({
-    "node_modules/htmlparser2/node_modules/entities/lib/generated/encode-html.js"(exports) {
+    "node_modules/entities/lib/generated/encode-html.js"(exports) {
       "use strict";
       Object.defineProperty(exports, "__esModule", { value: true });
       function restoreDiff(arr) {
@@ -26208,9 +25608,9 @@
     }
   });
 
-  // node_modules/htmlparser2/node_modules/entities/lib/escape.js
+  // node_modules/entities/lib/escape.js
   var require_escape = __commonJS({
-    "node_modules/htmlparser2/node_modules/entities/lib/escape.js"(exports) {
+    "node_modules/entities/lib/escape.js"(exports) {
       "use strict";
       Object.defineProperty(exports, "__esModule", { value: true });
       exports.escapeText = exports.escapeAttribute = exports.escapeUTF8 = exports.escape = exports.encodeXML = exports.getCodePoint = exports.xmlReplacer = void 0;
@@ -26281,9 +25681,9 @@
     }
   });
 
-  // node_modules/htmlparser2/node_modules/entities/lib/encode.js
+  // node_modules/entities/lib/encode.js
   var require_encode = __commonJS({
-    "node_modules/htmlparser2/node_modules/entities/lib/encode.js"(exports) {
+    "node_modules/entities/lib/encode.js"(exports) {
       "use strict";
       var __importDefault = exports && exports.__importDefault || function(mod) {
         return mod && mod.__esModule ? mod : { "default": mod };
@@ -26336,9 +25736,9 @@
     }
   });
 
-  // node_modules/htmlparser2/node_modules/entities/lib/index.js
-  var require_lib4 = __commonJS({
-    "node_modules/htmlparser2/node_modules/entities/lib/index.js"(exports) {
+  // node_modules/entities/lib/index.js
+  var require_lib3 = __commonJS({
+    "node_modules/entities/lib/index.js"(exports) {
       "use strict";
       Object.defineProperty(exports, "__esModule", { value: true });
       exports.decodeXMLStrict = exports.decodeHTML5Strict = exports.decodeHTML4Strict = exports.decodeHTML5 = exports.decodeHTML4 = exports.decodeHTMLStrict = exports.decodeHTML = exports.decodeXML = exports.encodeHTML5 = exports.encodeHTML4 = exports.encodeNonAsciiHTML = exports.encodeHTML = exports.escapeText = exports.escapeAttribute = exports.escapeUTF8 = exports.escape = exports.encodeXML = exports.encode = exports.decodeStrict = exports.decode = exports.EncodingMode = exports.DecodingMode = exports.EntityLevel = void 0;
@@ -26468,9 +25868,9 @@
     }
   });
 
-  // node_modules/htmlparser2/node_modules/dom-serializer/lib/foreignNames.js
+  // node_modules/dom-serializer/lib/foreignNames.js
   var require_foreignNames = __commonJS({
-    "node_modules/htmlparser2/node_modules/dom-serializer/lib/foreignNames.js"(exports) {
+    "node_modules/dom-serializer/lib/foreignNames.js"(exports) {
       "use strict";
       Object.defineProperty(exports, "__esModule", { value: true });
       exports.attributeNames = exports.elementNames = void 0;
@@ -26581,9 +25981,9 @@
     }
   });
 
-  // node_modules/htmlparser2/node_modules/dom-serializer/lib/index.js
-  var require_lib5 = __commonJS({
-    "node_modules/htmlparser2/node_modules/dom-serializer/lib/index.js"(exports) {
+  // node_modules/dom-serializer/lib/index.js
+  var require_lib4 = __commonJS({
+    "node_modules/dom-serializer/lib/index.js"(exports) {
       "use strict";
       var __assign = exports && exports.__assign || function() {
         __assign = Object.assign || function(t) {
@@ -26632,7 +26032,7 @@
       Object.defineProperty(exports, "__esModule", { value: true });
       exports.render = void 0;
       var ElementType = __importStar(require_lib());
-      var entities_1 = require_lib4();
+      var entities_1 = require_lib3();
       var foreignNames_js_1 = require_foreignNames();
       var unencodedElements = /* @__PURE__ */ new Set([
         "style",
@@ -26786,17 +26186,17 @@
     }
   });
 
-  // node_modules/htmlparser2/node_modules/domutils/lib/stringify.js
+  // node_modules/domutils/lib/stringify.js
   var require_stringify = __commonJS({
-    "node_modules/htmlparser2/node_modules/domutils/lib/stringify.js"(exports) {
+    "node_modules/domutils/lib/stringify.js"(exports) {
       "use strict";
       var __importDefault = exports && exports.__importDefault || function(mod) {
         return mod && mod.__esModule ? mod : { "default": mod };
       };
       Object.defineProperty(exports, "__esModule", { value: true });
       exports.innerText = exports.textContent = exports.getText = exports.getInnerHTML = exports.getOuterHTML = void 0;
-      var domhandler_1 = require_lib3();
-      var dom_serializer_1 = __importDefault(require_lib5());
+      var domhandler_1 = require_lib2();
+      var dom_serializer_1 = __importDefault(require_lib4());
       var domelementtype_1 = require_lib();
       function getOuterHTML(node, options2) {
         return (0, dom_serializer_1.default)(node, options2);
@@ -26845,13 +26245,13 @@
     }
   });
 
-  // node_modules/htmlparser2/node_modules/domutils/lib/traversal.js
+  // node_modules/domutils/lib/traversal.js
   var require_traversal = __commonJS({
-    "node_modules/htmlparser2/node_modules/domutils/lib/traversal.js"(exports) {
+    "node_modules/domutils/lib/traversal.js"(exports) {
       "use strict";
       Object.defineProperty(exports, "__esModule", { value: true });
       exports.prevElementSibling = exports.nextElementSibling = exports.getName = exports.hasAttrib = exports.getAttributeValue = exports.getSiblings = exports.getParent = exports.getChildren = void 0;
-      var domhandler_1 = require_lib3();
+      var domhandler_1 = require_lib2();
       function getChildren(elem) {
         return (0, domhandler_1.hasChildren)(elem) ? elem.children : [];
       }
@@ -26910,9 +26310,9 @@
     }
   });
 
-  // node_modules/htmlparser2/node_modules/domutils/lib/manipulation.js
+  // node_modules/domutils/lib/manipulation.js
   var require_manipulation = __commonJS({
-    "node_modules/htmlparser2/node_modules/domutils/lib/manipulation.js"(exports) {
+    "node_modules/domutils/lib/manipulation.js"(exports) {
       "use strict";
       Object.defineProperty(exports, "__esModule", { value: true });
       exports.prepend = exports.prependChild = exports.append = exports.appendChild = exports.replaceElement = exports.removeElement = void 0;
@@ -27008,13 +26408,13 @@
     }
   });
 
-  // node_modules/htmlparser2/node_modules/domutils/lib/querying.js
+  // node_modules/domutils/lib/querying.js
   var require_querying = __commonJS({
-    "node_modules/htmlparser2/node_modules/domutils/lib/querying.js"(exports) {
+    "node_modules/domutils/lib/querying.js"(exports) {
       "use strict";
       Object.defineProperty(exports, "__esModule", { value: true });
       exports.findAll = exports.existsOne = exports.findOne = exports.findOneChild = exports.find = exports.filter = void 0;
-      var domhandler_1 = require_lib3();
+      var domhandler_1 = require_lib2();
       function filter(test, node, recurse, limit) {
         if (recurse === void 0) {
           recurse = true;
@@ -27094,13 +26494,13 @@
     }
   });
 
-  // node_modules/htmlparser2/node_modules/domutils/lib/legacy.js
+  // node_modules/domutils/lib/legacy.js
   var require_legacy = __commonJS({
-    "node_modules/htmlparser2/node_modules/domutils/lib/legacy.js"(exports) {
+    "node_modules/domutils/lib/legacy.js"(exports) {
       "use strict";
       Object.defineProperty(exports, "__esModule", { value: true });
       exports.getElementsByTagType = exports.getElementsByTagName = exports.getElementById = exports.getElements = exports.testElement = void 0;
-      var domhandler_1 = require_lib3();
+      var domhandler_1 = require_lib2();
       var querying_js_1 = require_querying();
       var Checks = {
         tag_name: function(name) {
@@ -27203,13 +26603,13 @@
     }
   });
 
-  // node_modules/htmlparser2/node_modules/domutils/lib/helpers.js
+  // node_modules/domutils/lib/helpers.js
   var require_helpers = __commonJS({
-    "node_modules/htmlparser2/node_modules/domutils/lib/helpers.js"(exports) {
+    "node_modules/domutils/lib/helpers.js"(exports) {
       "use strict";
       Object.defineProperty(exports, "__esModule", { value: true });
       exports.uniqueSort = exports.compareDocumentPosition = exports.DocumentPosition = exports.removeSubsets = void 0;
-      var domhandler_1 = require_lib3();
+      var domhandler_1 = require_lib2();
       function removeSubsets(nodes) {
         var idx = nodes.length;
         while (--idx >= 0) {
@@ -27295,9 +26695,9 @@
     }
   });
 
-  // node_modules/htmlparser2/node_modules/domutils/lib/feeds.js
+  // node_modules/domutils/lib/feeds.js
   var require_feeds = __commonJS({
-    "node_modules/htmlparser2/node_modules/domutils/lib/feeds.js"(exports) {
+    "node_modules/domutils/lib/feeds.js"(exports) {
       "use strict";
       Object.defineProperty(exports, "__esModule", { value: true });
       exports.getFeed = void 0;
@@ -27436,9 +26836,9 @@
     }
   });
 
-  // node_modules/htmlparser2/node_modules/domutils/lib/index.js
-  var require_lib6 = __commonJS({
-    "node_modules/htmlparser2/node_modules/domutils/lib/index.js"(exports) {
+  // node_modules/domutils/lib/index.js
+  var require_lib5 = __commonJS({
+    "node_modules/domutils/lib/index.js"(exports) {
       "use strict";
       var __createBinding = exports && exports.__createBinding || (Object.create ? function(o, m, k, k2) {
         if (k2 === void 0)
@@ -27469,7 +26869,7 @@
       __exportStar(require_legacy(), exports);
       __exportStar(require_helpers(), exports);
       __exportStar(require_feeds(), exports);
-      var domhandler_1 = require_lib3();
+      var domhandler_1 = require_lib2();
       Object.defineProperty(exports, "isTag", { enumerable: true, get: function() {
         return domhandler_1.isTag;
       } });
@@ -27492,7 +26892,7 @@
   });
 
   // node_modules/htmlparser2/lib/index.js
-  var require_lib7 = __commonJS({
+  var require_lib6 = __commonJS({
     "node_modules/htmlparser2/lib/index.js"(exports) {
       "use strict";
       var __createBinding = exports && exports.__createBinding || (Object.create ? function(o, m, k, k2) {
@@ -27537,8 +26937,8 @@
       Object.defineProperty(exports, "Parser", { enumerable: true, get: function() {
         return Parser_js_2.Parser;
       } });
-      var domhandler_1 = require_lib3();
-      var domhandler_2 = require_lib3();
+      var domhandler_1 = require_lib2();
+      var domhandler_2 = require_lib2();
       Object.defineProperty(exports, "DomHandler", { enumerable: true, get: function() {
         return domhandler_2.DomHandler;
       } });
@@ -27565,8 +26965,8 @@
         return __importDefault(Tokenizer_js_1).default;
       } });
       exports.ElementType = __importStar(require_lib());
-      var domutils_1 = require_lib6();
-      var domutils_2 = require_lib6();
+      var domutils_1 = require_lib5();
+      var domutils_2 = require_lib5();
       Object.defineProperty(exports, "getFeed", { enumerable: true, get: function() {
         return domutils_2.getFeed;
       } });
@@ -27578,607 +26978,7 @@
         return (0, domutils_1.getFeed)(parseDOM(feed, options2));
       }
       exports.parseFeed = parseFeed;
-      exports.DomUtils = __importStar(require_lib6());
-    }
-  });
-
-  // node_modules/html-dom-parser/node_modules/domhandler/lib/node.js
-  var require_node3 = __commonJS({
-    "node_modules/html-dom-parser/node_modules/domhandler/lib/node.js"(exports) {
-      "use strict";
-      var __extends = exports && exports.__extends || function() {
-        var extendStatics = function(d, b) {
-          extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
-            d2.__proto__ = b2;
-          } || function(d2, b2) {
-            for (var p in b2)
-              if (Object.prototype.hasOwnProperty.call(b2, p))
-                d2[p] = b2[p];
-          };
-          return extendStatics(d, b);
-        };
-        return function(d, b) {
-          if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-          extendStatics(d, b);
-          function __() {
-            this.constructor = d;
-          }
-          d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-        };
-      }();
-      var __assign = exports && exports.__assign || function() {
-        __assign = Object.assign || function(t) {
-          for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s)
-              if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-          }
-          return t;
-        };
-        return __assign.apply(this, arguments);
-      };
-      Object.defineProperty(exports, "__esModule", { value: true });
-      exports.cloneNode = exports.hasChildren = exports.isDocument = exports.isDirective = exports.isComment = exports.isText = exports.isCDATA = exports.isTag = exports.Element = exports.Document = exports.CDATA = exports.NodeWithChildren = exports.ProcessingInstruction = exports.Comment = exports.Text = exports.DataNode = exports.Node = void 0;
-      var domelementtype_1 = require_lib();
-      var Node = (
-        /** @class */
-        function() {
-          function Node2() {
-            this.parent = null;
-            this.prev = null;
-            this.next = null;
-            this.startIndex = null;
-            this.endIndex = null;
-          }
-          Object.defineProperty(Node2.prototype, "parentNode", {
-            // Read-write aliases for properties
-            /**
-             * Same as {@link parent}.
-             * [DOM spec](https://dom.spec.whatwg.org)-compatible alias.
-             */
-            get: function() {
-              return this.parent;
-            },
-            set: function(parent) {
-              this.parent = parent;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          Object.defineProperty(Node2.prototype, "previousSibling", {
-            /**
-             * Same as {@link prev}.
-             * [DOM spec](https://dom.spec.whatwg.org)-compatible alias.
-             */
-            get: function() {
-              return this.prev;
-            },
-            set: function(prev) {
-              this.prev = prev;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          Object.defineProperty(Node2.prototype, "nextSibling", {
-            /**
-             * Same as {@link next}.
-             * [DOM spec](https://dom.spec.whatwg.org)-compatible alias.
-             */
-            get: function() {
-              return this.next;
-            },
-            set: function(next) {
-              this.next = next;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          Node2.prototype.cloneNode = function(recursive) {
-            if (recursive === void 0) {
-              recursive = false;
-            }
-            return cloneNode(this, recursive);
-          };
-          return Node2;
-        }()
-      );
-      exports.Node = Node;
-      var DataNode = (
-        /** @class */
-        function(_super) {
-          __extends(DataNode2, _super);
-          function DataNode2(data) {
-            var _this = _super.call(this) || this;
-            _this.data = data;
-            return _this;
-          }
-          Object.defineProperty(DataNode2.prototype, "nodeValue", {
-            /**
-             * Same as {@link data}.
-             * [DOM spec](https://dom.spec.whatwg.org)-compatible alias.
-             */
-            get: function() {
-              return this.data;
-            },
-            set: function(data) {
-              this.data = data;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          return DataNode2;
-        }(Node)
-      );
-      exports.DataNode = DataNode;
-      var Text2 = (
-        /** @class */
-        function(_super) {
-          __extends(Text3, _super);
-          function Text3() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this.type = domelementtype_1.ElementType.Text;
-            return _this;
-          }
-          Object.defineProperty(Text3.prototype, "nodeType", {
-            get: function() {
-              return 3;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          return Text3;
-        }(DataNode)
-      );
-      exports.Text = Text2;
-      var Comment2 = (
-        /** @class */
-        function(_super) {
-          __extends(Comment3, _super);
-          function Comment3() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this.type = domelementtype_1.ElementType.Comment;
-            return _this;
-          }
-          Object.defineProperty(Comment3.prototype, "nodeType", {
-            get: function() {
-              return 8;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          return Comment3;
-        }(DataNode)
-      );
-      exports.Comment = Comment2;
-      var ProcessingInstruction2 = (
-        /** @class */
-        function(_super) {
-          __extends(ProcessingInstruction3, _super);
-          function ProcessingInstruction3(name, data) {
-            var _this = _super.call(this, data) || this;
-            _this.name = name;
-            _this.type = domelementtype_1.ElementType.Directive;
-            return _this;
-          }
-          Object.defineProperty(ProcessingInstruction3.prototype, "nodeType", {
-            get: function() {
-              return 1;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          return ProcessingInstruction3;
-        }(DataNode)
-      );
-      exports.ProcessingInstruction = ProcessingInstruction2;
-      var NodeWithChildren = (
-        /** @class */
-        function(_super) {
-          __extends(NodeWithChildren2, _super);
-          function NodeWithChildren2(children) {
-            var _this = _super.call(this) || this;
-            _this.children = children;
-            return _this;
-          }
-          Object.defineProperty(NodeWithChildren2.prototype, "firstChild", {
-            // Aliases
-            /** First child of the node. */
-            get: function() {
-              var _a;
-              return (_a = this.children[0]) !== null && _a !== void 0 ? _a : null;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          Object.defineProperty(NodeWithChildren2.prototype, "lastChild", {
-            /** Last child of the node. */
-            get: function() {
-              return this.children.length > 0 ? this.children[this.children.length - 1] : null;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          Object.defineProperty(NodeWithChildren2.prototype, "childNodes", {
-            /**
-             * Same as {@link children}.
-             * [DOM spec](https://dom.spec.whatwg.org)-compatible alias.
-             */
-            get: function() {
-              return this.children;
-            },
-            set: function(children) {
-              this.children = children;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          return NodeWithChildren2;
-        }(Node)
-      );
-      exports.NodeWithChildren = NodeWithChildren;
-      var CDATA = (
-        /** @class */
-        function(_super) {
-          __extends(CDATA2, _super);
-          function CDATA2() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this.type = domelementtype_1.ElementType.CDATA;
-            return _this;
-          }
-          Object.defineProperty(CDATA2.prototype, "nodeType", {
-            get: function() {
-              return 4;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          return CDATA2;
-        }(NodeWithChildren)
-      );
-      exports.CDATA = CDATA;
-      var Document = (
-        /** @class */
-        function(_super) {
-          __extends(Document2, _super);
-          function Document2() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this.type = domelementtype_1.ElementType.Root;
-            return _this;
-          }
-          Object.defineProperty(Document2.prototype, "nodeType", {
-            get: function() {
-              return 9;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          return Document2;
-        }(NodeWithChildren)
-      );
-      exports.Document = Document;
-      var Element2 = (
-        /** @class */
-        function(_super) {
-          __extends(Element3, _super);
-          function Element3(name, attribs, children, type) {
-            if (children === void 0) {
-              children = [];
-            }
-            if (type === void 0) {
-              type = name === "script" ? domelementtype_1.ElementType.Script : name === "style" ? domelementtype_1.ElementType.Style : domelementtype_1.ElementType.Tag;
-            }
-            var _this = _super.call(this, children) || this;
-            _this.name = name;
-            _this.attribs = attribs;
-            _this.type = type;
-            return _this;
-          }
-          Object.defineProperty(Element3.prototype, "nodeType", {
-            get: function() {
-              return 1;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          Object.defineProperty(Element3.prototype, "tagName", {
-            // DOM Level 1 aliases
-            /**
-             * Same as {@link name}.
-             * [DOM spec](https://dom.spec.whatwg.org)-compatible alias.
-             */
-            get: function() {
-              return this.name;
-            },
-            set: function(name) {
-              this.name = name;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          Object.defineProperty(Element3.prototype, "attributes", {
-            get: function() {
-              var _this = this;
-              return Object.keys(this.attribs).map(function(name) {
-                var _a, _b;
-                return {
-                  name,
-                  value: _this.attribs[name],
-                  namespace: (_a = _this["x-attribsNamespace"]) === null || _a === void 0 ? void 0 : _a[name],
-                  prefix: (_b = _this["x-attribsPrefix"]) === null || _b === void 0 ? void 0 : _b[name]
-                };
-              });
-            },
-            enumerable: false,
-            configurable: true
-          });
-          return Element3;
-        }(NodeWithChildren)
-      );
-      exports.Element = Element2;
-      function isTag(node) {
-        return (0, domelementtype_1.isTag)(node);
-      }
-      exports.isTag = isTag;
-      function isCDATA(node) {
-        return node.type === domelementtype_1.ElementType.CDATA;
-      }
-      exports.isCDATA = isCDATA;
-      function isText(node) {
-        return node.type === domelementtype_1.ElementType.Text;
-      }
-      exports.isText = isText;
-      function isComment(node) {
-        return node.type === domelementtype_1.ElementType.Comment;
-      }
-      exports.isComment = isComment;
-      function isDirective(node) {
-        return node.type === domelementtype_1.ElementType.Directive;
-      }
-      exports.isDirective = isDirective;
-      function isDocument(node) {
-        return node.type === domelementtype_1.ElementType.Root;
-      }
-      exports.isDocument = isDocument;
-      function hasChildren(node) {
-        return Object.prototype.hasOwnProperty.call(node, "children");
-      }
-      exports.hasChildren = hasChildren;
-      function cloneNode(node, recursive) {
-        if (recursive === void 0) {
-          recursive = false;
-        }
-        var result;
-        if (isText(node)) {
-          result = new Text2(node.data);
-        } else if (isComment(node)) {
-          result = new Comment2(node.data);
-        } else if (isTag(node)) {
-          var children = recursive ? cloneChildren(node.children) : [];
-          var clone_1 = new Element2(node.name, __assign({}, node.attribs), children);
-          children.forEach(function(child) {
-            return child.parent = clone_1;
-          });
-          if (node.namespace != null) {
-            clone_1.namespace = node.namespace;
-          }
-          if (node["x-attribsNamespace"]) {
-            clone_1["x-attribsNamespace"] = __assign({}, node["x-attribsNamespace"]);
-          }
-          if (node["x-attribsPrefix"]) {
-            clone_1["x-attribsPrefix"] = __assign({}, node["x-attribsPrefix"]);
-          }
-          result = clone_1;
-        } else if (isCDATA(node)) {
-          var children = recursive ? cloneChildren(node.children) : [];
-          var clone_2 = new CDATA(children);
-          children.forEach(function(child) {
-            return child.parent = clone_2;
-          });
-          result = clone_2;
-        } else if (isDocument(node)) {
-          var children = recursive ? cloneChildren(node.children) : [];
-          var clone_3 = new Document(children);
-          children.forEach(function(child) {
-            return child.parent = clone_3;
-          });
-          if (node["x-mode"]) {
-            clone_3["x-mode"] = node["x-mode"];
-          }
-          result = clone_3;
-        } else if (isDirective(node)) {
-          var instruction = new ProcessingInstruction2(node.name, node.data);
-          if (node["x-name"] != null) {
-            instruction["x-name"] = node["x-name"];
-            instruction["x-publicId"] = node["x-publicId"];
-            instruction["x-systemId"] = node["x-systemId"];
-          }
-          result = instruction;
-        } else {
-          throw new Error("Not implemented yet: ".concat(node.type));
-        }
-        result.startIndex = node.startIndex;
-        result.endIndex = node.endIndex;
-        if (node.sourceCodeLocation != null) {
-          result.sourceCodeLocation = node.sourceCodeLocation;
-        }
-        return result;
-      }
-      exports.cloneNode = cloneNode;
-      function cloneChildren(childs) {
-        var children = childs.map(function(child) {
-          return cloneNode(child, true);
-        });
-        for (var i = 1; i < children.length; i++) {
-          children[i].prev = children[i - 1];
-          children[i - 1].next = children[i];
-        }
-        return children;
-      }
-    }
-  });
-
-  // node_modules/html-dom-parser/node_modules/domhandler/lib/index.js
-  var require_lib8 = __commonJS({
-    "node_modules/html-dom-parser/node_modules/domhandler/lib/index.js"(exports) {
-      "use strict";
-      var __createBinding = exports && exports.__createBinding || (Object.create ? function(o, m, k, k2) {
-        if (k2 === void 0)
-          k2 = k;
-        var desc = Object.getOwnPropertyDescriptor(m, k);
-        if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-          desc = { enumerable: true, get: function() {
-            return m[k];
-          } };
-        }
-        Object.defineProperty(o, k2, desc);
-      } : function(o, m, k, k2) {
-        if (k2 === void 0)
-          k2 = k;
-        o[k2] = m[k];
-      });
-      var __exportStar = exports && exports.__exportStar || function(m, exports2) {
-        for (var p in m)
-          if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports2, p))
-            __createBinding(exports2, m, p);
-      };
-      Object.defineProperty(exports, "__esModule", { value: true });
-      exports.DomHandler = void 0;
-      var domelementtype_1 = require_lib();
-      var node_js_1 = require_node3();
-      __exportStar(require_node3(), exports);
-      var defaultOpts = {
-        withStartIndices: false,
-        withEndIndices: false,
-        xmlMode: false
-      };
-      var DomHandler = (
-        /** @class */
-        function() {
-          function DomHandler2(callback, options2, elementCB) {
-            this.dom = [];
-            this.root = new node_js_1.Document(this.dom);
-            this.done = false;
-            this.tagStack = [this.root];
-            this.lastNode = null;
-            this.parser = null;
-            if (typeof options2 === "function") {
-              elementCB = options2;
-              options2 = defaultOpts;
-            }
-            if (typeof callback === "object") {
-              options2 = callback;
-              callback = void 0;
-            }
-            this.callback = callback !== null && callback !== void 0 ? callback : null;
-            this.options = options2 !== null && options2 !== void 0 ? options2 : defaultOpts;
-            this.elementCB = elementCB !== null && elementCB !== void 0 ? elementCB : null;
-          }
-          DomHandler2.prototype.onparserinit = function(parser2) {
-            this.parser = parser2;
-          };
-          DomHandler2.prototype.onreset = function() {
-            this.dom = [];
-            this.root = new node_js_1.Document(this.dom);
-            this.done = false;
-            this.tagStack = [this.root];
-            this.lastNode = null;
-            this.parser = null;
-          };
-          DomHandler2.prototype.onend = function() {
-            if (this.done)
-              return;
-            this.done = true;
-            this.parser = null;
-            this.handleCallback(null);
-          };
-          DomHandler2.prototype.onerror = function(error) {
-            this.handleCallback(error);
-          };
-          DomHandler2.prototype.onclosetag = function() {
-            this.lastNode = null;
-            var elem = this.tagStack.pop();
-            if (this.options.withEndIndices) {
-              elem.endIndex = this.parser.endIndex;
-            }
-            if (this.elementCB)
-              this.elementCB(elem);
-          };
-          DomHandler2.prototype.onopentag = function(name, attribs) {
-            var type = this.options.xmlMode ? domelementtype_1.ElementType.Tag : void 0;
-            var element = new node_js_1.Element(name, attribs, void 0, type);
-            this.addNode(element);
-            this.tagStack.push(element);
-          };
-          DomHandler2.prototype.ontext = function(data) {
-            var lastNode = this.lastNode;
-            if (lastNode && lastNode.type === domelementtype_1.ElementType.Text) {
-              lastNode.data += data;
-              if (this.options.withEndIndices) {
-                lastNode.endIndex = this.parser.endIndex;
-              }
-            } else {
-              var node = new node_js_1.Text(data);
-              this.addNode(node);
-              this.lastNode = node;
-            }
-          };
-          DomHandler2.prototype.oncomment = function(data) {
-            if (this.lastNode && this.lastNode.type === domelementtype_1.ElementType.Comment) {
-              this.lastNode.data += data;
-              return;
-            }
-            var node = new node_js_1.Comment(data);
-            this.addNode(node);
-            this.lastNode = node;
-          };
-          DomHandler2.prototype.oncommentend = function() {
-            this.lastNode = null;
-          };
-          DomHandler2.prototype.oncdatastart = function() {
-            var text = new node_js_1.Text("");
-            var node = new node_js_1.CDATA([text]);
-            this.addNode(node);
-            text.parent = node;
-            this.lastNode = text;
-          };
-          DomHandler2.prototype.oncdataend = function() {
-            this.lastNode = null;
-          };
-          DomHandler2.prototype.onprocessinginstruction = function(name, data) {
-            var node = new node_js_1.ProcessingInstruction(name, data);
-            this.addNode(node);
-          };
-          DomHandler2.prototype.handleCallback = function(error) {
-            if (typeof this.callback === "function") {
-              this.callback(error, this.dom);
-            } else if (error) {
-              throw error;
-            }
-          };
-          DomHandler2.prototype.addNode = function(node) {
-            var parent = this.tagStack[this.tagStack.length - 1];
-            var previousSibling = parent.children[parent.children.length - 1];
-            if (this.options.withStartIndices) {
-              node.startIndex = this.parser.startIndex;
-            }
-            if (this.options.withEndIndices) {
-              node.endIndex = this.parser.endIndex;
-            }
-            parent.children.push(node);
-            if (previousSibling) {
-              node.prev = previousSibling;
-              previousSibling.next = node;
-            }
-            node.parent = parent;
-            this.lastNode = null;
-          };
-          return DomHandler2;
-        }()
-      );
-      exports.DomHandler = DomHandler;
-      exports.default = DomHandler;
+      exports.DomUtils = __importStar(require_lib5());
     }
   });
 
@@ -28201,8 +27001,8 @@
   // node_modules/html-dom-parser/lib/server/html-to-dom.js
   var require_html_to_dom = __commonJS({
     "node_modules/html-dom-parser/lib/server/html-to-dom.js"(exports, module) {
-      var Parser2 = require_lib7().Parser;
-      var DomHandler = require_lib8().DomHandler;
+      var Parser2 = require_lib6().Parser;
+      var DomHandler = require_lib2().DomHandler;
       var unsetRootParent = require_utilities().unsetRootParent;
       function HTMLDOMParser(html, options2) {
         if (typeof html !== "string") {
@@ -28724,7 +27524,7 @@
   });
 
   // node_modules/react-property/lib/index.js
-  var require_lib9 = __commonJS({
+  var require_lib7 = __commonJS({
     "node_modules/react-property/lib/index.js"(exports) {
       "use strict";
       Object.defineProperty(exports, "__esModule", { value: true });
@@ -29553,7 +28353,7 @@
   // node_modules/html-react-parser/lib/attributes-to-props.js
   var require_attributes_to_props = __commonJS({
     "node_modules/html-react-parser/lib/attributes-to-props.js"(exports, module) {
-      var reactProperty = require_lib9();
+      var reactProperty = require_lib7();
       var utilities = require_utilities3();
       var UNCONTROLLED_COMPONENT_ATTRIBUTES = ["checked", "value"];
       var UNCONTROLLED_COMPONENT_NAMES = ["input", "select", "textarea"];

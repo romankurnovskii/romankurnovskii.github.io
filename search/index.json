@@ -5,7 +5,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 2
+                    "timeTakenInMilliseconds": 3
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -2471,6 +2471,16 @@
             "tags": [
                 "linux",
                 "rhel"
+            ],
+            "lang": "en"
+        },
+        {
+            "uri": "/posts/howto-publish-ts-npm-project",
+            "title": "How to publish typescript package to npm registry",
+            "description": "How to publish typescript package to npm registry",
+            "content": "\n\nOpen template: https://github.com/romankurnovskii/npm-typescript-package-template\nClick Use this template\nCreate repo from this template.\ngit clone new repo\nupdate code src/index.ts, src/bin.ts\n\nHow to check if bin script works from terminal:\n\nnpm link && npm link mypackage\nmypackage\n\nPublish:\n\nnpm run prepublishOnly\nnpm publish\n",
+            "tags": [
+                "javascript"
             ],
             "lang": "en"
         },
