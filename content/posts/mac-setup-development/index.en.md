@@ -89,14 +89,12 @@ Install terminal applications (read more about these in Terminal Applications):
 ```bash
 brew install \
   git \
+  jupyterlab \
   ffmpeg \
   nvm \
-  jupyterlab
+  pyenv
 ```
 ## Additional GUI Applications
-### Kotatogram
-
-[Kotatogram](https://kotatogram.github.io/) - Experimental fork of Telegram Desktop. Folders with features
 
 ## GUI Applications
 
@@ -201,7 +199,6 @@ sudo apt install spice-vdagent spice-webdavd -y
 [VLC](https://www.videolan.org/vlc/) (video player)
   - use as default for video files
 
-
 ## Terminal Applications
 
 ### nvm
@@ -261,9 +258,9 @@ npm install -g npm@latest
 And set defaults for npm:
 
 ```sh
-npm set init.author.name "your name"
-npm set init.author.email "you@example.com"
-npm set init.author.url "example.com"
+npm set init-author-name "Roman Kurnovskii"
+npm set init-author-email "you@example.com"
+npm set init-author-url "https://romankurnovskii.com"
 ```
 
 If you are a library author, log in to npm too:
@@ -341,11 +338,11 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 echo "plugins=(zsh-autosuggestions)" >>~/.zshrc
 ```
 
-Open new tab(CMD+T)/restart iTerm to proceed with theme setup
+Open new tab(CMD+T)/restart `iTerm` to proceed with theme setup.
 
 ## Terminal Script and Aliases
 
-Update `.zprofile`. Еhe changes will take effect after restarting the terminal
+Update `.zprofile`. The changes will take effect after restarting the terminal
 
 ```bash
 vi ~/.zprofile
@@ -367,16 +364,14 @@ alias upd='brew update; brew upgrade; brew cu -a --cleanup -y -v; brew cleanup; 
 Add aliases to latest versions pip & python
 
 ```bash
-alias pip=pip3
-alias python=python3
-```
+# А 
+# ❯ which pip
+# /opt/homebrew/bin/pip
+# ❯ which python
+# /opt/homebrew/anaconda3/bin//python
 
-Final view of .zprofile
-```bash
-...
-alias pip=pip3
-alias python=python3
-alias upd='omz update; brew update; brew upgrade; brew cu -a --cleanup -y -v; brew cleanup; softwareupdate -i -a; i'
+# snippet creates python virtual env in current folder
+alias penv='python -m venv venv && source ./venv/bin/activate && pip install --upgrade pip && pip freeze > requirements.txt && echo "venv/" >> .gitignore'
 ```
 
 ## Links
