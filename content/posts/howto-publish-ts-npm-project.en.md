@@ -7,7 +7,7 @@ tags: [javascript]
 series: []
 categories: [programming]
 date: 2023-03-07
-featuredImage: https://picsum.photos/700/251
+featuredImage: https://picsum.photos/700/221
 authors: [roman-kurnovskii]
 ---
 
