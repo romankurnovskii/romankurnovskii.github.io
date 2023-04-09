@@ -91,8 +91,7 @@ brew install \
   git \
   jupyterlab \
   ffmpeg \
-  nvm \
-  pyenv
+  nvm
 ```
 ## Additional GUI Applications
 
