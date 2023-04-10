@@ -370,7 +370,7 @@ Add aliases to latest versions pip & python
 # /opt/homebrew/anaconda3/bin//python
 
 # snippet creates python virtual env in current folder
-alias penv='python -m venv venv && source ./venv/bin/activate && pip install --upgrade pip && pip freeze > requirements.txt && echo "venv/" >> .gitignore'
+alias penv='python -m venv venv && source ./venv/bin/activate && pip install --upgrade pip && echo "\n" >> requirements.txt && pip install -r requirements.txt && pip freeze > requirements_freeze.txt && echo "venv/" >> .gitignore'
 ```
 
 ## Links
