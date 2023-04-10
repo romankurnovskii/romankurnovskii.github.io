@@ -5,7 +5,8 @@ toc: true
 tags:  ["python"]
 series: [CheatSheet]
 categories: [Python, CheatSheet]
-date: "2022-06-16"
+date: 2022-06-16
+lastmod: 2023-04-10
 featuredImage:
 draft: false
 ---
@@ -17,14 +18,53 @@ draft: false
 
 ```python
 import datetime
-x = datetime.datetime.now() # 2022-08-04 21:41:24.871910
+x = datetime.datetime.now() # 2023-08-23 21:41:24.871910
 ```
 
 #### Формат `YYYY-MM-DD`
 
 ```python
 import datetime
-x = datetime.datetime.now().strftime("%Y-%m-%d") # 2022-08-04
+x = datetime.datetime.now().strftime("%Y-%m-%d") # 2023-08-23
+```
+
+
+#### Разница в секундах
+
+```python
+import datetime
+
+date1 = datetime.datetime(2023, 3, 26, 0, 0, 0)  # March 26, 2023 at midnight
+date2 = datetime.datetime(2023, 3, 27, 0, 0, 0)  # March 27, 2023 at midnight
+
+difference_in_seconds = (date2 - date1).total_seconds()
+
+if difference_in_seconds > 0:
+    print("Date2 is later than Date1 by", difference_in_seconds, "seconds.")
+elif difference_in_seconds < 0:
+    print("Date1 is later than Date2 by", abs(difference_in_seconds), "seconds.")
+else:
+    print("Date1 and Date2 are the same.")
+```
+
+```python
+import time
+
+# create two datetime objects to compare
+date1 = "2023-04-01 12:00:00"
+date2 = "2023-04-02 12:00:00"
+
+# convert the dates to seconds since epoch using time.mktime()
+seconds1 = time.mktime(time.strptime(date1, "%Y-%m-%d %H:%M:%S"))
+seconds2 = time.mktime(time.strptime(date2, "%Y-%m-%d %H:%M:%S"))
+
+# compare the two dates in seconds
+if seconds1 < seconds2:
+    print("date1 is earlier than date2")
+elif seconds1 > seconds2:
+    print("date1 is later than date2")
+else:
+    print("date1 and date2 are the same")
 ```
 
 ### Создать папку
