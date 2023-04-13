@@ -27,8 +27,7 @@ weight: 10
 10. 1796B - Asterisk-Minor Template (implementation, strings, 1000)
 
 
-<!-- 
-Stage 2: Combinatorics and Geometry
+## Stage 2: Combinatorics and Geometry
 
 1777A - Everybody Likes Good Arrays! (greedy, math, 800)
 1787A - Exponential Equation (constructive algorithms, math, 800)
@@ -37,6 +36,8 @@ Stage 2: Combinatorics and Geometry
 1776A - Walking Boy (greedy, 800)
 1774A - Add Plus Minus Sign (constructive algorithms, math, 800)
 1773F - Football (constructive algorithms, 800)
+
+<!-- 
 
 Stage 3: Brute Force and Constructive Algorithms
 
