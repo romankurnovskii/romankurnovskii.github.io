@@ -1,5 +1,5 @@
 ---
-title: "01: Implementation and Greedy"
+title: "01: Implementation & Greedy"
 description: Codeforces contests solutions
 toc: true
 tags: []
