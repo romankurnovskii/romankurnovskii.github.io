@@ -32,7 +32,7 @@ If there is no common prefix, return an empty string `""`.
 
 **Idea:**
 
-![test-case](../assets/14.jpg)
+![test-case](../../assets/14.jpg)
 
 ```python
 class Solution:

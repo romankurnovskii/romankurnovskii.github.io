@@ -209,6 +209,7 @@ def dfs(current, visited):
   visited.add(current)
 
   # Base case: If we've reached the destination, return True
+  # or other condition
   if current == end:
     return True
 
@@ -217,7 +218,7 @@ def dfs(current, visited):
     next_cell = (current[0] + delta[0], current[1] + delta[1])
     if is_valid_cell(next_cell) and next_cell not in visited:
       if dfs(next_cell, visited):
-        return True
+        return **True**
 
   # If we couldn't find the exit from this cell, backtrack to the previous cell
   return False
@@ -228,6 +229,32 @@ if dfs(start, visited):
   print("I found the exit!")
 else:
   print("I couldn't find the exit.")
+```
+
+**Base template:**
+
+```python
+def dfs(matrix, row, col, visited):
+    # Check if the current cell is out of bounds or has already been visited
+    if (
+        row < 0 or
+        row >= len(matrix) or
+        col < 0 or
+        col >= len(matrix[0]) or
+        visited[row][col]:
+    )
+        return
+
+    # Mark the current cell as visited
+    visited[row][col] = True
+
+    # Define the possible directions to move (right, down, left, up)
+    directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
+
+    # Iterate through the directions and call DFS recursively on neighboring cells
+    for step_row, step_col in directions:
+        new_row, new_col = row + step_row, step_col + dc
+        dfs(matrix, new_row, new_col, visited)
 ```
 
 

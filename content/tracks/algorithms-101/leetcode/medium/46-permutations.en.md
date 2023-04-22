@@ -35,7 +35,7 @@ Given an array `nums` of distinct integers, return *all the possible permutation
 1. Draw a decigion tree
 2. Fix when *branch* is *ready* to return
 
-![test-case](../assets/46.jpg)
+![test-case](../../assets/46.jpg)
 
 Implementation:
 1. Recursive:

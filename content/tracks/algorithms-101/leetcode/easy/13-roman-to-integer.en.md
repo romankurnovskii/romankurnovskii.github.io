@@ -49,7 +49,7 @@ Given a roman numeral, convert it to an integer.
 
 ## First accepted
 
-![test-case](../assets/13.jpg)
+![test-case](../../assets/13.jpg)
 
 ```python
 class Solution:
