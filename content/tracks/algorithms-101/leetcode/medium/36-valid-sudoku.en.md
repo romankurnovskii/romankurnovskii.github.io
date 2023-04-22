@@ -59,7 +59,7 @@ Each of the nine 3 x 3 sub-boxes of the grid must contain the digits `1-9` witho
 
 **Idea:**
 
-![test-case](../assets/36.jpg)
+![test-case](../../assets/36.jpg)
 
 ```python
 class Solution:

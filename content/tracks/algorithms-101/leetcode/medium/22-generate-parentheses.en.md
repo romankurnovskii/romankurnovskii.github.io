@@ -34,7 +34,7 @@ Given n pairs of parentheses, write a function to generate all combinations of w
 
 **Idea:**
 
-![test-case](../assets/22.jpg)
+![test-case](../../assets/22.jpg)
 
 ```python
 class Solution:

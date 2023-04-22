@@ -86,7 +86,7 @@ class Solution:
 
 Just like how you would sum two numbers on a piece of paper.
 
-![test-case](../assets/2-test-case.jpg)
+![test-case](../../assets/2-test-case.jpg)
 
 ```python
 class Solution:

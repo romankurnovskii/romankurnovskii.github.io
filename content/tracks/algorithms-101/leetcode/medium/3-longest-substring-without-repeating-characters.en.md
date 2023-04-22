@@ -32,7 +32,7 @@ Given a string `s`, find the length of the longest substring without repeating c
 3. If get double element, then go back until get this element and do step 2.
 4. Proceed the main loop
 
-![Longest Substring Without Repeating Characters](../assets/3.jpg)
+![Longest Substring Without Repeating Characters](../../assets/3.jpg)
 
 ```python
 class Solution:

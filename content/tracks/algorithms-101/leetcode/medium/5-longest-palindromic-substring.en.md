@@ -46,9 +46,9 @@ If we use brute-force and check whether for every start and end position a subst
 
 We start at `index = 0` and iterate through all values until `n`. At each index we call the function `getPalindrome` that will check the values to the left and right of the provided indices. It will continue to do so until the longest palindrome within the given range is found.
 
-![test-case](../assets/5.jpg)
+![test-case](../../assets/5.jpg)
 
-![Leetcode diagram explained](../assets/5-diagram.svg)
+![Leetcode diagram explained](../../assets/5-diagram.svg)
 **[Link to diagram](https://app.diagrams.net/#G17m7pbA_Ym4_Xi8JFBPSyMcr8zYzX_1FH)**
 
 ```python

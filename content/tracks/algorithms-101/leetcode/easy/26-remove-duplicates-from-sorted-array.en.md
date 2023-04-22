@@ -58,7 +58,7 @@ If all assertions pass, then your solution will be accepted.
 
 **Idea:**
 
-![test-case](../assets/26.jpg)
+![test-case](../../assets/26.jpg)
 
 ```python
 class Solution:
