@@ -150,4 +150,11 @@ Editorial</description></item><item><title>128. Longest Consecutive Sequence</ti
 Save all numbers in set to make it possible to get number at O(1). For each element look for the current+1 element if exists. class Solution: def longestConsecutive(self, nums: List[int]) -&amp;gt; int: res = 0 nset = set(nums) for x in nset: if x - 1 not in nset: # prevent double calculations _max = 1 cur = x while cur + 1 in nset: _max += 1 cur += 1 res = max(_max, res) return res</description></item><item><title>130. Surrounded Regions</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/130/</link><pubDate>Fri, 21 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/130/</guid><description>LeetCode problem
 Naive Solution:
 A naive solution would be to iterate through each cell in the grid, and for each O, check if it is surrounded by X&amp;rsquo;s in all four directions (up, down, left, and right). If so, flip it to X. However, this method has a high time complexity and does not take advantage of any properties of the problem.
-Approach: The more efficient solution is to perform a Depth-First Search (DFS) starting from the border O&amp;rsquo;s.</description></item></channel></rss>
+Approach: The more efficient solution is to perform a Depth-First Search (DFS) starting from the border O&amp;rsquo;s.</description></item><item><title>131. Palindrome Partitioning</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/131/</link><pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/131/</guid><description>LeetCode problem
+Naive Solution:
+A naive solution would be to generate all possible partitions of the given string and then check if every substring in each partition is a palindrome.
+However, this approach would be inefficient, as there would be an exponential number of partitions to check.
+Approach:
+Using Backtracking.
+Logic:
+Define a helper function, is_palindrome, to check if a given substring is a palindrome. Define the backtrack function to find all palindrome partitions recursively. This function will take the current position in the string and the current partition as input arguments.</description></item></channel></rss>
