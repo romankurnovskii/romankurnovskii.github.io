@@ -5,7 +5,7 @@ description: How to Create a React-Electron Typescript Application From Scratch 
 toc: true
 tags: [typescript, react, electron]
 series: []
-categories: []
+categories: [JavaScript]
 date: 2023-04-22
 lastmod: 2023-04-22
 featuredImage: https://github.com/romankurnovskii/electron-react-template/raw/main/assets/logo.png
@@ -23,6 +23,7 @@ I use this clean template as a boilerplate for my projects.
 2. click **Use this template** to create a new repo and start coding.
 
 ## Prerequisites
+
 
 Before starting this tutorial, make sure you have the following tools installed on your system:
 
