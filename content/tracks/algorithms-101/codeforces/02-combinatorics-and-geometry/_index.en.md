@@ -24,7 +24,7 @@ A permutation is an arrangement of objects in a specific order. The number of po
 
 ### Combinations
 
-A combination is a selection of objects without considering the order. The number of combinations of `n` objects taken `r` at a time is given by the binomial coefficient: $$C(n, r) = n! / (r! * (n-r)!)$$.
+A combination is a selection of objects without considering the order. The number of combinations of `n` objects taken `r` at a time is given by the binomial coefficient: $$C(n, r) = n! / (r! * (n-r)!)$$
 
 Imagine you have a set of distinct objects, like fruits. Let's say you have a **banana**, an **apple**, and an **orange**. You want to make a fruit salad, but you only have **room for two fruits**. How many different fruit salads can you make?
 
