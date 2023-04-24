@@ -22,7 +22,7 @@ Armed with the video, I wanted to make it available on my website for others who
 
 A shortcode is a compact piece of code that enables users to embed various types of content, such as videos, into their website without having to write complex HTML or JavaScript. It would allow me to seamlessly integrate the video into my website, making it accessible to everyone.
 
-```hugo
+```go
 {{- $src := .Get "src" -}}
 {{- $title := .Get "title" -}}
 <video width="100%" controls>
@@ -34,12 +34,16 @@ A shortcode is a compact piece of code that enables users to embed various types
 {{ end }}
 ```
 
-This shortcode takes in two parameters, `src` and `title`. The `src` parameter specifies the video file's URL, while the "title" parameter is optional and displays a caption below the video. To use the shortcode, simply include the following code in your Hugo markdown file:
+This shortcode takes in two parameters, `src` and `title`. The `src` parameter specifies the video file's URL, while the `title` parameter is optional and displays a caption below the video. To use the shortcode, simply include the following code in your Hugo markdown file:
 
 ```
-{{< video src="path/to/your/video.mp4" title="Problem 131: Palindrome Partitioning" >}}
+{{ < video src="path/to/your/video.mp4" title="Problem 131: Palindrome Partitioning" >}}
 ```
 
 By creating and using this shortcode, I successfully embedded my video into my Hugo site, making it available for others to learn from.
 
 This experience has reaffirmed the importance of perseverance and innovation in overcoming challenges. Whether it's relearning an algorithm or finding creative ways to share knowledge, facing obstacles head-on is an essential part of personal and professional development.
+
+To try copy and use this shortcode from <mark>[**repo**](https://github.com/romankurnovskii/awesome-hugo-shortcodes/).</mark>
+
+Leetcode problem solution and debug video you can check on this <mark>[page](/en/tracks/algorithms-101/leetcode/medium/131/)</mark>.
