@@ -5,7 +5,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 2
+                    "timeTakenInMilliseconds": 3
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -2668,6 +2668,13 @@
             "lang": "en"
         },
         {
+            "uri": "/stories/_index",
+            "title": "Stories",
+            "content": "",
+            "tags": [],
+            "lang": "en"
+        },
+        {
             "uri": "/stories/001-rediscovering-backtracking-algo",
             "title": "Visualize Algorithms - Rediscovering Backtracking",
             "description": "Visualize Algorithms - Rediscovering Backtracking",
@@ -2782,7 +2789,7 @@
             "uri": "/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1807C",
             "title": "1807C - Find and Replace - 800",
             "description": "Codeforces 1807C - Find and Replace (greedy, implementation, strings, 800)",
-            "content": "\n1807C - Find and Replace (greedy, implementation, strings, 800)\n\nExplanation:\n\nSolution:\n\nt = int(input())\n\nfor _ in range(t):\n    n = int(input())\n    s = input()\n\n    reserved_binaries = {}\n    binary_values = []\n\n    for c in s:\n        val = reserved_binaries.get(c, None)\n\n        if not binary_values:\n            binary_values.append(1)\n\n        if val == binary_values[-1]:\n            print('NO')\n            break\n\n        if not val:\n            val = 1 if binary_values[-1] == 0 else 0\n        reserved_binaries[c] = val\n\n        binary_values.append(val)\n    else:\n        print('YES')\n",
+            "content": "\n1807C - Find and Replace (greedy, implementation, strings, 800)\n\nSolution:\n\nt = int(input())\n\nfor _ in range(t):\n    n = int(input())\n    s = input()\n\n    reserved_binaries = {}\n    binary_values = []\n\n    for c in s:\n        val = reserved_binaries.get(c, None)\n\n        if not binary_values:\n            binary_values.append(1)\n\n        if val == binary_values[-1]:\n            print('NO')\n            break\n\n        if not val:\n            val = 1 if binary_values[-1] == 0 else 0\n        reserved_binaries[c] = val\n\n        binary_values.append(val)\n    else:\n        print('YES')\n",
             "tags": [],
             "lang": "en"
         },
@@ -2804,9 +2811,9 @@
         },
         {
             "uri": "/tracks/algorithms-101/codeforces/02-combinatorics-and-geometry/1777A",
-            "title": "1772A - A+B? - 800",
-            "description": "Codeforces 1772A - A+B? (implementation, 800)",
-            "content": "\n1772A - A+B? (implementation, 800)\n\nSolution:\n\ndef solve():\n    a, b = input().split('+')\n    res = int(a) + int(b)\n    print(res)\n\nfor _ in range(int(input())):\n    solve()\n\n",
+            "title": "1777A - Everybody Likes Good Arrays! - 800",
+            "description": "Codeforces 1777A - Everybody Likes Good Arrays! (greedy, math, 800)",
+            "content": "\n1777A - Everybody Likes Good Arrays! (greedy, math, 800)\n\n\nStatement:\n\nYou have an array of numbers, and you want to make it \"good.\" A good array is one where every pair of adjacent numbers has different parity (one is even, and the other is odd).\nYou can do this by performing operations on pairs of adjacent numbers with the same parity (both even or both odd), and replacing them with their product.\n\nLogic:\n\nLoop through the array\nCheck the parity of the current element and the previous element\nIf the parity is the same, perform the operation and increment the operation counter\nRepeat steps 2 and 3 until the end of the array\nReturn the operation counter\n\nSolution:\n\ndef solve(n, ar):\n    res = 0\n    i = 0\n    while i < len(ar) - 1:\n        if ar[i] % 2 == ar[i + 1] % 2:\n            ar[i] = ar[i] * ar[i + 1]\n            del ar[i + 1]\n            res += 1\n        else:\n            i += 1\n    return res\n\n\nOptimized Solution:\n\nCheck how many times the parity changes in the given array.\nThe number of operations needed is the difference between the original length of the array and the count of parity changes.\n\ndef solve():\n    n = int(input())\n    ar = list(map(int, input().split()))\n\nCount the number of times the parity changes in the array\n    last_parity = None\n    parity_count = 0\n    for x in ar:\n        if x % 2 != last_parity:\n            parity_count += 1\n            last_parity = x % 2\n\nThe result is the difference between the original length and the count of parity changes\n    res = n - parity_count\n    print(res)\n\nfor _ in range(int(input())):\n    solve()\n\n",
             "tags": [],
             "lang": "en"
         },
