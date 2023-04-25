@@ -2683,6 +2683,19 @@
             "lang": "en"
         },
         {
+            "uri": "/stories/002-openvpn-aws-ec2-setup",
+            "title": "Setup OpenVPN Server on AWS EC2 Ubuntu",
+            "description": "Setup OpenVPN on AWS EC2",
+            "content": "\nToday, I embarked on a journey to create an accessible, affordable, and easy-to-use VPN solution that anyone can set up on their devices using AWS.\n\nFinding a reasonably priced solution was critical. I opted for Amazon's t3a.nano ARM Ubuntu image, which costs $0.0047/hour  $3.8/month.\n\nVarious Amazon EC2 instances and their prices are listed on Amazon's On-Demand Pricing page.\n\nHere is the list of all Ubuntu AMI images to identify the appropriate image for the project. The selected image combined with the CloudFormation template, which was inspired by the AWS CloudFormation General Reference, provides a seamless and consistent user experience.\n\nNow it takes 2-3 minutes to create OpenVPN server using this repo.\n",
+            "tags": [
+                "AWS",
+                "EC2",
+                "CloudFormation",
+                "OpenVPN"
+            ],
+            "lang": "en"
+        },
+        {
             "uri": "/tracks/_index",
             "title": "Roadmaps",
             "content": "\nList style view",
