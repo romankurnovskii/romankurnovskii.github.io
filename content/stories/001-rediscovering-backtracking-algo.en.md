@@ -2,7 +2,7 @@
 title: Visualize Algorithms - Rediscovering Backtracking
 seoTitle: Visualize Algorithms - Rediscovering Backtracking
 description: Visualize Algorithms - Rediscovering Backtracking
-toc: false
+toc: true
 tags: []
 series: []
 categories: []
