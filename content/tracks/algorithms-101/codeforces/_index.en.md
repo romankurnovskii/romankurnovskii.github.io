@@ -1,5 +1,6 @@
 ---
 title: Codeforces
+seoTitle: Codeforces Slutions
 description: Codeforces contests solutions
 toc: true
 tags: []

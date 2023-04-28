@@ -29,13 +29,13 @@ weight: 10
 
 ## Stage 2: Combinatorics and Geometry
 
-1777A - Everybody Likes Good Arrays! (greedy, math, 800)
-1787A - Exponential Equation (constructive algorithms, math, 800)
-1777B - Emordnilap (combinatorics, greedy, math, 900)
-1776L - Controllers (binary search, math, 1500)
-1776A - Walking Boy (greedy, 800)
-1774A - Add Plus Minus Sign (constructive algorithms, math, 800)
-1773F - Football (constructive algorithms, 800)
+11. 1777A - Everybody Likes Good Arrays! (greedy, math, 800)
+11. 1787A - Exponential Equation (constructive algorithms, math, 800)
+11. 1777B - Emordnilap (combinatorics, greedy, math, 900)
+12. 1773F - Football (constructive algorithms, 800)
+13. 1774A - Add Plus Minus Sign (constructive algorithms, math, 800)
+14. 1776A - Walking Boy (greedy, 800)
+15. 1776L - Controllers (binary search, math, 1500)
 
 <!-- 
 
