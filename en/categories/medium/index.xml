@@ -146,4 +146,5 @@ However, this approach would be inefficient, as there would be an exponential nu
 Approach:
 Using Backtracking.
 Logic:
-Define a helper function, is_palindrome, to check if a given substring is a palindrome. Define the backtrack function to find all palindrome partitions recursively. This function will take the current position in the string and the current partition as input arguments.</description></item></channel></rss>
+Define a helper function, is_palindrome, to check if a given substring is a palindrome. Define the backtrack function to find all palindrome partitions recursively. This function will take the current position in the string and the current partition as input arguments.</description></item><item><title>8. String to Integer (atoi)</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/other/8/</link><pubDate>Sat, 29 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/other/8/</guid><description>LeetCode problem
+// .js /** * @param {string} s * @return {number} */ var myAtoi = function(s) { let res = 0; let num = parseInt(s); if(num &amp;gt;= 2147483648){ res = 2147483647; } else if (num &amp;lt;= -2147483648){ res = -2147483648; } else if (isNaN(num)) { res = 0; } else { res = num; } return res; };</description></item></channel></rss>

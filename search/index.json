@@ -3402,6 +3402,14 @@
             "lang": "en"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/other/8",
+            "title": "8. String to Integer (atoi)",
+            "description": "8. String to Integer (atoi)",
+            "content": "\n\nLeetCode problem\n\n\n// .js\n/**\n @param {string} s\n @return {number}\n */\nvar myAtoi = function(s) {\n    let res = 0;\n    let num = parseInt(s);\n    if(num >= 2147483648){\n        res = 2147483647;\n    } else if (num <= -2147483648){\n        res = -2147483648;\n    } else if (isNaN(num)) {\n        res = 0;\n    } else {\n        res = num;\n    }\n\n    return res;\n};\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
             "uri": "/tracks/algorithms-101/plan",
             "title": "Plan",
             "description": null,
