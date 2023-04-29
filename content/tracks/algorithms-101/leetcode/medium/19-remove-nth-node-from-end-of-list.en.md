@@ -30,11 +30,6 @@ Given the 'head' of a linked list, remove the 'nth' node from the end of the lis
     Output: []
 
 
-
-## First accepted
-
-[Create Linked List](../../helpers/#create-linked-list)
-
 **Idea:**
 
 - Two pointers.

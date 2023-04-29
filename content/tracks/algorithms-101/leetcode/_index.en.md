@@ -16,6 +16,13 @@ published: true
 
 [Python template](../#template)
 
+## Prepare
+
+Use these VSCode extensions to debug/submit:
+
+- [LeetCode](https://marketplace.visualstudio.com/items?itemName=LeetCode.vscode-leetcode)
+- [Debug LeetCode](https://marketplace.visualstudio.com/items?itemName=wangtao0101.debug-leetcode)
+
 ## Tips I learned
 
 - Don't code before "design" and understand the solution algorithm

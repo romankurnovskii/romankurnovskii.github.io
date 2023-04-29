@@ -1,6 +1,6 @@
 ---
 title: Plan
-seoTitle: Codeforces problemset plan
+seoTitle: LeetCode problemset learning plan
 description:
 tags: []
 categories: []
