@@ -2,7 +2,6 @@
 Given the &amp;lsquo;head&amp;rsquo; of a linked list, remove the &amp;rsquo;nth&amp;rsquo; node from the end of the list and return its head.
 Example 1:
 Input: head = [1,2,3,4,5], n = 2 Output: [1,2,3,5] Example 2:
-Input: head = [1], n = 1 Output: [] First accepted Create Linked List
-Idea:
+Input: head = [1], n = 1 Output: [] Idea:
 Two pointers. Second pointer starts from nth position. Run while second pointer exist. First version:
-# Definition for singly-linked list. # class ListNode: # def __init__(self, val=0, next=None): # self.</description></item></channel></rss>
+# Definition for singly-linked list. # class ListNode: # def __init__(self, val=0, next=None): # self.val = val # self.</description></item></channel></rss>
