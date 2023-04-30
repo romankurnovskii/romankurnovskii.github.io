@@ -21,6 +21,7 @@ draft: false
 - [openai answers from file](https://github.com/openai/openai-cookbook/tree/main/apps/file-q-and-a)
 - [AI-powered video summaries](https://www.summarize.tech/)
 - [Chrome extension](https://www.plasmo.com/)
+- [Free AI-generated Stock Images of People](https://cgfaces.com/en)
 
 
 ## Soft/Architecture
