@@ -16,10 +16,12 @@ weight: 2
 ## Мультимедиа-устройства
 
 ### Начало работы с мультимедийными устройствами
+
 При web-разработке WebRTC-стандарт предоставляет API для доступа к камерам и микрофонам, подключенным к компьютеру или смартфону. Эти устройства обычно называются мультимедийными устройствами, и к ним можно получить доступ с помощью Java-скрипта через объект navigator.mediaDevices, который реализует интерфейс MediaDevices. С помощью этого объекта мы можем просмотреть все подключенные устройства, отслеживать изменения статуса устройства (когда устройство подключается или отключается) и открывать устройство для извлечения мультимедийного потока (см. ниже).
 Чаще всего для этого используют функцию getUserMedia(), которая возвращает промис, который будет преобразован в MediaStream для соответствующих мультимедийных устройств. Эта функция принимает один объект MediaStreamConstraints, который определяет имеющиеся требования. Например, чтобы просто открыть микрофон и камеру по умолчанию, мы должны сделать следующее:
 
 _Через промисы:_
+
 ```javascript
 const constraints = {
     'video': true,
@@ -35,6 +37,7 @@ navigator.mediaDevices.getUserMedia(constraints)
 ```
 
 _Через async/await_
+
 ```javascript
 const openMediaDevices = async (constraints) => {
     return await navigator.mediaDevices.getUserMedia(constraints);
@@ -49,7 +52,7 @@ try {
 ```
 
 Обращение к `getUserMedia()` запускает запрос на разрешение. Если пользователь одобряет запрос, промис разрешает MediaStream, содержащий одну видео и одну аудио дорожку. Если запрос отклонен, появляется PermissionDeniedError. Если же нет подключенных устройств, появляется NotFoundError.
-Полный список API для интерфейса MediaDevices доступен по ссылке https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices 
+Полный список API для интерфейса MediaDevices доступен по ссылке <https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices>
 
 ## Обращение к мультимедиа-устройствам
 
@@ -70,6 +73,7 @@ getConnectedDevices('videoinput', cameras => console.log('Cameras found', camera
 ```
 
 _через async/await_
+
 ```javascript
 async function getConnectedDevices(type) {
     const devices = await navigator.mediaDevices.enumerateDevices();
@@ -144,9 +148,10 @@ if (cameras && cameras.length > 0) {
 }
 ```
 
-Полную документацию для интерфейса MediaStreamConstraints можно найти по ссылке: https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamConstraints
+Полную документацию для интерфейса MediaStreamConstraints можно найти по ссылке: <https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamConstraints>
 
 ## Локальное воспроизведение
+
 Как только мультимедиа-устройство открыто и есть доступный MediaStream, мы можем назначить его для его видео- или аудио-элемента локальное воспроизведение потока.
 
 ```javascript

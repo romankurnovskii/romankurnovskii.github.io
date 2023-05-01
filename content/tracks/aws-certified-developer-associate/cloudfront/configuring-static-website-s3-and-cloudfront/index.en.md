@@ -27,8 +27,8 @@ The Amazon S3 bucket creation form will load.
 
 3\. Under General configuration, enter the following:
 
-* **Bucket name**: Enter _calabs-bucket-&lt;UniqueNumber&gt; _(Append a unique number to the end of calabs-bucket-)
-* **Region**: Ensure **US West (Oregon) us-west-2** is selected
+- **Bucket name**: Enter _calabs-bucket-&lt;UniqueNumber&gt;_(Append a unique number to the end of calabs-bucket-)
+- **Region**: Ensure **US West (Oregon) us-west-2** is selected
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-a1eb5e1b-1f7a-4f1e-b59d-7c653f9c234f.png)
 
@@ -36,18 +36,18 @@ You have added a unique number to the bucket name because Amazon S3 bucket names
 
 A bucket name must also be DNS compliant. Here are some of the rules it must adhere to:
 
-* They must be at least 3 and no more than 63 characters long.
-* They may contain lowercase letters, numbers, periods, and/or hyphens.
-* Each label must start and end with a lowercase letter or a number.
-* They cannot be formatted as an IP address (for example, 192.168.1.1).
+- They must be at least 3 and no more than 63 characters long.
+- They may contain lowercase letters, numbers, periods, and/or hyphens.
+- Each label must start and end with a lowercase letter or a number.
+- They cannot be formatted as an IP address (for example, 192.168.1.1).
 
 The following are examples of valid bucket names:
 
-* calabs-bucket-1
-* cloudacademybucket
-* cloudacademy.bucket
-* calabs.1
-* ca-labs-bucket
+- calabs-bucket-1
+- cloudacademybucket
+- cloudacademy.bucket
+- calabs.1
+- ca-labs-bucket
 
 Make a note of the name of your bucket, you will use it later.
 
@@ -87,10 +87,10 @@ You will see an overview of your Amazon S3 bucket, and a row of tabs with **Obje
 
 The **Properties** tab allows you to enable and disable various Amazon S3 bucket features, including:
 
-* **Bucket Versioning**: Old versions can be kept when objects are updated
-* **Default encryption**: A bucket can be configured to encrypt all objects by default
-* **Server access logging**: Web-server style access logs can be enabled
-* **Requester pays**: When enabled, the entity downloading data from this bucket will pay data transfer costs incurred
+- **Bucket Versioning**: Old versions can be kept when objects are updated
+- **Default encryption**: A bucket can be configured to encrypt all objects by default
+- **Server access logging**: Web-server style access logs can be enabled
+- **Requester pays**: When enabled, the entity downloading data from this bucket will pay data transfer costs incurred
 
 10\. Scroll to the bottom of the **Properties** page and in the **Static website hosting** section, on the right, click **Edit**:
 
@@ -106,8 +106,8 @@ The form will expand to reveal more configuration options.
 
 12\. Enter the following, leaving all other fields at their defaults:
 
-* **Index document**: Enter _index.html_
-* **Error document**: Enter _error/index.html_
+- **Index document**: Enter _index.html_
+- **Error document**: Enter _error/index.html_
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-9a026970-552f-4048-9122-f96cec7b1e5b.png)
 
@@ -220,7 +220,6 @@ This website is being served by your Amazon S3 bucket.
 
 ## Creating an Amazon CloudFront Distribution for the Static Website
 
-
 1\. In the AWS Management Console search bar, enter _CloudFront_, and click the **CloudFront** result under **Services**:
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/blobid0-1cbf7c5b-ada2-4169-a9f1-08cf0fb62d6d.png)
@@ -235,7 +234,7 @@ The Amazon CloudFront console will load.
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/blobid1-a65ddf79-4df6-479a-a895-9da323584ca1.png)
 
-4\. Scroll down to the** Settings** settings, in the **Default Root Object** text-box, enter _index.html_:
+4\. Scroll down to the**Settings** settings, in the **Default Root Object** text-box, enter _index.html_:
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-47adcf25-c8bb-4839-9ca0-7085917f8bf2.png)
 
@@ -253,7 +252,7 @@ You will see the **Last Modified** of your distribution is **Deploying**:
 
 It can take up to 15 minutes to deploy a new Amazon CloudFront distribution. Once complete, the **Status** will change to **Enabled**.
 
-There are two main types of origin that Amazon CloudFront supports, Amazon S3 buckets, and custom origins. A custom origin could be a website being served by an EC2 instance, or it could be a web server outside of AWS. To learn more while your CloudFront distribution is deploying, visit the AWS [Using Amazon S3 Origins, MediaPackage Channels, and Custom Origins for Web Distributions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistS3AndCustomOrigins.html) page. 
+There are two main types of origin that Amazon CloudFront supports, Amazon S3 buckets, and custom origins. A custom origin could be a website being served by an EC2 instance, or it could be a web server outside of AWS. To learn more while your CloudFront distribution is deploying, visit the AWS [Using Amazon S3 Origins, MediaPackage Channels, and Custom Origins for Web Distributions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistS3AndCustomOrigins.html) page.
 
 Once your deployment is complete, continue with the instructions.
 
@@ -268,7 +267,6 @@ _Note_: Your **ID** will be different.
 7\. Copy the value of the **Distribution Domain Name** field:
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/blobid5-21cef212-409a-439f-967e-b7fbea1196a4.png)
-
 
 8\. Paste the domain name into the address bar of a new browser tab.
 

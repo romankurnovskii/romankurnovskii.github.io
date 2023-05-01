@@ -49,15 +49,18 @@ Same type services: Elastic Container Service (ECS), Elastic Container Registry 
 ## Practice
 
 This commands returns the command to execute to be able to login to ECR:
+
 - Login
   - **get-login-password:**`aws ecr get-login-password --region region | docker login --username AWS --password-stdin aws_account_id.dkr.ecr.region.amazonaws.com`
 - Create a repository:
+
     ```bash
     aws ecr create-repository \
         --repository-name hello-repository \
         --image-scanning-configuration scanOnPush=true \
         --region region
     ```
+
 - Tag image
   - `docker tag hello-world:latest aws_account_id.dkr.ecr.region.amazonaws.com/hello-repository`
 - Push
@@ -65,25 +68,30 @@ This commands returns the command to execute to be able to login to ECR:
 - Pull
   - `docker pull aws_account_id.dkr.ecr.region.amazonaws.com/hello-repository:latest`
 - Delete an image
+
     ```
     aws ecr batch-delete-image \
         --repository-name hello-repository \
         --image-ids imageTag=latest \
         --region region
     ```
+
 - Delete a repository
+
     ```
     aws ecr delete-repository \
       --repository-name hello-repository \
       --force \
       --region region
     ```
-    
-Labs: 
+
+Labs:
+
 - [Use AWS Fargate for Serverless Deployment of Container Applications](https://cloudacademy.com/lab/use-aws-fargate-serverless-deployment-container-applications/)
 - [Quick start: Publishing to Amazon ECR Public using the AWS CLI](https://docs.aws.amazon.com/AmazonECR/latest/public/getting-started-cli.html)
 
 {{< youtube id="tANNsV6bGbQ" >}}
 
-Notes: 
-- If you get a **503 Service Temporarily Unavailable** error, try again after 30 seconds to let the load balancer finish adding the task to the target group. 
+Notes:
+
+- If you get a **503 Service Temporarily Unavailable** error, try again after 30 seconds to let the load balancer finish adding the task to the target group.

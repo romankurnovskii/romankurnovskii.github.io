@@ -33,7 +33,6 @@ Type: Key-value
 
 Ecommerce Websites, gaming websites etc.
 
-
 ## Digest
 
 - Global tables are useful for having multiple copies of tables in different region.
@@ -56,8 +55,8 @@ Ecommerce Websites, gaming websites etc.
   - Eventual and strongly consistent
   - Should be created when creating a table
 - Calculate RCU (read capacity unit) & WCU (write capacity unit):
-    - 1 RCU = 2 eventual consistent read of 4 KB, 1 strongly consistent read of 4 KB
-    - 1 WCU = 1 write per second for data for an item as large as 1 KB.
+  - 1 RCU = 2 eventual consistent read of 4 KB, 1 strongly consistent read of 4 KB
+  - 1 WCU = 1 write per second for data for an item as large as 1 KB.
 - DynamoDB Streams is an optional feature that captures data modification events in DynamoDB tables. The data about these events appears in the stream in near real time and in the order that the events occurred.
 - Queries or scan on GSI consume [RCU](https://aws.amazon.com/dynamodb/pricing/provisioned/) on index **not** on table
 - Consistency:
@@ -66,10 +65,9 @@ Ecommerce Websites, gaming websites etc.
   - Provisioned throughput - ProvisionedThroughputExceededException
   - Reserved capacity, On-demand, Burst. Adaptive
   - On-demand backups, point-in-time recovery
-- Best practices when using **Scan** in dynamodb - **Use parallel scan** 
+- Best practices when using **Scan** in dynamodb - **Use parallel scan**
   - to control the amount of data returned per request use the **Limit parameter**. This can help prevent situations where one worker consumes all the provisioned throuahput at the expense of all other workers
   - DynamoDB does not support item locking, and conditional writes are perfect for implementing optimistic concurrency.
-
 
 ### DynamoDB vs Aurora
 
@@ -86,10 +84,9 @@ Ecommerce Websites, gaming websites etc.
  | It supports replication methods                                                                                                                                | It supports only one replication method – Master-slave replication        |
  | It does not offer API for user-defined Map/Reduce methods. But maybe implemented via Amazon Elastic MapReduce                                                  | It does not offer API for user-defined Map/Reduce methods                 |
 
-
 DynamoDB supports different **consistency models** when performing reads:
 
-- Eventually, [consistent reads](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html) may not always reflect the latest data if there was recently write activity on the table. Since the data in this scenario rarely changes, eventually consistent reads, which are cheaper than strongly consistent reads, can be tolerated. 
+- Eventually, [consistent reads](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html) may not always reflect the latest data if there was recently write activity on the table. Since the data in this scenario rarely changes, eventually consistent reads, which are cheaper than strongly consistent reads, can be tolerated.
 
 ![DynamoDB Partition Key](https://d2908q01vomqb2.cloudfront.net/887309d048beef83ad3eabf2a79a64a389ab1c9f/2018/09/10/dynamodb-partition-key-1.gif)
 
@@ -121,13 +118,13 @@ DynamoDB supports different **consistency models** when performing reads:
 <summary>Explanation</summary>
 <div>
 
-[AWS AppSync](https://aws.amazon.com/appsync/) simplifies application development by letting users create a flexible API to securely access, manipulate, and combine data from one or more data sources. AWS AppSync is a managed service that uses GraphQL to make it easy for applications to get the exact data they need. 
+[AWS AppSync](https://aws.amazon.com/appsync/) simplifies application development by letting users create a flexible API to securely access, manipulate, and combine data from one or more data sources. AWS AppSync is a managed service that uses GraphQL to make it easy for applications to get the exact data they need.
 
-AWS AppSync allows users to build scalable applications, including those requiring [real-time updates](https://docs.aws.amazon.com/appsync/latest/devguide/real-time-data.html), on a range of data sources, including Amazon DynamoDB. In [Amazon API Gateway](../api-gateway), users can [create a WebSocket API](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html) as a stateful frontend for an AWS service (such as AWS Lambda or DynamoDB) or for an HTTP endpoint. 
+AWS AppSync allows users to build scalable applications, including those requiring [real-time updates](https://docs.aws.amazon.com/appsync/latest/devguide/real-time-data.html), on a range of data sources, including Amazon DynamoDB. In [Amazon API Gateway](../api-gateway), users can [create a WebSocket API](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html) as a stateful frontend for an AWS service (such as AWS Lambda or DynamoDB) or for an HTTP endpoint.
 
 The WebSocket API invokes the backend based on the content of the messages it receives from client applications. Unlike a REST API, which receives and responds to requests, a WebSocket API supports two-way communication between client applications and the backend.
 
-<mark style="color:white">1, 2</mark> 
+<mark style="color:white">1, 2</mark>
 
 </div>
 </details>

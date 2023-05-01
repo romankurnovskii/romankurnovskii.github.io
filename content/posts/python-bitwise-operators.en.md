@@ -2,27 +2,26 @@
 title: Python bitwise operators
 description: Python bitwise operators
 toc: true
-tags: [Python]
+tags: [Python, Programming]
 series: []
-categories: [programming, Python]
+categories: [Programming, Python]
 date: 2022-11-20
-featuredImage: https://files.realpython.com/media/rshift.9d585c1c838e.gif
+lastMod: 2023-06-17
+featuredImage: https://picsum.photos/700/213?grayscale
 ---
 
 ## << Left Shift
 
 Moves the bits of its first operand to the left by the number of places specified in its second operand.
 
-![Left Shift](https://files.realpython.com/media/lshift.e06f1509d89f.gif)
+{{< img src="<https://files.realpython.com/media/lshift.e06f1509d89f.gif>" height="210px" float="left">}}
+
+**Formula:** $a << n = a * 2^n$
 
 - Shifting a **single bit** to the left by one place **doubles its value**.
 - Shifting to **two places** to the left by one place **quadruple its value**.
 
-$
-a << n = a * 2^n
-$
-
-```
+```sh
 >>> 100 << 1
 200
 >>> 100 << 2
@@ -36,9 +35,11 @@ $
 - The rightmost bits always get dropped.
 - Every time you shift a bit to the right by one position, you halve its underlying value.
 
-![Right Shift](https://files.realpython.com/media/rshift.9d585c1c838e.gif)
+{{< img src="<https://files.realpython.com/media/rshift.9d585c1c838e.gif>" height="180px" float="right">}}
 
-```
+**Formula:** $a >> n = [a/2^n]$
+
+```sh
 >>> 100 >> 1
 50
 >>> 100 >> 2
@@ -49,13 +50,9 @@ $
 0
 ```
 
-$
-a >> n = [a/2^n]
-$
-
 - the right shift operator automatically floors the result.
 
-```
+```sh
 >>> 5 >> 1  # Bitwise right shift
 2
 >>> 5 // 2  # Floor division (integer division)
@@ -66,7 +63,7 @@ $
 -1
 ```
 
-## &
+## & Operator
 
 ```
 0 & 0 = 0
@@ -81,7 +78,6 @@ For numbers:
 
 1. Covert to binary
 
-
     `27 -> 11011`
     `23 -> 10111`
 
@@ -91,6 +87,6 @@ For numbers:
 
     `27 & 23 = 19`
 
-
 ## Resources
-- https://realpython.com/python-bitwise-operators/
+
+- <https://realpython.com/python-bitwise-operators/>

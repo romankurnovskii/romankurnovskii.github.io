@@ -23,7 +23,6 @@ social:
 <!-- 
 ## Self Introduction
 
-
 Cras ex dui, tristique a libero eget, consectetur semper ligula. Nunc augue arcu, malesuada 
 
 Aliquam pretium diam eget leo feugiat finibus. Donec malesuada commodo ipsum. Aenean a massa 
@@ -32,7 +31,6 @@ Aliquam pretium diam eget leo feugiat finibus. Donec malesuada commodo ipsum. Ae
 
 Nunc pellentesque vitae:
 - Morbi accumsan nibh efficitur diam molestie, non dignissim diam facilisis.
-
 
 Donec mollis sollicitudin:
 - Nunc dictum purus ornare purus consectetur, eu pellentesque massa ullamcorper.

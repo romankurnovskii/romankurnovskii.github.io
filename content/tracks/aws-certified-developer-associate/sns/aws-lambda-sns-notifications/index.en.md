@@ -29,7 +29,7 @@ If you can't see the left-hand menu, to expand it, click the following:
 
 4. In the **Create topic** form, ensure to have selected the **Standard** type, and enter the following values accepting the defaults for values not specified:
 
-* **Name:** _lab-topic_
+- **Name:** _lab-topic_
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-99dfb27f-b912-4fc7-a825-a5e6aacc1c8e.png)
 
@@ -108,10 +108,10 @@ The function code you entered processes a message from SNS. The code uploads 
 
 You can use a Lambda function to do many different things. Some examples include:
 
-* Process web-requests
-* Put a custom metric into AWS CloudWatch
-* Add or update a record in a database
-* Post a web-request to an external service
+- Process web-requests
+- Put a custom metric into AWS CloudWatch
+- Add or update a record in a database
+- Post a web-request to an external service
 
 3. To save your changes and deploy your function, at the top of the **Code source** section, click **Deploy**:
 

@@ -2,12 +2,12 @@
 title: JavaScript code snippets
 description: JavaScript code snippets
 toc: true
-categories: [programming, JavaScript, CheatSheet]
+categories: [Programming, JavaScript, CheatSheet]
 series: [CheatSheet]
-tags:  [js, javascript, typescript]
+tags:  [JavaScript, TypeScript]
 date: 2022-09-15
 lastmod: 2023-02-21
-featuredImage: https://picsum.photos/700/238
+featuredImage: https://picsum.photos/700/238?grayscale
 draft: false
 ---
 
@@ -122,7 +122,6 @@ const sortedItems = allItems.sort((itemA, itemB) =>
         compareDates(itemA.date, itemB.date)
     );
 ```
-
 
 ## Login
 
@@ -244,6 +243,18 @@ const Config: ConfigOptions = {
 };
 
 export default Config;
+```
+
+## Data Structures
+
+```js
+export const shuffleArray = <T>(array: T[]): T[] => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
 ```
 
 ## Cheat Sheet
@@ -860,7 +871,6 @@ const add = (firstNumber, secondNumber) => {
 
 ## Cheat Sheet Typescript
 
-
 ```typescript
 // There are 3 basic types in TypeScript
 let isDone: boolean = false;
@@ -1133,4 +1143,4 @@ foo.baz = 'hello world'
 ## Resources
 
 - [react cheatsheet](https://devhints.io/react)
-- https://learnxinyminutes.com/docs/typescript/
+- <https://learnxinyminutes.com/docs/typescript/>

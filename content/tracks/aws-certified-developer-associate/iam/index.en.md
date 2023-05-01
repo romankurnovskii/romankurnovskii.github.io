@@ -17,15 +17,15 @@ IAM - AWS Identity and Access Management
 - [AWS IAM](https://aws.amazon.com/iam/)
 - [AWS IAM User Guide](https://docs.aws.amazon.com/iam/?id=docs_gateway)
 
-AWS Identity and Access Management (IAM) allows to securely control user access to AWS services and resources. 
+AWS Identity and Access Management (IAM) allows to securely control user access to AWS services and resources.
 
-Designed for organizations with **multiple users or systems** that use AWS products such as Amazon EC2, Amazon RDS, and AWS Management Console. 
+Designed for organizations with **multiple users or systems** that use AWS products such as Amazon EC2, Amazon RDS, and AWS Management Console.
 
 With IAM, you can centrally manage users, security credentials such as access keys, and permissions that control user access to AWS resources.
 
 ![Amazon IAM Flow](https://d1.awsstatic.com/product-marketing/IAM/iam-how-it-works-diagram.04a2c4e4a1e8848155840676fa97ff2146d19012.png)
 
-There are three ways IAM authenticates a principal: 
+There are three ways IAM authenticates a principal:
 
 - User Name/Password
 - Access Key
@@ -50,8 +50,8 @@ There are three ways IAM authenticates a principal:
 - Create and customize [password rotation policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_account-policy.html)
 - Policies can be attached to users, groups and roles. Use AWS defined policies, assign permissions wherever possible. Policy is defined in JSON format and contains version, statements, - effect, action, resource, principal, and condition.
 - STS [Security Token Service](https://docs.aws.amazon.com/STS/latest/APIReference/welcome.html) provides temporary security credentials to the trusted users. STS is global and there is no charge to use it.
-- Digest: https://tutorialsdojo.com/aws-identity-and-access-management-iam/
-- IAM best practices - Question might ask you to identify best practices among the given choices. https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html
+- Digest: <https://tutorialsdojo.com/aws-identity-and-access-management-iam/>
+- IAM best practices - Question might ask you to identify best practices among the given choices. <https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html>
 - Difference between when to use Role and User.
 - IAM Policy Simulator - service for testing and troubleshooting IAM Policies. [Details](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html)
 
@@ -88,21 +88,26 @@ Type in user name (login)
 ![](./img/05.png)
 
 ### Permissions
+
 Add user to the group
 ![](./img/06.png)
 
 ### Tags
+
 Skip section or put tags. It is useful and popular to set tags for resources in companies with a lot of connected AWS resources
 
 ### Login/Password
+
 At the last step, download the `.csv` file with login, keys and password. You will need the password later to log in as this user.
 On this page there is a link to log in. We will use it in the next step
 ![](./img/07.png)
 
 ### Logging in as a new user
+
 ![](./img/08.png)
 
-#### Checking privileges.
+#### Checking privileges
+
 This user has access to view EC2 instances. Let's check whether or not the S3 garbage cans have access.
 
 Let's try to create an S3 bucket
@@ -110,7 +115,6 @@ Let's try to create an S3 bucket
 
 After trying to create a recycle bucket, we get a window indicating no permissions
 ![](./img/10.png)
-
 
 ## Questions
 
@@ -130,7 +134,7 @@ After trying to create a recycle bucket, we get a window indicating no permissio
 <div>
 <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials" target="_blank">lock-away-credentials</a>
 
-<mark style="color:white">1</mark> 
+<mark style="color:white">1</mark>
 
 </div>
 </details>
@@ -152,11 +156,10 @@ After trying to create a recycle bucket, we get a window indicating no permissio
 <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html" target="_blank">https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html</a>
 <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html" target="_blank">https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html</a>
 
-<mark style="color:white">1</mark> 
+<mark style="color:white">1</mark>
 
 </div>
 </details>
-
 
 ### Q3
 
@@ -173,11 +176,11 @@ After trying to create a recycle bucket, we get a window indicating no permissio
 <summary>Explanation</summary>
 <div>
 
-https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html
+<https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html>
 
-(AssumeRoleWithWebIdentity)[https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html] - does not support MFA
+[AssumeRoleWithWebIdentity](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html) - does not support MFA
 
-<mark style="color:white">3</mark> 
+<mark style="color:white">3</mark>
 </div>
 </details>
 
@@ -198,17 +201,17 @@ https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html
 <summary>Explanation</summary>
 <div>
 
-AWS managed policies for job functions are designed to closely align to common job functions in the IT industry. You can use these policies to easily grant the permissions needed to carry out the tasks expected of someone in a specific job function. 
+AWS managed policies for job functions are designed to closely align to common job functions in the IT industry. You can use these policies to easily grant the permissions needed to carry out the tasks expected of someone in a specific job function.
 
 These policies consolidate permissions for many services into a single policy that’s easier to work with than having permissions scattered across many policies.
 
-For Developer Power Users, you can use the AWS managed policy name: PowerUserAccess if you have users who perform application development tasks. This policy will enable them to create and configure resources and services that support AWS aware application development. 
+For Developer Power Users, you can use the AWS managed policy name: PowerUserAccess if you have users who perform application development tasks. This policy will enable them to create and configure resources and services that support AWS aware application development.
 
-The first statement of this policy uses the NotAction element to allow all actions for all AWS services and for all resources except AWS Identity and Access Management and AWS Organizations. The second statement grants IAM permissions to create a service-linked role. 
+The first statement of this policy uses the NotAction element to allow all actions for all AWS services and for all resources except AWS Identity and Access Management and AWS Organizations. The second statement grants IAM permissions to create a service-linked role.
 
 This is required by some services that must access resources in another service, such as an Amazon S3 bucket. It also grants Organizations permissions to view information about the user’s organization, including the master account email and organization limitations.
 
-<mark style="color:white">1</mark> 
+<mark style="color:white">1</mark>
 </div>
 </details>
 
@@ -242,12 +245,12 @@ You can use the consolidated billing feature in AWS Organizations to consolidate
 
 Use policies to grant permissions to perform an operation in AWS. When you use an action in a policy, you usually allow or deny access to the API operation or CLI command with the same name. However, in some cases, a single action controls access to more than one operation.
 
-<mark style="color:white">4</mark> 
+<mark style="color:white">4</mark>
 </div>
 </details>
 
 ## Resources
- 
+
 - [Security best practices in IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
 - [IAM Hands-On Lab](https://catalog.us-east-1.prod.workshops.aws/workshops/8efd4edb-2b91-49fd-b1b8-3e3b5e71aa03/en-US/iam)
 - [IAM Workshops](https://workshops.aws/categories/IAM)
@@ -256,4 +259,4 @@ Use policies to grant permissions to perform an operation in AWS. When you use a
 
 ### Community posts
 
-- https://dev.to/romankurnovskii/aws-iam-cheet-sheet-3if4
+- <https://dev.to/romankurnovskii/aws-iam-cheet-sheet-3if4>

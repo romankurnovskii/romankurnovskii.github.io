@@ -13,11 +13,13 @@ authors: [roman-kurnovskii]
 ## Кратко
 
 Создать:
+
 ```bash
 tar cf archive.tar directory
 ```
 
 Распаковать:
+
 ```bash
 tar xf archive.tar
  ```

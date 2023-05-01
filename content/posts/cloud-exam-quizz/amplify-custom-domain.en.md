@@ -13,7 +13,7 @@ authors: [roman-kurnovskii]
 
 You can use any custom domain with Amplify and no need register it with [AWS Route53](/en/categories/route-53/).
 
-I am adding domain at the *setup app stage*. Another way is from console. 
+I am adding domain at the *setup app stage*. Another way is from console.
 
 1. Click **Domain management**.
 
@@ -59,7 +59,7 @@ or
 
 SSL configuration passed, waiting up to 30 min for domain activation
 
-13.  Once done we can check url: https://cloud-exam-prepare.com
+13. Once done we can check url: <https://cloud-exam-prepare.com>
 
 ![amplify-add-custom-domain](../img/cloud-exam-prepare-url.png)
 
@@ -67,4 +67,4 @@ Check url: [cloud-exam-prepare.com](https://cloud-exam-prepare.com/)
 
 **Resources:**
 
-- https://docs.aws.amazon.com/amplify/latest/userguide/to-add-a-custom-domain-managed-by-a-third-party-dns-provider.html
+- <https://docs.aws.amazon.com/amplify/latest/userguide/to-add-a-custom-domain-managed-by-a-third-party-dns-provider.html>

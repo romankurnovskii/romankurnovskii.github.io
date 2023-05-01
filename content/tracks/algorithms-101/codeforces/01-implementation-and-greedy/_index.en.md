@@ -14,7 +14,7 @@ weight: 40
 
 ## Implementation
 
-Implementation problems are typically straightforward and involve writing code to solve a problem based on the given description. There are no specific techniques for implementation problems, as they can vary widely. 
+Implementation problems are typically straightforward and involve writing code to solve a problem based on the given description. There are no specific techniques for implementation problems, as they can vary widely.
 
 However, the following tips can help you tackle these problems:
 

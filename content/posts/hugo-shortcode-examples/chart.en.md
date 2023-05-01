@@ -15,7 +15,6 @@ Display [Chart.js](https://www.chartjs.org/) diagrams/blocks
 
 [Sources](https://github.com/romankurnovskii/awesome-hugo-shortcodes/tree/main/shortcodes/chart)
 
-
 {{< chart >}}
 {
     type: 'bar',
@@ -56,9 +55,6 @@ Display [Chart.js](https://www.chartjs.org/) diagrams/blocks
 }
 {{< /chart >}}
 
-
-
-
 {{< chart >}}
 {
     type: 'line',
@@ -98,8 +94,6 @@ Display [Chart.js](https://www.chartjs.org/) diagrams/blocks
     }
 }
 {{< /chart >}}
-
-
 
 {{< chart >}}
 {

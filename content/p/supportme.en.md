@@ -11,6 +11,6 @@ featuredImage:
 draft: false
 ---
 
-- https://www.buymeacoffee.com/romankurnovskii
-- https://rom.gumroad.com/
-- https://www.patreon.com/user?u=79828420
+- <https://www.buymeacoffee.com/romankurnovskii>
+- <https://rom.gumroad.com/>
+- <https://www.patreon.com/user?u=79828420>

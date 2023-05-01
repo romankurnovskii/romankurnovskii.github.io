@@ -50,7 +50,7 @@ _Troubleshooting Tip_: If you receive an error because your bucket name is not u
 
 ![alt](./img/image-e4e4ddd3-cb2d-45a3-8fc1-02d7cea49ecf.png)
 
-For example, change "calabs-bucket" to "calabs-bucket-1" (or a unique number/character string) and try again. 
+For example, change "calabs-bucket" to "calabs-bucket-1" (or a unique number/character string) and try again.
 
 4. Leave the **Block public access (bucket settings)** at the default values:
 

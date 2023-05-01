@@ -2,7 +2,7 @@
 title: How to create a deep clone of an object in JavaScript
 description:  How to create a deep clone of an object in JavaScript
 toc: true
-categories: [programming, JavaScript]
+categories: [Programming, JavaScript]
 series:
 tags: [JavaScript]
 date: 2022-06-02
@@ -11,8 +11,8 @@ featuredImage: featured.en.jpg
 authors: [roman-kurnovskii]
 ---
 
-We can use recursion. 
-Use `Object.assign()` and an empty object ({}) to create a shallow clone of the original. 
+We can use recursion.
+Use `Object.assign()` and an empty object ({}) to create a shallow clone of the original.
 `Use Object.keys()` and `Array.prototype.forEach()` to determine which key-value pairs need to be deep cloned.
 
 ```javascript

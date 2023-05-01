@@ -13,7 +13,6 @@ lastmod: "2022-05-21"
 
 - [Creating Classic Load Balancer](https://cloudacademy.com/lab/create-your-first-amazon-elastic-load-balancing-elb/)
 
-
 ## Planning the Classic Load Balancer
 
 When you connected to the AWS account provided in the former step, you had a few things that were already deployed. This is the current infrastructure that was already deployed for you:
@@ -31,7 +30,6 @@ To do that we will have to create and configure a Classic Load Balancer, and pro
 ## Creating a Classic Load Balancer and Registering EC2 Instances
 
 A Classic Load Balancer allows traffic to be balanced across many Amazon EC2 instances, it performs this balancing at the request and connection level.
-
 
 1\. In the AWS Management Console search bar, enter _EC2_, and click the **EC2** result under **Services**:
 
@@ -59,8 +57,8 @@ A multi-step wizard will open allowing you to configure and customize your load 
 
 6\. Under **Basic Configuration**, enter the following values:
 
-* **Load Balancer name**: Enter _classic-elb_
-* **Enable advanced VPC configuration**: _checked_
+- **Load Balancer name**: Enter _classic-elb_
+- **Enable advanced VPC configuration**: _checked_
 
 ![](https://assets-stage.cloudacademy.com/bakery/media/uploads/content_engine/image-410013db-3537-4663-bce6-b80bf6cabf2a.png)
 
@@ -82,7 +80,7 @@ An **Availability Zone**, often referred to as an AZ, helps make your infrastru
 
 To learn more about regions, availability zones, and redundancy in AWS, visit the documentation [here](https://aws.amazon.com/about-aws/global-infrastructure/regions_az/?p=ngi&loc=2).
 
-Each subnet is mapped to one availability zone. It's important to configure the selected subnets correctly. If a subnet containing an EC2 instance is not selected, the load balancer will not be able to communicate with that EC2 instance. 
+Each subnet is mapped to one availability zone. It's important to configure the selected subnets correctly. If a subnet containing an EC2 instance is not selected, the load balancer will not be able to communicate with that EC2 instance.
 
 8\. To move to the next step of the wizard, click **Next: Assign Security Groups**:
 
@@ -90,9 +88,9 @@ Each subnet is mapped to one availability zone. It's important to configure the 
 
 9\. In the form, enter and select the following values:
 
-* **Assign a security group**: Select **Create a new security group**
-* **Security group name**: Enter _elb-sg_
-* **Description**: Enter _Security group for the classic load balancer_
+- **Assign a security group**: Select **Create a new security group**
+- **Security group name**: Enter _elb-sg_
+- **Description**: Enter _Security group for the classic load balancer_
 
 ![](https://assets-stage.cloudacademy.com/bakery/media/uploads/content_engine/image-3de4255f-fa74-439e-ad62-833d283d5d09.png)
 
@@ -122,10 +120,10 @@ By default, the fields on this page specify that the health check will be perfo
 
 The **Advanced Details** allow you to further customize different aspects of the health check:
 
-* **Response Timeout**: How long to the load balancer should wait for a response from the EC2 instance.
-* **Interval**: Amount of time between health checks.
-* **Unhealthy threshold**: The number of consecutive failed healthy checks that must occur before the load balancer declares the EC2 instance unhealthy.
-* **Healthy threshold**: The number of consecutive health checks that must occur before declaring an EC2 instance healthy.
+- **Response Timeout**: How long to the load balancer should wait for a response from the EC2 instance.
+- **Interval**: Amount of time between health checks.
+- **Unhealthy threshold**: The number of consecutive failed healthy checks that must occur before the load balancer declares the EC2 instance unhealthy.
+- **Healthy threshold**: The number of consecutive health checks that must occur before declaring an EC2 instance healthy.
 
 To learn more about Elastic Load Balancing health checks, see the AWS documentation [here](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-healthchecks.html).
 
@@ -177,9 +175,7 @@ You will see a notification that your load balancer has been successfully create
 
 ![](https://assets-stage.cloudacademy.com/bakery/media/uploads/content_engine/image-b065cdb1-0b22-4086-9e8d-4c6faeaa0e82.png)
 
-
 ## Configuring Security Groups for Load Balanced EC2 Instances
-
 
 1\. In the list of load balancers, ensure your load balancer is selected:
 
@@ -275,7 +271,7 @@ You will see a list of security groups:
 
 ![](https://assets-stage.cloudacademy.com/bakery/media/uploads/content_engine/image-9ea1642b-b860-4e98-9384-88a9e149e4f5.png)
 
-14. Select the SG which has the Group Name starting with **cloudacademylabs-** ` .`
+14. Select the SG which has the Group Name starting with **cloudacademylabs-** `.`
 
 This is the security group of the EC2 instances.
 
@@ -319,7 +315,6 @@ If you wait long enough, your browser will report that it timed out trying to re
 
 ## Checking Your Load Balancer's Behavior During Instance Failures
 
-
 1. [Navigate to Instances in the EC2 Management Console](https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#Instances:).
 
 You will see two instances named **web-node** listed.
@@ -356,7 +351,7 @@ Look at the **Status** column in the instances table, one of the instances will
 
 This means that there is only one instance serving the application, and therefore all the requests will be forwarded to the same instance.
 
-You can test this behavior by clicking on the **Description** tab and accessing the **DNS name **of the load balancer in a new browser tab. Your request will be served by the instance that you didn't stop.
+You can test this behavior by clicking on the **Description** tab and accessing the **DNS name**of the load balancer in a new browser tab. Your request will be served by the instance that you didn't stop.
 
 Leave the browser tab with the load balancer's DNS name open. You will test it again after starting the stopped instance.
 
@@ -378,9 +373,7 @@ Test accessing the load balancer by it's DNS name again. This time, you will see
 
 _Note_: You may need to open the load balancer's domain name in an incognito or private browsing tab to see both instance Ids.
 
-
 ## Monitoring your Classic Load Balancer
-
 
 1. [Navigate to Load Balancers in the EC2 Management Console](https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2#LoadBalancers:sort=loadBalancerName).
 
@@ -394,7 +387,7 @@ The Elastic Load Balancing (ELB) service reports metrics to CloudWatch only whe
 
 There are a few metrics related to a Classic Load Balancer, and most are self-explanatory if you are familiar with HTTP requests. If some of them are unfamiliar to you, visit the [Amazon AWS documentation](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-cloudwatch-metrics.html) to read more.
 
-The metrics called **HealthyHostCount**, and **UnHealthyHostCount **will count the number of Healthy and Unhealthy instances respectively. These metrics can be useful for you to identify a major problem in your AWS account. A healthy instance is one that is passing the health checks performed by the load balancer.
+The metrics called **HealthyHostCount**, and **UnHealthyHostCount**will count the number of Healthy and Unhealthy instances respectively. These metrics can be useful for you to identify a major problem in your AWS account. A healthy instance is one that is passing the health checks performed by the load balancer.
 
 You could use CloudWatch Alarms to notify you when you have less than 2 instances running your application, though to be clear this is not a general rule: the number of instances that might identify a problem will vary depending on your environment.
 

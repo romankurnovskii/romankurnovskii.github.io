@@ -2,7 +2,7 @@
 from netmiko import ConnectHandler
 from getpass import getpass
 
-#password = getpass()
+# password = getpass()
 
 SW1 = {
     "device_type": "cisco_ios",

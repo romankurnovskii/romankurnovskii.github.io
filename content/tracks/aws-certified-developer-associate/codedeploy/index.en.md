@@ -57,6 +57,7 @@ The AppSpec file defines the deployment actions you want AWS CodeDeploy to execu
 Type: Developer Tools
 
 ![](https://assets.cloudacademy.com/bakery/media/uploads/lab/blobid0-e29278ba-0b4a-4d62-8136-760167f7aafa.png)
+
 ## Practice
 
 - [Continuous Integration and Deployment with AWS Code Services](https://cloudacademy.com/lab/continuous-integration-deployment-aws-code-services/)
@@ -80,7 +81,7 @@ Type: Developer Tools
 
 Can delete only if unused.
 
-<mark style="color:white">1</mark> 
+<mark style="color:white">1</mark>
 </div>
 </details>
 
@@ -101,6 +102,6 @@ Can delete only if unused.
 
 If you delete a deployment group, all details associated with that deployment group will also be deleted from CodeDeploy. The instances used in the deployment group will remain unchanged. This action cannot be undone.
 
-<mark style="color:white">3</mark> 
+<mark style="color:white">3</mark>
 </div>
 </details>

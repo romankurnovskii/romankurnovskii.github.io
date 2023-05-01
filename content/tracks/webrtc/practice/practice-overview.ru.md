@@ -27,7 +27,7 @@ weight: 11
 **Что понадобится**
 
 - Chrome версии 47 и выше
-- веб-сервер для Chrome https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb , и ваш собственный веб-сервер по выбору
+- веб-сервер для Chrome <https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb> , и ваш собственный веб-сервер по выбору
 - пример кода
 - текстовый редактор
 - базовые знания HTML, CSS и Javaskript

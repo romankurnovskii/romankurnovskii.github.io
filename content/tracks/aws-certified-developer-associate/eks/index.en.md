@@ -56,7 +56,6 @@ Amazon provides the Elastic Container Service for Kubernetes (Amazon EKS) which 
 | “Tasks” are instances of containers that are run on underlying compute but more of less isolated | “Pods” are containers collocated with one another and can have shared access to each other           |
 | Limited extensibility                                                                            | Extensible via a wide variety of third-party and community add-ons.                                  |
 
-
 ## Practice
 
 [Building a Cloud Native Application](https://cloudacademy.com/lab/eks-voteapp/)

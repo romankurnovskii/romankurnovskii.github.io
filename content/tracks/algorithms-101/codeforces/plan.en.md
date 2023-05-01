@@ -26,7 +26,6 @@ weight: 10
 9. 1772A - A+B? (implementation, 800)
 10. 1796B - Asterisk-Minor Template (implementation, strings, 1000)
 
-
 ## Stage 2: Combinatorics and Geometry
 
 11. 1777A - Everybody Likes Good Arrays! (greedy, math, 800)

@@ -32,21 +32,21 @@ Build a network for micros­ervices archit­ectures.
 - [**AWS CloudTrail**](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html) - Record of actions taken by a user, role, or an AWS service in API Gateway
 - [**AWS X-Ray**](../xray) - Trace your request across different AWS Services
 
-## Digests 
+## Digests
 
 ### Concepts
 
 - REST API, HTTP API, WebSocket API
 - Deployment - point-in-time snapshot of your API Gateway API
-- Endpoint - https://api-id.execute-api.region-id.amazonaws.com
-    - Edge-optimized
-    - Private
-    - Regional
-    - Stage - A logical reference to a lifecycle state of your API.
-    - Route - URL path, Latency based routing,
-    - Integration - Lambda, HTTP, Private VPC, CORS
-    - Import/Export - Open API
-    - AM User should have permission to enable logging
+- Endpoint - <https://api-id.execute-api.region-id.amazonaws.com>
+  - Edge-optimized
+  - Private
+  - Regional
+  - Stage - A logical reference to a lifecycle state of your API.
+  - Route - URL path, Latency based routing,
+  - Integration - Lambda, HTTP, Private VPC, CORS
+  - Import/Export - Open API
+  - AM User should have permission to enable logging
 
 - Amazon API Gateway is an AWS service for creating, publishing, maintaining, monitoring, and securing REST, HTTP, and WebSocket APIs at any scale.
 - Stage variables are name-value pairs that you can define as configuration attributes associated with a deployment stage of a REST API. The act like environment variables and can be used in your API setup and mapping templates.
@@ -63,7 +63,6 @@ Build a network for micros­ervices archit­ectures.
 
 - [Creating a RESTful API Using Amazon API Gateway](https://cloudacademy.com/lab/creating-a-restful-api-using-amazon-api-gateway/)
 
-
 ## Questions
 
 ### Q1
@@ -75,7 +74,6 @@ Build a network for micros­ervices archit­ectures.
 - C) AWS service proxy
 - D) Lambda function
 
-
 <details>
 <summary>Explanation</summary>
 <div>
@@ -84,7 +82,7 @@ Build a network for micros­ervices archit­ectures.
 
 Amazon API Gateway supports mock integrations for API methods.
 
-<mark style="color:white">B</mark> 
+<mark style="color:white">B</mark>
 
 </div>
 </details>
@@ -105,18 +103,18 @@ Amazon API Gateway supports mock integrations for API methods.
 <summary>Explanation</summary>
 <div>
 
-[AWS AppSync](https://aws.amazon.com/appsync/) simplifies application development by letting users create a flexible API to securely access, manipulate, and combine data from one or more data sources. AWS AppSync is a managed service that uses GraphQL to make it easy for applications to get the exact data they need. 
+[AWS AppSync](https://aws.amazon.com/appsync/) simplifies application development by letting users create a flexible API to securely access, manipulate, and combine data from one or more data sources. AWS AppSync is a managed service that uses GraphQL to make it easy for applications to get the exact data they need.
 
-AWS AppSync allows users to build scalable applications, including those requiring [real-time updates](https://docs.aws.amazon.com/appsync/latest/devguide/real-time-data.html), on a range of data sources, including Amazon DynamoDB. In [Amazon API Gateway](../api-gateway), users can [create a WebSocket API](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html) as a stateful frontend for an AWS service (such as [AWS Lambda](../lambda) or DynamoDB) or for an HTTP endpoint. 
+AWS AppSync allows users to build scalable applications, including those requiring [real-time updates](https://docs.aws.amazon.com/appsync/latest/devguide/real-time-data.html), on a range of data sources, including Amazon DynamoDB. In [Amazon API Gateway](../api-gateway), users can [create a WebSocket API](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html) as a stateful frontend for an AWS service (such as [AWS Lambda](../lambda) or DynamoDB) or for an HTTP endpoint.
 
 The WebSocket API invokes the backend based on the content of the messages it receives from client applications. Unlike a REST API, which receives and responds to requests, a WebSocket API supports two-way communication between client applications and the backend.
 
-<mark style="color:white">1, 2</mark> 
+<mark style="color:white">1, 2</mark>
 
 </div>
 </details>
 
- ### Q3
+### Q3
 
 **A company is providing services to many downstream consumers. Each consumer may connect to one or more services. This has resulted in complex architecture that is difficult to manage and does not scale well. The company needs a single interface to manage these services to consumers**
 
@@ -131,7 +129,7 @@ The WebSocket API invokes the backend based on the content of the messages it re
 <summary>Explanation</summary>
 <div>
 
-<mark style="color:white">4</mark> 
+<mark style="color:white">4</mark>
 
 </div>
 </details>
@@ -153,11 +151,10 @@ The WebSocket API invokes the backend based on the content of the messages it re
 
 [API Gateway mapping template](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html)
 
-<mark style="color:white">4</mark> 
+<mark style="color:white">4</mark>
 
 </div>
 </details>
-
 
 ### Q5
 
@@ -174,11 +171,10 @@ The WebSocket API invokes the backend based on the content of the messages it re
 <summary>Explanation</summary>
 <div>
 
-<mark style="color:white">2</mark> 
+<mark style="color:white">2</mark>
 
 </div>
 </details>
-
 
 ### Q6
 
@@ -197,7 +193,7 @@ The WebSocket API invokes the backend based on the content of the messages it re
 <summary>Explanation</summary>
 <div>
 
-<mark style="color:white">4</mark> 
+<mark style="color:white">4</mark>
 
 </div>
 </details>

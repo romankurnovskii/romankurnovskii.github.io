@@ -29,10 +29,10 @@ Highly secure, reliable, & scalable way to run contai­ners
 
 ### Terminology
 
-| Amazon ECS      | Term	Definition                                                                         |
+| Amazon ECS      | Term Definition                                                                         |
 | --------------- | --------------------------------------------------------------------------------------- |
 | Cluster         | Logical Grouping of EC2 Instances                                                       |
-| Container       | Instance	EC2 instance running the ECS agent                                             |
+| Container       | Instance EC2 instance running the ECS agent                                             |
 | Task Definition | Blueprint that describes how a docker container should launch                           |
 | Task            | A running container using settings in a Task Definition                                 |
 | Service         | Defines long running tasks – can control task count with Auto Scaling and attach an ELB |
@@ -42,7 +42,7 @@ Highly secure, reliable, & scalable way to run contai­ners
 ![](./img/ecs-ecr-scheme.png)
 
 - Microservices are built in multiple programming languages
-- Containers simplify deployment of microservices: 
+- Containers simplify deployment of microservices:
   - Step 1 : Create a self contained Docker image
     - Application Runtime (JDK or Python), Application code and Dependencies
   - Step 2 : Run it as a container any where Local machine OR Corporate data center OR Cloud
@@ -69,7 +69,7 @@ Highly secure, reliable, & scalable way to run contai­ners
 - Load balancing:
   - Performed using Application Load Balancers
     - **Dynamic host port mapping**: Multiple tasks from the same service are allowed per EC2 (container) instance
-    - **Path-based routing**: Multiple services can use the same listener port on same ALB and be routed based on path (www.myapp.com/microservice-a and www.myapp.com/microservice-b)
+    - **Path-based routing**: Multiple services can use the same listener port on same ALB and be routed based on path (<www.myapp.com/microservice-a> and <www.myapp.com/microservice-b>)
 
 ## Price
 
@@ -84,6 +84,7 @@ Same type services: Elastic Container Service (ECS), Elastic Container Registry 
 ![ECS Auto Scaling](/ru/tracks/aws-certified-developer-associate/ecs/img/amazon-ecs-service-auto-scaling.jpg)
 
 Best practice:
+
 - 10 Microservices => 10 Task Definitions => 10 Task IAM Roles with individual permissions needed by each microservice
   
 ### ECS vs EKS
@@ -116,6 +117,6 @@ Amazon also provides the Elastic Container Service for Kubernetes (Amazon EKS) w
 
 [https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_monitoring.html](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_monitoring.html)
 
-<mark style="color:white">1, 2</mark> 
+<mark style="color:white">1, 2</mark>
 </div>
 </details>

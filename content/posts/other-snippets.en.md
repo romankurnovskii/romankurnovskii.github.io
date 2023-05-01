@@ -3,11 +3,11 @@ title: Some code snippets
 seoTitle: Some code snippets
 description: Some code snippets
 toc: true
-categories: []
+categories: [Programming]
 series: []
-tags:  []
+tags:  [Programming]
 date: 2021-02-22
-featuredImage: https://picsum.photos/700/231
+featuredImage: https://picsum.photos/701/231?grayscale
 draft: false
 ---
 

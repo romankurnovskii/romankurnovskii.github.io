@@ -16,7 +16,7 @@ weight: 5
 
 Сегодня мы сосредоточимся на отдельных шагах от начала до конца и на непрерывном цикле приложения в мире DevOps.
 
-![DevOps](Day5_DevOps8.png)
+![DevOps](Day5_DevOps8.ru.png)
 
 ### План
 
@@ -63,15 +63,15 @@ Once that's in place you go right back to the beginning to the planning stage an
 
 ### Continuous Delivery
 
-Continuous Delivery = Plan > Code > Build > Test 
+Continuous Delivery = Plan > Code > Build > Test
 
 ### Continuous Integration
 
 Непрерывная интеграция - это результат описанных выше этапов непрерывной "доставки" и результат этапа выпуска. Это относится как к неудаче, так и к успеху, но это возвращается в непрерывную доставку или перемещается в непрерывное развертывание.
 
-Continuous Integration = Plan > Code > Build > Test > Release 
+Continuous Integration = Plan > Code > Build > Test > Release
 
-### Continuous Deployment 
+### Continuous Deployment
 
 Если у вас есть успешный релиз, перейдите к непрерывному развертыванию, которое включает следующие этапы.
 
@@ -81,11 +81,10 @@ Continuous Integration = Plan > Code > Build > Test > Release
 
 Этот последний фрагмент был для меня чем-то вроде подведения итогов третьего дня, но думаю, что на самом деле это проясняет для меня ситуацию.
 
-
 ### Источники
 
 - [DevOps for Developers – Software or DevOps Engineer?](https://www.youtube.com/watch?v=a0-uE3rOyeU)
-- [Techworld with Nana -DevOps Roadmap 2022 - How to become a DevOps Engineer? What is DevOps? ](https://www.youtube.com/watch?v=9pZ2xmsSDdo&t=125s)
+- [Techworld with Nana -DevOps Roadmap 2022 - How to become a DevOps Engineer? What is DevOps?](https://www.youtube.com/watch?v=9pZ2xmsSDdo&t=125s)
 - [How to become a DevOps Engineer in 2021 - DevOps Roadmap](https://www.youtube.com/watch?v=5pxbp6FyTfk)
 
 До встречи в [День 6](../day06)

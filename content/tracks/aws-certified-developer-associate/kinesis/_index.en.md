@@ -71,7 +71,6 @@ Type: Analytics
 
 Same type services: Athena, EMR, Redshift, Kinesis, Elasti­cSearch Service, Quicksight
 
-
 ![Analysis of streaming social media data](https://d1.awsstatic.com/Products/product-name/diagrams/product-page-diagram_Amazon-Kinesis_Build-real-time-Applications.804a73506cb53369cb137d94218457382bc1b59a.png)
 
 > Netflix uses Amazon Kinesis to monitor the communications between all of its applications so it can detect and fix issues quickly, ensuring high service uptime and availability to its customers.
@@ -101,7 +100,7 @@ Same type services: Athena, EMR, Redshift, Kinesis, Elasti­cSearch Service, Qui
 
 Split the hot shards
 
-<mark style="color:white">3</mark> 
+<mark style="color:white">3</mark>
 </div>
 </details>
 
@@ -122,9 +121,9 @@ Split the hot shards
 
 RedShift supports ad-hoc queries over well-structured data using a SQL-compliant wire protocol
 
-https://aws.amazon.com/kinesis/data-firehose/features/
+<https://aws.amazon.com/kinesis/data-firehose/features/>
 
-<mark style="color:white">4</mark> 
+<mark style="color:white">4</mark>
 </div>
 </details>
 

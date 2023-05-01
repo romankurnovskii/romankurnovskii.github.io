@@ -13,7 +13,7 @@ awsTag: CodeBuild
 
 CodeBuild is a fully managed service that assembles source code, runs unit tests, & also generates artefacts ready to deploy.
 
-- [Documentation ](https://aws.amazon.com/codebuild/)
+- [Documentation](https://aws.amazon.com/codebuild/)
 - [User Guide](https://docs.aws.amazon.com/codebuild/?id=docs_gateway)
 
 CodeBuild is a code creation service that also produces code artefacts upon request.
@@ -46,6 +46,7 @@ You pay based on the time it takes to complete the builds.
 
 cicd-aws-code-services
 Chapters:
+
 1. Logging in to the Amazon Web Services Console
 2. Creating an AWS CodeCommit Repository
 3. Committing Code to Your AWS CodeCommit Repository
@@ -58,8 +59,6 @@ Chapters:
 
 ![codedeploy-codepipeline-codestar overview](./img/codedeploy-codepipeline-codestar.jpg)
 
-
-
 ## Questions
 
 ### Q1
@@ -68,7 +67,7 @@ Chapters:
 
 **What is the easiest way to develop these simple applications?**
 
-1. Install AWS SAM CLI and run “sam init \[options\]” with the templates’ data. 
+1. Install AWS SAM CLI and run “sam init \[options\]” with the templates’ data.
 2. Use AWS step function visual workflow and insert your templates in the states
 3. Save your template in the Serverless Application Repository and use AWS SAM
 
@@ -76,10 +75,10 @@ Chapters:
 <summary>Explanation</summary>
 <div>
 
-AWS SAM - AWS Serverless Application Model 
+AWS SAM - AWS Serverless Application Model
 
 [https://aws.amazon.com/serverless/sam/](https://aws.amazon.com/serverless/sam/)
 
-<mark style="color:white">1</mark> 
+<mark style="color:white">1</mark>
 </div>
 </details>

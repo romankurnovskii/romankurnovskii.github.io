@@ -4,7 +4,7 @@ description: LeetCode Cookbook
 toc: true
 authors: [roman-kurnovskii]
 tags: []
-categories: [programming, Roadmaps, Algorithms]
+categories: [Programming, Roadmaps, Algorithms]
 series:
 date: 2022-10-15
 featuredImage:
@@ -19,24 +19,29 @@ What is [SMART](https://www.atlassian.com/blog/productivity/how-to-write-smart-g
 ### SMART
 
 <span style="font-size:1.2em; color: #427039">S</span>pecific:
+
 - Goal: prepare for contests. Pass 50->75->100% of contest problems in time
   - Improve python skills.
   - Improve understanding of common algorithms and data structures.
 
 <span style="font-size:1.2em; color: #427039">M</span>easurable: *How will we know that change has occurred?*
+
 - solve top 100 questions that cover common algorithms and data structures.
 
 <span style="font-size:1.2em; color: #427039">A</span>chievable:
+
 - participate in [LeetCode contest](https://leetcode.com/contest/), solve 50%+ problems in time.
 
 <span style="font-size:1.2em; color: #427039">R</span>elevant: *Is it possible to achieve this objective?*
+
 - achievable with practice.
 - improve skills in solving business problems more efficiently, quickly, understandable.
 
 <span style="font-size:1.2em; color: #427039">T</span>ime-Bound: *When will this objective be accomplished?*
+
 - 1-2 hours a day, 5-6 days a week, ~5 problems a week
 - first contest after 20% problems pass.
-- 20 weeks from start. 
+- 20 weeks from start.
 - Summarize results on 28 Feb 2023
 
 ### OKR + roadmap
@@ -118,11 +123,11 @@ print(res)
 
 ## Tutorial subscriptions
 
-- https://www.enjoyalgorithms.com/data-structures-and-algorithms-course/
-- https://www.scaler.com/topics/data-structures/
-- https://leetcode.com/subscribe/
-- https://algo.monster/subscribe
-- https://www.algoexpert.io/purchase#algoexpert
+- <https://www.enjoyalgorithms.com/data-structures-and-algorithms-course/>
+- <https://www.scaler.com/topics/data-structures/>
+- <https://leetcode.com/subscribe/>
+- <https://algo.monster/subscribe>
+- <https://www.algoexpert.io/purchase#algoexpert>
 - [Senior Algorithms | Interactive tutorial](https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS4104/html/)
 - [01.01 Data Structures and Algorithms | Interactive](https://canvas.instructure.com/courses/3330793/assignments/24440259?module_item_id=52268669)
 - [Contests](https://clist.by/resources/)

@@ -19,11 +19,12 @@ weight: 8
 Прежде чем мы приступим к некоторым основам Go, мы должны установить Go на нашу рабочую станцию и сделать то, чему нас учит каждый модуль [«Изучение программирования 101»](https://www.udemy.com/course/programming-101/), а именно создать приложение Hello World. Так как здесь будут описаны шаги по установке Go на ваш ПК, мы попытаемся задокументировать процесс в картинках, чтобы людям было легко следовать за ним.
 
 Возможные варианты установки Golang
+
 - [Исполняемый файл](https://go.dev/dl/)
 - [Пакет из исходного кода](https://golang.org/doc/install/source#environment-variables)
-- [Mac Os Homebrew](https://formulae.brew.sh/formula/go) 
+- [Mac Os Homebrew](https://formulae.brew.sh/formula/go)
 
-```bash 
+```bash
 #Homebrew install command
 brew install go
 ```
@@ -32,11 +33,11 @@ brew install go
 
 Рассмотрим вараинт установки с помощью инсталляционного файла
 
-![](Day8_Go1.png?v1)
+![](Day8_Go1.ru.png?v1)
 
 Если мы зашли так далеко, вы, вероятно, знаете, какая операционная система рабочей станции у вас установлена, поэтому выберите соответствующую загрузку, и тогда мы сможем приступить к установке. Я использую Windows для этого пошагового руководства. На следующем шаге мы можем оставить все значения по умолчанию. ***(Отмечу, что на момент написания это была последняя версия, поэтому скриншоты могут быть устаревшими)***
 
-![](Day8_Go2.png?v1)
+![](Day8_Go2.ru.png?v1)
 
 Также обратите внимание, что если у вас установлена более старая версия Go, вам придется удалить ее перед установкой, поскольку в Windows она встроена в установщик, и она будет удалена и установлена как единое целое.
 
@@ -46,39 +47,39 @@ brew install go
 go version
 ```
 
-![](Day8_Go3.png?v1)
+![](Day8_Go3.ru.png?v1)
 
 Далее мы хотим проверить нашу среду на наличие Go. Это всегда полезно проверить, чтобы убедиться, что ваши рабочие каталоги настроены правильно, как вы можете видеть ниже, нам нужно убедиться, что в вашей системе есть следующий каталог.
 
-![](Day8_Go4.png?v1)
+![](Day8_Go4.ru.png?v1)
 
-![](Day8_Go5.png?v1)
+![](Day8_Go5.ru.png?v1)
 
 Хорошо, давайте создадим этот каталог для простоты. Я собираюсь использовать команду mkdir в своем терминале [PowerShell](https://docs.microsoft.com/ru-ru/powershell/). Нам также нужно создать 3 папки в папке Go, как вы увидите ниже.
 
-![](Day8_Go6.png?v1)
+![](Day8_Go6.ru.png?v1)
 
 Теперь у нас установлен Go, и у нас есть рабочий каталог Go, готовый к действию. Теперь нам нужна интегрированная среда разработки (IDE). Сейчас есть много доступных, которые вы можете использовать, но наиболее распространенным и тем, который я использую, является Visual Studio Code или Code. Вы можете узнать больше об IDE [здесь](https://www.youtube.com/watch?v=vUn5akOlFXQ).
 
 Если вы еще не загрузили и не установили VSCode на свою рабочую станцию, вы можете сделать это, перейдя по [ссылке](https://code.visualstudio.com/download). Как вы можете видеть ниже, у вас есть разные варианты ОС.
 
-![](Day8_Go7.png?v1)
+![](Day8_Go7.ru.png?v1)
 
 Почти так же, как и при установке Go, мы собираемся загрузить и установить и сохранить значения по умолчанию. После завершения вы можете открыть VSCode, выбрать «Открыть файл» и перейти в наш каталог Go, который мы создали выше.
 
-![](Day8_Go8.png?v1)
+![](Day8_Go8.ru.png?v1)
 
 Вы можете получить всплывающее окно о доверии, прочитать его, если хотите, а затем нажать «Да, доверять авторам». (Позже я не несу ответственности, если вы начнете открывать вещи, которым не доверяете!)
 
 Теперь вы должны увидеть три папки, которые мы также создали ранее, и теперь мы хотим щелкнуть правой кнопкой мыши папку src и создать новую папку с именем «Hello».
 
-![](Day8_Go9.png?v1)
+![](Day8_Go9.ru.png?v1)
 
 Довольно простые вещи, я бы сказал до этого момента? Теперь мы собираемся создать нашу первую программу Go, не понимая, что мы вкладываем в этот следующий этап.
 
 Затем создайте файл с именем `main.go` в папке `Hello`. Как только вы нажмете Enter на main.go, вас спросят, хотите ли вы установить расширение Go, а также пакеты, вы также можете проверить этот пустой файл pkg, который мы сделали несколько шагов назад, и обратите внимание, что у нас должны быть новые пакеты. там сейчас?
 
-![](Day8_Go10.png?v1)
+![](Day8_Go10.ru.png?v1)
 
 Теперь давайте запустим это приложение Hello World, скопируйте следующий код в новый файл main.go и сохраните его.
 
@@ -97,15 +98,16 @@ func main() {
 ```bash
 go run main.go
 ```
-![](Day8_Go11.png?v1)
+
+![](Day8_Go11.ru.png?v1)
 
 Однако на этом это не заканчивается, что, если теперь мы захотим взять нашу программу и запустить ее на других машинах с Windows? Мы можем сделать это, создав наш двоичный файл, используя следующую команду
 
 ```bash
 go build main.go
-``` 
+```
 
-![](Day8_Go12.png?v1)
+![](Day8_Go12.ru.png?v1)
 
 Попробуем запустить
 
@@ -116,19 +118,17 @@ go build main.go
 ./main
 ```
 
-![](Day8_Go13.png?v1)
-
+![](Day8_Go13.ru.png?v1)
 
 ## Источники
 
 - [Быстрое погружение в Golang](https://go.dev/tour/welcome/1)
 - [StackOverflow 2021 Developer Survey](https://insights.stackoverflow.com/survey/2021)
 - [Why we are choosing Golang to learn](https://www.youtube.com/watch?v=7pLqIIAqZD4&t=9s)
-- [Jake Wright - Learn Go in 12 minutes](https://www.youtube.com/watch?v=C8LgvuEBraI&t=312s) 
-- [Techworld with Nana - Golang full course - 3 hours 24 mins](https://www.youtube.com/watch?v=yyUHQIec83I) 
-- [**NOT FREE** Nigel Poulton Pluralsight - Go Fundamentals - 3 hours 26 mins](https://www.pluralsight.com/courses/go-fundamentals) 
-- [FreeCodeCamp -  Learn Go Programming - Golang Tutorial for Beginners](https://www.youtube.com/watch?v=YS4e4q9oBaU&t=1025s) 
-- [Hitesh Choudhary - Complete playlist](https://www.youtube.com/playlist?list=PLRAV69dS1uWSR89FRQGZ6q9BR2b44Tr9N) 
-
+- [Jake Wright - Learn Go in 12 minutes](https://www.youtube.com/watch?v=C8LgvuEBraI&t=312s)
+- [Techworld with Nana - Golang full course - 3 hours 24 mins](https://www.youtube.com/watch?v=yyUHQIec83I)
+- [**NOT FREE** Nigel Poulton Pluralsight - Go Fundamentals - 3 hours 26 mins](https://www.pluralsight.com/courses/go-fundamentals)
+- [FreeCodeCamp -  Learn Go Programming - Golang Tutorial for Beginners](https://www.youtube.com/watch?v=YS4e4q9oBaU&t=1025s)
+- [Hitesh Choudhary - Complete playlist](https://www.youtube.com/playlist?list=PLRAV69dS1uWSR89FRQGZ6q9BR2b44Tr9N)
 
 Увидимся на [9-й день](../day09)

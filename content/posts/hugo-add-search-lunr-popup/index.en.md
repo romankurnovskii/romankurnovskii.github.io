@@ -4,18 +4,17 @@ description: Make your multilingual Hugo static site searchable with a client-si
 toc: true
 tags: [hugo, lunr, javascript]
 series: []
-categories: [programming, Hugo]
-date: "2022-07-16"
-featuredImage: https://picsum.photos/700/250
+categories: [Programming, Hugo]
+date: 2022-07-16
+featuredImage: https://picsum.photos/700/250?grayscale
 authors: [roman-kurnovskii]
 ---
 
 ## Initial
 
-I had the need to implement search functionality on my site. Content on is in different languages. 
+I had the need to implement search functionality on my site. Content on is in different languages.
 
 The goal is to impelemnt search for all pages and separate search results for each and every language.
-
 
 ## How it works
 
@@ -31,9 +30,7 @@ This is how the logic looks like:
 
 ![](./img/logic.jpg)
 
-
 ## Implementation
-
 
 1. Create search form
 2. Create popup modal where will render search results
@@ -41,12 +38,9 @@ This is how the logic looks like:
 4. Generate pages data
 5. Connect search/result forms with lunr.js search
 
-
-
 ### TL;DR
 
 **Files to change/create:**
-
 
 <details>
 <summary>1.  `/layouts/partials/header.html`</summary>
@@ -92,7 +86,6 @@ This is how the logic looks like:
   ```
 
 </details>
-
 
 <details>
 <summary>4. `/layouts/_default/index.json`</summary>
@@ -249,7 +242,6 @@ searchFormObserver()
 
 </details>
 
-
 ### Search form
 
 I am going to add search form to the header part. For thios purpose edit `header.html` file in the path `/layouts/partials/header.html`
@@ -257,6 +249,7 @@ I am going to add search form to the header part. For thios purpose edit `header
 Set form id: `search`. By this id script can find this form
 
 Minimal form for work:
+
 ```html
 <form id="search">   
  <input type="text" type="search" id="search-input">
@@ -264,6 +257,7 @@ Minimal form for work:
 ```
 
 I use Tailwind, so this is how my form looks like:
+
 ```html
 <div class="relative pt-4 md:pt-0">
     <form id="search" class="flex items-center">   
@@ -276,8 +270,6 @@ I use Tailwind, so this is how my form looks like:
 ```
 
 ![](./img/search-form.png)
-
-
 
 ### Modal with results
 
@@ -390,7 +382,6 @@ outputs:
 ```
 
 ### Connect search/result forms with lunr.js search
-
 
 Create file in the path: `static/js/search.js`
 
@@ -507,7 +498,6 @@ searchFormObserver()
 
 ```
 
-
 Next need to add this file to the site: `/layouts/partials/footer.html`
 
 Now footer looks like this:
@@ -521,5 +511,3 @@ Now footer looks like this:
 {{ partial "components/search-list-popup.html" . }}
 ...
 ```
-
-

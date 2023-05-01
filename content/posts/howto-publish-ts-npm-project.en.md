@@ -5,14 +5,15 @@ description: How to publish typescript package to npm registry
 toc: false
 tags: [javascript]
 series: []
-categories: [programming]
+categories: [Programming]
 date: 2023-03-07
-featuredImage: https://picsum.photos/700/221
+lastmod: 2023-05-15
+featuredImage: https://picsum.photos/700/237?grayscale
 authors: [roman-kurnovskii]
 ---
 
 
-1. Open template: https://github.com/romankurnovskii/npm-typescript-package-template
+1. Open template: <https://github.com/romankurnovskii/npm-typescript-package-template>
 2. Click `Use this template`
 3. Create repo from this template.
 4. git clone new repo

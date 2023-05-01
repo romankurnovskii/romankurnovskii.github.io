@@ -23,24 +23,21 @@ draft: false
 - [Chrome extension](https://www.plasmo.com/)
 - [Free AI-generated Stock Images of People](https://cgfaces.com/en)
 
-
 ## Soft/Architecture
 
 - [Block Diagram Maker](https://falang.io/documents/edit/local)
 - [Theme for Docs - MkDocs](https://squidfunk.github.io/mkdocs-material/getting-started/)
-
 
 ## Media
 
 - [Fast and simple way to visualize your story](https://makestoryboard.com/) - free 1 Storyboard and 10 Frames
 - [Video from Screenshot](https://screenrun.app/studio)
 
-
-## Other 
+## Other
 
 - [Create and sell your own personalized books and journals](https://studio.twoworlds.co/)
 - [Books nice covers](https://mitpress.mit.edu/search-result-list/?category=CGN)
 
 ## IL
 
-https://www.cashcow.co.il/ интернет магазин
+<https://www.cashcow.co.il/> интернет магазин

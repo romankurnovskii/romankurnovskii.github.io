@@ -35,10 +35,10 @@ Choosing this option allows you to specify values for the table's read and write
 
 5\. In the **Read/write capacity settings** section, under **Capacity mode**, select **Provisioned** and enter the following:
 
-* **Read Capacity**: 
-    * **Provisioned capacity units**:
-* **Write Capacity**: 
-    * **Provisioned capacity units**:
+* **Read Capacity**:
+  * **Provisioned capacity units**:
+* **Write Capacity**:
+  * **Provisioned capacity units**:
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-2ceb62ef-5b16-497d-ba64-fa1e6e6d70de.png)
 
@@ -60,13 +60,13 @@ The **Tables** list view will load and you will see a notification that your t
 
 2\. Enter the following in the **Table details** section:
 
-* **Table name**: 
+* **Table name**:
 * **Partition key**:
-    * **Name**: Enter 
-    * **Type**: Select 
+  * **Name**: Enter
+  * **Type**: Select
 * **Sort key**:
-    * **Name**: Enter 
-    * **Type**: Select 
+  * **Name**: Enter
+  * **Type**: Select
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-24742caa-d087-4ba4-9541-3e4296b42021.png)
 
@@ -75,9 +75,9 @@ The **Tables** list view will load and you will see a notification that your t
 4\. Under **Read/write capacity settings**, ensure **Provisioned** is selected for **Capacity mode**, and enter the following:
 
 * **Read capacity**:
-    * **Provisioned capacity units**: 
+  * **Provisioned capacity units**:
 * **Write capacity**:
-    * **Provisioned capacity units**: 
+  * **Provisioned capacity units**:
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-096ddc68-8330-4d41-959b-d1da15f8037c.png)
 
@@ -90,9 +90,9 @@ The **New local secondary index** dialog box will appear.
 6\. Enter the following to configure your local secondary index:
 
 * **Sort Key**:
-    * **Name**: Enter 
-    * **Type**: Select 
-* **Attribute projections**: Select 
+  * **Name**: Enter
+  * **Type**: Select
+* **Attribute projections**: Select
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-0b468479-bc77-4ce2-be32-c9d929d12775.png)
 
@@ -114,13 +114,13 @@ In contrast to a Local Secondary Index, a Global Secondary Index is an index w
 
 10\. Enter the following in the **Table details** section:
 
-* **Table Name**: 
+* **Table Name**:
 * **Partition key**:
-    * **Name**: Enter 
-    * **Type**_: _Select 
+  * **Name**: Enter
+  * **Type**_:_Select
 * **Sort key**:
-    * **Name**: Enter 
-    * **Type**: Select 
+  * **Name**: Enter
+  * **Type**: Select
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-b0dcff24-1b7b-489c-988e-edcb8fcc28be.png)
 
@@ -129,9 +129,9 @@ In contrast to a Local Secondary Index, a Global Secondary Index is an index w
 12\. In the **Read/write capacity settings** section, ensure the **Capacity mode** is **Provisioned**, and enter the following:
 
 * **Read capacity**:
-    * **Provisioned capacity units**: Enter 
+  * **Provisioned capacity units**: Enter
 * **Write capacity**:
-    * **Provisioned capacity units**: Enter 
+  * **Provisioned capacity units**: Enter
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-94be7946-9efa-4c30-adfd-edeaa2b67f61.png)
 
@@ -144,12 +144,12 @@ The **New global secondary index** dialog form will appear.
 14\. Enter the following:
 
 * **Partition key**:
-    * **Name**: Enter  
-    * **Type**: Select 
+  * **Name**: Enter  
+  * **Type**: Select
 * **Sort key**:
-    * **Name**: Enter 
-    * **Type**: Select 
-* **Attribute projections**: Select 
+  * **Name**: Enter
+  * **Type**: Select
+* **Attribute projections**: Select
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-2a541f2e-7bd3-46f7-83c3-87436b01966e.png)
 
@@ -158,11 +158,11 @@ The **New global secondary index** dialog form will appear.
 16\. Click **Create global index** again and enter the following:
 
 * **Partition key**:
-    * **Name**: Enter 
-    * **Type**: Select 
+  * **Name**: Enter
+  * **Type**: Select
 * **Sort key**:
-    * **Name**: Enter 
-    * **Type**: Select 
+  * **Name**: Enter
+  * **Type**: Select
 * **Attribute projections**: Select
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-ff09625d-20bd-413b-a54e-2754f197e33c.png)
@@ -179,7 +179,7 @@ Once again, you will see your table created after roughly 30 seconds.
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220214144736-1-27472532-bf0a-480a-a190-361f2de3e7bf.png)
 
-2\. In the **Tables** list, select 
+2\. In the **Tables** list, select
 
 You will see nothing under **Items returned** because there are no items stored.
 

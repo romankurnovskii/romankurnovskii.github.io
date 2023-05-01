@@ -50,7 +50,7 @@ In this lab, you have set the content type to text/plain as an example to see ho
 
 Next you will add custom user metadata. User metadata must be prefaced with "x-amz-meta-". The remaining instructions will add a custom user type for imagetype, and imagestatus.
 
-8. Click **Add metadata** again to add another row. 
+8. Click **Add metadata** again to add another row.
 
 9. Enter the following to define custom metadata:
 

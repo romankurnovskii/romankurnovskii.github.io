@@ -6,8 +6,8 @@ date: 2022-07-06
 ---
 
 ## Lab
-[https://cloudacademy.com/lab/introduction-codecommit/](https://cloudacademy.com/lab/introduction-codecommit/)
 
+[https://cloudacademy.com/lab/introduction-codecommit/](https://cloudacademy.com/lab/introduction-codecommit/)
 
 ## Create a repository
 
@@ -97,7 +97,7 @@ Keep this window open, you will use it in later steps.
 
 The URL of the repository has been copied to your clipboard.
 
-4\. To copy the repository to your Linux host, in your shell, type `git clone` followed by a space and paste the repository URL: 
+4\. To copy the repository to your Linux host, in your shell, type `git clone` followed by a space and paste the repository URL:
 
 ```sh
 git clone https://git-codecommit.us-west-2.amazonaws.com/v1/repos/lab-repository
@@ -112,7 +112,6 @@ You can ignore the warning about cloning an empty repository.
 You have copied the repository from AWS CodeCommit and stored it locally on the Linux host.
 
 6\. To change to the directory of the repository, enter the `cd` command:
-
 
 ```
 cd lab-repository
