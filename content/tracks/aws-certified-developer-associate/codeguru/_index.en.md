@@ -24,14 +24,13 @@ Amazon CodeGuru is comprised of two services: CoduGuru Reviewer and CodeGuru Pro
 
 Amazon CodeGuru Reviewer is triggered by pull requests to Code Commit, then makes suggestions as comments in the pull request wherever it sees fit.
 
-Amazon CodeGuru Reviewer generates suggestions in its reviews as comments in pull requests. 
+Amazon CodeGuru Reviewer generates suggestions in its reviews as comments in pull requests.
 
 ### Type detection
 
 - Security Detection
 - Secrets Detection
 - Code Quality
-
 
 ### Benefits
 

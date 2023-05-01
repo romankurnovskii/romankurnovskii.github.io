@@ -47,10 +47,10 @@ When you [publish a version](https://docs.aws.amazon.com/lambda/latest/dg/config
 - Lambda deployment configuration:
   - HalfAtATime
   - Canary
-  - Linear. 
+  - Linear.
 - AWS Lambda compute platform deployments cannot use an in-place deployment type
 - Increasing memory in lambda will increase CPU in lambda
-- Lambda Versioning: 
+- Lambda Versioning:
   - By default, each AWS Lambda function has a single current version of the code. Clients of Lambda function can call a specific version or at the latest implementation
 - Lambda Alias: You can create one or more aliases for our AWS Lambda function. A Lambda alias is like a pointer to a specific Lambda function version. Users can access the function version using the alias ARN
 - Lambda@Edge is a feature of Amazon CloudFront that lets you run code closer to users of your application, which improves performance and reduces latency
@@ -59,13 +59,13 @@ When you [publish a version](https://docs.aws.amazon.com/lambda/latest/dg/config
 - **API Gateway** - Stage variables are name-value pairs that you can define as configuration attributes associated with a deployment stage of a REST API.
 - Integrating **Cloud Watch Events** with lambda can be used for **scheduling events**
 - If there is an incompatible output returned from a Lambda proxy integration backend, it will return 502
-- To **resolve lambda throttled** exception when using Cognito events, perform retry on sync. 
+- To **resolve lambda throttled** exception when using Cognito events, perform retry on sync.
 - Lambda Event hook running order:
-  -  start -> BeforeAllowTraffic -> AllowTraffic -> After AllowTraffic -> End
+  - start -> BeforeAllowTraffic -> AllowTraffic -> After AllowTraffic -> End
 - AWS Lambda runs function code securely within a VPC b default. To enable your Lambda function to access resources inside your private VPC, you must provide additional VPC-specific configuration information that includes VPC subnet IDs and security group IDs. AWS
 - Lambda uses this information to set up elastic network interfaces ([ENIs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html)) that enable your function to connect securely to other resources within your private VPC
 - Lambda **Asynchronous invocation** can be triggered by Amazon Simple Storage Service, Amazon Simple Notification Service, Amazon Simple Email Service, AWS CloudFormation, Amazon CloudWatch Logs, Amazon CloudWatch Events, AWS CodeCommit, AWS Config.
-- Lambda Limits: https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html
+- Lambda Limits: <https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html>
 - Lambda provides 500 MB of additional disk space as a workspace.
 - Lambda logs all stout for a lambda function to CloudWatch Logs. Any additional logging calls used in the function will also be sent to CloudWatch Logs.
 - To connect to a VPC, lambda **function execution role** must have the following permissions: ec2:Create Networkinterface, ec2:DescribeNetworkinterfaces, ec2:Delete Networkinterface. These permissions are included in the AWSLambdaVPCAccessExecutionRole managed policy
@@ -75,16 +75,17 @@ When you [publish a version](https://docs.aws.amazon.com/lambda/latest/dg/config
 - You can unload the package directly to lambda. Or you can use an Amazon S3 bucket and then upload it to lambda. If the deployment package is larger than 50 MB. you must use Amazon 53
 - Lambda can incur a first run penalty also called **cold starts.** Cold starts can cause slower than expected behavior on infrequently run functions or functions with high concurrency demands
 
-
 ## Price
 
 [Price](https://aws.amazon.com/lambda/pricing/)
 
 Price x86
+
 - 0.000016667 USD per gigabyte-second
 - 0,20 USD per 1 million requests
 
 Arm price
+
 - 0,0000133334 USD for each gigabyte-second
 - 0,20 USD for 1 million queries
 
@@ -110,8 +111,8 @@ On page **Functions** click **Create a function**
 I select this section because I use the cloudacademy account. This role gives you permission to create functions
 
 - **Permissions**: **Change default execution role**.
-    - **Execution Role**: Select **Use an existing role**.
-    - **Existing role**: Select the role beginning with **cloudacademylabs-LambdaExecutionRole**
+  - **Execution Role**: Select **Use an existing role**.
+  - **Existing role**: Select the role beginning with **cloudacademylabs-LambdaExecutionRole**
 
 ![Lambda](./img/lambda-3.png)
 
@@ -149,7 +150,7 @@ exports.handler = function(event, context) {
 
 ### Test
 
-This functionality allows you to test how the function reacts to certain events. Let's try to add an event from SNS Notifications. 
+This functionality allows you to test how the function reacts to certain events. Let's try to add an event from SNS Notifications.
 
 Let's choose from the list
 
@@ -171,7 +172,6 @@ Since `cook_secs` in our event was less than `req_secs`, the function printed th
 
 ![](./img/lambda-7.png)
 
-
 ## Questions
 
 ### Q1
@@ -189,11 +189,10 @@ Since `cook_secs` in our event was less than `req_secs`, the function printed th
 
 [AWS Secrets Manager](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-resources.html)
 
-<mark style="color:white">C</mark> 
+<mark style="color:white">C</mark>
 
 </div>
 </details>
-
 
 ### Q2
 
@@ -212,7 +211,7 @@ Since `cook_secs` in our event was less than `req_secs`, the function printed th
 
 [Serverless Application Model](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html)
 
-<mark style="color:white">2</mark> 
+<mark style="color:white">2</mark>
 
 </div>
 </details>
@@ -235,10 +234,9 @@ Since `cook_secs` in our event was less than `req_secs`, the function printed th
 
 Amazon Cognito adds user sign-up, sign-in, and access control to web and mobile applications quickly and easily. Users can also create an AWS Lambda function to make an API call to a custom analytics solution and then trigger that function with an Amazon Cognito post authentication trigger.
 
-<mark style="color:white">1, 5</mark> 
+<mark style="color:white">1, 5</mark>
 </div>
 </details>
-
 
 ### Q4
 
@@ -256,13 +254,13 @@ Amazon Cognito adds user sign-up, sign-in, and access control to web and mobile 
 <summary>Explanation</summary>
 <div>
 
-[AWS AppSync](https://aws.amazon.com/appsync/) simplifies application development by letting users create a flexible API to securely access, manipulate, and combine data from one or more data sources. AWS AppSync is a managed service that uses GraphQL to make it easy for applications to get the exact data they need. 
+[AWS AppSync](https://aws.amazon.com/appsync/) simplifies application development by letting users create a flexible API to securely access, manipulate, and combine data from one or more data sources. AWS AppSync is a managed service that uses GraphQL to make it easy for applications to get the exact data they need.
 
-AWS AppSync allows users to build scalable applications, including those requiring [real-time updates](https://docs.aws.amazon.com/appsync/latest/devguide/real-time-data.html), on a range of data sources, including Amazon DynamoDB. In [Amazon API Gateway](../api-gateway), users can [create a WebSocket API](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html) as a stateful frontend for an AWS service (such as [AWS Lambda](../lambda) or DynamoDB) or for an HTTP endpoint. 
+AWS AppSync allows users to build scalable applications, including those requiring [real-time updates](https://docs.aws.amazon.com/appsync/latest/devguide/real-time-data.html), on a range of data sources, including Amazon DynamoDB. In [Amazon API Gateway](../api-gateway), users can [create a WebSocket API](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html) as a stateful frontend for an AWS service (such as [AWS Lambda](../lambda) or DynamoDB) or for an HTTP endpoint.
 
 The WebSocket API invokes the backend based on the content of the messages it receives from client applications. Unlike a REST API, which receives and responds to requests, a WebSocket API supports two-way communication between client applications and the backend.
 
-<mark style="color:white">1, 2</mark> 
+<mark style="color:white">1, 2</mark>
 
 </div>
 </details>
@@ -273,7 +271,7 @@ The WebSocket API invokes the backend based on the content of the messages it re
 
 **Which approach best meets these requirements?**
 
-1. Use EventBridge with Kinesis Data Streams to send messages. 
+1. Use EventBridge with Kinesis Data Streams to send messages.
 2. Use a Step Function to send [SQS](../sqs) messages.
 3. Use a [Lambda function](../lambda) to send [SNS](../sns) messages.
 4. Use AWS Batch and [SNS](../sns) to send messages.
@@ -284,7 +282,7 @@ The WebSocket API invokes the backend based on the content of the messages it re
 
 [https://docs.aws.amazon.com/sns/latest/dg/welcome.html](https://docs.aws.amazon.com/sns/latest/dg/welcome.html)
 
-<mark style="color:white">3</mark> 
+<mark style="color:white">3</mark>
 </div>
 </details>
 

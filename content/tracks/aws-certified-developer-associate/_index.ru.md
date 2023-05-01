@@ -53,9 +53,9 @@ In order to pass the exam, you must score more than 720/1000 (unspecified) point
 ## Prepare
 
 The AWS website has:
+
 - [Exam Preparation Guide DVA-C01](https://d1.awsstatic.com/training-and-certification/docs-dev-associate/AWS-Certified-Developer-Associate_Exam-Guide.pdf)
 - *From 27 Feb 2023* [Exam Preparation Guide DVA-C02](https://d1.awsstatic.com/training-and-certification/docs-dev-associate/AWS-Certified-Developer-Associate_Exam-Guide_C02.pdf)
-
 
 To pass the exam, you need to know certain services from the 4 domains: `Development with AWS Services`, `Security`, `Deployment`, ~~`Refactoring`~~, `Monitoring and Troubleshooting`
 
@@ -63,7 +63,6 @@ To pass the exam, you need to know certain services from the 4 domains: `Develop
 
 > ~~Version 2.1 DVA-C01~~
 > Version 1.0 DVA-C02
-
 
 Analytics:
 
@@ -102,6 +101,7 @@ Database:
 - Amazon RDS
 
 Developer Tools:
+
 - AWS Amplify (new in DVA-C02)
 - AWS Cloud9 (new in DVA-C02)
 - AWS CloudShell (new in DVA-C02)
@@ -154,7 +154,7 @@ Storage:
 
 ### Training plan
 
-Opened a training plan for any tutorial to understand where to start learning. Have chosen **cloudacademy** service (but for example FreeCodeCamp has a free course with content). 
+Opened a training plan for any tutorial to understand where to start learning. Have chosen **cloudacademy** service (but for example FreeCodeCamp has a free course with content).
 
 Another option is to use free [AWS Workshops](https://workshops.aws/)
 
@@ -211,7 +211,6 @@ The following is my roadmap for the study. There may be adjustments.
 34. [Amazon Simple Queue Service (Amazon SQS)](sqs)
 35. [AWS Step Functions](step-functions)
 
-
 ## Resources
 
 - [AWS Certified Developer](https://aws.amazon.com/certification/certified-developer-associate/)
@@ -228,13 +227,13 @@ The following is my roadmap for the study. There may be adjustments.
 - [AWS Whitepapers](https://aws.amazon.com/whitepapers): Expand your knowledge of the cloud with AWS technical content authored by AWS and the AWS community, including technical whitepapers, technical guides, reference material, and reference architecture diagrams.
 - [Back to Basics](https://aws.amazon.com/architecture/back-to-basics): Back to Basics' is a video series that explains, examines, and decomposes basic cloud architecture pattern best practices.
 - [AWS Heroes Content Library](https://aws.amazon.com/developer/community/heroes/content-library): AWS Hero authored content including blogs, videos, slide presentations, podcasts, and more.
-- https://amazon.qwiklabs.com/catalog
+- <https://amazon.qwiklabs.com/catalog>
 - [AWS Workshops](https://workshops.aws): This website lists workshops created by the teams at Amazon Web Services (AWS). Workshops are hands-on events designed to teach or introduce practical skills, techniques, or concepts which you can use to solve business problems.
-- https://wellarchitectedlabs.com/
-- https://testseries.edugorilla.com/tests/1359/aws-certified-developer-associate
+- <https://wellarchitectedlabs.com/>
+- <https://testseries.edugorilla.com/tests/1359/aws-certified-developer-associate>
 
 ### Community posts
 
-- https://dev.to/romankurnovskii/aws-certified-developer-associate-prepare-2np
-- https://www.reddit.com/user/romankurnovskii/comments/x8rgig/what_is_the_topics_order_to_cover_to_get_prepared/?utm_source=share&utm_medium=web2x&context=3
-- https://twitter.com/romankurnovskii/status/1567746601136832512
+- <https://dev.to/romankurnovskii/aws-certified-developer-associate-prepare-2np>
+- <https://www.reddit.com/user/romankurnovskii/comments/x8rgig/what_is_the_topics_order_to_cover_to_get_prepared/?utm_source=share&utm_medium=web2x&context=3>
+- <https://twitter.com/romankurnovskii/status/1567746601136832512>

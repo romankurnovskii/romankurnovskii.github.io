@@ -5,13 +5,13 @@ toc: true
 tags: [aws, flask, serverless, mongodb, lambda]
 series: []
 categories: [AWS]
-date: "2022-09-06"
-featuredImage: https://picsum.photos/701/234
+date: 2022-09-06
+featuredImage: https://picsum.photos/701/234?grayscale
 authors: [roman-kurnovskii]
 draft: false
 ---
 
-mongodb free tier vs documentdb
+"mongodb" free tier vs "documentdb"
 
 ## Project structure
 
@@ -116,7 +116,7 @@ Create:
                 "kinesis:DeleteStream",
                 "kinesis:DescribeStream",
                 "lambda:*",
-				"logs:CreateLogDelivery",
+    "logs:CreateLogDelivery",
                 "logs:CreateLogGroup",
                 "logs:DeleteLogGroup",
                 "logs:DescribeLogGroups",
@@ -229,7 +229,6 @@ source ./venv/bin/activate
 ```
 
 ### App
-
 
 **src/app.py**
 
@@ -365,7 +364,6 @@ Deploying app-service-name to stage dev (eu-west-1)
 
 ✔ Service deployed to stack app-service-name (182s)
 ```
-
 
 ### Local development
 

@@ -44,7 +44,9 @@ weight: 15
 If you start sketching an intuitive algorithm, then in the process comes an understanding and an improved solution.
 
 Update plan by solution:
+
 - After reading, if there is no exact solution:
+
 1. Assume/analyze/draw the proposed algorithm
 2. View solutions with explanations
 3. Compare with your own / analyze
@@ -68,7 +70,7 @@ Update plan by solution:
 
 ### Intermediate results
 
-Revise training tactics. Prepare list of top coding patterns. 
+Revise training tactics. Prepare list of top coding patterns.
 
 Practice on each coding pattern.
 
@@ -84,3 +86,8 @@ Practice on each coding pattern.
 |  37   | [78. Subsets](../leetcode/medium/78)           | Medium     | [Array](/en/tags/array), [Backtracking](/en/tags/backtracking),  [Bit Manipulation](/en/tags/bit-manipulation)       |
 
 Started participating in [contests](../codeforces).
+
+## Links
+
+- [Top Interview 150](https://leetcode.com/studyplan/top-interview-150/)
+- [LeetCode Companies problems](https://docs.google.com/spreadsheets/d/1hW-bfeFKSkEDzfjaDMjDQmgsupEZz3gysXpG0mrf6QE/edit#gid=1350124072)

@@ -17,7 +17,6 @@ Theme supports the rendering of mathematical formulas by using KaTeX.
 
 <!--more-->
 
-
 You can type inline equation like $E=mc^2$.
 
 And also displayed equation like:
@@ -25,7 +24,6 @@ And also displayed equation like:
 <div>
 \[ \int u \frac{dv}{dx}\, dx=uv-\int \frac{du}{dx}v\,dx \]
 </div>
-
 
 Matrix:
 

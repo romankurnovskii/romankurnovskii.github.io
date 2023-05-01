@@ -7,25 +7,25 @@ tags: [markdown, css, html, themes]
 categories: [CheatSheet]
 series:
 date: 2022-04-21
-featuredImage: https://picsum.photos/700/237
+featuredImage: https://picsum.photos/700/237?grayscale
 draft: false
 ---
 
 This article offers an example of the basic Markdown syntax that can be used and also shows whether the basic elements of HTML are decorated with CSS.
 <!--more-->
 
-
 ## Headers
 
-
 ```
 Header 1
 ========
 Header 2
 --------
 ```
+
 Header 1
 ========
+
 Header 2
 --------
 
@@ -37,13 +37,18 @@ Header 2
 ##### h5
 ###### h6
 ```
-# h1
-## h2
-### h3
-#### h4
-##### h5
-###### h6
 
+# h1
+
+## h2
+
+### h3
+
+#### h4
+
+##### h5
+
+###### h6
 
 ## Paragraph
 
@@ -82,17 +87,16 @@ ___bold italic___
 ```
 
 *italic*
-_italic_
+*italic*
 
 **bold**
-__bold__
+**bold**
 ***bold italic***
-___bold italic___
+***bold italic***
 
 ~~strikethrough~~
 
 `code`
-
 
 ## Links
 
@@ -153,7 +157,6 @@ in which the corner bracket is placed only before the beginning of the new parag
 >
 >Level One Citation
 
-
 ## Tables
 
 ```
@@ -180,7 +183,6 @@ The cells in the delimitation row use only symbols `-` and `:`. The symbol `:` i
 | :----------------- | ------------------: | :------------------: |
 | Text               |                Text |         Text         |
 
-
 ### Markdown inside the table
 
 ```
@@ -192,7 +194,6 @@ The cells in the delimitation row use only symbols `-` and `:`. The symbol `:` i
 | Italics   | Bold     | Code   |
 | --------- | -------- | ------ |
 | *italics* | **bold** | `code` |
-
 
 ## Code Blocks
 
@@ -258,15 +259,14 @@ The cells in the delimitation row use only symbols `-` and `:`. The symbol `:` i
 * Item 1
 * Item 2
   
-- Item 1
-- Item 2
+* Item 1
+* Item 2
   
-- [ ] Checkbox off
-- [x] Checkbox on
+* [ ] Checkbox off
+* [x] Checkbox on
   
 1. Item 1
 1. Item 2
-
 
 Make the headers uniform. At the end of the title, do not put a point.
 
@@ -275,11 +275,11 @@ Make the headers uniform. At the end of the title, do not put a point.
 | Getting the <br/> Creating a Cluster | Get the <br/> Creating a Cluster |
 | Get <br/> Create Cluster             |
 
-1. If you want to describe the sequence of actions, use the numbered list. At the end of the lines, put a period. 
+1. If you want to describe the sequence of actions, use the numbered list. At the end of the lines, put a period.
 1. If the order of items is not important, use the marked list. Make it one of the ways:
 
-    * If the entries in the list are separate sentences, start them with a capital letter and put a period at the end. 
-    * If the introductory phrase and the list make up one sentence, the entries in the list should start with a lowercase letter and end with a semicolon. The last list item ends with a dot. 
+    * If the entries in the list are separate sentences, start them with a capital letter and put a period at the end.
+    * If the introductory phrase and the list make up one sentence, the entries in the list should start with a lowercase letter and end with a semicolon. The last list item ends with a dot.
     * If the list consists of parameter names or values (without explanation), do not put characters at the end of lines.
 
 ### Ordered list
@@ -346,7 +346,7 @@ Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and ot
 
     Most <mark>salamanders</mark> are nocturnal
 
-💡 _Data structure_ is a container that stores data in a specific format. This container decides how the outside world can read or change this data.
+💡 *Data structure* is a container that stores data in a specific format. This container decides how the outside world can read or change this data.
 
 ## Math LaTeX syntax
 
@@ -388,4 +388,4 @@ Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and ot
 
 ## Resources
 
-- [Style from Google](https://github.com/google/styleguide/blob/gh-pages/docguide/style.md)
+* [Style from Google](https://github.com/google/styleguide/blob/gh-pages/docguide/style.md)

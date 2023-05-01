@@ -24,7 +24,6 @@ I use this clean template as a boilerplate for my projects.
 
 ## Prerequisites
 
-
 Before starting this tutorial, make sure you have the following tools installed on your system:
 
 1. Node.js (version 12 or newer)

@@ -4,7 +4,7 @@ description: Script will zoom in on a picture on click in Hugo
 toc: true
 tags: [hugo]
 series: 
-categories: [programming, Hugo]
+categories: [Programming, Hugo]
 date: 2022-07-09
 authors: [roman-kurnovskii]
 featuredImage: img/featured.en.jpg
@@ -20,6 +20,7 @@ In order to understand which images we can enhance, we add a separate tag/key/id
 ## Tools
 
 To implement the functionality, we need to:
+
 - Write/connect a script/handler that will perform the **zoomin** effect on the images we need
 - Add the necessary *metadata* to the images, so the script can find them
   
@@ -31,7 +32,6 @@ This package provides this functionality in a non-loaded, handy style.
 
 ![](https://user-images.githubusercontent.com/6137112/43369906-7623239a-9376-11e8-978b-6e089be499fb.gif)
 [Demo](https://medium-zoom.francoischalifour.com/)
-
 
 ### Script logic
 
@@ -126,7 +126,6 @@ paragraphs.forEach(paragraph => {
 You can download the script, or you can upload it
 
 [Script Link](https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js)
-
 
 #### Adding to template
 

@@ -83,6 +83,6 @@ The progressing from one stage to another inside of a pipeline.
 
 [https://docs.aws.amazon.com/codepipeline/latest/userguide/tutorials-four-stage-pipeline.html](https://docs.aws.amazon.com/codepipeline/latest/userguide/tutorials-four-stage-pipeline.html)
 
-<mark style="color:white">2, 3</mark> 
+<mark style="color:white">2, 3</mark>
 </div>
 </details>

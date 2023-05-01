@@ -7,11 +7,12 @@ categories: [Algorithms]
 tags: []
 series: []
 date: 2022-10-15
-lastmod: 2023-02-12
+lastmod: 2023-06-06
 # featuredImage: https://media.geeksforgeeks.org/wp-content/cdn-uploads/20221017172544/Introduction-to-Data-Structures-and-Algorithms-DSA.png
 weight: 30
 authors:
 published: true
+TODO: Dynamic programming
 ---
 
 ## Intro
@@ -19,6 +20,8 @@ published: true
 - [Big-O Cheat Sheet](https://www.30secondsofcode.org/articles/s/big-o-cheatsheet)
 
 ## Sort
+
+**Insertion sort** sorts an array by continuously picking an element, starting from the second element, and inserting it in its correct position in the sorted part of the array to its left. It does this by shifting larger elements one position ahead of their current position, making room for the new element.
 
 ```python
 def insertion_sort(array):
@@ -30,6 +33,8 @@ def insertion_sort(array):
             array[i] = value
     return array
 ```
+
+**Selection sort** works by repeatedly finding the minimum element from the unsorted part of the array and swapping it with the first unsorted element. It continues this process until the whole array is sorted, hence effectively moving the smallest unsorted element to its correct position in each iteration.
 
 ```python
 def selection_sort(array):
@@ -43,6 +48,83 @@ def selection_sort(array):
         array[i] = temp
     return array
 ```
+
+**Merge sort** sorts an array by dividing it into <mark>two halves</mark>, recursively sorting those halves, and then merging them back together in sorted order.
+
+1. If the array has more than one element, find the middle of the array.
+2. Divide the array into two halves using the middle index: the left half (`left_half`) and the right half (`right_half`).
+3. Recursively sort both halves by calling `merge_sort` on `left_half` and `right_half`.
+4. Merge the sorted halves back into the original array. The merge operation walks through `left_half` and `right_half`, and at each step, <mark>it copies the smaller element</mark> from either `left_half` or `right_half` into the original array.
+5. If there are any remaining elements in `left_half` or `right_half`  after one has been fully copied back into the array, those elements are copied over.
+   1. This happens because those remaining elements are guaranteed to be larger than all elements already copied back into the array.
+
+First more simple example of merging already sorted two arrays:
+
+**Merge sorted arrays:**
+
+```python
+def merge(left_ar, right_ar):
+    res = []
+    left_index, right_index = 0
+    while left_index < len(left_ar) and right_index < len(right_ar):
+        if left_ar[left_index] < right_ar[right_index]:
+            res.append(left_ar[left_index])
+            left_index += 1
+        else:
+            res.append(right_ar[right_index])
+            right_index += 1
+    res += left_ar[left_index:] + right_ar[right_index:]
+
+def merge_sort(array):
+    mid = len(array) / 2
+    left_ar = array[:mid]
+    right_ar = array[mid:]
+    return merge(left_ar, right_ar)
+```
+
+**Sort array:**
+
+![merge-sort](../assets/merge-sort.jpeg)
+
+```python
+def merge_sort(array):
+    if len(array) > 1: # Only sort if array is larger than 1
+        mid = len(array) // 2 # middle of the array
+ 
+        # Split the array into two halves
+        left_half = array[:mid]
+        right_half = array[mid:]
+ 
+        # Recursively sort both halves
+        merge_sort(left_half)
+        merge_sort(right_half)
+ 
+        left_index = right_index = merged_index = 0
+ 
+        # Merge sorted halves back into the original array
+        while left_index < len(left_half) and right_index < len(right_half):
+            if left_half[left_index] <= right_half[right_index]:
+                array[merged_index] = left_half[left_index]
+                left_index += 1
+            else:
+                array[merged_index] = right_half[right_index]
+                right_index += 1
+            merged_index += 1
+ 
+        # If any elements left in either half, append them to the array
+        while left_index < len(left_half):
+            array[merged_index] = left_half[left_index]
+            left_index += 1
+            merged_index += 1
+ 
+        while right_index < len(right_half):
+            array[merged_index] = right_half[right_index]
+            right_index += 1
+            merged_index += 1
+```
+
+{{< video src="../assets/merge-sort-visual.mp4" title="Merge Sort" >}}
+{{< video src="../assets/merge-sort.mp4" title="Merge Sort" >}}
 
 ## Binary Search
 
@@ -77,12 +159,174 @@ bisect_left(sorted_fruits, 'kiwi')
 >> 2
 ```
 
+## Sliding Window
+
+<mark>**Usage:** Use when need to handle the input data in specific window size.</mark>
+
+![sliding-image](../assets/sliding-image.jpg)
+
+<center><b>Example:</b> Sliding window technique to find the <b>largest</b> sum of 4 consecutive numbers.</center>
+
+**Template:**
+
+```python
+while j < size:
+    # Calculation's happen's here
+    # ...
+
+    if condition < k:
+        j+=1
+    elif condition == k: # ans <-- calculation
+        j+=1
+    elif condition > k:
+        while condition > k:
+            i+=1 # remove calculation for i
+        j+=1
+return ans
+```
+
+**Examples**
+
+**Problem:** Find the largest sum of `k` consecutive entries, given an array of size `n`.
+
+1. Add the first `k` components together and save the result in the `currentSum` variable. Because this is the first sum, it is also the current maximum; thus, save it in the variable `maximumSum`.
+2. As the window size is `ww`, we move the window one place to the right and compute the sum of the items in the window.
+3. Update the maximum if the `currentSum` is greater than the `maximumSum`, and repeat step 2.
+
+```python
+def max_sum(arr, k):
+    n = len(arr)  # length of the array
+
+    if n < k:  # length of array must be greater window size
+        print("Invalid")
+        return -1
+
+    # sum of first k elements
+    window_sum = sum(arr[:k])
+    max_sum = window_sum
+
+    # remove the  first element of previous
+    # window and add the last element of
+    # the current window to calculate the 
+    # the sums of remaining windows
+    for i in range(n - k):
+        window_sum = window_sum - arr[i] + arr[i + k]
+        max_sum = max(window_sum, max_sum)
+
+    return max_sum
+
+
+arr = [16, 12, 9, 19, 11, 8]
+k = 3
+print(max_sum(arr, k))
+```
+
+**Problem:** Find duplicates within a range `k` in an array
+
+    Input: nums = [5, 6, 8, 2, 4, 6, 9]
+    k = 2
+    Ouput: False
+
+```python
+def get_duplicates(nums, k):
+    d = {}
+    count = 0
+    for i in range(len(nums)):
+        if nums[i] in d and i - d[nums[i]] <= k:
+            return True
+        else:
+            d[nums[i]] = i
+    
+    return False
+```
+
+- [Problem/solution examples](https://itnext.io/sliding-window-algorithm-technique-6001d5fbe8b3)
+- [Article on LeetCode](https://leetcode.com/explore/featured/card/leetcodes-interview-crash-course-data-structures-and-algorithms/703/arraystrings/4502/)
+- [Practice questions](/en/tags/sliding-window/)
+
+## Two Pointers
+
+A classic way of writing a two-pointer sliding window. The right pointer keeps moving to the right until it cannot move to the right (the specific conditions depend on the topic). When the right pointer reaches the far right, start to move the left pointer to release the left boundary of the window.
+
+<mark>**Usage:** Use two pointers to iterate the input data. Generally, both pointers move in the opposite direction at a constant interval.</mark>
+
+![two-pointers.jpg](../assets/two-pointers.jpg)
+
+- [Practice questions](/en/tags/two-pointers/)
+- [Two pointers intro](https://algo.monster/problems/two_pointers_intro)
+
+## Two-Pass Approach
+
+The two-pass approach is a common algorithmic pattern used to solve problems by going through the data twice. In the first pass, you gather some information that you'll use in the second pass to solve the problem. Here is an explanation of the two-pass approach with two examples.
+
+**First Pass:** Gather Information
+
+The first pass is used to collect some information from the data that will be useful to solve the problem. This could involve counting the occurrence of items, finding the maximum or minimum value, or performing some other calculation that will help in the second pass.
+Second Pass: Solve the Problem
+
+Using the information gathered in the first pass, you can now go through the data again to solve the problem.
+Let's go through two examples to understand this approach better.
+
+**Example 1:** Finding the Relative Rank of Scores
+
+You have a list of scores and you want to find out the relative rank of each score in descending order.
+
+1. First Pass: Sort the list in descending order.
+1. Second Pass: Create a new list with the rank of each score in the original list.
+
+```python
+scores = [95, 85, 90, 100]
+sorted_scores = sorted(scores, reverse=True)
+ranking = {score: i + 1 for i, score in enumerate(sorted_scores)}
+
+for score in scores:
+    print("Score:", score, "Rank:", ranking[score])
+```
+
+Output:
+
+```
+Score: 95 Rank: 2
+Score: 85 Rank: 4
+Score: 90 Rank: 3
+Score: 100 Rank: 1
+```
+
+**Example 2:** Find if there's a pair of numbers in an array that add up to a target value
+
+1. First Pass: Create a diccionario that keeps track of the occurrence of each number in the list.
+1. Second Pass: For each number in the array, check if there is another number in the diccionario that adds up to the target value.
+
+```python
+nums = [2, 3, 7, 11, 15]
+target = 9
+counter = {}
+
+for num in nums:
+    counter[num] = counter.get(num, 0) + 1
+
+for num in nums:
+    diff = target - num
+    if diff in counter:
+        if diff != num or counter[num] > 1:
+            print("Pair:", (num, diff))
+            break
+```
+
+Output:
+
+```
+Pair: (2, 7)
+```
+
+In both examples, the first pass through the data gathered information that was then used in the second pass to solve the problem.
 
 ## Dynamic programming (DP)
 
 ## Breadth First Search (BFS)
 
 **BFS on Tree:**
+
 ```python
 from collections import deque
 
@@ -114,6 +358,7 @@ bfs_tree(root)
 ```
 
 **BFS on Graph:**
+
 ```python
 from collections import defaultdict, deque
 
@@ -152,6 +397,7 @@ g.bfs(2)
 ## Depth-first search (DFS)
 
 **DFS on Tree:**
+
 ```python
 def dfs(root, target):
     if root is None:
@@ -165,6 +411,7 @@ def dfs(root, target):
 ```
 
 **DFS on Graph:**
+
 ```python
 def dfs(root, visited):
     for neighbor in get_neighbors(root):
@@ -178,10 +425,11 @@ def dfs(root, visited):
 
 Let's imagine you have a big maze made of walls and corridors, and you want to find a way from the entrance to the exit. You can put a robot at the entrance, and you want to tell the robot what to do to find the exit.
 
-The first thing you might tell the robot is to always <mark>go as far as it can in one direction before turning.</mark> **This is what depth-first search does.** 
+The first thing you might tell the robot is to always <mark>go as far as it can in one direction before turning.</mark> **This is what depth-first search does.**
 
-The robot starts at the entrance and goes as far as it can down the first corridor it finds. 
-- If it comes to a dead end, it goes back to the last intersection it passed and tries the next corridor. 
+The robot starts at the entrance and goes as far as it can down the first corridor it finds.
+
+- If it comes to a dead end, it goes back to the last intersection it passed and tries the next corridor.
 - If it comes to the exit, it stops and says "I found the exit!".
 
 Example:
@@ -257,105 +505,6 @@ def dfs(matrix, row, col, visited):
         dfs(matrix, new_row, new_col, visited)
 ```
 
-
-## Sliding Window
-
-<mark>**Usage:** Use when need to handle the input data in specific window size.</mark>
-
-![sliding-image](../assets/sliding-image.jpg)
-
-<center><b>Example:</b> Sliding window technique to find the <b>largest</b> sum of 4 consecutive numbers.</center>
-
-**Template:**
-
-```python
-while j < size:
-    # Calculation's happen's here
-    # ...
-
-    if condition < k:
-        j+=1
-    elif condition == k: # ans <-- calculation
-        j+=1
-    elif condition > k:
-        while condition > k:
-            i+=1 # remove calculation for i
-        j+=1
-return ans
-```
-
-**Examples**
-
-**Problem:** Find the largest sum of K consecutive entries, given an array of size N
-
-1. Add the first `K` components together and save the result in the `currentSum` variable. Because this is the first sum, it is also the current maximum; thus, save it in the variable `maximumSum`.
-2. As the window size is `ww`, we move the window one place to the right and compute the sum of the items in the window.
-3. Update the maximum if the `currentSum` is greater than the `maximumSum`, and repeat step 2.
-
-```python
-def max_sum(arr, k):
-	n = len(arr)    # length of the array
-
-	# length of array must be greater
-        # window size
-	if n < k:
-		print("Invalid")
-		return -1
-
-	# sum of first k elements
-	window_sum = sum(arr[:k])
-	max_sum = window_sum
-
-	# remove the  first element of previous
-	# window and add the last element of
-	# the current window to calculate the 
-    # the sums of remaining windows by
-	for i in range(n - k):
-		window_sum = window_sum - arr[i] + arr[i + k]
-		max_sum = max(window_sum, max_sum)
-
-	return max_sum
-
-
-arr = [16, 12, 9, 19, 11, 8]
-k = 3
-print(max_sum(arr, k))
-```
-
-**Problem:** Find duplicates within a range ‘k’ in an array
-
-    Input: nums = [5, 6, 8, 2, 4, 6, 9]
-    k = 2
-    Ouput: False
-
-```python
-def get_duplicates(nums, k):
-    d = {}
-    count = 0
-    for i in range(len(nums)):
-        if nums[i] in d and i - d[nums[i]] <= k:
-            return True
-        else:
-            d[nums[i]] = i
-    
-    return False
-```
-
-- [Problem/solution examples](https://itnext.io/sliding-window-algorithm-technique-6001d5fbe8b3)
-- [Article on LeetCode](https://leetcode.com/explore/featured/card/leetcodes-interview-crash-course-data-structures-and-algorithms/703/arraystrings/4502/)
-- [Practice questions](/en/tags/sliding-window/)
-
-## Two Pointers
-
-A classic way of writing a two-pointer sliding window. The right pointer keeps moving to the right until it cannot move to the right (the specific conditions depend on the topic). When the right pointer reaches the far right, start to move the left pointer to release the left boundary of the window. 
-
-<mark>**Usage:** Use two pointers to iterate the input data. Generally, both pointers move in the opposite direction at a constant interval.</mark>
-
-![two-pointers.jpg](../assets/two-pointers.jpg)
-
-- [Practice questions](/en/tags/two-pointers/)
-- [Two pointers intro](https://algo.monster/problems/two_pointers_intro)
-
 ## Backtracking
 
 Based on [Depth-first search (DFS)](#depth-first-searchdfs)
@@ -380,7 +529,6 @@ Backtracking algorithm is derived from the Recursion algorithm, with the **optio
 2. When drawing the tree, bear in mind:
    - how do we know if we have reached a solution?
    - how do we branch (generate possible children)?
-
 
 **Example:**
 
@@ -491,7 +639,6 @@ class Solution:
 # ]
 ```
 
-
 ## Dutch National Flag problem
 
 The Dutch National Flag problem is a sorting problem that asks us to sort an array of colors, like a bunch of different colored socks. We want to put all the socks of the same color together in the array.
@@ -504,8 +651,9 @@ One way to solve this problem is to use a technique called the Dutch National Fl
 
 The low pointer starts at the beginning of the array, the high pointer starts at the end of the array, and the mid pointer starts at the beginning of the array.
 
-We then iterate through the array with the mid pointer. 
-- If the value at the mid pointer is `0`, we swap it with the value at the low pointer and increment both pointers. - If the value at the mid pointer is `1`, we leave it where it is and just increment the mid pointer. 
+We then iterate through the array with the mid pointer.
+
+- If the value at the mid pointer is `0`, we swap it with the value at the low pointer and increment both pointers. - If the value at the mid pointer is `1`, we leave it where it is and just increment the mid pointer.
 - If the value at the mid pointer is 2, we swap it with the value at the high pointer and decrement the high pointer.
 
 We keep doing this until the mid pointer passes the high pointer, at which point the array is sorted.
@@ -514,9 +662,9 @@ So, in our sock example, we start with the low pointer at the beginning of the a
 
 ## Resources
 
-- https://www.geeksforgeeks.org/learn-data-structures-and-algorithms-dsa-tutorial/
-- https://algo.monster/templates
-- https://interviewnoodle.com/grokking-leetcode-a-smarter-way-to-prepare-for-coding-interviews-e86d5c9fe4e1
+- <https://www.geeksforgeeks.org/learn-data-structures-and-algorithms-dsa-tutorial/>
+- <https://algo.monster/templates>
+- <https://interviewnoodle.com/grokking-leetcode-a-smarter-way-to-prepare-for-coding-interviews-e86d5c9fe4e1>
 - [data structures](https://github.com/OpenGenus/cosmos)
 - [Competitive Programming Library](https://github.com/cheran-senthil/PyRival)
 - [Algorithms for Competitive Programming](https://cp-algorithms.com/)

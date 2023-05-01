@@ -13,7 +13,7 @@ awsTag: Elastic Load Balancing
 
 Elastic Load Balancing (ELB) automa­tically distri­butes incoming applic­ation traffic across multiple targets, such as EC2's, contai­ners, IP addresses, & Lambda functions.
 
-Elastic Load Balancing is a best practice to assign incoming traffic to a single target, such as an EC2 Instance, and then distribute the rest of the traffic across the target's resources. An elastic load balancer distributes traffic across an arbitrary number of targets. 
+Elastic Load Balancing is a best practice to assign incoming traffic to a single target, such as an EC2 Instance, and then distribute the rest of the traffic across the target's resources. An elastic load balancer distributes traffic across an arbitrary number of targets.
 
 - [Documentation](https://aws.amazon.com/elasticloadbalancing/)
 - [User Guide](https://docs.aws.amazon.com/elasticloadbalancing/?id=docs_gateway)
@@ -65,16 +65,16 @@ Elastic Load Balancing is a best practice to assign incoming traffic to a single
 
 **Vertical Scaling**
 
-* Increasing the size of the instances (ie- increase in RAM and vCPUs )
-* Ex: from t2.micro to t3.2xlarge (doesn't have to be the same instance family)
-* In vertical scaling, you scale up/down
-* Vertical scaling usually happens in databases, to handle high workloads as your application grows
+- Increasing the size of the instances (ie- increase in RAM and vCPUs )
+- Ex: from t2.micro to t3.2xlarge (doesn't have to be the same instance family)
+- In vertical scaling, you scale up/down
+- Vertical scaling usually happens in databases, to handle high workloads as your application grows
 
 ***Horizontal Scaling**
 
-* Increasing the no. of instances
-* In horizontal scaling, you scale out/in
-* Ex: ASG scaling out EC2 instances to match increased workload for your web application
+- Increasing the no. of instances
+- In horizontal scaling, you scale out/in
+- Ex: ASG scaling out EC2 instances to match increased workload for your web application
 
 ### Cross Zone Load Balancing
 
@@ -89,14 +89,13 @@ Elastic Load Balancing is a best practice to assign incoming traffic to a single
 
 - Enabled by default. Can disable it
 - Not charged for data transfer between AZs
- 
+
 ![flow](./img/elb-clb.jpeg)
 
 **NLB**
 
 - Disabled by default. Can enable it
 - Charged for data transfer between AZs
-
 
 ## Digest
 
@@ -112,7 +111,6 @@ Elastic Load Balancing is a best practice to assign incoming traffic to a single
 - Cool down period - ensure not to launch additional instances before previous scaling activities complete
 - Launch configuration - Instance configuration template the ASG uses to launch EC2 instances
 
-
 ## Price
 
 [Current price](https://aws.amazon.com/elasticloadbalancing/pricing/)
@@ -123,7 +121,7 @@ Type: Scale your network design
 
 - AWS discourages the use of Classic Load Balancer in favor of its newer load balancers
 
-- Application Load Balancer is typically used for web applications. 
+- Application Load Balancer is typically used for web applications.
 
 - Network Load Balancer would be used for anything that ALBs don’t cover. A typical use case would be a near real-time data streaming service (video, stock quotes, etc.) Another typical case is that you would need to use an NLB if your application uses non-HTTP protocols
 
@@ -161,7 +159,6 @@ Application Load Balancer (ALB).
 </div>
 </details>
 
-
 ### Q3
 
 **Your would like to optimize the performance of their web application by routing inbound traffic to api.mysite.com to Compute Optimized EC2 instances and inbound traffic to mobile.mysite.com to Memory Optimized EC2 instances.**
@@ -172,7 +169,6 @@ Application Load Balancer (ALB).
 1. Configure proxy servers to forward the traffic to the correct instances
 1. Use an Application Load Balancer with path-based routing rules to forward the traffic to the correct instances
 1. Use an Application Load Balancer with host-based routing rules to forward the traffic to the correct instances
-
 
 <details>
 <summary>Explanation</summary>
@@ -185,7 +181,6 @@ Application Load Balancer with host-based routing rules
 <mark style="color:white">4</mark>
 </div>
 </details>
-
 
 ### Q4
 
@@ -223,7 +218,7 @@ Elastic Load Balancing offers three types of load balancers that all feature the
 <summary>Explanation</summary>
 <div>
 
-Network Load Balancer operates at the connection level (Layer 4), routing connections to targets – Amazon EC2 instances, microservices, and containers – within Amazon Virtual Private Cloud (Amazon VPC) based on IP protocol data. 
+Network Load Balancer operates at the connection level (Layer 4), routing connections to targets – Amazon EC2 instances, microservices, and containers – within Amazon Virtual Private Cloud (Amazon VPC) based on IP protocol data.
 
 Ideal for load balancing of both TCP and UDP traffic, Network Load Balancer is capable of handling millions of requests per second while maintaining ultra-low latencies. Network Load Balancer is optimized to handle sudden and volatile traffic patterns while using a single static IP address per Availability Zone.
 

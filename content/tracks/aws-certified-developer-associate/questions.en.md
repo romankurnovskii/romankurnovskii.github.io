@@ -12,11 +12,12 @@ featuredImage: "images/aws-cda-intro.en.png"
 weight: 99999
 ---
 
-On this page you can find 50 random questions. 
+On this page you can find 50 random questions.
 
 To get prepared for exam you can use [cloud-exam-prepare.com](https://www.cloud-exam-prepare.com)
 
 ## Q1 - Q10
+
 ### Q1
 
 **You are developing an API in Amazon API Gateway that several mobile applications will use to interface with a back end service in AWS being written by another developer. You can use a(n)____ integration for your API methods to develop and test your client applications before the other developer has completed work on the back end.**
@@ -34,7 +35,7 @@ To get prepared for exam you can use [cloud-exam-prepare.com](https://www.cloud-
 
 Amazon API Gateway supports mock integrations for API methods.
 
-<mark style="color:white">2</mark> 
+<mark style="color:white">2</mark>
 
 </div>
 </details>
@@ -48,7 +49,7 @@ Amazon API Gateway supports mock integrations for API methods.
 1. Use a template to first create Resource A with the ARN as an output value.
 2. Use a template to create Resource B and reference the ARN of Resource A using Fn::GetAtt.
 3. Hard code the ARN value output from creating Resource A into the second template.
-4. Just create Resource B. 
+4. Just create Resource B.
 
 <details>
 <summary>Explanation</summary>
@@ -56,7 +57,7 @@ Amazon API Gateway supports mock integrations for API methods.
 
 [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html)
 
-<mark style="color:white">2</mark> 
+<mark style="color:white">2</mark>
 </div>
 </details>
 
@@ -77,7 +78,7 @@ Amazon API Gateway supports mock integrations for API methods.
 
 [https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateCachePolicy.html](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateCachePolicy.html)
 
-<mark style="color:white">4</mark> 
+<mark style="color:white">4</mark>
 </div>
 </details>
 
@@ -87,7 +88,7 @@ Amazon API Gateway supports mock integrations for API methods.
 
 **What is the easiest way to develop these simple applications?**
 
-1. Install AWS SAM CLI and run “sam init \[options\]” with the templates’ data. 
+1. Install AWS SAM CLI and run “sam init \[options\]” with the templates’ data.
 2. Use AWS step function visual workflow and insert your templates in the states
 3. Save your template in the Serverless Application Repository and use AWS SAM
 
@@ -95,14 +96,13 @@ Amazon API Gateway supports mock integrations for API methods.
 <summary>Explanation</summary>
 <div>
 
-AWS SAM - AWS Serverless Application Model 
+AWS SAM - AWS Serverless Application Model
 
 [https://aws.amazon.com/serverless/sam/](https://aws.amazon.com/serverless/sam/)
 
-<mark style="color:white">1</mark> 
+<mark style="color:white">1</mark>
 </div>
 </details>
-
 
 ### Q5
 
@@ -121,7 +121,7 @@ AWS SAM - AWS Serverless Application Model
 
 Can delete only if unused.
 
-<mark style="color:white">1</mark> 
+<mark style="color:white">1</mark>
 </div>
 </details>
 
@@ -142,10 +142,9 @@ Can delete only if unused.
 
 If you delete a deployment group, all details associated with that deployment group will also be deleted from CodeDeploy. The instances used in the deployment group will remain unchanged. This action cannot be undone.
 
-<mark style="color:white">3</mark> 
+<mark style="color:white">3</mark>
 </div>
 </details>
-
 
 ### Q7
 
@@ -164,10 +163,9 @@ If you delete a deployment group, all details associated with that deployment gr
 
 [https://docs.aws.amazon.com/codepipeline/latest/userguide/tutorials-four-stage-pipeline.html](https://docs.aws.amazon.com/codepipeline/latest/userguide/tutorials-four-stage-pipeline.html)
 
-<mark style="color:white">2, 3</mark> 
+<mark style="color:white">2, 3</mark>
 </div>
 </details>
-
 
 ### Q8
 
@@ -184,12 +182,11 @@ If you delete a deployment group, all details associated with that deployment gr
 <summary>Explanation</summary>
 <div>
 
-https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html
+<https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html>
 
-<mark style="color:white">3</mark> 
+<mark style="color:white">3</mark>
 </div>
 </details>
-
 
 ### Q9
 
@@ -209,7 +206,7 @@ https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa
 
 Amazon Cognito adds user sign-up, sign-in, and access control to web and mobile applications quickly and easily. Users can also create an [AWS Lambda](../lambda) function to make an API call to a custom analytics solution and then trigger that function with an Amazon Cognito post authentication trigger.
 
-<mark style="color:white">1, 5</mark> 
+<mark style="color:white">1, 5</mark>
 </div>
 </details>
 
@@ -229,17 +226,16 @@ Amazon Cognito adds user sign-up, sign-in, and access control to web and mobile 
 <summary>Explanation</summary>
 <div>
 
-[AWS AppSync](https://aws.amazon.com/appsync/) simplifies application development by letting users create a flexible API to securely access, manipulate, and combine data from one or more data sources. AWS AppSync is a managed service that uses GraphQL to make it easy for applications to get the exact data they need. 
+[AWS AppSync](https://aws.amazon.com/appsync/) simplifies application development by letting users create a flexible API to securely access, manipulate, and combine data from one or more data sources. AWS AppSync is a managed service that uses GraphQL to make it easy for applications to get the exact data they need.
 
-AWS AppSync allows users to build scalable applications, including those requiring [real-time updates](https://docs.aws.amazon.com/appsync/latest/devguide/real-time-data.html), on a range of data sources, including Amazon DynamoDB. In [Amazon API Gateway](../api-gateway), users can [create a WebSocket API](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html) as a stateful frontend for an AWS service (such as [AWS Lambda](../lambda) or DynamoDB) or for an HTTP endpoint. 
+AWS AppSync allows users to build scalable applications, including those requiring [real-time updates](https://docs.aws.amazon.com/appsync/latest/devguide/real-time-data.html), on a range of data sources, including Amazon DynamoDB. In [Amazon API Gateway](../api-gateway), users can [create a WebSocket API](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html) as a stateful frontend for an AWS service (such as [AWS Lambda](../lambda) or DynamoDB) or for an HTTP endpoint.
 
 The WebSocket API invokes the backend based on the content of the messages it receives from client applications. Unlike a REST API, which receives and responds to requests, a WebSocket API supports two-way communication between client applications and the backend.
 
-<mark style="color:white">1, 2</mark> 
+<mark style="color:white">1, 2</mark>
 
 </div>
 </details>
-
 
 ## Q11 - Q20
 
@@ -256,10 +252,9 @@ The WebSocket API invokes the backend based on the content of the messages it re
 <summary>Explanation</summary>
 <div>
 
-<mark style="color:white">4</mark> 
+<mark style="color:white">4</mark>
 </div>
 </details>
-
 
 ### 2
 
@@ -270,18 +265,16 @@ The WebSocket API invokes the backend based on the content of the messages it re
 1. The [ElastiCache](../elasticache) cluster becomes more prone to failures.
 1. The performance of the [ElastiCache](../elasticache) cluster is no longer controllable.
 
-
 <details>
 <summary>Explanation</summary>
 <div>
 
 Elasticache is a service designed to be used internally to your VPC. External access is discouraged due to the latency of Internet traffic and security concerns. However, if external access to [ElastiCache](../elasticache) is required for test or development purposes, it can be done through a VPN.
 
-<mark style="color:white">2</mark> 
+<mark style="color:white">2</mark>
 
 </div>
 </details>
-
 
 ### 3
 
@@ -298,9 +291,9 @@ Elasticache is a service designed to be used internally to your VPC. External ac
 <summary>Explanation</summary>
 <div>
 
-[[AWS Secrets Manager](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-resources.html)](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-resources.html)
+[[AWS Secrets Manager](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-resources.html)](<https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-resources.html>)
 
-<mark style="color:white">3</mark> 
+<mark style="color:white">3</mark>
 
 </div>
 </details>
@@ -320,16 +313,15 @@ Elasticache is a service designed to be used internally to your VPC. External ac
 <summary>Explanation</summary>
 <div>
 
-https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-staticfiles.html
+<https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-staticfiles.html>
 
 An Amazon S3 bucket would work, but the AWS ElasticBeanstalk proxy server would need to route the requests to the static files to a different place anytime they need to be shown.
 
-<mark style="color:white">2</mark> 
+<mark style="color:white">2</mark>
 
 </div>
 </details>
 
- 
 ### 5
 
 **A company is providing services to many downstream consumers. Each consumer may connect to one or more services. This has resulted in complex architecture that is difficult to manage and does not scale well. The company needs a single interface to manage these services to consumers**
@@ -345,7 +337,7 @@ An Amazon S3 bucket would work, but the AWS ElasticBeanstalk proxy server would 
 <summary>Explanation</summary>
 <div>
 
-<mark style="color:white">4</mark> 
+<mark style="color:white">4</mark>
 
 </div>
 </details>
@@ -388,7 +380,6 @@ Application Load Balancer (ALB).
 2. Configure proxy servers to forward the traffic to the correct instances
 3. Use Classic Load Balancer with path-based routing rules to forward the traffic to the correct instances
 4. Use Application Load Balancer with host-based routing rules to forward the traffic to the correct instances
-
 
 <details>
 <summary>Explanation</summary>
@@ -433,7 +424,7 @@ A randomizing strategy can greatly improve write throughput. But it’s difficul
 
 **Which approach best meets these requirements?**
 
-1. Use EventBridge with Kinesis Data Streams to send messages. 
+1. Use EventBridge with Kinesis Data Streams to send messages.
 2. Use a Step Function to send [SQS](../sqs) messages.
 3. Use [Lambda function](../lambda) to send [SNS](../sns) messages.
 4. Use AWS Batch and [SNS](../sns) to send messages.
@@ -444,7 +435,7 @@ A randomizing strategy can greatly improve write throughput. But it’s difficul
 
 [https://docs.aws.amazon.com/sns/latest/dg/welcome.html](https://docs.aws.amazon.com/sns/latest/dg/welcome.html)
 
-<mark style="color:white">3</mark> 
+<mark style="color:white">3</mark>
 </div>
 </details>
 
@@ -464,7 +455,6 @@ While in [AWS Fargate](../fargate), you don't provision or manage the infrastruc
 </div>
 </details>
 
-
 ### 2
 
 **What is Chaos Engineering?**
@@ -473,9 +463,9 @@ While in [AWS Fargate](../fargate), you don't provision or manage the infrastruc
 <summary>Explanation</summary>
 <div>
 
-Chaos engineering is the process of stressing an application in testing or production environments by creating disruptive events, such as server outages or API throttling, observing how the system responds, and implementing improvements. 
+Chaos engineering is the process of stressing an application in testing or production environments by creating disruptive events, such as server outages or API throttling, observing how the system responds, and implementing improvements.
 
-Chaos engineering helps teams create the real-world conditions needed to uncover the hidden issues, monitoring blind spots, and performance bottlenecks that are difficult to find in distributed systems. 
+Chaos engineering helps teams create the real-world conditions needed to uncover the hidden issues, monitoring blind spots, and performance bottlenecks that are difficult to find in distributed systems.
 
 It starts with analyzing the steady-state behavior, building an experiment hypothesis (e.g., terminating x number of instances will lead to x% more retries), executing the experiment by injecting fault actions, monitoring roll back conditions, and addressing the weaknesses.
 
@@ -498,7 +488,7 @@ It starts with analyzing the steady-state behavior, building an experiment hypot
 <div>
 <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials" target="_blank">lock-away-credentials</a>
 
-<mark style="color:white">1</mark> 
+<mark style="color:white">1</mark>
 
 </div>
 </details>
@@ -520,7 +510,7 @@ It starts with analyzing the steady-state behavior, building an experiment hypot
 
 [API Gateway mapping template](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html)
 
-<mark style="color:white">4</mark> 
+<mark style="color:white">4</mark>
 
 </div>
 </details>
@@ -542,7 +532,7 @@ It starts with analyzing the steady-state behavior, building an experiment hypot
 <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html" target="_blank">https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html</a>
 <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html" target="_blank">https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html</a>
 
-<mark style="color:white">1</mark> 
+<mark style="color:white">1</mark>
 
 </div>
 </details>
@@ -562,11 +552,11 @@ It starts with analyzing the steady-state behavior, building an experiment hypot
 <summary>Explanation</summary>
 <div>
 
-https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html
+<https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html>
 
-(AssumeRoleWithWebIdentity)[https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html] - does not support MFA
+[AssumeRoleWithWebIdentity](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html) - does not support MFA
 
-<mark style="color:white">3</mark> 
+<mark style="color:white">3</mark>
 </div>
 </details>
 
@@ -589,7 +579,7 @@ https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html
 
 Split the hot shards
 
-<mark style="color:white">3</mark> 
+<mark style="color:white">3</mark>
 </div>
 </details>
 
@@ -610,12 +600,11 @@ Split the hot shards
 
 RedShift supports ad-hoc queries over well-structured data using a SQL-compliant wire protocol
 
-https://aws.amazon.com/kinesis/data-firehose/features/
+<https://aws.amazon.com/kinesis/data-firehose/features/>
 
-<mark style="color:white">4</mark> 
+<mark style="color:white">4</mark>
 </div>
 </details>
-
 
 ### 9
 
@@ -650,13 +639,12 @@ When you enable _automatic key rotation_ for a customer-managed KMS key, AWS KMS
 <summary>Explanation</summary>
 <div>
 
-https://docs.aws.amazon.com/kms/latest/developerguide/overview.html
+<https://docs.aws.amazon.com/kms/latest/developerguide/overview.html>
 
-<mark style="color:white">1, 2</mark> 
+<mark style="color:white">1, 2</mark>
 
 </div>
 </details>
-
 
 ## Q31 - Q40
 
@@ -675,7 +663,7 @@ https://docs.aws.amazon.com/kms/latest/developerguide/overview.html
 
 [AWS Secrets Manager](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-resources.html)
 
-<mark style="color:white">3</mark> 
+<mark style="color:white">3</mark>
 
 </div>
 </details>
@@ -689,13 +677,13 @@ https://docs.aws.amazon.com/kms/latest/developerguide/overview.html
 1. Retrieve the log data from AWS CloudTrail using the LookupEvents API Call
 2. Retrieve the log data from [CloudWatch](../cloudwatch) using the GetMetricData API call
 3. Launch a new [EC2](../ec2) instance, configure [Amazon CloudWatch](../cloudwatch) Events, and then install the application
-4. Install the [Amazon CloudWatch](../cloudwatch) logs agent on the [EC2](../ec2) instance that the application is running on 
+4. Install the [Amazon CloudWatch](../cloudwatch) logs agent on the [EC2](../ec2) instance that the application is running on
 
 <details>
 <summary>Explanation</summary>
 <div>
 
-<mark style="color:white">4</mark> 
+<mark style="color:white">4</mark>
 
 </div>
 </details>
@@ -717,7 +705,7 @@ https://docs.aws.amazon.com/kms/latest/developerguide/overview.html
 
 [Serverless Application Model](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html)
 
-<mark style="color:white">2</mark> 
+<mark style="color:white">2</mark>
 
 </div>
 </details>
@@ -754,11 +742,11 @@ https://docs.aws.amazon.com/kms/latest/developerguide/overview.html
 <div>
 https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-iam-policies.html
 
-CIDRs - A set of Classless Inter-Domain Routings 
+CIDRs - A set of Classless Inter-Domain Routings
 
-https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html
+<https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html>
 
-<mark style="color:white">1, 2, 4</mark> 
+<mark style="color:white">1, 2, 4</mark>
 </div>
 </details>
 
@@ -775,11 +763,11 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-publi
 <summary>Explanation</summary>
 <div>
 
-https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/job-settings.html
+<https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/job-settings.html>
 
-MD5 digest (or checksum) 
+MD5 digest (or checksum)
 
-<mark style="color:white">4</mark> 
+<mark style="color:white">4</mark>
 </div>
 </details>
 
@@ -798,9 +786,9 @@ MD5 digest (or checksum)
 <summary>Explanation</summary>
 <div>
 
-https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
+<https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html>
 
-<mark style="color:white">1, 3</mark> 
+<mark style="color:white">1, 3</mark>
 </div>
 </details>
 
@@ -841,7 +829,7 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 
 [https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-sns-notifications.html](https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-sns-notifications.html)
 
-<mark style="color:white">1, 2, 4</mark> 
+<mark style="color:white">1, 2, 4</mark>
 </div>
 </details>
 
@@ -860,10 +848,9 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 
 [https://docs.aws.amazon.com/config/latest/developerguide/monitor-resource-changes.html](https://docs.aws.amazon.com/config/latest/developerguide/monitor-resource-changes.html)
 
-<mark style="color:white">3</mark> 
+<mark style="color:white">3</mark>
 </div>
 </details>
-
 
 ## Q41 - Q50
 
@@ -884,7 +871,7 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 
 [https://aws.amazon.com/blogs/compute/new-synchronous-express-workflows-for-aws-step-functions/](https://aws.amazon.com/blogs/compute/new-synchronous-express-workflows-for-aws-step-functions/)
 
-<mark style="color:white">2</mark> 
+<mark style="color:white">2</mark>
 </div>
 </details>
 
@@ -905,7 +892,7 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 
 [AWS X-Ray](../xray) provides graphs of system performance and identifies bottlenecks
 
-<mark style="color:white">1</mark> 
+<mark style="color:white">1</mark>
 </div>
 </details>
 
@@ -915,7 +902,7 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 
 **Which steps should be taken to accomplish the task using the [AWS Management Console](https://aws.amazon.com/console/)?**
 
-- 1 
+- 1
    1. Select a new load balancer type before running the deployment.
    1. Update the application code in the existing deployment.
    1. Deploy the new version of the application code to the environment.
@@ -925,7 +912,7 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
    3. Run the Swap-environment-cnames action.
 - 3
    1. Clone the existing environment, changing the associated load balancer type.
-   2. Deploy the same application version as used in the original environment. 
+   2. Deploy the same application version as used in the original environment.
    3. Run the Swap-environment-cnames action.
 - 4
    1. Edit the environment definitions in the existing deployment.
@@ -936,7 +923,7 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 <summary>Explanation</summary>
 <div>
 
-<mark style="color:white">4</mark> 
+<mark style="color:white">4</mark>
 </div>
 </details>
 
@@ -955,7 +942,7 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 <summary>Explanation</summary>
 <div>
 
-<mark style="color:white">2</mark> 
+<mark style="color:white">2</mark>
 </div>
 </details>
 
@@ -976,10 +963,9 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 <summary>Explanation</summary>
 <div>
 
-<mark style="color:white">4</mark> 
+<mark style="color:white">4</mark>
 </div>
 </details>
-
 
 ### 6
 
@@ -996,7 +982,7 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 <summary>Explanation</summary>
 <div>
 
-<mark style="color:white">1</mark> 
+<mark style="color:white">1</mark>
 </div>
 </details>
 
@@ -1015,7 +1001,7 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 <summary>Explanation</summary>
 <div>
 
-<mark style="color:white">4</mark> 
+<mark style="color:white">4</mark>
 </div>
 </details>
 
@@ -1024,16 +1010,16 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 **A developer deployed an application to an Amazon EC2 instance. The application needs to know the public IPv4 address of the instance.**
 **How can the application find this information?**
 
-1. Query the instance metadata from http://169.254.169.254/latest/meta-data/.
-2. Query the instance user data from http://169.254.169.254/latest/user-data/.
-3. Query the Amazon Machine Image (AMI) information from http://169.254 169.254/latest/meta-data/ami/.
+1. Query the instance metadata from <http://169.254.169.254/latest/meta-data/>.
+2. Query the instance user data from <http://169.254.169.254/latest/user-data/>.
+3. Query the Amazon Machine Image (AMI) information from <http://169.254> 169.254/latest/meta-data/ami/.
 4. Check the hosts file of the operating system.
 
 <details>
 <summary>Explanation</summary>
 <div>
 
-<mark style="color:white">1</mark> 
+<mark style="color:white">1</mark>
 </div>
 </details>
 
@@ -1052,7 +1038,7 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 <summary>Explanation</summary>
 <div>
 
-<mark style="color:white">4</mark> 
+<mark style="color:white">4</mark>
 </div>
 </details>
 
@@ -1071,14 +1057,11 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 <summary>Explanation</summary>
 <div>
 
-<mark style="color:white">4</mark> 
+<mark style="color:white">4</mark>
 </div>
 </details>
 
-
 ## Q51 - Q60
-
-
 
 ### 6
 
@@ -1095,7 +1078,7 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 <summary>Explanation</summary>
 <div>
 
-<mark style="color:white">1</mark> 
+<mark style="color:white">1</mark>
 </div>
 </details>
 
@@ -1114,7 +1097,7 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 <summary>Explanation</summary>
 <div>
 
-<mark style="color:white">1</mark> 
+<mark style="color:white">1</mark>
 </div>
 </details>
 
@@ -1124,13 +1107,13 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 
 ****
 
-1. 
+1.
 
 <details>
 <summary>Explanation</summary>
 <div>
 
-<mark style="color:white"></mark> 
+<mark style="color:white"></mark>
 </div>
 </details>
 
@@ -1149,7 +1132,7 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 <summary>Explanation</summary>
 <div>
 
-<mark style="color:white">3</mark> 
+<mark style="color:white">3</mark>
 </div>
 </details>
 
@@ -1168,17 +1151,13 @@ https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html
 <summary>Explanation</summary>
 <div>
 
-<mark style="color:white">2</mark> 
+<mark style="color:white">2</mark>
 </div>
 </details>
 
-
-
 <!-- 
 
-
 https://main.d33tdgi01iojga.amplifyapp.com/addQuestion
-
 
 ### 1
 
@@ -1229,4 +1208,3 @@ https://main.d33tdgi01iojga.amplifyapp.com/addQuestion
 </details>
 
 -->
-

@@ -18,7 +18,7 @@ EventB­ridge is a serverless event bus that makes it easy to connect applic­at
 
 ![Amazon EventBridge Flow](https://d1.awsstatic.com/product-marketing/Product-Page-Diagram_Amazon-EventBridge%402x.90618a37067770ba7994eb9c4eac38f4a5fecc7c.png)
 
-EventB­ridge is a low-cost alternative to building a new backend infrastructure for every new app. With Serverless EventB­ridge, you can connect your existing apps with a few lines of code. You don’t have to build a new backend for every new app you want to connect to. 
+EventB­ridge is a low-cost alternative to building a new backend infrastructure for every new app. With Serverless EventB­ridge, you can connect your existing apps with a few lines of code. You don’t have to build a new backend for every new app you want to connect to.
 
 You can use existing infrastructure as a provider of event data, and connect your apps using Serverless EventB­ridge.
 
@@ -52,25 +52,25 @@ Same type services: [SNS](../sns), [SQS](../sqs), [AppSync](https://aws.amazon.c
 
 In comparison with Amazon SNS, EventBridge:
 
-* Integrates with more AWS services than SNS
-* Supports registering message schemas
-* Has sophisticated third-party integrations available
-* Supports transforming event messages before sending them
+- Integrates with more AWS services than SNS
+- Supports registering message schemas
+- Has sophisticated third-party integrations available
+- Supports transforming event messages before sending them
 
 You should choose to use Amazon EventBridge over Amazon SNS when the system you are building is expected to:
 
-* Support significant asynchronous functionality
-* Grow significantly in terms of both usage and complexity
-* Have changing requirements over time
-* Have components built by different teams that interact
-* Need support for disparate event sources and targets
+- Support significant asynchronous functionality
+- Grow significantly in terms of both usage and complexity
+- Have changing requirements over time
+- Have components built by different teams that interact
+- Need support for disparate event sources and targets
 
 ### Amazon EventBridge vs CloudWatch Events
 
 - Amazon EventBridge **extends** [CloudWatch Events](../cloudwatch) - Build event-driven architectures
 - Original goal with CloudWatch Events was to help with monitoring usecases specific to AWS services.
   - React to events from Your Applications, AWS services and Partner Services
-    - Example: EC2 status change, change in your application or SaaS partner application 
+    - Example: EC2 status change, change in your application or SaaS partner application
   - Event Targets can be a Lambda function, an SNS Topic, an SQS queues etc
   - Rules map events to targets (Make sure that IAM Roles have permissions)
   - Event buses receive the events:
@@ -78,7 +78,6 @@ You should choose to use Amazon EventBridge over Amazon SNS when the system you 
     - Custom event bus (custom applications)
     - Partner event bus (partner applications)
 - Over time, Amazon EventBridge will replace Amazon CloudWatch Events
-
 
 ## Practice
 
@@ -94,7 +93,7 @@ You should choose to use Amazon EventBridge over Amazon SNS when the system you 
 
 **Which approach best meets these requirements?**
 
-1. Use EventBridge with [Kinesis Data Streams](../kinesis) to send messages. 
+1. Use EventBridge with [Kinesis Data Streams](../kinesis) to send messages.
 2. Use a [Step Function](../step-functions) to send SQS messages.
 3. Use a [Lambda](../lambda) function to send SNS messages.
 4. Use [AWS Batch](https://aws.amazon.com/batch/) and [SNS](../sns) to send messages.
@@ -105,6 +104,6 @@ You should choose to use Amazon EventBridge over Amazon SNS when the system you 
 
 [https://docs.aws.amazon.com/sns/latest/dg/welcome.html](https://docs.aws.amazon.com/sns/latest/dg/welcome.html)
 
-<mark style="color:white">3</mark> 
+<mark style="color:white">3</mark>
 </div>
 </details>

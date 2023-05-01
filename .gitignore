@@ -3,8 +3,11 @@ _site
 .ruby-version
 .jekyll-metadata
 .vscode
+
 # codeforces helper
 .cph
+
+__pycache__
 
 # Numerous always-ignore extensions
 *.diff
@@ -34,3 +37,7 @@ Thumbs.db
 public
 node_modules
 
+venv/
+
+# tests local
+p.py

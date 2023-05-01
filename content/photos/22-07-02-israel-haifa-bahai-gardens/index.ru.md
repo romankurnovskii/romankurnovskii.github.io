@@ -13,9 +13,7 @@ type: 500px
 
 [Маршрут](https://goo.gl/maps/SAuvkJ9zTV7CcxL56)
 
-
-{{< googlemap src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3353.279294864569!2d34.983086915182824!3d32.81136398096162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151dbbb118e43129%3A0xb7789244a7bc5b96!2z0KHQsNC00Ysg0LHQsNGF0LDQuA!5e0!3m2!1sru!2sil!4v1657384383884!5m2!1sru!2sil" >}}
-
+{{< googlemap src="<https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3353.279294864569!2d34.983086915182824!3d32.81136398096162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151dbbb118e43129%3A0xb7789244a7bc5b96!2z0KHQsNC00Ysg0LHQsNGF0LDQuA!5e0!3m2!1sru!2sil!4v1657384383884!5m2!1sru!2sil>" >}}
 
 <div class='pixels-photo'>
     <a href='https://500px.com/photo/1050796728/israel-bahai-gardens-in-haifa-by-roman-kurnovskii'

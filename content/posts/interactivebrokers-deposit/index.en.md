@@ -14,7 +14,7 @@ authors: [roman-kurnovskii]
 
 ### Create IB notification
 
-1. Login to https://www.interactivebrokers.co.uk/portal/#/
+1. Login to <https://www.interactivebrokers.co.uk/portal/#/>
 1. Click [**Deposit**](https://www.interactivebrokers.co.uk/AccountManagement/AmAuthentication?action=FUND_TRANSFERS&type=DEPOSIT)
 
 ![](img/button-deposit.png)
@@ -45,7 +45,7 @@ These data you need to make a payment from Discount bank
 
 4. Click: **ביצוע העברה**
 
-5. Fill the form 
+5. Fill the form
 
 ![](img/discount-send-money.jpg)
 

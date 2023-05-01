@@ -1,7 +1,8 @@
 [submodule "themes/hugo-theme-yalla"]
-	path = themes/hugo-theme-yalla
-	url = https://github.com/romankurnovskii/hugo-theme-yalla.git
+path = themes/hugo-theme-yalla
+url = https://github.com/romankurnovskii/hugo-theme-yalla.git
+
 [submodule "static/codeforces"]
-	path = static/codeforces
-	url = https://github.com/romankurnovskii/Codeforces.git
-	branch = gh-pages
+path = static/codeforces
+url = https://github.com/romankurnovskii/codeforces.git
+branch = gh-pages

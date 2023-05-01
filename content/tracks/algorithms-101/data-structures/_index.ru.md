@@ -69,12 +69,10 @@ class Fenwick: #also known as Binary Indexed Tree (BIT)
         return res
 ```
 
-
 - [A Visual Introduction to Fenwick Tree | medium](https://medium.com/carpanese/a-visual-introduction-to-fenwick-tree-89b82cac5b3c)
 - [Fenwick Tree](https://cp-algorithms.com/data_structures/fenwick.html)
 - [Дерево Фенвика | algorithmica](https://ru.algorithmica.org/cs/range-queries/fenwick/)
 - [Дерево Фенвика | habr](https://habr.com/ru/post/112828/)
-
 
 ## Resources
 

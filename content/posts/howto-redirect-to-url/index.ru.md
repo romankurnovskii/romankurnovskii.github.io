@@ -12,15 +12,17 @@ authors: [roman-kurnovskii]
 ---
 
 Пользователя можно перенаправлять с одной веб-страницы на любую другую несколькими способами.
+
 - с помощью обновления мета-данных HTML. Перенаправления на стороне сервера. Например, используя файл *.htaccess*, PHP
 - с помощью перенаправления на стороне клиента через JavaScript.
 
-Для перенаправления на другой URL с помощью JavaScript используем `window.location.href` или `window.location.replace()`. 
+Для перенаправления на другой URL с помощью JavaScript используем `window.location.href` или `window.location.replace()`.
 Передать второй аргумент, чтобы произвести клик по ссылке (true - по умолчанию) или перенаправление по HTTP (false).
 
 ## JavaScript функции
 
 ### Логика
+
 ```javascript
 const newUrl = 'https://www.google.com/';
 
@@ -30,6 +32,7 @@ window.location.assign(newUrl) // 3
 ```
 
 ### Пример функции
+
 ```javascript
 const redirect = (url, asLink = true) =>
   asLink ? (window.location.href = url) : window.location.replace(url);
@@ -37,6 +40,7 @@ const redirect = (url, asLink = true) =>
 ```
 
 ## JavaScript в html
+
 ```html
 <html>
   <head>
@@ -52,6 +56,7 @@ redirect('https://google.com');
 ```
 
 ## метатег HTML
+
 ```html
 <html>
   <head>
@@ -63,6 +68,7 @@ redirect('https://google.com');
 После того как загрузится ткущая страница, браузер перенаправит на новую страницу, ожидая при этом 0 `content="0` секунд.
 
 Чтобы выполнялась отложенная переадресация, укажите нужное количество секунд в атрибуте content:
+
 ```html
 <html>
   <head>

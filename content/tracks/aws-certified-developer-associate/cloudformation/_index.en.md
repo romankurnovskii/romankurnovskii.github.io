@@ -26,7 +26,6 @@ CloudF­orm­ation enables the user to design & provision AWS infras­tru­cture
 | StackSets   | AWS CloudFormation StackSets extends the functionality of stacks by enabling you to create, update, or delete stacks across multiple accounts and regions with a single operation |
 | Change Sets | A summary of proposed changes to your stack that will allow you to see how those changes might impact your existing resources before implementing them                            |
 
-
 ### Template
 
 The main sections in a CloudFormation template:
@@ -64,7 +63,7 @@ Type: Provision
 
 Same type services: CloudF­orm­ation, Service Catalog, OpsWorks, Market­place
 
-**Manage infrastructure with DevOps** 
+**Manage infrastructure with DevOps**
 
 Automate, test, and deploy infrastructure templates with continuous integration and delivery (CI/CD) automations.
 
@@ -88,12 +87,11 @@ Define an Amazon Virtual Private Cloud (VPC) subnet or provisioning services lik
    | Uses JSON or YAML template files             | Uses ZIP or WAR files                                                                    |
    | Similar to Terraform                         | Similar to Google App Engine                                                             |
 
-
 ### Comparing CloudFormation Init and EC2 User Data
 
 CloudFormation Init and EC2 User Data
 
-With EC2 Instance user data, developers are able to run commands and scripts during the launch of an EC2 instance. User data can be used to install necessary packages, update the ownership of files and directories, or even update or run services. Developers who are familiar with shell scripting may find user data as the easiest way to incorporate launch instructions for EC2 instances. 
+With EC2 Instance user data, developers are able to run commands and scripts during the launch of an EC2 instance. User data can be used to install necessary packages, update the ownership of files and directories, or even update or run services. Developers who are familiar with shell scripting may find user data as the easiest way to incorporate launch instructions for EC2 instances.
 
 EC2 Instance user data allows for a procedural-based approach to configuring an instance during launch.
 
@@ -103,7 +101,7 @@ The following snippet represents a `UserData` property of an EC2 instance define
 
 The shell script above begins with an update and installation of the `httpd` Apache service using the `yum` package manager. The `systemctl start` and `enable` commands start the Apache server and allow it to serve content from the EC2 instance. The `cat` command adds an HTML snippet to the `index.html` file located in the `/var/www/html/` directory of the instance. Once the user data script is completed, you can view the HTML content by accessing the EC2 instance's public URL.
 
-It's important to note that this user data script runs only when the EC2 instance is launched. 
+It's important to note that this user data script runs only when the EC2 instance is launched.
 
 #### CloudFormation Init (cfn-init)
 
@@ -113,16 +111,16 @@ The following snippet represents the `AWS::CloudFormation::Init` metadata type 
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220421133926-18-220eb37d-1bbf-486a-8a50-33801ab9a0a9.png)
 
-The `config` section details the `packages`, `files`, and `services` to be configured on the EC2 instance. This eases the burden of managing a bash script since each type of configuration is held in its own dedicated section. The snippet performs the same configuration on the EC2 instance as the previous user data example. 
+The `config` section details the `packages`, `files`, and `services` to be configured on the EC2 instance. This eases the burden of managing a bash script since each type of configuration is held in its own dedicated section. The snippet performs the same configuration on the EC2 instance as the previous user data example.
 
 Unlike EC2 user data, the cfn-init script does not run automatically. The next lab step will cover how to utilize helper scripts in a CloudFormation stack deployment.
 
 #### Key Differences
 
-* Instance user data is procedural-based, while CloudFormation init can be used to achieve the desired state of an instance
-* When you update the instance user data in CloudFormation and perform a stack update, the instance is terminated and **replaced**. However, when you update the CloudFormation init metadata and perform a stack update, the instance will be updated **in place**
-* Instance user data is run only **once** during the instance launch
-* The success or failure of a user data script does not affect a CloudFormation stack creation process. With the CloudFormation signal helper script, a successful stack creation relies on a successful instance configuration (More on this in the next lab step)
+- Instance user data is procedural-based, while CloudFormation init can be used to achieve the desired state of an instance
+- When you update the instance user data in CloudFormation and perform a stack update, the instance is terminated and **replaced**. However, when you update the CloudFormation init metadata and perform a stack update, the instance will be updated **in place**
+- Instance user data is run only **once** during the instance launch
+- The success or failure of a user data script does not affect a CloudFormation stack creation process. With the CloudFormation signal helper script, a successful stack creation relies on a successful instance configuration (More on this in the next lab step)
 
 ## Practice
 
@@ -139,7 +137,7 @@ Unlike EC2 user data, the cfn-init script does not run automatically. The next l
 1. Use a template to first create Resource A with the ARN as an output value.
 2. Use a template to create Resource B and reference the ARN of Resource A using `Fn::GetAtt`.
 3. Hard code the ARN value output from creating Resource A into the second template.
-4. Just create Resource B. 
+4. Just create Resource B.
 
 <details>
 <summary>Explanation</summary>
@@ -147,6 +145,6 @@ Unlike EC2 user data, the cfn-init script does not run automatically. The next l
 
 [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html)
 
-<mark style="color:white">2</mark> 
+<mark style="color:white">2</mark>
 </div>
 </details>

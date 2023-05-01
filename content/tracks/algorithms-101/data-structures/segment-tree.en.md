@@ -52,7 +52,7 @@ A sum element in a segment tree is the sum of all elements in the range it repre
 A segment tree can be constructed from an array of numbers. Each node in the tree represents a range of elements in the array and stores the sum of the elements in that range.
 
 3. Implementation of operations:
- 
+
 The implementation of various operations in a segment tree essentially depends on its structure. However, there are several operations that are often used in various tasks:
 
 - **Update** value in the array: This operation allows you to change the value of an element in an array. It is usually implemented using a recursive tree traversal.
@@ -87,7 +87,6 @@ Let us display such a tree as an array:
 
 1. There are 9 vertices in such a tree. The array will consist of 9 elements.
 
-
 ```
 tree[0] = A[0:4]
 tree[1] = A[0:2]
@@ -100,10 +99,9 @@ tree[7] = A[0:0]
 tree[8] = A[1:1]
 ```
 
-This tree *covers* all vertices. 
+This tree *covers* all vertices.
 
 With this structure, you can store different data in the vertex values, such as the sum of the segment, the smallest/the largest number, or other aggregate data on the segments.
-
 
 ## Implementing a segment tree in Python
 
@@ -115,7 +113,6 @@ Since the most recent nodes are segments of length == `1`. So we start the proce
 
 💡 The tree contains less than **2n** vertices.
 💡 Bottom vertex - the length of the segment is equal to 1.
-
 
 ```python
 def build_tree(array):
@@ -148,7 +145,6 @@ When we created the tree from the source array, we placed each individual elemen
 
 💡 So when the function takes an index, we first find the *bottommost element* in the tree. It is located in the new array by the index `[length_of_source_array + index]`
 
-
 ```python
 # calculate the sum on the segment
 def query_tree(l, r):
@@ -179,7 +175,6 @@ def query_tree(l, r):
 >> query_tree(4, 4)
 -7
 ```
-
 
 We get the `SegmentTree` class:
 
@@ -223,7 +218,6 @@ class SegmentTree:
 ```
 
 ## Segment Tree template
-
 
 ```python
 class SegmentTree:
@@ -280,7 +274,6 @@ def __repr__(self):
 
 The `build_tree` method builds a segment tree, and `query` allows you to perform query operations.
 
-
 ## Links
 
-- https://www.hackerearth.com/practice/data-structures/advanced-data-structures/segment-trees/tutorial/
+- <https://www.hackerearth.com/practice/data-structures/advanced-data-structures/segment-trees/tutorial/>

@@ -21,7 +21,7 @@ CloudFront is a distributed content delivery network (CDN) that enables easy del
 
 ![](https://d1.awsstatic.com/products/cloudfront/product-page-diagram_CloudFront_HIW.475cd71e52ebbb9acbe55fd1b242c75ebb619a2e.png)
 
-**CloudFront is a global service:** 
+**CloudFront is a global service:**
 
 - Ingress to upload objects.
 - Egress to distribute content.
@@ -55,7 +55,6 @@ There is an option for reserved capacity over 12 months or longer (starts at 10T
    | Dedicated IP Custom SSL         |
    | Field level encryption requests |
 
-
 ## Use Cases
 
 Type: Content delivery networks
@@ -77,14 +76,13 @@ Type: Content delivery networks
 - C) CreateGlobalReplicationGroup with ElastiCache
 - D) CreateCachePolicy with CloudFront
 
-
 <details>
 <summary>Explanation</summary>
 <div>
 
 [https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateCachePolicy.html](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateCachePolicy.html)
 
-<mark style="color:white">D</mark> 
+<mark style="color:white">D</mark>
 </div>
 </details>
 
@@ -104,13 +102,13 @@ Type: Content delivery networks
 <summary>Explanation</summary>
 <div>
 
-[AWS AppSync](https://aws.amazon.com/appsync/) simplifies application development by letting users create a flexible API to securely access, manipulate, and combine data from one or more data sources. AWS AppSync is a managed service that uses GraphQL to make it easy for applications to get the exact data they need. 
+[AWS AppSync](https://aws.amazon.com/appsync/) simplifies application development by letting users create a flexible API to securely access, manipulate, and combine data from one or more data sources. AWS AppSync is a managed service that uses GraphQL to make it easy for applications to get the exact data they need.
 
-AWS AppSync allows users to build scalable applications, including those requiring [real-time updates](https://docs.aws.amazon.com/appsync/latest/devguide/real-time-data.html), on a range of data sources, including Amazon DynamoDB. In [Amazon API Gateway](../api-gateway), users can [create a WebSocket API](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html) as a stateful frontend for an AWS service (such as [AWS Lambda](../lambda) or DynamoDB) or for an HTTP endpoint. 
+AWS AppSync allows users to build scalable applications, including those requiring [real-time updates](https://docs.aws.amazon.com/appsync/latest/devguide/real-time-data.html), on a range of data sources, including Amazon DynamoDB. In [Amazon API Gateway](../api-gateway), users can [create a WebSocket API](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html) as a stateful frontend for an AWS service (such as [AWS Lambda](../lambda) or DynamoDB) or for an HTTP endpoint.
 
 The WebSocket API invokes the backend based on the content of the messages it receives from client applications. Unlike a REST API, which receives and responds to requests, a WebSocket API supports two-way communication between client applications and the backend.
 
-<mark style="color:white">1, 2</mark> 
+<mark style="color:white">1, 2</mark>
 
 </div>
 </details>

@@ -54,7 +54,6 @@ Some action examples:
 
 [Test instance stop and start using](https://docs.aws.amazon.com/fis/latest/userguide/fis-tutorial-stop-instances.html)
 
-
 ## Questions
 
 ### Q1
@@ -65,12 +64,11 @@ Some action examples:
 <summary>Explanation</summary>
 <div>
 
-Chaos engineering is the process of stressing an application in testing or production environments by creating disruptive events, such as server outages or API throttling, observing how the system responds, and implementing improvements. 
+Chaos engineering is the process of stressing an application in testing or production environments by creating disruptive events, such as server outages or API throttling, observing how the system responds, and implementing improvements.
 
-Chaos engineering helps teams create the real-world conditions needed to uncover the hidden issues, monitoring blind spots, and performance bottlenecks that are difficult to find in distributed systems. 
+Chaos engineering helps teams create the real-world conditions needed to uncover the hidden issues, monitoring blind spots, and performance bottlenecks that are difficult to find in distributed systems.
 
 It starts with analyzing the steady-state behavior, building an experiment hypothesis (e.g., terminating x number of instances will lead to *x%* more retries), executing the experiment by injecting fault actions, monitoring roll back conditions, and addressing the weaknesses.
 
 </div>
 </details>
-

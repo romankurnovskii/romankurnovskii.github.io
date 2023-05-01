@@ -5,7 +5,7 @@ description: Step-by-Step Guide how to upload and manage your open-source applic
 toc: true
 authors: [roman-kurnovskii]
 tags: []
-categories: [programming]
+categories: [Programming]
 series:
 date: 2023-03-16
 featuredImage: /assets/002.png
@@ -15,7 +15,7 @@ weight: 0
 
 ## Step 1: Create a SourceForge account
 
-1. Go to the SourceForge website at https://sourceforge.net/
+1. Go to the SourceForge website at <https://sourceforge.net/>
 1. Click on the "Join" button in the top-right corner.
 2. Fill in the required fields, such as username, email, and password, then click "Register"
 3. You'll receive a confirmation email from SourceForge. Click on the link provided to confirm your account.
@@ -30,14 +30,13 @@ Select "Create Your Project Now" from the dropdown menu.
 
 ![Start a new project](assets/002.png)
 
-
 ## Step 3: Configure your project
 
 1. Enter a unique name for your project in the "Project Name" field. This name will also serve as your project's URL.
 
 ![Configure your project](assets/003.png)
 
-2. Provide a Phone number if required. You will get a pin for verification. 
+2. Provide a Phone number if required. You will get a pin for verification.
 3. Next you will see a quick tour that could help you to fulfill all the required fields.
 
 ![Start a new project](assets/004.png)
@@ -46,12 +45,11 @@ Select "Create Your Project Now" from the dropdown menu.
 1. Upload Project Logo
 1. Click "Save".
 
-
 1. Fill other fields from left sidebar menu.
 
 ![Start a new project](assets/005.png)
 
-2. Choose an appropriate "License" for your open-source project from the dropdown menu. If you're unsure which license to choose, you can refer to the Open Source Initiative's list of approved licenses (https://opensource.org/licenses).
+2. Choose an appropriate "License" for your open-source project from the dropdown menu. If you're unsure which license to choose, you can refer to the Open Source Initiative's list of approved licenses (<https://opensource.org/licenses>).
 3. Select the "Programming Language" and "Operating System" that your project is built for.
 4. Add any relevant "Tags" to help users find your project.
 5. Click the "Create" button at the bottom of the form to create your project.
@@ -84,8 +82,9 @@ If you want to provide compiled binaries or other release files for users to dow
 Now we have a project page on SourceForge.
 
 Here is a button for download:
+
 ```
 [![Download BrewMate](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/brewmate/files/latest/download)
 ```
 
-Project url: https://sourceforge.net/projects/brewmate/
+Project url: <https://sourceforge.net/projects/brewmate/>

@@ -74,7 +74,6 @@ featuredImage: images/logo.png
 - [✔️] ☁️ 33 > [Microsoft Azure Networking Models + Azure Management](day33)
 - [✔️] ☁️ 34 > [Microsoft Azure Hands-On Scenarios](day34)
 
-
 ### Use Git Effectively
 
 - [✔️] 📚 35 > [The Big Picture: Git - Version Control](day35)
@@ -84,9 +83,6 @@ featuredImage: images/logo.png
 - [✔️] 📚 39 > [Viewing, unstaging, discarding & restoring](day39)
 - [✔️] 📚 40 > [Social Network for code](day40)
 - [✔️] 📚 41 > [The Open Source Workflow](day41)
-
-
-
 
 ### Containers
 
@@ -101,7 +97,7 @@ featuredImage: images/logo.png
 ### Kubernetes
 
 - [✔️] ☸ 49 > [The Big Picture: Kubernetes](day49)
-- [✔️] ☸ 50 > [Choosing your Kubernetes platform ](day50)
+- [✔️] ☸ 50 > [Choosing your Kubernetes platform](day50)
 - [✔️] ☸ 51 > [Deploying your first Kubernetes Cluster](day51)
 - [✔️] ☸ 52 > [Setting up a multinode Kubernetes Cluster](day52)
 - [✔️] ☸ 53 > [Rancher Overview - Hands On](day53)
@@ -111,7 +107,7 @@ featuredImage: images/logo.png
 ### Learn Infrastructure as Code
 
 - [✔️] 🤖 56 > [The Big Picture: IaC](day56)
-- [✔️] 🤖 57 > [An intro to Terraform ](day57)
+- [✔️] 🤖 57 > [An intro to Terraform](day57)
 - [✔️] 🤖 58 > [HashiCorp Configuration Language (HCL)](day58)
 - [✔️] 🤖 59 > [Create a VM with Terraform & Variables](day59)
 - [✔️] 🤖 60 > [Docker Containers, Provisioners & Modules](day60)
@@ -157,7 +153,6 @@ featuredImage: images/logo.png
 - [✔️] 🗃️ 88 > [Application Focused Backups](day88)
 - [✔️] 🗃️ 89 > [Disaster Recovery](day89)
 - [✔️] 🗃️ 90 > [Data & Application Mobility](day90)
-
 
 ## License
 

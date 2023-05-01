@@ -18,7 +18,7 @@ When you upload a folder from your local system or another machine, Amazon S3 up
 
 In order to complete this lab step, you have to upload the cloudacademy-logo.png file from your local file storage into an S3 folder you created earlier.
 
-Download the Cloud Academy logo from the following location: https://s3-us-west-2.amazonaws.com/clouda-labs/scripts/s3/cloudacademy-logo.png (If the image is not downloaded for you, simply right-click the image and select **Save image as** to download it to your local file system.)
+Download the Cloud Academy logo from the following location: <https://s3-us-west-2.amazonaws.com/clouda-labs/scripts/s3/cloudacademy-logo.png> (If the image is not downloaded for you, simply right-click the image and select **Save image as** to download it to your local file system.)
 
 ### Instructions
 

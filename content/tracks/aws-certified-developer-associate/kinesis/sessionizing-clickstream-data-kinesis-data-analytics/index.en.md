@@ -67,10 +67,10 @@ You will be taken to the **Stream details** page and you will see a series of 
 
 Take a moment to look at the details on this page, there are several Kinesis Data Stream configuration options that you should be aware of:
 
-* **Data Stream capacity**: The number of shards in the Data Stream. Each shard has a maximum read and write capacity. To increase the total capacity of a data stream you can add shards.
-* **Encryption**: Kinesis Data Streams can be encrypted using an AWS managed or customer-managed, KMS key.
-* **Data retention**: A Kinesis Data Stream can retain data for a configurable amount of time between 24 and 168 hours.
-* **Enhanced (shard-level) metrics**: More detailed CloudWatch metrics can be enabled for a Data Stream, these enhanced metrics have an extra cost.
+- **Data Stream capacity**: The number of shards in the Data Stream. Each shard has a maximum read and write capacity. To increase the total capacity of a data stream you can add shards.
+- **Encryption**: Kinesis Data Streams can be encrypted using an AWS managed or customer-managed, KMS key.
+- **Data retention**: A Kinesis Data Stream can retain data for a configurable amount of time between 24 and 168 hours.
+- **Enhanced (shard-level) metrics**: More detailed CloudWatch metrics can be enabled for a Data Stream, these enhanced metrics have an extra cost.
 
 In this lab, you will be working with a small amount of sample data, so there is one shard configured.
 
@@ -108,7 +108,7 @@ You will see the instance's **Instance ID** and **Public IP address** displa
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-ccba4473-690f-4589-9542-7fff1354f72f.png)
 
-_Note_: Ensure there is no space after ec2-user or connect will fail. 
+_Note_: Ensure there is no space after ec2-user or connect will fail.
 
 6\. To open a browser-based shell, click **Connect**:
 
@@ -123,7 +123,6 @@ A browser-based shell will open in a new window ready for you to use.
 Keep this window open, you will use it in later lab steps.
 
 You can also connect to the instance using your preferred SSH client and the PPK (Windows) or PEM (Mac/Linux) key files in the **Credentials** section of this lab.
-
 
 ## Simulating a Real-Time Clickstream
 
@@ -167,25 +166,25 @@ for i in $(seq 1 3000); do
 done
 
 ```
-    
+
 You will see the templated JSON and also the JSON response from Kinesis for each record put into the Data Stream:
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-dd23350b-e018-46c9-bcb8-f040aeab31e1.png)
 
 This command simulates a real-time click-stream with the following characteristics:
 
-* Creates three thousand events
-* Events have a two-second interval between them
-* After every sixty events (two minutes) there is a fifteen-second interval, later you will assume a gap of ten seconds or more is a session boundary
+- Creates three thousand events
+- Events have a two-second interval between them
+- After every sixty events (two minutes) there is a fifteen-second interval, later you will assume a gap of ten seconds or more is a session boundary
 
 The command has a number of parts:
 
-* Setup of sample user ids and event types at the beginning
-* A loop that will execute three thousand times and a sleep statement
-* Statements that randomly select a user id and an event type, and assign them along with the current timestamp to variables
-* A statement that uses the **envsubst** command to substitute defined environment variables in the JSON template
-* A statement invoking the AWS command-line interface tool, putting the templated JSON record into the Kinesis Data Stream
-* A condition at the end of the loop that either sleeps for a few seconds or, periodically for longer, simulating the end of a session
+- Setup of sample user ids and event types at the beginning
+- A loop that will execute three thousand times and a sleep statement
+- Statements that randomly select a user id and an event type, and assign them along with the current timestamp to variables
+- A statement that uses the **envsubst** command to substitute defined environment variables in the JSON template
+- A statement invoking the AWS command-line interface tool, putting the templated JSON record into the Kinesis Data Stream
+- A condition at the end of the loop that either sleeps for a few seconds or, periodically for longer, simulating the end of a session
 
 Leave the command running.
 
@@ -195,7 +194,7 @@ Leave the command running.
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-f9a946c1-da12-478f-a46b-23e20913399b.png)
 
-5\. To connect your Data Analytics application to the pre-created Data Stream, click **Configure **under** Source stream **form:
+5\. To connect your Data Analytics application to the pre-created Data Stream, click **Configure**under**Source stream**form:
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/blobid0-90dba9f6-b9c4-4011-9e42-d523c19cbef1.png)
 
@@ -205,7 +204,7 @@ The **Configure source for lab-application** form will load.
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-e64d25f0-28b5-4e6f-9fac-020c0b603588.png)
 
-7\. In the **Kinesis data stream**, click **Browse** to select the radio button for **lab-stream **and click** Choose**:
+7\. In the **Kinesis data stream**, click **Browse** to select the radio button for **lab-stream**and click**Choose**:
 
 [![alt](https://assets.cloudacademy.com/bakery/media/uploads/blobid2-9afb8380-7562-4ac1-8b26-74aadc5b6460.png)](https://us-west-2.console.aws.amazon.com/kinesisanalytics/home?region=us-west-2#/applications/dashboard)
 
@@ -271,10 +270,10 @@ FROM "SOURCE_SQL_STREAM_001";
 
 These statements do the following:
 
-* Defines an intermediate stream to insert data into called **INTERMEDIATE\_SQL\_STREAM**
-* Creates a **PUMP** that selects data from the source stream
-* The **SELECT** statement uses the **LAG** function to determine if there is a ten-second interval between the last event and the current event
-* The **LAG** function statements are used with **PARTITION** statements to restrict the **LAG** function by the user
+- Defines an intermediate stream to insert data into called **INTERMEDIATE\_SQL\_STREAM**
+- Creates a **PUMP** that selects data from the source stream
+- The **SELECT** statement uses the **LAG** function to determine if there is a ten-second interval between the last event and the current event
+- The **LAG** function statements are used with **PARTITION** statements to restrict the **LAG** function by the user
 
 You should know that Kinesis Data Analytics natively assumes Unix timestamps include milliseconds. The stream you simulated is providing timestamps with milliseconds. This is why the **CASE WHEN** statement that checks for a ten-second interval includes `(10 * 1000)`, it's multiplying ten by one thousand to get ten seconds in milliseconds.
 
@@ -290,8 +289,8 @@ Occasionally you may see an error caused by the fifteen-second interval, if you 
 
 Take a look at the results. Notice that only some records have a value for **session_timestamp**. This is because the **CASE WHEN** statement in the query supplies a value of null when:
 
-* The interval between event timestamps is less than ten seconds
-* There is no preceding event
+- The interval between event timestamps is less than ten seconds
+- There is no preceding event
 
 Also notice that below the SQL Code editor, there are two streams, the **INTERMEDIATE\_SQL\_STREAM**, and an **error_stream**. The error stream is where any errors that occur during the execution of the SQL will be delivered to.
 
@@ -320,10 +319,10 @@ WHERE "user_id" = 'user1';
 
 These SQL statements do the following:
 
-* Creates a stream called **DESTINATION\_SQL\_STREAM**
-* Creates a **PUMP** that selects from the **INTERMEDIATE\_SQL\_STREAM**
-* Constructs a **session_id** by combining the user, device type and time
-* Restricts the query to **user1** using a **WHERE** clause
+- Creates a stream called **DESTINATION\_SQL\_STREAM**
+- Creates a **PUMP** that selects from the **INTERMEDIATE\_SQL\_STREAM**
+- Constructs a **session_id** by combining the user, device type and time
+- Restricts the query to **user1** using a **WHERE** clause
 
 Something else to note about these statements is that the session and event timestamps are being converted to times.
 
@@ -458,7 +457,7 @@ You will see a notification that your function has been deployed:
 
 ![](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-d34595b5-6944-4ead-8472-182a899f1131.png)
 
-You are updating the timeout because the default of three seconds is too low when processing data from Kinesis Data Analytics, and may lead to failures caused by the function timing out. AWS recommends setting a higher timeout to avoid such failures. 
+You are updating the timeout because the default of three seconds is too low when processing data from Kinesis Data Analytics, and may lead to failures caused by the function timing out. AWS recommends setting a higher timeout to avoid such failures.
 
 15\. To save your function's updated timeout, click **Save**:
 
@@ -486,7 +485,7 @@ The **Configure destination** form will load.
 
 [![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-cbaa5e22-0954-46bb-9daf-1dd1079d8dba.png)](https://us-west-2.console.aws.amazon.com/kinesisanalytics/home?region=us-west-2#/applications/dashboard)
 
-5\. Under **AWS** **Lambda function**, click **Browse** and check radio box for **lab-function **followed by clicking** Choose**:
+5\. Under **AWS** **Lambda function**, click **Browse** and check radio box for **lab-function**followed by clicking**Choose**:
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/blobid3-49a3cd4f-3cf9-4681-8e81-19825761776a.png)
 

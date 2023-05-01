@@ -6,10 +6,14 @@ tags:  [git]
 series: [CheatSheet]
 categories: [Git, CheatSheet]
 date: 2023-01-01
-lastmod: 2023-01-01
-featuredImage: https://picsum.photos/700/238
+lastmod: 2023-06-14
+featuredImage: https://picsum.photos/700/238?grayscale
 draft: false
 ---
+
+## Commits
+
+More info about [commits style](./code-style)
 
 ## Github Actions
 
@@ -48,13 +52,19 @@ jobs:
 
 [Download BFG](https://rtyley.github.io/bfg-repo-cleaner/)
 
+or
+
+```sh
+wget https://repo1.maven.org/maven2/com/madgag/bfg/1.14.0/bfg-1.14.0.jar
+```
+
 Remove *history* files bigger than 100Kb:
 
     cd repo
     java -jar bfg-1.14.0.jar --strip-blobs-bigger-than 100K .
     git reflog expire --expire=now --all && git gc --prune=now --aggressive
 
-**Removing an entire commit:**
+### Removing an entire commit
 
 Replace "SHA" with the reference you want to get rid of. The "^" in that command is literal.
 
@@ -79,7 +89,6 @@ We want to remove commits 2 & 4 from the repo. (Higher the the number newer the 
 1. `git merge repair` Merge our new branch onto master.
 1. `git push -f origin master` Push master to the remote repo.
 
-
 If didn't publish changes, to remove the latest commit, do:
 
     git rebase -i HEAD~<number of commits to go back>
@@ -92,13 +101,13 @@ If already published to-be-deleted commit:
 
 `git revert HEAD`
 
-**Cleanups:**
+### Cleanups
 
     git stash clear
     git reflog expire --expire-unreachable=now --all
     git fsck --full
-    git fsck --unreachable		# Will show you the list of what will be deleted
-    git gc --prune=now			# Cleanup unnecessary files and optimize the local repository
+    git fsck --unreachable  # Will show you the list of what will be deleted
+    git gc --prune=now   # Cleanup unnecessary files and optimize the local repository
 
 ## Common git commands
 
@@ -107,7 +116,7 @@ If already published to-be-deleted commit:
 
 ## Resources
 
-- https://sethrobertson.github.io/GitFixUm/fixup.html
-- https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-clone.html
-- https://passingcuriosity.com/2017/truncating-git-history/
-- https://www.npmjs.com/package/clear-git-branch?activeTab=explore
+- [Git commits style](https://www.conventionalcommits.org/en/v1.0.0/#summary)
+- [On undoing, fixing, or removing commits in git](https://sethrobertson.github.io/GitFixUm/fixup.html)
+- [Truncating git history](https://passingcuriosity.com/2017/truncating-git-history/)
+- [clean unused branches](https://www.npmjs.com/package/clear-git-branch?activeTab=explore)

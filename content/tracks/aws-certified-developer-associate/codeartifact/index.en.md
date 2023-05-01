@@ -47,7 +47,7 @@ Type: Developer Tools
 ### Usage
 
 ```bash
-$ aws codeartifact list-domains --region us-east-1
+aws codeartifact list-domains --region us-east-1
 ```
 
 ## Practice

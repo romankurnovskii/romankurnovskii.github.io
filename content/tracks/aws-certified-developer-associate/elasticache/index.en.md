@@ -25,11 +25,9 @@ Compatible with Redis and Memcached
 
 ![](https://d1.awsstatic.com/elasticache/EC_Use_Cases/product-page-diagram_ElastiCache_how-it-works.ec509f8b878f549b7fb8a49669bf2547878303f6.png)
 
-
 ## Price
 
 [Current price](https://aws.amazon.com/elasticache/pricing/)
-
 
 ## Use Cases
 
@@ -41,7 +39,6 @@ Type: In-memory
 | Database caching          | Use Memcached in front of AWS RDS to cache popular queries to offload work from RDS and return results faster to users                                                      |
 | Leaderboards              | Use Redis to provide a live leaderboard for millions of users of your mobile app                                                                                            |
 | Streaming data dashboards | Provide a landing spot for streaming sensor data on the factory floor, providing live real-time dashboard displays                                                          |
-
 
 ## Caching Engines
 
@@ -56,20 +53,17 @@ Type: In-memory
 | Non persistent. No backups                        |
 | Multi-node for partitioning of data (sharding)    |
 
-
 ### Memcached
 
 ElastiCache manages Memcached nodes as a pool that can grow and shrink (similar to an EC2 Auto Scaling group); individual nodes are expendable and non-persistent.
 
 Memcached provides a simple caching solution that best supports object caching and lets you scale out horizontally. Ideal for offloading a DB's contents into a cache.
 
-
 ### Redis
 
 ElastiCache manages Redis more as a relational database, i.e. Redis clusters are managed as persistent, stateful entities that include using multi-AZ redundancy for handling failover (similar to RDS).
 
 Redis supports complex data structures, hence would be ideal in cases where sorting and ranking datasets in memory are important (e.g. such as in leaderboards for games).
-
 
 ## Caching Strategies
 
@@ -106,14 +100,13 @@ Every database write will write to the cache as well. Data is never stale howeve
 1. The ElastiCache cluster becomes more prone to failures.
 1. The performance of the ElastiCache cluster is no longer controllable.
 
-
 <details>
 <summary>Explanation</summary>
 <div>
 
 Elasticache is a service designed to be used internally to your VPC. External access is discouraged due to the latency of Internet traffic and security concerns. However, if external access to Elasticache is required for test or development purposes, it can be done through a VPN.
 
-<mark style="color:white">2</mark> 
+<mark style="color:white">2</mark>
 
 </div>
 </details>
@@ -133,9 +126,9 @@ Elasticache is a service designed to be used internally to your VPC. External ac
 <summary>Explanation</summary>
 <div>
 
-[[AWS Secrets Manager](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-resources.html)](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-resources.html)
+[[AWS Secrets Manager](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-resources.html)](<https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-resources.html>)
 
-<mark style="color:white">3</mark> 
+<mark style="color:white">3</mark>
 
 </div>
 </details>

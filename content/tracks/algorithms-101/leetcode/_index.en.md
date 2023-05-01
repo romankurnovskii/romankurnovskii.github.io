@@ -1,6 +1,6 @@
 ---
 title: LeetCode
-seoTitle: LeetCode Problems
+seoTitle: LeetCode Solutions with Explanations
 description: null
 authors:
 categories: ['programming', 'leetcode']
@@ -10,7 +10,7 @@ tags: ['leetcode']
 toc: true
 weight: 20
 date: 2022-10-16
-lastmod: 2023-02-06
+lastMod: 2023-07-27
 published: true
 ---
 
@@ -30,7 +30,6 @@ Use these VSCode extensions to debug/submit:
 
 ## Resources
 
-- https://walkccc.me/LeetCode/problems/
-- https://books.halfrost.com/leetcode/
-- https://grandyang.com/leetcode/
+- [LeetCode solutions by walkccc](https://walkccc.me/LeetCode/problems/)
+- <https://grandyang.com/leetcode/>
 - [Competitive Programmer's Handbook](https://github.com/pllk/cphb/)

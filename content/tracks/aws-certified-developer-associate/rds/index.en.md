@@ -120,7 +120,7 @@ Amazon Relational Database Service (Amazon RDS) on [AWS Outposts](AWS Outposts) 
 
 Secrets Manager offers [secret rotation](https://aws.amazon.com/blogs/security/rotate-amazon-rds-database-credentials-automatically-with-aws-secrets-manager/)
 
-<mark style="color:white">4</mark> 
+<mark style="color:white">4</mark>
 
 </div>
 </details>

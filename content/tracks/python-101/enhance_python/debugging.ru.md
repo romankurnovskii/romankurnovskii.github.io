@@ -42,7 +42,6 @@ python3 -m pdb myscript.py
 - list: отобразить несколько строк кода вокруг текущей строки
 - print: напечатать значение переменной
 
-
 **Ресурсы:**
 
 - [The Python Debugger](https://docs.python.org/3/library/pdb.html)

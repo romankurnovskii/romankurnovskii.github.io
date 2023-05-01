@@ -30,9 +30,7 @@ layout: single-app
 
 <a href="https://sourceforge.net/projects/brewmate/" target="_blank"><img src="https://a.fsdn.com/con/app/sf-download-button" alt="Download BrewMate"></a>
 
-
 BrewMate is a macOS GUI application that makes it easy to search for, install, and uninstall Homebrew casks. You can also see the top downloaded casks for the last month.
-
 
 ## Install
 
@@ -42,11 +40,13 @@ BrewMate is a macOS GUI application that makes it easy to search for, install, a
 4. Launch BrewMate from your Applications folder.
 
 or
+
 ```
 brew install romankurnovskii/cask/brewmate --cask
 ```
 
 or
+
 ```
 brew tap romankurnovskii/cask
 brew update
@@ -56,8 +56,9 @@ brew install brewmate --cask
 ## FAQ
 
 ### Is this app free?
-Yes, the app is free to download and use. 
 
+Yes, the app is free to download and use.
 
 ### What operating systems does this app support?
+
 This app is designed for macOS, and it supports macOS 10.15 (Catalina) and newer versions.

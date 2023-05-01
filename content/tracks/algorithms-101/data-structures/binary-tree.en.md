@@ -19,7 +19,7 @@ A binary tree is a data structure in which each node has at most **two children*
 
 **2. Representing a Binary Tree in Python**
 
-To represent a binary tree in Python, we can create a class called `Node` to represent each node in the tree. Each node will have a value and references to its left and right children. 
+To represent a binary tree in Python, we can create a class called `Node` to represent each node in the tree. Each node will have a value and references to its left and right children.
 
 If a node doesn't have a left or right child, the reference will be set to `None`. Here's an example implementation:
 
@@ -35,7 +35,7 @@ On this step `None` will look like this:
 
 **3. Adding Nodes to a Binary Tree**
 
-Once we have a representation of a node, we can start adding nodes to the tree to create the structure of the binary tree. 
+Once we have a representation of a node, we can start adding nodes to the tree to create the structure of the binary tree.
 
 To add a node, we **need to find the correct position** in the tree where the new node should be added. This is typically done by starting at the root node and comparing the value of the new node to the value of the current node.
 
@@ -54,7 +54,7 @@ def insert(root, value):
     return root
 ```
 
-<mark>[Visualize Binary Tree](https://www.cs.usfca.edu/~galles/visualization/BST.html)</mark> 
+<mark>[Visualize Binary Tree](https://www.cs.usfca.edu/~galles/visualization/BST.html)</mark>
 
 **4. Full Binary Tree Class**
 

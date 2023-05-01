@@ -59,7 +59,7 @@ When subscribing to an SNS topic the following endpoint types are supported:
 
 **Topic types:**
 
-- Standard Topics 
+- Standard Topics
 - FIFO Topics
 
 ## Price
@@ -70,7 +70,7 @@ When subscribing to an SNS topic the following endpoint types are supported:
 
 Type: Applic­ation integr­ation
 
-Same type services: SNS, SQS, AppSync, EventB­ridge	
+Same type services: SNS, SQS, AppSync, EventB­ridge
 
 Example: Send email notification when CloudWatch alarm is triggered
 
@@ -97,6 +97,6 @@ Example: Send email notification when CloudWatch alarm is triggered
 
 [https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-sns-notifications.html](https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-sns-notifications.html)
 
-<mark style="color:white">1, 2, 4</mark> 
+<mark style="color:white">1, 2, 4</mark>
 </div>
 </details>

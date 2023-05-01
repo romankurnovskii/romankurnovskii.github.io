@@ -19,6 +19,7 @@ weight: 8
 ## Chrome
 
 При запуске автоматических тестов в Chrome полезны следующие функции:
+
 - --allow-file-access-from-files — дает API-доступ для file://URLs
 - --disable-translate — отключает всплывающие окна
 - --use-fake-ui-for-media-stream — Представляет поддельные медиапотоки. Полезно при работе на CI-серверах.

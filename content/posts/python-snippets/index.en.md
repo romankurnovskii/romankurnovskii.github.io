@@ -4,7 +4,7 @@ description: Python Cheat Sheet
 toc: true
 tags:  [Python, CheatSheet]
 series: [CheatSheet]
-categories: [programming, Python, CheatSheet]
+categories: [Programming, Python, CheatSheet]
 date: 2022-06-21
 featuredImage:
 draft: false
@@ -1036,6 +1036,3 @@ def say(say_please=False):
 print(say())                 # Can you buy me a beer?
 print(say(say_please=True))  # Can you buy me a beer? Please! I am poor :(
 ```
-
-
-
