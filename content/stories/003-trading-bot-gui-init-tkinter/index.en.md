@@ -4,7 +4,7 @@ seoTitle: Creating a GUI for a Trading Bot
 description: Creating a GUI for a Trading Bot
 toc: true
 tags: []
-# series: ["Trading Bot"]
+series: ["Trading Bot"]
 categories: ["Trading Bot"]
 date: 2023-04-28
 lastmod: 2023-04-28
