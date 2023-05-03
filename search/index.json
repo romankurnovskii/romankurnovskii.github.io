@@ -5,7 +5,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 2
+                    "timeTakenInMilliseconds": 5
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -2704,11 +2704,25 @@
             "lang": "en"
         },
         {
-            "uri": "/stories/003-openvpn-aws-ec2-setup/",
+            "uri": "/stories/003-trading-bot-gui-init-tkinter/",
             "title": "Creating a GUI for a Trading Bot",
             "description": "Creating a GUI for a Trading Bot",
             "content": "\nThe journey towards creating a light trading bot framework begins with a simple, intuitive graphical user interface (GUI). For this venture, I have chosen to rely on Python's built-in Tkinter library to provide the fundamental building blocks for my GUI.\n\nEmbracing Simplicity\nThe initial goal is to keep the GUI as straightforward as possible, focusing on the core functionalities required for a trading bot. The main elements incorporated are:\n\nStart/Stop Buttons: These allow the user to control the operation of the bot.\nStrategy Selection: An option to switch between different trading strategies.\nMarket Price Stream: A live feed displaying the current market prices.\n\nHarnessing the Power of Tkinter\n\nTkinter, being a standard Python interface to the Tk GUI toolkit, offers the simplicity and versatility needed for this project. It provides an array of widgets and methods to create and manage the GUI with relative ease.\n\nObserver Pattern\n\nTo handle specific requests from the GUI and manage updates, I'll be integrating the observer pattern into the framework. This design pattern promotes a well-organized, flexible structure that will prove invaluable as the project progresses.\n\nMoving Forward\n\nThis is just the beginning. The GUI, while a crucial component, is merely the first step in the development of this lightweight trading bot framework. I'm looking forward to the journey ahead, as we dive deeper into the implementation and further enhance the features of the bot.\n\nThis is how this template looks like now:\n\ngui tkinter trading bot template\n",
             "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/stories/004-trading-bot-refactor-orders",
+            "title": "Enhancing Trading Bot with Abstraction and Async Management",
+            "description": "In this part of our trading bot series, we dive into the importance of enhancing abstraction in code structure, efficient order handling, and the implementation of asynchronous operations for optimized performance.",
+            "content": "\nAbstraction\n\nToday worked on refining some abstraction level in framework. The main objective of today's work was to enhance the abstraction in the classes and improve the overall code structure.\n\nThe goal was to make the code more adaptable and easier to maintain.\n\nFor example, instead of having Binance hardcoded in the from_binance_order method, now use the Exchanges enum, which makes the code more versatile and ready for additional exchanges in the future.\n\ndef from_binance_order(binance_order: BinanceOrder):\n    exchange = Exchanges.BINANCE\n    ...\n\nOrders\n\nOrders are at the heart of any trading bot, and handling them efficiently is crucial for the bot's performance. In the Order class, I added the side property to capture whether the order is a buy or sell order, and also refined the Order creation method to accept side and order_type as arguments.\n\nImplemented a new method, update, in the Order class. This function checks if the incoming order is an instance of the Order class and updates specific fields based on certain conditions.\n\ndef update(self, other_order):\n    if not isinstance(other_order, Order):\n        raise ValueError(\"The given object is not an instance of Order\")\n\nupdate only specific fields\n    if other_order.time_to_cancel:\n        self.time_to_cancel = other_order.time_to_cancel\n    if other_order.status != OrderStatus.NEW:\n        self.status = other_order.status\n\nAsync\n\nOne of the major changes made was to the way I handle async operations. In the Exchange class, the methods on_new_order_request and on_cancel_order_request were updated to run in separate tasks. This change helps in improving the overall efficiency of the bot as multiple tasks can run concurrently without blocking the main event loop.\n\nasyncio.create_task(\n    self._exchange.on_new_order_request(order_request, **kwargs)\n)\n\nSummury\n\nToday's changes focused on enhancing the bot's framework by making it more abstract, improving order handling, and making async operations more efficient.\n",
+            "tags": [
+                "python async",
+                "trading bot",
+                "async operations",
+                "abstraction",
+                "order management"
+            ],
             "lang": "en"
         },
         {
