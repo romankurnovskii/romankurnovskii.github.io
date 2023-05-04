@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LeetCode Top Interview on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/leetcode-top-interview/</link><description>Recent content in LeetCode Top Interview on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Tue, 01 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/leetcode-top-interview/index.xml" rel="self" type="application/rss+xml"/><item><title>2. Add Two Numbers</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/2/</link><pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/2/</guid><description>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
+You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+Example 1:
+Input: l1 = [2,4,3], l2 = [5,6,4] Output: [7,0,8] Explanation: 342 + 465 = 807. First accepted Idea:
+Loop through lists add each value to the list reverse list calculate sum create linked list from reversed sum class Solution: def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -&amp;gt; Optional[ListNode]: def createLinkedNode(values): head = ListNode(values[0]) current = head for i in values[1:]: node = ListNode(i) current.</description></item><item><title>7. Reverse Integer</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/7/</link><pubDate>Tue, 01 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/7/</guid><description>LeetCode problem
+Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.
+Assume the environment does not allow you to store 64-bit integers (signed or unsigned).
+Example 1:
+Input: x = 123 Output: 321
+Example 2:
+Input: x = -123 Output: -321
+Example 3:
+Input: x = 120 Output: 21
+First accepted Idea:
+Convert number to int Remove minus if exist (or convert module of number) reverse class Solution: def reverse(self, x: int) -&amp;gt; int: reversed_int = [] str_int = str(x) if x &amp;lt; 0: str_int = str_int[1:] for i in reversed(range(len(str_int))): reversed_int.</description></item></channel></rss>
