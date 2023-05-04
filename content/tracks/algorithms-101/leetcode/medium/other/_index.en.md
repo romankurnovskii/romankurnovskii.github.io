@@ -1,6 +1,7 @@
 ---
 title: Other
-description: null
+seoTitle: LeetCode TOP Video Solutions
+description: LeetCode TOP Video Solutions
 authors:
 categories: [Algorithms, Medium, 'programming', 'leetcode']
 tags: ['leetcode']
