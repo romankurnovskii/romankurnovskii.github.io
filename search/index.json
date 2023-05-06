@@ -5,7 +5,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 3
+                    "timeTakenInMilliseconds": 4
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -2469,6 +2469,17 @@
             "tags": [
                 "linux",
                 "rhel"
+            ],
+            "lang": "en"
+        },
+        {
+            "uri": "/posts/howto-publish-js-npm-project",
+            "title": "How to publish JavaScript package to npm registry",
+            "description": "A detailed guide on how to create, structure, and publish a JavaScript package to the npm registry",
+            "content": "\n\nIn this post, we'll dive deeper into the process of creating, structuring, and publishing a JavaScript package to the npm registry. We'll use the repository https://github.com/romankurnovskii/npm-js-package-template as a reference for this guide.\n\nTLDR\n\nOpen template: https://github.com/romankurnovskii/npm-js-package-template\nClick Use this template\nCreate repo from this template.\ngit clone new repo\nupdate code src/index.ts, src/bin.ts\n\nHow to check if bin script works from terminal:\n\nnpm link && npm link mypackage\nmypackage\n\nPublish:\n\nnpm run prepublishOnly\nnpm publish\n\nFolder Structure\n\nLet's go through the folder structure of the repository:\n\n.eslintignore\n.eslintrc.json\n.gitattributes\n.gitignore\n.npmrc\n.prettierrc\n├── .github\n│   ├── dependabot.yml\n│   └── workflows\n│       ├── create-release.yml\n│       └── test-environments.yml\n├── CHANGELOG.md\n├── LICENSE\n├── README.md\n├── jestconfig.json\n├── package.json\n├── src\n|  ├── bin.js\n|  └── index.js\n└── tests\n   └── index.test.js\n\nFile Descriptions\n\n.github/dependabot.yml: This file configures Dependabot for your project. Dependabot will automatically create pull requests to update your npm dependencies and GitHub Actions workflows as specified in the file.\n.github/workflows/create-release.yml: This GitHub Actions workflow is triggered when you push to the main branch or create a release. It builds, tests, and releases your package. The workflow is configured to create a release with the version specified in package.json.\n.github/workflows/test-environments.yml: This GitHub Actions workflow is triggered when you push to the main branch or create a pull request. It sets up a matrix of Node.js versions (14, 16, 18) and runs the build and test steps for each version. This ensures your package works correctly across different Node.js environments.\n.eslintignore: Specifies the files and directories that should be ignored by ESLint.\n.eslintrc.json: Configuration file for ESLint, a popular linting tool for JavaScript.\n.gitattributes: Specifies the attributes for paths in the repository.\n.gitignore: Specifies the files and directories that should be ignored by Git.\n.npmrc: Configuration file for npm, the package manager for JavaScript.\n.prettierrc: Configuration file for Prettier, a popular code formatter for JavaScript.\nCHANGELOG.md: A file that lists the notable changes made to the project.\nLICENSE: The license file for the project, in this case, the MIT License.\nREADME.md: The main documentation file for the project.\njestconfig.json: Configuration file for Jest, a popular testing framework for JavaScript.\npackage.json: Lists the project's metadata, dependencies, and scripts.\nsrc/bin.js: The main entry point for the command line interface (CLI) of the package.\nsrc/index.js: The main entry point for the package when imported as a module.\ntests/index.test.js: The test file for the package, containing test cases for the package's functions.\n\nPublish to NPM\n\nBefore you publish the package, make sure you have followed these steps:\n\nUpdate the package.json file with the correct name, version, description, and other metadata.\nEnsure your code is in the src folder, and the main entry points are src/index.js (for modules) and src/bin.js (for CLI).\nUpdate the test cases in the tests folder.\n\n\nAfter making all the necessary updates to your package, such as updating the README.md, package.json, and other files as needed, ensure that you've built the package by running:\n\nnpm run build\n\nBefore publishing, you should test your package and ensure that all tests pass:\nnpm test\n\nAlso, make sure your code is properly formatted and follows the linting rules:\n\nnpm run prettier\nnpm run lint\nIf there are any linting issues, you can try to automatically fix them using:\n\nnpm run lint:fix\n\nOnce everything is set up and ready, you can publish your package to the npm registry by running:\n\nnpm run prepublishOnly\nnpm publish\n\nThis will build, test, and format your code, ensuring that your package is ready for publishing. Once published, your package will be available for others to install and use through the npm registry.\n",
+            "tags": [
+                "javascript",
+                "npm"
             ],
             "lang": "en"
         },
