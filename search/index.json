@@ -5,7 +5,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 2
+                    "timeTakenInMilliseconds": 3
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -2655,6 +2655,14 @@
                 "mongodb",
                 "lambda"
             ],
+            "lang": "en"
+        },
+        {
+            "uri": "/posts/tree-vs-trie-data-structures",
+            "title": "Difference between Tries and Trees?",
+            "description": "Difference between Tries and Trees?",
+            "content": "\nDespite their similar names, these structures serve different purposes, and understanding their differences is crucial to utilizing them effectively.\n\nTree\n\nA tree data structure is a collection of entities, called nodes, connected by edges.\n\nEach node contains a value, and a list of references to its child nodes. The first node of the tree is called the root. If we visualize it, a tree data structure resembles an inverted tree, with the root at the top and the leaves (nodes without children) at the bottom.\n\nTrees are hierarchical, non-linear data structures.\n\ntree\n\nThey are excellent for representing relationships between objects, and their operations usually have a logarithmic time complexity, making them efficient for search operations.\n\nLet's create a simple binary tree in Python, where each node can have at most two children:\n\nclass Node:\n    def init(self, data):\n        self.data = data\n        self.left = None\n        self.right = None\n\nroot = Node(1)\nroot.left = Node(2)\nroot.right = Node(3)\n\nHere, we have a tree with the root node storing the value 1. The root node has two children: the left child stores the value 2, and the right child stores the value 3.\n\nTrie\n\nA trie, also known as a prefix tree, is a type of tree that specializes in managing sequences, typically strings. In a trie, every node (except the root) corresponds to a character or a string, and each path down the tree can represent a word or a prefix.\n\ntrie\n\nThe key characteristic of tries is that they provide a fast retrieval of data. They can check if a word or prefix exists in a dataset in O(M) time, where M is the length of the word.\n\nHere's a simple Python example of a trie data structure:\n\nclass TrieNode:\n    def init(self):\n        self.children = {}\n        self.end_of_string = False\n\nclass Trie:\n    def init(self):\n        self.root = TrieNode()\n\n    def insert(self, word):\n        node = self.root\n        for ch in word:\n            if ch not in node.children:\n                node.children[ch] = TrieNode()\n            node = node.children[ch]\n        node.end_of_string = True\n\nIn this example, each node in the trie has a dictionary called children to keep references to its child nodes. The end_of_string flag helps determine if the current concatenation of characters forms a valid word.\n\nTries vs Trees\n\nDespite their shared properties (being tree-based structures), tries and trees are designed for different use cases.\n\nData Storage: A general-purpose tree can store any data type—numbers, strings, objects, whereas a trie is specifically used for storing sequences, like strings or arrays.\n\nNode Value: In a tree, each node holds a value. In a trie, nodes themselves don't hold a value—instead, the value is the path from the root to that node.\n\nEfficiency: Tries are incredibly efficient when it comes to searching for a word or prefix in a dictionary. Trees, on the other hand, are more efficient for a wide range of operations, like searching, inserting, and deleting arbitrary values.\n\nMemory Usage: Tries can use more memory because of references in each node, especially when dealing with a large alphabet. Each node in a trie maintains a collection (often a dictionary or array) of all its child nodes. However, in a binary tree, each node only needs to keep a reference to at most two child nodes.\n\nLookup Time: Tries have a faster lookup time for certain tasks. For instance, finding a word in a trie takes O(M) time, where M is the length of the word. For a balanced binary search tree, the time complexity would be O(log N), where N is the number of elements in the tree.\n",
+            "tags": [],
             "lang": "en"
         },
         {
