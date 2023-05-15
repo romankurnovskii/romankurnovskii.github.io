@@ -7,7 +7,8 @@ categories: [Linux, programming, Bash, CheatSheet]
 series: [CheatSheet]
 tags:  [Linux, Bash]
 date: 2023-02-12
-featuredImage: https://picsum.photos/700/239
+lastmod: 2023-05-25
+featuredImage: https://picsum.photos/700/225?grayscale
 draft: false
 ---
 

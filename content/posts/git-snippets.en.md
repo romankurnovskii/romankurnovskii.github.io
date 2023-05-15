@@ -7,7 +7,7 @@ series: [CheatSheet]
 categories: [Git, CheatSheet]
 date: 2023-01-01
 lastmod: 2023-01-01
-featuredImage: https://picsum.photos/700/238
+featuredImage: https://picsum.photos/700/238?grayscale
 draft: false
 ---
 

@@ -5,13 +5,13 @@ toc: true
 tags: [aws, flask, serverless, mongodb, lambda]
 series: []
 categories: [AWS]
-date: "2022-09-06"
-featuredImage: https://picsum.photos/701/234
+date: 2022-09-06
+featuredImage: https://picsum.photos/701/234?grayscale
 authors: [roman-kurnovskii]
 draft: false
 ---
 
-mongodb free tier vs documentdb
+"mongodb" free tier vs "documentdb"
 
 ## Project structure
 

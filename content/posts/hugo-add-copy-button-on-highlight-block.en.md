@@ -7,7 +7,8 @@ tags: [hugo, javascript]
 series: []
 categories: [programming, Hugo]
 date: 2023-03-04
-featuredImage: https://picsum.photos/700/251
+lastmod: 2023-05-17
+featuredImage: https://picsum.photos/700/254?grayscale
 authors: [roman-kurnovskii]
 ---
 

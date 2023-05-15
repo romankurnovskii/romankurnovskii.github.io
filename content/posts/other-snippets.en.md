@@ -7,7 +7,7 @@ categories: []
 series: []
 tags:  []
 date: 2021-02-22
-featuredImage: https://picsum.photos/700/231
+featuredImage: https://picsum.photos/700/231?grayscale
 draft: false
 ---
 

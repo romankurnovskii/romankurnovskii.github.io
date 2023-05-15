@@ -6,7 +6,7 @@ tags: [Code]
 series: []
 categories: []
 date: 2022-12-21
-featuredImage: https://picsum.photos/700/230
+featuredImage: https://picsum.photos/700/230?grayscale
 ---
 
 

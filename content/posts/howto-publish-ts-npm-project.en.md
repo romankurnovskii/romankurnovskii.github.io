@@ -7,7 +7,8 @@ tags: [javascript]
 series: []
 categories: [programming]
 date: 2023-03-07
-featuredImage: https://picsum.photos/700/221
+lastmod: 2023-05-15
+featuredImage: https://picsum.photos/700/227?grayscale
 authors: [roman-kurnovskii]
 ---
 

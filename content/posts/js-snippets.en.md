@@ -7,7 +7,7 @@ series: [CheatSheet]
 tags:  [js, javascript, typescript]
 date: 2022-09-15
 lastmod: 2023-02-21
-featuredImage: https://picsum.photos/700/238
+featuredImage: https://picsum.photos/700/238?grayscale
 draft: false
 ---
 

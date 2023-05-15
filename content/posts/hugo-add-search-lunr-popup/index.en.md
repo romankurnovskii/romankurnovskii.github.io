@@ -5,8 +5,8 @@ toc: true
 tags: [hugo, lunr, javascript]
 series: []
 categories: [programming, Hugo]
-date: "2022-07-16"
-featuredImage: https://picsum.photos/700/250
+date: 2022-07-16
+featuredImage: https://picsum.photos/700/250?grayscale
 authors: [roman-kurnovskii]
 ---
 

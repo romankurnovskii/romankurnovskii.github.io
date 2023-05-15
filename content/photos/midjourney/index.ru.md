@@ -6,7 +6,7 @@ tags:
 series:
 categories: [ai]
 date: 2023-05-14
-featuredImage: https://picsum.photos/700/231
+featuredImage: https://picsum.photos/700/231?grayscale
 authors:
 type: gallery
 ---
