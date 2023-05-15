@@ -8,7 +8,7 @@ series: []
 categories: [programming]
 date: 2023-05-13
 lastmod: 2023-05-13
-featuredImage: https://picsum.photos/700/221
+featuredImage: https://picsum.photos/700/225?grayscale
 authors: [roman-kurnovskii]
 ---
 

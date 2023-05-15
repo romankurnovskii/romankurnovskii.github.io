@@ -1,6 +1,6 @@
 ---
-title: AI genrated
-description: AI genrated
+title: AI generated
+description: AI generated
 toc: false
 tags:
 series:

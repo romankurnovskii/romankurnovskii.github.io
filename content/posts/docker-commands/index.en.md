@@ -269,6 +269,11 @@ OR, if you're using an older docker client:
 docker rmi $(docker images | grep '^<none>' | awk '{print $3}')
 ```
 
+### Remove all images
+
+```sh
+docker rmi --force $(docker images -q)
+```
 
 ### Remove all docker images with none tag
 
