@@ -16,13 +16,13 @@ Despite their similar names, these structures serve different purposes, and unde
 
 ## Tree
 
+{{< img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Tree_%28computer_science%29.svg/440px-Tree_%28computer_science%29.svg.png" height="250px" float="right">}}
+
 A tree data structure is a collection of entities, called **nodes**, connected by **edges**. 
 
 Each node contains a value, and a list of references to its child nodes. The first node of the tree is called the **root**. If we visualize it, a tree data structure resembles an **inverted tree**, with the root at the top and the leaves (nodes without children) at the bottom.
 
 Trees are hierarchical, non-linear data structures. 
-
-![tree](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Tree_%28computer_science%29.svg/440px-Tree_%28computer_science%29.svg.png)
 
 They are excellent for representing <mark>relationships between objects</mark>, and their operations usually have a logarithmic time complexity, making them efficient for search operations.
 
@@ -44,9 +44,9 @@ Here, we have a tree with the root node storing the value `1`. The root node has
 
 ## Trie
 
-A trie, also known as a prefix tree, is a type of tree that specializes in managing **sequences**, typically strings. In a trie, every node (except the root) corresponds to a character or a string, and each path down the tree can represent a word or a prefix.
+{{< img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Trie_example.svg"  height="200px" float="right">}}
 
-![trie](https://upload.wikimedia.org/wikipedia/commons/b/be/Trie_example.svg)
+A trie, also known as a prefix tree, is a type of tree that specializes in managing **sequences**, typically strings. In a trie, every node (except the root) corresponds to a character or a string, and each path down the tree can represent a word or a prefix.
 
 The key characteristic of tries is that they **provide a fast retrieval of data**. They can check if a word or prefix exists in a dataset in `O(M)` time, where `M` is the length of the word.
 
