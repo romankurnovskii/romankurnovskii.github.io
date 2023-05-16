@@ -99,7 +99,7 @@ Messages are published to an Amazon SNS topic and then pushed to Amazon SQS subs
 Documentation User Guide Step Functions is a serverless function orches­trator that makes it easy to sequence Lambda functions &amp;amp; multiple AWS services into busine­ss-­cri­tical applic­ations.
 Alternatives AWS lambda Airflow Google Cloud Workflows Microsoft Flow Price Pay only for what you use
 Current price
-Free Tier: 4,000 state transitions per month</description></item><item><title>Serverless: Flask+API Gateway+Lambda+MongoDB</title><link>https://romankurnovskii.com/en/posts/serverless-flask-lambda-api-gateway-mongodb/</link><pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/serverless-flask-lambda-api-gateway-mongodb/</guid><description>mongodb free tier vs documentdb
+Free Tier: 4,000 state transitions per month</description></item><item><title>Serverless: Flask+API Gateway+Lambda+MongoDB</title><link>https://romankurnovskii.com/en/posts/serverless-flask-lambda-api-gateway-mongodb/</link><pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/serverless-flask-lambda-api-gateway-mongodb/</guid><description>&amp;ldquo;mongodb&amp;rdquo; free tier vs &amp;ldquo;documentdb&amp;rdquo;
 Project structure - src - app.py - mongo.py - .env - requirements.txt - serverless.yml Sources
 Add AIM user Setup specific user for serverless deployment
 username: serverless-deployer
