@@ -51,4 +51,5 @@ Example 1:
 Input: root = [1,null,2,3] Output: [1,3,2] Example 2:
 Input: root = [] Output: [] Example 3:
 Input: root = [1] Output: [1] Thoughts Don&amp;rsquo;t understand what needed. Why:
-1-null-2-3 becomes 1-3-2 [1,2,5,7,8,9,10] becomes [7,2,8,1,9,5,10] In 1-null-2-3 1 becomes the first because we loop to its left node which is null, then come back and first value here is 1.</description></item></channel></rss>
+1-null-2-3 becomes 1-3-2 [1,2,5,7,8,9,10] becomes [7,2,8,1,9,5,10] In 1-null-2-3 1 becomes the first because we loop to its left node which is null, then come back and first value here is 1.</description></item><item><title>141. Linked List Cycle</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/other/141/</link><pubDate>Wed, 24 May 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/other/141/</guid><description>LeetCode problem
+class Solution: def hasCycle(self, head: Optional[ListNode]) -&amp;gt; bool: visited = set() cur = head while cur: if cur.next in visited: return True cur = cur.next visited.add(cur) return False</description></item></channel></rss>

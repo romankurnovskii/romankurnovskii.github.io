@@ -2158,7 +2158,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 2
+                    "timeTakenInMilliseconds": 4
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -3396,6 +3396,14 @@
                 "Hash Table",
                 "LeetCode Top Interview"
             ],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/other/141",
+            "title": "141. Linked List Cycle",
+            "description": "141. Linked List Cycle",
+            "content": "\nLeetCode problem\n\n\nclass Solution:\n    def hasCycle(self, head: Optional[ListNode]) -> bool:\n        visited = set()\n        cur = head\n        while cur:\n            if cur.next in visited:\n                return True\n            cur = cur.next\n            visited.add(cur)\n        return False\n\n\n",
+            "tags": [],
             "lang": "en"
         },
         {
