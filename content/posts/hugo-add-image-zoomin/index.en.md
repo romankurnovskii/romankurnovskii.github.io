@@ -4,7 +4,7 @@ description: Script will zoom in on a picture on click in Hugo
 toc: true
 tags: [hugo]
 series: 
-categories: [programming, Hugo]
+categories: [Programming, Hugo]
 date: 2022-07-09
 authors: [roman-kurnovskii]
 featuredImage: img/featured.en.jpg

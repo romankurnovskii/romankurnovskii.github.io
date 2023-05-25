@@ -5,7 +5,7 @@ description: Learn how to quickly add a copy button to code highlight blocks in 
 toc: false
 tags: [hugo, javascript]
 series: []
-categories: [programming, Hugo]
+categories: [Programming, Hugo]
 date: 2023-03-04
 lastmod: 2023-05-17
 featuredImage: https://picsum.photos/700/254?grayscale

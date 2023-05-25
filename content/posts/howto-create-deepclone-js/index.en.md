@@ -2,7 +2,7 @@
 title: How to create a deep clone of an object in JavaScript
 description:  How to create a deep clone of an object in JavaScript
 toc: true
-categories: [programming, JavaScript]
+categories: [Programming, JavaScript]
 series:
 tags: [JavaScript]
 date: 2022-06-02

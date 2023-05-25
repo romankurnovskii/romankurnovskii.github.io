@@ -5,7 +5,7 @@ description: Step-by-Step Guide how to upload and manage your open-source applic
 toc: true
 authors: [roman-kurnovskii]
 tags: []
-categories: [programming]
+categories: [Programming]
 series:
 date: 2023-03-16
 featuredImage: /assets/002.png

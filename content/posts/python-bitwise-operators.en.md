@@ -2,9 +2,9 @@
 title: Python bitwise operators
 description: Python bitwise operators
 toc: true
-tags: [Python]
+tags: [Python, Programming]
 series: []
-categories: [programming, Python]
+categories: [Programming, Python]
 date: 2022-11-20
 featuredImage: https://files.realpython.com/media/rshift.9d585c1c838e.gif
 ---
@@ -90,7 +90,6 @@ For numbers:
     `11011 & 10111 = 10011` -> 19
 
     `27 & 23 = 19`
-
 
 ## Resources
 - https://realpython.com/python-bitwise-operators/

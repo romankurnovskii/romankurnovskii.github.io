@@ -5,7 +5,7 @@ description: How to publish typescript package to npm registry
 toc: false
 tags: [javascript]
 series: []
-categories: [programming]
+categories: [Programming]
 date: 2023-03-07
 lastmod: 2023-05-15
 featuredImage: https://picsum.photos/700/227?grayscale

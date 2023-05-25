@@ -3,9 +3,9 @@ title: Python docstring templates
 seoTitle: Python docstring templates 2023
 description: Python docstring templates
 toc: true
-tags: [Python]
+tags: [Python, Programming, Template]
 series: []
-categories: [programming, Python]
+categories: [Programming, Python]
 date: 2023-05-24
 lastmod: 2023-05-24
 featuredImage: https://picsum.photos/700/224?grayscale

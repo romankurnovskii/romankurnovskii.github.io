@@ -5,7 +5,7 @@ description: Difference between Tries and Trees?
 toc: false
 tags: []
 series: []
-categories: [programming]
+categories: [Programming]
 date: 2023-05-13
 lastmod: 2023-05-13
 featuredImage: https://picsum.photos/700/225?grayscale

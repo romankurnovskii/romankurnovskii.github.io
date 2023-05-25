@@ -3,9 +3,9 @@ title: How to publish JavaScript package to npm registry
 seoTitle: How to publish JavaScript package to npm registry
 description: A detailed guide on how to create, structure, and publish a JavaScript package to the npm registry
 toc: true
-tags: [javascript, npm]
+tags: [JavaScript, npm]
 series: []
-categories: [programming]
+categories: [Programming]
 date: 2023-05-06
 lastmod: 2023-05-06
 featuredImage: https://picsum.photos/700/226?grayscale
