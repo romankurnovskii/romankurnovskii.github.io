@@ -1,5 +1,5 @@
 ---
-title: Python, Groovy Linters & Formatters setup in VSCode
+title: Linters & Formatters Setup for Python, Groovy, JavaScript in VSCode
 seoTitle: Python, Groovy Linters & Formatters setup in VSCode
 description: Setting Up Python and Groovy Linters and Formatters in Visual Studio Code
 toc: true
@@ -30,7 +30,7 @@ To set up Python with Black and Flake8, you will need a couple of configuration 
 python --version
 ```
 
-## Step 2: Install Black and Flake8
+### Step 2: Install Black and Flake8
 
 ```python
 pip install black
@@ -119,7 +119,7 @@ You can do the same with Flake8 by enabling linting on save:
 "python.linting.lintOnSave": true
 ```
 
-## Setting Up Groovy with CodeNarc
+## Groovy with CodeNarc
 
 ### Step 1: Install Groovy
 
@@ -160,3 +160,96 @@ ruleset {
 ```
 
 Now, when you run your Gradle build, CodeNarc will check your Groovy files against the rules defined in `config/codenarc/rules.groovy`.
+
+## JS/TypeScript with ESLint and Prettier
+
+###Step 1: Install Node.js and npm
+
+Before you install ESLint and Prettier, ensure you have Node.js and npm installed on your system. You can verify the installation by running the following commands in your terminal:
+
+```bash
+node --version
+npm --version
+```
+
+### Step 2: Install ESLint and Prettier
+You can install ESLint and Prettier as *devDependencies* in your project by running the following command in your terminal:
+
+```bash
+npm install eslint prettier --save-dev
+```
+
+### Step 3: Install the ESLint and Prettier Extensions for VS Code
+Search for ESLint and Prettier - Code formatter in the Extensions view in VS Code (**View -> Extensions**) and install them.
+
+### Step 4: Configure ESLint and Prettier
+
+To configure ESLint and Prettier, you need to create two configuration files, `.eslintrc.json` for ESLint, and `.prettierrc` for Prettier, in your project root directory.
+
+For example, you can create an `.eslintrc.json` file with the following content for ESLint:
+
+```json
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"]
+  }
+}
+```
+
+And a `.prettierrc` file with the following content for Prettier:
+
+```json
+{
+  "semi": true,
+  "trailingComma": "all",
+  "singleQuote": true,
+  "printWidth": 80,
+  "tabWidth": 2
+}
+```
+
+### Step 5: Configure VS Code Settings
+
+Go to the Settings in VS Code (**File -> Preferences -> Settings**) and search for "Format On Save." Check the box to enable it.
+
+In the settings, search for "Default Formatter" and select "Prettier - Code formatter" from the dropdown list.
+
+You can also add these settings directly to your `settings.json` file:
+
+```json
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "[javascript]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": null
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": null
+  },
+  "[typescript]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": null
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": null
+  }
+}
+```
+
+These settings tell VS Code to run Prettier as the default formatter, and also to perform any auto-fixes that ESLint can handle on save.
+
+Now, VS Code will automatically use ESLint and Prettier to lint and format your JavaScript and TypeScript code, respectively.
