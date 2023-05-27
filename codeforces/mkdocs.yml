@@ -1,0 +1,56 @@
+# Project information
+site_name: CodeForces Solutions
+site_description: CodeForces Solutions Python
+site_author: Roman Kurnovskii
+site_url: https://romankurnovskii.com/Codeforces
+
+# Repository
+repo_name: romankurnovskii/Codeforces
+repo_url: https://github.com/romankurnovskii/Codeforces
+edit_uri: blob/main/docs/
+
+# Copyright
+copyright: Copyright &copy; <a href="https://github.com/romankurnovskii/Codeforces">Roman Kurnovskii</a> 2023
+
+theme:
+  name: material # https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer/
+  language: en
+  features:
+    - content.action.edit
+    - content.code.copy
+    - navigation.tabs.sticky
+    - search.highlight
+    - search.share
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+# Extensions
+markdown_extensions:
+  - pymdownx.superfences:
+  - pymdownx.highlight:
+      linenums: true
+      linenums_style: pymdownx.table
+  - pymdownx.tabbed:
+      alternate_style: true
+
+# Customization
+extra:
+  analytics:
+    provider: google
+    property: G-26F2C5ZR4Y
+  social:
+    # https://github.com/squidfunk/mkdocs-material/tree/master/material/.icons/
+    - icon: fontawesome/brands/github
+      link: https://github.com/romankurnovskii/Codeforces
+    - icon: simple/rss
+      link: https://romankurnovskii.com/codeforces/feed_rss_updated.xml
+#     - icon: fontawesome/brands/linkedin
+#       link: https://www.linkedin.com/in/roman-kurnovskii
+
+plugins:
+  - rss:
+      date_from_meta:
+        as_creation: "date"
+        as_update: false
+        datetime_format: "%Y-%m-%d"
