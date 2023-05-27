@@ -6,7 +6,13 @@ import time
 Channel = paramiko.SSHClient()
 
 Channel.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-Channel.connect(hostname="192.168.169.115", username='admin', password='access123', look_for_keys=False, allow_agent=False)
+Channel.connect(
+    hostname="192.168.169.115",
+    username="admin",
+    password="access123",
+    look_for_keys=False,
+    allow_agent=False,
+)
 
 shell = Channel.invoke_shell()  # This will set interactive shell
 shell.send("enable\n")
