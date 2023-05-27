@@ -89,7 +89,7 @@ select = B,C,E,F,W,T4,B9
 
 Go to the Settings in VS Code (File -> Preferences -> Settings) and search for "**Python Formatting Provider**." Select "**black**" from the dropdown list.
 
-To set Flake8 as the linter, search for "**Python Linting Provider**" in the settings and select "flake8."
+To set Flake8 as the linter, search for "**Python Linting**" in the settings and select "flake8."
 
 Now, VS Code will automatically use Black and Flake8 to format and lint your Python code, respectively.
 
