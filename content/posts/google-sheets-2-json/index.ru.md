@@ -9,7 +9,6 @@ date: 2022-03-12T11:55:25+02:00
 lastmod: 2022-03-12T11:55:25+02:00
 featuredVideo:
 featuredImage:
-Цель: Сконвертировать данные для приложения ФСФР из иаблицы в json
 authors: ["roman-kurnovskii"]
 ---
 
