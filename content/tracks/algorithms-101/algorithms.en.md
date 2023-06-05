@@ -7,11 +7,12 @@ categories: [Algorithms]
 tags: []
 series: []
 date: 2022-10-15
-lastmod: 2023-02-12
+lastmod: 2023-06-06
 # featuredImage: https://media.geeksforgeeks.org/wp-content/cdn-uploads/20221017172544/Introduction-to-Data-Structures-and-Algorithms-DSA.png
 weight: 30
 authors:
 published: true
+TODO: Dynamic programming
 ---
 
 ## Intro
@@ -19,6 +20,8 @@ published: true
 - [Big-O Cheat Sheet](https://www.30secondsofcode.org/articles/s/big-o-cheatsheet)
 
 ## Sort
+
+**Insertion sort** sorts an array by continuously picking an element, starting from the second element, and inserting it in its correct position in the sorted part of the array to its left. It does this by shifting larger elements one position ahead of their current position, making room for the new element.
 
 ```python
 def insertion_sort(array):
@@ -30,6 +33,8 @@ def insertion_sort(array):
             array[i] = value
     return array
 ```
+
+**Selection sort** works by repeatedly finding the minimum element from the unsorted part of the array and swapping it with the first unsorted element. It continues this process until the whole array is sorted, hence effectively moving the smallest unsorted element to its correct position in each iteration.
 
 ```python
 def selection_sort(array):
@@ -43,6 +48,55 @@ def selection_sort(array):
         array[i] = temp
     return array
 ```
+
+**Merge sort** sorts an array by dividing it into <mark>two halves</mark>, recursively sorting those halves, and then merging them back together in sorted order.
+
+1. If the array has more than one element, find the middle of the array.
+2. Divide the array into two halves using the middle index: the left half (`left_half`) and the right half (`right_half`).
+3. Recursively sort both halves by calling `merge_sort` on `left_half` and `right_half`.
+4. Merge the sorted halves back into the original array. The merge operation walks through `left_half` and `right_half`, and at each step, it copies the smaller element from either `left_half` or `right_half` into the original array.
+5. If there are any remaining elements in `left_half` or `right_half`  after one has been fully copied back into the array, those elements are copied over. 
+   1. This happens because those remaining elements are guaranteed to be larger than all elements already copied back into the array.
+
+```python
+def merge_sort(array):
+    if len(array) > 1: # Only sort if array is larger than 1
+        mid = len(array) // 2 # Find the middle of the array
+ 
+        # Split the array into two halves
+        left_half = array[:mid]
+        right_half = array[mid:]
+ 
+        # Recursively sort both halves
+        merge_sort(left_half)
+        merge_sort(right_half)
+ 
+        left_index = right_index = merged_index = 0
+ 
+        # Merge sorted halves back into the original array
+        while left_index < len(left_half) and right_index < len(right_half):
+            if left_half[left_index] <= right_half[right_index]:
+                array[merged_index] = left_half[left_index]
+                left_index += 1
+            else:
+                array[merged_index] = right_half[right_index]
+                right_index += 1
+            merged_index += 1
+ 
+        # If any elements left in either half, append them to the array
+        while left_index < len(left_half):
+            array[merged_index] = left_half[left_index]
+            left_index += 1
+            merged_index += 1
+ 
+        while right_index < len(right_half):
+            array[merged_index] = right_half[right_index]
+            right_index += 1
+            merged_index += 1
+```
+
+{{< video src="../assets/merge-sort-visual.mp4" title="Merge Sort" >}}
+{{< video src="../assets/merge-sort.mp4" title="Merge Sort" >}}
 
 ## Binary Search
 
