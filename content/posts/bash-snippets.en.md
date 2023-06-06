@@ -1,13 +1,13 @@
 ---
 title: Bash code snippets
 seoTitle: Bash code snippets
-description: This bash code snippet provides a useful solution for renaming files in the current directory based on a specific pattern.
+description: Handy collection of Bash code snippets in this tutorial, perfect for mastering Linux programming tasks. Learn to rename files by a pattern, perform Git operations across multiple repositories, and untrack specific items in your Git setup.
 toc: true
-categories: [Linux, programming, Bash, CheatSheet]
-series: [CheatSheet]
-tags:  [Linux, Bash]
+categories: [Linux, Bash, CheatSheet]
+series: [CheatSheet, Snippets]
+tags:  [Linux, Bash, Programming, Snippets]
 date: 2023-02-12
-lastmod: 2023-05-25
+lastmod: 2023-06-06
 featuredImage: https://picsum.photos/700/225?grayscale
 draft: false
 ---
