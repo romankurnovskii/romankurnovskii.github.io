@@ -3813,11 +3813,13 @@
         {
             "uri": "/posts/bash-snippets",
             "title": "Bash code snippets",
-            "description": "This bash code snippet provides a useful solution for renaming files in the current directory based on a specific pattern.",
+            "description": "Handy collection of Bash code snippets in this tutorial, perfect for mastering Linux programming tasks. Learn to rename files by a pattern, perform Git operations across multiple repositories, and untrack specific items in your Git setup.",
             "content": "\nRename all files by pattern in current directory\n\nfiles=(*)\n\nLoop through all files\nfor file in \"${files[@]}\"\ndo\nCheck if the file name contains the \"№\" symbol\n  if [[ $file == \"№\" ]]; then\nRemove everything before and including the \"№\" symbol\n    new_file=${file##*\"№\"}\n    mv \"$file\" \"$new_file\"\n    echo \"Renamed $file to $new_file\"\n  fi\ndone\n\nGit Push/Pull for all repos in path\n\ngit pull\n\nfiles=(*)\n#!/bin/bash\n\nFor every item in the current directory\nfor d in */; do\n    cd \"$d\"\n\n    if [[ -d \".git\" ]]; then\n        echo $d\n        git pull\n    fi\n\n    cd ..\ndone\n\ngit push\n\n#!/bin/bash\n\nFor every item in the current directory\nfor d in */; do\n    cd \"$d\"\n\n    if [[ -d \".git\" ]]; then\n        echo $d\n        git add .\n        git commit -m \"Auto apply\"\n\nblack . # python formatter\ngit add .\ngit commit -m \"[chore] formatter\"\n\n        git push\n    fi\n\n    cd ..\ndone\n\ngit untrack\n\n#!/bin/bash\n\nitems_to_untrack=(\".idea\" \".vscode\" \".DS_Store\" \"pycache\" \"node_modules\" \".env\" \".serverless\")\n\nFor every item in the current directory\nfor d in */; do\n    echo $d\n    cd \"$d\"\n\nIterate over each item to untrack\n    for item in \"${items_to_untrack[@]}\"; do\nIf the item exists\n        if [[ -e \"$item\" ]]; then\nUntrack the item\n            git rm -r --cached \"$item\"\n        fi\n    done\n\n    cd ..\ndone\n",
             "tags": [
                 "Linux",
-                "Bash"
+                "Bash",
+                "Programming",
+                "Snippets"
             ],
             "lang": "en"
         },
