@@ -33,29 +33,29 @@ kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 ```
 
-![](../images/Day76_CICD1.png?v1)
+![](../images/Day76_CICD1.ru.png?v1)
 
 Убедитесь, что все подсистемы ArgoCD запущены и работают с помощью команды `kubectl get pods -n argocd`.
 
-![](../images/Day76_CICD2.png?v1)
+![](../images/Day76_CICD2.ru.png?v1)
 
 Также проверим все, что мы развернули в пространстве имен с помощью `kubectl get all -n argocd` 
 
-![](../images/Day76_CICD3.png?v1)
+![](../images/Day76_CICD3.ru.png?v1)
 
 Когда все выглядит хорошо, мы должны рассмотреть возможность доступа к этому через порт. Используя команду `kubectl port-forward svc/argocd-server -n argocd 8080:443`. Сделайте это в новом терминале. 
 
 Затем откройте новый веб-браузер и перейдите по адресу https://localhost:8080. 
 
-![](../images/Day76_CICD4.png?v1)
+![](../images/Day76_CICD4.ru.png?v1)
 
 Для входа в систему вам понадобится имя пользователя admin, а для получения созданного вами секрета в качестве пароля используйте команду `kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d && echo` 
 
-![](../images/Day76_CICD5.png?v1)
+![](../images/Day76_CICD5.ru.png?v1)
 
 После входа в систему у вас будет чистый холст CD. 
 
-![](../images/Day76_CICD6.png?v1)
+![](../images/Day76_CICD6.ru.png?v1)
 
 ### Развертывание нашего приложения 
 

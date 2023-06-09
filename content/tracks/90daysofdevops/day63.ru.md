@@ -33,7 +33,7 @@ weight: 63
 
 Существует множество инструментов управления конфигурацией, и каждый из них имеет специфические особенности, которые делают его лучше для одних ситуаций, чем для других. 
 
-![](../images/Day63_config1.png?v1)
+![](../images/Day63_config1.ru.png?v1)
 
 На этом этапе мы быстро рассмотрим варианты, показанные на рисунке выше, прежде чем сделать выбор, какой из них мы будем использовать и почему. 
 
@@ -90,14 +90,14 @@ weight: 63
 
 Инструментом, который мы будем использовать для этого раздела, будет Ansible. (Простой в использовании и требуются основы языка).
 
-Я думаю, что важно коснуться некоторых различий между Ansible и Terraform, прежде чем мы рассмотрим инструментарий немного подробнее. |               |Ansible                                                        |Terraform                                                          |
-| ------------- | ------------------------------------------------------------- | ----------------------------------------------------------------- |
-|Type           |Ansible is a configuration management tool                     |Terraform is a an orchestration tool                               |
-|Infrastructure |Ansible provides support for mutable infrastructure            |Terraform provides support for immutable infrastructure            |
-|Language       |Ansible follows procedural language                            |Terraform follows a declartive language                            |
-|Provisioning   |Ansible provides partial provisioning (VM, Network, Storage)   |Terraform provides extensive provisioning (VM, Network, Storage)   |
-|Packaging      |Ansible provides complete support for packaging & templating   |Terraform provides partial support for packaging & templating      |
-|Lifecycle Mgmt |Ansible does not have lifecycle management                     |Terraform is heavily  dependant on lifecycle and state mgmt        |
+| Я думаю, что важно коснуться некоторых различий между Ansible и Terraform, прежде чем мы рассмотрим инструментарий немного подробнее. |                                                              | Ansible                                                          | Terraform |
+| ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ | ---------------------------------------------------------------- |
+| Type                                                                                                                                  | Ansible is a configuration management tool                   | Terraform is a an orchestration tool                             |
+| Infrastructure                                                                                                                        | Ansible provides support for mutable infrastructure          | Terraform provides support for immutable infrastructure          |
+| Language                                                                                                                              | Ansible follows procedural language                          | Terraform follows a declartive language                          |
+| Provisioning                                                                                                                          | Ansible provides partial provisioning (VM, Network, Storage) | Terraform provides extensive provisioning (VM, Network, Storage) |
+| Packaging                                                                                                                             | Ansible provides complete support for packaging & templating | Terraform provides partial support for packaging & templating    |
+| Lifecycle Mgmt                                                                                                                        | Ansible does not have lifecycle management                   | Terraform is heavily  dependant on lifecycle and state mgmt      |
 
 
 ## Ресурсы 

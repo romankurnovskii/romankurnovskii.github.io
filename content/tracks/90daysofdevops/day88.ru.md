@@ -21,7 +21,7 @@ weight: 88
 
 Для этого мы выберем инструмент [Kanister](https://kanister.io/)
 
-![](../images/Day88_Data1.png?v1)
+![](../images/Day88_Data1.ru.png?v1)
 
 ### Представляем Kanister 
 
@@ -37,23 +37,23 @@ Kanister использует пользовательские ресурсы Ku
 
 Прежде чем приступить к работе, мы должны рассмотреть рабочий процесс, который использует Kanister для защиты данных приложения. Во-первых, наш контроллер развертывается с помощью helm в нашем кластере Kubernetes, Kanister живет в своем собственном пространстве имен. Мы берем наш Blueprint, для которого существует множество поддерживаемых сообществом Blueprint, мы рассмотрим это более подробно в ближайшее время. Затем у нас есть рабочая нагрузка базы данных. 
 
-![](../images/Day88_Data2.png?v1)
+![](../images/Day88_Data2.ru.png?v1)
 
 Затем мы создаем наш ActionSet.   
 
-![](../images/Day88_Data3.png?v1)
+![](../images/Day88_Data3.ru.png?v1)
 
 ActionSet позволяет нам запускать действия, определенные в чертеже, против конкретной службы данных. 
 
-![](../images/Day88_Data4.png?v1)
+![](../images/Day88_Data4.ru.png?v1)
 
 ActionSet, в свою очередь, использует функции Kanister (KubeExec, KubeTask, Resource Lifecycle) и выталкивает нашу резервную копию в целевое хранилище (Profile). 
 
-![](../images/Day88_Data5.png?v1)
+![](../images/Day88_Data5.ru.png?v1)
 
 Если действие выполнено/не выполнено, соответствующий статус обновляется в наборе действий.
 
-![](../images/Day88_Data6.png?v1)
+![](../images/Day88_Data6.ru.png?v1)
 
 ### Развертывание Kanister 
 
@@ -63,10 +63,10 @@ ActionSet, в свою очередь, использует функции Kanis
 
 `helm install kanister --namespace kanister kanister/kanister-operator --set image.tag=0.75.0 --create-namespace`.
 
-![](../images/Day88_Data7.png?v1)
+![](../images/Day88_Data7.ru.png?v1)
 
 Мы можем использовать `kubectl get pods -n kanister`, чтобы убедиться, что pod запущен и работает, а также проверить, что наши пользовательские определения ресурсов теперь доступны (Если вы только установили Kanister, то вы увидите выделенные 3)
-![](../images/Day88_Data8.png?v1)
+![](../images/Day88_Data8.ru.png?v1)
 
 ### Развертывание базы данных 
 
@@ -79,7 +79,7 @@ helm repo add bitnami https://charts.bitnami.com/bitnami
 helm install mysql-store bitnami/mysql --set primary.persistence.size=1Gi,volumePermissions.enabled=true --namespace=${APP_NAME}
 kubectl get pods -n ${APP_NAME} -w
 ```
-![](../images/Day88_Data9.png?v1)
+![](../images/Day88_Data9.ru.png?v1)
 
 Заполните базу данных mysql исходными данными, выполнив следующее:
 
@@ -122,7 +122,7 @@ exit
 ```
 Вы должны увидеть некоторые данные, как показано ниже. 
 
-![](../images/Day88_Data10.png?v1)
+![](../images/Day88_Data10.ru.png?v1)
 
 
 ### Создание профиля Kanister
@@ -135,7 +135,7 @@ Kanister предоставляет CLI, `kanctl` и другую утилиту
 
 `kanctl create profile s3compliant --access-key $ACCESS_KEY --secret-key $SECRET_KEY --bucket $BUCKET --region eu-west-2 --namespace my-production-app`.
 
-![](../images/Day88_Data11.png?v1)
+![](../images/Day88_Data11.ru.png?v1)
 
 ### Время чертежа
 
@@ -225,7 +225,7 @@ actions:
 
 Чтобы добавить его, мы воспользуемся командой `kubectl create -f mysql-blueprint.yml -n kanister`. 
 
-![](../images/Day88_Data12.png?v1)
+![](../images/Day88_Data12.ru.png?v1)
 
 ### Создаем наш ActionSet и защищаем наше приложение 
 
@@ -239,13 +239,13 @@ actions:
 
 Из приведенной выше команды видно, что мы определяем blueprint, который мы добавили в пространство имен, statefulset в нашем пространстве имен `my-production-app`, а также секреты для входа в приложение MySQL. 
 
-![](../images/Day88_Data13.png?v1)
+![](../images/Day88_Data13.ru.png?v1)
 
 Проверьте состояние ActionSet, взяв имя ActionSet и используя эту команду `kubectl --namespace kanister describe actionset backup-qpnqv`.
 
 Наконец, мы можем пойти и подтвердить, что теперь у нас есть данные в нашем ведре AWS S3. 
 
-![](../images/Day88_Data14.png?v1)
+![](../images/Day88_Data14.ru.png?v1)
 
 ### Восстановление 
 
@@ -263,11 +263,11 @@ kubectl run mysql-client --rm --env APP_NS=${APP_NAME} --env MYSQL_EXEC="${MYSQL
 
 И подтвердили, что все исчезло, сделав несколько попыток показать нашу базу данных. 
 
-![](../images/Day88_Data15.png?v1)
+![](../images/Day88_Data15.ru.png?v1)
 
 Теперь мы можем использовать Kanister, чтобы вернуть наши важные данные в рабочее состояние, используя команду `kubectl get actionset -n kanister`, чтобы узнать имя нашего ActionSet, который мы взяли ранее. Затем мы создадим ActionSet восстановления для восстановления наших данных, используя `kanctl create actionset -n kanister --action restore --from "backup-qpnqv"`.
 
-![](../images/Day88_Data16.png?v1)
+![](../images/Day88_Data16.ru.png?v1)
 
 Мы можем подтвердить, что наши данные восстановлены, используя следующую команду для подключения к нашей базе данных.
 ```
@@ -276,7 +276,7 @@ kubectl run mysql-client --rm --env APP_NS=${APP_NAME} --env MYSQL_EXEC="${MYSQL
 ```
 Теперь мы находимся внутри клиента MySQL, мы можем выполнить команду `echo "SHOW DATABASES;" | ${MYSQL_EXEC}` и мы увидим, что база данных восстановлена. Мы также можем выполнить команду `echo "select * from Accounts;" | ${MYSQL_EXEC}` для проверки содержимого базы данных, и наши важные данные будут восстановлены. 
 
-![](../images/Day88_Data17.png?v1)
+![](../images/Day88_Data17.ru.png?v1)
 
 В следующем посте мы рассмотрим аварийное восстановление в Kubernetes.
 

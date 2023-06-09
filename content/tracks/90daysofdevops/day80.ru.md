@@ -40,7 +40,7 @@ ELK Stack - это комбинация трех отдельных инстру
 
 - Kibana использует БД Elasticsearch для изучения, визуализации и обмена данными
 
-![](../images/Day80_Monitoring8.png?v1)
+![](../images/Day80_Monitoring8.ru.png?v1)
 
 [Изображение взято с сайта Guru99](https://www.guru99.com/elk-stack-tutorial.html)
 
@@ -52,33 +52,33 @@ ELK Stack - это комбинация трех отдельных инстру
 
 [Start the Elastic Stack with Docker Compose](https://www.elastic.co/guide/en/elastic-stack-get-started/current/get-started-stack-docker.html#get-started-docker-tls)
 
-![](../images/Day80_Monitoring1.png?v1)
+![](../images/Day80_Monitoring1.ru.png?v1)
 
 Оригинальные файлы и руководство, которые я использовал, вы найдете здесь [ deviantony/docker-elk](https://github.com/deviantony/docker-elk)
 
 Теперь мы можем запустить `docker-compose up -d`, при первом запуске потребуется вытащить изображения. 
 
-![](../images/Day80_Monitoring2.png?v1)
+![](../images/Day80_Monitoring2.ru.png?v1)
 
 Если вы следите за этим репозиторием или за тем, который использовал я, у вас будет пароль "changeme" или в моем репозитории пароль "90DaysOfDevOps". Имя пользователя - "elastic".
 
 Через несколько минут мы можем перейти на сайт http://localhost:5601/, который является нашим сервером Kibana / Docker-контейнером.
 
-![](../images/Day80_Monitoring3.png?v1)
+![](../images/Day80_Monitoring3.ru.png?v1)
 
 Ваш начальный главный экран будет выглядеть примерно так. 
 
-![](../images/Day80_Monitoring4.png?v1)
+![](../images/Day80_Monitoring4.ru.png?v1)
 
 В разделе "Get started by adding integrations" есть пункт "try sample data", нажмите на него, и мы сможем добавить одну из показанных ниже интеграций. 
 
-![](../images/Day80_Monitoring5.png?v1)
+![](../images/Day80_Monitoring5.ru.png?v1)
 
 Я собираюсь выбрать "Sample web logs", но это действительно для того, чтобы получить представление о том, какие наборы данных можно получить в стеке ELK. 
 
 Когда вы выбрали "Добавить данные", требуется некоторое время, чтобы заполнить некоторые из этих данных, а затем у вас появляется опция "Просмотр данных" и список доступных способов просмотра этих данных в выпадающем списке. 
 
-![](../images/Day80_Monitoring6.png?v1)
+![](../images/Day80_Monitoring6.ru.png?v1)
 
 Как указано в представлении приборной панели: 
 
@@ -86,7 +86,7 @@ ELK Stack - это комбинация трех отдельных инстру
 
 *Эта приборная панель содержит образцы данных, с которыми вы можете поиграть. Вы можете просматривать их, искать и взаимодействовать с визуализациями. Для получения дополнительной информации о Kibana ознакомьтесь с нашей документацией.*
 
-![](../images/Day80_Monitoring7.png?v1)
+![](../images/Day80_Monitoring7.ru.png?v1)
 
 Здесь используется Kibana для визуализации данных, которые были добавлены в ElasticSearch через Logstash. Это не единственный вариант, но я лично хотел развернуть и посмотреть на это. 
 

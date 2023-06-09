@@ -48,15 +48,15 @@ curl -L "https://download.opensuse.org/repositories/devel:/kubic:\
 
 Теперь мы можем использовать многие из тех же команд, которые мы использовали для docker, однако обратите внимание, что у нас нет красивого пользовательского интерфейса рабочего стола docker. Вы можете видеть ниже, я использовал `podman images` и у меня ничего не появилось после установки, затем я использовал `podman pull ubuntu` для извлечения образа контейнера ubuntu. 
 
-![](../images/Day48_Containers1.png?v1)
+![](../images/Day48_Containers1.ru.png?v1)
 
 Затем мы можем запустить наш образ Ubuntu с помощью `podman run -dit ubuntu` и `podman ps`, чтобы увидеть наш запущенный образ. 
 
-![](../images/Day48_Containers2.png?v1)
+![](../images/Day48_Containers2.ru.png?v1)
 
 Чтобы попасть в этот контейнер, мы можем выполнить команду `podman attach dazzling_darwin`, имя вашего контейнера, скорее всего, будет другим. 
 
-![](../images/Day48_Containers3.png?v1)
+![](../images/Day48_Containers3.ru.png?v1)
 
 Если вы переходите от docker к podman, то обычно также необходимо изменить ваш конфигурационный файл на `alias docker=podman`, тогда любая команда, запущенная с помощью docker, будет использовать podman. 
 

@@ -58,7 +58,7 @@ Dockerfile - это текстовый файл, содержащий коман
 
 Документация [docker documenation](https://docs.docker.com/engine/install/) просто потрясающая, и если вы только начинаете в нее погружаться, то вам стоит ее просмотреть и прочитать. Мы будем использовать Docker Desktop на Windows с WSL2. Я уже выполнил установку на своей машине, которую мы используем здесь. 
 
-![](../images/Day43_Containers1.png?v1)
+![](../images/Day43_Containers1.ru.png?v1)
 
 Обратите внимание перед установкой на системные требования, [Install Docker Desktop on Windows](https://docs.docker.com/desktop/windows/install/), если вы используете macOS, включая архитектуру процессора на базе M1, вы также можете взглянуть на [Install Docker Desktop on macOS](https://docs.docker.com/desktop/mac/install/).
 

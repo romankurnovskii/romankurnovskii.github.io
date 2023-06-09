@@ -7,7 +7,7 @@ categories: [Linux, Bash, CheatSheet]
 series: [CheatSheet, Snippets]
 tags:  [Linux, Bash, Programming, Snippets]
 date: 2023-02-12
-lastmod: 2023-06-06
+lastmod: 2023-06-014
 featuredImage: https://picsum.photos/700/225?grayscale
 draft: false
 ---
@@ -18,7 +18,6 @@ draft: false
 ```sh
 files=(*)
 
-# Loop through all files
 for file in "${files[@]}"
 do
   # Check if the file name contains the "№" symbol
@@ -28,6 +27,21 @@ do
     mv "$file" "$new_file"
     echo "Renamed $file to $new_file"
   fi
+done
+```
+
+## Add substring to filename
+```sh
+#!/bin/bash
+
+DIR="/path/to/folder"
+cd "$DIR"
+
+# Rename all .png files and add ".ru" before .png
+for file in *.png; do
+    base=$(basename "$file" .png)
+
+    mv "$file" "${base}.ru.png"
 done
 ```
 

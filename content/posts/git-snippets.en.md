@@ -6,7 +6,7 @@ tags:  [git]
 series: [CheatSheet]
 categories: [Git, CheatSheet]
 date: 2023-01-01
-lastmod: 2023-01-01
+lastmod: 2023-06-14
 featuredImage: https://picsum.photos/700/238?grayscale
 draft: false
 ---
@@ -48,13 +48,19 @@ jobs:
 
 [Download BFG](https://rtyley.github.io/bfg-repo-cleaner/)
 
+or
+
+```sh
+wget https://repo1.maven.org/maven2/com/madgag/bfg/1.14.0/bfg-1.14.0.jar
+```
+
 Remove *history* files bigger than 100Kb:
 
     cd repo
     java -jar bfg-1.14.0.jar --strip-blobs-bigger-than 100K .
     git reflog expire --expire=now --all && git gc --prune=now --aggressive
 
-**Removing an entire commit:**
+### Removing an entire commit
 
 Replace "SHA" with the reference you want to get rid of. The "^" in that command is literal.
 
@@ -92,7 +98,7 @@ If already published to-be-deleted commit:
 
 `git revert HEAD`
 
-**Cleanups:**
+### Cleanups
 
     git stash clear
     git reflog expire --expire-unreachable=now --all
@@ -107,7 +113,7 @@ If already published to-be-deleted commit:
 
 ## Resources
 
-- https://sethrobertson.github.io/GitFixUm/fixup.html
-- https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-clone.html
-- https://passingcuriosity.com/2017/truncating-git-history/
-- https://www.npmjs.com/package/clear-git-branch?activeTab=explore
+- [Git commits style](https://www.conventionalcommits.org/en/v1.0.0/#summary)
+- [On undoing, fixing, or removing commits in git](https://sethrobertson.github.io/GitFixUm/fixup.html)
+- [Truncating git history](https://passingcuriosity.com/2017/truncating-git-history/)
+- [clean unused branches](https://www.npmjs.com/package/clear-git-branch?activeTab=explore)

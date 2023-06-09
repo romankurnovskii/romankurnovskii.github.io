@@ -32,7 +32,7 @@ weight: 46
 
 Чтобы убедиться, что `docker-compose` установлен в нашей системе, мы можем открыть терминал и просто ввести приведенную выше команду. 
 
-![](../images/Day46_Containers1.png?v1)
+![](../images/Day46_Containers1.ru.png?v1)
 
 ### Docker-Compose.yml (YAML)
 
@@ -98,57 +98,57 @@ volumes:
 
 Символ `-d` в этой команде означает отделенный режим, что означает, что команда Run выполняется или будет выполняться в фоновом режиме.
 
-![](../images/Day46_Containers2.png?v1)
+![](../images/Day46_Containers2.ru.png?v1)
 
 Если теперь мы выполним команду `docker ps`, вы увидите, что у нас запущено 2 контейнера, один из которых - wordpress, а другой - mySQL. 
 
-![](../images/Day46_Containers3.png?v1)
+![](../images/Day46_Containers3.ru.png?v1)
 
 Далее мы можем проверить, что у нас запущен WordPress, открыв браузер и перейдя по адресу `http://localhost:8000`, вы должны увидеть страницу установки wordpress. 
 
-![](../images/Day46_Containers4.png?v1)
+![](../images/Day46_Containers4.ru.png?v1)
 
 Мы можем выполнить настройку WordPress, а затем начать создавать наш сайт по своему усмотрению в консоли ниже. 
 
-![](../images/Day46_Containers5.png?v1)
+![](../images/Day46_Containers5.ru.png?v1)
 
 Если мы откроем новую вкладку и перейдем по тому же адресу, что и раньше `http://localhost:8000`, то увидим простую тему по умолчанию с названием нашего сайта "90DaysOfDevOps", а затем образец поста. 
 
-![](../images/Day46_Containers6.png?v1)
+![](../images/Day46_Containers6.ru.png?v1)
 
 Прежде чем мы сделаем какие-либо изменения, откройте Docker Desktop и перейдите на вкладку volumes, здесь вы увидите два тома, связанных с нашими контейнерами, один для wordpress и один для db. 
 
-![](../images/Day46_Containers7.png?v1)
+![](../images/Day46_Containers7.ru.png?v1)
 
 Моя текущая тема для wordpress - "Twenty Twenty-Two", и я хочу изменить ее на "Twenty Twenty" Вернувшись в панель управления, мы можем внести эти изменения. 
 
-![](../images/Day46_Containers8.png?v1)
+![](../images/Day46_Containers8.ru.png?v1)
 
 Я также собираюсь добавить новый пост на свой сайт, и здесь ниже вы видите последнюю версию нашего нового сайта. 
 
-![](../images/Day46_Containers9.png?v1) 
+![](../images/Day46_Containers9.ru.png?v1) 
 
 ### Очищать или нет
 
 Если мы сейчас используем команду `docker-compose down`, это приведет к остановке наших контейнеров. Но наши тома останутся на месте. 
 
-![](../images/Day46_Containers10.png?v1)
+![](../images/Day46_Containers10.ru.png?v1)
 
 Мы можем просто подтвердить в Docker Desktop, что наши тома все еще там. 
 
-![](../images/Day46_Containers11.png?v1)
+![](../images/Day46_Containers11.ru.png?v1)
 
 Если мы захотим вернуть все обратно, мы можем выполнить команду `docker up -d` из той же директории, и наше приложение снова будет запущено. 
 
-![](../images/Day46_Containers12.png?v1)
+![](../images/Day46_Containers12.ru.png?v1)
 
 Затем мы переходим в браузере по тому же адресу `http://localhost:8000` и замечаем, что наш новый пост и смена темы все еще на месте. 
 
-![](../images/Day46_Containers13.png?v1)
+![](../images/Day46_Containers13.ru.png?v1)
 
 Если мы хотим избавиться от контейнеров и этих томов, то выполнение команды `docker-compose down --volumes` также уничтожит тома. 
 
-![](../images/Day46_Containers14.png?v1)
+![](../images/Day46_Containers14.ru.png?v1)
 
 Теперь, когда мы снова используем `docker-compose up -d`, мы начнем все сначала, однако образы все еще будут локальными в нашей системе, поэтому вам не нужно будет повторно брать их из репозитория DockerHub. 
 
@@ -162,15 +162,15 @@ volumes:
 
 Я загрузил файлы в папку [Containers](https://github.com/MichaelCade/90DaysOfDevOps/tree/main/Days/Containers/elasticsearch-logstash-kibana) Когда у вас есть эта папка локально, перейдите туда и вы можете просто использовать `docker-compose up -d`. 
 
-![](../images/Day46_Containers15.png?v1)
+![](../images/Day46_Containers15.ru.png?v1)
 
 Затем мы можем проверить наличие запущенных контейнеров с помощью `docker ps`. 
 
-![](../images/Day46_Containers16.png?v1)
+![](../images/Day46_Containers16.ru.png?v1)
 
 Теперь мы можем открыть браузер для каждого из контейнеров: 
 
-![](../images/Day46_Containers17.png?v1)
+![](../images/Day46_Containers17.ru.png?v1)
 
 Чтобы удалить все, мы можем использовать команду `docker-compose down`.  
 

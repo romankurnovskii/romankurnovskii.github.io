@@ -258,29 +258,29 @@ New-AzResourceGroupDeployment `
 -TemplateFile C:\Users\micha\demo\90DaysOfDevOps\Days\Cloud\01VirtualNetworking\Mod04_90DaysOfDevOps-vms-loop-template.json `
 -TemplateParameterFile C:\Users\micha\demo\90DaysOfDevOps\Days\Cloud\01VirtualNetworking\Mod04_90DaysOfDevOps-vms-loop-parameters.json
 ```
-  ![](../images/Day34_Cloud1.png?v1)
+  ![](../images/Day34_Cloud1.ru.png?v1)
  
 - Задача 1: Создать и настроить виртуальную сеть
 
-  ![](../images/Day34_Cloud2.png?v1)
+  ![](../images/Day34_Cloud2.ru.png?v1)
 
 - Задача 2. Развернуть виртуальные машины в виртуальной сети.
 
-  ![](../images/Day34_Cloud3.png?v1)
+  ![](../images/Day34_Cloud3.ru.png?v1)
 
 - Задача 3. Настройка частных и общедоступных IP-адресов виртуальных машин Azure.
   
-  ![](../images/Day34_Cloud4.png?v1)
+  ![](../images/Day34_Cloud4.ru.png?v1)
 
 - Задача 4: Настройка групп безопасности сети
 
-![](../images/Day34_Cloud5.png?v1)
-![](../images/Day34_Cloud6.png?v1)
+![](../images/Day34_Cloud5.ru.png?v1)
+![](../images/Day34_Cloud6.ru.png?v1)
 
 - Задача 5. Настройка Azure DNS для внутреннего разрешения имен.
 
-![](../images/Day34_Cloud7.png?v1)
-![](../images/Day34_Cloud8.png?v1)
+![](../images/Day34_Cloud7.ru.png?v1)
+![](../images/Day34_Cloud8.ru.png?v1)
 
 ### Управление сетевым трафиком
 Переходим к [модулю 06](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_06-Implement_Network_Traffic_Management.html):
@@ -313,18 +313,18 @@ New-AzResourceGroupDeployment `
      -TypeHandlerVersion '1.4'
    }
 ```
-![](../images/Day34_Cloud9.png?v1)
+![](../images/Day34_Cloud9.ru.png?v1)
 
 - Задача 2. Настройка топологии узловой сети
-![](../images/Day34_Cloud10.png?v1)
+![](../images/Day34_Cloud10.ru.png?v1)
 
 - Задача 3. Проверка транзитивности пиринга виртуальной сети.
 
 Для этого моя группа 90DaysOfDevOps не имела доступа к Network Watcher из-за разрешений, я ожидаю, что это связано с тем, что Network Watcher  — это один из тех ресурсов, которые не привязаны к группе ресурсов, где наш RBAC был покрыт для этого пользователя. Я добавил в группу 90DaysOfDevOps роль участника Network Watcher из восточной части США.
 
-![](../images/Day34_Cloud11.png?v1)
-![](../images/Day34_Cloud12.png?v1)
-![](../images/Day34_Cloud13.png?v1)
+![](../images/Day34_Cloud11.ru.png?v1)
+![](../images/Day34_Cloud12.ru.png?v1)
+![](../images/Day34_Cloud13.ru.png?v1)
 
 > Это ожидаемо, поскольку виртуальные сети с двумя лучами не связаны друг с другом (пиринг виртуальных сетей не является транзитивным).
 
@@ -332,19 +332,19 @@ New-AzResourceGroupDeployment `
 
 У меня была еще одна проблема: моя учетная запись не могла запустить скрипт от имени моего пользователя в группе 90DaysOfDevOps, в чем я не уверен, поэтому я вернулся в свою основную учетную запись администратора. Группа 90DaysOfDevOps является владельцем всего в группе ресурсов 90DaysOfDevOps, поэтому хотелось бы понять, почему я не могу запустить команду внутри виртуальной машины?
 
-![](../images/Day34_Cloud14.png?v1)
-![](../images/Day34_Cloud15.png?v1)
-![](../images/Day34_Cloud16.png?v1)
+![](../images/Day34_Cloud14.ru.png?v1)
+![](../images/Day34_Cloud15.ru.png?v1)
+![](../images/Day34_Cloud16.ru.png?v1)
 
 - Task 5: Подключаем Azure Load Balancer
 
-![](../images/Day34_Cloud17.png?v1)
-![](../images/Day34_Cloud18.png?v1)
+![](../images/Day34_Cloud17.ru.png?v1)
+![](../images/Day34_Cloud18.ru.png?v1)
 
 - Task 6: Подключаем Azure Application Gateway
 
-![](../images/Day34_Cloud19.png?v1)
-![](../images/Day34_Cloud20.png?v1)
+![](../images/Day34_Cloud19.ru.png?v1)
+![](../images/Day34_Cloud20.ru.png?v1)
 
 ### Хранищиле Azure 
 Переходим к [модулю 07](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_07-Manage_Azure_Storage.html):
@@ -565,59 +565,59 @@ New-AzResourceGroupDeployment `
 </details>
 
 
-![](../images/Day34_Cloud21.png?v1)
+![](../images/Day34_Cloud21.ru.png?v1)
 
 - Задача 2. Создание и настройка учетных записей хранения Azure.
 
-![](../images/Day34_Cloud22.png?v1)
+![](../images/Day34_Cloud22.ru.png?v1)
 
 - Задача 3. Управление хранилищем BLOB-объектов
 
-![](../images/Day34_Cloud23.png?v1)
+![](../images/Day34_Cloud23.ru.png?v1)
 
 - Задача 4. Управление проверкой подлинности и авторизацией для службы хранилища Azure.
 
-![](../images/Day34_Cloud24.png?v1)
-![](../images/Day34_Cloud25.png?v1)
+![](../images/Day34_Cloud24.ru.png?v1)
+![](../images/Day34_Cloud25.ru.png?v1)
 
 Я был немного нетерпелив, ожидая, что это все сработает, но в конце концов это сработало.
 
-![](../images/Day34_Cloud26.png?v1)
+![](../images/Day34_Cloud26.ru.png?v1)
 
 - Задача 5. Создание и настройка общих папок Azure Files.
 
 В команде запуска это не сработает с michael.cade@90DaysOfDevOps.com, поэтому я использовал свою учетную запись с повышенными правами.
 
-![](../images/Day34_Cloud27.png?v1)
-![](../images/Day34_Cloud28.png?v1)
-![](../images/Day34_Cloud29.png?v1)
+![](../images/Day34_Cloud27.ru.png?v1)
+![](../images/Day34_Cloud28.ru.png?v1)
+![](../images/Day34_Cloud29.ru.png?v1)
 
 - Задача 6. Управление сетевым доступом для службы хранилища Azure.
 
-![](../images/Day34_Cloud30.png?v1)
+![](../images/Day34_Cloud30.ru.png?v1)
 
 ### Serverless (внедрение веб-приложений)
 Переходим к [модулю 09a](https://microsoftlearning.github.io/AZ-104-MicrosoftAzureAdministrator/Instructions/Labs/LAB_09a-Implement_Web_Apps.html):
 
 - Задача 1. Создание веб-приложения Azure.
 
-![](../images/Day34_Cloud31.png?v1)
+![](../images/Day34_Cloud31.ru.png?v1)
 
 - Задача 2. Создание промежуточного слота развертывания.
 
-![](../images/Day34_Cloud34.png?v1)
+![](../images/Day34_Cloud34.ru.png?v1)
 
 - Задача 3. Настройка параметров развертывания веб-приложений.
 
-![](../images/Day34_Cloud33.png?v1)
+![](../images/Day34_Cloud33.ru.png?v1)
 
 - Задача 4. Развертывание кода в промежуточном слоте развертывания.
 
-![](../images/Day34_Cloud32.png?v1)
+![](../images/Day34_Cloud32.ru.png?v1)
 
 - Задача 5: Поменять промежуточные слоты местами
 
-![](../images/Day34_Cloud35.png?v1)
+![](../images/Day34_Cloud35.ru.png?v1)
 
 - Задача 6. Настройка и тестирование автоматического масштабирования веб-приложения Azure.
 ```
@@ -626,7 +626,7 @@ $webapp = Get-AzWebApp -ResourceGroupName $rgName
 #The following following will start an infinite loop that sends the HTTP requests to the web app
 while ($true) { Invoke-WebRequest -Uri $webapp.DefaultHostName }
 ```
-![](../images/Day34_Cloud36.png?v1)
+![](../images/Day34_Cloud36.ru.png?v1)
 
 На этом мы завершаем раздел о Microsoft Azure и public cloud в целом.
 

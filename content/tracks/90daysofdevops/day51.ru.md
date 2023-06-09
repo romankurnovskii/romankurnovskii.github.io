@@ -27,17 +27,17 @@ Minikube быстро создает локальный кластер Kubernete
 
 [Понятное руководство по установке minikube](https://kubernetes.io/ru/tracks/tasks/tools/install-minikube/)
 
-![](../images/Day51_Kubernetes1.png?v1)
+![](../images/Day51_Kubernetes1.ru.png?v1)
 
 ### Мой способ установки minikube
 
 Я уже некоторое время использую arkade, чтобы получить все эти инструменты Kubernetes и CLI, вы можете посмотреть шаги установки на этом [github репозитории](https://github.com/alexellis/arkade) для начала работы с Arkade. Я также упоминал об этом в других записях блога, когда мне нужно было что-то установить. Простота установки: достаточно нажать arkade get и посмотреть, доступен ли ваш инструмент или cli, очень удобна. В разделе Linux мы говорили о менеджере пакетов и процессе получения нашего программного обеспечения, вы можете думать об Arkade как о рынке для всех ваших приложений и clis для Kubernetes. Очень удобный инструмент, который нужно иметь в своих системах, написанный на Golang и кроссплатформенный. 
 
-![](../images/Day51_Kubernetes2.png?v1)
+![](../images/Day51_Kubernetes2.ru.png?v1)
 
 В длинном списке доступных приложений в arkade minikube является одним из них, поэтому с помощью простой команды `arkade get minikube` мы загружаем бинарник и можем приступать.
 
-![](../images/Day51_Kubernetes3.png?v1)
+![](../images/Day51_Kubernetes3.ru.png?v1)
 
 Нам также понадобится kubectl как часть нашего инструментария, поэтому вы можете получить его через arkade или, как я полагаю, в документации по minikube он представлен как часть команд curl, упомянутых выше. Подробнее о kubectl мы расскажем позже в этом посте. 
 
@@ -49,21 +49,21 @@ minikube используется в командной строке, и, про
 
 Один кластер Minikube будет состоять из одного контейнера docker, в котором будут находиться узел плоскости управления и рабочий узел в одном экземпляре. Обычно вы разделяете эти узлы по отдельности. Об этом мы расскажем в следующем разделе, где мы рассмотрим домашние лабораторные среды Kubernetes, но немного ближе к производственной архитектуре. 
 
-![](../images/Day51_Kubernetes4.png?v1)
+![](../images/Day51_Kubernetes4.ru.png?v1)
 
 Я уже несколько раз говорил об этом, мне очень нравится minikube из-за доступных дополнений, возможность развернуть кластер с помощью простой команды, включающей все необходимые дополнения с самого начала, действительно помогает мне каждый раз развертывать одну и ту же необходимую установку.
 
 Ниже представлен список этих аддонов, я обычно использую аддоны `csi-hostpath-driver` и `volumesnapshots`, но вы можете увидеть длинный список ниже. Конечно, эти аддоны могут быть развернуты с помощью Helm, о чем мы расскажем позже в разделе Kubernetes, но это значительно упрощает работу. 
 
-![](../images/Day51_Kubernetes5.png?v1)
+![](../images/Day51_Kubernetes5.ru.png?v1)
 
 Я также определяю в нашем проекте некоторые дополнительные конфигурации, apiserver установлен на 6433 вместо случайного порта API, я определяю время выполнения контейнера также на containerd, однако docker используется по умолчанию, и CRI-O также доступен. Я также устанавливаю определенную версию Kubernetes. 
 
-![](../images/Day51_Kubernetes6.png?v1)
+![](../images/Day51_Kubernetes6.ru.png?v1)
 
 Теперь мы готовы развернуть наш первый кластер Kubernetes с помощью minikube. Я уже упоминал, что вам также понадобится `kubectl` для взаимодействия с вашим кластером. Вы можете установить kubectl с помощью arkade, выполнив команду `arkade get kubectl`.  
 
-![](../images/Day51_Kubernetes7.png?v1)
+![](../images/Day51_Kubernetes7.ru.png?v1)
 
 или вы можете загрузить кросс-платформенную версию со следующих сайтов 
 
@@ -73,7 +73,7 @@ minikube используется в командной строке, и, про
 
 После установки kubectl мы можем взаимодействовать с нашим кластером с помощью простой команды `kubectl get nodes`.
  
-![](../images/Day51_Kubernetes8.png?v1)
+![](../images/Day51_Kubernetes8.ru.png?v1)
 
 ### Что такое kubectl?
 
@@ -89,57 +89,57 @@ kubectl взаимодействует с сервером API, располож
 
 Наряду с официальной документацией я также обнаружил, что при поиске команд kubectl у меня постоянно открыта эта страница. [Unofficial Kubernetes](https://unofficial-kubernetes.readthedocs.io/en/latest/)
 
-|Listing Resources               |                                           |
-| ------------------------------ | ----------------------------------------- |
-|kubectl get nodes               |List all nodes in cluster                  |  
-|kubectl get namespaces          |List all namespaces in cluster             |  
-|kubectl get pods                |List all pods in default namespace cluster |
-|kubectl get pods -n name        |List all pods in "name" namespace          |
-|kubectl get pods -n name        |List all pods in "name" namespace          |
+| Listing Resources        |                                            |
+| ------------------------ | ------------------------------------------ |
+| kubectl get nodes        | List all nodes in cluster                  |
+| kubectl get namespaces   | List all namespaces in cluster             |
+| kubectl get pods         | List all pods in default namespace cluster |
+| kubectl get pods -n name | List all pods in "name" namespace          |
+| kubectl get pods -n name | List all pods in "name" namespace          |
 
-|Creating Resources              |                                           |
-| ------------------------------ | ----------------------------------------- |
-|kubectl create namespace name   |Create a namespace called "name"           |  
-|kubectl create -f [filename]    |Create a resource from a JSON or YAML file:| 
+| Creating Resources            |                                             |
+| ----------------------------- | ------------------------------------------- |
+| kubectl create namespace name | Create a namespace called "name"            |
+| kubectl create -f [filename]  | Create a resource from a JSON or YAML file: |
 
-|Editing Resources               |                                           |
-| ------------------------------ | ----------------------------------------- |
-|kubectl edit svc/servicename    |To edit a service                          |
+| Editing Resources            |                   |
+| ---------------------------- | ----------------- |
+| kubectl edit svc/servicename | To edit a service |
 
-|More detail on Resources        |                                                        |
-| ------------------------------ | ------------------------------------------------------ |
-|kubectl describe nodes          | display the state of any number of resources in detail,|
+| More detail on Resources |                                                         |
+| ------------------------ | ------------------------------------------------------- |
+| kubectl describe nodes   | display the state of any number of resources in detail, |
 
-|Delete Resources                |                                                        |
-| ------------------------------ | ------------------------------------------------------ |
-|kubectl delete pod              | Remove resources, this can be from stdin or file       |
+| Delete Resources   |                                                  |
+| ------------------ | ------------------------------------------------ |
+| kubectl delete pod | Remove resources, this can be from stdin or file |
 
 Вы захотите узнать краткие названия некоторых команд kubectl, например, `-n` - это краткое название для `namespace`, что облегчает ввод команды, а также, если вы пишете скрипты, вы можете получить гораздо более аккуратный код.
 
-| Short name           | Full name                    |
-| -------------------- | ---------------------------- |
-|  csr                 |  certificatesigningrequests  |
-|  cs                  |  componentstatuses           |
-|  cm                  |  configmaps                  |
-|  ds                  |  daemonsets                  |
-|  deploy              |  deployments                 |
-|  ep                  |  endpoints                   |
-|  ev                  |  events                      |
-|  hpa                 |  horizontalpodautoscalers    |
-|  ing                 |  ingresses                   |
-|  limits              |  limitranges                 |
-|  ns                  |  namespaces                  |
-|  no                  |  nodes                       |
-|  pvc                 |  persistentvolumeclaims      |
-|  pv                  |  persistentvolumes           |
-|  po                  |  pods                        |
-|  pdb                 |  poddisruptionbudgets        |
-|  psp                 |  podsecuritypolicies         |
-|  rs                  |  replicasets                 |
-|  rc                  |  replicationcontrollers      |
-|  quota               |  resourcequotas              |
-|  sa                  |  serviceaccounts             |
-|  svc                 |  services                    |
+| Short name | Full name                  |
+| ---------- | -------------------------- |
+| csr        | certificatesigningrequests |
+| cs         | componentstatuses          |
+| cm         | configmaps                 |
+| ds         | daemonsets                 |
+| deploy     | deployments                |
+| ep         | endpoints                  |
+| ev         | events                     |
+| hpa        | horizontalpodautoscalers   |
+| ing        | ingresses                  |
+| limits     | limitranges                |
+| ns         | namespaces                 |
+| no         | nodes                      |
+| pvc        | persistentvolumeclaims     |
+| pv         | persistentvolumes          |
+| po         | pods                       |
+| pdb        | poddisruptionbudgets       |
+| psp        | podsecuritypolicies        |
+| rs         | replicasets                |
+| rc         | replicationcontrollers     |
+| quota      | resourcequotas             |
+| sa         | serviceaccounts            |
+| svc        | services                   |
 
 В заключение хочу добавить, что я создал еще один проект на основе minikube, чтобы помочь мне быстро развернуть демонстрационные среды для демонстрации сервисов данных и защиты этих рабочих нагрузок с помощью Kasten K10, [Project Pace](https://github.com/MichaelCade/project_pace) можно найти там и буду рад вашим отзывам или взаимодействию, он также показывает или включает некоторые автоматизированные способы развертывания кластеров minikube и создания различных приложений сервисов данных. 
 

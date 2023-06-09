@@ -91,7 +91,7 @@ Go to the Settings in VS Code (File -> Preferences -> Settings) and search for "
 
 To set Flake8 as the linter, search for "**Python Linting**" in the settings and select "flake8."
 
-Now, VS Code will automatically use Black and Flake8 to format and lint your Python code, respectively.
+Now, VS Code will automatically use **Black** and **Flake8** to format and lint your Python code, respectively.
 
 ### Step 6: Format on file save
 
@@ -104,9 +104,7 @@ To run the formatter each time you save a Python file, you'll need to modify the
 1. Add the following lines in the JSON file for local project/workspace setup:
 
 ```json
-"[python]": {
-    "editor.formatOnSave": true
-},
+"python.editor.formatOnSave": true,
 "python.formatting.provider": "black"
 ```
 

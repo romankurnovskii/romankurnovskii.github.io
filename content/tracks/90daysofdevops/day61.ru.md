@@ -101,23 +101,23 @@ resource "kubernetes_service" "test" {
 
 Первое, что мы должны сделать в папке нашего нового проекта, это выполнить команду `terraform init`. 
 
-![](../images/Day61_IAC1.png?v1)
+![](../images/Day61_IAC1.ru.png?v1)
 
 А затем, прежде чем мы выполним команду `terraform apply`, позвольте мне показать вам, что у нас нет пространств имен. 
 
-![](../images/Day61_IAC2.png?v1)
+![](../images/Day61_IAC2.ru.png?v1)
 
 Когда мы запустим нашу команду apply, она создаст эти 3 новых ресурса, пространство имен, развертывание и сервис в нашем кластере Kubernetes. 
 
-![](../images/Day61_IAC3.png?v1)
+![](../images/Day61_IAC3.ru.png?v1)
 
 Теперь мы можем взглянуть на развернутые ресурсы в нашем кластере. 
 
-![](../images/Day61_IAC4.png?v1)
+![](../images/Day61_IAC4.ru.png?v1)
 
 Теперь, поскольку мы используем minikube, и вы видели в предыдущем разделе, это имеет свои собственные ограничения, когда мы пытаемся играть с сетью docker для ingress. Но если мы просто выполним команду `kubectl port-forward -n nginx svc/nginx 30201:80` и откроем браузер на http://localhost:30201/, мы увидим нашу страницу NGINX. 
 
-![](../images/Day61_IAC5.png?v1)
+![](../images/Day61_IAC5.ru.png?v1)
 
 Если вы хотите попробовать более подробные демонстрации с Terraform и Kubernetes, то на сайте [HashiCorp Learn site](https://learn.hashicorp.com/tutorials/terraform/kubernetes-provider) вы сможете ознакомиться с ними. 
 

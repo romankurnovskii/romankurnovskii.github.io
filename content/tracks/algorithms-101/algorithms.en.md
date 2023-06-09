@@ -54,14 +54,42 @@ def selection_sort(array):
 1. If the array has more than one element, find the middle of the array.
 2. Divide the array into two halves using the middle index: the left half (`left_half`) and the right half (`right_half`).
 3. Recursively sort both halves by calling `merge_sort` on `left_half` and `right_half`.
-4. Merge the sorted halves back into the original array. The merge operation walks through `left_half` and `right_half`, and at each step, it copies the smaller element from either `left_half` or `right_half` into the original array.
+4. Merge the sorted halves back into the original array. The merge operation walks through `left_half` and `right_half`, and at each step, <mark>it copies the smaller element</mark> from either `left_half` or `right_half` into the original array.
 5. If there are any remaining elements in `left_half` or `right_half`  after one has been fully copied back into the array, those elements are copied over. 
    1. This happens because those remaining elements are guaranteed to be larger than all elements already copied back into the array.
+
+First more simple example of merging already sorted two arrays:
+
+**Merge sorted arrays:**
+
+```python
+def merge(left_ar, right_ar):
+    res = []
+    left_index, right_index = 0
+    while left_index < len(left_ar) and right_index < len(right_ar):
+        if left_ar[left_index] < right_ar[right_index]:
+            res.append(left_ar[left_index])
+            left_index += 1
+        else:
+            res.append(right_ar[right_index])
+            right_index += 1
+    res += left_ar[left_index:] + right_ar[right_index:]
+
+def merge_sort(array):
+    mid = len(array) / 2
+    left_ar = array[:mid]
+    right_ar = array[mid:]
+    return merge(left_ar, right_ar)
+```
+
+**Sort array:**
+
+![merge-sort](../assets/merge-sort.jpeg)
 
 ```python
 def merge_sort(array):
     if len(array) > 1: # Only sort if array is larger than 1
-        mid = len(array) // 2 # Find the middle of the array
+        mid = len(array) // 2 # middle of the array
  
         # Split the array into two halves
         left_half = array[:mid]
@@ -97,6 +125,8 @@ def merge_sort(array):
 
 {{< video src="../assets/merge-sort-visual.mp4" title="Merge Sort" >}}
 {{< video src="../assets/merge-sort.mp4" title="Merge Sort" >}}
+
+
 
 ## Binary Search
 

@@ -18,7 +18,7 @@ weight: 73
 
 Вы также могли заметить, что в процессе создания Jenkins Pipeline нам доступны некоторые примеры скриптов для запуска. 
 
-![](../images/Day73_CICD1.png?v1)
+![](../images/Day73_CICD1.ru.png?v1)
 
 Первый демонстрационный скрипт - "Declartive (Kubernetes)", и вы можете увидеть его этапы ниже.
 ```
@@ -64,7 +64,7 @@ spec:
 ```
 Ниже показан результат того, что происходит при выполнении этого конвейера. 
 
-![](../images/Day73_CICD2.png?v1)
+![](../images/Day73_CICD2.ru.png?v1)
 
 ### Создание задания 
 
@@ -93,23 +93,23 @@ kubectl create secret docker-registry dockercred \
 
 Сначала выберите "Manage Jenkins", а затем "Manage Credentials".
 
-![](../images/Day73_CICD3.png?v1)
+![](../images/Day73_CICD3.ru.png?v1)
 
 В центре страницы вы увидите магазины, предназначенные для Jenkins, нажмите на Jenkins здесь. 
 
-![](../images/Day73_CICD4.png?v1)
+![](../images/Day73_CICD4.ru.png?v1)
 
 Теперь выберите Global Credentials (Unrestricted).
 
-![](../images/Day73_CICD5.png?v1)
+![](../images/Day73_CICD5.ru.png?v1)
 
 Затем в левом верхнем углу у вас есть Добавить учетные данные 
 
-![](../images/Day73_CICD6.png?v1)
+![](../images/Day73_CICD6.ru.png?v1)
 
 Заполните данные вашей учетной записи и затем выберите OK, помните, что ID - это то, на что вы будете ссылаться, когда захотите вызвать эту учетную запись. Мой совет здесь также заключается в том, что вы должны использовать специальные маркеры доступа, а не пароли. 
 
-![](../images/Day73_CICD7.png?v1)
+![](../images/Day73_CICD7.ru.png?v1)
 
 Для GitHub вы должны использовать [Personal Access Token](https://vzilla.co.uk/vzilla-blog/creating-updating-your-github-personal-access-token).
 
@@ -178,35 +178,35 @@ podTemplate(yaml: '''
 
 Чтобы начать работу на приборной панели Jenkins, нам нужно выбрать "Новый элемент" 
 
-![](../images/Day73_CICD8.png?v1)
+![](../images/Day73_CICD8.ru.png?v1)
 
 Затем мы дадим нашему элементу имя, выберем Pipeline и нажмем OK. 
 
-![](../images/Day73_CICD9.png?v1)
+![](../images/Day73_CICD9.ru.png?v1)
 
 Мы не будем выбирать общие триггеры или триггеры сборки, но поиграйте с ними, так как здесь есть несколько интересных расписаний и других конфигураций, которые могут быть полезны. 
 
-![](../images/Day73_CICD10.png?v1)
+![](../images/Day73_CICD10.ru.png?v1)
 
 Нас интересует только вкладка Pipeline в конце. 
 
-![](../images/Day73_CICD11.png?v1)
+![](../images/Day73_CICD11.ru.png?v1)
 
 В определении пайплайн мы скопируем и вставим скрипт пайплайна, который мы описали выше, в раздел Script и нажмем кнопку save. 
 
-![](../images/Day73_CICD12.png?v1)
+![](../images/Day73_CICD12.ru.png?v1)
 
 Далее мы выберем опцию "Build Now" в левой части страницы. 
 
-![](../images/Day73_CICD13.png?v1)
+![](../images/Day73_CICD13.ru.png?v1)
 
 Теперь вам нужно подождать некоторое время, меньше минуты, и вы должны увидеть в статусе этапы, которые мы определили выше в нашем скрипте. 
 
-![](../images/Day73_CICD14.png?v1)
+![](../images/Day73_CICD14.ru.png?v1)
 
 Что еще более важно, если мы теперь перейдем на наш DockerHub и проверим, что у нас есть новая сборка. 
 
-![](../images/Day73_CICD15.png?v1)
+![](../images/Day73_CICD15.ru.png?v1)
 
 В целом это заняло некоторое время, но я хотел придерживаться этого, чтобы получить практический опыт и проработать скрипт, который может выполнить каждый, используя minikube и доступ к github и dockerhub. 
 

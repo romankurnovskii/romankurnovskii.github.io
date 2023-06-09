@@ -81,11 +81,11 @@ weight: 67
 
 Давайте запустим наш playbook4.yml, используя `ansible-playbook playbook4.yml`.
 
-![](../images/Day67_config1.png?v1)
+![](../images/Day67_config1.ru.png?v1)
 
 Теперь, когда мы настроили наши веб-серверы и loadbalancer, мы должны иметь возможность перейти по адресу http://192.168.169.134/, который является IP-адресом нашего loadbalancer. 
 
-![](../images/Day67_config2.png?v1)
+![](../images/Day67_config2.ru.png?v1)
 
 Если вы следите за развитием событий и у вас нет такого состояния, то это может быть связано с IP-адресами серверов в вашем окружении. Файл находится в `templates\mysite.j2` и выглядит примерно так, как показано ниже: Вам необходимо обновить IP-адреса ваших веб-серверов.
 
@@ -107,7 +107,7 @@ weight: 67
 
 `ansible loadbalancer -m command -a neofetch`.
 
-![](../images/Day67_config3.png?v1)
+![](../images/Day67_config3.ru.png?v1)
 ## Ресурсы 
 
 - [What is Ansible](https://www.youtube.com/watch?v=1id6ERvfozo)
