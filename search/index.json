@@ -2162,7 +2162,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 5
+                    "timeTakenInMilliseconds": 3
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -4151,7 +4151,7 @@
         {
             "uri": "/apps/_index",
             "title": "Apps",
-            "content": "",
+            "content": "\nnpm\npytree - Print python project tree structure with classes and methods\ncognito-token-observer - Monitor and refresh AWS Cognito tokens for the current session\nhugo-lunr-ml - Create lunr index file for multilingual hugo static site\nhomebrew-fetch - Fetch recent casks and formulas from Homebrew repositories\n\nMac Os\n\nBrewmate - Homebrew GUI manager\n\nWeb\nCloud Exam Quizz - Prepare for AWS Certification\n",
             "tags": [],
             "lang": "en"
         },
