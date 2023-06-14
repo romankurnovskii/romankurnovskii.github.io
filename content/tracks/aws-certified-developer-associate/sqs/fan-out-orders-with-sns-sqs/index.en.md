@@ -15,12 +15,11 @@ Here's a diagram of what you will build and configure in this lab step:
 
 ![alt](https://assets.cloudacademy.com/labs/uploads/fan-out-orders-with-sns-sqs//steps/1_creating-sns-topic-and-sqs-queues/assets/sqs-sns-diagram.png)
 
-1.  In the search bar at the top, enter _SNS_ and under **Services**, click the **Simple Notification Service** result:
+1. In the search bar at the top, enter _SNS_ and under **Services**, click the **Simple Notification Service** result:
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220426144130-1-4c7fe27f-244d-4810-b3fd-d902f54522d5.png)
 
-2.  In the **Create topic** card on the right, in the **Topic name** textbox, enter _new-orders_ and click **Next step**:
-
+2. In the **Create topic** card on the right, in the **Topic name** textbox, enter _new-orders_ and click **Next step**:
 
 ![alt](https://assets.cloudacademy.com/labs/uploads/fan-out-orders-with-sns-sqs//steps/1_creating-sns-topic-and-sqs-queues/assets/2021-05-10-11-30-29.png)
 
@@ -32,15 +31,15 @@ If you are building a solution requires strict message ordering and exactly-once
 
 Standard is fine for this lab.
 
-3.  Click the black triangle next to **Access policy - optional** to expand the section:
+3. Click the black triangle next to **Access policy - optional** to expand the section:
 
 ![alt](https://assets.cloudacademy.com/labs/uploads/fan-out-orders-with-sns-sqs//steps/1_creating-sns-topic-and-sqs-queues/assets/2021-05-10-16-46-44.png)
 
-4.  In the **Access policy** section, under **Define who can publish messages to the topic**, select **Everyone**:
+4. In the **Access policy** section, under **Define who can publish messages to the topic**, select **Everyone**:
 
 ![alt](https://assets.cloudacademy.com/labs/uploads/fan-out-orders-with-sns-sqs//steps/1_creating-sns-topic-and-sqs-queues/assets/2021-05-10-16-45-42.png)
 
-5.  Under **Define who can subscribe to this topic**, select **Everyone**:
+5. Under **Define who can subscribe to this topic**, select **Everyone**:
 
 ![alt](https://assets.cloudacademy.com/labs/uploads/fan-out-orders-with-sns-sqs//steps/1_creating-sns-topic-and-sqs-queues/assets/2021-05-10-16-49-14.png)
 
@@ -48,7 +47,7 @@ You are using a permissive access policy to save time and because the focus of t
 
 In a non-lab environment, you should carefully consider the access policy required and make sure if conforms with your company or organization's security requirements.
 
-6.  Scroll to the bottom of the page, and click **Create topic**:
+6. Scroll to the bottom of the page, and click **Create topic**:
 
 ![alt](https://assets.cloudacademy.com/labs/uploads/fan-out-orders-with-sns-sqs//steps/1_creating-sns-topic-and-sqs-queues/assets/2021-05-07-16-00-00.png)
 
@@ -60,15 +59,15 @@ In the order processing system your are building, this Amazon SNS topic is where
 
 Next, you will create two queues using Amazon Simple Queue Service and subscribe them to your Amazon SNS topic.
 
-7.  Open a new tab by right-clicking the **AWS** icon in the top-left and selecting **Open in new tab**.
+7. Open a new tab by right-clicking the **AWS** icon in the top-left and selecting **Open in new tab**.
 
 _Note_: The above instruction may vary slightly depending upon the web browser you are using.
 
-8.  In the search bar at the top, enter _SQS_, and under **Services**, click the **Simple Queue Service** result:
+8. In the search bar at the top, enter _SQS_, and under **Services**, click the **Simple Queue Service** result:
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220426144410-2-7b2e9397-ec0d-4c43-a3fc-77a09521631a.png)
 
-9.  In the middle right of the screen, in the **Get started** card, click **Create queue**:
+9. In the middle right of the screen, in the **Get started** card, click **Create queue**:
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220426144524-4-a1c1d8c4-cee5-4003-afc8-be7765549203.png)
 
@@ -124,7 +123,6 @@ This is the Amazon SNS topic you created earlier.
 
 You now have both of your Amazon SQS queues subscribed to your Amazon SNS topic. Any messages published to the topic will fan-out to both queues.
 
-
 ## Connecting to the Virtual Machine using EC2 Instance Connect
 
 1. In the AWS Management Console search bar, enter _EC2_, and click the **EC2** result under **Services**:
@@ -157,7 +155,7 @@ You will see the instance's **Instance ID** and **Public IP address** displa
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-ccba4473-690f-4589-9542-7fff1354f72f.png)
 
-_Note_: Ensure there is no space after ec2-user or connect will fail. 
+_Note_: Ensure there is no space after ec2-user or connect will fail.
 
 6\. To open a browser-based shell, click **Connect**:
 
@@ -175,7 +173,7 @@ You can also connect to the instance using your preferred SSH client and the PP
 
 ## Publishing and Processing Messages
 
-1.  In the terminal, enter the following command:
+1. In the terminal, enter the following command:
 
 ```sh
 aws sns list-topics
@@ -193,7 +191,7 @@ By default, the AWS command-line interface tool uses the JSON format for respons
 
 In this lab, the EC2 instance has been configured with an IAM role that has permissions to interact with Amazon SNS topics and Amazon SQS queues.
 
-2.  Store the value of the **TopicArn** attribute in a shell variable (`topic_arn`):
+2. Store the value of the **TopicArn** attribute in a shell variable (`topic_arn`):
 
 ```
 topic_arn=$(aws sns list-topics --query 'Topics[0].TopicArn' --output text)
@@ -201,7 +199,7 @@ topic_arn=$(aws sns list-topics --query 'Topics[0].TopicArn' --output text)
 
 The above command uses the `--query` option to select only the value of the TopicArn and the `--output` option is used to specify plaintext format which removes the quotation marks from the value.
 
-3.  To publish a message, enter the following, utilizing the ARN you stored in the `topic_arn` shell variable:
+3. To publish a message, enter the following, utilizing the ARN you stored in the `topic_arn` shell variable:
 
 ```
 aws sns publish \
@@ -221,7 +219,7 @@ In this lab, you are using the AWS command-line interface tool to simulate an ap
 
 In a non-lab environment, the message could be published by a web application that accepts orders from customers.
 
-4.  To list Amazon Simple Queue Service queues, enter the following command:
+4. To list Amazon Simple Queue Service queues, enter the following command:
 
 ```
 aws sqs list-queues
@@ -233,16 +231,16 @@ You will see a JSON response:
 
 The queues that you created earlier are listed.
 
-5.  Store each of the **QueueUrls** in shell variables:
+5. Store each of the **QueueUrls** in shell variables:
 
 ```
 analytics_queue_url=$(aws sqs list-queues --query 'QueueUrls[0]' --output text)
 inventory_queue_url=$(aws sqs list-queues --query 'QueueUrls[1]' --output text)
 ```
 
-6.  To retrieve a message from the **orders-for-analytics** queue, enter the following command, utilizing the analytics queue URL you stored previously:
+6. To retrieve a message from the **orders-for-analytics** queue, enter the following command, utilizing the analytics queue URL you stored previously:
 
-```    
+```
 aws sqs receive-message \
     --queue-url $analytics_queue_url
 ```
@@ -253,12 +251,13 @@ You will see a JSON response containing an array with one **Message**:
 
 The response contains the following fields:
 
-* **Body**: A JSON representation of the message
-* **ReceiptHandle**: You are required to supply this to delete a message after processing
-* **MD5OfBody**: An MD5 hash of the message body
-* **MessageId**: The message identifier that Amazon SNS saw when pushing the message to the queues
-    * Note that this is not the same as the **MessageId** that Amazon SNS returned to you when you published to the topic
-7.  Repeat the previous instruction, using the **orders-for-inventory** queue but store the message response in a shell variable (for use later) and output the shell variable (using Python's JSON tool to pretty print it):
+- **Body**: A JSON representation of the message
+- **ReceiptHandle**: You are required to supply this to delete a message after processing
+- **MD5OfBody**: An MD5 hash of the message body
+- **MessageId**: The message identifier that Amazon SNS saw when pushing the message to the queues
+  - Note that this is not the same as the **MessageId** that Amazon SNS returned to you when you published to the topic
+
+7. Repeat the previous instruction, using the **orders-for-inventory** queue but store the message response in a shell variable (for use later) and output the shell variable (using Python's JSON tool to pretty print it):
 
 ```
 inventory_message=$(aws sqs receive-message --queue-url $inventory_queue_url)
@@ -277,13 +276,13 @@ You can also have multiple worker applications, to help ensure there's no downti
 
 After successfully processing a message, a worker application should delete the message to prevent it from being processed again.
 
-8.  Store the value of the **ReceiptHandle** attribute in a shell variable:
+8. Store the value of the **ReceiptHandle** attribute in a shell variable:
 
 ```
 receipt_handle=$(echo $inventory_message | python -m json.tool | grep ReceiptHandle | cut -d\" -f 4)
 ```
 
-9.  To delete a message, enter the following command for the **orders-for-inventory** queue:
+9. To delete a message, enter the following command for the **orders-for-inventory** queue:
 
 ```
 aws sqs delete-message \

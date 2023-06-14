@@ -20,7 +20,7 @@ AWS X-Ray helps developers analyze and debug production, distributed application
 
 ![X-Ray Flow](https://d1.awsstatic.com/Products/product-name/Images/product-page-diagram_AWS-X-Ray_how-it-works%402x.0d5b08dc2f788d3003a05ddb11e383ba54f41fc4.png)
 
-X-Ray allows software engineers to view the state of a system at a glance, identify potential bottlenecks, and make informed operational decisions to improve performance and reliability. X-Ray inspects application code using a combination of machine and customer-provided data to identify potential bottlenecks and analyze performance and performance trends for each test scenario. 
+X-Ray allows software engineers to view the state of a system at a glance, identify potential bottlenecks, and make informed operational decisions to improve performance and reliability. X-Ray inspects application code using a combination of machine and customer-provided data to identify potential bottlenecks and analyze performance and performance trends for each test scenario.
 
 ### Terminology
 
@@ -34,7 +34,7 @@ An X-Ray trace is a set of data points that share the same trace ID.
 
 **Segments**
 
-A segment is a JSON representation of a request that your application serves. 
+A segment is a JSON representation of a request that your application serves.
 
 A trace segment records information about the original request, information about the work that your application does locally, and subsegments with information about downstream calls that your application makes to AWS resources, HTTP APIs, and SQL databases.
 
@@ -45,7 +45,7 @@ Subsegments provide more granular timing information and details about downstrea
 **Annotations**
 
 - An X-Ray annotation is system-defined, or user-defined data associated with a segment
-- A segment can contain multiple annotations. 
+- A segment can contain multiple annotations.
 - Annotations are used to describe the request, the response, and other information about the segment
 - Can be used for adding system or user-defined data to segments and subsegments that you want to index for search.
 
@@ -56,6 +56,7 @@ X-Ray traces are sampled at a rate that you specify. The rate is specified in th
 **Metadata**
 
 X-Ray traces contain metadata that is useful for understanding the trace.
+
 - Metadata (Key / value pairs) is not indexed and cannot be used for searching
 
 ## Digest
@@ -68,7 +69,7 @@ X-Ray traces contain metadata that is useful for understanding the trace.
 - How does Tracing work?
   - Unique trace ID assigned to every client request
     - `X-Amzn-Trace-Id:Root=1-5759e988-bd862e3fe`
-  - Each service in request chain sends traces to X-Ray with trace ID 
+  - Each service in request chain sends traces to X-Ray with trace ID
     - X-Ray gathers all the information and provides visualization
   - How do you reduce performance impact due to tracing?
     - Sampling - Only a sub set of requests are sampled (Configurable)
@@ -139,6 +140,6 @@ AWS X-Ray supports applications running on:
 
 AWS X-Ray provides graphs of system performance and identifies bottlenecks
 
-<mark style="color:white">1</mark> 
+<mark style="color:white">1</mark>
 </div>
 </details>

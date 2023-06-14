@@ -13,7 +13,7 @@ authors: [roman-kurnovskii]
 
 
 ## most popular
-    
+
     docker images                       ##  lists the images
     docker pull imagename               ##  Pull an image or a repository from a registry
     docker ps -a                        ##  See a list of all containers, even the ones not running
@@ -27,7 +27,7 @@ authors: [roman-kurnovskii]
     docker logs                         ##  see logs
     docker inspect                      ##  shows all the info of a container
 
-##  docker
+## docker
 
     docker cp                                   ##  Copy files/folders between a container and the local filesystem
     docker pull imagename                       ##  Pull an image or a repository from a registry
@@ -56,7 +56,7 @@ authors: [roman-kurnovskii]
     docker volume prune                         ##  Remove all unused local volumes
     docker network prune                        ##  Remove all unused networks
 
-##  docker compose
+## docker compose
 
     docker-compose up                               # Create and start containers
     docker-compose up -d                            # Create and start containers in detached mode
@@ -70,7 +70,7 @@ authors: [roman-kurnovskii]
     docker-compose top                              # Display the running processes
     docker-compose run -rm -p 2022:22 web bash      # Start web service and runs bash as its command, remove old container.
 
-##  docker services 
+## docker services
 
     docker service create <options> <image> <command>   # Create new service
     docker service inspect --pretty <service_name>      # Display detailed information Service(s)
@@ -79,7 +79,7 @@ authors: [roman-kurnovskii]
     docker service scale <service_name>=<replica>       # Scale special service(s)
     docker service update <options> <service_name>      # Update Service options
 
-##  docker stack 
+## docker stack
 
     docker stack ls                                 # List all running applications on this Docker host
     docker stack deploy -c <composefile> <appname>  # Run the specified Compose file
@@ -87,7 +87,7 @@ authors: [roman-kurnovskii]
     docker stack ps <appname>                       # List the running containers associated with an app
     docker stack rm <appname>                       # Tear down an application
 
-##  docker machine
+## docker machine
 
     docker-machine create --driver virtualbox myvm1                           # Create a VM (Mac, Win7, Linux)
     docker-machine create -d hyperv --hyperv-virtual-switch "myswitch" myvm1  # Win10
@@ -104,9 +104,8 @@ authors: [roman-kurnovskii]
     docker-machine scp docker-compose.yml myvm1:~                             # Copy file to node's home dir
     docker-machine ssh myvm1 "docker stack deploy -c <file> <app>"            # Deploy an app
 
-
-
 ## Options for popular commands
+
 ### docker build
 
 [Docs](https://docs.docker.com/engine/reference/commandline/build/)
@@ -132,8 +131,8 @@ docker build -t my-org:my-image -f /tmp/Dockerfile
 `true`) by default
 - `--tag -t` Name and optionally a tag in the ‘name:tag’ format
 
-
 ### docker run
+
 [Docs](https://docs.docker.com/engine/reference/commandline/run/)
 
 Creates and starts a container in one operation. Could be used to execute a
@@ -148,7 +147,6 @@ docker run -it ubuntu:latest /bin/bash
 This will start a ubuntu container with the entrypoint `/bin/bash`. Note that
 if you do not have the `ubuntu` image downloaded it will download it before
 running it.
-
 
 - `-it` This will not make the container you started shut down immediately, as
 it will create a pseudo-TTY session (`-t`) and keep STDIN open (`-i`)
@@ -179,7 +177,7 @@ docker exec [CONTAINER ID] touch /tmp/exec_works
 - `-it` This will not make the container you started shut down immediately, as
 it will create a pseudo-TTY session (`-t`) and keep STDIN open (`-i`)
 
-###  docker images
+### docker images
 
 [Docs](https://docs.docker.com/engine/reference/commandline/images/)
 
@@ -192,6 +190,7 @@ docker images
 - `-q` Only show numeric IDs
 
 ### docker inspect
+
 [Docs](https://docs.docker.com/engine/reference/commandline/inspect)
 
 Shows all the info of a container.
@@ -201,6 +200,7 @@ docker inspect [CONTAINER ID]
 ```
 
 ### docker logs
+
 [Docs](https://docs.docker.com/engine/reference/commandline/logs/)
 
 Gets logs from container.
@@ -215,6 +215,7 @@ rather wait for additional data to be appended to the input.
 - `--timestamps -t` Show timestamps
 
 ### docker ps
+
 [Docs](https://docs.docker.com/engine/reference/commandline/ps/)
 
 Shows information about all running containers.
@@ -228,6 +229,7 @@ docker ps
 - `--quiet -q` Only display numeric IDs
 
 ### docker rmi
+
 [Docs](https://docs.docker.com/engine/reference/commandline/rmi/)
 
 Remove one or more images.
@@ -237,7 +239,6 @@ docker rmi [IMAGE ID]
 ```
 
 - `--force -f` Force removal of the image
-
 
 ## Snippets
 
@@ -281,25 +282,25 @@ docker rmi --force $(docker images -q)
 docker rmi --force $(docker images --filter "dangling=true" -q)
 ```
 
-###  See all space Docker take up
+### See all space Docker take up
 
 ```sh
 docker system df
 ```
 
-###  Get IP address of running container
+### Get IP address of running container
 
 ```sh
 docker inspect [CONTAINER ID] | grep -wm1 IPAddress | cut -d '"' -f 4
 ```
 
-###  Kill all running containers
+### Kill all running containers
 
 ```sh
 docker kill $(docker ps -q)
 ```
 
-##  Resources
+## Resources
 
 - [docs.docker.com](https://docs.docker.com/engine/reference/run/)
 - [docker-cheat-sheet](https://github.com/wsargent/docker-cheat-sheet)

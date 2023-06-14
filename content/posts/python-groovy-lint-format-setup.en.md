@@ -23,7 +23,6 @@ To set up Python with Black and Flake8, you will need a couple of configuration 
 - pycodestyle: Checks for the format errors.
 - Ned Batchelder’s McCabe script: Checks the complexity of your code.
 
-
 ### Step 1: Install Python
 
 ```
@@ -36,6 +35,7 @@ python --version
 pip install black
 pip install flake8
 ```
+
 ### Step 3: Install Python Extension for VS Code
 
 Go to the Extensions view in VS Code (View -> Extensions), search for "Python," and then install it.
@@ -161,7 +161,7 @@ Now, when you run your Gradle build, CodeNarc will check your Groovy files again
 
 ## JS/TypeScript with ESLint and Prettier
 
-###Step 1: Install Node.js and npm
+### Step 1: Install Node.js and npm
 
 Before you install ESLint and Prettier, ensure you have Node.js and npm installed on your system. You can verify the installation by running the following commands in your terminal:
 
@@ -171,6 +171,7 @@ npm --version
 ```
 
 ### Step 2: Install ESLint and Prettier
+
 You can install ESLint and Prettier as *devDependencies* in your project by running the following command in your terminal:
 
 ```bash
@@ -178,6 +179,7 @@ npm install eslint prettier --save-dev
 ```
 
 ### Step 3: Install the ESLint and Prettier Extensions for VS Code
+
 Search for ESLint and Prettier - Code formatter in the Extensions view in VS Code (**View -> Extensions**) and install them.
 
 ### Step 4: Configure ESLint and Prettier

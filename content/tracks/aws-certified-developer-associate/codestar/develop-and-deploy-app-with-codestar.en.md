@@ -21,17 +21,17 @@ Take a moment to see all of the different templates available in AWS CodeStar.
 
 3. Check the following boxes on the left filter bar to narrow down the listed templates:
 
-* ****AWS services**: EC2**
-* **Application category**: **Web application**
-* **Programming languages**: **Node.js**
+- ****AWS services**: EC2**
+- **Application category**: **Web application**
+- **Programming languages**: **Node.js**
 
-The choice of **Application category **and **Programming language** will be driven by the requirements of your project and skills available to you. The choice of **AWS services** may not be as easy. Some guidelines for choosing between the alternatives are:
+The choice of **Application category**and **Programming language** will be driven by the requirements of your project and skills available to you. The choice of **AWS services** may not be as easy. Some guidelines for choosing between the alternatives are:
 
-* **AWS Elastic Beanstalk**: A good choice for a fully managed application environment running on EC2 servers. This option allows you to stay focused on your code.
-* **Amazon** **EC2**: Preferable when you want to host the application on servers that you manage yourself, including on-premise servers.
-* **AWS Lambda**: Choose this option if you want to run a serverless application. 
+- **AWS Elastic Beanstalk**: A good choice for a fully managed application environment running on EC2 servers. This option allows you to stay focused on your code.
+- **Amazon** **EC2**: Preferable when you want to host the application on servers that you manage yourself, including on-premise servers.
+- **AWS Lambda**: Choose this option if you want to run a serverless application.
 
-4\. Select the **Express.js **project template:
+4\. Select the **Express.js**project template:
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/blobid0-87e43541-6f9a-4940-8593-c2f4849df2c5.png)
 
@@ -39,8 +39,8 @@ Express.js is a popular Node.js web application framework.
 
 5\. In the next step of the **Create project** wizard, enter the following:
 
-* **Project name**: _ca-app-&lt;Unique_String&gt;_ (Replace &lt;Unique_String&gt; with a 6 characters. The name must be unique for the region because of AWS CodeCommit repository name restrictions)
-* **Project ID**: Accept the default value
+- **Project name**: _ca-app-&lt;Unique_String&gt;_ (Replace &lt;Unique_String&gt; with a 6 characters. The name must be unique for the region because of AWS CodeCommit repository name restrictions)
+- **Project ID**: Accept the default value
 
 The instructions in this Lab use _ca-app_ for the project name, but you should use a different name or the project creation may fail if it is already in use.
 
@@ -52,13 +52,13 @@ You will see the **EC2 Configuration** section of the form.
 
 7\. Ensure the following values are selected:
 
-* **Instance type**: _t2.micro _(default value)
-* **VPC**: Select the non-default VPC (The VPC without "(Default)"),or the VPC with only two subnets if there is no (Default) label
-* **Subnet**: Select the subnet in the **us-west-2a** availability zone
+- **Instance type**: _t2.micro_(default value)
+- **VPC**: Select the non-default VPC (The VPC without "(Default)"),or the VPC with only two subnets if there is no (Default) label
+- **Subnet**: Select the subnet in the **us-west-2a** availability zone
 
 If you can't see which subnet is in **us-west-2a** hover your mouse over each subnet.
 
-8. Click **Next** and then** Create Project**:
+8. Click **Next** and then**Create Project**:
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-63bbb05c-6e7f-451b-9619-6cd68677c1cc.png)
 
@@ -94,7 +94,7 @@ You will see the instance's **Instance ID** and **Public IP address** displa
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-ccba4473-690f-4589-9542-7fff1354f72f.png)
 
-_Note_: Ensure there is no space after ec2-user or connect will fail. 
+_Note_: Ensure there is no space after ec2-user or connect will fail.
 
 6\. To open a browser-based shell, click **Connect**:
 
@@ -114,18 +114,18 @@ You can also connect to the instance using your preferred SSH client and the PP
 
 1. Observe the tiles that are included in your **Dashboard**:
 
-* **IDE**: References for how to get started with a variety of integrated development environments (IDEs) under **Access your project code**. You will simply use the EC2 instance to edit the code interact with CodeCommit in this lab.
-* **Repository**: You can see the main details related to the code repository here. The most recent code commits for the selected branch:  
+- **IDE**: References for how to get started with a variety of integrated development environments (IDEs) under **Access your project code**. You will simply use the EC2 instance to edit the code interact with CodeCommit in this lab.
+- **Repository**: You can see the main details related to the code repository here. The most recent code commits for the selected branch:  
     ![alt](https://assets.cloudacademy.com/bakery/media/uploads/blobid1-f82dae43-2b43-4a40-b262-e71c9c2e228a.png)  
     The **View commits** button opens the detailed view list of the commits. Currently, there is only a master branch and the initial commit to display. The committer, **AWS CodeStar**, made the initial commit during the project creation. Each commit also includes a button on the right to view the code changes in AWS CodeCommit. You will look at the code in a future Lab Step.  
-     
-* **Pipeline**: This shows a graphical representation of the release pipeline for your project:  
-    ![alt](https://assets.cloudacademy.com/bakery/media/uploads/blobid2-f1fffbec-210a-4eb5-9bf7-6e68cfff305b.png)  
-    Any time you commit a code change to the master branch, the pipeline will automatically deploy your application. As your application grows and the requirements for your release pipeline change, you can modify the pipeline by clicking **Edit**. For example, you may want to add an automated test stage, invoke an AWS Lambda function, or modify the deployment group to deploy to an Auto Scaling group. The **Release change **button can be used to force a deployment of the latest commit. That can be useful if you modify the pipeline or something went wrong with the release. If something does go wrong with a pipeline stage, you will see the bar on the left turn red.
 
-* **Monitoring**: This shows the **CPUUtilization** and other metrics of the EC2 instance where your application is deployed.  
+- **Pipeline**: This shows a graphical representation of the release pipeline for your project:  
+    ![alt](https://assets.cloudacademy.com/bakery/media/uploads/blobid2-f1fffbec-210a-4eb5-9bf7-6e68cfff305b.png)  
+    Any time you commit a code change to the master branch, the pipeline will automatically deploy your application. As your application grows and the requirements for your release pipeline change, you can modify the pipeline by clicking **Edit**. For example, you may want to add an automated test stage, invoke an AWS Lambda function, or modify the deployment group to deploy to an Auto Scaling group. The **Release change**button can be used to force a deployment of the latest commit. That can be useful if you modify the pipeline or something went wrong with the release. If something does go wrong with a pipeline stage, you will see the bar on the left turn red.
+
+- **Monitoring**: This shows the **CPUUtilization** and other metrics of the EC2 instance where your application is deployed.  
     ![alt](https://assets.cloudacademy.com/bakery/media/uploads/blobid1-06d8cf59-4f7d-4f77-9254-c4df564c8869.png)
-* **Issues**: This Lab doesn't include a JIRA project, but for projects requiring issue tracking you can find link to JIRA from here.
+- **Issues**: This Lab doesn't include a JIRA project, but for projects requiring issue tracking you can find link to JIRA from here.
 
 3\. Click **View application** in the upper-right to view the application included in the template:
 
@@ -164,7 +164,7 @@ _![alt](https://assets.cloudacademy.com/bakery/media/uploads/blobid1-1894eda3-d4
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-4ae11325-2e50-4594-af93-1808d75fecc6.png)
 
-This will show a pop-up dialog showing you your credentials. 
+This will show a pop-up dialog showing you your credentials.
 
 6\. Click **Download credentials**:
 
@@ -192,9 +192,7 @@ Refresh the instance connect browser tab if the session has expired.
 git config --global credential.helper 'cache --timeout=10800'
 ```
 
-
 11\. Tell Git your user name:
-
 
 ```
 git config --global user.name "student" 
@@ -210,20 +208,21 @@ git clone <YOUR_PROJECT_REPOSITORY_URL>
 
 Replace &lt;YOUR\_PROJECT\_REPOSITORY_URL&gt; with the URL you copied in a previous instruction.
 
-Your URL will be similar to **https://git-codecommit.us-west-2.amazonaws.com/v1/repos/ca-app**.
+Your URL will be similar to **<https://git-codecommit.us-west-2.amazonaws.com/v1/repos/ca-app>**.
 
 13\. When prompted, enter the **Username** and **Password** you saved in a text file earlier in this Lab Step.
 
 _Tip_: The password generated by AWS is long and it is easy to make a typo when entering it. To avoid errors copy and paste the password.
 
 14\. Change the repository directory name to `ca-app`:
+
 ```
 mv ca-app-<Unique_string> ca-app
 ```
 
 _Note_: Change `ca-app-<Unique_string>` to the name of your repository.
 
-This won't change the repository name. It will only simplify the instructions at the command-line by not having to enter your unique string following `ca-app` in this and later Lab Steps. 
+This won't change the repository name. It will only simplify the instructions at the command-line by not having to enter your unique string following `ca-app` in this and later Lab Steps.
 
 15\. Change into the directory:
 
@@ -235,15 +234,15 @@ cd ca-app
 
 There are several files:
 
-* **app.js**: JavaScript file that starts the server
-* **appspec.yml**: Configuration file that instructs AWS CodeDeploy what steps to perform to deploy your application
-* **package.json**: Metadata and dependencies related to your project
-* **README.md**: Text file explaining the project template
+- **app.js**: JavaScript file that starts the server
+- **appspec.yml**: Configuration file that instructs AWS CodeDeploy what steps to perform to deploy your application
+- **package.json**: Metadata and dependencies related to your project
+- **README.md**: Text file explaining the project template
 
 There is no need to get into the details of the file contents at this time. However, it is good to know that the appspec.yml file specifies scripts that run during the deployment of your application. The scripts are contained in one of the two project directories:
 
-* **public**: Static assets used for your application
-* **scripts**: Scripts executed by AWS CodeDeploy during the deployment of your application
+- **public**: Static assets used for your application
+- **scripts**: Scripts executed by AWS CodeDeploy during the deployment of your application
 
 Now you can get the server running on your development machine.
 
@@ -300,7 +299,7 @@ body.className = "heaven-" + idx;
 setInterval(adjustIdx, refreshRate);' > public/js/set-background.js
 ```
 
-24. Test the changes by running the server again with `node app.js` and refresh the browser tab with your development application. 
+24. Test the changes by running the server again with `node app.js` and refresh the browser tab with your development application.
 
 You will see a similar page as the previous one, but the color will change roughly once a second.
 
@@ -336,10 +335,9 @@ git push
 
 Now that you have made a change to your code, you will see how the changes are deployed in the next Lab Step.
 
-### Summary 
+### Summary
 
 In this Lab Step, you committed a code change to your AWS CodeStar project repository. You created the required credentials and tested the application on your development server.
-
 
 ## Deploying Your AWS CodeStar Project
 
@@ -347,9 +345,9 @@ In this Lab Step, you committed a code change to your AWS CodeStar project repo
 
 There are a few things to notice since you were here last:
 
-1.  Your commit is now visible in the **Repository **> **Most recent commit **tile
-2.  Your **Monitoring** > **CPUUtilization** tile might show some spikes if your application has already been deployed
-3.  Your **Pipeline** tab may show one of the pipeline stages **In progress** or you may see a recent timestamp inside each stage box telling you the new version has been deployed.
+1. Your commit is now visible in the **Repository**> **Most recent commit**tile
+2. Your **Monitoring** > **CPUUtilization** tile might show some spikes if your application has already been deployed
+3. Your **Pipeline** tab may show one of the pipeline stages **In progress** or you may see a recent timestamp inside each stage box telling you the new version has been deployed.
 
 If you missed the release flowing through the stages of the pipeline, click **Release change** and click **Continue** in the pop-up.
 
@@ -373,7 +371,7 @@ This opens your application in AWS CodeDeploy:
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/blobid1-568b33b9-b050-4250-a671-adc063820d8b.png)
 
-You can see the **Deployment Groups** created for deploying your application. In this case there will be just one with a **Name **ending in **-Env**. The **Status **column will tell you if your last deployment **Succeeded **or failed. The time of the **Last attempted deployment** and **Last successful deployment** are also recorded.
+You can see the **Deployment Groups** created for deploying your application. In this case there will be just one with a **Name**ending in **-Env**. The **Status**column will tell you if your last deployment **Succeeded**or failed. The time of the **Last attempted deployment** and **Last successful deployment** are also recorded.
 
 5\. Click the name of your deployment group beginning with **ca-app**:
 
@@ -393,10 +391,10 @@ Your deployment will have a different deployment id.
 
 This opens a page with details of the most recent deployment:
 
-* **Deployment status**: shows the state of the deployment operation
-* **Deployment details**: shows information similar to what you saw on the AWS CodeDeploy application page
-* **Revision details**: shows information about the revision deployed, including the location in AWS S3
-* **Deployment lifecycle events**: tells you the start and end times as well as the **Duration **of the deployment
+- **Deployment status**: shows the state of the deployment operation
+- **Deployment details**: shows information similar to what you saw on the AWS CodeDeploy application page
+- **Revision details**: shows information about the revision deployed, including the location in AWS S3
+- **Deployment lifecycle events**: tells you the start and end times as well as the **Duration**of the deployment
 
 8\. To view the deployment life-cycle events, click **View events** down the bottom:
 
@@ -420,19 +418,19 @@ You will see the latest version of your application including the animation com
 
  ![alt](https://assets.cloudacademy.com/bakery/media/uploads/blobid1-15a9a266-44dc-4a0d-b291-1023880fd832.png)
 
-2\. Click on the **User **drop-down menu and click on **Logan**.
+2\. Click on the **User**drop-down menu and click on **Logan**.
 
 3\. Set the team member values for Logan to:
 
-* **Email address**: _test@cloudacademy.com_
-* **Project Role**: Contributor
-* **Remote Access**: Checked (This allows the team member to upload an SSH public key to connect to EC2 instances)
+- **Email address**: _test@cloudacademy.com_
+- **Project Role**: Contributor
+- **Remote Access**: Checked (This allows the team member to upload an SSH public key to connect to EC2 instances)
 
 The difference between the default **Project Role**s is:
 
-* **Viewer**: Access to the project dashboard and able to view a few project resources
-* **Contributor**: Everything Viewer can access plus view, modify, and access all project resources
-* **Owner**: Everything Contributor has plus adding and removing team members, and deleting the project
+- **Viewer**: Access to the project dashboard and able to view a few project resources
+- **Contributor**: Everything Viewer can access plus view, modify, and access all project resources
+- **Owner**: Everything Contributor has plus adding and removing team members, and deleting the project
 
 4\. Click **Add team member**:
 
@@ -442,20 +440,20 @@ After adding a team member, you will be asked to create a profile for yourself.
 
 5\. In the **Create user profile** form, enter the following values before clicking **Create user profile**:
 
-* **Display name**: _student_
-* **Email address**: _student@cloudacademy.com_
+- **Display name**: _student_
+- **Email address**: _student@cloudacademy.com_
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/blobid0-625180b7-b2f9-4306-bcb6-9aaf5eabba1a.png)
 
-You will see **Logan** and **student **appear in the **Team members **list.
+You will see **Logan** and **student**appear in the **Team members**list.
 
 6\. Click **Add team member** and select **Bessie** from the drop-down menu.
 
 7\. Enter the following values and click **Add**:
 
-* **Email address**: _bessie@cloudacademy.com_
-* **Project Role**: Viewer
-* **Remote Access**: Unchecked
+- **Email address**: _bessie@cloudacademy.com_
+- **Project Role**: Viewer
+- **Remote Access**: Unchecked
 
 Now you can briefly experience the differences between the project roles.
 
@@ -465,8 +463,8 @@ This will sign you out of the student user and allow you to sign in as a differe
 
 9\. Log in to AWS using the team member in the viewer role:
 
-* **User Name**: _Bessie_
-* **Password**: _Lab-Viewer1_
+- **User Name**: _Bessie_
+- **Password**: _Lab-Viewer1_
 
 10. [Navigate to AWS CodeStar in the AWS Console](https://us-west-2.console.aws.amazon.com/codestar/home?region=us-west-2).
 
@@ -484,8 +482,8 @@ You will receive an error message stating that you are not authorized to perform
 
 15. At the top of this Lab page, click on the **Open Environment** button and sign in again with the following credentials:
 
-* **User Name**: _Logan_
-* **Password**: _Lab-Contributor1_
+- **User Name**: _Logan_
+- **Password**: _Lab-Contributor1_
 
 The user Logan is in the contributor role, which has additional permissions than the viewer role.
 
@@ -515,4 +513,4 @@ Notice that you can only remove yourself from the team and not other members. Th
 
 4\. Click **Delete**:
 
-In a few seconds you will return to the AWS CodeStar start page and all of the resources in the project will begin terminating. 
+In a few seconds you will return to the AWS CodeStar start page and all of the resources in the project will begin terminating.

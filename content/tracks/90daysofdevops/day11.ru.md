@@ -21,6 +21,7 @@ weight: 11
 Сегодня мы рассмотрим переменные, константы и типы данных при написании новой программы.
 
 ## Переменные и константы в Go
+
 Давайте начнем с планирования нашего приложения, я думаю, было бы неплохо поработать над программой, которая сообщает нам, сколько дней осталось в нашем испытании #90DaysOfDevOps.
 
 Первое, что нужно учитывать, это то, что, поскольку мы создаем наше приложение, мы приветствуем наших посетителей и даем пользователям отзывы о количестве дней, которые они выполнили, мы можем использовать термин #90DaysOfDevOps много раз на протяжении всей программы. Это отличный вариант использования переменной #90DaysOfDevOps в нашей программе.
@@ -36,7 +37,9 @@ weight: 11
 ```go
 var challenge = "#90DaysOfDevOps"
 ```
+
 С приведенным выше набором и использованием, как мы увидим в следующем фрагменте кода, вы можете видеть из вывода ниже, что мы использовали переменную.
+
 ```go
 package main
 
@@ -47,6 +50,7 @@ func main() {
     fmt.Println("Welcome to", challenge "")
 }
 ```
+
 Затем вы увидите ниже, что мы построили наш код с помощью приведенного выше примера и получили вывод, показанный ниже.
 ![](../images/Day11_Go1.ru.png?v1)
 
@@ -91,6 +95,7 @@ func main() {
     fmt.Println("Great work")
 }
 ```
+
 Давайте снова запустим `go build`, или вы можете просто использовать `go run`
 
 ![](../images/Day11_Go3.ru.png?v1)
@@ -101,13 +106,14 @@ func main() {
 
 Переменные также могут быть определены в вашем коде в более простом формате. Вместо того, чтобы определять, что это `var` и `type`, вы можете закодировать это следующим образом, чтобы получить ту же функциональность, но более чистый и простой вид вашего кода. Это будет работать только для переменных, а не для констант.
 
-```go 
+```go
 func main() {
     challenge := "#90DaysOfDevOps"
     const daystotal = 90
 ```
 
-## Типы в  Go 
+## Типы в  Go
+
 В приведенных выше примерах мы не определили тип переменных, это потому, что мы можем задать им значение, Go достаточно умен, чтобы знать, что это за тип, или, по крайней мере, может сделать вывод, что это на основе значения, которое вы сохранили. . Однако, если мы хотим, чтобы пользователь ввел данные, для этого потребуется определенный тип.
 
 До сих пор в нашем коде использовались строки и целые числа. Целые числа для количества дней и строки для названия задачи.
@@ -137,17 +143,18 @@ Go статически типизирован, а это означает, чт
 
 Если нам нужно определить тип в нашей переменной, мы можем сделать это так:
 
-
 ```go
 var TwitterHandle string 
 var DaysCompleted uint
 ```
+
 Поскольку Go принимает переменные, которым задано значение, мы можем распечатать эти значения следующим образом:
 
 ```go
 fmt.Printf("challenge is %T, daystotal is %T, dayscomplete is %T\n", conference, daystotal, dayscomplete)
 ```
-Существует много различных типов целых чисел и типов с плавающей запятой, ссылки выше подробно описывают их. 
+
+Существует много различных типов целых чисел и типов с плавающей запятой, ссылки выше подробно описывают их.
 
 - **int** = целые числа
 - **unint** = беззнаковые целые числа
@@ -158,11 +165,11 @@ fmt.Printf("challenge is %T, daystotal is %T, dayscomplete is %T\n", conference,
 - [Введение в Golang](http://golang-book.ru/)
 - [StackOverflow 2021 Developer Survey](https://insights.stackoverflow.com/survey/2021)
 - [Why we are choosing Golang to learn](https://www.youtube.com/watch?v=7pLqIIAqZD4&t=9s)
-- [Jake Wright - Learn Go in 12 minutes](https://www.youtube.com/watch?v=C8LgvuEBraI&t=312s) 
-- [Techworld with Nana - Golang full course - 3 hours 24 mins](https://www.youtube.com/watch?v=yyUHQIec83I) 
-- [**NOT FREE** Nigel Poulton Pluralsight - Go Fundamentals - 3 hours 26 mins](https://www.pluralsight.com/courses/go-fundamentals) 
-- [FreeCodeCamp -  Learn Go Programming - Golang Tutorial for Beginners](https://www.youtube.com/watch?v=YS4e4q9oBaU&t=1025s) 
-- [Hitesh Choudhary - Complete playlist](https://www.youtube.com/playlist?list=PLRAV69dS1uWSR89FRQGZ6q9BR2b44Tr9N) 
+- [Jake Wright - Learn Go in 12 minutes](https://www.youtube.com/watch?v=C8LgvuEBraI&t=312s)
+- [Techworld with Nana - Golang full course - 3 hours 24 mins](https://www.youtube.com/watch?v=yyUHQIec83I)
+- [**NOT FREE** Nigel Poulton Pluralsight - Go Fundamentals - 3 hours 26 mins](https://www.pluralsight.com/courses/go-fundamentals)
+- [FreeCodeCamp -  Learn Go Programming - Golang Tutorial for Beginners](https://www.youtube.com/watch?v=YS4e4q9oBaU&t=1025s)
+- [Hitesh Choudhary - Complete playlist](https://www.youtube.com/playlist?list=PLRAV69dS1uWSR89FRQGZ6q9BR2b44Tr9N)
 
 Далее мы начнем добавлять в нашу программу некоторые функции пользовательского ввода, чтобы программа спрашивала, сколько дней было завершено.
 

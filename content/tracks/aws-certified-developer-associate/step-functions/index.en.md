@@ -22,7 +22,6 @@ Step Functions is a serverless function orches­trator that makes it easy to seq
 
 ![Step Functions Flow](https://d2yymmf9l33ie1.cloudfront.net/how-it-works-fcfa8f363d8404db21af77604ac8d07102bb3ac9.gif)
 
-
 ### Alternatives
 
 - [AWS lambda](../lambda)
@@ -59,7 +58,7 @@ AWS Step Functions is a useful service for breaking down complex processes into 
 
 Type: Orches­tration, Workflows
 
-Step Function **Standard Workflows** are optimized for long-running processes. 
+Step Function **Standard Workflows** are optimized for long-running processes.
 
 **Express Workflows** are better for event-driven workloads.
 
@@ -86,6 +85,6 @@ Step Function **Standard Workflows** are optimized for long-running processes.
 
 [https://aws.amazon.com/blogs/compute/new-synchronous-express-workflows-for-aws-step-functions/](https://aws.amazon.com/blogs/compute/new-synchronous-express-workflows-for-aws-step-functions/)
 
-<mark style="color:white">3</mark> 
+<mark style="color:white">3</mark>
 </div>
 </details>

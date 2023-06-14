@@ -55,7 +55,7 @@ So, there are 3 different fruit salads you can make: **banana-apple**, **banana-
 
 To summarize, combinations help us count the number of ways to select a certain number of objects from a larger set without considering the order of the objects. The binomial coefficient formula, $C(n, r) = n! / (r! * (n-r)!)$, allows us to calculate the number of possible combinations.
 
-### Pigeonhole Principle 
+### Pigeonhole Principle
 
 - [Wikipedia](https://en.wikipedia.org/wiki/Pigeonhole_principle)
 
@@ -82,7 +82,7 @@ Inclusion-Exclusion Principle: This principle is used to count the number of ele
 
 Imagine you have two groups of students. **Group A** has **30** students who like pizza, and **Group B** has **20** students who like burgers. However, **10** students like **both** pizza and burgers.
 
-Now, you want to find out **how many students like either pizza or burgers**. 
+Now, you want to find out **how many students like either pizza or burgers**.
 
 You might think of adding the number of students who like pizza to the number of students who like burgers: `30 + 20 = 50`. But this would overcount the students who like both pizza and burgers because they are counted twice.
 

@@ -9,7 +9,7 @@ If you want to include the Logspout extension, run Docker Compose from the root 
 command line argument referencing the `logspout-compose.yml` file:
 
 ```bash
-$ docker-compose -f docker-compose.yml -f extensions/logspout/logspout-compose.yml up
+docker-compose -f docker-compose.yml -f extensions/logspout/logspout-compose.yml up
 ```
 
 In your Logstash pipeline configuration, enable the `udp` input and set the input codec to `json`:

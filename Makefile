@@ -1,7 +1,9 @@
 all: push
 
 push:
-	echo "--------Started git pull -> update modules -> merge -> push--------"
+	echo "--------"
+	echo "Started git pull -> update modules -> merge -> push"
+	echo "--------"
 	npm run p
 
 pushnb:

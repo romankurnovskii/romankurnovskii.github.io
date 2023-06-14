@@ -48,4 +48,4 @@ b[R] = 34
 
 ## Ресурсы
 
-- https://www.youtube.com/watch?v=BzFN9YwR-NM&t=797s
+- <https://www.youtube.com/watch?v=BzFN9YwR-NM&t=797s>

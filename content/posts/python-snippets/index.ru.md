@@ -28,7 +28,6 @@ import datetime
 x = datetime.datetime.now().strftime("%Y-%m-%d") # 2023-08-23
 ```
 
-
 #### Разница в секундах
 
 ```python
@@ -68,6 +67,7 @@ else:
 ```
 
 ### Создать папку
+
 ```python
 import os
 if not os.path.exists(name):
@@ -136,6 +136,7 @@ for pages in range(pdfReader.numPages):
 
 speak.stop()
 ```
+
 ## Полный обзор
 
 ```python

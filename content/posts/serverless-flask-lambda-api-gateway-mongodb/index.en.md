@@ -116,7 +116,7 @@ Create:
                 "kinesis:DeleteStream",
                 "kinesis:DescribeStream",
                 "lambda:*",
-				"logs:CreateLogDelivery",
+    "logs:CreateLogDelivery",
                 "logs:CreateLogGroup",
                 "logs:DeleteLogGroup",
                 "logs:DescribeLogGroups",
@@ -229,7 +229,6 @@ source ./venv/bin/activate
 ```
 
 ### App
-
 
 **src/app.py**
 
@@ -365,7 +364,6 @@ Deploying app-service-name to stage dev (eu-west-1)
 
 ✔ Service deployed to stack app-service-name (182s)
 ```
-
 
 ### Local development
 

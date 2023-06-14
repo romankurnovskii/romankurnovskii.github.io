@@ -15,39 +15,39 @@ weight: 88
 ---
 ## Резервное копирование, ориентированное на приложения
 
-В [День 85](.../day85) мы уже потратили некоторое время на обсуждение служб данных или приложений с интенсивным использованием данных, таких как базы данных. Для этих служб данных мы должны подумать о том, как управлять согласованностью, особенно когда речь идет о согласованности приложений. 
+В [День 85](.../day85) мы уже потратили некоторое время на обсуждение служб данных или приложений с интенсивным использованием данных, таких как базы данных. Для этих служб данных мы должны подумать о том, как управлять согласованностью, особенно когда речь идет о согласованности приложений.
 
-В этой статье мы рассмотрим требования к защите данных приложения в последовательной манере. 
+В этой статье мы рассмотрим требования к защите данных приложения в последовательной манере.
 
 Для этого мы выберем инструмент [Kanister](https://kanister.io/)
 
 ![](../images/Day88_Data1.ru.png?v1)
 
-### Представляем Kanister 
+### Представляем Kanister
 
-Kanister - это проект с открытым исходным кодом от Kasten, который позволяет нам управлять (резервное копирование и восстановление) данными приложений на Kubernetes. Вы можете развернуть Kanister как helm-приложение в своем кластере Kubernetes. 
+Kanister - это проект с открытым исходным кодом от Kasten, который позволяет нам управлять (резервное копирование и восстановление) данными приложений на Kubernetes. Вы можете развернуть Kanister как helm-приложение в своем кластере Kubernetes.
 
-Kanister использует пользовательские ресурсы Kubernetes, основные пользовательские ресурсы, которые устанавливаются при развертывании Kanister, следующие 
+Kanister использует пользовательские ресурсы Kubernetes, основные пользовательские ресурсы, которые устанавливаются при развертывании Kanister, следующие
 
-- `Profile` - целевое место для хранения резервных копий и восстановления. Чаще всего это объектное хранилище. 
+- `Profile` - целевое место для хранения резервных копий и восстановления. Чаще всего это объектное хранилище.
 - `Blueprint` - шаги, которые необходимо предпринять для резервного копирования и восстановления базы данных, должны быть сохранены в Blueprint.
-- `ActionSet` - действия по перемещению целевой резервной копии в наш профиль, а также действия по восстановлению. 
- 
-### Описание выполнения 
+- `ActionSet` - действия по перемещению целевой резервной копии в наш профиль, а также действия по восстановлению.
 
-Прежде чем приступить к работе, мы должны рассмотреть рабочий процесс, который использует Kanister для защиты данных приложения. Во-первых, наш контроллер развертывается с помощью helm в нашем кластере Kubernetes, Kanister живет в своем собственном пространстве имен. Мы берем наш Blueprint, для которого существует множество поддерживаемых сообществом Blueprint, мы рассмотрим это более подробно в ближайшее время. Затем у нас есть рабочая нагрузка базы данных. 
+### Описание выполнения
+
+Прежде чем приступить к работе, мы должны рассмотреть рабочий процесс, который использует Kanister для защиты данных приложения. Во-первых, наш контроллер развертывается с помощью helm в нашем кластере Kubernetes, Kanister живет в своем собственном пространстве имен. Мы берем наш Blueprint, для которого существует множество поддерживаемых сообществом Blueprint, мы рассмотрим это более подробно в ближайшее время. Затем у нас есть рабочая нагрузка базы данных.
 
 ![](../images/Day88_Data2.ru.png?v1)
 
-Затем мы создаем наш ActionSet.   
+Затем мы создаем наш ActionSet.
 
 ![](../images/Day88_Data3.ru.png?v1)
 
-ActionSet позволяет нам запускать действия, определенные в чертеже, против конкретной службы данных. 
+ActionSet позволяет нам запускать действия, определенные в чертеже, против конкретной службы данных.
 
 ![](../images/Day88_Data4.ru.png?v1)
 
-ActionSet, в свою очередь, использует функции Kanister (KubeExec, KubeTask, Resource Lifecycle) и выталкивает нашу резервную копию в целевое хранилище (Profile). 
+ActionSet, в свою очередь, использует функции Kanister (KubeExec, KubeTask, Resource Lifecycle) и выталкивает нашу резервную копию в целевое хранилище (Profile).
 
 ![](../images/Day88_Data5.ru.png?v1)
 
@@ -55,11 +55,11 @@ ActionSet, в свою очередь, использует функции Kanis
 
 ![](../images/Day88_Data6.ru.png?v1)
 
-### Развертывание Kanister 
+### Развертывание Kanister
 
-И снова мы будем использовать кластер minikube для создания резервной копии приложения. Если у вас он все еще работает с предыдущей сессии, то мы можем продолжать использовать его. 
+И снова мы будем использовать кластер minikube для создания резервной копии приложения. Если у вас он все еще работает с предыдущей сессии, то мы можем продолжать использовать его.
 
-На момент написания статьи мы имеем версию образа `0.75.0`. С помощью следующей команды helm мы установим kanister в наш кластер Kubernetes. 
+На момент написания статьи мы имеем версию образа `0.75.0`. С помощью следующей команды helm мы установим kanister в наш кластер Kubernetes.
 
 `helm install kanister --namespace kanister kanister/kanister-operator --set image.tag=0.75.0 --create-namespace`.
 
@@ -68,7 +68,7 @@ ActionSet, в свою очередь, использует функции Kanis
 Мы можем использовать `kubectl get pods -n kanister`, чтобы убедиться, что pod запущен и работает, а также проверить, что наши пользовательские определения ресурсов теперь доступны (Если вы только установили Kanister, то вы увидите выделенные 3)
 ![](../images/Day88_Data8.ru.png?v1)
 
-### Развертывание базы данных 
+### Развертывание базы данных
 
 Развертывание mysql через helm:
 
@@ -79,6 +79,7 @@ helm repo add bitnami https://charts.bitnami.com/bitnami
 helm install mysql-store bitnami/mysql --set primary.persistence.size=1Gi,volumePermissions.enabled=true --namespace=${APP_NAME}
 kubectl get pods -n ${APP_NAME} -w
 ```
+
 ![](../images/Day88_Data9.ru.png?v1)
 
 Заполните базу данных mysql исходными данными, выполнив следующее:
@@ -90,13 +91,15 @@ MYSQL_EXEC="mysql -h ${MYSQL_HOST} -u root --password=${MYSQL_ROOT_PASSWORD} -Dm
 echo MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
 ```
 
-### Создание MySQL CLIENT 
+### Создание MySQL CLIENT
+
 Мы запустим другой образ контейнера, который будет выступать в качестве нашего клиента
 
 ```
 APP_NAME=my-production-app
 kubectl run mysql-client --rm --env APP_NS=${APP_NAME} --env MYSQL_EXEC="${MYSQL_EXEC}" --env MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD} --env MYSQL_HOST=${MYSQL_HOST} --namespace ${APP_NAME} --tty -i --restart='Never' --image docker.io/bitnami/mysql:latest --command -- bash
 ```
+
 ```
 Примечание: если у вас уже запущен существующий mysql client pod, удалите его с помощью команды
 
@@ -104,6 +107,7 @@ kubectl delete pod -n ${APP_NAME} mysql-client
 ```
 
 ### Добавление данных в MySQL
+
 ```
 echo "create database myImportantData;" | mysql -h ${MYSQL_HOST} -u root --password=${MYSQL_ROOT_PASSWORD}
 MYSQL_EXEC="mysql -h ${MYSQL_HOST} -u root --password=${MYSQL_ROOT_PASSWORD} -DmyImportantData -t"
@@ -120,18 +124,18 @@ echo "insert into Accounts values('rastapopoulos', 377);" | ${MYSQL_EXEC}
 echo "select * from Accounts;" |  ${MYSQL_EXEC}
 exit
 ```
-Вы должны увидеть некоторые данные, как показано ниже. 
+
+Вы должны увидеть некоторые данные, как показано ниже.
 
 ![](../images/Day88_Data10.ru.png?v1)
 
-
 ### Создание профиля Kanister
 
-Kanister предоставляет CLI, `kanctl` и другую утилиту `kando`, которая используется для взаимодействия с провайдером объектного хранилища из blueprint и обе эти утилиты. 
+Kanister предоставляет CLI, `kanctl` и другую утилиту `kando`, которая используется для взаимодействия с провайдером объектного хранилища из blueprint и обе эти утилиты.
 
 [CLI Download](https://docs.kanister.io/tooling.html#tooling)
 
-Я пошел и создал AWS S3 Bucket, который мы будем использовать в качестве цели профиля и места восстановления. Я буду использовать переменные окружения, чтобы иметь возможность показать вам команды, которые я выполняю с помощью `kanctl` для создания нашего профиля kanister. 
+Я пошел и создал AWS S3 Bucket, который мы будем использовать в качестве цели профиля и места восстановления. Я буду использовать переменные окружения, чтобы иметь возможность показать вам команды, которые я выполняю с помощью `kanctl` для создания нашего профиля kanister.
 
 `kanctl create profile s3compliant --access-key $ACCESS_KEY --secret-key $SECRET_KEY --bucket $BUCKET --region eu-west-2 --namespace my-production-app`.
 
@@ -139,7 +143,7 @@ Kanister предоставляет CLI, `kanctl` и другую утилиту
 
 ### Время чертежа
 
-Не волнуйтесь, вам не нужно создавать свой собственный с нуля, если только ваш сервис данных не указан в [Примерах Канистера](https://github.com/kanisterio/kanister/tree/master/examples), но, конечно, вклад сообщества - это то, как этот проект становится известным. 
+Не волнуйтесь, вам не нужно создавать свой собственный с нуля, если только ваш сервис данных не указан в [Примерах Канистера](https://github.com/kanisterio/kanister/tree/master/examples), но, конечно, вклад сообщества - это то, как этот проект становится известным.
 
 Мы будем использовать следующую схему.
 
@@ -223,45 +227,46 @@ actions:
           kando location delete --profile '{{ toJson .Profile }}' --path ${s3_path}
 ```
 
-Чтобы добавить его, мы воспользуемся командой `kubectl create -f mysql-blueprint.yml -n kanister`. 
+Чтобы добавить его, мы воспользуемся командой `kubectl create -f mysql-blueprint.yml -n kanister`.
 
 ![](../images/Day88_Data12.ru.png?v1)
 
-### Создаем наш ActionSet и защищаем наше приложение 
+### Создаем наш ActionSet и защищаем наше приложение
 
 Теперь мы создадим резервную копию данных MySQL с помощью ActionSet, определяющего резервное копирование для этого приложения. Создайте ActionSet в том же пространстве имен, что и контроллер.
 
-`kubectl get profiles.cr.kanister.io -n my-production-app` Эта команда покажет нам профиль, который мы ранее создали, здесь может быть настроено несколько профилей, поэтому мы можем захотеть использовать определенные профили для разных ActionSet'ов. 
+`kubectl get profiles.cr.kanister.io -n my-production-app` Эта команда покажет нам профиль, который мы ранее создали, здесь может быть настроено несколько профилей, поэтому мы можем захотеть использовать определенные профили для разных ActionSet'ов.
 
-Затем мы создадим наш ActionSet следующей командой с помощью `kanctl`. 
+Затем мы создадим наш ActionSet следующей командой с помощью `kanctl`.
 
 `kanctl create actionset --action backup --namespace kanister --blueprint mysql-blueprint --statefulset my-production-app/mysql-store --profile my-production-app/s3-profile-dc5zm --secrets mysql=my-production-app/mysql-store`.
 
-Из приведенной выше команды видно, что мы определяем blueprint, который мы добавили в пространство имен, statefulset в нашем пространстве имен `my-production-app`, а также секреты для входа в приложение MySQL. 
+Из приведенной выше команды видно, что мы определяем blueprint, который мы добавили в пространство имен, statefulset в нашем пространстве имен `my-production-app`, а также секреты для входа в приложение MySQL.
 
 ![](../images/Day88_Data13.ru.png?v1)
 
 Проверьте состояние ActionSet, взяв имя ActionSet и используя эту команду `kubectl --namespace kanister describe actionset backup-qpnqv`.
 
-Наконец, мы можем пойти и подтвердить, что теперь у нас есть данные в нашем ведре AWS S3. 
+Наконец, мы можем пойти и подтвердить, что теперь у нас есть данные в нашем ведре AWS S3.
 
 ![](../images/Day88_Data14.ru.png?v1)
 
-### Восстановление 
+### Восстановление
 
-Нам нужно нанести некоторый ущерб, прежде чем мы сможем что-либо восстановить, мы можем сделать это, уронив нашу таблицу, возможно, это был несчастный случай, а возможно и нет. 
+Нам нужно нанести некоторый ущерб, прежде чем мы сможем что-либо восстановить, мы можем сделать это, уронив нашу таблицу, возможно, это был несчастный случай, а возможно и нет.
 
 Подключитесь к нашему MySQL pod.
+
 ```
 APP_NAME=my-production-app
 kubectl run mysql-client --rm --env APP_NS=${APP_NAME} --env MYSQL_EXEC="${MYSQL_EXEC}" --env MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD} --env MYSQL_HOST=${MYSQL_HOST} --namespace ${APP_NAME} --tty -i --restart='Never' --image  docker.io/bitnami/mysql:latest --command -- bash
 ```
 
-Вы можете увидеть, что наша база данных importantdata находится там с помощью `echo "SHOW DATABASES;" | ${MYSQL_EXEC}`. 
+Вы можете увидеть, что наша база данных importantdata находится там с помощью `echo "SHOW DATABASES;" | ${MYSQL_EXEC}`.
 
 Затем для удаления мы запустили `echo "DROP DATABASE myImportantData;" | ${MYSQL_EXEC}`.
 
-И подтвердили, что все исчезло, сделав несколько попыток показать нашу базу данных. 
+И подтвердили, что все исчезло, сделав несколько попыток показать нашу базу данных.
 
 ![](../images/Day88_Data15.ru.png?v1)
 
@@ -270,17 +275,19 @@ kubectl run mysql-client --rm --env APP_NS=${APP_NAME} --env MYSQL_EXEC="${MYSQL
 ![](../images/Day88_Data16.ru.png?v1)
 
 Мы можем подтвердить, что наши данные восстановлены, используя следующую команду для подключения к нашей базе данных.
+
 ```
 APP_NAME=my-production-app
 kubectl run mysql-client --rm --env APP_NS=${APP_NAME} --env MYSQL_EXEC="${MYSQL_EXEC}" --env MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD} --env MYSQL_HOST=${MYSQL_HOST} --namespace ${APP_NAME} --tty -i --restart='Never' --image  docker.io/bitnami/mysql:latest --command -- bash
 ```
-Теперь мы находимся внутри клиента MySQL, мы можем выполнить команду `echo "SHOW DATABASES;" | ${MYSQL_EXEC}` и мы увидим, что база данных восстановлена. Мы также можем выполнить команду `echo "select * from Accounts;" | ${MYSQL_EXEC}` для проверки содержимого базы данных, и наши важные данные будут восстановлены. 
+
+Теперь мы находимся внутри клиента MySQL, мы можем выполнить команду `echo "SHOW DATABASES;" | ${MYSQL_EXEC}` и мы увидим, что база данных восстановлена. Мы также можем выполнить команду `echo "select * from Accounts;" | ${MYSQL_EXEC}` для проверки содержимого базы данных, и наши важные данные будут восстановлены.
 
 ![](../images/Day88_Data17.ru.png?v1)
 
 В следующем посте мы рассмотрим аварийное восстановление в Kubernetes.
 
-## Ресурсы 
+## Ресурсы
 
 - [Kanister Overview - An extensible open-source framework for app-lvl data management on Kubernetes](https://www.youtube.com/watch?v=wFD42Zpbfts)
 - [Application Level Data Operations on Kubernetes](https://community.cncf.io/events/details/cncf-cncf-online-programs-presents-cncf-live-webinar-kanister-application-level-data-operations-on-kubernetes/)

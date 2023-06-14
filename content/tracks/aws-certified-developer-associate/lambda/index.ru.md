@@ -25,10 +25,12 @@ AWS Lambda автоматически запускает программный 
 [Актуальный прайс](https://aws.amazon.com/lambda/pricing/)
 
 Цена x86
+
 - 0,0000166667 USD за каждую гигабайт-секунду
 - 0,20 USD за 1 млн запросов
 
 Цена Arm
+
 - 0,0000133334 USD за каждую гигабайт-секунду
 - 0,20 USD за 1 млн запросов
 
@@ -52,8 +54,8 @@ AWS Lambda автоматически запускает программный 
 Я выбираю этот раздел, потому что использую аккаунт cloudacademy. Данная роль дает разрешение на создание функций
 
 - **Permissions**: **Change default execution role**
-    - **Execution Role**: Select **Use an existing role**
-    - **Existing role**: Select the role beginning with **cloudacademylabs-LambdaExecutionRole**
+  - **Execution Role**: Select **Use an existing role**
+  - **Existing role**: Select the role beginning with **cloudacademylabs-LambdaExecutionRole**
 
 ![](./img/lambda-3.png)
 
@@ -91,7 +93,7 @@ exports.handler = function(event, context) {
 
 → **Test**
 
-Данная функциональность позволяет протестировать как функция реагирует на определенные события. Попробуем добавить событие от SNS Notifications. 
+Данная функциональность позволяет протестировать как функция реагирует на определенные события. Попробуем добавить событие от SNS Notifications.
 
 Выберем из списка
 

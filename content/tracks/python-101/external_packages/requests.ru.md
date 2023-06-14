@@ -46,4 +46,4 @@ print(response.json())
 
 **Ресурсы:**
 
-- https://www.w3schools.com/python/module_requests.asp
+- <https://www.w3schools.com/python/module_requests.asp>

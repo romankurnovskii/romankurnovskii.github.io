@@ -18,7 +18,8 @@ RHEL 9 is the first few releases in the Red Hat family. It is the first major re
 
 RHEL 9 is the latest major version of RHEL and comes with a 5.14 kernel, lots of new software packages and a host of improvements. It emphasizes security, stability, flexibility and reliability.
 
-## Description.
+## Description
+
 RHEL 9 ships with new versions of software including Python 3.9. Node.JS 16, GCC 11, Perl 5.32, Ruby 3.0, PHP 8.0, and many more.
 
 ## Preparing for installation
@@ -33,7 +34,8 @@ First of all, make sure you have an active Red Hat account. If you don't already
 ![](img/01.png)
 
 ### Downloading the installation image
-After creating a Red Hat account, you can start downloading RHEL 9. To download Red Hat Enterprise Linux 9 **absolutely free**, go to [Red Hat Developer Portal ](https://developers.redhat.com/products/rhel/overview) and log in with your account credentials.
+
+After creating a Red Hat account, you can start downloading RHEL 9. To download Red Hat Enterprise Linux 9 **absolutely free**, go to [Red Hat Developer Portal](https://developers.redhat.com/products/rhel/overview) and log in with your account credentials.
 ![](img/01-01.png)
 
 Then go to the [download RHEL 9](https://developers.redhat.com/products/rhel/download) page and click on the download button shown below.
@@ -42,19 +44,21 @@ I'm using a MacBook M1, so I download the RHEL 9 image for the M1 processor aarc
 ![](img/01-02.png)
 
 ### Virtual machine
+
 I use the free [UTM virtual machine](https://mac.getutm.app/) as a virtual machine to install RHEL 9. You can install using [Homebrew](https://romankurnovskii.com/posts/mac-setup-development/#homebrew) by running the command `brew install --cask utm`.
 
 ## Installing Red Hat Enterprise Linux 9
 
 ### Setting up the UTM virtual machine
+
 In UTM click `Create a New Virtual Machine` -> Virtualize
 ![](img/02-02.png)
 
 Choose the downloaded RHEL 9 image and click `Continue`.
 ![](img/02-01.png)
 
-
 ### Main Setup Menu
+
 ![](img/02.png)
 
 The marked fields need to be filled in
@@ -64,8 +68,7 @@ Create Root Password
 **User Creation**. Create the user you want to log in with.
 ![](img/04.png)
 
-
-**Connect to Red Hat**. Here we will use the account created above. 
+**Connect to Red Hat**. Here we will use the account created above.
 
 Here you will enter your account data and click Register.
 ![](img/06.png)
@@ -76,10 +79,9 @@ Under **Installation Destination** choose your default drive.
 We can now continue with the installation. A ***Begin installation*** button will appear on the main screen  
 ![](img/05.png)
 
-After installation is complete, we will have to reboot the system. 
+After installation is complete, we will have to reboot the system.
 ![](img/02-03.png)
 Sometimes rebooting will unload the installation image again. It's necessary to either disable the disk in the installer setup or reboot the UTM.
-
 
 ## Running Red Hat Enterprise Linux 9
 
@@ -93,21 +95,22 @@ To access the applications, click the **Activities** button in the upper left co
 ## Configuring Red Hat Enterprise Linux 9
 
 ### Checking the ROOT user
-In a Linux system users belong to different groups which have certain rights. If during the installation process we did not check the checkbox to make the user an administrator, by default he will not be able to install some system programs. 
+
+In a Linux system users belong to different groups which have certain rights. If during the installation process we did not check the checkbox to make the user an administrator, by default he will not be able to install some system programs.
 
 Exit and log in as root (the same user we created earlier on the main screen). Press ***Log out***
 ![](img/07-03.png)
 
-Now log in as **root**. The user may not be listed. Press **Not listed** and enter the account data. 
+Now log in as **root**. The user may not be listed. Press **Not listed** and enter the account data.
 ![](img/07-04.png)
 
 Open terminal and check
 ![](img/07-05.png)
 
-
 ### Configuring system settings
 
 #### Button to minimize the application
+
 The first thing that seems unusual about using the GUI is that there are no buttons to minimize windows
 ![](img/07-02.png)
 
@@ -147,9 +150,9 @@ rhel-user ALL= NOPASSWD: /usr/sbin/synaptic, /usr/bin/software-center, /usr/bin/
 
 ![](img/07-09.png)
 
-
 Let's install ***Visual Studio Code*** as a normal user
 Installation consists of the following steps:
+
 1. adding the desired repository. Rights to add the repository (changing the files in the directory is still only for ***root*** user)
 2. Downloading and installing.
 
@@ -178,7 +181,7 @@ sudo dnf install code
 ![](img/07-11.png)
 ![](img/07-12.png)
 
-
 ## References
+
 - [https://developers.redhat.com/products/rhel/getting-started](https://developers.redhat.com/products/rhel/getting-started)
 - [https://www.redhat.com/sysadmin/install-linux-rhel-9](https://www.redhat.com/sysadmin/install-linux-rhel-9)

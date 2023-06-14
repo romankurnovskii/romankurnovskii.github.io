@@ -16,7 +16,7 @@ Amazon Cognito - Simple and Secure User Sign-Up, Sign-In, and Access Control
 - [Documentation](https://aws.amazon.com/cognito/)
 - [User Guide](https://docs.aws.amazon.com/cognito/?id=docs_gateway)
 
-Amazon Cognito lets you add user sign-up, sign-in, and access control to your web and mobile apps quickly and easily. Amazon Cognito scales to millions of users and supports sign-in with social identity providers, such as Apple, Facebook, Google, and Amazon, and enterprise identity providers via SAML 2.0 and OpenID Connect. 
+Amazon Cognito lets you add user sign-up, sign-in, and access control to your web and mobile apps quickly and easily. Amazon Cognito scales to millions of users and supports sign-in with social identity providers, such as Apple, Facebook, Google, and Amazon, and enterprise identity providers via SAML 2.0 and OpenID Connect.
 
 Users can sign in directly with a user name and password, or through a third party such as Facebook, Amazon, or Google.
 
@@ -37,7 +37,7 @@ Users can sign in directly with a user name and password, or through a third par
 
 ## Price
 
-Pay only for what you use. First 50,000 (monthly active users (MAUs) - Free. 
+Pay only for what you use. First 50,000 (monthly active users (MAUs) - Free.
 
 [Current price](https://aws.amazon.com/cognito/pricing/)
 
@@ -45,7 +45,7 @@ Pay only for what you use. First 50,000 (monthly active users (MAUs) - Free.
 
 Type: Identity & access management
 
-Same type services: Identity & Access Management (IAM), Single Sign-On, Cognito, Directory Service, Resource Access Manager, Organisations	
+Same type services: Identity & Access Management (IAM), Single Sign-On, Cognito, Directory Service, Resource Access Manager, Organisations 
 
 ### Workflow
 
@@ -78,12 +78,11 @@ The process of authenticating a user with Cognito is as follows:
 <summary>Explanation</summary>
 <div>
 
-https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html
+<https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html>
 
-<mark style="color:white">3</mark> 
+<mark style="color:white">3</mark>
 </div>
 </details>
-
 
 ### Q2
 
@@ -103,7 +102,6 @@ https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa
 
 [Amazon Cognito](../cognito) adds user sign-up, sign-in, and access control to web and mobile applications quickly and easily. Users can also create an [AWS Lambda](../lambda) function to make an API call to a custom analytics solution and then trigger that function with an Amazon Cognito post authentication trigger.
 
-<mark style="color:white">1, 5</mark> 
+<mark style="color:white">1, 5</mark>
 </div>
 </details>
-

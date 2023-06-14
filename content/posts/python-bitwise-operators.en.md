@@ -81,7 +81,6 @@ For numbers:
 
 1. Covert to binary
 
-
     `27 -> 11011`
     `23 -> 10111`
 
@@ -92,4 +91,5 @@ For numbers:
     `27 & 23 = 19`
 
 ## Resources
-- https://realpython.com/python-bitwise-operators/
+
+- <https://realpython.com/python-bitwise-operators/>

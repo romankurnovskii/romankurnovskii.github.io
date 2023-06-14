@@ -20,7 +20,7 @@ AWS CodeStar enables you to quickly develop, build, and deploy applications on A
 
 CodeStar enables to quickly develop, build, & deploy applic­ations on AWS.
 
-With AWS CodeStar, you can create, manage, and scale automated code reviews with a single click. You can also monitor the performance and scalability of your code review process with the built-in metrics dashboard. 
+With AWS CodeStar, you can create, manage, and scale automated code reviews with a single click. You can also monitor the performance and scalability of your code review process with the built-in metrics dashboard.
 
 Each AWS CodeStar project comes with a project management dashboard, including an integrated issue tracking capability powered by Atlassian JIRA Software.
 

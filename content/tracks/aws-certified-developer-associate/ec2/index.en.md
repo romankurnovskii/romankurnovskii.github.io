@@ -16,12 +16,13 @@ imgWidth: 50px
 - [AWS EC2](https://aws.amazon.com/ec2/)
 - [AWS EC2 User Guide](https://docs.aws.amazon.com/ec2/?id=docs_gateway)
 
-Amazon Elastic Compute Cloud (EC2) - one of the most popular AWS services. 
+Amazon Elastic Compute Cloud (EC2) - one of the most popular AWS services.
 
 Allows:
+
 - to run different types of cloud instances and pay-per-use models.
 - to control computing resources at the operating system level
-- working in an Amazon computing environment. 
+- working in an Amazon computing environment.
 
 ## Digest
 
@@ -47,12 +48,12 @@ Allows:
 - Cold HDD (lowest cost for less frequently workloads)
 - Instance Store - temporary storage volume in which data is deleted when you STOP or TERMINATE your instance
 
-
 ## Price
 
-**Pricing models:** 
-- On Demand - pay a fixed rate by the hour/second with no commitment. You can provision and terminate it at any given time. 
-- Reserved - you get capacity reservation, basically purchase an instance for a fixed time of period. The longer, the cheaper. 
+**Pricing models:**
+
+- On Demand - pay a fixed rate by the hour/second with no commitment. You can provision and terminate it at any given time.
+- Reserved - you get capacity reservation, basically purchase an instance for a fixed time of period. The longer, the cheaper.
 - Spot - Enables you to bid whatever price you want for instances or pay the spot price. Dedicated Hosts - physical EC2 server dedicated for your use.
 
 [Current price](https://aws.amazon.com/ec2/pricing/)
@@ -61,13 +62,13 @@ Allows:
 
 {{< youtube id="Lng4wP26_nk" >}}
 
-### TL;DR 
+### TL;DR
 
-1. Choose a region close to you 
+1. Choose a region close to you
 2. Go to EC2 service
 3. Click on "Instances" in the menu and click on "Launch instances"
 4. Choose image: Amazon Linux 2
-5. Choose instance type: t2.micro 
+5. Choose instance type: t2.micro
 6. Make sure "Delete on Termination" is checked in the storage section
 7. Under the "User data" field the following:
 
@@ -80,8 +81,10 @@ echo "<h1>Hello from web!</h1>" > /var/www/html/index.html
 ```
 
 8. Add tags with the following keys and values:
-  * key "Type" and the value "web"
-  * key "Name" and the value "web-1"
+
+- key "Type" and the value "web"
+- key "Name" and the value "web-1"
+
 9. In the security group section, add a rule to accept HTTP traffic (TCP) on port 80 from anywhere
 10. Click on "Review" and then click on "Launch" after reviewing.
 11. If you don't have a key pair, create one and download it.
@@ -112,7 +115,7 @@ After the key is created it will start automatic downloading. You need it to con
 
 #### Network Settings
 
-Under **Network Settings** I leave **Allow SSH traffic from** 
+Under **Network Settings** I leave **Allow SSH traffic from**
 
 ![](./img/05.png)
 
@@ -152,7 +155,6 @@ ssh -i mykey.pem ec2-user@52.24.109.78
 
 ![](./img/03.png)
 
-
 ## Questions
 
 ### Q1
@@ -160,6 +162,7 @@ ssh -i mykey.pem ec2-user@52.24.109.78
 **A company is migrating a legacy application to Amazon EC2. The application uses a username and password stored in the source code to connect to a MySQL database. The database will be migrated to an Amazon RDS for MySQL DB instance. As part of the migration, the company wants to implement a secure way to store and automatically rotate the database credentials.**
 
 **Which approach meets these requirements?**
+
 1. Store the database credentials in environment variables in an Amazon Machine Image (AMI). Rotate the credentials by replacing the AMI.
 2. Store the database credentials in AWS Systems Manager Parameter Store. Configure Parameter Store to automatically rotate the credentials.
 3. Store the database credentials in environment variables on the EC2 instances. Rotate the credentials by relaunching the EC2 instances.
@@ -173,7 +176,7 @@ ssh -i mykey.pem ec2-user@52.24.109.78
 
 Secrets Manager offers [secret rotation](https://aws.amazon.com/blogs/security/rotate-amazon-rds-database-credentials-automatically-with-aws-secrets-manager/)
 
-<mark style="color:white">4</mark> 
+<mark style="color:white">4</mark>
 
 </div>
 </details>
@@ -201,7 +204,7 @@ Amazon EBS is a persistent block storage volume. It can persist independently fr
 
 [Amazon EBS volume types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#EBSVolumeTypes_piops)
 
-<mark style="color:white">2</mark> 
+<mark style="color:white">2</mark>
 
 </div>
 </details>
@@ -229,11 +232,10 @@ Provisioned IOPS SSD storage provides a way to reserve I/O capacity by specifyin
 
 EBS–optimized instances deliver dedicated bandwidth to Amazon EBS. When attached to an EBS–optimized instance, Provisioned IOPS SSD (io1) volumes are designed to achieve their provisioned performance, 99.9% of the time. Choose an EBS–optimized instance that provides more dedicated Amazon EBS throughput than your application needs; otherwise, the connection between Amazon EBS and Amazon EC2 can become a performance bottleneck.
 
-<mark style="color:white">2</mark> 
+<mark style="color:white">2</mark>
 
 </div>
 </details>
-
 
 ### Q4
 
@@ -241,20 +243,19 @@ EBS–optimized instances deliver dedicated bandwidth to Amazon EBS. When attach
 
 **How can the application find this information?**
 
-1. Query the instance metadata from http://169.254.169.254/latest/meta-data/.
-1. Query the instance user data from http://169.254.169.254/latest/user-data/.
-1. Query the Amazon Machine Image (AMI) information from http://169.254 169.254/latest/meta-data/ami/.
+1. Query the instance metadata from <http://169.254.169.254/latest/meta-data/>.
+1. Query the instance user data from <http://169.254.169.254/latest/user-data/>.
+1. Query the Amazon Machine Image (AMI) information from <http://169.254> 169.254/latest/meta-data/ami/.
 1. Check the hosts file of the operating system.
 
 <details>
 <summary>Explanation</summary>
 <div>
 
-<mark style="color:white">1</mark> 
+<mark style="color:white">1</mark>
 
 </div>
 </details>
-
 
 ### Q5
 
@@ -273,12 +274,12 @@ EBS–optimized instances deliver dedicated bandwidth to Amazon EBS. When attach
 
 [https://docs.aws.amazon.com/codepipeline/latest/userguide/tutorials-four-stage-pipeline.html](https://docs.aws.amazon.com/codepipeline/latest/userguide/tutorials-four-stage-pipeline.html)
 
-<mark style="color:white">2, 3</mark> 
+<mark style="color:white">2, 3</mark>
 </div>
 </details>
 
 ## Resources
- 
+
 - [EC2 Linux Hands-On Lab](https://catalog.us-east-1.prod.workshops.aws/workshops/8efd4edb-2b91-49fd-b1b8-3e3b5e71aa03/en-US/ec2/ec2linux)
 - [EB FAQ](https://aws.amazon.com/ebs/faqs/)
 - [EC2 Digest](https://tutorialsdojo.com/amazon-elastic-compute-cloud-amazon-ec2/)
@@ -286,4 +287,4 @@ EBS–optimized instances deliver dedicated bandwidth to Amazon EBS. When attach
 
 ### Community posts
 
-- https://dev.to/romankurnovskii/aws-ec2-cheat-sheet-2mhp
+- <https://dev.to/romankurnovskii/aws-ec2-cheat-sheet-2mhp>

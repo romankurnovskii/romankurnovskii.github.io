@@ -83,8 +83,8 @@ def add_numbers(num1, num2=5):
 
 ## Resources
 
-- Google Python Style Guide: This is a widely adopted style guide in the Python community. It has a specific section on comments and docstrings that I found particularly helpful: https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings
+- Google Python Style Guide: This is a widely adopted style guide in the Python community. It has a specific section on comments and docstrings that I found particularly helpful: <https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings>
 
-- PEP 257 - Docstring Conventions: This is the Python Enhancement Proposal that describes the conventions for writing good docstrings in Python: https://www.python.org/dev/peps/pep-0257/
+- PEP 257 - Docstring Conventions: This is the Python Enhancement Proposal that describes the conventions for writing good docstrings in Python: <https://www.python.org/dev/peps/pep-0257/>
 
-- PEP 484 - Type Hints: This PEP introduced the concept of type hints to Python, and provides guidelines on how to use them: https://www.python.org/dev/peps/pep-0484/
+- PEP 484 - Type Hints: This PEP introduced the concept of type hints to Python, and provides guidelines on how to use them: <https://www.python.org/dev/peps/pep-0484/>

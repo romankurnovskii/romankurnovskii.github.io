@@ -11,8 +11,8 @@ featuredImage: featured.en.jpg
 authors: [roman-kurnovskii]
 ---
 
-We can use recursion. 
-Use `Object.assign()` and an empty object ({}) to create a shallow clone of the original. 
+We can use recursion.
+Use `Object.assign()` and an empty object ({}) to create a shallow clone of the original.
 `Use Object.keys()` and `Array.prototype.forEach()` to determine which key-value pairs need to be deep cloned.
 
 ```javascript

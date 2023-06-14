@@ -154,8 +154,6 @@ pyscript.write('my-custom-pi', f'π is approximately {pi:.3f}')
 
 ![PyScript](images/pyscript-embedded2.png)
 
-
-
 ### Тег py-env
 
 В дополнение к стандартной библиотеке Python и модулю pyscript, многие сторонние пакеты работают с PyScript. Чтобы их использовать, нужно объявить зависимости с помощью тега `<py-env>` в заголовке HTML. Вы также можете ссылаться на файлы `.whl` прямо на диске
@@ -285,5 +283,6 @@ fig
 Добавляет кнопку, к которой авторы могут добавлять метки и обработчики событий для действий на кнопке, таких как on_focus или on_click.
 
 ## Ресурсы
+
 - [Примеры использования PyScript](https://pyscript.net/examples/)
 - [Вопросы по PyScript](https://community.anaconda.cloud/c/tech-topics/pyscript/)

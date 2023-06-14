@@ -67,7 +67,7 @@ Know FIFO vs Standard Queue
 
 Type: Applic­ation integr­ation
 
-Same type services: SNS, SQS, AppSync, EventB­ridge	
+Same type services: SNS, SQS, AppSync, EventB­ridge 
 
 ## Practice
 
@@ -90,6 +90,6 @@ Same type services: SNS, SQS, AppSync, EventB­ridge
 
 [https://docs.aws.amazon.com/config/latest/developerguide/monitor-resource-changes.html](https://docs.aws.amazon.com/config/latest/developerguide/monitor-resource-changes.html)
 
-<mark style="color:white">3</mark> 
+<mark style="color:white">3</mark>
 </div>
 </details>

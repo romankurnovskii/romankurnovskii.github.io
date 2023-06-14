@@ -14,7 +14,7 @@ authors: [roman-kurnovskii]
 
 ### Создание заявки в IB
 
-1. Заходим на сайт https://www.interactivebrokers.co.uk/portal/#/
+1. Заходим на сайт <https://www.interactivebrokers.co.uk/portal/#/>
 1. Нажимаем [**Deposit**](https://www.interactivebrokers.co.uk/AccountManagement/AmAuthentication?action=FUND_TRANSFERS&type=DEPOSIT)
 
 ![](img/button-deposit.png)

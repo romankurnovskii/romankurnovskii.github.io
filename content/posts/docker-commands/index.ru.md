@@ -14,6 +14,7 @@ authors: [roman-kurnovskii]
 *[Full in english](http://localhost:1313/en/posts/docker-commands/)*
 
 ## Топ 10 комманд Docker
+
 1. docker ps — смотрим список запущенных контейнеров
 2. docker pull — загрузка образа
 3. docker build — собирает образ
@@ -26,6 +27,7 @@ authors: [roman-kurnovskii]
 10. docker volume ls — список томов
 
 ## docker build
+
 [Документация](https://docs.docker.com/engine/reference/commandline/build/)
 Построить образ из Dockerfile.
 
@@ -50,6 +52,7 @@ docker build -t my-org:my-image -f /tmp/Dockerfile
 ```
 
 ## docker run
+
 [Документация](https://docs.docker.com/engine/reference/commandline/run/)
 
 Создает и запускает контейнер за один операционный шаг
@@ -59,6 +62,7 @@ docker build -t my-org:my-image -f /tmp/Dockerfile
 ```sh
 docker run -it ubuntu:latest /bin/bash
 ```
+
 Данная команда запустит контейнер ubuntu и при старте сразу запустит `/bin/bash`. Если  образ ubuntu не был загружен ранее, он загрузится перед запуском.
 
 **Флаги**
@@ -73,12 +77,14 @@ disk inside your docker container, like configuration files or storage that
 should be persisted (database, logs etc.).
 
 ## docker exec
+
 [Документация](https://docs.docker.com/engine/reference/commandline/exec/)
 Выполнить команду внутри **запущенного** контейнера.
 
 ```sh
 docker exec [CONTAINER ID]
 ```
+
 **Флаги**
 
 - `--detach -d` Detached mode: запуск в фоновом режиме
@@ -89,7 +95,9 @@ docker exec [CONTAINER ID]
 ```sh
 docker exec [CONTAINER ID] touch /tmp/exec_works
 ```
+
 ## docker images
+
 [Документация](https://docs.docker.com/engine/reference/commandline/images/)
 Вывести список всех загруженных/созданных образов
 
@@ -102,6 +110,7 @@ docker images
 - `-q` показать только ID образов
 
 ## docker inspect
+
 [Документация](https://docs.docker.com/engine/reference/commandline/inspect)
 
 Показать всю информацию о контейнере.
@@ -111,6 +120,7 @@ docker inspect [CONTAINER ID]
 ```
 
 ## docker logs
+
 [Документация](https://docs.docker.com/engine/reference/commandline/logs/)
 
 Вывести логи контейнера.
@@ -126,10 +136,10 @@ docker logs [CONTAINER ID]
 - `--timestamps -t` Показать журналы с меткой времени
 
 ## docker ps
+
 [Документация](https://docs.docker.com/engine/reference/commandline/ps/)
 
 Показывает информацию о всех запущенных контейнерах.
-
 
 ```sh
 docker ps
@@ -142,6 +152,7 @@ docker ps
 - `--quiet -q` Only display numeric IDs
 
 ## docker rmi
+
 [Документация](https://docs.docker.com/engine/reference/commandline/rmi/)
 
 Удалить один или несколько образов.
@@ -153,7 +164,6 @@ docker rmi [IMAGE ID]
 **Флаги**
 
 - `--force -f` Force removal of the image
-
 
 ## Советы и рекомендации по докеру
 
@@ -178,7 +188,6 @@ docker rm $(docker ps -a -q)
 ```sh
 docker image prune
 ```
-
 
 ### Вывести сколько памяти занимает Docker
 
@@ -217,4 +226,3 @@ docker kill $(docker ps -q)
 - [docs.docker.com](https://docs.docker.com/engine/reference/run/)
 - [docker-cheat-sheet](https://github.com/wsargent/docker-cheat-sheet)
 - [https://sourabhbajaj.com/mac-setup/Docker/](https://sourabhbajaj.com/mac-setup/Docker/)
-

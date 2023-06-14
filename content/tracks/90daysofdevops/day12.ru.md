@@ -30,23 +30,24 @@ package main
 import "fmt"
 
 func main() {
-	
-	challenge := "#90DaysOfDevOps"
-	const daystotal = 90
+ 
+ challenge := "#90DaysOfDevOps"
+ const daystotal = 90
 
-	fmt.Printf("Welcome to %v\n", challenge)
-	fmt.Printf("This is a %v challenge\n", daystotal)
+ fmt.Printf("Welcome to %v\n", challenge)
+ fmt.Printf("This is a %v challenge\n", daystotal)
 
-	var TwitterName string
-	var DaysComplete int
-	// ask user for their twitter handle
+ var TwitterName string
+ var DaysComplete int
+ // ask user for their twitter handle
 
-	TwitterName = "@MichaelCade1"
-	DaysComplete = 12
-	fmt.Printf("%v has completed %v days of the challenge\n", TwitterName, DaysComplete)
-	fmt.Println("Great work")
+ TwitterName = "@MichaelCade1"
+ DaysComplete = 12
+ fmt.Printf("%v has completed %v days of the challenge\n", TwitterName, DaysComplete)
+ fmt.Println("Great work")
 }
 ```
+
 Прежде чем мы это сделаем, давайте еще раз взглянем на наше приложение и пройдемся по переменным, которые нам нужны в качестве теста, прежде чем получить этот пользовательский ввод.
 
 Вчера мы закончили с нашим кодом, выглядящим так:
@@ -57,15 +58,16 @@ package main
 import "fmt"
 
 func main() {
-	var challenge = "#90DaysOfDevOps"
-	const daystotal = 90
-	var dayscomplete = 11
+ var challenge = "#90DaysOfDevOps"
+ const daystotal = 90
+ var dayscomplete = 11
 
-	fmt.Printf("Welcome to %v\n", challenge)
-	fmt.Printf("This is a %v challenge and you have completed %v days\n", daystotal, dayscomplete)
-	fmt.Println("Great work")
+ fmt.Printf("Welcome to %v\n", challenge)
+ fmt.Printf("This is a %v challenge and you have completed %v days\n", daystotal, dayscomplete)
+ fmt.Println("Great work")
 }
 ```
+
 Мы вручную определили в коде наши переменные и константы `challenge, daystotal, dayscomplete`.
 
 Давайте теперь добавим новую переменную с именем `TwitterName`
@@ -84,7 +86,6 @@ func main() {
 
 Это вместо того, чтобы присваивать значение переменной, мы хотим попросить пользователя ввести его.
 
-
 ```go
 fmt.Scan(&TwitterName)
 ```
@@ -100,25 +101,26 @@ import "fmt"
 
 func main() {
 
-	const DaysTotal int = 90
-	challenge := "#90DaysOfDevOps"
+ const DaysTotal int = 90
+ challenge := "#90DaysOfDevOps"
 
-	fmt.Printf("Welcome to the %v challenge.\nThis challenge consists of %v days\n", challenge, DaysTotal)
+ fmt.Printf("Welcome to the %v challenge.\nThis challenge consists of %v days\n", challenge, DaysTotal)
 
-	var TwitterName string
-	var DaysCompleted uint
+ var TwitterName string
+ var DaysCompleted uint
 
-	// asking for user input
-	fmt.Println("Enter Your Twitter Handle: ")
-	fmt.Scanln(&TwitterName)
+ // asking for user input
+ fmt.Println("Enter Your Twitter Handle: ")
+ fmt.Scanln(&TwitterName)
 
-	fmt.Println("How many days have you completed?: ")
-	fmt.Scanln(&DaysCompleted)
+ fmt.Println("How many days have you completed?: ")
+ fmt.Scanln(&DaysCompleted)
 
-	fmt.Printf("Thank you %v for taking part and completing %v days.\n", TwitterName, DaysCompleted)
-	fmt.Println("Good luck")
+ fmt.Printf("Thank you %v for taking part and completing %v days.\n", TwitterName, DaysCompleted)
+ fmt.Println("Good luck")
 }
 ```
+
 Давайте теперь запустим нашу программу, и вы увидите, что у нас есть входные данные для обоих вышеперечисленных.
 
 ![](../images/Day12_Go2.ru.png?v1)
@@ -140,31 +142,32 @@ import "fmt"
 
 func main() {
 
-	const DaysTotal int = 90
-	var remainingDays uint = 90
-	challenge := "#90DaysOfDevOps"
+ const DaysTotal int = 90
+ var remainingDays uint = 90
+ challenge := "#90DaysOfDevOps"
 
-	fmt.Printf("Welcome to the %v challenge.\nThis challenge consists of %v days\n", challenge, DaysTotal)
+ fmt.Printf("Welcome to the %v challenge.\nThis challenge consists of %v days\n", challenge, DaysTotal)
 
-	var TwitterName string
-	var DaysCompleted uint
+ var TwitterName string
+ var DaysCompleted uint
 
-	// asking for user input
-	fmt.Println("Enter Your Twitter Handle: ")
-	fmt.Scanln(&TwitterName)
+ // asking for user input
+ fmt.Println("Enter Your Twitter Handle: ")
+ fmt.Scanln(&TwitterName)
 
-	fmt.Println("How many days have you completed?: ")
-	fmt.Scanln(&DaysCompleted)
+ fmt.Println("How many days have you completed?: ")
+ fmt.Scanln(&DaysCompleted)
 
-	// calculate remaining days
-	remainingDays = remainingDays - DaysCompleted
+ // calculate remaining days
+ remainingDays = remainingDays - DaysCompleted
 
-	fmt.Printf("Thank you %v for taking part and completing %v days.\n", TwitterName, DaysCompleted)
-	fmt.Printf("You have %v days remaining for the %v challenge\n", remainingDays, challenge)
-	fmt.Println("Good luck")
+ fmt.Printf("Thank you %v for taking part and completing %v days.\n", TwitterName, DaysCompleted)
+ fmt.Printf("You have %v days remaining for the %v challenge\n", remainingDays, challenge)
+ fmt.Println("Good luck")
 }
 
 ```
+
 Если мы теперь запустим эту программу, вы увидите, что простой расчет выполняется на основе пользовательского ввода и значения `remainingDays`
 
 ![](../images/Day12_Go3.ru.png?v1)
@@ -181,27 +184,27 @@ package main
 import "fmt"
 
 func main() {
-	var challenge = "#90DaysOfDevOps"
+ var challenge = "#90DaysOfDevOps"
 
-	fmt.Println(challenge)
-	fmt.Println(&challenge)
+ fmt.Println(challenge)
+ fmt.Println(&challenge)
 
 }
 ```
+
 Ниже выполняется этот код.
 
 ![](../images/Day12_Go4.ru.png?v1)
 
 ## Ресурсы
+
 - [Введение в Golang](http://golang-book.ru/)
 - [StackOverflow 2021 Developer Survey](https://insights.stackoverflow.com/survey/2021)
 - [Why we are choosing Golang to learn](https://www.youtube.com/watch?v=7pLqIIAqZD4&t=9s)
-- [Jake Wright - Learn Go in 12 minutes](https://www.youtube.com/watch?v=C8LgvuEBraI&t=312s) 
-- [Techworld with Nana - Golang full course - 3 hours 24 mins](https://www.youtube.com/watch?v=yyUHQIec83I) 
-- [**NOT FREE** Nigel Poulton Pluralsight - Go Fundamentals - 3 hours 26 mins](https://www.pluralsight.com/courses/go-fundamentals) 
-- [FreeCodeCamp -  Learn Go Programming - Golang Tutorial for Beginners](https://www.youtube.com/watch?v=YS4e4q9oBaU&t=1025s) 
-- [Hitesh Choudhary - Complete playlist](https://www.youtube.com/playlist?list=PLRAV69dS1uWSR89FRQGZ6q9BR2b44Tr9N) 
+- [Jake Wright - Learn Go in 12 minutes](https://www.youtube.com/watch?v=C8LgvuEBraI&t=312s)
+- [Techworld with Nana - Golang full course - 3 hours 24 mins](https://www.youtube.com/watch?v=yyUHQIec83I)
+- [**NOT FREE** Nigel Poulton Pluralsight - Go Fundamentals - 3 hours 26 mins](https://www.pluralsight.com/courses/go-fundamentals)
+- [FreeCodeCamp -  Learn Go Programming - Golang Tutorial for Beginners](https://www.youtube.com/watch?v=YS4e4q9oBaU&t=1025s)
+- [Hitesh Choudhary - Complete playlist](https://www.youtube.com/playlist?list=PLRAV69dS1uWSR89FRQGZ6q9BR2b44Tr9N)
 
 Увидимся [завтра](../day13).
-
-

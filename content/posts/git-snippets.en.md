@@ -85,7 +85,6 @@ We want to remove commits 2 & 4 from the repo. (Higher the the number newer the 
 1. `git merge repair` Merge our new branch onto master.
 1. `git push -f origin master` Push master to the remote repo.
 
-
 If didn't publish changes, to remove the latest commit, do:
 
     git rebase -i HEAD~<number of commits to go back>
@@ -103,8 +102,8 @@ If already published to-be-deleted commit:
     git stash clear
     git reflog expire --expire-unreachable=now --all
     git fsck --full
-    git fsck --unreachable		# Will show you the list of what will be deleted
-    git gc --prune=now			# Cleanup unnecessary files and optimize the local repository
+    git fsck --unreachable  # Will show you the list of what will be deleted
+    git gc --prune=now   # Cleanup unnecessary files and optimize the local repository
 
 ## Common git commands
 

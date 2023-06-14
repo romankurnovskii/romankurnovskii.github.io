@@ -41,25 +41,23 @@ Key management on AWS is a broad range of activities from creating & storing pub
 
 > In May 2022, AWS KMS changed the rotation schedule for AWS managed keys from every three years (approximately 1,095 days) to every year (approximately 365 days)
 
-
 | Type of KMS key                                                                                          | Can view KMS key metadata | Can manage KMS key | Used only for my AWS account | [Automatic rotation](https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html) | [Pricing](https://aws.amazon.com/kms/pricing/)                             |
 | -------------------------------------------------------------------------------------------------------- | ------------------------- | ------------------ | ---------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
 | [Customer managed key](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk) | Yes                       | Yes                | Yes                          | Optional. Every year (approximately 365 days)                                                | Monthly fee (pro-rated hourly)<br><br>Per-use fee                          |
 | [AWS managed key](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk)   | Yes                       | No                 | Yes                          | Required. Every year (approximately 365 days)                                                | No monthly fee<br><br>Per-use fee (some AWS services pay this fee for you) |
 | [AWS owned key](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk)       | No                        | No                 | No                           | Varies                                                                                       | Varies                                                                     |
 
+**Customer Managed Keys (CMK)**
 
-**Customer Managed Keys (CMK)** 
-
-The primary resources in AWS KMS are customer master keys (CMKs). Typically, you use CMKs to protect data encryption keys (or data keys) which are then used to encrypt or decrypt larger amounts of data outside of the service. CMKs never leave AWS KMS unencrypted, but data keys can. AWS KMS does not store, manage, or track your data keys. 
+The primary resources in AWS KMS are customer master keys (CMKs). Typically, you use CMKs to protect data encryption keys (or data keys) which are then used to encrypt or decrypt larger amounts of data outside of the service. CMKs never leave AWS KMS unencrypted, but data keys can. AWS KMS does not store, manage, or track your data keys.
 
 There is one AWS-managed CMK for each service that is integrated with AWS KMS. When you create an encrypted resource in these services, you can choose to protect that resource under the AWS-managed CMK for that service. This CMK is unique to your AWS account and the AWS region in which it is used, and it protects the data keys used by the AWS services to protect your data.
 
-**Data keys** 
+**Data keys**
 
 Data keys are used to encrypt large data objects within an application outside AWS KMS.  
 
-**Key rotation and Backing Keys** 
+**Key rotation and Backing Keys**
 
 When you create a customer master key (CMK) in AWS KMS, the service creates a key ID for the CMK and key material, referred to as a backing key, that is tied to the key ID of the CMK. If you choose to enable key rotation for a given CMK, AWS KMS will create a new version of the backing key for each rotation. It is the backing key that is used to perform cryptographic operations such as encryption and decryption. Automated key rotation currently retains all prior backing keys so that decryption of encrypted data can take place transparently. CMK is simply a logical resource that does not change regardless of whether or of how many times the underlying backing keys have been rotated.
 
@@ -87,18 +85,17 @@ A custom key store is an AWS KMS resource associated with FIPS 140-2 Level 3 har
 
 **Key policy**
 
-When you create a KMS keys, you determine who can use and manage that KMS keys. 
+When you create a KMS keys, you determine who can use and manage that KMS keys.
 
-
-## Digest 
+## Digest
 
 - KMS encrypts small pieces of data (usually data keys) MAX - 4 KB
   - Use Envelope Encryption for larger objects (CMK never leaves KMS)
     - Generate a data key (plain-text and encrypted) from KMS (GenerateDataKey)
     - Use data key to perform encryption/decryption on the object (within the service or client-side)
-- You can assign an encryption context with cryptographic operations 
+- You can assign an encryption context with cryptographic operations
   - If encryption context is different, decryption will NOT succeed
-- [Request quotas](https://docs.aws.amazon.com/kms/latest/developerguide/requests-per-second.html) for KMS Cryptographic operations: 
+- [Request quotas](https://docs.aws.amazon.com/kms/latest/developerguide/requests-per-second.html) for KMS Cryptographic operations:
   - 5,500 to 50,000 per second (varies with Region)
   - You might get a ThrottlingException if you exceed the limit
   - Lower your request rate to AWS KMS or Retry with Exponential Backoff
@@ -121,9 +118,9 @@ When you create a KMS keys, you determine who can use and manage that KMS keys.
     - Mandatory minimum wait period of 7 days (max-30 days)
 - **CloudHSM**: Dedicated **single-tenant** HSM for regulatory compliance
   - AWS KMS is a Multi-tenant service
-  - AWS CANNOT access your encryption master keys in CloudHSM 
+  - AWS CANNOT access your encryption master keys in CloudHSM
     - (Recommendation) Be ultra safe with your keys. Use two or more HSMs in separate AZs.
-    - AWS KMS can use CloudHSM cluster as "custom key store" to store the keys: 
+    - AWS KMS can use CloudHSM cluster as "custom key store" to store the keys:
       - AWS Services can continue to talk to KMS for data encryption
       - (AND) KMS does the necessary integration with CloudHSM cluster
 
@@ -174,10 +171,9 @@ When you enable _automatic key rotation_ for a customer-managed KMS key, AWS KMS
 <summary>Explanation</summary>
 <div>
 
-https://docs.aws.amazon.com/kms/latest/developerguide/overview.html
+<https://docs.aws.amazon.com/kms/latest/developerguide/overview.html>
 
-<mark style="color:white">1, 2</mark> 
+<mark style="color:white">1, 2</mark>
 
 </div>
 </details>
- 

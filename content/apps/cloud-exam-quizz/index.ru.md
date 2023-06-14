@@ -17,9 +17,10 @@ type: posts
 ---
 
 **Goal:** Check if you are ready to pass the Cloud exam
+
 - The application calculates progress after each answered question.
 - Ability to answer at least one question and get a comment at the same time. No need to pass all questions before.
 - It is convenient to spend 20 min a day
 - Works from web/tablet/mobile
 
-**Link:** https://www.cloud-exam-prepare.com
+**Link:** <https://www.cloud-exam-prepare.com>

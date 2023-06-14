@@ -16,7 +16,7 @@ authors:
 
 Today worked on refining some abstraction level in framework. The main objective of today's work was to enhance the abstraction in the classes and improve the overall code structure.
 
-The goal was to make the code more adaptable and easier to maintain. 
+The goal was to make the code more adaptable and easier to maintain.
 
 For example, instead of having `Binance` hardcoded in the `from_binance_order` method, now use the `Exchanges` enum, which makes the code more versatile and ready for additional exchanges in the future.
 

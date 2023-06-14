@@ -18,6 +18,7 @@ weight: 18
 **Что вы узнали**
 
 В этой codelab вы узнали, как:
+
 - Получать видео с вашей веб-камеры.
 - стримить видео с помощью RTCPeerConnection.
 - Стримить данные с помощью RTCDataChannel.
@@ -27,9 +28,9 @@ weight: 18
 
 **Следующие шаги**
 
-- Посмотрите на код и архитектуру канонического приложения AppRTC для чата WebRTC – приложение (https://appr.tc/), код (https://github.com/webrtc/apprtc) 
-- Попробуйте реальные примеры (http://webrtc.github.io/samples) из github.com/webrtc/samples.
+- Посмотрите на код и архитектуру канонического приложения AppRTC для чата WebRTC – приложение (<https://appr.tc/>), код (<https://github.com/webrtc/apprtc>)
+- Попробуйте реальные примеры (<http://webrtc.github.io/samples>) из github.com/webrtc/samples.
 
 **Узнать больше**
 
-- Ряд ресурсов для начала работы с WebRTC доступен на https://webrtc.org/
+- Ряд ресурсов для начала работы с WebRTC доступен на <https://webrtc.org/>

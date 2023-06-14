@@ -24,13 +24,13 @@ featuredImage: null
 
 > Особенности региональной политики и экономические интеграции Израиля // [ВАК: Наука и бизнес: пути развития](https://elibrary.ru/item.asp?id=50430997) // Курновский Р.М.// Номер: 1 (139) 2023 г. Страницы: 141-143
 
-[Статья [pdf]](/articles/2023-01-osobennosti-regionalnoi-politiki-i-ekonomicheskie-integracii-izrailya.pdf) / [SSRN](https://ssrn.com/abstract=4406861) 
+[Статья [pdf]](/articles/2023-01-osobennosti-regionalnoi-politiki-i-ekonomicheskie-integracii-izrailya.pdf) / [SSRN](https://ssrn.com/abstract=4406861)
 
 > Поддержка икт-экспорта как способ покрытия внутренних потребностей̆ рынка // [XII международной научно-практической конференции «Трансформация экономики и управления: новые вызовы и перспективы»](http://www.fa.ru/fil/spb/science/Pages/Home.aspx) 15-16 декабря 2022г. // Курновский Р.М., Великородная Е. А. //
 
 [Статья [pdf]](/articles/2022-12-podderzhka-ikt-eksporta-kak-sposob-pokrytiya-vnutrennih-potrebnostei-rynka.pdf) / [ResearchGate](https://www.researchgate.net/publication/369694048_2022-12-podderzhka-ikt-eksporta-kak-sposob-pokrytiya-vnutrennih-potrebnostei-rynka)
 
-> [Факторы и условия, определяющие становления финансовой экосистемы в современных условиях](https://www.elibrary.ru/item.asp?id=50018215) // 	[Экономика и предпринимательство](https://www.elibrary.ru/title_about_new.asp?id=27783) // д.э.н., проф. Коновалова М.Е., Курновский Р.М., Ширяева Д.В. // Номер: [8 (145)](https://www.elibrary.ru/contents.asp?id=50018028&selid=50018215) 2022 г. Страницы: 928-931
+> [Факторы и условия, определяющие становления финансовой экосистемы в современных условиях](https://www.elibrary.ru/item.asp?id=50018215) //  [Экономика и предпринимательство](https://www.elibrary.ru/title_about_new.asp?id=27783) // д.э.н., проф. Коновалова М.Е., Курновский Р.М., Ширяева Д.В. // Номер: [8 (145)](https://www.elibrary.ru/contents.asp?id=50018028&selid=50018215) 2022 г. Страницы: 928-931
 
 [Статья [pdf]](/articles/2022-12-faktory-i-usloviya-opredeljajushhie-stanovlenija-finansovoi-ekosistemy-v-sovremennyh-uslovijah.pdf) / [ResearchGate](https://www.researchgate.net/publication/367052691_Faktory_i_uslovia_opredelausie_stanovlenia_finansovoj_ekosistemy_v_sovremennyh_usloviah) / [academia.edu](https://www.academia.edu/s/b9f704001c) / [SSRN](https://ssrn.com/abstract=4346636)
 
@@ -55,6 +55,7 @@ featuredImage: null
 ## Ожидают публикации
 
 - Влияние новой судебной реформы Израиля на развитие международных экономических отношений / 2023/01
+
 ## Codes
 
 - **SCIENCE INDEX SPIN РИНЦ:** [1657-2666](https://www.elibrary.ru/author_profile.asp?authorid=1175655)
@@ -66,9 +67,9 @@ featuredImage: null
 
 ## Links
 
-- https://authors.repec.org/pro/pku734/
-- https://ideas.repec.org/
-- https://econpapers.repec.org/
+- <https://authors.repec.org/pro/pku734/>
+- <https://ideas.repec.org/>
+- <https://econpapers.repec.org/>
 
 ## Площадки
 

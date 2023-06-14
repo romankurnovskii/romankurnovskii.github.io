@@ -13,11 +13,11 @@ authors: [roman-kurnovskii]
 ---
 
 
-In this post, we'll dive deeper into the process of creating, structuring, and publishing a JavaScript package to the npm registry. We'll use the repository https://github.com/romankurnovskii/npm-js-package-template as a reference for this guide.
+In this post, we'll dive deeper into the process of creating, structuring, and publishing a JavaScript package to the npm registry. We'll use the repository <https://github.com/romankurnovskii/npm-js-package-template> as a reference for this guide.
 
 ## TLDR
 
-1. Open template: https://github.com/romankurnovskii/npm-js-package-template
+1. Open template: <https://github.com/romankurnovskii/npm-js-package-template>
 2. Click `Use this template`
 3. Create repo from this template.
 4. git clone new repo
@@ -93,7 +93,6 @@ Before you publish the package, make sure you have followed these steps:
 1. Ensure your code is in the src folder, and the main entry points are `src/index.js` (for modules) and `src/bin.js` (for CLI).
 1. Update the test cases in the `tests` folder.
 
-
 1. After making all the necessary updates to your package, such as updating the README.md, package.json, and other files as needed, ensure that you've built the package by running:
 
 ```sh
@@ -101,6 +100,7 @@ npm run build
 ```
 
 2. Before publishing, you should test your package and ensure that all tests pass:
+
 ```sh
 npm test
 ```
@@ -111,6 +111,7 @@ npm test
 npm run prettier
 npm run lint
 ```
+
 4. If there are any linting issues, you can try to automatically fix them using:
 
 ```sh

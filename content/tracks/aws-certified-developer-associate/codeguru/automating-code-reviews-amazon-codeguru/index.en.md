@@ -27,7 +27,7 @@ date: 2022-07-06
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/blobid0-f4b29bb3-4045-499f-9da7-1eb5cf29e87d.png)
 
-6\. Select **AWS CodeCommit** as the provider, choose **java-web-app** from the repository dropdown, enter _master _into **Source branch** and click **Associate**:
+6\. Select **AWS CodeCommit** as the provider, choose **java-web-app** from the repository dropdown, enter _master_into **Source branch** and click **Associate**:
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220404095359-1-5ca07f22-addb-4ed3-9f52-94ca29b5595b.png)
 
@@ -35,10 +35,9 @@ In roughly one minute, you'll see that CodeGuru has associated with your reposit
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/blobid0-2d79bc2d-bde0-4262-8ad3-704fd23d63b5.png)
 
-
 ## Triggering an Amazon CodeGuru Review
 
-1\. Navigate to  :8080 in your browser. 
+1\. Navigate to  :8080 in your browser.
 
  _Note_: This is the IP of an EC2 instance that can be found in the EC2 console.
 

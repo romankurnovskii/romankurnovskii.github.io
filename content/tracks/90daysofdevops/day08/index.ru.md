@@ -19,11 +19,12 @@ weight: 8
 Прежде чем мы приступим к некоторым основам Go, мы должны установить Go на нашу рабочую станцию и сделать то, чему нас учит каждый модуль [«Изучение программирования 101»](https://www.udemy.com/course/programming-101/), а именно создать приложение Hello World. Так как здесь будут описаны шаги по установке Go на ваш ПК, мы попытаемся задокументировать процесс в картинках, чтобы людям было легко следовать за ним.
 
 Возможные варианты установки Golang
+
 - [Исполняемый файл](https://go.dev/dl/)
 - [Пакет из исходного кода](https://golang.org/doc/install/source#environment-variables)
-- [Mac Os Homebrew](https://formulae.brew.sh/formula/go) 
+- [Mac Os Homebrew](https://formulae.brew.sh/formula/go)
 
-```bash 
+```bash
 #Homebrew install command
 brew install go
 ```
@@ -97,13 +98,14 @@ func main() {
 ```bash
 go run main.go
 ```
+
 ![](Day8_Go11.ru.png?v1)
 
 Однако на этом это не заканчивается, что, если теперь мы захотим взять нашу программу и запустить ее на других машинах с Windows? Мы можем сделать это, создав наш двоичный файл, используя следующую команду
 
 ```bash
 go build main.go
-``` 
+```
 
 ![](Day8_Go12.ru.png?v1)
 
@@ -118,17 +120,15 @@ go build main.go
 
 ![](Day8_Go13.ru.png?v1)
 
-
 ## Источники
 
 - [Быстрое погружение в Golang](https://go.dev/tour/welcome/1)
 - [StackOverflow 2021 Developer Survey](https://insights.stackoverflow.com/survey/2021)
 - [Why we are choosing Golang to learn](https://www.youtube.com/watch?v=7pLqIIAqZD4&t=9s)
-- [Jake Wright - Learn Go in 12 minutes](https://www.youtube.com/watch?v=C8LgvuEBraI&t=312s) 
-- [Techworld with Nana - Golang full course - 3 hours 24 mins](https://www.youtube.com/watch?v=yyUHQIec83I) 
-- [**NOT FREE** Nigel Poulton Pluralsight - Go Fundamentals - 3 hours 26 mins](https://www.pluralsight.com/courses/go-fundamentals) 
-- [FreeCodeCamp -  Learn Go Programming - Golang Tutorial for Beginners](https://www.youtube.com/watch?v=YS4e4q9oBaU&t=1025s) 
-- [Hitesh Choudhary - Complete playlist](https://www.youtube.com/playlist?list=PLRAV69dS1uWSR89FRQGZ6q9BR2b44Tr9N) 
-
+- [Jake Wright - Learn Go in 12 minutes](https://www.youtube.com/watch?v=C8LgvuEBraI&t=312s)
+- [Techworld with Nana - Golang full course - 3 hours 24 mins](https://www.youtube.com/watch?v=yyUHQIec83I)
+- [**NOT FREE** Nigel Poulton Pluralsight - Go Fundamentals - 3 hours 26 mins](https://www.pluralsight.com/courses/go-fundamentals)
+- [FreeCodeCamp -  Learn Go Programming - Golang Tutorial for Beginners](https://www.youtube.com/watch?v=YS4e4q9oBaU&t=1025s)
+- [Hitesh Choudhary - Complete playlist](https://www.youtube.com/playlist?list=PLRAV69dS1uWSR89FRQGZ6q9BR2b44Tr9N)
 
 Увидимся на [9-й день](../day09)

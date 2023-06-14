@@ -1036,6 +1036,3 @@ def say(say_please=False):
 print(say())                 # Can you buy me a beer?
 print(say(say_please=True))  # Can you buy me a beer? Please! I am poor :(
 ```
-
-
-

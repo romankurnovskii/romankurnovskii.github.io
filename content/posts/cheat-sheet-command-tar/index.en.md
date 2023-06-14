@@ -12,13 +12,13 @@ authors: [roman-kurnovskii]
 
 ## Common options
 
-    z	compress with gzip
-    c	create an archive
-    u	append files which are newer than 
+    z compress with gzip
+    c create an archive
+    u append files which are newer than 
         the corresponding copy ibn the archive
-    f	filename of the archive
-    v	verbose, display what is inflated or deflated
-    a	unlike of z, determine compression based on file extension
+    f filename of the archive
+    v verbose, display what is inflated or deflated
+    a unlike of z, determine compression based on file extension
 
 ## Create tar named archive.tar containing directory
 
@@ -31,6 +31,7 @@ tar cf archive.tar /path/files
 ```bash
 tar -cf archive.tar /path/files
 ```
+
 ## Extract the contents from archive.tar
 
 ```bash

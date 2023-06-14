@@ -15,6 +15,7 @@ authors:
 The journey towards creating a light trading bot framework begins with a simple, intuitive graphical user interface (GUI). For this venture, I have chosen to rely on Python's built-in [Tkinter](https://docs.python.org/3/library/tkinter.html) library to provide the fundamental building blocks for my GUI.
 
 ## Embracing Simplicity
+
 The initial goal is to keep the GUI as straightforward as possible, focusing on the core functionalities required for a trading bot. The main elements incorporated are:
 
 - Start/Stop Buttons: These allow the user to control the operation of the bot.

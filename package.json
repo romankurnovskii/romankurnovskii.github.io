@@ -5,11 +5,13 @@
   "repository": "#",
   "author": "Roman Kurnovskii <r.kurnovskii@gmail.com>",
   "scripts": {
+    "md-lint": "markdownlint-cli2 \"**/*.md\" \"#node_modules\"",
+    "md-lint-fix": "markdownlint-cli2 --fix \"**/*.md\" \"#node_modules\"",
     "hugo-lunr-ml": "hugo-lunr-ml",
     "pull-git-modules": "git submodule update --init --recursive",
     "upd-modules": "git submodule update --remote --merge",
     "push": "git add .; git commit -am upd; git push",
-    "p": "git commit -am upd; git pull; npm run upd-modules; npm run push"
+    "p": "md-lint-fix; git commit -am upd; git pull; npm run upd-modules; npm run push"
   },
   "browserslist": [
     "last 1 version",
@@ -29,6 +31,7 @@
     "autoprefixer": "^10.4.14",
     "cssnano": "^6.0.1",
     "hugo-lunr-ml": "^3.1.0",
+    "markdownlint-cli2": "^0.8.1",
     "postcss": "^8.4.24",
     "postcss-cli": "10.1.0",
     "postcss-import": "^15.1.0",

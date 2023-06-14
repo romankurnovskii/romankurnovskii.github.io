@@ -13,5 +13,4 @@ weight: 0
 
 Source code of examples can be found in the [repo](https://github.com/romankurnovskii/awesome-hugo-shortcodes)
 
-
 - [Image](img) - insert resizable image in post

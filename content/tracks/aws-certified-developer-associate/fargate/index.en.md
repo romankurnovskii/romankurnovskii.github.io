@@ -24,7 +24,6 @@ Compatible with both Amazon Elastic Container Service (ECS) and Amazon Elastic K
 - [Documentation](https://aws.amazon.com/fargate/)
 - [User Guide](https://docs.aws.amazon.com/fargate/?id=docs_gateway)
 
-
 ![AWS Fargate Flow](https://d1.awsstatic.com/re19/FargateonEKS/Product-Page-Diagram_Fargate%402x.a20fb2b15c2aebeda3a44dbbb0b10b82fb89aa6a.png)
 
 ### Alternatives
@@ -36,7 +35,6 @@ Compatible with both Amazon Elastic Container Service (ECS) and Amazon Elastic K
 - Azure Container Instances
 - Cloud Foundry
 - Oracle Cloud Infrastructure Container Engine for Kubernetes
-
 
 ## Price
 

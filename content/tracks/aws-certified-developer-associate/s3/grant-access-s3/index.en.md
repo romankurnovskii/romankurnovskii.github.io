@@ -91,7 +91,7 @@ This is a permissive policy that allows `GetObject` access to anyone. More restr
 
 Notice the Resource is currently "BUCKET_ARN/*",  which is causing an error.  We need to replace this with the ARN of the bucket we created:
 
-10. Click the copy icon under **Bucket ARN **and replace `BUCKET_ARN` in the value of the `Resource` key with the ARN you just copied :
+10. Click the copy icon under **Bucket ARN**and replace `BUCKET_ARN` in the value of the `Resource` key with the ARN you just copied :
 
 _Note_: Ensure that you preserve the `/*` at the end of the value. This means that the policy will apply to all objects inside the bucket recursively. Public access won't be granted if this is not present.
 
@@ -101,4 +101,4 @@ You will see a green notification that the bucket policy was edited.
 
 13. Return to the browser tab where access was denied and fresh the browser tab.
 
-You will see the response change from “Access Denied” to the logo: 
+You will see the response change from “Access Denied” to the logo:

@@ -14,6 +14,7 @@ id: 1048704
 weight: 23
 ---
 ## Протоколы сети
+
 Набор правил и сообщений, образующих стандарт.
 
 - ARP - Address Resolution Protocol - протокол разрешения адресов
@@ -21,7 +22,6 @@ weight: 23
 Если вы хотите по-настоящему разобраться в ARP, вы можете прочитать Internet Standard здесь [RFC 826](https://datatracker.ietf.org/doc/html/rfc826)
 
 ARP соединяет IP-адреса с фиксированными физическими адресами машин, также известными как MAC-адреса, в сети уровня 2.
-
 
 ![](../images/Day23_Networking1.ru.png?v1)
 
@@ -71,10 +71,10 @@ DNS используется для сопоставления удобных д
 
 На каждом хосте нам нужны 4 вещи, чтобы он мог выполнять обе эти задачи.
 
-- IP Address 
-- Subnet Mask 
-- Default Gateway 
-- DNS 
+- IP Address
+- Subnet Mask
+- Default Gateway
+- DNS
 
 Мы рассмотрели IP-адрес, являющийся уникальным адресом для вашего хоста в сети, в которой он находится, мы можем думать об этом как о нашем домашнем номере.
 
@@ -114,8 +114,7 @@ DNS используется для сопоставления удобных д
 
 ![](../images/Day23_Networking9.ru.png?v1)
 
-## Ресурсы 
+## Ресурсы
 
 - [Computer Networking full course](https://www.youtube.com/watch?v=IPvYjXCsTg8)
 - [Practical Networking](http://www.practicalnetworking.net/)
-

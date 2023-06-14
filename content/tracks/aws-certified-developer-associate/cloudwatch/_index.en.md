@@ -21,7 +21,6 @@ CloudWatch can provide a dependable, scalable, & flexible monitoring solution th
 
 ![Amazon CloudWatch Flow](https://d1.awsstatic.com/product-marketing/cloudwatch/product-page-diagram_Cloudwatch_v4.55c15d1cc086395cbd5ad279a2f1fc37e8452e77.png)
 
-
 ### CloudWatch vs CloudTrail
 
    | CloudWatch                                              | CloudTrail                                                               |
@@ -33,9 +32,7 @@ CloudWatch can provide a dependable, scalable, & flexible monitoring solution th
    | Logs stored indefinitely                                | Logs stored to S3 or CloudWatch indefinitely                             |
    | Alarms history for 14 days                              | No native alarming; can use CloudWatch alarms                            |
 
-
 ## Digest
-
 
 - Standard vs High resolution metrics.
 - CloudWatch unified agent collect both system metrics and log files from Amazon EC2 Instances and on-premise servers. The agent supports both Windows Server and Linux, and enables to select the metrics to be collected, including sub-resource metrics such as per-CPU core. Aside from the usual metrics, it also tracks the memory, swap, and disk space utilization metrics of your server.
@@ -43,7 +40,6 @@ CloudWatch can provide a dependable, scalable, & flexible monitoring solution th
 - RAM Utilization needs custom metrics
 - which use-cases are covered in Standard metrics and which ones would need custom metrics.  (memory utilization needs custom metrics)
 - Basic (5 min) vs detailed (1 min) vs high resolution (1s) monitoring.
-
 
 ## Price
 
@@ -53,7 +49,7 @@ CloudWatch can provide a dependable, scalable, & flexible monitoring solution th
 
 Type: Operate
 
-Same type services: CloudWatch, CloudTrail, Systems Manager, Cost & usage report, Cost explorer, Managed Services	
+Same type services: CloudWatch, CloudTrail, Systems Manager, Cost & usage report, Cost explorer, Managed Services 
 
 ## Practice
 
@@ -70,17 +66,16 @@ Same type services: CloudWatch, CloudTrail, Systems Manager, Cost & usage report
 1. Retrieve the log data from AWS CloudTrail using the LookupEvents API Call
 2. Retrieve the log data from [CloudWatch](../cloudwatch) using the GetMetricData API call
 3. Launch a new [EC2](../ec2) instance, configure [Amazon CloudWatch](../cloudwatch) Events, and then install the application
-4. Install the [Amazon CloudWatch](../cloudwatch) logs agent on the [EC2](../ec2) instance that the application is running on 
+4. Install the [Amazon CloudWatch](../cloudwatch) logs agent on the [EC2](../ec2) instance that the application is running on
 
 <details>
 <summary>Explanation</summary>
 <div>
 
-<mark style="color:white">4</mark> 
+<mark style="color:white">4</mark>
 
 </div>
 </details>
-
 
 ### Q2
 
@@ -97,7 +92,7 @@ Same type services: CloudWatch, CloudTrail, Systems Manager, Cost & usage report
 <summary>Explanation</summary>
 <div>
 
-<mark style="color:white">3</mark> 
+<mark style="color:white">3</mark>
 
 </div>
 </details>
@@ -117,7 +112,7 @@ Same type services: CloudWatch, CloudTrail, Systems Manager, Cost & usage report
 <summary>Explanation</summary>
 <div>
 
-<mark style="color:white">3</mark> 
+<mark style="color:white">3</mark>
 
 </div>
 </details>

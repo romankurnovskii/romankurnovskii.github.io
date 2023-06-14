@@ -13,7 +13,7 @@ authors: [roman-kurnovskii]
 ---
 
 
-1. Open template: https://github.com/romankurnovskii/npm-typescript-package-template
+1. Open template: <https://github.com/romankurnovskii/npm-typescript-package-template>
 2. Click `Use this template`
 3. Create repo from this template.
 4. git clone new repo

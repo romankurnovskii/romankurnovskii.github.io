@@ -123,7 +123,6 @@ const sortedItems = allItems.sort((itemA, itemB) =>
     );
 ```
 
-
 ## Login
 
 [Secure Your Node.js App with JSON Web Tokens](https://blog.appsignal.com/2022/09/14/secure-your-nodejs-app-with-json-web-tokens)
@@ -860,7 +859,6 @@ const add = (firstNumber, secondNumber) => {
 
 ## Cheat Sheet Typescript
 
-
 ```typescript
 // There are 3 basic types in TypeScript
 let isDone: boolean = false;
@@ -1133,4 +1131,4 @@ foo.baz = 'hello world'
 ## Resources
 
 - [react cheatsheet](https://devhints.io/react)
-- https://learnxinyminutes.com/docs/typescript/
+- <https://learnxinyminutes.com/docs/typescript/>
