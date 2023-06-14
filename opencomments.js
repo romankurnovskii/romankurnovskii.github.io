@@ -24183,6 +24183,7 @@
       exports.replaceCodePoint = exports.fromCodePoint = void 0;
       var decodeMap = /* @__PURE__ */ new Map([
         [0, 65533],
+        // C1 Unicode control character reference replacements
         [128, 8364],
         [130, 8218],
         [131, 402],
@@ -24241,16 +24242,48 @@
   var require_decode = __commonJS({
     "node_modules/entities/lib/decode.js"(exports) {
       "use strict";
+      var __createBinding = exports && exports.__createBinding || (Object.create ? function(o, m, k, k2) {
+        if (k2 === void 0)
+          k2 = k;
+        var desc = Object.getOwnPropertyDescriptor(m, k);
+        if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+          desc = { enumerable: true, get: function() {
+            return m[k];
+          } };
+        }
+        Object.defineProperty(o, k2, desc);
+      } : function(o, m, k, k2) {
+        if (k2 === void 0)
+          k2 = k;
+        o[k2] = m[k];
+      });
+      var __setModuleDefault = exports && exports.__setModuleDefault || (Object.create ? function(o, v) {
+        Object.defineProperty(o, "default", { enumerable: true, value: v });
+      } : function(o, v) {
+        o["default"] = v;
+      });
+      var __importStar = exports && exports.__importStar || function(mod) {
+        if (mod && mod.__esModule)
+          return mod;
+        var result = {};
+        if (mod != null) {
+          for (var k in mod)
+            if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k))
+              __createBinding(result, mod, k);
+        }
+        __setModuleDefault(result, mod);
+        return result;
+      };
       var __importDefault = exports && exports.__importDefault || function(mod) {
         return mod && mod.__esModule ? mod : { "default": mod };
       };
       Object.defineProperty(exports, "__esModule", { value: true });
-      exports.decodeXML = exports.decodeHTMLStrict = exports.decodeHTML = exports.determineBranch = exports.BinTrieFlags = exports.fromCodePoint = exports.replaceCodePoint = exports.decodeCodePoint = exports.xmlDecodeTree = exports.htmlDecodeTree = void 0;
+      exports.decodeXML = exports.decodeHTMLStrict = exports.decodeHTMLAttribute = exports.decodeHTML = exports.determineBranch = exports.EntityDecoder = exports.DecodingMode = exports.BinTrieFlags = exports.fromCodePoint = exports.replaceCodePoint = exports.decodeCodePoint = exports.xmlDecodeTree = exports.htmlDecodeTree = void 0;
       var decode_data_html_js_1 = __importDefault(require_decode_data_html());
       exports.htmlDecodeTree = decode_data_html_js_1.default;
       var decode_data_xml_js_1 = __importDefault(require_decode_data_xml());
       exports.xmlDecodeTree = decode_data_xml_js_1.default;
-      var decode_codepoint_js_1 = __importDefault(require_decode_codepoint());
+      var decode_codepoint_js_1 = __importStar(require_decode_codepoint());
       exports.decodeCodePoint = decode_codepoint_js_1.default;
       var decode_codepoint_js_2 = require_decode_codepoint();
       Object.defineProperty(exports, "replaceCodePoint", { enumerable: true, get: function() {
@@ -24263,81 +24296,259 @@
       (function(CharCodes2) {
         CharCodes2[CharCodes2["NUM"] = 35] = "NUM";
         CharCodes2[CharCodes2["SEMI"] = 59] = "SEMI";
+        CharCodes2[CharCodes2["EQUALS"] = 61] = "EQUALS";
         CharCodes2[CharCodes2["ZERO"] = 48] = "ZERO";
         CharCodes2[CharCodes2["NINE"] = 57] = "NINE";
         CharCodes2[CharCodes2["LOWER_A"] = 97] = "LOWER_A";
         CharCodes2[CharCodes2["LOWER_F"] = 102] = "LOWER_F";
         CharCodes2[CharCodes2["LOWER_X"] = 120] = "LOWER_X";
-        CharCodes2[CharCodes2["To_LOWER_BIT"] = 32] = "To_LOWER_BIT";
+        CharCodes2[CharCodes2["LOWER_Z"] = 122] = "LOWER_Z";
+        CharCodes2[CharCodes2["UPPER_A"] = 65] = "UPPER_A";
+        CharCodes2[CharCodes2["UPPER_F"] = 70] = "UPPER_F";
+        CharCodes2[CharCodes2["UPPER_Z"] = 90] = "UPPER_Z";
       })(CharCodes || (CharCodes = {}));
+      var TO_LOWER_BIT = 32;
       var BinTrieFlags;
       (function(BinTrieFlags2) {
         BinTrieFlags2[BinTrieFlags2["VALUE_LENGTH"] = 49152] = "VALUE_LENGTH";
         BinTrieFlags2[BinTrieFlags2["BRANCH_LENGTH"] = 16256] = "BRANCH_LENGTH";
         BinTrieFlags2[BinTrieFlags2["JUMP_TABLE"] = 127] = "JUMP_TABLE";
       })(BinTrieFlags = exports.BinTrieFlags || (exports.BinTrieFlags = {}));
-      function getDecoder(decodeTree) {
-        return function decodeHTMLBinary(str, strict) {
-          var ret = "";
-          var lastIdx = 0;
-          var strIdx = 0;
-          while ((strIdx = str.indexOf("&", strIdx)) >= 0) {
-            ret += str.slice(lastIdx, strIdx);
-            lastIdx = strIdx;
-            strIdx += 1;
-            if (str.charCodeAt(strIdx) === CharCodes.NUM) {
-              var start = strIdx + 1;
-              var base = 10;
-              var cp = str.charCodeAt(start);
-              if ((cp | CharCodes.To_LOWER_BIT) === CharCodes.LOWER_X) {
-                base = 16;
-                strIdx += 1;
-                start += 1;
-              }
-              do
-                cp = str.charCodeAt(++strIdx);
-              while (cp >= CharCodes.ZERO && cp <= CharCodes.NINE || base === 16 && (cp | CharCodes.To_LOWER_BIT) >= CharCodes.LOWER_A && (cp | CharCodes.To_LOWER_BIT) <= CharCodes.LOWER_F);
-              if (start !== strIdx) {
-                var entity = str.substring(start, strIdx);
-                var parsed = parseInt(entity, base);
-                if (str.charCodeAt(strIdx) === CharCodes.SEMI) {
-                  strIdx += 1;
-                } else if (strict) {
-                  continue;
-                }
-                ret += (0, decode_codepoint_js_1.default)(parsed);
-                lastIdx = strIdx;
-              }
-              continue;
-            }
-            var resultIdx = 0;
-            var excess = 1;
-            var treeIdx = 0;
-            var current = decodeTree[treeIdx];
-            for (; strIdx < str.length; strIdx++, excess++) {
-              treeIdx = determineBranch(decodeTree, current, treeIdx + 1, str.charCodeAt(strIdx));
-              if (treeIdx < 0)
-                break;
-              current = decodeTree[treeIdx];
-              var masked = current & BinTrieFlags.VALUE_LENGTH;
-              if (masked) {
-                if (!strict || str.charCodeAt(strIdx) === CharCodes.SEMI) {
-                  resultIdx = treeIdx;
-                  excess = 0;
-                }
-                var valueLength = (masked >> 14) - 1;
-                if (valueLength === 0)
-                  break;
-                treeIdx += valueLength;
-              }
-            }
-            if (resultIdx !== 0) {
-              var valueLength = (decodeTree[resultIdx] & BinTrieFlags.VALUE_LENGTH) >> 14;
-              ret += valueLength === 1 ? String.fromCharCode(decodeTree[resultIdx] & ~BinTrieFlags.VALUE_LENGTH) : valueLength === 2 ? String.fromCharCode(decodeTree[resultIdx + 1]) : String.fromCharCode(decodeTree[resultIdx + 1], decodeTree[resultIdx + 2]);
-              lastIdx = strIdx - excess + 1;
-            }
+      function isNumber(code) {
+        return code >= CharCodes.ZERO && code <= CharCodes.NINE;
+      }
+      function isHexadecimalCharacter(code) {
+        return code >= CharCodes.UPPER_A && code <= CharCodes.UPPER_F || code >= CharCodes.LOWER_A && code <= CharCodes.LOWER_F;
+      }
+      function isAsciiAlphaNumeric(code) {
+        return code >= CharCodes.UPPER_A && code <= CharCodes.UPPER_Z || code >= CharCodes.LOWER_A && code <= CharCodes.LOWER_Z || isNumber(code);
+      }
+      function isEntityInAttributeInvalidEnd(code) {
+        return code === CharCodes.EQUALS || isAsciiAlphaNumeric(code);
+      }
+      var EntityDecoderState;
+      (function(EntityDecoderState2) {
+        EntityDecoderState2[EntityDecoderState2["EntityStart"] = 0] = "EntityStart";
+        EntityDecoderState2[EntityDecoderState2["NumericStart"] = 1] = "NumericStart";
+        EntityDecoderState2[EntityDecoderState2["NumericDecimal"] = 2] = "NumericDecimal";
+        EntityDecoderState2[EntityDecoderState2["NumericHex"] = 3] = "NumericHex";
+        EntityDecoderState2[EntityDecoderState2["NamedEntity"] = 4] = "NamedEntity";
+      })(EntityDecoderState || (EntityDecoderState = {}));
+      var DecodingMode;
+      (function(DecodingMode2) {
+        DecodingMode2[DecodingMode2["Legacy"] = 0] = "Legacy";
+        DecodingMode2[DecodingMode2["Strict"] = 1] = "Strict";
+        DecodingMode2[DecodingMode2["Attribute"] = 2] = "Attribute";
+      })(DecodingMode = exports.DecodingMode || (exports.DecodingMode = {}));
+      var EntityDecoder = (
+        /** @class */
+        function() {
+          function EntityDecoder2(decodeTree, emitCodePoint, errors) {
+            this.decodeTree = decodeTree;
+            this.emitCodePoint = emitCodePoint;
+            this.errors = errors;
+            this.state = EntityDecoderState.EntityStart;
+            this.consumed = 1;
+            this.result = 0;
+            this.treeIndex = 0;
+            this.excess = 1;
+            this.decodeMode = DecodingMode.Strict;
           }
-          return ret + str.slice(lastIdx);
+          EntityDecoder2.prototype.startEntity = function(decodeMode) {
+            this.decodeMode = decodeMode;
+            this.state = EntityDecoderState.EntityStart;
+            this.result = 0;
+            this.treeIndex = 0;
+            this.excess = 1;
+            this.consumed = 1;
+          };
+          EntityDecoder2.prototype.write = function(str, offset) {
+            switch (this.state) {
+              case EntityDecoderState.EntityStart: {
+                if (str.charCodeAt(offset) === CharCodes.NUM) {
+                  this.state = EntityDecoderState.NumericStart;
+                  this.consumed += 1;
+                  return this.stateNumericStart(str, offset + 1);
+                }
+                this.state = EntityDecoderState.NamedEntity;
+                return this.stateNamedEntity(str, offset);
+              }
+              case EntityDecoderState.NumericStart: {
+                return this.stateNumericStart(str, offset);
+              }
+              case EntityDecoderState.NumericDecimal: {
+                return this.stateNumericDecimal(str, offset);
+              }
+              case EntityDecoderState.NumericHex: {
+                return this.stateNumericHex(str, offset);
+              }
+              case EntityDecoderState.NamedEntity: {
+                return this.stateNamedEntity(str, offset);
+              }
+            }
+          };
+          EntityDecoder2.prototype.stateNumericStart = function(str, offset) {
+            if (offset >= str.length) {
+              return -1;
+            }
+            if ((str.charCodeAt(offset) | TO_LOWER_BIT) === CharCodes.LOWER_X) {
+              this.state = EntityDecoderState.NumericHex;
+              this.consumed += 1;
+              return this.stateNumericHex(str, offset + 1);
+            }
+            this.state = EntityDecoderState.NumericDecimal;
+            return this.stateNumericDecimal(str, offset);
+          };
+          EntityDecoder2.prototype.addToNumericResult = function(str, start, end, base) {
+            if (start !== end) {
+              var digitCount = end - start;
+              this.result = this.result * Math.pow(base, digitCount) + parseInt(str.substr(start, digitCount), base);
+              this.consumed += digitCount;
+            }
+          };
+          EntityDecoder2.prototype.stateNumericHex = function(str, offset) {
+            var startIdx = offset;
+            while (offset < str.length) {
+              var char = str.charCodeAt(offset);
+              if (isNumber(char) || isHexadecimalCharacter(char)) {
+                offset += 1;
+              } else {
+                this.addToNumericResult(str, startIdx, offset, 16);
+                return this.emitNumericEntity(char, 3);
+              }
+            }
+            this.addToNumericResult(str, startIdx, offset, 16);
+            return -1;
+          };
+          EntityDecoder2.prototype.stateNumericDecimal = function(str, offset) {
+            var startIdx = offset;
+            while (offset < str.length) {
+              var char = str.charCodeAt(offset);
+              if (isNumber(char)) {
+                offset += 1;
+              } else {
+                this.addToNumericResult(str, startIdx, offset, 10);
+                return this.emitNumericEntity(char, 2);
+              }
+            }
+            this.addToNumericResult(str, startIdx, offset, 10);
+            return -1;
+          };
+          EntityDecoder2.prototype.emitNumericEntity = function(lastCp, expectedLength) {
+            var _a;
+            if (this.consumed <= expectedLength) {
+              (_a = this.errors) === null || _a === void 0 ? void 0 : _a.absenceOfDigitsInNumericCharacterReference(this.consumed);
+              return 0;
+            }
+            if (lastCp === CharCodes.SEMI) {
+              this.consumed += 1;
+            } else if (this.decodeMode === DecodingMode.Strict) {
+              return 0;
+            }
+            this.emitCodePoint((0, decode_codepoint_js_1.replaceCodePoint)(this.result), this.consumed);
+            if (this.errors) {
+              if (lastCp !== CharCodes.SEMI) {
+                this.errors.missingSemicolonAfterCharacterReference();
+              }
+              this.errors.validateNumericCharacterReference(this.result);
+            }
+            return this.consumed;
+          };
+          EntityDecoder2.prototype.stateNamedEntity = function(str, offset) {
+            var decodeTree = this.decodeTree;
+            var current = decodeTree[this.treeIndex];
+            var valueLength = (current & BinTrieFlags.VALUE_LENGTH) >> 14;
+            for (; offset < str.length; offset++, this.excess++) {
+              var char = str.charCodeAt(offset);
+              this.treeIndex = determineBranch(decodeTree, current, this.treeIndex + Math.max(1, valueLength), char);
+              if (this.treeIndex < 0) {
+                return this.result === 0 || // If we are parsing an attribute
+                this.decodeMode === DecodingMode.Attribute && // We shouldn't have consumed any characters after the entity,
+                (valueLength === 0 || // And there should be no invalid characters.
+                isEntityInAttributeInvalidEnd(char)) ? 0 : this.emitNotTerminatedNamedEntity();
+              }
+              current = decodeTree[this.treeIndex];
+              valueLength = (current & BinTrieFlags.VALUE_LENGTH) >> 14;
+              if (valueLength !== 0) {
+                if (char === CharCodes.SEMI) {
+                  return this.emitNamedEntityData(this.treeIndex, valueLength, this.consumed + this.excess);
+                }
+                if (this.decodeMode !== DecodingMode.Strict) {
+                  this.result = this.treeIndex;
+                  this.consumed += this.excess;
+                  this.excess = 0;
+                }
+              }
+            }
+            return -1;
+          };
+          EntityDecoder2.prototype.emitNotTerminatedNamedEntity = function() {
+            var _a;
+            var _b = this, result = _b.result, decodeTree = _b.decodeTree;
+            var valueLength = (decodeTree[result] & BinTrieFlags.VALUE_LENGTH) >> 14;
+            this.emitNamedEntityData(result, valueLength, this.consumed);
+            (_a = this.errors) === null || _a === void 0 ? void 0 : _a.missingSemicolonAfterCharacterReference();
+            return this.consumed;
+          };
+          EntityDecoder2.prototype.emitNamedEntityData = function(result, valueLength, consumed) {
+            var decodeTree = this.decodeTree;
+            this.emitCodePoint(valueLength === 1 ? decodeTree[result] & ~BinTrieFlags.VALUE_LENGTH : decodeTree[result + 1], consumed);
+            if (valueLength === 3) {
+              this.emitCodePoint(decodeTree[result + 2], consumed);
+            }
+            return consumed;
+          };
+          EntityDecoder2.prototype.end = function() {
+            var _a;
+            switch (this.state) {
+              case EntityDecoderState.NamedEntity: {
+                return this.result !== 0 && (this.decodeMode !== DecodingMode.Attribute || this.result === this.treeIndex) ? this.emitNotTerminatedNamedEntity() : 0;
+              }
+              case EntityDecoderState.NumericDecimal: {
+                return this.emitNumericEntity(0, 2);
+              }
+              case EntityDecoderState.NumericHex: {
+                return this.emitNumericEntity(0, 3);
+              }
+              case EntityDecoderState.NumericStart: {
+                (_a = this.errors) === null || _a === void 0 ? void 0 : _a.absenceOfDigitsInNumericCharacterReference(this.consumed);
+                return 0;
+              }
+              case EntityDecoderState.EntityStart: {
+                return 0;
+              }
+            }
+          };
+          return EntityDecoder2;
+        }()
+      );
+      exports.EntityDecoder = EntityDecoder;
+      function getDecoder(decodeTree) {
+        var ret = "";
+        var decoder = new EntityDecoder(decodeTree, function(str) {
+          return ret += (0, decode_codepoint_js_1.fromCodePoint)(str);
+        });
+        return function decodeWithTrie(str, decodeMode) {
+          var lastIndex = 0;
+          var offset = 0;
+          while ((offset = str.indexOf("&", offset)) >= 0) {
+            ret += str.slice(lastIndex, offset);
+            decoder.startEntity(decodeMode);
+            var len = decoder.write(
+              str,
+              // Skip the "&"
+              offset + 1
+            );
+            if (len < 0) {
+              lastIndex = offset + decoder.end();
+              break;
+            }
+            lastIndex = offset + len;
+            offset = len === 0 ? lastIndex + 1 : lastIndex;
+          }
+          var result = ret + str.slice(lastIndex);
+          ret = "";
+          return result;
         };
       }
       function determineBranch(decodeTree, current, nodeIdx, char) {
@@ -24368,16 +24579,23 @@
       exports.determineBranch = determineBranch;
       var htmlDecoder = getDecoder(decode_data_html_js_1.default);
       var xmlDecoder = getDecoder(decode_data_xml_js_1.default);
-      function decodeHTML(str) {
-        return htmlDecoder(str, false);
+      function decodeHTML(str, mode) {
+        if (mode === void 0) {
+          mode = DecodingMode.Legacy;
+        }
+        return htmlDecoder(str, mode);
       }
       exports.decodeHTML = decodeHTML;
+      function decodeHTMLAttribute(str) {
+        return htmlDecoder(str, DecodingMode.Attribute);
+      }
+      exports.decodeHTMLAttribute = decodeHTMLAttribute;
       function decodeHTMLStrict(str) {
-        return htmlDecoder(str, true);
+        return htmlDecoder(str, DecodingMode.Strict);
       }
       exports.decodeHTMLStrict = decodeHTMLStrict;
       function decodeXML(str) {
-        return xmlDecoder(str, true);
+        return xmlDecoder(str, DecodingMode.Strict);
       }
       exports.decodeXML = decodeXML;
     }
@@ -24446,11 +24664,7 @@
         State2[State2["BeforeSpecialS"] = 22] = "BeforeSpecialS";
         State2[State2["SpecialStartSequence"] = 23] = "SpecialStartSequence";
         State2[State2["InSpecialTag"] = 24] = "InSpecialTag";
-        State2[State2["BeforeEntity"] = 25] = "BeforeEntity";
-        State2[State2["BeforeNumericEntity"] = 26] = "BeforeNumericEntity";
-        State2[State2["InNamedEntity"] = 27] = "InNamedEntity";
-        State2[State2["InNumericEntity"] = 28] = "InNumericEntity";
-        State2[State2["InHexEntity"] = 29] = "InHexEntity";
+        State2[State2["InEntity"] = 25] = "InEntity";
       })(State || (State = {}));
       function isWhitespace(c) {
         return c === CharCodes.Space || c === CharCodes.NewLine || c === CharCodes.Tab || c === CharCodes.FormFeed || c === CharCodes.CarriageReturn;
@@ -24458,14 +24672,8 @@
       function isEndOfTagSection(c) {
         return c === CharCodes.Slash || c === CharCodes.Gt || isWhitespace(c);
       }
-      function isNumber(c) {
-        return c >= CharCodes.Zero && c <= CharCodes.Nine;
-      }
       function isASCIIAlpha(c) {
         return c >= CharCodes.LowerA && c <= CharCodes.LowerZ || c >= CharCodes.UpperA && c <= CharCodes.UpperZ;
-      }
-      function isHexDigit(c) {
-        return c >= CharCodes.UpperA && c <= CharCodes.UpperF || c >= CharCodes.LowerA && c <= CharCodes.LowerF;
       }
       var QuoteType;
       (function(QuoteType2) {
@@ -24488,24 +24696,24 @@
         function() {
           function Tokenizer3(_a, cbs) {
             var _b = _a.xmlMode, xmlMode = _b === void 0 ? false : _b, _c = _a.decodeEntities, decodeEntities = _c === void 0 ? true : _c;
+            var _this = this;
             this.cbs = cbs;
             this.state = State.Text;
             this.buffer = "";
             this.sectionStart = 0;
             this.index = 0;
+            this.entityStart = 0;
             this.baseState = State.Text;
             this.isSpecial = false;
             this.running = true;
             this.offset = 0;
             this.currentSequence = void 0;
             this.sequenceIndex = 0;
-            this.trieIndex = 0;
-            this.trieCurrent = 0;
-            this.entityResult = 0;
-            this.entityExcess = 0;
             this.xmlMode = xmlMode;
             this.decodeEntities = decodeEntities;
-            this.entityTrie = xmlMode ? decode_js_1.xmlDecodeTree : decode_js_1.htmlDecodeTree;
+            this.entityDecoder = new decode_js_1.EntityDecoder(xmlMode ? decode_js_1.xmlDecodeTree : decode_js_1.htmlDecodeTree, function(cp, consumed) {
+              return _this.emitCodePoint(cp, consumed);
+            });
           }
           Tokenizer3.prototype.reset = function() {
             this.state = State.Text;
@@ -24535,12 +24743,6 @@
               this.parse();
             }
           };
-          Tokenizer3.prototype.getIndex = function() {
-            return this.index;
-          };
-          Tokenizer3.prototype.getSectionStart = function() {
-            return this.sectionStart;
-          };
           Tokenizer3.prototype.stateText = function(c) {
             if (c === CharCodes.Lt || !this.decodeEntities && this.fastForwardTo(CharCodes.Lt)) {
               if (this.index > this.sectionStart) {
@@ -24549,7 +24751,7 @@
               this.state = State.BeforeTagName;
               this.sectionStart = this.index;
             } else if (this.decodeEntities && c === CharCodes.Amp) {
-              this.state = State.BeforeEntity;
+              this.startEntity();
             }
           };
           Tokenizer3.prototype.stateSpecialStartSequence = function(c) {
@@ -24593,7 +24795,7 @@
             } else if (this.sequenceIndex === 0) {
               if (this.currentSequence === Sequences.TitleEnd) {
                 if (this.decodeEntities && c === CharCodes.Amp) {
-                  this.state = State.BeforeEntity;
+                  this.startEntity();
                 }
               } else if (this.fastForwardTo(CharCodes.Lt)) {
                 this.sequenceIndex = 1;
@@ -24704,7 +24906,6 @@
           Tokenizer3.prototype.stateAfterClosingTagName = function(c) {
             if (c === CharCodes.Gt || this.fastForwardTo(CharCodes.Gt)) {
               this.state = State.Text;
-              this.baseState = State.Text;
               this.sectionStart = this.index + 1;
             }
           };
@@ -24717,7 +24918,6 @@
               } else {
                 this.state = State.Text;
               }
-              this.baseState = this.state;
               this.sectionStart = this.index + 1;
             } else if (c === CharCodes.Slash) {
               this.state = State.InSelfClosingTag;
@@ -24730,7 +24930,6 @@
             if (c === CharCodes.Gt) {
               this.cbs.onselfclosingtag(this.index);
               this.state = State.Text;
-              this.baseState = State.Text;
               this.sectionStart = this.index + 1;
               this.isSpecial = false;
             } else if (!isWhitespace(c)) {
@@ -24779,8 +24978,7 @@
               this.cbs.onattribend(quote === CharCodes.DoubleQuote ? QuoteType.Double : QuoteType.Single, this.index);
               this.state = State.BeforeAttributeName;
             } else if (this.decodeEntities && c === CharCodes.Amp) {
-              this.baseState = this.state;
-              this.state = State.BeforeEntity;
+              this.startEntity();
             }
           };
           Tokenizer3.prototype.stateInAttributeValueDoubleQuotes = function(c) {
@@ -24797,8 +24995,7 @@
               this.state = State.BeforeAttributeName;
               this.stateBeforeAttributeName(c);
             } else if (this.decodeEntities && c === CharCodes.Amp) {
-              this.baseState = this.state;
-              this.state = State.BeforeEntity;
+              this.startEntity();
             }
           };
           Tokenizer3.prototype.stateBeforeDeclaration = function(c) {
@@ -24851,125 +25048,22 @@
               this.stateInTagName(c);
             }
           };
-          Tokenizer3.prototype.stateBeforeEntity = function(c) {
-            this.entityExcess = 1;
-            this.entityResult = 0;
-            if (c === CharCodes.Number) {
-              this.state = State.BeforeNumericEntity;
-            } else if (c === CharCodes.Amp) {
+          Tokenizer3.prototype.startEntity = function() {
+            this.baseState = this.state;
+            this.state = State.InEntity;
+            this.entityStart = this.index;
+            this.entityDecoder.startEntity(this.xmlMode ? decode_js_1.DecodingMode.Strict : this.baseState === State.Text || this.baseState === State.InSpecialTag ? decode_js_1.DecodingMode.Legacy : decode_js_1.DecodingMode.Attribute);
+          };
+          Tokenizer3.prototype.stateInEntity = function() {
+            var length = this.entityDecoder.write(this.buffer, this.index - this.offset);
+            if (length >= 0) {
+              this.state = this.baseState;
+              if (length === 0) {
+                this.index = this.entityStart;
+              }
             } else {
-              this.trieIndex = 0;
-              this.trieCurrent = this.entityTrie[0];
-              this.state = State.InNamedEntity;
-              this.stateInNamedEntity(c);
+              this.index = this.offset + this.buffer.length - 1;
             }
-          };
-          Tokenizer3.prototype.stateInNamedEntity = function(c) {
-            this.entityExcess += 1;
-            this.trieIndex = (0, decode_js_1.determineBranch)(this.entityTrie, this.trieCurrent, this.trieIndex + 1, c);
-            if (this.trieIndex < 0) {
-              this.emitNamedEntity();
-              this.index--;
-              return;
-            }
-            this.trieCurrent = this.entityTrie[this.trieIndex];
-            var masked = this.trieCurrent & decode_js_1.BinTrieFlags.VALUE_LENGTH;
-            if (masked) {
-              var valueLength = (masked >> 14) - 1;
-              if (!this.allowLegacyEntity() && c !== CharCodes.Semi) {
-                this.trieIndex += valueLength;
-              } else {
-                var entityStart = this.index - this.entityExcess + 1;
-                if (entityStart > this.sectionStart) {
-                  this.emitPartial(this.sectionStart, entityStart);
-                }
-                this.entityResult = this.trieIndex;
-                this.trieIndex += valueLength;
-                this.entityExcess = 0;
-                this.sectionStart = this.index + 1;
-                if (valueLength === 0) {
-                  this.emitNamedEntity();
-                }
-              }
-            }
-          };
-          Tokenizer3.prototype.emitNamedEntity = function() {
-            this.state = this.baseState;
-            if (this.entityResult === 0) {
-              return;
-            }
-            var valueLength = (this.entityTrie[this.entityResult] & decode_js_1.BinTrieFlags.VALUE_LENGTH) >> 14;
-            switch (valueLength) {
-              case 1: {
-                this.emitCodePoint(this.entityTrie[this.entityResult] & ~decode_js_1.BinTrieFlags.VALUE_LENGTH);
-                break;
-              }
-              case 2: {
-                this.emitCodePoint(this.entityTrie[this.entityResult + 1]);
-                break;
-              }
-              case 3: {
-                this.emitCodePoint(this.entityTrie[this.entityResult + 1]);
-                this.emitCodePoint(this.entityTrie[this.entityResult + 2]);
-              }
-            }
-          };
-          Tokenizer3.prototype.stateBeforeNumericEntity = function(c) {
-            if ((c | 32) === CharCodes.LowerX) {
-              this.entityExcess++;
-              this.state = State.InHexEntity;
-            } else {
-              this.state = State.InNumericEntity;
-              this.stateInNumericEntity(c);
-            }
-          };
-          Tokenizer3.prototype.emitNumericEntity = function(strict) {
-            var entityStart = this.index - this.entityExcess - 1;
-            var numberStart = entityStart + 2 + Number(this.state === State.InHexEntity);
-            if (numberStart !== this.index) {
-              if (entityStart > this.sectionStart) {
-                this.emitPartial(this.sectionStart, entityStart);
-              }
-              this.sectionStart = this.index + Number(strict);
-              this.emitCodePoint((0, decode_js_1.replaceCodePoint)(this.entityResult));
-            }
-            this.state = this.baseState;
-          };
-          Tokenizer3.prototype.stateInNumericEntity = function(c) {
-            if (c === CharCodes.Semi) {
-              this.emitNumericEntity(true);
-            } else if (isNumber(c)) {
-              this.entityResult = this.entityResult * 10 + (c - CharCodes.Zero);
-              this.entityExcess++;
-            } else {
-              if (this.allowLegacyEntity()) {
-                this.emitNumericEntity(false);
-              } else {
-                this.state = this.baseState;
-              }
-              this.index--;
-            }
-          };
-          Tokenizer3.prototype.stateInHexEntity = function(c) {
-            if (c === CharCodes.Semi) {
-              this.emitNumericEntity(true);
-            } else if (isNumber(c)) {
-              this.entityResult = this.entityResult * 16 + (c - CharCodes.Zero);
-              this.entityExcess++;
-            } else if (isHexDigit(c)) {
-              this.entityResult = this.entityResult * 16 + ((c | 32) - CharCodes.LowerA + 10);
-              this.entityExcess++;
-            } else {
-              if (this.allowLegacyEntity()) {
-                this.emitNumericEntity(false);
-              } else {
-                this.state = this.baseState;
-              }
-              this.index--;
-            }
-          };
-          Tokenizer3.prototype.allowLegacyEntity = function() {
-            return !this.xmlMode && (this.baseState === State.Text || this.baseState === State.InSpecialTag);
           };
           Tokenizer3.prototype.cleanup = function() {
             if (this.running && this.sectionStart !== this.index) {
@@ -25085,24 +25179,9 @@
                   this.stateInProcessingInstruction(c);
                   break;
                 }
-                case State.InNamedEntity: {
-                  this.stateInNamedEntity(c);
+                case State.InEntity: {
+                  this.stateInEntity();
                   break;
-                }
-                case State.BeforeEntity: {
-                  this.stateBeforeEntity(c);
-                  break;
-                }
-                case State.InHexEntity: {
-                  this.stateInHexEntity(c);
-                  break;
-                }
-                case State.InNumericEntity: {
-                  this.stateInNumericEntity(c);
-                  break;
-                }
-                default: {
-                  this.stateBeforeNumericEntity(c);
                 }
               }
               this.index++;
@@ -25110,43 +25189,44 @@
             this.cleanup();
           };
           Tokenizer3.prototype.finish = function() {
-            if (this.state === State.InNamedEntity) {
-              this.emitNamedEntity();
+            if (this.state === State.InEntity) {
+              this.entityDecoder.end();
+              this.state = this.baseState;
             }
-            if (this.sectionStart < this.index) {
-              this.handleTrailingData();
-            }
+            this.handleTrailingData();
             this.cbs.onend();
           };
           Tokenizer3.prototype.handleTrailingData = function() {
             var endIndex = this.buffer.length + this.offset;
+            if (this.sectionStart >= endIndex) {
+              return;
+            }
             if (this.state === State.InCommentLike) {
               if (this.currentSequence === Sequences.CdataEnd) {
                 this.cbs.oncdata(this.sectionStart, endIndex, 0);
               } else {
                 this.cbs.oncomment(this.sectionStart, endIndex, 0);
               }
-            } else if (this.state === State.InNumericEntity && this.allowLegacyEntity()) {
-              this.emitNumericEntity(false);
-            } else if (this.state === State.InHexEntity && this.allowLegacyEntity()) {
-              this.emitNumericEntity(false);
             } else if (this.state === State.InTagName || this.state === State.BeforeAttributeName || this.state === State.BeforeAttributeValue || this.state === State.AfterAttributeName || this.state === State.InAttributeName || this.state === State.InAttributeValueSq || this.state === State.InAttributeValueDq || this.state === State.InAttributeValueNq || this.state === State.InClosingTagName) {
             } else {
               this.cbs.ontext(this.sectionStart, endIndex);
             }
           };
-          Tokenizer3.prototype.emitPartial = function(start, endIndex) {
+          Tokenizer3.prototype.emitCodePoint = function(cp, consumed) {
             if (this.baseState !== State.Text && this.baseState !== State.InSpecialTag) {
-              this.cbs.onattribdata(start, endIndex);
-            } else {
-              this.cbs.ontext(start, endIndex);
-            }
-          };
-          Tokenizer3.prototype.emitCodePoint = function(cp) {
-            if (this.baseState !== State.Text && this.baseState !== State.InSpecialTag) {
+              if (this.sectionStart < this.entityStart) {
+                this.cbs.onattribdata(this.sectionStart, this.entityStart);
+              }
+              this.sectionStart = this.entityStart + consumed;
+              this.index = this.sectionStart - 1;
               this.cbs.onattribentity(cp);
             } else {
-              this.cbs.ontextentity(cp);
+              if (this.sectionStart < this.entityStart) {
+                this.cbs.ontext(this.sectionStart, this.entityStart);
+              }
+              this.sectionStart = this.entityStart + consumed;
+              this.index = this.sectionStart - 1;
+              this.cbs.ontextentity(cp, this.sectionStart);
             }
           };
           return Tokenizer3;
@@ -25309,15 +25389,16 @@
             this.attribvalue = "";
             this.attribs = null;
             this.stack = [];
-            this.foreignContext = [];
             this.buffers = [];
             this.bufferOffset = 0;
             this.writeIndex = 0;
             this.ended = false;
             this.cbs = cbs !== null && cbs !== void 0 ? cbs : {};
-            this.lowerCaseTagNames = (_a = options2.lowerCaseTags) !== null && _a !== void 0 ? _a : !options2.xmlMode;
-            this.lowerCaseAttributeNames = (_b = options2.lowerCaseAttributeNames) !== null && _b !== void 0 ? _b : !options2.xmlMode;
+            this.htmlMode = !this.options.xmlMode;
+            this.lowerCaseTagNames = (_a = options2.lowerCaseTags) !== null && _a !== void 0 ? _a : this.htmlMode;
+            this.lowerCaseAttributeNames = (_b = options2.lowerCaseAttributeNames) !== null && _b !== void 0 ? _b : this.htmlMode;
             this.tokenizer = new ((_c = options2.Tokenizer) !== null && _c !== void 0 ? _c : Tokenizer_js_1.default)(this.options, this);
+            this.foreignContext = [!this.htmlMode];
             (_e = (_d = this.cbs).onparserinit) === null || _e === void 0 ? void 0 : _e.call(_d, this);
           }
           Parser3.prototype.ontext = function(start, endIndex) {
@@ -25327,15 +25408,14 @@
             (_b = (_a = this.cbs).ontext) === null || _b === void 0 ? void 0 : _b.call(_a, data);
             this.startIndex = endIndex;
           };
-          Parser3.prototype.ontextentity = function(cp) {
+          Parser3.prototype.ontextentity = function(cp, endIndex) {
             var _a, _b;
-            var index = this.tokenizer.getSectionStart();
-            this.endIndex = index - 1;
+            this.endIndex = endIndex - 1;
             (_b = (_a = this.cbs).ontext) === null || _b === void 0 ? void 0 : _b.call(_a, (0, decode_js_1.fromCodePoint)(cp));
-            this.startIndex = index;
+            this.startIndex = endIndex;
           };
           Parser3.prototype.isVoidElement = function(name) {
-            return !this.options.xmlMode && voidElements.has(name);
+            return this.htmlMode && voidElements.has(name);
           };
           Parser3.prototype.onopentagname = function(start, endIndex) {
             this.endIndex = endIndex;
@@ -25349,19 +25429,21 @@
             var _a, _b, _c, _d;
             this.openTagStart = this.startIndex;
             this.tagname = name;
-            var impliesClose = !this.options.xmlMode && openImpliesClose.get(name);
+            var impliesClose = this.htmlMode && openImpliesClose.get(name);
             if (impliesClose) {
-              while (this.stack.length > 0 && impliesClose.has(this.stack[this.stack.length - 1])) {
-                var element = this.stack.pop();
+              while (this.stack.length > 0 && impliesClose.has(this.stack[0])) {
+                var element = this.stack.shift();
                 (_b = (_a = this.cbs).onclosetag) === null || _b === void 0 ? void 0 : _b.call(_a, element, true);
               }
             }
             if (!this.isVoidElement(name)) {
-              this.stack.push(name);
-              if (foreignContextElements.has(name)) {
-                this.foreignContext.push(true);
-              } else if (htmlIntegrationElements.has(name)) {
-                this.foreignContext.push(false);
+              this.stack.unshift(name);
+              if (this.htmlMode) {
+                if (foreignContextElements.has(name)) {
+                  this.foreignContext.unshift(true);
+                } else if (htmlIntegrationElements.has(name)) {
+                  this.foreignContext.unshift(false);
+                }
               }
             }
             (_d = (_c = this.cbs).onopentagname) === null || _d === void 0 ? void 0 : _d.call(_c, name);
@@ -25386,39 +25468,36 @@
             this.startIndex = endIndex + 1;
           };
           Parser3.prototype.onclosetag = function(start, endIndex) {
-            var _a, _b, _c, _d, _e, _f;
+            var _a, _b, _c, _d, _e, _f, _g, _h;
             this.endIndex = endIndex;
             var name = this.getSlice(start, endIndex);
             if (this.lowerCaseTagNames) {
               name = name.toLowerCase();
             }
-            if (foreignContextElements.has(name) || htmlIntegrationElements.has(name)) {
-              this.foreignContext.pop();
+            if (this.htmlMode && (foreignContextElements.has(name) || htmlIntegrationElements.has(name))) {
+              this.foreignContext.shift();
             }
             if (!this.isVoidElement(name)) {
-              var pos = this.stack.lastIndexOf(name);
+              var pos = this.stack.indexOf(name);
               if (pos !== -1) {
-                if (this.cbs.onclosetag) {
-                  var count = this.stack.length - pos;
-                  while (count--) {
-                    this.cbs.onclosetag(this.stack.pop(), count !== 0);
-                  }
-                } else
-                  this.stack.length = pos;
-              } else if (!this.options.xmlMode && name === "p") {
+                for (var index = 0; index <= pos; index++) {
+                  var element = this.stack.shift();
+                  (_b = (_a = this.cbs).onclosetag) === null || _b === void 0 ? void 0 : _b.call(_a, element, index !== pos);
+                }
+              } else if (this.htmlMode && name === "p") {
                 this.emitOpenTag("p");
                 this.closeCurrentTag(true);
               }
-            } else if (!this.options.xmlMode && name === "br") {
-              (_b = (_a = this.cbs).onopentagname) === null || _b === void 0 ? void 0 : _b.call(_a, "br");
-              (_d = (_c = this.cbs).onopentag) === null || _d === void 0 ? void 0 : _d.call(_c, "br", {}, true);
-              (_f = (_e = this.cbs).onclosetag) === null || _f === void 0 ? void 0 : _f.call(_e, "br", false);
+            } else if (this.htmlMode && name === "br") {
+              (_d = (_c = this.cbs).onopentagname) === null || _d === void 0 ? void 0 : _d.call(_c, "br");
+              (_f = (_e = this.cbs).onopentag) === null || _f === void 0 ? void 0 : _f.call(_e, "br", {}, true);
+              (_h = (_g = this.cbs).onclosetag) === null || _h === void 0 ? void 0 : _h.call(_g, "br", false);
             }
             this.startIndex = endIndex + 1;
           };
           Parser3.prototype.onselfclosingtag = function(endIndex) {
             this.endIndex = endIndex;
-            if (this.options.xmlMode || this.options.recognizeSelfClosing || this.foreignContext[this.foreignContext.length - 1]) {
+            if (this.options.recognizeSelfClosing || this.foreignContext[0]) {
               this.closeCurrentTag(false);
               this.startIndex = endIndex + 1;
             } else {
@@ -25429,9 +25508,9 @@
             var _a, _b;
             var name = this.tagname;
             this.endOpenTag(isOpenImplied);
-            if (this.stack[this.stack.length - 1] === name) {
+            if (this.stack[0] === name) {
               (_b = (_a = this.cbs).onclosetag) === null || _b === void 0 ? void 0 : _b.call(_a, name, !isOpenImplied);
-              this.stack.pop();
+              this.stack.shift();
             }
           };
           Parser3.prototype.onattribname = function(start, endIndex) {
@@ -25491,7 +25570,7 @@
             var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
             this.endIndex = endIndex;
             var value = this.getSlice(start, endIndex - offset);
-            if (this.options.xmlMode || this.options.recognizeCDATA) {
+            if (!this.htmlMode || this.options.recognizeCDATA) {
               (_b = (_a = this.cbs).oncdatastart) === null || _b === void 0 ? void 0 : _b.call(_a);
               (_d = (_c = this.cbs).ontext) === null || _d === void 0 ? void 0 : _d.call(_c, value);
               (_f = (_e = this.cbs).oncdataend) === null || _f === void 0 ? void 0 : _f.call(_e);
@@ -25505,8 +25584,9 @@
             var _a, _b;
             if (this.cbs.onclosetag) {
               this.endIndex = this.startIndex;
-              for (var index = this.stack.length; index > 0; this.cbs.onclosetag(this.stack[--index], true))
-                ;
+              for (var index = 0; index < this.stack.length; index++) {
+                this.cbs.onclosetag(this.stack[index], true);
+              }
             }
             (_b = (_a = this.cbs).onend) === null || _b === void 0 ? void 0 : _b.call(_a);
           };
@@ -25522,6 +25602,8 @@
             this.endIndex = 0;
             (_d = (_c = this.cbs).onparserinit) === null || _d === void 0 ? void 0 : _d.call(_c, this);
             this.buffers.length = 0;
+            this.foreignContext.length = 0;
+            this.foreignContext.unshift(!this.htmlMode);
             this.bufferOffset = 0;
             this.writeIndex = 0;
             this.ended = false;
@@ -25741,7 +25823,7 @@
     "node_modules/entities/lib/index.js"(exports) {
       "use strict";
       Object.defineProperty(exports, "__esModule", { value: true });
-      exports.decodeXMLStrict = exports.decodeHTML5Strict = exports.decodeHTML4Strict = exports.decodeHTML5 = exports.decodeHTML4 = exports.decodeHTMLStrict = exports.decodeHTML = exports.decodeXML = exports.encodeHTML5 = exports.encodeHTML4 = exports.encodeNonAsciiHTML = exports.encodeHTML = exports.escapeText = exports.escapeAttribute = exports.escapeUTF8 = exports.escape = exports.encodeXML = exports.encode = exports.decodeStrict = exports.decode = exports.EncodingMode = exports.DecodingMode = exports.EntityLevel = void 0;
+      exports.decodeXMLStrict = exports.decodeHTML5Strict = exports.decodeHTML4Strict = exports.decodeHTML5 = exports.decodeHTML4 = exports.decodeHTMLAttribute = exports.decodeHTMLStrict = exports.decodeHTML = exports.decodeXML = exports.DecodingMode = exports.EntityDecoder = exports.encodeHTML5 = exports.encodeHTML4 = exports.encodeNonAsciiHTML = exports.encodeHTML = exports.escapeText = exports.escapeAttribute = exports.escapeUTF8 = exports.escape = exports.encodeXML = exports.encode = exports.decodeStrict = exports.decode = exports.EncodingMode = exports.EntityLevel = void 0;
       var decode_js_1 = require_decode();
       var encode_js_1 = require_encode();
       var escape_js_1 = require_escape();
@@ -25750,11 +25832,6 @@
         EntityLevel2[EntityLevel2["XML"] = 0] = "XML";
         EntityLevel2[EntityLevel2["HTML"] = 1] = "HTML";
       })(EntityLevel = exports.EntityLevel || (exports.EntityLevel = {}));
-      var DecodingMode;
-      (function(DecodingMode2) {
-        DecodingMode2[DecodingMode2["Legacy"] = 0] = "Legacy";
-        DecodingMode2[DecodingMode2["Strict"] = 1] = "Strict";
-      })(DecodingMode = exports.DecodingMode || (exports.DecodingMode = {}));
       var EncodingMode;
       (function(EncodingMode2) {
         EncodingMode2[EncodingMode2["UTF8"] = 0] = "UTF8";
@@ -25767,28 +25844,22 @@
         if (options2 === void 0) {
           options2 = EntityLevel.XML;
         }
-        var opts = typeof options2 === "number" ? { level: options2 } : options2;
-        if (opts.level === EntityLevel.HTML) {
-          if (opts.mode === DecodingMode.Strict) {
-            return (0, decode_js_1.decodeHTMLStrict)(data);
-          }
-          return (0, decode_js_1.decodeHTML)(data);
+        var level = typeof options2 === "number" ? options2 : options2.level;
+        if (level === EntityLevel.HTML) {
+          var mode = typeof options2 === "object" ? options2.mode : void 0;
+          return (0, decode_js_1.decodeHTML)(data, mode);
         }
         return (0, decode_js_1.decodeXML)(data);
       }
       exports.decode = decode;
       function decodeStrict(data, options2) {
+        var _a;
         if (options2 === void 0) {
           options2 = EntityLevel.XML;
         }
         var opts = typeof options2 === "number" ? { level: options2 } : options2;
-        if (opts.level === EntityLevel.HTML) {
-          if (opts.mode === DecodingMode.Legacy) {
-            return (0, decode_js_1.decodeHTML)(data);
-          }
-          return (0, decode_js_1.decodeHTMLStrict)(data);
-        }
-        return (0, decode_js_1.decodeXML)(data);
+        (_a = opts.mode) !== null && _a !== void 0 ? _a : opts.mode = decode_js_1.DecodingMode.Strict;
+        return decode(data, opts);
       }
       exports.decodeStrict = decodeStrict;
       function encode(data, options2) {
@@ -25841,6 +25912,12 @@
         return encode_js_2.encodeHTML;
       } });
       var decode_js_2 = require_decode();
+      Object.defineProperty(exports, "EntityDecoder", { enumerable: true, get: function() {
+        return decode_js_2.EntityDecoder;
+      } });
+      Object.defineProperty(exports, "DecodingMode", { enumerable: true, get: function() {
+        return decode_js_2.DecodingMode;
+      } });
       Object.defineProperty(exports, "decodeXML", { enumerable: true, get: function() {
         return decode_js_2.decodeXML;
       } });
@@ -25849,6 +25926,9 @@
       } });
       Object.defineProperty(exports, "decodeHTMLStrict", { enumerable: true, get: function() {
         return decode_js_2.decodeHTMLStrict;
+      } });
+      Object.defineProperty(exports, "decodeHTMLAttribute", { enumerable: true, get: function() {
+        return decode_js_2.decodeHTMLAttribute;
       } });
       Object.defineProperty(exports, "decodeHTML4", { enumerable: true, get: function() {
         return decode_js_2.decodeHTML;
@@ -26323,8 +26403,14 @@
           elem.next.prev = elem.prev;
         if (elem.parent) {
           var childs = elem.parent.children;
-          childs.splice(childs.lastIndexOf(elem), 1);
+          var childsIndex = childs.lastIndexOf(elem);
+          if (childsIndex >= 0) {
+            childs.splice(childsIndex, 1);
+          }
         }
+        elem.next = null;
+        elem.prev = null;
+        elem.parent = null;
       }
       exports.removeElement = removeElement;
       function replaceElement(elem, replacement) {
@@ -26344,12 +26430,12 @@
         }
       }
       exports.replaceElement = replaceElement;
-      function appendChild(elem, child) {
+      function appendChild(parent, child) {
         removeElement(child);
         child.next = null;
-        child.parent = elem;
-        if (elem.children.push(child) > 1) {
-          var sibling = elem.children[elem.children.length - 2];
+        child.parent = parent;
+        if (parent.children.push(child) > 1) {
+          var sibling = parent.children[parent.children.length - 2];
           sibling.next = child;
           child.prev = sibling;
         } else {
@@ -26376,12 +26462,12 @@
         }
       }
       exports.append = append;
-      function prependChild(elem, child) {
+      function prependChild(parent, child) {
         removeElement(child);
-        child.parent = elem;
+        child.parent = parent;
         child.prev = null;
-        if (elem.children.unshift(child) !== 1) {
-          var sibling = elem.children[1];
+        if (parent.children.unshift(child) !== 1) {
+          var sibling = parent.children[1];
           sibling.prev = child;
           child.next = sibling;
         } else {
@@ -26422,29 +26508,33 @@
         if (limit === void 0) {
           limit = Infinity;
         }
-        if (!Array.isArray(node))
-          node = [node];
-        return find(test, node, recurse, limit);
+        return find(test, Array.isArray(node) ? node : [node], recurse, limit);
       }
       exports.filter = filter;
       function find(test, nodes, recurse, limit) {
         var result = [];
-        for (var _i = 0, nodes_1 = nodes; _i < nodes_1.length; _i++) {
-          var elem = nodes_1[_i];
+        var nodeStack = [nodes];
+        var indexStack = [0];
+        for (; ; ) {
+          if (indexStack[0] >= nodeStack[0].length) {
+            if (indexStack.length === 1) {
+              return result;
+            }
+            nodeStack.shift();
+            indexStack.shift();
+            continue;
+          }
+          var elem = nodeStack[0][indexStack[0]++];
           if (test(elem)) {
             result.push(elem);
             if (--limit <= 0)
-              break;
+              return result;
           }
           if (recurse && (0, domhandler_1.hasChildren)(elem) && elem.children.length > 0) {
-            var children = find(test, elem.children, recurse, limit);
-            result.push.apply(result, children);
-            limit -= children.length;
-            if (limit <= 0)
-              break;
+            indexStack.unshift(0);
+            nodeStack.unshift(elem.children);
           }
         }
-        return result;
       }
       exports.find = find;
       function findOneChild(test, nodes) {
@@ -26457,13 +26547,13 @@
         }
         var elem = null;
         for (var i = 0; i < nodes.length && !elem; i++) {
-          var checked = nodes[i];
-          if (!(0, domhandler_1.isTag)(checked)) {
+          var node = nodes[i];
+          if (!(0, domhandler_1.isTag)(node)) {
             continue;
-          } else if (test(checked)) {
-            elem = checked;
-          } else if (recurse && checked.children.length > 0) {
-            elem = findOne(test, checked.children, true);
+          } else if (test(node)) {
+            elem = node;
+          } else if (recurse && node.children.length > 0) {
+            elem = findOne(test, node.children, true);
           }
         }
         return elem;
@@ -26471,24 +26561,33 @@
       exports.findOne = findOne;
       function existsOne(test, nodes) {
         return nodes.some(function(checked) {
-          return (0, domhandler_1.isTag)(checked) && (test(checked) || checked.children.length > 0 && existsOne(test, checked.children));
+          return (0, domhandler_1.isTag)(checked) && (test(checked) || existsOne(test, checked.children));
         });
       }
       exports.existsOne = existsOne;
       function findAll(test, nodes) {
-        var _a;
         var result = [];
-        var stack = nodes.filter(domhandler_1.isTag);
-        var elem;
-        while (elem = stack.shift()) {
-          var children = (_a = elem.children) === null || _a === void 0 ? void 0 : _a.filter(domhandler_1.isTag);
-          if (children && children.length > 0) {
-            stack.unshift.apply(stack, children);
+        var nodeStack = [nodes];
+        var indexStack = [0];
+        for (; ; ) {
+          if (indexStack[0] >= nodeStack[0].length) {
+            if (nodeStack.length === 1) {
+              return result;
+            }
+            nodeStack.shift();
+            indexStack.shift();
+            continue;
           }
+          var elem = nodeStack[0][indexStack[0]++];
+          if (!(0, domhandler_1.isTag)(elem))
+            continue;
           if (test(elem))
             result.push(elem);
+          if (elem.children.length > 0) {
+            indexStack.unshift(0);
+            nodeStack.unshift(elem.children);
+          }
         }
-        return result;
       }
       exports.findAll = findAll;
     }
@@ -26761,7 +26860,7 @@
             addConditionally(entry, "title", "title", children);
             addConditionally(entry, "link", "link", children);
             addConditionally(entry, "description", "description", children);
-            var pubDate = fetch("pubDate", children);
+            var pubDate = fetch("pubDate", children) || fetch("dc:date", children);
             if (pubDate)
               entry.pubDate = new Date(pubDate);
             return entry;
@@ -26931,7 +27030,7 @@
         return mod && mod.__esModule ? mod : { "default": mod };
       };
       Object.defineProperty(exports, "__esModule", { value: true });
-      exports.DomUtils = exports.parseFeed = exports.getFeed = exports.ElementType = exports.Tokenizer = exports.createDomStream = exports.parseDOM = exports.parseDocument = exports.DefaultHandler = exports.DomHandler = exports.Parser = void 0;
+      exports.DomUtils = exports.parseFeed = exports.getFeed = exports.ElementType = exports.Tokenizer = exports.createDomStream = exports.createDocumentStream = exports.parseDOM = exports.parseDocument = exports.DefaultHandler = exports.DomHandler = exports.Parser = void 0;
       var Parser_js_1 = require_Parser();
       var Parser_js_2 = require_Parser();
       Object.defineProperty(exports, "Parser", { enumerable: true, get: function() {
@@ -26955,6 +27054,13 @@
         return parseDocument(data, options2).children;
       }
       exports.parseDOM = parseDOM;
+      function createDocumentStream(callback, options2, elementCallback) {
+        var handler = new domhandler_1.DomHandler(function(error) {
+          return callback(error, handler.root);
+        }, options2, elementCallback);
+        return new Parser_js_1.Parser(handler, options2);
+      }
+      exports.createDocumentStream = createDocumentStream;
       function createDomStream(callback, options2, elementCallback) {
         var handler = new domhandler_1.DomHandler(callback, options2, elementCallback);
         return new Parser_js_1.Parser(handler, options2);
@@ -29256,7 +29362,7 @@
       if (match[3] && prevChar.match(/[\p{L}\p{N}]/u))
         return;
       const nextChar = match[1] || match[2] || "";
-      if (!nextChar || nextChar && (prevChar === "" || this.rules.inline.punctuation.exec(prevChar))) {
+      if (!nextChar || !prevChar || this.rules.inline.punctuation.exec(prevChar)) {
         const lLength = match[0].length - 1;
         let rDelim, rLength, delimTotal = lLength, midDelimTotal = 0;
         const endReg = match[0][0] === "*" ? this.rules.inline.emStrong.rDelimAst : this.rules.inline.emStrong.rDelimUnd;
@@ -29280,7 +29386,7 @@
           if (delimTotal > 0)
             continue;
           rLength = Math.min(rLength, rLength + delimTotal + midDelimTotal);
-          const raw = src.slice(0, lLength + match.index + (match[0].length - rDelim.length) + rLength);
+          const raw = src.slice(0, lLength + match.index + rLength + 1);
           if (Math.min(lLength, rLength) % 2) {
             const text2 = raw.slice(1, -1);
             return {
@@ -29475,29 +29581,30 @@
     nolink: /^!?\[(ref)\](?:\[\])?/,
     reflinkSearch: "reflink|nolink(?!\\()",
     emStrong: {
-      lDelim: /^(?:\*+(?:([punct_])|[^\s*]))|^_+(?:([punct*])|([^\s_]))/,
-      //        (1) and (2) can only be a Right Delimiter. (3) and (4) can only be Left.  (5) and (6) can be either Left or Right.
-      //          () Skip orphan inside strong                                      () Consume to delim     (1) #***                (2) a***#, a***                             (3) #***a, ***a                 (4) ***#              (5) #***#                 (6) a***a
-      rDelimAst: /^(?:[^_*\\]|\\.)*?\_\_(?:[^_*\\]|\\.)*?\*(?:[^_*\\]|\\.)*?(?=\_\_)|(?:[^*\\]|\\.)+(?=[^*])|[punct_](\*+)(?=[\s]|$)|(?:[^punct*_\s\\]|\\.)(\*+)(?=[punct_\s]|$)|[punct_\s](\*+)(?=[^punct*_\s])|[\s](\*+)(?=[punct_])|[punct_](\*+)(?=[punct_])|(?:[^punct*_\s\\]|\\.)(\*+)(?=[^punct*_\s])/,
-      rDelimUnd: /^(?:[^_*\\]|\\.)*?\*\*(?:[^_*\\]|\\.)*?\_(?:[^_*\\]|\\.)*?(?=\*\*)|(?:[^_\\]|\\.)+(?=[^_])|[punct*](\_+)(?=[\s]|$)|(?:[^punct*_\s\\]|\\.)(\_+)(?=[punct*\s]|$)|[punct*\s](\_+)(?=[^punct*_\s])|[\s](\_+)(?=[punct*])|[punct*](\_+)(?=[punct*])/
+      lDelim: /^(?:\*+(?:((?!\*)[punct])|[^\s*]))|^_+(?:((?!_)[punct])|([^\s_]))/,
+      //         (1) and (2) can only be a Right Delimiter. (3) and (4) can only be Left.  (5) and (6) can be either Left or Right.
+      //         | Skip orphan inside strong      | Consume to delim | (1) #***              | (2) a***#, a***                    | (3) #***a, ***a                  | (4) ***#                 | (5) #***#                         | (6) a***a
+      rDelimAst: /^[^_*]*?__[^_*]*?\*[^_*]*?(?=__)|[^*]+(?=[^*])|(?!\*)[punct](\*+)(?=[\s]|$)|[^punct\s](\*+)(?!\*)(?=[punct\s]|$)|(?!\*)[punct\s](\*+)(?=[^punct\s])|[\s](\*+)(?!\*)(?=[punct])|(?!\*)[punct](\*+)(?!\*)(?=[punct])|[^punct\s](\*+)(?=[^punct\s])/,
+      rDelimUnd: /^[^_*]*?\*\*[^_*]*?_[^_*]*?(?=\*\*)|[^_]+(?=[^_])|(?!_)[punct](_+)(?=[\s]|$)|[^punct\s](_+)(?!_)(?=[punct\s]|$)|(?!_)[punct\s](_+)(?=[^punct\s])|[\s](_+)(?!_)(?=[punct])|(?!_)[punct](_+)(?!_)(?=[punct])/
       // ^- Not allowed for _
     },
     code: /^(`+)([^`]|[^`][\s\S]*?[^`])\1(?!`)/,
     br: /^( {2,}|\\)\n(?!\s*$)/,
     del: noopTest,
     text: /^(`+|[^`])(?:(?= {2,}\n)|[\s\S]*?(?:(?=[\\<!\[`*_]|\b_|$)|[^ ](?= {2,}\n)))/,
-    punctuation: /^([\spunctuation])/
+    punctuation: /^((?![*_])[\spunctuation])/
   };
-  inline._uc_punctuation = "\\u00A1\\u00A7\\u00AB\\u00B6\\u00B7\\u00BB\\u00BF\\u037E\\u0387\\u055A-\\u055F\\u0589\\u058A\\u05BE\\u05C0\\u05C3\\u05C6\\u05F3\\u05F4\\u0609\\u060A\\u060C\\u060D\\u061B\\u061E\\u061F\\u066A-\\u066D\\u06D4\\u0700-\\u070D\\u07F7-\\u07F9\\u0830-\\u083E\\u085E\\u0964\\u0965\\u0970\\u0AF0\\u0DF4\\u0E4F\\u0E5A\\u0E5B\\u0F04-\\u0F12\\u0F14\\u0F3A-\\u0F3D\\u0F85\\u0FD0-\\u0FD4\\u0FD9\\u0FDA\\u104A-\\u104F\\u10FB\\u1360-\\u1368\\u1400\\u166D\\u166E\\u169B\\u169C\\u16EB-\\u16ED\\u1735\\u1736\\u17D4-\\u17D6\\u17D8-\\u17DA\\u1800-\\u180A\\u1944\\u1945\\u1A1E\\u1A1F\\u1AA0-\\u1AA6\\u1AA8-\\u1AAD\\u1B5A-\\u1B60\\u1BFC-\\u1BFF\\u1C3B-\\u1C3F\\u1C7E\\u1C7F\\u1CC0-\\u1CC7\\u1CD3\\u2010-\\u2027\\u2030-\\u2043\\u2045-\\u2051\\u2053-\\u205E\\u207D\\u207E\\u208D\\u208E\\u2308-\\u230B\\u2329\\u232A\\u2768-\\u2775\\u27C5\\u27C6\\u27E6-\\u27EF\\u2983-\\u2998\\u29D8-\\u29DB\\u29FC\\u29FD\\u2CF9-\\u2CFC\\u2CFE\\u2CFF\\u2D70\\u2E00-\\u2E2E\\u2E30-\\u2E42\\u3001-\\u3003\\u3008-\\u3011\\u3014-\\u301F\\u3030\\u303D\\u30A0\\u30FB\\uA4FE\\uA4FF\\uA60D-\\uA60F\\uA673\\uA67E\\uA6F2-\\uA6F7\\uA874-\\uA877\\uA8CE\\uA8CF\\uA8F8-\\uA8FA\\uA8FC\\uA92E\\uA92F\\uA95F\\uA9C1-\\uA9CD\\uA9DE\\uA9DF\\uAA5C-\\uAA5F\\uAADE\\uAADF\\uAAF0\\uAAF1\\uABEB\\uFD3E\\uFD3F\\uFE10-\\uFE19\\uFE30-\\uFE52\\uFE54-\\uFE61\\uFE63\\uFE68\\uFE6A\\uFE6B\\uFF01-\\uFF03\\uFF05-\\uFF0A\\uFF0C-\\uFF0F\\uFF1A\\uFF1B\\uFF1F\\uFF20\\uFF3B-\\uFF3D\\uFF3F\\uFF5B\\uFF5D\\uFF5F-\\uFF65";
-  inline._punctuation = "!\"#$%&'()+\\-.,/:;<=>?@\\[\\]`^{|}~" + inline._uc_punctuation;
-  inline.punctuation = edit(inline.punctuation).replace(/punctuation/g, inline._punctuation).getRegex();
+  inline._punctuation = "\\p{P}$+<=>`^|~";
+  inline.punctuation = edit(inline.punctuation, "u").replace(/punctuation/g, inline._punctuation).getRegex();
   inline.blockSkip = /\[[^[\]]*?\]\([^\(\)]*?\)|`[^`]*?`|<[^<>]*?>/g;
-  inline.escapedEmSt = /(?:^|[^\\])(?:\\\\)*\\[*_]/g;
+  inline.anyPunctuation = /\\[punct]/g;
+  inline._escapes = /\\([punct])/g;
   inline._comment = edit(block._comment).replace("(?:-->|$)", "-->").getRegex();
-  inline.emStrong.lDelim = edit(inline.emStrong.lDelim).replace(/punct/g, inline._punctuation).getRegex();
-  inline.emStrong.rDelimAst = edit(inline.emStrong.rDelimAst, "g").replace(/punct/g, inline._punctuation).getRegex();
-  inline.emStrong.rDelimUnd = edit(inline.emStrong.rDelimUnd, "g").replace(/punct/g, inline._punctuation).getRegex();
-  inline._escapes = /\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/g;
+  inline.emStrong.lDelim = edit(inline.emStrong.lDelim, "u").replace(/punct/g, inline._punctuation).getRegex();
+  inline.emStrong.rDelimAst = edit(inline.emStrong.rDelimAst, "gu").replace(/punct/g, inline._punctuation).getRegex();
+  inline.emStrong.rDelimUnd = edit(inline.emStrong.rDelimUnd, "gu").replace(/punct/g, inline._punctuation).getRegex();
+  inline.anyPunctuation = edit(inline.anyPunctuation, "gu").replace(/punct/g, inline._punctuation).getRegex();
+  inline._escapes = edit(inline._escapes, "gu").replace(/punct/g, inline._punctuation).getRegex();
   inline._scheme = /[a-zA-Z][a-zA-Z0-9+.-]{1,31}/;
   inline._email = /[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+(@)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+(?![-_])/;
   inline.autolink = edit(inline.autolink).replace("scheme", inline._scheme).replace("email", inline._email).getRegex();
@@ -29804,9 +29911,8 @@
       while ((match = this.tokenizer.rules.inline.blockSkip.exec(maskedSrc)) != null) {
         maskedSrc = maskedSrc.slice(0, match.index) + "[" + "a".repeat(match[0].length - 2) + "]" + maskedSrc.slice(this.tokenizer.rules.inline.blockSkip.lastIndex);
       }
-      while ((match = this.tokenizer.rules.inline.escapedEmSt.exec(maskedSrc)) != null) {
-        maskedSrc = maskedSrc.slice(0, match.index + match[0].length - 2) + "++" + maskedSrc.slice(this.tokenizer.rules.inline.escapedEmSt.lastIndex);
-        this.tokenizer.rules.inline.escapedEmSt.lastIndex--;
+      while ((match = this.tokenizer.rules.inline.anyPunctuation.exec(maskedSrc)) != null) {
+        maskedSrc = maskedSrc.slice(0, match.index) + "++" + maskedSrc.slice(this.tokenizer.rules.inline.anyPunctuation.lastIndex);
       }
       while (src) {
         if (!keepPrevChar) {
@@ -30411,298 +30517,332 @@ ${content}</tr>
     "preprocess",
     "postprocess"
   ]));
-  function onError(silent, async, callback) {
-    return (e) => {
-      e.message += "\nPlease report this to https://github.com/markedjs/marked.";
-      if (silent) {
-        const msg = "<p>An error occurred:</p><pre>" + escape(e.message + "", true) + "</pre>";
-        if (async) {
-          return Promise.resolve(msg);
+  var Marked = class {
+    defaults = getDefaults();
+    options = this.setOptions;
+    parse = this.#parseMarkdown(Lexer.lex, Parser.parse);
+    parseInline = this.#parseMarkdown(Lexer.lexInline, Parser.parseInline);
+    Parser = Parser;
+    parser = Parser.parse;
+    Renderer = Renderer;
+    TextRenderer = TextRenderer;
+    Lexer = Lexer;
+    lexer = Lexer.lex;
+    Tokenizer = Tokenizer;
+    Slugger = Slugger;
+    Hooks = Hooks;
+    constructor(...args) {
+      this.use(...args);
+    }
+    walkTokens(tokens, callback) {
+      let values = [];
+      for (const token of tokens) {
+        values = values.concat(callback.call(this, token));
+        switch (token.type) {
+          case "table": {
+            for (const cell of token.header) {
+              values = values.concat(this.walkTokens(cell.tokens, callback));
+            }
+            for (const row of token.rows) {
+              for (const cell of row) {
+                values = values.concat(this.walkTokens(cell.tokens, callback));
+              }
+            }
+            break;
+          }
+          case "list": {
+            values = values.concat(this.walkTokens(token.items, callback));
+            break;
+          }
+          default: {
+            if (this.defaults.extensions && this.defaults.extensions.childTokens && this.defaults.extensions.childTokens[token.type]) {
+              this.defaults.extensions.childTokens[token.type].forEach((childTokens) => {
+                values = values.concat(this.walkTokens(token[childTokens], callback));
+              });
+            } else if (token.tokens) {
+              values = values.concat(this.walkTokens(token.tokens, callback));
+            }
+          }
+        }
+      }
+      return values;
+    }
+    use(...args) {
+      const extensions = this.defaults.extensions || { renderers: {}, childTokens: {} };
+      args.forEach((pack) => {
+        const opts = { ...pack };
+        opts.async = this.defaults.async || opts.async || false;
+        if (pack.extensions) {
+          pack.extensions.forEach((ext) => {
+            if (!ext.name) {
+              throw new Error("extension name required");
+            }
+            if (ext.renderer) {
+              const prevRenderer = extensions.renderers[ext.name];
+              if (prevRenderer) {
+                extensions.renderers[ext.name] = function(...args2) {
+                  let ret = ext.renderer.apply(this, args2);
+                  if (ret === false) {
+                    ret = prevRenderer.apply(this, args2);
+                  }
+                  return ret;
+                };
+              } else {
+                extensions.renderers[ext.name] = ext.renderer;
+              }
+            }
+            if (ext.tokenizer) {
+              if (!ext.level || ext.level !== "block" && ext.level !== "inline") {
+                throw new Error("extension level must be 'block' or 'inline'");
+              }
+              if (extensions[ext.level]) {
+                extensions[ext.level].unshift(ext.tokenizer);
+              } else {
+                extensions[ext.level] = [ext.tokenizer];
+              }
+              if (ext.start) {
+                if (ext.level === "block") {
+                  if (extensions.startBlock) {
+                    extensions.startBlock.push(ext.start);
+                  } else {
+                    extensions.startBlock = [ext.start];
+                  }
+                } else if (ext.level === "inline") {
+                  if (extensions.startInline) {
+                    extensions.startInline.push(ext.start);
+                  } else {
+                    extensions.startInline = [ext.start];
+                  }
+                }
+              }
+            }
+            if (ext.childTokens) {
+              extensions.childTokens[ext.name] = ext.childTokens;
+            }
+          });
+          opts.extensions = extensions;
+        }
+        if (pack.renderer) {
+          const renderer = this.defaults.renderer || new Renderer(this.defaults);
+          for (const prop in pack.renderer) {
+            const prevRenderer = renderer[prop];
+            renderer[prop] = (...args2) => {
+              let ret = pack.renderer[prop].apply(renderer, args2);
+              if (ret === false) {
+                ret = prevRenderer.apply(renderer, args2);
+              }
+              return ret;
+            };
+          }
+          opts.renderer = renderer;
+        }
+        if (pack.tokenizer) {
+          const tokenizer = this.defaults.tokenizer || new Tokenizer(this.defaults);
+          for (const prop in pack.tokenizer) {
+            const prevTokenizer = tokenizer[prop];
+            tokenizer[prop] = (...args2) => {
+              let ret = pack.tokenizer[prop].apply(tokenizer, args2);
+              if (ret === false) {
+                ret = prevTokenizer.apply(tokenizer, args2);
+              }
+              return ret;
+            };
+          }
+          opts.tokenizer = tokenizer;
+        }
+        if (pack.hooks) {
+          const hooks = this.defaults.hooks || new Hooks();
+          for (const prop in pack.hooks) {
+            const prevHook = hooks[prop];
+            if (Hooks.passThroughHooks.has(prop)) {
+              hooks[prop] = (arg) => {
+                if (this.defaults.async) {
+                  return Promise.resolve(pack.hooks[prop].call(hooks, arg)).then((ret2) => {
+                    return prevHook.call(hooks, ret2);
+                  });
+                }
+                const ret = pack.hooks[prop].call(hooks, arg);
+                return prevHook.call(hooks, ret);
+              };
+            } else {
+              hooks[prop] = (...args2) => {
+                let ret = pack.hooks[prop].apply(hooks, args2);
+                if (ret === false) {
+                  ret = prevHook.apply(hooks, args2);
+                }
+                return ret;
+              };
+            }
+          }
+          opts.hooks = hooks;
+        }
+        if (pack.walkTokens) {
+          const walkTokens2 = this.defaults.walkTokens;
+          opts.walkTokens = function(token) {
+            let values = [];
+            values.push(pack.walkTokens.call(this, token));
+            if (walkTokens2) {
+              values = values.concat(walkTokens2.call(this, token));
+            }
+            return values;
+          };
+        }
+        this.defaults = { ...this.defaults, ...opts };
+      });
+      return this;
+    }
+    setOptions(opt) {
+      this.defaults = { ...this.defaults, ...opt };
+      return this;
+    }
+    #parseMarkdown(lexer2, parser2) {
+      return (src, opt, callback) => {
+        if (typeof opt === "function") {
+          callback = opt;
+          opt = null;
+        }
+        const origOpt = { ...opt };
+        opt = { ...this.defaults, ...origOpt };
+        const throwError = this.#onError(opt.silent, opt.async, callback);
+        if (typeof src === "undefined" || src === null) {
+          return throwError(new Error("marked(): input parameter is undefined or null"));
+        }
+        if (typeof src !== "string") {
+          return throwError(new Error("marked(): input parameter is of type " + Object.prototype.toString.call(src) + ", string expected"));
+        }
+        checkDeprecations(opt, callback);
+        if (opt.hooks) {
+          opt.hooks.options = opt;
         }
         if (callback) {
-          callback(null, msg);
+          const highlight = opt.highlight;
+          let tokens;
+          try {
+            if (opt.hooks) {
+              src = opt.hooks.preprocess(src);
+            }
+            tokens = lexer2(src, opt);
+          } catch (e) {
+            return throwError(e);
+          }
+          const done = (err) => {
+            let out;
+            if (!err) {
+              try {
+                if (opt.walkTokens) {
+                  this.walkTokens(tokens, opt.walkTokens);
+                }
+                out = parser2(tokens, opt);
+                if (opt.hooks) {
+                  out = opt.hooks.postprocess(out);
+                }
+              } catch (e) {
+                err = e;
+              }
+            }
+            opt.highlight = highlight;
+            return err ? throwError(err) : callback(null, out);
+          };
+          if (!highlight || highlight.length < 3) {
+            return done();
+          }
+          delete opt.highlight;
+          if (!tokens.length)
+            return done();
+          let pending = 0;
+          this.walkTokens(tokens, (token) => {
+            if (token.type === "code") {
+              pending++;
+              setTimeout(() => {
+                highlight(token.text, token.lang, (err, code) => {
+                  if (err) {
+                    return done(err);
+                  }
+                  if (code != null && code !== token.text) {
+                    token.text = code;
+                    token.escaped = true;
+                  }
+                  pending--;
+                  if (pending === 0) {
+                    done();
+                  }
+                });
+              }, 0);
+            }
+          });
+          if (pending === 0) {
+            done();
+          }
           return;
         }
-        return msg;
-      }
-      if (async) {
-        return Promise.reject(e);
-      }
-      if (callback) {
-        callback(e);
-        return;
-      }
-      throw e;
-    };
-  }
-  function parseMarkdown(lexer2, parser2) {
-    return (src, opt, callback) => {
-      if (typeof opt === "function") {
-        callback = opt;
-        opt = null;
-      }
-      const origOpt = { ...opt };
-      opt = { ...marked.defaults, ...origOpt };
-      const throwError = onError(opt.silent, opt.async, callback);
-      if (typeof src === "undefined" || src === null) {
-        return throwError(new Error("marked(): input parameter is undefined or null"));
-      }
-      if (typeof src !== "string") {
-        return throwError(new Error("marked(): input parameter is of type " + Object.prototype.toString.call(src) + ", string expected"));
-      }
-      checkDeprecations(opt, callback);
-      if (opt.hooks) {
-        opt.hooks.options = opt;
-      }
-      if (callback) {
-        const highlight = opt.highlight;
-        let tokens;
+        if (opt.async) {
+          return Promise.resolve(opt.hooks ? opt.hooks.preprocess(src) : src).then((src2) => lexer2(src2, opt)).then((tokens) => opt.walkTokens ? Promise.all(this.walkTokens(tokens, opt.walkTokens)).then(() => tokens) : tokens).then((tokens) => parser2(tokens, opt)).then((html) => opt.hooks ? opt.hooks.postprocess(html) : html).catch(throwError);
+        }
         try {
           if (opt.hooks) {
             src = opt.hooks.preprocess(src);
           }
-          tokens = lexer2(src, opt);
+          const tokens = lexer2(src, opt);
+          if (opt.walkTokens) {
+            this.walkTokens(tokens, opt.walkTokens);
+          }
+          let html = parser2(tokens, opt);
+          if (opt.hooks) {
+            html = opt.hooks.postprocess(html);
+          }
+          return html;
         } catch (e) {
           return throwError(e);
         }
-        const done = function(err) {
-          let out;
-          if (!err) {
-            try {
-              if (opt.walkTokens) {
-                marked.walkTokens(tokens, opt.walkTokens);
-              }
-              out = parser2(tokens, opt);
-              if (opt.hooks) {
-                out = opt.hooks.postprocess(out);
-              }
-            } catch (e) {
-              err = e;
-            }
+      };
+    }
+    #onError(silent, async, callback) {
+      return (e) => {
+        e.message += "\nPlease report this to https://github.com/markedjs/this.";
+        if (silent) {
+          const msg = "<p>An error occurred:</p><pre>" + escape(e.message + "", true) + "</pre>";
+          if (async) {
+            return Promise.resolve(msg);
           }
-          opt.highlight = highlight;
-          return err ? throwError(err) : callback(null, out);
-        };
-        if (!highlight || highlight.length < 3) {
-          return done();
-        }
-        delete opt.highlight;
-        if (!tokens.length)
-          return done();
-        let pending = 0;
-        marked.walkTokens(tokens, function(token) {
-          if (token.type === "code") {
-            pending++;
-            setTimeout(() => {
-              highlight(token.text, token.lang, function(err, code) {
-                if (err) {
-                  return done(err);
-                }
-                if (code != null && code !== token.text) {
-                  token.text = code;
-                  token.escaped = true;
-                }
-                pending--;
-                if (pending === 0) {
-                  done();
-                }
-              });
-            }, 0);
+          if (callback) {
+            callback(null, msg);
+            return;
           }
-        });
-        if (pending === 0) {
-          done();
+          return msg;
         }
-        return;
-      }
-      if (opt.async) {
-        return Promise.resolve(opt.hooks ? opt.hooks.preprocess(src) : src).then((src2) => lexer2(src2, opt)).then((tokens) => opt.walkTokens ? Promise.all(marked.walkTokens(tokens, opt.walkTokens)).then(() => tokens) : tokens).then((tokens) => parser2(tokens, opt)).then((html) => opt.hooks ? opt.hooks.postprocess(html) : html).catch(throwError);
-      }
-      try {
-        if (opt.hooks) {
-          src = opt.hooks.preprocess(src);
+        if (async) {
+          return Promise.reject(e);
         }
-        const tokens = lexer2(src, opt);
-        if (opt.walkTokens) {
-          marked.walkTokens(tokens, opt.walkTokens);
+        if (callback) {
+          callback(e);
+          return;
         }
-        let html = parser2(tokens, opt);
-        if (opt.hooks) {
-          html = opt.hooks.postprocess(html);
-        }
-        return html;
-      } catch (e) {
-        return throwError(e);
-      }
-    };
-  }
+        throw e;
+      };
+    }
+  };
+  var markedInstance = new Marked(defaults);
   function marked(src, opt, callback) {
-    return parseMarkdown(Lexer.lex, Parser.parse)(src, opt, callback);
+    return markedInstance.parse(src, opt, callback);
   }
   marked.options = marked.setOptions = function(opt) {
-    marked.defaults = { ...marked.defaults, ...opt };
+    markedInstance.setOptions(opt);
+    marked.defaults = markedInstance.defaults;
     changeDefaults(marked.defaults);
     return marked;
   };
   marked.getDefaults = getDefaults;
   marked.defaults = defaults;
   marked.use = function(...args) {
-    const extensions = marked.defaults.extensions || { renderers: {}, childTokens: {} };
-    args.forEach((pack) => {
-      const opts = { ...pack };
-      opts.async = marked.defaults.async || opts.async || false;
-      if (pack.extensions) {
-        pack.extensions.forEach((ext) => {
-          if (!ext.name) {
-            throw new Error("extension name required");
-          }
-          if (ext.renderer) {
-            const prevRenderer = extensions.renderers[ext.name];
-            if (prevRenderer) {
-              extensions.renderers[ext.name] = function(...args2) {
-                let ret = ext.renderer.apply(this, args2);
-                if (ret === false) {
-                  ret = prevRenderer.apply(this, args2);
-                }
-                return ret;
-              };
-            } else {
-              extensions.renderers[ext.name] = ext.renderer;
-            }
-          }
-          if (ext.tokenizer) {
-            if (!ext.level || ext.level !== "block" && ext.level !== "inline") {
-              throw new Error("extension level must be 'block' or 'inline'");
-            }
-            if (extensions[ext.level]) {
-              extensions[ext.level].unshift(ext.tokenizer);
-            } else {
-              extensions[ext.level] = [ext.tokenizer];
-            }
-            if (ext.start) {
-              if (ext.level === "block") {
-                if (extensions.startBlock) {
-                  extensions.startBlock.push(ext.start);
-                } else {
-                  extensions.startBlock = [ext.start];
-                }
-              } else if (ext.level === "inline") {
-                if (extensions.startInline) {
-                  extensions.startInline.push(ext.start);
-                } else {
-                  extensions.startInline = [ext.start];
-                }
-              }
-            }
-          }
-          if (ext.childTokens) {
-            extensions.childTokens[ext.name] = ext.childTokens;
-          }
-        });
-        opts.extensions = extensions;
-      }
-      if (pack.renderer) {
-        const renderer = marked.defaults.renderer || new Renderer();
-        for (const prop in pack.renderer) {
-          const prevRenderer = renderer[prop];
-          renderer[prop] = (...args2) => {
-            let ret = pack.renderer[prop].apply(renderer, args2);
-            if (ret === false) {
-              ret = prevRenderer.apply(renderer, args2);
-            }
-            return ret;
-          };
-        }
-        opts.renderer = renderer;
-      }
-      if (pack.tokenizer) {
-        const tokenizer = marked.defaults.tokenizer || new Tokenizer();
-        for (const prop in pack.tokenizer) {
-          const prevTokenizer = tokenizer[prop];
-          tokenizer[prop] = (...args2) => {
-            let ret = pack.tokenizer[prop].apply(tokenizer, args2);
-            if (ret === false) {
-              ret = prevTokenizer.apply(tokenizer, args2);
-            }
-            return ret;
-          };
-        }
-        opts.tokenizer = tokenizer;
-      }
-      if (pack.hooks) {
-        const hooks = marked.defaults.hooks || new Hooks();
-        for (const prop in pack.hooks) {
-          const prevHook = hooks[prop];
-          if (Hooks.passThroughHooks.has(prop)) {
-            hooks[prop] = (arg) => {
-              if (marked.defaults.async) {
-                return Promise.resolve(pack.hooks[prop].call(hooks, arg)).then((ret2) => {
-                  return prevHook.call(hooks, ret2);
-                });
-              }
-              const ret = pack.hooks[prop].call(hooks, arg);
-              return prevHook.call(hooks, ret);
-            };
-          } else {
-            hooks[prop] = (...args2) => {
-              let ret = pack.hooks[prop].apply(hooks, args2);
-              if (ret === false) {
-                ret = prevHook.apply(hooks, args2);
-              }
-              return ret;
-            };
-          }
-        }
-        opts.hooks = hooks;
-      }
-      if (pack.walkTokens) {
-        const walkTokens2 = marked.defaults.walkTokens;
-        opts.walkTokens = function(token) {
-          let values = [];
-          values.push(pack.walkTokens.call(this, token));
-          if (walkTokens2) {
-            values = values.concat(walkTokens2.call(this, token));
-          }
-          return values;
-        };
-      }
-      marked.setOptions(opts);
-    });
+    markedInstance.use(...args);
+    marked.defaults = markedInstance.defaults;
+    changeDefaults(marked.defaults);
+    return marked;
   };
   marked.walkTokens = function(tokens, callback) {
-    let values = [];
-    for (const token of tokens) {
-      values = values.concat(callback.call(marked, token));
-      switch (token.type) {
-        case "table": {
-          for (const cell of token.header) {
-            values = values.concat(marked.walkTokens(cell.tokens, callback));
-          }
-          for (const row of token.rows) {
-            for (const cell of row) {
-              values = values.concat(marked.walkTokens(cell.tokens, callback));
-            }
-          }
-          break;
-        }
-        case "list": {
-          values = values.concat(marked.walkTokens(token.items, callback));
-          break;
-        }
-        default: {
-          if (marked.defaults.extensions && marked.defaults.extensions.childTokens && marked.defaults.extensions.childTokens[token.type]) {
-            marked.defaults.extensions.childTokens[token.type].forEach(function(childTokens) {
-              values = values.concat(marked.walkTokens(token[childTokens], callback));
-            });
-          } else if (token.tokens) {
-            values = values.concat(marked.walkTokens(token.tokens, callback));
-          }
-        }
-      }
-    }
-    return values;
+    return markedInstance.walkTokens(tokens, callback);
   };
-  marked.parseInline = parseMarkdown(Lexer.lexInline, Parser.parseInline);
+  marked.parseInline = markedInstance.parseInline;
   marked.Parser = Parser;
   marked.parser = Parser.parse;
   marked.Renderer = Renderer;
