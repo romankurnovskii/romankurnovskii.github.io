@@ -3432,6 +3432,14 @@
             "lang": "en"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/easy/other/202_TODO",
+            "title": "202. Happy Number",
+            "description": "202. Happy Number",
+            "content": "\n\n\nLeetCode problem\n\nNaive Solution\n\nA naive solution would be to simply follow the process described in the problem for a large fixed number of iterations or until we find a number that we've seen before.\n\nWe calculate the sum of squares of the digits of n in each iteration, and check if this sum is 1 or a number we've seen before.\nIf it's 1, we return true.\nIf it's a number we've seen before, we return false, as this means we're in an endless loop.\n\nApproach\n\nA more efficient solution involves using the \"Floyd Cycle detection algorithm\" also known as \"Tortoise and the Hare\" algorithm. The idea is to have two pointers, one that updates at twice the speed of the other.\n\nIf a cycle exists, the faster pointer will eventually meet the slower one.\n\nWe start with slow = n and fast = square_sum(n). In each iteration, we update slow to be square_sum(slow), and fast to be square_sum(square_sum(fast)). If slow becomes 1, we return true. If slow becomes equal to fast at some point, we return false.\n\nLet's now write the Python code for this solution:\n\nSteps\n\nSolution\n\nUnderstanding\n\nExample:\n\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/easy/other/190",
             "title": "190. Reverse Bits",
             "description": "190. Reverse Bits",
