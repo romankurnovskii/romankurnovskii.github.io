@@ -5,7 +5,6 @@
   var __getOwnPropNames = Object.getOwnPropertyNames;
   var __getProtoOf = Object.getPrototypeOf;
   var __hasOwnProp = Object.prototype.hasOwnProperty;
-  var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
   var __commonJS = (cb, mod) => function __require() {
     return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
   };
@@ -25,10 +24,6 @@
     isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
     mod
   ));
-  var __publicField = (obj, key, value) => {
-    __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
-    return value;
-  };
 
   // node_modules/react/cjs/react.development.js
   var require_react_development = __commonJS({
@@ -29665,7 +29660,7 @@
     }
     return out;
   }
-  var Lexer = class {
+  var Lexer = class _Lexer {
     constructor(options2) {
       this.tokens = [];
       this.tokens.links = /* @__PURE__ */ Object.create(null);
@@ -29710,14 +29705,14 @@
      * Static Lex Method
      */
     static lex(src, options2) {
-      const lexer2 = new Lexer(options2);
+      const lexer2 = new _Lexer(options2);
       return lexer2.lex(src);
     }
     /**
      * Static Lex Inline Method
      */
     static lexInline(src, options2) {
-      const lexer2 = new Lexer(options2);
+      const lexer2 = new _Lexer(options2);
       return lexer2.inlineTokens(src);
     }
     /**
@@ -30264,7 +30259,7 @@ ${content}</tr>
       return this.getNextSafeSlug(slug, options2.dryrun);
     }
   };
-  var Parser = class {
+  var Parser = class _Parser {
     constructor(options2) {
       this.options = options2 || defaults;
       this.options.renderer = this.options.renderer || new Renderer();
@@ -30277,14 +30272,14 @@ ${content}</tr>
      * Static Parse Method
      */
     static parse(tokens, options2) {
-      const parser2 = new Parser(options2);
+      const parser2 = new _Parser(options2);
       return parser2.parse(tokens);
     }
     /**
      * Static Parse Inline Method
      */
     static parseInline(tokens, options2) {
-      const parser2 = new Parser(options2);
+      const parser2 = new _Parser(options2);
       return parser2.parseInline(tokens);
     }
     /**
@@ -30500,6 +30495,10 @@ ${content}</tr>
     constructor(options2) {
       this.options = options2 || defaults;
     }
+    static passThroughHooks = /* @__PURE__ */ new Set([
+      "preprocess",
+      "postprocess"
+    ]);
     /**
      * Process markdown before marked
      */
@@ -30513,10 +30512,6 @@ ${content}</tr>
       return html;
     }
   };
-  __publicField(Hooks, "passThroughHooks", /* @__PURE__ */ new Set([
-    "preprocess",
-    "postprocess"
-  ]));
   var Marked = class {
     defaults = getDefaults();
     options = this.setOptions;

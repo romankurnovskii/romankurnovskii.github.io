@@ -2183,7 +2183,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 3
+                    "timeTakenInMilliseconds": 6
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -3309,7 +3309,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/94",
             "title": "94. Binary Tree Inorder Traversal",
             "description": "LeetCode 94. Binary Tree Inorder Traversal",
-            "content": "\nTODO\n\nimplement**: create binary tree from list of values\n\nLeetCode problem\n\nGiven the root of a binary tree, return the inorder traversal of its nodes' values.\n\nExample 1:\n\n\n\n    Input: root = [1,null,2,3]\n    Output: [1,3,2]\n\nExample 2:\n\n    Input: root = []\n    Output: []\n\nExample 3:\n\n    Input: root = [1]\n    Output: [1]\n\nThoughts\n\nDon't understand what needed. Why:\n\n1-null-2-3 becomes 1-3-2\n[1,2,5,7,8,9,10] becomes [7,2,8,1,9,5,10]\n\nIn 1-null-2-3 1 becomes the first because we loop to its left node which is null, then come back and first value here is 1.\n\nFirst accepted\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:\n\nadd all left, then add right\n        def get_child(head):\n            if head:\n                get_child(head.left)\n                result.append(head.val)\n                get_child(head.right)\n\n        result = []\n        get_child(root)\n        return result\n\nBetter solution\n\nMorris Traversal\n\nResources\n\nLeetCode explanation\n",
+            "content": "\n\nLeetCode problem\n\nGiven the root of a binary tree, return the inorder traversal of its nodes' values.\n\nExample 1:\n\n\n\n    Input: root = [1,null,2,3]\n    Output: [1,3,2]\n\nExample 2:\n\n    Input: root = []\n    Output: []\n\nExample 3:\n\n    Input: root = [1]\n    Output: [1]\n\nThoughts\n\nDon't understand what needed. Why:\n\n1-null-2-3 becomes 1-3-2\n[1,2,5,7,8,9,10] becomes [7,2,8,1,9,5,10]\n\nIn 1-null-2-3 1 becomes the first because we loop to its left node which is null, then come back and first value here is 1.\n\nFirst accepted\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:\n\nadd all left, then add right\n        def get_child(head):\n            if head:\n                get_child(head.left)\n                result.append(head.val)\n                get_child(head.right)\n\n        result = []\n        get_child(root)\n        return result\n\nBetter solution\n\nMorris Traversal\n\nResources\n\nLeetCode explanation\n",
             "tags": [
                 "Stack",
                 "Tree",
@@ -3432,11 +3432,29 @@
             "lang": "en"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/easy/other/202_TODO",
+            "uri": "/tracks/algorithms-101/leetcode/easy/other/202",
             "title": "202. Happy Number",
-            "description": "202. Happy Number",
-            "content": "\n\n\nLeetCode problem\n\nNaive Solution\n\nA naive solution would be to simply follow the process described in the problem for a large fixed number of iterations or until we find a number that we've seen before.\n\nWe calculate the sum of squares of the digits of n in each iteration, and check if this sum is 1 or a number we've seen before.\nIf it's 1, we return true.\nIf it's a number we've seen before, we return false, as this means we're in an endless loop.\n\nApproach\n\nA more efficient solution involves using the \"Floyd Cycle detection algorithm\" also known as \"Tortoise and the Hare\" algorithm. The idea is to have two pointers, one that updates at twice the speed of the other.\n\nIf a cycle exists, the faster pointer will eventually meet the slower one.\n\nWe start with slow = n and fast = square_sum(n). In each iteration, we update slow to be square_sum(slow), and fast to be square_sum(square_sum(fast)). If slow becomes 1, we return true. If slow becomes equal to fast at some point, we return false.\n\nLet's now write the Python code for this solution:\n\nSteps\n\nSolution\n\nUnderstanding\n\nExample:\n\n\n",
-            "tags": [],
+            "description": "Learn how to determine if a number is happy using Python.",
+            "content": "\n\nLeetCode problem\n\nProblem Statement\n\nIn this problem, we are given a number n. We have to determine whether this number is a \"happy\" number or not. A happy number is a number defined by the following process:\n\nStarting with any positive integer, replace the number by the sum of the squares of its digits.\nRepeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1.\nThose numbers for which this process ends in 1 are happy.\n\nNaive Solution\n\nA naive solution would be to follow the process as stated in the problem description and use a data structure such as a set to check for repetitions indicating a cycle. If during the process, the number becomes 1, we can conclude that the number is happy. However, if we encounter a number that was already visited, it means we are stuck in a cycle, and the number is not happy.\n\nWe calculate the sum of squares of the digits of n in each iteration, and check if this sum is 1 or a number we've seen before.\nIf it's 1, we return true.\nIf it's a number we've seen before, we return false, as this means we're in an endless loop.\n\nHints & Tips\n\nHowever, continuously checking if a number was already visited can be costly in terms of time complexity. A more efficient way to detect cycles is to use the Floyd Cycle detection algorithm (also known as the \"Tortoise and the Hare\" algorithm).\n\nThis algorithm allows us to detect a cycle in the sequence without having to store all previously seen numbers, making it more efficient in terms of space usage.\n\nApproach\n\nFloyd Cycle detection algorithm works by moving two pointers at different speeds - a slow pointer (tortoise) and a fast pointer (hare). If there is a cycle, the fast pointer will eventually meet the slow pointer again.\n\nSteps\n\nInitialize two pointers slow and fast as n.\nReplace\n   slow with the sum of the squares of its digits,\n   and fast with the sum of squares of the next number in the sequence.\nIf fast becomes 1, return True. - n is a happy number.\nIf slow meets fast and the number is not 1, return False. - n is not a happy number as we have detected a cycle.\n\nSolution\n\nHere's the Python code implementing this approach:\n\ndef isHappy(n):\n    def get_next(num):  # get the next number in the sequence\n        total_sum = 0\n        while num > 0:\nget the last digit of the number and the remaining part\n            num, digit = divmod(num, 10)\n            total_sum += digit ** 2\n        return total_sum\n\n    slow = n\n    fast = get_next(n)\n    while fast != 1 and slow != fast:\n        slow = get_next(slow)\n        fast = get_next(get_next(fast))\n\n    return fast == 1\n\nIn this solution, the function get_next(n) is used to get the next number in the sequence by replacing n with the sum of the squares of its digits.\n\nWe initialize slow and fast to n and get_next(n) respectively.\n\nThen, until fast equals 1 or slow catches up to fast, we continue moving slow one step at a time and fast two steps at a time. If fast equals 1 at the end of the loop, n is a happy number.\n",
+            "tags": [
+                "Algorithms",
+                "Python",
+                "LeetCode",
+                "Easy",
+                "Floyd Cycle Detection",
+                "Numbers"
+            ],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/other/191",
+            "title": "191. Number of 1 Bits",
+            "description": "Solving and understanding the LeetCode problem 191. Number of 1 Bits using bitwise operations in Python.",
+            "content": "\nLeetCode problem\n\nProblem Statement\n\nGiven an integer value represented in binary format, we need to count the number of '1' bits in its binary representation.\n\nNaive Solution\n\nThe naive solution for this problem would be to convert the binary number into a string and then simply iterate over the string and count the number of '1's. However, this solution is not optimal and is not taking advantage of the properties of binary numbers.\n\nAlgorithm\n\nThe optimal solution for this problem involves using bitwise operation. Bitwise operations are a type of operation that works on the binary representation of numbers.\n\nSpecifically, we'll use the bitwise AND operator (&) and bitwise right shift operator (>>).\n\nTo count the number of 1 bits in the binary representation of a number, we can AND the number with 1. If the result is 1, that means the least significant bit of the number is 1. We then right shift the number by 1 bit to check the next bit. We continue this process until the number becomes 0.\n\nHigh Level Solution Logic\n\nInitialize a counter variable to 0.\nWhile the number is not 0:\n   AND the number with 1.\n   If the result is 1, increment the counter.\n   Right shift the number by 1 bit.\nReturn the counter.\n\nPython Code\n\nHere's the Python code for this solution:\n\nclass Solution:\n    def hammingWeight(self, n: int) -> int:\n        bits = 0\n        while n:\n            bits += n & 1\n            n >>= 1\n        return bits\n\nExample\n\nLet's say we have a binary number 00000001011, which is 11 in decimal.\n\nInitialize a counter variable to 0. So, bits = 0.\nStart the loop. The number n is 11, which is not 0, so we proceed.\nWe perform the operation n & 1. In binary, 1011 & 0001 equals 0001, which is 1 in decimal. This is because the bitwise AND operation returns 1 only if both bits being compared are 1. So, since our least significant bit is 1, our AND operation returns 1. We increment our counter bits by 1. Now bits = 1.\nWe right shift our number by 1 bit using the operation n >>= 1. This operation moves all the bits of the number one position to the right.\n   Our number 1011 becomes 101 in binary or 5 in decimal.\nOur updated number n is 5, which is not 0, so we repeat the process.\nNow, n & 1 is 101 & 001 equals 001, which is 1 in decimal.\n   So, we increment our counter bits by 1.\n   Now bits = 2.\nWe right shift our number by 1 bit. Our number 101 becomes 10 in binary or 2 in decimal.\n   Our updated number n is 2, which is not 0, so we repeat the process.\nNow, n & 1 is 10 & 01 equals 00, which is 0 in decimal. So, we do not increment our counter bits.\nWe right shift our number by 1 bit. Our number 10 becomes 1 in binary.\n   Our updated number n is 1, which is not 0, so we repeat the process.\nNow, n & 1 is 1 & 1 equals 1. So, we increment our counter bits by 1. Now bits = 3.\nWe right shift our number by 1 bit. Our number 1 becomes 0 in binary.\nOur updated number n is 0, which stops the loop.\n",
+            "tags": [
+                "Bit Manipulation",
+                "LeetCode"
+            ],
             "lang": "en"
         },
         {
@@ -3444,7 +3462,10 @@
             "title": "190. Reverse Bits",
             "description": "190. Reverse Bits",
             "content": "\n\nLeetCode problem\n\nThis task involves understanding how binary representation works. An unsigned integer is a 32-bit value, where each bit represents a power of 2, from 2^0 (the least significant bit) to 2^31 (the most significant bit).\nUnsigned Integers (often called \"uints\") are just like integers (whole numbers) but have the property that they don't have a + or - sign associated with them. Thus they are always non-negative (zero or positive).\n\nNaive Solution\n\nA naive solution to this problem could involve converting the number to a binary string, reversing the string, and then converting it back to an integer. However, this would not be the most efficient solution, especially for large numbers.\n\nApproach\n\nUsing bitwise operation.\n\nA better approach is to manipulate the bits of the number directly. This can be done by initializing an empty result and then repeatedly shifting the result to the left to make room for the next bit, and adding the last bit of the input number.\n\nSteps\n\nInitialize the result to 0.\nRepeat the following steps 32 times, once for each bit in the input number:\n   Shift the result one bit to the left to make room for the next bit. This can be done with the > operator.\n\nAt the end of this process, the result will be the input number with its bits reversed.\n\nSolution\n\nclass Solution:\n    def reverseBits(self, n: int) -> int:\n        result = 0\n        for _ in range(32):\n            result = (result >= 1\n        return result\n\nresult >= 1 shifts the bits of n one place to the right.\n\nUnderstanding\n\nExample:\n\nOur number: n = 0110 1010\n\nOur aim is to reverse these bits to get 0101 0110.\n\nIn the solution, we initialize our result as 0 (0000 0000 in binary). We're going to build this result bit by bit from the binary representation of n.\n\nThe key point of this operation is this line of code: result = (result equivalent to multiplying by 2. So if result was 0101 (5 in decimal), after this operation result will be 1010` (10 in decimal). You can see we've made room for a new bit on the right.\n(n & 1): This operation is a bitwise AND operation. The & operator compares each binary digit of two integers and returns a new integer, with a 1 wherever both numbers had a 1 and a 0 anywhere else.\n   When n is ANDed with 1 (0000 0001), the result will be 1 only if the least significant bit of n is 1. This effectively gives us the last bit of n.\n(result << 1) + (n & 1): This line combines the above two steps. It shifts the bits of result one place to the left and adds the last bit of n to result.\n\nLet's work through the first couple of iterations of the loop:\n\nOn the first iteration, result is 0000 0000. We shift result left (it remains 0000 0000), and add the last bit of n (which is 0). So result remains 0000 0000.\n   We then shift n right to become 0011 0101 (n From 0110 1010 to 0011 0101).\nOn the second iteration, result is 0000 0000. We shift result left (it remains 0000 0000), and add the last bit of n (which is 1). So result becomes 0000 0001. We then shift n right to become 0001 1010.\n\nIf we repeat this process 8 times (for an 8-bit number), or 32 times (for a 32-bit number like in the problem), result will be the binary number formed by reversing the bits of n.\n\nOptimization\n\nIf this function is called many times, way to optimize it is to cache the results for each byte (8 bits) instead of each bit. This would divide the computation time by 8.\n",
-            "tags": [],
+            "tags": [
+                "Bit Manipulation",
+                "LeetCode"
+            ],
             "lang": "en"
         },
         {
@@ -3800,6 +3821,17 @@
             "tags": [
                 "JavaScript",
                 "TypeScript"
+            ],
+            "lang": "en"
+        },
+        {
+            "uri": "/posts/js-convert-array-to-dict",
+            "title": "JavaScript: convert array of objects to dictionary",
+            "description": "JavaScript: convert array of objects to dictionary",
+            "content": "\n\ntype ObjectWithKeyName = {\n  [key: string]: any;\n};\n\n// transform array of objects to dict\n// use object provided keyName as a key of dict\n// expected for each object in array this keyName value is unique\nconst transformArrayToDict = (objects: ObjectWithKeyName[], keyName: string) => {\n  const res: ObjectWithKeyName = {};\n  objects.forEach((obj) => {\n    res[obj[keyName]] = obj;\n  });\n  return res;\n};\n",
+            "tags": [
+                "javascript",
+                "typescript"
             ],
             "lang": "en"
         },
