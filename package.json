@@ -6,7 +6,7 @@
   "author": "Roman Kurnovskii <r.kurnovskii@gmail.com>",
   "scripts": {
     "md-lint": "markdownlint-cli2 \"**/*.md\" \"#node_modules\"",
-    "md-lint-fix": "markdownlint-cli2 --fix \"**/*.md\" \"#node_modules\"",
+    "md-lint-fix": "markdownlint-cli2 --fix \"**/*.md\" \"#node_modules\" \"#venv\" ",
     "hugo-lunr-ml": "hugo-lunr-ml",
     "pull-git-modules": "git submodule update --init --recursive",
     "upd-modules": "git submodule update --remote --merge",
