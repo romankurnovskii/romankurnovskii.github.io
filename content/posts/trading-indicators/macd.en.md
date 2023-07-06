@@ -5,7 +5,7 @@ description: A comprehensive guide to the Moving Average Convergence Divergence 
 toc: true
 tags: [Trading, Indicators, MACD]
 series: []
-categories: [Trading]
+categories: [Trading, Indicators]
 date: 2023-06-15
 lastmod: 2023-06-15
 featuredImage: https://picsum.photos/700/243?grayscale
@@ -121,44 +121,4 @@ If MACD gives a buy signal (MACD line crosses above the signal line), and RSI is
 
 ## Python Implementation
 
-```python
-# Importing Required Libraries
-import pandas as pd
-import yfinance as yf
-import matplotlib.pyplot as plt
-
-# Define the Ticker Symbol
-tickerSymbol = 'AAPL'
-
-# Get the data on this ticker
-tickerData = yf.Ticker(tickerSymbol)
-
-# Get the historical prices for the specified period
-tickerDf = tickerData.history(period='1d', start='2021-1-1', end='2023-6-15')
-
-# Calculate MACD
-# Short term EMA
-ShortEMA = tickerDf.Close.ewm(span=12, adjust=False).mean()
-
-# Long term EMA
-LongEMA = tickerDf.Close.ewm(span=26, adjust=False).mean()
-
-# Calculate MACD line
-MACD = ShortEMA - LongEMA
-
-# Calculate Signal Line
-signal = MACD.ewm(span=9, adjust=False).mean()
-
-# Add MACD and signal line to the data frame
-tickerDf['MACD'] = MACD
-tickerDf['Signal Line'] = signal
-
-# Plot the chart
-plt.figure(figsize=(12.2, 4.5)) #width = 12.2in, height = 4.5
-plt.plot(tickerDf.index, MACD, label='AAPL MACD', color = 'red')
-plt.plot(tickerDf.index, signal, label='Signal Line', color='blue')
-plt.legend(loc='upper left')
-plt.show()
-```
-
-![macd.png](../assets/macd.png)
+{{< notebook "jupyter/macd" 1250 >}}

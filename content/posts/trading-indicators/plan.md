@@ -3,9 +3,9 @@ title: Trading indicators
 seoTitle: Trading indicators
 description: Trading indicators
 toc: false
-tags: []
+tags: [Trading, Indicators]
 series: []
-categories: []
+categories: [Trading, Indicators]
 date: 2023-06-13
 lastmod: 2023-06-13
 featuredImage: https://picsum.photos/700/213?grayscale
@@ -70,11 +70,11 @@ authors: [roman-kurnovskii]
 ## Part 1: The basics (1-15)
 
 1. Volume
-1. Simple Moving Average (SMA)
-1. Exponential Moving Average (EMA)
-1. Moving Average Convergence Divergence (MACD)
-1. Relative Strength Index (RSI)
-1. Bollinger Bands
+1. [Simple Moving Average (SMA)](../sma)
+1. [Exponential Moving Average (EMA)](../ema)
+1. [Moving Average Convergence Divergence (MACD)](../macd)
+1. [Relative Strength Index (RSI)](../rsi)
+1. [Bollinger Bands](../bollinger_bands)
 1. Stochastic Oscillator
 1. Average True Range (ATR)
 1. Average Directional Index (ADX)

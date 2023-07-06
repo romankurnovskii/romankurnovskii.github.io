@@ -5,7 +5,7 @@ description: EMA Trading indicator
 toc: true
 tags: [Trading, Indicators, EMA]
 series: []
-categories: [Trading]
+categories: [Trading, Indicators]
 date: 2023-06-13
 lastmod: 2023-06-13
 featuredImage: https://picsum.photos/700/241?grayscale
@@ -60,7 +60,7 @@ Let's calculate a <mark>5-minute EMA</mark> at Minute <nark>6</mark> with the fo
 | 8      | $17.1 | $17.1 | $15.9 | $16.0 | ...       |
 | 9      | $16.1 | $18.1 | $16.0 | $18.0 | ...       |
 
-**Can be calculated from first price*
+*Can be calculated from first price*
 
 Here, `N = 5`, so `Multiplier = 2 / (5 + 1) = 0.33`.
 

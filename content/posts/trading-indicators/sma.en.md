@@ -5,7 +5,7 @@ description: SMA Trading indicator
 toc: true
 tags: [Trading, Indicators, SMA]
 series: []
-categories: [Trading]
+categories: [Trading, Indicators]
 date: 2023-06-13
 lastmod: 2023-06-13
 featuredImage: https://picsum.photos/700/240?grayscale

@@ -5,7 +5,7 @@ description: A comprehensive guide to the Relative Strength Index (RSI) trading 
 toc: true
 tags: [Trading, Indicators, RSI]
 series: []
-categories: [Trading]
+categories: [Trading, Indicators]
 date: 2023-06-15
 lastmod: 2023-06-15
 featuredImage: https://picsum.photos/700/242?grayscale
@@ -90,52 +90,4 @@ For instance, traders might look for price action patterns (like support/resista
 
 ## Python Implementation
 
-```python
-# Importing Required Libraries
-import pandas as pd
-import yfinance as yf
-import matplotlib.pyplot as plt
-
-# Define the Ticker Symbol
-tickerSymbol = 'MSFT'
-
-# Get the data on this ticker
-tickerData = yf.Ticker(tickerSymbol)
-
-# Get the historical prices for the specified period
-tickerDf = tickerData.history(period='1d', start='2020-1-1', end='2023-1-25')
-
-# Calculate RSI
-delta = tickerDf['Close'].diff(1)
-delta = delta.dropna()
-up = delta.copy()
-down = delta.copy()
-up[up < 0] = 0
-down[down > 0] = 0
-average_gain = up.rolling(window=14).mean()
-average_loss = abs(down.rolling(window=14).mean())
-rs = average_gain / average_loss
-RSI = 100.0 - (100.0 / (1.0 + rs))
-
-# Add RSI to the data frame
-tickerDf['RSI'] = RSI
-
-# Plot the chart
-plt.figure(figsize=(12.2, 4.5)) #width = 12.2in, height = 4.5
-plt.plot(tickerDf.index, tickerDf['RSI'], label='RSI', color = 'red')
-plt.axhline(0, linestyle='--', alpha = 0.5, color = 'gray')
-plt.axhline(10, linestyle='--', alpha = 0.5, color = 'orange')
-plt.axhline(20, linestyle='--', alpha = 0.5, color = 'green')
-plt.axhline(30, linestyle='--', alpha = 0.5, color = 'red')
-plt.axhline(70, linestyle='--', alpha = 0.5, color = 'red')
-plt.axhline(80, linestyle='--', alpha = 0.5, color = 'green')
-plt.axhline(90, linestyle='--', alpha = 0.5, color = 'orange')
-plt.axhline(100, linestyle='--', alpha = 0.5, color = 'gray')
-plt.title('RSI of '+tickerSymbol)
-plt.xlabel('Date',fontsize=15)
-plt.ylabel('RSI',fontsize=15)
-plt.legend(loc='upper left')
-plt.show()
-```
-
-![rsi.png](../assets/rsi.png)
+{{< notebook "jupyter/rsi" 1250 >}}
