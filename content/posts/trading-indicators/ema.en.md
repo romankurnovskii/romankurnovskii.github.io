@@ -6,9 +6,9 @@ toc: true
 tags: [Trading, Indicators, EMA]
 series: []
 categories: [Trading, Indicators]
-date: 2023-06-13
+date: 2023-07-07
 lastmod: 2023-06-13
-featuredImage: https://picsum.photos/700/241?grayscale
+featuredImage: https://picsum.photos/699/241?grayscale
 authors:
 prerequisites: [SMA]
 weight: 20
@@ -110,36 +110,4 @@ For instance, a trader might look for the short-term EMA to cross above the long
 
 ## Python Implementation
 
-```python
-# Importing Required Libraries
-import pandas as pd
-import yfinance as yf
-import matplotlib.pyplot as plt
-
-# Define the Ticker Symbol
-tickerSymbol = 'BAC'
-
-# Get the data on this ticker
-tickerData = yf.Ticker(tickerSymbol)
-
-# Get the historical prices for the specified period
-tickerDf = tickerData.history(period='1d', start='2021-4-1', end='2022-10-30')
-
-# Calculate Exponential Moving Averages
-tickerDf['EMA12'] = tickerDf['Close'].ewm(span=12, adjust=False).mean()
-tickerDf['EMA26'] = tickerDf['Close'].ewm(span=26, adjust=False).mean()
-
-# Plot the chart
-plt.figure(figsize=(12.2, 4.5)) #width = 12.2in, height = 4.5
-plt.plot(tickerDf.index, tickerDf['EMA12'], label='EMA12', color = 'red')
-plt.plot(tickerDf.index, tickerDf['EMA26'], label='EMA26', color = 'blue')
-plt.plot(tickerDf.index, tickerDf['Close'], label='BAC Close', color = 'gray')
-
-plt.title('Exponential Moving Averages of '+tickerSymbol)
-plt.xlabel('Date',fontsize=15)
-plt.ylabel('Price USD ($)',fontsize=15)
-plt.legend(loc='upper left')
-plt.show()
-```
-
-![ema.png](../assets/ema.png)
+{{< notebook "jupyter/ema" 1350 >}}

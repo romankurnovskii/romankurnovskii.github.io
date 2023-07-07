@@ -6,7 +6,6 @@ layout: apps
 
 - [markdown-to-pdf-book-converter](https://github.com/romankurnovskii/markdown-to-pdf-book-converter) - Create a pdf book from markdown files.
 
-
 ### npm
 
 - [pytree](https://www.npmjs.com/package/pytree) - Print python project tree structure with classes and methods

@@ -15,6 +15,7 @@ authors: [roman-kurnovskii]
 ## Create Projects
 
 Creating three example projects:
+
 1. node.js express server that returns json on request
 2. another node.js express server
 3. static html page
@@ -90,6 +91,7 @@ http {
 To start js applications need to run `node` command.
 
 `start.sh`:
+
 ```sh
 #!/bin/sh
 
@@ -102,7 +104,6 @@ node /opt/projects/2/app.js &
 # Start nginx in the foreground
 nginx -g 'daemon off;'
 ```
-
 
 ## Docker file
 
@@ -160,7 +161,6 @@ docker run  -p 80:80 myserver
 ```
 
 2. Open in browser on host:
-   1. project 1: http://mydomain1.localhost
-   2. project 2: http://mydomain2.localhost
-   3. project 3: http://mydomain3.localhost
-
+   1. project 1: <http://mydomain1.localhost>
+   2. project 2: <http://mydomain2.localhost>
+   3. project 3: <http://mydomain3.localhost>

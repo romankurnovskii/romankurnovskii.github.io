@@ -90,4 +90,4 @@ For instance, traders might look for price action patterns (like support/resista
 
 ## Python Implementation
 
-{{< notebook "jupyter/rsi" 1250 >}}
+{{< notebook "jupyter/rsi" 1400 >}}

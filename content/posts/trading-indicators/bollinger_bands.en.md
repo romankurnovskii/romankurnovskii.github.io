@@ -5,7 +5,7 @@ description: Bollinger Bands Trading Indicator
 toc: true
 tags: [Trading, Indicators, Bollinger Bands]
 series: []
-categories: [Trading]
+categories: [Trading, Indicators]
 date: 2023-07-06
 lastmod: 2023-07-06
 featuredImage: https://picsum.photos/700/240?grayscale
@@ -62,11 +62,10 @@ In a trending market, the price can touch the upper band (in an uptrend) or the 
 
 ## Use in Real Trading
 
-Bollinger Bands can be combined with other indicators for better signal confirmation. 
+Bollinger Bands can be combined with other indicators for better signal confirmation.
 
 For example, using it in conjunction with the RSI could help traders avoid false signals. When the price touches the upper band and the RSI indicates overbought conditions, there might be a good chance the price will decrease, indicating a sell signal.
 
-
 ## Python Implementation
 
-{{< notebook "jupyter/bollinger_bands" 1250 >}}
+{{< notebook "jupyter/bollinger_bands" 1300 >}}

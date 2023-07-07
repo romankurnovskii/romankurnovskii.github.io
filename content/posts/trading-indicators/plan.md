@@ -2,14 +2,13 @@
 title: Trading indicators
 seoTitle: Trading indicators
 description: Trading indicators
-toc: false
+toc: true
 tags: [Trading, Indicators]
 series: []
 categories: [Trading, Indicators]
 date: 2023-06-13
 lastmod: 2023-06-13
 featuredImage: https://picsum.photos/700/213?grayscale
-authors: [roman-kurnovskii]
 ---
 
 ## Raw market data

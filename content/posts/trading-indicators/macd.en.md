@@ -121,4 +121,4 @@ If MACD gives a buy signal (MACD line crosses above the signal line), and RSI is
 
 ## Python Implementation
 
-{{< notebook "jupyter/macd" 1250 >}}
+{{< notebook "jupyter/macd" 1400 >}}
