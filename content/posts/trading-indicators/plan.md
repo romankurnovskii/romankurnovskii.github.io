@@ -74,8 +74,8 @@ featuredImage: https://picsum.photos/700/213?grayscale
 1. [Moving Average Convergence Divergence (MACD)](../macd)
 1. [Relative Strength Index (RSI)](../rsi)
 1. [Bollinger Bands](../bollinger_bands)
-1. Stochastic Oscillator
-1. Average True Range (ATR)
+1. [Stochastic Oscillator](../stochastic_oscillator)
+1. [Average True Range (ATR)](../atr)
 1. Average Directional Index (ADX)
 1. On-Balance Volume (OBV)
 1. Chaikin Money Flow (CMF)
