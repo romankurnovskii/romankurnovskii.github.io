@@ -48,7 +48,9 @@ Structure:
 
 Server needs to "understand" the initial subdomain and where to forward.
 
-For this use reverse proxy:
+For this use reverse proxy
+
+`nginx.conf`:
 
 ```
 worker_processes 1;
