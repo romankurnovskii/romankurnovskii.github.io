@@ -2204,7 +2204,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 9
+                    "timeTakenInMilliseconds": 2
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -4047,6 +4047,18 @@
                 "Trading",
                 "Indicators",
                 "Bollinger Bands"
+            ],
+            "lang": "en"
+        },
+        {
+            "uri": "/posts/trading-indicators/atr",
+            "title": "Average True Range (ATR) - Volatility Indicator",
+            "description": "ATR Trading Indicator",
+            "content": "\nAbout\n\nThe Average True Range (ATR) is a technical analysis indicator that measures market volatility by decomposing the entire range of an asset price for that period. It was developed by J. Welles Wilder Jr. and introduced in his book \"New Concepts in Technical Trading Systems\" in 1978.\n\nCalculating\n\nFormula\n\nATR is calculated based on the true range (TR), which is the maximum of the following:\n\nCurrent High less the current Low\nAbsolute value of (Current High less the previous Close)\nAbsolute value of (Current Low less the previous Close)\n\nThe ATR is then the moving average over a given period of the TR.\n\nATR = Average(TR, N)\n\nFor the first calculation of the ATR, it's simply the average of the TR over a specified period. But for subsequent calculations, it's the average of the previous ATR value and the current TR.\n\nPros and Cons\n\nPros:\n\nATR does not provide a directional bias, it purely measures volatility.\nIt can be used in all markets such as stocks, forex, commodities etc.\nATR adapts to changing market conditions, increasing during market turbulence and decreasing in calm markets.\n\nCons:\n\nATR does not indicate price direction, only volatility.\nDuring periods of rapid price changes, ATR may experience sharp increases, reflecting the inherent volatility in the price series.\n\nExample of signals\n\nATR does not provide trading signals like other oscillators such as RSI or MACD. It provides a gauge of market volatility which can assist in stop loss placement or determining trade size.\n\nTrue Positive:\n\nIn a trending market, ATR can help a trader place their stop loss further away during high volatility periods and closer during low volatility periods, reducing the likelihood of being stopped out prematurely.\n\nFalse Positive:\n\nIn a ranging market, a sudden price breakout can cause a sharp increase in ATR, possibly leading to an unnecessarily wide stop loss if the breakout turns out to be a false one.\n\nUse in Real Trading\n\nIn real trading, ATR can be used in conjunction with other indicators for better signal confirmation. For example, ATR can be used with a trend following system to manage stop losses. As ATR increases, your stop loss can be placed further from your entry point allowing for market volatility.\n\nPython Implementation\n\n{{}}\n",
+            "tags": [
+                "Trading",
+                "Indicators",
+                "ATR"
             ],
             "lang": "en"
         },
