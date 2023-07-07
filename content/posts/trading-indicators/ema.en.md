@@ -11,7 +11,7 @@ lastmod: 2023-06-13
 featuredImage: https://picsum.photos/699/241?grayscale
 authors:
 prerequisites: [SMA]
-weight: 20
+# weight: 20
 ---
 
 ## About

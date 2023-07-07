@@ -6,11 +6,15 @@ toc: true
 tags: [docker, nginx, nodejs, programming]
 series: []
 categories: [Programming]
-date: 2023-03-07
-lastmod: 2023-05-15
+date: 2023-07-07
+lastmod: 2023-07-07
 featuredImage: https://picsum.photos/688/235?grayscale
 authors: [roman-kurnovskii]
 ---
+
+## TLDR
+
+[Code sources](https://github.com/romankurnovskii/romankurnovskii.github.io/tree/main/content/posts/vps-docker-subdomains-setup/project)
 
 ## Create Projects
 

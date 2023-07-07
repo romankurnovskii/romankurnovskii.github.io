@@ -11,7 +11,7 @@ lastmod: 2023-06-15
 featuredImage: https://picsum.photos/700/242?grayscale
 authors: []
 prerequisites: [Technical Analysis, Oscillators]
-weight: 40
+# weight: 40
 ---
 
 ## About
