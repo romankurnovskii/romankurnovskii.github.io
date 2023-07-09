@@ -1793,7 +1793,7 @@
             "uri": "/posts/vps-docker-subdomains-setup/project/projects/3/",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 2
+                    "timeTakenInMilliseconds": 1
                 },
                 "result": "Hello World!",
                 "ranges": [
@@ -3267,6 +3267,19 @@
             "content": "\n\nLeetCode problem\n\n// .js\n/**\n @param {string} s\n @return {number}\n */\nvar myAtoi = function(s) {\n    let res = 0;\n    let num = parseInt(s);\n    if(num >= 2147483648){\n        res = 2147483647;\n    } else if (num <= -2147483648){\n        res = -2147483648;\n    } else if (isNaN(num)) {\n        res = 0;\n    } else {\n        res = num;\n    }\n\n    return res;\n};\n",
             "tags": [
                 "LeetCode Top Interview"
+            ],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/other/166",
+            "title": "166. Fraction to Recurring Decimal",
+            "description": "An in-depth explanation and Python solution for LeetCode problem 166: Fraction to Recurring Decimal",
+            "content": "\nLeetCode problem\n\nProblem Statement\n\nGiven two integers representing the numerator and denominator of a fraction, return the fraction in string format. If the fractional part is repeating, enclose the repeating part in parentheses.\n\nNaive Solution\n\nA naive solution could involve simple division - you divide the numerator by the denominator and convert it to a string. However, this wouldn't account for recurring decimals, and it would only be correct for fractions that result in a finite decimal.\n\nApproach\n\nWe need a more sophisticated approach to detect recurring decimals. We'll do this by keeping track of our remainders. If we ever find that we're about to divide the same remainder again, we know that our decimals will start repeating.\n\nSteps\n\nDetermine the integer part, which is numerator // denominator.\nFor the fractional part, keep track of the remainders and their corresponding positions in the decimal fraction. If a remainder is repeating (i.e., it already exists in the dictionary), stop there and put that part in parentheses.\n\nSolution\n\nclass Solution:\n    def fractionToDecimal(self, numerator: int, denominator: int) -> str:\n        if numerator == 0:\n            return \"0\"\n        result = \"\"\n        if (numerator < 0) != (denominator < 0):\n            result += \"-\"\n        numerator = abs(numerator)\n        denominator = abs(denominator)\n        result += str(numerator // denominator)\n        remainder = numerator % denominator\n        if remainder == 0:\n            return result\n        else:\n            result += \".\"\n        map = {remainder: len(result)}\n        while remainder != 0:\n            remainder *= 10\n            result += str(remainder // denominator)\n            remainder %= denominator\n            if remainder in map:\n                index = map[remainder]\n                result = result[:index] + \"(\" + result[index:] + \")\"\n                return result\n            else:\n                map[remainder] = len(result)\n        return result\n",
+            "tags": [
+                "LeetCode",
+                "Python",
+                "Medium",
+                "Math"
             ],
             "lang": "en"
         },
