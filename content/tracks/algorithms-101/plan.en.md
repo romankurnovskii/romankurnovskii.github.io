@@ -86,3 +86,9 @@ Practice on each coding pattern.
 |  37   | [78. Subsets](../leetcode/medium/78)           | Medium     | [Array](/en/tags/array), [Backtracking](/en/tags/backtracking),  [Bit Manipulation](/en/tags/bit-manipulation)       |
 
 Started participating in [contests](../codeforces).
+
+
+## Links
+
+- [Top Interview 150](https://leetcode.com/studyplan/top-interview-150/)
+- [LeetCode Companies problems](https://docs.google.com/spreadsheets/d/1hW-bfeFKSkEDzfjaDMjDQmgsupEZz3gysXpG0mrf6QE/edit#gid=1350124072)

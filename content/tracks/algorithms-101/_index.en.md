@@ -1,6 +1,6 @@
 ---
 title: Algorithms 101
-description: LeetCode Cookbook
+description: Algorithms 101 Cookbook
 toc: true
 authors: [roman-kurnovskii]
 tags: []

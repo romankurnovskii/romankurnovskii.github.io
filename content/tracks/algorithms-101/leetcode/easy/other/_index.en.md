@@ -1,6 +1,7 @@
 ---
 title: Other
-description: null
+seoTitle: LeetCode TOP Video Solutions
+description: LeetCode TOP Video Solutions
 authors:
 categories: [Algorithms, Medium, 'programming', 'leetcode']
 tags: ['leetcode']
@@ -10,5 +11,6 @@ toc: false
 date: 2023-04-29
 lastmod: 2023-04-29
 published: true
-weight: 99999
+weight: 1
 ---
+

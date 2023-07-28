@@ -1,6 +1,6 @@
 ---
 title: LeetCode
-seoTitle: LeetCode Problems
+seoTitle: LeetCode Solutions with Explanations
 description: null
 authors:
 categories: ['programming', 'leetcode']
@@ -10,7 +10,7 @@ tags: ['leetcode']
 toc: true
 weight: 20
 date: 2022-10-16
-lastmod: 2023-02-06
+lastMod: 2023-07-27
 published: true
 ---
 
