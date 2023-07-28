@@ -87,7 +87,6 @@ Practice on each coding pattern.
 
 Started participating in [contests](../codeforces).
 
-
 ## Links
 
 - [Top Interview 150](https://leetcode.com/studyplan/top-interview-150/)
