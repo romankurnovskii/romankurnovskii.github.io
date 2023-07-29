@@ -48,38 +48,34 @@ Install GUI applications (read more about these in GUI Applications):
 ```bash
 brew install --cask \
   appcleaner \
-  dbeaver-community \
+  all-in-one-messenger \
+  anaconda \
+  brewmate \
   deepl \
+  discord \
   disk-inventory-x \
+  docker \
+  figma \
   google-chrome  \
   google-drive \
   grammarly \
-  itsycal \
-  firefox \
-  visual-studio-code \
-  all-in-one-messenger \
-  sublime-text \
-  docker \
-  rectangle \
-  discord \
-  vlc \
-  figma \
-  grammarly \
-  macx-youtube-downloader \
-  notion \
-  postman \
-  tor-browser \
-  transmission \
-  utm \
-  mongodb-compass \
-  obs \
-  spotify \
   iterm2 \
+  itsycal \
+  macx-youtube-downloader \
+  mongodb-compass \
+  notion \
+  obs \
+  postman \
   rectangle \
   sublime-text \
   syncthing \
+  telegram \
+  tor-browser \
+  transmission \
+  utm \
   viber \
   visual-studio-code \
+  vlc \
   yandex-disk \
   zoom
 ```
@@ -403,6 +399,8 @@ Add aliases to latest versions pip & python
 
 # snippet creates python virtual env in current folder
 alias penv='python -m venv venv && source ./venv/bin/activate && pip install --upgrade pip && echo "\n" >> requirements.txt && pip install -r requirements.txt && pip freeze > requirements_freeze.txt && echo "venv/" >> .gitignore'
+
+alias jp="jupyter notebook $@"
 ```
 
 ## Links

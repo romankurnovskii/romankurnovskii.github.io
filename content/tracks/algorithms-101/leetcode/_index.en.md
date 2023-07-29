@@ -30,7 +30,6 @@ Use these VSCode extensions to debug/submit:
 
 ## Resources
 
-- <https://walkccc.me/LeetCode/problems/>
-- <https://books.halfrost.com/leetcode/>
+- [LeetCode solutions by walkccc](https://walkccc.me/LeetCode/problems/)
 - <https://grandyang.com/leetcode/>
 - [Competitive Programmer's Handbook](https://github.com/pllk/cphb/)
