@@ -15,7 +15,7 @@ Example 1:
 Input: head = [1,2,3,4,5], n = 2 Output: [1,2,3,5] Example 2:
 Input: head = [1], n = 1 Output: [] Idea:
 Two pointers. Second pointer starts from nth position. Run while second pointer exist. First version:
-# Definition for singly-linked list. # class ListNode: # def __init__(self, val=0, next=None): # self.val = val # self.</description></item><item><title>234. Palindrome Linked List</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/other/234/</link><pubDate>Mon, 03 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/other/234/</guid><description>LeetCode problem
+# Definition for singly-linked list. # class ListNode: # def __init__(self, val=0, next=None): # self.val = val # self.</description></item><item><title>234. Palindrome Linked List</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/234/</link><pubDate>Mon, 03 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/234/</guid><description>LeetCode problem
 Problem Statement Given the head of a singly linked list, return true if it is a palindrome or false otherwise.
 Naive Solution A simple solution to this problem is to:
 traverse the linked list storing the value of each node in an array. Then, we could compare the array with its reversed version.
