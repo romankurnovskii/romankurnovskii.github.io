@@ -61,4 +61,3 @@ content/tracks/algorithms-101/leetcode/easy/605.en.md
 ```
 
 Both solutions effectively solve the problem but the second solution provides some optimization by reducing the extra space needed for the `new_arr`. It directly modifies the input `flowerbed` array.
-
