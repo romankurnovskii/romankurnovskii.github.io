@@ -23,7 +23,7 @@ weight: 16
 |   5   | [345. Reverse Vowels of a String](../leetcode/easy/345)                 | Easy       |
 |   6   | [151. Reverse Words in a String](../leetcode/medium/151)                | Medium     |
 |   7   | [238. Product of Array Except Self](../leetcode/medium/238)             | Medium     |
-|   8   | [Increasing Triplet Subsequence](../leetcode/medium/8)                  | Medium     |
+|   8   | [334. Increasing Triplet Subsequence](../leetcode/medium/334)           | Medium     |
 |   9   | [String Compression](../leetcode/medium/9)                              | Medium     |
 
 ## Two Pointers
