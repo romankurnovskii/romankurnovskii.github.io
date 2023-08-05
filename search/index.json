@@ -2213,7 +2213,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 6
+                    "timeTakenInMilliseconds": 2
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -3251,6 +3251,14 @@
             "lang": "en"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/151",
+            "title": "151. Reverse Words in a String",
+            "description": "151. Reverse Words in a String",
+            "content": "\nLeetCode problem\n\nProblem Statement\n\nThe problem is about reversing the order of words in a given string s. Each word in s is defined as a sequence of non-space characters and the words are separated by at least one space. You are expected to return a string with the words in reversed order and separated by a single space. It is important to note that s may contain leading or trailing spaces or multiple spaces between two words, but the returned string should not contain any extra spaces.\n\nNaive Solution\n\nA naive solution could be to split the input string into individual words and then reverse the order of these words. However, this would require extra space to store the words and does not take care of multiple, leading, or trailing spaces.\n\nHints & Tips\n\nPython's built-in string methods split and join can be very helpful in this problem. The split method can be used to split the string into individual words, and it also takes care of multiple spaces. The join method can be used to concatenate the words in reverse order.\n\nApproach\n\nAn efficient approach would be to:\n\nSplit the string into individual words using the split method. This will take care of multiple spaces.\nReverse the order of words using slicing.\nJoin the words in reversed order using the join method.\n\nSteps\n\nUse the split method to split s into individual words. This will return a list of words.\nReverse the order of words in the list using slicing.\nUse the join method to concatenate the words in reversed order and return the result.\n\nPython Solution\n\nclass Solution:\n    def reverseWords(self, s: str) -> str:\n        words = s.split()\n        words.reverse()\n        return ' '.join(words)\n\nOr even shorter:\n\nclass Solution:\n    def reverseWords(self, s: str) -> str:\n        return ' '.join(s.split()[::-1])\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/15",
             "title": "15. 3Sum",
             "description": "LeetCode 15. 3Sum",
@@ -3577,14 +3585,6 @@
             "title": "160. Intersection of Two Linked Lists",
             "description": "Finding the intersection of two singly linked lists.",
             "content": "\n\nLeetCode problem\n\nSolution 1\n\nUsing hashmap.\n\nDefinition for singly-linked list.\nclass ListNode:\n    def init(self, x):\n        self.val = x\n        self.next = None\n\nclass Solution:\n    def getIntersectionNode(self, headA: ListNode, headB: ListNode):\n        nodes = set()\n\n        cur = headA\n        while cur:\n            nodes.add(cur)\n            cur = cur.next\n\n        cur = headB\n        while cur:\n            if cur in nodes:\n                return cur\n            cur = cur.next\n\n        return None\n\nSolution 2\n\nInitialize two pointers, one for each head.\nMove each pointer to the next node in its list.\nIf a pointer reaches the end of its list, move it to the start of the other list.\nRepeat steps 2 and 3 until the two pointers meet, or until both pointers have switched lists and reached the end (meaning there is no intersection).\n\nThe key insight is that by switching lists when a pointer reaches the end, each pointer traverses the same total number of nodes. This means they must meet at the intersection if one exists.\n\nclass Solution:\n    def getIntersectionNode(self, headA: ListNode, headB: ListNode):\n        pointerA, pointerB = headA, headB\n\nContinue until the pointers meet\n        while pointerA != pointerB:\nMove each pointer to the next node,\nor to the start of the other list if it reached the end\n            pointerA = pointerA.next if pointerA else headB\n            pointerB = pointerB.next if pointerB else headA\n\nReturn the intersecting node, or None if there is no intersection\n        return pointerA\n\nIt may seem like the loop could run forever because it continues until the two pointers meet and each pointer is always moved forward (to the next node or to the start of the other list).\n\nIf the two linked lists intersect, then from the point of intersection, they share the same nodes until the end. The two pointers will meet at the intersection point because when each pointer has traversed its own list once and then the other list, they have both traversed exactly the same number of nodes in total (the length of list A plus the length of list B). So, they must meet at the intersection point if one exists.\n\nIf the linked lists do not intersect, the pointers will both reach the end of the other list after traversing both lists. They'll be both set to None, and the loop condition pointerA != pointerB will fail, terminating the loop.\n\nSo, regardless of whether the linked lists intersect, the loop will eventually terminate. This is why the solution has a time complexity of O(m + n), where m and n are the lengths of the two linked lists.\n",
-            "tags": [],
-            "lang": "en"
-        },
-        {
-            "uri": "/tracks/algorithms-101/leetcode/easy/151",
-            "title": "151. Reverse Words in a String",
-            "description": "151. Reverse Words in a String",
-            "content": "\nLeetCode problem\n\nProblem Statement\n\nThe problem is about reversing the order of words in a given string s. Each word in s is defined as a sequence of non-space characters and the words are separated by at least one space. You are expected to return a string with the words in reversed order and separated by a single space. It is important to note that s may contain leading or trailing spaces or multiple spaces between two words, but the returned string should not contain any extra spaces.\n\nNaive Solution\n\nA naive solution could be to split the input string into individual words and then reverse the order of these words. However, this would require extra space to store the words and does not take care of multiple, leading, or trailing spaces.\n\nHints & Tips\n\nPython's built-in string methods split and join can be very helpful in this problem. The split method can be used to split the string into individual words, and it also takes care of multiple spaces. The join method can be used to concatenate the words in reverse order.\n\nApproach\n\nAn efficient approach would be to:\n\nSplit the string into individual words using the split method. This will take care of multiple spaces.\nReverse the order of words using slicing.\nJoin the words in reversed order using the join method.\n\nSteps\n\nUse the split method to split s into individual words. This will return a list of words.\nReverse the order of words in the list using slicing.\nUse the join method to concatenate the words in reversed order and return the result.\n\nPython Solution\n\nclass Solution:\n    def reverseWords(self, s: str) -> str:\n        words = s.split()\n        words.reverse()\n        return ' '.join(words)\n\nOr even shorter:\n\nclass Solution:\n    def reverseWords(self, s: str) -> str:\n        return ' '.join(s.split()[::-1])\n",
             "tags": [],
             "lang": "en"
         },
