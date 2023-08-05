@@ -28440,13 +28440,17 @@
       function canTextBeChildOfNode(node) {
         return !elementsWithNoTextChildren.has(node.name);
       }
+      function returnFirstArg(arg) {
+        return arg;
+      }
       module.exports = {
         PRESERVE_CUSTOM_ATTRIBUTES,
         invertObject,
         isCustomComponent,
         setStyleProp,
         canTextBeChildOfNode,
-        elementsWithNoTextChildren
+        elementsWithNoTextChildren,
+        returnFirstArg
       };
     }
   });
@@ -28528,6 +28532,7 @@
         var node;
         var isWhitespace;
         var hasReplace = typeof options2.replace === "function";
+        var transform = options2.transform || utilities.returnFirstArg;
         var replaceElement;
         var props;
         var children;
@@ -28542,7 +28547,7 @@
                   key: replaceElement.key || i
                 });
               }
-              result.push(replaceElement);
+              result.push(transform(replaceElement, node, i));
               continue;
             }
           }
@@ -28554,7 +28559,7 @@
             if (trim && isWhitespace) {
               continue;
             }
-            result.push(node.data);
+            result.push(transform(node.data, node, i));
             continue;
           }
           props = node.attribs;
@@ -28586,7 +28591,7 @@
           if (len > 1) {
             props.key = i;
           }
-          result.push(createElement(node.name, props, children));
+          result.push(transform(createElement(node.name, props, children), node, i));
         }
         return result.length === 1 ? result[0] : result;
       }
