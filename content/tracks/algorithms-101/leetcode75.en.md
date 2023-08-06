@@ -11,6 +11,10 @@ toc: false
 weight: 16
 ---
 
+<!-- 
+    Presentation:  
+    CURRENT: 392
+-->
 
 ## Array / String
 
@@ -24,14 +28,14 @@ weight: 16
 |   6   | [151. Reverse Words in a String](../leetcode/medium/151)                | Medium     |
 |   7   | [238. Product of Array Except Self](../leetcode/medium/238)             | Medium     |
 |   8   | [334. Increasing Triplet Subsequence](../leetcode/medium/334)           | Medium     |
-|   9   | [String Compression](../leetcode/medium/9)                              | Medium     |
+|   9   | [443. String Compression](../leetcode/medium/443)                              | Medium     |
 
 ## Two Pointers
 
 |   #   | Problem                                                | Difficulty |
 | :---: | ------------------------------------------------------ | ---------- |
 |  10   | [283. Move Zeroes](../leetcode/easy/283)               | Easy       |
-|  11   | [Is Subsequence](../leetcode/easy/11)                  | Easy       |
+|  11   | [392. Is Subsequence](../leetcode/easy/392)                  | Easy       |
 |  12   | [11. Container With Most Water](../leetcode/medium/11) | Medium     |
 |  13   | [Max Number of K-Sum Pairs](../leetcode/medium/13)     | Medium     |
 
