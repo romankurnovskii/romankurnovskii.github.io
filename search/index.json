@@ -3080,6 +3080,16 @@
             "lang": "en"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/443",
+            "title": "443. String Compression",
+            "description": "443. String Compression",
+            "content": "\nLeetCode problem\n\nProblem Statement\n\nGiven a list of characters, chars, you are required to compress the list using the following algorithm:\n\nStart with an empty string, s.\nFor each group of consecutive repeating characters in chars:\n  If the group's length is 1, append the character to s.\n  Otherwise, append the character followed by the group's length.\n\nThe compressed string s should be stored back in the chars list. The length of the group that is 10 or longer will be split into multiple characters in chars.\n\nAfter modifying the input list, return the new length of the list.\n\nNaive Solution\n\nA simple approach would be to iterate over the chars list and, for each character, start another loop that counts the number of repeated characters. This would give us both the character and its count. We can then modify the list in place with this information. However, this would involve nested loops leading to a higher time complexity.\n\nApproach\n\nA more efficient approach would be to use a read and write pointer technique:\n\nInitialize two pointers read and write at the start of the list.\nWhile read hasn't reached the end of the list:\n   Count how many times the character at the read pointer is consecutively repeated.\n   Write the character and its count (if greater than 1) at the write pointer location.\n\nSteps\n\nInitialize read and write pointers to 0.\nWhile read is less than the length of chars:\n   Store the current character.\n   Count its consecutive repetitions and move the read pointer accordingly.\n   Write the character at the write pointer location.\n   If the count is greater than 1, write the count's digits individually.\n   Move the write pointer.\n\nSolution\n\ndef compress(chars):\n    read, write = 0, 0\n\nContinue while there are characters left to read.\n    while read  1:\n            for digit in str(count):  # Convert count to its string representation\n                chars[write] = digit  # Write each digit of the count\n                write += 1\n\n    return write\n",
+            "tags": [
+                "Strings"
+            ],
+            "lang": "en"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/38",
             "title": "38. Count and Say",
             "description": "LeetCode 38. Count and Say",
@@ -3460,6 +3470,17 @@
             "tags": [
                 "Algorithms",
                 "Easy"
+            ],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/392",
+            "title": "392. Is Subsequence",
+            "description": "Exploring whether one string is a subsequence of another.",
+            "content": "\nLeetCode problem 392\n\nProblem Statement\n\nGiven two strings s and t, you need to determine if s is a subsequence of t. To be a subsequence, you can remove characters from t without reordering to form s.\n\nNaive Solution\n\nThe naive approach would be to generate all subsequences of string t and then check if string s is one of them. However, generating all subsequences of t can be computationally expensive especially when the length of t is large.\n\nHints & Tips\n\nUnderstanding the nature of the problem is vital. This problem can be visualized as two pointers moving through both strings. If characters match, move both pointers. If not, only move the pointer in t.\n\nApproach\n\nTo determine if s is a subsequence of t, we can use a two-pointer technique.\n\nBegin by initializing two pointers at the start of s and t.\nMove through t, looking for a match with the current character of s.\nIf you find a match, move to the next character in s.\nIf you reach the end of s while doing this, it means s is a subsequence of t.\n\nSteps\n\nInitialize two pointers i and j to 0. i points to characters in s while j points to characters in t.\nTraverse through t using the pointer j.\nWhen s[i] is equal to t[j], increment i.\nIf i becomes equal to the length of s, return True since it means all characters of s are present in t in order.\nIf the loop completes and i is not equal to the length of s, return False.\n\nSolution\n\ndef isSubsequence(s, t):\nInitialize two pointers at the start of the strings.\n    i, j = 0, 0\n\nLoop through t.\n    while j < len(t):\nIf the current characters match, move to the next character in s.\n        if i < len(s) and s[i] == t[j]:\n            i += 1\n        j += 1\n\nIf all characters in s were found in t, return True.\n    return i == len(s)\n",
+            "tags": [
+                "String",
+                "Subsequence"
             ],
             "lang": "en"
         },
