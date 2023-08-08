@@ -3,13 +3,9 @@ Given an array of integers nums and an integer target, return indices of the two
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 You can return the answer in any order.
 Example 1:
-Input: nums = [2,7,11,15], target = 9 Output: [0,1] Explanation: Because nums[0] + nums[1] == 9, we return [0, 1]. Topics: array, hash table</description></item><item><title>11. Container With Most Water</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/11/</link><pubDate>Thu, 03 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/11/</guid><description>LeetCode problem
-You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).
-Find two lines that together with the x-axis form a container, such that the container contains the most water.
-Return the maximum amount of water a container can store.
-Notice that you may not slant the container.
-Example 1:
-Input: height = [1,8,6,2,5,4,8,3,7] Output: 49 Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7].</description></item><item><title>15. 3Sum</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/15/</link><pubDate>Thu, 03 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/15/</guid><description>LeetCode problem
+Input: nums = [2,7,11,15], target = 9 Output: [0,1] Explanation: Because nums[0] + nums[1] == 9, we return [0, 1]. Topics: array, hash table</description></item><item><title>11. Container With Most Water</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/11/</link><pubDate>Thu, 03 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/11/</guid><description>LeetCode problem 11
+Problem Statement The problem involves an array of integers height, where each element represents the height of a line. These lines, along with the x-axis, form a series of containers. Your goal is to find the two lines that form the container with the greatest area.
+Naive Solution The naive solution is to consider all pairs of lines and calculate the area of water each pair can contain. You would keep track of the maximum area encountered.</description></item><item><title>15. 3Sum</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/15/</link><pubDate>Thu, 03 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/15/</guid><description>LeetCode problem
 Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
 Notice that the solution set must not contain duplicate triplets.
 Example 1:
