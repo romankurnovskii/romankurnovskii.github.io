@@ -28,22 +28,22 @@ weight: 16
 |   6   | [151. Reverse Words in a String](../leetcode/medium/151)                | Medium     |
 |   7   | [238. Product of Array Except Self](../leetcode/medium/238)             | Medium     |
 |   8   | [334. Increasing Triplet Subsequence](../leetcode/medium/334)           | Medium     |
-|   9   | [443. String Compression](../leetcode/medium/443)                              | Medium     |
+|   9   | [443. String Compression](../leetcode/medium/443)                       | Medium     |
 
 ## Two Pointers
 
-|   #   | Problem                                                | Difficulty |
-| :---: | ------------------------------------------------------ | ---------- |
-|  10   | [283. Move Zeroes](../leetcode/easy/283)               | Easy       |
-|  11   | [392. Is Subsequence](../leetcode/easy/392)                  | Easy       |
-|  12   | [11. Container With Most Water](../leetcode/medium/11) | Medium     |
-|  13   | [Max Number of K-Sum Pairs](../leetcode/medium/13)     | Medium     |
+|   #   | Problem                                                    | Difficulty |
+| :---: | ---------------------------------------------------------- | ---------- |
+|  10   | [283. Move Zeroes](../leetcode/easy/283)                   | Easy       |
+|  11   | [392. Is Subsequence](../leetcode/easy/392)                | Easy       |
+|  12   | [11. Container With Most Water](../leetcode/medium/11)     | Medium     |
+|  13   | [1679. Max Number of K-Sum Pairs](../leetcode/medium/1679) | Medium     |
 
 ## Sliding Window
 
 |   #   | Problem                                                                          | Difficulty |
 | :---: | -------------------------------------------------------------------------------- | ---------- |
-|  14   | [Maximum Average Subarray I](../leetcode/easy/14)                                | Easy       |
+|  14   | [643. Maximum Average Subarray I](../leetcode/easy/643)                          | Easy       |
 |  15   | [Maximum Number of Vowels in a Substring of Given Length](../leetcode/medium/15) | Medium     |
 |  16   | [Max Consecutive Ones III](../leetcode/medium/16)                                | Medium     |
 |  17   | [Longest Subarray of 1's After Deleting One Element](../leetcode/medium/17)      | Medium     |
