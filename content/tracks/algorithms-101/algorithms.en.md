@@ -159,6 +159,104 @@ bisect_left(sorted_fruits, 'kiwi')
 >> 2
 ```
 
+
+## Sliding Window
+
+<mark>**Usage:** Use when need to handle the input data in specific window size.</mark>
+
+![sliding-image](../assets/sliding-image.jpg)
+
+<center><b>Example:</b> Sliding window technique to find the <b>largest</b> sum of 4 consecutive numbers.</center>
+
+**Template:**
+
+```python
+while j < size:
+    # Calculation's happen's here
+    # ...
+
+    if condition < k:
+        j+=1
+    elif condition == k: # ans <-- calculation
+        j+=1
+    elif condition > k:
+        while condition > k:
+            i+=1 # remove calculation for i
+        j+=1
+return ans
+```
+
+**Examples**
+
+**Problem:** Find the largest sum of `k` consecutive entries, given an array of size `n`.
+
+1. Add the first `k` components together and save the result in the `currentSum` variable. Because this is the first sum, it is also the current maximum; thus, save it in the variable `maximumSum`.
+2. As the window size is `ww`, we move the window one place to the right and compute the sum of the items in the window.
+3. Update the maximum if the `currentSum` is greater than the `maximumSum`, and repeat step 2.
+
+```python
+def max_sum(arr, k):
+    n = len(arr)  # length of the array
+
+    if n < k:  # length of array must be greater window size
+        print("Invalid")
+        return -1
+
+    # sum of first k elements
+    window_sum = sum(arr[:k])
+    max_sum = window_sum
+
+    # remove the  first element of previous
+    # window and add the last element of
+    # the current window to calculate the 
+    # the sums of remaining windows
+    for i in range(n - k):
+        window_sum = window_sum - arr[i] + arr[i + k]
+        max_sum = max(window_sum, max_sum)
+
+    return max_sum
+
+
+arr = [16, 12, 9, 19, 11, 8]
+k = 3
+print(max_sum(arr, k))
+```
+
+**Problem:** Find duplicates within a range `k` in an array
+
+    Input: nums = [5, 6, 8, 2, 4, 6, 9]
+    k = 2
+    Ouput: False
+
+```python
+def get_duplicates(nums, k):
+    d = {}
+    count = 0
+    for i in range(len(nums)):
+        if nums[i] in d and i - d[nums[i]] <= k:
+            return True
+        else:
+            d[nums[i]] = i
+    
+    return False
+```
+
+- [Problem/solution examples](https://itnext.io/sliding-window-algorithm-technique-6001d5fbe8b3)
+- [Article on LeetCode](https://leetcode.com/explore/featured/card/leetcodes-interview-crash-course-data-structures-and-algorithms/703/arraystrings/4502/)
+- [Practice questions](/en/tags/sliding-window/)
+
+## Two Pointers
+
+A classic way of writing a two-pointer sliding window. The right pointer keeps moving to the right until it cannot move to the right (the specific conditions depend on the topic). When the right pointer reaches the far right, start to move the left pointer to release the left boundary of the window.
+
+<mark>**Usage:** Use two pointers to iterate the input data. Generally, both pointers move in the opposite direction at a constant interval.</mark>
+
+![two-pointers.jpg](../assets/two-pointers.jpg)
+
+- [Practice questions](/en/tags/two-pointers/)
+- [Two pointers intro](https://algo.monster/problems/two_pointers_intro)
+
+
 ## Dynamic programming (DP)
 
 ## Breadth First Search (BFS)
@@ -342,104 +440,6 @@ def dfs(matrix, row, col, visited):
         new_row, new_col = row + step_row, step_col + dc
         dfs(matrix, new_row, new_col, visited)
 ```
-
-## Sliding Window
-
-<mark>**Usage:** Use when need to handle the input data in specific window size.</mark>
-
-![sliding-image](../assets/sliding-image.jpg)
-
-<center><b>Example:</b> Sliding window technique to find the <b>largest</b> sum of 4 consecutive numbers.</center>
-
-**Template:**
-
-```python
-while j < size:
-    # Calculation's happen's here
-    # ...
-
-    if condition < k:
-        j+=1
-    elif condition == k: # ans <-- calculation
-        j+=1
-    elif condition > k:
-        while condition > k:
-            i+=1 # remove calculation for i
-        j+=1
-return ans
-```
-
-**Examples**
-
-**Problem:** Find the largest sum of K consecutive entries, given an array of size N
-
-1. Add the first `K` components together and save the result in the `currentSum` variable. Because this is the first sum, it is also the current maximum; thus, save it in the variable `maximumSum`.
-2. As the window size is `ww`, we move the window one place to the right and compute the sum of the items in the window.
-3. Update the maximum if the `currentSum` is greater than the `maximumSum`, and repeat step 2.
-
-```python
-def max_sum(arr, k):
- n = len(arr)    # length of the array
-
- # length of array must be greater
-        # window size
- if n < k:
-  print("Invalid")
-  return -1
-
- # sum of first k elements
- window_sum = sum(arr[:k])
- max_sum = window_sum
-
- # remove the  first element of previous
- # window and add the last element of
- # the current window to calculate the 
-    # the sums of remaining windows by
- for i in range(n - k):
-  window_sum = window_sum - arr[i] + arr[i + k]
-  max_sum = max(window_sum, max_sum)
-
- return max_sum
-
-
-arr = [16, 12, 9, 19, 11, 8]
-k = 3
-print(max_sum(arr, k))
-```
-
-**Problem:** Find duplicates within a range ‘k’ in an array
-
-    Input: nums = [5, 6, 8, 2, 4, 6, 9]
-    k = 2
-    Ouput: False
-
-```python
-def get_duplicates(nums, k):
-    d = {}
-    count = 0
-    for i in range(len(nums)):
-        if nums[i] in d and i - d[nums[i]] <= k:
-            return True
-        else:
-            d[nums[i]] = i
-    
-    return False
-```
-
-- [Problem/solution examples](https://itnext.io/sliding-window-algorithm-technique-6001d5fbe8b3)
-- [Article on LeetCode](https://leetcode.com/explore/featured/card/leetcodes-interview-crash-course-data-structures-and-algorithms/703/arraystrings/4502/)
-- [Practice questions](/en/tags/sliding-window/)
-
-## Two Pointers
-
-A classic way of writing a two-pointer sliding window. The right pointer keeps moving to the right until it cannot move to the right (the specific conditions depend on the topic). When the right pointer reaches the far right, start to move the left pointer to release the left boundary of the window.
-
-<mark>**Usage:** Use two pointers to iterate the input data. Generally, both pointers move in the opposite direction at a constant interval.</mark>
-
-![two-pointers.jpg](../assets/two-pointers.jpg)
-
-- [Practice questions](/en/tags/two-pointers/)
-- [Two pointers intro](https://algo.monster/problems/two_pointers_intro)
 
 ## Backtracking
 
