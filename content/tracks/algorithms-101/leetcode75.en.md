@@ -41,12 +41,12 @@ weight: 16
 
 ## Sliding Window
 
-|   #   | Problem                                                                          | Difficulty |
-| :---: | -------------------------------------------------------------------------------- | ---------- |
-|  14   | [643. Maximum Average Subarray I](../leetcode/easy/643)                          | Easy       |
-|  15   | [Maximum Number of Vowels in a Substring of Given Length](../leetcode/medium/15) | Medium     |
-|  16   | [Max Consecutive Ones III](../leetcode/medium/16)                                | Medium     |
-|  17   | [Longest Subarray of 1's After Deleting One Element](../leetcode/medium/17)      | Medium     |
+|   #   | Problem                                                                                  | Difficulty |
+| :---: | ---------------------------------------------------------------------------------------- | ---------- |
+|  14   | [643. Maximum Average Subarray I](../leetcode/easy/643)                                  | Easy       |
+|  15   | [1456. Maximum Number of Vowels in a Substring of Given Length](../leetcode/medium/1456) | Medium     |
+|  16   | [1004. Max Consecutive Ones III](../leetcode/medium/1004)                                | Medium     |
+|  17   | [1493. Longest Subarray of 1's After Deleting One Element](../leetcode/medium/1493)      | Medium     |
 
 ## Prefix Sum
 
