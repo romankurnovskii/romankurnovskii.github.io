@@ -159,7 +159,6 @@ bisect_left(sorted_fruits, 'kiwi')
 >> 2
 ```
 
-
 ## Sliding Window
 
 <mark>**Usage:** Use when need to handle the input data in specific window size.</mark>
@@ -255,7 +254,6 @@ A classic way of writing a two-pointer sliding window. The right pointer keeps m
 
 - [Practice questions](/en/tags/two-pointers/)
 - [Two pointers intro](https://algo.monster/problems/two_pointers_intro)
-
 
 ## Dynamic programming (DP)
 
