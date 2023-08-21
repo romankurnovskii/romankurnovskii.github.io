@@ -255,6 +255,70 @@ A classic way of writing a two-pointer sliding window. The right pointer keeps m
 - [Practice questions](/en/tags/two-pointers/)
 - [Two pointers intro](https://algo.monster/problems/two_pointers_intro)
 
+## Two-Pass Approach
+
+The two-pass approach is a common algorithmic pattern used to solve problems by going through the data twice. In the first pass, you gather some information that you'll use in the second pass to solve the problem. Here is an explanation of the two-pass approach with two examples.
+
+**First Pass:** Gather Information
+
+The first pass is used to collect some information from the data that will be useful to solve the problem. This could involve counting the occurrence of items, finding the maximum or minimum value, or performing some other calculation that will help in the second pass.
+Second Pass: Solve the Problem
+
+Using the information gathered in the first pass, you can now go through the data again to solve the problem.
+Let's go through two examples to understand this approach better.
+
+**Example 1:** Finding the Relative Rank of Scores
+
+You have a list of scores and you want to find out the relative rank of each score in descending order.
+
+1. First Pass: Sort the list in descending order.
+1. Second Pass: Create a new list with the rank of each score in the original list.
+
+```python
+scores = [95, 85, 90, 100]
+sorted_scores = sorted(scores, reverse=True)
+ranking = {score: i + 1 for i, score in enumerate(sorted_scores)}
+
+for score in scores:
+    print("Score:", score, "Rank:", ranking[score])
+```
+
+Output:
+```
+Score: 95 Rank: 2
+Score: 85 Rank: 4
+Score: 90 Rank: 3
+Score: 100 Rank: 1
+```
+
+**Example 2:** Find if there's a pair of numbers in an array that add up to a target value
+
+1. First Pass: Create a diccionario that keeps track of the occurrence of each number in the list.
+1. Second Pass: For each number in the array, check if there is another number in the diccionario that adds up to the target value.
+
+```python
+nums = [2, 3, 7, 11, 15]
+target = 9
+counter = {}
+
+for num in nums:
+    counter[num] = counter.get(num, 0) + 1
+
+for num in nums:
+    diff = target - num
+    if diff in counter:
+        if diff != num or counter[num] > 1:
+            print("Pair:", (num, diff))
+            break
+```
+Output:
+
+```
+Pair: (2, 7)
+```
+
+In both examples, the first pass through the data gathered information that was then used in the second pass to solve the problem.
+
 ## Dynamic programming (DP)
 
 ## Breadth First Search (BFS)

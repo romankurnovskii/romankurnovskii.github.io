@@ -50,10 +50,10 @@ weight: 16
 
 ## Prefix Sum
 
-|   #   | Problem                                          | Difficulty |
-| :---: | ------------------------------------------------ | ---------- |
-|  18   | [Find the Highest Altitude](../leetcode/easy/18) | Easy       |
-|  19   | [Find Pivot Index](../leetcode/easy/19)          | Easy       |
+|   #   | Problem                                                  | Difficulty |
+| :---: | -------------------------------------------------------- | ---------- |
+|  18   | [1732. Find the Highest Altitude](../leetcode/easy/1723) | Easy       |
+|  19   | [724. Find Pivot Index](../leetcode/easy/724)            | Easy       |
 
 ## Hash Map / Set
 
