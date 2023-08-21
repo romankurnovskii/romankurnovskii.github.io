@@ -284,6 +284,7 @@ for score in scores:
 ```
 
 Output:
+
 ```
 Score: 95 Rank: 2
 Score: 85 Rank: 4
@@ -311,6 +312,7 @@ for num in nums:
             print("Pair:", (num, diff))
             break
 ```
+
 Output:
 
 ```
