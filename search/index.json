@@ -705,18 +705,6 @@
             ]
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/easy/724",
-            "title": "724. Find Pivot Index",
-            "description": "724. Find Pivot Index",
-            "content": "\nLeetCode problem\n\nProblem Statement\n\nGiven an array of integers nums, the task is to calculate the pivot index of this array. The pivot index is defined as the index where the sum of all the numbers strictly to the left of the index is equal to the sum of all the numbers strictly to the index's right. If no such index exists, return -1.\n\nNaive Solution\n\nA naive approach would be to iterate over each index and for each index, calculate the sum of elements to the left and right of the index. If the sums are equal, return the index. However, this approach has a time complexity of O(n^2) which makes it inefficient for larger inputs.\n\nHints & Tips\n\nA more optimized solution would use the prefix and suffix sum concept. Prefix sum is the sum of all elements to the left of the index, and suffix sum is the sum of all elements to the right of the index. We can calculate these sums in O(n) time and use them to find the pivot index.\n\nApproach\n\nWe will calculate the total sum of the array first. Then, we will initialize a variable left_sum to keep track of the sum of elements to the left of the current index. As we iterate over each index, we will update the total sum by subtracting the current element, which will give us the right sum. We will then check if left_sum is equal to the right sum (total sum - left_sum - current element).\n\nIf they are equal, we return the index.\n\nAfter checking, we will update the left_sum by adding the current element.\n\nSteps\n\nCalculate the total sum of the array.\nInitialize a variable left_sum to 0.\nIterate over each index in the array.\n   Update the total sum by subtracting the current element.\n   Check if left_sum is equal to the right sum (total sum - left_sum - current element). If true, return the index.\n   Update the left_sum by adding the current element.\nIf no pivot index is found, return -1.\n\nSolution\n\ndef pivotIndex(nums):\n    total_sum = sum(nums)\n    left_sum = 0\n\n    for i, num in enumerate(nums):\n        total_sum -= num\n        if left_sum == total_sum:\n            return i\n        left_sum += num\n\n    return -1\n",
-            "tags": [
-                "LeetCode",
-                "Easy",
-                "Array"
-            ],
-            "lang": "ru"
-        },
-        {
             "uri": "/tracks/algorithms-101/leetcode/easy/345",
             "title": "345. Reverse Vowels of a String",
             "description": "345. Reverse Vowels of a String",
@@ -2225,7 +2213,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 2
+                    "timeTakenInMilliseconds": 3
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -3485,6 +3473,18 @@
                 "Array",
                 "Two Pointers",
                 "Sorting"
+            ],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/724",
+            "title": "724. Find Pivot Index",
+            "description": "724. Find Pivot Index",
+            "content": "\nLeetCode problem\n\nProblem Statement\n\nGiven an array of integers nums, the task is to calculate the pivot index of this array. The pivot index is defined as the index where the sum of all the numbers strictly to the left of the index is equal to the sum of all the numbers strictly to the index's right. If no such index exists, return -1.\n\nNaive Solution\n\nA naive approach would be to iterate over each index and for each index, calculate the sum of elements to the left and right of the index. If the sums are equal, return the index. However, this approach has a time complexity of O(n^2) which makes it inefficient for larger inputs.\n\nHints & Tips\n\nA more optimized solution would use the prefix and suffix sum concept. Prefix sum is the sum of all elements to the left of the index, and suffix sum is the sum of all elements to the right of the index. We can calculate these sums in O(n) time and use them to find the pivot index.\n\nApproach\n\nWe will calculate the total sum of the array first.\n\nThen, we will initialize a variable left_sum to keep track of the sum of elements to the left of the current index.\n\nAs we iterate over each index, we will update the total sum by subtracting the current element, which will give us the right sum. We will then check if left_sum is equal to the right sum (total sum - left_sum - current element).\n\nIf they are equal, we return the index.\n\nAfter checking, we will update the left_sum by adding the current element.\n\nSteps\n\nCalculate the total sum of the array.\nInitialize a variable left_sum to 0.\nIterate over each index in the array.\n   Update the total sum by subtracting the current element.\n   Check if left_sum is equal to the right sum (total sum - left_sum - current element). If true, return the index.\n   Update the left_sum by adding the current element.\nIf no pivot index is found, return -1.\n\nSolution\n\ndef pivotIndex(nums):\n    total_sum = sum(nums)\n    left_sum = 0\n\n    for i, num in enumerate(nums):\n        total_sum -= num\n        if left_sum == total_sum:\n            return i\n        left_sum += num\n\n    return -1\n",
+            "tags": [
+                "LeetCode",
+                "Easy",
+                "Array"
             ],
             "lang": "en"
         },
