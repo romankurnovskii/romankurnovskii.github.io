@@ -2213,7 +2213,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 2
+                    "timeTakenInMilliseconds": 3
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -3736,6 +3736,14 @@
                 "Math",
                 "String"
             ],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/1207",
+            "title": "1207. Unique Number of Occurrences",
+            "description": "1207. Unique Number of Occurrences",
+            "content": "\nLeetCode problem\n\nProblem Statement\n\nGiven an array of integers arr, return true if the number of occurrences of each value in the array is unique or false otherwise.\n\nNaive Solution\n\nA naive approach would be to create a dictionary to store the count of each integer, then iterate over the dictionary and compare each count with the counts of other integers. This approach requires O(n^2) time complexity, where n is the length of the array. This is not efficient for large input sizes.\n\nHints & Tips\n\nTo solve this problem efficiently, we can use Python's built-in Counter class from the collections module. A Counter is a dictionary subclass for counting hashable objects. It's a collection where elements are stored as dictionary keys, and their counts are stored as dictionary values.\n\nApproach\n\nCreate a Counter object from the input array.\nConvert the Counter object to a dictionary.\nConvert the dictionary values to a set.\nCompare the size of the set with the size of the dictionary. If they are equal, return true. Otherwise, return false.\n\nSteps\n\nImport the Counter class from the collections module.\nCreate a Counter object from the input array arr.\nConvert the Counter object to a dictionary dict_counts.\nConvert the dictionary values to a set unique_counts.\nCompare the size of the set with the size of the dictionary. If they are equal, return true. Otherwise, return false.\n\nSolution\n\nfrom collections import Counter\n\ndef uniqueOccurrences(arr):\nCreate a Counter object from the input array\n    dict_counts = dict(Counter(arr))\n\nConvert the dictionary values to a set\n    unique_counts = set(dict_counts.values())\n\nCompare the size of the set with the size of the dictionary\n    return len(unique_counts) == len(dict_counts)\n\nThis function uses the Counter class to count the occurrences of each integer in the input array. It then converts the Counter object to a dictionary and the dictionary values to a set. Finally, it compares the size of the set with the size of the dictionary.\n\nIf they are equal, it returns true. Otherwise, it returns false.\n",
+            "tags": [],
             "lang": "en"
         },
         {
