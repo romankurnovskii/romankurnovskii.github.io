@@ -1,0 +1,22 @@
+git clone https://github.com/romankurnovskii/markdown-to-pdf-book-converter.git
+cd markdown-to-pdf-book-converter
+
+export HOST_BOOK_PATH=/github/romankurnovskii.github.io/content/tracks/algorithms-101/leetcode
+
+
+python3 -m export_book --using-chapter-folders --root-path      \
+	-f ./book/easy/1768.en.md \
+	./book/easy/283.ru.md \
+	./book/easy/392.ru.md
+
+
+
+1768    Easy   
+1071    Easy   
+1431    Easy   
+605     Easy   
+345     Easy   
+151     Medium 
+238     Medium 
+334     Medium 
+443     medium

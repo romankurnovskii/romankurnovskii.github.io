@@ -757,20 +757,9 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/283",
             "title": "283. Move Zeroes",
             "description": "LeetCode 283. Переместите все 0 в конец массива, сохраняя относительный порядок ненулевых элементов. Разбор задачи.",
-            "content": "\nLeetCode задача\n\nЗадача\n\nДан целочисленный массив nums. Нам необходимо переместить все 0 в конец массива, сохраняя относительный порядок ненулевых элементов.\n\nПримечание: вы должны сделать это на месте, без создания копии массива.\n\nПодсказки\n\nИспользуйте два указателя: один будет указывать на текущий элемент, а другой будет указывать на первое место в массиве, куда можно поместить ненулевой элемент.\n\nПодход\n\nМы можем использовать два указателя: один для прохода по массиву и другой для отслеживания местоположения, куда следует поместить следующий ненулевой элемент. Этот метод позволяет нам сделать минимальное количество операций и изменений в массиве.\n\nАлгоритм\n\nИнициализируем два указателя на начало массива.\n   Первый указатель - это индексы массива. Второй с начальным значением 0,\nИспользуя первый указатель, проходим по массиву.\n   Если текущий элемент не равен нулю, помещаем его на позицию, указанную вторым указателем (меняем значения местами), и перемещаем второй указатель на одну позицию вперед.\nПосле завершения прохода, все числа после второго указателя должны быть установлены в 0.\n\nРешение\n\ndef moveZeroes(nums: List[int]) -> None:\nУказатель для ненулевых элементов\n    pos = 0\n\nПроходим по массиву\n    for i in range(len(nums)):\nЕсли текущий элемент не 0, меняем его местами с элементом на позиции pos\n        if nums[i] != 0:\n            nums[i], nums[pos] = nums[pos], nums[i]\n            pos += 1\n\n",
+            "content": "\nLeetCode задача\n\nЗадача\n\nДан целочисленный массив nums. Нам необходимо переместить все 0 в конец массива, сохраняя относительный порядок ненулевых элементов.\n\nПримечание: вы должны сделать это на месте, без создания копии массива.\n\nПодсказки\n\nИспользуйте два указателя: один будет указывать на текущий элемент, а другой будет указывать на первое место в массиве, куда можно поместить ненулевой элемент.\n\nПодход\n\nМы можем использовать два указателя: один для прохода по массиву и другой для отслеживания местоположения, куда следует поместить следующий ненулевой элемент. Этот метод позволяет нам сделать минимальное количество операций и изменений в массиве.\n\nАлгоритм\n\nИнициализируем два указателя на начало массива.\n   Первый указатель - это индексы массива. Второй с начальным значением 0,\nИспользуя первый указатель, проходим по массиву.\n   Если текущий элемент не равен нулю, помещаем его на позицию, указанную вторым указателем (меняем значения местами), и перемещаем второй указатель на одну позицию вперед.\nПосле завершения прохода, все числа после второго указателя должны быть установлены в 0.\n\nРешение\n\ndef moveZeroes(nums: List[int]) -> None:\nУказатель для ненулевых элементов\n    pos = 0\n\nПроходим по массиву\n    for i in range(len(nums)):\nЕсли текущий элемент не 0, меняем его местами с элементом на позиции pos\n        if nums[i] != 0:\n            nums[i], nums[pos] = nums[pos], nums[i]\n            pos += 1\n",
             "tags": [
                 "Two Pointers",
-                "Easy"
-            ],
-            "lang": "ru"
-        },
-        {
-            "uri": "/tracks/algorithms-101/leetcode/easy/1768",
-            "title": "1768. Merge Strings Alternately",
-            "description": "Merging strings alternately",
-            "content": "\nLeetCode problem\n\nProblem Statement\n\nThe task is to merge two strings alternately, i.e., take one character from the first string, then one from the second, then again from the first, and so on. If one string finishes before the other, the remaining characters from the longer string are appended at the end.\n\nNaive Solution\n\nA naive approach could involve maintaining two pointers, one for each string, and incrementally appending characters from each string to the result. Once we reach the end of one string, we append the rest of the other string to the result. However, this approach involves checking for the end of strings in each step which can be optimized.\n\nEfficient Solution\n\nA more pythonic and efficient approach would be to use the built-in zip function. The zip function pairs the elements of two lists (or strings, in this case) until the shorter one ends. This allows us to alternately merge the two strings efficiently. After that, we append the remaining part of the longer string, if any.\n\nSteps\n\nHere are the high-level steps of the algorithm:\n\nUse the zip function to merge the two strings until one of them ends.\nAppend the remaining part of the longer string to the result.\n\nPython Solution\n\nHere is a Python solution that implements the above algorithm:\n\nclass Solution:\n    def mergeAlternately(self, word1: str, word2: str) -> str:\n        i=0\n        j=0\n\n        res = ''\n        while i str:\n        res = [c1 + c2 for c1, c2 in zip(word1, word2)]\n        return \"\".join(res) + word1[len(res):] + word2[len(res):]\n\nIn the mergeAlternately method, we use list comprehension and the zip function to merge the strings until one of them ends. We then append the remaining part of the longer string to the result. The join method is used to convert the list of characters into a string.\n",
-            "tags": [
-                "Algorithms",
                 "Easy"
             ],
             "lang": "ru"
@@ -1864,7 +1853,7 @@
             "uri": "/posts/vps-docker-subdomains-setup/project/projects/3/",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 1
+                    "timeTakenInMilliseconds": 0
                 },
                 "result": "Hello World!",
                 "ranges": [
@@ -2277,7 +2266,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 1
+                    "timeTakenInMilliseconds": 2
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
