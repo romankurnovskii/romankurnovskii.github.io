@@ -24686,10 +24686,10 @@
         TitleEnd: new Uint8Array([60, 47, 116, 105, 116, 108, 101])
         // `</title`
       };
-      var Tokenizer2 = (
+      var Tokenizer = (
         /** @class */
         function() {
-          function Tokenizer3(_a, cbs) {
+          function Tokenizer2(_a, cbs) {
             var _b = _a.xmlMode, xmlMode = _b === void 0 ? false : _b, _c = _a.decodeEntities, decodeEntities = _c === void 0 ? true : _c;
             var _this = this;
             this.cbs = cbs;
@@ -24710,7 +24710,7 @@
               return _this.emitCodePoint(cp, consumed);
             });
           }
-          Tokenizer3.prototype.reset = function() {
+          Tokenizer2.prototype.reset = function() {
             this.state = State.Text;
             this.buffer = "";
             this.sectionStart = 0;
@@ -24720,25 +24720,25 @@
             this.running = true;
             this.offset = 0;
           };
-          Tokenizer3.prototype.write = function(chunk) {
+          Tokenizer2.prototype.write = function(chunk) {
             this.offset += this.buffer.length;
             this.buffer = chunk;
             this.parse();
           };
-          Tokenizer3.prototype.end = function() {
+          Tokenizer2.prototype.end = function() {
             if (this.running)
               this.finish();
           };
-          Tokenizer3.prototype.pause = function() {
+          Tokenizer2.prototype.pause = function() {
             this.running = false;
           };
-          Tokenizer3.prototype.resume = function() {
+          Tokenizer2.prototype.resume = function() {
             this.running = true;
             if (this.index < this.buffer.length + this.offset) {
               this.parse();
             }
           };
-          Tokenizer3.prototype.stateText = function(c) {
+          Tokenizer2.prototype.stateText = function(c) {
             if (c === CharCodes.Lt || !this.decodeEntities && this.fastForwardTo(CharCodes.Lt)) {
               if (this.index > this.sectionStart) {
                 this.cbs.ontext(this.sectionStart, this.index);
@@ -24749,7 +24749,7 @@
               this.startEntity();
             }
           };
-          Tokenizer3.prototype.stateSpecialStartSequence = function(c) {
+          Tokenizer2.prototype.stateSpecialStartSequence = function(c) {
             var isEnd = this.sequenceIndex === this.currentSequence.length;
             var isMatch = isEnd ? (
               // If we are at the end of the sequence, make sure the tag name has ended
@@ -24768,7 +24768,7 @@
             this.state = State.InTagName;
             this.stateInTagName(c);
           };
-          Tokenizer3.prototype.stateInSpecialTag = function(c) {
+          Tokenizer2.prototype.stateInSpecialTag = function(c) {
             if (this.sequenceIndex === this.currentSequence.length) {
               if (c === CharCodes.Gt || isWhitespace(c)) {
                 var endOfText = this.index - this.currentSequence.length;
@@ -24799,7 +24799,7 @@
               this.sequenceIndex = Number(c === CharCodes.Lt);
             }
           };
-          Tokenizer3.prototype.stateCDATASequence = function(c) {
+          Tokenizer2.prototype.stateCDATASequence = function(c) {
             if (c === Sequences.Cdata[this.sequenceIndex]) {
               if (++this.sequenceIndex === Sequences.Cdata.length) {
                 this.state = State.InCommentLike;
@@ -24813,7 +24813,7 @@
               this.stateInDeclaration(c);
             }
           };
-          Tokenizer3.prototype.fastForwardTo = function(c) {
+          Tokenizer2.prototype.fastForwardTo = function(c) {
             while (++this.index < this.buffer.length + this.offset) {
               if (this.buffer.charCodeAt(this.index - this.offset) === c) {
                 return true;
@@ -24822,7 +24822,7 @@
             this.index = this.buffer.length + this.offset - 1;
             return false;
           };
-          Tokenizer3.prototype.stateInCommentLike = function(c) {
+          Tokenizer2.prototype.stateInCommentLike = function(c) {
             if (c === this.currentSequence[this.sequenceIndex]) {
               if (++this.sequenceIndex === this.currentSequence.length) {
                 if (this.currentSequence === Sequences.CdataEnd) {
@@ -24842,16 +24842,16 @@
               this.sequenceIndex = 0;
             }
           };
-          Tokenizer3.prototype.isTagStartChar = function(c) {
+          Tokenizer2.prototype.isTagStartChar = function(c) {
             return this.xmlMode ? !isEndOfTagSection(c) : isASCIIAlpha(c);
           };
-          Tokenizer3.prototype.startSpecial = function(sequence, offset) {
+          Tokenizer2.prototype.startSpecial = function(sequence, offset) {
             this.isSpecial = true;
             this.currentSequence = sequence;
             this.sequenceIndex = offset;
             this.state = State.SpecialStartSequence;
           };
-          Tokenizer3.prototype.stateBeforeTagName = function(c) {
+          Tokenizer2.prototype.stateBeforeTagName = function(c) {
             if (c === CharCodes.ExclamationMark) {
               this.state = State.BeforeDeclaration;
               this.sectionStart = this.index + 1;
@@ -24873,7 +24873,7 @@
               this.stateText(c);
             }
           };
-          Tokenizer3.prototype.stateInTagName = function(c) {
+          Tokenizer2.prototype.stateInTagName = function(c) {
             if (isEndOfTagSection(c)) {
               this.cbs.onopentagname(this.sectionStart, this.index);
               this.sectionStart = -1;
@@ -24881,7 +24881,7 @@
               this.stateBeforeAttributeName(c);
             }
           };
-          Tokenizer3.prototype.stateBeforeClosingTagName = function(c) {
+          Tokenizer2.prototype.stateBeforeClosingTagName = function(c) {
             if (isWhitespace(c)) {
             } else if (c === CharCodes.Gt) {
               this.state = State.Text;
@@ -24890,7 +24890,7 @@
               this.sectionStart = this.index;
             }
           };
-          Tokenizer3.prototype.stateInClosingTagName = function(c) {
+          Tokenizer2.prototype.stateInClosingTagName = function(c) {
             if (c === CharCodes.Gt || isWhitespace(c)) {
               this.cbs.onclosetag(this.sectionStart, this.index);
               this.sectionStart = -1;
@@ -24898,13 +24898,13 @@
               this.stateAfterClosingTagName(c);
             }
           };
-          Tokenizer3.prototype.stateAfterClosingTagName = function(c) {
+          Tokenizer2.prototype.stateAfterClosingTagName = function(c) {
             if (c === CharCodes.Gt || this.fastForwardTo(CharCodes.Gt)) {
               this.state = State.Text;
               this.sectionStart = this.index + 1;
             }
           };
-          Tokenizer3.prototype.stateBeforeAttributeName = function(c) {
+          Tokenizer2.prototype.stateBeforeAttributeName = function(c) {
             if (c === CharCodes.Gt) {
               this.cbs.onopentagend(this.index);
               if (this.isSpecial) {
@@ -24921,7 +24921,7 @@
               this.sectionStart = this.index;
             }
           };
-          Tokenizer3.prototype.stateInSelfClosingTag = function(c) {
+          Tokenizer2.prototype.stateInSelfClosingTag = function(c) {
             if (c === CharCodes.Gt) {
               this.cbs.onselfclosingtag(this.index);
               this.state = State.Text;
@@ -24932,7 +24932,7 @@
               this.stateBeforeAttributeName(c);
             }
           };
-          Tokenizer3.prototype.stateInAttributeName = function(c) {
+          Tokenizer2.prototype.stateInAttributeName = function(c) {
             if (c === CharCodes.Eq || isEndOfTagSection(c)) {
               this.cbs.onattribname(this.sectionStart, this.index);
               this.sectionStart = -1;
@@ -24940,7 +24940,7 @@
               this.stateAfterAttributeName(c);
             }
           };
-          Tokenizer3.prototype.stateAfterAttributeName = function(c) {
+          Tokenizer2.prototype.stateAfterAttributeName = function(c) {
             if (c === CharCodes.Eq) {
               this.state = State.BeforeAttributeValue;
             } else if (c === CharCodes.Slash || c === CharCodes.Gt) {
@@ -24953,7 +24953,7 @@
               this.sectionStart = this.index;
             }
           };
-          Tokenizer3.prototype.stateBeforeAttributeValue = function(c) {
+          Tokenizer2.prototype.stateBeforeAttributeValue = function(c) {
             if (c === CharCodes.DoubleQuote) {
               this.state = State.InAttributeValueDq;
               this.sectionStart = this.index + 1;
@@ -24966,7 +24966,7 @@
               this.stateInAttributeValueNoQuotes(c);
             }
           };
-          Tokenizer3.prototype.handleInAttributeValue = function(c, quote) {
+          Tokenizer2.prototype.handleInAttributeValue = function(c, quote) {
             if (c === quote || !this.decodeEntities && this.fastForwardTo(quote)) {
               this.cbs.onattribdata(this.sectionStart, this.index);
               this.sectionStart = -1;
@@ -24976,13 +24976,13 @@
               this.startEntity();
             }
           };
-          Tokenizer3.prototype.stateInAttributeValueDoubleQuotes = function(c) {
+          Tokenizer2.prototype.stateInAttributeValueDoubleQuotes = function(c) {
             this.handleInAttributeValue(c, CharCodes.DoubleQuote);
           };
-          Tokenizer3.prototype.stateInAttributeValueSingleQuotes = function(c) {
+          Tokenizer2.prototype.stateInAttributeValueSingleQuotes = function(c) {
             this.handleInAttributeValue(c, CharCodes.SingleQuote);
           };
-          Tokenizer3.prototype.stateInAttributeValueNoQuotes = function(c) {
+          Tokenizer2.prototype.stateInAttributeValueNoQuotes = function(c) {
             if (isWhitespace(c) || c === CharCodes.Gt) {
               this.cbs.onattribdata(this.sectionStart, this.index);
               this.sectionStart = -1;
@@ -24993,7 +24993,7 @@
               this.startEntity();
             }
           };
-          Tokenizer3.prototype.stateBeforeDeclaration = function(c) {
+          Tokenizer2.prototype.stateBeforeDeclaration = function(c) {
             if (c === CharCodes.OpeningSquareBracket) {
               this.state = State.CDATASequence;
               this.sequenceIndex = 0;
@@ -25001,21 +25001,21 @@
               this.state = c === CharCodes.Dash ? State.BeforeComment : State.InDeclaration;
             }
           };
-          Tokenizer3.prototype.stateInDeclaration = function(c) {
+          Tokenizer2.prototype.stateInDeclaration = function(c) {
             if (c === CharCodes.Gt || this.fastForwardTo(CharCodes.Gt)) {
               this.cbs.ondeclaration(this.sectionStart, this.index);
               this.state = State.Text;
               this.sectionStart = this.index + 1;
             }
           };
-          Tokenizer3.prototype.stateInProcessingInstruction = function(c) {
+          Tokenizer2.prototype.stateInProcessingInstruction = function(c) {
             if (c === CharCodes.Gt || this.fastForwardTo(CharCodes.Gt)) {
               this.cbs.onprocessinginstruction(this.sectionStart, this.index);
               this.state = State.Text;
               this.sectionStart = this.index + 1;
             }
           };
-          Tokenizer3.prototype.stateBeforeComment = function(c) {
+          Tokenizer2.prototype.stateBeforeComment = function(c) {
             if (c === CharCodes.Dash) {
               this.state = State.InCommentLike;
               this.currentSequence = Sequences.CommentEnd;
@@ -25025,14 +25025,14 @@
               this.state = State.InDeclaration;
             }
           };
-          Tokenizer3.prototype.stateInSpecialComment = function(c) {
+          Tokenizer2.prototype.stateInSpecialComment = function(c) {
             if (c === CharCodes.Gt || this.fastForwardTo(CharCodes.Gt)) {
               this.cbs.oncomment(this.sectionStart, this.index, 0);
               this.state = State.Text;
               this.sectionStart = this.index + 1;
             }
           };
-          Tokenizer3.prototype.stateBeforeSpecialS = function(c) {
+          Tokenizer2.prototype.stateBeforeSpecialS = function(c) {
             var lower = c | 32;
             if (lower === Sequences.ScriptEnd[3]) {
               this.startSpecial(Sequences.ScriptEnd, 4);
@@ -25043,13 +25043,13 @@
               this.stateInTagName(c);
             }
           };
-          Tokenizer3.prototype.startEntity = function() {
+          Tokenizer2.prototype.startEntity = function() {
             this.baseState = this.state;
             this.state = State.InEntity;
             this.entityStart = this.index;
             this.entityDecoder.startEntity(this.xmlMode ? decode_js_1.DecodingMode.Strict : this.baseState === State.Text || this.baseState === State.InSpecialTag ? decode_js_1.DecodingMode.Legacy : decode_js_1.DecodingMode.Attribute);
           };
-          Tokenizer3.prototype.stateInEntity = function() {
+          Tokenizer2.prototype.stateInEntity = function() {
             var length = this.entityDecoder.write(this.buffer, this.index - this.offset);
             if (length >= 0) {
               this.state = this.baseState;
@@ -25060,7 +25060,7 @@
               this.index = this.offset + this.buffer.length - 1;
             }
           };
-          Tokenizer3.prototype.cleanup = function() {
+          Tokenizer2.prototype.cleanup = function() {
             if (this.running && this.sectionStart !== this.index) {
               if (this.state === State.Text || this.state === State.InSpecialTag && this.sequenceIndex === 0) {
                 this.cbs.ontext(this.sectionStart, this.index);
@@ -25071,10 +25071,10 @@
               }
             }
           };
-          Tokenizer3.prototype.shouldContinue = function() {
+          Tokenizer2.prototype.shouldContinue = function() {
             return this.index < this.buffer.length + this.offset && this.running;
           };
-          Tokenizer3.prototype.parse = function() {
+          Tokenizer2.prototype.parse = function() {
             while (this.shouldContinue()) {
               var c = this.buffer.charCodeAt(this.index - this.offset);
               switch (this.state) {
@@ -25183,7 +25183,7 @@
             }
             this.cleanup();
           };
-          Tokenizer3.prototype.finish = function() {
+          Tokenizer2.prototype.finish = function() {
             if (this.state === State.InEntity) {
               this.entityDecoder.end();
               this.state = this.baseState;
@@ -25191,7 +25191,7 @@
             this.handleTrailingData();
             this.cbs.onend();
           };
-          Tokenizer3.prototype.handleTrailingData = function() {
+          Tokenizer2.prototype.handleTrailingData = function() {
             var endIndex = this.buffer.length + this.offset;
             if (this.sectionStart >= endIndex) {
               return;
@@ -25207,7 +25207,7 @@
               this.cbs.ontext(this.sectionStart, endIndex);
             }
           };
-          Tokenizer3.prototype.emitCodePoint = function(cp, consumed) {
+          Tokenizer2.prototype.emitCodePoint = function(cp, consumed) {
             if (this.baseState !== State.Text && this.baseState !== State.InSpecialTag) {
               if (this.sectionStart < this.entityStart) {
                 this.cbs.onattribdata(this.sectionStart, this.entityStart);
@@ -25224,10 +25224,10 @@
               this.cbs.ontextentity(cp, this.sectionStart);
             }
           };
-          return Tokenizer3;
+          return Tokenizer2;
         }()
       );
-      exports.default = Tokenizer2;
+      exports.default = Tokenizer;
     }
   });
 
@@ -25367,10 +25367,10 @@
         "title"
       ]);
       var reNameEnd = /\s|\//;
-      var Parser2 = (
+      var Parser = (
         /** @class */
         function() {
-          function Parser3(cbs, options2) {
+          function Parser2(cbs, options2) {
             if (options2 === void 0) {
               options2 = {};
             }
@@ -25396,23 +25396,23 @@
             this.foreignContext = [!this.htmlMode];
             (_e = (_d = this.cbs).onparserinit) === null || _e === void 0 ? void 0 : _e.call(_d, this);
           }
-          Parser3.prototype.ontext = function(start, endIndex) {
+          Parser2.prototype.ontext = function(start, endIndex) {
             var _a, _b;
             var data = this.getSlice(start, endIndex);
             this.endIndex = endIndex - 1;
             (_b = (_a = this.cbs).ontext) === null || _b === void 0 ? void 0 : _b.call(_a, data);
             this.startIndex = endIndex;
           };
-          Parser3.prototype.ontextentity = function(cp, endIndex) {
+          Parser2.prototype.ontextentity = function(cp, endIndex) {
             var _a, _b;
             this.endIndex = endIndex - 1;
             (_b = (_a = this.cbs).ontext) === null || _b === void 0 ? void 0 : _b.call(_a, (0, decode_js_1.fromCodePoint)(cp));
             this.startIndex = endIndex;
           };
-          Parser3.prototype.isVoidElement = function(name) {
+          Parser2.prototype.isVoidElement = function(name) {
             return this.htmlMode && voidElements.has(name);
           };
-          Parser3.prototype.onopentagname = function(start, endIndex) {
+          Parser2.prototype.onopentagname = function(start, endIndex) {
             this.endIndex = endIndex;
             var name = this.getSlice(start, endIndex);
             if (this.lowerCaseTagNames) {
@@ -25420,7 +25420,7 @@
             }
             this.emitOpenTag(name);
           };
-          Parser3.prototype.emitOpenTag = function(name) {
+          Parser2.prototype.emitOpenTag = function(name) {
             var _a, _b, _c, _d;
             this.openTagStart = this.startIndex;
             this.tagname = name;
@@ -25445,7 +25445,7 @@
             if (this.cbs.onopentag)
               this.attribs = {};
           };
-          Parser3.prototype.endOpenTag = function(isImplied) {
+          Parser2.prototype.endOpenTag = function(isImplied) {
             var _a, _b;
             this.startIndex = this.openTagStart;
             if (this.attribs) {
@@ -25457,12 +25457,12 @@
             }
             this.tagname = "";
           };
-          Parser3.prototype.onopentagend = function(endIndex) {
+          Parser2.prototype.onopentagend = function(endIndex) {
             this.endIndex = endIndex;
             this.endOpenTag(false);
             this.startIndex = endIndex + 1;
           };
-          Parser3.prototype.onclosetag = function(start, endIndex) {
+          Parser2.prototype.onclosetag = function(start, endIndex) {
             var _a, _b, _c, _d, _e, _f, _g, _h;
             this.endIndex = endIndex;
             var name = this.getSlice(start, endIndex);
@@ -25490,7 +25490,7 @@
             }
             this.startIndex = endIndex + 1;
           };
-          Parser3.prototype.onselfclosingtag = function(endIndex) {
+          Parser2.prototype.onselfclosingtag = function(endIndex) {
             this.endIndex = endIndex;
             if (this.options.recognizeSelfClosing || this.foreignContext[0]) {
               this.closeCurrentTag(false);
@@ -25499,7 +25499,7 @@
               this.onopentagend(endIndex);
             }
           };
-          Parser3.prototype.closeCurrentTag = function(isOpenImplied) {
+          Parser2.prototype.closeCurrentTag = function(isOpenImplied) {
             var _a, _b;
             var name = this.tagname;
             this.endOpenTag(isOpenImplied);
@@ -25508,18 +25508,18 @@
               this.stack.shift();
             }
           };
-          Parser3.prototype.onattribname = function(start, endIndex) {
+          Parser2.prototype.onattribname = function(start, endIndex) {
             this.startIndex = start;
             var name = this.getSlice(start, endIndex);
             this.attribname = this.lowerCaseAttributeNames ? name.toLowerCase() : name;
           };
-          Parser3.prototype.onattribdata = function(start, endIndex) {
+          Parser2.prototype.onattribdata = function(start, endIndex) {
             this.attribvalue += this.getSlice(start, endIndex);
           };
-          Parser3.prototype.onattribentity = function(cp) {
+          Parser2.prototype.onattribentity = function(cp) {
             this.attribvalue += (0, decode_js_1.fromCodePoint)(cp);
           };
-          Parser3.prototype.onattribend = function(quote, endIndex) {
+          Parser2.prototype.onattribend = function(quote, endIndex) {
             var _a, _b;
             this.endIndex = endIndex;
             (_b = (_a = this.cbs).onattribute) === null || _b === void 0 ? void 0 : _b.call(_a, this.attribname, this.attribvalue, quote === Tokenizer_js_1.QuoteType.Double ? '"' : quote === Tokenizer_js_1.QuoteType.Single ? "'" : quote === Tokenizer_js_1.QuoteType.NoValue ? void 0 : null);
@@ -25528,7 +25528,7 @@
             }
             this.attribvalue = "";
           };
-          Parser3.prototype.getInstructionName = function(value) {
+          Parser2.prototype.getInstructionName = function(value) {
             var index = value.search(reNameEnd);
             var name = index < 0 ? value : value.substr(0, index);
             if (this.lowerCaseTagNames) {
@@ -25536,7 +25536,7 @@
             }
             return name;
           };
-          Parser3.prototype.ondeclaration = function(start, endIndex) {
+          Parser2.prototype.ondeclaration = function(start, endIndex) {
             this.endIndex = endIndex;
             var value = this.getSlice(start, endIndex);
             if (this.cbs.onprocessinginstruction) {
@@ -25545,7 +25545,7 @@
             }
             this.startIndex = endIndex + 1;
           };
-          Parser3.prototype.onprocessinginstruction = function(start, endIndex) {
+          Parser2.prototype.onprocessinginstruction = function(start, endIndex) {
             this.endIndex = endIndex;
             var value = this.getSlice(start, endIndex);
             if (this.cbs.onprocessinginstruction) {
@@ -25554,14 +25554,14 @@
             }
             this.startIndex = endIndex + 1;
           };
-          Parser3.prototype.oncomment = function(start, endIndex, offset) {
+          Parser2.prototype.oncomment = function(start, endIndex, offset) {
             var _a, _b, _c, _d;
             this.endIndex = endIndex;
             (_b = (_a = this.cbs).oncomment) === null || _b === void 0 ? void 0 : _b.call(_a, this.getSlice(start, endIndex - offset));
             (_d = (_c = this.cbs).oncommentend) === null || _d === void 0 ? void 0 : _d.call(_c);
             this.startIndex = endIndex + 1;
           };
-          Parser3.prototype.oncdata = function(start, endIndex, offset) {
+          Parser2.prototype.oncdata = function(start, endIndex, offset) {
             var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
             this.endIndex = endIndex;
             var value = this.getSlice(start, endIndex - offset);
@@ -25575,7 +25575,7 @@
             }
             this.startIndex = endIndex + 1;
           };
-          Parser3.prototype.onend = function() {
+          Parser2.prototype.onend = function() {
             var _a, _b;
             if (this.cbs.onclosetag) {
               this.endIndex = this.startIndex;
@@ -25585,7 +25585,7 @@
             }
             (_b = (_a = this.cbs).onend) === null || _b === void 0 ? void 0 : _b.call(_a);
           };
-          Parser3.prototype.reset = function() {
+          Parser2.prototype.reset = function() {
             var _a, _b, _c, _d;
             (_b = (_a = this.cbs).onreset) === null || _b === void 0 ? void 0 : _b.call(_a);
             this.tokenizer.reset();
@@ -25603,11 +25603,11 @@
             this.writeIndex = 0;
             this.ended = false;
           };
-          Parser3.prototype.parseComplete = function(data) {
+          Parser2.prototype.parseComplete = function(data) {
             this.reset();
             this.end(data);
           };
-          Parser3.prototype.getSlice = function(start, end) {
+          Parser2.prototype.getSlice = function(start, end) {
             while (start - this.bufferOffset >= this.buffers[0].length) {
               this.shiftBuffer();
             }
@@ -25618,12 +25618,12 @@
             }
             return slice;
           };
-          Parser3.prototype.shiftBuffer = function() {
+          Parser2.prototype.shiftBuffer = function() {
             this.bufferOffset += this.buffers[0].length;
             this.writeIndex--;
             this.buffers.shift();
           };
-          Parser3.prototype.write = function(chunk) {
+          Parser2.prototype.write = function(chunk) {
             var _a, _b;
             if (this.ended) {
               (_b = (_a = this.cbs).onerror) === null || _b === void 0 ? void 0 : _b.call(_a, new Error(".write() after done!"));
@@ -25635,7 +25635,7 @@
               this.writeIndex++;
             }
           };
-          Parser3.prototype.end = function(chunk) {
+          Parser2.prototype.end = function(chunk) {
             var _a, _b;
             if (this.ended) {
               (_b = (_a = this.cbs).onerror) === null || _b === void 0 ? void 0 : _b.call(_a, new Error(".end() after done!"));
@@ -25646,10 +25646,10 @@
             this.ended = true;
             this.tokenizer.end();
           };
-          Parser3.prototype.pause = function() {
+          Parser2.prototype.pause = function() {
             this.tokenizer.pause();
           };
-          Parser3.prototype.resume = function() {
+          Parser2.prototype.resume = function() {
             this.tokenizer.resume();
             while (this.tokenizer.running && this.writeIndex < this.buffers.length) {
               this.tokenizer.write(this.buffers[this.writeIndex++]);
@@ -25657,16 +25657,16 @@
             if (this.ended)
               this.tokenizer.end();
           };
-          Parser3.prototype.parseChunk = function(chunk) {
+          Parser2.prototype.parseChunk = function(chunk) {
             this.write(chunk);
           };
-          Parser3.prototype.done = function(chunk) {
+          Parser2.prototype.done = function(chunk) {
             this.end(chunk);
           };
-          return Parser3;
+          return Parser2;
         }()
       );
-      exports.Parser = Parser2;
+      exports.Parser = Parser;
     }
   });
 
@@ -27102,7 +27102,7 @@
   // node_modules/html-dom-parser/lib/server/html-to-dom.js
   var require_html_to_dom = __commonJS({
     "node_modules/html-dom-parser/lib/server/html-to-dom.js"(exports, module) {
-      var Parser2 = require_lib6().Parser;
+      var Parser = require_lib6().Parser;
       var DomHandler = require_lib2().DomHandler;
       var unsetRootParent = require_utilities().unsetRootParent;
       function HTMLDOMParser(html, options2) {
@@ -27113,7 +27113,7 @@
           return [];
         }
         var handler = new DomHandler(void 0, options2);
-        new Parser2(handler, options2).end(html);
+        new Parser(handler, options2).end(html);
         return unsetRootParent(handler.dom);
       }
       module.exports = HTMLDOMParser;
@@ -28376,13 +28376,11 @@
         if (!obj || typeof obj !== "object") {
           throw new TypeError("First argument must be an object");
         }
-        var key;
-        var value;
         var isOverridePresent = typeof override === "function";
         var overrides = {};
         var result = {};
-        for (key in obj) {
-          value = obj[key];
+        for (var key in obj) {
+          var value = obj[key];
           if (isOverridePresent) {
             overrides = override(key, value);
             if (overrides && overrides.length === 2) {
@@ -28396,37 +28394,38 @@
         }
         return result;
       }
+      var RESERVED_SVG_MATHML_ELEMENTS = /* @__PURE__ */ new Set([
+        "annotation-xml",
+        "color-profile",
+        "font-face",
+        "font-face-src",
+        "font-face-uri",
+        "font-face-format",
+        "font-face-name",
+        "missing-glyph"
+      ]);
       function isCustomComponent(tagName, props) {
         if (tagName.indexOf("-") === -1) {
           return props && typeof props.is === "string";
         }
-        switch (tagName) {
-          case "annotation-xml":
-          case "color-profile":
-          case "font-face":
-          case "font-face-src":
-          case "font-face-uri":
-          case "font-face-format":
-          case "font-face-name":
-          case "missing-glyph":
-            return false;
-          default:
-            return true;
+        if (RESERVED_SVG_MATHML_ELEMENTS.has(tagName)) {
+          return false;
         }
+        return true;
       }
-      var styleToJSOptions = { reactCompat: true };
+      var STYLE_TO_JS_OPTIONS = { reactCompat: true };
       function setStyleProp(style, props) {
         if (style === null || style === void 0) {
           return;
         }
         try {
-          props.style = styleToJS(style, styleToJSOptions);
+          props.style = styleToJS(style, STYLE_TO_JS_OPTIONS);
         } catch (err) {
           props.style = {};
         }
       }
       var PRESERVE_CUSTOM_ATTRIBUTES = React2.version.split(".")[0] >= 16;
-      var elementsWithNoTextChildren = /* @__PURE__ */ new Set([
+      var ELEMENTS_WITH_NO_TEXT_CHILDREN = /* @__PURE__ */ new Set([
         "tr",
         "tbody",
         "thead",
@@ -28438,18 +28437,18 @@
         "frameset"
       ]);
       function canTextBeChildOfNode(node) {
-        return !elementsWithNoTextChildren.has(node.name);
+        return !ELEMENTS_WITH_NO_TEXT_CHILDREN.has(node.name);
       }
       function returnFirstArg(arg) {
         return arg;
       }
       module.exports = {
         PRESERVE_CUSTOM_ATTRIBUTES,
+        ELEMENTS_WITH_NO_TEXT_CHILDREN,
         invertObject,
         isCustomComponent,
         setStyleProp,
         canTextBeChildOfNode,
-        elementsWithNoTextChildren,
         returnFirstArg
       };
     }
@@ -28643,19 +28642,19 @@
   var import_client = __toESM(require_client());
 
   // node_modules/marked/lib/marked.esm.js
-  function getDefaults() {
+  function _getDefaults() {
     return {
       async: false,
       baseUrl: null,
       breaks: false,
       extensions: null,
       gfm: true,
-      headerIds: true,
+      headerIds: false,
       headerPrefix: "",
       highlight: null,
       hooks: null,
       langPrefix: "language-",
-      mangle: true,
+      mangle: false,
       pedantic: false,
       renderer: null,
       sanitize: false,
@@ -28667,9 +28666,9 @@
       xhtml: false
     };
   }
-  var defaults = getDefaults();
+  var _defaults = _getDefaults();
   function changeDefaults(newDefaults) {
-    defaults = newDefaults;
+    _defaults = newDefaults;
   }
   var escapeTest = /[&<>"']/;
   var escapeReplace = new RegExp(escapeTest.source, "g");
@@ -28713,7 +28712,7 @@
     opt = opt || "";
     const obj = {
       replace: (name, val) => {
-        val = val.source || val;
+        val = typeof val === "object" && "source" in val ? val.source : val;
         val = val.replace(caret, "$1");
         regex = regex.replace(name, val);
         return obj;
@@ -28776,11 +28775,11 @@
       return base + href;
     }
   }
-  var noopTest = { exec: function noopTest2() {
-  } };
+  var noopTest = { exec: () => null };
   function splitCells(tableRow, count) {
     const row = tableRow.replace(/\|/g, (match, offset, str) => {
-      let escaped = false, curr = offset;
+      let escaped = false;
+      let curr = offset;
       while (--curr >= 0 && str[curr] === "\\")
         escaped = !escaped;
       if (escaped) {
@@ -28796,11 +28795,13 @@
     if (cells.length > 0 && !cells[cells.length - 1].trim()) {
       cells.pop();
     }
-    if (cells.length > count) {
-      cells.splice(count);
-    } else {
-      while (cells.length < count)
-        cells.push("");
+    if (count) {
+      if (cells.length > count) {
+        cells.splice(count);
+      } else {
+        while (cells.length < count)
+          cells.push("");
+      }
     }
     for (; i < cells.length; i++) {
       cells[i] = cells[i].trim().replace(/\\\|/g, "|");
@@ -28829,9 +28830,8 @@
     if (str.indexOf(b[1]) === -1) {
       return -1;
     }
-    const l = str.length;
-    let level = 0, i = 0;
-    for (; i < l; i++) {
+    let level = 0;
+    for (let i = 0; i < str.length; i++) {
       if (str[i] === "\\") {
         i++;
       } else if (str[i] === b[0]) {
@@ -28917,9 +28917,13 @@
       return node;
     }).join("\n");
   }
-  var Tokenizer = class {
+  var _Tokenizer = class {
+    options;
+    // TODO: Fix this rules type
+    rules;
+    lexer;
     constructor(options2) {
-      this.options = options2 || defaults;
+      this.options = options2 || _defaults;
     }
     space(src) {
       const cap = this.rules.block.newline.exec(src);
@@ -29004,7 +29008,6 @@
     list(src) {
       let cap = this.rules.block.list.exec(src);
       if (cap) {
-        let raw, istask, ischecked, indent, i, blankLine, endsWithBlankLine, line, nextLine, rawLine, itemContents, endEarly;
         let bull = cap[1].trim();
         const isordered = bull.length > 1;
         const list = {
@@ -29020,8 +29023,11 @@
           bull = isordered ? bull : "[*+-]";
         }
         const itemRegex = new RegExp(`^( {0,3}${bull})((?:[	 ][^\\n]*)?(?:\\n|$))`);
+        let raw = "";
+        let itemContents = "";
+        let endsWithBlankLine = false;
         while (src) {
-          endEarly = false;
+          let endEarly = false;
           if (!(cap = itemRegex.exec(src))) {
             break;
           }
@@ -29030,8 +29036,9 @@
           }
           raw = cap[0];
           src = src.substring(raw.length);
-          line = cap[2].split("\n", 1)[0].replace(/^\t+/, (t) => " ".repeat(3 * t.length));
-          nextLine = src.split("\n", 1)[0];
+          let line = cap[2].split("\n", 1)[0].replace(/^\t+/, (t) => " ".repeat(3 * t.length));
+          let nextLine = src.split("\n", 1)[0];
+          let indent = 0;
           if (this.options.pedantic) {
             indent = 2;
             itemContents = line.trimLeft();
@@ -29041,7 +29048,7 @@
             itemContents = line.slice(indent);
             indent += cap[1].length;
           }
-          blankLine = false;
+          let blankLine = false;
           if (!line && /^ *$/.test(nextLine)) {
             raw += nextLine + "\n";
             src = src.substring(nextLine.length + 1);
@@ -29053,7 +29060,7 @@
             const fencesBeginRegex = new RegExp(`^ {0,${Math.min(3, indent - 1)}}(?:\`\`\`|~~~)`);
             const headingBeginRegex = new RegExp(`^ {0,${Math.min(3, indent - 1)}}#`);
             while (src) {
-              rawLine = src.split("\n", 1)[0];
+              const rawLine = src.split("\n", 1)[0];
               nextLine = rawLine;
               if (this.options.pedantic) {
                 nextLine = nextLine.replace(/^ {1,4}(?=( {4})*[^ ])/g, "  ");
@@ -29105,6 +29112,8 @@
               endsWithBlankLine = true;
             }
           }
+          let istask = null;
+          let ischecked;
           if (this.options.gfm) {
             istask = /^\[[ xX]\] /.exec(itemContents);
             if (istask) {
@@ -29118,15 +29127,15 @@
             task: !!istask,
             checked: ischecked,
             loose: false,
-            text: itemContents
+            text: itemContents,
+            tokens: []
           });
           list.raw += raw;
         }
         list.items[list.items.length - 1].raw = raw.trimRight();
         list.items[list.items.length - 1].text = itemContents.trimRight();
         list.raw = list.raw.trimRight();
-        const l = list.items.length;
-        for (i = 0; i < l; i++) {
+        for (let i = 0; i < list.items.length; i++) {
           this.lexer.state.top = false;
           list.items[i].tokens = this.lexer.blockTokens(list.items[i].text, []);
           if (!list.loose) {
@@ -29136,7 +29145,7 @@
           }
         }
         if (list.loose) {
-          for (i = 0; i < l; i++) {
+          for (let i = 0; i < list.items.length; i++) {
             list.items[i].loose = true;
           }
         }
@@ -29155,9 +29164,10 @@
         };
         if (this.options.sanitize) {
           const text = this.options.sanitizer ? this.options.sanitizer(cap[0]) : escape(cap[0]);
-          token.type = "paragraph";
-          token.text = text;
-          token.tokens = this.lexer.inline(text);
+          const paragraph = token;
+          paragraph.type = "paragraph";
+          paragraph.text = text;
+          paragraph.tokens = this.lexer.inline(text);
         }
         return token;
       }
@@ -29182,31 +29192,34 @@
       if (cap) {
         const item = {
           type: "table",
+          raw: cap[0],
           header: splitCells(cap[1]).map((c) => {
-            return { text: c };
+            return { text: c, tokens: [] };
           }),
           align: cap[2].replace(/^ *|\| *$/g, "").split(/ *\| */),
           rows: cap[3] && cap[3].trim() ? cap[3].replace(/\n[ \t]*$/, "").split("\n") : []
         };
         if (item.header.length === item.align.length) {
-          item.raw = cap[0];
           let l = item.align.length;
           let i, j, k, row;
           for (i = 0; i < l; i++) {
-            if (/^ *-+: *$/.test(item.align[i])) {
-              item.align[i] = "right";
-            } else if (/^ *:-+: *$/.test(item.align[i])) {
-              item.align[i] = "center";
-            } else if (/^ *:-+ *$/.test(item.align[i])) {
-              item.align[i] = "left";
-            } else {
-              item.align[i] = null;
+            const align = item.align[i];
+            if (align) {
+              if (/^ *-+: *$/.test(align)) {
+                item.align[i] = "right";
+              } else if (/^ *:-+: *$/.test(align)) {
+                item.align[i] = "center";
+              } else if (/^ *:-+ *$/.test(align)) {
+                item.align[i] = "left";
+              } else {
+                item.align[i] = null;
+              }
             }
           }
           l = item.rows.length;
           for (i = 0; i < l; i++) {
             item.rows[i] = splitCells(item.rows[i], item.header.length).map((c) => {
-              return { text: c };
+              return { text: c, tokens: [] };
             });
           }
           l = item.header.length;
@@ -29363,7 +29376,7 @@
         return;
       const nextChar = match[1] || match[2] || "";
       if (!nextChar || !prevChar || this.rules.inline.punctuation.exec(prevChar)) {
-        const lLength = match[0].length - 1;
+        const lLength = [...match[0]].length - 1;
         let rDelim, rLength, delimTotal = lLength, midDelimTotal = 0;
         const endReg = match[0][0] === "*" ? this.rules.inline.emStrong.rDelimAst : this.rules.inline.emStrong.rDelimUnd;
         endReg.lastIndex = 0;
@@ -29372,7 +29385,7 @@
           rDelim = match[1] || match[2] || match[3] || match[4] || match[5] || match[6];
           if (!rDelim)
             continue;
-          rLength = rDelim.length;
+          rLength = [...rDelim].length;
           if (match[3] || match[4]) {
             delimTotal += rLength;
             continue;
@@ -29386,7 +29399,7 @@
           if (delimTotal > 0)
             continue;
           rLength = Math.min(rLength, rLength + delimTotal + midDelimTotal);
-          const raw = src.slice(0, lLength + match.index + rLength + 1);
+          const raw = [...src].slice(0, lLength + match.index + rLength + 1).join("");
           if (Math.min(lLength, rLength) % 2) {
             const text2 = raw.slice(1, -1);
             return {
@@ -29560,13 +29573,10 @@
   block.gfm.paragraph = edit(block._paragraph).replace("hr", block.hr).replace("heading", " {0,3}#{1,6} ").replace("|lheading", "").replace("table", block.gfm.table).replace("blockquote", " {0,3}>").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", block._tag).getRegex();
   block.pedantic = {
     ...block.normal,
-    html: edit(
-      `^ *(?:comment *(?:\\n|\\s*$)|<(tag)[\\s\\S]+?</\\1> *(?:\\n{2,}|\\s*$)|<tag(?:"[^"]*"|'[^']*'|\\s[^'"/>\\s]*)*?/?> *(?:\\n{2,}|\\s*$))`
-    ).replace("comment", block._comment).replace(/tag/g, "(?!(?:a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img)\\b)\\w+(?!:|[^\\w\\s@]*@)\\b").getRegex(),
+    html: edit(`^ *(?:comment *(?:\\n|\\s*$)|<(tag)[\\s\\S]+?</\\1> *(?:\\n{2,}|\\s*$)|<tag(?:"[^"]*"|'[^']*'|\\s[^'"/>\\s]*)*?/?> *(?:\\n{2,}|\\s*$))`).replace("comment", block._comment).replace(/tag/g, "(?!(?:a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img)\\b)\\w+(?!:|[^\\w\\s@]*@)\\b").getRegex(),
     def: /^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +(["(][^\n]+[")]))? *(?:\n+|$)/,
     heading: /^(#{1,6})(.*)(?:\n+|$)/,
     fences: noopTest,
-    // fences not supported
     lheading: /^(.+?)\n {0,3}(=+|-+) *(?:\n+|$)/,
     paragraph: edit(block.normal._paragraph).replace("hr", block.hr).replace("heading", " *#{1,6} *[^\n]").replace("lheading", block.lheading).replace("blockquote", " {0,3}>").replace("|fences", "").replace("|list", "").replace("|html", "").getRegex()
   };
@@ -29575,7 +29585,6 @@
     autolink: /^<(scheme:[^\s\x00-\x1f<>]*|email)>/,
     url: noopTest,
     tag: "^comment|^</[a-zA-Z][\\w:-]*\\s*>|^<[a-zA-Z][\\w-]*(?:attribute)*?\\s*/?>|^<\\?[\\s\\S]*?\\?>|^<![a-zA-Z]+\\s[\\s\\S]*?>|^<!\\[CDATA\\[[\\s\\S]*?\\]\\]>",
-    // CDATA section
     link: /^!?\[(label)\]\(\s*(href)(?:\s+(title))?\s*\)/,
     reflink: /^!?\[(label)\]\[(ref)\]/,
     nolink: /^!?\[(ref)\](?:\[\])?/,
@@ -29654,23 +29663,24 @@
     return text.replace(/---/g, "\u2014").replace(/--/g, "\u2013").replace(/(^|[-\u2014/(\[{"\s])'/g, "$1\u2018").replace(/'/g, "\u2019").replace(/(^|[-\u2014/(\[{\u2018\s])"/g, "$1\u201C").replace(/"/g, "\u201D").replace(/\.{3}/g, "\u2026");
   }
   function mangle(text) {
-    let out = "", i, ch;
-    const l = text.length;
-    for (i = 0; i < l; i++) {
-      ch = text.charCodeAt(i);
-      if (Math.random() > 0.5) {
-        ch = "x" + ch.toString(16);
-      }
+    let out = "";
+    for (let i = 0; i < text.length; i++) {
+      const ch = Math.random() > 0.5 ? "x" + text.charCodeAt(i).toString(16) : text.charCodeAt(i).toString();
       out += "&#" + ch + ";";
     }
     return out;
   }
-  var Lexer = class _Lexer {
+  var _Lexer = class __Lexer {
+    tokens;
+    options;
+    state;
+    tokenizer;
+    inlineQueue;
     constructor(options2) {
       this.tokens = [];
       this.tokens.links = /* @__PURE__ */ Object.create(null);
-      this.options = options2 || defaults;
-      this.options.tokenizer = this.options.tokenizer || new Tokenizer();
+      this.options = options2 || _defaults;
+      this.options.tokenizer = this.options.tokenizer || new _Tokenizer();
       this.tokenizer = this.options.tokenizer;
       this.tokenizer.options = this.options;
       this.tokenizer.lexer = this;
@@ -29710,14 +29720,14 @@
      * Static Lex Method
      */
     static lex(src, options2) {
-      const lexer2 = new _Lexer(options2);
+      const lexer2 = new __Lexer(options2);
       return lexer2.lex(src);
     }
     /**
      * Static Lex Inline Method
      */
     static lexInline(src, options2) {
-      const lexer2 = new _Lexer(options2);
+      const lexer2 = new __Lexer(options2);
       return lexer2.inlineTokens(src);
     }
     /**
@@ -29732,9 +29742,6 @@
       }
       return this.tokens;
     }
-    /**
-     * Lexing
-     */
     blockTokens(src, tokens = []) {
       if (this.options.pedantic) {
         src = src.replace(/\t/g, "    ").replace(/^ +$/gm, "");
@@ -29743,7 +29750,10 @@
           return leading + "    ".repeat(tabs.length);
         });
       }
-      let token, lastToken, cutSrc, lastParagraphClipped;
+      let token;
+      let lastToken;
+      let cutSrc;
+      let lastParagraphClipped;
       while (src) {
         if (this.options.extensions && this.options.extensions.block && this.options.extensions.block.some((extTokenizer) => {
           if (token = extTokenizer.call({ lexer: this }, src, tokens)) {
@@ -29836,7 +29846,7 @@
           let startIndex = Infinity;
           const tempSrc = src.slice(1);
           let tempStart;
-          this.options.extensions.startBlock.forEach(function(getStartIndex) {
+          this.options.extensions.startBlock.forEach((getStartIndex) => {
             tempStart = getStartIndex.call({ lexer: this }, tempSrc);
             if (typeof tempStart === "number" && tempStart >= 0) {
               startIndex = Math.min(startIndex, tempStart);
@@ -29996,7 +30006,7 @@
           let startIndex = Infinity;
           const tempSrc = src.slice(1);
           let tempStart;
-          this.options.extensions.startInline.forEach(function(getStartIndex) {
+          this.options.extensions.startInline.forEach((getStartIndex) => {
             tempStart = getStartIndex.call({ lexer: this }, tempSrc);
             if (typeof tempStart === "number" && tempStart >= 0) {
               startIndex = Math.min(startIndex, tempStart);
@@ -30034,12 +30044,13 @@
       return tokens;
     }
   };
-  var Renderer = class {
+  var _Renderer = class {
+    options;
     constructor(options2) {
-      this.options = options2 || defaults;
+      this.options = options2 || _defaults;
     }
     code(code, infostring, escaped) {
-      const lang = (infostring || "").match(/\S*/)[0];
+      const lang = (infostring || "").match(/^\S*/)?.[0];
       if (this.options.highlight) {
         const out = this.options.highlight(code, lang);
         if (out != null && out !== code) {
@@ -30053,9 +30064,6 @@
       }
       return '<pre><code class="' + this.options.langPrefix + escape(lang) + '">' + (escaped ? code : escape(code, true)) + "</code></pre>\n";
     }
-    /**
-     * @param {string} quote
-     */
     blockquote(quote) {
       return `<blockquote>
 ${quote}</blockquote>
@@ -30064,12 +30072,6 @@ ${quote}</blockquote>
     html(html, block2) {
       return html;
     }
-    /**
-     * @param {string} text
-     * @param {string} level
-     * @param {string} raw
-     * @param {any} slugger
-     */
     heading(text, level, raw, slugger) {
       if (this.options.headerIds) {
         const id = this.options.headerPrefix + slugger.slug(raw);
@@ -30083,38 +30085,26 @@ ${quote}</blockquote>
       return this.options.xhtml ? "<hr/>\n" : "<hr>\n";
     }
     list(body, ordered, start) {
-      const type = ordered ? "ol" : "ul", startatt = ordered && start !== 1 ? ' start="' + start + '"' : "";
+      const type = ordered ? "ol" : "ul";
+      const startatt = ordered && start !== 1 ? ' start="' + start + '"' : "";
       return "<" + type + startatt + ">\n" + body + "</" + type + ">\n";
     }
-    /**
-     * @param {string} text
-     */
-    listitem(text) {
+    listitem(text, task, checked) {
       return `<li>${text}</li>
 `;
     }
     checkbox(checked) {
       return "<input " + (checked ? 'checked="" ' : "") + 'disabled="" type="checkbox"' + (this.options.xhtml ? " /" : "") + "> ";
     }
-    /**
-     * @param {string} text
-     */
     paragraph(text) {
       return `<p>${text}</p>
 `;
     }
-    /**
-     * @param {string} header
-     * @param {string} body
-     */
     table(header, body) {
       if (body)
         body = `<tbody>${body}</tbody>`;
       return "<table>\n<thead>\n" + header + "</thead>\n" + body + "</table>\n";
     }
-    /**
-     * @param {string} content
-     */
     tablerow(content) {
       return `<tr>
 ${content}</tr>
@@ -30128,42 +30118,28 @@ ${content}</tr>
     }
     /**
      * span level renderer
-     * @param {string} text
      */
     strong(text) {
       return `<strong>${text}</strong>`;
     }
-    /**
-     * @param {string} text
-     */
     em(text) {
       return `<em>${text}</em>`;
     }
-    /**
-     * @param {string} text
-     */
     codespan(text) {
       return `<code>${text}</code>`;
     }
     br() {
       return this.options.xhtml ? "<br/>" : "<br>";
     }
-    /**
-     * @param {string} text
-     */
     del(text) {
       return `<del>${text}</del>`;
     }
-    /**
-     * @param {string} href
-     * @param {string} title
-     * @param {string} text
-     */
     link(href, title, text) {
-      href = cleanUrl(this.options.sanitize, this.options.baseUrl, href);
-      if (href === null) {
+      const cleanHref = cleanUrl(this.options.sanitize, this.options.baseUrl, href);
+      if (cleanHref === null) {
         return text;
       }
+      href = cleanHref;
       let out = '<a href="' + href + '"';
       if (title) {
         out += ' title="' + title + '"';
@@ -30171,16 +30147,12 @@ ${content}</tr>
       out += ">" + text + "</a>";
       return out;
     }
-    /**
-     * @param {string} href
-     * @param {string} title
-     * @param {string} text
-     */
     image(href, title, text) {
-      href = cleanUrl(this.options.sanitize, this.options.baseUrl, href);
-      if (href === null) {
+      const cleanHref = cleanUrl(this.options.sanitize, this.options.baseUrl, href);
+      if (cleanHref === null) {
         return text;
       }
+      href = cleanHref;
       let out = `<img src="${href}" alt="${text}"`;
       if (title) {
         out += ` title="${title}"`;
@@ -30192,7 +30164,7 @@ ${content}</tr>
       return text;
     }
   };
-  var TextRenderer = class {
+  var _TextRenderer = class {
     // no need for block level renderers
     strong(text) {
       return text;
@@ -30222,20 +30194,16 @@ ${content}</tr>
       return "";
     }
   };
-  var Slugger = class {
+  var _Slugger = class {
+    seen;
     constructor() {
       this.seen = {};
     }
-    /**
-     * @param {string} value
-     */
     serialize(value) {
       return value.toLowerCase().trim().replace(/<[!\/a-z].*?>/ig, "").replace(/[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,./:;<=>?@[\]^`{|}~]/g, "").replace(/\s/g, "-");
     }
     /**
      * Finds the next safe (unique) slug to use
-     * @param {string} originalSlug
-     * @param {boolean} isDryRun
      */
     getNextSafeSlug(originalSlug, isDryRun) {
       let slug = originalSlug;
@@ -30255,49 +30223,50 @@ ${content}</tr>
     }
     /**
      * Convert string to unique id
-     * @param {object} [options]
-     * @param {boolean} [options.dryrun] Generates the next unique slug without
-     * updating the internal accumulator.
      */
     slug(value, options2 = {}) {
       const slug = this.serialize(value);
       return this.getNextSafeSlug(slug, options2.dryrun);
     }
   };
-  var Parser = class _Parser {
+  var _Parser = class __Parser {
+    options;
+    renderer;
+    textRenderer;
+    slugger;
     constructor(options2) {
-      this.options = options2 || defaults;
-      this.options.renderer = this.options.renderer || new Renderer();
+      this.options = options2 || _defaults;
+      this.options.renderer = this.options.renderer || new _Renderer();
       this.renderer = this.options.renderer;
       this.renderer.options = this.options;
-      this.textRenderer = new TextRenderer();
-      this.slugger = new Slugger();
+      this.textRenderer = new _TextRenderer();
+      this.slugger = new _Slugger();
     }
     /**
      * Static Parse Method
      */
     static parse(tokens, options2) {
-      const parser2 = new _Parser(options2);
+      const parser2 = new __Parser(options2);
       return parser2.parse(tokens);
     }
     /**
      * Static Parse Inline Method
      */
     static parseInline(tokens, options2) {
-      const parser2 = new _Parser(options2);
+      const parser2 = new __Parser(options2);
       return parser2.parseInline(tokens);
     }
     /**
      * Parse Loop
      */
     parse(tokens, top = true) {
-      let out = "", i, j, k, l2, l3, row, cell, header, body, token, ordered, start, loose, itemBody, item, checked, task, checkbox, ret;
-      const l = tokens.length;
-      for (i = 0; i < l; i++) {
-        token = tokens[i];
+      let out = "";
+      for (let i = 0; i < tokens.length; i++) {
+        const token = tokens[i];
         if (this.options.extensions && this.options.extensions.renderers && this.options.extensions.renderers[token.type]) {
-          ret = this.options.extensions.renderers[token.type].call({ parser: this }, token);
-          if (ret !== false || !["space", "hr", "heading", "code", "table", "blockquote", "list", "html", "paragraph", "text"].includes(token.type)) {
+          const genericToken = token;
+          const ret = this.options.extensions.renderers[genericToken.type].call({ parser: this }, genericToken);
+          if (ret !== false || !["space", "hr", "heading", "code", "table", "blockquote", "list", "html", "paragraph", "text"].includes(genericToken.type)) {
             out += ret || "";
             continue;
           }
@@ -30311,44 +30280,29 @@ ${content}</tr>
             continue;
           }
           case "heading": {
-            out += this.renderer.heading(
-              this.parseInline(token.tokens),
-              token.depth,
-              unescape(this.parseInline(token.tokens, this.textRenderer)),
-              this.slugger
-            );
+            const headingToken = token;
+            out += this.renderer.heading(this.parseInline(headingToken.tokens), headingToken.depth, unescape(this.parseInline(headingToken.tokens, this.textRenderer)), this.slugger);
             continue;
           }
           case "code": {
-            out += this.renderer.code(
-              token.text,
-              token.lang,
-              token.escaped
-            );
+            const codeToken = token;
+            out += this.renderer.code(codeToken.text, codeToken.lang, !!codeToken.escaped);
             continue;
           }
           case "table": {
-            header = "";
-            cell = "";
-            l2 = token.header.length;
-            for (j = 0; j < l2; j++) {
-              cell += this.renderer.tablecell(
-                this.parseInline(token.header[j].tokens),
-                { header: true, align: token.align[j] }
-              );
+            const tableToken = token;
+            let header = "";
+            let cell = "";
+            for (let j = 0; j < tableToken.header.length; j++) {
+              cell += this.renderer.tablecell(this.parseInline(tableToken.header[j].tokens), { header: true, align: tableToken.align[j] });
             }
             header += this.renderer.tablerow(cell);
-            body = "";
-            l2 = token.rows.length;
-            for (j = 0; j < l2; j++) {
-              row = token.rows[j];
+            let body = "";
+            for (let j = 0; j < tableToken.rows.length; j++) {
+              const row = tableToken.rows[j];
               cell = "";
-              l3 = row.length;
-              for (k = 0; k < l3; k++) {
-                cell += this.renderer.tablecell(
-                  this.parseInline(row[k].tokens),
-                  { header: false, align: token.align[k] }
-                );
+              for (let k = 0; k < row.length; k++) {
+                cell += this.renderer.tablecell(this.parseInline(row[k].tokens), { header: false, align: tableToken.align[k] });
               }
               body += this.renderer.tablerow(cell);
             }
@@ -30356,23 +30310,24 @@ ${content}</tr>
             continue;
           }
           case "blockquote": {
-            body = this.parse(token.tokens);
+            const blockquoteToken = token;
+            const body = this.parse(blockquoteToken.tokens);
             out += this.renderer.blockquote(body);
             continue;
           }
           case "list": {
-            ordered = token.ordered;
-            start = token.start;
-            loose = token.loose;
-            l2 = token.items.length;
-            body = "";
-            for (j = 0; j < l2; j++) {
-              item = token.items[j];
-              checked = item.checked;
-              task = item.task;
-              itemBody = "";
+            const listToken = token;
+            const ordered = listToken.ordered;
+            const start = listToken.start;
+            const loose = listToken.loose;
+            let body = "";
+            for (let j = 0; j < listToken.items.length; j++) {
+              const item = listToken.items[j];
+              const checked = item.checked;
+              const task = item.task;
+              let itemBody = "";
               if (item.task) {
-                checkbox = this.renderer.checkbox(checked);
+                const checkbox = this.renderer.checkbox(!!checked);
                 if (loose) {
                   if (item.tokens.length > 0 && item.tokens[0].type === "paragraph") {
                     item.tokens[0].text = checkbox + " " + item.tokens[0].text;
@@ -30390,24 +30345,27 @@ ${content}</tr>
                 }
               }
               itemBody += this.parse(item.tokens, loose);
-              body += this.renderer.listitem(itemBody, task, checked);
+              body += this.renderer.listitem(itemBody, task, !!checked);
             }
             out += this.renderer.list(body, ordered, start);
             continue;
           }
           case "html": {
-            out += this.renderer.html(token.text, token.block);
+            const htmlToken = token;
+            out += this.renderer.html(htmlToken.text, htmlToken.block);
             continue;
           }
           case "paragraph": {
-            out += this.renderer.paragraph(this.parseInline(token.tokens));
+            const paragraphToken = token;
+            out += this.renderer.paragraph(this.parseInline(paragraphToken.tokens));
             continue;
           }
           case "text": {
-            body = token.tokens ? this.parseInline(token.tokens) : token.text;
-            while (i + 1 < l && tokens[i + 1].type === "text") {
-              token = tokens[++i];
-              body += "\n" + (token.tokens ? this.parseInline(token.tokens) : token.text);
+            let textToken = token;
+            let body = textToken.tokens ? this.parseInline(textToken.tokens) : textToken.text;
+            while (i + 1 < tokens.length && tokens[i + 1].type === "text") {
+              textToken = tokens[++i];
+              body += "\n" + (textToken.tokens ? this.parseInline(textToken.tokens) : textToken.text);
             }
             out += top ? this.renderer.paragraph(body) : body;
             continue;
@@ -30416,7 +30374,7 @@ ${content}</tr>
             const errMsg = 'Token with "' + token.type + '" type was not found.';
             if (this.options.silent) {
               console.error(errMsg);
-              return;
+              return "";
             } else {
               throw new Error(errMsg);
             }
@@ -30430,12 +30388,11 @@ ${content}</tr>
      */
     parseInline(tokens, renderer) {
       renderer = renderer || this.renderer;
-      let out = "", i, token, ret;
-      const l = tokens.length;
-      for (i = 0; i < l; i++) {
-        token = tokens[i];
+      let out = "";
+      for (let i = 0; i < tokens.length; i++) {
+        const token = tokens[i];
         if (this.options.extensions && this.options.extensions.renderers && this.options.extensions.renderers[token.type]) {
-          ret = this.options.extensions.renderers[token.type].call({ parser: this }, token);
+          const ret = this.options.extensions.renderers[token.type].call({ parser: this }, token);
           if (ret !== false || !["escape", "html", "link", "image", "strong", "em", "codespan", "br", "del", "text"].includes(token.type)) {
             out += ret || "";
             continue;
@@ -30443,31 +30400,38 @@ ${content}</tr>
         }
         switch (token.type) {
           case "escape": {
-            out += renderer.text(token.text);
+            const escapeToken = token;
+            out += renderer.text(escapeToken.text);
             break;
           }
           case "html": {
-            out += renderer.html(token.text);
+            const tagToken = token;
+            out += renderer.html(tagToken.text);
             break;
           }
           case "link": {
-            out += renderer.link(token.href, token.title, this.parseInline(token.tokens, renderer));
+            const linkToken = token;
+            out += renderer.link(linkToken.href, linkToken.title, this.parseInline(linkToken.tokens, renderer));
             break;
           }
           case "image": {
-            out += renderer.image(token.href, token.title, token.text);
+            const imageToken = token;
+            out += renderer.image(imageToken.href, imageToken.title, imageToken.text);
             break;
           }
           case "strong": {
-            out += renderer.strong(this.parseInline(token.tokens, renderer));
+            const strongToken = token;
+            out += renderer.strong(this.parseInline(strongToken.tokens, renderer));
             break;
           }
           case "em": {
-            out += renderer.em(this.parseInline(token.tokens, renderer));
+            const emToken = token;
+            out += renderer.em(this.parseInline(emToken.tokens, renderer));
             break;
           }
           case "codespan": {
-            out += renderer.codespan(token.text);
+            const codespanToken = token;
+            out += renderer.codespan(codespanToken.text);
             break;
           }
           case "br": {
@@ -30475,18 +30439,20 @@ ${content}</tr>
             break;
           }
           case "del": {
-            out += renderer.del(this.parseInline(token.tokens, renderer));
+            const delToken = token;
+            out += renderer.del(this.parseInline(delToken.tokens, renderer));
             break;
           }
           case "text": {
-            out += renderer.text(token.text);
+            const textToken = token;
+            out += renderer.text(textToken.text);
             break;
           }
           default: {
             const errMsg = 'Token with "' + token.type + '" type was not found.';
             if (this.options.silent) {
               console.error(errMsg);
-              return;
+              return "";
             } else {
               throw new Error(errMsg);
             }
@@ -30496,9 +30462,10 @@ ${content}</tr>
       return out;
     }
   };
-  var Hooks = class {
+  var _Hooks = class {
+    options;
     constructor(options2) {
-      this.options = options2 || defaults;
+      this.options = options2 || _defaults;
     }
     static passThroughHooks = /* @__PURE__ */ new Set([
       "preprocess",
@@ -30518,32 +30485,36 @@ ${content}</tr>
     }
   };
   var Marked = class {
-    defaults = getDefaults();
+    defaults = _getDefaults();
     options = this.setOptions;
-    parse = this.#parseMarkdown(Lexer.lex, Parser.parse);
-    parseInline = this.#parseMarkdown(Lexer.lexInline, Parser.parseInline);
-    Parser = Parser;
-    parser = Parser.parse;
-    Renderer = Renderer;
-    TextRenderer = TextRenderer;
-    Lexer = Lexer;
-    lexer = Lexer.lex;
-    Tokenizer = Tokenizer;
-    Slugger = Slugger;
-    Hooks = Hooks;
+    parse = this.#parseMarkdown(_Lexer.lex, _Parser.parse);
+    parseInline = this.#parseMarkdown(_Lexer.lexInline, _Parser.parseInline);
+    Parser = _Parser;
+    parser = _Parser.parse;
+    Renderer = _Renderer;
+    TextRenderer = _TextRenderer;
+    Lexer = _Lexer;
+    lexer = _Lexer.lex;
+    Tokenizer = _Tokenizer;
+    Slugger = _Slugger;
+    Hooks = _Hooks;
     constructor(...args) {
       this.use(...args);
     }
+    /**
+     * Run callback for every token
+     */
     walkTokens(tokens, callback) {
       let values = [];
       for (const token of tokens) {
         values = values.concat(callback.call(this, token));
         switch (token.type) {
           case "table": {
-            for (const cell of token.header) {
+            const tableToken = token;
+            for (const cell of tableToken.header) {
               values = values.concat(this.walkTokens(cell.tokens, callback));
             }
-            for (const row of token.rows) {
+            for (const row of tableToken.rows) {
               for (const cell of row) {
                 values = values.concat(this.walkTokens(cell.tokens, callback));
               }
@@ -30551,16 +30522,18 @@ ${content}</tr>
             break;
           }
           case "list": {
-            values = values.concat(this.walkTokens(token.items, callback));
+            const listToken = token;
+            values = values.concat(this.walkTokens(listToken.items, callback));
             break;
           }
           default: {
-            if (this.defaults.extensions && this.defaults.extensions.childTokens && this.defaults.extensions.childTokens[token.type]) {
-              this.defaults.extensions.childTokens[token.type].forEach((childTokens) => {
-                values = values.concat(this.walkTokens(token[childTokens], callback));
+            const genericToken = token;
+            if (this.defaults.extensions?.childTokens?.[genericToken.type]) {
+              this.defaults.extensions.childTokens[genericToken.type].forEach((childTokens) => {
+                values = values.concat(this.walkTokens(genericToken[childTokens], callback));
               });
-            } else if (token.tokens) {
-              values = values.concat(this.walkTokens(token.tokens, callback));
+            } else if (genericToken.tokens) {
+              values = values.concat(this.walkTokens(genericToken.tokens, callback));
             }
           }
         }
@@ -30577,7 +30550,7 @@ ${content}</tr>
             if (!ext.name) {
               throw new Error("extension name required");
             }
-            if (ext.renderer) {
+            if ("renderer" in ext) {
               const prevRenderer = extensions.renderers[ext.name];
               if (prevRenderer) {
                 extensions.renderers[ext.name] = function(...args2) {
@@ -30591,12 +30564,13 @@ ${content}</tr>
                 extensions.renderers[ext.name] = ext.renderer;
               }
             }
-            if (ext.tokenizer) {
+            if ("tokenizer" in ext) {
               if (!ext.level || ext.level !== "block" && ext.level !== "inline") {
                 throw new Error("extension level must be 'block' or 'inline'");
               }
-              if (extensions[ext.level]) {
-                extensions[ext.level].unshift(ext.tokenizer);
+              const extLevel = extensions[ext.level];
+              if (extLevel) {
+                extLevel.unshift(ext.tokenizer);
               } else {
                 extensions[ext.level] = [ext.tokenizer];
               }
@@ -30616,32 +30590,36 @@ ${content}</tr>
                 }
               }
             }
-            if (ext.childTokens) {
+            if ("childTokens" in ext && ext.childTokens) {
               extensions.childTokens[ext.name] = ext.childTokens;
             }
           });
           opts.extensions = extensions;
         }
         if (pack.renderer) {
-          const renderer = this.defaults.renderer || new Renderer(this.defaults);
+          const renderer = this.defaults.renderer || new _Renderer(this.defaults);
           for (const prop in pack.renderer) {
-            const prevRenderer = renderer[prop];
-            renderer[prop] = (...args2) => {
-              let ret = pack.renderer[prop].apply(renderer, args2);
+            const rendererFunc = pack.renderer[prop];
+            const rendererKey = prop;
+            const prevRenderer = renderer[rendererKey];
+            renderer[rendererKey] = (...args2) => {
+              let ret = rendererFunc.apply(renderer, args2);
               if (ret === false) {
                 ret = prevRenderer.apply(renderer, args2);
               }
-              return ret;
+              return ret || "";
             };
           }
           opts.renderer = renderer;
         }
         if (pack.tokenizer) {
-          const tokenizer = this.defaults.tokenizer || new Tokenizer(this.defaults);
+          const tokenizer = this.defaults.tokenizer || new _Tokenizer(this.defaults);
           for (const prop in pack.tokenizer) {
-            const prevTokenizer = tokenizer[prop];
-            tokenizer[prop] = (...args2) => {
-              let ret = pack.tokenizer[prop].apply(tokenizer, args2);
+            const tokenizerFunc = pack.tokenizer[prop];
+            const tokenizerKey = prop;
+            const prevTokenizer = tokenizer[tokenizerKey];
+            tokenizer[tokenizerKey] = (...args2) => {
+              let ret = tokenizerFunc.apply(tokenizer, args2);
               if (ret === false) {
                 ret = prevTokenizer.apply(tokenizer, args2);
               }
@@ -30651,22 +30629,24 @@ ${content}</tr>
           opts.tokenizer = tokenizer;
         }
         if (pack.hooks) {
-          const hooks = this.defaults.hooks || new Hooks();
+          const hooks = this.defaults.hooks || new _Hooks();
           for (const prop in pack.hooks) {
-            const prevHook = hooks[prop];
-            if (Hooks.passThroughHooks.has(prop)) {
-              hooks[prop] = (arg) => {
+            const hooksFunc = pack.hooks[prop];
+            const hooksKey = prop;
+            const prevHook = hooks[hooksKey];
+            if (_Hooks.passThroughHooks.has(prop)) {
+              hooks[hooksKey] = (arg) => {
                 if (this.defaults.async) {
-                  return Promise.resolve(pack.hooks[prop].call(hooks, arg)).then((ret2) => {
+                  return Promise.resolve(hooksFunc.call(hooks, arg)).then((ret2) => {
                     return prevHook.call(hooks, ret2);
                   });
                 }
-                const ret = pack.hooks[prop].call(hooks, arg);
+                const ret = hooksFunc.call(hooks, arg);
                 return prevHook.call(hooks, ret);
               };
             } else {
-              hooks[prop] = (...args2) => {
-                let ret = pack.hooks[prop].apply(hooks, args2);
+              hooks[hooksKey] = (...args2) => {
+                let ret = hooksFunc.apply(hooks, args2);
                 if (ret === false) {
                   ret = prevHook.apply(hooks, args2);
                 }
@@ -30678,9 +30658,10 @@ ${content}</tr>
         }
         if (pack.walkTokens) {
           const walkTokens2 = this.defaults.walkTokens;
+          const packWalktokens = pack.walkTokens;
           opts.walkTokens = function(token) {
             let values = [];
-            values.push(pack.walkTokens.call(this, token));
+            values.push(packWalktokens.call(this, token));
             if (walkTokens2) {
               values = values.concat(walkTokens2.call(this, token));
             }
@@ -30696,14 +30677,20 @@ ${content}</tr>
       return this;
     }
     #parseMarkdown(lexer2, parser2) {
-      return (src, opt, callback) => {
-        if (typeof opt === "function") {
-          callback = opt;
-          opt = null;
+      return (src, optOrCallback, callback) => {
+        if (typeof optOrCallback === "function") {
+          callback = optOrCallback;
+          optOrCallback = null;
         }
-        const origOpt = { ...opt };
-        opt = { ...this.defaults, ...origOpt };
-        const throwError = this.#onError(opt.silent, opt.async, callback);
+        const origOpt = { ...optOrCallback };
+        const opt = { ...this.defaults, ...origOpt };
+        if (this.defaults.async === true && origOpt.async === false) {
+          if (!opt.silent) {
+            console.warn("marked(): The async option was set to true by an extension. The async: false option sent to parse will be ignored.");
+          }
+          opt.async = true;
+        }
+        const throwError = this.#onError(!!opt.silent, !!opt.async, callback);
         if (typeof src === "undefined" || src === null) {
           return throwError(new Error("marked(): input parameter is undefined or null"));
         }
@@ -30715,6 +30702,7 @@ ${content}</tr>
           opt.hooks.options = opt;
         }
         if (callback) {
+          const resultCallback = callback;
           const highlight = opt.highlight;
           let tokens;
           try {
@@ -30741,7 +30729,7 @@ ${content}</tr>
               }
             }
             opt.highlight = highlight;
-            return err ? throwError(err) : callback(null, out);
+            return err ? throwError(err) : resultCallback(null, out);
           };
           if (!highlight || highlight.length < 3) {
             return done();
@@ -30821,18 +30809,18 @@ ${content}</tr>
       };
     }
   };
-  var markedInstance = new Marked(defaults);
+  var markedInstance = new Marked();
   function marked(src, opt, callback) {
     return markedInstance.parse(src, opt, callback);
   }
-  marked.options = marked.setOptions = function(opt) {
-    markedInstance.setOptions(opt);
+  marked.options = marked.setOptions = function(options2) {
+    markedInstance.setOptions(options2);
     marked.defaults = markedInstance.defaults;
     changeDefaults(marked.defaults);
     return marked;
   };
-  marked.getDefaults = getDefaults;
-  marked.defaults = defaults;
+  marked.getDefaults = _getDefaults;
+  marked.defaults = _defaults;
   marked.use = function(...args) {
     markedInstance.use(...args);
     marked.defaults = markedInstance.defaults;
@@ -30843,23 +30831,23 @@ ${content}</tr>
     return markedInstance.walkTokens(tokens, callback);
   };
   marked.parseInline = markedInstance.parseInline;
-  marked.Parser = Parser;
-  marked.parser = Parser.parse;
-  marked.Renderer = Renderer;
-  marked.TextRenderer = TextRenderer;
-  marked.Lexer = Lexer;
-  marked.lexer = Lexer.lex;
-  marked.Tokenizer = Tokenizer;
-  marked.Slugger = Slugger;
-  marked.Hooks = Hooks;
+  marked.Parser = _Parser;
+  marked.parser = _Parser.parse;
+  marked.Renderer = _Renderer;
+  marked.TextRenderer = _TextRenderer;
+  marked.Lexer = _Lexer;
+  marked.lexer = _Lexer.lex;
+  marked.Tokenizer = _Tokenizer;
+  marked.Slugger = _Slugger;
+  marked.Hooks = _Hooks;
   marked.parse = marked;
   var options = marked.options;
   var setOptions = marked.setOptions;
   var use = marked.use;
   var walkTokens = marked.walkTokens;
   var parseInline = marked.parseInline;
-  var parser = Parser.parse;
-  var lexer = Lexer.lex;
+  var parser = _Parser.parse;
+  var lexer = _Lexer.lex;
 
   // node_modules/html-react-parser/index.mjs
   var import_index = __toESM(require_html_react_parser(), 1);
