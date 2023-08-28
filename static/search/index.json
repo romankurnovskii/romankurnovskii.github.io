@@ -724,6 +724,14 @@
             "lang": "ru"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/151",
+            "title": "151. Reverse Words in a String",
+            "description": "LeetCode 151. Перевернуть слова в строке. Разбор задачи.",
+            "content": "\nLeetCode задача 151\n\nЗадача\nНа вход подается строка s. Нам необходимо перевернуть порядок слов в этой строке. Слова определяются как последовательность символов без пробелов. Слова в s разделены хотя бы одним пробелом. Нужно вернуть строку, в которой слова расположены в обратном порядке, разделенные одним пробелом.\n\nВажно: строка s может содержать начальные или конечные пробелы или множественные пробелы между двумя словами. В возвращаемой строке должен быть только один пробел, разделяющий слова. Лишние пробелы не включаем.\n\nПодход\nДля решения задачи мы можем разделить строку на слова, используя пробел в качестве разделителя, а затем просто объединить их в обратном порядке.\n\nАлгоритм\nРазделяем строку на слова.\nПереворачиваем список слов.\nОбъединяем слова в строку, разделяя их одним пробелом.\n\nPython Solution\n\ndef reverseWords(s: str) -> str:\nРазделяем строку на слова и сохраняем их в список\n    words = s.split()\n\nПереворачиваем список слов\n    words.reverse()\n\nОбъединяем слова в строку, разделяя их одним пробелом\n    return ' '.join(words)\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/easy/9",
             "title": "9. Palindrome Number",
             "description": "LeetCode 9. является ли число палиндромом. Разбор задачи.",
@@ -1853,7 +1861,7 @@
             "uri": "/posts/vps-docker-subdomains-setup/project/projects/3/",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 0
+                    "timeTakenInMilliseconds": 1
                 },
                 "result": "Hello World!",
                 "ranges": [
@@ -2266,7 +2274,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 2
+                    "timeTakenInMilliseconds": 1
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
