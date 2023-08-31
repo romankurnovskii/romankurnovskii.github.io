@@ -725,6 +725,40 @@
             "lang": "ru"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/649/",
+            "title": "649. Dota2 Senate",
+            "description": "LeetCode 649. Разбор задачи Dota2 Senate.",
+            "content": "\nLeetCode задача 649\n\nЗадача\n\nВ игре Dota2, сенат состоит из двух партий: партии \"Radiant\" и партии \"Dire\". Сенат решает, когда будет следующая игра, и каждый сенатор может голосовать за бан одного из сенаторов из другой партии. Ваша задача определить, какая партия победит и объявит игру.\n\nПодсказки\n\nИспользуйте очередь для эффективного решения задачи.\n\nПодход\n\nИнициализация очередей: Для каждой партии создайте очередь, где будет храниться индекс каждого сенатора этой партии в строке.\nПроцесс голосования: Пока обе очереди не пусты, из каждой очереди извлекается индекс сенатора. Сенатор с меньшим индексом \"банит\" сенатора с большим индексом, и индекс банитого сенатора удаляется из его очереди.\nДобавление сенаторов обратно: Сенатор, который не был забанен, возвращается в конец очереди (его индекс увеличивается на общее количество сенаторов).\nПроверка победителя: Когда одна из очередей станет пустой, партия, чья очередь осталась, побеждает.\n\nАлгоритм\n\nИнициализируйте две очереди: одну для \"Radiant\" и одну для \"Dire\".\nПоместите индексы сенаторов в соответствующие очереди.\nПроизведите голосование и бан, пока одна из очередей не станет пустой.\n\nРешение\n\nfrom collections import deque\n\ndef predictPartyVictory(senate: str) -> str:\n    radiant = deque()\n    dire = deque()\n\n    n = len(senate)\n\nЗаполнение очередей\n    for i, s in enumerate(senate):\n        if s == 'R':\n            radiant.append(i)\n        else:\n            dire.append(i)\n\nПроцесс голосования\n    while radiant and dire:\n        r, d = radiant.popleft(), dire.popleft()\n\nСенатор с меньшим индексом банит сенатора с большим индексом\n        if r < d:\n            radiant.append(r + n)\n        else:\n            dire.append(d + n)\n\n    return \"Radiant\" if radiant else \"Dire\"\n",
+            "tags": [
+                "Queue",
+                "Medium"
+            ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/454/",
+            "title": "454. 4Sum II",
+            "description": "LeetCode 454. Четыре числа, которые суммируются в ноль. Разбор задачи.",
+            "content": "\nLeetCode задача 454\n\nЗадача\n\nДаны четыре списка A, B, C, D целых чисел. Вычислите, сколько существует таких кортежей (i, j, k, l), что \\( A[i] + B[j] + C[k] + D[l] = 0 \\).\n\nПодсказки\n\nИспользуйте хэш-таблицу для ускорения решения.\n\nПодход\n\nСоздание хэш-таблицы: Сначала создайте хэш-таблицу, которая будет хранить суммы пар чисел из массивов A и B.\nПодсчет сумм: Для каждой пары (i, j) из A и B, увеличьте соответствующий элемент хэш-таблицы на 1.\nПоиск в хэш-таблице: Для каждой пары (k, l) из C и D, проверьте, существует ли -(C[k] + D[l]) в хэш-таблице. Если да, увеличьте счетчик на соответствующее значение из хэш-таблицы.\nВозврат результата: Верните значение счетчика.\n\nЭтот метод является простым и эффективным с точки зрения времени.\n\nАлгоритм\n\nИнициализируйте counter = 0 и хэш-таблицу sums.\nПосчитайте суммы для всех пар (i, j) из A и B и сохраните их в sums.\nПереберите все пары (k, l) из C и D и проверьте наличие -(C[k] + D[l]) в sums.\n\nРешение\n\nfrom collections import defaultdict\n\ndef fourSumCount(A, B, C, D):\n    counter = 0\n    sums = defaultdict(int)\n\nСчитаем суммы для всех пар из A и B\n    for i in A:\n        for j in B:\n            sums[i + j] += 1\n\nПроверяем наличие -(C[k] + D[l]) в хэш-таблице\n    for k in C:\n        for l in D:\n            if -(k + l) in sums:\n                counter += sums[-(k + l)]\n\n    return counter\n",
+            "tags": [
+                "HashTable",
+                "Medium"
+            ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/437/",
+            "title": "437. Path Sum III",
+            "description": "LeetCode 437. Найти количество всех путей в бинарном дереве, которые суммируются в определенное число. Разбор задачи.",
+            "content": "\nLeetCode задача 437\n\nЗадача\n\nВы должны вернуть количество путей в данном бинарном дереве, которые суммируются в определенное число. Путь не обязан начинаться или заканчиваться на корне или листьях, но он должен двигаться вниз (с родителя на потомка).\n\nПодсказки\n\nИспользуйте Depth-First Search (DFS) для решения задачи.\n\nПодход\n\nDFS с \"памятью\": Мы можем использовать DFS, чтобы пройти по всем путям в дереве, и на каждом этапе проверить, сколько путей можно завершить в этом узле с нужной суммой.\nХранение промежуточных сумм: По мере движения вниз по дереву, мы можем хранить сумму всех узлов в текущем пути. Это позволит нам быстро проверить, можно ли создать подпуть с нужной суммой.\nОбновление ответа: Когда мы достигаем листа, мы можем проверить, создает ли текущий путь нужную сумму. Если да, увеличьте счетчик.\nВозврат результата: В конечном итоге верните количество всех подходящих путей.\n\nАлгоритм\n\nИнициализируйте переменную для подсчета количества путей.\nЗапустите DFS с корня дерева.\n\nРешение\n\nclass TreeNode:\n    def init(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef dfs(node, target, current_sum, prefix_sums):\n    if not node:\n        return 0\n\n    count = 0\n    current_sum += node.val\n\nНайти нужное количество путей, которые заканчиваются на текущем узле\n    count += prefix_sums.get(current_sum - target, 0)\n\nОбновление префиксных сумм\n    prefix_sums[current_sum] = prefix_sums.get(current_sum, 0) + 1\n\nРекурсивно проверить оба поддерева\n    count += dfs(node.left, target, current_sum, prefix_sums)\n    count += dfs(node.right, target, current_sum, prefix_sums)\n\nОткат изменений\n    prefix_sums[current_sum] -= 1\n\n    return count\n\ndef pathSum(root: TreeNode, target: int) -> int:\n    return dfs(root, target, 0, {0: 1})\n",
+            "tags": [
+                "Binary Tree",
+                "DFS",
+                "Easy"
+            ],
+            "lang": "ru"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/394/",
             "title": "394. Decode String",
             "description": "LeetCode 394. Декодирование строки согласно заданным правилам. Подробный разбор задачи.",
@@ -737,6 +771,39 @@
             "lang": "ru"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/387/",
+            "title": "387. First Unique Character in a String",
+            "description": "LeetCode 387. Первый уникальный символ в строке. Разбор задачи.",
+            "content": "\nLeetCode задача 387\n\nЗадача\n\nДана строка s. Найдите первый уникальный символ в строке и верните его индекс. Если такого символа нет, верните -1.\n\nПодсказки\n\nИспользование хеш-таблицы может ускорить процесс поиска уникальных символов.\n\nПодход\n\nИнициализация: Создайте хеш-таблицу для хранения частоты каждого символа в строке.\nПервый проход: Пройдите по строке и заполните хеш-таблицу.\nВторой проход: Пройдите по строке второй раз и проверьте частоту каждого символа в хеш-таблице. Первый символ с частотой 1 будет ответом.\n\nЭтот подход прост для понимания и реализации. Он требует двух проходов по строке, но временная сложность остается линейной.\n\nАлгоритм\n\nСоздайте хеш-таблицу для хранения частот символов.\nПройдите по строке, заполняя хеш-таблицу.\nПройдите по строке второй раз, и для каждого символа проверьте его частоту в хеш-таблице. Верните индекс первого символа с частотой 1.\n\nРешение\n\ndef firstUniqChar(s: str) -> int:\nХеш-таблица для хранения частот символов\n    char_count = {}\n\nПервый проход: заполнение хеш-таблицы\n    for char in s:\n        char_count[char] = char_count.get(char, 0) + 1\n\nВторой проход: проверка частоты символов\n    for index, char in enumerate(s):\n        if char_count[char] == 1:\n            return index\n\n    return -1\n",
+            "tags": [
+                "Hash Table",
+                "Easy"
+            ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/384/",
+            "title": "384. Shuffle an Array",
+            "description": "LeetCode 384. Перемешивание массива. Разбор задачи.",
+            "content": "\nLeetCode задача 384\n\nЗадача\n\nРеализуйте класс, который принимает массив чисел в конструкторе и предоставляет метод для их случайного перемешивания, а также метод для возвращения исходного массива.\n\nПодсказки\n\nДля создания случайного порядка элементов можно использовать алгоритм Фишера-Йетса или другие методы перемешивания.\n\nПодход\n\nИнициализация: Сохранить исходный массив в переменной класса для дальнейшего использования.\nreset(): Вернуть исходный массив.\nshuffle(): Вернуть перемешанный массив.\n\nИз всех возможных подходов к решению этой задачи, наиболее простым является использование встроенного метода random.shuffle() из Python стандартной библиотеки для перемешивания массива. В этом случае, вы просто создаете копию исходного массива и применяете к ней метод random.shuffle().\n\nАлгоритм\n\nСохранить исходный массив в переменной класса.\nВ методе reset() просто вернуть исходный массив.\nВ методе shuffle() создать копию исходного массива, перемешать её и вернуть.\n\nРешение\n\nimport random\n\nclass Solution:\n\n    def init(self, nums):\n        self.original = nums\n\n    def reset(self):\n        return self.original\n\n    def shuffle(self):\n        shuffled = self.original.copy()  # создаем копию исходного массива\n        random.shuffle(shuffled)  # перемешиваем копию\n        return shuffled\n",
+            "tags": [
+                "Array",
+                "Medium"
+            ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/341/",
+            "title": "341. Flatten Nested List Iterator",
+            "description": "LeetCode 341. Реализация итератора для вложенного списка. Разбор задачи.",
+            "content": "Задача\n\nДан вложенный список целых чисел. Реализуйте итератор, который \"разворачивает\" этот вложенный список.\n\nПодход\n\nЗадача состоит в реализации итератора, который будет последовательно возвращать все элементы из вложенного списка. Вложенный список может содержать как обычные числа, так и другие вложенные списки. Наивное решение заключается в том, чтобы сначала полностью \"развернуть\" весь вложенный список в одномерный список, а затем реализовать итератор для этого одномерного списка.\n\nАлгоритм\n\nИнициализация: Создать одномерный список и заполнить его элементами из вложенного списка.\nnext(): Возвращает следующий элемент одномерного списка.\nhasNext(): Проверяет, остались ли еще элементы для итерации.\n\nРешение\n\nclass NestedIterator:\n    def init(self, nestedList):\n        self.stack = []\n        self.flatten(nestedList)\n        self.stack.reverse()\n\nРекурсивная функция для \"разворачивания\" вложенного списка\n    def flatten(self, nestedList):\n        for item in nestedList:\n            if item.isInteger():\n                self.stack.append(item.getInteger())\n            else:\n                self.flatten(item.getList())\n\n    def next(self) -> int:\n        return self.stack.pop()\n\n    def hasNext(self) -> bool:\n        return len(self.stack) > 0\n\nВ этом решении мы сначала \"разворачиваем\" весь вложенный список в одномерный список, используя рекурсивную функцию flatten. Затем, для получения следующего элемента и проверки наличия следующего элемента, используются методы next() и hasNext().\n",
+            "tags": [
+                "Design",
+                "Medium"
+            ],
+            "lang": "ru"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/334/",
             "title": "334. Increasing Triplet Subsequence",
             "description": "LeetCode 334. Найти три индекса в массиве, такие что числа в этих позициях образуют возрастающую последовательность.",
@@ -745,11 +812,104 @@
             "lang": "ru"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/328/",
+            "title": "328. Odd Even Linked List",
+            "description": "LeetCode 328. Разбор задачи на перестановку узлов односвязного списка так, чтобы все узлы с нечетными индексами были перед узлами с четными индексами.",
+            "content": "\nLeetCode задача 328\n\nЗадача\n\nВам дан односвязный список и ваша задача переставить его узлы таким образом, чтобы все узлы с нечетными индексами шли перед всеми узлами с четными индексами.\n\nПодсказки\n\nИспользуйте несколько указателей для упрощения вашего кода.\n\nПодход\n\nИнициализация указателей: Инициализируем указатели для нечетных и четных узлов, а также сохраняем начальный четный узел.\nПерестановка узлов: Проходим по списку, меняя местами нечетные и четные узлы.\nСоединение списков: После того как все узлы переставлены, последний нечетный узел должен указывать на первый четный узел.\n\nАлгоритм\n\nИнициализация указателей odd и even на начальные нечетные и четные узлы.\nСохраните начальный четный узел в переменной even_head.\nПока четные и нечетные узлы не None, продолжайте перестановку.\nВ конце соедините последний нечетный узел с even_head.\n\nРешение\n\nclass ListNode:\n    def init(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef oddEvenList(head: ListNode) -> ListNode:\n    if not head:\n        return head\n\n    odd = head\n    even = head.next\n    even_head = even\n\n    while even and even.next:\n        odd.next = even.next\n        odd = odd.next\n        even.next = odd.next\n        even = even.next\n\nСоединяем последний нечетный узел с первым четным\n    odd.next = even_head\n\n    return head\n",
+            "tags": [
+                "LinkedList",
+                "Medium"
+            ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/300/",
+            "title": "300. Longest Increasing Subsequence",
+            "description": "LeetCode 300. Наибольшая возрастающая подпоследовательность. Разбор задачи.",
+            "content": "\nLeetCode задача 300\n\nЗадача\n\nДан массив чисел, ваша задача — найти длину наибольшей возрастающей подпоследовательности.\n\nПодсказки\n\nДля решения этой задачи вы можете использовать динамическое программирование.\n\nПодход\n\nИнициализация: Инициализируйте массив, который будет хранить длины наибольших возрастающих подпоследовательностей для каждого элемента массива.\nОбход массива: Обойдите массив, и для каждого элемента обновите массив длин наибольших возрастающих подпоследовательностей.\nМаксимум: По окончании обхода найдите максимальное значение в массиве длин.\n\nПростейший способ решения — это использовать двойной цикл для обхода массива и поиска наибольшей возрастающей подпоследовательности для каждого элемента. Это не самый эффективный способ, но его легко понять.\n\nАлгоритм\n\nСоздать массив dp той же длины, что и исходный массив, и заполнить его единицами.\nДля каждого элемента nums[i] обойти все предыдущие элементы nums[j] и, если nums[i] > nums[j], обновить dp[i] как max(dp[i], dp[j] + 1).\nНайти и вернуть максимальное значение в массиве dp.\n\nРешение\n\ndef lengthOfLIS(nums):\n    if not nums:\n        return 0\n\n    dp = [1] * len(nums)  # массив для хранения длин LIS для каждого элемента\n    for i in range(len(nums)):\n        for j in range(i):\n            if nums[i] > nums[j]:\n                dp[i] = max(dp[i], dp[j] + 1)  # обновление длины LIS для элемента nums[i]\n    return max(dp)\n\nВ этом решении используется двойной цикл для обхода массива и обновления массива dp, который хранит длину наибольшей возрастающей подпоследовательности для каждого элемента. По окончании обхода находим и возвращаем максимальное значение в массиве dp.\n",
+            "tags": [
+                "Dynamic Programming",
+                "Medium"
+            ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/287/",
+            "title": "287. Find the Duplicate Number",
+            "description": "LeetCode 287. Найти дублирующее число в массиве.",
+            "content": "\nLeetCode задача 287\n\nЗадача\n\nДан массив nums размера n + 1, в котором каждый элемент принимает значение от 1 до n, что означает, что как минимум одно число будет дублироваться.\n\nНайдите это дублирующееся число.\n\nПодход\n\nОдин из способов решения задачи — использование двух указателей (tortoise и hare), что известно как \"алгоритм зайца и черепахи\" для нахождения цикла в связанном списке.\n\nАлгоритм\n\nИнициализируем два указателя: tortoise и hare.\nИспользуем их для прохода по массиву: tortoise двигается на один шаг, а hare — на два.\nКак только они встретятся, начнем новый проход с tortoise из начального положения и hare из точки встречи, двигая их на один шаг, пока они не встретятся снова.\n\nРешение\n\ndef findDuplicate(nums):\nPhase 1: Using Floyd's Tortoise and Hare (Cycle Detection)\n    tortoise = hare = nums[0]\n    while True:\n        tortoise = nums[tortoise]\n        hare = nums[nums[hare]]\n        if tortoise == hare:\n            break\n\nPhase 2: Find the entrance to the cycle\n    tortoise = nums[0]\n    while tortoise != hare:\n        tortoise = nums[tortoise]\n        hare = nums[hare]\n\n    return hare\n",
+            "tags": [
+                "Array",
+                "Binary Search",
+                "Two Pointers",
+                "Medium"
+            ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/277/",
+            "title": "277. Find the Celebrity",
+            "description": "LeetCode 277. Найти знаменитость среди группы людей.",
+            "content": "\nLeetCode задача 277\n\nЗадача\n\nПредположим, у вас есть n человек и их отношения между собой неизвестны. Существует ли такая персона (знаменитость), что все знают её, но она никого не знает?\n\nИмплементируйте функцию int findCelebrity(n), которая вернет знаменитость если она есть, иначе вернёт -1.\n\nВам дана функция bool knows(a, b), которая скажет вам, знает ли a человека b.\n\nПодход\n\nЧтобы найти знаменитость, можно использовать двухпроходный алгоритм. В первом проходе идентифицируем возможную знаменитость. Во втором проходе проверяем эту кандидатуру.\n\nАлгоритм\n\nИнициализируем переменную candidate значением 0.\nИспользуем один проход для выявления кандидата. Если knows(candidate, i) возвращает True, переключаем candidate на i.\nВторой проход для проверки, является ли candidate знаменитостью.\n\nРешение\n\nThe knows API is already defined for you.\nreturn a bool, whether a knows b\ndef knows(a: int, b: int) -> bool:\n\nclass Solution:\n    def findCelebrity(self, n: int) -> int:\nStep 1: Identify a candidate for celebrity\n        candidate = 0\n        for i in range(1, n):\n            if knows(candidate, i):\n                candidate = i\n\nStep 2: Validate the candidate\n        for i in range(n):\n            if i != candidate and (knows(candidate, i) or not knows(i, candidate)):\n                return -1\n\n        return candidate\n",
+            "tags": [
+                "Graph",
+                "Medium"
+            ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/251/",
+            "title": "251. Flatten 2D Vector",
+            "description": "LeetCode 251. Преобразование 2D вектора в 1D вектор.",
+            "content": "\nLeetCode задача 251\n\nЗадача\n\nДизайн и реализация итератора для 2D вектора. Итератор должен быть инициализирован 2D вектором (vector>) и должен поддерживать следующие операции:\n\nnext(): Возвращает следующий элемент из 2D вектора. Если нет больше элементов, возвращает 0.\nhasNext(): Возвращает True, если в 2D векторе есть следующий элемент, и False в противном случае.\n\nПодход\n\nМы можем использовать две переменные: одну для текущего индекса строки и одну для текущего индекса столбца, чтобы навигироваться по 2D вектору.\n\nАлгоритм\n\nИнициализируем переменные row и col в конструкторе.\nВ методе next(), возвращаем элемент в текущем row и col, и двигаем индексы на следующий доступный элемент.\nВ методе hasNext(), проверяем, есть ли следующий доступный элемент в 2D векторе.\n\nРешение\n\nclass Vector2D:\n\n    def init(self, vec: list[list[int]]):\n        self.vec = vec\n        self.row = 0\n        self.col = 0\n\n    def next(self) -> int:\n        self._advance_to_next()\n        result = self.vecself.row\n        self.col += 1\n        return result\n\n    def hasNext(self) -> bool:\n        self._advance_to_next()\n        return self.row < len(self.vec)\n\n    def _advance_to_next(self):\n        while self.row < len(self.vec) and self.col == len(self.vec[self.row]):\n            self.row += 1\n            self.col = 0\n",
+            "tags": [
+                "Design",
+                "Iterators",
+                "Medium"
+            ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/240/",
+            "title": "240. Search a 2D Matrix II",
+            "description": "LeetCode 240. Найти элемент в 2D матрице.",
+            "content": "\nLeetCode задача 240\n\nЗадача\n\nВам дана двумерная матрица размера m x n, представляющая прямоугольник, и целое число target. Отсортированные строки матрицы по неубыванию с лева направо и столбцы отсортированы по неубыванию сверху вниз.\n\nНайдите элемент target в матрице. Верните True, если элемент target есть в матрице, и False, если его нет.\n\nПодсказки\n\nПопробуйте использовать двоичный поиск для каждого ряда.\n\nПодход\n\nСамый простой подход - использовать двоичный поиск для каждого ряда. Хотя это не самый эффективный метод, он достаточно прост для понимания.\n\nАлгоритм\n\nПройдитесь по каждому ряду в матрице.\nВ каждом ряду используйте двоичный поиск для поиска target.\n\nРешение\n\nfrom bisect import bisect_left\n\ndef searchMatrix(matrix, target):\n    for row in matrix:\n        pos = bisect_left(row, target)\n        if pos != len(row) and row[pos] == target:\n            return True\n    return False\n",
+            "tags": [
+                "Arrays",
+                "Binary Search",
+                "Medium"
+            ],
+            "lang": "ru"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/238/",
             "title": "238. Product of Array Except Self",
             "description": "LeetCode 238. Верните массив, где каждый элемент равен произведению всех элементов исходного массива, кроме самого этого элемента.",
             "content": "\nLeetCode задача 238\n\nЗадача\n\nДан целочисленный массив nums. Нужно вернуть массив answer, такой что answer[i] равен произведению всех элементов nums, кроме nums[i].\n\nПодсказки\n\nЧтобы не использовать операцию деления и оставаться в рамках времени $O(n)$, можно использовать концепцию префиксного и суффиксного произведения для каждого элемента.\n\nПодход\n\nСоздадим два массива: prefix и suffix.\n\nprefix[i] будет содержать произведение всех чисел слева от i\nsuffix[i] будет содержать произведение всех чисел справа от i.\nОтвет для i будет равен prefix[i] * suffix[i].\n\nАлгоритм\n\nСоздадим два массива: prefix и suffix с таким же размером, что и nums.\nПроходим по nums слева направо, заполнив массив prefix, где prefix[i] - это произведение всех предыдущих элементов.\n   Начинаем с 2-го элемента(index=1), т.к. нету элементов левее самого первого\n   В каждую ячейку prefix[i] записываем результат произведения значения слева от числа nums[i]\nПроходим по nums справа налево, заполнив массив suffix таким же образом.\n   Начинаем с предпоследнего, т.к. нет элемента правее правого\nПеремножаем произведения\n   Для каждого i, answer[i] = prefix[i] * suffix[i].\nclass range(start, stop, step=1)\n\nРешение\n\ndef productExceptSelf(nums: List[int]) -> List[int]:\n    n = len(nums)\n\n    prefix = [1] * n\n    for i in range(1, n):\n        prefix[i] = prefix[i - 1] * nums[i - 1]\n\n    suffix = [1] * n\n    for i in range(n-2, -1, -1):\n        suffix[i] = suffix[i + 1] * nums[i + 1]\n\n    answer = []\n    for i in range(n):\n        answer.append(prefix[i] * suffix[i])\n\n    return answer\n\nС комментарием\n\ndef productExceptSelf(nums: List[int]) -> List[int]:\n    n = len(nums)\n\nСлева от текущего. Направление ->\n    prefix = [1] * n\n    for i in range(1, n):\n        prefix[i] = prefix[i - 1] * nums[i - 1]\n0. nums = [2,3,4,5], res = [1,1,1,1]\n1. i=1, res = [1, 1*2, 1,   1]\n2. i=2, res = [1, 2,   2*3, 1]\n3. i=3, res = [1, 2,   6,   6*4]\n\nСправа от текущего. Направление }}\n",
             "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/237/",
+            "title": "237. Delete Node in a Linked List",
+            "description": "LeetCode 237. Удалить узел в односвязном списке.",
+            "content": "\nLeetCode задача 237\n\nЗадача\n\nНаписать функцию для удаления узла (за исключением хвостового) в односвязном списке, дан только доступ к этому узлу.\n\nПодсказки\n\nОбычно, для удаления узла из односвязного списка, нам нужен доступ к предыдущему узлу. В этом случае, у нас такого доступа нет. Как это обойти?\n\nПодход\n\nПоскольку доступа к предыдущему узлу нет, мы не можем просто \"вырезать\" текущий узел. Однако мы можем переписать значение текущего узла значением следующего узла и затем удалить следующий узел.\n\nАлгоритм\n\nПерезаписываем значение текущего узла значением следующего узла.\nУдаляем следующий узел.\n\nРешение\n\nclass ListNode:\n    def init(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef deleteNode(node):\nПерезаписываем значение узла значением следующего узла\n    node.val = node.next.val\nУдаляем следующий узел\n    node.next = node.next.next\n",
+            "tags": [
+                "Linked List",
+                "Medium"
+            ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/236/",
+            "title": "236. Lowest Common Ancestor of a Binary Tree",
+            "description": "LeetCode 236. Находите наименьшего общего предка в бинарном дереве. Разбор задачи.",
+            "content": "\nLeetCode задача 236\n\nЗадача\n\nНайдите наименьшего общего предка (LCA) двух заданных узлов в бинарном дереве.\n\nПодсказки\n\nИспользуйте метод обхода в глубину (DFS) для решения этой задачи.\n\nПодход\n\nОбход в глубину (DFS): Используйте рекурсивный метод для обхода дерева.\nПоиск узлов: При обходе дерева ищите заданные узлы p и q.\nВозврат значения: Если найден один из узлов, верните его как потенциального предка.\nСравнение результатов: Если оба поддерева возвращают узлы, текущий узел является LCA.\nПропуск пустых узлов: Если узел пуст, верните None.\n\nАлгоритм\n\nЗапустите рекурсивный DFS, начиная с корня дерева.\nВ каждой итерации рекурсии:\n   Проверьте, является ли текущий узел одним из искомых (p или q).\n   Произведите обход левого и правого поддеревьев.\n   Если оба поддерева возвращают не-None значения, текущий узел является LCA.\n\nРешение\n\nclass TreeNode:\n    def init(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef lowestCommonAncestor(root: TreeNode, p: TreeNode, q: TreeNode) -> TreeNode:\n    if not root:\n        return None\n\nЕсли текущий узел является одним из искомых, вернуть его\n    if root.val == p.val or root.val == q.val:\n        return root\n\nОбход левого и правого поддеревьев\n    left = lowestCommonAncestor(root.left, p, q)\n    right = lowestCommonAncestor(root.right, p, q)\n\nЕсли оба поддерева возвращают узлы, текущий узел является LCA\n    if left and right:\n        return root\n\n    return left or right\n",
+            "tags": [
+                "Binary Tree",
+                "DFS",
+                "Medium"
+            ],
             "lang": "ru"
         },
         {
@@ -764,7 +924,168 @@
             "lang": "ru"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/easy/9",
+            "uri": "/tracks/algorithms-101/leetcode/medium/215/",
+            "title": "215. Kth Largest Element in an Array",
+            "description": "LeetCode 215. Найти k-тый по величине элемент в неотсортированном массиве.",
+            "content": "\nLeetCode задача 215\n\nЗадача\n\nНайти k-тый по величине элемент в неотсортированном массиве. Примечание: это k-тый по величине элемент в отсортированном порядке, а не k-тый различный элемент.\n\nПодсказки\n\nМожно отсортировать массив и просто взять k-тый элемент с конца.\nДля более эффективного решения можно использовать алгоритм быстрой выборки.\n\nПодход\n\nВ самом простом случае мы можем отсортировать массив и взять k-тый элемент с конца.\n\nАлгоритм\n\nСортируем массив.\nВозвращаем k-тый элемент с конца.\n\nРешение\n\ndef findKthLargest(nums, k):\n    nums.sort()\n    return nums[-k]\n",
+            "tags": [
+                "Arrays",
+                "Sorting",
+                "Medium"
+            ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/210/",
+            "title": "210. Course Schedule II",
+            "description": "LeetCode 210. Узнайте возможный порядок завершения курсов, учитывая их предварительные требования.",
+            "content": "\nLeetCode задача 210\n\nЗадача\n\nВам дано \\( n \\) курсов для изучения, пронумерованных от \\( 0 \\) до \\( n-1 \\), и массив \\( prerequisites \\), где \\( prerequisites[i] = [a, b] \\) означает, что для изучения курса \\( a \\) предварительно необходимо пройти курс \\( b \\).\n\nНапишите функцию для нахождения порядка, в котором можно пройти курсы. Если это невозможно, верните пустой массив.\n\nПодсказки\n\nТопологическая сортировка может быть использована для решения этой задачи.\n\nПодход\n\nСоздадим граф, представляющий предварительные требования для каждого курса.\nПрименим топологическую сортировку для нахождения порядка курсов.\n\nАлгоритм\n\nИнициализируем граф и массив для хранения входящих степеней всех вершин (курсов).\nЗаполним граф и массив входящих степеней, используя массив \\( prerequisites \\).\nИспользуем алгоритм топологической сортировки для нахождения порядка курсов.\n\nРешение\n\nfrom collections import deque, defaultdict\n\ndef findOrder(numCourses, prerequisites):\nСоздаем граф и массив для хранения входящих степеней\n    graph = defaultdict(list)\n    indegree = [0] * numCourses\n\nЗаполняем граф и массив входящих степеней\n    for course, prereq in prerequisites:\n        graph[prereq].append(course)\n        indegree[course] += 1\n\nИнициализация очереди для вершин с нулевой входящей степенью\n    queue = deque([i for i in range(numCourses) if indegree[i] == 0])\n\nТопологическая сортировка\n    order = []\n    while queue:\n        prereq = queue.popleft()\n        order.append(prereq)\n\n        for course in graph[prereq]:\n            indegree[course] -= 1\n            if indegree[course] == 0:\n                queue.append(course)\n\n    return order if len(order) == numCourses else []\n",
+            "tags": [
+                "Graph",
+                "Topological Sort",
+                "Medium"
+            ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1448/",
+            "title": "1448. Count Good Nodes in Binary Tree",
+            "description": "LeetCode 1448. Задача о подсчете \"хороших\" узлов в бинарном дереве. Разбор задачи.",
+            "content": "\nLeetCode задача 1448\n\nЗадача\n\nВам дано бинарное дерево. Ваша задача подсчитать количество \"хороших\" узлов. Узел считается \"хорошим\", если на пути от корня дерева до этого узла (включительно) не встречается узлов с большим значением.\n\nПодсказки\n\nИспользуйте метод обхода в глубину (DFS) для решения этой задачи.\n\nПодход\n\nОбход в глубину (DFS): Используйте рекурсивный метод для обхода дерева.\nТекущий максимум: На каждом шаге рекурсии передавайте текущее максимальное значение на пути от корня.\nСравнение узлов: Сравните значение текущего узла с текущим максимумом. Если значение узла больше или равно, увеличьте счетчик \"хороших\" узлов.\n\nАлгоритм\n\nИнициализируйте счетчик \"хороших\" узлов как 0.\nЗапустите рекурсивный DFS, начиная с корня дерева и передавая значение корня как текущий максимум.\nВ рекурсивной функции сравните значение текущего узла с переданным максимумом.\nОбновите текущий максимум, если значение текущего узла больше.\nПовторите шаги 2-4 для всех дочерних узлов.\n\nРешение\n\nclass TreeNode:\n    def init(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\ndef goodNodes(root: TreeNode) -> int:\n    def dfs(node, cur_max):\n        if not node:\n            return 0\n\n        count = 0\n        if node.val >= cur_max:\n            count += 1\n            cur_max = node.val\n\n        count += dfs(node.left, cur_max)\n        count += dfs(node.right, cur_max)\n\n        return count\n\n    return dfs(root, root.val)\n",
+            "tags": [
+                "Binary Tree",
+                "DFS",
+                "Medium"
+            ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1372/",
+            "title": "1372. Longest ZigZag Path in a Binary Tree",
+            "description": "LeetCode 1372. Находите самый длинный ZigZag путь в бинарном дереве. Разбор задачи.",
+            "content": "\nLeetCode задача 1372\n\nЗадача\n\nНайти самый длинный \"ZigZag\" путь в бинарном дереве. Путь \"ZigZag\" означает альтернативное движение влево и вправо при переходе от одного узла к другому.\n\nПодсказки\n\nИспользуйте Depth-First Search (DFS) для решения задачи.\n\nПодход\n\nDFS с состоянием: Запустите DFS с дополнительным аргументом, который будет отслеживать, в какую сторону нужно двигаться следующим (влево или вправо).\nОбновление максимума: На каждом уровне рекурсии проверьте, не превышает ли текущая длина пути максимальную известную длину.\nРекурсивный вызов: Продолжайте движение в обоих направлениях, но учитывайте, что направление должно изменяться.\nВозврат результата: В конечном итоге верните максимальную длину, найденную во всех поддеревьях.\n\nАлгоритм\n\nИнициализируйте переменную для хранения максимальной длины ZigZag пути.\nЗапустите DFS с корня, указав начальную длину пути и начальное направление.\n\nРешение\n\nclass TreeNode:\n    def init(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\nmax_zigzag = 0\n\ndef dfs(node, length, direction):\n    global max_zigzag\n    if not node:\n        return\n    max_zigzag = max(max_zigzag, length)\n    if direction == \"left\":\n        if node.left:\n            dfs(node.left, length + 1, \"right\")\n        dfs(node.right, 1, \"right\")\n    else:\n        if node.right:\n            dfs(node.right, length + 1, \"left\")\n        dfs(node.left, 1, \"left\")\n\ndef longestZigZag(root: TreeNode) -> int:\n    global max_zigzag\n    max_zigzag = 0  # Сбросить значение между вызовами\n    dfs(root, 0, \"left\")\n    dfs(root, 0, \"right\")\n    return max_zigzag\n\n",
+            "tags": [
+                "Binary Tree",
+                "DFS",
+                "Medium"
+            ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1004/",
+            "title": "1004. Max Consecutive Ones III",
+            "description": "LeetCode 1004. Наибольшая последовательность единиц III. Разбор задачи.",
+            "content": "\nLeetCode задача 1004\n\nЗадача\n\nДан массив A состоящий из 0 и 1, и число K. Найти максимальную длину подпоследовательности единиц, которую можно получить, преобразовав не более K нулей в единицы.\n\nПодсказки\n\nИспользование скользящего окна может значительно ускорить решение задачи.\n\nПодход\n\nИнициализация: Создайте переменные для хранения начала и конца \"окна\" и максимальной длины подпоследовательности.\nПроход по массиву: Перемещайте \"окно\" по массиву, подсчитывая количество нулей внутри.\nСдвиг окна: Если количество нулей превышает K, сдвигайте левый край окна, пока это не станет истиной.\nОбновление максимума: На каждом шаге обновляйте максимальную длину подпоследовательности.\n\nЭтот метод является эффективным с точки зрения времени и простым для понимания.\n\nАлгоритм\n\nИнициализируйте start = 0 и max_length = 0.\nПройдите по массиву с индексом end.\nЕсли элемент равен нулю, уменьшите K.\nПока K < 0, сдвигайте start и увеличивайте K, если элемент равен нулю.\nОбновите max_length.\n\nРешение\n\ndef longestOnes(A, K):\n    start = 0\n    max_length = 0\n\n    for end in range(len(A)):\nЕсли нуль, уменьшим K\n        if A[end] == 0:\n            K -= 1\n\nСдвигаем окно, если K отрицательно\n        while K < 0:\n            if A[start] == 0:\n                K += 1\n            start += 1\n\nОбновляем max_length\n        max_length = max(max_length, end - start + 1)\n\n    return max_length\n",
+            "tags": [
+                "Sliding Window",
+                "Medium"
+            ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 9/",
+            "content": "\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 8/",
+            "content": "\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 7/",
+            "content": "\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 6/",
+            "content": "\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 5/",
+            "content": "\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 4/",
+            "content": "\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 3/",
+            "content": "\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 2/",
+            "content": "\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 13/",
+            "content": "\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 12/",
+            "content": "\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 11/",
+            "content": "\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 10/",
+            "content": "\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy/",
+            "content": "\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/42/",
+            "title": "42. Trapping Rain Water",
+            "description": "LeetCode 42. Сколько воды может удержать массив после дождя. Разбор задачи.",
+            "content": "\nLeetCode задача 42\n\nЗадача\n\nДан массив неотрицательных целых чисел, представляющих собой карту высот, где ширина каждой стойки равна 1. Вычислите, сколько воды может удерживать этот массив после дождя.\n\nПодсказки\n\nМы можем решить эту задачу, двигаясь от краев массива к его центру, отслеживая текущую максимальную высоту с обеих сторон.\n\nПодход\n\nПростой и понятный способ решения этой задачи - пройтись по массиву и для каждого элемента вычислить, сколько воды он может удержать.\n\nАлгоритм\n\nИнициализируем переменную для хранения общего объема воды, который может быть удержан.\nПройдемся по массиву, для каждого элемента:\n   Найдем максимальную высоту слева и справа от текущего элемента.\n   Объем воды, который может быть удержан над этим элементом, равен минимальному значению из этих двух максимальных высот, минус высота самого элемента.\nДобавим этот объем к общему объему.\n\nРешение\n\ndef trap(height):\n    n = len(height)\nИнициализируем переменную для хранения общего объема воды\n    total_water = 0\n\n    for i in range(n):\nНаходим максимальную высоту слева от i\n        max_left = max(height[:i + 1])\n\nНаходим максимальную высоту справа от i\n        max_right = max(height[i:])\n\nОбъем воды для текущего элемента\n        water = min(max_left, max_right) - height[i]\n\nДобавляем этот объем к общему объему\n        total_water += water\n\n    return total_water\n",
+            "tags": [
+                "Array",
+                "Two Pointers",
+                "Hard"
+            ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/4/",
+            "title": "4. Median of Two Sorted Arrays",
+            "description": "LeetCode 4. Найти медиану двух отсортированных массивов. Разбор задачи.",
+            "content": "\nLeetCode задача 4\n\nЗадача\n\nДаны два отсортированных массива nums1 и nums2 размера m и n соответственно. Найти медиану двух отсортированных массивов.\n\nПодсказки\n\nЧтобы найти медиану, нужно сначала объединить два массива и отсортировать их. После этого медиана будет либо средним элементом, если общее количество элементов нечетное, либо средним значением двух центральных элементов, если общее количество элементов четное.\n\nПодход\n\nМы можем объединить два массива в один большой отсортированный массив и найти медиану этого массива. Этот подход не самый эффективный, но он прост и понятен.\n\nАлгоритм\n\nОбъедините два массива.\nОтсортируйте объединенный массив.\nНайдите медиану отсортированного массива.\n\nРешение\n\ndef findMedianSortedArrays(nums1, nums2):\nШаг 1: Объединение двух массивов\n    merged = nums1 + nums2\n\nШаг 2: Сортировка объединенного массива\n    merged.sort()\n\nШаг 3: Поиск медианы\n    n = len(merged)\n    middle = n // 2\n\nЕсли n четное\n    if n % 2 == 0:\n        return (merged[middle - 1] + merged[middle]) / 2\nЕсли n нечетное\n    else:\n        return merged[middle]\n",
+            "tags": [
+                "Array",
+                "Binary Search",
+                "Hard"
+            ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/9/",
             "title": "9. Palindrome Number",
             "description": "LeetCode 9. является ли число палиндромом. Разбор задачи.",
             "content": "\nLeetCode задача\n\nЗадача\n\nОпределите, является ли целое число палиндромом, не преобразуя его в строку.\n\nПодсказки\n\nПереворачивая число и сравнивая его с оригиналом, мы можем определить, является ли оно палиндромом.\n\nПодход\n\nВместо того чтобы преобразовывать число в строку, мы можем перевернуть его цифры с использованием математических операций, а затем сравнить перевернутое число с оригинальным.\n\nАлгоритм\n\nЕсли число отрицательное, то это не палиндром.\nИнициализируем переменную для перевернутого числа: мы будем создавать это число шаг за шагом.\nПереворачиваем число:\n   Это достигается путем последовательного взятия последней цифры числа и добавления её к текущему общему количеству после сдвига текущих цифр этого общего числа.\n   Например, если у вас есть число 123, мы сначала возьмем 3, затем 2, и, наконец, 1, чтобы создать перевернутое число 321.\nСравним: Если перевернутое число равно оригинальному, то это палиндром.\n\nРешение\n\ndef isPalindrome(x: int) -> bool:\nОтрицательные числа не могут быть палиндромами\n    if x  5\n\nСдвигаем текущие цифры перевернутого числа и добавляем последнюю цифру из temp\n        reversed_num = reversed_num * 10 + last_digit  # 1. 0 * 10 + 5 => 5, 2. 5 * 10 + 4 => 54\n\nУдаляем последнюю цифру из temp\n        temp //= 10  # 12345 // 10 => 1234\n\nСравниваем перевернутое число с оригиналом\n    return reversed_num == x\n",
@@ -775,10 +1096,21 @@
             "lang": "ru"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/easy/392",
+            "uri": "/tracks/algorithms-101/leetcode/easy/605/",
+            "title": "605. Can Place Flowers",
+            "description": "LeetCode 605. Можно ли посадить n цветов на грядке, следуя правилу \"нет соседних цветов\".",
+            "content": "\nLeetCode задача 605\n\nЗадача\n\nДана длинная грядка, на которой некоторые участки уже засажены, а некоторые нет. Однако цветы нельзя сажать на соседние участки.\n\nПодход\n\nЧтобы решить эту задачу, мы будем итерироваться по каждому участку грядки. Если участок пустой и его соседи (если они существуют) тоже пусты, мы сажаем цветок и уменьшаем наш счетчик.\n\nАлгоритм\n\nИтерируемся по каждому участку грядки.\nЕсли участок пустой, проверяем его соседей.\n   Если левый сосед пустой или его нет (начало грядки), проверяем правого соседа.\n   Если правый сосед пустой или его нет (конец грядки), сажаем цветок на текущий участок и уменьшаем n.\nВ конце проверяем, достиг ли n нуля или стал отрицательным.\n   Если да, то это означает, что мы можем посадить все цветы.\n\nРешение\n\ndef canPlaceFlowers(flowerbed, n):\n    def check_neighbors(n):\n        if i  0:\n                if flowerbed[i-1] == 0: #2.1\n                    n = check_neighbors(n)\n            else:\n                n = check_neighbors(n)\n    return n <= 0  #3\n",
+            "tags": [
+                "Algorithms",
+                "Easy"
+            ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/392/",
             "title": "392. Is Subsequence",
             "description": "LeetCode 392. Проверить, является ли одна строка подпоследовательностью другой.",
-            "content": "\nLeetCode problem 392\n\nЗадача\n\nДаны две строки s и t. Верните true, если s является подпоследовательностью t, или false в противном случае.\n\nПодпоследовательность строки - это новая строка, которая формируется из исходной строки путем удаления некоторых (может быть ни одного) символов без нарушения относительных позиций оставшихся символов. (например, \"ace\" является подпоследовательностью \"abcde\", в то время как \"aec\" - нет).\n\nПодсказки\n\nСледуя за обеими строками одновременно с помощью двух указателей, вы можете определить, является ли одна строка подпоследовательностью другой.\n\nПодход\n\nМы можем использовать два указателя, проходясь по каждому символу в строке t и проверяя, соответствует ли он текущему символу в строке s.\n\nАлгоритм\n\nИнициализируем два указателя, один для строки s, другой для строки t с 0.\nПока оба указателя находятся в пределах своих строк:\n   Если символы, на которые указывают указатели, совпадают, перемещаем указатель для s на следующий символ.\n   Перемещаем указатель для t на следующий символ, независимо от того, совпали символы или нет.\nЕсли указатель для s достиг конца строки, это означает, что s является подпоследовательностью t.\n\nРешение\n\ndef isSubsequence(s: str, t: str) -> bool:\n    pointer_s, pointer_t = 0, 0\n\nПока указатели в пределах своих строк\n    while pointer_s < len(s) and pointer_t < len(t):\nЕсли символы совпадают, перемещаем указатель для s\n        if s[pointer_s] == t[pointer_t]:\n            pointer_s += 1\n\nПеремещаем указатель для t\n        pointer_t += 1\n\nЕсли указатель для s достиг конца строки, s является подпоследовательностью t\n    return pointer_s == len(s)\n",
+            "content": "\nLeetCode задача 392\n\nЗадача\n\nДаны две строки s и t. Верните true, если s является подпоследовательностью t, или false в противном случае.\n\nПодпоследовательность строки - это новая строка, которая формируется из исходной строки путем удаления некоторых (может быть ни одного) символов без нарушения относительных позиций оставшихся символов. (например, \"ace\" является подпоследовательностью \"abcde\", в то время как \"aec\" - нет).\n\nПодсказки\n\nСледуя за обеими строками одновременно с помощью двух указателей, вы можете определить, является ли одна строка подпоследовательностью другой.\n\nПодход\n\nМы можем использовать два указателя, проходясь по каждому символу в строке t и проверяя, соответствует ли он текущему символу в строке s.\n\nАлгоритм\n\nИнициализируем два указателя, один для строки s, другой для строки t с 0.\nПока оба указателя находятся в пределах своих строк:\n   Если символы, на которые указывают указатели, совпадают, перемещаем указатель для s на следующий символ.\n   Перемещаем указатель для t на следующий символ, независимо от того, совпали символы или нет.\nЕсли указатель для s достиг конца строки, это означает, что s является подпоследовательностью t.\n\nРешение\n\ndef isSubsequence(s: str, t: str) -> bool:\n    pointer_s, pointer_t = 0, 0\n\nПока указатели в пределах своих строк\n    while pointer_s < len(s) and pointer_t < len(t):\nЕсли символы совпадают, перемещаем указатель для s\n        if s[pointer_s] == t[pointer_t]:\n            pointer_s += 1\n\nПеремещаем указатель для t\n        pointer_t += 1\n\nЕсли указатель для s достиг конца строки, s является подпоследовательностью t\n    return pointer_s == len(s)\n",
             "tags": [
                 "String",
                 "Subsequence"
@@ -786,15 +1118,15 @@
             "lang": "ru"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/easy/345",
+            "uri": "/tracks/algorithms-101/leetcode/easy/345/",
             "title": "345. Reverse Vowels of a String",
-            "description": "345. Reverse Vowels of a String",
-            "content": "\nLeetCode problem\n\nProblem Statement\n\nЗадача состоит в том, чтобы перевернуть только все гласные в строке и вернуть её. Гласные - это 'a', 'e', 'i', 'o' и 'u', и они могут встречаться как в нижнем, так и в верхнем регистре, более одного раза.\n\nNaive Solution\n\nНаивное решение этой задачи может быть выполнено следующим образом:\n\nИдентифицируйте все гласные в строке и сохраните их в список.\nСоздайте новую пустую строку.\nПройдитесь по исходной строке, и если текущий символ гласный, добавьте в новую строку следующую гласную из списка в обратном порядке.\n\nОднако, этот метод потребует больше памяти для хранения всех гласных и времени на создание новой строки.\n\nHints & Tips\n\nДля более эффективного решения можно использовать два указателя: один с начала строки, другой - с конца. Это уменьшит требования к памяти и увеличит скорость выполнения.\n\nApproach\n\nВ этом решении используется подход с двумя указателями:\n\nОдин указатель начинает движение с начала строки, другой - с конца.\nКаждый указатель двигается до тех пор, пока не встретит гласную.\nКогда оба указателя остановились на гласной, символы меняются местами.\n\nSteps\n\nИнициализируйте два указателя: один в начале строки, другой в конце.\nДвигайте указатели, пока они не встретят гласные или не пересекутся.\nПоменяйте гласные местами.\nПродолжайте, пока указатели не пересекутся.\n\nPython Solution\n\nclass Solution:\n    def reverseVowels(self, s: str) -> str:\n        vowels = set('aeiouAEIOU')\n        s = list(s)\n        i, j = 0, len(s) - 1\n        while i < j:\n            if s[i] not in vowels:\n                i += 1\n            elif s[j] not in vowels:\n                j -= 1\n            else:\n                s[i], s[j] = s[j], s[i]\n                i += 1\n                j -= 1\n        return ''.join(s)\n",
+            "description": "LeetCode 345. Reverse the vowels in a given string. Разбор задачи.",
+            "content": "\nLeetCode задача 345\n\nЗадача\n\nЗадана строка s. Необходимо перевернуть только гласные буквы в этой строке и вернуть результат.\n\nГласные буквы: 'a', 'e', 'i', 'o', и 'u'. Они могут встречаться в верхнем и нижнем регистрах, и более одного раза.\n\nПодсказки\n\nДля решения задачи можно использовать два указателя: один с начала строки, другой с конца. Затем можно двигаться этими указателями к центру строки, меняя местами гласные буквы.\n\nПодход\n\nИспользуем два указателя для итерации по строке: один с начала (left), другой с конца (right). Двигаем их к центру, меняя местами гласные буквы, которые они встречают.\n\nАлгоритм\n\nИнициализируем два указателя: left на начало строки, right на конец.\nКонвертируем строку в список для удобства манипуляций.\nПока left  str:\n    vowels = set(\"aeiouAEIOU\")  # Создадим множество гласных букв для быстрого поиска\n    s_list = list(s)  # Преобразуем строку в список\n\n    left, right = 0, len(s) - 1  # указатели\n\n    while left < right:\nНаходим следующую гласную с начала строки\n        while left < right and s_list[left].lower() not in vowels:\n            left += 1\n\nНаходим следующую гласную с конца строки\n        while left < right and s_list[right].lower() not in vowels:\n            right -= 1\n\nМеняем гласные местами\n        s_list[left], s_list[right] = s_list[right], s_list[left]\n\nДвигаем указатели\n        left += 1\n        right -= 1\n\n    return \"\".join(s_list)\n",
             "tags": [],
             "lang": "ru"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/easy/283",
+            "uri": "/tracks/algorithms-101/leetcode/easy/283/",
             "title": "283. Move Zeroes",
             "description": "LeetCode 283. Переместите все 0 в конец массива, сохраняя относительный порядок ненулевых элементов. Разбор задачи.",
             "content": "\nLeetCode задача\n\nЗадача\n\nДан целочисленный массив nums. Нам необходимо переместить все 0 в конец массива, сохраняя относительный порядок ненулевых элементов.\n\nПримечание: вы должны сделать это на месте, без создания копии массива.\n\nПодсказки\n\nИспользуйте два указателя: один будет указывать на текущий элемент, а другой будет указывать на первое место в массиве, куда можно поместить ненулевой элемент.\n\nПодход\n\nМы можем использовать два указателя: один для прохода по массиву и другой для отслеживания местоположения, куда следует поместить следующий ненулевой элемент. Этот метод позволяет нам сделать минимальное количество операций и изменений в массиве.\n\nАлгоритм\n\nИнициализируем два указателя на начало массива.\n   Первый указатель - это индексы массива. Второй с начальным значением 0,\nИспользуя первый указатель, проходим по массиву.\n   Если текущий элемент не равен нулю, помещаем его на позицию, указанную вторым указателем (меняем значения местами), и перемещаем второй указатель на одну позицию вперед.\nПосле завершения прохода, все числа после второго указателя должны быть установлены в 0.\n\nРешение\n\ndef moveZeroes(nums: List[int]) -> None:\nУказатель для ненулевых элементов\n    pos = 0\n\nПроходим по массиву\n    for i in range(len(nums)):\nЕсли текущий элемент не 0, меняем его местами с элементом на позиции pos\n        if nums[i] != 0:\n            nums[i], nums[pos] = nums[pos], nums[i]\n            pos += 1\n",
@@ -805,10 +1137,21 @@
             "lang": "ru"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/easy/605/",
-            "title": "605. Can Place Flowers",
-            "description": "An easy yet interesting problem in which we must determine whether we can plant a certain number of flowers in a flowerbed without violating the no-adjacent-flowers rule.",
-            "content": "\nLeetCode problem\ntitle: 605. Can Place Flowers\nseoTitle: LeetCode 605. Can Place Flowers | Решение на Python.\ndescription: LeetCode 605. Узнать можно ли разместить N цветов в грядке так, чтобы они не нарушали правило соседства.\ntoc: true\ntags: [Arrays, Easy]\ncategories: [Algorithms, Easy, LeetCodeTop75]\ndate: 2023-08-25\nlastmod: 2023-08-25\nfeaturedImage:\nweight: 605\nLeetCode задача\n\nЗадача\n\nУ нас есть длинная грядка, на которой часть участков засажена, а часть нет. Однако цветы нельзя сажать на соседние участки.\n\nНа входе предоставляется массив flowerbed, содержащий 0 и 1, где 0 означает пустой участок, а 1 означает засаженный. Также есть число n. Необходимо определить, можно ли посадить n новых цветов на грядке без нарушения правила соседства.\n\nПодсказки\n\nПройдемся по грядке, и каждый раз, когда находим пустой участок, проверим, можно ли на него посадить цветок без нарушения условий.\n\nПодход\n\nМы можем обойти массив и пытаться посадить цветок на каждом пустом участке, убеждаясь при этом, что слева и справа от этого участка нет других цветов.\n\nЕсли нам удается посадить n цветов, значит, возвращаем True, иначе - False.\n\nАлгоритм\n\nИнициализируем счетчик цветов, которые удалось посадить.\nОбходим грядку слева направо.\nЕсли участок пустой и соседние участки также пусты (или находятся за пределами грядки), посадим цветок и увеличим счетчик.\nЕсли счетчик достигает n, вернем True.\n\nРешение\n\ndef canPlaceFlowers(flowerbed: List[int], n: int) -> bool:\n    count = 0  # Количество посаженных цветов\n    i = 0  # Текущая позиция в грядке\n    length = len(flowerbed)\n\n    while i  0 else None\n\n\n\n            if (prev_flower is None or flowerbed[prev_flower] == 0) and (next_flower is None or flowerbed[next_flower] == 0):\n                flowerbed[i] = 1\n                count += 1\n\nПереходим к следующему участку\n        i += 1\n\n    return count >= n\n\n\nclass Solution:\n    def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:\n        new_arr = [0] + flowerbed + [0]\n        count = 0\n        for i in range(len(new_arr)):\n            if new_arr[i:i+3] == [0, 0, 0]:\n                count += 1\n                new_arr[i+1] = 1\n        return count >= n\n\nAnother solution involves checking for valid spots directly within the original flowerbed array:\n\nclass Solution:\n    def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:\n        def check_neighbors(n):\n            if i  0:\n                    if flowerbed[i-1] == 0:\n                        n = check_neighbors(n)\n                else:\n                    n = check_neighbors(n)\n        return n <= 0\n\nBoth solutions effectively solve the problem but the second solution provides some optimization by reducing the extra space needed for the new_arr. It directly modifies the input flowerbed array.\n",
+            "uri": "/tracks/algorithms-101/leetcode/easy/1768/",
+            "title": "1768. Merge Strings Alternately",
+            "description": "LeetCode 1768. Merge Strings Alternately. Detailed Problem Analysis.",
+            "content": "\nLeetCode задача 1768\n\nЗадача\n\nВам даны две строки word1 и word2. Объедините эти строки, добавляя буквы в чередующем порядке, начиная с word1. Если одна строка длиннее другой, дополнительные буквы добавляются в конец результирующей строки.\n\nПодход\n\nЧтобы решить эту задачу, мы можем использовать два указателя для каждого слова. Начнем с первого символа каждой строки и будем чередовать их, пока одна из строк не закончится. После этого, мы просто добавляем оставшиеся символы из более длинного слова к результирующей строке.\n\nАлгоритм\n\nИнициализация результирующей строки и двух указателей для word1 и word2.\nИтерация по каждому слову, добавление соответствующих символов в результирующую строку в чередующем порядке.\nДобавление оставшихся символов из более длинного слова к результирующей строке.\n\nРешение\n\ndef mergeAlternately(word1: str, word2: str) -> str:\nИнициализация результирующей строки и указателей\n    result = []\n    i, j = 0, 0\n\nИтерация по каждому слову\n    while i < len(word1) and j < len(word2):\n        result.append(word1[i])\n        result.append(word2[j])\n        i += 1\n        j += 1\n\nДобавление оставшихся символов\n    while i < len(word1):\n        result.append(word1[i])\n        i += 1\n\n    while j < len(word2):\n        result.append(word2[j])\n        j += 1\n\n    return \"\".join(result)\n",
+            "tags": [
+                "Algorithms",
+                "Easy"
+            ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/1071/1071",
+            "title": "1071. Greatest Common Divisor of Strings",
+            "description": "LeetCode 1071. Greatest Common Divisor of Strings. Detailed Problem Analysis.",
+            "content": "\nLeetCode задача 1071\n\nЗадача\n\nДля двух строк str1 и str2, вернуть наибольший общий делитель (НОД). Если такового не существует, вернуть пустую строку.\n\nПодход\n\nЕсли строки str1 и str2 имеют НОД строки X, то str1 и str2 могут быть представлены в форме Xn и Xm (где n и m — это натуральные числа), соответственно. Это означает, что str1 должна начинаться с str2 или наоборот.\n\nАлгоритм\n\nПроверка начала строк: если str1 не начинается с str2 или наоборот, то НОД не существует.\nВычисление остатка: удаляем начальный фрагмент одной строки, который совпадает с другой строкой. Это будет остаток remainder.\nРекурсивный вызов: повторяем процедуру для remainder и меньшей из двух строк.\n\nРешение\n\ndef gcdOfStrings(str1: str, str2: str) -> str:\nЕсли одна строка не начинается с другой, НОД не существует\n    if not str1.startswith(str2) and not str2.startswith(str1):\n        return \"\"\n\nЕсли строки равны, одна из них является НОД\n    if str1 == str2:\n        return str1\n\nОпределение более короткой и более длинной строки\n    if len(str1) > len(str2):\n        longer, shorter = str1, str2\n    else:\n        longer, shorter = str2, str1\n\nВычисление остатка\n    remainder = longer[len(shorter):]\n\nРекурсивный вызов функции для остатка и более короткой строки\n    return gcdOfStrings(remainder, shorter)\n",
             "tags": [
                 "Algorithms",
                 "Easy"
@@ -2981,7 +3324,7 @@
             "uri": "/tracks/algorithms-101/leetcode75",
             "title": "LeetCode Top 75",
             "description": null,
-            "content": "\nArray / String\n\n|   #   | Problem                                                                 | Difficulty |\n| :---: | ----------------------------------------------------------------------- | ---------- |\n|   1   | 1768. Merge Strings Alternately                | Easy       |\n|   2   | 1071. Greatest Common Divisor of Strings       | Easy       |\n|   3   | 1431. Kids With the Greatest Number of Candies | Easy       |\n|   4   | 605. Can Place Flowers                          | Easy       |\n|   5   | 345. Reverse Vowels of a String                 | Easy       |\n|   6   | 151. Reverse Words in a String                | Medium     |\n|   7   | 238. Product of Array Except Self             | Medium     |\n|   8   | 334. Increasing Triplet Subsequence           | Medium     |\n|   9   | 443. String Compression                       | Medium     |\n\nTwo Pointers\n\n|   #   | Problem                                                    | Difficulty |\n| :---: | ---------------------------------------------------------- | ---------- |\n|  10   | 283. Move Zeroes                   | Easy       |\n|  11   | 392. Is Subsequence                | Easy       |\n|  12   | 11. Container With Most Water     | Medium     |\n|  13   | 1679. Max Number of K-Sum Pairs | Medium     |\n\nSliding Window\n\n|   #   | Problem                                                                                  | Difficulty |\n| :---: | ---------------------------------------------------------------------------------------- | ---------- |\n|  14   | 643. Maximum Average Subarray I                                  | Easy       |\n|  15   | 1456. Maximum Number of Vowels in a Substring of Given Length | Medium     |\n|  16   | 1004. Max Consecutive Ones III                                | Medium     |\n|  17   | 1493. Longest Subarray of 1's After Deleting One Element      | Medium     |\n\nPrefix Sum\n\n|   #   | Problem                                                  | Difficulty |\n| :---: | -------------------------------------------------------- | ---------- |\n|  18   | 1732. Find the Highest Altitude | Easy       |\n|  19   | 724. Find Pivot Index            | Easy       |\n\nHash Map / Set\n\n|   #   | Problem                                                     | Difficulty |\n| :---: | ----------------------------------------------------------- | ---------- |\n|  20   | Find the Difference of Two Arrays    | Easy       |\n|  21   | Unique Number of Occurrences         | Easy       |\n|  22   | Determine if Two Strings Are Close | Medium     |\n|  23   | Equal Row and Column Pairs         | Medium     |\n\nStack\n\n|   #   | Problem                                               | Difficulty |\n| :---: | ----------------------------------------------------- | ---------- |\n|  24   | Removing Stars From a String | Medium     |\n|  25   | Asteroid Collision           | Medium     |\n|  26   | Decode String                | Medium     |\n\nQueue\n\n|   #   | Problem                                       | Difficulty |\n| :---: | --------------------------------------------- | ---------- |\n|  27   | Number of Recent Calls | Easy       |\n|  28   | Dota2 Senate         | Medium     |\n\nLinked List\n\n|   #   | Problem                                                          | Difficulty |\n| :---: | ---------------------------------------------------------------- | ---------- |\n|  29   | Delete the Middle Node of a Linked List | Medium     |\n|  30   | 328. Odd Even Linked List              | Medium     |\n|  31   | 206. Reverse Linked List                 | Easy       |\n|  32   | Maximum Twin Sum of a Linked List       | Medium     |\n\nBinary Tree - DFS\n\n|   #   | Problem                                                          | Difficulty |\n| :---: | ---------------------------------------------------------------- | ---------- |\n|  33   | 104. Maximum Depth of Binary Tree        | Easy       |\n|  34   | Leaf-Similar Trees                        | Easy       |\n|  35   | Count Good Nodes in Binary Tree         | Medium     |\n|  36   | Path Sum III                            | Medium     |\n|  37   | Longest ZigZag Path in a Binary Tree    | Medium     |\n|  38   | Lowest Common Ancestor of a Binary Tree | Medium     |\n\nBinary Tree - BFS\n\n|   #   | Problem                                                             | Difficulty |\n| :---: | ------------------------------------------------------------------- | ---------- |\n|  39   | 199. Binary Tree Right Side View          | Medium     |\n|  40   | 1161. Maximum Level Sum of a Binary Tree | Medium     |\n\nBinary Search Tree\n\n|   #   | Problem                                               | Difficulty |\n| :---: | ----------------------------------------------------- | ---------- |\n|  41   | Search in a Binary Search Tree | Easy       |\n|  42   | Delete Node in a BST         | Medium     |\n\nGraphs - DFS\n\n|   #   | Problem                                                                         | Difficulty |\n| :---: | ------------------------------------------------------------------------------- | ---------- |\n|  43   | Keys and Rooms                                         | Medium     |\n|  44   | Number of Provinces                                    | Medium     |\n|  45   | Reorder Routes to Make All Paths Lead to the City Zero | Medium     |\n|  46   | Evaluate Division                                      | Medium     |\n\nGraphs - BFS\n\n|   #   | Problem                                                     | Difficulty |\n| :---: | ----------------------------------------------------------- | ---------- |\n|  47   | Nearest Exit from Entrance in Maze | Medium     |\n|  48   | 994. Rotting Oranges              | Medium     |\n\nHeap / Priority Queue\n\n|   #   | Problem                                                  | Difficulty |\n| :---: | -------------------------------------------------------- | ---------- |\n|  49   | Kth Largest Element in an Array | Medium     |\n|  50   | Smallest Number in Infinite Set | Medium     |\n|  51   | Maximum Subsequence Score       | Medium     |\n|  52   | Total Cost to Hire K Workers    | Medium     |\n\nBinary Search\n\n|   #   | Problem                                                         | Difficulty |\n| :---: | --------------------------------------------------------------- | ---------- |\n|  53   | Guess Number Higher or Lower             | Easy       |\n|  54   | Successful Pairs of Spells and Potions | Medium     |\n|  55   | 162. Find Peak Element                | Medium     |\n|  56   | Koko Eating Bananas                    | Medium     |\n\nBacktracking\n\n|   #   | Problem                                                            | Difficulty |\n| :---: | ------------------------------------------------------------------ | ---------- |\n|  57   | 17. Letter Combinations of a Phone Number | Medium     |\n|  58   | Combination Sum III                       | Medium     |\n\nDP - 1D\n\n|   #   | Problem                                            | Difficulty |\n| :---: | -------------------------------------------------- | ---------- |\n|  59   | N-th Tribonacci Number      | Easy       |\n|  60   | Min Cost Climbing Stairs    | Easy       |\n|  61   | House Robber              | Medium     |\n|  62   | Domino and Tromino Tiling | Medium     |\n\nDP - Multidimensional\n\n|   #   | Problem                                                                       | Difficulty |\n| :---: | ----------------------------------------------------------------------------- | ---------- |\n|  63   | Unique Paths                                         | Medium     |\n|  64   | Longest Common Subsequence                           | Medium     |\n|  65   | Best Time to Buy and Sell Stock with Transaction Fee | Medium     |\n|  66   | Edit Distance                                        | Medium     |\n\nBit Manipulation\n\n|   #   | Problem                                                          | Difficulty |\n| :---: | ---------------------------------------------------------------- | ---------- |\n|  67   | Counting Bits                             | Easy       |\n|  68   | 136. Single Number                       | Easy       |\n|  69   | Minimum Flips to Make a OR b Equal to c | Medium     |\n\nTrie\n\n|   #   | Problem                                                     | Difficulty |\n| :---: | ----------------------------------------------------------- | ---------- |\n|  70   | 208. Implement Trie (Prefix Tree) | Medium     |\n|  71   | Search Suggestions System          | Medium     |\n\nIntervals\n\n|   #   | Problem                                                             | Difficulty |\n| :---: | ------------------------------------------------------------------- | ---------- |\n|  72   | 435. Non-overlapping Intervals            | Medium     |\n|  73   | Minimum Number of Arrows to Burst Balloons | Medium     |\n\nMonotonic Stack\n\n|   #   | Problem                                     | Difficulty |\n| :---: | ------------------------------------------- | ---------- |\n|  74   | Daily Temperatures | Medium     |\n|  75   | Online Stock Span  | Medium     |\n\nLinks\n\nLeetCode Top 75\n",
+            "content": "\nArray / String\n\n|   #   | Problem                                                                 | Difficulty | Slides/Video |\n| :---: | ----------------------------------------------------------------------- | ---------- | ------------ |\n|   1   | 1768. Merge Strings Alternately                | Easy       | ✅ ✅          |\n|   2   | 1071. Greatest Common Divisor of Strings       | Easy       | ✅ ✅          |\n|   3   | 1431. Kids With the Greatest Number of Candies | Easy       | ✅ ✅          |\n|   4   | 605. Can Place Flowers                          | Easy       |              |\n|   5   | 345. Reverse Vowels of a String                 | Easy       |              |\n|   6   | 151. Reverse Words in a String                | Medium     |              |\n|   7   | 238. Product of Array Except Self             | Medium     |              |\n|   8   | 334. Increasing Triplet Subsequence           | Medium     |              |\n|   9   | 443. String Compression                       | Medium     |              |\n\nTwo Pointers\n\n|   #   | Problem                                                    | Difficulty |\n| :---: | ---------------------------------------------------------- | ---------- |\n|  10   | 283. Move Zeroes                   | Easy       |\n|  11   | 392. Is Subsequence                | Easy       |\n|  12   | 11. Container With Most Water     | Medium     |\n|  13   | 1679. Max Number of K-Sum Pairs | Medium     |\n\nSliding Window\n\n|   #   | Problem                                                                                  | Difficulty |\n| :---: | ---------------------------------------------------------------------------------------- | ---------- |\n|  14   | 643. Maximum Average Subarray I                                  | Easy       |\n|  15   | 1456. Maximum Number of Vowels in a Substring of Given Length | Medium     |\n|  16   | 1004. Max Consecutive Ones III                                | Medium     |\n|  17   | 1493. Longest Subarray of 1's After Deleting One Element      | Medium     |\n\nPrefix Sum\n\n|   #   | Problem                                                  | Difficulty |\n| :---: | -------------------------------------------------------- | ---------- |\n|  18   | 1732. Find the Highest Altitude | Easy       |\n|  19   | 724. Find Pivot Index            | Easy       |\n\nHash Map / Set\n\n|   #   | Problem                                                     | Difficulty |\n| :---: | ----------------------------------------------------------- | ---------- |\n|  20   | Find the Difference of Two Arrays    | Easy       |\n|  21   | Unique Number of Occurrences         | Easy       |\n|  22   | Determine if Two Strings Are Close | Medium     |\n|  23   | Equal Row and Column Pairs         | Medium     |\n\nStack\n\n|   #   | Problem                                               | Difficulty |\n| :---: | ----------------------------------------------------- | ---------- |\n|  24   | Removing Stars From a String | Medium     |\n|  25   | Asteroid Collision           | Medium     |\n|  26   | Decode String                | Medium     |\n\nQueue\n\n|   #   | Problem                                       | Difficulty |\n| :---: | --------------------------------------------- | ---------- |\n|  27   | Number of Recent Calls | Easy       |\n|  28   | Dota2 Senate         | Medium     |\n\nLinked List\n\n|   #   | Problem                                                          | Difficulty |\n| :---: | ---------------------------------------------------------------- | ---------- |\n|  29   | Delete the Middle Node of a Linked List | Medium     |\n|  30   | 328. Odd Even Linked List              | Medium     |\n|  31   | 206. Reverse Linked List                 | Easy       |\n|  32   | Maximum Twin Sum of a Linked List       | Medium     |\n\nBinary Tree - DFS\n\n|   #   | Problem                                                          | Difficulty |\n| :---: | ---------------------------------------------------------------- | ---------- |\n|  33   | 104. Maximum Depth of Binary Tree        | Easy       |\n|  34   | Leaf-Similar Trees                        | Easy       |\n|  35   | Count Good Nodes in Binary Tree         | Medium     |\n|  36   | Path Sum III                            | Medium     |\n|  37   | Longest ZigZag Path in a Binary Tree    | Medium     |\n|  38   | Lowest Common Ancestor of a Binary Tree | Medium     |\n\nBinary Tree - BFS\n\n|   #   | Problem                                                             | Difficulty |\n| :---: | ------------------------------------------------------------------- | ---------- |\n|  39   | 199. Binary Tree Right Side View          | Medium     |\n|  40   | 1161. Maximum Level Sum of a Binary Tree | Medium     |\n\nBinary Search Tree\n\n|   #   | Problem                                               | Difficulty |\n| :---: | ----------------------------------------------------- | ---------- |\n|  41   | Search in a Binary Search Tree | Easy       |\n|  42   | Delete Node in a BST         | Medium     |\n\nGraphs - DFS\n\n|   #   | Problem                                                                         | Difficulty |\n| :---: | ------------------------------------------------------------------------------- | ---------- |\n|  43   | Keys and Rooms                                         | Medium     |\n|  44   | Number of Provinces                                    | Medium     |\n|  45   | Reorder Routes to Make All Paths Lead to the City Zero | Medium     |\n|  46   | Evaluate Division                                      | Medium     |\n\nGraphs - BFS\n\n|   #   | Problem                                                     | Difficulty |\n| :---: | ----------------------------------------------------------- | ---------- |\n|  47   | Nearest Exit from Entrance in Maze | Medium     |\n|  48   | 994. Rotting Oranges              | Medium     |\n\nHeap / Priority Queue\n\n|   #   | Problem                                                  | Difficulty |\n| :---: | -------------------------------------------------------- | ---------- |\n|  49   | Kth Largest Element in an Array | Medium     |\n|  50   | Smallest Number in Infinite Set | Medium     |\n|  51   | Maximum Subsequence Score       | Medium     |\n|  52   | Total Cost to Hire K Workers    | Medium     |\n\nBinary Search\n\n|   #   | Problem                                                         | Difficulty |\n| :---: | --------------------------------------------------------------- | ---------- |\n|  53   | Guess Number Higher or Lower             | Easy       |\n|  54   | Successful Pairs of Spells and Potions | Medium     |\n|  55   | 162. Find Peak Element                | Medium     |\n|  56   | Koko Eating Bananas                    | Medium     |\n\nBacktracking\n\n|   #   | Problem                                                            | Difficulty |\n| :---: | ------------------------------------------------------------------ | ---------- |\n|  57   | 17. Letter Combinations of a Phone Number | Medium     |\n|  58   | Combination Sum III                       | Medium     |\n\nDP - 1D\n\n|   #   | Problem                                            | Difficulty |\n| :---: | -------------------------------------------------- | ---------- |\n|  59   | N-th Tribonacci Number      | Easy       |\n|  60   | Min Cost Climbing Stairs    | Easy       |\n|  61   | House Robber              | Medium     |\n|  62   | Domino and Tromino Tiling | Medium     |\n\nDP - Multidimensional\n\n|   #   | Problem                                                                       | Difficulty |\n| :---: | ----------------------------------------------------------------------------- | ---------- |\n|  63   | Unique Paths                                         | Medium     |\n|  64   | Longest Common Subsequence                           | Medium     |\n|  65   | Best Time to Buy and Sell Stock with Transaction Fee | Medium     |\n|  66   | Edit Distance                                        | Medium     |\n\nBit Manipulation\n\n|   #   | Problem                                                          | Difficulty |\n| :---: | ---------------------------------------------------------------- | ---------- |\n|  67   | Counting Bits                             | Easy       |\n|  68   | 136. Single Number                       | Easy       |\n|  69   | Minimum Flips to Make a OR b Equal to c | Medium     |\n\nTrie\n\n|   #   | Problem                                                     | Difficulty |\n| :---: | ----------------------------------------------------------- | ---------- |\n|  70   | 208. Implement Trie (Prefix Tree) | Medium     |\n|  71   | Search Suggestions System          | Medium     |\n\nIntervals\n\n|   #   | Problem                                                             | Difficulty |\n| :---: | ------------------------------------------------------------------- | ---------- |\n|  72   | 435. Non-overlapping Intervals            | Medium     |\n|  73   | Minimum Number of Arrows to Burst Balloons | Medium     |\n\nMonotonic Stack\n\n|   #   | Problem                                     | Difficulty |\n| :---: | ------------------------------------------- | ---------- |\n|  74   | Daily Temperatures | Medium     |\n|  75   | Online Stock Span  | Medium     |\n\nLinks\n\nLeetCode Top 75\n",
             "tags": [],
             "lang": "en"
         },
@@ -3528,18 +3871,6 @@
             "lang": "en"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/medium/1004",
-            "title": "1004. Max Consecutive Ones III",
-            "description": "Understand the problem of finding the maximum consecutive ones in a binary array with the possibility of flipping some zeros.",
-            "content": "\nLeetCode Problem 1004\n\nProblem Statement\n\nGiven a binary array nums and an integer k, the task is to return the maximum number of consecutive 1's in the array, with the possibility to flip at most k 0's.\n\nNaive Solution\n\nA straight forward approach is to try flipping every combination of k zeros and checking for the longest sequence of 1's. This would involve nested loops, with the outer loop iterating through the array and the inner loops flipping zeros and calculating sequences of 1's. This approach can be extremely slow, especially for larger arrays.\n\nHints & Tips\n\nThe task can be tackled more efficiently with a sliding window approach. This technique can be applied when we want to examine a continuous chunk of elements in an array, such as a substring or subarray.\n\nApproach: Sliding Window\n\nWe expand our window to the right each time and record the zeros we find.\nIf the number of zeros exceeds k, we shrink the window from the left until we're back to at most k zeros.\nWe can track the longest window we've found during this process, which corresponds to the maximum number of consecutive 1's.\n\nIf the number of zeros exceeds k, we shrink the window from the left until we're back to at most k zeros.\n\nWe can track the longest window we've found during this process, which corresponds to the maximum number of consecutive 1's.\n\nSteps\n\nInitialize two pointers, left and right, to represent the window's boundaries. Also, initialize a counter zero_count to track zeros in the current window.\nExpand the right boundary of the window by moving the right pointer.\nIf the current number is 0, increment the zero_count.\nIf zero_count exceeds k,\n    4.1 move the left pointer to the right until a zero is excluded,\n    4.2 and decrement the zero_count.\nTrack the maximum length of the window found.\n\nSolution\n\ndef longestOnes(nums, k):\n    left = 0\n    zero_count = 0\n    max_len = 0\n\n    for right in range(len(nums)):\n        if nums[right] == 0:\n            zero_count += 1\n\n        while zero_count > k:\n            if nums[left] == 0:\n                zero_count -= 1\n            left += 1\n\n        max_len = max(max_len, right - left + 1)\n\n    return max_len\n",
-            "tags": [
-                "Algorithms",
-                "Medium",
-                "SlidingWindow"
-            ],
-            "lang": "en"
-        },
-        {
             "uri": "/tracks/algorithms-101/leetcode/medium/735/",
             "title": "735. Asteroid Collision",
             "description": "A detailed guide to understanding and solving the \"Asteroid Collision\" problem from LeetCode.",
@@ -3591,6 +3922,18 @@
             "lang": "en"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1004/",
+            "title": "1004. Max Consecutive Ones III",
+            "description": "Understand the problem of finding the maximum consecutive ones in a binary array with the possibility of flipping some zeros.",
+            "content": "\nLeetCode Problem 1004\n\nProblem Statement\n\nGiven a binary array nums and an integer k, the task is to return the maximum number of consecutive 1's in the array, with the possibility to flip at most k 0's.\n\nNaive Solution\n\nA straight forward approach is to try flipping every combination of k zeros and checking for the longest sequence of 1's. This would involve nested loops, with the outer loop iterating through the array and the inner loops flipping zeros and calculating sequences of 1's. This approach can be extremely slow, especially for larger arrays.\n\nHints & Tips\n\nThe task can be tackled more efficiently with a sliding window approach. This technique can be applied when we want to examine a continuous chunk of elements in an array, such as a substring or subarray.\n\nApproach: Sliding Window\n\nWe expand our window to the right each time and record the zeros we find.\nIf the number of zeros exceeds k, we shrink the window from the left until we're back to at most k zeros.\nWe can track the longest window we've found during this process, which corresponds to the maximum number of consecutive 1's.\n\nIf the number of zeros exceeds k, we shrink the window from the left until we're back to at most k zeros.\n\nWe can track the longest window we've found during this process, which corresponds to the maximum number of consecutive 1's.\n\nSteps\n\nInitialize two pointers, left and right, to represent the window's boundaries. Also, initialize a counter zero_count to track zeros in the current window.\nExpand the right boundary of the window by moving the right pointer.\nIf the current number is 0, increment the zero_count.\nIf zero_count exceeds k,\n    4.1 move the left pointer to the right until a zero is excluded,\n    4.2 and decrement the zero_count.\nTrack the maximum length of the window found.\n\nSolution\n\ndef longestOnes(nums, k):\n    left = 0\n    zero_count = 0\n    max_len = 0\n\n    for right in range(len(nums)):\n        if nums[right] == 0:\n            zero_count += 1\n\n        while zero_count > k:\n            if nums[left] == 0:\n                zero_count -= 1\n            left += 1\n\n        max_len = max(max_len, right - left + 1)\n\n    return max_len\n",
+            "tags": [
+                "Algorithms",
+                "Medium",
+                "SlidingWindow"
+            ],
+            "lang": "en"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/easy/_index",
             "title": "Easy",
             "description": null,
@@ -3610,17 +3953,6 @@
                 "Tree",
                 "Depth-First Search",
                 "Binary Tree"
-            ],
-            "lang": "en"
-        },
-        {
-            "uri": "/tracks/algorithms-101/leetcode/easy/9",
-            "title": "9. Palindrome Number",
-            "description": "An introductory guide to understanding and determining if a number is a palindrome.",
-            "content": "\nLeetCode problem\n\nProblem Statement\n\nDetermine whether an integer is a palindrome without converting it to a string.\n\nNaive Solution\n\nA straightforward solution might be to convert the integer to a string and check if it reads the same both ways. However, this challenge encourages solving it without such conversion.\n\nHints & Tips\n\nBy reversing the number and comparing it to the original, you can determine if it's a palindrome.\n\nApproach\n\nInstead of converting the number to a string, we can reverse its digits using mathematical operations and then compare the reversed number to the original number.\n\nSteps\n\nIf the number is negative, it's not a palindrome.\nInitialize a Variable for the Reversed Number: We'll be constructing this number step-by-step.\nReversing the Number:\n   This is achieved by repeatedly taking the last digit of the number and adding it to a running total after shifting the current digits of the running total.\n   For instance, if you have the number 123, you'll first take 3, then 2, and finally 1, to construct the reversed number as 321.\nComparison: If the reversed number equals the original number, then it's a palindrome.\n\nSolution\n\ndef isPalindrome(x: int) -> bool:\nNegative numbers cannot be palindromes\n    if x  5\n\nShift the current digits of reversed_num and add the last digit of temp\n        reversed_num = reversed_num * 10 + last_digit\n\nRemove the last digit from temp\n        temp //= 10  # 12345 // 10 => 1234\n\nCompare the reversed number to the original\n    return reversed_num == x\n",
-            "tags": [
-                "Math",
-                "Easy"
             ],
             "lang": "en"
         },
@@ -3692,33 +4024,6 @@
                 "Algorithms",
                 "Easy"
             ],
-            "lang": "en"
-        },
-        {
-            "uri": "/tracks/algorithms-101/leetcode/easy/392",
-            "title": "392. Is Subsequence",
-            "description": "Exploring whether one string is a subsequence of another.",
-            "content": "\nLeetCode problem 392\n\nProblem Statement\n\nGiven two strings s and t, you need to determine if s is a subsequence of t. To be a subsequence, you can remove characters from t without reordering to form s.\n\nNaive Solution\n\nThe naive approach would be to generate all subsequences of string t and then check if string s is one of them. However, generating all subsequences of t can be computationally expensive especially when the length of t is large.\n\nHints & Tips\n\nUnderstanding the nature of the problem is vital. This problem can be visualized as two pointers moving through both strings. If characters match, move both pointers. If not, only move the pointer in t.\n\nApproach\n\nTo determine if s is a subsequence of t, we can use a two-pointer technique.\n\nBegin by initializing two pointers at the start of s and t.\nMove through t, looking for a match with the current character of s.\nIf you find a match, move to the next character in s.\nIf you reach the end of s while doing this, it means s is a subsequence of t.\n\nSteps\n\nInitialize two pointers i and j to 0. i points to characters in s while j points to characters in t.\nTraverse through t using the pointer j.\nWhen s[i] is equal to t[j], increment i.\nIf i becomes equal to the length of s, return True since it means all characters of s are present in t in order.\nIf the loop completes and i is not equal to the length of s, return False.\n\nSolution\n\ndef isSubsequence(s, t):\nInitialize two pointers at the start of the strings.\n    i, j = 0, 0\n\n    while j < len(t):\nIf the current characters match, move to the next character in s.\n        if i < len(s) and s[i] == t[j]:\n            i += 1\n        j += 1\n\nIf all characters in s were found in t, return True.\n    return i == len(s)\n",
-            "tags": [
-                "String",
-                "Subsequence"
-            ],
-            "lang": "en"
-        },
-        {
-            "uri": "/tracks/algorithms-101/leetcode/easy/345",
-            "title": "345. Reverse Vowels of a String",
-            "description": "345. Reverse Vowels of a String",
-            "content": "\nLeetCode problem\n\nProblem Statement\n\nGiven a string s, the task is to reverse only all the vowels in the string and return it. The vowels are 'a', 'e', 'i', 'o', and 'u', and they can appear in both lower and upper cases, more than once.\n\nNaive Solution\n\nThe naive approach to solve this problem would be to:\n\nInitialize an empty string result.\nTraverse the given string s from the start to the end.\nIf the current character is a vowel, find the next vowel in the string starting from the end, add it to result, and remove it from the string.\nIf the current character is not a vowel, simply add it to result.\n\nHints & Tips\n\nBut this solution is inefficient as it requires traversing the string multiple times and manipulating it. A more efficient solution would use the two-pointer technique.\n\nApproach\n\nThe efficient approach to solve this problem would be to:\n\nInitialize two pointers, one at the start and the other at the end of the string.\nWhile the two pointers have not met, check if the characters at the two pointers are vowels.\nIf they are, swap them. If not, move the pointer(s).\n\nSteps\n\nConvert the string to a list of characters because Python strings are immutable.\nInitialize two pointers: left at 0 and right at the end of the string.\nWhile left  str:\n        vowels = 'aeiouAEIOU'\n        s = list(s)\n        left, right = 0, len(s) - 1\n\n        while left  str:\n        vowels = ['a', 'A', 'e','E', 'i','I', 'o','O', 'u','U']\n\n        vowels_order = []\n        for i, x in enumerate(s):\n            if x in vowels:\n                vowels_order.append(x)\n\n        res = ''\n        for x in s:\n            if x in vowels:\n                res += vowels_order.pop()\n            else:\n                res += x\n\n        return res\n",
-            "tags": [],
-            "lang": "en"
-        },
-        {
-            "uri": "/tracks/algorithms-101/leetcode/easy/283",
-            "title": "283. Move Zeroes",
-            "description": "283. Move Zeroes",
-            "content": "\nLeetCode problem\n\nProblem Statement\n\nThe problem is asking to move all zeros in an integer array to the end of the array while maintaining the relative order of the non-zero elements. You must do this in-place without making a copy of the array.\n\nNaive Solution\n\nA naive solution could be to create a new list, iterate over the array, add non-zero elements to the new list and count zero elements. Then extend the new list with the same amount of zeros as counted. But this solution requires creating a new list, which contradicts the in-place requirement of the problem.\n\nHints & Tips\n\nThe key to solve this problem is to keep a pointer, let's call it i, that would track the position where the next non-zero element should be placed.\n\nApproach\n\nThe provided solution employs a two-pass approach. In the first pass, it iterates over the list and whenever it encounters a non-zero element, it places it at the position i and increments i. After this pass, all non-zero elements are at the beginning of the list and i is set to the position of the first zero element.\n\nIn the second pass, it simply assigns zero to all positions from i to the end of the list.\n\nSteps\n\nInitialize i to 0.\nIterate over nums. For each element, if it is not zero, assign it to nums[i] and increment i.\nAfter the iteration, i is at the position of the first zero in nums. Now assign zero to nums[i] and increment i. Repeat this step until i reaches the end of nums.\n\nPython Solution\n\nclass Solution:\n    def moveZeroes(self, nums: List[int]) -> None:\n        i = 0\n        for x in nums: # Set the non-zero elements\n            if x != 0:\n                nums[i] = x\n                i += 1\n\n        while i <= len(nums) - 1: # Set the rest number of zeros\n            nums[i] = 0\n            i += 1\n\nThe solution maintains the relative order of the non-zero elements and minimizes the total number of operations by only doing a single pass through the non-zero elements and then assigning zeros in one go.\n",
-            "tags": [],
             "lang": "en"
         },
         {
@@ -3812,17 +4117,6 @@
             "lang": "en"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/easy/1768",
-            "title": "1768. Merge Strings Alternately",
-            "description": "Merging strings alternately",
-            "content": "\nLeetCode problem\n\nProblem Statement\n\nThe task is to merge two strings alternately, i.e., take one character from the first string, then one from the second, then again from the first, and so on. If one string finishes before the other, the remaining characters from the longer string are appended at the end.\n\nNaive Solution\n\nA naive approach could involve maintaining two pointers, one for each string, and incrementally appending characters from each string to the result. Once we reach the end of one string, we append the rest of the other string to the result. However, this approach involves checking for the end of strings in each step which can be optimized.\n\nEfficient Solution\n\nA more pythonic and efficient approach would be to use the built-in zip function. The zip function pairs the elements of two lists (or strings, in this case) until the shorter one ends. This allows us to alternately merge the two strings efficiently. After that, we append the remaining part of the longer string, if any.\n\nSteps\n\nHere are the high-level steps of the algorithm:\n\nUse the zip function to merge the two strings until one of them ends.\nAppend the remaining part of the longer string to the result.\n\nPython Solution\n\nHere is a Python solution that implements the above algorithm:\n\nclass Solution:\n    def mergeAlternately(self, word1: str, word2: str) -> str:\n        i=0\n        j=0\n\n        res = ''\n        while i str:\n        res = [c1 + c2 for c1, c2 in zip(word1, word2)]\n        return \"\".join(res) + word1[len(res):] + word2[len(res):]\n\nIn the mergeAlternately method, we use list comprehension and the zip function to merge the strings until one of them ends. We then append the remaining part of the longer string to the result. The join method is used to convert the list of characters into a string.\n",
-            "tags": [
-                "Algorithms",
-                "Easy"
-            ],
-            "lang": "en"
-        },
-        {
             "uri": "/tracks/algorithms-101/leetcode/easy/1732",
             "title": "1732. Find the Highest Altitude",
             "description": "1732. Find the Highest Altitude",
@@ -3896,17 +4190,6 @@
             "lang": "en"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/easy/1071",
-            "title": "1071. Greatest Common Divisor of Strings",
-            "description": "Finding the greatest common divisor of two strings",
-            "content": "\nLeetCode problem\n\nProblem Statement\n\nThe problem is about finding a greatest common divisor (GCD) of two strings. The term \"GCD\" might be familiar from mathematics, as the largest number that divides two numbers without leaving a remainder. Here, we extend the idea to strings: a string x is a GCD of strings str1 and str2 if x can be repeatedly appended to itself to obtain str1 and str2.\n\nNaive Solution\n\nA naive approach would be to find all possible divisors of str1 and str2, and then find the largest common divisor. This would involve generating all substrings of str1 and str2 which is time-consuming and unnecessary.\n\nSolution\n\nObserving the problem, we see a similarity with the Euclidean algorithm for calculating the GCD of two numbers. In the Euclidean algorithm, the GCD of two numbers a and b (a > b) is the same as the GCD of b and a mod b.\n\nWe can extend this logic to strings. If a string x is a GCD of str1 and str2, then str1 and str2 can both be written in the form x + x + ... + x. Therefore, str1 - str2 (which is similar to a mod b) should also be expressible in the form x + x + ... + x.\n\nThis observation allows us to use a similar approach to the Euclidean algorithm to solve this problem.\nWhy finding Greatest common divisor?\n\nIn case smallest string consist multiple same parts.\n\nExample: str1 = \"ABABAB\", str2 = \"ABAB\".\n\nlen(str1) = 6, len(str2) = 4. We can't use whole str2 but common minimum length -> 2.\n\nSteps\n\nHere are the high-level steps of the algorithm:\n\nIf str1 + str2 is not equal to str2 + str1, return an empty string.\nOtherwise, find the GCD of the lengths of str1 and str2.\nReturn the prefix substring of str1 with length equal to the GCD.\n\nSolution\n\nHere is a Python solution that implements the above algorithm:\n\nclass Solution:\n    def gcdOfStrings(self, str1: str, str2: str) -> str:\n        def gcd(a, b):\n            while b != 0:\n                a, b = b, a % b\n            return a\n\n        if str1 + str2 != str2 + str1:\n            return ''\n\n        max_substr_len = gcd(len(str1), len(str2))\n        return str1[:max_substr_len]\n\nIn the gcdOfStrings method, we first check if str1 + str2 is equal to str2 + str1. If they are not equal, no common divisor string exists, so we return an empty string. If they are equal, we find the GCD of the lengths of str1 and str2 and return the prefix substring of str1 with length equal to the GCD.\n\nThe gcd method is a standard implementation of the Euclidean algorithm to find the GCD of two numbers.\n",
-            "tags": [
-                "Algorithms",
-                "Easy"
-            ],
-            "lang": "en"
-        },
-        {
             "uri": "/tracks/algorithms-101/leetcode/easy/1",
             "title": "1. Two Sum",
             "description": "LeetCode 1. Two Sum",
@@ -3919,10 +4202,70 @@
             "lang": "en"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/easy/9/",
+            "title": "9. Palindrome Number",
+            "description": "An introductory guide to understanding and determining if a number is a palindrome.",
+            "content": "\nLeetCode problem\n\nProblem Statement\n\nDetermine whether an integer is a palindrome without converting it to a string.\n\nNaive Solution\n\nA straightforward solution might be to convert the integer to a string and check if it reads the same both ways. However, this challenge encourages solving it without such conversion.\n\nHints & Tips\n\nBy reversing the number and comparing it to the original, you can determine if it's a palindrome.\n\nApproach\n\nInstead of converting the number to a string, we can reverse its digits using mathematical operations and then compare the reversed number to the original number.\n\nSteps\n\nIf the number is negative, it's not a palindrome.\nInitialize a Variable for the Reversed Number: We'll be constructing this number step-by-step.\nReversing the Number:\n   This is achieved by repeatedly taking the last digit of the number and adding it to a running total after shifting the current digits of the running total.\n   For instance, if you have the number 123, you'll first take 3, then 2, and finally 1, to construct the reversed number as 321.\nComparison: If the reversed number equals the original number, then it's a palindrome.\n\nSolution\n\ndef isPalindrome(x: int) -> bool:\nNegative numbers cannot be palindromes\n    if x  5\n\nShift the current digits of reversed_num and add the last digit of temp\n        reversed_num = reversed_num * 10 + last_digit\n\nRemove the last digit from temp\n        temp //= 10  # 12345 // 10 => 1234\n\nCompare the reversed number to the original\n    return reversed_num == x\n",
+            "tags": [
+                "Math",
+                "Easy"
+            ],
+            "lang": "en"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/easy/605/",
             "title": "605. Can Place Flowers",
-            "description": "LeetCode 605. Можно ли посадить n цветов на грядке, следуя правилу \"нет соседних цветов\".",
-            "content": "\nLeetCode задача 605\n\nЗадача\n\nДана длинная грядка, на которой некоторые участки уже засажены, а некоторые нет. Однако цветы нельзя сажать на соседние участки.\n\nПодход\n\nЧтобы решить эту задачу, мы будем итерироваться по каждому участку грядки. Если участок пустой и его соседи (если они существуют) тоже пусты, мы сажаем цветок и уменьшаем наш счетчик.\n\nАлгоритм\n\nИтерируемся по каждому участку грядки.\nЕсли участок пустой, проверяем его соседей.\n   Если левый сосед пустой или его нет (начало грядки), проверяем правого соседа.\n   Если правый сосед пустой или его нет (конец грядки), сажаем цветок на текущий участок и уменьшаем n.\nВ конце проверяем, достиг ли n нуля или стал отрицательным.\n   Если да, то это означает, что мы можем посадить все цветы.\n\nРешение\n\ndef canPlaceFlowers(flowerbed, n):\n    def check_neighbors(n):\n        if i  0:\n                if flowerbed[i-1] == 0: #2.1\n                    n = check_neighbors(n)\n            else:\n                n = check_neighbors(n)\n    return n <= 0  #3\n",
+            "description": "An easy yet interesting problem in which we must determine whether we can plant a certain number of flowers in a flowerbed without violating the no-adjacent-flowers rule.",
+            "content": "\nLeetCode problem 605\n\nIn this problem, we are given a flowerbed represented by an integer array flowerbed, where 0 represents an empty plot and 1 represents a plot with a flower.\n\nWe need to determine if we can plant n new flowers in the flowerbed without violating the rule that no two adjacent plots can have flowers.\n\nNaive Solution\n\nTo solve this problem, we can use a greedy approach. We iterate through the flowerbed and check each plot. If a plot is empty and its adjacent plots are also empty, we can plant a flower in that plot.\n\nWe repeat this process until we have planted all n flowers or we have checked all plots in the flowerbed.\n\nApproach\n\nTo solve this problem, we will define a helper function check_neighbors that checks if a plot can be planted with a flower and updates the flowerbed and n accordingly.\n\nSteps\n\nInitialize a variable i to iterate through the flowerbed.\nFor each plot in the flowerbed:\n   2.1. If the current plot is empty and its previous plot is also empty (i.e., flowerbed[i-1] == 0), call the check_neighbors function.\n   2.2. Otherwise, if the current plot is empty and its next plot is also empty (i.e., flowerbed[i+1] == 0), call the check_neighbors function.\nReturn True if n is less than or equal to 0 (i.e., all flowers have been planted), otherwise return False.\n\nSolution\n\ndef canPlaceFlowers(flowerbed, n):\n    def check_neighbors(n):\n        if i  0:\n                if flowerbed[i-1] == 0:\n                    n = check_neighbors(n)\n            else:\n                n = check_neighbors(n)\n    return n <= 0\n",
+            "tags": [
+                "Algorithms",
+                "Easy"
+            ],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/392/",
+            "title": "392. Is Subsequence",
+            "description": "Exploring whether one string is a subsequence of another.",
+            "content": "\nLeetCode problem 392\n\nProblem Statement\n\nGiven two strings s and t, you need to determine if s is a subsequence of t. To be a subsequence, you can remove characters from t without reordering to form s.\n\nNaive Solution\n\nThe naive approach would be to generate all subsequences of string t and then check if string s is one of them. However, generating all subsequences of t can be computationally expensive especially when the length of t is large.\n\nHints & Tips\n\nUnderstanding the nature of the problem is vital. This problem can be visualized as two pointers moving through both strings. If characters match, move both pointers. If not, only move the pointer in t.\n\nApproach\n\nTo determine if s is a subsequence of t, we can use a two-pointer technique.\n\nBegin by initializing two pointers at the start of s and t.\nMove through t, looking for a match with the current character of s.\nIf you find a match, move to the next character in s.\nIf you reach the end of s while doing this, it means s is a subsequence of t.\n\nSteps\n\nInitialize two pointers i and j to 0. i points to characters in s while j points to characters in t.\nTraverse through t using the pointer j.\nWhen s[i] is equal to t[j], increment i.\nIf i becomes equal to the length of s, return True since it means all characters of s are present in t in order.\nIf the loop completes and i is not equal to the length of s, return False.\n\nSolution\n\ndef isSubsequence(s, t):\nInitialize two pointers at the start of the strings.\n    i, j = 0, 0\n\n    while j < len(t):\nIf the current characters match, move to the next character in s.\n        if i < len(s) and s[i] == t[j]:\n            i += 1\n        j += 1\n\nIf all characters in s were found in t, return True.\n    return i == len(s)\n",
+            "tags": [
+                "String",
+                "Subsequence"
+            ],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/345/",
+            "title": "345. Reverse Vowels of a String",
+            "description": "345. Reverse Vowels of a String",
+            "content": "\nLeetCode problem\n\nProblem Statement\n\nGiven a string s, the task is to reverse only all the vowels in the string and return it. The vowels are 'a', 'e', 'i', 'o', and 'u', and they can appear in both lower and upper cases, more than once.\n\nNaive Solution\n\nThe naive approach to solve this problem would be to:\n\nInitialize an empty string result.\nTraverse the given string s from the start to the end.\nIf the current character is a vowel, find the next vowel in the string starting from the end, add it to result, and remove it from the string.\nIf the current character is not a vowel, simply add it to result.\n\nHints & Tips\n\nBut this solution is inefficient as it requires traversing the string multiple times and manipulating it. A more efficient solution would use the two-pointer technique.\n\nApproach\n\nThe efficient approach to solve this problem would be to:\n\nInitialize two pointers, one at the start and the other at the end of the string.\nWhile the two pointers have not met, check if the characters at the two pointers are vowels.\nIf they are, swap them. If not, move the pointer(s).\n\nSteps\n\nConvert the string to a list of characters because Python strings are immutable.\nInitialize two pointers: left at 0 and right at the end of the string.\nWhile left  str:\n        vowels = 'aeiouAEIOU'\n        s = list(s)\n        left, right = 0, len(s) - 1\n\n        while left  str:\n        vowels = ['a', 'A', 'e','E', 'i','I', 'o','O', 'u','U']\n\n        vowels_order = []\n        for i, x in enumerate(s):\n            if x in vowels:\n                vowels_order.append(x)\n\n        res = ''\n        for x in s:\n            if x in vowels:\n                res += vowels_order.pop()\n            else:\n                res += x\n\n        return res\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/283/",
+            "title": "283. Move Zeroes",
+            "description": "283. Move Zeroes",
+            "content": "\nLeetCode problem\n\nProblem Statement\n\nThe problem is asking to move all zeros in an integer array to the end of the array while maintaining the relative order of the non-zero elements. You must do this in-place without making a copy of the array.\n\nNaive Solution\n\nA naive solution could be to create a new list, iterate over the array, add non-zero elements to the new list and count zero elements. Then extend the new list with the same amount of zeros as counted. But this solution requires creating a new list, which contradicts the in-place requirement of the problem.\n\nHints & Tips\n\nThe key to solve this problem is to keep a pointer, let's call it i, that would track the position where the next non-zero element should be placed.\n\nApproach\n\nThe provided solution employs a two-pass approach. In the first pass, it iterates over the list and whenever it encounters a non-zero element, it places it at the position i and increments i. After this pass, all non-zero elements are at the beginning of the list and i is set to the position of the first zero element.\n\nIn the second pass, it simply assigns zero to all positions from i to the end of the list.\n\nSteps\n\nInitialize i to 0.\nIterate over nums. For each element, if it is not zero, assign it to nums[i] and increment i.\nAfter the iteration, i is at the position of the first zero in nums. Now assign zero to nums[i] and increment i. Repeat this step until i reaches the end of nums.\n\nPython Solution\n\nclass Solution:\n    def moveZeroes(self, nums: List[int]) -> None:\n        i = 0\n        for x in nums: # Set the non-zero elements\n            if x != 0:\n                nums[i] = x\n                i += 1\n\n        while i <= len(nums) - 1: # Set the rest number of zeros\n            nums[i] = 0\n            i += 1\n\nThe solution maintains the relative order of the non-zero elements and minimizes the total number of operations by only doing a single pass through the non-zero elements and then assigning zeros in one go.\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/1768/",
+            "title": "1768. Merge Strings Alternately",
+            "description": "Merging strings alternately",
+            "content": "\nLeetCode problem\n\nProblem Statement\n\nThe task is to merge two strings alternately, i.e., take one character from the first string, then one from the second, then again from the first, and so on. If one string finishes before the other, the remaining characters from the longer string are appended at the end.\n\nNaive Solution\n\nA naive approach could involve maintaining two pointers, one for each string, and incrementally appending characters from each string to the result. Once we reach the end of one string, we append the rest of the other string to the result. However, this approach involves checking for the end of strings in each step which can be optimized.\n\nEfficient Solution\n\nA more pythonic and efficient approach would be to use the built-in zip function. The zip function pairs the elements of two lists (or strings, in this case) until the shorter one ends. This allows us to alternately merge the two strings efficiently. After that, we append the remaining part of the longer string, if any.\n\nSteps\n\nHere are the high-level steps of the algorithm:\n\nUse the zip function to merge the two strings until one of them ends.\nAppend the remaining part of the longer string to the result.\n\nPython Solution\n\nHere is a Python solution that implements the above algorithm:\n\nclass Solution:\n    def mergeAlternately(self, word1: str, word2: str) -> str:\n        i=0\n        j=0\n\n        res = ''\n        while i str:\n        res = [c1 + c2 for c1, c2 in zip(word1, word2)]\n        return \"\".join(res) + word1[len(res):] + word2[len(res):]\n\nIn the mergeAlternately method, we use list comprehension and the zip function to merge the strings until one of them ends. We then append the remaining part of the longer string to the result. The join method is used to convert the list of characters into a string.\n",
+            "tags": [
+                "Algorithms",
+                "Easy"
+            ],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/1071/1071",
+            "title": "1071. Greatest Common Divisor of Strings",
+            "description": "Finding the greatest common divisor of two strings",
+            "content": "\nLeetCode problem\n\nProblem Statement\n\nThe problem is about finding a greatest common divisor (GCD) of two strings. The term \"GCD\" might be familiar from mathematics, as the largest number that divides two numbers without leaving a remainder. Here, we extend the idea to strings: a string x is a GCD of strings str1 and str2 if x can be repeatedly appended to itself to obtain str1 and str2.\n\nNaive Solution\n\nA naive approach would be to find all possible divisors of str1 and str2, and then find the largest common divisor. This would involve generating all substrings of str1 and str2 which is time-consuming and unnecessary.\n\nSolution\n\nObserving the problem, we see a similarity with the Euclidean algorithm for calculating the GCD of two numbers. In the Euclidean algorithm, the GCD of two numbers a and b (a > b) is the same as the GCD of b and a mod b.\n\nWe can extend this logic to strings. If a string x is a GCD of str1 and str2, then str1 and str2 can both be written in the form x + x + ... + x. Therefore, str1 - str2 (which is similar to a mod b) should also be expressible in the form x + x + ... + x.\n\nThis observation allows us to use a similar approach to the Euclidean algorithm to solve this problem.\nWhy finding Greatest common divisor?\n\nIn case smallest string consist multiple same parts.\n\nExample: str1 = \"ABABAB\", str2 = \"ABAB\".\n\nlen(str1) = 6, len(str2) = 4. We can't use whole str2 but common minimum length -> 2.\n\nSteps\n\nHere are the high-level steps of the algorithm:\n\nIf str1 + str2 is not equal to str2 + str1, return an empty string.\nOtherwise, find the GCD of the lengths of str1 and str2.\nReturn the prefix substring of str1 with length equal to the GCD.\n\nSolution\n\nHere is a Python solution that implements the above algorithm:\n\nclass Solution:\n    def gcdOfStrings(self, str1: str, str2: str) -> str:\n        def gcd(a, b):\n            while b != 0:\n                a, b = b, a % b\n            return a\n\n        if str1 + str2 != str2 + str1:\n            return ''\n\n        max_substr_len = gcd(len(str1), len(str2))\n        return str1[:max_substr_len]\n\nIn the gcdOfStrings method, we first check if str1 + str2 is equal to str2 + str1. If they are not equal, no common divisor string exists, so we return an empty string. If they are equal, we find the GCD of the lengths of str1 and str2 and return the prefix substring of str1 with length equal to the GCD.\n\nThe gcd method is a standard implementation of the Euclidean algorithm to find the GCD of two numbers.\n",
             "tags": [
                 "Algorithms",
                 "Easy"
