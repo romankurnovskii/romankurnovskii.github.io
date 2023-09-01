@@ -28306,7 +28306,7 @@
   var require_utilities2 = __commonJS({
     "node_modules/style-to-js/cjs/utilities.js"(exports) {
       "use strict";
-      exports.__esModule = true;
+      Object.defineProperty(exports, "__esModule", { value: true });
       exports.camelCase = void 0;
       var CUSTOM_PROPERTY_REGEX = /^--[a-zA-Z0-9-]+$/;
       var HYPHEN_REGEX = /-([a-z])/g;
@@ -28348,7 +28348,7 @@
       var __importDefault = exports && exports.__importDefault || function(mod) {
         return mod && mod.__esModule ? mod : { "default": mod };
       };
-      exports.__esModule = true;
+      Object.defineProperty(exports, "__esModule", { value: true });
       var style_to_object_1 = __importDefault(require_style_to_object());
       var utilities_1 = require_utilities2();
       function StyleToJS(style, options2) {
@@ -28356,14 +28356,14 @@
         if (!style || typeof style !== "string") {
           return output;
         }
-        (0, style_to_object_1["default"])(style, function(property, value) {
+        (0, style_to_object_1.default)(style, function(property, value) {
           if (property && value) {
             output[(0, utilities_1.camelCase)(property, options2)] = value;
           }
         });
         return output;
       }
-      exports["default"] = StyleToJS;
+      exports.default = StyleToJS;
     }
   });
 
