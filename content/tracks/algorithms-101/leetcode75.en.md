@@ -25,7 +25,7 @@ weight: 16
 |   3   | [1431. Kids With the Greatest Number of Candies](../leetcode/easy/1431) | Easy       | ✅ ✅          |
 |   4   | [605. Can Place Flowers](../leetcode/easy/605)                          | Easy       |              |
 |   5   | [345. Reverse Vowels of a String](../leetcode/easy/345)                 | Easy       |              |
-|   6   | [151. Reverse Words in a String](../leetcode/medium/151)                | Medium     |              |
+|   6   | [151. Reverse Words in a String](../leetcode/medium/151)                | Medium     | ✅            |
 |   7   | [238. Product of Array Except Self](../leetcode/medium/238)             | Medium     |              |
 |   8   | [334. Increasing Triplet Subsequence](../leetcode/medium/334)           | Medium     |              |
 |   9   | [443. String Compression](../leetcode/medium/443)                       | Medium     |              |
@@ -57,47 +57,47 @@ weight: 16
 
 ## Hash Map / Set
 
-|   #   | Problem                                                     | Difficulty |
-| :---: | ----------------------------------------------------------- | ---------- |
-|  20   | [Find the Difference of Two Arrays](../leetcode/easy/20)    | Easy       |
-|  21   | [Unique Number of Occurrences](../leetcode/easy/21)         | Easy       |
-|  22   | [Determine if Two Strings Are Close](../leetcode/medium/22) | Medium     |
-|  23   | [Equal Row and Column Pairs](../leetcode/medium/23)         | Medium     |
+|   #   | Problem                                                             | Difficulty |
+| :---: | ------------------------------------------------------------------- | ---------- |
+|  20   | [2215. Find the Difference of Two Arrays](../leetcode/easy/2215)    | Easy       |
+|  21   | [1207. Unique Number of Occurrences](../leetcode/easy/1207)         | Easy       |
+|  22   | [1657. Determine if Two Strings Are Close](../leetcode/medium/1657) | Medium     |
+|  23   | [2352. Equal Row and Column Pairs](../leetcode/medium/2352)         | Medium     |
 
 ## Stack
 
-|   #   | Problem                                               | Difficulty |
-| :---: | ----------------------------------------------------- | ---------- |
-|  24   | [Removing Stars From a String](../leetcode/medium/24) | Medium     |
-|  25   | [Asteroid Collision](../leetcode/medium/25)           | Medium     |
-|  26   | [394. Decode String](../leetcode/medium/394)          | Medium     |
+|   #   | Problem                                                       | Difficulty |
+| :---: | ------------------------------------------------------------- | ---------- |
+|  24   | [2390. Removing Stars From a String](../leetcode/medium/2390) | Medium     |
+|  25   | [735. Asteroid Collision](../leetcode/medium/735)             | Medium     |
+|  26   | [394. Decode String](../leetcode/medium/394)                  | Medium     |
 
 ## Queue
 
-|   #   | Problem                                       | Difficulty |
-| :---: | --------------------------------------------- | ---------- |
-|  27   | [Number of Recent Calls](../leetcode/easy/27) | Easy       |
-|  28   | [Dota2 Senate](../leetcode/medium/28)         | Medium     |
+|   #   | Problem                                             | Difficulty |
+| :---: | --------------------------------------------------- | ---------- |
+|  27   | [933. Number of Recent Calls](../leetcode/easy/933) | Easy       |
+|  28   | [649. Dota2 Senate](../leetcode/medium/649)         | Medium     |
 
 ## Linked List
 
-|   #   | Problem                                                          | Difficulty |
-| :---: | ---------------------------------------------------------------- | ---------- |
-|  29   | [Delete the Middle Node of a Linked List](../leetcode/medium/29) | Medium     |
-|  30   | [328. Odd Even Linked List](../leetcode/medium/328)              | Medium     |
-|  31   | [206. Reverse Linked List](../leetcode/easy/206)                 | Easy       |
-|  32   | [Maximum Twin Sum of a Linked List](../leetcode/medium/32)       | Medium     |
+|   #   | Problem                                                                  | Difficulty |
+| :---: | ------------------------------------------------------------------------ | ---------- |
+|  29   | [2095. Delete the Middle Node of a Linked List](../leetcode/medium/2095) | Medium     |
+|  30   | [328. Odd Even Linked List](../leetcode/medium/328)                      | Medium     |
+|  31   | [206. Reverse Linked List](../leetcode/easy/206)                         | Easy       |
+|  32   | [2130. Maximum Twin Sum of a Linked List](../leetcode/medium/2130)       | Medium     |
 
 ## Binary Tree - DFS
 
-|   #   | Problem                                                          | Difficulty |
-| :---: | ---------------------------------------------------------------- | ---------- |
-|  33   | [104. Maximum Depth of Binary Tree](../leetcode/easy/104)        | Easy       |
-|  34   | [Leaf-Similar Trees](../leetcode/easy/34)                        | Easy       |
-|  35   | [Count Good Nodes in Binary Tree](../leetcode/medium/35)         | Medium     |
-|  36   | [Path Sum III](../leetcode/medium/36)                            | Medium     |
-|  37   | [Longest ZigZag Path in a Binary Tree](../leetcode/medium/37)    | Medium     |
-|  38   | [Lowest Common Ancestor of a Binary Tree](../leetcode/medium/38) | Medium     |
+|   #   | Problem                                                                | Difficulty |
+| :---: | ---------------------------------------------------------------------- | ---------- |
+|  33   | [104. Maximum Depth of Binary Tree](../leetcode/easy/104)              | Easy       |
+|  34   | [872. Leaf-Similar Trees](../leetcode/easy/872)                        | Easy       |
+|  35   | [1448.Count Good Nodes in Binary Tree](../leetcode/medium/1448)        | Medium     |
+|  36   | [437.Path Sum III](../leetcode/medium/437)                             | Medium     |
+|  37   | [1372. Longest ZigZag Path in a Binary Tree](../leetcode/medium/1372)  | Medium     |
+|  38   | [236. Lowest Common Ancestor of a Binary Tree](../leetcode/medium/236) | Medium     |
 
 ## Binary Tree - BFS
 
@@ -108,26 +108,26 @@ weight: 16
 
 ## Binary Search Tree
 
-|   #   | Problem                                               | Difficulty |
-| :---: | ----------------------------------------------------- | ---------- |
-|  41   | [Search in a Binary Search Tree](../leetcode/easy/41) | Easy       |
-|  42   | [Delete Node in a BST](../leetcode/medium/42)         | Medium     |
+|   #   | Problem                                                     | Difficulty |
+| :---: | ----------------------------------------------------------- | ---------- |
+|  41   | [700. Search in a Binary Search Tree](../leetcode/easy/700) | Easy       |
+|  42   | [450. Delete Node in a BST](../leetcode/medium/450)         | Medium     |
 
 ## Graphs - DFS
 
-|   #   | Problem                                                                         | Difficulty |
-| :---: | ------------------------------------------------------------------------------- | ---------- |
-|  43   | [Keys and Rooms](../leetcode/medium/43)                                         | Medium     |
-|  44   | [Number of Provinces](../leetcode/medium/44)                                    | Medium     |
-|  45   | [Reorder Routes to Make All Paths Lead to the City Zero](../leetcode/medium/45) | Medium     |
-|  46   | [Evaluate Division](../leetcode/medium/46)                                      | Medium     |
+|   #   | Problem                                                                                 | Difficulty |
+| :---: | --------------------------------------------------------------------------------------- | ---------- |
+|  43   | [841. Keys and Rooms](../leetcode/medium/841)                                           | Medium     |
+|  44   | [547. Number of Provinces](../leetcode/medium/547)                                      | Medium     |
+|  45   | [1466. Reorder Routes to Make All Paths Lead to the City Zero](../leetcode/medium/1466) | Medium     |
+|  46   | [399. Evaluate Division](../leetcode/medium/399)                                        | Medium     |
 
 ## Graphs - BFS
 
-|   #   | Problem                                                     | Difficulty |
-| :---: | ----------------------------------------------------------- | ---------- |
-|  47   | [Nearest Exit from Entrance in Maze](../leetcode/medium/47) | Medium     |
-|  48   | [994. Rotting Oranges](../leetcode/medium/994)              | Medium     |
+|   #   | Problem                                                             | Difficulty |
+| :---: | ------------------------------------------------------------------- | ---------- |
+|  47   | [1926. Nearest Exit from Entrance in Maze](../leetcode/medium/1926) | Medium     |
+|  48   | [994. Rotting Oranges](../leetcode/medium/994)                      | Medium     |
 
 ## Heap / Priority Queue
 

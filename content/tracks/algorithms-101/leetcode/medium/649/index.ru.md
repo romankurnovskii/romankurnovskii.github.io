@@ -4,9 +4,10 @@ seoTitle: LeetCode 649. Dota2 Senate | Решение на Python.
 description: LeetCode 649. Разбор задачи Dota2 Senate.
 toc: true
 tags: [Queue, Medium]
-categories: [Algorithms, Medium, LeetCode]
+categories: [Algorithms, Medium, LeetCodeTop75]
 date: 2023-09-01
 lastmod: 2023-09-01
+featuredImage: https://picsum.photos/700/241?grayscale
 weight: 649
 ---
 
