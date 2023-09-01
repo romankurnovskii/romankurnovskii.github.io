@@ -1,7 +1,7 @@
 ---
 title: 443. String Compression
 seoTitle: LeetCode 443. String Compression | Решение на Python.
-description: LeetCode 443. Сжатие строки с подсчетом повторяющихся символов. Разбор задачи с использованием техники двух поинтеров.
+description: LeetCode 443. Сжатие строки с подсчетом повторяющихся символов. Разбор задачи с использованием техники двух указательов.
 toc: true
 tags: [Two Pointers, Strings, Easy]
 categories: [Algorithms, Medium, LeetCodeTop75]

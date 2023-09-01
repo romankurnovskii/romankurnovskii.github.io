@@ -2,10 +2,11 @@
 title: Пополнение Interactive Brokers с Израильского счета
 description: Пополнение Interactive Brokers с Израильского счета банка Дисконт
 toc: true
-tags: [interactivebrokers, invest]
+tags: [interactivebrokers, invest, discount]
 series: []
 categories: []
-date: "2022-10-07"
+date: 2022-10-07
+lastMod: 2023-09-01
 featuredImage: img/featured.ru.jpg
 authors: [roman-kurnovskii]
 ---
