@@ -694,6 +694,26 @@
             "lang": "ru"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/_index",
+            "title": "LeetCode",
+            "description": null,
+            "content": "\n",
+            "tags": [
+                "LeetCode"
+            ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/_index",
+            "title": "Средние",
+            "description": null,
+            "content": "",
+            "tags": [
+                "leetcode"
+            ],
+            "lang": "ru"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/28.en",
             "title": "28. Find the Index of the First Occurrence in a String",
             "description": "LeetCode 28. Find the Index of the First Occurrence in a String",
@@ -827,7 +847,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/328/",
             "title": "328. Odd Even Linked List",
             "description": "LeetCode 328. Разбор задачи на перестановку узлов односвязного списка так, чтобы все узлы с нечетными индексами были перед узлами с четными индексами.",
-            "content": "\nLeetCode задача 328\n\nЗадача\n\nДан односвязный список и задача переставить его узлы таким образом, чтобы все узлы с нечетными индексами шли перед всеми узлами с четными индексами.\n\nПодсказки\n\nИспользовать указатели. Четный указатель будет головным для четных, нечетный для нечетных. Четный и нечетный по мере прохождения можно менять местами.\n\nПодход\n\nАбстрактная идея:\n\nпревратить список head в список из нечетных по счету узлов.\nпревратить список even_head из списка head с содержанием только четных узлов\n\nИнициализация указателей: Инициализируем указатели для нечетных и четных узлов, а также сохраняем начальный четный узел, который будет использован после того, как пройдем весь список.\nПерестановка узлов: Проходим по списку, меняя местами нечетные и четные узлы.\n   Обновляем next для нечетного путем взятия next у четного: odd.next = even.next\n   Перемещаем указатель для нечетного вперед: odd = odd.next\n   1 и 2 шаги проделываем для четного указателя. 💡 четный указатель обновляет ссылки с обновленного четного указателя.\nСоединение списков: После того как все узлы переставлены, последний нечетный узел должен указывать на первый четный узел.\n\nПример для 1,2,3,4,5:\n\nИнициализация указателей:\n\nodd указывает на узел с значением 1. состояние списка: 1-2-3-4-5\neven указывает на узел с значением 2. состояние списка: 2-3-4-5\neven_head указывает на узел с значением 2. состояние списка: 2-3-4-5\n\n    while even and even.next:\n        odd.next = even.next\n        odd = odd.next\n        even.next = odd.next\n        even = even.next\n\nПервый проход:\n\nodd.next будет указывать на узел, следующий за even: 1-2 => 1-3, odd.next = 3.\nОбновляем odd на odd.next. odd = 3, odd.next = 4.\neven.next будет указывать на узел, следующий за новым odd: 2-3 => 2->4, even.next = 4.\nПеремещаем even на even.next\nТекущее состояние списков head: 1-3-4-5, even_head: 2-4-5\n\nВторой проход:\n\nodd.next будет указывать на узел, следующий за even (узел с значением 6)\nОбновляем odd на odd.next.  с значением 6\neven.next будет указывать на узел, следующий за новым odd (узел с значением 5)\nПеремещаем even на узел с значением 5\nТекущее состояние списка: 1-3-5. 2-4\n\nОбъединение четных и нечетных:\n\nПосле окончания всех проходов, установить odd.next на узел, на который указывает even_head (узел с значением 1)\nКонечное состояние списка: \"2-4-6-1-3-5\"\n\nАлгоритм\n\nИнициализируем указатели odd и even на начальные нечетные и четные узлы.\nСохраняем начальный четный узел в переменной even_head.\nПока четные и нечетные узлы не None, продолжаем перестановку.\nВ конце соединяем последний нечетный узел с even_head.\n\nРешение\n\nclass ListNode:\n    def init(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef oddEvenList(head: ListNode) -> ListNode:\n    if not head:\n        return head\n\n    odd = head\n    even = head.next\n    even_head = even\n\n    while even and even.next:\n        odd.next = even.next\n        odd = odd.next\n        even.next = odd.next\n        even = even.next\n\nСоединяем последний нечетный узел с первым четным\n    odd.next = even_head\n\n    return head\n",
+            "content": "\nLeetCode задача 328\n\nЗадача\n\nДан односвязный список и задача переставить его узлы таким образом, чтобы все узлы с нечетными индексами шли перед всеми узлами с четными индексами.\n\nПодсказки\n\nИспользовать указатели. Четный указатель будет головным для четных, нечетный для нечетных. Четный и нечетный по мере прохождения можно менять местами.\n\nПодход\n\nАбстрактная идея:\n\nпревратить список head в список из нечетных по счету узлов.\nпревратить список even_head из списка head с содержанием только четных узлов\n\nИнициализация указателей: Инициализируем указатели для нечетных и четных узлов, а также сохраняем начальный четный узел, который будет использован после того, как пройдем весь список.\nПерестановка узлов: Проходим по списку, меняя местами нечетные и четные узлы.\n   Обновляем next для нечетного путем взятия next у четного: odd.next = even.next\n   Перемещаем указатель для нечетного вперед: odd = odd.next\n   1 и 2 шаги проделываем для четного указателя. 💡 четный указатель обновляет ссылки с обновленного четного указателя.\nСоединение списков: После того как все узлы переставлены, последний нечетный узел должен указывать на первый четный узел.\n\nПример для 1,2,3,4,5:\n\n\n\n\nИнициализация указателей:\n\nУказатель odd указывает на узел с значением 1. состояние списка: 1-2-3-4-5\nУказатель even указывает на узел с значением 2. состояние списка: 2-3-4-5\nУказатель even_head указывает на узел с значением 2. состояние списка: 2-3-4-5\n\n{{}}\n\nПервый проход:\n\nodd.next будет указывать на узел, следующий за even: 1-2 => 1-3, odd.next = 3.\nОбновляем odd на odd.next. odd = 3, odd.next = 4.\neven.next будет указывать на узел, следующий за новым odd: 2-3 => 2->4, even.next = 4.\nПеремещаем even на even.next\nТекущее состояние списков head: 1-3-4-5, even_head: 2-4-5\n\nВторой проход:\n\nodd.next будет указывать на узел, следующий за even (узел с значением 6)\nОбновляем odd на odd.next.  с значением 6\neven.next будет указывать на узел, следующий за новым odd (узел с значением 5)\nПеремещаем even на узел с значением 5\nТекущее состояние списка: 1-3-5. 2-4\n\nОбъединение четных и нечетных:\n\nПосле окончания всех проходов, установить odd.next на узел, на который указывает even_head.\n\nАлгоритм\n\nИнициализируем указатели odd и even на начальные нечетные и четные узлы.\nСохраняем начальный четный узел в переменной even_head.\nПока четные и нечетные узлы не None, продолжаем перестановку.\nВ конце соединяем последний нечетный узел с even_head.\n\nРешение\n\nclass ListNode:\n    def init(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef oddEvenList(head: ListNode) -> ListNode:\n    if not head:\n        return head\n\n    odd = head\n    even = head.next\n    even_head = even\n\n    while even and even.next:\n        odd.next = even.next\n        odd = odd.next\n        even.next = odd.next\n        even = even.next\n\nСоединяем последний нечетный узел с первым четным\n    odd.next = even_head\n\n    return head\n",
             "tags": [
                 "LinkedList",
                 "Medium"
@@ -1040,19 +1060,7 @@
             "lang": "ru"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 8/",
-            "content": "\n\n",
-            "tags": [],
-            "lang": "ru"
-        },
-        {
             "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 7/",
-            "content": "\n\n",
-            "tags": [],
-            "lang": "ru"
-        },
-        {
-            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 6/",
             "content": "\n\n",
             "tags": [],
             "lang": "ru"
@@ -1070,15 +1078,19 @@
             "lang": "ru"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 2/",
+            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy/",
             "content": "\n\n",
             "tags": [],
             "lang": "ru"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy/",
-            "content": "\n\n",
-            "tags": [],
+            "uri": "/tracks/algorithms-101/leetcode/hard/_index",
+            "title": "Тяжелые",
+            "description": null,
+            "content": "",
+            "tags": [
+                "leetcode"
+            ],
             "lang": "ru"
         },
         {
@@ -1102,6 +1114,16 @@
                 "Array",
                 "Binary Search",
                 "Hard"
+            ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/_index",
+            "title": "Легкие",
+            "description": null,
+            "content": "",
+            "tags": [
+                "leetcode"
             ],
             "lang": "ru"
         },
@@ -2279,7 +2301,7 @@
             "uri": "/posts/vps-docker-subdomains-setup/project/projects/3/",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 0
+                    "timeTakenInMilliseconds": 1
                 },
                 "result": "Hello World!",
                 "ranges": [
@@ -2693,7 +2715,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 2
+                    "timeTakenInMilliseconds": 1
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -3923,6 +3945,30 @@
             "lang": "en"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/2841/",
+            "title": "2841. Maximum Sum of Almost Unique Subarray",
+            "description": "2841. Maximum Sum of Almost Unique Subarray",
+            "content": "\nLeetCode Problem\n\nProblem Statement\n\nYou are given an integer array nums and two positive integers m and k.\n\nThe task is to return the maximum sum out of all almost unique subarrays of length k of nums. If no such subarray exists, return 0.\n\nA subarray is almost unique if it contains at least m pairwise distinct elements.\n\nNaive Solution\n\nA naive solution would be to generate all the possible subarrays of length k and check each one to see if it is almost unique and what its sum is. This would involve nested loops and would not be efficient.\n\nHints & Tips\n\nUse sliding window technique to find subarrays of length k.\nKeep track of unique elements using a set.\n\nApproach\n\nThe solution adopts a sliding window approach to go through the given array nums, checking each subarray of size k for its \"almost uniqueness\" and sum.\n\nSteps\n\nDefine a helper function, is_unique, which will take a subarray and return whether it contains at least m distinct elements or not.\n\nInitialize a variable _max to keep track of the maximum sum among the almost unique subarrays.\n\nLoop through nums using the sliding window technique:\n    Use the is_unique function to check if the current subarray is almost unique.\n    Update _max with the maximum sum found so far.\n\nReturn _max if it is not 0; otherwise, return 0.\n\nSolution\n\ndef maxSum(nums: List[int], m: int, k: int) -> int:\n    n = len(nums)\n\n    def is_unique(arr, start, end, m):\n        distinct_elements = set(arr[start:end])\n        return len(distinct_elements) >= m\n\n    _max = 0\n    for i in range(n - k + 1):\n        if is_unique(nums, i, i + k, m):\n            _max = max(_max, sum(nums[i:i + k]))\n\n    return _max if _max != 0 else 0\n",
+            "tags": [
+                "Algorithms",
+                "Medium",
+                "LeetCode"
+            ],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/2840/",
+            "title": "2840. Check if Strings Can be Made Equal With Operations II",
+            "description": "2840. Check if Strings Can be Made Equal With Operations II",
+            "content": "\nLeetCode Problem 2840\n\nProblem Statement\n\nYou are given two strings s1 and s2, both of length n, consisting of lowercase English letters. You can apply certain operations to make them equal. The question is, is it possible?\n\nNaive Solution\n\nA naive approach would be to try all possible swap operations and compare the two strings at each step, which would be highly inefficient.\n\nHints & Tips\n\nObserve that swapping can only occur at indices i and j where j - i is even.\nSeparate the string into two different sequences, one containing characters at even indices and the other at odd indices.\nCheck the frequency of characters in both sequences.\n\nApproach\n\nThe efficient approach involves separating characters at even and odd positions into two different sequences for each string and then comparing the frequency of characters in these sequences.\n\nSteps\n\nInitialize two empty lists for s1 and s2, each to store characters at even and odd positions.\nPopulate these lists with characters from s1 and s2.\nSort these lists.\nCompare the sorted lists for equality.\n\nSolution\n\nfrom collections import Counter\n\ndef checkStrings(s1: str, s2: str) -> bool:\n        even_s1 = sorted(s1[::2])\n        odd_s1 = sorted(s1[1::2])\n\n        even_s2 = sorted(s2[::2])\n        odd_s2 = sorted(s2[1::2])\n\n        return even_s1 == even_s2 and odd_s1 == odd_s2\n",
+            "tags": [
+                "Algorithms",
+                "Medium",
+                "LeetCode"
+            ],
+            "lang": "en"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/238/",
             "title": "238. Product of Array Except Self",
             "description": "238. Product of Array Except Self",
@@ -4296,6 +4342,18 @@
             "description": "345. Reverse Vowels of a String",
             "content": "\nLeetCode problem\n\nProblem Statement\n\nGiven a string s, the task is to reverse only all the vowels in the string and return it. The vowels are 'a', 'e', 'i', 'o', and 'u', and they can appear in both lower and upper cases, more than once.\n\nNaive Solution\n\nThe naive approach to solve this problem would be to:\n\nInitialize an empty string result.\nTraverse the given string s from the start to the end.\nIf the current character is a vowel, find the next vowel in the string starting from the end, add it to result, and remove it from the string.\nIf the current character is not a vowel, simply add it to result.\n\nHints & Tips\n\nBut this solution is inefficient as it requires traversing the string multiple times and manipulating it. A more efficient solution would use the two-pointer technique.\n\nApproach\n\nThe efficient approach to solve this problem would be to:\n\nInitialize two pointers, one at the start and the other at the end of the string.\nWhile the two pointers have not met, check if the characters at the two pointers are vowels.\nIf they are, swap them. If not, move the pointer(s).\n\nSteps\n\nConvert the string to a list of characters because Python strings are immutable.\nInitialize two pointers: left at 0 and right at the end of the string.\nWhile left  str:\n        vowels = 'aeiouAEIOU'\n        s = list(s)\n        left, right = 0, len(s) - 1\n\n        while left  str:\n        vowels = ['a', 'A', 'e','E', 'i','I', 'o','O', 'u','U']\n\n        vowels_order = []\n        for i, x in enumerate(s):\n            if x in vowels:\n                vowels_order.append(x)\n\n        res = ''\n        for x in s:\n            if x in vowels:\n                res += vowels_order.pop()\n            else:\n                res += x\n\n        return res\n",
             "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/2839/",
+            "title": "2839. Check if Strings Can be Made Equal With Operations I",
+            "description": "2839. Check if Strings Can be Made Equal With Operations I",
+            "content": "\nLeetCode Problem\n\nProblem Statement\n\nYou are given two strings s1 and s2, both of length 4, consisting of lowercase English letters. The objective is to find out if it's possible to make the two strings equal by swapping certain pairs of characters.\n\nNaive Solution\n\nA naive approach would be to try out all possible swap combinations. However, this can be very inefficient, especially when the strings have a large number of characters.\n\nHints & Tips\n\nObserve that the swapping condition is quite specific: j - i = 2.\nThe strings should be permutations of each other.\n\nApproach\n\nThe efficient solution for this problem involves sorting the characters at even and odd positions separately for both strings and then comparing them.\n\nSteps\n\nSort the characters at even indices for s1 and s2.\nSort the characters at odd indices for s1 and s2.\nCompare the sorted characters at even indices for both strings and the sorted characters at odd indices for both strings.\n\nSolution\n\nclass Solution:\n    def canBeEqual(self, s1: str, s2: str) -> bool:\n        even_s1 = sorted(s1[::2])\n        odd_s1 = sorted(s1[1::2])\n\n        even_s2 = sorted(s2[::2])\n        odd_s2 = sorted(s2[1::2])\n\n        return even_s1 == even_s2 and odd_s1 == odd_s2\n",
+            "tags": [
+                "Algorithms",
+                "Easy",
+                "LeetCode"
+            ],
             "lang": "en"
         },
         {
