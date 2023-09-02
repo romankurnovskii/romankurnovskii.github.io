@@ -5,4 +5,6 @@
 Задача Дан массив неотрицательных целых чисел, представляющих собой карту высот, где ширина каждой стойки равна 1. Вычислите, сколько воды может удерживать этот массив после дождя.
 Подсказки Мы можем решить эту задачу, двигаясь от краев массива к его центру, отслеживая текущую максимальную высоту с обеих сторон.
 Подход Простой и понятный способ решения этой задачи - пройтись по массиву и для каждого элемента вычислить, сколько воды он может удержать.
-Алгоритм Инициализируем переменную для хранения общего объема воды, который может быть удержан.</description></item></channel></rss>
+Алгоритм Инициализируем переменную для хранения общего объема воды, который может быть удержан.</description></item><item><title>Count K-Subsequences of a String with Maximum Beauty</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/2842/</link><pubDate>Thu, 24 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/2842/</guid><description>LeetCode problem
+Problem Statement You are given a string s and an integer k. A k-subsequence is a subsequence of s, having length k, and all its characters are unique. The beauty of a k-subsequence is the sum of f(c) for every character c in the k-subsequence. Here, f(c) denotes the number of times the character c occurs in s.
+The task is to find the number of k-subsequences whose beauty is maximum among all k-subsequences. Return the answer modulo $(10^9 + 7)$.</description></item></channel></rss>
