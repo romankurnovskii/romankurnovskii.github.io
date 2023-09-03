@@ -4,7 +4,7 @@ seoTitle: 2842. LeetCode Count K-Subsequences of a String with Maximum Beauty | 
 description: Count K-Subsequences of a String with Maximum Beauty
 toc: true
 tags: [Algorithms, Hard, Combinatorics, "LeetCode Contest 112"]
-categories: [Algorithms, Hard, Combinatorics, "LeetCode Contest 112"]
+categories: [Algorithms, Hard, Combinatorics, LeetCode]
 date: 2023-09-02
 lastmod: 2023-09-02
 featuredImage: https://picsum.photos/700/241?grayscale

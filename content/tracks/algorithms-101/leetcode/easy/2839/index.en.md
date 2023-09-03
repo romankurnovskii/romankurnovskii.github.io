@@ -3,7 +3,8 @@ title: 2839. Check if Strings Can be Made Equal With Operations I
 seoTitle: LeetCode 2839. Check if Strings Can be Made Equal With Operations I | Python Solution and Explanation
 description: 2839. Check if Strings Can be Made Equal With Operations I
 toc: true
-tags: [Algorithms, Easy, LeetCode]
+tags: [Algorithms, Easy, LeetCode, "LeetCode Contest 112"]
+categories: [Algorithms, Easy, LeetCode]
 date: 2023-09-02
 lastmod: 2023-09-02
 featuredImage: https://picsum.photos/700/241?grayscale
