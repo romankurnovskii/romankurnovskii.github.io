@@ -1060,12 +1060,6 @@
             "lang": "ru"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 7/",
-            "content": "\n\n",
-            "tags": [],
-            "lang": "ru"
-        },
-        {
             "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 4/",
             "content": "\n\n",
             "tags": [],
@@ -2301,7 +2295,7 @@
             "uri": "/posts/vps-docker-subdomains-setup/project/projects/3/",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 1
+                    "timeTakenInMilliseconds": 2
                 },
                 "result": "Hello World!",
                 "ranges": [
@@ -3945,6 +3939,18 @@
             "lang": "en"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/2844/",
+            "title": "2844. Minimum Operations to Make a Special Number",
+            "description": "2844. Minimum Operations to Make a Special Number",
+            "content": "\nLeetCode problem 2844\n\nProblem Statement\n\nYou are given a 0-indexed string num representing a non-negative integer. In one operation, you can pick any digit of num and delete it. Note that if you delete all the digits of num, num becomes 0. Return the minimum number of operations required to make num special. An integer x is considered special if it is divisible by 25.\n\nNaive Solution\n\nA naive approach to solving this problem might involve recursively generating all possible substrings of the input string, checking each one for divisibility by 25. While this would yield the correct result, the time complexity would be exponential, making it unfeasible for larger inputs.\n\nHints & Tips\n\nThe main insight is that to be divisible by 25, the last two digits of the number must be one of the following: 00, 25, 50, 75. Therefore, it's crucial to consider these patterns when trying to delete the minimum number of digits.\n\nApproach\n\nThe core idea is to check how many minimum deletions are required for each of the four special last two-digit patterns (00, 25, 50, 75).\n\nWe can do this by iterating through the string in reverse order and checking how many digits do not match with each pattern, keeping track of the minimum number of deletions for each.\n\nSteps\n\nDefine a helper function fn(pattern) which returns the minimum number of deletions required to make num end with pattern.\nIn the helper function, iterate over the number in reverse, checking the number of digits to be deleted to make num end with the current pattern.\nReturn the minimum of all four patterns.\n\nSolution\n\nclass Solution:\n    def minimumOperations(self, num: str) -> int:\n\n        def fn(pattern):\n            \"\"\"Return minimum number of deletions required to make num end with pattern.\"\"\"\n            k = 1\n            ans = 0\n            for ch in reversed(num):\n                if pattern[k] == ch:\n                    k -= 1\n                else:\n                    ans += 1\n                if k == -1:\n                    return ans\n            return float(\"inf\")  # inf denotes impossibility\n\n        ans = min(fn(x) for x in (\"00\", \"25\", \"50\", \"75\"))\n        return ans if ans < float(\"inf\") else len(num) - int(\"0\" in num)\n",
+            "tags": [
+                "Algorithms",
+                "Medium",
+                "LeetCode"
+            ],
+            "lang": "en"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/2841/",
             "title": "2841. Maximum Sum of Almost Unique Subarray",
             "description": "2841. Maximum Sum of Almost Unique Subarray",
@@ -3952,7 +3958,8 @@
             "tags": [
                 "Algorithms",
                 "Medium",
-                "LeetCode"
+                "LeetCode",
+                "LeetCode Contest 112"
             ],
             "lang": "en"
         },
@@ -3964,7 +3971,8 @@
             "tags": [
                 "Algorithms",
                 "Medium",
-                "LeetCode"
+                "LeetCode",
+                "LeetCode Contest 112"
             ],
             "lang": "en"
         },
@@ -4352,7 +4360,8 @@
             "tags": [
                 "Algorithms",
                 "Easy",
-                "LeetCode"
+                "LeetCode",
+                "LeetCode Contest 112"
             ],
             "lang": "en"
         },
