@@ -11,7 +11,7 @@ featuredImage: https://picsum.photos/700/241?grayscale
 weight: 2841
 ---
 
-[LeetCode Problem](https://leetcode.com/problems/maximum-sum-of-almost-unique-subarray/)
+[LeetCode Problem 2841](https://leetcode.com/problems/maximum-sum-of-almost-unique-subarray/)
 
 ## Problem Statement
 
