@@ -7,7 +7,7 @@ categories: [LeetCode, LeetCodeTop75]
 series:
 date: 2023-08-01
 featuredImage:
-toc: false
+toc: true
 weight: 16
 ---
 
@@ -50,10 +50,10 @@ weight: 16
 
 ## Prefix Sum
 
-|   #   | Problem                                                  | Difficulty |
-| :---: | -------------------------------------------------------- | ---------- |
-|  18   | [1732. Find the Highest Altitude](../leetcode/easy/1723) | Easy       |
-|  19   | [724. Find Pivot Index](../leetcode/easy/724)            | Easy       |
+|   #   | Problem                                                  | Difficulty | Slides/Video |
+| :---: | -------------------------------------------------------- | ---------- | ------------ |
+|  18   | [1732. Find the Highest Altitude](../leetcode/easy/1723) | Easy       | ✅            |
+|  19   | [724. Find Pivot Index](../leetcode/easy/724)            | Easy       |              |
 
 ## Hash Map / Set
 
@@ -83,9 +83,10 @@ weight: 16
 
 |   #   | Problem                                                                  | Difficulty |
 | :---: | ------------------------------------------------------------------------ | ---------- |
+|  31   | [141. Linked List Cycle](../leetcode/easy/141)                           | Easy       |
+|  31   | [206. Reverse Linked List](../leetcode/easy/206)                         | Easy       |
 |  29   | [2095. Delete the Middle Node of a Linked List](../leetcode/medium/2095) | Medium     |
 |  30   | [328. Odd Even Linked List](../leetcode/medium/328)                      | Medium     |
-|  31   | [206. Reverse Linked List](../leetcode/easy/206)                         | Easy       |
 |  32   | [2130. Maximum Twin Sum of a Linked List](../leetcode/medium/2130)       | Medium     |
 
 ## Binary Tree - DFS
