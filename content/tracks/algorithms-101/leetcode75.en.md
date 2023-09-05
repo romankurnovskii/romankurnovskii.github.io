@@ -95,8 +95,8 @@ weight: 16
 | :---: | ---------------------------------------------------------------------- | ---------- |
 |  33   | [104. Maximum Depth of Binary Tree](../leetcode/easy/104)              | Easy       |
 |  34   | [872. Leaf-Similar Trees](../leetcode/easy/872)                        | Easy       |
-|  35   | [1448.Count Good Nodes in Binary Tree](../leetcode/medium/1448)        | Medium     |
-|  36   | [437.Path Sum III](../leetcode/medium/437)                             | Medium     |
+|  35   | [1448. Count Good Nodes in Binary Tree](../leetcode/medium/1448)       | Medium     |
+|  36   | [437. Path Sum III](../leetcode/medium/437)                            | Medium     |
 |  37   | [1372. Longest ZigZag Path in a Binary Tree](../leetcode/medium/1372)  | Medium     |
 |  38   | [236. Lowest Common Ancestor of a Binary Tree](../leetcode/medium/236) | Medium     |
 
