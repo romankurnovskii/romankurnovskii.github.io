@@ -3,7 +3,7 @@ title: 2352. Equal Row and Column Pairs
 seoTitle: LeetCode 2352. Equal Row and Column Pairs | Python solution and explanation
 description: 2352. Equal Row and Column Pairs
 toc: true
-tags: [Algorithms, Medium]
+tags: [LeetCode,Algorithms, Medium]
 categories: [Algorithms, Medium, LeetCodeTop75]
 date: 2023-08-24
 lastmod: 2023-08-24
@@ -11,7 +11,7 @@ featuredImage: https://picsum.photos/700/241?grayscale
 weight: 2352
 ---
 
-[LeetCode problem](<https://leetcode.com/problems/equal-row-and-column-pairs/>)
+[LeetCode problem 2352](<https://leetcode.com/problems/equal-row-and-column-pairs/>)
 
 ## Problem Statement
 

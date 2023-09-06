@@ -6,7 +6,7 @@ tags: []
 categories: [LeetCode, LeetCodeTop75]
 series:
 date: 2023-08-01
-featuredImage:
+featuredImage: https://picsum.photos/700/241?grayscale
 toc: true
 weight: 16
 ---

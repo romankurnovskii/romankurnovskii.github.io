@@ -47,7 +47,7 @@ pandoc --pdf-engine xelatex \
 -o book.pdf
 ```
 
-**Convert video -> audio with ffmpeg in current directory**
+**Convert all video to audio with ffmpeg in current directory**
 
 ```sh
 #!/bin/bash
@@ -78,4 +78,34 @@ do
 done
 
 echo "All conversions completed."
+```
+
+**Remove audio from video with ffmpeg**
+
+```sh
+ffmpeg -i input.mp4 -c copy -an output.mp4
+```
+
+- `-i input.mp4` specifies the input video file.
+- `-c copy` tells FFmpeg to copy the video stream without re-encoding.
+- `-an` removes the audio stream from the output file.
+- `output.mp4` is the name you choose for the output video file.
+
+**Reduce video size with ffmpeg**
+
+```sh
+ffmpeg -i input.mp4 -c:v libx264 -crf 23 -preset medium -c:a aac -b:a 128k output.mp4
+```
+
+- `-i input.mp4` specifies the input video file.
+- `-c:v libx264` sets the video codec to H.264, which is widely supported and provides good compression.
+- `-crf 23` controls the video quality. Lower values result in higher quality but larger file sizes. A value of around 23 is a good balance between quality and size.
+- `-preset medium` sets the encoding speed and compression efficiency. The "medium" preset provides a good compromise.
+- `-c:a aac -b:a 128k` sets the audio codec to AAC with a bitrate of 128k. This ensures decent audio quality while keeping the file size reasonable.
+- `output.mp4` is the name you choose for the output video file.
+
+**Create a new video from all the videos sorted by name in a folder using with ffmpeg**
+
+```sh
+ffmpeg -f concat -safe 0 -i <(for f in $(ls -v /path/to/folder/*.mp4); do echo "file '$PWD/$f'"; done) -c copy output.mp4
 ```

@@ -321,6 +321,97 @@ Pair: (2, 7)
 
 In both examples, the first pass through the data gathered information that was then used in the second pass to solve the problem.
 
+## Prefix Sums
+
+<mark>**Usage:** The prefix sums algorithm is a powerful technique that can simplify problems that require frequent computation of sums over subarrays or subtrees. As with all algorithms, practice is key. Try to identify problems where this algorithm can be applied, and it'll soon become a natural tool in your algorithmic toolkit.</mark>
+
+At its core, the idea behind the prefix sums algorithm is to preprocess an array of numbers such that you can efficiently answer queries about the sum of elements in a given subarray.
+
+Imagine you're given an array of numbers, and you want to know the sum of numbers between the indices
+`i` and `j` (inclusive). If you sum up the numbers every time you receive such a query, your solution will be slow. This is where prefix sums come into play.
+
+**Abstract Example**
+
+Consider an array `arr`:
+
+```python
+arr = [a, b, c, d, e]
+```
+
+The prefix sum array `prefix_arr`, for the above array would be:
+
+```python
+prefix_arr = [a, a+b, a+b+c, a+b+c+d, a+b+c+d+e]
+```
+
+```python
+arr = [1, 3, 4, 8, 6, 1, 4, 2]
+prefix_arr = [1, 4, 8, 16, 22, 23, 27, 29]
+```
+
+Now, to find the sum between indices `i` and `j` (inclusive) in array `arr`, you can simply take:
+
+```python
+prefix_arr[j] - prefix_arr[i-1]
+
+
+```
+
+(Note: If `i=0`, then it's just `prefix_arr[j]`)
+
+**Example: Prefix Sums on an Array**
+
+```python
+def prefix_sums(arr):
+    n = len(arr)
+    prefix_arr = [0] * (n)
+    prefix_arr[0] = arr[0]
+    for i in range(1, n):
+        prefix_arr[i] = prefix_arr[i-1] + arr[i]
+    return prefix_arr
+
+# Using the prefix sum array
+def sum_from_i_to_j(prefix_arr, i, j):
+    if i == 0:
+        return prefix_arr[j]
+    return prefix_arr[j] - prefix_arr[i-1]
+
+arr = [2, 3, 7, 1, 5]
+prefix_arr = prefix_sums(arr)
+print(sum_from_i_to_j(prefix_arr, 1, 3))  # Output: 11
+```
+
+**Python Example: Prefix Sums on a TreeNode**
+
+Firstly, let's define a binary tree:
+
+```python
+class TreeNode:
+    def __init__(self, value=0, left=None, right=None):
+        self.value = value
+        self.left = left
+        self.right = right
+```
+
+Now, we'll modify the tree such that each node will contain the sum of all nodes in its left subtree plus its own value:
+
+```python
+def prefix_sum_tree(node):
+    if not node:
+        return 0
+    left_sum = prefix_sum_tree(node.left)
+    # Store prefix sum in the node's value
+    node.value += left_sum
+    prefix_sum_tree(node.right)
+    return node.value + (node.right.value if node.right else 0)
+
+# Example
+root = TreeNode(5, TreeNode(3, TreeNode(2), TreeNode(4)), TreeNode(8))
+prefix_sum_tree(root)
+```
+
+For the above example, the left child of the root (i.e., the node with value 3) will be updated to 8 (2 + 3 + 4), since 2 and 4 are the left children's values.
+
 ## Dynamic programming (DP)
 
 ## Breadth First Search (BFS)

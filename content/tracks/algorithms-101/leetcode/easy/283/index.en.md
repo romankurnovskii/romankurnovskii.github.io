@@ -3,10 +3,10 @@ title: 283. Move Zeroes
 seoTitle: LeetCode 283. Move Zeroes | Python solution and explanation
 description: 283. Move Zeroes
 toc: true
-tags: []
+tags: [LeetCode]
 categories: [Algorithms, Easy, LeetCodeTop75]
 date: 2023-08-05
-lastmod: 2023-08-05
+lastmod: 2023-08-08
 featuredImage: https://picsum.photos/700/241?grayscale
 weight: 283
 ---
@@ -43,12 +43,12 @@ In the second pass, it simply assigns zero to all positions from `i` to the end 
 class Solution:
     def moveZeroes(self, nums: List[int]) -> None:
         i = 0
-        for x in nums: # Set the non-zero elements
+        for x in nums:              # Set the non-zero elements
             if x != 0:
                 nums[i] = x
                 i += 1
 
-        while i <= len(nums) - 1: # Set the rest number of zeros
+        while i <= len(nums) - 1:   # Set the rest number of zeros
             nums[i] = 0
             i += 1
 ```

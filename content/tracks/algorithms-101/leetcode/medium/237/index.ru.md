@@ -39,8 +39,6 @@ class ListNode:
         self.next = next
 
 def deleteNode(node):
-    # Перезаписываем значение узла значением следующего узла
-    node.val = node.next.val
-    # Удаляем следующий узел
-    node.next = node.next.next
+    node.val = node.next.val    # Перезаписываем значение узла значением следующего узла
+    node.next = node.next.next  # Удаляем следующий узел
 ```

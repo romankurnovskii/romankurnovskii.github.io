@@ -63,8 +63,9 @@ Since it is a recursion, it starts to "come back". And here we can start another
 What happens here?
 
 Lets call it as runner.
+
 1. Runner is in the head
 2. Found a left node (root.left)
     1. Within this node the first thing in this recursion fucntion it again tries to find the most left.
     2. Once it finds the most left (this means that current `root.left` is None), runner goes to the next line of **current** function.
-    3. Lets say next line is to find the most right. 
+    3. Lets say next line is to find the most right.

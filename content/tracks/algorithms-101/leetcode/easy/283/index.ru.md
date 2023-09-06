@@ -3,10 +3,10 @@ title: 283. Move Zeroes
 seoTitle: LeetCode 283. Move Zeroes | Решение на Python.
 description: LeetCode 283. Переместите все 0 в конец массива, сохраняя относительный порядок ненулевых элементов. Разбор задачи.
 toc: true
-tags: [Two Pointers, Easy]
+tags: [LeetCode, Two Pointers, Easy]
 categories: [Algorithms, Easy, LeetCodeTop75]
 date: 2023-08-26
-lastmod: 2023-08-26
+lastmod: 2023-09-08
 featuredImage: https://picsum.photos/700/241?grayscale
 weight: 283
 ---
@@ -39,13 +39,10 @@ weight: 283
 
 ```python
 def moveZeroes(nums: List[int]) -> None:
-    # Указатель для ненулевых элементов
-    pos = 0
-    
-    # Проходим по массиву
+    pos = 0                                          # Указатель для ненулевых элементов
+
     for i in range(len(nums)):
-        # Если текущий элемент не 0, меняем его местами с элементом на позиции pos
-        if nums[i] != 0:
-            nums[i], nums[pos] = nums[pos], nums[i]
+        if nums[i] != 0:                             # Если текущий элемент не 0, 
+            nums[i], nums[pos] = nums[pos], nums[i]  # меняем его местами с элементом на позиции pos
             pos += 1
 ```

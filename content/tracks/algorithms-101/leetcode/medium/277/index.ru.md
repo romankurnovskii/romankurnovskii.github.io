@@ -3,10 +3,10 @@ title: 277. Find the Celebrity
 seoTitle: LeetCode 277. Find the Celebrity | Решение на Python
 description: LeetCode 277. Найти знаменитость среди группы людей.
 toc: true
-tags: [Graph, Medium]
+tags: [LeetCode, Graph, Medium]
 categories: [Algorithms, Medium, LeetCode]
 date: 2023-08-28
-lastmod: 2023-08-28
+lastmod: 2023-09-08
 featuredImage: https://picsum.photos/700/241?grayscale
 weight: 277
 ---
@@ -34,20 +34,14 @@ weight: 277
 ## Решение
 
 ```python
-# The knows API is already defined for you.
-# return a bool, whether a knows b
-# def knows(a: int, b: int) -> bool:
-
 class Solution:
     def findCelebrity(self, n: int) -> int:
-        # Step 1: Identify a candidate for celebrity
-        candidate = 0
+        candidate = 0           #1
         for i in range(1, n):
             if knows(candidate, i):
                 candidate = i
 
-        # Step 2: Validate the candidate
-        for i in range(n):
+        for i in range(n):      #3
             if i != candidate and (knows(candidate, i) or not knows(i, candidate)):
                 return -1
 

@@ -1,86 +1,89 @@
 ---
 title: 725. Split Linked List in Parts
-seoTitle: LeetCode 725. Split Linked List in Parts | Решение на Python.
-description: LeetCode 725. Разделение связного списка на k частей. Разбор задачи.
+seoTitle: LeetCode 725. Split Linked List in Parts | Python solution and explanation
+description: Detailed explanation for solving the LeetCode 725. Split Linked List in Parts problem.
 toc: true
-tags: [Linked List, Medium]
-categories: [Algorithms, Medium, LeetCodeTop75]
+tags: [Algorithms, Medium, LeetCode]
+categories: [Algorithms, Medium, LeetCode]
 date: 2023-09-06
-lastmod: 2023-09-06
+lastMod: 2023-09-07
 featuredImage: https://picsum.photos/700/241?grayscale
 weight: 725
-draft: true
 ---
 
-[LeetCode задача 725](<https://leetcode.com/problems/split-linked-list-in-parts/>)
+[LeetCode problem 725](<https://leetcode.com/problems/split-linked-list-in-parts/>)
 
-## Задача
+## Problem Statement
 
-Дана голова односвязного списка и целое число k. Разделите связный список на k последовательных частей.
+The problem asks you to divide a given singly linked list into `k` different parts such that the sizes of these parts are as nearly equal as possible. The parts should appear in the same order as in the original list, and earlier parts should not be smaller than later parts.
 
-Длина каждой части должна быть максимально равномерной: ни две части не должны отличаться по размеру более чем на одну единицу. Это может привести к тому, что некоторые части будут пустыми (null).
+## Naive Solution
 
-Части должны идти в том порядке, в котором они встречаются в исходном списке, и ранее встречающиеся части всегда должны иметь размер больше или равный позднее встречающимся.
+A naive approach would involve counting the length of the list and then traversing the list multiple times to create each part. While this would solve the problem, it isn't the most efficient way.
 
-Верните массив из k частей.
+## Hints & Tips
 
-## Подсказки
+You can use pointers and mathematical calculations to accomplish the task in a more efficient manner.
 
-Можно решить задачу, пройдя по связному списку дважды: первый раз, чтобы определить его длину, и второй раз, чтобы разделить его.
+## Approach
 
-## Подход
+To solve this problem, you first need to calculate the length of the original list. Once you have the length, you can divide it by `k` to find the "base size" of each part. The remainder of the division will help you distribute the "extra" nodes among the first few parts.
 
-В первую очередь, мы должны определить длину исходного связного списка. Это даст нам возможность вычислить, как много узлов должно быть в каждой из k частей.
+## Steps
 
-После этого, мы можем пройти по списку второй раз и разделить его на части, следуя ранее вычисленным размерам. Основная идея заключается в том, чтобы разбить список на части, каждая из которых имеет размер, не отличающийся от других более чем на 1.
+1. Count the total number of nodes in the list. Call it `n`.
+2. Calculate the base length of each part as `batch_len = n // k` and find the number of "extra nodes" as `extra_nodes = n % k`.
+3. Initialize an array `arr` to store the head node of each part.
+4. Loop through `k` times to create `k` parts. Use the base length and distribute the extra nodes as you go.
 
-## Алгоритм
+### Debugging Step-by-Step
 
-We need to resolve three blocks:
-- length of each part of linked list
-- 
+1. Start with `current = head`.
+2. Loop from 1 to `k`:
+    1. Store `current` as the head of the new part.
+    2. Traverse the list for `batch_len` nodes.
+    3. If `extra_nodes > 0`, traverse one more node and decrement `extra_nodes`.
+    4. Cut the list to start a new part and store the old part in `arr`.
 
-1. Пройдите по связному списку, чтобы определить его длину `n`.
-2. Вычислите базовый размер каждой части (`n // k`) и количество частей, которые будут на один элемент больше (`n % k`).
-3. Пройдите по связному списку второй раз, создавая новые части и добавляя их в результирующий массив.
-
-## Решение
+## Solution
 
 ```python
-# Определение для односвязного списка.
+# Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
-
-def splitListToParts(head, k):
-    # get linked list length
-    n = 0
-    current = head
-    while current:
-        n += 1
-        current = current.next
-    
-    # get batch length
-    batch_len = n // k
-    extra_nodes = n % k
-
-    # generate k bathces
-    arr = []
-    for _ in range(k):
-        batch = cur  # define head of current batch
-
-        extra_one = 1 if extra_nodes > 0 else 0
-        for i in range(batch_len + extra_one -1):
-            if current:
-                current = current.next
+class Solution:
+    def splitListToParts(self, head: Optional[ListNode], k: int) -> List[Optional[ListNode]]:
+        # get linked list length
+        n = 0
+        current = head
+        while current:
+            n += 1
+            current = current.next
         
-        if current:  # switch, cut current batch, get head of next batch
-            next_batch = current.next
-            current.next = None
-            current = next_batch
-        
-        arr.append(batch)
+        # get batch length
+        batch_len = n // k
+        extra_nodes = n % k
 
-    return arr
+        # generate k batches
+        arr = []
+        current = head
+        for _ in range(k):
+            batch = current  # define head of current batch
+
+            extra_one = 1 if extra_nodes > 0 else 0
+            for i in range(batch_len + extra_one -1):
+                if current:
+                    current = current.next
+            
+            if current:  # switch, cut current batch, get head of next batch
+                next_batch = current.next
+                current.next = None  # cut current batch from next
+                current = next_batch
+            
+            arr.append(batch)
+            extra_nodes -= 1
+
+        return arr
 ```

@@ -3,7 +3,7 @@ title: 2352. Equal Row and Column Pairs
 seoTitle: LeetCode 2352. Equal Row and Column Pairs | Решение на Python.
 description: LeetCode 2352. Подсчет пар равных строк и столбцов матрицы. Разбор задачи.
 toc: true
-tags: [Matrix, Medium]
+tags: [LeetCode,Matrix, Medium]
 categories: [Algorithms, Medium, LeetCodeTop75]
 date: 2023-08-26
 lastmod: 2023-08-26
@@ -11,7 +11,7 @@ featuredImage: https://picsum.photos/700/241?grayscale
 weight: 2352
 ---
 
-[LeetCode задача](<https://leetcode.com/problems/equal-row-and-column-pairs/>)
+[LeetCode задача 2352](<https://leetcode.com/problems/equal-row-and-column-pairs/>)
 
 ## Задача
 

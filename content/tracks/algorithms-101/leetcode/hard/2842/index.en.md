@@ -1,6 +1,6 @@
 ---
 title: 2842. Count K-Subsequences of a String with Maximum Beauty
-seoTitle: 2842. LeetCode Count K-Subsequences of a String with Maximum Beauty | Python solution and explanation
+seoTitle: LeetCode 2842. Count K-Subsequences of a String with Maximum Beauty | Python solution and explanation
 description: Count K-Subsequences of a String with Maximum Beauty
 toc: true
 tags: [Algorithms, Hard, Combinatorics, "LeetCode Contest 112"]

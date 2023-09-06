@@ -1,71 +1,70 @@
 main:
-    - name: Заметки
-      identifier: notes
-      url: /posts/
-      weight: 2
-    - name: Приложения
-      url: apps/
-      weight: 5
-    - name: Публикации
-      url: /p/publications
-      weight: 8
+  - name: Заметки
+    identifier: notes
+    url: /posts/
+    weight: 2
+  - name: Приложения
+    url: apps/
+    weight: 5
+  - name: Публикации
+    url: /p/publications
+    weight: 8
 
-    # notes
-    - name: Руководства
-      identifier: docslist
-      url: /categories/roadmaps/
-      parent: notes
-      weight: 201
-    - name: Программирование
-      identifier: programming
-      url: /categories/programming/
-      parent: notes
-      weight: 202
-    - name: Алгоритмы | EN
-      identifier: algorithms
-      url: ../en/tracks/algorithms-101/
-      parent: docslist
-      # weight: 202
-    - name: Links
-      identifier: links
-      url: ./../en/p/links/
-      parent: notes
-      weight: 205
+  # notes
+  - name: Руководства
+    identifier: docslist
+    url: /categories/roadmaps/
+    parent: notes
+    weight: 201
+  - name: Программирование
+    identifier: programming
+    url: /categories/programming/
+    parent: notes
+    weight: 202
+  - name: Алгоритмы
+    identifier: algorithms
+    url: /tracks/algorithms-101/leetcode/
+    parent: docslist
+    # weight: 202
+  - name: Links
+    identifier: links
+    url: ./../en/p/links/
+    parent: notes
+    weight: 205
 
-    # Руководства
-    - name: Справочник Python
-      identifier: python-101
-      url: /tracks/python-101/
-      parent: docslist
-      weight: 211
-    - name: Справочник WebRTC
-      identifier: WebRTC
-      url: /tracks/WebRTC/
-      parent: docslist
-      weight: 212
-    - name: Диссертация
-      identifier: disser
-      url: /tracks/disser/
-      parent: docslist
-      weight: 213
-      
-    # Notes -> Programming ->
-    - name: Algorithms [EN]
-      identifier: algorithms
-      url: ./../en/tracks/algorithms-101/
-      parent: programming
-      weight: 301
-    - name: Python
-      identifier: python
-      url: /categories/python/
-      parent: programming
-    - name: JavaScript
-      identifier: javascript
-      url: /categories/javascript/
-      parent: programming
-    - name: Hugo
-      identifier: hugo
-      url: /categories/hugo/
-      parent: programming
+  # Руководства
+  - name: Справочник Python
+    identifier: python-101
+    url: /tracks/python-101/
+    parent: docslist
+    weight: 211
+  - name: Справочник WebRTC
+    identifier: WebRTC
+    url: /tracks/WebRTC/
+    parent: docslist
+    weight: 212
+  - name: Диссертация
+    identifier: disser
+    url: /tracks/disser/
+    parent: docslist
+    weight: 213
 
+  # Notes -> Programming ->
+  - name: Algorithms [EN]
+    identifier: algorithms
+    url: ./../en/tracks/algorithms-101/
+    parent: programming
+    weight: 301
+  - name: Python
+    identifier: python
+    url: /categories/python/
+    parent: programming
+  - name: JavaScript
+    identifier: javascript
+    url: /categories/javascript/
+    parent: programming
+  - name: Hugo
+    identifier: hugo
+    url: /categories/hugo/
+    parent: programming
 # eng menu in languages
