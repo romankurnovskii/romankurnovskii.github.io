@@ -9,6 +9,7 @@ date: 2023-09-06
 lastmod: 2023-09-06
 featuredImage: https://picsum.photos/700/241?grayscale
 weight: 725
+draft: true
 ---
 
 [LeetCode задача 725](<https://leetcode.com/problems/split-linked-list-in-parts/>)
@@ -35,6 +36,10 @@ weight: 725
 
 ## Алгоритм
 
+We need to resolve three blocks:
+- length of each part of linked list
+- 
+
 1. Пройдите по связному списку, чтобы определить его длину `n`.
 2. Вычислите базовый размер каждой части (`n // k`) и количество частей, которые будут на один элемент больше (`n % k`).
 3. Пройдите по связному списку второй раз, создавая новые части и добавляя их в результирующий массив.
@@ -49,39 +54,33 @@ weight: 725
 #         self.next = next
 
 def splitListToParts(head, k):
-    # Пройдем по списку, чтобы определить его длину
+    # get linked list length
     n = 0
     current = head
     while current:
         n += 1
         current = current.next
     
-    # Вычисляем базовый размер и количество "дополнительных" элементов
-    base_size = n // k
-    extra = n % k
-    
-    result = []
-    current = head
-    for i in range(k):
-        # Создаем новую часть
-        part_head = current
-        part_size = base_size + (1 if extra > 0 else 0)
-        for j in range(part_size - 1):
+    # get batch length
+    batch_len = n // k
+    extra_nodes = n % k
+
+    # generate k bathces
+    arr = []
+    for _ in range(k):
+        batch = cur  # define head of current batch
+
+        extra_one = 1 if extra_nodes > 0 else 0
+        for i in range(batch_len + extra_one -1):
             if current:
                 current = current.next
-        if current:
-            next_part = current.next # link to 2
-            current.next = None  # link to None. Important to cut current part from the next new part
-            current = next_part  # link to 2
+        
+        if current:  # switch, cut current batch, get head of next batch
+            next_batch = current.next
+            current.next = None
+            current = next_batch
+        
+        arr.append(batch)
 
-        result.append(part_head)
-        extra -= 1
-
-    return result
+    return arr
 ```
-
-`part_head = current`: Эта строка сохраняет текущий узел связного списка (`current`) в переменной part_head. Переменная `part_head` будет указывать на начало новой "части" связного списка, которую мы собираемся создать. Это нужно, чтобы позже добавить эту "часть" в результирующий массив.
-
-`part_size = base_size + (1 if extra > 0 else 0)`: Эта строка вычисляет размер текущей "части" (part_size), которую мы собираемся создать. Базовый размер каждой "части" определяется как `base_size`, который ранее был вычислен как `n // k`. Однако, по условиям задачи, первые extra "частей" должны быть больше базового размера на 1. Поэтому, если extra > 0, мы увеличиваем part_size на 1.
-
-В итоге, part_head будет начальным узлом текущей "части", а `part_size` будет её размером. Затем код будет двигаться по связному списку, пропуская `part_size - 1` узлов, чтобы отделить эту "часть" от остального списка.

@@ -1,3 +1,8 @@
+725
+872
+1448
+
+
 https://leetcode.com/contest/weekly-contest-361/
 
 2843. Count Symmetric Integers
@@ -11,3 +16,20 @@ https://leetcode.com/contest/weekly-contest-361/problems/count-of-interesting-su
 
 2846. Minimum Edge Weight Equilibrium Queries in a Tree
 https://leetcode.com/contest/weekly-contest-361/problems/minimum-edge-weight-equilibrium-queries-in-a-tree
+
+
+Naming convention:
+
+- array(list): arr
+- pointers:
+    - pointer 1: p1
+    - pointer 2: p2
+    - slow pointer: slow
+    - fast pointer: fast
+
+
+
+DFS
+
+- calc depth
+- calc level
