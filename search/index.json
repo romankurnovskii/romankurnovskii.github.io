@@ -849,6 +849,17 @@
             "lang": "ru"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/377/",
+            "title": "377. Combination Sum IV",
+            "description": "LeetCode 377. Количество возможных комбинаций, которые в сумме дают заданное число. Разбор задачи.",
+            "content": "\nLeetCode задача 377\n\nЗадача\n\nДан массив различных целых чисел nums и целевое целое число target от 1 до 1000. Нужно вернуть количество возможных комбинаций, которые в сумме дают target.\n\nПодсказки\n\nПостроить дерево решений\nЗадачу можно решить путем разложения ее на меньшие подзадачи с помощью динамического программирования.\n\nНахождение целевого значения в дереве решений\n\n{{}}\n\nПодход\n\nЕсли целевое значение - target=7 и nums=[2, 3, 4], то в дереве решений может быть несколько путей до этого числа. Например: 2-2-3, 2-3-2, 3-2-2, 3-4, 4-3, 5-2.\n\nВо время подсчета различных путей мы получаем различные суммы, например: 2-2-3, сначала сумма 2, потом 4, потом 7.\nСледующи возможный путь начинается с 3. Чтобы проверить, подходит данный путь или нет, мы можем рассчитать недостающее число до target: 7-3=4. Мы получили 4, но ранее мы уже получали такую сумму и знаем, что если на данном этапе мы хотим знать будет ли какое количество вариантов для суммы 4, то в итоге мы найдем решение.\n\nЭто - особенность динамического программирования, когда на каждом этапе мы используем уже подсчитанные данные, пройденные до текущего момента.\n\nМы будем использовать массив sums, где sums[s] будет хранить количество комбинаций, которые дают сумму s.\n\nДля каждого числа s от 1 до target, мы будем итерировать по каждому числу в nums и прибавлять sums[s-num] к sums[s].\n\nПример:\n\nsums[4] = sums[4-2] + sums[4-4] + sums[4-4]\n\nПочему мы рассматриваем числа от 1 до target?\n\nЦелью является поиск всех возможных комбинаций чисел из nums, которые в сумме дают target. Начиная с 1 и заканчивая target, мы стремимся найти все возможные комбинации для каждого промежуточного значения. Таким образом, когда мы достигаем target, у нас уже будут вычислены комбинации для всех предыдущих значений, что позволит быстро найти ответ для target.\n\nЗачем нам нужен индекс с нулевым значением в массиве?\n\nЗначение sums[0] = 1 может показаться не совсем интуитивным, но оно имеет особый смысл. Это значение говорит нам о том, что есть один способ получить сумму 0 — не использовать ни одного числа из nums. Это начальное условие необходимо для корректной работы алгоритма, так как при добавлении каждого нового числа из nums к уже найденным комбинациям мы будем обращаться к этому значению.\n\nРассмотрим пример. Пусть nums = [1,2,3] и target = 4. Когда мы рассматриваем число 1 (первый шаг итерации), наш алгоритм будет искать число комбинаций, которые дают сумму 1 - 1 = 0. И здесь значение sums[0] приходит на помощь: благодаря ему алгоритм \"понимает\", что существует одна такая комбинация.\n\nАлгоритм\n\nСоздаем список sums с длиной target + 1 и заполняем его нулями. Этот список будет представлять количество комбинаций, которые приводят к определенной (промежуточной) сумме.\nУстанавливаем sums[0] в 1, так как есть только один способ получить сумму 0: при пустом nums.\nОсновной цикл (построение таблицы):\n   Перебираем все возможные суммы от 1 до target (включительно). Допустим, текущее число обозначено как s\n      Теперь перебираем каждое число n из nums.\n         Находим остаточную сумму s - n\n         Прибавляем к sums[s] значение sums[s-n], так как любая комбинация, ведущая к s-n, может быть дополнена числом n, чтобы достичь s.\n\nРешение\n\nclass Solution:\n    def combinationSum4(self, nums: List[int], target: int) -> int:\n        sums = [0] * (target + 1)\n        sums[0] = 1  # entrypoint of dynamic p: sum 0 can be only in case if nums is empty\n\n        for s in range(1, target + 1):\n            for n in nums:                      # check all paths\n                remainder = s - n\n                if remainder >= 0:              # use only positive indexes (sums)\n                    sums[s] += sums[remainder]  # count to previous results\n\n        return sums[target]\n\nДанное решение можно отобразить с использованием словаря для всех сумм:\n\nclass Solution:\n    def combinationSum4(self, nums: List[int], target: int) -> int:\n        sums = {0:1}\n\n        for s in range(1, target + 1):\n            sums[s] = 0\n            for n in nums:\n                remainder = s - n\n                sums[s] += sums.get(remainder, 0)\n\n        return sums[target]\n",
+            "tags": [
+                "Dynamic Programming",
+                "Medium"
+            ],
+            "lang": "ru"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/341/",
             "title": "341. Flatten Nested List Iterator",
             "description": "LeetCode 341. Реализация итератора для вложенного списка. Разбор задачи.",
@@ -1122,12 +1133,6 @@
         },
         {
             "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 7/",
-            "content": "\n\n",
-            "tags": [],
-            "lang": "ru"
-        },
-        {
-            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 13/",
             "content": "\n\n",
             "tags": [],
             "lang": "ru"
@@ -2428,7 +2433,7 @@
             "uri": "/posts/vps-docker-subdomains-setup/project/projects/3/",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 2
+                    "timeTakenInMilliseconds": 1
                 },
                 "result": "Hello World!",
                 "ranges": [
@@ -2856,7 +2861,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 2
+                    "timeTakenInMilliseconds": 1
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -4887,7 +4892,7 @@
             "uri": "/posts/other-snippets",
             "title": "Some code snippets",
             "description": "Some code snippets",
-            "content": "\npandoc mardown -> pdf\n\nCreate pdf file from .md in multiple folders\n\nprepare:\n\nbrew install basictex\n\nsearch for cyrillic fonts\nfc-list | grep к\\\n\nbrew tap homebrew/cask-fonts\nbrew install --cask font-m-plus\nbrew tap homebrew/cask-fonts\nbrew install --cask font-m-plus\nbrew install --cask font-m-plus-1\nbrew install --cask font-m-plus-1-code\n\npandoc --pdf-engine xelatex \\\n--variable mainfont=\"M+ 1p\" --variable sansfont=\"M+ 1p\" --variable monofont=\"M+ 1m\" \\\n-V geometry:\"top=1cm, bottom=2cm, left=1cm, right=1cm\" \\\n--file-scope \\\n--highlight-style=tango \\\n-s \\\n--toc-depth=1 \\\n--variable=toc-title:\" \" \\\n--top-level-division=chapter \\\n--standalone \\\n--self-contained \\\n--from=markdown \\\n $(find . -name '*.ru.md') \\\n-o book.pdf\n\nConvert video -> audio with ffmpeg in current directory\n\n#!/bin/bash\n\nCheck if ffmpeg is installed\ncommand -v ffmpeg >/dev/null 2>&1 || { echo >&2 \"ffmpeg is required but not installed. Aborting.\"; exit 1; }\n\nGet a list of all video files in the current directory\nvideo_files=(*.{mp4,mkv,flv,avi})\n\nCheck if there are any video files in the current directory\nif [ ${#video_files[@]} -eq 0 ]\n  then\n    echo \"No video files found in the current directory.\"\n    exit 1\nfi\n\nLoop through all video files and convert them to audio files\nfor video_file in \"${video_files[@]}\"\ndo\nGet the file name without the extension\n  file_name=\"${video_file%.*}\"\n\nConvert the video file to an audio file in the current directory\n  ffmpeg -i $video_file -vn -acodec libmp3lame -ab 128k $file_name.mp3\n\n  echo \"Conversion of $video_file completed. The audio file is located in the current directory.\"\ndone\n\necho \"All conversions completed.\"\n",
+            "content": "\npandoc mardown -> pdf\n\nCreate pdf file from .md in multiple folders\n\nprepare:\n\nbrew install basictex\n\nsearch for cyrillic fonts\nfc-list | grep к\\\n\nbrew tap homebrew/cask-fonts\nbrew install --cask font-m-plus\nbrew tap homebrew/cask-fonts\nbrew install --cask font-m-plus\nbrew install --cask font-m-plus-1\nbrew install --cask font-m-plus-1-code\n\npandoc --pdf-engine xelatex \\\n--variable mainfont=\"M+ 1p\" --variable sansfont=\"M+ 1p\" --variable monofont=\"M+ 1m\" \\\n-V geometry:\"top=1cm, bottom=2cm, left=1cm, right=1cm\" \\\n--file-scope \\\n--highlight-style=tango \\\n-s \\\n--toc-depth=1 \\\n--variable=toc-title:\" \" \\\n--top-level-division=chapter \\\n--standalone \\\n--self-contained \\\n--from=markdown \\\n $(find . -name '*.ru.md') \\\n-o book.pdf\n\nConvert all video to audio with ffmpeg in current directory\n\n#!/bin/bash\n\nCheck if ffmpeg is installed\ncommand -v ffmpeg >/dev/null 2>&1 || { echo >&2 \"ffmpeg is required but not installed. Aborting.\"; exit 1; }\n\nGet a list of all video files in the current directory\nvideo_files=(*.{mp4,mkv,flv,avi})\n\nCheck if there are any video files in the current directory\nif [ ${#video_files[@]} -eq 0 ]\n  then\n    echo \"No video files found in the current directory.\"\n    exit 1\nfi\n\nLoop through all video files and convert them to audio files\nfor video_file in \"${video_files[@]}\"\ndo\nGet the file name without the extension\n  file_name=\"${video_file%.*}\"\n\nConvert the video file to an audio file in the current directory\n  ffmpeg -i $video_file -vn -acodec libmp3lame -ab 128k $file_name.mp3\n\n  echo \"Conversion of $video_file completed. The audio file is located in the current directory.\"\ndone\n\necho \"All conversions completed.\"\n\nRemove audio from video with ffmpeg\n\nffmpeg -i input.mp4 -c copy -an output.mp4\n\n-i input.mp4 specifies the input video file.\n-c copy tells FFmpeg to copy the video stream without re-encoding.\n-an removes the audio stream from the output file.\noutput.mp4 is the name you choose for the output video file.\n\nReduce video size with ffmpeg\n\nffmpeg -i input.mp4 -c:v libx264 -crf 23 -preset medium -c:a aac -b:a 128k output.mp4\n\n-i input.mp4 specifies the input video file.\n-c:v libx264 sets the video codec to H.264, which is widely supported and provides good compression.\n-crf 23 controls the video quality. Lower values result in higher quality but larger file sizes. A value of around 23 is a good balance between quality and size.\n-preset medium sets the encoding speed and compression efficiency. The \"medium\" preset provides a good compromise.\n-c:a aac -b:a 128k sets the audio codec to AAC with a bitrate of 128k. This ensures decent audio quality while keeping the file size reasonable.\noutput.mp4 is the name you choose for the output video file.\n\nCreate a new video from all the videos sorted by name in a folder using with ffmpeg\n\nffmpeg -f concat -safe 0 -i <(for f in $(ls -v /path/to/folder/*.mp4); do echo \"file '$PWD/$f'\"; done) -c copy output.mp4\n",
             "tags": [
                 "Programming"
             ],
