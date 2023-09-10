@@ -1132,12 +1132,6 @@
             "lang": "ru"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 7/",
-            "content": "\n\n",
-            "tags": [],
-            "lang": "ru"
-        },
-        {
             "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 11/",
             "content": "\n\n",
             "tags": [],
@@ -2855,7 +2849,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 2
+                    "timeTakenInMilliseconds": 6
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -4168,6 +4162,19 @@
             "lang": "en"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1372/",
+            "title": "1372. Longest ZigZag Path in a Binary Tree",
+            "description": "An in-depth exploration of the Longest ZigZag Path in a Binary Tree problem.",
+            "content": "\nLeetCode problem 1372\n\nProblem Statement\n\nGiven the root of a binary tree, the task is to find the longest ZigZag path contained in that tree. A ZigZag path is defined by a sequence starting at any node and switching between left and right directions at each subsequent step.\n\nNaive Solution\n\nA simplistic approach would be to kick off from every node and emulate the ZigZag movement until it's no longer feasible, all the while updating the longest path encountered. This method can be rather inefficient as it leads to a lot of recalculations.\n\nHints & Tips\n\nA Depth First Search (DFS) can be an efficient way to tackle this problem. The current path length and direction can be passed as arguments to the DFS function, negating the need for recalculations.\n\nApproach\n\nImagine walking through the tree. Every time you take a step, you must decide whether to go left or right. But, the twist here is that you have to alternate your direction at every step. The challenge? Find the longest path you can take without breaking this rule.\n\nTo systematically explore all possible paths, we use Depth First Search (DFS), a tree traversal strategy. Instead of starting from scratch at every node, we remember our previous direction (left or right) and continue in the opposite direction, effectively extending our ZigZag path. If a move in the current direction isn't possible, that path ends there, but the search continues. By doing so, we can explore all potential ZigZag paths efficiently.\n\nSteps\n\nInitialize DFS from the root, considering both left and right as potential starting directions.\nAt each node, based on your previous direction, try extending the ZigZag by moving in the opposite direction, thus increasing the length.\nIf you hit a dead end (no further movement possible in the current direction), check if this path length is your longest so far.\nRegardless of whether the current path continues, keep exploring the tree in both directions.\n\nSolution\n\nclass TreeNode:\n    def init(self, val=0, left=None, right=None):\n        self.val = val\n        self.left = left\n        self.right = right\n\nclass Solution:\n    def longestZigZag(self, root: TreeNode) -> int:\n        self.max_len = 0\n\n        def dfs(node, direction, length):\n            if not node:\n                return\n\n            self.max_len = max(self.max_len, length)    # Update the maximum length\n\n            if direction == \"left\":                     # If the last direction was left, we try to move right\n                dfs(node.right, \"right\", length + 1)\n                dfs(node.left, \"left\", 1)\n            else:\n                dfs(node.left, \"left\", length + 1)\n                dfs(node.right, \"right\", 1)\n\n        dfs(root, \"left\", 0)\n        dfs(root, \"right\", 0)\n\n        return self.max_len\n",
+            "tags": [
+                "Algorithms",
+                "Medium",
+                "Trees",
+                "LeetCode"
+            ],
+            "lang": "en"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/11/",
             "title": "11. Container With Most Water",
             "description": "Finding the container that can hold the most water based on given heights.",
@@ -4212,6 +4219,18 @@
                 "Hard",
                 "Combinatorics",
                 "LeetCode Contest 112"
+            ],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1359/",
+            "title": "1359. Count All Valid Pickup and Delivery Options",
+            "description": "Detailed explanation for solving the LeetCode 1359. Count All Valid Pickup and Delivery Options problem.",
+            "content": "\nLeetCode problem 1359\n\nProblem Statement\n\nYou're tasked with finding all valid sequences of pickup and delivery events for n orders such that for every order, the delivery always comes after its respective pickup. Because the answer can be immense, you're to return the result modulo \\(10^9 + 7\\).\n\nNaive Solution\n\nA straightforward approach might be to generate all potential permutations of pickup and delivery actions and then exclude the unsuitable ones. However, this method would be exceedingly inefficient and would not scale for larger n values.\n\nHints & Tips\n\nPattern observation can greatly simplify the problem. Breaking down the problem for smaller n values can reveal these patterns.\n\nApproach\n\nBy breaking down the problem and observing patterns for initial n values, a pattern emerges, providing insight into solving for any n.\n\nObservations\n\nFor n=1, there's only 1 sequence: (P1, D1).\nFor n=2, by adding (P2,D2) to the sequence (P1,D1), the number of possible sequences becomes 3+2+1 = 6.\nFor n=3, the number of possible sequences becomes 6 x (5+4+3+2+1) = 90.\nA pattern emerges where the result for n can be calculated from the result for n-1.\n\nThis pattern can be exploited to create a formula for any n.\n\nSolution\n\ndef countOrders(n: int) -> int:\n    MOD = 10**9 + 7\n    ans = 1\n\n    for i in range(1, n + 1):\n        ans = ans * i * (i * 2 - 1) % MOD\n\n    return ans\n",
+            "tags": [
+                "Algorithms",
+                "Hard",
+                "LeetCode"
             ],
             "lang": "en"
         },
