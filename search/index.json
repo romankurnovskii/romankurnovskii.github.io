@@ -1138,12 +1138,6 @@
             "lang": "ru"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 12/",
-            "content": "\n\n",
-            "tags": [],
-            "lang": "ru"
-        },
-        {
             "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 11/",
             "content": "\n\n",
             "tags": [],
@@ -4092,6 +4086,19 @@
             "lang": "en"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/2849/",
+            "title": "2849. Determine if a Cell Is Reachable at a Given Time",
+            "description": "Understanding the concept and solving the problem of determining if a cell is reachable within a given time on a 2D grid.",
+            "content": "\n\nLeetCode problem 2849\n\nProblem Statement\n\nYou are given starting coordinates (sx, sy) and final coordinates (fx, fy) on a 2D infinite grid. Starting from the initial position, you can move to any of the 8 adjacent cells in one second. The challenge is to determine if you can reach the final cell (fx, fy) in exactly t seconds.\n\nNaive Solution\n\nA naive approach would be to use a recursive function to navigate the grid from the starting point (sx, sy) and attempt to reach the target (fx, fy) in t seconds. This approach will check every possible path, which can be very inefficient, especially for larger grids and values of t.\n\nHints & Tips\n\nUnderstand that not all paths are equal. Moving diagonally is more efficient than moving in a straight line if both x and y distances are positive.\nCheck the constraints. If you cannot reach the destination within the given time t, there's no need to try any further.\n\nApproach\n\nThe idea is to calculate the shortest possible time to reach the target and then compare it to the given time t. If the starting point and the ending point are the same, we can always return to the same position unless the time is exactly 1.\n\nSteps\n\nCalculate the difference in x (diff_x) and y (diff_y) coordinates.\nFor the minimum of diff_x and diff_y, move diagonally. This reduces both x and y distances by 1 in a single step.\nMove horizontally or vertically for the absolute difference between diff_x and diff_y.\nIf (diff_x + diff_y) is less than or equal to t, and (t - (diff_x + diff_y)) is an even number or zero, return True, otherwise return False.\n\nSolution\n\ndef isReachableAtTime(sx: int, sy: int, fx: int, fy: int, t: int) -> bool:\n    diff_x = abs(fx - sx)           # Calculating the differences in x\n    diff_y = abs(fy - sy)           # and y coordinates\n\n    if diff_x == 0 and diff_y == 0: # If both starting and ending points are same\n        return t != 1\n\n    if diff_x <= t and diff_y <= t: # Check if we can reach the target within given time\n        return True\n\n    return False\n",
+            "tags": [
+                "Algorithms",
+                "Medium",
+                "Grid",
+                "LeetCode"
+            ],
+            "lang": "en"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/2844/",
             "title": "2844. Minimum Operations to Make a Special Number",
             "description": "2844. Minimum Operations to Make a Special Number",
@@ -4518,6 +4525,18 @@
             "description": "345. Reverse Vowels of a String",
             "content": "\nLeetCode problem\n\nProblem Statement\n\nGiven a string s, the task is to reverse only all the vowels in the string and return it. The vowels are 'a', 'e', 'i', 'o', and 'u', and they can appear in both lower and upper cases, more than once.\n\nNaive Solution\n\nThe naive approach to solve this problem would be to:\n\nInitialize an empty string result.\nTraverse the given string s from the start to the end.\nIf the current character is a vowel, find the next vowel in the string starting from the end, add it to result, and remove it from the string.\nIf the current character is not a vowel, simply add it to result.\n\nHints & Tips\n\nBut this solution is inefficient as it requires traversing the string multiple times and manipulating it. A more efficient solution would use the two-pointer technique.\n\nApproach\n\nThe efficient approach to solve this problem would be to:\n\nInitialize two pointers, one at the start and the other at the end of the string.\nWhile the two pointers have not met, check if the characters at the two pointers are vowels.\nIf they are, swap them. If not, move the pointer(s).\n\nSteps\n\nConvert the string to a list of characters because Python strings are immutable.\nInitialize two pointers: left at 0 and right at the end of the string.\nWhile left  str:\n        vowels = 'aeiouAEIOU'\n        s = list(s)\n        left, right = 0, len(s) - 1\n\n        while left  str:\n        vowels = ['a', 'A', 'e','E', 'i','I', 'o','O', 'u','U']\n\n        vowels_order = []\n        for i, x in enumerate(s):\n            if x in vowels:\n                vowels_order.append(x)\n\n        res = ''\n        for x in s:\n            if x in vowels:\n                res += vowels_order.pop()\n            else:\n                res += x\n\n        return res\n",
             "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/2848/",
+            "title": "2848. Points That Intersect With Cars",
+            "description": "Solving and understanding the problem of calculating the total points intersected by cars parked on a number line using a set-based approach.",
+            "content": "\n\nLeetCode problem 2848\n\nProblem Statement\n\nGiven cars parked on a number line, represented by starting and ending coordinates, we aim to determine the number of points on this line that are covered by any part of these cars.\n\nNaive Solution\n\nA basic approach is to simply iterate through each interval and for each interval, iterate through its range, adding each point to a list. Finally, we can return the length of this list to get the total points. However, this approach has a risk of counting points multiple times when two cars overlap.\n\nHints & Tips\n\nUtilizing a set can prevent duplicate counting since sets do not allow duplicates.\nIterating through each interval's range and adding it to the set will ensure unique counting.\n\nApproach\n\nThe idea is to use a set to hold all the integer points that the cars cover. We iterate through each car's interval, and for each interval, we iterate through its range, adding each point to the set. As sets do not allow duplicate values, points that are covered by multiple cars are not double-counted. Finally, we return the size of the set which gives the total unique points covered by the cars.\n\nSteps\n\nInitialize an empty set points.\nIterate through each interval in nums.\nFor each interval, iterate through its range from start to end, adding each point to the points set.\nReturn the size of the points set.\n\nSolution\n\ndef numberOfPoints(nums: List[List[int]]) -> int:\n    points = set()\n    for start, end in nums:\n        for p in range(start, end + 1):\n            points.add(p)\n\n    return len(points)\n",
+            "tags": [
+                "Algorithms",
+                "Easy",
+                "LeetCode"
+            ],
             "lang": "en"
         },
         {
