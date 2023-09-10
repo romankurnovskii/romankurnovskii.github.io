@@ -43,10 +43,12 @@ This pattern can be exploited to create a formula for any `n`.
 ```python
 def countOrders(n: int) -> int:
     MOD = 10**9 + 7
-    ans = 1
+    res = 1
 
-    for i in range(1, n + 1):
-        ans = ans * i * (i * 2 - 1) % MOD
+    for x in range(1, n + 1):
+        prev_order_combinations = res
+        order_combinations = x * (x * 2 - 1)
+        res = prev_order_combinations * order_combinations % MOD
 
-    return ans
+    return res
 ```
