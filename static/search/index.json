@@ -1098,6 +1098,18 @@
             "lang": "ru"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1282/",
+            "title": "1282. Group the People Given the Group Size They Belong To",
+            "description": "LeetCode 1282. Группировка людей по размерам их групп. Разбор задачи.",
+            "content": "\nLeetCode задача 1282\n\nЗадача\n\nЕсть n человек, которые разделены на неизвестное количество групп. Каждому человеку присвоен уникальный ID от 0 до n - 1.\n\nДан массив целых чисел groupSizes, где groupSizes[i] — это размер группы, в которой находится человек i. Задача заключается в том, чтобы вернуть список групп таким образом, чтобы каждый человек i был в группе размером groupSizes[i].\n\nПодход\n\nОсновная идея решения заключается в использовании словаря для хранения временных групп, пока их размер не достигнет необходимого. Как только размер временной группы достигнет необходимого, добавьте ее в результат и начните новую группу с этим размером.\n\nАлгоритм\n\nИнициализируем словарь для временного хранения групп по их размеру и список для итогового результата.\nИтерируемся по groupSizes, добавляя каждого человека в соответствующую группу в словаре.\nКогда группа достигает своего размера, добавьте ее в результат и очистите соответствующий список в словаре.\n\nРешение\n\nfrom typing import List\n\nclass Solution:\n    def groupThePeople(self, groupSizes: List[int]) -> List[List[int]]:\n        groups = {}                             # временное хранение групп\n        result = []                             # итоговый список групп\n\n        for i, size in enumerate(groupSizes):\n            if size not in groups:              # Если размер группы еще не существует в словаре,\n                groups[size] = []               # инициализируем его пустым списком\n\n            groups[size].append(i)\n\n            if len(groups[size]) == size:       # Если группа достигла своего размера,\n                result.append(groups[size])     # добавляем ее в результат и очищаем список\n                groups[size] = []\n\n        return result\n\n",
+            "tags": [
+                "Array",
+                "Medium",
+                "LeetCode"
+            ],
+            "lang": "ru"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/11/",
             "title": "11. Container With Most Water",
             "description": "LeetCode 11. Найдите контейнер, который может вместить максимальное количество воды. Разбор задачи.",
@@ -1138,12 +1150,6 @@
             "lang": "ru"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 10/",
-            "content": "\n\n",
-            "tags": [],
-            "lang": "ru"
-        },
-        {
             "uri": "/tracks/algorithms-101/leetcode/hard/_index",
             "title": "Тяжелые",
             "description": null,
@@ -1174,6 +1180,18 @@
                 "Array",
                 "Binary Search",
                 "Hard"
+            ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1359/",
+            "title": "1359. Count All Valid Pickup and Delivery Options",
+            "description": "LeetCode 1359. Подсчет всех возможных вариантов приема и доставки. Разбор задачи.",
+            "content": "\nLeetCode задача 1359\n\nЗадача\nДано n заказов, каждый заказ состоит из услуг по приему и доставке.\n\nНеобходимо подсчитать все возможные последовательности приема/доставки так, чтобы доставка(i) всегда шла после приема(i).\n\nТак как ответ может быть очень большим, верните его по модулю 10^9 + 7.\n\nПодсказки\n\nИспользовать комбинаторный подход.\n\nДля каждого нового заказа у нас есть 2 * (2n-1) способов добавить его в текущую последовательность.\n\nМы используем данную формулу, так как:\n\nНовый заказ может быть вставлен на любое место среди существующих заказов (2n-1 мест). У нас 2 операции (прием и доставка) для каждого заказа.\n\nПодход\n\nНачнем с самого начала,\n\nМы получили 1-й заказ n=1\n\n    Мы можем расставить только в одном порядке: P1 D1\n\nТеперь мы получили 2-й заказ n=2, и нужно добавить к предыдущему и расставить P2, D2.\n\n    Куда мы можем поставить P2?\n\n    На первое место, второе или третье. И не можем поставить на последнее, т.к. последнее место всегда будет части доставки(D).\n\n    Попробуем расставить:\n\n    Всего 3 возможных позиции куда поставить 2-й (P2) заказ. (Обозначим перестановки от предыдущего заказа как X):\n    Если P2 X X, то у P2 и D2 из расстановок - 3 возможных варианта: P2 D2 X X или P2 X D2 X или P2 X X D2\n    Если X P2 X, - 2 возможных варианта: X P2 D2 X или X P2 X D2\n    Если X X P2, - 1 возможный вариант: X X P2 D2\n    Отсюда мы получаем формулу, что для n заказа - n2 операций, и n2 -1 возможных комбинаций.\n    Итого получаем, что для второго заказа возможных выборов перестановок 3+2+1 - 6\n    Также мы видим, что X - расстановки с предыдущего заказа тоже меняли позиции, поэтому общее количество комбинаций будет равно произведению количества комбинаций текущего заказа и предыдущего - 6*1=6\n\nТеперь мы получили 3-й заказ n=3,\n    По аналогии с предыдущим, перестановок получается n*2=6\n    Комбинаций получается 5+4+3+2+1 = 15\n    Перемножаем с комбинациями из предыдущего заказа 15*6=90\n\nАлгоритм\n\nДля каждого заказа от 1 до n:\nРассчитываем количество способов добавления заказа в текущую последовательность.\n   Для подсчета комбинаций текущего заказа можно использовать формулу:\n            2n * (2n-1) // 2\nдля n:3 23=6, 23-1=5, 6*5//2=15\n    Умножаем текущее количество комбинаций на количество способов добавления заказа.\n\nРешение\n\ndef countOrders(n: int) -> int:\n    MOD = 10**9 + 7\n    res = 1\n\n    for x in range(2, n + 1):\n        prev_order_combinations = res\n        order_combinations = (2 * x) * (2 * x - 1) // 2\n        res = prev_order_combinations * order_combinations % MOD\n\n    return res\n",
+            "tags": [
+                "Algorithms",
+                "Hard",
+                "LeetCode"
             ],
             "lang": "ru"
         },
@@ -2421,7 +2439,7 @@
             "uri": "/posts/vps-docker-subdomains-setup/project/projects/3/",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 3
+                    "timeTakenInMilliseconds": 1
                 },
                 "result": "Hello World!",
                 "ranges": [
@@ -2849,7 +2867,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 1
+                    "timeTakenInMilliseconds": 2
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -4210,23 +4228,10 @@
             "lang": "en"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/hard/2842/",
-            "title": "2842. Count K-Subsequences of a String with Maximum Beauty",
-            "description": "Count K-Subsequences of a String with Maximum Beauty",
-            "content": "\nLeetCode problem\n\nProblem Statement\n\nYou are given a string s and an integer k. A k-subsequence is a subsequence of s, having length k, and all its characters are unique. The beauty of a k-subsequence is the sum of f(c) for every character c in the k-subsequence. Here, f(c) denotes the number of times the character c occurs in s.\n\nThe task is to find the number of k-subsequences whose beauty is maximum among all k-subsequences. Return the answer modulo $(10^9 + 7)$.\n\nNaive Solution\n\nThe naive solution would be to generate all possible k-subsequences of s and then calculate their beauty. However, this approach is computationally expensive and can take up a lot of time.\n\nHints & Tips\n\nUsing combinatorics can significantly speed up the solution.\nKeep track of character frequencies to quickly compute a k-subsequence's beauty.\n\nApproach\n\nThe approach for solving this problem efficiently relies on:\n\nUsing combinatorics to handle large inputs.\nUtilizing a frequency count of each character in the string s for quick beauty calculation.\n\nSteps\n\nStep 1: Count Character Frequencies\n\nFirst, use Python's Counter class to count the frequency of each character in the string s.\n\nStep 2: Handle Edge Cases\n\nCheck if there are enough unique characters in s to form a k-subsequence. If not, return 0.\n\nStep 3: Generate Combinations and Calculate Beauty\n\nUse itertools.combinations to generate k-combinations of unique characters in s. For each combination, compute its beauty as the sum of f(c) for each character c.\n\nStep 4: Keep Track of Maximum Beauty and Count\n\nCompare each combination's beauty with the maximum beauty so far. Update the maximum beauty and count the number of k-subsequences that achieve this beauty.\n\nStep 5: Return the Final Count\n\nReturn the total number of k-subsequences with maximum beauty, modulo $(10^9 + 7)$.\n\nSolution\n\nfrom collections import Counter\nfrom itertools import combinations\n\nMOD = 10**9 + 7\n\nclass Solution:\n    def countKSubsequencesWithMaxBeauty(self, s: str, k: int) -> int:\n        char_count = Counter(s)\n        unique_chars = list(char_count.keys())\n\n        if len(unique_chars)  max_beauty:\n                max_beauty = beauty\n                max_beauty_count = 0\n\n            if beauty == max_beauty:\n                count = 1\n                for c in char_comb:\n                    count *= comb(char_count[c], 1)\n                max_beauty_count += count\n                max_beauty_count %= MOD\n\n        return max_beauty_count % MOD\n",
-            "tags": [
-                "Algorithms",
-                "Hard",
-                "Combinatorics",
-                "LeetCode Contest 112"
-            ],
-            "lang": "en"
-        },
-        {
             "uri": "/tracks/algorithms-101/leetcode/hard/1359/",
             "title": "1359. Count All Valid Pickup and Delivery Options",
             "description": "Detailed explanation for solving the LeetCode 1359. Count All Valid Pickup and Delivery Options problem.",
-            "content": "\nLeetCode problem 1359\n\nProblem Statement\n\nYou're tasked with finding all valid sequences of pickup and delivery events for n orders such that for every order, the delivery always comes after its respective pickup. Because the answer can be immense, you're to return the result modulo \\(10^9 + 7\\).\n\nNaive Solution\n\nA straightforward approach might be to generate all potential permutations of pickup and delivery actions and then exclude the unsuitable ones. However, this method would be exceedingly inefficient and would not scale for larger n values.\n\nHints & Tips\n\nPattern observation can greatly simplify the problem. Breaking down the problem for smaller n values can reveal these patterns.\n\nApproach\n\nBy breaking down the problem and observing patterns for initial n values, a pattern emerges, providing insight into solving for any n.\n\nObservations:\n\nFor n=1, there's only 1 sequence: (P1, D1).\nFor n=2, by adding (P2,D2) to the sequence (P1,D1), the number of possible sequences becomes 3+2+1 = 6.\nFor n=3, the number of possible sequences becomes 6 x (5+4+3+2+1) = 90.\nA pattern emerges where the result for n can be calculated from the result for n-1.\n\nThis pattern can be exploited to create a formula for any n.\n\nSolution\n\n\ndef countOrders(n: int) -> int:\n    MOD = 10**9 + 7\n    ans = 1\n\n    for i in range(1, n + 1):\n        ans = ans * i * (i * 2 - 1) % MOD\n\n    return ans\n",
+            "content": "\nLeetCode problem 1359\n\nProblem Statement\n\nYou're tasked with finding all valid sequences of pickup and delivery events for n orders such that for every order, the delivery always comes after its respective pickup. Because the answer can be immense, you're to return the result modulo \\(10^9 + 7\\).\n\nNaive Solution\n\nA straightforward approach might be to generate all potential permutations of pickup and delivery actions and then exclude the unsuitable ones. However, this method would be exceedingly inefficient and would not scale for larger n values.\n\nHints & Tips\n\nPattern observation can greatly simplify the problem. Breaking down the problem for smaller n values can reveal these patterns.\n\nApproach\n\nBy breaking down the problem and observing patterns for initial n values, a pattern emerges, providing insight into solving for any n.\n\nObservations\n\nFor n=1, there's only 1 sequence: (P1, D1).\nFor n=2, by adding (P2,D2) to the sequence (P1,D1), the number of possible sequences becomes 3+2+1 = 6.\nFor n=3, the number of possible sequences becomes 6 x (5+4+3+2+1) = 90.\nA pattern emerges where the result for n can be calculated from the result for n-1.\n\nThis pattern can be exploited to create a formula for any n.\n\nSolution\n\ndef countOrders(n: int) -> int:\n    MOD = 10**9 + 7\n    res = 1\n\n    for x in range(1, n + 1):\n        prev_order_combinations = res\n        order_combinations = x * (x * 2 - 1)\n        res = prev_order_combinations * order_combinations % MOD\n\n    return res\n",
             "tags": [
                 "Algorithms",
                 "Hard",
@@ -4965,6 +4970,16 @@
             "content": "\n\nfunction addCopyButtonToCodeBlocks() {\n    // Get all code blocks with a class of \"language-*\"\n    const codeBlocks = document.querySelectorAll('code[class^=\"language-\"]');\n\n    // For each code block, add a copy button inside the block\n    codeBlocks.forEach(codeBlock => {\n        // Create the copy button element\n        const copyButton = document.createElement('button');\n        copyButton.classList.add('copy-code-button');\n        copyButton.innerHTML = '';\n\n        // Add a click event listener to the copy button\n        copyButton.addEventListener('click', () => {\n            // Copy the code inside the code block to the clipboard\n            const codeToCopy = codeBlock.innerText;\n            navigator.clipboard.writeText(codeToCopy);\n\n            // Update the copy button text to indicate that the code has been copied\n            copyButton.innerHTML = '';\n            setTimeout(() => {\n                copyButton.innerHTML = '';\n            }, 1500);\n        });\n\n        // Add the copy button to the code block\n        codeBlock.parentNode.insertBefore(copyButton, codeBlock);\n    });\n}\n",
             "tags": [
                 "hugo",
+                "javascript"
+            ],
+            "lang": "en"
+        },
+        {
+            "uri": "/posts/howto-setup-telegram-bot-and-google-apps-script",
+            "title": "Telegram bot with Google Apps Script (GAS)",
+            "description": "Telegram bot with Google Apps Script (GAS)",
+            "content": "\n1. Set Up the Telegram Bot:\n\nUse the BotFather on Telegram to create a new bot.\nGet your HTTP API token.\n\n2. Google Apps Script Code:\n\nGoogle Apps Script for a Telegram bot:\n\nvar TOKEN = 'YOUR_TELEGRAM_BOT_TOKEN';\nvar WEBHOOK_URL = 'YOUR_WEB_APP_URL';  // web app URL of your GAS deployment.\nvar USERS_SPREAD_SHEET_NAME='users'\n\nfunction setWebhook() {\n  var url = 'https://api.telegram.org/bot' + TOKEN + '/setWebhook?url=' + WEBHOOK_URL;\n  UrlFetchApp.fetch(url);\n}\n\nfunction doPost(e) {\n  var contents = JSON.parse(e.postData.contents);\n  var chatId = contents.message.chat.id;\n  var message = contents.message.text;\n\n  if (message === '/start') {\n    sendTelegramMessage(chatId, \"Choose an action:\\n/add\\n/show all\");\n  } else if (message === '/add') {\n    sendTelegramMessage(chatId, \"Send sessionCSRF\");\n    // Store that the next message should be treated as sessionCSRF\n    PropertiesService.getScriptProperties().setProperty(chatId, 'waiting_for_sessionCSRF');\n  } else if (PropertiesService.getScriptProperties().getProperty(chatId) === 'waiting_for_sessionCSRF') {\n    saveToSpreadsheet(contents.message.from, message);  // Save to spreadsheet\n    sendTelegramMessage(chatId, \"Send sessionId\");\n    PropertiesService.getScriptProperties().setProperty(chatId, 'waiting_for_sessionId');\n  } else if (PropertiesService.getScriptProperties().getProperty(chatId) === 'waiting_for_sessionId') {\n    saveToSpreadsheet(contents.message.from, message);\n    PropertiesService.getScriptProperties().deleteProperty(chatId);\n  } else if (message === '/show all') {\n    var sessions = getAllSessionsForUser(contents.message.from);\n    sendTelegramMessage(chatId, sessions.join('\\n'));\n  }\n}\n\nfunction sendTelegramMessage(chatId, text) {\n  var apiUrl = 'https://api.telegram.org/bot' + TOKEN + '/sendMessage';\n  var payload = {\n    'method': 'post',\n    'payload': {\n      'chat_id': chatId,\n      'text': text\n    }\n  };\n  UrlFetchApp.fetch(apiUrl, payload);\n}\n\nfunction saveToSpreadsheet(userData, text) {\n  var spreadsheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(USERS_SPREAD_SHEET_NAME);\n  spreadsheet.appendRow([userData.id, userData.first_name, userData.last_name, userData.username, text]);\n}\n\nfunction getAllSessionsForUser(userData) {\n  var spreadsheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(USERS_SPREAD_SHEET_NAME);\n  var rows = spreadsheet.getDataRange().getValues();\n  var sessions = [];\n  for (var i = 0; i  \"New Deployment\".\nChoose type as \"Web app\".\nSet permissions and deploy.\nYou will get a URL (This is what you'll use as WEB_APP_URL in the above code).\nRun setWebhook() Function:\n\nThis tells Telegram where your bot's web app is hosted.\nBot Commands:\n\nAfter you've done the above, you can send /start to your bot, and it should respond with the options.",
+            "tags": [
                 "javascript"
             ],
             "lang": "en"
