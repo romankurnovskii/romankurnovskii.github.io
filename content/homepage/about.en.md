@@ -14,9 +14,12 @@ social:
   - icon: linkedin
     iconPack: fab
     url: https://www.linkedin.com/in/roman-kurnovskii/
-  - icon: facebook
+  # - icon: facebook
+  #   iconPack: fab
+  #   url: https://www.facebook.com/profile.php?id=100007910670422
+  - icon: telegram
     iconPack: fab
-    url: https://www.facebook.com/profile.php?id=100007910670422
+    url: https://t.me/romankurnovskii
   - icon: github
     iconPack: fab
     url: https://github.com/romankurnovskii

@@ -14,9 +14,12 @@ social:
   - icon: vk
     iconPack: fab
     url: https://vk.com/id3713267
-  - icon: facebook
+  # - icon: facebook
+  #   iconPack: fab
+  #   url: https://www.facebook.com/profile.php?id=100007910670422
+  - icon: telegram
     iconPack: fab
-    url: https://www.facebook.com/profile.php?id=100007910670422
+    url: https://t.me/romankurnovskii
   - icon: github
     iconPack: fab
     url: https://github.com/romankurnovskii

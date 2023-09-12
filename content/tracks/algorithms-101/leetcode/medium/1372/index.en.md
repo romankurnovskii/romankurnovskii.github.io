@@ -9,6 +9,7 @@ date: 2023-09-10
 lastmod: 2023-09-10
 featuredImage: https://picsum.photos/700/241?grayscale
 weight: 1372
+todo: get latest solution passed
 ---
 
 [LeetCode problem 1372](https://leetcode.com/problems/longest-zigzag-path-in-a-binary-tree/)
