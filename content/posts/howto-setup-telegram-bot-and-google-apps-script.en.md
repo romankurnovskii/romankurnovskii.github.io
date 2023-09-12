@@ -8,7 +8,7 @@ tags: [javascript]
 series: []
 categories: [Programming]
 date: 2023-09-11
-lastMod: 2023-09-11
+lastMod: 2023-09-12
 featuredImage: https://picsum.photos/700/237?grayscale
 authors: [roman-kurnovskii]
 ---
@@ -26,7 +26,7 @@ Google Apps Script for a Telegram bot:
 ```js
 var TOKEN = 'YOUR_TELEGRAM_BOT_TOKEN'; 
 var WEBHOOK_URL = 'YOUR_WEB_APP_URL';  // web app URL of your GAS deployment.
-var USERS_SPREAD_SHEET_NAME='users'
+var USERS_SPREAD_SHEET_NAME='usersAnswers'
 
 function setWebhook() {
   var url = 'https://api.telegram.org/bot' + TOKEN + '/setWebhook?url=' + WEBHOOK_URL;
@@ -41,19 +41,19 @@ function doPost(e) {
   if (message === '/start') {
     sendTelegramMessage(chatId, "Choose an action:\n/add\n/show all");
   } else if (message === '/add') {
-    sendTelegramMessage(chatId, "Send sessionCSRF");
+    sendTelegramMessage(chatId, "Send Answer to question 1");
     // Store that the next message should be treated as sessionCSRF
-    PropertiesService.getScriptProperties().setProperty(chatId, 'waiting_for_sessionCSRF');
-  } else if (PropertiesService.getScriptProperties().getProperty(chatId) === 'waiting_for_sessionCSRF') {
+    PropertiesService.getScriptProperties().setProperty(chatId, 'waiting_for_question1');
+  } else if (PropertiesService.getScriptProperties().getProperty(chatId) === 'waiting_for_question1') {
     saveToSpreadsheet(contents.message.from, message);  // Save to spreadsheet
-    sendTelegramMessage(chatId, "Send sessionId");
-    PropertiesService.getScriptProperties().setProperty(chatId, 'waiting_for_sessionId');
-  } else if (PropertiesService.getScriptProperties().getProperty(chatId) === 'waiting_for_sessionId') {
+    sendTelegramMessage(chatId, "Send Answer to question 2");
+    PropertiesService.getScriptProperties().setProperty(chatId, 'waiting_for_question2');
+  } else if (PropertiesService.getScriptProperties().getProperty(chatId) === 'waiting_for_question2') {
     saveToSpreadsheet(contents.message.from, message);
     PropertiesService.getScriptProperties().deleteProperty(chatId);
   } else if (message === '/show all') {
-    var sessions = getAllSessionsForUser(contents.message.from);
-    sendTelegramMessage(chatId, sessions.join('\n'));
+    var userAnswers = getAllSessionsForUser(contents.message.from);
+    sendTelegramMessage(chatId, userAnswers.join('\n'));
   }
 }
 
@@ -80,7 +80,7 @@ function getAllSessionsForUser(userData) {
   var sessions = [];
   for (var i = 0; i < rows.length; i++) {
     if (rows[i][0] === userData.id) {   // If user id matches
-      sessions.push(rows[i][4]);        // Assuming sessionCSRF is in the 5th column
+      sessions.push(rows[i][4]);        // Assuming answer to question 1 is in the 5th column
     }
   }
   return sessions;
