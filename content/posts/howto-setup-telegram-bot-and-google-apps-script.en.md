@@ -51,7 +51,7 @@ function doPost(e) {
   } else if (PropertiesService.getScriptProperties().getProperty(chatId) === 'waiting_for_question2') {
     saveToSpreadsheet(contents.message.from, message);
     PropertiesService.getScriptProperties().deleteProperty(chatId);
-  } else if (message === '/show all') {
+  } else if (message === '/show') {
     var userAnswers = getAllSessionsForUser(contents.message.from);
     sendTelegramMessage(chatId, userAnswers.join('\n'));
   }
@@ -63,7 +63,7 @@ function sendTelegramMessage(chatId, text) {
     'method': 'post',
     'payload': {
       'chat_id': chatId,
-      'text': text
+      'text': String(text)
     }
   };
   UrlFetchApp.fetch(apiUrl, payload);
