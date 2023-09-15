@@ -70,5 +70,3 @@ class Solution:
         
         return self.max_len
 ```
-
-
