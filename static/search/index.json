@@ -1144,7 +1144,79 @@
             "lang": "ru"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 9/",
+            "content": "\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 8/",
+            "content": "\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 21/",
+            "content": "\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 20/",
+            "content": "\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 19/",
+            "content": "\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 18/",
+            "content": "\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 17/",
+            "content": "\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 16/",
+            "content": "\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 15/",
+            "content": "\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 14/",
+            "content": "\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 13/",
+            "content": "\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 12/",
+            "content": "\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 11/",
             "content": "\n\n",
             "tags": [],
             "lang": "ru"
@@ -1181,12 +1253,6 @@
                 "Binary Search",
                 "Hard"
             ],
-            "lang": "ru"
-        },
-        {
-            "uri": "/tracks/algorithms-101/leetcode/hard/332/",
-            "content": "\n\n",
-            "tags": [],
             "lang": "ru"
         },
         {
@@ -4228,6 +4294,16 @@
             "title": "Hard",
             "description": null,
             "content": "",
+            "tags": [
+                "LeetCode"
+            ],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/332/",
+            "title": "332. Reconstruct Itinerary",
+            "description": "332. Reconstruct Itinerary",
+            "content": "\nLeetCode problem\n\nProblem Statement\n\nGiven a list of airline tickets represented by pairs of departure and arrival airports [from, to], reconstruct the itinerary in order. All of the tickets belong to a man who departs from \"JFK\", thus, the itinerary must begin with \"JFK\". If there are multiple valid itineraries, you should return the itinerary that has the smallest lexical order when read as a single string.\n\nNaive Solution\n\nOne naive solution would be to use backtracking and try all possible combinations of tickets to form a valid itinerary. While this could work for small inputs, it's not efficient for larger numbers of tickets.\n\nHints & Tips\n\nConsider the tickets as a directed graph where each airport is a node, and a ticket between two airports represents a directed edge.\nFor this problem, instead of a depth-first traversal, the solution employs an iterative approach using a stack.\n\nApproach\nWe can visualize this problem as a directed graph traversal task. Every ticket is a directed edge between two airports. The challenge is to find a path that uses all the directed edges and starts from JFK.\n\nThe stack is an essential data structure for this solution, and here's why:\n\nA stack helps in maintaining the path. When visiting an airport, we're not sure if this path will lead to a solution (because it might end up in a dead-end). Hence, pushing the airports to the stack gives us the flexibility to backtrack easily (by popping out the last visited airport) if we reach a dead-end.\n\nWhen all destinations from an airport are exhausted, it means we have found the end of that particular path. At this moment, by adding the airport to our final result and removing it from the stack, we backtrack to find the remaining itinerary.\n\nThe graph for this solution is a dictionary (specifically, a defaultdict for ease of handling non-existing keys). The keys of this dictionary are the source airports, and the values are a list of destination airports. Importantly, these destinations are sorted in reverse lexicographical order because we will be utilizing the pop() function to retrieve and remove the last element from these lists. This ensures that we always get the smallest lexical destination available without any extra computational overhead.\n\nSteps\n\nConvert the given list of tickets into a graph where each node (airport) points to a list of its destinations.\nSort the destinations in reverse lexicographical order to aid in retrieving the smallest lexical order when using pop().\nUse a stack to iteratively traverse the graph, always trying to go to the smallest lexical destination possible.\nWhen stuck at a node (airport) with no unvisited outbound paths, add it to the final itinerary.\nContinue the process until the stack is empty.\n\nSolution\n\nfrom collections import defaultdict\n\ndef findItinerary(tickets):\n    graph = defaultdict(list)       # Convert tickets into a graph with destinations for each departure\n    for src, dest in sorted(tickets, reverse=True):\n        graph[src].append(dest)\n\n    stack = [\"JFK\"]\n    result = []\n\n    while stack:                    # Traverse the graph using the stack\n        while graph[stack[-1]]:\n            stack.append(graph[stack[-1]].pop())\n        result.append(stack.pop())\n\n    return result[::-1]             # The result will be in reverse order\nbecause of the way nodes are added to the result\n",
             "tags": [
                 "LeetCode"
             ],
