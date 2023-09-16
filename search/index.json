@@ -1150,12 +1150,6 @@
             "lang": "ru"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 8/",
-            "content": "\n\n",
-            "tags": [],
-            "lang": "ru"
-        },
-        {
             "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 21/",
             "content": "\n\n",
             "tags": [],
@@ -2939,7 +2933,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 3
+                    "timeTakenInMilliseconds": 2
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -4167,6 +4161,16 @@
             "description": "334. Increasing Triplet Subsequence",
             "content": "\nLeetCode problem\n\nProblem Statement\n\nThe task is to determine if the given list of numbers contains an increasing subsequence of length three. This means we need to find three indices i, j, and k in the list such that i  bool:\nInitialize two pointers to track the smallest and second smallest elements\n        first = second = float('inf')\n\n        for n in nums:\nIf the current number is smaller or equal than the smallest number found so far,\nthen update the smallest number.\n            if n <= first:\n                first = n\nIf the current number is greater than the smallest number but smaller or equal\nthan the second smallest number found so far, then update the second smallest number.\n            elif n <= second:\n                second = n\nIf the current number is greater than both smallest and second smallest numbers,\nit means we found a increasing triplet subsequence.\n            else:\n                return True\nIf no increasing triplet subsequence was found, return False.\n        return False\n",
             "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/2856/",
+            "title": "2856. Minimum Array Length After Pair Removals",
+            "description": "2856. Minimum Array Length After Pair Removals",
+            "content": "\nLeetCode problem\n\nProblem Statement\n\nGiven a 0-indexed sorted array of integers nums, you can perform a specific operation an unlimited number of times:\n\nChoose two indices, i and j, where i  nums[i] and i hasn't been removed, add i and j to the removed set and move the pointer i one step forward.\nContinue the process until the end of the array.\nThe result is len(nums) - len(removed).\n\nSolution\n\ndef minimumLengthAfterRemoval(nums):\n    i = 0\n    removed = set()\n    for j in range(len(nums) // 2, len(nums)):\n        if nums[j] > nums[i] and i not in removed:\n            removed.add(i)\n            removed.add(j)\n            i += 1\n    return len(nums) - len(removed)\n",
+            "tags": [
+                "LeetCode"
+            ],
             "lang": "en"
         },
         {
