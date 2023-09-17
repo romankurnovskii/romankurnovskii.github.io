@@ -11,7 +11,7 @@ featuredImage: https://picsum.photos/700/241?grayscale
 weight: 2856
 ---
 
-[LeetCode problem](<https://leetcode.com/problems/minimum-array-length-after-pair-removals/>)
+[LeetCode problem 2856](<https://leetcode.com/problems/minimum-array-length-after-pair-removals/>)
 
 ## Problem Statement
 
@@ -30,7 +30,7 @@ One way to approach this problem would be to iterate through every possible pair
 
 - Utilizing two pointers can help in efficiently determining the pairs to remove.
 - Keep track of removed indices in a set to avoid duplication.
-- Focus on removing the largest numbers since they have the most potential pairs.
+- Focus on <mark>removing the largest numbers</mark> since they have the most potential pairs.
 
 ## Approach
 
