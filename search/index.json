@@ -1204,12 +1204,6 @@
             "lang": "ru"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 12/",
-            "content": "\n\n",
-            "tags": [],
-            "lang": "ru"
-        },
-        {
             "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 11/",
             "content": "\n\n",
             "tags": [],
@@ -2505,7 +2499,7 @@
             "uri": "/posts/vps-docker-subdomains-setup/project/projects/3/",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 2
+                    "timeTakenInMilliseconds": 1
                 },
                 "result": "Hello World!",
                 "ranges": [
@@ -4167,7 +4161,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2856/",
             "title": "2856. Minimum Array Length After Pair Removals",
             "description": "2856. Minimum Array Length After Pair Removals",
-            "content": "\nLeetCode problem\n\nProblem Statement\n\nGiven a 0-indexed sorted array of integers nums, you can perform a specific operation an unlimited number of times:\n\nChoose two indices, i and j, where i  nums[i] and i hasn't been removed, add i and j to the removed set and move the pointer i one step forward.\nContinue the process until the end of the array.\nThe result is len(nums) - len(removed).\n\nSolution\n\ndef minimumLengthAfterRemoval(nums):\n    i = 0\n    removed = set()\n    for j in range(len(nums) // 2, len(nums)):\n        if nums[j] > nums[i] and i not in removed:\n            removed.add(i)\n            removed.add(j)\n            i += 1\n    return len(nums) - len(removed)\n",
+            "content": "\nLeetCode problem 2856\n\nProblem Statement\n\nGiven a 0-indexed sorted array of integers nums, you can perform a specific operation an unlimited number of times:\n\nChoose two indices, i and j, where `i removing the largest numbers since they have the most potential pairs.\n\nApproach\n\nThe idea is to maintain two pointers: a slow pointer i starting from the beginning of the array and a fast pointer j starting from the middle of the array. Since the array is sorted, this ensures that the number at j is always greater than the number at i.\n\nTraverse the list with the two pointers.\nIf a valid pair is found (i.e., nums[i]  nums[i] and i hasn't been removed, add i and j to the removed set and move the pointer i one step forward.\nContinue the process until the end of the array.\nThe result is len(nums) - len(removed).\n\nSolution\n\ndef minimumLengthAfterRemoval(nums):\n    i = 0\n    removed = set()\n    for j in range(len(nums) // 2, len(nums)):\n        if nums[j] > nums[i] and i not in removed:\n            removed.add(i)\n            removed.add(j)\n            i += 1\n    return len(nums) - len(removed)\n",
             "tags": [
                 "LeetCode"
             ],
@@ -4298,6 +4292,16 @@
             "title": "Hard",
             "description": null,
             "content": "",
+            "tags": [
+                "LeetCode"
+            ],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/847/",
+            "title": "847. Shortest Path Visiting All Nodes",
+            "description": "This article aims to explain the problem of finding the shortest path to visit all nodes in an undirected, connected graph.",
+            "content": "\nLeetCode problem 847\n\nProblem Statement\n\nGiven an undirected, connected graph of n nodes labeled from 0 to n - 1. An array graph is provided where graph[i] is a list of all the nodes connected with node i by an edge. The objective is to determine the length of the shortest path that visits every node.\n\nIt's permissible to start and stop at any node, revisit nodes multiple times, and reuse edges.\n\nNaive Solution\n\nA naive approach would be to attempt all possible paths (brute force) until all nodes are visited. This would involve significant computational power and time, especially for larger graphs.\n\nHints & Tips\n\nState Compression: The visited state of nodes can be represented using binary numbers.\nBreadth-First Search: BFS can be used to explore the graph systematically.\n\nApproach\n\nInstead of the brute force approach, a more refined BFS can be applied. The BFS is enhanced using two techniques:\n\nState Compression: Rather than tracking visited nodes for each path with a set or list, represent them with a binary number. This efficient way compresses the state and avoids redundancy.\nDouble-ended Queue: An efficient way to explore BFS paths using deque which allows operations from both ends.\n\nSteps\n\nUse BFS for exploration.\nEncode the visited state of nodes with binary numbers.\nUtilize a double-ended queue storing the nodes, their states, and steps taken.\nThe ultimate goal is to discover a state that represents all nodes being visited.\n\nSolution\n\nfrom collections import deque\n\ndef shortestPathLength(graph):\n    n = len(graph)\n    final_state = (1 << n) - 1  # This mask checks if all nodes are visited\n    visited = set()             # To track visited (node, state) pairs\n    queue = deque()             # Double-ended queue for BFS\n\nStart BFS from every node\n    for i in range(n):\n        state = 1 << i\n        queue.append((i, state, 0))\n        visited.add((i, state))\n\n    while queue:\n        node, state, steps = queue.popleft()\n\n        if state == final_state:        # If all nodes are visited in the current state, return steps\n            return steps\n\n        for neighbor in graph[node]:    # Check neighbors and add new states to the queue\n            new_state = state | (1 << neighbor)\n            if (neighbor, new_state) not in visited:\n                visited.add((neighbor, new_state))\n                queue.append((neighbor, new_state, steps + 1))\n\n    return -1\n",
             "tags": [
                 "LeetCode"
             ],
