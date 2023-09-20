@@ -21,28 +21,26 @@ weight: 287
 
 ## Подход
 
-Один из способов решения задачи — использование двух указателей (tortoise и hare), что известно как "алгоритм зайца и черепахи" для нахождения цикла в связанном списке.
+Один из способов решения задачи — использование двух указателей (`tortoise` и `hare`), что известно как "алгоритм зайца и черепахи" для нахождения цикла в связанном списке.
 
 ## Алгоритм
 
-1. Инициализируем два указателя: tortoise и hare.
-2. Используем их для прохода по массиву: tortoise двигается на один шаг, а hare — на два.
-3. Как только они встретятся, начнем новый проход с tortoise из начального положения и hare из точки встречи, двигая их на один шаг, пока они не встретятся снова.
+1. Инициализируем два указателя: `tortoise` и `hare`.
+2. Используем их для прохода по массиву: `tortoise` двигается на один шаг, а `hare` — на два.
+3. Как только они встретятся, начнем новый проход с `tortoise` из начального положения и `hare` из точки встречи, двигая их на один шаг, пока они не встретятся снова.
 
 ## Решение
 
 ```python
 def findDuplicate(nums):
-    # Phase 1: Using Floyd's Tortoise and Hare (Cycle Detection)
-    tortoise = hare = nums[0]
+    tortoise = hare = nums[0]   # 1: Using Floyd's Tortoise and Hare (Cycle Detection)
     while True:
         tortoise = nums[tortoise]
         hare = nums[nums[hare]]
         if tortoise == hare:
             break
-    
-    # Phase 2: Find the entrance to the cycle
-    tortoise = nums[0]
+
+    tortoise = nums[0]          # 2: Find the entrance to the cycle
     while tortoise != hare:
         tortoise = nums[tortoise]
         hare = nums[hare]
