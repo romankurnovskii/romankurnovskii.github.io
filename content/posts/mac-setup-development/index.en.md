@@ -382,13 +382,13 @@ Add script to zprofile that updates everything:
 1. Update, upgrade all and cleanup
 2. softwareupdate - system software update tool
 
-We can execute this command on strartup, but i prefer handle it. When I kick of `upd` command in terminal, it will update everythin I need:
+We can execute this command on startup, but i prefer handle it. When I kick of `upd` command in terminal, it will update everything I need:
 
 ```bash
 alias upd='brew update; brew upgrade; brew cu -a --cleanup -y -v; brew cleanup; softwareupdate -i -a; i'
 ```
 
-Add aliases to latest versions pip & python
+Add aliases to the latest versions pip & python
 
 ```bash
 # А 
@@ -401,6 +401,12 @@ Add aliases to latest versions pip & python
 alias penv='python -m venv venv && source ./venv/bin/activate && pip install --upgrade pip && echo "\n" >> requirements.txt && pip install -r requirements.txt && pip freeze > requirements_freeze.txt && echo "venv/" >> .gitignore'
 
 alias jp="jupyter notebook $@"
+```
+
+### Clean space
+
+```sh
+alias clean="brew cleanup --prune=all; rm -rf ~/Library/Caches"
 ```
 
 ## Links
