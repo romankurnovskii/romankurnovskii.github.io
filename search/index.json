@@ -904,7 +904,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/287/",
             "title": "287. Find the Duplicate Number",
             "description": "LeetCode 287. Найти дублирующее число в массиве.",
-            "content": "\nLeetCode задача 287\n\nЗадача\n\nДан массив nums размера n + 1, в котором каждый элемент принимает значение от 1 до n, что означает, что как минимум одно число будет дублироваться.\n\nНайдите это дублирующееся число.\n\nПодход\n\nОдин из способов решения задачи — использование двух указателей (tortoise и hare), что известно как \"алгоритм зайца и черепахи\" для нахождения цикла в связанном списке.\n\nАлгоритм\n\nИнициализируем два указателя: tortoise и hare.\nИспользуем их для прохода по массиву: tortoise двигается на один шаг, а hare — на два.\nКак только они встретятся, начнем новый проход с tortoise из начального положения и hare из точки встречи, двигая их на один шаг, пока они не встретятся снова.\n\nРешение\n\ndef findDuplicate(nums):\nPhase 1: Using Floyd's Tortoise and Hare (Cycle Detection)\n    tortoise = hare = nums[0]\n    while True:\n        tortoise = nums[tortoise]\n        hare = nums[nums[hare]]\n        if tortoise == hare:\n            break\n\nPhase 2: Find the entrance to the cycle\n    tortoise = nums[0]\n    while tortoise != hare:\n        tortoise = nums[tortoise]\n        hare = nums[hare]\n\n    return hare\n",
+            "content": "\nLeetCode задача 287\n\nЗадача\n\nДан массив nums размера n + 1, в котором каждый элемент принимает значение от 1 до n, что означает, что как минимум одно число будет дублироваться.\n\nНайдите это дублирующееся число.\n\nПодход\n\nОдин из способов решения задачи — использование двух указателей (tortoise и hare), что известно как \"алгоритм зайца и черепахи\" для нахождения цикла в связанном списке.\n\nАлгоритм\n\nИнициализируем два указателя: tortoise и hare.\nИспользуем их для прохода по массиву: tortoise двигается на один шаг, а hare — на два.\nКак только они встретятся, начнем новый проход с tortoise из начального положения и hare из точки встречи, двигая их на один шаг, пока они не встретятся снова.\n\nРешение\n\ndef findDuplicate(nums):\n    tortoise = hare = nums[0]   # 1: Using Floyd's Tortoise and Hare (Cycle Detection)\n    while True:\n        tortoise = nums[tortoise]\n        hare = nums[nums[hare]]\n        if tortoise == hare:\n            break\n\n    tortoise = nums[0]          # 2: Find the entrance to the cycle\n    while tortoise != hare:\n        tortoise = nums[tortoise]\n        hare = nums[hare]\n\n    return hare\n",
             "tags": [
                 "Array",
                 "Binary Search",
@@ -1157,12 +1157,6 @@
         },
         {
             "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 20/",
-            "content": "\n\n",
-            "tags": [],
-            "lang": "ru"
-        },
-        {
-            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 19/",
             "content": "\n\n",
             "tags": [],
             "lang": "ru"
@@ -2927,7 +2921,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 2
+                    "timeTakenInMilliseconds": 3
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -4158,6 +4152,16 @@
             "lang": "en"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/287/",
+            "title": "287. Find the Duplicate Number",
+            "description": "Unraveling the mystery of finding the duplicate number in an array.",
+            "content": "\n\n\nLeetCode problem\n\nProblem Statement\n\nGiven an array of integers nums containing n + 1 integers where each integer is within the range [1, n], you need to find and return the only duplicate number present in nums.\n\nThe key constraints:\n\nYou shouldn't modify the array nums.\nYou should only use constant extra space.\n\nNaive Solution\n\nOne possible naive solution would be to use a nested loop to compare each element with every other element in the array. This approach, however, is not efficient and has a time complexity of O(n^2), which doesn't scale well with large inputs.\n\nApproach / Idea\n\nThink of the numbers in the array as representing a linked list. Each number is a pointer to the next index.\nUsing Floyd's Tortoise and Hare algorithm, determine if a cycle exists.\nIf a cycle exists, use the algorithm's phase 2 to find the starting point of the cycle which corresponds to our duplicate number.\n\nAlgorithm/Data Structure: Floyd's Tortoise and Hare (Cycle Detection)\n\nThe problem can be visualized as a linked list where each value is a pointer to the next index. If there's a duplicate, it means there's a cycle in this 'list'. Floyd's Tortoise and Hare algorithm, often used for cycle detection in linked lists, can be applied to find the duplicate number.\n\nHow the cycle detection works\n\nPhase 1 (Finding intersection point): Use two pointers, one moving fast (two steps at a time) and one moving slow. If there's a cycle, they'll eventually meet at some point.\nPhase 2 (Finding entry point of cycle): Move the fast pointer back to the start and advance both pointers at the same speed. The point where they meet again is the beginning of the cycle or, in this context, our duplicate number.\n\nSolution\n\ndef findDuplicate(nums):\n    tortoise = hare = nums[0]   # 1: Using Floyd's Tortoise and Hare (Cycle Detection)\n    while True:\n        tortoise = nums[tortoise]\n        hare = nums[nums[hare]]\n        if tortoise == hare:\n            break\n\n    tortoise = nums[0]          # 2: Find the entrance to the cycle\n    while tortoise != hare:\n        tortoise = nums[tortoise]\n        hare = nums[hare]\n\n    return hare\n",
+            "tags": [
+                "LeetCode"
+            ],
+            "lang": "en"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/2856/",
             "title": "2856. Minimum Array Length After Pair Removals",
             "description": "2856. Minimum Array Length After Pair Removals",
@@ -4235,6 +4239,16 @@
                 "LeetCode",
                 "Algorithms",
                 "Medium"
+            ],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1658/",
+            "title": "1658. Minimum Operations to Reduce X to Zero",
+            "description": "An exploration of reducing x to zero using minimum operations.",
+            "content": "\nLeetCode problem 1658\n\nProblem Statement\n\nYou have an integer array nums and another integer x. In a single operation, you can either remove the leftmost or the rightmost element from the array nums and decrement x by the value of the removed element. The question is: What is the minimum number of operations required to reduce x to exactly zero? If it's not feasible, the answer should be -1.\n\nNaive Solution\n\nThe naive approach would be to explore every possible combination of removing elements from the start or the end, recursively. While this approach can find the solution, it's extremely inefficient and would result in a time complexity beyond O(2^n).\n\nApproach\n\nThe problem can be turned around: Instead of trying to determine which numbers to remove from the ends, think of it as finding the longest subarray inside nums such that the sum of its elements is equal to the total sum of nums minus x. Let's call this approach in mathematics \"from the reverse\".\n\nWhy does this work? Well, if we find the maximum-length subarray with a sum equal to total - x, then the numbers we need to remove from the array will be the numbers outside this subarray!\n\nThis transformed problem can be tackled using a two-pointer or sliding window approach.\n\nSteps\n\nCalculate the total sum of nums.\nSet a target sum which is total - x.\nUsing a sliding window approach, find the maximum length of the subarray whose sum equals the target.\nThe result will be the total length of nums minus the length of this subarray. If no such subarray exists, return -1.\n\nSolution\n\ndef minOperations(nums, x):\n    total = sum(nums)\n    target = total - x\n\n    n = len(nums)\n    curr_sum = 0            # sum of our current subarray.\n    max_len = -1            # maximum length of the subarray that sums up to the target.\n\n    left = 0                # Starting pointer of sliding window.\n\n    for right in range(n):                      # Starting pointer of our sliding window.\n        curr_sum += nums[right]\n\n        while curr_sum > target and left < n:   # If our current sum goes beyond target\n            curr_sum -= nums[left]              # shrink the window from the left\n            left += 1\n\n        if curr_sum == target:\n            max_len = max(max_len, right - left + 1)\n\n    if max_len == -1:\n        return -1\n    return n - max_len\n",
+            "tags": [
+                "LeetCode"
             ],
             "lang": "en"
         },
