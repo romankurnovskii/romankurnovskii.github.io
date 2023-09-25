@@ -130,25 +130,25 @@
 </span></span><span style=display:flex><span>  service:
 </span></span><span style=display:flex><span>    name: mysql
 </span></span><span style=display:flex><span>    state: restarted
-</span></span></code></pre></div><p>Tasks - install_mysql.yml, main.yml & setup_mysql.yml</p><p>install_mysql.yml - this task is going to be there to install mysql and ensure that the service is running.</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-v data-lang=v><span style=display:flex><span><span style=color:#666>-</span> <span style=color:#bb60d5>name</span>: <span style=color:#4070a0>&#34;Install Common packages&#34;</span>
-</span></span><span style=display:flex><span>  <span style=color:#bb60d5>apt</span>: <span style=color:#bb60d5>name</span><span style=color:#666>=</span>{{ <span style=color:#bb60d5>item</span> }} <span style=color:#bb60d5>state</span><span style=color:#666>=</span><span style=color:#bb60d5>latest</span>
-</span></span><span style=display:flex><span>  <span style=color:#002070;font-weight:700>with_items</span>:
-</span></span><span style=display:flex><span>   <span style=color:#666>-</span> <span style=color:#bb60d5>python3</span><span style=color:#666>-</span><span style=color:#bb60d5>pip</span>
-</span></span><span style=display:flex><span>   <span style=color:#666>-</span> <span style=color:#bb60d5>mysql</span><span style=color:#666>-</span><span style=color:#bb60d5>client</span>
-</span></span><span style=display:flex><span>   <span style=color:#666>-</span> <span style=color:#bb60d5>python3</span><span style=color:#666>-</span><span style=color:#bb60d5>mysqldb</span>
-</span></span><span style=display:flex><span>   <span style=color:#666>-</span> <span style=color:#bb60d5>libmysqlclient</span><span style=color:#666>-</span><span style=color:#bb60d5>dev</span>
+</span></span></code></pre></div><p>Tasks - install_mysql.yml, main.yml & setup_mysql.yml</p><p>install_mysql.yml - this task is going to be there to install mysql and ensure that the service is running.</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>- name: &#34;Install Common packages&#34;
+</span></span><span style=display:flex><span>  apt: name={{ item }} state=latest
+</span></span><span style=display:flex><span>  with_items:
+</span></span><span style=display:flex><span>   - python3-pip
+</span></span><span style=display:flex><span>   - mysql-client
+</span></span><span style=display:flex><span>   - python3-mysqldb
+</span></span><span style=display:flex><span>   - libmysqlclient-dev
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#666>-</span> <span style=color:#bb60d5>name</span>: <span style=color:#0e84b5;font-weight:700>Ensure</span> <span style=color:#bb60d5>mysql</span><span style=color:#666>-</span><span style=color:#bb60d5>server</span> <span style=color:#007020;font-weight:700>is</span> <span style=color:#bb60d5>installed</span> <span style=color:#bb60d5>latest</span> <span style=color:#bb60d5>version</span>
-</span></span><span style=display:flex><span>  <span style=color:#bb60d5>apt</span>: <span style=color:#bb60d5>name</span><span style=color:#666>=</span><span style=color:#bb60d5>mysql</span><span style=color:#666>-</span><span style=color:#bb60d5>server</span> <span style=color:#bb60d5>state</span><span style=color:#666>=</span><span style=color:#bb60d5>latest</span>
+</span></span><span style=display:flex><span>- name: Ensure mysql-server is installed latest version
+</span></span><span style=display:flex><span>  apt: name=mysql-server state=latest
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#666>-</span> <span style=color:#bb60d5>name</span>: <span style=color:#0e84b5;font-weight:700>Installing</span> <span style=color:#bb60d5>python</span> <span style=color:#007020;font-weight:700>module</span> <span style=color:#0e84b5;font-weight:700>MySQL</span><span style=color:#666>-</span><span style=color:#bb60d5>python</span>
-</span></span><span style=display:flex><span>  <span style=color:#002070;font-weight:700>pip</span>:
-</span></span><span style=display:flex><span>    <span style=color:#bb60d5>name</span>: <span style=color:#0e84b5;font-weight:700>PyMySQL</span>
+</span></span><span style=display:flex><span>- name: Installing python module MySQL-python
+</span></span><span style=display:flex><span>  pip:
+</span></span><span style=display:flex><span>    name: PyMySQL
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#666>-</span> <span style=color:#bb60d5>name</span>: <span style=color:#0e84b5;font-weight:700>Ensure</span> <span style=color:#bb60d5>mysql</span><span style=color:#666>-</span><span style=color:#bb60d5>server</span> <span style=color:#007020;font-weight:700>is</span> <span style=color:#bb60d5>running</span>
-</span></span><span style=display:flex><span>  <span style=color:#002070;font-weight:700>service</span>:
-</span></span><span style=display:flex><span>    <span style=color:#bb60d5>name</span>: <span style=color:#bb60d5>mysql</span>
-</span></span><span style=display:flex><span>    <span style=color:#bb60d5>state</span>: <span style=color:#bb60d5>started</span>
+</span></span><span style=display:flex><span>- name: Ensure mysql-server is running
+</span></span><span style=display:flex><span>  service:
+</span></span><span style=display:flex><span>    name: mysql
+</span></span><span style=display:flex><span>    state: started
 </span></span></code></pre></div><p>main.yml is a pointer file that will suggest that we import_tasks from these files.</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span># tasks file for roles/mysql
 </span></span><span style=display:flex><span>- import_tasks: install_mysql.yml
 </span></span><span style=display:flex><span>- import_tasks: setup_mysql.yml

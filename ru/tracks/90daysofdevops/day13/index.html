@@ -47,10 +47,10 @@
 </span></span><span style=display:flex><span>set CONSUMER_SECRET
 </span></span><span style=display:flex><span>set ACCESS_TOKEN
 </span></span><span style=display:flex><span>set ACCESS_TOKEN_SECRET
-</span></span></code></pre></div><p>Linux / macOS</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>export CONSUMER_KEY
-</span></span><span style=display:flex><span>export CONSUMER_SECRET
-</span></span><span style=display:flex><span>export ACCESS_TOKEN
-</span></span><span style=display:flex><span>export ACCESS_TOKEN_SECRET
+</span></span></code></pre></div><p>Linux / macOS</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-gdscript3 data-lang=gdscript3><span style=display:flex><span><span style=color:#007020;font-weight:700>export</span> CONSUMER_KEY
+</span></span><span style=display:flex><span><span style=color:#007020;font-weight:700>export</span> CONSUMER_SECRET
+</span></span><span style=display:flex><span><span style=color:#007020;font-weight:700>export</span> ACCESS_TOKEN
+</span></span><span style=display:flex><span><span style=color:#007020;font-weight:700>export</span> ACCESS_TOKEN_SECRET
 </span></span></code></pre></div><p>At this stage, you can take a look at <a href=Go/day13_example2.go>day13_example2</a> at the code but you will see here that we are using a struct to define our keys, secrets and tokens.</p><p>We then have a <code>func</code> to parse those credentials and make that connection to the Twitter API</p><p>Then based on the success we will then send a tweet.</p><p>На этом этапе вы можете взглянуть на следующий код</p><div class=highlight><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#007020;font-weight:700>package</span> main
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#007020;font-weight:700>import</span> (
