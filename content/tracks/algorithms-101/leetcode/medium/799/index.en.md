@@ -37,8 +37,6 @@ To solve this problem efficiently, we can use a bottom-up dynamic programming ap
 
 4. **Efficiency**: By using a 2D array to simulate the tower and processing each glass only once, we can calculate the amount of champagne in the queried glass in an efficient manner. This avoids the need for complex simulations or recursive calculations.
 
-
-
 ## Steps
 
 1. **Initialize the Tower**: Create a 2D array representing the glasses. Pour the given amount into the top glass: `[[poured], [0,0], [0,0,0], ...]`
