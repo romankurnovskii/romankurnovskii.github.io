@@ -1150,19 +1150,7 @@
             "lang": "ru"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 21/",
-            "content": "\n\n",
-            "tags": [],
-            "lang": "ru"
-        },
-        {
             "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 20/",
-            "content": "\n\n",
-            "tags": [],
-            "lang": "ru"
-        },
-        {
-            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 17/",
             "content": "\n\n",
             "tags": [],
             "lang": "ru"
@@ -2469,7 +2457,7 @@
             "uri": "/posts/vps-docker-subdomains-setup/project/projects/3/",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 2
+                    "timeTakenInMilliseconds": 1
                 },
                 "result": "Hello World!",
                 "ranges": [
@@ -2897,7 +2885,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 13
+                    "timeTakenInMilliseconds": 1
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -4141,6 +4129,17 @@
             "lang": "en"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/343/",
+            "title": "343. Integer Break",
+            "description": "Integer Break",
+            "content": "\nLeetCode problem 343\n\nProblem Statement\n\nGiven a positive integer n, our task is to divide it into the sum of \\( k \\) positive integers, where \\( k \\geq 2 \\), in such a way that the product of these integers is maximized. Our goal is to determine the maximum possible product.\n\nNaive Solution\n\nA straightforward or naive way to solve this would be to consider all potential combinations to divide the number  n and calculate the product for each division. This method, while comprehensive, would be inefficient and impractical for larger values of  n.\n\nHints & Tips\n\nTry to break down  n into smaller parts and observe the pattern of the results.\nThe number 3 plays a significant role, so try to understand its impact on the problem.\n\nApproach\n\nA pattern emerges when observing how the number can be broken down to maximize the product: the number 3 becomes significant. This realization stems from the fact that 3 multiplied by any number \\( x \\geq 3 \\) is always greater than \\( x \\times 2 \\) and \\( x \\times 1 \\). The only exception is 4, where \\( 2 \\times 2 \\) is preferable to 3 and 1.\n\nTherefore, the optimized approach becomes:\n\nWhen \\( n = 2 \\), the answer is 1 (because \\( 1 \\times 1 = 1 \\)).\nFor \\( n = 3 \\), the answer becomes 2 (as \\( 2 \\times 1 = 2 \\)).\nIf \\( n = 4 \\), the result is 4 (as \\( 2 \\times 2 = 4 \\)).\nFor any (n > 4), we can repeatedly subtract 3 from n and multiply the resulting product by 3. After all the 3s are extracted, the remaining n (which will be less than 4) will contribute its optimal value to the product (either 1, 2, or 4).\n\nSolution\n\ndef integerBreak(n: int) -> int:\n    if n == 2:          # base cases\n        return 1\n    if n == 3:\n        return 2\n    if n == 4:\n        return 4\n\n    product = 1\n\n    while n > 4:        # As long as n is greater than 4,\n        product *= 3    # increase the product by a factor of 3\n        n -= 3          # and keep reducing n by 3\n\n    product *= n        # Multiply the remaining value of n to the product\n\n    return product\n",
+            "tags": [
+                "LeetCode",
+                "Mathematics"
+            ],
+            "lang": "en"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/334/",
             "title": "334. Increasing Triplet Subsequence",
             "description": "334. Increasing Triplet Subsequence",
@@ -4236,6 +4235,16 @@
                 "LeetCode",
                 "Algorithms",
                 "Medium"
+            ],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/229/",
+            "title": "229. Majority Element II",
+            "description": "A detailed explanation and Python solution for LeetCode problem 229. Majority Element II.",
+            "content": "\nLeetCode problem 229\n\nProblem Statement\n\nGiven an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times.\n\nNaive Solution\n\nThe immediate solution would involve using a hashmap or dictionary to track the occurrence of each number in the array. After which, we can iterate over the dictionary to find numbers whose occurrences are greater than n/3.\n\nHints & Tips\n\nThere can be at most one or two majority elements which appear more than n/3 times in the array.\nEmploy the Boyer-Moore Voting Algorithm.\n\nApproach / Idea\n\nWe can apply a variation of the Boyer-Moore Voting Algorithm. The fundamental insight behind this algorithm is that at each step, we can discard a certain portion of the elements and still have the same majority elements.\n\nFor this problem, we'll maintain two counters and two majority candidates. This is because there could be at most two majority elements.\n\nSteps / High level algorithm\n\nInitialize two counters and two majority candidates.\nParse the array:\n    If the current element matches either of the majority candidates, increase the respective counter.\n    If both counters are zero, reset both majority candidates and counters.\n    Otherwise, decrease both counters.\nReassess the majority candidates by verifying their counts.\n\nSolution\n\ndef majorityElement(self, nums: List[int]) -> List[int]:\n    cand1 = 0  # Two majority candidates and their counters\n    cand2 = 1\n    count1 = 0\n    count2 = 0\n\n    for num in nums:\n        if num == cand1:\n            count1 += 1\n        elif num == cand2:\n            count2 += 1\n        elif count1 == 0:\n            cand1, count1 = num, 1\n        elif count2 == 0:\n            cand2, count2 = num, 1\n        else:\n            count1, count2 = count1 - 1, count2 - 1\n\n    res = []\n    count = len(nums) // 3\n    for cand in (cand1, cand2):\n        if nums.count(cand) > count:\n            res.append(cand)\n\n    return res\n",
+            "tags": [
+                "LeetCode"
             ],
             "lang": "en"
         },
