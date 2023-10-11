@@ -26,13 +26,13 @@ The immediate solution would involve using a hashmap or dictionary to track the 
 - There can be at most one or two majority elements which appear more than `n/3` times in the array.
 - Employ the [Boyer-Moore Voting Algorithm](https://www.topcoder.com/thrive/articles/boyer-moore-majority-vote-algorithm).
 
-## Approach / Idea
+## Approach
 
 We can apply a variation of the Boyer-Moore Voting Algorithm. The fundamental insight behind this algorithm is that at each step, we can discard a certain portion of the elements and still have the same majority elements.
 
 For this problem, we'll maintain two counters and two majority candidates. This is because there could be at most two majority elements.
 
-## Steps / High level algorithm
+## Steps
 
 1. Initialize two counters and two majority candidates.
 2. Parse the array:

@@ -4,20 +4,18 @@ seoTitle: LeetCode 287. Find the Duplicate Number | Python Solution and Explanat
 description: Unraveling the mystery of finding the duplicate number in an array.
 toc: true
 tags: [LeetCode]
-categories: [Algorithms, Medium]
+categories: [Algorithms, LeetCode, Medium]
 date: 2023-09-18
-lastMod: 2023-09-18
+lastMod: 2023-10-06
 featuredImage: https://picsum.photos/700/241?grayscale
 weight: 287
 ---
 
-
-
-[LeetCode problem](<https://leetcode.com/problems/find-the-duplicate-number/>)
+[LeetCode problem 287](<https://leetcode.com/problems/find-the-duplicate-number/>)
 
 ## Problem Statement
 
-Given an array of integers `nums` containing n + 1 integers where each integer is within the range [1, n], you need to find and return the only duplicate number present in `nums`.
+Given an array of integers `nums` containing n + 1 integers where each integer is within the range `[1, n]`, you need to find and return the only duplicate number present in `nums`.
 
 The key constraints:
 
@@ -28,7 +26,7 @@ The key constraints:
 
 One possible naive solution would be to use a nested loop to compare each element with every other element in the array. This approach, however, is not efficient and has a time complexity of O(n^2), which doesn't scale well with large inputs.
 
-## Approach / Idea
+## Approach
 
 1. Think of the numbers in the array as representing a linked list. Each number is a pointer to the next index.
 2. Using Floyd's Tortoise and Hare algorithm, determine if a cycle exists.
@@ -58,6 +56,6 @@ def findDuplicate(nums):
     while tortoise != hare:
         tortoise = nums[tortoise]
         hare = nums[hare]
-        
+
     return hare
 ```

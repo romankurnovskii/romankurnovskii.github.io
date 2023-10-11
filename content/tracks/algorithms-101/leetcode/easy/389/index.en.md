@@ -4,7 +4,7 @@ seoTitle: LeetCode 389. Find the Difference | Python solution and explanation us
 description: Detailed explanation and Python solution for LeetCode problem 389. Find the Difference using the `collections.Counter`.
 toc: true
 tags: [LeetCode]
-categories: [Algorithms, LeetCode,Easy]
+categories: [Algorithms, LeetCode, Easy]
 date: 2023-09-26
 lastMod: 2023-09-26
 featuredImage: https://picsum.photos/700/241?grayscale
@@ -26,11 +26,11 @@ A naive solution would involve comparing the characters in both strings one by o
 - Counting occurrences of characters can help detect discrepancies.
 - The `collections.Counter` class is a handy tool in Python for counting elements in a collection.
 
-## Approach / Idea
+## Approach
 
 We can utilize Python's `collections.Counter` to help us find the difference between the two strings. The `Counter` allows us to quickly count the occurrences of each character in the string `s`. We then iterate over the string `t` and decrement the count for each character encountered. The character that results in a count of `-1` is the one that was added to `t`.
 
-## Steps / High level algorithm
+## Steps
 
 1. Create a Counter for the string `s`.
 2. Iterate over each character `c` in string `t`.
