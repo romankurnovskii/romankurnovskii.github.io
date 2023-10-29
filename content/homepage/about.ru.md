@@ -5,7 +5,7 @@ role: <a href="https://www.youtube.com/watch?v=3ygPF-Qshkc" target="_blank">Ра
 avatar: images/avatar.jpg
 bio: 
 organization:
-  name: J.P. Morgan
+  name: Банк J.P. Morgan
   url: https://www.jpmorganchase.com/
 social:
   - icon: envelope

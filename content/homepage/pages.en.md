@@ -2,7 +2,7 @@
 title: Posts
 draft: false
 # Section you want to display
-section: posts # Tobe deprecated
+section: posts # To be deprecated
 sections: [posts, docs, apps]
 # Pages count
 count: 8

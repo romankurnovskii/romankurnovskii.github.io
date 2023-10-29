@@ -4,7 +4,7 @@ role: Разработчик Athena Core
 avatar: images/avatar.jpg
 bio: 
 organization:
-  name: J.P. Morgan
+  name: Банк J.P. Morgan
   url: https://www.jpmorganchase.com/
 social:
   - icon: envelope
