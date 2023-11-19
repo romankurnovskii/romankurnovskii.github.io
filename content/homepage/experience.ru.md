@@ -4,7 +4,7 @@ draft: false
 experiences:
   - title: J.P. Morgan
     organization:
-      name: Разработчик в команде Athena Core
+      name: Разработчик Athena Core
       url: https://www.jpmorganchase.com/
     dates: "2021 - Present"
     location: Израиль

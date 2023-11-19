@@ -11,7 +11,7 @@ featuredImage: https://picsum.photos/700/241?grayscale
 weight: 9
 ---
 
-[LeetCode problem](<https://leetcode.com/problems/palindrome-number/>)
+[LeetCode problem 9. Palindrome Number](<https://leetcode.com/problems/palindrome-number/>)
 
 ## Problem Statement
 

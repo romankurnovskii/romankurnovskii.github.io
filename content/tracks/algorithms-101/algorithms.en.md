@@ -323,9 +323,9 @@ In both examples, the first pass through the data gathered information that was 
 
 ## Prefix Sums
 
-<mark>**Usage:** The prefix sums algorithm is a powerful technique that can simplify problems that require frequent computation of sums over subarrays or subtrees. As with all algorithms, practice is key. Try to identify problems where this algorithm can be applied, and it'll soon become a natural tool in your algorithmic toolkit.</mark>
+<mark>**Usage:** The prefix sums algorithm is a powerful technique that can simplify problems that require **frequent computation of sums over subarrays** or subtrees.</mark>
 
-At its core, the idea behind the prefix sums algorithm is to preprocess an array of numbers such that you can efficiently answer queries about the sum of elements in a given subarray.
+The idea behind the prefix sums algorithm is to preprocess an array of numbers such that you can efficiently answer queries about the sum of elements in a given subarray.
 
 Imagine you're given an array of numbers, and you want to know the sum of numbers between the indices
 `i` and `j` (inclusive). If you sum up the numbers every time you receive such a query, your solution will be slow. This is where prefix sums come into play.
