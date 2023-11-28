@@ -4,12 +4,12 @@ seoTitle: LeetCode 1887. Reduction Operations to Make the Array Elements Equal |
 description: Step-by-step explanation and Python solution for LeetCode problem 1887. Reduction Operations to Make the Array Elements Equal.
 toc: true
 tags: [LeetCode, Sorting]
-categories: [Algorithms, Medium]
+categories: [Algorithms, LeetCode, Medium]
 date: 2023-11-19
 lastMod: 2023-11-19
 featuredImage: https://picsum.photos/700/241?grayscale
 weight: 1887
-notes: ['No special pattern', 'Second largest', 'Sort']
+notes: ['No special pattern', 'Second largest', 'Sort', 'With example']
 ---
 
 [LeetCode Problem 1887](<https://leetcode.com/problems/reduction-operations-to-make-the-array-elements-equal/>)
