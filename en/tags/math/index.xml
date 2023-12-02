@@ -12,7 +12,7 @@ Input: x = -123 Output: -321
 Example 3:
 Input: x = 120 Output: 21
 First accepted Idea:
-Convert number to int Remove minus if exist (or convert module of number) reverse class Solution: def reverse(self, x: int) -&amp;gt; int: reversed_int = [] str_int = str(x) if x &amp;lt; 0: str_int = str_int[1:] for i in reversed(range(len(str_int))): reversed_int.</description></item><item><title>9. Palindrome Number</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/9/</link><pubDate>Fri, 25 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/9/</guid><description>LeetCode problem
+Convert number to int Remove minus if exist (or convert module of number) reverse class Solution: def reverse(self, x: int) -&amp;gt; int: reversed_int = [] str_int = str(x) if x &amp;lt; 0: str_int = str_int[1:] for i in reversed(range(len(str_int))): reversed_int.</description></item><item><title>9. Palindrome Number</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/9/</link><pubDate>Fri, 25 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/9/</guid><description>LeetCode problem 9. Palindrome Number
 Problem Statement Determine whether an integer is a palindrome without converting it to a string.
 Naive Solution A straightforward solution might be to convert the integer to a string and check if it reads the same both ways. However, this challenge encourages solving it without such conversion.
 Hints &amp;amp; Tips By reversing the number and comparing it to the original, you can determine if it&amp;rsquo;s a palindrome.
