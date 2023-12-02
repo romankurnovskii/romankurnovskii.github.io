@@ -6,7 +6,7 @@ toc: true
 tags: [Algorithms, Easy]
 categories: [Algorithms, Easy, LeetCodeTop75]
 date: 2023-07-31
-lastmod: 2023-07-31
+lastmod: 2023-12-01
 featuredImage: https://picsum.photos/700/241?grayscale
 weight: 1768
 ---
@@ -32,7 +32,7 @@ Here are the high-level steps of the algorithm:
 1. Use the `zip` function to merge the two strings until one of them ends.
 2. Append the remaining part of the longer string to the result.
 
-## Python Solution
+## Solution
 
 Here is a Python solution that implements the above algorithm:
 
