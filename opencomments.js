@@ -23545,7 +23545,7 @@
   var require_node = __commonJS({
     "node_modules/domhandler/lib/node.js"(exports) {
       "use strict";
-      var __extends = exports && exports.__extends || function() {
+      var __extends = exports && exports.__extends || /* @__PURE__ */ function() {
         var extendStatics = function(d, b) {
           extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
             d2.__proto__ = b2;
