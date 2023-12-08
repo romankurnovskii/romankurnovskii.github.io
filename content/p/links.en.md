@@ -38,6 +38,9 @@ draft: false
 - [Create and sell your own personalized books and journals](https://studio.twoworlds.co/)
 - [Books nice covers](https://mitpress.mit.edu/search-result-list/?category=CGN)
 
+## Comments on site
+- https://github.com/umputun/remark42
+- https://demo.comentario.app/
 ## IL
 
 <https://www.cashcow.co.il/> интернет магазин
