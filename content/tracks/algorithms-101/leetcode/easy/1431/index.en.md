@@ -12,6 +12,7 @@ weight: 1431
 ---
 
 [LeetCode problem 1431. Kids With the Greatest Number of Candies](https://leetcode.com/problems/kids-with-the-greatest-number-of-candies)
+
 ### Problem Statement
 
 Imagine you're in a classroom with a bunch of kids, and each kid has a certain number of candies. You, being super generous, have some extra candies to give away. Now, you're wondering, if you give all these extra candies to one kid at a time, will that kid end up having the most candies in the class? And you want to check this for every kid in the class.
@@ -31,7 +32,6 @@ Let's make it more relatable:
 3. **Create a List of True or False:** For each kid, if their total candies with the extra ones are as many or more than the record, write down `True`; otherwise, write down `False`.
 
 ## Solution
-
 
 ```python
 def kidsWithCandies(candies, extra_candies):

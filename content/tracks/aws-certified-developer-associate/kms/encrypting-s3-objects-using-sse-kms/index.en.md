@@ -15,7 +15,7 @@ date: 2022-07-06
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220425095454-1-e48ba6b5-dcaa-439c-a208-610a83f92d03.png)
 
-2\. Select **Customer managed**** keys** in the left pane of the KMS console.
+2\. Select **Customer managed****keys** in the left pane of the KMS console.
 
 _Warning_: Cloud Academy cleans up the lab environment for you after a lab is completed or terminated. As a precaution, _AWS prevents keys from being deleted immediately_. Rather, they are queued for deletion, and an expiration period is set (of 7-30 days). For this reason, you may see residual keys from other students within the last week. For this reason, you may need to append a unique number to the **Alias** field in the next instruction.
 

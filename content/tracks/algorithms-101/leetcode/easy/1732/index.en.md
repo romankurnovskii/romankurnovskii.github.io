@@ -3,7 +3,7 @@ title: 1732. Find the Highest Altitude
 seoTitle: LeetCode 1732. Find the Highest Altitude | Python solution and explanation
 description: 1732. Find the Highest Altitude
 toc: true
-tags: []
+tags: ["Array", "Prefix Sum"]
 categories: [Algorithms, Easy, LeetCodeTop75]
 date: 2023-08-21
 lastmod: 2023-08-21
@@ -47,7 +47,8 @@ Instead of storing the running sum in an array, we can use a single variable to 
 ## Approach
 
 We will iterate through the gain array and update the current altitude by adding the net gain at each point. We will also keep track of the highest altitude encountered so far.
-
+> [Prefix Sum approach](https://romankurnovskii.com/en/tracks/algorithms-101/algorithms/#prefix-sums)
+>
 ## Steps
 
 1. Initialize two variables: current_altitude and max_altitude, both set to 0.

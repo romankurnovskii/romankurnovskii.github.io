@@ -4,6 +4,7 @@ push:
 	echo "--------"
 	echo "Started git pull -> update modules -> merge -> push"
 	echo "--------"
+	python3 gen_leetcode_problems_dict.py
 	npm run hugo-lunr-ml
 	npm run p
 
