@@ -2451,7 +2451,7 @@
             "uri": "/posts/vps-docker-subdomains-setup/project/projects/3/",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 5
+                    "timeTakenInMilliseconds": 2
                 },
                 "result": "Hello World!",
                 "ranges": [
@@ -2897,7 +2897,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 28
+                    "timeTakenInMilliseconds": 2
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -4605,17 +4605,6 @@
             "lang": "en"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/easy/1431",
-            "title": "1431. Kids With the Greatest Number of Candies",
-            "description": "Finding kids with the potential to have the greatest number of candies",
-            "content": "\nLeetCode problem\n\nProblem Statement\n\nThe problem requires us to find out which kids can potentially have the greatest number of candies if they are given all the extra candies. The information about the number of candies each kid has and the number of extra candies available is given.\n\nNaive Solution\n\nA naive approach to this problem would be to iterate over the candies array for each kid and check if adding the extra candies to the kid's current candies makes it equal to or greater than the maximum candies any kid has. This approach would have a time complexity of O(n^2) due to the nested loops.\n\nEfficient Solution\n\nA more efficient approach would involve two steps:\n\nFind the maximum number of candies any kid has. This can be done using Python's max function.\nIterate over the candies array and check if adding the extra candies to the current candies of a kid makes it equal to or greater than the maximum candies. If so, add True to the result list, otherwise add False.\n\nThis approach has a time complexity of O(n) which is an improvement over the naive solution.\n\nSteps\n\nHere are the high-level steps of the algorithm:\n\nFind the maximum number of candies any kid has.\nIterate over the candies array and add True to the result list if a kid can have the greatest number of candies after receiving all the extra candies, otherwise add False.\n\nPython Solution\n\nHere is a Python solution that implements the above algorithm:\n\nclass Solution:\n    def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:\n        max_candies = max(candies)\n        return [candy + extraCandies >= max_candies for candy in candies]\n\nIn the kidsWithCandies method, we first find the maximum number of candies any kid has. We then use list comprehension to create the result list.\n\nThis problem shows how a problem that seems to require nested loops can be solved efficiently with a single pass over the array by making use of Python's built-in functions and list comprehension. It's a good practice problem for beginners to understand the concepts of array manipulation and using built-in functions.\n",
-            "tags": [
-                "Algorithms",
-                "Easy"
-            ],
-            "lang": "en"
-        },
-        {
             "uri": "/tracks/algorithms-101/leetcode/easy/141",
             "title": "141. Linked List Cycle",
             "description": "This article offers a deep dive into solving the 141. Linked List Cycle problem on LeetCode.",
@@ -4778,7 +4767,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/1768/index2",
             "title": "1768. Merge Strings Alternately",
             "description": "Merging strings alternately",
-            "content": "\nLeetCode problem 1768. Merge Strings Alternately\n\nProblem Statement:\nGoal**: Merge two strings, word1 and word2, by alternating their letters.\nMethod**: Start with word1, then word2, and keep alternating.\nExtra Letters**: Append remaining letters of the longer string at the end.\nExample**: For word1 = \"abc\" and word2 = \"pqr\", the merged string should be \"apbqcr\".\n\nHint:\nUse two pointers to loop through both strings simultaneously, adding one letter from each at a time.\n\nApproach:\nCreate a Result List: To store merged letters.\nTwo Pointers: i for word1, j for word2.\nLoop for Alternating Merge: Add letters from both strings turn by turn.\nHandle Extra Letters: If one string is longer, append its remaining letters.\n\nSolution:\ndef mergeAlternately(word1, word2):\n    result = []\n    i, j = 0, 0\n\nMerge letters alternately\n    while i < len(word1) and j < len(word2):\n        result.append(word1[i])\n        result.append(word2[j])\n        i += 1\n        j += 1\n\nAppend remaining characters from word1\n    while i < len(word1):\n        result.append(word1[i])\n        i += 1\n\nAppend remaining characters from word2\n    while j < len(word2):\n        result.append(word2[j])\n        j += 1\n\n    return ''.join(result)\n\nExplanation\nLoop Through Strings:** Alternate adding characters from word1 and word2.\nAppending Remaining Characters:** Add the rest of the characters from the longer string.\nJoining Characters:** Convert the character list to a string for the final result.",
+            "content": "\nLeetCode problem 1768. Merge Strings Alternately\n\nProblem Statement\n\nGoal**: Merge two strings, word1 and word2, by alternating their letters.\nMethod**: Start with word1, then word2, and keep alternating.\nExtra Letters**: Append remaining letters of the longer string at the end.\nExample**: For word1 = \"abc\" and word2 = \"pqr\", the merged string should be \"apbqcr\".\n\nHint\n\nUse two pointers to loop through both strings simultaneously, adding one letter from each at a time.\n\nApproach\n\nCreate a Result List: To store merged letters.\nTwo Pointers: i for word1, j for word2.\nLoop for Alternating Merge: Add letters from both strings turn by turn.\nHandle Extra Letters: If one string is longer, append its remaining letters.\n\nSolution\n\ndef mergeAlternately(word1, word2):\n    result = []\n    i, j = 0, 0\n\nMerge letters alternately\n    while i < len(word1) and j < len(word2):\n        result.append(word1[i])\n        result.append(word2[j])\n        i += 1\n        j += 1\n\nAppend remaining characters from word1\n    while i < len(word1):\n        result.append(word1[i])\n        i += 1\n\nAppend remaining characters from word2\n    while j < len(word2):\n        result.append(word2[j])\n        j += 1\n\n    return ''.join(result)\n\nExplanation\n\nLoop Through Strings:** Alternate adding characters from word1 and word2.\nAppending Remaining Characters:** Add the rest of the characters from the longer string.\nJoining Characters:** Convert the character list to a string for the final result.\n",
             "tags": [
                 "Algorithms",
                 "Easy"
@@ -4789,7 +4778,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/1768/",
             "title": "1768. Merge Strings Alternately",
             "description": "Merging strings alternately",
-            "content": "\nLeetCode problem\n\nProblem Statement\n\nThe task is to merge two strings alternately, i.e., take one character from the first string, then one from the second, then again from the first, and so on. If one string finishes before the other, the remaining characters from the longer string are appended at the end.\n\nNaive Solution\n\nA naive approach could involve maintaining two pointers, one for each string, and incrementally appending characters from each string to the result. Once we reach the end of one string, we append the rest of the other string to the result. However, this approach involves checking for the end of strings in each step which can be optimized.\n\nEfficient Solution\n\nA more pythonic and efficient approach would be to use the built-in zip function. The zip function pairs the elements of two lists (or strings, in this case) until the shorter one ends. This allows us to alternately merge the two strings efficiently. After that, we append the remaining part of the longer string, if any.\n\nSteps\n\nHere are the high-level steps of the algorithm:\n\nUse the zip function to merge the two strings until one of them ends.\nAppend the remaining part of the longer string to the result.\n\nSolution\n\nHere is a Python solution that implements the above algorithm:\n\nclass Solution:\n    def mergeAlternately(self, word1: str, word2: str) -> str:\n        i=0\n        j=0\n\n        res = ''\n        while i str:\n        res = [c1 + c2 for c1, c2 in zip(word1, word2)]\n        return \"\".join(res) + word1[len(res):] + word2[len(res):]\n\nIn the mergeAlternately method, we use list comprehension and the zip function to merge the strings until one of them ends. We then append the remaining part of the longer string to the result. The join method is used to convert the list of characters into a string.\n",
+            "content": "\nLeetCode problem\n\nProblem Statement\n\nThe task is to merge two strings alternately, i.e., take one character from the first string, then one from the second, then again from the first, and so on. If one string finishes before the other, the remaining characters from the longer string are appended at the end.\n\nNaive Solution\n\nA naive approach could involve maintaining two pointers, one for each string, and incrementally appending characters from each string to the result. Once we reach the end of one string, we append the rest of the other string to the result. However, this approach involves checking for the end of strings in each step which can be optimized.\n\nEfficient Solution\n\nA more pythonic and efficient approach would be to use the built-in zip function. The zip function pairs the elements of two lists (or strings, in this case) until the shorter one ends. This allows us to alternately merge the two strings efficiently. After that, we append the remaining part of the longer string, if any.\n\nSteps\n\nHere are the high-level steps of the algorithm:\n\nUse the zip function to merge the two strings until one of them ends.\nAppend the remaining part of the longer string to the result.\n\nSolution\n\nHere is a Python solution that implements the above algorithm:\n\ndef mergeAlternately(word1, word2):\n    i=0\n    j=0\n\n    res = ''\n    while i str:\n        res = [c1 + c2 for c1, c2 in zip(word1, word2)]\n        return \"\".join(res) + word1[len(res):] + word2[len(res):]\n\nIn the mergeAlternately method, we use list comprehension and the zip function to merge the strings until one of them ends. We then append the remaining part of the longer string to the result. The join method is used to convert the list of characters into a string.\n",
             "tags": [
                 "Algorithms",
                 "Easy"
@@ -4805,10 +4794,21 @@
             "lang": "en"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/easy/1431/",
+            "title": "1431. Kids With the Greatest Number of Candies",
+            "description": "Finding kids with the potential to have the greatest number of candies",
+            "content": "\nLeetCode problem 1431. Kids With the Greatest Number of Candies\nProblem Statement\n\nImagine you're in a classroom with a bunch of kids, and each kid has a certain number of candies. You, being super generous, have some extra candies to give away. Now, you're wondering, if you give all these extra candies to one kid at a time, will that kid end up having the most candies in the class? And you want to check this for every kid in the class.\n\nHint\n\nTo figure this out, first, find out who currently has the most candies in the class. Then, add the extra candies to each kid's current candies and see if that total is at least as much as the most-candies kid.\n\nApproach\n\nLet's make it more relatable:\n\nFind the Kid with Most Candies Now: Imagine you're counting how many candies each kid has. The kid with the most candies sets the record for everyone to beat.\n\nGive Extra Candies to Each Kid: Now, you give your extra candies to each kid, one by one, and see if their new total beats or matches the record.\n\nCreate a List of True or False: For each kid, if their total candies with the extra ones are as many or more than the record, write down True; otherwise, write down False.\n\nSolution\n\n\ndef kidsWithCandies(candies, extra_candies):\n    max_candies = max(candies)\n    result = []\n\n    for candy in candies:\n        result.append(candy + extra_candies >= max_candies)\n\n    return result\n\nIn the kidsWithCandies method, we first find the maximum number of candies any kid has. We then use list comprehension to create the result list.\n\nThis problem shows how a problem that seems to require nested loops can be solved efficiently with a single pass over the array by making use of Python's built-in functions and list comprehension. It's a good practice problem for beginners to understand the concepts of array manipulation and using built-in functions.\n",
+            "tags": [
+                "Algorithms",
+                "Easy"
+            ],
+            "lang": "en"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/easy/1071/index2",
             "title": "1071. Greatest Common Divisor of Strings",
             "description": "Finding the greatest common divisor of two strings",
-            "content": "\nLeetCode problem 1071. Greatest Common Divisor of Strings\n\nProblem Statement:\nGoal**: Find the largest string x that can divide both str1 and str2.\nDivides**: t divides s if s can be formed by repeating t.\nExamples**:\n  str1 = \"ABCABC\", str2 = \"ABC\" results in \"ABC\".\n  str1 = \"LEET\", str2 = \"CODE\" results in \"\" (an empty string).\n\nHint:\nCheck if str1 + str2 equals str2 + str1. If not, the answer is an empty string.\n\nApproach:\nConcatenate and Compare: Verify if str1 + str2 is equal to str2 + str1.\nFind GCD: If strings are equal when concatenated, find the GCD of their lengths.\nReturn Substring: The substring from 0 to the GCD length of str1 is the answer.\n\nSolution:\ndef gcdOfStrings(str1, str2):\nCheck if concatenating str1 and str2 results in equal strings\n    if str1 + str2 != str2 + str1:\n        return \"\"\n\nImport gcd function from the math module\n    from math import gcd\n\nThe substring from 0 to the gcd of the lengths of str1 and str2\n    return str1[:gcd(len(str1), len(str2))]\n\nExplanation\n\nConcatenation Check: Ensures str1 and str2 consist of the same repeating substring.\nGCD of Lengths: The length of the largest common divisor substring is the GCD of the lengths of str1 and str2.\nReturn Substring: The substring of str1 from index 0 to the GCD length is the solution.",
+            "content": "\nLeetCode problem 1071. Greatest Common Divisor of Strings\n\nProblem Statement\n\nGoal**: Find the largest string x that can divide both str1 and str2.\nDivides**: t divides s if s can be formed by repeating t.\nExamples**:\n  str1 = \"ABCABC\", str2 = \"ABC\" results in \"ABC\".\n  str1 = \"LEET\", str2 = \"CODE\" results in \"\" (an empty string).\n\nHint\n\nCheck if str1 + str2 equals str2 + str1. If not, the answer is an empty string.\n\nApproach\n\nConcatenate and Compare: Verify if str1 + str2 is equal to str2 + str1.\nFind GCD: If strings are equal when concatenated, find the GCD of their lengths.\nReturn Substring: The substring from 0 to the GCD length of str1 is the answer.\n\nSolution\n\ndef gcdOfStrings(str1, str2):\nCheck if concatenating str1 and str2 results in equal strings\n    if str1 + str2 != str2 + str1:\n        return \"\"\n\nImport gcd function from the math module\n    from math import gcd\n\nThe substring from 0 to the gcd of the lengths of str1 and str2\n    return str1[:gcd(len(str1), len(str2))]\n\nExplanation\n\nConcatenation Check: Ensures str1 and str2 consist of the same repeating substring.\nGCD of Lengths: The length of the largest common divisor substring is the GCD of the lengths of str1 and str2.\nReturn Substring: The substring of str1 from index 0 to the GCD length is the solution.\n",
             "tags": [
                 "Algorithms",
                 "Easy"
@@ -5235,6 +5235,19 @@
                 "code",
                 "git",
                 "style"
+            ],
+            "lang": "en"
+        },
+        {
+            "uri": "/posts/bash-variables",
+            "title": "Bash Special Variables $! $0 $? $$",
+            "description": "A comprehensive guide to special variables in Bash, including $0, $1, $!, and more, essential for effective script writing.",
+            "content": "\n$0 - The Name of the Script\n\n$0 represents the name of the Bash script as it was called.\n\nIf you execute a script with bash myscript.sh, then within myscript.sh, $0 will be myscript.sh.\n\n$1, $2, $3, ... - Positional Parameters\n\nThese variables correspond to the arguments passed to the script. $1 is the first argument, $2 is the second, and so on.\n\nIn the command bash myscript.sh arg1 arg2, $1 equals arg1, and $2 equals arg2.\n\n$! - PID of the Last Background Process\n\nThis holds the process ID of the most recent background process. It's particularly useful in managing parallel processing in scripts.\n\n$# - Number of Parameters\n\n$# provides the count of arguments passed to the script, enabling scripts to adapt based on the number of inputs.\n\n$* and $@ - All Positional Parameters\n\nBoth $ and $@ expand to all positional parameters, but they behave differently when quoted. \"${}\" merges all parameters into a single string, while \"${@}\" treats each as a separate word.\n\n$? - Exit Status of the Last Command\n\nThe exit status of the most recently executed command is stored in $?, where 0 typically signifies success.\n\nSpecial Cases\n\n$$ is the PID of the script itself.\n$- shows the current options set for the shell\n\ndirname\n\nStrips the last component from a file path.\n\nIf you have a file path /home/user/documents/report.txt, the dirname command will extract and return /home/user/documents, which is the directory part of the path.\n\ndirname can be especially useful in scripting when you need to perform operations relative to the location of a script or file.",
+            "tags": [
+                "Linux",
+                "Bash",
+                "Programming",
+                "Snippets"
             ],
             "lang": "en"
         },
@@ -5694,7 +5707,7 @@
             "uri": "/p/links",
             "title": "Links",
             "description": null,
-            "content": "\nAI\n\nThe curated list of AI tools for marketing\nDiscover the newest AIs for any given task\nCreate 1,000 AI art images a day for free\nopenai examples\nopenai answers from file\nAI-powered video summaries\nChrome extension\nFree AI-generated Stock Images of People\n\nSoft/Architecture\n\nBlock Diagram Maker\nTheme for Docs - MkDocs\n\nMedia\n\nFast and simple way to visualize your story - free 1 Storyboard and 10 Frames\nVideo from Screenshot\n\nOther\n\nCreate and sell your own personalized books and journals\nBooks nice covers\n\nIL\n\n интернет магазин\n",
+            "content": "\nAI\n\nThe curated list of AI tools for marketing\nDiscover the newest AIs for any given task\nCreate 1,000 AI art images a day for free\nopenai examples\nopenai answers from file\nAI-powered video summaries\nChrome extension\nFree AI-generated Stock Images of People\n\nSoft/Architecture\n\nBlock Diagram Maker\nTheme for Docs - MkDocs\n\nMedia\n\nFast and simple way to visualize your story - free 1 Storyboard and 10 Frames\nVideo from Screenshot\n\nOther\n\nCreate and sell your own personalized books and journals\nBooks nice covers\n\nComments on site\nhttps://github.com/umputun/remark42\nhttps://demo.comentario.app/\nIL\n\n интернет магазин\n",
             "tags": [],
             "lang": "en"
         },
