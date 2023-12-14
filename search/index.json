@@ -2897,7 +2897,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 4
+                    "timeTakenInMilliseconds": 2
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -4797,7 +4797,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/1431/",
             "title": "1431. Kids With the Greatest Number of Candies",
             "description": "Finding kids with the potential to have the greatest number of candies",
-            "content": "\nLeetCode problem 1431. Kids With the Greatest Number of Candies\nProblem Statement\n\nImagine you're in a classroom with a bunch of kids, and each kid has a certain number of candies. You, being super generous, have some extra candies to give away. Now, you're wondering, if you give all these extra candies to one kid at a time, will that kid end up having the most candies in the class? And you want to check this for every kid in the class.\n\nHint\n\nTo figure this out, first, find out who currently has the most candies in the class. Then, add the extra candies to each kid's current candies and see if that total is at least as much as the most-candies kid.\n\nApproach\n\nLet's make it more relatable:\n\nFind the Kid with Most Candies Now: Imagine you're counting how many candies each kid has. The kid with the most candies sets the record for everyone to beat.\n\nGive Extra Candies to Each Kid: Now, you give your extra candies to each kid, one by one, and see if their new total beats or matches the record.\n\nCreate a List of True or False: For each kid, if their total candies with the extra ones are as many or more than the record, write down True; otherwise, write down False.\n\nSolution\n\n\ndef kidsWithCandies(candies, extra_candies):\n    max_candies = max(candies)\n    result = []\n\n    for candy in candies:\n        result.append(candy + extra_candies >= max_candies)\n\n    return result\n\nIn the kidsWithCandies method, we first find the maximum number of candies any kid has. We then use list comprehension to create the result list.\n\nThis problem shows how a problem that seems to require nested loops can be solved efficiently with a single pass over the array by making use of Python's built-in functions and list comprehension. It's a good practice problem for beginners to understand the concepts of array manipulation and using built-in functions.\n",
+            "content": "\nLeetCode problem 1431. Kids With the Greatest Number of Candies\n\nProblem Statement\n\nImagine you're in a classroom with a bunch of kids, and each kid has a certain number of candies. You, being super generous, have some extra candies to give away. Now, you're wondering, if you give all these extra candies to one kid at a time, will that kid end up having the most candies in the class? And you want to check this for every kid in the class.\n\nHint\n\nTo figure this out, first, find out who currently has the most candies in the class. Then, add the extra candies to each kid's current candies and see if that total is at least as much as the most-candies kid.\n\nApproach\n\nLet's make it more relatable:\n\nFind the Kid with Most Candies Now: Imagine you're counting how many candies each kid has. The kid with the most candies sets the record for everyone to beat.\n\nGive Extra Candies to Each Kid: Now, you give your extra candies to each kid, one by one, and see if their new total beats or matches the record.\n\nCreate a List of True or False: For each kid, if their total candies with the extra ones are as many or more than the record, write down True; otherwise, write down False.\n\nSolution\n\ndef kidsWithCandies(candies, extra_candies):\n    max_candies = max(candies)\n    result = []\n\n    for candy in candies:\n        result.append(candy + extra_candies >= max_candies)\n\n    return result\n\nIn the kidsWithCandies method, we first find the maximum number of candies any kid has. We then use list comprehension to create the result list.\n\nThis problem shows how a problem that seems to require nested loops can be solved efficiently with a single pass over the array by making use of Python's built-in functions and list comprehension. It's a good practice problem for beginners to understand the concepts of array manipulation and using built-in functions.\n",
             "tags": [
                 "Algorithms",
                 "Easy"
@@ -5235,6 +5235,19 @@
                 "code",
                 "git",
                 "style"
+            ],
+            "lang": "en"
+        },
+        {
+            "uri": "/posts/bash-variables",
+            "title": "Bash Special Variables $! $0 $? $$",
+            "description": "A comprehensive guide to special variables in Bash, including $0, $1, $!, and more, essential for effective script writing.",
+            "content": "\n$0 - The Name of the Script\n\n$0 represents the name of the Bash script as it was called.\n\nIf you execute a script with bash myscript.sh, then within myscript.sh, $0 will be myscript.sh.\n\n$1, $2, $3, ... - Positional Parameters\n\nThese variables correspond to the arguments passed to the script. $1 is the first argument, $2 is the second, and so on.\n\nIn the command bash myscript.sh arg1 arg2, $1 equals arg1, and $2 equals arg2.\n\n$! - PID of the Last Background Process\n\nThis holds the process ID of the most recent background process. It's particularly useful in managing parallel processing in scripts.\n\n$# - Number of Parameters\n\n$# provides the count of arguments passed to the script, enabling scripts to adapt based on the number of inputs.\n\n$* and $@ - All Positional Parameters\n\nBoth $ and $@ expand to all positional parameters, but they behave differently when quoted. \"${}\" merges all parameters into a single string, while \"${@}\" treats each as a separate word.\n\n$? - Exit Status of the Last Command\n\nThe exit status of the most recently executed command is stored in $?, where 0 typically signifies success.\n\nSpecial Cases\n\n$$ is the PID of the script itself.\n$- shows the current options set for the shell\n\ndirname\n\nStrips the last component from a file path.\n\nIf you have a file path /home/user/documents/report.txt, the dirname command will extract and return /home/user/documents, which is the directory part of the path.\n\ndirname can be especially useful in scripting when you need to perform operations relative to the location of a script or file.\n",
+            "tags": [
+                "Linux",
+                "Bash",
+                "Programming",
+                "Snippets"
             ],
             "lang": "en"
         },
@@ -5694,7 +5707,7 @@
             "uri": "/p/links",
             "title": "Links",
             "description": null,
-            "content": "\nAI\n\nThe curated list of AI tools for marketing\nDiscover the newest AIs for any given task\nCreate 1,000 AI art images a day for free\nopenai examples\nopenai answers from file\nAI-powered video summaries\nChrome extension\nFree AI-generated Stock Images of People\n\nSoft/Architecture\n\nBlock Diagram Maker\nTheme for Docs - MkDocs\n\nMedia\n\nFast and simple way to visualize your story - free 1 Storyboard and 10 Frames\nVideo from Screenshot\n\nOther\n\nCreate and sell your own personalized books and journals\nBooks nice covers\n\nComments on site\nhttps://github.com/umputun/remark42\nhttps://demo.comentario.app/\nIL\n\n интернет магазин\n",
+            "content": "\nAI\n\nThe curated list of AI tools for marketing\nDiscover the newest AIs for any given task\nCreate 1,000 AI art images a day for free\nopenai examples\nopenai answers from file\nAI-powered video summaries\nChrome extension\nFree AI-generated Stock Images of People\n\nSoft/Architecture\n\nBlock Diagram Maker\nTheme for Docs - MkDocs\n\nMedia\n\nFast and simple way to visualize your story - free 1 Storyboard and 10 Frames\nVideo from Screenshot\n\nOther\n\nCreate and sell your own personalized books and journals\nBooks nice covers\n\nComments on site\n\nIL\n\n интернет магазин\n",
             "tags": [],
             "lang": "en"
         },
