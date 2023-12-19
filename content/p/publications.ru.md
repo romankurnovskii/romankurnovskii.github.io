@@ -25,9 +25,9 @@ codes:
 publications:
 - title: Изменение настроения инвесторов и сотрудников в ИТ-индустрии Израиля в контексте внедряемой судебной реформы
   authors: "Курновский Р.М."
-  journal: "Вопросы политологии / ВАК. Том 13. № 10-2 (98-2), 2023 г. Страницы: "
+  journal: "Вопросы политологии / ВАК. Том 13. № 10-2 (98-2), 2023 г. Страницы: 5493-5503"
   journalLink: https://elibrary.ru/title_about_new.asp?id=33245
-  pdfLink: /articles/-----.pdf
+  pdfLink: /articles/2023-12-investor-and-employee-sentiment-changes-in-israel’s-it-industry-in-light-of-the-implemented-judicial-reform.pdf
   researchGateLink: NA
   ssrnLink: NA
   academia.edu: NA

@@ -6,7 +6,7 @@ toc: true
 tags: []
 categories: [Algorithms, Easy, LeetCodeTop75]
 date: 2023-08-05
-lastmod: 2023-08-05
+lastmod: 2023-12-18
 featuredImage: https://picsum.photos/700/241?grayscale
 weight: 345
 ---
@@ -48,7 +48,7 @@ The efficient approach to solve this problem would be to:
     3. If the character at `right` is not a vowel, move the `right` pointer.
 4. Join the list of characters back to a string and return it.
 
-## Python Solution
+## Solution
 
 ```python
 class Solution:
@@ -74,10 +74,10 @@ class Solution:
 ```python
 class Solution:
     def reverseVowels(self, s: str) -> str:
-        vowels = ['a', 'A', 'e','E', 'i','I', 'o','O', 'u','U']
+        vowels = 'aeiouAEIOU'
 
         vowels_order = []
-        for i, x in enumerate(s):
+        for x in s:
             if x in vowels:
                 vowels_order.append(x)
 
