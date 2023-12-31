@@ -8,17 +8,17 @@ series: []
 categories: []
 date: 2023-12-29
 lastMod: 2023-12-29
-featuredImage: https://picsum.photos/700/237?grayscale
+featuredImage: https://picsum.photos/700/223?grayscale
 authors: [roman-kurnovskii]
 ---
 
-CVonfigure network traffic routing and Network Address Translation (NAT) using `iptables`.
+Configure network traffic routing and Network Address Translation (NAT) using `iptables`.
 
-CVonfigure the system to forward packets from one network interface to another, applying NAT to the packets going out of the `eth0` interface.
+Configure the system to forward packets from one network interface to another, applying NAT to the packets going out of the `eth0` interface.
 
 Network configuration where the system is intended to function as a router or gateway between two networks (e.g., forwarding packets from a Wi-Fi network to an Ethernet network).
 
-```
+```sh
 kali@kali:~$ sudo iptables -t nat -F
 kali@kali:~$
 kali@kali:~$ sudo iptables -F

@@ -8,7 +8,7 @@ series: []
 categories: []
 date: 2023-12-24
 lastMod: 2023-12-24
-featuredImage: https://picsum.photos/700/237?grayscale
+featuredImage: https://picsum.photos/700/224?grayscale
 authors: [roman-kurnovskii]
 ---
 
