@@ -9,7 +9,7 @@ tags:
 categories:
 series:
 date: 2019-03-05
-lastmod: 2019-03-05
+lastMod: 2019-03-05
 draft: true
 ---
 

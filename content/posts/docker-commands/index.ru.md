@@ -6,7 +6,7 @@ tags: ["docker", "cheatsheet"]
 series: ['шпаргалки']
 categories: [Docker, CheatSheet]
 date: "2022-06-07"
-lastmod: "2022-06-07"
+lastMod: "2022-06-07"
 featuredImage: featured.ru.jpg
 authors: [roman-kurnovskii]
 ---

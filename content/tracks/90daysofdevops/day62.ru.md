@@ -7,7 +7,7 @@ tags: [devops]
 categories:
 series: 
 date: "2022-06-21"
-lastmod: "2022-06-21"
+lastMod: "2022-06-21"
 featuredImage:
 draft: false
 id: 1049053
@@ -33,12 +33,12 @@ weight: 62
 Еще одна огромная область, которая следует за гниением кода и в целом, это возможность протестировать ваш IaC и убедиться, что все области работают так, как должны.
 
 Прежде всего, есть несколько встроенных команд тестирования, на которые мы можем взглянуть:
-| Command               | Description                                                                                |
-| --------------------- | ------------------------------------------------------------------------------------------ |
-| `terraform fmt`       | Rewrite Terraform configuration files to a canonical format and style.                     |
-| `terraform validate`  | Validates the configuration files in a directory, referring only to the configuration      |
-| `terraform plan`      | Creates an execution plan, which lets you preview the changes that Terraform plans to make |
-| Custom validation     | Validation of your input variables to ensure they match what you would expect them to be   |
+| Command              | Description                                                                                |
+| -------------------- | ------------------------------------------------------------------------------------------ |
+| `terraform fmt`      | Rewrite Terraform configuration files to a canonical format and style.                     |
+| `terraform validate` | Validates the configuration files in a directory, referring only to the configuration      |
+| `terraform plan`     | Creates an execution plan, which lets you preview the changes that Terraform plans to make |
+| Custom validation    | Validation of your input variables to ensure they match what you would expect them to be   |
 
 У нас также есть некоторые инструменты тестирования, доступные вне Terraform:
 

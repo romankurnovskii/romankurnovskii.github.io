@@ -6,7 +6,7 @@ tags: [JavaScript]
 series:
 categories: [JavaScript]
 date: "2022-06-02"
-lastmod: "2022-06-02"
+lastMod: "2022-06-02"
 featuredImage: featured.ru.jpg
 authors: [roman-kurnovskii]
 ---

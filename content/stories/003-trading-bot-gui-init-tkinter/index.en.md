@@ -7,7 +7,7 @@ tags: []
 series: ["Trading Bot"]
 categories: ["Trading Bot"]
 date: 2023-04-28
-lastmod: 2023-04-28
+lastMod: 2023-04-28
 featuredImage:
 authors:
 ---

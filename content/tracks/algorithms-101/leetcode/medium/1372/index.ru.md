@@ -6,7 +6,7 @@ toc: true
 tags: [Binary Tree, DFS, Medium]
 categories: [Algorithms, Medium, LeetCode]
 date: 2023-08-28
-lastmod: 2023-08-28
+lastMod: 2023-08-28
 featuredImage: https://picsum.photos/700/241?grayscale
 weight: 1372
 todo: refactor, latest in en

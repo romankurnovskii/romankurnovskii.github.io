@@ -7,7 +7,7 @@ tags: [devops, linux,  файловая ситема linux]
 categories:
 series: 
 date: "2022-05-06"
-lastmod: "2022-05-06"
+lastMod: "2022-05-06"
 featuredImage:
 draft: false
 id: 1048702

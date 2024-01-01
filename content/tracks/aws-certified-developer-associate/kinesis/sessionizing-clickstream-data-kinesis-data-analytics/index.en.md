@@ -531,7 +531,7 @@ Once complete the details page for Kinesis Data Analytics application will load.
 
 This table was pre-created as a part of this lab.
 
-14\. To see items in the DynamoDB table, click the **Explore Table ****Items** button:
+14\. To see items in the DynamoDB table, click the **Explore Table****Items** button:
 
 ![alt](https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220531152225-1-c7362643-0a50-4244-aefd-c9f881b6b44a.png)
 

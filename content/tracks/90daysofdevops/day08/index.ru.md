@@ -7,7 +7,7 @@ tags: [devops, golang, hello-world]
 categories:
 series:
 date: "2022-04-28"
-lastmod: "2022-04-28"
+lastMod: "2022-04-28"
 featuredImage:
 draft: false
 id: 1048857

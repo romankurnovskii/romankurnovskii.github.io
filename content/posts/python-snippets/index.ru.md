@@ -6,7 +6,7 @@ tags:  ["python"]
 series: [CheatSheet]
 categories: [Python, CheatSheet]
 date: 2022-06-16
-lastmod: 2023-04-10
+lastMod: 2023-04-10
 featuredImage:
 draft: false
 ---

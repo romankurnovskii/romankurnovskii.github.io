@@ -7,7 +7,7 @@ tags: [devops, bash]
 categories:
 series: 
 date: "2022-05-09"
-lastmod: "2022-05-09"
+lastMod: "2022-05-09"
 featuredImage:
 draft: false
 id: 1048774

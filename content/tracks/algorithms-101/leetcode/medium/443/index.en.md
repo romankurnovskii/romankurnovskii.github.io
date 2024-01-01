@@ -6,7 +6,7 @@ toc: true
 tags: [Strings]
 categories: [Algorithms, Medium, LeetCodeTop75]
 date: 2023-08-06
-lastmod: 2023-08-06
+lastMod: 2023-08-06
 featuredImage: https://picsum.photos/700/241?grayscale
 weight: 443
 ---

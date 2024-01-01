@@ -7,7 +7,7 @@ tags: [devops, linux,  ssh]
 categories:
 series: 
 date: "2022-05-08"
-lastmod: "2022-05-08"
+lastMod: "2022-05-08"
 featuredImage:
 draft: false
 id: 1048733

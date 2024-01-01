@@ -6,7 +6,7 @@ toc: true
 tags: [Algorithms, Medium, Trees, LeetCode]
 categories: [Algorithms, LeetCode]
 date: 2023-09-10
-lastmod: 2023-09-10
+lastMod: 2023-09-10
 featuredImage: https://picsum.photos/700/241?grayscale
 weight: 1372
 todo: get latest solution passed

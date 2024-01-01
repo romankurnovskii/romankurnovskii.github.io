@@ -7,7 +7,7 @@ tags:
 categories:
 series:
 date: 2023-01-01
-lastmod: 2023-03-04
+lastMod: 2023-03-04
 featuredImage:
 draft: false
 ---

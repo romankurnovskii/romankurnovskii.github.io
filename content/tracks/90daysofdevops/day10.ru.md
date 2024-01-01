@@ -7,7 +7,7 @@ tags: [devops, golang]
 categories:
 series: 
 date: "2022-04-30"
-lastmod: "2022-05-01"
+lastMod: "2022-05-01"
 featuredImage:
 draft: false
 id: 1048701

@@ -5,7 +5,7 @@ description: 2844. Minimum Operations to Make a Special Number
 toc: true
 tags: [Algorithms, Medium, LeetCode]
 date: 2023-09-03
-lastmod: 2023-09-03
+lastMod: 2023-09-03
 featuredImage: https://picsum.photos/700/241?grayscale
 weight: 2844
 ---

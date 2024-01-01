@@ -6,7 +6,7 @@ tags:
 categories:
 series:
 date: "2022-07-06"
-lastmod: "2022-05-21"
+lastMod: "2022-05-21"
 ---
 
 ## Practice

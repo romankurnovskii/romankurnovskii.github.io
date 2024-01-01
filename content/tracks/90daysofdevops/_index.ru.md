@@ -9,7 +9,7 @@ tags:
 categories: [треки]
 series: [Roadmaps, руководства]
 date: "2022-04-21"
-lastmod: "2022-04-21"
+lastMod: "2022-04-21"
 draft: false
 weight: 0
 featuredImage: images/logo.png

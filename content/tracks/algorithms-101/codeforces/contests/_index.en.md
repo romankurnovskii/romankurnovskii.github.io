@@ -8,7 +8,7 @@ tags: ['codeforces']
 # featuredImage: null
 toc: false
 date: 2023-04-29
-lastmod: 2023-07-27
+lastMod: 2023-07-27
 published: true
 weight: 99999
 ---
