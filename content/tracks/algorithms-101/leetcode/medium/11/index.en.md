@@ -7,7 +7,7 @@ categories: [Algorithms, Medium, LeetCodeTop75]
 tags: [Array, "Two Pointers", Greedy, "LeetCode Top Interview"]
 series:
 date: 2022-11-03
-lastmod: 2023-08-07
+lastMod: 2023-08-07
 featuredImage:
 authors: [roman-kurnovskii]
 weight: 11

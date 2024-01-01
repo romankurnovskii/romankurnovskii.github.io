@@ -7,7 +7,7 @@ tags: [devops, 90daysofdevops, learning]
 categories:
 series:
 date: "2022-04-22"
-lastmod: "2022-04-22"
+lastMod: "2022-04-22"
 featuredImage: /images/feature/devops-cycle.png
 draft: false
 weight: 2

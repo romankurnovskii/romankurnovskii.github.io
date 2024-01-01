@@ -8,7 +8,7 @@ tags:
 categories:
 series:
 date: '2020-11-20T22:52:56+08:00'
-lastmod: '2020-11-20T22:52:56+08:00'
+lastMod: '2020-11-20T22:52:56+08:00'
 featuredImage:
 draft: true
 ---

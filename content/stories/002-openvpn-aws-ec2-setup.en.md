@@ -7,7 +7,7 @@ tags: [AWS, EC2, CloudFormation, OpenVPN]
 series: []
 categories: []
 date: 2023-04-25
-lastmod: 2023-04-25
+lastMod: 2023-04-25
 featuredImage:
 authors:
 ---

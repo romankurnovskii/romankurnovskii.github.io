@@ -6,7 +6,7 @@ toc: true
 tags: [Two Pointers, Strings, Easy]
 categories: [Algorithms, Medium, LeetCodeTop75]
 date: 2023-08-28
-lastmod: 2023-08-28
+lastMod: 2023-08-28
 featuredImage: https://picsum.photos/700/241?grayscale
 weight: 443
 ---

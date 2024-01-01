@@ -7,7 +7,7 @@ tags: [python, plotly, tkinter, dash]
 series: []
 categories: [Programming, Python, Data Visualization]
 date: 2023-06-16
-lastmod: 2023-06-16
+lastMod: 2023-06-16
 featuredImage: https://picsum.photos/700/216?grayscale
 authors: [Your Name]
 ---

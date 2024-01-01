@@ -7,7 +7,7 @@ tags: [Python, Programming, Template]
 series: []
 categories: [Programming, Python]
 date: 2023-05-24
-lastmod: 2023-05-24
+lastMod: 2023-05-24
 featuredImage: https://picsum.photos/700/224?grayscale
 ---
 

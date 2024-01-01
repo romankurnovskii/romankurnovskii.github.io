@@ -28,11 +28,8 @@ Use these VSCode extensions to debug/submit:
 - Don't code before "design" and understand the solution algorithm
 - First 20 problems. Spent 5 min for thinking. Next look for 2-3 different approaches. Understand. Decide. Write.
 
-## Resources
-
-- [LeetCode solutions by walkccc](https://walkccc.me/LeetCode/problems/)
-- <https://grandyang.com/leetcode/>
-- [Competitive Programmer's Handbook](https://github.com/pllk/cphb/)
+<div id="_react_leetcode_grid_" class='bg-tertiary-bg rounded px-3 py-2 my-2 me-2 text-lg'></div>
+{{< reactblock src="https://romankurnovskii.com/react_scripts/leetcode-grid.jsx?25" divRender="_react_leetcode_grid_">}}
 
 <rawhtml>
 <style>
@@ -247,3 +244,9 @@ Use these VSCode extensions to debug/submit:
   /></a>
 </div>
 </rawhtml>
+
+## Resources
+
+- [LeetCode solutions by walkccc](https://walkccc.me/LeetCode/problems/)
+- <https://grandyang.com/leetcode/>
+- [Competitive Programmer's Handbook](https://github.com/pllk/cphb/)

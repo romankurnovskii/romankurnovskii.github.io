@@ -6,7 +6,7 @@ categories: [Programming, JavaScript, CheatSheet]
 series: [CheatSheet]
 tags:  [JavaScript, TypeScript]
 date: 2022-09-15
-lastmod: 2023-02-21
+lastMod: 2023-02-21
 featuredImage: https://picsum.photos/700/238?grayscale
 draft: false
 ---
@@ -69,6 +69,16 @@ elementContains(document.querySelector('body'), document.querySelector('body'));
 
 ```js
 const {locale, timeZone} = Intl.DateTimeFormat().resolvedOptions();
+
+const date = new Date(Date.now());
+
+new Intl.DateTimeFormat("en-US", {
+  timeZone: "America/Los_Angeles",
+  minute: "numeric",
+  hour: "numeric",
+}).format(date);
+
+// 9:45 AM (returns the current time in that timeZone)
 ```
 
 ### is Date valid

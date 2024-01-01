@@ -8,7 +8,7 @@ categories:
 series:
 featuredImage:
 date: "2022-07-02"
-lastmod: "2022-06-28"
+lastMod: "2022-06-28"
 draft: false
 weight: 3
 ---

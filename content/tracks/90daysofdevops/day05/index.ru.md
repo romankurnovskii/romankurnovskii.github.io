@@ -7,7 +7,7 @@ tags: [devops, cicd, tests, learning]
 categories:
 series:
 date: "2022-04-25"
-lastmod: "2022-04-25"
+lastMod: "2022-04-25"
 featuredImage:
 draft: false
 id: 1048830

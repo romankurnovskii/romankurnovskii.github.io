@@ -7,7 +7,7 @@ tags: [Trading, Indicators, Stochastic Oscillator]
 series: []
 categories: [Trading,Indicators]
 date: 2023-07-07
-lastmod: 2023-07-07
+lastMod: 2023-07-07
 featuredImage: https://picsum.photos/690/240?grayscale
 authors:
 prerequisites: [rsi]

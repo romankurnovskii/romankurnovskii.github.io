@@ -7,7 +7,7 @@ tags: [devops, minikube]
 categories:
 series: 
 date: "2022-06-10"
-lastmod: "2022-06-10"
+lastMod: "2022-06-10"
 featuredImage:
 draft: false
 id: 1048778

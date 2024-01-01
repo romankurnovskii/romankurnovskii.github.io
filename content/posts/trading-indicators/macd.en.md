@@ -7,7 +7,7 @@ tags: [Trading, Indicators, MACD]
 series: []
 categories: [Trading, Indicators]
 date: 2023-06-15
-lastmod: 2023-06-15
+lastMod: 2023-06-15
 featuredImage: https://picsum.photos/700/243?grayscale
 authors: []
 prerequisites: [EMA]

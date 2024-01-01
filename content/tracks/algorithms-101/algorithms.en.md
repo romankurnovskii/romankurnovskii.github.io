@@ -7,7 +7,7 @@ categories: [Algorithms]
 tags: []
 series: []
 date: 2022-10-15
-lastmod: 2023-06-06
+lastMod: 2023-06-06
 # featuredImage: https://media.geeksforgeeks.org/wp-content/cdn-uploads/20221017172544/Introduction-to-Data-Structures-and-Algorithms-DSA.png
 weight: 30
 authors:
@@ -176,13 +176,13 @@ while j < size:
 
     if condition < k:
         j+=1
-    elif condition == k: # ans <-- calculation
+    elif condition == k: # res <-- calculation
         j+=1
     elif condition > k:
         while condition > k:
             i+=1 # remove calculation for i
         j+=1
-return ans
+return res
 ```
 
 **Examples**

@@ -11,7 +11,7 @@ categories:
 series:
   - Themes Guide
 date: '2020-05-26'
-lastmod: '2020-05-26'
+lastMod: '2020-05-26'
 featuredImage: images/hero-right.jpg
 draft: true
 ---

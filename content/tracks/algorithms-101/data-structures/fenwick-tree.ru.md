@@ -9,7 +9,7 @@ tags: ['Data Structures']
 toc: false
 weight: 10
 date: 2023-02-10
-lastmod: 2023-02-10
+lastMod: 2023-02-10
 published: true
 prerequisites:
   - Бинарное дерево

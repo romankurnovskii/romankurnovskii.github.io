@@ -6,7 +6,7 @@ toc: true
 tags: [Math, Easy]
 categories: [Algorithms, Easy, LeetCodeTop75]
 date: 2023-08-25
-lastmod: 2023-08-25
+lastMod: 2023-08-25
 featuredImage: https://picsum.photos/700/241?grayscale
 weight: 9
 ---

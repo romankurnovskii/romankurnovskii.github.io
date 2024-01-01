@@ -7,7 +7,7 @@ tags: [Trading, Indicators]
 series: []
 categories: [Trading, Indicators]
 date: 2023-06-13
-lastmod: 2023-06-13
+lastMod: 2023-06-13
 featuredImage: https://picsum.photos/700/213?grayscale
 ---
 

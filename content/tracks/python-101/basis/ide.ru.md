@@ -9,7 +9,7 @@ categories:
 series:
 featuredImage:
 date: 2022-06-22
-lastmod: 2023-02-12
+lastMod: 2023-02-12
 draft: false
 weight: 102
 ---

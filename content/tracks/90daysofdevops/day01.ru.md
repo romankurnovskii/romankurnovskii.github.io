@@ -7,7 +7,7 @@ tags:
 categories:
 series:
 date: "2022-04-21"
-lastmod: "2022-04-21"
+lastMod: "2022-04-21"
 featuredImage:
 draft: false
 weight: 1

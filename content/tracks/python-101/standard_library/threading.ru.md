@@ -8,7 +8,7 @@ categories: [Python]
 series:
 featuredImage:
 date: 2022-06-28
-lastmod: 2023-05-30
+lastMod: 2023-05-30
 draft: false
 weight: 205
 ---

@@ -7,7 +7,7 @@ tags: [Trading, Indicators, Bollinger Bands]
 series: []
 categories: [Trading, Indicators]
 date: 2023-07-06
-lastmod: 2023-07-06
+lastMod: 2023-07-06
 featuredImage: https://picsum.photos/700/240?grayscale
 authors:
 prerequisites: [sma]
