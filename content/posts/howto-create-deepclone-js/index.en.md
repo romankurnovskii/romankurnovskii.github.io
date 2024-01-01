@@ -6,7 +6,7 @@ categories: [Programming, JavaScript]
 series:
 tags: [JavaScript]
 date: 2022-06-02
-lastmod: 2023-02-06
+lastMod: 2023-02-06
 featuredImage: featured.en.jpg
 authors: [roman-kurnovskii]
 ---

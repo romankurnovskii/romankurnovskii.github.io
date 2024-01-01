@@ -7,7 +7,7 @@ tags: [devops, Ansible]
 categories:
 series:
 date: "2022-05-14"
-lastmod: "2022-05-14"
+lastMod: "2022-05-14"
 featuredImage:
 draft: false
 id: 1048805

@@ -7,7 +7,7 @@ tags: [Trading, Indicators, RSI]
 series: []
 categories: [Trading, Indicators]
 date: 2023-06-15
-lastmod: 2023-06-15
+lastMod: 2023-06-15
 featuredImage: https://picsum.photos/700/242?grayscale
 authors: []
 prerequisites: [Technical Analysis, Oscillators]

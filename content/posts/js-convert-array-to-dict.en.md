@@ -7,7 +7,7 @@ tags: [javascript, typescript]
 series: []
 categories: [Programming]
 date: 2023-06-19
-lastmod: 2023-06-19
+lastMod: 2023-06-19
 featuredImage: https://picsum.photos/700/237?grayscale
 authors: [roman-kurnovskii]
 ---

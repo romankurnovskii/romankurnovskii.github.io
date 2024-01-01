@@ -7,7 +7,7 @@ tags: [typescript, react, electron]
 series: []
 categories: [JavaScript]
 date: 2023-04-22
-lastmod: 2023-04-22
+lastMod: 2023-04-22
 featuredImage: https://github.com/romankurnovskii/electron-react-template/raw/main/assets/logo.png
 authors: [roman-kurnovskii]
 ---

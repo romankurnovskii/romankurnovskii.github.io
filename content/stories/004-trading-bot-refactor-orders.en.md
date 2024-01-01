@@ -7,7 +7,7 @@ tags: ["python async", "trading bot", "async operations", "abstraction", "order 
 series: ["Trading Bot"]
 categories: ["Trading Bot"]
 date: 2023-05-02
-lastmod: 2023-05-02
+lastMod: 2023-05-02
 featuredImage:
 authors:
 ---

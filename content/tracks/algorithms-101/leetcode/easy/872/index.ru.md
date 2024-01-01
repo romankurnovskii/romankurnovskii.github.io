@@ -6,7 +6,7 @@ toc: true
 tags: [Binary Tree, Easy]
 categories: [Algorithms, Easy, LeetCodeTop75]
 date: 2023-09-05
-lastmod: 2023-09-05
+lastMod: 2023-09-05
 featuredImage: https://picsum.photos/700/241?grayscale
 weight: 872
 ---

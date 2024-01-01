@@ -7,7 +7,7 @@ tags: []
 categories: []
 series:
 date: 2022-12-12
-lastmod: 2023-06-04
+lastMod: 2023-06-04
 draft: false
 featuredImage:
 weight: 101

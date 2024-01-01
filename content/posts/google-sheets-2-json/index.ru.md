@@ -6,7 +6,7 @@ tags: ["google sheets", "google script"]
 categories: []
 series: []
 date: 2022-03-12T11:55:25+02:00
-lastmod: 2022-03-12T11:55:25+02:00
+lastMod: 2022-03-12T11:55:25+02:00
 featuredVideo:
 featuredImage:
 authors: ["roman-kurnovskii"]

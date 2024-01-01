@@ -7,7 +7,7 @@ tags: [devops, vim, nano]
 categories:
 series: 
 date: "2022-05-07"
-lastmod: "2022-05-07"
+lastMod: "2022-05-07"
 featuredImage:
 draft: false
 id: 1048703

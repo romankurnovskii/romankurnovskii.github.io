@@ -7,7 +7,7 @@ tags: [devops, linux, virtualbox, vagrant]
 categories:
 series: 
 date: "2022-05-04"
-lastmod: "2022-05-04"
+lastMod: "2022-05-04"
 featuredImage:
 draft: false
 id: 1049033

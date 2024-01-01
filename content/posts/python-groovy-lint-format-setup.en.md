@@ -7,7 +7,7 @@ tags: [Python, Groovy, VSCode, Template, Linter, Formatter]
 series: []
 categories: [Python, Groovy, VSCode]
 date: 2023-05-25
-lastmod: 2023-05-25
+lastMod: 2023-05-25
 featuredImage: https://picsum.photos/700/225?grayscale
 ---
 

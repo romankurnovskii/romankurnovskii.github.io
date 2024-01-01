@@ -7,7 +7,7 @@ tags: [экономика]
 series: []
 categories: []
 date: 2023-03-05
-lastmod: 2023-03-05
+lastMod: 2023-03-05
 featuredImage:
 authors:
 ---

@@ -4,7 +4,7 @@ description: Печатные журналы / сборники
 toc: true
 authors: [roman-kurnovskii]
 date: 2021-03-31T13:11:22+08:00
-lastmod: 2023-03-28
+lastMod: 2023-03-28
 draft: false
 tags: null
 categories: null

@@ -7,7 +7,7 @@ tags: []
 categories: [Algorithms, Codeforces]
 series:
 date: 2023-02-03
-lastmod: 2023-02-09
+lastMod: 2023-02-09
 featuredImage:
 draft: false
 weight: 0

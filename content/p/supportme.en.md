@@ -6,7 +6,7 @@ tags:
 categories:
 series:
 date: "2022-10-23T07:38:00+03:00"
-lastmod: "2022-10-23T07:38:00+03:00"
+lastMod: "2022-10-23T07:38:00+03:00"
 featuredImage:
 draft: false
 ---

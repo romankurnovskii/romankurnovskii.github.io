@@ -7,7 +7,7 @@ tags: [linux, ubuntu]
 series: ['Установка ОС']
 categories: [OS, Linux]
 date: "2022-06-23"
-lastmod: 2023-02-24
+lastMod: 2023-02-24
 featuredImage: img/featured.jpg
 authors: [roman-kurnovskii]
 ---

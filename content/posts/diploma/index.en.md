@@ -7,7 +7,7 @@ tags: ['study', 'it', 'emigration']
 categories: ['study']
 series: []
 date: 2021-01-01T15:31:25+02:00
-lastmod: 2021-01-01T15:31:25+02:00
+lastMod: 2021-01-01T15:31:25+02:00
 featuredVideo:
 featuredImage:
 draft: false

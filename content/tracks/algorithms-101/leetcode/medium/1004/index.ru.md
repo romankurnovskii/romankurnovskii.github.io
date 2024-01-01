@@ -6,7 +6,7 @@ toc: true
 tags: [Sliding Window, Medium]
 categories: [Algorithms, Medium, LeetCode]
 date: 2023-08-28
-lastmod: 2023-08-28
+lastMod: 2023-08-28
 weight: 1004
 ---
 

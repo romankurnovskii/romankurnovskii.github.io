@@ -1,14 +1,14 @@
 ---
 title: 138. Copy List with Random Pointer
-seoTitle: Leetcode 138. Copy List with Random Pointer | Python soulution and explanation
-description: Leetcode 138. Copy List with Random Pointer | Python soulution and explanation
-toc: false
+seoTitle: LeetCode 138. Copy List with Random Pointer | Python solution and explanation
+description: LeetCode 138. Copy List with Random Pointer | Python solution and explanation
+toc: true
 authors:
 tags: ["LeetCode Top Interview", greedy]
 categories: [Algorithms, Medium]
 series:
 date: 2023-05-04
-lastmod: 2023-05-04
+lastMod: 2023-02-09
 featuredImage:
 weight: 138
 ---
@@ -65,4 +65,4 @@ class Solution:
         return nodes[head]
 ```
 
-{{< video src="../../assets/138.mp4" title="Leetcode Problem 138 Video Solution" >}}
+{{< video src="../../assets/138.mp4" title="LeetCode Problem 138 Video Solution" >}}

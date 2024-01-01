@@ -6,7 +6,7 @@ tags:  [git]
 series: [CheatSheet]
 categories: [Git, CheatSheet]
 date: 2023-01-01
-lastmod: 2023-06-14
+lastMod: 2023-06-14
 featuredImage: https://picsum.photos/700/238?grayscale
 draft: false
 ---

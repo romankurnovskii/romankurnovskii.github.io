@@ -9,7 +9,7 @@ categories:
 series:
 featuredImage:
 date: 2023-02-15
-lastmod: 2023-03-01
+lastMod: 2023-03-01
 draft: false
 weight: 550
 todo: добавить остальные впоросы

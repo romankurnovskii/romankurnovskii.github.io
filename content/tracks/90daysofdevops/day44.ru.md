@@ -7,7 +7,7 @@ tags: [devops]
 categories:
 series: 
 date: "2022-06-03"
-lastmod: "2022-06-03"
+lastMod: "2022-06-03"
 featuredImage:
 draft: false
 id: 1048708

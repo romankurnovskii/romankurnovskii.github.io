@@ -7,7 +7,7 @@ tags: [Trading, Indicators, EMA]
 series: []
 categories: [Trading, Indicators]
 date: 2023-07-07
-lastmod: 2023-06-13
+lastMod: 2023-06-13
 featuredImage: https://picsum.photos/699/241?grayscale
 authors:
 prerequisites: [SMA]
