@@ -13,21 +13,27 @@ draft: false
 ---
 
 
-## Rename all files by pattern in current directory
+## Rename all files in current directory / Remove prefix
 
 ```sh
+#!/bin/bash
+REMOVE_PREFIX=$1
 files=(*)
-
 for file in "${files[@]}"
 do
-  # Check if the file name contains the "№" symbol
-  if [[ $file == *"№"* ]]; then
+  if [[ $file == *"${REMOVE_PREFIX}"* ]]; then
     # Remove everything before and including the "№" symbol
-    new_file=${file##*"№"}
+    new_file=${file##*"${REMOVE_PREFIX}"}
     mv "$file" "$new_file"
     echo "Renamed $file to $new_file"
   fi
 done
+```
+
+```
+$ ./rename_files.sh abc
+
+renamed file abc123.txt -> 123.txt
 ```
 
 ## Add substring to filename
