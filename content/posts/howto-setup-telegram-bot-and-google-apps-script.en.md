@@ -8,7 +8,7 @@ tags: [javascript]
 series: []
 categories: [Programming]
 date: 2023-09-11
-lastMod: 2023-09-12
+lastMod: 2023-11-21
 featuredImage: https://picsum.photos/700/237?grayscale
 authors: [roman-kurnovskii]
 ---
@@ -105,6 +105,30 @@ function getAllSessionsForUser(userData) {
     }
   }
   return sessions;
+}
+
+// helpers
+
+function updateChatText(userData, text, column) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(USERS_SPREAD_SHEET_NAME);
+  var data = sheet.getDataRange().getValues();
+
+  var rowIndex = -1;
+  for (var i = 0; i < data.length; i++) {
+    if (data[i][0] == userData.id) {
+      rowIndex = i + 1; // Adding 1 to convert index to row number
+      break;
+    }
+  }
+  const columnNumber = column.charCodeAt(0) - 65 + 1; // Convert column letter to number
+  if (rowIndex != -1) {
+
+    sheet.getRange(rowIndex, columnNumber).setValue(text);
+    Logger.log("Text updated successfully.");
+  } else {
+    Logger.log("ChatId not found. Creating new.");
+    saveToSpreadsheet(userData, text, columnNumber)
+  }
 }
 ```
 

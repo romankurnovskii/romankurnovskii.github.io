@@ -46,4 +46,4 @@ This experience has reaffirmed the importance of perseverance and innovation in 
 
 To try copy and use this shortcode from <mark>[**repo**](https://github.com/romankurnovskii/awesome-hugo-shortcodes/).</mark>
 
-Leetcode problem solution and debug video you can check on this <mark>[page](/en/tracks/algorithms-101/leetcode/medium/131/)</mark>.
+LeetCode problem solution and debug video you can check on this <mark>[page](/en/tracks/algorithms-101/leetcode/medium/131/)</mark>.

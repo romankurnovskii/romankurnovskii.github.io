@@ -15,9 +15,9 @@ en:
         identifier: journeys
         url: /categories/roadmaps/
         weight: 3
-      - name: Stories
-        url: stories/
-        weight: 4
+      # - name: Stories
+      #   url: stories/
+      #   weight: 4
       - name: Apps
         url: apps/
         weight: 5
@@ -75,6 +75,11 @@ en:
         url: /en/tracks/algorithms-101/
         parent: programming
         weight: 301
+      - name: LeetCode
+        identifier: LeetCode
+        url: /en/categories/leetcode/
+        parent: programming
+        weight: 302
       - name: Python
         identifier: python
         url: /categories/python/
