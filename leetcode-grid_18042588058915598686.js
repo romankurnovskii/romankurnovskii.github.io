@@ -23515,7 +23515,7 @@
   var Matrix = () => {
     const size = 3032;
     const [columns, setColumns] = (0, import_react.useState)(10);
-    const [leetcodeProblems, setLeetcodeProblems] = (0, import_react.useState)({});
+    const [leetcodeProblems, setLeetCodeProblems] = (0, import_react.useState)({});
     const matrixRef = (0, import_react.useRef)(null);
     (0, import_react.useEffect)(() => {
       const updateColumns = () => {
@@ -23526,9 +23526,9 @@
       };
       window.addEventListener("resize", updateColumns);
       updateColumns();
-      const leetCodeProblemsUrl = "http://" + window.location.host + "/leetcode-problems.json";
+      const leetCodeProblemsUrl = "https://romankurnovskii.com/leetcode-problems.json";
       console.log("leetCodeProblemsUrl", leetCodeProblemsUrl);
-      fetch(leetCodeProblemsUrl).then((response) => response.json()).then((data) => setLeetcodeProblems(data)).catch(
+      fetch(leetCodeProblemsUrl).then((response) => response.json()).then((data) => setLeetCodeProblems(data)).catch(
         (error) => console.error("Failed to load leetcode problems:", error)
       );
       return () => window.removeEventListener("resize", updateColumns);
