@@ -1,8 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { createRoot } from "react-dom/client";
 
-// console.log("leetcodeProblems", window.location.host, leetcodeProblems);
-
 const divRender = "_react_leetcode_grid_"; // Make sure this matches the ID of your root div element
 
 const CELL_WIDTH = 50;
@@ -10,7 +8,7 @@ const CELL_WIDTH = 50;
 const Matrix = () => {
   const size = 3032; // Total numbers
   const [columns, setColumns] = useState(10);
-  const [leetcodeProblems, setLeetcodeProblems] = useState({});
+  const [leetcodeProblems, setLeetCodeProblems] = useState({});
   const matrixRef = useRef(null); // Ref to the matrix container
 
   useEffect(() => {
@@ -25,11 +23,11 @@ const Matrix = () => {
     updateColumns(); // Initial update
 
     const leetCodeProblemsUrl =
-      "http://" + window.location.host + "/leetcode-problems.json";
+      "https://romankurnovskii.com/leetcode-problems.json";
     console.log("leetCodeProblemsUrl", leetCodeProblemsUrl);
     fetch(leetCodeProblemsUrl)
       .then((response) => response.json())
-      .then((data) => setLeetcodeProblems(data))
+      .then((data) => setLeetCodeProblems(data))
       .catch((error) =>
         console.error("Failed to load leetcode problems:", error),
       );
