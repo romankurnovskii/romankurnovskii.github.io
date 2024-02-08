@@ -114,7 +114,7 @@ React будет искать данный блок и отрисует внут
 Вынесем создание компонента в отдельный `js` файл. В Hugo есть директория **static** в корне проекта. Если нету, то можно создать. Подробнее о [static folder](https://gohugo.io/content-management/static-files/)
 
 Создадим файл `static/js/my_react_component.js` и запишем код:
-> Важно: сркипт должен подключиться в проекте **после** блока `<div id="my_react_app"></div>`
+> Важно: скрипт должен подключиться в проекте **после** блока `<div id="my_react_app"></div>`
 
 ```javascript
 const e = React.createElement;
@@ -141,6 +141,6 @@ ReactDOM.render(React.createElement(MyCountButton), document.getElementById("my_
 
 ## Пример
 
-Нажми на счетчик: <div id="_react_count_example_" style="display:inline-block"  class='inline-block bg-tertiary-bg rounded px-3 py-2 my-2 me-2 hover:text-yalla text-lg' >100</div>
+Нажми на кнопку: <div id="_react_count_example_" style="display:inline-block"  class='inline-block bg-tertiary-bg rounded px-3 py-2 my-2 me-2 hover:text-yalla text-lg' >100</div>
 
-{{< reactblock src="<https://romankurnovskii.com/ru/posts/integrate-hugo-react/react-count-example.jsx?3>" divRender="_react_count_example_">}}
+{{< reactblock src="<https://romankurnovskii.com/ru/posts/integrate-hugo-react/react-count-example.jsx?6>" divRender="_react_count_example_">}}

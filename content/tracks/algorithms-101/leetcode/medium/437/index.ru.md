@@ -3,18 +3,14 @@ title: 437. Path Sum III
 seoTitle: LeetCode 437. Path Sum III | Решение на Python.
 description: LeetCode 437. Найти количество всех путей в бинарном дереве, которые суммируются в определенное число. Разбор задачи.
 toc: true
-tags: [LeetCode, Binary Tree, DFS, Easy]
-categories: [Algorithms, Easy, LeetCodeTop75]
+tags: [LeetCode, Binary Tree, DFS, Medium]
+categories: [Algorithms, Medium, LeetCodeTop75]
 date: 2023-08-28
-lastmod: 2023-09-05
+lastmod: 2024-01-12
 featuredImage: https://picsum.photos/700/241?grayscale
 weight: 437
 prerequirements: "Prefix sum, LeetCode problems with prefix sum OR detailed recursive"
 ---
-
-
-
-
 
 
 [LeetCode задача 437](<https://leetcode.com/problems/path-sum-iii/>)

@@ -7,7 +7,7 @@ const MyCountButton = () => {
   const [count, setCount] = useState(Math.round(Math.random() * 100));
   return (
     <>
-      <button onClick={() => setCount(count + 1)}>{count}</button>
+      <button onClick={() => setCount(count + 1)}>Кнопка {count}</button>
     </>
   );
 };

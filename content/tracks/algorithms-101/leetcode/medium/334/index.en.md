@@ -23,12 +23,13 @@ One possible naive solution is to use three nested loops to go through all possi
 
 ## Approach
 
-The given solution employs a smart iterative approach.
+Use two variables, `first` and `second`, initialized with infinity
 
-It uses two variables, `first` and `second`, initialized with infinity. As it goes through the list, it updates these variables with the smallest and second smallest numbers it has seen so far.
+- Go through the list
+- Update these variables with the smallest and second smallest numbers that has seen so far.
 
-- If it finds a number larger than both, it means it has found an increasing triplet and returns True.
-- If it finishes going through the list without finding such a number, it returns False.
+- If find a number larger than both, it means you have found an increasing triplet. Return True.
+- If finish going through the list without finding such a number, return False.
 
 This algorithm works because any number larger than `first` and `second` is effectively larger than at least two numbers before it in the list.
 
