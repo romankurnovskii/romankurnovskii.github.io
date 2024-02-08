@@ -28567,10 +28567,13 @@
         isValidElement: react_1.isValidElement
       };
       function domToReact2(nodes, options2) {
+        if (options2 === void 0) {
+          options2 = {};
+        }
         var reactElements = [];
-        var hasReplace = typeof (options2 === null || options2 === void 0 ? void 0 : options2.replace) === "function";
-        var transform = (options2 === null || options2 === void 0 ? void 0 : options2.transform) || utilities_1.returnFirstArg;
-        var _a = (options2 === null || options2 === void 0 ? void 0 : options2.library) || React2, cloneElement = _a.cloneElement, createElement = _a.createElement, isValidElement = _a.isValidElement;
+        var hasReplace = typeof options2.replace === "function";
+        var transform = options2.transform || utilities_1.returnFirstArg;
+        var _a = options2.library || React2, cloneElement = _a.cloneElement, createElement = _a.createElement, isValidElement = _a.isValidElement;
         var nodesLength = nodes.length;
         for (var index = 0; index < nodesLength; index++) {
           var node = nodes[index];
@@ -28591,7 +28594,7 @@
             if (isWhitespace && node.parent && !(0, utilities_1.canTextBeChildOfNode)(node.parent)) {
               continue;
             }
-            if ((options2 === null || options2 === void 0 ? void 0 : options2.trim) && isWhitespace) {
+            if (options2.trim && isWhitespace) {
               continue;
             }
             reactElements.push(transform(node.data, node, index));
@@ -30753,7 +30756,7 @@ ${content}</tr>
         "label",
         {
           className: "mb-4  block text-sm font-bold",
-          htmlFor: "username"
+          htmlFor: "text1"
         }
       ), /* @__PURE__ */ import_react.default.createElement(
         "input",
@@ -30766,7 +30769,7 @@ ${content}</tr>
             setComment({ ...comment, author: e.target.value });
           }
         }
-      )), /* @__PURE__ */ import_react.default.createElement("div", { className: "mb-4" }, /* @__PURE__ */ import_react.default.createElement("label", { className: "mb-2  block text-sm font-bold", htmlFor: "password" }, "(accepts markdown format)"), /* @__PURE__ */ import_react.default.createElement(
+      )), /* @__PURE__ */ import_react.default.createElement("div", { className: "mb-4" }, /* @__PURE__ */ import_react.default.createElement("label", { className: "mb-2  block text-sm font-bold", htmlFor: "text2" }, "(accepts markdown format)"), /* @__PURE__ */ import_react.default.createElement(
         "textarea",
         {
           className: "focus:shadow-outline mb-1 w-full appearance-none rounded border py-3  px-3 leading-tight shadow focus:outline-none",
