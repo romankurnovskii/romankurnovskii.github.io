@@ -29,7 +29,7 @@ Use these VSCode extensions to debug/submit:
 - First 20 problems. Spent 5 min for thinking. Next look for 2-3 different approaches. Understand. Decide. Write.
 
 <div id="_react_leetcode_grid_" class='bg-tertiary-bg rounded px-3 py-2 my-2 me-2 text-lg'></div>
-{{< reactblock src="https://romankurnovskii.com/react_scripts/leetcode-grid.jsx?a12" divRender="_react_leetcode_grid_0">}}
+{{< reactblock src="https://romankurnovskii.com/react_scripts/leetcode-grid.jsx?a123" divRender="_react_leetcode_grid_0">}}
 
 <rawhtml>
 <style>
