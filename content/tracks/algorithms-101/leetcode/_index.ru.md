@@ -14,6 +14,9 @@ published: true
 featuredImage: https://picsum.photos/700/241?grayscale
 ---
 
+<div id="_react_leetcode_grid_" class='bg-tertiary-bg rounded px-3 py-2 my-2 me-2 text-lg'></div>
+{{< reactblock src="https://romankurnovskii.com/react_scripts/leetcode-grid.jsx?a1" divRender="_react_leetcode_grid_">}}
+
 <rawhtml>
 <style>
 .followit--follow-form-container[attr-a][attr-b][attr-c][attr-d][attr-e][attr-f] .form-preview {
