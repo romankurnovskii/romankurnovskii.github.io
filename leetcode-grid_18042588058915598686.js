@@ -23526,7 +23526,7 @@
       };
       window.addEventListener("resize", updateColumns);
       updateColumns();
-      const leetCodeProblemsUrl = "https://romankurnovskii.com/leetcode-problems.json";
+      const leetCodeProblemsUrl = "https://romankurnovskii.com/leetcode-problems.json?_ts=" + (/* @__PURE__ */ new Date()).getTime();
       console.log("leetCodeProblemsUrl", leetCodeProblemsUrl);
       fetch(leetCodeProblemsUrl).then((response) => response.json()).then((data) => setLeetCodeProblems(data)).catch(
         (error) => console.error("Failed to load leetcode problems:", error)
