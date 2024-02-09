@@ -43,6 +43,9 @@ jobs:
       - name: Create search indexes
         run: npm run hugo-lunr-ml
 
+      - name: Generate LeetCode problems json
+        run: python3 gen_leetcode_problems_dict.py
+
       - name: Install pip packages
         run: pip install -r requirements.txt
 
