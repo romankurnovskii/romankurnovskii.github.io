@@ -11,7 +11,7 @@
     "pull-git-modules": "git submodule update --init --recursive",
     "upd-modules": "git submodule update --remote --merge",
     "push": "git add .; git commit -am upd; git push",
-    "p": "npm run md-lint-fix; git commit -am upd; git pull; npm run upd-modules; npm run push"
+    "p": "npm i; npm audit fix; npm run md-lint-fix; git commit -am upd; git pull; npm run upd-modules; npm run push"
   },
   "browserslist": [
     "last 1 version",
@@ -29,9 +29,9 @@
     "@fullhuman/postcss-purgecss": "^5.0.0",
     "@tailwindcss/typography": "^0.5.9",
     "autoprefixer": "^10.4.17",
-    "cssnano": "^6.0.1",
-    "hugo-lunr-ml": "^3.1.0",
-    "markdownlint-cli2": "^0.10.0",
+    "cssnano": "^6.0.3",
+    "hugo-lunr-ml": "^3.1.1",
+    "markdownlint-cli2": "^0.12.1",
     "postcss": "^8.4.28",
     "postcss-cli": "10.1.0",
     "postcss-import": "^16.0.0",

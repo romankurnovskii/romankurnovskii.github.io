@@ -107,7 +107,11 @@ ffmpeg -i input.mp4 -c:v libx264 -crf 23 -preset medium -c:a aac -b:a 128k outpu
 ## Create a new video from all the videos sorted by name in a folder using with ffmpeg
 
 ```sh
-ffmpeg -f concat -safe 0 -i <(for f in $(ls -v /path/to/folder/*.mp4); do echo "file '$PWD/$f'"; done) -c copy output.mp4
+cd /dir/path
+
+ffmpeg -f concat -safe 0 -i <(for f in $(ls -v $PWD/*.mp4); do echo "file '$f'"; done) -c copy output.mp4
+
+ffmpeg -f concat -safe 0 -i <(for f in $(ls -v $PWD/*.MOV); do echo "file '$f'"; done) -c copy output.mp4
 ```
 
 ## Reduce video size for all videos in dir and sibdirs

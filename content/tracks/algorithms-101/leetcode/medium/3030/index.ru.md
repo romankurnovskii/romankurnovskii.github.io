@@ -46,11 +46,11 @@ class Solution:
 
     def resultGrid(self, image, threshold):
         n, m = len(image), len(image[0])
-        ans = [[0] * m for _ in range(n)]
+        res = [[0] * m for _ in range(n)]
         # Основной алгоритм обхода и агрегации
         pass
 
-        return ans
+        return res
 ```
 
 ## Решение

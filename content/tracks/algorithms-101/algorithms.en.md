@@ -176,13 +176,13 @@ while j < size:
 
     if condition < k:
         j+=1
-    elif condition == k: # ans <-- calculation
+    elif condition == k: # res <-- calculation
         j+=1
     elif condition > k:
         while condition > k:
             i+=1 # remove calculation for i
         j+=1
-return ans
+return res
 ```
 
 **Examples**

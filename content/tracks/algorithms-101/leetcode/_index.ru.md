@@ -12,6 +12,8 @@ date: 2023-09-02
 lastMod: 2023-09-08
 published: true
 featuredImage: https://picsum.photos/700/241?grayscale
+aliases:
+- /ru/leetcode
 ---
 
 <div id="_react_leetcode_grid_" class='bg-tertiary-bg rounded px-3 py-2 my-2 me-2 text-lg'></div>
