@@ -3,6 +3,7 @@ title: 3028. Ant on the Boundary
 seoTitle: LeetCode 3028. Ant on the Boundary | Решение на Python.
 description: 
 toc: true
+categories: [Algorithms, Easy, LeetCode]
 tags: [Algorithms, Easy, LeetCode]
 date: 2024-02-09
 lastMod: 2024-02-09

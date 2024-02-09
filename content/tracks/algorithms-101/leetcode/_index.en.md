@@ -12,6 +12,8 @@ weight: 20
 date: 2022-10-16
 lastMod: 2023-07-27
 published: true
+aliases:
+- /en/leetcode
 ---
 
 [Python template](../#template)
