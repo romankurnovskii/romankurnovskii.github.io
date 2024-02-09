@@ -10,14 +10,13 @@ featuredImage: https://picsum.photos/700/241?grayscale
 weight: 3028
 ---
 
-
 [LeetCode задача 3028](https://leetcode.com/problems/ant-on-the-boundary/description/)
 
-Воспользуемся  функцией [`accumulate`](https://docs.python.org/3/library/itertools.html#itertools.accumulate) из модуля `itertools`, чтобы упростить вычисление и подсчет количества раз, когда муравей возвращается на границу, пройдя через массив `nums`.
+Воспользуемся функцией [`accumulate`](https://docs.python.org/3/library/itertools.html#itertools.accumulate) из модуля `itertools`, чтобы упростить вычисление и подсчет количества раз, когда муравей возвращается на границу, пройдя через массив `nums`.
 
 Применяем функцию `accumulate` для подсчета накопительной суммы и подсчитываем количество раз, когда накопительная сумма равна `0`.
 
-## Рещение
+## Решение
 
 ```python
 class Solution:
