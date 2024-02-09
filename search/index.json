@@ -901,6 +901,20 @@
             "lang": "ru"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/3030/",
+            "title": "3030. Find the Grid of Region Average",
+            "description": "3030. Find the Grid of Region Average",
+            "content": "\nLeetCode задача 3030\n\n\nДана матрица m x n, представляющая изображение в оттенках серого, где imagei представляет пиксель с интенсивностью в диапазоне от 0 до 255. Также дано неотрицательное целое число threshold (пороговое значение).\n\nДва пикселя imagea и imagec считаются соседними, если |a - c| + |b - d| == 1.\n\nРегионом считается матрица 3 x 3, где абсолютная разница в интенсивности между любыми двумя соседними пикселями меньше или равна threshold.\n\nНеобходимо вычислить матрицу m x n result, где resulti - это средняя интенсивность региона, к которому принадлежит imagei, округленная вниз до ближайшего целого числа. Если imagei принадлежит нескольким регионам, resulti является средним из округленных средних интенсивностей этих регионов, округленным вниз до ближайшего целого. Если imagei не принадлежит ни к одному региону, resulti равно imagei.\n\nПодход\nРешение этой задачи можно упростить, разбив его на вспомогательные функции.\n\nОпределение принадлежности к региону: Напишем функцию, которая будет проверять, удовлетворяет ли 3x3 матрица условиям региона с учетом порога threshold.\n\nРасчет среднего значения региона: Создадим функцию для расчета среднего значения интенсивности пикселей в регионе.\n\nАгрегация данных: Интегрируем обе функции в основной алгоритм, который будет перебирать все возможные 3x3 матрицы, проверять их на соответствие критериям региона и, в случае успеха, рассчитывать среднее значение для пикселей этого региона.\n\nclass Solution:\n    def isRegion(self, image, i, j, threshold):\nПроверка, удовлетворяет ли матрица условиям региона\n        pass\n\n    def calculateRegionAverage(self, image, i, j):\nРасчет среднего значения интенсивности пикселей в регионе\n        pass\n\n    def resultGrid(self, image, threshold):\n        n, m = len(image), len(image[0])\n        ans = [[0] * m for _ in range(n)]\nОсновной алгоритм обхода и агрегации\n        pass\n\n        return ans\n\nРешение\nclass Solution:\n    def isRegion(self, image, x, y, threshold):\n        for i in range(x, x + 3):\n            for j in range(y, y + 3):\n                if i > x and abs(imagei - imagei-1) > threshold: return False\n                if j > y and abs(imagei - imagei) > threshold: return False\n        return True\n\n    def calculateRegionAverage(self, image, x, y):\n        total = sum(imagei for i in range(x, x + 3) for j in range(y, y + 3))\n        return total // 9\n\n    def resultGrid(self, image, threshold):\n        n, m = len(image), len(image[0])\n        result = [image[i for j in range(m)] for i in range(n)]\n\n        for i in range(n - 2):\n            for j in range(m - 2):\n                if self.isRegion(image, i, j, threshold):\n                    avg = self.calculateRegionAverage(image, i, j)\n                    for k in range(3):\n                        for l in range(3):\nAccumulate averages for overlapping regions\n                            if 'avg_count' not in locals():\n                                avg_count = [[0] * m for _ in range(n)]\n                                sums = [[0] * m for _ in range(n)]\n                            avg_counti+k += 1\n                            sumsi+k += avg\n\nCalculate final averages for each cell\n        if 'avg_count' in locals():\n            for i in range(n):\n                for j in range(m):\n                    if avg_counti > 0:\n                        resulti = sumsi // avg_counti\n\n        return result\n`",
+            "tags": [
+                "Algorithms",
+                "Medium",
+                "LeetCode",
+                "Array",
+                "Matrix"
+            ],
+            "lang": "ru"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/300/",
             "title": "300. Longest Increasing Subsequence",
             "description": "LeetCode 300. Наибольшая возрастающая подпоследовательность. Разбор задачи.",
@@ -1161,12 +1175,6 @@
             "lang": "ru"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 20/",
-            "content": "\n\n",
-            "tags": [],
-            "lang": "ru"
-        },
-        {
             "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 16/",
             "content": "\n\n",
             "tags": [],
@@ -1301,7 +1309,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/3028/",
             "title": "3028. Ant on the Boundary",
             "description": null,
-            "content": "\n\nLeetCode задача 3028\n\nВоспользуемся  функцией accumulate из модуля itertools, чтобы упростить вычисление и подсчет количества раз, когда муравей возвращается на границу, пройдя через массив nums.\n\nПрименяем функцию accumulate для подсчета накопительной суммы и подсчитываем количество раз, когда накопительная сумма равна 0.\n\nРещение\n\nclass Solution:\n    def returnToBoundaryCount(self, nums: List[int]) -> int:\n        return sum(s == 0 for s in accumulate(nums))\n\nФункция accumulate(nums) генерирует последовательность накопленных сумм элементов массива nums, начиная с первого элемента.\n\nЗатем с помощью генераторного выражения s == 0 for s in accumulate(nums) мы создаем последовательность True и False, в зависимости от того, равна ли накопленная сумма в каждой точке нулю.\n\nФункция sum подсчитывает количество True в этой последовательности, что соответствует количеству возвращений муравья на границу.\n",
+            "content": "\nLeetCode задача 3028\n\nВоспользуемся функцией accumulate из модуля itertools, чтобы упростить вычисление и подсчет количества раз, когда муравей возвращается на границу, пройдя через массив nums.\n\nПрименяем функцию accumulate для подсчета накопительной суммы и подсчитываем количество раз, когда накопительная сумма равна 0.\n\nРешение\n\nclass Solution:\n    def returnToBoundaryCount(self, nums: List[int]) -> int:\n        return sum(s == 0 for s in accumulate(nums))\n\nФункция accumulate(nums) генерирует последовательность накопленных сумм элементов массива nums, начиная с первого элемента.\n\nЗатем с помощью генераторного выражения s == 0 for s in accumulate(nums) мы создаем последовательность True и False, в зависимости от того, равна ли накопленная сумма в каждой точке нулю.\n\nФункция sum подсчитывает количество True в этой последовательности, что соответствует количеству возвращений муравья на границу.\n",
             "tags": [
                 "Algorithms",
                 "Easy",

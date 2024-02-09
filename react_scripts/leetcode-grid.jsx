@@ -23,7 +23,9 @@ const Matrix = () => {
     updateColumns(); // Initial update
 
     const leetCodeProblemsUrl =
-      "https://romankurnovskii.com/leetcode-problems.json";
+      "https://romankurnovskii.com/leetcode-problems.json" +
+      "?_ts=" +
+      new Date().getTime();
     console.log("leetCodeProblemsUrl", leetCodeProblemsUrl);
     fetch(leetCodeProblemsUrl)
       .then((response) => response.json())
