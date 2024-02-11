@@ -926,6 +926,12 @@
             "lang": "ru"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/3/",
+            "content": "class Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n        ss = set()\n        i = res = 0\n        for j, c in enumerate(s):\n            while c in ss:\n                ss.remove(s[i])\n                i += 1\n            ss.add(c)\n            res = max(res, j - i + 1)\n        return res\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/287/",
             "title": "287. Find the Duplicate Number",
             "description": "LeetCode 287. Найти дублирующее число в массиве.",
@@ -1189,12 +1195,6 @@
             "lang": "ru"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 16/",
-            "content": "\n\n",
-            "tags": [],
-            "lang": "ru"
-        },
-        {
             "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 14/",
             "content": "\n\n",
             "tags": [],
@@ -1316,6 +1316,12 @@
             "title": "345. Reverse Vowels of a String",
             "description": "LeetCode 345. Reverse the vowels in a given string. Разбор задачи.",
             "content": "\nLeetCode задача 345\n\nЗадача\n\nЗадана строка s. Необходимо перевернуть только гласные буквы в этой строке и вернуть результат.\n\nГласные буквы: 'a', 'e', 'i', 'o', 'u'. Они могут встречаться в верхнем и нижнем регистрах, и более одного раза.\n\nПодсказки\n\nДля решения задачи можно использовать два указателя: один с начала строки, другой с конца. Затем можно двигаться этими указателями к центру строки, меняя местами гласные буквы.\n\nПодход\n\nИспользуем два указателя для итерации по строке: один с начала (left), другой с конца (right). Двигаем их к центру, меняя местами гласные буквы, которые они встречают.\n\nАлгоритм\n\nИнициализируем два указателя: left на начало строки, right на конец.\nКонвертируем строку в список для удобства манипуляций.\nПока left  str:\n    vowels = set(\"aeiouAEIOU\")  # Создадим множество гласных букв для быстрого поиска\n    s_list = list(s)  # Преобразуем строку в список\n\n    left, right = 0, len(s) - 1  # указатели\n\n    while left < right:\nНаходим следующую гласную с начала строки\n        while left < right and s_list[left].lower() not in vowels:\n            left += 1\n\nНаходим следующую гласную с конца строки\n        while left < right and s_list[right].lower() not in vowels:\n            right -= 1\n\nМеняем гласные местами\n        s_list[left], s_list[right] = s_list[right], s_list[left]\n\nДвигаем указатели\n        left += 1\n        right -= 1\n\n    return \"\".join(s_list)\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/3033/",
+            "content": "\n\nclass Solution:\n    def modifiedMatrix(self, matrix: List[List[int]]) -> List[List[int]]:\n        rows = len(matrix)\n        cols = len(matrix[0])\n        for j in range(rows):\n            max_val = max(matrixi for i in range(cols))\n            for i in range(cols):\n                if matrixi == -1:\n                    matrixi = max_val\n        return matrix\n",
             "tags": [],
             "lang": "ru"
         },
@@ -4205,6 +4211,12 @@
             "lang": "en"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/3/",
+            "content": "class Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n        ss = set()\n        i = res = 0\n        for j, c in enumerate(s):\n            while c in ss:\n                ss.remove(s[i])\n                i += 1\n            ss.add(c)\n            res = max(res, j - i + 1)\n        return res\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/287/",
             "title": "287. Find the Duplicate Number",
             "description": "Unraveling the mystery of finding the duplicate number in an array.",
@@ -4758,6 +4770,12 @@
             "title": "345. Reverse Vowels of a String",
             "description": "345. Reverse Vowels of a String",
             "content": "\nLeetCode problem\n\nProblem Statement\n\nGiven a string s, the task is to reverse only all the vowels in the string and return it. The vowels are 'a', 'e', 'i', 'o', and 'u', and they can appear in both lower and upper cases, more than once.\n\nNaive Solution\n\nThe naive approach to solve this problem would be to:\n\nInitialize an empty string result.\nTraverse the given string s from the start to the end.\nIf the current character is a vowel, find the next vowel in the string starting from the end, add it to result, and remove it from the string.\nIf the current character is not a vowel, simply add it to result.\n\nHints & Tips\n\nBut this solution is inefficient as it requires traversing the string multiple times and manipulating it. A more efficient solution would use the two-pointer technique.\n\nApproach\n\nThe efficient approach to solve this problem would be to:\n\nInitialize two pointers, one at the start and the other at the end of the string.\nWhile the two pointers have not met, check if the characters at the two pointers are vowels.\nIf they are, swap them. If not, move the pointer(s).\n\nSteps\n\nConvert the string to a list of characters because Python strings are immutable.\nInitialize two pointers: left at 0 and right at the end of the string.\nWhile left  str:\n        vowels = 'aeiouAEIOU'\n        s = list(s)\n        left, right = 0, len(s) - 1\n\n        while left  str:\n        vowels = 'aeiouAEIOU'\n\n        vowels_order = []\n        for x in s:\n            if x in vowels:\n                vowels_order.append(x)\n\n        res = ''\n        for x in s:\n            if x in vowels:\n                res += vowels_order.pop()\n            else:\n                res += x\n\n        return res\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/3033/",
+            "content": "\n\nclass Solution:\n    def modifiedMatrix(self, matrix: List[List[int]]) -> List[List[int]]:\n        rows = len(matrix)\n        cols = len(matrix[0])\n        for j in range(rows):\n            max_val = max(matrixi for i in range(cols))\n            for i in range(cols):\n                if matrixi == -1:\n                    matrixi = max_val\n        return matrix\n",
             "tags": [],
             "lang": "en"
         },
