@@ -1,6 +1,7 @@
 import os
 import json
 
+
 def generate_leetcode_json(base_dir):
     leetcode_data = {}
     base_url = "https://romankurnovskii.com"

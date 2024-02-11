@@ -7,7 +7,7 @@ tags: []
 categories: [Algorithms, Easy, LeetCodeTop75]
 date: 2023-09-04
 lastmod: 2023-09-04
-featuredImage: https://picsum.photos/700/241?grayscale
+featuredImage: https://picsum.photos/700/279?grayscale
 weight: 1732
 ---
 

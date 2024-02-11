@@ -7,7 +7,7 @@ tags: ["Array", "Prefix Sum"]
 categories: [Algorithms, Easy, LeetCodeTop75]
 date: 2023-08-21
 lastmod: 2023-08-21
-featuredImage: https://picsum.photos/700/241?grayscale
+featuredImage: https://picsum.photos/700/171?grayscale
 weight: 1732
 ---
 
