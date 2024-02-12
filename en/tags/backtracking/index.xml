@@ -9,7 +9,7 @@ Example 1:
 Input: n = 3 Output: [&amp;quot;((()))&amp;quot;,&amp;quot;(()())&amp;quot;,&amp;quot;(())()&amp;quot;,&amp;quot;()(())&amp;quot;,&amp;quot;()()()&amp;quot;] Example 2:
 Input: n = 1 Output: [&amp;quot;()&amp;quot;] Prerequirements Backtracking pattern
 First accepted Idea:
-class Solution: def generateParenthesis(self, n): ans = [] def dfs(l: int, r: int, s: str) -&amp;gt; None: if l == 0 and r == 0: ans.append(s) if l &amp;gt; 0: dfs(l - 1, r, s + &amp;#39;(&amp;#39;) if l &amp;lt; r: dfs(l, r - 1, s + &amp;#39;)&amp;#39;) dfs(n, n, &amp;#39;&amp;#39;) return ans</description></item><item><title>46. Permutations</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/46/</link><pubDate>Sat, 17 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/46/</guid><description>LeetCode problem
+class Solution: def generateParenthesis(self, n): res = [] def dfs(l: int, r: int, s: str) -&amp;gt; None: if l == 0 and r == 0: res.append(s) if l &amp;gt; 0: dfs(l - 1, r, s + &amp;#39;(&amp;#39;) if l &amp;lt; r: dfs(l, r - 1, s + &amp;#39;)&amp;#39;) dfs(n, n, &amp;#39;&amp;#39;) return res</description></item><item><title>46. Permutations</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/46/</link><pubDate>Sat, 17 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/46/</guid><description>LeetCode problem
 Given an array nums of distinct integers, return all the possible permutations. You can return the answer in any order.
 Example 1:
 Input: nums = [1,2,3] Output: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]] Example 2:

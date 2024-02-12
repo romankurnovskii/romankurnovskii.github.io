@@ -915,6 +915,36 @@
             "lang": "ru"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/3029/",
+            "content": "\n\n\nclass Solution:\n    def minimumTimeToInitialState(self, word: str, k: int) -> int:\n        n = len(word)  # Calculate the length of the word\n\nIterate through the word in steps of k\n        for i in range(k, n, k):\nCheck if the suffix starting from i matches the prefix up to n-i\n            if word[i:] == word[:-i]:\nIf they match, the word can return to the initial state in i/k steps\n                return i // k\n\nIf no matching prefix and suffix are found,\nreturn the ceiling division of n by k\n        return (n + k - 1) // k\n\nLength Calculation**: First, calculate the length of word to know the range we're working with.\nIteration: Loop through the word in steps of k, starting from k up to n, but only considering positions that are multiples of k. This is because we're interested in finding a repeating pattern that aligns with the steps of k.\nMatching Check**: For each i, compare the suffix of the word starting from position i with the prefix of the word ending at position n-i. This check effectively looks for a point where the word can \"wrap around\" and match itself, indicating a repetition pattern that allows returning to the initial state.\nReturn Early**: If such a match is found, the function returns early with i // k, which represents the minimum number of complete cycles needed to reach the initial state.\nNo Match Found**: If the loop completes without finding any matches, the function calculates the ceiling of n / k using (n + k - 1) // k. This accounts for the case where no repeating pattern is found that fits within the steps of k, and the word needs to be repeated in its entirety, possibly with some additional steps to match the initial state.\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/3026/",
+            "title": "3026. Maximum Good Subarray Sum",
+            "description": "3026. Maximum Good Subarray Sum",
+            "content": "\nLeetCode problem 3026\n\nclass Solution:\n    def maximumSubarraySum(self, nums: List[int], k: int) -> int:\n        res = -inf\n        p = {nums[0]: 0}\n        s, n = 0, len(nums)\n        for i, x in enumerate(nums):\n            s += x\n            if x - k in p:\n                res = max(res, s - p[x - k])\n            if x + k in p:\n                res = max(res, s - p[x + k])\n            if i + 1  s):\n                p[nums[i + 1]] = s\n        return 0 if res == -inf else res\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/3018/",
+            "title": "3018. Maximum Number of Removal Queries That Can Be Processed I",
+            "description": "3018. Maximum Number of Removal Queries That Can Be Processed I",
+            "content": "\nLeetCode problem 3018\n\nclass Solution:\n    def maximumProcessableQueries(self, nums: List[int], queries: List[int]) -> int:\n        n = len(nums)\n        f = [[0] * n for _ in range(n)]\n        m = len(queries)\n        for i in range(n):\n            for j in range(n - 1, i - 1, -1):\n                if i:\n                    fi = max(\n                        fi, fi - 1 + (nums[i - 1] >= queriesf[i - 1])\n                    )\n                if j + 1 = queriesf[i])\n                    )\n                if fi == m:\n                    return m\n        return max(fi + (nums[i] >= queriesf[i]) for i in range(n))\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/3002/",
+            "title": "3002. Maximum Size of a Set After Removals",
+            "description": "3002. Maximum Size of a Set After Removals",
+            "content": "\nLeetCode problem 3002\n\nclass Solution:\n    def maximumSetSize(self, nums1: List[int], nums2: List[int]) -> int:\n        n = len(nums1)\n\n        s1 = set(nums1)\n        s2 = set(nums2)\n\n        a = min(len(s1 - s2), n // 2)\n        b = min(len(s2 - s1), n // 2)\n        return min(a + b + len(s1 & s2), n)\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/300/",
             "title": "300. Longest Increasing Subsequence",
             "description": "LeetCode 300. Наибольшая возрастающая подпоследовательность. Разбор задачи.",
@@ -927,7 +957,7 @@
         },
         {
             "uri": "/tracks/algorithms-101/leetcode/medium/3/",
-            "content": "class Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n        ss = set()\n        i = res = 0\n        for j, c in enumerate(s):\n            while c in ss:\n                ss.remove(s[i])\n                i += 1\n            ss.add(c)\n            res = max(res, j - i + 1)\n        return res\n",
+            "content": "class Solution():\n    def lengthOfLongestSubstring(self, s):\n        max_len = 0\n        substr = ''\n        for char in s:\n            if char not in substr:\n                substr += char\n                max_len = max(max_len, len(substr))\n            else:\n                start = substr.index(char) + 1\n                substr = substr[start:] + char\n        return max_len\n",
             "tags": [],
             "lang": "ru"
         },
@@ -993,6 +1023,14 @@
             "lang": "ru"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/24/",
+            "title": "24. Swap Nodes in Pairs",
+            "description": "24. Swap Nodes in Pairs",
+            "content": "\nLeetCode problem 24\n\nDefinition for singly-linked list.\nclass ListNode:\ndef init(self, val=0, next=None):\nself.val = val\nself.next = next\nclass Solution:\n    def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        dummy = ListNode(next=head)\n        pre, cur = dummy, head\n        while cur and cur.next:\n            t = cur.next\n            cur.next = t.next\n            t.next = cur\n            pre.next = t\n            pre, cur = cur, cur.next\n        return dummy.next\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/238/",
             "title": "238. Product of Array Except Self",
             "description": "LeetCode 238. Верните массив, где каждый элемент равен произведению всех элементов исходного массива, кроме самого этого элемента.",
@@ -1033,6 +1071,14 @@
                 "Matrix",
                 "Medium"
             ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/22/",
+            "title": "22. Generate Parentheses",
+            "description": "22. Generate Parentheses",
+            "content": "\nLeetCode problem 22\n\nclass Solution:\n  def generateParenthesis(self, n):\n    res = []\n\n    def dfs(l: int, r: int, s: str) -> None:\n      if l == 0 and r == 0:\n        res.append(s)\n      if l > 0:\n        dfs(l - 1, r, s + '(')\n      if l < r:\n        dfs(l, r - 1, s + ')')\n\n    dfs(n, n, '')\n    return res\n",
+            "tags": [],
             "lang": "ru"
         },
         {
@@ -1093,6 +1139,22 @@
                 "Counting",
                 "Medium"
             ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/19/",
+            "title": "19. Remove Nth Node From End of List",
+            "description": "19. Remove Nth Node From End of List",
+            "content": "\nLeetCode problem 19\n\nDefinition for singly-linked list.\nclass ListNode:\ndef init(self, val=0, next=None):\nself.val = val\nself.next = next\nclass Solution:\n    def removeNthFromEnd(self, head, n: int):\n        p1 = head\n        p2 = head\n\n        for _ in range(n):\n            p1 = p1.next\n\n        if not p1:\n            return head.next # in case: head=[1], n=1 -> return []\n\n        while p1.next:\n            p1 = p1.next\n            p2 = p2.next\n\n        p2.next = p2.next.next\n\n        return head\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/17/",
+            "title": "17. Letter Combinations of a Phone Number",
+            "description": "17. Letter Combinations of a Phone Number",
+            "content": "\nLeetCode problem 17\n\nclass Solution:\n    def letterCombinations(self, digits: str) -> List[str]:\n        if not digits:\n            return []\n\n        letters = ['', '', 'abc', 'def',\n                      'ghi', 'jkl', 'mno',\n                      'pqrs', 'tuv', 'wxyz']\n\n        result = ['']\n\n        for d in digits:\n            d = int(d)\n            tmp = []\n            for letter in letters[d]:\n                for word in result:\n                    word += letter\n                    tmp.append(word)\n            result = tmp\n\n        return result\n",
+            "tags": [],
             "lang": "ru"
         },
         {
@@ -1167,6 +1229,14 @@
             "lang": "ru"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/12/",
+            "title": "12. Integer to Roman",
+            "description": "12. Integer to Roman",
+            "content": "\nLeetCode problem 12\n\nclass Solution:\n    def intToRoman(self, num: int) -> str:\n        cs = ('M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I')\n        vs = (1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1)\n        res = []\n        for c, v in zip(cs, vs):\n            while num >= v:\n                num -= v\n                res.append(c)\n        return ''.join(res)\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/11/",
             "title": "11. Container With Most Water",
             "description": "LeetCode 11. Найдите контейнер, который может вместить максимальное количество воды. Разбор задачи.",
@@ -1186,18 +1256,6 @@
                 "Sliding Window",
                 "Medium"
             ],
-            "lang": "ru"
-        },
-        {
-            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 9/",
-            "content": "\n\n",
-            "tags": [],
-            "lang": "ru"
-        },
-        {
-            "uri": "/tracks/algorithms-101/leetcode/medium/-01 copy 14/",
-            "content": "\n\n",
-            "tags": [],
             "lang": "ru"
         },
         {
@@ -1232,6 +1290,14 @@
                 "Binary Search",
                 "Hard"
             ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/3031/",
+            "title": "3031. Minimum Time to Revert Word to Initial State II",
+            "description": "3031. Minimum Time to Revert Word to Initial State II",
+            "content": "\nLeetCode problem 3031\n\nclass Hashing:\n    slots = [\"mod\", \"h\", \"p\"]\n\n    def init(self, s: str, base: int, mod: int):\n        self.mod = mod\n        self.h = [0] * (len(s) + 1)\n        self.p = [1] * (len(s) + 1)\n        for i in range(1, len(s) + 1):\n            self.h[i] = (self.h[i - 1] * base + ord(s[i - 1])) % mod\n            self.p[i] = (self.p[i - 1] * base) % mod\n\n    def query(self, l: int, r: int) -> int:\n        return (self.h[r] - self.h[l - 1] * self.p[r - l + 1]) % self.mod\n\n\nclass Solution:\n    def minimumTimeToInitialState(self, word: str, k: int) -> int:\n        hashing = Hashing(word, 13331, 998244353)\n        n = len(word)\n        for i in range(k, n, k):\n            if hashing.query(1, n - i) == hashing.query(i + 1, n):\n                return i // k\n        return (n + k - 1) // k\n",
+            "tags": [],
             "lang": "ru"
         },
         {
@@ -1322,6 +1388,12 @@
         {
             "uri": "/tracks/algorithms-101/leetcode/easy/3033/",
             "content": "\n\nclass Solution:\n    def modifiedMatrix(self, matrix: List[List[int]]) -> List[List[int]]:\n        rows = len(matrix)\n        cols = len(matrix[0])\n        for j in range(rows):\n            max_val = max(matrixi for i in range(cols))\n            for i in range(cols):\n                if matrixi == -1:\n                    matrixi = max_val\n        return matrix\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/3032/",
+            "content": "\n\nclass Solution:\n    def numberCount(self, a: int, b: int) -> int:\nInitialize the count of numbers with all unique digits\n        unique_digit_count = 0\n\nLoop through each number in the range from a to b, inclusive\n        for num in range(a, b + 1):\nConvert the number to a string to examine its digits\n            num_str = str(num)\nConvert the string to a set of characters to remove duplicates\n            unique_digits = set(num_str)\n\nIf the length of the set is equal to the length of the number string,\nit means all digits are unique\n            if len(unique_digits) == len(num_str):\nIncrement the count for each number with all unique digits\n                unique_digit_count += 1\n\nReturn the total count of unique digit numbers\n        return unique_digit_count\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3859,19 +3931,6 @@
             "lang": "en"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/medium/3",
-            "title": "3. Longest Substring Without Repeating Characters",
-            "description": "LeetCode 3. Longest Substring Without Repeating Characters",
-            "content": "\nLeetCode problem\n\nGiven a string s, find the length of the longest substring without repeating characters.\n\nExample 1:\n\n    Input: s = \"abcabcbb\"\n    Output: 3\n    Explanation: The answer is \"abc\", with the length of 3.\n\nFirst accepted\n\nIdea:\n\nLoop through string\nCalculate max count of elements in substring\nIf get double element, then go back until get this element and do step 2.\nProceed the main loop\n\nLongest Substring Without Repeating Characters\n\nclass Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n        uniqs = set()\n        len_max = 0\n        len_current = 0\n        idx = 0\n        for i in s:\n            if i in uniqs:\n                len_max = max(len_max, len_current)\n                len_current = 1\n                uniqs = set(i)\n                for j in reversed(s[:idx]):\n                    if j == i:\n                        break\n                    else:\n                        len_current += 1\n                        uniqs.add(j)\n\n            else:\n                uniqs.add(i)\n                len_current += 1\n            len_max = max(len_max, len_current)\n            idx += 1\n        return len_max\n\nBetter solution\nSliding Window - template\n\nWindow Sliding Technique is a computational technique which aims to reduce the use of nested loop and replace it with a single loop, thereby reducing the time complexity.\nThe Sliding window technique can reduce the time complexity to O(n).\n\nTips for identifying this kind of problem where we could use the sliding window technique:\n\nThe problem will be based on an array, string, or list data structure.\nYou need to find the subrange in this array or string that should provide the longest, shortest, or target values.\nA classic problem: to find the largest/smallest sum of given k (for example, three) consecutive numbers in an array.\n\nclass Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n        n = len(s)\n        ans = 0\nmp stores the current index of a character\n        mp = {}\n\n        i = 0\ntry to extend the range [i, j]\n        for j in range(n):\n            if s[j] in mp:\n                i = max(mp[s[j]], i)\n\n            ans = max(ans, j - i + 1)\n            mp[s[j]] = j + 1\n\n        return ans\n\nclass Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n        chars = [None] * 128\n        left = right = 0\n        res = 0\n        while right\n",
-            "tags": [
-                "Hash Table",
-                "String",
-                "Sliding Window",
-                "LeetCode Top Interview"
-            ],
-            "lang": "en"
-        },
-        {
             "uri": "/tracks/algorithms-101/leetcode/medium/29",
             "title": "29. Divide Two Integers",
             "description": "LeetCode 29. Divide Two Integers",
@@ -3894,19 +3953,6 @@
             "lang": "en"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/medium/22",
-            "title": "22. Generate Parentheses",
-            "description": "LeetCode 22. Generate Parentheses",
-            "content": "\nLeetCode problem\n\nGiven n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.\n\nExample 1:\n\n    Input: n = 3\n    Output: [\"((()))\",\"(()())\",\"(())()\",\"()(())\",\"()()()\"]\n\nExample 2:\n\n    Input: n = 1\n    Output: [\"()\"]\n\nPrerequirements\n\nBacktracking pattern\n\nFirst accepted\n\nIdea:\n\ntest-case\n\nclass Solution:\n  def generateParenthesis(self, n):\n    ans = []\n\n    def dfs(l: int, r: int, s: str) -> None:\n      if l == 0 and r == 0:\n        ans.append(s)\n      if l > 0:\n        dfs(l - 1, r, s + '(')\n      if l < r:\n        dfs(l, r - 1, s + ')')\n\n    dfs(n, n, '')\n    return ans\n",
-            "tags": [
-                "String",
-                "Dynamic Programming",
-                "Backtracking",
-                "LeetCode Top Interview"
-            ],
-            "lang": "en"
-        },
-        {
             "uri": "/tracks/algorithms-101/leetcode/medium/2",
             "title": "2. Add Two Numbers",
             "description": "LeetCode 2. Add Two Numbers",
@@ -3919,19 +3965,6 @@
             "lang": "en"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/medium/19",
-            "title": "19. Remove Nth Node From End of List",
-            "description": "LeetCode 19. Remove Nth Node From End of List",
-            "content": "\nLeetCode problem\n\nGiven the 'head' of a linked list, remove the 'nth' node from the end of the list and return its head.\n\nExample 1:\n\nLeetCode 19. Remove Nth Node From End of List\n\n    Input: head = [1,2,3,4,5], n = 2\n    Output: [1,2,3,5]\n\nExample 2:\n\n    Input: head = [1], n = 1\n    Output: []\n\nIdea:\n\nTwo pointers.\nSecond pointer starts from nth position.\nRun while second pointer exist.\n\nFirst version:\n\nDefinition for singly-linked list.\nclass ListNode:\ndef init(self, val=0, next=None):\nself.val = val\nself.next = next\nclass Solution:\n    def removeNthFromEnd(self, head, n: int):\n        p1 = head\n        p2 = head\n\n        for _ in range(n):\n            p1 = p1.next\n\n        if not p1:\n            return head.next # in case: head=[1], n=1 -> return []\n\n        while p1.next:\n            p1 = p1.next\n            p2 = p2.next\n\n        p2.next = p2.next.next\n\n        return head\n",
-            "tags": [
-                "Medium",
-                "Linked List",
-                "Two Pointers",
-                "LeetCode Top Interview"
-            ],
-            "lang": "en"
-        },
-        {
             "uri": "/tracks/algorithms-101/leetcode/medium/189",
             "title": "189. Rotate Array",
             "description": "Rotating an array to the right by k steps",
@@ -3939,19 +3972,6 @@
             "tags": [
                 "Algorithms",
                 "Medium"
-            ],
-            "lang": "en"
-        },
-        {
-            "uri": "/tracks/algorithms-101/leetcode/medium/17",
-            "title": "17. Letter Combinations of a Phone Number",
-            "description": "LeetCode 17. Letter Combinations of a Phone Number",
-            "content": "\nLeetCode problem\n\nGiven a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. Return the answer in any order.\n\nA mapping of digits to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.\n\n17\n\nExample 1:\n\n    Input: digits = \"23\"\n    Output: [\"ad\",\"ae\",\"af\",\"bd\",\"be\",\"bf\",\"cd\",\"ce\",\"cf\"]\n\nExample 2:\n\n    Input: digits = \"\"\n    Output: []\n\nFirst accepted\n\nclass Solution:\n    def letterCombinations(self, digits: str) -> List[str]:\n        if not digits:\n            return []\n\n        letters = ['', '', 'abc', 'def',\n                      'ghi', 'jkl', 'mno',\n                      'pqrs', 'tuv', 'wxyz']\n\n        result = ['']\n\n        for d in digits:\n            d = int(d)\n            tmp = []\n            for letter in letters[d]:\n                for word in result:\n                    word += letter\n                    tmp.append(word)\n            result = tmp\n\n        return result\n",
-            "tags": [
-                "Hash Table",
-                "String",
-                "Backtracking",
-                "LeetCode Top Interview"
             ],
             "lang": "en"
         },
@@ -4211,9 +4231,60 @@
             "lang": "en"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/medium/3/",
-            "content": "class Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n        ss = set()\n        i = res = 0\n        for j, c in enumerate(s):\n            while c in ss:\n                ss.remove(s[i])\n                i += 1\n            ss.add(c)\n            res = max(res, j - i + 1)\n        return res\n",
+            "uri": "/tracks/algorithms-101/leetcode/medium/3030/",
+            "title": "3030. Find the Grid of Region Average",
+            "description": "3030. Find the Grid of Region Average",
+            "content": "\nLeetCode problem 3030\n\nclass Solution:\n    def isRegion(self, image, x, y, threshold):\n        for i in range(x, x + 3):\n            for j in range(y, y + 3):\n                if i > x and abs(imagei - imagei-1) > threshold: return False\n                if j > y and abs(imagei - imagei) > threshold: return False\n        return True\n\n    def calculateRegionAverage(self, image, x, y):\n        total = sum(imagei for i in range(x, x + 3) for j in range(y, y + 3))\n        return total // 9\n\n    def resultGrid(self, image, threshold):\n        n, m = len(image), len(image[0])\n        result = [image[i for j in range(m)] for i in range(n)]\n\n        for i in range(n - 2):\n            for j in range(m - 2):\n                if self.isRegion(image, i, j, threshold):\n                    avg = self.calculateRegionAverage(image, i, j)\n                    for k in range(3):\n                        for l in range(3):\nAccumulate averages for overlapping regions\n                            if 'avg_count' not in locals():\n                                avg_count = [[0] * m for _ in range(n)]\n                                sums = [[0] * m for _ in range(n)]\n                            avg_counti+k += 1\n                            sumsi+k += avg\n\nCalculate final averages for each cell\n        if 'avg_count' in locals():\n            for i in range(n):\n                for j in range(m):\n                    if avg_counti > 0:\n                        resulti = sumsi // avg_counti\n\n        return result\n",
+            "tags": [
+                "Algorithms",
+                "Medium",
+                "LeetCode",
+                "Array",
+                "Matrix"
+            ],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/3029/",
+            "content": "\n\n\nclass Solution:\n    def minimumTimeToInitialState(self, word: str, k: int) -> int:\n        n = len(word)  # Calculate the length of the word\n\nIterate through the word in steps of k\n        for i in range(k, n, k):\nCheck if the suffix starting from i matches the prefix up to n-i\n            if word[i:] == word[:-i]:\nIf they match, the word can return to the initial state in i/k steps\n                return i // k\n\nIf no matching prefix and suffix are found,\nreturn the ceiling division of n by k\n        return (n + k - 1) // k\n\nLength Calculation**: First, calculate the length of word to know the range we're working with.\nIteration: Loop through the word in steps of k, starting from k up to n, but only considering positions that are multiples of k. This is because we're interested in finding a repeating pattern that aligns with the steps of k.\nMatching Check**: For each i, compare the suffix of the word starting from position i with the prefix of the word ending at position n-i. This check effectively looks for a point where the word can \"wrap around\" and match itself, indicating a repetition pattern that allows returning to the initial state.\nReturn Early**: If such a match is found, the function returns early with i // k, which represents the minimum number of complete cycles needed to reach the initial state.\nNo Match Found**: If the loop completes without finding any matches, the function calculates the ceiling of n / k using (n + k - 1) // k. This accounts for the case where no repeating pattern is found that fits within the steps of k, and the word needs to be repeated in its entirety, possibly with some additional steps to match the initial state.\n",
             "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/3026/",
+            "title": "3026. Maximum Good Subarray Sum",
+            "description": "3026. Maximum Good Subarray Sum",
+            "content": "\nLeetCode problem 3026\n\nclass Solution:\n    def maximumSubarraySum(self, nums: List[int], k: int) -> int:\n        res = -inf\n        p = {nums[0]: 0}\n        s, n = 0, len(nums)\n        for i, x in enumerate(nums):\n            s += x\n            if x - k in p:\n                res = max(res, s - p[x - k])\n            if x + k in p:\n                res = max(res, s - p[x + k])\n            if i + 1  s):\n                p[nums[i + 1]] = s\n        return 0 if res == -inf else res\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/3018/",
+            "title": "3018. Maximum Number of Removal Queries That Can Be Processed I",
+            "description": "3018. Maximum Number of Removal Queries That Can Be Processed I",
+            "content": "\nLeetCode problem 3018\n\nclass Solution:\n    def maximumProcessableQueries(self, nums: List[int], queries: List[int]) -> int:\n        n = len(nums)\n        f = [[0] * n for _ in range(n)]\n        m = len(queries)\n        for i in range(n):\n            for j in range(n - 1, i - 1, -1):\n                if i:\n                    fi = max(\n                        fi, fi - 1 + (nums[i - 1] >= queriesf[i - 1])\n                    )\n                if j + 1 = queriesf[i])\n                    )\n                if fi == m:\n                    return m\n        return max(fi + (nums[i] >= queriesf[i]) for i in range(n))\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/3002/",
+            "title": "3002. Maximum Size of a Set After Removals",
+            "description": "3002. Maximum Size of a Set After Removals",
+            "content": "\nLeetCode problem 3002\n\nclass Solution:\n    def maximumSetSize(self, nums1: List[int], nums2: List[int]) -> int:\n        n = len(nums1)\n\n        s1 = set(nums1)\n        s2 = set(nums2)\n\n        a = min(len(s1 - s2), n // 2)\n        b = min(len(s2 - s1), n // 2)\n        return min(a + b + len(s1 & s2), n)\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/3/",
+            "title": "3. Longest Substring Without Repeating Characters",
+            "description": "LeetCode 3. Longest Substring Without Repeating Characters",
+            "content": "\nLeetCode problem\n\nGiven a string s, find the length of the longest substring without repeating characters.\n\nExample 1:\n\n    Input: s = \"abcabcbb\"\n    Output: 3\n    Explanation: The answer is \"abc\", with the length of 3.\n\nFirst accepted\n\nIdea:\n\nLoop through string\nCalculate max count of elements in substring\nIf get double element, then go back until get this element and do step 2.\nProceed the main loop\n\nLongest Substring Without Repeating Characters\n\nclass Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n        uniqs = set()\n        len_max = 0\n        len_current = 0\n        idx = 0\n        for i in s:\n            if i in uniqs:\n                len_max = max(len_max, len_current)\n                len_current = 1\n                uniqs = set(i)\n                for j in reversed(s[:idx]):\n                    if j == i:\n                        break\n                    else:\n                        len_current += 1\n                        uniqs.add(j)\n\n            else:\n                uniqs.add(i)\n                len_current += 1\n            len_max = max(len_max, len_current)\n            idx += 1\n        return len_max\n\nBetter solution\nSliding Window - template\n\nWindow Sliding Technique is a computational technique which aims to reduce the use of nested loop and replace it with a single loop, thereby reducing the time complexity.\nThe Sliding window technique can reduce the time complexity to O(n).\n\nTips for identifying this kind of problem where we could use the sliding window technique:\n\nThe problem will be based on an array, string, or list data structure.\nYou need to find the subrange in this array or string that should provide the longest, shortest, or target values.\nA classic problem: to find the largest/smallest sum of given k (for example, three) consecutive numbers in an array.\n\nclass Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n        n = len(s)\n        ans = 0\nmp stores the current index of a character\n        mp = {}\n\n        i = 0\ntry to extend the range [i, j]\n        for j in range(n):\n            if s[j] in mp:\n                i = max(mp[s[j]], i)\n\n            ans = max(ans, j - i + 1)\n            mp[s[j]] = j + 1\n\n        return ans\n\nclass Solution:\n    def lengthOfLongestSubstring(self, s: str) -> int:\n        chars = [None] * 128\n        left = right = 0\n        res = 0\n        while right\n",
+            "tags": [
+                "Hash Table",
+                "String",
+                "Sliding Window",
+                "LeetCode Top Interview"
+            ],
             "lang": "en"
         },
         {
@@ -4288,6 +4359,14 @@
             "lang": "en"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/24/",
+            "title": "24. Swap Nodes in Pairs",
+            "description": "24. Swap Nodes in Pairs",
+            "content": "\nLeetCode problem 24\n\nDefinition for singly-linked list.\nclass ListNode:\ndef init(self, val=0, next=None):\nself.val = val\nself.next = next\nclass Solution:\n    def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:\n        dummy = ListNode(next=head)\n        pre, cur = dummy, head\n        while cur and cur.next:\n            t = cur.next\n            cur.next = t.next\n            t.next = cur\n            pre.next = t\n            pre, cur = cur, cur.next\n        return dummy.next\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/238/",
             "title": "238. Product of Array Except Self",
             "description": "238. Product of Array Except Self",
@@ -4318,6 +4397,32 @@
             "lang": "en"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/22/",
+            "title": "22. Generate Parentheses",
+            "description": "LeetCode 22. Generate Parentheses",
+            "content": "\nLeetCode problem\n\nGiven n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.\n\nExample 1:\n\n    Input: n = 3\n    Output: [\"((()))\",\"(()())\",\"(())()\",\"()(())\",\"()()()\"]\n\nExample 2:\n\n    Input: n = 1\n    Output: [\"()\"]\n\nPrerequirements\n\nBacktracking pattern\n\nFirst accepted\n\nIdea:\n\ntest-case\n\nclass Solution:\n  def generateParenthesis(self, n):\n    res = []\n\n    def dfs(l: int, r: int, s: str) -> None:\n      if l == 0 and r == 0:\n        res.append(s)\n      if l > 0:\n        dfs(l - 1, r, s + '(')\n      if l < r:\n        dfs(l, r - 1, s + ')')\n\n    dfs(n, n, '')\n    return res\n",
+            "tags": [
+                "String",
+                "Dynamic Programming",
+                "Backtracking",
+                "LeetCode Top Interview"
+            ],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/19/",
+            "title": "19. Remove Nth Node From End of List",
+            "description": "LeetCode 19. Remove Nth Node From End of List",
+            "content": "\nLeetCode problem\n\nGiven the 'head' of a linked list, remove the 'nth' node from the end of the list and return its head.\n\nExample 1:\n\nLeetCode 19. Remove Nth Node From End of List\n\n    Input: head = [1,2,3,4,5], n = 2\n    Output: [1,2,3,5]\n\nExample 2:\n\n    Input: head = [1], n = 1\n    Output: []\n\nIdea:\n\nTwo pointers.\nSecond pointer starts from nth position.\nRun while second pointer exist.\n\nFirst version:\n\nDefinition for singly-linked list.\nclass ListNode:\ndef init(self, val=0, next=None):\nself.val = val\nself.next = next\nclass Solution:\n    def removeNthFromEnd(self, head, n: int):\n        p1 = head\n        p2 = head\n\n        for _ in range(n):\n            p1 = p1.next\n\n        if not p1:\n            return head.next # in case: head=[1], n=1 -> return []\n\n        while p1.next:\n            p1 = p1.next\n            p2 = p2.next\n\n        p2.next = p2.next.next\n\n        return head\n",
+            "tags": [
+                "Medium",
+                "Linked List",
+                "Two Pointers",
+                "LeetCode Top Interview"
+            ],
+            "lang": "en"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/1887/",
             "title": "1887. Reduction Operations to Make the Array Elements Equal",
             "description": "Step-by-step explanation and Python solution for LeetCode problem 1887. Reduction Operations to Make the Array Elements Equal.",
@@ -4325,6 +4430,19 @@
             "tags": [
                 "LeetCode",
                 "Sorting"
+            ],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/17/",
+            "title": "17. Letter Combinations of a Phone Number",
+            "description": "LeetCode 17. Letter Combinations of a Phone Number",
+            "content": "\nLeetCode problem\n\nGiven a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. Return the answer in any order.\n\nA mapping of digits to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.\n\n17\n\nExample 1:\n\n    Input: digits = \"23\"\n    Output: [\"ad\",\"ae\",\"af\",\"bd\",\"be\",\"bf\",\"cd\",\"ce\",\"cf\"]\n\nExample 2:\n\n    Input: digits = \"\"\n    Output: []\n\nFirst accepted\n\nclass Solution:\n    def letterCombinations(self, digits: str) -> List[str]:\n        if not digits:\n            return []\n\n        letters = ['', '', 'abc', 'def',\n                      'ghi', 'jkl', 'mno',\n                      'pqrs', 'tuv', 'wxyz']\n\n        result = ['']\n\n        for d in digits:\n            d = int(d)\n            tmp = []\n            for letter in letters[d]:\n                for word in result:\n                    word += letter\n                    tmp.append(word)\n            result = tmp\n\n        return result\n",
+            "tags": [
+                "Hash Table",
+                "String",
+                "Backtracking",
+                "LeetCode Top Interview"
             ],
             "lang": "en"
         },
@@ -4360,6 +4478,14 @@
                 "Trees",
                 "LeetCode"
             ],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/12/",
+            "title": "12. Integer to Roman",
+            "description": "12. Integer to Roman",
+            "content": "\nLeetCode problem 12\n\nclass Solution:\n    def intToRoman(self, num: int) -> str:\n        cs = ('M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I')\n        vs = (1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1)\n        res = []\n        for c, v in zip(cs, vs):\n            while num >= v:\n                num -= v\n                res.append(c)\n        return ''.join(res)\n\n",
+            "tags": [],
             "lang": "en"
         },
         {
@@ -4426,6 +4552,14 @@
             "tags": [
                 "LeetCode"
             ],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/3031/",
+            "title": "3031. Minimum Time to Revert Word to Initial State II",
+            "description": "3031. Minimum Time to Revert Word to Initial State II",
+            "content": "\nLeetCode problem 3031\n\nclass Hashing:\n    slots = [\"mod\", \"h\", \"p\"]\n\n    def init(self, s: str, base: int, mod: int):\n        self.mod = mod\n        self.h = [0] * (len(s) + 1)\n        self.p = [1] * (len(s) + 1)\n        for i in range(1, len(s) + 1):\n            self.h[i] = (self.h[i - 1] * base + ord(s[i - 1])) % mod\n            self.p[i] = (self.p[i - 1] * base) % mod\n\n    def query(self, l: int, r: int) -> int:\n        return (self.h[r] - self.h[l - 1] * self.p[r - l + 1]) % self.mod\n\n\nclass Solution:\n    def minimumTimeToInitialState(self, word: str, k: int) -> int:\n        hashing = Hashing(word, 13331, 998244353)\n        n = len(word)\n        for i in range(k, n, k):\n            if hashing.query(1, n - i) == hashing.query(i + 1, n):\n                return i // k\n        return (n + k - 1) // k\n",
+            "tags": [],
             "lang": "en"
         },
         {
@@ -4776,6 +4910,12 @@
         {
             "uri": "/tracks/algorithms-101/leetcode/easy/3033/",
             "content": "\n\nclass Solution:\n    def modifiedMatrix(self, matrix: List[List[int]]) -> List[List[int]]:\n        rows = len(matrix)\n        cols = len(matrix[0])\n        for j in range(rows):\n            max_val = max(matrixi for i in range(cols))\n            for i in range(cols):\n                if matrixi == -1:\n                    matrixi = max_val\n        return matrix\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/3032/",
+            "content": "\n\nclass Solution:\n    def numberCount(self, a: int, b: int) -> int:\nInitialize the count of numbers with all unique digits\n        unique_digit_count = 0\n\nLoop through each number in the range from a to b, inclusive\n        for num in range(a, b + 1):\nConvert the number to a string to examine its digits\n            num_str = str(num)\nConvert the string to a set of characters to remove duplicates\n            unique_digits = set(num_str)\n\nIf the length of the set is equal to the length of the number string,\nit means all digits are unique\n            if len(unique_digits) == len(num_str):\nIncrement the count for each number with all unique digits\n                unique_digit_count += 1\n\nReturn the total count of unique digit numbers\n        return unique_digit_count\n",
             "tags": [],
             "lang": "en"
         },
@@ -5199,7 +5339,7 @@
             "uri": "/posts/other-snippets",
             "title": "Some code snippets",
             "description": "Some code snippets",
-            "content": "\npandoc mardown -> pdf\n\nCreate pdf file from .md in multiple folders\n\nprepare:\n\nbrew install basictex\n\nsearch for cyrillic fonts\nfc-list | grep к\\\n\nbrew tap homebrew/cask-fonts\nbrew install --cask font-m-plus\nbrew tap homebrew/cask-fonts\nbrew install --cask font-m-plus\nbrew install --cask font-m-plus-1\nbrew install --cask font-m-plus-1-code\n\npandoc --pdf-engine xelatex \\\n--variable mainfont=\"M+ 1p\" --variable sansfont=\"M+ 1p\" --variable monofont=\"M+ 1m\" \\\n-V geometry:\"top=1cm, bottom=2cm, left=1cm, right=1cm\" \\\n--file-scope \\\n--highlight-style=tango \\\n-s \\\n--toc-depth=1 \\\n--variable=toc-title:\" \" \\\n--top-level-division=chapter \\\n--standalone \\\n--self-contained \\\n--from=markdown \\\n $(find . -name '*.ru.md') \\\n-o book.pdf\n\nConvert all video to audio with ffmpeg in current directory\n\n#!/bin/bash\n\nCheck if ffmpeg is installed\ncommand -v ffmpeg >/dev/null 2>&1 || { echo >&2 \"ffmpeg is required but not installed. Aborting.\"; exit 1; }\n\nGet a list of all video files in the current directory\nvideo_files=(*.{mp4,mkv,flv,avi})\n\nCheck if there are any video files in the current directory\nif [ ${#video_files[@]} -eq 0 ]\n  then\n    echo \"No video files found in the current directory.\"\n    exit 1\nfi\n\nLoop through all video files and convert them to audio files\nfor video_file in \"${video_files[@]}\"\ndo\nGet the file name without the extension\n  file_name=\"${video_file%.*}\"\n\nConvert the video file to an audio file in the current directory\n  ffmpeg -i $video_file -vn -acodec libmp3lame -ab 128k $file_name.mp3\n\n  echo \"Conversion of $video_file completed. The audio file is located in the current directory.\"\ndone\n\necho \"All conversions completed.\"\n\nRemove audio from video with ffmpeg\n\nffmpeg -i input.mp4 -c copy -an output.mp4\n\n-i input.mp4 specifies the input video file.\n-c copy tells FFmpeg to copy the video stream without re-encoding.\n-an removes the audio stream from the output file.\noutput.mp4 is the name you choose for the output video file.\n\nReduce video size with ffmpeg\n\nffmpeg -i input.mp4 -c:v libx264 -crf 23 -preset medium -c:a aac -b:a 128k output.mp4\n\n-i input.mp4 specifies the input video file.\n-c:v libx264 sets the video codec to H.264, which is widely supported and provides good compression.\n-crf 23 controls the video quality. Lower values result in higher quality but larger file sizes. A value of around 23 is a good balance between quality and size.\n-preset medium sets the encoding speed and compression efficiency. The \"medium\" preset provides a good compromise.\n-c:a aac -b:a 128k sets the audio codec to AAC with a bitrate of 128k. This ensures decent audio quality while keeping the file size reasonable.\noutput.mp4 is the name you choose for the output video file.\n\nCreate a new video from all the videos sorted by name in a folder using with ffmpeg\n\nffmpeg -f concat -safe 0 -i  1:\n        directory_path = sys.argv[1]\n        process_directory(directory_path)\n    else:\n        print(\"Please provide a directory path.\")\n",
+            "content": "\npandoc mardown -> pdf\n\nCreate pdf file from .md in multiple folders\n\nprepare:\n\nbrew install basictex\n\nsearch for cyrillic fonts\nfc-list | grep к\\\n\nbrew tap homebrew/cask-fonts\nbrew install --cask font-m-plus\nbrew tap homebrew/cask-fonts\nbrew install --cask font-m-plus\nbrew install --cask font-m-plus-1\nbrew install --cask font-m-plus-1-code\n\npandoc --pdf-engine xelatex \\\n--variable mainfont=\"M+ 1p\" --variable sansfont=\"M+ 1p\" --variable monofont=\"M+ 1m\" \\\n-V geometry:\"top=1cm, bottom=2cm, left=1cm, right=1cm\" \\\n--file-scope \\\n--highlight-style=tango \\\n-s \\\n--toc-depth=1 \\\n--variable=toc-title:\" \" \\\n--top-level-division=chapter \\\n--standalone \\\n--self-contained \\\n--from=markdown \\\n $(find . -name '*.ru.md') \\\n-o book.pdf\n\nConvert all video to audio with ffmpeg in current directory\n\n#!/bin/bash\n\nCheck if ffmpeg is installed\ncommand -v ffmpeg >/dev/null 2>&1 || { echo >&2 \"ffmpeg is required but not installed. Aborting.\"; exit 1; }\n\nGet a list of all video files in the current directory\nvideo_files=(*.{mp4,mkv,flv,avi})\n\nCheck if there are any video files in the current directory\nif [ ${#video_files[@]} -eq 0 ]\n  then\n    echo \"No video files found in the current directory.\"\n    exit 1\nfi\n\nLoop through all video files and convert them to audio files\nfor video_file in \"${video_files[@]}\"\ndo\nGet the file name without the extension\n  file_name=\"${video_file%.*}\"\n\nConvert the video file to an audio file in the current directory\n  ffmpeg -i $video_file -vn -acodec libmp3lame -ab 128k $file_name.mp3\n\n  echo \"Conversion of $video_file completed. The audio file is located in the current directory.\"\ndone\n\necho \"All conversions completed.\"\n\nRemove audio from video with ffmpeg\n\nffmpeg -i input.mp4 -c copy -an output.mp4\n\n-i input.mp4 specifies the input video file.\n-c copy tells FFmpeg to copy the video stream without re-encoding.\n-an removes the audio stream from the output file.\noutput.mp4 is the name you choose for the output video file.\n\nReduce video size with ffmpeg\n\nffmpeg -i input.mp4 -c:v libx264 -crf 23 -preset medium -c:a aac -b:a 128k output.mp4\n\n-i input.mp4 specifies the input video file.\n-c:v libx264 sets the video codec to H.264, which is widely supported and provides good compression.\n-crf 23 controls the video quality. Lower values result in higher quality but larger file sizes. A value of around 23 is a good balance between quality and size.\n-preset medium sets the encoding speed and compression efficiency. The \"medium\" preset provides a good compromise.\n-c:a aac -b:a 128k sets the audio codec to AAC with a bitrate of 128k. This ensures decent audio quality while keeping the file size reasonable.\noutput.mp4 is the name you choose for the output video file.\n\nCreate a new video from all the videos sorted by name in a folder using with ffmpeg\n\ncd /dir/path\n\nffmpeg -f concat -safe 0 -i  1:\n        directory_path = sys.argv[1]\n        process_directory(directory_path)\n    else:\n        print(\"Please provide a directory path.\")\n",
             "tags": [
                 "Programming"
             ],
