@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LeetCode Top Interview on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/leetcode-top-interview/</link><description>Recent content in LeetCode Top Interview on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Thu, 04 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/leetcode-top-interview/index.xml" rel="self" type="application/rss+xml"/><item><title>5. Longest Palindromic Substring</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/5/</link><pubDate>Thu, 20 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/5/</guid><description>LeetCode problem
+Given a string s, return the longest palindromic substring in s.
+A string is called a palindrome string if the reverse of that string is the same as the original string.
+Example 1:
+Input: s = &amp;quot;babad&amp;quot; Output: &amp;quot;bab&amp;quot; Explanation: &amp;quot;aba&amp;quot; is also a valid answer. Example 2:
+Input: s = &amp;quot;cbbd&amp;quot; Output: &amp;quot;bb&amp;quot; First accepted Hints How can we reuse a previously computed palindrome to compute a larger palindrome?
+How can we reuse a previously computed palindrome to compute a larger palindrome?</description></item><item><title>8. String to Integer (atoi)</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/8/</link><pubDate>Sat, 29 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/8/</guid><description>LeetCode problem
+// .js /** * @param {string} s * @return {number} */ var myAtoi = function(s) { let res = 0; let num = parseInt(s); if(num &amp;gt;= 2147483648){ res = 2147483647; } else if (num &amp;lt;= -2147483648){ res = -2147483648; } else if (isNaN(num)) { res = 0; } else { res = num; } return res; };</description></item><item><title>134. Gas Station</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/134/</link><pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/134/</guid><description>LeetCode problem
+Naive Solution:
+A naive solution would be to try starting from each gas station and check if you can complete the circuit. For each gas station, calculate the remaining gas in the tank after traveling to the next station.
+If the gas is not enough to travel to the next station, stop and try starting from the next gas station.
+Approach:
+In this problem, we can use a greedy algorithm
+We can keep track of the total gas and total cost while iterating through the gas stations.</description></item></channel></rss>

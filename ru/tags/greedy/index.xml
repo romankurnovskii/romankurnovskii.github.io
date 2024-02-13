@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Greedy on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/greedy/</link><description>Recent content in Greedy on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Thu, 04 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/greedy/index.xml" rel="self" type="application/rss+xml"/><item><title>55. Jump Game</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/55/</link><pubDate>Thu, 29 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/55/</guid><description>LeetCode problem
+You are given an integer array nums. You are initially positioned at the array&amp;rsquo;s first index, and each element in the array represents your maximum jump length at that position.
+Return true if you can reach the last index, or false otherwise.
+Example 1:
+Input: nums = [2,3,1,1,4] Output: true Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index. Example 2:
+Input: nums = [3,2,1,0,4] Output: false Explanation: You will always arrive at index 3 no matter what.</description></item><item><title>122. Best Time to Buy and Sell Stock II</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/122/</link><pubDate>Fri, 31 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/122/</guid><description>LeetCode problem
+To solve this problem, we can use a greedy approach.
+The idea is to keep adding the profit whenever the price on the next day is higher than the price on the current day.
+This way, we will maximize profit.
+class Solution: def maxProfit(self, prices: List[int]) -&amp;gt; int: profit = 0 for i in range(1, len(prices)): if prices[i] &amp;gt; prices[i - 1]: profit += prices[i] - prices[i - 1] return profit LeetCode Editorial:
+Editorial</description></item><item><title>134. Gas Station</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/134/</link><pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/134/</guid><description>LeetCode problem
+Naive Solution:
+A naive solution would be to try starting from each gas station and check if you can complete the circuit. For each gas station, calculate the remaining gas in the tank after traveling to the next station.
+If the gas is not enough to travel to the next station, stop and try starting from the next gas station.
+Approach:
+In this problem, we can use a greedy algorithm
+We can keep track of the total gas and total cost while iterating through the gas stations.</description></item></channel></rss>
