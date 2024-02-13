@@ -1150,6 +1150,62 @@
             "lang": "ru"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/180/",
+            "title": "180. Consecutive Numbers",
+            "description": "180. Consecutive Numbers",
+            "content": "\nLeetCode problem 180\n\nimport pandas as pd\n\n\ndef consecutive_numbers(logs: pd.DataFrame) -> pd.DataFrame:\n    all_the_same = lambda lst: lst.nunique() == 1\n    logs[\"is_consecutive\"] = (\n        logs[\"num\"].rolling(window=3, center=True, min_periods=3).apply(all_the_same)\n    )\n    return (\n        logs.query(\"is_consecutive == 1.0\")[[\"num\"]]\n        .drop_duplicates()\n        .rename(columns={\"num\": \"ConsecutiveNums\"})\n    )\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/179/",
+            "title": "179. Largest Number",
+            "description": "179. Largest Number",
+            "content": "\nLeetCode problem 179\n\nclass Solution:\n    def largestNumber(self, nums: List[int]) -> str:\n        nums = [str(v) for v in nums]\n        nums.sort(key=cmp_to_key(lambda a, b: 1 if a + b < b + a else -1))\n        return \"0\" if nums[0] == \"0\" else \"\".join(nums)\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/178/",
+            "title": "178. Rank Scores",
+            "description": "178. Rank Scores",
+            "content": "\nLeetCode problem 178\n\nimport pandas as pd\n\n\ndef order_scores(scores: pd.DataFrame) -> pd.DataFrame:\nUse the rank method to assign ranks to the scores in descending order with no gaps\n    scores[\"rank\"] = scores[\"score\"].rank(method=\"dense\", ascending=False)\n\nDrop id column & Sort the DataFrame by score in descending order\n    result_df = scores.drop(\"id\", axis=1).sort_values(by=\"score\", ascending=False)\n\n    return result_df\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/177/",
+            "title": "177. Nth Highest Salary",
+            "description": "177. Nth Highest Salary",
+            "content": "\nLeetCode problem 177\n\nimport pandas as pd\n\ndef nth_highest_salary(employee: pd.DataFrame, N: int) -> pd.DataFrame:\n    unique_salaries = employee.salary.unique()\n    if len(unique_salaries) < N:\n        return pd.DataFrame([np.NaN], columns=[f\"getNthHighestSalary({N})\"])\n\n    salary = sorted(unique_salaries, reverse=True)[N - 1]\n    return pd.DataFrame([salary], columns=[f\"getNthHighestSalary({N})\"])\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/176/",
+            "title": "176. Second Highest Salary",
+            "description": "176. Second Highest Salary",
+            "content": "\nLeetCode problem 176\n\nDrop any duplicate salary values to avoid counting duplicates as separate salary ranks\nSort the unique salaries in descending order and get the second highest salary\nIf the second highest salary doesn't exist (e.g., there are fewer than two unique salaries), return None\nCreate a DataFrame with the second highest salary\n\nimport pandas as pd\n\ndef second_highest_salary(employee: pd.DataFrame) -> pd.DataFrame:\n    unique_salaries = employee[\"salary\"].drop_duplicates()\n\n    second_highest = (\n        unique_salaries.nlargest(2).iloc[-1] if len(unique_salaries) >= 2 else None\n    )\n    if second_highest is None:\n        return pd.DataFrame({\"SecondHighestSalary\": [None]})\n\n    result_df = pd.DataFrame({\"SecondHighestSalary\": [second_highest]})\n\n    return result_df\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/173/",
+            "title": "173. Binary Search Tree Iterator",
+            "description": "173. Binary Search Tree Iterator",
+            "content": "\nLeetCode problem 173\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass BSTIterator:\n    def init(self, root: TreeNode):\n        self.stack = []\n        while root:\n            self.stack.append(root)\n            root = root.left\n\n    def next(self) -> int:\n        cur = self.stack.pop()\n        node = cur.right\n        while node:\n            self.stack.append(node)\n            node = node.left\n        return cur.val\n\n    def hasNext(self) -> bool:\n        return len(self.stack) > 0\n\nYour BSTIterator object will be instantiated and called as such:\nobj = BSTIterator(root)\nparam_1 = obj.next()\nparam_2 = obj.hasNext()\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/172/",
+            "title": "172. Factorial Trailing Zeroes",
+            "description": "172. Factorial Trailing Zeroes",
+            "content": "\nLeetCode problem 172\n\nclass Solution:\n    def trailingZeroes(self, n: int) -> int:\n        res = 0\n        while n:\n            n //= 5\n            res += n\n        return res\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/17/",
             "title": "17. Letter Combinations of a Phone Number",
             "description": "17. Letter Combinations of a Phone Number",
@@ -1265,6 +1321,16 @@
             "content": "",
             "tags": [
                 "leetcode"
+            ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/847/",
+            "title": "847. Shortest Path Visiting All Nodes",
+            "description": "This article aims to explain the problem of finding the shortest path to visit all nodes in an undirected, connected graph.",
+            "content": "\nLeetCode problem 847\n\nProblem Statement\n\nGiven an undirected, connected graph of n nodes labeled from 0 to n - 1. An array graph is provided where graph[i] is a list of all the nodes connected with node i by an edge. The objective is to determine the length of the shortest path that visits every node.\n\nIt's permissible to start and stop at any node, revisit nodes multiple times, and reuse edges.\n\nNaive Solution\n\nA naive approach would be to attempt all possible paths (brute force) until all nodes are visited. This would involve significant computational power and time, especially for larger graphs.\n\nHints & Tips\n\nState Compression: The visited state of nodes can be represented using binary numbers.\nBreadth-First Search: BFS can be used to explore the graph systematically.\n\nApproach\n\nInstead of the brute force approach, a more refined BFS can be applied. The BFS is enhanced using two techniques:\n\nState Compression: Rather than tracking visited nodes for each path with a set or list, represent them with a binary number. This efficient way compresses the state and avoids redundancy.\nDouble-ended Queue: An efficient way to explore BFS paths using deque which allows operations from both ends.\n\nSteps\n\nUse BFS for exploration.\nEncode the visited state of nodes with binary numbers.\nUtilize a double-ended queue storing the nodes, their states, and steps taken.\nThe ultimate goal is to discover a state that represents all nodes being visited.\n\nSolution\n\nfrom collections import deque\n\ndef shortestPathLength(graph):\n    n = len(graph)\n    final_state = (1 << n) - 1  # This mask checks if all nodes are visited\n    visited = set()             # To track visited (node, state) pairs\n    queue = deque()             # Double-ended queue for BFS\n\nStart BFS from every node\n    for i in range(n):\n        state = 1 << i\n        queue.append((i, state, 0))\n        visited.add((i, state))\n\n    while queue:\n        node, state, steps = queue.popleft()\n\n        if state == final_state:        # If all nodes are visited in the current state, return steps\n            return steps\n\n        for neighbor in graph[node]:    # Check neighbors and add new states to the queue\n            new_state = state | (1 << neighbor)\n            if (neighbor, new_state) not in visited:\n                visited.add((neighbor, new_state))\n                queue.append((neighbor, new_state, steps + 1))\n\n    return -1\n",
+            "tags": [
+                "LeetCode"
             ],
             "lang": "ru"
         },
@@ -1422,6 +1488,14 @@
             "lang": "ru"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/easy/2108/",
+            "title": "2108. Find First Palindromic String in the Array",
+            "description": "2108. Find First Palindromic String in the Array",
+            "content": "\nLeetCode problem 2108\n\nclass Solution:\n    def firstPalindrome(self, words: List[str]) -> str:\n        return next((w for w in words if w == w[::-1]), \"\")\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/easy/206/",
             "title": "206. Reverse Linked List",
             "description": "LeetCode 206. Разворачиваем односвязный список. Разбор задачи.",
@@ -1448,6 +1522,14 @@
             "title": "1732. Find the Highest Altitude",
             "description": "Разбор задачи по поиску самой высокой высоты, достигнутой велосипедистом.",
             "content": "\nLeetCode задача 1732\n\nЗадача\n\nВелосипедист совершает путешествие, которое состоит из n + 1 точек на разных высотах. Путешествие начинается с точки 0, где высота равна 0.\n\nДан целочисленный массив gain длиной n, где gain[i] — это прирост высоты между точками i и i + 1 для всех (0 <= i < n).\n\nЗадача - вернуть самую высокую высоту точки.\n\nПодход\n\nВ этой задаче, вам нужно пройти по массиву gain и вычислить текущую высоту на каждом этапе. При этом следует отслеживать самую высокую высоту, которую вы достигли.\n\nПрирост высоты между точками - это то, сколько велосипедист фактически проехал. Эти данные нам известны.\nНеобходимо узнать, где велосипедист оказался после шага 1.\n   Чтобы узнать это - мы можем текущую к текущей позиции, где он сейчас, прибавить \"прирост\".\n   Тогда получаем, что из позиции 0 и прироста -5, велосипедист окажется в новой точке -5 (0 + (-5))\n   С новой позиции -5 и прироста 1, окажется в точке -4 (-5 + 1) и т.д.\nОстается посчитать и вернуть самую высокую позицию, в которой был велосипедист.\n\nАлгоритм\n\nИнициализируем текущую высоту (current_altitude) как 0 и максимальную высоту (max_altitude) как 0.\nПроходим через каждый элемент массива gain, увеличивая current_altitude на значение этого элемента.\nСравниваем current_altitude с max_altitude. Если current_altitude больше, то устанавливаем max_altitude равным current_altitude.\nВозвращаем max_altitude как ответ.\n\nРешение\n\ndef largestAltitude(gain):\n    current_altitude = 0  # текущая высота\n    max_altitude = 0  # максимальная высота\n\n    for i in gain:\n        current_altitude += i\n        max_altitude = max(max_altitude, current_altitude)\n\n    return max_altitude\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/1337/",
+            "title": "1337. The K Weakest Rows in a Matrix",
+            "description": "1337. The K Weakest Rows in a Matrix",
+            "content": "\nLeetCode problem 1337\n\nclass Solution:\n    def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:\n        m, n = len(mat), len(mat[0])\n        res = [n - bisect_right(row[::-1], 0) for row in mat]\n        idx = list(range(m))\n        idx.sort(key=lambda i: res[i])\n        return idx[:k]\n",
             "tags": [],
             "lang": "ru"
         },
@@ -4434,6 +4516,62 @@
             "lang": "en"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/180/",
+            "title": "180. Consecutive Numbers",
+            "description": "180. Consecutive Numbers",
+            "content": "\nLeetCode problem 180\n\nimport pandas as pd\n\n\ndef consecutive_numbers(logs: pd.DataFrame) -> pd.DataFrame:\n    all_the_same = lambda lst: lst.nunique() == 1\n    logs[\"is_consecutive\"] = (\n        logs[\"num\"].rolling(window=3, center=True, min_periods=3).apply(all_the_same)\n    )\n    return (\n        logs.query(\"is_consecutive == 1.0\")[[\"num\"]]\n        .drop_duplicates()\n        .rename(columns={\"num\": \"ConsecutiveNums\"})\n    )\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/179/",
+            "title": "179. Largest Number",
+            "description": "179. Largest Number",
+            "content": "\nLeetCode problem 179\n\nclass Solution:\n    def largestNumber(self, nums: List[int]) -> str:\n        nums = [str(v) for v in nums]\n        nums.sort(key=cmp_to_key(lambda a, b: 1 if a + b < b + a else -1))\n        return \"0\" if nums[0] == \"0\" else \"\".join(nums)\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/178/",
+            "title": "178. Rank Scores",
+            "description": "178. Rank Scores",
+            "content": "\nLeetCode problem 178\n\nimport pandas as pd\n\n\ndef order_scores(scores: pd.DataFrame) -> pd.DataFrame:\nUse the rank method to assign ranks to the scores in descending order with no gaps\n    scores[\"rank\"] = scores[\"score\"].rank(method=\"dense\", ascending=False)\n\nDrop id column & Sort the DataFrame by score in descending order\n    result_df = scores.drop(\"id\", axis=1).sort_values(by=\"score\", ascending=False)\n\n    return result_df\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/177/",
+            "title": "177. Nth Highest Salary",
+            "description": "177. Nth Highest Salary",
+            "content": "\nLeetCode problem 177\n\nimport pandas as pd\n\ndef nth_highest_salary(employee: pd.DataFrame, N: int) -> pd.DataFrame:\n    unique_salaries = employee.salary.unique()\n    if len(unique_salaries) < N:\n        return pd.DataFrame([np.NaN], columns=[f\"getNthHighestSalary({N})\"])\n\n    salary = sorted(unique_salaries, reverse=True)[N - 1]\n    return pd.DataFrame([salary], columns=[f\"getNthHighestSalary({N})\"])\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/176/",
+            "title": "176. Second Highest Salary",
+            "description": "176. Second Highest Salary",
+            "content": "\nLeetCode problem 176\n\nDrop any duplicate salary values to avoid counting duplicates as separate salary ranks\nSort the unique salaries in descending order and get the second highest salary\nIf the second highest salary doesn't exist (e.g., there are fewer than two unique salaries), return None\nCreate a DataFrame with the second highest salary\n\nimport pandas as pd\n\ndef second_highest_salary(employee: pd.DataFrame) -> pd.DataFrame:\n    unique_salaries = employee[\"salary\"].drop_duplicates()\n\n    second_highest = (\n        unique_salaries.nlargest(2).iloc[-1] if len(unique_salaries) >= 2 else None\n    )\n    if second_highest is None:\n        return pd.DataFrame({\"SecondHighestSalary\": [None]})\n\n    result_df = pd.DataFrame({\"SecondHighestSalary\": [second_highest]})\n\n    return result_df\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/173/",
+            "title": "173. Binary Search Tree Iterator",
+            "description": "173. Binary Search Tree Iterator",
+            "content": "\nLeetCode problem 173\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass BSTIterator:\n    def init(self, root: TreeNode):\n        self.stack = []\n        while root:\n            self.stack.append(root)\n            root = root.left\n\n    def next(self) -> int:\n        cur = self.stack.pop()\n        node = cur.right\n        while node:\n            self.stack.append(node)\n            node = node.left\n        return cur.val\n\n    def hasNext(self) -> bool:\n        return len(self.stack) > 0\n\nYour BSTIterator object will be instantiated and called as such:\nobj = BSTIterator(root)\nparam_1 = obj.next()\nparam_2 = obj.hasNext()\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/172/",
+            "title": "172. Factorial Trailing Zeroes",
+            "description": "172. Factorial Trailing Zeroes",
+            "content": "\nLeetCode problem 172\n\nclass Solution:\n    def trailingZeroes(self, n: int) -> int:\n        res = 0\n        while n:\n            n //= 5\n            res += n\n        return res\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/17/",
             "title": "17. Letter Combinations of a Phone Number",
             "description": "LeetCode 17. Letter Combinations of a Phone Number",
@@ -4955,6 +5093,14 @@
             "lang": "en"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/easy/2108/",
+            "title": "2108. Find First Palindromic String in the Array",
+            "description": "2108. Find First Palindromic String in the Array",
+            "content": "\nLeetCode problem 2108\n\nclass Solution:\n    def firstPalindrome(self, words: List[str]) -> str:\n        return next((w for w in words if w == w[::-1]), \"\")\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/easy/206/",
             "title": "206. Reverse Linked List",
             "description": "This article explores solving the 206. Reverse Linked List problem on LeetCode.",
@@ -5008,6 +5154,14 @@
                 "Algorithms",
                 "Easy"
             ],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/1337/",
+            "title": "1337. The K Weakest Rows in a Matrix",
+            "description": "1337. The K Weakest Rows in a Matrix",
+            "content": "\nLeetCode problem 1337\n\nclass Solution:\n    def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:\n        m, n = len(mat), len(mat[0])\n        res = [n - bisect_right(row[::-1], 0) for row in mat]\n        idx = list(range(m))\n        idx.sort(key=lambda i: res[i])\n        return idx[:k]\n",
+            "tags": [],
             "lang": "en"
         },
         {
