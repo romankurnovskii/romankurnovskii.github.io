@@ -2,7 +2,7 @@
 title: Difference between Tries and Trees?
 seoTitle: Difference between Tries and Trees?
 description: Difference between Tries and Trees?
-toc: false
+toc: true
 tags: []
 series: []
 categories: [Programming]
