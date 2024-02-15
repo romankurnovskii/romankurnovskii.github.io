@@ -1880,7 +1880,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2429/",
             "title": "2429. Minimize XOR",
             "description": "2429. Minimize XOR",
-            "content": "\nLeetCode problem 2429\n\nclass Solution:\n    def minimizeXor(self, num1: int, num2: int) -> int:\n        cnt1 = num1.bit_count()\n        cnt2 = num2.bit_count()\n        while cnt1 > cnt2:\n            num1 &= num1 - 1\n            cnt1 -= 1\n        while cnt1 < cnt2:\n            num1 |= num1 + 1\n            cnt1 += 1\n        return num1\n\n`",
+            "content": "\nLeetCode problem 2429\n\nclass Solution:\n    def minimizeXor(self, num1: int, num2: int) -> int:\n        cnt1 = num1.bit_count()\n        cnt2 = num2.bit_count()\n        while cnt1 > cnt2:\n            num1 &= num1 - 1\n            cnt1 -= 1\n        while cnt1 < cnt2:\n            num1 |= num1 + 1\n            cnt1 += 1\n        return num1\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -1888,7 +1888,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2428/",
             "title": "2428. Maximum Sum of an Hourglass",
             "description": "2428. Maximum Sum of an Hourglass",
-            "content": "\nLeetCode problem 2428\n\nclass Solution:\n    def maxSum(self, grid: List[List[int]]) -> int:\n        m, n = len(grid), len(grid[0])\n        res = 0\n        for i in range(1, m - 1):\n            for j in range(1, n - 1):\n                s = -gridi - gridi\n                s += sum(\n                    gridx for x in range(i - 1, i + 2) for y in range(j - 1, j + 2)\n                )\n                res = max(res, s)\n        return res\n\n`",
+            "content": "\nLeetCode problem 2428\n\nclass Solution:\n    def maxSum(self, grid: List[List[int]]) -> int:\n        m, n = len(grid), len(grid[0])\n        res = 0\n        for i in range(1, m - 1):\n            for j in range(1, n - 1):\n                s = -gridi - gridi\n                s += sum(\n                    gridx for x in range(i - 1, i + 2) for y in range(j - 1, j + 2)\n                )\n                res = max(res, s)\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -1896,7 +1896,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2425/",
             "title": "2425. Bitwise XOR of All Pairings",
             "description": "2425. Bitwise XOR of All Pairings",
-            "content": "\nLeetCode problem 2425\n\nclass Solution:\n    def xorAllNums(self, nums1: List[int], nums2: List[int]) -> int:\n        res = 0\n        if len(nums2) & 1:\n            for v in nums1:\n                res ^= v\n        if len(nums1) & 1:\n            for v in nums2:\n                res ^= v\n        return res\n\n`",
+            "content": "\nLeetCode problem 2425\n\nclass Solution:\n    def xorAllNums(self, nums1: List[int], nums2: List[int]) -> int:\n        res = 0\n        if len(nums2) & 1:\n            for v in nums1:\n                res ^= v\n        if len(nums1) & 1:\n            for v in nums2:\n                res ^= v\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -1904,7 +1904,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2424/",
             "title": "2424. Longest Uploaded Prefix",
             "description": "2424. Longest Uploaded Prefix",
-            "content": "\nLeetCode problem 2424\n\nclass LUPrefix:\n    def init(self, n: int):\n        self.r = 0\n        self.s = set()\n\n    def upload(self, video: int) -> None:\n        self.s.add(video)\n        while self.r + 1 in self.s:\n            self.r += 1\n\n    def longest(self) -> int:\n        return self.r\n\nYour LUPrefix object will be instantiated and called as such:\nobj = LUPrefix(n)\nobj.upload(video)\nparam_2 = obj.longest()\n\n`",
+            "content": "\nLeetCode problem 2424\n\nclass LUPrefix:\n    def init(self, n: int):\n        self.r = 0\n        self.s = set()\n\n    def upload(self, video: int) -> None:\n        self.s.add(video)\n        while self.r + 1 in self.s:\n            self.r += 1\n\n    def longest(self) -> int:\n        return self.r\n\nYour LUPrefix object will be instantiated and called as such:\nobj = LUPrefix(n)\nobj.upload(video)\nparam_2 = obj.longest()\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -1912,7 +1912,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2422/",
             "title": "2422. Merge Operations to Turn Array Into a Palindrome",
             "description": "2422. Merge Operations to Turn Array Into a Palindrome",
-            "content": "\nLeetCode problem 2422\n\nclass Solution:\n    def minimumOperations(self, nums: List[int]) -> int:\n        i, j = 0, len(nums) - 1\n        a, b = nums[i], nums[j]\n        res = 0\n        while i < j:\n            if a < b:\n                i += 1\n                a += nums[i]\n                res += 1\n            elif b < a:\n                j -= 1\n                b += nums[j]\n                res += 1\n            else:\n                i, j = i + 1, j - 1\n                a, b = nums[i], nums[j]\n        return res\n\n`",
+            "content": "\nLeetCode problem 2422\n\nclass Solution:\n    def minimumOperations(self, nums: List[int]) -> int:\n        i, j = 0, len(nums) - 1\n        a, b = nums[i], nums[j]\n        res = 0\n        while i < j:\n            if a < b:\n                i += 1\n                a += nums[i]\n                res += 1\n            elif b < a:\n                j -= 1\n                b += nums[j]\n                res += 1\n            else:\n                i, j = i + 1, j - 1\n                a, b = nums[i], nums[j]\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -1920,7 +1920,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2420/",
             "title": "2420. Find All Good Indices",
             "description": "2420. Find All Good Indices",
-            "content": "\nLeetCode problem 2420\n\nclass Solution:\n    def goodIndices(self, nums: List[int], k: int) -> List[int]:\n        n = len(nums)\n        decr = [1] * (n + 1)\n        incr = [1] * (n + 1)\n        for i in range(2, n - 1):\n            if nums[i - 1] = k and incr[i] >= k]\n\n`",
+            "content": "\nLeetCode problem 2420\n\nclass Solution:\n    def goodIndices(self, nums: List[int], k: int) -> List[int]:\n        n = len(nums)\n        decr = [1] * (n + 1)\n        incr = [1] * (n + 1)\n        for i in range(2, n - 1):\n            if nums[i - 1] = k and incr[i] >= k]\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -1928,7 +1928,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2419/",
             "title": "2419. Longest Subarray With Maximum Bitwise AND",
             "description": "2419. Longest Subarray With Maximum Bitwise AND",
-            "content": "\nLeetCode problem 2419\n\nclass Solution:\n    def longestSubarray(self, nums: List[int]) -> int:\n        mx = max(nums)\n        res = cnt = 0\n        for v in nums:\n            if v == mx:\n                cnt += 1\n                res = max(res, cnt)\n            else:\n                cnt = 0\n        return res\n\n`",
+            "content": "\nLeetCode problem 2419\n\nclass Solution:\n    def longestSubarray(self, nums: List[int]) -> int:\n        mx = max(nums)\n        res = cnt = 0\n        for v in nums:\n            if v == mx:\n                cnt += 1\n                res = max(res, cnt)\n            else:\n                cnt = 0\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -1936,7 +1936,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2417/",
             "title": "2417. Closest Fair Integer",
             "description": "2417. Closest Fair Integer",
-            "content": "\nLeetCode problem 2417\n\nclass Solution:\n    def closestFair(self, n: int) -> int:\n        a = b = k = 0\n        t = n\n        while t:\n            if (t % 10) & 1:\n                a += 1\n            else:\n                b += 1\n            t //= 10\n            k += 1\n        if k & 1:\n            x = 10**k\n            y = int('1' * (k >> 1) or '0')\n            return x + y\n        if a == b:\n            return n\n        return self.closestFair(n + 1)\n\n`",
+            "content": "\nLeetCode problem 2417\n\nclass Solution:\n    def closestFair(self, n: int) -> int:\n        a = b = k = 0\n        t = n\n        while t:\n            if (t % 10) & 1:\n                a += 1\n            else:\n                b += 1\n            t //= 10\n            k += 1\n        if k & 1:\n            x = 10**k\n            y = int('1' * (k >> 1) or '0')\n            return x + y\n        if a == b:\n            return n\n        return self.closestFair(n + 1)\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -1944,7 +1944,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2415/",
             "title": "2415. Reverse Odd Levels of Binary Tree",
             "description": "2415. Reverse Odd Levels of Binary Tree",
-            "content": "\nLeetCode problem 2415\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def reverseOddLevels(self, root: Optional[TreeNode]) -> Optional[TreeNode]:\n        q = deque([root])\n        i = 0\n        while q:\n            if i & 1:\n                l, r = 0, len(q) - 1\n                while l < r:\n                    q[l].val, q[r].val = q[r].val, q[l].val\n                    l, r = l + 1, r - 1\n            for _ in range(len(q)):\n                node = q.popleft()\n                if node.left:\n                    q.append(node.left)\n                    q.append(node.right)\n            i += 1\n        return root\n\n`",
+            "content": "\nLeetCode problem 2415\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def reverseOddLevels(self, root: Optional[TreeNode]) -> Optional[TreeNode]:\n        q = deque([root])\n        i = 0\n        while q:\n            if i & 1:\n                l, r = 0, len(q) - 1\n                while l < r:\n                    q[l].val, q[r].val = q[r].val, q[l].val\n                    l, r = l + 1, r - 1\n            for _ in range(len(q)):\n                node = q.popleft()\n                if node.left:\n                    q.append(node.left)\n                    q.append(node.right)\n            i += 1\n        return root\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -1952,7 +1952,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2414/",
             "title": "2414. Length of the Longest Alphabetical Continuous Substring",
             "description": "2414. Length of the Longest Alphabetical Continuous Substring",
-            "content": "\nLeetCode problem 2414\n\nclass Solution:\n    def longestContinuousSubstring(self, s: str) -> int:\n        res = 0\n        i, j = 0, 1\n        while j < len(s):\n            res = max(res, j - i)\n            if ord(s[j]) - ord(s[j - 1]) != 1:\n                i = j\n            j += 1\n        res = max(res, j - i)\n        return res\n\n`",
+            "content": "\nLeetCode problem 2414\n\nclass Solution:\n    def longestContinuousSubstring(self, s: str) -> int:\n        res = 0\n        i, j = 0, 1\n        while j < len(s):\n            res = max(res, j - i)\n            if ord(s[j]) - ord(s[j - 1]) != 1:\n                i = j\n            j += 1\n        res = max(res, j - i)\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -1960,7 +1960,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2411/",
             "title": "2411. Smallest Subarrays With Maximum Bitwise OR",
             "description": "2411. Smallest Subarrays With Maximum Bitwise OR",
-            "content": "\nLeetCode problem 2411\n\nclass Solution:\n    def smallestSubarrays(self, nums: List[int]) -> List[int]:\n        n = len(nums)\n        res = [1] * n\n        f = [-1] * 32\n        for i in range(n - 1, -1, -1):\n            t = 1\n            for j in range(32):\n                if (nums[i] >> j) & 1:\n                    f[j] = i\n                elif f[j] != -1:\n                    t = max(t, f[j] - i + 1)\n            res[i] = t\n        return res\n\n`",
+            "content": "\nLeetCode problem 2411\n\nclass Solution:\n    def smallestSubarrays(self, nums: List[int]) -> List[int]:\n        n = len(nums)\n        res = [1] * n\n        f = [-1] * 32\n        for i in range(n - 1, -1, -1):\n            t = 1\n            for j in range(32):\n                if (nums[i] >> j) & 1:\n                    f[j] = i\n                elif f[j] != -1:\n                    t = max(t, f[j] - i + 1)\n            res[i] = t\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -1968,7 +1968,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2410/",
             "title": "2410. Maximum Matching of Players With Trainers",
             "description": "2410. Maximum Matching of Players With Trainers",
-            "content": "\nLeetCode problem 2410\n\nclass Solution:\n    def matchPlayersAndTrainers(self, players: List[int], trainers: List[int]) -> int:\n        players.sort()\n        trainers.sort()\n        res = j = 0\n        for p in players:\n            while j < len(trainers) and trainers[j] < p:\n                j += 1\n            if j < len(trainers):\n                res += 1\n                j += 1\n        return res\n\n`",
+            "content": "\nLeetCode problem 2410\n\nclass Solution:\n    def matchPlayersAndTrainers(self, players: List[int], trainers: List[int]) -> int:\n        players.sort()\n        trainers.sort()\n        res = j = 0\n        for p in players:\n            while j < len(trainers) and trainers[j] < p:\n                j += 1\n            if j < len(trainers):\n                res += 1\n                j += 1\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -1976,7 +1976,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2408/",
             "title": "2408. Design SQL",
             "description": "2408. Design SQL",
-            "content": "\nLeetCode problem 2408\n\nclass SQL:\n    def init(self, names: List[str], columns: List[int]):\n        self.tables = defaultdict(list)\n\n    def insertRow(self, name: str, row: List[str]) -> None:\n        self.tables[name].append(row)\n\n    def deleteRow(self, name: str, rowId: int) -> None:\n        pass\n\n    def selectCell(self, name: str, rowId: int, columnId: int) -> str:\n        return self.tablesname[columnId - 1]\n\nYour SQL object will be instantiated and called as such:\nobj = SQL(names, columns)\nobj.insertRow(name,row)\nobj.deleteRow(name,rowId)\nparam_3 = obj.selectCell(name,rowId,columnId)\n\n`",
+            "content": "\nLeetCode problem 2408\n\nclass SQL:\n    def init(self, names: List[str], columns: List[int]):\n        self.tables = defaultdict(list)\n\n    def insertRow(self, name: str, row: List[str]) -> None:\n        self.tables[name].append(row)\n\n    def deleteRow(self, name: str, rowId: int) -> None:\n        pass\n\n    def selectCell(self, name: str, rowId: int, columnId: int) -> str:\n        return self.tablesname[columnId - 1]\n\nYour SQL object will be instantiated and called as such:\nobj = SQL(names, columns)\nobj.insertRow(name,row)\nobj.deleteRow(name,rowId)\nparam_3 = obj.selectCell(name,rowId,columnId)\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -1984,7 +1984,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2406/",
             "title": "2406. Divide Intervals Into Minimum Number of Groups",
             "description": "2406. Divide Intervals Into Minimum Number of Groups",
-            "content": "\nLeetCode problem 2406\n\nclass Solution:\n    def minGroups(self, intervals: List[List[int]]) -> int:\n        h = []\n        for a, b in sorted(intervals):\n            if h and h[0] < a:\n                heappop(h)\n            heappush(h, b)\n        return len(h)\n\n`",
+            "content": "\nLeetCode problem 2406\n\nclass Solution:\n    def minGroups(self, intervals: List[List[int]]) -> int:\n        h = []\n        for a, b in sorted(intervals):\n            if h and h[0] < a:\n                heappop(h)\n            heappush(h, b)\n        return len(h)\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -1992,7 +1992,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2405/",
             "title": "2405. Optimal Partition of String",
             "description": "2405. Optimal Partition of String",
-            "content": "\nLeetCode problem 2405\n\nclass Solution:\n    def partitionString(self, s: str) -> int:\n        res, v = 1, 0\n        for c in s:\n            i = ord(c) - ord('a')\n            if (v >> i) & 1:\n                v = 0\n                res += 1\n            v |= 1 << i\n        return res\n\n`",
+            "content": "\nLeetCode problem 2405\n\nclass Solution:\n    def partitionString(self, s: str) -> int:\n        res, v = 1, 0\n        for c in s:\n            i = ord(c) - ord('a')\n            if (v >> i) & 1:\n                v = 0\n                res += 1\n            v |= 1 << i\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2000,7 +2000,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2401/",
             "title": "2401. Longest Nice Subarray",
             "description": "2401. Longest Nice Subarray",
-            "content": "\nLeetCode problem 2401\n\nclass Solution:\n    def longestNiceSubarray(self, nums: List[int]) -> int:\n        res = j = mask = 0\n        for i, x in enumerate(nums):\n            while mask & x:\n                mask ^= nums[j]\n                j += 1\n            res = max(res, i - j + 1)\n            mask |= x\n        return res\n\n`",
+            "content": "\nLeetCode problem 2401\n\nclass Solution:\n    def longestNiceSubarray(self, nums: List[int]) -> int:\n        res = j = mask = 0\n        for i, x in enumerate(nums):\n            while mask & x:\n                mask ^= nums[j]\n                j += 1\n            res = max(res, i - j + 1)\n            mask |= x\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2008,7 +2008,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2400/",
             "title": "2400. Number of Ways to Reach a Position After Exactly k Steps",
             "description": "2400. Number of Ways to Reach a Position After Exactly k Steps",
-            "content": "\nLeetCode problem 2400\n\nclass Solution:\n    def numberOfWays(self, startPos: int, endPos: int, k: int) -> int:\n        @cache\n        def dfs(i: int, j: int) -> int:\n            if i > j or j < 0:\n                return 0\n            if j == 0:\n                return 1 if i == 0 else 0\n            return (dfs(i + 1, j - 1) + dfs(abs(i - 1), j - 1)) % mod\n\n        mod = 10**9 + 7\n        return dfs(abs(startPos - endPos), k)\n\n`",
+            "content": "\nLeetCode problem 2400\n\nclass Solution:\n    def numberOfWays(self, startPos: int, endPos: int, k: int) -> int:\n        @cache\n        def dfs(i: int, j: int) -> int:\n            if i > j or j < 0:\n                return 0\n            if j == 0:\n                return 1 if i == 0 else 0\n            return (dfs(i + 1, j - 1) + dfs(abs(i - 1), j - 1)) % mod\n\n        mod = 10**9 + 7\n        return dfs(abs(startPos - endPos), k)\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2036,7 +2036,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2397/",
             "title": "2397. Maximum Rows Covered by Columns",
             "description": "2397. Maximum Rows Covered by Columns",
-            "content": "\nLeetCode problem 2397\n\nclass Solution:\n    def maximumRows(self, matrix: List[List[int]], numSelect: int) -> int:\n        rows = []\n        for row in matrix:\n            mask = reduce(or_, (1 << j for j, x in enumerate(row) if x), 0)\n            rows.append(mask)\n\n        res = 0\n        for mask in range(1 << len(matrix[0])):\n            if mask.bit_count() != numSelect:\n                continue\n            t = sum((x & mask) == x for x in rows)\n            res = max(res, t)\n        return res\n\n`",
+            "content": "\nLeetCode problem 2397\n\nclass Solution:\n    def maximumRows(self, matrix: List[List[int]], numSelect: int) -> int:\n        rows = []\n        for row in matrix:\n            mask = reduce(or_, (1 << j for j, x in enumerate(row) if x), 0)\n            rows.append(mask)\n\n        res = 0\n        for mask in range(1 << len(matrix[0])):\n            if mask.bit_count() != numSelect:\n                continue\n            t = sum((x & mask) == x for x in rows)\n            res = max(res, t)\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2044,7 +2044,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2396/",
             "title": "2396. Strictly Palindromic Number",
             "description": "2396. Strictly Palindromic Number",
-            "content": "\nLeetCode problem 2396\n\nclass Solution:\n    def isStrictlyPalindromic(self, n: int) -> bool:\n        return False\n\n`",
+            "content": "\nLeetCode problem 2396\n\nclass Solution:\n    def isStrictlyPalindromic(self, n: int) -> bool:\n        return False\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2052,7 +2052,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2393/",
             "title": "2393. Count Strictly Increasing Subarrays",
             "description": "2393. Count Strictly Increasing Subarrays",
-            "content": "\nLeetCode problem 2393\n\nclass Solution:\n    def countSubarrays(self, nums: List[int]) -> int:\n        res = pre = cnt = 0\n        for x in nums:\n            if pre < x:\n                cnt += 1\n            else:\n                cnt = 1\n            pre = x\n            res += cnt\n        return res\n\n`",
+            "content": "\nLeetCode problem 2393\n\nclass Solution:\n    def countSubarrays(self, nums: List[int]) -> int:\n        res = pre = cnt = 0\n        for x in nums:\n            if pre < x:\n                cnt += 1\n            else:\n                cnt = 1\n            pre = x\n            res += cnt\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2060,7 +2060,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2391/",
             "title": "2391. Minimum Amount of Time to Collect Garbage",
             "description": "2391. Minimum Amount of Time to Collect Garbage",
-            "content": "\nLeetCode problem 2391\n\nclass Solution:\n    def garbageCollection(self, garbage: List[str], travel: List[int]) -> int:\n        def f(x: str) -> int:\n            res = 0\n            st = 0\n            for i, s in enumerate(garbage):\n                if t := s.count(x):\n                    res += t + st\n                    st = 0\n                if i < len(travel):\n                    st += travel[i]\n            return res\n\n        return f('M') + f('P') + f('G')\n\n`",
+            "content": "\nLeetCode problem 2391\n\nclass Solution:\n    def garbageCollection(self, garbage: List[str], travel: List[int]) -> int:\n        def f(x: str) -> int:\n            res = 0\n            st = 0\n            for i, s in enumerate(garbage):\n                if t := s.count(x):\n                    res += t + st\n                    st = 0\n                if i < len(travel):\n                    st += travel[i]\n            return res\n\n        return f('M') + f('P') + f('G')\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2068,7 +2068,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2390/",
             "title": "2390. Removing Stars From a String",
             "description": "2390. Removing Stars From a String",
-            "content": "\nLeetCode problem 2390\n\nclass Solution:\n    def removeStars(self, s: str) -> str:\n        res = []\n        for c in s:\n            if c == '*':\n                res.pop()\n            else:\n                res.append(c)\n        return ''.join(res)\n\n`",
+            "content": "\nLeetCode problem 2390\n\nclass Solution:\n    def removeStars(self, s: str) -> str:\n        res = []\n        for c in s:\n            if c == '*':\n                res.pop()\n            else:\n                res.append(c)\n        return ''.join(res)\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2076,7 +2076,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2387/",
             "title": "2387. Median of a Row Wise Sorted Matrix",
             "description": "2387. Median of a Row Wise Sorted Matrix",
-            "content": "\nLeetCode problem 2387\n\nclass Solution:\n    def matrixMedian(self, grid: List[List[int]]) -> int:\n        def count(x):\n            return sum(bisect_right(row, x) for row in grid)\n\n        m, n = len(grid), len(grid[0])\n        target = (m * n + 1) >> 1\n        return bisect_left(range(10**6 + 1), target, key=count)\n\n`",
+            "content": "\nLeetCode problem 2387\n\nclass Solution:\n    def matrixMedian(self, grid: List[List[int]]) -> int:\n        def count(x):\n            return sum(bisect_right(row, x) for row in grid)\n\n        m, n = len(grid), len(grid[0])\n        target = (m * n + 1) >> 1\n        return bisect_left(range(10**6 + 1), target, key=count)\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2084,7 +2084,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2385/",
             "title": "2385. Amount of Time for Binary Tree to Be Infected",
             "description": "2385. Amount of Time for Binary Tree to Be Infected",
-            "content": "\nLeetCode problem 2385\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def amountOfTime(self, root: Optional[TreeNode], start: int) -> int:\n        def dfs(root):\n            if root is None:\n                return\n            if root.left:\n                g[root.val].append(root.left.val)\n                g[root.left.val].append(root.val)\n            if root.right:\n                g[root.val].append(root.right.val)\n                g[root.right.val].append(root.val)\n            dfs(root.left)\n            dfs(root.right)\n\n        def dfs2(i, fa):\n            res = 0\n            for j in g[i]:\n                if j != fa:\n                    res = max(res, 1 + dfs2(j, i))\n            return res\n\n        g = defaultdict(list)\n        dfs(root)\n        return dfs2(start, -1)\n\n`",
+            "content": "\nLeetCode problem 2385\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def amountOfTime(self, root: Optional[TreeNode], start: int) -> int:\n        def dfs(root):\n            if root is None:\n                return\n            if root.left:\n                g[root.val].append(root.left.val)\n                g[root.left.val].append(root.val)\n            if root.right:\n                g[root.val].append(root.right.val)\n                g[root.right.val].append(root.val)\n            dfs(root.left)\n            dfs(root.right)\n\n        def dfs2(i, fa):\n            res = 0\n            for j in g[i]:\n                if j != fa:\n                    res = max(res, 1 + dfs2(j, i))\n            return res\n\n        g = defaultdict(list)\n        dfs(root)\n        return dfs2(start, -1)\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2092,7 +2092,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2384/",
             "title": "2384. Largest Palindromic Number",
             "description": "2384. Largest Palindromic Number",
-            "content": "\nLeetCode problem 2384\n\nclass Solution:\n    def largestPalindromic(self, num: str) -> str:\n        cnt = Counter(num)\n        res = ''\n        for i in range(9, -1, -1):\n            v = str(i)\n            if cnt[v] % 2:\n                res = v\n                cnt[v] -= 1\n                break\n        for i in range(10):\n            v = str(i)\n            if cnt[v]:\n                cnt[v] //= 2\n                s = cnt[v] * v\n                res = s + res + s\n        return res.strip('0') or '0'\n\n`",
+            "content": "\nLeetCode problem 2384\n\nclass Solution:\n    def largestPalindromic(self, num: str) -> str:\n        cnt = Counter(num)\n        res = ''\n        for i in range(9, -1, -1):\n            v = str(i)\n            if cnt[v] % 2:\n                res = v\n                cnt[v] -= 1\n                break\n        for i in range(10):\n            v = str(i)\n            if cnt[v]:\n                cnt[v] //= 2\n                s = cnt[v] * v\n                res = s + res + s\n        return res.strip('0') or '0'\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2100,7 +2100,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2381/",
             "title": "2381. Shifting Letters II",
             "description": "2381. Shifting Letters II",
-            "content": "\nLeetCode problem 2381\n\nclass Solution:\n    def shiftingLetters(self, s: str, shifts: List[List[int]]) -> str:\n        n = len(s)\n        d = [0] * (n + 1)\n        for i, j, v in shifts:\n            if v == 0:\n                v = -1\n            d[i] += v\n            d[j + 1] -= v\n        for i in range(1, n + 1):\n            d[i] += d[i - 1]\n        return ''.join(\n            chr(ord('a') + (ord(s[i]) - ord('a') + d[i] + 26) % 26) for i in range(n)\n        )\n\n`",
+            "content": "\nLeetCode problem 2381\n\nclass Solution:\n    def shiftingLetters(self, s: str, shifts: List[List[int]]) -> str:\n        n = len(s)\n        d = [0] * (n + 1)\n        for i, j, v in shifts:\n            if v == 0:\n                v = -1\n            d[i] += v\n            d[j + 1] -= v\n        for i in range(1, n + 1):\n            d[i] += d[i - 1]\n        return ''.join(\n            chr(ord('a') + (ord(s[i]) - ord('a') + d[i] + 26) % 26) for i in range(n)\n        )\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2108,7 +2108,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2380/",
             "title": "2380. Time Needed to Rearrange a Binary String",
             "description": "2380. Time Needed to Rearrange a Binary String",
-            "content": "\nLeetCode problem 2380\n\nclass Solution:\n    def secondsToRemoveOccurrences(self, s: str) -> int:\n        res = cnt = 0\n        for c in s:\n            if c == '0':\n                cnt += 1\n            elif cnt:\n                res = max(res + 1, cnt)\n        return res\n\n`",
+            "content": "\nLeetCode problem 2380\n\nclass Solution:\n    def secondsToRemoveOccurrences(self, s: str) -> int:\n        res = cnt = 0\n        for c in s:\n            if c == '0':\n                cnt += 1\n            elif cnt:\n                res = max(res + 1, cnt)\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2124,7 +2124,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2378/",
             "title": "2378. Choose Edges to Maximize Score in a Tree",
             "description": "2378. Choose Edges to Maximize Score in a Tree",
-            "content": "\nLeetCode problem 2378\n\nclass Solution:\n    def maxScore(self, edges: List[List[int]]) -> int:\n        def dfs(i):\n            a = b = t = 0\n            for j, w in g[i]:\n                x, y = dfs(j)\n                a += y\n                b += y\n                t = max(t, x - y + w)\n            b += t\n            return a, b\n\n        g = defaultdict(list)\n        for i, (p, w) in enumerate(edges[1:], 1):\n            g[p].append((i, w))\n        return dfs(0)[1]\n\n`",
+            "content": "\nLeetCode problem 2378\n\nclass Solution:\n    def maxScore(self, edges: List[List[int]]) -> int:\n        def dfs(i):\n            a = b = t = 0\n            for j, w in g[i]:\n                x, y = dfs(j)\n                a += y\n                b += y\n                t = max(t, x - y + w)\n            b += t\n            return a, b\n\n        g = defaultdict(list)\n        for i, (p, w) in enumerate(edges[1:], 1):\n            g[p].append((i, w))\n        return dfs(0)[1]\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2132,7 +2132,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2375/",
             "title": "2375. Construct Smallest Number From DI String",
             "description": "2375. Construct Smallest Number From DI String",
-            "content": "\nLeetCode problem 2375\n\nclass Solution:\n    def smallestNumber(self, pattern: str) -> str:\n        def dfs(u):\n            nonlocal res\n            if res:\n                return\n            if u == len(pattern) + 1:\n                res = ''.join(t)\n                return\n            for i in range(1, 10):\n                if not vis[i]:\n                    if u and pattern[u - 1] == 'I' and int(t[-1]) >= i:\n                        continue\n                    if u and pattern[u - 1] == 'D' and int(t[-1]) <= i:\n                        continue\n                    vis[i] = True\n                    t.append(str(i))\n                    dfs(u + 1)\n                    vis[i] = False\n                    t.pop()\n\n        vis = [False] * 10\n        t = []\n        res = None\n        dfs(0)\n        return res\n\n`",
+            "content": "\nLeetCode problem 2375\n\nclass Solution:\n    def smallestNumber(self, pattern: str) -> str:\n        def dfs(u):\n            nonlocal res\n            if res:\n                return\n            if u == len(pattern) + 1:\n                res = ''.join(t)\n                return\n            for i in range(1, 10):\n                if not vis[i]:\n                    if u and pattern[u - 1] == 'I' and int(t[-1]) >= i:\n                        continue\n                    if u and pattern[u - 1] == 'D' and int(t[-1]) <= i:\n                        continue\n                    vis[i] = True\n                    t.append(str(i))\n                    dfs(u + 1)\n                    vis[i] = False\n                    t.pop()\n\n        vis = [False] * 10\n        t = []\n        res = None\n        dfs(0)\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2140,7 +2140,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2374/",
             "title": "2374. Node With Highest Edge Score",
             "description": "2374. Node With Highest Edge Score",
-            "content": "\nLeetCode problem 2374\n\nclass Solution:\n    def edgeScore(self, edges: List[int]) -> int:\n        cnt = Counter()\n        for i, v in enumerate(edges):\n            cnt[v] += i\n        res = 0\n        for i in range(len(edges)):\n            if cnt[res] < cnt[i]:\n                res = i\n        return res\n\n`",
+            "content": "\nLeetCode problem 2374\n\nclass Solution:\n    def edgeScore(self, edges: List[int]) -> int:\n        cnt = Counter()\n        for i, v in enumerate(edges):\n            cnt[v] += i\n        res = 0\n        for i in range(len(edges)):\n            if cnt[res] < cnt[i]:\n                res = i\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2148,7 +2148,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2370/",
             "title": "2370. Longest Ideal Subsequence",
             "description": "2370. Longest Ideal Subsequence",
-            "content": "\nLeetCode problem 2370\n\nclass Solution:\n    def longestIdealString(self, s: str, k: int) -> int:\n        n = len(s)\n        res = 1\n        dp = [1] * n\n        d = {s[0]: 0}\n        for i in range(1, n):\n            a = ord(s[i])\n            for b in ascii_lowercase:\n                if abs(a - ord(b)) > k:\n                    continue\n                if b in d:\n                    dp[i] = max(dp[i], dp[d[b]] + 1)\n            d[s[i]] = i\n        return max(dp)\n\n`",
+            "content": "\nLeetCode problem 2370\n\nclass Solution:\n    def longestIdealString(self, s: str, k: int) -> int:\n        n = len(s)\n        res = 1\n        dp = [1] * n\n        d = {s[0]: 0}\n        for i in range(1, n):\n            a = ord(s[i])\n            for b in ascii_lowercase:\n                if abs(a - ord(b)) > k:\n                    continue\n                if b in d:\n                    dp[i] = max(dp[i], dp[d[b]] + 1)\n            d[s[i]] = i\n        return max(dp)\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2167,7 +2167,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2369/",
             "title": "2369. Check if There is a Valid Partition For The Array",
             "description": "2369. Check if There is a Valid Partition For The Array",
-            "content": "\nLeetCode problem 2369\n\nclass Solution:\n    def validPartition(self, nums: List[int]) -> bool:\n        n = len(nums)\n        dp = [False] * (n + 1)\n        dp[0] = True\n        for i in range(2, n + 1):\n            if nums[i - 1] == nums[i - 2]:\n                dp[i] = dp[i] or dp[i - 2]\n            if i > 2 and nums[i - 1] == nums[i - 2] == nums[i - 3]:\n                dp[i] = dp[i] or dp[i - 3]\n            if (\n                i > 2\n                and nums[i - 1] - nums[i - 2] == 1\n                and nums[i - 2] - nums[i - 3] == 1\n            ):\n                dp[i] = dp[i] or dp[i - 3]\n        return dp[-1]\n\n`",
+            "content": "\nLeetCode problem 2369\n\nclass Solution:\n    def validPartition(self, nums: List[int]) -> bool:\n        n = len(nums)\n        dp = [False] * (n + 1)\n        dp[0] = True\n        for i in range(2, n + 1):\n            if nums[i - 1] == nums[i - 2]:\n                dp[i] = dp[i] or dp[i - 2]\n            if i > 2 and nums[i - 1] == nums[i - 2] == nums[i - 3]:\n                dp[i] = dp[i] or dp[i - 3]\n            if (\n                i > 2\n                and nums[i - 1] - nums[i - 2] == 1\n                and nums[i - 2] - nums[i - 3] == 1\n            ):\n                dp[i] = dp[i] or dp[i - 3]\n        return dp[-1]\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2175,7 +2175,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2368/",
             "title": "2368. Reachable Nodes With Restrictions",
             "description": "2368. Reachable Nodes With Restrictions",
-            "content": "\nLeetCode problem 2368\n\nclass Solution:\n    def reachableNodes(\n        self, n: int, edges: List[List[int]], restricted: List[int]\n    ) -> int:\n        s = set(restricted)\n        g = defaultdict(list)\n        for a, b in edges:\n            g[a].append(b)\n            g[b].append(a)\n        q = deque([0])\n        vis = [False] * n\n        for v in restricted:\n            vis[v] = True\n        res = 0\n        while q:\n            i = q.popleft()\n            res += 1\n            vis[i] = True\n            for j in g[i]:\n                if not vis[j]:\n                    q.append(j)\n        return res\n\n`",
+            "content": "\nLeetCode problem 2368\n\nclass Solution:\n    def reachableNodes(\n        self, n: int, edges: List[List[int]], restricted: List[int]\n    ) -> int:\n        s = set(restricted)\n        g = defaultdict(list)\n        for a, b in edges:\n            g[a].append(b)\n            g[b].append(a)\n        q = deque([0])\n        vis = [False] * n\n        for v in restricted:\n            vis[v] = True\n        res = 0\n        while q:\n            i = q.popleft()\n            res += 1\n            vis[i] = True\n            for j in g[i]:\n                if not vis[j]:\n                    q.append(j)\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2183,7 +2183,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2365/",
             "title": "2365. Task Scheduler II",
             "description": "2365. Task Scheduler II",
-            "content": "\nLeetCode problem 2365\n\nclass Solution:\n    def taskSchedulerII(self, tasks: List[int], space: int) -> int:\n        day = defaultdict(int)\n        res = 0\n        for task in tasks:\n            res += 1\n            res = max(res, day[task])\n            day[task] = res + space + 1\n        return res\n\n`",
+            "content": "\nLeetCode problem 2365\n\nclass Solution:\n    def taskSchedulerII(self, tasks: List[int], space: int) -> int:\n        day = defaultdict(int)\n        res = 0\n        for task in tasks:\n            res += 1\n            res = max(res, day[task])\n            day[task] = res + space + 1\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2191,7 +2191,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2364/",
             "title": "2364. Count Number of Bad Pairs",
             "description": "2364. Count Number of Bad Pairs",
-            "content": "\nLeetCode problem 2364\n\nclass Solution:\n    def countBadPairs(self, nums: List[int]) -> int:\n        cnt = Counter()\n        res = 0\n        for i, x in enumerate(nums):\n            res += i - cnt[i - x]\n            cnt[i - x] += 1\n        return res\n\n`",
+            "content": "\nLeetCode problem 2364\n\nclass Solution:\n    def countBadPairs(self, nums: List[int]) -> int:\n        cnt = Counter()\n        res = 0\n        for i, x in enumerate(nums):\n            res += i - cnt[i - x]\n            cnt[i - x] += 1\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2211,7 +2211,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2359/",
             "title": "2359. Find Closest Node to Given Two Nodes",
             "description": "2359. Find Closest Node to Given Two Nodes",
-            "content": "\nLeetCode problem 2359\n\nclass Solution:\n    def closestMeetingNode(self, edges: List[int], node1: int, node2: int) -> int:\n        def f(i):\n            dist = [inf] * n\n            dist[i] = 0\n            q = deque([i])\n            while q:\n                i = q.popleft()\n                for j in g[i]:\n                    if dist[j] == inf:\n                        dist[j] = dist[i] + 1\n                        q.append(j)\n            return dist\n\n        g = defaultdict(list)\n        for i, j in enumerate(edges):\n            if j != -1:\n                g[i].append(j)\n        n = len(edges)\n        d1 = f(node1)\n        d2 = f(node2)\n        res, d = -1, inf\n        for i, (a, b) in enumerate(zip(d1, d2)):\n            if (t := max(a, b)) < d:\n                d = t\n                res = i\n        return res\n\n`",
+            "content": "\nLeetCode problem 2359\n\nclass Solution:\n    def closestMeetingNode(self, edges: List[int], node1: int, node2: int) -> int:\n        def f(i):\n            dist = [inf] * n\n            dist[i] = 0\n            q = deque([i])\n            while q:\n                i = q.popleft()\n                for j in g[i]:\n                    if dist[j] == inf:\n                        dist[j] = dist[i] + 1\n                        q.append(j)\n            return dist\n\n        g = defaultdict(list)\n        for i, j in enumerate(edges):\n            if j != -1:\n                g[i].append(j)\n        n = len(edges)\n        d1 = f(node1)\n        d2 = f(node2)\n        res, d = -1, inf\n        for i, (a, b) in enumerate(zip(d1, d2)):\n            if (t := max(a, b)) < d:\n                d = t\n                res = i\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2219,7 +2219,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2358/",
             "title": "2358. Maximum Number of Groups Entering a Competition",
             "description": "2358. Maximum Number of Groups Entering a Competition",
-            "content": "\nLeetCode problem 2358\n\nclass Solution:\n    def maximumGroups(self, grades: List[int]) -> int:\n        n = len(grades)\n        return bisect_right(range(n + 1), n * 2, key=lambda x: x * x + x) - 1\n\n`",
+            "content": "\nLeetCode problem 2358\n\nclass Solution:\n    def maximumGroups(self, grades: List[int]) -> int:\n        n = len(grades)\n        return bisect_right(range(n + 1), n * 2, key=lambda x: x * x + x) - 1\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2227,7 +2227,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2353/",
             "title": "2353. Design a Food Rating System",
             "description": "2353. Design a Food Rating System",
-            "content": "\nLeetCode problem 2353\n\nfrom sortedcontainers import SortedSet\n\n\nclass FoodRatings:\n    def init(self, foods: List[str], cuisines: List[str], ratings: List[int]):\n        self.mp = {}\n        self.t = defaultdict(lambda: SortedSet(key=lambda x: (-x[0], x[1])))\n\n        for a, b, c in zip(foods, cuisines, ratings):\n            self.mp[a] = (b, c)\n            self.t[b].add((c, a))\n\n    def changeRating(self, food: str, newRating: int) -> None:\n        b, c = self.mp[food]\n        self.mp[food] = (b, newRating)\n        self.t[b].remove((c, food))\n        self.t[b].add((newRating, food))\n\n    def highestRated(self, cuisine: str) -> str:\n        return self.tcuisine[1]\n\nYour FoodRatings object will be instantiated and called as such:\nobj = FoodRatings(foods, cuisines, ratings)\nobj.changeRating(food,newRating)\nparam_2 = obj.highestRated(cuisine)\n\n`",
+            "content": "\nLeetCode problem 2353\n\nfrom sortedcontainers import SortedSet\n\n\nclass FoodRatings:\n    def init(self, foods: List[str], cuisines: List[str], ratings: List[int]):\n        self.mp = {}\n        self.t = defaultdict(lambda: SortedSet(key=lambda x: (-x[0], x[1])))\n\n        for a, b, c in zip(foods, cuisines, ratings):\n            self.mp[a] = (b, c)\n            self.t[b].add((c, a))\n\n    def changeRating(self, food: str, newRating: int) -> None:\n        b, c = self.mp[food]\n        self.mp[food] = (b, newRating)\n        self.t[b].remove((c, food))\n        self.t[b].add((newRating, food))\n\n    def highestRated(self, cuisine: str) -> str:\n        return self.tcuisine[1]\n\nYour FoodRatings object will be instantiated and called as such:\nobj = FoodRatings(foods, cuisines, ratings)\nobj.changeRating(food,newRating)\nparam_2 = obj.highestRated(cuisine)\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3087,7 +3087,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2427/",
             "title": "2427. Number of Common Factors",
             "description": "2427. Number of Common Factors",
-            "content": "\nLeetCode problem 2427\n\nclass Solution:\n    def commonFactors(self, a: int, b: int) -> int:\n        g = gcd(a, b)\n        res, x = 0, 1\n        while x * x <= g:\n            if g % x == 0:\n                res += 1\n                res += x * x < g\n            x += 1\n        return res\n\n`",
+            "content": "\nLeetCode problem 2427\n\nclass Solution:\n    def commonFactors(self, a: int, b: int) -> int:\n        g = gcd(a, b)\n        res, x = 0, 1\n        while x * x <= g:\n            if g % x == 0:\n                res += 1\n                res += x * x < g\n            x += 1\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3095,7 +3095,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2423/",
             "title": "2423. Remove Letter To Equalize Frequency",
             "description": "2423. Remove Letter To Equalize Frequency",
-            "content": "\nLeetCode problem 2423\n\nclass Solution:\n    def equalFrequency(self, word: str) -> bool:\n        cnt = Counter(word)\n        for c in cnt.keys():\n            cnt[c] -= 1\n            if len(set(v for v in cnt.values() if v)) == 1:\n                return True\n            cnt[c] += 1\n        return False\n\n`",
+            "content": "\nLeetCode problem 2423\n\nclass Solution:\n    def equalFrequency(self, word: str) -> bool:\n        cnt = Counter(word)\n        for c in cnt.keys():\n            cnt[c] -= 1\n            if len(set(v for v in cnt.values() if v)) == 1:\n                return True\n            cnt[c] += 1\n        return False\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3103,7 +3103,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2418/",
             "title": "2418. Sort the People",
             "description": "2418. Sort the People",
-            "content": "\nLeetCode problem 2418\n\nclass Solution:\n    def sortPeople(self, names: List[str], heights: List[int]) -> List[str]:\n        return [name for _, name in sorted(zip(heights, names), reverse=True)]\n\n`",
+            "content": "\nLeetCode problem 2418\n\nclass Solution:\n    def sortPeople(self, names: List[str], heights: List[int]) -> List[str]:\n        return [name for _, name in sorted(zip(heights, names), reverse=True)]\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3111,7 +3111,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2413/",
             "title": "2413. Smallest Even Multiple",
             "description": "2413. Smallest Even Multiple",
-            "content": "\nLeetCode problem 2413\n\nclass Solution:\n    def smallestEvenMultiple(self, n: int) -> int:\n        return n if n % 2 == 0 else n * 2\n\n`",
+            "content": "\nLeetCode problem 2413\n\nclass Solution:\n    def smallestEvenMultiple(self, n: int) -> int:\n        return n if n % 2 == 0 else n * 2\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3119,7 +3119,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2409/",
             "title": "2409. Count Days Spent Together",
             "description": "2409. Count Days Spent Together",
-            "content": "\nLeetCode problem 2409\n\nclass Solution:\n    def countDaysTogether(\n        self, arriveAlice: str, leaveAlice: str, arriveBob: str, leaveBob: str\n    ) -> int:\n        a = max(arriveAlice, arriveBob)\n        b = min(leaveAlice, leaveBob)\n        days = (31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)\n        x = sum(days[: int(a[:2]) - 1]) + int(a[3:])\n        y = sum(days[: int(b[:2]) - 1]) + int(b[3:])\n        return max(y - x + 1, 0)\n\n`",
+            "content": "\nLeetCode problem 2409\n\nclass Solution:\n    def countDaysTogether(\n        self, arriveAlice: str, leaveAlice: str, arriveBob: str, leaveBob: str\n    ) -> int:\n        a = max(arriveAlice, arriveBob)\n        b = min(leaveAlice, leaveBob)\n        days = (31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)\n        x = sum(days[: int(a[:2]) - 1]) + int(a[3:])\n        y = sum(days[: int(b[:2]) - 1]) + int(b[3:])\n        return max(y - x + 1, 0)\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3127,7 +3127,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2404/",
             "title": "2404. Most Frequent Even Element",
             "description": "2404. Most Frequent Even Element",
-            "content": "\nLeetCode problem 2404\n\nclass Solution:\n    def mostFrequentEven(self, nums: List[int]) -> int:\n        cnt = Counter(x for x in nums if x % 2 == 0)\n        res, mx = -1, 0\n        for x, v in cnt.items():\n            if v > mx or (v == mx and res > x):\n                res, mx = x, v\n        return res\n\n`",
+            "content": "\nLeetCode problem 2404\n\nclass Solution:\n    def mostFrequentEven(self, nums: List[int]) -> int:\n        cnt = Counter(x for x in nums if x % 2 == 0)\n        res, mx = -1, 0\n        for x, v in cnt.items():\n            if v > mx or (v == mx and res > x):\n                res, mx = x, v\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3135,7 +3135,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2399/",
             "title": "2399. Check Distances Between Same Letters",
             "description": "2399. Check Distances Between Same Letters",
-            "content": "\nLeetCode problem 2399\n\nclass Solution:\n    def checkDistances(self, s: str, distance: List[int]) -> bool:\n        d = defaultdict(int)\n        for i, c in enumerate(s, 1):\n            if d[c] and i - d[c] - 1 != distance[ord(c) - ord('a')]:\n                return False\n            d[c] = i\n        return True\n\n`",
+            "content": "\nLeetCode problem 2399\n\nclass Solution:\n    def checkDistances(self, s: str, distance: List[int]) -> bool:\n        d = defaultdict(int)\n        for i, c in enumerate(s, 1):\n            if d[c] and i - d[c] - 1 != distance[ord(c) - ord('a')]:\n                return False\n            d[c] = i\n        return True\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3143,7 +3143,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2395/",
             "title": "2395. Find Subarrays With Equal Sum",
             "description": "2395. Find Subarrays With Equal Sum",
-            "content": "\nLeetCode problem 2395\n\nclass Solution:\n    def findSubarrays(self, nums: List[int]) -> bool:\n        vis = set()\n        for a, b in pairwise(nums):\n            if (x := a + b) in vis:\n                return True\n            vis.add(x)\n        return False\n\n`",
+            "content": "\nLeetCode problem 2395\n\nclass Solution:\n    def findSubarrays(self, nums: List[int]) -> bool:\n        vis = set()\n        for a, b in pairwise(nums):\n            if (x := a + b) in vis:\n                return True\n            vis.add(x)\n        return False\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3151,7 +3151,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2389/",
             "title": "2389. Longest Subsequence With Limited Sum",
             "description": "2389. Longest Subsequence With Limited Sum",
-            "content": "\nLeetCode problem 2389\n\nclass Solution:\n    def answerQueries(self, nums: List[int], queries: List[int]) -> List[int]:\n        nums.sort()\n        m = len(queries)\n        res = [0] * m\n        idx = sorted(range(m), key=lambda i: queries[i])\n        s = j = 0\n        for i in idx:\n            while j < len(nums) and s + nums[j] <= queries[i]:\n                s += nums[j]\n                j += 1\n            res[i] = j\n        return res\n\n`",
+            "content": "\nLeetCode problem 2389\n\nclass Solution:\n    def answerQueries(self, nums: List[int], queries: List[int]) -> List[int]:\n        nums.sort()\n        m = len(queries)\n        res = [0] * m\n        idx = sorted(range(m), key=lambda i: queries[i])\n        s = j = 0\n        for i in idx:\n            while j < len(nums) and s + nums[j] <= queries[i]:\n                s += nums[j]\n                j += 1\n            res[i] = j\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3159,7 +3159,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2383/",
             "title": "2383. Minimum Hours of Training to Win a Competition",
             "description": "2383. Minimum Hours of Training to Win a Competition",
-            "content": "\nLeetCode problem 2383\n\nclass Solution:\n    def minNumberOfHours(\n        self,\n        initialEnergy: int,\n        initialExperience: int,\n        energy: List[int],\n        experience: List[int],\n    ) -> int:\n        res = max(0, sum(energy) - initialEnergy + 1)\n        for x in experience:\n            if initialExperience <= x:\n                res += x - initialExperience + 1\n                initialExperience = x + 1\n            initialExperience += x\n        return res\n\n`",
+            "content": "\nLeetCode problem 2383\n\nclass Solution:\n    def minNumberOfHours(\n        self,\n        initialEnergy: int,\n        initialExperience: int,\n        energy: List[int],\n        experience: List[int],\n    ) -> int:\n        res = max(0, sum(energy) - initialEnergy + 1)\n        for x in experience:\n            if initialExperience <= x:\n                res += x - initialExperience + 1\n                initialExperience = x + 1\n            initialExperience += x\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3167,7 +3167,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2379/",
             "title": "2379. Minimum Recolors to Get K Consecutive Black Blocks",
             "description": "2379. Minimum Recolors to Get K Consecutive Black Blocks",
-            "content": "\nLeetCode problem 2379\n\nclass Solution:\n    def minimumRecolors(self, blocks: str, k: int) -> int:\n        res = cnt = blocks[:k].count('W')\n        for i in range(k, len(blocks)):\n            cnt += blocks[i] == 'W'\n            cnt -= blocks[i - k] == 'W'\n            res = min(res, cnt)\n        return res\n\n`",
+            "content": "\nLeetCode problem 2379\n\nclass Solution:\n    def minimumRecolors(self, blocks: str, k: int) -> int:\n        res = cnt = blocks[:k].count('W')\n        for i in range(k, len(blocks)):\n            cnt += blocks[i] == 'W'\n            cnt -= blocks[i - k] == 'W'\n            res = min(res, cnt)\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3175,7 +3175,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2373/",
             "title": "2373. Largest Local Values in a Matrix",
             "description": "2373. Largest Local Values in a Matrix",
-            "content": "\nLeetCode problem 2373\n\nclass Solution:\n    def largestLocal(self, grid: List[List[int]]) -> List[List[int]]:\n        n = len(grid)\n        res = [[0] * (n - 2) for _ in range(n - 2)]\n        for i in range(n - 2):\n            for j in range(n - 2):\n                resi = max(\n                    gridx for x in range(i, i + 3) for y in range(j, j + 3)\n                )\n        return res\n\n`",
+            "content": "\nLeetCode problem 2373\n\nclass Solution:\n    def largestLocal(self, grid: List[List[int]]) -> List[List[int]]:\n        n = len(grid)\n        res = [[0] * (n - 2) for _ in range(n - 2)]\n        for i in range(n - 2):\n            for j in range(n - 2):\n                resi = max(\n                    gridx for x in range(i, i + 3) for y in range(j, j + 3)\n                )\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3183,7 +3183,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2367/",
             "title": "2367. Number of Arithmetic Triplets",
             "description": "2367. Number of Arithmetic Triplets",
-            "content": "\nLeetCode problem 2367\n\nclass Solution:\n    def arithmeticTriplets(self, nums: List[int], diff: int) -> int:\n        vis = set(nums)\n        return sum(x + diff in vis and x + diff * 2 in vis for x in nums)\n\n`",
+            "content": "\nLeetCode problem 2367\n\nclass Solution:\n    def arithmeticTriplets(self, nums: List[int], diff: int) -> int:\n        vis = set(nums)\n        return sum(x + diff in vis and x + diff * 2 in vis for x in nums)\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3191,7 +3191,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2363/",
             "title": "2363. Merge Similar Items",
             "description": "2363. Merge Similar Items",
-            "content": "\nLeetCode problem 2363\n\nclass Solution:\n    def mergeSimilarItems(\n        self, items1: List[List[int]], items2: List[List[int]]\n    ) -> List[List[int]]:\n        cnt = Counter()\n        for v, w in chain(items1, items2):\n            cnt[v] += w\n        return sorted(cnt.items())\n\n`",
+            "content": "\nLeetCode problem 2363\n\nclass Solution:\n    def mergeSimilarItems(\n        self, items1: List[List[int]], items2: List[List[int]]\n    ) -> List[List[int]]:\n        cnt = Counter()\n        for v, w in chain(items1, items2):\n            cnt[v] += w\n        return sorted(cnt.items())\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3199,7 +3199,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2357/",
             "title": "2357. Make Array Zero by Subtracting Equal Amounts",
             "description": "2357. Make Array Zero by Subtracting Equal Amounts",
-            "content": "\nLeetCode problem 2357\n\nclass Solution:\n    def minimumOperations(self, nums: List[int]) -> int:\n        return len({x for x in nums if x})\n\n`",
+            "content": "\nLeetCode problem 2357\n\nclass Solution:\n    def minimumOperations(self, nums: List[int]) -> int:\n        return len({x for x in nums if x})\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3207,7 +3207,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2351/",
             "title": "2351. First Letter to Appear Twice",
             "description": "2351. First Letter to Appear Twice",
-            "content": "\nLeetCode problem 2351\n\nclass Solution:\n    def repeatedCharacter(self, s: str) -> str:\n        mask = 0\n        for c in s:\n            i = ord(c) - ord('a')\n            if mask >> i & 1:\n                return c\n            mask |= 1 << i\n\n`",
+            "content": "\nLeetCode problem 2351\n\nclass Solution:\n    def repeatedCharacter(self, s: str) -> str:\n        mask = 0\n        for c in s:\n            i = ord(c) - ord('a')\n            if mask >> i & 1:\n                return c\n            mask |= 1 << i\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3215,7 +3215,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2347/",
             "title": "2347. Best Poker Hand",
             "description": "2347. Best Poker Hand",
-            "content": "\nLeetCode problem 2347\n\nclass Solution:\n    def bestHand(self, ranks: List[int], suits: List[str]) -> str:\nif len(set(suits)) == 1:\n        if all(a == b for a, b in pairwise(suits)):\n            return 'Flush'\n        cnt = Counter(ranks)\n        if any(v >= 3 for v in cnt.values()):\n            return 'Three of a Kind'\n        if any(v == 2 for v in cnt.values()):\n            return 'Pair'\n        return 'High Card'\n\n`",
+            "content": "\nLeetCode problem 2347\n\nclass Solution:\n    def bestHand(self, ranks: List[int], suits: List[str]) -> str:\nif len(set(suits)) == 1:\n        if all(a == b for a, b in pairwise(suits)):\n            return 'Flush'\n        cnt = Counter(ranks)\n        if any(v >= 3 for v in cnt.values()):\n            return 'Three of a Kind'\n        if any(v == 2 for v in cnt.values()):\n            return 'Pair'\n        return 'High Card'\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3223,7 +3223,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2341/",
             "title": "2341. Maximum Number of Pairs in Array",
             "description": "2341. Maximum Number of Pairs in Array",
-            "content": "\nLeetCode problem 2341\n\nclass Solution:\n    def numberOfPairs(self, nums: List[int]) -> List[int]:\n        cnt = Counter(nums)\n        s = sum(v // 2 for v in cnt.values())\n        return [s, len(nums) - s * 2]\n\n`",
+            "content": "\nLeetCode problem 2341\n\nclass Solution:\n    def numberOfPairs(self, nums: List[int]) -> List[int]:\n        cnt = Counter(nums)\n        s = sum(v // 2 for v in cnt.values())\n        return [s, len(nums) - s * 2]\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3243,7 +3243,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2335/",
             "title": "2335. Minimum Amount of Time to Fill Cups",
             "description": "2335. Minimum Amount of Time to Fill Cups",
-            "content": "\nLeetCode problem 2335\n\nclass Solution:\n    def fillCups(self, amount: List[int]) -> int:\n        amount.sort()\n        if amount[0] + amount[1] <= amount[2]:\n            return amount[2]\n        return (sum(amount) + 1) // 2\n\n`",
+            "content": "\nLeetCode problem 2335\n\nclass Solution:\n    def fillCups(self, amount: List[int]) -> int:\n        amount.sort()\n        if amount[0] + amount[1] <= amount[2]:\n            return amount[2]\n        return (sum(amount) + 1) // 2\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3251,7 +3251,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2331/",
             "title": "2331. Evaluate Boolean Binary Tree",
             "description": "2331. Evaluate Boolean Binary Tree",
-            "content": "\nLeetCode problem 2331\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def evaluateTree(self, root: Optional[TreeNode]) -> bool:\n        if root.left is None:\n            return bool(root.val)\n        l = self.evaluateTree(root.left)\n        r = self.evaluateTree(root.right)\n        return l or r if root.val == 2 else l and r\n\n`",
+            "content": "\nLeetCode problem 2331\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def evaluateTree(self, root: Optional[TreeNode]) -> bool:\n        if root.left is None:\n            return bool(root.val)\n        l = self.evaluateTree(root.left)\n        r = self.evaluateTree(root.right)\n        return l or r if root.val == 2 else l and r\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3259,7 +3259,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2325/",
             "title": "2325. Decode the Message",
             "description": "2325. Decode the Message",
-            "content": "\nLeetCode problem 2325\n\nclass Solution:\n    def decodeMessage(self, key: str, message: str) -> str:\n        d = {\" \": \" \"}\n        i = 0\n        for c in key:\n            if c not in d:\n                d[c] = ascii_lowercase[i]\n                i += 1\n        return \"\".join(d[c] for c in message)\n\n`",
+            "content": "\nLeetCode problem 2325\n\nclass Solution:\n    def decodeMessage(self, key: str, message: str) -> str:\n        d = {\" \": \" \"}\n        i = 0\n        for c in key:\n            if c not in d:\n                d[c] = ascii_lowercase[i]\n                i += 1\n        return \"\".join(d[c] for c in message)\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3267,7 +3267,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2319/",
             "title": "2319. Check if Matrix Is X-Matrix",
             "description": "2319. Check if Matrix Is X-Matrix",
-            "content": "\nLeetCode problem 2319\n\nclass Solution:\n    def checkXMatrix(self, grid: List[List[int]]) -> bool:\n        for i, row in enumerate(grid):\n            for j, v in enumerate(row):\n                if i == j or i + j == len(grid) - 1:\n                    if v == 0:\n                        return False\n                elif v:\n                    return False\n        return True\n\n`",
+            "content": "\nLeetCode problem 2319\n\nclass Solution:\n    def checkXMatrix(self, grid: List[List[int]]) -> bool:\n        for i, row in enumerate(grid):\n            for j, v in enumerate(row):\n                if i == j or i + j == len(grid) - 1:\n                    if v == 0:\n                        return False\n                elif v:\n                    return False\n        return True\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3275,7 +3275,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2315/",
             "title": "2315. Count Asterisks",
             "description": "2315. Count Asterisks",
-            "content": "\nLeetCode problem 2315\n\nclass Solution:\n    def countAsterisks(self, s: str) -> int:\n        res, ok = 0, 1\n        for c in s:\n            if c == \"*\":\n                res += ok\n            elif c == \"|\":\n                ok ^= 1\n        return res\n\n`",
+            "content": "\nLeetCode problem 2315\n\nclass Solution:\n    def countAsterisks(self, s: str) -> int:\n        res, ok = 0, 1\n        for c in s:\n            if c == \"*\":\n                res += ok\n            elif c == \"|\":\n                ok ^= 1\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3283,7 +3283,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2309/",
             "title": "2309. Greatest English Letter in Upper and Lower Case",
             "description": "2309. Greatest English Letter in Upper and Lower Case",
-            "content": "\nLeetCode problem 2309\n\nclass Solution:\n    def greatestLetter(self, s: str) -> str:\n        mask1 = mask2 = 0\n        for c in s:\n            if c.islower():\n                mask1 |= 1 << (ord(c) - ord(\"a\"))\n            else:\n                mask2 |= 1 << (ord(c) - ord(\"A\"))\n        mask = mask1 & mask2\n        return chr(mask.bit_length() - 1 + ord(\"A\")) if mask else \"\"\n\n`",
+            "content": "\nLeetCode problem 2309\n\nclass Solution:\n    def greatestLetter(self, s: str) -> str:\n        mask1 = mask2 = 0\n        for c in s:\n            if c.islower():\n                mask1 |= 1 << (ord(c) - ord(\"a\"))\n            else:\n                mask2 |= 1 << (ord(c) - ord(\"A\"))\n        mask = mask1 & mask2\n        return chr(mask.bit_length() - 1 + ord(\"A\")) if mask else \"\"\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3291,7 +3291,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2303/",
             "title": "2303. Calculate Amount Paid in Taxes",
             "description": "2303. Calculate Amount Paid in Taxes",
-            "content": "\nLeetCode problem 2303\n\nclass Solution:\n    def calculateTax(self, brackets: List[List[int]], income: int) -> float:\n        res = prev = 0\n        for upper, percent in brackets:\n            res += max(0, min(income, upper) - prev) * percent\n            prev = upper\n        return res / 100\n\n`",
+            "content": "\nLeetCode problem 2303\n\nclass Solution:\n    def calculateTax(self, brackets: List[List[int]], income: int) -> float:\n        res = prev = 0\n        for upper, percent in brackets:\n            res += max(0, min(income, upper) - prev) * percent\n            prev = upper\n        return res / 100\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3299,7 +3299,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2299/",
             "title": "2299. Strong Password Checker II",
             "description": "2299. Strong Password Checker II",
-            "content": "\nLeetCode problem 2299\n\nclass Solution:\n    def strongPasswordCheckerII(self, password: str) -> bool:\n        if len(password) < 8:\n            return False\n        mask = 0\n        for i, c in enumerate(password):\n            if i and c == password[i - 1]:\n                return False\n            if c.islower():\n                mask |= 1\n            elif c.isupper():\n                mask |= 2\n            elif c.isdigit():\n                mask |= 4\n            else:\n                mask |= 8\n        return mask == 15\n\n`",
+            "content": "\nLeetCode problem 2299\n\nclass Solution:\n    def strongPasswordCheckerII(self, password: str) -> bool:\n        if len(password) < 8:\n            return False\n        mask = 0\n        for i, c in enumerate(password):\n            if i and c == password[i - 1]:\n                return False\n            if c.islower():\n                mask |= 1\n            elif c.isupper():\n                mask |= 2\n            elif c.isdigit():\n                mask |= 4\n            else:\n                mask |= 8\n        return mask == 15\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3307,7 +3307,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2293/",
             "title": "2293. Min Max Game",
             "description": "2293. Min Max Game",
-            "content": "\nLeetCode problem 2293\n\nclass Solution:\n    def minMaxGame(self, nums: List[int]) -> int:\n        n = len(nums)\n        while n > 1:\n            n >>= 1\n            for i in range(n):\n                a, b = nums[i << 1], nums[i << 1 | 1]\n                nums[i] = min(a, b) if i % 2 == 0 else max(a, b)\n        return nums[0]\n\n`",
+            "content": "\nLeetCode problem 2293\n\nclass Solution:\n    def minMaxGame(self, nums: List[int]) -> int:\n        n = len(nums)\n        while n > 1:\n            n >>= 1\n            for i in range(n):\n                a, b = nums[i << 1], nums[i << 1 | 1]\n                nums[i] = min(a, b) if i % 2 == 0 else max(a, b)\n        return nums[0]\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3315,7 +3315,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2287/",
             "title": "2287. Rearrange Characters to Make Target String",
             "description": "2287. Rearrange Characters to Make Target String",
-            "content": "\nLeetCode problem 2287\n\nclass Solution:\n    def rearrangeCharacters(self, s: str, target: str) -> int:\n        cnt1 = Counter(s)\n        cnt2 = Counter(target)\n        return min(cnt1[c] // v for c, v in cnt2.items())\n\n`",
+            "content": "\nLeetCode problem 2287\n\nclass Solution:\n    def rearrangeCharacters(self, s: str, target: str) -> int:\n        cnt1 = Counter(s)\n        cnt2 = Counter(target)\n        return min(cnt1[c] // v for c, v in cnt2.items())\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3323,7 +3323,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2283/",
             "title": "2283. Check if Number Has Equal Digit Count and Digit Value",
             "description": "2283. Check if Number Has Equal Digit Count and Digit Value",
-            "content": "\nLeetCode problem 2283\n\nclass Solution:\n    def digitCount(self, num: str) -> bool:\n        cnt = Counter(num)\n        return all(cnt[str(i)] == int(v) for i, v in enumerate(num))\n\n`",
+            "content": "\nLeetCode problem 2283\n\nclass Solution:\n    def digitCount(self, num: str) -> bool:\n        cnt = Counter(num)\n        return all(cnt[str(i)] == int(v) for i, v in enumerate(num))\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -4598,7 +4598,7 @@
             "uri": "/posts/vps-docker-subdomains-setup/project/projects/3/",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 2
+                    "timeTakenInMilliseconds": 1
                 },
                 "result": "Hello World!",
                 "ranges": [
@@ -5044,7 +5044,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 1
+                    "timeTakenInMilliseconds": 2
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -6792,7 +6792,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2429/",
             "title": "2429. Minimize XOR",
             "description": "2429. Minimize XOR",
-            "content": "\nLeetCode problem 2429\n\nclass Solution:\n    def minimizeXor(self, num1: int, num2: int) -> int:\n        cnt1 = num1.bit_count()\n        cnt2 = num2.bit_count()\n        while cnt1 > cnt2:\n            num1 &= num1 - 1\n            cnt1 -= 1\n        while cnt1 < cnt2:\n            num1 |= num1 + 1\n            cnt1 += 1\n        return num1\n\n`",
+            "content": "\nLeetCode problem 2429\n\nclass Solution:\n    def minimizeXor(self, num1: int, num2: int) -> int:\n        cnt1 = num1.bit_count()\n        cnt2 = num2.bit_count()\n        while cnt1 > cnt2:\n            num1 &= num1 - 1\n            cnt1 -= 1\n        while cnt1 < cnt2:\n            num1 |= num1 + 1\n            cnt1 += 1\n        return num1\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6800,7 +6800,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2428/",
             "title": "2428. Maximum Sum of an Hourglass",
             "description": "2428. Maximum Sum of an Hourglass",
-            "content": "\nLeetCode problem 2428\n\nclass Solution:\n    def maxSum(self, grid: List[List[int]]) -> int:\n        m, n = len(grid), len(grid[0])\n        res = 0\n        for i in range(1, m - 1):\n            for j in range(1, n - 1):\n                s = -gridi - gridi\n                s += sum(\n                    gridx for x in range(i - 1, i + 2) for y in range(j - 1, j + 2)\n                )\n                res = max(res, s)\n        return res\n\n`",
+            "content": "\nLeetCode problem 2428\n\nclass Solution:\n    def maxSum(self, grid: List[List[int]]) -> int:\n        m, n = len(grid), len(grid[0])\n        res = 0\n        for i in range(1, m - 1):\n            for j in range(1, n - 1):\n                s = -gridi - gridi\n                s += sum(\n                    gridx for x in range(i - 1, i + 2) for y in range(j - 1, j + 2)\n                )\n                res = max(res, s)\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6808,7 +6808,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2425/",
             "title": "2425. Bitwise XOR of All Pairings",
             "description": "2425. Bitwise XOR of All Pairings",
-            "content": "\nLeetCode problem 2425\n\nclass Solution:\n    def xorAllNums(self, nums1: List[int], nums2: List[int]) -> int:\n        res = 0\n        if len(nums2) & 1:\n            for v in nums1:\n                res ^= v\n        if len(nums1) & 1:\n            for v in nums2:\n                res ^= v\n        return res\n\n`",
+            "content": "\nLeetCode problem 2425\n\nclass Solution:\n    def xorAllNums(self, nums1: List[int], nums2: List[int]) -> int:\n        res = 0\n        if len(nums2) & 1:\n            for v in nums1:\n                res ^= v\n        if len(nums1) & 1:\n            for v in nums2:\n                res ^= v\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6816,7 +6816,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2424/",
             "title": "2424. Longest Uploaded Prefix",
             "description": "2424. Longest Uploaded Prefix",
-            "content": "\nLeetCode problem 2424\n\nclass LUPrefix:\n    def init(self, n: int):\n        self.r = 0\n        self.s = set()\n\n    def upload(self, video: int) -> None:\n        self.s.add(video)\n        while self.r + 1 in self.s:\n            self.r += 1\n\n    def longest(self) -> int:\n        return self.r\n\nYour LUPrefix object will be instantiated and called as such:\nobj = LUPrefix(n)\nobj.upload(video)\nparam_2 = obj.longest()\n\n`",
+            "content": "\nLeetCode problem 2424\n\nclass LUPrefix:\n    def init(self, n: int):\n        self.r = 0\n        self.s = set()\n\n    def upload(self, video: int) -> None:\n        self.s.add(video)\n        while self.r + 1 in self.s:\n            self.r += 1\n\n    def longest(self) -> int:\n        return self.r\n\nYour LUPrefix object will be instantiated and called as such:\nobj = LUPrefix(n)\nobj.upload(video)\nparam_2 = obj.longest()\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6824,7 +6824,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2422/",
             "title": "2422. Merge Operations to Turn Array Into a Palindrome",
             "description": "2422. Merge Operations to Turn Array Into a Palindrome",
-            "content": "\nLeetCode problem 2422\n\nclass Solution:\n    def minimumOperations(self, nums: List[int]) -> int:\n        i, j = 0, len(nums) - 1\n        a, b = nums[i], nums[j]\n        res = 0\n        while i < j:\n            if a < b:\n                i += 1\n                a += nums[i]\n                res += 1\n            elif b < a:\n                j -= 1\n                b += nums[j]\n                res += 1\n            else:\n                i, j = i + 1, j - 1\n                a, b = nums[i], nums[j]\n        return res\n\n`",
+            "content": "\nLeetCode problem 2422\n\nclass Solution:\n    def minimumOperations(self, nums: List[int]) -> int:\n        i, j = 0, len(nums) - 1\n        a, b = nums[i], nums[j]\n        res = 0\n        while i < j:\n            if a < b:\n                i += 1\n                a += nums[i]\n                res += 1\n            elif b < a:\n                j -= 1\n                b += nums[j]\n                res += 1\n            else:\n                i, j = i + 1, j - 1\n                a, b = nums[i], nums[j]\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6832,7 +6832,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2420/",
             "title": "2420. Find All Good Indices",
             "description": "2420. Find All Good Indices",
-            "content": "\nLeetCode problem 2420\n\nclass Solution:\n    def goodIndices(self, nums: List[int], k: int) -> List[int]:\n        n = len(nums)\n        decr = [1] * (n + 1)\n        incr = [1] * (n + 1)\n        for i in range(2, n - 1):\n            if nums[i - 1] = k and incr[i] >= k]\n\n`",
+            "content": "\nLeetCode problem 2420\n\nclass Solution:\n    def goodIndices(self, nums: List[int], k: int) -> List[int]:\n        n = len(nums)\n        decr = [1] * (n + 1)\n        incr = [1] * (n + 1)\n        for i in range(2, n - 1):\n            if nums[i - 1] = k and incr[i] >= k]\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6840,7 +6840,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2419/",
             "title": "2419. Longest Subarray With Maximum Bitwise AND",
             "description": "2419. Longest Subarray With Maximum Bitwise AND",
-            "content": "\nLeetCode problem 2419\n\nclass Solution:\n    def longestSubarray(self, nums: List[int]) -> int:\n        mx = max(nums)\n        res = cnt = 0\n        for v in nums:\n            if v == mx:\n                cnt += 1\n                res = max(res, cnt)\n            else:\n                cnt = 0\n        return res\n\n`",
+            "content": "\nLeetCode problem 2419\n\nclass Solution:\n    def longestSubarray(self, nums: List[int]) -> int:\n        mx = max(nums)\n        res = cnt = 0\n        for v in nums:\n            if v == mx:\n                cnt += 1\n                res = max(res, cnt)\n            else:\n                cnt = 0\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6848,7 +6848,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2417/",
             "title": "2417. Closest Fair Integer",
             "description": "2417. Closest Fair Integer",
-            "content": "\nLeetCode problem 2417\n\nclass Solution:\n    def closestFair(self, n: int) -> int:\n        a = b = k = 0\n        t = n\n        while t:\n            if (t % 10) & 1:\n                a += 1\n            else:\n                b += 1\n            t //= 10\n            k += 1\n        if k & 1:\n            x = 10**k\n            y = int('1' * (k >> 1) or '0')\n            return x + y\n        if a == b:\n            return n\n        return self.closestFair(n + 1)\n\n`",
+            "content": "\nLeetCode problem 2417\n\nclass Solution:\n    def closestFair(self, n: int) -> int:\n        a = b = k = 0\n        t = n\n        while t:\n            if (t % 10) & 1:\n                a += 1\n            else:\n                b += 1\n            t //= 10\n            k += 1\n        if k & 1:\n            x = 10**k\n            y = int('1' * (k >> 1) or '0')\n            return x + y\n        if a == b:\n            return n\n        return self.closestFair(n + 1)\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6856,7 +6856,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2415/",
             "title": "2415. Reverse Odd Levels of Binary Tree",
             "description": "2415. Reverse Odd Levels of Binary Tree",
-            "content": "\nLeetCode problem 2415\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def reverseOddLevels(self, root: Optional[TreeNode]) -> Optional[TreeNode]:\n        q = deque([root])\n        i = 0\n        while q:\n            if i & 1:\n                l, r = 0, len(q) - 1\n                while l < r:\n                    q[l].val, q[r].val = q[r].val, q[l].val\n                    l, r = l + 1, r - 1\n            for _ in range(len(q)):\n                node = q.popleft()\n                if node.left:\n                    q.append(node.left)\n                    q.append(node.right)\n            i += 1\n        return root\n\n`",
+            "content": "\nLeetCode problem 2415\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def reverseOddLevels(self, root: Optional[TreeNode]) -> Optional[TreeNode]:\n        q = deque([root])\n        i = 0\n        while q:\n            if i & 1:\n                l, r = 0, len(q) - 1\n                while l < r:\n                    q[l].val, q[r].val = q[r].val, q[l].val\n                    l, r = l + 1, r - 1\n            for _ in range(len(q)):\n                node = q.popleft()\n                if node.left:\n                    q.append(node.left)\n                    q.append(node.right)\n            i += 1\n        return root\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6864,7 +6864,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2414/",
             "title": "2414. Length of the Longest Alphabetical Continuous Substring",
             "description": "2414. Length of the Longest Alphabetical Continuous Substring",
-            "content": "\nLeetCode problem 2414\n\nclass Solution:\n    def longestContinuousSubstring(self, s: str) -> int:\n        res = 0\n        i, j = 0, 1\n        while j < len(s):\n            res = max(res, j - i)\n            if ord(s[j]) - ord(s[j - 1]) != 1:\n                i = j\n            j += 1\n        res = max(res, j - i)\n        return res\n\n`",
+            "content": "\nLeetCode problem 2414\n\nclass Solution:\n    def longestContinuousSubstring(self, s: str) -> int:\n        res = 0\n        i, j = 0, 1\n        while j < len(s):\n            res = max(res, j - i)\n            if ord(s[j]) - ord(s[j - 1]) != 1:\n                i = j\n            j += 1\n        res = max(res, j - i)\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6872,7 +6872,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2411/",
             "title": "2411. Smallest Subarrays With Maximum Bitwise OR",
             "description": "2411. Smallest Subarrays With Maximum Bitwise OR",
-            "content": "\nLeetCode problem 2411\n\nclass Solution:\n    def smallestSubarrays(self, nums: List[int]) -> List[int]:\n        n = len(nums)\n        res = [1] * n\n        f = [-1] * 32\n        for i in range(n - 1, -1, -1):\n            t = 1\n            for j in range(32):\n                if (nums[i] >> j) & 1:\n                    f[j] = i\n                elif f[j] != -1:\n                    t = max(t, f[j] - i + 1)\n            res[i] = t\n        return res\n\n`",
+            "content": "\nLeetCode problem 2411\n\nclass Solution:\n    def smallestSubarrays(self, nums: List[int]) -> List[int]:\n        n = len(nums)\n        res = [1] * n\n        f = [-1] * 32\n        for i in range(n - 1, -1, -1):\n            t = 1\n            for j in range(32):\n                if (nums[i] >> j) & 1:\n                    f[j] = i\n                elif f[j] != -1:\n                    t = max(t, f[j] - i + 1)\n            res[i] = t\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6880,7 +6880,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2410/",
             "title": "2410. Maximum Matching of Players With Trainers",
             "description": "2410. Maximum Matching of Players With Trainers",
-            "content": "\nLeetCode problem 2410\n\nclass Solution:\n    def matchPlayersAndTrainers(self, players: List[int], trainers: List[int]) -> int:\n        players.sort()\n        trainers.sort()\n        res = j = 0\n        for p in players:\n            while j < len(trainers) and trainers[j] < p:\n                j += 1\n            if j < len(trainers):\n                res += 1\n                j += 1\n        return res\n\n`",
+            "content": "\nLeetCode problem 2410\n\nclass Solution:\n    def matchPlayersAndTrainers(self, players: List[int], trainers: List[int]) -> int:\n        players.sort()\n        trainers.sort()\n        res = j = 0\n        for p in players:\n            while j < len(trainers) and trainers[j] < p:\n                j += 1\n            if j < len(trainers):\n                res += 1\n                j += 1\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6888,7 +6888,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2408/",
             "title": "2408. Design SQL",
             "description": "2408. Design SQL",
-            "content": "\nLeetCode problem 2408\n\nclass SQL:\n    def init(self, names: List[str], columns: List[int]):\n        self.tables = defaultdict(list)\n\n    def insertRow(self, name: str, row: List[str]) -> None:\n        self.tables[name].append(row)\n\n    def deleteRow(self, name: str, rowId: int) -> None:\n        pass\n\n    def selectCell(self, name: str, rowId: int, columnId: int) -> str:\n        return self.tablesname[columnId - 1]\n\nYour SQL object will be instantiated and called as such:\nobj = SQL(names, columns)\nobj.insertRow(name,row)\nobj.deleteRow(name,rowId)\nparam_3 = obj.selectCell(name,rowId,columnId)\n\n`",
+            "content": "\nLeetCode problem 2408\n\nclass SQL:\n    def init(self, names: List[str], columns: List[int]):\n        self.tables = defaultdict(list)\n\n    def insertRow(self, name: str, row: List[str]) -> None:\n        self.tables[name].append(row)\n\n    def deleteRow(self, name: str, rowId: int) -> None:\n        pass\n\n    def selectCell(self, name: str, rowId: int, columnId: int) -> str:\n        return self.tablesname[columnId - 1]\n\nYour SQL object will be instantiated and called as such:\nobj = SQL(names, columns)\nobj.insertRow(name,row)\nobj.deleteRow(name,rowId)\nparam_3 = obj.selectCell(name,rowId,columnId)\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6896,7 +6896,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2406/",
             "title": "2406. Divide Intervals Into Minimum Number of Groups",
             "description": "2406. Divide Intervals Into Minimum Number of Groups",
-            "content": "\nLeetCode problem 2406\n\nclass Solution:\n    def minGroups(self, intervals: List[List[int]]) -> int:\n        h = []\n        for a, b in sorted(intervals):\n            if h and h[0] < a:\n                heappop(h)\n            heappush(h, b)\n        return len(h)\n\n`",
+            "content": "\nLeetCode problem 2406\n\nclass Solution:\n    def minGroups(self, intervals: List[List[int]]) -> int:\n        h = []\n        for a, b in sorted(intervals):\n            if h and h[0] < a:\n                heappop(h)\n            heappush(h, b)\n        return len(h)\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6904,7 +6904,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2405/",
             "title": "2405. Optimal Partition of String",
             "description": "2405. Optimal Partition of String",
-            "content": "\nLeetCode problem 2405\n\nclass Solution:\n    def partitionString(self, s: str) -> int:\n        res, v = 1, 0\n        for c in s:\n            i = ord(c) - ord('a')\n            if (v >> i) & 1:\n                v = 0\n                res += 1\n            v |= 1 << i\n        return res\n\n`",
+            "content": "\nLeetCode problem 2405\n\nclass Solution:\n    def partitionString(self, s: str) -> int:\n        res, v = 1, 0\n        for c in s:\n            i = ord(c) - ord('a')\n            if (v >> i) & 1:\n                v = 0\n                res += 1\n            v |= 1 << i\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6912,7 +6912,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2401/",
             "title": "2401. Longest Nice Subarray",
             "description": "2401. Longest Nice Subarray",
-            "content": "\nLeetCode problem 2401\n\nclass Solution:\n    def longestNiceSubarray(self, nums: List[int]) -> int:\n        res = j = mask = 0\n        for i, x in enumerate(nums):\n            while mask & x:\n                mask ^= nums[j]\n                j += 1\n            res = max(res, i - j + 1)\n            mask |= x\n        return res\n\n`",
+            "content": "\nLeetCode problem 2401\n\nclass Solution:\n    def longestNiceSubarray(self, nums: List[int]) -> int:\n        res = j = mask = 0\n        for i, x in enumerate(nums):\n            while mask & x:\n                mask ^= nums[j]\n                j += 1\n            res = max(res, i - j + 1)\n            mask |= x\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6920,7 +6920,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2400/",
             "title": "2400. Number of Ways to Reach a Position After Exactly k Steps",
             "description": "2400. Number of Ways to Reach a Position After Exactly k Steps",
-            "content": "\nLeetCode problem 2400\n\nclass Solution:\n    def numberOfWays(self, startPos: int, endPos: int, k: int) -> int:\n        @cache\n        def dfs(i: int, j: int) -> int:\n            if i > j or j < 0:\n                return 0\n            if j == 0:\n                return 1 if i == 0 else 0\n            return (dfs(i + 1, j - 1) + dfs(abs(i - 1), j - 1)) % mod\n\n        mod = 10**9 + 7\n        return dfs(abs(startPos - endPos), k)\n\n`",
+            "content": "\nLeetCode problem 2400\n\nclass Solution:\n    def numberOfWays(self, startPos: int, endPos: int, k: int) -> int:\n        @cache\n        def dfs(i: int, j: int) -> int:\n            if i > j or j < 0:\n                return 0\n            if j == 0:\n                return 1 if i == 0 else 0\n            return (dfs(i + 1, j - 1) + dfs(abs(i - 1), j - 1)) % mod\n\n        mod = 10**9 + 7\n        return dfs(abs(startPos - endPos), k)\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6936,7 +6936,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2397/",
             "title": "2397. Maximum Rows Covered by Columns",
             "description": "2397. Maximum Rows Covered by Columns",
-            "content": "\nLeetCode problem 2397\n\nclass Solution:\n    def maximumRows(self, matrix: List[List[int]], numSelect: int) -> int:\n        rows = []\n        for row in matrix:\n            mask = reduce(or_, (1 << j for j, x in enumerate(row) if x), 0)\n            rows.append(mask)\n\n        res = 0\n        for mask in range(1 << len(matrix[0])):\n            if mask.bit_count() != numSelect:\n                continue\n            t = sum((x & mask) == x for x in rows)\n            res = max(res, t)\n        return res\n\n`",
+            "content": "\nLeetCode problem 2397\n\nclass Solution:\n    def maximumRows(self, matrix: List[List[int]], numSelect: int) -> int:\n        rows = []\n        for row in matrix:\n            mask = reduce(or_, (1 << j for j, x in enumerate(row) if x), 0)\n            rows.append(mask)\n\n        res = 0\n        for mask in range(1 << len(matrix[0])):\n            if mask.bit_count() != numSelect:\n                continue\n            t = sum((x & mask) == x for x in rows)\n            res = max(res, t)\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6944,7 +6944,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2396/",
             "title": "2396. Strictly Palindromic Number",
             "description": "2396. Strictly Palindromic Number",
-            "content": "\nLeetCode problem 2396\n\nclass Solution:\n    def isStrictlyPalindromic(self, n: int) -> bool:\n        return False\n\n`",
+            "content": "\nLeetCode problem 2396\n\nclass Solution:\n    def isStrictlyPalindromic(self, n: int) -> bool:\n        return False\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6952,7 +6952,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2393/",
             "title": "2393. Count Strictly Increasing Subarrays",
             "description": "2393. Count Strictly Increasing Subarrays",
-            "content": "\nLeetCode problem 2393\n\nclass Solution:\n    def countSubarrays(self, nums: List[int]) -> int:\n        res = pre = cnt = 0\n        for x in nums:\n            if pre < x:\n                cnt += 1\n            else:\n                cnt = 1\n            pre = x\n            res += cnt\n        return res\n\n`",
+            "content": "\nLeetCode problem 2393\n\nclass Solution:\n    def countSubarrays(self, nums: List[int]) -> int:\n        res = pre = cnt = 0\n        for x in nums:\n            if pre < x:\n                cnt += 1\n            else:\n                cnt = 1\n            pre = x\n            res += cnt\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6960,7 +6960,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2391/",
             "title": "2391. Minimum Amount of Time to Collect Garbage",
             "description": "2391. Minimum Amount of Time to Collect Garbage",
-            "content": "\nLeetCode problem 2391\n\nclass Solution:\n    def garbageCollection(self, garbage: List[str], travel: List[int]) -> int:\n        def f(x: str) -> int:\n            res = 0\n            st = 0\n            for i, s in enumerate(garbage):\n                if t := s.count(x):\n                    res += t + st\n                    st = 0\n                if i < len(travel):\n                    st += travel[i]\n            return res\n\n        return f('M') + f('P') + f('G')\n\n`",
+            "content": "\nLeetCode problem 2391\n\nclass Solution:\n    def garbageCollection(self, garbage: List[str], travel: List[int]) -> int:\n        def f(x: str) -> int:\n            res = 0\n            st = 0\n            for i, s in enumerate(garbage):\n                if t := s.count(x):\n                    res += t + st\n                    st = 0\n                if i < len(travel):\n                    st += travel[i]\n            return res\n\n        return f('M') + f('P') + f('G')\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6968,7 +6968,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2390/",
             "title": "2390. Removing Stars From a String",
             "description": "2390. Removing Stars From a String",
-            "content": "\nLeetCode problem 2390\n\nclass Solution:\n    def removeStars(self, s: str) -> str:\n        res = []\n        for c in s:\n            if c == '*':\n                res.pop()\n            else:\n                res.append(c)\n        return ''.join(res)\n\n`",
+            "content": "\nLeetCode problem 2390\n\nclass Solution:\n    def removeStars(self, s: str) -> str:\n        res = []\n        for c in s:\n            if c == '*':\n                res.pop()\n            else:\n                res.append(c)\n        return ''.join(res)\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6976,7 +6976,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2387/",
             "title": "2387. Median of a Row Wise Sorted Matrix",
             "description": "2387. Median of a Row Wise Sorted Matrix",
-            "content": "\nLeetCode problem 2387\n\nclass Solution:\n    def matrixMedian(self, grid: List[List[int]]) -> int:\n        def count(x):\n            return sum(bisect_right(row, x) for row in grid)\n\n        m, n = len(grid), len(grid[0])\n        target = (m * n + 1) >> 1\n        return bisect_left(range(10**6 + 1), target, key=count)\n\n`",
+            "content": "\nLeetCode problem 2387\n\nclass Solution:\n    def matrixMedian(self, grid: List[List[int]]) -> int:\n        def count(x):\n            return sum(bisect_right(row, x) for row in grid)\n\n        m, n = len(grid), len(grid[0])\n        target = (m * n + 1) >> 1\n        return bisect_left(range(10**6 + 1), target, key=count)\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6984,7 +6984,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2385/",
             "title": "2385. Amount of Time for Binary Tree to Be Infected",
             "description": "2385. Amount of Time for Binary Tree to Be Infected",
-            "content": "\nLeetCode problem 2385\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def amountOfTime(self, root: Optional[TreeNode], start: int) -> int:\n        def dfs(root):\n            if root is None:\n                return\n            if root.left:\n                g[root.val].append(root.left.val)\n                g[root.left.val].append(root.val)\n            if root.right:\n                g[root.val].append(root.right.val)\n                g[root.right.val].append(root.val)\n            dfs(root.left)\n            dfs(root.right)\n\n        def dfs2(i, fa):\n            res = 0\n            for j in g[i]:\n                if j != fa:\n                    res = max(res, 1 + dfs2(j, i))\n            return res\n\n        g = defaultdict(list)\n        dfs(root)\n        return dfs2(start, -1)\n\n`",
+            "content": "\nLeetCode problem 2385\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def amountOfTime(self, root: Optional[TreeNode], start: int) -> int:\n        def dfs(root):\n            if root is None:\n                return\n            if root.left:\n                g[root.val].append(root.left.val)\n                g[root.left.val].append(root.val)\n            if root.right:\n                g[root.val].append(root.right.val)\n                g[root.right.val].append(root.val)\n            dfs(root.left)\n            dfs(root.right)\n\n        def dfs2(i, fa):\n            res = 0\n            for j in g[i]:\n                if j != fa:\n                    res = max(res, 1 + dfs2(j, i))\n            return res\n\n        g = defaultdict(list)\n        dfs(root)\n        return dfs2(start, -1)\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6992,7 +6992,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2384/",
             "title": "2384. Largest Palindromic Number",
             "description": "2384. Largest Palindromic Number",
-            "content": "\nLeetCode problem 2384\n\nclass Solution:\n    def largestPalindromic(self, num: str) -> str:\n        cnt = Counter(num)\n        res = ''\n        for i in range(9, -1, -1):\n            v = str(i)\n            if cnt[v] % 2:\n                res = v\n                cnt[v] -= 1\n                break\n        for i in range(10):\n            v = str(i)\n            if cnt[v]:\n                cnt[v] //= 2\n                s = cnt[v] * v\n                res = s + res + s\n        return res.strip('0') or '0'\n\n`",
+            "content": "\nLeetCode problem 2384\n\nclass Solution:\n    def largestPalindromic(self, num: str) -> str:\n        cnt = Counter(num)\n        res = ''\n        for i in range(9, -1, -1):\n            v = str(i)\n            if cnt[v] % 2:\n                res = v\n                cnt[v] -= 1\n                break\n        for i in range(10):\n            v = str(i)\n            if cnt[v]:\n                cnt[v] //= 2\n                s = cnt[v] * v\n                res = s + res + s\n        return res.strip('0') or '0'\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -7000,7 +7000,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2381/",
             "title": "2381. Shifting Letters II",
             "description": "2381. Shifting Letters II",
-            "content": "\nLeetCode problem 2381\n\nclass Solution:\n    def shiftingLetters(self, s: str, shifts: List[List[int]]) -> str:\n        n = len(s)\n        d = [0] * (n + 1)\n        for i, j, v in shifts:\n            if v == 0:\n                v = -1\n            d[i] += v\n            d[j + 1] -= v\n        for i in range(1, n + 1):\n            d[i] += d[i - 1]\n        return ''.join(\n            chr(ord('a') + (ord(s[i]) - ord('a') + d[i] + 26) % 26) for i in range(n)\n        )\n\n`",
+            "content": "\nLeetCode problem 2381\n\nclass Solution:\n    def shiftingLetters(self, s: str, shifts: List[List[int]]) -> str:\n        n = len(s)\n        d = [0] * (n + 1)\n        for i, j, v in shifts:\n            if v == 0:\n                v = -1\n            d[i] += v\n            d[j + 1] -= v\n        for i in range(1, n + 1):\n            d[i] += d[i - 1]\n        return ''.join(\n            chr(ord('a') + (ord(s[i]) - ord('a') + d[i] + 26) % 26) for i in range(n)\n        )\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -7008,7 +7008,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2380/",
             "title": "2380. Time Needed to Rearrange a Binary String",
             "description": "2380. Time Needed to Rearrange a Binary String",
-            "content": "\nLeetCode problem 2380\n\nclass Solution:\n    def secondsToRemoveOccurrences(self, s: str) -> int:\n        res = cnt = 0\n        for c in s:\n            if c == '0':\n                cnt += 1\n            elif cnt:\n                res = max(res + 1, cnt)\n        return res\n\n`",
+            "content": "\nLeetCode problem 2380\n\nclass Solution:\n    def secondsToRemoveOccurrences(self, s: str) -> int:\n        res = cnt = 0\n        for c in s:\n            if c == '0':\n                cnt += 1\n            elif cnt:\n                res = max(res + 1, cnt)\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -7024,7 +7024,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2378/",
             "title": "2378. Choose Edges to Maximize Score in a Tree",
             "description": "2378. Choose Edges to Maximize Score in a Tree",
-            "content": "\nLeetCode problem 2378\n\nclass Solution:\n    def maxScore(self, edges: List[List[int]]) -> int:\n        def dfs(i):\n            a = b = t = 0\n            for j, w in g[i]:\n                x, y = dfs(j)\n                a += y\n                b += y\n                t = max(t, x - y + w)\n            b += t\n            return a, b\n\n        g = defaultdict(list)\n        for i, (p, w) in enumerate(edges[1:], 1):\n            g[p].append((i, w))\n        return dfs(0)[1]\n\n`",
+            "content": "\nLeetCode problem 2378\n\nclass Solution:\n    def maxScore(self, edges: List[List[int]]) -> int:\n        def dfs(i):\n            a = b = t = 0\n            for j, w in g[i]:\n                x, y = dfs(j)\n                a += y\n                b += y\n                t = max(t, x - y + w)\n            b += t\n            return a, b\n\n        g = defaultdict(list)\n        for i, (p, w) in enumerate(edges[1:], 1):\n            g[p].append((i, w))\n        return dfs(0)[1]\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -7032,7 +7032,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2375/",
             "title": "2375. Construct Smallest Number From DI String",
             "description": "2375. Construct Smallest Number From DI String",
-            "content": "\nLeetCode problem 2375\n\nclass Solution:\n    def smallestNumber(self, pattern: str) -> str:\n        def dfs(u):\n            nonlocal res\n            if res:\n                return\n            if u == len(pattern) + 1:\n                res = ''.join(t)\n                return\n            for i in range(1, 10):\n                if not vis[i]:\n                    if u and pattern[u - 1] == 'I' and int(t[-1]) >= i:\n                        continue\n                    if u and pattern[u - 1] == 'D' and int(t[-1]) <= i:\n                        continue\n                    vis[i] = True\n                    t.append(str(i))\n                    dfs(u + 1)\n                    vis[i] = False\n                    t.pop()\n\n        vis = [False] * 10\n        t = []\n        res = None\n        dfs(0)\n        return res\n\n`",
+            "content": "\nLeetCode problem 2375\n\nclass Solution:\n    def smallestNumber(self, pattern: str) -> str:\n        def dfs(u):\n            nonlocal res\n            if res:\n                return\n            if u == len(pattern) + 1:\n                res = ''.join(t)\n                return\n            for i in range(1, 10):\n                if not vis[i]:\n                    if u and pattern[u - 1] == 'I' and int(t[-1]) >= i:\n                        continue\n                    if u and pattern[u - 1] == 'D' and int(t[-1]) <= i:\n                        continue\n                    vis[i] = True\n                    t.append(str(i))\n                    dfs(u + 1)\n                    vis[i] = False\n                    t.pop()\n\n        vis = [False] * 10\n        t = []\n        res = None\n        dfs(0)\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -7040,7 +7040,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2374/",
             "title": "2374. Node With Highest Edge Score",
             "description": "2374. Node With Highest Edge Score",
-            "content": "\nLeetCode problem 2374\n\nclass Solution:\n    def edgeScore(self, edges: List[int]) -> int:\n        cnt = Counter()\n        for i, v in enumerate(edges):\n            cnt[v] += i\n        res = 0\n        for i in range(len(edges)):\n            if cnt[res] < cnt[i]:\n                res = i\n        return res\n\n`",
+            "content": "\nLeetCode problem 2374\n\nclass Solution:\n    def edgeScore(self, edges: List[int]) -> int:\n        cnt = Counter()\n        for i, v in enumerate(edges):\n            cnt[v] += i\n        res = 0\n        for i in range(len(edges)):\n            if cnt[res] < cnt[i]:\n                res = i\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -7048,7 +7048,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2370/",
             "title": "2370. Longest Ideal Subsequence",
             "description": "2370. Longest Ideal Subsequence",
-            "content": "\nLeetCode problem 2370\n\nclass Solution:\n    def longestIdealString(self, s: str, k: int) -> int:\n        n = len(s)\n        res = 1\n        dp = [1] * n\n        d = {s[0]: 0}\n        for i in range(1, n):\n            a = ord(s[i])\n            for b in ascii_lowercase:\n                if abs(a - ord(b)) > k:\n                    continue\n                if b in d:\n                    dp[i] = max(dp[i], dp[d[b]] + 1)\n            d[s[i]] = i\n        return max(dp)\n\n`",
+            "content": "\nLeetCode problem 2370\n\nclass Solution:\n    def longestIdealString(self, s: str, k: int) -> int:\n        n = len(s)\n        res = 1\n        dp = [1] * n\n        d = {s[0]: 0}\n        for i in range(1, n):\n            a = ord(s[i])\n            for b in ascii_lowercase:\n                if abs(a - ord(b)) > k:\n                    continue\n                if b in d:\n                    dp[i] = max(dp[i], dp[d[b]] + 1)\n            d[s[i]] = i\n        return max(dp)\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -7056,7 +7056,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2369/",
             "title": "2369. Check if There is a Valid Partition For The Array",
             "description": "2369. Check if There is a Valid Partition For The Array",
-            "content": "\nLeetCode problem 2369\n\nclass Solution:\n    def validPartition(self, nums: List[int]) -> bool:\n        n = len(nums)\n        dp = [False] * (n + 1)\n        dp[0] = True\n        for i in range(2, n + 1):\n            if nums[i - 1] == nums[i - 2]:\n                dp[i] = dp[i] or dp[i - 2]\n            if i > 2 and nums[i - 1] == nums[i - 2] == nums[i - 3]:\n                dp[i] = dp[i] or dp[i - 3]\n            if (\n                i > 2\n                and nums[i - 1] - nums[i - 2] == 1\n                and nums[i - 2] - nums[i - 3] == 1\n            ):\n                dp[i] = dp[i] or dp[i - 3]\n        return dp[-1]\n\n`",
+            "content": "\nLeetCode problem 2369\n\nclass Solution:\n    def validPartition(self, nums: List[int]) -> bool:\n        n = len(nums)\n        dp = [False] * (n + 1)\n        dp[0] = True\n        for i in range(2, n + 1):\n            if nums[i - 1] == nums[i - 2]:\n                dp[i] = dp[i] or dp[i - 2]\n            if i > 2 and nums[i - 1] == nums[i - 2] == nums[i - 3]:\n                dp[i] = dp[i] or dp[i - 3]\n            if (\n                i > 2\n                and nums[i - 1] - nums[i - 2] == 1\n                and nums[i - 2] - nums[i - 3] == 1\n            ):\n                dp[i] = dp[i] or dp[i - 3]\n        return dp[-1]\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -7064,7 +7064,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2368/",
             "title": "2368. Reachable Nodes With Restrictions",
             "description": "2368. Reachable Nodes With Restrictions",
-            "content": "\nLeetCode problem 2368\n\nclass Solution:\n    def reachableNodes(\n        self, n: int, edges: List[List[int]], restricted: List[int]\n    ) -> int:\n        s = set(restricted)\n        g = defaultdict(list)\n        for a, b in edges:\n            g[a].append(b)\n            g[b].append(a)\n        q = deque([0])\n        vis = [False] * n\n        for v in restricted:\n            vis[v] = True\n        res = 0\n        while q:\n            i = q.popleft()\n            res += 1\n            vis[i] = True\n            for j in g[i]:\n                if not vis[j]:\n                    q.append(j)\n        return res\n\n`",
+            "content": "\nLeetCode problem 2368\n\nclass Solution:\n    def reachableNodes(\n        self, n: int, edges: List[List[int]], restricted: List[int]\n    ) -> int:\n        s = set(restricted)\n        g = defaultdict(list)\n        for a, b in edges:\n            g[a].append(b)\n            g[b].append(a)\n        q = deque([0])\n        vis = [False] * n\n        for v in restricted:\n            vis[v] = True\n        res = 0\n        while q:\n            i = q.popleft()\n            res += 1\n            vis[i] = True\n            for j in g[i]:\n                if not vis[j]:\n                    q.append(j)\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -7072,7 +7072,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2365/",
             "title": "2365. Task Scheduler II",
             "description": "2365. Task Scheduler II",
-            "content": "\nLeetCode problem 2365\n\nclass Solution:\n    def taskSchedulerII(self, tasks: List[int], space: int) -> int:\n        day = defaultdict(int)\n        res = 0\n        for task in tasks:\n            res += 1\n            res = max(res, day[task])\n            day[task] = res + space + 1\n        return res\n\n`",
+            "content": "\nLeetCode problem 2365\n\nclass Solution:\n    def taskSchedulerII(self, tasks: List[int], space: int) -> int:\n        day = defaultdict(int)\n        res = 0\n        for task in tasks:\n            res += 1\n            res = max(res, day[task])\n            day[task] = res + space + 1\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -7080,7 +7080,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2364/",
             "title": "2364. Count Number of Bad Pairs",
             "description": "2364. Count Number of Bad Pairs",
-            "content": "\nLeetCode problem 2364\n\nclass Solution:\n    def countBadPairs(self, nums: List[int]) -> int:\n        cnt = Counter()\n        res = 0\n        for i, x in enumerate(nums):\n            res += i - cnt[i - x]\n            cnt[i - x] += 1\n        return res\n\n`",
+            "content": "\nLeetCode problem 2364\n\nclass Solution:\n    def countBadPairs(self, nums: List[int]) -> int:\n        cnt = Counter()\n        res = 0\n        for i, x in enumerate(nums):\n            res += i - cnt[i - x]\n            cnt[i - x] += 1\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -7088,7 +7088,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2359/",
             "title": "2359. Find Closest Node to Given Two Nodes",
             "description": "2359. Find Closest Node to Given Two Nodes",
-            "content": "\nLeetCode problem 2359\n\nclass Solution:\n    def closestMeetingNode(self, edges: List[int], node1: int, node2: int) -> int:\n        def f(i):\n            dist = [inf] * n\n            dist[i] = 0\n            q = deque([i])\n            while q:\n                i = q.popleft()\n                for j in g[i]:\n                    if dist[j] == inf:\n                        dist[j] = dist[i] + 1\n                        q.append(j)\n            return dist\n\n        g = defaultdict(list)\n        for i, j in enumerate(edges):\n            if j != -1:\n                g[i].append(j)\n        n = len(edges)\n        d1 = f(node1)\n        d2 = f(node2)\n        res, d = -1, inf\n        for i, (a, b) in enumerate(zip(d1, d2)):\n            if (t := max(a, b)) < d:\n                d = t\n                res = i\n        return res\n\n`",
+            "content": "\nLeetCode problem 2359\n\nclass Solution:\n    def closestMeetingNode(self, edges: List[int], node1: int, node2: int) -> int:\n        def f(i):\n            dist = [inf] * n\n            dist[i] = 0\n            q = deque([i])\n            while q:\n                i = q.popleft()\n                for j in g[i]:\n                    if dist[j] == inf:\n                        dist[j] = dist[i] + 1\n                        q.append(j)\n            return dist\n\n        g = defaultdict(list)\n        for i, j in enumerate(edges):\n            if j != -1:\n                g[i].append(j)\n        n = len(edges)\n        d1 = f(node1)\n        d2 = f(node2)\n        res, d = -1, inf\n        for i, (a, b) in enumerate(zip(d1, d2)):\n            if (t := max(a, b)) < d:\n                d = t\n                res = i\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -7096,7 +7096,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2358/",
             "title": "2358. Maximum Number of Groups Entering a Competition",
             "description": "2358. Maximum Number of Groups Entering a Competition",
-            "content": "\nLeetCode problem 2358\n\nclass Solution:\n    def maximumGroups(self, grades: List[int]) -> int:\n        n = len(grades)\n        return bisect_right(range(n + 1), n * 2, key=lambda x: x * x + x) - 1\n\n`",
+            "content": "\nLeetCode problem 2358\n\nclass Solution:\n    def maximumGroups(self, grades: List[int]) -> int:\n        n = len(grades)\n        return bisect_right(range(n + 1), n * 2, key=lambda x: x * x + x) - 1\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -7104,7 +7104,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/2353/",
             "title": "2353. Design a Food Rating System",
             "description": "2353. Design a Food Rating System",
-            "content": "\nLeetCode problem 2353\n\nfrom sortedcontainers import SortedSet\n\n\nclass FoodRatings:\n    def init(self, foods: List[str], cuisines: List[str], ratings: List[int]):\n        self.mp = {}\n        self.t = defaultdict(lambda: SortedSet(key=lambda x: (-x[0], x[1])))\n\n        for a, b, c in zip(foods, cuisines, ratings):\n            self.mp[a] = (b, c)\n            self.t[b].add((c, a))\n\n    def changeRating(self, food: str, newRating: int) -> None:\n        b, c = self.mp[food]\n        self.mp[food] = (b, newRating)\n        self.t[b].remove((c, food))\n        self.t[b].add((newRating, food))\n\n    def highestRated(self, cuisine: str) -> str:\n        return self.tcuisine[1]\n\nYour FoodRatings object will be instantiated and called as such:\nobj = FoodRatings(foods, cuisines, ratings)\nobj.changeRating(food,newRating)\nparam_2 = obj.highestRated(cuisine)\n\n`",
+            "content": "\nLeetCode problem 2353\n\nfrom sortedcontainers import SortedSet\n\n\nclass FoodRatings:\n    def init(self, foods: List[str], cuisines: List[str], ratings: List[int]):\n        self.mp = {}\n        self.t = defaultdict(lambda: SortedSet(key=lambda x: (-x[0], x[1])))\n\n        for a, b, c in zip(foods, cuisines, ratings):\n            self.mp[a] = (b, c)\n            self.t[b].add((c, a))\n\n    def changeRating(self, food: str, newRating: int) -> None:\n        b, c = self.mp[food]\n        self.mp[food] = (b, newRating)\n        self.t[b].remove((c, food))\n        self.t[b].add((newRating, food))\n\n    def highestRated(self, cuisine: str) -> str:\n        return self.tcuisine[1]\n\nYour FoodRatings object will be instantiated and called as such:\nobj = FoodRatings(foods, cuisines, ratings)\nobj.changeRating(food,newRating)\nparam_2 = obj.highestRated(cuisine)\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -7996,7 +7996,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2427/",
             "title": "2427. Number of Common Factors",
             "description": "2427. Number of Common Factors",
-            "content": "\nLeetCode problem 2427\n\nclass Solution:\n    def commonFactors(self, a: int, b: int) -> int:\n        g = gcd(a, b)\n        res, x = 0, 1\n        while x * x <= g:\n            if g % x == 0:\n                res += 1\n                res += x * x < g\n            x += 1\n        return res\n\n`",
+            "content": "\nLeetCode problem 2427\n\nclass Solution:\n    def commonFactors(self, a: int, b: int) -> int:\n        g = gcd(a, b)\n        res, x = 0, 1\n        while x * x <= g:\n            if g % x == 0:\n                res += 1\n                res += x * x < g\n            x += 1\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -8004,7 +8004,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2423/",
             "title": "2423. Remove Letter To Equalize Frequency",
             "description": "2423. Remove Letter To Equalize Frequency",
-            "content": "\nLeetCode problem 2423\n\nclass Solution:\n    def equalFrequency(self, word: str) -> bool:\n        cnt = Counter(word)\n        for c in cnt.keys():\n            cnt[c] -= 1\n            if len(set(v for v in cnt.values() if v)) == 1:\n                return True\n            cnt[c] += 1\n        return False\n\n`",
+            "content": "\nLeetCode problem 2423\n\nclass Solution:\n    def equalFrequency(self, word: str) -> bool:\n        cnt = Counter(word)\n        for c in cnt.keys():\n            cnt[c] -= 1\n            if len(set(v for v in cnt.values() if v)) == 1:\n                return True\n            cnt[c] += 1\n        return False\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -8012,7 +8012,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2418/",
             "title": "2418. Sort the People",
             "description": "2418. Sort the People",
-            "content": "\nLeetCode problem 2418\n\nclass Solution:\n    def sortPeople(self, names: List[str], heights: List[int]) -> List[str]:\n        return [name for _, name in sorted(zip(heights, names), reverse=True)]\n\n`",
+            "content": "\nLeetCode problem 2418\n\nclass Solution:\n    def sortPeople(self, names: List[str], heights: List[int]) -> List[str]:\n        return [name for _, name in sorted(zip(heights, names), reverse=True)]\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -8020,7 +8020,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2413/",
             "title": "2413. Smallest Even Multiple",
             "description": "2413. Smallest Even Multiple",
-            "content": "\nLeetCode problem 2413\n\nclass Solution:\n    def smallestEvenMultiple(self, n: int) -> int:\n        return n if n % 2 == 0 else n * 2\n\n`",
+            "content": "\nLeetCode problem 2413\n\nclass Solution:\n    def smallestEvenMultiple(self, n: int) -> int:\n        return n if n % 2 == 0 else n * 2\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -8028,7 +8028,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2409/",
             "title": "2409. Count Days Spent Together",
             "description": "2409. Count Days Spent Together",
-            "content": "\nLeetCode problem 2409\n\nclass Solution:\n    def countDaysTogether(\n        self, arriveAlice: str, leaveAlice: str, arriveBob: str, leaveBob: str\n    ) -> int:\n        a = max(arriveAlice, arriveBob)\n        b = min(leaveAlice, leaveBob)\n        days = (31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)\n        x = sum(days[: int(a[:2]) - 1]) + int(a[3:])\n        y = sum(days[: int(b[:2]) - 1]) + int(b[3:])\n        return max(y - x + 1, 0)\n\n`",
+            "content": "\nLeetCode problem 2409\n\nclass Solution:\n    def countDaysTogether(\n        self, arriveAlice: str, leaveAlice: str, arriveBob: str, leaveBob: str\n    ) -> int:\n        a = max(arriveAlice, arriveBob)\n        b = min(leaveAlice, leaveBob)\n        days = (31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)\n        x = sum(days[: int(a[:2]) - 1]) + int(a[3:])\n        y = sum(days[: int(b[:2]) - 1]) + int(b[3:])\n        return max(y - x + 1, 0)\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -8036,7 +8036,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2404/",
             "title": "2404. Most Frequent Even Element",
             "description": "2404. Most Frequent Even Element",
-            "content": "\nLeetCode problem 2404\n\nclass Solution:\n    def mostFrequentEven(self, nums: List[int]) -> int:\n        cnt = Counter(x for x in nums if x % 2 == 0)\n        res, mx = -1, 0\n        for x, v in cnt.items():\n            if v > mx or (v == mx and res > x):\n                res, mx = x, v\n        return res\n\n`",
+            "content": "\nLeetCode problem 2404\n\nclass Solution:\n    def mostFrequentEven(self, nums: List[int]) -> int:\n        cnt = Counter(x for x in nums if x % 2 == 0)\n        res, mx = -1, 0\n        for x, v in cnt.items():\n            if v > mx or (v == mx and res > x):\n                res, mx = x, v\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -8044,7 +8044,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2399/",
             "title": "2399. Check Distances Between Same Letters",
             "description": "2399. Check Distances Between Same Letters",
-            "content": "\nLeetCode problem 2399\n\nclass Solution:\n    def checkDistances(self, s: str, distance: List[int]) -> bool:\n        d = defaultdict(int)\n        for i, c in enumerate(s, 1):\n            if d[c] and i - d[c] - 1 != distance[ord(c) - ord('a')]:\n                return False\n            d[c] = i\n        return True\n\n`",
+            "content": "\nLeetCode problem 2399\n\nclass Solution:\n    def checkDistances(self, s: str, distance: List[int]) -> bool:\n        d = defaultdict(int)\n        for i, c in enumerate(s, 1):\n            if d[c] and i - d[c] - 1 != distance[ord(c) - ord('a')]:\n                return False\n            d[c] = i\n        return True\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -8052,7 +8052,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2395/",
             "title": "2395. Find Subarrays With Equal Sum",
             "description": "2395. Find Subarrays With Equal Sum",
-            "content": "\nLeetCode problem 2395\n\nclass Solution:\n    def findSubarrays(self, nums: List[int]) -> bool:\n        vis = set()\n        for a, b in pairwise(nums):\n            if (x := a + b) in vis:\n                return True\n            vis.add(x)\n        return False\n\n`",
+            "content": "\nLeetCode problem 2395\n\nclass Solution:\n    def findSubarrays(self, nums: List[int]) -> bool:\n        vis = set()\n        for a, b in pairwise(nums):\n            if (x := a + b) in vis:\n                return True\n            vis.add(x)\n        return False\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -8060,7 +8060,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2389/",
             "title": "2389. Longest Subsequence With Limited Sum",
             "description": "2389. Longest Subsequence With Limited Sum",
-            "content": "\nLeetCode problem 2389\n\nclass Solution:\n    def answerQueries(self, nums: List[int], queries: List[int]) -> List[int]:\n        nums.sort()\n        m = len(queries)\n        res = [0] * m\n        idx = sorted(range(m), key=lambda i: queries[i])\n        s = j = 0\n        for i in idx:\n            while j < len(nums) and s + nums[j] <= queries[i]:\n                s += nums[j]\n                j += 1\n            res[i] = j\n        return res\n\n`",
+            "content": "\nLeetCode problem 2389\n\nclass Solution:\n    def answerQueries(self, nums: List[int], queries: List[int]) -> List[int]:\n        nums.sort()\n        m = len(queries)\n        res = [0] * m\n        idx = sorted(range(m), key=lambda i: queries[i])\n        s = j = 0\n        for i in idx:\n            while j < len(nums) and s + nums[j] <= queries[i]:\n                s += nums[j]\n                j += 1\n            res[i] = j\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -8068,7 +8068,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2383/",
             "title": "2383. Minimum Hours of Training to Win a Competition",
             "description": "2383. Minimum Hours of Training to Win a Competition",
-            "content": "\nLeetCode problem 2383\n\nclass Solution:\n    def minNumberOfHours(\n        self,\n        initialEnergy: int,\n        initialExperience: int,\n        energy: List[int],\n        experience: List[int],\n    ) -> int:\n        res = max(0, sum(energy) - initialEnergy + 1)\n        for x in experience:\n            if initialExperience <= x:\n                res += x - initialExperience + 1\n                initialExperience = x + 1\n            initialExperience += x\n        return res\n\n`",
+            "content": "\nLeetCode problem 2383\n\nclass Solution:\n    def minNumberOfHours(\n        self,\n        initialEnergy: int,\n        initialExperience: int,\n        energy: List[int],\n        experience: List[int],\n    ) -> int:\n        res = max(0, sum(energy) - initialEnergy + 1)\n        for x in experience:\n            if initialExperience <= x:\n                res += x - initialExperience + 1\n                initialExperience = x + 1\n            initialExperience += x\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -8076,7 +8076,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2379/",
             "title": "2379. Minimum Recolors to Get K Consecutive Black Blocks",
             "description": "2379. Minimum Recolors to Get K Consecutive Black Blocks",
-            "content": "\nLeetCode problem 2379\n\nclass Solution:\n    def minimumRecolors(self, blocks: str, k: int) -> int:\n        res = cnt = blocks[:k].count('W')\n        for i in range(k, len(blocks)):\n            cnt += blocks[i] == 'W'\n            cnt -= blocks[i - k] == 'W'\n            res = min(res, cnt)\n        return res\n\n`",
+            "content": "\nLeetCode problem 2379\n\nclass Solution:\n    def minimumRecolors(self, blocks: str, k: int) -> int:\n        res = cnt = blocks[:k].count('W')\n        for i in range(k, len(blocks)):\n            cnt += blocks[i] == 'W'\n            cnt -= blocks[i - k] == 'W'\n            res = min(res, cnt)\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -8084,7 +8084,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2373/",
             "title": "2373. Largest Local Values in a Matrix",
             "description": "2373. Largest Local Values in a Matrix",
-            "content": "\nLeetCode problem 2373\n\nclass Solution:\n    def largestLocal(self, grid: List[List[int]]) -> List[List[int]]:\n        n = len(grid)\n        res = [[0] * (n - 2) for _ in range(n - 2)]\n        for i in range(n - 2):\n            for j in range(n - 2):\n                resi = max(\n                    gridx for x in range(i, i + 3) for y in range(j, j + 3)\n                )\n        return res\n\n`",
+            "content": "\nLeetCode problem 2373\n\nclass Solution:\n    def largestLocal(self, grid: List[List[int]]) -> List[List[int]]:\n        n = len(grid)\n        res = [[0] * (n - 2) for _ in range(n - 2)]\n        for i in range(n - 2):\n            for j in range(n - 2):\n                resi = max(\n                    gridx for x in range(i, i + 3) for y in range(j, j + 3)\n                )\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -8092,7 +8092,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2367/",
             "title": "2367. Number of Arithmetic Triplets",
             "description": "2367. Number of Arithmetic Triplets",
-            "content": "\nLeetCode problem 2367\n\nclass Solution:\n    def arithmeticTriplets(self, nums: List[int], diff: int) -> int:\n        vis = set(nums)\n        return sum(x + diff in vis and x + diff * 2 in vis for x in nums)\n\n`",
+            "content": "\nLeetCode problem 2367\n\nclass Solution:\n    def arithmeticTriplets(self, nums: List[int], diff: int) -> int:\n        vis = set(nums)\n        return sum(x + diff in vis and x + diff * 2 in vis for x in nums)\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -8100,7 +8100,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2363/",
             "title": "2363. Merge Similar Items",
             "description": "2363. Merge Similar Items",
-            "content": "\nLeetCode problem 2363\n\nclass Solution:\n    def mergeSimilarItems(\n        self, items1: List[List[int]], items2: List[List[int]]\n    ) -> List[List[int]]:\n        cnt = Counter()\n        for v, w in chain(items1, items2):\n            cnt[v] += w\n        return sorted(cnt.items())\n\n`",
+            "content": "\nLeetCode problem 2363\n\nclass Solution:\n    def mergeSimilarItems(\n        self, items1: List[List[int]], items2: List[List[int]]\n    ) -> List[List[int]]:\n        cnt = Counter()\n        for v, w in chain(items1, items2):\n            cnt[v] += w\n        return sorted(cnt.items())\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -8108,7 +8108,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2357/",
             "title": "2357. Make Array Zero by Subtracting Equal Amounts",
             "description": "2357. Make Array Zero by Subtracting Equal Amounts",
-            "content": "\nLeetCode problem 2357\n\nclass Solution:\n    def minimumOperations(self, nums: List[int]) -> int:\n        return len({x for x in nums if x})\n\n`",
+            "content": "\nLeetCode problem 2357\n\nclass Solution:\n    def minimumOperations(self, nums: List[int]) -> int:\n        return len({x for x in nums if x})\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -8116,7 +8116,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2351/",
             "title": "2351. First Letter to Appear Twice",
             "description": "2351. First Letter to Appear Twice",
-            "content": "\nLeetCode problem 2351\n\nclass Solution:\n    def repeatedCharacter(self, s: str) -> str:\n        mask = 0\n        for c in s:\n            i = ord(c) - ord('a')\n            if mask >> i & 1:\n                return c\n            mask |= 1 << i\n\n`",
+            "content": "\nLeetCode problem 2351\n\nclass Solution:\n    def repeatedCharacter(self, s: str) -> str:\n        mask = 0\n        for c in s:\n            i = ord(c) - ord('a')\n            if mask >> i & 1:\n                return c\n            mask |= 1 << i\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -8124,7 +8124,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2347/",
             "title": "2347. Best Poker Hand",
             "description": "2347. Best Poker Hand",
-            "content": "\nLeetCode problem 2347\n\nclass Solution:\n    def bestHand(self, ranks: List[int], suits: List[str]) -> str:\nif len(set(suits)) == 1:\n        if all(a == b for a, b in pairwise(suits)):\n            return 'Flush'\n        cnt = Counter(ranks)\n        if any(v >= 3 for v in cnt.values()):\n            return 'Three of a Kind'\n        if any(v == 2 for v in cnt.values()):\n            return 'Pair'\n        return 'High Card'\n\n`",
+            "content": "\nLeetCode problem 2347\n\nclass Solution:\n    def bestHand(self, ranks: List[int], suits: List[str]) -> str:\nif len(set(suits)) == 1:\n        if all(a == b for a, b in pairwise(suits)):\n            return 'Flush'\n        cnt = Counter(ranks)\n        if any(v >= 3 for v in cnt.values()):\n            return 'Three of a Kind'\n        if any(v == 2 for v in cnt.values()):\n            return 'Pair'\n        return 'High Card'\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -8132,7 +8132,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2341/",
             "title": "2341. Maximum Number of Pairs in Array",
             "description": "2341. Maximum Number of Pairs in Array",
-            "content": "\nLeetCode problem 2341\n\nclass Solution:\n    def numberOfPairs(self, nums: List[int]) -> List[int]:\n        cnt = Counter(nums)\n        s = sum(v // 2 for v in cnt.values())\n        return [s, len(nums) - s * 2]\n\n`",
+            "content": "\nLeetCode problem 2341\n\nclass Solution:\n    def numberOfPairs(self, nums: List[int]) -> List[int]:\n        cnt = Counter(nums)\n        s = sum(v // 2 for v in cnt.values())\n        return [s, len(nums) - s * 2]\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -8152,7 +8152,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2335/",
             "title": "2335. Minimum Amount of Time to Fill Cups",
             "description": "2335. Minimum Amount of Time to Fill Cups",
-            "content": "\nLeetCode problem 2335\n\nclass Solution:\n    def fillCups(self, amount: List[int]) -> int:\n        amount.sort()\n        if amount[0] + amount[1] <= amount[2]:\n            return amount[2]\n        return (sum(amount) + 1) // 2\n\n`",
+            "content": "\nLeetCode problem 2335\n\nclass Solution:\n    def fillCups(self, amount: List[int]) -> int:\n        amount.sort()\n        if amount[0] + amount[1] <= amount[2]:\n            return amount[2]\n        return (sum(amount) + 1) // 2\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -8160,7 +8160,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2331/",
             "title": "2331. Evaluate Boolean Binary Tree",
             "description": "2331. Evaluate Boolean Binary Tree",
-            "content": "\nLeetCode problem 2331\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def evaluateTree(self, root: Optional[TreeNode]) -> bool:\n        if root.left is None:\n            return bool(root.val)\n        l = self.evaluateTree(root.left)\n        r = self.evaluateTree(root.right)\n        return l or r if root.val == 2 else l and r\n\n`",
+            "content": "\nLeetCode problem 2331\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def evaluateTree(self, root: Optional[TreeNode]) -> bool:\n        if root.left is None:\n            return bool(root.val)\n        l = self.evaluateTree(root.left)\n        r = self.evaluateTree(root.right)\n        return l or r if root.val == 2 else l and r\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -8168,7 +8168,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2325/",
             "title": "2325. Decode the Message",
             "description": "2325. Decode the Message",
-            "content": "\nLeetCode problem 2325\n\nclass Solution:\n    def decodeMessage(self, key: str, message: str) -> str:\n        d = {\" \": \" \"}\n        i = 0\n        for c in key:\n            if c not in d:\n                d[c] = ascii_lowercase[i]\n                i += 1\n        return \"\".join(d[c] for c in message)\n\n`",
+            "content": "\nLeetCode problem 2325\n\nclass Solution:\n    def decodeMessage(self, key: str, message: str) -> str:\n        d = {\" \": \" \"}\n        i = 0\n        for c in key:\n            if c not in d:\n                d[c] = ascii_lowercase[i]\n                i += 1\n        return \"\".join(d[c] for c in message)\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -8176,7 +8176,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2319/",
             "title": "2319. Check if Matrix Is X-Matrix",
             "description": "2319. Check if Matrix Is X-Matrix",
-            "content": "\nLeetCode problem 2319\n\nclass Solution:\n    def checkXMatrix(self, grid: List[List[int]]) -> bool:\n        for i, row in enumerate(grid):\n            for j, v in enumerate(row):\n                if i == j or i + j == len(grid) - 1:\n                    if v == 0:\n                        return False\n                elif v:\n                    return False\n        return True\n\n`",
+            "content": "\nLeetCode problem 2319\n\nclass Solution:\n    def checkXMatrix(self, grid: List[List[int]]) -> bool:\n        for i, row in enumerate(grid):\n            for j, v in enumerate(row):\n                if i == j or i + j == len(grid) - 1:\n                    if v == 0:\n                        return False\n                elif v:\n                    return False\n        return True\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -8184,7 +8184,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2315/",
             "title": "2315. Count Asterisks",
             "description": "2315. Count Asterisks",
-            "content": "\nLeetCode problem 2315\n\nclass Solution:\n    def countAsterisks(self, s: str) -> int:\n        res, ok = 0, 1\n        for c in s:\n            if c == \"*\":\n                res += ok\n            elif c == \"|\":\n                ok ^= 1\n        return res\n\n`",
+            "content": "\nLeetCode problem 2315\n\nclass Solution:\n    def countAsterisks(self, s: str) -> int:\n        res, ok = 0, 1\n        for c in s:\n            if c == \"*\":\n                res += ok\n            elif c == \"|\":\n                ok ^= 1\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -8192,7 +8192,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2309/",
             "title": "2309. Greatest English Letter in Upper and Lower Case",
             "description": "2309. Greatest English Letter in Upper and Lower Case",
-            "content": "\nLeetCode problem 2309\n\nclass Solution:\n    def greatestLetter(self, s: str) -> str:\n        mask1 = mask2 = 0\n        for c in s:\n            if c.islower():\n                mask1 |= 1 << (ord(c) - ord(\"a\"))\n            else:\n                mask2 |= 1 << (ord(c) - ord(\"A\"))\n        mask = mask1 & mask2\n        return chr(mask.bit_length() - 1 + ord(\"A\")) if mask else \"\"\n\n`",
+            "content": "\nLeetCode problem 2309\n\nclass Solution:\n    def greatestLetter(self, s: str) -> str:\n        mask1 = mask2 = 0\n        for c in s:\n            if c.islower():\n                mask1 |= 1 << (ord(c) - ord(\"a\"))\n            else:\n                mask2 |= 1 << (ord(c) - ord(\"A\"))\n        mask = mask1 & mask2\n        return chr(mask.bit_length() - 1 + ord(\"A\")) if mask else \"\"\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -8200,7 +8200,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2303/",
             "title": "2303. Calculate Amount Paid in Taxes",
             "description": "2303. Calculate Amount Paid in Taxes",
-            "content": "\nLeetCode problem 2303\n\nclass Solution:\n    def calculateTax(self, brackets: List[List[int]], income: int) -> float:\n        res = prev = 0\n        for upper, percent in brackets:\n            res += max(0, min(income, upper) - prev) * percent\n            prev = upper\n        return res / 100\n\n`",
+            "content": "\nLeetCode problem 2303\n\nclass Solution:\n    def calculateTax(self, brackets: List[List[int]], income: int) -> float:\n        res = prev = 0\n        for upper, percent in brackets:\n            res += max(0, min(income, upper) - prev) * percent\n            prev = upper\n        return res / 100\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -8208,7 +8208,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2299/",
             "title": "2299. Strong Password Checker II",
             "description": "2299. Strong Password Checker II",
-            "content": "\nLeetCode problem 2299\n\nclass Solution:\n    def strongPasswordCheckerII(self, password: str) -> bool:\n        if len(password) < 8:\n            return False\n        mask = 0\n        for i, c in enumerate(password):\n            if i and c == password[i - 1]:\n                return False\n            if c.islower():\n                mask |= 1\n            elif c.isupper():\n                mask |= 2\n            elif c.isdigit():\n                mask |= 4\n            else:\n                mask |= 8\n        return mask == 15\n\n`",
+            "content": "\nLeetCode problem 2299\n\nclass Solution:\n    def strongPasswordCheckerII(self, password: str) -> bool:\n        if len(password) < 8:\n            return False\n        mask = 0\n        for i, c in enumerate(password):\n            if i and c == password[i - 1]:\n                return False\n            if c.islower():\n                mask |= 1\n            elif c.isupper():\n                mask |= 2\n            elif c.isdigit():\n                mask |= 4\n            else:\n                mask |= 8\n        return mask == 15\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -8216,7 +8216,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2293/",
             "title": "2293. Min Max Game",
             "description": "2293. Min Max Game",
-            "content": "\nLeetCode problem 2293\n\nclass Solution:\n    def minMaxGame(self, nums: List[int]) -> int:\n        n = len(nums)\n        while n > 1:\n            n >>= 1\n            for i in range(n):\n                a, b = nums[i << 1], nums[i << 1 | 1]\n                nums[i] = min(a, b) if i % 2 == 0 else max(a, b)\n        return nums[0]\n\n`",
+            "content": "\nLeetCode problem 2293\n\nclass Solution:\n    def minMaxGame(self, nums: List[int]) -> int:\n        n = len(nums)\n        while n > 1:\n            n >>= 1\n            for i in range(n):\n                a, b = nums[i << 1], nums[i << 1 | 1]\n                nums[i] = min(a, b) if i % 2 == 0 else max(a, b)\n        return nums[0]\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -8224,7 +8224,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2287/",
             "title": "2287. Rearrange Characters to Make Target String",
             "description": "2287. Rearrange Characters to Make Target String",
-            "content": "\nLeetCode problem 2287\n\nclass Solution:\n    def rearrangeCharacters(self, s: str, target: str) -> int:\n        cnt1 = Counter(s)\n        cnt2 = Counter(target)\n        return min(cnt1[c] // v for c, v in cnt2.items())\n\n`",
+            "content": "\nLeetCode problem 2287\n\nclass Solution:\n    def rearrangeCharacters(self, s: str, target: str) -> int:\n        cnt1 = Counter(s)\n        cnt2 = Counter(target)\n        return min(cnt1[c] // v for c, v in cnt2.items())\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -8232,7 +8232,7 @@
             "uri": "/tracks/algorithms-101/leetcode/easy/2283/",
             "title": "2283. Check if Number Has Equal Digit Count and Digit Value",
             "description": "2283. Check if Number Has Equal Digit Count and Digit Value",
-            "content": "\nLeetCode problem 2283\n\nclass Solution:\n    def digitCount(self, num: str) -> bool:\n        cnt = Counter(num)\n        return all(cnt[str(i)] == int(v) for i, v in enumerate(num))\n\n`",
+            "content": "\nLeetCode problem 2283\n\nclass Solution:\n    def digitCount(self, num: str) -> bool:\n        cnt = Counter(num)\n        return all(cnt[str(i)] == int(v) for i, v in enumerate(num))\n\n",
             "tags": [],
             "lang": "en"
         },
