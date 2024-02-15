@@ -1,0 +1,266 @@
+<!doctype html><html lang=ru dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo "><title>LeetCode | Roman Kurnovskii</title><meta property="og:title" content="LeetCode | Roman Kurnovskii">
+<meta property="og:type" content="
+    website
+  "><meta property="og:image" content="https://romankurnovskii.com/images/icon.png"><meta property="og:url" content="https://romankurnovskii.com/ru/categories/leetcode/"><meta property="og:description" content="Роман Курновский"><meta property="og:locale" content="ru"><meta property="og:locale:alternate" content="en"><meta property="og:site_name" content="Roman Kurnovskii"><meta property="og:updated_time" content="2024-02-12T00:00:00+00:00"><meta property="article:section" content="categories"><link rel=icon type=image/png sizes=32x32 href=https://romankurnovskii.com/images/icon_hue1dbff57f88a67aa7648ea17ec2ff550_10770_32x32_fill_box_center_3.png><link rel=apple-touch-icon sizes=180x180 href=https://romankurnovskii.com/images/icon_hue1dbff57f88a67aa7648ea17ec2ff550_10770_180x180_fill_box_center_3.png><link href=https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css rel=stylesheet crossorigin=anonymous><link href=https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css rel=stylesheet crossorigin=anonymous><script src=https://unpkg.com/flowbite@1.5.1/dist/flowbite.js></script><script src=https://unpkg.com/axios@0.27.2/dist/axios.min.js></script><script src=https://unpkg.com/lunr@2.3.9/lunr.min.js></script><script src=https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js></script><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" media=print onload='this.media="all",this.onload=null' crossorigin><script src=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/js/all.min.js integrity=" sha512-8pHNiqTlsrRjVD4A/3va++W1sMbUHwWxxRPWNyVlql3T+Hgfd81Qc6FC5WMXDC+tSauxxzp1tgiAvSKFu1qIlA==" defer crossorigin></script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap" rel=stylesheet><link rel=stylesheet href=https://romankurnovskii.com/css/yalla.min.2afaab5fac4239dae55041c29c6b958f542503fcc709d748057a8726118d380567064a0a0cb7626517ccd5803eed67a6.css><script defer src=https://romankurnovskii.com/js/yalla.min.bd2d05fa81daadad565612eee61166b09779d0debd5700a434e9f53133ea7de984ae0332e2ec0e48ecca0cadd3c25b5f.js></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css media=print onload='this.media="all",this.onload=null' crossorigin><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js crossorigin></script><script defer src=https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js crossorigin></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})})</script><script defer src=https://cdn.jsdelivr.net/npm/mermaid@9.1.3/dist/mermaid.min.js crossorigin></script><meta name=description content="
+    Роман Курновский
+  
+  "><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Categories","item":"https://romankurnovskii.com/ru/categories/"},{"@type":"ListItem","position":2,"name":"LeetCode","item":"https://romankurnovskii.com/ru/categories/leetcode/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"name":"2379. Minimum Recolors to Get K Consecutive Black Blocks","description":"2379. Minimum Recolors to Get K Consecutive Black Blocks","image":"https://picsum.photos/700/155?grayscale","url":"https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/2379/"},{"@type":"ListItem","position":2,"name":"2380. Time Needed to Rearrange a Binary String","description":"2380. Time Needed to Rearrange a Binary String","image":"https://picsum.photos/700/155?grayscale","url":"https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2380/"},{"@type":"ListItem","position":3,"name":"2381. Shifting Letters II","description":"2381. Shifting Letters II","image":"https://picsum.photos/700/155?grayscale","url":"https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2381/"},{"@type":"ListItem","position":4,"name":"2383. Minimum Hours of Training to Win a Competition","description":"2383. Minimum Hours of Training to Win a Competition","image":"https://picsum.photos/700/155?grayscale","url":"https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/2383/"},{"@type":"ListItem","position":5,"name":"2384. Largest Palindromic Number","description":"2384. Largest Palindromic Number","image":"https://picsum.photos/700/155?grayscale","url":"https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2384/"},{"@type":"ListItem","position":6,"name":"2385. Amount of Time for Binary Tree to Be Infected","description":"2385. Amount of Time for Binary Tree to Be Infected","image":"https://picsum.photos/700/155?grayscale","url":"https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2385/"},{"@type":"ListItem","position":7,"name":"2387. Median of a Row Wise Sorted Matrix","description":"2387. Median of a Row Wise Sorted Matrix","image":"https://picsum.photos/700/155?grayscale","url":"https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2387/"},{"@type":"ListItem","position":8,"name":"2389. Longest Subsequence With Limited Sum","description":"2389. Longest Subsequence With Limited Sum","image":"https://picsum.photos/700/155?grayscale","url":"https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/2389/"},{"@type":"ListItem","position":9,"name":"2390. Removing Stars From a String","description":"2390. Removing Stars From a String","image":"https://picsum.photos/700/155?grayscale","url":"https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2390/"},{"@type":"ListItem","position":10,"name":"2390. Removing Stars From a String","description":"A step-by-step guide to solving the \"Removing Stars From a String\" problem on LeetCode.","image":"https://picsum.photos/700/241?grayscale","url":"https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/2390/"},{"@type":"ListItem","position":11,"name":"2391. Minimum Amount of Time to Collect Garbage","description":"2391. Minimum Amount of Time to Collect Garbage","image":"https://picsum.photos/700/155?grayscale","url":"https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2391/"},{"@type":"ListItem","position":12,"name":"2393. Count Strictly Increasing Subarrays","description":"2393. Count Strictly Increasing Subarrays","image":"https://picsum.photos/700/155?grayscale","url":"https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2393/"},{"@type":"ListItem","position":13,"name":"2395. Find Subarrays With Equal Sum","description":"2395. Find Subarrays With Equal Sum","image":"https://picsum.photos/700/155?grayscale","url":"https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/2395/"}]}</script><link rel=alternate type=application/rss+xml href=https://romankurnovskii.com/ru/categories/leetcode/index.xml title="Roman Kurnovskii"><link rel=preconnect href=https://www.google-analytics.com crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=G-26F2C5ZR4Y"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-26F2C5ZR4Y")</script><script type=text/javascript>(function(e,t,n,s,o,i,a){e[o]=e[o]||function(){(e[o].a=e[o].a||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js?v2","ym"),ym(87734724,"init",{clickmap:!0,trackLinks:!0,accurateTrackBounce:!0,webvisor:!0})</script><noscript><div><img src=https://mc.yandex.ru/watch/87734724 style=position:absolute;left:-9999px alt></div></noscript><script>let storageColorScheme=localStorage.getItem("lightDarkMode");const isDark2=JSON.parse(localStorage.getItem("DarkMode")||"false");isDark2?storageColorScheme="Dark":storageColorScheme="Light",((storageColorScheme=="Auto"||storageColorScheme==null)&&window.matchMedia("(prefers-color-scheme: dark)").matches||storageColorScheme=="Dark")&&document.getElementsByTagName("html")[0].classList.add("dark")</script></head><body class="flex min-h-screen flex-col"><header><div class="mx-auto w-full max-w-screen-xl"><nav class="flex flex-wrap items-center justify-between px-4 py-4 md:py-0"><button id=navbar-btn class="flex items-center px-3 py-2 md:hidden" aria-label="open mobile menu">
+<i class="fas fa-bars"></i>
+</button>
+<a href=/ru class="site-title me-6 text-primary-text text-xl font-bold">Roman Kurnovskii</a><div id=mobile-burger-menu class="text-primary-text z-20 block hidden w-full md:flex md:w-auto md:grow md:items-center md:justify-between"><ul id=menu><li class=parent><a href=/ru/posts/ class="md:h-(16-4px) md:leading-(16-4px)
+border-transparent
+me-4 mt-4 box-border block md:mt-0 md:inline-block md:border-t-2 md:border-b-2">Заметки</a><ul class=child><li class=parent><a href=/ru/categories/roadmaps/>Руководства
+<span class=expand>»</span></a><ul class=child><li class=parent><a href=/ru/tracks/python-101/>Справочник Python</a></li><li class=parent><a href=/ru/tracks/webrtc/>Справочник WebRTC</a></li><li class=parent><a href=/ru/tracks/disser/>Диссертация</a></li><li class=parent><a href=/ru/tracks/algorithms-101/leetcode/>Алгоритмы</a></li></ul></li><li class=parent><a href=/ru/categories/programming/>Программирование
+<span class=expand>»</span></a><ul class=child><li class=parent><a href=/ru/categories/hugo/>Hugo</a></li><li class=parent><a href=/ru/categories/javascript/>JavaScript</a></li><li class=parent><a href=/ru/categories/python/>Python</a></li></ul></li><li><a href=/en/p/links/>Links</a></li></ul></li><li class=parent><a href=/ru/apps/ class="md:h-(16-4px) md:leading-(16-4px)
+border-transparent
+me-4 mt-4 box-border block md:mt-0 md:inline-block md:border-t-2 md:border-b-2">Приложения</a></li><li class=parent><a href=/ru/p/publications class="md:h-(16-4px) md:leading-(16-4px)
+border-transparent
+me-4 mt-4 box-border block md:mt-0 md:inline-block md:border-t-2 md:border-b-2">Публикации</a></li></ul></div><div class=flex><div class="relative pt-4 md:pt-0"><form id=search class="flex items-center"><label for=search-input class=sr-only>Search</label><div class="relative w-full"><input type=text type=search id=search-input class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 pl-10 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500" placeholder=Search required></div></form></div><div class="ps-2 relative pt-4 md:pt-0"><button class="rounded border p-1 hover:bg-slate-200 dark:border-slate-700 dark:hover:bg-slate-700" onclick='location.href="/ru/search/"'>
+<img width=13 src=https://img.icons8.com/ios-glyphs/30/null/search-more.png></button></div><div class="ps-2 relative pt-4 md:pt-0"><div class="hover:text-yalla cursor-pointer" id=languageMode><img src=https://img.icons8.com/external-royyan-wijaya-detailed-outline-royyan-wijaya/24/null/external-translate-communication-royyan-wijaya-detailed-outline-royyan-wijaya-2.png>
+<span class=ps-1>РУ</span></div><div class="fixed inset-0 z-30 hidden h-full w-full cursor-default opacity-0" id=is-open-lang></div><div class="start-0 md:start-auto end-auto md:end-0 bg-secondary-bg border-tertiary-bg absolute z-40 flex hidden w-48 cursor-pointer flex-col rounded border py-2" id=languageOptions><a class="hover:text-yalla px-4 py-1" href=https://romankurnovskii.com/ru/categories/leetcode/>РУ</a>
+<a class="hover:text-yalla px-4 py-1" href=https://romankurnovskii.com/en/categories/leetcode/>EN</a></div></div></div></nav></div><div id=is-open-mobile class="fixed inset-0 z-0 hidden h-full w-full cursor-default opacity-0"></div><script>document.addEventListener("DOMContentLoaded",()=>{switchMobileMenuBurger(),switchLanguage()})</script></header><main class="grow pt-16"><div class=pl-scrollbar><div class="mx-auto w-full max-w-screen-2xl lg:px-2 xl:px-4"><article class="prose mx-6 my-8"><h1>LeetCode</h1></article><div class="grid gap-4 pl-4 sm:grid-cols-4 lg:grid-cols-8 lg:pt-1"><h3 class="col-span-1 sm:pl-6">2024</h3><ul class="article__list col-span-3 sm:pl-8"><li><a href=/ru/tracks/algorithms-101/leetcode/hard/847/><span class=has-text-grey-dark>12 Feb</span>
+—
+847. Shortest Path Visiting All Nodes</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/3030/><span class=has-text-grey-dark>10 Feb</span>
+—
+3030. Find the Grid of Region Average</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/hard/2013/><span class=has-text-grey-dark>10 Feb</span>
+—
+2013. Detect Squares</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/3028/><span class=has-text-grey-dark>09 Feb</span>
+—
+3028. Ant on the Boundary</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/388/><span class=has-text-grey-dark>09 Feb</span>
+—
+388. Longest Absolute File Path</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/3031/><span class=has-text-grey-dark>01 Jan</span>
+—
+3031. Minimum Time to Revert Word to Initial State II</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/hard/3016/><span class=has-text-grey-dark>01 Jan</span>
+—
+3016. Minimum Number of Pushes to Type Word II</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2429/><span class=has-text-grey-dark>01 Jan</span>
+—
+2429. Minimize XOR</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2428/><span class=has-text-grey-dark>01 Jan</span>
+—
+2428. Maximum Sum of an Hourglass</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2427/><span class=has-text-grey-dark>01 Jan</span>
+—
+2427. Number of Common Factors</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2425/><span class=has-text-grey-dark>01 Jan</span>
+—
+2425. Bitwise XOR of All Pairings</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2424/><span class=has-text-grey-dark>01 Jan</span>
+—
+2424. Longest Uploaded Prefix</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2423/><span class=has-text-grey-dark>01 Jan</span>
+—
+2423. Remove Letter To Equalize Frequency</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2422/><span class=has-text-grey-dark>01 Jan</span>
+—
+2422. Merge Operations to Turn Array Into a Palindrome</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2420/><span class=has-text-grey-dark>01 Jan</span>
+—
+2420. Find All Good Indices</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2419/><span class=has-text-grey-dark>01 Jan</span>
+—
+2419. Longest Subarray With Maximum Bitwise AND</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2418/><span class=has-text-grey-dark>01 Jan</span>
+—
+2418. Sort the People</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2417/><span class=has-text-grey-dark>01 Jan</span>
+—
+2417. Closest Fair Integer</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2415/><span class=has-text-grey-dark>01 Jan</span>
+—
+2415. Reverse Odd Levels of Binary Tree</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2414/><span class=has-text-grey-dark>01 Jan</span>
+—
+2414. Length of the Longest Alphabetical Continuous Substring</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2413/><span class=has-text-grey-dark>01 Jan</span>
+—
+2413. Smallest Even Multiple</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2411/><span class=has-text-grey-dark>01 Jan</span>
+—
+2411. Smallest Subarrays With Maximum Bitwise OR</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2410/><span class=has-text-grey-dark>01 Jan</span>
+—
+2410. Maximum Matching of Players With Trainers</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2409/><span class=has-text-grey-dark>01 Jan</span>
+—
+2409. Count Days Spent Together</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2408/><span class=has-text-grey-dark>01 Jan</span>
+—
+2408. Design SQL</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2406/><span class=has-text-grey-dark>01 Jan</span>
+—
+2406. Divide Intervals Into Minimum Number of Groups</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2405/><span class=has-text-grey-dark>01 Jan</span>
+—
+2405. Optimal Partition of String</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2404/><span class=has-text-grey-dark>01 Jan</span>
+—
+2404. Most Frequent Even Element</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2401/><span class=has-text-grey-dark>01 Jan</span>
+—
+2401. Longest Nice Subarray</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2400/><span class=has-text-grey-dark>01 Jan</span>
+—
+2400. Number of Ways to Reach a Position After Exactly k Steps</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2399/><span class=has-text-grey-dark>01 Jan</span>
+—
+2399. Check Distances Between Same Letters</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2397/><span class=has-text-grey-dark>01 Jan</span>
+—
+2397. Maximum Rows Covered by Columns</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2396/><span class=has-text-grey-dark>01 Jan</span>
+—
+2396. Strictly Palindromic Number</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2395/><span class=has-text-grey-dark>01 Jan</span>
+—
+2395. Find Subarrays With Equal Sum</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2393/><span class=has-text-grey-dark>01 Jan</span>
+—
+2393. Count Strictly Increasing Subarrays</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2391/><span class=has-text-grey-dark>01 Jan</span>
+—
+2391. Minimum Amount of Time to Collect Garbage</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2390/><span class=has-text-grey-dark>01 Jan</span>
+—
+2390. Removing Stars From a String</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2389/><span class=has-text-grey-dark>01 Jan</span>
+—
+2389. Longest Subsequence With Limited Sum</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2387/><span class=has-text-grey-dark>01 Jan</span>
+—
+2387. Median of a Row Wise Sorted Matrix</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2385/><span class=has-text-grey-dark>01 Jan</span>
+—
+2385. Amount of Time for Binary Tree to Be Infected</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2384/><span class=has-text-grey-dark>01 Jan</span>
+—
+2384. Largest Palindromic Number</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2383/><span class=has-text-grey-dark>01 Jan</span>
+—
+2383. Minimum Hours of Training to Win a Competition</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2381/><span class=has-text-grey-dark>01 Jan</span>
+—
+2381. Shifting Letters II</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2380/><span class=has-text-grey-dark>01 Jan</span>
+—
+2380. Time Needed to Rearrange a Binary String</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2379/><span class=has-text-grey-dark>01 Jan</span>
+—
+2379. Minimum Recolors to Get K Consecutive Black Blocks</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2378/><span class=has-text-grey-dark>01 Jan</span>
+—
+2378. Choose Edges to Maximize Score in a Tree</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2375/><span class=has-text-grey-dark>01 Jan</span>
+—
+2375. Construct Smallest Number From DI String</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2374/><span class=has-text-grey-dark>01 Jan</span>
+—
+2374. Node With Highest Edge Score</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2373/><span class=has-text-grey-dark>01 Jan</span>
+—
+2373. Largest Local Values in a Matrix</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2370/><span class=has-text-grey-dark>01 Jan</span>
+—
+2370. Longest Ideal Subsequence</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2369/><span class=has-text-grey-dark>01 Jan</span>
+—
+2369. Check if There is a Valid Partition For The Array</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2368/><span class=has-text-grey-dark>01 Jan</span>
+—
+2368. Reachable Nodes With Restrictions</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2367/><span class=has-text-grey-dark>01 Jan</span>
+—
+2367. Number of Arithmetic Triplets</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2365/><span class=has-text-grey-dark>01 Jan</span>
+—
+2365. Task Scheduler II</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2364/><span class=has-text-grey-dark>01 Jan</span>
+—
+2364. Count Number of Bad Pairs</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2363/><span class=has-text-grey-dark>01 Jan</span>
+—
+2363. Merge Similar Items</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2359/><span class=has-text-grey-dark>01 Jan</span>
+—
+2359. Find Closest Node to Given Two Nodes</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2358/><span class=has-text-grey-dark>01 Jan</span>
+—
+2358. Maximum Number of Groups Entering a Competition</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2357/><span class=has-text-grey-dark>01 Jan</span>
+—
+2357. Make Array Zero by Subtracting Equal Amounts</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2353/><span class=has-text-grey-dark>01 Jan</span>
+—
+2353. Design a Food Rating System</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2351/><span class=has-text-grey-dark>01 Jan</span>
+—
+2351. First Letter to Appear Twice</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2347/><span class=has-text-grey-dark>01 Jan</span>
+—
+2347. Best Poker Hand</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2341/><span class=has-text-grey-dark>01 Jan</span>
+—
+2341. Maximum Number of Pairs in Array</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2335/><span class=has-text-grey-dark>01 Jan</span>
+—
+2335. Minimum Amount of Time to Fill Cups</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2331/><span class=has-text-grey-dark>01 Jan</span>
+—
+2331. Evaluate Boolean Binary Tree</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2325/><span class=has-text-grey-dark>01 Jan</span>
+—
+2325. Decode the Message</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2319/><span class=has-text-grey-dark>01 Jan</span>
+—
+2319. Check if Matrix Is X-Matrix</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2315/><span class=has-text-grey-dark>01 Jan</span>
+—
+2315. Count Asterisks</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2309/><span class=has-text-grey-dark>01 Jan</span>
+—
+2309. Greatest English Letter in Upper and Lower Case</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2303/><span class=has-text-grey-dark>01 Jan</span>
+—
+2303. Calculate Amount Paid in Taxes</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2299/><span class=has-text-grey-dark>01 Jan</span>
+—
+2299. Strong Password Checker II</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2293/><span class=has-text-grey-dark>01 Jan</span>
+—
+2293. Min Max Game</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2287/><span class=has-text-grey-dark>01 Jan</span>
+—
+2287. Rearrange Characters to Make Target String</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/2283/><span class=has-text-grey-dark>01 Jan</span>
+—
+2283. Check if Number Has Equal Digit Count and Digit Value</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2108/><span class=has-text-grey-dark>01 Jan</span>
+—
+2108. Find First Palindromic String in the Array</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/hard/1337/><span class=has-text-grey-dark>01 Jan</span>
+—
+1337. The K Weakest Rows in a Matrix</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/180/><span class=has-text-grey-dark>01 Jan</span>
+—
+180. Consecutive Numbers</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/179/><span class=has-text-grey-dark>01 Jan</span>
+—
+179. Largest Number</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/178/><span class=has-text-grey-dark>01 Jan</span>
+—
+178. Rank Scores</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/177/><span class=has-text-grey-dark>01 Jan</span>
+—
+177. Nth Highest Salary</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/176/><span class=has-text-grey-dark>01 Jan</span>
+—
+176. Second Highest Salary</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/173/><span class=has-text-grey-dark>01 Jan</span>
+—
+173. Binary Search Tree Iterator</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/172/><span class=has-text-grey-dark>01 Jan</span>
+—
+172. Factorial Trailing Zeroes</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/24/><span class=has-text-grey-dark>01 Jan</span>
+—
+24. Swap Nodes in Pairs</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/22/><span class=has-text-grey-dark>01 Jan</span>
+—
+22. Generate Parentheses</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/19/><span class=has-text-grey-dark>01 Jan</span>
+—
+19. Remove Nth Node From End of List</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/17/><span class=has-text-grey-dark>01 Jan</span>
+—
+17. Letter Combinations of a Phone Number</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/12/><span class=has-text-grey-dark>01 Jan</span>
+—
+12. Integer to Roman</a></li></ul><h3 class="col-span-1 sm:pl-6">2023</h3><ul class="article__list col-span-3 sm:pl-8"><li><a href=/ru/tracks/algorithms-101/leetcode/medium/1647/><span class=has-text-grey-dark>12 Sep</span>
+—
+1647. Minimum Deletions to Make Character Frequencies Unique</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/1359/><span class=has-text-grey-dark>10 Sep</span>
+—
+1359. Count All Valid Pickup and Delivery Options</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/377/><span class=has-text-grey-dark>09 Sep</span>
+—
+377. Combination Sum IV</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/118/><span class=has-text-grey-dark>08 Sep</span>
+—
+118. Pascal's Triangle</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/92/><span class=has-text-grey-dark>07 Sep</span>
+—
+92. Reverse Linked List II</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/hard/1282/><span class=has-text-grey-dark>06 Sep</span>
+—
+1282. Group the People Given the Group Size They Belong To</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/725/><span class=has-text-grey-dark>06 Sep</span>
+—
+725. Split Linked List in Parts</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/138/><span class=has-text-grey-dark>05 Sep</span>
+—
+138. Copy List with Random Pointer</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/2130/><span class=has-text-grey-dark>02 Sep</span>
+—
+2130. Maximum Twin Sum of a Linked List</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/><span class=has-text-grey-dark>02 Sep</span>
+—
+LeetCode</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/341/><span class=has-text-grey-dark>31 Aug</span>
+—
+341. Flatten Nested List Iterator</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/1448/><span class=has-text-grey-dark>28 Aug</span>
+—
+1448. Count Good Nodes in Binary Tree</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/hard/1372/><span class=has-text-grey-dark>28 Aug</span>
+—
+1372. Longest ZigZag Path in a Binary Tree</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/hard/1004/><span class=has-text-grey-dark>28 Aug</span>
+—
+1004. Max Consecutive Ones III</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/454/><span class=has-text-grey-dark>28 Aug</span>
+—
+454. 4Sum II</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/387/><span class=has-text-grey-dark>28 Aug</span>
+—
+387. First Unique Character in a String</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/384/><span class=has-text-grey-dark>28 Aug</span>
+—
+384. Shuffle an Array</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/328/><span class=has-text-grey-dark>28 Aug</span>
+—
+328. Odd Even Linked List</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/300/><span class=has-text-grey-dark>28 Aug</span>
+—
+300. Longest Increasing Subsequence</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/287/><span class=has-text-grey-dark>28 Aug</span>
+—
+287. Find the Duplicate Number</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/277/><span class=has-text-grey-dark>28 Aug</span>
+—
+277. Find the Celebrity</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/251/><span class=has-text-grey-dark>28 Aug</span>
+—
+251. Flatten 2D Vector</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/240/><span class=has-text-grey-dark>28 Aug</span>
+—
+240. Search a 2D Matrix II</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/237/><span class=has-text-grey-dark>28 Aug</span>
+—
+237. Delete Node in a Linked List</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/236/><span class=has-text-grey-dark>28 Aug</span>
+—
+236. Lowest Common Ancestor of a Binary Tree</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/215/><span class=has-text-grey-dark>28 Aug</span>
+—
+215. Kth Largest Element in an Array</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/210/><span class=has-text-grey-dark>28 Aug</span>
+—
+210. Course Schedule II</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/hard/42/><span class=has-text-grey-dark>28 Aug</span>
+—
+42. Trapping Rain Water</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/hard/4/><span class=has-text-grey-dark>28 Aug</span>
+—
+4. Median of Two Sorted Arrays</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/hard/2390/><span class=has-text-grey-dark>24 Aug</span>
+—
+2390. Removing Stars From a String</a></li></ul><h3 class="col-span-1 sm:pl-6">2022</h3><ul class="article__list col-span-3 sm:pl-8"><li><a href=/ru/tracks/algorithms-101/leetcode/hard/><span class=has-text-grey-dark>16 Oct</span>
+—
+Тяжелые</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/medium/><span class=has-text-grey-dark>16 Oct</span>
+—
+Средние</a></li><li><a href=/ru/tracks/algorithms-101/leetcode/easy/><span class=has-text-grey-dark>16 Oct</span>
+—
+Легкие</a></li></ul></div></div></div></main><footer class=pl-scrollbar><div class="mx-auto w-full max-w-screen-xl"><div class="text-center p-6 pin-b"><p class="text-sm text-tertiary-text">&copy; 2023 Personal page
+&#183;
+<a href=https://romankurnovskii.com/ru/p/subscribe>Подписаться</a> &#183;
+<a href=https://gohugo.io>Hugo</a> &#183;</p></div><script src=/js/lunr.stemmer.support.min.js></script><script src=/js/lunr.ru.min.js></script><script src=/js/lunr.multi.min.js></script><script src=/js/search.js?v2 languagemode=ru></script><div id=search-result tabindex=-1 class="max-w-s fixed top-0 right-0 z-50 overflow-y-auto overflow-x-hidden" hidden><div class="max-w-s relative h-full w-full p-4 md:h-auto"><div class="relative rounded-lg bg-white shadow dark:bg-gray-700"><div class=p-6><h3>Search results</h3><div id=popup_search_results class=prose></div></div></div></div></div><script src=/js/search-page.js?v3></script><script src=/js/base.js?8 languagemode=ru></script></div></footer><script src=https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js defer></script><script src=/js/zoom-image/placeholders.js?4 defer></script><script src=/js/zoom-image/index.js?4 defer></script></body></html>
