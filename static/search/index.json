@@ -726,17 +726,6 @@
             "lang": "ru"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/medium/872/",
-            "title": "872. Leaf-Similar Trees",
-            "description": "LeetCode 872. Сравнение листовых узлов двух бинарных деревьев. Разбор задачи.",
-            "content": "\nLeetCode задача 872\n\nЗадача\n\nДаны два бинарных дерева с корнями root1 и root2. Проверьте, являются ли эти деревья \"листоподобными\" (leaf-similar). Деревья считаются \"листоподобными\", если последовательность листовых узлов каждого дерева одинакова.\n\nПодсказки\n\nЛистовые узлы бинарного дерева — это узлы, у которых нет потомков. Для проверки \"листоподобности\" двух деревьев нужно сравнить последовательности листовых узлов этих деревьев.\n\nПодход / Идея решения\n\nИдея решения заключается в построении списков листовых узлов для каждого дерева, а затем сравнении этих списков. Мы можем рекурсивно обойти каждое дерево, проверяя при каждом узле, является ли он листовым. Если это так, добавляем значение этого узла в соответствующий список.\n\nТакой подход обеспечивает простое и понятное решение, несмотря на то, что он может быть не самым оптимальным по времени и памяти.\n\nАлгоритм\n\nОбойти каждое дерево рекурсивно и собрать список листовых узлов.\nСравнить полученные списки.\n\nРешение\n\nОпределение для бинарного дерева.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\n\ndef leafSimilar(root1, root2):\n    def getLeaves(root):\n        if not root:\n            return []\n        if not root.left and not root.right:\n            return [root.val]\n        return getLeaves(root.left) + getLeaves(root.right)\n\n    return getLeaves(root1) == getLeaves(root2)\n",
-            "tags": [
-                "Binary Tree",
-                "Easy"
-            ],
-            "lang": "ru"
-        },
-        {
             "uri": "/tracks/algorithms-101/leetcode/medium/8/",
             "title": "8. String to Integer (atoi)",
             "description": "LeetCode 8. String to Integer (atoi)",
@@ -1165,6 +1154,14 @@
         {
             "uri": "/tracks/algorithms-101/leetcode/medium/2979/",
             "content": "class Solution:\n    def mostExpensiveItem(self, primeOne: int, primeTwo: int) -> int:\n        return primeOne * primeTwo - primeOne - primeTwo\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/2971/",
+            "title": "2971. Find Polygon With the Largest Perimeter",
+            "description": "2971. Find Polygon With the Largest Perimeter",
+            "content": "\nLeetCode problem 2971\n\nclass Solution:\n    def largestPerimeter(self, nums: List[int]) -> int:\n        nums.sort()\n        s = list(accumulate(nums, initial=0))\n        res = -1\n        for k in range(3, len(nums) + 1):\n            if s[k - 1] > nums[k - 1]:\n                res = max(res, s[k])\n        return res\n`",
             "tags": [],
             "lang": "ru"
         },
@@ -2922,6 +2919,17 @@
                 "Array",
                 "Two Pointers",
                 "Sorting"
+            ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/872/",
+            "title": "872. Leaf-Similar Trees",
+            "description": "LeetCode 872. Сравнение листовых узлов двух бинарных деревьев. Разбор задачи.",
+            "content": "\nLeetCode задача 872\n\nЗадача\n\nДаны два бинарных дерева с корнями root1 и root2. Проверьте, являются ли эти деревья \"листоподобными\" (leaf-similar). Деревья считаются \"листоподобными\", если последовательность листовых узлов каждого дерева одинакова.\n\nПодсказки\n\nЛистовые узлы бинарного дерева — это узлы, у которых нет потомков. Для проверки \"листоподобности\" двух деревьев нужно сравнить последовательности листовых узлов этих деревьев.\n\nПодход / Идея решения\n\nИдея решения заключается в построении списков листовых узлов для каждого дерева, а затем сравнении этих списков. Мы можем рекурсивно обойти каждое дерево, проверяя при каждом узле, является ли он листовым. Если это так, добавляем значение этого узла в соответствующий список.\n\nТакой подход обеспечивает простое и понятное решение, несмотря на то, что он может быть не самым оптимальным по времени и памяти.\n\nАлгоритм\n\nОбойти каждое дерево рекурсивно и собрать список листовых узлов.\nСравнить полученные списки.\n\nРешение\n\nОпределение для бинарного дерева.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\n\ndef leafSimilar(root1, root2):\n    def getLeaves(root):\n        if not root:\n            return []\n        if not root.left and not root.right:\n            return [root.val]\n        return getLeaves(root.left) + getLeaves(root.right)\n\n    return getLeaves(root1) == getLeaves(root2)\n",
+            "tags": [
+                "Binary Tree",
+                "Easy"
             ],
             "lang": "ru"
         },
@@ -5044,7 +5052,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 2
+                    "timeTakenInMilliseconds": 1
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -5749,17 +5757,6 @@
             "lang": "en"
         },
         {
-            "uri": "/tracks/algorithms-101/leetcode/medium/872/",
-            "title": "872. Leaf-Similar Trees",
-            "description": "LeetCode 872. Сравнение листовых узлов двух бинарных деревьев. Разбор задачи.",
-            "content": "\nLeetCode задача 872\n\nЗадача\n\nДаны два бинарных дерева с корнями root1 и root2. Проверьте, являются ли эти деревья \"листоподобными\" (leaf-similar). Деревья считаются \"листоподобными\", если последовательность листовых узлов каждого дерева одинакова.\n\nПодсказки\n\nЛистовые узлы бинарного дерева — это узлы, у которых нет потомков. Для проверки \"листоподобности\" двух деревьев нужно сравнить последовательности листовых узлов этих деревьев.\n\nПодход / Идея решения\n\nИдея решения заключается в построении списков листовых узлов для каждого дерева, а затем сравнении этих списков. Мы можем рекурсивно обойти каждое дерево, проверяя при каждом узле, является ли он листовым. Если это так, добавляем значение этого узла в соответствующий список.\n\nТакой подход обеспечивает простое и понятное решение, несмотря на то, что он может быть не самым оптимальным по времени и памяти.\n\nАлгоритм\n\nОбойти каждое дерево рекурсивно и собрать список листовых узлов.\nСравнить полученные списки.\n\nРешение\n\nОпределение для бинарного дерева.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\n\ndef leafSimilar(root1, root2):\n    def getLeaves(root):\n        if not root:\n            return []\n        if not root.left and not root.right:\n            return [root.val]\n        return getLeaves(root.left) + getLeaves(root.right)\n\n    return getLeaves(root1) == getLeaves(root2)\n\nWhat does it mean to \"get a leaf\"?\n\nWe need to got to the end of the tree. The way to do it is to find on every iteration only left node. What happens then?\n\nSince it is a recursion, it starts to \"come back\". And here we can start another logic. Which? Go and find the most right leaf.\n\nWhat happens here?\n\nLets call it as runner.\n\nRunner is in the head\nFound a left node (root.left)\n    Within this node the first thing in this recursion fucntion it again tries to find the most left.\n    Once it finds the most left (this means that current root.left is None), runner goes to the next line of current function.\n    Lets say next line is to find the most right.\n",
-            "tags": [
-                "Binary Tree",
-                "Easy"
-            ],
-            "lang": "en"
-        },
-        {
             "uri": "/tracks/algorithms-101/leetcode/medium/8/",
             "title": "8. String to Integer (atoi)",
             "description": "LeetCode 8. String to Integer (atoi)",
@@ -6104,6 +6101,14 @@
         {
             "uri": "/tracks/algorithms-101/leetcode/medium/2979/",
             "content": "class Solution:\n    def mostExpensiveItem(self, primeOne: int, primeTwo: int) -> int:\n        return primeOne * primeTwo - primeOne - primeTwo\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/2971/",
+            "title": "2971. Find Polygon With the Largest Perimeter",
+            "description": "2971. Find Polygon With the Largest Perimeter",
+            "content": "\nLeetCode problem 2971\n\nclass Solution:\n    def largestPerimeter(self, nums: List[int]) -> int:\n        nums.sort()\n        s = list(accumulate(nums, initial=0))\n        res = -1\n        for k in range(3, len(nums) + 1):\n            if s[k - 1] > nums[k - 1]:\n                res = max(res, s[k])\n        return res\n`",
             "tags": [],
             "lang": "en"
         },
@@ -7822,6 +7827,17 @@
                 "Array",
                 "Two Pointers",
                 "Sorting"
+            ],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/872/",
+            "title": "872. Leaf-Similar Trees",
+            "description": "LeetCode 872. Сравнение листовых узлов двух бинарных деревьев. Разбор задачи.",
+            "content": "\nLeetCode задача 872\n\nЗадача\n\nДаны два бинарных дерева с корнями root1 и root2. Проверьте, являются ли эти деревья \"листоподобными\" (leaf-similar). Деревья считаются \"листоподобными\", если последовательность листовых узлов каждого дерева одинакова.\n\nПодсказки\n\nЛистовые узлы бинарного дерева — это узлы, у которых нет потомков. Для проверки \"листоподобности\" двух деревьев нужно сравнить последовательности листовых узлов этих деревьев.\n\nПодход / Идея решения\n\nИдея решения заключается в построении списков листовых узлов для каждого дерева, а затем сравнении этих списков. Мы можем рекурсивно обойти каждое дерево, проверяя при каждом узле, является ли он листовым. Если это так, добавляем значение этого узла в соответствующий список.\n\nТакой подход обеспечивает простое и понятное решение, несмотря на то, что он может быть не самым оптимальным по времени и памяти.\n\nАлгоритм\n\nОбойти каждое дерево рекурсивно и собрать список листовых узлов.\nСравнить полученные списки.\n\nРешение\n\nОпределение для бинарного дерева.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\n\ndef leafSimilar(root1, root2):\n    def getLeaves(root):\n        if not root:\n            return []\n        if not root.left and not root.right:\n            return [root.val]\n        return getLeaves(root.left) + getLeaves(root.right)\n\n    return getLeaves(root1) == getLeaves(root2)\n\nWhat does it mean to \"get a leaf\"?\n\nWe need to got to the end of the tree. The way to do it is to find on every iteration only left node. What happens then?\n\nSince it is a recursion, it starts to \"come back\". And here we can start another logic. Which? Go and find the most right leaf.\n\nWhat happens here?\n\nLets call it as runner.\n\nRunner is in the head\nFound a left node (root.left)\n    Within this node the first thing in this recursion fucntion it again tries to find the most left.\n    Once it finds the most left (this means that current root.left is None), runner goes to the next line of current function.\n    Lets say next line is to find the most right.\n",
+            "tags": [
+                "Binary Tree",
+                "Easy"
             ],
             "lang": "en"
         },

@@ -1,7 +1,7 @@
 ---
 title: 36. Valid Sudoku
 description: LeetCode 36. Valid Sudoku
-toc: false
+toc: true
 authors: [roman-kurnovskii]
 tags: [Array, "Hash Table", Matrix]
 categories: [Algorithms, Medium]
