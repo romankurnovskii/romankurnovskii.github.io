@@ -729,7 +729,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/802/",
             "title": "802. Find Eventual Safe States",
             "description": "802. Find Eventual Safe States",
-            "content": "\nLeetCode problem 802\n\nclass Solution:\n    def eventualSafeNodes(self, graph: List[List[int]]) -> List[int]:\n        def dfs(i):\n            if color[i]:\n                return color[i] == 2\n            color[i] = 1\n            for j in graph[i]:\n                if not dfs(j):\n                    return False\n            color[i] = 2\n            return True\n\n        n = len(graph)\n        color = [0] * n\n        return [i for i in range(n) if dfs(i)]\n\n`",
+            "content": "\nLeetCode problem 802\n\nclass Solution:\n    def eventualSafeNodes(self, graph: List[List[int]]) -> List[int]:\n        def dfs(i):\n            if color[i]:\n                return color[i] == 2\n            color[i] = 1\n            for j in graph[i]:\n                if not dfs(j):\n                    return False\n            color[i] = 2\n            return True\n\n        n = len(graph)\n        color = [0] * n\n        return [i for i in range(n) if dfs(i)]\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -747,7 +747,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/799/",
             "title": "799. Champagne Tower",
             "description": "799. Champagne Tower",
-            "content": "\nLeetCode problem 799\n\nclass Solution:\n    def champagneTower(self, poured: int, query_row: int, query_glass: int) -> float:\n        f = [poured]\n        for i in range(1, query_row + 1):\n            g = [0] * (i + 1)\n            for j, v in enumerate(f):\n                if v > 1:\n                    half = (v - 1) / 2\n                    g[j] += half\n                    g[j + 1] += half\n            f = g\n        return min(1, f[query_glass])\n\n`",
+            "content": "\nLeetCode problem 799\n\nclass Solution:\n    def champagneTower(self, poured: int, query_row: int, query_glass: int) -> float:\n        f = [poured]\n        for i in range(1, query_row + 1):\n            g = [0] * (i + 1)\n            for j, v in enumerate(f):\n                if v > 1:\n                    half = (v - 1) / 2\n                    g[j] += half\n                    g[j + 1] += half\n            f = g\n        return min(1, f[query_glass])\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -755,7 +755,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/797/",
             "title": "797. All Paths From Source to Target",
             "description": "797. All Paths From Source to Target",
-            "content": "\nLeetCode problem 797\n\nclass Solution:\n    def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:\n        def dfs(t):\n            if t[-1] == len(graph) - 1:\n                res.append(t[:])\n                return\n            for v in graph[t[-1]]:\n                t.append(v)\n                dfs(t)\n                t.pop()\n\n        res = []\n        dfs([0])\n        return res\n\n`",
+            "content": "\nLeetCode problem 797\n\nclass Solution:\n    def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:\n        def dfs(t):\n            if t[-1] == len(graph) - 1:\n                res.append(t[:])\n                return\n            for v in graph[t[-1]]:\n                t.append(v)\n                dfs(t)\n                t.pop()\n\n        res = []\n        dfs([0])\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -763,7 +763,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/795/",
             "title": "795. Number of Subarrays with Bounded Maximum",
             "description": "795. Number of Subarrays with Bounded Maximum",
-            "content": "\nLeetCode problem 795\n\nclass Solution:\n    def numSubarrayBoundedMax(self, nums: List[int], left: int, right: int) -> int:\n        n = len(nums)\n        l, r = [-1] * n, [n] * n\n        stk = []\n        for i, v in enumerate(nums):\n            while stk and nums[stk[-1]] <= v:\n                stk.pop()\n            if stk:\n                l[i] = stk[-1]\n            stk.append(i)\n        stk = []\n        for i in range(n - 1, -1, -1):\n            while stk and nums[stk[-1]] < nums[i]:\n                stk.pop()\n            if stk:\n                r[i] = stk[-1]\n            stk.append(i)\n        return sum(\n            (i - l[i]) * (r[i] - i) for i, v in enumerate(nums) if left <= v <= right\n        )\n\n`",
+            "content": "\nLeetCode problem 795\n\nclass Solution:\n    def numSubarrayBoundedMax(self, nums: List[int], left: int, right: int) -> int:\n        n = len(nums)\n        l, r = [-1] * n, [n] * n\n        stk = []\n        for i, v in enumerate(nums):\n            while stk and nums[stk[-1]] <= v:\n                stk.pop()\n            if stk:\n                l[i] = stk[-1]\n            stk.append(i)\n        stk = []\n        for i in range(n - 1, -1, -1):\n            while stk and nums[stk[-1]] < nums[i]:\n                stk.pop()\n            if stk:\n                r[i] = stk[-1]\n            stk.append(i)\n        return sum(\n            (i - l[i]) * (r[i] - i) for i, v in enumerate(nums) if left <= v <= right\n        )\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -771,7 +771,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/794/",
             "title": "794. Valid Tic-Tac-Toe State",
             "description": "794. Valid Tic-Tac-Toe State",
-            "content": "\nLeetCode problem 794\n\nclass Solution:\n    def validTicTacToe(self, board: List[str]) -> bool:\n        def win(x):\n            for i in range(3):\n                if all(boardi == x for j in range(3)):\n                    return True\n                if all(boardj == x for j in range(3)):\n                    return True\n            if all(boardi == x for i in range(3)):\n                return True\n            return all(boardi == x for i in range(3))\n\n        x = sum(boardi == 'X' for i in range(3) for j in range(3))\n        o = sum(boardi == 'O' for i in range(3) for j in range(3))\n        if x != o and x - 1 != o:\n            return False\n        if win('X') and x - 1 != o:\n            return False\n        return not (win('O') and x != o)\n\n`",
+            "content": "\nLeetCode problem 794\n\nclass Solution:\n    def validTicTacToe(self, board: List[str]) -> bool:\n        def win(x):\n            for i in range(3):\n                if all(boardi == x for j in range(3)):\n                    return True\n                if all(boardj == x for j in range(3)):\n                    return True\n            if all(boardi == x for i in range(3)):\n                return True\n            return all(boardi == x for i in range(3))\n\n        x = sum(boardi == 'X' for i in range(3) for j in range(3))\n        o = sum(boardi == 'O' for i in range(3) for j in range(3))\n        if x != o and x - 1 != o:\n            return False\n        if win('X') and x - 1 != o:\n            return False\n        return not (win('O') and x != o)\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -779,7 +779,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/792/",
             "title": "792. Number of Matching Subsequences",
             "description": "792. Number of Matching Subsequences",
-            "content": "\nLeetCode problem 792\n\nclass Solution:\n    def numMatchingSubseq(self, s: str, words: List[str]) -> int:\n        def check(w):\n            i = -1\n            for c in w:\n                j = bisect_right(d[c], i)\n                if j == len(d[c]):\n                    return False\n                i = dc\n            return True\n\n        d = defaultdict(list)\n        for i, c in enumerate(s):\n            d[c].append(i)\n        return sum(check(w) for w in words)\n\n`",
+            "content": "\nLeetCode problem 792\n\nclass Solution:\n    def numMatchingSubseq(self, s: str, words: List[str]) -> int:\n        def check(w):\n            i = -1\n            for c in w:\n                j = bisect_right(d[c], i)\n                if j == len(d[c]):\n                    return False\n                i = dc\n            return True\n\n        d = defaultdict(list)\n        for i, c in enumerate(s):\n            d[c].append(i)\n        return sum(check(w) for w in words)\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -787,7 +787,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/791/",
             "title": "791. Custom Sort String",
             "description": "791. Custom Sort String",
-            "content": "\nLeetCode problem 791\n\nclass Solution:\n    def customSortString(self, order: str, s: str) -> str:\n        cnt = Counter(s)\n        res = []\n        for c in order:\n            res.append(c * cnt[c])\n            cnt[c] = 0\n        for c, v in cnt.items():\n            res.append(c * v)\n        return ''.join(res)\n\n`",
+            "content": "\nLeetCode problem 791\n\nclass Solution:\n    def customSortString(self, order: str, s: str) -> str:\n        cnt = Counter(s)\n        res = []\n        for c in order:\n            res.append(c * cnt[c])\n            cnt[c] = 0\n        for c, v in cnt.items():\n            res.append(c * v)\n        return ''.join(res)\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -795,7 +795,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/790/",
             "title": "790. Domino and Tromino Tiling",
             "description": "790. Domino and Tromino Tiling",
-            "content": "\nLeetCode problem 790\n\nclass Solution:\n    def numTilings(self, n: int) -> int:\n        f = [1, 0, 0, 0]\n        mod = 10**9 + 7\n        for i in range(1, n + 1):\n            g = [0] * 4\n            g[0] = (f[0] + f[1] + f[2] + f[3]) % mod\n            g[1] = (f[2] + f[3]) % mod\n            g[2] = (f[1] + f[3]) % mod\n            g[3] = f[0]\n            f = g\n        return f[0]\n\n`",
+            "content": "\nLeetCode problem 790\n\nclass Solution:\n    def numTilings(self, n: int) -> int:\n        f = [1, 0, 0, 0]\n        mod = 10**9 + 7\n        for i in range(1, n + 1):\n            g = [0] * 4\n            g[0] = (f[0] + f[1] + f[2] + f[3]) % mod\n            g[1] = (f[2] + f[3]) % mod\n            g[2] = (f[1] + f[3]) % mod\n            g[3] = f[0]\n            f = g\n        return f[0]\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -803,7 +803,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/789/",
             "title": "789. Escape The Ghosts",
             "description": "789. Escape The Ghosts",
-            "content": "\nLeetCode problem 789\n\nclass Solution:\n    def escapeGhosts(self, ghosts: List[List[int]], target: List[int]) -> bool:\n        tx, ty = target\n        return all(abs(tx - x) + abs(ty - y) > abs(tx) + abs(ty) for x, y in ghosts)\n\n`",
+            "content": "\nLeetCode problem 789\n\nclass Solution:\n    def escapeGhosts(self, ghosts: List[List[int]], target: List[int]) -> bool:\n        tx, ty = target\n        return all(abs(tx - x) + abs(ty - y) > abs(tx) + abs(ty) for x, y in ghosts)\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -811,7 +811,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/788/",
             "title": "788. Rotated Digits",
             "description": "788. Rotated Digits",
-            "content": "\nLeetCode problem 788\n\nclass Solution:\n    def rotatedDigits(self, n: int) -> int:\n        @cache\n        def dfs(pos, ok, limit):\n            if pos <= 0:\n                return ok\n            up = a[pos] if limit else 9\n            res = 0\n            for i in range(up + 1):\n                if i in (0, 1, 8):\n                    res += dfs(pos - 1, ok, limit and i == up)\n                if i in (2, 5, 6, 9):\n                    res += dfs(pos - 1, 1, limit and i == up)\n            return res\n\n        a = [0] * 6\n        l = 1\n        while n:\n            a[l] = n % 10\n            n //= 10\n            l += 1\n        return dfs(l, 0, True)\n\n`",
+            "content": "\nLeetCode problem 788\n\nclass Solution:\n    def rotatedDigits(self, n: int) -> int:\n        @cache\n        def dfs(pos, ok, limit):\n            if pos <= 0:\n                return ok\n            up = a[pos] if limit else 9\n            res = 0\n            for i in range(up + 1):\n                if i in (0, 1, 8):\n                    res += dfs(pos - 1, ok, limit and i == up)\n                if i in (2, 5, 6, 9):\n                    res += dfs(pos - 1, 1, limit and i == up)\n            return res\n\n        a = [0] * 6\n        l = 1\n        while n:\n            a[l] = n % 10\n            n //= 10\n            l += 1\n        return dfs(l, 0, True)\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -819,7 +819,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/787/",
             "title": "787. Cheapest Flights Within K Stops",
             "description": "787. Cheapest Flights Within K Stops",
-            "content": "\nLeetCode problem 787\n\nclass Solution:\n    def findCheapestPrice(\n        self, n: int, flights: List[List[int]], src: int, dst: int, k: int\n    ) -> int:\n        @cache\n        def dfs(u, k):\n            if u == dst:\n                return 0\n            if k = inf else res\n\n`",
+            "content": "\nLeetCode problem 787\n\nclass Solution:\n    def findCheapestPrice(\n        self, n: int, flights: List[List[int]], src: int, dst: int, k: int\n    ) -> int:\n        @cache\n        def dfs(u, k):\n            if u == dst:\n                return 0\n            if k = inf else res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -827,7 +827,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/786/",
             "title": "786. K-th Smallest Prime Fraction",
             "description": "786. K-th Smallest Prime Fraction",
-            "content": "\nLeetCode problem 786\n\nclass Solution:\n    def kthSmallestPrimeFraction(self, arr: List[int], k: int) -> List[int]:\n        h = [(1 / y, 0, j + 1) for j, y in enumerate(arr[1:])]\n        heapify(h)\n        for _ in range(k - 1):\n            _, i, j = heappop(h)\n            if i + 1 < j:\n                heappush(h, (arr[i + 1] / arr[j], i + 1, j))\n        return arr[h[0], arrh[0]]\n\n`",
+            "content": "\nLeetCode problem 786\n\nclass Solution:\n    def kthSmallestPrimeFraction(self, arr: List[int], k: int) -> List[int]:\n        h = [(1 / y, 0, j + 1) for j, y in enumerate(arr[1:])]\n        heapify(h)\n        for _ in range(k - 1):\n            _, i, j = heappop(h)\n            if i + 1 < j:\n                heappush(h, (arr[i + 1] / arr[j], i + 1, j))\n        return arr[h[0], arrh[0]]\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -835,7 +835,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/785/",
             "title": "785. Is Graph Bipartite",
             "description": "785. Is Graph Bipartite",
-            "content": "\nLeetCode problem 785\n\nclass Solution:\n    def isBipartite(self, graph: List[List[int]]) -> bool:\n        def find(x):\n            if p[x] != x:\n                p[x] = find(p[x])\n            return p[x]\n\n        p = list(range(len(graph)))\n        for u, g in enumerate(graph):\n            for v in g:\n                if find(u) == find(v):\n                    return False\n                p[find(v)] = find(g[0])\n        return True\n\n`",
+            "content": "\nLeetCode problem 785\n\nclass Solution:\n    def isBipartite(self, graph: List[List[int]]) -> bool:\n        def find(x):\n            if p[x] != x:\n                p[x] = find(p[x])\n            return p[x]\n\n        p = list(range(len(graph)))\n        for u, g in enumerate(graph):\n            for v in g:\n                if find(u) == find(v):\n                    return False\n                p[find(v)] = find(g[0])\n        return True\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -843,7 +843,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/784/",
             "title": "784. Letter Case Permutation",
             "description": "784. Letter Case Permutation",
-            "content": "\nLeetCode problem 784\n\nclass Solution:\n    def letterCasePermutation(self, s: str) -> List[str]:\n        res = []\n        n = sum(c.isalpha() for c in s)\n        for i in range(1 > j) & 1 else c.upper()\n                    j += 1\n                t.append(c)\n            res.append(''.join(t))\n        return res\n\n`",
+            "content": "\nLeetCode problem 784\n\nclass Solution:\n    def letterCasePermutation(self, s: str) -> List[str]:\n        res = []\n        n = sum(c.isalpha() for c in s)\n        for i in range(1 > j) & 1 else c.upper()\n                    j += 1\n                t.append(c)\n            res.append(''.join(t))\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -851,7 +851,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/781/",
             "title": "781. Rabbits in Forest",
             "description": "781. Rabbits in Forest",
-            "content": "\nLeetCode problem 781\n\nclass Solution:\n    def numRabbits(self, answers: List[int]) -> int:\n        counter = Counter(answers)\n        return sum([math.ceil(v / (k + 1)) * (k + 1) for k, v in counter.items()])\n\n`",
+            "content": "\nLeetCode problem 781\n\nclass Solution:\n    def numRabbits(self, answers: List[int]) -> int:\n        counter = Counter(answers)\n        return sum([math.ceil(v / (k + 1)) * (k + 1) for k, v in counter.items()])\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -871,7 +871,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/779/",
             "title": "779. K-th Symbol in Grammar",
             "description": "779. K-th Symbol in Grammar",
-            "content": "\nLeetCode problem 779\n\nclass Solution:\n    def kthGrammar(self, n: int, k: int) -> int:\n        return (k - 1).bit_count() & 1\n\n`",
+            "content": "\nLeetCode problem 779\n\nclass Solution:\n    def kthGrammar(self, n: int, k: int) -> int:\n        return (k - 1).bit_count() & 1\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -879,7 +879,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/777/",
             "title": "777. Swap Adjacent in LR String",
             "description": "777. Swap Adjacent in LR String",
-            "content": "\nLeetCode problem 777\n\nclass Solution:\n    def canTransform(self, start: str, end: str) -> bool:\n        n = len(start)\n        i = j = 0\n        while 1:\n            while i = n and j >= n:\n                return True\n            if i >= n or j >= n or start[i] != end[j]:\n                return False\n            if start[i] == 'L' and i  j:\n                return False\n            i, j = i + 1, j + 1\n\n`",
+            "content": "\nLeetCode problem 777\n\nclass Solution:\n    def canTransform(self, start: str, end: str) -> bool:\n        n = len(start)\n        i = j = 0\n        while 1:\n            while i = n and j >= n:\n                return True\n            if i >= n or j >= n or start[i] != end[j]:\n                return False\n            if start[i] == 'L' and i  j:\n                return False\n            i, j = i + 1, j + 1\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2628,7 +2628,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/1481/",
             "title": "1481. Least Number of Unique Integers after K Removals",
             "description": "1481. Least Number of Unique Integers after K Removals",
-            "content": "\nLeetCode problem 1481\n\nclass Solution:\n    def findLeastNumOfUniqueInts(self, arr: List[int], k: int) -> int:\n        counter = Counter(arr)\n        for i, v in enumerate(sorted(counter.values())):\n            k -= v\n            if k < 0:\n                return len(counter) - i\n        return 0\n`",
+            "content": "\nLeetCode problem 1481\n\nclass Solution:\n    def findLeastNumOfUniqueInts(self, arr: List[int], k: int) -> int:\n        counter = Counter(arr)\n        for i, v in enumerate(sorted(counter.values())):\n            k -= v\n            if k < 0:\n                return len(counter) - i\n        return 0\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2770,6 +2770,94 @@
                 "Breadth-First Search",
                 "Binary Tree"
             ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1123/",
+            "title": "1123. Lowest Common Ancestor of Deepest Leaves",
+            "description": "1123. Lowest Common Ancestor of Deepest Leaves",
+            "content": "\nLeetCode problem 1123\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def lcaDeepestLeaves(self, root: Optional[TreeNode]) -> Optional[TreeNode]:\n        def dfs(root):\n            if root is None:\n                return None, 0\n            l, d1 = dfs(root.left)\n            r, d2 = dfs(root.right)\n            if d1 > d2:\n                return l, d1 + 1\n            if d1 < d2:\n                return r, d2 + 1\n            return root, d1 + 1\n\n        return dfs(root)[0]\n\n`",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1120/",
+            "title": "1120. Maximum Average Subtree",
+            "description": "1120. Maximum Average Subtree",
+            "content": "\nLeetCode problem 1120\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def maximumAverageSubtree(self, root: Optional[TreeNode]) -> float:\n        def dfs(root):\n            if root is None:\n                return 0, 0\n            ls, ln = dfs(root.left)\n            rs, rn = dfs(root.right)\n            s = root.val + ls + rs\n            n = 1 + ln + rn\n            nonlocal res\n            res = max(res, s / n)\n            return s, n\n\n        res = 0\n        dfs(root)\n        return res\n\n`",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1116/",
+            "title": "1116. Print Zero Even Odd",
+            "description": "1116. Print Zero Even Odd",
+            "content": "\nLeetCode problem 1116\n\nfrom threading import Semaphore\n\n\nclass ZeroEvenOdd:\n    def init(self, n):\n        self.n = n\n        self.z = Semaphore(1)\n        self.e = Semaphore(0)\n        self.o = Semaphore(0)\n\nprintNumber(x) outputs \"x\", where x is an integer.\n    def zero(self, printNumber: 'Callable[[int], None]') -> None:\n        for i in range(self.n):\n            self.z.acquire()\n            printNumber(0)\n            if i % 2 == 0:\n                self.o.release()\n            else:\n                self.e.release()\n\n    def even(self, printNumber: 'Callable[[int], None]') -> None:\n        for i in range(2, self.n + 1, 2):\n            self.e.acquire()\n            printNumber(i)\n            self.z.release()\n\n    def odd(self, printNumber: 'Callable[[int], None]') -> None:\n        for i in range(1, self.n + 1, 2):\n            self.o.acquire()\n            printNumber(i)\n            self.z.release()\n\n`",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1115/",
+            "title": "1115. Print FooBar Alternately",
+            "description": "1115. Print FooBar Alternately",
+            "content": "\nLeetCode problem 1115\n\nfrom threading import Semaphore\n\n\nclass FooBar:\n    def init(self, n):\n        self.n = n\n        self.f = Semaphore(1)\n        self.b = Semaphore(0)\n\n    def foo(self, printFoo: \"Callable[[], None]\") -> None:\n        for _ in range(self.n):\n            self.f.acquire()\nprintFoo() outputs \"foo\". Do not change or remove this line.\n            printFoo()\n            self.b.release()\n\n    def bar(self, printBar: \"Callable[[], None]\") -> None:\n        for _ in range(self.n):\n            self.b.acquire()\nprintBar() outputs \"bar\". Do not change or remove this line.\n            printBar()\n            self.f.release()\n\n`",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1111/",
+            "title": "1111. Maximum Nesting Depth of Two Valid Parentheses Strings",
+            "description": "1111. Maximum Nesting Depth of Two Valid Parentheses Strings",
+            "content": "\nLeetCode problem 1111\n\nclass Solution:\n    def maxDepthAfterSplit(self, seq: str) -> List[int]:\n        res = [0] * len(seq)\n        x = 0\n        for i, c in enumerate(seq):\n            if c == \"(\":\n                res[i] = x & 1\n                x += 1\n            else:\n                x -= 1\n                res[i] = x & 1\n        return res\n\n`",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1110/",
+            "title": "1110. Delete Nodes And Return Forest",
+            "description": "1110. Delete Nodes And Return Forest",
+            "content": "\nLeetCode problem 1110\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def delNodes(\n        self, root: Optional[TreeNode], to_delete: List[int]\n    ) -> List[TreeNode]:\n        def dfs(root: Optional[TreeNode]) -> Optional[TreeNode]:\n            if root is None:\n                return None\n            root.left, root.right = dfs(root.left), dfs(root.right)\n            if root.val not in s:\n                return root\n            if root.left:\n                res.append(root.left)\n            if root.right:\n                res.append(root.right)\n            return None\n\n        s = set(to_delete)\n        res = []\n        if dfs(root):\n            res.append(root)\n        return res\n\n`",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1109/",
+            "title": "1109. Corporate Flight Bookings",
+            "description": "1109. Corporate Flight Bookings",
+            "content": "\nLeetCode problem 1109\n\nclass BinaryIndexedTree:\n    def init(self, n):\n        self.n = n\n        self.c = [0] * (n + 1)\n\n    def update(self, x, delta):\n        while x  List[int]:\n        tree = BinaryIndexedTree(n)\n        for first, last, seats in bookings:\n            tree.update(first, seats)\n            tree.update(last + 1, -seats)\n        return [tree.query(i + 1) for i in range(n)]\n\n`",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1105/",
+            "title": "1105. Filling Bookcase Shelves",
+            "description": "1105. Filling Bookcase Shelves",
+            "content": "\nLeetCode problem 1105\n\nclass Solution:\n    def minHeightShelves(self, books: List[List[int]], shelfWidth: int) -> int:\n        n = len(books)\n        f = [0] * (n + 1)\n        for i, (w, h) in enumerate(books, 1):\n            f[i] = f[i - 1] + h\n            for j in range(i - 1, 0, -1):\n                w += booksj - 1\n                if w > shelfWidth:\n                    break\n                h = max(h, booksj - 1)\n                f[i] = min(f[i], f[j - 1] + h)\n        return f[n]\n\n`",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1104/",
+            "title": "1104. Path In Zigzag Labelled Binary Tree",
+            "description": "1104. Path In Zigzag Labelled Binary Tree",
+            "content": "\nLeetCode problem 1104\n\nclass Solution:\n    def pathInZigZagTree(self, label: int) -> List[int]:\n        x = i = 1\n        while (x > 1\n            i -= 1\n        return res\n\n`",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1102/",
+            "title": "1102. Path With Maximum Minimum Value",
+            "description": "1102. Path With Maximum Minimum Value",
+            "content": "\nLeetCode problem 1102\n\nclass UnionFind:\n    slots = (\"p\", \"size\")\n\n    def init(self, n):\n        self.p = list(range(n))\n        self.size = [1] * n\n\n    def find(self, x: int) -> int:\n        if self.p[x] != x:\n            self.p[x] = self.find(self.p[x])\n        return self.p[x]\n\n    def union(self, a: int, b: int) -> bool:\n        pa, pb = self.find(a), self.find(b)\n        if pa == pb:\n            return False\n        if self.size[pa] > self.size[pb]:\n            self.p[pb] = pa\n            self.size[pa] += self.size[pb]\n        else:\n            self.p[pa] = pb\n            self.size[pb] += self.size[pa]\n        return True\n\n\nclass Solution:\n    def maximumMinimumPath(self, grid: List[List[int]]) -> int:\n        m, n = len(grid), len(grid[0])\n        uf = UnionFind(m * n)\n        q = [(v, i, j) for i, row in enumerate(grid) for j, v in enumerate(row)]\n        q.sort()\n        res = 0\n        vis = set()\n        dirs = (-1, 0, 1, 0, -1)\n        while uf.find(0) != uf.find(m * n - 1):\n            v, i, j = q.pop()\n            res = v\n            vis.add((i, j))\n            for a, b in pairwise(dirs):\n                x, y = i + a, j + b\n                if (x, y) in vis:\n                    uf.union(x * n + y, i * n + j)\n        return res\n\n`",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1101/",
+            "title": "1101. The Earliest Moment When Everyone Become Friends",
+            "description": "1101. The Earliest Moment When Everyone Become Friends",
+            "content": "\nLeetCode problem 1101\n\nclass UnionFind:\n    slots = ('p', 'size')\n\n    def init(self, n):\n        self.p = list(range(n))\n        self.size = [1] * n\n\n    def find(self, x: int) -> int:\n        if self.p[x] != x:\n            self.p[x] = self.find(self.p[x])\n        return self.p[x]\n\n    def union(self, a: int, b: int) -> bool:\n        pa, pb = self.find(a), self.find(b)\n        if pa == pb:\n            return False\n        if self.size[pa] > self.size[pb]:\n            self.p[pb] = pa\n            self.size[pa] += self.size[pb]\n        else:\n            self.p[pa] = pb\n            self.size[pb] += self.size[pa]\n        return True\n\n\nclass Solution:\n    def earliestAcq(self, logs: List[List[int]], n: int) -> int:\n        uf = UnionFind(n)\n        for t, x, y in sorted(logs):\n            if uf.union(x, y):\n                n -= 1\n                if n == 1:\n                    return t\n        return -1\n\n`",
+            "tags": [],
             "lang": "ru"
         },
         {
@@ -4750,7 +4838,7 @@
             "uri": "/posts/vps-docker-subdomains-setup/project/projects/3/",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 3
+                    "timeTakenInMilliseconds": 2
                 },
                 "result": "Hello World!",
                 "ranges": [
@@ -5093,7 +5181,7 @@
             "uri": "/p/subscribe/",
             "title": "Подписка",
             "description": null,
-            "content": "\n\nLeetCode решения RU] - Email\nLeetCode решения EN - Email\n\nВсе обновления - Email\n\n\n\n.followit--follow-form-containerattr-aattr-cattr-e .form-preview {\n  display: flex !important;\n  flex-direction: column !important;\n  justify-content: center !important;\n  margin-top: 30px !important;\n  padding: clamp(17px, 5%, 40px) clamp(17px, 7%, 50px) !important;\n  max-width: 350px !important;\n  border-radius: 6px !important;\n  box-shadow: 0 5px 25px rgba(34, 60, 47, 0.25) !important;\n}\n.followit--follow-form-containerattr-aattr-cattr-e .form-preview,\n.followit--follow-form-containerattr-aattr-cattr-e .form-preview *{\n  box-sizing: border-box !important;\n}\n.followit--follow-form-containerattr-aattr-cattr-e .form-preview .preview-heading {\n  width: 100% !important;\n}\n.followit--follow-form-containerattr-aattr-cattr-e .form-preview .preview-heading h5{\n  margin-top: 0 !important;\n  margin-bottom: 0 !important;\n}\n.followit--follow-form-containerattr-aattr-cattr-e .form-preview .preview-input-field {\n  margin-top: 20px !important;\n  width: 100% !important;\n}\n.followit--follow-form-containerattr-aattr-cattr-e .form-preview .preview-input-field input {\n  width: 100% !important;\n  height: 40px !important;\n  border-radius: 6px !important;\n  border: 2px solid #e9e8e8 !important;\n  background-color: #fff !important;\n  outline: none !important;\n}\n.followit--follow-form-containerattr-aattr-cattr-e .form-preview .preview-input-field input {\n  color: #000000 !important;\n  font-family: \"Montserrat\" !important;\n  font-size: 14px !important;\n  font-weight: 400 !important;\n  line-height: 20px !important;\n  text-align: center !important;\n}\n.followit--follow-form-containerattr-aattr-cattr-e .form-preview .preview-input-field input::placeholder {\n  color: #000000 !important;\n  opacity: 1 !important;\n}\n\n.followit--follow-form-containerattr-aattr-cattr-e .form-preview .preview-input-field input:-ms-input-placeholder {\n  color: #000000 !important;\n}\n\n.followit--follow-form-containerattr-aattr-cattr-e .form-preview .preview-input-field input::-ms-input-placeholder {\n  color: #000000 !important;\n}\n.followit--follow-form-containerattr-aattr-cattr-e .form-preview .preview-submit-button {\n  margin-top: 10px !important;\n  width: 100% !important;\n}\n.followit--follow-form-containerattr-aattr-cattr-e .form-preview .preview-submit-button button {\n  width: 100% !important;\n  height: 40px !important;\n  border: 0 !important;\n  border-radius: 6px !important;\n  line-height: 0px !important;\n}\n.followit--follow-form-containerattr-aattr-cattr-e .form-preview .preview-submit-button button:hover {\n  cursor: pointer !important;\n}\n.followit--follow-form-containerattr-aattr-cattr-e .powered-by-line {\n  color: #231f20 !important;\n  font-family: \"Montserrat\" !important;\n  font-size: 13px !important;\n  font-weight: 400 !important;\n  line-height: 25px !important;\n  text-align: center !important;\n  text-decoration: none !important;\n  display: flex !important;\n  width: 100% !important;\n  justify-content: center !important;\n  align-items: center !important;\n  margin-top: 10px !important;\n}\n.followit--follow-form-containerattr-aattr-cattr-e .powered-by-line img {\n  margin-left: 10px !important;\n  height: 1.13em !important;\n  max-height: 1.13em !important;\n}\n\n                  Получай рассылку с сайта\n\n                  Подписаться\n\n",
+            "content": "\n\nLeetCode решения [RU] - Email\nLeetCode решения [EN] - Email\n\nВсе обновления - Email\n\n\n\n.followit--follow-form-containerattr-aattr-cattr-e .form-preview {\n  display: flex !important;\n  flex-direction: column !important;\n  justify-content: center !important;\n  margin-top: 30px !important;\n  padding: clamp(17px, 5%, 40px) clamp(17px, 7%, 50px) !important;\n  max-width: 350px !important;\n  border-radius: 6px !important;\n  box-shadow: 0 5px 25px rgba(34, 60, 47, 0.25) !important;\n}\n.followit--follow-form-containerattr-aattr-cattr-e .form-preview,\n.followit--follow-form-containerattr-aattr-cattr-e .form-preview *{\n  box-sizing: border-box !important;\n}\n.followit--follow-form-containerattr-aattr-cattr-e .form-preview .preview-heading {\n  width: 100% !important;\n}\n.followit--follow-form-containerattr-aattr-cattr-e .form-preview .preview-heading h5{\n  margin-top: 0 !important;\n  margin-bottom: 0 !important;\n}\n.followit--follow-form-containerattr-aattr-cattr-e .form-preview .preview-input-field {\n  margin-top: 20px !important;\n  width: 100% !important;\n}\n.followit--follow-form-containerattr-aattr-cattr-e .form-preview .preview-input-field input {\n  width: 100% !important;\n  height: 40px !important;\n  border-radius: 6px !important;\n  border: 2px solid #e9e8e8 !important;\n  background-color: #fff !important;\n  outline: none !important;\n}\n.followit--follow-form-containerattr-aattr-cattr-e .form-preview .preview-input-field input {\n  color: #000000 !important;\n  font-family: \"Montserrat\" !important;\n  font-size: 14px !important;\n  font-weight: 400 !important;\n  line-height: 20px !important;\n  text-align: center !important;\n}\n.followit--follow-form-containerattr-aattr-cattr-e .form-preview .preview-input-field input::placeholder {\n  color: #000000 !important;\n  opacity: 1 !important;\n}\n\n.followit--follow-form-containerattr-aattr-cattr-e .form-preview .preview-input-field input:-ms-input-placeholder {\n  color: #000000 !important;\n}\n\n.followit--follow-form-containerattr-aattr-cattr-e .form-preview .preview-input-field input::-ms-input-placeholder {\n  color: #000000 !important;\n}\n.followit--follow-form-containerattr-aattr-cattr-e .form-preview .preview-submit-button {\n  margin-top: 10px !important;\n  width: 100% !important;\n}\n.followit--follow-form-containerattr-aattr-cattr-e .form-preview .preview-submit-button button {\n  width: 100% !important;\n  height: 40px !important;\n  border: 0 !important;\n  border-radius: 6px !important;\n  line-height: 0px !important;\n}\n.followit--follow-form-containerattr-aattr-cattr-e .form-preview .preview-submit-button button:hover {\n  cursor: pointer !important;\n}\n.followit--follow-form-containerattr-aattr-cattr-e .powered-by-line {\n  color: #231f20 !important;\n  font-family: \"Montserrat\" !important;\n  font-size: 13px !important;\n  font-weight: 400 !important;\n  line-height: 25px !important;\n  text-align: center !important;\n  text-decoration: none !important;\n  display: flex !important;\n  width: 100% !important;\n  justify-content: center !important;\n  align-items: center !important;\n  margin-top: 10px !important;\n}\n.followit--follow-form-containerattr-aattr-cattr-e .powered-by-line img {\n  margin-left: 10px !important;\n  height: 1.13em !important;\n  max-height: 1.13em !important;\n}\n\n                  Получай рассылку с сайта\n\n                  Подписаться\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -5912,7 +6000,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/802/",
             "title": "802. Find Eventual Safe States",
             "description": "802. Find Eventual Safe States",
-            "content": "\nLeetCode problem 802\n\nclass Solution:\n    def eventualSafeNodes(self, graph: List[List[int]]) -> List[int]:\n        def dfs(i):\n            if color[i]:\n                return color[i] == 2\n            color[i] = 1\n            for j in graph[i]:\n                if not dfs(j):\n                    return False\n            color[i] = 2\n            return True\n\n        n = len(graph)\n        color = [0] * n\n        return [i for i in range(n) if dfs(i)]\n\n`",
+            "content": "\nLeetCode problem 802\n\nclass Solution:\n    def eventualSafeNodes(self, graph: List[List[int]]) -> List[int]:\n        def dfs(i):\n            if color[i]:\n                return color[i] == 2\n            color[i] = 1\n            for j in graph[i]:\n                if not dfs(j):\n                    return False\n            color[i] = 2\n            return True\n\n        n = len(graph)\n        color = [0] * n\n        return [i for i in range(n) if dfs(i)]\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -5930,7 +6018,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/799/",
             "title": "799. Champagne Tower",
             "description": "799. Champagne Tower",
-            "content": "\nLeetCode problem 799\n\nclass Solution:\n    def champagneTower(self, poured: int, query_row: int, query_glass: int) -> float:\n        f = [poured]\n        for i in range(1, query_row + 1):\n            g = [0] * (i + 1)\n            for j, v in enumerate(f):\n                if v > 1:\n                    half = (v - 1) / 2\n                    g[j] += half\n                    g[j + 1] += half\n            f = g\n        return min(1, f[query_glass])\n\n`",
+            "content": "\nLeetCode problem 799\n\nclass Solution:\n    def champagneTower(self, poured: int, query_row: int, query_glass: int) -> float:\n        f = [poured]\n        for i in range(1, query_row + 1):\n            g = [0] * (i + 1)\n            for j, v in enumerate(f):\n                if v > 1:\n                    half = (v - 1) / 2\n                    g[j] += half\n                    g[j + 1] += half\n            f = g\n        return min(1, f[query_glass])\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -5938,7 +6026,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/797/",
             "title": "797. All Paths From Source to Target",
             "description": "797. All Paths From Source to Target",
-            "content": "\nLeetCode problem 797\n\nclass Solution:\n    def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:\n        def dfs(t):\n            if t[-1] == len(graph) - 1:\n                res.append(t[:])\n                return\n            for v in graph[t[-1]]:\n                t.append(v)\n                dfs(t)\n                t.pop()\n\n        res = []\n        dfs([0])\n        return res\n\n`",
+            "content": "\nLeetCode problem 797\n\nclass Solution:\n    def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:\n        def dfs(t):\n            if t[-1] == len(graph) - 1:\n                res.append(t[:])\n                return\n            for v in graph[t[-1]]:\n                t.append(v)\n                dfs(t)\n                t.pop()\n\n        res = []\n        dfs([0])\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -5946,7 +6034,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/795/",
             "title": "795. Number of Subarrays with Bounded Maximum",
             "description": "795. Number of Subarrays with Bounded Maximum",
-            "content": "\nLeetCode problem 795\n\nclass Solution:\n    def numSubarrayBoundedMax(self, nums: List[int], left: int, right: int) -> int:\n        n = len(nums)\n        l, r = [-1] * n, [n] * n\n        stk = []\n        for i, v in enumerate(nums):\n            while stk and nums[stk[-1]] <= v:\n                stk.pop()\n            if stk:\n                l[i] = stk[-1]\n            stk.append(i)\n        stk = []\n        for i in range(n - 1, -1, -1):\n            while stk and nums[stk[-1]] < nums[i]:\n                stk.pop()\n            if stk:\n                r[i] = stk[-1]\n            stk.append(i)\n        return sum(\n            (i - l[i]) * (r[i] - i) for i, v in enumerate(nums) if left <= v <= right\n        )\n\n`",
+            "content": "\nLeetCode problem 795\n\nclass Solution:\n    def numSubarrayBoundedMax(self, nums: List[int], left: int, right: int) -> int:\n        n = len(nums)\n        l, r = [-1] * n, [n] * n\n        stk = []\n        for i, v in enumerate(nums):\n            while stk and nums[stk[-1]] <= v:\n                stk.pop()\n            if stk:\n                l[i] = stk[-1]\n            stk.append(i)\n        stk = []\n        for i in range(n - 1, -1, -1):\n            while stk and nums[stk[-1]] < nums[i]:\n                stk.pop()\n            if stk:\n                r[i] = stk[-1]\n            stk.append(i)\n        return sum(\n            (i - l[i]) * (r[i] - i) for i, v in enumerate(nums) if left <= v <= right\n        )\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -5954,7 +6042,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/794/",
             "title": "794. Valid Tic-Tac-Toe State",
             "description": "794. Valid Tic-Tac-Toe State",
-            "content": "\nLeetCode problem 794\n\nclass Solution:\n    def validTicTacToe(self, board: List[str]) -> bool:\n        def win(x):\n            for i in range(3):\n                if all(boardi == x for j in range(3)):\n                    return True\n                if all(boardj == x for j in range(3)):\n                    return True\n            if all(boardi == x for i in range(3)):\n                return True\n            return all(boardi == x for i in range(3))\n\n        x = sum(boardi == 'X' for i in range(3) for j in range(3))\n        o = sum(boardi == 'O' for i in range(3) for j in range(3))\n        if x != o and x - 1 != o:\n            return False\n        if win('X') and x - 1 != o:\n            return False\n        return not (win('O') and x != o)\n\n`",
+            "content": "\nLeetCode problem 794\n\nclass Solution:\n    def validTicTacToe(self, board: List[str]) -> bool:\n        def win(x):\n            for i in range(3):\n                if all(boardi == x for j in range(3)):\n                    return True\n                if all(boardj == x for j in range(3)):\n                    return True\n            if all(boardi == x for i in range(3)):\n                return True\n            return all(boardi == x for i in range(3))\n\n        x = sum(boardi == 'X' for i in range(3) for j in range(3))\n        o = sum(boardi == 'O' for i in range(3) for j in range(3))\n        if x != o and x - 1 != o:\n            return False\n        if win('X') and x - 1 != o:\n            return False\n        return not (win('O') and x != o)\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -5962,7 +6050,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/792/",
             "title": "792. Number of Matching Subsequences",
             "description": "792. Number of Matching Subsequences",
-            "content": "\nLeetCode problem 792\n\nclass Solution:\n    def numMatchingSubseq(self, s: str, words: List[str]) -> int:\n        def check(w):\n            i = -1\n            for c in w:\n                j = bisect_right(d[c], i)\n                if j == len(d[c]):\n                    return False\n                i = dc\n            return True\n\n        d = defaultdict(list)\n        for i, c in enumerate(s):\n            d[c].append(i)\n        return sum(check(w) for w in words)\n\n`",
+            "content": "\nLeetCode problem 792\n\nclass Solution:\n    def numMatchingSubseq(self, s: str, words: List[str]) -> int:\n        def check(w):\n            i = -1\n            for c in w:\n                j = bisect_right(d[c], i)\n                if j == len(d[c]):\n                    return False\n                i = dc\n            return True\n\n        d = defaultdict(list)\n        for i, c in enumerate(s):\n            d[c].append(i)\n        return sum(check(w) for w in words)\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -5970,7 +6058,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/791/",
             "title": "791. Custom Sort String",
             "description": "791. Custom Sort String",
-            "content": "\nLeetCode problem 791\n\nclass Solution:\n    def customSortString(self, order: str, s: str) -> str:\n        cnt = Counter(s)\n        res = []\n        for c in order:\n            res.append(c * cnt[c])\n            cnt[c] = 0\n        for c, v in cnt.items():\n            res.append(c * v)\n        return ''.join(res)\n\n`",
+            "content": "\nLeetCode problem 791\n\nclass Solution:\n    def customSortString(self, order: str, s: str) -> str:\n        cnt = Counter(s)\n        res = []\n        for c in order:\n            res.append(c * cnt[c])\n            cnt[c] = 0\n        for c, v in cnt.items():\n            res.append(c * v)\n        return ''.join(res)\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -5978,7 +6066,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/790/",
             "title": "790. Domino and Tromino Tiling",
             "description": "790. Domino and Tromino Tiling",
-            "content": "\nLeetCode problem 790\n\nclass Solution:\n    def numTilings(self, n: int) -> int:\n        f = [1, 0, 0, 0]\n        mod = 10**9 + 7\n        for i in range(1, n + 1):\n            g = [0] * 4\n            g[0] = (f[0] + f[1] + f[2] + f[3]) % mod\n            g[1] = (f[2] + f[3]) % mod\n            g[2] = (f[1] + f[3]) % mod\n            g[3] = f[0]\n            f = g\n        return f[0]\n\n`",
+            "content": "\nLeetCode problem 790\n\nclass Solution:\n    def numTilings(self, n: int) -> int:\n        f = [1, 0, 0, 0]\n        mod = 10**9 + 7\n        for i in range(1, n + 1):\n            g = [0] * 4\n            g[0] = (f[0] + f[1] + f[2] + f[3]) % mod\n            g[1] = (f[2] + f[3]) % mod\n            g[2] = (f[1] + f[3]) % mod\n            g[3] = f[0]\n            f = g\n        return f[0]\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -5986,7 +6074,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/789/",
             "title": "789. Escape The Ghosts",
             "description": "789. Escape The Ghosts",
-            "content": "\nLeetCode problem 789\n\nclass Solution:\n    def escapeGhosts(self, ghosts: List[List[int]], target: List[int]) -> bool:\n        tx, ty = target\n        return all(abs(tx - x) + abs(ty - y) > abs(tx) + abs(ty) for x, y in ghosts)\n\n`",
+            "content": "\nLeetCode problem 789\n\nclass Solution:\n    def escapeGhosts(self, ghosts: List[List[int]], target: List[int]) -> bool:\n        tx, ty = target\n        return all(abs(tx - x) + abs(ty - y) > abs(tx) + abs(ty) for x, y in ghosts)\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -5994,7 +6082,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/788/",
             "title": "788. Rotated Digits",
             "description": "788. Rotated Digits",
-            "content": "\nLeetCode problem 788\n\nclass Solution:\n    def rotatedDigits(self, n: int) -> int:\n        @cache\n        def dfs(pos, ok, limit):\n            if pos <= 0:\n                return ok\n            up = a[pos] if limit else 9\n            res = 0\n            for i in range(up + 1):\n                if i in (0, 1, 8):\n                    res += dfs(pos - 1, ok, limit and i == up)\n                if i in (2, 5, 6, 9):\n                    res += dfs(pos - 1, 1, limit and i == up)\n            return res\n\n        a = [0] * 6\n        l = 1\n        while n:\n            a[l] = n % 10\n            n //= 10\n            l += 1\n        return dfs(l, 0, True)\n\n`",
+            "content": "\nLeetCode problem 788\n\nclass Solution:\n    def rotatedDigits(self, n: int) -> int:\n        @cache\n        def dfs(pos, ok, limit):\n            if pos <= 0:\n                return ok\n            up = a[pos] if limit else 9\n            res = 0\n            for i in range(up + 1):\n                if i in (0, 1, 8):\n                    res += dfs(pos - 1, ok, limit and i == up)\n                if i in (2, 5, 6, 9):\n                    res += dfs(pos - 1, 1, limit and i == up)\n            return res\n\n        a = [0] * 6\n        l = 1\n        while n:\n            a[l] = n % 10\n            n //= 10\n            l += 1\n        return dfs(l, 0, True)\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6002,7 +6090,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/787/",
             "title": "787. Cheapest Flights Within K Stops",
             "description": "787. Cheapest Flights Within K Stops",
-            "content": "\nLeetCode problem 787\n\nclass Solution:\n    def findCheapestPrice(\n        self, n: int, flights: List[List[int]], src: int, dst: int, k: int\n    ) -> int:\n        @cache\n        def dfs(u, k):\n            if u == dst:\n                return 0\n            if k = inf else res\n\n`",
+            "content": "\nLeetCode problem 787\n\nclass Solution:\n    def findCheapestPrice(\n        self, n: int, flights: List[List[int]], src: int, dst: int, k: int\n    ) -> int:\n        @cache\n        def dfs(u, k):\n            if u == dst:\n                return 0\n            if k = inf else res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6010,7 +6098,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/786/",
             "title": "786. K-th Smallest Prime Fraction",
             "description": "786. K-th Smallest Prime Fraction",
-            "content": "\nLeetCode problem 786\n\nclass Solution:\n    def kthSmallestPrimeFraction(self, arr: List[int], k: int) -> List[int]:\n        h = [(1 / y, 0, j + 1) for j, y in enumerate(arr[1:])]\n        heapify(h)\n        for _ in range(k - 1):\n            _, i, j = heappop(h)\n            if i + 1 < j:\n                heappush(h, (arr[i + 1] / arr[j], i + 1, j))\n        return arr[h[0], arrh[0]]\n\n`",
+            "content": "\nLeetCode problem 786\n\nclass Solution:\n    def kthSmallestPrimeFraction(self, arr: List[int], k: int) -> List[int]:\n        h = [(1 / y, 0, j + 1) for j, y in enumerate(arr[1:])]\n        heapify(h)\n        for _ in range(k - 1):\n            _, i, j = heappop(h)\n            if i + 1 < j:\n                heappush(h, (arr[i + 1] / arr[j], i + 1, j))\n        return arr[h[0], arrh[0]]\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6018,7 +6106,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/785/",
             "title": "785. Is Graph Bipartite",
             "description": "785. Is Graph Bipartite",
-            "content": "\nLeetCode problem 785\n\nclass Solution:\n    def isBipartite(self, graph: List[List[int]]) -> bool:\n        def find(x):\n            if p[x] != x:\n                p[x] = find(p[x])\n            return p[x]\n\n        p = list(range(len(graph)))\n        for u, g in enumerate(graph):\n            for v in g:\n                if find(u) == find(v):\n                    return False\n                p[find(v)] = find(g[0])\n        return True\n\n`",
+            "content": "\nLeetCode problem 785\n\nclass Solution:\n    def isBipartite(self, graph: List[List[int]]) -> bool:\n        def find(x):\n            if p[x] != x:\n                p[x] = find(p[x])\n            return p[x]\n\n        p = list(range(len(graph)))\n        for u, g in enumerate(graph):\n            for v in g:\n                if find(u) == find(v):\n                    return False\n                p[find(v)] = find(g[0])\n        return True\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6026,7 +6114,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/784/",
             "title": "784. Letter Case Permutation",
             "description": "784. Letter Case Permutation",
-            "content": "\nLeetCode problem 784\n\nclass Solution:\n    def letterCasePermutation(self, s: str) -> List[str]:\n        res = []\n        n = sum(c.isalpha() for c in s)\n        for i in range(1 > j) & 1 else c.upper()\n                    j += 1\n                t.append(c)\n            res.append(''.join(t))\n        return res\n\n`",
+            "content": "\nLeetCode problem 784\n\nclass Solution:\n    def letterCasePermutation(self, s: str) -> List[str]:\n        res = []\n        n = sum(c.isalpha() for c in s)\n        for i in range(1 > j) & 1 else c.upper()\n                    j += 1\n                t.append(c)\n            res.append(''.join(t))\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6034,7 +6122,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/781/",
             "title": "781. Rabbits in Forest",
             "description": "781. Rabbits in Forest",
-            "content": "\nLeetCode problem 781\n\nclass Solution:\n    def numRabbits(self, answers: List[int]) -> int:\n        counter = Counter(answers)\n        return sum([math.ceil(v / (k + 1)) * (k + 1) for k, v in counter.items()])\n\n`",
+            "content": "\nLeetCode problem 781\n\nclass Solution:\n    def numRabbits(self, answers: List[int]) -> int:\n        counter = Counter(answers)\n        return sum([math.ceil(v / (k + 1)) * (k + 1) for k, v in counter.items()])\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6054,7 +6142,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/779/",
             "title": "779. K-th Symbol in Grammar",
             "description": "779. K-th Symbol in Grammar",
-            "content": "\nLeetCode problem 779\n\nclass Solution:\n    def kthGrammar(self, n: int, k: int) -> int:\n        return (k - 1).bit_count() & 1\n\n`",
+            "content": "\nLeetCode problem 779\n\nclass Solution:\n    def kthGrammar(self, n: int, k: int) -> int:\n        return (k - 1).bit_count() & 1\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -6062,7 +6150,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/777/",
             "title": "777. Swap Adjacent in LR String",
             "description": "777. Swap Adjacent in LR String",
-            "content": "\nLeetCode problem 777\n\nclass Solution:\n    def canTransform(self, start: str, end: str) -> bool:\n        n = len(start)\n        i = j = 0\n        while 1:\n            while i = n and j >= n:\n                return True\n            if i >= n or j >= n or start[i] != end[j]:\n                return False\n            if start[i] == 'L' and i  j:\n                return False\n            i, j = i + 1, j + 1\n\n`",
+            "content": "\nLeetCode problem 777\n\nclass Solution:\n    def canTransform(self, start: str, end: str) -> bool:\n        n = len(start)\n        i = j = 0\n        while 1:\n            while i = n and j >= n:\n                return True\n            if i >= n or j >= n or start[i] != end[j]:\n                return False\n            if start[i] == 'L' and i  j:\n                return False\n            i, j = i + 1, j + 1\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -7641,7 +7729,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/1481/",
             "title": "1481. Least Number of Unique Integers after K Removals",
             "description": "1481. Least Number of Unique Integers after K Removals",
-            "content": "\nLeetCode problem 1481\n\nclass Solution:\n    def findLeastNumOfUniqueInts(self, arr: List[int], k: int) -> int:\n        counter = Counter(arr)\n        for i, v in enumerate(sorted(counter.values())):\n            k -= v\n            if k < 0:\n                return len(counter) - i\n        return 0\n`",
+            "content": "\nLeetCode problem 1481\n\nclass Solution:\n    def findLeastNumOfUniqueInts(self, arr: List[int], k: int) -> int:\n        counter = Counter(arr)\n        for i, v in enumerate(sorted(counter.values())):\n            k -= v\n            if k < 0:\n                return len(counter) - i\n        return 0\n",
             "tags": [],
             "lang": "en"
         },
@@ -7805,6 +7893,94 @@
                 "Breadth-First Search",
                 "Binary Tree"
             ],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1123/",
+            "title": "1123. Lowest Common Ancestor of Deepest Leaves",
+            "description": "1123. Lowest Common Ancestor of Deepest Leaves",
+            "content": "\nLeetCode problem 1123\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def lcaDeepestLeaves(self, root: Optional[TreeNode]) -> Optional[TreeNode]:\n        def dfs(root):\n            if root is None:\n                return None, 0\n            l, d1 = dfs(root.left)\n            r, d2 = dfs(root.right)\n            if d1 > d2:\n                return l, d1 + 1\n            if d1 < d2:\n                return r, d2 + 1\n            return root, d1 + 1\n\n        return dfs(root)[0]\n\n`",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1120/",
+            "title": "1120. Maximum Average Subtree",
+            "description": "1120. Maximum Average Subtree",
+            "content": "\nLeetCode problem 1120\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def maximumAverageSubtree(self, root: Optional[TreeNode]) -> float:\n        def dfs(root):\n            if root is None:\n                return 0, 0\n            ls, ln = dfs(root.left)\n            rs, rn = dfs(root.right)\n            s = root.val + ls + rs\n            n = 1 + ln + rn\n            nonlocal res\n            res = max(res, s / n)\n            return s, n\n\n        res = 0\n        dfs(root)\n        return res\n\n`",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1116/",
+            "title": "1116. Print Zero Even Odd",
+            "description": "1116. Print Zero Even Odd",
+            "content": "\nLeetCode problem 1116\n\nfrom threading import Semaphore\n\n\nclass ZeroEvenOdd:\n    def init(self, n):\n        self.n = n\n        self.z = Semaphore(1)\n        self.e = Semaphore(0)\n        self.o = Semaphore(0)\n\nprintNumber(x) outputs \"x\", where x is an integer.\n    def zero(self, printNumber: 'Callable[[int], None]') -> None:\n        for i in range(self.n):\n            self.z.acquire()\n            printNumber(0)\n            if i % 2 == 0:\n                self.o.release()\n            else:\n                self.e.release()\n\n    def even(self, printNumber: 'Callable[[int], None]') -> None:\n        for i in range(2, self.n + 1, 2):\n            self.e.acquire()\n            printNumber(i)\n            self.z.release()\n\n    def odd(self, printNumber: 'Callable[[int], None]') -> None:\n        for i in range(1, self.n + 1, 2):\n            self.o.acquire()\n            printNumber(i)\n            self.z.release()\n\n`",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1115/",
+            "title": "1115. Print FooBar Alternately",
+            "description": "1115. Print FooBar Alternately",
+            "content": "\nLeetCode problem 1115\n\nfrom threading import Semaphore\n\n\nclass FooBar:\n    def init(self, n):\n        self.n = n\n        self.f = Semaphore(1)\n        self.b = Semaphore(0)\n\n    def foo(self, printFoo: \"Callable[[], None]\") -> None:\n        for _ in range(self.n):\n            self.f.acquire()\nprintFoo() outputs \"foo\". Do not change or remove this line.\n            printFoo()\n            self.b.release()\n\n    def bar(self, printBar: \"Callable[[], None]\") -> None:\n        for _ in range(self.n):\n            self.b.acquire()\nprintBar() outputs \"bar\". Do not change or remove this line.\n            printBar()\n            self.f.release()\n\n`",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1111/",
+            "title": "1111. Maximum Nesting Depth of Two Valid Parentheses Strings",
+            "description": "1111. Maximum Nesting Depth of Two Valid Parentheses Strings",
+            "content": "\nLeetCode problem 1111\n\nclass Solution:\n    def maxDepthAfterSplit(self, seq: str) -> List[int]:\n        res = [0] * len(seq)\n        x = 0\n        for i, c in enumerate(seq):\n            if c == \"(\":\n                res[i] = x & 1\n                x += 1\n            else:\n                x -= 1\n                res[i] = x & 1\n        return res\n\n`",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1110/",
+            "title": "1110. Delete Nodes And Return Forest",
+            "description": "1110. Delete Nodes And Return Forest",
+            "content": "\nLeetCode problem 1110\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def delNodes(\n        self, root: Optional[TreeNode], to_delete: List[int]\n    ) -> List[TreeNode]:\n        def dfs(root: Optional[TreeNode]) -> Optional[TreeNode]:\n            if root is None:\n                return None\n            root.left, root.right = dfs(root.left), dfs(root.right)\n            if root.val not in s:\n                return root\n            if root.left:\n                res.append(root.left)\n            if root.right:\n                res.append(root.right)\n            return None\n\n        s = set(to_delete)\n        res = []\n        if dfs(root):\n            res.append(root)\n        return res\n\n`",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1109/",
+            "title": "1109. Corporate Flight Bookings",
+            "description": "1109. Corporate Flight Bookings",
+            "content": "\nLeetCode problem 1109\n\nclass BinaryIndexedTree:\n    def init(self, n):\n        self.n = n\n        self.c = [0] * (n + 1)\n\n    def update(self, x, delta):\n        while x  List[int]:\n        tree = BinaryIndexedTree(n)\n        for first, last, seats in bookings:\n            tree.update(first, seats)\n            tree.update(last + 1, -seats)\n        return [tree.query(i + 1) for i in range(n)]\n\n`",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1105/",
+            "title": "1105. Filling Bookcase Shelves",
+            "description": "1105. Filling Bookcase Shelves",
+            "content": "\nLeetCode problem 1105\n\nclass Solution:\n    def minHeightShelves(self, books: List[List[int]], shelfWidth: int) -> int:\n        n = len(books)\n        f = [0] * (n + 1)\n        for i, (w, h) in enumerate(books, 1):\n            f[i] = f[i - 1] + h\n            for j in range(i - 1, 0, -1):\n                w += booksj - 1\n                if w > shelfWidth:\n                    break\n                h = max(h, booksj - 1)\n                f[i] = min(f[i], f[j - 1] + h)\n        return f[n]\n\n`",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1104/",
+            "title": "1104. Path In Zigzag Labelled Binary Tree",
+            "description": "1104. Path In Zigzag Labelled Binary Tree",
+            "content": "\nLeetCode problem 1104\n\nclass Solution:\n    def pathInZigZagTree(self, label: int) -> List[int]:\n        x = i = 1\n        while (x > 1\n            i -= 1\n        return res\n\n`",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1102/",
+            "title": "1102. Path With Maximum Minimum Value",
+            "description": "1102. Path With Maximum Minimum Value",
+            "content": "\nLeetCode problem 1102\n\nclass UnionFind:\n    slots = (\"p\", \"size\")\n\n    def init(self, n):\n        self.p = list(range(n))\n        self.size = [1] * n\n\n    def find(self, x: int) -> int:\n        if self.p[x] != x:\n            self.p[x] = self.find(self.p[x])\n        return self.p[x]\n\n    def union(self, a: int, b: int) -> bool:\n        pa, pb = self.find(a), self.find(b)\n        if pa == pb:\n            return False\n        if self.size[pa] > self.size[pb]:\n            self.p[pb] = pa\n            self.size[pa] += self.size[pb]\n        else:\n            self.p[pa] = pb\n            self.size[pb] += self.size[pa]\n        return True\n\n\nclass Solution:\n    def maximumMinimumPath(self, grid: List[List[int]]) -> int:\n        m, n = len(grid), len(grid[0])\n        uf = UnionFind(m * n)\n        q = [(v, i, j) for i, row in enumerate(grid) for j, v in enumerate(row)]\n        q.sort()\n        res = 0\n        vis = set()\n        dirs = (-1, 0, 1, 0, -1)\n        while uf.find(0) != uf.find(m * n - 1):\n            v, i, j = q.pop()\n            res = v\n            vis.add((i, j))\n            for a, b in pairwise(dirs):\n                x, y = i + a, j + b\n                if (x, y) in vis:\n                    uf.union(x * n + y, i * n + j)\n        return res\n\n`",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1101/",
+            "title": "1101. The Earliest Moment When Everyone Become Friends",
+            "description": "1101. The Earliest Moment When Everyone Become Friends",
+            "content": "\nLeetCode problem 1101\n\nclass UnionFind:\n    slots = ('p', 'size')\n\n    def init(self, n):\n        self.p = list(range(n))\n        self.size = [1] * n\n\n    def find(self, x: int) -> int:\n        if self.p[x] != x:\n            self.p[x] = self.find(self.p[x])\n        return self.p[x]\n\n    def union(self, a: int, b: int) -> bool:\n        pa, pb = self.find(a), self.find(b)\n        if pa == pb:\n            return False\n        if self.size[pa] > self.size[pb]:\n            self.p[pb] = pa\n            self.size[pa] += self.size[pb]\n        else:\n            self.p[pa] = pb\n            self.size[pb] += self.size[pa]\n        return True\n\n\nclass Solution:\n    def earliestAcq(self, logs: List[List[int]], n: int) -> int:\n        uf = UnionFind(n)\n        for t, x, y in sorted(logs):\n            if uf.union(x, y):\n                n -= 1\n                if n == 1:\n                    return t\n        return -1\n`",
+            "tags": [],
             "lang": "en"
         },
         {

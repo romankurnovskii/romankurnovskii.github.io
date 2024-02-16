@@ -17,7 +17,7 @@ experiences:
     dates: "2009-2014"
     location: 
     writeup: >
-      <a href="ttps://www.open.ac.uk/courses/business-management/degrees/ba-business-management-q91">О направлении</a>
+      <a href="https://www.open.ac.uk/courses/business-management/degrees/ba-business-management-q91">О направлении</a>
 
 weight: 5
 widget:

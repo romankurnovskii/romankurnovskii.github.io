@@ -13,8 +13,8 @@ draft: false
 ---
 
 
-- <a href="https://follow.it/leetcode-on-roman-kurnovskii-2?leanpub" tarhet="_blank">LeetCode решения RU]</a> - Email
-- <a href="https://follow.it/leetcode-on-roman-kurnovskii?leanpub" tarhet="_blank">LeetCode решения EN</a> - Email
+- <a href="https://follow.it/leetcode-on-roman-kurnovskii-2?leanpub" tarhet="_blank">LeetCode решения [RU]</a> - Email
+- <a href="https://follow.it/leetcode-on-roman-kurnovskii?leanpub" tarhet="_blank">LeetCode решения [EN]</a> - Email
 
 - <a href="https://follow.it/roman-kurnovskii?leanpub" tarhet="_blank">Все обновления</a> - Email
 
