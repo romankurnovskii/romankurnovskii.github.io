@@ -2596,7 +2596,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/1642/",
             "title": "1642. Furthest Building You Can Reach",
             "description": "1642. Furthest Building You Can Reach",
-            "content": "\nLeetCode problem 1642\n\nclass Solution:\n    def furthestBuilding(self, heights: List[int], bricks: int, ladders: int) -> int:\n        h = []\n        for i, a in enumerate(heights[:-1]):\n            b = heights[i + 1]\n            d = b - a\n            if d > 0:\n                heappush(h, d)\n                if len(h) > ladders:\n                    bricks -= heappop(h)\n                    if bricks < 0:\n                        return i\n        return len(heights) - 1\n`",
+            "content": "\nLeetCode problem 1642\n\nclass Solution:\n    def furthestBuilding(self, heights: List[int], bricks: int, ladders: int) -> int:\n        h = []\n        for i, a in enumerate(heights[:-1]):\n            b = heights[i + 1]\n            d = b - a\n            if d > 0:\n                heappush(h, d)\n                if len(h) > ladders:\n                    bricks -= heappop(h)\n                    if bricks < 0:\n                        return i\n        return len(heights) - 1\n",
             "tags": [],
             "lang": "ru"
         },
@@ -5300,7 +5300,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 1
+                    "timeTakenInMilliseconds": 2
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -7705,7 +7705,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/1642/",
             "title": "1642. Furthest Building You Can Reach",
             "description": "1642. Furthest Building You Can Reach",
-            "content": "\nLeetCode problem 1642\n\nclass Solution:\n    def furthestBuilding(self, heights: List[int], bricks: int, ladders: int) -> int:\n        h = []\n        for i, a in enumerate(heights[:-1]):\n            b = heights[i + 1]\n            d = b - a\n            if d > 0:\n                heappush(h, d)\n                if len(h) > ladders:\n                    bricks -= heappop(h)\n                    if bricks < 0:\n                        return i\n        return len(heights) - 1\n`",
+            "content": "\nLeetCode problem 1642\n\nclass Solution:\n    def furthestBuilding(self, heights: List[int], bricks: int, ladders: int) -> int:\n        h = []\n        for i, a in enumerate(heights[:-1]):\n            b = heights[i + 1]\n            d = b - a\n            if d > 0:\n                heappush(h, d)\n                if len(h) > ladders:\n                    bricks -= heappop(h)\n                    if bricks < 0:\n                        return i\n        return len(heights) - 1\n",
             "tags": [],
             "lang": "en"
         },
