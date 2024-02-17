@@ -3575,8 +3575,8 @@
             return type.displayName || "Context";
           }
           function getComponentNameFromFiber(fiber) {
-            var tag = fiber.tag, type = fiber.type;
-            switch (tag) {
+            var tag2 = fiber.tag, type = fiber.type;
+            switch (tag2) {
               case CacheComponent:
                 return "Cache";
               case ContextConsumer:
@@ -4255,11 +4255,11 @@
             }
           };
           var reusableSVGContainer;
-          var setInnerHTML = createMicrosoftUnsafeLocalFunction(function(node, html) {
+          var setInnerHTML = createMicrosoftUnsafeLocalFunction(function(node, html2) {
             if (node.namespaceURI === SVG_NAMESPACE) {
               if (!("innerHTML" in node)) {
                 reusableSVGContainer = reusableSVGContainer || document.createElement("div");
-                reusableSVGContainer.innerHTML = "<svg>" + html.valueOf().toString() + "</svg>";
+                reusableSVGContainer.innerHTML = "<svg>" + html2.valueOf().toString() + "</svg>";
                 var svgNode = reusableSVGContainer.firstChild;
                 while (node.firstChild) {
                   node.removeChild(node.firstChild);
@@ -4270,7 +4270,7 @@
                 return;
               }
             }
-            node.innerHTML = html;
+            node.innerHTML = html2;
           });
           var ELEMENT_NODE = 1;
           var TEXT_NODE = 3;
@@ -4584,13 +4584,13 @@
             menuitem: true
           }, omittedCloseTags);
           var HTML = "__html";
-          function assertValidProps(tag, props) {
+          function assertValidProps(tag2, props) {
             if (!props) {
               return;
             }
-            if (voidElementTags[tag]) {
+            if (voidElementTags[tag2]) {
               if (props.children != null || props.dangerouslySetInnerHTML != null) {
-                throw new Error(tag + " is a void element tag and must neither have `children` nor use `dangerouslySetInnerHTML`.");
+                throw new Error(tag2 + " is a void element tag and must neither have `children` nor use `dangerouslySetInnerHTML`.");
               }
             }
             if (props.dangerouslySetInnerHTML != null) {
@@ -5491,8 +5491,8 @@
             batchedUpdatesImpl = _batchedUpdatesImpl;
             flushSyncImpl = _flushSyncImpl;
           }
-          function isInteractive(tag) {
-            return tag === "button" || tag === "input" || tag === "select" || tag === "textarea";
+          function isInteractive(tag2) {
+            return tag2 === "button" || tag2 === "input" || tag2 === "select" || tag2 === "textarea";
           }
           function shouldPreventMouseEvent(name, type, props) {
             switch (name) {
@@ -7183,8 +7183,8 @@
             if (targetInst !== null) {
               var nearestMounted = getNearestMountedFiber(targetInst);
               if (nearestMounted !== null) {
-                var tag = nearestMounted.tag;
-                if (tag === SuspenseComponent) {
+                var tag2 = nearestMounted.tag;
+                if (tag2 === SuspenseComponent) {
                   var instance = getSuspenseInstanceFromFiber(nearestMounted);
                   if (instance !== null) {
                     queuedTarget.blockedOn = instance;
@@ -7193,7 +7193,7 @@
                     });
                     return;
                   }
-                } else if (tag === HostRoot) {
+                } else if (tag2 === HostRoot) {
                   var root2 = nearestMounted.stateNode;
                   if (isRootDehydrated(root2)) {
                     queuedTarget.blockedOn = getContainerFromFiber(nearestMounted);
@@ -7421,14 +7421,14 @@
               if (nearestMounted === null) {
                 targetInst = null;
               } else {
-                var tag = nearestMounted.tag;
-                if (tag === SuspenseComponent) {
+                var tag2 = nearestMounted.tag;
+                if (tag2 === SuspenseComponent) {
                   var instance = getSuspenseInstanceFromFiber(nearestMounted);
                   if (instance !== null) {
                     return instance;
                   }
                   targetInst = null;
-                } else if (tag === HostRoot) {
+                } else if (tag2 === HostRoot) {
                   var root2 = nearestMounted.stateNode;
                   if (isRootDehydrated(root2)) {
                     return getContainerFromFiber(nearestMounted);
@@ -9096,8 +9096,8 @@
             var instance = targetFiber;
             var lastHostComponent = null;
             while (instance !== null) {
-              var _instance2 = instance, stateNode = _instance2.stateNode, tag = _instance2.tag;
-              if (tag === HostComponent && stateNode !== null) {
+              var _instance2 = instance, stateNode = _instance2.stateNode, tag2 = _instance2.tag;
+              if (tag2 === HostComponent && stateNode !== null) {
                 lastHostComponent = stateNode;
                 if (reactEventName !== null) {
                   var listener = getListener(instance, reactEventName);
@@ -9118,8 +9118,8 @@
             var listeners = [];
             var instance = targetFiber;
             while (instance !== null) {
-              var _instance3 = instance, stateNode = _instance3.stateNode, tag = _instance3.tag;
-              if (tag === HostComponent && stateNode !== null) {
+              var _instance3 = instance, stateNode = _instance3.stateNode, tag2 = _instance3.tag;
+              if (tag2 === HostComponent && stateNode !== null) {
                 var currentTarget = stateNode;
                 var captureListener = getListener(instance, captureName);
                 if (captureListener != null) {
@@ -9183,11 +9183,11 @@
               if (instance === common) {
                 break;
               }
-              var _instance4 = instance, alternate = _instance4.alternate, stateNode = _instance4.stateNode, tag = _instance4.tag;
+              var _instance4 = instance, alternate = _instance4.alternate, stateNode = _instance4.stateNode, tag2 = _instance4.tag;
               if (alternate !== null && alternate === common) {
                 break;
               }
-              if (tag === HostComponent && stateNode !== null) {
+              if (tag2 === HostComponent && stateNode !== null) {
                 var currentTarget = stateNode;
                 if (inCapturePhase) {
                   var captureListener = getListener(instance, registrationName);
@@ -9287,9 +9287,9 @@
                 error("Expected `%s` listener to be a function, instead got a value of `%s` type.", registrationName, typeof listener);
               }
             };
-            normalizeHTML = function(parent, html) {
+            normalizeHTML = function(parent, html2) {
               var testElement = parent.namespaceURI === HTML_NAMESPACE ? parent.ownerDocument.createElement(parent.tagName) : parent.ownerDocument.createElementNS(parent.namespaceURI, parent.tagName);
-              testElement.innerHTML = html;
+              testElement.innerHTML = html2;
               return testElement.innerHTML;
             };
           }
@@ -9328,7 +9328,7 @@
           function trapClickOnNonInteractiveElement(node) {
             node.onclick = noop;
           }
-          function setInitialDOMProperties(tag, domElement, rootContainerElement, nextProps, isCustomComponentTag) {
+          function setInitialDOMProperties(tag2, domElement, rootContainerElement, nextProps, isCustomComponentTag) {
             for (var propKey in nextProps) {
               if (!nextProps.hasOwnProperty(propKey)) {
                 continue;
@@ -9348,7 +9348,7 @@
                 }
               } else if (propKey === CHILDREN) {
                 if (typeof nextProp === "string") {
-                  var canSetTextContent = tag !== "textarea" || nextProp !== "";
+                  var canSetTextContent = tag2 !== "textarea" || nextProp !== "";
                   if (canSetTextContent) {
                     setTextContent(domElement, nextProp);
                   }
@@ -9439,13 +9439,13 @@
           function createTextNode(text, rootContainerElement) {
             return getOwnerDocumentFromRootContainer(rootContainerElement).createTextNode(text);
           }
-          function setInitialProperties(domElement, tag, rawProps, rootContainerElement) {
-            var isCustomComponentTag = isCustomComponent(tag, rawProps);
+          function setInitialProperties(domElement, tag2, rawProps, rootContainerElement) {
+            var isCustomComponentTag = isCustomComponent(tag2, rawProps);
             {
-              validatePropertiesInDevelopment(tag, rawProps);
+              validatePropertiesInDevelopment(tag2, rawProps);
             }
             var props;
-            switch (tag) {
+            switch (tag2) {
               case "dialog":
                 listenToNonDelegatedEvent("cancel", domElement);
                 listenToNonDelegatedEvent("close", domElement);
@@ -9501,9 +9501,9 @@
               default:
                 props = rawProps;
             }
-            assertValidProps(tag, props);
-            setInitialDOMProperties(tag, domElement, rootContainerElement, props, isCustomComponentTag);
-            switch (tag) {
+            assertValidProps(tag2, props);
+            setInitialDOMProperties(tag2, domElement, rootContainerElement, props, isCustomComponentTag);
+            switch (tag2) {
               case "input":
                 track(domElement);
                 postMountWrapper(domElement, rawProps, false);
@@ -9525,14 +9525,14 @@
                 break;
             }
           }
-          function diffProperties(domElement, tag, lastRawProps, nextRawProps, rootContainerElement) {
+          function diffProperties(domElement, tag2, lastRawProps, nextRawProps, rootContainerElement) {
             {
-              validatePropertiesInDevelopment(tag, nextRawProps);
+              validatePropertiesInDevelopment(tag2, nextRawProps);
             }
             var updatePayload = null;
             var lastProps;
             var nextProps;
-            switch (tag) {
+            switch (tag2) {
               case "input":
                 lastProps = getHostProps(domElement, lastRawProps);
                 nextProps = getHostProps(domElement, nextRawProps);
@@ -9556,7 +9556,7 @@
                 }
                 break;
             }
-            assertValidProps(tag, nextProps);
+            assertValidProps(tag2, nextProps);
             var propKey;
             var styleName;
             var styleUpdates = null;
@@ -9664,14 +9664,14 @@
             }
             return updatePayload;
           }
-          function updateProperties(domElement, updatePayload, tag, lastRawProps, nextRawProps) {
-            if (tag === "input" && nextRawProps.type === "radio" && nextRawProps.name != null) {
+          function updateProperties(domElement, updatePayload, tag2, lastRawProps, nextRawProps) {
+            if (tag2 === "input" && nextRawProps.type === "radio" && nextRawProps.name != null) {
               updateChecked(domElement, nextRawProps);
             }
-            var wasCustomComponentTag = isCustomComponent(tag, lastRawProps);
-            var isCustomComponentTag = isCustomComponent(tag, nextRawProps);
+            var wasCustomComponentTag = isCustomComponent(tag2, lastRawProps);
+            var isCustomComponentTag = isCustomComponent(tag2, nextRawProps);
             updateDOMProperties(domElement, updatePayload, wasCustomComponentTag, isCustomComponentTag);
-            switch (tag) {
+            switch (tag2) {
               case "input":
                 updateWrapper(domElement, nextRawProps);
                 break;
@@ -9692,14 +9692,14 @@
               return possibleStandardNames[lowerCasedName] || null;
             }
           }
-          function diffHydratedProperties(domElement, tag, rawProps, parentNamespace, rootContainerElement, isConcurrentMode, shouldWarnDev) {
+          function diffHydratedProperties(domElement, tag2, rawProps, parentNamespace, rootContainerElement, isConcurrentMode, shouldWarnDev) {
             var isCustomComponentTag;
             var extraAttributeNames;
             {
-              isCustomComponentTag = isCustomComponent(tag, rawProps);
-              validatePropertiesInDevelopment(tag, rawProps);
+              isCustomComponentTag = isCustomComponent(tag2, rawProps);
+              validatePropertiesInDevelopment(tag2, rawProps);
             }
-            switch (tag) {
+            switch (tag2) {
               case "dialog":
                 listenToNonDelegatedEvent("cancel", domElement);
                 listenToNonDelegatedEvent("close", domElement);
@@ -9743,7 +9743,7 @@
                 listenToNonDelegatedEvent("invalid", domElement);
                 break;
             }
-            assertValidProps(tag, rawProps);
+            assertValidProps(tag2, rawProps);
             {
               extraAttributeNames = /* @__PURE__ */ new Set();
               var attributes = domElement.attributes;
@@ -9834,7 +9834,7 @@
                   } else {
                     var ownNamespace = parentNamespace;
                     if (ownNamespace === HTML_NAMESPACE) {
-                      ownNamespace = getIntrinsicNamespace(tag);
+                      ownNamespace = getIntrinsicNamespace(tag2);
                     }
                     if (ownNamespace === HTML_NAMESPACE) {
                       extraAttributeNames.delete(propKey.toLowerCase());
@@ -9865,7 +9865,7 @@
                 }
               }
             }
-            switch (tag) {
+            switch (tag2) {
               case "input":
                 track(domElement);
                 postMountWrapper(domElement, rawProps, true);
@@ -9907,13 +9907,13 @@
               error('Did not expect server HTML to contain the text node "%s" in <%s>.', child.nodeValue, parentNode.nodeName.toLowerCase());
             }
           }
-          function warnForInsertedHydratedElement(parentNode, tag, props) {
+          function warnForInsertedHydratedElement(parentNode, tag2, props) {
             {
               if (didWarnInvalidHydration) {
                 return;
               }
               didWarnInvalidHydration = true;
-              error("Expected server HTML to contain a matching <%s> in <%s>.", tag, parentNode.nodeName.toLowerCase());
+              error("Expected server HTML to contain a matching <%s> in <%s>.", tag2, parentNode.nodeName.toLowerCase());
             }
           }
           function warnForInsertedHydratedText(parentNode, text) {
@@ -9928,8 +9928,8 @@
               error('Expected server HTML to contain a matching text node for "%s" in <%s>.', text, parentNode.nodeName.toLowerCase());
             }
           }
-          function restoreControlledState$3(domElement, tag, props) {
-            switch (tag) {
+          function restoreControlledState$3(domElement, tag2, props) {
+            switch (tag2) {
               case "input":
                 restoreControlledState(domElement, props);
                 return;
@@ -9976,75 +9976,75 @@
               listItemTagAutoclosing: null,
               dlItemTagAutoclosing: null
             };
-            updatedAncestorInfo = function(oldInfo, tag) {
+            updatedAncestorInfo = function(oldInfo, tag2) {
               var ancestorInfo = assign({}, oldInfo || emptyAncestorInfo);
               var info = {
-                tag
+                tag: tag2
               };
-              if (inScopeTags.indexOf(tag) !== -1) {
+              if (inScopeTags.indexOf(tag2) !== -1) {
                 ancestorInfo.aTagInScope = null;
                 ancestorInfo.buttonTagInScope = null;
                 ancestorInfo.nobrTagInScope = null;
               }
-              if (buttonScopeTags.indexOf(tag) !== -1) {
+              if (buttonScopeTags.indexOf(tag2) !== -1) {
                 ancestorInfo.pTagInButtonScope = null;
               }
-              if (specialTags.indexOf(tag) !== -1 && tag !== "address" && tag !== "div" && tag !== "p") {
+              if (specialTags.indexOf(tag2) !== -1 && tag2 !== "address" && tag2 !== "div" && tag2 !== "p") {
                 ancestorInfo.listItemTagAutoclosing = null;
                 ancestorInfo.dlItemTagAutoclosing = null;
               }
               ancestorInfo.current = info;
-              if (tag === "form") {
+              if (tag2 === "form") {
                 ancestorInfo.formTag = info;
               }
-              if (tag === "a") {
+              if (tag2 === "a") {
                 ancestorInfo.aTagInScope = info;
               }
-              if (tag === "button") {
+              if (tag2 === "button") {
                 ancestorInfo.buttonTagInScope = info;
               }
-              if (tag === "nobr") {
+              if (tag2 === "nobr") {
                 ancestorInfo.nobrTagInScope = info;
               }
-              if (tag === "p") {
+              if (tag2 === "p") {
                 ancestorInfo.pTagInButtonScope = info;
               }
-              if (tag === "li") {
+              if (tag2 === "li") {
                 ancestorInfo.listItemTagAutoclosing = info;
               }
-              if (tag === "dd" || tag === "dt") {
+              if (tag2 === "dd" || tag2 === "dt") {
                 ancestorInfo.dlItemTagAutoclosing = info;
               }
               return ancestorInfo;
             };
-            var isTagValidWithParent = function(tag, parentTag) {
+            var isTagValidWithParent = function(tag2, parentTag) {
               switch (parentTag) {
                 case "select":
-                  return tag === "option" || tag === "optgroup" || tag === "#text";
+                  return tag2 === "option" || tag2 === "optgroup" || tag2 === "#text";
                 case "optgroup":
-                  return tag === "option" || tag === "#text";
+                  return tag2 === "option" || tag2 === "#text";
                 case "option":
-                  return tag === "#text";
+                  return tag2 === "#text";
                 case "tr":
-                  return tag === "th" || tag === "td" || tag === "style" || tag === "script" || tag === "template";
+                  return tag2 === "th" || tag2 === "td" || tag2 === "style" || tag2 === "script" || tag2 === "template";
                 case "tbody":
                 case "thead":
                 case "tfoot":
-                  return tag === "tr" || tag === "style" || tag === "script" || tag === "template";
+                  return tag2 === "tr" || tag2 === "style" || tag2 === "script" || tag2 === "template";
                 case "colgroup":
-                  return tag === "col" || tag === "template";
+                  return tag2 === "col" || tag2 === "template";
                 case "table":
-                  return tag === "caption" || tag === "colgroup" || tag === "tbody" || tag === "tfoot" || tag === "thead" || tag === "style" || tag === "script" || tag === "template";
+                  return tag2 === "caption" || tag2 === "colgroup" || tag2 === "tbody" || tag2 === "tfoot" || tag2 === "thead" || tag2 === "style" || tag2 === "script" || tag2 === "template";
                 case "head":
-                  return tag === "base" || tag === "basefont" || tag === "bgsound" || tag === "link" || tag === "meta" || tag === "title" || tag === "noscript" || tag === "noframes" || tag === "style" || tag === "script" || tag === "template";
+                  return tag2 === "base" || tag2 === "basefont" || tag2 === "bgsound" || tag2 === "link" || tag2 === "meta" || tag2 === "title" || tag2 === "noscript" || tag2 === "noframes" || tag2 === "style" || tag2 === "script" || tag2 === "template";
                 case "html":
-                  return tag === "head" || tag === "body" || tag === "frameset";
+                  return tag2 === "head" || tag2 === "body" || tag2 === "frameset";
                 case "frameset":
-                  return tag === "frame";
+                  return tag2 === "frame";
                 case "#document":
-                  return tag === "html";
+                  return tag2 === "html";
               }
-              switch (tag) {
+              switch (tag2) {
                 case "h1":
                 case "h2":
                 case "h3":
@@ -10073,8 +10073,8 @@
               }
               return true;
             };
-            var findInvalidAncestorForTag = function(tag, ancestorInfo) {
-              switch (tag) {
+            var findInvalidAncestorForTag = function(tag2, ancestorInfo) {
+              switch (tag2) {
                 case "address":
                 case "article":
                 case "aside":
@@ -11851,10 +11851,10 @@
             }
             while (fiber !== null) {
               var nextFiber = void 0;
-              var list = fiber.dependencies;
-              if (list !== null) {
+              var list2 = fiber.dependencies;
+              if (list2 !== null) {
                 nextFiber = fiber.child;
-                var dependency = list.firstContext;
+                var dependency = list2.firstContext;
                 while (dependency !== null) {
                   if (dependency.context === context) {
                     if (fiber.tag === ClassComponent) {
@@ -11882,7 +11882,7 @@
                       alternate.lanes = mergeLanes(alternate.lanes, renderLanes2);
                     }
                     scheduleContextWorkOnParentPath(fiber.return, renderLanes2, workInProgress2);
-                    list.lanes = mergeLanes(list.lanes, renderLanes2);
+                    list2.lanes = mergeLanes(list2.lanes, renderLanes2);
                     break;
                   }
                   dependency = dependency.next;
@@ -14551,9 +14551,9 @@
           function rerenderState(initialState) {
             return rerenderReducer(basicStateReducer);
           }
-          function pushEffect(tag, create, destroy, deps) {
+          function pushEffect(tag2, create, destroy, deps) {
             var effect = {
-              tag,
+              tag: tag2,
               create,
               destroy,
               deps,
@@ -16040,8 +16040,8 @@
             }
           }
           function resetSuspendedComponent(sourceFiber, rootRenderLanes) {
-            var tag = sourceFiber.tag;
-            if ((sourceFiber.mode & ConcurrentMode) === NoMode && (tag === FunctionComponent || tag === ForwardRef || tag === SimpleMemoComponent)) {
+            var tag2 = sourceFiber.tag;
+            if ((sourceFiber.mode & ConcurrentMode) === NoMode && (tag2 === FunctionComponent || tag2 === ForwardRef || tag2 === SimpleMemoComponent)) {
               var currentSource = sourceFiber.alternate;
               if (currentSource) {
                 sourceFiber.updateQueue = currentSource.updateQueue;
@@ -19299,8 +19299,8 @@
             }
           }
           function insertOrAppendPlacementNodeIntoContainer(node, before, parent) {
-            var tag = node.tag;
-            var isHost = tag === HostComponent || tag === HostText;
+            var tag2 = node.tag;
+            var isHost = tag2 === HostComponent || tag2 === HostText;
             if (isHost) {
               var stateNode = node.stateNode;
               if (before) {
@@ -19308,7 +19308,7 @@
               } else {
                 appendChildToContainer(parent, stateNode);
               }
-            } else if (tag === HostPortal)
+            } else if (tag2 === HostPortal)
               ;
             else {
               var child = node.child;
@@ -19323,8 +19323,8 @@
             }
           }
           function insertOrAppendPlacementNode(node, before, parent) {
-            var tag = node.tag;
-            var isHost = tag === HostComponent || tag === HostText;
+            var tag2 = node.tag;
+            var isHost = tag2 === HostComponent || tag2 === HostText;
             if (isHost) {
               var stateNode = node.stateNode;
               if (before) {
@@ -19332,7 +19332,7 @@
               } else {
                 appendChild(parent, stateNode);
               }
-            } else if (tag === HostPortal)
+            } else if (tag2 === HostPortal)
               ;
             else {
               var child = node.child;
@@ -19450,11 +19450,11 @@
                       var firstEffect = lastEffect.next;
                       var effect = firstEffect;
                       do {
-                        var _effect = effect, destroy = _effect.destroy, tag = _effect.tag;
+                        var _effect = effect, destroy = _effect.destroy, tag2 = _effect.tag;
                         if (destroy !== void 0) {
-                          if ((tag & Insertion) !== NoFlags$1) {
+                          if ((tag2 & Insertion) !== NoFlags$1) {
                             safelyCallDestroy(deletedFiber, nearestMountedAncestor, destroy);
-                          } else if ((tag & Layout) !== NoFlags$1) {
+                          } else if ((tag2 & Layout) !== NoFlags$1) {
                             {
                               markComponentLayoutEffectUnmountStarted(deletedFiber);
                             }
@@ -21619,8 +21619,8 @@
               if (!(fiber.mode & ConcurrentMode)) {
                 return;
               }
-              var tag = fiber.tag;
-              if (tag !== IndeterminateComponent && tag !== HostRoot && tag !== ClassComponent && tag !== FunctionComponent && tag !== ForwardRef && tag !== MemoComponent && tag !== SimpleMemoComponent) {
+              var tag2 = fiber.tag;
+              if (tag2 !== IndeterminateComponent && tag2 !== HostRoot && tag2 !== ClassComponent && tag2 !== FunctionComponent && tag2 !== ForwardRef && tag2 !== MemoComponent && tag2 !== SimpleMemoComponent) {
                 return;
               }
               var componentName = getComponentNameFromFiber(fiber) || "ReactComponent";
@@ -21920,9 +21920,9 @@
           };
           function scheduleFibersWithFamiliesRecursively(fiber, updatedFamilies, staleFamilies) {
             {
-              var alternate = fiber.alternate, child = fiber.child, sibling = fiber.sibling, tag = fiber.tag, type = fiber.type;
+              var alternate = fiber.alternate, child = fiber.child, sibling = fiber.sibling, tag2 = fiber.tag, type = fiber.type;
               var candidateType = null;
-              switch (tag) {
+              switch (tag2) {
                 case FunctionComponent:
                 case SimpleMemoComponent:
                 case ClassComponent:
@@ -21943,7 +21943,7 @@
                   if (staleFamilies.has(family)) {
                     needsRemount = true;
                   } else if (updatedFamilies.has(family)) {
-                    if (tag === ClassComponent) {
+                    if (tag2 === ClassComponent) {
                       needsRemount = true;
                     } else {
                       needsRender = true;
@@ -21985,9 +21985,9 @@
           };
           function findHostInstancesForMatchingFibersRecursively(fiber, types, hostInstances) {
             {
-              var child = fiber.child, sibling = fiber.sibling, tag = fiber.tag, type = fiber.type;
+              var child = fiber.child, sibling = fiber.sibling, tag2 = fiber.tag, type = fiber.type;
               var candidateType = null;
-              switch (tag) {
+              switch (tag2) {
                 case FunctionComponent:
                 case SimpleMemoComponent:
                 case ClassComponent:
@@ -22080,8 +22080,8 @@
               hasBadMapPolyfill = true;
             }
           }
-          function FiberNode(tag, pendingProps, key, mode) {
-            this.tag = tag;
+          function FiberNode(tag2, pendingProps, key, mode) {
+            this.tag = tag2;
             this.key = key;
             this.elementType = null;
             this.type = null;
@@ -22123,8 +22123,8 @@
               }
             }
           }
-          var createFiber = function(tag, pendingProps, key, mode) {
-            return new FiberNode(tag, pendingProps, key, mode);
+          var createFiber = function(tag2, pendingProps, key, mode) {
+            return new FiberNode(tag2, pendingProps, key, mode);
           };
           function shouldConstruct$1(Component) {
             var prototype = Component.prototype;
@@ -22248,9 +22248,9 @@
             }
             return workInProgress2;
           }
-          function createHostRootFiber(tag, isStrictMode, concurrentUpdatesByDefaultOverride) {
+          function createHostRootFiber(tag2, isStrictMode, concurrentUpdatesByDefaultOverride) {
             var mode;
-            if (tag === ConcurrentRoot) {
+            if (tag2 === ConcurrentRoot) {
               mode = ConcurrentMode;
               if (isStrictMode === true) {
                 mode |= StrictLegacyMode;
@@ -22478,8 +22478,8 @@
             target._debugHookTypes = source._debugHookTypes;
             return target;
           }
-          function FiberRootNode(containerInfo, tag, hydrate2, identifierPrefix, onRecoverableError) {
-            this.tag = tag;
+          function FiberRootNode(containerInfo, tag2, hydrate2, identifierPrefix, onRecoverableError) {
+            this.tag = tag2;
             this.containerInfo = containerInfo;
             this.pendingChildren = null;
             this.current = null;
@@ -22517,7 +22517,7 @@
               }
             }
             {
-              switch (tag) {
+              switch (tag2) {
                 case ConcurrentRoot:
                   this._debugRootType = hydrate2 ? "hydrateRoot()" : "createRoot()";
                   break;
@@ -22527,9 +22527,9 @@
               }
             }
           }
-          function createFiberRoot(containerInfo, tag, hydrate2, initialChildren, hydrationCallbacks, isStrictMode, concurrentUpdatesByDefaultOverride, identifierPrefix, onRecoverableError, transitionCallbacks) {
-            var root2 = new FiberRootNode(containerInfo, tag, hydrate2, identifierPrefix, onRecoverableError);
-            var uninitializedFiber = createHostRootFiber(tag, isStrictMode);
+          function createFiberRoot(containerInfo, tag2, hydrate2, initialChildren, hydrationCallbacks, isStrictMode, concurrentUpdatesByDefaultOverride, identifierPrefix, onRecoverableError, transitionCallbacks) {
+            var root2 = new FiberRootNode(containerInfo, tag2, hydrate2, identifierPrefix, onRecoverableError);
+            var uninitializedFiber = createHostRootFiber(tag2, isStrictMode);
             root2.current = uninitializedFiber;
             uninitializedFiber.stateNode = root2;
             {
@@ -22620,14 +22620,14 @@
               return hostFiber.stateNode;
             }
           }
-          function createContainer(containerInfo, tag, hydrationCallbacks, isStrictMode, concurrentUpdatesByDefaultOverride, identifierPrefix, onRecoverableError, transitionCallbacks) {
+          function createContainer(containerInfo, tag2, hydrationCallbacks, isStrictMode, concurrentUpdatesByDefaultOverride, identifierPrefix, onRecoverableError, transitionCallbacks) {
             var hydrate2 = false;
             var initialChildren = null;
-            return createFiberRoot(containerInfo, tag, hydrate2, initialChildren, hydrationCallbacks, isStrictMode, concurrentUpdatesByDefaultOverride, identifierPrefix, onRecoverableError);
+            return createFiberRoot(containerInfo, tag2, hydrate2, initialChildren, hydrationCallbacks, isStrictMode, concurrentUpdatesByDefaultOverride, identifierPrefix, onRecoverableError);
           }
-          function createHydrationContainer(initialChildren, callback, containerInfo, tag, hydrationCallbacks, isStrictMode, concurrentUpdatesByDefaultOverride, identifierPrefix, onRecoverableError, transitionCallbacks) {
+          function createHydrationContainer(initialChildren, callback, containerInfo, tag2, hydrationCallbacks, isStrictMode, concurrentUpdatesByDefaultOverride, identifierPrefix, onRecoverableError, transitionCallbacks) {
             var hydrate2 = true;
-            var root2 = createFiberRoot(containerInfo, tag, hydrate2, initialChildren, hydrationCallbacks, isStrictMode, concurrentUpdatesByDefaultOverride, identifierPrefix, onRecoverableError);
+            var root2 = createFiberRoot(containerInfo, tag2, hydrate2, initialChildren, hydrationCallbacks, isStrictMode, concurrentUpdatesByDefaultOverride, identifierPrefix, onRecoverableError);
             root2.context = getContextForSubtree(null);
             var current2 = root2.current;
             var eventTime = requestEventTime();
@@ -26255,10 +26255,10 @@
         if (!opts.xmlMode && foreignElements.has(elem.name)) {
           opts = __assign(__assign({}, opts), { xmlMode: "foreign" });
         }
-        var tag = "<".concat(elem.name);
+        var tag2 = "<".concat(elem.name);
         var attribs = formatAttributes(elem.attribs, opts);
         if (attribs) {
-          tag += " ".concat(attribs);
+          tag2 += " ".concat(attribs);
         }
         if (elem.children.length === 0 && (opts.xmlMode ? (
           // In XML mode or foreign mode, and user hasn't explicitly turned off self-closing tags
@@ -26268,18 +26268,18 @@
           opts.selfClosingTags && singleTag.has(elem.name)
         ))) {
           if (!opts.xmlMode)
-            tag += " ";
-          tag += "/>";
+            tag2 += " ";
+          tag2 += "/>";
         } else {
-          tag += ">";
+          tag2 += ">";
           if (elem.children.length > 0) {
-            tag += render(elem.children, opts);
+            tag2 += render(elem.children, opts);
           }
           if (opts.xmlMode || !singleTag.has(elem.name)) {
-            tag += "</".concat(elem.name, ">");
+            tag2 += "</".concat(elem.name, ">");
           }
         }
-        return tag;
+        return tag2;
       }
       function renderDirective(elem) {
         return "<".concat(elem.data, ">");
@@ -27153,15 +27153,15 @@
       var htmlparser2_1 = require_lib6();
       var domhandler_1 = require_lib2();
       var utilities_1 = require_utilities();
-      function HTMLDOMParser(html, options2) {
-        if (typeof html !== "string") {
+      function HTMLDOMParser(html2, options2) {
+        if (typeof html2 !== "string") {
           throw new TypeError("First argument must be a string.");
         }
-        if (!html) {
+        if (!html2) {
           return [];
         }
         var handler = new domhandler_1.DomHandler(void 0, options2);
-        new htmlparser2_1.Parser(handler, options2).end(html);
+        new htmlparser2_1.Parser(handler, options2).end(html2);
         return (0, utilities_1.unsetRootParent)(handler.dom);
       }
       exports.default = HTMLDOMParser;
@@ -28671,14 +28671,14 @@
         return domhandler_1.Text;
       } });
       var domParserOptions = { lowerCaseAttributeNames: false };
-      function HTMLReactParser2(html, options2) {
-        if (typeof html !== "string") {
+      function HTMLReactParser2(html2, options2) {
+        if (typeof html2 !== "string") {
           throw new TypeError("First argument must be a string");
         }
-        if (!html) {
+        if (!html2) {
           return [];
         }
-        return (0, dom_to_react_1.default)((0, html_dom_parser_1.default)(html, (options2 === null || options2 === void 0 ? void 0 : options2.htmlparser2) || domParserOptions), options2);
+        return (0, dom_to_react_1.default)((0, html_dom_parser_1.default)(html2, (options2 === null || options2 === void 0 ? void 0 : options2.htmlparser2) || domParserOptions), options2);
       }
       exports.default = HTMLReactParser2;
     }
@@ -28720,21 +28720,21 @@
     "'": "&#39;"
   };
   var getEscapeReplacement = (ch) => escapeReplacements[ch];
-  function escape(html, encode) {
+  function escape$1(html2, encode) {
     if (encode) {
-      if (escapeTest.test(html)) {
-        return html.replace(escapeReplace, getEscapeReplacement);
+      if (escapeTest.test(html2)) {
+        return html2.replace(escapeReplace, getEscapeReplacement);
       }
     } else {
-      if (escapeTestNoEncode.test(html)) {
-        return html.replace(escapeReplaceNoEncode, getEscapeReplacement);
+      if (escapeTestNoEncode.test(html2)) {
+        return html2.replace(escapeReplaceNoEncode, getEscapeReplacement);
       }
     }
-    return html;
+    return html2;
   }
   var unescapeTest = /&(#(?:\d+)|(?:#x[0-9A-Fa-f]+)|(?:\w+));?/ig;
-  function unescape(html) {
-    return html.replace(unescapeTest, (_, n) => {
+  function unescape(html2) {
+    return html2.replace(unescapeTest, (_, n) => {
       n = n.toLowerCase();
       if (n === "colon")
         return ":";
@@ -28746,17 +28746,17 @@
   }
   var caret = /(^|[^\[])\^/g;
   function edit(regex, opt) {
-    regex = typeof regex === "string" ? regex : regex.source;
+    let source = typeof regex === "string" ? regex : regex.source;
     opt = opt || "";
     const obj = {
       replace: (name, val) => {
-        val = typeof val === "object" && "source" in val ? val.source : val;
-        val = val.replace(caret, "$1");
-        regex = regex.replace(name, val);
+        let valSource = typeof val === "string" ? val : val.source;
+        valSource = valSource.replace(caret, "$1");
+        source = source.replace(name, valSource);
         return obj;
       },
       getRegex: () => {
-        return new RegExp(regex, opt);
+        return new RegExp(source, opt);
       }
     };
     return obj;
@@ -28839,9 +28839,9 @@
     }
     return -1;
   }
-  function outputLink(cap, link, raw, lexer2) {
-    const href = link.href;
-    const title = link.title ? escape(link.title) : null;
+  function outputLink(cap, link2, raw, lexer2) {
+    const href = link2.href;
+    const title = link2.title ? escape$1(link2.title) : null;
     const text = cap[1].replace(/\\([\[\]])/g, "$1");
     if (cap[0].charAt(0) !== "!") {
       lexer2.state.inLink = true;
@@ -28861,7 +28861,7 @@
       raw,
       href,
       title,
-      text: escape(text)
+      text: escape$1(text)
     };
   }
   function indentCodeCompensation(raw, text) {
@@ -28884,9 +28884,10 @@
   }
   var _Tokenizer = class {
     options;
-    // TODO: Fix this rules type
     rules;
+    // set by the lexer
     lexer;
+    // set by the lexer
     constructor(options2) {
       this.options = options2 || _defaults;
     }
@@ -28919,7 +28920,7 @@
         return {
           type: "code",
           raw,
-          lang: cap[2] ? cap[2].trim().replace(this.rules.inline._escapes, "$1") : cap[2],
+          lang: cap[2] ? cap[2].trim().replace(this.rules.inline.anyPunctuation, "$1") : cap[2],
           text
         };
       }
@@ -28975,7 +28976,7 @@
       if (cap) {
         let bull = cap[1].trim();
         const isordered = bull.length > 1;
-        const list = {
+        const list2 = {
           type: "list",
           raw: "",
           ordered: isordered,
@@ -29070,9 +29071,9 @@
               line = nextLine.slice(indent);
             }
           }
-          if (!list.loose) {
+          if (!list2.loose) {
             if (endsWithBlankLine) {
-              list.loose = true;
+              list2.loose = true;
             } else if (/\n *\n *$/.test(raw)) {
               endsWithBlankLine = true;
             }
@@ -29086,7 +29087,7 @@
               itemContents = itemContents.replace(/^\[[ xX]\] +/, "");
             }
           }
-          list.items.push({
+          list2.items.push({
             type: "list_item",
             raw,
             task: !!istask,
@@ -29095,26 +29096,26 @@
             text: itemContents,
             tokens: []
           });
-          list.raw += raw;
+          list2.raw += raw;
         }
-        list.items[list.items.length - 1].raw = raw.trimEnd();
-        list.items[list.items.length - 1].text = itemContents.trimEnd();
-        list.raw = list.raw.trimEnd();
-        for (let i = 0; i < list.items.length; i++) {
+        list2.items[list2.items.length - 1].raw = raw.trimEnd();
+        list2.items[list2.items.length - 1].text = itemContents.trimEnd();
+        list2.raw = list2.raw.trimEnd();
+        for (let i = 0; i < list2.items.length; i++) {
           this.lexer.state.top = false;
-          list.items[i].tokens = this.lexer.blockTokens(list.items[i].text, []);
-          if (!list.loose) {
-            const spacers = list.items[i].tokens.filter((t) => t.type === "space");
+          list2.items[i].tokens = this.lexer.blockTokens(list2.items[i].text, []);
+          if (!list2.loose) {
+            const spacers = list2.items[i].tokens.filter((t) => t.type === "space");
             const hasMultipleLineBreaks = spacers.length > 0 && spacers.some((t) => /\n.*\n/.test(t.raw));
-            list.loose = hasMultipleLineBreaks;
+            list2.loose = hasMultipleLineBreaks;
           }
         }
-        if (list.loose) {
-          for (let i = 0; i < list.items.length; i++) {
-            list.items[i].loose = true;
+        if (list2.loose) {
+          for (let i = 0; i < list2.items.length; i++) {
+            list2.items[i].loose = true;
           }
         }
-        return list;
+        return list2;
       }
     }
     html(src) {
@@ -29133,12 +29134,12 @@
     def(src) {
       const cap = this.rules.block.def.exec(src);
       if (cap) {
-        const tag = cap[1].toLowerCase().replace(/\s+/g, " ");
-        const href = cap[2] ? cap[2].replace(/^<(.*)>$/, "$1").replace(this.rules.inline._escapes, "$1") : "";
-        const title = cap[3] ? cap[3].substring(1, cap[3].length - 1).replace(this.rules.inline._escapes, "$1") : cap[3];
+        const tag2 = cap[1].toLowerCase().replace(/\s+/g, " ");
+        const href = cap[2] ? cap[2].replace(/^<(.*)>$/, "$1").replace(this.rules.inline.anyPunctuation, "$1") : "";
+        const title = cap[3] ? cap[3].substring(1, cap[3].length - 1).replace(this.rules.inline.anyPunctuation, "$1") : cap[3];
         return {
           type: "def",
-          tag,
+          tag: tag2,
           raw: cap[0],
           href,
           title
@@ -29147,56 +29148,51 @@
     }
     table(src) {
       const cap = this.rules.block.table.exec(src);
-      if (cap) {
-        if (!/[:|]/.test(cap[2])) {
-          return;
-        }
-        const item = {
-          type: "table",
-          raw: cap[0],
-          header: splitCells(cap[1]).map((c) => {
-            return { text: c, tokens: [] };
-          }),
-          align: cap[2].replace(/^\||\| *$/g, "").split("|"),
-          rows: cap[3] && cap[3].trim() ? cap[3].replace(/\n[ \t]*$/, "").split("\n") : []
-        };
-        if (item.header.length === item.align.length) {
-          let l = item.align.length;
-          let i, j, k, row;
-          for (i = 0; i < l; i++) {
-            const align = item.align[i];
-            if (align) {
-              if (/^ *-+: *$/.test(align)) {
-                item.align[i] = "right";
-              } else if (/^ *:-+: *$/.test(align)) {
-                item.align[i] = "center";
-              } else if (/^ *:-+ *$/.test(align)) {
-                item.align[i] = "left";
-              } else {
-                item.align[i] = null;
-              }
-            }
-          }
-          l = item.rows.length;
-          for (i = 0; i < l; i++) {
-            item.rows[i] = splitCells(item.rows[i], item.header.length).map((c) => {
-              return { text: c, tokens: [] };
-            });
-          }
-          l = item.header.length;
-          for (j = 0; j < l; j++) {
-            item.header[j].tokens = this.lexer.inline(item.header[j].text);
-          }
-          l = item.rows.length;
-          for (j = 0; j < l; j++) {
-            row = item.rows[j];
-            for (k = 0; k < row.length; k++) {
-              row[k].tokens = this.lexer.inline(row[k].text);
-            }
-          }
-          return item;
+      if (!cap) {
+        return;
+      }
+      if (!/[:|]/.test(cap[2])) {
+        return;
+      }
+      const headers = splitCells(cap[1]);
+      const aligns = cap[2].replace(/^\||\| *$/g, "").split("|");
+      const rows = cap[3] && cap[3].trim() ? cap[3].replace(/\n[ \t]*$/, "").split("\n") : [];
+      const item = {
+        type: "table",
+        raw: cap[0],
+        header: [],
+        align: [],
+        rows: []
+      };
+      if (headers.length !== aligns.length) {
+        return;
+      }
+      for (const align of aligns) {
+        if (/^ *-+: *$/.test(align)) {
+          item.align.push("right");
+        } else if (/^ *:-+: *$/.test(align)) {
+          item.align.push("center");
+        } else if (/^ *:-+ *$/.test(align)) {
+          item.align.push("left");
+        } else {
+          item.align.push(null);
         }
       }
+      for (const header of headers) {
+        item.header.push({
+          text: header,
+          tokens: this.lexer.inline(header)
+        });
+      }
+      for (const row of rows) {
+        item.rows.push(splitCells(row, item.header.length).map((cell) => {
+          return {
+            text: cell,
+            tokens: this.lexer.inline(cell)
+          };
+        }));
+      }
+      return item;
     }
     lheading(src) {
       const cap = this.rules.block.lheading.exec(src);
@@ -29239,7 +29235,7 @@
         return {
           type: "escape",
           raw: cap[0],
-          text: escape(cap[1])
+          text: escape$1(cap[1])
         };
       }
     }
@@ -29291,10 +29287,10 @@
         let href = cap[2];
         let title = "";
         if (this.options.pedantic) {
-          const link = /^([^'"]*[^\s])\s+(['"])(.*)\2/.exec(href);
-          if (link) {
-            href = link[1];
-            title = link[3];
+          const link2 = /^([^'"]*[^\s])\s+(['"])(.*)\2/.exec(href);
+          if (link2) {
+            href = link2[1];
+            title = link2[3];
           }
         } else {
           title = cap[3] ? cap[3].slice(1, -1) : "";
@@ -29308,17 +29304,17 @@
           }
         }
         return outputLink(cap, {
-          href: href ? href.replace(this.rules.inline._escapes, "$1") : href,
-          title: title ? title.replace(this.rules.inline._escapes, "$1") : title
+          href: href ? href.replace(this.rules.inline.anyPunctuation, "$1") : href,
+          title: title ? title.replace(this.rules.inline.anyPunctuation, "$1") : title
         }, cap[0], this.lexer);
       }
     }
     reflink(src, links) {
       let cap;
       if ((cap = this.rules.inline.reflink.exec(src)) || (cap = this.rules.inline.nolink.exec(src))) {
-        let link = (cap[2] || cap[1]).replace(/\s+/g, " ");
-        link = links[link.toLowerCase()];
-        if (!link) {
+        const linkString = (cap[2] || cap[1]).replace(/\s+/g, " ");
+        const link2 = links[linkString.toLowerCase()];
+        if (!link2) {
           const text = cap[0].charAt(0);
           return {
             type: "text",
@@ -29326,11 +29322,11 @@
             text
           };
         }
-        return outputLink(cap, link, cap[0], this.lexer);
+        return outputLink(cap, link2, cap[0], this.lexer);
       }
     }
     emStrong(src, maskedSrc, prevChar = "") {
-      let match = this.rules.inline.emStrong.lDelim.exec(src);
+      let match = this.rules.inline.emStrongLDelim.exec(src);
       if (!match)
         return;
       if (match[3] && prevChar.match(/[\p{L}\p{N}]/u))
@@ -29339,7 +29335,7 @@
       if (!nextChar || !prevChar || this.rules.inline.punctuation.exec(prevChar)) {
         const lLength = [...match[0]].length - 1;
         let rDelim, rLength, delimTotal = lLength, midDelimTotal = 0;
-        const endReg = match[0][0] === "*" ? this.rules.inline.emStrong.rDelimAst : this.rules.inline.emStrong.rDelimUnd;
+        const endReg = match[0][0] === "*" ? this.rules.inline.emStrongRDelimAst : this.rules.inline.emStrongRDelimUnd;
         endReg.lastIndex = 0;
         maskedSrc = maskedSrc.slice(-1 * src.length + lLength);
         while ((match = endReg.exec(maskedSrc)) != null) {
@@ -29390,7 +29386,7 @@
         if (hasNonSpaceChars && hasSpaceCharsOnBothEnds) {
           text = text.substring(1, text.length - 1);
         }
-        text = escape(text, true);
+        text = escape$1(text, true);
         return {
           type: "codespan",
           raw: cap[0],
@@ -29423,10 +29419,10 @@
       if (cap) {
         let text, href;
         if (cap[2] === "@") {
-          text = escape(cap[1]);
+          text = escape$1(cap[1]);
           href = "mailto:" + text;
         } else {
-          text = escape(cap[1]);
+          text = escape$1(cap[1]);
           href = text;
         }
         return {
@@ -29449,15 +29445,15 @@
       if (cap = this.rules.inline.url.exec(src)) {
         let text, href;
         if (cap[2] === "@") {
-          text = escape(cap[0]);
+          text = escape$1(cap[0]);
           href = "mailto:" + text;
         } else {
           let prevCapZero;
           do {
             prevCapZero = cap[0];
-            cap[0] = this.rules.inline._backpedal.exec(cap[0])[0];
+            cap[0] = this.rules.inline._backpedal.exec(cap[0])?.[0] ?? "";
           } while (prevCapZero !== cap[0]);
-          text = escape(cap[0]);
+          text = escape$1(cap[0]);
           if (cap[1] === "www.") {
             href = "http://" + cap[0];
           } else {
@@ -29486,7 +29482,7 @@
         if (this.lexer.state.inRawBlock) {
           text = cap[0];
         } else {
-          text = escape(cap[0]);
+          text = escape$1(cap[0]);
         }
         return {
           type: "text",
@@ -29496,130 +29492,123 @@
       }
     }
   };
-  var block = {
-    newline: /^(?: *(?:\n|$))+/,
-    code: /^( {4}[^\n]+(?:\n(?: *(?:\n|$))*)?)+/,
-    fences: /^ {0,3}(`{3,}(?=[^`\n]*(?:\n|$))|~{3,})([^\n]*)(?:\n|$)(?:|([\s\S]*?)(?:\n|$))(?: {0,3}\1[~`]* *(?=\n|$)|$)/,
-    hr: /^ {0,3}((?:-[\t ]*){3,}|(?:_[ \t]*){3,}|(?:\*[ \t]*){3,})(?:\n+|$)/,
-    heading: /^ {0,3}(#{1,6})(?=\s|$)(.*)(?:\n+|$)/,
-    blockquote: /^( {0,3}> ?(paragraph|[^\n]*)(?:\n|$))+/,
-    list: /^( {0,3}bull)([ \t][^\n]+?)?(?:\n|$)/,
-    html: "^ {0,3}(?:<(script|pre|style|textarea)[\\s>][\\s\\S]*?(?:</\\1>[^\\n]*\\n+|$)|comment[^\\n]*(\\n+|$)|<\\?[\\s\\S]*?(?:\\?>\\n*|$)|<![A-Z][\\s\\S]*?(?:>\\n*|$)|<!\\[CDATA\\[[\\s\\S]*?(?:\\]\\]>\\n*|$)|</?(tag)(?: +|\\n|/?>)[\\s\\S]*?(?:(?:\\n *)+\\n|$)|<(?!script|pre|style|textarea)([a-z][\\w-]*)(?:attribute)*? */?>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:(?:\\n *)+\\n|$)|</(?!script|pre|style|textarea)[a-z][\\w-]*\\s*>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:(?:\\n *)+\\n|$))",
-    def: /^ {0,3}\[(label)\]: *(?:\n *)?([^<\s][^\s]*|<.*?>)(?:(?: +(?:\n *)?| *\n *)(title))? *(?:\n+|$)/,
+  var newline = /^(?: *(?:\n|$))+/;
+  var blockCode = /^( {4}[^\n]+(?:\n(?: *(?:\n|$))*)?)+/;
+  var fences = /^ {0,3}(`{3,}(?=[^`\n]*(?:\n|$))|~{3,})([^\n]*)(?:\n|$)(?:|([\s\S]*?)(?:\n|$))(?: {0,3}\1[~`]* *(?=\n|$)|$)/;
+  var hr = /^ {0,3}((?:-[\t ]*){3,}|(?:_[ \t]*){3,}|(?:\*[ \t]*){3,})(?:\n+|$)/;
+  var heading = /^ {0,3}(#{1,6})(?=\s|$)(.*)(?:\n+|$)/;
+  var bullet = /(?:[*+-]|\d{1,9}[.)])/;
+  var lheading = edit(/^(?!bull )((?:.|\n(?!\s*?\n|bull ))+?)\n {0,3}(=+|-+) *(?:\n+|$)/).replace(/bull/g, bullet).getRegex();
+  var _paragraph = /^([^\n]+(?:\n(?!hr|heading|lheading|blockquote|fences|list|html|table| +\n)[^\n]+)*)/;
+  var blockText = /^[^\n]+/;
+  var _blockLabel = /(?!\s*\])(?:\\.|[^\[\]\\])+/;
+  var def = edit(/^ {0,3}\[(label)\]: *(?:\n *)?([^<\s][^\s]*|<.*?>)(?:(?: +(?:\n *)?| *\n *)(title))? *(?:\n+|$)/).replace("label", _blockLabel).replace("title", /(?:"(?:\\"?|[^"\\])*"|'[^'\n]*(?:\n[^'\n]+)*\n?'|\([^()]*\))/).getRegex();
+  var list = edit(/^( {0,3}bull)([ \t][^\n]+?)?(?:\n|$)/).replace(/bull/g, bullet).getRegex();
+  var _tag = "address|article|aside|base|basefont|blockquote|body|caption|center|col|colgroup|dd|details|dialog|dir|div|dl|dt|fieldset|figcaption|figure|footer|form|frame|frameset|h[1-6]|head|header|hr|html|iframe|legend|li|link|main|menu|menuitem|meta|nav|noframes|ol|optgroup|option|p|param|search|section|summary|table|tbody|td|tfoot|th|thead|title|tr|track|ul";
+  var _comment = /<!--(?:-?>|[\s\S]*?(?:-->|$))/;
+  var html = edit("^ {0,3}(?:<(script|pre|style|textarea)[\\s>][\\s\\S]*?(?:</\\1>[^\\n]*\\n+|$)|comment[^\\n]*(\\n+|$)|<\\?[\\s\\S]*?(?:\\?>\\n*|$)|<![A-Z][\\s\\S]*?(?:>\\n*|$)|<!\\[CDATA\\[[\\s\\S]*?(?:\\]\\]>\\n*|$)|</?(tag)(?: +|\\n|/?>)[\\s\\S]*?(?:(?:\\n *)+\\n|$)|<(?!script|pre|style|textarea)([a-z][\\w-]*)(?:attribute)*? */?>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:(?:\\n *)+\\n|$)|</(?!script|pre|style|textarea)[a-z][\\w-]*\\s*>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:(?:\\n *)+\\n|$))", "i").replace("comment", _comment).replace("tag", _tag).replace("attribute", / +[a-zA-Z:_][\w.:-]*(?: *= *"[^"\n]*"| *= *'[^'\n]*'| *= *[^\s"'=<>`]+)?/).getRegex();
+  var paragraph = edit(_paragraph).replace("hr", hr).replace("heading", " {0,3}#{1,6}(?:\\s|$)").replace("|lheading", "").replace("|table", "").replace("blockquote", " {0,3}>").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", _tag).getRegex();
+  var blockquote = edit(/^( {0,3}> ?(paragraph|[^\n]*)(?:\n|$))+/).replace("paragraph", paragraph).getRegex();
+  var blockNormal = {
+    blockquote,
+    code: blockCode,
+    def,
+    fences,
+    heading,
+    hr,
+    html,
+    lheading,
+    list,
+    newline,
+    paragraph,
     table: noopTest,
-    lheading: /^(?!bull )((?:.|\n(?!\s*?\n|bull ))+?)\n {0,3}(=+|-+) *(?:\n+|$)/,
-    // regex template, placeholders will be replaced according to different paragraph
-    // interruption rules of commonmark and the original markdown spec:
-    _paragraph: /^([^\n]+(?:\n(?!hr|heading|lheading|blockquote|fences|list|html|table| +\n)[^\n]+)*)/,
-    text: /^[^\n]+/
+    text: blockText
   };
-  block._label = /(?!\s*\])(?:\\.|[^\[\]\\])+/;
-  block._title = /(?:"(?:\\"?|[^"\\])*"|'[^'\n]*(?:\n[^'\n]+)*\n?'|\([^()]*\))/;
-  block.def = edit(block.def).replace("label", block._label).replace("title", block._title).getRegex();
-  block.bullet = /(?:[*+-]|\d{1,9}[.)])/;
-  block.listItemStart = edit(/^( *)(bull) */).replace("bull", block.bullet).getRegex();
-  block.list = edit(block.list).replace(/bull/g, block.bullet).replace("hr", "\\n+(?=\\1?(?:(?:- *){3,}|(?:_ *){3,}|(?:\\* *){3,})(?:\\n+|$))").replace("def", "\\n+(?=" + block.def.source + ")").getRegex();
-  block._tag = "address|article|aside|base|basefont|blockquote|body|caption|center|col|colgroup|dd|details|dialog|dir|div|dl|dt|fieldset|figcaption|figure|footer|form|frame|frameset|h[1-6]|head|header|hr|html|iframe|legend|li|link|main|menu|menuitem|meta|nav|noframes|ol|optgroup|option|p|param|section|source|summary|table|tbody|td|tfoot|th|thead|title|tr|track|ul";
-  block._comment = /<!--(?!-?>)[\s\S]*?(?:-->|$)/;
-  block.html = edit(block.html, "i").replace("comment", block._comment).replace("tag", block._tag).replace("attribute", / +[a-zA-Z:_][\w.:-]*(?: *= *"[^"\n]*"| *= *'[^'\n]*'| *= *[^\s"'=<>`]+)?/).getRegex();
-  block.lheading = edit(block.lheading).replace(/bull/g, block.bullet).getRegex();
-  block.paragraph = edit(block._paragraph).replace("hr", block.hr).replace("heading", " {0,3}#{1,6}(?:\\s|$)").replace("|lheading", "").replace("|table", "").replace("blockquote", " {0,3}>").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", block._tag).getRegex();
-  block.blockquote = edit(block.blockquote).replace("paragraph", block.paragraph).getRegex();
-  block.normal = { ...block };
-  block.gfm = {
-    ...block.normal,
-    table: "^ *([^\\n ].*)\\n {0,3}((?:\\| *)?:?-+:? *(?:\\| *:?-+:? *)*(?:\\| *)?)(?:\\n((?:(?! *\\n|hr|heading|blockquote|code|fences|list|html).*(?:\\n|$))*)\\n*|$)"
-    // Cells
+  var gfmTable = edit("^ *([^\\n ].*)\\n {0,3}((?:\\| *)?:?-+:? *(?:\\| *:?-+:? *)*(?:\\| *)?)(?:\\n((?:(?! *\\n|hr|heading|blockquote|code|fences|list|html).*(?:\\n|$))*)\\n*|$)").replace("hr", hr).replace("heading", " {0,3}#{1,6}(?:\\s|$)").replace("blockquote", " {0,3}>").replace("code", " {4}[^\\n]").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", _tag).getRegex();
+  var blockGfm = {
+    ...blockNormal,
+    table: gfmTable,
+    paragraph: edit(_paragraph).replace("hr", hr).replace("heading", " {0,3}#{1,6}(?:\\s|$)").replace("|lheading", "").replace("table", gfmTable).replace("blockquote", " {0,3}>").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", _tag).getRegex()
   };
-  block.gfm.table = edit(block.gfm.table).replace("hr", block.hr).replace("heading", " {0,3}#{1,6}(?:\\s|$)").replace("blockquote", " {0,3}>").replace("code", " {4}[^\\n]").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", block._tag).getRegex();
-  block.gfm.paragraph = edit(block._paragraph).replace("hr", block.hr).replace("heading", " {0,3}#{1,6}(?:\\s|$)").replace("|lheading", "").replace("table", block.gfm.table).replace("blockquote", " {0,3}>").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", block._tag).getRegex();
-  block.pedantic = {
-    ...block.normal,
-    html: edit(`^ *(?:comment *(?:\\n|\\s*$)|<(tag)[\\s\\S]+?</\\1> *(?:\\n{2,}|\\s*$)|<tag(?:"[^"]*"|'[^']*'|\\s[^'"/>\\s]*)*?/?> *(?:\\n{2,}|\\s*$))`).replace("comment", block._comment).replace(/tag/g, "(?!(?:a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img)\\b)\\w+(?!:|[^\\w\\s@]*@)\\b").getRegex(),
+  var blockPedantic = {
+    ...blockNormal,
+    html: edit(`^ *(?:comment *(?:\\n|\\s*$)|<(tag)[\\s\\S]+?</\\1> *(?:\\n{2,}|\\s*$)|<tag(?:"[^"]*"|'[^']*'|\\s[^'"/>\\s]*)*?/?> *(?:\\n{2,}|\\s*$))`).replace("comment", _comment).replace(/tag/g, "(?!(?:a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img)\\b)\\w+(?!:|[^\\w\\s@]*@)\\b").getRegex(),
     def: /^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +(["(][^\n]+[")]))? *(?:\n+|$)/,
     heading: /^(#{1,6})(.*)(?:\n+|$)/,
     fences: noopTest,
+    // fences not supported
     lheading: /^(.+?)\n {0,3}(=+|-+) *(?:\n+|$)/,
-    paragraph: edit(block.normal._paragraph).replace("hr", block.hr).replace("heading", " *#{1,6} *[^\n]").replace("lheading", block.lheading).replace("blockquote", " {0,3}>").replace("|fences", "").replace("|list", "").replace("|html", "").getRegex()
+    paragraph: edit(_paragraph).replace("hr", hr).replace("heading", " *#{1,6} *[^\n]").replace("lheading", lheading).replace("|table", "").replace("blockquote", " {0,3}>").replace("|fences", "").replace("|list", "").replace("|html", "").replace("|tag", "").getRegex()
   };
-  var inline = {
-    escape: /^\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/,
-    autolink: /^<(scheme:[^\s\x00-\x1f<>]*|email)>/,
-    url: noopTest,
-    tag: "^comment|^</[a-zA-Z][\\w:-]*\\s*>|^<[a-zA-Z][\\w-]*(?:attribute)*?\\s*/?>|^<\\?[\\s\\S]*?\\?>|^<![a-zA-Z]+\\s[\\s\\S]*?>|^<!\\[CDATA\\[[\\s\\S]*?\\]\\]>",
-    link: /^!?\[(label)\]\(\s*(href)(?:\s+(title))?\s*\)/,
-    reflink: /^!?\[(label)\]\[(ref)\]/,
-    nolink: /^!?\[(ref)\](?:\[\])?/,
-    reflinkSearch: "reflink|nolink(?!\\()",
-    emStrong: {
-      lDelim: /^(?:\*+(?:((?!\*)[punct])|[^\s*]))|^_+(?:((?!_)[punct])|([^\s_]))/,
-      //         (1) and (2) can only be a Right Delimiter. (3) and (4) can only be Left.  (5) and (6) can be either Left or Right.
-      //         | Skip orphan inside strong      | Consume to delim | (1) #***              | (2) a***#, a***                    | (3) #***a, ***a                  | (4) ***#                 | (5) #***#                         | (6) a***a
-      rDelimAst: /^[^_*]*?__[^_*]*?\*[^_*]*?(?=__)|[^*]+(?=[^*])|(?!\*)[punct](\*+)(?=[\s]|$)|[^punct\s](\*+)(?!\*)(?=[punct\s]|$)|(?!\*)[punct\s](\*+)(?=[^punct\s])|[\s](\*+)(?!\*)(?=[punct])|(?!\*)[punct](\*+)(?!\*)(?=[punct])|[^punct\s](\*+)(?=[^punct\s])/,
-      rDelimUnd: /^[^_*]*?\*\*[^_*]*?_[^_*]*?(?=\*\*)|[^_]+(?=[^_])|(?!_)[punct](_+)(?=[\s]|$)|[^punct\s](_+)(?!_)(?=[punct\s]|$)|(?!_)[punct\s](_+)(?=[^punct\s])|[\s](_+)(?!_)(?=[punct])|(?!_)[punct](_+)(?!_)(?=[punct])/
-      // ^- Not allowed for _
-    },
-    code: /^(`+)([^`]|[^`][\s\S]*?[^`])\1(?!`)/,
-    br: /^( {2,}|\\)\n(?!\s*$)/,
+  var escape = /^\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/;
+  var inlineCode = /^(`+)([^`]|[^`][\s\S]*?[^`])\1(?!`)/;
+  var br = /^( {2,}|\\)\n(?!\s*$)/;
+  var inlineText = /^(`+|[^`])(?:(?= {2,}\n)|[\s\S]*?(?:(?=[\\<!\[`*_]|\b_|$)|[^ ](?= {2,}\n)))/;
+  var _punctuation = "\\p{P}\\p{S}";
+  var punctuation = edit(/^((?![*_])[\spunctuation])/, "u").replace(/punctuation/g, _punctuation).getRegex();
+  var blockSkip = /\[[^[\]]*?\]\([^\(\)]*?\)|`[^`]*?`|<[^<>]*?>/g;
+  var emStrongLDelim = edit(/^(?:\*+(?:((?!\*)[punct])|[^\s*]))|^_+(?:((?!_)[punct])|([^\s_]))/, "u").replace(/punct/g, _punctuation).getRegex();
+  var emStrongRDelimAst = edit("^[^_*]*?__[^_*]*?\\*[^_*]*?(?=__)|[^*]+(?=[^*])|(?!\\*)[punct](\\*+)(?=[\\s]|$)|[^punct\\s](\\*+)(?!\\*)(?=[punct\\s]|$)|(?!\\*)[punct\\s](\\*+)(?=[^punct\\s])|[\\s](\\*+)(?!\\*)(?=[punct])|(?!\\*)[punct](\\*+)(?!\\*)(?=[punct])|[^punct\\s](\\*+)(?=[^punct\\s])", "gu").replace(/punct/g, _punctuation).getRegex();
+  var emStrongRDelimUnd = edit("^[^_*]*?\\*\\*[^_*]*?_[^_*]*?(?=\\*\\*)|[^_]+(?=[^_])|(?!_)[punct](_+)(?=[\\s]|$)|[^punct\\s](_+)(?!_)(?=[punct\\s]|$)|(?!_)[punct\\s](_+)(?=[^punct\\s])|[\\s](_+)(?!_)(?=[punct])|(?!_)[punct](_+)(?!_)(?=[punct])", "gu").replace(/punct/g, _punctuation).getRegex();
+  var anyPunctuation = edit(/\\([punct])/, "gu").replace(/punct/g, _punctuation).getRegex();
+  var autolink = edit(/^<(scheme:[^\s\x00-\x1f<>]*|email)>/).replace("scheme", /[a-zA-Z][a-zA-Z0-9+.-]{1,31}/).replace("email", /[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+(@)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+(?![-_])/).getRegex();
+  var _inlineComment = edit(_comment).replace("(?:-->|$)", "-->").getRegex();
+  var tag = edit("^comment|^</[a-zA-Z][\\w:-]*\\s*>|^<[a-zA-Z][\\w-]*(?:attribute)*?\\s*/?>|^<\\?[\\s\\S]*?\\?>|^<![a-zA-Z]+\\s[\\s\\S]*?>|^<!\\[CDATA\\[[\\s\\S]*?\\]\\]>").replace("comment", _inlineComment).replace("attribute", /\s+[a-zA-Z:_][\w.:-]*(?:\s*=\s*"[^"]*"|\s*=\s*'[^']*'|\s*=\s*[^\s"'=<>`]+)?/).getRegex();
+  var _inlineLabel = /(?:\[(?:\\.|[^\[\]\\])*\]|\\.|`[^`]*`|[^\[\]\\`])*?/;
+  var link = edit(/^!?\[(label)\]\(\s*(href)(?:\s+(title))?\s*\)/).replace("label", _inlineLabel).replace("href", /<(?:\\.|[^\n<>\\])+>|[^\s\x00-\x1f]*/).replace("title", /"(?:\\"?|[^"\\])*"|'(?:\\'?|[^'\\])*'|\((?:\\\)?|[^)\\])*\)/).getRegex();
+  var reflink = edit(/^!?\[(label)\]\[(ref)\]/).replace("label", _inlineLabel).replace("ref", _blockLabel).getRegex();
+  var nolink = edit(/^!?\[(ref)\](?:\[\])?/).replace("ref", _blockLabel).getRegex();
+  var reflinkSearch = edit("reflink|nolink(?!\\()", "g").replace("reflink", reflink).replace("nolink", nolink).getRegex();
+  var inlineNormal = {
+    _backpedal: noopTest,
+    // only used for GFM url
+    anyPunctuation,
+    autolink,
+    blockSkip,
+    br,
+    code: inlineCode,
     del: noopTest,
-    text: /^(`+|[^`])(?:(?= {2,}\n)|[\s\S]*?(?:(?=[\\<!\[`*_]|\b_|$)|[^ ](?= {2,}\n)))/,
-    punctuation: /^((?![*_])[\spunctuation])/
+    emStrongLDelim,
+    emStrongRDelimAst,
+    emStrongRDelimUnd,
+    escape,
+    link,
+    nolink,
+    punctuation,
+    reflink,
+    reflinkSearch,
+    tag,
+    text: inlineText,
+    url: noopTest
   };
-  inline._punctuation = "\\p{P}$+<=>`^|~";
-  inline.punctuation = edit(inline.punctuation, "u").replace(/punctuation/g, inline._punctuation).getRegex();
-  inline.blockSkip = /\[[^[\]]*?\]\([^\(\)]*?\)|`[^`]*?`|<[^<>]*?>/g;
-  inline.anyPunctuation = /\\[punct]/g;
-  inline._escapes = /\\([punct])/g;
-  inline._comment = edit(block._comment).replace("(?:-->|$)", "-->").getRegex();
-  inline.emStrong.lDelim = edit(inline.emStrong.lDelim, "u").replace(/punct/g, inline._punctuation).getRegex();
-  inline.emStrong.rDelimAst = edit(inline.emStrong.rDelimAst, "gu").replace(/punct/g, inline._punctuation).getRegex();
-  inline.emStrong.rDelimUnd = edit(inline.emStrong.rDelimUnd, "gu").replace(/punct/g, inline._punctuation).getRegex();
-  inline.anyPunctuation = edit(inline.anyPunctuation, "gu").replace(/punct/g, inline._punctuation).getRegex();
-  inline._escapes = edit(inline._escapes, "gu").replace(/punct/g, inline._punctuation).getRegex();
-  inline._scheme = /[a-zA-Z][a-zA-Z0-9+.-]{1,31}/;
-  inline._email = /[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+(@)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+(?![-_])/;
-  inline.autolink = edit(inline.autolink).replace("scheme", inline._scheme).replace("email", inline._email).getRegex();
-  inline._attribute = /\s+[a-zA-Z:_][\w.:-]*(?:\s*=\s*"[^"]*"|\s*=\s*'[^']*'|\s*=\s*[^\s"'=<>`]+)?/;
-  inline.tag = edit(inline.tag).replace("comment", inline._comment).replace("attribute", inline._attribute).getRegex();
-  inline._label = /(?:\[(?:\\.|[^\[\]\\])*\]|\\.|`[^`]*`|[^\[\]\\`])*?/;
-  inline._href = /<(?:\\.|[^\n<>\\])+>|[^\s\x00-\x1f]*/;
-  inline._title = /"(?:\\"?|[^"\\])*"|'(?:\\'?|[^'\\])*'|\((?:\\\)?|[^)\\])*\)/;
-  inline.link = edit(inline.link).replace("label", inline._label).replace("href", inline._href).replace("title", inline._title).getRegex();
-  inline.reflink = edit(inline.reflink).replace("label", inline._label).replace("ref", block._label).getRegex();
-  inline.nolink = edit(inline.nolink).replace("ref", block._label).getRegex();
-  inline.reflinkSearch = edit(inline.reflinkSearch, "g").replace("reflink", inline.reflink).replace("nolink", inline.nolink).getRegex();
-  inline.normal = { ...inline };
-  inline.pedantic = {
-    ...inline.normal,
-    strong: {
-      start: /^__|\*\*/,
-      middle: /^__(?=\S)([\s\S]*?\S)__(?!_)|^\*\*(?=\S)([\s\S]*?\S)\*\*(?!\*)/,
-      endAst: /\*\*(?!\*)/g,
-      endUnd: /__(?!_)/g
-    },
-    em: {
-      start: /^_|\*/,
-      middle: /^()\*(?=\S)([\s\S]*?\S)\*(?!\*)|^_(?=\S)([\s\S]*?\S)_(?!_)/,
-      endAst: /\*(?!\*)/g,
-      endUnd: /_(?!_)/g
-    },
-    link: edit(/^!?\[(label)\]\((.*?)\)/).replace("label", inline._label).getRegex(),
-    reflink: edit(/^!?\[(label)\]\s*\[([^\]]*)\]/).replace("label", inline._label).getRegex()
+  var inlinePedantic = {
+    ...inlineNormal,
+    link: edit(/^!?\[(label)\]\((.*?)\)/).replace("label", _inlineLabel).getRegex(),
+    reflink: edit(/^!?\[(label)\]\s*\[([^\]]*)\]/).replace("label", _inlineLabel).getRegex()
   };
-  inline.gfm = {
-    ...inline.normal,
-    escape: edit(inline.escape).replace("])", "~|])").getRegex(),
-    _extended_email: /[A-Za-z0-9._+-]+(@)[a-zA-Z0-9-_]+(?:\.[a-zA-Z0-9-_]*[a-zA-Z0-9])+(?![-_])/,
-    url: /^((?:ftp|https?):\/\/|www\.)(?:[a-zA-Z0-9\-]+\.?)+[^\s<]*|^email/,
+  var inlineGfm = {
+    ...inlineNormal,
+    escape: edit(escape).replace("])", "~|])").getRegex(),
+    url: edit(/^((?:ftp|https?):\/\/|www\.)(?:[a-zA-Z0-9\-]+\.?)+[^\s<]*|^email/, "i").replace("email", /[A-Za-z0-9._+-]+(@)[a-zA-Z0-9-_]+(?:\.[a-zA-Z0-9-_]*[a-zA-Z0-9])+(?![-_])/).getRegex(),
     _backpedal: /(?:[^?!.,:;*_'"~()&]+|\([^)]*\)|&(?![a-zA-Z0-9]+;$)|[?!.,:;*_'"~)]+(?!$))+/,
     del: /^(~~?)(?=[^\s~])([\s\S]*?[^\s~])\1(?=[^~]|$)/,
     text: /^([`~]+|[^`~])(?:(?= {2,}\n)|(?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)|[\s\S]*?(?:(?=[\\<!\[`*~_]|\b_|https?:\/\/|ftp:\/\/|www\.|$)|[^ ](?= {2,}\n)|[^a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-](?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)))/
   };
-  inline.gfm.url = edit(inline.gfm.url, "i").replace("email", inline.gfm._extended_email).getRegex();
-  inline.breaks = {
-    ...inline.gfm,
-    br: edit(inline.br).replace("{2,}", "*").getRegex(),
-    text: edit(inline.gfm.text).replace("\\b_", "\\b_| {2,}\\n").replace(/\{2,\}/g, "*").getRegex()
+  var inlineBreaks = {
+    ...inlineGfm,
+    br: edit(br).replace("{2,}", "*").getRegex(),
+    text: edit(inlineGfm.text).replace("\\b_", "\\b_| {2,}\\n").replace(/\{2,\}/g, "*").getRegex()
+  };
+  var block = {
+    normal: blockNormal,
+    gfm: blockGfm,
+    pedantic: blockPedantic
+  };
+  var inline = {
+    normal: inlineNormal,
+    gfm: inlineGfm,
+    breaks: inlineBreaks,
+    pedantic: inlinePedantic
   };
   var _Lexer = class __Lexer {
     tokens;
@@ -29687,10 +29676,11 @@
     lex(src) {
       src = src.replace(/\r\n|\r/g, "\n");
       this.blockTokens(src, this.tokens);
-      let next;
-      while (next = this.inlineQueue.shift()) {
+      for (let i = 0; i < this.inlineQueue.length; i++) {
+        const next = this.inlineQueue[i];
         this.inlineTokens(next.src, next.tokens);
       }
+      this.inlineQueue = [];
       return this.tokens;
     }
     blockTokens(src, tokens = []) {
@@ -30004,17 +29994,17 @@
       const lang = (infostring || "").match(/^\S*/)?.[0];
       code = code.replace(/\n$/, "") + "\n";
       if (!lang) {
-        return "<pre><code>" + (escaped ? code : escape(code, true)) + "</code></pre>\n";
+        return "<pre><code>" + (escaped ? code : escape$1(code, true)) + "</code></pre>\n";
       }
-      return '<pre><code class="language-' + escape(lang) + '">' + (escaped ? code : escape(code, true)) + "</code></pre>\n";
+      return '<pre><code class="language-' + escape$1(lang) + '">' + (escaped ? code : escape$1(code, true)) + "</code></pre>\n";
     }
     blockquote(quote) {
       return `<blockquote>
 ${quote}</blockquote>
 `;
     }
-    html(html, block2) {
-      return html;
+    html(html2, block2) {
+      return html2;
     }
     heading(text, level, raw) {
       return `<h${level}>${text}</h${level}>
@@ -30051,8 +30041,8 @@ ${content}</tr>
     }
     tablecell(content, flags) {
       const type = flags.header ? "th" : "td";
-      const tag = flags.align ? `<${type} align="${flags.align}">` : `<${type}>`;
-      return tag + content + `</${type}>
+      const tag2 = flags.align ? `<${type} align="${flags.align}">` : `<${type}>`;
+      return tag2 + content + `</${type}>
 `;
     }
     /**
@@ -30371,7 +30361,8 @@ ${content}</tr>
     }
     static passThroughHooks = /* @__PURE__ */ new Set([
       "preprocess",
-      "postprocess"
+      "postprocess",
+      "processAllTokens"
     ]);
     /**
      * Process markdown before marked
@@ -30382,8 +30373,14 @@ ${content}</tr>
     /**
      * Process HTML after marked is finished
      */
-    postprocess(html) {
-      return html;
+    postprocess(html2) {
+      return html2;
+    }
+    /**
+     * Process all tokens before walk tokens
+     */
+    processAllTokens(tokens) {
+      return tokens;
     }
   };
   var Marked = class {
@@ -30429,7 +30426,8 @@ ${content}</tr>
             const genericToken = token;
             if (this.defaults.extensions?.childTokens?.[genericToken.type]) {
               this.defaults.extensions.childTokens[genericToken.type].forEach((childTokens) => {
-                values = values.concat(this.walkTokens(genericToken[childTokens], callback));
+                const tokens2 = genericToken[childTokens].flat(Infinity);
+                values = values.concat(this.walkTokens(tokens2, callback));
               });
             } else if (genericToken.tokens) {
               values = values.concat(this.walkTokens(genericToken.tokens, callback));
@@ -30498,10 +30496,16 @@ ${content}</tr>
         if (pack.renderer) {
           const renderer = this.defaults.renderer || new _Renderer(this.defaults);
           for (const prop in pack.renderer) {
-            const rendererFunc = pack.renderer[prop];
-            const rendererKey = prop;
-            const prevRenderer = renderer[rendererKey];
-            renderer[rendererKey] = (...args2) => {
+            if (!(prop in renderer)) {
+              throw new Error(`renderer '${prop}' does not exist`);
+            }
+            if (prop === "options") {
+              continue;
+            }
+            const rendererProp = prop;
+            const rendererFunc = pack.renderer[rendererProp];
+            const prevRenderer = renderer[rendererProp];
+            renderer[rendererProp] = (...args2) => {
               let ret = rendererFunc.apply(renderer, args2);
               if (ret === false) {
                 ret = prevRenderer.apply(renderer, args2);
@@ -30514,10 +30518,16 @@ ${content}</tr>
         if (pack.tokenizer) {
           const tokenizer = this.defaults.tokenizer || new _Tokenizer(this.defaults);
           for (const prop in pack.tokenizer) {
-            const tokenizerFunc = pack.tokenizer[prop];
-            const tokenizerKey = prop;
-            const prevTokenizer = tokenizer[tokenizerKey];
-            tokenizer[tokenizerKey] = (...args2) => {
+            if (!(prop in tokenizer)) {
+              throw new Error(`tokenizer '${prop}' does not exist`);
+            }
+            if (["options", "rules", "lexer"].includes(prop)) {
+              continue;
+            }
+            const tokenizerProp = prop;
+            const tokenizerFunc = pack.tokenizer[tokenizerProp];
+            const prevTokenizer = tokenizer[tokenizerProp];
+            tokenizer[tokenizerProp] = (...args2) => {
               let ret = tokenizerFunc.apply(tokenizer, args2);
               if (ret === false) {
                 ret = prevTokenizer.apply(tokenizer, args2);
@@ -30530,11 +30540,17 @@ ${content}</tr>
         if (pack.hooks) {
           const hooks = this.defaults.hooks || new _Hooks();
           for (const prop in pack.hooks) {
-            const hooksFunc = pack.hooks[prop];
-            const hooksKey = prop;
-            const prevHook = hooks[hooksKey];
+            if (!(prop in hooks)) {
+              throw new Error(`hook '${prop}' does not exist`);
+            }
+            if (prop === "options") {
+              continue;
+            }
+            const hooksProp = prop;
+            const hooksFunc = pack.hooks[hooksProp];
+            const prevHook = hooks[hooksProp];
             if (_Hooks.passThroughHooks.has(prop)) {
-              hooks[hooksKey] = (arg) => {
+              hooks[hooksProp] = (arg) => {
                 if (this.defaults.async) {
                   return Promise.resolve(hooksFunc.call(hooks, arg)).then((ret2) => {
                     return prevHook.call(hooks, ret2);
@@ -30544,7 +30560,7 @@ ${content}</tr>
                 return prevHook.call(hooks, ret);
               };
             } else {
-              hooks[hooksKey] = (...args2) => {
+              hooks[hooksProp] = (...args2) => {
                 let ret = hooksFunc.apply(hooks, args2);
                 if (ret === false) {
                   ret = prevHook.apply(hooks, args2);
@@ -30602,21 +30618,24 @@ ${content}</tr>
           opt.hooks.options = opt;
         }
         if (opt.async) {
-          return Promise.resolve(opt.hooks ? opt.hooks.preprocess(src) : src).then((src2) => lexer2(src2, opt)).then((tokens) => opt.walkTokens ? Promise.all(this.walkTokens(tokens, opt.walkTokens)).then(() => tokens) : tokens).then((tokens) => parser2(tokens, opt)).then((html) => opt.hooks ? opt.hooks.postprocess(html) : html).catch(throwError);
+          return Promise.resolve(opt.hooks ? opt.hooks.preprocess(src) : src).then((src2) => lexer2(src2, opt)).then((tokens) => opt.hooks ? opt.hooks.processAllTokens(tokens) : tokens).then((tokens) => opt.walkTokens ? Promise.all(this.walkTokens(tokens, opt.walkTokens)).then(() => tokens) : tokens).then((tokens) => parser2(tokens, opt)).then((html2) => opt.hooks ? opt.hooks.postprocess(html2) : html2).catch(throwError);
         }
         try {
           if (opt.hooks) {
             src = opt.hooks.preprocess(src);
           }
-          const tokens = lexer2(src, opt);
+          let tokens = lexer2(src, opt);
+          if (opt.hooks) {
+            tokens = opt.hooks.processAllTokens(tokens);
+          }
           if (opt.walkTokens) {
             this.walkTokens(tokens, opt.walkTokens);
           }
-          let html = parser2(tokens, opt);
+          let html2 = parser2(tokens, opt);
           if (opt.hooks) {
-            html = opt.hooks.postprocess(html);
+            html2 = opt.hooks.postprocess(html2);
           }
-          return html;
+          return html2;
         } catch (e) {
           return throwError(e);
         }
@@ -30626,7 +30645,7 @@ ${content}</tr>
       return (e) => {
         e.message += "\nPlease report this to https://github.com/markedjs/marked.";
         if (silent) {
-          const msg = "<p>An error occurred:</p><pre>" + escape(e.message + "", true) + "</pre>";
+          const msg = "<p>An error occurred:</p><pre>" + escape$1(e.message + "", true) + "</pre>";
           if (async) {
             return Promise.resolve(msg);
           }
