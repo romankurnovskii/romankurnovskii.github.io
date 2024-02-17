@@ -2593,6 +2593,14 @@
             "lang": "ru"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1642/",
+            "title": "1642. Furthest Building You Can Reach",
+            "description": "1642. Furthest Building You Can Reach",
+            "content": "\nLeetCode problem 1642\n\nclass Solution:\n    def furthestBuilding(self, heights: List[int], bricks: int, ladders: int) -> int:\n        h = []\n        for i, a in enumerate(heights[:-1]):\n            b = heights[i + 1]\n            d = b - a\n            if d > 0:\n                heappush(h, d)\n                if len(h) > ladders:\n                    bricks -= heappop(h)\n                    if bricks < 0:\n                        return i\n        return len(heights) - 1\n`",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/152/",
             "title": "152. Maximum Product Subarray",
             "description": "Understanding the 152. Maximum Product Subarray problem from LeetCode",
@@ -2776,7 +2784,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/1123/",
             "title": "1123. Lowest Common Ancestor of Deepest Leaves",
             "description": "1123. Lowest Common Ancestor of Deepest Leaves",
-            "content": "\nLeetCode problem 1123\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def lcaDeepestLeaves(self, root: Optional[TreeNode]) -> Optional[TreeNode]:\n        def dfs(root):\n            if root is None:\n                return None, 0\n            l, d1 = dfs(root.left)\n            r, d2 = dfs(root.right)\n            if d1 > d2:\n                return l, d1 + 1\n            if d1 < d2:\n                return r, d2 + 1\n            return root, d1 + 1\n\n        return dfs(root)[0]\n\n`",
+            "content": "\nLeetCode problem 1123\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def lcaDeepestLeaves(self, root: Optional[TreeNode]) -> Optional[TreeNode]:\n        def dfs(root):\n            if root is None:\n                return None, 0\n            l, d1 = dfs(root.left)\n            r, d2 = dfs(root.right)\n            if d1 > d2:\n                return l, d1 + 1\n            if d1 < d2:\n                return r, d2 + 1\n            return root, d1 + 1\n\n        return dfs(root)[0]\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2784,7 +2792,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/1120/",
             "title": "1120. Maximum Average Subtree",
             "description": "1120. Maximum Average Subtree",
-            "content": "\nLeetCode problem 1120\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def maximumAverageSubtree(self, root: Optional[TreeNode]) -> float:\n        def dfs(root):\n            if root is None:\n                return 0, 0\n            ls, ln = dfs(root.left)\n            rs, rn = dfs(root.right)\n            s = root.val + ls + rs\n            n = 1 + ln + rn\n            nonlocal res\n            res = max(res, s / n)\n            return s, n\n\n        res = 0\n        dfs(root)\n        return res\n\n`",
+            "content": "\nLeetCode problem 1120\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def maximumAverageSubtree(self, root: Optional[TreeNode]) -> float:\n        def dfs(root):\n            if root is None:\n                return 0, 0\n            ls, ln = dfs(root.left)\n            rs, rn = dfs(root.right)\n            s = root.val + ls + rs\n            n = 1 + ln + rn\n            nonlocal res\n            res = max(res, s / n)\n            return s, n\n\n        res = 0\n        dfs(root)\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2792,7 +2800,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/1116/",
             "title": "1116. Print Zero Even Odd",
             "description": "1116. Print Zero Even Odd",
-            "content": "\nLeetCode problem 1116\n\nfrom threading import Semaphore\n\n\nclass ZeroEvenOdd:\n    def init(self, n):\n        self.n = n\n        self.z = Semaphore(1)\n        self.e = Semaphore(0)\n        self.o = Semaphore(0)\n\nprintNumber(x) outputs \"x\", where x is an integer.\n    def zero(self, printNumber: 'Callable[[int], None]') -> None:\n        for i in range(self.n):\n            self.z.acquire()\n            printNumber(0)\n            if i % 2 == 0:\n                self.o.release()\n            else:\n                self.e.release()\n\n    def even(self, printNumber: 'Callable[[int], None]') -> None:\n        for i in range(2, self.n + 1, 2):\n            self.e.acquire()\n            printNumber(i)\n            self.z.release()\n\n    def odd(self, printNumber: 'Callable[[int], None]') -> None:\n        for i in range(1, self.n + 1, 2):\n            self.o.acquire()\n            printNumber(i)\n            self.z.release()\n\n`",
+            "content": "\nLeetCode problem 1116\n\nfrom threading import Semaphore\n\n\nclass ZeroEvenOdd:\n    def init(self, n):\n        self.n = n\n        self.z = Semaphore(1)\n        self.e = Semaphore(0)\n        self.o = Semaphore(0)\n\nprintNumber(x) outputs \"x\", where x is an integer.\n    def zero(self, printNumber: 'Callable[[int], None]') -> None:\n        for i in range(self.n):\n            self.z.acquire()\n            printNumber(0)\n            if i % 2 == 0:\n                self.o.release()\n            else:\n                self.e.release()\n\n    def even(self, printNumber: 'Callable[[int], None]') -> None:\n        for i in range(2, self.n + 1, 2):\n            self.e.acquire()\n            printNumber(i)\n            self.z.release()\n\n    def odd(self, printNumber: 'Callable[[int], None]') -> None:\n        for i in range(1, self.n + 1, 2):\n            self.o.acquire()\n            printNumber(i)\n            self.z.release()\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2800,7 +2808,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/1115/",
             "title": "1115. Print FooBar Alternately",
             "description": "1115. Print FooBar Alternately",
-            "content": "\nLeetCode problem 1115\n\nfrom threading import Semaphore\n\n\nclass FooBar:\n    def init(self, n):\n        self.n = n\n        self.f = Semaphore(1)\n        self.b = Semaphore(0)\n\n    def foo(self, printFoo: \"Callable[[], None]\") -> None:\n        for _ in range(self.n):\n            self.f.acquire()\nprintFoo() outputs \"foo\". Do not change or remove this line.\n            printFoo()\n            self.b.release()\n\n    def bar(self, printBar: \"Callable[[], None]\") -> None:\n        for _ in range(self.n):\n            self.b.acquire()\nprintBar() outputs \"bar\". Do not change or remove this line.\n            printBar()\n            self.f.release()\n\n`",
+            "content": "\nLeetCode problem 1115\n\nfrom threading import Semaphore\n\n\nclass FooBar:\n    def init(self, n):\n        self.n = n\n        self.f = Semaphore(1)\n        self.b = Semaphore(0)\n\n    def foo(self, printFoo: \"Callable[[], None]\") -> None:\n        for _ in range(self.n):\n            self.f.acquire()\nprintFoo() outputs \"foo\". Do not change or remove this line.\n            printFoo()\n            self.b.release()\n\n    def bar(self, printBar: \"Callable[[], None]\") -> None:\n        for _ in range(self.n):\n            self.b.acquire()\nprintBar() outputs \"bar\". Do not change or remove this line.\n            printBar()\n            self.f.release()\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2808,7 +2816,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/1111/",
             "title": "1111. Maximum Nesting Depth of Two Valid Parentheses Strings",
             "description": "1111. Maximum Nesting Depth of Two Valid Parentheses Strings",
-            "content": "\nLeetCode problem 1111\n\nclass Solution:\n    def maxDepthAfterSplit(self, seq: str) -> List[int]:\n        res = [0] * len(seq)\n        x = 0\n        for i, c in enumerate(seq):\n            if c == \"(\":\n                res[i] = x & 1\n                x += 1\n            else:\n                x -= 1\n                res[i] = x & 1\n        return res\n\n`",
+            "content": "\nLeetCode problem 1111\n\nclass Solution:\n    def maxDepthAfterSplit(self, seq: str) -> List[int]:\n        res = [0] * len(seq)\n        x = 0\n        for i, c in enumerate(seq):\n            if c == \"(\":\n                res[i] = x & 1\n                x += 1\n            else:\n                x -= 1\n                res[i] = x & 1\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2816,7 +2824,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/1110/",
             "title": "1110. Delete Nodes And Return Forest",
             "description": "1110. Delete Nodes And Return Forest",
-            "content": "\nLeetCode problem 1110\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def delNodes(\n        self, root: Optional[TreeNode], to_delete: List[int]\n    ) -> List[TreeNode]:\n        def dfs(root: Optional[TreeNode]) -> Optional[TreeNode]:\n            if root is None:\n                return None\n            root.left, root.right = dfs(root.left), dfs(root.right)\n            if root.val not in s:\n                return root\n            if root.left:\n                res.append(root.left)\n            if root.right:\n                res.append(root.right)\n            return None\n\n        s = set(to_delete)\n        res = []\n        if dfs(root):\n            res.append(root)\n        return res\n\n`",
+            "content": "\nLeetCode problem 1110\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def delNodes(\n        self, root: Optional[TreeNode], to_delete: List[int]\n    ) -> List[TreeNode]:\n        def dfs(root: Optional[TreeNode]) -> Optional[TreeNode]:\n            if root is None:\n                return None\n            root.left, root.right = dfs(root.left), dfs(root.right)\n            if root.val not in s:\n                return root\n            if root.left:\n                res.append(root.left)\n            if root.right:\n                res.append(root.right)\n            return None\n\n        s = set(to_delete)\n        res = []\n        if dfs(root):\n            res.append(root)\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2824,7 +2832,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/1109/",
             "title": "1109. Corporate Flight Bookings",
             "description": "1109. Corporate Flight Bookings",
-            "content": "\nLeetCode problem 1109\n\nclass BinaryIndexedTree:\n    def init(self, n):\n        self.n = n\n        self.c = [0] * (n + 1)\n\n    def update(self, x, delta):\n        while x  List[int]:\n        tree = BinaryIndexedTree(n)\n        for first, last, seats in bookings:\n            tree.update(first, seats)\n            tree.update(last + 1, -seats)\n        return [tree.query(i + 1) for i in range(n)]\n\n`",
+            "content": "\nLeetCode problem 1109\n\nclass BinaryIndexedTree:\n    def init(self, n):\n        self.n = n\n        self.c = [0] * (n + 1)\n\n    def update(self, x, delta):\n        while x  List[int]:\n        tree = BinaryIndexedTree(n)\n        for first, last, seats in bookings:\n            tree.update(first, seats)\n            tree.update(last + 1, -seats)\n        return [tree.query(i + 1) for i in range(n)]\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2832,7 +2840,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/1105/",
             "title": "1105. Filling Bookcase Shelves",
             "description": "1105. Filling Bookcase Shelves",
-            "content": "\nLeetCode problem 1105\n\nclass Solution:\n    def minHeightShelves(self, books: List[List[int]], shelfWidth: int) -> int:\n        n = len(books)\n        f = [0] * (n + 1)\n        for i, (w, h) in enumerate(books, 1):\n            f[i] = f[i - 1] + h\n            for j in range(i - 1, 0, -1):\n                w += booksj - 1\n                if w > shelfWidth:\n                    break\n                h = max(h, booksj - 1)\n                f[i] = min(f[i], f[j - 1] + h)\n        return f[n]\n\n`",
+            "content": "\nLeetCode problem 1105\n\nclass Solution:\n    def minHeightShelves(self, books: List[List[int]], shelfWidth: int) -> int:\n        n = len(books)\n        f = [0] * (n + 1)\n        for i, (w, h) in enumerate(books, 1):\n            f[i] = f[i - 1] + h\n            for j in range(i - 1, 0, -1):\n                w += booksj - 1\n                if w > shelfWidth:\n                    break\n                h = max(h, booksj - 1)\n                f[i] = min(f[i], f[j - 1] + h)\n        return f[n]\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2840,7 +2848,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/1104/",
             "title": "1104. Path In Zigzag Labelled Binary Tree",
             "description": "1104. Path In Zigzag Labelled Binary Tree",
-            "content": "\nLeetCode problem 1104\n\nclass Solution:\n    def pathInZigZagTree(self, label: int) -> List[int]:\n        x = i = 1\n        while (x > 1\n            i -= 1\n        return res\n\n`",
+            "content": "\nLeetCode problem 1104\n\nclass Solution:\n    def pathInZigZagTree(self, label: int) -> List[int]:\n        x = i = 1\n        while (x > 1\n            i -= 1\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2848,7 +2856,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/1102/",
             "title": "1102. Path With Maximum Minimum Value",
             "description": "1102. Path With Maximum Minimum Value",
-            "content": "\nLeetCode problem 1102\n\nclass UnionFind:\n    slots = (\"p\", \"size\")\n\n    def init(self, n):\n        self.p = list(range(n))\n        self.size = [1] * n\n\n    def find(self, x: int) -> int:\n        if self.p[x] != x:\n            self.p[x] = self.find(self.p[x])\n        return self.p[x]\n\n    def union(self, a: int, b: int) -> bool:\n        pa, pb = self.find(a), self.find(b)\n        if pa == pb:\n            return False\n        if self.size[pa] > self.size[pb]:\n            self.p[pb] = pa\n            self.size[pa] += self.size[pb]\n        else:\n            self.p[pa] = pb\n            self.size[pb] += self.size[pa]\n        return True\n\n\nclass Solution:\n    def maximumMinimumPath(self, grid: List[List[int]]) -> int:\n        m, n = len(grid), len(grid[0])\n        uf = UnionFind(m * n)\n        q = [(v, i, j) for i, row in enumerate(grid) for j, v in enumerate(row)]\n        q.sort()\n        res = 0\n        vis = set()\n        dirs = (-1, 0, 1, 0, -1)\n        while uf.find(0) != uf.find(m * n - 1):\n            v, i, j = q.pop()\n            res = v\n            vis.add((i, j))\n            for a, b in pairwise(dirs):\n                x, y = i + a, j + b\n                if (x, y) in vis:\n                    uf.union(x * n + y, i * n + j)\n        return res\n\n`",
+            "content": "\nLeetCode problem 1102\n\nclass UnionFind:\n    slots = (\"p\", \"size\")\n\n    def init(self, n):\n        self.p = list(range(n))\n        self.size = [1] * n\n\n    def find(self, x: int) -> int:\n        if self.p[x] != x:\n            self.p[x] = self.find(self.p[x])\n        return self.p[x]\n\n    def union(self, a: int, b: int) -> bool:\n        pa, pb = self.find(a), self.find(b)\n        if pa == pb:\n            return False\n        if self.size[pa] > self.size[pb]:\n            self.p[pb] = pa\n            self.size[pa] += self.size[pb]\n        else:\n            self.p[pa] = pb\n            self.size[pb] += self.size[pa]\n        return True\n\n\nclass Solution:\n    def maximumMinimumPath(self, grid: List[List[int]]) -> int:\n        m, n = len(grid), len(grid[0])\n        uf = UnionFind(m * n)\n        q = [(v, i, j) for i, row in enumerate(grid) for j, v in enumerate(row)]\n        q.sort()\n        res = 0\n        vis = set()\n        dirs = (-1, 0, 1, 0, -1)\n        while uf.find(0) != uf.find(m * n - 1):\n            v, i, j = q.pop()\n            res = v\n            vis.add((i, j))\n            for a, b in pairwise(dirs):\n                x, y = i + a, j + b\n                if (x, y) in vis:\n                    uf.union(x * n + y, i * n + j)\n        return res\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2856,7 +2864,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/1101/",
             "title": "1101. The Earliest Moment When Everyone Become Friends",
             "description": "1101. The Earliest Moment When Everyone Become Friends",
-            "content": "\nLeetCode problem 1101\n\nclass UnionFind:\n    slots = ('p', 'size')\n\n    def init(self, n):\n        self.p = list(range(n))\n        self.size = [1] * n\n\n    def find(self, x: int) -> int:\n        if self.p[x] != x:\n            self.p[x] = self.find(self.p[x])\n        return self.p[x]\n\n    def union(self, a: int, b: int) -> bool:\n        pa, pb = self.find(a), self.find(b)\n        if pa == pb:\n            return False\n        if self.size[pa] > self.size[pb]:\n            self.p[pb] = pa\n            self.size[pa] += self.size[pb]\n        else:\n            self.p[pa] = pb\n            self.size[pb] += self.size[pa]\n        return True\n\n\nclass Solution:\n    def earliestAcq(self, logs: List[List[int]], n: int) -> int:\n        uf = UnionFind(n)\n        for t, x, y in sorted(logs):\n            if uf.union(x, y):\n                n -= 1\n                if n == 1:\n                    return t\n        return -1\n\n`",
+            "content": "\nLeetCode problem 1101\n\nclass UnionFind:\n    slots = ('p', 'size')\n\n    def init(self, n):\n        self.p = list(range(n))\n        self.size = [1] * n\n\n    def find(self, x: int) -> int:\n        if self.p[x] != x:\n            self.p[x] = self.find(self.p[x])\n        return self.p[x]\n\n    def union(self, a: int, b: int) -> bool:\n        pa, pb = self.find(a), self.find(b)\n        if pa == pb:\n            return False\n        if self.size[pa] > self.size[pb]:\n            self.p[pb] = pa\n            self.size[pa] += self.size[pb]\n        else:\n            self.p[pa] = pb\n            self.size[pb] += self.size[pa]\n        return True\n\n\nclass Solution:\n    def earliestAcq(self, logs: List[List[int]], n: int) -> int:\n        uf = UnionFind(n)\n        for t, x, y in sorted(logs):\n            if uf.union(x, y):\n                n -= 1\n                if n == 1:\n                    return t\n        return -1\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -5292,7 +5300,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 2
+                    "timeTakenInMilliseconds": 1
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -7694,6 +7702,14 @@
             "lang": "en"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/1642/",
+            "title": "1642. Furthest Building You Can Reach",
+            "description": "1642. Furthest Building You Can Reach",
+            "content": "\nLeetCode problem 1642\n\nclass Solution:\n    def furthestBuilding(self, heights: List[int], bricks: int, ladders: int) -> int:\n        h = []\n        for i, a in enumerate(heights[:-1]):\n            b = heights[i + 1]\n            d = b - a\n            if d > 0:\n                heappush(h, d)\n                if len(h) > ladders:\n                    bricks -= heappop(h)\n                    if bricks < 0:\n                        return i\n        return len(heights) - 1\n`",
+            "tags": [],
+            "lang": "en"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/152/",
             "title": "152. Maximum Product Subarray",
             "description": "Understanding the 152. Maximum Product Subarray problem from LeetCode",
@@ -7899,7 +7915,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/1123/",
             "title": "1123. Lowest Common Ancestor of Deepest Leaves",
             "description": "1123. Lowest Common Ancestor of Deepest Leaves",
-            "content": "\nLeetCode problem 1123\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def lcaDeepestLeaves(self, root: Optional[TreeNode]) -> Optional[TreeNode]:\n        def dfs(root):\n            if root is None:\n                return None, 0\n            l, d1 = dfs(root.left)\n            r, d2 = dfs(root.right)\n            if d1 > d2:\n                return l, d1 + 1\n            if d1 < d2:\n                return r, d2 + 1\n            return root, d1 + 1\n\n        return dfs(root)[0]\n\n`",
+            "content": "\nLeetCode problem 1123\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def lcaDeepestLeaves(self, root: Optional[TreeNode]) -> Optional[TreeNode]:\n        def dfs(root):\n            if root is None:\n                return None, 0\n            l, d1 = dfs(root.left)\n            r, d2 = dfs(root.right)\n            if d1 > d2:\n                return l, d1 + 1\n            if d1 < d2:\n                return r, d2 + 1\n            return root, d1 + 1\n\n        return dfs(root)[0]\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -7907,7 +7923,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/1120/",
             "title": "1120. Maximum Average Subtree",
             "description": "1120. Maximum Average Subtree",
-            "content": "\nLeetCode problem 1120\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def maximumAverageSubtree(self, root: Optional[TreeNode]) -> float:\n        def dfs(root):\n            if root is None:\n                return 0, 0\n            ls, ln = dfs(root.left)\n            rs, rn = dfs(root.right)\n            s = root.val + ls + rs\n            n = 1 + ln + rn\n            nonlocal res\n            res = max(res, s / n)\n            return s, n\n\n        res = 0\n        dfs(root)\n        return res\n\n`",
+            "content": "\nLeetCode problem 1120\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def maximumAverageSubtree(self, root: Optional[TreeNode]) -> float:\n        def dfs(root):\n            if root is None:\n                return 0, 0\n            ls, ln = dfs(root.left)\n            rs, rn = dfs(root.right)\n            s = root.val + ls + rs\n            n = 1 + ln + rn\n            nonlocal res\n            res = max(res, s / n)\n            return s, n\n\n        res = 0\n        dfs(root)\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -7915,7 +7931,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/1116/",
             "title": "1116. Print Zero Even Odd",
             "description": "1116. Print Zero Even Odd",
-            "content": "\nLeetCode problem 1116\n\nfrom threading import Semaphore\n\n\nclass ZeroEvenOdd:\n    def init(self, n):\n        self.n = n\n        self.z = Semaphore(1)\n        self.e = Semaphore(0)\n        self.o = Semaphore(0)\n\nprintNumber(x) outputs \"x\", where x is an integer.\n    def zero(self, printNumber: 'Callable[[int], None]') -> None:\n        for i in range(self.n):\n            self.z.acquire()\n            printNumber(0)\n            if i % 2 == 0:\n                self.o.release()\n            else:\n                self.e.release()\n\n    def even(self, printNumber: 'Callable[[int], None]') -> None:\n        for i in range(2, self.n + 1, 2):\n            self.e.acquire()\n            printNumber(i)\n            self.z.release()\n\n    def odd(self, printNumber: 'Callable[[int], None]') -> None:\n        for i in range(1, self.n + 1, 2):\n            self.o.acquire()\n            printNumber(i)\n            self.z.release()\n\n`",
+            "content": "\nLeetCode problem 1116\n\nfrom threading import Semaphore\n\n\nclass ZeroEvenOdd:\n    def init(self, n):\n        self.n = n\n        self.z = Semaphore(1)\n        self.e = Semaphore(0)\n        self.o = Semaphore(0)\n\nprintNumber(x) outputs \"x\", where x is an integer.\n    def zero(self, printNumber: 'Callable[[int], None]') -> None:\n        for i in range(self.n):\n            self.z.acquire()\n            printNumber(0)\n            if i % 2 == 0:\n                self.o.release()\n            else:\n                self.e.release()\n\n    def even(self, printNumber: 'Callable[[int], None]') -> None:\n        for i in range(2, self.n + 1, 2):\n            self.e.acquire()\n            printNumber(i)\n            self.z.release()\n\n    def odd(self, printNumber: 'Callable[[int], None]') -> None:\n        for i in range(1, self.n + 1, 2):\n            self.o.acquire()\n            printNumber(i)\n            self.z.release()\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -7923,7 +7939,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/1115/",
             "title": "1115. Print FooBar Alternately",
             "description": "1115. Print FooBar Alternately",
-            "content": "\nLeetCode problem 1115\n\nfrom threading import Semaphore\n\n\nclass FooBar:\n    def init(self, n):\n        self.n = n\n        self.f = Semaphore(1)\n        self.b = Semaphore(0)\n\n    def foo(self, printFoo: \"Callable[[], None]\") -> None:\n        for _ in range(self.n):\n            self.f.acquire()\nprintFoo() outputs \"foo\". Do not change or remove this line.\n            printFoo()\n            self.b.release()\n\n    def bar(self, printBar: \"Callable[[], None]\") -> None:\n        for _ in range(self.n):\n            self.b.acquire()\nprintBar() outputs \"bar\". Do not change or remove this line.\n            printBar()\n            self.f.release()\n\n`",
+            "content": "\nLeetCode problem 1115\n\nfrom threading import Semaphore\n\n\nclass FooBar:\n    def init(self, n):\n        self.n = n\n        self.f = Semaphore(1)\n        self.b = Semaphore(0)\n\n    def foo(self, printFoo: \"Callable[[], None]\") -> None:\n        for _ in range(self.n):\n            self.f.acquire()\nprintFoo() outputs \"foo\". Do not change or remove this line.\n            printFoo()\n            self.b.release()\n\n    def bar(self, printBar: \"Callable[[], None]\") -> None:\n        for _ in range(self.n):\n            self.b.acquire()\nprintBar() outputs \"bar\". Do not change or remove this line.\n            printBar()\n            self.f.release()\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -7931,7 +7947,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/1111/",
             "title": "1111. Maximum Nesting Depth of Two Valid Parentheses Strings",
             "description": "1111. Maximum Nesting Depth of Two Valid Parentheses Strings",
-            "content": "\nLeetCode problem 1111\n\nclass Solution:\n    def maxDepthAfterSplit(self, seq: str) -> List[int]:\n        res = [0] * len(seq)\n        x = 0\n        for i, c in enumerate(seq):\n            if c == \"(\":\n                res[i] = x & 1\n                x += 1\n            else:\n                x -= 1\n                res[i] = x & 1\n        return res\n\n`",
+            "content": "\nLeetCode problem 1111\n\nclass Solution:\n    def maxDepthAfterSplit(self, seq: str) -> List[int]:\n        res = [0] * len(seq)\n        x = 0\n        for i, c in enumerate(seq):\n            if c == \"(\":\n                res[i] = x & 1\n                x += 1\n            else:\n                x -= 1\n                res[i] = x & 1\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -7939,7 +7955,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/1110/",
             "title": "1110. Delete Nodes And Return Forest",
             "description": "1110. Delete Nodes And Return Forest",
-            "content": "\nLeetCode problem 1110\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def delNodes(\n        self, root: Optional[TreeNode], to_delete: List[int]\n    ) -> List[TreeNode]:\n        def dfs(root: Optional[TreeNode]) -> Optional[TreeNode]:\n            if root is None:\n                return None\n            root.left, root.right = dfs(root.left), dfs(root.right)\n            if root.val not in s:\n                return root\n            if root.left:\n                res.append(root.left)\n            if root.right:\n                res.append(root.right)\n            return None\n\n        s = set(to_delete)\n        res = []\n        if dfs(root):\n            res.append(root)\n        return res\n\n`",
+            "content": "\nLeetCode problem 1110\n\nDefinition for a binary tree node.\nclass TreeNode:\ndef init(self, val=0, left=None, right=None):\nself.val = val\nself.left = left\nself.right = right\nclass Solution:\n    def delNodes(\n        self, root: Optional[TreeNode], to_delete: List[int]\n    ) -> List[TreeNode]:\n        def dfs(root: Optional[TreeNode]) -> Optional[TreeNode]:\n            if root is None:\n                return None\n            root.left, root.right = dfs(root.left), dfs(root.right)\n            if root.val not in s:\n                return root\n            if root.left:\n                res.append(root.left)\n            if root.right:\n                res.append(root.right)\n            return None\n\n        s = set(to_delete)\n        res = []\n        if dfs(root):\n            res.append(root)\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -7947,7 +7963,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/1109/",
             "title": "1109. Corporate Flight Bookings",
             "description": "1109. Corporate Flight Bookings",
-            "content": "\nLeetCode problem 1109\n\nclass BinaryIndexedTree:\n    def init(self, n):\n        self.n = n\n        self.c = [0] * (n + 1)\n\n    def update(self, x, delta):\n        while x  List[int]:\n        tree = BinaryIndexedTree(n)\n        for first, last, seats in bookings:\n            tree.update(first, seats)\n            tree.update(last + 1, -seats)\n        return [tree.query(i + 1) for i in range(n)]\n\n`",
+            "content": "\nLeetCode problem 1109\n\nclass BinaryIndexedTree:\n    def init(self, n):\n        self.n = n\n        self.c = [0] * (n + 1)\n\n    def update(self, x, delta):\n        while x  List[int]:\n        tree = BinaryIndexedTree(n)\n        for first, last, seats in bookings:\n            tree.update(first, seats)\n            tree.update(last + 1, -seats)\n        return [tree.query(i + 1) for i in range(n)]\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -7955,7 +7971,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/1105/",
             "title": "1105. Filling Bookcase Shelves",
             "description": "1105. Filling Bookcase Shelves",
-            "content": "\nLeetCode problem 1105\n\nclass Solution:\n    def minHeightShelves(self, books: List[List[int]], shelfWidth: int) -> int:\n        n = len(books)\n        f = [0] * (n + 1)\n        for i, (w, h) in enumerate(books, 1):\n            f[i] = f[i - 1] + h\n            for j in range(i - 1, 0, -1):\n                w += booksj - 1\n                if w > shelfWidth:\n                    break\n                h = max(h, booksj - 1)\n                f[i] = min(f[i], f[j - 1] + h)\n        return f[n]\n\n`",
+            "content": "\nLeetCode problem 1105\n\nclass Solution:\n    def minHeightShelves(self, books: List[List[int]], shelfWidth: int) -> int:\n        n = len(books)\n        f = [0] * (n + 1)\n        for i, (w, h) in enumerate(books, 1):\n            f[i] = f[i - 1] + h\n            for j in range(i - 1, 0, -1):\n                w += booksj - 1\n                if w > shelfWidth:\n                    break\n                h = max(h, booksj - 1)\n                f[i] = min(f[i], f[j - 1] + h)\n        return f[n]\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -7963,7 +7979,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/1104/",
             "title": "1104. Path In Zigzag Labelled Binary Tree",
             "description": "1104. Path In Zigzag Labelled Binary Tree",
-            "content": "\nLeetCode problem 1104\n\nclass Solution:\n    def pathInZigZagTree(self, label: int) -> List[int]:\n        x = i = 1\n        while (x > 1\n            i -= 1\n        return res\n\n`",
+            "content": "\nLeetCode problem 1104\n\nclass Solution:\n    def pathInZigZagTree(self, label: int) -> List[int]:\n        x = i = 1\n        while (x > 1\n            i -= 1\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -7971,7 +7987,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/1102/",
             "title": "1102. Path With Maximum Minimum Value",
             "description": "1102. Path With Maximum Minimum Value",
-            "content": "\nLeetCode problem 1102\n\nclass UnionFind:\n    slots = (\"p\", \"size\")\n\n    def init(self, n):\n        self.p = list(range(n))\n        self.size = [1] * n\n\n    def find(self, x: int) -> int:\n        if self.p[x] != x:\n            self.p[x] = self.find(self.p[x])\n        return self.p[x]\n\n    def union(self, a: int, b: int) -> bool:\n        pa, pb = self.find(a), self.find(b)\n        if pa == pb:\n            return False\n        if self.size[pa] > self.size[pb]:\n            self.p[pb] = pa\n            self.size[pa] += self.size[pb]\n        else:\n            self.p[pa] = pb\n            self.size[pb] += self.size[pa]\n        return True\n\n\nclass Solution:\n    def maximumMinimumPath(self, grid: List[List[int]]) -> int:\n        m, n = len(grid), len(grid[0])\n        uf = UnionFind(m * n)\n        q = [(v, i, j) for i, row in enumerate(grid) for j, v in enumerate(row)]\n        q.sort()\n        res = 0\n        vis = set()\n        dirs = (-1, 0, 1, 0, -1)\n        while uf.find(0) != uf.find(m * n - 1):\n            v, i, j = q.pop()\n            res = v\n            vis.add((i, j))\n            for a, b in pairwise(dirs):\n                x, y = i + a, j + b\n                if (x, y) in vis:\n                    uf.union(x * n + y, i * n + j)\n        return res\n\n`",
+            "content": "\nLeetCode problem 1102\n\nclass UnionFind:\n    slots = (\"p\", \"size\")\n\n    def init(self, n):\n        self.p = list(range(n))\n        self.size = [1] * n\n\n    def find(self, x: int) -> int:\n        if self.p[x] != x:\n            self.p[x] = self.find(self.p[x])\n        return self.p[x]\n\n    def union(self, a: int, b: int) -> bool:\n        pa, pb = self.find(a), self.find(b)\n        if pa == pb:\n            return False\n        if self.size[pa] > self.size[pb]:\n            self.p[pb] = pa\n            self.size[pa] += self.size[pb]\n        else:\n            self.p[pa] = pb\n            self.size[pb] += self.size[pa]\n        return True\n\n\nclass Solution:\n    def maximumMinimumPath(self, grid: List[List[int]]) -> int:\n        m, n = len(grid), len(grid[0])\n        uf = UnionFind(m * n)\n        q = [(v, i, j) for i, row in enumerate(grid) for j, v in enumerate(row)]\n        q.sort()\n        res = 0\n        vis = set()\n        dirs = (-1, 0, 1, 0, -1)\n        while uf.find(0) != uf.find(m * n - 1):\n            v, i, j = q.pop()\n            res = v\n            vis.add((i, j))\n            for a, b in pairwise(dirs):\n                x, y = i + a, j + b\n                if (x, y) in vis:\n                    uf.union(x * n + y, i * n + j)\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
@@ -7979,7 +7995,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/1101/",
             "title": "1101. The Earliest Moment When Everyone Become Friends",
             "description": "1101. The Earliest Moment When Everyone Become Friends",
-            "content": "\nLeetCode problem 1101\n\nclass UnionFind:\n    slots = ('p', 'size')\n\n    def init(self, n):\n        self.p = list(range(n))\n        self.size = [1] * n\n\n    def find(self, x: int) -> int:\n        if self.p[x] != x:\n            self.p[x] = self.find(self.p[x])\n        return self.p[x]\n\n    def union(self, a: int, b: int) -> bool:\n        pa, pb = self.find(a), self.find(b)\n        if pa == pb:\n            return False\n        if self.size[pa] > self.size[pb]:\n            self.p[pb] = pa\n            self.size[pa] += self.size[pb]\n        else:\n            self.p[pa] = pb\n            self.size[pb] += self.size[pa]\n        return True\n\n\nclass Solution:\n    def earliestAcq(self, logs: List[List[int]], n: int) -> int:\n        uf = UnionFind(n)\n        for t, x, y in sorted(logs):\n            if uf.union(x, y):\n                n -= 1\n                if n == 1:\n                    return t\n        return -1\n`",
+            "content": "\nLeetCode problem 1101\n\nclass UnionFind:\n    slots = ('p', 'size')\n\n    def init(self, n):\n        self.p = list(range(n))\n        self.size = [1] * n\n\n    def find(self, x: int) -> int:\n        if self.p[x] != x:\n            self.p[x] = self.find(self.p[x])\n        return self.p[x]\n\n    def union(self, a: int, b: int) -> bool:\n        pa, pb = self.find(a), self.find(b)\n        if pa == pb:\n            return False\n        if self.size[pa] > self.size[pb]:\n            self.p[pb] = pa\n            self.size[pa] += self.size[pb]\n        else:\n            self.p[pa] = pb\n            self.size[pb] += self.size[pa]\n        return True\n\n\nclass Solution:\n    def earliestAcq(self, logs: List[List[int]], n: int) -> int:\n        uf = UnionFind(n)\n        for t, x, y in sorted(logs):\n            if uf.union(x, y):\n                n -= 1\n                if n == 1:\n                    return t\n        return -1\n",
             "tags": [],
             "lang": "en"
         },
