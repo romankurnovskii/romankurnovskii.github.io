@@ -2924,6 +2924,14 @@
             "lang": "ru"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/hard/3045/",
+            "title": "3045. Count Prefix and Suffix Pairs II",
+            "description": "3045. Count Prefix and Suffix Pairs II",
+            "content": "\nLeetCode problem 3045\n\nHint\n\nTo solve this problem efficiently, consider using a Trie (prefix tree) to store each word in a way that allows checking for prefixes and suffixes simultaneously.\n\nIdea\n\nThe key idea is to leverage a Trie data structure, but with a twist: instead of only considering prefixes (as is typical with tries), we also account for suffixes simultaneously. This dual consideration allows us to efficiently count valid prefix-suffix pairs among the words.\n\nApproach\n\nTrie Construction: Build a Trie where each node represents a pair of characters (prefix_char, suffix_char) from a word and its reversed counterpart. This method enables simultaneous prefix and suffix tracking.\nCounting Pairs: As we insert words into the Trie, we count the number of times a particular prefix-suffix combination has occurred. When inserting a new word, we traverse the Trie based on its prefix and suffix characters, incrementing a counter at the nodes to signify how many words have passed through that node.\nResult Calculation: The total count of valid pairs is accumulated while inserting words into the Trie by adding the count found at each node during the traversal.\n\nclass Node:\n    slots = [\"children\", \"cnt\"]\n\n    def init(self):\n        self.children = {}\n        self.cnt = 0\n\nclass Solution:\n    def countPrefixSuffixPairs(self, words: List[str]) -> int:\n        res = 0\n        trie = Node()\n        for s in words:\n            node = trie\n            for p in zip(s, reversed(s)):\n                if p not in node.children:\n                    node.children[p] = Node()\n                node = node.children[p]\n                res += node.cnt\n            node.cnt += 1\n        return res\n\nPattern\n\nThis problem follows a \"Trie with a Twist\" pattern, illustrating how extending traditional data structures with creative modifications can solve specialized problems effectively.\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/hard/3032/",
             "title": 3032,
             "description": "LeetCode 3032",
@@ -3014,6 +3022,14 @@
         {
             "uri": "/tracks/algorithms-101/leetcode/hard/2808/",
             "content": "class Solution:\n    def minimumSeconds(self, nums: List[int]) -> int:\n        d = defaultdict(list)\n        for i, x in enumerate(nums):\n            d[x].append(i)\n        res = inf\n        n = len(nums)\n        for idx in d.values():\n            t = idx[0] + n - idx[-1]\n            for i, j in pairwise(idx):\n                t = max(t, j - i)\n            res = min(res, t // 2)\n        return res\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/2402/",
+            "title": "3045. Count Prefix and Suffix Pairs II",
+            "description": "3045. Count Prefix and Suffix Pairs II",
+            "content": "\nLeetCode problem 3045\n\nHint\n\nTo solve this problem efficiently, consider using a Trie (prefix tree) to store each word in a way that allows checking for prefixes and suffixes simultaneously.\n\nIdea\n\nThe key idea is to leverage a Trie data structure, but with a twist: instead of only considering prefixes (as is typical with tries), we also account for suffixes simultaneously. This dual consideration allows us to efficiently count valid prefix-suffix pairs among the words.\n\nApproach\n\nTrie Construction: Build a Trie where each node represents a pair of characters (prefix_char, suffix_char) from a word and its reversed counterpart. This method enables simultaneous prefix and suffix tracking.\nCounting Pairs: As we insert words into the Trie, we count the number of times a particular prefix-suffix combination has occurred. When inserting a new word, we traverse the Trie based on its prefix and suffix characters, incrementing a counter at the nodes to signify how many words have passed through that node.\nResult Calculation: The total count of valid pairs is accumulated while inserting words into the Trie by adding the count found at each node during the traversal.\n\nclass Node:\n    slots = [\"children\", \"cnt\"]\n\n    def init(self):\n        self.children = {}\n        self.cnt = 0\n\nclass Solution:\n    def countPrefixSuffixPairs(self, words: List[str]) -> int:\n        res = 0\n        trie = Node()\n        for s in words:\n            node = trie\n            for p in zip(s, reversed(s)):\n                if p not in node.children:\n                    node.children[p] = Node()\n                node = node.children[p]\n                res += node.cnt\n            node.cnt += 1\n        return res\n\nPattern\n\nThis problem follows a \"Trie with a Twist\" pattern, illustrating how extending traditional data structures with creative modifications can solve specialized problems effectively.\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3524,6 +3540,14 @@
             "title": "2315. Count Asterisks",
             "description": "2315. Count Asterisks",
             "content": "\nLeetCode problem 2315\n\nclass Solution:\n    def countAsterisks(self, s: str) -> int:\n        res, ok = 0, 1\n        for c in s:\n            if c == \"*\":\n                res += ok\n            elif c == \"|\":\n                ok ^= 1\n        return res\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/231/",
+            "title": "231. Power of Two",
+            "description": "231. Power of Two",
+            "content": "\nLeetCode problem 231\n\nclass Solution:\n    def isPowerOfTwo(self, n: int) -> bool:\n        return n > 0 and n == n & (-n)\n\nclass Solution:\n    def isPowerOfTwo(self, n: int) -> bool:\n        if n < 0:\n            return False\n        return bin(n).count('1') == 1\n",
             "tags": [],
             "lang": "ru"
         },
@@ -8064,6 +8088,14 @@
             "lang": "en"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/hard/3045/",
+            "title": "3045. Count Prefix and Suffix Pairs II",
+            "description": "3045. Count Prefix and Suffix Pairs II",
+            "content": "\nLeetCode problem 3045\n\nHint\n\nTo solve this problem efficiently, consider using a Trie (prefix tree) to store each word in a way that allows checking for prefixes and suffixes simultaneously.\n\nIdea\n\nThe key idea is to leverage a Trie data structure, but with a twist: instead of only considering prefixes (as is typical with tries), we also account for suffixes simultaneously. This dual consideration allows us to efficiently count valid prefix-suffix pairs among the words.\n\nApproach\n\nTrie Construction: Build a Trie where each node represents a pair of characters (prefix_char, suffix_char) from a word and its reversed counterpart. This method enables simultaneous prefix and suffix tracking.\nCounting Pairs: As we insert words into the Trie, we count the number of times a particular prefix-suffix combination has occurred. When inserting a new word, we traverse the Trie based on its prefix and suffix characters, incrementing a counter at the nodes to signify how many words have passed through that node.\nResult Calculation: The total count of valid pairs is accumulated while inserting words into the Trie by adding the count found at each node during the traversal.\n\nclass Node:\n    slots = [\"children\", \"cnt\"]\n\n    def init(self):\n        self.children = {}\n        self.cnt = 0\n\nclass Solution:\n    def countPrefixSuffixPairs(self, words: List[str]) -> int:\n        res = 0\n        trie = Node()\n        for s in words:\n            node = trie\n            for p in zip(s, reversed(s)):\n                if p not in node.children:\n                    node.children[p] = Node()\n                node = node.children[p]\n                res += node.cnt\n            node.cnt += 1\n        return res\n\nPattern\n\nThis problem follows a \"Trie with a Twist\" pattern, illustrating how extending traditional data structures with creative modifications can solve specialized problems effectively.\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/hard/3032/",
             "title": 3032,
             "description": "LeetCode 3032",
@@ -8180,6 +8212,14 @@
         {
             "uri": "/tracks/algorithms-101/leetcode/hard/2808/",
             "content": "class Solution:\n    def minimumSeconds(self, nums: List[int]) -> int:\n        d = defaultdict(list)\n        for i, x in enumerate(nums):\n            d[x].append(i)\n        res = inf\n        n = len(nums)\n        for idx in d.values():\n            t = idx[0] + n - idx[-1]\n            for i, j in pairwise(idx):\n                t = max(t, j - i)\n            res = min(res, t // 2)\n        return res\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/2402/",
+            "title": "2402. Meeting Rooms III",
+            "description": "2402. Meeting Rooms III",
+            "content": "\nLeetCode problem 2402\n\nGiven n rooms and a list of meetings with start and end times, allocate each meeting to an unused room with the lowest number. If all rooms are in use, meetings are delayed until a room is available, maintaining their original duration. Meetings are prioritized by their original start times. The task is to return the room number that hosts the most meetings. If multiple rooms host the same maximum number of meetings, return the room with the lowest number.\n\nHint\n\nUse priority queues to efficiently manage available and occupied rooms, sorting by end times for occupied rooms and indexes for available rooms.\n\nIdea\n\nThe strategy involves sorting meetings by their start times and using two priority queues: one for idle rooms (sorted by room number) and another for busy rooms (sorted by meeting end time and room number). This approach efficiently tracks room availability and meeting schedules.\n\nApproach\n\nSort Meetings: Sort meetings based on their start times to process them in chronological order.\nInitialize Queues:\n   An idle queue for available rooms, initially containing all room numbers.\n   A busy queue for rooms currently in use, sorted by the meeting end time and then room number.\nProcess Meetings: For each meeting, check for room availability and allocate accordingly:\n   Move rooms from busy to idle if the meeting has ended before the current meeting's start time.\n   Allocate the meeting to the lowest-numbered available room, or delay it until the earliest possible time if no rooms are available.\nCount Meetings: Maintain a count of meetings hosted in each room.\nDetermine the Most Booked Room: Identify the room with the highest meeting count, breaking ties by room number.\n\nfrom heapq import heappop, heappush, heapify\n\nclass Solution:\n    def mostBooked(self, n: int, meetings: List[List[int]]) -> int:\n        meetings.sort()                         # Sort meetings by start time\n        busy, idle = [], list(range(n))\n        heapify(idle)                           # Prepare the idle rooms heap\n        cnt = [0] * n                           # Count of meetings per room\n\n        for start, end in meetings:\n            while busy and busy0 <= start: # Free up busy rooms that have become available\n                _, room = heappop(busy)\n                heappush(idle, room)\n\n            if idle:                            # Allocate the current meeting to a room\n                room = heappop(idle)\n                heappush(busy, (end, room))\n            else:\n                end_time, room = heappop(busy)\n                end = end_time + (end - start)  # Adjust end time for delayed meetings\n                heappush(busy, (end, room))\n            cnt[room] += 1                      # Increment meeting count for the allocated room\n\n        return cnt.index(max(cnt))\n\nPattern\n\nThis problem follows a \"Heap\" pattern for managing time-based resources efficiently, often used in scheduling and allocation problems where resources (in this case, rooms) must be optimally assigned based on specific criteria (meeting times).\n",
             "tags": [],
             "lang": "en"
         },
@@ -8689,6 +8729,14 @@
             "title": "2315. Count Asterisks",
             "description": "2315. Count Asterisks",
             "content": "\nLeetCode problem 2315\n\nclass Solution:\n    def countAsterisks(self, s: str) -> int:\n        res, ok = 0, 1\n        for c in s:\n            if c == \"*\":\n                res += ok\n            elif c == \"|\":\n                ok ^= 1\n        return res\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/231/",
+            "title": "231. Power of Two",
+            "description": "231. Power of Two",
+            "content": "\nLeetCode problem 231\n\nclass Solution:\n    def isPowerOfTwo(self, n: int) -> bool:\n        return n > 0 and n == n & (-n)\n\nclass Solution:\n    def isPowerOfTwo(self, n: int) -> bool:\n        if n < 0:\n            return False\n        return bin(n).count('1') == 1\n",
             "tags": [],
             "lang": "en"
         },
