@@ -3678,10 +3678,90 @@
             "lang": "ru"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/easy/1732/",
+            "title": "1732. Find the Highest Altitude",
+            "description": "1732. Find the Highest Altitude",
+            "content": "\nLeetCode problem 1732\n\nclass Solution:\n    def largestAltitude(self, gain: List[int]) -> int:\n        res = h = 0\n        for v in gain:\n            h += v\n            res = max(res, h)\n        return res\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/1725/",
+            "title": "1725. Number Of Rectangles That Can Form The Largest Square",
+            "description": "1725. Number Of Rectangles That Can Form The Largest Square",
+            "content": "\nLeetCode problem 1725\n\nclass Solution:\n    def countGoodRectangles(self, rectangles: List[List[int]]) -> int:\n        res = mx = 0\n        for l, w in rectangles:\n            x = min(l, w)\n            if mx < x:\n                res = 1\n                mx = x\n            elif mx == x:\n                res += 1\n        return res\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/1720/",
+            "title": "1720. Decode XORed Array",
+            "description": "1720. Decode XORed Array",
+            "content": "\nLeetCode problem 1720\n\nclass Solution:\n    def decode(self, encoded: List[int], first: int) -> List[int]:\n        res = [first]\n        for e in encoded:\n            res.append(res[-1] ^ e)\n        return res\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/1716/",
+            "title": "1716. Calculate Money in Leetcode Bank",
+            "description": "1716. Calculate Money in Leetcode Bank",
+            "content": "\nLeetCode problem 1716\n\nclass Solution:\n    def totalMoney(self, n: int) -> int:\n        a, b = divmod(n, 7)\n        return (28 + 28 + 7 * (a - 1)) * a // 2 + (a * 2 + b + 1) * b // 2\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/1710/",
+            "title": "1710. Maximum Units on a Truck",
+            "description": "1710. Maximum Units on a Truck",
+            "content": "\nLeetCode problem 1710\n\nclass Solution:\n    def maximumUnits(self, boxTypes: List[List[int]], truckSize: int) -> int:\n        cnt = [0] * 1001\n        for a, b in boxTypes:\n            cnt[b] += a\n        res = 0\n        for b in range(1000, 0, -1):\n            a = cnt[b]\n            if a:\n                res += b * min(truckSize, a)\n                truckSize -= a\n                if truckSize <= 0:\n                    break\n        return res\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/easy/171/",
             "title": "171. Excel Sheet Column Number",
             "description": "171. Excel Sheet Column Number",
             "content": "\n\nLeetCode problem\n\nThe column titles in an Excel sheet are designed similar to a base-26 number system. The columns start from 'A' (which is 1) to 'Z' (which is 26), then after 'Z', the column titles go to 'AA' (which is 27), 'AB' (28), and so on.\n\nThis problem is essentially asking us to convert a base-26 number (represented by uppercase English letters) to a decimal number.\n\nThat means that for each \"new\" index in columnTitle we already pass alphabet.\nExample:\n\nIf columnTitle length is 1 => result in range of (1-26)\nIf columnTitle length is 2 ('AB') => first index passed alphabet (26), next B equals 2 in alphabet. Hence 1 * 26 + index(B)\n\nSolution 1\n\nimport string\nclass Solution:\n    def titleToNumber(self, columnTitle: str) -> int:\n        alphabet = list(string.ascii_uppercase)\n\n        s = 0\n        for letter in columnTitle:\n            letter_idx = alphabet.index(letter) + 1\n            s = s*26 + letter_idx\n\n        return s\n\nOptimized Solution\n\nUsing ord function that returns index of letter.\n>> ord('A')\n65\n\nBecause here index is 65, will create a number to convert it to the correct one: result_number - ord('A) + 1\n\nExample:\n\nidxA = ord('A') - ord('A') + 1\nidxB = ord('B') - ord('A') + 1\n\nclass Solution:\n    def titleToNumber(self, columnTitle: str) -> int:\n        s = 0\n        correct_sum = - ord('A') + 1\n        for letter in columnTitle:\n            s = s * 26 + ord(letter) + correct_sum\n        return s\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/1708/",
+            "title": "1708. Largest Subarray Length K",
+            "description": "1708. Largest Subarray Length K",
+            "content": "\nLeetCode problem 1708\n\nclass Solution:\n    def largestSubarray(self, nums: List[int], k: int) -> List[int]:\n        i = nums.index(max(nums[: len(nums) - k + 1]))\n        return nums[i : i + k]\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/1704/",
+            "title": "1704. Determine if String Halves Are Alike",
+            "description": "1704. Determine if String Halves Are Alike",
+            "content": "\nLeetCode problem 1704\n\nclass Solution:\n    def halvesAreAlike(self, s: str) -> bool:\n        vowels = set('aeiouAEIOU')\n        a, b = s[: len(s) >> 1], s[len(s) >> 1 :]\n        res = sum(c in vowels for c in a) == sum(c in vowels for c in b)\n        return return\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/1700/",
+            "title": "1700. Number of Students Unable to Eat Lunch",
+            "description": "1700. Number of Students Unable to Eat Lunch",
+            "content": "\nLeetCode problem 1700\n\nclass Solution:\n    def countStudents(self, students: List[int], sandwiches: List[int]) -> int:\n        counter = Counter(students)\n        for v in sandwiches:\n            if counter[v] == 0:\n                return counter[v ^ 1]\n            counter[v] -= 1\n        return 0\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/1694/",
+            "title": "1694. Reformat Phone Number",
+            "description": "1694. Reformat Phone Number",
+            "content": "\nLeetCode problem 1694\n\nclass Solution:\n    def reformatNumber(self, number: str) -> str:\n        number = number.replace(\"-\", \"\").replace(\" \", \"\")\n        n = len(number)\n        res = [number[i * 3 : i * 3 + 3] for i in range(n // 3)]\n        if n % 3 == 1:\n            res[-1] = res-1\n            res.append(number[-2:])\n        elif n % 3 == 2:\n            res.append(number[-2:])\n        return \"-\".join(res)\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/1688/",
+            "title": "1688. Count of Matches in Tournament",
+            "description": "1688. Count of Matches in Tournament",
+            "content": "\nLeetCode problem 1688\n\nclass Solution:\n    def numberOfMatches(self, n: int) -> int:\n        return n - 1\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -8868,10 +8948,90 @@
             "lang": "en"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/easy/1732/",
+            "title": "1732. Find the Highest Altitude",
+            "description": "1732. Find the Highest Altitude",
+            "content": "\nLeetCode problem 1732\n\nclass Solution:\n    def largestAltitude(self, gain: List[int]) -> int:\n        res = h = 0\n        for v in gain:\n            h += v\n            res = max(res, h)\n        return res\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/1725/",
+            "title": "1725. Number Of Rectangles That Can Form The Largest Square",
+            "description": "1725. Number Of Rectangles That Can Form The Largest Square",
+            "content": "\nLeetCode problem 1725\n\nclass Solution:\n    def countGoodRectangles(self, rectangles: List[List[int]]) -> int:\n        res = mx = 0\n        for l, w in rectangles:\n            x = min(l, w)\n            if mx < x:\n                res = 1\n                mx = x\n            elif mx == x:\n                res += 1\n        return res\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/1720/",
+            "title": "1720. Decode XORed Array",
+            "description": "1720. Decode XORed Array",
+            "content": "\nLeetCode problem 1720\n\nclass Solution:\n    def decode(self, encoded: List[int], first: int) -> List[int]:\n        res = [first]\n        for e in encoded:\n            res.append(res[-1] ^ e)\n        return res\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/1716/",
+            "title": "1716. Calculate Money in Leetcode Bank",
+            "description": "1716. Calculate Money in Leetcode Bank",
+            "content": "\nLeetCode problem 1716\n\nclass Solution:\n    def totalMoney(self, n: int) -> int:\n        a, b = divmod(n, 7)\n        return (28 + 28 + 7 * (a - 1)) * a // 2 + (a * 2 + b + 1) * b // 2\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/1710/",
+            "title": "1710. Maximum Units on a Truck",
+            "description": "1710. Maximum Units on a Truck",
+            "content": "\nLeetCode problem 1710\n\nclass Solution:\n    def maximumUnits(self, boxTypes: List[List[int]], truckSize: int) -> int:\n        cnt = [0] * 1001\n        for a, b in boxTypes:\n            cnt[b] += a\n        res = 0\n        for b in range(1000, 0, -1):\n            a = cnt[b]\n            if a:\n                res += b * min(truckSize, a)\n                truckSize -= a\n                if truckSize <= 0:\n                    break\n        return res\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/easy/171/",
             "title": "171. Excel Sheet Column Number",
             "description": "171. Excel Sheet Column Number",
             "content": "\n\nLeetCode problem\n\nThe column titles in an Excel sheet are designed similar to a base-26 number system. The columns start from 'A' (which is 1) to 'Z' (which is 26), then after 'Z', the column titles go to 'AA' (which is 27), 'AB' (28), and so on.\n\nThis problem is essentially asking us to convert a base-26 number (represented by uppercase English letters) to a decimal number.\n\nThat means that for each \"new\" index in columnTitle we already pass alphabet.\nExample:\n\nIf columnTitle length is 1 => result in range of (1-26)\nIf columnTitle length is 2 ('AB') => first index passed alphabet (26), next B equals 2 in alphabet. Hence 1 * 26 + index(B)\n\nSolution 1\n\nimport string\nclass Solution:\n    def titleToNumber(self, columnTitle: str) -> int:\n        alphabet = list(string.ascii_uppercase)\n\n        s = 0\n        for letter in columnTitle:\n            letter_idx = alphabet.index(letter) + 1\n            s = s*26 + letter_idx\n\n        return s\n\nOptimized Solution\n\nUsing ord function that returns index of letter.\n>> ord('A')\n65\n\nBecause here index is 65, will create a number to convert it to the correct one: result_number - ord('A) + 1\n\nExample:\n\nidxA = ord('A') - ord('A') + 1\nidxB = ord('B') - ord('A') + 1\n\nclass Solution:\n    def titleToNumber(self, columnTitle: str) -> int:\n        s = 0\n        correct_sum = - ord('A') + 1\n        for letter in columnTitle:\n            s = s * 26 + ord(letter) + correct_sum\n        return s\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/1708/",
+            "title": "1708. Largest Subarray Length K",
+            "description": "1708. Largest Subarray Length K",
+            "content": "\nLeetCode problem 1708\n\nclass Solution:\n    def largestSubarray(self, nums: List[int], k: int) -> List[int]:\n        i = nums.index(max(nums[: len(nums) - k + 1]))\n        return nums[i : i + k]\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/1704/",
+            "title": "1704. Determine if String Halves Are Alike",
+            "description": "1704. Determine if String Halves Are Alike",
+            "content": "\nLeetCode problem 1704\n\nclass Solution:\n    def halvesAreAlike(self, s: str) -> bool:\n        vowels = set('aeiouAEIOU')\n        a, b = s[: len(s) >> 1], s[len(s) >> 1 :]\n        res = sum(c in vowels for c in a) == sum(c in vowels for c in b)\n        return return\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/1700/",
+            "title": "1700. Number of Students Unable to Eat Lunch",
+            "description": "1700. Number of Students Unable to Eat Lunch",
+            "content": "\nLeetCode problem 1700\n\nclass Solution:\n    def countStudents(self, students: List[int], sandwiches: List[int]) -> int:\n        counter = Counter(students)\n        for v in sandwiches:\n            if counter[v] == 0:\n                return counter[v ^ 1]\n            counter[v] -= 1\n        return 0\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/1694/",
+            "title": "1694. Reformat Phone Number",
+            "description": "1694. Reformat Phone Number",
+            "content": "\nLeetCode problem 1694\n\nclass Solution:\n    def reformatNumber(self, number: str) -> str:\n        number = number.replace(\"-\", \"\").replace(\" \", \"\")\n        n = len(number)\n        res = [number[i * 3 : i * 3 + 3] for i in range(n // 3)]\n        if n % 3 == 1:\n            res[-1] = res-1\n            res.append(number[-2:])\n        elif n % 3 == 2:\n            res.append(number[-2:])\n        return \"-\".join(res)\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/1688/",
+            "title": "1688. Count of Matches in Tournament",
+            "description": "1688. Count of Matches in Tournament",
+            "content": "\nLeetCode problem 1688\n\nclass Solution:\n    def numberOfMatches(self, n: int) -> int:\n        return n - 1\n\n",
             "tags": [],
             "lang": "en"
         },
