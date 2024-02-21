@@ -2439,6 +2439,14 @@
             "lang": "ru"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/201/",
+            "title": "201. Bitwise AND of Numbers Range",
+            "description": "201. Bitwise AND of Numbers Range",
+            "content": "\nLeetCode problem 201\n\nFocus on the leftmost bits of left and right. The result's bits are only set if left and right share the same leftmost bits up to a point.\n\nIdea\n\nThe core idea is to find the common prefix of the binary representations of left and right. The bitwise AND of any two numbers is only affected by the common prefix because any difference in the subsequent bits will result in zeros when ANDed.\n\nApproach\n\nTrack the Shifts: Initialize a variable to track the number of shifts needed to find the common prefix.\nFind Common Prefix: Shift both left and right to the right until they are equal. This finds the common prefix.\n   Each shift represents removing one bit from the right of the numbers.\nShift Back: Once left and right are equal, shift the common prefix back to its original position by shifting it left by the number of shifts done.\nResult: The shifted common prefix is the bitwise AND of all numbers in the range.\n\nclass Solution:\n    def rangeBitwiseAnd(self, left: int, right: int) -> int:\n        while left  int:\n        shift = 0\n        while left >= 1\n            right >>= 1\n            shift += 1\n        return left << shift  # Shift back to get the result\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/2/",
             "title": "2. Add Two Numbers",
             "description": "LeetCode 2. Add Two Numbers",
@@ -3334,6 +3342,14 @@
                 "Two pointers",
                 "String Matching"
             ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/268/",
+            "title": "268. Missing Number",
+            "description": "268. Missing Number",
+            "content": "\nLeetCode задача 268\n\nHint\n\nРассмотрите использование математических формул для нахождения суммы последовательности и сравните её с суммой элементов массива.\n\nIdea\n\nИдея основана на формуле для суммы первых n натуральных чисел: сумма = n * (n + 1) / 2. Мы можем вычислить ожидаемую сумму чисел от 0 до n и вычесть из неё фактическую сумму элементов массива. Разница будет пропущенным числом.\n\nApproach\n\nВычислите длину массива n.\nВычислите ожидаемую сумму для чисел от 0 до n, используя формулу n * (n + 1) / 2.\nВычислите фактическую сумму чисел в массиве.\nВычтите фактическую сумму из ожидаемой. Результат будет пропущенным числом.\n\nclass Solution:\n    def missingNumber(self, nums: List[int]) -> int:\n        N = len(nums)\n        expected_sum = N * (N + 1) // 2\n        actual_sum = sum(nums)\n        return expected_sum - actual_sum\n",
+            "tags": [],
             "lang": "ru"
         },
         {
@@ -5404,7 +5420,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 2
+                    "timeTakenInMilliseconds": 3
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -7645,6 +7661,14 @@
             "lang": "en"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/medium/201/",
+            "title": "201. Bitwise AND of Numbers Range",
+            "description": "201. Bitwise AND of Numbers Range",
+            "content": "\nLeetCode problem 201\n\nFocus on the leftmost bits of left and right. The result's bits are only set if left and right share the same leftmost bits up to a point.\n\nIdea\n\nThe core idea is to find the common prefix of the binary representations of left and right. The bitwise AND of any two numbers is only affected by the common prefix because any difference in the subsequent bits will result in zeros when ANDed.\n\nApproach\n\nTrack the Shifts: Initialize a variable to track the number of shifts needed to find the common prefix.\nFind Common Prefix: Shift both left and right to the right until they are equal. This finds the common prefix.\n   Each shift represents removing one bit from the right of the numbers.\nShift Back: Once left and right are equal, shift the common prefix back to its original position by shifting it left by the number of shifts done.\nResult: The shifted common prefix is the bitwise AND of all numbers in the range.\n\nclass Solution:\n    def rangeBitwiseAnd(self, left: int, right: int) -> int:\n        while left  int:\n        shift = 0\n        while left >= 1\n            right >>= 1\n            shift += 1\n        return left << shift  # Shift back to get the result\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/medium/2/",
             "title": "2. Add Two Numbers",
             "description": "LeetCode 2. Add Two Numbers",
@@ -8606,6 +8630,14 @@
             "lang": "en"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/easy/268/",
+            "title": "268. Missing Number",
+            "description": "268. Missing Number",
+            "content": "\nLeetCode problem 268\n\nHint\n\nConsider using mathematical formulas to find the sum of a sequence and compare it with the sum of the array elements.\n\nIdea\n\nThe idea is based on the formula for the sum of the first n natural numbers: sum = n * (n + 1) / 2. We can calculate the expected sum of numbers from 0 to n and subtract the actual sum of the array elements from it. The difference will be the missing number.\n\nApproach\n\nCalculate the length of the array n.\nCompute the expected sum for numbers 0 through n using the formula n * (n + 1) / 2.\nCalculate the actual sum of the numbers in the array.\nSubtract the actual sum from the expected sum. The result is the missing number.\n\nclass Solution:\n    def missingNumber(self, nums: List[int]) -> int:\n        N = len(nums)\n        expected_sum = N * (N + 1) // 2\n        actual_sum = sum(nums)\n        return expected_sum - actual_sum\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/easy/26/",
             "title": "26. Remove Duplicates from Sorted Array",
             "description": "LeetCode 26. Remove Duplicates from Sorted Array",
@@ -9373,21 +9405,6 @@
             "lang": "en"
         },
         {
-            "uri": "/posts/python-groovy-lint-format-setup",
-            "title": "Linters & Formatters Setup for Python, Groovy, JavaScript in VSCode",
-            "description": "Setting Up Python and Groovy Linters and Formatters in Visual Studio Code",
-            "content": "\nPython\n\nTo set up Python with Black and Flake8, you will need a couple of configuration files: pyproject.toml for Black, and .flake8 for Flake8.\n\nBlack is a code formatter for Python. It reformats your entire file in place according to the Black code style, which is a strict subset of PEP 8. Black makes code review faster by producing the smallest diffs possible.\n\nFlake8 is a powerful tool that checks your Python code against some of the style conventions in PEP 8. It combines the capabilities of several other tools including:\n\nPyFlakes: Checks for logical errors.\npycodestyle: Checks for the format errors.\nNed Batchelder’s McCabe script: Checks the complexity of your code.\n\nStep 1: Install Python\n\npython --version\n\nStep 2: Install Black and Flake8\n\npip install black\npip install flake8\n\nStep 3: Install Python Extension for VS Code\n\nGo to the Extensions view in VS Code (View -> Extensions), search for \"Python,\" and then install it.\n\nStep 4: Configure Black and Flake8\n\nIn the pyproject.toml file, you have the following settings:\n\nline-length**: This is the maximum line length that Black will enforce. You've set it to 130.\ntarget-version: This specifies the Python versions your project supports. Black may change the way it formats code depending on the Python version targetted.\ninclude* and *exclude**: These options define the files Black should format and exclude from formatting, respectively.\n\nCreate a pyproject.toml file in your project root directory with the following content for Black:\n\n[tool.black]\nline-length = 130\ntarget-version = ['py38']\ninclude = '\\.pyi?$'\nexclude = '''\n/(\n    \\.git\n  | \\.venv\n  | \\.eggs\n  | \\.hg\n  | \\.mypy_cache\n  | \\.nox\n  | \\.tox\n  | \\.venv\n  | _build\n  | buck-out\n  | build\n  | dist\n)/\n'''\n\nAnd a .flake8 file with the following content for Flake8:\n\n[flake8]\nmax-line-length = 150\nignore = E203, E266, E501, W503, F403, F401\nmax-complexity = 18\nselect = B,C,E,F,W,T4,B9\n\nmax-complexity**: This is complexity checker setting. It's a measure of the complexity of your functions, methods, and classes. The lower this number, the less complex your code is allowed to be.\n\nStep 5: Configure VS Code Settings\n\nGo to the Settings in VS Code (File -> Preferences -> Settings) and search for \"Python Formatting Provider.\" Select \"black\" from the dropdown list.\n\nTo set Flake8 as the linter, search for \"Python Linting\" in the settings and select \"flake8.\"\n\nNow, VS Code will automatically use Black and Flake8 to format and lint your Python code, respectively.\n\nStep 6: Format on file save\n\nTo run the formatter each time you save a Python file, you'll need to modify the VS Code settings. Here's how:\n\nOpen the Command Palette with Ctrl+Shift+P MacOs(Cmd+Shift+P).\nType \"Preferences: Open Settings (JSON)\" and select it.\n   Choose Default Settings or Workspace Settings depend on global or project specific setup.\n   For global \"Search for \"Editor: Format On Save\" in Command Palette search bar and check the box to enable it.\nAdd the following lines in the JSON file for local project/workspace setup:\n\n\"python.editor.formatOnSave\": true,\n\"python.formatting.provider\": \"black\"\n\nThis tells VS Code to run the Python formatter (which you've set to Black) every time you save a Python file.\n\nYou can do the same with Flake8 by enabling linting on save:\n\n\"python.linting.flake8Enabled\": true,\n\"python.linting.lintOnSave\": true\n\nGroovy with CodeNarc\n\nStep 1: Install Groovy\n\nEnsure you have Groovy installed on your system. You can verify the installation by running the following command in your terminal:\n\ngroovy --version\n\nStep 2: Install the Groovy Extension for VS Code\n\nIn your build.gradle file, add:\n\nStep 3: Set Up CodeNarc\n\napply plugin: 'codenarc'\n\ndependencies {\n    codenarc 'org.codenarc:CodeNarc:1.6'\n}\n\ncodenarc {\n    configFile = file('config/codenarc/rules.groovy')\n}\n\nCreate a config/codenarc/rules.groovy file in your project root directory and add the following content:\n\nruleset {\n    LineLength {\n        enabled = true\n        priority = 1\n        maximumLineLength = 150\n    }\n}\n\nNow, when you run your Gradle build, CodeNarc will check your Groovy files against the rules defined in config/codenarc/rules.groovy.\n\nJS/TypeScript with ESLint and Prettier\n\nStep 1: Install Node.js and npm\n\nBefore you install ESLint and Prettier, ensure you have Node.js and npm installed on your system. You can verify the installation by running the following commands in your terminal:\n\nnode --version\nnpm --version\n\nStep 2: Install ESLint and Prettier\n\nYou can install ESLint and Prettier as devDependencies in your project by running the following command in your terminal:\n\nnpm install eslint prettier --save-dev\n\nStep 3: Install the ESLint and Prettier Extensions for VS Code\n\nSearch for ESLint and Prettier - Code formatter in the Extensions view in VS Code (View -> Extensions) and install them.\n\nStep 4: Configure ESLint and Prettier\n\nTo configure ESLint and Prettier, you need to create two configuration files, .eslintrc.json for ESLint, and .prettierrc for Prettier, in your project root directory.\n\nFor example, you can create an .eslintrc.json file with the following content for ESLint:\n\n{\n  \"env\": {\n    \"browser\": true,\n    \"es6\": true\n  },\n  \"extends\": \"eslint:recommended\",\n  \"rules\": {\n    \"indent\": [\"error\", 2],\n    \"linebreak-style\": [\"error\", \"unix\"],\n    \"quotes\": [\"error\", \"double\"],\n    \"semi\": [\"error\", \"always\"]\n  }\n}\n\nAnd a .prettierrc file with the following content for Prettier:\n\n{\n  \"semi\": true,\n  \"trailingComma\": \"all\",\n  \"singleQuote\": true,\n  \"printWidth\": 80,\n  \"tabWidth\": 2\n}\n\nStep 5: Configure VS Code Settings\n\nGo to the Settings in VS Code (File -> Preferences -> Settings) and search for \"Format On Save.\" Check the box to enable it.\n\nIn the settings, search for \"Default Formatter\" and select \"Prettier - Code formatter\" from the dropdown list.\n\nYou can also add these settings directly to your settings.json file:\n\n{\n  \"editor.formatOnSave\": true,\n  \"editor.defaultFormatter\": \"esbenp.prettier-vscode\",\n  \"editor.codeActionsOnSave\": {\n    \"source.fixAll.eslint\": true\n  },\n  \"[javascript]\": {\n    \"editor.formatOnSave\": false,\n    \"editor.defaultFormatter\": null\n  },\n  \"[javascriptreact]\": {\n    \"editor.formatOnSave\": false,\n    \"editor.defaultFormatter\": null\n  },\n  \"[typescript]\": {\n    \"editor.formatOnSave\": false,\n    \"editor.defaultFormatter\": null\n  },\n  \"[typescriptreact]\": {\n    \"editor.formatOnSave\": false,\n    \"editor.defaultFormatter\": null\n  }\n}\n\nThese settings tell VS Code to run Prettier as the default formatter, and also to perform any auto-fixes that ESLint can handle on save.\n\nNow, VS Code will automatically use ESLint and Prettier to lint and format your JavaScript and TypeScript code, respectively.\n",
-            "tags": [
-                "Python",
-                "Groovy",
-                "VSCode",
-                "Template",
-                "Linter",
-                "Formatter"
-            ],
-            "lang": "en"
-        },
-        {
             "uri": "/posts/python-docstring-templates",
             "title": "Python docstring templates",
             "description": "Python docstring templates",
@@ -9704,6 +9721,21 @@
             "tags": [
                 "Python",
                 "CheatSheet"
+            ],
+            "lang": "en"
+        },
+        {
+            "uri": "/posts/python-groovy-lint-format-setup/",
+            "title": "Linters & Formatters Setup for Python, Groovy, JavaScript in VSCode",
+            "description": "Setting Up Python and Groovy Linters and Formatters in Visual Studio Code",
+            "content": "\nВ этой статье мы рассмотрим, как настроить\n\nBlack и Flake8 для Python,\nCodeNarc для Groovy\nESLint и Prettier для JavaScript в среде разработки VSCode.\n\nPython\n\nДля настройки Python с использованием Black и Flake8 вам понадобятся файлы конфигурации: pyproject.tomlдля Black и .flake8 для Flake8.\n\nBlack  - это форматтер кода для Python, который форматирует весь файл в соответствии с строгим подмножеством стандарта PEP 8. Black упрощает процесс рецензирования кода, создавая минимально возможные различия между версиями кода.\n\nFlake8 - мощный инструмент, который проверяет ваш код на соответствие некоторым конвенциям стиля PEP 8, объединяя возможности нескольких других инструментов, включая PyFlakes (проверка на логические ошибки), pycodestyle (проверка на ошибки форматирования) и скрипт McCabe от Ned Batchelder (проверка сложности кода).\n\n1: Установка Python\n\npython --version  # проверки версии\n\n2: Установка Black и Flake8\n\npip install black\npip install flake8\n\n3: Установка расширения Python для VS Code\n\nПерейдите в раздел расширений VS Code (View -> Extensions), найдите \"Python\" и установите его.\n\n4: Настройка Black и Flake8\n\nВ файле  pyproject.tomlвы можете настроить следующие параметры для Black:\n\nline-length**: максимальная длина строки, которую будет соблюдать Black.\ntarget-version**:  версии Python, которые поддерживает ваш проект. Black может изменять способ форматирования кода в зависимости от указанной версии Python.\ninclude* и *exclude**: опции, определяющие, какие файлы должен форматировать Black и какие исключать.\n\nСоздайте файл  pyproject.toml в корневой директории вашего проекта со следующим содержимым для Black:\n\n[tool.black]\nline-length = 130\ntarget-version = ['py38']\ninclude = '\\.pyi?$'\nexclude = '''\n/(\n    \\.git\n  | \\.venv\n  | \\.eggs\n  | \\.hg\n  | \\.mypy_cache\n  | \\.nox\n  | \\.tox\n  | \\.venv\n  | _build\n  | buck-out\n  | build\n  | dist\n)/\n'''\n\nИ файл .flake8со следующим содержимым для Flake8:\n\n[flake8]\nmax-line-length = 150\nignore = E203, E266, E501, W503, F403, F401\nmax-complexity = 18\nselect = B,C,E,F,W,T4,B9\n\nmax-complexity**: This is complexity checker setting. It's a measure of the complexity of your functions, methods, and classes. The lower this number, the less complex your code is allowed to be.\n\n5: Настройка параметров VS Code\n\nПерейдите в настройки VS Code (File -> Preferences -> Settings) и найдите \"Python Formatting Provider\". Выберите \"black\" из выпадающего списка.\n\nЧтобы установить Flake8 в качестве линтера, найдите \"Python Linting\" в настройках и выберите \"flake8\".\n\nТеперь VS Code будет автоматически использовать Black и Flake8 для форматирования и линтинга вашего Python кода соответственно.\n\n6: Форматирование при сохранении файла\n\nЧтобы запускать форматтер каждый раз при сохранении файла Python, вам нужно изменить настройки VS Code. Вот как это сделать:\n\nОткройте палитру команд с помощью Ctrl+Shift+P (MacOs: Cmd+Shift+P).\nНаберите \"Preferences: Open Settings (JSON)\".\nДобавьте следующие строки в JSON-файл для локальной настройки проекта/рабочего пространства:\n\n\"python.editor.formatOnSave\": true,\n\"python.formatting.provider\": \"black\"\n\nЭто указывает VS Code запускать форматтер Python (который вы установили на Black) каждый раз при сохранении файла Python.\n\nВы можете сделать то же самое с Flake8, включив линтинг при сохранении:\n\n\"python.linting.flake8Enabled\": true,\n\"python.linting.lintOnSave\": true\n\nGroovy с CodeNarc\n\n1: Установка Groovy\n\nУбедитесь, что Groovy установлен на вашей системе. Вы можете проверить установку, запустив следующую команду в терминале:\n\ngroovy --version\n\n2: Установка расширения Groovy для VS Code\n\nВ вашем файле build.gradle  добавьте:\n\n3: Настройка CodeNarc\n\napply plugin: 'codenarc'\n\ndependencies {\n    codenarc 'org.codenarc:CodeNarc:1.6'\n}\n\ncodenarc {\n    configFile = file('config/codenarc/rules.groovy')\n}\n\nСоздайте файл  config/codenarc/rules.groovy в корневой директории вашего проекта и добавьте следующее содержимое:\n\nruleset {\n    LineLength {\n        enabled = true\n        priority = 1\n        maximumLineLength = 150\n    }\n}\n\nТеперь, когда вы запускаете сборку Gradle, CodeNarc будет проверять ваши файлы Groovy на соответствие правилам, определенным в config/codenarc/rules.groovy.\n\nJS/TypeScript с ESLint и Prettier\n\n1: Установка Node.js и npm\n\nПеред установкой ESLint и Prettier убедитесь, что на вашей системе установлены Node.js и npm. Вы можете проверить установку, запустив следующие команды в терминале:\n\nnode --version\nnpm --version\n\n2: Установка ESLint и Prettier\n\nВы можете установить ESLint и Prettier как devDependencies в вашем проекте, запустив следующую команду в терминале:\n\nnpm install eslint prettier --save-dev\n\n3: Установка расширений ESLint и Prettier для VS Code\n\nНайдите ESLint и Prettier - Code formatter в разделе расширений VS Code  (View -> Extensions) и установите их.\n\n4: Настройка ESLint и Prettier\n\nДля настройки ESLint и Prettier вам нужно создать два файла конфигурации, .eslintrc.json для ESLint и .prettierrc для Prettier, в корневой директории вашего проекта.\n\nНапример, вы можете создать файл .eslintrc.json  со следующим содержимым для ESLint:\n\n{\n  \"env\": {\n    \"browser\": true,\n    \"es6\": true\n  },\n  \"extends\": \"eslint:recommended\",\n  \"rules\": {\n    \"indent\": [\"error\", 2],\n    \"linebreak-style\": [\"error\", \"unix\"],\n    \"quotes\": [\"error\", \"double\"],\n    \"semi\": [\"error\", \"always\"]\n  }\n}\n\nИ файл .prettierrc со следующим содержимым для Prettier:\n\n{\n  \"semi\": true,\n  \"trailingComma\": \"all\",\n  \"singleQuote\": true,\n  \"printWidth\": 80,\n  \"tabWidth\": 2\n}\n\n5: Настройка параметров VS Code\n\nПерейдите в настройки VS Code  (File -> Preferences -> Settings)  и найдите \"Format On Save\". Отметьте галочкой, чтобы включить его.\n\nВ настройках найдите \"Default Formatter\" и выберите \"Prettier - Code formatter\" из выпадающего списка.\n\nВы также можете добавить эти настройки напрямую в ваш файл settings.json:\n\n{\n  \"editor.formatOnSave\": true,\n  \"editor.defaultFormatter\": \"esbenp.prettier-vscode\",\n  \"editor.codeActionsOnSave\": {\n    \"source.fixAll.eslint\": true\n  },\n  \"[javascript]\": {\n    \"editor.formatOnSave\": false,\n    \"editor.defaultFormatter\": null\n  },\n  \"[javascriptreact]\": {\n    \"editor.formatOnSave\": false,\n    \"editor.defaultFormatter\": null\n  },\n  \"[typescript]\": {\n    \"editor.formatOnSave\": false,\n    \"editor.defaultFormatter\": null\n  },\n  \"[typescriptreact]\": {\n    \"editor.formatOnSave\": false,\n    \"editor.defaultFormatter\": null\n  }\n}\n\nЭти настройки указывают VS Code использовать Prettier в качестве форматтера по умолчанию и также выполнять автоматическое исправление, которое может обработать ESLint при сохранении.\n\nТеперь VS Code будет автоматически использовать ESLint и Prettier для линтинга и форматирования вашего кода на JavaScript и TypeScript соответственно.\n",
+            "tags": [
+                "Python",
+                "Groovy",
+                "VSCode",
+                "Template",
+                "Linter",
+                "Formatter"
             ],
             "lang": "en"
         },
