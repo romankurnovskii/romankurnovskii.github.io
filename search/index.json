@@ -3140,6 +3140,14 @@
             "lang": "ru"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/easy/997/",
+            "title": "997. Find the Town Judge",
+            "description": "997. Find the Town Judge",
+            "content": "\nLeetCode problem 997\n\nclass Solution:\n    def findJudge(self, n: int, trust: List[List[int]]) -> int:\n        cnt1 = [0] * (n + 1)\n        cnt2 = [0] * (n + 1)\n        for a, b in trust:\n            cnt1[a] += 1\n            cnt2[b] += 1\n        for i in range(1, n + 1):\n            if cnt1[i] == 0 and cnt2[i] == n - 1:\n                return i\n        return -1\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/easy/94/",
             "title": "94. Binary Tree Inorder Traversal",
             "description": "LeetCode 94. Binary Tree Inorder Traversal",
@@ -8424,6 +8432,14 @@
             "tags": [
                 "leetcode"
             ],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/easy/997/",
+            "title": "997. Find the Town Judge",
+            "description": "997. Find the Town Judge",
+            "content": "\nLeetCode problem 997\n\nclass Solution:\n    def findJudge(self, n: int, trust: List[List[int]]) -> int:\n        cnt1 = [0] * (n + 1)\n        cnt2 = [0] * (n + 1)\n        for a, b in trust:\n            cnt1[a] += 1\n            cnt2[b] += 1\n        for i in range(1, n + 1):\n            if cnt1[i] == 0 and cnt2[i] == n - 1:\n                return i\n        return -1\n",
+            "tags": [],
             "lang": "en"
         },
         {
