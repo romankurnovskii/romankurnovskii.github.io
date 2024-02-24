@@ -2,7 +2,7 @@
 title: 8. String to Integer (atoi)
 seoTitle: LeetCode 8. String to Integer (atoi) | Javacript soulution and explanation
 description: LeetCode 8. String to Integer (atoi)
-toc: false
+toc: true
 authors:
 tags: ["LeetCode Top Interview"]
 categories: [Algorithms, Medium]

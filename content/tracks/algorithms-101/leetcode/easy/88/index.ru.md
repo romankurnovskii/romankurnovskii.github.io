@@ -1,7 +1,7 @@
 ---
 title: 88. Merge Sorted Array
 description: LeetCode 88. Merge Sorted Array
-toc: false
+toc: true
 authors: [roman-kurnovskii]
 tags: [Array, "Two Pointers", Sorting]
 categories: [Algorithms, Easy]

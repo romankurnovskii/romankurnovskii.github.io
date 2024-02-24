@@ -1,8 +1,8 @@
 ---
 title: 75. Sort Colors
 description: LeetCode 75. Sort Colors
-seoTitle: LeetCode 75. Sort Colors | Python soulution and explanation
-toc: false
+seoTitle: LeetCode 75. Sort Colors | Python solution and explanation
+toc: true
 authors:
 tags: [Array, "Two Pointers", Sorting]
 categories: [Algorithms, Medium]

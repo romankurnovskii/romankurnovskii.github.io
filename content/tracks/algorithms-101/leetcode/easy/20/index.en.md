@@ -1,7 +1,7 @@
 ---
 title: 20. Valid Parentheses
 description: LeetCode 20. Valid Parentheses solution
-toc: false
+toc: true
 authors: [roman-kurnovskii]
 tags: [String, Stack]
 categories: [Algorithms, Easy]

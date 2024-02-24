@@ -1,8 +1,8 @@
 ---
 title: 116. Populating Next Right Pointers in Each Node
-seoTitle: 116. Populating Next Right Pointers in Each Node | Python soulution and explanation
+seoTitle: 116. Populating Next Right Pointers in Each Node | Python solution and explanation
 description: 116. Populating Next Right Pointers in Each Node
-toc: false
+toc: true
 authors:
 tags: ["Linked List", Tree, "Depth-First Search", "Breadth-First Search", "Binary Tree"]
 categories: ["Linked List", Tree, "Depth-First Search", "Breadth-First Search", "Binary Tree"]

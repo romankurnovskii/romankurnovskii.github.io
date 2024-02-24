@@ -29,5 +29,4 @@ class Solution:
                 if g[i][i + j] >= j:
                     f[i] = max(f[i], f[i + j] + 1)
         return f[0]
-
 ```

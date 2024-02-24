@@ -1,8 +1,8 @@
 ---
 title: 128. Longest Consecutive Sequence
-seoTitle: 128. Longest Consecutive Sequence | Python soulution and explanation
+seoTitle: 128. Longest Consecutive Sequence | Python solution and explanation
 description: 128. Longest Consecutive Sequence
-toc: false
+toc: true
 authors:
 tags: [Array, "Hash Table", "Union Find"]
 categories: [Array, "Hash Table", "Union Find"]

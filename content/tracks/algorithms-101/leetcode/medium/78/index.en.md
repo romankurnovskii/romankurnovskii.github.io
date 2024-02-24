@@ -1,8 +1,8 @@
 ---
 title: 78. Subsets
 description: LeetCode 78. Subsets
-seoTitle: LeetCode 78. Subsets | Python soulution and explanation
-toc: false
+seoTitle: LeetCode 78. Subsets | Python solution and explanation
+toc: true
 authors:
 tags: [Array, "Backtracking", "Bit Manipulation"]
 categories: [Algorithms, Medium]

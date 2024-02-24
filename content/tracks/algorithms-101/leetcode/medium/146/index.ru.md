@@ -1,7 +1,7 @@
 ---
 title: 146. LRU Cache
-seoTitle: LeetCode 146. LRU Cache | Python soulution and explanation
-description: LeetCode 146. LRU Cache | Python soulution and explanation
+seoTitle: LeetCode 146. LRU Cache | Python solution and explanation
+description: LeetCode 146. LRU Cache | Python solution and explanation
 toc: true
 authors:
 tags: 

@@ -1,8 +1,8 @@
 ---
 title: 56. Merge Intervals
 description: LeetCode 56. Merge Intervals
-seoTitle: LeetCode 56. Merge Intervals | Python soulution and explanation
-toc: false
+seoTitle: LeetCode 56. Merge Intervals | Python solution and explanation
+toc: true
 authors: [roman-kurnovskii]
 tags: [Array, Sorting]
 categories: [Algorithms, Medium]

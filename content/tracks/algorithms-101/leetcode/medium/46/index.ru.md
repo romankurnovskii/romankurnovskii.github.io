@@ -1,7 +1,7 @@
 ---
 title: 46. Permutations
 description: LeetCode 46. Permutations
-toc: false
+toc: true
 authors: [roman-kurnovskii]
 tags: [Array, Backtracking]
 categories: [Algorithms, Medium]

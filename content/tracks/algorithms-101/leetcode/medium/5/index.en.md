@@ -1,7 +1,7 @@
 ---
 title: 5. Longest Palindromic Substring
-seoTitle: LeetCode 5. Longest Palindromic Substring | Python soulution and explanation
-description: LeetCode 5. Longest Palindromic Substring | Python soulution and explanation
+seoTitle: LeetCode 5. Longest Palindromic Substring | Python solution and explanation
+description: LeetCode 5. Longest Palindromic Substring | Python solution and explanation
 toc: true
 authors: [roman-kurnovskii]
 tags: [String, "Dynamic Programming", "LeetCode Top Interview"]

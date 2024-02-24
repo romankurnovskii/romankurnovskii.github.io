@@ -1,7 +1,7 @@
 ---
 title: 28. Find the Index of the First Occurrence in a String
 description: LeetCode 28. Find the Index of the First Occurrence in a String
-toc: false
+toc: true
 authors: [roman-kurnovskii]
 tags: [String, "Two pointers", "String Matching"]
 categories: [Algorithms, Medium]

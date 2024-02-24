@@ -2,7 +2,7 @@
 title: 138. Copy List with Random Pointer
 seoTitle: LeetCode 138. Copy List with Random Pointer | Python solution and explanation
 description: LeetCode 138. Copy List with Random Pointer | Python solution and explanation
-toc: false
+toc: true
 authors:
 tags: ["LeetCode Top Interview", greedy]
 categories: [Algorithms, Medium]

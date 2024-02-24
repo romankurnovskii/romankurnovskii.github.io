@@ -1,8 +1,8 @@
 ---
 title: 139. Word Break
-seoTitle: LeetCode 139. Word Break | Python soulution and explanation
-description: LeetCode 139. Word Break | Python soulution and explanation
-toc: false
+seoTitle: LeetCode 139. Word Break | Python solution and explanation
+description: LeetCode 139. Word Break | Python solution and explanation
+toc: true
 authors:
 tags: 
 categories: [Algorithms, Medium]

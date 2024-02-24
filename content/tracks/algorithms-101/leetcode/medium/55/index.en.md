@@ -1,8 +1,8 @@
 ---
 title: 55. Jump Game
 description: LeetCode 55. Jump Game
-seoTitle: LeetCode 55. Jump Game | Python soulution and explanation
-toc: false
+seoTitle: LeetCode 55. Jump Game | Python solution and explanation
+toc: true
 authors: [roman-kurnovskii]
 tags: [Array, Greedy, "Dynamic Programming"]
 categories: [Algorithms, Medium]

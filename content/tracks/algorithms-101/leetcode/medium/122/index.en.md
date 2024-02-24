@@ -1,8 +1,8 @@
 ---
 title: 122. Best Time to Buy and Sell Stock II
-seoTitle: 122. Best Time to Buy and Sell Stock II | Python soulution and explanation
+seoTitle: 122. Best Time to Buy and Sell Stock II | Python solution and explanation
 description: 122. Best Time to Buy and Sell Stock II
-toc: false
+toc: true
 authors:
 tags: [Array, "Dynamic Programming", Greedy]
 categories: [Array, "Dynamic Programming", Greedy]

@@ -1,8 +1,8 @@
 ---
 title: 134. Gas Station
-seoTitle: LeetCode 131. Gas Station | Python soulution and explanation
+seoTitle: LeetCode 131. Gas Station | Python solution and explanation
 description: LeetCode 131. Gas Station
-toc: false
+toc: true
 authors:
 tags: ["LeetCode Top Interview", greedy]
 categories: [Algorithms, Medium]

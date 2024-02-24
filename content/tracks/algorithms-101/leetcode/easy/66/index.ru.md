@@ -1,7 +1,7 @@
 ---
 title: 66. Plus One
 description: LeetCode 66. Plus One
-toc: false
+toc: true
 authors: [roman-kurnovskii]
 tags: [Array, Math]
 categories: [Algorithms, Easy]

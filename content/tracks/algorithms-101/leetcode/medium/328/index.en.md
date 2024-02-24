@@ -2,7 +2,7 @@
 title: 328. Odd Even Linked List
 seoTitle: LeetCode 328. Odd Even Linked List | Решение на Python.
 description: LeetCode 328. Разбор задачи на перестановку узлов односвязного списка так, чтобы все узлы с нечетными индексами были перед узлами с четными индексами.
-toc: false
+toc: true
 tags: [LinkedList, Medium]
 categories: [Algorithms, Medium, LeetCode]
 date: 2023-08-28

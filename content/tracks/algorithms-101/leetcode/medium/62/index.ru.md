@@ -1,8 +1,8 @@
 ---
 title: 62. Unique Paths
 description: LeetCode 62. Unique Paths
-seoTitle: LeetCode 62. Unique Paths | Python soulution and explanation
-toc: false
+seoTitle: LeetCode 62. Unique Paths | Python solution and explanation
+toc: true
 authors: [roman-kurnovskii]
 tags: [Math, "Dynamic Programming", Combinatorics]
 categories: [Algorithms, Medium]

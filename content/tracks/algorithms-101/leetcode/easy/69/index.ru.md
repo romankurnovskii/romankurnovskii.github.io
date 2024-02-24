@@ -1,7 +1,7 @@
 ---
 title: 69. Sqrt(x)
 description: LeetCode 69. Sqrt(x)
-toc: false
+toc: true
 authors: [roman-kurnovskii]
 tags: [Math, "Binary Search"]
 categories: [Algorithms, Easy]

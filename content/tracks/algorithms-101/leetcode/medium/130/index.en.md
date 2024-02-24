@@ -1,8 +1,8 @@
 ---
 title: 130. Surrounded Regions
-seoTitle: 130. Surrounded Regions | Python soulution and explanation
+seoTitle: 130. Surrounded Regions | Python solution and explanation
 description: 130. Surrounded Regions
-toc: false
+toc: true
 authors:
 tags: 
 categories:

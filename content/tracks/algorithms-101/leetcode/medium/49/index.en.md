@@ -2,7 +2,7 @@
 title: 49. Group Anagrams
 description: LeetCode 49. Group Anagrams
 seoTitle: LeetCode 49. Group Anagrams python explanation
-toc: false
+toc: true
 authors: [roman-kurnovskii]
 tags: [Array, "Hash table", String, Sorting]
 categories: [Algorithms, Medium]

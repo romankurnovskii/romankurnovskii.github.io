@@ -1,8 +1,8 @@
 ---
 title: 53. Maximum Subarray
 description: LeetCode 53. Maximum Subarray
-seoTitle: LeetCode 53. Maximum Subarray | Python soulution and explanation
-toc: false
+seoTitle: LeetCode 53. Maximum Subarray | Python solution and explanation
+toc: true
 authors: [roman-kurnovskii]
 tags: [Array, "Divide and Conquer", "Dynamic Programming"]
 categories: [Algorithms, Medium]

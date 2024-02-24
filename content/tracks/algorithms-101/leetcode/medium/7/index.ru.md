@@ -1,7 +1,7 @@
 ---
 title: 7. Reverse Integer
 description: LeetCode 7. Reverse Integer
-toc: false
+toc: true
 authors: [roman-kurnovskii]
 tags: [Math]
 categories: [Algorithms, Medium, "LeetCode Top Interview"]

@@ -2,7 +2,7 @@
 title: 131. Palindrome Partitioning
 seoTitle: 131. Palindrome Partitioning | Python soulution and explanation
 description: 131. Palindrome Partitioning
-toc: false
+toc: true
 authors:
 tags: 
 categories: [Algorithms, Medium]

@@ -2,7 +2,7 @@
 title: 33. Search in Rotated Sorted Array
 description: LeetCode 33. Search in Rotated Sorted Array
 seoTitle: LeetCode 33. Search in Rotated Sorted Array - Python explanation
-toc: false
+toc: true
 authors: [roman-kurnovskii]
 tags: [Math, "Bit Manipulation"]
 categories: [Algorithms, Medium]

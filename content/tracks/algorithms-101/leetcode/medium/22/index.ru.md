@@ -1,7 +1,7 @@
 ---
 title: 22. Generate Parentheses
 description: LeetCode 22. Generate Parentheses
-toc: false
+toc: true
 authors: [roman-kurnovskii]
 tags: [String, "Dynamic Programming", Backtracking, "LeetCode Top Interview"]
 categories: [Algorithms, Medium]
