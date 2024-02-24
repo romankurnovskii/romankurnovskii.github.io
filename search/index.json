@@ -819,7 +819,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/787/",
             "title": "787. Cheapest Flights Within K Stops",
             "description": "787. Cheapest Flights Within K Stops",
-            "content": "\nLeetCode problem 787\n\nclass Solution:\n    def findCheapestPrice(\n        self, n: int, flights: List[List[int]], src: int, dst: int, k: int\n    ) -> int:\n        @cache\n        def dfs(u, k):\n            if u == dst:\n                return 0\n            if k = inf else res\n\n",
+            "content": "\nLeetCode problem 787\n\nclass Solution:\n    def findCheapestPrice(self, n: int, flights: List[List[int]], src: int, dst: int, k: int) -> int:\n        @cache  # helps in case of time limit\n        def dfs(u, k):\n            if u == dst:\n                return 0\n            if k = inf else res\n",
             "tags": [],
             "lang": "ru"
         },
@@ -2548,7 +2548,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/17/",
             "title": "17. Letter Combinations of a Phone Number",
             "description": "17. Letter Combinations of a Phone Number",
-            "content": "\nLeetCode problem 17\n\nclass Solution:\n    def letterCombinations(self, digits: str) -> List[str]:\n        if not digits:\n            return []\n\n        letters = ['', '', 'abc', 'def',\n                      'ghi', 'jkl', 'mno',\n                      'pqrs', 'tuv', 'wxyz']\n\n        result = ['']\n\n        for d in digits:\n            d = int(d)\n            tmp = []\n            for letter in letters[d]:\n                for word in result:\n                    word += letter\n                    tmp.append(word)\n            result = tmp\n\n        return result\n",
+            "content": "\nLeetCode задача 17\n\n\n\nExample 1:\n\n    Input: digits = \"23\"\n    Output: [\"ad\",\"ae\",\"af\",\"bd\",\"be\",\"bf\",\"cd\",\"ce\",\"cf\"]\n\nclass Solution:\n    def letterCombinations(self, digits: str) -> List[str]:\n        if not digits:\n            return []\n\n        keyboard = {\n            \"2\": \"abc\", \"3\": \"def\",\n            \"4\": \"ghi\", \"5\": \"jkl\", \"6\": \"mno\",\n            \"7\": \"pqrs\", \"8\": \"tuv\", \"9\": \"wxyz\"\n        }\n\n        levels = []\n        for d in digits:\n            levels.append(keyboard[d])\n\n        results = []\n        def helper(cur_path, level):\n            if level >= len(digits):\n                results.append(cur_path)\n            else:\n                for d in levels[level]:\n                    new_path = cur_path + d\n                    helper(new_path, level + 1)\n\n        helper('', 0)\n        return results\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3053,6 +3053,14 @@
             "lang": "ru"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/hard/2092/",
+            "title": "2092. Find All People With Secret",
+            "description": "2092. Find All People With Secret",
+            "content": "\nLeetCode problem 2092\n\nclass Solution:\n    def findAllPeople(self, n: int, meetings: List[List[int]], firstPerson: int) -> List[int]:\n        vis = [False] * n\n        vis[0] = vis[firstPerson] = True\n        meetings.sort(key=lambda x: x[2])\n        i, m = 0, len(meetings)\n        while i < m:\n            j = i\n            while j + 1 < m and meetingsj + 1 == meetingsi:\n                j += 1\n            s = set()\n            g = defaultdict(list)\n            for x, y, _ in meetings[i : j + 1]:\n                g[x].append(y)\n                g[y].append(x)\n                s.update([x, y])\n            q = deque([u for u in s if vis[u]])\n            while q:\n                u = q.popleft()\n                for v in g[u]:\n                    if not vis[v]:\n                        vis[v] = True\n                        q.append(v)\n            i = j + 1\n        return [i for i, v in enumerate(vis) if v]\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/hard/2013/",
             "title": "2013. Detect Squares",
             "description": "LeetCode 2013. Detect Squares",
@@ -3099,10 +3107,106 @@
             "lang": "ru"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1340/",
+            "title": "1340. Jump Game V",
+            "description": "1340. Jump Game V",
+            "content": "\nLeetCode problem 1340\n\nclass Solution:\n    def maxJumps(self, arr: List[int], d: int) -> int:\n        n = len(arr)\n        f = [1] * n\n        for x, i in sorted(zip(arr, range(n))):\n            for j in range(i - 1, -1, -1):\n                if i - j > d or arr[j] >= x:\n                    break\n                f[i] = max(f[i], 1 + f[j])\n            for j in range(i + 1, n):\n                if j - i > d or arr[j] >= x:\n                    break\n                f[i] = max(f[i], 1 + f[j])\n        return max(f)\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/hard/1337/",
             "title": "1337. The K Weakest Rows in a Matrix",
             "description": "1337. The K Weakest Rows in a Matrix",
             "content": "\nLeetCode problem 1337\n\nclass Solution:\n    def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:\n        m, n = len(mat), len(mat[0])\n        res = [n - bisect_right(row[::-1], 0) for row in mat]\n        idx = list(range(m))\n        idx.sort(key=lambda i: res[i])\n        return idx[:k]\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1335/",
+            "title": "1335. Minimum Difficulty of a Job Schedule",
+            "description": "1335. Minimum Difficulty of a Job Schedule",
+            "content": "\nLeetCode problem 1335\n\nclass Solution:\n    def minDifficulty(self, jobDifficulty: List[int], d: int) -> int:\n        n = len(jobDifficulty)\n        f = [[inf] * (d + 1) for _ in range(n + 1)]\n        f0 = 0\n        for i in range(1, n + 1):\n            for j in range(1, min(d + 1, i + 1)):\n                mx = 0\n                for k in range(i, 0, -1):\n                    mx = max(mx, jobDifficulty[k - 1])\n                    fi = min(fi, fk - 1 + mx)\n        return -1 if fn >= inf else fn\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1330/",
+            "title": "1330. Reverse Subarray To Maximize Array Value",
+            "description": "1330. Reverse Subarray To Maximize Array Value",
+            "content": "\nLeetCode problem 1330\n\nclass Solution:\n    def maxValueAfterReverse(self, nums: List[int]) -> int:\n        res = s = sum(abs(x - y) for x, y in pairwise(nums))\n        for x, y in pairwise(nums):\n            res = max(res, s + abs(nums[0] - y) - abs(x - y))\n            res = max(res, s + abs(nums[-1] - x) - abs(x - y))\n        for k1, k2 in pairwise((1, -1, -1, 1, 1)):\n            mx, mi = -inf, inf\n            for x, y in pairwise(nums):\n                a = k1 * x + k2 * y\n                b = abs(x - y)\n                mx = max(mx, a - b)\n                mi = min(mi, a + b)\n            res = max(res, s + max(mx - mi, 0))\n        return res\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1326/",
+            "title": "1326. Minimum Number of Taps to Open to Water a Garden",
+            "description": "1326. Minimum Number of Taps to Open to Water a Garden",
+            "content": "\nLeetCode problem 1326\n\nclass Solution:\n    def minTaps(self, n: int, ranges: List[int]) -> int:\n        last = [0] * (n + 1)\n        for i, x in enumerate(ranges):\n            l, r = max(0, i - x), i + x\n            last[l] = max(last[l], r)\n\n        res = mx = pre = 0\n        for i in range(n):\n            mx = max(mx, last[i])\n            if mx <= i:\n                return -1\n            if pre == i:\n                res += 1\n                pre = mx\n        return res\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1320/",
+            "title": "1320. Minimum Distance to Type a Word Using Two Fingers",
+            "description": "1320. Minimum Distance to Type a Word Using Two Fingers",
+            "content": "\nLeetCode problem 1320\n\nclass Solution:\n    def minimumDistance(self, word: str) -> int:\n        def dist(a: int, b: int) -> int:\n            x1, y1 = divmod(a, 6)\n            x2, y2 = divmod(b, 6)\n            return abs(x1 - x2) + abs(y1 - y2)\n\n        n = len(word)\n        f = [[[inf] * 26 for _ in range(26)] for _ in range(n)]\n        for j in range(26):\n            f0) - ord('A')][j] = 0\n            f0[ord(word[0]) - ord('A')] = 0\n        for i in range(1, n):\n            a, b = ord(word[i - 1]) - ord('A'), ord(word[i]) - ord('A')\n            d = dist(a, b)\n            for j in range(26):\n                fi[j] = min(fi[j], fi - 1[j] + d)\n                fi[b] = min(fi[b], fi - 1[a] + d)\n                if j == a:\n                    for k in range(26):\n                        t = dist(k, b)\n                        fi[j] = min(fi[j], fi - 1[a] + t)\n                        fi[b] = min(fi[b], fi - 1[k] + t)\n        a = min(fn - 1) - ord('A')])\n        b = min(fn - 1[ord(word[-1]) - ord('A')] for j in range(26))\n        return int(min(a, b))\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1316/",
+            "title": "1316. Distinct Echo Substrings",
+            "description": "1316. Distinct Echo Substrings",
+            "content": "\nLeetCode problem 1316\n\nclass Solution:\n    def distinctEchoSubstrings(self, text: str) -> int:\n        def get(l, r):\n            return (h[r] - h[l - 1] * p[r - l + 1]) % mod\n\n        n = len(text)\n        base = 131\n        mod = int(1e9) + 7\n        h = [0] * (n + 10)\n        p = [1] * (n + 10)\n        for i, c in enumerate(text):\n            t = ord(c) - ord('a') + 1\n            h[i + 1] = (h[i] * base) % mod + t\n            p[i + 1] = (p[i] * base) % mod\n        vis = set()\n        for i in range(n - 1):\n            for j in range(i + 1, n, 2):\n                k = (i + j) >> 1\n                a = get(i + 1, k + 1)\n                b = get(k + 2, j + 1)\n                if a == b:\n                    vis.add(a)\n        return len(vis)\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1312/",
+            "title": "1312. Minimum Insertion Steps to Make a String Palindrome",
+            "description": "1312. Minimum Insertion Steps to Make a String Palindrome",
+            "content": "\nLeetCode problem 1312\n\nclass Solution:\n    def minInsertions(self, s: str) -> int:\n        n = len(s)\n        f = [[0] * n for _ in range(n)]\n        for k in range(2, n + 1):\n            for i in range(n - k + 1):\n                j = i + k - 1\n                if s[i] == s[j]:\n                    fi = fi + 1\n                else:\n                    fi = min(fi + 1, fi) + 1\n        return f0\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1301/",
+            "title": "1301. Number of Paths with Max Score",
+            "description": "1301. Number of Paths with Max Score",
+            "content": "\nLeetCode problem 1301\n\nclass Solution:\n    def pathsWithMaxScore(self, board: List[str]) -> List[int]:\n        def update(i, j, x, y):\n            if x >= n or y >= n or fx == -1 or boardi in \"XS\":\n                return\n            if fx > fi:\n                fi = fx\n                gi = gx\n            elif fx == fi:\n                gi += gx\n\n        n = len(board)\n        f = [[-1] * n for _ in range(n)]\n        g = [[0] * n for _ in range(n)]\n        f-1, g-1 = 0, 1\n        for i in range(n - 1, -1, -1):\n            for j in range(n - 1, -1, -1):\n                update(i, j, i + 1, j)\n                update(i, j, i, j + 1)\n                update(i, j, i + 1, j + 1)\n                if fi != -1 and boardi.isdigit():\n                    fi += int(boardi)\n        mod = 10**9 + 7\n        return [0, 0] if f0 == -1 else f[0, g0 % mod]\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1298/",
+            "title": "1298. Maximum Candies You Can Get from Boxes",
+            "description": "1298. Maximum Candies You Can Get from Boxes",
+            "content": "\nLeetCode problem 1298\n\nclass Solution:\n    def maxCandies(\n        self,\n        status: List[int],\n        candies: List[int],\n        keys: List[List[int]],\n        containedBoxes: List[List[int]],\n        initialBoxes: List[int],\n    ) -> int:\n        q = deque([i for i in initialBoxes if status[i] == 1])\n        res = sum(candies[i] for i in initialBoxes if status[i] == 1)\n        has = set(initialBoxes)\n        took = {i for i in initialBoxes if status[i] == 1}\n\n        while q:\n            i = q.popleft()\n            for k in keys[i]:\n                status[k] = 1\n                if k in has and k not in took:\n                    res += candies[k]\n                    took.add(k)\n                    q.append(k)\n            for j in containedBoxes[i]:\n                has.add(j)\n                if status[j] and j not in took:\n                    res += candies[j]\n                    took.add(j)\n                    q.append(j)\n        return res\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1293/",
+            "title": "1293. Shortest Path in a Grid with Obstacles Elimination",
+            "description": "1293. Shortest Path in a Grid with Obstacles Elimination",
+            "content": "\nLeetCode problem 1293\n\nclass Solution:\n    def shortestPath(self, grid: List[List[int]], k: int) -> int:\n        m, n = len(grid), len(grid[0])\n        if k >= m + n - 3:\n            return m + n - 2\n        q = deque([(0, 0, k)])\n        vis = {(0, 0, k)}\n        res = 0\n        while q:\n            res += 1\n            for _ in range(len(q)):\n                i, j, k = q.popleft()\n                for a, b in [[0, -1], [0, 1], [1, 0], [-1, 0]]:\n                    x, y = i + a, j + b\n                    if 0  0 and (x, y, k - 1) not in vis:\n                            q.append((x, y, k - 1))\n                            vis.add((x, y, k - 1))\n        return -1\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1289/",
+            "title": "1289. Minimum Falling Path Sum II",
+            "description": "1289. Minimum Falling Path Sum II",
+            "content": "\nLeetCode problem 1289\n\nclass Solution:\n    def minFallingPathSum(self, grid: List[List[int]]) -> int:\n        f = g = 0\n        fp = -1\n        for row in grid:\n            ff = gg = inf\n            ffp = -1\n            for j, v in enumerate(row):\n                s = (g if j == fp else f) + v\n                if s < ff:\n                    gg = ff\n                    ff = s\n                    ffp = j\n                elif s < gg:\n                    gg = s\n            f, g, fp = ff, gg, ffp\n        return f\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1284/",
+            "title": "1284. Minimum Number of Flips to Convert Binary Matrix to Zero Matrix",
+            "description": "1284. Minimum Number of Flips to Convert Binary Matrix to Zero Matrix",
+            "content": "\nLeetCode problem 1284\n\nclass Solution:\n    def minFlips(self, mat: List[List[int]]) -> int:\n        m, n = len(mat), len(mat[0])\n        state = sum(1 << (i * n + j) for i in range(m) for j in range(n) if mati)\n        q = deque([state])\n        vis = {state}\n        res = 0\n        dirs = [0, -1, 0, 1, 0, 0]\n        while q:\n            for _ in range(len(q)):\n                state = q.popleft()\n                if state == 0:\n                    return res\n                for i in range(m):\n                    for j in range(n):\n                        nxt = state\n                        for k in range(5):\n                            x, y = i + dirs[k], j + dirs[k + 1]\n                            if not 0 <= x < m or not 0 <= y < n:\n                                continue\n                            if nxt & (1 << (x * n + y)):\n                                nxt -= 1 << (x * n + y)\n                            else:\n                                nxt |= 1 << (x * n + y)\n                        if nxt not in vis:\n                            vis.add(nxt)\n                            q.append(nxt)\n            res += 1\n        return -1\n\n",
             "tags": [],
             "lang": "ru"
         },
@@ -3116,6 +3220,102 @@
                 "Medium",
                 "LeetCode"
             ],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1278/",
+            "title": "1278. Palindrome Partitioning III",
+            "description": "1278. Palindrome Partitioning III",
+            "content": "\nLeetCode problem 1278\n\nclass Solution:\n    def palindromePartition(self, s: str, k: int) -> int:\n        n = len(s)\n        g = [[0] * n for _ in range(n)]\n        for i in range(n - 1, -1, -1):\n            for j in range(i + 1, n):\n                gi = int(s[i] != s[j])\n                if i + 1 < j:\n                    gi += gi + 1\n\n        f = [[0] * (k + 1) for _ in range(n + 1)]\n        for i in range(1, n + 1):\n            for j in range(1, min(i, k) + 1):\n                if j == 1:\n                    fi = g0\n                else:\n                    fi = inf\n                    for h in range(j - 1, i):\n                        fi = min(fi, fh + gh)\n        return fn\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1274/",
+            "title": "1274. Number of Ships in a Rectangle",
+            "description": "1274. Number of Ships in a Rectangle",
+            "content": "\nLeetCode problem 1274\n\n\"\"\"\nThis is Sea's API interface.\nYou should not implement it, or speculate about its implementation\n\"\"\"\nclass Sea:\ndef hasShips(self, topRight: 'Point', bottomLeft: 'Point') -> bool:\nclass Point:\ndef init(self, x: int, y: int):\nself.x = x\nself.y = y\n\n\nclass Solution:\n    def countShips(self, sea: \"Sea\", topRight: \"Point\", bottomLeft: \"Point\") -> int:\n        def dfs(topRight, bottomLeft):\n            x1, y1 = bottomLeft.x, bottomLeft.y\n            x2, y2 = topRight.x, topRight.y\n            if x1 > x2 or y1 > y2:\n                return 0\n            if not sea.hasShips(topRight, bottomLeft):\n                return 0\n            if x1 == x2 and y1 == y2:\n                return 1\n            midx = (x1 + x2) >> 1\n            midy = (y1 + y2) >> 1\n            a = dfs(topRight, Point(midx + 1, midy + 1))\n            b = dfs(Point(midx, y2), Point(x1, midy + 1))\n            c = dfs(Point(midx, midy), bottomLeft)\n            d = dfs(Point(x2, midy), Point(midx + 1, y1))\n            return a + b + c + d\n\n        return dfs(topRight, bottomLeft)\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1269/",
+            "title": "1269. Number of Ways to Stay in the Same Place After Some Steps",
+            "description": "1269. Number of Ways to Stay in the Same Place After Some Steps",
+            "content": "\nLeetCode problem 1269\n\nclass Solution:\n    def numWays(self, steps: int, arrLen: int) -> int:\n        @cache\n        def dfs(i, j):\n            if i > j or i >= arrLen or i < 0 or j < 0:\n                return 0\n            if i == 0 and j == 0:\n                return 1\n            res = 0\n            for k in range(-1, 2):\n                res += dfs(i + k, j - 1)\n                res %= mod\n            return res\n\n        mod = 10**9 + 7\n        return dfs(0, steps)\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1263/",
+            "title": "1263. Minimum Moves to Move a Box to Their Target Location",
+            "description": "1263. Minimum Moves to Move a Box to Their Target Location",
+            "content": "\nLeetCode problem 1263\n\nclass Solution:\n    def minPushBox(self, grid: List[List[str]]) -> int:\n        def f(i: int, j: int) -> int:\n            return i * n + j\n\n        def check(i: int, j: int) -> bool:\n            return 0 <= i < m and 0 <= j < n and gridi != \"#\"\n\n        for i, row in enumerate(grid):\n            for j, c in enumerate(row):\n                if c == \"S\":\n                    si, sj = i, j\n                elif c == \"B\":\n                    bi, bj = i, j\n        m, n = len(grid), len(grid[0])\n        dirs = (-1, 0, 1, 0, -1)\n        q = deque([(f(si, sj), f(bi, bj), 0)])\n        vis = [[False] * (m * n) for _ in range(m * n)]\n        visf(si, sj)] = True\n        while q:\n            s, b, d = q.popleft()\n            bi, bj = b // n, b % n\n            if gridbi == \"T\":\n                return d\n            si, sj = s // n, s % n\n            for a, b in pairwise(dirs):\n                sx, sy = si + a, sj + b\n                if not check(sx, sy):\n                    continue\n                if sx == bi and sy == bj:\n                    bx, by = bi + a, bj + b\n                    if not check(bx, by) or visf(sx, sy)]:\n                        continue\n                    visf(sx, sy)] = True\n                    q.append((f(sx, sy), f(bx, by), d + 1))\n                elif not visf(sx, sy)]:\n                    visf(sx, sy)] = True\n                    q.appendleft((f(sx, sy), f(bi, bj), d))\n        return -1\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1259/",
+            "title": "1259. Handshakes That Don't Cross",
+            "description": "1259. Handshakes That Don't Cross",
+            "content": "\nLeetCode problem 1259\n\nclass Solution:\n    def numberOfWays(self, numPeople: int) -> int:\n        @cache\n        def dfs(i: int) -> int:\n            if i < 2:\n                return 1\n            res = 0\n            for l in range(0, i, 2):\n                r = i - l - 2\n                res += dfs(l) * dfs(r)\n                res %= mod\n            return res\n\n        mod = 10**9 + 7\n        return dfs(numPeople)\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1255/",
+            "title": "1255. Maximum Score Words Formed by Letters",
+            "description": "1255. Maximum Score Words Formed by Letters",
+            "content": "\nLeetCode problem 1255\n\nclass Solution:\n    def maxScoreWords(\n        self, words: List[str], letters: List[str], score: List[int]\n    ) -> int:\n        cnt = Counter(letters)\n        n = len(words)\n        res = 0\n        for i in range(1 > j & 1]))\n            if all(v <= cnt[c] for c, v in cur.items()):\n                t = sum(v * score[ord(c) - ord('a')] for c, v in cur.items())\n                res = max(res, t)\n        return res\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1250/",
+            "title": "1250. Check If It Is a Good Array",
+            "description": "1250. Check If It Is a Good Array",
+            "content": "\nLeetCode problem 1250\n\nclass Solution:\n    def isGoodArray(self, nums: List[int]) -> bool:\n        return reduce(gcd, nums) == 1\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1246/",
+            "title": "1246. Palindrome Removal",
+            "description": "1246. Palindrome Removal",
+            "content": "\nLeetCode problem 1246\n\nclass Solution:\n    def minimumMoves(self, arr: List[int]) -> int:\n        n = len(arr)\n        f = [[0] * n for _ in range(n)]\n        for i in range(n):\n            fi = 1\n        for i in range(n - 2, -1, -1):\n            for j in range(i + 1, n):\n                if i + 1 == j:\n                    fi = 1 if arr[i] == arr[j] else 2\n                else:\n                    t = fi + 1 if arr[i] == arr[j] else inf\n                    for k in range(i, j):\n                        t = min(t, fi + fk + 1)\n                    fi = t\n        return f0\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1240/",
+            "title": "1240. Tiling a Rectangle with the Fewest Squares",
+            "description": "1240. Tiling a Rectangle with the Fewest Squares",
+            "content": "\nLeetCode problem 1240\n\nclass Solution:\n    def tilingRectangle(self, n: int, m: int) -> int:\n        def dfs(i: int, j: int, t: int):\n            nonlocal res\n            if j == m:\n                i += 1\n                j = 0\n            if i == n:\n                res = t\n                return\n            if filled[i] >> j & 1:\n                dfs(i, j + 1, t)\n            elif t + 1 > j & 1:\n                        break\n                    r += 1\n                for k in range(j, m):\n                    if filled[i] >> k & 1:\n                        break\n                    c += 1\n                mx = min(r, c)\n                for x in range(i, i + mx):\n                    for y in range(j, j + mx):\n                        filled[x] |= 1 << y\n                for w in range(mx, 0, -1):\n                    dfs(i, j + w, t + 1)\n                    for k in range(w):\n                        filled[i + w - 1] ^= 1 << (j + k)\n                        if k < w - 1:\n                            filled[i + k] ^= 1 << (j + w - 1)\n\n        res = n * m\n        filled = [0] * n\n        dfs(0, 0, 0)\n        return res\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1235/",
+            "title": "1235. Maximum Profit in Job Scheduling",
+            "description": "1235. Maximum Profit in Job Scheduling",
+            "content": "\nLeetCode problem 1235\n\nclass Solution:\n    def jobScheduling(\n        self, startTime: List[int], endTime: List[int], profit: List[int]\n    ) -> int:\n        jobs = sorted(zip(endTime, startTime, profit))\n        n = len(profit)\n        dp = [0] * (n + 1)\n        for i, (_, s, p) in enumerate(jobs):\n            j = bisect_right(jobs, s, hi=i, key=lambda x: x[0])\n            dp[i + 1] = max(dp[i], dp[j] + p)\n        return dp[n]\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1231/",
+            "title": "1231. Divide Chocolate",
+            "description": "1231. Divide Chocolate",
+            "content": "\nLeetCode problem 1231\n\nclass Solution:\n    def maximizeSweetness(self, sweetness: List[int], k: int) -> int:\n        def check(x: int) -> bool:\n            s = cnt = 0\n            for v in sweetness:\n                s += v\n                if s >= x:\n                    s = 0\n                    cnt += 1\n            return cnt > k\n\n        l, r = 0, sum(sweetness)\n        while l > 1\n            if check(mid):\n                l = mid\n            else:\n                r = mid - 1\n        return l\n\n",
+            "tags": [],
+            "lang": "ru"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1224/",
+            "title": "1224. Maximum Equal Frequency",
+            "description": "1224. Maximum Equal Frequency",
+            "content": "\nLeetCode problem 1224\n\nclass Solution:\n    def maxEqualFreq(self, nums: List[int]) -> int:\n        cnt = Counter()\n        ccnt = Counter()\n        res = mx = 0\n        for i, v in enumerate(nums, 1):\n            if v in cnt:\n                ccnt[cnt[v]] -= 1\n            cnt[v] += 1\n            mx = max(mx, cnt[v])\n            ccnt[cnt[v]] += 1\n            if mx == 1:\n                res = i\n            elif ccnt[mx] * mx + ccnt[mx - 1] * (mx - 1) == i and ccnt[mx] == 1:\n                res = i\n            elif ccnt[mx] * mx + 1 == i and ccnt[1] == 1:\n                res = i\n        return res\n\n",
+            "tags": [],
             "lang": "ru"
         },
         {
@@ -5428,7 +5628,7 @@
             "title": "Blank",
             "content": {
                 "log": {
-                    "timeTakenInMilliseconds": 3
+                    "timeTakenInMilliseconds": 2
                 },
                 "result": "Write anything you like here!",
                 "ranges": [
@@ -6226,7 +6426,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/787/",
             "title": "787. Cheapest Flights Within K Stops",
             "description": "787. Cheapest Flights Within K Stops",
-            "content": "\nLeetCode problem 787\n\nclass Solution:\n    def findCheapestPrice(\n        self, n: int, flights: List[List[int]], src: int, dst: int, k: int\n    ) -> int:\n        @cache\n        def dfs(u, k):\n            if u == dst:\n                return 0\n            if k = inf else res\n\n",
+            "content": "\nLeetCode problem 787\n\nclass Solution:\n    def findCheapestPrice(self, n: int, flights: List[List[int]], src: int, dst: int, k: int) -> int:\n        @cache  # helps in case of time limit\n        def dfs(u, k):\n            if u == dst:\n                return 0\n            if k = inf else res\n",
             "tags": [],
             "lang": "en"
         },
@@ -7794,7 +7994,7 @@
             "uri": "/tracks/algorithms-101/leetcode/medium/17/",
             "title": "17. Letter Combinations of a Phone Number",
             "description": "LeetCode 17. Letter Combinations of a Phone Number",
-            "content": "\nLeetCode problem\n\nGiven a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. Return the answer in any order.\n\nA mapping of digits to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.\n\n17\n\nExample 1:\n\n    Input: digits = \"23\"\n    Output: [\"ad\",\"ae\",\"af\",\"bd\",\"be\",\"bf\",\"cd\",\"ce\",\"cf\"]\n\nExample 2:\n\n    Input: digits = \"\"\n    Output: []\n\nFirst accepted\n\nclass Solution:\n    def letterCombinations(self, digits: str) -> List[str]:\n        if not digits:\n            return []\n\n        letters = ['', '', 'abc', 'def',\n                      'ghi', 'jkl', 'mno',\n                      'pqrs', 'tuv', 'wxyz']\n\n        result = ['']\n\n        for d in digits:\n            d = int(d)\n            tmp = []\n            for letter in letters[d]:\n                for word in result:\n                    word += letter\n                    tmp.append(word)\n            result = tmp\n\n        return result\n",
+            "content": "\nLeetCode problem\n\nGiven a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. Return the answer in any order.\n\nA mapping of digits to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.\n\n\n\nExample 1:\n\n    Input: digits = \"23\"\n    Output: [\"ad\",\"ae\",\"af\",\"bd\",\"be\",\"bf\",\"cd\",\"ce\",\"cf\"]\n\nExample 2:\n\n    Input: digits = \"\"\n    Output: []\n\nFirst accepted\n\nclass Solution:\n    def letterCombinations(self, digits: str) -> List[str]:\n        if not digits:\n            return []\n\n        keyboard = {\n            \"2\": \"abc\", \"3\": \"def\",\n            \"4\": \"ghi\", \"5\": \"jkl\", \"6\": \"mno\",\n            \"7\": \"pqrs\", \"8\": \"tuv\", \"9\": \"wxyz\"\n        }\n\n        levels = []\n        for d in digits:\n            levels.append(keyboard[d])\n\n        results = []\n        def helper(cur_path, level):\n            if level >= len(digits):\n                results.append(cur_path)\n            else:\n                for d in levels[level]:\n                    new_path = cur_path + d\n                    helper(new_path, level + 1)\n\n        helper('', 0)\n        return results\n",
             "tags": [
                 "Hash Table",
                 "String",
@@ -8358,6 +8558,14 @@
             "lang": "en"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/hard/2092/",
+            "title": "2092. Find All People With Secret",
+            "description": "2092. Find All People With Secret",
+            "content": "\nLeetCode problem 2092\n\nclass Solution:\n    def findAllPeople(self, n: int, meetings: List[List[int]], firstPerson: int) -> List[int]:\n        vis = [False] * n\n        vis[0] = vis[firstPerson] = True\n        meetings.sort(key=lambda x: x[2])\n        i, m = 0, len(meetings)\n        while i < m:\n            j = i\n            while j + 1 < m and meetingsj + 1 == meetingsi:\n                j += 1\n            s = set()\n            g = defaultdict(list)\n            for x, y, _ in meetings[i : j + 1]:\n                g[x].append(y)\n                g[y].append(x)\n                s.update([x, y])\n            q = deque([u for u in s if vis[u]])\n            while q:\n                u = q.popleft()\n                for v in g[u]:\n                    if not vis[v]:\n                        vis[v] = True\n                        q.append(v)\n            i = j + 1\n        return [i for i, v in enumerate(vis) if v]\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/hard/1887/",
             "title": "1887. Reduction Operations to Make the Array Elements Equal",
             "description": "Step-by-step explanation and Python solution for LeetCode problem 1887. Reduction Operations to Make the Array Elements Equal.",
@@ -8405,10 +8613,202 @@
             "lang": "en"
         },
         {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1340/",
+            "title": "1340. Jump Game V",
+            "description": "1340. Jump Game V",
+            "content": "\nLeetCode problem 1340\n\nclass Solution:\n    def maxJumps(self, arr: List[int], d: int) -> int:\n        n = len(arr)\n        f = [1] * n\n        for x, i in sorted(zip(arr, range(n))):\n            for j in range(i - 1, -1, -1):\n                if i - j > d or arr[j] >= x:\n                    break\n                f[i] = max(f[i], 1 + f[j])\n            for j in range(i + 1, n):\n                if j - i > d or arr[j] >= x:\n                    break\n                f[i] = max(f[i], 1 + f[j])\n        return max(f)\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
             "uri": "/tracks/algorithms-101/leetcode/hard/1337/",
             "title": "1337. The K Weakest Rows in a Matrix",
             "description": "1337. The K Weakest Rows in a Matrix",
             "content": "\nLeetCode problem 1337\n\nclass Solution:\n    def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:\n        m, n = len(mat), len(mat[0])\n        res = [n - bisect_right(row[::-1], 0) for row in mat]\n        idx = list(range(m))\n        idx.sort(key=lambda i: res[i])\n        return idx[:k]\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1335/",
+            "title": "1335. Minimum Difficulty of a Job Schedule",
+            "description": "1335. Minimum Difficulty of a Job Schedule",
+            "content": "\nLeetCode problem 1335\n\nclass Solution:\n    def minDifficulty(self, jobDifficulty: List[int], d: int) -> int:\n        n = len(jobDifficulty)\n        f = [[inf] * (d + 1) for _ in range(n + 1)]\n        f0 = 0\n        for i in range(1, n + 1):\n            for j in range(1, min(d + 1, i + 1)):\n                mx = 0\n                for k in range(i, 0, -1):\n                    mx = max(mx, jobDifficulty[k - 1])\n                    fi = min(fi, fk - 1 + mx)\n        return -1 if fn >= inf else fn\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1330/",
+            "title": "1330. Reverse Subarray To Maximize Array Value",
+            "description": "1330. Reverse Subarray To Maximize Array Value",
+            "content": "\nLeetCode problem 1330\n\nclass Solution:\n    def maxValueAfterReverse(self, nums: List[int]) -> int:\n        res = s = sum(abs(x - y) for x, y in pairwise(nums))\n        for x, y in pairwise(nums):\n            res = max(res, s + abs(nums[0] - y) - abs(x - y))\n            res = max(res, s + abs(nums[-1] - x) - abs(x - y))\n        for k1, k2 in pairwise((1, -1, -1, 1, 1)):\n            mx, mi = -inf, inf\n            for x, y in pairwise(nums):\n                a = k1 * x + k2 * y\n                b = abs(x - y)\n                mx = max(mx, a - b)\n                mi = min(mi, a + b)\n            res = max(res, s + max(mx - mi, 0))\n        return res\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1326/",
+            "title": "1326. Minimum Number of Taps to Open to Water a Garden",
+            "description": "1326. Minimum Number of Taps to Open to Water a Garden",
+            "content": "\nLeetCode problem 1326\n\nclass Solution:\n    def minTaps(self, n: int, ranges: List[int]) -> int:\n        last = [0] * (n + 1)\n        for i, x in enumerate(ranges):\n            l, r = max(0, i - x), i + x\n            last[l] = max(last[l], r)\n\n        res = mx = pre = 0\n        for i in range(n):\n            mx = max(mx, last[i])\n            if mx <= i:\n                return -1\n            if pre == i:\n                res += 1\n                pre = mx\n        return res\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1320/",
+            "title": "1320. Minimum Distance to Type a Word Using Two Fingers",
+            "description": "1320. Minimum Distance to Type a Word Using Two Fingers",
+            "content": "\nLeetCode problem 1320\n\nclass Solution:\n    def minimumDistance(self, word: str) -> int:\n        def dist(a: int, b: int) -> int:\n            x1, y1 = divmod(a, 6)\n            x2, y2 = divmod(b, 6)\n            return abs(x1 - x2) + abs(y1 - y2)\n\n        n = len(word)\n        f = [[[inf] * 26 for _ in range(26)] for _ in range(n)]\n        for j in range(26):\n            f0) - ord('A')][j] = 0\n            f0[ord(word[0]) - ord('A')] = 0\n        for i in range(1, n):\n            a, b = ord(word[i - 1]) - ord('A'), ord(word[i]) - ord('A')\n            d = dist(a, b)\n            for j in range(26):\n                fi[j] = min(fi[j], fi - 1[j] + d)\n                fi[b] = min(fi[b], fi - 1[a] + d)\n                if j == a:\n                    for k in range(26):\n                        t = dist(k, b)\n                        fi[j] = min(fi[j], fi - 1[a] + t)\n                        fi[b] = min(fi[b], fi - 1[k] + t)\n        a = min(fn - 1) - ord('A')])\n        b = min(fn - 1[ord(word[-1]) - ord('A')] for j in range(26))\n        return int(min(a, b))\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1316/",
+            "title": "1316. Distinct Echo Substrings",
+            "description": "1316. Distinct Echo Substrings",
+            "content": "\nLeetCode problem 1316\n\nclass Solution:\n    def distinctEchoSubstrings(self, text: str) -> int:\n        def get(l, r):\n            return (h[r] - h[l - 1] * p[r - l + 1]) % mod\n\n        n = len(text)\n        base = 131\n        mod = int(1e9) + 7\n        h = [0] * (n + 10)\n        p = [1] * (n + 10)\n        for i, c in enumerate(text):\n            t = ord(c) - ord('a') + 1\n            h[i + 1] = (h[i] * base) % mod + t\n            p[i + 1] = (p[i] * base) % mod\n        vis = set()\n        for i in range(n - 1):\n            for j in range(i + 1, n, 2):\n                k = (i + j) >> 1\n                a = get(i + 1, k + 1)\n                b = get(k + 2, j + 1)\n                if a == b:\n                    vis.add(a)\n        return len(vis)\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1312/",
+            "title": "1312. Minimum Insertion Steps to Make a String Palindrome",
+            "description": "1312. Minimum Insertion Steps to Make a String Palindrome",
+            "content": "\nLeetCode problem 1312\n\nclass Solution:\n    def minInsertions(self, s: str) -> int:\n        n = len(s)\n        f = [[0] * n for _ in range(n)]\n        for k in range(2, n + 1):\n            for i in range(n - k + 1):\n                j = i + k - 1\n                if s[i] == s[j]:\n                    fi = fi + 1\n                else:\n                    fi = min(fi + 1, fi) + 1\n        return f0\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1301/",
+            "title": "1301. Number of Paths with Max Score",
+            "description": "1301. Number of Paths with Max Score",
+            "content": "\nLeetCode problem 1301\n\nclass Solution:\n    def pathsWithMaxScore(self, board: List[str]) -> List[int]:\n        def update(i, j, x, y):\n            if x >= n or y >= n or fx == -1 or boardi in \"XS\":\n                return\n            if fx > fi:\n                fi = fx\n                gi = gx\n            elif fx == fi:\n                gi += gx\n\n        n = len(board)\n        f = [[-1] * n for _ in range(n)]\n        g = [[0] * n for _ in range(n)]\n        f-1, g-1 = 0, 1\n        for i in range(n - 1, -1, -1):\n            for j in range(n - 1, -1, -1):\n                update(i, j, i + 1, j)\n                update(i, j, i, j + 1)\n                update(i, j, i + 1, j + 1)\n                if fi != -1 and boardi.isdigit():\n                    fi += int(boardi)\n        mod = 10**9 + 7\n        return [0, 0] if f0 == -1 else f[0, g0 % mod]\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1298/",
+            "title": "1298. Maximum Candies You Can Get from Boxes",
+            "description": "1298. Maximum Candies You Can Get from Boxes",
+            "content": "\nLeetCode problem 1298\n\nclass Solution:\n    def maxCandies(\n        self,\n        status: List[int],\n        candies: List[int],\n        keys: List[List[int]],\n        containedBoxes: List[List[int]],\n        initialBoxes: List[int],\n    ) -> int:\n        q = deque([i for i in initialBoxes if status[i] == 1])\n        res = sum(candies[i] for i in initialBoxes if status[i] == 1)\n        has = set(initialBoxes)\n        took = {i for i in initialBoxes if status[i] == 1}\n\n        while q:\n            i = q.popleft()\n            for k in keys[i]:\n                status[k] = 1\n                if k in has and k not in took:\n                    res += candies[k]\n                    took.add(k)\n                    q.append(k)\n            for j in containedBoxes[i]:\n                has.add(j)\n                if status[j] and j not in took:\n                    res += candies[j]\n                    took.add(j)\n                    q.append(j)\n        return res\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1293/",
+            "title": "1293. Shortest Path in a Grid with Obstacles Elimination",
+            "description": "1293. Shortest Path in a Grid with Obstacles Elimination",
+            "content": "\nLeetCode problem 1293\n\nclass Solution:\n    def shortestPath(self, grid: List[List[int]], k: int) -> int:\n        m, n = len(grid), len(grid[0])\n        if k >= m + n - 3:\n            return m + n - 2\n        q = deque([(0, 0, k)])\n        vis = {(0, 0, k)}\n        res = 0\n        while q:\n            res += 1\n            for _ in range(len(q)):\n                i, j, k = q.popleft()\n                for a, b in [[0, -1], [0, 1], [1, 0], [-1, 0]]:\n                    x, y = i + a, j + b\n                    if 0  0 and (x, y, k - 1) not in vis:\n                            q.append((x, y, k - 1))\n                            vis.add((x, y, k - 1))\n        return -1\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1289/",
+            "title": "1289. Minimum Falling Path Sum II",
+            "description": "1289. Minimum Falling Path Sum II",
+            "content": "\nLeetCode problem 1289\n\nclass Solution:\n    def minFallingPathSum(self, grid: List[List[int]]) -> int:\n        f = g = 0\n        fp = -1\n        for row in grid:\n            ff = gg = inf\n            ffp = -1\n            for j, v in enumerate(row):\n                s = (g if j == fp else f) + v\n                if s < ff:\n                    gg = ff\n                    ff = s\n                    ffp = j\n                elif s < gg:\n                    gg = s\n            f, g, fp = ff, gg, ffp\n        return f\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1284/",
+            "title": "1284. Minimum Number of Flips to Convert Binary Matrix to Zero Matrix",
+            "description": "1284. Minimum Number of Flips to Convert Binary Matrix to Zero Matrix",
+            "content": "\nLeetCode problem 1284\n\nclass Solution:\n    def minFlips(self, mat: List[List[int]]) -> int:\n        m, n = len(mat), len(mat[0])\n        state = sum(1 << (i * n + j) for i in range(m) for j in range(n) if mati)\n        q = deque([state])\n        vis = {state}\n        res = 0\n        dirs = [0, -1, 0, 1, 0, 0]\n        while q:\n            for _ in range(len(q)):\n                state = q.popleft()\n                if state == 0:\n                    return res\n                for i in range(m):\n                    for j in range(n):\n                        nxt = state\n                        for k in range(5):\n                            x, y = i + dirs[k], j + dirs[k + 1]\n                            if not 0 <= x < m or not 0 <= y < n:\n                                continue\n                            if nxt & (1 << (x * n + y)):\n                                nxt -= 1 << (x * n + y)\n                            else:\n                                nxt |= 1 << (x * n + y)\n                        if nxt not in vis:\n                            vis.add(nxt)\n                            q.append(nxt)\n            res += 1\n        return -1\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1278/",
+            "title": "1278. Palindrome Partitioning III",
+            "description": "1278. Palindrome Partitioning III",
+            "content": "\nLeetCode problem 1278\n\nclass Solution:\n    def palindromePartition(self, s: str, k: int) -> int:\n        n = len(s)\n        g = [[0] * n for _ in range(n)]\n        for i in range(n - 1, -1, -1):\n            for j in range(i + 1, n):\n                gi = int(s[i] != s[j])\n                if i + 1 < j:\n                    gi += gi + 1\n\n        f = [[0] * (k + 1) for _ in range(n + 1)]\n        for i in range(1, n + 1):\n            for j in range(1, min(i, k) + 1):\n                if j == 1:\n                    fi = g0\n                else:\n                    fi = inf\n                    for h in range(j - 1, i):\n                        fi = min(fi, fh + gh)\n        return fn\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1274/",
+            "title": "1274. Number of Ships in a Rectangle",
+            "description": "1274. Number of Ships in a Rectangle",
+            "content": "\nLeetCode problem 1274\n\n\"\"\"\nThis is Sea's API interface.\nYou should not implement it, or speculate about its implementation\n\"\"\"\nclass Sea:\ndef hasShips(self, topRight: 'Point', bottomLeft: 'Point') -> bool:\nclass Point:\ndef init(self, x: int, y: int):\nself.x = x\nself.y = y\n\n\nclass Solution:\n    def countShips(self, sea: \"Sea\", topRight: \"Point\", bottomLeft: \"Point\") -> int:\n        def dfs(topRight, bottomLeft):\n            x1, y1 = bottomLeft.x, bottomLeft.y\n            x2, y2 = topRight.x, topRight.y\n            if x1 > x2 or y1 > y2:\n                return 0\n            if not sea.hasShips(topRight, bottomLeft):\n                return 0\n            if x1 == x2 and y1 == y2:\n                return 1\n            midx = (x1 + x2) >> 1\n            midy = (y1 + y2) >> 1\n            a = dfs(topRight, Point(midx + 1, midy + 1))\n            b = dfs(Point(midx, y2), Point(x1, midy + 1))\n            c = dfs(Point(midx, midy), bottomLeft)\n            d = dfs(Point(x2, midy), Point(midx + 1, y1))\n            return a + b + c + d\n\n        return dfs(topRight, bottomLeft)\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1269/",
+            "title": "1269. Number of Ways to Stay in the Same Place After Some Steps",
+            "description": "1269. Number of Ways to Stay in the Same Place After Some Steps",
+            "content": "\nLeetCode problem 1269\n\nclass Solution:\n    def numWays(self, steps: int, arrLen: int) -> int:\n        @cache\n        def dfs(i, j):\n            if i > j or i >= arrLen or i < 0 or j < 0:\n                return 0\n            if i == 0 and j == 0:\n                return 1\n            res = 0\n            for k in range(-1, 2):\n                res += dfs(i + k, j - 1)\n                res %= mod\n            return res\n\n        mod = 10**9 + 7\n        return dfs(0, steps)\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1263/",
+            "title": "1263. Minimum Moves to Move a Box to Their Target Location",
+            "description": "1263. Minimum Moves to Move a Box to Their Target Location",
+            "content": "\nLeetCode problem 1263\n\nclass Solution:\n    def minPushBox(self, grid: List[List[str]]) -> int:\n        def f(i: int, j: int) -> int:\n            return i * n + j\n\n        def check(i: int, j: int) -> bool:\n            return 0 <= i < m and 0 <= j < n and gridi != \"#\"\n\n        for i, row in enumerate(grid):\n            for j, c in enumerate(row):\n                if c == \"S\":\n                    si, sj = i, j\n                elif c == \"B\":\n                    bi, bj = i, j\n        m, n = len(grid), len(grid[0])\n        dirs = (-1, 0, 1, 0, -1)\n        q = deque([(f(si, sj), f(bi, bj), 0)])\n        vis = [[False] * (m * n) for _ in range(m * n)]\n        visf(si, sj)] = True\n        while q:\n            s, b, d = q.popleft()\n            bi, bj = b // n, b % n\n            if gridbi == \"T\":\n                return d\n            si, sj = s // n, s % n\n            for a, b in pairwise(dirs):\n                sx, sy = si + a, sj + b\n                if not check(sx, sy):\n                    continue\n                if sx == bi and sy == bj:\n                    bx, by = bi + a, bj + b\n                    if not check(bx, by) or visf(sx, sy)]:\n                        continue\n                    visf(sx, sy)] = True\n                    q.append((f(sx, sy), f(bx, by), d + 1))\n                elif not visf(sx, sy)]:\n                    visf(sx, sy)] = True\n                    q.appendleft((f(sx, sy), f(bi, bj), d))\n        return -1\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1259/",
+            "title": "1259. Handshakes That Don't Cross",
+            "description": "1259. Handshakes That Don't Cross",
+            "content": "\nLeetCode problem 1259\n\nclass Solution:\n    def numberOfWays(self, numPeople: int) -> int:\n        @cache\n        def dfs(i: int) -> int:\n            if i < 2:\n                return 1\n            res = 0\n            for l in range(0, i, 2):\n                r = i - l - 2\n                res += dfs(l) * dfs(r)\n                res %= mod\n            return res\n\n        mod = 10**9 + 7\n        return dfs(numPeople)\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1255/",
+            "title": "1255. Maximum Score Words Formed by Letters",
+            "description": "1255. Maximum Score Words Formed by Letters",
+            "content": "\nLeetCode problem 1255\n\nclass Solution:\n    def maxScoreWords(\n        self, words: List[str], letters: List[str], score: List[int]\n    ) -> int:\n        cnt = Counter(letters)\n        n = len(words)\n        res = 0\n        for i in range(1 > j & 1]))\n            if all(v <= cnt[c] for c, v in cur.items()):\n                t = sum(v * score[ord(c) - ord('a')] for c, v in cur.items())\n                res = max(res, t)\n        return res\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1250/",
+            "title": "1250. Check If It Is a Good Array",
+            "description": "1250. Check If It Is a Good Array",
+            "content": "\nLeetCode problem 1250\n\nclass Solution:\n    def isGoodArray(self, nums: List[int]) -> bool:\n        return reduce(gcd, nums) == 1\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1246/",
+            "title": "1246. Palindrome Removal",
+            "description": "1246. Palindrome Removal",
+            "content": "\nLeetCode problem 1246\n\nclass Solution:\n    def minimumMoves(self, arr: List[int]) -> int:\n        n = len(arr)\n        f = [[0] * n for _ in range(n)]\n        for i in range(n):\n            fi = 1\n        for i in range(n - 2, -1, -1):\n            for j in range(i + 1, n):\n                if i + 1 == j:\n                    fi = 1 if arr[i] == arr[j] else 2\n                else:\n                    t = fi + 1 if arr[i] == arr[j] else inf\n                    for k in range(i, j):\n                        t = min(t, fi + fk + 1)\n                    fi = t\n        return f0\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1240/",
+            "title": "1240. Tiling a Rectangle with the Fewest Squares",
+            "description": "1240. Tiling a Rectangle with the Fewest Squares",
+            "content": "\nLeetCode problem 1240\n\nclass Solution:\n    def tilingRectangle(self, n: int, m: int) -> int:\n        def dfs(i: int, j: int, t: int):\n            nonlocal res\n            if j == m:\n                i += 1\n                j = 0\n            if i == n:\n                res = t\n                return\n            if filled[i] >> j & 1:\n                dfs(i, j + 1, t)\n            elif t + 1 > j & 1:\n                        break\n                    r += 1\n                for k in range(j, m):\n                    if filled[i] >> k & 1:\n                        break\n                    c += 1\n                mx = min(r, c)\n                for x in range(i, i + mx):\n                    for y in range(j, j + mx):\n                        filled[x] |= 1 << y\n                for w in range(mx, 0, -1):\n                    dfs(i, j + w, t + 1)\n                    for k in range(w):\n                        filled[i + w - 1] ^= 1 << (j + k)\n                        if k < w - 1:\n                            filled[i + k] ^= 1 << (j + w - 1)\n\n        res = n * m\n        filled = [0] * n\n        dfs(0, 0, 0)\n        return res\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1235/",
+            "title": "1235. Maximum Profit in Job Scheduling",
+            "description": "1235. Maximum Profit in Job Scheduling",
+            "content": "\nLeetCode problem 1235\n\nclass Solution:\n    def jobScheduling(self, startTime: List[int], endTime: List[int], profit: List[int]) -> int:\n        jobs = sorted(zip(endTime, startTime, profit))\n        n = len(profit)\n        dp = [0] * (n + 1)\n        for i, (_, s, p) in enumerate(jobs):\n            j = bisect_right(jobs, s, hi=i, key=lambda x: x[0])\n            dp[i + 1] = max(dp[i], dp[j] + p)\n        return dp[n]\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1231/",
+            "title": "1231. Divide Chocolate",
+            "description": "1231. Divide Chocolate",
+            "content": "\nLeetCode problem 1231\n\nclass Solution:\n    def maximizeSweetness(self, sweetness: List[int], k: int) -> int:\n        def check(x: int) -> bool:\n            s = cnt = 0\n            for v in sweetness:\n                s += v\n                if s >= x:\n                    s = 0\n                    cnt += 1\n            return cnt > k\n\n        l, r = 0, sum(sweetness)\n        while l > 1\n            if check(mid):\n                l = mid\n            else:\n                r = mid - 1\n        return l\n\n",
+            "tags": [],
+            "lang": "en"
+        },
+        {
+            "uri": "/tracks/algorithms-101/leetcode/hard/1224/",
+            "title": "1224. Maximum Equal Frequency",
+            "description": "1224. Maximum Equal Frequency",
+            "content": "\nLeetCode problem 1224\n\nclass Solution:\n    def maxEqualFreq(self, nums: List[int]) -> int:\n        cnt = Counter()\n        ccnt = Counter()\n        res = mx = 0\n        for i, v in enumerate(nums, 1):\n            if v in cnt:\n                ccnt[cnt[v]] -= 1\n            cnt[v] += 1\n            mx = max(mx, cnt[v])\n            ccnt[cnt[v]] += 1\n            if mx == 1:\n                res = i\n            elif ccnt[mx] * mx + ccnt[mx - 1] * (mx - 1) == i and ccnt[mx] == 1:\n                res = i\n            elif ccnt[mx] * mx + 1 == i and ccnt[1] == 1:\n                res = i\n        return res\n\n",
             "tags": [],
             "lang": "en"
         },
