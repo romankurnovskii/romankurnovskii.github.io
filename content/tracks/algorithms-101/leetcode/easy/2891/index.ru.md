@@ -1,6 +1,6 @@
 ---
-title: Method Chaining
-seoTitle: LeetCode Method Chaining | Python solution and explanation
+title: 2891. Method Chaining
+seoTitle: LeetCode 2891. Method Chaining | Python solution and explanation
 description: Method Chaining
 toc: true
 tags: []

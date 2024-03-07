@@ -1,6 +1,6 @@
 ---
-title: Create a New Column
-seoTitle: LeetCode Create a New Column | Python solution and explanation
+title: 2881. Create a New Column
+seoTitle: LeetCode 2881. Create a New Column | Python solution and explanation
 description: Create a New Column
 toc: true
 tags: []

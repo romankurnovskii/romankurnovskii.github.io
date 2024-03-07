@@ -1,6 +1,6 @@
 ---
-title: Display the First Three Rows
-seoTitle: LeetCode Display the First Three Rows | Python solution and explanation
+title: 2879. Display the First Three Rows
+seoTitle: LeetCode 2879. Display the First Three Rows | Python solution and explanation
 description: Display the First Three Rows
 toc: true
 tags: []

@@ -1,5 +1,5 @@
 ---
-title: LeetCode 2888. Reshape Data Concatenate
+title:  2888. Reshape Data Concatenate
 seoTitle: LeetCode 2888. Reshape Data Concatenate | Python solution and explanation
 description: LeetCode 2888. Data Concatenate
 toc: true

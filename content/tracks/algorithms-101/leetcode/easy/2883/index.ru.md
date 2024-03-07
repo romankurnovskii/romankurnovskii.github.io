@@ -1,6 +1,6 @@
 ---
-title: Drop Missing Data
-seoTitle: LeetCode Drop Missing Data | Python solution and explanation
+title: 2883. Drop Missing Data
+seoTitle: LeetCode 2883. Drop Missing Data | Python solution and explanation
 description: Drop Missing Data
 toc: true
 tags: []

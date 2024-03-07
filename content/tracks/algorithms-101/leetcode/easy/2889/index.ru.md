@@ -1,5 +1,5 @@
 ---
-title: LeetCode 2889. Reshape Data Pivot
+title:  2889. Reshape Data Pivot
 seoTitle: LeetCode 2889. Reshape Data Pivot | Python solution and explanation
 description: LeetCode 2889. Reshape Data Pivot
 toc: true

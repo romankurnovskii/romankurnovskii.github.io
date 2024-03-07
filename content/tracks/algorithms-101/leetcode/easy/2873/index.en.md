@@ -1,6 +1,6 @@
 ---
-title: Maximum Value of an Ordered Triplet I
-seoTitle: LeetCode Maximum Value of an Ordered Triplet I | Python solution and explanation
+title: 2873. Maximum Value of an Ordered Triplet I
+seoTitle: LeetCode 2873. Maximum Value of an Ordered Triplet I | Python solution and explanation
 description: Maximum Value of an Ordered Triplet I
 toc: true
 tags: []

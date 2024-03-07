@@ -1,6 +1,6 @@
 ---
-title: Minimum Sum of Mountain Triplets I
-seoTitle: LeetCode Minimum Sum of Mountain Triplets I | Python solution and explanation
+title: 2908. Minimum Sum of Mountain Triplets I
+seoTitle: LeetCode 2908. Minimum Sum of Mountain Triplets I | Python solution and explanation
 description: Minimum Sum of Mountain Triplets I
 toc: true
 tags: []
