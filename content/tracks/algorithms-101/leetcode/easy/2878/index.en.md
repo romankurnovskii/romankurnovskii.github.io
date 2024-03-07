@@ -1,6 +1,6 @@
 ---
-title: Get the Size of a DataFrame
-seoTitle: LeetCode Get the Size of a DataFrame | Python solution and explanation
+title: 2878. Get the Size of a DataFrame
+seoTitle: LeetCode 2878. Get the Size of a DataFrame | Python solution and explanation
 description: Get the Size of a DataFrame
 toc: true
 tags: []

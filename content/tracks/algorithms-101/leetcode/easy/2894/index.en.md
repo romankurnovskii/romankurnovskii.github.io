@@ -1,6 +1,6 @@
 ---
-title: Divisible and Non-divisible Sums Difference
-seoTitle: LeetCode Divisible and Non-divisible Sums Difference | Python solution and explanation
+title: 2894. Divisible and Non-divisible Sums Difference
+seoTitle: LeetCode 2894.Divisible and Non-divisible Sums Difference | Python solution and explanation
 description: Divisible and Non-divisible Sums Difference
 toc: true
 tags: []
@@ -17,5 +17,4 @@ weight: 2894
 class Solution:
     def differenceOfSums(self, n: int, m: int) -> int:
         return sum(i if i % m else -i for i in range(1, n + 1))
-
 ```

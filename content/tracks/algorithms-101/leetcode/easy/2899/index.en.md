@@ -1,6 +1,6 @@
 ---
-title: Last Visited Integers
-seoTitle: LeetCode Last Visited Integers | Python solution and explanation
+title: 2899. Last Visited Integers
+seoTitle: LeetCode 2899. Last Visited Integers | Python solution and explanation
 description: Last Visited Integers
 toc: true
 tags: []

@@ -1,6 +1,6 @@
 ---
-title: Rename Columns
-seoTitle: LeetCode Rename Columns | Python solution and explanation
+title: 2885. Rename Columns
+seoTitle: LeetCode 2885. Rename Columns | Python solution and explanation
 description: Rename Columns
 toc: true
 tags: []

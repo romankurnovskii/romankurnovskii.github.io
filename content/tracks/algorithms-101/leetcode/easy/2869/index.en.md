@@ -1,6 +1,6 @@
 ---
-title: Minimum Operations to Collect Elements
-seoTitle: LeetCode Minimum Operations to Collect Elements | Python solution and explanation
+title: 2869. Minimum Operations to Collect Elements
+seoTitle: LeetCode 2869. Minimum Operations to Collect Elements | Python solution and explanation
 description: Minimum Operations to Collect Elements
 toc: true
 tags: []

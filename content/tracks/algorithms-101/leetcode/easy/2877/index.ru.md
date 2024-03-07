@@ -1,6 +1,6 @@
 ---
-title: Create a DataFrame from List
-seoTitle: LeetCode Create a DataFrame from List | Python solution and explanation
+title: 2877. Create a DataFrame from List
+seoTitle: LeetCode 2877. Create a DataFrame from List | Python solution and explanation
 description: Create a DataFrame from List
 toc: true
 tags: []

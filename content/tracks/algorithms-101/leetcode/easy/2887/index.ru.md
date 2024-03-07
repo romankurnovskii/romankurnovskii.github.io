@@ -1,6 +1,6 @@
 ---
-title: Fill Missing Data
-seoTitle: LeetCode Fill Missing Data | Python solution and explanation
+title: 2887. Fill Missing Data
+seoTitle: LeetCode 2887. Fill Missing Data | Python solution and explanation
 description: Fill Missing Data
 toc: true
 tags: []

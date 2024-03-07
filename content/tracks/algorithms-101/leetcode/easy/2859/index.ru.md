@@ -1,6 +1,6 @@
 ---
-title: Sum of Values at Indices With K Set Bits
-seoTitle: LeetCode Sum of Values at Indices With K Set Bits | Python solution and explanation
+title: 2859. Sum of Values at Indices With K Set Bits
+seoTitle: LeetCode 2859. Sum of Values at Indices With K Set Bits | Python solution and explanation
 description: Sum of Values at Indices With K Set Bits
 toc: true
 tags: []
@@ -17,5 +17,4 @@ weight: 2859
 class Solution:
     def sumIndicesWithKSetBits(self, nums: List[int], k: int) -> int:
         return sum(x for i, x in enumerate(nums) if i.bit_count() == k)
-
 ```

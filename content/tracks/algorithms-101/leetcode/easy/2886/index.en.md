@@ -1,6 +1,6 @@
 ---
-title: Change Data Type
-seoTitle: LeetCode Change Data Type | Python solution and explanation
+title: 2886. Change Data Type
+seoTitle: LeetCode 2886. Change Data Type | Python solution and explanation
 description: Change Data Type
 toc: true
 tags: []

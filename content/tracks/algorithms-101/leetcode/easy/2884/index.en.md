@@ -1,6 +1,6 @@
 ---
-title: Modify Columns
-seoTitle: LeetCode Modify Columns | Python solution and explanation
+title: 2884. Modify Columns
+seoTitle: LeetCode 2884. Modify Columns | Python solution and explanation
 description: Modify Columns
 toc: true
 tags: []

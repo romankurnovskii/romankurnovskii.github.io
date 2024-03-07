@@ -1,6 +1,6 @@
 ---
-title: Drop Duplicate Rows
-seoTitle: LeetCode Drop Duplicate Rows | Python solution and explanation
+title: 2882. Drop Duplicate Rows
+seoTitle: LeetCode 2882. Drop Duplicate Rows | Python solution and explanation
 description: Drop Duplicate Rows
 toc: true
 tags: []

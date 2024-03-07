@@ -1,5 +1,5 @@
 ---
-title: LeetCode 2890. Reshape Data Melt
+title: 2890. Reshape Data Melt
 seoTitle: LeetCode 2890. Reshape Data Melt | Python solution and explanation
 description: LeetCode 2890. Reshape Data Melt
 toc: true

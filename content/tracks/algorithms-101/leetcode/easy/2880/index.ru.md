@@ -1,6 +1,6 @@
 ---
-title: Select Data
-seoTitle: LeetCode Select Data | Python solution and explanation
+title: 2880. Select Data
+seoTitle: LeetCode 2880. Select Data | Python solution and explanation
 description: Select Data
 toc: true
 tags: []

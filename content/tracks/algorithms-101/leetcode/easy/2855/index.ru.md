@@ -1,6 +1,6 @@
 ---
-title: Minimum Right Shifts to Sort the Array
-seoTitle: LeetCode Minimum Right Shifts to Sort the Array | Python solution and explanation
+title: 2855. Minimum Right Shifts to Sort the Array
+seoTitle: LeetCode 2855. Minimum Right Shifts to Sort the Array | Python solution and explanation
 description: Minimum Right Shifts to Sort the Array
 toc: true
 tags: []
@@ -24,5 +24,4 @@ class Solution:
         while k < n and nums[k - 1] < nums[k] < nums[0]:
             k += 1
         return -1 if k < n else n - i
-
 ```

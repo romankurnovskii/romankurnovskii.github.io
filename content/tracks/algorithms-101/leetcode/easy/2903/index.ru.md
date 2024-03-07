@@ -1,6 +1,6 @@
 ---
-title: Find Indices With Index and Value Difference I
-seoTitle: LeetCode Find Indices With Index and Value Difference I | Python solution and explanation
+title: 2903. Find Indices With Index and Value Difference I
+seoTitle: LeetCode 2903. Find Indices With Index and Value Difference I | Python solution and explanation
 description: Find Indices With Index and Value Difference I
 toc: true
 tags: []
