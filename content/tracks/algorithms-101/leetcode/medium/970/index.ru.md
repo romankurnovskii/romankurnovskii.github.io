@@ -1,5 +1,5 @@
 ---
-title: Powerful Integers
+title: 970. Powerful Integers
 seoTitle: LeetCode Powerful Integers | Python solution and explanation
 description: Powerful Integers
 toc: true

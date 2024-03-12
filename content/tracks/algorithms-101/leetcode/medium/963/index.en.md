@@ -1,5 +1,5 @@
 ---
-title: Minimum Area Rectangle II
+title: 963. Minimum Area Rectangle II
 seoTitle: LeetCode Minimum Area Rectangle II | Python solution and explanation
 description: Minimum Area Rectangle II
 toc: true

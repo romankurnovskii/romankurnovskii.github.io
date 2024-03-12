@@ -1,5 +1,5 @@
 ---
-title: Pancake Sorting
+title: 969. Pancake Sorting
 seoTitle: LeetCode Pancake Sorting | Python solution and explanation
 description: Pancake Sorting
 toc: true

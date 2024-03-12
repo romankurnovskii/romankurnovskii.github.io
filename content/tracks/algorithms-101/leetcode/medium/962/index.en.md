@@ -1,6 +1,6 @@
 ---
-title: Maximum Width Ramp
-seoTitle: LeetCode Maximum Width Ramp | Python solution and explanation
+title: 962. Maximum Width Ramp
+seoTitle: LeetCode 962. Maximum Width Ramp | Python solution and explanation
 description: Maximum Width Ramp
 toc: true
 tags: []

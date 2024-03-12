@@ -1,5 +1,5 @@
 ---
-title: Numbers With Same Consecutive Differences
+title: 967. Numbers With Same Consecutive Differences
 seoTitle: LeetCode Numbers With Same Consecutive Differences | Python solution and explanation
 description: Numbers With Same Consecutive Differences
 toc: true

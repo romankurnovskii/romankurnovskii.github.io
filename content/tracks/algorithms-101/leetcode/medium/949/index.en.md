@@ -1,5 +1,5 @@
 ---
-title: Largest Time for Given Digits
+title: 949. Largest Time for Given Digits
 seoTitle: LeetCode Largest Time for Given Digits | Python solution and explanation
 description: Largest Time for Given Digits
 toc: true

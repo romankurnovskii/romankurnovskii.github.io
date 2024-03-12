@@ -1,6 +1,6 @@
 ---
-title: Regions Cut By Slashes
-seoTitle: LeetCode Regions Cut By Slashes | Python solution and explanation
+title: 959. Regions Cut By Slashes
+seoTitle: LeetCode 959. Regions Cut By Slashes | Python solution and explanation
 description: Regions Cut By Slashes
 toc: true
 tags: []
@@ -22,7 +22,8 @@ class Solution:
             return p[x]
 
         def union(a, b):
-            pa, pb = find(a), find(b)
+            pa = find(a)
+            pb = find(b)
             if pa != pb:
                 p[pa] = pb
                 nonlocal size

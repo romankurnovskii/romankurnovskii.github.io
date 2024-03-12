@@ -1,5 +1,5 @@
 ---
-title: Check Completeness of a Binary Tree
+title: 958. Check Completeness of a Binary Tree
 seoTitle: LeetCode Check Completeness of a Binary Tree | Python solution and explanation
 description: Check Completeness of a Binary Tree
 toc: true

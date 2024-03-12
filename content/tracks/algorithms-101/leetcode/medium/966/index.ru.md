@@ -1,5 +1,5 @@
 ---
-title: Vowel Spellchecker
+title: 966. Vowel Spellchecker
 seoTitle: LeetCode Vowel Spellchecker | Python solution and explanation
 description: Vowel Spellchecker
 toc: true

@@ -1,5 +1,5 @@
 ---
-title: Maximum Odd Binary Number
+title: 2864. Maximum Odd Binary Number
 seoTitle: LeetCode Maximum Odd Binary Number | Python solution and explanation
 description: Maximum Odd Binary Number
 toc: true

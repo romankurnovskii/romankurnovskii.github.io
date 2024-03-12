@@ -1,5 +1,5 @@
 ---
-title: Minimum Common Value
+title: 2540. Minimum Common Value
 seoTitle: LeetCode Minimum Common Value | Python solution and explanation
 description: Minimum Common Value
 toc: true

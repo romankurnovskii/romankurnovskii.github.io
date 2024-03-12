@@ -1,6 +1,6 @@
 ---
-title: Flip Equivalent Binary Trees
-seoTitle: LeetCode Flip Equivalent Binary Trees | Python solution and explanation
+title: 951. Flip Equivalent Binary Trees
+seoTitle: LeetCode 951. Flip Equivalent Binary Trees | Python solution and explanation
 description: Flip Equivalent Binary Trees
 toc: true
 tags: []

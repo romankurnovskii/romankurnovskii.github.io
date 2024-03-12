@@ -1,5 +1,5 @@
 ---
-title: Array of Doubled Pairs
+title: 954. Array of Doubled Pairs
 seoTitle: LeetCode Array of Doubled Pairs | Python solution and explanation
 description: Array of Doubled Pairs
 toc: true

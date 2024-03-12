@@ -1,5 +1,5 @@
 ---
-title: Custom Sort String
+title: 791. Custom Sort String
 seoTitle: LeetCode Custom Sort String | Python solution and explanation
 description: Custom Sort String
 toc: true

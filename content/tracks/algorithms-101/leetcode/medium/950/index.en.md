@@ -1,5 +1,5 @@
 ---
-title: Reveal Cards In Increasing Order
+title: 950. Reveal Cards In Increasing Order
 seoTitle: LeetCode Reveal Cards In Increasing Order | Python solution and explanation
 description: Reveal Cards In Increasing Order
 toc: true
