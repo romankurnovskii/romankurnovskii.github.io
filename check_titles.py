@@ -4,7 +4,7 @@ import os
 def find_files_with_non_numeric_title(root_dir):
     for root, dirs, files in os.walk(root_dir):
         for file in files:
-            if file == "index.ru.md":
+            if file in ["index.en.md", "index.ru.md"]:
                 file_path = os.path.join(root, file)
                 with open(file_path, "r") as f:
                     lines = f.readlines()
