@@ -31,7 +31,7 @@ You have to rotate the image **in-place**, which means you have to modify the in
     Input: matrix = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]
     Output: [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]
 
-**Idea:**
+## Idea
 
 ```python
 class Solution:
@@ -56,7 +56,7 @@ class Solution:
             r -= 1
 ```
 
-**Approach 2: Reverse:**
+## Approach 2: Reverse
 
 ```python
 class Solution:

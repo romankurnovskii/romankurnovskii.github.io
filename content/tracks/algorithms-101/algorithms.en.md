@@ -12,7 +12,6 @@ lastMod: 2023-06-06
 weight: 30
 authors:
 published: true
-TODO: Dynamic programming
 ---
 
 ## Intro
@@ -728,6 +727,43 @@ class Solution:
 #     [1, 3], [1, 4], [3, 4], 
 #     [1, 3, 4]
 # ]
+```
+
+## Trie
+
+```python
+class TrieNode:
+   def __init__(self):
+       self.children = {}
+       self.is_end = False
+
+class Trie:
+   def insert(self, word: str) -> None:
+       current_node = self.root
+       for char in word:
+           if char not in current_node.children:
+               new_node = TrieNode()
+               current_node.children[char] = new_node
+               current_node = new_node
+           else:
+               current_node = current_node.children[char]
+       current_node.is_end = True
+
+   def search(self, word: str) -> bool:
+       current_node = self.root
+       for char in word:
+           if char not in current_node.children:
+               return False
+           current_node = current_node.children[char]
+       return current_node.is_end
+
+   def startsWith(self, prefix: str) -> bool:
+       current_node = self.root
+       for char in prefix:
+           if char not in current_node.children:
+               return False
+           current_node = current_node.children[char]
+       return True
 ```
 
 ## Dutch National Flag problem

@@ -41,21 +41,31 @@ The problem can be visualized as a linked list where each value is a pointer to 
 1. **Phase 1 (Finding intersection point)**: Use two pointers, one moving fast (two steps at a time) and one moving slow. If there's a cycle, they'll eventually meet at some point.
 2. **Phase 2 (Finding entry point of cycle)**: Move the fast pointer back to the start and advance both pointers at the same speed. The point where they meet again is the beginning of the cycle or, in this context, our duplicate number.
 
+#### An Illustrative Example
+
+Consider `nums = [3, 1, 3, 4, 2]`. Here's how it maps to a "linked list":
+
+1. Start at index 0: value 3 (jump to index 3)
+1. At index 3: value 4 (jump to index 4)
+1. At index 4: value 2 (jump to index 2)
+1. At index 2: value 3 (jump to index 3 again, and so on)
+1. We have a cycle involving the values/indices 3 → 4 → 2 → 3, and the duplicate number 3 is the "entry" to this cycle.
+
 ## Solution
 
 ```python
 def findDuplicate(nums):
-    tortoise = hare = nums[0]   # 1: Using Floyd's Tortoise and Hare (Cycle Detection)
-    while True:
-        tortoise = nums[tortoise]
-        hare = nums[nums[hare]]
-        if tortoise == hare:
-            break
+    slow = fast = nums[0]  # Phase 1: Detect the cycle
+    slow = nums[slow]
+    fast = nums[nums[fast]]
+    while slow != fast:
+        slow = nums[slow]
+        fast = nums[nums[fast]]
 
-    tortoise = nums[0]          # 2: Find the entrance to the cycle
-    while tortoise != hare:
-        tortoise = nums[tortoise]
-        hare = nums[hare]
+    slow = nums[0]  # Phase 2: Find the entry point to the cycle
+    while slow != fast:
+        slow = nums[slow]
+        fast = nums[fast]
 
-    return hare
+    return slow
 ```
