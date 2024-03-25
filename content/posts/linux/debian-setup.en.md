@@ -1,6 +1,6 @@
 ---
-title: Monitoring
-seoTitle: Monitoring
+title: Monitoring Linux OS
+seoTitle: Monitoring Linux OS
 description: Monitoring
 toc: true
 tags: [Linux, Debian]
