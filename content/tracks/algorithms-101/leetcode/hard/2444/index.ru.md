@@ -1,12 +1,12 @@
 ---
-title: Count Subarrays With Fixed Bounds
-seoTitle: LeetCode Count Subarrays With Fixed Bounds | Python solution and explanation
-description: Count Subarrays With Fixed Bounds
+title: 2444. Count Subarrays With Fixed Bounds
+seoTitle: LeetCode 2444. Count Subarrays With Fixed Bounds | Python solution and explanation
+description: 2444. Count Subarrays With Fixed Bounds
 toc: true
 tags: []
 categories: [Algorithms, LeetCode]
-date: 2024-01-01
-lastMod: 2024-01-01
+date: 2024-03-31
+lastMod: 2024-03-31
 featuredImage: https://picsum.photos/700/155?grayscale
 weight: 2444
 ---
@@ -27,5 +27,4 @@ class Solution:
                 j2 = i
             res += max(0, min(j1, j2) - k)
         return res
-
 ```

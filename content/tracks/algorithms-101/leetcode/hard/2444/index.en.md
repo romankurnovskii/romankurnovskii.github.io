@@ -5,8 +5,8 @@ description: 2444. Count Subarrays With Fixed Bounds
 toc: true
 tags: []
 categories: [Algorithms, LeetCode]
-date: 2024-01-01
-lastMod: 2024-01-01
+date: 2024-03-31
+lastMod: 22024-03-31
 featuredImage: https://picsum.photos/700/155?grayscale
 weight: 2444
 ---
