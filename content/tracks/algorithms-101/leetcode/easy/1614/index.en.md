@@ -5,8 +5,8 @@ description: 1614. Maximum Nesting Depth of the Parentheses
 toc: true
 tags: []
 categories: [Algorithms, LeetCode]
-date: 2024-01-01
-lastMod: 2024-01-01
+date: 2024-04-04
+lastMod: 2024-04-04
 featuredImage: https://picsum.photos/700/155?grayscale
 weight: 1614
 ---
@@ -16,13 +16,14 @@ weight: 1614
 ```python
 class Solution:
     def maxDepth(self, s: str) -> int:
-        res = d = 0
+        stack = []
+        res = 0
         for c in s:
             if c == '(':
-                d += 1
-                res = max(res, d)
+                stack.append(1)
+                res = max(res, len(stack))
             elif c == ')':
-                d -= 1
+                stack.pop()
+        
         return res
-
 ```
