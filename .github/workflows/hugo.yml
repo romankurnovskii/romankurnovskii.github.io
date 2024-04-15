@@ -32,7 +32,7 @@ jobs:
           token: ${{ secrets.SSH_REPO }} # set for this repo and theme repo. repo settings->Secrets. Created in Settings->Developer settings
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: "latest"
           extended: true
