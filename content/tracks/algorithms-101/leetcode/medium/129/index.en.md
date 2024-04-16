@@ -18,13 +18,13 @@ Traverse the tree and check for leaf nodes specifically that are left children. 
 The strategy is to recursively traverse the tree, and at each node, check if it has a left child that is a leaf. If it is, we add its value to the sum. We continue traversing until all nodes are visited.
 
 ## Approach
+
 1. Define a helper function `dfs(node)` that will traverse the tree:
    - Check if the current node is None; if yes, return 0.
    - Check if the left child of the node is a leaf (i.e., has no left or right child). If it is, add its value to the sum.
    - Recursively call the helper for the left and right children of the current node.
    - Return the sum of values from the left and right child calls plus the leaf node value if applicable.
 1. Call this `dfs` function starting from the root of the tree.
-
 
 ```python
 class Solution:
@@ -41,7 +41,6 @@ class Solution:
         
         return dfs(root)
 ```
-
 
 ```python
 # Definition for a binary tree node.
