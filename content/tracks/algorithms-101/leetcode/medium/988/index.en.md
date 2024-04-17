@@ -34,18 +34,19 @@ Tackle by recursively exploring each path from the root to the leaves, collectin
 #         self.left = left
 #         self.right = right
 class Solution:
-    def smallestFromLeaf(self, root: TreeNode) -> str:
-        nonlocal smallest
-        if node:
-            # Prepend current char to the path
-            path = chr(node.val + 97) + path
-            if not node.left and not node.right:  # Leaf node
-                if not smallest or path < smallest:
-                    smallest = path
-            dfs(node.left, path)
-            dfs(node.right, path)
+    def smallestFromLeaf(self, root: Optional[TreeNode]) -> str:
+        def dfs(node, path):
+            nonlocal smallest
+            if node:
+                # Prepend current char to the path
+                path = chr(node.val + 97) + path
+                if not node.left and not node.right:  # Leaf node
+                    if not smallest or path < smallest:
+                        smallest = path
+                dfs(node.left, path)
+                dfs(node.right, path)
 
-    smallest = None
-    dfs(root, "")
-    return smallest
+        smallest = None
+        dfs(root, "")
+        return smallest
 ```
