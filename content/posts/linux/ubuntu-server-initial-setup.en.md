@@ -20,7 +20,6 @@ apt update
 apt upgrade -y
 ```
 
-
 ## Setting Up SSH Keys
 
 Using SSH keys instead of passwords enhances security. First, generate an SSH key pair on your local machine (if you don't already have one):
@@ -41,21 +40,22 @@ ssh-copy-id -p 1234 username@your_server_ip
 This command uploads your public SSH key and configures the server to recognize it.
 
 ## Disabling Password Authentication
+
 To prevent SSH login using a username and password, edit the SSH configuration file:
 
 ```sh
 sudo nano /etc/ssh/sshd_config
 ```
+
 Find the following lines and modify them as shown:
 
 ```plaintext
 PasswordAuthentication no
 UsePAM no
 ```
+
 After making these changes, restart the SSH service to apply them:
 
 ```bash
 sudo systemctl restart sshd
 ```
-
-
