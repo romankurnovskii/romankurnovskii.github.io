@@ -16,6 +16,3 @@ layout: publications
 ---
 
 - [Крипто / API](https://t.me/romankurnovskii)
-
-
-

@@ -10,6 +10,7 @@ date: 2024-01-25
 ---
 
 Codes:
+
 - `XEQ43P`
 - `RCWB3V`
 - `K4X682`
@@ -20,11 +21,9 @@ Codes:
 - `SPDVKT`
 - `DMBZHM`
 
-1. Go to site https://app.solayer.org
+1. Go to site <https://app.solayer.org>
 2. Enter code
 
 ```
 
 ```
-
-

@@ -112,6 +112,8 @@ ffmpeg -f concat -safe 0 -i <(for f in $(ls -v /path/to/folder/*.mp4); do echo "
 
 ## Reduce video size for all videos in dir and sibdirs
 
+### python
+
 - Search for all videos
 - Convert
 - Set same meta data
@@ -155,4 +157,10 @@ if __name__ == "__main__":
         process_directory(directory_path)
     else:
         print("Please provide a directory path.")
+```
+
+### bash
+
+```sh
+for file in *.*; do ffmpeg -i "$file" "${file%.*}.avi"; done
 ```
