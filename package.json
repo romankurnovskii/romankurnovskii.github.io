@@ -20,24 +20,24 @@
     "not dead"
   ],
   "dependencies": {
-    "html-react-parser": "^5.1.12",
-    "marked": "^14.1.0",
+    "html-react-parser": "^5.1.19",
+    "marked": "^15.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^6.0.0",
-    "@tailwindcss/typography": "^0.5.14",
-    "autoprefixer": "^10.4.19",
-    "cssnano": "^7.0.5",
-    "hugo-lunr-ml": "^3.2.4",
-    "markdownlint-cli2": "^0.13.0",
-    "postcss": "^8.4.41",
+    "@tailwindcss/typography": "^0.5.15",
+    "autoprefixer": "^10.4.20",
+    "cssnano": "^7.0.6",
+    "hugo-lunr-ml": "^3.2.5",
+    "markdownlint-cli2": "^0.15.0",
+    "postcss": "^8.4.49",
     "postcss-cli": "10.1.0",
     "postcss-import": "^16.1.0",
     "prettier-plugin-go-template": "^0.0.15",
-    "prettier-plugin-tailwindcss": "^0.6.5",
-    "tailwindcss": "^3.4.10",
+    "prettier-plugin-tailwindcss": "^0.6.9",
+    "tailwindcss": "^3.4.16",
     "tailwindcss-rtl": "^0.9.0"
   }
 }

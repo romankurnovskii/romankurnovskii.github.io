@@ -5,7 +5,7 @@ experiences:
   - title: Computer Science + Economics
     organization:
       name: Samara State University of Economics
-      url: https://sseu.ru/
+      url: https://www.sseu.ru/en/
     dates: "2009 - 2014"
     location: 
     writeup: >
@@ -17,7 +17,7 @@ experiences:
     dates: "2009-2014"
     location: 
     writeup: >
-      - <a href="ttps://www.open.ac.uk/courses/business-management/degrees/ba-business-management-q91">About the course</a>
+      - <a href="https://www.open.ac.uk/courses/business-management/degrees/ba-business-management-q91">About the course</a>
 
 weight: 5
 widget:

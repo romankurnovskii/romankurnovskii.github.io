@@ -10,7 +10,6 @@ toc: false
 weight: 10
 date: 2023-02-09
 lastMod: 2023-02-10
-published: true
 prerequisites:
   - Бинарное дерево
   - Префиксные суммы

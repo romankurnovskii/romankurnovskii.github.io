@@ -5,7 +5,7 @@ toc: false
 tags: ["AWS", "AWS Amplify", Github]
 series: ["AWS exam quizz"]
 categories: ["AWS Amplify"]
-date: 2022-10-12:07:00+03:00
+date: 2022-10-12
 featuredImage: 
 authors: [roman-kurnovskii]
 # weight: 10
