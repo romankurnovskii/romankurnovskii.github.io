@@ -7743,8 +7743,7 @@
             button: 0,
             buttons: 0,
             relatedTarget: function(event) {
-              if (event.relatedTarget === void 0)
-                return event.fromElement === event.srcElement ? event.toElement : event.fromElement;
+              if (event.relatedTarget === void 0) return event.fromElement === event.srcElement ? event.toElement : event.fromElement;
               return event.relatedTarget;
             },
             movementX: function(event) {
@@ -8460,43 +8459,42 @@
             var indexWithinFocus = 0;
             var node = outerNode;
             var parentNode = null;
-            outer:
+            outer: while (true) {
+              var next = null;
               while (true) {
-                var next = null;
-                while (true) {
-                  if (node === anchorNode && (anchorOffset === 0 || node.nodeType === TEXT_NODE)) {
-                    start = length + anchorOffset;
-                  }
-                  if (node === focusNode && (focusOffset === 0 || node.nodeType === TEXT_NODE)) {
-                    end = length + focusOffset;
-                  }
-                  if (node.nodeType === TEXT_NODE) {
-                    length += node.nodeValue.length;
-                  }
-                  if ((next = node.firstChild) === null) {
-                    break;
-                  }
-                  parentNode = node;
-                  node = next;
+                if (node === anchorNode && (anchorOffset === 0 || node.nodeType === TEXT_NODE)) {
+                  start = length + anchorOffset;
                 }
-                while (true) {
-                  if (node === outerNode) {
-                    break outer;
-                  }
-                  if (parentNode === anchorNode && ++indexWithinAnchor === anchorOffset) {
-                    start = length;
-                  }
-                  if (parentNode === focusNode && ++indexWithinFocus === focusOffset) {
-                    end = length;
-                  }
-                  if ((next = node.nextSibling) !== null) {
-                    break;
-                  }
-                  node = parentNode;
-                  parentNode = node.parentNode;
+                if (node === focusNode && (focusOffset === 0 || node.nodeType === TEXT_NODE)) {
+                  end = length + focusOffset;
                 }
+                if (node.nodeType === TEXT_NODE) {
+                  length += node.nodeValue.length;
+                }
+                if ((next = node.firstChild) === null) {
+                  break;
+                }
+                parentNode = node;
                 node = next;
               }
+              while (true) {
+                if (node === outerNode) {
+                  break outer;
+                }
+                if (parentNode === anchorNode && ++indexWithinAnchor === anchorOffset) {
+                  start = length;
+                }
+                if (parentNode === focusNode && ++indexWithinFocus === focusOffset) {
+                  end = length;
+                }
+                if ((next = node.nextSibling) !== null) {
+                  break;
+                }
+                node = parentNode;
+                parentNode = node.parentNode;
+              }
+              node = next;
+            }
             if (start === -1 || end === -1) {
               return null;
             }
@@ -9038,45 +9036,44 @@
               var targetContainerNode = targetContainer;
               if (targetInst !== null) {
                 var node = targetInst;
-                mainLoop:
-                  while (true) {
-                    if (node === null) {
-                      return;
-                    }
-                    var nodeTag = node.tag;
-                    if (nodeTag === HostRoot || nodeTag === HostPortal) {
-                      var container = node.stateNode.containerInfo;
-                      if (isMatchingRootContainer(container, targetContainerNode)) {
-                        break;
-                      }
-                      if (nodeTag === HostPortal) {
-                        var grandNode = node.return;
-                        while (grandNode !== null) {
-                          var grandTag = grandNode.tag;
-                          if (grandTag === HostRoot || grandTag === HostPortal) {
-                            var grandContainer = grandNode.stateNode.containerInfo;
-                            if (isMatchingRootContainer(grandContainer, targetContainerNode)) {
-                              return;
-                            }
-                          }
-                          grandNode = grandNode.return;
-                        }
-                      }
-                      while (container !== null) {
-                        var parentNode = getClosestInstanceFromNode(container);
-                        if (parentNode === null) {
-                          return;
-                        }
-                        var parentTag = parentNode.tag;
-                        if (parentTag === HostComponent || parentTag === HostText) {
-                          node = ancestorInst = parentNode;
-                          continue mainLoop;
-                        }
-                        container = container.parentNode;
-                      }
-                    }
-                    node = node.return;
+                mainLoop: while (true) {
+                  if (node === null) {
+                    return;
                   }
+                  var nodeTag = node.tag;
+                  if (nodeTag === HostRoot || nodeTag === HostPortal) {
+                    var container = node.stateNode.containerInfo;
+                    if (isMatchingRootContainer(container, targetContainerNode)) {
+                      break;
+                    }
+                    if (nodeTag === HostPortal) {
+                      var grandNode = node.return;
+                      while (grandNode !== null) {
+                        var grandTag = grandNode.tag;
+                        if (grandTag === HostRoot || grandTag === HostPortal) {
+                          var grandContainer = grandNode.stateNode.containerInfo;
+                          if (isMatchingRootContainer(grandContainer, targetContainerNode)) {
+                            return;
+                          }
+                        }
+                        grandNode = grandNode.return;
+                      }
+                    }
+                    while (container !== null) {
+                      var parentNode = getClosestInstanceFromNode(container);
+                      if (parentNode === null) {
+                        return;
+                      }
+                      var parentTag = parentNode.tag;
+                      if (parentTag === HostComponent || parentTag === HostText) {
+                        node = ancestorInst = parentNode;
+                        continue mainLoop;
+                      }
+                      container = container.parentNode;
+                    }
+                  }
+                  node = node.return;
+                }
               }
             }
             batchedUpdates(function() {
@@ -9356,10 +9353,8 @@
                 } else if (typeof nextProp === "number") {
                   setTextContent(domElement, "" + nextProp);
                 }
-              } else if (propKey === SUPPRESS_CONTENT_EDITABLE_WARNING || propKey === SUPPRESS_HYDRATION_WARNING)
-                ;
-              else if (propKey === AUTOFOCUS)
-                ;
+              } else if (propKey === SUPPRESS_CONTENT_EDITABLE_WARNING || propKey === SUPPRESS_HYDRATION_WARNING) ;
+              else if (propKey === AUTOFOCUS) ;
               else if (registrationNameDependencies.hasOwnProperty(propKey)) {
                 if (nextProp != null) {
                   if (typeof nextProp !== "function") {
@@ -9575,12 +9570,9 @@
                     styleUpdates[styleName] = "";
                   }
                 }
-              } else if (propKey === DANGEROUSLY_SET_INNER_HTML || propKey === CHILDREN)
-                ;
-              else if (propKey === SUPPRESS_CONTENT_EDITABLE_WARNING || propKey === SUPPRESS_HYDRATION_WARNING)
-                ;
-              else if (propKey === AUTOFOCUS)
-                ;
+              } else if (propKey === DANGEROUSLY_SET_INNER_HTML || propKey === CHILDREN) ;
+              else if (propKey === SUPPRESS_CONTENT_EDITABLE_WARNING || propKey === SUPPRESS_HYDRATION_WARNING) ;
+              else if (propKey === AUTOFOCUS) ;
               else if (registrationNameDependencies.hasOwnProperty(propKey)) {
                 if (!updatePayload) {
                   updatePayload = [];
@@ -9639,8 +9631,7 @@
                 if (typeof nextProp === "string" || typeof nextProp === "number") {
                   (updatePayload = updatePayload || []).push(propKey, "" + nextProp);
                 }
-              } else if (propKey === SUPPRESS_CONTENT_EDITABLE_WARNING || propKey === SUPPRESS_HYDRATION_WARNING)
-                ;
+              } else if (propKey === SUPPRESS_CONTENT_EDITABLE_WARNING || propKey === SUPPRESS_HYDRATION_WARNING) ;
               else if (registrationNameDependencies.hasOwnProperty(propKey)) {
                 if (nextProp != null) {
                   if (typeof nextProp !== "function") {
@@ -9797,12 +9788,10 @@
               typeof isCustomComponentTag === "boolean") {
                 var serverValue = void 0;
                 var propertyInfo = isCustomComponentTag && enableCustomElementPropertySupport ? null : getPropertyInfo(propKey);
-                if (rawProps[SUPPRESS_HYDRATION_WARNING] === true)
-                  ;
+                if (rawProps[SUPPRESS_HYDRATION_WARNING] === true) ;
                 else if (propKey === SUPPRESS_CONTENT_EDITABLE_WARNING || propKey === SUPPRESS_HYDRATION_WARNING || // Controlled attributes are not validated
                 // TODO: Only ignore them on controlled tags.
-                propKey === "value" || propKey === "checked" || propKey === "selected")
-                  ;
+                propKey === "value" || propKey === "checked" || propKey === "selected") ;
                 else if (propKey === DANGEROUSLY_SET_INNER_HTML) {
                   var serverHTML = domElement.innerHTML;
                   var nextHtml = nextProp ? nextProp[HTML$1] : void 0;
@@ -10598,8 +10587,7 @@
             {
               if (instance.nodeType === ELEMENT_NODE) {
                 warnForDeletedHydratableElement(parentContainer, instance);
-              } else if (instance.nodeType === COMMENT_NODE)
-                ;
+              } else if (instance.nodeType === COMMENT_NODE) ;
               else {
                 warnForDeletedHydratableText(parentContainer, instance);
               }
@@ -10611,8 +10599,7 @@
               if (parentNode !== null) {
                 if (instance.nodeType === ELEMENT_NODE) {
                   warnForDeletedHydratableElement(parentNode, instance);
-                } else if (instance.nodeType === COMMENT_NODE)
-                  ;
+                } else if (instance.nodeType === COMMENT_NODE) ;
                 else {
                   warnForDeletedHydratableText(parentNode, instance);
                 }
@@ -10624,8 +10611,7 @@
               if (isConcurrentMode || parentProps[SUPPRESS_HYDRATION_WARNING$1] !== true) {
                 if (instance.nodeType === ELEMENT_NODE) {
                   warnForDeletedHydratableElement(parentInstance, instance);
-                } else if (instance.nodeType === COMMENT_NODE)
-                  ;
+                } else if (instance.nodeType === COMMENT_NODE) ;
                 else {
                   warnForDeletedHydratableText(parentInstance, instance);
                 }
@@ -10645,15 +10631,13 @@
           function didNotFindHydratableInstanceWithinSuspenseInstance(parentInstance, type, props) {
             {
               var parentNode = parentInstance.parentNode;
-              if (parentNode !== null)
-                warnForInsertedHydratedElement(parentNode, type);
+              if (parentNode !== null) warnForInsertedHydratedElement(parentNode, type);
             }
           }
           function didNotFindHydratableTextInstanceWithinSuspenseInstance(parentInstance, text) {
             {
               var parentNode = parentInstance.parentNode;
-              if (parentNode !== null)
-                warnForInsertedHydratedText(parentNode, text);
+              if (parentNode !== null) warnForInsertedHydratedText(parentNode, text);
             }
           }
           function didNotFindHydratableInstance(parentType, parentProps, parentInstance, type, props, isConcurrentMode) {
@@ -11240,8 +11224,7 @@
                 }
                 case SuspenseComponent: {
                   var suspenseState = returnFiber.memoizedState;
-                  if (suspenseState.dehydrated !== null)
-                    didNotHydrateInstanceWithinSuspenseInstance(suspenseState.dehydrated, instance);
+                  if (suspenseState.dehydrated !== null) didNotHydrateInstanceWithinSuspenseInstance(suspenseState.dehydrated, instance);
                   break;
                 }
               }
@@ -11320,18 +11303,17 @@
                 case SuspenseComponent: {
                   var suspenseState = returnFiber.memoizedState;
                   var _parentInstance = suspenseState.dehydrated;
-                  if (_parentInstance !== null)
-                    switch (fiber.tag) {
-                      case HostComponent:
-                        var _type2 = fiber.type;
-                        var _props2 = fiber.pendingProps;
-                        didNotFindHydratableInstanceWithinSuspenseInstance(_parentInstance, _type2);
-                        break;
-                      case HostText:
-                        var _text2 = fiber.pendingProps;
-                        didNotFindHydratableTextInstanceWithinSuspenseInstance(_parentInstance, _text2);
-                        break;
-                    }
+                  if (_parentInstance !== null) switch (fiber.tag) {
+                    case HostComponent:
+                      var _type2 = fiber.type;
+                      var _props2 = fiber.pendingProps;
+                      didNotFindHydratableInstanceWithinSuspenseInstance(_parentInstance, _type2);
+                      break;
+                    case HostText:
+                      var _text2 = fiber.pendingProps;
+                      didNotFindHydratableTextInstanceWithinSuspenseInstance(_parentInstance, _text2);
+                      break;
+                  }
                   break;
                 }
                 default:
@@ -12620,8 +12602,7 @@
                       var update = createUpdate(NoTimestamp, lane);
                       update.tag = ForceUpdate;
                       var updateQueue = fiber.updateQueue;
-                      if (updateQueue === null)
-                        ;
+                      if (updateQueue === null) ;
                       else {
                         var sharedQueue = updateQueue.shared;
                         var pending = sharedQueue.pending;
@@ -12707,8 +12688,7 @@
               }
             }
             var value = context._currentValue;
-            if (lastFullyObservedContext === context)
-              ;
+            if (lastFullyObservedContext === context) ;
             else {
               var contextItem = {
                 context,
@@ -17942,8 +17922,7 @@
               while (node !== null) {
                 if (node.tag === HostComponent || node.tag === HostText) {
                   appendInitialChild(parent, node.stateNode);
-                } else if (node.tag === HostPortal)
-                  ;
+                } else if (node.tag === HostPortal) ;
                 else if (node.child !== null) {
                   node.child.return = node;
                   node = node.child;
@@ -18897,20 +18876,19 @@
                       onPostCommit(id, phase, passiveEffectDuration, commitTime2);
                     }
                     var parentFiber = finishedWork.return;
-                    outer:
-                      while (parentFiber !== null) {
-                        switch (parentFiber.tag) {
-                          case HostRoot:
-                            var root2 = parentFiber.stateNode;
-                            root2.passiveEffectDuration += passiveEffectDuration;
-                            break outer;
-                          case Profiler:
-                            var parentStateNode = parentFiber.stateNode;
-                            parentStateNode.passiveEffectDuration += passiveEffectDuration;
-                            break outer;
-                        }
-                        parentFiber = parentFiber.return;
+                    outer: while (parentFiber !== null) {
+                      switch (parentFiber.tag) {
+                        case HostRoot:
+                          var root2 = parentFiber.stateNode;
+                          root2.passiveEffectDuration += passiveEffectDuration;
+                          break outer;
+                        case Profiler:
+                          var parentStateNode = parentFiber.stateNode;
+                          parentStateNode.passiveEffectDuration += passiveEffectDuration;
+                          break outer;
                       }
+                      parentFiber = parentFiber.return;
+                    }
                     break;
                   }
                 }
@@ -19057,20 +19035,19 @@
                       }
                       enqueuePendingPassiveProfilerEffect(finishedWork);
                       var parentFiber = finishedWork.return;
-                      outer:
-                        while (parentFiber !== null) {
-                          switch (parentFiber.tag) {
-                            case HostRoot:
-                              var root2 = parentFiber.stateNode;
-                              root2.effectDuration += effectDuration;
-                              break outer;
-                            case Profiler:
-                              var parentStateNode = parentFiber.stateNode;
-                              parentStateNode.effectDuration += effectDuration;
-                              break outer;
-                          }
-                          parentFiber = parentFiber.return;
+                      outer: while (parentFiber !== null) {
+                        switch (parentFiber.tag) {
+                          case HostRoot:
+                            var root2 = parentFiber.stateNode;
+                            root2.effectDuration += effectDuration;
+                            break outer;
+                          case Profiler:
+                            var parentStateNode = parentFiber.stateNode;
+                            parentStateNode.effectDuration += effectDuration;
+                            break outer;
                         }
+                        parentFiber = parentFiber.return;
+                      }
                     }
                   }
                   break;
@@ -19162,8 +19139,7 @@
                       captureCommitPhaseError(finishedWork, finishedWork.return, error2);
                     }
                   }
-                } else if ((node.tag === OffscreenComponent || node.tag === LegacyHiddenComponent) && node.memoizedState !== null && node !== finishedWork)
-                  ;
+                } else if ((node.tag === OffscreenComponent || node.tag === LegacyHiddenComponent) && node.memoizedState !== null && node !== finishedWork) ;
                 else if (node.child !== null) {
                   node.child.return = node;
                   node = node.child;
@@ -19281,31 +19257,30 @@
           }
           function getHostSibling(fiber) {
             var node = fiber;
-            siblings:
-              while (true) {
-                while (node.sibling === null) {
-                  if (node.return === null || isHostParent(node.return)) {
-                    return null;
-                  }
-                  node = node.return;
+            siblings: while (true) {
+              while (node.sibling === null) {
+                if (node.return === null || isHostParent(node.return)) {
+                  return null;
                 }
-                node.sibling.return = node.return;
-                node = node.sibling;
-                while (node.tag !== HostComponent && node.tag !== HostText && node.tag !== DehydratedFragment) {
-                  if (node.flags & Placement) {
-                    continue siblings;
-                  }
-                  if (node.child === null || node.tag === HostPortal) {
-                    continue siblings;
-                  } else {
-                    node.child.return = node;
-                    node = node.child;
-                  }
+                node = node.return;
+              }
+              node.sibling.return = node.return;
+              node = node.sibling;
+              while (node.tag !== HostComponent && node.tag !== HostText && node.tag !== DehydratedFragment) {
+                if (node.flags & Placement) {
+                  continue siblings;
                 }
-                if (!(node.flags & Placement)) {
-                  return node.stateNode;
+                if (node.child === null || node.tag === HostPortal) {
+                  continue siblings;
+                } else {
+                  node.child.return = node;
+                  node = node.child;
                 }
               }
+              if (!(node.flags & Placement)) {
+                return node.stateNode;
+              }
+            }
           }
           function commitPlacement(finishedWork) {
             var parentFiber = getHostParentFiber(finishedWork);
@@ -19341,8 +19316,7 @@
               } else {
                 appendChildToContainer(parent, stateNode);
               }
-            } else if (tag2 === HostPortal)
-              ;
+            } else if (tag2 === HostPortal) ;
             else {
               var child = node.child;
               if (child !== null) {
@@ -19365,8 +19339,7 @@
               } else {
                 appendChild(parent, stateNode);
               }
-            } else if (tag2 === HostPortal)
-              ;
+            } else if (tag2 === HostPortal) ;
             else {
               var child = node.child;
               if (child !== null) {
@@ -19384,27 +19357,26 @@
           function commitDeletionEffects(root2, returnFiber, deletedFiber) {
             {
               var parent = returnFiber;
-              findParent:
-                while (parent !== null) {
-                  switch (parent.tag) {
-                    case HostComponent: {
-                      hostParent = parent.stateNode;
-                      hostParentIsContainer = false;
-                      break findParent;
-                    }
-                    case HostRoot: {
-                      hostParent = parent.stateNode.containerInfo;
-                      hostParentIsContainer = true;
-                      break findParent;
-                    }
-                    case HostPortal: {
-                      hostParent = parent.stateNode.containerInfo;
-                      hostParentIsContainer = true;
-                      break findParent;
-                    }
+              findParent: while (parent !== null) {
+                switch (parent.tag) {
+                  case HostComponent: {
+                    hostParent = parent.stateNode;
+                    hostParentIsContainer = false;
+                    break findParent;
                   }
-                  parent = parent.return;
+                  case HostRoot: {
+                    hostParent = parent.stateNode.containerInfo;
+                    hostParentIsContainer = true;
+                    break findParent;
+                  }
+                  case HostPortal: {
+                    hostParent = parent.stateNode.containerInfo;
+                    hostParentIsContainer = true;
+                    break findParent;
+                  }
                 }
+                parent = parent.return;
+              }
               if (hostParent === null) {
                 throw new Error("Expected to find a host parent. This error is likely caused by a bug in React. Please file an issue.");
               }
@@ -22316,67 +22288,66 @@
             } else if (typeof type === "string") {
               fiberTag = HostComponent;
             } else {
-              getTag:
-                switch (type) {
-                  case REACT_FRAGMENT_TYPE:
-                    return createFiberFromFragment(pendingProps.children, mode, lanes, key);
-                  case REACT_STRICT_MODE_TYPE:
-                    fiberTag = Mode;
-                    mode |= StrictLegacyMode;
-                    if ((mode & ConcurrentMode) !== NoMode) {
-                      mode |= StrictEffectsMode;
-                    }
-                    break;
-                  case REACT_PROFILER_TYPE:
-                    return createFiberFromProfiler(pendingProps, mode, lanes, key);
-                  case REACT_SUSPENSE_TYPE:
-                    return createFiberFromSuspense(pendingProps, mode, lanes, key);
-                  case REACT_SUSPENSE_LIST_TYPE:
-                    return createFiberFromSuspenseList(pendingProps, mode, lanes, key);
-                  case REACT_OFFSCREEN_TYPE:
-                    return createFiberFromOffscreen(pendingProps, mode, lanes, key);
-                  case REACT_LEGACY_HIDDEN_TYPE:
-                  case REACT_SCOPE_TYPE:
-                  case REACT_CACHE_TYPE:
-                  case REACT_TRACING_MARKER_TYPE:
-                  case REACT_DEBUG_TRACING_MODE_TYPE:
-                  default: {
-                    if (typeof type === "object" && type !== null) {
-                      switch (type.$$typeof) {
-                        case REACT_PROVIDER_TYPE:
-                          fiberTag = ContextProvider;
-                          break getTag;
-                        case REACT_CONTEXT_TYPE:
-                          fiberTag = ContextConsumer;
-                          break getTag;
-                        case REACT_FORWARD_REF_TYPE:
-                          fiberTag = ForwardRef;
-                          {
-                            resolvedType = resolveForwardRefForHotReloading(resolvedType);
-                          }
-                          break getTag;
-                        case REACT_MEMO_TYPE:
-                          fiberTag = MemoComponent;
-                          break getTag;
-                        case REACT_LAZY_TYPE:
-                          fiberTag = LazyComponent;
-                          resolvedType = null;
-                          break getTag;
-                      }
-                    }
-                    var info = "";
-                    {
-                      if (type === void 0 || typeof type === "object" && type !== null && Object.keys(type).length === 0) {
-                        info += " You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.";
-                      }
-                      var ownerName = owner ? getComponentNameFromFiber(owner) : null;
-                      if (ownerName) {
-                        info += "\n\nCheck the render method of `" + ownerName + "`.";
-                      }
-                    }
-                    throw new Error("Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) " + ("but got: " + (type == null ? type : typeof type) + "." + info));
+              getTag: switch (type) {
+                case REACT_FRAGMENT_TYPE:
+                  return createFiberFromFragment(pendingProps.children, mode, lanes, key);
+                case REACT_STRICT_MODE_TYPE:
+                  fiberTag = Mode;
+                  mode |= StrictLegacyMode;
+                  if ((mode & ConcurrentMode) !== NoMode) {
+                    mode |= StrictEffectsMode;
                   }
+                  break;
+                case REACT_PROFILER_TYPE:
+                  return createFiberFromProfiler(pendingProps, mode, lanes, key);
+                case REACT_SUSPENSE_TYPE:
+                  return createFiberFromSuspense(pendingProps, mode, lanes, key);
+                case REACT_SUSPENSE_LIST_TYPE:
+                  return createFiberFromSuspenseList(pendingProps, mode, lanes, key);
+                case REACT_OFFSCREEN_TYPE:
+                  return createFiberFromOffscreen(pendingProps, mode, lanes, key);
+                case REACT_LEGACY_HIDDEN_TYPE:
+                case REACT_SCOPE_TYPE:
+                case REACT_CACHE_TYPE:
+                case REACT_TRACING_MARKER_TYPE:
+                case REACT_DEBUG_TRACING_MODE_TYPE:
+                default: {
+                  if (typeof type === "object" && type !== null) {
+                    switch (type.$$typeof) {
+                      case REACT_PROVIDER_TYPE:
+                        fiberTag = ContextProvider;
+                        break getTag;
+                      case REACT_CONTEXT_TYPE:
+                        fiberTag = ContextConsumer;
+                        break getTag;
+                      case REACT_FORWARD_REF_TYPE:
+                        fiberTag = ForwardRef;
+                        {
+                          resolvedType = resolveForwardRefForHotReloading(resolvedType);
+                        }
+                        break getTag;
+                      case REACT_MEMO_TYPE:
+                        fiberTag = MemoComponent;
+                        break getTag;
+                      case REACT_LAZY_TYPE:
+                        fiberTag = LazyComponent;
+                        resolvedType = null;
+                        break getTag;
+                    }
+                  }
+                  var info = "";
+                  {
+                    if (type === void 0 || typeof type === "object" && type !== null && Object.keys(type).length === 0) {
+                      info += " You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.";
+                    }
+                    var ownerName = owner ? getComponentNameFromFiber(owner) : null;
+                    if (ownerName) {
+                      info += "\n\nCheck the render method of `" + ownerName + "`.";
+                    }
+                  }
+                  throw new Error("Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) " + ("but got: " + (type == null ? type : typeof type) + "." + info));
                 }
+              }
             }
             var fiber = createFiber(fiberTag, pendingProps, key, mode);
             fiber.elementType = type;
@@ -23649,8 +23620,7 @@
     "node_modules/entities/lib/decode.js"(exports) {
       "use strict";
       var __createBinding = exports && exports.__createBinding || (Object.create ? function(o, m, k, k2) {
-        if (k2 === void 0)
-          k2 = k;
+        if (k2 === void 0) k2 = k;
         var desc = Object.getOwnPropertyDescriptor(m, k);
         if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
           desc = { enumerable: true, get: function() {
@@ -23659,8 +23629,7 @@
         }
         Object.defineProperty(o, k2, desc);
       } : function(o, m, k, k2) {
-        if (k2 === void 0)
-          k2 = k;
+        if (k2 === void 0) k2 = k;
         o[k2] = m[k];
       });
       var __setModuleDefault = exports && exports.__setModuleDefault || (Object.create ? function(o, v) {
@@ -23669,13 +23638,10 @@
         o["default"] = v;
       });
       var __importStar = exports && exports.__importStar || function(mod) {
-        if (mod && mod.__esModule)
-          return mod;
+        if (mod && mod.__esModule) return mod;
         var result = {};
         if (mod != null) {
-          for (var k in mod)
-            if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k))
-              __createBinding(result, mod, k);
+          for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
         }
         __setModuleDefault(result, mod);
         return result;
@@ -24686,8 +24652,7 @@
     "node_modules/htmlparser2/lib/Parser.js"(exports) {
       "use strict";
       var __createBinding = exports && exports.__createBinding || (Object.create ? function(o, m, k, k2) {
-        if (k2 === void 0)
-          k2 = k;
+        if (k2 === void 0) k2 = k;
         var desc = Object.getOwnPropertyDescriptor(m, k);
         if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
           desc = { enumerable: true, get: function() {
@@ -24696,8 +24661,7 @@
         }
         Object.defineProperty(o, k2, desc);
       } : function(o, m, k, k2) {
-        if (k2 === void 0)
-          k2 = k;
+        if (k2 === void 0) k2 = k;
         o[k2] = m[k];
       });
       var __setModuleDefault = exports && exports.__setModuleDefault || (Object.create ? function(o, v) {
@@ -24706,13 +24670,10 @@
         o["default"] = v;
       });
       var __importStar = exports && exports.__importStar || function(mod) {
-        if (mod && mod.__esModule)
-          return mod;
+        if (mod && mod.__esModule) return mod;
         var result = {};
         if (mod != null) {
-          for (var k in mod)
-            if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k))
-              __createBinding(result, mod, k);
+          for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
         }
         __setModuleDefault(result, mod);
         return result;
@@ -25164,9 +25125,7 @@
           extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
             d2.__proto__ = b2;
           } || function(d2, b2) {
-            for (var p in b2)
-              if (Object.prototype.hasOwnProperty.call(b2, p))
-                d2[p] = b2[p];
+            for (var p in b2) if (Object.prototype.hasOwnProperty.call(b2, p)) d2[p] = b2[p];
           };
           return extendStatics(d, b);
         };
@@ -25184,9 +25143,8 @@
         __assign = Object.assign || function(t) {
           for (var s, i = 1, n = arguments.length; i < n; i++) {
             s = arguments[i];
-            for (var p in s)
-              if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+              t[p] = s[p];
           }
           return t;
         };
@@ -25597,8 +25555,7 @@
     "node_modules/domhandler/lib/index.js"(exports) {
       "use strict";
       var __createBinding = exports && exports.__createBinding || (Object.create ? function(o, m, k, k2) {
-        if (k2 === void 0)
-          k2 = k;
+        if (k2 === void 0) k2 = k;
         var desc = Object.getOwnPropertyDescriptor(m, k);
         if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
           desc = { enumerable: true, get: function() {
@@ -25607,14 +25564,11 @@
         }
         Object.defineProperty(o, k2, desc);
       } : function(o, m, k, k2) {
-        if (k2 === void 0)
-          k2 = k;
+        if (k2 === void 0) k2 = k;
         o[k2] = m[k];
       });
       var __exportStar = exports && exports.__exportStar || function(m, exports2) {
-        for (var p in m)
-          if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports2, p))
-            __createBinding(exports2, m, p);
+        for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports2, p)) __createBinding(exports2, m, p);
       };
       Object.defineProperty(exports, "__esModule", { value: true });
       exports.DomHandler = void 0;
@@ -26149,17 +26103,15 @@
         __assign = Object.assign || function(t) {
           for (var s, i = 1, n = arguments.length; i < n; i++) {
             s = arguments[i];
-            for (var p in s)
-              if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+              t[p] = s[p];
           }
           return t;
         };
         return __assign.apply(this, arguments);
       };
       var __createBinding = exports && exports.__createBinding || (Object.create ? function(o, m, k, k2) {
-        if (k2 === void 0)
-          k2 = k;
+        if (k2 === void 0) k2 = k;
         var desc = Object.getOwnPropertyDescriptor(m, k);
         if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
           desc = { enumerable: true, get: function() {
@@ -26168,8 +26120,7 @@
         }
         Object.defineProperty(o, k2, desc);
       } : function(o, m, k, k2) {
-        if (k2 === void 0)
-          k2 = k;
+        if (k2 === void 0) k2 = k;
         o[k2] = m[k];
       });
       var __setModuleDefault = exports && exports.__setModuleDefault || (Object.create ? function(o, v) {
@@ -26178,13 +26129,10 @@
         o["default"] = v;
       });
       var __importStar = exports && exports.__importStar || function(mod) {
-        if (mod && mod.__esModule)
-          return mod;
+        if (mod && mod.__esModule) return mod;
         var result = {};
         if (mod != null) {
-          for (var k in mod)
-            if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k))
-              __createBinding(result, mod, k);
+          for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
         }
         __setModuleDefault(result, mod);
         return result;
@@ -27020,8 +26968,7 @@
     "node_modules/domutils/lib/index.js"(exports) {
       "use strict";
       var __createBinding = exports && exports.__createBinding || (Object.create ? function(o, m, k, k2) {
-        if (k2 === void 0)
-          k2 = k;
+        if (k2 === void 0) k2 = k;
         var desc = Object.getOwnPropertyDescriptor(m, k);
         if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
           desc = { enumerable: true, get: function() {
@@ -27030,14 +26977,11 @@
         }
         Object.defineProperty(o, k2, desc);
       } : function(o, m, k, k2) {
-        if (k2 === void 0)
-          k2 = k;
+        if (k2 === void 0) k2 = k;
         o[k2] = m[k];
       });
       var __exportStar = exports && exports.__exportStar || function(m, exports2) {
-        for (var p in m)
-          if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports2, p))
-            __createBinding(exports2, m, p);
+        for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports2, p)) __createBinding(exports2, m, p);
       };
       Object.defineProperty(exports, "__esModule", { value: true });
       exports.hasChildren = exports.isDocument = exports.isComment = exports.isText = exports.isCDATA = exports.isTag = void 0;
@@ -27075,8 +27019,7 @@
     "node_modules/htmlparser2/lib/index.js"(exports) {
       "use strict";
       var __createBinding = exports && exports.__createBinding || (Object.create ? function(o, m, k, k2) {
-        if (k2 === void 0)
-          k2 = k;
+        if (k2 === void 0) k2 = k;
         var desc = Object.getOwnPropertyDescriptor(m, k);
         if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
           desc = { enumerable: true, get: function() {
@@ -27085,8 +27028,7 @@
         }
         Object.defineProperty(o, k2, desc);
       } : function(o, m, k, k2) {
-        if (k2 === void 0)
-          k2 = k;
+        if (k2 === void 0) k2 = k;
         o[k2] = m[k];
       });
       var __setModuleDefault = exports && exports.__setModuleDefault || (Object.create ? function(o, v) {
@@ -27095,13 +27037,10 @@
         o["default"] = v;
       });
       var __importStar = exports && exports.__importStar || function(mod) {
-        if (mod && mod.__esModule)
-          return mod;
+        if (mod && mod.__esModule) return mod;
         var result = {};
         if (mod != null) {
-          for (var k in mod)
-            if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k))
-              __createBinding(result, mod, k);
+          for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
         }
         __setModuleDefault(result, mod);
         return result;
@@ -27176,7 +27115,7 @@
     "node_modules/html-dom-parser/lib/server/utilities.js"(exports) {
       "use strict";
       Object.defineProperty(exports, "__esModule", { value: true });
-      exports.unsetRootParent = void 0;
+      exports.unsetRootParent = unsetRootParent;
       function unsetRootParent(nodes) {
         var index = 0;
         var nodesLength = nodes.length;
@@ -27186,7 +27125,6 @@
         }
         return nodes;
       }
-      exports.unsetRootParent = unsetRootParent;
     }
   });
 
@@ -27195,6 +27133,7 @@
     "node_modules/html-dom-parser/lib/server/html-to-dom.js"(exports) {
       "use strict";
       Object.defineProperty(exports, "__esModule", { value: true });
+      exports.default = HTMLDOMParser;
       var htmlparser2_1 = require_lib6();
       var domhandler_1 = require_lib2();
       var utilities_1 = require_utilities();
@@ -27209,7 +27148,6 @@
         new htmlparser2_1.Parser(handler, options2).end(html2);
         return (0, utilities_1.unsetRootParent)(handler.dom);
       }
-      exports.default = HTMLDOMParser;
     }
   });
 
@@ -27226,8 +27164,7 @@
     "node_modules/html-dom-parser/lib/index.js"(exports) {
       "use strict";
       var __createBinding = exports && exports.__createBinding || (Object.create ? function(o, m, k, k2) {
-        if (k2 === void 0)
-          k2 = k;
+        if (k2 === void 0) k2 = k;
         var desc = Object.getOwnPropertyDescriptor(m, k);
         if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
           desc = { enumerable: true, get: function() {
@@ -27236,14 +27173,11 @@
         }
         Object.defineProperty(o, k2, desc);
       } : function(o, m, k, k2) {
-        if (k2 === void 0)
-          k2 = k;
+        if (k2 === void 0) k2 = k;
         o[k2] = m[k];
       });
       var __exportStar = exports && exports.__exportStar || function(m, exports2) {
-        for (var p in m)
-          if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports2, p))
-            __createBinding(exports2, m, p);
+        for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports2, p)) __createBinding(exports2, m, p);
       };
       var __importDefault = exports && exports.__importDefault || function(mod) {
         return mod && mod.__esModule ? mod : { "default": mod };
@@ -28241,15 +28175,13 @@
         if (typeof style !== "string") {
           throw new TypeError("First argument must be a string");
         }
-        if (!style)
-          return [];
+        if (!style) return [];
         options2 = options2 || {};
         var lineno = 1;
         var column = 1;
         function updatePosition(str) {
           var lines = str.match(NEWLINE_REGEX);
-          if (lines)
-            lineno += lines.length;
+          if (lines) lineno += lines.length;
           var i = str.lastIndexOf(NEWLINE);
           column = ~i ? str.length - i : column + str.length;
         }
@@ -28285,8 +28217,7 @@
         }
         function match(re) {
           var m = re.exec(style);
-          if (!m)
-            return;
+          if (!m) return;
           var str = m[0];
           updatePosition(str);
           style = style.slice(str.length);
@@ -28307,8 +28238,7 @@
         }
         function comment() {
           var pos = position();
-          if (FORWARD_SLASH != style.charAt(0) || ASTERISK != style.charAt(1))
-            return;
+          if (FORWARD_SLASH != style.charAt(0) || ASTERISK != style.charAt(1)) return;
           var i = 2;
           while (EMPTY_STRING != style.charAt(i) && (ASTERISK != style.charAt(i) || FORWARD_SLASH != style.charAt(i + 1))) {
             ++i;
@@ -28330,11 +28260,9 @@
         function declaration() {
           var pos = position();
           var prop = match(PROPERTY_REGEX);
-          if (!prop)
-            return;
+          if (!prop) return;
           comment();
-          if (!match(COLON_REGEX))
-            return error("property missing ':'");
+          if (!match(COLON_REGEX)) return error("property missing ':'");
           var val = match(VALUE_REGEX);
           var ret = pos({
             type: TYPE_DECLARATION,
@@ -28472,7 +28400,9 @@
         return mod && mod.__esModule ? mod : { "default": mod };
       };
       Object.defineProperty(exports, "__esModule", { value: true });
-      exports.returnFirstArg = exports.canTextBeChildOfNode = exports.ELEMENTS_WITH_NO_TEXT_CHILDREN = exports.PRESERVE_CUSTOM_ATTRIBUTES = exports.setStyleProp = exports.isCustomComponent = void 0;
+      exports.returnFirstArg = exports.canTextBeChildOfNode = exports.ELEMENTS_WITH_NO_TEXT_CHILDREN = exports.PRESERVE_CUSTOM_ATTRIBUTES = void 0;
+      exports.isCustomComponent = isCustomComponent;
+      exports.setStyleProp = setStyleProp;
       var react_1 = require_react();
       var style_to_js_1 = __importDefault(require_cjs2());
       var RESERVED_SVG_MATHML_ELEMENTS = /* @__PURE__ */ new Set([
@@ -28494,7 +28424,6 @@
         }
         return true;
       }
-      exports.isCustomComponent = isCustomComponent;
       var styleOptions = {
         reactCompat: true
       };
@@ -28512,7 +28441,6 @@
           props.style = {};
         }
       }
-      exports.setStyleProp = setStyleProp;
       exports.PRESERVE_CUSTOM_ATTRIBUTES = Number(react_1.version.split(".")[0]) >= 16;
       exports.ELEMENTS_WITH_NO_TEXT_CHILDREN = /* @__PURE__ */ new Set([
         "tr",
@@ -28541,6 +28469,7 @@
     "node_modules/html-react-parser/lib/attributes-to-props.js"(exports) {
       "use strict";
       Object.defineProperty(exports, "__esModule", { value: true });
+      exports.default = attributesToProps2;
       var react_property_1 = require_lib8();
       var utilities_1 = require_utilities3();
       var UNCONTROLLED_COMPONENT_ATTRIBUTES = ["checked", "value"];
@@ -28588,7 +28517,6 @@
         (0, utilities_1.setStyleProp)(attributes.style, props);
         return props;
       }
-      exports.default = attributesToProps2;
       function getPropName(attributeName) {
         return react_property_1.possibleStandardNames[attributeName];
       }
@@ -28603,6 +28531,7 @@
         return mod && mod.__esModule ? mod : { "default": mod };
       };
       Object.defineProperty(exports, "__esModule", { value: true });
+      exports.default = domToReact2;
       var react_1 = require_react();
       var attributes_to_props_1 = __importDefault(require_attributes_to_props());
       var utilities_1 = require_utilities3();
@@ -28680,7 +28609,6 @@
         }
         return reactElements.length === 1 ? reactElements[0] : reactElements;
       }
-      exports.default = domToReact2;
       function skipAttributesToProps(node) {
         return utilities_1.PRESERVE_CUSTOM_ATTRIBUTES && node.type === "tag" && (0, utilities_1.isCustomComponent)(node.name, node.attribs);
       }
@@ -28696,6 +28624,7 @@
       };
       Object.defineProperty(exports, "__esModule", { value: true });
       exports.htmlToDOM = exports.domToReact = exports.attributesToProps = exports.Text = exports.ProcessingInstruction = exports.Element = exports.Comment = void 0;
+      exports.default = HTMLReactParser2;
       var html_dom_parser_1 = __importDefault(require_lib7());
       exports.htmlToDOM = html_dom_parser_1.default;
       var attributes_to_props_1 = __importDefault(require_attributes_to_props());
@@ -28725,7 +28654,6 @@
         }
         return (0, dom_to_react_1.default)((0, html_dom_parser_1.default)(html2, (options2 === null || options2 === void 0 ? void 0 : options2.htmlparser2) || domParserOptions), options2);
       }
-      exports.default = HTMLReactParser2;
     }
   });
 
@@ -28809,7 +28737,7 @@
   function cleanUrl(href) {
     try {
       href = encodeURI(href).replace(/%25/g, "%");
-    } catch (e) {
+    } catch {
       return null;
     }
     return href;
@@ -29083,11 +29011,11 @@ ${currentText}` : currentText;
           bull = isordered ? bull : "[*+-]";
         }
         const itemRegex = new RegExp(`^( {0,3}${bull})((?:[	 ][^\\n]*)?(?:\\n|$))`);
-        let raw = "";
-        let itemContents = "";
         let endsWithBlankLine = false;
         while (src) {
           let endEarly = false;
+          let raw = "";
+          let itemContents = "";
           if (!(cap = itemRegex.exec(src))) {
             break;
           }
@@ -29098,18 +29026,20 @@ ${currentText}` : currentText;
           src = src.substring(raw.length);
           let line = cap[2].split("\n", 1)[0].replace(/^\t+/, (t) => " ".repeat(3 * t.length));
           let nextLine = src.split("\n", 1)[0];
+          let blankLine = !line.trim();
           let indent = 0;
           if (this.options.pedantic) {
             indent = 2;
             itemContents = line.trimStart();
+          } else if (blankLine) {
+            indent = cap[1].length + 1;
           } else {
             indent = cap[2].search(/[^ ]/);
             indent = indent > 4 ? 1 : indent;
             itemContents = line.slice(indent);
             indent += cap[1].length;
           }
-          let blankLine = false;
-          if (!line && /^ *$/.test(nextLine)) {
+          if (blankLine && /^ *$/.test(nextLine)) {
             raw += nextLine + "\n";
             src = src.substring(nextLine.length + 1);
             endEarly = true;
@@ -29192,8 +29122,8 @@ ${currentText}` : currentText;
           });
           list2.raw += raw;
         }
-        list2.items[list2.items.length - 1].raw = raw.trimEnd();
-        list2.items[list2.items.length - 1].text = itemContents.trimEnd();
+        list2.items[list2.items.length - 1].raw = list2.items[list2.items.length - 1].raw.trimEnd();
+        list2.items[list2.items.length - 1].text = list2.items[list2.items.length - 1].text.trimEnd();
         list2.raw = list2.raw.trimEnd();
         for (let i = 0; i < list2.items.length; i++) {
           this.lexer.state.top = false;
@@ -30603,11 +30533,11 @@ ${text}</tr>
             }
             const rendererProp = prop;
             let rendererFunc = pack.renderer[rendererProp];
+            if (!pack.useNewRenderer) {
+              rendererFunc = this.#convertRendererFunction(rendererFunc, rendererProp, renderer);
+            }
             const prevRenderer = renderer[rendererProp];
             renderer[rendererProp] = (...args2) => {
-              if (!pack.useNewRenderer) {
-                rendererFunc = this.#convertRendererFunction(rendererFunc, rendererProp, renderer);
-              }
               let ret = rendererFunc.apply(renderer, args2);
               if (ret === false) {
                 ret = prevRenderer.apply(renderer, args2);
@@ -30697,14 +30627,14 @@ ${text}</tr>
             if (!token.type || token.type !== prop) {
               return func.apply(this, arguments);
             }
-            return func(renderer.parser.parseInline(token.tokens), token.depth, unescape(renderer.parser.parseInline(token.tokens, renderer.parser.textRenderer)));
+            return func.call(this, renderer.parser.parseInline(token.tokens), token.depth, unescape(renderer.parser.parseInline(token.tokens, renderer.parser.textRenderer)));
           };
         case "code":
           return function(token) {
             if (!token.type || token.type !== prop) {
               return func.apply(this, arguments);
             }
-            return func(token.text, token.lang, !!token.escaped);
+            return func.call(this, token.text, token.lang, !!token.escaped);
           };
         case "table":
           return function(token) {
@@ -30736,7 +30666,7 @@ ${text}</tr>
               }
               body += this.tablerow({ text: cell });
             }
-            return func(header, body);
+            return func.call(this, header, body);
           };
         case "blockquote":
           return function(token) {
@@ -30744,7 +30674,7 @@ ${text}</tr>
               return func.apply(this, arguments);
             }
             const body = this.parser.parse(token.tokens);
-            return func(body);
+            return func.call(this, body);
           };
         case "list":
           return function(token) {
@@ -30789,77 +30719,77 @@ ${text}</tr>
                 tokens: item.tokens
               });
             }
-            return func(body, ordered, start);
+            return func.call(this, body, ordered, start);
           };
         case "html":
           return function(token) {
             if (!token.type || token.type !== prop) {
               return func.apply(this, arguments);
             }
-            return func(token.text, token.block);
+            return func.call(this, token.text, token.block);
           };
         case "paragraph":
           return function(token) {
             if (!token.type || token.type !== prop) {
               return func.apply(this, arguments);
             }
-            return func(this.parser.parseInline(token.tokens));
+            return func.call(this, this.parser.parseInline(token.tokens));
           };
         case "escape":
           return function(token) {
             if (!token.type || token.type !== prop) {
               return func.apply(this, arguments);
             }
-            return func(token.text);
+            return func.call(this, token.text);
           };
         case "link":
           return function(token) {
             if (!token.type || token.type !== prop) {
               return func.apply(this, arguments);
             }
-            return func(token.href, token.title, this.parser.parseInline(token.tokens));
+            return func.call(this, token.href, token.title, this.parser.parseInline(token.tokens));
           };
         case "image":
           return function(token) {
             if (!token.type || token.type !== prop) {
               return func.apply(this, arguments);
             }
-            return func(token.href, token.title, token.text);
+            return func.call(this, token.href, token.title, token.text);
           };
         case "strong":
           return function(token) {
             if (!token.type || token.type !== prop) {
               return func.apply(this, arguments);
             }
-            return func(this.parser.parseInline(token.tokens));
+            return func.call(this, this.parser.parseInline(token.tokens));
           };
         case "em":
           return function(token) {
             if (!token.type || token.type !== prop) {
               return func.apply(this, arguments);
             }
-            return func(this.parser.parseInline(token.tokens));
+            return func.call(this, this.parser.parseInline(token.tokens));
           };
         case "codespan":
           return function(token) {
             if (!token.type || token.type !== prop) {
               return func.apply(this, arguments);
             }
-            return func(token.text);
+            return func.call(this, token.text);
           };
         case "del":
           return function(token) {
             if (!token.type || token.type !== prop) {
               return func.apply(this, arguments);
             }
-            return func(this.parser.parseInline(token.tokens));
+            return func.call(this, this.parser.parseInline(token.tokens));
           };
         case "text":
           return function(token) {
             if (!token.type || token.type !== prop) {
               return func.apply(this, arguments);
             }
-            return func(token.text);
+            return func.call(this, token.text);
           };
       }
       return func;

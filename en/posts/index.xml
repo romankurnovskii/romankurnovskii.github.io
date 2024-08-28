@@ -2911,7 +2911,7 @@ loading="lazy"
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// Modules, &amp;#34;.&amp;#34; can be used as separator for sub modules
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>&lt;span style="color:#007020;font-weight:bold">module&lt;/span> Geometry {
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>module Geometry {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">export&lt;/span> &lt;span style="color:#007020;font-weight:bold">class&lt;/span> Square {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">constructor&lt;/span>(&lt;span style="color:#007020;font-weight:bold">public&lt;/span> sideLength: &lt;span style="color:#902000">number&lt;/span> &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>) {
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
