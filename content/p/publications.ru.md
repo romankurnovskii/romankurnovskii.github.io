@@ -26,7 +26,7 @@ publications:
 - title: Изменение настроения инвесторов и сотрудников в ИТ-индустрии Израиля в контексте внедряемой судебной реформы
   authors: "Курновский Р.М."
   journal: "Вопросы политологии / ВАК. Том 13. № 10-2 (98-2), 2023 г. Страницы: 5493-5503"
-  journalLink: https://elibrary.ru/title_about_new.asp?id=33245
+  journalLink: https://elibrary.ru/item.asp?id=56005245
   pdfLink: /articles/2023-12-investor-and-employee-sentiment-changes-in-israel’s-it-industry-in-light-of-the-implemented-judicial-reform.pdf
   researchGateLink: NA
   ssrnLink: NA
@@ -46,7 +46,7 @@ publications:
 - title: Особенности региональной политики и экономические интеграции Израиля
   authors: "Курновский Р.М."
   journal: "Наука и бизнес: пути развития / ВАК. Номер: 1 (139) 2023 г. Страницы: 141-143"
-  journalLink: NA
+  journalLink: https://elibrary.ru/item.asp?id=50430997
   pdfLink: /articles/2023-01-osobennosti-regionalnoi-politiki-i-ekonomicheskie-integracii-izrailya.pdf
   researchGateLink: NA
   ssrnLink: NA
