@@ -36,7 +36,7 @@ publications:
 - title: "Цепочка создания стоимости: содержание, элементы и возможности ее использования"
   authors: "Курновский Р.М., Великородная Е. А."
   journal: "Экономика и предпринимательство / ВАК. Номер 8, 2023 г. Страницы: 241-245"
-  journalLink: https://www.elibrary.ru/title_about_new.asp?id=27783
+  journalLink: https://www.elibrary.ru/item.asp?id=54711450
   pdfLink: /articles/2023-10-tsepochka-sozdaniya-stoimosti-soderzhanie-elementy-i-vozmozhnosti-ee-ispolzovaniya.pdf
   researchGateLink: NA
   ssrnLink: NA
