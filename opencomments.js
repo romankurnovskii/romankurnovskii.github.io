@@ -28705,18 +28705,6 @@
     }
     return html2;
   }
-  var unescapeTest = /&(#(?:\d+)|(?:#x[0-9A-Fa-f]+)|(?:\w+));?/ig;
-  function unescape(html2) {
-    return html2.replace(unescapeTest, (_, n) => {
-      n = n.toLowerCase();
-      if (n === "colon")
-        return ":";
-      if (n.charAt(0) === "#") {
-        return n.charAt(1) === "x" ? String.fromCharCode(parseInt(n.substring(2), 16)) : String.fromCharCode(+n.substring(1));
-      }
-      return "";
-    });
-  }
   var caret = /(^|[^\[])\^/g;
   function edit(regex, opt) {
     let source = typeof regex === "string" ? regex : regex.source;
@@ -30385,6 +30373,7 @@ ${text}</tr>
   };
   var _Hooks = class {
     options;
+    block;
     constructor(options2) {
       this.options = options2 || _defaults;
     }
@@ -30411,12 +30400,24 @@ ${text}</tr>
     processAllTokens(tokens) {
       return tokens;
     }
+    /**
+     * Provide function to tokenize markdown
+     */
+    provideLexer() {
+      return this.block ? _Lexer.lex : _Lexer.lexInline;
+    }
+    /**
+     * Provide function to parse tokens
+     */
+    provideParser() {
+      return this.block ? _Parser.parse : _Parser.parseInline;
+    }
   };
   var Marked = class {
     defaults = _getDefaults();
     options = this.setOptions;
-    parse = this.#parseMarkdown(_Lexer.lex, _Parser.parse);
-    parseInline = this.#parseMarkdown(_Lexer.lexInline, _Parser.parseInline);
+    parse = this.parseMarkdown(true);
+    parseInline = this.parseMarkdown(false);
     Parser = _Parser;
     Renderer = _Renderer;
     TextRenderer = _TextRenderer;
@@ -30532,10 +30533,7 @@ ${text}</tr>
               continue;
             }
             const rendererProp = prop;
-            let rendererFunc = pack.renderer[rendererProp];
-            if (!pack.useNewRenderer) {
-              rendererFunc = this.#convertRendererFunction(rendererFunc, rendererProp, renderer);
-            }
+            const rendererFunc = pack.renderer[rendererProp];
             const prevRenderer = renderer[rendererProp];
             renderer[rendererProp] = (...args2) => {
               let ret = rendererFunc.apply(renderer, args2);
@@ -30575,7 +30573,7 @@ ${text}</tr>
             if (!(prop in hooks)) {
               throw new Error(`hook '${prop}' does not exist`);
             }
-            if (prop === "options") {
+            if (["options", "block"].includes(prop)) {
               continue;
             }
             const hooksProp = prop;
@@ -30619,181 +30617,6 @@ ${text}</tr>
       });
       return this;
     }
-    // TODO: Remove this in next major release
-    #convertRendererFunction(func, prop, renderer) {
-      switch (prop) {
-        case "heading":
-          return function(token) {
-            if (!token.type || token.type !== prop) {
-              return func.apply(this, arguments);
-            }
-            return func.call(this, renderer.parser.parseInline(token.tokens), token.depth, unescape(renderer.parser.parseInline(token.tokens, renderer.parser.textRenderer)));
-          };
-        case "code":
-          return function(token) {
-            if (!token.type || token.type !== prop) {
-              return func.apply(this, arguments);
-            }
-            return func.call(this, token.text, token.lang, !!token.escaped);
-          };
-        case "table":
-          return function(token) {
-            if (!token.type || token.type !== prop) {
-              return func.apply(this, arguments);
-            }
-            let header = "";
-            let cell = "";
-            for (let j = 0; j < token.header.length; j++) {
-              cell += this.tablecell({
-                text: token.header[j].text,
-                tokens: token.header[j].tokens,
-                header: true,
-                align: token.align[j]
-              });
-            }
-            header += this.tablerow({ text: cell });
-            let body = "";
-            for (let j = 0; j < token.rows.length; j++) {
-              const row = token.rows[j];
-              cell = "";
-              for (let k = 0; k < row.length; k++) {
-                cell += this.tablecell({
-                  text: row[k].text,
-                  tokens: row[k].tokens,
-                  header: false,
-                  align: token.align[k]
-                });
-              }
-              body += this.tablerow({ text: cell });
-            }
-            return func.call(this, header, body);
-          };
-        case "blockquote":
-          return function(token) {
-            if (!token.type || token.type !== prop) {
-              return func.apply(this, arguments);
-            }
-            const body = this.parser.parse(token.tokens);
-            return func.call(this, body);
-          };
-        case "list":
-          return function(token) {
-            if (!token.type || token.type !== prop) {
-              return func.apply(this, arguments);
-            }
-            const ordered = token.ordered;
-            const start = token.start;
-            const loose = token.loose;
-            let body = "";
-            for (let j = 0; j < token.items.length; j++) {
-              const item = token.items[j];
-              const checked = item.checked;
-              const task = item.task;
-              let itemBody = "";
-              if (item.task) {
-                const checkbox = this.checkbox({ checked: !!checked });
-                if (loose) {
-                  if (item.tokens.length > 0 && item.tokens[0].type === "paragraph") {
-                    item.tokens[0].text = checkbox + " " + item.tokens[0].text;
-                    if (item.tokens[0].tokens && item.tokens[0].tokens.length > 0 && item.tokens[0].tokens[0].type === "text") {
-                      item.tokens[0].tokens[0].text = checkbox + " " + item.tokens[0].tokens[0].text;
-                    }
-                  } else {
-                    item.tokens.unshift({
-                      type: "text",
-                      text: checkbox + " "
-                    });
-                  }
-                } else {
-                  itemBody += checkbox + " ";
-                }
-              }
-              itemBody += this.parser.parse(item.tokens, loose);
-              body += this.listitem({
-                type: "list_item",
-                raw: itemBody,
-                text: itemBody,
-                task,
-                checked: !!checked,
-                loose,
-                tokens: item.tokens
-              });
-            }
-            return func.call(this, body, ordered, start);
-          };
-        case "html":
-          return function(token) {
-            if (!token.type || token.type !== prop) {
-              return func.apply(this, arguments);
-            }
-            return func.call(this, token.text, token.block);
-          };
-        case "paragraph":
-          return function(token) {
-            if (!token.type || token.type !== prop) {
-              return func.apply(this, arguments);
-            }
-            return func.call(this, this.parser.parseInline(token.tokens));
-          };
-        case "escape":
-          return function(token) {
-            if (!token.type || token.type !== prop) {
-              return func.apply(this, arguments);
-            }
-            return func.call(this, token.text);
-          };
-        case "link":
-          return function(token) {
-            if (!token.type || token.type !== prop) {
-              return func.apply(this, arguments);
-            }
-            return func.call(this, token.href, token.title, this.parser.parseInline(token.tokens));
-          };
-        case "image":
-          return function(token) {
-            if (!token.type || token.type !== prop) {
-              return func.apply(this, arguments);
-            }
-            return func.call(this, token.href, token.title, token.text);
-          };
-        case "strong":
-          return function(token) {
-            if (!token.type || token.type !== prop) {
-              return func.apply(this, arguments);
-            }
-            return func.call(this, this.parser.parseInline(token.tokens));
-          };
-        case "em":
-          return function(token) {
-            if (!token.type || token.type !== prop) {
-              return func.apply(this, arguments);
-            }
-            return func.call(this, this.parser.parseInline(token.tokens));
-          };
-        case "codespan":
-          return function(token) {
-            if (!token.type || token.type !== prop) {
-              return func.apply(this, arguments);
-            }
-            return func.call(this, token.text);
-          };
-        case "del":
-          return function(token) {
-            if (!token.type || token.type !== prop) {
-              return func.apply(this, arguments);
-            }
-            return func.call(this, this.parser.parseInline(token.tokens));
-          };
-        case "text":
-          return function(token) {
-            if (!token.type || token.type !== prop) {
-              return func.apply(this, arguments);
-            }
-            return func.call(this, token.text);
-          };
-      }
-      return func;
-    }
     setOptions(opt) {
       this.defaults = { ...this.defaults, ...opt };
       return this;
@@ -30804,17 +30627,14 @@ ${text}</tr>
     parser(tokens, options2) {
       return _Parser.parse(tokens, options2 ?? this.defaults);
     }
-    #parseMarkdown(lexer2, parser2) {
-      return (src, options2) => {
+    parseMarkdown(blockType) {
+      const parse = (src, options2) => {
         const origOpt = { ...options2 };
         const opt = { ...this.defaults, ...origOpt };
+        const throwError = this.onError(!!opt.silent, !!opt.async);
         if (this.defaults.async === true && origOpt.async === false) {
-          if (!opt.silent) {
-            console.warn("marked(): The async option was set to true by an extension. The async: false option sent to parse will be ignored.");
-          }
-          opt.async = true;
+          return throwError(new Error("marked(): The async option was set to true by an extension. Remove async: false from the parse options object to return a Promise."));
         }
-        const throwError = this.#onError(!!opt.silent, !!opt.async);
         if (typeof src === "undefined" || src === null) {
           return throwError(new Error("marked(): input parameter is undefined or null"));
         }
@@ -30823,7 +30643,10 @@ ${text}</tr>
         }
         if (opt.hooks) {
           opt.hooks.options = opt;
+          opt.hooks.block = blockType;
         }
+        const lexer2 = opt.hooks ? opt.hooks.provideLexer() : blockType ? _Lexer.lex : _Lexer.lexInline;
+        const parser2 = opt.hooks ? opt.hooks.provideParser() : blockType ? _Parser.parse : _Parser.parseInline;
         if (opt.async) {
           return Promise.resolve(opt.hooks ? opt.hooks.preprocess(src) : src).then((src2) => lexer2(src2, opt)).then((tokens) => opt.hooks ? opt.hooks.processAllTokens(tokens) : tokens).then((tokens) => opt.walkTokens ? Promise.all(this.walkTokens(tokens, opt.walkTokens)).then(() => tokens) : tokens).then((tokens) => parser2(tokens, opt)).then((html2) => opt.hooks ? opt.hooks.postprocess(html2) : html2).catch(throwError);
         }
@@ -30847,8 +30670,9 @@ ${text}</tr>
           return throwError(e);
         }
       };
+      return parse;
     }
-    #onError(silent, async) {
+    onError(silent, async) {
       return (e) => {
         e.message += "\nPlease report this to https://github.com/markedjs/marked.";
         if (silent) {
