@@ -18,22 +18,22 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Type&lt;/th>
-&lt;th>Description&lt;/th>
+&lt;th style="text-align: left">Type&lt;/th>
+&lt;th style="text-align: left">Description&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>Application Load Balancer (ALB)&lt;/td>
-&lt;td>Operates at the Application Layer (OSI L7), handling HTTP/HTTPS traffic. Allows routing requests to specific web servers.&lt;/td>
+&lt;td style="text-align: left">Application Load Balancer (ALB)&lt;/td>
+&lt;td style="text-align: left">Operates at the Application Layer (OSI L7), handling HTTP/HTTPS traffic. Allows routing requests to specific web servers.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Network Load Balancer (NLB)&lt;/td>
-&lt;td>Operates at the Network Layer (OSI L4), handling TCP traffic. Recommended for performance.&lt;/td>
+&lt;td style="text-align: left">Network Load Balancer (NLB)&lt;/td>
+&lt;td style="text-align: left">Operates at the Network Layer (OSI L4), handling TCP traffic. Recommended for performance.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Classic Load Balancer (CLB)&lt;/td>
-&lt;td>Operates at OSI L7 and OSI L4, however has limited functions. Requests are forwarded by the load balancer without “looking into” any of these requests. They just get forwarded to the backend section. Not recommended for use except for apps built in the EC2-Classic network.&lt;/td>
+&lt;td style="text-align: left">Classic Load Balancer (CLB)&lt;/td>
+&lt;td style="text-align: left">Operates at OSI L7 and OSI L4, however has limited functions. Requests are forwarded by the load balancer without “looking into” any of these requests. They just get forwarded to the backend section. Not recommended for use except for apps built in the EC2-Classic network.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -41,150 +41,150 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Basic load balancing features&lt;/th>
-&lt;th>ALB&lt;/th>
-&lt;th>NLB&lt;/th>
-&lt;th>CLB&lt;/th>
+&lt;th style="text-align: left">Basic load balancing features&lt;/th>
+&lt;th style="text-align: left">ALB&lt;/th>
+&lt;th style="text-align: left">NLB&lt;/th>
+&lt;th style="text-align: left">CLB&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>Balance load between targets&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
+&lt;td style="text-align: left">Balance load between targets&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Perform health checks on targets&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
+&lt;td style="text-align: left">Perform health checks on targets&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Highly available&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
+&lt;td style="text-align: left">Highly available&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Elastic&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
+&lt;td style="text-align: left">Elastic&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>TLS Termination&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
+&lt;td style="text-align: left">TLS Termination&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Performance&lt;/td>
-&lt;td>Good&lt;/td>
-&lt;td>Very high&lt;/td>
-&lt;td>Good&lt;/td>
+&lt;td style="text-align: left">Performance&lt;/td>
+&lt;td style="text-align: left">Good&lt;/td>
+&lt;td style="text-align: left">Very high&lt;/td>
+&lt;td style="text-align: left">Good&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Send logs and metrics to CloudWatch&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
+&lt;td style="text-align: left">Send logs and metrics to CloudWatch&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Layer 4 (TCP)&lt;/td>
-&lt;td>No&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
+&lt;td style="text-align: left">Layer 4 (TCP)&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Layer 7 (HTTP)&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>No&lt;/td>
-&lt;td>Yes&lt;/td>
+&lt;td style="text-align: left">Layer 7 (HTTP)&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Running costs&lt;/td>
-&lt;td>Low&lt;/td>
-&lt;td>Low&lt;/td>
-&lt;td>Low&lt;/td>
+&lt;td style="text-align: left">Running costs&lt;/td>
+&lt;td style="text-align: left">Low&lt;/td>
+&lt;td style="text-align: left">Low&lt;/td>
+&lt;td style="text-align: left">Low&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Advanced load balancing features&lt;/th>
-&lt;th>ALB&lt;/th>
-&lt;th>NLB&lt;/th>
-&lt;th>CLB&lt;/th>
+&lt;th style="text-align: left">Advanced load balancing features&lt;/th>
+&lt;th style="text-align: left">ALB&lt;/th>
+&lt;th style="text-align: left">NLB&lt;/th>
+&lt;th style="text-align: left">CLB&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>Advanced routing options&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>N/A&lt;/td>
-&lt;td>No&lt;/td>
+&lt;td style="text-align: left">Advanced routing options&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">N/A&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Can send fixed response without backend&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>No&lt;/td>
-&lt;td>No&lt;/td>
+&lt;td style="text-align: left">Can send fixed response without backend&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Supports user authentication&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>No&lt;/td>
-&lt;td>No&lt;/td>
+&lt;td style="text-align: left">Supports user authentication&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Can serve multiple domains over HTTPS&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>No&lt;/td>
+&lt;td style="text-align: left">Can serve multiple domains over HTTPS&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Preserve source IP&lt;/td>
-&lt;td>No&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>No&lt;/td>
+&lt;td style="text-align: left">Preserve source IP&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Can be used in EC2-Classic&lt;/td>
-&lt;td>No&lt;/td>
-&lt;td>No&lt;/td>
-&lt;td>Yes&lt;/td>
+&lt;td style="text-align: left">Can be used in EC2-Classic&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Supports application-defined sticky session cookies&lt;/td>
-&lt;td>No&lt;/td>
-&lt;td>N/A&lt;/td>
-&lt;td>Yes&lt;/td>
+&lt;td style="text-align: left">Supports application-defined sticky session cookies&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
+&lt;td style="text-align: left">N/A&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Supports Docker containers&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
+&lt;td style="text-align: left">Supports Docker containers&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Supports targets outside AWS&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>No&lt;/td>
+&lt;td style="text-align: left">Supports targets outside AWS&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Supports websockets&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>N/A&lt;/td>
-&lt;td>No&lt;/td>
+&lt;td style="text-align: left">Supports websockets&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">N/A&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Can route to many ports on a given target&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>No&lt;/td>
+&lt;td style="text-align: left">Can route to many ports on a given target&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>

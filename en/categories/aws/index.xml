@@ -1838,50 +1838,50 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Amazon DynamoDB&lt;/th>
-&lt;th>Amazon Aurora&lt;/th>
+&lt;th style="text-align: left">Amazon DynamoDB&lt;/th>
+&lt;th style="text-align: left">Amazon Aurora&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>Was developed by Amazon in 2012&lt;/td>
-&lt;td>Was developed by Amazon in 2015.&lt;/td>
+&lt;td style="text-align: left">Was developed by Amazon in 2012&lt;/td>
+&lt;td style="text-align: left">Was developed by Amazon in 2015.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>It is hosted, scalable database service by Amazon with data stored in Amazon cloud&lt;/td>
-&lt;td>It is MySQL and PostgreSQL compatible cloud service by Amazon&lt;/td>
+&lt;td style="text-align: left">It is hosted, scalable database service by Amazon with data stored in Amazon cloud&lt;/td>
+&lt;td style="text-align: left">It is MySQL and PostgreSQL compatible cloud service by Amazon&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>It does not provide &lt;a href="https://www.ibm.com/docs/en/informix-servers/14.10?topic=integrity-referential">concept of Referential Integrity&lt;/a>. Hence, no Foreign Keys&lt;/td>
-&lt;td>It provides concept of Referential Integrity. Hence, no Foreign Keys&lt;/td>
+&lt;td style="text-align: left">It does not provide &lt;a href="https://www.ibm.com/docs/en/informix-servers/14.10?topic=integrity-referential">concept of Referential Integrity&lt;/a>. Hence, no Foreign Keys&lt;/td>
+&lt;td style="text-align: left">It provides concept of Referential Integrity. Hence, no Foreign Keys&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Eventual Consistency and Immediate Consistency are used to ensure consistency in distributed system&lt;/td>
-&lt;td>Immediate Consistency is used to ensure consistency in distributed system&lt;/td>
+&lt;td style="text-align: left">Eventual Consistency and Immediate Consistency are used to ensure consistency in distributed system&lt;/td>
+&lt;td style="text-align: left">Immediate Consistency is used to ensure consistency in distributed system&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Its Primary database models are Document store and Key-value store&lt;/td>
-&lt;td>Its Primary database model is Relational DBMS&lt;/td>
+&lt;td style="text-align: left">Its Primary database models are Document store and Key-value store&lt;/td>
+&lt;td style="text-align: left">Its Primary database model is Relational DBMS&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>It does not support Server-side scripting&lt;/td>
-&lt;td>It supports Server-side scripting&lt;/td>
+&lt;td style="text-align: left">It does not support Server-side scripting&lt;/td>
+&lt;td style="text-align: left">It supports Server-side scripting&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>It supports sharding as partitioning method&lt;/td>
-&lt;td>Partitioning can be done with horizontal partitioning&lt;/td>
+&lt;td style="text-align: left">It supports sharding as partitioning method&lt;/td>
+&lt;td style="text-align: left">Partitioning can be done with horizontal partitioning&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>It does not support SQL query language&lt;/td>
-&lt;td>It supports SQL query language&lt;/td>
+&lt;td style="text-align: left">It does not support SQL query language&lt;/td>
+&lt;td style="text-align: left">It supports SQL query language&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>It supports replication methods&lt;/td>
-&lt;td>It supports only one replication method – Master-slave replication&lt;/td>
+&lt;td style="text-align: left">It supports replication methods&lt;/td>
+&lt;td style="text-align: left">It supports only one replication method – Master-slave replication&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>It does not offer API for user-defined Map/Reduce methods. But maybe implemented via Amazon Elastic MapReduce&lt;/td>
-&lt;td>It does not offer API for user-defined Map/Reduce methods&lt;/td>
+&lt;td style="text-align: left">It does not offer API for user-defined Map/Reduce methods. But maybe implemented via Amazon Elastic MapReduce&lt;/td>
+&lt;td style="text-align: left">It does not offer API for user-defined Map/Reduce methods&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -1955,26 +1955,26 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Use Case&lt;/th>
-&lt;th>Benefit&lt;/th>
+&lt;th style="text-align: left">Use Case&lt;/th>
+&lt;th style="text-align: left">Benefit&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>Web session store&lt;/td>
-&lt;td>In cases with load-balanced web servers, store web session information in Redis so if a server is lost, the session info is not lost, and another web server can pick it up&lt;/td>
+&lt;td style="text-align: left">Web session store&lt;/td>
+&lt;td style="text-align: left">In cases with load-balanced web servers, store web session information in Redis so if a server is lost, the session info is not lost, and another web server can pick it up&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Database caching&lt;/td>
-&lt;td>Use Memcached in front of AWS RDS to cache popular queries to offload work from RDS and return results faster to users&lt;/td>
+&lt;td style="text-align: left">Database caching&lt;/td>
+&lt;td style="text-align: left">Use Memcached in front of AWS RDS to cache popular queries to offload work from RDS and return results faster to users&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Leaderboards&lt;/td>
-&lt;td>Use Redis to provide a live leaderboard for millions of users of your mobile app&lt;/td>
+&lt;td style="text-align: left">Leaderboards&lt;/td>
+&lt;td style="text-align: left">Use Redis to provide a live leaderboard for millions of users of your mobile app&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Streaming data dashboards&lt;/td>
-&lt;td>Provide a landing spot for streaming sensor data on the factory floor, providing live real-time dashboard displays&lt;/td>
+&lt;td style="text-align: left">Streaming data dashboards&lt;/td>
+&lt;td style="text-align: left">Provide a landing spot for streaming sensor data on the factory floor, providing live real-time dashboard displays&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -1982,42 +1982,42 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Memcached&lt;/th>
-&lt;th>Redis&lt;/th>
+&lt;th style="text-align: left">Memcached&lt;/th>
+&lt;th style="text-align: left">Redis&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>Simple, no-frills&lt;/td>
-&lt;td>You need encryption&lt;/td>
+&lt;td style="text-align: left">Simple, no-frills&lt;/td>
+&lt;td style="text-align: left">You need encryption&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>You need to elasticity (scale out and in)&lt;/td>
-&lt;td>You need HIPAA compliance&lt;/td>
+&lt;td style="text-align: left">You need to elasticity (scale out and in)&lt;/td>
+&lt;td style="text-align: left">You need HIPAA compliance&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>You need to run multiple CPU cores and threads&lt;/td>
-&lt;td>Support for clustering&lt;/td>
+&lt;td style="text-align: left">You need to run multiple CPU cores and threads&lt;/td>
+&lt;td style="text-align: left">Support for clustering&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>You need to cache objects (e.g. database queries)&lt;/td>
-&lt;td>You need complex data types&lt;/td>
+&lt;td style="text-align: left">You need to cache objects (e.g. database queries)&lt;/td>
+&lt;td style="text-align: left">You need complex data types&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>You need HA (replication&lt;/td>
-&lt;td>Backup and restore features&lt;/td>
+&lt;td style="text-align: left">You need HA (replication&lt;/td>
+&lt;td style="text-align: left">Backup and restore features&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Pub/Sub capability&lt;/td>
-&lt;td>Multi-AZ with Auto-Failover&lt;/td>
+&lt;td style="text-align: left">Pub/Sub capability&lt;/td>
+&lt;td style="text-align: left">Multi-AZ with Auto-Failover&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Non persistent. No backups&lt;/td>
-&lt;td>&lt;/td>
+&lt;td style="text-align: left">Non persistent. No backups&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Multi-node for partitioning of data (sharding)&lt;/td>
-&lt;td>&lt;/td>
+&lt;td style="text-align: left">Multi-node for partitioning of data (sharding)&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -2416,34 +2416,34 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Pay&lt;/th>
-&lt;th>do not pay&lt;/th>
+&lt;th style="text-align: left">Pay&lt;/th>
+&lt;th style="text-align: left">do not pay&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>Data Transfer Out to Internet&lt;/td>
-&lt;td>Data transfer between AWS regions and CloudFront.&lt;/td>
+&lt;td style="text-align: left">Data Transfer Out to Internet&lt;/td>
+&lt;td style="text-align: left">Data transfer between AWS regions and CloudFront.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Data Transfer Out to Origin&lt;/td>
-&lt;td>Regional edge cache.&lt;/td>
+&lt;td style="text-align: left">Data Transfer Out to Origin&lt;/td>
+&lt;td style="text-align: left">Regional edge cache.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Number of HTTP/HTTPS Requests&lt;/td>
-&lt;td>AWS ACM SSL/TLS certificates.&lt;/td>
+&lt;td style="text-align: left">Number of HTTP/HTTPS Requests&lt;/td>
+&lt;td style="text-align: left">AWS ACM SSL/TLS certificates.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Invalidation Requests&lt;/td>
-&lt;td>Shared CloudFront certificates.&lt;/td>
+&lt;td style="text-align: left">Invalidation Requests&lt;/td>
+&lt;td style="text-align: left">Shared CloudFront certificates.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Dedicated IP Custom SSL&lt;/td>
-&lt;td>&lt;/td>
+&lt;td style="text-align: left">Dedicated IP Custom SSL&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Field level encryption requests&lt;/td>
-&lt;td>&lt;/td>
+&lt;td style="text-align: left">Field level encryption requests&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -2506,22 +2506,22 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Type&lt;/th>
-&lt;th>Description&lt;/th>
+&lt;th style="text-align: left">Type&lt;/th>
+&lt;th style="text-align: left">Description&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>Application Load Balancer (ALB)&lt;/td>
-&lt;td>Operates at the Application Layer (OSI L7), handling HTTP/HTTPS traffic. Allows routing requests to specific web servers.&lt;/td>
+&lt;td style="text-align: left">Application Load Balancer (ALB)&lt;/td>
+&lt;td style="text-align: left">Operates at the Application Layer (OSI L7), handling HTTP/HTTPS traffic. Allows routing requests to specific web servers.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Network Load Balancer (NLB)&lt;/td>
-&lt;td>Operates at the Network Layer (OSI L4), handling TCP traffic. Recommended for performance.&lt;/td>
+&lt;td style="text-align: left">Network Load Balancer (NLB)&lt;/td>
+&lt;td style="text-align: left">Operates at the Network Layer (OSI L4), handling TCP traffic. Recommended for performance.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Classic Load Balancer (CLB)&lt;/td>
-&lt;td>Operates at OSI L7 and OSI L4, however has limited functions. Requests are forwarded by the load balancer without “looking into” any of these requests. They just get forwarded to the backend section. Not recommended for use except for apps built in the EC2-Classic network.&lt;/td>
+&lt;td style="text-align: left">Classic Load Balancer (CLB)&lt;/td>
+&lt;td style="text-align: left">Operates at OSI L7 and OSI L4, however has limited functions. Requests are forwarded by the load balancer without “looking into” any of these requests. They just get forwarded to the backend section. Not recommended for use except for apps built in the EC2-Classic network.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -2529,150 +2529,150 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Basic load balancing features&lt;/th>
-&lt;th>ALB&lt;/th>
-&lt;th>NLB&lt;/th>
-&lt;th>CLB&lt;/th>
+&lt;th style="text-align: left">Basic load balancing features&lt;/th>
+&lt;th style="text-align: left">ALB&lt;/th>
+&lt;th style="text-align: left">NLB&lt;/th>
+&lt;th style="text-align: left">CLB&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>Balance load between targets&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
+&lt;td style="text-align: left">Balance load between targets&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Perform health checks on targets&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
+&lt;td style="text-align: left">Perform health checks on targets&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Highly available&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
+&lt;td style="text-align: left">Highly available&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Elastic&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
+&lt;td style="text-align: left">Elastic&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>TLS Termination&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
+&lt;td style="text-align: left">TLS Termination&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Performance&lt;/td>
-&lt;td>Good&lt;/td>
-&lt;td>Very high&lt;/td>
-&lt;td>Good&lt;/td>
+&lt;td style="text-align: left">Performance&lt;/td>
+&lt;td style="text-align: left">Good&lt;/td>
+&lt;td style="text-align: left">Very high&lt;/td>
+&lt;td style="text-align: left">Good&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Send logs and metrics to CloudWatch&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
+&lt;td style="text-align: left">Send logs and metrics to CloudWatch&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Layer 4 (TCP)&lt;/td>
-&lt;td>No&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
+&lt;td style="text-align: left">Layer 4 (TCP)&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Layer 7 (HTTP)&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>No&lt;/td>
-&lt;td>Yes&lt;/td>
+&lt;td style="text-align: left">Layer 7 (HTTP)&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Running costs&lt;/td>
-&lt;td>Low&lt;/td>
-&lt;td>Low&lt;/td>
-&lt;td>Low&lt;/td>
+&lt;td style="text-align: left">Running costs&lt;/td>
+&lt;td style="text-align: left">Low&lt;/td>
+&lt;td style="text-align: left">Low&lt;/td>
+&lt;td style="text-align: left">Low&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Advanced load balancing features&lt;/th>
-&lt;th>ALB&lt;/th>
-&lt;th>NLB&lt;/th>
-&lt;th>CLB&lt;/th>
+&lt;th style="text-align: left">Advanced load balancing features&lt;/th>
+&lt;th style="text-align: left">ALB&lt;/th>
+&lt;th style="text-align: left">NLB&lt;/th>
+&lt;th style="text-align: left">CLB&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>Advanced routing options&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>N/A&lt;/td>
-&lt;td>No&lt;/td>
+&lt;td style="text-align: left">Advanced routing options&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">N/A&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Can send fixed response without backend&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>No&lt;/td>
-&lt;td>No&lt;/td>
+&lt;td style="text-align: left">Can send fixed response without backend&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Supports user authentication&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>No&lt;/td>
-&lt;td>No&lt;/td>
+&lt;td style="text-align: left">Supports user authentication&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Can serve multiple domains over HTTPS&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>No&lt;/td>
+&lt;td style="text-align: left">Can serve multiple domains over HTTPS&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Preserve source IP&lt;/td>
-&lt;td>No&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>No&lt;/td>
+&lt;td style="text-align: left">Preserve source IP&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Can be used in EC2-Classic&lt;/td>
-&lt;td>No&lt;/td>
-&lt;td>No&lt;/td>
-&lt;td>Yes&lt;/td>
+&lt;td style="text-align: left">Can be used in EC2-Classic&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Supports application-defined sticky session cookies&lt;/td>
-&lt;td>No&lt;/td>
-&lt;td>N/A&lt;/td>
-&lt;td>Yes&lt;/td>
+&lt;td style="text-align: left">Supports application-defined sticky session cookies&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
+&lt;td style="text-align: left">N/A&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Supports Docker containers&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
+&lt;td style="text-align: left">Supports Docker containers&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Supports targets outside AWS&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>No&lt;/td>
+&lt;td style="text-align: left">Supports targets outside AWS&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Supports websockets&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>N/A&lt;/td>
-&lt;td>No&lt;/td>
+&lt;td style="text-align: left">Supports websockets&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">N/A&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Can route to many ports on a given target&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>No&lt;/td>
+&lt;td style="text-align: left">Can route to many ports on a given target&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -3059,34 +3059,34 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>CloudWatch&lt;/th>
-&lt;th>CloudTrail&lt;/th>
+&lt;th style="text-align: left">CloudWatch&lt;/th>
+&lt;th style="text-align: left">CloudTrail&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>Performance monitoring&lt;/td>
-&lt;td>Auditing&lt;/td>
+&lt;td style="text-align: left">Performance monitoring&lt;/td>
+&lt;td style="text-align: left">Auditing&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Log events across AWS Services – think operations&lt;/td>
-&lt;td>Log API activity across AWS services – think activities, or who to blame&lt;/td>
+&lt;td style="text-align: left">Log events across AWS Services – think operations&lt;/td>
+&lt;td style="text-align: left">Log API activity across AWS services – think activities, or who to blame&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Higher-level comprehensive monitoring and event service&lt;/td>
-&lt;td>More low-level, granular&lt;/td>
+&lt;td style="text-align: left">Higher-level comprehensive monitoring and event service&lt;/td>
+&lt;td style="text-align: left">More low-level, granular&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Log from multiple accounts&lt;/td>
-&lt;td>Log from multiple accounts&lt;/td>
+&lt;td style="text-align: left">Log from multiple accounts&lt;/td>
+&lt;td style="text-align: left">Log from multiple accounts&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Logs stored indefinitely&lt;/td>
-&lt;td>Logs stored to S3 or CloudWatch indefinitely&lt;/td>
+&lt;td style="text-align: left">Logs stored indefinitely&lt;/td>
+&lt;td style="text-align: left">Logs stored to S3 or CloudWatch indefinitely&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Alarms history for 14 days&lt;/td>
-&lt;td>No native alarming; can use CloudWatch alarms&lt;/td>
+&lt;td style="text-align: left">Alarms history for 14 days&lt;/td>
+&lt;td style="text-align: left">No native alarming; can use CloudWatch alarms&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -3170,26 +3170,26 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Component&lt;/th>
-&lt;th>Description&lt;/th>
+&lt;th style="text-align: left">Component&lt;/th>
+&lt;th style="text-align: left">Description&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>Templates&lt;/td>
-&lt;td>The JSON or YAML text file that contains the instructions for building out the AWS environment&lt;/td>
+&lt;td style="text-align: left">Templates&lt;/td>
+&lt;td style="text-align: left">The JSON or YAML text file that contains the instructions for building out the AWS environment&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Stacks&lt;/td>
-&lt;td>The entire environment described by the template and created, updated, and deleted as a single unit&lt;/td>
+&lt;td style="text-align: left">Stacks&lt;/td>
+&lt;td style="text-align: left">The entire environment described by the template and created, updated, and deleted as a single unit&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>StackSets&lt;/td>
-&lt;td>AWS CloudFormation StackSets extends the functionality of stacks by enabling you to create, update, or delete stacks across multiple accounts and regions with a single operation&lt;/td>
+&lt;td style="text-align: left">StackSets&lt;/td>
+&lt;td style="text-align: left">AWS CloudFormation StackSets extends the functionality of stacks by enabling you to create, update, or delete stacks across multiple accounts and regions with a single operation&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Change Sets&lt;/td>
-&lt;td>A summary of proposed changes to your stack that will allow you to see how those changes might impact your existing resources before implementing them&lt;/td>
+&lt;td style="text-align: left">Change Sets&lt;/td>
+&lt;td style="text-align: left">A summary of proposed changes to your stack that will allow you to see how those changes might impact your existing resources before implementing them&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -3235,30 +3235,30 @@ the same configurations into your templates, you can create a dedicated template
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>CloudFormation&lt;/th>
-&lt;th>Elastic Beanstalk&lt;/th>
+&lt;th style="text-align: left">CloudFormation&lt;/th>
+&lt;th style="text-align: left">Elastic Beanstalk&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>“Template-driven provisioning”&lt;/td>
-&lt;td>“Web apps made easy”&lt;/td>
+&lt;td style="text-align: left">“Template-driven provisioning”&lt;/td>
+&lt;td style="text-align: left">“Web apps made easy”&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Deploys infrastructure using code&lt;/td>
-&lt;td>Deploys applications on EC2 (PaaS)&lt;/td>
+&lt;td style="text-align: left">Deploys infrastructure using code&lt;/td>
+&lt;td style="text-align: left">Deploys applications on EC2 (PaaS)&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Can be used to deploy almost any AWS service&lt;/td>
-&lt;td>Deploys web applications based on Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker&lt;/td>
+&lt;td style="text-align: left">Can be used to deploy almost any AWS service&lt;/td>
+&lt;td style="text-align: left">Deploys web applications based on Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Uses JSON or YAML template files&lt;/td>
-&lt;td>Uses ZIP or WAR files&lt;/td>
+&lt;td style="text-align: left">Uses JSON or YAML template files&lt;/td>
+&lt;td style="text-align: left">Uses ZIP or WAR files&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Similar to Terraform&lt;/td>
-&lt;td>Similar to Google App Engine&lt;/td>
+&lt;td style="text-align: left">Similar to Terraform&lt;/td>
+&lt;td style="text-align: left">Similar to Google App Engine&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -4006,30 +4006,30 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Amazon ECS&lt;/th>
-&lt;th>Term Definition&lt;/th>
+&lt;th style="text-align: left">Amazon ECS&lt;/th>
+&lt;th style="text-align: left">Term Definition&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>Cluster&lt;/td>
-&lt;td>Logical Grouping of EC2 Instances&lt;/td>
+&lt;td style="text-align: left">Cluster&lt;/td>
+&lt;td style="text-align: left">Logical Grouping of EC2 Instances&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Container&lt;/td>
-&lt;td>Instance EC2 instance running the ECS agent&lt;/td>
+&lt;td style="text-align: left">Container&lt;/td>
+&lt;td style="text-align: left">Instance EC2 instance running the ECS agent&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Task Definition&lt;/td>
-&lt;td>Blueprint that describes how a docker container should launch&lt;/td>
+&lt;td style="text-align: left">Task Definition&lt;/td>
+&lt;td style="text-align: left">Blueprint that describes how a docker container should launch&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Task&lt;/td>
-&lt;td>A running container using settings in a Task Definition&lt;/td>
+&lt;td style="text-align: left">Task&lt;/td>
+&lt;td style="text-align: left">A running container using settings in a Task Definition&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Service&lt;/td>
-&lt;td>Defines long running tasks – can control task count with Auto Scaling and attach an ELB&lt;/td>
+&lt;td style="text-align: left">Service&lt;/td>
+&lt;td style="text-align: left">Defines long running tasks – can control task count with Auto Scaling and attach an ELB&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -4124,34 +4124,34 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Amazon ECS&lt;/th>
-&lt;th>Amazon EKS&lt;/th>
+&lt;th style="text-align: left">Amazon ECS&lt;/th>
+&lt;th style="text-align: left">Amazon EKS&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>Managed, highly available, highly scalable container platform&lt;/td>
-&lt;td>Managed, highly available, highly scalable container platform&lt;/td>
+&lt;td style="text-align: left">Managed, highly available, highly scalable container platform&lt;/td>
+&lt;td style="text-align: left">Managed, highly available, highly scalable container platform&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>AWS-specific platform that supports Docker Containers&lt;/td>
-&lt;td>Compatible with upstream Kubernetes so it’s easy to lift and shift from other Kubernetes deployments&lt;/td>
+&lt;td style="text-align: left">AWS-specific platform that supports Docker Containers&lt;/td>
+&lt;td style="text-align: left">Compatible with upstream Kubernetes so it’s easy to lift and shift from other Kubernetes deployments&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Considered simpler and easier to use&lt;/td>
-&lt;td>Considered more feature-rich and complex with a steep learning curve&lt;/td>
+&lt;td style="text-align: left">Considered simpler and easier to use&lt;/td>
+&lt;td style="text-align: left">Considered more feature-rich and complex with a steep learning curve&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Leverages AWS services like Route 53, ALB, and CloudWatch&lt;/td>
-&lt;td>A hosted Kubernetes platform that handles many things internally&lt;/td>
+&lt;td style="text-align: left">Leverages AWS services like Route 53, ALB, and CloudWatch&lt;/td>
+&lt;td style="text-align: left">A hosted Kubernetes platform that handles many things internally&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>“Tasks” are instances of containers that are run on underlying compute but more of less isolated&lt;/td>
-&lt;td>“Pods” are containers collocated with one another and can have shared access to each other&lt;/td>
+&lt;td style="text-align: left">“Tasks” are instances of containers that are run on underlying compute but more of less isolated&lt;/td>
+&lt;td style="text-align: left">“Pods” are containers collocated with one another and can have shared access to each other&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Limited extensibility&lt;/td>
-&lt;td>Extensible via a wide variety of third-party and community add-ons.&lt;/td>
+&lt;td style="text-align: left">Limited extensibility&lt;/td>
+&lt;td style="text-align: left">Extensible via a wide variety of third-party and community add-ons.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -4267,34 +4267,34 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Amazon ECS&lt;/th>
-&lt;th>Amazon EKS&lt;/th>
+&lt;th style="text-align: left">Amazon ECS&lt;/th>
+&lt;th style="text-align: left">Amazon EKS&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>Managed, highly available, highly scalable container platform&lt;/td>
-&lt;td>Managed, highly available, highly scalable container platform&lt;/td>
+&lt;td style="text-align: left">Managed, highly available, highly scalable container platform&lt;/td>
+&lt;td style="text-align: left">Managed, highly available, highly scalable container platform&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>AWS-specific platform that supports Docker Containers&lt;/td>
-&lt;td>Compatible with upstream Kubernetes so it’s easy to lift and shift from other Kubernetes deployments&lt;/td>
+&lt;td style="text-align: left">AWS-specific platform that supports Docker Containers&lt;/td>
+&lt;td style="text-align: left">Compatible with upstream Kubernetes so it’s easy to lift and shift from other Kubernetes deployments&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Considered simpler and easier to use&lt;/td>
-&lt;td>Considered more feature-rich and complex with a steep learning curve&lt;/td>
+&lt;td style="text-align: left">Considered simpler and easier to use&lt;/td>
+&lt;td style="text-align: left">Considered more feature-rich and complex with a steep learning curve&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Leverages AWS services like Route 53, ALB, and CloudWatch&lt;/td>
-&lt;td>A hosted Kubernetes platform that handles many things internally&lt;/td>
+&lt;td style="text-align: left">Leverages AWS services like Route 53, ALB, and CloudWatch&lt;/td>
+&lt;td style="text-align: left">A hosted Kubernetes platform that handles many things internally&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>“Tasks” are instances of containers that are run on underlying compute but more of less isolated&lt;/td>
-&lt;td>“Pods” are containers collocated with one another and can have shared access to each other&lt;/td>
+&lt;td style="text-align: left">“Tasks” are instances of containers that are run on underlying compute but more of less isolated&lt;/td>
+&lt;td style="text-align: left">“Pods” are containers collocated with one another and can have shared access to each other&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Limited extensibility&lt;/td>
-&lt;td>Extensible via a wide variety of third-party and community add-ons.&lt;/td>
+&lt;td style="text-align: left">Limited extensibility&lt;/td>
+&lt;td style="text-align: left">Extensible via a wide variety of third-party and community add-ons.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -4524,38 +4524,38 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Type of KMS key&lt;/th>
-&lt;th>Can view KMS key metadata&lt;/th>
-&lt;th>Can manage KMS key&lt;/th>
-&lt;th>Used only for my AWS account&lt;/th>
-&lt;th>&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">Automatic rotation&lt;/a>&lt;/th>
-&lt;th>&lt;a href="https://aws.amazon.com/kms/pricing/">Pricing&lt;/a>&lt;/th>
+&lt;th style="text-align: left">Type of KMS key&lt;/th>
+&lt;th style="text-align: left">Can view KMS key metadata&lt;/th>
+&lt;th style="text-align: left">Can manage KMS key&lt;/th>
+&lt;th style="text-align: left">Used only for my AWS account&lt;/th>
+&lt;th style="text-align: left">&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">Automatic rotation&lt;/a>&lt;/th>
+&lt;th style="text-align: left">&lt;a href="https://aws.amazon.com/kms/pricing/">Pricing&lt;/a>&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">Customer managed key&lt;/a>&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Optional. Every year (approximately 365 days)&lt;/td>
-&lt;td>Monthly fee (pro-rated hourly)&lt;br>&lt;br>Per-use fee&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">Customer managed key&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Optional. Every year (approximately 365 days)&lt;/td>
+&lt;td style="text-align: left">Monthly fee (pro-rated hourly)&lt;br>&lt;br>Per-use fee&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS managed key&lt;/a>&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>No&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Required. Every year (approximately 365 days)&lt;/td>
-&lt;td>No monthly fee&lt;br>&lt;br>Per-use fee (some AWS services pay this fee for you)&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS managed key&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Required. Every year (approximately 365 days)&lt;/td>
+&lt;td style="text-align: left">No monthly fee&lt;br>&lt;br>Per-use fee (some AWS services pay this fee for you)&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">AWS owned key&lt;/a>&lt;/td>
-&lt;td>No&lt;/td>
-&lt;td>No&lt;/td>
-&lt;td>No&lt;/td>
-&lt;td>Varies&lt;/td>
-&lt;td>Varies&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">AWS owned key&lt;/a>&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
+&lt;td style="text-align: left">Varies&lt;/td>
+&lt;td style="text-align: left">Varies&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>

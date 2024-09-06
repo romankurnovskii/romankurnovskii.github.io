@@ -66,86 +66,86 @@ scrolling="no"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Minute&lt;/th>
-&lt;th>Open&lt;/th>
-&lt;th>High&lt;/th>
-&lt;th>Low&lt;/th>
-&lt;th>Close&lt;/th>
-&lt;th>EMA&lt;/th>
+&lt;th style="text-align: left">Minute&lt;/th>
+&lt;th style="text-align: left">Open&lt;/th>
+&lt;th style="text-align: left">High&lt;/th>
+&lt;th style="text-align: left">Low&lt;/th>
+&lt;th style="text-align: left">Close&lt;/th>
+&lt;th style="text-align: left">EMA&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>1&lt;/td>
-&lt;td>$10.0&lt;/td>
-&lt;td>$11.0&lt;/td>
-&lt;td>$9.5&lt;/td>
-&lt;td>$10.0&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">1&lt;/td>
+&lt;td style="text-align: left">$10.0&lt;/td>
+&lt;td style="text-align: left">$11.0&lt;/td>
+&lt;td style="text-align: left">$9.5&lt;/td>
+&lt;td style="text-align: left">$10.0&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>2&lt;/td>
-&lt;td>$10.1&lt;/td>
-&lt;td>$12.1&lt;/td>
-&lt;td>$10.0&lt;/td>
-&lt;td>$12.0&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">2&lt;/td>
+&lt;td style="text-align: left">$10.1&lt;/td>
+&lt;td style="text-align: left">$12.1&lt;/td>
+&lt;td style="text-align: left">$10.0&lt;/td>
+&lt;td style="text-align: left">$12.0&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>3&lt;/td>
-&lt;td>$12.2&lt;/td>
-&lt;td>$15.2&lt;/td>
-&lt;td>$12.0&lt;/td>
-&lt;td>$15.0&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">3&lt;/td>
+&lt;td style="text-align: left">$12.2&lt;/td>
+&lt;td style="text-align: left">$15.2&lt;/td>
+&lt;td style="text-align: left">$12.0&lt;/td>
+&lt;td style="text-align: left">$15.0&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>4&lt;/td>
-&lt;td>$15.1&lt;/td>
-&lt;td>$15.1&lt;/td>
-&lt;td>$13.9&lt;/td>
-&lt;td>$14.0&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">4&lt;/td>
+&lt;td style="text-align: left">$15.1&lt;/td>
+&lt;td style="text-align: left">$15.1&lt;/td>
+&lt;td style="text-align: left">$13.9&lt;/td>
+&lt;td style="text-align: left">$14.0&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>5&lt;/td>
-&lt;td>$14.1&lt;/td>
-&lt;td>$16.1&lt;/td>
-&lt;td>$14.0&lt;/td>
-&lt;td>$16.0&lt;/td>
-&lt;td>13.4(SMA)&lt;/td>
+&lt;td style="text-align: left">5&lt;/td>
+&lt;td style="text-align: left">$14.1&lt;/td>
+&lt;td style="text-align: left">$16.1&lt;/td>
+&lt;td style="text-align: left">$14.0&lt;/td>
+&lt;td style="text-align: left">$16.0&lt;/td>
+&lt;td style="text-align: left">13.4(SMA)&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>6&lt;/td>
-&lt;td>$16.1&lt;/td>
-&lt;td>$16.1&lt;/td>
-&lt;td>$14.9&lt;/td>
-&lt;td>$15.0&lt;/td>
-&lt;td>15.67&lt;/td>
+&lt;td style="text-align: left">6&lt;/td>
+&lt;td style="text-align: left">$16.1&lt;/td>
+&lt;td style="text-align: left">$16.1&lt;/td>
+&lt;td style="text-align: left">$14.9&lt;/td>
+&lt;td style="text-align: left">$15.0&lt;/td>
+&lt;td style="text-align: left">15.67&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>7&lt;/td>
-&lt;td>$15.1&lt;/td>
-&lt;td>$17.1&lt;/td>
-&lt;td>$15.0&lt;/td>
-&lt;td>$17.0&lt;/td>
-&lt;td>&amp;hellip;&lt;/td>
+&lt;td style="text-align: left">7&lt;/td>
+&lt;td style="text-align: left">$15.1&lt;/td>
+&lt;td style="text-align: left">$17.1&lt;/td>
+&lt;td style="text-align: left">$15.0&lt;/td>
+&lt;td style="text-align: left">$17.0&lt;/td>
+&lt;td style="text-align: left">&amp;hellip;&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>8&lt;/td>
-&lt;td>$17.1&lt;/td>
-&lt;td>$17.1&lt;/td>
-&lt;td>$15.9&lt;/td>
-&lt;td>$16.0&lt;/td>
-&lt;td>&amp;hellip;&lt;/td>
+&lt;td style="text-align: left">8&lt;/td>
+&lt;td style="text-align: left">$17.1&lt;/td>
+&lt;td style="text-align: left">$17.1&lt;/td>
+&lt;td style="text-align: left">$15.9&lt;/td>
+&lt;td style="text-align: left">$16.0&lt;/td>
+&lt;td style="text-align: left">&amp;hellip;&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>9&lt;/td>
-&lt;td>$16.1&lt;/td>
-&lt;td>$18.1&lt;/td>
-&lt;td>$16.0&lt;/td>
-&lt;td>$18.0&lt;/td>
-&lt;td>&amp;hellip;&lt;/td>
+&lt;td style="text-align: left">9&lt;/td>
+&lt;td style="text-align: left">$16.1&lt;/td>
+&lt;td style="text-align: left">$18.1&lt;/td>
+&lt;td style="text-align: left">$16.0&lt;/td>
+&lt;td style="text-align: left">$18.0&lt;/td>
+&lt;td style="text-align: left">&amp;hellip;&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -292,347 +292,347 @@ scrolling="no"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Minute&lt;/th>
-&lt;th>Open&lt;/th>
-&lt;th>High&lt;/th>
-&lt;th>Low&lt;/th>
-&lt;th>Close&lt;/th>
-&lt;th>EMA12&lt;/th>
-&lt;th>EMA26&lt;/th>
-&lt;th>EMA9 (Signal)&lt;/th>
-&lt;th>MACD&lt;/th>
+&lt;th style="text-align: left">Minute&lt;/th>
+&lt;th style="text-align: left">Open&lt;/th>
+&lt;th style="text-align: left">High&lt;/th>
+&lt;th style="text-align: left">Low&lt;/th>
+&lt;th style="text-align: left">Close&lt;/th>
+&lt;th style="text-align: left">EMA12&lt;/th>
+&lt;th style="text-align: left">EMA26&lt;/th>
+&lt;th style="text-align: left">EMA9 (Signal)&lt;/th>
+&lt;th style="text-align: left">MACD&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>1&lt;/td>
-&lt;td>$10.0&lt;/td>
-&lt;td>$11.0&lt;/td>
-&lt;td>$9.5&lt;/td>
-&lt;td>$10.0&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">1&lt;/td>
+&lt;td style="text-align: left">$10.0&lt;/td>
+&lt;td style="text-align: left">$11.0&lt;/td>
+&lt;td style="text-align: left">$9.5&lt;/td>
+&lt;td style="text-align: left">$10.0&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>2&lt;/td>
-&lt;td>$10.1&lt;/td>
-&lt;td>$12.1&lt;/td>
-&lt;td>$10.0&lt;/td>
-&lt;td>$12.0&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">2&lt;/td>
+&lt;td style="text-align: left">$10.1&lt;/td>
+&lt;td style="text-align: left">$12.1&lt;/td>
+&lt;td style="text-align: left">$10.0&lt;/td>
+&lt;td style="text-align: left">$12.0&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>3&lt;/td>
-&lt;td>$12.2&lt;/td>
-&lt;td>$15.2&lt;/td>
-&lt;td>$12.0&lt;/td>
-&lt;td>$15.0&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">3&lt;/td>
+&lt;td style="text-align: left">$12.2&lt;/td>
+&lt;td style="text-align: left">$15.2&lt;/td>
+&lt;td style="text-align: left">$12.0&lt;/td>
+&lt;td style="text-align: left">$15.0&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>4&lt;/td>
-&lt;td>$15.1&lt;/td>
-&lt;td>$15.1&lt;/td>
-&lt;td>$13.9&lt;/td>
-&lt;td>$14.0&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">4&lt;/td>
+&lt;td style="text-align: left">$15.1&lt;/td>
+&lt;td style="text-align: left">$15.1&lt;/td>
+&lt;td style="text-align: left">$13.9&lt;/td>
+&lt;td style="text-align: left">$14.0&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>5&lt;/td>
-&lt;td>$14.1&lt;/td>
-&lt;td>$16.1&lt;/td>
-&lt;td>$14.0&lt;/td>
-&lt;td>$16.0&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">5&lt;/td>
+&lt;td style="text-align: left">$14.1&lt;/td>
+&lt;td style="text-align: left">$16.1&lt;/td>
+&lt;td style="text-align: left">$14.0&lt;/td>
+&lt;td style="text-align: left">$16.0&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>6&lt;/td>
-&lt;td>$16.1&lt;/td>
-&lt;td>$16.1&lt;/td>
-&lt;td>$14.9&lt;/td>
-&lt;td>$15.0&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">6&lt;/td>
+&lt;td style="text-align: left">$16.1&lt;/td>
+&lt;td style="text-align: left">$16.1&lt;/td>
+&lt;td style="text-align: left">$14.9&lt;/td>
+&lt;td style="text-align: left">$15.0&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>7&lt;/td>
-&lt;td>$15.1&lt;/td>
-&lt;td>$17.1&lt;/td>
-&lt;td>$15.0&lt;/td>
-&lt;td>$17.0&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">7&lt;/td>
+&lt;td style="text-align: left">$15.1&lt;/td>
+&lt;td style="text-align: left">$17.1&lt;/td>
+&lt;td style="text-align: left">$15.0&lt;/td>
+&lt;td style="text-align: left">$17.0&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>8&lt;/td>
-&lt;td>$17.1&lt;/td>
-&lt;td>$17.1&lt;/td>
-&lt;td>$15.9&lt;/td>
-&lt;td>$16.0&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">8&lt;/td>
+&lt;td style="text-align: left">$17.1&lt;/td>
+&lt;td style="text-align: left">$17.1&lt;/td>
+&lt;td style="text-align: left">$15.9&lt;/td>
+&lt;td style="text-align: left">$16.0&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>9&lt;/td>
-&lt;td>$16.1&lt;/td>
-&lt;td>$18.1&lt;/td>
-&lt;td>$16.0&lt;/td>
-&lt;td>$18.0&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>Starts here&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">9&lt;/td>
+&lt;td style="text-align: left">$16.1&lt;/td>
+&lt;td style="text-align: left">$18.1&lt;/td>
+&lt;td style="text-align: left">$16.0&lt;/td>
+&lt;td style="text-align: left">$18.0&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">Starts here&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>10&lt;/td>
-&lt;td>$18.1&lt;/td>
-&lt;td>$18.1&lt;/td>
-&lt;td>$16.9&lt;/td>
-&lt;td>$17.0&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">10&lt;/td>
+&lt;td style="text-align: left">$18.1&lt;/td>
+&lt;td style="text-align: left">$18.1&lt;/td>
+&lt;td style="text-align: left">$16.9&lt;/td>
+&lt;td style="text-align: left">$17.0&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>11&lt;/td>
-&lt;td>$17.1&lt;/td>
-&lt;td>$19.1&lt;/td>
-&lt;td>$17.0&lt;/td>
-&lt;td>$19.0&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">11&lt;/td>
+&lt;td style="text-align: left">$17.1&lt;/td>
+&lt;td style="text-align: left">$19.1&lt;/td>
+&lt;td style="text-align: left">$17.0&lt;/td>
+&lt;td style="text-align: left">$19.0&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>12&lt;/td>
-&lt;td>$19.1&lt;/td>
-&lt;td>$19.1&lt;/td>
-&lt;td>$17.9&lt;/td>
-&lt;td>$18.0&lt;/td>
-&lt;td>Starts here&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">12&lt;/td>
+&lt;td style="text-align: left">$19.1&lt;/td>
+&lt;td style="text-align: left">$19.1&lt;/td>
+&lt;td style="text-align: left">$17.9&lt;/td>
+&lt;td style="text-align: left">$18.0&lt;/td>
+&lt;td style="text-align: left">Starts here&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>13&lt;/td>
-&lt;td>$18.1&lt;/td>
-&lt;td>$20.1&lt;/td>
-&lt;td>$18.0&lt;/td>
-&lt;td>$20.0&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">13&lt;/td>
+&lt;td style="text-align: left">$18.1&lt;/td>
+&lt;td style="text-align: left">$20.1&lt;/td>
+&lt;td style="text-align: left">$18.0&lt;/td>
+&lt;td style="text-align: left">$20.0&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>14&lt;/td>
-&lt;td>$20.1&lt;/td>
-&lt;td>$21.1&lt;/td>
-&lt;td>$20.0&lt;/td>
-&lt;td>$21.0&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">14&lt;/td>
+&lt;td style="text-align: left">$20.1&lt;/td>
+&lt;td style="text-align: left">$21.1&lt;/td>
+&lt;td style="text-align: left">$20.0&lt;/td>
+&lt;td style="text-align: left">$21.0&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>15&lt;/td>
-&lt;td>$21.1&lt;/td>
-&lt;td>$21.1&lt;/td>
-&lt;td>$19.9&lt;/td>
-&lt;td>$20.0&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">15&lt;/td>
+&lt;td style="text-align: left">$21.1&lt;/td>
+&lt;td style="text-align: left">$21.1&lt;/td>
+&lt;td style="text-align: left">$19.9&lt;/td>
+&lt;td style="text-align: left">$20.0&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>16&lt;/td>
-&lt;td>$20.1&lt;/td>
-&lt;td>$22.1&lt;/td>
-&lt;td>$20.0&lt;/td>
-&lt;td>$21.0&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">16&lt;/td>
+&lt;td style="text-align: left">$20.1&lt;/td>
+&lt;td style="text-align: left">$22.1&lt;/td>
+&lt;td style="text-align: left">$20.0&lt;/td>
+&lt;td style="text-align: left">$21.0&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>17&lt;/td>
-&lt;td>$21.1&lt;/td>
-&lt;td>$23.1&lt;/td>
-&lt;td>$21.0&lt;/td>
-&lt;td>$22.0&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">17&lt;/td>
+&lt;td style="text-align: left">$21.1&lt;/td>
+&lt;td style="text-align: left">$23.1&lt;/td>
+&lt;td style="text-align: left">$21.0&lt;/td>
+&lt;td style="text-align: left">$22.0&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>18&lt;/td>
-&lt;td>$22.1&lt;/td>
-&lt;td>$24.1&lt;/td>
-&lt;td>$22.0&lt;/td>
-&lt;td>$23.0&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">18&lt;/td>
+&lt;td style="text-align: left">$22.1&lt;/td>
+&lt;td style="text-align: left">$24.1&lt;/td>
+&lt;td style="text-align: left">$22.0&lt;/td>
+&lt;td style="text-align: left">$23.0&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>19&lt;/td>
-&lt;td>$23.1&lt;/td>
-&lt;td>$25.1&lt;/td>
-&lt;td>$23.0&lt;/td>
-&lt;td>$24.0&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">19&lt;/td>
+&lt;td style="text-align: left">$23.1&lt;/td>
+&lt;td style="text-align: left">$25.1&lt;/td>
+&lt;td style="text-align: left">$23.0&lt;/td>
+&lt;td style="text-align: left">$24.0&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>20&lt;/td>
-&lt;td>$24.1&lt;/td>
-&lt;td>$26.1&lt;/td>
-&lt;td>$24.0&lt;/td>
-&lt;td>$25.0&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">20&lt;/td>
+&lt;td style="text-align: left">$24.1&lt;/td>
+&lt;td style="text-align: left">$26.1&lt;/td>
+&lt;td style="text-align: left">$24.0&lt;/td>
+&lt;td style="text-align: left">$25.0&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>21&lt;/td>
-&lt;td>$25.1&lt;/td>
-&lt;td>$27.1&lt;/td>
-&lt;td>$25.0&lt;/td>
-&lt;td>$26.0&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">21&lt;/td>
+&lt;td style="text-align: left">$25.1&lt;/td>
+&lt;td style="text-align: left">$27.1&lt;/td>
+&lt;td style="text-align: left">$25.0&lt;/td>
+&lt;td style="text-align: left">$26.0&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>22&lt;/td>
-&lt;td>$26.1&lt;/td>
-&lt;td>$28.1&lt;/td>
-&lt;td>$26.0&lt;/td>
-&lt;td>$27.0&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">22&lt;/td>
+&lt;td style="text-align: left">$26.1&lt;/td>
+&lt;td style="text-align: left">$28.1&lt;/td>
+&lt;td style="text-align: left">$26.0&lt;/td>
+&lt;td style="text-align: left">$27.0&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>23&lt;/td>
-&lt;td>$27.1&lt;/td>
-&lt;td>$29.1&lt;/td>
-&lt;td>$27.0&lt;/td>
-&lt;td>$28.0&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">23&lt;/td>
+&lt;td style="text-align: left">$27.1&lt;/td>
+&lt;td style="text-align: left">$29.1&lt;/td>
+&lt;td style="text-align: left">$27.0&lt;/td>
+&lt;td style="text-align: left">$28.0&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>24&lt;/td>
-&lt;td>$28.1&lt;/td>
-&lt;td>$30.1&lt;/td>
-&lt;td>$28.0&lt;/td>
-&lt;td>$29.0&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">24&lt;/td>
+&lt;td style="text-align: left">$28.1&lt;/td>
+&lt;td style="text-align: left">$30.1&lt;/td>
+&lt;td style="text-align: left">$28.0&lt;/td>
+&lt;td style="text-align: left">$29.0&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>25&lt;/td>
-&lt;td>$29.1&lt;/td>
-&lt;td>$31.1&lt;/td>
-&lt;td>$29.0&lt;/td>
-&lt;td>$30.0&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">25&lt;/td>
+&lt;td style="text-align: left">$29.1&lt;/td>
+&lt;td style="text-align: left">$31.1&lt;/td>
+&lt;td style="text-align: left">$29.0&lt;/td>
+&lt;td style="text-align: left">$30.0&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>26&lt;/td>
-&lt;td>$30.1&lt;/td>
-&lt;td>$32.1&lt;/td>
-&lt;td>$30.0&lt;/td>
-&lt;td>$31.0&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>Starts here&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>Starts here&lt;/td>
+&lt;td style="text-align: left">26&lt;/td>
+&lt;td style="text-align: left">$30.1&lt;/td>
+&lt;td style="text-align: left">$32.1&lt;/td>
+&lt;td style="text-align: left">$30.0&lt;/td>
+&lt;td style="text-align: left">$31.0&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">Starts here&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">Starts here&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>27&lt;/td>
-&lt;td>$31.1&lt;/td>
-&lt;td>$33.1&lt;/td>
-&lt;td>$31.0&lt;/td>
-&lt;td>$32.0&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
+&lt;td style="text-align: left">27&lt;/td>
+&lt;td style="text-align: left">$31.1&lt;/td>
+&lt;td style="text-align: left">$33.1&lt;/td>
+&lt;td style="text-align: left">$31.0&lt;/td>
+&lt;td style="text-align: left">$32.0&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>28&lt;/td>
-&lt;td>$32.1&lt;/td>
-&lt;td>$34.1&lt;/td>
-&lt;td>$32.0&lt;/td>
-&lt;td>$33.0&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
+&lt;td style="text-align: left">28&lt;/td>
+&lt;td style="text-align: left">$32.1&lt;/td>
+&lt;td style="text-align: left">$34.1&lt;/td>
+&lt;td style="text-align: left">$32.0&lt;/td>
+&lt;td style="text-align: left">$33.0&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>29&lt;/td>
-&lt;td>$33.1&lt;/td>
-&lt;td>$35.1&lt;/td>
-&lt;td>$33.0&lt;/td>
-&lt;td>$34.0&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
+&lt;td style="text-align: left">29&lt;/td>
+&lt;td style="text-align: left">$33.1&lt;/td>
+&lt;td style="text-align: left">$35.1&lt;/td>
+&lt;td style="text-align: left">$33.0&lt;/td>
+&lt;td style="text-align: left">$34.0&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>30&lt;/td>
-&lt;td>$34.1&lt;/td>
-&lt;td>$36.1&lt;/td>
-&lt;td>$34.0&lt;/td>
-&lt;td>$35.0&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
-&lt;td>&lt;/td>
+&lt;td style="text-align: left">30&lt;/td>
+&lt;td style="text-align: left">$34.1&lt;/td>
+&lt;td style="text-align: left">$36.1&lt;/td>
+&lt;td style="text-align: left">$34.0&lt;/td>
+&lt;td style="text-align: left">$35.0&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -705,160 +705,160 @@ scrolling="no"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Minute&lt;/th>
-&lt;th>Open&lt;/th>
-&lt;th>High&lt;/th>
-&lt;th>Low&lt;/th>
-&lt;th>Close&lt;/th>
+&lt;th style="text-align: left">Minute&lt;/th>
+&lt;th style="text-align: left">Open&lt;/th>
+&lt;th style="text-align: left">High&lt;/th>
+&lt;th style="text-align: left">Low&lt;/th>
+&lt;th style="text-align: left">Close&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>1&lt;/td>
-&lt;td>$10.0&lt;/td>
-&lt;td>$11.0&lt;/td>
-&lt;td>$9.5&lt;/td>
-&lt;td>$10.0&lt;/td>
+&lt;td style="text-align: left">1&lt;/td>
+&lt;td style="text-align: left">$10.0&lt;/td>
+&lt;td style="text-align: left">$11.0&lt;/td>
+&lt;td style="text-align: left">$9.5&lt;/td>
+&lt;td style="text-align: left">$10.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>2&lt;/td>
-&lt;td>$10.1&lt;/td>
-&lt;td>$12.1&lt;/td>
-&lt;td>$10.0&lt;/td>
-&lt;td>$12.0&lt;/td>
+&lt;td style="text-align: left">2&lt;/td>
+&lt;td style="text-align: left">$10.1&lt;/td>
+&lt;td style="text-align: left">$12.1&lt;/td>
+&lt;td style="text-align: left">$10.0&lt;/td>
+&lt;td style="text-align: left">$12.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>3&lt;/td>
-&lt;td>$12.2&lt;/td>
-&lt;td>$15.2&lt;/td>
-&lt;td>$12.0&lt;/td>
-&lt;td>$15.0&lt;/td>
+&lt;td style="text-align: left">3&lt;/td>
+&lt;td style="text-align: left">$12.2&lt;/td>
+&lt;td style="text-align: left">$15.2&lt;/td>
+&lt;td style="text-align: left">$12.0&lt;/td>
+&lt;td style="text-align: left">$15.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>4&lt;/td>
-&lt;td>$15.1&lt;/td>
-&lt;td>$15.1&lt;/td>
-&lt;td>$13.9&lt;/td>
-&lt;td>$14.0&lt;/td>
+&lt;td style="text-align: left">4&lt;/td>
+&lt;td style="text-align: left">$15.1&lt;/td>
+&lt;td style="text-align: left">$15.1&lt;/td>
+&lt;td style="text-align: left">$13.9&lt;/td>
+&lt;td style="text-align: left">$14.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>5&lt;/td>
-&lt;td>$14.1&lt;/td>
-&lt;td>$16.1&lt;/td>
-&lt;td>$14.0&lt;/td>
-&lt;td>$16.0&lt;/td>
+&lt;td style="text-align: left">5&lt;/td>
+&lt;td style="text-align: left">$14.1&lt;/td>
+&lt;td style="text-align: left">$16.1&lt;/td>
+&lt;td style="text-align: left">$14.0&lt;/td>
+&lt;td style="text-align: left">$16.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>6&lt;/td>
-&lt;td>$16.1&lt;/td>
-&lt;td>$16.1&lt;/td>
-&lt;td>$14.9&lt;/td>
-&lt;td>$15.0&lt;/td>
+&lt;td style="text-align: left">6&lt;/td>
+&lt;td style="text-align: left">$16.1&lt;/td>
+&lt;td style="text-align: left">$16.1&lt;/td>
+&lt;td style="text-align: left">$14.9&lt;/td>
+&lt;td style="text-align: left">$15.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>7&lt;/td>
-&lt;td>$15.1&lt;/td>
-&lt;td>$17.1&lt;/td>
-&lt;td>$15.0&lt;/td>
-&lt;td>$17.0&lt;/td>
+&lt;td style="text-align: left">7&lt;/td>
+&lt;td style="text-align: left">$15.1&lt;/td>
+&lt;td style="text-align: left">$17.1&lt;/td>
+&lt;td style="text-align: left">$15.0&lt;/td>
+&lt;td style="text-align: left">$17.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>8&lt;/td>
-&lt;td>$17.1&lt;/td>
-&lt;td>$17.1&lt;/td>
-&lt;td>$15.9&lt;/td>
-&lt;td>$16.0&lt;/td>
+&lt;td style="text-align: left">8&lt;/td>
+&lt;td style="text-align: left">$17.1&lt;/td>
+&lt;td style="text-align: left">$17.1&lt;/td>
+&lt;td style="text-align: left">$15.9&lt;/td>
+&lt;td style="text-align: left">$16.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>9&lt;/td>
-&lt;td>$16.1&lt;/td>
-&lt;td>$18.1&lt;/td>
-&lt;td>$16.0&lt;/td>
-&lt;td>$18.0&lt;/td>
+&lt;td style="text-align: left">9&lt;/td>
+&lt;td style="text-align: left">$16.1&lt;/td>
+&lt;td style="text-align: left">$18.1&lt;/td>
+&lt;td style="text-align: left">$16.0&lt;/td>
+&lt;td style="text-align: left">$18.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>10&lt;/td>
-&lt;td>$18.1&lt;/td>
-&lt;td>$18.1&lt;/td>
-&lt;td>$16.9&lt;/td>
-&lt;td>$17.0&lt;/td>
+&lt;td style="text-align: left">10&lt;/td>
+&lt;td style="text-align: left">$18.1&lt;/td>
+&lt;td style="text-align: left">$18.1&lt;/td>
+&lt;td style="text-align: left">$16.9&lt;/td>
+&lt;td style="text-align: left">$17.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>11&lt;/td>
-&lt;td>$17.1&lt;/td>
-&lt;td>$19.1&lt;/td>
-&lt;td>$17.0&lt;/td>
-&lt;td>$19.0&lt;/td>
+&lt;td style="text-align: left">11&lt;/td>
+&lt;td style="text-align: left">$17.1&lt;/td>
+&lt;td style="text-align: left">$19.1&lt;/td>
+&lt;td style="text-align: left">$17.0&lt;/td>
+&lt;td style="text-align: left">$19.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>12&lt;/td>
-&lt;td>$19.1&lt;/td>
-&lt;td>$19.1&lt;/td>
-&lt;td>$17.9&lt;/td>
-&lt;td>$18.0&lt;/td>
+&lt;td style="text-align: left">12&lt;/td>
+&lt;td style="text-align: left">$19.1&lt;/td>
+&lt;td style="text-align: left">$19.1&lt;/td>
+&lt;td style="text-align: left">$17.9&lt;/td>
+&lt;td style="text-align: left">$18.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>13&lt;/td>
-&lt;td>$18.1&lt;/td>
-&lt;td>$20.1&lt;/td>
-&lt;td>$18.0&lt;/td>
-&lt;td>$20.0&lt;/td>
+&lt;td style="text-align: left">13&lt;/td>
+&lt;td style="text-align: left">$18.1&lt;/td>
+&lt;td style="text-align: left">$20.1&lt;/td>
+&lt;td style="text-align: left">$18.0&lt;/td>
+&lt;td style="text-align: left">$20.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>14&lt;/td>
-&lt;td>$20.1&lt;/td>
-&lt;td>$21.1&lt;/td>
-&lt;td>$20.0&lt;/td>
-&lt;td>$21.0&lt;/td>
+&lt;td style="text-align: left">14&lt;/td>
+&lt;td style="text-align: left">$20.1&lt;/td>
+&lt;td style="text-align: left">$21.1&lt;/td>
+&lt;td style="text-align: left">$20.0&lt;/td>
+&lt;td style="text-align: left">$21.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>15&lt;/td>
-&lt;td>$21.1&lt;/td>
-&lt;td>$21.1&lt;/td>
-&lt;td>$19.9&lt;/td>
-&lt;td>$20.0&lt;/td>
+&lt;td style="text-align: left">15&lt;/td>
+&lt;td style="text-align: left">$21.1&lt;/td>
+&lt;td style="text-align: left">$21.1&lt;/td>
+&lt;td style="text-align: left">$19.9&lt;/td>
+&lt;td style="text-align: left">$20.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>16&lt;/td>
-&lt;td>$20.1&lt;/td>
-&lt;td>$22.1&lt;/td>
-&lt;td>$20.0&lt;/td>
-&lt;td>$21.0&lt;/td>
+&lt;td style="text-align: left">16&lt;/td>
+&lt;td style="text-align: left">$20.1&lt;/td>
+&lt;td style="text-align: left">$22.1&lt;/td>
+&lt;td style="text-align: left">$20.0&lt;/td>
+&lt;td style="text-align: left">$21.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>17&lt;/td>
-&lt;td>$21.1&lt;/td>
-&lt;td>$23.1&lt;/td>
-&lt;td>$21.0&lt;/td>
-&lt;td>$22.0&lt;/td>
+&lt;td style="text-align: left">17&lt;/td>
+&lt;td style="text-align: left">$21.1&lt;/td>
+&lt;td style="text-align: left">$23.1&lt;/td>
+&lt;td style="text-align: left">$21.0&lt;/td>
+&lt;td style="text-align: left">$22.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>18&lt;/td>
-&lt;td>$22.1&lt;/td>
-&lt;td>$24.1&lt;/td>
-&lt;td>$22.0&lt;/td>
-&lt;td>$23.0&lt;/td>
+&lt;td style="text-align: left">18&lt;/td>
+&lt;td style="text-align: left">$22.1&lt;/td>
+&lt;td style="text-align: left">$24.1&lt;/td>
+&lt;td style="text-align: left">$22.0&lt;/td>
+&lt;td style="text-align: left">$23.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>19&lt;/td>
-&lt;td>$23.1&lt;/td>
-&lt;td>$25.1&lt;/td>
-&lt;td>$23.0&lt;/td>
-&lt;td>$24.0&lt;/td>
+&lt;td style="text-align: left">19&lt;/td>
+&lt;td style="text-align: left">$23.1&lt;/td>
+&lt;td style="text-align: left">$25.1&lt;/td>
+&lt;td style="text-align: left">$23.0&lt;/td>
+&lt;td style="text-align: left">$24.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>20&lt;/td>
-&lt;td>$24.1&lt;/td>
-&lt;td>$26.1&lt;/td>
-&lt;td>$24.0&lt;/td>
-&lt;td>$25.0&lt;/td>
+&lt;td style="text-align: left">20&lt;/td>
+&lt;td style="text-align: left">$24.1&lt;/td>
+&lt;td style="text-align: left">$26.1&lt;/td>
+&lt;td style="text-align: left">$24.0&lt;/td>
+&lt;td style="text-align: left">$25.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>21&lt;/td>
-&lt;td>$25.1&lt;/td>
-&lt;td>$27.1&lt;/td>
-&lt;td>$25.0&lt;/td>
-&lt;td>$26.0&lt;/td>
+&lt;td style="text-align: left">21&lt;/td>
+&lt;td style="text-align: left">$25.1&lt;/td>
+&lt;td style="text-align: left">$27.1&lt;/td>
+&lt;td style="text-align: left">$25.0&lt;/td>
+&lt;td style="text-align: left">$26.0&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -889,54 +889,54 @@ scrolling="no"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Minute&lt;/th>
-&lt;th>Open&lt;/th>
-&lt;th>High&lt;/th>
-&lt;th>Low&lt;/th>
-&lt;th>Close&lt;/th>
-&lt;th>SMA&lt;/th>
+&lt;th style="text-align: left">Minute&lt;/th>
+&lt;th style="text-align: left">Open&lt;/th>
+&lt;th style="text-align: left">High&lt;/th>
+&lt;th style="text-align: left">Low&lt;/th>
+&lt;th style="text-align: left">Close&lt;/th>
+&lt;th style="text-align: left">SMA&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>1&lt;/td>
-&lt;td>$10.0&lt;/td>
-&lt;td>$11.0&lt;/td>
-&lt;td>$9.5&lt;/td>
-&lt;td>$10.0&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">1&lt;/td>
+&lt;td style="text-align: left">$10.0&lt;/td>
+&lt;td style="text-align: left">$11.0&lt;/td>
+&lt;td style="text-align: left">$9.5&lt;/td>
+&lt;td style="text-align: left">$10.0&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>2&lt;/td>
-&lt;td>$10.1&lt;/td>
-&lt;td>$12.1&lt;/td>
-&lt;td>$10.0&lt;/td>
-&lt;td>$12.0&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">2&lt;/td>
+&lt;td style="text-align: left">$10.1&lt;/td>
+&lt;td style="text-align: left">$12.1&lt;/td>
+&lt;td style="text-align: left">$10.0&lt;/td>
+&lt;td style="text-align: left">$12.0&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>3&lt;/td>
-&lt;td>$12.2&lt;/td>
-&lt;td>$15.2&lt;/td>
-&lt;td>$12.0&lt;/td>
-&lt;td>$15.0&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">3&lt;/td>
+&lt;td style="text-align: left">$12.2&lt;/td>
+&lt;td style="text-align: left">$15.2&lt;/td>
+&lt;td style="text-align: left">$12.0&lt;/td>
+&lt;td style="text-align: left">$15.0&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>4&lt;/td>
-&lt;td>$15.1&lt;/td>
-&lt;td>$15.1&lt;/td>
-&lt;td>$13.9&lt;/td>
-&lt;td>$14.0&lt;/td>
-&lt;td>-&lt;/td>
+&lt;td style="text-align: left">4&lt;/td>
+&lt;td style="text-align: left">$15.1&lt;/td>
+&lt;td style="text-align: left">$15.1&lt;/td>
+&lt;td style="text-align: left">$13.9&lt;/td>
+&lt;td style="text-align: left">$14.0&lt;/td>
+&lt;td style="text-align: left">-&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>5&lt;/td>
-&lt;td>$14.1&lt;/td>
-&lt;td>$16.1&lt;/td>
-&lt;td>$14.0&lt;/td>
-&lt;td>$16.0&lt;/td>
-&lt;td>$13.4&lt;/td>
+&lt;td style="text-align: left">5&lt;/td>
+&lt;td style="text-align: left">$14.1&lt;/td>
+&lt;td style="text-align: left">$16.1&lt;/td>
+&lt;td style="text-align: left">$14.0&lt;/td>
+&lt;td style="text-align: left">$16.0&lt;/td>
+&lt;td style="text-align: left">$13.4&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -984,363 +984,363 @@ scrolling="no"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Minute&lt;/th>
-&lt;th>Open&lt;/th>
-&lt;th>High&lt;/th>
-&lt;th>Low&lt;/th>
-&lt;th>Close&lt;/th>
+&lt;th style="text-align: left">Minute&lt;/th>
+&lt;th style="text-align: left">Open&lt;/th>
+&lt;th style="text-align: left">High&lt;/th>
+&lt;th style="text-align: left">Low&lt;/th>
+&lt;th style="text-align: left">Close&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>1&lt;/td>
-&lt;td>$10.0&lt;/td>
-&lt;td>$11.0&lt;/td>
-&lt;td>$9.5&lt;/td>
-&lt;td>$10.0&lt;/td>
+&lt;td style="text-align: left">1&lt;/td>
+&lt;td style="text-align: left">$10.0&lt;/td>
+&lt;td style="text-align: left">$11.0&lt;/td>
+&lt;td style="text-align: left">$9.5&lt;/td>
+&lt;td style="text-align: left">$10.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>2&lt;/td>
-&lt;td>$10.1&lt;/td>
-&lt;td>$12.1&lt;/td>
-&lt;td>$10.0&lt;/td>
-&lt;td>$12.0&lt;/td>
+&lt;td style="text-align: left">2&lt;/td>
+&lt;td style="text-align: left">$10.1&lt;/td>
+&lt;td style="text-align: left">$12.1&lt;/td>
+&lt;td style="text-align: left">$10.0&lt;/td>
+&lt;td style="text-align: left">$12.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>3&lt;/td>
-&lt;td>$12.2&lt;/td>
-&lt;td>$15.2&lt;/td>
-&lt;td>$12.0&lt;/td>
-&lt;td>$15.0&lt;/td>
+&lt;td style="text-align: left">3&lt;/td>
+&lt;td style="text-align: left">$12.2&lt;/td>
+&lt;td style="text-align: left">$15.2&lt;/td>
+&lt;td style="text-align: left">$12.0&lt;/td>
+&lt;td style="text-align: left">$15.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>4&lt;/td>
-&lt;td>$15.1&lt;/td>
-&lt;td>$15.1&lt;/td>
-&lt;td>$13.9&lt;/td>
-&lt;td>$14.0&lt;/td>
+&lt;td style="text-align: left">4&lt;/td>
+&lt;td style="text-align: left">$15.1&lt;/td>
+&lt;td style="text-align: left">$15.1&lt;/td>
+&lt;td style="text-align: left">$13.9&lt;/td>
+&lt;td style="text-align: left">$14.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>5&lt;/td>
-&lt;td>$14.1&lt;/td>
-&lt;td>$16.1&lt;/td>
-&lt;td>$14.0&lt;/td>
-&lt;td>$16.0&lt;/td>
+&lt;td style="text-align: left">5&lt;/td>
+&lt;td style="text-align: left">$14.1&lt;/td>
+&lt;td style="text-align: left">$16.1&lt;/td>
+&lt;td style="text-align: left">$14.0&lt;/td>
+&lt;td style="text-align: left">$16.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>6&lt;/td>
-&lt;td>$16.1&lt;/td>
-&lt;td>$16.1&lt;/td>
-&lt;td>$14.9&lt;/td>
-&lt;td>$15.0&lt;/td>
+&lt;td style="text-align: left">6&lt;/td>
+&lt;td style="text-align: left">$16.1&lt;/td>
+&lt;td style="text-align: left">$16.1&lt;/td>
+&lt;td style="text-align: left">$14.9&lt;/td>
+&lt;td style="text-align: left">$15.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>7&lt;/td>
-&lt;td>$15.1&lt;/td>
-&lt;td>$17.1&lt;/td>
-&lt;td>$15.0&lt;/td>
-&lt;td>$17.0&lt;/td>
+&lt;td style="text-align: left">7&lt;/td>
+&lt;td style="text-align: left">$15.1&lt;/td>
+&lt;td style="text-align: left">$17.1&lt;/td>
+&lt;td style="text-align: left">$15.0&lt;/td>
+&lt;td style="text-align: left">$17.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>8&lt;/td>
-&lt;td>$17.1&lt;/td>
-&lt;td>$17.1&lt;/td>
-&lt;td>$15.9&lt;/td>
-&lt;td>$16.0&lt;/td>
+&lt;td style="text-align: left">8&lt;/td>
+&lt;td style="text-align: left">$17.1&lt;/td>
+&lt;td style="text-align: left">$17.1&lt;/td>
+&lt;td style="text-align: left">$15.9&lt;/td>
+&lt;td style="text-align: left">$16.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>9&lt;/td>
-&lt;td>$16.1&lt;/td>
-&lt;td>$18.1&lt;/td>
-&lt;td>$16.0&lt;/td>
-&lt;td>$18.0&lt;/td>
+&lt;td style="text-align: left">9&lt;/td>
+&lt;td style="text-align: left">$16.1&lt;/td>
+&lt;td style="text-align: left">$18.1&lt;/td>
+&lt;td style="text-align: left">$16.0&lt;/td>
+&lt;td style="text-align: left">$18.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>10&lt;/td>
-&lt;td>$18.1&lt;/td>
-&lt;td>$18.1&lt;/td>
-&lt;td>$16.9&lt;/td>
-&lt;td>$17.0&lt;/td>
+&lt;td style="text-align: left">10&lt;/td>
+&lt;td style="text-align: left">$18.1&lt;/td>
+&lt;td style="text-align: left">$18.1&lt;/td>
+&lt;td style="text-align: left">$16.9&lt;/td>
+&lt;td style="text-align: left">$17.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>11&lt;/td>
-&lt;td>$17.1&lt;/td>
-&lt;td>$19.1&lt;/td>
-&lt;td>$17.0&lt;/td>
-&lt;td>$19.0&lt;/td>
+&lt;td style="text-align: left">11&lt;/td>
+&lt;td style="text-align: left">$17.1&lt;/td>
+&lt;td style="text-align: left">$19.1&lt;/td>
+&lt;td style="text-align: left">$17.0&lt;/td>
+&lt;td style="text-align: left">$19.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>12&lt;/td>
-&lt;td>$19.1&lt;/td>
-&lt;td>$19.1&lt;/td>
-&lt;td>$17.9&lt;/td>
-&lt;td>$18.0&lt;/td>
+&lt;td style="text-align: left">12&lt;/td>
+&lt;td style="text-align: left">$19.1&lt;/td>
+&lt;td style="text-align: left">$19.1&lt;/td>
+&lt;td style="text-align: left">$17.9&lt;/td>
+&lt;td style="text-align: left">$18.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>13&lt;/td>
-&lt;td>$18.1&lt;/td>
-&lt;td>$20.1&lt;/td>
-&lt;td>$18.0&lt;/td>
-&lt;td>$20.0&lt;/td>
+&lt;td style="text-align: left">13&lt;/td>
+&lt;td style="text-align: left">$18.1&lt;/td>
+&lt;td style="text-align: left">$20.1&lt;/td>
+&lt;td style="text-align: left">$18.0&lt;/td>
+&lt;td style="text-align: left">$20.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>14&lt;/td>
-&lt;td>$20.1&lt;/td>
-&lt;td>$21.1&lt;/td>
-&lt;td>$20.0&lt;/td>
-&lt;td>$21.0&lt;/td>
+&lt;td style="text-align: left">14&lt;/td>
+&lt;td style="text-align: left">$20.1&lt;/td>
+&lt;td style="text-align: left">$21.1&lt;/td>
+&lt;td style="text-align: left">$20.0&lt;/td>
+&lt;td style="text-align: left">$21.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>15&lt;/td>
-&lt;td>$21.1&lt;/td>
-&lt;td>$21.1&lt;/td>
-&lt;td>$19.9&lt;/td>
-&lt;td>$20.0&lt;/td>
+&lt;td style="text-align: left">15&lt;/td>
+&lt;td style="text-align: left">$21.1&lt;/td>
+&lt;td style="text-align: left">$21.1&lt;/td>
+&lt;td style="text-align: left">$19.9&lt;/td>
+&lt;td style="text-align: left">$20.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>16&lt;/td>
-&lt;td>$20.1&lt;/td>
-&lt;td>$22.1&lt;/td>
-&lt;td>$20.0&lt;/td>
-&lt;td>$21.0&lt;/td>
+&lt;td style="text-align: left">16&lt;/td>
+&lt;td style="text-align: left">$20.1&lt;/td>
+&lt;td style="text-align: left">$22.1&lt;/td>
+&lt;td style="text-align: left">$20.0&lt;/td>
+&lt;td style="text-align: left">$21.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>17&lt;/td>
-&lt;td>$21.1&lt;/td>
-&lt;td>$23.1&lt;/td>
-&lt;td>$21.0&lt;/td>
-&lt;td>$22.0&lt;/td>
+&lt;td style="text-align: left">17&lt;/td>
+&lt;td style="text-align: left">$21.1&lt;/td>
+&lt;td style="text-align: left">$23.1&lt;/td>
+&lt;td style="text-align: left">$21.0&lt;/td>
+&lt;td style="text-align: left">$22.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>18&lt;/td>
-&lt;td>$22.1&lt;/td>
-&lt;td>$24.1&lt;/td>
-&lt;td>$22.0&lt;/td>
-&lt;td>$23.0&lt;/td>
+&lt;td style="text-align: left">18&lt;/td>
+&lt;td style="text-align: left">$22.1&lt;/td>
+&lt;td style="text-align: left">$24.1&lt;/td>
+&lt;td style="text-align: left">$22.0&lt;/td>
+&lt;td style="text-align: left">$23.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>19&lt;/td>
-&lt;td>$23.1&lt;/td>
-&lt;td>$25.1&lt;/td>
-&lt;td>$23.0&lt;/td>
-&lt;td>$24.0&lt;/td>
+&lt;td style="text-align: left">19&lt;/td>
+&lt;td style="text-align: left">$23.1&lt;/td>
+&lt;td style="text-align: left">$25.1&lt;/td>
+&lt;td style="text-align: left">$23.0&lt;/td>
+&lt;td style="text-align: left">$24.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>20&lt;/td>
-&lt;td>$24.1&lt;/td>
-&lt;td>$26.1&lt;/td>
-&lt;td>$24.0&lt;/td>
-&lt;td>$25.0&lt;/td>
+&lt;td style="text-align: left">20&lt;/td>
+&lt;td style="text-align: left">$24.1&lt;/td>
+&lt;td style="text-align: left">$26.1&lt;/td>
+&lt;td style="text-align: left">$24.0&lt;/td>
+&lt;td style="text-align: left">$25.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>21&lt;/td>
-&lt;td>$25.1&lt;/td>
-&lt;td>$27.1&lt;/td>
-&lt;td>$25.0&lt;/td>
-&lt;td>$26.0&lt;/td>
+&lt;td style="text-align: left">21&lt;/td>
+&lt;td style="text-align: left">$25.1&lt;/td>
+&lt;td style="text-align: left">$27.1&lt;/td>
+&lt;td style="text-align: left">$25.0&lt;/td>
+&lt;td style="text-align: left">$26.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>22&lt;/td>
-&lt;td>$26.1&lt;/td>
-&lt;td>$28.1&lt;/td>
-&lt;td>$26.0&lt;/td>
-&lt;td>$27.0&lt;/td>
+&lt;td style="text-align: left">22&lt;/td>
+&lt;td style="text-align: left">$26.1&lt;/td>
+&lt;td style="text-align: left">$28.1&lt;/td>
+&lt;td style="text-align: left">$26.0&lt;/td>
+&lt;td style="text-align: left">$27.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>23&lt;/td>
-&lt;td>$27.1&lt;/td>
-&lt;td>$29.1&lt;/td>
-&lt;td>$27.0&lt;/td>
-&lt;td>$28.0&lt;/td>
+&lt;td style="text-align: left">23&lt;/td>
+&lt;td style="text-align: left">$27.1&lt;/td>
+&lt;td style="text-align: left">$29.1&lt;/td>
+&lt;td style="text-align: left">$27.0&lt;/td>
+&lt;td style="text-align: left">$28.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>24&lt;/td>
-&lt;td>$28.1&lt;/td>
-&lt;td>$30.1&lt;/td>
-&lt;td>$28.0&lt;/td>
-&lt;td>$29.0&lt;/td>
+&lt;td style="text-align: left">24&lt;/td>
+&lt;td style="text-align: left">$28.1&lt;/td>
+&lt;td style="text-align: left">$30.1&lt;/td>
+&lt;td style="text-align: left">$28.0&lt;/td>
+&lt;td style="text-align: left">$29.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>25&lt;/td>
-&lt;td>$29.1&lt;/td>
-&lt;td>$31.1&lt;/td>
-&lt;td>$29.0&lt;/td>
-&lt;td>$30.0&lt;/td>
+&lt;td style="text-align: left">25&lt;/td>
+&lt;td style="text-align: left">$29.1&lt;/td>
+&lt;td style="text-align: left">$31.1&lt;/td>
+&lt;td style="text-align: left">$29.0&lt;/td>
+&lt;td style="text-align: left">$30.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>26&lt;/td>
-&lt;td>$30.1&lt;/td>
-&lt;td>$32.1&lt;/td>
-&lt;td>$30.0&lt;/td>
-&lt;td>$31.0&lt;/td>
+&lt;td style="text-align: left">26&lt;/td>
+&lt;td style="text-align: left">$30.1&lt;/td>
+&lt;td style="text-align: left">$32.1&lt;/td>
+&lt;td style="text-align: left">$30.0&lt;/td>
+&lt;td style="text-align: left">$31.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>27&lt;/td>
-&lt;td>$31.1&lt;/td>
-&lt;td>$33.1&lt;/td>
-&lt;td>$31.0&lt;/td>
-&lt;td>$32.0&lt;/td>
+&lt;td style="text-align: left">27&lt;/td>
+&lt;td style="text-align: left">$31.1&lt;/td>
+&lt;td style="text-align: left">$33.1&lt;/td>
+&lt;td style="text-align: left">$31.0&lt;/td>
+&lt;td style="text-align: left">$32.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>28&lt;/td>
-&lt;td>$32.1&lt;/td>
-&lt;td>$34.1&lt;/td>
-&lt;td>$32.0&lt;/td>
-&lt;td>$33.0&lt;/td>
+&lt;td style="text-align: left">28&lt;/td>
+&lt;td style="text-align: left">$32.1&lt;/td>
+&lt;td style="text-align: left">$34.1&lt;/td>
+&lt;td style="text-align: left">$32.0&lt;/td>
+&lt;td style="text-align: left">$33.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>29&lt;/td>
-&lt;td>$33.1&lt;/td>
-&lt;td>$35.1&lt;/td>
-&lt;td>$33.0&lt;/td>
-&lt;td>$34.0&lt;/td>
+&lt;td style="text-align: left">29&lt;/td>
+&lt;td style="text-align: left">$33.1&lt;/td>
+&lt;td style="text-align: left">$35.1&lt;/td>
+&lt;td style="text-align: left">$33.0&lt;/td>
+&lt;td style="text-align: left">$34.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>30&lt;/td>
-&lt;td>$34.1&lt;/td>
-&lt;td>$36.1&lt;/td>
-&lt;td>$34.0&lt;/td>
-&lt;td>$35.0&lt;/td>
+&lt;td style="text-align: left">30&lt;/td>
+&lt;td style="text-align: left">$34.1&lt;/td>
+&lt;td style="text-align: left">$36.1&lt;/td>
+&lt;td style="text-align: left">$34.0&lt;/td>
+&lt;td style="text-align: left">$35.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>31&lt;/td>
-&lt;td>$35.1&lt;/td>
-&lt;td>$37.1&lt;/td>
-&lt;td>$35.0&lt;/td>
-&lt;td>$36.0&lt;/td>
+&lt;td style="text-align: left">31&lt;/td>
+&lt;td style="text-align: left">$35.1&lt;/td>
+&lt;td style="text-align: left">$37.1&lt;/td>
+&lt;td style="text-align: left">$35.0&lt;/td>
+&lt;td style="text-align: left">$36.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>32&lt;/td>
-&lt;td>$36.1&lt;/td>
-&lt;td>$38.1&lt;/td>
-&lt;td>$36.0&lt;/td>
-&lt;td>$37.0&lt;/td>
+&lt;td style="text-align: left">32&lt;/td>
+&lt;td style="text-align: left">$36.1&lt;/td>
+&lt;td style="text-align: left">$38.1&lt;/td>
+&lt;td style="text-align: left">$36.0&lt;/td>
+&lt;td style="text-align: left">$37.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>33&lt;/td>
-&lt;td>$37.1&lt;/td>
-&lt;td>$39.1&lt;/td>
-&lt;td>$37.0&lt;/td>
-&lt;td>$38.0&lt;/td>
+&lt;td style="text-align: left">33&lt;/td>
+&lt;td style="text-align: left">$37.1&lt;/td>
+&lt;td style="text-align: left">$39.1&lt;/td>
+&lt;td style="text-align: left">$37.0&lt;/td>
+&lt;td style="text-align: left">$38.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>34&lt;/td>
-&lt;td>$38.1&lt;/td>
-&lt;td>$40.1&lt;/td>
-&lt;td>$38.0&lt;/td>
-&lt;td>$39.0&lt;/td>
+&lt;td style="text-align: left">34&lt;/td>
+&lt;td style="text-align: left">$38.1&lt;/td>
+&lt;td style="text-align: left">$40.1&lt;/td>
+&lt;td style="text-align: left">$38.0&lt;/td>
+&lt;td style="text-align: left">$39.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>35&lt;/td>
-&lt;td>$39.1&lt;/td>
-&lt;td>$41.1&lt;/td>
-&lt;td>$39.0&lt;/td>
-&lt;td>$40.0&lt;/td>
+&lt;td style="text-align: left">35&lt;/td>
+&lt;td style="text-align: left">$39.1&lt;/td>
+&lt;td style="text-align: left">$41.1&lt;/td>
+&lt;td style="text-align: left">$39.0&lt;/td>
+&lt;td style="text-align: left">$40.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>36&lt;/td>
-&lt;td>$40.1&lt;/td>
-&lt;td>$42.1&lt;/td>
-&lt;td>$40.0&lt;/td>
-&lt;td>$41.0&lt;/td>
+&lt;td style="text-align: left">36&lt;/td>
+&lt;td style="text-align: left">$40.1&lt;/td>
+&lt;td style="text-align: left">$42.1&lt;/td>
+&lt;td style="text-align: left">$40.0&lt;/td>
+&lt;td style="text-align: left">$41.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>37&lt;/td>
-&lt;td>$41.1&lt;/td>
-&lt;td>$43.1&lt;/td>
-&lt;td>$41.0&lt;/td>
-&lt;td>$42.0&lt;/td>
+&lt;td style="text-align: left">37&lt;/td>
+&lt;td style="text-align: left">$41.1&lt;/td>
+&lt;td style="text-align: left">$43.1&lt;/td>
+&lt;td style="text-align: left">$41.0&lt;/td>
+&lt;td style="text-align: left">$42.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>38&lt;/td>
-&lt;td>$42.1&lt;/td>
-&lt;td>$44.1&lt;/td>
-&lt;td>$42.0&lt;/td>
-&lt;td>$43.0&lt;/td>
+&lt;td style="text-align: left">38&lt;/td>
+&lt;td style="text-align: left">$42.1&lt;/td>
+&lt;td style="text-align: left">$44.1&lt;/td>
+&lt;td style="text-align: left">$42.0&lt;/td>
+&lt;td style="text-align: left">$43.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>39&lt;/td>
-&lt;td>$43.1&lt;/td>
-&lt;td>$45.1&lt;/td>
-&lt;td>$43.0&lt;/td>
-&lt;td>$44.0&lt;/td>
+&lt;td style="text-align: left">39&lt;/td>
+&lt;td style="text-align: left">$43.1&lt;/td>
+&lt;td style="text-align: left">$45.1&lt;/td>
+&lt;td style="text-align: left">$43.0&lt;/td>
+&lt;td style="text-align: left">$44.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>40&lt;/td>
-&lt;td>$44.1&lt;/td>
-&lt;td>$46.1&lt;/td>
-&lt;td>$44.0&lt;/td>
-&lt;td>$45.0&lt;/td>
+&lt;td style="text-align: left">40&lt;/td>
+&lt;td style="text-align: left">$44.1&lt;/td>
+&lt;td style="text-align: left">$46.1&lt;/td>
+&lt;td style="text-align: left">$44.0&lt;/td>
+&lt;td style="text-align: left">$45.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>41&lt;/td>
-&lt;td>$45.1&lt;/td>
-&lt;td>$47.1&lt;/td>
-&lt;td>$45.0&lt;/td>
-&lt;td>$46.0&lt;/td>
+&lt;td style="text-align: left">41&lt;/td>
+&lt;td style="text-align: left">$45.1&lt;/td>
+&lt;td style="text-align: left">$47.1&lt;/td>
+&lt;td style="text-align: left">$45.0&lt;/td>
+&lt;td style="text-align: left">$46.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>42&lt;/td>
-&lt;td>$46.1&lt;/td>
-&lt;td>$48.1&lt;/td>
-&lt;td>$46.0&lt;/td>
-&lt;td>$47.0&lt;/td>
+&lt;td style="text-align: left">42&lt;/td>
+&lt;td style="text-align: left">$46.1&lt;/td>
+&lt;td style="text-align: left">$48.1&lt;/td>
+&lt;td style="text-align: left">$46.0&lt;/td>
+&lt;td style="text-align: left">$47.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>43&lt;/td>
-&lt;td>$47.1&lt;/td>
-&lt;td>$49.1&lt;/td>
-&lt;td>$47.0&lt;/td>
-&lt;td>$48.0&lt;/td>
+&lt;td style="text-align: left">43&lt;/td>
+&lt;td style="text-align: left">$47.1&lt;/td>
+&lt;td style="text-align: left">$49.1&lt;/td>
+&lt;td style="text-align: left">$47.0&lt;/td>
+&lt;td style="text-align: left">$48.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>44&lt;/td>
-&lt;td>$48.1&lt;/td>
-&lt;td>$50.1&lt;/td>
-&lt;td>$48.0&lt;/td>
-&lt;td>$49.0&lt;/td>
+&lt;td style="text-align: left">44&lt;/td>
+&lt;td style="text-align: left">$48.1&lt;/td>
+&lt;td style="text-align: left">$50.1&lt;/td>
+&lt;td style="text-align: left">$48.0&lt;/td>
+&lt;td style="text-align: left">$49.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>45&lt;/td>
-&lt;td>$49.1&lt;/td>
-&lt;td>$51.1&lt;/td>
-&lt;td>$49.0&lt;/td>
-&lt;td>$50.0&lt;/td>
+&lt;td style="text-align: left">45&lt;/td>
+&lt;td style="text-align: left">$49.1&lt;/td>
+&lt;td style="text-align: left">$51.1&lt;/td>
+&lt;td style="text-align: left">$49.0&lt;/td>
+&lt;td style="text-align: left">$50.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>46&lt;/td>
-&lt;td>$50.1&lt;/td>
-&lt;td>$52.1&lt;/td>
-&lt;td>$50.0&lt;/td>
-&lt;td>$51.0&lt;/td>
+&lt;td style="text-align: left">46&lt;/td>
+&lt;td style="text-align: left">$50.1&lt;/td>
+&lt;td style="text-align: left">$52.1&lt;/td>
+&lt;td style="text-align: left">$50.0&lt;/td>
+&lt;td style="text-align: left">$51.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>47&lt;/td>
-&lt;td>$51.1&lt;/td>
-&lt;td>$53.1&lt;/td>
-&lt;td>$51.0&lt;/td>
-&lt;td>$52.0&lt;/td>
+&lt;td style="text-align: left">47&lt;/td>
+&lt;td style="text-align: left">$51.1&lt;/td>
+&lt;td style="text-align: left">$53.1&lt;/td>
+&lt;td style="text-align: left">$51.0&lt;/td>
+&lt;td style="text-align: left">$52.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>48&lt;/td>
-&lt;td>$52.1&lt;/td>
-&lt;td>$54.1&lt;/td>
-&lt;td>$52.0&lt;/td>
-&lt;td>$53.0&lt;/td>
+&lt;td style="text-align: left">48&lt;/td>
+&lt;td style="text-align: left">$52.1&lt;/td>
+&lt;td style="text-align: left">$54.1&lt;/td>
+&lt;td style="text-align: left">$52.0&lt;/td>
+&lt;td style="text-align: left">$53.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>49&lt;/td>
-&lt;td>$53.1&lt;/td>
-&lt;td>$55.1&lt;/td>
-&lt;td>$53.0&lt;/td>
-&lt;td>$54.0&lt;/td>
+&lt;td style="text-align: left">49&lt;/td>
+&lt;td style="text-align: left">$53.1&lt;/td>
+&lt;td style="text-align: left">$55.1&lt;/td>
+&lt;td style="text-align: left">$53.0&lt;/td>
+&lt;td style="text-align: left">$54.0&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>50&lt;/td>
-&lt;td>$54.1&lt;/td>
-&lt;td>$56.1&lt;/td>
-&lt;td>$54.0&lt;/td>
-&lt;td>$55.0&lt;/td>
+&lt;td style="text-align: left">50&lt;/td>
+&lt;td style="text-align: left">$54.1&lt;/td>
+&lt;td style="text-align: left">$56.1&lt;/td>
+&lt;td style="text-align: left">$54.0&lt;/td>
+&lt;td style="text-align: left">$55.0&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>

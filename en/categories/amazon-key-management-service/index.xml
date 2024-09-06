@@ -37,38 +37,38 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Type of KMS key&lt;/th>
-&lt;th>Can view KMS key metadata&lt;/th>
-&lt;th>Can manage KMS key&lt;/th>
-&lt;th>Used only for my AWS account&lt;/th>
-&lt;th>&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">Automatic rotation&lt;/a>&lt;/th>
-&lt;th>&lt;a href="https://aws.amazon.com/kms/pricing/">Pricing&lt;/a>&lt;/th>
+&lt;th style="text-align: left">Type of KMS key&lt;/th>
+&lt;th style="text-align: left">Can view KMS key metadata&lt;/th>
+&lt;th style="text-align: left">Can manage KMS key&lt;/th>
+&lt;th style="text-align: left">Used only for my AWS account&lt;/th>
+&lt;th style="text-align: left">&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">Automatic rotation&lt;/a>&lt;/th>
+&lt;th style="text-align: left">&lt;a href="https://aws.amazon.com/kms/pricing/">Pricing&lt;/a>&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">Customer managed key&lt;/a>&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Optional. Every year (approximately 365 days)&lt;/td>
-&lt;td>Monthly fee (pro-rated hourly)&lt;br>&lt;br>Per-use fee&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">Customer managed key&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Optional. Every year (approximately 365 days)&lt;/td>
+&lt;td style="text-align: left">Monthly fee (pro-rated hourly)&lt;br>&lt;br>Per-use fee&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS managed key&lt;/a>&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>No&lt;/td>
-&lt;td>Yes&lt;/td>
-&lt;td>Required. Every year (approximately 365 days)&lt;/td>
-&lt;td>No monthly fee&lt;br>&lt;br>Per-use fee (some AWS services pay this fee for you)&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS managed key&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
+&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td style="text-align: left">Required. Every year (approximately 365 days)&lt;/td>
+&lt;td style="text-align: left">No monthly fee&lt;br>&lt;br>Per-use fee (some AWS services pay this fee for you)&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">AWS owned key&lt;/a>&lt;/td>
-&lt;td>No&lt;/td>
-&lt;td>No&lt;/td>
-&lt;td>No&lt;/td>
-&lt;td>Varies&lt;/td>
-&lt;td>Varies&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">AWS owned key&lt;/a>&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
+&lt;td style="text-align: left">No&lt;/td>
+&lt;td style="text-align: left">Varies&lt;/td>
+&lt;td style="text-align: left">Varies&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>

@@ -2635,18 +2635,18 @@ Second paragraph.&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Name&lt;/th>
-&lt;th>Age&lt;/th>
+&lt;th style="text-align: left">Name&lt;/th>
+&lt;th style="text-align: left">Age&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>Bob&lt;/td>
-&lt;td>27&lt;/td>
+&lt;td style="text-align: left">Bob&lt;/td>
+&lt;td style="text-align: left">27&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Alice&lt;/td>
-&lt;td>23&lt;/td>
+&lt;td style="text-align: left">Alice&lt;/td>
+&lt;td style="text-align: left">23&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -2657,16 +2657,16 @@ Second paragraph.&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:left">Column on the left&lt;/th>
-&lt;th style="text-align:right">Column on the right&lt;/th>
-&lt;th style="text-align:center">Column on the center&lt;/th>
+&lt;th style="text-align: left">Column on the left&lt;/th>
+&lt;th style="text-align: right">Column on the right&lt;/th>
+&lt;th style="text-align: center">Column on the center&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:left">Text&lt;/td>
-&lt;td style="text-align:right">Text&lt;/td>
-&lt;td style="text-align:center">Text&lt;/td>
+&lt;td style="text-align: left">Text&lt;/td>
+&lt;td style="text-align: right">Text&lt;/td>
+&lt;td style="text-align: center">Text&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -2677,16 +2677,16 @@ Second paragraph.&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Italics&lt;/th>
-&lt;th>Bold&lt;/th>
-&lt;th>Code&lt;/th>
+&lt;th style="text-align: left">Italics&lt;/th>
+&lt;th style="text-align: left">Bold&lt;/th>
+&lt;th style="text-align: left">Code&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>&lt;em>italics&lt;/em>&lt;/td>
-&lt;td>&lt;strong>bold&lt;/strong>&lt;/td>
-&lt;td>&lt;code>code&lt;/code>&lt;/td>
+&lt;td style="text-align: left">&lt;em>italics&lt;/em>&lt;/td>
+&lt;td style="text-align: left">&lt;strong>bold&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">&lt;code>code&lt;/code>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -2765,18 +2765,18 @@ Second paragraph.&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Correct&lt;/th>
-&lt;th>Wrong&lt;/th>
+&lt;th style="text-align: left">Correct&lt;/th>
+&lt;th style="text-align: left">Wrong&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>Getting the &lt;br/> Creating a Cluster&lt;/td>
-&lt;td>Get the &lt;br/> Creating a Cluster&lt;/td>
+&lt;td style="text-align: left">Getting the &lt;br/> Creating a Cluster&lt;/td>
+&lt;td style="text-align: left">Get the &lt;br/> Creating a Cluster&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Get &lt;br/> Create Cluster&lt;/td>
-&lt;td>&lt;/td>
+&lt;td style="text-align: left">Get &lt;br/> Create Cluster&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -2858,176 +2858,176 @@ Second paragraph.&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Math Element&lt;/th>
-&lt;th>Code&lt;/th>
-&lt;th>Pronunciation&lt;/th>
+&lt;th style="text-align: left">Math Element&lt;/th>
+&lt;th style="text-align: left">Code&lt;/th>
+&lt;th style="text-align: left">Pronunciation&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>$x_{12345}$&lt;/td>
-&lt;td>&lt;code>$x_{12345}$&lt;/code>&lt;/td>
-&lt;td>&lt;/td>
+&lt;td style="text-align: left">$x_{12345}$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$x_{12345}$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\quad x_12$&lt;/td>
-&lt;td>&lt;code>$\quad x_12$&lt;/code>&lt;/td>
-&lt;td>&lt;/td>
+&lt;td style="text-align: left">$\quad x_12$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\quad x_12$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$a_{ij}b_{kl}=\delta_{i}^{l}$&lt;/td>
-&lt;td>&lt;code>$a_{ij}b_{kl}=\delta_{i}^{l}$&lt;/code>&lt;/td>
-&lt;td>&lt;/td>
+&lt;td style="text-align: left">$a_{ij}b_{kl}=\delta_{i}^{l}$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$a_{ij}b_{kl}=\delta_{i}^{l}$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\alpha$&lt;/td>
-&lt;td>&lt;code>$\alpha$&lt;/code>&lt;/td>
-&lt;td>\alpha&lt;/td>
+&lt;td style="text-align: left">$\alpha$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\alpha$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\alpha&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\beta$&lt;/td>
-&lt;td>&lt;code>$\beta$&lt;/code>&lt;/td>
-&lt;td>\beta&lt;/td>
+&lt;td style="text-align: left">$\beta$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\beta$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\beta&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\gamma$&lt;/td>
-&lt;td>&lt;code>$\gamma$&lt;/code>&lt;/td>
-&lt;td>\gamma&lt;/td>
+&lt;td style="text-align: left">$\gamma$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\gamma$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\gamma&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\delta$&lt;/td>
-&lt;td>&lt;code>$\delta$&lt;/code>&lt;/td>
-&lt;td>\delta&lt;/td>
+&lt;td style="text-align: left">$\delta$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\delta$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\delta&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\epsilon$&lt;/td>
-&lt;td>&lt;code>$\epsilon$&lt;/code>&lt;/td>
-&lt;td>\epsilon&lt;/td>
+&lt;td style="text-align: left">$\epsilon$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\epsilon$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\epsilon&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\pi$&lt;/td>
-&lt;td>&lt;code>$\pi$&lt;/code>&lt;/td>
-&lt;td>\pi&lt;/td>
+&lt;td style="text-align: left">$\pi$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\pi$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\pi&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\theta$&lt;/td>
-&lt;td>&lt;code>$\theta$&lt;/code>&lt;/td>
-&lt;td>\theta&lt;/td>
+&lt;td style="text-align: left">$\theta$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\theta$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\theta&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\lambda$&lt;/td>
-&lt;td>&lt;code>$\lambda$&lt;/code>&lt;/td>
-&lt;td>\lambda&lt;/td>
+&lt;td style="text-align: left">$\lambda$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\lambda$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\lambda&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\mu$&lt;/td>
-&lt;td>&lt;code>$\mu$&lt;/code>&lt;/td>
-&lt;td>\mu&lt;/td>
+&lt;td style="text-align: left">$\mu$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\mu$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\mu&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\sigma$&lt;/td>
-&lt;td>&lt;code>$\sigma$&lt;/code>&lt;/td>
-&lt;td>\sigma&lt;/td>
+&lt;td style="text-align: left">$\sigma$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\sigma$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\sigma&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\omega$&lt;/td>
-&lt;td>&lt;code>$\omega$&lt;/code>&lt;/td>
-&lt;td>\omega&lt;/td>
+&lt;td style="text-align: left">$\omega$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\omega$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\omega&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\Gamma$&lt;/td>
-&lt;td>&lt;code>$\Gamma$&lt;/code>&lt;/td>
-&lt;td>\Gamma&lt;/td>
+&lt;td style="text-align: left">$\Gamma$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\Gamma$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\Gamma&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\Delta$&lt;/td>
-&lt;td>&lt;code>$\Delta$&lt;/code>&lt;/td>
-&lt;td>\Delta&lt;/td>
+&lt;td style="text-align: left">$\Delta$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\Delta$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\Delta&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\Sigma$&lt;/td>
-&lt;td>&lt;code>$\Sigma$&lt;/code>&lt;/td>
-&lt;td>\Sigma&lt;/td>
+&lt;td style="text-align: left">$\Sigma$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\Sigma$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\Sigma&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\Theta$&lt;/td>
-&lt;td>&lt;code>$\Theta$&lt;/code>&lt;/td>
-&lt;td>\Theta&lt;/td>
+&lt;td style="text-align: left">$\Theta$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\Theta$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\Theta&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\Omega$&lt;/td>
-&lt;td>&lt;code>$\Omega$&lt;/code>&lt;/td>
-&lt;td>\Omega&lt;/td>
+&lt;td style="text-align: left">$\Omega$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\Omega$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\Omega&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\infty$&lt;/td>
-&lt;td>&lt;code>$\infty$&lt;/code>&lt;/td>
-&lt;td>\infty&lt;/td>
+&lt;td style="text-align: left">$\infty$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\infty$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\infty&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\sum$&lt;/td>
-&lt;td>&lt;code>$\sum$&lt;/code>&lt;/td>
-&lt;td>\sum&lt;/td>
+&lt;td style="text-align: left">$\sum$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\sum$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\sum&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\prod$&lt;/td>
-&lt;td>&lt;code>$\prod$&lt;/code>&lt;/td>
-&lt;td>\prod&lt;/td>
+&lt;td style="text-align: left">$\prod$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\prod$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\prod&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\int$&lt;/td>
-&lt;td>&lt;code>$\int$&lt;/code>&lt;/td>
-&lt;td>\int&lt;/td>
+&lt;td style="text-align: left">$\int$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\int$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\int&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\oint$&lt;/td>
-&lt;td>&lt;code>$\oint$&lt;/code>&lt;/td>
-&lt;td>\oint&lt;/td>
+&lt;td style="text-align: left">$\oint$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\oint$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\oint&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\partial$&lt;/td>
-&lt;td>&lt;code>$\partial$&lt;/code>&lt;/td>
-&lt;td>\partial&lt;/td>
+&lt;td style="text-align: left">$\partial$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\partial$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\partial&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\nabla$&lt;/td>
-&lt;td>&lt;code>$\nabla$&lt;/code>&lt;/td>
-&lt;td>\nabla&lt;/td>
+&lt;td style="text-align: left">$\nabla$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\nabla$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\nabla&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\pm$&lt;/td>
-&lt;td>&lt;code>$\pm$&lt;/code>&lt;/td>
-&lt;td>\pm&lt;/td>
+&lt;td style="text-align: left">$\pm$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\pm$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\pm&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\times$&lt;/td>
-&lt;td>&lt;code>$\times$&lt;/code>&lt;/td>
-&lt;td>\times&lt;/td>
+&lt;td style="text-align: left">$\times$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\times$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\times&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\div$&lt;/td>
-&lt;td>&lt;code>$\div$&lt;/code>&lt;/td>
-&lt;td>\div&lt;/td>
+&lt;td style="text-align: left">$\div$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\div$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\div&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\approx$&lt;/td>
-&lt;td>&lt;code>$\approx$&lt;/code>&lt;/td>
-&lt;td>\approx&lt;/td>
+&lt;td style="text-align: left">$\approx$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\approx$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\approx&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\geq$&lt;/td>
-&lt;td>&lt;code>$\geq$&lt;/code>&lt;/td>
-&lt;td>\geq&lt;/td>
+&lt;td style="text-align: left">$\geq$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\geq$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\geq&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\leq$&lt;/td>
-&lt;td>&lt;code>$\leq$&lt;/code>&lt;/td>
-&lt;td>\leq&lt;/td>
+&lt;td style="text-align: left">$\leq$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\leq$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\leq&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\neq$&lt;/td>
-&lt;td>&lt;code>$\neq$&lt;/code>&lt;/td>
-&lt;td>\neq&lt;/td>
+&lt;td style="text-align: left">$\neq$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\neq$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\neq&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>

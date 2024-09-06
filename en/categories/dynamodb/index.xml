@@ -74,50 +74,50 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Amazon DynamoDB&lt;/th>
-&lt;th>Amazon Aurora&lt;/th>
+&lt;th style="text-align: left">Amazon DynamoDB&lt;/th>
+&lt;th style="text-align: left">Amazon Aurora&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>Was developed by Amazon in 2012&lt;/td>
-&lt;td>Was developed by Amazon in 2015.&lt;/td>
+&lt;td style="text-align: left">Was developed by Amazon in 2012&lt;/td>
+&lt;td style="text-align: left">Was developed by Amazon in 2015.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>It is hosted, scalable database service by Amazon with data stored in Amazon cloud&lt;/td>
-&lt;td>It is MySQL and PostgreSQL compatible cloud service by Amazon&lt;/td>
+&lt;td style="text-align: left">It is hosted, scalable database service by Amazon with data stored in Amazon cloud&lt;/td>
+&lt;td style="text-align: left">It is MySQL and PostgreSQL compatible cloud service by Amazon&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>It does not provide &lt;a href="https://www.ibm.com/docs/en/informix-servers/14.10?topic=integrity-referential">concept of Referential Integrity&lt;/a>. Hence, no Foreign Keys&lt;/td>
-&lt;td>It provides concept of Referential Integrity. Hence, no Foreign Keys&lt;/td>
+&lt;td style="text-align: left">It does not provide &lt;a href="https://www.ibm.com/docs/en/informix-servers/14.10?topic=integrity-referential">concept of Referential Integrity&lt;/a>. Hence, no Foreign Keys&lt;/td>
+&lt;td style="text-align: left">It provides concept of Referential Integrity. Hence, no Foreign Keys&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Eventual Consistency and Immediate Consistency are used to ensure consistency in distributed system&lt;/td>
-&lt;td>Immediate Consistency is used to ensure consistency in distributed system&lt;/td>
+&lt;td style="text-align: left">Eventual Consistency and Immediate Consistency are used to ensure consistency in distributed system&lt;/td>
+&lt;td style="text-align: left">Immediate Consistency is used to ensure consistency in distributed system&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Its Primary database models are Document store and Key-value store&lt;/td>
-&lt;td>Its Primary database model is Relational DBMS&lt;/td>
+&lt;td style="text-align: left">Its Primary database models are Document store and Key-value store&lt;/td>
+&lt;td style="text-align: left">Its Primary database model is Relational DBMS&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>It does not support Server-side scripting&lt;/td>
-&lt;td>It supports Server-side scripting&lt;/td>
+&lt;td style="text-align: left">It does not support Server-side scripting&lt;/td>
+&lt;td style="text-align: left">It supports Server-side scripting&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>It supports sharding as partitioning method&lt;/td>
-&lt;td>Partitioning can be done with horizontal partitioning&lt;/td>
+&lt;td style="text-align: left">It supports sharding as partitioning method&lt;/td>
+&lt;td style="text-align: left">Partitioning can be done with horizontal partitioning&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>It does not support SQL query language&lt;/td>
-&lt;td>It supports SQL query language&lt;/td>
+&lt;td style="text-align: left">It does not support SQL query language&lt;/td>
+&lt;td style="text-align: left">It supports SQL query language&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>It supports replication methods&lt;/td>
-&lt;td>It supports only one replication method – Master-slave replication&lt;/td>
+&lt;td style="text-align: left">It supports replication methods&lt;/td>
+&lt;td style="text-align: left">It supports only one replication method – Master-slave replication&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>It does not offer API for user-defined Map/Reduce methods. But maybe implemented via Amazon Elastic MapReduce&lt;/td>
-&lt;td>It does not offer API for user-defined Map/Reduce methods&lt;/td>
+&lt;td style="text-align: left">It does not offer API for user-defined Map/Reduce methods. But maybe implemented via Amazon Elastic MapReduce&lt;/td>
+&lt;td style="text-align: left">It does not offer API for user-defined Map/Reduce methods&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>

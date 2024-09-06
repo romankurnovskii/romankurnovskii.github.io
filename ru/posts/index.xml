@@ -2669,18 +2669,18 @@ loading="lazy"
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Name&lt;/th>
-&lt;th>Age&lt;/th>
+&lt;th style="text-align: left">Name&lt;/th>
+&lt;th style="text-align: left">Age&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>Bob&lt;/td>
-&lt;td>27&lt;/td>
+&lt;td style="text-align: left">Bob&lt;/td>
+&lt;td style="text-align: left">27&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Alice&lt;/td>
-&lt;td>23&lt;/td>
+&lt;td style="text-align: left">Alice&lt;/td>
+&lt;td style="text-align: left">23&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -2691,16 +2691,16 @@ loading="lazy"
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:left">Колонка по левому краю&lt;/th>
-&lt;th style="text-align:right">Колонка по правому краю&lt;/th>
-&lt;th style="text-align:center">Колонка по центру&lt;/th>
+&lt;th style="text-align: left">Колонка по левому краю&lt;/th>
+&lt;th style="text-align: right">Колонка по правому краю&lt;/th>
+&lt;th style="text-align: center">Колонка по центру&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:left">Текст&lt;/td>
-&lt;td style="text-align:right">Текст&lt;/td>
-&lt;td style="text-align:center">Текст&lt;/td>
+&lt;td style="text-align: left">Текст&lt;/td>
+&lt;td style="text-align: right">Текст&lt;/td>
+&lt;td style="text-align: center">Текст&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -2711,16 +2711,16 @@ loading="lazy"
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Italics&lt;/th>
-&lt;th>Bold&lt;/th>
-&lt;th>Code&lt;/th>
+&lt;th style="text-align: left">Italics&lt;/th>
+&lt;th style="text-align: left">Bold&lt;/th>
+&lt;th style="text-align: left">Code&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>&lt;em>italics&lt;/em>&lt;/td>
-&lt;td>&lt;strong>bold&lt;/strong>&lt;/td>
-&lt;td>&lt;code>code&lt;/code>&lt;/td>
+&lt;td style="text-align: left">&lt;em>italics&lt;/em>&lt;/td>
+&lt;td style="text-align: left">&lt;strong>bold&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">&lt;code>code&lt;/code>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -2766,18 +2766,18 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Правильно&lt;/th>
-&lt;th>Неправильно&lt;/th>
+&lt;th style="text-align: left">Правильно&lt;/th>
+&lt;th style="text-align: left">Неправильно&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>Получение сертификата &lt;br/> Создание кластера&lt;/td>
-&lt;td>Получить сертификат &lt;br/> Создание кластера&lt;/td>
+&lt;td style="text-align: left">Получение сертификата &lt;br/> Создание кластера&lt;/td>
+&lt;td style="text-align: left">Получить сертификат &lt;br/> Создание кластера&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Получить сертификат &lt;br/> Создать кластер&lt;/td>
-&lt;td>&lt;/td>
+&lt;td style="text-align: left">Получить сертификат &lt;br/> Создать кластер&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -3203,14 +3203,14 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">Basic Examples&lt;/th>
-&lt;th style="text-align:center">Size and Position&lt;/th>
-&lt;th style="text-align:center">Pose and Expression&lt;/th>
+&lt;th style="text-align: center">Basic Examples&lt;/th>
+&lt;th style="text-align: center">Size and Position&lt;/th>
+&lt;th style="text-align: center">Pose and Expression&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">&lt;p class="md__image">
+&lt;td style="text-align: center">&lt;p class="md__image">
 &lt;img
 src="https://romankurnovskii.com/ru/posts/green-card/assets/basic-example.png"
 id="zoom-default"
@@ -3219,7 +3219,7 @@ loading="lazy"
 />
 &lt;/p>
 &lt;/td>
-&lt;td style="text-align:center">&lt;p class="md__image">
+&lt;td style="text-align: center">&lt;p class="md__image">
 &lt;img
 src="https://romankurnovskii.com/ru/posts/green-card/assets/size-position.png"
 id="zoom-default"
@@ -3228,7 +3228,7 @@ loading="lazy"
 />
 &lt;/p>
 &lt;/td>
-&lt;td style="text-align:center">&lt;p class="md__image">
+&lt;td style="text-align: center">&lt;p class="md__image">
 &lt;img
 src="https://romankurnovskii.com/ru/posts/green-card/assets/pose-expression.png"
 id="zoom-default"
@@ -3243,14 +3243,14 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">Glasses&lt;/th>
-&lt;th style="text-align:center">Attire, Hats, Hair&lt;/th>
-&lt;th style="text-align:center">Shadows and Lighting&lt;/th>
+&lt;th style="text-align: center">Glasses&lt;/th>
+&lt;th style="text-align: center">Attire, Hats, Hair&lt;/th>
+&lt;th style="text-align: center">Shadows and Lighting&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">&lt;p class="md__image">
+&lt;td style="text-align: center">&lt;p class="md__image">
 &lt;img
 src="https://romankurnovskii.com/ru/posts/green-card/assets/glasses.png"
 id="zoom-default"
@@ -3259,7 +3259,7 @@ loading="lazy"
 />
 &lt;/p>
 &lt;/td>
-&lt;td style="text-align:center">&lt;p class="md__image">
+&lt;td style="text-align: center">&lt;p class="md__image">
 &lt;img
 src="https://romankurnovskii.com/ru/posts/green-card/assets/hats-hair.png"
 id="zoom-default"
@@ -3268,7 +3268,7 @@ loading="lazy"
 />
 &lt;/p>
 &lt;/td>
-&lt;td style="text-align:center">&lt;p class="md__image">
+&lt;td style="text-align: center">&lt;p class="md__image">
 &lt;img
 src="https://romankurnovskii.com/ru/posts/green-card/assets/shadows.png"
 id="zoom-default"
@@ -3283,14 +3283,14 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">Background&lt;/th>
-&lt;th style="text-align:center">Resolution, Quality&lt;/th>
-&lt;th style="text-align:center">Children&lt;/th>
+&lt;th style="text-align: center">Background&lt;/th>
+&lt;th style="text-align: center">Resolution, Quality&lt;/th>
+&lt;th style="text-align: center">Children&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">&lt;p class="md__image">
+&lt;td style="text-align: center">&lt;p class="md__image">
 &lt;img
 src="https://romankurnovskii.com/ru/posts/green-card/assets/background.png"
 id="zoom-default"
@@ -3299,7 +3299,7 @@ loading="lazy"
 />
 &lt;/p>
 &lt;/td>
-&lt;td style="text-align:center">&lt;p class="md__image">
+&lt;td style="text-align: center">&lt;p class="md__image">
 &lt;img
 src="https://romankurnovskii.com/ru/posts/green-card/assets/resolution.png"
 id="zoom-default"
@@ -3308,7 +3308,7 @@ loading="lazy"
 />
 &lt;/p>
 &lt;/td>
-&lt;td style="text-align:center">&lt;p class="md__image">
+&lt;td style="text-align: center">&lt;p class="md__image">
 &lt;img
 src="https://romankurnovskii.com/ru/posts/green-card/assets/children.png"
 id="zoom-default"
@@ -3323,14 +3323,14 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">Face Obstruction&lt;/th>
-&lt;th style="text-align:center">&lt;/th>
-&lt;th style="text-align:center">&lt;/th>
+&lt;th style="text-align: center">Face Obstruction&lt;/th>
+&lt;th style="text-align: center">&lt;/th>
+&lt;th style="text-align: center">&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">&lt;p class="md__image">
+&lt;td style="text-align: center">&lt;p class="md__image">
 &lt;img
 src="https://romankurnovskii.com/ru/posts/green-card/assets/face.png"
 id="zoom-default"
@@ -3339,8 +3339,8 @@ loading="lazy"
 />
 &lt;/p>
 &lt;/td>
-&lt;td style="text-align:center">&lt;/td>
-&lt;td style="text-align:center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
+&lt;td style="text-align: center">&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>

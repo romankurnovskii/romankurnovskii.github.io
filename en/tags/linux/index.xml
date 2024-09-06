@@ -22,114 +22,114 @@
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>&lt;strong>Nmap Option&lt;/strong>&lt;/th>
-&lt;th>&lt;strong>Description&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Nmap Option&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Description&lt;/strong>&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>&lt;code>10.10.10.0/24&lt;/code>&lt;/td>
-&lt;td>Target network range.&lt;/td>
+&lt;td style="text-align: left">&lt;code>10.10.10.0/24&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Target network range.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-sn&lt;/code>&lt;/td>
-&lt;td>Disables port scanning.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-sn&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Disables port scanning.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-Pn&lt;/code>&lt;/td>
-&lt;td>Disables ICMP Echo Requests&lt;/td>
+&lt;td style="text-align: left">&lt;code>-Pn&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Disables ICMP Echo Requests&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-n&lt;/code>&lt;/td>
-&lt;td>Disables DNS Resolution.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-n&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Disables DNS Resolution.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-PE&lt;/code>&lt;/td>
-&lt;td>Performs the ping scan by using ICMP Echo Requests against the target.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-PE&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Performs the ping scan by using ICMP Echo Requests against the target.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>--packet-trace&lt;/code>&lt;/td>
-&lt;td>Shows all packets sent and received.&lt;/td>
+&lt;td style="text-align: left">&lt;code>--packet-trace&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Shows all packets sent and received.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>--reason&lt;/code>&lt;/td>
-&lt;td>Displays the reason for a specific result.&lt;/td>
+&lt;td style="text-align: left">&lt;code>--reason&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Displays the reason for a specific result.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>--disable-arp-ping&lt;/code>&lt;/td>
-&lt;td>Disables ARP Ping Requests.&lt;/td>
+&lt;td style="text-align: left">&lt;code>--disable-arp-ping&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Disables ARP Ping Requests.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>--top-ports=&amp;lt;num&amp;gt;&lt;/code>&lt;/td>
-&lt;td>Scans the specified top ports that have been defined as most frequent.&lt;/td>
+&lt;td style="text-align: left">&lt;code>--top-ports=&amp;lt;num&amp;gt;&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Scans the specified top ports that have been defined as most frequent.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-p-&lt;/code>&lt;/td>
-&lt;td>Scan all ports.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-p-&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Scan all ports.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-p22-110&lt;/code>&lt;/td>
-&lt;td>Scan all ports between 22 and 110.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-p22-110&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Scan all ports between 22 and 110.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-p22,25&lt;/code>&lt;/td>
-&lt;td>Scans only the specified ports 22 and 25.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-p22,25&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Scans only the specified ports 22 and 25.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-F&lt;/code>&lt;/td>
-&lt;td>Scans top 100 ports.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-F&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Scans top 100 ports.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-sS&lt;/code>&lt;/td>
-&lt;td>Performs an TCP SYN-Scan.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-sS&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Performs an TCP SYN-Scan.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-sA&lt;/code>&lt;/td>
-&lt;td>Performs an TCP ACK-Scan.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-sA&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Performs an TCP ACK-Scan.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-sU&lt;/code>&lt;/td>
-&lt;td>Performs an UDP Scan.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-sU&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Performs an UDP Scan.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-sV&lt;/code>&lt;/td>
-&lt;td>Scans the discovered services for their versions.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-sV&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Scans the discovered services for their versions.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-sC&lt;/code>&lt;/td>
-&lt;td>Perform a Script Scan with scripts that are categorized as &amp;ldquo;default&amp;rdquo;.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-sC&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Perform a Script Scan with scripts that are categorized as &amp;ldquo;default&amp;rdquo;.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>--script &amp;lt;script&amp;gt;&lt;/code>&lt;/td>
-&lt;td>Performs a Script Scan by using the specified scripts.&lt;/td>
+&lt;td style="text-align: left">&lt;code>--script &amp;lt;script&amp;gt;&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Performs a Script Scan by using the specified scripts.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-O&lt;/code>&lt;/td>
-&lt;td>Performs an OS Detection Scan to determine the OS of the target.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-O&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Performs an OS Detection Scan to determine the OS of the target.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-A&lt;/code>&lt;/td>
-&lt;td>Performs OS Detection, Service Detection, and traceroute scans.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-A&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Performs OS Detection, Service Detection, and traceroute scans.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-D RND:5&lt;/code>&lt;/td>
-&lt;td>Sets the number of random Decoys that will be used to scan the target.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-D RND:5&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Sets the number of random Decoys that will be used to scan the target.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-e&lt;/code>&lt;/td>
-&lt;td>Specifies the network interface that is used for the scan.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-e&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Specifies the network interface that is used for the scan.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-S 10.10.10.200&lt;/code>&lt;/td>
-&lt;td>Specifies the source IP address for the scan.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-S 10.10.10.200&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Specifies the source IP address for the scan.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-g&lt;/code>&lt;/td>
-&lt;td>Specifies the source port for the scan.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-g&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Specifies the source port for the scan.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>--dns-server &amp;lt;ns&amp;gt;&lt;/code>&lt;/td>
-&lt;td>DNS resolution is performed by using a specified name server.&lt;/td>
+&lt;td style="text-align: left">&lt;code>--dns-server &amp;lt;ns&amp;gt;&lt;/code>&lt;/td>
+&lt;td style="text-align: left">DNS resolution is performed by using a specified name server.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -137,26 +137,26 @@
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>&lt;strong>Nmap Option&lt;/strong>&lt;/th>
-&lt;th>&lt;strong>Description&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Nmap Option&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Description&lt;/strong>&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>&lt;code>-oA filename&lt;/code>&lt;/td>
-&lt;td>Stores the results in all available formats starting with the name of &amp;ldquo;filename&amp;rdquo;.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-oA filename&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Stores the results in all available formats starting with the name of &amp;ldquo;filename&amp;rdquo;.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-oN filename&lt;/code>&lt;/td>
-&lt;td>Stores the results in normal format with the name &amp;ldquo;filename&amp;rdquo;.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-oN filename&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Stores the results in normal format with the name &amp;ldquo;filename&amp;rdquo;.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-oG filename&lt;/code>&lt;/td>
-&lt;td>Stores the results in &amp;ldquo;grepable&amp;rdquo; format with the name of &amp;ldquo;filename&amp;rdquo;.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-oG filename&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Stores the results in &amp;ldquo;grepable&amp;rdquo; format with the name of &amp;ldquo;filename&amp;rdquo;.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-oX filename&lt;/code>&lt;/td>
-&lt;td>Stores the results in XML format with the name of &amp;ldquo;filename&amp;rdquo;.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-oX filename&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Stores the results in XML format with the name of &amp;ldquo;filename&amp;rdquo;.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -164,38 +164,38 @@
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>&lt;strong>Nmap Option&lt;/strong>&lt;/th>
-&lt;th>&lt;strong>Description&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Nmap Option&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Description&lt;/strong>&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>&lt;code>--max-retries &amp;lt;num&amp;gt;&lt;/code>&lt;/td>
-&lt;td>Sets the number of retries for scans of specific ports.&lt;/td>
+&lt;td style="text-align: left">&lt;code>--max-retries &amp;lt;num&amp;gt;&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Sets the number of retries for scans of specific ports.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>--stats-every=5s&lt;/code>&lt;/td>
-&lt;td>Displays scan&amp;rsquo;s status every 5 seconds.&lt;/td>
+&lt;td style="text-align: left">&lt;code>--stats-every=5s&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Displays scan&amp;rsquo;s status every 5 seconds.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-v/-vv&lt;/code>&lt;/td>
-&lt;td>Displays verbose output during the scan.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-v/-vv&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Displays verbose output during the scan.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>--initial-rtt-timeout 50ms&lt;/code>&lt;/td>
-&lt;td>Sets the specified time value as initial RTT timeout.&lt;/td>
+&lt;td style="text-align: left">&lt;code>--initial-rtt-timeout 50ms&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Sets the specified time value as initial RTT timeout.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>--max-rtt-timeout 100ms&lt;/code>&lt;/td>
-&lt;td>Sets the specified time value as maximum RTT timeout.&lt;/td>
+&lt;td style="text-align: left">&lt;code>--max-rtt-timeout 100ms&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Sets the specified time value as maximum RTT timeout.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>--min-rate 300&lt;/code>&lt;/td>
-&lt;td>Sets the number of packets that will be sent simultaneously.&lt;/td>
+&lt;td style="text-align: left">&lt;code>--min-rate 300&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Sets the number of packets that will be sent simultaneously.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-T &amp;lt;0-5&amp;gt;&lt;/code>&lt;/td>
-&lt;td>Specifies the specific timing template.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-T &amp;lt;0-5&amp;gt;&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Specifies the specific timing template.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table></description></item><item><title>Monitoring Linux OS</title><link>https://romankurnovskii.com/en/posts/linux/debian-setup/</link><pubDate>Fri, 29 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/debian-setup/</guid><description>&lt;h2 id="auditing-packages">Auditing Packages&lt;/h2>

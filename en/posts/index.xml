@@ -18,150 +18,118 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>UsePAM no
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>After making these changes, restart the SSH service to apply them:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo systemctl restart sshd
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>blast.io</title><link>https://romankurnovskii.com/en/posts/defi/blast.io/</link><pubDate>Thu, 25 Jan 2024 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/defi/blast.io/</guid><description>&lt;p>Codes:&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>OL52U&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;ol>
-&lt;li>Go to site &lt;a href="https://blast.io/en/airdrop/sign-up">https://blast.io/en/airdrop/sign-up&lt;/a>&lt;/li>
-&lt;li>Enter code &lt;code>OL52U&lt;/code>&lt;/li>
-&lt;li>&lt;a href="https://blast.io/OL52U">https://blast.io/OL52U&lt;/a>&lt;/li>
-&lt;/ol></description></item><item><title>karak.network</title><link>https://romankurnovskii.com/en/posts/defi/karak.network/</link><pubDate>Thu, 25 Jan 2024 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/defi/karak.network/</guid><description>&lt;p>Invite codes:&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>mMUbV&lt;/code>&lt;/li>
-&lt;li>&lt;code>Ioav9&lt;/code>&lt;/li>
-&lt;li>&lt;code>cujFC&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;p>Be prepared for the Karak airdrop! &amp;ldquo;Unlock bonus XP points and climb ranks with invite code &lt;code>mMUbV&lt;/code>.&lt;/p>
-&lt;p>Maximize your rewards by seizing every XP point for your final airdrop allocation. Don&amp;rsquo;t miss out on this opportunity to optimize your rewards!&amp;rdquo;&lt;/p>
-&lt;p>Enter the code &lt;code>mMUbV&lt;/code> during registration at &lt;a href="https://app.karak.network/">https://app.karak.network/&lt;/a>!&lt;/p></description></item><item><title>solayer.org</title><link>https://romankurnovskii.com/en/posts/defi/solayer.org/</link><pubDate>Thu, 25 Jan 2024 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/defi/solayer.org/</guid><description>&lt;p>Codes:&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>XEQ43P&lt;/code>&lt;/li>
-&lt;li>&lt;code>RCWB3V&lt;/code>&lt;/li>
-&lt;li>&lt;code>K4X682&lt;/code>&lt;/li>
-&lt;li>&lt;code>H267XK&lt;/code>&lt;/li>
-&lt;li>&lt;code>GDZQHX&lt;/code>&lt;/li>
-&lt;li>&lt;code>T5CN6G&lt;/code>&lt;/li>
-&lt;li>&lt;code>6IQK9D&lt;/code>&lt;/li>
-&lt;li>&lt;code>SPDVKT&lt;/code>&lt;/li>
-&lt;li>&lt;code>DMBZHM&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;ol>
-&lt;li>Go to site &lt;a href="https://app.solayer.org">https://app.solayer.org&lt;/a>&lt;/li>
-&lt;li>Enter code&lt;/li>
-&lt;/ol>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>nmap - cheatsheet</title><link>https://romankurnovskii.com/en/posts/linux/nmap-cheatsheet/</link><pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/nmap-cheatsheet/</guid><description>&lt;h2 id="scanning-options">Scanning Options&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>nmap - cheatsheet</title><link>https://romankurnovskii.com/en/posts/linux/nmap-cheatsheet/</link><pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/nmap-cheatsheet/</guid><description>&lt;h2 id="scanning-options">Scanning Options&lt;/h2>
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>&lt;strong>Nmap Option&lt;/strong>&lt;/th>
-&lt;th>&lt;strong>Description&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Nmap Option&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Description&lt;/strong>&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>&lt;code>10.10.10.0/24&lt;/code>&lt;/td>
-&lt;td>Target network range.&lt;/td>
+&lt;td style="text-align: left">&lt;code>10.10.10.0/24&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Target network range.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-sn&lt;/code>&lt;/td>
-&lt;td>Disables port scanning.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-sn&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Disables port scanning.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-Pn&lt;/code>&lt;/td>
-&lt;td>Disables ICMP Echo Requests&lt;/td>
+&lt;td style="text-align: left">&lt;code>-Pn&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Disables ICMP Echo Requests&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-n&lt;/code>&lt;/td>
-&lt;td>Disables DNS Resolution.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-n&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Disables DNS Resolution.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-PE&lt;/code>&lt;/td>
-&lt;td>Performs the ping scan by using ICMP Echo Requests against the target.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-PE&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Performs the ping scan by using ICMP Echo Requests against the target.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>--packet-trace&lt;/code>&lt;/td>
-&lt;td>Shows all packets sent and received.&lt;/td>
+&lt;td style="text-align: left">&lt;code>--packet-trace&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Shows all packets sent and received.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>--reason&lt;/code>&lt;/td>
-&lt;td>Displays the reason for a specific result.&lt;/td>
+&lt;td style="text-align: left">&lt;code>--reason&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Displays the reason for a specific result.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>--disable-arp-ping&lt;/code>&lt;/td>
-&lt;td>Disables ARP Ping Requests.&lt;/td>
+&lt;td style="text-align: left">&lt;code>--disable-arp-ping&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Disables ARP Ping Requests.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>--top-ports=&amp;lt;num&amp;gt;&lt;/code>&lt;/td>
-&lt;td>Scans the specified top ports that have been defined as most frequent.&lt;/td>
+&lt;td style="text-align: left">&lt;code>--top-ports=&amp;lt;num&amp;gt;&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Scans the specified top ports that have been defined as most frequent.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-p-&lt;/code>&lt;/td>
-&lt;td>Scan all ports.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-p-&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Scan all ports.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-p22-110&lt;/code>&lt;/td>
-&lt;td>Scan all ports between 22 and 110.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-p22-110&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Scan all ports between 22 and 110.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-p22,25&lt;/code>&lt;/td>
-&lt;td>Scans only the specified ports 22 and 25.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-p22,25&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Scans only the specified ports 22 and 25.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-F&lt;/code>&lt;/td>
-&lt;td>Scans top 100 ports.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-F&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Scans top 100 ports.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-sS&lt;/code>&lt;/td>
-&lt;td>Performs an TCP SYN-Scan.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-sS&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Performs an TCP SYN-Scan.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-sA&lt;/code>&lt;/td>
-&lt;td>Performs an TCP ACK-Scan.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-sA&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Performs an TCP ACK-Scan.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-sU&lt;/code>&lt;/td>
-&lt;td>Performs an UDP Scan.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-sU&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Performs an UDP Scan.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-sV&lt;/code>&lt;/td>
-&lt;td>Scans the discovered services for their versions.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-sV&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Scans the discovered services for their versions.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-sC&lt;/code>&lt;/td>
-&lt;td>Perform a Script Scan with scripts that are categorized as &amp;ldquo;default&amp;rdquo;.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-sC&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Perform a Script Scan with scripts that are categorized as &amp;ldquo;default&amp;rdquo;.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>--script &amp;lt;script&amp;gt;&lt;/code>&lt;/td>
-&lt;td>Performs a Script Scan by using the specified scripts.&lt;/td>
+&lt;td style="text-align: left">&lt;code>--script &amp;lt;script&amp;gt;&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Performs a Script Scan by using the specified scripts.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-O&lt;/code>&lt;/td>
-&lt;td>Performs an OS Detection Scan to determine the OS of the target.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-O&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Performs an OS Detection Scan to determine the OS of the target.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-A&lt;/code>&lt;/td>
-&lt;td>Performs OS Detection, Service Detection, and traceroute scans.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-A&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Performs OS Detection, Service Detection, and traceroute scans.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-D RND:5&lt;/code>&lt;/td>
-&lt;td>Sets the number of random Decoys that will be used to scan the target.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-D RND:5&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Sets the number of random Decoys that will be used to scan the target.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-e&lt;/code>&lt;/td>
-&lt;td>Specifies the network interface that is used for the scan.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-e&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Specifies the network interface that is used for the scan.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-S 10.10.10.200&lt;/code>&lt;/td>
-&lt;td>Specifies the source IP address for the scan.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-S 10.10.10.200&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Specifies the source IP address for the scan.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-g&lt;/code>&lt;/td>
-&lt;td>Specifies the source port for the scan.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-g&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Specifies the source port for the scan.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>--dns-server &amp;lt;ns&amp;gt;&lt;/code>&lt;/td>
-&lt;td>DNS resolution is performed by using a specified name server.&lt;/td>
+&lt;td style="text-align: left">&lt;code>--dns-server &amp;lt;ns&amp;gt;&lt;/code>&lt;/td>
+&lt;td style="text-align: left">DNS resolution is performed by using a specified name server.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -169,26 +137,26 @@
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>&lt;strong>Nmap Option&lt;/strong>&lt;/th>
-&lt;th>&lt;strong>Description&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Nmap Option&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Description&lt;/strong>&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>&lt;code>-oA filename&lt;/code>&lt;/td>
-&lt;td>Stores the results in all available formats starting with the name of &amp;ldquo;filename&amp;rdquo;.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-oA filename&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Stores the results in all available formats starting with the name of &amp;ldquo;filename&amp;rdquo;.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-oN filename&lt;/code>&lt;/td>
-&lt;td>Stores the results in normal format with the name &amp;ldquo;filename&amp;rdquo;.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-oN filename&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Stores the results in normal format with the name &amp;ldquo;filename&amp;rdquo;.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-oG filename&lt;/code>&lt;/td>
-&lt;td>Stores the results in &amp;ldquo;grepable&amp;rdquo; format with the name of &amp;ldquo;filename&amp;rdquo;.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-oG filename&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Stores the results in &amp;ldquo;grepable&amp;rdquo; format with the name of &amp;ldquo;filename&amp;rdquo;.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-oX filename&lt;/code>&lt;/td>
-&lt;td>Stores the results in XML format with the name of &amp;ldquo;filename&amp;rdquo;.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-oX filename&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Stores the results in XML format with the name of &amp;ldquo;filename&amp;rdquo;.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -196,38 +164,38 @@
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>&lt;strong>Nmap Option&lt;/strong>&lt;/th>
-&lt;th>&lt;strong>Description&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Nmap Option&lt;/strong>&lt;/th>
+&lt;th style="text-align: left">&lt;strong>Description&lt;/strong>&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>&lt;code>--max-retries &amp;lt;num&amp;gt;&lt;/code>&lt;/td>
-&lt;td>Sets the number of retries for scans of specific ports.&lt;/td>
+&lt;td style="text-align: left">&lt;code>--max-retries &amp;lt;num&amp;gt;&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Sets the number of retries for scans of specific ports.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>--stats-every=5s&lt;/code>&lt;/td>
-&lt;td>Displays scan&amp;rsquo;s status every 5 seconds.&lt;/td>
+&lt;td style="text-align: left">&lt;code>--stats-every=5s&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Displays scan&amp;rsquo;s status every 5 seconds.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-v/-vv&lt;/code>&lt;/td>
-&lt;td>Displays verbose output during the scan.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-v/-vv&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Displays verbose output during the scan.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>--initial-rtt-timeout 50ms&lt;/code>&lt;/td>
-&lt;td>Sets the specified time value as initial RTT timeout.&lt;/td>
+&lt;td style="text-align: left">&lt;code>--initial-rtt-timeout 50ms&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Sets the specified time value as initial RTT timeout.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>--max-rtt-timeout 100ms&lt;/code>&lt;/td>
-&lt;td>Sets the specified time value as maximum RTT timeout.&lt;/td>
+&lt;td style="text-align: left">&lt;code>--max-rtt-timeout 100ms&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Sets the specified time value as maximum RTT timeout.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>--min-rate 300&lt;/code>&lt;/td>
-&lt;td>Sets the number of packets that will be sent simultaneously.&lt;/td>
+&lt;td style="text-align: left">&lt;code>--min-rate 300&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Sets the number of packets that will be sent simultaneously.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>&lt;code>-T &amp;lt;0-5&amp;gt;&lt;/code>&lt;/td>
-&lt;td>Specifies the specific timing template.&lt;/td>
+&lt;td style="text-align: left">&lt;code>-T &amp;lt;0-5&amp;gt;&lt;/code>&lt;/td>
+&lt;td style="text-align: left">Specifies the specific timing template.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table></description></item><item><title>Monitoring Linux OS</title><link>https://romankurnovskii.com/en/posts/linux/debian-setup/</link><pubDate>Fri, 29 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/debian-setup/</guid><description>&lt;h2 id="auditing-packages">Auditing Packages&lt;/h2>
@@ -5925,18 +5893,18 @@ Second paragraph.&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Name&lt;/th>
-&lt;th>Age&lt;/th>
+&lt;th style="text-align: left">Name&lt;/th>
+&lt;th style="text-align: left">Age&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>Bob&lt;/td>
-&lt;td>27&lt;/td>
+&lt;td style="text-align: left">Bob&lt;/td>
+&lt;td style="text-align: left">27&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Alice&lt;/td>
-&lt;td>23&lt;/td>
+&lt;td style="text-align: left">Alice&lt;/td>
+&lt;td style="text-align: left">23&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -5947,16 +5915,16 @@ Second paragraph.&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:left">Column on the left&lt;/th>
-&lt;th style="text-align:right">Column on the right&lt;/th>
-&lt;th style="text-align:center">Column on the center&lt;/th>
+&lt;th style="text-align: left">Column on the left&lt;/th>
+&lt;th style="text-align: right">Column on the right&lt;/th>
+&lt;th style="text-align: center">Column on the center&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:left">Text&lt;/td>
-&lt;td style="text-align:right">Text&lt;/td>
-&lt;td style="text-align:center">Text&lt;/td>
+&lt;td style="text-align: left">Text&lt;/td>
+&lt;td style="text-align: right">Text&lt;/td>
+&lt;td style="text-align: center">Text&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -5967,16 +5935,16 @@ Second paragraph.&lt;/p>
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Italics&lt;/th>
-&lt;th>Bold&lt;/th>
-&lt;th>Code&lt;/th>
+&lt;th style="text-align: left">Italics&lt;/th>
+&lt;th style="text-align: left">Bold&lt;/th>
+&lt;th style="text-align: left">Code&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>&lt;em>italics&lt;/em>&lt;/td>
-&lt;td>&lt;strong>bold&lt;/strong>&lt;/td>
-&lt;td>&lt;code>code&lt;/code>&lt;/td>
+&lt;td style="text-align: left">&lt;em>italics&lt;/em>&lt;/td>
+&lt;td style="text-align: left">&lt;strong>bold&lt;/strong>&lt;/td>
+&lt;td style="text-align: left">&lt;code>code&lt;/code>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -6055,18 +6023,18 @@ Second paragraph.&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Correct&lt;/th>
-&lt;th>Wrong&lt;/th>
+&lt;th style="text-align: left">Correct&lt;/th>
+&lt;th style="text-align: left">Wrong&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>Getting the &lt;br/> Creating a Cluster&lt;/td>
-&lt;td>Get the &lt;br/> Creating a Cluster&lt;/td>
+&lt;td style="text-align: left">Getting the &lt;br/> Creating a Cluster&lt;/td>
+&lt;td style="text-align: left">Get the &lt;br/> Creating a Cluster&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Get &lt;br/> Create Cluster&lt;/td>
-&lt;td>&lt;/td>
+&lt;td style="text-align: left">Get &lt;br/> Create Cluster&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -6148,176 +6116,176 @@ Second paragraph.&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>Math Element&lt;/th>
-&lt;th>Code&lt;/th>
-&lt;th>Pronunciation&lt;/th>
+&lt;th style="text-align: left">Math Element&lt;/th>
+&lt;th style="text-align: left">Code&lt;/th>
+&lt;th style="text-align: left">Pronunciation&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>$x_{12345}$&lt;/td>
-&lt;td>&lt;code>$x_{12345}$&lt;/code>&lt;/td>
-&lt;td>&lt;/td>
+&lt;td style="text-align: left">$x_{12345}$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$x_{12345}$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\quad x_12$&lt;/td>
-&lt;td>&lt;code>$\quad x_12$&lt;/code>&lt;/td>
-&lt;td>&lt;/td>
+&lt;td style="text-align: left">$\quad x_12$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\quad x_12$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$a_{ij}b_{kl}=\delta_{i}^{l}$&lt;/td>
-&lt;td>&lt;code>$a_{ij}b_{kl}=\delta_{i}^{l}$&lt;/code>&lt;/td>
-&lt;td>&lt;/td>
+&lt;td style="text-align: left">$a_{ij}b_{kl}=\delta_{i}^{l}$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$a_{ij}b_{kl}=\delta_{i}^{l}$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\alpha$&lt;/td>
-&lt;td>&lt;code>$\alpha$&lt;/code>&lt;/td>
-&lt;td>\alpha&lt;/td>
+&lt;td style="text-align: left">$\alpha$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\alpha$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\alpha&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\beta$&lt;/td>
-&lt;td>&lt;code>$\beta$&lt;/code>&lt;/td>
-&lt;td>\beta&lt;/td>
+&lt;td style="text-align: left">$\beta$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\beta$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\beta&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\gamma$&lt;/td>
-&lt;td>&lt;code>$\gamma$&lt;/code>&lt;/td>
-&lt;td>\gamma&lt;/td>
+&lt;td style="text-align: left">$\gamma$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\gamma$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\gamma&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\delta$&lt;/td>
-&lt;td>&lt;code>$\delta$&lt;/code>&lt;/td>
-&lt;td>\delta&lt;/td>
+&lt;td style="text-align: left">$\delta$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\delta$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\delta&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\epsilon$&lt;/td>
-&lt;td>&lt;code>$\epsilon$&lt;/code>&lt;/td>
-&lt;td>\epsilon&lt;/td>
+&lt;td style="text-align: left">$\epsilon$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\epsilon$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\epsilon&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\pi$&lt;/td>
-&lt;td>&lt;code>$\pi$&lt;/code>&lt;/td>
-&lt;td>\pi&lt;/td>
+&lt;td style="text-align: left">$\pi$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\pi$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\pi&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\theta$&lt;/td>
-&lt;td>&lt;code>$\theta$&lt;/code>&lt;/td>
-&lt;td>\theta&lt;/td>
+&lt;td style="text-align: left">$\theta$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\theta$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\theta&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\lambda$&lt;/td>
-&lt;td>&lt;code>$\lambda$&lt;/code>&lt;/td>
-&lt;td>\lambda&lt;/td>
+&lt;td style="text-align: left">$\lambda$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\lambda$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\lambda&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\mu$&lt;/td>
-&lt;td>&lt;code>$\mu$&lt;/code>&lt;/td>
-&lt;td>\mu&lt;/td>
+&lt;td style="text-align: left">$\mu$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\mu$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\mu&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\sigma$&lt;/td>
-&lt;td>&lt;code>$\sigma$&lt;/code>&lt;/td>
-&lt;td>\sigma&lt;/td>
+&lt;td style="text-align: left">$\sigma$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\sigma$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\sigma&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\omega$&lt;/td>
-&lt;td>&lt;code>$\omega$&lt;/code>&lt;/td>
-&lt;td>\omega&lt;/td>
+&lt;td style="text-align: left">$\omega$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\omega$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\omega&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\Gamma$&lt;/td>
-&lt;td>&lt;code>$\Gamma$&lt;/code>&lt;/td>
-&lt;td>\Gamma&lt;/td>
+&lt;td style="text-align: left">$\Gamma$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\Gamma$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\Gamma&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\Delta$&lt;/td>
-&lt;td>&lt;code>$\Delta$&lt;/code>&lt;/td>
-&lt;td>\Delta&lt;/td>
+&lt;td style="text-align: left">$\Delta$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\Delta$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\Delta&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\Sigma$&lt;/td>
-&lt;td>&lt;code>$\Sigma$&lt;/code>&lt;/td>
-&lt;td>\Sigma&lt;/td>
+&lt;td style="text-align: left">$\Sigma$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\Sigma$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\Sigma&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\Theta$&lt;/td>
-&lt;td>&lt;code>$\Theta$&lt;/code>&lt;/td>
-&lt;td>\Theta&lt;/td>
+&lt;td style="text-align: left">$\Theta$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\Theta$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\Theta&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\Omega$&lt;/td>
-&lt;td>&lt;code>$\Omega$&lt;/code>&lt;/td>
-&lt;td>\Omega&lt;/td>
+&lt;td style="text-align: left">$\Omega$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\Omega$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\Omega&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\infty$&lt;/td>
-&lt;td>&lt;code>$\infty$&lt;/code>&lt;/td>
-&lt;td>\infty&lt;/td>
+&lt;td style="text-align: left">$\infty$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\infty$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\infty&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\sum$&lt;/td>
-&lt;td>&lt;code>$\sum$&lt;/code>&lt;/td>
-&lt;td>\sum&lt;/td>
+&lt;td style="text-align: left">$\sum$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\sum$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\sum&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\prod$&lt;/td>
-&lt;td>&lt;code>$\prod$&lt;/code>&lt;/td>
-&lt;td>\prod&lt;/td>
+&lt;td style="text-align: left">$\prod$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\prod$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\prod&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\int$&lt;/td>
-&lt;td>&lt;code>$\int$&lt;/code>&lt;/td>
-&lt;td>\int&lt;/td>
+&lt;td style="text-align: left">$\int$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\int$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\int&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\oint$&lt;/td>
-&lt;td>&lt;code>$\oint$&lt;/code>&lt;/td>
-&lt;td>\oint&lt;/td>
+&lt;td style="text-align: left">$\oint$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\oint$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\oint&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\partial$&lt;/td>
-&lt;td>&lt;code>$\partial$&lt;/code>&lt;/td>
-&lt;td>\partial&lt;/td>
+&lt;td style="text-align: left">$\partial$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\partial$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\partial&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\nabla$&lt;/td>
-&lt;td>&lt;code>$\nabla$&lt;/code>&lt;/td>
-&lt;td>\nabla&lt;/td>
+&lt;td style="text-align: left">$\nabla$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\nabla$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\nabla&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\pm$&lt;/td>
-&lt;td>&lt;code>$\pm$&lt;/code>&lt;/td>
-&lt;td>\pm&lt;/td>
+&lt;td style="text-align: left">$\pm$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\pm$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\pm&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\times$&lt;/td>
-&lt;td>&lt;code>$\times$&lt;/code>&lt;/td>
-&lt;td>\times&lt;/td>
+&lt;td style="text-align: left">$\times$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\times$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\times&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\div$&lt;/td>
-&lt;td>&lt;code>$\div$&lt;/code>&lt;/td>
-&lt;td>\div&lt;/td>
+&lt;td style="text-align: left">$\div$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\div$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\div&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\approx$&lt;/td>
-&lt;td>&lt;code>$\approx$&lt;/code>&lt;/td>
-&lt;td>\approx&lt;/td>
+&lt;td style="text-align: left">$\approx$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\approx$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\approx&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\geq$&lt;/td>
-&lt;td>&lt;code>$\geq$&lt;/code>&lt;/td>
-&lt;td>\geq&lt;/td>
+&lt;td style="text-align: left">$\geq$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\geq$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\geq&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\leq$&lt;/td>
-&lt;td>&lt;code>$\leq$&lt;/code>&lt;/td>
-&lt;td>\leq&lt;/td>
+&lt;td style="text-align: left">$\leq$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\leq$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\leq&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>$\neq$&lt;/td>
-&lt;td>&lt;code>$\neq$&lt;/code>&lt;/td>
-&lt;td>\neq&lt;/td>
+&lt;td style="text-align: left">$\neq$&lt;/td>
+&lt;td style="text-align: left">&lt;code>$\neq$&lt;/code>&lt;/td>
+&lt;td style="text-align: left">\neq&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>

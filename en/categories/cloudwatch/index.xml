@@ -18,34 +18,34 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th>CloudWatch&lt;/th>
-&lt;th>CloudTrail&lt;/th>
+&lt;th style="text-align: left">CloudWatch&lt;/th>
+&lt;th style="text-align: left">CloudTrail&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>Performance monitoring&lt;/td>
-&lt;td>Auditing&lt;/td>
+&lt;td style="text-align: left">Performance monitoring&lt;/td>
+&lt;td style="text-align: left">Auditing&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Log events across AWS Services – think operations&lt;/td>
-&lt;td>Log API activity across AWS services – think activities, or who to blame&lt;/td>
+&lt;td style="text-align: left">Log events across AWS Services – think operations&lt;/td>
+&lt;td style="text-align: left">Log API activity across AWS services – think activities, or who to blame&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Higher-level comprehensive monitoring and event service&lt;/td>
-&lt;td>More low-level, granular&lt;/td>
+&lt;td style="text-align: left">Higher-level comprehensive monitoring and event service&lt;/td>
+&lt;td style="text-align: left">More low-level, granular&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Log from multiple accounts&lt;/td>
-&lt;td>Log from multiple accounts&lt;/td>
+&lt;td style="text-align: left">Log from multiple accounts&lt;/td>
+&lt;td style="text-align: left">Log from multiple accounts&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Logs stored indefinitely&lt;/td>
-&lt;td>Logs stored to S3 or CloudWatch indefinitely&lt;/td>
+&lt;td style="text-align: left">Logs stored indefinitely&lt;/td>
+&lt;td style="text-align: left">Logs stored to S3 or CloudWatch indefinitely&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Alarms history for 14 days&lt;/td>
-&lt;td>No native alarming; can use CloudWatch alarms&lt;/td>
+&lt;td style="text-align: left">Alarms history for 14 days&lt;/td>
+&lt;td style="text-align: left">No native alarming; can use CloudWatch alarms&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>

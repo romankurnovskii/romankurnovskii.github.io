@@ -2,132 +2,132 @@
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">#&lt;/th>
-&lt;th>Problem&lt;/th>
-&lt;th>Difficulty&lt;/th>
-&lt;th>Topics&lt;/th>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th style="text-align: left">Problem&lt;/th>
+&lt;th style="text-align: left">Difficulty&lt;/th>
+&lt;th style="text-align: left">Topics&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">1&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/1-two-sum">1. Two Sum&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/hash-table">Hash Table&lt;/a>&lt;/td>
+&lt;td style="text-align: center">1&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/1-two-sum">1. Two Sum&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/hash-table">Hash Table&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">2&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/13-roman-to-integer">13. Roman to Integer&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/hash-table">Hash Table&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>&lt;/td>
+&lt;td style="text-align: center">2&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/13-roman-to-integer">13. Roman to Integer&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/hash-table">Hash Table&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">3&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/14-longest-common-prefix">14. Longest Common Prefix&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>&lt;/td>
+&lt;td style="text-align: center">3&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/14-longest-common-prefix">14. Longest Common Prefix&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">4&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/20-valid-parentheses">20. Valid Parentheses&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/stack">Stack&lt;/a>&lt;/td>
+&lt;td style="text-align: center">4&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/20-valid-parentheses">20. Valid Parentheses&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/stack">Stack&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">5&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/21-merge-two-sorted-lists">21. Merge Two Sorted Lists&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/linked-list">Linked List&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/recursion">Recursion&lt;/a>&lt;/td>
+&lt;td style="text-align: center">5&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/21-merge-two-sorted-lists">21. Merge Two Sorted Lists&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/linked-list">Linked List&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/recursion">Recursion&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">6&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/26-remove-duplicates-from-sorted-array">26. Remove Duplicates from Sorted Array&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/two-pointers">Two pointers&lt;/a>&lt;/td>
+&lt;td style="text-align: center">6&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/26-remove-duplicates-from-sorted-array">26. Remove Duplicates from Sorted Array&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/two-pointers">Two pointers&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">7&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/66-plus-one">66. Plus One&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>&lt;/td>
+&lt;td style="text-align: center">7&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/66-plus-one">66. Plus One&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">8&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/69-sqrtx">69. Sqrt(x)&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/binary-search">Binary Search&lt;/a>,&lt;/td>
+&lt;td style="text-align: center">8&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/69-sqrtx">69. Sqrt(x)&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/binary-search">Binary Search&lt;/a>,&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">9&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/70-climbing-stairs">70. Climbing Stairs&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/dynamic-programming">Dynamic Programming&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/memoization">Memoization&lt;/a>&lt;/td>
+&lt;td style="text-align: center">9&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/70-climbing-stairs">70. Climbing Stairs&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/dynamic-programming">Dynamic Programming&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/memoization">Memoization&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">10&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/88-merge-sorted-array">88. Merge Sorted Array&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/two-pointers">Two pointers&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/sorting">Sorting&lt;/a>&lt;/td>
+&lt;td style="text-align: center">10&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/88-merge-sorted-array">88. Merge Sorted Array&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/two-pointers">Two pointers&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/sorting">Sorting&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">11&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/94-binary-tree-inorder-traversal">94. Binary Tree Inorder Traversal&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/stack">Stack&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/tree">Tree&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/depth-first-search">Depth-First Search&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/binary-tree">Binary Tree&lt;/a>&lt;/td>
+&lt;td style="text-align: center">11&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/94-binary-tree-inorder-traversal">94. Binary Tree Inorder Traversal&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/stack">Stack&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/tree">Tree&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/depth-first-search">Depth-First Search&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/binary-tree">Binary Tree&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">12&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/2-add-two-numbers">2. Add Two Numbers&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/linked-list">Linked List&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/recursion">Recursion&lt;/a>&lt;/td>
+&lt;td style="text-align: center">12&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/2-add-two-numbers">2. Add Two Numbers&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/linked-list">Linked List&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/recursion">Recursion&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">13&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/3-longest-substring-without-repeating-characters">3. Longest Substring Without Repeating Characters&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/hash-table">Hash Table&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/sliding-window">Sliding Window&lt;/a>&lt;/td>
+&lt;td style="text-align: center">13&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/3-longest-substring-without-repeating-characters">3. Longest Substring Without Repeating Characters&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/hash-table">Hash Table&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/sliding-window">Sliding Window&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">14&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/5-longest-palindromic-substring">5. Longest Palindromic Substring&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/dynamic-programming">Dynamic Programming&lt;/a>&lt;/td>
+&lt;td style="text-align: center">14&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/5-longest-palindromic-substring">5. Longest Palindromic Substring&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/dynamic-programming">Dynamic Programming&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">15&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/7-reverse-integer">7. Reverse Integer&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>&lt;/td>
+&lt;td style="text-align: center">15&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/7-reverse-integer">7. Reverse Integer&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">16&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/11-container-with-most-water">11. Container With Most Water&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/two-pointers">Two pointers&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/greedy">Greedy&lt;/a>&lt;/td>
+&lt;td style="text-align: center">16&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/11-container-with-most-water">11. Container With Most Water&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/two-pointers">Two pointers&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/greedy">Greedy&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">17&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/15-3sum">15. 3Sum&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/two-pointers">Two pointers&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/sorting">Sorting&lt;/a>&lt;/td>
+&lt;td style="text-align: center">17&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/15-3sum">15. 3Sum&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/two-pointers">Two pointers&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/sorting">Sorting&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">18&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/17-letter-combinations-of-a-phone-number">17. Letter Combinations of a Phone Number&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/hash-table">Hash Table&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/backtracking">Backtracking&lt;/a>&lt;/td>
+&lt;td style="text-align: center">18&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/17-letter-combinations-of-a-phone-number">17. Letter Combinations of a Phone Number&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/hash-table">Hash Table&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/backtracking">Backtracking&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">19&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/19-remove-nth-node-from-end-of-list">19. Remove Nth Node From End of List&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/linked-list">Linked List&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/two-pointers">Two pointers&lt;/a>&lt;/td>
+&lt;td style="text-align: center">19&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/19-remove-nth-node-from-end-of-list">19. Remove Nth Node From End of List&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/linked-list">Linked List&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/two-pointers">Two pointers&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">20&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/22-generate-parentheses">22. Generate Parentheses&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/dynamic-programming">Dynamic Programming&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/backtracking">Backtracking&lt;/a>&lt;/td>
+&lt;td style="text-align: center">20&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/22-generate-parentheses">22. Generate Parentheses&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/dynamic-programming">Dynamic Programming&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/backtracking">Backtracking&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -151,78 +151,78 @@
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">#&lt;/th>
-&lt;th>Problem&lt;/th>
-&lt;th>Difficulty&lt;/th>
-&lt;th>Topics&lt;/th>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th style="text-align: left">Problem&lt;/th>
+&lt;th style="text-align: left">Difficulty&lt;/th>
+&lt;th style="text-align: left">Topics&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">21&lt;/td>
-&lt;td>&lt;a href="../problems/28-find-the-index-of-the-first-occurrence-in-a-string/">28. Find the Index of the First Occurrence in a String&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/two-pointers">Two pointers&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/string-matching">String Matching&lt;/a>&lt;/td>
+&lt;td style="text-align: center">21&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../problems/28-find-the-index-of-the-first-occurrence-in-a-string/">28. Find the Index of the First Occurrence in a String&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/two-pointers">Two pointers&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/string-matching">String Matching&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">22&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/29-divide-two-integers">29. Divide Two Integers&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/bit-manipulation">Bit Manipulation&lt;/a>&lt;/td>
+&lt;td style="text-align: center">22&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/29-divide-two-integers">29. Divide Two Integers&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/bit-manipulation">Bit Manipulation&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">23&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/33-search-in-rotated-sorted-arrays">33. Search in Rotated Sorted Array&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/binary-search">Binary Search&lt;/a>,&lt;/td>
+&lt;td style="text-align: center">23&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/33-search-in-rotated-sorted-arrays">33. Search in Rotated Sorted Array&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/binary-search">Binary Search&lt;/a>,&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">24&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/34-find-first-and-last-position-of-element-in-sorted-array">34. Find First and Last Position of Element in Sorted Array&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/binary-search">Binary Search&lt;/a>,&lt;/td>
+&lt;td style="text-align: center">24&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/34-find-first-and-last-position-of-element-in-sorted-array">34. Find First and Last Position of Element in Sorted Array&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/binary-search">Binary Search&lt;/a>,&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">25&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/36-valid-sudoku">36. Valid Sudoku&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/hash-table">Hash Table&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/matrix">Matrix&lt;/a>&lt;/td>
+&lt;td style="text-align: center">25&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/36-valid-sudoku">36. Valid Sudoku&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/hash-table">Hash Table&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/matrix">Matrix&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">26&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/38-count-and-say">38. Count and Say&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>&lt;/td>
+&lt;td style="text-align: center">26&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/38-count-and-say">38. Count and Say&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">27&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/46-permutations">46. Permutations&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/backtracking">Backtracking&lt;/a>&lt;/td>
+&lt;td style="text-align: center">27&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/46-permutations">46. Permutations&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/backtracking">Backtracking&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">28&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/48-rotate-image">48. Rotate Image&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/matrix">Matrix&lt;/a>&lt;/td>
+&lt;td style="text-align: center">28&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/48-rotate-image">48. Rotate Image&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/matrix">Matrix&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">29&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/49-group-anagrams">49. Group Anagrams&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/hash-table">Hash Table&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/sorting">Sorting&lt;/a>&lt;/td>
+&lt;td style="text-align: center">29&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/49-group-anagrams">49. Group Anagrams&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/hash-table">Hash Table&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/sorting">Sorting&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">30&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/50">50. Pow(x, n)&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/recursion">Recursion&lt;/a>&lt;/td>
+&lt;td style="text-align: center">30&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/50">50. Pow(x, n)&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/recursion">Recursion&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">31&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/53">53. Maximum Subarray&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/divide-and-conquer">Divide and Conquer&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/dynamic-programming">Dynamic Programming&lt;/a>&lt;/td>
+&lt;td style="text-align: center">31&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/53">53. Maximum Subarray&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/divide-and-conquer">Divide and Conquer&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/dynamic-programming">Dynamic Programming&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -233,48 +233,48 @@
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">#&lt;/th>
-&lt;th>Problem&lt;/th>
-&lt;th>Difficulty&lt;/th>
-&lt;th>Topics&lt;/th>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th style="text-align: left">Problem&lt;/th>
+&lt;th style="text-align: left">Difficulty&lt;/th>
+&lt;th style="text-align: left">Topics&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">32&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/55">55. Jump Game&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/greedy">Greedy&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/dynamic-programming">Dynamic Programming&lt;/a>&lt;/td>
+&lt;td style="text-align: center">32&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/55">55. Jump Game&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/greedy">Greedy&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/dynamic-programming">Dynamic Programming&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">33&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/56">56. Merge Intervals&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/sorting">Sorting&lt;/a>,&lt;/td>
+&lt;td style="text-align: center">33&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/56">56. Merge Intervals&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/sorting">Sorting&lt;/a>,&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">34&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/62">62. Unique Paths&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/dynamic-programming">Dynamic Programming&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/combinatorics">Combinatorics&lt;/a>]&lt;/td>
+&lt;td style="text-align: center">34&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/62">62. Unique Paths&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/dynamic-programming">Dynamic Programming&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/combinatorics">Combinatorics&lt;/a>]&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">35&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/73">73. Set Matrix Zeroes&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/hash-table">Hash Table&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/matrix">Matrix&lt;/a>&lt;/td>
+&lt;td style="text-align: center">35&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/73">73. Set Matrix Zeroes&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/hash-table">Hash Table&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/matrix">Matrix&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">36&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/75">75. Sort Colors&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/Two-Pointers">Two Pointers&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/Sorting">Sorting&lt;/a>&lt;/td>
+&lt;td style="text-align: center">36&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/75">75. Sort Colors&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/Two-Pointers">Two Pointers&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/Sorting">Sorting&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">37&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/78">78. Subsets&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/backtracking">Backtracking&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/bit-manipulation">Bit Manipulation&lt;/a>&lt;/td>
+&lt;td style="text-align: center">37&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/78">78. Subsets&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/backtracking">Backtracking&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/bit-manipulation">Bit Manipulation&lt;/a>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -291,66 +291,66 @@ CURRENT: 1004
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">#&lt;/th>
-&lt;th>Problem&lt;/th>
-&lt;th>Difficulty&lt;/th>
-&lt;th>Slides/Video&lt;/th>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th style="text-align: left">Problem&lt;/th>
+&lt;th style="text-align: left">Difficulty&lt;/th>
+&lt;th style="text-align: left">Slides/Video&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">1&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/1768">1768. Merge Strings Alternately&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
-&lt;td>✅ ✅&lt;/td>
+&lt;td style="text-align: center">1&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/1768">1768. Merge Strings Alternately&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
+&lt;td style="text-align: left">✅ ✅&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">2&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/1071">1071. Greatest Common Divisor of Strings&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
-&lt;td>✅ ✅&lt;/td>
+&lt;td style="text-align: center">2&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/1071">1071. Greatest Common Divisor of Strings&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
+&lt;td style="text-align: left">✅ ✅&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">3&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/1431">1431. Kids With the Greatest Number of Candies&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
-&lt;td>✅ ✅&lt;/td>
+&lt;td style="text-align: center">3&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/1431">1431. Kids With the Greatest Number of Candies&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
+&lt;td style="text-align: left">✅ ✅&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">4&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/605">605. Can Place Flowers&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
-&lt;td>&lt;/td>
+&lt;td style="text-align: center">4&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/605">605. Can Place Flowers&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">5&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/345">345. Reverse Vowels of a String&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
-&lt;td>&lt;/td>
+&lt;td style="text-align: center">5&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/345">345. Reverse Vowels of a String&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">6&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/151">151. Reverse Words in a String&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>✅&lt;/td>
+&lt;td style="text-align: center">6&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/151">151. Reverse Words in a String&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">✅&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">7&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/238">238. Product of Array Except Self&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;/td>
+&lt;td style="text-align: center">7&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/238">238. Product of Array Except Self&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">8&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/334">334. Increasing Triplet Subsequence&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;/td>
+&lt;td style="text-align: center">8&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/334">334. Increasing Triplet Subsequence&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">9&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/443">443. String Compression&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
-&lt;td>&lt;/td>
+&lt;td style="text-align: center">9&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/443">443. String Compression&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -358,31 +358,31 @@ CURRENT: 1004
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">#&lt;/th>
-&lt;th>Problem&lt;/th>
-&lt;th>Difficulty&lt;/th>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th style="text-align: left">Problem&lt;/th>
+&lt;th style="text-align: left">Difficulty&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">10&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/283">283. Move Zeroes&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
+&lt;td style="text-align: center">10&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/283">283. Move Zeroes&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">11&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/392">392. Is Subsequence&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
+&lt;td style="text-align: center">11&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/392">392. Is Subsequence&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">12&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/11">11. Container With Most Water&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">12&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/11">11. Container With Most Water&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">13&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/1679">1679. Max Number of K-Sum Pairs&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">13&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/1679">1679. Max Number of K-Sum Pairs&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -390,31 +390,31 @@ CURRENT: 1004
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">#&lt;/th>
-&lt;th>Problem&lt;/th>
-&lt;th>Difficulty&lt;/th>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th style="text-align: left">Problem&lt;/th>
+&lt;th style="text-align: left">Difficulty&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">14&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/643">643. Maximum Average Subarray I&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
+&lt;td style="text-align: center">14&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/643">643. Maximum Average Subarray I&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">15&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/1456">1456. Maximum Number of Vowels in a Substring of Given Length&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">15&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/1456">1456. Maximum Number of Vowels in a Substring of Given Length&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">16&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/1004">1004. Max Consecutive Ones III&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">16&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/1004">1004. Max Consecutive Ones III&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">17&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/1493">1493. Longest Subarray of 1&amp;rsquo;s After Deleting One Element&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">17&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/1493">1493. Longest Subarray of 1&amp;rsquo;s After Deleting One Element&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -422,24 +422,24 @@ CURRENT: 1004
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">#&lt;/th>
-&lt;th>Problem&lt;/th>
-&lt;th>Difficulty&lt;/th>
-&lt;th>Slides/Video&lt;/th>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th style="text-align: left">Problem&lt;/th>
+&lt;th style="text-align: left">Difficulty&lt;/th>
+&lt;th style="text-align: left">Slides/Video&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">18&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/1723">1732. Find the Highest Altitude&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
-&lt;td>✅&lt;/td>
+&lt;td style="text-align: center">18&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/1723">1732. Find the Highest Altitude&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
+&lt;td style="text-align: left">✅&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">19&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/724">724. Find Pivot Index&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
-&lt;td>&lt;/td>
+&lt;td style="text-align: center">19&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/724">724. Find Pivot Index&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
+&lt;td style="text-align: left">&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -447,31 +447,31 @@ CURRENT: 1004
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">#&lt;/th>
-&lt;th>Problem&lt;/th>
-&lt;th>Difficulty&lt;/th>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th style="text-align: left">Problem&lt;/th>
+&lt;th style="text-align: left">Difficulty&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">20&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/2215">2215. Find the Difference of Two Arrays&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
+&lt;td style="text-align: center">20&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/2215">2215. Find the Difference of Two Arrays&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">21&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/1207">1207. Unique Number of Occurrences&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
+&lt;td style="text-align: center">21&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/1207">1207. Unique Number of Occurrences&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">22&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/1657">1657. Determine if Two Strings Are Close&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">22&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/1657">1657. Determine if Two Strings Are Close&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">23&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/2352">2352. Equal Row and Column Pairs&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">23&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/2352">2352. Equal Row and Column Pairs&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -479,26 +479,26 @@ CURRENT: 1004
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">#&lt;/th>
-&lt;th>Problem&lt;/th>
-&lt;th>Difficulty&lt;/th>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th style="text-align: left">Problem&lt;/th>
+&lt;th style="text-align: left">Difficulty&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">24&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/2390">2390. Removing Stars From a String&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">24&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/2390">2390. Removing Stars From a String&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">25&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/735">735. Asteroid Collision&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">25&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/735">735. Asteroid Collision&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">26&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/394">394. Decode String&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">26&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/394">394. Decode String&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -506,21 +506,21 @@ CURRENT: 1004
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">#&lt;/th>
-&lt;th>Problem&lt;/th>
-&lt;th>Difficulty&lt;/th>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th style="text-align: left">Problem&lt;/th>
+&lt;th style="text-align: left">Difficulty&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">27&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/933">933. Number of Recent Calls&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
+&lt;td style="text-align: center">27&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/933">933. Number of Recent Calls&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">28&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/649">649. Dota2 Senate&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">28&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/649">649. Dota2 Senate&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -528,36 +528,36 @@ CURRENT: 1004
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">#&lt;/th>
-&lt;th>Problem&lt;/th>
-&lt;th>Difficulty&lt;/th>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th style="text-align: left">Problem&lt;/th>
+&lt;th style="text-align: left">Difficulty&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">31&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/141">141. Linked List Cycle&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
+&lt;td style="text-align: center">31&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/141">141. Linked List Cycle&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">31&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/206">206. Reverse Linked List&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
+&lt;td style="text-align: center">31&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/206">206. Reverse Linked List&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">29&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/2095">2095. Delete the Middle Node of a Linked List&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">29&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/2095">2095. Delete the Middle Node of a Linked List&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">30&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/328">328. Odd Even Linked List&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">30&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/328">328. Odd Even Linked List&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">32&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/2130">2130. Maximum Twin Sum of a Linked List&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">32&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/2130">2130. Maximum Twin Sum of a Linked List&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -565,41 +565,41 @@ CURRENT: 1004
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">#&lt;/th>
-&lt;th>Problem&lt;/th>
-&lt;th>Difficulty&lt;/th>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th style="text-align: left">Problem&lt;/th>
+&lt;th style="text-align: left">Difficulty&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">33&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/104">104. Maximum Depth of Binary Tree&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
+&lt;td style="text-align: center">33&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/104">104. Maximum Depth of Binary Tree&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">34&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/872/">872. Leaf-Similar Trees&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
+&lt;td style="text-align: center">34&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/872/">872. Leaf-Similar Trees&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">35&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1448/">1448. Count Good Nodes in Binary Tree&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">35&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1448/">1448. Count Good Nodes in Binary Tree&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">36&lt;/td>
-&lt;td>&lt;a href="https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/437/">437. Path Sum III&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">36&lt;/td>
+&lt;td style="text-align: left">&lt;a href="https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/437/">437. Path Sum III&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">37&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/1372">1372. Longest ZigZag Path in a Binary Tree&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">37&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/1372">1372. Longest ZigZag Path in a Binary Tree&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">38&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/236">236. Lowest Common Ancestor of a Binary Tree&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">38&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/236">236. Lowest Common Ancestor of a Binary Tree&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -607,21 +607,21 @@ CURRENT: 1004
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">#&lt;/th>
-&lt;th>Problem&lt;/th>
-&lt;th>Difficulty&lt;/th>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th style="text-align: left">Problem&lt;/th>
+&lt;th style="text-align: left">Difficulty&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">39&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/199">199. Binary Tree Right Side View&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">39&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/199">199. Binary Tree Right Side View&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">40&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/1161">1161. Maximum Level Sum of a Binary Tree&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">40&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/1161">1161. Maximum Level Sum of a Binary Tree&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -629,21 +629,21 @@ CURRENT: 1004
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">#&lt;/th>
-&lt;th>Problem&lt;/th>
-&lt;th>Difficulty&lt;/th>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th style="text-align: left">Problem&lt;/th>
+&lt;th style="text-align: left">Difficulty&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">41&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/700">700. Search in a Binary Search Tree&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
+&lt;td style="text-align: center">41&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/700">700. Search in a Binary Search Tree&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">42&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/450">450. Delete Node in a BST&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">42&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/450">450. Delete Node in a BST&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -651,31 +651,31 @@ CURRENT: 1004
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">#&lt;/th>
-&lt;th>Problem&lt;/th>
-&lt;th>Difficulty&lt;/th>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th style="text-align: left">Problem&lt;/th>
+&lt;th style="text-align: left">Difficulty&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">43&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/841">841. Keys and Rooms&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">43&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/841">841. Keys and Rooms&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">44&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/547">547. Number of Provinces&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">44&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/547">547. Number of Provinces&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">45&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/1466">1466. Reorder Routes to Make All Paths Lead to the City Zero&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">45&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/1466">1466. Reorder Routes to Make All Paths Lead to the City Zero&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">46&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/399">399. Evaluate Division&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">46&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/399">399. Evaluate Division&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -683,21 +683,21 @@ CURRENT: 1004
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">#&lt;/th>
-&lt;th>Problem&lt;/th>
-&lt;th>Difficulty&lt;/th>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th style="text-align: left">Problem&lt;/th>
+&lt;th style="text-align: left">Difficulty&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">47&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/1926">1926. Nearest Exit from Entrance in Maze&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">47&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/1926">1926. Nearest Exit from Entrance in Maze&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">48&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/994">994. Rotting Oranges&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">48&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/994">994. Rotting Oranges&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -705,31 +705,31 @@ CURRENT: 1004
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">#&lt;/th>
-&lt;th>Problem&lt;/th>
-&lt;th>Difficulty&lt;/th>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th style="text-align: left">Problem&lt;/th>
+&lt;th style="text-align: left">Difficulty&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">49&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/49">Kth Largest Element in an Array&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">49&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/49">Kth Largest Element in an Array&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">50&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/50">Smallest Number in Infinite Set&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">50&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/50">Smallest Number in Infinite Set&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">51&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/51">Maximum Subsequence Score&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">51&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/51">Maximum Subsequence Score&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">52&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/52">Total Cost to Hire K Workers&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">52&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/52">Total Cost to Hire K Workers&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -737,31 +737,31 @@ CURRENT: 1004
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">#&lt;/th>
-&lt;th>Problem&lt;/th>
-&lt;th>Difficulty&lt;/th>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th style="text-align: left">Problem&lt;/th>
+&lt;th style="text-align: left">Difficulty&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">53&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/53">Guess Number Higher or Lower&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
+&lt;td style="text-align: center">53&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/53">Guess Number Higher or Lower&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">54&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/54">Successful Pairs of Spells and Potions&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">54&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/54">Successful Pairs of Spells and Potions&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">55&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/162">162. Find Peak Element&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">55&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/162">162. Find Peak Element&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">56&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/56">Koko Eating Bananas&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">56&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/56">Koko Eating Bananas&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -769,21 +769,21 @@ CURRENT: 1004
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">#&lt;/th>
-&lt;th>Problem&lt;/th>
-&lt;th>Difficulty&lt;/th>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th style="text-align: left">Problem&lt;/th>
+&lt;th style="text-align: left">Difficulty&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">57&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/17">17. Letter Combinations of a Phone Number&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">57&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/17">17. Letter Combinations of a Phone Number&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">58&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/58">Combination Sum III&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">58&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/58">Combination Sum III&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -791,31 +791,31 @@ CURRENT: 1004
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">#&lt;/th>
-&lt;th>Problem&lt;/th>
-&lt;th>Difficulty&lt;/th>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th style="text-align: left">Problem&lt;/th>
+&lt;th style="text-align: left">Difficulty&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">59&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/59">N-th Tribonacci Number&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
+&lt;td style="text-align: center">59&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/59">N-th Tribonacci Number&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">60&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/60">Min Cost Climbing Stairs&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
+&lt;td style="text-align: center">60&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/60">Min Cost Climbing Stairs&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">61&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/61">House Robber&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">61&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/61">House Robber&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">62&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/62">Domino and Tromino Tiling&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">62&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/62">Domino and Tromino Tiling&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -823,31 +823,31 @@ CURRENT: 1004
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">#&lt;/th>
-&lt;th>Problem&lt;/th>
-&lt;th>Difficulty&lt;/th>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th style="text-align: left">Problem&lt;/th>
+&lt;th style="text-align: left">Difficulty&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">63&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/63">Unique Paths&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">63&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/63">Unique Paths&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">64&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/64">Longest Common Subsequence&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">64&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/64">Longest Common Subsequence&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">65&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/65">Best Time to Buy and Sell Stock with Transaction Fee&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">65&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/65">Best Time to Buy and Sell Stock with Transaction Fee&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">66&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/66">Edit Distance&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">66&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/66">Edit Distance&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -855,26 +855,26 @@ CURRENT: 1004
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">#&lt;/th>
-&lt;th>Problem&lt;/th>
-&lt;th>Difficulty&lt;/th>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th style="text-align: left">Problem&lt;/th>
+&lt;th style="text-align: left">Difficulty&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">67&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/67">Counting Bits&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
+&lt;td style="text-align: center">67&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/67">Counting Bits&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">68&lt;/td>
-&lt;td>&lt;a href="../leetcode/easy/136">136. Single Number&lt;/a>&lt;/td>
-&lt;td>Easy&lt;/td>
+&lt;td style="text-align: center">68&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/easy/136">136. Single Number&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Easy&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">69&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/69">Minimum Flips to Make a OR b Equal to c&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">69&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/69">Minimum Flips to Make a OR b Equal to c&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -882,21 +882,21 @@ CURRENT: 1004
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">#&lt;/th>
-&lt;th>Problem&lt;/th>
-&lt;th>Difficulty&lt;/th>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th style="text-align: left">Problem&lt;/th>
+&lt;th style="text-align: left">Difficulty&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">70&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/208">208. Implement Trie (Prefix Tree)&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">70&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/208">208. Implement Trie (Prefix Tree)&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">71&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/71">Search Suggestions System&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">71&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/71">Search Suggestions System&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -904,21 +904,21 @@ CURRENT: 1004
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">#&lt;/th>
-&lt;th>Problem&lt;/th>
-&lt;th>Difficulty&lt;/th>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th style="text-align: left">Problem&lt;/th>
+&lt;th style="text-align: left">Difficulty&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">72&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/435">435. Non-overlapping Intervals&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">72&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/435">435. Non-overlapping Intervals&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">73&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/73">Minimum Number of Arrows to Burst Balloons&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">73&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/73">Minimum Number of Arrows to Burst Balloons&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -926,21 +926,21 @@ CURRENT: 1004
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align:center">#&lt;/th>
-&lt;th>Problem&lt;/th>
-&lt;th>Difficulty&lt;/th>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th style="text-align: left">Problem&lt;/th>
+&lt;th style="text-align: left">Difficulty&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:center">74&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/74">Daily Temperatures&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">74&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/74">Daily Temperatures&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:center">75&lt;/td>
-&lt;td>&lt;a href="../leetcode/medium/75">Online Stock Span&lt;/a>&lt;/td>
-&lt;td>Medium&lt;/td>
+&lt;td style="text-align: center">75&lt;/td>
+&lt;td style="text-align: left">&lt;a href="../leetcode/medium/75">Online Stock Span&lt;/a>&lt;/td>
+&lt;td style="text-align: left">Medium&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
