@@ -45,4 +45,4 @@ draft: false
 
 ## IL
 
-<https://www.cashcow.co.il/> интернет магазин
+- <https://www.cashcow.co.il/> интернет магазин

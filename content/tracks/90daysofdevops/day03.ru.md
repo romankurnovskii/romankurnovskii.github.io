@@ -7,7 +7,7 @@ tags: [devops, cicd, tests, learning]
 categories:
 series:
 date: "2022-04-23"
-lastMod: "2022-04-23"
+lastMod: 2024-09-06
 featuredImage:
 draft: false
 id: 1048825
@@ -17,7 +17,7 @@ weight: 3
 ## Жизненный цикл DevOps — ориентированность на приложения
 
 По мере того, как мы будем продолжать в течение следующих нескольких недель, мы будем сталкиваться с этими названиями (Continuous Development, Testing, Deployment, Monitor) (непрерывная разработка, тестирование, развертывание, мониторинг) снова и снова.
-Если вы стремитесь статья инженером DevOps, то повторяемость будет тем, к чему вы привыкнете, но постоянное улучшение каждый раз — это еще одна вещь, которая делает вещи интересными.
+Если вы стремитесь стать инженером DevOps, то повторяемость будет тем, к чему вы привыкнете, но постоянное улучшение каждый раз — это еще одна вещь, которая делает вещи интересными.
 
 В этом часе мы рассмотрим общий вид приложения от начала до конца, а затем вернемся назад, как в постоянном цикле.
 
@@ -91,3 +91,7 @@ weight: 3
 - [**NOT FREE** The Phoenix Project: A Novel About IT, DevOps, and Helping Your Business Win](https://www.amazon.co.uk/Phoenix-Project-DevOps-Helping-Business-ebook/dp/B00AZRBLHO)
 
 До встречи в [День 4](../day04)
+
+## Thanks
+
+- [Alexey](https://github.com/soudjiro) for reviewing
