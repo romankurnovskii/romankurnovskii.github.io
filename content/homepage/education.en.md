@@ -5,7 +5,7 @@ experiences:
   - title: Computer Science + Economics
     organization:
       name: Samara State University of Economics
-      url: https://sseu.ru/
+      url: https://www.sseu.ru/en/
     dates: "2009 - 2014"
     location: 
     writeup: >
