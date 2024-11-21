@@ -10,7 +10,6 @@ toc: true
 weight: 20
 date: 2023-09-02
 lastMod: 2023-09-08
-published: true
 featuredImage: https://picsum.photos/700/241?grayscale
 ---
 

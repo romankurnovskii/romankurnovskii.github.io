@@ -10,7 +10,6 @@ toc: false
 weight: 10
 date: 2023-02-10
 lastMod: 2023-02-10
-published: true
 ---
 
 1. Подсчет префиксных сумм

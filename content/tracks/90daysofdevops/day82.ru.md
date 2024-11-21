@@ -39,7 +39,7 @@ weight: 82
 
 ![](../images/Day82_Monitoring2.ru.png?v1)
 
-Я создал [efk-stack.yaml](.../Monitoring/.../.../Monitoring/EFK%20Stack/efk-stack.yaml), который содержит все необходимое для развертывания стека EFK в нашем кластере, используя команду `kubectl create -f efk-stack.yaml` мы видим, что все развернуто.
+[efk-stack.yaml](.../Monitoring/EFK%20Stack/efk-stack.yaml) содержит все необходимое для развертывания стека EFK в нашем кластере, используя команду `kubectl create -f efk-stack.yaml` мы видим, что все развернуто.
 
 ![](../images/Day82_Monitoring3.ru.png?v1)
 
