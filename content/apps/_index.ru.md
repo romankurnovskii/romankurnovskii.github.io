@@ -19,4 +19,5 @@ layout: apps
 
 ### Web
 
+- [torgi.govapps.ru](https://torgi.govapps.ru) - Интерактивная карта земельных участков с Государственных торгов
 - [Cloud Exam Quizz](https://cloud-exam-prepare.com) - Prepare for AWS Certification

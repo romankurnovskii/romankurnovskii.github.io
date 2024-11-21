@@ -6,8 +6,8 @@ toc: true
 tags: ["Squid Proxy", "Amazon EC2", "Ubuntu", "Server Configuration", "Networking"]
 series: ["Amazon Web Services", "Proxy Server Configuration"]
 categories: ["Technology", "Networking", "Cloud Computing"]
-date: 2023-28-11
-lastMod: 2023-28-21
+date: 2023-11-28
+lastMod: 2023-11-30
 featuredImage: https://picsum.photos/700/237?grayscale
 authors: [roman-kurnovskii]
 ---

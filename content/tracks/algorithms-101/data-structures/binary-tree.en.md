@@ -10,7 +10,6 @@ toc: false
 weight: 10
 date: 2023-02-09
 lastMod: 2023-02-09
-published: true
 ---
 
 **1. What is a Binary Tree?**

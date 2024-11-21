@@ -23,4 +23,4 @@ type: posts
 - It is convenient to spend 20 min a day
 - Works from web/tablet/mobile
 
-**Link:** <https://www.cloud-exam-prepare.com>
+**Link:** <https://github.com/romankurnovskii/cloud-exam-prepare>
