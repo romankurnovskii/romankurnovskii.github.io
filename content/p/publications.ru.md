@@ -174,6 +174,7 @@ publications:
 - [**Google Scholar**](https://scholar.google.ru/citations?hl=ru&user=R5xmgOgAAAAJ)
 - [**SSRN**](https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=5627910)
 - [**academia.edu**](https://independent.academia.edu/RomanKurnovskii)
+- [**researchgate.net**](https://www.researchgate.net/profile/Roman-Kurnovskij)
 
 ## Links
 
