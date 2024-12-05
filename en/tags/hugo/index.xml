@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/hugo/</link><description>Recent content in Hugo on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sat, 17 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Render Jupyter Notebooks in Hugo with a Custom Shortcode</title><link>https://romankurnovskii.com/en/posts/howto-render-notebook-in-hugo/</link><pubDate>Sat, 17 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/howto-render-notebook-in-hugo/</guid><description>&lt;p>Jupyter notebooks are a fantastic tool for data scientists and programmers, allowing you to write code, visualize results, and write documentation all in one place. Hugo is a powerful and flexible static site generator that&amp;rsquo;s great for blogging and building websites. But what if you want to share your Jupyter notebooks on your Hugo website?&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/hugo/</link><description>Recent content in Hugo on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2024 Personal page</copyright><lastBuildDate>Sat, 17 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Render Jupyter Notebooks in Hugo with a Custom Shortcode</title><link>https://romankurnovskii.com/en/posts/howto-render-notebook-in-hugo/</link><pubDate>Sat, 17 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/howto-render-notebook-in-hugo/</guid><description>&lt;p>Jupyter notebooks are a fantastic tool for data scientists and programmers, allowing you to write code, visualize results, and write documentation all in one place. Hugo is a powerful and flexible static site generator that&amp;rsquo;s great for blogging and building websites. But what if you want to share your Jupyter notebooks on your Hugo website?&lt;/p>
 &lt;p>This step-by-step guide will walk you through how to render Jupyter notebooks in Hugo using a custom shortcode and automate the process using GitHub Actions.&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
 &lt;p>Before you start, make sure you have:&lt;/p>
@@ -59,11 +59,11 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>chart</title><link>https://romankurnovskii.com/en/posts/hugo-shortcode-examples/chart/</link><pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/hugo-shortcode-examples/chart/</guid><description>&lt;p>Display &lt;a href="https://www.chartjs.org/">Chart.js&lt;/a> diagrams/blocks&lt;/p>
 &lt;p>&lt;a href="https://github.com/romankurnovskii/awesome-hugo-shortcodes/tree/main/shortcodes/chart">Sources&lt;/a>&lt;/p>
 &lt;div style="width: 100%;height: 300px;margin: 0 auto">
-&lt;canvas id="bcc2dcfdeac4edd45c645f84f81cb8ca">&lt;/canvas>
+&lt;canvas id="ebccdd4cc88b4ccf6ef4c241a585addf">&lt;/canvas>
 &lt;/div>
 &lt;script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.js">&lt;/script>
 &lt;script type="text/javascript">
-var ctx = document.getElementById('bcc2dcfdeac4edd45c645f84f81cb8ca').getContext('2d');
+var ctx = document.getElementById('ebccdd4cc88b4ccf6ef4c241a585addf').getContext('2d');
 var options =
 {
 type: 'bar',
@@ -105,11 +105,11 @@ beginAtZero: true
 new Chart(ctx, options);
 &lt;/script>
 &lt;div style="width: 100%;height: 300px;margin: 0 auto">
-&lt;canvas id="dc8e5f54b8bc1fcc46fcd2c4aeddc84a">&lt;/canvas>
+&lt;canvas id="cdab86ce5fe8f5ac8db1d2f4d444cccc">&lt;/canvas>
 &lt;/div>
 &lt;script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.js">&lt;/script>
 &lt;script type="text/javascript">
-var ctx = document.getElementById('dc8e5f54b8bc1fcc46fcd2c4aeddc84a').getContext('2d');
+var ctx = document.getElementById('cdab86ce5fe8f5ac8db1d2f4d444cccc').getContext('2d');
 var options =
 {
 type: 'line',
@@ -151,11 +151,11 @@ beginAtZero: true
 new Chart(ctx, options);
 &lt;/script>
 &lt;div style="width: 100%;height: 300px;margin: 0 auto">
-&lt;canvas id="dfe8e5bcabdfd4c68c4cfcda5148c4c2">&lt;/canvas>
+&lt;canvas id="aed4cd48d5cfdfc41ca84bb62c5cec8f">&lt;/canvas>
 &lt;/div>
 &lt;script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.js">&lt;/script>
 &lt;script type="text/javascript">
-var ctx = document.getElementById('dfe8e5bcabdfd4c68c4cfcda5148c4c2').getContext('2d');
+var ctx = document.getElementById('aed4cd48d5cfdfc41ca84bb62c5cec8f').getContext('2d');
 var options =
 {
 type: 'pie',
