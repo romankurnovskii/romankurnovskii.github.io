@@ -23581,6 +23581,633 @@
     }
   });
 
+  // node_modules/domelementtype/lib/index.js
+  var require_lib = __commonJS({
+    "node_modules/domelementtype/lib/index.js"(exports) {
+      "use strict";
+      Object.defineProperty(exports, "__esModule", { value: true });
+      exports.Doctype = exports.CDATA = exports.Tag = exports.Style = exports.Script = exports.Comment = exports.Directive = exports.Text = exports.Root = exports.isTag = exports.ElementType = void 0;
+      var ElementType;
+      (function(ElementType2) {
+        ElementType2["Root"] = "root";
+        ElementType2["Text"] = "text";
+        ElementType2["Directive"] = "directive";
+        ElementType2["Comment"] = "comment";
+        ElementType2["Script"] = "script";
+        ElementType2["Style"] = "style";
+        ElementType2["Tag"] = "tag";
+        ElementType2["CDATA"] = "cdata";
+        ElementType2["Doctype"] = "doctype";
+      })(ElementType = exports.ElementType || (exports.ElementType = {}));
+      function isTag(elem) {
+        return elem.type === ElementType.Tag || elem.type === ElementType.Script || elem.type === ElementType.Style;
+      }
+      exports.isTag = isTag;
+      exports.Root = ElementType.Root;
+      exports.Text = ElementType.Text;
+      exports.Directive = ElementType.Directive;
+      exports.Comment = ElementType.Comment;
+      exports.Script = ElementType.Script;
+      exports.Style = ElementType.Style;
+      exports.Tag = ElementType.Tag;
+      exports.CDATA = ElementType.CDATA;
+      exports.Doctype = ElementType.Doctype;
+    }
+  });
+
+  // node_modules/domhandler/lib/node.js
+  var require_node = __commonJS({
+    "node_modules/domhandler/lib/node.js"(exports) {
+      "use strict";
+      var __extends = exports && exports.__extends || /* @__PURE__ */ function() {
+        var extendStatics = function(d, b) {
+          extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
+            d2.__proto__ = b2;
+          } || function(d2, b2) {
+            for (var p in b2) if (Object.prototype.hasOwnProperty.call(b2, p)) d2[p] = b2[p];
+          };
+          return extendStatics(d, b);
+        };
+        return function(d, b) {
+          if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+          extendStatics(d, b);
+          function __() {
+            this.constructor = d;
+          }
+          d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+        };
+      }();
+      var __assign = exports && exports.__assign || function() {
+        __assign = Object.assign || function(t) {
+          for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+              t[p] = s[p];
+          }
+          return t;
+        };
+        return __assign.apply(this, arguments);
+      };
+      Object.defineProperty(exports, "__esModule", { value: true });
+      exports.cloneNode = exports.hasChildren = exports.isDocument = exports.isDirective = exports.isComment = exports.isText = exports.isCDATA = exports.isTag = exports.Element = exports.Document = exports.CDATA = exports.NodeWithChildren = exports.ProcessingInstruction = exports.Comment = exports.Text = exports.DataNode = exports.Node = void 0;
+      var domelementtype_1 = require_lib();
+      var Node = (
+        /** @class */
+        function() {
+          function Node2() {
+            this.parent = null;
+            this.prev = null;
+            this.next = null;
+            this.startIndex = null;
+            this.endIndex = null;
+          }
+          Object.defineProperty(Node2.prototype, "parentNode", {
+            // Read-write aliases for properties
+            /**
+             * Same as {@link parent}.
+             * [DOM spec](https://dom.spec.whatwg.org)-compatible alias.
+             */
+            get: function() {
+              return this.parent;
+            },
+            set: function(parent) {
+              this.parent = parent;
+            },
+            enumerable: false,
+            configurable: true
+          });
+          Object.defineProperty(Node2.prototype, "previousSibling", {
+            /**
+             * Same as {@link prev}.
+             * [DOM spec](https://dom.spec.whatwg.org)-compatible alias.
+             */
+            get: function() {
+              return this.prev;
+            },
+            set: function(prev) {
+              this.prev = prev;
+            },
+            enumerable: false,
+            configurable: true
+          });
+          Object.defineProperty(Node2.prototype, "nextSibling", {
+            /**
+             * Same as {@link next}.
+             * [DOM spec](https://dom.spec.whatwg.org)-compatible alias.
+             */
+            get: function() {
+              return this.next;
+            },
+            set: function(next) {
+              this.next = next;
+            },
+            enumerable: false,
+            configurable: true
+          });
+          Node2.prototype.cloneNode = function(recursive) {
+            if (recursive === void 0) {
+              recursive = false;
+            }
+            return cloneNode(this, recursive);
+          };
+          return Node2;
+        }()
+      );
+      exports.Node = Node;
+      var DataNode = (
+        /** @class */
+        function(_super) {
+          __extends(DataNode2, _super);
+          function DataNode2(data) {
+            var _this = _super.call(this) || this;
+            _this.data = data;
+            return _this;
+          }
+          Object.defineProperty(DataNode2.prototype, "nodeValue", {
+            /**
+             * Same as {@link data}.
+             * [DOM spec](https://dom.spec.whatwg.org)-compatible alias.
+             */
+            get: function() {
+              return this.data;
+            },
+            set: function(data) {
+              this.data = data;
+            },
+            enumerable: false,
+            configurable: true
+          });
+          return DataNode2;
+        }(Node)
+      );
+      exports.DataNode = DataNode;
+      var Text2 = (
+        /** @class */
+        function(_super) {
+          __extends(Text3, _super);
+          function Text3() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.type = domelementtype_1.ElementType.Text;
+            return _this;
+          }
+          Object.defineProperty(Text3.prototype, "nodeType", {
+            get: function() {
+              return 3;
+            },
+            enumerable: false,
+            configurable: true
+          });
+          return Text3;
+        }(DataNode)
+      );
+      exports.Text = Text2;
+      var Comment2 = (
+        /** @class */
+        function(_super) {
+          __extends(Comment3, _super);
+          function Comment3() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.type = domelementtype_1.ElementType.Comment;
+            return _this;
+          }
+          Object.defineProperty(Comment3.prototype, "nodeType", {
+            get: function() {
+              return 8;
+            },
+            enumerable: false,
+            configurable: true
+          });
+          return Comment3;
+        }(DataNode)
+      );
+      exports.Comment = Comment2;
+      var ProcessingInstruction2 = (
+        /** @class */
+        function(_super) {
+          __extends(ProcessingInstruction3, _super);
+          function ProcessingInstruction3(name, data) {
+            var _this = _super.call(this, data) || this;
+            _this.name = name;
+            _this.type = domelementtype_1.ElementType.Directive;
+            return _this;
+          }
+          Object.defineProperty(ProcessingInstruction3.prototype, "nodeType", {
+            get: function() {
+              return 1;
+            },
+            enumerable: false,
+            configurable: true
+          });
+          return ProcessingInstruction3;
+        }(DataNode)
+      );
+      exports.ProcessingInstruction = ProcessingInstruction2;
+      var NodeWithChildren = (
+        /** @class */
+        function(_super) {
+          __extends(NodeWithChildren2, _super);
+          function NodeWithChildren2(children) {
+            var _this = _super.call(this) || this;
+            _this.children = children;
+            return _this;
+          }
+          Object.defineProperty(NodeWithChildren2.prototype, "firstChild", {
+            // Aliases
+            /** First child of the node. */
+            get: function() {
+              var _a;
+              return (_a = this.children[0]) !== null && _a !== void 0 ? _a : null;
+            },
+            enumerable: false,
+            configurable: true
+          });
+          Object.defineProperty(NodeWithChildren2.prototype, "lastChild", {
+            /** Last child of the node. */
+            get: function() {
+              return this.children.length > 0 ? this.children[this.children.length - 1] : null;
+            },
+            enumerable: false,
+            configurable: true
+          });
+          Object.defineProperty(NodeWithChildren2.prototype, "childNodes", {
+            /**
+             * Same as {@link children}.
+             * [DOM spec](https://dom.spec.whatwg.org)-compatible alias.
+             */
+            get: function() {
+              return this.children;
+            },
+            set: function(children) {
+              this.children = children;
+            },
+            enumerable: false,
+            configurable: true
+          });
+          return NodeWithChildren2;
+        }(Node)
+      );
+      exports.NodeWithChildren = NodeWithChildren;
+      var CDATA = (
+        /** @class */
+        function(_super) {
+          __extends(CDATA2, _super);
+          function CDATA2() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.type = domelementtype_1.ElementType.CDATA;
+            return _this;
+          }
+          Object.defineProperty(CDATA2.prototype, "nodeType", {
+            get: function() {
+              return 4;
+            },
+            enumerable: false,
+            configurable: true
+          });
+          return CDATA2;
+        }(NodeWithChildren)
+      );
+      exports.CDATA = CDATA;
+      var Document = (
+        /** @class */
+        function(_super) {
+          __extends(Document2, _super);
+          function Document2() {
+            var _this = _super !== null && _super.apply(this, arguments) || this;
+            _this.type = domelementtype_1.ElementType.Root;
+            return _this;
+          }
+          Object.defineProperty(Document2.prototype, "nodeType", {
+            get: function() {
+              return 9;
+            },
+            enumerable: false,
+            configurable: true
+          });
+          return Document2;
+        }(NodeWithChildren)
+      );
+      exports.Document = Document;
+      var Element2 = (
+        /** @class */
+        function(_super) {
+          __extends(Element3, _super);
+          function Element3(name, attribs, children, type) {
+            if (children === void 0) {
+              children = [];
+            }
+            if (type === void 0) {
+              type = name === "script" ? domelementtype_1.ElementType.Script : name === "style" ? domelementtype_1.ElementType.Style : domelementtype_1.ElementType.Tag;
+            }
+            var _this = _super.call(this, children) || this;
+            _this.name = name;
+            _this.attribs = attribs;
+            _this.type = type;
+            return _this;
+          }
+          Object.defineProperty(Element3.prototype, "nodeType", {
+            get: function() {
+              return 1;
+            },
+            enumerable: false,
+            configurable: true
+          });
+          Object.defineProperty(Element3.prototype, "tagName", {
+            // DOM Level 1 aliases
+            /**
+             * Same as {@link name}.
+             * [DOM spec](https://dom.spec.whatwg.org)-compatible alias.
+             */
+            get: function() {
+              return this.name;
+            },
+            set: function(name) {
+              this.name = name;
+            },
+            enumerable: false,
+            configurable: true
+          });
+          Object.defineProperty(Element3.prototype, "attributes", {
+            get: function() {
+              var _this = this;
+              return Object.keys(this.attribs).map(function(name) {
+                var _a, _b;
+                return {
+                  name,
+                  value: _this.attribs[name],
+                  namespace: (_a = _this["x-attribsNamespace"]) === null || _a === void 0 ? void 0 : _a[name],
+                  prefix: (_b = _this["x-attribsPrefix"]) === null || _b === void 0 ? void 0 : _b[name]
+                };
+              });
+            },
+            enumerable: false,
+            configurable: true
+          });
+          return Element3;
+        }(NodeWithChildren)
+      );
+      exports.Element = Element2;
+      function isTag(node) {
+        return (0, domelementtype_1.isTag)(node);
+      }
+      exports.isTag = isTag;
+      function isCDATA(node) {
+        return node.type === domelementtype_1.ElementType.CDATA;
+      }
+      exports.isCDATA = isCDATA;
+      function isText(node) {
+        return node.type === domelementtype_1.ElementType.Text;
+      }
+      exports.isText = isText;
+      function isComment(node) {
+        return node.type === domelementtype_1.ElementType.Comment;
+      }
+      exports.isComment = isComment;
+      function isDirective(node) {
+        return node.type === domelementtype_1.ElementType.Directive;
+      }
+      exports.isDirective = isDirective;
+      function isDocument(node) {
+        return node.type === domelementtype_1.ElementType.Root;
+      }
+      exports.isDocument = isDocument;
+      function hasChildren(node) {
+        return Object.prototype.hasOwnProperty.call(node, "children");
+      }
+      exports.hasChildren = hasChildren;
+      function cloneNode(node, recursive) {
+        if (recursive === void 0) {
+          recursive = false;
+        }
+        var result;
+        if (isText(node)) {
+          result = new Text2(node.data);
+        } else if (isComment(node)) {
+          result = new Comment2(node.data);
+        } else if (isTag(node)) {
+          var children = recursive ? cloneChildren(node.children) : [];
+          var clone_1 = new Element2(node.name, __assign({}, node.attribs), children);
+          children.forEach(function(child) {
+            return child.parent = clone_1;
+          });
+          if (node.namespace != null) {
+            clone_1.namespace = node.namespace;
+          }
+          if (node["x-attribsNamespace"]) {
+            clone_1["x-attribsNamespace"] = __assign({}, node["x-attribsNamespace"]);
+          }
+          if (node["x-attribsPrefix"]) {
+            clone_1["x-attribsPrefix"] = __assign({}, node["x-attribsPrefix"]);
+          }
+          result = clone_1;
+        } else if (isCDATA(node)) {
+          var children = recursive ? cloneChildren(node.children) : [];
+          var clone_2 = new CDATA(children);
+          children.forEach(function(child) {
+            return child.parent = clone_2;
+          });
+          result = clone_2;
+        } else if (isDocument(node)) {
+          var children = recursive ? cloneChildren(node.children) : [];
+          var clone_3 = new Document(children);
+          children.forEach(function(child) {
+            return child.parent = clone_3;
+          });
+          if (node["x-mode"]) {
+            clone_3["x-mode"] = node["x-mode"];
+          }
+          result = clone_3;
+        } else if (isDirective(node)) {
+          var instruction = new ProcessingInstruction2(node.name, node.data);
+          if (node["x-name"] != null) {
+            instruction["x-name"] = node["x-name"];
+            instruction["x-publicId"] = node["x-publicId"];
+            instruction["x-systemId"] = node["x-systemId"];
+          }
+          result = instruction;
+        } else {
+          throw new Error("Not implemented yet: ".concat(node.type));
+        }
+        result.startIndex = node.startIndex;
+        result.endIndex = node.endIndex;
+        if (node.sourceCodeLocation != null) {
+          result.sourceCodeLocation = node.sourceCodeLocation;
+        }
+        return result;
+      }
+      exports.cloneNode = cloneNode;
+      function cloneChildren(childs) {
+        var children = childs.map(function(child) {
+          return cloneNode(child, true);
+        });
+        for (var i = 1; i < children.length; i++) {
+          children[i].prev = children[i - 1];
+          children[i - 1].next = children[i];
+        }
+        return children;
+      }
+    }
+  });
+
+  // node_modules/domhandler/lib/index.js
+  var require_lib2 = __commonJS({
+    "node_modules/domhandler/lib/index.js"(exports) {
+      "use strict";
+      var __createBinding = exports && exports.__createBinding || (Object.create ? function(o, m, k, k2) {
+        if (k2 === void 0) k2 = k;
+        var desc = Object.getOwnPropertyDescriptor(m, k);
+        if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+          desc = { enumerable: true, get: function() {
+            return m[k];
+          } };
+        }
+        Object.defineProperty(o, k2, desc);
+      } : function(o, m, k, k2) {
+        if (k2 === void 0) k2 = k;
+        o[k2] = m[k];
+      });
+      var __exportStar = exports && exports.__exportStar || function(m, exports2) {
+        for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports2, p)) __createBinding(exports2, m, p);
+      };
+      Object.defineProperty(exports, "__esModule", { value: true });
+      exports.DomHandler = void 0;
+      var domelementtype_1 = require_lib();
+      var node_js_1 = require_node();
+      __exportStar(require_node(), exports);
+      var defaultOpts = {
+        withStartIndices: false,
+        withEndIndices: false,
+        xmlMode: false
+      };
+      var DomHandler = (
+        /** @class */
+        function() {
+          function DomHandler2(callback, options2, elementCB) {
+            this.dom = [];
+            this.root = new node_js_1.Document(this.dom);
+            this.done = false;
+            this.tagStack = [this.root];
+            this.lastNode = null;
+            this.parser = null;
+            if (typeof options2 === "function") {
+              elementCB = options2;
+              options2 = defaultOpts;
+            }
+            if (typeof callback === "object") {
+              options2 = callback;
+              callback = void 0;
+            }
+            this.callback = callback !== null && callback !== void 0 ? callback : null;
+            this.options = options2 !== null && options2 !== void 0 ? options2 : defaultOpts;
+            this.elementCB = elementCB !== null && elementCB !== void 0 ? elementCB : null;
+          }
+          DomHandler2.prototype.onparserinit = function(parser2) {
+            this.parser = parser2;
+          };
+          DomHandler2.prototype.onreset = function() {
+            this.dom = [];
+            this.root = new node_js_1.Document(this.dom);
+            this.done = false;
+            this.tagStack = [this.root];
+            this.lastNode = null;
+            this.parser = null;
+          };
+          DomHandler2.prototype.onend = function() {
+            if (this.done)
+              return;
+            this.done = true;
+            this.parser = null;
+            this.handleCallback(null);
+          };
+          DomHandler2.prototype.onerror = function(error) {
+            this.handleCallback(error);
+          };
+          DomHandler2.prototype.onclosetag = function() {
+            this.lastNode = null;
+            var elem = this.tagStack.pop();
+            if (this.options.withEndIndices) {
+              elem.endIndex = this.parser.endIndex;
+            }
+            if (this.elementCB)
+              this.elementCB(elem);
+          };
+          DomHandler2.prototype.onopentag = function(name, attribs) {
+            var type = this.options.xmlMode ? domelementtype_1.ElementType.Tag : void 0;
+            var element = new node_js_1.Element(name, attribs, void 0, type);
+            this.addNode(element);
+            this.tagStack.push(element);
+          };
+          DomHandler2.prototype.ontext = function(data) {
+            var lastNode = this.lastNode;
+            if (lastNode && lastNode.type === domelementtype_1.ElementType.Text) {
+              lastNode.data += data;
+              if (this.options.withEndIndices) {
+                lastNode.endIndex = this.parser.endIndex;
+              }
+            } else {
+              var node = new node_js_1.Text(data);
+              this.addNode(node);
+              this.lastNode = node;
+            }
+          };
+          DomHandler2.prototype.oncomment = function(data) {
+            if (this.lastNode && this.lastNode.type === domelementtype_1.ElementType.Comment) {
+              this.lastNode.data += data;
+              return;
+            }
+            var node = new node_js_1.Comment(data);
+            this.addNode(node);
+            this.lastNode = node;
+          };
+          DomHandler2.prototype.oncommentend = function() {
+            this.lastNode = null;
+          };
+          DomHandler2.prototype.oncdatastart = function() {
+            var text = new node_js_1.Text("");
+            var node = new node_js_1.CDATA([text]);
+            this.addNode(node);
+            text.parent = node;
+            this.lastNode = text;
+          };
+          DomHandler2.prototype.oncdataend = function() {
+            this.lastNode = null;
+          };
+          DomHandler2.prototype.onprocessinginstruction = function(name, data) {
+            var node = new node_js_1.ProcessingInstruction(name, data);
+            this.addNode(node);
+          };
+          DomHandler2.prototype.handleCallback = function(error) {
+            if (typeof this.callback === "function") {
+              this.callback(error, this.dom);
+            } else if (error) {
+              throw error;
+            }
+          };
+          DomHandler2.prototype.addNode = function(node) {
+            var parent = this.tagStack[this.tagStack.length - 1];
+            var previousSibling = parent.children[parent.children.length - 1];
+            if (this.options.withStartIndices) {
+              node.startIndex = this.parser.startIndex;
+            }
+            if (this.options.withEndIndices) {
+              node.endIndex = this.parser.endIndex;
+            }
+            parent.children.push(node);
+            if (previousSibling) {
+              node.prev = previousSibling;
+              previousSibling.next = node;
+            }
+            node.parent = parent;
+            this.lastNode = null;
+          };
+          return DomHandler2;
+        }()
+      );
+      exports.DomHandler = DomHandler;
+      exports.default = DomHandler;
+    }
+  });
+
   // node_modules/entities/lib/generated/decode-data-html.js
   var require_decode_data_html = __commonJS({
     "node_modules/entities/lib/generated/decode-data-html.js"(exports) {
@@ -25141,633 +25768,6 @@
     }
   });
 
-  // node_modules/domelementtype/lib/index.js
-  var require_lib = __commonJS({
-    "node_modules/domelementtype/lib/index.js"(exports) {
-      "use strict";
-      Object.defineProperty(exports, "__esModule", { value: true });
-      exports.Doctype = exports.CDATA = exports.Tag = exports.Style = exports.Script = exports.Comment = exports.Directive = exports.Text = exports.Root = exports.isTag = exports.ElementType = void 0;
-      var ElementType;
-      (function(ElementType2) {
-        ElementType2["Root"] = "root";
-        ElementType2["Text"] = "text";
-        ElementType2["Directive"] = "directive";
-        ElementType2["Comment"] = "comment";
-        ElementType2["Script"] = "script";
-        ElementType2["Style"] = "style";
-        ElementType2["Tag"] = "tag";
-        ElementType2["CDATA"] = "cdata";
-        ElementType2["Doctype"] = "doctype";
-      })(ElementType = exports.ElementType || (exports.ElementType = {}));
-      function isTag(elem) {
-        return elem.type === ElementType.Tag || elem.type === ElementType.Script || elem.type === ElementType.Style;
-      }
-      exports.isTag = isTag;
-      exports.Root = ElementType.Root;
-      exports.Text = ElementType.Text;
-      exports.Directive = ElementType.Directive;
-      exports.Comment = ElementType.Comment;
-      exports.Script = ElementType.Script;
-      exports.Style = ElementType.Style;
-      exports.Tag = ElementType.Tag;
-      exports.CDATA = ElementType.CDATA;
-      exports.Doctype = ElementType.Doctype;
-    }
-  });
-
-  // node_modules/domhandler/lib/node.js
-  var require_node = __commonJS({
-    "node_modules/domhandler/lib/node.js"(exports) {
-      "use strict";
-      var __extends = exports && exports.__extends || /* @__PURE__ */ function() {
-        var extendStatics = function(d, b) {
-          extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
-            d2.__proto__ = b2;
-          } || function(d2, b2) {
-            for (var p in b2) if (Object.prototype.hasOwnProperty.call(b2, p)) d2[p] = b2[p];
-          };
-          return extendStatics(d, b);
-        };
-        return function(d, b) {
-          if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-          extendStatics(d, b);
-          function __() {
-            this.constructor = d;
-          }
-          d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-        };
-      }();
-      var __assign = exports && exports.__assign || function() {
-        __assign = Object.assign || function(t) {
-          for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-              t[p] = s[p];
-          }
-          return t;
-        };
-        return __assign.apply(this, arguments);
-      };
-      Object.defineProperty(exports, "__esModule", { value: true });
-      exports.cloneNode = exports.hasChildren = exports.isDocument = exports.isDirective = exports.isComment = exports.isText = exports.isCDATA = exports.isTag = exports.Element = exports.Document = exports.CDATA = exports.NodeWithChildren = exports.ProcessingInstruction = exports.Comment = exports.Text = exports.DataNode = exports.Node = void 0;
-      var domelementtype_1 = require_lib();
-      var Node = (
-        /** @class */
-        function() {
-          function Node2() {
-            this.parent = null;
-            this.prev = null;
-            this.next = null;
-            this.startIndex = null;
-            this.endIndex = null;
-          }
-          Object.defineProperty(Node2.prototype, "parentNode", {
-            // Read-write aliases for properties
-            /**
-             * Same as {@link parent}.
-             * [DOM spec](https://dom.spec.whatwg.org)-compatible alias.
-             */
-            get: function() {
-              return this.parent;
-            },
-            set: function(parent) {
-              this.parent = parent;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          Object.defineProperty(Node2.prototype, "previousSibling", {
-            /**
-             * Same as {@link prev}.
-             * [DOM spec](https://dom.spec.whatwg.org)-compatible alias.
-             */
-            get: function() {
-              return this.prev;
-            },
-            set: function(prev) {
-              this.prev = prev;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          Object.defineProperty(Node2.prototype, "nextSibling", {
-            /**
-             * Same as {@link next}.
-             * [DOM spec](https://dom.spec.whatwg.org)-compatible alias.
-             */
-            get: function() {
-              return this.next;
-            },
-            set: function(next) {
-              this.next = next;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          Node2.prototype.cloneNode = function(recursive) {
-            if (recursive === void 0) {
-              recursive = false;
-            }
-            return cloneNode(this, recursive);
-          };
-          return Node2;
-        }()
-      );
-      exports.Node = Node;
-      var DataNode = (
-        /** @class */
-        function(_super) {
-          __extends(DataNode2, _super);
-          function DataNode2(data) {
-            var _this = _super.call(this) || this;
-            _this.data = data;
-            return _this;
-          }
-          Object.defineProperty(DataNode2.prototype, "nodeValue", {
-            /**
-             * Same as {@link data}.
-             * [DOM spec](https://dom.spec.whatwg.org)-compatible alias.
-             */
-            get: function() {
-              return this.data;
-            },
-            set: function(data) {
-              this.data = data;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          return DataNode2;
-        }(Node)
-      );
-      exports.DataNode = DataNode;
-      var Text2 = (
-        /** @class */
-        function(_super) {
-          __extends(Text3, _super);
-          function Text3() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this.type = domelementtype_1.ElementType.Text;
-            return _this;
-          }
-          Object.defineProperty(Text3.prototype, "nodeType", {
-            get: function() {
-              return 3;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          return Text3;
-        }(DataNode)
-      );
-      exports.Text = Text2;
-      var Comment2 = (
-        /** @class */
-        function(_super) {
-          __extends(Comment3, _super);
-          function Comment3() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this.type = domelementtype_1.ElementType.Comment;
-            return _this;
-          }
-          Object.defineProperty(Comment3.prototype, "nodeType", {
-            get: function() {
-              return 8;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          return Comment3;
-        }(DataNode)
-      );
-      exports.Comment = Comment2;
-      var ProcessingInstruction2 = (
-        /** @class */
-        function(_super) {
-          __extends(ProcessingInstruction3, _super);
-          function ProcessingInstruction3(name, data) {
-            var _this = _super.call(this, data) || this;
-            _this.name = name;
-            _this.type = domelementtype_1.ElementType.Directive;
-            return _this;
-          }
-          Object.defineProperty(ProcessingInstruction3.prototype, "nodeType", {
-            get: function() {
-              return 1;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          return ProcessingInstruction3;
-        }(DataNode)
-      );
-      exports.ProcessingInstruction = ProcessingInstruction2;
-      var NodeWithChildren = (
-        /** @class */
-        function(_super) {
-          __extends(NodeWithChildren2, _super);
-          function NodeWithChildren2(children) {
-            var _this = _super.call(this) || this;
-            _this.children = children;
-            return _this;
-          }
-          Object.defineProperty(NodeWithChildren2.prototype, "firstChild", {
-            // Aliases
-            /** First child of the node. */
-            get: function() {
-              var _a;
-              return (_a = this.children[0]) !== null && _a !== void 0 ? _a : null;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          Object.defineProperty(NodeWithChildren2.prototype, "lastChild", {
-            /** Last child of the node. */
-            get: function() {
-              return this.children.length > 0 ? this.children[this.children.length - 1] : null;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          Object.defineProperty(NodeWithChildren2.prototype, "childNodes", {
-            /**
-             * Same as {@link children}.
-             * [DOM spec](https://dom.spec.whatwg.org)-compatible alias.
-             */
-            get: function() {
-              return this.children;
-            },
-            set: function(children) {
-              this.children = children;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          return NodeWithChildren2;
-        }(Node)
-      );
-      exports.NodeWithChildren = NodeWithChildren;
-      var CDATA = (
-        /** @class */
-        function(_super) {
-          __extends(CDATA2, _super);
-          function CDATA2() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this.type = domelementtype_1.ElementType.CDATA;
-            return _this;
-          }
-          Object.defineProperty(CDATA2.prototype, "nodeType", {
-            get: function() {
-              return 4;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          return CDATA2;
-        }(NodeWithChildren)
-      );
-      exports.CDATA = CDATA;
-      var Document = (
-        /** @class */
-        function(_super) {
-          __extends(Document2, _super);
-          function Document2() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this.type = domelementtype_1.ElementType.Root;
-            return _this;
-          }
-          Object.defineProperty(Document2.prototype, "nodeType", {
-            get: function() {
-              return 9;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          return Document2;
-        }(NodeWithChildren)
-      );
-      exports.Document = Document;
-      var Element2 = (
-        /** @class */
-        function(_super) {
-          __extends(Element3, _super);
-          function Element3(name, attribs, children, type) {
-            if (children === void 0) {
-              children = [];
-            }
-            if (type === void 0) {
-              type = name === "script" ? domelementtype_1.ElementType.Script : name === "style" ? domelementtype_1.ElementType.Style : domelementtype_1.ElementType.Tag;
-            }
-            var _this = _super.call(this, children) || this;
-            _this.name = name;
-            _this.attribs = attribs;
-            _this.type = type;
-            return _this;
-          }
-          Object.defineProperty(Element3.prototype, "nodeType", {
-            get: function() {
-              return 1;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          Object.defineProperty(Element3.prototype, "tagName", {
-            // DOM Level 1 aliases
-            /**
-             * Same as {@link name}.
-             * [DOM spec](https://dom.spec.whatwg.org)-compatible alias.
-             */
-            get: function() {
-              return this.name;
-            },
-            set: function(name) {
-              this.name = name;
-            },
-            enumerable: false,
-            configurable: true
-          });
-          Object.defineProperty(Element3.prototype, "attributes", {
-            get: function() {
-              var _this = this;
-              return Object.keys(this.attribs).map(function(name) {
-                var _a, _b;
-                return {
-                  name,
-                  value: _this.attribs[name],
-                  namespace: (_a = _this["x-attribsNamespace"]) === null || _a === void 0 ? void 0 : _a[name],
-                  prefix: (_b = _this["x-attribsPrefix"]) === null || _b === void 0 ? void 0 : _b[name]
-                };
-              });
-            },
-            enumerable: false,
-            configurable: true
-          });
-          return Element3;
-        }(NodeWithChildren)
-      );
-      exports.Element = Element2;
-      function isTag(node) {
-        return (0, domelementtype_1.isTag)(node);
-      }
-      exports.isTag = isTag;
-      function isCDATA(node) {
-        return node.type === domelementtype_1.ElementType.CDATA;
-      }
-      exports.isCDATA = isCDATA;
-      function isText(node) {
-        return node.type === domelementtype_1.ElementType.Text;
-      }
-      exports.isText = isText;
-      function isComment(node) {
-        return node.type === domelementtype_1.ElementType.Comment;
-      }
-      exports.isComment = isComment;
-      function isDirective(node) {
-        return node.type === domelementtype_1.ElementType.Directive;
-      }
-      exports.isDirective = isDirective;
-      function isDocument(node) {
-        return node.type === domelementtype_1.ElementType.Root;
-      }
-      exports.isDocument = isDocument;
-      function hasChildren(node) {
-        return Object.prototype.hasOwnProperty.call(node, "children");
-      }
-      exports.hasChildren = hasChildren;
-      function cloneNode(node, recursive) {
-        if (recursive === void 0) {
-          recursive = false;
-        }
-        var result;
-        if (isText(node)) {
-          result = new Text2(node.data);
-        } else if (isComment(node)) {
-          result = new Comment2(node.data);
-        } else if (isTag(node)) {
-          var children = recursive ? cloneChildren(node.children) : [];
-          var clone_1 = new Element2(node.name, __assign({}, node.attribs), children);
-          children.forEach(function(child) {
-            return child.parent = clone_1;
-          });
-          if (node.namespace != null) {
-            clone_1.namespace = node.namespace;
-          }
-          if (node["x-attribsNamespace"]) {
-            clone_1["x-attribsNamespace"] = __assign({}, node["x-attribsNamespace"]);
-          }
-          if (node["x-attribsPrefix"]) {
-            clone_1["x-attribsPrefix"] = __assign({}, node["x-attribsPrefix"]);
-          }
-          result = clone_1;
-        } else if (isCDATA(node)) {
-          var children = recursive ? cloneChildren(node.children) : [];
-          var clone_2 = new CDATA(children);
-          children.forEach(function(child) {
-            return child.parent = clone_2;
-          });
-          result = clone_2;
-        } else if (isDocument(node)) {
-          var children = recursive ? cloneChildren(node.children) : [];
-          var clone_3 = new Document(children);
-          children.forEach(function(child) {
-            return child.parent = clone_3;
-          });
-          if (node["x-mode"]) {
-            clone_3["x-mode"] = node["x-mode"];
-          }
-          result = clone_3;
-        } else if (isDirective(node)) {
-          var instruction = new ProcessingInstruction2(node.name, node.data);
-          if (node["x-name"] != null) {
-            instruction["x-name"] = node["x-name"];
-            instruction["x-publicId"] = node["x-publicId"];
-            instruction["x-systemId"] = node["x-systemId"];
-          }
-          result = instruction;
-        } else {
-          throw new Error("Not implemented yet: ".concat(node.type));
-        }
-        result.startIndex = node.startIndex;
-        result.endIndex = node.endIndex;
-        if (node.sourceCodeLocation != null) {
-          result.sourceCodeLocation = node.sourceCodeLocation;
-        }
-        return result;
-      }
-      exports.cloneNode = cloneNode;
-      function cloneChildren(childs) {
-        var children = childs.map(function(child) {
-          return cloneNode(child, true);
-        });
-        for (var i = 1; i < children.length; i++) {
-          children[i].prev = children[i - 1];
-          children[i - 1].next = children[i];
-        }
-        return children;
-      }
-    }
-  });
-
-  // node_modules/domhandler/lib/index.js
-  var require_lib2 = __commonJS({
-    "node_modules/domhandler/lib/index.js"(exports) {
-      "use strict";
-      var __createBinding = exports && exports.__createBinding || (Object.create ? function(o, m, k, k2) {
-        if (k2 === void 0) k2 = k;
-        var desc = Object.getOwnPropertyDescriptor(m, k);
-        if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-          desc = { enumerable: true, get: function() {
-            return m[k];
-          } };
-        }
-        Object.defineProperty(o, k2, desc);
-      } : function(o, m, k, k2) {
-        if (k2 === void 0) k2 = k;
-        o[k2] = m[k];
-      });
-      var __exportStar = exports && exports.__exportStar || function(m, exports2) {
-        for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports2, p)) __createBinding(exports2, m, p);
-      };
-      Object.defineProperty(exports, "__esModule", { value: true });
-      exports.DomHandler = void 0;
-      var domelementtype_1 = require_lib();
-      var node_js_1 = require_node();
-      __exportStar(require_node(), exports);
-      var defaultOpts = {
-        withStartIndices: false,
-        withEndIndices: false,
-        xmlMode: false
-      };
-      var DomHandler = (
-        /** @class */
-        function() {
-          function DomHandler2(callback, options2, elementCB) {
-            this.dom = [];
-            this.root = new node_js_1.Document(this.dom);
-            this.done = false;
-            this.tagStack = [this.root];
-            this.lastNode = null;
-            this.parser = null;
-            if (typeof options2 === "function") {
-              elementCB = options2;
-              options2 = defaultOpts;
-            }
-            if (typeof callback === "object") {
-              options2 = callback;
-              callback = void 0;
-            }
-            this.callback = callback !== null && callback !== void 0 ? callback : null;
-            this.options = options2 !== null && options2 !== void 0 ? options2 : defaultOpts;
-            this.elementCB = elementCB !== null && elementCB !== void 0 ? elementCB : null;
-          }
-          DomHandler2.prototype.onparserinit = function(parser2) {
-            this.parser = parser2;
-          };
-          DomHandler2.prototype.onreset = function() {
-            this.dom = [];
-            this.root = new node_js_1.Document(this.dom);
-            this.done = false;
-            this.tagStack = [this.root];
-            this.lastNode = null;
-            this.parser = null;
-          };
-          DomHandler2.prototype.onend = function() {
-            if (this.done)
-              return;
-            this.done = true;
-            this.parser = null;
-            this.handleCallback(null);
-          };
-          DomHandler2.prototype.onerror = function(error) {
-            this.handleCallback(error);
-          };
-          DomHandler2.prototype.onclosetag = function() {
-            this.lastNode = null;
-            var elem = this.tagStack.pop();
-            if (this.options.withEndIndices) {
-              elem.endIndex = this.parser.endIndex;
-            }
-            if (this.elementCB)
-              this.elementCB(elem);
-          };
-          DomHandler2.prototype.onopentag = function(name, attribs) {
-            var type = this.options.xmlMode ? domelementtype_1.ElementType.Tag : void 0;
-            var element = new node_js_1.Element(name, attribs, void 0, type);
-            this.addNode(element);
-            this.tagStack.push(element);
-          };
-          DomHandler2.prototype.ontext = function(data) {
-            var lastNode = this.lastNode;
-            if (lastNode && lastNode.type === domelementtype_1.ElementType.Text) {
-              lastNode.data += data;
-              if (this.options.withEndIndices) {
-                lastNode.endIndex = this.parser.endIndex;
-              }
-            } else {
-              var node = new node_js_1.Text(data);
-              this.addNode(node);
-              this.lastNode = node;
-            }
-          };
-          DomHandler2.prototype.oncomment = function(data) {
-            if (this.lastNode && this.lastNode.type === domelementtype_1.ElementType.Comment) {
-              this.lastNode.data += data;
-              return;
-            }
-            var node = new node_js_1.Comment(data);
-            this.addNode(node);
-            this.lastNode = node;
-          };
-          DomHandler2.prototype.oncommentend = function() {
-            this.lastNode = null;
-          };
-          DomHandler2.prototype.oncdatastart = function() {
-            var text = new node_js_1.Text("");
-            var node = new node_js_1.CDATA([text]);
-            this.addNode(node);
-            text.parent = node;
-            this.lastNode = text;
-          };
-          DomHandler2.prototype.oncdataend = function() {
-            this.lastNode = null;
-          };
-          DomHandler2.prototype.onprocessinginstruction = function(name, data) {
-            var node = new node_js_1.ProcessingInstruction(name, data);
-            this.addNode(node);
-          };
-          DomHandler2.prototype.handleCallback = function(error) {
-            if (typeof this.callback === "function") {
-              this.callback(error, this.dom);
-            } else if (error) {
-              throw error;
-            }
-          };
-          DomHandler2.prototype.addNode = function(node) {
-            var parent = this.tagStack[this.tagStack.length - 1];
-            var previousSibling = parent.children[parent.children.length - 1];
-            if (this.options.withStartIndices) {
-              node.startIndex = this.parser.startIndex;
-            }
-            if (this.options.withEndIndices) {
-              node.endIndex = this.parser.endIndex;
-            }
-            parent.children.push(node);
-            if (previousSibling) {
-              node.prev = previousSibling;
-              previousSibling.next = node;
-            }
-            node.parent = parent;
-            this.lastNode = null;
-          };
-          return DomHandler2;
-        }()
-      );
-      exports.DomHandler = DomHandler;
-      exports.default = DomHandler;
-    }
-  });
-
   // node_modules/entities/lib/generated/encode-html.js
   var require_encode_html = __commonJS({
     "node_modules/entities/lib/generated/encode-html.js"(exports) {
@@ -27194,8 +27194,8 @@
       "use strict";
       Object.defineProperty(exports, "__esModule", { value: true });
       exports.default = HTMLDOMParser;
-      var htmlparser2_1 = require_lib6();
       var domhandler_1 = require_lib2();
+      var htmlparser2_1 = require_lib6();
       var utilities_1 = require_utilities();
       function HTMLDOMParser(html2, options2) {
         if (typeof html2 !== "string") {
@@ -28361,6 +28361,7 @@
         return mod && mod.__esModule ? mod : { "default": mod };
       };
       Object.defineProperty(exports, "__esModule", { value: true });
+      exports.default = StyleToObject;
       var inline_style_parser_1 = __importDefault(require_inline_style_parser());
       function StyleToObject(style, iterator) {
         var styleObject = null;
@@ -28383,7 +28384,6 @@
         });
         return styleObject;
       }
-      exports.default = StyleToObject;
     }
   });
 
@@ -28393,7 +28393,7 @@
       "use strict";
       Object.defineProperty(exports, "__esModule", { value: true });
       exports.camelCase = void 0;
-      var CUSTOM_PROPERTY_REGEX = /^--[a-zA-Z0-9-]+$/;
+      var CUSTOM_PROPERTY_REGEX = /^--[a-zA-Z0-9_-]+$/;
       var HYPHEN_REGEX = /-([a-z])/g;
       var NO_HYPHEN_REGEX = /^[^-]+$/;
       var VENDOR_PREFIX_REGEX = /^-(webkit|moz|ms|o|khtml)-/;
@@ -28742,38 +28742,13 @@
   function changeDefaults(newDefaults) {
     _defaults = newDefaults;
   }
-  var escapeTest = /[&<>"']/;
-  var escapeReplace = new RegExp(escapeTest.source, "g");
-  var escapeTestNoEncode = /[<>"']|&(?!(#\d{1,7}|#[Xx][a-fA-F0-9]{1,6}|\w+);)/;
-  var escapeReplaceNoEncode = new RegExp(escapeTestNoEncode.source, "g");
-  var escapeReplacements = {
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#39;"
-  };
-  var getEscapeReplacement = (ch) => escapeReplacements[ch];
-  function escape$1(html2, encode) {
-    if (encode) {
-      if (escapeTest.test(html2)) {
-        return html2.replace(escapeReplace, getEscapeReplacement);
-      }
-    } else {
-      if (escapeTestNoEncode.test(html2)) {
-        return html2.replace(escapeReplaceNoEncode, getEscapeReplacement);
-      }
-    }
-    return html2;
-  }
-  var caret = /(^|[^\[])\^/g;
-  function edit(regex, opt) {
+  var noopTest = { exec: () => null };
+  function edit(regex, opt = "") {
     let source = typeof regex === "string" ? regex : regex.source;
-    opt = opt || "";
     const obj = {
       replace: (name, val) => {
         let valSource = typeof val === "string" ? val : val.source;
-        valSource = valSource.replace(caret, "$1");
+        valSource = valSource.replace(other.caret, "$1");
         source = source.replace(name, valSource);
         return obj;
       },
@@ -28783,17 +28758,214 @@
     };
     return obj;
   }
+  var other = {
+    codeRemoveIndent: /^(?: {1,4}| {0,3}\t)/gm,
+    outputLinkReplace: /\\([\[\]])/g,
+    indentCodeCompensation: /^(\s+)(?:```)/,
+    beginningSpace: /^\s+/,
+    endingHash: /#$/,
+    startingSpaceChar: /^ /,
+    endingSpaceChar: / $/,
+    nonSpaceChar: /[^ ]/,
+    newLineCharGlobal: /\n/g,
+    tabCharGlobal: /\t/g,
+    multipleSpaceGlobal: /\s+/g,
+    blankLine: /^[ \t]*$/,
+    doubleBlankLine: /\n[ \t]*\n[ \t]*$/,
+    blockquoteStart: /^ {0,3}>/,
+    blockquoteSetextReplace: /\n {0,3}((?:=+|-+) *)(?=\n|$)/g,
+    blockquoteSetextReplace2: /^ {0,3}>[ \t]?/gm,
+    listReplaceTabs: /^\t+/,
+    listReplaceNesting: /^ {1,4}(?=( {4})*[^ ])/g,
+    listIsTask: /^\[[ xX]\] /,
+    listReplaceTask: /^\[[ xX]\] +/,
+    anyLine: /\n.*\n/,
+    hrefBrackets: /^<(.*)>$/,
+    tableDelimiter: /[:|]/,
+    tableAlignChars: /^\||\| *$/g,
+    tableRowBlankLine: /\n[ \t]*$/,
+    tableAlignRight: /^ *-+: *$/,
+    tableAlignCenter: /^ *:-+: *$/,
+    tableAlignLeft: /^ *:-+ *$/,
+    startATag: /^<a /i,
+    endATag: /^<\/a>/i,
+    startPreScriptTag: /^<(pre|code|kbd|script)(\s|>)/i,
+    endPreScriptTag: /^<\/(pre|code|kbd|script)(\s|>)/i,
+    startAngleBracket: /^</,
+    endAngleBracket: />$/,
+    pedanticHrefTitle: /^([^'"]*[^\s])\s+(['"])(.*)\2/,
+    unicodeAlphaNumeric: /[\p{L}\p{N}]/u,
+    escapeTest: /[&<>"']/,
+    escapeReplace: /[&<>"']/g,
+    escapeTestNoEncode: /[<>"']|&(?!(#\d{1,7}|#[Xx][a-fA-F0-9]{1,6}|\w+);)/,
+    escapeReplaceNoEncode: /[<>"']|&(?!(#\d{1,7}|#[Xx][a-fA-F0-9]{1,6}|\w+);)/g,
+    unescapeTest: /&(#(?:\d+)|(?:#x[0-9A-Fa-f]+)|(?:\w+));?/ig,
+    caret: /(^|[^\[])\^/g,
+    percentDecode: /%25/g,
+    findPipe: /\|/g,
+    splitPipe: / \|/,
+    slashPipe: /\\\|/g,
+    carriageReturn: /\r\n|\r/g,
+    spaceLine: /^ +$/gm,
+    notSpaceStart: /^\S*/,
+    endingNewline: /\n$/,
+    listItemRegex: (bull) => new RegExp(`^( {0,3}${bull})((?:[	 ][^\\n]*)?(?:\\n|$))`),
+    nextBulletRegex: (indent) => new RegExp(`^ {0,${Math.min(3, indent - 1)}}(?:[*+-]|\\d{1,9}[.)])((?:[ 	][^\\n]*)?(?:\\n|$))`),
+    hrRegex: (indent) => new RegExp(`^ {0,${Math.min(3, indent - 1)}}((?:- *){3,}|(?:_ *){3,}|(?:\\* *){3,})(?:\\n+|$)`),
+    fencesBeginRegex: (indent) => new RegExp(`^ {0,${Math.min(3, indent - 1)}}(?:\`\`\`|~~~)`),
+    headingBeginRegex: (indent) => new RegExp(`^ {0,${Math.min(3, indent - 1)}}#`),
+    htmlBeginRegex: (indent) => new RegExp(`^ {0,${Math.min(3, indent - 1)}}<(?:[a-z].*>|!--)`, "i")
+  };
+  var newline = /^(?:[ \t]*(?:\n|$))+/;
+  var blockCode = /^((?: {4}| {0,3}\t)[^\n]+(?:\n(?:[ \t]*(?:\n|$))*)?)+/;
+  var fences = /^ {0,3}(`{3,}(?=[^`\n]*(?:\n|$))|~{3,})([^\n]*)(?:\n|$)(?:|([\s\S]*?)(?:\n|$))(?: {0,3}\1[~`]* *(?=\n|$)|$)/;
+  var hr = /^ {0,3}((?:-[\t ]*){3,}|(?:_[ \t]*){3,}|(?:\*[ \t]*){3,})(?:\n+|$)/;
+  var heading = /^ {0,3}(#{1,6})(?=\s|$)(.*)(?:\n+|$)/;
+  var bullet = /(?:[*+-]|\d{1,9}[.)])/;
+  var lheading = edit(/^(?!bull |blockCode|fences|blockquote|heading|html)((?:.|\n(?!\s*?\n|bull |blockCode|fences|blockquote|heading|html))+?)\n {0,3}(=+|-+) *(?:\n+|$)/).replace(/bull/g, bullet).replace(/blockCode/g, /(?: {4}| {0,3}\t)/).replace(/fences/g, / {0,3}(?:`{3,}|~{3,})/).replace(/blockquote/g, / {0,3}>/).replace(/heading/g, / {0,3}#{1,6}/).replace(/html/g, / {0,3}<[^\n>]+>\n/).getRegex();
+  var _paragraph = /^([^\n]+(?:\n(?!hr|heading|lheading|blockquote|fences|list|html|table| +\n)[^\n]+)*)/;
+  var blockText = /^[^\n]+/;
+  var _blockLabel = /(?!\s*\])(?:\\.|[^\[\]\\])+/;
+  var def = edit(/^ {0,3}\[(label)\]: *(?:\n[ \t]*)?([^<\s][^\s]*|<.*?>)(?:(?: +(?:\n[ \t]*)?| *\n[ \t]*)(title))? *(?:\n+|$)/).replace("label", _blockLabel).replace("title", /(?:"(?:\\"?|[^"\\])*"|'[^'\n]*(?:\n[^'\n]+)*\n?'|\([^()]*\))/).getRegex();
+  var list = edit(/^( {0,3}bull)([ \t][^\n]+?)?(?:\n|$)/).replace(/bull/g, bullet).getRegex();
+  var _tag = "address|article|aside|base|basefont|blockquote|body|caption|center|col|colgroup|dd|details|dialog|dir|div|dl|dt|fieldset|figcaption|figure|footer|form|frame|frameset|h[1-6]|head|header|hr|html|iframe|legend|li|link|main|menu|menuitem|meta|nav|noframes|ol|optgroup|option|p|param|search|section|summary|table|tbody|td|tfoot|th|thead|title|tr|track|ul";
+  var _comment = /<!--(?:-?>|[\s\S]*?(?:-->|$))/;
+  var html = edit("^ {0,3}(?:<(script|pre|style|textarea)[\\s>][\\s\\S]*?(?:</\\1>[^\\n]*\\n+|$)|comment[^\\n]*(\\n+|$)|<\\?[\\s\\S]*?(?:\\?>\\n*|$)|<![A-Z][\\s\\S]*?(?:>\\n*|$)|<!\\[CDATA\\[[\\s\\S]*?(?:\\]\\]>\\n*|$)|</?(tag)(?: +|\\n|/?>)[\\s\\S]*?(?:(?:\\n[ 	]*)+\\n|$)|<(?!script|pre|style|textarea)([a-z][\\w-]*)(?:attribute)*? */?>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:(?:\\n[ 	]*)+\\n|$)|</(?!script|pre|style|textarea)[a-z][\\w-]*\\s*>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:(?:\\n[ 	]*)+\\n|$))", "i").replace("comment", _comment).replace("tag", _tag).replace("attribute", / +[a-zA-Z:_][\w.:-]*(?: *= *"[^"\n]*"| *= *'[^'\n]*'| *= *[^\s"'=<>`]+)?/).getRegex();
+  var paragraph = edit(_paragraph).replace("hr", hr).replace("heading", " {0,3}#{1,6}(?:\\s|$)").replace("|lheading", "").replace("|table", "").replace("blockquote", " {0,3}>").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", _tag).getRegex();
+  var blockquote = edit(/^( {0,3}> ?(paragraph|[^\n]*)(?:\n|$))+/).replace("paragraph", paragraph).getRegex();
+  var blockNormal = {
+    blockquote,
+    code: blockCode,
+    def,
+    fences,
+    heading,
+    hr,
+    html,
+    lheading,
+    list,
+    newline,
+    paragraph,
+    table: noopTest,
+    text: blockText
+  };
+  var gfmTable = edit("^ *([^\\n ].*)\\n {0,3}((?:\\| *)?:?-+:? *(?:\\| *:?-+:? *)*(?:\\| *)?)(?:\\n((?:(?! *\\n|hr|heading|blockquote|code|fences|list|html).*(?:\\n|$))*)\\n*|$)").replace("hr", hr).replace("heading", " {0,3}#{1,6}(?:\\s|$)").replace("blockquote", " {0,3}>").replace("code", "(?: {4}| {0,3}	)[^\\n]").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", _tag).getRegex();
+  var blockGfm = {
+    ...blockNormal,
+    table: gfmTable,
+    paragraph: edit(_paragraph).replace("hr", hr).replace("heading", " {0,3}#{1,6}(?:\\s|$)").replace("|lheading", "").replace("table", gfmTable).replace("blockquote", " {0,3}>").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", _tag).getRegex()
+  };
+  var blockPedantic = {
+    ...blockNormal,
+    html: edit(`^ *(?:comment *(?:\\n|\\s*$)|<(tag)[\\s\\S]+?</\\1> *(?:\\n{2,}|\\s*$)|<tag(?:"[^"]*"|'[^']*'|\\s[^'"/>\\s]*)*?/?> *(?:\\n{2,}|\\s*$))`).replace("comment", _comment).replace(/tag/g, "(?!(?:a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img)\\b)\\w+(?!:|[^\\w\\s@]*@)\\b").getRegex(),
+    def: /^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +(["(][^\n]+[")]))? *(?:\n+|$)/,
+    heading: /^(#{1,6})(.*)(?:\n+|$)/,
+    fences: noopTest,
+    // fences not supported
+    lheading: /^(.+?)\n {0,3}(=+|-+) *(?:\n+|$)/,
+    paragraph: edit(_paragraph).replace("hr", hr).replace("heading", " *#{1,6} *[^\n]").replace("lheading", lheading).replace("|table", "").replace("blockquote", " {0,3}>").replace("|fences", "").replace("|list", "").replace("|html", "").replace("|tag", "").getRegex()
+  };
+  var escape$1 = /^\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/;
+  var inlineCode = /^(`+)([^`]|[^`][\s\S]*?[^`])\1(?!`)/;
+  var br = /^( {2,}|\\)\n(?!\s*$)/;
+  var inlineText = /^(`+|[^`])(?:(?= {2,}\n)|[\s\S]*?(?:(?=[\\<!\[`*_]|\b_|$)|[^ ](?= {2,}\n)))/;
+  var _punctuation = /[\p{P}\p{S}]/u;
+  var _punctuationOrSpace = /[\s\p{P}\p{S}]/u;
+  var _notPunctuationOrSpace = /[^\s\p{P}\p{S}]/u;
+  var punctuation = edit(/^((?![*_])punctSpace)/, "u").replace(/punctSpace/g, _punctuationOrSpace).getRegex();
+  var blockSkip = /\[[^[\]]*?\]\((?:\\.|[^\\\(\)]|\((?:\\.|[^\\\(\)])*\))*\)|`[^`]*?`|<[^<>]*?>/g;
+  var emStrongLDelim = edit(/^(?:\*+(?:((?!\*)punct)|[^\s*]))|^_+(?:((?!_)punct)|([^\s_]))/, "u").replace(/punct/g, _punctuation).getRegex();
+  var emStrongRDelimAst = edit("^[^_*]*?__[^_*]*?\\*[^_*]*?(?=__)|[^*]+(?=[^*])|(?!\\*)punct(\\*+)(?=[\\s]|$)|notPunctSpace(\\*+)(?!\\*)(?=punctSpace|$)|(?!\\*)punctSpace(\\*+)(?=notPunctSpace)|[\\s](\\*+)(?!\\*)(?=punct)|(?!\\*)punct(\\*+)(?!\\*)(?=punct)|notPunctSpace(\\*+)(?=notPunctSpace)", "gu").replace(/notPunctSpace/g, _notPunctuationOrSpace).replace(/punctSpace/g, _punctuationOrSpace).replace(/punct/g, _punctuation).getRegex();
+  var emStrongRDelimUnd = edit("^[^_*]*?\\*\\*[^_*]*?_[^_*]*?(?=\\*\\*)|[^_]+(?=[^_])|(?!_)punct(_+)(?=[\\s]|$)|notPunctSpace(_+)(?!_)(?=punctSpace|$)|(?!_)punctSpace(_+)(?=notPunctSpace)|[\\s](_+)(?!_)(?=punct)|(?!_)punct(_+)(?!_)(?=punct)", "gu").replace(/notPunctSpace/g, _notPunctuationOrSpace).replace(/punctSpace/g, _punctuationOrSpace).replace(/punct/g, _punctuation).getRegex();
+  var anyPunctuation = edit(/\\(punct)/, "gu").replace(/punct/g, _punctuation).getRegex();
+  var autolink = edit(/^<(scheme:[^\s\x00-\x1f<>]*|email)>/).replace("scheme", /[a-zA-Z][a-zA-Z0-9+.-]{1,31}/).replace("email", /[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+(@)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+(?![-_])/).getRegex();
+  var _inlineComment = edit(_comment).replace("(?:-->|$)", "-->").getRegex();
+  var tag = edit("^comment|^</[a-zA-Z][\\w:-]*\\s*>|^<[a-zA-Z][\\w-]*(?:attribute)*?\\s*/?>|^<\\?[\\s\\S]*?\\?>|^<![a-zA-Z]+\\s[\\s\\S]*?>|^<!\\[CDATA\\[[\\s\\S]*?\\]\\]>").replace("comment", _inlineComment).replace("attribute", /\s+[a-zA-Z:_][\w.:-]*(?:\s*=\s*"[^"]*"|\s*=\s*'[^']*'|\s*=\s*[^\s"'=<>`]+)?/).getRegex();
+  var _inlineLabel = /(?:\[(?:\\.|[^\[\]\\])*\]|\\.|`[^`]*`|[^\[\]\\`])*?/;
+  var link = edit(/^!?\[(label)\]\(\s*(href)(?:\s+(title))?\s*\)/).replace("label", _inlineLabel).replace("href", /<(?:\\.|[^\n<>\\])+>|[^\s\x00-\x1f]*/).replace("title", /"(?:\\"?|[^"\\])*"|'(?:\\'?|[^'\\])*'|\((?:\\\)?|[^)\\])*\)/).getRegex();
+  var reflink = edit(/^!?\[(label)\]\[(ref)\]/).replace("label", _inlineLabel).replace("ref", _blockLabel).getRegex();
+  var nolink = edit(/^!?\[(ref)\](?:\[\])?/).replace("ref", _blockLabel).getRegex();
+  var reflinkSearch = edit("reflink|nolink(?!\\()", "g").replace("reflink", reflink).replace("nolink", nolink).getRegex();
+  var inlineNormal = {
+    _backpedal: noopTest,
+    // only used for GFM url
+    anyPunctuation,
+    autolink,
+    blockSkip,
+    br,
+    code: inlineCode,
+    del: noopTest,
+    emStrongLDelim,
+    emStrongRDelimAst,
+    emStrongRDelimUnd,
+    escape: escape$1,
+    link,
+    nolink,
+    punctuation,
+    reflink,
+    reflinkSearch,
+    tag,
+    text: inlineText,
+    url: noopTest
+  };
+  var inlinePedantic = {
+    ...inlineNormal,
+    link: edit(/^!?\[(label)\]\((.*?)\)/).replace("label", _inlineLabel).getRegex(),
+    reflink: edit(/^!?\[(label)\]\s*\[([^\]]*)\]/).replace("label", _inlineLabel).getRegex()
+  };
+  var inlineGfm = {
+    ...inlineNormal,
+    escape: edit(escape$1).replace("])", "~|])").getRegex(),
+    url: edit(/^((?:ftp|https?):\/\/|www\.)(?:[a-zA-Z0-9\-]+\.?)+[^\s<]*|^email/, "i").replace("email", /[A-Za-z0-9._+-]+(@)[a-zA-Z0-9-_]+(?:\.[a-zA-Z0-9-_]*[a-zA-Z0-9])+(?![-_])/).getRegex(),
+    _backpedal: /(?:[^?!.,:;*_'"~()&]+|\([^)]*\)|&(?![a-zA-Z0-9]+;$)|[?!.,:;*_'"~)]+(?!$))+/,
+    del: /^(~~?)(?=[^\s~])((?:\\.|[^\\])*?(?:\\.|[^\s~\\]))\1(?=[^~]|$)/,
+    text: /^([`~]+|[^`~])(?:(?= {2,}\n)|(?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)|[\s\S]*?(?:(?=[\\<!\[`*~_]|\b_|https?:\/\/|ftp:\/\/|www\.|$)|[^ ](?= {2,}\n)|[^a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-](?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)))/
+  };
+  var inlineBreaks = {
+    ...inlineGfm,
+    br: edit(br).replace("{2,}", "*").getRegex(),
+    text: edit(inlineGfm.text).replace("\\b_", "\\b_| {2,}\\n").replace(/\{2,\}/g, "*").getRegex()
+  };
+  var block = {
+    normal: blockNormal,
+    gfm: blockGfm,
+    pedantic: blockPedantic
+  };
+  var inline = {
+    normal: inlineNormal,
+    gfm: inlineGfm,
+    breaks: inlineBreaks,
+    pedantic: inlinePedantic
+  };
+  var escapeReplacements = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  };
+  var getEscapeReplacement = (ch) => escapeReplacements[ch];
+  function escape(html2, encode) {
+    if (encode) {
+      if (other.escapeTest.test(html2)) {
+        return html2.replace(other.escapeReplace, getEscapeReplacement);
+      }
+    } else {
+      if (other.escapeTestNoEncode.test(html2)) {
+        return html2.replace(other.escapeReplaceNoEncode, getEscapeReplacement);
+      }
+    }
+    return html2;
+  }
   function cleanUrl(href) {
     try {
-      href = encodeURI(href).replace(/%25/g, "%");
+      href = encodeURI(href).replace(other.percentDecode, "%");
     } catch {
       return null;
     }
     return href;
   }
-  var noopTest = { exec: () => null };
   function splitCells(tableRow, count) {
-    const row = tableRow.replace(/\|/g, (match, offset, str) => {
+    const row = tableRow.replace(other.findPipe, (match, offset, str) => {
       let escaped = false;
       let curr = offset;
       while (--curr >= 0 && str[curr] === "\\")
@@ -28803,12 +28975,12 @@
       } else {
         return " |";
       }
-    }), cells = row.split(/ \|/);
+    }), cells = row.split(other.splitPipe);
     let i = 0;
     if (!cells[0].trim()) {
       cells.shift();
     }
-    if (cells.length > 0 && !cells[cells.length - 1].trim()) {
+    if (cells.length > 0 && !cells.at(-1)?.trim()) {
       cells.pop();
     }
     if (count) {
@@ -28820,7 +28992,7 @@
       }
     }
     for (; i < cells.length; i++) {
-      cells[i] = cells[i].trim().replace(/\\\|/g, "|");
+      cells[i] = cells[i].trim().replace(other.slashPipe, "|");
     }
     return cells;
   }
@@ -28861,10 +29033,10 @@
     }
     return -1;
   }
-  function outputLink(cap, link2, raw, lexer2) {
+  function outputLink(cap, link2, raw, lexer2, rules) {
     const href = link2.href;
-    const title = link2.title ? escape$1(link2.title) : null;
-    const text = cap[1].replace(/\\([\[\]])/g, "$1");
+    const title = link2.title || null;
+    const text = cap[1].replace(rules.other.outputLinkReplace, "$1");
     if (cap[0].charAt(0) !== "!") {
       lexer2.state.inLink = true;
       const token = {
@@ -28883,17 +29055,17 @@
       raw,
       href,
       title,
-      text: escape$1(text)
+      text
     };
   }
-  function indentCodeCompensation(raw, text) {
-    const matchIndentToCode = raw.match(/^(\s+)(?:```)/);
+  function indentCodeCompensation(raw, text, rules) {
+    const matchIndentToCode = raw.match(rules.other.indentCodeCompensation);
     if (matchIndentToCode === null) {
       return text;
     }
     const indentToCode = matchIndentToCode[1];
     return text.split("\n").map((node) => {
-      const matchIndentInNode = node.match(/^\s+/);
+      const matchIndentInNode = node.match(rules.other.beginningSpace);
       if (matchIndentInNode === null) {
         return node;
       }
@@ -28925,7 +29097,7 @@
     code(src) {
       const cap = this.rules.block.code.exec(src);
       if (cap) {
-        const text = cap[0].replace(/^ {1,4}/gm, "");
+        const text = cap[0].replace(this.rules.other.codeRemoveIndent, "");
         return {
           type: "code",
           raw: cap[0],
@@ -28938,7 +29110,7 @@
       const cap = this.rules.block.fences.exec(src);
       if (cap) {
         const raw = cap[0];
-        const text = indentCodeCompensation(raw, cap[3] || "");
+        const text = indentCodeCompensation(raw, cap[3] || "", this.rules);
         return {
           type: "code",
           raw,
@@ -28951,11 +29123,11 @@
       const cap = this.rules.block.heading.exec(src);
       if (cap) {
         let text = cap[2].trim();
-        if (/#$/.test(text)) {
+        if (this.rules.other.endingHash.test(text)) {
           const trimmed = rtrim(text, "#");
           if (this.options.pedantic) {
             text = trimmed.trim();
-          } else if (!trimmed || / $/.test(trimmed)) {
+          } else if (!trimmed || this.rules.other.endingSpaceChar.test(trimmed)) {
             text = trimmed.trim();
           }
         }
@@ -28989,7 +29161,7 @@
           const currentLines = [];
           let i;
           for (i = 0; i < lines.length; i++) {
-            if (/^ {0,3}>/.test(lines[i])) {
+            if (this.rules.other.blockquoteStart.test(lines[i])) {
               currentLines.push(lines[i]);
               inBlockquote = true;
             } else if (!inBlockquote) {
@@ -29000,7 +29172,7 @@
           }
           lines = lines.slice(i);
           const currentRaw = currentLines.join("\n");
-          const currentText = currentRaw.replace(/\n {0,3}((?:=+|-+) *)(?=\n|$)/g, "\n    $1").replace(/^ {0,3}>[ \t]?/gm, "");
+          const currentText = currentRaw.replace(this.rules.other.blockquoteSetextReplace, "\n    $1").replace(this.rules.other.blockquoteSetextReplace2, "");
           raw = raw ? `${raw}
 ${currentRaw}` : currentRaw;
           text = text ? `${text}
@@ -29012,7 +29184,7 @@ ${currentText}` : currentText;
           if (lines.length === 0) {
             break;
           }
-          const lastToken = tokens[tokens.length - 1];
+          const lastToken = tokens.at(-1);
           if (lastToken?.type === "code") {
             break;
           } else if (lastToken?.type === "blockquote") {
@@ -29030,7 +29202,7 @@ ${currentText}` : currentText;
             tokens[tokens.length - 1] = newToken;
             raw = raw.substring(0, raw.length - lastToken.raw.length) + newToken.raw;
             text = text.substring(0, text.length - oldToken.raw.length) + newToken.raw;
-            lines = newText.substring(tokens[tokens.length - 1].raw.length).split("\n");
+            lines = newText.substring(tokens.at(-1).raw.length).split("\n");
             continue;
           }
         }
@@ -29059,7 +29231,7 @@ ${currentText}` : currentText;
         if (this.options.pedantic) {
           bull = isordered ? bull : "[*+-]";
         }
-        const itemRegex = new RegExp(`^( {0,3}${bull})((?:[	 ][^\\n]*)?(?:\\n|$))`);
+        const itemRegex = this.rules.other.listItemRegex(bull);
         let endsWithBlankLine = false;
         while (src) {
           let endEarly = false;
@@ -29073,7 +29245,7 @@ ${currentText}` : currentText;
           }
           raw = cap[0];
           src = src.substring(raw.length);
-          let line = cap[2].split("\n", 1)[0].replace(/^\t+/, (t) => " ".repeat(3 * t.length));
+          let line = cap[2].split("\n", 1)[0].replace(this.rules.other.listReplaceTabs, (t) => " ".repeat(3 * t.length));
           let nextLine = src.split("\n", 1)[0];
           let blankLine = !line.trim();
           let indent = 0;
@@ -29083,26 +29255,31 @@ ${currentText}` : currentText;
           } else if (blankLine) {
             indent = cap[1].length + 1;
           } else {
-            indent = cap[2].search(/[^ ]/);
+            indent = cap[2].search(this.rules.other.nonSpaceChar);
             indent = indent > 4 ? 1 : indent;
             itemContents = line.slice(indent);
             indent += cap[1].length;
           }
-          if (blankLine && /^ *$/.test(nextLine)) {
+          if (blankLine && this.rules.other.blankLine.test(nextLine)) {
             raw += nextLine + "\n";
             src = src.substring(nextLine.length + 1);
             endEarly = true;
           }
           if (!endEarly) {
-            const nextBulletRegex = new RegExp(`^ {0,${Math.min(3, indent - 1)}}(?:[*+-]|\\d{1,9}[.)])((?:[ 	][^\\n]*)?(?:\\n|$))`);
-            const hrRegex = new RegExp(`^ {0,${Math.min(3, indent - 1)}}((?:- *){3,}|(?:_ *){3,}|(?:\\* *){3,})(?:\\n+|$)`);
-            const fencesBeginRegex = new RegExp(`^ {0,${Math.min(3, indent - 1)}}(?:\`\`\`|~~~)`);
-            const headingBeginRegex = new RegExp(`^ {0,${Math.min(3, indent - 1)}}#`);
+            const nextBulletRegex = this.rules.other.nextBulletRegex(indent);
+            const hrRegex = this.rules.other.hrRegex(indent);
+            const fencesBeginRegex = this.rules.other.fencesBeginRegex(indent);
+            const headingBeginRegex = this.rules.other.headingBeginRegex(indent);
+            const htmlBeginRegex = this.rules.other.htmlBeginRegex(indent);
             while (src) {
               const rawLine = src.split("\n", 1)[0];
+              let nextLineWithoutTabs;
               nextLine = rawLine;
               if (this.options.pedantic) {
-                nextLine = nextLine.replace(/^ {1,4}(?=( {4})*[^ ])/g, "  ");
+                nextLine = nextLine.replace(this.rules.other.listReplaceNesting, "  ");
+                nextLineWithoutTabs = nextLine;
+              } else {
+                nextLineWithoutTabs = nextLine.replace(this.rules.other.tabCharGlobal, "    ");
               }
               if (fencesBeginRegex.test(nextLine)) {
                 break;
@@ -29110,19 +29287,22 @@ ${currentText}` : currentText;
               if (headingBeginRegex.test(nextLine)) {
                 break;
               }
+              if (htmlBeginRegex.test(nextLine)) {
+                break;
+              }
               if (nextBulletRegex.test(nextLine)) {
                 break;
               }
-              if (hrRegex.test(src)) {
+              if (hrRegex.test(nextLine)) {
                 break;
               }
-              if (nextLine.search(/[^ ]/) >= indent || !nextLine.trim()) {
-                itemContents += "\n" + nextLine.slice(indent);
+              if (nextLineWithoutTabs.search(this.rules.other.nonSpaceChar) >= indent || !nextLine.trim()) {
+                itemContents += "\n" + nextLineWithoutTabs.slice(indent);
               } else {
                 if (blankLine) {
                   break;
                 }
-                if (line.search(/[^ ]/) >= 4) {
+                if (line.replace(this.rules.other.tabCharGlobal, "    ").search(this.rules.other.nonSpaceChar) >= 4) {
                   break;
                 }
                 if (fencesBeginRegex.test(line)) {
@@ -29141,23 +29321,23 @@ ${currentText}` : currentText;
               }
               raw += rawLine + "\n";
               src = src.substring(rawLine.length + 1);
-              line = nextLine.slice(indent);
+              line = nextLineWithoutTabs.slice(indent);
             }
           }
           if (!list2.loose) {
             if (endsWithBlankLine) {
               list2.loose = true;
-            } else if (/\n *\n *$/.test(raw)) {
+            } else if (this.rules.other.doubleBlankLine.test(raw)) {
               endsWithBlankLine = true;
             }
           }
           let istask = null;
           let ischecked;
           if (this.options.gfm) {
-            istask = /^\[[ xX]\] /.exec(itemContents);
+            istask = this.rules.other.listIsTask.exec(itemContents);
             if (istask) {
               ischecked = istask[0] !== "[ ] ";
-              itemContents = itemContents.replace(/^\[[ xX]\] +/, "");
+              itemContents = itemContents.replace(this.rules.other.listReplaceTask, "");
             }
           }
           list2.items.push({
@@ -29171,15 +29351,18 @@ ${currentText}` : currentText;
           });
           list2.raw += raw;
         }
-        list2.items[list2.items.length - 1].raw = list2.items[list2.items.length - 1].raw.trimEnd();
-        list2.items[list2.items.length - 1].text = list2.items[list2.items.length - 1].text.trimEnd();
+        const lastItem = list2.items.at(-1);
+        if (lastItem) {
+          lastItem.raw = lastItem.raw.trimEnd();
+          lastItem.text = lastItem.text.trimEnd();
+        }
         list2.raw = list2.raw.trimEnd();
         for (let i = 0; i < list2.items.length; i++) {
           this.lexer.state.top = false;
           list2.items[i].tokens = this.lexer.blockTokens(list2.items[i].text, []);
           if (!list2.loose) {
             const spacers = list2.items[i].tokens.filter((t) => t.type === "space");
-            const hasMultipleLineBreaks = spacers.length > 0 && spacers.some((t) => /\n.*\n/.test(t.raw));
+            const hasMultipleLineBreaks = spacers.length > 0 && spacers.some((t) => this.rules.other.anyLine.test(t.raw));
             list2.loose = hasMultipleLineBreaks;
           }
         }
@@ -29207,8 +29390,8 @@ ${currentText}` : currentText;
     def(src) {
       const cap = this.rules.block.def.exec(src);
       if (cap) {
-        const tag2 = cap[1].toLowerCase().replace(/\s+/g, " ");
-        const href = cap[2] ? cap[2].replace(/^<(.*)>$/, "$1").replace(this.rules.inline.anyPunctuation, "$1") : "";
+        const tag2 = cap[1].toLowerCase().replace(this.rules.other.multipleSpaceGlobal, " ");
+        const href = cap[2] ? cap[2].replace(this.rules.other.hrefBrackets, "$1").replace(this.rules.inline.anyPunctuation, "$1") : "";
         const title = cap[3] ? cap[3].substring(1, cap[3].length - 1).replace(this.rules.inline.anyPunctuation, "$1") : cap[3];
         return {
           type: "def",
@@ -29224,12 +29407,12 @@ ${currentText}` : currentText;
       if (!cap) {
         return;
       }
-      if (!/[:|]/.test(cap[2])) {
+      if (!this.rules.other.tableDelimiter.test(cap[2])) {
         return;
       }
       const headers = splitCells(cap[1]);
-      const aligns = cap[2].replace(/^\||\| *$/g, "").split("|");
-      const rows = cap[3] && cap[3].trim() ? cap[3].replace(/\n[ \t]*$/, "").split("\n") : [];
+      const aligns = cap[2].replace(this.rules.other.tableAlignChars, "").split("|");
+      const rows = cap[3]?.trim() ? cap[3].replace(this.rules.other.tableRowBlankLine, "").split("\n") : [];
       const item = {
         type: "table",
         raw: cap[0],
@@ -29241,11 +29424,11 @@ ${currentText}` : currentText;
         return;
       }
       for (const align of aligns) {
-        if (/^ *-+: *$/.test(align)) {
+        if (this.rules.other.tableAlignRight.test(align)) {
           item.align.push("right");
-        } else if (/^ *:-+: *$/.test(align)) {
+        } else if (this.rules.other.tableAlignCenter.test(align)) {
           item.align.push("center");
-        } else if (/^ *:-+ *$/.test(align)) {
+        } else if (this.rules.other.tableAlignLeft.test(align)) {
           item.align.push("left");
         } else {
           item.align.push(null);
@@ -29312,21 +29495,21 @@ ${currentText}` : currentText;
         return {
           type: "escape",
           raw: cap[0],
-          text: escape$1(cap[1])
+          text: cap[1]
         };
       }
     }
     tag(src) {
       const cap = this.rules.inline.tag.exec(src);
       if (cap) {
-        if (!this.lexer.state.inLink && /^<a /i.test(cap[0])) {
+        if (!this.lexer.state.inLink && this.rules.other.startATag.test(cap[0])) {
           this.lexer.state.inLink = true;
-        } else if (this.lexer.state.inLink && /^<\/a>/i.test(cap[0])) {
+        } else if (this.lexer.state.inLink && this.rules.other.endATag.test(cap[0])) {
           this.lexer.state.inLink = false;
         }
-        if (!this.lexer.state.inRawBlock && /^<(pre|code|kbd|script)(\s|>)/i.test(cap[0])) {
+        if (!this.lexer.state.inRawBlock && this.rules.other.startPreScriptTag.test(cap[0])) {
           this.lexer.state.inRawBlock = true;
-        } else if (this.lexer.state.inRawBlock && /^<\/(pre|code|kbd|script)(\s|>)/i.test(cap[0])) {
+        } else if (this.lexer.state.inRawBlock && this.rules.other.endPreScriptTag.test(cap[0])) {
           this.lexer.state.inRawBlock = false;
         }
         return {
@@ -29343,8 +29526,8 @@ ${currentText}` : currentText;
       const cap = this.rules.inline.link.exec(src);
       if (cap) {
         const trimmedUrl = cap[2].trim();
-        if (!this.options.pedantic && /^</.test(trimmedUrl)) {
-          if (!/>$/.test(trimmedUrl)) {
+        if (!this.options.pedantic && this.rules.other.startAngleBracket.test(trimmedUrl)) {
+          if (!this.rules.other.endAngleBracket.test(trimmedUrl)) {
             return;
           }
           const rtrimSlash = rtrim(trimmedUrl.slice(0, -1), "\\");
@@ -29364,7 +29547,7 @@ ${currentText}` : currentText;
         let href = cap[2];
         let title = "";
         if (this.options.pedantic) {
-          const link2 = /^([^'"]*[^\s])\s+(['"])(.*)\2/.exec(href);
+          const link2 = this.rules.other.pedanticHrefTitle.exec(href);
           if (link2) {
             href = link2[1];
             title = link2[3];
@@ -29373,8 +29556,8 @@ ${currentText}` : currentText;
           title = cap[3] ? cap[3].slice(1, -1) : "";
         }
         href = href.trim();
-        if (/^</.test(href)) {
-          if (this.options.pedantic && !/>$/.test(trimmedUrl)) {
+        if (this.rules.other.startAngleBracket.test(href)) {
+          if (this.options.pedantic && !this.rules.other.endAngleBracket.test(trimmedUrl)) {
             href = href.slice(1);
           } else {
             href = href.slice(1, -1);
@@ -29383,13 +29566,13 @@ ${currentText}` : currentText;
         return outputLink(cap, {
           href: href ? href.replace(this.rules.inline.anyPunctuation, "$1") : href,
           title: title ? title.replace(this.rules.inline.anyPunctuation, "$1") : title
-        }, cap[0], this.lexer);
+        }, cap[0], this.lexer, this.rules);
       }
     }
     reflink(src, links) {
       let cap;
       if ((cap = this.rules.inline.reflink.exec(src)) || (cap = this.rules.inline.nolink.exec(src))) {
-        const linkString = (cap[2] || cap[1]).replace(/\s+/g, " ");
+        const linkString = (cap[2] || cap[1]).replace(this.rules.other.multipleSpaceGlobal, " ");
         const link2 = links[linkString.toLowerCase()];
         if (!link2) {
           const text = cap[0].charAt(0);
@@ -29399,14 +29582,14 @@ ${currentText}` : currentText;
             text
           };
         }
-        return outputLink(cap, link2, cap[0], this.lexer);
+        return outputLink(cap, link2, cap[0], this.lexer, this.rules);
       }
     }
     emStrong(src, maskedSrc, prevChar = "") {
       let match = this.rules.inline.emStrongLDelim.exec(src);
       if (!match)
         return;
-      if (match[3] && prevChar.match(/[\p{L}\p{N}]/u))
+      if (match[3] && prevChar.match(this.rules.other.unicodeAlphaNumeric))
         return;
       const nextChar = match[1] || match[2] || "";
       if (!nextChar || !prevChar || this.rules.inline.punctuation.exec(prevChar)) {
@@ -29457,13 +29640,12 @@ ${currentText}` : currentText;
     codespan(src) {
       const cap = this.rules.inline.code.exec(src);
       if (cap) {
-        let text = cap[2].replace(/\n/g, " ");
-        const hasNonSpaceChars = /[^ ]/.test(text);
-        const hasSpaceCharsOnBothEnds = /^ /.test(text) && / $/.test(text);
+        let text = cap[2].replace(this.rules.other.newLineCharGlobal, " ");
+        const hasNonSpaceChars = this.rules.other.nonSpaceChar.test(text);
+        const hasSpaceCharsOnBothEnds = this.rules.other.startingSpaceChar.test(text) && this.rules.other.endingSpaceChar.test(text);
         if (hasNonSpaceChars && hasSpaceCharsOnBothEnds) {
           text = text.substring(1, text.length - 1);
         }
-        text = escape$1(text, true);
         return {
           type: "codespan",
           raw: cap[0],
@@ -29496,10 +29678,10 @@ ${currentText}` : currentText;
       if (cap) {
         let text, href;
         if (cap[2] === "@") {
-          text = escape$1(cap[1]);
+          text = cap[1];
           href = "mailto:" + text;
         } else {
-          text = escape$1(cap[1]);
+          text = cap[1];
           href = text;
         }
         return {
@@ -29522,7 +29704,7 @@ ${currentText}` : currentText;
       if (cap = this.rules.inline.url.exec(src)) {
         let text, href;
         if (cap[2] === "@") {
-          text = escape$1(cap[0]);
+          text = cap[0];
           href = "mailto:" + text;
         } else {
           let prevCapZero;
@@ -29530,7 +29712,7 @@ ${currentText}` : currentText;
             prevCapZero = cap[0];
             cap[0] = this.rules.inline._backpedal.exec(cap[0])?.[0] ?? "";
           } while (prevCapZero !== cap[0]);
-          text = escape$1(cap[0]);
+          text = cap[0];
           if (cap[1] === "www.") {
             href = "http://" + cap[0];
           } else {
@@ -29555,137 +29737,15 @@ ${currentText}` : currentText;
     inlineText(src) {
       const cap = this.rules.inline.text.exec(src);
       if (cap) {
-        let text;
-        if (this.lexer.state.inRawBlock) {
-          text = cap[0];
-        } else {
-          text = escape$1(cap[0]);
-        }
+        const escaped = this.lexer.state.inRawBlock;
         return {
           type: "text",
           raw: cap[0],
-          text
+          text: cap[0],
+          escaped
         };
       }
     }
-  };
-  var newline = /^(?: *(?:\n|$))+/;
-  var blockCode = /^( {4}[^\n]+(?:\n(?: *(?:\n|$))*)?)+/;
-  var fences = /^ {0,3}(`{3,}(?=[^`\n]*(?:\n|$))|~{3,})([^\n]*)(?:\n|$)(?:|([\s\S]*?)(?:\n|$))(?: {0,3}\1[~`]* *(?=\n|$)|$)/;
-  var hr = /^ {0,3}((?:-[\t ]*){3,}|(?:_[ \t]*){3,}|(?:\*[ \t]*){3,})(?:\n+|$)/;
-  var heading = /^ {0,3}(#{1,6})(?=\s|$)(.*)(?:\n+|$)/;
-  var bullet = /(?:[*+-]|\d{1,9}[.)])/;
-  var lheading = edit(/^(?!bull |blockCode|fences|blockquote|heading|html)((?:.|\n(?!\s*?\n|bull |blockCode|fences|blockquote|heading|html))+?)\n {0,3}(=+|-+) *(?:\n+|$)/).replace(/bull/g, bullet).replace(/blockCode/g, / {4}/).replace(/fences/g, / {0,3}(?:`{3,}|~{3,})/).replace(/blockquote/g, / {0,3}>/).replace(/heading/g, / {0,3}#{1,6}/).replace(/html/g, / {0,3}<[^\n>]+>\n/).getRegex();
-  var _paragraph = /^([^\n]+(?:\n(?!hr|heading|lheading|blockquote|fences|list|html|table| +\n)[^\n]+)*)/;
-  var blockText = /^[^\n]+/;
-  var _blockLabel = /(?!\s*\])(?:\\.|[^\[\]\\])+/;
-  var def = edit(/^ {0,3}\[(label)\]: *(?:\n *)?([^<\s][^\s]*|<.*?>)(?:(?: +(?:\n *)?| *\n *)(title))? *(?:\n+|$)/).replace("label", _blockLabel).replace("title", /(?:"(?:\\"?|[^"\\])*"|'[^'\n]*(?:\n[^'\n]+)*\n?'|\([^()]*\))/).getRegex();
-  var list = edit(/^( {0,3}bull)([ \t][^\n]+?)?(?:\n|$)/).replace(/bull/g, bullet).getRegex();
-  var _tag = "address|article|aside|base|basefont|blockquote|body|caption|center|col|colgroup|dd|details|dialog|dir|div|dl|dt|fieldset|figcaption|figure|footer|form|frame|frameset|h[1-6]|head|header|hr|html|iframe|legend|li|link|main|menu|menuitem|meta|nav|noframes|ol|optgroup|option|p|param|search|section|summary|table|tbody|td|tfoot|th|thead|title|tr|track|ul";
-  var _comment = /<!--(?:-?>|[\s\S]*?(?:-->|$))/;
-  var html = edit("^ {0,3}(?:<(script|pre|style|textarea)[\\s>][\\s\\S]*?(?:</\\1>[^\\n]*\\n+|$)|comment[^\\n]*(\\n+|$)|<\\?[\\s\\S]*?(?:\\?>\\n*|$)|<![A-Z][\\s\\S]*?(?:>\\n*|$)|<!\\[CDATA\\[[\\s\\S]*?(?:\\]\\]>\\n*|$)|</?(tag)(?: +|\\n|/?>)[\\s\\S]*?(?:(?:\\n *)+\\n|$)|<(?!script|pre|style|textarea)([a-z][\\w-]*)(?:attribute)*? */?>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:(?:\\n *)+\\n|$)|</(?!script|pre|style|textarea)[a-z][\\w-]*\\s*>(?=[ \\t]*(?:\\n|$))[\\s\\S]*?(?:(?:\\n *)+\\n|$))", "i").replace("comment", _comment).replace("tag", _tag).replace("attribute", / +[a-zA-Z:_][\w.:-]*(?: *= *"[^"\n]*"| *= *'[^'\n]*'| *= *[^\s"'=<>`]+)?/).getRegex();
-  var paragraph = edit(_paragraph).replace("hr", hr).replace("heading", " {0,3}#{1,6}(?:\\s|$)").replace("|lheading", "").replace("|table", "").replace("blockquote", " {0,3}>").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", _tag).getRegex();
-  var blockquote = edit(/^( {0,3}> ?(paragraph|[^\n]*)(?:\n|$))+/).replace("paragraph", paragraph).getRegex();
-  var blockNormal = {
-    blockquote,
-    code: blockCode,
-    def,
-    fences,
-    heading,
-    hr,
-    html,
-    lheading,
-    list,
-    newline,
-    paragraph,
-    table: noopTest,
-    text: blockText
-  };
-  var gfmTable = edit("^ *([^\\n ].*)\\n {0,3}((?:\\| *)?:?-+:? *(?:\\| *:?-+:? *)*(?:\\| *)?)(?:\\n((?:(?! *\\n|hr|heading|blockquote|code|fences|list|html).*(?:\\n|$))*)\\n*|$)").replace("hr", hr).replace("heading", " {0,3}#{1,6}(?:\\s|$)").replace("blockquote", " {0,3}>").replace("code", " {4}[^\\n]").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", _tag).getRegex();
-  var blockGfm = {
-    ...blockNormal,
-    table: gfmTable,
-    paragraph: edit(_paragraph).replace("hr", hr).replace("heading", " {0,3}#{1,6}(?:\\s|$)").replace("|lheading", "").replace("table", gfmTable).replace("blockquote", " {0,3}>").replace("fences", " {0,3}(?:`{3,}(?=[^`\\n]*\\n)|~{3,})[^\\n]*\\n").replace("list", " {0,3}(?:[*+-]|1[.)]) ").replace("html", "</?(?:tag)(?: +|\\n|/?>)|<(?:script|pre|style|textarea|!--)").replace("tag", _tag).getRegex()
-  };
-  var blockPedantic = {
-    ...blockNormal,
-    html: edit(`^ *(?:comment *(?:\\n|\\s*$)|<(tag)[\\s\\S]+?</\\1> *(?:\\n{2,}|\\s*$)|<tag(?:"[^"]*"|'[^']*'|\\s[^'"/>\\s]*)*?/?> *(?:\\n{2,}|\\s*$))`).replace("comment", _comment).replace(/tag/g, "(?!(?:a|em|strong|small|s|cite|q|dfn|abbr|data|time|code|var|samp|kbd|sub|sup|i|b|u|mark|ruby|rt|rp|bdi|bdo|span|br|wbr|ins|del|img)\\b)\\w+(?!:|[^\\w\\s@]*@)\\b").getRegex(),
-    def: /^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +(["(][^\n]+[")]))? *(?:\n+|$)/,
-    heading: /^(#{1,6})(.*)(?:\n+|$)/,
-    fences: noopTest,
-    // fences not supported
-    lheading: /^(.+?)\n {0,3}(=+|-+) *(?:\n+|$)/,
-    paragraph: edit(_paragraph).replace("hr", hr).replace("heading", " *#{1,6} *[^\n]").replace("lheading", lheading).replace("|table", "").replace("blockquote", " {0,3}>").replace("|fences", "").replace("|list", "").replace("|html", "").replace("|tag", "").getRegex()
-  };
-  var escape = /^\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/;
-  var inlineCode = /^(`+)([^`]|[^`][\s\S]*?[^`])\1(?!`)/;
-  var br = /^( {2,}|\\)\n(?!\s*$)/;
-  var inlineText = /^(`+|[^`])(?:(?= {2,}\n)|[\s\S]*?(?:(?=[\\<!\[`*_]|\b_|$)|[^ ](?= {2,}\n)))/;
-  var _punctuation = "\\p{P}\\p{S}";
-  var punctuation = edit(/^((?![*_])[\spunctuation])/, "u").replace(/punctuation/g, _punctuation).getRegex();
-  var blockSkip = /\[[^[\]]*?\]\([^\(\)]*?\)|`[^`]*?`|<[^<>]*?>/g;
-  var emStrongLDelim = edit(/^(?:\*+(?:((?!\*)[punct])|[^\s*]))|^_+(?:((?!_)[punct])|([^\s_]))/, "u").replace(/punct/g, _punctuation).getRegex();
-  var emStrongRDelimAst = edit("^[^_*]*?__[^_*]*?\\*[^_*]*?(?=__)|[^*]+(?=[^*])|(?!\\*)[punct](\\*+)(?=[\\s]|$)|[^punct\\s](\\*+)(?!\\*)(?=[punct\\s]|$)|(?!\\*)[punct\\s](\\*+)(?=[^punct\\s])|[\\s](\\*+)(?!\\*)(?=[punct])|(?!\\*)[punct](\\*+)(?!\\*)(?=[punct])|[^punct\\s](\\*+)(?=[^punct\\s])", "gu").replace(/punct/g, _punctuation).getRegex();
-  var emStrongRDelimUnd = edit("^[^_*]*?\\*\\*[^_*]*?_[^_*]*?(?=\\*\\*)|[^_]+(?=[^_])|(?!_)[punct](_+)(?=[\\s]|$)|[^punct\\s](_+)(?!_)(?=[punct\\s]|$)|(?!_)[punct\\s](_+)(?=[^punct\\s])|[\\s](_+)(?!_)(?=[punct])|(?!_)[punct](_+)(?!_)(?=[punct])", "gu").replace(/punct/g, _punctuation).getRegex();
-  var anyPunctuation = edit(/\\([punct])/, "gu").replace(/punct/g, _punctuation).getRegex();
-  var autolink = edit(/^<(scheme:[^\s\x00-\x1f<>]*|email)>/).replace("scheme", /[a-zA-Z][a-zA-Z0-9+.-]{1,31}/).replace("email", /[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+(@)[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+(?![-_])/).getRegex();
-  var _inlineComment = edit(_comment).replace("(?:-->|$)", "-->").getRegex();
-  var tag = edit("^comment|^</[a-zA-Z][\\w:-]*\\s*>|^<[a-zA-Z][\\w-]*(?:attribute)*?\\s*/?>|^<\\?[\\s\\S]*?\\?>|^<![a-zA-Z]+\\s[\\s\\S]*?>|^<!\\[CDATA\\[[\\s\\S]*?\\]\\]>").replace("comment", _inlineComment).replace("attribute", /\s+[a-zA-Z:_][\w.:-]*(?:\s*=\s*"[^"]*"|\s*=\s*'[^']*'|\s*=\s*[^\s"'=<>`]+)?/).getRegex();
-  var _inlineLabel = /(?:\[(?:\\.|[^\[\]\\])*\]|\\.|`[^`]*`|[^\[\]\\`])*?/;
-  var link = edit(/^!?\[(label)\]\(\s*(href)(?:\s+(title))?\s*\)/).replace("label", _inlineLabel).replace("href", /<(?:\\.|[^\n<>\\])+>|[^\s\x00-\x1f]*/).replace("title", /"(?:\\"?|[^"\\])*"|'(?:\\'?|[^'\\])*'|\((?:\\\)?|[^)\\])*\)/).getRegex();
-  var reflink = edit(/^!?\[(label)\]\[(ref)\]/).replace("label", _inlineLabel).replace("ref", _blockLabel).getRegex();
-  var nolink = edit(/^!?\[(ref)\](?:\[\])?/).replace("ref", _blockLabel).getRegex();
-  var reflinkSearch = edit("reflink|nolink(?!\\()", "g").replace("reflink", reflink).replace("nolink", nolink).getRegex();
-  var inlineNormal = {
-    _backpedal: noopTest,
-    // only used for GFM url
-    anyPunctuation,
-    autolink,
-    blockSkip,
-    br,
-    code: inlineCode,
-    del: noopTest,
-    emStrongLDelim,
-    emStrongRDelimAst,
-    emStrongRDelimUnd,
-    escape,
-    link,
-    nolink,
-    punctuation,
-    reflink,
-    reflinkSearch,
-    tag,
-    text: inlineText,
-    url: noopTest
-  };
-  var inlinePedantic = {
-    ...inlineNormal,
-    link: edit(/^!?\[(label)\]\((.*?)\)/).replace("label", _inlineLabel).getRegex(),
-    reflink: edit(/^!?\[(label)\]\s*\[([^\]]*)\]/).replace("label", _inlineLabel).getRegex()
-  };
-  var inlineGfm = {
-    ...inlineNormal,
-    escape: edit(escape).replace("])", "~|])").getRegex(),
-    url: edit(/^((?:ftp|https?):\/\/|www\.)(?:[a-zA-Z0-9\-]+\.?)+[^\s<]*|^email/, "i").replace("email", /[A-Za-z0-9._+-]+(@)[a-zA-Z0-9-_]+(?:\.[a-zA-Z0-9-_]*[a-zA-Z0-9])+(?![-_])/).getRegex(),
-    _backpedal: /(?:[^?!.,:;*_'"~()&]+|\([^)]*\)|&(?![a-zA-Z0-9]+;$)|[?!.,:;*_'"~)]+(?!$))+/,
-    del: /^(~~?)(?=[^\s~])([\s\S]*?[^\s~])\1(?=[^~]|$)/,
-    text: /^([`~]+|[^`~])(?:(?= {2,}\n)|(?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)|[\s\S]*?(?:(?=[\\<!\[`*~_]|\b_|https?:\/\/|ftp:\/\/|www\.|$)|[^ ](?= {2,}\n)|[^a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-](?=[a-zA-Z0-9.!#$%&'*+\/=?_`{\|}~-]+@)))/
-  };
-  var inlineBreaks = {
-    ...inlineGfm,
-    br: edit(br).replace("{2,}", "*").getRegex(),
-    text: edit(inlineGfm.text).replace("\\b_", "\\b_| {2,}\\n").replace(/\{2,\}/g, "*").getRegex()
-  };
-  var block = {
-    normal: blockNormal,
-    gfm: blockGfm,
-    pedantic: blockPedantic
-  };
-  var inline = {
-    normal: inlineNormal,
-    gfm: inlineGfm,
-    breaks: inlineBreaks,
-    pedantic: inlinePedantic
   };
   var _Lexer = class __Lexer {
     tokens;
@@ -29708,6 +29768,7 @@ ${currentText}` : currentText;
         top: true
       };
       const rules = {
+        other,
         block: block.normal,
         inline: inline.normal
       };
@@ -29751,7 +29812,7 @@ ${currentText}` : currentText;
      * Preprocessing
      */
     lex(src) {
-      src = src.replace(/\r\n|\r/g, "\n");
+      src = src.replace(other.carriageReturn, "\n");
       this.blockTokens(src, this.tokens);
       for (let i = 0; i < this.inlineQueue.length; i++) {
         const next = this.inlineQueue[i];
@@ -29762,17 +29823,11 @@ ${currentText}` : currentText;
     }
     blockTokens(src, tokens = [], lastParagraphClipped = false) {
       if (this.options.pedantic) {
-        src = src.replace(/\t/g, "    ").replace(/^ +$/gm, "");
-      } else {
-        src = src.replace(/^( *)(\t+)/gm, (_, leading, tabs) => {
-          return leading + "    ".repeat(tabs.length);
-        });
+        src = src.replace(other.tabCharGlobal, "    ").replace(other.spaceLine, "");
       }
-      let token;
-      let lastToken;
-      let cutSrc;
       while (src) {
-        if (this.options.extensions && this.options.extensions.block && this.options.extensions.block.some((extTokenizer) => {
+        let token;
+        if (this.options.extensions?.block?.some((extTokenizer) => {
           if (token = extTokenizer.call({ lexer: this }, src, tokens)) {
             src = src.substring(token.raw.length);
             tokens.push(token);
@@ -29784,8 +29839,9 @@ ${currentText}` : currentText;
         }
         if (token = this.tokenizer.space(src)) {
           src = src.substring(token.raw.length);
-          if (token.raw.length === 1 && tokens.length > 0) {
-            tokens[tokens.length - 1].raw += "\n";
+          const lastToken = tokens.at(-1);
+          if (token.raw.length === 1 && lastToken !== void 0) {
+            lastToken.raw += "\n";
           } else {
             tokens.push(token);
           }
@@ -29793,11 +29849,11 @@ ${currentText}` : currentText;
         }
         if (token = this.tokenizer.code(src)) {
           src = src.substring(token.raw.length);
-          lastToken = tokens[tokens.length - 1];
-          if (lastToken && (lastToken.type === "paragraph" || lastToken.type === "text")) {
+          const lastToken = tokens.at(-1);
+          if (lastToken?.type === "paragraph" || lastToken?.type === "text") {
             lastToken.raw += "\n" + token.raw;
             lastToken.text += "\n" + token.text;
-            this.inlineQueue[this.inlineQueue.length - 1].src = lastToken.text;
+            this.inlineQueue.at(-1).src = lastToken.text;
           } else {
             tokens.push(token);
           }
@@ -29835,11 +29891,11 @@ ${currentText}` : currentText;
         }
         if (token = this.tokenizer.def(src)) {
           src = src.substring(token.raw.length);
-          lastToken = tokens[tokens.length - 1];
-          if (lastToken && (lastToken.type === "paragraph" || lastToken.type === "text")) {
+          const lastToken = tokens.at(-1);
+          if (lastToken?.type === "paragraph" || lastToken?.type === "text") {
             lastToken.raw += "\n" + token.raw;
             lastToken.text += "\n" + token.raw;
-            this.inlineQueue[this.inlineQueue.length - 1].src = lastToken.text;
+            this.inlineQueue.at(-1).src = lastToken.text;
           } else if (!this.tokens.links[token.tag]) {
             this.tokens.links[token.tag] = {
               href: token.href,
@@ -29858,8 +29914,8 @@ ${currentText}` : currentText;
           tokens.push(token);
           continue;
         }
-        cutSrc = src;
-        if (this.options.extensions && this.options.extensions.startBlock) {
+        let cutSrc = src;
+        if (this.options.extensions?.startBlock) {
           let startIndex = Infinity;
           const tempSrc = src.slice(1);
           let tempStart;
@@ -29874,12 +29930,12 @@ ${currentText}` : currentText;
           }
         }
         if (this.state.top && (token = this.tokenizer.paragraph(cutSrc))) {
-          lastToken = tokens[tokens.length - 1];
+          const lastToken = tokens.at(-1);
           if (lastParagraphClipped && lastToken?.type === "paragraph") {
             lastToken.raw += "\n" + token.raw;
             lastToken.text += "\n" + token.text;
             this.inlineQueue.pop();
-            this.inlineQueue[this.inlineQueue.length - 1].src = lastToken.text;
+            this.inlineQueue.at(-1).src = lastToken.text;
           } else {
             tokens.push(token);
           }
@@ -29889,12 +29945,12 @@ ${currentText}` : currentText;
         }
         if (token = this.tokenizer.text(src)) {
           src = src.substring(token.raw.length);
-          lastToken = tokens[tokens.length - 1];
-          if (lastToken && lastToken.type === "text") {
+          const lastToken = tokens.at(-1);
+          if (lastToken?.type === "text") {
             lastToken.raw += "\n" + token.raw;
             lastToken.text += "\n" + token.text;
             this.inlineQueue.pop();
-            this.inlineQueue[this.inlineQueue.length - 1].src = lastToken.text;
+            this.inlineQueue.at(-1).src = lastToken.text;
           } else {
             tokens.push(token);
           }
@@ -29921,10 +29977,8 @@ ${currentText}` : currentText;
      * Lexing/Compiling
      */
     inlineTokens(src, tokens = []) {
-      let token, lastToken, cutSrc;
       let maskedSrc = src;
-      let match;
-      let keepPrevChar, prevChar;
+      let match = null;
       if (this.tokens.links) {
         const links = Object.keys(this.tokens.links);
         if (links.length > 0) {
@@ -29941,12 +29995,15 @@ ${currentText}` : currentText;
       while ((match = this.tokenizer.rules.inline.anyPunctuation.exec(maskedSrc)) != null) {
         maskedSrc = maskedSrc.slice(0, match.index) + "++" + maskedSrc.slice(this.tokenizer.rules.inline.anyPunctuation.lastIndex);
       }
+      let keepPrevChar = false;
+      let prevChar = "";
       while (src) {
         if (!keepPrevChar) {
           prevChar = "";
         }
         keepPrevChar = false;
-        if (this.options.extensions && this.options.extensions.inline && this.options.extensions.inline.some((extTokenizer) => {
+        let token;
+        if (this.options.extensions?.inline?.some((extTokenizer) => {
           if (token = extTokenizer.call({ lexer: this }, src, tokens)) {
             src = src.substring(token.raw.length);
             tokens.push(token);
@@ -29963,13 +30020,7 @@ ${currentText}` : currentText;
         }
         if (token = this.tokenizer.tag(src)) {
           src = src.substring(token.raw.length);
-          lastToken = tokens[tokens.length - 1];
-          if (lastToken && token.type === "text" && lastToken.type === "text") {
-            lastToken.raw += token.raw;
-            lastToken.text += token.text;
-          } else {
-            tokens.push(token);
-          }
+          tokens.push(token);
           continue;
         }
         if (token = this.tokenizer.link(src)) {
@@ -29979,8 +30030,8 @@ ${currentText}` : currentText;
         }
         if (token = this.tokenizer.reflink(src, this.tokens.links)) {
           src = src.substring(token.raw.length);
-          lastToken = tokens[tokens.length - 1];
-          if (lastToken && token.type === "text" && lastToken.type === "text") {
+          const lastToken = tokens.at(-1);
+          if (token.type === "text" && lastToken?.type === "text") {
             lastToken.raw += token.raw;
             lastToken.text += token.text;
           } else {
@@ -30018,8 +30069,8 @@ ${currentText}` : currentText;
           tokens.push(token);
           continue;
         }
-        cutSrc = src;
-        if (this.options.extensions && this.options.extensions.startInline) {
+        let cutSrc = src;
+        if (this.options.extensions?.startInline) {
           let startIndex = Infinity;
           const tempSrc = src.slice(1);
           let tempStart;
@@ -30039,8 +30090,8 @@ ${currentText}` : currentText;
             prevChar = token.raw.slice(-1);
           }
           keepPrevChar = true;
-          lastToken = tokens[tokens.length - 1];
-          if (lastToken && lastToken.type === "text") {
+          const lastToken = tokens.at(-1);
+          if (lastToken?.type === "text") {
             lastToken.raw += token.raw;
             lastToken.text += token.text;
           } else {
@@ -30072,12 +30123,12 @@ ${currentText}` : currentText;
       return "";
     }
     code({ text, lang, escaped }) {
-      const langString = (lang || "").match(/^\S*/)?.[0];
-      const code = text.replace(/\n$/, "") + "\n";
+      const langString = (lang || "").match(other.notSpaceStart)?.[0];
+      const code = text.replace(other.endingNewline, "") + "\n";
       if (!langString) {
-        return "<pre><code>" + (escaped ? code : escape$1(code, true)) + "</code></pre>\n";
+        return "<pre><code>" + (escaped ? code : escape(code, true)) + "</code></pre>\n";
       }
-      return '<pre><code class="language-' + escape$1(langString) + '">' + (escaped ? code : escape$1(code, true)) + "</code></pre>\n";
+      return '<pre><code class="language-' + escape(langString) + '">' + (escaped ? code : escape(code, true)) + "</code></pre>\n";
     }
     blockquote({ tokens }) {
       const body = this.parser.parse(tokens);
@@ -30112,16 +30163,18 @@ ${body}</blockquote>
       if (item.task) {
         const checkbox = this.checkbox({ checked: !!item.checked });
         if (item.loose) {
-          if (item.tokens.length > 0 && item.tokens[0].type === "paragraph") {
+          if (item.tokens[0]?.type === "paragraph") {
             item.tokens[0].text = checkbox + " " + item.tokens[0].text;
             if (item.tokens[0].tokens && item.tokens[0].tokens.length > 0 && item.tokens[0].tokens[0].type === "text") {
-              item.tokens[0].tokens[0].text = checkbox + " " + item.tokens[0].tokens[0].text;
+              item.tokens[0].tokens[0].text = checkbox + " " + escape(item.tokens[0].tokens[0].text);
+              item.tokens[0].tokens[0].escaped = true;
             }
           } else {
             item.tokens.unshift({
               type: "text",
               raw: checkbox + " ",
-              text: checkbox + " "
+              text: checkbox + " ",
+              escaped: true
             });
           }
         } else {
@@ -30181,7 +30234,7 @@ ${text}</tr>
       return `<em>${this.parser.parseInline(tokens)}</em>`;
     }
     codespan({ text }) {
-      return `<code>${text}</code>`;
+      return `<code>${escape(text, true)}</code>`;
     }
     br(token) {
       return "<br>";
@@ -30198,7 +30251,7 @@ ${text}</tr>
       href = cleanHref;
       let out = '<a href="' + href + '"';
       if (title) {
-        out += ' title="' + title + '"';
+        out += ' title="' + escape(title) + '"';
       }
       out += ">" + text + "</a>";
       return out;
@@ -30206,18 +30259,18 @@ ${text}</tr>
     image({ href, title, text }) {
       const cleanHref = cleanUrl(href);
       if (cleanHref === null) {
-        return text;
+        return escape(text);
       }
       href = cleanHref;
       let out = `<img src="${href}" alt="${text}"`;
       if (title) {
-        out += ` title="${title}"`;
+        out += ` title="${escape(title)}"`;
       }
       out += ">";
       return out;
     }
     text(token) {
-      return "tokens" in token && token.tokens ? this.parser.parseInline(token.tokens) : token.text;
+      return "tokens" in token && token.tokens ? this.parser.parseInline(token.tokens) : "escaped" in token && token.escaped ? token.text : escape(token.text);
     }
   };
   var _TextRenderer = class {
@@ -30283,7 +30336,7 @@ ${text}</tr>
       let out = "";
       for (let i = 0; i < tokens.length; i++) {
         const anyToken = tokens[i];
-        if (this.options.extensions && this.options.extensions.renderers && this.options.extensions.renderers[anyToken.type]) {
+        if (this.options.extensions?.renderers?.[anyToken.type]) {
           const genericToken = anyToken;
           const ret = this.options.extensions.renderers[genericToken.type].call({ parser: this }, genericToken);
           if (ret !== false || !["space", "hr", "heading", "code", "table", "blockquote", "list", "html", "paragraph", "text"].includes(genericToken.type)) {
@@ -30341,7 +30394,7 @@ ${text}</tr>
                 type: "paragraph",
                 raw: body,
                 text: body,
-                tokens: [{ type: "text", raw: body, text: body }]
+                tokens: [{ type: "text", raw: body, text: body, escaped: true }]
               });
             } else {
               out += body;
@@ -30364,12 +30417,11 @@ ${text}</tr>
     /**
      * Parse Inline Tokens
      */
-    parseInline(tokens, renderer) {
-      renderer = renderer || this.renderer;
+    parseInline(tokens, renderer = this.renderer) {
       let out = "";
       for (let i = 0; i < tokens.length; i++) {
         const anyToken = tokens[i];
-        if (this.options.extensions && this.options.extensions.renderers && this.options.extensions.renderers[anyToken.type]) {
+        if (this.options.extensions?.renderers?.[anyToken.type]) {
           const ret = this.options.extensions.renderers[anyToken.type].call({ parser: this }, anyToken);
           if (ret !== false || !["escape", "html", "link", "image", "strong", "em", "codespan", "br", "del", "text"].includes(anyToken.type)) {
             out += ret || "";
@@ -30737,7 +30789,7 @@ ${text}</tr>
       return (e) => {
         e.message += "\nPlease report this to https://github.com/markedjs/marked.";
         if (silent) {
-          const msg = "<p>An error occurred:</p><pre>" + escape$1(e.message + "", true) + "</pre>";
+          const msg = "<p>An error occurred:</p><pre>" + escape(e.message + "", true) + "</pre>";
           if (async) {
             return Promise.resolve(msg);
           }

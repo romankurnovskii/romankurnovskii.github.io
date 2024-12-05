@@ -1238,26 +1238,26 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Use Case&lt;/th>
-&lt;th style="text-align: left">Benefit&lt;/th>
+&lt;th>Use Case&lt;/th>
+&lt;th>Benefit&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">Web session store&lt;/td>
-&lt;td style="text-align: left">In cases with load-balanced web servers, store web session information in Redis so if a server is lost, the session info is not lost, and another web server can pick it up&lt;/td>
+&lt;td>Web session store&lt;/td>
+&lt;td>In cases with load-balanced web servers, store web session information in Redis so if a server is lost, the session info is not lost, and another web server can pick it up&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Database caching&lt;/td>
-&lt;td style="text-align: left">Use Memcached in front of AWS RDS to cache popular queries to offload work from RDS and return results faster to users&lt;/td>
+&lt;td>Database caching&lt;/td>
+&lt;td>Use Memcached in front of AWS RDS to cache popular queries to offload work from RDS and return results faster to users&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Leaderboards&lt;/td>
-&lt;td style="text-align: left">Use Redis to provide a live leaderboard for millions of users of your mobile app&lt;/td>
+&lt;td>Leaderboards&lt;/td>
+&lt;td>Use Redis to provide a live leaderboard for millions of users of your mobile app&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Streaming data dashboards&lt;/td>
-&lt;td style="text-align: left">Provide a landing spot for streaming sensor data on the factory floor, providing live real-time dashboard displays&lt;/td>
+&lt;td>Streaming data dashboards&lt;/td>
+&lt;td>Provide a landing spot for streaming sensor data on the factory floor, providing live real-time dashboard displays&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -1265,42 +1265,42 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Memcached&lt;/th>
-&lt;th style="text-align: left">Redis&lt;/th>
+&lt;th>Memcached&lt;/th>
+&lt;th>Redis&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">Simple, no-frills&lt;/td>
-&lt;td style="text-align: left">You need encryption&lt;/td>
+&lt;td>Simple, no-frills&lt;/td>
+&lt;td>You need encryption&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">You need to elasticity (scale out and in)&lt;/td>
-&lt;td style="text-align: left">You need HIPAA compliance&lt;/td>
+&lt;td>You need to elasticity (scale out and in)&lt;/td>
+&lt;td>You need HIPAA compliance&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">You need to run multiple CPU cores and threads&lt;/td>
-&lt;td style="text-align: left">Support for clustering&lt;/td>
+&lt;td>You need to run multiple CPU cores and threads&lt;/td>
+&lt;td>Support for clustering&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">You need to cache objects (e.g. database queries)&lt;/td>
-&lt;td style="text-align: left">You need complex data types&lt;/td>
+&lt;td>You need to cache objects (e.g. database queries)&lt;/td>
+&lt;td>You need complex data types&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">You need HA (replication&lt;/td>
-&lt;td style="text-align: left">Backup and restore features&lt;/td>
+&lt;td>You need HA (replication&lt;/td>
+&lt;td>Backup and restore features&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Pub/Sub capability&lt;/td>
-&lt;td style="text-align: left">Multi-AZ with Auto-Failover&lt;/td>
+&lt;td>Pub/Sub capability&lt;/td>
+&lt;td>Multi-AZ with Auto-Failover&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Non persistent. No backups&lt;/td>
-&lt;td style="text-align: left">&lt;/td>
+&lt;td>Non persistent. No backups&lt;/td>
+&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Multi-node for partitioning of data (sharding)&lt;/td>
-&lt;td style="text-align: left">&lt;/td>
+&lt;td>Multi-node for partitioning of data (sharding)&lt;/td>
+&lt;td>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -2255,30 +2255,30 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Amazon ECS&lt;/th>
-&lt;th style="text-align: left">Term Definition&lt;/th>
+&lt;th>Amazon ECS&lt;/th>
+&lt;th>Term Definition&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">Cluster&lt;/td>
-&lt;td style="text-align: left">Logical Grouping of EC2 Instances&lt;/td>
+&lt;td>Cluster&lt;/td>
+&lt;td>Logical Grouping of EC2 Instances&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Container&lt;/td>
-&lt;td style="text-align: left">Instance EC2 instance running the ECS agent&lt;/td>
+&lt;td>Container&lt;/td>
+&lt;td>Instance EC2 instance running the ECS agent&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Task Definition&lt;/td>
-&lt;td style="text-align: left">Blueprint that describes how a docker container should launch&lt;/td>
+&lt;td>Task Definition&lt;/td>
+&lt;td>Blueprint that describes how a docker container should launch&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Task&lt;/td>
-&lt;td style="text-align: left">A running container using settings in a Task Definition&lt;/td>
+&lt;td>Task&lt;/td>
+&lt;td>A running container using settings in a Task Definition&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Service&lt;/td>
-&lt;td style="text-align: left">Defines long running tasks – can control task count with Auto Scaling and attach an ELB&lt;/td>
+&lt;td>Service&lt;/td>
+&lt;td>Defines long running tasks – can control task count with Auto Scaling and attach an ELB&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -2373,34 +2373,34 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Amazon ECS&lt;/th>
-&lt;th style="text-align: left">Amazon EKS&lt;/th>
+&lt;th>Amazon ECS&lt;/th>
+&lt;th>Amazon EKS&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">Managed, highly available, highly scalable container platform&lt;/td>
-&lt;td style="text-align: left">Managed, highly available, highly scalable container platform&lt;/td>
+&lt;td>Managed, highly available, highly scalable container platform&lt;/td>
+&lt;td>Managed, highly available, highly scalable container platform&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">AWS-specific platform that supports Docker Containers&lt;/td>
-&lt;td style="text-align: left">Compatible with upstream Kubernetes so it’s easy to lift and shift from other Kubernetes deployments&lt;/td>
+&lt;td>AWS-specific platform that supports Docker Containers&lt;/td>
+&lt;td>Compatible with upstream Kubernetes so it’s easy to lift and shift from other Kubernetes deployments&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Considered simpler and easier to use&lt;/td>
-&lt;td style="text-align: left">Considered more feature-rich and complex with a steep learning curve&lt;/td>
+&lt;td>Considered simpler and easier to use&lt;/td>
+&lt;td>Considered more feature-rich and complex with a steep learning curve&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Leverages AWS services like Route 53, ALB, and CloudWatch&lt;/td>
-&lt;td style="text-align: left">A hosted Kubernetes platform that handles many things internally&lt;/td>
+&lt;td>Leverages AWS services like Route 53, ALB, and CloudWatch&lt;/td>
+&lt;td>A hosted Kubernetes platform that handles many things internally&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">“Tasks” are instances of containers that are run on underlying compute but more of less isolated&lt;/td>
-&lt;td style="text-align: left">“Pods” are containers collocated with one another and can have shared access to each other&lt;/td>
+&lt;td>“Tasks” are instances of containers that are run on underlying compute but more of less isolated&lt;/td>
+&lt;td>“Pods” are containers collocated with one another and can have shared access to each other&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Limited extensibility&lt;/td>
-&lt;td style="text-align: left">Extensible via a wide variety of third-party and community add-ons.&lt;/td>
+&lt;td>Limited extensibility&lt;/td>
+&lt;td>Extensible via a wide variety of third-party and community add-ons.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -2516,34 +2516,34 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Amazon ECS&lt;/th>
-&lt;th style="text-align: left">Amazon EKS&lt;/th>
+&lt;th>Amazon ECS&lt;/th>
+&lt;th>Amazon EKS&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">Managed, highly available, highly scalable container platform&lt;/td>
-&lt;td style="text-align: left">Managed, highly available, highly scalable container platform&lt;/td>
+&lt;td>Managed, highly available, highly scalable container platform&lt;/td>
+&lt;td>Managed, highly available, highly scalable container platform&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">AWS-specific platform that supports Docker Containers&lt;/td>
-&lt;td style="text-align: left">Compatible with upstream Kubernetes so it’s easy to lift and shift from other Kubernetes deployments&lt;/td>
+&lt;td>AWS-specific platform that supports Docker Containers&lt;/td>
+&lt;td>Compatible with upstream Kubernetes so it’s easy to lift and shift from other Kubernetes deployments&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Considered simpler and easier to use&lt;/td>
-&lt;td style="text-align: left">Considered more feature-rich and complex with a steep learning curve&lt;/td>
+&lt;td>Considered simpler and easier to use&lt;/td>
+&lt;td>Considered more feature-rich and complex with a steep learning curve&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Leverages AWS services like Route 53, ALB, and CloudWatch&lt;/td>
-&lt;td style="text-align: left">A hosted Kubernetes platform that handles many things internally&lt;/td>
+&lt;td>Leverages AWS services like Route 53, ALB, and CloudWatch&lt;/td>
+&lt;td>A hosted Kubernetes platform that handles many things internally&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">“Tasks” are instances of containers that are run on underlying compute but more of less isolated&lt;/td>
-&lt;td style="text-align: left">“Pods” are containers collocated with one another and can have shared access to each other&lt;/td>
+&lt;td>“Tasks” are instances of containers that are run on underlying compute but more of less isolated&lt;/td>
+&lt;td>“Pods” are containers collocated with one another and can have shared access to each other&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Limited extensibility&lt;/td>
-&lt;td style="text-align: left">Extensible via a wide variety of third-party and community add-ons.&lt;/td>
+&lt;td>Limited extensibility&lt;/td>
+&lt;td>Extensible via a wide variety of third-party and community add-ons.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>

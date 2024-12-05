@@ -23,26 +23,26 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Use Case&lt;/th>
-&lt;th style="text-align: left">Benefit&lt;/th>
+&lt;th>Use Case&lt;/th>
+&lt;th>Benefit&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">Web session store&lt;/td>
-&lt;td style="text-align: left">In cases with load-balanced web servers, store web session information in Redis so if a server is lost, the session info is not lost, and another web server can pick it up&lt;/td>
+&lt;td>Web session store&lt;/td>
+&lt;td>In cases with load-balanced web servers, store web session information in Redis so if a server is lost, the session info is not lost, and another web server can pick it up&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Database caching&lt;/td>
-&lt;td style="text-align: left">Use Memcached in front of AWS RDS to cache popular queries to offload work from RDS and return results faster to users&lt;/td>
+&lt;td>Database caching&lt;/td>
+&lt;td>Use Memcached in front of AWS RDS to cache popular queries to offload work from RDS and return results faster to users&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Leaderboards&lt;/td>
-&lt;td style="text-align: left">Use Redis to provide a live leaderboard for millions of users of your mobile app&lt;/td>
+&lt;td>Leaderboards&lt;/td>
+&lt;td>Use Redis to provide a live leaderboard for millions of users of your mobile app&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Streaming data dashboards&lt;/td>
-&lt;td style="text-align: left">Provide a landing spot for streaming sensor data on the factory floor, providing live real-time dashboard displays&lt;/td>
+&lt;td>Streaming data dashboards&lt;/td>
+&lt;td>Provide a landing spot for streaming sensor data on the factory floor, providing live real-time dashboard displays&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -50,42 +50,42 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Memcached&lt;/th>
-&lt;th style="text-align: left">Redis&lt;/th>
+&lt;th>Memcached&lt;/th>
+&lt;th>Redis&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">Simple, no-frills&lt;/td>
-&lt;td style="text-align: left">You need encryption&lt;/td>
+&lt;td>Simple, no-frills&lt;/td>
+&lt;td>You need encryption&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">You need to elasticity (scale out and in)&lt;/td>
-&lt;td style="text-align: left">You need HIPAA compliance&lt;/td>
+&lt;td>You need to elasticity (scale out and in)&lt;/td>
+&lt;td>You need HIPAA compliance&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">You need to run multiple CPU cores and threads&lt;/td>
-&lt;td style="text-align: left">Support for clustering&lt;/td>
+&lt;td>You need to run multiple CPU cores and threads&lt;/td>
+&lt;td>Support for clustering&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">You need to cache objects (e.g. database queries)&lt;/td>
-&lt;td style="text-align: left">You need complex data types&lt;/td>
+&lt;td>You need to cache objects (e.g. database queries)&lt;/td>
+&lt;td>You need complex data types&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">You need HA (replication&lt;/td>
-&lt;td style="text-align: left">Backup and restore features&lt;/td>
+&lt;td>You need HA (replication&lt;/td>
+&lt;td>Backup and restore features&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Pub/Sub capability&lt;/td>
-&lt;td style="text-align: left">Multi-AZ with Auto-Failover&lt;/td>
+&lt;td>Pub/Sub capability&lt;/td>
+&lt;td>Multi-AZ with Auto-Failover&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Non persistent. No backups&lt;/td>
-&lt;td style="text-align: left">&lt;/td>
+&lt;td>Non persistent. No backups&lt;/td>
+&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Multi-node for partitioning of data (sharding)&lt;/td>
-&lt;td style="text-align: left">&lt;/td>
+&lt;td>Multi-node for partitioning of data (sharding)&lt;/td>
+&lt;td>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>

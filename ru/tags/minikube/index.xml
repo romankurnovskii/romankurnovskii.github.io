@@ -106,90 +106,90 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Listing Resources&lt;/th>
-&lt;th style="text-align: left">&lt;/th>
+&lt;th>Listing Resources&lt;/th>
+&lt;th>&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">kubectl get nodes&lt;/td>
-&lt;td style="text-align: left">List all nodes in cluster&lt;/td>
+&lt;td>kubectl get nodes&lt;/td>
+&lt;td>List all nodes in cluster&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">kubectl get namespaces&lt;/td>
-&lt;td style="text-align: left">List all namespaces in cluster&lt;/td>
+&lt;td>kubectl get namespaces&lt;/td>
+&lt;td>List all namespaces in cluster&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">kubectl get pods&lt;/td>
-&lt;td style="text-align: left">List all pods in default namespace cluster&lt;/td>
+&lt;td>kubectl get pods&lt;/td>
+&lt;td>List all pods in default namespace cluster&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">kubectl get pods -n name&lt;/td>
-&lt;td style="text-align: left">List all pods in &amp;ldquo;name&amp;rdquo; namespace&lt;/td>
+&lt;td>kubectl get pods -n name&lt;/td>
+&lt;td>List all pods in &amp;ldquo;name&amp;rdquo; namespace&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">kubectl get pods -n name&lt;/td>
-&lt;td style="text-align: left">List all pods in &amp;ldquo;name&amp;rdquo; namespace&lt;/td>
+&lt;td>kubectl get pods -n name&lt;/td>
+&lt;td>List all pods in &amp;ldquo;name&amp;rdquo; namespace&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Creating Resources&lt;/th>
-&lt;th style="text-align: left">&lt;/th>
+&lt;th>Creating Resources&lt;/th>
+&lt;th>&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">kubectl create namespace name&lt;/td>
-&lt;td style="text-align: left">Create a namespace called &amp;ldquo;name&amp;rdquo;&lt;/td>
+&lt;td>kubectl create namespace name&lt;/td>
+&lt;td>Create a namespace called &amp;ldquo;name&amp;rdquo;&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">kubectl create -f [filename]&lt;/td>
-&lt;td style="text-align: left">Create a resource from a JSON or YAML file:&lt;/td>
+&lt;td>kubectl create -f [filename]&lt;/td>
+&lt;td>Create a resource from a JSON or YAML file:&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Editing Resources&lt;/th>
-&lt;th style="text-align: left">&lt;/th>
+&lt;th>Editing Resources&lt;/th>
+&lt;th>&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">kubectl edit svc/servicename&lt;/td>
-&lt;td style="text-align: left">To edit a service&lt;/td>
+&lt;td>kubectl edit svc/servicename&lt;/td>
+&lt;td>To edit a service&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">More detail on Resources&lt;/th>
-&lt;th style="text-align: left">&lt;/th>
+&lt;th>More detail on Resources&lt;/th>
+&lt;th>&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">kubectl describe nodes&lt;/td>
-&lt;td style="text-align: left">display the state of any number of resources in detail,&lt;/td>
+&lt;td>kubectl describe nodes&lt;/td>
+&lt;td>display the state of any number of resources in detail,&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Delete Resources&lt;/th>
-&lt;th style="text-align: left">&lt;/th>
+&lt;th>Delete Resources&lt;/th>
+&lt;th>&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">kubectl delete pod&lt;/td>
-&lt;td style="text-align: left">Remove resources, this can be from stdin or file&lt;/td>
+&lt;td>kubectl delete pod&lt;/td>
+&lt;td>Remove resources, this can be from stdin or file&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -197,98 +197,98 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Short name&lt;/th>
-&lt;th style="text-align: left">Full name&lt;/th>
+&lt;th>Short name&lt;/th>
+&lt;th>Full name&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">csr&lt;/td>
-&lt;td style="text-align: left">certificatesigningrequests&lt;/td>
+&lt;td>csr&lt;/td>
+&lt;td>certificatesigningrequests&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">cs&lt;/td>
-&lt;td style="text-align: left">componentstatuses&lt;/td>
+&lt;td>cs&lt;/td>
+&lt;td>componentstatuses&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">cm&lt;/td>
-&lt;td style="text-align: left">configmaps&lt;/td>
+&lt;td>cm&lt;/td>
+&lt;td>configmaps&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">ds&lt;/td>
-&lt;td style="text-align: left">daemonsets&lt;/td>
+&lt;td>ds&lt;/td>
+&lt;td>daemonsets&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">deploy&lt;/td>
-&lt;td style="text-align: left">deployments&lt;/td>
+&lt;td>deploy&lt;/td>
+&lt;td>deployments&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">ep&lt;/td>
-&lt;td style="text-align: left">endpoints&lt;/td>
+&lt;td>ep&lt;/td>
+&lt;td>endpoints&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">ev&lt;/td>
-&lt;td style="text-align: left">events&lt;/td>
+&lt;td>ev&lt;/td>
+&lt;td>events&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">hpa&lt;/td>
-&lt;td style="text-align: left">horizontalpodautoscalers&lt;/td>
+&lt;td>hpa&lt;/td>
+&lt;td>horizontalpodautoscalers&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">ing&lt;/td>
-&lt;td style="text-align: left">ingresses&lt;/td>
+&lt;td>ing&lt;/td>
+&lt;td>ingresses&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">limits&lt;/td>
-&lt;td style="text-align: left">limitranges&lt;/td>
+&lt;td>limits&lt;/td>
+&lt;td>limitranges&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">ns&lt;/td>
-&lt;td style="text-align: left">namespaces&lt;/td>
+&lt;td>ns&lt;/td>
+&lt;td>namespaces&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">no&lt;/td>
-&lt;td style="text-align: left">nodes&lt;/td>
+&lt;td>no&lt;/td>
+&lt;td>nodes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">pvc&lt;/td>
-&lt;td style="text-align: left">persistentvolumeclaims&lt;/td>
+&lt;td>pvc&lt;/td>
+&lt;td>persistentvolumeclaims&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">pv&lt;/td>
-&lt;td style="text-align: left">persistentvolumes&lt;/td>
+&lt;td>pv&lt;/td>
+&lt;td>persistentvolumes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">po&lt;/td>
-&lt;td style="text-align: left">pods&lt;/td>
+&lt;td>po&lt;/td>
+&lt;td>pods&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">pdb&lt;/td>
-&lt;td style="text-align: left">poddisruptionbudgets&lt;/td>
+&lt;td>pdb&lt;/td>
+&lt;td>poddisruptionbudgets&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">psp&lt;/td>
-&lt;td style="text-align: left">podsecuritypolicies&lt;/td>
+&lt;td>psp&lt;/td>
+&lt;td>podsecuritypolicies&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">rs&lt;/td>
-&lt;td style="text-align: left">replicasets&lt;/td>
+&lt;td>rs&lt;/td>
+&lt;td>replicasets&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">rc&lt;/td>
-&lt;td style="text-align: left">replicationcontrollers&lt;/td>
+&lt;td>rc&lt;/td>
+&lt;td>replicationcontrollers&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">quota&lt;/td>
-&lt;td style="text-align: left">resourcequotas&lt;/td>
+&lt;td>quota&lt;/td>
+&lt;td>resourcequotas&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">sa&lt;/td>
-&lt;td style="text-align: left">serviceaccounts&lt;/td>
+&lt;td>sa&lt;/td>
+&lt;td>serviceaccounts&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">svc&lt;/td>
-&lt;td style="text-align: left">services&lt;/td>
+&lt;td>svc&lt;/td>
+&lt;td>services&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>

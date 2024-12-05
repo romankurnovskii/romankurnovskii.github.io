@@ -45,34 +45,34 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Pay&lt;/th>
-&lt;th style="text-align: left">do not pay&lt;/th>
+&lt;th>Pay&lt;/th>
+&lt;th>do not pay&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">Data Transfer Out to Internet&lt;/td>
-&lt;td style="text-align: left">Data transfer between AWS regions and CloudFront.&lt;/td>
+&lt;td>Data Transfer Out to Internet&lt;/td>
+&lt;td>Data transfer between AWS regions and CloudFront.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Data Transfer Out to Origin&lt;/td>
-&lt;td style="text-align: left">Regional edge cache.&lt;/td>
+&lt;td>Data Transfer Out to Origin&lt;/td>
+&lt;td>Regional edge cache.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Number of HTTP/HTTPS Requests&lt;/td>
-&lt;td style="text-align: left">AWS ACM SSL/TLS certificates.&lt;/td>
+&lt;td>Number of HTTP/HTTPS Requests&lt;/td>
+&lt;td>AWS ACM SSL/TLS certificates.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Invalidation Requests&lt;/td>
-&lt;td style="text-align: left">Shared CloudFront certificates.&lt;/td>
+&lt;td>Invalidation Requests&lt;/td>
+&lt;td>Shared CloudFront certificates.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Dedicated IP Custom SSL&lt;/td>
-&lt;td style="text-align: left">&lt;/td>
+&lt;td>Dedicated IP Custom SSL&lt;/td>
+&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Field level encryption requests&lt;/td>
-&lt;td style="text-align: left">&lt;/td>
+&lt;td>Field level encryption requests&lt;/td>
+&lt;td>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>

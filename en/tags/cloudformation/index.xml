@@ -17,26 +17,26 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Component&lt;/th>
-&lt;th style="text-align: left">Description&lt;/th>
+&lt;th>Component&lt;/th>
+&lt;th>Description&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">Templates&lt;/td>
-&lt;td style="text-align: left">The JSON or YAML text file that contains the instructions for building out the AWS environment&lt;/td>
+&lt;td>Templates&lt;/td>
+&lt;td>The JSON or YAML text file that contains the instructions for building out the AWS environment&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Stacks&lt;/td>
-&lt;td style="text-align: left">The entire environment described by the template and created, updated, and deleted as a single unit&lt;/td>
+&lt;td>Stacks&lt;/td>
+&lt;td>The entire environment described by the template and created, updated, and deleted as a single unit&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">StackSets&lt;/td>
-&lt;td style="text-align: left">AWS CloudFormation StackSets extends the functionality of stacks by enabling you to create, update, or delete stacks across multiple accounts and regions with a single operation&lt;/td>
+&lt;td>StackSets&lt;/td>
+&lt;td>AWS CloudFormation StackSets extends the functionality of stacks by enabling you to create, update, or delete stacks across multiple accounts and regions with a single operation&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Change Sets&lt;/td>
-&lt;td style="text-align: left">A summary of proposed changes to your stack that will allow you to see how those changes might impact your existing resources before implementing them&lt;/td>
+&lt;td>Change Sets&lt;/td>
+&lt;td>A summary of proposed changes to your stack that will allow you to see how those changes might impact your existing resources before implementing them&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -82,30 +82,30 @@ the same configurations into your templates, you can create a dedicated template
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">CloudFormation&lt;/th>
-&lt;th style="text-align: left">Elastic Beanstalk&lt;/th>
+&lt;th>CloudFormation&lt;/th>
+&lt;th>Elastic Beanstalk&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">“Template-driven provisioning”&lt;/td>
-&lt;td style="text-align: left">“Web apps made easy”&lt;/td>
+&lt;td>“Template-driven provisioning”&lt;/td>
+&lt;td>“Web apps made easy”&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Deploys infrastructure using code&lt;/td>
-&lt;td style="text-align: left">Deploys applications on EC2 (PaaS)&lt;/td>
+&lt;td>Deploys infrastructure using code&lt;/td>
+&lt;td>Deploys applications on EC2 (PaaS)&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Can be used to deploy almost any AWS service&lt;/td>
-&lt;td style="text-align: left">Deploys web applications based on Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker&lt;/td>
+&lt;td>Can be used to deploy almost any AWS service&lt;/td>
+&lt;td>Deploys web applications based on Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Uses JSON or YAML template files&lt;/td>
-&lt;td style="text-align: left">Uses ZIP or WAR files&lt;/td>
+&lt;td>Uses JSON or YAML template files&lt;/td>
+&lt;td>Uses ZIP or WAR files&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Similar to Terraform&lt;/td>
-&lt;td style="text-align: left">Similar to Google App Engine&lt;/td>
+&lt;td>Similar to Terraform&lt;/td>
+&lt;td>Similar to Google App Engine&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>

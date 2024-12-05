@@ -2237,50 +2237,50 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Amazon DynamoDB&lt;/th>
-&lt;th style="text-align: left">Amazon Aurora&lt;/th>
+&lt;th>Amazon DynamoDB&lt;/th>
+&lt;th>Amazon Aurora&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">Was developed by Amazon in 2012&lt;/td>
-&lt;td style="text-align: left">Was developed by Amazon in 2015.&lt;/td>
+&lt;td>Was developed by Amazon in 2012&lt;/td>
+&lt;td>Was developed by Amazon in 2015.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">It is hosted, scalable database service by Amazon with data stored in Amazon cloud&lt;/td>
-&lt;td style="text-align: left">It is MySQL and PostgreSQL compatible cloud service by Amazon&lt;/td>
+&lt;td>It is hosted, scalable database service by Amazon with data stored in Amazon cloud&lt;/td>
+&lt;td>It is MySQL and PostgreSQL compatible cloud service by Amazon&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">It does not provide &lt;a href="https://www.ibm.com/docs/en/informix-servers/14.10?topic=integrity-referential">concept of Referential Integrity&lt;/a>. Hence, no Foreign Keys&lt;/td>
-&lt;td style="text-align: left">It provides concept of Referential Integrity. Hence, no Foreign Keys&lt;/td>
+&lt;td>It does not provide &lt;a href="https://www.ibm.com/docs/en/informix-servers/14.10?topic=integrity-referential">concept of Referential Integrity&lt;/a>. Hence, no Foreign Keys&lt;/td>
+&lt;td>It provides concept of Referential Integrity. Hence, no Foreign Keys&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Eventual Consistency and Immediate Consistency are used to ensure consistency in distributed system&lt;/td>
-&lt;td style="text-align: left">Immediate Consistency is used to ensure consistency in distributed system&lt;/td>
+&lt;td>Eventual Consistency and Immediate Consistency are used to ensure consistency in distributed system&lt;/td>
+&lt;td>Immediate Consistency is used to ensure consistency in distributed system&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Its Primary database models are Document store and Key-value store&lt;/td>
-&lt;td style="text-align: left">Its Primary database model is Relational DBMS&lt;/td>
+&lt;td>Its Primary database models are Document store and Key-value store&lt;/td>
+&lt;td>Its Primary database model is Relational DBMS&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">It does not support Server-side scripting&lt;/td>
-&lt;td style="text-align: left">It supports Server-side scripting&lt;/td>
+&lt;td>It does not support Server-side scripting&lt;/td>
+&lt;td>It supports Server-side scripting&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">It supports sharding as partitioning method&lt;/td>
-&lt;td style="text-align: left">Partitioning can be done with horizontal partitioning&lt;/td>
+&lt;td>It supports sharding as partitioning method&lt;/td>
+&lt;td>Partitioning can be done with horizontal partitioning&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">It does not support SQL query language&lt;/td>
-&lt;td style="text-align: left">It supports SQL query language&lt;/td>
+&lt;td>It does not support SQL query language&lt;/td>
+&lt;td>It supports SQL query language&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">It supports replication methods&lt;/td>
-&lt;td style="text-align: left">It supports only one replication method – Master-slave replication&lt;/td>
+&lt;td>It supports replication methods&lt;/td>
+&lt;td>It supports only one replication method – Master-slave replication&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">It does not offer API for user-defined Map/Reduce methods. But maybe implemented via Amazon Elastic MapReduce&lt;/td>
-&lt;td style="text-align: left">It does not offer API for user-defined Map/Reduce methods&lt;/td>
+&lt;td>It does not offer API for user-defined Map/Reduce methods. But maybe implemented via Amazon Elastic MapReduce&lt;/td>
+&lt;td>It does not offer API for user-defined Map/Reduce methods&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -2354,26 +2354,26 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Use Case&lt;/th>
-&lt;th style="text-align: left">Benefit&lt;/th>
+&lt;th>Use Case&lt;/th>
+&lt;th>Benefit&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">Web session store&lt;/td>
-&lt;td style="text-align: left">In cases with load-balanced web servers, store web session information in Redis so if a server is lost, the session info is not lost, and another web server can pick it up&lt;/td>
+&lt;td>Web session store&lt;/td>
+&lt;td>In cases with load-balanced web servers, store web session information in Redis so if a server is lost, the session info is not lost, and another web server can pick it up&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Database caching&lt;/td>
-&lt;td style="text-align: left">Use Memcached in front of AWS RDS to cache popular queries to offload work from RDS and return results faster to users&lt;/td>
+&lt;td>Database caching&lt;/td>
+&lt;td>Use Memcached in front of AWS RDS to cache popular queries to offload work from RDS and return results faster to users&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Leaderboards&lt;/td>
-&lt;td style="text-align: left">Use Redis to provide a live leaderboard for millions of users of your mobile app&lt;/td>
+&lt;td>Leaderboards&lt;/td>
+&lt;td>Use Redis to provide a live leaderboard for millions of users of your mobile app&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Streaming data dashboards&lt;/td>
-&lt;td style="text-align: left">Provide a landing spot for streaming sensor data on the factory floor, providing live real-time dashboard displays&lt;/td>
+&lt;td>Streaming data dashboards&lt;/td>
+&lt;td>Provide a landing spot for streaming sensor data on the factory floor, providing live real-time dashboard displays&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -2381,42 +2381,42 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Memcached&lt;/th>
-&lt;th style="text-align: left">Redis&lt;/th>
+&lt;th>Memcached&lt;/th>
+&lt;th>Redis&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">Simple, no-frills&lt;/td>
-&lt;td style="text-align: left">You need encryption&lt;/td>
+&lt;td>Simple, no-frills&lt;/td>
+&lt;td>You need encryption&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">You need to elasticity (scale out and in)&lt;/td>
-&lt;td style="text-align: left">You need HIPAA compliance&lt;/td>
+&lt;td>You need to elasticity (scale out and in)&lt;/td>
+&lt;td>You need HIPAA compliance&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">You need to run multiple CPU cores and threads&lt;/td>
-&lt;td style="text-align: left">Support for clustering&lt;/td>
+&lt;td>You need to run multiple CPU cores and threads&lt;/td>
+&lt;td>Support for clustering&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">You need to cache objects (e.g. database queries)&lt;/td>
-&lt;td style="text-align: left">You need complex data types&lt;/td>
+&lt;td>You need to cache objects (e.g. database queries)&lt;/td>
+&lt;td>You need complex data types&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">You need HA (replication&lt;/td>
-&lt;td style="text-align: left">Backup and restore features&lt;/td>
+&lt;td>You need HA (replication&lt;/td>
+&lt;td>Backup and restore features&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Pub/Sub capability&lt;/td>
-&lt;td style="text-align: left">Multi-AZ with Auto-Failover&lt;/td>
+&lt;td>Pub/Sub capability&lt;/td>
+&lt;td>Multi-AZ with Auto-Failover&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Non persistent. No backups&lt;/td>
-&lt;td style="text-align: left">&lt;/td>
+&lt;td>Non persistent. No backups&lt;/td>
+&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Multi-node for partitioning of data (sharding)&lt;/td>
-&lt;td style="text-align: left">&lt;/td>
+&lt;td>Multi-node for partitioning of data (sharding)&lt;/td>
+&lt;td>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -2815,34 +2815,34 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Pay&lt;/th>
-&lt;th style="text-align: left">do not pay&lt;/th>
+&lt;th>Pay&lt;/th>
+&lt;th>do not pay&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">Data Transfer Out to Internet&lt;/td>
-&lt;td style="text-align: left">Data transfer between AWS regions and CloudFront.&lt;/td>
+&lt;td>Data Transfer Out to Internet&lt;/td>
+&lt;td>Data transfer between AWS regions and CloudFront.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Data Transfer Out to Origin&lt;/td>
-&lt;td style="text-align: left">Regional edge cache.&lt;/td>
+&lt;td>Data Transfer Out to Origin&lt;/td>
+&lt;td>Regional edge cache.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Number of HTTP/HTTPS Requests&lt;/td>
-&lt;td style="text-align: left">AWS ACM SSL/TLS certificates.&lt;/td>
+&lt;td>Number of HTTP/HTTPS Requests&lt;/td>
+&lt;td>AWS ACM SSL/TLS certificates.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Invalidation Requests&lt;/td>
-&lt;td style="text-align: left">Shared CloudFront certificates.&lt;/td>
+&lt;td>Invalidation Requests&lt;/td>
+&lt;td>Shared CloudFront certificates.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Dedicated IP Custom SSL&lt;/td>
-&lt;td style="text-align: left">&lt;/td>
+&lt;td>Dedicated IP Custom SSL&lt;/td>
+&lt;td>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Field level encryption requests&lt;/td>
-&lt;td style="text-align: left">&lt;/td>
+&lt;td>Field level encryption requests&lt;/td>
+&lt;td>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -2905,22 +2905,22 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Type&lt;/th>
-&lt;th style="text-align: left">Description&lt;/th>
+&lt;th>Type&lt;/th>
+&lt;th>Description&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">Application Load Balancer (ALB)&lt;/td>
-&lt;td style="text-align: left">Operates at the Application Layer (OSI L7), handling HTTP/HTTPS traffic. Allows routing requests to specific web servers.&lt;/td>
+&lt;td>Application Load Balancer (ALB)&lt;/td>
+&lt;td>Operates at the Application Layer (OSI L7), handling HTTP/HTTPS traffic. Allows routing requests to specific web servers.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Network Load Balancer (NLB)&lt;/td>
-&lt;td style="text-align: left">Operates at the Network Layer (OSI L4), handling TCP traffic. Recommended for performance.&lt;/td>
+&lt;td>Network Load Balancer (NLB)&lt;/td>
+&lt;td>Operates at the Network Layer (OSI L4), handling TCP traffic. Recommended for performance.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Classic Load Balancer (CLB)&lt;/td>
-&lt;td style="text-align: left">Operates at OSI L7 and OSI L4, however has limited functions. Requests are forwarded by the load balancer without “looking into” any of these requests. They just get forwarded to the backend section. Not recommended for use except for apps built in the EC2-Classic network.&lt;/td>
+&lt;td>Classic Load Balancer (CLB)&lt;/td>
+&lt;td>Operates at OSI L7 and OSI L4, however has limited functions. Requests are forwarded by the load balancer without “looking into” any of these requests. They just get forwarded to the backend section. Not recommended for use except for apps built in the EC2-Classic network.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -2928,150 +2928,150 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Basic load balancing features&lt;/th>
-&lt;th style="text-align: left">ALB&lt;/th>
-&lt;th style="text-align: left">NLB&lt;/th>
-&lt;th style="text-align: left">CLB&lt;/th>
+&lt;th>Basic load balancing features&lt;/th>
+&lt;th>ALB&lt;/th>
+&lt;th>NLB&lt;/th>
+&lt;th>CLB&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">Balance load between targets&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td>Balance load between targets&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Perform health checks on targets&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td>Perform health checks on targets&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Highly available&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td>Highly available&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Elastic&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td>Elastic&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">TLS Termination&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td>TLS Termination&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Performance&lt;/td>
-&lt;td style="text-align: left">Good&lt;/td>
-&lt;td style="text-align: left">Very high&lt;/td>
-&lt;td style="text-align: left">Good&lt;/td>
+&lt;td>Performance&lt;/td>
+&lt;td>Good&lt;/td>
+&lt;td>Very high&lt;/td>
+&lt;td>Good&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Send logs and metrics to CloudWatch&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td>Send logs and metrics to CloudWatch&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Layer 4 (TCP)&lt;/td>
-&lt;td style="text-align: left">No&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td>Layer 4 (TCP)&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Layer 7 (HTTP)&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">No&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td>Layer 7 (HTTP)&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Running costs&lt;/td>
-&lt;td style="text-align: left">Low&lt;/td>
-&lt;td style="text-align: left">Low&lt;/td>
-&lt;td style="text-align: left">Low&lt;/td>
+&lt;td>Running costs&lt;/td>
+&lt;td>Low&lt;/td>
+&lt;td>Low&lt;/td>
+&lt;td>Low&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Advanced load balancing features&lt;/th>
-&lt;th style="text-align: left">ALB&lt;/th>
-&lt;th style="text-align: left">NLB&lt;/th>
-&lt;th style="text-align: left">CLB&lt;/th>
+&lt;th>Advanced load balancing features&lt;/th>
+&lt;th>ALB&lt;/th>
+&lt;th>NLB&lt;/th>
+&lt;th>CLB&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">Advanced routing options&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">N/A&lt;/td>
-&lt;td style="text-align: left">No&lt;/td>
+&lt;td>Advanced routing options&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;td>No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Can send fixed response without backend&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">No&lt;/td>
-&lt;td style="text-align: left">No&lt;/td>
+&lt;td>Can send fixed response without backend&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Supports user authentication&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">No&lt;/td>
-&lt;td style="text-align: left">No&lt;/td>
+&lt;td>Supports user authentication&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Can serve multiple domains over HTTPS&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">No&lt;/td>
+&lt;td>Can serve multiple domains over HTTPS&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Preserve source IP&lt;/td>
-&lt;td style="text-align: left">No&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">No&lt;/td>
+&lt;td>Preserve source IP&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Can be used in EC2-Classic&lt;/td>
-&lt;td style="text-align: left">No&lt;/td>
-&lt;td style="text-align: left">No&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td>Can be used in EC2-Classic&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Supports application-defined sticky session cookies&lt;/td>
-&lt;td style="text-align: left">No&lt;/td>
-&lt;td style="text-align: left">N/A&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td>Supports application-defined sticky session cookies&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;td>Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Supports Docker containers&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
+&lt;td>Supports Docker containers&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Supports targets outside AWS&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">No&lt;/td>
+&lt;td>Supports targets outside AWS&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Supports websockets&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">N/A&lt;/td>
-&lt;td style="text-align: left">No&lt;/td>
+&lt;td>Supports websockets&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;td>No&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Can route to many ports on a given target&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">No&lt;/td>
+&lt;td>Can route to many ports on a given target&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>No&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -3458,34 +3458,34 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">CloudWatch&lt;/th>
-&lt;th style="text-align: left">CloudTrail&lt;/th>
+&lt;th>CloudWatch&lt;/th>
+&lt;th>CloudTrail&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">Performance monitoring&lt;/td>
-&lt;td style="text-align: left">Auditing&lt;/td>
+&lt;td>Performance monitoring&lt;/td>
+&lt;td>Auditing&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Log events across AWS Services – think operations&lt;/td>
-&lt;td style="text-align: left">Log API activity across AWS services – think activities, or who to blame&lt;/td>
+&lt;td>Log events across AWS Services – think operations&lt;/td>
+&lt;td>Log API activity across AWS services – think activities, or who to blame&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Higher-level comprehensive monitoring and event service&lt;/td>
-&lt;td style="text-align: left">More low-level, granular&lt;/td>
+&lt;td>Higher-level comprehensive monitoring and event service&lt;/td>
+&lt;td>More low-level, granular&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Log from multiple accounts&lt;/td>
-&lt;td style="text-align: left">Log from multiple accounts&lt;/td>
+&lt;td>Log from multiple accounts&lt;/td>
+&lt;td>Log from multiple accounts&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Logs stored indefinitely&lt;/td>
-&lt;td style="text-align: left">Logs stored to S3 or CloudWatch indefinitely&lt;/td>
+&lt;td>Logs stored indefinitely&lt;/td>
+&lt;td>Logs stored to S3 or CloudWatch indefinitely&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Alarms history for 14 days&lt;/td>
-&lt;td style="text-align: left">No native alarming; can use CloudWatch alarms&lt;/td>
+&lt;td>Alarms history for 14 days&lt;/td>
+&lt;td>No native alarming; can use CloudWatch alarms&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -3569,26 +3569,26 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Component&lt;/th>
-&lt;th style="text-align: left">Description&lt;/th>
+&lt;th>Component&lt;/th>
+&lt;th>Description&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">Templates&lt;/td>
-&lt;td style="text-align: left">The JSON or YAML text file that contains the instructions for building out the AWS environment&lt;/td>
+&lt;td>Templates&lt;/td>
+&lt;td>The JSON or YAML text file that contains the instructions for building out the AWS environment&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Stacks&lt;/td>
-&lt;td style="text-align: left">The entire environment described by the template and created, updated, and deleted as a single unit&lt;/td>
+&lt;td>Stacks&lt;/td>
+&lt;td>The entire environment described by the template and created, updated, and deleted as a single unit&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">StackSets&lt;/td>
-&lt;td style="text-align: left">AWS CloudFormation StackSets extends the functionality of stacks by enabling you to create, update, or delete stacks across multiple accounts and regions with a single operation&lt;/td>
+&lt;td>StackSets&lt;/td>
+&lt;td>AWS CloudFormation StackSets extends the functionality of stacks by enabling you to create, update, or delete stacks across multiple accounts and regions with a single operation&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Change Sets&lt;/td>
-&lt;td style="text-align: left">A summary of proposed changes to your stack that will allow you to see how those changes might impact your existing resources before implementing them&lt;/td>
+&lt;td>Change Sets&lt;/td>
+&lt;td>A summary of proposed changes to your stack that will allow you to see how those changes might impact your existing resources before implementing them&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -3634,30 +3634,30 @@ the same configurations into your templates, you can create a dedicated template
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">CloudFormation&lt;/th>
-&lt;th style="text-align: left">Elastic Beanstalk&lt;/th>
+&lt;th>CloudFormation&lt;/th>
+&lt;th>Elastic Beanstalk&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">“Template-driven provisioning”&lt;/td>
-&lt;td style="text-align: left">“Web apps made easy”&lt;/td>
+&lt;td>“Template-driven provisioning”&lt;/td>
+&lt;td>“Web apps made easy”&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Deploys infrastructure using code&lt;/td>
-&lt;td style="text-align: left">Deploys applications on EC2 (PaaS)&lt;/td>
+&lt;td>Deploys infrastructure using code&lt;/td>
+&lt;td>Deploys applications on EC2 (PaaS)&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Can be used to deploy almost any AWS service&lt;/td>
-&lt;td style="text-align: left">Deploys web applications based on Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker&lt;/td>
+&lt;td>Can be used to deploy almost any AWS service&lt;/td>
+&lt;td>Deploys web applications based on Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Uses JSON or YAML template files&lt;/td>
-&lt;td style="text-align: left">Uses ZIP or WAR files&lt;/td>
+&lt;td>Uses JSON or YAML template files&lt;/td>
+&lt;td>Uses ZIP or WAR files&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Similar to Terraform&lt;/td>
-&lt;td style="text-align: left">Similar to Google App Engine&lt;/td>
+&lt;td>Similar to Terraform&lt;/td>
+&lt;td>Similar to Google App Engine&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -4405,30 +4405,30 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Amazon ECS&lt;/th>
-&lt;th style="text-align: left">Term Definition&lt;/th>
+&lt;th>Amazon ECS&lt;/th>
+&lt;th>Term Definition&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">Cluster&lt;/td>
-&lt;td style="text-align: left">Logical Grouping of EC2 Instances&lt;/td>
+&lt;td>Cluster&lt;/td>
+&lt;td>Logical Grouping of EC2 Instances&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Container&lt;/td>
-&lt;td style="text-align: left">Instance EC2 instance running the ECS agent&lt;/td>
+&lt;td>Container&lt;/td>
+&lt;td>Instance EC2 instance running the ECS agent&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Task Definition&lt;/td>
-&lt;td style="text-align: left">Blueprint that describes how a docker container should launch&lt;/td>
+&lt;td>Task Definition&lt;/td>
+&lt;td>Blueprint that describes how a docker container should launch&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Task&lt;/td>
-&lt;td style="text-align: left">A running container using settings in a Task Definition&lt;/td>
+&lt;td>Task&lt;/td>
+&lt;td>A running container using settings in a Task Definition&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Service&lt;/td>
-&lt;td style="text-align: left">Defines long running tasks – can control task count with Auto Scaling and attach an ELB&lt;/td>
+&lt;td>Service&lt;/td>
+&lt;td>Defines long running tasks – can control task count with Auto Scaling and attach an ELB&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -4523,34 +4523,34 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Amazon ECS&lt;/th>
-&lt;th style="text-align: left">Amazon EKS&lt;/th>
+&lt;th>Amazon ECS&lt;/th>
+&lt;th>Amazon EKS&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">Managed, highly available, highly scalable container platform&lt;/td>
-&lt;td style="text-align: left">Managed, highly available, highly scalable container platform&lt;/td>
+&lt;td>Managed, highly available, highly scalable container platform&lt;/td>
+&lt;td>Managed, highly available, highly scalable container platform&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">AWS-specific platform that supports Docker Containers&lt;/td>
-&lt;td style="text-align: left">Compatible with upstream Kubernetes so it’s easy to lift and shift from other Kubernetes deployments&lt;/td>
+&lt;td>AWS-specific platform that supports Docker Containers&lt;/td>
+&lt;td>Compatible with upstream Kubernetes so it’s easy to lift and shift from other Kubernetes deployments&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Considered simpler and easier to use&lt;/td>
-&lt;td style="text-align: left">Considered more feature-rich and complex with a steep learning curve&lt;/td>
+&lt;td>Considered simpler and easier to use&lt;/td>
+&lt;td>Considered more feature-rich and complex with a steep learning curve&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Leverages AWS services like Route 53, ALB, and CloudWatch&lt;/td>
-&lt;td style="text-align: left">A hosted Kubernetes platform that handles many things internally&lt;/td>
+&lt;td>Leverages AWS services like Route 53, ALB, and CloudWatch&lt;/td>
+&lt;td>A hosted Kubernetes platform that handles many things internally&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">“Tasks” are instances of containers that are run on underlying compute but more of less isolated&lt;/td>
-&lt;td style="text-align: left">“Pods” are containers collocated with one another and can have shared access to each other&lt;/td>
+&lt;td>“Tasks” are instances of containers that are run on underlying compute but more of less isolated&lt;/td>
+&lt;td>“Pods” are containers collocated with one another and can have shared access to each other&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Limited extensibility&lt;/td>
-&lt;td style="text-align: left">Extensible via a wide variety of third-party and community add-ons.&lt;/td>
+&lt;td>Limited extensibility&lt;/td>
+&lt;td>Extensible via a wide variety of third-party and community add-ons.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -4666,34 +4666,34 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Amazon ECS&lt;/th>
-&lt;th style="text-align: left">Amazon EKS&lt;/th>
+&lt;th>Amazon ECS&lt;/th>
+&lt;th>Amazon EKS&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">Managed, highly available, highly scalable container platform&lt;/td>
-&lt;td style="text-align: left">Managed, highly available, highly scalable container platform&lt;/td>
+&lt;td>Managed, highly available, highly scalable container platform&lt;/td>
+&lt;td>Managed, highly available, highly scalable container platform&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">AWS-specific platform that supports Docker Containers&lt;/td>
-&lt;td style="text-align: left">Compatible with upstream Kubernetes so it’s easy to lift and shift from other Kubernetes deployments&lt;/td>
+&lt;td>AWS-specific platform that supports Docker Containers&lt;/td>
+&lt;td>Compatible with upstream Kubernetes so it’s easy to lift and shift from other Kubernetes deployments&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Considered simpler and easier to use&lt;/td>
-&lt;td style="text-align: left">Considered more feature-rich and complex with a steep learning curve&lt;/td>
+&lt;td>Considered simpler and easier to use&lt;/td>
+&lt;td>Considered more feature-rich and complex with a steep learning curve&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Leverages AWS services like Route 53, ALB, and CloudWatch&lt;/td>
-&lt;td style="text-align: left">A hosted Kubernetes platform that handles many things internally&lt;/td>
+&lt;td>Leverages AWS services like Route 53, ALB, and CloudWatch&lt;/td>
+&lt;td>A hosted Kubernetes platform that handles many things internally&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">“Tasks” are instances of containers that are run on underlying compute but more of less isolated&lt;/td>
-&lt;td style="text-align: left">“Pods” are containers collocated with one another and can have shared access to each other&lt;/td>
+&lt;td>“Tasks” are instances of containers that are run on underlying compute but more of less isolated&lt;/td>
+&lt;td>“Pods” are containers collocated with one another and can have shared access to each other&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">Limited extensibility&lt;/td>
-&lt;td style="text-align: left">Extensible via a wide variety of third-party and community add-ons.&lt;/td>
+&lt;td>Limited extensibility&lt;/td>
+&lt;td>Extensible via a wide variety of third-party and community add-ons.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -4923,38 +4923,38 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Type of KMS key&lt;/th>
-&lt;th style="text-align: left">Can view KMS key metadata&lt;/th>
-&lt;th style="text-align: left">Can manage KMS key&lt;/th>
-&lt;th style="text-align: left">Used only for my AWS account&lt;/th>
-&lt;th style="text-align: left">&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">Automatic rotation&lt;/a>&lt;/th>
-&lt;th style="text-align: left">&lt;a href="https://aws.amazon.com/kms/pricing/">Pricing&lt;/a>&lt;/th>
+&lt;th>Type of KMS key&lt;/th>
+&lt;th>Can view KMS key metadata&lt;/th>
+&lt;th>Can manage KMS key&lt;/th>
+&lt;th>Used only for my AWS account&lt;/th>
+&lt;th>&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">Automatic rotation&lt;/a>&lt;/th>
+&lt;th>&lt;a href="https://aws.amazon.com/kms/pricing/">Pricing&lt;/a>&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">Customer managed key&lt;/a>&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">Optional. Every year (approximately 365 days)&lt;/td>
-&lt;td style="text-align: left">Monthly fee (pro-rated hourly)&lt;br>&lt;br>Per-use fee&lt;/td>
+&lt;td>&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">Customer managed key&lt;/a>&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Optional. Every year (approximately 365 days)&lt;/td>
+&lt;td>Monthly fee (pro-rated hourly)&lt;br>&lt;br>Per-use fee&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS managed key&lt;/a>&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">No&lt;/td>
-&lt;td style="text-align: left">Yes&lt;/td>
-&lt;td style="text-align: left">Required. Every year (approximately 365 days)&lt;/td>
-&lt;td style="text-align: left">No monthly fee&lt;br>&lt;br>Per-use fee (some AWS services pay this fee for you)&lt;/td>
+&lt;td>&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS managed key&lt;/a>&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Required. Every year (approximately 365 days)&lt;/td>
+&lt;td>No monthly fee&lt;br>&lt;br>Per-use fee (some AWS services pay this fee for you)&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">AWS owned key&lt;/a>&lt;/td>
-&lt;td style="text-align: left">No&lt;/td>
-&lt;td style="text-align: left">No&lt;/td>
-&lt;td style="text-align: left">No&lt;/td>
-&lt;td style="text-align: left">Varies&lt;/td>
-&lt;td style="text-align: left">Varies&lt;/td>
+&lt;td>&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">AWS owned key&lt;/a>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>Varies&lt;/td>
+&lt;td>Varies&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -5406,7 +5406,247 @@ loading="lazy"
 &lt;p>Finding a reasonably priced solution was critical. I opted for Amazon&amp;rsquo;s &lt;code>t3a.nano&lt;/code> ARM Ubuntu image, which costs &lt;strong>~$0.0047&lt;/strong>/hour ~ &lt;strong>$3.8&lt;/strong>/month.&lt;/p>
 &lt;p>Various Amazon EC2 instances and their prices are listed on &lt;a href="https://aws.amazon.com/ec2/pricing/on-demand/">Amazon&amp;rsquo;s On-Demand Pricing page&lt;/a>.&lt;/p>
 &lt;p>Here is the &lt;a href="https://cloud-images.ubuntu.com/query/bionic/server/released.current.txt">list of all Ubuntu AMI images&lt;/a> to identify the appropriate image for the project. The selected image combined with the CloudFormation template, which was inspired by the &lt;a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/quickref-general.html">AWS CloudFormation General Reference&lt;/a>, provides a seamless and consistent user experience.&lt;/p>
-&lt;p>Now it takes 2-3 minutes to create OpenVPN server using this &lt;a href="https://github.com/romankurnovskii/openvpn_ec2_cf_template">repo&lt;/a>.&lt;/p></description></item><item><title>Serverless: Flask+API Gateway+Lambda+MongoDB</title><link>https://romankurnovskii.com/en/posts/serverless-flask-lambda-api-gateway-mongodb/</link><pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/serverless-flask-lambda-api-gateway-mongodb/</guid><description>&lt;p>&amp;ldquo;mongodb&amp;rdquo; free tier vs &amp;ldquo;documentdb&amp;rdquo;&lt;/p>
+&lt;p>Now it takes 2-3 minutes to create OpenVPN server using this &lt;a href="https://github.com/romankurnovskii/openvpn_ec2_cf_template">repo&lt;/a>.&lt;/p></description></item><item><title>AWS Amplify - project setup with Github</title><link>https://romankurnovskii.com/en/posts/cloud-exam-quizz/amplify-setup-project/</link><pubDate>Wed, 12 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/cloud-exam-quizz/amplify-setup-project/</guid><description>&lt;h2 id="preface">Preface&lt;/h2>
+&lt;ul>
+&lt;li>For Amplify project I use &lt;strong>eu-west&lt;/strong> region&lt;/li>
+&lt;li>github repo has to be ready private or public&lt;/li>
+&lt;/ul>
+&lt;h2 id="new-project">New project&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>goto &lt;a href="https://eu-west-1.console.aws.amazon.com/amplify/home?region=eu-west-1#/">https://eu-west-1.console.aws.amazon.com/amplify/home?region=eu-west-1#/&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>New app → Host web app → Github&lt;/p>
+&lt;ol>
+&lt;li>Add access to github repo
+&lt;p class="md__image">
+&lt;img
+src="../img/github-setup-access.png"
+id="zoom-default"
+alt="github-setup-access"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/li>
+&lt;li>Select repository
+&lt;p class="md__image">
+&lt;img
+src="../img/github-setup-access-select-repo.png"
+id="zoom-default"
+alt="github-setup-access"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>Come back to Amplify and try again to choose repo
+&lt;p class="md__image">
+&lt;img
+src="../img/amplify-setup-access-select-repo.png"
+id="zoom-default"
+alt="github-setup-access"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Next&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>Update &lt;strong>amplify.yml&lt;/strong> for &lt;em>node.js&lt;/em> project&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#062873;font-weight:bold">version&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#40a070">1&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">frontend&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">phases&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">preBuild&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">commands&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- yarn install&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">build&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">commands&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- yarn run build&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">artifacts&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">baseDirectory&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>build&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">files&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#4070a0">&amp;#39;**/*&amp;#39;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">cache&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">paths&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- node_modules/**/*&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/amplify-yml.jpg"
+id="zoom-default"
+alt="amplify-yml"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="5">
+&lt;li>Next → Save and deploy&lt;/li>
+&lt;/ol>
+&lt;p>Amplify starts to build project and generates project url.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/amplify-build-process.png"
+id="zoom-default"
+alt="amplify-build-process"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Once build done you can open project.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/amplify-success-url.png"
+id="zoom-default"
+alt="amplify-success-url"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p></description></item><item><title>AWS Amplify - Set custom domain</title><link>https://romankurnovskii.com/en/posts/cloud-exam-quizz/amplify-custom-domain/</link><pubDate>Wed, 12 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/cloud-exam-quizz/amplify-custom-domain/</guid><description>&lt;p>You can use any custom domain with Amplify and no need register it with &lt;a href="https://romankurnovskii.com/en/categories/route-53/">AWS Route53&lt;/a>.&lt;/p>
+&lt;p>I am adding domain at the &lt;em>setup app stage&lt;/em>. Another way is from console.&lt;/p>
+&lt;ol>
+&lt;li>Click &lt;strong>Domain management&lt;/strong>.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/amplify-add-custom-domain.png"
+id="zoom-default"
+alt="amplify-add-custom-domain"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>or&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/amplify-add-custom-domain-01.png"
+id="zoom-default"
+alt="amplify-add-custom-domain"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="2">
+&lt;li>Add domain&lt;/li>
+&lt;li>Write domain name -&amp;gt; Configure domain -&amp;gt; Save&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/amplify-add-custom-domain-02.png"
+id="zoom-default"
+alt="amplify-add-custom-domain"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="4">
+&lt;li>Nest starts SSL configuration process. Amplify provides with DNS data that you need to write in the domain register account.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/amplify-add-custom-domain-ssl-config.png"
+id="zoom-default"
+alt="amplify-add-custom-domain"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="5">
+&lt;li>
+&lt;p>Once SSL creation starts you can get domain data&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Action -&amp;gt; View DNS records&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/amplify-add-custom-domain-ssl-config-start.png"
+id="zoom-default"
+alt="amplify-add-custom-domain"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="7">
+&lt;li>Copy provided data (DNS records) and then set it in the domain registrar panel.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/amplify-dns-records.png"
+id="zoom-default"
+alt="amplify-add-custom-domain"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="8">
+&lt;li>Go to domain registrar&lt;/li>
+&lt;li>Set &lt;em>dns servers&lt;/em> to default&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/domain-registrar-dns-default.png"
+id="zoom-default"
+alt="amplify-add-custom-domain"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="10">
+&lt;li>In my case panel looks like this:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/set-cname-01.png"
+id="zoom-default"
+alt="amplify-add-custom-domain"
+loading="lazy"
+/>
+&lt;/p>
+&lt;p class="md__image">
+&lt;img
+src="../img/set-cname-02.png"
+id="zoom-default"
+alt="amplify-add-custom-domain"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="11">
+&lt;li>Save&lt;/li>
+&lt;li>Go to amplify and check for updates. Amplify checks DNS server and if everything is correct (CNAME set) it will proceed to the next step.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/amplify-domain-activation-stage.png"
+id="zoom-default"
+alt="amplify-add-custom-domain"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>SSL configuration passed, waiting up to 30 min for domain activation&lt;/p>
+&lt;ol start="13">
+&lt;li>Once done we can check url: &lt;a href="https://cloud-exam-prepare.com">https://cloud-exam-prepare.com&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/cloud-exam-prepare-url.png"
+id="zoom-default"
+alt="amplify-add-custom-domain"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Check url: &lt;a href="https://cloud-exam-prepare.com/">cloud-exam-prepare.com&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Resources:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/amplify/latest/userguide/to-add-a-custom-domain-managed-by-a-third-party-dns-provider.html">https://docs.aws.amazon.com/amplify/latest/userguide/to-add-a-custom-domain-managed-by-a-third-party-dns-provider.html&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Serverless: Flask+API Gateway+Lambda+MongoDB</title><link>https://romankurnovskii.com/en/posts/serverless-flask-lambda-api-gateway-mongodb/</link><pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/serverless-flask-lambda-api-gateway-mongodb/</guid><description>&lt;p>&amp;ldquo;mongodb&amp;rdquo; free tier vs &amp;ldquo;documentdb&amp;rdquo;&lt;/p>
 &lt;h2 id="project-structure">Project structure&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>- src
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - app.py
@@ -6298,244 +6538,4 @@ loading="lazy"
 />
 &lt;/p>
 &lt;/p>
-&lt;p>You will now see only two tables listed.&lt;/p></description></item><item><title>AWS Amplify - project setup with Github</title><link>https://romankurnovskii.com/en/posts/cloud-exam-quizz/amplify-setup-project/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/cloud-exam-quizz/amplify-setup-project/</guid><description>&lt;h2 id="preface">Preface&lt;/h2>
-&lt;ul>
-&lt;li>For Amplify project I use &lt;strong>eu-west&lt;/strong> region&lt;/li>
-&lt;li>github repo has to be ready private or public&lt;/li>
-&lt;/ul>
-&lt;h2 id="new-project">New project&lt;/h2>
-&lt;ol>
-&lt;li>
-&lt;p>goto &lt;a href="https://eu-west-1.console.aws.amazon.com/amplify/home?region=eu-west-1#/">https://eu-west-1.console.aws.amazon.com/amplify/home?region=eu-west-1#/&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>New app → Host web app → Github&lt;/p>
-&lt;ol>
-&lt;li>Add access to github repo
-&lt;p class="md__image">
-&lt;img
-src="../img/github-setup-access.png"
-id="zoom-default"
-alt="github-setup-access"
-loading="lazy"
-/>
-&lt;/p>
-&lt;/li>
-&lt;li>Select repository
-&lt;p class="md__image">
-&lt;img
-src="../img/github-setup-access-select-repo.png"
-id="zoom-default"
-alt="github-setup-access"
-loading="lazy"
-/>
-&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;/li>
-&lt;li>
-&lt;p>Come back to Amplify and try again to choose repo
-&lt;p class="md__image">
-&lt;img
-src="../img/amplify-setup-access-select-repo.png"
-id="zoom-default"
-alt="github-setup-access"
-loading="lazy"
-/>
-&lt;/p>
-&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Click &lt;strong>Next&lt;/strong>&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;p>Update &lt;strong>amplify.yml&lt;/strong> for &lt;em>node.js&lt;/em> project&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#062873;font-weight:bold">version&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#40a070">1&lt;/span>&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">frontend&lt;/span>:&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">phases&lt;/span>:&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">preBuild&lt;/span>:&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">commands&lt;/span>:&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- yarn install&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">build&lt;/span>:&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">commands&lt;/span>:&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- yarn run build&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">artifacts&lt;/span>:&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">baseDirectory&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>build&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">files&lt;/span>:&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#4070a0">&amp;#39;**/*&amp;#39;&lt;/span>&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">cache&lt;/span>:&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">paths&lt;/span>:&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- node_modules/**/*&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
-&lt;img
-src="../img/amplify-yml.jpg"
-id="zoom-default"
-alt="amplify-yml"
-loading="lazy"
-/>
-&lt;/p>
-&lt;/p>
-&lt;ol start="5">
-&lt;li>Next → Save and deploy&lt;/li>
-&lt;/ol>
-&lt;p>Amplify starts to build project and generates project url.&lt;/p>
-&lt;p>&lt;p class="md__image">
-&lt;img
-src="../img/amplify-build-process.png"
-id="zoom-default"
-alt="amplify-build-process"
-loading="lazy"
-/>
-&lt;/p>
-&lt;/p>
-&lt;p>Once build done you can open project.&lt;/p>
-&lt;p>&lt;p class="md__image">
-&lt;img
-src="../img/amplify-success-url.png"
-id="zoom-default"
-alt="amplify-success-url"
-loading="lazy"
-/>
-&lt;/p>
-&lt;/p></description></item><item><title>AWS Amplify - Set custom domain</title><link>https://romankurnovskii.com/en/posts/cloud-exam-quizz/amplify-custom-domain/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/cloud-exam-quizz/amplify-custom-domain/</guid><description>&lt;p>You can use any custom domain with Amplify and no need register it with &lt;a href="https://romankurnovskii.com/en/categories/route-53/">AWS Route53&lt;/a>.&lt;/p>
-&lt;p>I am adding domain at the &lt;em>setup app stage&lt;/em>. Another way is from console.&lt;/p>
-&lt;ol>
-&lt;li>Click &lt;strong>Domain management&lt;/strong>.&lt;/li>
-&lt;/ol>
-&lt;p>&lt;p class="md__image">
-&lt;img
-src="../img/amplify-add-custom-domain.png"
-id="zoom-default"
-alt="amplify-add-custom-domain"
-loading="lazy"
-/>
-&lt;/p>
-&lt;/p>
-&lt;p>or&lt;/p>
-&lt;p>&lt;p class="md__image">
-&lt;img
-src="../img/amplify-add-custom-domain-01.png"
-id="zoom-default"
-alt="amplify-add-custom-domain"
-loading="lazy"
-/>
-&lt;/p>
-&lt;/p>
-&lt;ol start="2">
-&lt;li>Add domain&lt;/li>
-&lt;li>Write domain name -&amp;gt; Configure domain -&amp;gt; Save&lt;/li>
-&lt;/ol>
-&lt;p>&lt;p class="md__image">
-&lt;img
-src="../img/amplify-add-custom-domain-02.png"
-id="zoom-default"
-alt="amplify-add-custom-domain"
-loading="lazy"
-/>
-&lt;/p>
-&lt;/p>
-&lt;ol start="4">
-&lt;li>Nest starts SSL configuration process. Amplify provides with DNS data that you need to write in the domain register account.&lt;/li>
-&lt;/ol>
-&lt;p>&lt;p class="md__image">
-&lt;img
-src="../img/amplify-add-custom-domain-ssl-config.png"
-id="zoom-default"
-alt="amplify-add-custom-domain"
-loading="lazy"
-/>
-&lt;/p>
-&lt;/p>
-&lt;ol start="5">
-&lt;li>
-&lt;p>Once SSL creation starts you can get domain data&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Action -&amp;gt; View DNS records&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;p>&lt;p class="md__image">
-&lt;img
-src="../img/amplify-add-custom-domain-ssl-config-start.png"
-id="zoom-default"
-alt="amplify-add-custom-domain"
-loading="lazy"
-/>
-&lt;/p>
-&lt;/p>
-&lt;ol start="7">
-&lt;li>Copy provided data (DNS records) and then set it in the domain registrar panel.&lt;/li>
-&lt;/ol>
-&lt;p>&lt;p class="md__image">
-&lt;img
-src="../img/amplify-dns-records.png"
-id="zoom-default"
-alt="amplify-add-custom-domain"
-loading="lazy"
-/>
-&lt;/p>
-&lt;/p>
-&lt;ol start="8">
-&lt;li>Go to domain registrar&lt;/li>
-&lt;li>Set &lt;em>dns servers&lt;/em> to default&lt;/li>
-&lt;/ol>
-&lt;p>&lt;p class="md__image">
-&lt;img
-src="../img/domain-registrar-dns-default.png"
-id="zoom-default"
-alt="amplify-add-custom-domain"
-loading="lazy"
-/>
-&lt;/p>
-&lt;/p>
-&lt;ol start="10">
-&lt;li>In my case panel looks like this:&lt;/li>
-&lt;/ol>
-&lt;p>&lt;p class="md__image">
-&lt;img
-src="../img/set-cname-01.png"
-id="zoom-default"
-alt="amplify-add-custom-domain"
-loading="lazy"
-/>
-&lt;/p>
-&lt;p class="md__image">
-&lt;img
-src="../img/set-cname-02.png"
-id="zoom-default"
-alt="amplify-add-custom-domain"
-loading="lazy"
-/>
-&lt;/p>
-&lt;/p>
-&lt;ol start="11">
-&lt;li>Save&lt;/li>
-&lt;li>Go to amplify and check for updates. Amplify checks DNS server and if everything is correct (CNAME set) it will proceed to the next step.&lt;/li>
-&lt;/ol>
-&lt;p>&lt;p class="md__image">
-&lt;img
-src="../img/amplify-domain-activation-stage.png"
-id="zoom-default"
-alt="amplify-add-custom-domain"
-loading="lazy"
-/>
-&lt;/p>
-&lt;/p>
-&lt;p>SSL configuration passed, waiting up to 30 min for domain activation&lt;/p>
-&lt;ol start="13">
-&lt;li>Once done we can check url: &lt;a href="https://cloud-exam-prepare.com">https://cloud-exam-prepare.com&lt;/a>&lt;/li>
-&lt;/ol>
-&lt;p>&lt;p class="md__image">
-&lt;img
-src="../img/cloud-exam-prepare-url.png"
-id="zoom-default"
-alt="amplify-add-custom-domain"
-loading="lazy"
-/>
-&lt;/p>
-&lt;/p>
-&lt;p>Check url: &lt;a href="https://cloud-exam-prepare.com/">cloud-exam-prepare.com&lt;/a>&lt;/p>
-&lt;p>&lt;strong>Resources:&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://docs.aws.amazon.com/amplify/latest/userguide/to-add-a-custom-domain-managed-by-a-third-party-dns-provider.html">https://docs.aws.amazon.com/amplify/latest/userguide/to-add-a-custom-domain-managed-by-a-third-party-dns-provider.html&lt;/a>&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;p>You will now see only two tables listed.&lt;/p></description></item></channel></rss>

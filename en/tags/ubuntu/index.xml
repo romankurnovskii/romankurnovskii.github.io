@@ -18,7 +18,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>UsePAM no
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>After making these changes, restart the SSH service to apply them:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo systemctl restart sshd
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Set Up Proxy on Amazon EC2 Ubuntu</title><link>https://romankurnovskii.com/en/posts/setup-proxy-server-ec2-ubuntu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/setup-proxy-server-ec2-ubuntu/</guid><description>&lt;h2 id="1-setting-up-the-ec2-instance">1. Setting up the EC2 Instance&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Set Up Proxy on Amazon EC2 Ubuntu</title><link>https://romankurnovskii.com/en/posts/setup-proxy-server-ec2-ubuntu/</link><pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/setup-proxy-server-ec2-ubuntu/</guid><description>&lt;h2 id="1-setting-up-the-ec2-instance">1. Setting up the EC2 Instance&lt;/h2>
 &lt;h2 id="launch-an-ec2-instance">Launch an EC2 Instance&lt;/h2>
 &lt;ol>
 &lt;li>Choose an Ubuntu Server image.&lt;/li>

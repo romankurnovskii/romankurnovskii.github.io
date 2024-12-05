@@ -295,51 +295,51 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Command&lt;/th>
-&lt;th style="text-align: left">Example&lt;/th>
-&lt;th style="text-align: left">Description&lt;/th>
+&lt;th>Command&lt;/th>
+&lt;th>Example&lt;/th>
+&lt;th>Description&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">git init&lt;/td>
-&lt;td style="text-align: left">&lt;code>git init &amp;lt;directory&amp;gt;&lt;/code>&lt;/td>
-&lt;td style="text-align: left">создает пустой репозиторий git в указанном каталоге.&lt;/td>
+&lt;td>git init&lt;/td>
+&lt;td>&lt;code>git init &amp;lt;directory&amp;gt;&lt;/code>&lt;/td>
+&lt;td>создает пустой репозиторий git в указанном каталоге.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">git clone&lt;/td>
-&lt;td style="text-align: left">&lt;code>git clone &amp;lt;repo&amp;gt;&lt;/code>&lt;/td>
-&lt;td style="text-align: left">клонирует репозиторий, расположенный в &lt;repo>, на локальный компьютер.&lt;/td>
+&lt;td>git clone&lt;/td>
+&lt;td>&lt;code>git clone &amp;lt;repo&amp;gt;&lt;/code>&lt;/td>
+&lt;td>клонирует репозиторий, расположенный в &lt;repo>, на локальный компьютер.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">git config&lt;/td>
-&lt;td style="text-align: left">&lt;code>git config user.name&lt;/code>&lt;/td>
-&lt;td style="text-align: left">определяет имя автора, которое будет использоваться для всех коммитов в текущем репозитории, &lt;code>system&lt;/code>, &lt;code>global&lt;/code>, &lt;code>local&lt;/code> флаг для установки параметров конфигурации.&lt;/td>
+&lt;td>git config&lt;/td>
+&lt;td>&lt;code>git config user.name&lt;/code>&lt;/td>
+&lt;td>определяет имя автора, которое будет использоваться для всех коммитов в текущем репозитории, &lt;code>system&lt;/code>, &lt;code>global&lt;/code>, &lt;code>local&lt;/code> флаг для установки параметров конфигурации.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">git add&lt;/td>
-&lt;td style="text-align: left">&lt;code>git add &amp;lt;directory&amp;gt;&lt;/code>&lt;/td>
-&lt;td style="text-align: left">он подготовит все изменения в &lt;directory> для следующего коммита. Мы также можем добавить &lt;files> и &amp;lt;.&amp;gt; для добавления всех изменененных файлов всего.&lt;/td>
+&lt;td>git add&lt;/td>
+&lt;td>&lt;code>git add &amp;lt;directory&amp;gt;&lt;/code>&lt;/td>
+&lt;td>он подготовит все изменения в &lt;directory> для следующего коммита. Мы также можем добавить &lt;files> и &amp;lt;.&amp;gt; для добавления всех изменененных файлов всего.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">git commit -m&lt;/td>
-&lt;td style="text-align: left">&lt;code>git commit -m &amp;quot;&amp;lt;message&amp;gt;&amp;quot;&lt;/code>&lt;/td>
-&lt;td style="text-align: left">фиксирует промежуточный коммит, запишет &lt;message>, чтобы подробно описать, что точно сохраняем.&lt;/td>
+&lt;td>git commit -m&lt;/td>
+&lt;td>&lt;code>git commit -m &amp;quot;&amp;lt;message&amp;gt;&amp;quot;&lt;/code>&lt;/td>
+&lt;td>фиксирует промежуточный коммит, запишет &lt;message>, чтобы подробно описать, что точно сохраняем.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">git status&lt;/td>
-&lt;td style="text-align: left">&lt;code>git status&lt;/code>&lt;/td>
-&lt;td style="text-align: left">выведит список файлов, которые помещены в архив, не помещены в архив и не отслеживаются.&lt;/td>
+&lt;td>git status&lt;/td>
+&lt;td>&lt;code>git status&lt;/code>&lt;/td>
+&lt;td>выведит список файлов, которые помещены в архив, не помещены в архив и не отслеживаются.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">git log&lt;/td>
-&lt;td style="text-align: left">&lt;code>git log&lt;/code>&lt;/td>
-&lt;td style="text-align: left">Отображение всей истории коммитов в формате по умолчанию. У этой команды есть дополнительные параметры.&lt;/td>
+&lt;td>git log&lt;/td>
+&lt;td>&lt;code>git log&lt;/code>&lt;/td>
+&lt;td>Отображение всей истории коммитов в формате по умолчанию. У этой команды есть дополнительные параметры.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">git diff&lt;/td>
-&lt;td style="text-align: left">&lt;code>git diff&lt;/code>&lt;/td>
-&lt;td style="text-align: left">Показать неустановленные изменения между вашим индексом и рабочим каталогом.&lt;/td>
+&lt;td>git diff&lt;/td>
+&lt;td>&lt;code>git diff&lt;/code>&lt;/td>
+&lt;td>Показать неустановленные изменения между вашим индексом и рабочим каталогом.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -347,36 +347,36 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Command&lt;/th>
-&lt;th style="text-align: left">Example&lt;/th>
-&lt;th style="text-align: left">Description&lt;/th>
+&lt;th>Command&lt;/th>
+&lt;th>Example&lt;/th>
+&lt;th>Description&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">git revert&lt;/td>
-&lt;td style="text-align: left">&lt;code>git revert &amp;lt;commit&amp;gt;&lt;/code>&lt;/td>
-&lt;td style="text-align: left">создает новую фиксацию, которая отменяет все изменения, сделанные в &lt;commit>, а затем примените ее к текущей ветке.&lt;/td>
+&lt;td>git revert&lt;/td>
+&lt;td>&lt;code>git revert &amp;lt;commit&amp;gt;&lt;/code>&lt;/td>
+&lt;td>создает новую фиксацию, которая отменяет все изменения, сделанные в &lt;commit>, а затем примените ее к текущей ветке.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">git reset&lt;/td>
-&lt;td style="text-align: left">&lt;code>git reset &amp;lt;file&amp;gt;&lt;/code>&lt;/td>
-&lt;td style="text-align: left">убрать &lt;file> из индекса коммита (изменения не теряются).&lt;/td>
+&lt;td>git reset&lt;/td>
+&lt;td>&lt;code>git reset &amp;lt;file&amp;gt;&lt;/code>&lt;/td>
+&lt;td>убрать &lt;file> из индекса коммита (изменения не теряются).&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">git clean&lt;/td>
-&lt;td style="text-align: left">&lt;code>git clean -n&lt;/code>&lt;/td>
-&lt;td style="text-align: left">увидеть, какие файлы являются лишними, перед их непосредственным удалением&lt;/td>
+&lt;td>git clean&lt;/td>
+&lt;td>&lt;code>git clean -n&lt;/code>&lt;/td>
+&lt;td>увидеть, какие файлы являются лишними, перед их непосредственным удалением&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">git clean&lt;/td>
-&lt;td style="text-align: left">&lt;code>git clean -f&lt;/code>&lt;/td>
-&lt;td style="text-align: left">удалить неотслеживаемые файлы и папки из рабочей копии&lt;/td>
+&lt;td>git clean&lt;/td>
+&lt;td>&lt;code>git clean -f&lt;/code>&lt;/td>
+&lt;td>удалить неотслеживаемые файлы и папки из рабочей копии&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">git clean&lt;/td>
-&lt;td style="text-align: left">&lt;code>git clean -fd&lt;/code>&lt;/td>
-&lt;td style="text-align: left">удалить их&lt;/td>
+&lt;td>git clean&lt;/td>
+&lt;td>&lt;code>git clean -fd&lt;/code>&lt;/td>
+&lt;td>удалить их&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -384,26 +384,26 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Command&lt;/th>
-&lt;th style="text-align: left">Example&lt;/th>
-&lt;th style="text-align: left">Description&lt;/th>
+&lt;th>Command&lt;/th>
+&lt;th>Example&lt;/th>
+&lt;th>Description&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">git commit&lt;/td>
-&lt;td style="text-align: left">&lt;code>git commit --amend&lt;/code>&lt;/td>
-&lt;td style="text-align: left">Заменяет последний коммит поэтапными изменениями и последним коммитом. Используйте без статуса &lt;em>stage&lt;/em>, чтобы отредактировать сообщение последнего коммита.&lt;/td>
+&lt;td>git commit&lt;/td>
+&lt;td>&lt;code>git commit --amend&lt;/code>&lt;/td>
+&lt;td>Заменяет последний коммит поэтапными изменениями и последним коммитом. Используйте без статуса &lt;em>stage&lt;/em>, чтобы отредактировать сообщение последнего коммита.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">git rebase&lt;/td>
-&lt;td style="text-align: left">&lt;code>git rebase &amp;lt;base&amp;gt;&lt;/code>&lt;/td>
-&lt;td style="text-align: left">Перебазировать текущую ветку на &lt;base>. &lt;base> может быть идентификатором фиксации, именем ветки, тегом или относительной ссылкой на HEAD.&lt;/td>
+&lt;td>git rebase&lt;/td>
+&lt;td>&lt;code>git rebase &amp;lt;base&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Перебазировать текущую ветку на &lt;base>. &lt;base> может быть идентификатором фиксации, именем ветки, тегом или относительной ссылкой на HEAD.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">git reflog&lt;/td>
-&lt;td style="text-align: left">&lt;code>git reflog&lt;/code>&lt;/td>
-&lt;td style="text-align: left">Показать журнал изменений в HEAD локального репозитория. Добавьте флаг &amp;ndash;relative-date для отображения информации о дате или &amp;ndash;all для отображения всех ссылок.&lt;/td>
+&lt;td>git reflog&lt;/td>
+&lt;td>&lt;code>git reflog&lt;/code>&lt;/td>
+&lt;td>Показать журнал изменений в HEAD локального репозитория. Добавьте флаг &amp;ndash;relative-date для отображения информации о дате или &amp;ndash;all для отображения всех ссылок.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -411,26 +411,26 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Command&lt;/th>
-&lt;th style="text-align: left">Example&lt;/th>
-&lt;th style="text-align: left">Description&lt;/th>
+&lt;th>Command&lt;/th>
+&lt;th>Example&lt;/th>
+&lt;th>Description&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">git branch&lt;/td>
-&lt;td style="text-align: left">&lt;code>git branch&lt;/code>&lt;/td>
-&lt;td style="text-align: left">Перечислите все ветки в вашем репо. Добавьте аргумент &lt;branch>, чтобы создать новую ветку с именем &lt;branch>.&lt;/td>
+&lt;td>git branch&lt;/td>
+&lt;td>&lt;code>git branch&lt;/code>&lt;/td>
+&lt;td>Перечислите все ветки в вашем репо. Добавьте аргумент &lt;branch>, чтобы создать новую ветку с именем &lt;branch>.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">git checkout&lt;/td>
-&lt;td style="text-align: left">&lt;code>git checkout -b &amp;lt;branch&amp;gt;&lt;/code>&lt;/td>
-&lt;td style="text-align: left">Создайте и извлеките новую ветку с именем &lt;branch>. Отбросьте флаг -b, чтобы проверить существующую ветку.&lt;/td>
+&lt;td>git checkout&lt;/td>
+&lt;td>&lt;code>git checkout -b &amp;lt;branch&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Создайте и извлеките новую ветку с именем &lt;branch>. Отбросьте флаг -b, чтобы проверить существующую ветку.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">git merge&lt;/td>
-&lt;td style="text-align: left">&lt;code>git merge &amp;lt;branch&amp;gt;&lt;/code>&lt;/td>
-&lt;td style="text-align: left">Объединить ветку &lt;branch> с текущей веткой.&lt;/td>
+&lt;td>git merge&lt;/td>
+&lt;td>&lt;code>git merge &amp;lt;branch&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Объединить ветку &lt;branch> с текущей веткой.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -438,31 +438,31 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Command&lt;/th>
-&lt;th style="text-align: left">Example&lt;/th>
-&lt;th style="text-align: left">Description&lt;/th>
+&lt;th>Command&lt;/th>
+&lt;th>Example&lt;/th>
+&lt;th>Description&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">git remote add&lt;/td>
-&lt;td style="text-align: left">&lt;code>git remote add &amp;lt;name&amp;gt; &amp;lt;url&amp;gt;&lt;/code>&lt;/td>
-&lt;td style="text-align: left">Создайте новое подключение к удаленному репозиторию. После добавления пульта вы можете использовать &lt;name> в качестве ярлыка для &lt;url> в других командах.&lt;/td>
+&lt;td>git remote add&lt;/td>
+&lt;td>&lt;code>git remote add &amp;lt;name&amp;gt; &amp;lt;url&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Создайте новое подключение к удаленному репозиторию. После добавления пульта вы можете использовать &lt;name> в качестве ярлыка для &lt;url> в других командах.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">git fetch&lt;/td>
-&lt;td style="text-align: left">&lt;code>git fetch &amp;lt;remote&amp;gt; &amp;lt;branch&amp;gt;&lt;/code>&lt;/td>
-&lt;td style="text-align: left">Выбирает конкретную &amp;lt;ветку&amp;gt; из репозитория. Оставьте &lt;branch>, чтобы получить все удаленные ссылки.&lt;/td>
+&lt;td>git fetch&lt;/td>
+&lt;td>&lt;code>git fetch &amp;lt;remote&amp;gt; &amp;lt;branch&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Выбирает конкретную &amp;lt;ветку&amp;gt; из репозитория. Оставьте &lt;branch>, чтобы получить все удаленные ссылки.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">git pull&lt;/td>
-&lt;td style="text-align: left">&lt;code>git pull &amp;lt;remote&amp;gt;&lt;/code>&lt;/td>
-&lt;td style="text-align: left">Получить указанную удаленную копию текущей ветки и немедленно объединить ее с локальной копией.&lt;/td>
+&lt;td>git pull&lt;/td>
+&lt;td>&lt;code>git pull &amp;lt;remote&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Получить указанную удаленную копию текущей ветки и немедленно объединить ее с локальной копией.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">git push&lt;/td>
-&lt;td style="text-align: left">&lt;code>git push &amp;lt;remote&amp;gt; &amp;lt;branch&amp;gt;&lt;/code>&lt;/td>
-&lt;td style="text-align: left">Отправьте ветку на &lt;remote> вместе с необходимыми коммитами и объектами. Создает именованную ветку в удаленном репо, если она не существует.&lt;/td>
+&lt;td>git push&lt;/td>
+&lt;td>&lt;code>git push &amp;lt;remote&amp;gt; &amp;lt;branch&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Отправьте ветку на &lt;remote> вместе с необходимыми коммитами и объектами. Создает именованную ветку в удаленном репо, если она не существует.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -470,21 +470,21 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Command&lt;/th>
-&lt;th style="text-align: left">Example&lt;/th>
-&lt;th style="text-align: left">Description&lt;/th>
+&lt;th>Command&lt;/th>
+&lt;th>Example&lt;/th>
+&lt;th>Description&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">git diff HEAD&lt;/td>
-&lt;td style="text-align: left">&lt;code>git diff HEAD&lt;/code>&lt;/td>
-&lt;td style="text-align: left">Показать разницу между рабочим каталогом и последним коммитом.&lt;/td>
+&lt;td>git diff HEAD&lt;/td>
+&lt;td>&lt;code>git diff HEAD&lt;/code>&lt;/td>
+&lt;td>Показать разницу между рабочим каталогом и последним коммитом.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">git diff &amp;ndash;cached&lt;/td>
-&lt;td style="text-align: left">&lt;code>git diff --cached&lt;/code>&lt;/td>
-&lt;td style="text-align: left">Показать разницу между поэтапными изменениями и последней фиксацией&lt;/td>
+&lt;td>git diff &amp;ndash;cached&lt;/td>
+&lt;td>&lt;code>git diff --cached&lt;/code>&lt;/td>
+&lt;td>Показать разницу между поэтапными изменениями и последней фиксацией&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -492,36 +492,36 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Command&lt;/th>
-&lt;th style="text-align: left">Example&lt;/th>
-&lt;th style="text-align: left">Description&lt;/th>
+&lt;th>Command&lt;/th>
+&lt;th>Example&lt;/th>
+&lt;th>Description&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">git config &amp;ndash;global user.name &amp;lt;имя&amp;gt;&lt;/td>
-&lt;td style="text-align: left">&lt;code>git config --global user.name &amp;lt;имя&amp;gt;&lt;/code>&lt;/td>
-&lt;td style="text-align: left">Определите имя автора, которое будет использоваться для всех коммитов текущим пользователем.&lt;/td>
+&lt;td>git config &amp;ndash;global user.name &amp;lt;имя&amp;gt;&lt;/td>
+&lt;td>&lt;code>git config --global user.name &amp;lt;имя&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Определите имя автора, которое будет использоваться для всех коммитов текущим пользователем.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">git config &amp;ndash;global user.email &lt;email>&lt;/td>
-&lt;td style="text-align: left">&lt;code>git config --global user.email &amp;lt;email&amp;gt;&lt;/code>&lt;/td>
-&lt;td style="text-align: left">Определите адрес электронной почты автора, который будет использоваться для всех коммитов текущего пользователя.&lt;/td>
+&lt;td>git config &amp;ndash;global user.email &lt;email>&lt;/td>
+&lt;td>&lt;code>git config --global user.email &amp;lt;email&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Определите адрес электронной почты автора, который будет использоваться для всех коммитов текущего пользователя.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">git config &amp;ndash;global alias &amp;lt;алиас-имя&amp;gt; &lt;git-command>&lt;/td>
-&lt;td style="text-align: left">&lt;code>git config --global alias &amp;lt;alias-name&amp;gt; &amp;lt;git-command&amp;gt;&lt;/code>&lt;/td>
-&lt;td style="text-align: left">Создать ярлык для команды git.&lt;/td>
+&lt;td>git config &amp;ndash;global alias &amp;lt;алиас-имя&amp;gt; &lt;git-command>&lt;/td>
+&lt;td>&lt;code>git config --global alias &amp;lt;alias-name&amp;gt; &amp;lt;git-command&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Создать ярлык для команды git.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">git config &amp;ndash;system core.editor &amp;lt;редактор&amp;gt;&lt;/td>
-&lt;td style="text-align: left">&lt;code>git config --system core.editor &amp;lt;редактор&amp;gt;&lt;/code>&lt;/td>
-&lt;td style="text-align: left">Установите текстовый редактор, который будет использоваться командами для всех пользователей на машине. Аргумент &lt;editor> должен быть командой, запускающей нужный редактор.&lt;/td>
+&lt;td>git config &amp;ndash;system core.editor &amp;lt;редактор&amp;gt;&lt;/td>
+&lt;td>&lt;code>git config --system core.editor &amp;lt;редактор&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Установите текстовый редактор, который будет использоваться командами для всех пользователей на машине. Аргумент &lt;editor> должен быть командой, запускающей нужный редактор.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">git config &amp;ndash;global &amp;ndash;edit&lt;/td>
-&lt;td style="text-align: left">&lt;code>git config --global --edit&lt;/code>&lt;/td>
-&lt;td style="text-align: left">Откройте файл глобальной конфигурации в текстовом редакторе для редактирования вручную.&lt;/td>
+&lt;td>git config &amp;ndash;global &amp;ndash;edit&lt;/td>
+&lt;td>&lt;code>git config --global --edit&lt;/code>&lt;/td>
+&lt;td>Откройте файл глобальной конфигурации в текстовом редакторе для редактирования вручную.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -529,16 +529,16 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Command&lt;/th>
-&lt;th style="text-align: left">Example&lt;/th>
-&lt;th style="text-align: left">Description&lt;/th>
+&lt;th>Command&lt;/th>
+&lt;th>Example&lt;/th>
+&lt;th>Description&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">git rebase -i &lt;base>&lt;/td>
-&lt;td style="text-align: left">&lt;code>git rebase -i &amp;lt;base&amp;gt;&lt;/code>&lt;/td>
-&lt;td style="text-align: left">Интерактивно перебазировать текущую ветку на &lt;base>. Запускает редактор для ввода команд того, как каждый коммит будет перенесен в новую базу.&lt;/td>
+&lt;td>git rebase -i &lt;base>&lt;/td>
+&lt;td>&lt;code>git rebase -i &amp;lt;base&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Интерактивно перебазировать текущую ветку на &lt;base>. Запускает редактор для ввода команд того, как каждый коммит будет перенесен в новую базу.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -546,16 +546,16 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Command&lt;/th>
-&lt;th style="text-align: left">Example&lt;/th>
-&lt;th style="text-align: left">Description&lt;/th>
+&lt;th>Command&lt;/th>
+&lt;th>Example&lt;/th>
+&lt;th>Description&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">git pull &amp;ndash;rebase &lt;remote>&lt;/td>
-&lt;td style="text-align: left">&lt;code>git pull --rebase &amp;lt;remote&amp;gt;&lt;/code>&lt;/td>
-&lt;td style="text-align: left">Получить удаленную копию текущей ветки и перебазировать ее в локальную копию. Использует git rebase вместо слияния для интеграции веток.&lt;/td>
+&lt;td>git pull &amp;ndash;rebase &lt;remote>&lt;/td>
+&lt;td>&lt;code>git pull --rebase &amp;lt;remote&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Получить удаленную копию текущей ветки и перебазировать ее в локальную копию. Использует git rebase вместо слияния для интеграции веток.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -563,31 +563,31 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Command&lt;/th>
-&lt;th style="text-align: left">Example&lt;/th>
-&lt;th style="text-align: left">Description&lt;/th>
+&lt;th>Command&lt;/th>
+&lt;th>Example&lt;/th>
+&lt;th>Description&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">git reset&lt;/td>
-&lt;td style="text-align: left">&lt;code>git reset&lt;/code>&lt;/td>
-&lt;td style="text-align: left">Сбросьте промежуточную область, чтобы она соответствовала самой последней фиксации, но оставьте рабочий каталог без изменений.&lt;/td>
+&lt;td>git reset&lt;/td>
+&lt;td>&lt;code>git reset&lt;/code>&lt;/td>
+&lt;td>Сбросьте промежуточную область, чтобы она соответствовала самой последней фиксации, но оставьте рабочий каталог без изменений.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">git reset &amp;ndash;hard&lt;/td>
-&lt;td style="text-align: left">&lt;code>git reset --hard&lt;/code>&lt;/td>
-&lt;td style="text-align: left">Сбросить промежуточную область и рабочий каталог, чтобы они соответствовали самой последней фиксации, и перезаписать все изменения в рабочем каталоге&lt;/td>
+&lt;td>git reset &amp;ndash;hard&lt;/td>
+&lt;td>&lt;code>git reset --hard&lt;/code>&lt;/td>
+&lt;td>Сбросить промежуточную область и рабочий каталог, чтобы они соответствовали самой последней фиксации, и перезаписать все изменения в рабочем каталоге&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">git reset &lt;commit>&lt;/td>
-&lt;td style="text-align: left">&lt;code>git reset &amp;lt;commit&amp;gt;&lt;/code>&lt;/td>
-&lt;td style="text-align: left">Переместите конец текущей ветки назад к &lt;commit>, сбросьте промежуточную область, чтобы она соответствовала, но оставьте рабочий каталог в покое&lt;/td>
+&lt;td>git reset &lt;commit>&lt;/td>
+&lt;td>&lt;code>git reset &amp;lt;commit&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Переместите конец текущей ветки назад к &lt;commit>, сбросьте промежуточную область, чтобы она соответствовала, но оставьте рабочий каталог в покое&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">git reset &amp;ndash;hard &lt;commit>&lt;/td>
-&lt;td style="text-align: left">&lt;code>git reset --hard &amp;lt;commit&amp;gt;&lt;/code>&lt;/td>
-&lt;td style="text-align: left">То же, что и предыдущее, но сбрасывает и промежуточную область, и рабочий каталог, чтобы они совпадали. Удаляет незафиксированные изменения и все фиксации после &lt;commit>.&lt;/td>
+&lt;td>git reset &amp;ndash;hard &lt;commit>&lt;/td>
+&lt;td>&lt;code>git reset --hard &amp;lt;commit&amp;gt;&lt;/code>&lt;/td>
+&lt;td>То же, что и предыдущее, но сбрасывает и промежуточную область, и рабочий каталог, чтобы они совпадали. Удаляет незафиксированные изменения и все фиксации после &lt;commit>.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -595,26 +595,26 @@ loading="lazy"
 &lt;table>
 &lt;thead>
 &lt;tr>
-&lt;th style="text-align: left">Command&lt;/th>
-&lt;th style="text-align: left">Example&lt;/th>
-&lt;th style="text-align: left">Description&lt;/th>
+&lt;th>Command&lt;/th>
+&lt;th>Example&lt;/th>
+&lt;th>Description&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align: left">git push &lt;remote> &amp;ndash;force&lt;/td>
-&lt;td style="text-align: left">&lt;code>git push &amp;lt;remote&amp;gt; --force&lt;/code>&lt;/td>
-&lt;td style="text-align: left">Делает git push, даже если это приводит к слиянию без быстрой перемотки вперед. Не используйте флаг &amp;ndash;force, если вы абсолютно не уверены, что знаете, что делаете.&lt;/td>
+&lt;td>git push &lt;remote> &amp;ndash;force&lt;/td>
+&lt;td>&lt;code>git push &amp;lt;remote&amp;gt; --force&lt;/code>&lt;/td>
+&lt;td>Делает git push, даже если это приводит к слиянию без быстрой перемотки вперед. Не используйте флаг &amp;ndash;force, если вы абсолютно не уверены, что знаете, что делаете.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">git push &lt;remote> &amp;ndash;all&lt;/td>
-&lt;td style="text-align: left">&lt;code>git push &amp;lt;remote&amp;gt; --all&lt;/code>&lt;/td>
-&lt;td style="text-align: left">Переместите все свои локальные ветки на указанный удаленный сервер.&lt;/td>
+&lt;td>git push &lt;remote> &amp;ndash;all&lt;/td>
+&lt;td>&lt;code>git push &amp;lt;remote&amp;gt; --all&lt;/code>&lt;/td>
+&lt;td>Переместите все свои локальные ветки на указанный удаленный сервер.&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align: left">git push &lt;remote> &amp;ndash;tags&lt;/td>
-&lt;td style="text-align: left">&lt;code>git push &amp;lt;remote&amp;gt; --tags&lt;/code>&lt;/td>
-&lt;td style="text-align: left">Теги не добавляются автоматически при отправке ветки или использовании флага &amp;ndash;all. Флаг &amp;ndash;tags отправляет все ваши локальные теги в удаленное репо.&lt;/td>
+&lt;td>git push &lt;remote> &amp;ndash;tags&lt;/td>
+&lt;td>&lt;code>git push &amp;lt;remote&amp;gt; --tags&lt;/code>&lt;/td>
+&lt;td>Теги не добавляются автоматически при отправке ветки или использовании флага &amp;ndash;all. Флаг &amp;ndash;tags отправляет все ваши локальные теги в удаленное репо.&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
