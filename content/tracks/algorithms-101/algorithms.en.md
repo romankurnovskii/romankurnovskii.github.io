@@ -10,8 +10,6 @@ date: 2022-10-15
 lastMod: 2023-06-06
 # featuredImage: https://media.geeksforgeeks.org/wp-content/cdn-uploads/20221017172544/Introduction-to-Data-Structures-and-Algorithms-DSA.png
 weight: 30
-authors:
-published: true
 ---
 
 ## Intro

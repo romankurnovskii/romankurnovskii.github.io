@@ -5,7 +5,7 @@ description: An easy yet interesting problem in which we must determine whether 
 toc: true
 tags: [Algorithms, Easy]
 categories: [Algorithms, Easy, LeetCodeTop75]
-date: 2023-08-1
+date: 2023-08-21
 lastMod: 2023-08-31
 featuredImage: https://picsum.photos/700/241?grayscale
 weight: 605
