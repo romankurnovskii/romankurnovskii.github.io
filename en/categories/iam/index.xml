@@ -60,8 +60,7 @@ loading="lazy"
 &lt;/p>
 &lt;h2 id="practice">Practice&lt;/h2>
 &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/FUoRNeQm6RY?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="A step-by-step guide to setting up AWS Identity and Access Management"
->&lt;/iframe>
+&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/FUoRNeQm6RY?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="A step-by-step guide to setting up AWS Identity and Access Management">&lt;/iframe>
 &lt;/div>
 &lt;p>Go to &lt;a href="https://us-east-1.console.aws.amazon.com/iam/home#/">IAM page&lt;/a>&lt;/p>
 &lt;h3 id="creating-iam-groups">Creating IAM groups&lt;/h3>

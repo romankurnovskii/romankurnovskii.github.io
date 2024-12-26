@@ -233,6 +233,33 @@ loading="lazy"
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> k &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> k
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>28. Find the Index of the First Occurrence in a String</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/28/index.en./</link><pubDate>Sat, 19 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/28/index.en./</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given two strings &lt;code>needle&lt;/code> and &lt;code>haystack&lt;/code>, return the index of the first occurrence of &lt;code>needle&lt;/code> in &lt;code>haystack&lt;/code>, or -1 if &lt;code>needle&lt;/code> is not part of &lt;code>haystack&lt;/code>.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;p>Input: haystack = &amp;ldquo;sadbutsad&amp;rdquo;, needle = &amp;ldquo;sad&amp;rdquo;
+Output: 0
+Explanation: &amp;ldquo;sad&amp;rdquo; occurs at index 0 and 6.
+The first occurrence is at index 0, so we return 0.&lt;/p>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;p>Input: haystack = &amp;ldquo;leetcode&amp;rdquo;, needle = &amp;ldquo;leeto&amp;rdquo;
+Output: -1
+Explanation: &amp;ldquo;leeto&amp;rdquo; did not occur in &amp;ldquo;leetcode&amp;rdquo;, so we return -1.&lt;/p>
+&lt;h2 id="code">Code&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">strStr&lt;/span>(self, haystack: &lt;span style="color:#007020">str&lt;/span>, needle: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> haystack&lt;span style="color:#666">.&lt;/span>find(needle)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">strStr&lt;/span>(self, haystack: &lt;span style="color:#007020">str&lt;/span>, needle: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> start &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> end &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(needle)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> end &lt;span style="color:#666">&amp;lt;=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(haystack):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> haystack[start:end] &lt;span style="color:#666">==&lt;/span> needle:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> start
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> start &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> end &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>42. Trapping Rain Water</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/42/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/42/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/trapping-rain-water/">LeetCode задача 42&lt;/a>&lt;/p>
 &lt;h2 id="задача">Задача&lt;/h2>
 &lt;p>Дан массив неотрицательных целых чисел, представляющих собой карту высот, где ширина каждой стойки равна 1. Вычислите, сколько воды может удерживать этот массив после дождя.&lt;/p>
@@ -434,8 +461,7 @@ loading="lazy"
 &lt;p>Now &lt;code>prev&lt;/code> is pointing to the &lt;code>head&lt;/code> of the reversed second half of the list.&lt;/p>
 &lt;p>The list now looks like this: &lt;code>1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; None and 6 -&amp;gt; 5 -&amp;gt; 4 -&amp;gt; None&lt;/code>.&lt;/p>
 &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/D7y_hoT_YZI?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
->&lt;/iframe>
+&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/D7y_hoT_YZI?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
 &lt;/div></description></item><item><title>283. Move Zeroes</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/283/</link><pubDate>Sat, 26 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/283/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/move-zeroes/">LeetCode задача&lt;/a>&lt;/p>
 &lt;h2 id="задача">Задача&lt;/h2>
 &lt;p>Дан целочисленный массив &lt;code>nums&lt;/code>. Нам необходимо переместить все &lt;code>0&lt;/code> в конец массива, сохраняя относительный порядок ненулевых элементов.&lt;/p>

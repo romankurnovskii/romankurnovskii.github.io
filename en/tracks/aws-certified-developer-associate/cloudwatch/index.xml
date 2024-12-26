@@ -207,7 +207,7 @@ loading="lazy"
 &lt;/p>
 &lt;p>8. Scroll down to &lt;strong>User data&lt;/strong> and copy and paste the following bash script code in the &lt;strong>User data&lt;/strong> (&lt;strong>As text&lt;/strong>) field:&lt;/p>
 &lt;p>This is where the magic happens. Next you will insert the code to execute during the instance launch. However, in order to send metrics to CloudWatch, you need to configure some credentials first. You can use either Access Keys or IAM roles for this task. In this Lab, you will follow the best practices and use IAM roles. There is an instance role already created in you account configured with the proper permissions.&lt;/p>
-&lt;p>&lt;a href="https://cloudacademy.com/lab/introduction-to-cloudwatch/install-the-ec2-monitoring-scripts/?context_id=4364&amp;context_resource=lp">Copy code&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://cloudacademy.com/lab/introduction-to-cloudwatch/install-the-ec2-monitoring-scripts/?context_id=4364&amp;amp;context_resource=lp">Copy code&lt;/a>&lt;/p>
 &lt;h1 id="binbash">!/bin/bash&lt;/h1>
 &lt;p>yum install -y perl-Switch perl-DateTime perl-Sys-Syslog perl-LWP-Protocol-https perl-Digest-SHA.x86_64
 wget &lt;a href="http://aws-cloudwatch.s3.amazonaws.com/downloads/CloudWatchMonitoringScripts-1.2.2.zip">http://aws-cloudwatch.s3.amazonaws.com/downloads/CloudWatchMonitoringScripts-1.2.2.zip&lt;/a>

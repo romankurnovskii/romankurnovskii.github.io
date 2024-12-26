@@ -8,7 +8,7 @@
 &lt;h2 id="практика">Практика&lt;/h2>
 &lt;h3 id="контролируемое-развертывание-с-aws-elastic-beanstalk">Контролируемое развертывание с AWS Elastic Beanstalk&lt;/h3>
 &lt;ul>
-&lt;li>&lt;a href="https://cloudacademy.com/lab/run-controlled-deploy-aws-elastic-beanstalk/?context_resource=lp&amp;context_id=4364">Ссылка на лабораторную работу&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://cloudacademy.com/lab/run-controlled-deploy-aws-elastic-beanstalk/?context_resource=lp&amp;amp;context_id=4364">Ссылка на лабораторную работу&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;p>В этой лабораторной работе развернем несколько обновлений версий приложения в среде с балансировкой нагрузки и автоматическим масштабированием.&lt;/p>
 &lt;p>Первое обновление развертывается с помощью простого развертывания. Второе обновление развертывается с помощью &lt;code>blue-green&lt;/code> развертывания, когда создается отдельная среда для запуска новой версии приложения, а DNS свитчер переключает входящий трафик на новую среду.&lt;/p>

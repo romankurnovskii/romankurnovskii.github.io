@@ -155,9 +155,20 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Тенденция: Когда 50-дневная SMA находится выше 200-дневной SMA, это может указывать на продолжающийся восходящий тренд. И наоборот, если 50-дневная SMA находится ниже 200-дневной SMA, это может свидетельствовать о нисходящем тренде.&lt;/p>
 &lt;p>Потенциальная точка входа: Если более короткая SMA пересекается &lt;strong>выше более длинной&lt;/strong> SMA, это обычно рассматривается как &amp;ldquo;бычий&amp;rdquo; сигнал, и трейдеры могут рассмотреть возможность входа в длинную позицию, покупать.&lt;/p>
 &lt;p>И наоборот, если более короткая SMA пересекается ниже более длинной SMA, это может быть медвежьим сигналом, и трейдеры могут рассмотреть возможность продажи или входа в короткую позицию.&lt;/p>
-&lt;p>Используется в связке с RSI и/или MACD.&lt;/p></description></item><item><title>Разница Валютные форварды и Фьючерсы</title><link>https://romankurnovskii.com/ru/posts/economics/diff-forward-contracts-futures/</link><pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/economics/diff-forward-contracts-futures/</guid><description>&lt;h2 id="валютные-форварды">Валютные форварды&lt;/h2>
-&lt;p>Валютные форварды (forward contracts) - это договоры, в рамках которых две стороны соглашаются на обмен активами (обычно это валюты, сырьевые товары или финансовые инструменты) на определенную дату в будущем по заранее оговоренной цене. Это финансовый инструмент, который используется компаниями и инвесторами для защиты от рисков колебаний курсов валют. Например, если компания знает, что ей нужно купить определенную сумму валюты на будущее время для оплаты поставок, она может заключить валютный форвард, чтобы зафиксировать курс обмена на определенный период времени. Таким образом, она может избежать потерь от колебаний курса валют и защитить свою операционную прибыль.&lt;/p>
-&lt;p>Форварды являются одним из инструментов хеджирования рисков и используются для защиты от потенциальных потерь, связанных с колебаниями цен на активы. Например, компания, занимающаяся импортом товаров, может заключить форвардный контракт на покупку валюты по фиксированной цене, чтобы защитить себя от возможного увеличения стоимости валюты в будущем.&lt;/p>
+&lt;p>Используется в связке с RSI и/или MACD.&lt;/p></description></item><item><title>Валютные форварды и Фьючерсы</title><link>https://romankurnovskii.com/ru/posts/economics/diff-forward-contracts-futures.ru/</link><pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/economics/diff-forward-contracts-futures.ru/</guid><description>&lt;h2 id="валютные-форварды">Валютные форварды&lt;/h2>
+&lt;p>Валютные форварды (forward contracts) - это договоры, в рамках которых две стороны соглашаются на обмен активами (обычно это валюты, сырьевые товары или финансовые инструменты) на определенную дату в будущем по заранее оговоренной цене. Это финансовый инструмент, который используется компаниями и инвесторами для защиты от рисков колебаний курсов валют.&lt;/p>
+&lt;p>Например, если компания знает, что ей нужно купить определенную сумму валюты на будущее время для оплаты поставок, она может заключить валютный форвард, чтобы зафиксировать курс обмена на определенный период времени. Таким образом, она может избежать потерь от колебаний курса валют и защитить свою операционную прибыль.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="forwards.png"
+id="zoom-default"
+alt="forwards.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Форварды являются одним из инструментов хеджирования рисков и используются для защиты от потенциальных потерь, связанных с колебаниями цен на активы.&lt;/p>
+&lt;p>Например, компания, занимающаяся импортом товаров, может заключить форвардный контракт на покупку валюты по фиксированной цене, чтобы защитить себя от возможного увеличения стоимости валюты в будущем.&lt;/p>
 &lt;p>Форварды и фьючерсы относятся к группе финансовых инструментов, но они имеют некоторые отличия.&lt;/p>
 &lt;h2 id="фьючерсы">Фьючерсы&lt;/h2>
 &lt;p>Фьючерсы - это стандартизованные контракты на покупку или продажу определенного актива, например, валюты, акций, сырья, в определенное время в будущем по заранее оговоренной цене. Фьючерсы торгуются на биржах и обычно имеют строгие правила в отношении размера контракта, срока исполнения, стоимости и способа расчета.&lt;/p>
@@ -236,7 +247,7 @@
 &lt;h3 id="создание-заявки-в-ib">Создание заявки в IB&lt;/h3>
 &lt;ol>
 &lt;li>Заходим на сайт &lt;a href="https://www.interactivebrokers.co.uk/portal/#/">https://www.interactivebrokers.co.uk/portal/#/&lt;/a>&lt;/li>
-&lt;li>Нажимаем &lt;a href="https://www.interactivebrokers.co.uk/AccountManagement/AmAuthentication?action=FUND_TRANSFERS&amp;type=DEPOSIT">&lt;strong>Deposit&lt;/strong>&lt;/a>&lt;/li>
+&lt;li>Нажимаем &lt;a href="https://www.interactivebrokers.co.uk/AccountManagement/AmAuthentication?action=FUND_TRANSFERS&amp;amp;type=DEPOSIT">&lt;strong>Deposit&lt;/strong>&lt;/a>&lt;/li>
 &lt;/ol>
 &lt;p>&lt;p class="md__image">
 &lt;img
@@ -479,8 +490,7 @@ Your browser does not support the video tag.
 &lt;/video>
 &lt;h3 id="процесс">Процесс&lt;/h3>
 &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/dHwGdSaO-tk?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
->&lt;/iframe>
+&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/dHwGdSaO-tk?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
 &lt;/div></description></item><item><title>Установка Ubuntu Desktop 22.10 (Kinetic Kudu) на ARM CPU</title><link>https://romankurnovskii.com/ru/posts/howto-install-ubuntu-desktop-on-arm/</link><pubDate>Thu, 23 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/howto-install-ubuntu-desktop-on-arm/</guid><description>&lt;p>Ubuntu - одна из популярных Linux систем и достаточно много &lt;a href="https://mac.getutm.app/gallery/ubuntu-20-04">обзоров по установке Ubuntu&lt;/a>. В этой статье мы будем устанавливать образ Ubuntu для &lt;strong>ARM процессора&lt;/strong> на виртуальную машину UTM. Вся установка будет проходить на Mac OS.&lt;/p>
 &lt;h3 id="загрузка-установочного-образа">Загрузка установочного образа&lt;/h3>
 &lt;p>На сайте Ubuntu доступен для скачивания только образ &lt;a href="https://ubuntu.com/download/server/arm">Ubuntu Server ARM&lt;/a> версии &lt;strong>22.04&lt;/strong> - без графического интерфейса. Но можно скачать обновленный релиз Ubuntu Desktop для ARM - Daily Build по &lt;a href="https://cdimage.ubuntu.com/daily-live/current/">ссылке&lt;/a>.&lt;/p>
@@ -2992,7 +3002,7 @@ loading="lazy"
 &lt;/p>
 &lt;p>Удаляю ключи файлы чтобы случайно не закоммитить&lt;/p>
 &lt;p>на гитхабе создаю экшн&lt;/p>
-&lt;p>&lt;a href="https://github.com/romankurnovskii/notion-project/new/main?filename=.github%2Fworkflows%2Fmain.yml&amp;workflow_template=blank">https://github.com/romankurnovskii/notion-project/new/main?filename=.github%2Fworkflows%2Fmain.yml&amp;amp;workflow_template=blank&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://github.com/romankurnovskii/notion-project/new/main?filename=.github%2Fworkflows%2Fmain.yml&amp;amp;workflow_template=blank">https://github.com/romankurnovskii/notion-project/new/main?filename=.github%2Fworkflows%2Fmain.yml&amp;amp;workflow_template=blank&lt;/a>&lt;/p>
 &lt;p>Actions → Create&lt;/p>
 &lt;h2 id="создание-actions">Создание Actions&lt;/h2>
 &lt;p>Выбираю стандартный action (Deploy&amp;hellip;)&lt;/p>

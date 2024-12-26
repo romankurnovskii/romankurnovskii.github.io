@@ -60,8 +60,7 @@ loading="lazy"
 &lt;/p>
 &lt;h2 id="practice">Practice&lt;/h2>
 &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/FUoRNeQm6RY?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="A step-by-step guide to setting up AWS Identity and Access Management"
->&lt;/iframe>
+&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/FUoRNeQm6RY?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="A step-by-step guide to setting up AWS Identity and Access Management">&lt;/iframe>
 &lt;/div>
 &lt;p>Go to &lt;a href="https://us-east-1.console.aws.amazon.com/iam/home#/">IAM page&lt;/a>&lt;/p>
 &lt;h3 id="creating-iam-groups">Creating IAM groups&lt;/h3>
@@ -334,8 +333,7 @@ loading="lazy"
 &lt;p>&lt;a href="https://aws.amazon.com/ec2/pricing/">Current price&lt;/a>&lt;/p>
 &lt;h2 id="practice">Practice&lt;/h2>
 &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Lng4wP26_nk?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
->&lt;/iframe>
+&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Lng4wP26_nk?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
 &lt;/div>
 &lt;h3 id="tldr">TL;DR&lt;/h3>
 &lt;ol>
@@ -643,11 +641,10 @@ loading="lazy"
 &lt;/p>
 &lt;h2 id="practice">Practice&lt;/h2>
 &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Kt55Q3ijoh4?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
->&lt;/iframe>
+&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Kt55Q3ijoh4?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
 &lt;/div>
 &lt;h3 id="controlled-deployment-with-aws-elastic-beanstalk">Controlled deployment with AWS Elastic Beanstalk&lt;/h3>
-&lt;p>Lab &lt;a href="https://cloudacademy.com/lab/run-controlled-deploy-aws-elastic-beanstalk/?context_resource=lp&amp;context_id=4364">Controlled deployment with AWS Elastic Beanstalk&lt;/a>&lt;/p>
+&lt;p>Lab &lt;a href="https://cloudacademy.com/lab/run-controlled-deploy-aws-elastic-beanstalk/?context_resource=lp&amp;amp;context_id=4364">Controlled deployment with AWS Elastic Beanstalk&lt;/a>&lt;/p>
 &lt;p>In this lab, we will deploy several application version updates in a load-balanced, auto-scaling environment.&lt;/p>
 &lt;p>The first update is deployed using a simple deployment. The second update is deployed using a `blue-green&amp;rsquo; deployment, where a separate environment is created to run the new version of the application, and the DNS switch switches incoming traffic to the new environment.&lt;/p>
 &lt;p>The final deployment architecture will look like this&lt;/p>
@@ -1013,8 +1010,7 @@ loading="lazy"
 &lt;/ul>
 &lt;h2 id="practice">Practice&lt;/h2>
 &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/hxAkVn1u0cc?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
->&lt;/iframe>
+&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/hxAkVn1u0cc?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
 &lt;/div>
 &lt;p>In the AWS Management Console search bar, type Lambda and select Lambda under &amp;ldquo;&lt;strong>&lt;strong>Services&lt;/strong>&lt;/strong>&amp;rdquo;:&lt;/p>
 &lt;p>&lt;p class="md__image">
@@ -1661,8 +1657,7 @@ loading="lazy"
 &lt;p>CodeDeploy can also deploy a serverless Lambda function.&lt;/p>
 &lt;p>CodeDeploy can be connected to CodePipeline and use artifacts from there.&lt;/p>
 &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Wx-ain8UryM?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
->&lt;/iframe>
+&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Wx-ain8UryM?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
 &lt;/div>
 &lt;h3 id="platforms">Platforms&lt;/h3>
 &lt;p>Need to choose the compute platform:&lt;/p>
@@ -2214,8 +2209,7 @@ loading="lazy"
 &lt;li>&lt;a href="https://docs.aws.amazon.com/AmazonECR/latest/public/getting-started-cli.html">Quick start: Publishing to Amazon ECR Public using the AWS CLI&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/tANNsV6bGbQ?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
->&lt;/iframe>
+&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/tANNsV6bGbQ?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
 &lt;/div>
 &lt;p>Notes:&lt;/p>
 &lt;ul>
@@ -2550,8 +2544,7 @@ loading="lazy"
 &lt;h2 id="practice">Practice&lt;/h2>
 &lt;p>&lt;a href="https://cloudacademy.com/lab/eks-voteapp/">Building a Cloud Native Application&lt;/a>&lt;/p>
 &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/WFyeqieik-U?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
->&lt;/iframe>
+&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/WFyeqieik-U?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
 &lt;/div></description></item><item><title>Cognito</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cognito/</link><pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cognito/</guid><description>&lt;h2 id="about">About&lt;/h2>
 &lt;p>Amazon Cognito - Simple and Secure User Sign-Up, Sign-In, and Access Control&lt;/p>
 &lt;ul>
@@ -2814,8 +2807,7 @@ loading="lazy"
 &lt;/ul>
 &lt;h2 id="practice">Practice&lt;/h2>
 &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/OvpYjr00Bfs?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
->&lt;/iframe>
+&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/OvpYjr00Bfs?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
 &lt;/div>
 &lt;p>&lt;a href="processing-file-uploads-asyncronously-with-amazon-eventbridge">Processing File Uploads Asynchronously with Amazon EventBridge&lt;/a>&lt;/p>
 &lt;h2 id="questions">Questions&lt;/h2>

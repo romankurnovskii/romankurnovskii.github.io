@@ -1496,7 +1496,7 @@ Let&amp;rsquo;s go through two examples to understand this approach better.&lt;/
 &lt;p>Once all possible combinations with &lt;code>1&lt;/code> in the first position have been explored, the number &lt;code>1&lt;/code> will be removed from path, and the function will try the next number from &lt;code>nums&lt;/code>, which in this case is &lt;code>2&lt;/code>. The function continues in this way until all valid combinations of length &lt;code>k&lt;/code> have been found and added to the res list.&lt;/p>
 &lt;p>&lt;strong>Problem examples:&lt;/strong>&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="https://romankurnovskii.com/en/">LeetCode 17. Letter Combinations of a Phone Number&lt;/a>&lt;/li>
+&lt;li>&lt;a href="">LeetCode 17. Letter Combinations of a Phone Number&lt;/a>&lt;/li>
 &lt;li>[LeetCode 22. Generate Parentheses]&lt;/li>
 &lt;li>[LeetCode 46. Permutations]&lt;/li>
 &lt;/ul>

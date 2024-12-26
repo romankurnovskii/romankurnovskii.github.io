@@ -310,7 +310,7 @@ tree[7] = sum(a[0:8])
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>34 - 21 = 13
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="ресурсы">Ресурсы&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="https://www.youtube.com/watch?v=BzFN9YwR-NM&amp;t=797s">https://www.youtube.com/watch?v=BzFN9YwR-NM&amp;t=797s&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=BzFN9YwR-NM&amp;amp;t=797s">https://www.youtube.com/watch?v=BzFN9YwR-NM&amp;t=797s&lt;/a>&lt;/li>
 &lt;/ul></description></item><item><title>Data Structures</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/data-structures/</link><pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/data-structures/</guid><description>&lt;h3 id="tree">Tree&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Node&lt;/span>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, value):

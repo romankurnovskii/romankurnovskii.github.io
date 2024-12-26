@@ -109,7 +109,7 @@ loading="lazy"
 &lt;/p>
 &lt;/p>
 &lt;p>An &lt;strong>Availability Zone&lt;/strong>, often referred to as an AZ, helps make your infrastructure more reliable. You can think of each zone as a separate data center (in many cases they are exactly that), they are guaranteed to have redundant power, networking, and connectivity within an AWS region.&lt;/p>
-&lt;p>To learn more about regions, availability zones, and redundancy in AWS, visit the documentation &lt;a href="https://aws.amazon.com/about-aws/global-infrastructure/regions_az/?p=ngi&amp;loc=2">here&lt;/a>.&lt;/p>
+&lt;p>To learn more about regions, availability zones, and redundancy in AWS, visit the documentation &lt;a href="https://aws.amazon.com/about-aws/global-infrastructure/regions_az/?p=ngi&amp;amp;loc=2">here&lt;/a>.&lt;/p>
 &lt;p>Each subnet is mapped to one availability zone. It&amp;rsquo;s important to configure the selected subnets correctly. If a subnet containing an EC2 instance is not selected, the load balancer will not be able to communicate with that EC2 instance.&lt;/p>
 &lt;p>8. To move to the next step of the wizard, click &lt;strong>Next: Assign Security Groups&lt;/strong>:&lt;/p>
 &lt;p>&lt;p class="md__image">

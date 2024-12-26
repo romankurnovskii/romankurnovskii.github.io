@@ -74,11 +74,10 @@ loading="lazy"
 &lt;/p>
 &lt;h2 id="practice">Practice&lt;/h2>
 &lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Kt55Q3ijoh4?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"
->&lt;/iframe>
+&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Kt55Q3ijoh4?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
 &lt;/div>
 &lt;h3 id="controlled-deployment-with-aws-elastic-beanstalk">Controlled deployment with AWS Elastic Beanstalk&lt;/h3>
-&lt;p>Lab &lt;a href="https://cloudacademy.com/lab/run-controlled-deploy-aws-elastic-beanstalk/?context_resource=lp&amp;context_id=4364">Controlled deployment with AWS Elastic Beanstalk&lt;/a>&lt;/p>
+&lt;p>Lab &lt;a href="https://cloudacademy.com/lab/run-controlled-deploy-aws-elastic-beanstalk/?context_resource=lp&amp;amp;context_id=4364">Controlled deployment with AWS Elastic Beanstalk&lt;/a>&lt;/p>
 &lt;p>In this lab, we will deploy several application version updates in a load-balanced, auto-scaling environment.&lt;/p>
 &lt;p>The first update is deployed using a simple deployment. The second update is deployed using a `blue-green&amp;rsquo; deployment, where a separate environment is created to run the new version of the application, and the DNS switch switches incoming traffic to the new environment.&lt;/p>
 &lt;p>The final deployment architecture will look like this&lt;/p>
