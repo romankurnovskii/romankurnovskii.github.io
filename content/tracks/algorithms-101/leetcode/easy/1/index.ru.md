@@ -2,7 +2,7 @@
 title: 1. Two Sum
 description: LeetCode 1. Two Sum
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: [Array, "Hash Table", "LeetCode Top Interview 150"]
 categories: [Algorithms, Easy]
 date: 2022-10-16

@@ -9,7 +9,7 @@ date: 2022-03-07T15:31:25+02:00
 featuredVideo:
 featuredImage:
 Цель: Публикация постов
-authors: [roman-kurnovskii]
+authors: []
 ---
 
 ## Подготовка

@@ -2,7 +2,7 @@
 title: 14. Longest Common Prefix
 description: LeetCode 14. Longest Common Prefix
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: [String]
 categories: [Algorithms, Easy]
 date: 2022-10-21

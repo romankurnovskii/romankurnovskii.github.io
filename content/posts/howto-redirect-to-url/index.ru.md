@@ -8,7 +8,7 @@ categories: [JavaScript]
 date: "2022-06-06"
 lastMod: "2022-06-06"
 featuredImage: featured.ru.jpg
-authors: [roman-kurnovskii]
+authors: []
 ---
 
 Пользователя можно перенаправлять с одной веб-страницы на любую другую несколькими способами.

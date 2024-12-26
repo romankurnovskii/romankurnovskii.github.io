@@ -9,7 +9,7 @@ categories: [Programming]
 date: 2023-03-07
 lastMod: 2023-05-15
 featuredImage: https://picsum.photos/700/237?grayscale
-authors: [roman-kurnovskii]
+authors: []
 ---
 
 

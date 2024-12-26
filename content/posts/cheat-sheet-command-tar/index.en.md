@@ -7,7 +7,6 @@ series: [cheatsheet]
 categories: [OS, Linux, MacOS, CLI, cheatsheet]
 date: "2022-06-05"
 featuredImage: featured.en.jpg
-authors: [roman-kurnovskii]
 ---
 
 ## Common options

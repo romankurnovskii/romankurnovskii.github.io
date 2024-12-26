@@ -2,7 +2,7 @@
 title: 34. Find First and Last Position of Element in Sorted Array
 description: LeetCode 34. Find First and Last Position of Element in Sorted Array
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: [Array, "Bit Manipulation"]
 categories: [Algorithms, Medium]
 series:

@@ -2,7 +2,7 @@
 title: 48. Rotate Image
 description: LeetCode 48. Rotate Image
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: [Array, Math, Matrix]
 categories: [Algorithms, Medium]
 series:

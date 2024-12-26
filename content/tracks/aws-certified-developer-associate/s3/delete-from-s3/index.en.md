@@ -2,7 +2,7 @@
 title: Delete S3 Bucket
 description: Delete an Amazon S3 Bucket
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: [s3]
 categories: [s3]
 date: 2022-09-11

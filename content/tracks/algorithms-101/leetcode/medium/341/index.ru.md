@@ -8,7 +8,7 @@ categories: [Algorithms, Medium, LeetCode]
 toc: true
 lastMod: 2023-08-31
 featuredImage: https://picsum.photos/700/241?grayscale
-authors: [roman-kurnovskii]
+authors: []
 weight: 341
 ---
 ## Задача

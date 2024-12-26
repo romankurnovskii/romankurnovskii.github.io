@@ -2,7 +2,7 @@
 title: Написание статей
 description: Заметки по написанию статей
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: []
 categories: []
 series:

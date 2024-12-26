@@ -2,7 +2,7 @@
 title: 94. Binary Tree Inorder Traversal
 description: LeetCode 94. Binary Tree Inorder Traversal
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: [Stack, Tree, "Depth-First Search", "Binary Tree"]
 categories: [Algorithms, Easy]
 date: 2022-10-31

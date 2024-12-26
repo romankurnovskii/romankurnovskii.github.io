@@ -2,7 +2,7 @@
 title: Диссертация
 description: Подготовка диссертации
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: []
 categories: [Roadmaps]
 series: []

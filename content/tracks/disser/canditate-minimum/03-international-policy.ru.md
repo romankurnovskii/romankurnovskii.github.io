@@ -2,7 +2,7 @@
 title: Раздел 3. Международная торговая политика
 description: Кандидатский минимум 08.00.14 «Мировая экономика» - Тезисы ответов
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: []
 categories: []
 series:

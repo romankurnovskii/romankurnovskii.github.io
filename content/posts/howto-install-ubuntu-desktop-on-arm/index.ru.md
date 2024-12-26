@@ -9,7 +9,7 @@ categories: [OS, Linux]
 date: "2022-06-23"
 lastMod: 2023-02-24
 featuredImage: img/featured.jpg
-authors: [roman-kurnovskii]
+authors: []
 ---
 
 Ubuntu - одна из популярных Linux систем и достаточно много [обзоров по установке Ubuntu](https://mac.getutm.app/gallery/ubuntu-20-04). В этой статье мы будем устанавливать образ Ubuntu для **ARM процессора** на виртуальную машину UTM. Вся установка будет проходить на Mac OS.

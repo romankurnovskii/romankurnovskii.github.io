@@ -8,7 +8,6 @@ categories: [docker, CheatSheet]
 date: "2022-06-07"
 lastMod: "2022-06-07"
 featuredImage: featured.en.jpg
-authors: [roman-kurnovskii]
 ---
 
 

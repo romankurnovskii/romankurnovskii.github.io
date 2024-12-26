@@ -9,7 +9,7 @@ categories: []
 date: 2023-12-24
 lastMod: 2023-12-24
 featuredImage: https://picsum.photos/700/224?grayscale
-authors: [roman-kurnovskii]
+authors: []
 ---
 
 ## TL;DR

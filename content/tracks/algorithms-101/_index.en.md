@@ -2,7 +2,7 @@
 title: Algorithms 101
 description: Algorithms 101 Cookbook
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: []
 categories: [Programming, Roadmaps, Algorithms]
 series:

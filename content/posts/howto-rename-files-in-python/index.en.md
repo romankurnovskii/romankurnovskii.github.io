@@ -8,7 +8,7 @@ categories: [Programming, Python]
 date: "2022-06-04"
 lastMod: "2022-06-04"
 featuredImage: featured.en.jpg
-authors: [roman-kurnovskii]
+authors: []
 ---
 
 Learn different ways to rename files in Python using the os and pathlib modules.

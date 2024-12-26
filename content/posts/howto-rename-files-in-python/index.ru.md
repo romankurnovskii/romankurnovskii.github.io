@@ -8,7 +8,7 @@ categories: [программирование, Python]
 date: "2022-06-04"
 lastMod: "2022-06-04"
 featuredImage: featured.ru.jpg
-authors: [roman-kurnovskii]
+authors: []
 ---
 
 ## os.rename

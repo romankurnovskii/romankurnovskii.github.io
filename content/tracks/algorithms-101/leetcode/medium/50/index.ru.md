@@ -2,7 +2,7 @@
 title: 50. Pow(x, n)
 description: LeetCode 50. Pow(x, n)
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: [Math, Recursion]
 categories: [Algorithms, Medium]
 series:

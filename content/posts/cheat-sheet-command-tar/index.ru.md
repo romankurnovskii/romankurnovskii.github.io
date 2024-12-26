@@ -7,7 +7,6 @@ series:
 categories: [OS, Linux, MacOS, CLI, CheatSheet]
 date: "2022-06-05"
 featuredImage: featured.ru.jpg
-authors: [roman-kurnovskii]
 ---
 
 ## Кратко

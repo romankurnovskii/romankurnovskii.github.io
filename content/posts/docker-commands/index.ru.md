@@ -8,7 +8,7 @@ categories: [Docker, CheatSheet]
 date: "2022-06-07"
 lastMod: "2022-06-07"
 featuredImage: featured.ru.jpg
-authors: [roman-kurnovskii]
+authors: []
 ---
 
 *[Full in english](http://localhost:1313/en/posts/docker-commands/)*

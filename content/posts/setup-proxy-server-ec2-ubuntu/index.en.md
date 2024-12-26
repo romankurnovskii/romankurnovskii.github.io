@@ -9,7 +9,7 @@ categories: ["Technology", "Networking", "Cloud Computing"]
 date: 2023-11-28
 lastMod: 2023-11-30
 featuredImage: https://picsum.photos/700/237?grayscale
-authors: [roman-kurnovskii]
+authors: []
 ---
 
 
@@ -23,7 +23,7 @@ authors: [roman-kurnovskii]
 1. Review and launch the instance.
 1. Create and download a key pair for SSH access. (optional, can connect through AWS console later)
 
-![](./assets/ec2-security-group-inbound-setup.jpg)
+![ec2-security-group-inbound-setup](./assets/ec2-security-group-inbound-setup.png)
 
 ## 2. Connect to Your Instance
 

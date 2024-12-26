@@ -2,7 +2,7 @@
 title: Create a folder inside S3 Bucket
 description: Create a Folder inside an Amazon S3 Bucket
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: [s3]
 categories: [s3]
 date: 2022-09-11

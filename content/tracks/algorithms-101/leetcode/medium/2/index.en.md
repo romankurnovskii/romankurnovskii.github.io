@@ -2,7 +2,7 @@
 title: 2. Add Two Numbers
 description: LeetCode 2. Add Two Numbers
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: [Linked List, Math, Recursion]
 categories: [Algorithms, Medium, "LeetCode Top Interview"]
 series:

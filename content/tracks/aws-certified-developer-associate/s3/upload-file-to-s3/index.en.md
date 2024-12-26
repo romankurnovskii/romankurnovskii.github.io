@@ -2,7 +2,7 @@
 title: Upload a file to S3
 description: Uploading a File to Amazon S3
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: [s3]
 categories: [s3]
 date: 2022-09-11

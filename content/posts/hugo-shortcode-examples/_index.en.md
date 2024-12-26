@@ -2,7 +2,7 @@
 title: Hugo shortcode examples
 description:
 toc: false
-authors: [roman-kurnovskii]
+authors: []
 tags: [Hugo]
 categories: [Programming, Hugo, Hugo shorcodes]
 series:

@@ -2,7 +2,7 @@
 title: Grant public access to S3 Object
 description: Grant Public Access to an Amazon S3 Object
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: [s3]
 categories: [s3]
 date: 2022-09-11

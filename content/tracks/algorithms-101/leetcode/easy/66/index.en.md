@@ -2,7 +2,7 @@
 title: 66. Plus One
 description: LeetCode 66. Plus One
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: [Array, Math]
 categories: [Algorithms, Easy]
 date: 2022-10-27

@@ -2,7 +2,7 @@
 title: 15. 3Sum
 description: LeetCode 15. 3Sum
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: [Array, "Two Pointers", Sorting]
 categories: [Algorithms, Medium]
 series: [Array, "Two Pointers", Sorting, "LeetCode Top Interview"]

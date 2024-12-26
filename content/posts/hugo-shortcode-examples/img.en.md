@@ -2,7 +2,7 @@
 title: img
 description: Insert resizable image in post
 toc: 
-authors: [roman-kurnovskii]
+authors: []
 tags: [Hugo]
 categories: [Hugo shorcodes]
 series:

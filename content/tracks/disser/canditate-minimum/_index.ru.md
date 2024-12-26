@@ -3,7 +3,7 @@ title: Кандидатский минимум Мировая экономика
 seoTitle: Ответы на вопросы Кандидатский минимум 08.00.14 «Мировая экономика»
 description: Кандидатский минимум 08.00.14 «Мировая экономика» - Тезисы ответов
 toc: false
-authors: [roman-kurnovskii]
+authors: []
 tags: []
 categories: []
 series:

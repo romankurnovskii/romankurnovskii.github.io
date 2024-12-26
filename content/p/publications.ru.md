@@ -2,7 +2,7 @@
 title: Печатные публикации
 description: Печатные журналы / сборники
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 date: 2021-03-31T13:11:22+08:00
 lastMod: 2023-03-28
 draft: false
@@ -23,6 +23,18 @@ codes:
 
 
 publications:
+
+- title: "Эволюция методов машинного обучения: от Alphazera к Alphaproof и их применение в решении математических задач"
+  authors: "Курновский Р.М."
+  journal: "Международный журнал прикладных и фундаментальных исследований, 2024 г. Страницы: "
+  journalLink: NA
+  pdfLink: NA
+  researchGateLink: NA
+  ssrnLink: NA
+  academia.edu: NA
+  year: 2024
+  comment: applied-research.ru
+
 - title: Изменение настроения инвесторов и сотрудников в ИТ-индустрии Израиля в контексте внедряемой судебной реформы
   authors: "Курновский Р.М."
   journal: "Вопросы политологии / ВАК. Том 13. № 10-2 (98-2), 2023 г. Страницы: 5493-5503"

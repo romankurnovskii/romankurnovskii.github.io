@@ -2,7 +2,7 @@
 title: 13. Roman to Integer
 description: LeetCode 13. Roman to Integer - Solution
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: ["Hash Table", Math, String]
 categories: [Algorithms, Easy, LeetCodeTop75]
 series: [LeetCodeTop75]

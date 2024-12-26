@@ -2,7 +2,7 @@
 title: 36. Valid Sudoku
 description: LeetCode 36. Valid Sudoku
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: [Array, "Hash Table", Matrix]
 categories: [Algorithms, Medium]
 series:

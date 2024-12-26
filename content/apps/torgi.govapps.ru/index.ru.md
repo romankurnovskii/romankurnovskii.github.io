@@ -16,4 +16,4 @@ packageType: web
 type: posts
 ---
 
-**Link:** <https://torgi.govapps.ru>
+- <a href="https://torgi.govapps.ru" target="_blank">torgi.govapps.ru</a>

@@ -2,7 +2,7 @@
 title: 38. Count and Say
 description: LeetCode 38. Count and Say
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: [String]
 categories: [Algorithms, Medium]
 series:

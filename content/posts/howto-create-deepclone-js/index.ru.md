@@ -8,7 +8,7 @@ categories: [JavaScript]
 date: "2022-06-02"
 lastMod: "2022-06-02"
 featuredImage: featured.ru.jpg
-authors: [roman-kurnovskii]
+authors: []
 ---
 
 В JavaScript объекты копируются по ссылке. Это означает, что фактически две(или более) ссылок ссылается на *один* объект

@@ -3,12 +3,12 @@ title: How to upload an opensource application to SourceForge
 seoTitle: How to upload an opensource application to SourceForge
 description: Step-by-Step Guide how to upload and manage your open-source application on SourceForge with this detailed, step-by-step guide, ensuring maximum visibility and accessibility for your project.
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: []
 categories: [Programming]
 series:
 date: 2023-03-16
-featuredImage: /assets/002.png
+featuredImage: /ru/assets/002.png
 weight: 0
 ---
 

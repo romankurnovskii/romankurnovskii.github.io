@@ -7,7 +7,6 @@ series: ["AWS exam quizz"]
 categories: ["AWS Amplify"]
 date: 2022-10-12
 featuredImage: 
-authors: [roman-kurnovskii]
 # weight: 20
 ---
 

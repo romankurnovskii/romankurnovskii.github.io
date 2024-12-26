@@ -2,7 +2,7 @@
 title: 69. Sqrt(x)
 description: LeetCode 69. Sqrt(x)
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: [Math, "Binary Search"]
 categories: [Algorithms, Easy]
 date: 2022-10-28

@@ -3,7 +3,7 @@ title: 62. Unique Paths
 description: LeetCode 62. Unique Paths
 seoTitle: LeetCode 62. Unique Paths | Python solution and explanation
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: [Math, "Dynamic Programming", Combinatorics]
 categories: [Algorithms, Medium]
 series: [Math, "Dynamic Programming", Combinatorics]

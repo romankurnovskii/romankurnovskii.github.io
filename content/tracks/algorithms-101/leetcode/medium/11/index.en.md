@@ -9,7 +9,7 @@ series:
 date: 2022-11-03
 lastMod: 2023-08-07
 featuredImage:
-authors: [roman-kurnovskii]
+authors: []
 weight: 11
 ---
 

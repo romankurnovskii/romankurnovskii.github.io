@@ -2,7 +2,7 @@
 title: 46. Permutations
 description: LeetCode 46. Permutations
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: [Array, Backtracking]
 categories: [Algorithms, Medium]
 series:

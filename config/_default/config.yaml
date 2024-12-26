@@ -10,10 +10,13 @@ theme: hugo-theme-yalla
 #     path: github.com/romankurnovskii/hugo-theme-yalla
 # theme: github.com/romankurnovskii/hugo-theme-yalla
 
-defaultContentLanguage: en
+defaultContentLanguage: ru
 defaultContentLanguageInSubdir: true
 
-paginate: 13
+pagination:
+  disableAliases: false
+  pagerSize: 13
+
 copyright: >
   &copy; 2024 Personal page
 enableEmoji: true

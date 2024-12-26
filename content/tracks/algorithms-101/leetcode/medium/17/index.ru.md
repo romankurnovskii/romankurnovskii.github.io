@@ -2,7 +2,7 @@
 title: 17. Letter Combinations of a Phone Number
 description: LeetCode 17. Letter Combinations of a Phone Number
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: ["Hash Table", "String", "Backtracking", "LeetCode Top Interview"]
 categories: [Algorithms, Medium]
 series:

@@ -6,8 +6,8 @@ tags: [linux, Debian, server-security, ssh]
 series:
 categories: [Linux, Debian]
 date: 2024-11-21
-authors: [roman-kurnovskii]
-featuredImage: https://picsum.photos/700/225?grayscale
+authors: []
+featuredImage: https://picsum.photos/700/229?grayscale
 ---
 
 

@@ -2,7 +2,7 @@
 title: Short description from article
 seoTitle: Generate short description from article
 description: Generate short description from article
-authors: [roman-kurnovskii]
+authors: []
 tags: []
 categories: []
 series:

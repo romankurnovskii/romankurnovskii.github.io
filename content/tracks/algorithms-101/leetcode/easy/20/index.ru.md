@@ -2,7 +2,7 @@
 title: 20. Valid Parentheses
 description: LeetCode 20. Valid Parentheses solution
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: [String, Stack]
 categories: [Algorithms, Easy]
 date: 2022-10-23

@@ -2,14 +2,14 @@
 title: Difference between Tries and Trees?
 seoTitle: Difference between Tries and Trees?
 description: Difference between Tries and Trees?
-toc: false
+toc: true
 tags: []
 series: []
 categories: [Programming]
 date: 2023-05-13
-lastMod: 2023-05-13
+lastMod: 2024-12-06
 featuredImage: https://picsum.photos/700/213?grayscale
-authors: [roman-kurnovskii]
+authors: []
 ---
 
 Despite their similar names, these structures serve different purposes, and understanding their differences is crucial to utilizing them effectively.

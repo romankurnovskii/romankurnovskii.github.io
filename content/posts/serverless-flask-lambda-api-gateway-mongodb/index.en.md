@@ -7,7 +7,7 @@ series: []
 categories: [AWS]
 date: 2022-09-06
 featuredImage: https://picsum.photos/701/234?grayscale
-authors: [roman-kurnovskii]
+authors: []
 draft: false
 ---
 

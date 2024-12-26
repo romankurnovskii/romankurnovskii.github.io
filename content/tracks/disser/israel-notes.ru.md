@@ -2,7 +2,7 @@
 title: Заметки по Израилю
 description: Заметки по Израилю
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: []
 categories: []
 series:

@@ -6,7 +6,6 @@ tags: [hugo]
 series: 
 categories: [Programming, Hugo]
 date: 2022-07-09
-authors: [roman-kurnovskii]
 featuredImage: img/featured.jpg
 ---
 

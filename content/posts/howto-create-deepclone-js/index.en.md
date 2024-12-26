@@ -8,7 +8,7 @@ tags: [JavaScript]
 date: 2022-06-02
 lastMod: 2023-02-06
 featuredImage: featured.en.jpg
-authors: [roman-kurnovskii]
+authors: []
 ---
 
 We can use recursion.

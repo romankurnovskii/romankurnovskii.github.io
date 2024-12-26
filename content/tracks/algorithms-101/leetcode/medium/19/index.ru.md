@@ -2,7 +2,7 @@
 title: 19. Remove Nth Node From End of List
 description: LeetCode 19. Remove Nth Node From End of List
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: [Medium,  "Linked List", "Two Pointers", "LeetCode Top Interview"]
 categories: [Algorithms, Medium]
 series:

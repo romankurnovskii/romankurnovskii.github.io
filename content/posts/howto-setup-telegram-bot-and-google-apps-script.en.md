@@ -9,8 +9,8 @@ series: []
 categories: [Programming]
 date: 2023-09-11
 lastMod: 2023-11-21
-featuredImage: https://picsum.photos/700/237?grayscale
-authors: [roman-kurnovskii]
+featuredImage: https://picsum.photos/700/239?grayscale
+authors: []
 ---
 
 

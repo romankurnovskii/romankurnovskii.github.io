@@ -3,7 +3,7 @@ title: 56. Merge Intervals
 description: LeetCode 56. Merge Intervals
 seoTitle: LeetCode 56. Merge Intervals | Python solution and explanation
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: [Array, Sorting]
 categories: [Algorithms, Medium]
 series: [Array, Sorting]

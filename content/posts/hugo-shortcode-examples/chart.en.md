@@ -2,7 +2,7 @@
 title: chart
 description: Hugo chart.js shortcode
 toc: 
-authors: [roman-kurnovskii]
+authors: []
 tags: [Hugo]
 categories: [Hugo shorcodes]
 series:

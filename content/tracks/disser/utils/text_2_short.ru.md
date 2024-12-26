@@ -2,7 +2,7 @@
 title: Генерация аннотации
 seoTitle: Сгенерировать краткое содержание текста онлайн бесплатно
 description: Генерация краткого содержания текста
-authors: [roman-kurnovskii]
+authors: []
 tags: []
 categories: []
 series:

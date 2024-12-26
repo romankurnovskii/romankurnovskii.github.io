@@ -2,7 +2,7 @@
 title: Questions
 description: AWS exam questions Certified Developer 2023
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags:
 categories:
 series:

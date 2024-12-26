@@ -2,7 +2,7 @@
 title: 21. Merge Two Sorted Lists
 description: LeetCode 21. Merge Two Sorted Lists
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: ["Linked List", Recursion]
 categories: [Algorithms, Easy]
 date: 2022-10-25

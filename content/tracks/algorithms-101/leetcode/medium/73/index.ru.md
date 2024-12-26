@@ -3,7 +3,7 @@ title: 73. Set Matrix Zeroes
 description: LeetCode 73. Set Matrix Zeroes
 seoTitle: LeetCode 73. Set Matrix Zeroes | Python solution and explanation
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: [Array, "Hash Table", Matrix]
 categories: [Algorithms, Medium]
 series: [Array, "Hash Table", Matrix]

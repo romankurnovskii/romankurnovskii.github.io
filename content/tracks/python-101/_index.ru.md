@@ -2,7 +2,7 @@
 title: Карманная книга по Python
 description: Карманная книга по Python + Топ 100 вопросов по Python 2023
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: 
 categories: [Roadmaps, programming, Python]
 series: [руководства]

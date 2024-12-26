@@ -2,7 +2,7 @@
 title: 29. Divide Two Integers
 description: LeetCode 29. Divide Two Integers
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: [Math, "Bit Manipulation"]
 categories: [Algorithms, Medium]
 series:

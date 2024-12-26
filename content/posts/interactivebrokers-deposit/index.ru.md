@@ -8,7 +8,7 @@ categories: []
 date: 2022-10-07
 lastMod: 2023-09-01
 featuredImage: img/featured.ru.jpg
-authors: [roman-kurnovskii]
+authors: []
 ---
 
 ## Web

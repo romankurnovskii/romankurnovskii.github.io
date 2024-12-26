@@ -7,7 +7,7 @@ series:
 categories: [Hugo, React]
 date: "2022-06-19"
 featuredImage: img/featured.jpg
-authors: [roman-kurnovskii]
+authors: []
 ---
 
 Hugo предлагает подключение различных JS библиотек в проект. Такие изменения влекут за собой полное обновление проекта.

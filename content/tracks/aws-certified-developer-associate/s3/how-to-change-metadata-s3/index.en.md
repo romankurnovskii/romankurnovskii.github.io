@@ -2,7 +2,7 @@
 title: Change metadata of S3 Object
 description: Changing the Metadata of an Amazon S3 Object
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: [s3]
 categories: [s3]
 date: 2022-09-11

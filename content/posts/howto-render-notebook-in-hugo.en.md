@@ -9,7 +9,7 @@ categories: [Programming, Hugo]
 date: 2023-06-17
 lastMod: 2023-06-17
 featuredImage: https://picsum.photos/703/235?grayscale
-authors: [roman-kurnovskii]
+authors: []
 ---
 
 

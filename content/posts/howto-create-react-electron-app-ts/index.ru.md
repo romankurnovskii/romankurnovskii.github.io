@@ -9,7 +9,7 @@ categories: [JavaScript]
 date: 2023-08-26
 lastMod: 2023-08-26
 featuredImage: https://github.com/romankurnovskii/electron-react-template/raw/main/assets/logo.png
-authors: [roman-kurnovskii]
+authors: []
 ---
 
 В этом пошаговом руководстве мы создадим простое приложение React-Electron с нуля. Electron — это фреймворк, который позволяет создавать кроссплатформенные настольные приложения с использованием веб-технологий, таких как HTML, CSS и JavaScript. React — популярная библиотека JavaScript для создания пользовательских интерфейсов.

@@ -2,7 +2,7 @@
 title: Раздел 5. Международный валютный рынок
 description: Кандидатский минимум 08.00.14 «Мировая экономика» - Тезисы ответов
 toc: true
-authors: [roman-kurnovskii]
+authors: []
 tags: []
 categories: []
 series:
