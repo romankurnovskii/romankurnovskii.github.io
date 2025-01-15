@@ -26,14 +26,18 @@ publications:
 
 - title: "Эволюция методов машинного обучения: от Alphazera к Alphaproof и их применение в решении математических задач"
   authors: "Курновский Р.М."
-  journal: "Международный журнал прикладных и фундаментальных исследований, 2024 г. Страницы: "
-  journalLink: NA
-  pdfLink: NA
-  researchGateLink: NA
+  journal: "Международный журнал прикладных и фундаментальных исследований, 2024. – № 12. Страницы: 41–45"
+  journalLink: https://doi.org/10.17513/mjpfi.13680
+  pdfLink: /articles/2024-12-evolution-of-ml-methods-allphazero-to-alphaproof.pdf
+  researchGateLink: https://www.researchgate.net/publication/388008939_Evolucia_metodov_masinnogo_obucenia_ot_AlphaZero_k_AlphaProof_i_ih_primenenie_v_resenii_matematiceskih_zadac
   ssrnLink: NA
   academia.edu: NA
   year: 2024
-  comment: applied-research.ru
+  doi: 10.17513/mjpfi.13680
+  udk: 004.8
+  comment: https://applied-research.ru/article/view?id=13680
+  elibrary: https://www.elibrary.ru/title_about_new.asp?id=120481
+
 
 - title: Изменение настроения инвесторов и сотрудников в ИТ-индустрии Израиля в контексте внедряемой судебной реформы
   authors: "Курновский Р.М."
