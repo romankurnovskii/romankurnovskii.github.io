@@ -2,7 +2,7 @@
 title: BrewMate
 seoTitle: BrewMate - Homebrew GUI Apps Manager 
 description: Homebrew GUI Apps Manager
-aliases: ["/brewmate", "/ru/apps/brewmate"]
+aliases: ["/brewmate"] # "/ru/apps/brewmate"]
 toc: false
 
 tags: []

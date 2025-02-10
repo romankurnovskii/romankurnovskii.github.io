@@ -4,7 +4,7 @@ description: Печатные журналы / сборники
 toc: true
 authors: []
 date: 2021-03-31T13:11:22+08:00
-lastMod: 2023-03-28
+lastMod: 2025-02-10
 draft: false
 tags: null
 categories: null
@@ -45,13 +45,14 @@ publications:
   journalLink: https://elibrary.ru/item.asp?id=56005245
   pdfLink: /articles/2023-12-investor-and-employee-sentiment-changes-in-israel’s-it-industry-in-light-of-the-implemented-judicial-reform.pdf
   researchGateLink: NA
+  doi: 10.35775/PSI.2023.98-2.10-2.018
   ssrnLink: NA
   academia.edu: NA
   year: 2023
 
 - title: "Цепочка создания стоимости: содержание, элементы и возможности ее использования"
   authors: "Курновский Р.М., Великородная Е. А."
-  journal: "Экономика и предпринимательство / ВАК. Номер 8, 2023 г. Страницы: 241-245"
+  journal: "с / ВАК. Номер 8, 2023 г. Страницы: 241-245"
   journalLink: https://www.elibrary.ru/item.asp?id=54711450
   pdfLink: /articles/2023-10-tsepochka-sozdaniya-stoimosti-soderzhanie-elementy-i-vozmozhnosti-ee-ispolzovaniya.pdf
   researchGateLink: NA

@@ -6,32 +6,26 @@
   "author": "Roman Kurnovskii <r.kurnovskii@gmail.com>",
   "scripts": {
     "md-lint": "markdownlint-cli2 \"**/*.md\" \"#node_modules\"",
-    "md-lint-fix": "markdownlint-cli2 --fix \"**/*.md\" \"#node_modules\" \"#venv\" ",
+    "md-lint-fix": "markdownlint-cli2 --fix \"**/*.md\" \"#node_modules\" \"#venv\"",
     "hugo-lunr-ml": "hugo-lunr-ml",
     "pull-git-modules": "git submodule update --init --recursive",
     "upd-modules": "git submodule update --remote --merge",
     "push": "git add .; git commit -am upd; git push",
-    "p": "npm run md-lint-fix; git commit -am upd; git pull; npm run upd-modules; npm run push"
+    "fixreactblockhref": "find content -type f -name \"*.md\" -exec sed -i '' -E 's/{{< reactblock src=\"<([^>\"]*)>\"/\\{{< reactblock src=\"\\1\"/g' {} +",
+    "p": "npm run md-lint-fix; npm run fixreactblockhref; git commit -am upd; git pull; npm run upd-modules; npm run push"
   },
-  "browserslist": [
-    "last 1 version",
-    "> 1%",
-    "maintained node versions",
-    "not dead"
-  ],
   "dependencies": {
+    "cssnano": "^7.0.6",
     "html-react-parser": "^5.2.2",
-    "marked": "^15.0.5",
+    "marked": "^15.0.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^7.0.2",
-    "@tailwindcss/typography": "^0.5.15",
+    "@tailwindcss/typography": "^0.5.16",
     "autoprefixer": "^10.4.20",
-    "cssnano": "^7.0.6",
     "hugo-lunr-ml": "^3.2.5",
-    "markdownlint-cli2": "^0.17.1",
+    "markdownlint-cli2": "^0.17.2",
     "postcss": "^8.5.1",
     "postcss-cli": "10.1.0",
     "postcss-import": "^16.1.0",
@@ -39,5 +33,11 @@
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^3.4.17",
     "tailwindcss-rtl": "^0.9.0"
-  }
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ]
 }

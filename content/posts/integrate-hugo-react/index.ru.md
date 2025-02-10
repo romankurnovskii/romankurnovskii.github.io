@@ -143,4 +143,4 @@ ReactDOM.render(React.createElement(MyCountButton), document.getElementById("my_
 
 Нажми на кнопку: <div id="_react_count_example_" style="display:inline-block"  class='inline-block bg-tertiary-bg rounded px-3 py-2 my-2 me-2 hover:text-yalla text-lg' >100</div>
 
-{{< reactblock src="<https://romankurnovskii.com/ru/posts/integrate-hugo-react/react-count-example.jsx?6>" divRender="_react_count_example_">}}
+{{< reactblock src="https://romankurnovskii.com/ru/posts/integrate-hugo-react/react-count-example.jsx?8" divRender="_react_count_example_">}}
