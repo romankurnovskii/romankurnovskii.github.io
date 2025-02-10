@@ -6,12 +6,13 @@
   "author": "Roman Kurnovskii <r.kurnovskii@gmail.com>",
   "scripts": {
     "md-lint": "markdownlint-cli2 \"**/*.md\" \"#node_modules\"",
-    "md-lint-fix": "markdownlint-cli2 --fix \"**/*.md\" \"#node_modules\" \"#venv\" ",
+    "md-lint-fix": "markdownlint-cli2 --fix \"**/*.md\" \"#node_modules\" \"#venv\"",
     "hugo-lunr-ml": "hugo-lunr-ml",
     "pull-git-modules": "git submodule update --init --recursive",
     "upd-modules": "git submodule update --remote --merge",
     "push": "git add .; git commit -am upd; git push",
-    "p": "npm run md-lint-fix; git commit -am upd; git pull; npm run upd-modules; npm run push"
+    "fixreactblockhref": "find content -type f -name \"*.md\" -exec sed -i '' -E 's/{{< reactblock src=\"<([^>\"]*)>\"/\\{{< reactblock src=\"\\1\"/g' {} +",
+    "p": "npm run md-lint-fix; npm run fixreactblockhref; git commit -am upd; git pull; npm run upd-modules; npm run push"
   },
   "browserslist": [
     "last 1 version",
