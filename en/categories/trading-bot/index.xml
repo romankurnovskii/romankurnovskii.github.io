@@ -1,6 +1,49 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Trading Bot on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/trading-bot/</link><description>Recent content in Trading Bot on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Tue, 02 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/trading-bot/index.xml" rel="self" type="application/rss+xml"/><item><title>Enhancing Trading Bot with Abstraction and Async Management</title><link>https://romankurnovskii.com/en/stories/004-trading-bot-refactor-orders/</link><pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/stories/004-trading-bot-refactor-orders/</guid><description>Abstraction Today worked on refining some abstraction level in framework. The main objective of today&amp;rsquo;s work was to enhance the abstraction in the classes and improve the overall code structure.
-The goal was to make the code more adaptable and easier to maintain.
-For example, instead of having Binance hardcoded in the from_binance_order method, now use the Exchanges enum, which makes the code more versatile and ready for additional exchanges in the future.
-def from_binance_order(binance_order: BinanceOrder): exchange = Exchanges.</description></item><item><title>Creating a GUI for a Trading Bot</title><link>https://romankurnovskii.com/en/stories/003-trading-bot-gui-init-tkinter/</link><pubDate>Fri, 28 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/stories/003-trading-bot-gui-init-tkinter/</guid><description>The journey towards creating a light trading bot framework begins with a simple, intuitive graphical user interface (GUI). For this venture, I have chosen to rely on Python&amp;rsquo;s built-in Tkinter library to provide the fundamental building blocks for my GUI.
-Embracing Simplicity The initial goal is to keep the GUI as straightforward as possible, focusing on the core functionalities required for a trading bot. The main elements incorporated are:
-Start/Stop Buttons: These allow the user to control the operation of the bot.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Trading Bot on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/trading-bot/</link><description>Recent content in Trading Bot on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Tue, 02 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/trading-bot/index.xml" rel="self" type="application/rss+xml"/><item><title>Enhancing Trading Bot with Abstraction and Async Management</title><link>https://romankurnovskii.com/en/stories/004-trading-bot-refactor-orders/</link><pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/stories/004-trading-bot-refactor-orders/</guid><description>&lt;h2 id="abstraction">Abstraction&lt;/h2>
+&lt;p>Today worked on refining some abstraction level in framework. The main objective of today&amp;rsquo;s work was to enhance the abstraction in the classes and improve the overall code structure.&lt;/p>
+&lt;p>The goal was to make the code more adaptable and easier to maintain.&lt;/p>
+&lt;p>For example, instead of having &lt;code>Binance&lt;/code> hardcoded in the &lt;code>from_binance_order&lt;/code> method, now use the &lt;code>Exchanges&lt;/code> enum, which makes the code more versatile and ready for additional exchanges in the future.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">from_binance_order&lt;/span>(binance_order: BinanceOrder):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> exchange &lt;span style="color:#666">=&lt;/span> Exchanges&lt;span style="color:#666">.&lt;/span>BINANCE
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">...&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="orders">Orders&lt;/h2>
+&lt;p>Orders are at the heart of any trading bot, and handling them efficiently is crucial for the bot&amp;rsquo;s performance. In the &lt;code>Order&lt;/code> class, I added the &lt;code>side&lt;/code> property to capture whether the order is a buy or sell order, and also refined the Order creation method to accept &lt;code>side&lt;/code> and &lt;code>order_type&lt;/code> as arguments.&lt;/p>
+&lt;p>Implemented a new method, &lt;code>update&lt;/code>, in the &lt;code>Order&lt;/code> class. This function checks if the incoming order is an instance of the &lt;code>Order&lt;/code> class and updates specific fields based on certain conditions.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">update&lt;/span>(self, other_order):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> &lt;span style="color:#007020">isinstance&lt;/span>(other_order, Order):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">raise&lt;/span> &lt;span style="color:#007020">ValueError&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;The given object is not an instance of Order&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># update only specific fields&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> other_order&lt;span style="color:#666">.&lt;/span>time_to_cancel:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>time_to_cancel &lt;span style="color:#666">=&lt;/span> other_order&lt;span style="color:#666">.&lt;/span>time_to_cancel
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> other_order&lt;span style="color:#666">.&lt;/span>status &lt;span style="color:#666">!=&lt;/span> OrderStatus&lt;span style="color:#666">.&lt;/span>NEW:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>status &lt;span style="color:#666">=&lt;/span> other_order&lt;span style="color:#666">.&lt;/span>status
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="async">Async&lt;/h2>
+&lt;p>One of the major changes made was to the way I handle &lt;strong>async&lt;/strong> operations. In the &lt;code>Exchange&lt;/code> class, the methods &lt;code>on_new_order_request&lt;/code> and &lt;code>on_cancel_order_request&lt;/code> were updated to run in separate tasks. This change helps in improving the overall efficiency of the bot as multiple tasks can run concurrently without blocking the main event loop.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>asyncio&lt;span style="color:#666">.&lt;/span>create_task(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>_exchange&lt;span style="color:#666">.&lt;/span>on_new_order_request(order_request, &lt;span style="color:#666">**&lt;/span>kwargs)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="summury">Summury&lt;/h2>
+&lt;p>Today&amp;rsquo;s changes focused on enhancing the bot&amp;rsquo;s framework by making it more abstract, improving order handling, and making &lt;strong>async&lt;/strong> operations more efficient.&lt;/p></description></item><item><title>Creating a GUI for a Trading Bot</title><link>https://romankurnovskii.com/en/stories/003-trading-bot-gui-init-tkinter/</link><pubDate>Fri, 28 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/stories/003-trading-bot-gui-init-tkinter/</guid><description>&lt;p>The journey towards creating a light trading bot framework begins with a simple, intuitive graphical user interface (GUI). For this venture, I have chosen to rely on Python&amp;rsquo;s built-in &lt;a href="https://docs.python.org/3/library/tkinter.html">Tkinter&lt;/a> library to provide the fundamental building blocks for my GUI.&lt;/p>
+&lt;h2 id="embracing-simplicity">Embracing Simplicity&lt;/h2>
+&lt;p>The initial goal is to keep the GUI as straightforward as possible, focusing on the core functionalities required for a trading bot. The main elements incorporated are:&lt;/p>
+&lt;ul>
+&lt;li>Start/Stop Buttons: These allow the user to control the operation of the bot.&lt;/li>
+&lt;li>Strategy Selection: An option to switch between different trading strategies.&lt;/li>
+&lt;li>Market Price Stream: A live feed displaying the current market prices.&lt;/li>
+&lt;/ul>
+&lt;h2 id="harnessing-the-power-of-tkinter">Harnessing the Power of Tkinter&lt;/h2>
+&lt;p>Tkinter, being a standard Python interface to the Tk GUI toolkit, offers the simplicity and versatility needed for this project. It provides an array of widgets and methods to create and manage the GUI with relative ease.&lt;/p>
+&lt;h2 id="observer-pattern">Observer Pattern&lt;/h2>
+&lt;p>To handle specific requests from the GUI and manage updates, I&amp;rsquo;ll be integrating the observer pattern into the framework. This design pattern promotes a well-organized, flexible structure that will prove invaluable as the project progresses.&lt;/p>
+&lt;h2 id="moving-forward">Moving Forward&lt;/h2>
+&lt;p>This is just the beginning. The GUI, while a crucial component, is merely the first step in the development of this lightweight trading bot framework. I&amp;rsquo;m looking forward to the journey ahead, as we dive deeper into the implementation and further enhance the features of the bot.&lt;/p>
+&lt;p>This is how this template looks like now:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./assets/bot_gui.png"
+id="zoom-default"
+alt="gui tkinter trading bot template"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p></description></item></channel></rss>

@@ -1,20 +1,226 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Recursion on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/recursion/</link><description>Recent content in Recursion on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Thu, 22 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/recursion/index.xml" rel="self" type="application/rss+xml"/><item><title>2. Add Two Numbers</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2/</link><pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2/</guid><description>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
-You may assume the two numbers do not contain any leading zero, except the number 0 itself.
-Example 1:
-Input: l1 = [2,4,3], l2 = [5,6,4] Output: [7,0,8] Explanation: 342 + 465 = 807. First accepted Idea:
-Loop through lists add each value to the list reverse list calculate sum create linked list from reversed sum class Solution: def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -&amp;gt; Optional[ListNode]: def createLinkedNode(values): head = ListNode(values[0]) current = head for i in values[1:]: node = ListNode(i) current.</description></item><item><title>21. Merge Two Sorted Lists</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/21/</link><pubDate>Tue, 25 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/21/</guid><description>LeetCode problem
-You are given the heads of two sorted linked lists list1 and list2.
-Merge the two lists in a one sorted list. The list should be made by splicing together the nodes of the first two lists.
-Return the head of the merged linked list.
-Example 1:
-Input: list1 = [1,2,4], list2 = [1,3,4] Output: [1,1,2,3,4,4] Example 2:
-Input: list1 = [], list2 = [0] Output: [0] First accepted Idea:
-Get smallest head. Loop and update its next.</description></item><item><title>50. Pow(x, n)</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/50/</link><pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/50/</guid><description>LeetCode problem
-Implement pow(x, n), which calculates x raised to the power n (i.e., x^n).
-Example 1:
-Input: x = 2.00000, n = 10 Output: 1024.00000 Example 2:
-Input: x = 2.10000, n = 3 Output: 9.26100 Example 3:
-Input: x = 2.00000, n = -2 Output: 0.25000 Explanation: 2-2 = 1/22 = 1/4 = 0.25 Approach 1:
-class Solution: def myPow(self, x: float, n: int) -&amp;gt; float: return x ** n Approach 2:
-Recursive
-class Solution: def myPow(self, x, n): if not n: return 1 if n &amp;lt; 0: return 1 / self.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Recursion on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/recursion/</link><description>Recent content in Recursion on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 22 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/recursion/index.xml" rel="self" type="application/rss+xml"/><item><title>2. Add Two Numbers</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2/</link><pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2/</guid><description>&lt;p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.&lt;/p>
+&lt;p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: l1 = [2,4,3], l2 = [5,6,4]
+Output: [7,0,8]
+Explanation: 342 + 465 = 807.
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Loop through lists&lt;/li>
+&lt;li>add each value to the list&lt;/li>
+&lt;li>reverse list&lt;/li>
+&lt;li>calculate sum&lt;/li>
+&lt;li>create linked list from reversed sum&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">addTwoNumbers&lt;/span>(self, l1: Optional[ListNode], l2: Optional[ListNode]) &lt;span style="color:#666">-&amp;gt;&lt;/span> Optional[ListNode]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">createLinkedNode&lt;/span>(values):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> head &lt;span style="color:#666">=&lt;/span> ListNode(values[&lt;span style="color:#40a070">0&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current &lt;span style="color:#666">=&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> values[&lt;span style="color:#40a070">1&lt;/span>:]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> node &lt;span style="color:#666">=&lt;/span> ListNode(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> node
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current &lt;span style="color:#666">=&lt;/span> current&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> vals_l1 &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> l1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> cur:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> vals_l1&lt;span style="color:#666">.&lt;/span>append(cur&lt;span style="color:#666">.&lt;/span>val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> cur&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> vals_l2 &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> l2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> cur:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> vals_l2&lt;span style="color:#666">.&lt;/span>append(cur&lt;span style="color:#666">.&lt;/span>val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> cur&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s_l1 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">reversed&lt;/span>(vals_l1):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s_l1 &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#007020">str&lt;/span>(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s_l2 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">reversed&lt;/span>(vals_l2):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s_l2 &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#007020">str&lt;/span>(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ll_sum &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(s_l1) &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#007020">int&lt;/span>(s_l2)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> values &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> val &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">reversed&lt;/span>(&lt;span style="color:#007020">str&lt;/span>(ll_sum)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> values&lt;span style="color:#666">.&lt;/span>append(&lt;span style="color:#007020">int&lt;/span>(val))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> createLinkedNode(values)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="better-solution">Better solution&lt;/h2>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://leetcode.com/problems/add-two-numbers/Figures/2_add_two_numbers.svg"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;p>Just like how you would sum two numbers on a piece of paper.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/2-test-case.jpg"
+id="zoom-default"
+alt="test-case"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">addTwoNumbers&lt;/span>(self, l1: Optional[ListNode], l2: Optional[ListNode]) &lt;span style="color:#666">-&amp;gt;&lt;/span> Optional[ListNode]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dummyHead &lt;span style="color:#666">=&lt;/span> ListNode(&lt;span style="color:#40a070">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr &lt;span style="color:#666">=&lt;/span> dummyHead
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> carry &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> l1 &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span> &lt;span style="color:#007020;font-weight:bold">or&lt;/span> l2 &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span> &lt;span style="color:#007020;font-weight:bold">or&lt;/span> carry &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l1Val &lt;span style="color:#666">=&lt;/span> l1&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l1 &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l2Val &lt;span style="color:#666">=&lt;/span> l2&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l2 &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> columnSum &lt;span style="color:#666">=&lt;/span> l1Val &lt;span style="color:#666">+&lt;/span> l2Val &lt;span style="color:#666">+&lt;/span> carry
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> carry &lt;span style="color:#666">=&lt;/span> columnSum &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> newNode &lt;span style="color:#666">=&lt;/span> ListNode(columnSum &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#40a070">10&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> newNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr &lt;span style="color:#666">=&lt;/span> newNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l1 &lt;span style="color:#666">=&lt;/span> l1&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l1 &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l2 &lt;span style="color:#666">=&lt;/span> l2&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l2 &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> dummyHead&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>21. Merge Two Sorted Lists</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/21/</link><pubDate>Tue, 25 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/21/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/merge-two-sorted-lists/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>You are given the heads of two sorted linked lists list1 and list2.&lt;/p>
+&lt;p>Merge the two lists in a one sorted list. The list should be made by splicing together the nodes of the first two lists.&lt;/p>
+&lt;p>Return the head of the merged linked list.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.leetcode.com/uploads/2020/10/03/merge_ex1.jpg"
+id="zoom-default"
+alt="21. Merge Two Sorted Lists"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;pre>&lt;code>Input: list1 = [1,2,4], list2 = [1,3,4]
+Output: [1,1,2,3,4,4]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: list1 = [], list2 = [0]
+Output: [0]
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;p>Get smallest &lt;em>head&lt;/em>. Loop and update its next.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Definition for singly-linked list.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># class ListNode:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># def __init__(self, val=0, next=None):&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.val = val&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.next = next&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">mergeTwoLists&lt;/span>(self, l1: Optional[ListNode], l2: Optional[ListNode]) &lt;span style="color:#666">-&amp;gt;&lt;/span> Optional[ListNode]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> ListNode()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current &lt;span style="color:#666">=&lt;/span> res
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> l1 &lt;span style="color:#007020;font-weight:bold">and&lt;/span> l2:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l1&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">&amp;lt;=&lt;/span> l2&lt;span style="color:#666">.&lt;/span>val:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> node &lt;span style="color:#666">=&lt;/span> ListNode(l1&lt;span style="color:#666">.&lt;/span>val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l1 &lt;span style="color:#666">=&lt;/span> l1&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> node &lt;span style="color:#666">=&lt;/span> ListNode(l2&lt;span style="color:#666">.&lt;/span>val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l2 &lt;span style="color:#666">=&lt;/span> l2&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> node
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current &lt;span style="color:#666">=&lt;/span> current&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l1:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> l1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l2:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> l2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="better-solution">Better solution&lt;/h2>
+&lt;blockquote>
+&lt;p>Recursion&lt;/p>&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">mergeTwoLists&lt;/span>(self, l1: Optional[ListNode], l2: Optional[ListNode]) &lt;span style="color:#666">-&amp;gt;&lt;/span> Optional[ListNode]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l1 &lt;span style="color:#007020;font-weight:bold">and&lt;/span> l2:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l1&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">&amp;gt;&lt;/span> l2&lt;span style="color:#666">.&lt;/span>val:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l1, l2 &lt;span style="color:#666">=&lt;/span> l2, l1 &lt;span style="color:#60a0b0;font-style:italic">#swap smaller and larger: make l1 the one with the smaller first value&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l1&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>mergeTwoLists(l1&lt;span style="color:#666">.&lt;/span>next, l2) &lt;span style="color:#60a0b0;font-style:italic"># move forward in the list which starts with the smaller value&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> l1 &lt;span style="color:#007020;font-weight:bold">or&lt;/span> l2 &lt;span style="color:#60a0b0;font-style:italic"># return whichever of the two lists remains at the end&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>Loop&lt;/p>&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">mergeTwoLists&lt;/span>(self, l1: Optional[ListNode], l2: Optional[ListNode]) &lt;span style="color:#666">-&amp;gt;&lt;/span> Optional[ListNode]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> ListNode()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current &lt;span style="color:#666">=&lt;/span> res
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> l1 &lt;span style="color:#007020;font-weight:bold">and&lt;/span> l2:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l1&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">&amp;lt;=&lt;/span> l2&lt;span style="color:#666">.&lt;/span>val:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> l1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l1 &lt;span style="color:#666">=&lt;/span> l1&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> l2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l2 &lt;span style="color:#666">=&lt;/span> l2&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current &lt;span style="color:#666">=&lt;/span> current&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">mergeTwoLists&lt;/span>(self, a, b):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> a &lt;span style="color:#007020;font-weight:bold">and&lt;/span> b:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> a&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">&amp;gt;&lt;/span> b&lt;span style="color:#666">.&lt;/span>val:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a, b &lt;span style="color:#666">=&lt;/span> b, a
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>mergeTwoLists(a&lt;span style="color:#666">.&lt;/span>next, b)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> a &lt;span style="color:#007020;font-weight:bold">or&lt;/span> b
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>First make sure that a is the &amp;ldquo;better&amp;rdquo; one (meaning b is None or has larger/equal value). Then merge the remainders behind a.&lt;/p>&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">mergeTwoLists&lt;/span>(self, a, b):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> a &lt;span style="color:#007020;font-weight:bold">or&lt;/span> b &lt;span style="color:#007020;font-weight:bold">and&lt;/span> a&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">&amp;gt;&lt;/span> b&lt;span style="color:#666">.&lt;/span>val:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a, b &lt;span style="color:#666">=&lt;/span> b, a
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> a:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>mergeTwoLists(a&lt;span style="color:#666">.&lt;/span>next, b)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> a
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>50. Pow(x, n)</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/50/</link><pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/50/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/powx-n/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Implement &lt;code>pow(x, n)&lt;/code>, which calculates &lt;code>x&lt;/code> raised to the power &lt;code>n&lt;/code> (i.e., &lt;code>x^n&lt;/code>).&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: x = 2.00000, n = 10
+Output: 1024.00000
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: x = 2.10000, n = 3
+Output: 9.26100
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 3:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: x = 2.00000, n = -2
+Output: 0.25000
+Explanation: 2-2 = 1/22 = 1/4 = 0.25
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Approach 1:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">myPow&lt;/span>(self, x: &lt;span style="color:#007020">float&lt;/span>, n: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">float&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> x &lt;span style="color:#666">**&lt;/span> n
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Approach 2:&lt;/strong>&lt;/p>
+&lt;p>Recursive&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">myPow&lt;/span>(self, x, n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> n:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> n &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#666">/&lt;/span> self&lt;span style="color:#666">.&lt;/span>myPow(x, &lt;span style="color:#666">-&lt;/span>n)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> n &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#40a070">2&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> x &lt;span style="color:#666">*&lt;/span> self&lt;span style="color:#666">.&lt;/span>myPow(x, n&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> self&lt;span style="color:#666">.&lt;/span>myPow(x &lt;span style="color:#666">*&lt;/span> x, n&lt;span style="color:#666">/&lt;/span>&lt;span style="color:#40a070">2&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Approach 3:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">myPow&lt;/span>(self, x, n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> n &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#666">/&lt;/span> x
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#666">-&lt;/span>n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">pow&lt;/span> &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> n:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> n &lt;span style="color:#666">&amp;amp;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">pow&lt;/span> &lt;span style="color:#666">*=&lt;/span> x
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#666">*=&lt;/span> x
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">&amp;gt;&amp;gt;=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020">pow&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

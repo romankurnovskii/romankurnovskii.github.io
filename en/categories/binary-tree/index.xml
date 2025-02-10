@@ -1,7 +1,137 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Binary Tree on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/binary-tree/</link><description>Recent content in Binary Tree on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 31 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/binary-tree/index.xml" rel="self" type="application/rss+xml"/><item><title>Binary Tree</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/data-structures/binary-tree/</link><pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/data-structures/binary-tree/</guid><description>1. What is a Binary Tree?
-A binary tree is a data structure in which each node has at most two children, which are referred to as the left child and the right child.
-2. Representing a Binary Tree in Python
-To represent a binary tree in Python, we can create a class called Node to represent each node in the tree. Each node will have a value and references to its left and right children.
-If a node doesn&amp;rsquo;t have a left or right child, the reference will be set to None.</description></item><item><title>116. Populating Next Right Pointers in Each Node</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/116/</link><pubDate>Fri, 31 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/116/</guid><description>LeetCode problem
-from collections import deque class Solution: def connect(self, root: &amp;#39;Optional[Node]&amp;#39;) -&amp;gt; &amp;#39;Optional[Node]&amp;#39;: if not root: return root queue = deque([root]) while queue: level_size = len(queue) for i in range(level_size): node = queue.popleft() if i &amp;lt; level_size - 1: node.next = queue[0] if node.left: queue.append(node.left) if node.right: queue.append(node.right) return root LeetCode Editorial:
-Editorial</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Binary Tree on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/binary-tree/</link><description>Recent content in Binary Tree on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 31 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/binary-tree/index.xml" rel="self" type="application/rss+xml"/><item><title>Binary Tree</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/data-structures/binary-tree/</link><pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/data-structures/binary-tree/</guid><description>&lt;p>&lt;strong>1. What is a Binary Tree?&lt;/strong>&lt;/p>
+&lt;p>A binary tree is a data structure in which each node has at most &lt;strong>two children&lt;/strong>, which are referred to as the left child and the right child.&lt;/p>
+&lt;p>&lt;strong>2. Representing a Binary Tree in Python&lt;/strong>&lt;/p>
+&lt;p>To represent a binary tree in Python, we can create a class called &lt;code>Node&lt;/code> to represent each node in the tree. Each node will have a value and references to its left and right children.&lt;/p>
+&lt;p>If a node doesn&amp;rsquo;t have a left or right child, the reference will be set to &lt;code>None&lt;/code>. Here&amp;rsquo;s an example implementation:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Node&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, value, left&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">None&lt;/span>, right&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">None&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>value &lt;span style="color:#666">=&lt;/span> value
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">=&lt;/span> left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">=&lt;/span> right
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>On this step &lt;code>None&lt;/code> will look like this:&lt;/p>
+&lt;p>&lt;strong>3. Adding Nodes to a Binary Tree&lt;/strong>&lt;/p>
+&lt;p>Once we have a representation of a node, we can start adding nodes to the tree to create the structure of the binary tree.&lt;/p>
+&lt;p>To add a node, we &lt;strong>need to find the correct position&lt;/strong> in the tree where the new node should be added. This is typically done by starting at the root node and comparing the value of the new node to the value of the current node.&lt;/p>
+&lt;p>If the new node&amp;rsquo;s value is &lt;strong>less than the current node&amp;rsquo;s value&lt;/strong>, we &lt;strong>move to the left child&lt;/strong>. If the new node&amp;rsquo;s value is &lt;strong>greater&lt;/strong> than the current node&amp;rsquo;s value, we &lt;strong>move to the right&lt;/strong> child. We &lt;strong>repeat&lt;/strong> this process until we find a position where &lt;strong>there is no left or right child&lt;/strong> (i.e., the current node is a leaf node), and we can add the new node there.&lt;/p>
+&lt;p>Here&amp;rsquo;s an example implementation of a function to add a node to a binary tree:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">insert&lt;/span>(root, value):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> root &lt;span style="color:#007020;font-weight:bold">is&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> Node(value) &lt;span style="color:#60a0b0;font-style:italic"># basicaly create a new root Node&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> value &lt;span style="color:#666">&amp;lt;&lt;/span> root&lt;span style="color:#666">.&lt;/span>value:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> root&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">=&lt;/span> insert(root&lt;span style="color:#666">.&lt;/span>left, value)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> root&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">=&lt;/span> insert(root&lt;span style="color:#666">.&lt;/span>right, value)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> root
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;mark>&lt;a href="https://www.cs.usfca.edu/~galles/visualization/BST.html">Visualize Binary Tree&lt;/a>&lt;/mark>&lt;/p>
+&lt;p>&lt;strong>4. Full Binary Tree Class&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Node&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, value):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>value &lt;span style="color:#666">=&lt;/span> value
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">insert&lt;/span>(self, value):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> self&lt;span style="color:#666">.&lt;/span>value:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> value &lt;span style="color:#666">&amp;lt;&lt;/span> self&lt;span style="color:#666">.&lt;/span>value:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> self&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#007020;font-weight:bold">is&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">=&lt;/span> Node(value)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>left&lt;span style="color:#666">.&lt;/span>insert(value)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#007020;font-weight:bold">is&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">=&lt;/span> Node(value)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>right&lt;span style="color:#666">.&lt;/span>insert(value)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>value &lt;span style="color:#666">=&lt;/span> value
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">search&lt;/span>(self, value):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> value &lt;span style="color:#666">&amp;lt;&lt;/span> self&lt;span style="color:#666">.&lt;/span>value:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> self&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#007020;font-weight:bold">is&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> self&lt;span style="color:#666">.&lt;/span>left&lt;span style="color:#666">.&lt;/span>search(value)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> value &lt;span style="color:#666">&amp;gt;&lt;/span> self&lt;span style="color:#666">.&lt;/span>value:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#007020;font-weight:bold">is&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> self&lt;span style="color:#666">.&lt;/span>right&lt;span style="color:#666">.&lt;/span>search(value)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">remove&lt;/span>(self, value, parent&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">None&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> value &lt;span style="color:#666">&amp;lt;&lt;/span> self&lt;span style="color:#666">.&lt;/span>value:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> self&lt;span style="color:#666">.&lt;/span>left:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>left&lt;span style="color:#666">.&lt;/span>remove(value, self)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> value &lt;span style="color:#666">&amp;gt;&lt;/span> self&lt;span style="color:#666">.&lt;/span>value:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> self&lt;span style="color:#666">.&lt;/span>right:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>right&lt;span style="color:#666">.&lt;/span>remove(value, self)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> self&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#007020;font-weight:bold">is&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#007020;font-weight:bold">is&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> parent:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> parent&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">==&lt;/span> self:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parent&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parent&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>value &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> self&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#007020;font-weight:bold">and&lt;/span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#007020;font-weight:bold">is&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> parent:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> parent&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">==&lt;/span> self:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parent&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parent&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>value &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>left&lt;span style="color:#666">.&lt;/span>value
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>left&lt;span style="color:#666">.&lt;/span>right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>left&lt;span style="color:#666">.&lt;/span>left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#007020;font-weight:bold">and&lt;/span> self&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#007020;font-weight:bold">is&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> parent:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> parent&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">==&lt;/span> self:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parent&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parent&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>value &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>right&lt;span style="color:#666">.&lt;/span>value
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>right&lt;span style="color:#666">.&lt;/span>left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>right&lt;span style="color:#666">.&lt;/span>right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> min_larger_node &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> min_larger_node&lt;span style="color:#666">.&lt;/span>left:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> min_larger_node &lt;span style="color:#666">=&lt;/span> min_larger_node&lt;span style="color:#666">.&lt;/span>left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>value &lt;span style="color:#666">=&lt;/span> min_larger_node&lt;span style="color:#666">.&lt;/span>value
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">==&lt;/span> min_larger_node:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">=&lt;/span> min_larger_node&lt;span style="color:#666">.&lt;/span>right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> min_larger_node&lt;span style="color:#666">.&lt;/span>parent&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">=&lt;/span> min_larger_node&lt;span style="color:#666">.&lt;/span>right
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="links">Links&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.cs.usfca.edu/~galles/visualization/BST.html">Visualize Binary Tree&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>116. Populating Next Right Pointers in Each Node</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/116/</link><pubDate>Fri, 31 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/116/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/populating-next-right-pointers-in-each-node/">LeetCode problem&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">collections&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> deque
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">connect&lt;/span>(self, root: &lt;span style="color:#4070a0">&amp;#39;Optional[Node]&amp;#39;&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#4070a0">&amp;#39;Optional[Node]&amp;#39;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> root:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> root
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> queue &lt;span style="color:#666">=&lt;/span> deque([root])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> queue:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> level_size &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(queue)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(level_size):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> node &lt;span style="color:#666">=&lt;/span> queue&lt;span style="color:#666">.&lt;/span>popleft()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> i &lt;span style="color:#666">&amp;lt;&lt;/span> level_size &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> node&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> queue[&lt;span style="color:#40a070">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> node&lt;span style="color:#666">.&lt;/span>left:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> queue&lt;span style="color:#666">.&lt;/span>append(node&lt;span style="color:#666">.&lt;/span>left)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> node&lt;span style="color:#666">.&lt;/span>right:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> queue&lt;span style="color:#666">.&lt;/span>append(node&lt;span style="color:#666">.&lt;/span>right)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> root
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>LeetCode Editorial:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/editorial/">Editorial&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

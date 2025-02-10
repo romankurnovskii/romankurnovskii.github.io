@@ -1,1 +1,62 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Codeforces on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/categories/codeforces/</link><description>Recent content in Codeforces on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Thu, 27 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/categories/codeforces/index.xml" rel="self" type="application/rss+xml"/><item><title>Data Structures</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/data-structures/</link><pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/data-structures/</guid><description>Tree class Node: def __init__(self, value): self.value = value self.children = {} def insert(self, s, idx): # idx: index of the current character in s if idx != len(s): self.children.setdefault(s[idx], Node(s[idx])) self.children.get(s[idx]).insert(s, idx + 1) Fenwick Tree class Fenwick: #also known as Binary Indexed Tree (BIT) def __init__(self, n): self.n = n self.bit = [0] * (n+1) def add(self, idx, val): while idx &amp;lt;= self.n: self.bit[idx] += val idx += idx &amp;amp; -idx def add_range(self, l, r, val): self.</description></item><item><title>Codeforces</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/codeforces/</link><pubDate>Thu, 27 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/codeforces/</guid><description> Codeforces Решения Codeforces Туториал</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Codeforces on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/categories/codeforces/</link><description>Recent content in Codeforces on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 27 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/categories/codeforces/index.xml" rel="self" type="application/rss+xml"/><item><title>Data Structures</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/data-structures/</link><pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/data-structures/</guid><description>&lt;h3 id="tree">Tree&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Node&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, value):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>value &lt;span style="color:#666">=&lt;/span> value
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>children &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">insert&lt;/span>(self, s, idx):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># idx: index of the current character in s&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> idx &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(s):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>children&lt;span style="color:#666">.&lt;/span>setdefault(s[idx], Node(s[idx]))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>children&lt;span style="color:#666">.&lt;/span>get(s[idx])&lt;span style="color:#666">.&lt;/span>insert(s, idx &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="fenwick-tree">Fenwick Tree&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Fenwick&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic">#also known as Binary Indexed Tree (BIT)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>n &lt;span style="color:#666">=&lt;/span> n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>bit &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">*&lt;/span> (n&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">add&lt;/span>(self, idx, val):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> idx &lt;span style="color:#666">&amp;lt;=&lt;/span> self&lt;span style="color:#666">.&lt;/span>n:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>bit[idx] &lt;span style="color:#666">+=&lt;/span> val
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> idx &lt;span style="color:#666">+=&lt;/span> idx &lt;span style="color:#666">&amp;amp;&lt;/span> &lt;span style="color:#666">-&lt;/span>idx
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">add_range&lt;/span>(self, l, r, val):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>add(l, val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>add(r&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#666">-&lt;/span>val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">query&lt;/span>(self, idx):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic">#Calculates the sum of the elements from the beginning to idx&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ret &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> idx &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ret &lt;span style="color:#666">+=&lt;/span> self&lt;span style="color:#666">.&lt;/span>bit[idx]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> idx &lt;span style="color:#666">-=&lt;/span> idx &lt;span style="color:#666">&amp;amp;&lt;/span> &lt;span style="color:#666">-&lt;/span>idx
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> ret
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">range_sum&lt;/span>(self, l, r):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Return the sum of the elements from l (inclusive) to r (exclusive)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> self&lt;span style="color:#666">.&lt;/span>prefix_sum(r &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>) &lt;span style="color:#666">-&lt;/span> self&lt;span style="color:#666">.&lt;/span>prefix_sum(l &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">prefix_sum&lt;/span>(self, x):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># return sum upto and including element x&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> z &lt;span style="color:#666">=&lt;/span> x
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> z &lt;span style="color:#666">&amp;gt;=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">+=&lt;/span> self&lt;span style="color:#666">.&lt;/span>bit[z]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Strip trailing zeros from z, and then take away one&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> z &lt;span style="color:#666">=&lt;/span> (z &lt;span style="color:#666">&amp;amp;&lt;/span> (z &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;a href="https://medium.com/carpanese/a-visual-introduction-to-fenwick-tree-89b82cac5b3c">A Visual Introduction to Fenwick Tree | medium&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://cp-algorithms.com/data_structures/fenwick.html">Fenwick Tree&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ru.algorithmica.org/cs/range-queries/fenwick/">Дерево Фенвика | algorithmica&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://habr.com/ru/post/112828/">Дерево Фенвика | habr&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/OpenGenus/cosmos">data structures&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/cheran-senthil/PyRival">Competitive Programming Library&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://cp-algorithms.com/">Algorithms for Competitive Programming&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Codeforces</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/codeforces/</link><pubDate>Thu, 27 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/codeforces/</guid><description>&lt;ul>
+&lt;li>&lt;a href="https://romankurnovskii.com/codeforces/">Codeforces Решения&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/">Codeforces Туториал&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

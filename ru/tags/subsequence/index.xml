@@ -1,4 +1,35 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Subsequence on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/subsequence/</link><description>Recent content in Subsequence on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sun, 06 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/subsequence/index.xml" rel="self" type="application/rss+xml"/><item><title>392. Is Subsequence</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/392/</link><pubDate>Sun, 06 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/392/</guid><description>LeetCode задача 392
-Задача Даны две строки s и t. Верните true, если s является подпоследовательностью t, или false в противном случае.
-Подпоследовательность строки - это новая строка, которая формируется из исходной строки путем удаления некоторых (может быть ни одного) символов без нарушения относительных позиций оставшихся символов. (например, &amp;ldquo;ace&amp;rdquo; является подпоследовательностью &amp;ldquo;abcde&amp;rdquo;, в то время как &amp;ldquo;aec&amp;rdquo; - нет).
-Подсказки Следуя за обеими строками одновременно с помощью двух указателей, вы можете определить, является ли одна строка подпоследовательностью другой.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Subsequence on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/subsequence/</link><description>Recent content in Subsequence on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sun, 06 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/subsequence/index.xml" rel="self" type="application/rss+xml"/><item><title>392. Is Subsequence</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/392/</link><pubDate>Sun, 06 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/392/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/is-subsequence/">LeetCode задача 392&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Даны две строки &lt;code>s&lt;/code> и &lt;code>t&lt;/code>. Верните &lt;code>true&lt;/code>, если &lt;code>s&lt;/code> является подпоследовательностью &lt;code>t&lt;/code>, или &lt;code>false&lt;/code> в противном случае.&lt;/p>
+&lt;p>Подпоследовательность строки - это новая строка, которая формируется из исходной строки путем удаления некоторых (может быть ни одного) символов без нарушения относительных позиций оставшихся символов. (например, &amp;ldquo;ace&amp;rdquo; является подпоследовательностью &amp;ldquo;abcde&amp;rdquo;, в то время как &amp;ldquo;aec&amp;rdquo; - нет).&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Следуя за обеими строками одновременно с помощью двух указателей, вы можете определить, является ли одна строка подпоследовательностью другой.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Мы можем использовать &lt;mark>два указателя&lt;/mark>, проходясь по каждому символу в строке &lt;code>t&lt;/code> и проверяя, соответствует ли он текущему символу в строке &lt;code>s&lt;/code>.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Инициализируем два указателя, один для строки &lt;code>s&lt;/code>, другой для строки &lt;code>t&lt;/code> с 0.&lt;/li>
+&lt;li>Пока оба указателя находятся в пределах своих строк:
+&lt;ol>
+&lt;li>Если символы, на которые указывают указатели, &lt;strong>совпадают&lt;/strong>, перемещаем указатель для &lt;code>s&lt;/code> на следующий символ.&lt;/li>
+&lt;li>Перемещаем указатель для &lt;code>t&lt;/code> на следующий символ, независимо от того, совпали символы или нет.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Если указатель для &lt;code>s&lt;/code> достиг конца строки, это означает, что &lt;code>s&lt;/code> является подпоследовательностью &lt;code>t&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">isSubsequence&lt;/span>(s: &lt;span style="color:#007020">str&lt;/span>, t: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">bool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pointer_s, pointer_t &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Пока указатели в пределах своих строк&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> pointer_s &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(s) &lt;span style="color:#007020;font-weight:bold">and&lt;/span> pointer_t &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(t):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Если символы совпадают, перемещаем указатель для s&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> s[pointer_s] &lt;span style="color:#666">==&lt;/span> t[pointer_t]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pointer_s &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Перемещаем указатель для t&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pointer_t &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Если указатель для s достиг конца строки, s является подпоследовательностью t&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> pointer_s &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#007020">len&lt;/span>(s)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

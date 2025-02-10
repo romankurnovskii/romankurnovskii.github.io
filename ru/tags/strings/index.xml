@@ -1,7 +1,80 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Strings on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/strings/</link><description>Recent content in Strings on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Mon, 28 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/strings/index.xml" rel="self" type="application/rss+xml"/><item><title>443. String Compression</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/443/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/443/</guid><description>LeetCode задача 443
-Задача Дан массив символов chars, ваша задача — сжать его с помощью следующего алгоритма: Заменить последовательность одинаковых символов одним символом, за которым идет его количество.
-Пример: &amp;ldquo;aaabbaaa&amp;rdquo; =&amp;gt; &amp;ldquo;a3b2a3&amp;rdquo;
-Подход В этой задаче у нас есть два указателя: один для чтения элементов из исходного массива (read_ptr) и второй для записи результата сжатия в тот же массив (write_ptr). Сначала оба указателя стоят на начале массива. Далее, read_ptr движется вправо, считая количество повторяющихся символов. После подсчета, мы записываем символ и его количество в массив, используя write_ptr.</description></item><item><title>1657. Determine if Two Strings Are Close</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1657/</link><pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1657/</guid><description>LeetCode problem
-Problem Statement Two strings are considered close if you can attain one from the other using two operations:
-Swap any two existing characters. Transform every occurrence of one existing character into another existing character, and do the same with the other character. The challenge is to determine whether two given strings are close or not.
-Naive Solution A naive approach might involve trying every possible combination of operations on the two strings until they match or until you&amp;rsquo;ve exhausted all possibilities.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Strings on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/strings/</link><description>Recent content in Strings on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Mon, 28 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/strings/index.xml" rel="self" type="application/rss+xml"/><item><title>443. String Compression</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/443/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/443/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/string-compression/">LeetCode задача 443&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Дан массив символов &lt;code>chars&lt;/code>, ваша задача — сжать его с помощью следующего алгоритма: Заменить последовательность одинаковых символов одним символом, за которым идет его количество.&lt;/p>
+&lt;p>Пример: &amp;ldquo;aaabbaaa&amp;rdquo; =&amp;gt; &amp;ldquo;a3b2a3&amp;rdquo;&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>В этой задаче у нас есть два указателя: один для чтения элементов из исходного массива (&lt;code>read_ptr&lt;/code>) и второй для записи результата сжатия в тот же массив (&lt;code>write_ptr&lt;/code>). Сначала оба указателя стоят на начале массива. Далее, &lt;code>read_ptr&lt;/code> движется вправо, считая количество повторяющихся символов. После подсчета, мы записываем символ и его количество в массив, используя &lt;code>write_ptr&lt;/code>.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Инициализируем указатели &lt;code>read_ptr&lt;/code> и &lt;code>write_ptr&lt;/code> на начало массива.&lt;/li>
+&lt;li>Пока &lt;code>read_ptr&lt;/code> не достигнет конца массива:
+&lt;ul>
+&lt;li>Считаем количество повторяющихся символов, начиная с текущего &lt;code>read_ptr&lt;/code>.&lt;/li>
+&lt;li>Записываем символ и его количество в массив, используя &lt;code>write_ptr&lt;/code>.&lt;/li>
+&lt;li>Сдвигаем &lt;code>write_ptr&lt;/code> на количество записанных символов.&lt;/li>
+&lt;li>Перемещаем &lt;code>read_ptr&lt;/code> вправо.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">compress&lt;/span>(chars) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> read_ptr, write_ptr &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> read_ptr &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(chars):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> char &lt;span style="color:#666">=&lt;/span> chars[read_ptr]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> read_ptr &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(chars) &lt;span style="color:#007020;font-weight:bold">and&lt;/span> chars[read_ptr] &lt;span style="color:#666">==&lt;/span> char:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> read_ptr &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> chars[write_ptr] &lt;span style="color:#666">=&lt;/span> char
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> write_ptr &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> count &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> digit &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">str&lt;/span>(count):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> chars[write_ptr] &lt;span style="color:#666">=&lt;/span> digit
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> write_ptr &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> write_ptr
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1657. Determine if Two Strings Are Close</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1657/</link><pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1657/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/determine-if-two-strings-are-close/">LeetCode problem&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>Two strings are considered close if you can attain one from the other using two operations:&lt;/p>
+&lt;ol>
+&lt;li>Swap any two existing characters.&lt;/li>
+&lt;li>Transform every occurrence of one existing character into another existing character, and do the same with the other character.&lt;/li>
+&lt;/ol>
+&lt;p>The challenge is to determine whether two given strings are close or not.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A naive approach might involve trying every possible combination of operations on the two strings until they match or until you&amp;rsquo;ve exhausted all possibilities. This approach is inefficient and not feasible for longer strings.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;p>A more efficient way to solve this problem is by understanding the core logic behind the operations. We can make use of frequency counts.&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>Check for Unique Characters:&lt;/strong> Both strings should have the same unique characters for them to be close.&lt;/li>
+&lt;li>&lt;strong>Frequency Counts Matter:&lt;/strong> The counts of characters in both strings should have the same frequency distribution.&lt;/li>
+&lt;/ol>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Calculate the frequency of each character in both strings.&lt;/li>
+&lt;li>Check if the sets of unique characters in both strings are the same.&lt;/li>
+&lt;li>Check if the sorted list of frequency counts of characters in both strings are the same.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">collections&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> Counter
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">closeStrings&lt;/span>(word1, word2):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Calculate character frequency for both words&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> counter1 &lt;span style="color:#666">=&lt;/span> Counter(word1)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> counter2 &lt;span style="color:#666">=&lt;/span> Counter(word2)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Check if unique characters are the same in both words&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020">set&lt;/span>(counter1&lt;span style="color:#666">.&lt;/span>keys()) &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#007020">set&lt;/span>(counter2&lt;span style="color:#666">.&lt;/span>keys()):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Check if the frequency distribution is the same for both words&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020">sorted&lt;/span>(counter1&lt;span style="color:#666">.&lt;/span>values()) &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#007020">sorted&lt;/span>(counter2&lt;span style="color:#666">.&lt;/span>values()):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

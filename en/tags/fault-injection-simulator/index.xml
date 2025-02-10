@@ -1,4 +1,55 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fault Injection Simulator on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/fault-injection-simulator/</link><description>Recent content in Fault Injection Simulator on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Mon, 19 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/fault-injection-simulator/index.xml" rel="self" type="application/rss+xml"/><item><title>Fault Injection Simulator</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/fis/</link><pubDate>Mon, 19 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/fis/</guid><description>About AWS Fault Injection Simulator (FIS) is a fully managed service for running fault injection experiments on AWS that makes it easier to improve an application’s performance, observability, and resiliency.
-Documentation User Guide Price Current price
-With AWS FIS, you pay only for what you use. There are no upfront costs or minimum fees. You are charged based on the duration that an action is active. The AWS FIS price is $0.10 per action-minute.
-Terminology and Concepts Everything starts with an experiment template.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fault Injection Simulator on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/fault-injection-simulator/</link><description>Recent content in Fault Injection Simulator on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Mon, 19 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/fault-injection-simulator/index.xml" rel="self" type="application/rss+xml"/><item><title>Fault Injection Simulator</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/fis/</link><pubDate>Mon, 19 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/fis/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>AWS Fault Injection Simulator (FIS) is a fully managed service for running fault injection experiments on AWS that makes it easier to improve an application’s performance, observability, and resiliency.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/fis/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/fis/?id=docs_gateway">User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/fis/AWS-Fault-Injection-Simulator_HIW-Diagram.1e3b58caa9f8db5200a1e832b716118b0f2c3b8c.png"
+id="zoom-default"
+alt="Fault Injection Simulator Flow"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="price">Price&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/fis/pricing/">Current price&lt;/a>&lt;/p>
+&lt;p>With AWS FIS, you pay only for what you use. There are no upfront costs or minimum fees. You are charged based on the duration that an action is active. The AWS FIS price is $0.10 per action-minute.&lt;/p>
+&lt;h2 id="terminology-and-concepts">Terminology and Concepts&lt;/h2>
+&lt;p>Everything starts with an &lt;strong>experiment template&lt;/strong>. The experiment template defines the targets that participate in the experiment. Supported targets are:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="../ec2">EC2&lt;/a> Instances&lt;/li>
+&lt;li>&lt;a href="../eks">EKS&lt;/a> node groups&lt;/li>
+&lt;li>&lt;a href="../rds">RDS&lt;/a> clusters &amp;amp; instances&lt;/li>
+&lt;li>&lt;a href="../iam">IAM&lt;/a> roles&lt;/li>
+&lt;/ul>
+&lt;p>The &lt;strong>actions&lt;/strong> define the &lt;strong>injected faults&lt;/strong>. You can run actions in parallel or sequence.&lt;/p>
+&lt;p>Some action examples:&lt;/p>
+&lt;ul>
+&lt;li>AWS API level errors for the EC2 service&lt;/li>
+&lt;li>Stop/reboot/terminate EC2 instances&lt;/li>
+&lt;li>Run SSM commands on EC2 instances to stress CPU or memory, add network latency, or kill a process&lt;/li>
+&lt;li>Reboot RDS instance&lt;/li>
+&lt;li>Failover RDS cluster&lt;/li>
+&lt;li>Drain ECS container instance&lt;/li>
+&lt;li>Terminate EKS node group instance&lt;/li>
+&lt;/ul>
+&lt;h2 id="use-cases">Use Cases&lt;/h2>
+&lt;ul>
+&lt;li>Periodic Game Days&lt;/li>
+&lt;li>Continuous Delivery Pipeline Integration&lt;/li>
+&lt;/ul>
+&lt;h2 id="practice">Practice&lt;/h2>
+&lt;p>&lt;a href="https://docs.aws.amazon.com/fis/latest/userguide/fis-tutorial-stop-instances.html">Test instance stop and start using&lt;/a>&lt;/p>
+&lt;h2 id="questions">Questions&lt;/h2>
+&lt;h3 id="q1">Q1&lt;/h3>
+&lt;p>&lt;strong>What is Chaos Engineering?&lt;/strong>&lt;/p>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>Chaos engineering is the process of stressing an application in testing or production environments by creating disruptive events, such as server outages or API throttling, observing how the system responds, and implementing improvements.&lt;/p>
+&lt;p>Chaos engineering helps teams create the real-world conditions needed to uncover the hidden issues, monitoring blind spots, and performance bottlenecks that are difficult to find in distributed systems.&lt;/p>
+&lt;p>It starts with analyzing the steady-state behavior, building an experiment hypothesis (e.g., terminating x number of instances will lead to &lt;em>x%&lt;/em> more retries), executing the experiment by injecting fault actions, monitoring roll back conditions, and addressing the weaknesses.&lt;/p>
+&lt;/div>
+&lt;/details></description></item></channel></rss>

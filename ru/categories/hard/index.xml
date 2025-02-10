@@ -1,11 +1,314 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hard on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/categories/hard/</link><description>Recent content in Hard on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Mon, 12 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/categories/hard/index.xml" rel="self" type="application/rss+xml"/><item><title>4. Median of Two Sorted Arrays</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/4/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/4/</guid><description>LeetCode задача 4
-Задача Даны два отсортированных массива nums1 и nums2 размера m и n соответственно. Найти медиану двух отсортированных массивов.
-Подсказки Чтобы найти медиану, нужно сначала объединить два массива и отсортировать их. После этого медиана будет либо средним элементом, если общее количество элементов нечетное, либо средним значением двух центральных элементов, если общее количество элементов четное.
-Подход Мы можем объединить два массива в один большой отсортированный массив и найти медиану этого массива. Этот подход не самый эффективный, но он прост и понятен.</description></item><item><title>42. Trapping Rain Water</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/42/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/42/</guid><description>LeetCode задача 42
-Задача Дан массив неотрицательных целых чисел, представляющих собой карту высот, где ширина каждой стойки равна 1. Вычислите, сколько воды может удерживать этот массив после дождя.
-Подсказки Мы можем решить эту задачу, двигаясь от краев массива к его центру, отслеживая текущую максимальную высоту с обеих сторон.
-Подход Простой и понятный способ решения этой задачи - пройтись по массиву и для каждого элемента вычислить, сколько воды он может удержать.
-Алгоритм Инициализируем переменную для хранения общего объема воды, который может быть удержан.</description></item><item><title>847. Shortest Path Visiting All Nodes</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/847/</link><pubDate>Mon, 12 Feb 2024 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/847/</guid><description>LeetCode problem 847
-Problem Statement Given an undirected, connected graph of n nodes labeled from 0 to n - 1. An array graph is provided where graph[i] is a list of all the nodes connected with node i by an edge. The objective is to determine the length of the shortest path that visits every node.
-It&amp;rsquo;s permissible to start and stop at any node, revisit nodes multiple times, and reuse edges.
-Naive Solution A naive approach would be to attempt all possible paths (brute force) until all nodes are visited.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hard on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/categories/hard/</link><description>Recent content in Hard on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 22 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/categories/hard/index.xml" rel="self" type="application/rss+xml"/><item><title>4. Median of Two Sorted Arrays</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/4/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/4/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/median-of-two-sorted-arrays">LeetCode задача 4&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Даны два отсортированных массива nums1 и nums2 размера m и n соответственно. Найти медиану двух отсортированных массивов.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Чтобы найти медиану, нужно сначала объединить два массива и отсортировать их. После этого медиана будет либо средним элементом, если общее количество элементов нечетное, либо средним значением двух центральных элементов, если общее количество элементов четное.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Мы можем объединить два массива в один большой отсортированный массив и найти медиану этого массива. Этот подход не самый эффективный, но он прост и понятен.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;p>Объедините два массива.
+Отсортируйте объединенный массив.
+Найдите медиану отсортированного массива.&lt;/p>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">findMedianSortedArrays&lt;/span>(nums1, nums2):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Шаг 1: Объединение двух массивов&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> merged &lt;span style="color:#666">=&lt;/span> nums1 &lt;span style="color:#666">+&lt;/span> nums2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Шаг 2: Сортировка объединенного массива&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> merged&lt;span style="color:#666">.&lt;/span>sort()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Шаг 3: Поиск медианы&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(merged)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> middle &lt;span style="color:#666">=&lt;/span> n &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Если n четное&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> n &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> (merged[middle &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">+&lt;/span> merged[middle]) &lt;span style="color:#666">/&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Если n нечетное&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> merged[middle]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>42. Trapping Rain Water</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/42/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/42/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/trapping-rain-water/">LeetCode задача 42&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Дан массив неотрицательных целых чисел, представляющих собой карту высот, где ширина каждой стойки равна 1. Вычислите, сколько воды может удерживать этот массив после дождя.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Мы можем решить эту задачу, двигаясь от краев массива к его центру, отслеживая текущую максимальную высоту с обеих сторон.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Простой и понятный способ решения этой задачи - пройтись по массиву и для каждого элемента вычислить, сколько воды он может удержать.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Инициализируем переменную для хранения общего объема воды, который может быть удержан.&lt;/li>
+&lt;li>Пройдемся по массиву, для каждого элемента:
+&lt;ul>
+&lt;li>Найдем максимальную высоту слева и справа от текущего элемента.&lt;/li>
+&lt;li>Объем воды, который может быть удержан над этим элементом, равен минимальному значению из этих двух максимальных высот, минус высота самого элемента.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Добавим этот объем к общему объему.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">trap&lt;/span>(height):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(height)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Инициализируем переменную для хранения общего объема воды&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> total_water &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Находим максимальную высоту слева от i&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_left &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(height[:i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Находим максимальную высоту справа от i&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_right &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(height[i:])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Объем воды для текущего элемента&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> water &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">min&lt;/span>(max_left, max_right) &lt;span style="color:#666">-&lt;/span> height[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Добавляем этот объем к общему объему&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> total_water &lt;span style="color:#666">+=&lt;/span> water
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> total_water
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>332. Reconstruct Itinerary</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/332/</link><pubDate>Fri, 15 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/332/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/reconstruct-itinerary/">LeetCode problem&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>Given a list of airline tickets represented by pairs of departure and arrival airports [from, to], reconstruct the itinerary in order. All of the tickets belong to a man who departs from &amp;ldquo;JFK&amp;rdquo;, thus, the itinerary must begin with &amp;ldquo;JFK&amp;rdquo;. If there are multiple valid itineraries, you should return the itinerary that has the smallest lexical order when read as a single string.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>One naive solution would be to use backtracking and try all possible combinations of tickets to form a valid itinerary. While this could work for small inputs, it&amp;rsquo;s not efficient for larger numbers of tickets.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;ul>
+&lt;li>Consider the tickets as a directed graph where each airport is a node, and a ticket between two airports represents a directed edge.&lt;/li>
+&lt;li>For this problem, instead of a depth-first traversal, the solution employs an iterative approach using a stack.&lt;/li>
+&lt;/ul>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>We can visualize this problem as a directed graph traversal task. Every ticket is a directed edge between two airports. The challenge is to find a path that uses all the directed edges and starts from JFK.&lt;/p>
+&lt;p>The stack is an essential data structure for this solution, and here&amp;rsquo;s why:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>A stack helps in maintaining the path. When visiting an airport, we&amp;rsquo;re not sure if this path will lead to a solution (because it might end up in a dead-end). Hence, pushing the airports to the stack gives us the flexibility to backtrack easily (by popping out the last visited airport) if we reach a dead-end.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>When all destinations from an airport are exhausted, it means we have found the end of that particular path. At this moment, by adding the airport to our final result and removing it from the stack, we backtrack to find the remaining itinerary.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>The graph for this solution is a dictionary (specifically, a &lt;code>defaultdict&lt;/code> for ease of handling non-existing keys). The keys of this dictionary are the source airports, and the values are a list of destination airports. Importantly, these destinations are sorted in reverse lexicographical order because we will be utilizing the &lt;code>pop()&lt;/code> function to retrieve and remove the last element from these lists. This ensures that we always get the smallest lexical destination available without any extra computational overhead.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Convert the given list of tickets into a graph where each node (airport) points to a list of its destinations.&lt;/li>
+&lt;li>Sort the destinations in reverse lexicographical order to aid in retrieving the smallest lexical order when using pop().&lt;/li>
+&lt;li>Use a stack to iteratively traverse the graph, always trying to go to the smallest lexical destination possible.&lt;/li>
+&lt;li>When stuck at a node (airport) with no unvisited outbound paths, add it to the final itinerary.&lt;/li>
+&lt;li>Continue the process until the stack is empty.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">collections&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> defaultdict
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">findItinerary&lt;/span>(tickets):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> graph &lt;span style="color:#666">=&lt;/span> defaultdict(&lt;span style="color:#007020">list&lt;/span>) &lt;span style="color:#60a0b0;font-style:italic"># Convert tickets into a graph with destinations for each departure&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> src, dest &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">sorted&lt;/span>(tickets, reverse&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">True&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> graph[src]&lt;span style="color:#666">.&lt;/span>append(dest)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#4070a0">&amp;#34;JFK&amp;#34;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> stack: &lt;span style="color:#60a0b0;font-style:italic"># Traverse the graph using the stack&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> graph[stack[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack&lt;span style="color:#666">.&lt;/span>append(graph[stack[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]]&lt;span style="color:#666">.&lt;/span>pop())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result&lt;span style="color:#666">.&lt;/span>append(stack&lt;span style="color:#666">.&lt;/span>pop())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> result[::&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#60a0b0;font-style:italic"># The result will be in reverse order&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># because of the way nodes are added to the result&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>847. Shortest Path Visiting All Nodes</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/847/</link><pubDate>Sun, 17 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/847/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/shortest-path-visiting-all-nodes/">LeetCode problem 847&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>Given an undirected, connected graph of n nodes labeled from 0 to &lt;code>n - 1&lt;/code>. An array graph is provided where &lt;code>graph[i]&lt;/code> is a list of all the nodes connected with node i by an edge. The objective is to determine the length of the shortest path that visits every node.&lt;/p>
+&lt;p>It&amp;rsquo;s permissible to start and stop at any node, revisit nodes multiple times, and reuse edges.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A naive approach would be to attempt all possible paths (brute force) until all nodes are visited. This would involve significant computational power and time, especially for larger graphs.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>State Compression&lt;/strong>: The visited state of nodes can be represented using binary numbers.&lt;/li>
+&lt;li>&lt;strong>Breadth-First Search&lt;/strong>: BFS can be used to explore the graph systematically.&lt;/li>
+&lt;/ol>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>Instead of the brute force approach, a more refined BFS can be applied. The BFS is enhanced using two techniques:&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>State Compression&lt;/strong>: Rather than tracking visited nodes for each path with a set or list, represent them with a binary number. This efficient way compresses the state and avoids redundancy.&lt;/li>
+&lt;li>&lt;strong>Double-ended Queue&lt;/strong>: An efficient way to explore BFS paths using deque which allows operations from both ends.&lt;/li>
+&lt;/ol>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Use BFS for exploration.&lt;/li>
+&lt;li>Encode the visited state of nodes with binary numbers.&lt;/li>
+&lt;li>Utilize a double-ended queue storing the nodes, their states, and steps taken.&lt;/li>
+&lt;li>The ultimate goal is to discover a state that represents all nodes being visited.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">collections&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> deque
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">shortestPathLength&lt;/span>(graph):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(graph)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> final_state &lt;span style="color:#666">=&lt;/span> (&lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#666">&amp;lt;&amp;lt;&lt;/span> n) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># This mask checks if all nodes are visited&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> visited &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>() &lt;span style="color:#60a0b0;font-style:italic"># To track visited (node, state) pairs&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> queue &lt;span style="color:#666">=&lt;/span> deque() &lt;span style="color:#60a0b0;font-style:italic"># Double-ended queue for BFS&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Start BFS from every node&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> state &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#666">&amp;lt;&amp;lt;&lt;/span> i
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> queue&lt;span style="color:#666">.&lt;/span>append((i, state, &lt;span style="color:#40a070">0&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> visited&lt;span style="color:#666">.&lt;/span>add((i, state))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> queue:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> node, state, steps &lt;span style="color:#666">=&lt;/span> queue&lt;span style="color:#666">.&lt;/span>popleft()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> state &lt;span style="color:#666">==&lt;/span> final_state: &lt;span style="color:#60a0b0;font-style:italic"># If all nodes are visited in the current state, return steps&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> steps
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> neighbor &lt;span style="color:#007020;font-weight:bold">in&lt;/span> graph[node]: &lt;span style="color:#60a0b0;font-style:italic"># Check neighbors and add new states to the queue&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> new_state &lt;span style="color:#666">=&lt;/span> state &lt;span style="color:#666">|&lt;/span> (&lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#666">&amp;lt;&amp;lt;&lt;/span> neighbor)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (neighbor, new_state) &lt;span style="color:#007020;font-weight:bold">not&lt;/span> &lt;span style="color:#007020;font-weight:bold">in&lt;/span> visited:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> visited&lt;span style="color:#666">.&lt;/span>add((neighbor, new_state))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> queue&lt;span style="color:#666">.&lt;/span>append((neighbor, new_state, steps &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1420. Build Array Where You Can Find The Maximum Exactly K Comparisons</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/1420/</link><pubDate>Thu, 21 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/1420/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/build-array-where-you-can-find-the-maximum-exactly-k-comparisons/">LeetCode Problem 1420&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>In this problem, we have three integers, &lt;code>n&lt;/code>, &lt;code>m&lt;/code>, and &lt;code>k&lt;/code>. We need to construct an array &lt;code>arr&lt;/code> having the following properties:&lt;/p>
+&lt;ol>
+&lt;li>It consists of exactly &lt;code>n&lt;/code> integers.&lt;/li>
+&lt;li>Each integer in the array is between &lt;code>1&lt;/code> and &lt;code>m&lt;/code> inclusive.&lt;/li>
+&lt;li>After executing a certain algorithm on &lt;code>arr&lt;/code>, we get a value known as &lt;code>search_cost&lt;/code>. Our goal is to ensure &lt;code>search_cost&lt;/code> is equal to &lt;code>k&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;p>The main challenge is determining how many ways we can construct such an array &lt;code>arr&lt;/code>.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A naive approach might involve generating all possible array combinations, then determining which ones fulfill our criteria. This method, however, would be inefficient due to its exponential time complexity. Given the constraints, this naive method won&amp;rsquo;t be feasible.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;ul>
+&lt;li>Utilize dynamic programming to avoid recalculating overlapping subproblems.&lt;/li>
+&lt;li>Keeping track of the maximum value encountered so far can help narrow down the possible outcomes.&lt;/li>
+&lt;/ul>
+&lt;h2 id="approach--idea">Approach / Idea&lt;/h2>
+&lt;p>To tackle this problem efficiently, we use dynamic programming. The main idea is to maintain a three-dimensional &lt;code>dp&lt;/code> array, which keeps track of:&lt;/p>
+&lt;ol>
+&lt;li>Current length of the array we&amp;rsquo;re constructing (&lt;code>i&lt;/code>).&lt;/li>
+&lt;li>The maximum value used so far (&lt;code>max_so_far&lt;/code>).&lt;/li>
+&lt;li>Remaining comparisons (&lt;code>remain&lt;/code>).&lt;/li>
+&lt;/ol>
+&lt;p>With this DP table, we can progressively compute how many ways we can construct an array of length &lt;code>i&lt;/code> while meeting our conditions.&lt;/p>
+&lt;h2 id="steps--high-level-algorithm">Steps / High-Level Algorithm&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Initialize the DP Array&lt;/strong>:
+Create a three-dimensional &lt;code>dp&lt;/code> array filled with zeros.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Base Case&lt;/strong>:
+When the array length equals &lt;code>n&lt;/code>, the possible values for &lt;code>max_so_far&lt;/code> are already decided, hence set &lt;code>dp[n][max_so_far][0]&lt;/code> to &lt;code>1&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Fill the DP Table&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>Iterate backwards, starting from the end towards the beginning.&lt;/li>
+&lt;li>For each &lt;code>i&lt;/code>, determine the number of ways we can construct an array of that length based on &lt;code>max_so_far&lt;/code> and &lt;code>remain&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;p>Note: This is where the majority of the dynamic programming logic comes into play.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Calculate the Result&lt;/strong>:
+Once the DP table is complete, &lt;code>dp[0][0][k]&lt;/code> contains the number of ways we can construct the array.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;p>Here&amp;rsquo;s the python code:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">numOfArrays&lt;/span>(self, n: &lt;span style="color:#007020">int&lt;/span>, m: &lt;span style="color:#007020">int&lt;/span>, k: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dp &lt;span style="color:#666">=&lt;/span> [[[&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">*&lt;/span> (k &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>) &lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(m &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)] &lt;span style="color:#007020;font-weight:bold">for&lt;/span> __ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MOD &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">10&lt;/span> &lt;span style="color:#666">**&lt;/span> &lt;span style="color:#40a070">9&lt;/span> &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">7&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> num &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(dp[&lt;span style="color:#40a070">0&lt;/span>])):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dp[n][num][&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> max_so_far &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(m, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> remain &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(k &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> (max_so_far &lt;span style="color:#666">*&lt;/span> dp[i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>][max_so_far][remain]) &lt;span style="color:#666">%&lt;/span> MOD
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> remain &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> num &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(max_so_far &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>, m &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> (res &lt;span style="color:#666">+&lt;/span> dp[i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>][num][remain &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>]) &lt;span style="color:#666">%&lt;/span> MOD
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dp[i][max_so_far][remain] &lt;span style="color:#666">=&lt;/span> res
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> dp[&lt;span style="color:#40a070">0&lt;/span>][&lt;span style="color:#40a070">0&lt;/span>][k]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>2251. Number of Flowers in Full Bloom</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/2251/</link><pubDate>Fri, 22 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/2251/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/number-of-flowers-in-full-bloom/">LeetCode Problem 2251&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>In the given problem, we are presented with two arrays. The first, &lt;code>flowers&lt;/code>, represents when each flower starts and stops being in full bloom. The second, &lt;code>people&lt;/code>, indicates when each person arrives to see the flowers. Our task is to determine, for each person, how many flowers they will see in full bloom upon their arrival.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A straightforward approach might involve iterating over each person&amp;rsquo;s arrival time. For each time, we could iterate over the &lt;code>flowers&lt;/code> list to count how many flowers are in full bloom. This approach, however, would lead to a time complexity of O(n*m), with n being the number of people and m being the number of flowers. With larger constraints, this could be quite inefficient.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;ul>
+&lt;li>Separating the start and end times of each flower&amp;rsquo;s blooming period can simplify the problem.&lt;/li>
+&lt;li>Binary search can be an effective tool to efficiently find specific intervals in sorted lists.&lt;/li>
+&lt;/ul>
+&lt;h2 id="approach--idea">Approach / Idea&lt;/h2>
+&lt;p>Instead of associating the start and end times of each flower&amp;rsquo;s blooming period, we can consider them separately. By focusing on how many flowers have started and stopped blooming by a specific time, we can easily determine the number of flowers in full bloom.&lt;/p>
+&lt;p>The idea is to use two separate arrays: one for all the start times (&lt;code>starts&lt;/code>) and one for all the end times (&lt;code>ends&lt;/code>). By sorting these arrays, we can use binary search to swiftly identify the number of flowers that have started and stopped blooming by any given time.&lt;/p>
+&lt;h2 id="steps--high-level-algorithm">Steps / High level algorithm&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Create Two Arrays&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>Initialize two empty lists, &lt;code>starts&lt;/code> and &lt;code>ends&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Fill Arrays with Data&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>Loop through each flower&amp;rsquo;s blooming period in &lt;code>flowers&lt;/code> and populate the &lt;code>starts&lt;/code> and &lt;code>ends&lt;/code> lists.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Sort the Arrays&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>Sort both &lt;code>starts&lt;/code> and &lt;code>ends&lt;/code> to ensure efficient binary searches.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Determine Blooming Flowers&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>For each person&amp;rsquo;s arrival time in &lt;code>people&lt;/code>:
+&lt;ul>
+&lt;li>Use binary search on &lt;code>starts&lt;/code> to determine how many flowers have begun blooming.&lt;/li>
+&lt;li>Use another binary search on &lt;code>ends&lt;/code> to see how many have finished.&lt;/li>
+&lt;li>Subtract the number of finished blooms from the started ones and append to the results list.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Return the Result&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>Return the generated list containing the number of flowers in full bloom for each person.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;p>Below is the Python code implementing the above-mentioned approach:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">bisect&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> bisect_right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">typing&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> List
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">fullBloomFlowers&lt;/span>(self, flowers: List[List[&lt;span style="color:#007020">int&lt;/span>]], people: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[&lt;span style="color:#007020">int&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> starts &lt;span style="color:#666">=&lt;/span> [] &lt;span style="color:#60a0b0;font-style:italic"># Initialize start and end arrays&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ends &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> start, end &lt;span style="color:#007020;font-weight:bold">in&lt;/span> flowers: &lt;span style="color:#60a0b0;font-style:italic"># Populate arrays with flower bloom periods&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> starts&lt;span style="color:#666">.&lt;/span>append(start)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ends&lt;span style="color:#666">.&lt;/span>append(end &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> starts&lt;span style="color:#666">.&lt;/span>sort() &lt;span style="color:#60a0b0;font-style:italic"># Sort both arrays for efficient binary search&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ends&lt;span style="color:#666">.&lt;/span>sort()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> person &lt;span style="color:#007020;font-weight:bold">in&lt;/span> people: &lt;span style="color:#60a0b0;font-style:italic"># Calc number of flowers for each person&amp;#39;s arrival time&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">=&lt;/span> bisect_right(starts, person) &lt;span style="color:#60a0b0;font-style:italic"># Use binary search to find flowers&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> j &lt;span style="color:#666">=&lt;/span> bisect_right(ends, person) &lt;span style="color:#60a0b0;font-style:italic"># that have started and finished blooming&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#666">.&lt;/span>append(i &lt;span style="color:#666">-&lt;/span> j)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

@@ -1,5 +1,290 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Iam on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/iam/</link><description>Recent content in Iam on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 09 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/iam/index.xml" rel="self" type="application/rss+xml"/><item><title>IAM</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/iam/</link><pubDate>Fri, 09 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/iam/</guid><description>About IAM - AWS Identity and Access Management
-AWS IAM AWS IAM User Guide AWS Identity and Access Management (IAM) allows to securely control user access to AWS services and resources.
-Designed for organizations with multiple users or systems that use AWS products such as Amazon EC2, Amazon RDS, and AWS Management Console.
-With IAM, you can centrally manage users, security credentials such as access keys, and permissions that control user access to AWS resources.
-There are three ways IAM authenticates a principal:</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Iam on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/iam/</link><description>Recent content in Iam on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 09 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/iam/index.xml" rel="self" type="application/rss+xml"/><item><title>IAM</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/iam/</link><pubDate>Fri, 09 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/iam/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>IAM - AWS Identity and Access Management&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/iam/">AWS IAM&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/iam/?id=docs_gateway">AWS IAM User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>AWS Identity and Access Management (IAM) allows to securely control user access to AWS services and resources.&lt;/p>
+&lt;p>Designed for organizations with &lt;strong>multiple users or systems&lt;/strong> that use AWS products such as Amazon EC2, Amazon RDS, and AWS Management Console.&lt;/p>
+&lt;p>With IAM, you can centrally manage users, security credentials such as access keys, and permissions that control user access to AWS resources.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/product-marketing/IAM/iam-how-it-works-diagram.04a2c4e4a1e8848155840676fa97ff2146d19012.png"
+id="zoom-default"
+alt="Amazon IAM Flow"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>There are three ways IAM authenticates a principal:&lt;/p>
+&lt;ul>
+&lt;li>User Name/Password&lt;/li>
+&lt;li>Access Key&lt;/li>
+&lt;li>Access Key/Session Token&lt;/li>
+&lt;/ul>
+&lt;h2 id="digest">Digest&lt;/h2>
+&lt;ul>
+&lt;li>IAM consists of the following:
+&lt;ul>
+&lt;li>Users&lt;/li>
+&lt;li>Groups&lt;/li>
+&lt;li>Roles&lt;/li>
+&lt;li>Policy Documents&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>IAM is Global. It doesn&amp;rsquo;t apply to any specific region.&lt;/li>
+&lt;li>There is no charge to use IAM.&lt;/li>
+&lt;li>IAM is compliant with Payment Card Industry (PCI) Data Security Standard (DSS)&lt;/li>
+&lt;li>The &amp;ldquo;root account&amp;rdquo; has complete Admin access.&lt;/li>
+&lt;li>&lt;strong>Don&amp;rsquo;t use &amp;ldquo;root account&amp;rdquo;&lt;/strong> for everyday use. Instead, create users. A new user will have NO permissions by default. Grant least privilege needed for their job.&lt;/li>
+&lt;li>New user will be assigned with password, Access Key ID &amp;amp; Secret Access Keys. The password will be used to login to AWS management console. Access Key ID &amp;amp; Secret Access Key will be used to login via the APIs and CLI&lt;/li>
+&lt;li>Always setup MFA on your root account.&lt;/li>
+&lt;li>Use Groups to assign permissions to IAM users&lt;/li>
+&lt;li>Use Roles to Delegate permissions. Role is more secure than creating individual user. Roles gives temporary credentials for access; whereas User has long term credentials.&lt;/li>
+&lt;li>Create and customize &lt;a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_account-policy.html">password rotation policies&lt;/a>&lt;/li>
+&lt;li>Policies can be attached to users, groups and roles. Use AWS defined policies, assign permissions wherever possible. Policy is defined in JSON format and contains version, statements, - effect, action, resource, principal, and condition.&lt;/li>
+&lt;li>STS &lt;a href="https://docs.aws.amazon.com/STS/latest/APIReference/welcome.html">Security Token Service&lt;/a> provides temporary security credentials to the trusted users. STS is global and there is no charge to use it.&lt;/li>
+&lt;li>Digest: &lt;a href="https://tutorialsdojo.com/aws-identity-and-access-management-iam/">https://tutorialsdojo.com/aws-identity-and-access-management-iam/&lt;/a>&lt;/li>
+&lt;li>IAM best practices - Question might ask you to identify best practices among the given choices. &lt;a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html">https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html&lt;/a>&lt;/li>
+&lt;li>Difference between when to use Role and User.&lt;/li>
+&lt;li>IAM Policy Simulator - service for testing and troubleshooting IAM Policies. &lt;a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html">Details&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/sap_aws_iam_managed_policies.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="practice">Practice&lt;/h2>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/FUoRNeQm6RY?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="A step-by-step guide to setting up AWS Identity and Access Management">&lt;/iframe>
+&lt;/div>
+&lt;p>Go to &lt;a href="https://us-east-1.console.aws.amazon.com/iam/home#/">IAM page&lt;/a>&lt;/p>
+&lt;h3 id="creating-iam-groups">Creating IAM groups&lt;/h3>
+&lt;p>On the &lt;strong>User Groups&lt;/strong> page, click &lt;strong>Create group&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/01.png"
+id="zoom-default"
+alt="01.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol>
+&lt;li>Specify the name of the group. Mine is: &lt;strong>DevOps&lt;/strong>.&lt;/li>
+&lt;li>Add permission to view EC2: &lt;strong>AmazonEC2ReadOnlyAccess&lt;/strong>.&lt;/li>
+&lt;li>create&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/02.png"
+id="zoom-default"
+alt="Amazon EC2 Read Only Access"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The group was created&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/03.png"
+id="zoom-default"
+alt="IAM Group"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="creating-iam-users">Creating IAM users&lt;/h3>
+&lt;p>On the &lt;strong>Users&lt;/strong> page, click &lt;strong>Create user&lt;/strong>
+&lt;p class="md__image">
+&lt;img
+src="./img/04.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Type in user name (login)
+&lt;p class="md__image">
+&lt;img
+src="./img/05.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="permissions">Permissions&lt;/h3>
+&lt;p>Add user to the group
+&lt;p class="md__image">
+&lt;img
+src="./img/06.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="tags">Tags&lt;/h3>
+&lt;p>Skip section or put tags. It is useful and popular to set tags for resources in companies with a lot of connected AWS resources&lt;/p>
+&lt;h3 id="loginpassword">Login/Password&lt;/h3>
+&lt;p>At the last step, download the &lt;code>.csv&lt;/code> file with login, keys and password. You will need the password later to log in as this user.
+On this page there is a link to log in. We will use it in the next step
+&lt;p class="md__image">
+&lt;img
+src="./img/07.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="logging-in-as-a-new-user">Logging in as a new user&lt;/h3>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/08.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h4 id="checking-privileges">Checking privileges&lt;/h4>
+&lt;p>This user has access to view EC2 instances. Let&amp;rsquo;s check whether or not the S3 garbage cans have access.&lt;/p>
+&lt;p>Let&amp;rsquo;s try to create an S3 bucket
+&lt;p class="md__image">
+&lt;img
+src="./img/09.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>After trying to create a recycle bucket, we get a window indicating no permissions
+&lt;p class="md__image">
+&lt;img
+src="./img/10.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="questions">Questions&lt;/h2>
+&lt;h3 id="q1">Q1&lt;/h3>
+&lt;p>&lt;strong>A client has contracted you to review their existing AWS environment and recommend and implement best practice changes. You begin by reviewing existing users and Identity Access Management. You found out improvements that can be made with the use of the root account and Identity Access Management.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>What are the best practice guidelines for use of the root account?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Never use the root account.&lt;/li>
+&lt;li>Use the root account only to create administrator accounts.&lt;/li>
+&lt;li>Use the root account to create your first IAM user and then lock away the root account.&lt;/li>
+&lt;li>Use the root account to create all other accounts, and share the root account with one backup administrator.&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials" target="_blank">lock-away-credentials&lt;/a>
+&lt;p>&lt;mark style="color:white">1&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q2">Q2&lt;/h3>
+&lt;p>&lt;strong>Your organization has an AWS setup and planning to build Single Sign-On for users to authenticate with on-premise Microsoft Active Directory Federation Services (ADFS) and let users log in to the AWS console using AWS STS Enterprise Identity Federation.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which of the following services do you need to call from AWS STS service after you authenticate with your on-premise?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>AssumeRoleWithSAML&lt;/li>
+&lt;li>GetFederationToken&lt;/li>
+&lt;li>AssumeRoleWithWebIdentity&lt;/li>
+&lt;li>GetCallerIdentity&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html" target="_blank">https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html&lt;/a>
+&lt;a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html" target="_blank">https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html&lt;/a>
+&lt;p>&lt;mark style="color:white">1&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q3">Q3&lt;/h3>
+&lt;p>&lt;strong>Alice is building a mobile application. She planned to use Multi-Factor Authentication (MFA) when accessing some AWS resources.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which of the following APIs will be leveraged to provide temporary security credentials?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>AssumeRoleWithSAML&lt;/li>
+&lt;li>GetFederationToken&lt;/li>
+&lt;li>GetSessionToken&lt;/li>
+&lt;li>AssumeRoleWithWebIdentity&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html">https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html">AssumeRoleWithWebIdentity&lt;/a> - does not support MFA&lt;/p>
+&lt;p>&lt;mark style="color:white">3&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q4">Q4&lt;/h3>
+&lt;p>&lt;strong>A leading insurance firm has several new members in its development team. The solutions architect was instructed to provision access to certain IAM users who perform application development tasks in the VPC.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>The access should allow the users to create and configure various AWS resources, such as deploying Windows EC2 servers. In addition, the users should be able to see the permissions in AWS Organizations to view information about the user’s organization, including the master account email and organization limitations.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which of the following should the solutions architect implement to follow the standard security advice of granting the least privilege?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Attach the PowerUserAccess AWS managed policy to the IAM users.&lt;/li>
+&lt;li>Attach the AdministratorAccess AWS managed policy to the IAM users.&lt;/li>
+&lt;li>Create a new IAM role and attach the SystemAdministrator AWS managed policy to it. Assign the IAM Role to the IAM users.&lt;/li>
+&lt;li>Create a new IAM role and attach the AdministratorAccess AWS managed policy to it. Assign the IAM Role to the IAM users.&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>AWS managed policies for job functions are designed to closely align to common job functions in the IT industry. You can use these policies to easily grant the permissions needed to carry out the tasks expected of someone in a specific job function.&lt;/p>
+&lt;p>These policies consolidate permissions for many services into a single policy that’s easier to work with than having permissions scattered across many policies.&lt;/p>
+&lt;p>For Developer Power Users, you can use the AWS managed policy name: PowerUserAccess if you have users who perform application development tasks. This policy will enable them to create and configure resources and services that support AWS aware application development.&lt;/p>
+&lt;p>The first statement of this policy uses the NotAction element to allow all actions for all AWS services and for all resources except AWS Identity and Access Management and AWS Organizations. The second statement grants IAM permissions to create a service-linked role.&lt;/p>
+&lt;p>This is required by some services that must access resources in another service, such as an Amazon S3 bucket. It also grants Organizations permissions to view information about the user’s organization, including the master account email and organization limitations.&lt;/p>
+&lt;p>&lt;mark style="color:white">1&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q5">Q5&lt;/h3>
+&lt;p>&lt;strong>A company has 100 AWS accounts that are consolidated using AWS Organizations. The accountants from the finance department log in as IAM users in the TD-Finance AWS account. The finance team members need to read the consolidated billing information in the TD-Master AWS master account that pays the charges of all the member (linked) accounts. The required IAM access to the AWS billing services has already been provisioned in the master account.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>The Security Officer should ensure that the finance team must not be able to view any other resources in the master account.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which of the following grants the finance team the necessary permissions for the above requirement?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Set up an IAM group for the finance users in the TD-Finance account then attach a ViewBilling permission and AWS managed ReadOnlyAccess IAM policy to the group.&lt;/li>
+&lt;li>Set up individual IAM users for the finance users in the TD-Master account then attach the AWS managed ReadOnlyAccess IAM policy to the group with cross-account access.&lt;/li>
+&lt;li>Set up an AWS IAM role in the TD-Finance account with the ViewBilling permission then grant the finance users in the TD-Master account the permission to assume that role.&lt;/li>
+&lt;li>Set up an IAM role in the TD-Master account with the ViewBilling permission then grant the finance users in the TD-Finance account the permission to assume the role.&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>You can use the consolidated billing feature in AWS Organizations to consolidate billing and payment for multiple AWS accounts or multiple Amazon Internet Services Pvt. Ltd (AISPL) accounts. Every organization in AWS Organizations has a master (payer) account that pays the charges of all the member (linked) accounts.&lt;/p>
+&lt;ul>
+&lt;li>ModifyAccount – Allow or deny IAM users permission to modify Account Settings.&lt;/li>
+&lt;li>ModifyAccount – Allow or deny IAM users permission to modify Account Settings.&lt;/li>
+&lt;li>ModifyBilling – Allow or deny IAM users permission to modify billing settings.&lt;/li>
+&lt;li>ModifyPaymentMethods – Allow or deny IAM users permission to modify payment methods.&lt;/li>
+&lt;li>ViewAccount – Allow or deny IAM users permission to view account settings.&lt;/li>
+&lt;li>ViewBilling – Allow or deny IAM users permission to view billing pages in the console.&lt;/li>
+&lt;li>ViewPaymentMethods – Allow or deny IAM users permission to view payment methods.&lt;/li>
+&lt;li>ViewUsage – Allow or deny IAM users permission to view AWS usage reports.&lt;/li>
+&lt;/ul>
+&lt;p>Use policies to grant permissions to perform an operation in AWS. When you use an action in a policy, you usually allow or deny access to the API operation or CLI command with the same name. However, in some cases, a single action controls access to more than one operation.&lt;/p>
+&lt;p>&lt;mark style="color:white">4&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html">Security best practices in IAM&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://catalog.us-east-1.prod.workshops.aws/workshops/8efd4edb-2b91-49fd-b1b8-3e3b5e71aa03/en-US/iam">IAM Hands-On Lab&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://workshops.aws/categories/IAM">IAM Workshops&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://awssecworkshops.com/getting-started/">Security workshop&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://tutorialsdojo.com/aws-identity-and-access-management-iam/">tutorialsdojo digest&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="community-posts">Community posts&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://dev.to/romankurnovskii/aws-iam-cheet-sheet-3if4">https://dev.to/romankurnovskii/aws-iam-cheet-sheet-3if4&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

@@ -1,8 +1,134 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Queue on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/queue/</link><description>Recent content in Queue on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 01 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/queue/index.xml" rel="self" type="application/rss+xml"/><item><title>649. Dota2 Senate</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/649/</link><pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/649/</guid><description>LeetCode задача 649
-Задача В игре Dota2, сенат состоит из двух партий: партии &amp;ldquo;Radiant&amp;rdquo; и партии &amp;ldquo;Dire&amp;rdquo;. Сенат решает, когда будет следующая игра, и каждый сенатор может голосовать за бан одного из сенаторов из другой партии.
-Забаненные сенаторы не могут делать действий и не участвуют в процессе подготовки следующего раунда.
-Предположим, у нас есть строка &amp;ldquo;RRDDD&amp;rdquo;. Здесь первый сенатор принадлежит партии Radiant, второй тоже к Radiant, третий, четвертый и пятый к Dire. Сначала первый сенатор Radiant делает ход, затем первый сенатор Dire, и так далее.</description></item><item><title>933. Number of Recent Calls</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/933/</link><pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/933/</guid><description>LeetCode задача 933
-Задача Реализуйте класс RecentCounter для подсчета вызовов ping за последние 3000 миллисекунд.
-Т.е. для вызова t=100, нужно подсчитать количество таких вызовов, время которых меньше t-3000 и учесть сам вызов.
-Подход В данной задаче нужно отслеживать количество вызовов ping за последние 3000 миллисекунд.
-Можно использовать очередь для хранения времени вызовов ping. При каждом новом вызове будем добавлять текущее время в конец очереди и удалять из начала все времена, которые не попадают в интервал последних 3000 миллисекунд.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Queue on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/queue/</link><description>Recent content in Queue on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 01 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/queue/index.xml" rel="self" type="application/rss+xml"/><item><title>621. Task Scheduler</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/621/</link><pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/621/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems//task-scheduler/">LeetCode problem 621&lt;/a>&lt;/p>
+&lt;h1 id="idea">Idea&lt;/h1>
+&lt;p>Think about how you can arrange the tasks with the highest frequency to minimize the idle times.&lt;/p>
+&lt;p>The key to solving this problem is to focus on how to efficiently arrange tasks with the highest frequency. We can calculate the frequency of each task and start scheduling the most frequent tasks first, inserting idle slots if needed. The maximum number of idle slots is determined by the frequency of the most frequent task.&lt;/p>
+&lt;p>Approach&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;ol>
+&lt;li>Count Frequencies: Calculate the frequency of each task.&lt;/li>
+&lt;li>Max Frequency Task: Identify the task with the maximum frequency. This task will dictate the minimum time required to complete all tasks considering the cooling period.&lt;/li>
+&lt;li>Calculate Idle Slots: Calculate the number of idle slots needed by subtracting the number of tasks from the maximum slots needed.&lt;/li>
+&lt;li>Reduce Idle Slots: Iterate over the frequencies of tasks to reduce the number of idle slots by placing other tasks in these slots.&lt;/li>
+&lt;li>Calculate Total Time: The total time required is the sum of all tasks and any remaining idle slots.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">collections&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> Counter
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">leastInterval&lt;/span>(self, tasks: List[&lt;span style="color:#007020">str&lt;/span>], n: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> task_counts &lt;span style="color:#666">=&lt;/span> Counter(tasks)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_freq &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(task_counts&lt;span style="color:#666">.&lt;/span>values())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_freq_tasks &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">sum&lt;/span>(freq &lt;span style="color:#666">==&lt;/span> max_freq &lt;span style="color:#007020;font-weight:bold">for&lt;/span> freq &lt;span style="color:#007020;font-weight:bold">in&lt;/span> task_counts&lt;span style="color:#666">.&lt;/span>values())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> part_count &lt;span style="color:#666">=&lt;/span> max_freq &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> part_length &lt;span style="color:#666">=&lt;/span> n &lt;span style="color:#666">-&lt;/span> (max_freq_tasks &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> empty_slots &lt;span style="color:#666">=&lt;/span> part_count &lt;span style="color:#666">*&lt;/span> part_length
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> available_tasks &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(tasks) &lt;span style="color:#666">-&lt;/span> max_freq &lt;span style="color:#666">*&lt;/span> max_freq_tasks
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> idles &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(&lt;span style="color:#40a070">0&lt;/span>, empty_slots &lt;span style="color:#666">-&lt;/span> available_tasks)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020">len&lt;/span>(tasks) &lt;span style="color:#666">+&lt;/span> idles
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>649. Dota2 Senate</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/649/</link><pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/649/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/dota2-senate/">LeetCode задача 649&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>В игре Dota2, сенат состоит из двух партий: партии &amp;ldquo;Radiant&amp;rdquo; и партии &amp;ldquo;Dire&amp;rdquo;. Сенат решает, когда будет следующая игра, и каждый сенатор может голосовать за бан одного из сенаторов из другой партии.&lt;/p>
+&lt;p>Забаненные сенаторы не могут делать действий и не участвуют в процессе подготовки следующего раунда.&lt;/p>
+&lt;p>Предположим, у нас есть строка &amp;ldquo;RRDDD&amp;rdquo;. Здесь первый сенатор принадлежит партии Radiant, второй тоже к Radiant, третий, четвертый и пятый к Dire. Сначала первый сенатор Radiant делает ход, затем первый сенатор Dire, и так далее.&lt;/p>
+&lt;p>Когда сенатор делает ход, он может забанить сенатора из другой партии. Если он это делает, этот сенатор больше не участвует в игре. Цель — оставить в игре только сенаторов своей партии.&lt;/p>
+&lt;p>Задача определить, какая партия победит и объявит игру.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Использовать &lt;mark>очередь&lt;/mark> для хранения позиций сенаторов из каждой партии. Позиции важны, потому что по условию задачи сенаторы &amp;ldquo;голосуют&amp;rdquo; в заданном порядке.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Важно понимать, что сенаторы действуют в определенной последовательности, и это влияет на исход игры.&lt;/p>
+&lt;ol>
+&lt;li>Мы можем определить, какой сенатор голосует первым, путем нахождения его индекса в строке &lt;code>senate&lt;/code>.&lt;/li>
+&lt;li>После того, как мы определили кто голосует первым, мы знаем, что задача первого забанить сенатора из другой партии, а это означает что сам он продолжает играть дальше и перейдет на следующий раунд.
+&lt;ol>
+&lt;li>т.е. Если порядок сенаторов такой: &lt;code>RDD&lt;/code>, то первый сенатор &lt;code>R&lt;/code> банит первого сенатора &lt;code>D&lt;/code> и переходит на второй раунд. В строке это бы отобразилось таким образом: &lt;del>R~~~~D&lt;/del>D&lt;strong>R&lt;/strong>. И теперь начинается ход второго оставшегося сенатора &lt;code>D&lt;/code>, который забанит &lt;em>первого&lt;/em> сенатора &lt;code>R&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Таким образом, мы можем определить текущий индекс/позицию каждого сенатора и переставлять их на конец очереди если они голосуют.
+&lt;ol>
+&lt;li>А во время этого хода сенатор противоположной партии банится.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Как определить, кто сейчас голосует и чей ход?&lt;/strong> - Сравнить индексы каждого сенатора из разных партий. Чей индекс(позиция) раньше, тот и голосует. Соответсвенно, сенатор под самым маленьким индексом из другой партии будет забанен.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Создаем две очереди для хранения индексов(порядка) сенаторов обеих партий.
+&lt;ol>
+&lt;li>Итерируем по всем сенаторам и добавляем их в соответствующие очереди.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Пока обе очереди не пусты:
+&lt;ul>
+&lt;li>Сравниваем первых(в очереди) сенаторов в каждой очереди.&lt;/li>
+&lt;li>Забаним сенатора с большим до следующего хода. Как? - не добавим его в конец очереди для следующего раунда.&lt;/li>
+&lt;li>Сенатор, который не был забанен, возвращается в конец очереди (его индекс увеличивается на общее количество сенаторов)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>В результате остается одна очередь - победитель. Когда одна из очередей станет пустой, партия, чья очередь осталась, побеждает.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">collections&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> deque
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">predictPartyVictory&lt;/span>(senate: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">str&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> radiant &lt;span style="color:#666">=&lt;/span> deque()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dire &lt;span style="color:#666">=&lt;/span> deque()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Заполнение очередей&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i, s &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">enumerate&lt;/span>(senate):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> s &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#4070a0">&amp;#39;R&amp;#39;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> radiant&lt;span style="color:#666">.&lt;/span>append(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dire&lt;span style="color:#666">.&lt;/span>append(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(senate)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Процесс голосования&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> radiant &lt;span style="color:#007020;font-weight:bold">and&lt;/span> dire:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">=&lt;/span> radiant&lt;span style="color:#666">.&lt;/span>popleft()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> d &lt;span style="color:#666">=&lt;/span> dire&lt;span style="color:#666">.&lt;/span>popleft()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Сенатор с меньшим индексом банит сенатора с большим индексом&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># и переходит во второй раунд (текущий индекс + всего индексов в раунде)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> r &lt;span style="color:#666">&amp;lt;&lt;/span> d:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> radiant&lt;span style="color:#666">.&lt;/span>append(r &lt;span style="color:#666">+&lt;/span> n)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dire&lt;span style="color:#666">.&lt;/span>append(d &lt;span style="color:#666">+&lt;/span> n)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#4070a0">&amp;#34;Radiant&amp;#34;&lt;/span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> radiant &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#4070a0">&amp;#34;Dire&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>933. Number of Recent Calls</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/933/</link><pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/933/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/number-of-recent-calls/">LeetCode задача 933&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Реализуйте класс &lt;code>RecentCounter&lt;/code> для подсчета вызовов &lt;code>ping&lt;/code> за последние 3000 миллисекунд.&lt;/p>
+&lt;p>Т.е. для вызова &lt;code>t=100&lt;/code>, нужно подсчитать количество таких вызовов, время которых меньше &lt;code>t-3000&lt;/code> и учесть сам вызов.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>В данной задаче нужно отслеживать количество вызовов &lt;code>ping&lt;/code> за последние 3000 миллисекунд.&lt;/p>
+&lt;p>Можно использовать &lt;mark>очередь&lt;/mark> для хранения времени вызовов &lt;code>ping&lt;/code>. При каждом новом вызове будем добавлять текущее время в конец очереди и удалять из начала все времена, которые не попадают в интервал последних 3000 миллисекунд.&lt;/p>
+&lt;p>Таким образом, размер очереди в любой момент времени будет равен числу вызовов &lt;code>ping&lt;/code> за последние 3000 миллисекунд.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Инициализация: создать пустую очередь для хранения времени вызовов &lt;code>ping&lt;/code>.&lt;/li>
+&lt;li>При каждом вызове &lt;code>ping(t)&lt;/code>:
+&lt;ul>
+&lt;li>Добавить &lt;code>t&lt;/code> в конец очереди.&lt;/li>
+&lt;li>Удалить из начала очереди все элементы, меньшие чем &lt;code>t - 3000&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Вернуть размер очереди.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">collections&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> deque
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">RecentCounter&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>queue &lt;span style="color:#666">=&lt;/span> deque()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">ping&lt;/span>(self, t: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>queue&lt;span style="color:#666">.&lt;/span>append(t)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> self&lt;span style="color:#666">.&lt;/span>queue[&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">&amp;lt;&lt;/span> t &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">3000&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>queue&lt;span style="color:#666">.&lt;/span>popleft()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020">len&lt;/span>(self&lt;span style="color:#666">.&lt;/span>queue)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

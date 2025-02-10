@@ -1,6 +1,49 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fargate on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/fargate/</link><description>Recent content in Fargate on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Wed, 21 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/fargate/index.xml" rel="self" type="application/rss+xml"/><item><title>Fargate</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/fargate/</link><pubDate>Wed, 21 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/fargate/</guid><description>About Serverless version of ECS.
-Serverless compute for contai­ners.
-AWS Fargate is a serverless, pay-as-you-go compute engine that lets you focus on building applications without managing servers.
-Deploy and manage your applications, not infrastructure. Fargate removes the operational overhead of scaling, patching, securing, and managing servers.
-Compatible with both Amazon Elastic Container Service (ECS) and Amazon Elastic Kubernetes Service (EKS).
-Documentation User Guide Alternatives Google Kubernetes Engine (GKE) Red Hat OpenShift Container Platform Azure Kubernetes Service (AKS) Rancher Azure Container Instances Cloud Foundry Oracle Cloud Infrastructure Container Engine for Kubernetes Price Current price</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fargate on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/fargate/</link><description>Recent content in Fargate on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Wed, 21 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/fargate/index.xml" rel="self" type="application/rss+xml"/><item><title>Fargate</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/fargate/</link><pubDate>Wed, 21 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/fargate/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>Serverless version of &lt;a href="../ecs">ECS&lt;/a>.&lt;/p>
+&lt;p>Serverless compute for contai­ners.&lt;/p>
+&lt;p>AWS Fargate is a serverless, pay-as-you-go compute engine that lets you focus on &lt;strong>building applications without managing servers&lt;/strong>.&lt;/p>
+&lt;p>Deploy and manage your applications, not infrastructure. Fargate removes the operational overhead of scaling, patching, securing, and managing servers.&lt;/p>
+&lt;p>Compatible with both Amazon Elastic Container Service (ECS) and Amazon Elastic Kubernetes Service (EKS).&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/fargate/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/fargate/?id=docs_gateway">User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/re19/FargateonEKS/Product-Page-Diagram_Fargate%402x.a20fb2b15c2aebeda3a44dbbb0b10b82fb89aa6a.png"
+id="zoom-default"
+alt="AWS Fargate Flow"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="alternatives">Alternatives&lt;/h3>
+&lt;ul>
+&lt;li>Google Kubernetes Engine (GKE)&lt;/li>
+&lt;li>Red Hat OpenShift Container Platform&lt;/li>
+&lt;li>Azure Kubernetes Service (AKS)&lt;/li>
+&lt;li>Rancher&lt;/li>
+&lt;li>Azure Container Instances&lt;/li>
+&lt;li>Cloud Foundry&lt;/li>
+&lt;li>Oracle Cloud Infrastructure Container Engine for Kubernetes&lt;/li>
+&lt;/ul>
+&lt;h2 id="price">Price&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/fargate/pricing/">Current price&lt;/a>&lt;/p>
+&lt;h2 id="use-cases">Use Cases&lt;/h2>
+&lt;ul>
+&lt;li>Web apps, APIs, and microservices&lt;/li>
+&lt;li>Run and scale container workloads&lt;/li>
+&lt;li>Support AI and ML training applications&lt;/li>
+&lt;/ul>
+&lt;p>Type: Containers&lt;/p>
+&lt;p>Same type services: Elastic Container Service (ECS), Elastic Container Registry (ECR), Elastic Kubernetes Service (EKS), Fargate&lt;/p>
+&lt;h2 id="questions">Questions&lt;/h2>
+&lt;h3 id="q1">Q1&lt;/h3>
+&lt;p>&lt;strong>How AWS Fargate different from AWS ECS?&lt;/strong>&lt;/p>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>In AWS ECS, you manage the infrastructure - you need to provision and configure the EC2 instances.
+While in AWS Fargate, you don&amp;rsquo;t provision or manage the infrastructure, you simply focus on launching Docker containers. You can think of it as the serverless version of AWS ECS.&lt;/p>
+&lt;/div>
+&lt;/details></description></item></channel></rss>

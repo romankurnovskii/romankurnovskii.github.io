@@ -1,18 +1,180 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Binary Search on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/binary-search/</link><description>Recent content in Binary Search on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Mon, 28 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/binary-search/index.xml" rel="self" type="application/rss+xml"/><item><title>4. Median of Two Sorted Arrays</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/4/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/4/</guid><description>LeetCode задача 4
-Задача Даны два отсортированных массива nums1 и nums2 размера m и n соответственно. Найти медиану двух отсортированных массивов.
-Подсказки Чтобы найти медиану, нужно сначала объединить два массива и отсортировать их. После этого медиана будет либо средним элементом, если общее количество элементов нечетное, либо средним значением двух центральных элементов, если общее количество элементов четное.
-Подход Мы можем объединить два массива в один большой отсортированный массив и найти медиану этого массива. Этот подход не самый эффективный, но он прост и понятен.</description></item><item><title>69. Sqrt(x)</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/69/</link><pubDate>Fri, 28 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/69/</guid><description>LeetCode problem
-Given a non-negative integer x, return the square root of x rounded down to the nearest integer. The returned integer should be non-negative as well.
-You must not use any built-in exponent function or operator.
-For example, do not use pow(x, 0.5) in c++ or x ** 0.5 in python.
-Example 1:
-Input: x = 4 Output: 2 Explanation: The square root of 4 is 2, so we return 2. Example 2:
-Input: x = 8 Output: 2 Explanation: The square root of 8 is 2.</description></item><item><title>240. Search a 2D Matrix II</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/240/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/240/</guid><description>LeetCode задача 240
-Задача Вам дана двумерная матрица размера m x n, представляющая прямоугольник, и целое число target. Отсортированные строки матрицы по неубыванию с лева направо и столбцы отсортированы по неубыванию сверху вниз.
-Найдите элемент target в матрице. Верните True, если элемент target есть в матрице, и False, если его нет.
-Подсказки Попробуйте использовать двоичный поиск для каждого ряда.
-Подход Самый простой подход - использовать двоичный поиск для каждого ряда. Хотя это не самый эффективный метод, он достаточно прост для понимания.</description></item><item><title>287. Find the Duplicate Number</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/287/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/287/</guid><description>LeetCode задача 287
-Задача Дан массив nums размера n + 1, в котором каждый элемент принимает значение от 1 до n, что означает, что как минимум одно число будет дублироваться.
-Найдите это дублирующееся число.
-Подход Один из способов решения задачи — использование двух указателей (tortoise и hare), что известно как &amp;ldquo;алгоритм зайца и черепахи&amp;rdquo; для нахождения цикла в связанном списке.
-Алгоритм Инициализируем два указателя: tortoise и hare. Используем их для прохода по массиву: tortoise двигается на один шаг, а hare — на два.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Binary Search on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/binary-search/</link><description>Recent content in Binary Search on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 22 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/binary-search/index.xml" rel="self" type="application/rss+xml"/><item><title>4. Median of Two Sorted Arrays</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/4/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/4/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/median-of-two-sorted-arrays">LeetCode задача 4&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Даны два отсортированных массива nums1 и nums2 размера m и n соответственно. Найти медиану двух отсортированных массивов.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Чтобы найти медиану, нужно сначала объединить два массива и отсортировать их. После этого медиана будет либо средним элементом, если общее количество элементов нечетное, либо средним значением двух центральных элементов, если общее количество элементов четное.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Мы можем объединить два массива в один большой отсортированный массив и найти медиану этого массива. Этот подход не самый эффективный, но он прост и понятен.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;p>Объедините два массива.
+Отсортируйте объединенный массив.
+Найдите медиану отсортированного массива.&lt;/p>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">findMedianSortedArrays&lt;/span>(nums1, nums2):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Шаг 1: Объединение двух массивов&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> merged &lt;span style="color:#666">=&lt;/span> nums1 &lt;span style="color:#666">+&lt;/span> nums2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Шаг 2: Сортировка объединенного массива&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> merged&lt;span style="color:#666">.&lt;/span>sort()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Шаг 3: Поиск медианы&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(merged)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> middle &lt;span style="color:#666">=&lt;/span> n &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Если n четное&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> n &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> (merged[middle &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">+&lt;/span> merged[middle]) &lt;span style="color:#666">/&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Если n нечетное&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> merged[middle]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>69. Sqrt(x)</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/69/</link><pubDate>Fri, 28 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/69/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/sqrtx/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given a non-negative integer x, return the square root of x rounded down to the nearest integer. The returned integer should be non-negative as well.&lt;/p>
+&lt;p>You must not use any built-in exponent function or operator.&lt;/p>
+&lt;p>For example, do not use &lt;code>pow(x, 0.5)&lt;/code> in c++ or &lt;code>x ** 0.5&lt;/code> in python.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: x = 4
+Output: 2
+Explanation: The square root of 4 is 2, so we return 2.
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: x = 8
+Output: 2
+Explanation: The square root of 8 is 2.82842..., and since we round it down to the nearest integer, 2 is returned.
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">mySqrt&lt;/span>(self, x: &lt;span style="color:#007020">int&lt;/span>, div&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">2&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">=&lt;/span> x &lt;span style="color:#666">//&lt;/span> div
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s1 &lt;span style="color:#666">=&lt;/span> (s &lt;span style="color:#666">+&lt;/span> div) &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> s1 &lt;span style="color:#666">*&lt;/span> s1 &lt;span style="color:#666">&amp;gt;&lt;/span> x:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s1 &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>mySqrt(x, s1)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> s1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> s1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>240. Search a 2D Matrix II</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/240/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/240/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/search-a-2d-matrix-ii/">LeetCode задача 240&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Вам дана двумерная матрица размера m x n, представляющая прямоугольник, и целое число &lt;code>target&lt;/code>. Отсортированные строки матрицы по неубыванию с лева направо и столбцы отсортированы по неубыванию сверху вниз.&lt;/p>
+&lt;p>Найдите элемент &lt;code>target&lt;/code> в матрице. Верните &lt;code>True&lt;/code>, если элемент &lt;code>target&lt;/code> есть в матрице, и &lt;code>False&lt;/code>, если его нет.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Попробуйте использовать двоичный поиск для каждого ряда.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Самый простой подход - использовать двоичный поиск для каждого ряда. Хотя это не самый эффективный метод, он достаточно прост для понимания.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Пройдитесь по каждому ряду в матрице.&lt;/li>
+&lt;li>В каждом ряду используйте двоичный поиск для поиска &lt;code>target&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">bisect&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> bisect_left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">searchMatrix&lt;/span>(matrix, target):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> row &lt;span style="color:#007020;font-weight:bold">in&lt;/span> matrix:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pos &lt;span style="color:#666">=&lt;/span> bisect_left(row, target)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> pos &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(row) &lt;span style="color:#007020;font-weight:bold">and&lt;/span> row[pos] &lt;span style="color:#666">==&lt;/span> target:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>287. Find the Duplicate Number</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/287/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/287/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/find-the-duplicate-number/">LeetCode задача 287&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Дан массив &lt;code>nums&lt;/code> размера &lt;code>n + 1&lt;/code>, в котором каждый элемент принимает значение от &lt;code>1&lt;/code> до &lt;code>n&lt;/code>, что означает, что как минимум одно число будет дублироваться.&lt;/p>
+&lt;p>Найдите это дублирующееся число.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Один из способов решения задачи — использование двух указателей (&lt;code>tortoise&lt;/code> и &lt;code>hare&lt;/code>), что известно как &amp;ldquo;алгоритм зайца и черепахи&amp;rdquo; для нахождения цикла в связанном списке.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Инициализируем два указателя: &lt;code>tortoise&lt;/code> и &lt;code>hare&lt;/code>.&lt;/li>
+&lt;li>Используем их для прохода по массиву: &lt;code>tortoise&lt;/code> двигается на один шаг, а &lt;code>hare&lt;/code> — на два.&lt;/li>
+&lt;li>Как только они встретятся, начнем новый проход с &lt;code>tortoise&lt;/code> из начального положения и &lt;code>hare&lt;/code> из точки встречи, двигая их на один шаг, пока они не встретятся снова.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">findDuplicate&lt;/span>(nums):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tortoise &lt;span style="color:#666">=&lt;/span> hare &lt;span style="color:#666">=&lt;/span> nums[&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#60a0b0;font-style:italic"># 1: Using Floyd&amp;#39;s Tortoise and Hare (Cycle Detection)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tortoise &lt;span style="color:#666">=&lt;/span> nums[tortoise]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> hare &lt;span style="color:#666">=&lt;/span> nums[nums[hare]]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> tortoise &lt;span style="color:#666">==&lt;/span> hare:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tortoise &lt;span style="color:#666">=&lt;/span> nums[&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#60a0b0;font-style:italic"># 2: Find the entrance to the cycle&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> tortoise &lt;span style="color:#666">!=&lt;/span> hare:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tortoise &lt;span style="color:#666">=&lt;/span> nums[tortoise]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> hare &lt;span style="color:#666">=&lt;/span> nums[hare]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> hare
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>2251. Number of Flowers in Full Bloom</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/2251/</link><pubDate>Fri, 22 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/2251/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/number-of-flowers-in-full-bloom/">LeetCode Problem 2251&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>In the given problem, we are presented with two arrays. The first, &lt;code>flowers&lt;/code>, represents when each flower starts and stops being in full bloom. The second, &lt;code>people&lt;/code>, indicates when each person arrives to see the flowers. Our task is to determine, for each person, how many flowers they will see in full bloom upon their arrival.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A straightforward approach might involve iterating over each person&amp;rsquo;s arrival time. For each time, we could iterate over the &lt;code>flowers&lt;/code> list to count how many flowers are in full bloom. This approach, however, would lead to a time complexity of O(n*m), with n being the number of people and m being the number of flowers. With larger constraints, this could be quite inefficient.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;ul>
+&lt;li>Separating the start and end times of each flower&amp;rsquo;s blooming period can simplify the problem.&lt;/li>
+&lt;li>Binary search can be an effective tool to efficiently find specific intervals in sorted lists.&lt;/li>
+&lt;/ul>
+&lt;h2 id="approach--idea">Approach / Idea&lt;/h2>
+&lt;p>Instead of associating the start and end times of each flower&amp;rsquo;s blooming period, we can consider them separately. By focusing on how many flowers have started and stopped blooming by a specific time, we can easily determine the number of flowers in full bloom.&lt;/p>
+&lt;p>The idea is to use two separate arrays: one for all the start times (&lt;code>starts&lt;/code>) and one for all the end times (&lt;code>ends&lt;/code>). By sorting these arrays, we can use binary search to swiftly identify the number of flowers that have started and stopped blooming by any given time.&lt;/p>
+&lt;h2 id="steps--high-level-algorithm">Steps / High level algorithm&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Create Two Arrays&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>Initialize two empty lists, &lt;code>starts&lt;/code> and &lt;code>ends&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Fill Arrays with Data&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>Loop through each flower&amp;rsquo;s blooming period in &lt;code>flowers&lt;/code> and populate the &lt;code>starts&lt;/code> and &lt;code>ends&lt;/code> lists.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Sort the Arrays&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>Sort both &lt;code>starts&lt;/code> and &lt;code>ends&lt;/code> to ensure efficient binary searches.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Determine Blooming Flowers&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>For each person&amp;rsquo;s arrival time in &lt;code>people&lt;/code>:
+&lt;ul>
+&lt;li>Use binary search on &lt;code>starts&lt;/code> to determine how many flowers have begun blooming.&lt;/li>
+&lt;li>Use another binary search on &lt;code>ends&lt;/code> to see how many have finished.&lt;/li>
+&lt;li>Subtract the number of finished blooms from the started ones and append to the results list.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Return the Result&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>Return the generated list containing the number of flowers in full bloom for each person.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;p>Below is the Python code implementing the above-mentioned approach:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">bisect&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> bisect_right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">typing&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> List
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">fullBloomFlowers&lt;/span>(self, flowers: List[List[&lt;span style="color:#007020">int&lt;/span>]], people: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[&lt;span style="color:#007020">int&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> starts &lt;span style="color:#666">=&lt;/span> [] &lt;span style="color:#60a0b0;font-style:italic"># Initialize start and end arrays&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ends &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> start, end &lt;span style="color:#007020;font-weight:bold">in&lt;/span> flowers: &lt;span style="color:#60a0b0;font-style:italic"># Populate arrays with flower bloom periods&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> starts&lt;span style="color:#666">.&lt;/span>append(start)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ends&lt;span style="color:#666">.&lt;/span>append(end &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> starts&lt;span style="color:#666">.&lt;/span>sort() &lt;span style="color:#60a0b0;font-style:italic"># Sort both arrays for efficient binary search&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ends&lt;span style="color:#666">.&lt;/span>sort()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> person &lt;span style="color:#007020;font-weight:bold">in&lt;/span> people: &lt;span style="color:#60a0b0;font-style:italic"># Calc number of flowers for each person&amp;#39;s arrival time&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">=&lt;/span> bisect_right(starts, person) &lt;span style="color:#60a0b0;font-style:italic"># Use binary search to find flowers&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> j &lt;span style="color:#666">=&lt;/span> bisect_right(ends, person) &lt;span style="color:#60a0b0;font-style:italic"># that have started and finished blooming&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#666">.&lt;/span>append(i &lt;span style="color:#666">-&lt;/span> j)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

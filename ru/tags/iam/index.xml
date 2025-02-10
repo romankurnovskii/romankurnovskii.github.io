@@ -1,2 +1,121 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Iam on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/iam/</link><description>Recent content in Iam on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 09 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/iam/index.xml" rel="self" type="application/rss+xml"/><item><title>IAM</title><link>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/iam/</link><pubDate>Fri, 09 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/iam/</guid><description>AWS Identity and Access Management Документация AWS IAM Документация AWS IAM AWS Identity and Access Management (IAM) позволяет безопасно контролировать доступ пользователей к службам и ресурсам AWS. Эта услуга предназначена для организаций с множеством пользователей или систем, использующих такие продукты AWS, как Amazon EC2, Amazon RDS и AWS Management Console. С помощью IAM вы можете централизованно управлять пользователями, учетными данными безопасности, такими как ключи доступа, и разрешениями, контролирующими доступ пользователей к ресурсам AWS.
-Практика Переходим на страницу IAM</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Iam on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/iam/</link><description>Recent content in Iam on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 09 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/iam/index.xml" rel="self" type="application/rss+xml"/><item><title>IAM</title><link>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/iam/</link><pubDate>Fri, 09 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/iam/</guid><description>&lt;h1 id="aws-identity-and-access-management">AWS Identity and Access Management&lt;/h1>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/iam/">Документация AWS IAM&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/iam/?id=docs_gateway">Документация AWS IAM&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>AWS Identity and Access Management (IAM) позволяет безопасно контролировать доступ пользователей к службам и ресурсам AWS. Эта услуга предназначена для организаций с множеством пользователей или систем, использующих такие продукты AWS, как Amazon EC2, Amazon RDS и AWS Management Console. С помощью IAM вы можете централизованно управлять пользователями, учетными данными безопасности, такими как ключи доступа, и разрешениями, контролирующими доступ пользователей к ресурсам AWS.&lt;/p>
+&lt;h2 id="практика">Практика&lt;/h2>
+&lt;p>Переходим на &lt;a href="https://us-east-1.console.aws.amazon.com/iam/home#/">страницу IAM&lt;/a>&lt;/p>
+&lt;h3 id="создание-групп-iam">Создание групп IAM&lt;/h3>
+&lt;p>На странице &lt;strong>User Groups&lt;/strong> нажимаем &lt;strong>Create group&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/01.png"
+id="zoom-default"
+alt="01.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol>
+&lt;li>Указываем имя группы. Мое: &lt;strong>DevOps&lt;/strong>&lt;/li>
+&lt;li>Добавляем разрешение на просмотр EC2: &lt;strong>AmazonEC2ReadOnlyAccess&lt;/strong>&lt;/li>
+&lt;li>Create
+&lt;p class="md__image">
+&lt;img
+src="./img/02.png"
+id="zoom-default"
+alt="Amazon EC2 Read Only Access"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>Группа создана&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/03.png"
+id="zoom-default"
+alt="IAM Group"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="создание-пользователей-iam">Создание пользователей IAM&lt;/h3>
+&lt;p>На странице &lt;strong>Users&lt;/strong> нажимаем &lt;strong>Create user&lt;/strong>
+&lt;p class="md__image">
+&lt;img
+src="./img/04.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Вводим имя пользователя(логин)
+&lt;p class="md__image">
+&lt;img
+src="./img/05.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="permissions">Permissions&lt;/h3>
+&lt;p>Добавляем пользователя в созданную группу
+&lt;p class="md__image">
+&lt;img
+src="./img/06.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="tags">Tags&lt;/h3>
+&lt;p>Пропускаем раздел или ставим tags. Полезно и популярно устанавливать теги ресурсам в компаниях, где много подключено ресурсов AWS&lt;/p>
+&lt;h3 id="логинпароль">Логин/Пароль&lt;/h3>
+&lt;p>На последнем этапе скачиваем &lt;code>.csv&lt;/code> файл с логином, ключами и паролем. Пароль понадобится далее, чтобы войти в систему под данным пользователем.
+На данной странице имеется ссылка для входа. Ею воспользуемся на следующем шаге
+&lt;p class="md__image">
+&lt;img
+src="./img/07.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="вход-новым-пользователем">Вход новым пользователем&lt;/h3>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/08.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="проверка-прав">Проверка прав&lt;/h3>
+&lt;p>У данного пользователя есть доступ на просмотр EC2 инстансов. Проверим наличие/отсутствие доступа к S3 корзинам.&lt;/p>
+&lt;p>Попробуем создать S3 корзину
+&lt;p class="md__image">
+&lt;img
+src="./img/09.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>После попытки создать корзину получаем окно с указанием на отсутствие прав
+&lt;p class="md__image">
+&lt;img
+src="./img/10.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p></description></item></channel></rss>

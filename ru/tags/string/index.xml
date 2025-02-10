@@ -1,48 +1,674 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>String on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/string/</link><description>Recent content in String on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 09 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/string/index.xml" rel="self" type="application/rss+xml"/><item><title>5. Longest Palindromic Substring</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/5/</link><pubDate>Thu, 20 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/5/</guid><description>LeetCode problem
-Given a string s, return the longest palindromic substring in s.
-A string is called a palindrome string if the reverse of that string is the same as the original string.
-Example 1:
-Input: s = &amp;quot;babad&amp;quot; Output: &amp;quot;bab&amp;quot; Explanation: &amp;quot;aba&amp;quot; is also a valid answer. Example 2:
-Input: s = &amp;quot;cbbd&amp;quot; Output: &amp;quot;bb&amp;quot; First accepted Hints How can we reuse a previously computed palindrome to compute a larger palindrome?
-How can we reuse a previously computed palindrome to compute a larger palindrome?</description></item><item><title>13. Roman to Integer</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/13/</link><pubDate>Wed, 19 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/13/</guid><description>LeetCode problem
-Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
-Symbol Value I 1 V 5 X 10 L 50 C 100 D 500 M 1000 For example, 2 is written as II in Roman numeral, just two ones added together. 12 is written as XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.
-Roman numerals are usually written largest to smallest from left to right.</description></item><item><title>14. Longest Common Prefix</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/14/</link><pubDate>Fri, 21 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/14/</guid><description>LeetCode problem
-Write a function to find the longest common prefix string amongst an array of strings.
-If there is no common prefix, return an empty string &amp;quot;&amp;quot;.
-Example 1:
-Input: strs = [&amp;quot;flower&amp;quot;,&amp;quot;flow&amp;quot;,&amp;quot;flight&amp;quot;] Output: &amp;quot;fl&amp;quot; Example 2:
-Input: strs = [&amp;quot;dog&amp;quot;,&amp;quot;racecar&amp;quot;,&amp;quot;car&amp;quot;] Output: &amp;quot;&amp;quot; Explanation: There is no common prefix among the input strings. First accepted Idea:
-class Solution: def longestCommonPrefix(self, strs: List[str]) -&amp;gt; str: strs.sort() l = strs[0] r = strs[-1] if l == r: return l res = &amp;#34;&amp;#34; for i in range(0, len(l)): if l[i] == r[i]: res += l[i] else: return res return res</description></item><item><title>20. Valid Parentheses</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/20/</link><pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/20/</guid><description>LeetCode problem
-Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
-An input string is valid if:
-Open brackets must be closed by the same type of brackets. Open brackets must be closed in the correct order. Every close bracket has a corresponding open bracket of the same type. Example 1:
-Input: s = &amp;quot;()[]{}&amp;quot; Output: true Example 2:
-Input: s = &amp;quot;()[]{}&amp;quot; Output: true First accepted Idea:</description></item><item><title>28. Find the Index of the First Occurrence in a String</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/28/</link><pubDate>Sat, 19 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/28/</guid><description>LeetCode problem
-Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
-Example 1:
-Input: haystack = &amp;ldquo;sadbutsad&amp;rdquo;, needle = &amp;ldquo;sad&amp;rdquo; Output: 0 Explanation: &amp;ldquo;sad&amp;rdquo; occurs at index 0 and 6. The first occurrence is at index 0, so we return 0.
-Example 2:
-Input: haystack = &amp;ldquo;leetcode&amp;rdquo;, needle = &amp;ldquo;leeto&amp;rdquo; Output: -1 Explanation: &amp;ldquo;leeto&amp;rdquo; did not occur in &amp;ldquo;leetcode&amp;rdquo;, so we return -1.</description></item><item><title>38. Count and Say</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/38/</link><pubDate>Thu, 08 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/38/</guid><description>LeetCode problem
-The count-and-say sequence is a sequence of digit strings defined by the recursive formula:
-countAndSay(1) = &amp;quot;1&amp;quot; countAndSay(n) is the way you would &amp;ldquo;say&amp;rdquo; the digit string from countAndSay(n-1), which is then converted into a different digit string. To determine how you &amp;ldquo;say&amp;rdquo; a digit string, split it into the minimal number of substrings such that each substring contains exactly one unique digit. Then for each substring, say the number of digits, then say the digit. Finally, concatenate every said digit.</description></item><item><title>49. Group Anagrams</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/49/</link><pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/49/</guid><description>LeetCode problem
-Given an array of strings strs, group the anagrams together. You can return the answer in any order.
-An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
-Example 1:
-Input: strs = [&amp;quot;eat&amp;quot;,&amp;quot;tea&amp;quot;,&amp;quot;tan&amp;quot;,&amp;quot;ate&amp;quot;,&amp;quot;nat&amp;quot;,&amp;quot;bat&amp;quot;] Output: [[&amp;quot;bat&amp;quot;],[&amp;quot;nat&amp;quot;,&amp;quot;tan&amp;quot;],[&amp;quot;ate&amp;quot;,&amp;quot;eat&amp;quot;,&amp;quot;tea&amp;quot;]] Example 2:
-Input: strs = [&amp;quot;&amp;quot;] Output: [[&amp;quot;&amp;quot;]] Example 3:
-Input: strs = [&amp;quot;a&amp;quot;] Output: [[&amp;quot;a&amp;quot;]] Idea:
-class Solution: def groupAnagrams(self, strs: List[str]) -&amp;gt; List[List[str]]: dd = {} for s in strs: s_sort = &amp;#34;&amp;#34;.</description></item><item><title>388. Longest Absolute File Path</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/388/</link><pubDate>Fri, 09 Feb 2024 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/388/</guid><description>LeetCode задача 388
-Задача Необходимо вычислить длину самого длинного абсолютного пути к файлу в файловой системе. Путь представлен строкой, где &amp;ldquo;\n&amp;rdquo; разделяет имена директорий и файлов, а &amp;ldquo;\t&amp;rdquo; обозначает уровень вложенности.
-Подсказки Задача заключается в анализе строки, представляющей файловую систему, и определении максимальной длины пути к файлу, учитывая вложенность директорий.
-Подход Мы можем решить эту задачу, используя стек для отслеживания текущего пути и его длины. Каждый раз, когда мы встречаем файл, мы сравниваем его полную длину с максимальной и обновляем максимум при необходимости.</description></item><item><title>392. Is Subsequence</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/392/</link><pubDate>Sun, 06 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/392/</guid><description>LeetCode задача 392
-Задача Даны две строки s и t. Верните true, если s является подпоследовательностью t, или false в противном случае.
-Подпоследовательность строки - это новая строка, которая формируется из исходной строки путем удаления некоторых (может быть ни одного) символов без нарушения относительных позиций оставшихся символов. (например, &amp;ldquo;ace&amp;rdquo; является подпоследовательностью &amp;ldquo;abcde&amp;rdquo;, в то время как &amp;ldquo;aec&amp;rdquo; - нет).
-Подсказки Следуя за обеими строками одновременно с помощью двух указателей, вы можете определить, является ли одна строка подпоследовательностью другой.</description></item><item><title>1647. Minimum Deletions to Make Character Frequencies Unique</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1647/</link><pubDate>Tue, 12 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1647/</guid><description>LeetCode задача 1647
-Задача Строка s называется хорошей, если в ней нет двух разных символов с одинаковой частотой.
-Дана строка s, верните минимальное количество символов, которое необходимо удалить, чтобы сделать s хорошим.
-Подход Основная идея решения заключается в подсчете частот символов в строке и определении количества удалений, необходимых для того, чтобы все частоты были уникальными.
-Если проверять встречалась ли частота текущего символа ранее, то
-Алгоритм / Абстрактный алгоритм Считаем частоты всех символов в строке. Сортируем частоты в порядке убывания.</description></item><item><title>2390. Removing Stars From a String</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/2390/</link><pubDate>Thu, 24 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/2390/</guid><description>LeetCode problem
-Problem Statement You are provided with a string s that contains asterisks or stars (*). Your task is to transform this string. In each operation, you&amp;rsquo;ll select a star and remove the character immediately to its left and the star itself. Continue this process until there are no stars left in the string.
-The challenge guarantees that the input string can always be transformed as per the given operation, and the result will always be unique.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>String on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/string/</link><description>Recent content in String on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Tue, 12 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/string/index.xml" rel="self" type="application/rss+xml"/><item><title>3. Longest Substring Without Repeating Characters</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/3/</link><pubDate>Tue, 18 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/3/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given a string &lt;code>s&lt;/code>, find the length of the longest substring without repeating characters.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: s = &amp;quot;abcabcbb&amp;quot;
+Output: 3
+Explanation: The answer is &amp;quot;abc&amp;quot;, with the length of 3.
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Loop through string&lt;/li>
+&lt;li>Calculate max count of elements in substring&lt;/li>
+&lt;li>If get double element, then go back until get this element and do step 2.&lt;/li>
+&lt;li>Proceed the main loop&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/3.jpg"
+id="zoom-default"
+alt="Longest Substring Without Repeating Characters"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">lengthOfLongestSubstring&lt;/span>(self, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uniqs &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_max &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_current &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> idx &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> s:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> uniqs:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_max &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(len_max, len_current)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_current &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uniqs &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">reversed&lt;/span>(s[:idx]):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> j &lt;span style="color:#666">==&lt;/span> i:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_current &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uniqs&lt;span style="color:#666">.&lt;/span>add(j)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uniqs&lt;span style="color:#666">.&lt;/span>add(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_current &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_max &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(len_max, len_current)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> idx &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> len_max
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="better-solution">Better solution&lt;/h2>
+&lt;blockquote>
+&lt;p>Sliding Window - &lt;a href="https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/#sliding-window">template&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;p>&lt;strong>Window Sliding Technique&lt;/strong> is a computational technique which aims to reduce the use of nested loop and replace it with a single loop, thereby reducing the time complexity.
+The Sliding window technique can reduce the time complexity to O(n).&lt;/p>
+&lt;p>Tips for identifying this kind of problem where we could use the sliding window technique:&lt;/p>
+&lt;p>The problem will be based on an array, string, or list data structure.
+You need to find the subrange in this array or string that should provide the longest, shortest, or target values.
+A classic problem: to find the largest/smallest sum of given k (for example, three) consecutive numbers in an array.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">lengthOfLongestSubstring&lt;/span>(self, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(s)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># mp stores the current index of a character&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mp &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># try to extend the range [i, j]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> s[j] &lt;span style="color:#007020;font-weight:bold">in&lt;/span> mp:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(mp[s[j]], i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(res, j &lt;span style="color:#666">-&lt;/span> i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mp[s[j]] &lt;span style="color:#666">=&lt;/span> j &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">lengthOfLongestSubstring&lt;/span>(self, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> chars &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#007020;font-weight:bold">None&lt;/span>] &lt;span style="color:#666">*&lt;/span> &lt;span style="color:#40a070">128&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">=&lt;/span> right &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> right &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(s):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">=&lt;/span> s[right]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> index &lt;span style="color:#666">=&lt;/span> chars[&lt;span style="color:#007020">ord&lt;/span>(r)]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> index &lt;span style="color:#007020;font-weight:bold">is&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> left &lt;span style="color:#666">&amp;lt;=&lt;/span> index &lt;span style="color:#666">&amp;lt;&lt;/span> right:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">=&lt;/span> index &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(res, right &lt;span style="color:#666">-&lt;/span> left &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> chars[&lt;span style="color:#007020">ord&lt;/span>(r)] &lt;span style="color:#666">=&lt;/span> right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">lengthOfLongestSubstring&lt;/span>(self, s):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_len &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> substr &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> char &lt;span style="color:#007020;font-weight:bold">in&lt;/span> s:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> char &lt;span style="color:#007020;font-weight:bold">not&lt;/span> &lt;span style="color:#007020;font-weight:bold">in&lt;/span> substr:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> substr &lt;span style="color:#666">+=&lt;/span> char
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_len &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(max_len, &lt;span style="color:#007020">len&lt;/span>(substr))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> start &lt;span style="color:#666">=&lt;/span> substr&lt;span style="color:#666">.&lt;/span>index(char) &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> substr &lt;span style="color:#666">=&lt;/span> substr[start:] &lt;span style="color:#666">+&lt;/span> char
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> max_len
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/discuss/2694302/JS-or-98-or-Sliding-window-or-With-exlanation">https://leetcode.com/problems/longest-substring-without-repeating-characters/discuss/2694302/JS-or-98-or-Sliding-window-or-With-exlanation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/discuss/2133524/JavaC%2B%2B-A-reall-Detailed-Explanation">https://leetcode.com/problems/longest-substring-without-repeating-characters/discuss/2133524/JavaC%2B%2B-A-reall-Detailed-Explanation&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>5. Longest Palindromic Substring</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/5/</link><pubDate>Thu, 20 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/5/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/longest-palindromic-substring/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given a string &lt;code>s&lt;/code>, return the longest palindromic substring in &lt;code>s&lt;/code>.&lt;/p>
+&lt;p>A string is called a palindrome string if the reverse of that string is the same as the original string.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: s = &amp;quot;babad&amp;quot;
+Output: &amp;quot;bab&amp;quot;
+Explanation: &amp;quot;aba&amp;quot; is also a valid answer.
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: s = &amp;quot;cbbd&amp;quot;
+Output: &amp;quot;bb&amp;quot;
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;h3 id="hints">Hints&lt;/h3>
+&lt;blockquote>
+&lt;p>How can we reuse a previously computed palindrome to compute a larger palindrome?&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>How can we reuse a previously computed palindrome to compute a larger palindrome?&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Complexity based hint:
+If we use brute-force and check whether for every start and end position a substring is a palindrome we have O(n^2) start - end pairs and O(n) palindromic checks. Can we reduce the time for palindromic checks to O(1) by reusing some previous computation.&lt;/p>&lt;/blockquote>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;p>We start at &lt;code>index = 0&lt;/code> and iterate through all values until &lt;code>n&lt;/code>. At each index we call the function &lt;code>getPalindrome&lt;/code> that will check the values to the left and right of the provided indices. It will continue to do so until the longest palindrome within the given range is found.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/5.jpg"
+id="zoom-default"
+alt="test-case"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/5-diagram.svg"
+id="zoom-default"
+alt="LeetCode diagram explained"
+loading="lazy"
+/>
+&lt;/p>
+&lt;strong>&lt;a href="https://app.diagrams.net/#G17m7pbA_Ym4_Xi8JFBPSyMcr8zYzX_1FH">Link to diagram&lt;/a>&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">longestPalindrome&lt;/span>(self, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">str&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">getPalindrome&lt;/span>(left, right):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span>(left &lt;span style="color:#666">&amp;gt;=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(s) &lt;span style="color:#007020;font-weight:bold">and&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s[left] &lt;span style="color:#666">==&lt;/span> s[right]):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> left&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>, right&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pal_left &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pal_right &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_max &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(s)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left, right &lt;span style="color:#666">=&lt;/span> getPalindrome(i, i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pal_len&lt;span style="color:#666">=&lt;/span> right &lt;span style="color:#666">-&lt;/span> left &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> pal_len &lt;span style="color:#666">&amp;gt;&lt;/span> len_max:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pal_left &lt;span style="color:#666">=&lt;/span> left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pal_right &lt;span style="color:#666">=&lt;/span> right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_max &lt;span style="color:#666">=&lt;/span> pal_len
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left, right &lt;span style="color:#666">=&lt;/span> getPalindrome(i, i&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pal_len &lt;span style="color:#666">=&lt;/span> right &lt;span style="color:#666">-&lt;/span> left &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> pal_len &lt;span style="color:#666">&amp;gt;&lt;/span> len_max:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pal_left &lt;span style="color:#666">=&lt;/span> left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pal_right &lt;span style="color:#666">=&lt;/span> right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_max &lt;span style="color:#666">=&lt;/span> pal_len
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> s[pal_left:pal_right&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="better-solution">Better solution&lt;/h2>
+&lt;h3 id="manachers-algorithm">Manacher&amp;rsquo;s algorithm&lt;/h3>
+&lt;p>There is an &lt;code>O(n)&lt;/code> algorithm called &lt;a href="https://en.wikipedia.org/wiki/Longest_palindromic_substring#Manacher%27s_algorithm">Manacher&amp;rsquo;s algorithm&lt;/a>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">longestPalindrome&lt;/span>(self, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">str&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># @ and $ signs are sentinels appended to each end to avoid bounds checking&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> t &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>&lt;span style="color:#666">.&lt;/span>join(&lt;span style="color:#4070a0">&amp;#39;@&amp;#39;&lt;/span> &lt;span style="color:#666">+&lt;/span> s &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#4070a0">&amp;#39;$&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(t)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># t[i - maxExtends[i]..i) ==&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># t[i + 1..i + maxExtends[i]]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> maxExtends &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">*&lt;/span> n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> center &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, n &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rightBoundary &lt;span style="color:#666">=&lt;/span> center &lt;span style="color:#666">+&lt;/span> maxExtends[center]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mirrorIndex &lt;span style="color:#666">=&lt;/span> center &lt;span style="color:#666">-&lt;/span> (i &lt;span style="color:#666">-&lt;/span> center)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> maxExtends[i] &lt;span style="color:#666">=&lt;/span> rightBoundary &lt;span style="color:#666">&amp;gt;&lt;/span> i &lt;span style="color:#007020;font-weight:bold">and&lt;/span> \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">min&lt;/span>(rightBoundary &lt;span style="color:#666">-&lt;/span> i, maxExtends[mirrorIndex])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Attempt to expand palindrome centered at i&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> t[i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#666">+&lt;/span> maxExtends[i]] &lt;span style="color:#666">==&lt;/span> t[i &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#666">-&lt;/span> maxExtends[i]]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> maxExtends[i] &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># If palindrome centered at i expand past rightBoundary,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># adjust center based on expanded palindrome.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> i &lt;span style="color:#666">+&lt;/span> maxExtends[i] &lt;span style="color:#666">&amp;gt;&lt;/span> rightBoundary:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> center &lt;span style="color:#666">=&lt;/span> i
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Find the maxExtend and bestCenter&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> maxExtend, bestCenter &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>((extend, i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i, extend &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">enumerate&lt;/span>(maxExtends))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> s[(bestCenter &lt;span style="color:#666">-&lt;/span> maxExtend) &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">2&lt;/span>:(bestCenter &lt;span style="color:#666">+&lt;/span> maxExtend) &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">2&lt;/span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://en.wikipedia.org/wiki/Longest_palindromic_substring#Manacher%27s_algorithm">Manacher&amp;rsquo;s algorithm&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=0CKUjDcUYYA">Errichto:LeetCode problem Longest Palindromic Substring (two solutions)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://redquark.org/leetcode/0005-longest-palindromic-substring/">https://redquark.org/leetcode/0005-longest-palindromic-substring/&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>RU&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=sp9f7nQHqeQ&amp;amp;t=39s">Разбор задачи с интервью. Литкод 5. Longest Palindromic Substring&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ru.algorithmica.org/cs/string-searching/manacher/">Алгоритмика: Алгоритм Манакера&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9C%D0%B0%D0%BD%D0%B0%D0%BA%D0%B5%D1%80%D0%B0#:~:text=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%20%D0%9C%D0%B0%D0%BD%D0%B0%D0%BA%D0%B5%D1%80%D0%B0%20%28%D0%B0%D0%BD%D0%B3%D0%BB.%20Manacher%27s%20algorithm%29,%D1%80%D0%B5%D1%88%D0%B0%D1%82%D1%8C%20%D0%B8%20%D0%B1%D0%BE%D0%BB%D0%B5%D0%B5%20%D0%BE%D0%B1%D1%89%D0%B8%D0%B5%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8">Википедия:Алгоритм Манакера&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>13. Roman to Integer</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/13/</link><pubDate>Wed, 19 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/13/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/roman-to-integer/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Roman numerals are represented by seven different symbols: &lt;code>I&lt;/code>, &lt;code>V&lt;/code>, &lt;code>X&lt;/code>, &lt;code>L&lt;/code>, &lt;code>C&lt;/code>, &lt;code>D&lt;/code> and &lt;code>M&lt;/code>.&lt;/p>
+&lt;pre>&lt;code>Symbol Value
+I 1
+V 5
+X 10
+L 50
+C 100
+D 500
+M 1000
+&lt;/code>&lt;/pre>
+&lt;p>For example, &lt;code>2&lt;/code> is written as &lt;code>II&lt;/code> in Roman numeral, just two ones added together. 12 is written as &lt;code>XII&lt;/code>, which is simply &lt;code>X + II&lt;/code>. The number 27 is written as &lt;code>XXVII&lt;/code>, which is &lt;code>XX + V + II&lt;/code>.&lt;/p>
+&lt;p>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not &lt;code>IIII&lt;/code>. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:&lt;/p>
+&lt;p>I can be placed before &lt;code>V&lt;/code> (5) and &lt;code>X&lt;/code> (10) to make 4 and 9.
+X can be placed before &lt;code>L&lt;/code> (50) and &lt;code>C&lt;/code> (100) to make 40 and 90.
+C can be placed before &lt;code>D&lt;/code> (500) and &lt;code>M&lt;/code> (1000) to make 400 and 900.&lt;/p>
+&lt;p>Given a roman numeral, convert it to an integer.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: s = &amp;quot;III&amp;quot;
+Output: 3
+Explanation: III = 3.
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: s = &amp;quot;MCMXCIV&amp;quot;
+Output: 1994
+Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/13.jpg"
+id="zoom-default"
+alt="test-case"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">romanToInt&lt;/span>(self, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">dict&lt;/span> &lt;span style="color:#666">=&lt;/span> {&lt;span style="color:#4070a0">&amp;#39;I&amp;#39;&lt;/span>:&lt;span style="color:#40a070">1&lt;/span>,&lt;span style="color:#4070a0">&amp;#39;V&amp;#39;&lt;/span>:&lt;span style="color:#40a070">5&lt;/span>,&lt;span style="color:#4070a0">&amp;#39;X&amp;#39;&lt;/span>:&lt;span style="color:#40a070">10&lt;/span>,&lt;span style="color:#4070a0">&amp;#39;L&amp;#39;&lt;/span>:&lt;span style="color:#40a070">50&lt;/span>,&lt;span style="color:#4070a0">&amp;#39;C&amp;#39;&lt;/span>:&lt;span style="color:#40a070">100&lt;/span>,&lt;span style="color:#4070a0">&amp;#39;D&amp;#39;&lt;/span>:&lt;span style="color:#40a070">500&lt;/span>,&lt;span style="color:#4070a0">&amp;#39;M&amp;#39;&lt;/span>:&lt;span style="color:#40a070">1000&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n_sum &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> c &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">reversed&lt;/span>(s):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">dict&lt;/span>[c]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#666">-&lt;/span>n &lt;span style="color:#007020;font-weight:bold">if&lt;/span> n &lt;span style="color:#007020;font-weight:bold">in&lt;/span> (&lt;span style="color:#40a070">1&lt;/span>,&lt;span style="color:#40a070">10&lt;/span>,&lt;span style="color:#40a070">100&lt;/span>) &lt;span style="color:#007020;font-weight:bold">and&lt;/span> prev &lt;span style="color:#007020;font-weight:bold">in&lt;/span> (n&lt;span style="color:#666">*&lt;/span>&lt;span style="color:#40a070">5&lt;/span>, n&lt;span style="color:#666">*&lt;/span>&lt;span style="color:#40a070">10&lt;/span>) &lt;span style="color:#007020;font-weight:bold">else&lt;/span> n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n_sum &lt;span style="color:#666">+=&lt;/span> n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(n)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> n_sum
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>14. Longest Common Prefix</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/14/</link><pubDate>Fri, 21 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/14/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/longest-common-prefix/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Write a function to find the longest common prefix string amongst an array of strings.&lt;/p>
+&lt;p>If there is no common prefix, return an empty string &lt;code>&amp;quot;&amp;quot;&lt;/code>.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: strs = [&amp;quot;flower&amp;quot;,&amp;quot;flow&amp;quot;,&amp;quot;flight&amp;quot;]
+Output: &amp;quot;fl&amp;quot;
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: strs = [&amp;quot;dog&amp;quot;,&amp;quot;racecar&amp;quot;,&amp;quot;car&amp;quot;]
+Output: &amp;quot;&amp;quot;
+Explanation: There is no common prefix among the input strings.
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/14.jpg"
+id="zoom-default"
+alt="test-case"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">longestCommonPrefix&lt;/span>(self, strs: List[&lt;span style="color:#007020">str&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">str&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> strs&lt;span style="color:#666">.&lt;/span>sort()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l &lt;span style="color:#666">=&lt;/span> strs[&lt;span style="color:#40a070">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">=&lt;/span> strs[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l &lt;span style="color:#666">==&lt;/span> r:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> l
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#007020">len&lt;/span>(l)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l[i] &lt;span style="color:#666">==&lt;/span> r[i]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">+=&lt;/span> l[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>17. Letter Combinations of a Phone Number</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/17/</link><pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/17/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/letter-combinations-of-a-phone-number/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given a string containing digits from &lt;code>2-9&lt;/code> inclusive, return all possible letter combinations that the number could represent. Return the answer in &lt;strong>any order&lt;/strong>.&lt;/p>
+&lt;p>A mapping of digits to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.leetcode.com/uploads/2022/03/15/1200px-telephone-keypad2svg.png"
+id="zoom-default"
+alt="17"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: digits = &amp;quot;23&amp;quot;
+Output: [&amp;quot;ad&amp;quot;,&amp;quot;ae&amp;quot;,&amp;quot;af&amp;quot;,&amp;quot;bd&amp;quot;,&amp;quot;be&amp;quot;,&amp;quot;bf&amp;quot;,&amp;quot;cd&amp;quot;,&amp;quot;ce&amp;quot;,&amp;quot;cf&amp;quot;]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: digits = &amp;quot;&amp;quot;
+Output: []
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">letterCombinations&lt;/span>(self, digits: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[&lt;span style="color:#007020">str&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> digits:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> letters &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;abc&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;def&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#39;ghi&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;jkl&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;mno&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#39;pqrs&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;tuv&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;wxyz&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> d &lt;span style="color:#007020;font-weight:bold">in&lt;/span> digits:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> d &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(d)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tmp &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> letter &lt;span style="color:#007020;font-weight:bold">in&lt;/span> letters[d]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> word &lt;span style="color:#007020;font-weight:bold">in&lt;/span> result:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> word &lt;span style="color:#666">+=&lt;/span> letter
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tmp&lt;span style="color:#666">.&lt;/span>append(word)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#666">=&lt;/span> tmp
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> result
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>20. Valid Parentheses</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/20/</link><pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/20/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/valid-parentheses/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given a string s containing just the characters &lt;code>'('&lt;/code>, &lt;code>')'&lt;/code>, &lt;code>'{'&lt;/code>, &lt;code>'}'&lt;/code>, &lt;code>'['&lt;/code> and &lt;code>']'&lt;/code>, determine if the input string is valid.&lt;/p>
+&lt;p>An input string is valid if:&lt;/p>
+&lt;ol>
+&lt;li>Open brackets must be closed by the same type of brackets.&lt;/li>
+&lt;li>Open brackets must be closed in the correct order.&lt;/li>
+&lt;li>Every close bracket has a corresponding open bracket of the same type.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: s = &amp;quot;()[]{}&amp;quot;
+Output: true
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: s = &amp;quot;()[]{}&amp;quot;
+Output: true
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Loop through string&lt;/li>
+&lt;li>If &lt;em>current&lt;/em> &amp;ldquo;closes&amp;rdquo; the last in stack, then remove last from stack&lt;/li>
+&lt;li>Else: add current to stack&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">isValid&lt;/span>(self, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">bool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> par_dict &lt;span style="color:#666">=&lt;/span> {&lt;span style="color:#4070a0">&amp;#39;(&amp;#39;&lt;/span>: &lt;span style="color:#4070a0">&amp;#39;)&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;{&amp;#39;&lt;/span>: &lt;span style="color:#4070a0">&amp;#39;}&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;[&amp;#39;&lt;/span>: &lt;span style="color:#4070a0">&amp;#39;]&amp;#39;&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> last_value &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> s:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> second_value &lt;span style="color:#666">=&lt;/span> par_dict&lt;span style="color:#666">.&lt;/span>get(last_value, &lt;span style="color:#007020;font-weight:bold">None&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> i &lt;span style="color:#666">==&lt;/span> second_value:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack&lt;span style="color:#666">.&lt;/span>pop()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> last_value &lt;span style="color:#666">=&lt;/span> stack[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#007020;font-weight:bold">if&lt;/span> stack &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack&lt;span style="color:#666">.&lt;/span>append(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> last_value &lt;span style="color:#666">=&lt;/span> i
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> stack
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="better-solution">Better solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">isValid&lt;/span>(self, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">bool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> par_dict &lt;span style="color:#666">=&lt;/span> {&lt;span style="color:#4070a0">&amp;#39;(&amp;#39;&lt;/span>: &lt;span style="color:#4070a0">&amp;#39;)&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;{&amp;#39;&lt;/span>: &lt;span style="color:#4070a0">&amp;#39;}&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;[&amp;#39;&lt;/span>: &lt;span style="color:#4070a0">&amp;#39;]&amp;#39;&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> char &lt;span style="color:#007020;font-weight:bold">in&lt;/span> s:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> char &lt;span style="color:#007020;font-weight:bold">in&lt;/span> par_dict: &lt;span style="color:#60a0b0;font-style:italic"># If it&amp;#39;s an opening bracket, add it to the stack&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack&lt;span style="color:#666">.&lt;/span>append(char)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> stack: &lt;span style="color:#60a0b0;font-style:italic"># If there&amp;#39;s something in the stack&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> char &lt;span style="color:#666">==&lt;/span> par_dict[stack[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># If it&amp;#39;s a closing bracket for the last opened bracket, remove it from the stack.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack&lt;span style="color:#666">.&lt;/span>pop()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic"># It&amp;#39;s not a closing bracket for the last opened bracket. Invalid string.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic"># Not an opening bracket or closing bracket. Invalid string.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> stack &lt;span style="color:#666">==&lt;/span> []
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>22. Generate Parentheses</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/22/</link><pubDate>Wed, 16 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/22/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/generate-parentheses/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: n = 3
+Output: [&amp;quot;((()))&amp;quot;,&amp;quot;(()())&amp;quot;,&amp;quot;(())()&amp;quot;,&amp;quot;()(())&amp;quot;,&amp;quot;()()()&amp;quot;]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: n = 1
+Output: [&amp;quot;()&amp;quot;]
+&lt;/code>&lt;/pre>
+&lt;h2 id="prerequirements">Prerequirements&lt;/h2>
+&lt;p>&lt;a href="https://romankurnovskii.com/en/tracks/algorithms-101/algorithms/#backtracking">Backtracking pattern&lt;/a>&lt;/p>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/22.jpg"
+id="zoom-default"
+alt="test-case"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">generateParenthesis&lt;/span>(self, n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">dfs&lt;/span>(l: &lt;span style="color:#007020">int&lt;/span>, r: &lt;span style="color:#007020">int&lt;/span>, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> r &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#666">.&lt;/span>append(s)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(l &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>, r, s &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#4070a0">&amp;#39;(&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l &lt;span style="color:#666">&amp;lt;&lt;/span> r:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(l, r &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>, s &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#4070a0">&amp;#39;)&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(n, n, &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>28. Find the Index of the First Occurrence in a String</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/28/index.en./</link><pubDate>Sat, 19 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/28/index.en./</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given two strings &lt;code>needle&lt;/code> and &lt;code>haystack&lt;/code>, return the index of the first occurrence of &lt;code>needle&lt;/code> in &lt;code>haystack&lt;/code>, or -1 if &lt;code>needle&lt;/code> is not part of &lt;code>haystack&lt;/code>.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;p>Input: haystack = &amp;ldquo;sadbutsad&amp;rdquo;, needle = &amp;ldquo;sad&amp;rdquo;
+Output: 0
+Explanation: &amp;ldquo;sad&amp;rdquo; occurs at index 0 and 6.
+The first occurrence is at index 0, so we return 0.&lt;/p>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;p>Input: haystack = &amp;ldquo;leetcode&amp;rdquo;, needle = &amp;ldquo;leeto&amp;rdquo;
+Output: -1
+Explanation: &amp;ldquo;leeto&amp;rdquo; did not occur in &amp;ldquo;leetcode&amp;rdquo;, so we return -1.&lt;/p>
+&lt;h2 id="code">Code&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">strStr&lt;/span>(self, haystack: &lt;span style="color:#007020">str&lt;/span>, needle: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> haystack&lt;span style="color:#666">.&lt;/span>find(needle)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">strStr&lt;/span>(self, haystack: &lt;span style="color:#007020">str&lt;/span>, needle: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> start &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> end &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(needle)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> end &lt;span style="color:#666">&amp;lt;=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(haystack):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> haystack[start:end] &lt;span style="color:#666">==&lt;/span> needle:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> start
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> start &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> end &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>38. Count and Say</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/38/</link><pubDate>Thu, 08 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/38/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/count-and-say/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>The &lt;strong>count-and-say&lt;/strong> sequence is a sequence of digit strings defined by the recursive formula:&lt;/p>
+&lt;p>&lt;code>countAndSay(1) = &amp;quot;1&amp;quot;&lt;/code>
+&lt;code>countAndSay(n)&lt;/code> is the way you would &amp;ldquo;say&amp;rdquo; the digit string from &lt;code>countAndSay(n-1)&lt;/code>, which is then converted into a different digit string.
+To determine how you &amp;ldquo;say&amp;rdquo; a digit string, split it into the &lt;strong>minimal&lt;/strong> number of substrings such that each substring contains exactly one unique digit. Then for each substring, say the number of digits, then say the digit. Finally, concatenate every said digit.&lt;/p>
+&lt;p>For example, the saying and conversion for digit string &lt;code>&amp;quot;3322251&amp;quot;&lt;/code>:
+&lt;p class="md__image">
+&lt;img
+src="https://assets.leetcode.com/uploads/2020/10/23/countandsay.jpg"
+id="zoom-default"
+alt="example"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Given a positive integer &lt;code>n&lt;/code>, return the &lt;code>nth&lt;/code> term of the &lt;strong>count-and-say&lt;/strong> sequence.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: n = 1
+Output: &amp;quot;1&amp;quot;
+Explanation: This is the base case.
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: n = 4
+Output: &amp;quot;1211&amp;quot;
+Explanation:
+countAndSay(1) = &amp;quot;1&amp;quot;
+countAndSay(2) = say &amp;quot;1&amp;quot; = one 1 = &amp;quot;11&amp;quot;
+countAndSay(3) = say &amp;quot;11&amp;quot; = two 1's = &amp;quot;21&amp;quot;
+countAndSay(4) = say &amp;quot;21&amp;quot; = one 2 + one 1 = &amp;quot;12&amp;quot; + &amp;quot;11&amp;quot; = &amp;quot;1211&amp;quot;
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">countAndSay&lt;/span>(self, n: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">str&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;1&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> n &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(res)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> new_str &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> i &lt;span style="color:#666">&amp;lt;&lt;/span> l:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> i &lt;span style="color:#666">&amp;lt;&lt;/span> l &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> res[i] &lt;span style="color:#666">==&lt;/span> res[i&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> new_str &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#007020">str&lt;/span>(count) &lt;span style="color:#666">+&lt;/span> res[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> new_str
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>49. Group Anagrams</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/49/</link><pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/49/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/group-anagrams/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given an array of strings &lt;code>strs&lt;/code>, group &lt;strong>the anagrams&lt;/strong> together. You can return the answer in &lt;strong>any order&lt;/strong>.&lt;/p>
+&lt;p>An &lt;strong>Anagram&lt;/strong> is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: strs = [&amp;quot;eat&amp;quot;,&amp;quot;tea&amp;quot;,&amp;quot;tan&amp;quot;,&amp;quot;ate&amp;quot;,&amp;quot;nat&amp;quot;,&amp;quot;bat&amp;quot;]
+Output: [[&amp;quot;bat&amp;quot;],[&amp;quot;nat&amp;quot;,&amp;quot;tan&amp;quot;],[&amp;quot;ate&amp;quot;,&amp;quot;eat&amp;quot;,&amp;quot;tea&amp;quot;]]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: strs = [&amp;quot;&amp;quot;]
+Output: [[&amp;quot;&amp;quot;]]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 3:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: strs = [&amp;quot;a&amp;quot;]
+Output: [[&amp;quot;a&amp;quot;]]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">groupAnagrams&lt;/span>(self, strs: List[&lt;span style="color:#007020">str&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[List[&lt;span style="color:#007020">str&lt;/span>]]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dd &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> s &lt;span style="color:#007020;font-weight:bold">in&lt;/span> strs:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s_sort &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&amp;#34;&lt;/span>&lt;span style="color:#666">.&lt;/span>join(&lt;span style="color:#007020">sorted&lt;/span>(s))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> values &lt;span style="color:#666">=&lt;/span> dd&lt;span style="color:#666">.&lt;/span>get(s_sort, [])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> values&lt;span style="color:#666">.&lt;/span>append(s)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dd[s_sort] &lt;span style="color:#666">=&lt;/span> values
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> dd&lt;span style="color:#666">.&lt;/span>values()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Approach 2:&lt;/strong>&lt;/p>
+&lt;p>Intuition:&lt;/p>
+&lt;p>Two strings are anagrams if and only if their character counts (respective number of occurrences of each character) are the same.&lt;/p>
+&lt;p>Algorithm:&lt;/p>
+&lt;p>We can transform each string &lt;code>s&lt;/code> into a character count, count\text{count}count, consisting of 26 non-negative integers representing the number of &lt;code>a&lt;/code>&amp;rsquo;s, &lt;code>b&lt;/code>&amp;rsquo;s, z&amp;rsquo;s, etc. We use these counts as the basis for our hash map.&lt;/p>
+&lt;p>In python, the representation will be a tuple of the counts. For example, &lt;code>abbccc&lt;/code> will be &lt;code>(1, 2, 3, 0, 0, ..., 0)&lt;/code>, where again there are 26 entries total.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://leetcode.com/problems/group-anagrams/solutions/127405/Figures/49_groupanagrams2.png"
+id="zoom-default"
+alt="example"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">groupAnagrams&lt;/span>(strs):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> collections&lt;span style="color:#666">.&lt;/span>defaultdict(&lt;span style="color:#007020">list&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> s &lt;span style="color:#007020;font-weight:bold">in&lt;/span> strs:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">*&lt;/span> &lt;span style="color:#40a070">26&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> c &lt;span style="color:#007020;font-weight:bold">in&lt;/span> s:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count[&lt;span style="color:#007020">ord&lt;/span>(c) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#007020">ord&lt;/span>(&lt;span style="color:#4070a0">&amp;#39;a&amp;#39;&lt;/span>)] &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res[&lt;span style="color:#007020">tuple&lt;/span>(count)]&lt;span style="color:#666">.&lt;/span>append(s)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res&lt;span style="color:#666">.&lt;/span>values()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://leetcode.com/problems/group-anagrams/solutions/127405/group-anagrams/">LeetCode expl&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>392. Is Subsequence</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/392/</link><pubDate>Sun, 06 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/392/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/is-subsequence/">LeetCode задача 392&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Даны две строки &lt;code>s&lt;/code> и &lt;code>t&lt;/code>. Верните &lt;code>true&lt;/code>, если &lt;code>s&lt;/code> является подпоследовательностью &lt;code>t&lt;/code>, или &lt;code>false&lt;/code> в противном случае.&lt;/p>
+&lt;p>Подпоследовательность строки - это новая строка, которая формируется из исходной строки путем удаления некоторых (может быть ни одного) символов без нарушения относительных позиций оставшихся символов. (например, &amp;ldquo;ace&amp;rdquo; является подпоследовательностью &amp;ldquo;abcde&amp;rdquo;, в то время как &amp;ldquo;aec&amp;rdquo; - нет).&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Следуя за обеими строками одновременно с помощью двух указателей, вы можете определить, является ли одна строка подпоследовательностью другой.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Мы можем использовать &lt;mark>два указателя&lt;/mark>, проходясь по каждому символу в строке &lt;code>t&lt;/code> и проверяя, соответствует ли он текущему символу в строке &lt;code>s&lt;/code>.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Инициализируем два указателя, один для строки &lt;code>s&lt;/code>, другой для строки &lt;code>t&lt;/code> с 0.&lt;/li>
+&lt;li>Пока оба указателя находятся в пределах своих строк:
+&lt;ol>
+&lt;li>Если символы, на которые указывают указатели, &lt;strong>совпадают&lt;/strong>, перемещаем указатель для &lt;code>s&lt;/code> на следующий символ.&lt;/li>
+&lt;li>Перемещаем указатель для &lt;code>t&lt;/code> на следующий символ, независимо от того, совпали символы или нет.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Если указатель для &lt;code>s&lt;/code> достиг конца строки, это означает, что &lt;code>s&lt;/code> является подпоследовательностью &lt;code>t&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">isSubsequence&lt;/span>(s: &lt;span style="color:#007020">str&lt;/span>, t: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">bool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pointer_s, pointer_t &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Пока указатели в пределах своих строк&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> pointer_s &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(s) &lt;span style="color:#007020;font-weight:bold">and&lt;/span> pointer_t &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(t):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Если символы совпадают, перемещаем указатель для s&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> s[pointer_s] &lt;span style="color:#666">==&lt;/span> t[pointer_t]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pointer_s &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Перемещаем указатель для t&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pointer_t &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Если указатель для s достиг конца строки, s является подпоследовательностью t&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> pointer_s &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#007020">len&lt;/span>(s)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1647. Minimum Deletions to Make Character Frequencies Unique</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1647/</link><pubDate>Tue, 12 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1647/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/minimum-deletions-to-make-character-frequencies-unique/">LeetCode задача 1647&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Строка &lt;code>s&lt;/code> называется хорошей, если в ней нет двух разных символов с одинаковой частотой.&lt;/p>
+&lt;p>Дана строка &lt;code>s&lt;/code>, верните минимальное количество символов, которое необходимо удалить, чтобы сделать &lt;code>s&lt;/code> хорошим.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Основная идея решения заключается в подсчете частот символов в строке и определении количества удалений, необходимых для того, чтобы все частоты были уникальными.&lt;/p>
+&lt;p>Если проверять &lt;mark>встречалась ли частота текущего символа ранее&lt;/mark>, то&lt;/p>
+&lt;h2 id="алгоритм--абстрактный-алгоритм">Алгоритм / Абстрактный алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Считаем частоты всех символов в строке.&lt;/li>
+&lt;li>Сортируем частоты в порядке убывания.&lt;/li>
+&lt;li>Для каждой частоты, начиная с самой большой, если она не уникальна (т.е. есть другая такая же частота), уменьшаем ее на 1 и увеличиваем счетчик удалений.&lt;/li>
+&lt;li>Продолжаем, пока все частоты не станут уникальными.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">collections&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> Counter
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">minDeletions&lt;/span>(self, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> freq &lt;span style="color:#666">=&lt;/span> Counter(s) &lt;span style="color:#60a0b0;font-style:italic"># Подсчет частот символов&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> freqs &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">sorted&lt;/span>(freq&lt;span style="color:#666">.&lt;/span>values(), reverse&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">True&lt;/span>) &lt;span style="color:#60a0b0;font-style:italic"># Сортировка частот в порядке убывания&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> deletions &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> seen &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> f &lt;span style="color:#007020;font-weight:bold">in&lt;/span> freqs:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> f &lt;span style="color:#007020;font-weight:bold">in&lt;/span> seen:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> f &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> deletions &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> f &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> seen&lt;span style="color:#666">.&lt;/span>add(f)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> deletions
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>2390. Removing Stars From a String</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2390/</link><pubDate>Thu, 24 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2390/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/removing-stars-from-a-string/">LeetCode problem&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>You are provided with a string &lt;code>s&lt;/code> that contains asterisks or stars (*). Your task is to transform this string. In each operation, you&amp;rsquo;ll select a star and remove the character immediately to its left and the star itself. Continue this process until there are no stars left in the string.&lt;/p>
+&lt;p>The challenge guarantees that the input string can always be transformed as per the given operation, and the result will always be unique.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A direct approach would be to loop through the string, and every time you find a star, remove it along with the character to its left. Continue this process till no more stars exist. However, this can be optimized.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;p>In Python, strings are immutable. This means, whenever you make a change to a string, a new string is created in memory. To circumvent this inefficiency, we can utilize a data structure like a list (or a stack in this case), which allows for mutable operations.&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>A simplified, yet efficient approach is to use a stack:&lt;/p>
+&lt;ol>
+&lt;li>Use the stack to store the characters of the string.&lt;/li>
+&lt;li>As you iterate through the string, push characters onto the stack. If you come across a star, pop the top character from the stack (if the stack isn&amp;rsquo;t empty).&lt;/li>
+&lt;li>The remaining characters in the stack after this operation will form the transformed string.&lt;/li>
+&lt;/ol>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Initialize an empty stack, named &lt;code>stack&lt;/code>.&lt;/li>
+&lt;li>Traverse the string from the beginning.&lt;/li>
+&lt;li>For each character:
+&lt;ul>
+&lt;li>If the character is a star, pop the top character from the stack (provided the stack isn&amp;rsquo;t empty).&lt;/li>
+&lt;li>Otherwise, push the character onto the stack.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Convert the stack to a string to get the result.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">removeStars&lt;/span>(s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">str&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> c &lt;span style="color:#007020;font-weight:bold">in&lt;/span> s:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> c &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#4070a0">&amp;#39;*&amp;#39;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack&lt;span style="color:#666">.&lt;/span>pop()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack&lt;span style="color:#666">.&lt;/span>append(c)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>&lt;span style="color:#666">.&lt;/span>join(stack)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

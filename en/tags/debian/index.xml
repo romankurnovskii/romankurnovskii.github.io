@@ -1,8 +1,227 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Debian on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/debian/</link><description>Recent content in Debian on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 29 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/debian/index.xml" rel="self" type="application/rss+xml"/><item><title>Monitoring</title><link>https://romankurnovskii.com/en/posts/linux/debian-setup/</link><pubDate>Fri, 29 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/debian-setup/</guid><description>Auditing Packages dpkg --verify or
-dpkg -V # dpkg -V ??5?????? /lib/systemd/system/ssh.service ??5?????? c /etc/libvirt/qemu/networks/default.xml &amp;lsquo;ssh.service&amp;rsquo;: reports a change to SSH&amp;rsquo;s service file that the administrator made to the packaged file instead of using an appropriate /etc/systemd/system/ssh.service override &amp;lsquo;c&amp;rsquo; letter: legitimately modified Monitoring Files AIDE apt install aide aideinit # first db init aideinit creates a cron job in etc/cron.daily/aide
-DB: /var/lib/aide/aide.db
-When changes are detected, AIDE records them in log files /var/log/aide/*.log
-logcheck Monitors log files every hour by default and sends unusual log messages in emails to the administrator for further analysis</description></item><item><title>Wireless access point with hostapd on Debian</title><link>https://romankurnovskii.com/en/posts/linux/wireless-access-point/</link><pubDate>Fri, 29 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/wireless-access-point/</guid><description>hostapd is a user space daemon for access point and authentication servers. It implements IEEE 802.11 access point management, IEEE 802.1X/WPA/WPA2/EAP Authenticators and RADIUS authentication server. The current version supports Linux (Host AP, mac80211-based drivers) and FreeBSD (net80211). Configure network traffic routing and Network Address Translation (NAT) using iptables.
-Configure the system to forward packets from one network interface to another, applying NAT to the packets going out of the eth0 interface.
-Network configuration where the system is intended to function as a router or gateway between two networks (e.</description></item><item><title>How to disable IPv6 on Debian/Kali Linux</title><link>https://romankurnovskii.com/en/posts/linux/howto-disable-ipv6-on-debian/</link><pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/howto-disable-ipv6-on-debian/</guid><description>TL;DR git clone https://github.com/romankurnovskii/kali-shortcuts.git cd kali-shortcuts chmod +x disable_ipv6.sh sudo ./disable_ipv6.sh Edit sysctl Configuration In the terminal, type sudo vi /etc/sysctl.conf and press Enter. This opens the sysctl.conf file in the text editor with root privileges. Add IPv6 Disable Lines At the end of the file, add the following lines: net.ipv6.conf.all.disable_ipv6 = 1 net.ipv6.conf.default.disable_ipv6 = 1 net.ipv6.conf.lo.disable_ipv6 = 1 These lines will disable IPv6 on all network interfaces, including the loopback interface.
-Save and Exit Save /etc/sysctl.conf and exit text editor Apply Changes To apply the changes without rebooting, run `sudo sysctl -p`` in the terminal.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Debian on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/debian/</link><description>Recent content in Debian on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 21 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/debian/index.xml" rel="self" type="application/rss+xml"/><item><title>Set Up Your First VPS on Debian</title><link>https://romankurnovskii.com/en/posts/linux/debian-vps-initial-setup/</link><pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/debian-vps-initial-setup/</guid><description>&lt;h1 id="setting-up-your-first-vps-secure-configuration-guide">Setting Up Your First VPS: Secure Configuration Guide&lt;/h1>
+&lt;p>When setting up a new VPS, securing access is critical to prevent unauthorized usage. In this guide, you&amp;rsquo;ll create a new user, disable SSH root access, and configure SSH key-based authentication for added security.&lt;/p>
+&lt;h2 id="update-and-upgrade-packages">Update and Upgrade Packages&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>apt update
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>apt upgrade -y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-1-initial-login-as-root">Step 1: Initial Login as Root&lt;/h2>
+&lt;p>By default, VPS providers often grant root access. Start by logging in using the provided credentials:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh root@&amp;lt;your-server-ip&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-2-create-a-new-user">Step 2: Create a New User&lt;/h2>
+&lt;p>Replace &lt;username> with your preferred username:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>useradd -m -s /bin/bash -G sudo &amp;lt;username&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In case of delete the User:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>userdel -r &amp;lt;username&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>-r&lt;/code>: Removes the user&amp;rsquo;s home directory.&lt;/p>
+&lt;h2 id="step-3-configure-ssh-key-based-authentication">Step 3: Configure SSH Key-Based Authentication&lt;/h2>
+&lt;p>&lt;strong>3.1. Generate an SSH Key Pair (Local Machine)&lt;/strong>
+On your local machine (not the VPS), check if you already have an SSH key:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ls ~/.ssh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Look for files like &lt;code>id_rsa&lt;/code> and &lt;code>id_rsa.pub&lt;/code>. If these files exist, you already have an SSH key. Skip to &lt;strong>3.2&lt;/strong> to retrieve your public key.&lt;/p>
+&lt;p>If no SSH key exists, generate one with the following command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh-keygen -t rsa -b &lt;span style="color:#40a070">4096&lt;/span> -C &lt;span style="color:#4070a0">&amp;#34;your_email@example.com&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;code>-t rsa&lt;/code>: Specifies the RSA algorithm.&lt;/li>
+&lt;li>&lt;code>-b 4096&lt;/code>: Sets the key size to 4096 bits (more secure).&lt;/li>
+&lt;li>&lt;code>-C &amp;quot;your_email@example.com&amp;quot;&lt;/code>: Adds a comment to identify the key.&lt;/li>
+&lt;/ul>
+&lt;p>Follow the prompts:&lt;/p>
+&lt;ul>
+&lt;li>Press Enter to save the key in the default location (&lt;code>~/.ssh/id_rsa&lt;/code>).&lt;/li>
+&lt;li>Optionally, set a passphrase for additional security.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>3.2. Retrieve Your Public Key&lt;/strong>&lt;/p>
+&lt;p>Your public key is stored in the file &lt;code>~/.ssh/id_rsa.pub&lt;/code>. To display it, run:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cat ~/.ssh/id_rsa.pub
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You’ll see a string that starts with ssh-rsa:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>ssh-rsa AAAAB3Nza...your-key... your_email@example.com
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Copy this entire string to your clipboard.&lt;/p>
+&lt;p>&lt;strong>3.3. Add Your Public Key to the VPS&lt;/strong>
+Log in to your VPS as &lt;username>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>su - &amp;lt;username&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create the &lt;code>.ssh&lt;/code> directory in the home folder:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>mkdir -p ~/.ssh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chmod &lt;span style="color:#40a070">700&lt;/span> ~/.ssh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Open the authorized_keys file:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>vi ~/.ssh/authorized_keys
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Paste your public key into the file and save it.&lt;/p>
+&lt;p>Set the appropriate permissions:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>chmod &lt;span style="color:#40a070">600&lt;/span> ~/.ssh/authorized_keys
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>3.4. Test SSH Key Authentication&lt;/strong>
+On your local machine, test the connection to your VPS using the myuser account:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh &amp;lt;username&amp;gt;@&amp;lt;your-server-ip&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># if using port:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ssh -p &amp;lt;port&amp;gt; &amp;lt;username&amp;gt;@&amp;lt;your-server-ip&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If the setup is correct, you’ll log in without being prompted for a password.&lt;/p>
+&lt;h2 id="step-4-disable-root-ssh-login">Step 4: Disable Root SSH Login&lt;/h2>
+&lt;p>Edit the SSH Configuration File&lt;/p>
+&lt;p>Open the SSH daemon configuration file:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo vi /etc/ssh/sshd_config
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Update the Following Settings&lt;/p>
+&lt;p>Disable root login:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>PermitRootLogin no
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Disable password authentication:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>PasswordAuthentication no
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Save and Exit the file, then restart the SSH service:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo systemctl restart sshd
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-5-final-security-check">Step 5: Final Security Check&lt;/h2>
+&lt;p>Test New Configuration&lt;/p>
+&lt;p>Open a new terminal and verify that:&lt;/p>
+&lt;ul>
+&lt;li>You can log in with the new user.&lt;/li>
+&lt;li>Root login is disabled.&lt;/li>
+&lt;li>Password-based login is disabled.&lt;/li>
+&lt;li>Firewall Setup (Optional)&lt;/li>
+&lt;/ul>
+&lt;p>Enable the firewall and allow only SSH traffic:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ufw allow OpenSSH
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ufw &lt;span style="color:#007020">enable&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-6-backup-and-monitor">Step 6: Backup and Monitor&lt;/h2>
+&lt;p>Backup Your SSH Keys Ensure your private key is securely stored on your local machine.&lt;/p>
+&lt;p>Monitor Login Attempts Check login activity using:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cat /var/log/auth.log
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Monitoring Linux OS</title><link>https://romankurnovskii.com/en/posts/linux/debian-setup/</link><pubDate>Fri, 29 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/debian-setup/</guid><description>&lt;h2 id="auditing-packages">Auditing Packages&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>dpkg --verify
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>or&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>dpkg -V
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span># dpkg -V
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>??5?????? /lib/systemd/system/ssh.service
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>??5?????? c /etc/libvirt/qemu/networks/default.xml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&amp;lsquo;ssh.service&amp;rsquo;: reports a change to SSH&amp;rsquo;s service file that the administrator made to the packaged file instead of using an appropriate /etc/systemd/system/ssh.service override&lt;/li>
+&lt;li>&amp;lsquo;c&amp;rsquo; letter: legitimately modified&lt;/li>
+&lt;/ul>
+&lt;h2 id="monitoring-files">Monitoring Files&lt;/h2>
+&lt;h3 id="aide">AIDE&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>apt install aide
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>aideinit # first db init
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>aideinit&lt;/code> creates a cron job in &lt;code>etc/cron.daily/aide&lt;/code>&lt;/p>
+&lt;p>DB: &lt;code>/var/lib/aide/aide.db&lt;/code>&lt;/p>
+&lt;p>When changes are detected, AIDE records them in log files &lt;code>/var/log/aide/*.log&lt;/code>&lt;/p>
+&lt;h3 id="logcheck">logcheck&lt;/h3>
+&lt;p>Monitors log files every hour by default and sends unusual log messages in emails to the administrator for further analysis&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>sudo apt install logcheck
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>sudo -u logcheck logcheck -o
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>debian@debian:~$ sudo -u logcheck logcheck -help
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>usage: logcheck [-c CFG] [-d] [-h] [-H HOST] [-l LOG] [-L CFG] [-D DIR] [-m MAIL] [-o]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [-r DIR] [-s|-p|-w] [-R] [-S DIR] [-t] [-T] [-u]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -c CFG = override default configuration file
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -d = debug mode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -h = print this usage information and exit
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -H HOST = use this hostname in the subject of any generated mail
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -l LOG = check the specified logfile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -L CFG = override default logfiles list
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -D DIR = override default logfiles lists directory
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -m MAIL = send the report to the specified recipient
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -o = send the report to stdout, no mail will be sent
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -p = use the &amp;#34;paranoid&amp;#34; runlevel
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -r DIR = override default rules directory
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -R = adds &amp;#34;Reboot:&amp;#34; to email subject
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -s = use the &amp;#34;server&amp;#34; runlevel
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -S DIR = override default state directory
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -t = testing mode, don&amp;#39;t update the logfile offsets
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -T = do not remove the TMPDIR
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -u = enable syslog-summary
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -v = print version
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -w = use the &amp;#34;workstation&amp;#34; runlevel
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Save log to some dir path&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>mkdir -p /data/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo -u logcheck logcheck -o &amp;gt; /data/$(date +&amp;#34;%m-%d-%Y-%T&amp;#34;).log
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Run every hour
+&lt;ul>
+&lt;li>Create script, make it executable and drop it in &lt;code>/etc/cron.hourly&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://portal.offsec.com/courses/pen-103/books-and-videos/modal/modules/securing-and-monitoring-kali-linux/exercises/monitoring-kali-services">https://portal.offsec.com/courses/pen-103/books-and-videos/modal/modules/securing-and-monitoring-kali-linux/exercises/monitoring-kali-services&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.digitalocean.com/community/tutorials/iptables-essentials-common-firewall-rules-and-commands#listing-and-deleting-rules">https://www.digitalocean.com/community/tutorials/iptables-essentials-common-firewall-rules-and-commands#listing-and-deleting-rules&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Wireless access point with hostapd on Debian</title><link>https://romankurnovskii.com/en/posts/linux/wireless-access-point/</link><pubDate>Fri, 29 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/wireless-access-point/</guid><description>&lt;blockquote>
+&lt;p>&lt;a href="https://manpages.debian.org/testing/hostapd/hostapd.8.en.html">hostapd&lt;/a> is a user space daemon for access point and authentication servers. It implements IEEE 802.11 access point management, IEEE 802.1X/WPA/WPA2/EAP Authenticators and RADIUS authentication server. The current version supports Linux (Host AP, mac80211-based drivers) and FreeBSD (net80211).
+Configure network traffic routing and Network Address Translation (NAT) using &lt;code>iptables&lt;/code>.&lt;/p>&lt;/blockquote>
+&lt;p>Configure the system to forward packets from one network interface to another, applying NAT to the packets going out of the &lt;code>eth0&lt;/code> interface.&lt;/p>
+&lt;p>Network configuration where the system is intended to function as a router or gateway between two networks (e.g., forwarding packets from a Wi-Fi network to an Ethernet network).&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>kali@kali:~$ sudo iptables -t nat -F
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kali@kali:~$
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kali@kali:~$ sudo iptables -F
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kali@kali:~$
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kali@kali:~$ sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kali@kali:~$
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kali@kali:~$ sudo iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kali@kali:~$
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kali@kali:~$ &lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#40a070">1&lt;/span> | sudo tee /proc/sys/net/ipv4/ip_forward &lt;span style="color:#60a0b0;font-style:italic"># (DNS, dhcp still required)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kali@kali:~$
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="1-sudo-iptables--t-nat--f">1. sudo iptables -t nat -F&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>iptables&lt;/code> is a command-line utility used to set up, maintain, and inspect the tables of IP packet filter rules in the Linux kernel.&lt;/li>
+&lt;li>&lt;code>-t nat&lt;/code> specifies the NAT table, one of the several tables in the &lt;code>iptables&lt;/code> utility used for network address translation.&lt;/li>
+&lt;li>&lt;code>-F&lt;/code> stands for &amp;lsquo;flush&amp;rsquo;, which clears or deletes all the rules in the selected table (in this case, the NAT table).&lt;/li>
+&lt;li>Essentially, this command clears all NAT rules that may have been previously set up.&lt;/li>
+&lt;/ul>
+&lt;h2 id="2-sudo-iptables--f">2. sudo iptables -F&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>-F&lt;/code> command is used without the &lt;code>-t&lt;/code> option, which means it applies to the default filter table.&lt;/li>
+&lt;li>This command clears all the rules in the filter table, which is responsible for packet filtering.&lt;/li>
+&lt;/ul>
+&lt;h2 id="3-sudo-iptables--t-nat--a-postrouting--o-eth0--j-masquerade">3. sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE&lt;/h2>
+&lt;p>&lt;code>-A POSTROUTING&lt;/code> adds a rule to the POSTROUTING chain. The POSTROUTING chain is used for altering packets after they have been routed.
+&lt;code>-o eth0&lt;/code> specifies the outgoing network interface, &lt;code>eth0&lt;/code> in this case.
+&lt;code>-j MASQUERADE&lt;/code> sets the &lt;code>MASQUERADE&lt;/code> target. This is used for NAT. It enables IP masquerading, which hides your private IP address behind the public IP address of your network interface (here, &lt;code>eth0&lt;/code>). It&amp;rsquo;s often used in situations where your IP address is dynamically assigned, such as a dial-up or DSL connection.
+This command sets up NAT for packets going out of the &lt;code>eth0&lt;/code> interface.&lt;/p>
+&lt;h2 id="4-sudo-iptables--a-forward--i-wlan0--o-eth0--j-accept">4. sudo iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>-A FORWARD&lt;/code> adds a rule to the FORWARD chain. The FORWARD chain is used for packets that are being routed through the device.&lt;/li>
+&lt;li>&lt;code>-i wlan0&lt;/code> specifies the incoming interface, &lt;code>wlan0&lt;/code> in this case.&lt;/li>
+&lt;li>&lt;code>-o eth0&lt;/code> specifies the outgoing interface, eth0.&lt;/li>
+&lt;li>&lt;code>-j ACCEPT&lt;/code> means that these packets will be accepted and forwarded from &lt;code>wlan0&lt;/code> to &lt;code>eth0&lt;/code>.&lt;/li>
+&lt;li>This command is typically part of configuring the device to act as a router or gateway, forwarding packets from one interface to another.&lt;/li>
+&lt;/ul>
+&lt;h2 id="5-echo-1--sudo-tee-procsysnetipv4ip_forward">5. echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>/proc/sys/net/ipv4/ip_forward&lt;/code> is a system file that controls the IP forwarding setting of the kernel. When this is set to 1, it enables the system to forward IP packets from one network to another, effectively functioning as a router.&lt;/li>
+&lt;li>echo 1 outputs 1, and the | sudo tee part is used to write this value into the &lt;code>ip_forward&lt;/code> file with the necessary permissions.&lt;/li>
+&lt;li>This command is crucial for enabling IP forwarding, allowing the system to route packets between interfaces.&lt;/li>
+&lt;/ul>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://portal.offsec.com/courses/pen-103/books-and-videos/modal/modules/securing-and-monitoring-kali-linux/exercises/securing-the-kali-file-system">https://portal.offsec.com/courses/pen-103/books-and-videos/modal/modules/securing-and-monitoring-kali-linux/exercises/securing-the-kali-file-system&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>How to disable IPv6 on Debian/Kali Linux</title><link>https://romankurnovskii.com/en/posts/linux/howto-disable-ipv6-on-debian/</link><pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/howto-disable-ipv6-on-debian/</guid><description>&lt;h2 id="tldr">TL;DR&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git clone https://github.com/romankurnovskii/kali-shortcuts.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">cd&lt;/span> kali-shortcuts
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chmod +x disable_ipv6.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo ./disable_ipv6.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="edit-sysctl-configuration">Edit sysctl Configuration&lt;/h2>
+&lt;ul>
+&lt;li>In the terminal, type &lt;code>sudo vi /etc/sysctl.conf&lt;/code> and press Enter. This opens the &lt;code>sysctl.conf&lt;/code> file in the text editor with root privileges.&lt;/li>
+&lt;/ul>
+&lt;h2 id="add-ipv6-disable-lines">Add IPv6 Disable Lines&lt;/h2>
+&lt;ul>
+&lt;li>At the end of the file, add the following lines:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>net.ipv6.conf.all.disable_ipv6 = 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>net.ipv6.conf.default.disable_ipv6 = 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>net.ipv6.conf.lo.disable_ipv6 = 1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>These lines will disable IPv6 on all network interfaces, including the loopback interface.&lt;/p>
+&lt;h2 id="save-and-exit">Save and Exit&lt;/h2>
+&lt;ul>
+&lt;li>Save &lt;code>/etc/sysctl.conf&lt;/code> and exit text editor&lt;/li>
+&lt;/ul>
+&lt;h2 id="apply-changes">Apply Changes&lt;/h2>
+&lt;ul>
+&lt;li>To apply the changes without rebooting, run `sudo sysctl -p`` in the terminal. This will reload the sysctl configuration with your changes.&lt;/li>
+&lt;/ul>
+&lt;h2 id="verify-changes-optional">Verify Changes (Optional)&lt;/h2>
+&lt;p>To confirm that IPv6 is disabled, you can run `cat /proc/sys/net/ipv6/conf/all/disable_ipv6``. If it returns 1, then IPv6 has been successfully disabled.&lt;/p>
+&lt;h2 id="reboot-optional">Reboot (Optional)&lt;/h2>
+&lt;p>While the &lt;code>sysctl -p&lt;/code> command applies changes immediately, it&amp;rsquo;s a good idea to reboot your system to ensure that the changes persist after a restart. You can reboot by typing &lt;code>sudo reboot&lt;/code> in the terminal.&lt;/p>
+&lt;h2 id="troubleshooting">Troubleshooting&lt;/h2>
+&lt;h3 id="linux-cant-add-ipv6-to-interface-tun0">Linux can&amp;rsquo;t add IPv6 to interface tun0&lt;/h3>
+&lt;p>Can happen when trying to connect through OpenVPN.&lt;/p>
+&lt;p>In the client file &lt;code>.ovpn&lt;/code> add lines:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>pull-filter ignore &amp;#34;ifconfig-ipv6&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pull-filter ignore &amp;#34;route-ipv6&amp;#34;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

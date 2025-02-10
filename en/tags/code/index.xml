@@ -1,6 +1,42 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Code on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/code/</link><description>Recent content in Code on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Wed, 21 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/code/index.xml" rel="self" type="application/rss+xml"/><item><title>Code style notes</title><link>https://romankurnovskii.com/en/posts/code-style/</link><pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/code-style/</guid><description>Release notes example Changed
-feat(exports): export mergeConfig #5151 Fixed
-fix(CancelledError): include config #4922 fix(general): removing multiple/trailing/leading whitespace #5022 fix(headers): decompression for responses without Content-Length header #5306 fix(webWorker): exception to sending form data in web worker #5139 Refactors
-refactor(types): AxiosProgressEvent.event type to any #5308 refactor(types): add missing types for static AxiosError.from method #4956 Chores
-chore(docs): remove README link to non-existent upgrade guide #5307 chore(docs): typo in issue template name #5159 Common used
-build: Changes that affect the build system or external dependencies (e.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Code on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/code/</link><description>Recent content in Code on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Wed, 21 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/code/index.xml" rel="self" type="application/rss+xml"/><item><title>Code style notes</title><link>https://romankurnovskii.com/en/posts/code-style/</link><pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/code-style/</guid><description>&lt;h2 id="release-notes-example">Release notes example&lt;/h2>
+&lt;p>&lt;strong>Changed&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>feat(exports): export mergeConfig #5151&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Fixed&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>fix(CancelledError): include config #4922&lt;/li>
+&lt;li>fix(general): removing multiple/trailing/leading whitespace #5022&lt;/li>
+&lt;li>fix(headers): decompression for responses without Content-Length header #5306&lt;/li>
+&lt;li>fix(webWorker): exception to sending form data in web worker #5139&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Refactors&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>refactor(types): AxiosProgressEvent.event type to any #5308&lt;/li>
+&lt;li>refactor(types): add missing types for static AxiosError.from method #4956&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Chores&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>chore(docs): remove README link to non-existent upgrade guide #5307&lt;/li>
+&lt;li>chore(docs): typo in issue template name #5159&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Common used&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>build&lt;/code>: Changes that affect the build system or external dependencies (e.g., updates to package.json, pom.xml, build.gradle, Dockerfile, etc.)&lt;/li>
+&lt;li>&lt;code>chore&lt;/code>: Regular maintenance tasks and changes that don&amp;rsquo;t modify the source code or the test suite (e.g., updating build tasks, package manager config, etc.)&lt;/li>
+&lt;li>&lt;code>ci&lt;/code>: Changes to Continuous Integration configuration files and scripts (e.g., changes in Jenkinsfile, Travis CI configuration, CircleCI, etc.)&lt;/li>
+&lt;li>&lt;code>docs&lt;/code>: Changes only affecting documentation (e.g., changes in README, API docs, comment blocks, etc.)&lt;/li>
+&lt;li>&lt;code>feat&lt;/code>: Introducing a new feature to your application.&lt;/li>
+&lt;li>&lt;code>fix&lt;/code>: A bug fix in your application code.&lt;/li>
+&lt;li>&lt;code>perf&lt;/code>: Performance improvements to your code (e.g., optimizing algorithms, improving efficiency, etc.)&lt;/li>
+&lt;li>&lt;code>refactor&lt;/code>: Changes in the code that neither fix a bug nor add a feature; typically, these changes improve code readability or structure.&lt;/li>
+&lt;li>&lt;code>revert&lt;/code>: If you are reverting a previous commit.&lt;/li>
+&lt;li>&lt;code>style&lt;/code>: Changes to the coding style (e.g., changes in whitespace, formatting, missing semi-colons, etc.) that do not affect the meaning of the code.&lt;/li>
+&lt;li>&lt;code>test&lt;/code>: Adding or updating tests, covering new or existing functionality.&lt;/li>
+&lt;/ul>
+&lt;h2 id="code-format">Code format&lt;/h2>
+&lt;ul>
+&lt;li>Detailed description in &lt;a href="https://www.conventionalcommits.org/en/v1.0.0/#summary">git commits style&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://google.github.io/styleguide/pyguide.html">Python style&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://google.github.io/styleguide/jsguide.html">JavaScript style&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

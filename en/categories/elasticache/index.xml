@@ -1,4 +1,148 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Elasticache on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/elasticache/</link><description>Recent content in Elasticache on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Mon, 12 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/elasticache/index.xml" rel="self" type="application/rss+xml"/><item><title>ElastiCache</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/elasticache/</link><pubDate>Mon, 12 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/elasticache/</guid><description>About Documentation User Guide Amazon Elasticache is a fully managed Redis or Memcached in-memory data store.
-It&amp;rsquo;s great for use cases like two-tier web applications where the most frequently accesses data is stored in ElastiCache so response time is optimal.
-You can use ElastiCache for caching, which accelerates application and database performance, or as a primary data store for use cases that don&amp;rsquo;t require durability like session stores, gaming leaderboards, streaming, and analytics.
-Compatible with Redis and Memcached</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Elasticache on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/elasticache/</link><description>Recent content in Elasticache on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Mon, 12 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/elasticache/index.xml" rel="self" type="application/rss+xml"/><item><title>ElastiCache</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/elasticache/</link><pubDate>Mon, 12 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/elasticache/</guid><description>&lt;h1 id="about">About&lt;/h1>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/elasticache/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/elasticache/?id=docs_gateway">User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Amazon Elasticache is a fully managed Redis or Memcached in-memory data store.&lt;/p>
+&lt;p>It&amp;rsquo;s great for use cases like two-tier web applications where the most frequently accesses data is stored in ElastiCache so response time is optimal.&lt;/p>
+&lt;p>You can use ElastiCache for caching, which accelerates application and database performance, or as a primary data store for use cases that don&amp;rsquo;t require durability like session stores, gaming leaderboards, streaming, and analytics.&lt;/p>
+&lt;p>Compatible with Redis and Memcached&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/elasticache/EC_Use_Cases/product-page-diagram_ElastiCache_how-it-works.ec509f8b878f549b7fb8a49669bf2547878303f6.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="price">Price&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/elasticache/pricing/">Current price&lt;/a>&lt;/p>
+&lt;h2 id="use-cases">Use Cases&lt;/h2>
+&lt;p>Type: In-memory&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Use Case&lt;/th>
+&lt;th>Benefit&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Web session store&lt;/td>
+&lt;td>In cases with load-balanced web servers, store web session information in Redis so if a server is lost, the session info is not lost, and another web server can pick it up&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Database caching&lt;/td>
+&lt;td>Use Memcached in front of AWS RDS to cache popular queries to offload work from RDS and return results faster to users&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Leaderboards&lt;/td>
+&lt;td>Use Redis to provide a live leaderboard for millions of users of your mobile app&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Streaming data dashboards&lt;/td>
+&lt;td>Provide a landing spot for streaming sensor data on the factory floor, providing live real-time dashboard displays&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="caching-engines">Caching Engines&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Memcached&lt;/th>
+&lt;th>Redis&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Simple, no-frills&lt;/td>
+&lt;td>You need encryption&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>You need to elasticity (scale out and in)&lt;/td>
+&lt;td>You need HIPAA compliance&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>You need to run multiple CPU cores and threads&lt;/td>
+&lt;td>Support for clustering&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>You need to cache objects (e.g. database queries)&lt;/td>
+&lt;td>You need complex data types&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>You need HA (replication&lt;/td>
+&lt;td>Backup and restore features&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Pub/Sub capability&lt;/td>
+&lt;td>Multi-AZ with Auto-Failover&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Non persistent. No backups&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Multi-node for partitioning of data (sharding)&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="memcached">Memcached&lt;/h3>
+&lt;p>ElastiCache manages Memcached nodes as a pool that can grow and shrink (similar to an EC2 Auto Scaling group); individual nodes are expendable and non-persistent.&lt;/p>
+&lt;p>Memcached provides a simple caching solution that best supports object caching and lets you scale out horizontally. Ideal for offloading a DB&amp;rsquo;s contents into a cache.&lt;/p>
+&lt;h3 id="redis">Redis&lt;/h3>
+&lt;p>ElastiCache manages Redis more as a relational database, i.e. Redis clusters are managed as persistent, stateful entities that include using multi-AZ redundancy for handling failover (similar to RDS).&lt;/p>
+&lt;p>Redis supports complex data structures, hence would be ideal in cases where sorting and ranking datasets in memory are important (e.g. such as in leaderboards for games).&lt;/p>
+&lt;h2 id="caching-strategies">Caching Strategies&lt;/h2>
+&lt;h3 id="lazy-loading">Lazy Loading&lt;/h3>
+&lt;ul>
+&lt;li>The data that is read from the DB is stored in the cache. The data can become stale&lt;/li>
+&lt;li>The data becomes stale because there are no updates to the cache when data is changed in the database&lt;/li>
+&lt;/ul>
+&lt;p>Only cache data when it is requested. Cache miss penalty on initial request. Chance to produce stale data; can be mitigated by setting a TTL. Shorter TTL = less stale data.&lt;/p>
+&lt;h3 id="write-through">Write-Through&lt;/h3>
+&lt;ul>
+&lt;li>The data is added/updated into the cache everytime the data is written to the DB (no stale data)&lt;/li>
+&lt;li>Because the data in the cache is updated every time it&amp;rsquo;s written to the database, the data in the cache is always current.&lt;/li>
+&lt;/ul>
+&lt;p>Every database write will write to the cache as well. Data is never stale however there will be alot more operations to perform; and these resources are wasted if most of the data is never used.&lt;/p>
+&lt;h3 id="session-store">Session Store&lt;/h3>
+&lt;ul>
+&lt;li>Stores temporary session data in cache (with TTL) - Time to Live. Data expires after the given time&lt;/li>
+&lt;/ul>
+&lt;h2 id="practice">Practice&lt;/h2>
+&lt;p>&lt;a href="https://docs.aws.amazon.com/lambda/latest/dg/services-elasticache-tutorial.html">Configuring a Lambda function to access Amazon ElastiCache in an Amazon VPC&lt;/a>&lt;/p>
+&lt;h2 id="questions">Questions&lt;/h2>
+&lt;h3 id="q1">Q1&lt;/h3>
+&lt;p>&lt;strong>What is one reason that AWS does not recommend that you configure your ElastiCache so that it can be accessed from outside AWS?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>The metrics reported by CloudWatch are more difficult to report.&lt;/li>
+&lt;li>Security concerns and network latency over the public internet.&lt;/li>
+&lt;li>The ElastiCache cluster becomes more prone to failures.&lt;/li>
+&lt;li>The performance of the ElastiCache cluster is no longer controllable.&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>Elasticache is a service designed to be used internally to your VPC. External access is discouraged due to the latency of Internet traffic and security concerns. However, if external access to Elasticache is required for test or development purposes, it can be done through a VPN.&lt;/p>
+&lt;p>&lt;mark style="color:white">2&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q2">Q2&lt;/h3>
+&lt;p>&lt;strong>You are building a web application that will run in an &lt;a href="../elasticbeanstalk">AWS ElasticBeanstalk&lt;/a> environment. You need to add and configure an &lt;a href="../elasticache">Amazon ElastiCache&lt;/a> cluster into the environment immediately after the application is deployed.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>What is the most efficient method to ensure that the cluster is deployed immediately after the EB application is deployed?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Use the &lt;a href="../https://aws.amazon.com/console/">AWS Management Console&lt;/a> to create and configure the cluster.&lt;/li>
+&lt;li>Create a cron job to schedule the cluster deployment using the &lt;strong>&lt;em>aws cloudformation deploy&lt;/em>&lt;/strong> command&lt;/li>
+&lt;li>Create a configuration file with the .config extension and place it into the .ebextensions folder in the application package.&lt;/li>
+&lt;li>Build an &lt;a href="../lambda">AWS Lambda&lt;/a> function that polls to the ElasticBeanstalk environment deployments and create and configure the &lt;a href="../elasticache">Amazon ElastiCache&lt;/a> cluster.&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>[&lt;a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-resources.html">AWS Secrets Manager&lt;/a>](&lt;a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-resources.html">https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-resources.html&lt;/a>)&lt;/p>
+&lt;p>&lt;mark style="color:white">3&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details></description></item></channel></rss>

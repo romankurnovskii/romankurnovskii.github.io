@@ -1,2 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Префиксные Суммы on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/categories/%D0%BF%D1%80%D0%B5%D1%84%D0%B8%D0%BA%D1%81%D0%BD%D1%8B%D0%B5-%D1%81%D1%83%D0%BC%D0%BC%D1%8B/</link><description>Recent content in Префиксные Суммы on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 10 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/categories/%D0%BF%D1%80%D0%B5%D1%84%D0%B8%D0%BA%D1%81%D0%BD%D1%8B%D0%B5-%D1%81%D1%83%D0%BC%D0%BC%D1%8B/index.xml" rel="self" type="application/rss+xml"/><item><title>Префиксные суммы</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/data-structures/prefix-sum/</link><pubDate>Fri, 10 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/data-structures/prefix-sum/</guid><description>Подсчет префиксных сумм Сумма в текущей ячейке равна сумме в предыдущей + значение текущей.
-0 1 2 3 4 5 6 7 0 1 2 3 4 5 6 7 a[ 5, 7, 9, 3, 8, 2, 4, 6] =&amp;gt; b[5, 12, 21, 24, 32, 34, 38, 44] 0 5 [5,] 1 5 + 7 = 12 [5,12,] 2 9 + 12 = 21 [5,12,21,] 3 3 + 21 = 24 [5,12,21,24,] ... Чтобы посчитать сумму на любом отрезкe [L, R], достаточно вычесть сумму с предыдущего индекса от `L'</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Префиксные Суммы on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/categories/%D0%BF%D1%80%D0%B5%D1%84%D0%B8%D0%BA%D1%81%D0%BD%D1%8B%D0%B5-%D1%81%D1%83%D0%BC%D0%BC%D1%8B/</link><description>Recent content in Префиксные Суммы on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 10 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/categories/%D0%BF%D1%80%D0%B5%D1%84%D0%B8%D0%BA%D1%81%D0%BD%D1%8B%D0%B5-%D1%81%D1%83%D0%BC%D0%BC%D1%8B/index.xml" rel="self" type="application/rss+xml"/><item><title>Префиксные суммы</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/data-structures/prefix-sum/</link><pubDate>Fri, 10 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/data-structures/prefix-sum/</guid><description>&lt;ol>
+&lt;li>Подсчет префиксных сумм&lt;/li>
+&lt;/ol>
+&lt;p>Сумма в текущей ячейке равна сумме в предыдущей + значение текущей.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span> 0 1 2 3 4 5 6 7 0 1 2 3 4 5 6 7
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>a[ 5, 7, 9, 3, 8, 2, 4, 6] =&amp;gt; b[5, 12, 21, 24, 32, 34, 38, 44]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>0 5 [5,]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>1 5 + 7 = 12 [5,12,]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>2 9 + 12 = 21 [5,12,21,]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>3 3 + 21 = 24 [5,12,21,24,]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Чтобы посчитать сумму на любом отрезкe &lt;code>[L, R]&lt;/code>, достаточно вычесть сумму с &lt;strong>предыдущего индекса&lt;/strong> от `L'&lt;/p>
+&lt;p>L = 3, R = 5: [3, 8, 2] = 13&lt;/p>
+&lt;p>Алгоритм:&lt;/p>
+&lt;ol>
+&lt;li>Находим сумму (значение) в правой части отрезка: &lt;code>b[R] = 34&lt;/code>&lt;/li>
+&lt;li>Вычитаем из значения &lt;code>b[R]&lt;/code> значение &lt;code>b[L-1]&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;p>В новом массиве:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>b[L - 1] = b[2] = 21
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>b[R] = 34
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>34 - 21 = 13
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="ресурсы">Ресурсы&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=BzFN9YwR-NM&amp;amp;t=797s">https://www.youtube.com/watch?v=BzFN9YwR-NM&amp;t=797s&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

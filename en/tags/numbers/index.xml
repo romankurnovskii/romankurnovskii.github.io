@@ -1,3 +1,58 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Numbers on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/numbers/</link><description>Recent content in Numbers on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sun, 18 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/numbers/index.xml" rel="self" type="application/rss+xml"/><item><title>202. Happy Number</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/202/</link><pubDate>Sun, 18 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/202/</guid><description>LeetCode problem
-Problem Statement In this problem, we are given a number n. We have to determine whether this number is a &amp;ldquo;happy&amp;rdquo; number or not. A happy number is a number defined by the following process:
-Starting with any positive integer, replace the number by the sum of the squares of its digits. Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1. Those numbers for which this process ends in 1 are happy.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Numbers on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/numbers/</link><description>Recent content in Numbers on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sun, 18 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/numbers/index.xml" rel="self" type="application/rss+xml"/><item><title>202. Happy Number</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/202/</link><pubDate>Sun, 18 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/202/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/happy-number/">LeetCode problem&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>In this problem, we are given a number &lt;code>n&lt;/code>. We have to determine whether this number is a &amp;ldquo;happy&amp;rdquo; number or not. A happy number is a number defined by the following process:&lt;/p>
+&lt;ol>
+&lt;li>Starting with any positive integer, replace the number by the sum of the squares of its digits.&lt;/li>
+&lt;li>Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1.&lt;/li>
+&lt;li>Those numbers for which this process ends in 1 are happy.&lt;/li>
+&lt;/ol>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A naive solution would be to follow the process as stated in the problem description and use a data structure such as a set to check for repetitions indicating a cycle. If during the process, the number becomes 1, we can conclude that the number is happy. However, if we encounter a number that was already visited, it means we are stuck in a cycle, and the number is not happy.&lt;/p>
+&lt;ol>
+&lt;li>We calculate the sum of squares of the digits of n in each iteration, and check if this sum is 1 or a number we&amp;rsquo;ve seen before.&lt;/li>
+&lt;li>If it&amp;rsquo;s 1, we return true.&lt;/li>
+&lt;li>If it&amp;rsquo;s a number we&amp;rsquo;ve seen before, we return false, as this means we&amp;rsquo;re in an endless loop.&lt;/li>
+&lt;/ol>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;p>However, continuously checking if a number was already visited can be costly in terms of time complexity. A more efficient way to detect cycles is to use the Floyd Cycle detection algorithm (also known as the &lt;a href="https://www.youtube.com/watch?v=S5TcPmTl6ww">&amp;ldquo;Tortoise and the Hare&amp;rdquo; algorithm&lt;/a>).&lt;/p>
+&lt;p>This algorithm allows us to detect a cycle in the sequence without having to store all previously seen numbers, making it more efficient in terms of space usage.&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>Floyd Cycle detection algorithm works by moving two pointers at different speeds - a slow pointer (tortoise) and a fast pointer (hare). If there is a cycle, the fast pointer will eventually meet the slow pointer again.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Initialize two pointers slow and fast as &lt;code>n&lt;/code>.&lt;/li>
+&lt;li>Replace
+&lt;ol>
+&lt;li>slow with the sum of the squares of its digits,&lt;/li>
+&lt;li>and fast with the sum of squares of the next number in the sequence.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>If fast becomes 1, return &lt;code>True&lt;/code>. - &lt;code>n&lt;/code> is a happy number.&lt;/li>
+&lt;li>If slow meets fast and the number is not 1, return &lt;code>False&lt;/code>. - &lt;code>n&lt;/code> is not a happy number as we have detected a cycle.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">isHappy&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">get_next&lt;/span>(num): &lt;span style="color:#60a0b0;font-style:italic"># get the next number in the sequence&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> total_sum &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> num &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># get the last digit of the number and the remaining part&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> num, digit &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">divmod&lt;/span>(num, &lt;span style="color:#40a070">10&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> total_sum &lt;span style="color:#666">+=&lt;/span> digit &lt;span style="color:#666">**&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> total_sum
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> slow &lt;span style="color:#666">=&lt;/span> n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fast &lt;span style="color:#666">=&lt;/span> get_next(n)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> visited &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> fast &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> slow &lt;span style="color:#666">!=&lt;/span> fast:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> slow &lt;span style="color:#666">=&lt;/span> get_next(slow)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fast &lt;span style="color:#666">=&lt;/span> get_next(get_next(fast))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> visited&lt;span style="color:#666">.&lt;/span>add(slow)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> fast &lt;span style="color:#007020;font-weight:bold">in&lt;/span> visited:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> fast &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In this solution, the function &lt;code>get_next(n)&lt;/code> is used to get the next number in the sequence by replacing &lt;code>n&lt;/code> with the sum of the squares of its digits.&lt;/p>
+&lt;p>We initialize &lt;code>slow&lt;/code> and &lt;code>fast&lt;/code> to &lt;code>n&lt;/code> and &lt;code>get_next(n)&lt;/code> respectively.&lt;/p>
+&lt;p>Then, until &lt;code>fast&lt;/code> equals 1 or &lt;code>slow&lt;/code> catches up to &lt;code>fast&lt;/code>, we continue moving &lt;code>slow&lt;/code> one step at a time and &lt;code>fast&lt;/code> two steps at a time. If &lt;code>fast&lt;/code> equals 1 at the end of the loop, &lt;code>n&lt;/code> is a happy number.&lt;/p></description></item></channel></rss>

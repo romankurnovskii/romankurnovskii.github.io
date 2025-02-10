@@ -1,20 +1,195 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Greedy on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/greedy/</link><description>Recent content in Greedy on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Thu, 04 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/greedy/index.xml" rel="self" type="application/rss+xml"/><item><title>11. Container With Most Water</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/11/</link><pubDate>Thu, 03 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/11/</guid><description>LeetCode problem 11
-Problem Statement The problem involves an array of integers height, where each element represents the height of a line. These lines, along with the x-axis, form a series of containers. Your goal is to find the two lines that form the container with the greatest area.
-Naive Solution The naive solution is to consider all pairs of lines and calculate the area of water each pair can contain. You would keep track of the maximum area encountered.</description></item><item><title>55. Jump Game</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/55/</link><pubDate>Thu, 29 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/55/</guid><description>LeetCode problem
-You are given an integer array nums. You are initially positioned at the array&amp;rsquo;s first index, and each element in the array represents your maximum jump length at that position.
-Return true if you can reach the last index, or false otherwise.
-Example 1:
-Input: nums = [2,3,1,1,4] Output: true Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index. Example 2:
-Input: nums = [3,2,1,0,4] Output: false Explanation: You will always arrive at index 3 no matter what.</description></item><item><title>122. Best Time to Buy and Sell Stock II</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/122/</link><pubDate>Fri, 31 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/122/</guid><description>LeetCode problem
-To solve this problem, we can use a greedy approach.
-The idea is to keep adding the profit whenever the price on the next day is higher than the price on the current day.
-This way, we will maximize profit.
-class Solution: def maxProfit(self, prices: List[int]) -&amp;gt; int: profit = 0 for i in range(1, len(prices)): if prices[i] &amp;gt; prices[i - 1]: profit += prices[i] - prices[i - 1] return profit LeetCode Editorial:
-Editorial</description></item><item><title>134. Gas Station</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/134/</link><pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/134/</guid><description>LeetCode problem
-Naive Solution:
-A naive solution would be to try starting from each gas station and check if you can complete the circuit. For each gas station, calculate the remaining gas in the tank after traveling to the next station.
-If the gas is not enough to travel to the next station, stop and try starting from the next gas station.
-Approach:
-In this problem, we can use a greedy algorithm
-We can keep track of the total gas and total cost while iterating through the gas stations.</description></item><item><title>138. Copy List with Random Pointer</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/138/</link><pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/138/</guid><description>LeetCode problem
-The problem asks to create a deep copy of a given linked list with a random pointer in each node. A deep copy means that the new linked list will have completely new nodes, and none of its pointers should point to the nodes in the original list. Both the next and random pointers of the new nodes should point to the new nodes in the copied list in the same order as the original list.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Greedy on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/greedy/</link><description>Recent content in Greedy on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 04 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/greedy/index.xml" rel="self" type="application/rss+xml"/><item><title>11. Container With Most Water</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/11/</link><pubDate>Thu, 03 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/11/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/container-with-most-water/">LeetCode problem 11&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>The problem involves an array of integers &lt;code>height&lt;/code>, where each element represents the height of a line. These lines, along with the x-axis, form a series of containers. Your goal is to find the two lines that form the container with the greatest area.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>The naive solution is to consider all pairs of lines and calculate the area of water each pair can contain. You would keep track of the maximum area encountered. This solution would take O(n^2) time, which is not efficient.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;p>The height of the water in any container is limited by the shorter of the two lines forming the container. Moreover, farther the lines, more will be the width of the container and thus, more will be the water it can contain.&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>We can achieve a more efficient solution by using the two-pointer technique.&lt;/p>
+&lt;ol>
+&lt;li>Start with two pointers, one at the start and one at the end of the array.&lt;/li>
+&lt;li>The initial container therefore includes the entire array, and has a certain amount of water.&lt;/li>
+&lt;li>Then, moving the pointers inward, you measure the container at each step, always choosing the pointer at the shorter line to move.&lt;/li>
+&lt;/ol>
+&lt;p>This is based on the rationale that moving the pointer at the taller line would not affect the container&amp;rsquo;s height but reduce its width.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Initialize left and right pointers at the start and end of the array.&lt;/li>
+&lt;li>Calculate the initial area and set it as the maximum area.&lt;/li>
+&lt;li>While the left pointer is less than the right pointer:
+&lt;ul>
+&lt;li>If the height at the left pointer is less than or equal to the height at the right pointer, increment the left pointer.&lt;/li>
+&lt;li>Otherwise, decrement the right pointer.&lt;/li>
+&lt;li>Calculate the area each time the pointers are moved, and update the maximum area if the current area is greater.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Why it is important to find the minimum height of pointer?:&lt;/strong>&lt;/p>
+&lt;p>The area of the container is determined by the shorter line and the distance between the two lines. Therefore, if we move the pointer at the taller line inward, we might get a taller height but the width between the two lines, and therefore the possible area, is guaranteed to decrease.&lt;/p>
+&lt;p>So the overall area is most likely going to decrease or stay the same. Because of this, we decide to move the pointer at the shorter line, in the hopes that we will find a taller line that will increase the area.&lt;/p>
+&lt;p>For example, consider an array &lt;code>[1,8,6,2,5,4,8,3,7]&lt;/code>. When the left pointer is at the first position (height 1) and the right pointer is at the second last position (height 3), if we move the right pointer, we may come across a taller line (7) but since the left line (height 1) is still shorter, the possible area is still going to be less due to reduced width.&lt;/p>
+&lt;p>However, if we move the left pointer, we may come across a taller line (8) and this could increase the possible area.&lt;/p>
+&lt;p>So, the condition &lt;code>if height[left] &amp;lt;= height[right]&lt;/code> is there to always move the pointer at the shorter line.&lt;/p>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">maxArea&lt;/span>(height):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(height) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_area &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> left &lt;span style="color:#666">&amp;lt;&lt;/span> right:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> min_height &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">min&lt;/span>(height[left], height[right])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> area &lt;span style="color:#666">=&lt;/span> min_height &lt;span style="color:#666">*&lt;/span> (right &lt;span style="color:#666">-&lt;/span> left)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_area &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(max_area, area)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> height[left] &lt;span style="color:#666">&amp;lt;=&lt;/span> height[right]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> max_area
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>55. Jump Game</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/55/</link><pubDate>Thu, 29 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/55/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/maximum-subarray/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>You are given an integer array &lt;code>nums&lt;/code>. You are initially positioned at the array&amp;rsquo;s first index, and each element in the array represents your maximum jump length at that position.&lt;/p>
+&lt;p>Return true if you can reach the last index, or false otherwise.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: nums = [2,3,1,1,4]
+Output: true
+Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: nums = [3,2,1,0,4]
+Output: false
+Explanation: You will always arrive at index 3 no matter what. Its maximum jump length is 0, which makes it impossible to reach the last index.
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Approach 1:&lt;/strong>&lt;/p>
+&lt;p>Idea: go forward on each step and &lt;em>mark&lt;/em> next cell if can achieve it.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">canJump&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">bool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> last_i &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> last_i &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nn &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">*&lt;/span> last_i
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nn[&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">=&lt;/span> nums[&lt;span style="color:#40a070">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(last_i):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> el &lt;span style="color:#666">=&lt;/span> nums[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> el &lt;span style="color:#007020;font-weight:bold">or&lt;/span> nn[i&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(el):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nn[i&lt;span style="color:#666">+&lt;/span>j&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">=&lt;/span> el
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nn[last_i &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Approach 2:&lt;/strong>&lt;/p>
+&lt;p>Going forwards. &lt;code>m&lt;/code> tells the maximum index we can reach so far.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">canJump&lt;/span>(self, nums):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i, n &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">enumerate&lt;/span>(nums):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> i &lt;span style="color:#666">&amp;gt;&lt;/span> m:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(m, i &lt;span style="color:#666">+&lt;/span> n)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">canJump&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">bool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> i &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums) &lt;span style="color:#007020;font-weight:bold">and&lt;/span> i &lt;span style="color:#666">&amp;lt;=&lt;/span> m:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(m, i &lt;span style="color:#666">+&lt;/span> nums[i])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> i &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>122. Best Time to Buy and Sell Stock II</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/122/</link><pubDate>Fri, 31 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/122/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>To solve this problem, we can use a greedy approach.&lt;/p>
+&lt;p>The idea is to keep adding the profit whenever the price on the next day is higher than the price on the current day.&lt;/p>
+&lt;p>This way, we will maximize profit.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">maxProfit&lt;/span>(self, prices: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> profit &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#007020">len&lt;/span>(prices)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> prices[i] &lt;span style="color:#666">&amp;gt;&lt;/span> prices[i &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> profit &lt;span style="color:#666">+=&lt;/span> prices[i] &lt;span style="color:#666">-&lt;/span> prices[i &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> profit
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>LeetCode Editorial:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/editorial/">Editorial&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>134. Gas Station</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/134/</link><pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/134/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/gas-station/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Naive Solution:&lt;/strong>&lt;/p>
+&lt;p>A naive solution would be to try starting from each gas station and check if you can complete the circuit. For each gas station, calculate the remaining gas in the tank after traveling to the next station.&lt;/p>
+&lt;p>If the gas is not enough to travel to the next station, stop and try starting from the next gas station.&lt;/p>
+&lt;p>&lt;strong>Approach:&lt;/strong>&lt;/p>
+&lt;p>In this problem, we can use a &lt;a href="https://romankurnovskii.com/en/tags/greedy/">greedy algorithm&lt;/a>&lt;/p>
+&lt;p>We can keep track of the total gas and total cost while iterating through the gas stations.&lt;/p>
+&lt;p>If the total gas is greater than or equal to the total cost, it is guaranteed that there exists a solution.&lt;/p>
+&lt;p>&lt;strong>Solution:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">canCompleteCircuit&lt;/span>(self, gas, cost) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> total_gas &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> total_cost &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> star_idx &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current_gas &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(gas)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> total_gas &lt;span style="color:#666">+=&lt;/span> gas[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> total_cost &lt;span style="color:#666">+=&lt;/span> cost[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current_gas &lt;span style="color:#666">+=&lt;/span> gas[i] &lt;span style="color:#666">-&lt;/span> cost[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> current_gas &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> star_idx &lt;span style="color:#666">=&lt;/span> i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current_gas &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> star_idx &lt;span style="color:#007020;font-weight:bold">if&lt;/span> total_gas &lt;span style="color:#666">&amp;gt;=&lt;/span> total_cost &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;video width="100%" controls>
+&lt;source src="../../assets/134.mp4" type="video/mp4">
+Your browser does not support the video tag.
+&lt;/video>
+&lt;figcaption>LeetCode Problem 134 Video Solution&lt;/figcaption></description></item><item><title>138. Copy List with Random Pointer</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/138/</link><pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/138/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/copy-list-with-random-pointer/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>The problem asks to create a deep copy of a given linked list with a random pointer in each node. A deep copy means that the new linked list will have completely new nodes, and none of its pointers should point to the nodes in the original list. Both the next and random pointers of the new nodes should point to the new nodes in the copied list in the same order as the original list.&lt;/p>
+&lt;p>&lt;strong>Naive Solution:&lt;/strong>&lt;/p>
+&lt;p>A naive solution would be to first create a copy of the original linked list without the random pointers.&lt;/p>
+&lt;p>Then, for each node in the copied list, search for the node in the original list that its random pointer is pointing to, and update the random pointer in the copied list accordingly.&lt;/p>
+&lt;p>This solution would take &lt;code>O(n^2)&lt;/code> time complexity, as we need to search for the random node for each node in the copied list.&lt;/p>
+&lt;p>&lt;strong>Logic:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Initialize a hashmap to store the mapping of original nodes to new nodes&lt;/li>
+&lt;li>Iterate through the original list to create new nodes and add their mappings to the hashmap&lt;/li>
+&lt;li>Iterate through the original list again to update the next and random pointers of the new nodes using the hashmap&lt;/li>
+&lt;li>Return the head of the copied linked list&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Solution:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">copyRandomList&lt;/span>(self, head: &lt;span style="color:#4070a0">&amp;#39;Optional[Node]&amp;#39;&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#4070a0">&amp;#39;Optional[Node]&amp;#39;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> head:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nodes &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> new_head &lt;span style="color:#666">=&lt;/span> Node(cur&lt;span style="color:#666">.&lt;/span>val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> new_cur &lt;span style="color:#666">=&lt;/span> new_head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nodes[cur] &lt;span style="color:#666">=&lt;/span> new_cur
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> cur: &lt;span style="color:#60a0b0;font-style:italic"># create mapping old-new linked nodes&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> node &lt;span style="color:#666">=&lt;/span> Node(cur&lt;span style="color:#666">.&lt;/span>val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nodes[cur] &lt;span style="color:#666">=&lt;/span> node
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> cur&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> cur:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> cur&lt;span style="color:#666">.&lt;/span>next:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nodes[cur]&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> nodes[cur&lt;span style="color:#666">.&lt;/span>next]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> cur&lt;span style="color:#666">.&lt;/span>random:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nodes[cur]&lt;span style="color:#666">.&lt;/span>random &lt;span style="color:#666">=&lt;/span> nodes[cur&lt;span style="color:#666">.&lt;/span>random]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> cur&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> nodes[head]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;video width="100%" controls>
+&lt;source src="../../assets/138.mp4" type="video/mp4">
+Your browser does not support the video tag.
+&lt;/video>
+&lt;figcaption>LeetCode Problem 138 Video Solution&lt;/figcaption></description></item></channel></rss>

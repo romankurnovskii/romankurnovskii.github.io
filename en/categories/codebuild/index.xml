@@ -1,5 +1,59 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Codebuild on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/codebuild/</link><description>Recent content in Codebuild on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 16 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/codebuild/index.xml" rel="self" type="application/rss+xml"/><item><title>CodeBuild</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codebuild/</link><pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codebuild/</guid><description>About CodeBuild is a fully managed service that assembles source code, runs unit tests, &amp;amp; also generates artefacts ready to deploy.
-Documentation User Guide CodeBuild is a code creation service that also produces code artefacts upon request.
-CodeBuild is an alternative to other build tools such as Jenkins.
-CodeBuild is integrated with KMS for encryption of build artifacts, IAM for build permissions, VPC for network security, and CloudTrail for logging API calls.
-CodeBuild is a fully managed build service to compile source code, run unit tests and produce artifacts that are ready for deployment.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Codebuild on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/codebuild/</link><description>Recent content in Codebuild on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 16 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/codebuild/index.xml" rel="self" type="application/rss+xml"/><item><title>CodeBuild</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codebuild/</link><pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codebuild/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>CodeBuild is a fully managed service that assembles source code, runs unit tests, &amp;amp; also generates artefacts ready to deploy.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/codebuild/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/codebuild/?id=docs_gateway">User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>CodeBuild is a code creation service that also produces code artefacts upon request.&lt;/p>
+&lt;p>CodeBuild is an alternative to other build tools such as Jenkins.&lt;/p>
+&lt;p>CodeBuild is integrated with KMS for encryption of build artifacts, IAM for build permissions, VPC for network security, and CloudTrail for logging API calls.&lt;/p>
+&lt;p>CodeBuild is a fully managed build service to compile source code, run unit tests and produce artifacts that are ready for deployment. Not the best fit for serverless template deployment or serverless application initialization.&lt;/p>
+&lt;h3 id="buildspecyml">buildspec.yml&lt;/h3>
+&lt;p>Build instructions can be defined in the code (&lt;strong>buildspec.yml&lt;/strong>).&lt;/p>
+&lt;h3 id="codebuild-local-build">CodeBuild Local Build&lt;/h3>
+&lt;p>In case you need to do deep troubleshooting beyond analyzing log files.&lt;/p>
+&lt;p>Can run CodeBuild locally on your computer using Docker.&lt;/p>
+&lt;p>Leverages the CodeBuild agent.&lt;/p>
+&lt;h2 id="price">Price&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/codebuild/pricing/">Current price&lt;/a>&lt;/p>
+&lt;p>You pay based on the time it takes to complete the builds.&lt;/p>
+&lt;h2 id="lab">Lab&lt;/h2>
+&lt;p>cicd-aws-code-services
+Chapters:&lt;/p>
+&lt;ol>
+&lt;li>Logging in to the Amazon Web Services Console&lt;/li>
+&lt;li>Creating an AWS CodeCommit Repository&lt;/li>
+&lt;li>Committing Code to Your AWS CodeCommit Repository&lt;/li>
+&lt;li>Building and Testing with AWS CodeBuild&lt;/li>
+&lt;li>Deploying with AWS CodeDeploy&lt;/li>
+&lt;li>Automating Your Deployment with AWS CodePipeline&lt;/li>
+&lt;li>Following the Continuous Deployment Pipeline&lt;/li>
+&lt;li>Recovering Automatically from a Failed Deployment&lt;/li>
+&lt;li>Using AWS CodeDeploy Blue/Green Deployments in Your Pipeline&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/codedeploy-codepipeline-codestar.jpg"
+id="zoom-default"
+alt="codedeploy-codepipeline-codestar overview"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="questions">Questions&lt;/h2>
+&lt;h3 id="q1">Q1&lt;/h3>
+&lt;p>&lt;strong>You are creating a few test functions to demonstrate the ease of developing serverless applications. You want to use the command line to deploy AWS Lambda functions, an Amazon API Gateway, and Amazon DynamoDB tables.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>What is the easiest way to develop these simple applications?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Install AWS SAM CLI and run “sam init [options]” with the templates’ data.&lt;/li>
+&lt;li>Use AWS step function visual workflow and insert your templates in the states&lt;/li>
+&lt;li>Save your template in the Serverless Application Repository and use AWS SAM&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>AWS SAM - AWS Serverless Application Model&lt;/p>
+&lt;p>&lt;a href="https://aws.amazon.com/serverless/sam/">https://aws.amazon.com/serverless/sam/&lt;/a>&lt;/p>
+&lt;p>&lt;mark style="color:white">1&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details></description></item></channel></rss>

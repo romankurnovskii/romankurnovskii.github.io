@@ -1,3 +1,169 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dynamodb on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/dynamodb/</link><description>Recent content in Dynamodb on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Mon, 12 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/dynamodb/index.xml" rel="self" type="application/rss+xml"/><item><title>DynamoDB</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/dynamodb/</link><pubDate>Mon, 12 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/dynamodb/</guid><description>About Fast and flexible NoSQL database service for performance with millisecond latency at any scale
-Amazon DynamoDB documentation Developer Guide Pricing Amazon DynamoDB pricing
-When you use the DynamoDB service, you are charged for reading, writing, and storing data in DynamoDB tables, as well as any additional features you enable. DynamoDB supports two resource provisioning modes that correspond to specific billing schemes for processing read and write operations on your tables: on-demand and with preparation. Click the following links to learn more about the billing options for each provisioning mode</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dynamodb on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/dynamodb/</link><description>Recent content in Dynamodb on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Mon, 12 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/dynamodb/index.xml" rel="self" type="application/rss+xml"/><item><title>DynamoDB</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/dynamodb/</link><pubDate>Mon, 12 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/dynamodb/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>Fast and flexible NoSQL database service for performance with millisecond latency at any scale&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/dynamodb/">Amazon DynamoDB documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html">Developer Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/product-page-diagram_Amazon-DynamoDBa.1f8742c44147f1aed11719df4a14ccdb0b13d9a3.png"
+id="zoom-default"
+alt="How DynamoDB works"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="pricing">Pricing&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/dynamodb/pricing/">Amazon DynamoDB pricing&lt;/a>&lt;/p>
+&lt;p>When you use the DynamoDB service, you are charged for reading, writing, and storing data in DynamoDB tables, as well as any additional features you enable. DynamoDB supports two resource provisioning modes that correspond to specific billing schemes for processing read and write operations on your tables: on-demand and with preparation. Click the following links to learn more about the billing options for each provisioning mode&lt;/p>
+&lt;h2 id="use-cases">Use Cases&lt;/h2>
+&lt;p>Type: Key-value&lt;/p>
+&lt;p>Ecommerce Websites, gaming websites etc.&lt;/p>
+&lt;h2 id="digest">Digest&lt;/h2>
+&lt;ul>
+&lt;li>Global tables are useful for having multiple copies of tables in different region.&lt;/li>
+&lt;li>All DynamoDB tables are encrypted at rest using an AWS owned CMK by default.&lt;/li>
+&lt;li>Items - in DynamoDB is similar in many ways to rows, records, or tuples in other database systems. Each DynamoDB table contains zero or more items. An item is a collection of attributes that is uniquely identifiable for each record in that table.&lt;/li>
+&lt;li>Attributes - Each item is composed of one or more attributes. Attributes in DynamoDB are similar in many ways to fields or columns in other database systems.&lt;/li>
+&lt;li>Each item in the table has a unique identifier, a primary key, or a partition key that distinguishes the item from all of the others in the table. The primary key consists of one attribute.&lt;/li>
+&lt;li>Primary key&lt;/li>
+&lt;li>Partition key&lt;/li>
+&lt;li>Partition key and sort key (range attribute)&lt;/li>
+&lt;li>A primary key can either be a sinale-attribute partition key or a composite partition-sort key.&lt;/li>
+&lt;li>Both partition and sort keys attributes must be defined as type string, number, or binary.&lt;/li>
+&lt;li>Global secondary index - a partition key and a sort key that can be different from those on the base table; query at table level across all partitions; eventual consistency:
+&lt;ul>
+&lt;li>Different partition key and sort key from base table&lt;/li>
+&lt;li>Only eventually consistent&lt;/li>
+&lt;li>Can be created after table is created&lt;/li>
+&lt;li>Using a random prefix for the GSI partition key enables to have high cardinality for the partition key&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Local secondary index - same partition key as the base table, but a different sort key: query on a single partition; eventual or strong consistency:
+&lt;ul>
+&lt;li>Same partition key, different sort key from base table&lt;/li>
+&lt;li>Eventual and strongly consistent&lt;/li>
+&lt;li>Should be created when creating a table&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Calculate RCU (read capacity unit) &amp;amp; WCU (write capacity unit):
+&lt;ul>
+&lt;li>1 RCU = 2 eventual consistent read of 4 KB, 1 strongly consistent read of 4 KB&lt;/li>
+&lt;li>1 WCU = 1 write per second for data for an item as large as 1 KB.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>DynamoDB Streams is an optional feature that captures data modification events in DynamoDB tables. The data about these events appears in the stream in near real time and in the order that the events occurred.&lt;/li>
+&lt;li>Queries or scan on GSI consume &lt;a href="https://aws.amazon.com/dynamodb/pricing/provisioned/">RCU&lt;/a> on index &lt;strong>not&lt;/strong> on table&lt;/li>
+&lt;li>Consistency:
+&lt;ul>
+&lt;li>Auto scaling&lt;/li>
+&lt;li>Storing session state could be on elastic cache or dynamodb&lt;/li>
+&lt;li>Provisioned throughput - ProvisionedThroughputExceededException&lt;/li>
+&lt;li>Reserved capacity, On-demand, Burst. Adaptive&lt;/li>
+&lt;li>On-demand backups, point-in-time recovery&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Best practices when using &lt;strong>Scan&lt;/strong> in dynamodb - &lt;strong>Use parallel scan&lt;/strong>
+&lt;ul>
+&lt;li>to control the amount of data returned per request use the &lt;strong>Limit parameter&lt;/strong>. This can help prevent situations where one worker consumes all the provisioned throuahput at the expense of all other workers&lt;/li>
+&lt;li>DynamoDB does not support item locking, and conditional writes are perfect for implementing optimistic concurrency.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="dynamodb-vs-aurora">DynamoDB vs Aurora&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Amazon DynamoDB&lt;/th>
+&lt;th>Amazon Aurora&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Was developed by Amazon in 2012&lt;/td>
+&lt;td>Was developed by Amazon in 2015.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>It is hosted, scalable database service by Amazon with data stored in Amazon cloud&lt;/td>
+&lt;td>It is MySQL and PostgreSQL compatible cloud service by Amazon&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>It does not provide &lt;a href="https://www.ibm.com/docs/en/informix-servers/14.10?topic=integrity-referential">concept of Referential Integrity&lt;/a>. Hence, no Foreign Keys&lt;/td>
+&lt;td>It provides concept of Referential Integrity. Hence, no Foreign Keys&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Eventual Consistency and Immediate Consistency are used to ensure consistency in distributed system&lt;/td>
+&lt;td>Immediate Consistency is used to ensure consistency in distributed system&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Its Primary database models are Document store and Key-value store&lt;/td>
+&lt;td>Its Primary database model is Relational DBMS&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>It does not support Server-side scripting&lt;/td>
+&lt;td>It supports Server-side scripting&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>It supports sharding as partitioning method&lt;/td>
+&lt;td>Partitioning can be done with horizontal partitioning&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>It does not support SQL query language&lt;/td>
+&lt;td>It supports SQL query language&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>It supports replication methods&lt;/td>
+&lt;td>It supports only one replication method – Master-slave replication&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>It does not offer API for user-defined Map/Reduce methods. But maybe implemented via Amazon Elastic MapReduce&lt;/td>
+&lt;td>It does not offer API for user-defined Map/Reduce methods&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>DynamoDB supports different &lt;strong>consistency models&lt;/strong> when performing reads:&lt;/p>
+&lt;ul>
+&lt;li>Eventually, &lt;a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">consistent reads&lt;/a> may not always reflect the latest data if there was recently write activity on the table. Since the data in this scenario rarely changes, eventually consistent reads, which are cheaper than strongly consistent reads, can be tolerated.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d2908q01vomqb2.cloudfront.net/887309d048beef83ad3eabf2a79a64a389ab1c9f/2018/09/10/dynamodb-partition-key-1.gif"
+id="zoom-default"
+alt="DynamoDB Partition Key"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d2908q01vomqb2.cloudfront.net/887309d048beef83ad3eabf2a79a64a389ab1c9f/2018/09/10/dynamodb-partition-key-2.gif"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="practice">Practice&lt;/h2>
+&lt;p>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/dynamodb/introduction-dynamodb/">Introduction to DynamoDB&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/blogs/database/category/database/amazon-dynamodb/">AWS Database Blog&lt;/a>&lt;/p>
+&lt;h2 id="questions">Questions&lt;/h2>
+&lt;h3 id="q1">Q1&lt;/h3>
+&lt;p>&lt;strong>A developer is designing a web application that allows the users to post comments and receive in a real-time feedback.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which architectures meet these requirements? (Select TWO.)&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Create an AWS AppSync schema and corresponding APIs. Use an Amazon DynamoDB table as the data store.&lt;/li>
+&lt;li>Create a WebSocket API in Amazon API Gateway. Use an AWS Lambda function as the backend and an Amazon DynamoDB table as the data store&lt;/li>
+&lt;li>Create an AWS Elastic Beanstalk application backed by an Amazon RDS database. Configure the application to allow long-lived TCP/IP sockets.&lt;/li>
+&lt;li>Create a GraphQL endpoint in Amazon API Gateway. Use an Amazon DynamoDB table as the data store.&lt;/li>
+&lt;li>Enable WebSocket on Amazon CloudFront. Use an AWS Lambda function as the origin and an Amazon Aurora DB cluster as the data store&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="https://aws.amazon.com/appsync/">AWS AppSync&lt;/a> simplifies application development by letting users create a flexible API to securely access, manipulate, and combine data from one or more data sources. AWS AppSync is a managed service that uses GraphQL to make it easy for applications to get the exact data they need.&lt;/p>
+&lt;p>AWS AppSync allows users to build scalable applications, including those requiring &lt;a href="https://docs.aws.amazon.com/appsync/latest/devguide/real-time-data.html">real-time updates&lt;/a>, on a range of data sources, including Amazon DynamoDB. In &lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/api-gateway/">Amazon API Gateway&lt;/a>, users can &lt;a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html">create a WebSocket API&lt;/a> as a stateful frontend for an AWS service (such as AWS Lambda or DynamoDB) or for an HTTP endpoint.&lt;/p>
+&lt;p>The WebSocket API invokes the backend based on the content of the messages it receives from client applications. Unlike a REST API, which receives and responds to requests, a WebSocket API supports two-way communication between client applications and the backend.&lt;/p>
+&lt;p>&lt;mark style="color:white">1, 2&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details></description></item></channel></rss>

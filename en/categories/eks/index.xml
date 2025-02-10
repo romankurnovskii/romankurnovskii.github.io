@@ -1,4 +1,85 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EKS on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/eks/</link><description>Recent content in EKS on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Thu, 22 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/eks/index.xml" rel="self" type="application/rss+xml"/><item><title>Elastic Kubernetes Service</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/eks/</link><pubDate>Thu, 22 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/eks/</guid><description>About Kubernetes (K8) Docker Container/Cluster management
-Run highly secure, reliable, and scalable containers
-Documentation User Guide Alternatives Red Hat OpenShift Container Platform Azure Kubernetes Service (AKS) Rancher Google Kubernetes Engine (GKE) Oracle Cloud Infrastructure Container Engine for Kubernetes Mirantis Kubernetes Engine (formerly Docker Enterprise) Kubernetes Cloud Foundry Price Current price
-Use Cases Build and run web applications Deploy across hybrid environments Model machine learning (ML) workflows ECS vs EKS Amazon provides the Elastic Container Service for Kubernetes (Amazon EKS) which can be used to deploy, manage, and scale containerized applications using Kubernetes on AWS.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EKS on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/eks/</link><description>Recent content in EKS on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 22 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/eks/index.xml" rel="self" type="application/rss+xml"/><item><title>Elastic Kubernetes Service</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/eks/</link><pubDate>Thu, 22 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/eks/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>Kubernetes (K8) Docker Container/Cluster management&lt;/p>
+&lt;p>Run highly secure, reliable, and scalable containers&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/eks/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/eks/?id=docs_gateway">User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/product-page-diagram_Amazon-EKS%402x.ddc48a43756bff3baead68406d3cac88b4151a7e.ddc48a43756bff3baead68406d3cac88b4151a7e.png"
+id="zoom-default"
+alt="Elastic Kubernetes Service Flow"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/v3-product-page-diagram_Amazon-EKS-Anywhere%402x.42ea1da6460bdee2acd657e920d1e329d2821d7a.png"
+id="zoom-default"
+alt="Elastic Kubernetes Service Flow"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="alternatives">Alternatives&lt;/h3>
+&lt;ul>
+&lt;li>Red Hat OpenShift Container Platform&lt;/li>
+&lt;li>Azure Kubernetes Service (AKS)&lt;/li>
+&lt;li>Rancher&lt;/li>
+&lt;li>Google Kubernetes Engine (GKE)&lt;/li>
+&lt;li>Oracle Cloud Infrastructure Container Engine for Kubernetes&lt;/li>
+&lt;li>Mirantis Kubernetes Engine (formerly Docker Enterprise)&lt;/li>
+&lt;li>Kubernetes&lt;/li>
+&lt;li>Cloud Foundry&lt;/li>
+&lt;/ul>
+&lt;h2 id="price">Price&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/eks/pricing/">Current price&lt;/a>&lt;/p>
+&lt;h2 id="use-cases">Use Cases&lt;/h2>
+&lt;ul>
+&lt;li>Build and run web applications&lt;/li>
+&lt;li>Deploy across hybrid environments&lt;/li>
+&lt;li>Model machine learning (ML) workflows&lt;/li>
+&lt;/ul>
+&lt;h3 id="ecs-vs-eks">ECS vs EKS&lt;/h3>
+&lt;p>Amazon provides the Elastic Container Service for Kubernetes (Amazon EKS) which can be used to deploy, manage, and scale containerized applications using Kubernetes on AWS.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Amazon ECS&lt;/th>
+&lt;th>Amazon EKS&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Managed, highly available, highly scalable container platform&lt;/td>
+&lt;td>Managed, highly available, highly scalable container platform&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>AWS-specific platform that supports Docker Containers&lt;/td>
+&lt;td>Compatible with upstream Kubernetes so it’s easy to lift and shift from other Kubernetes deployments&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Considered simpler and easier to use&lt;/td>
+&lt;td>Considered more feature-rich and complex with a steep learning curve&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Leverages AWS services like Route 53, ALB, and CloudWatch&lt;/td>
+&lt;td>A hosted Kubernetes platform that handles many things internally&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>“Tasks” are instances of containers that are run on underlying compute but more of less isolated&lt;/td>
+&lt;td>“Pods” are containers collocated with one another and can have shared access to each other&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Limited extensibility&lt;/td>
+&lt;td>Extensible via a wide variety of third-party and community add-ons.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="practice">Practice&lt;/h2>
+&lt;p>&lt;a href="https://cloudacademy.com/lab/eks-voteapp/">Building a Cloud Native Application&lt;/a>&lt;/p>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/WFyeqieik-U?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
+&lt;/div></description></item></channel></rss>

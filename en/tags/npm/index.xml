@@ -1,4 +1,96 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Npm on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/npm/</link><description>Recent content in Npm on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sat, 06 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/npm/index.xml" rel="self" type="application/rss+xml"/><item><title>How to publish JavaScript package to npm registry</title><link>https://romankurnovskii.com/en/posts/howto-publish-js-npm-project/</link><pubDate>Sat, 06 May 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/howto-publish-js-npm-project/</guid><description>In this post, we&amp;rsquo;ll dive deeper into the process of creating, structuring, and publishing a JavaScript package to the npm registry. We&amp;rsquo;ll use the repository https://github.com/romankurnovskii/npm-js-package-template as a reference for this guide.
-TLDR Open template: https://github.com/romankurnovskii/npm-js-package-template Click Use this template Create repo from this template. git clone new repo update code src/index.ts, src/bin.ts How to check if bin script works from terminal:
-npm link &amp;amp;&amp;amp; npm link mypackage mypackage Publish:
-npm run prepublishOnly npm publish Folder Structure Let&amp;rsquo;s go through the folder structure of the repository:</description></item><item><title>cognito-token-observer</title><link>https://romankurnovskii.com/en/apps/npm/cognito-token-observer/</link><pubDate>Sun, 28 Aug 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/apps/npm/cognito-token-observer/</guid><description/></item><item><title>hugo-lunr-ml</title><link>https://romankurnovskii.com/en/apps/npm/hugo-lunr-ml/</link><pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/apps/npm/hugo-lunr-ml/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Npm on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/npm/</link><description>Recent content in Npm on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sat, 06 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/npm/index.xml" rel="self" type="application/rss+xml"/><item><title>How to publish JavaScript package to npm registry</title><link>https://romankurnovskii.com/en/posts/howto-publish-js-npm-project/</link><pubDate>Sat, 06 May 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/howto-publish-js-npm-project/</guid><description>&lt;p>In this post, we&amp;rsquo;ll dive deeper into the process of creating, structuring, and publishing a JavaScript package to the npm registry. We&amp;rsquo;ll use the repository &lt;a href="https://github.com/romankurnovskii/npm-js-package-template">https://github.com/romankurnovskii/npm-js-package-template&lt;/a> as a reference for this guide.&lt;/p>
+&lt;h2 id="tldr">TLDR&lt;/h2>
+&lt;ol>
+&lt;li>Open template: &lt;a href="https://github.com/romankurnovskii/npm-js-package-template">https://github.com/romankurnovskii/npm-js-package-template&lt;/a>&lt;/li>
+&lt;li>Click &lt;code>Use this template&lt;/code>&lt;/li>
+&lt;li>Create repo from this template.&lt;/li>
+&lt;li>git clone new repo&lt;/li>
+&lt;li>update code &lt;code>src/index.ts&lt;/code>, &lt;code>src/bin.ts&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;p>How to check if &lt;code>bin&lt;/code> script works from terminal:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>npm link &lt;span style="color:#666">&amp;amp;&amp;amp;&lt;/span> npm link mypackage
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mypackage
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Publish:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>npm run prepublishOnly
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm publish
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="folder-structure">Folder Structure&lt;/h2>
+&lt;p>Let&amp;rsquo;s go through the folder structure of the repository:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>.eslintignore
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.eslintrc.json
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.gitattributes
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.gitignore
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.npmrc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.prettierrc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── .github
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ ├── dependabot.yml
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ └── workflows
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ ├── create-release.yml
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ └── test-environments.yml
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── CHANGELOG.md
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── LICENSE
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── README.md
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── jestconfig.json
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── package.json
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── src
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>| ├── bin.js
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>| └── index.js
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>└── tests
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └── index.test.js
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="file-descriptions">File Descriptions&lt;/h3>
+&lt;ul>
+&lt;li>&lt;code>.github/dependabot.yml&lt;/code>: This &lt;a href="https://github.com/romankurnovskii/npm-js-package-template/blob/main/.github/dependabot.yml">file&lt;/a> configures Dependabot for your project. Dependabot will automatically create pull requests to update your npm dependencies and GitHub Actions workflows as specified in the file.&lt;/li>
+&lt;li>&lt;code>.github/workflows/create-release.yml&lt;/code>: This GitHub Actions workflow is triggered when you push to the main branch or create a release. It builds, tests, and releases your package. The workflow is configured to create a release with the version specified in &lt;code>package.json&lt;/code>.&lt;/li>
+&lt;li>&lt;code>.github/workflows/test-environments.yml&lt;/code>: This GitHub Actions workflow is triggered when you push to the main branch or create a pull request. It sets up a matrix of Node.js versions (14, 16, 18) and runs the build and test steps for each version. This ensures your package works correctly across different Node.js environments.&lt;/li>
+&lt;li>&lt;code>.eslintignore&lt;/code>: Specifies the files and directories that should be ignored by ESLint.&lt;/li>
+&lt;li>&lt;code>.eslintrc.json&lt;/code>: Configuration file for ESLint, a popular linting tool for JavaScript.&lt;/li>
+&lt;li>&lt;code>.gitattributes&lt;/code>: Specifies the attributes for paths in the repository.&lt;/li>
+&lt;li>&lt;code>.gitignore&lt;/code>: Specifies the files and directories that should be ignored by Git.&lt;/li>
+&lt;li>&lt;code>.npmrc&lt;/code>: Configuration file for npm, the package manager for JavaScript.&lt;/li>
+&lt;li>&lt;code>.prettierrc&lt;/code>: Configuration file for Prettier, a popular code formatter for JavaScript.&lt;/li>
+&lt;li>&lt;code>CHANGELOG.md&lt;/code>: A file that lists the notable changes made to the project.&lt;/li>
+&lt;li>&lt;code>LICENSE&lt;/code>: The license file for the project, in this case, the MIT License.&lt;/li>
+&lt;li>&lt;code>README.md&lt;/code>: The main documentation file for the project.&lt;/li>
+&lt;li>&lt;code>jestconfig.json&lt;/code>: Configuration file for Jest, a popular testing framework for JavaScript.&lt;/li>
+&lt;li>&lt;code>package.json&lt;/code>: Lists the project&amp;rsquo;s metadata, dependencies, and scripts.&lt;/li>
+&lt;li>&lt;code>src/bin.js&lt;/code>: The main entry point for the command line interface (CLI) of the package.&lt;/li>
+&lt;li>&lt;code>src/index.js&lt;/code>: The main entry point for the package when imported as a module.&lt;/li>
+&lt;li>&lt;code>tests/index.test.js&lt;/code>: The test file for the package, containing test cases for the package&amp;rsquo;s functions.&lt;/li>
+&lt;/ul>
+&lt;h2 id="publish-to-npm">Publish to NPM&lt;/h2>
+&lt;p>Before you publish the package, make sure you have followed these steps:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Update the &lt;code>package.json&lt;/code> file with the correct name, version, description, and other metadata.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Ensure your code is in the src folder, and the main entry points are &lt;code>src/index.js&lt;/code> (for modules) and &lt;code>src/bin.js&lt;/code> (for CLI).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Update the test cases in the &lt;code>tests&lt;/code> folder.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>After making all the necessary updates to your package, such as updating the README.md, package.json, and other files as needed, ensure that you&amp;rsquo;ve built the package by running:&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>npm run build
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>Before publishing, you should test your package and ensure that all tests pass:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>npm &lt;span style="color:#007020">test&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;li>Also, make sure your code is properly formatted and follows the linting rules:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>npm run prettier
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm run lint
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
+&lt;li>If there are any linting issues, you can try to automatically fix them using:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>npm run lint:fix
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="5">
+&lt;li>Once everything is set up and ready, you can publish your package to the npm registry by running:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>npm run prepublishOnly
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm publish
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="6">
+&lt;li>This will build, test, and format your code, ensuring that your package is ready for publishing. Once published, your package will be available for others to install and use through the npm registry.&lt;/li>
+&lt;/ol></description></item><item><title>cognito-token-observer</title><link>https://romankurnovskii.com/en/apps/npm/cognito-token-observer/</link><pubDate>Sun, 28 Aug 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/apps/npm/cognito-token-observer/</guid><description/></item><item><title>hugo-lunr-ml</title><link>https://romankurnovskii.com/en/apps/npm/hugo-lunr-ml/</link><pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/apps/npm/hugo-lunr-ml/</guid><description/></item></channel></rss>

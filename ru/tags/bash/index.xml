@@ -1,4 +1,324 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Bash on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/bash/</link><description>Recent content in Bash on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Mon, 09 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/bash/index.xml" rel="self" type="application/rss+xml"/><item><title>19. Автоматизация задачи с помощью bash-скриптов</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day19/</link><pubDate>Mon, 09 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day19/</guid><description>Автоматизация задачи с помощью bash-скриптов Оболочка, которую мы собираемся использовать сегодня, — это bash, но мы рассмотрим другую оболочку завтра, когда будем углубляться в ZSH.
-BASH - Bourne Again Shell («возрождённый» shell)
-Мы могли бы почти посвятить целую секцию из 7 дней написанию сценариев оболочки, как и языкам программирования. Bash дает нам возможность работать вместе с другими инструментами автоматизации для достижения цели.
-Я до сих пор разговариваю со многими людьми, которые настроили несколько сложных сценариев оболочки, чтобы что-то произошло, и они полагаются на этот сценарий для некоторых из наиболее важных вещей в бизнесе, я не говорю, что нам нужно понимать сценарии оболочки/bash.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Bash on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/bash/</link><description>Recent content in Bash on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Mon, 09 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/bash/index.xml" rel="self" type="application/rss+xml"/><item><title>19. Автоматизация задачи с помощью bash-скриптов</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day19/</link><pubDate>Mon, 09 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day19/</guid><description>&lt;h2 id="автоматизация-задачи-с-помощью-bash-скриптов">Автоматизация задачи с помощью bash-скриптов&lt;/h2>
+&lt;p>Оболочка, которую мы собираемся использовать сегодня, — это bash, но мы рассмотрим другую оболочку завтра, когда будем углубляться в ZSH.&lt;/p>
+&lt;p>BASH - &lt;strong>B&lt;/strong>ourne &lt;strong>A&lt;/strong>gain &lt;strong>Sh&lt;/strong>ell («возрождённый» shell)&lt;/p>
+&lt;p>Мы могли бы почти посвятить целую секцию из 7 дней написанию сценариев оболочки, как и языкам программирования. Bash дает нам возможность работать вместе с другими инструментами автоматизации для достижения цели.&lt;/p>
+&lt;p>Я до сих пор разговариваю со многими людьми, которые настроили несколько сложных сценариев оболочки, чтобы что-то произошло, и они полагаются на этот сценарий для некоторых из наиболее важных вещей в бизнесе, я не говорю, что нам нужно понимать сценарии оболочки/bash. для этой цели это не путь. Но мы должны изучить сценарии оболочки/bash, чтобы работать вместе с нашими инструментами автоматизации и для специальных задач.&lt;/p>
+&lt;p>Одним из примеров, который мы использовали, может быть VAGRANTFILE, который мы использовали для создания нашей виртуальной машины, мы могли бы обернуть его в простой сценарий bash, который удалял и обновлял его каждый понедельник утром, чтобы у нас была свежая копия нашей виртуальной машины Linux. каждую неделю мы могли бы также добавлять весь программный стек, который нам нужен, на указанную машину с Linux и так далее с помощью одного сценария bash.&lt;/p>
+&lt;p>Я думаю, что еще одна вещь, которую я, по крайней мере, слышу, это то, что практические вопросы по скриптам становятся все более и более очевидными во всех интервью.&lt;/p>
+&lt;h3 id="начало">Начало&lt;/h3>
+&lt;p>Как и в случае со многим, что мы рассмотрим за все эти 90 дней, единственный реальный способ научиться — это делать. Практический опыт поможет впитать все это в вашу мышечную память.&lt;/p>
+&lt;p>Прежде всего, нам понадобится текстовый редактор. В &lt;a href="../Day17">День 17&lt;/a> мы рассказали, наверное, о двух самых распространенных текстовых редакторах и немного о том, как их использовать.&lt;/p>
+&lt;p>Давайте приступим прямо к делу и создадим наш первый сценарий оболочки.&lt;/p>
+&lt;p>&lt;code>touch 90DaysOfDevOps.sh&lt;/code> - создает файл 90DaysOfDevOps.sh&lt;/p>
+&lt;p>За ним следует &lt;code>nano 90DaysOfDevOps.sh&lt;/code>, это откроет наш новый пустой сценарий оболочки в nano. Опять же, вы можете выбрать другой текстовый редактор.&lt;/p>
+&lt;p>Первая строка всех скриптов bash должна выглядеть примерно так: &lt;code>#!/usr/bin/bash&lt;/code>, это путь к вашему двоичному файлу bash.&lt;/p>
+&lt;p>Однако вы должны проверить это в терминале, запустив &lt;code>which bash&lt;/code>, если вы не используете Ubuntu, вы также можете попробовать &lt;code>whereis bash&lt;/code> из терминала.&lt;/p>
+&lt;p>Однако вы можете увидеть другие пути, перечисленные в уже созданных сценариях оболочки, которые могут включать:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>#!/bin/bash&lt;/code>&lt;/li>
+&lt;li>&lt;code>#!/usr/bin/env bash&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>В следующей строке нашего скрипта я хотел бы добавить комментарий и добавить цель скрипта или хотя бы какую-то информацию обо мне. Вы можете сделать это, используя &lt;code>#&lt;/code>. Это позволяет нам комментировать определенные строки в нашем коде и предоставлять описания того, что будут делать следующие команды. Я считаю, что чем больше заметок, тем лучше для пользователя, особенно если вы делитесь этим.&lt;/p>
+&lt;p>Иногда я использую figlet, программу, которую мы установили ранее в разделе Linux, для создания аски-арта, чтобы начать что-то в наших скриптах.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day19_Linux1.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Все команды, которые мы использовали ранее в этом разделе Linux (&lt;a href="../Day15">День 15&lt;/a>) можно использовать здесь как простую команду для тестирования нашего скрипта.&lt;/p>
+&lt;p>Давайте добавим в наш скрипт простой блок кода.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>mkdir 90DaysOfDevOps
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd 90DaysOfDevOps
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>touch Day19
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ls
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Затем вы можете сохранить это и выйти из текстового редактора. Если мы запустим наш скрипт с &lt;code>./90DaysOfDevOps.sh&lt;/code>, вы должны получить сообщение об отказе в разрешении. Вы можете проверить права доступа к этому файлу с помощью команды &lt;code>ls -la&lt;/code>, и вы увидите, что у нас нет прав на выполнение этого файла.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day19_Linux2.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Мы можем изменить это, используя &lt;code>chmod +x 90DaysOfDevOps.sh&lt;/code>, и тогда вы увидите &lt;code>x&lt;/code>, означающий, что теперь мы можем запустить (execute) наш скрипт.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day19_Linux3.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Теперь мы можем снова запустить наш скрипт, используя &lt;code>./90DaysOfDevOps.sh&lt;/code> после того, как запуск скрипта создал новый каталог, перешел в этот каталог, а затем создал новый файл.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day19_Linux4.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Довольно простые вещи, но вы можете начать понимать, как это можно использовать для вызова других инструментов, как часть способов сделать вашу жизнь проще и автоматизировать вещи.&lt;/p>
+&lt;h3 id="переменные-условные-операторы">Переменные, условные операторы&lt;/h3>
+&lt;p>Большая часть этого раздела на самом деле является повторением того, что мы рассмотрели, когда изучали Golang, но я думаю, что нам стоит углубиться в это снова.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;h3 id="переменные">Переменные&lt;/h3>
+&lt;/li>
+&lt;/ul>
+&lt;p>Переменные позволяют нам один раз определить конкретный повторяющийся термин, который используется в потенциально сложном сценарии.&lt;/p>
+&lt;p>Чтобы добавить переменную, вы просто добавляете ее вот так на чистую строку в вашем скрипте.&lt;/p>
+&lt;p>&lt;code>challenge=&amp;quot;90DaysOfDevOps&amp;quot;&lt;/code>&lt;/p>
+&lt;p>Таким образом, когда и где мы используем &lt;code>$challenge&lt;/code> в нашем коде, если мы изменим переменную, это будет отражено повсюду.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day19_Linux5.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Если мы сейчас запустим наш скрипт &lt;code>sh&lt;/code>, вы увидите распечатку, которая была добавлена к нашему скрипту.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day19_Linux5.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Мы также можем запросить пользовательский ввод, который может установить наши переменные, используя следующее:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>echo &amp;#34;Enter your name&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>read name
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Затем это определило бы ввод как переменную &lt;code>$name&lt;/code>. Затем мы могли бы использовать это позже.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;h3 id="условные-операторы">Условные операторы&lt;/h3>
+&lt;/li>
+&lt;/ul>
+&lt;p>Может быть, мы хотим узнать, кто участвует в нашем марафоне &amp;ldquo;90 дней&amp;rdquo; и сколько дней они прошли, мы можем определить это, используя условные выражения &lt;code>if&lt;/code> &lt;code>if-else&lt;/code> &lt;code>else-if&lt;/code>, это то, что мы определили ниже в нашем скрипте. .&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">&lt;/span>&lt;span style="color:#60a0b0;font-style:italic"># ___ ___ ____ ___ __ ____ ___&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># / _ \ / _ \| _ \ __ _ _ _ ___ / _ \ / _| _ \ _____ __/ _ \ _ __ ___&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#| (_) | | | | | | |/ _` | | | / __| | | | |_| | | |/ _ \ \ / / | | | &amp;#39;_ \/ __|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># \__, | |_| | |_| | (_| | |_| \__ \ |_| | _| |_| | __/\ V /| |_| | |_) \__ \&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># /_/ \___/|____/ \__,_|\__, |___/\___/|_| |____/ \___| \_/ \___/| .__/|___/&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># |___/ |_|&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># This script is to demonstrate bash scripting!&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Variables to be defined&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bb60d5">ChallengeName&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#60a0b0;font-style:italic">#90DaysOfDevOps&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bb60d5">TotalDays&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">90&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># User Input&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#4070a0">&amp;#34;Enter Your Name&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">read&lt;/span> name
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#4070a0">&amp;#34;Welcome &lt;/span>&lt;span style="color:#bb60d5">$name&lt;/span>&lt;span style="color:#4070a0"> to &lt;/span>&lt;span style="color:#bb60d5">$ChallengeName&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#4070a0">&amp;#34;How Many Days of the &lt;/span>&lt;span style="color:#bb60d5">$ChallengeName&lt;/span>&lt;span style="color:#4070a0"> challenge have you completed?&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">read&lt;/span> DaysCompleted
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#666">[&lt;/span> &lt;span style="color:#bb60d5">$DaysCompleted&lt;/span> -eq &lt;span style="color:#40a070">90&lt;/span> &lt;span style="color:#666">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#4070a0">&amp;#34;You have finished, well done&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">elif&lt;/span> &lt;span style="color:#666">[&lt;/span> &lt;span style="color:#bb60d5">$DaysCompleted&lt;/span> -lt &lt;span style="color:#40a070">90&lt;/span> &lt;span style="color:#666">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#4070a0">&amp;#34;Keep going you are doing great&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#4070a0">&amp;#34;You have entered the wrong amount of days&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Вы также можете видеть из вышеприведенного, что мы проводим некоторые сравнения или сверяем значения друг с другом, чтобы перейти к следующему этапу. У нас есть разные варианты, которые стоит отметить.&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>eq&lt;/code> - if the two values are equal will return TRUE&lt;/li>
+&lt;li>&lt;code>ne&lt;/code> - if the two values are not equal will return TRUE&lt;/li>
+&lt;li>&lt;code>gt&lt;/code> - if the first value is greater than the second value will return TRUE&lt;/li>
+&lt;li>&lt;code>ge&lt;/code> - if the first value is greater than or equal to the second value will return TRUE&lt;/li>
+&lt;li>&lt;code>lt&lt;/code> - if the first value is less than the second value will return TRUE&lt;/li>
+&lt;li>&lt;code>le&lt;/code> - if the first value is less than or equal to the second value will return TRUE&lt;/li>
+&lt;/ul>
+&lt;p>Мы также можем использовать сценарии bash для получения информации о файлах и папках, это называется условиями файлов.&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>-d file&lt;/code> True if the file is a directory&lt;/li>
+&lt;li>&lt;code>-e file&lt;/code> True if the file exists&lt;/li>
+&lt;li>&lt;code>-f file&lt;/code> True if the provided string is a file&lt;/li>
+&lt;li>&lt;code>g file&lt;/code> True if the group id is set on a file&lt;/li>
+&lt;li>&lt;code>-r file&lt;/code> True if the file is readable&lt;/li>
+&lt;li>&lt;code>-s file&lt;/code> True if the file has a non-zero size&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>FILE=&amp;#34;90DaysOfDevOps.txt&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>if [ -f &amp;#34;$FILE&amp;#34; ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>then
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo &amp;#34;$FILE is a file&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>else
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo &amp;#34;$FILE is not a file&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fi
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day19_Linux7.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+При условии, что этот файл все еще находится в нашем каталоге, мы должны вернуть первую команду &lt;code>echo&lt;/code>. Но если мы удалим этот файл, мы должны получить вторую команду &lt;code>echo&lt;/code>.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day19_Linux8.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Надеюсь, вы увидите, как это можно использовать для экономии времени при поиске в системе определенных элементов.&lt;/p>
+&lt;p>Я нашел этот удивительный репозиторий на GitHub, в котором, кажется, бесконечное количество скриптов &lt;a href="https://github.com/HariSekhon/DevOps-Bash-tools/blob/master/README">DevOps Bash Tools&lt;/a>&lt;/p>
+&lt;h3 id="пример">Пример&lt;/h3>
+&lt;p>&lt;strong>Scenario&lt;/strong>: У нас есть наша компания под названием «90DaysOfDevOps», и мы работаем некоторое время, и теперь пришло время расширить команду с 1 человека до гораздо большего в ближайшие недели. Я пока единственный, кто знает процесс адаптации, поэтому мы хотим чтобы уменьшить это узкое место, автоматизировав некоторые из этих задач.&lt;/p>
+&lt;p>&lt;strong>Requirements&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>Пользователь может быть передан в качестве аргумента командной строки.&lt;/li>
+&lt;li>Пользователь создается с именем аргумента командной строки.&lt;/li>
+&lt;li>Пароль может быть проанализирован как аргумент командной строки.&lt;/li>
+&lt;li>Пароль установлен для пользователя&lt;/li>
+&lt;li>Отображается сообщение об успешном создании учетной записи.&lt;/li>
+&lt;/ul>
+&lt;p>Давайте начнем с создания нашего сценария оболочки с помощью &lt;code>touch create_user.sh&lt;/code>.&lt;/p>
+&lt;p>Прежде чем мы двинемся дальше, давайте также создадим этот исполняемый файл, используя &lt;code>chmod +x create_user.sh&lt;/code>&lt;/p>
+&lt;p>затем мы можем использовать &lt;code>nano create_user.sh&lt;/code>, чтобы начать редактирование нашего скрипта для сценария, который мы установили.&lt;/p>
+&lt;p>Мы можем взглянуть на первое требование «Пользователь может быть передан в качестве аргумента командной строки», мы можем использовать следующее&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">#! /usr/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#A user can be passed in as a command line argument&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$1&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day19_Linux9.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Идем далее и запускаем &lt;code>./create_user.sh Michael&lt;/code>, замените Michael своим именем при запуске скрипта.
+&lt;p class="md__image">
+&lt;img
+src="Day19_Linux10.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Далее мы можем выполнить второе требование: «Пользователь создается с именем аргумента командной строки», это можно сделать с помощью команды &lt;code>useradd&lt;/code>. Опция &lt;code>-m&lt;/code> предназначена для создания домашнего каталога пользователя как /home/username.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">#! /usr/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#A user can be passed in as a command line argument&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$1&lt;/span>&lt;span style="color:#4070a0"> user account being created.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#A user is created with the name of command line argument&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo useradd -m &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$1&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Предупреждение: если вы не укажете имя учетной записи пользователя, произойдет ошибка, поскольку мы не заполнили переменную &lt;code>$1&lt;/code>&lt;/p>
+&lt;p>Затем мы можем проверить, была ли создана эта учетная запись с помощью команды &lt;code>awk -F: '{print $1}' /etc/passwd&lt;/code>.&lt;/p>
+&lt;p>&lt;a href="https://www.freecodecamp.org/news/the-linux-awk-command-linux-and-unix-usage-syntax-examples/">More about awk linux command&lt;/a>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day19_Linux11.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Наше следующее требование: «Пароль может быть проанализирован как аргумент командной строки». Во-первых, мы никогда не собираемся делать это в продакшене, нам нужно проработать список требований в лаборатории, чтобы понять.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">#! /usr/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#A user can be passed in as a command line argument&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$1&lt;/span>&lt;span style="color:#4070a0"> user account being created.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#A user is created with the name of command line argument&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo useradd -m &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$1&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#A password can be parsed in as a command line argument.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo chpasswd &lt;span style="color:#666">&amp;lt;&amp;lt;&amp;lt;&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$1&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>:&lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$2&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Если мы затем запустим этот скрипт с двумя параметрами &lt;code>./create_user.sh пароль 90DaysOfDevOps&lt;/code>&lt;/p>
+&lt;p>На изображении ниже вы можете видеть, что мы выполнили наш скрипт, он создал нашего пользователя и пароль, а затем мы вручную перешли к этому пользователю и подтвердили это с помощью команды whoami.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day19_Linux12.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Последнее требование: «Отображается сообщение об успешном создании учетной записи». На самом деле у нас уже есть это в верхней строке нашего кода, и мы можем видеть на снимке экрана выше, что у нас есть «созданная учетная запись пользователя 90DaysOfDevOps». Это осталось от нашего тестирования с параметром &lt;code>$1&lt;/code>.&lt;/p>
+&lt;p>Теперь этот сценарий можно использовать для быстрого подключения и настройки новых пользователей в наших системах Linux. Но, может быть, вместо того, чтобы некоторым историческим людям приходилось работать с этим, а затем получать новые имена пользователей или пароли для других людей, мы могли бы добавить некоторый пользовательский ввод, который мы ранее рассмотрели ранее, для захвата наших переменных.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">#! /usr/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#4070a0">&amp;#34;What is your intended username?&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">read&lt;/span> username
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#4070a0">&amp;#34;What is your password&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">read&lt;/span> password
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#A user can be passed in as a command line argument&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$username&lt;/span>&lt;span style="color:#4070a0"> user account being created.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#A user is created with the name of command line argument&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo useradd -m &lt;span style="color:#bb60d5">$username&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#A password can be parsed in as a command line argument.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo chpasswd &lt;span style="color:#666">&amp;lt;&amp;lt;&amp;lt;&lt;/span> &lt;span style="color:#bb60d5">$username&lt;/span>:&lt;span style="color:#bb60d5">$password&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Шаги стали более интерактивными,&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day19_Linux14.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Просто чтобы закончить это, возможно, мы хотим вывести успешный вывод, чтобы сказать, что наша новая учетная запись пользователя завершена.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day19_Linux15.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Одна вещь, которую я заметил, это то, что мы отображаем пароль на нашем входе, мы можем скрыть это, используя флаг &lt;code>-s&lt;/code> в строке кода &lt;code>read -s password&lt;/code>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day19_Linux16.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Если вы хотите удалить пользователя, которого вы создали для лабораторных целей, вы можете сделать это с помощью &lt;code>sudo userdel test_user&lt;/code>&lt;/p>
+&lt;p>Еще раз, я не говорю, что это будет то, что вы будете создавать в своей повседневной жизни, но я думал, что это то, что подчеркнет гибкость того, для чего вы можете использовать сценарии оболочки.&lt;/p>
+&lt;p>Подумайте о любых повторяющихся задачах, которые вы выполняете каждый день, неделю или месяц, и о том, как вы могли бы лучше автоматизировать это. Первым вариантом, вероятно, будет использование сценария bash, прежде чем переходить к более сложной территории.&lt;/p>
+&lt;p>Я создал очень простой bash-файл, который помогает мне развернуть кластер Kubernetes с помощью minikube на моем локальном компьютере вместе со службами данных и Kasten K10, чтобы продемонстрировать требования и нужды, связанные с управлением данными. &lt;a href="https://github.com/MichaelCade/project_pace/blob/main/singlecluster_demo.sh">Project Pace&lt;/a>. Но я не счел уместным поднимать вопрос здесь, поскольку мы еще не рассмотрели Kubernetes.&lt;/p>
+&lt;h2 id="ресурсы">Ресурсы&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=I4EWvMFj37g">Bash in 100 seconds&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=TPRSJbtfK4M">Bash script with practical examples - Full Course&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://remmina.org/">Client SSH GUI - Remmina&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=2QXkrLVsRmk">The Beginner&amp;rsquo;s guide to SSH&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=-txKSRn0qeA">Vim in 100 Seconds&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=IiwGbcd8S7I">Vim tutorial&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=kPylihJRG70">Learn the Linux Fundamentals - Part 1&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=VbEx7B_PTOE">Linux for hackers (don&amp;rsquo;t worry you don&amp;rsquo;t need to be a hacker!)&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

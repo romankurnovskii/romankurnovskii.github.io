@@ -1,4 +1,821 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kinesis on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/kinesis/</link><description>Recent content in Kinesis on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Wed, 14 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/kinesis/index.xml" rel="self" type="application/rss+xml"/><item><title>Sessionizing Clickstream Data with Amazon Kinesis Data Analytics</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/kinesis/sessionizing-clickstream-data-kinesis-data-analytics/</link><pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/kinesis/sessionizing-clickstream-data-kinesis-data-analytics/</guid><description>Lab Sessionizing Clickstream Data with Amazon Kinesis Data Analytics Creating an Amazon Kinesis Data Analytics Application 1. In the AWS Management Console search bar, enter Kinesis, and click the Kinesis result under Services:
-You will be taken to the Amazon Kinesis dashboard.
-In this lab, a Kinesis Data Stream has been pre-created for you. Under Data Streams you will see Total data streams is one:
-2. In the left-hand menu, click Analytics applications and under that click SQL applications:</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kinesis on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/kinesis/</link><description>Recent content in Kinesis on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Wed, 14 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/kinesis/index.xml" rel="self" type="application/rss+xml"/><item><title>Sessionizing Clickstream Data with Amazon Kinesis Data Analytics</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/kinesis/sessionizing-clickstream-data-kinesis-data-analytics/</link><pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/kinesis/sessionizing-clickstream-data-kinesis-data-analytics/</guid><description>&lt;h2 id="lab">Lab&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://cloudacademy.com/lab/sessionizing-clickstream-data-kinesis-data-analytics/">Sessionizing Clickstream Data with Amazon Kinesis Data Analytics
+&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="creating-an-amazon-kinesis-data-analytics-application">Creating an Amazon Kinesis Data Analytics Application&lt;/h2>
+&lt;p>1. In the AWS Management Console search bar, enter &lt;em>Kinesis&lt;/em>, and click the &lt;strong>Kinesis&lt;/strong> result under &lt;strong>Services&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220531100548-1-562950c3-cded-4ec9-a633-b3f1e2f74cdb.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You will be taken to the Amazon Kinesis dashboard.&lt;/p>
+&lt;p>In this lab, a Kinesis Data Stream has been pre-created for you. Under &lt;strong>Data Streams&lt;/strong> you will see &lt;strong>Total data streams&lt;/strong> is one:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-04404316-7a0e-4c2a-a2eb-da727054bf49.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>2. In the left-hand menu, click &lt;strong>Analytics applications&lt;/strong> and under that click &lt;strong>SQL applications&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-d658b213-9ed0-4992-90fb-a66574141fdf.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>3. To start creating a Kinesis Data Analytics application, under &lt;strong>Data Analytics&lt;/strong>, click &lt;strong>Create SQL application (legacy)&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-13e494f2-10e1-4830-a05d-6c482b827c5d.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You will be taken to the &lt;strong>Create legacy SQL application&lt;/strong> form.&lt;/p>
+&lt;p>4. In the &lt;strong>Application configuration&lt;/strong> section, and enter &lt;em>lab-application&lt;/em> in the &lt;strong>Application name&lt;/strong> textbox:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-15f2d668-f301-4668-8d28-9cdf7e306dfc.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>5. At the bottom of the page, click &lt;strong>Create legacy SQL application&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-fdf6c771-8a29-4bbc-bfd3-4fac2af41474.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You will be taken to a page displaying details of your application and you will see a notification that your application has been created:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220531100709-2-2203255f-2fe8-4215-9dcf-51bfaa7d79a9.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You will come back to this page later in the lab to connect the pre-created Kinesis Data Stream as a data source for your Kinesis Data Analytics application.&lt;/p>
+&lt;p>6. To navigate to the Kinesis Data Streams list page, in the left-hand side menu, click &lt;strong>Data streams&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-e4eeb636-03ca-4e49-98e6-96d859a2dec3.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You will see one data stream listed called &lt;strong>lab-stream&lt;/strong>.&lt;/p>
+&lt;p>7. To view the details of the pre-created data stream, in the list, click &lt;strong>lab-stream&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-0599adc2-722c-4e03-84c9-6f1dccbaf574.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You will be taken to the &lt;strong>Stream details&lt;/strong> page and you will see a series of tabs with &lt;strong>Monitoring&lt;/strong> selected.&lt;/p>
+&lt;p>8. To see the configuration details of the data stream, click &lt;strong>Configuration&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-b4a7d390-856a-4b3a-a29e-dc0326d034a6.png"
+id="zoom-default"
+alt="alt"
+title="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Take a moment to look at the details on this page, there are several Kinesis Data Stream configuration options that you should be aware of:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Data Stream capacity&lt;/strong>: The number of shards in the Data Stream. Each shard has a maximum read and write capacity. To increase the total capacity of a data stream you can add shards.&lt;/li>
+&lt;li>&lt;strong>Encryption&lt;/strong>: Kinesis Data Streams can be encrypted using an AWS managed or customer-managed, KMS key.&lt;/li>
+&lt;li>&lt;strong>Data retention&lt;/strong>: A Kinesis Data Stream can retain data for a configurable amount of time between 24 and 168 hours.&lt;/li>
+&lt;li>&lt;strong>Enhanced (shard-level) metrics&lt;/strong>: More detailed CloudWatch metrics can be enabled for a Data Stream, these enhanced metrics have an extra cost.&lt;/li>
+&lt;/ul>
+&lt;p>In this lab, you will be working with a small amount of sample data, so there is one shard configured.&lt;/p>
+&lt;p>Leave these options without changing them.&lt;/p>
+&lt;h2 id="connecting-to-the-virtual-machine-using-ec2-instance-connect">Connecting to the Virtual Machine using EC2 Instance Connect&lt;/h2>
+&lt;p>1. In the AWS Management Console search bar, enter &lt;em>EC2&lt;/em>, and click the &lt;strong>EC2&lt;/strong> result under &lt;strong>Services&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220222123231-1-d93dcbbf-c7a6-4e7d-9466-d70014660d6b.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>2. To see available instances, click &lt;strong>Instances&lt;/strong> in the left-hand menu:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid1-ae56f48d-6e5e-4414-a899-7a7ee4c156b0.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The instances list page will open, and you will see an instance named &lt;strong>cloudacademylabs&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220208101137-2-36b4b73c-f199-4ce6-b85b-a1bd90ae3819.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>If you don&amp;rsquo;t see a running instance then the lab environment is still loading. Wait until the &lt;strong>Instance state&lt;/strong> is &lt;strong>Running&lt;/strong>.&lt;/p>
+&lt;p>3. Right-click the &lt;strong>cloudacademylabs&lt;/strong> instance, and click &lt;strong>Connect&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220128094104-2-a2d50c2a-05c8-442c-acc0-4c02dd6c4e38.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The &lt;strong>Connect to your instance&lt;/strong> form will load.&lt;/p>
+&lt;p>4. In the form, ensure the &lt;strong>EC2 Instance Connect&lt;/strong> tab is selected:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-bdf76eab-5bef-415f-bdee-f1ef97330f62.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You will see the instance&amp;rsquo;s &lt;strong>Instance ID&lt;/strong> and &lt;strong>Public IP address&lt;/strong> displayed.&lt;/p>
+&lt;p>5. In the &lt;strong>User name&lt;/strong> textbox, enter &lt;em>ec2-user&lt;/em>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-ccba4473-690f-4589-9542-7fff1354f72f.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;em>Note&lt;/em>: Ensure there is no space after ec2-user or connect will fail.&lt;/p>
+&lt;p>6. To open a browser-based shell, click &lt;strong>Connect&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-f687e238-2010-4e45-b747-763c96e50035.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>If you see an error it&amp;rsquo;s likely that the environment hasn&amp;rsquo;t finished setting up. Check for &lt;strong>Setup completed&lt;/strong> at the top-left corner of the lab and try connecting again:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.labs.cloudacademy.com/content/images/setup/OpenEnvironment.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>A browser-based shell will open in a new window ready for you to use.&lt;/p>
+&lt;p>Keep this window open, you will use it in later lab steps.&lt;/p>
+&lt;p>You can also connect to the instance using your preferred SSH client and the PPK (Windows) or PEM (Mac/Linux) key files in the &lt;strong>Credentials&lt;/strong> section of this lab.&lt;/p>
+&lt;h2 id="simulating-a-real-time-clickstream">Simulating a Real-Time Clickstream&lt;/h2>
+&lt;p>1. To create a template JSON file for a click event, enter the following command into the shell:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>echo &amp;#39;{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;#34;user_id&amp;#34;: &amp;#34;$USER_ID&amp;#34;,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;#34;event_timestamp&amp;#34;: &amp;#34;$EVENT_TIMESTAMP&amp;#34;,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;#34;event_name&amp;#34;: &amp;#34;$EVENT_NAME&amp;#34;,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;#34;event_type&amp;#34;: &amp;#34;click&amp;#34;,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;#34;device_type&amp;#34;: &amp;#34;desktop&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}&amp;#39; &amp;gt; click.json
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>There are two parts to this command, the first uses the built-in Bash command &lt;strong>echo&lt;/strong> to print a JSON template. The second part uses a feature of the Bash shell called redirection, it redirects the output of the echo command to a file (creating it if doesn&amp;rsquo;t exist) called &lt;strong>click.json&lt;/strong>.&lt;/p>
+&lt;p>The template contains five fields, the &lt;strong>event_type&lt;/strong>, and &lt;strong>device_type&lt;/strong> fields are hardcoded, in a non-lab environment, you may encounter streams that come from different types of devices and streams that contain more than one type of event (clickstream events alongside sales or transaction data for example). The other fields will be populated dynamically.&lt;/p>
+&lt;p>2. To put records into Kinesis and simulate a clickstream, enter the following command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span style="display:flex;">&lt;span>USER_IDS&lt;span style="color:#666">=&lt;/span>(user1 user2 user3)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>EVENTS&lt;span style="color:#666">=&lt;/span>(checkout search category detail navigate)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#666">$&lt;/span>(seq &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#40a070">3000&lt;/span>); &lt;span style="color:#007020;font-weight:bold">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo &lt;span style="color:#4070a0">&amp;#34;Iteration: ${i}&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">export&lt;/span> USER_ID&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;${USER_IDS[RANDOM%${#USER_IDS[@]}]}&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">export&lt;/span> EVENT_NAME&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;${EVENTS[RANDOM%${#EVENTS[@]}]}&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">export&lt;/span> EVENT_TIMESTAMP&lt;span style="color:#666">=$&lt;/span>((&lt;span style="color:#666">$&lt;/span>(date &lt;span style="color:#666">+%&lt;/span>s) &lt;span style="color:#666">*&lt;/span> &lt;span style="color:#40a070">1000&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> JSON&lt;span style="color:#666">=$&lt;/span>(cat click&lt;span style="color:#666">.&lt;/span>json &lt;span style="color:#666">|&lt;/span> envsubst)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo &lt;span style="color:#666">$&lt;/span>JSON
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> aws kinesis put&lt;span style="color:#666">-&lt;/span>record &lt;span style="color:#666">--&lt;/span>stream&lt;span style="color:#666">-&lt;/span>name lab&lt;span style="color:#666">-&lt;/span>stream &lt;span style="color:#666">--&lt;/span>data &lt;span style="color:#4070a0">&amp;#34;${JSON}&amp;#34;&lt;/span> &lt;span style="color:#666">--&lt;/span>partition&lt;span style="color:#666">-&lt;/span>key &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#666">--&lt;/span>region us&lt;span style="color:#666">-&lt;/span>west&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> session_interval&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">15&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> click_interval&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#666">!&lt;/span> ((&lt;span style="color:#666">$&lt;/span>i&lt;span style="color:#666">%&lt;/span>&lt;span style="color:#40a070">60&lt;/span>)); then
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo &lt;span style="color:#4070a0">&amp;#34;Sleeping for ${session_interval} seconds&amp;#34;&lt;/span> &lt;span style="color:#666">&amp;amp;&amp;amp;&lt;/span> sleep &lt;span style="color:#666">$&lt;/span>{session_interval}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo &lt;span style="color:#4070a0">&amp;#34;Sleeping for ${click_interval} second(s)&amp;#34;&lt;/span> &lt;span style="color:#666">&amp;amp;&amp;amp;&lt;/span> sleep &lt;span style="color:#666">$&lt;/span>{click_interval}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fi
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>done
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You will see the templated JSON and also the JSON response from Kinesis for each record put into the Data Stream:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-dd23350b-e018-46c9-bcb8-f040aeab31e1.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>This command simulates a real-time click-stream with the following characteristics:&lt;/p>
+&lt;ul>
+&lt;li>Creates three thousand events&lt;/li>
+&lt;li>Events have a two-second interval between them&lt;/li>
+&lt;li>After every sixty events (two minutes) there is a fifteen-second interval, later you will assume a gap of ten seconds or more is a session boundary&lt;/li>
+&lt;/ul>
+&lt;p>The command has a number of parts:&lt;/p>
+&lt;ul>
+&lt;li>Setup of sample user ids and event types at the beginning&lt;/li>
+&lt;li>A loop that will execute three thousand times and a sleep statement&lt;/li>
+&lt;li>Statements that randomly select a user id and an event type, and assign them along with the current timestamp to variables&lt;/li>
+&lt;li>A statement that uses the &lt;strong>envsubst&lt;/strong> command to substitute defined environment variables in the JSON template&lt;/li>
+&lt;li>A statement invoking the AWS command-line interface tool, putting the templated JSON record into the Kinesis Data Stream&lt;/li>
+&lt;li>A condition at the end of the loop that either sleeps for a few seconds or, periodically for longer, simulating the end of a session&lt;/li>
+&lt;/ul>
+&lt;p>Leave the command running.&lt;/p>
+&lt;ol start="3">
+&lt;li>&lt;a href="https://us-west-2.console.aws.amazon.com/kinesisanalytics/home?region=us-west-2#/list/sql-applications-legacy">Navigate to Kinesis Data Analytics in the AWS Management Console&lt;/a>.&lt;/li>
+&lt;/ol>
+&lt;p>4. In the list of applications, to expand the application, click &lt;strong>lab-application&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-f9a946c1-da12-478f-a46b-23e20913399b.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>5. To connect your Data Analytics application to the pre-created Data Stream, click &lt;strong>Configure&lt;/strong>under&lt;strong>Source stream&lt;/strong>form:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid0-90dba9f6-b9c4-4011-9e42-d523c19cbef1.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The &lt;strong>Configure source for lab-application&lt;/strong> form will load.&lt;/p>
+&lt;p>6. Under &lt;strong>Source&lt;/strong>, ensure &lt;strong>Kinesis data stream&lt;/strong> is selected:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-e64d25f0-28b5-4e6f-9fac-020c0b603588.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>7. In the &lt;strong>Kinesis data stream&lt;/strong>, click &lt;strong>Browse&lt;/strong> to select the radio button for &lt;strong>lab-stream&lt;/strong>and click&lt;strong>Choose&lt;/strong>:&lt;/p>
+&lt;p>&lt;a href="https://us-west-2.console.aws.amazon.com/kinesisanalytics/home?region=us-west-2#/applications/dashboard">&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid2-9afb8380-7562-4ac1-8b26-74aadc5b6460.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/a>&lt;/p>
+&lt;p>8. Under &lt;strong>Access permissions&lt;/strong>, select &lt;strong>Choose from IAM roles that Kinesis Data Analytics can assume&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-d834d95d-4669-4734-8129-b74c701e48f3.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>9. In the &lt;strong>IAM role&lt;/strong> list, select the role beginning with &lt;strong>cloudacademy-lab-data-analytics&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-e9a56fb5-e3ed-4aef-8b18-87f410181b21.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>If you don&amp;rsquo;t see the above role listed click the refresh button:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid4-fbc23eac-6a7d-4aae-ad37-e33e648c2dee.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>10. To start discovering the schema of the records you added to the Data Stream, click &lt;strong>Discover schema&lt;/strong>:&lt;/p>
+&lt;p>&lt;a href="https://us-west-2.console.aws.amazon.com/kinesisanalytics/home?region=us-west-2#/applications/dashboard">&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid6-25ab16ee-99f1-480a-985b-fbc0aa40191c.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/a>&lt;/p>
+&lt;p>After a moment or two, you will see a notification that the discovery was successful and below, some of the records will be displayed:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-820ed5c2-548e-4bdd-8ae9-9d91969d5296.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>11. To finish connecting your Data Analytics application to your Data Stream, click &lt;strong>Save changes&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid8-163ab3c9-55f6-4d4a-afed-5364f6047158.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You will be redirected to the page for your Kinesis Data Analytics application. Leave this page open in a browser tab.&lt;/p>
+&lt;h2 id="sessionizing-the-clickstream-data-using-amazon-kinesis-data-analytics">Sessionizing the Clickstream Data using Amazon Kinesis Data Analytics&lt;/h2>
+&lt;p>1. Return to the page for your Kinesis Data Analytics application in the AWS Management Console.&lt;/p>
+&lt;p>2. To start your application and expand the &lt;strong>Steps to configure your application&lt;/strong>, click &lt;strong>Configure SQL&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid0-cf255f0c-35cb-429f-ae58-c6e6ab066f4d.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>3. In the SQL code editor, replace the existing contents with the following SQL commands&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>CREATE OR REPLACE STREAM &amp;#34;INTERMEDIATE_SQL_STREAM&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;#34;event_timestamp&amp;#34; TIMESTAMP,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;#34;user_id&amp;#34; VARCHAR(7),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;#34;device_type&amp;#34; VARCHAR(10),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;#34;session_timestamp&amp;#34; TIMESTAMP
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CREATE OR REPLACE PUMP &amp;#34;STREAM_PUMP1&amp;#34; AS INSERT INTO &amp;#34;INTERMEDIATE_SQL_STREAM&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SELECT STREAM
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> TO_TIMESTAMP(&amp;#34;event_timestamp&amp;#34;) as &amp;#34;event_timestamp&amp;#34;,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;#34;user_id&amp;#34;,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;#34;device_type&amp;#34;,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CASE WHEN (&amp;#34;event_timestamp&amp;#34; - lag(&amp;#34;event_timestamp&amp;#34;, 1) OVER (PARTITION BY &amp;#34;user_id&amp;#34; ROWS 1 PRECEDING)) &amp;gt; (10 * 1000) THEN
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> TO_TIMESTAMP(&amp;#34;event_timestamp&amp;#34;)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> WHEN (&amp;#34;event_timestamp&amp;#34; - lag(&amp;#34;event_timestamp&amp;#34;, 1) OVER (PARTITION BY &amp;#34;user_id&amp;#34; ROWS 1 PRECEDING)) IS NULL THEN
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> TO_TIMESTAMP(&amp;#34;event_timestamp&amp;#34;)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ELSE NULL
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> END AS &amp;#34;session_timestamp&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FROM &amp;#34;SOURCE_SQL_STREAM_001&amp;#34;;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>These statements do the following:&lt;/p>
+&lt;ul>
+&lt;li>Defines an intermediate stream to insert data into called &lt;strong>INTERMEDIATE_SQL_STREAM&lt;/strong>&lt;/li>
+&lt;li>Creates a &lt;strong>PUMP&lt;/strong> that selects data from the source stream&lt;/li>
+&lt;li>The &lt;strong>SELECT&lt;/strong> statement uses the &lt;strong>LAG&lt;/strong> function to determine if there is a ten-second interval between the last event and the current event&lt;/li>
+&lt;li>The &lt;strong>LAG&lt;/strong> function statements are used with &lt;strong>PARTITION&lt;/strong> statements to restrict the &lt;strong>LAG&lt;/strong> function by the user&lt;/li>
+&lt;/ul>
+&lt;p>You should know that Kinesis Data Analytics natively assumes Unix timestamps include milliseconds. The stream you simulated is providing timestamps with milliseconds. This is why the &lt;strong>CASE WHEN&lt;/strong> statement that checks for a ten-second interval includes &lt;code>(10 * 1000)&lt;/code>, it&amp;rsquo;s multiplying ten by one thousand to get ten seconds in milliseconds.&lt;/p>
+&lt;p>Tip: you can increase the height of the SQL editor text-box by dragging the grey bar at the bottom.&lt;/p>
+&lt;p>4. To execute the SQL statements, click &lt;strong>Save and run application&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid2-214ff26b-630b-4cd7-97ae-f2589dbb4bba.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The query will take up to a couple of minutes to execute and start returning results.&lt;/p>
+&lt;p>Occasionally you may see an error caused by the fifteen-second interval, if you do, re-run the query by clicking &lt;strong>Save and run application&lt;/strong> again.&lt;/p>
+&lt;p>Take a look at the results. Notice that only some records have a value for &lt;strong>session_timestamp&lt;/strong>. This is because the &lt;strong>CASE WHEN&lt;/strong> statement in the query supplies a value of null when:&lt;/p>
+&lt;ul>
+&lt;li>The interval between event timestamps is less than ten seconds&lt;/li>
+&lt;li>There is no preceding event&lt;/li>
+&lt;/ul>
+&lt;p>Also notice that below the SQL Code editor, there are two streams, the &lt;strong>INTERMEDIATE_SQL_STREAM&lt;/strong>, and an &lt;strong>error_stream&lt;/strong>. The error stream is where any errors that occur during the execution of the SQL will be delivered to.&lt;/p>
+&lt;p>5. In the SQL editor window, under the current SQL statements, add the following:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>CREATE OR REPLACE STREAM &amp;#34;DESTINATION_SQL_STREAM&amp;#34; (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;#34;user_id&amp;#34; CHAR(7),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;#34;session_id&amp;#34; VARCHAR(50),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;#34;session_time&amp;#34; VARCHAR(20),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;#34;latest_time&amp;#34; VARCHAR(20)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CREATE OR REPLACE PUMP &amp;#34;STREAM_PUMP2&amp;#34; AS INSERT INTO &amp;#34;DESTINATION_SQL_STREAM&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SELECT STREAM
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;#34;user_id&amp;#34;,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;#34;user_id&amp;#34;||&amp;#39;_&amp;#39;||&amp;#34;device_type&amp;#34;||&amp;#39;_&amp;#39;||TIMESTAMP_TO_CHAR(&amp;#39;HH:mm:ss&amp;#39;, LAST_VALUE(&amp;#34;session_timestamp&amp;#34;) IGNORE NULLS OVER
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (PARTITION BY &amp;#34;user_id&amp;#34; RANGE INTERVAL &amp;#39;24&amp;#39; HOUR PRECEDING)) AS &amp;#34;session_id&amp;#34;,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> TIMESTAMP_TO_CHAR(&amp;#39;HH:mm:ss&amp;#39;, &amp;#34;session_timestamp&amp;#34;) AS &amp;#34;session_time&amp;#34;,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> TIMESTAMP_TO_CHAR(&amp;#39;HH:mm:ss&amp;#39;, &amp;#34;event_timestamp&amp;#34;) AS &amp;#34;latest_time&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FROM &amp;#34;INTERMEDIATE_SQL_STREAM&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>WHERE &amp;#34;user_id&amp;#34; = &amp;#39;user1&amp;#39;;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>These SQL statements do the following:&lt;/p>
+&lt;ul>
+&lt;li>Creates a stream called &lt;strong>DESTINATION_SQL_STREAM&lt;/strong>&lt;/li>
+&lt;li>Creates a &lt;strong>PUMP&lt;/strong> that selects from the &lt;strong>INTERMEDIATE_SQL_STREAM&lt;/strong>&lt;/li>
+&lt;li>Constructs a &lt;strong>session_id&lt;/strong> by combining the user, device type and time&lt;/li>
+&lt;li>Restricts the query to &lt;strong>user1&lt;/strong> using a &lt;strong>WHERE&lt;/strong> clause&lt;/li>
+&lt;/ul>
+&lt;p>Something else to note about these statements is that the session and event timestamps are being converted to times.&lt;/p>
+&lt;p>6. To run the updated query, click &lt;strong>Save and run application&lt;/strong>.&lt;/p>
+&lt;p>You will see results similar to:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-0283fb62-9049-4a93-81a4-cb2e7fe08eef.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Your times will be different.&lt;/p>
+&lt;p>Notice that the &lt;strong>session_time&lt;/strong> values are more than ten seconds apart. And that the seconds&amp;rsquo; interval of the &lt;strong>latest_time&lt;/strong> column between the rows that have a &lt;strong>session time&lt;/strong>, is ten seconds or less.&lt;/p>
+&lt;p>7. To see only the rows for new sessions, replace the last line of the query with the following:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>WHERE &amp;#34;session_timestamp&amp;#34; IS NOT NULL;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This change to the &lt;strong>WHERE&lt;/strong> clause of the last SQL statement removes the restriction of the query to &lt;strong>user1&lt;/strong>, and removes rows where the value of &lt;strong>session_timestamp&lt;/strong> is null.&lt;/p>
+&lt;p>8. Click &lt;strong>Save and run application&lt;/strong> to re-run your query.&lt;/p>
+&lt;p>You will see results similar to the following:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-2b231f58-73ee-4098-908d-f3271ad21514.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Your results will be different.&lt;/p>
+&lt;p>The results now contain only session boundary rows for each of the users.&lt;/p>
+&lt;p>Leave this browser tab open with the query running in Kinesis Data Analytics.&lt;/p>
+&lt;h2 id="creating-an-aws-lambda-function-to-store-sessions-in-an-amazon-dynamodb-table">Creating an AWS Lambda function to Store Sessions in an Amazon DynamoDB Table&lt;/h2>
+&lt;p>1. In the AWS Management Console search bar, enter &lt;em>Lambda&lt;/em>, and click the &lt;strong>Lambda&lt;/strong> result under &lt;strong>Services&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid1-94b8d8cf-4c85-45fb-87ed-196d49b83a53.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>2. To start creating your function, click &lt;strong>Create function&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-06d3e807-c74b-4b3e-83f7-0575f1eadf85.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>3. Under &lt;strong>Create function&lt;/strong>, ensure &lt;strong>Author from scratch&lt;/strong> is selected:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-266c02b7-d0b4-4db4-b58d-5f160d92b6f8.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>4. Under &lt;strong>Basic information&lt;/strong>, in the &lt;strong>Function name&lt;/strong> text-box, enter &lt;em>lab-function&lt;/em>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-b4c78509-dcbf-4b1f-939b-47fe5d71be84.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>5. In the &lt;strong>Runtime&lt;/strong> drop-down, select the latest &lt;strong>Python 3.x&lt;/strong> version available.&lt;/p>
+&lt;p>6. To expand the role selection form, click &lt;strong>Change default execution role&lt;/strong>.&lt;/p>
+&lt;p>7. Under &lt;strong>Execution role&lt;/strong>, select the &lt;strong>Use an existing role&lt;/strong> radio button:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-f9458b48-1099-49aa-ac79-3d9ca619f540.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>8. To assign an execution role, in the &lt;strong>Existing role&lt;/strong> drop-down, select the role called &lt;strong>cloudacademy-lab-lambda&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-797afaef-3367-4eec-8d04-460ce29db40d.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>9. To create your function, click &lt;strong>Create function&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-5a9e57eb-3f84-48ae-99dc-5e315b66dbc7.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You will be taken a page where you can configure your function, and you will see a notification that your function has been successfully created:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-46cdd75b-bf9b-4eb2-9dcd-1769f8b314ef.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>10. Scroll down to the &lt;strong>Code source&lt;/strong> section and in the code editor double-click the &lt;strong>lambda_function.py&lt;/strong> file.&lt;/p>
+&lt;p>11. To update your Lambda function&amp;rsquo;s implementation, replace the code in the editor window with the following:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">__future__&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> print_function
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">boto3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">base64&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">json&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> loads
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dynamodb_client &lt;span style="color:#666">=&lt;/span> boto3&lt;span style="color:#666">.&lt;/span>client(&lt;span style="color:#4070a0">&amp;#39;dynamodb&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>table_name &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#34;CloudAcademyLabs&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">lambda_handler&lt;/span>(event, context):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> payload &lt;span style="color:#666">=&lt;/span> event[&lt;span style="color:#4070a0">&amp;#39;records&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> output &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> success &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> failure &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> record &lt;span style="color:#007020;font-weight:bold">in&lt;/span> payload:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">try&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> payload &lt;span style="color:#666">=&lt;/span> base64&lt;span style="color:#666">.&lt;/span>b64decode(record[&lt;span style="color:#4070a0">&amp;#39;data&amp;#39;&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> data_item &lt;span style="color:#666">=&lt;/span> loads(payload)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ddb_item &lt;span style="color:#666">=&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#39;session_id&amp;#39;&lt;/span>: { &lt;span style="color:#4070a0">&amp;#39;S&amp;#39;&lt;/span>: data_item[&lt;span style="color:#4070a0">&amp;#39;session_id&amp;#39;&lt;/span>] },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#39;session_time&amp;#39;&lt;/span>: { &lt;span style="color:#4070a0">&amp;#39;S&amp;#39;&lt;/span>: data_item[&lt;span style="color:#4070a0">&amp;#39;session_time&amp;#39;&lt;/span>] },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#39;user_id&amp;#39;&lt;/span>: { &lt;span style="color:#4070a0">&amp;#39;S&amp;#39;&lt;/span>: data_item[&lt;span style="color:#4070a0">&amp;#39;user_id&amp;#39;&lt;/span>] }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dynamodb_client&lt;span style="color:#666">.&lt;/span>put_item(TableName&lt;span style="color:#666">=&lt;/span>table_name, Item&lt;span style="color:#666">=&lt;/span>ddb_item)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> success &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> output&lt;span style="color:#666">.&lt;/span>append({&lt;span style="color:#4070a0">&amp;#39;recordId&amp;#39;&lt;/span>: record[&lt;span style="color:#4070a0">&amp;#39;recordId&amp;#39;&lt;/span>], &lt;span style="color:#4070a0">&amp;#39;result&amp;#39;&lt;/span>: &lt;span style="color:#4070a0">&amp;#39;Ok&amp;#39;&lt;/span>})
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">except&lt;/span> &lt;span style="color:#007020">Exception&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> failure &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> output&lt;span style="color:#666">.&lt;/span>append({&lt;span style="color:#4070a0">&amp;#39;recordId&amp;#39;&lt;/span>: record[&lt;span style="color:#4070a0">&amp;#39;recordId&amp;#39;&lt;/span>], &lt;span style="color:#4070a0">&amp;#39;result&amp;#39;&lt;/span>: &lt;span style="color:#4070a0">&amp;#39;DeliveryFailed&amp;#39;&lt;/span>})
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#39;Successfully delivered &lt;/span>&lt;span style="color:#70a0d0">{0}&lt;/span>&lt;span style="color:#4070a0"> records, failed to deliver &lt;/span>&lt;span style="color:#70a0d0">{1}&lt;/span>&lt;span style="color:#4070a0"> records&amp;#39;&lt;/span>&lt;span style="color:#666">.&lt;/span>format(success, failure))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> {&lt;span style="color:#4070a0">&amp;#39;records&amp;#39;&lt;/span>: output}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This python code processes a record from Kinesis Data Analytics and puts it into a DynamoDB table.&lt;/p>
+&lt;p>The implementation is based on one provided by AWS. The only change is the statements that construct the &lt;strong>ddb_item&lt;/strong>. They have been modified to match the data being supplied by your Kinesis Data Analytics application.&lt;/p>
+&lt;p>12. To deploy your function, at the top, click &lt;strong>Deploy&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-03d9ce2f-841d-4e96-a8f4-0c7842acea16.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You will see a notification that your function has been deployed:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-1cc1da60-49b1-4a99-b8c8-d448201d5f1c.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>13. To configure a timeout for your function, click the &lt;strong>Configuration&lt;/strong> tab, and click &lt;strong>Edit&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-53889e9c-5bb8-46ff-b0ad-004a85e69707.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>14. Under &lt;strong>Timeout&lt;/strong>, enter &lt;em>1&lt;/em> in the &lt;strong>min&lt;/strong> text-box, and &lt;em>0&lt;/em> in the &lt;strong>sec&lt;/strong> text-box:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-d34595b5-6944-4ead-8472-182a899f1131.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You are updating the timeout because the default of three seconds is too low when processing data from Kinesis Data Analytics, and may lead to failures caused by the function timing out. AWS recommends setting a higher timeout to avoid such failures.&lt;/p>
+&lt;p>15. To save your function&amp;rsquo;s updated timeout, click &lt;strong>Save&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-fd0355af-6ed8-447f-9925-637809a0567d.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You will see a notification that your change to the timeout has been saved:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-6d97cef9-93cb-4b5e-8567-8bfaa0ebdc6f.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="configuring-amazon-kinesis-data-analytics-to-use-your-aws-lambda-function-as-a-destination">Configuring Amazon Kinesis Data Analytics to Use Your AWS Lambda Function as a Destination&lt;/h2>
+&lt;p>1. &lt;a href="https://us-west-2.console.aws.amazon.com/kinesisanalytics/home?region=us-west-2#/list/sql-applications-legacy">Navigate to Kinesis Data Analytics in the AWS Management Console&lt;/a>.&lt;/p>
+&lt;p>2. In the list of applications, to expand the application, click &lt;strong>lab-application&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-c73221e3-3fc5-421d-b5ea-ba59530c1f12.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>3. To begin configuring your Lambda as a destination, expand the &lt;strong>Steps to configure your application&lt;/strong> and click &lt;strong>Add destination&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid1-de7f2923-4a85-43ad-aae4-dc31db794faf.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The &lt;strong>Configure destination&lt;/strong> form will load.&lt;/p>
+&lt;p>4. Under &lt;strong>Destination&lt;/strong> select &lt;strong>AWS Lambda function&lt;/strong>:&lt;/p>
+&lt;p>&lt;a href="https://us-west-2.console.aws.amazon.com/kinesisanalytics/home?region=us-west-2#/applications/dashboard">&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-cbaa5e22-0954-46bb-9daf-1dd1079d8dba.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/a>&lt;/p>
+&lt;p>5. Under &lt;strong>AWS&lt;/strong> &lt;strong>Lambda function&lt;/strong>, click &lt;strong>Browse&lt;/strong> and check radio box for &lt;strong>lab-function&lt;/strong>followed by clicking&lt;strong>Choose&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid3-49a3cd4f-3cf9-4681-8e81-19825761776a.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>This is the Lambda function you created in the previous lab step.&lt;/p>
+&lt;p>6. Under &lt;strong>Access permissions&lt;/strong>, ensure &lt;strong>Choose from IAM roles that Kinesis Data Analytics can assume&lt;/strong> is selected:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-fe6e57c3-a61e-4a14-9d7a-e81f27e3618e.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>7. In the &lt;strong>IAM role&lt;/strong> drop-down, select the role called &lt;strong>cloudacademy-lab-lambda&lt;/strong>:&lt;/p>
+&lt;p>&lt;a href="https://us-west-2.console.aws.amazon.com/kinesisanalytics/home?region=us-west-2#/applications/dashboard">&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-824a07f2-3d3c-4be5-82b2-472edbfc85f8.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/a>&lt;/p>
+&lt;p>This is a role that has been pre-created for this lab and allows Kinesis Data Analytics to invoke your Lambda function.&lt;/p>
+&lt;p>8. In the &lt;strong>In-application stream&lt;/strong> section, under &lt;strong>Connect in-application stream&lt;/strong>, select &lt;strong>Choose an existing in-application stream&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-c8ad63eb-c0e3-4124-a1dd-d102ac202830.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>9. In the &lt;strong>In-application stream name&lt;/strong> drop-down, select &lt;strong>DESTINATION_SQL_STREAM&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-6751fe1e-6d98-435d-a030-e58c120b8068.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>10. To finish connecting your Kinesis Data Analytics application to your Lambda function, click &lt;strong>Save changes&lt;/strong>:&lt;/p>
+&lt;p>&lt;a href="https://us-west-2.console.aws.amazon.com/kinesisanalytics/home?region=us-west-2#/applications/dashboard">&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid5-91816a39-d3ea-4a93-8f57-1592668bc5d8.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/a>&lt;/p>
+&lt;p>Your Kinesis Data Analytics application is being updated. Please be aware that it can take up to three minutes to complete.&lt;/p>
+&lt;p>Once complete the details page for Kinesis Data Analytics application will load.&lt;/p>
+&lt;p>11. In the AWS Management Console search bar, enter &lt;em>DynamoDB&lt;/em>, and click the &lt;strong>DynamoDB&lt;/strong> result under &lt;strong>Services&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid0-247cee59-726c-48a4-a1bf-ea18e6ee7e2d.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>12. In the left-hand menu, click &lt;strong>Tables&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-792b7978-567b-47bb-8110-0df15b855447.png"
+id="zoom-default"
+alt="alt"
+title="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>13. In the list of tables, click &lt;strong>CloudAcademyLabs&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-32d473fb-670e-4475-ae3f-fe0175b2ec9e.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>This table was pre-created as a part of this lab.&lt;/p>
+&lt;p>14. To see items in the DynamoDB table, click the &lt;strong>Explore Table****Items&lt;/strong> button:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220531152225-1-c7362643-0a50-4244-aefd-c9f881b6b44a.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You will see the items in the table listed similar to:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-fe8c0481-8552-4e09-999e-a1945716ba84.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>These items have been inserted into the DyanmoDB table by your Lambda function, it&amp;rsquo;s being invoked by your Kinesis Data Analytics application.&lt;/p></description></item></channel></rss>

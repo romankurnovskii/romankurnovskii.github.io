@@ -1,15 +1,247 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DFS on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/dfs/</link><description>Recent content in DFS on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Mon, 28 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/dfs/index.xml" rel="self" type="application/rss+xml"/><item><title>236. Lowest Common Ancestor of a Binary Tree</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/236/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/236/</guid><description>LeetCode задача 236
-Задача Найдите наименьшего общего предка (LCA) двух заданных узлов в бинарном дереве.
-Подсказки Используйте метод обхода в глубину (DFS) для решения этой задачи.
-Подход Обход в глубину (DFS): Используйте рекурсивный метод для обхода дерева. Поиск узлов: При обходе дерева ищите заданные узлы p и q. Возврат значения: Если найден один из узлов, верните его как потенциального предка. Сравнение результатов: Если оба поддерева возвращают узлы, текущий узел является LCA. Пропуск пустых узлов: Если узел пуст, верните None.</description></item><item><title>437. Path Sum III</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/437/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/437/</guid><description>LeetCode задача 437
-Задача Дан корень бинарного дерева и целое число targetSum. Верните количество путей, где сумма значений вдоль пути равна targetSum.
-Путь не обязан начинаться или заканчиваться на корне или листе, но он должен идти вниз (т.е. только от родительских узлов к дочерним).
-Подсказки Нам необходимо рассмотреть все возможные пути от каждого узла, идущие вниз. Это можно сделать, рекурсивно обходя дерево и считая количество путей для каждого узла.
-Подход Рассмотрим решение с применением рекурсивного обхода дерева, начиная с корня.</description></item><item><title>1372. Longest ZigZag Path in a Binary Tree</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/1372/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/1372/</guid><description>LeetCode задача 1372
-Задача Найти самый длинный &amp;ldquo;ZigZag&amp;rdquo; путь в бинарном дереве. Путь &amp;ldquo;ZigZag&amp;rdquo; означает альтернативное движение влево и вправо при переходе от одного узла к другому.
-Подсказки Используйте Depth-First Search (DFS) для решения задачи.
-Подход DFS с состоянием: Запустите DFS с дополнительным аргументом, который будет отслеживать, в какую сторону нужно двигаться следующим (влево или вправо). Обновление максимума: На каждом уровне рекурсии проверьте, не превышает ли текущая длина пути максимальную известную длину. Рекурсивный вызов: Продолжайте движение в обоих направлениях, но учитывайте, что направление должно изменяться.</description></item><item><title>1448. Count Good Nodes in Binary Tree</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/1448/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/1448/</guid><description>LeetCode задача 1448
-Задача Дано бинарное дерево. Задача подсчитать количество &amp;ldquo;хороших&amp;rdquo; узлов. Узел считается &amp;ldquo;хорошим&amp;rdquo;, если на пути от корня дерева до этого узла (включительно) не встречается узлов с большим значением.
-Подсказки &amp;ldquo;Хороший&amp;rdquo; узел в дереве — это узел, для которого все узлы на пути от корня до этого узла имеют значение не больше, чем значение этого узла.
-Использовать метод обхода в глубину (DFS) для решения этой задачи.
-Подход Идея решения задачи заключается в рекурсивном обходе дерева с сохранением максимального значения на пути от корня к текущему узлу.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DFS on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/dfs/</link><description>Recent content in DFS on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Mon, 28 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/dfs/index.xml" rel="self" type="application/rss+xml"/><item><title>236. Lowest Common Ancestor of a Binary Tree</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/236/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/236/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/">LeetCode задача 236&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Найдите наименьшего общего предка (LCA) двух заданных узлов в бинарном дереве.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Используйте метод обхода в глубину (DFS) для решения этой задачи.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>Обход в глубину (DFS)&lt;/strong>: Используйте рекурсивный метод для обхода дерева.&lt;/li>
+&lt;li>&lt;strong>Поиск узлов&lt;/strong>: При обходе дерева ищите заданные узлы p и q.&lt;/li>
+&lt;li>&lt;strong>Возврат значения&lt;/strong>: Если найден один из узлов, верните его как потенциального предка.&lt;/li>
+&lt;li>&lt;strong>Сравнение результатов&lt;/strong>: Если оба поддерева возвращают узлы, текущий узел является LCA.&lt;/li>
+&lt;li>&lt;strong>Пропуск пустых узлов&lt;/strong>: Если узел пуст, верните &lt;code>None&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Запустите рекурсивный DFS, начиная с корня дерева.&lt;/li>
+&lt;li>В каждой итерации рекурсии:
+&lt;ul>
+&lt;li>Проверьте, является ли текущий узел одним из искомых (p или q).&lt;/li>
+&lt;li>Произведите обход левого и правого поддеревьев.&lt;/li>
+&lt;li>Если оба поддерева возвращают не-&lt;code>None&lt;/code> значения, текущий узел является LCA.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">TreeNode&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, val&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">0&lt;/span>, left&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">None&lt;/span>, right&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">None&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">=&lt;/span> val
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">=&lt;/span> left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">=&lt;/span> right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">lowestCommonAncestor&lt;/span>(root: TreeNode, p: TreeNode, q: TreeNode) &lt;span style="color:#666">-&amp;gt;&lt;/span> TreeNode:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> root:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Если текущий узел является одним из искомых, вернуть его&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> root&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">==&lt;/span> p&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#007020;font-weight:bold">or&lt;/span> root&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">==&lt;/span> q&lt;span style="color:#666">.&lt;/span>val:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> root
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Обход левого и правого поддеревьев&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">=&lt;/span> lowestCommonAncestor(root&lt;span style="color:#666">.&lt;/span>left, p, q)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#666">=&lt;/span> lowestCommonAncestor(root&lt;span style="color:#666">.&lt;/span>right, p, q)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Если оба поддерева возвращают узлы, текущий узел является LCA&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> left &lt;span style="color:#007020;font-weight:bold">and&lt;/span> right:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> root
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> left &lt;span style="color:#007020;font-weight:bold">or&lt;/span> right
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>437. Path Sum III</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/437/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/437/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/path-sum-iii/">LeetCode задача 437&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Дан корень бинарного дерева и целое число &lt;code>targetSum&lt;/code>. Верните количество путей, где сумма значений вдоль пути равна &lt;code>targetSum&lt;/code>.&lt;/p>
+&lt;p>Путь не обязан начинаться или заканчиваться на корне или листе, но он должен идти вниз (т.е. только от родительских узлов к дочерним).&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Нам необходимо рассмотреть все возможные пути от каждого узла, идущие вниз. Это можно сделать, рекурсивно обходя дерево и считая количество путей для каждого узла.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Рассмотрим решение с применением рекурсивного обхода дерева, начиная с корня. При этом на каждом уровне рекурсии мы проверяем, есть ли путь от &lt;strong>текущего узла&lt;/strong>, сумма которого равна &lt;code>targetSum&lt;/code>.&lt;/p>
+&lt;p>&lt;mark>Часть 1: Обновлять корневой узел на каждом уровне рекурсии&lt;/mark>&lt;/p>
+&lt;p>Под &lt;strong>текущим узлом&lt;/strong> будем иметь ввиду корневой узел (&lt;code>root&lt;/code>).&lt;/p>
+&lt;p>Например, при дереве с узлами: &lt;code>[10,5,-3,3,2,null,11,3,-2,null,1]&lt;/code> и &lt;code>targetSum=8&lt;/code>&lt;/p>
+&lt;p>&lt;strong>Итого каждый узел будет в какой-то момент корневым узлом.&lt;/strong>&lt;/p>
+&lt;p>Текущий корневой узел (&lt;code>root&lt;/code>) = 10.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Мы обходим все возможные отрезки от текущего&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Сверяем суммы этих отрезков с &lt;code>targetSum&lt;/code> :&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span> ([10], 8)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ([10, 5], 8)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ([10, 5, 3], 8)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ([10, 5, 3, 3], 8)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ([10, 5, 3, -2], 8)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ([10, 5, 2], 8)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ([10, 5, 2, 1], 8)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ([10, 3], 8)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>После того как рассмотрели все возможные отрезки от текущего &lt;code>root=10&lt;/code>, мы идем рассматривать все возможные отрезки от нового &lt;code>root&lt;/code>.&lt;/p>
+&lt;p>Новые &lt;code>root&lt;/code> становятся &lt;code>root.left&lt;/code> и &lt;code>root.right&lt;/code>.&lt;/p>
+&lt;p>Тогда следующая итерация будет выглядеть следующим образом:&lt;/p>
+&lt;p>Текущий корневой узел (&lt;code>root&lt;/code>) = 5.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span> ([5], 8)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ([5, 3], 8) !! нашли один отрезок
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ([5, 3, 3], 8)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;p>&lt;mark>Часть 2: Правильный подсчет сумм от корня дерева до текущего узла&lt;/mark>&lt;/p>
+&lt;p>Когда корневой узел был 10, мы должны были ничего предпринимать.&lt;/p>
+&lt;p>Но когда во время рекурсии корневой узел будет на уровень меньше, например 5, функция должна понимать, что сумму текущего отрезка и всех его дочерних нужно считать от нового корня дерева, т.е. от 5, и так далее.&lt;/p>
+&lt;p>Например: текущий корень 10, а узел 3, т.е. мы должны посчитать равен ли отрезок [10,5,3] целевому числу 8.&lt;/p>
+&lt;p>Для этого узел 3 должен знать значения, которые были до него.&lt;/p>
+&lt;p>Решение:&lt;/p>
+&lt;ol>
+&lt;li>функция с данным узлом может принимать сумму отрезка, пройденного до него&lt;/li>
+&lt;li>после этого функция считает равна ли сумма значению до текущего узла и значение самого узла целевому числу &lt;code>targetSum&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;p>В данном случае [10,5,3] сумма до текущего узла равна $10+5=15$. Если $15+3 == 8$, то текущий отрезок подходит.&lt;/p>
+&lt;h2 id="алгоритм--абстрактный-алгоритм">Алгоритм / Абстрактный алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Обходим дерево, начиная с корня дерева.&lt;/li>
+&lt;li>Для каждого узла, проверяем существует ли путь &lt;strong>от этого узла&lt;/strong>, сумма которого равна &lt;code>targetSum&lt;/code>, перебирая все возможные дочерние пути.&lt;/li>
+&lt;li>Рекурсивно выполняем шаги 1 и 2 для всех дочерних узлов.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Definition for a binary tree node.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># class TreeNode:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># def __init__(self, val=0, left=None, right=None):&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.val = val&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.left = left&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.right = right&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">pathSum&lt;/span>(self, root, targetSum):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> root:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">dfs&lt;/span>(node, current_path_sum):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> node:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current_path_sum &lt;span style="color:#666">+=&lt;/span> node&lt;span style="color:#666">.&lt;/span>val
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> current_path_sum &lt;span style="color:#666">==&lt;/span> targetSum: &lt;span style="color:#60a0b0;font-style:italic"># Равна ли текущая сумма целевому значению&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">+=&lt;/span> dfs(node&lt;span style="color:#666">.&lt;/span>left, current_path_sum) &lt;span style="color:#60a0b0;font-style:italic"># Считаем пути для левого &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">+=&lt;/span> dfs(node&lt;span style="color:#666">.&lt;/span>right, current_path_sum) &lt;span style="color:#60a0b0;font-style:italic"># и правого дочернего узла&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> count
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> root_count &lt;span style="color:#666">=&lt;/span> dfs(root, &lt;span style="color:#40a070">0&lt;/span>) &lt;span style="color:#60a0b0;font-style:italic"># Считаем все отрезки для текущего корня дерева&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left_count &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>pathSum(root&lt;span style="color:#666">.&lt;/span>left, targetSum) &lt;span style="color:#60a0b0;font-style:italic"># новый корневой узел (левый&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right_count &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>pathSum(root&lt;span style="color:#666">.&lt;/span>right, targetSum) &lt;span style="color:#60a0b0;font-style:italic"># и правый&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> root_count &lt;span style="color:#666">+&lt;/span> left_count &lt;span style="color:#666">+&lt;/span> right_count
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1372. Longest ZigZag Path in a Binary Tree</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1372/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1372/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/longest-zigzag-path-in-a-binary-tree/">LeetCode задача 1372&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Найти самый длинный &amp;ldquo;ZigZag&amp;rdquo; путь в бинарном дереве. Путь &amp;ldquo;ZigZag&amp;rdquo; означает альтернативное движение влево и вправо при переходе от одного узла к другому.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Используйте Depth-First Search (DFS) для решения задачи.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>DFS с состоянием&lt;/strong>: Запустите DFS с дополнительным аргументом, который будет отслеживать, в какую сторону нужно двигаться следующим (влево или вправо).&lt;/li>
+&lt;li>&lt;strong>Обновление максимума&lt;/strong>: На каждом уровне рекурсии проверьте, не превышает ли текущая длина пути максимальную известную длину.&lt;/li>
+&lt;li>&lt;strong>Рекурсивный вызов&lt;/strong>: Продолжайте движение в обоих направлениях, но учитывайте, что направление должно изменяться.&lt;/li>
+&lt;li>&lt;strong>Возврат результата&lt;/strong>: В конечном итоге верните максимальную длину, найденную во всех поддеревьях.&lt;/li>
+&lt;/ol>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Инициализируйте переменную для хранения максимальной длины ZigZag пути.&lt;/li>
+&lt;li>Запустите DFS с корня, указав начальную длину пути и начальное направление.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">TreeNode&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, val&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">0&lt;/span>, left&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">None&lt;/span>, right&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">None&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">=&lt;/span> val
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">=&lt;/span> left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">=&lt;/span> right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>max_zigzag &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">dfs&lt;/span>(node, length, direction):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">global&lt;/span> max_zigzag
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> node:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_zigzag &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(max_zigzag, length)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> direction &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#4070a0">&amp;#34;left&amp;#34;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> node&lt;span style="color:#666">.&lt;/span>left:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(node&lt;span style="color:#666">.&lt;/span>left, length &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#4070a0">&amp;#34;right&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(node&lt;span style="color:#666">.&lt;/span>right, &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#4070a0">&amp;#34;right&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> node&lt;span style="color:#666">.&lt;/span>right:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(node&lt;span style="color:#666">.&lt;/span>right, length &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#4070a0">&amp;#34;left&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(node&lt;span style="color:#666">.&lt;/span>left, &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#4070a0">&amp;#34;left&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">longestZigZag&lt;/span>(root: TreeNode) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">global&lt;/span> max_zigzag
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_zigzag &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># Сбросить значение между вызовами&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(root, &lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#4070a0">&amp;#34;left&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(root, &lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#4070a0">&amp;#34;right&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> max_zigzag
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1448. Count Good Nodes in Binary Tree</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1448/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1448/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/count-good-nodes-in-binary-tree/">LeetCode задача 1448&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Дано бинарное дерево. Задача подсчитать количество &amp;ldquo;хороших&amp;rdquo; узлов. Узел считается &amp;ldquo;хорошим&amp;rdquo;, если на пути от корня дерева до этого узла (включительно) не встречается узлов с большим значением.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>&amp;ldquo;Хороший&amp;rdquo; узел в дереве — это узел, для которого все узлы на пути от корня до этого узла имеют значение не больше, чем значение этого узла.&lt;/p>
+&lt;p>Использовать метод обхода в глубину (DFS) для решения этой задачи.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Идея решения задачи заключается в рекурсивном обходе дерева с сохранением максимального значения на пути от корня к текущему узлу. На каждом этапе, когда мы доходим до нового узла, мы сравниваем его значение с максимальным значением на пути. Если значение узла не меньше максимального, значит, это &amp;ldquo;хороший&amp;rdquo; узел.&lt;/p>
+&lt;p>Этот метод обеспечивает простой и понятный способ решения задачи, хотя и может быть не самым оптимальным по времени и памяти.&lt;/p>
+&lt;ol>
+&lt;li>&lt;strong>Обход в глубину (DFS)&lt;/strong>: Используйте рекурсивный метод для обхода дерева.&lt;/li>
+&lt;li>&lt;strong>Текущий максимум&lt;/strong>: На каждом шаге рекурсии передавайте текущее максимальное значение на пути от корня.&lt;/li>
+&lt;li>&lt;strong>Сравнение узлов&lt;/strong>: Сравните значение текущего узла с текущим максимумом. Если значение узла больше или равно, увеличьте счетчик &amp;ldquo;хороших&amp;rdquo; узлов.&lt;/li>
+&lt;/ol>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>Рекурсивно обходить дерево, начиная с корня.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>В процессе обхода обновлять максимальное значение на пути и считать &amp;ldquo;хорошие&amp;rdquo; узлы.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Инициализируйте счетчик &amp;ldquo;хороших&amp;rdquo; узлов как 0.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Запустите рекурсивный DFS, начиная с корня дерева и передавая значение корня как текущий максимум.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>В рекурсивной функции сравните значение текущего узла с переданным максимумом.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Обновите текущий максимум, если значение текущего узла больше.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Повторите шаги 2-4 для всех дочерних узлов.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">TreeNode&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, val&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">0&lt;/span>, left&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">None&lt;/span>, right&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">None&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">=&lt;/span> val
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">=&lt;/span> left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">=&lt;/span> right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">goodNodes&lt;/span>(root: TreeNode) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">dfs&lt;/span>(node, cur_max):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> node:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> node&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">&amp;gt;=&lt;/span> cur_max:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur_max &lt;span style="color:#666">=&lt;/span> node&lt;span style="color:#666">.&lt;/span>val
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">+=&lt;/span> dfs(node&lt;span style="color:#666">.&lt;/span>left, cur_max)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">+=&lt;/span> dfs(node&lt;span style="color:#666">.&lt;/span>right, cur_max)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> count
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> dfs(root, root&lt;span style="color:#666">.&lt;/span>val)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

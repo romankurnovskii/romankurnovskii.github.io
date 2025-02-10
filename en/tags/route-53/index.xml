@@ -1,5 +1,113 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Route 53 on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/route-53/</link><description>Recent content in Route 53 on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 23 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/route-53/index.xml" rel="self" type="application/rss+xml"/><item><title>Route 53</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/route53/</link><pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/route53/</guid><description>About Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service. Route 53 connects user requests to internet applications running on AWS or on-premises.
-Documentation User Guide A highly available and scalable Domain Name System (DNS) web service used for domain registration, DNS routing, and health checking.
-Can create and manage your public DNS records.
-What is the difference between Route 53 and DNS?
-Your DNS is the service that translates your domain name into an IP address.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Route 53 on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/route-53/</link><description>Recent content in Route 53 on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 23 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/route-53/index.xml" rel="self" type="application/rss+xml"/><item><title>Route 53</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/route53/</link><pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/route53/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service. Route 53 connects user requests to internet applications running on AWS or on-premises.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/route53/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/route53/?id=docs_gateway">User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/Route53/product-page-diagram_Amazon-Route-53_HIW%402x.4c2af00405a0825f83fca113352b480b19d9210e.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>A highly available and scalable Domain Name System (DNS) web service used for domain registration, DNS routing, and health checking.&lt;/p>
+&lt;p>Can create and manage your public DNS records.&lt;/p>
+&lt;p>&lt;strong>What is the difference between Route 53 and DNS?&lt;/strong>&lt;/p>
+&lt;p>Your DNS is the service that translates your domain name into an IP address. AWS Route 53 is a smart DNS system that can dynamically change your origin address based on load, and even perform load balancing before traffic even reaches your servers.&lt;/p>
+&lt;h3 id="alternatives">Alternatives&lt;/h3>
+&lt;ul>
+&lt;li>Cloudflare DNS.&lt;/li>
+&lt;li>Google Cloud DNS.&lt;/li>
+&lt;li>Azure DNS.&lt;/li>
+&lt;li>GoDaddy Premium DNS.&lt;/li>
+&lt;li>DNSMadeEasy.&lt;/li>
+&lt;li>ClouDNS.&lt;/li>
+&lt;li>UltraDNS.&lt;/li>
+&lt;li>NS1.&lt;/li>
+&lt;/ul>
+&lt;h3 id="routing-policies">Routing Policies&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>Simple routing policy – route internet traffic to a single resource that performs a given function for your domain. You can’t create multiple records that have the same name and type, but you can specify multiple values in the same record, such as multiple IP addresses.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Failover routing policy – use when you want to configure active-passive failover.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Geolocation routing policy – use when you want to route internet traffic to your resources based on the location of your users.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Geoproximity routing policy – use when you want to route traffic based on the location of your resources and, optionally, shift traffic from resources in one location to resources in another.&lt;/p>
+&lt;ul>
+&lt;li>You can also optionally choose to route more traffic or less to a given resource by specifying a value, known as a bias. A bias expands or shrinks the size of the geographic region from which traffic is routed to a resource.&lt;/li>
+&lt;li>The effect of changing the bias for your resources depends on a number of factors, including the following:&lt;/li>
+&lt;li>The number of resources that you have.&lt;/li>
+&lt;li>How close the resources are to one another.
+&lt;ul>
+&lt;li>The number of users that you have near the border area between geographic regions.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Latency routing policy – use when you have resources in multiple locations and you want to route traffic to the resource that provides the best latency.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>IP-based routing policy – use when you want to route traffic based on your users’ locations, and know where the IP address or traffic is coming from.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Multivalue answer routing policy – use when you want Route 53 to respond to DNS queries with up to eight healthy records selected at random.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Weighted routing policy – use to route traffic to multiple resources in proportions that you specify.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>When you register a domain or transfer domain registration to Route 53, it configures the domain to renew automatically. The automatic renewal period is typically one year, although the registries for some top-level domains (TLDs) have longer renewal periods.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>When you register a domain with Route 53, it creates a hosted zone that has the same name as the domain, assigns four name servers to the hosted zone, and updates the domain to use those name servers.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="digest">Digest&lt;/h2>
+&lt;ul>
+&lt;li>Route 53 is AWS DNS service&lt;/li>
+&lt;li>Map domain names to EC2 instances, Load Balancers and 53 buckets&lt;/li>
+&lt;li>Routing Policies
+&lt;ul>
+&lt;li>Simple - Traffic routed to a single resource&lt;/li>
+&lt;li>Weighted - Traffic routed to a resource = weight assigned to the resource/sum of all the weights&lt;/li>
+&lt;li>Latency - serves requests from the AWS region with low latency&lt;/li>
+&lt;li>Geographical - routes the traffic based on the location of the request origin&lt;/li>
+&lt;li>Failover - routes traffic to primary when primary healthy; secondary when primary is unhealthy&lt;/li>
+&lt;li>Multivalue Answer - routs randomly to multiple healthy resources&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>VPC - private network on AWS platform
+&lt;ul>
+&lt;li>Subnet, NAT Instance, NAT Gatewav, Internet Gatewav, NACLs, Route Table&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>VPC Wizard
+&lt;ul>
+&lt;li>Single public subnet&lt;/li>
+&lt;li>Public and Private subnet (NAT)&lt;/li>
+&lt;li>Public and private subnet and AWS managed VPN access&lt;/li>
+&lt;li>Private subnet only and AWS managed VPN access&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>VPC Peering - helps transfer of data&lt;/li>
+&lt;li>VPC Flow logs - helps capture information about incoming/outgoing traffic&lt;/li>
+&lt;li>Direct Connect - dedicated connection from on premises network to VPC&lt;/li>
+&lt;/ul>
+&lt;h2 id="price">Price&lt;/h2>
+&lt;p>Pay only for what you use.&lt;/p>
+&lt;p>&lt;a href="https://aws.amazon.com/route53/pricing/">Current price&lt;/a>&lt;/p>
+&lt;h2 id="use-cases">Use Cases&lt;/h2>
+&lt;ul>
+&lt;li>Domain Registration / transfer&lt;/li>
+&lt;li>Manage network traffic globally&lt;/li>
+&lt;li>Set up private DNS&lt;/li>
+&lt;/ul></description></item></channel></rss>

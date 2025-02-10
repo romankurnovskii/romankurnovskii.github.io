@@ -1,3 +1,71 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cognito on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/cognito/</link><description>Recent content in Cognito on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 23 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/cognito/index.xml" rel="self" type="application/rss+xml"/><item><title>Cognito</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cognito/</link><pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cognito/</guid><description>About Amazon Cognito - Simple and Secure User Sign-Up, Sign-In, and Access Control
-Documentation User Guide Amazon Cognito lets you add user sign-up, sign-in, and access control to your web and mobile apps quickly and easily. Amazon Cognito scales to millions of users and supports sign-in with social identity providers, such as Apple, Facebook, Google, and Amazon, and enterprise identity providers via SAML 2.0 and OpenID Connect.
-Users can sign in directly with a user name and password, or through a third party such as Facebook, Amazon, or Google.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cognito on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/cognito/</link><description>Recent content in Cognito on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 23 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/cognito/index.xml" rel="self" type="application/rss+xml"/><item><title>Cognito</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cognito/</link><pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cognito/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>Amazon Cognito - Simple and Secure User Sign-Up, Sign-In, and Access Control&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/cognito/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/cognito/?id=docs_gateway">User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Amazon Cognito lets you add user sign-up, sign-in, and access control to your web and mobile apps quickly and easily. Amazon Cognito scales to millions of users and supports sign-in with social identity providers, such as Apple, Facebook, Google, and Amazon, and enterprise identity providers via SAML 2.0 and OpenID Connect.&lt;/p>
+&lt;p>Users can sign in directly with a user name and password, or through a third party such as Facebook, Amazon, or Google.&lt;/p>
+&lt;h3 id="alternatives">Alternatives&lt;/h3>
+&lt;ul>
+&lt;li>Auth0&lt;/li>
+&lt;li>Microsoft Azure Active Directory&lt;/li>
+&lt;li>OneLogin&lt;/li>
+&lt;li>Google Cloud Identity Platform&lt;/li>
+&lt;li>IBM Security Verify&lt;/li>
+&lt;li>Keycloak&lt;/li>
+&lt;/ul>
+&lt;h3 id="terminology">Terminology&lt;/h3>
+&lt;p>&lt;strong>Credentials&lt;/strong>: The temporary security credentials, which include an access key ID, a secret access key, and a security token.&lt;/p>
+&lt;p>&lt;strong>AssumedRoleUser&lt;/strong>: The ARN and the assumed role ID, which are identifiers for the temporary security credentials that you can programatically refer to.&lt;/p>
+&lt;h2 id="price">Price&lt;/h2>
+&lt;p>Pay only for what you use. First 50,000 (monthly active users (MAUs) - Free.&lt;/p>
+&lt;p>&lt;a href="https://aws.amazon.com/cognito/pricing/">Current price&lt;/a>&lt;/p>
+&lt;h2 id="use-cases">Use Cases&lt;/h2>
+&lt;p>Type: Identity &amp;amp; access management&lt;/p>
+&lt;p>Same type services: Identity &amp;amp; Access Management (IAM), Single Sign-On, Cognito, Directory Service, Resource Access Manager, Organisations&lt;/p>
+&lt;h3 id="workflow">Workflow&lt;/h3>
+&lt;p>The process of authenticating a user with Cognito is as follows:&lt;/p>
+&lt;ol>
+&lt;li>The user signs in with a Web ID provider (Google, Facebook, Amazon, etc.)&lt;/li>
+&lt;li>The Web ID provider returns a JWT token to the user&lt;/li>
+&lt;li>The user application makes an STS API call: sts assume-role-with-web-identity&lt;/li>
+&lt;li>STS returns an API response with the temporary credentials&lt;/li>
+&lt;li>The user application now has AWS access e.g. for S3, DynamoDB, etc.&lt;/li>
+&lt;/ol>
+&lt;h2 id="practice">Practice&lt;/h2>
+&lt;p>&lt;a href="manage-authentication-amazon-cognito">Manage Authentication with Amazon Cognito&lt;/a>&lt;/p>
+&lt;h2 id="questions">Questions&lt;/h2>
+&lt;h3 id="q1">Q1&lt;/h3>
+&lt;p>&lt;strong>You are deploying Multi-Factor Authentication (MFA) on Amazon Cognito. You have set the verification message to be by SMS. However, during testing, you do not receive the MFA SMS on your device.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>What action will best solve this issue?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Use AWS Lambda to send the time-based one-time password by SMS&lt;/li>
+&lt;li>Increase the complexity of the password&lt;/li>
+&lt;li>Create and assign a role with a policy that enables Cognito to send SMS messages to users&lt;/li>
+&lt;li>Create and assign a role with a policy that enables Cognito to send Email messages to users&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html">https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html&lt;/a>&lt;/p>
+&lt;p>&lt;mark style="color:white">3&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q2">Q2&lt;/h3>
+&lt;p>&lt;strong>A developer is adding sign-up and sign-in functionality to an application. The application is required to make an API call to a custom analytics solution to log user sign-in events&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which combination of actions should the developer take to satisfy these requirements? (Select TWO.)&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Use Amazon Cognito to provide the sign-up and sign-in functionality&lt;/li>
+&lt;li>Use AWS IAM to provide the sign-up and sign-in functionality&lt;/li>
+&lt;li>Configure an &lt;a href="https://aws.amazon.com/config/">AWS Config&lt;/a> rule to make the API call triggered by the post-authentication event&lt;/li>
+&lt;li>Invoke an Amazon API Gateway method to make the API call triggered by the post-authentication event&lt;/li>
+&lt;li>Execute an AWS Lambda function to make the API call triggered by the post-authentication event&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="../cognito">Amazon Cognito&lt;/a> adds user sign-up, sign-in, and access control to web and mobile applications quickly and easily. Users can also create an &lt;a href="../lambda">AWS Lambda&lt;/a> function to make an API call to a custom analytics solution and then trigger that function with an Amazon Cognito post authentication trigger.&lt;/p>
+&lt;p>&lt;mark style="color:white">1, 5&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details></description></item></channel></rss>

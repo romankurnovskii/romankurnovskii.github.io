@@ -1,12 +1,590 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AWS Certified Developer (DVA-C01 -> DVA-C02) on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/</link><description>Recent content in AWS Certified Developer (DVA-C01 -> DVA-C02) on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Thu, 08 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/index.xml" rel="self" type="application/rss+xml"/><item><title>EC2</title><link>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/ec2/</link><pubDate>Sat, 10 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/ec2/</guid><description>Amazon EC2 Документация Amazon EC2 - 1 Документация Amazon EC2 - 2 Amazon Elastic Compute Cloud (EC2) - одна из самых популярных служб AWS. EC2 позволяет запускать различные типы облачных экземпляров и оплачивать их по модели &amp;ldquo;оплата за использование&amp;rdquo;. EC2 позволяет контролировать вычислительные ресурсы на уровне операционной системы, работая в вычислительной среде Amazon.
-Цены Актуальный прайс
-Практика Создание EC2 инстанса Заходим на страницу EC2 -&amp;gt; Launch Instance
-Образ EC2 Выбираем нужный нам образ Создание ключей Создадим ключ, чтобы использовать его для подключения к инстансу извне Вводим любое имя.</description></item><item><title>Elastic Beanstalk</title><link>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/elasticbeanstalk/</link><pubDate>Sat, 10 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/elasticbeanstalk/</guid><description>AWS Elastic Beanstalk Документация AWS Elastic Beanstalk Документация AWS Elastic Beanstalk Цены Дополнительная плата за AWS Elastic Beanstalk не взимается. Оплате подлежат только ресурсы AWS, необходимые для хранения и работы приложений.
-Практика Контролируемое развертывание с AWS Elastic Beanstalk Ссылка на лабораторную работу В этой лабораторной работе развернем несколько обновлений версий приложения в среде с балансировкой нагрузки и автоматическим масштабированием.
-Первое обновление развертывается с помощью простого развертывания. Второе обновление развертывается с помощью blue-green развертывания, когда создается отдельная среда для запуска новой версии приложения, а DNS свитчер переключает входящий трафик на новую среду.</description></item><item><title>Lambda</title><link>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/lambda/</link><pubDate>Sun, 11 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/lambda/</guid><description>https://docs.aws.amazon.com/lambda/?id=docs_gateway
-https://aws.amazon.com/lambda/
-AWS Lambda – это сервис бессерверных вычислений, который запускает программный код в ответ на определенные события и отвечает за автоматическое выделение необходимых вычислительных ресурсов.
-AWS Lambda автоматически запускает программный код в ответ на различные события, такие как HTTP‑запросы через Amazon API Gateway, изменение объектов в корзинах Amazon Simple Storage Service (Amazon S3), обновление таблиц в Amazon DynamoDB или смена состояний в AWS Step Functions.
-Поддержка языков Java, Go, PowerShell, Node.js, C#, Python и Ruby
-Цены Актуальный прайс</description></item><item><title>IAM</title><link>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/iam/</link><pubDate>Fri, 09 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/iam/</guid><description>AWS Identity and Access Management Документация AWS IAM Документация AWS IAM AWS Identity and Access Management (IAM) позволяет безопасно контролировать доступ пользователей к службам и ресурсам AWS. Эта услуга предназначена для организаций с множеством пользователей или систем, использующих такие продукты AWS, как Amazon EC2, Amazon RDS и AWS Management Console. С помощью IAM вы можете централизованно управлять пользователями, учетными данными безопасности, такими как ключи доступа, и разрешениями, контролирующими доступ пользователей к ресурсам AWS.
-Практика Переходим на страницу IAM</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AWS Certified Developer (DVA-C01 -> DVA-C02) on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/</link><description>Recent content in AWS Certified Developer (DVA-C01 -> DVA-C02) on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 08 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/index.xml" rel="self" type="application/rss+xml"/><item><title>EC2</title><link>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/ec2/</link><pubDate>Sat, 10 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/ec2/</guid><description>&lt;h1 id="amazon-ec2">Amazon EC2&lt;/h1>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/ec2/">Документация Amazon EC2 - 1&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/ec2/?id=docs_gateway">Документация Amazon EC2 - 2&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Amazon Elastic Compute Cloud (EC2) - одна из самых популярных служб AWS. EC2 позволяет запускать различные типы облачных экземпляров и оплачивать их по модели &amp;ldquo;оплата за использование&amp;rdquo;. EC2 позволяет контролировать вычислительные ресурсы на уровне операционной системы, работая в вычислительной среде Amazon.&lt;/p>
+&lt;h2 id="цены">Цены&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/ec2/pricing/">Актуальный прайс&lt;/a>&lt;/p>
+&lt;h2 id="практика">Практика&lt;/h2>
+&lt;h3 id="создание-ec2-инстанса">Создание EC2 инстанса&lt;/h3>
+&lt;p>Заходим на &lt;a href="https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2">страницу EC2&lt;/a> -&amp;gt; Launch Instance&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/01.png"
+id="zoom-default"
+alt="01.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h4 id="образ-ec2">Образ EC2&lt;/h4>
+&lt;p>Выбираем нужный нам образ
+&lt;p class="md__image">
+&lt;img
+src="./img/02.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h4 id="создание-ключей">Создание ключей&lt;/h4>
+&lt;p>Создадим ключ, чтобы использовать его для подключения к инстансу извне
+&lt;p class="md__image">
+&lt;img
+src="./img/03.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Вводим любое имя. Остальные параметры оставляю по умолчанию
+&lt;p class="md__image">
+&lt;img
+src="./img/04.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+После создания ключа начнется автоматическое скачивание. Ключ понадобится далее для подключения к EC2 с локального терминала&lt;/p>
+&lt;h4 id="сетевые-настройки">Сетевые настройки&lt;/h4>
+&lt;p>В разделе &lt;strong>Network Settings&lt;/strong> оставляю включенным &lt;strong>Allow SSH traffic from&lt;/strong>
+&lt;p class="md__image">
+&lt;img
+src="./img/05.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h4 id="создание">Создание&lt;/h4>
+&lt;p>Нажимаем &lt;strong>Launch Instance&lt;/strong>&lt;/p>
+&lt;p>Инстанс создан и доступен для подключения&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/06.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="подключение-к-ec2-с-терминала">Подключение к EC2 с терминала&lt;/h3>
+&lt;p>Подключимся к EC2 с локального терминала&lt;/p>
+&lt;p>Перенесем созданный и скачанный ранее ключ &lt;mark>mykey&lt;/mark> в папку home текущего пользователя и дадим права на файл &lt;code>CHMOD 400&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">cd&lt;/span> ~
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">cd&lt;/span> Downloads/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mv mykey.pem &lt;span style="color:#bb60d5">$HOME&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">cd&lt;/span> ..
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chmod &lt;span style="color:#40a070">400&lt;/span> mykey.pem
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/07.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Для подключения нам необходим публичный iPv4 адрес. Находим на странице с инстансом&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/08.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Подключаемся с помощью команды &lt;code>ssh&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh -i mykey.pem ec2-user@52.24.109.78
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/03.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="вопросы">Вопросы&lt;/h2>
+&lt;h3 id="вопрос-1">Вопрос 1&lt;/h3>
+&lt;p>&lt;strong>A company is migrating a legacy application to Amazon EC2. The application uses a username and password stored in the source code to connect to a MySQL database. The database will be migrated to an Amazon RDS for MySQL DB instance. As part of the migration, the company wants to implement a secure way to store and automatically rotate the database credentials.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which approach meets these requirements?&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>A) Store the database credentials in environment variables in an Amazon Machine Image (AMI). Rotate the credentials by replacing the AMI.&lt;/li>
+&lt;li>B) Store the database credentials in AWS Systems Manager Parameter Store. Configure Parameter Store to automatically rotate the credentials.&lt;/li>
+&lt;li>C) Store the database credentials in environment variables on the EC2 instances. Rotate the credentials by relaunching the EC2 instances.&lt;/li>
+&lt;li>D) Store the database credentials in AWS Secrets Manager. Configure Secrets Manager to automatically rotate the credentials&lt;/li>
+&lt;/ul>
+&lt;details>
+&lt;summary>Ответ&lt;/summary>
+&lt;div>
+&lt;h4>Правильный ответ: D&lt;/h4>
+&lt;p>D – &lt;a href="https://aws.amazon.com/secrets-manager/">AWS Secrets Manager&lt;/a> helps to protect the credentialsneeded to access databases, applications,services, and other IT resources. The service enables users to easily rotate, manage, and retrieve database credentials, API keys, and other secrets throughout their lifecycle. Users and applications retrieve secrets with a call to the Secrets Manager APIs, eliminating the need to hardcode sensitive information in plaintext. Secrets Manager offers &lt;a href="https://aws.amazon.com/blogs/security/rotate-amazon-rds-database-credentials-automatically-with-aws-secrets-manager/">secret rotation&lt;/a> with built-in integration for Amazon RDS, Amazon Redshift, and Amazon DocumentDB.&lt;/p>
+&lt;/div>
+&lt;/details></description></item><item><title>Elastic Beanstalk</title><link>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/elasticbeanstalk/</link><pubDate>Sat, 10 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/elasticbeanstalk/</guid><description>&lt;h1 id="aws-elastic-beanstalk">AWS Elastic Beanstalk&lt;/h1>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/elasticbeanstalk/">Документация AWS Elastic Beanstalk&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/elasticbeanstalk/?id=docs_gateway">Документация AWS Elastic Beanstalk&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="цены">Цены&lt;/h2>
+&lt;p>Дополнительная плата за AWS Elastic Beanstalk не взимается. Оплате подлежат только ресурсы AWS, необходимые для хранения и работы приложений.&lt;/p>
+&lt;h2 id="практика">Практика&lt;/h2>
+&lt;h3 id="контролируемое-развертывание-с-aws-elastic-beanstalk">Контролируемое развертывание с AWS Elastic Beanstalk&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://cloudacademy.com/lab/run-controlled-deploy-aws-elastic-beanstalk/?context_resource=lp&amp;amp;context_id=4364">Ссылка на лабораторную работу&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>В этой лабораторной работе развернем несколько обновлений версий приложения в среде с балансировкой нагрузки и автоматическим масштабированием.&lt;/p>
+&lt;p>Первое обновление развертывается с помощью простого развертывания. Второе обновление развертывается с помощью &lt;code>blue-green&lt;/code> развертывания, когда создается отдельная среда для запуска новой версии приложения, а DNS свитчер переключает входящий трафик на новую среду.&lt;/p>
+&lt;p>Итоговая архитектура развертывания будет выглядеть следующим образом
+&lt;p class="md__image">
+&lt;img
+src="./img/02.png"
+id="zoom-default"
+alt="02.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h4 id="загрузка-приложения">Загрузка приложения&lt;/h4>
+&lt;p>В данном обзоре я использую код, который предоставил мне Cloudacademy, но у меня есть готовый скрипт для запуска, который вы можете загрузить в Elastic Beanstalk: &lt;a href="./files/nodejs.zip">скачать&lt;/a>&lt;/p>
+&lt;h5 id="создание">Создание&lt;/h5>
+&lt;p>Заходим на страницу &lt;strong>Elastic Beanstalk&lt;/strong> и нажимаем &lt;code>Create Application&lt;/code>
+&lt;p class="md__image">
+&lt;img
+src="./img/03.png"
+id="zoom-default"
+alt="03.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h5 id="название">Название&lt;/h5>
+&lt;p>Указываем название нового приложения
+&lt;p class="md__image">
+&lt;img
+src="./img/04.png"
+id="zoom-default"
+alt="04.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h5 id="выбор-платформы">Выбор платформы&lt;/h5>
+&lt;p>В разделе &lt;code>Platform&lt;/code> выбираем нужную платформу приложения. В нашем случае - &lt;code>Node.js&lt;/code>
+&lt;p class="md__image">
+&lt;img
+src="./img/05.png"
+id="zoom-default"
+alt="05.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h5 id="загрузка-исходников">Загрузка исходников&lt;/h5>
+&lt;p>В разделе &lt;code>Source code origin&lt;/code> указываем версию приложения и загружаем архив с приложением. &lt;a href="./files/nodejs.zip">Пример&lt;/a>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/06.png"
+id="zoom-default"
+alt="06.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h5 id="конфигурация-приложения">Конфигурация приложения&lt;/h5>
+&lt;p>Изменяем предустановку &lt;code>Configuration&lt;/code> на &lt;code>Custom configuration&lt;/code>:
+&lt;p class="md__image">
+&lt;img
+src="./img/07.png"
+id="zoom-default"
+alt="07.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Нажимаем &lt;strong>Edit&lt;/strong> в разделе &lt;strong>Rolling updates and deployments&lt;/strong>&lt;/p>
+&lt;p>В конфигурации по умолчанию обновления распространяются на все экземпляры одновременно. Это приводит к простою приложения, что неприемлемо для производственных сред.&lt;/p>
+&lt;p>Мы установим &lt;code>Rolling&lt;/code> и &lt;code>Batch size&lt;/code> 30%
+&lt;p class="md__image">
+&lt;img
+src="./img/08.png"
+id="zoom-default"
+alt="08.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h5 id="сеть">Сеть&lt;/h5>
+&lt;p>Вернувшись к основной форме приложения, нажмите &lt;strong>Edit&lt;/strong> в конфигурации &lt;strong>Network&lt;/strong>.&lt;/p>
+&lt;p>На форме &lt;strong>Modify network&lt;/strong> настроим следующие значения, затем &lt;strong>Save&lt;/strong>.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>VPC&lt;/strong>: Выберите VPC с блоком CIDR &lt;strong>10.0.0.0/16&lt;/strong>. Это не будет VPC по умолчанию.&lt;/li>
+&lt;li>&lt;strong>Load balancer settings&lt;/strong>:
+&lt;ul>
+&lt;li>&lt;strong>Load balancer subnets&lt;/strong>: Выберите подсети с блоками CIDR &lt;strong>10.0.100.0/24&lt;/strong>(&lt;strong>us-west-2a&lt;/strong>)и &lt;strong>10.0.101.0/24&lt;/strong> (&lt;strong>us-west-2b&lt;/strong>). Это публичные подсети. Балансировщику нагрузки приложений требуется как минимум две подсети в разных зонах доступности&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Instance settings&lt;/strong>:
+&lt;ul>
+&lt;li>&lt;strong>Instance subnets&lt;/strong>: Выберите подсеть с блоком CIDR &lt;strong>10.0.1.0/24&lt;/strong>. Это частная подсеть.
+&lt;p class="md__image">
+&lt;img
+src="./img/09.png"
+id="zoom-default"
+alt="09.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/10.png"
+id="zoom-default"
+alt="10.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h5 id="подтверждение">Подтверждение&lt;/h5>
+&lt;p>Нажимаем &lt;code>Create app&lt;/code>&lt;/p>
+&lt;p>Процесс создания приложения занимает от 5 минут.&lt;/p>
+&lt;p>Далее переходим в раздел Dasboard
+&lt;p class="md__image">
+&lt;img
+src="./img/11.png"
+id="zoom-default"
+alt="11.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>На этом этап загрузки приложения в Elastic Beanstalk закончен. Далее разберем как переключать загрузку новой версии приложения клиентам.&lt;/p>
+&lt;h4 id="загрузка-2-й-версии-приложения">Загрузка 2-й версии приложения&lt;/h4>
+&lt;h5 id="загрузка-версии-20">Загрузка версии 2.0&lt;/h5>
+&lt;p>Нажимаем &lt;code>Upload and deploy&lt;/code> и загружаем обновленный код. _Например, можно том же исходнике изменить текст для сравнения.
+&lt;p class="md__image">
+&lt;img
+src="./img/12.png"
+id="zoom-default"
+alt="12.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Указываем новую версию и настройки публикации
+&lt;p class="md__image">
+&lt;img
+src="./img/13.png"
+id="zoom-default"
+alt="13.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h4 id="сравнение-версий">Сравнение версий&lt;/h4>
+&lt;p>Теперь можем сверить обе версии, пройдя по ссылкам. В моем случае приложения выглядят следующим образом
+&lt;p class="md__image">
+&lt;img
+src="./img/15.png"
+id="zoom-default"
+alt="15.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;p class="md__image">
+&lt;img
+src="./img/14.png"
+id="zoom-default"
+alt="14.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h4 id="смена-url-у-приложений">Смена url у приложений&lt;/h4>
+&lt;p>Теперь поменяем приложения местами. Чтобы пользователь, который ранее заходил по одному адресу, теперь видел 2-ю версию приложения.&lt;/p>
+&lt;p>В разделе &lt;code>Actions&lt;/code> нажимаем &lt;code>Swap environment URLs&lt;/code> и далее выбираем приложение с которым происходит смена
+&lt;p class="md__image">
+&lt;img
+src="./img/16.png"
+id="zoom-default"
+alt="16.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h5 id="удаление-ресурсов-elastic-beanstalk">Удаление ресурсов Elastic Beanstalk&lt;/h5>
+&lt;p>Elastic Beanstalk для развертывания приложений запускает EC2 инстансы, а также прочие сервисы. Но удалить все сервисы можно из одного окна.&lt;/p>
+&lt;ol>
+&lt;li>Идем в раздел Applications&lt;/li>
+&lt;li>Выбираем приложение&lt;/li>
+&lt;li>Нажимаем Actions -&amp;gt; Terminate environment&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/17.png"
+id="zoom-default"
+alt="17.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="ресурсы">Ресурсы&lt;/h2>
+&lt;p>&lt;a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/tutorials.html">https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/tutorials.html&lt;/a>&lt;/p></description></item><item><title>Lambda</title><link>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/lambda/</link><pubDate>Sun, 11 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/lambda/</guid><description>&lt;p>&lt;a href="https://docs.aws.amazon.com/lambda/?id=docs_gateway">https://docs.aws.amazon.com/lambda/?id=docs_gateway&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://aws.amazon.com/lambda/">https://aws.amazon.com/lambda/&lt;/a>&lt;/p>
+&lt;p>AWS Lambda – это сервис &lt;a href="https://aws.amazon.com/serverless/">бессерверных вычислений&lt;/a>, который запускает программный код в ответ на определенные события и отвечает за автоматическое выделение необходимых вычислительных ресурсов.&lt;/p>
+&lt;p>AWS Lambda автоматически запускает программный код в ответ на &lt;a href="http://docs.aws.amazon.com/lambda/latest/dg/intro-core-components.html#intro-core-components-event-sources">различные события&lt;/a>, такие как HTTP‑запросы через &lt;a href="https://aws.amazon.com/api-gateway/">Amazon API Gateway&lt;/a>, изменение объектов в корзинах &lt;a href="https://aws.amazon.com/s3/">Amazon Simple Storage Service&lt;/a> (Amazon S3), обновление таблиц в &lt;a href="https://aws.amazon.com/dynamodb/">Amazon DynamoDB&lt;/a> или смена состояний в &lt;a href="https://aws.amazon.com/step-functions/">AWS Step Functions&lt;/a>.&lt;/p>
+&lt;p>Поддержка языков Java, Go, PowerShell, Node.js, C#, Python и Ruby&lt;/p>
+&lt;h2 id="цены">Цены&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/lambda/pricing/">Актуальный прайс&lt;/a>&lt;/p>
+&lt;p>Цена x86&lt;/p>
+&lt;ul>
+&lt;li>0,0000166667 USD за каждую гигабайт-секунду&lt;/li>
+&lt;li>0,20 USD за 1 млн запросов&lt;/li>
+&lt;/ul>
+&lt;p>Цена Arm&lt;/p>
+&lt;ul>
+&lt;li>0,0000133334 USD за каждую гигабайт-секунду&lt;/li>
+&lt;li>0,20 USD за 1 млн запросов&lt;/li>
+&lt;/ul>
+&lt;h2 id="практика">Практика&lt;/h2>
+&lt;p>В строке поиска Консоли управления AWS введите Lambda и выбираем Lambda в разделе «&lt;strong>&lt;strong>Services&lt;/strong>&lt;/strong>»:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/lambda-1.png"
+id="zoom-default"
+alt="Dsбор сервиса Lambda"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;a href="https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2">https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2#&lt;/a>&lt;/p>
+&lt;p>На странице &lt;strong>Functions&lt;/strong> нажимаем &lt;strong>Create a function&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/lambda-2.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;strong>Author from scratch&lt;/strong> is selected and enter the following values in the bottom form:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Function name&lt;/strong>: &lt;em>MyCustomFunc&lt;/em>&lt;/li>
+&lt;li>&lt;strong>Runtime&lt;/strong>: Node.js 16.X&lt;/li>
+&lt;/ul>
+&lt;p>Я выбираю этот раздел, потому что использую аккаунт cloudacademy. Данная роль дает разрешение на создание функций&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Permissions&lt;/strong>: &lt;strong>Change default execution role&lt;/strong>
+&lt;ul>
+&lt;li>&lt;strong>Execution Role&lt;/strong>: Select &lt;strong>Use an existing role&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Existing role&lt;/strong>: Select the role beginning with &lt;strong>cloudacademylabs-LambdaExecutionRole&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/lambda-3.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>→ &lt;strong>Create function&lt;/strong>&lt;/p>
+&lt;p>Пишу функцию, чтобы просмотреть лог, добавлю печать в терминал. А также добавлю обработку получаемого сообщения (В следующем шаге в разделе тестирования)&lt;/p>
+&lt;p>функция принимает в качестве объекта &lt;code>event&lt;/code> который содержит массив Records. На 1-й (0) позиции Объект &lt;code>Sns&lt;/code> (название сервиса SNS Notifications).&lt;/p>
+&lt;p>В самом объекте будет 2 значения:&lt;/p>
+&lt;ul>
+&lt;li>cook_secs - время варки (микроволновки)&lt;/li>
+&lt;li>req_secs - время приготовления&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>console.log(&lt;span style="color:#4070a0">&amp;#39;Loading function&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>exports.handler &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">function&lt;/span>(event, context) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log(JSON.stringify(event, &lt;span style="color:#007020;font-weight:bold">null&lt;/span>, &lt;span style="color:#40a070">2&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> message &lt;span style="color:#666">=&lt;/span> JSON.parse(event.Records[&lt;span style="color:#40a070">0&lt;/span>].Sns.Message);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (message.cook_secs &lt;span style="color:#666">&amp;lt;&lt;/span> message.req_secs) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (message.pre) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.succeed(&lt;span style="color:#4070a0">&amp;#34;User ended &amp;#34;&lt;/span> &lt;span style="color:#666">+&lt;/span> message.pre &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#4070a0">&amp;#34; preset early&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.succeed(&lt;span style="color:#4070a0">&amp;#34;User ended custom cook time early&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.succeed();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>};
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>→ &lt;strong>Deploy&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/lambda-4.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>→ &lt;strong>Test&lt;/strong>&lt;/p>
+&lt;p>Данная функциональность позволяет протестировать как функция реагирует на определенные события. Попробуем добавить событие от SNS Notifications.&lt;/p>
+&lt;p>Выберем из списка&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/lambda-5.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Получаем шаблон, в котором внесем правки, подправим поле &lt;code>Message&lt;/code> - то самое, которое мы будем обрабатывать в нашей функции.&lt;/p>
+&lt;p>Поле &lt;code>Message&lt;/code>- строка, поэтому наш объект надо будет обернуть в кавычки&lt;/p>
+&lt;p>Чтобы обработчик понимал, что мы ставим кавычки внутри кавычек, необходимо поставить специальный символ &lt;code>\&lt;/code> перед кавычкой.&lt;/p>
+&lt;p>В итоге обновляем одну строку и сохраняем → &lt;strong>Create&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/lambda-6.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Теперь нажимаем на кнопку &lt;strong>Test&lt;/strong>&lt;/p>
+&lt;p>Так как &lt;code>cook_secs&lt;/code> в нашем евенте был меньше, чем &lt;code>req_secs&lt;/code>, то функция распечатала первое условие, а ниже в разделе &lt;strong>Function Logs&lt;/strong> видим сообщение, которые мы распечатываем при инициализации функции &lt;code>Loading function&lt;/code>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/lambda-7.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p></description></item><item><title>IAM</title><link>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/iam/</link><pubDate>Fri, 09 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/iam/</guid><description>&lt;h1 id="aws-identity-and-access-management">AWS Identity and Access Management&lt;/h1>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/iam/">Документация AWS IAM&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/iam/?id=docs_gateway">Документация AWS IAM&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>AWS Identity and Access Management (IAM) позволяет безопасно контролировать доступ пользователей к службам и ресурсам AWS. Эта услуга предназначена для организаций с множеством пользователей или систем, использующих такие продукты AWS, как Amazon EC2, Amazon RDS и AWS Management Console. С помощью IAM вы можете централизованно управлять пользователями, учетными данными безопасности, такими как ключи доступа, и разрешениями, контролирующими доступ пользователей к ресурсам AWS.&lt;/p>
+&lt;h2 id="практика">Практика&lt;/h2>
+&lt;p>Переходим на &lt;a href="https://us-east-1.console.aws.amazon.com/iam/home#/">страницу IAM&lt;/a>&lt;/p>
+&lt;h3 id="создание-групп-iam">Создание групп IAM&lt;/h3>
+&lt;p>На странице &lt;strong>User Groups&lt;/strong> нажимаем &lt;strong>Create group&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/01.png"
+id="zoom-default"
+alt="01.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol>
+&lt;li>Указываем имя группы. Мое: &lt;strong>DevOps&lt;/strong>&lt;/li>
+&lt;li>Добавляем разрешение на просмотр EC2: &lt;strong>AmazonEC2ReadOnlyAccess&lt;/strong>&lt;/li>
+&lt;li>Create
+&lt;p class="md__image">
+&lt;img
+src="./img/02.png"
+id="zoom-default"
+alt="Amazon EC2 Read Only Access"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>Группа создана&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/03.png"
+id="zoom-default"
+alt="IAM Group"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="создание-пользователей-iam">Создание пользователей IAM&lt;/h3>
+&lt;p>На странице &lt;strong>Users&lt;/strong> нажимаем &lt;strong>Create user&lt;/strong>
+&lt;p class="md__image">
+&lt;img
+src="./img/04.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Вводим имя пользователя(логин)
+&lt;p class="md__image">
+&lt;img
+src="./img/05.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="permissions">Permissions&lt;/h3>
+&lt;p>Добавляем пользователя в созданную группу
+&lt;p class="md__image">
+&lt;img
+src="./img/06.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="tags">Tags&lt;/h3>
+&lt;p>Пропускаем раздел или ставим tags. Полезно и популярно устанавливать теги ресурсам в компаниях, где много подключено ресурсов AWS&lt;/p>
+&lt;h3 id="логинпароль">Логин/Пароль&lt;/h3>
+&lt;p>На последнем этапе скачиваем &lt;code>.csv&lt;/code> файл с логином, ключами и паролем. Пароль понадобится далее, чтобы войти в систему под данным пользователем.
+На данной странице имеется ссылка для входа. Ею воспользуемся на следующем шаге
+&lt;p class="md__image">
+&lt;img
+src="./img/07.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="вход-новым-пользователем">Вход новым пользователем&lt;/h3>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/08.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="проверка-прав">Проверка прав&lt;/h3>
+&lt;p>У данного пользователя есть доступ на просмотр EC2 инстансов. Проверим наличие/отсутствие доступа к S3 корзинам.&lt;/p>
+&lt;p>Попробуем создать S3 корзину
+&lt;p class="md__image">
+&lt;img
+src="./img/09.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>После попытки создать корзину получаем окно с указанием на отсутствие прав
+&lt;p class="md__image">
+&lt;img
+src="./img/10.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p></description></item></channel></rss>

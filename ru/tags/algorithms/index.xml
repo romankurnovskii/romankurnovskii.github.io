@@ -1,46 +1,733 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Algorithms on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/algorithms/</link><description>Recent content in Algorithms on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sat, 10 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/algorithms/index.xml" rel="self" type="application/rss+xml"/><item><title>152. Maximum Product Subarray</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/152/</link><pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/152/</guid><description>LeetCode problem
-Problem Statement In this problem, we&amp;rsquo;re given an integer array nums, and our task is to find the maximum product of a contiguous subarray. A subarray is a contiguous part of an array. The interesting part of this problem is that the array can contain both positive and negative numbers, so the maximum product can be obtained by a subarray ending at any index of the array.
-Naive Solution A naive approach to this problem would be to calculate the product of all possible subarrays and return the maximum one.</description></item><item><title>189. Rotate Array</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/189/</link><pubDate>Fri, 28 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/189/</guid><description>LeetCode problem
-Problem Statement Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
-Naive Solution A simple, but inefficient, approach would be to rotate the array k times. In each rotation, we shift every element of the array to the right by one and move the last element to the start of the array. This solution has a time complexity of O(n*k), where n is the number of elements in the array and k is the number of rotations.</description></item><item><title>202. Happy Number</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/202/</link><pubDate>Sun, 18 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/202/</guid><description>LeetCode problem
-Problem Statement In this problem, we are given a number n. We have to determine whether this number is a &amp;ldquo;happy&amp;rdquo; number or not. A happy number is a number defined by the following process:
-Starting with any positive integer, replace the number by the sum of the squares of its digits. Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1. Those numbers for which this process ends in 1 are happy.</description></item><item><title>394. Decode String</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/394/</link><pubDate>Thu, 10 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/394/</guid><description>LeetCode задача 394
-Задача На вход подается закодированная строка, необходимо вернуть её декодированное представление.
-Правило кодирования таково: k[encoded_string], где encoded_string - строка внутри квадратных скобок, повторяется ровно k раз. k - это всегда положительное целое число.
-Подсказки Для решения этой задачи можно использовать стек, т.к. число[строка] могут быть вложенными.
-Подход Всё, что нам нужно, это итерировать строку символ за символом и обрабатывать четыре случая: числа, буквы и скобки. Мы будем использовать один стек для хранения пар вида (префикс строки, число).</description></item><item><title>605. Can Place Flowers</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/605/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/605/</guid><description>LeetCode задача 605
-Задача Дана длинная грядка, на которой некоторые участки уже засажены, а некоторые нет. Однако цветы нельзя сажать на соседние участки.
-Подход Чтобы решить эту задачу, мы будем итерироваться по каждому участку грядки. Если участок пустой и его соседи (если они существуют) тоже пусты, мы сажаем цветок и уменьшаем наш счетчик.
-Алгоритм Итерируемся по каждому участку грядки. Если участок пустой, проверяем его соседей. Если левый сосед пустой или его нет (начало грядки), проверяем правого соседа. Если правый сосед пустой или его нет (конец грядки), сажаем цветок на текущий участок и уменьшаем n.</description></item><item><title>643. Maximum Average Subarray I</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/643/</link><pubDate>Tue, 08 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/643/</guid><description>LeetCode problem
-Problem Statement Given an integer array nums consisting of n elements and an integer k, find a contiguous subarray whose length is equal to k that has the maximum average value and return this value. The result must be accurate up to a decimal point of 10^(-5).
-Naive Solution A straightforward approach would be to calculate the average for every possible subarray of length k. For each starting point, sum the next k numbers and determine the average.</description></item><item><title>1071. Greatest Common Divisor of Strings</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/1071/</link><pubDate>Sun, 30 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/1071/</guid><description>LeetCode задача 1071
-Задача Для двух строк str1 и str2, вернуть наибольший общий делитель (НОД). Если такового не существует, вернуть пустую строку.
-Подход Если строки str1 и str2 имеют НОД строки X, то str1 и str2 могут быть представлены в форме Xn и Xm (где n и m — это натуральные числа), соответственно. Это означает, что str1 должна начинаться с str2 или наоборот.
-Алгоритм Проверка начала строк: если str1 не начинается с str2 или наоборот, то НОД не существует.</description></item><item><title>1359. Count All Valid Pickup and Delivery Options</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1359/</link><pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1359/</guid><description>LeetCode задача 1359
-Задача Дано n заказов, каждый заказ состоит из услуг по приему и доставке.
-Необходимо подсчитать все возможные последовательности приема/доставки так, чтобы доставка(i) всегда шла после приема(i).
-Так как ответ может быть очень большим, верните его по модулю 10^9 + 7.
-Подсказки Использовать комбинаторный подход.
-Для каждого нового заказа у нас есть 2 * (2n-1) способов добавить его в текущую последовательность.
-Мы используем данную формулу, так как:
-Новый заказ может быть вставлен на любое место среди существующих заказов (2n-1 мест).</description></item><item><title>1456. Maximum Number of Vowels in a Substring of Given Length</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1456/</link><pubDate>Wed, 09 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1456/</guid><description>LeetCode Problem 1456
-Problem Statement Given a string s and an integer k, the task is to return the maximum number of vowel letters in any substring of s with length k.
-Vowel letters in English are &amp;lsquo;a&amp;rsquo;, &amp;rsquo;e&amp;rsquo;, &amp;lsquo;i&amp;rsquo;, &amp;lsquo;o&amp;rsquo;, and &amp;lsquo;u&amp;rsquo;.
-Naive Solution The most straightforward solution to this problem is to take every possible substring of length k and count the number of vowels in each of them. This can be done using nested loops. The outer loop runs through each character in the string while the inner loop counts the vowels for each substring of length k.</description></item><item><title>1493. Longest Subarray of 1's After Deleting One Element</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/1493/</link><pubDate>Fri, 11 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/1493/</guid><description>LeetCode Problem 1493
-Problem Statement Given a binary array nums, you should delete one element from it. The goal is to return the size of the longest subarray containing only 1&amp;rsquo;s after this deletion. If no such subarray exists, return 0.
-Naive Solution A straightforward approach is to manually try deleting each element in the array and checking the length of the longest sequence of 1&amp;rsquo;s. This would involve nested loops: an outer loop for deleting an element and an inner loop to check sequences of 1&amp;rsquo;s.</description></item><item><title>1768. Merge Strings Alternately</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1768/</link><pubDate>Mon, 31 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1768/</guid><description>LeetCode задача 1768
-Задача Вам даны две строки word1 и word2. Объедините эти строки, добавляя буквы в чередующем порядке, начиная с word1. Если одна строка длиннее другой, дополнительные буквы добавляются в конец результирующей строки.
-Подход Чтобы решить эту задачу, мы можем использовать два указателя для каждого слова. Начнем с первого символа каждой строки и будем чередовать их, пока одна из строк не закончится. После этого, мы просто добавляем оставшиеся символы из более длинного слова к результирующей строке.
-Алгоритм Инициализация результирующей строки и двух указателей для word1 и word2.</description></item><item><title>2844. Minimum Operations to Make a Special Number</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/2844/</link><pubDate>Sun, 03 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/2844/</guid><description>LeetCode задача 2844
-Задача Дана строка num, представляющая неотрицательное целое число. За одну операцию вы можете выбрать любую цифру числа num и удалить её. Вашей задачей является определить минимальное количество операций, необходимых для преобразования данного числа в &amp;ldquo;специальное&amp;rdquo; число.
-Число считается &amp;ldquo;специальным&amp;rdquo;, если оно делится на 25.
-Подход Анализ возможных окончаний числа: Число, делится на 25 если одно из четырёх возможных окончаний: &amp;lsquo;00&amp;rsquo;, &amp;lsquo;25&amp;rsquo;, &amp;lsquo;50&amp;rsquo;, &amp;lsquo;75&amp;rsquo;.
-При этом самое последнее число должно быть из двух вариантов: &amp;lsquo;5&amp;rsquo; и &amp;lsquo;0&amp;rsquo;.</description></item><item><title>3028. Ant on the Boundary</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/3028/</link><pubDate>Fri, 09 Feb 2024 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/3028/</guid><description>LeetCode задача 3028
-Воспользуемся функцией accumulate из модуля itertools, чтобы упростить вычисление и подсчет количества раз, когда муравей возвращается на границу, пройдя через массив nums.
-Применяем функцию accumulate для подсчета накопительной суммы и подсчитываем количество раз, когда накопительная сумма равна 0.
-Решение class Solution: def returnToBoundaryCount(self, nums: List[int]) -&amp;gt; int: return sum(s == 0 for s in accumulate(nums)) Функция accumulate(nums) генерирует последовательность накопленных сумм элементов массива nums, начиная с первого элемента.
-Затем с помощью генераторного выражения s == 0 for s in accumulate(nums) мы создаем последовательность True и False, в зависимости от того, равна ли накопленная сумма в каждой точке нулю.</description></item><item><title>3030. Find the Grid of Region Average</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/3030/</link><pubDate>Sat, 10 Feb 2024 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/3030/</guid><description>LeetCode задача 3030
-Дана матрица m x n, представляющая изображение в оттенках серого, где image[i][j] представляет пиксель с интенсивностью в диапазоне от 0 до 255. Также дано неотрицательное целое число threshold (пороговое значение).
-Два пикселя image[a][b] и image[c][d] считаются соседними, если |a - c| + |b - d| == 1.
-Регионом считается матрица 3 x 3, где абсолютная разница в интенсивности между любыми двумя соседними пикселями меньше или равна threshold.
-Необходимо вычислить матрицу m x n result, где result[i][j] - это средняя интенсивность региона, к которому принадлежит image[i][j], округленная вниз до ближайшего целого числа.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Algorithms on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/algorithms/</link><description>Recent content in Algorithms on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Mon, 04 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/algorithms/index.xml" rel="self" type="application/rss+xml"/><item><title>152. Maximum Product Subarray</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/152/</link><pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/152/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/maximum-product-subarray">LeetCode problem&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>In this problem, we&amp;rsquo;re given an integer array &lt;code>nums&lt;/code>, and our task is to find the maximum product of a contiguous subarray. A subarray is a contiguous part of an array. The interesting part of this problem is that the array can contain both positive and negative numbers, so the maximum product can be obtained by a subarray ending at any index of the array.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A naive approach to this problem would be to calculate the product of all possible subarrays and return the maximum one. However, this would have a time complexity of O(n²), as there are n*(n+1)/2 subarrays of an array, where n is the length of the array.&lt;/p>
+&lt;p>This would be inefficient and time-consuming for large inputs.&lt;/p>
+&lt;h2 id="dynamic-programming">Dynamic Programming&lt;/h2>
+&lt;p>We can solve this problem efficiently using Dynamic Programming.&lt;/p>
+&lt;p>The idea is to keep track of the maximum and minimum product ending at each position (as the array can contain negative numbers, and a negative number can become maximum when multiplied by another negative number).&lt;/p>
+&lt;p>We initialize two variables, &lt;code>max_prod&lt;/code> and &lt;code>min_prod&lt;/code>, to &lt;code>nums[0]&lt;/code>. Then for each number in the array (from the second number to the end), we calculate &lt;code>max_prod&lt;/code> and &lt;code>min_prod&lt;/code> using the formulas:&lt;/p>
+&lt;pre>&lt;code>max_prod = max(nums[i], max_prod * nums[i], min_prod * nums[i])
+min_prod = min(nums[i], max_prod * nums[i], min_prod * nums[i])
+&lt;/code>&lt;/pre>
+&lt;p>We also keep track of &lt;code>res&lt;/code>, which stores the maximum product of a subarray as a result.&lt;/p>
+&lt;p>If &lt;code>max_prod&lt;/code> is greater than &lt;code>res&lt;/code>, we update &lt;code>res&lt;/code>.&lt;/p>
+&lt;p>Finally, &lt;code>res&lt;/code> will hold the maximum product of a subarray.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Initialize &lt;code>max_prod&lt;/code>, &lt;code>min_prod&lt;/code>, and &lt;code>res&lt;/code> to &lt;code>nums[0]&lt;/code>.&lt;/li>
+&lt;li>For each number in the array (from the second number to the end):
+&lt;ul>
+&lt;li>Update &lt;code>max_prod&lt;/code> and &lt;code>min_prod&lt;/code>.&lt;/li>
+&lt;li>Update &lt;code>res&lt;/code> if &lt;code>max_prod&lt;/code> is greater.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Return &lt;code>res&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;h2 id="python-solution">Python Solution&lt;/h2>
+&lt;p>Here is a Python solution following the described approach:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">maxProduct&lt;/span>(nums):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> nums:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_prod &lt;span style="color:#666">=&lt;/span> min_prod &lt;span style="color:#666">=&lt;/span> res &lt;span style="color:#666">=&lt;/span> nums[&lt;span style="color:#40a070">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> num &lt;span style="color:#007020;font-weight:bold">in&lt;/span> nums[&lt;span style="color:#40a070">1&lt;/span>:]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> new_max &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(num, max_prod &lt;span style="color:#666">*&lt;/span> num, min_prod &lt;span style="color:#666">*&lt;/span> num)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> min_prod &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">min&lt;/span>(num, max_prod &lt;span style="color:#666">*&lt;/span> num, min_prod &lt;span style="color:#666">*&lt;/span> num)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_prod &lt;span style="color:#666">=&lt;/span> new_max
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(res, max_prod)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>189. Rotate Array</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/189/</link><pubDate>Fri, 28 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/189/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/rotate-array/">LeetCode problem&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>Given an integer array &lt;code>nums&lt;/code>, rotate the array to the right by &lt;code>k&lt;/code> steps, where &lt;code>k&lt;/code> is non-negative.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A simple, but inefficient, approach would be to rotate the array &lt;code>k&lt;/code> times. In each rotation, we shift every element of the array to the right by one and move the last element to the start of the array. This solution has a time complexity of O(n*k), where n is the number of elements in the array and k is the number of rotations. This is not an optimal solution, especially when we have a large &lt;code>k&lt;/code> or a large array.&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>An efficient solution can be found by using array reversal. Here&amp;rsquo;s the plan:&lt;/p>
+&lt;ol>
+&lt;li>Reverse the entire array.&lt;/li>
+&lt;li>Reverse the first &lt;code>k&lt;/code> elements.&lt;/li>
+&lt;li>Reverse the remaining &lt;code>n-k&lt;/code> elements.&lt;/li>
+&lt;/ol>
+&lt;p>This method allows us to achieve the desired output in O(n) time and O(1) space complexity.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;p>Let&amp;rsquo;s break down the steps using an example: &lt;code>nums = [1,2,3,4,5,6,7], k = 3&lt;/code>.&lt;/p>
+&lt;ol>
+&lt;li>Reverse the entire array: &lt;code>nums = [7,6,5,4,3,2,1]&lt;/code>.&lt;/li>
+&lt;li>Reverse the first &lt;code>k&lt;/code> elements: &lt;code>nums = [5,6,7,4,3,2,1]&lt;/code>.&lt;/li>
+&lt;li>Reverse the remaining &lt;code>n-k&lt;/code> elements: &lt;code>nums = [5,6,7,1,2,3,4]&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;p>As you can see, we get the expected output &lt;code>[5,6,7,1,2,3,4]&lt;/code>.&lt;/p>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;p>Here is the Python code that implements the aforementioned logic:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">rotate&lt;/span>(self, nums, k):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">reverse&lt;/span>(start, end):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> start &lt;span style="color:#666">&amp;lt;&lt;/span> end:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nums[start], nums[end] &lt;span style="color:#666">=&lt;/span> nums[end], nums[start]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> start &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> end &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> k &lt;span style="color:#666">=&lt;/span> k &lt;span style="color:#666">%&lt;/span> n &lt;span style="color:#60a0b0;font-style:italic"># in case k &amp;gt; len(nums)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reverse(nums, &lt;span style="color:#40a070">0&lt;/span>, n &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>) &lt;span style="color:#60a0b0;font-style:italic"># 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reverse(nums, &lt;span style="color:#40a070">0&lt;/span>, k &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>) &lt;span style="color:#60a0b0;font-style:italic"># 2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reverse(nums, k, n &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>) &lt;span style="color:#60a0b0;font-style:italic"># 3&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>202. Happy Number</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/202/</link><pubDate>Sun, 18 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/202/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/happy-number/">LeetCode problem&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>In this problem, we are given a number &lt;code>n&lt;/code>. We have to determine whether this number is a &amp;ldquo;happy&amp;rdquo; number or not. A happy number is a number defined by the following process:&lt;/p>
+&lt;ol>
+&lt;li>Starting with any positive integer, replace the number by the sum of the squares of its digits.&lt;/li>
+&lt;li>Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1.&lt;/li>
+&lt;li>Those numbers for which this process ends in 1 are happy.&lt;/li>
+&lt;/ol>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A naive solution would be to follow the process as stated in the problem description and use a data structure such as a set to check for repetitions indicating a cycle. If during the process, the number becomes 1, we can conclude that the number is happy. However, if we encounter a number that was already visited, it means we are stuck in a cycle, and the number is not happy.&lt;/p>
+&lt;ol>
+&lt;li>We calculate the sum of squares of the digits of n in each iteration, and check if this sum is 1 or a number we&amp;rsquo;ve seen before.&lt;/li>
+&lt;li>If it&amp;rsquo;s 1, we return true.&lt;/li>
+&lt;li>If it&amp;rsquo;s a number we&amp;rsquo;ve seen before, we return false, as this means we&amp;rsquo;re in an endless loop.&lt;/li>
+&lt;/ol>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;p>However, continuously checking if a number was already visited can be costly in terms of time complexity. A more efficient way to detect cycles is to use the Floyd Cycle detection algorithm (also known as the &lt;a href="https://www.youtube.com/watch?v=S5TcPmTl6ww">&amp;ldquo;Tortoise and the Hare&amp;rdquo; algorithm&lt;/a>).&lt;/p>
+&lt;p>This algorithm allows us to detect a cycle in the sequence without having to store all previously seen numbers, making it more efficient in terms of space usage.&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>Floyd Cycle detection algorithm works by moving two pointers at different speeds - a slow pointer (tortoise) and a fast pointer (hare). If there is a cycle, the fast pointer will eventually meet the slow pointer again.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Initialize two pointers slow and fast as &lt;code>n&lt;/code>.&lt;/li>
+&lt;li>Replace
+&lt;ol>
+&lt;li>slow with the sum of the squares of its digits,&lt;/li>
+&lt;li>and fast with the sum of squares of the next number in the sequence.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>If fast becomes 1, return &lt;code>True&lt;/code>. - &lt;code>n&lt;/code> is a happy number.&lt;/li>
+&lt;li>If slow meets fast and the number is not 1, return &lt;code>False&lt;/code>. - &lt;code>n&lt;/code> is not a happy number as we have detected a cycle.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">isHappy&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">get_next&lt;/span>(num): &lt;span style="color:#60a0b0;font-style:italic"># get the next number in the sequence&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> total_sum &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> num &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># get the last digit of the number and the remaining part&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> num, digit &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">divmod&lt;/span>(num, &lt;span style="color:#40a070">10&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> total_sum &lt;span style="color:#666">+=&lt;/span> digit &lt;span style="color:#666">**&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> total_sum
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> slow &lt;span style="color:#666">=&lt;/span> n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fast &lt;span style="color:#666">=&lt;/span> get_next(n)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> visited &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> fast &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> slow &lt;span style="color:#666">!=&lt;/span> fast:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> slow &lt;span style="color:#666">=&lt;/span> get_next(slow)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fast &lt;span style="color:#666">=&lt;/span> get_next(get_next(fast))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> visited&lt;span style="color:#666">.&lt;/span>add(slow)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> fast &lt;span style="color:#007020;font-weight:bold">in&lt;/span> visited:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> fast &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In this solution, the function &lt;code>get_next(n)&lt;/code> is used to get the next number in the sequence by replacing &lt;code>n&lt;/code> with the sum of the squares of its digits.&lt;/p>
+&lt;p>We initialize &lt;code>slow&lt;/code> and &lt;code>fast&lt;/code> to &lt;code>n&lt;/code> and &lt;code>get_next(n)&lt;/code> respectively.&lt;/p>
+&lt;p>Then, until &lt;code>fast&lt;/code> equals 1 or &lt;code>slow&lt;/code> catches up to &lt;code>fast&lt;/code>, we continue moving &lt;code>slow&lt;/code> one step at a time and &lt;code>fast&lt;/code> two steps at a time. If &lt;code>fast&lt;/code> equals 1 at the end of the loop, &lt;code>n&lt;/code> is a happy number.&lt;/p></description></item><item><title>394. Decode String</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/394/</link><pubDate>Thu, 10 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/394/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/decode-string/">LeetCode задача 394&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>На вход подается закодированная строка, необходимо вернуть её декодированное представление.&lt;/p>
+&lt;p>Правило кодирования таково: &lt;code>k[encoded_string]&lt;/code>, где &lt;code>encoded_string&lt;/code> - строка внутри квадратных скобок, повторяется ровно &lt;code>k&lt;/code> раз. &lt;code>k&lt;/code> - это всегда положительное целое число.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Для решения этой задачи можно использовать стек, т.к. &lt;code>число[строка]&lt;/code> могут быть вложенными.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Всё, что нам нужно, это итерировать строку символ за символом и обрабатывать &lt;mark>четыре случая: числа, буквы и скобки&lt;/mark>. Мы будем использовать один стек для хранения пар вида (префикс строки, число).&lt;/p>
+&lt;p>Т.к. число и строка могут быть внутри другой строки (&lt;code>3[a2[c]] = 3 * (a + 2 * c)&lt;/code>). То используя стек, в котором можем хранить текущую строку до тех пор пока не увидим закрывающуюся скобку для этой строки.&lt;/p>
+&lt;p>Например:&lt;/p>
+&lt;ol>
+&lt;li>Число 3&lt;/li>
+&lt;li>Открывается скобка. Мы еще не знаем какая будет строка далее, но открывающаяся &lt;code>[&lt;/code> скобка сообщает, что мы уже точно знаем строку(или ее префикс), которая была &lt;strong>до&lt;/strong> это скобки.
+&lt;ol>
+&lt;li>
+&lt;p>В данном случае при первой скобке строка до нее пустая.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>А при первой скобке после 2, строка равна &lt;code>a&lt;/code>. Вот эту строку мы и будем складывать с той строкой, которая будет перед следующей открывающейся скобкой.&lt;/p>
+&lt;ol>
+&lt;li>В таком случае получится начало &lt;code>'' + 3 * ('a' + 2 * ... )&lt;/code>&lt;/li>
+&lt;li>B стек будет следующего вида:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">[&lt;/span>&lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>, 3&lt;span style="color:#666">]&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">[&lt;/span>&lt;span style="color:#4070a0">&amp;#39;a&amp;#39;&lt;/span>, 2&lt;span style="color:#666">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;li>Когда доходим до следующей строки и видим скобку закрытия &amp;lsquo;]&amp;rsquo;, то берем последние данные из стека и складываем предыдущую строку с умноженной текущей строкой.
+&lt;ol>
+&lt;li>&lt;code>a + 2*c = acc&lt;/code>&lt;/li>
+&lt;li>&lt;code>'' * 3 * acc&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Инициализируем пустой стек и две переменные для текущей строки и текущего числа.&lt;/li>
+&lt;li>Итерируемся по каждому символу в входной строке.
+&lt;ol>
+&lt;li>Если символ является числом, определяем всё число (возможно, из нескольких цифр).&lt;/li>
+&lt;li>Если символ открывающая скобка, добавляем пару (текущая строка, текущее число) в стек и сбрасываем переменные.&lt;/li>
+&lt;li>Если символ закрывающая скобка, вытаскиваем последнюю пару из стека, и обновляем текущую строку.&lt;/li>
+&lt;li>Если символ является буквой, добавляем его к текущей строке.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">decodeString&lt;/span>(s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">str&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack &lt;span style="color:#666">=&lt;/span> [] &lt;span style="color:#60a0b0;font-style:italic"># стек для пар (строка, число)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr_str &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># текущая декодированная строка&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr_num &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># текущее число&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> char &lt;span style="color:#007020;font-weight:bold">in&lt;/span> s:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> char&lt;span style="color:#666">.&lt;/span>isdigit():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr_num &lt;span style="color:#666">+=&lt;/span> char
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> char &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#4070a0">&amp;#34;[&amp;#34;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># сохраним, что есть на текущий момент&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack&lt;span style="color:#666">.&lt;/span>append((curr_str, &lt;span style="color:#007020">int&lt;/span>(curr_num)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr_str &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr_num &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> char &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#4070a0">&amp;#34;]&amp;#34;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev_str, num &lt;span style="color:#666">=&lt;/span> stack&lt;span style="color:#666">.&lt;/span>pop()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr_str &lt;span style="color:#666">=&lt;/span> prev_str &lt;span style="color:#666">+&lt;/span> num &lt;span style="color:#666">*&lt;/span> curr_str
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr_str &lt;span style="color:#666">+=&lt;/span> char
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> curr_str
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;video width="100%" controls>
+&lt;source src="../../assets/394.ru.mp4" type="video/mp4">
+Your browser does not support the video tag.
+&lt;/video>
+&lt;figcaption>LeetCode 394 Решение&lt;/figcaption></description></item><item><title>605. Can Place Flowers</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/605/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/605/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/can-place-flowers/">LeetCode задача 605&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Дана длинная грядка, на которой некоторые участки уже засажены, а некоторые нет. Однако цветы нельзя сажать на соседние участки.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Чтобы решить эту задачу, мы будем итерироваться по каждому участку грядки. Если участок пустой и его соседи (если они существуют) тоже пусты, мы сажаем цветок и уменьшаем наш счетчик.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Итерируемся по каждому участку грядки.&lt;/li>
+&lt;li>Если участок пустой, проверяем его соседей.
+&lt;ul>
+&lt;li>Если левый сосед пустой или его нет (начало грядки), проверяем правого соседа.&lt;/li>
+&lt;li>Если правый сосед пустой или его нет (конец грядки), сажаем цветок на текущий участок и уменьшаем &lt;code>n&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>В конце проверяем, достиг ли &lt;code>n&lt;/code> нуля или стал отрицательным.
+&lt;ul>
+&lt;li>Если да, то это означает, что мы можем посадить все цветы.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">canPlaceFlowers&lt;/span>(flowerbed, n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">check_neighbors&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> i &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(flowerbed) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> flowerbed[i&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic">#2.2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> flowerbed[i] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> flowerbed[i] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(flowerbed)): &lt;span style="color:#60a0b0;font-style:italic">#1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> flowerbed[i] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic">#2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> i &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> flowerbed[i&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic">#2.1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> check_neighbors(n)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> check_neighbors(n)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> n &lt;span style="color:#666">&amp;lt;=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#60a0b0;font-style:italic">#3&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>643. Maximum Average Subarray I</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/643/</link><pubDate>Tue, 08 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/643/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/maximum-average-subarray-i/">LeetCode problem&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>Given an integer array &lt;code>nums&lt;/code> consisting of &lt;code>n&lt;/code> elements and an integer &lt;code>k&lt;/code>, find a contiguous subarray whose length is equal to &lt;code>k&lt;/code> that has the maximum average value and return this value. The result must be accurate up to a decimal point of 10^(-5).&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A straightforward approach would be to calculate the average for every possible subarray of length &lt;code>k&lt;/code>. For each starting point, sum the next &lt;code>k&lt;/code> numbers and determine the average. This will take O(n*k) time which is not efficient for large values of &lt;code>n&lt;/code> and &lt;code>k&lt;/code>.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;p>One way to improve the naive solution is by observing the overlapping computations. As we move from one subarray to the next, we are recalculating the sum for mostly the same numbers except for the first and the last numbers. This observation points towards the sliding window technique which can be very efficient for such problems.&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>We use the &lt;a href="https://romankurnovskii.com/en/tracks/algorithms-101/algorithms/#sliding-window">sliding window technique&lt;/a>. The idea is to maintain a window of size &lt;code>k&lt;/code> and slide it across the array. The sliding window technique is particularly useful in problems where the array input and the window size remain static, but the starting point of the sliding window moves.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Calculate the sum of the first &lt;code>k&lt;/code> numbers.&lt;/li>
+&lt;li>Slide the window by one position at a time. For every slide, subtract the number that is left behind and add the new number that comes into the window. This will give the sum for the next window of &lt;code>k&lt;/code> numbers.&lt;/li>
+&lt;li>Keep track of the maximum sum as we slide the window.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">findMaxAverage&lt;/span>(nums, k):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Calculate the sum of the first k numbers&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> window_sum &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">sum&lt;/span>(nums[:k])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_sum &lt;span style="color:#666">=&lt;/span> window_sum
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(nums) &lt;span style="color:#666">-&lt;/span> k):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> window_sum &lt;span style="color:#666">=&lt;/span> window_sum &lt;span style="color:#666">-&lt;/span> nums[i] &lt;span style="color:#666">+&lt;/span> nums[i&lt;span style="color:#666">+&lt;/span>k]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_sum &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(max_sum, window_sum)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> max_sum &lt;span style="color:#666">/&lt;/span> k
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1071. Greatest Common Divisor of Strings</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/1071/</link><pubDate>Sun, 30 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/1071/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/greatest-common-divisor-of-strings/">LeetCode задача 1071&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Для двух строк &lt;code>str1&lt;/code> и &lt;code>str2&lt;/code>, вернуть наибольший общий делитель (НОД). Если такового не существует, вернуть пустую строку.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Если строки &lt;code>str1&lt;/code> и &lt;code>str2&lt;/code> имеют НОД строки &lt;code>X&lt;/code>, то &lt;code>str1&lt;/code> и &lt;code>str2&lt;/code> могут быть представлены в форме &lt;code>Xn&lt;/code> и &lt;code>Xm&lt;/code> (где &lt;code>n&lt;/code> и &lt;code>m&lt;/code> — это натуральные числа), соответственно. Это означает, что &lt;code>str1&lt;/code> должна начинаться с &lt;code>str2&lt;/code> или наоборот.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Проверка начала строк: если &lt;code>str1&lt;/code> не начинается с &lt;code>str2&lt;/code> или наоборот, то НОД не существует.&lt;/li>
+&lt;li>Вычисление остатка: удаляем начальный фрагмент одной строки, который совпадает с другой строкой. Это будет остаток &lt;code>remainder&lt;/code>.&lt;/li>
+&lt;li>Рекурсивный вызов: повторяем процедуру для &lt;code>remainder&lt;/code> и меньшей из двух строк.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">gcdOfStrings&lt;/span>(str1: &lt;span style="color:#007020">str&lt;/span>, str2: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">str&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Если одна строка не начинается с другой, НОД не существует&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> str1&lt;span style="color:#666">.&lt;/span>startswith(str2) &lt;span style="color:#007020;font-weight:bold">and&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> str2&lt;span style="color:#666">.&lt;/span>startswith(str1):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Если строки равны, одна из них является НОД&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> str1 &lt;span style="color:#666">==&lt;/span> str2:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> str1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Определение более короткой и более длинной строки&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020">len&lt;/span>(str1) &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(str2):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> longer, shorter &lt;span style="color:#666">=&lt;/span> str1, str2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> longer, shorter &lt;span style="color:#666">=&lt;/span> str2, str1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Вычисление остатка&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> remainder &lt;span style="color:#666">=&lt;/span> longer[&lt;span style="color:#007020">len&lt;/span>(shorter):]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Рекурсивный вызов функции для остатка и более короткой строки&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> gcdOfStrings(remainder, shorter)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1359. Count All Valid Pickup and Delivery Options</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/1359/</link><pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/1359/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/count-all-valid-pickup-and-delivery-options/">LeetCode задача 1359&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Дано &lt;code>n&lt;/code> заказов, каждый заказ состоит из услуг по приему и доставке.&lt;/p>
+&lt;p>Необходимо подсчитать все возможные последовательности приема/доставки так, чтобы доставка(i) всегда шла после приема(i).&lt;/p>
+&lt;p>Так как ответ может быть очень большим, верните его по модулю &lt;code>10^9 + 7&lt;/code>.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Использовать комбинаторный подход.&lt;/p>
+&lt;p>Для каждого нового заказа у нас есть &lt;code>2 * (2n-1)&lt;/code> способов добавить его в текущую последовательность.&lt;/p>
+&lt;p>Мы используем данную формулу, так как:&lt;/p>
+&lt;p>Новый заказ может быть вставлен на любое место среди существующих заказов (2n-1 мест). У нас 2 операции (прием и доставка) для каждого заказа.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Начнем с самого начала,&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Мы получили 1-й заказ &lt;strong>n=1&lt;/strong>&lt;/p>
+&lt;p>Мы можем расставить только в одном порядке: &lt;code>P1 D1&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Теперь мы получили 2-й заказ &lt;strong>n=2&lt;/strong>, и нужно добавить к предыдущему и расставить &lt;code>P2, D2&lt;/code>.&lt;/p>
+&lt;p>Куда мы можем поставить P2?&lt;/p>
+&lt;p>На первое место, второе или третье. И не можем поставить на последнее, т.к. последнее место всегда будет части доставки(D).&lt;/p>
+&lt;p>Попробуем расставить:&lt;/p>
+&lt;ol>
+&lt;li>Всего &lt;strong>3&lt;/strong> возможных позиции куда поставить 2-й (P2) заказ. (Обозначим перестановки от предыдущего заказа как &lt;code>X&lt;/code>):&lt;/li>
+&lt;li>Если &lt;code>P2 X X&lt;/code>, то у P2 и D2 из расстановок - 3 возможных варианта: &lt;code>P2 D2 X X&lt;/code> или &lt;code>P2 X D2 X&lt;/code> или &lt;code>P2 X X D2&lt;/code>&lt;/li>
+&lt;li>Если &lt;code>X P2 X&lt;/code>, - 2 возможных варианта: &lt;code>X P2 D2 X&lt;/code> или &lt;code>X P2 X D2&lt;/code>&lt;/li>
+&lt;li>Если &lt;code>X X P2&lt;/code>, - 1 возможный вариант: &lt;code>X X P2 D2&lt;/code>&lt;/li>
+&lt;li>Отсюда мы получаем формулу, что для &lt;code>n&lt;/code> заказа - &lt;code>n*2&lt;/code> операций, и &lt;code>n*2 -1&lt;/code> возможных комбинаций.&lt;/li>
+&lt;li>Итого получаем, что для второго заказа возможных выборов перестановок &lt;code>3+2+1&lt;/code> - &lt;strong>6&lt;/strong>&lt;/li>
+&lt;li>Также мы видим, что &lt;code>X&lt;/code> - расстановки с предыдущего заказа тоже меняли позиции, поэтому общее количество комбинаций будет равно &lt;mark>произведению количества комбинаций текущего заказа и предыдущего&lt;/mark> - &lt;strong>6*1=6&lt;/strong>&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>Теперь мы получили 3-й заказ &lt;strong>n=3&lt;/strong>,&lt;/p>
+&lt;ol>
+&lt;li>По аналогии с предыдущим, перестановок получается &lt;code>n*2=6&lt;/code>&lt;/li>
+&lt;li>Комбинаций получается &lt;code>5+4+3+2+1&lt;/code> = &lt;strong>15&lt;/strong>&lt;/li>
+&lt;li>Перемножаем с комбинациями из предыдущего заказа &lt;code>15*6=90&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>Для каждого заказа от 1 до n:&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Рассчитываем количество способов добавления заказа в текущую последовательность.&lt;/p>
+&lt;ol>
+&lt;li>Для подсчета комбинаций текущего заказа можно использовать формулу:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span> 2*n * (2*n-1) // 2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> # для n:3 2*3=6, 2*3-1=5, 6*5//2=15
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Умножаем текущее количество комбинаций на количество способов добавления заказа.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">countOrders&lt;/span>(n: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MOD &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">10&lt;/span>&lt;span style="color:#666">**&lt;/span>&lt;span style="color:#40a070">9&lt;/span> &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">7&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> x &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">2&lt;/span>, n &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev_order_combinations &lt;span style="color:#666">=&lt;/span> res
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> order_combinations &lt;span style="color:#666">=&lt;/span> (&lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">*&lt;/span> x) &lt;span style="color:#666">*&lt;/span> (&lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">*&lt;/span> x &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>) &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> prev_order_combinations &lt;span style="color:#666">*&lt;/span> order_combinations &lt;span style="color:#666">%&lt;/span> MOD
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1431. Kids With the Greatest Number of Candies</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/1431/</link><pubDate>Mon, 04 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/1431/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/kids-with-the-greatest-number-of-candies">LeetCode problem 1431. Kids With the Greatest Number of Candies&lt;/a>&lt;/p>
+&lt;h3 id="problem-statement">Problem Statement&lt;/h3>
+&lt;p>Imagine you&amp;rsquo;re in a classroom with a bunch of kids, and each kid has a certain number of candies. You, being super generous, have some extra candies to give away. Now, you&amp;rsquo;re wondering, if you give all these extra candies to one kid at a time, will that kid end up having the most candies in the class? And you want to check this for every kid in the class.&lt;/p>
+&lt;h3 id="hint">Hint&lt;/h3>
+&lt;p>To figure this out, first, find out who currently has the most candies in the class. Then, add the extra candies to each kid&amp;rsquo;s current candies and see if that total is at least as much as the most-candies kid.&lt;/p>
+&lt;h3 id="approach">Approach&lt;/h3>
+&lt;p>Let&amp;rsquo;s make it more relatable:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Find the Kid with Most Candies Now:&lt;/strong> Imagine you&amp;rsquo;re counting how many candies each kid has. The kid with the most candies sets the record for everyone to beat.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Give Extra Candies to Each Kid:&lt;/strong> Now, you give your extra candies to each kid, one by one, and see if their new total beats or matches the record.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Create a List of True or False:&lt;/strong> For each kid, if their total candies with the extra ones are as many or more than the record, write down &lt;code>True&lt;/code>; otherwise, write down &lt;code>False&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">kidsWithCandies&lt;/span>(candies, extra_candies):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_candies &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(candies)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> candy &lt;span style="color:#007020;font-weight:bold">in&lt;/span> candies:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result&lt;span style="color:#666">.&lt;/span>append(candy &lt;span style="color:#666">+&lt;/span> extra_candies &lt;span style="color:#666">&amp;gt;=&lt;/span> max_candies)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> result
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In the &lt;code>kidsWithCandies&lt;/code> method, we first find the maximum number of candies any kid has. We then use list comprehension to create the result list.&lt;/p>
+&lt;p>This problem shows how a problem that seems to require nested loops can be solved efficiently with a single pass over the array by making use of Python&amp;rsquo;s built-in functions and list comprehension. It&amp;rsquo;s a good practice problem for beginners to understand the concepts of array manipulation and using built-in functions.&lt;/p></description></item><item><title>1456. Maximum Number of Vowels in a Substring of Given Length</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1456/</link><pubDate>Wed, 09 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1456/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/">LeetCode Problem 1456&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>Given a string &lt;code>s&lt;/code> and an integer &lt;code>k&lt;/code>, the task is to return the maximum number of vowel letters in any substring of &lt;code>s&lt;/code> with length &lt;code>k&lt;/code>.&lt;/p>
+&lt;p>Vowel letters in English are &amp;lsquo;a&amp;rsquo;, &amp;rsquo;e&amp;rsquo;, &amp;lsquo;i&amp;rsquo;, &amp;lsquo;o&amp;rsquo;, and &amp;lsquo;u&amp;rsquo;.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>The most straightforward solution to this problem is to take every possible substring of length &lt;code>k&lt;/code> and count the number of vowels in each of them. This can be done using nested loops. The outer loop runs through each character in the string while the inner loop counts the vowels for each substring of length &lt;code>k&lt;/code>. The maximum count is then returned.&lt;/p>
+&lt;p>However, this naive solution would be computationally expensive, with a time complexity of $O(n*k)$ where n is the length of the string &lt;code>s&lt;/code>.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;p>The problem can be efficiently solved using a technique called the sliding window approach.&lt;/p>
+&lt;h2 id="approach-sliding-window">Approach: Sliding Window&lt;/h2>
+&lt;p>The idea is to use a window of size &lt;code>k&lt;/code> and slide it across the string &lt;code>s&lt;/code>. Instead of counting the number of vowels in the entire window every time, we adjust the count by adding the new character and removing the leftmost character as the window slides.&lt;/p>
+&lt;p>This way, the number of operations is reduced to just two for every slide, making it a more efficient solution.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Initialize a counter for the number of vowels and a &lt;code>max_vowels&lt;/code> variable to keep track of the maximum number of vowels seen.&lt;/li>
+&lt;li>Traverse through the first &lt;code>k&lt;/code> characters of the string, increasing the counter for each vowel seen.&lt;/li>
+&lt;li>Set &lt;code>max_vowels&lt;/code> to the value of the counter.&lt;/li>
+&lt;li>Start sliding the window from the &lt;code>k&lt;/code>th character. For every new character:
+&lt;ul>
+&lt;li>If it&amp;rsquo;s a vowel, increase the counter.&lt;/li>
+&lt;li>Check the leftmost character of the previous window (i.e., &lt;code>s[i - k]&lt;/code>). If it&amp;rsquo;s a vowel, decrease the counter.&lt;/li>
+&lt;li>Update &lt;code>max_vowels&lt;/code> if the counter is greater than its current value.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">maxVowels&lt;/span>(s, k):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> vowels &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>([&lt;span style="color:#4070a0">&amp;#39;a&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;e&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;i&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;o&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;u&amp;#39;&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">sum&lt;/span>(&lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> char &lt;span style="color:#007020;font-weight:bold">in&lt;/span> s[:k] &lt;span style="color:#007020;font-weight:bold">if&lt;/span> char &lt;span style="color:#007020;font-weight:bold">in&lt;/span> vowels)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_vowels &lt;span style="color:#666">=&lt;/span> count
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(k, &lt;span style="color:#007020">len&lt;/span>(s)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Add the new character to the count if it&amp;#39;s a vowel&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">+=&lt;/span> s[i] &lt;span style="color:#007020;font-weight:bold">in&lt;/span> vowels
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Remove the leftmost character of the previous window from the count if it&amp;#39;s a vowel&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">-=&lt;/span> s[i &lt;span style="color:#666">-&lt;/span> k] &lt;span style="color:#007020;font-weight:bold">in&lt;/span> vowels
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_vowels &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(max_vowels, count)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> max_vowels
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1493. Longest Subarray of 1's After Deleting One Element</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1493/</link><pubDate>Fri, 11 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1493/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/">LeetCode Problem 1493&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>Given a binary array &lt;code>nums&lt;/code>, you should delete one element from it. The goal is to return the size of the longest subarray containing only 1&amp;rsquo;s after this deletion. If no such subarray exists, return 0.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A straightforward approach is to manually try deleting each element in the array and checking the length of the longest sequence of 1&amp;rsquo;s. This would involve nested loops: an outer loop for deleting an element and an inner loop to check sequences of 1&amp;rsquo;s. This method, however, can be inefficient for larger arrays.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;p>Consider that we are allowed to have a subarray with a single zero. It might make things simpler! The sliding window approach will be handy here.&lt;/p>
+&lt;h2 id="approach-sliding-window-with-a-twist">Approach: Sliding Window with a Twist&lt;/h2>
+&lt;p>We can use the sliding window technique again for this problem. However, we need to adapt it slightly. This time, our window can contain at most one zero. Thus, while expanding the window, we should be mindful of the zeros.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Initialize two pointers, &lt;code>left&lt;/code> and &lt;code>right&lt;/code>, to represent the window&amp;rsquo;s boundaries. Also, initialize a counter &lt;code>zeroCount&lt;/code> to track zeros in the current window.&lt;/li>
+&lt;li>Expand the right boundary of the window by moving the &lt;code>right&lt;/code> pointer.&lt;/li>
+&lt;li>If the current number is 0, increment the &lt;code>zeroCount&lt;/code>.&lt;/li>
+&lt;li>If &lt;code>zeroCount&lt;/code> becomes 2, move the &lt;code>left&lt;/code> pointer to the right until a zero is excluded, and decrement the &lt;code>zeroCount&lt;/code>.&lt;/li>
+&lt;li>Track the maximum length of the window found.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">longestSubarray&lt;/span>(nums):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> zeroCount &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> maxLength &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> right &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(nums)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nums[right] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> zeroCount &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> zeroCount &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nums[left] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> zeroCount &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Subtract 1 because we need to delete one element.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> maxLength &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(maxLength, right &lt;span style="color:#666">-&lt;/span> left)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> maxLength
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1768. Merge Strings Alternately</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/1768/</link><pubDate>Mon, 31 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/1768/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/merge-strings-alternately">LeetCode задача 1768&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Вам даны две строки &lt;code>word1&lt;/code> и &lt;code>word2&lt;/code>. Объедините эти строки, добавляя буквы в чередующем порядке, начиная с &lt;code>word1&lt;/code>. Если одна строка длиннее другой, дополнительные буквы добавляются в конец результирующей строки.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Чтобы решить эту задачу, мы можем использовать два указателя для каждого слова. Начнем с первого символа каждой строки и будем чередовать их, пока одна из строк не закончится. После этого, мы просто добавляем оставшиеся символы из более длинного слова к результирующей строке.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Инициализация результирующей строки и двух указателей для &lt;code>word1&lt;/code> и &lt;code>word2&lt;/code>.&lt;/li>
+&lt;li>Итерация по каждому слову, добавление соответствующих символов в результирующую строку в чередующем порядке.&lt;/li>
+&lt;li>Добавление оставшихся символов из более длинного слова к результирующей строке.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">mergeAlternately&lt;/span>(word1: &lt;span style="color:#007020">str&lt;/span>, word2: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">str&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Инициализация результирующей строки и указателей&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i, j &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Итерация по каждому слову&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> i &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(word1) &lt;span style="color:#007020;font-weight:bold">and&lt;/span> j &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(word2):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result&lt;span style="color:#666">.&lt;/span>append(word1[i])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result&lt;span style="color:#666">.&lt;/span>append(word2[j])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> j &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Добавление оставшихся символов&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> i &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(word1):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result&lt;span style="color:#666">.&lt;/span>append(word1[i])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> j &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(word2):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result&lt;span style="color:#666">.&lt;/span>append(word2[j])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> j &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&amp;#34;&lt;/span>&lt;span style="color:#666">.&lt;/span>join(result)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>2839. Check if Strings Can be Made Equal With Operations I</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/2839/</link><pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/2839/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/check-if-strings-can-be-made-equal-with-operations-i/">LeetCode Problem&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>You are given two strings &lt;code>s1&lt;/code> and &lt;code>s2&lt;/code>, both of length 4, consisting of lowercase English letters. The objective is to find out if it&amp;rsquo;s possible to make the two strings equal by swapping certain pairs of characters.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A naive approach would be to try out all possible swap combinations. However, this can be very inefficient, especially when the strings have a large number of characters.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;ol>
+&lt;li>Observe that the swapping condition is quite specific: &lt;code>j - i = 2&lt;/code>.&lt;/li>
+&lt;li>The strings should be permutations of each other.&lt;/li>
+&lt;/ol>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>The efficient solution for this problem involves sorting the characters at even and odd positions separately for both strings and then comparing them.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Sort the characters at even indices for &lt;code>s1&lt;/code> and &lt;code>s2&lt;/code>.&lt;/li>
+&lt;li>Sort the characters at odd indices for &lt;code>s1&lt;/code> and &lt;code>s2&lt;/code>.&lt;/li>
+&lt;li>Compare the sorted characters at even indices for both strings and the sorted characters at odd indices for both strings.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">canBeEqual&lt;/span>(self, s1: &lt;span style="color:#007020">str&lt;/span>, s2: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">bool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> even_s1 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">sorted&lt;/span>(s1[::&lt;span style="color:#40a070">2&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> odd_s1 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">sorted&lt;/span>(s1[&lt;span style="color:#40a070">1&lt;/span>::&lt;span style="color:#40a070">2&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> even_s2 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">sorted&lt;/span>(s2[::&lt;span style="color:#40a070">2&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> odd_s2 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">sorted&lt;/span>(s2[&lt;span style="color:#40a070">1&lt;/span>::&lt;span style="color:#40a070">2&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> even_s1 &lt;span style="color:#666">==&lt;/span> even_s2 &lt;span style="color:#007020;font-weight:bold">and&lt;/span> odd_s1 &lt;span style="color:#666">==&lt;/span> odd_s2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>2840. Check if Strings Can be Made Equal With Operations II</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2840/</link><pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2840/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/check-if-strings-can-be-made-equal-with-operations-ii/">LeetCode Problem 2840&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>You are given two strings &lt;code>s1&lt;/code> and &lt;code>s2&lt;/code>, both of length &lt;code>n&lt;/code>, consisting of lowercase English letters. You can apply certain operations to make them equal. The question is, is it possible?&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A naive approach would be to try all possible swap operations and compare the two strings at each step, which would be highly inefficient.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;ol>
+&lt;li>Observe that swapping can only occur at indices &lt;code>i&lt;/code> and &lt;code>j&lt;/code> where &lt;code>j - i&lt;/code> is even.&lt;/li>
+&lt;li>Separate the string into two different sequences, one containing characters at even indices and the other at odd indices.&lt;/li>
+&lt;li>Check the frequency of characters in both sequences.&lt;/li>
+&lt;/ol>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>The efficient approach involves separating characters at even and odd positions into two different sequences for each string and then comparing the frequency of characters in these sequences.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Initialize two empty lists for &lt;code>s1&lt;/code> and &lt;code>s2&lt;/code>, each to store characters at even and odd positions.&lt;/li>
+&lt;li>Populate these lists with characters from &lt;code>s1&lt;/code> and &lt;code>s2&lt;/code>.&lt;/li>
+&lt;li>Sort these lists.&lt;/li>
+&lt;li>Compare the sorted lists for equality.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">collections&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> Counter
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">checkStrings&lt;/span>(s1: &lt;span style="color:#007020">str&lt;/span>, s2: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">bool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> even_s1 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">sorted&lt;/span>(s1[::&lt;span style="color:#40a070">2&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> odd_s1 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">sorted&lt;/span>(s1[&lt;span style="color:#40a070">1&lt;/span>::&lt;span style="color:#40a070">2&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> even_s2 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">sorted&lt;/span>(s2[::&lt;span style="color:#40a070">2&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> odd_s2 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">sorted&lt;/span>(s2[&lt;span style="color:#40a070">1&lt;/span>::&lt;span style="color:#40a070">2&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> even_s1 &lt;span style="color:#666">==&lt;/span> even_s2 &lt;span style="color:#007020;font-weight:bold">and&lt;/span> odd_s1 &lt;span style="color:#666">==&lt;/span> odd_s2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>2841. Maximum Sum of Almost Unique Subarray</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2841/</link><pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2841/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/maximum-sum-of-almost-unique-subarray/">LeetCode Problem 2841&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>You are given an integer array &lt;code>nums&lt;/code> and two positive integers &lt;code>m&lt;/code> and &lt;code>k&lt;/code>.&lt;/p>
+&lt;p>The task is to return the maximum sum out of all almost unique subarrays of length &lt;code>k&lt;/code> of &lt;code>nums&lt;/code>. If no such subarray exists, return 0.&lt;/p>
+&lt;p>A subarray is &lt;strong>almost unique&lt;/strong> if it contains at least &lt;code>m&lt;/code> pairwise distinct elements.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A naive solution would be to generate all the possible subarrays of length &lt;code>k&lt;/code> and check each one to see if it is almost unique and what its sum is. This would involve nested loops and would not be efficient.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;ol>
+&lt;li>Use sliding window technique to find subarrays of length &lt;code>k&lt;/code>.&lt;/li>
+&lt;li>Keep track of unique elements using a set.&lt;/li>
+&lt;/ol>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>The solution adopts a &lt;strong>sliding window&lt;/strong> approach to go through the given array &lt;code>nums&lt;/code>, checking each subarray of size &lt;code>k&lt;/code> for its &amp;ldquo;almost uniqueness&amp;rdquo; and sum.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>Define a helper function, &lt;code>is_unique&lt;/code>, which will take a subarray and return whether it contains at least &lt;code>m&lt;/code> distinct elements or not.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Initialize a variable &lt;code>_max&lt;/code> to keep track of the maximum sum among the almost unique subarrays.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Loop through &lt;code>nums&lt;/code> using the sliding window technique:&lt;/p>
+&lt;ul>
+&lt;li>Use the &lt;code>is_unique&lt;/code> function to check if the current subarray is almost unique.&lt;/li>
+&lt;li>Update &lt;code>_max&lt;/code> with the maximum sum found so far.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Return &lt;code>_max&lt;/code> if it is not 0; otherwise, return 0.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">maxSum&lt;/span>(nums: List[&lt;span style="color:#007020">int&lt;/span>], m: &lt;span style="color:#007020">int&lt;/span>, k: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">is_unique&lt;/span>(arr, start, end, m):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> distinct_elements &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>(arr[start:end])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020">len&lt;/span>(distinct_elements) &lt;span style="color:#666">&amp;gt;=&lt;/span> m
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _max &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n &lt;span style="color:#666">-&lt;/span> k &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> is_unique(nums, i, i &lt;span style="color:#666">+&lt;/span> k, m):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _max &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(_max, &lt;span style="color:#007020">sum&lt;/span>(nums[i:i &lt;span style="color:#666">+&lt;/span> k]))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> _max &lt;span style="color:#007020;font-weight:bold">if&lt;/span> _max &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>2844. Minimum Operations to Make a Special Number</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2844/</link><pubDate>Sun, 03 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2844/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/minimum-operations-to-make-a-special-number/">LeetCode задача 2844&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Дана строка &lt;code>num&lt;/code>, представляющая неотрицательное целое число. За одну операцию вы можете выбрать любую цифру числа &lt;code>num&lt;/code> и удалить её. Вашей задачей является определить минимальное количество операций, необходимых для преобразования данного числа в &amp;ldquo;специальное&amp;rdquo; число.&lt;/p>
+&lt;p>Число считается &amp;ldquo;специальным&amp;rdquo;, если оно делится на 25.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>Анализ возможных окончаний числа: Число, делится на 25 если одно из четырёх возможных окончаний: &amp;lsquo;00&amp;rsquo;, &amp;lsquo;25&amp;rsquo;, &amp;lsquo;50&amp;rsquo;, &amp;lsquo;75&amp;rsquo;.&lt;/p>
+&lt;p>При этом самое последнее число должно быть из двух вариантов: &amp;lsquo;5&amp;rsquo; и &amp;lsquo;0&amp;rsquo;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Обратный проход по строке: Проходим по строке справа налево, фиксируя наличие символов &amp;lsquo;5&amp;rsquo; и &amp;lsquo;0&amp;rsquo;.&lt;/p>
+&lt;p>Используя эти флаги, ищем возможные окончания &amp;lsquo;00&amp;rsquo;, &amp;lsquo;25&amp;rsquo;, &amp;lsquo;50&amp;rsquo;, &amp;lsquo;75&amp;rsquo;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Подсчет операций: В процессе прохода подсчитываем минимальное количество операций, необходимых для получения &amp;ldquo;специального&amp;rdquo; числа, точнее, как только найдем оба числа.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>Проверка на наличие &amp;lsquo;0&amp;rsquo;: Если в строке нет &amp;lsquo;0&amp;rsquo;, то число не может быть &amp;ldquo;специальным&amp;rdquo;, и количество операций будет равно длине строки. Это случай когда ноль (в случае удаления каждой цифры из числа, остается последним, тогда 0 делится на 25).&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Инициализация переменных для отслеживания наличия &amp;lsquo;5&amp;rsquo; и &amp;lsquo;0&amp;rsquo;.&lt;/li>
+&lt;li>Обратный проход по строке, поиск возможных окончаний и подсчет операций.&lt;/li>
+&lt;li>Возврат результата.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">minimumOperations&lt;/span>(num: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(num)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Инициализация переменных для отслеживания наличия &amp;#39;5&amp;#39; и &amp;#39;0&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> had_5 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> had_0 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Обратный проход по строке&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> had_0 &lt;span style="color:#007020;font-weight:bold">and&lt;/span> num[i] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#4070a0">&amp;#39;0&amp;#39;&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic"># &amp;#39;00&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> n &lt;span style="color:#666">-&lt;/span> i &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> had_0 &lt;span style="color:#007020;font-weight:bold">and&lt;/span> num[i] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#4070a0">&amp;#39;5&amp;#39;&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic"># &amp;#39;50&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> n &lt;span style="color:#666">-&lt;/span> i &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> had_5 &lt;span style="color:#007020;font-weight:bold">and&lt;/span> num[i] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#4070a0">&amp;#39;2&amp;#39;&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic"># &amp;#39;25&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> n &lt;span style="color:#666">-&lt;/span> i &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> had_5 &lt;span style="color:#007020;font-weight:bold">and&lt;/span> num[i] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#4070a0">&amp;#39;7&amp;#39;&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic"># &amp;#39;75&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> n &lt;span style="color:#666">-&lt;/span> i &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Обновление флагов наличия &amp;#39;5&amp;#39; и &amp;#39;0&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> had_0 &lt;span style="color:#666">=&lt;/span> had_0 &lt;span style="color:#007020;font-weight:bold">or&lt;/span> num[i] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#4070a0">&amp;#39;0&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> had_5 &lt;span style="color:#666">=&lt;/span> had_5 &lt;span style="color:#007020;font-weight:bold">or&lt;/span> num[i] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#4070a0">&amp;#39;5&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> n &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> had_0 &lt;span style="color:#007020;font-weight:bold">else&lt;/span> n
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>В некотором смысле такой подход напоминает алгоритм прохождения с двумя указателями. Как только один указатель нашел 0 или 5, он фактически остается на месте, а второй указатель &lt;code>i&lt;/code> идет дальше к началу строки в поисках второй части искомого числа.&lt;/p>
+&lt;rawhtml>
+&lt;/rawhtml></description></item><item><title>2848. Points That Intersect With Cars</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/2848/</link><pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/2848/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/points-that-intersect-with-cars/">LeetCode problem 2848&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>Given cars parked on a number line, represented by starting and ending coordinates, we aim to determine the number of points on this line that are covered by any part of these cars.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A basic approach is to simply iterate through each interval and for each interval, iterate through its range, adding each point to a list. Finally, we can return the length of this list to get the total points. However, this approach has a risk of counting points multiple times when two cars overlap.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;ul>
+&lt;li>Utilizing a set can prevent duplicate counting since sets do not allow duplicates.&lt;/li>
+&lt;li>Iterating through each interval&amp;rsquo;s range and adding it to the set will ensure unique counting.&lt;/li>
+&lt;/ul>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>The idea is to use a set to hold all the integer points that the cars cover. We iterate through each car&amp;rsquo;s interval, and for each interval, we iterate through its range, adding each point to the set. As sets do not allow duplicate values, points that are covered by multiple cars are not double-counted. Finally, we return the size of the set which gives the total unique points covered by the cars.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Initialize an empty set &lt;code>points&lt;/code>.&lt;/li>
+&lt;li>Iterate through each interval in &lt;code>nums&lt;/code>.&lt;/li>
+&lt;li>For each interval, iterate through its range from start to end, adding each point to the &lt;code>points&lt;/code> set.&lt;/li>
+&lt;li>Return the size of the &lt;code>points&lt;/code> set.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">numberOfPoints&lt;/span>(nums: List[List[&lt;span style="color:#007020">int&lt;/span>]]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> points &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> start, end &lt;span style="color:#007020;font-weight:bold">in&lt;/span> nums:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> p &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(start, end &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> points&lt;span style="color:#666">.&lt;/span>add(p)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020">len&lt;/span>(points)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>2849. Determine if a Cell Is Reachable at a Given Time</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2849/</link><pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2849/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/determine-if-a-cell-is-reachable-at-a-given-time">LeetCode problem 2849&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>You are given starting coordinates &lt;code>(sx, sy)&lt;/code> and final coordinates &lt;code>(fx, fy)&lt;/code> on a 2D infinite grid. Starting from the initial position, you can move to any of the 8 adjacent cells in one second. The challenge is to determine if you can reach the final cell &lt;code>(fx, fy)&lt;/code> in exactly &lt;code>t&lt;/code> seconds.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A naive approach would be to use a recursive function to navigate the grid from the starting point &lt;code>(sx, sy)&lt;/code> and attempt to reach the target &lt;code>(fx, fy)&lt;/code> in &lt;code>t&lt;/code> seconds. This approach will check every possible path, which can be very inefficient, especially for larger grids and values of &lt;code>t&lt;/code>.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;ul>
+&lt;li>Understand that not all paths are equal. Moving diagonally is more efficient than moving in a straight line if both x and y distances are positive.&lt;/li>
+&lt;li>Check the constraints. If you cannot reach the destination within the given time &lt;code>t&lt;/code>, there&amp;rsquo;s no need to try any further.&lt;/li>
+&lt;/ul>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>The idea is to calculate the shortest possible time to reach the target and then compare it to the given time &lt;code>t&lt;/code>. If the starting point and the ending point are the same, we can always return to the same position unless the time is exactly 1.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Calculate the difference in x (&lt;code>diff_x&lt;/code>) and y (&lt;code>diff_y&lt;/code>) coordinates.&lt;/li>
+&lt;li>For the minimum of &lt;code>diff_x&lt;/code> and &lt;code>diff_y&lt;/code>, move diagonally. This reduces both x and y distances by 1 in a single step.&lt;/li>
+&lt;li>Move horizontally or vertically for the absolute difference between &lt;code>diff_x&lt;/code> and &lt;code>diff_y&lt;/code>.&lt;/li>
+&lt;li>If &lt;code>(diff_x + diff_y)&lt;/code> is less than or equal to &lt;code>t&lt;/code>, and &lt;code>(t - (diff_x + diff_y))&lt;/code> is an even number or zero, return &lt;code>True&lt;/code>, otherwise return &lt;code>False&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">isReachableAtTime&lt;/span>(sx: &lt;span style="color:#007020">int&lt;/span>, sy: &lt;span style="color:#007020">int&lt;/span>, fx: &lt;span style="color:#007020">int&lt;/span>, fy: &lt;span style="color:#007020">int&lt;/span>, t: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">bool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> diff_x &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(fx &lt;span style="color:#666">-&lt;/span> sx) &lt;span style="color:#60a0b0;font-style:italic"># Calculating the differences in x&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> diff_y &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(fy &lt;span style="color:#666">-&lt;/span> sy) &lt;span style="color:#60a0b0;font-style:italic"># and y coordinates&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> diff_x &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> diff_y &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic"># If both starting and ending points are same&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> t &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> diff_x &lt;span style="color:#666">&amp;lt;=&lt;/span> t &lt;span style="color:#007020;font-weight:bold">and&lt;/span> diff_y &lt;span style="color:#666">&amp;lt;=&lt;/span> t: &lt;span style="color:#60a0b0;font-style:italic"># Check if we can reach the target within given time&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

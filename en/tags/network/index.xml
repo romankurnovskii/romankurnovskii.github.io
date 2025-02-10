@@ -1,4 +1,265 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Network on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/network/</link><description>Recent content in Network on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sat, 30 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/network/index.xml" rel="self" type="application/rss+xml"/><item><title>nmap - cheatsheet</title><link>https://romankurnovskii.com/en/posts/linux/nmap-cheatsheet/</link><pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/nmap-cheatsheet/</guid><description>Scanning Options Nmap Option Description 10.10.10.0/24 Target network range. -sn Disables port scanning. -Pn Disables ICMP Echo Requests -n Disables DNS Resolution. -PE Performs the ping scan by using ICMP Echo Requests against the target. --packet-trace Shows all packets sent and received. --reason Displays the reason for a specific result. --disable-arp-ping Disables ARP Ping Requests. --top-ports=&amp;lt;num&amp;gt; Scans the specified top ports that have been defined as most frequent. -p- Scan all ports. -p22-110 Scan all ports between 22 and 110.</description></item><item><title>Wireless access point with hostapd on Debian</title><link>https://romankurnovskii.com/en/posts/linux/wireless-access-point/</link><pubDate>Fri, 29 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/wireless-access-point/</guid><description>hostapd is a user space daemon for access point and authentication servers. It implements IEEE 802.11 access point management, IEEE 802.1X/WPA/WPA2/EAP Authenticators and RADIUS authentication server. The current version supports Linux (Host AP, mac80211-based drivers) and FreeBSD (net80211). Configure network traffic routing and Network Address Translation (NAT) using iptables.
-Configure the system to forward packets from one network interface to another, applying NAT to the packets going out of the eth0 interface.
-Network configuration where the system is intended to function as a router or gateway between two networks (e.</description></item><item><title>How to disable IPv6 on Debian/Kali Linux</title><link>https://romankurnovskii.com/en/posts/linux/howto-disable-ipv6-on-debian/</link><pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/howto-disable-ipv6-on-debian/</guid><description>TL;DR git clone https://github.com/romankurnovskii/kali-shortcuts.git cd kali-shortcuts chmod +x disable_ipv6.sh sudo ./disable_ipv6.sh Edit sysctl Configuration In the terminal, type sudo vi /etc/sysctl.conf and press Enter. This opens the sysctl.conf file in the text editor with root privileges. Add IPv6 Disable Lines At the end of the file, add the following lines: net.ipv6.conf.all.disable_ipv6 = 1 net.ipv6.conf.default.disable_ipv6 = 1 net.ipv6.conf.lo.disable_ipv6 = 1 These lines will disable IPv6 on all network interfaces, including the loopback interface.
-Save and Exit Save /etc/sysctl.conf and exit text editor Apply Changes To apply the changes without rebooting, run `sudo sysctl -p`` in the terminal.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Network on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/network/</link><description>Recent content in Network on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sat, 30 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/network/index.xml" rel="self" type="application/rss+xml"/><item><title>nmap - cheatsheet</title><link>https://romankurnovskii.com/en/posts/linux/nmap-cheatsheet/</link><pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/nmap-cheatsheet/</guid><description>&lt;h2 id="scanning-options">Scanning Options&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;strong>Nmap Option&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>Description&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>10.10.10.0/24&lt;/code>&lt;/td>
+&lt;td>Target network range.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-sn&lt;/code>&lt;/td>
+&lt;td>Disables port scanning.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-Pn&lt;/code>&lt;/td>
+&lt;td>Disables ICMP Echo Requests&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-n&lt;/code>&lt;/td>
+&lt;td>Disables DNS Resolution.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-PE&lt;/code>&lt;/td>
+&lt;td>Performs the ping scan by using ICMP Echo Requests against the target.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--packet-trace&lt;/code>&lt;/td>
+&lt;td>Shows all packets sent and received.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--reason&lt;/code>&lt;/td>
+&lt;td>Displays the reason for a specific result.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--disable-arp-ping&lt;/code>&lt;/td>
+&lt;td>Disables ARP Ping Requests.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--top-ports=&amp;lt;num&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Scans the specified top ports that have been defined as most frequent.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-p-&lt;/code>&lt;/td>
+&lt;td>Scan all ports.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-p22-110&lt;/code>&lt;/td>
+&lt;td>Scan all ports between 22 and 110.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-p22,25&lt;/code>&lt;/td>
+&lt;td>Scans only the specified ports 22 and 25.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-F&lt;/code>&lt;/td>
+&lt;td>Scans top 100 ports.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-sS&lt;/code>&lt;/td>
+&lt;td>Performs an TCP SYN-Scan.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-sA&lt;/code>&lt;/td>
+&lt;td>Performs an TCP ACK-Scan.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-sU&lt;/code>&lt;/td>
+&lt;td>Performs an UDP Scan.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-sV&lt;/code>&lt;/td>
+&lt;td>Scans the discovered services for their versions.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-sC&lt;/code>&lt;/td>
+&lt;td>Perform a Script Scan with scripts that are categorized as &amp;ldquo;default&amp;rdquo;.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--script &amp;lt;script&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Performs a Script Scan by using the specified scripts.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-O&lt;/code>&lt;/td>
+&lt;td>Performs an OS Detection Scan to determine the OS of the target.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-A&lt;/code>&lt;/td>
+&lt;td>Performs OS Detection, Service Detection, and traceroute scans.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-D RND:5&lt;/code>&lt;/td>
+&lt;td>Sets the number of random Decoys that will be used to scan the target.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-e&lt;/code>&lt;/td>
+&lt;td>Specifies the network interface that is used for the scan.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-S 10.10.10.200&lt;/code>&lt;/td>
+&lt;td>Specifies the source IP address for the scan.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-g&lt;/code>&lt;/td>
+&lt;td>Specifies the source port for the scan.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--dns-server &amp;lt;ns&amp;gt;&lt;/code>&lt;/td>
+&lt;td>DNS resolution is performed by using a specified name server.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="output-options">Output Options&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;strong>Nmap Option&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>Description&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>-oA filename&lt;/code>&lt;/td>
+&lt;td>Stores the results in all available formats starting with the name of &amp;ldquo;filename&amp;rdquo;.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-oN filename&lt;/code>&lt;/td>
+&lt;td>Stores the results in normal format with the name &amp;ldquo;filename&amp;rdquo;.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-oG filename&lt;/code>&lt;/td>
+&lt;td>Stores the results in &amp;ldquo;grepable&amp;rdquo; format with the name of &amp;ldquo;filename&amp;rdquo;.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-oX filename&lt;/code>&lt;/td>
+&lt;td>Stores the results in XML format with the name of &amp;ldquo;filename&amp;rdquo;.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="performance-options">Performance Options&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;strong>Nmap Option&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>Description&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>--max-retries &amp;lt;num&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Sets the number of retries for scans of specific ports.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--stats-every=5s&lt;/code>&lt;/td>
+&lt;td>Displays scan&amp;rsquo;s status every 5 seconds.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-v/-vv&lt;/code>&lt;/td>
+&lt;td>Displays verbose output during the scan.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--initial-rtt-timeout 50ms&lt;/code>&lt;/td>
+&lt;td>Sets the specified time value as initial RTT timeout.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--max-rtt-timeout 100ms&lt;/code>&lt;/td>
+&lt;td>Sets the specified time value as maximum RTT timeout.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--min-rate 300&lt;/code>&lt;/td>
+&lt;td>Sets the number of packets that will be sent simultaneously.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-T &amp;lt;0-5&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Specifies the specific timing template.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Wireless access point with hostapd on Debian</title><link>https://romankurnovskii.com/en/posts/linux/wireless-access-point/</link><pubDate>Fri, 29 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/wireless-access-point/</guid><description>&lt;blockquote>
+&lt;p>&lt;a href="https://manpages.debian.org/testing/hostapd/hostapd.8.en.html">hostapd&lt;/a> is a user space daemon for access point and authentication servers. It implements IEEE 802.11 access point management, IEEE 802.1X/WPA/WPA2/EAP Authenticators and RADIUS authentication server. The current version supports Linux (Host AP, mac80211-based drivers) and FreeBSD (net80211).
+Configure network traffic routing and Network Address Translation (NAT) using &lt;code>iptables&lt;/code>.&lt;/p>&lt;/blockquote>
+&lt;p>Configure the system to forward packets from one network interface to another, applying NAT to the packets going out of the &lt;code>eth0&lt;/code> interface.&lt;/p>
+&lt;p>Network configuration where the system is intended to function as a router or gateway between two networks (e.g., forwarding packets from a Wi-Fi network to an Ethernet network).&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>kali@kali:~$ sudo iptables -t nat -F
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kali@kali:~$
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kali@kali:~$ sudo iptables -F
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kali@kali:~$
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kali@kali:~$ sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kali@kali:~$
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kali@kali:~$ sudo iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kali@kali:~$
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kali@kali:~$ &lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#40a070">1&lt;/span> | sudo tee /proc/sys/net/ipv4/ip_forward &lt;span style="color:#60a0b0;font-style:italic"># (DNS, dhcp still required)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kali@kali:~$
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="1-sudo-iptables--t-nat--f">1. sudo iptables -t nat -F&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>iptables&lt;/code> is a command-line utility used to set up, maintain, and inspect the tables of IP packet filter rules in the Linux kernel.&lt;/li>
+&lt;li>&lt;code>-t nat&lt;/code> specifies the NAT table, one of the several tables in the &lt;code>iptables&lt;/code> utility used for network address translation.&lt;/li>
+&lt;li>&lt;code>-F&lt;/code> stands for &amp;lsquo;flush&amp;rsquo;, which clears or deletes all the rules in the selected table (in this case, the NAT table).&lt;/li>
+&lt;li>Essentially, this command clears all NAT rules that may have been previously set up.&lt;/li>
+&lt;/ul>
+&lt;h2 id="2-sudo-iptables--f">2. sudo iptables -F&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>-F&lt;/code> command is used without the &lt;code>-t&lt;/code> option, which means it applies to the default filter table.&lt;/li>
+&lt;li>This command clears all the rules in the filter table, which is responsible for packet filtering.&lt;/li>
+&lt;/ul>
+&lt;h2 id="3-sudo-iptables--t-nat--a-postrouting--o-eth0--j-masquerade">3. sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE&lt;/h2>
+&lt;p>&lt;code>-A POSTROUTING&lt;/code> adds a rule to the POSTROUTING chain. The POSTROUTING chain is used for altering packets after they have been routed.
+&lt;code>-o eth0&lt;/code> specifies the outgoing network interface, &lt;code>eth0&lt;/code> in this case.
+&lt;code>-j MASQUERADE&lt;/code> sets the &lt;code>MASQUERADE&lt;/code> target. This is used for NAT. It enables IP masquerading, which hides your private IP address behind the public IP address of your network interface (here, &lt;code>eth0&lt;/code>). It&amp;rsquo;s often used in situations where your IP address is dynamically assigned, such as a dial-up or DSL connection.
+This command sets up NAT for packets going out of the &lt;code>eth0&lt;/code> interface.&lt;/p>
+&lt;h2 id="4-sudo-iptables--a-forward--i-wlan0--o-eth0--j-accept">4. sudo iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>-A FORWARD&lt;/code> adds a rule to the FORWARD chain. The FORWARD chain is used for packets that are being routed through the device.&lt;/li>
+&lt;li>&lt;code>-i wlan0&lt;/code> specifies the incoming interface, &lt;code>wlan0&lt;/code> in this case.&lt;/li>
+&lt;li>&lt;code>-o eth0&lt;/code> specifies the outgoing interface, eth0.&lt;/li>
+&lt;li>&lt;code>-j ACCEPT&lt;/code> means that these packets will be accepted and forwarded from &lt;code>wlan0&lt;/code> to &lt;code>eth0&lt;/code>.&lt;/li>
+&lt;li>This command is typically part of configuring the device to act as a router or gateway, forwarding packets from one interface to another.&lt;/li>
+&lt;/ul>
+&lt;h2 id="5-echo-1--sudo-tee-procsysnetipv4ip_forward">5. echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>/proc/sys/net/ipv4/ip_forward&lt;/code> is a system file that controls the IP forwarding setting of the kernel. When this is set to 1, it enables the system to forward IP packets from one network to another, effectively functioning as a router.&lt;/li>
+&lt;li>echo 1 outputs 1, and the | sudo tee part is used to write this value into the &lt;code>ip_forward&lt;/code> file with the necessary permissions.&lt;/li>
+&lt;li>This command is crucial for enabling IP forwarding, allowing the system to route packets between interfaces.&lt;/li>
+&lt;/ul>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://portal.offsec.com/courses/pen-103/books-and-videos/modal/modules/securing-and-monitoring-kali-linux/exercises/securing-the-kali-file-system">https://portal.offsec.com/courses/pen-103/books-and-videos/modal/modules/securing-and-monitoring-kali-linux/exercises/securing-the-kali-file-system&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>How to disable IPv6 on Debian/Kali Linux</title><link>https://romankurnovskii.com/en/posts/linux/howto-disable-ipv6-on-debian/</link><pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/howto-disable-ipv6-on-debian/</guid><description>&lt;h2 id="tldr">TL;DR&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git clone https://github.com/romankurnovskii/kali-shortcuts.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">cd&lt;/span> kali-shortcuts
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chmod +x disable_ipv6.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo ./disable_ipv6.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="edit-sysctl-configuration">Edit sysctl Configuration&lt;/h2>
+&lt;ul>
+&lt;li>In the terminal, type &lt;code>sudo vi /etc/sysctl.conf&lt;/code> and press Enter. This opens the &lt;code>sysctl.conf&lt;/code> file in the text editor with root privileges.&lt;/li>
+&lt;/ul>
+&lt;h2 id="add-ipv6-disable-lines">Add IPv6 Disable Lines&lt;/h2>
+&lt;ul>
+&lt;li>At the end of the file, add the following lines:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>net.ipv6.conf.all.disable_ipv6 = 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>net.ipv6.conf.default.disable_ipv6 = 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>net.ipv6.conf.lo.disable_ipv6 = 1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>These lines will disable IPv6 on all network interfaces, including the loopback interface.&lt;/p>
+&lt;h2 id="save-and-exit">Save and Exit&lt;/h2>
+&lt;ul>
+&lt;li>Save &lt;code>/etc/sysctl.conf&lt;/code> and exit text editor&lt;/li>
+&lt;/ul>
+&lt;h2 id="apply-changes">Apply Changes&lt;/h2>
+&lt;ul>
+&lt;li>To apply the changes without rebooting, run `sudo sysctl -p`` in the terminal. This will reload the sysctl configuration with your changes.&lt;/li>
+&lt;/ul>
+&lt;h2 id="verify-changes-optional">Verify Changes (Optional)&lt;/h2>
+&lt;p>To confirm that IPv6 is disabled, you can run `cat /proc/sys/net/ipv6/conf/all/disable_ipv6``. If it returns 1, then IPv6 has been successfully disabled.&lt;/p>
+&lt;h2 id="reboot-optional">Reboot (Optional)&lt;/h2>
+&lt;p>While the &lt;code>sysctl -p&lt;/code> command applies changes immediately, it&amp;rsquo;s a good idea to reboot your system to ensure that the changes persist after a restart. You can reboot by typing &lt;code>sudo reboot&lt;/code> in the terminal.&lt;/p>
+&lt;h2 id="troubleshooting">Troubleshooting&lt;/h2>
+&lt;h3 id="linux-cant-add-ipv6-to-interface-tun0">Linux can&amp;rsquo;t add IPv6 to interface tun0&lt;/h3>
+&lt;p>Can happen when trying to connect through OpenVPN.&lt;/p>
+&lt;p>In the client file &lt;code>.ovpn&lt;/code> add lines:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>pull-filter ignore &amp;#34;ifconfig-ipv6&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pull-filter ignore &amp;#34;route-ipv6&amp;#34;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

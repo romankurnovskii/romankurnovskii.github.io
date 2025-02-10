@@ -1,4 +1,220 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CloudFormation on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudformation/</link><description>Recent content in CloudFormation on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Thu, 15 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudformation/index.xml" rel="self" type="application/rss+xml"/><item><title>Initializing Amazon EC2 Instances with AWS CloudFormation Init</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudformation/initializing-ec2-with-cloudformation/</link><pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudformation/initializing-ec2-with-cloudformation/</guid><description>Lab Initializing Amazon EC2 Instances with AWS CloudFormation Init Establishing Desired EC2 Instance State with AWS CloudFormation Init 1. In the AWS Console search bar, search for cloudformation and click the CloudFormation result under Services:
-2. Click the Create stack dropdown menu and select With new resources:
-3. In the Create stack form, in the Specify template section, ensure Amazon S3 URLis selected for the Template source.
-4. Paste in the following URL in the Amazon S3 URL field:</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CloudFormation on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudformation/</link><description>Recent content in CloudFormation on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 15 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudformation/index.xml" rel="self" type="application/rss+xml"/><item><title>Initializing Amazon EC2 Instances with AWS CloudFormation Init</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudformation/initializing-ec2-with-cloudformation/</link><pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudformation/initializing-ec2-with-cloudformation/</guid><description>&lt;h2 id="lab">Lab&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://cloudacademy.com/lab/initializing-amazon-ec2-instances-with-aws-cloudformation-init">Initializing Amazon EC2 Instances with AWS CloudFormation Init&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="establishing-desired-ec2-instance-state-with-aws-cloudformation-init">Establishing Desired EC2 Instance State with AWS CloudFormation Init&lt;/h2>
+&lt;p>1. In the AWS Console search bar, search for &lt;em>cloudformation&lt;/em> and click the &lt;strong>CloudFormation&lt;/strong> result under &lt;strong>Services&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220316112637-1-3361018d-b31b-42d8-bce9-8ecbb7e40629.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>2. Click the &lt;strong>Create stack&lt;/strong> dropdown menu and select &lt;strong>With new resources&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220421110013-2-a3da6ef1-70cb-42ed-8741-0cfac17de1dd.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>3. In the &lt;strong>Create stack&lt;/strong> form, in the &lt;strong>Specify template&lt;/strong> section, ensure &lt;strong>Amazon S3 URL&lt;/strong>is selected for the &lt;strong>Template source&lt;/strong>.&lt;/p>
+&lt;p>4. Paste in the following URL in the &lt;strong>Amazon S3 URL&lt;/strong> field:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#062873;font-weight:bold">AWSTemplateFormatVersion&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#4070a0">&amp;#39;2010-09-09&amp;#39;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">Description&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>Provision a Single Amazon EC2 Instance with CFN Helper Scripts&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">Parameters&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">AmiID&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">Description&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>The ID of the AMI.&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">Type&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>AWS::SSM::Parameter::Value&amp;lt;AWS::EC2::Image::Id&amp;gt;&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">Default&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">Resources&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">WebServer&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">Type&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>AWS::EC2::Instance&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">Properties&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">ImageId&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>!Ref AmiID&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">InstanceType&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>t3.micro&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">SecurityGroupIds&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- !Ref WebServerSecurityGroup&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">UserData&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#60a0b0;font-style:italic"># Update aws-cfn-bootstrap&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#60a0b0;font-style:italic"># Run cfn-init to initialize WebServer content&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#60a0b0;font-style:italic"># Return cfn-init run result to CloudFormation upon completion&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">Fn::Base64&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>!Sub |&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#60a0b0;font-style:italic">#!/bin/bash -xe&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>yum update -y aws-cfn-bootstrap&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>/opt/aws/bin/cfn-init -v --stack ${AWS::StackName} --resource WebServer --region ${AWS::Region}&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>/opt/aws/bin/cfn-signal -e $? --stack ${AWS::StackName} --resource WebServer --region ${AWS::Region}&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">CreationPolicy&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">ResourceSignal&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">Count&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#40a070">1&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">Timeout&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>PT5M&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">Metadata&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">AWS::CloudFormation::Init&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">config&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">packages&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">yum&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">httpd&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>[]&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">files&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#4070a0">&amp;#34;/var/www/html/index.html&amp;#34;&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">content&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>|&lt;span style="color:#4070a0;font-style:italic">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-style:italic"> &amp;lt;center&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-style:italic"> &amp;lt;h1&amp;gt;Cloud Academy EC2 Instance&amp;lt;/h1&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-style:italic"> &amp;lt;h3&amp;gt;This content has been initialized with &amp;lt;a href=&amp;#34;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-helper-scripts-reference.html&amp;#34; target=&amp;#34;_blank&amp;#34;&amp;gt;AWS CloudFormation Helper Scripts&amp;lt;/a&amp;gt;&amp;lt;/h3&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-style:italic"> &amp;lt;/center&amp;gt;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">mode&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#4070a0">&amp;#39;000644&amp;#39;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">services&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">sysvinit&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">httpd&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">enabled&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#4070a0">&amp;#39;true&amp;#39;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">ensureRunning&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#4070a0">&amp;#39;true&amp;#39;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">WebServerSecurityGroup&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">Type&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>AWS::EC2::SecurityGroup&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">Properties&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">GroupDescription&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>SSH and HTTP&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">SecurityGroupIngress&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#062873;font-weight:bold">CidrIp&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#40a070">0.0.0.0&lt;/span>/0&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">FromPort&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#40a070">22&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">IpProtocol&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>tcp&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">ToPort&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#40a070">22&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#062873;font-weight:bold">CidrIp&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#40a070">0.0.0.0&lt;/span>/0&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">FromPort&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#40a070">80&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">IpProtocol&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>tcp&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">ToPort&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#40a070">80&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">Outputs&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">WebServerPublicDNS&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">Description&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>Public DNS of EC2 instance&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">Value&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>!GetAtt WebServer.PublicDnsName&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220421110301-3-f9a751e0-a1ee-4e66-9118-1ee65ed8f828.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The CloudFormation stack template is stored in a public S3 bucket. The EC2 instance resource definition is shown below:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220421110828-4-4ae29bc7-89fb-4877-8f8f-22acd70bacb8.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The &lt;code>WebServer&lt;/code> EC2 instance is defined above. It is a size &lt;code>t3.micro&lt;/code> instance that references a &lt;code>WebServerSecurityGroup&lt;/code> resource for its security group and the &lt;code>AmiID&lt;/code> parameter for its image ID. Both of these referenced configurations are defined elsewhere in the template.&lt;/p>
+&lt;p>The &lt;code>UserData&lt;/code> script defined next performs the following tasks once the EC2 instance is created:&lt;/p>
+&lt;ul>
+&lt;li>Updates the &lt;code>aws-cfn-bootstrap&lt;/code>package to retrieve the latest version of the helper scripts&lt;/li>
+&lt;li>Runs the &lt;code>cfn-init&lt;/code> helper script to execute the &lt;code>WebServer&lt;/code> instance &lt;code>Metadata&lt;/code> scripts&lt;/li>
+&lt;li>Runs the &lt;code>cfn-signal&lt;/code>helper script to notify CloudFormation after all the service(s) (Apache in this case) is installed and configured on the EC2 instance&lt;/li>
+&lt;/ul>
+&lt;p>&lt;em>Note&lt;/em>: The &lt;code>cfn-init&lt;/code> helper script is not executed automatically. You must run the &lt;code>cfn-init&lt;/code> script within the EC2 instance &lt;code>UserData&lt;/code> in order to execute your metadata scripts.&lt;/p>
+&lt;p>The &lt;code>cfn-signal&lt;/code> helper script works hand-in-hand with the &lt;code>CreationPolicy&lt;/code> configuration. The &lt;code>ResourceSignal&lt;/code> property has a &lt;code>Count&lt;/code> of &lt;code>1&lt;/code> and a &lt;code>Timeout&lt;/code> of &lt;code>PT5M&lt;/code>. This instructs CloudFormation to wait for up to 5 minutes to receive 1 resource signal from the EC2 instance.&lt;/p>
+&lt;p>The &lt;code>cfn-signal&lt;/code> helper script call in the &lt;code>UserData&lt;/code> uses &lt;code>$?&lt;/code> to retrieve the return code of the previous script. If the &lt;code>cfn-init&lt;/code> script is successful and the EC2 instance is configured properly, &lt;code>cfn-signal&lt;/code> returns a success to CloudFormation which then transitions the EC2 instance to the CREATE_COMPLETEstatus. If the &lt;code>cfn-init&lt;/code> script is unsuccessful or the timeout of 5 minutes expires before receiving a signal, then the EC2 instance will be transitioned to a CREATE_FAILEDstatus and the stack deployment will fail.&lt;/p>
+&lt;p>The EC2 instance &lt;code>Metadata&lt;/code> configuration is the same as the previous lab step. It defines a &lt;code>AWS::CloudFormation::Init&lt;/code> script to install the &lt;code>httpd&lt;/code> package using &lt;code>yum&lt;/code>, generate an &lt;code>index.html&lt;/code> file within &lt;code>/var/www/html/&lt;/code> and start the &lt;code>httpd&lt;/code> service to serve the content from the EC2 instance.&lt;/p>
+&lt;p>5. Click &lt;strong>Next&lt;/strong>to continue:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220421114023-5-f4e13221-bc4d-4fa1-9cb7-c78cec87a773.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>6. Enter &lt;em>web-server-stack&lt;/em> for the &lt;strong>Stack name&lt;/strong> and click &lt;strong>Next&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220421114124-6-e6db9f5b-3960-443c-aeb4-798e9f9927af.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>7. You will not be configuring additional stack options. Scroll to the bottom of the page and click &lt;strong>Next&lt;/strong>.&lt;/p>
+&lt;p>8. On the review page, scroll to the bottom and click &lt;strong>Create stack&lt;/strong>to deploy your stack:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220421114250-7-c2f94ff5-1f5f-488e-a271-583d80b7046c.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Your stack will begin deploying and you will be brought to the &lt;strong>Events&lt;/strong> page of your &lt;strong>web-server-stack&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220421114426-10-d453317b-c279-4a04-a944-9206b9dd0cb9.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The stack can take up to 3 minutes to deploy successfully.&lt;/p>
+&lt;p>9. If the &lt;strong>Events&lt;/strong> section does not automatically refresh after 3 minutes, click the refresh icon:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220421114322-9-8e35281f-1d3a-4fdf-b6b1-66d7a4cb4b02.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220421114736-11-b91e928b-cf9d-499e-ab39-cf8c90ccd343.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The &lt;strong>WebServer&lt;/strong> instance remains in a &lt;strong>CREATE_IN_PROGRESS&lt;/strong> status until CloudFormation receives a &lt;strong>SUCCESS&lt;/strong> signal from the instance. In the screenshot above, the &lt;strong>UniqueId&lt;/strong> of &lt;strong>i-0fd18c8deb52983d5&lt;/strong> belongs to the WebServer instance.&lt;/p>
+&lt;p>After the success signal is received, the WebServer instance is transitioned into the &lt;strong>CREATE_COMPLETE&lt;/strong> status.&lt;/p>
+&lt;p>Without the CloudFormation signal helper script, CloudFormation would have transitioned the EC2 instance to a completed status when the resource was created instead of waiting until the Apache service has been installed and running on the instance.&lt;/p>
+&lt;p>10. Click the &lt;strong>Outputs&lt;/strong> tab on the &lt;strong>web-server-stack&lt;/strong> page:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220421115446-12-15b6ebff-5017-4f38-8be6-43b82fb8f1d3.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>11. Right-click and open the &lt;strong>WebServerPublicDNS&lt;/strong> URL in a new browser tab:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220421115526-13-6b325ec1-b9cb-4edc-981f-aa54d2cc2fc3.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The HTMLpage generated in the cfn-init script is now being served from the Apache server running within your WebServer EC2 instance:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220421115613-14-74080d13-05fb-406f-a63b-cd5fe05c428e.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p></description></item></channel></rss>

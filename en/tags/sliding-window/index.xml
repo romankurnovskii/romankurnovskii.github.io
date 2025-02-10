@@ -1,7 +1,134 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sliding Window on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/sliding-window/</link><description>Recent content in Sliding Window on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Tue, 08 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/sliding-window/index.xml" rel="self" type="application/rss+xml"/><item><title>3. Longest Substring Without Repeating Characters</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/3/</link><pubDate>Tue, 18 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/3/</guid><description>LeetCode problem
-Given a string s, find the length of the longest substring without repeating characters.
-Example 1:
-Input: s = &amp;quot;abcabcbb&amp;quot; Output: 3 Explanation: The answer is &amp;quot;abc&amp;quot;, with the length of 3. First accepted Idea:
-Loop through string Calculate max count of elements in substring If get double element, then go back until get this element and do step 2. Proceed the main loop class Solution: def lengthOfLongestSubstring(self, s: str) -&amp;gt; int: uniqs = set() len_max = 0 len_current = 0 idx = 0 for i in s: if i in uniqs: len_max = max(len_max, len_current) len_current = 1 uniqs = set(i) for j in reversed(s[:idx]): if j == i: break else: len_current += 1 uniqs.</description></item><item><title>643. Maximum Average Subarray I</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/643/</link><pubDate>Tue, 08 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/643/</guid><description>LeetCode problem
-Problem Statement Given an integer array nums consisting of n elements and an integer k, find a contiguous subarray whose length is equal to k that has the maximum average value and return this value. The result must be accurate up to a decimal point of 10^(-5).
-Naive Solution A straightforward approach would be to calculate the average for every possible subarray of length k. For each starting point, sum the next k numbers and determine the average.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sliding Window on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/sliding-window/</link><description>Recent content in Sliding Window on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Tue, 08 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/sliding-window/index.xml" rel="self" type="application/rss+xml"/><item><title>3. Longest Substring Without Repeating Characters</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/3/</link><pubDate>Tue, 18 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/3/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given a string &lt;code>s&lt;/code>, find the length of the longest substring without repeating characters.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: s = &amp;quot;abcabcbb&amp;quot;
+Output: 3
+Explanation: The answer is &amp;quot;abc&amp;quot;, with the length of 3.
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Loop through string&lt;/li>
+&lt;li>Calculate max count of elements in substring&lt;/li>
+&lt;li>If get double element, then go back until get this element and do step 2.&lt;/li>
+&lt;li>Proceed the main loop&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/3.jpg"
+id="zoom-default"
+alt="Longest Substring Without Repeating Characters"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">lengthOfLongestSubstring&lt;/span>(self, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uniqs &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_max &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_current &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> idx &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> s:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> uniqs:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_max &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(len_max, len_current)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_current &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uniqs &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">reversed&lt;/span>(s[:idx]):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> j &lt;span style="color:#666">==&lt;/span> i:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_current &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uniqs&lt;span style="color:#666">.&lt;/span>add(j)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uniqs&lt;span style="color:#666">.&lt;/span>add(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_current &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_max &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(len_max, len_current)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> idx &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> len_max
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="better-solution">Better solution&lt;/h2>
+&lt;blockquote>
+&lt;p>Sliding Window - &lt;a href="https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/#sliding-window">template&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;p>&lt;strong>Window Sliding Technique&lt;/strong> is a computational technique which aims to reduce the use of nested loop and replace it with a single loop, thereby reducing the time complexity.
+The Sliding window technique can reduce the time complexity to O(n).&lt;/p>
+&lt;p>Tips for identifying this kind of problem where we could use the sliding window technique:&lt;/p>
+&lt;p>The problem will be based on an array, string, or list data structure.
+You need to find the subrange in this array or string that should provide the longest, shortest, or target values.
+A classic problem: to find the largest/smallest sum of given k (for example, three) consecutive numbers in an array.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">lengthOfLongestSubstring&lt;/span>(self, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(s)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># mp stores the current index of a character&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mp &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># try to extend the range [i, j]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> s[j] &lt;span style="color:#007020;font-weight:bold">in&lt;/span> mp:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(mp[s[j]], i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(res, j &lt;span style="color:#666">-&lt;/span> i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mp[s[j]] &lt;span style="color:#666">=&lt;/span> j &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">lengthOfLongestSubstring&lt;/span>(self, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> chars &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#007020;font-weight:bold">None&lt;/span>] &lt;span style="color:#666">*&lt;/span> &lt;span style="color:#40a070">128&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">=&lt;/span> right &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> right &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(s):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">=&lt;/span> s[right]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> index &lt;span style="color:#666">=&lt;/span> chars[&lt;span style="color:#007020">ord&lt;/span>(r)]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> index &lt;span style="color:#007020;font-weight:bold">is&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> left &lt;span style="color:#666">&amp;lt;=&lt;/span> index &lt;span style="color:#666">&amp;lt;&lt;/span> right:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">=&lt;/span> index &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(res, right &lt;span style="color:#666">-&lt;/span> left &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> chars[&lt;span style="color:#007020">ord&lt;/span>(r)] &lt;span style="color:#666">=&lt;/span> right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">lengthOfLongestSubstring&lt;/span>(self, s):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_len &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> substr &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> char &lt;span style="color:#007020;font-weight:bold">in&lt;/span> s:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> char &lt;span style="color:#007020;font-weight:bold">not&lt;/span> &lt;span style="color:#007020;font-weight:bold">in&lt;/span> substr:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> substr &lt;span style="color:#666">+=&lt;/span> char
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_len &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(max_len, &lt;span style="color:#007020">len&lt;/span>(substr))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> start &lt;span style="color:#666">=&lt;/span> substr&lt;span style="color:#666">.&lt;/span>index(char) &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> substr &lt;span style="color:#666">=&lt;/span> substr[start:] &lt;span style="color:#666">+&lt;/span> char
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> max_len
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/discuss/2694302/JS-or-98-or-Sliding-window-or-With-exlanation">https://leetcode.com/problems/longest-substring-without-repeating-characters/discuss/2694302/JS-or-98-or-Sliding-window-or-With-exlanation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/discuss/2133524/JavaC%2B%2B-A-reall-Detailed-Explanation">https://leetcode.com/problems/longest-substring-without-repeating-characters/discuss/2133524/JavaC%2B%2B-A-reall-Detailed-Explanation&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>643. Maximum Average Subarray I</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/643/</link><pubDate>Tue, 08 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/643/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/maximum-average-subarray-i/">LeetCode problem&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>Given an integer array &lt;code>nums&lt;/code> consisting of &lt;code>n&lt;/code> elements and an integer &lt;code>k&lt;/code>, find a contiguous subarray whose length is equal to &lt;code>k&lt;/code> that has the maximum average value and return this value. The result must be accurate up to a decimal point of 10^(-5).&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A straightforward approach would be to calculate the average for every possible subarray of length &lt;code>k&lt;/code>. For each starting point, sum the next &lt;code>k&lt;/code> numbers and determine the average. This will take O(n*k) time which is not efficient for large values of &lt;code>n&lt;/code> and &lt;code>k&lt;/code>.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;p>One way to improve the naive solution is by observing the overlapping computations. As we move from one subarray to the next, we are recalculating the sum for mostly the same numbers except for the first and the last numbers. This observation points towards the sliding window technique which can be very efficient for such problems.&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>We use the &lt;a href="https://romankurnovskii.com/en/tracks/algorithms-101/algorithms/#sliding-window">sliding window technique&lt;/a>. The idea is to maintain a window of size &lt;code>k&lt;/code> and slide it across the array. The sliding window technique is particularly useful in problems where the array input and the window size remain static, but the starting point of the sliding window moves.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Calculate the sum of the first &lt;code>k&lt;/code> numbers.&lt;/li>
+&lt;li>Slide the window by one position at a time. For every slide, subtract the number that is left behind and add the new number that comes into the window. This will give the sum for the next window of &lt;code>k&lt;/code> numbers.&lt;/li>
+&lt;li>Keep track of the maximum sum as we slide the window.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">findMaxAverage&lt;/span>(nums, k):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Calculate the sum of the first k numbers&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> window_sum &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">sum&lt;/span>(nums[:k])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_sum &lt;span style="color:#666">=&lt;/span> window_sum
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(nums) &lt;span style="color:#666">-&lt;/span> k):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> window_sum &lt;span style="color:#666">=&lt;/span> window_sum &lt;span style="color:#666">-&lt;/span> nums[i] &lt;span style="color:#666">+&lt;/span> nums[i&lt;span style="color:#666">+&lt;/span>k]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_sum &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(max_sum, window_sum)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> max_sum &lt;span style="color:#666">/&lt;/span> k
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

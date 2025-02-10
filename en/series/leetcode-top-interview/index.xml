@@ -1,5 +1,52 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LeetCode Top Interview on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/series/leetcode-top-interview/</link><description>Recent content in LeetCode Top Interview on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Thu, 03 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/series/leetcode-top-interview/index.xml" rel="self" type="application/rss+xml"/><item><title>15. 3Sum</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/15/</link><pubDate>Thu, 03 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/15/</guid><description>LeetCode problem
-Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
-Notice that the solution set must not contain duplicate triplets.
-Example 1:
-Input: nums = [-1,0,1,2,-1,-4] Output: [[-1,-1,2],[-1,0,1]] Explanation: nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0. nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LeetCode Top Interview on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/series/leetcode-top-interview/</link><description>Recent content in LeetCode Top Interview on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 03 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/series/leetcode-top-interview/index.xml" rel="self" type="application/rss+xml"/><item><title>15. 3Sum</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/15/</link><pubDate>Thu, 03 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/15/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/3sum/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given an integer array nums, return all the triplets &lt;code>[nums[i], nums[j], nums[k]]&lt;/code> such that &lt;code>i != j&lt;/code>, &lt;code>i != k&lt;/code>, and &lt;code>j != k&lt;/code>, and &lt;code>nums[i] + nums[j] + nums[k] == 0&lt;/code>.&lt;/p>
+&lt;p>Notice that the solution set must not contain duplicate triplets.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: nums = [-1,0,1,2,-1,-4]
+Output: [[-1,-1,2],[-1,0,1]]
+Explanation:
+nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.
+nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.
+nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.
+The distinct triplets are [-1,0,1] and [-1,-1,2].
+Notice that the order of the output and the order of the triplets does not matter.
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: nums = [0,1,1]
+Output: []
+Explanation: The only possible triplet does not sum up to 0.
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">threeSum&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[List[&lt;span style="color:#007020">int&lt;/span>]]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nums&lt;span style="color:#666">.&lt;/span>sort()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># index&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ll &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> x &lt;span style="color:#666">&amp;lt;&lt;/span> ll &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">2&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> x &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">or&lt;/span> nums[x] &lt;span style="color:#666">!=&lt;/span> nums[x&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> y &lt;span style="color:#666">=&lt;/span> x &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> z &lt;span style="color:#666">=&lt;/span> ll &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> y &lt;span style="color:#666">&amp;lt;&lt;/span> z:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">=&lt;/span> nums[x] &lt;span style="color:#666">+&lt;/span> nums[y] &lt;span style="color:#666">+&lt;/span> nums[z]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> s &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#666">.&lt;/span>append([nums[x], nums[y], nums[z]])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> y &lt;span style="color:#666">&amp;lt;&lt;/span> z &lt;span style="color:#007020;font-weight:bold">and&lt;/span> nums[y] &lt;span style="color:#666">==&lt;/span> nums[y&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> y &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> z &lt;span style="color:#666">&amp;gt;&lt;/span> y &lt;span style="color:#007020;font-weight:bold">and&lt;/span> nums[z] &lt;span style="color:#666">==&lt;/span> nums[z&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> z &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> y &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> z &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> s &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> z &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> y &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

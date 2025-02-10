@@ -1,43 +1,1002 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Практика on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tracks/webrtc/practice/</link><description>Recent content in Практика on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sat, 02 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tracks/webrtc/practice/index.xml" rel="self" type="application/rss+xml"/><item><title>Загрузка кода</title><link>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-get-code/</link><pubDate>Sat, 02 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-get-code/</guid><description>Загрузка кода Если вы знакомы с сайтом git, вы можете скачать код для данной codelab с GitHub, клонировав его: git clone https://github.com/googlecodelabs/webrtc-web
-Можно также нажать на ссылку ниже для загрузки zip-файла кода: https://github.com/googlecodelabs/webrtc-web/archive/master.zip
-Откройте загруженный zip-файл. Разархивируйте папку проекта (adaptive-web-media), в которой по одной папке на каждый шаг этой codelab, и есть все необходимые вам ресурсы. Вы будете выполнять все действия в папке work.
-Папки step-nn содержат финальную версию для каждого шага этой codelab. Они там для справки.</description></item><item><title>Обзор</title><link>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-overview/</link><pubDate>Sat, 02 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-overview/</guid><description>Создайте приложение для получения видео и снимков с веб-камеры, с возможностью делиться ими в P2P через WebRTC. В ходе codelab вы узнаете, как использовать основные API WebRTC и настроить сервер обмена сообщениями через Node.js.
-Чему вы научитесь
-получать видео с вашей веб-камеры потоковое видео через RTCPeerConnection потоковая передача данных через RTCDataChannel настраивать сигналинг для обмена сообщениями комбинировать одноранговое соединение и сигналинг делать фото и передавать его через канал данных Что понадобится
-Chrome версии 47 и выше веб-сервер для Chrome https://chrome.</description></item><item><title>Потоковое видео с веб-камеры</title><link>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-stream-to-cam/</link><pubDate>Sat, 02 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-stream-to-cam/</guid><description>Чему вы научитесь:
-На этом шаге вы узнаете, как
-получить видеопоток с вашей веб-камеры управлять воспроизведением потока использовать CSS и SVG для обработки видео Полная версия этого шага находится в папке step-01. Немного HTML
-Добавьте элемент video и элемент script в index.html в папку work.
-&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;Realtime communication with WebRTC&amp;lt;/title&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;css/main.css&amp;#34; /&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;h1&amp;gt;Realtime communication with WebRTC&amp;lt;/h1&amp;gt; &amp;lt;video autoplay playsinline&amp;gt;&amp;lt;/video&amp;gt; &amp;lt;script src=&amp;#34;js/main.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; И немного JavaScript
-Добавьте следующее в main.js в вашей папке js:</description></item><item><title>Потоковое видео с помощью RTCPeerConnection</title><link>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-stream-with-rtcpeerconnection/</link><pubDate>Sat, 02 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-stream-with-rtcpeerconnection/</guid><description>Чему вы научитесь
-На этом шаге вы узнаете, как:
-Абстрагироваться от различий браузера с помощью оболочки WebRTC, adapter.js. Использовать RTCPeerConnection API для потоковой передачи видео. Управлять захватом и потоковой передачей мультимедиа. Полная версия этого шага находится в папке step-2.
-Что такое RTCPeerConnection?
-RTCPeerConnection - это API для выполнения WebRTC-запросов для потоковой передачи видео и аудио и обмена данными.
-В этом примере устанавливается соединение между двумя объектами RTCPeerConnection (известными как узлы) на одной и той же странице.
-Не очень практично, но зато полезно для понимания того, как работает RTCPeerConnection.</description></item><item><title>Использование RTCDataChannel для обмена данными</title><link>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-rtcdatachannel-exchange-data/</link><pubDate>Sat, 02 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-rtcdatachannel-exchange-data/</guid><description>Чему вы научитесь
-как обмениваться данными между узлами WebRTC Полная версия этого шага находится в папке step-03.
-Обновите свой HTML
-На этом шаге вы будете использовать WebRTC каналы данных для отправки текста между двумя textarea элементами на одной странице. Это опять не сильно применимо на практике, но зато демонстрирует, как WebRTC можно использовать для обмена данными, а также для потоковых видео.
-Удалите элементы video и button из index.html и замените их следующим HTML-кодом:
-&amp;lt;textarea id=&amp;#34;dataChannelSend&amp;#34; disabled placeholder=&amp;#34;Press Start, enter some text, then press Send.</description></item><item><title>Настройка службы сигналинга для обмена сообщениями</title><link>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-setup-signaling-service/</link><pubDate>Sat, 02 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-setup-signaling-service/</guid><description>Чему вы научитесь
-На этом шаге вы узнаете, как:
-Использовать npm для установки взаимосвязей, как указано в package.json Запускать сервер Node.js и использовать node-static для обслуживания статических файлов. Настраивать службу обмена сообщениями на Node.js через Socket.IO . Использовать это для создания ‘комнат&amp;quot; и обмена сообщениями. Полная версия этого шага находится в папке step-04.
-Концепции
-Чтобы установить и поддерживать вызов WebRTC, клиенты WebRTC (узлы) должны обмениваться метаданными:
-Информация о кандидате (сети). сообщения offer и answer, содержащие информацию о медиа, например, о разрешении и кодеках.</description></item><item><title>Соединение однорангового соединения и сигналинга</title><link>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-peer-signaling-combine/</link><pubDate>Sat, 02 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-peer-signaling-combine/</guid><description>Чему вы научитесь
-На этом шаге вы узнаете, как:
-Запускать службу сигнализации WebRTC с помощью Socket.IO на Node.js Использовать эту службу для обмена метаданными WebRTC между узлами. Полная версия этого шага находится в папке step-05. Поменяйте HTML и JavaScript
-Замените содержимое index.html следующим:
-&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;Realtime communication with WebRTC&amp;lt;/title&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;/css/main.css&amp;#34; /&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;h1&amp;gt;Realtime communication with WebRTC&amp;lt;/h1&amp;gt; &amp;lt;div id=&amp;#34;videos&amp;#34;&amp;gt; &amp;lt;video id=&amp;#34;localVideo&amp;#34; autoplay muted&amp;gt;&amp;lt;/video&amp;gt; &amp;lt;video id=&amp;#34;remoteVideo&amp;#34; autoplay&amp;gt;&amp;lt;/video&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script src=&amp;#34;/socket.io/socket.io.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;https://webrtc.github.io/adapter/adapter-latest.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;js/main.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; Замените js/main.</description></item><item><title>Сделайте фото и отправьте его через канал данных</title><link>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-take-photo/</link><pubDate>Sat, 02 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-take-photo/</guid><description>Чему вы научитесь
-На этом шаге вы узнаете, как:
-Делать снимок и получать из него данные, используя элемент canvas. Обмениваться изображениями с удаленным пользователем. Полная версия этого шага находится в папке step-06.
-Как это работает
-Ранее вы узнали, как обмениваться текстовыми сообщениями с помощью RTCDataChannel.
-Этот шаг позволяет обмениваться целыми файлами: в этом примере - фотографиями, снятыми с помощью getUserMedia().
-Основные части этого шага заключаются в следующем:
-Установите канал передачи данных. Обратите внимание, что на этом шаге вы не добавляете никаких медиапотоков к одноранговому соединению.</description></item><item><title>Выводы</title><link>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-results/</link><pubDate>Sat, 02 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-results/</guid><description>Вы создали приложение для потоковой передачи видео в реальном времени и обмена данными!
-Что вы узнали
-В этой codelab вы узнали, как:
-Получать видео с вашей веб-камеры. стримить видео с помощью RTCPeerConnection. Стримить данные с помощью RTCDataChannel. Настраивать сигналинг-службу для обмена сообщениями. Комбинировать одноранговое соединение и сигналинг. Сделать снимок и поделиться им через канал передачи данных. Следующие шаги
-Посмотрите на код и архитектуру канонического приложения AppRTC для чата WebRTC – приложение (https://appr.tc/), код (https://github.com/webrtc/apprtc) Попробуйте реальные примеры (http://webrtc.github.io/samples) из github.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Практика on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tracks/webrtc/practice/</link><description>Recent content in Практика on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sat, 02 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tracks/webrtc/practice/index.xml" rel="self" type="application/rss+xml"/><item><title>Загрузка кода</title><link>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-get-code/</link><pubDate>Sat, 02 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-get-code/</guid><description>&lt;h2 id="загрузка-кода">Загрузка кода&lt;/h2>
+&lt;p>Если вы знакомы с сайтом git, вы можете скачать код для данной codelab с GitHub, клонировав его:
+git clone &lt;a href="https://github.com/googlecodelabs/webrtc-web">https://github.com/googlecodelabs/webrtc-web&lt;/a>&lt;/p>
+&lt;p>Можно также нажать на ссылку ниже для загрузки zip-файла кода:
+&lt;a href="https://github.com/googlecodelabs/webrtc-web/archive/master.zip">https://github.com/googlecodelabs/webrtc-web/archive/master.zip&lt;/a>&lt;/p>
+&lt;p>Откройте загруженный zip-файл. Разархивируйте папку проекта (adaptive-web-media), в которой по одной папке на каждый шаг этой codelab, и есть все необходимые вам ресурсы.
+Вы будете выполнять все действия в папке work.&lt;/p>
+&lt;p>Папки step-nn содержат финальную версию для каждого шага этой codelab. Они там для справки.&lt;/p>
+&lt;h2 id="установите-и-проверьте-веб-сервер">Установите и проверьте веб-сервер&lt;/h2>
+&lt;p>Несмотря на то, что вы можете использовать и свой собственный веб-сервер, эта codelab подразумевает работу с веб-сервером Chrome. Если у вас он еще не установлен, вы можете инсталлировать его из Chrome Web Store &lt;a href="https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb?hl=en">https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb?hl=en&lt;/a>&lt;/p>
+&lt;p>После установки приложения Web Server для Chrome, нажмите на ярлык Chrome Apps на панели закладок, на странице новой вкладки или в панели запуска приложений:&lt;/p>
+&lt;p>Нажмите на значок &lt;strong>Web Server&lt;/strong>&lt;/p>
+&lt;p>Далее вы увидите это диалоговое окно, которое позволит настроить локальный веб-сервер:&lt;/p>
+&lt;p>Нажмите на кнопку «Choose Folder», и выберите папку work, которую вы только что создали. Это позволит вам просматривать текущую работу в Chrome по ссылке URL, подчеркнутой в диалоговом окне в разделе Web Server URL(s).
+Ниже, в Options, поставьте флажок в Automatically show index.html, как показано ниже:&lt;/p>
+&lt;p>Затем остановите и перезапустите сервер, сдвинув флажок с надписью «Web Server: STARTED» влево, а затем снова вправо.&lt;/p>
+&lt;p>Теперь посетите свой рабочий сайт в браузере, кликнув на выделенный Web Server URL. Вы должны увидеть подобную страницу, которая соответствует пути work/index.html:&lt;/p>
+&lt;p>Очевидно, что данное приложение пока еще не делает ничего интересного – пока это просто минимальный скелет, который нужен для того, чтоб убедиться, что веб-сервер работает, как надо. На следующих этапах мы добавим функциональности в этом приложение.&lt;/p>
+&lt;blockquote>
+&lt;p>С этого момента все тестирование и проверка должны выполняться с использованием этой настройки веб-сервера. Обычно достаточно просто обновить вкладку тестового браузера.&lt;/p>&lt;/blockquote></description></item><item><title>Обзор</title><link>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-overview/</link><pubDate>Sat, 02 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-overview/</guid><description>&lt;p>Создайте приложение для получения видео и снимков с веб-камеры, с возможностью делиться ими в P2P через WebRTC. В ходе codelab вы узнаете, как использовать основные API WebRTC и настроить сервер обмена сообщениями через Node.js.&lt;/p>
+&lt;p>&lt;strong>Чему вы научитесь&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>получать видео с вашей веб-камеры&lt;/li>
+&lt;li>потоковое видео через RTCPeerConnection&lt;/li>
+&lt;li>потоковая передача данных через RTCDataChannel&lt;/li>
+&lt;li>настраивать сигналинг для обмена сообщениями&lt;/li>
+&lt;li>комбинировать одноранговое соединение и сигналинг&lt;/li>
+&lt;li>делать фото и передавать его через канал данных&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Что понадобится&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Chrome версии 47 и выше&lt;/li>
+&lt;li>веб-сервер для Chrome &lt;a href="https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb">https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb&lt;/a> , и ваш собственный веб-сервер по выбору&lt;/li>
+&lt;li>пример кода&lt;/li>
+&lt;li>текстовый редактор&lt;/li>
+&lt;li>базовые знания HTML, CSS и Javaskript&lt;/li>
+&lt;/ul></description></item><item><title>Потоковое видео с веб-камеры</title><link>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-stream-to-cam/</link><pubDate>Sat, 02 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-stream-to-cam/</guid><description>&lt;p>&lt;strong>Чему вы научитесь:&lt;/strong>&lt;/p>
+&lt;p>На этом шаге вы узнаете, как&lt;/p>
+&lt;ul>
+&lt;li>получить видеопоток с вашей веб-камеры&lt;/li>
+&lt;li>управлять воспроизведением потока&lt;/li>
+&lt;li>использовать CSS и SVG для обработки видео
+Полная версия этого шага находится в папке step-01.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Немного HTML&lt;/strong>&lt;/p>
+&lt;p>Добавьте элемент video и элемент script в index.html в папку work.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">&amp;lt;!DOCTYPE html&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">title&lt;/span>&amp;gt;Realtime communication with WebRTC&amp;lt;/&lt;span style="color:#062873;font-weight:bold">title&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">link&lt;/span> &lt;span style="color:#4070a0">rel&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;stylesheet&amp;#34;&lt;/span> &lt;span style="color:#4070a0">href&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;css/main.css&amp;#34;&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">h1&lt;/span>&amp;gt;Realtime communication with WebRTC&amp;lt;/&lt;span style="color:#062873;font-weight:bold">h1&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">video&lt;/span> &lt;span style="color:#4070a0">autoplay&lt;/span> &lt;span style="color:#4070a0">playsinline&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">video&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;js/main.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>И немного JavaScript&lt;/strong>&lt;/p>
+&lt;p>Добавьте следующее в main.js в вашей папке js:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">&amp;#39;use strict&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// On this codelab, you will be streaming only video (video: true).
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> mediaStreamConstraints &lt;span style="color:#666">=&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> video&lt;span style="color:#666">:&lt;/span> &lt;span style="color:#007020;font-weight:bold">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>};
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// Video element where stream will be placed.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> localVideo &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">document&lt;/span>.querySelector(&lt;span style="color:#4070a0">&amp;#39;video&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// Local stream that will be reproduced on the video.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>&lt;span style="color:#007020;font-weight:bold">let&lt;/span> localStream;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// Handles success by adding the MediaStream to the video element.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>&lt;span style="color:#007020;font-weight:bold">function&lt;/span> gotLocalMediaStream(mediaStream) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> localStream &lt;span style="color:#666">=&lt;/span> mediaStream;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> localVideo.srcObject &lt;span style="color:#666">=&lt;/span> mediaStream;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// Handles error by logging a message to the console with the error message.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>&lt;span style="color:#007020;font-weight:bold">function&lt;/span> handleLocalMediaStreamError(error) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log(&lt;span style="color:#4070a0">&amp;#39;navigator.getUserMedia error: &amp;#39;&lt;/span>, error);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// Initializes media stream.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>navigator.mediaDevices.getUserMedia(mediaStreamConstraints)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .then(gotLocalMediaStream).&lt;span style="color:#007020;font-weight:bold">catch&lt;/span>(handleLocalMediaStreamError);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>Все приведенные здесь примеры JavaScript используют ‘use strict’, для избежания частых ошибок в кодировании.
+Узнайте больше, что это означает в &lt;a href="http://ejohn.org/blog/ecmascript-5-strict-mode-json-and-more/">http://ejohn.org/blog/ecmascript-5-strict-mode-json-and-more/&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;p>&lt;strong>Попробуйте&lt;/strong>&lt;/p>
+&lt;p>Откройте index.html в вашем браузере и вы должны увидеть что-то подобное (с видом из вашей камеры, конечно!):&lt;/p>
+&lt;p>&lt;strong>Как это работает&lt;/strong>&lt;/p>
+&lt;p>Следуя запросу &lt;code>getUserMedia()&lt;/code>, браузер запрашивает у пользователя разрешение на доступ к своей камере (если это впервые, когда запрашивается доступ к камере для текущего источника). В случае успеха возвращается MediaStream, который может быть использован элементов мультимедиа через атрибут srcObject:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>navigator.mediaDevices.getUserMedia(mediaStreamConstraints)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .then(gotLocalMediaStream).&lt;span style="color:#007020;font-weight:bold">catch&lt;/span>(handleLocalMediaStreamError);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">function&lt;/span> gotLocalMediaStream(mediaStream) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> localVideo.srcObject &lt;span style="color:#666">=&lt;/span> mediaStream;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Аргумент constraints позволяет указать, какой тип мультимедиа получать. В этом примере используется только видео, т.к. звук по умолчанию отключен:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> mediaStreamConstraints &lt;span style="color:#666">=&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> video&lt;span style="color:#666">:&lt;/span> &lt;span style="color:#007020;font-weight:bold">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>};
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Вы можете использовать ограничения для дополнительных требований, таких как разрешение видео:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> hdConstraints &lt;span style="color:#666">=&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> video&lt;span style="color:#666">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> width&lt;span style="color:#666">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> min&lt;span style="color:#666">:&lt;/span> &lt;span style="color:#40a070">1280&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> height&lt;span style="color:#666">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> min&lt;span style="color:#666">:&lt;/span> &lt;span style="color:#40a070">720&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Спецификация MediaTrackConstraints перечисляет все возможные типы ограничений, хотя не все параметры поддерживаются во всех браузерах. Если запрошенное разрешение не поддерживается выбранной в данный момент камерой, &lt;code>getUserMedia()&lt;/code> будет отклонен с ошибкой OverconstrainedError и пользователю даже не предложат предоставить разрешение на доступ к своей камере.&lt;/p>
+&lt;blockquote>
+&lt;p>Демо-версию, демонстрирующую, как использовать ограничения для запроса различных разрешений, можно посмотреть по ссылке &lt;a href="https://simpl.info/getusermedia/constraints/">https://simpl.info/getusermedia/constraints/&lt;/a>, а демо-версию с использованием ограничений для выбора камеры и микрофона – по этой ссылке &lt;a href="https://simpl.info/getusermedia/sources/">https://simpl.info/getusermedia/sources/&lt;/a>.&lt;/p>&lt;/blockquote>
+&lt;p>Если &lt;code>getUserMedia()&lt;/code> сработал успешно, в качестве источника элемента video устанавливается видеопоток с веб-камеры:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">function&lt;/span> gotLocalMediaStream(mediaStream) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> localVideo.srcObject &lt;span style="color:#666">=&lt;/span> mediaStream;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Бонусные задания&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Переданный &lt;code>getUserMedia()&lt;/code> объект localStream находится в глобальной области видимости, поэтому вы можете проверить его через консоль браузера: откройте консоль в Chrome, введите stream и нажмите Return (для просмотра консоли в Chrome, нажмите Ctrl+Shift+J, или command+Option+J, если вы работаете на Mac).&lt;/li>
+&lt;li>что возвращает localStream.getVideoTracks()?&lt;/li>
+&lt;li>попробуйте сделать запрос localStream.getVideoTracks()[0].stop()&lt;/li>
+&lt;li>Посмотрите на объект constraints: что произойдет, когда вы меняете его на {audio: true, video: true)?&lt;/li>
+&lt;li>Какой размер у элемента video? Как можно получить естественный размер из JavaScript, в отличие от размера экрана? Используйте Chrome Dev Tools для проверки&lt;/li>
+&lt;li>Попробуйте добавить CSS фильтры в элемент video. Например:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>video {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> filter: blur(4px) invert(1) opacity(0.5);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Попробуйте добавить SVG-фильтры. Например:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>video {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> filter: hue-rotate(180deg) saturate(200%);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Что вы узнали&lt;/strong>&lt;/p>
+&lt;p>На этом шаге вы узнали, как&lt;/p>
+&lt;ul>
+&lt;li>получать видео с вашей веб-камеры&lt;/li>
+&lt;li>устанавливать ограничения для мультимедиа&lt;/li>
+&lt;li>как навести хаос в элементе video&lt;/li>
+&lt;/ul>
+&lt;p>Полная версия этого шага находится в папке step-01.&lt;/p>
+&lt;p>&lt;strong>Советы&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>не забывайте про атрибут autoplay в элемент video. Без него вы будете видеть только один кадр!&lt;/li>
+&lt;li>есть гораздо больше ограничений для getUserMedia(). Посмотрите их по ссылке &lt;a href="https://webrtc.github.io/samples/src/content/peerconnection/constraints/">https://webrtc.github.io/samples/src/content/peerconnection/constraints/&lt;/a>. Как видите, есть много интересных примеров c WebRTC на сайте.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Лучшая практика&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>убедитесь, что ваш элемент video не переполняет его контейнер. Мы добавили width и max-width для установки соответствующего размера и максимального размера видео. Браузер будет рассчитывать высоту автоматически.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>video {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max-width: 100%;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> width: 320px;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Следующий шаг&lt;/strong>&lt;/p>
+&lt;p>Вы получили видео, но как его транслировать? Узнайте на следующем шаге!&lt;/p></description></item><item><title>Потоковое видео с помощью RTCPeerConnection</title><link>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-stream-with-rtcpeerconnection/</link><pubDate>Sat, 02 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-stream-with-rtcpeerconnection/</guid><description>&lt;p>&lt;strong>Чему вы научитесь&lt;/strong>&lt;/p>
+&lt;p>На этом шаге вы узнаете, как:&lt;/p>
+&lt;ul>
+&lt;li>Абстрагироваться от различий браузера с помощью оболочки WebRTC, adapter.js.&lt;/li>
+&lt;li>Использовать RTCPeerConnection API для потоковой передачи видео.&lt;/li>
+&lt;li>Управлять захватом и потоковой передачей мультимедиа.&lt;/li>
+&lt;/ul>
+&lt;p>Полная версия этого шага находится в папке step-2.&lt;/p>
+&lt;p>&lt;strong>Что такое RTCPeerConnection?&lt;/strong>&lt;/p>
+&lt;p>RTCPeerConnection - это API для выполнения WebRTC-запросов для потоковой передачи видео и аудио и обмена данными.&lt;/p>
+&lt;p>В этом примере устанавливается соединение между двумя объектами RTCPeerConnection (известными как узлы) на одной и той же странице.&lt;/p>
+&lt;p>Не очень практично, но зато полезно для понимания того, как работает RTCPeerConnection.&lt;/p>
+&lt;p>&lt;strong>Добавление элементов video и кнопок управления&lt;/strong>&lt;/p>
+&lt;p>В index.html замените один видеоэлемент двумя видеоэлементами и тремя кнопками:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">video&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;localVideo&amp;#34;&lt;/span> &lt;span style="color:#4070a0">autoplay&lt;/span> &lt;span style="color:#4070a0">playsinline&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">video&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">video&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;remoteVideo&amp;#34;&lt;/span> &lt;span style="color:#4070a0">autoplay&lt;/span> &lt;span style="color:#4070a0">playsinline&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">video&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">button&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;startButton&amp;#34;&lt;/span>&amp;gt;Start&amp;lt;/&lt;span style="color:#062873;font-weight:bold">button&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">button&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;callButton&amp;#34;&lt;/span>&amp;gt;Call&amp;lt;/&lt;span style="color:#062873;font-weight:bold">button&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">button&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;hangupButton&amp;#34;&lt;/span>&amp;gt;Hang Up&amp;lt;/&lt;span style="color:#062873;font-weight:bold">button&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Один видеоэлемент будет отображать поток из getUserMedia(), а другой будет показывать это же видео, но передаваемое через RTCPeerConnection (в реальном приложении один видеоэлемент будет отображать локальный поток, а другой – удаленный поток).&lt;/p>
+&lt;p>&lt;strong>Добавьте adapter.js&lt;/strong>
+Добавьте ссылку на текущую версию adapter.js выше ссылки на main.js:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>&amp;lt;script src=&amp;#34;https://webrtc.github.io/adapter/adapter-latest.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>&lt;strong>adapter.js&lt;/strong> - это оболочка для изоляции приложений от изменений спецификаций и различий в префиксах. (Хотя на самом деле стандарты и протоколы, используемые для реализации WebRTC, очень стабильны, и существует всего несколько имен с префиксами.)&lt;/p>
+&lt;p>На этом этапе мы используем самую последнюю версию adapter.js, что хорошо для codelab, но не всегда хорошо для приложений. Здесь &lt;a href="https://github.com/webrtc/adapter">https://github.com/webrtc/adapter&lt;/a> мы объясняем, как сделать так, чтоб у вашего приложения всегда был доступ к самой последней версии.&lt;/p>
+&lt;p>Для получения полной информации о взаимодействии сWebRTC, переходи по ссылке &lt;a href="https://webrtc.github.io/webrtc-org/web-apis/interop/">https://webrtc.github.io/webrtc-org/web-apis/interop/&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;p>Теперь index.html должен выглядеть так:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">&amp;lt;!DOCTYPE html&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">title&lt;/span>&amp;gt;Realtime communication with WebRTC&amp;lt;/&lt;span style="color:#062873;font-weight:bold">title&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">link&lt;/span> &lt;span style="color:#4070a0">rel&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;stylesheet&amp;#34;&lt;/span> &lt;span style="color:#4070a0">href&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;css/main.css&amp;#34;&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">h1&lt;/span>&amp;gt;Realtime communication with WebRTC&amp;lt;/&lt;span style="color:#062873;font-weight:bold">h1&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">video&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;localVideo&amp;#34;&lt;/span> &lt;span style="color:#4070a0">autoplay&lt;/span> &lt;span style="color:#4070a0">playsinline&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">video&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">video&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;remoteVideo&amp;#34;&lt;/span> &lt;span style="color:#4070a0">autoplay&lt;/span> &lt;span style="color:#4070a0">playsinline&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">video&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">button&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;startButton&amp;#34;&lt;/span>&amp;gt;Start&amp;lt;/&lt;span style="color:#062873;font-weight:bold">button&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">button&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;callButton&amp;#34;&lt;/span>&amp;gt;Call&amp;lt;/&lt;span style="color:#062873;font-weight:bold">button&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">button&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;hangupButton&amp;#34;&lt;/span>&amp;gt;Hang Up&amp;lt;/&lt;span style="color:#062873;font-weight:bold">button&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;https://webrtc.github.io/adapter/adapter-latest.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;js/main.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Установите код RTCPeerConnection&lt;/strong>&lt;/p>
+&lt;p>Замените main.js в папке step-02.&lt;/p>
+&lt;blockquote>
+&lt;p>Делать копи-паст в больших кусках кода в codelab – это так себе вариант, конечно. Но чтобы получить и запустить RTCPeerConnection, у нас нет других альтернатив, как провести вас через весь этот путь.
+Вам нужно научиться, как код работает в каждый момент.&lt;/p>&lt;/blockquote>
+&lt;p>&lt;strong>Сделайте звонок&lt;/strong>
+Откройте index.html, нажмите кнопку Start, чтоб получить видео с вашей веб-камеры, и затем нажмите Call, чтобы установить одноранговое соединение. Вы должны увидеть одно и то же видео (с вашей веб-камеры) в обоих видео-элементах. Посмотрите консоль браузера, чтоб увидеть логи WebRTC.&lt;/p>
+&lt;p>&lt;strong>Как это работает&lt;/strong>&lt;/p>
+&lt;p>В этом шаге будет много всего…&lt;/p>
+&lt;blockquote>
+&lt;p>Если вы хотите пропустить объяснение ниже - ок.
+Вы все еще можете продолжить работу с codelab!&lt;/p>&lt;/blockquote>
+&lt;p>WebRTC использует API RTCPeerConnection для настройки соединения для потоковой передачи видео между клиентами WebRTC, известными как узлы.
+В этом примере два объекта RTCPeerConnection находятся на одной странице: pc1 и pc2. Это мало используется на практике, но зато хорошо демонстрирует, как работают API.
+Настройка вызова между WebRTC-узлами включает в себя три задачи:&lt;/p>
+&lt;ul>
+&lt;li>Создать RTCPeerConnection для каждого конца вызова и на каждом конце добавить локальный поток из getUserMedia().&lt;/li>
+&lt;li>Получать и делиться сетевой информацией: потенциальные конечные точки подключения известны как ICE-кандидаты.&lt;/li>
+&lt;li>Получать и делиться локальными и удаленными описаниями: метаданные о локальными мультимедиа в формате SDP.&lt;/li>
+&lt;/ul>
+&lt;p>Представьте, что Алиса и Боб хотят использовать RTCPeerConnection для настройки видеочата.
+Сначала Алиса и Боб обмениваются информацией о сети. Выражение &amp;ldquo;finding candidates&amp;rdquo; относится к процессу поиска сетевых интерфейсов и портов с использованием ICE-фреймворк.&lt;/p>
+&lt;ol>
+&lt;li>Алиса создает объект RTCPeerConnection с обработчиком onicecandidate (addEventListener(&amp;lsquo;icecandidate&amp;rsquo;)). Это соответствует следующему коду из main.js&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">let&lt;/span> localPeerConnection;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>localPeerConnection &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">new&lt;/span> RTCPeerConnection(servers);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>localPeerConnection.addEventListener(&lt;span style="color:#4070a0">&amp;#39;icecandidate&amp;#39;&lt;/span>, handleConnection);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>localPeerConnection.addEventListener(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#39;iceconnectionstatechange&amp;#39;&lt;/span>, handleConnectionChange);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>Аргумент servers для RTCPeerConnection в этом примере не используется.
+Здесь вы можете указать STUN и TURN серверы.
+WebRTC разработан для работы с P2P, поэтому пользователи могут подключаться по самому прямому возможному маршруту. Однако WebRTC создан для работы в реальных сетях: клиентским приложениям необходимо проходить через шлюзы NAT (&lt;a href="http://en.wikipedia.org/wiki/NAT_traversal">http://en.wikipedia.org/wiki/NAT_traversal&lt;/a>) и брандмауэры, а P2P сеть нуждается в резервном варианте на случай сбоя прямого соединения.
+В рамках этого процесса, API WebRTC используют STUN-серверы для получения IP-адреса вашего компьютера и TURN-серверы для ретрансляции в случае сбоя P2P связи. Подробнее об этом - &lt;a href="http://www.html5rocks.com/en/tutorials/webrtc/infrastructure/">http://www.html5rocks.com/en/tutorials/webrtc/infrastructure/&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;ol start="2">
+&lt;li>Алиса вызывает &lt;code>getUserMedia()&lt;/code> и добавляет переданные поток:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>navigator.mediaDevices.getUserMedia(mediaStreamConstraints).
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> then(gotLocalMediaStream).
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">catch&lt;/span>(handleLocalMediaStreamError);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">function&lt;/span> gotLocalMediaStream(mediaStream) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> localVideo.srcObject &lt;span style="color:#666">=&lt;/span> mediaStream;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> localStream &lt;span style="color:#666">=&lt;/span> mediaStream;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> trace(&lt;span style="color:#4070a0">&amp;#39;Received local stream.&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> callButton.disabled &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">false&lt;/span>; &lt;span style="color:#60a0b0;font-style:italic">// Enable call button.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>localPeerConnection.addStream(localStream);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>trace(&lt;span style="color:#4070a0">&amp;#39;Added local stream to localPeerConnection.&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;li>Обработчик onicecandidate из шага 1 вызывается, когда становятся доступными сетевые кандидаты.&lt;/li>
+&lt;li>Алиса отправляет Бобу данные кандидата. В реальном приложении этот процесс (известный как сигналинг) осуществляется через службу обмена сообщениями – вы узнаете, как это сделать, позднее. Конечно, на этом этапе два объекта RTCPeerConnection находятся на одной странице и могут взаимодействовать напрямую без необходимости во внешних сообщениях.&lt;/li>
+&lt;li>Когда Боб получает сообщение о кандидате от Алисы, он вызывает &lt;code>addIceCandidate()&lt;/code>, чтобы добавить кандидата в описание удаленного узла:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">function&lt;/span> handleConnection(event) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> peerConnection &lt;span style="color:#666">=&lt;/span> event.target;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> iceCandidate &lt;span style="color:#666">=&lt;/span> event.candidate;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (iceCandidate) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> newIceCandidate &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">new&lt;/span> RTCIceCandidate(iceCandidate);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> otherPeer &lt;span style="color:#666">=&lt;/span> getOtherPeer(peerConnection);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> otherPeer.addIceCandidate(newIceCandidate)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .then(() =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> handleConnectionSuccess(peerConnection);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }).&lt;span style="color:#007020;font-weight:bold">catch&lt;/span>((error) =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> handleConnectionFailure(peerConnection, error);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> trace(&lt;span style="color:#4070a0">`&lt;/span>&lt;span style="color:#70a0d0">${&lt;/span>getPeerName(peerConnection)&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0"> ICE candidate:\n`&lt;/span> &lt;span style="color:#666">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">`&lt;/span>&lt;span style="color:#70a0d0">${&lt;/span>event.candidate.candidate&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">.`&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Узлам WebRTC также необходимо узнавать и обмениваться информацией о локальных и удаленных аудио- и видеоматериалах, такими как разрешение и возможности кодеков, и обмениваться ими. Сигналинг для обмена информацией о конфигурации мультимедиа осуществляется путем обмена большими двоичными объектами метаданных, известными как offer и answer, с использованием формата Session Description Protocol, известного как SDP (&lt;a href="http://en.wikipedia.org/wiki/Session_Description_Protocol">http://en.wikipedia.org/wiki/Session_Description_Protocol&lt;/a>):&lt;/p>
+&lt;ol>
+&lt;li>Алиса запускает метод RTCPeerConnectioncreateOffer(). Возвращенный промис обеспечивает RTCSessionDescription: Alice’s local session description:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>trace(&lt;span style="color:#4070a0">&amp;#39;localPeerConnection createOffer start.&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>localPeerConnection.createOffer(offerOptions)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .then(createdOffer).&lt;span style="color:#007020;font-weight:bold">catch&lt;/span>(setSessionDescriptionError);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>В случае успеха Алиса устанавливает локальное описание, используя setLocalDescription(), а затем отправляет это описание сеанса Бобу через сигналинг-канал.&lt;/li>
+&lt;li>Боб принимает описание, отправленное ему Алисой, в качестве удаленного описания, используя setRemoteDescription().&lt;/li>
+&lt;li>Боб запускает метод &lt;code>RTCPeerConnection&lt;/code> &lt;code>createAnswer()&lt;/code>, передавая ему удаленное описание, которое он получил от Алисы, чтобы можно было создать локальный сеанс, совместимый с ее сеансом. Промис &lt;code>createAnswer()&lt;/code> передает описание &lt;code>RTCSessionDescription&lt;/code>: Боб устанавливает это как локальное описание и отправляет его Алисе.&lt;/li>
+&lt;li>Когда Алиса получает описание сеанса Боба, она устанавливает его в качестве удаленного описания с помощью &lt;code>setRemoteDescription()&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// Logs offer creation and sets peer connection session descriptions.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>&lt;span style="color:#007020;font-weight:bold">function&lt;/span> createdOffer(description) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> trace(&lt;span style="color:#4070a0">`Offer from localPeerConnection:\n&lt;/span>&lt;span style="color:#70a0d0">${&lt;/span>description.sdp&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">`&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> trace(&lt;span style="color:#4070a0">&amp;#39;localPeerConnection setLocalDescription start.&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> localPeerConnection.setLocalDescription(description)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .then(() =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> setLocalDescriptionSuccess(localPeerConnection);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }).&lt;span style="color:#007020;font-weight:bold">catch&lt;/span>(setSessionDescriptionError);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> trace(&lt;span style="color:#4070a0">&amp;#39;remotePeerConnection setRemoteDescription start.&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> remotePeerConnection.setRemoteDescription(description)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .then(() =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> setRemoteDescriptionSuccess(remotePeerConnection);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }).&lt;span style="color:#007020;font-weight:bold">catch&lt;/span>(setSessionDescriptionError);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> trace(&lt;span style="color:#4070a0">&amp;#39;remotePeerConnection createAnswer start.&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> remotePeerConnection.createAnswer()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .then(createdAnswer)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#007020;font-weight:bold">catch&lt;/span>(setSessionDescriptionError);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// Logs answer to offer creation and sets peer connection session descriptions.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>&lt;span style="color:#007020;font-weight:bold">function&lt;/span> createdAnswer(description) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> trace(&lt;span style="color:#4070a0">`Answer from remotePeerConnection:\n&lt;/span>&lt;span style="color:#70a0d0">${&lt;/span>description.sdp&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">.`&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> trace(&lt;span style="color:#4070a0">&amp;#39;remotePeerConnection setLocalDescription start.&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> remotePeerConnection.setLocalDescription(description)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .then(() =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> setLocalDescriptionSuccess(remotePeerConnection);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }).&lt;span style="color:#007020;font-weight:bold">catch&lt;/span>(setSessionDescriptionError);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> trace(&lt;span style="color:#4070a0">&amp;#39;localPeerConnection setRemoteDescription start.&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> localPeerConnection.setRemoteDescription(description)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .then(() =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> setRemoteDescriptionSuccess(localPeerConnection);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }).&lt;span style="color:#007020;font-weight:bold">catch&lt;/span>(setSessionDescriptionError);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="6">
+&lt;li>Пинг!&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Бонусные задания&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Посмотрите chrome://webrtc-internals. Там отражены статы WebRTC и отлаженные данные (Полный список ссылок в Chrome – chrome://about).&lt;/li>
+&lt;li>Сделайте разметку страницы через CSS:&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>Расположите видео друг за другом&lt;/li>
+&lt;li>Сделайте кнопки такой же ширины, но с большим размером текста&lt;/li>
+&lt;li>Убедитесь, что макет работает на мобильных устройствах&lt;/li>
+&lt;/ul>
+&lt;ol start="3">
+&lt;li>В консоли Chrome Dev Tools посмотрите localStream, localPeerConnection и remotePeerConnection.&lt;/li>
+&lt;li>Из консоли, посмотрите на localPeerConnecionpc1.localDescription. Как выглядит формат SDP?&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Что вы узнали?&lt;/strong>&lt;/p>
+&lt;p>На этом шаге вы узнали, как&lt;/p>
+&lt;ul>
+&lt;li>уйти от различий в браузерах через WebRTC оболочку adapter.js&lt;/li>
+&lt;li>использовать RTCPeerConncetion API для потоковой передачи видео&lt;/li>
+&lt;li>контролировать захват медиа и потоковую передачу данных&lt;/li>
+&lt;li>делиться мультимедиа и сетевой информацией между узлами, чтоб разрешить вызов WebRTC.
+Полная версия этого шага находится в папке step-2.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Советы&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>на этом шаге вам нужно столько всего освоить! Чтобы найти другие ресурсы, объясняющие более детально RTCPeerConnection, загляните на webrtc.org. Эта страница включает решения для JavaScript фреймворков – если вы хотите использовать WebRTC, но не хотите конфликтовать с API.&lt;/li>
+&lt;li>Узнайте больше про оболочку adapter.js из &lt;a href="https://github.com/webrtc/adapter">https://github.com/webrtc/adapter&lt;/a>&lt;/li>
+&lt;li>Хотите посмотреть, как выглядит лучшее в мире приложение для видеочата? Посмотрите на AppRTC, каноническое приложение для звонков WebRTC: приложение (&lt;a href="https://appr.tc/">https://appr.tc/&lt;/a>) и код (&lt;a href="https://github.com/webrtc/apprtc">https://github.com/webrtc/apprtc&lt;/a>) . Время настройки вызова составляет менее 500 мс!&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Лучшая практика&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Для обеспечения надежности вашего кода в будущем используйте новые API-интерфейсы на основе промисов и включите совместимость с браузерами, которые их не поддерживают, используя adapter.js&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Следующий шаг&lt;/strong>&lt;/p>
+&lt;p>Этот шаг показывает, как использовать WebRTC для передачи видео между узлами – но эта codelab в том числе и о данных!
+В следующем шаге выясним, как передавать произвольные данные с помощью &lt;code>RTCDataChannel&lt;/code>.&lt;/p></description></item><item><title>Использование RTCDataChannel для обмена данными</title><link>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-rtcdatachannel-exchange-data/</link><pubDate>Sat, 02 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-rtcdatachannel-exchange-data/</guid><description>&lt;p>&lt;strong>Чему вы научитесь&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>как обмениваться данными между узлами WebRTC&lt;/li>
+&lt;/ul>
+&lt;p>Полная версия этого шага находится в папке step-03.&lt;/p>
+&lt;p>&lt;strong>Обновите свой HTML&lt;/strong>&lt;/p>
+&lt;p>На этом шаге вы будете использовать WebRTC каналы данных для отправки текста между двумя textarea элементами на одной странице. Это опять не сильно применимо на практике, но зато демонстрирует, как WebRTC можно использовать для обмена данными, а также для потоковых видео.&lt;/p>
+&lt;p>Удалите элементы video и button из index.html и замените их следующим HTML-кодом:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">textarea&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;dataChannelSend&amp;#34;&lt;/span> &lt;span style="color:#4070a0">disabled&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">placeholder&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;Press Start, enter some text, then press Send.&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">textarea&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">textarea&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;dataChannelReceive&amp;#34;&lt;/span> &lt;span style="color:#4070a0">disabled&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">textarea&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">div&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;buttons&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">button&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;startButton&amp;#34;&lt;/span>&amp;gt;Start&amp;lt;/&lt;span style="color:#062873;font-weight:bold">button&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">button&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;sendButton&amp;#34;&lt;/span>&amp;gt;Send&amp;lt;/&lt;span style="color:#062873;font-weight:bold">button&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">button&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;closeButton&amp;#34;&lt;/span>&amp;gt;Stop&amp;lt;/&lt;span style="color:#062873;font-weight:bold">button&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Одна текстовая область будет предназначена для ввода текста, другая будет отображать текст в потоковом режиме между узлами.
+Теперь index.html должен выглядеть так:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">&amp;lt;!DOCTYPE html&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">title&lt;/span>&amp;gt;Realtime communication with WebRTC&amp;lt;/&lt;span style="color:#062873;font-weight:bold">title&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">link&lt;/span> &lt;span style="color:#4070a0">rel&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;stylesheet&amp;#34;&lt;/span> &lt;span style="color:#4070a0">href&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;css/main.css&amp;#34;&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">h1&lt;/span>&amp;gt;Realtime communication with WebRTC&amp;lt;/&lt;span style="color:#062873;font-weight:bold">h1&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">textarea&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;dataChannelSend&amp;#34;&lt;/span> &lt;span style="color:#4070a0">disabled&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">placeholder&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;Press Start, enter some text, then press Send.&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">textarea&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">textarea&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;dataChannelReceive&amp;#34;&lt;/span> &lt;span style="color:#4070a0">disabled&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">textarea&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">div&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;buttons&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">button&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;startButton&amp;#34;&lt;/span>&amp;gt;Start&amp;lt;/&lt;span style="color:#062873;font-weight:bold">button&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">button&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;sendButton&amp;#34;&lt;/span>&amp;gt;Send&amp;lt;/&lt;span style="color:#062873;font-weight:bold">button&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">button&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;closeButton&amp;#34;&lt;/span>&amp;gt;Stop&amp;lt;/&lt;span style="color:#062873;font-weight:bold">button&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;https://webrtc.github.io/adapter/adapter-latest.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;js/main.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Обновите свой JavaScript&lt;/p>
+&lt;p>Замените main.js содержимым из &lt;em>&lt;code>step-03/js/main.js&lt;/code>&lt;/em>.&lt;/p>
+&lt;blockquote>
+&lt;p>Как и на предыдущем шаге, делать копи-паст на больших кусках кода – не идеальный вариант развития событий в codelab (как и с RTCPeerConnection). Но альтернатив у нас нет.&lt;/p>&lt;/blockquote>
+&lt;p>Протестируйте потоковые данные между узлами: откройте index.html, нажмите Start для установки соединения между узлами, введите какой-то текст в textarea слева, затем нажмите на Send, чтобы передать текст через каналы данных WebRTC.&lt;/p>
+&lt;p>&lt;strong>Как это работает&lt;/strong>
+Этот код использует &lt;code>RTCPeerConnection&lt;/code> и &lt;code>RTCDataChannel&lt;/code> для обмена текстовыми сообщениями
+Большая часть кода на этом шаге такая же, как и в примере RTCPeerConnection.
+Функции sendData() и createConnection() содержат большую часть нового кода:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">function&lt;/span> createConnection() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dataChannelSend.placeholder &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> servers &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">null&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pcConstraint &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">null&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dataConstraint &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">null&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> trace(&lt;span style="color:#4070a0">&amp;#39;Using SCTP based data channels&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic">// For SCTP, reliable and ordered delivery is true by default.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span> &lt;span style="color:#60a0b0;font-style:italic">// Add localConnection to global scope to make it visible
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span> &lt;span style="color:#60a0b0;font-style:italic">// from the browser console.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span> &lt;span style="color:#007020">window&lt;/span>.localConnection &lt;span style="color:#666">=&lt;/span> localConnection &lt;span style="color:#666">=&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">new&lt;/span> RTCPeerConnection(servers, pcConstraint);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> trace(&lt;span style="color:#4070a0">&amp;#39;Created local peer connection object localConnection&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sendChannel &lt;span style="color:#666">=&lt;/span> localConnection.createDataChannel(&lt;span style="color:#4070a0">&amp;#39;sendDataChannel&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dataConstraint);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> trace(&lt;span style="color:#4070a0">&amp;#39;Created send data channel&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> localConnection.onicecandidate &lt;span style="color:#666">=&lt;/span> iceCallback1;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sendChannel.onopen &lt;span style="color:#666">=&lt;/span> onSendChannelStateChange;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sendChannel.onclose &lt;span style="color:#666">=&lt;/span> onSendChannelStateChange;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic">// Add remoteConnection to global scope to make it visible
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span> &lt;span style="color:#60a0b0;font-style:italic">// from the browser console.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span> &lt;span style="color:#007020">window&lt;/span>.remoteConnection &lt;span style="color:#666">=&lt;/span> remoteConnection &lt;span style="color:#666">=&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">new&lt;/span> RTCPeerConnection(servers, pcConstraint);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> trace(&lt;span style="color:#4070a0">&amp;#39;Created remote peer connection object remoteConnection&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> remoteConnection.onicecandidate &lt;span style="color:#666">=&lt;/span> iceCallback2;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> remoteConnection.ondatachannel &lt;span style="color:#666">=&lt;/span> receiveChannelCallback;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> localConnection.createOffer().then(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> gotDescription1,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> onCreateSessionDescriptionError
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> );
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> startButton.disabled &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">true&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> closeButton.disabled &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">false&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">function&lt;/span> sendData() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> data &lt;span style="color:#666">=&lt;/span> dataChannelSend.value;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sendChannel.send(data);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> trace(&lt;span style="color:#4070a0">&amp;#39;Sent Data: &amp;#39;&lt;/span> &lt;span style="color:#666">+&lt;/span> data);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Синтаксис в RTCDataChannel намеренно похож на WebSocket, с методом &lt;code>send()&lt;/code> событием message.&lt;/p>
+&lt;p>Обратите внимание на использование dataConstraint. Каналы передачи данных могут быть настроены для обеспечения различных типов обмена данными — например, отправляемые данные могут быть в приоритете над над производительностью. Более подробную информацию о возможностях можно найти на &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/createDataChannel">https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/createDataChannel&lt;/a> .&lt;/p>
+&lt;blockquote>
+&lt;p>Три типа ограничений
+Это сбивает с толку!&lt;/p>&lt;/blockquote>
+&lt;p>Различные типы параметров настройки вызовов WebRTC часто называются «ограничениями».&lt;/p>
+&lt;p>Узнайте больше об ограничениях и возможностях:&lt;/p>
+&lt;ul>
+&lt;li>RTCPeerConnection &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/RTCPeerConnection">https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/RTCPeerConnection&lt;/a>&lt;/li>
+&lt;li>RTCDataChannel &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/createDataChannel">https://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnection/createDataChannel&lt;/a>&lt;/li>
+&lt;li>getUserMedia() &lt;a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia">https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Бонусные задания&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>с SCTP-протоколом, используемым каналами передачи данных WebRTC, надежная и упорядоченная доставка данных включена по умолчанию. Когда может понадобиться RTCDataChannel для обеспечения надежной доставки даных, а когда производительность может быть важнее – даже если это означает потерю каких-то данных?&lt;/li>
+&lt;li>Используйте CSS для улучшения макета страницы и добавьте атрибут placeholder в текстовую область dataChannelReceive.&lt;/li>
+&lt;li>Протестируйте страницу на мобильном устройстве.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Что вы узнали?&lt;/strong>
+На этом шаге вы узнали, как&lt;/p>
+&lt;ul>
+&lt;li>устанавливать соединение между двумя узлами WebRTC&lt;/li>
+&lt;li>обмениваться текстовыми данными между узлами&lt;/li>
+&lt;/ul>
+&lt;p>Полная версия этого шага находится в папке step-03.&lt;/p>
+&lt;p>&lt;strong>Узнайте больше&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Каналы передачи данных WebRTC (написано пару лет назад, но все еще стоит прочитать) - &lt;a href="http://www.html5rocks.com/en/tutorials/webrtc/datachannels/">http://www.html5rocks.com/en/tutorials/webrtc/datachannels/&lt;/a>&lt;/li>
+&lt;li>Почему SCTP был выбран для канала передачи данных WebRTC? - &lt;a href="https://bloggeek.me/sctp-data-channel/">https://bloggeek.me/sctp-data-channel/&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Следующий шаг&lt;/strong>
+Вы узнали, как обмениваться данными между узлами на одной и той же странице, но как вы собираетесь это делать между разными устройствами? Сначала вам необходимо настроить сигналинг-канал для обмена сообщениями метаданных. Как – узнайте на следующем шаге!&lt;/p></description></item><item><title>Настройка службы сигналинга для обмена сообщениями</title><link>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-setup-signaling-service/</link><pubDate>Sat, 02 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-setup-signaling-service/</guid><description>&lt;p>&lt;strong>Чему вы научитесь&lt;/strong>&lt;/p>
+&lt;p>На этом шаге вы узнаете, как:&lt;/p>
+&lt;ul>
+&lt;li>Использовать npm для установки взаимосвязей, как указано в package.json&lt;/li>
+&lt;li>Запускать сервер Node.js и использовать node-static для обслуживания статических файлов.&lt;/li>
+&lt;li>Настраивать службу обмена сообщениями на Node.js через Socket.IO .&lt;/li>
+&lt;li>Использовать это для создания ‘комнат&amp;quot; и обмена сообщениями.&lt;/li>
+&lt;li>&lt;/li>
+&lt;/ul>
+&lt;p>Полная версия этого шага находится в папке step-04.&lt;/p>
+&lt;p>&lt;strong>Концепции&lt;/strong>&lt;/p>
+&lt;p>Чтобы установить и поддерживать вызов WebRTC, клиенты WebRTC (узлы) должны обмениваться метаданными:&lt;/p>
+&lt;ul>
+&lt;li>Информация о кандидате (сети).&lt;/li>
+&lt;li>&lt;/li>
+&lt;li>сообщения offer и answer, содержащие информацию о медиа, например, о разрешении и кодеках.&lt;/li>
+&lt;li>&lt;/li>
+&lt;/ul>
+&lt;p>Другими словами, обмен метаданными требуется до P2P потоковой передачи аудио, видео или данных. Этот процесс называется сигналингом.
+На предыдущих этапах объекты RTCPeerConnection отправителя и получателя находились на одной странице, поэтому &amp;ldquo;сигналинг&amp;rdquo; - это просто вопрос передачи метаданных между объектами.&lt;/p>
+&lt;p>В реальном приложении отправитель и получатель RTCPeerConnections запущены на веб-страницах на разных устройствах, и вам нужен способ для обмена метаданными.&lt;/p>
+&lt;p>Для этого используется signaling-server: сервер, который может передавать сообщения между клиентами WebRTC (узлами). Фактически сообщения представляют собой обычный текст: строковые объекты JavaScript.&lt;/p>
+&lt;p>&lt;strong>Обязательное условие: установить Node.js&lt;/strong>&lt;/p>
+&lt;p>Для выполнения следующих шагов этой codelab (папки step-04 до step-06) вам необходимо запустить сервер на локальном хосте с помощью Node.js .
+Вы можете скачать и установить Node.js по этой ссылке (&lt;a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/&lt;/a>) или через предпочтительный для вас менеджер пакетов (&lt;a href="https://nodejs.org/en/download/package-manager/">https://nodejs.org/en/download/package-manager/&lt;/a>).
+После установки вы сможете импортировать зависимости, необходимые для следующих шагов (запуск npm install), а также запустить небольшой локальный сервер для выполнения codelab (запуск node index.js). Эти команды будут указаны позже, когда они потребуются.&lt;/p>
+&lt;p>&lt;strong>О приложении&lt;/strong>&lt;/p>
+&lt;p>WebRTC использует клиентский JavaScript API, но для использования в реальных приложениях также требуется сигналинг-сервер (обмена сообщениями), а также серверы STUN и TURN. Вы можете узнать больше здесь - &lt;a href="https://www.html5rocks.com/en/tutorials/webrtc/infrastructure/">https://www.html5rocks.com/en/tutorials/webrtc/infrastructure/&lt;/a>.
+На этом шаге вы создадите простой Node.js сигналинг-сервер, использующий Socket.IO Node js модуль и библиотеку JavaScript для обмена сообщениями. Опыт работы с Node.js и Socket.IO будет полезным, но не решающим; компоненты обмена сообщениями очень просты.&lt;/p>
+&lt;blockquote>
+&lt;p>Выбор правильного сигналинг-сервера
+В этой кодовой лаборатории используется Socket.IO для сигналинг-сервера.
+Дизайн Socket.IO упрощает создание службы для обмена сообщениями. и Socket.IO подходит для изучения сигналинга WebRTC благодаря встроенной концепции ‘комнат&amp;quot;.
+Однако для производственного сервиса есть альтернативы получше. Смотрите, как выбрать сигналинг-протокол для вашего следующего проекта WebRTC - &lt;a href="https://bloggeek.me/siganling-protocol-webrtc/">https://bloggeek.me/siganling-protocol-webrtc/&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;p>В этом примере сервер (Node.js приложение) реализовано в index.js, и клиент, который работает на нем (веб-приложение), реализован в index.html.
+Node.js приложение на этом этапе имеет две задачи.
+Во-первых, он действует как ретранслятор сообщений:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>socket.on(&lt;span style="color:#4070a0">&amp;#39;message&amp;#39;&lt;/span>, &lt;span style="color:#007020;font-weight:bold">function&lt;/span> (message) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> log(&lt;span style="color:#4070a0">&amp;#39;Got message: &amp;#39;&lt;/span>, message);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> socket.broadcast.emit(&lt;span style="color:#4070a0">&amp;#39;message&amp;#39;&lt;/span>, message);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>});
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Во-вторых, он управляет «комнатами» видеочата WebRTC:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">if&lt;/span> (numClients &lt;span style="color:#666">===&lt;/span> &lt;span style="color:#40a070">0&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> socket.join(room);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> socket.emit(&lt;span style="color:#4070a0">&amp;#39;created&amp;#39;&lt;/span>, room, socket.id);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>} &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (numClients &lt;span style="color:#666">===&lt;/span> &lt;span style="color:#40a070">1&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> socket.join(room);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> socket.emit(&lt;span style="color:#4070a0">&amp;#39;joined&amp;#39;&lt;/span>, room, socket.id);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> io.sockets.&lt;span style="color:#007020;font-weight:bold">in&lt;/span>(room).emit(&lt;span style="color:#4070a0">&amp;#39;ready&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>} &lt;span style="color:#007020;font-weight:bold">else&lt;/span> { &lt;span style="color:#60a0b0;font-style:italic">// max two clients
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span> socket.emit(&lt;span style="color:#4070a0">&amp;#39;full&amp;#39;&lt;/span>, room);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Наше простое приложение WebRTC позволит максимум двум узлам совместно использовать комнату.&lt;/p>
+&lt;p>&lt;strong>HTML и JavaScript&lt;/strong>&lt;/p>
+&lt;p>Обновите index.html. Теперь страница должна выглядеть примерно так:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">&amp;lt;!DOCTYPE html&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">title&lt;/span>&amp;gt;Realtime communication with WebRTC&amp;lt;/&lt;span style="color:#062873;font-weight:bold">title&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">link&lt;/span> &lt;span style="color:#4070a0">rel&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;stylesheet&amp;#34;&lt;/span> &lt;span style="color:#4070a0">href&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;css/main.css&amp;#34;&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">h1&lt;/span>&amp;gt;Realtime communication with WebRTC&amp;lt;/&lt;span style="color:#062873;font-weight:bold">h1&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;/socket.io/socket.io.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;js/main.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>На этом шаге вы ничего не увидите на странице: все протоколирование выполняется в консоли браузера. (Чтобы просмотреть консоль в Chrome, нажмите Ctrl-Shift-J или Command-Option-J, если работаете на Mac.)
+Заменить js/main.js следующим файлом:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">&amp;#39;use strict&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">var&lt;/span> isInitiator;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">window&lt;/span>.room &lt;span style="color:#666">=&lt;/span> prompt(&lt;span style="color:#4070a0">&amp;#34;Enter room name:&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">var&lt;/span> socket &lt;span style="color:#666">=&lt;/span> io.connect();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">if&lt;/span> (room &lt;span style="color:#666">!==&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&amp;#34;&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log(&lt;span style="color:#4070a0">&amp;#39;Message from client: Asking to join room &amp;#39;&lt;/span> &lt;span style="color:#666">+&lt;/span> room);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> socket.emit(&lt;span style="color:#4070a0">&amp;#39;create or join&amp;#39;&lt;/span>, room);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>socket.on(&lt;span style="color:#4070a0">&amp;#39;created&amp;#39;&lt;/span>, &lt;span style="color:#007020;font-weight:bold">function&lt;/span>(room, clientId) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> isInitiator &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">true&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>});
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>socket.on(&lt;span style="color:#4070a0">&amp;#39;full&amp;#39;&lt;/span>, &lt;span style="color:#007020;font-weight:bold">function&lt;/span>(room) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log(&lt;span style="color:#4070a0">&amp;#39;Message from client: Room &amp;#39;&lt;/span> &lt;span style="color:#666">+&lt;/span> room &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#4070a0">&amp;#39; is full :^(&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>});
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>socket.on(&lt;span style="color:#4070a0">&amp;#39;ipaddr&amp;#39;&lt;/span>, &lt;span style="color:#007020;font-weight:bold">function&lt;/span>(ipaddr) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log(&lt;span style="color:#4070a0">&amp;#39;Message from client: Server IP address is &amp;#39;&lt;/span> &lt;span style="color:#666">+&lt;/span> ipaddr);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>});
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>socket.on(&lt;span style="color:#4070a0">&amp;#39;joined&amp;#39;&lt;/span>, &lt;span style="color:#007020;font-weight:bold">function&lt;/span>(room, clientId) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> isInitiator &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">false&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>});
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>socket.on(&lt;span style="color:#4070a0">&amp;#39;log&amp;#39;&lt;/span>, &lt;span style="color:#007020;font-weight:bold">function&lt;/span>(array) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log.apply(console, array);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>});
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Настройте Socket.IO для запуска Node.js
+В HTML-файле вы, возможно, видели, что используете Socket.IO файл:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&amp;lt;&lt;/span>script src&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;/socket.io/socket.io.js&amp;#34;&lt;/span>&lt;span style="color:#666">&amp;gt;&amp;lt;&lt;/span>&lt;span style="">/script&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>На верхнем уровне вашей папки work создайте файл с именем package.json со следующим содержимым:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;name&amp;#34;&lt;/span>&lt;span style="color:#666">:&lt;/span> &lt;span style="color:#4070a0">&amp;#34;webrtc-codelab&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;version&amp;#34;&lt;/span>&lt;span style="color:#666">:&lt;/span> &lt;span style="color:#4070a0">&amp;#34;0.0.1&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;description&amp;#34;&lt;/span>&lt;span style="color:#666">:&lt;/span> &lt;span style="color:#4070a0">&amp;#34;WebRTC codelab&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;dependencies&amp;#34;&lt;/span>&lt;span style="color:#666">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;node-static&amp;#34;&lt;/span>&lt;span style="color:#666">:&lt;/span> &lt;span style="color:#4070a0">&amp;#34;^0.7.10&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;socket.io&amp;#34;&lt;/span>&lt;span style="color:#666">:&lt;/span> &lt;span style="color:#4070a0">&amp;#34;^1.2.0&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Это манифест приложения, который сообщает диспетчеру пакетов узлов (npm), какие зависимости проекта следует установить.&lt;/p>
+&lt;p>Чтобы установить зависимости (например, /socket.io/socket.io.js), выполните следующие действия из терминала командной строки в вашей папке work:
+npm install&lt;/p>
+&lt;p>Вы должны увидеть журнал установки, который заканчивается примерно так:&lt;/p>
+&lt;p>Как вы видите, npm установил зависимости, определенные в package.json.&lt;/p>
+&lt;p>Создайте новый файл index.js на верхнем уровне вашей папки work (не в папке js) и добавьте следующий код:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">&amp;#39;use strict&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">var&lt;/span> os &lt;span style="color:#666">=&lt;/span> require(&lt;span style="color:#4070a0">&amp;#39;os&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">var&lt;/span> nodeStatic &lt;span style="color:#666">=&lt;/span> require(&lt;span style="color:#4070a0">&amp;#39;node-static&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">var&lt;/span> http &lt;span style="color:#666">=&lt;/span> require(&lt;span style="color:#4070a0">&amp;#39;http&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">var&lt;/span> socketIO &lt;span style="color:#666">=&lt;/span> require(&lt;span style="color:#4070a0">&amp;#39;socket.io&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">var&lt;/span> fileServer &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">new&lt;/span>(nodeStatic.Server)();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">var&lt;/span> app &lt;span style="color:#666">=&lt;/span> http.createServer(&lt;span style="color:#007020;font-weight:bold">function&lt;/span>(req, res) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fileServer.serve(req, res);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}).listen(&lt;span style="color:#40a070">8080&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">var&lt;/span> io &lt;span style="color:#666">=&lt;/span> socketIO.listen(app);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>io.sockets.on(&lt;span style="color:#4070a0">&amp;#39;connection&amp;#39;&lt;/span>, &lt;span style="color:#007020;font-weight:bold">function&lt;/span>(socket) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic">// convenience function to log server messages on the client
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span> &lt;span style="color:#007020;font-weight:bold">function&lt;/span> log() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> array &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#4070a0">&amp;#39;Message from server:&amp;#39;&lt;/span>];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> array.push.apply(array, arguments);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> socket.emit(&lt;span style="color:#4070a0">&amp;#39;log&amp;#39;&lt;/span>, array);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> socket.on(&lt;span style="color:#4070a0">&amp;#39;message&amp;#39;&lt;/span>, &lt;span style="color:#007020;font-weight:bold">function&lt;/span>(message) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> log(&lt;span style="color:#4070a0">&amp;#39;Client said: &amp;#39;&lt;/span>, message);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic">// for a real app, would be room-only (not broadcast)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span> socket.broadcast.emit(&lt;span style="color:#4070a0">&amp;#39;message&amp;#39;&lt;/span>, message);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> socket.on(&lt;span style="color:#4070a0">&amp;#39;create or join&amp;#39;&lt;/span>, &lt;span style="color:#007020;font-weight:bold">function&lt;/span>(room) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> log(&lt;span style="color:#4070a0">&amp;#39;Received request to create or join room &amp;#39;&lt;/span> &lt;span style="color:#666">+&lt;/span> room);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> clientsInRoom &lt;span style="color:#666">=&lt;/span> io.sockets.adapter.rooms[room];
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> numClients &lt;span style="color:#666">=&lt;/span> clientsInRoom &lt;span style="color:#666">?&lt;/span> &lt;span style="color:#007020">Object&lt;/span>.keys(clientsInRoom.sockets).length &lt;span style="color:#666">:&lt;/span> &lt;span style="color:#40a070">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> log(&lt;span style="color:#4070a0">&amp;#39;Room &amp;#39;&lt;/span> &lt;span style="color:#666">+&lt;/span> room &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#4070a0">&amp;#39; now has &amp;#39;&lt;/span> &lt;span style="color:#666">+&lt;/span> numClients &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#4070a0">&amp;#39; client(s)&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (numClients &lt;span style="color:#666">===&lt;/span> &lt;span style="color:#40a070">0&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> socket.join(room);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> log(&lt;span style="color:#4070a0">&amp;#39;Client ID &amp;#39;&lt;/span> &lt;span style="color:#666">+&lt;/span> socket.id &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#4070a0">&amp;#39; created room &amp;#39;&lt;/span> &lt;span style="color:#666">+&lt;/span> room);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> socket.emit(&lt;span style="color:#4070a0">&amp;#39;created&amp;#39;&lt;/span>, room, socket.id);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (numClients &lt;span style="color:#666">===&lt;/span> &lt;span style="color:#40a070">1&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> log(&lt;span style="color:#4070a0">&amp;#39;Client ID &amp;#39;&lt;/span> &lt;span style="color:#666">+&lt;/span> socket.id &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#4070a0">&amp;#39; joined room &amp;#39;&lt;/span> &lt;span style="color:#666">+&lt;/span> room);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> io.sockets.&lt;span style="color:#007020;font-weight:bold">in&lt;/span>(room).emit(&lt;span style="color:#4070a0">&amp;#39;join&amp;#39;&lt;/span>, room);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> socket.join(room);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> socket.emit(&lt;span style="color:#4070a0">&amp;#39;joined&amp;#39;&lt;/span>, room, socket.id);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> io.sockets.&lt;span style="color:#007020;font-weight:bold">in&lt;/span>(room).emit(&lt;span style="color:#4070a0">&amp;#39;ready&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#007020;font-weight:bold">else&lt;/span> { &lt;span style="color:#60a0b0;font-style:italic">// max two clients
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span> socket.emit(&lt;span style="color:#4070a0">&amp;#39;full&amp;#39;&lt;/span>, room);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> socket.on(&lt;span style="color:#4070a0">&amp;#39;ipaddr&amp;#39;&lt;/span>, &lt;span style="color:#007020;font-weight:bold">function&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> ifaces &lt;span style="color:#666">=&lt;/span> os.networkInterfaces();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> (&lt;span style="color:#007020;font-weight:bold">var&lt;/span> dev &lt;span style="color:#007020;font-weight:bold">in&lt;/span> ifaces) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ifaces[dev].forEach(&lt;span style="color:#007020;font-weight:bold">function&lt;/span>(details) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (details.family &lt;span style="color:#666">===&lt;/span> &lt;span style="color:#4070a0">&amp;#39;IPv4&amp;#39;&lt;/span> &lt;span style="color:#666">&amp;amp;&amp;amp;&lt;/span> details.address &lt;span style="color:#666">!==&lt;/span> &lt;span style="color:#4070a0">&amp;#39;127.0.0.1&amp;#39;&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> socket.emit(&lt;span style="color:#4070a0">&amp;#39;ipaddr&amp;#39;&lt;/span>, details.address);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>});
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Из терминала командной строки выполните следующую команду в папке work:
+node index.js&lt;/p>
+&lt;p>В браузере откройте &lt;a href="#ZgotmplZ">localhost:8080&lt;/a>.&lt;/p>
+&lt;p>Каждый раз, когда вы открываете этот URL-адрес, вам будет предложено ввести название комнаты. Чтобы присоединиться к одной и той же комнате, каждый раз выбирайте одно и то же имя комнаты, например, «foo».&lt;/p>
+&lt;p>Откройте новую вкладку и снова откройте localhost: 8080. Выберите то же самое название комнаты.&lt;/p>
+&lt;p>Откройте &lt;a href="#ZgotmplZ">localhost:8080&lt;/a> в третьей вкладке или окне. Выберите то же название комнаты еще раз.&lt;/p>
+&lt;p>Проверьте консоль на каждой из вкладок: вы должны увидеть логи из JavaScript выше.&lt;/p>
+&lt;p>&lt;strong>Бонусные задания&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Какие альтернативные механизмы обмена сообщениями могут быть возможны? С какими проблемами вы можете столкнуться при использовании «чистого» WebSocket?&lt;/li>
+&lt;li>Какие проблемы могут быть связаны с масштабированием этого приложения? Можете ли вы разработать метод для тестирования тысяч или миллионов одновременных запросов на номер?&lt;/li>
+&lt;li>Это приложение использует запрос JavaScript для получения названия комнаты. Разработайте способ получения названия комнаты из URL. Например, localhost:8080/foo будет указывать имя комнаты foo.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Что вы узнали&lt;/strong>&lt;/p>
+&lt;p>На этом шаге вы узнали, как:&lt;/p>
+&lt;ul>
+&lt;li>Использовать npm для установки зависимостей проекта, как указано в package.json&lt;/li>
+&lt;li>Запускать Node.js сервер для обмена системных файлов.&lt;/li>
+&lt;li>Настраивать службу обмена сообщениями на Node.js через socket.io .&lt;/li>
+&lt;li>Использовать это для создания ‘комнат&amp;quot; и обмена сообщениями.
+Полная версия этого шага находится в папке step-04.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Узнайте больше&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Пример socket.io chat - &lt;a href="https://github.com/rauchg/chat-example">https://github.com/rauchg/chat-example&lt;/a>&lt;/li>
+&lt;li>WebRTC в реальном мире: STUN, TURN и сигналинг - &lt;a href="http://www.html5rocks.com/en/tutorials/webrtc/infrastructure/">http://www.html5rocks.com/en/tutorials/webrtc/infrastructure/&lt;/a>&lt;/li>
+&lt;li>Термин &amp;ldquo;signaling&amp;rdquo; в WebRTC - &lt;a href="https://www.webrtc-experiment.com/docs/WebRTC-Signaling-Concepts.html">https://www.webrtc-experiment.com/docs/WebRTC-Signaling-Concepts.html&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Следующий шаг&lt;/strong>
+Узнайте, как исполь
+зовать сигналинг, чтобы позволить двум пользователям установить одноранговое соединение.&lt;/p></description></item><item><title>Соединение однорангового соединения и сигналинга</title><link>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-peer-signaling-combine/</link><pubDate>Sat, 02 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-peer-signaling-combine/</guid><description>&lt;p>&lt;strong>Чему вы научитесь&lt;/strong>&lt;/p>
+&lt;p>На этом шаге вы узнаете, как:&lt;/p>
+&lt;ul>
+&lt;li>Запускать службу сигнализации WebRTC с помощью Socket.IO на Node.js&lt;/li>
+&lt;li>Использовать эту службу для обмена метаданными WebRTC между узлами.
+Полная версия этого шага находится в папке step-05.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Поменяйте HTML и JavaScript&lt;/strong>&lt;/p>
+&lt;p>Замените содержимое index.html следующим:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">&amp;lt;!DOCTYPE html&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">title&lt;/span>&amp;gt;Realtime communication with WebRTC&amp;lt;/&lt;span style="color:#062873;font-weight:bold">title&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">link&lt;/span> &lt;span style="color:#4070a0">rel&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;stylesheet&amp;#34;&lt;/span> &lt;span style="color:#4070a0">href&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;/css/main.css&amp;#34;&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">h1&lt;/span>&amp;gt;Realtime communication with WebRTC&amp;lt;/&lt;span style="color:#062873;font-weight:bold">h1&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">div&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;videos&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">video&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;localVideo&amp;#34;&lt;/span> &lt;span style="color:#4070a0">autoplay&lt;/span> &lt;span style="color:#4070a0">muted&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">video&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">video&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;remoteVideo&amp;#34;&lt;/span> &lt;span style="color:#4070a0">autoplay&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">video&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;/socket.io/socket.io.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;https://webrtc.github.io/adapter/adapter-latest.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;js/main.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Замените js/main.js содержимым из step-05/js/main.js.&lt;/p>
+&lt;p>&lt;strong>Запустите Node.js сервер&lt;/strong>&lt;/p>
+&lt;p>Если вы не отслеживаете эту codelab из своей папки work, вам может потребоваться установить зависимости для папки step-05 или вашей текущей рабочей папки. Выполните следующую команду из своей рабочей папки:
+npm install&lt;/p>
+&lt;p>После установки, если ваш Node.js сервер не запущен, запустите его, вызвав следующую команду в папке work:
+node index.js&lt;/p>
+&lt;p>Убедитесь, что вы используете версию index.js из предыдущего шага, который реализует Socket.IO. Для получения дополнительной информации о Node и Socket.IO, посмотрите раздел &amp;ldquo;Set up a signaling service to exchange messages&amp;rdquo;.
+В вашем браузере откройте localhost:8080.&lt;/p>
+&lt;p>Снова откройте localhost: 8080 в новой вкладке или окне. Один видеоэлемент будет отображать локальный поток из getUserMedia(), а другой будет показывать &amp;ldquo;удаленное&amp;rdquo; видео, передаваемое через RTCPeerConnection.&lt;/p>
+&lt;blockquote>
+&lt;p>Вам необходимо перезапускать Node.js сервер каждый раз, когда вы закрываете клиентскую вкладку или окно.
+Посмотрите логи в консоли браузера.&lt;/p>&lt;/blockquote>
+&lt;p>&lt;strong>Бонусные задания&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Это приложение поддерживает только видеочат один на один. Как вы можете изменить дизайн, чтобы несколько человек могли посещать одну и ту же комнату видеочата?&lt;/li>
+&lt;li>В примере строго задано имя комнаты foo. Каков наилучший способ включить другие имена комнат?&lt;/li>
+&lt;li>Как пользователям обмениваться названием комнаты? Попробуйте создать альтернативу для обмена именами комнат.&lt;/li>
+&lt;li>Как вы могли бы изменить приложение&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Что вы узнали&lt;/strong>&lt;/p>
+&lt;p>На этом шаге вы узнали, как:&lt;/p>
+&lt;ul>
+&lt;li>Запускать сигналинг-службу WebRTC с помощью Socket.IO через Node.js .&lt;/li>
+&lt;li>Использовать эту службу для обмена метаданными WebRTC между узлами.
+Полная версия этого шага находится в папке step-05.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Советы&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Статистика WebRTC и данные отладки доступны в chrome:// webrtc-internals.&lt;/li>
+&lt;li>test.webrtc.org может использоваться для проверки ваших локальных настроек и тестирования камеры и микрофона.&lt;/li>
+&lt;li>Если у вас возникли странные проблемы с кэшированием, попробуйте следующее:&lt;/li>
+&lt;li>Выполните принудительную перезагрузку обновление, удерживая нажатой клавишу ctrl и нажав кнопку Reload&lt;/li>
+&lt;li>Перезапустите браузер&lt;/li>
+&lt;li>Запустите npm cache clean из командной строки.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Далее&lt;/strong>&lt;/p>
+&lt;p>Узнайте, как делать снимки, получать изображения и делиться ими между удаленными узлами.&lt;/p></description></item><item><title>Сделайте фото и отправьте его через канал данных</title><link>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-take-photo/</link><pubDate>Sat, 02 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-take-photo/</guid><description>&lt;p>&lt;strong>Чему вы научитесь&lt;/strong>&lt;/p>
+&lt;p>На этом шаге вы узнаете, как:&lt;/p>
+&lt;ul>
+&lt;li>Делать снимок и получать из него данные, используя элемент canvas.&lt;/li>
+&lt;li>Обмениваться изображениями с удаленным пользователем.&lt;/li>
+&lt;li>&lt;/li>
+&lt;/ul>
+&lt;p>Полная версия этого шага находится в папке step-06.&lt;/p>
+&lt;p>&lt;strong>Как это работает&lt;/strong>&lt;/p>
+&lt;p>Ранее вы узнали, как обмениваться текстовыми сообщениями с помощью RTCDataChannel.&lt;/p>
+&lt;p>Этот шаг позволяет обмениваться целыми файлами: в этом примере - фотографиями, снятыми с помощью getUserMedia().&lt;/p>
+&lt;p>Основные части этого шага заключаются в следующем:&lt;/p>
+&lt;ol>
+&lt;li>Установите канал передачи данных. Обратите внимание, что на этом шаге вы не добавляете никаких медиапотоков к одноранговому соединению.&lt;/li>
+&lt;li>Захватите видеопоток пользователя с веб-камеры с помощью getUserMedia():&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">var&lt;/span> video &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">document&lt;/span>.getElementById(&lt;span style="color:#4070a0">&amp;#39;video&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">function&lt;/span> grabWebCamVideo() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log(&lt;span style="color:#4070a0">&amp;#39;Getting user media (video) ...&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> navigator.mediaDevices.getUserMedia({
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> video&lt;span style="color:#666">:&lt;/span> &lt;span style="color:#007020;font-weight:bold">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .then(gotStream)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .&lt;span style="color:#007020;font-weight:bold">catch&lt;/span>(&lt;span style="color:#007020;font-weight:bold">function&lt;/span>(e) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> alert(&lt;span style="color:#4070a0">&amp;#39;getUserMedia() error: &amp;#39;&lt;/span> &lt;span style="color:#666">+&lt;/span> e.name);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;li>Когда пользователь нажимает кнопку Snap, получает снимок (видеокадр) из видеопотока и отображает его в элементе canvas:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">var&lt;/span> photo &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">document&lt;/span>.getElementById(&lt;span style="color:#4070a0">&amp;#39;photo&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">var&lt;/span> photoContext &lt;span style="color:#666">=&lt;/span> photo.getContext(&lt;span style="color:#4070a0">&amp;#39;2d&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">function&lt;/span> snapPhoto() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> photoContext.drawImage(video, &lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#40a070">0&lt;/span>, photo.width, photo.height);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> show(photo, sendBtn);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
+&lt;li>Когда пользователь нажимает кнопку Send, преобразуйте изображение в байты и отправьте их по каналу передачи данных:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">function&lt;/span> sendPhoto() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic">// Split data channel message in chunks of this byte length.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> CHUNK_LEN &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">64000&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> img &lt;span style="color:#666">=&lt;/span> photoContext.getImageData(&lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#40a070">0&lt;/span>, photoContextW, photoContextH),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len &lt;span style="color:#666">=&lt;/span> img.data.byteLength,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> len &lt;span style="color:#666">/&lt;/span> CHUNK_LEN &lt;span style="color:#666">|&lt;/span> &lt;span style="color:#40a070">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log(&lt;span style="color:#4070a0">&amp;#39;Sending a total of &amp;#39;&lt;/span> &lt;span style="color:#666">+&lt;/span> len &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#4070a0">&amp;#39; byte(s)&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dataChannel.send(len);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic">// split the photo and send in chunks of about 64KB
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> (&lt;span style="color:#007020;font-weight:bold">var&lt;/span> i &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>; i &lt;span style="color:#666">&amp;lt;&lt;/span> n; i&lt;span style="color:#666">++&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> start &lt;span style="color:#666">=&lt;/span> i &lt;span style="color:#666">*&lt;/span> CHUNK_LEN,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> end &lt;span style="color:#666">=&lt;/span> (i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>) &lt;span style="color:#666">*&lt;/span> CHUNK_LEN;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log(start &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#4070a0">&amp;#39; - &amp;#39;&lt;/span> &lt;span style="color:#666">+&lt;/span> (end &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dataChannel.send(img.data.subarray(start, end));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic">// send the reminder, if any
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (len &lt;span style="color:#666">%&lt;/span> CHUNK_LEN) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log(&lt;span style="color:#4070a0">&amp;#39;last &amp;#39;&lt;/span> &lt;span style="color:#666">+&lt;/span> len &lt;span style="color:#666">%&lt;/span> CHUNK_LEN &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#4070a0">&amp;#39; byte(s)&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dataChannel.send(img.data.subarray(n &lt;span style="color:#666">*&lt;/span> CHUNK_LEN));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="5">
+&lt;li>Принимающая сторона преобразует байты сообщений канала передачи данных обратно в изображение и отображает изображение пользователю:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">function&lt;/span> receiveDataChromeFactory() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> buf, count;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">function&lt;/span> onmessage(event) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (&lt;span style="color:#007020;font-weight:bold">typeof&lt;/span> event.data &lt;span style="color:#666">===&lt;/span> &lt;span style="color:#4070a0">&amp;#39;string&amp;#39;&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> buf &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">window&lt;/span>.buf &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">new&lt;/span> Uint8ClampedArray(&lt;span style="color:#007020">parseInt&lt;/span>(event.data));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log(&lt;span style="color:#4070a0">&amp;#39;Expecting a total of &amp;#39;&lt;/span> &lt;span style="color:#666">+&lt;/span> buf.byteLength &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#4070a0">&amp;#39; bytes&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> data &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">new&lt;/span> Uint8ClampedArray(event.data);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> buf.set(data, count);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">+=&lt;/span> data.byteLength;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log(&lt;span style="color:#4070a0">&amp;#39;count: &amp;#39;&lt;/span> &lt;span style="color:#666">+&lt;/span> count);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (count &lt;span style="color:#666">===&lt;/span> buf.byteLength) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic">// we&amp;#39;re done: all data chunks have been received
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span> console.log(&lt;span style="color:#4070a0">&amp;#39;Done. Rendering photo.&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> renderPhoto(buf);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">function&lt;/span> renderPhoto(data) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> canvas &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">document&lt;/span>.createElement(&lt;span style="color:#4070a0">&amp;#39;canvas&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> canvas.width &lt;span style="color:#666">=&lt;/span> photoContextW;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> canvas.height &lt;span style="color:#666">=&lt;/span> photoContextH;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> canvas.classList.add(&lt;span style="color:#4070a0">&amp;#39;incomingPhoto&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic">// trail is the element holding the incoming images
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span> trail.insertBefore(canvas, trail.firstChild);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> context &lt;span style="color:#666">=&lt;/span> canvas.getContext(&lt;span style="color:#4070a0">&amp;#39;2d&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> img &lt;span style="color:#666">=&lt;/span> context.createImageData(photoContextW, photoContextH);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> img.data.set(data);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.putImageData(img, &lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#40a070">0&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Получите код&lt;/strong>&lt;/p>
+&lt;p>Замените содержимое вашей папки work содержимым из step-06. Ваш файл index.html в папке work теперь должен выглядеть следующим образом &lt;strong>:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">&amp;lt;!DOCTYPE html&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">title&lt;/span>&amp;gt;Realtime communication with WebRTC&amp;lt;/&lt;span style="color:#062873;font-weight:bold">title&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">link&lt;/span> &lt;span style="color:#4070a0">rel&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;stylesheet&amp;#34;&lt;/span> &lt;span style="color:#4070a0">href&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;/css/main.css&amp;#34;&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">h1&lt;/span>&amp;gt;Realtime communication with WebRTC&amp;lt;/&lt;span style="color:#062873;font-weight:bold">h1&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">h2&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">span&lt;/span>&amp;gt;Room URL: &amp;lt;/&lt;span style="color:#062873;font-weight:bold">span&lt;/span>&amp;gt;&amp;lt;&lt;span style="color:#062873;font-weight:bold">span&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;url&amp;#34;&lt;/span>&amp;gt;...&amp;lt;/&lt;span style="color:#062873;font-weight:bold">span&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">h2&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">div&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;videoCanvas&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">video&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;camera&amp;#34;&lt;/span> &lt;span style="color:#4070a0">autoplay&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">video&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">canvas&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;photo&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">canvas&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">div&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;buttons&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">button&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;snap&amp;#34;&lt;/span>&amp;gt;Snap&amp;lt;/&lt;span style="color:#062873;font-weight:bold">button&lt;/span>&amp;gt;&amp;lt;&lt;span style="color:#062873;font-weight:bold">span&lt;/span>&amp;gt; then &amp;lt;/&lt;span style="color:#062873;font-weight:bold">span&lt;/span>&amp;gt;&amp;lt;&lt;span style="color:#062873;font-weight:bold">button&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;send&amp;#34;&lt;/span>&amp;gt;Send&amp;lt;/&lt;span style="color:#062873;font-weight:bold">button&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">span&lt;/span>&amp;gt; or &amp;lt;/&lt;span style="color:#062873;font-weight:bold">span&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">button&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;snapAndSend&amp;#34;&lt;/span>&amp;gt;Snap &lt;span style="color:#d55537;font-weight:bold">&amp;amp;amp;&lt;/span> Send&amp;lt;/&lt;span style="color:#062873;font-weight:bold">button&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">div&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;incoming&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">h2&lt;/span>&amp;gt;Incoming photos&amp;lt;/&lt;span style="color:#062873;font-weight:bold">h2&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">div&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;trail&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;/socket.io/socket.io.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;https://webrtc.github.io/adapter/adapter-latest.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;js/main.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Если вы не отслеживаете эту codelab из своей папки work, вам может потребоваться установить зависимости для папки step-06 или вашей текущей рабочей папки. Просто запустите следующую команду из своей рабочей папки:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>npm install
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>После установки, если ваш Node.js сервер не запущен, запустите его, вызвав следующую команду из вашей папки work:
+node index.js&lt;/p>
+&lt;p>Убедитесь, что вы используете версию index.js, который реализует Socket.IO, и не забудьте перезапустить ваш сервер Node.js, если вы собираетесь что-то менять. Для большей информации на Node и Socket.IO, загляните в раздел «Set up a signaling service to exchange messages».&lt;/p>
+&lt;p>При необходимости нажмите на кнопку Allow, чтобы разрешить приложению использовать вашу веб-камеру.&lt;/p>
+&lt;p>Приложение создаст случайный ID комнаты, и добавьте этот ID в URL. Откройте URL из адресной стройки в новой вкладке или окне браузера.&lt;/p>
+&lt;p>Нажмите кнопку Snap&amp;amp;Send и затем посмотрите входящую область в другой вкладке внизу страницы. Приложение переносит фотографии между вкладками.&lt;/p>
+&lt;p>Вы должны увидеть что-то типа этого:&lt;/p>
+&lt;p>&lt;strong>Бонусные задания:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Как вы можете изменить код, чтобы сделать возможным совместное использование файлов любого типа?&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Узнайте больше&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>The MediaStream Image Capture API (&lt;a href="https://www.chromestatus.com/features/4843864737185792">https://www.chromestatus.com/features/4843864737185792&lt;/a>): API для фотосъемки и управления камерами — скоро появится в браузере!&lt;/li>
+&lt;li>API MediaRecorder для записи аудио и видео: демо-примеры (&lt;a href="https://webrtc.github.io/samples/src/content/getusermedia/record/">https://webrtc.github.io/samples/src/content/getusermedia/record/&lt;/a>) и документация (&lt;a href="https://www.chromestatus.com/features/5929649028726784">https://www.chromestatus.com/features/5929649028726784&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Что вы узнали&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Как делать фото и получать из нее данные с помощью элемента canvas.&lt;/li>
+&lt;li>Как обмениваться этими данными с удаленным пользователем.&lt;/li>
+&lt;/ul>
+&lt;p>Полная версия этого шага находится в папке step-06.&lt;/p></description></item><item><title>Выводы</title><link>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-results/</link><pubDate>Sat, 02 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/webrtc/practice/practice-results/</guid><description>&lt;p>Вы создали приложение для потоковой передачи видео в реальном времени и обмена данными!&lt;/p>
+&lt;p>&lt;strong>Что вы узнали&lt;/strong>&lt;/p>
+&lt;p>В этой codelab вы узнали, как:&lt;/p>
+&lt;ul>
+&lt;li>Получать видео с вашей веб-камеры.&lt;/li>
+&lt;li>стримить видео с помощью RTCPeerConnection.&lt;/li>
+&lt;li>Стримить данные с помощью RTCDataChannel.&lt;/li>
+&lt;li>Настраивать сигналинг-службу для обмена сообщениями.&lt;/li>
+&lt;li>Комбинировать одноранговое соединение и сигналинг.&lt;/li>
+&lt;li>Сделать снимок и поделиться им через канал передачи данных.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Следующие шаги&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Посмотрите на код и архитектуру канонического приложения AppRTC для чата WebRTC – приложение (&lt;a href="https://appr.tc/">https://appr.tc/&lt;/a>), код (&lt;a href="https://github.com/webrtc/apprtc">https://github.com/webrtc/apprtc&lt;/a>)&lt;/li>
+&lt;li>Попробуйте реальные примеры (&lt;a href="http://webrtc.github.io/samples">http://webrtc.github.io/samples&lt;/a>) из github.com/webrtc/samples.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Узнать больше&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Ряд ресурсов для начала работы с WebRTC доступен на &lt;a href="https://webrtc.org/">https://webrtc.org/&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

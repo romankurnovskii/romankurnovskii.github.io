@@ -1,3 +1,353 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Elastic Beanstalk on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/elastic-beanstalk/</link><description>Recent content in Elastic Beanstalk on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sat, 10 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/elastic-beanstalk/index.xml" rel="self" type="application/rss+xml"/><item><title>Elastic Beanstalk</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/elasticbeanstalk/</link><pubDate>Sat, 10 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/elasticbeanstalk/</guid><description>About AWS Elastic Beanstalk AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS.
-Deploying new application versions to existing resources in AWS Elastic Beanstalk happens much faster (typically under a minute) and once again is mostly dependent on the size of the new application version.
-Digest When you want to use new run time capabilities with elastic bean stalk, it is better to use blue-green deployment Security group will not be removed when removing the stack with elastic bean stalk For long running tasks - Use Elastic Beanstalk worker environment to process the tasks asynchronously Launch configuration is used for modifying instance type, key pair, elastic block storage and other settings that can be configured only when launching the instance Rolling with Additional Batch and Immutable both involve provisioning new servers to ensure capacity is not reduced.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Elastic Beanstalk on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/elastic-beanstalk/</link><description>Recent content in Elastic Beanstalk on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sat, 10 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/elastic-beanstalk/index.xml" rel="self" type="application/rss+xml"/><item><title>Elastic Beanstalk</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/elasticbeanstalk/</link><pubDate>Sat, 10 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/elasticbeanstalk/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/elasticbeanstalk/?id=docs_gateway">AWS Elastic Beanstalk&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS.&lt;/p>
+&lt;p>Deploying &lt;strong>new application&lt;/strong> versions &lt;strong>to existing&lt;/strong> resources in AWS Elastic Beanstalk happens &lt;strong>much faster&lt;/strong> (typically under a minute) and once again is mostly dependent on the size of the new application version.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/clearbox-flow-00.png"
+id="zoom-default"
+alt="flow"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="digest">Digest&lt;/h2>
+&lt;ul>
+&lt;li>When you want to use new run time capabilities with elastic bean stalk, it is better to use blue-green deployment&lt;/li>
+&lt;li>Security group will not be removed when removing the stack with elastic bean stalk&lt;/li>
+&lt;li>For long running tasks - Use &lt;code>Elastic Beanstalk&lt;/code> worker environment to process the tasks asynchronously&lt;/li>
+&lt;li>Launch configuration is used for modifying instance type, key pair, elastic block storage and other settings that can be configured only when launching the instance&lt;/li>
+&lt;li>Rolling with Additional Batch and Immutable both involve provisioning new servers to ensure capacity is not reduced. All At Once means the application will be offline for the duration of the update. Performing a Rolling Update without an additional batch of servers means a reduction in capacity. &lt;a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html">https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.deploy-existing-version.html&lt;/a>&lt;/li>
+&lt;li>For Blue green deployment - Use Elastic beanstalk swap URL feature or route 53 with weighted routing policies&lt;/li>
+&lt;li>You create your own Elastic Beanstalk platform using Packer, which is an open-source tool for creating machine images for many platforms, including AMIs for use
+with Amazon Elastic Compute Cloud (Amazon EC2).&lt;/li>
+&lt;/ul>
+&lt;h2 id="price">Price&lt;/h2>
+&lt;p>There is no additional charge for AWS Elastic Beanstalk. Only the AWS resources required to store and run applications are charged.&lt;/p>
+&lt;h2 id="concepts">Concepts&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.html">AWS doc&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="applications">Applications&lt;/h3>
+&lt;p>An application is a collection of different elements, such as environments, environment configurations, and application versions.&lt;/p>
+&lt;p>You can have multiple application versions held within an application.&lt;/p>
+&lt;h3 id="application-version">Application Version&lt;/h3>
+&lt;p>An application version is a very specific reference to a section of deployable code. The application version will point typically to simple storage service (S3) where the deployable code may reside.&lt;/p>
+&lt;h3 id="environment-configurations">Environment Configurations&lt;/h3>
+&lt;p>An environment configuration is a collection of parameters and settings that dictate how an environment will have its resources provisioned by Elastic Beanstalk and how these resources will behave.&lt;/p>
+&lt;h3 id="environment">Environment&lt;/h3>
+&lt;p>An environment refers to an application version that has been deployed on AWS resources. These resources are configured and provisioned by AWS Elastic Beanstalk. At this stage the application is deployed as a solution and becomes operational within your environment.&lt;/p>
+&lt;p>The “environment” is comprised of ALL the resources created by Elastic Beanstalk and not just an EC2 instance with your uploaded code.&lt;/p>
+&lt;h3 id="environment-tier">Environment Tier&lt;/h3>
+&lt;p>Reflects on how Elastic Beanstalk provisions resources based on what the application is designed to do. If the application manages and handles HTTP requests, then the app will be run in a web server environment.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-choosetier.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="configuration-template">Configuration Template&lt;/h3>
+&lt;p>This is the template that provides the baseline for creating a new, unique, environment configuration.&lt;/p>
+&lt;h3 id="platform">Platform&lt;/h3>
+&lt;p>Culmination of components in which you can build your application upon using Elastic Beanstalk. These are comprised of the OS of the instance, the programming language, the server type (web or application), and components of Elastic Beanstalk&lt;/p>
+&lt;h2 id="deployment-policies">Deployment policies&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>All at once&lt;/strong> – deploys the new version to all instances simultaneously and will be out of service for a short time.&lt;/li>
+&lt;li>&lt;strong>Rolling&lt;/strong> – deploys the new version in batches.&lt;/li>
+&lt;li>&lt;strong>Rolling with additional batch&lt;/strong> – deploys the new version in batches, but first launch a new batch of instances.&lt;/li>
+&lt;li>&lt;strong>Immutable&lt;/strong> – deploys the new version to a new set of instances.&lt;/li>
+&lt;li>&lt;strong>Traffic splitting&lt;/strong> – deploys the new version to a new set of instances and temporarily split incoming client traffic.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/18.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="practice">Practice&lt;/h2>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Kt55Q3ijoh4?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
+&lt;/div>
+&lt;h3 id="controlled-deployment-with-aws-elastic-beanstalk">Controlled deployment with AWS Elastic Beanstalk&lt;/h3>
+&lt;p>Lab &lt;a href="https://cloudacademy.com/lab/run-controlled-deploy-aws-elastic-beanstalk/?context_resource=lp&amp;amp;context_id=4364">Controlled deployment with AWS Elastic Beanstalk&lt;/a>&lt;/p>
+&lt;p>In this lab, we will deploy several application version updates in a load-balanced, auto-scaling environment.&lt;/p>
+&lt;p>The first update is deployed using a simple deployment. The second update is deployed using a `blue-green&amp;rsquo; deployment, where a separate environment is created to run the new version of the application, and the DNS switch switches incoming traffic to the new environment.&lt;/p>
+&lt;p>The final deployment architecture will look like this&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/02.png"
+id="zoom-default"
+alt="02.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h4 id="loading-the-application">Loading the application&lt;/h4>
+&lt;p>In this review, I&amp;rsquo;m using the code that Cloudacademy provided me, but I have a ready-made launch script that you can download from Elastic Beanstalk: &lt;a href="./files/nodejs.zip">download&lt;/a>&lt;/p>
+&lt;h5 id="create">Create&lt;/h5>
+&lt;p>Go to &lt;strong>Elastic Beanstalk&lt;/strong> page and click &lt;code>Create Application&lt;/code>.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/03.png"
+id="zoom-default"
+alt="03.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h5 id="set-name">Set Name&lt;/h5>
+&lt;p>Specify a name for the new application
+&lt;p class="md__image">
+&lt;img
+src="./img/04.png"
+id="zoom-default"
+alt="04.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h5 id="choose-platform">Choose platform&lt;/h5>
+&lt;p>Under &lt;code>Platform&lt;/code> choose the desired platform of the application. In our case - &lt;code>Node.js&lt;/code>.
+&lt;p class="md__image">
+&lt;img
+src="./img/05.png"
+id="zoom-default"
+alt="05.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h5 id="download-source-code">Download source code&lt;/h5>
+&lt;p>Under &lt;code>Source code origin&lt;/code> specify the version of the application and download the archive with the application. &lt;a href="./files/nodejs.zip">Example&lt;/a>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/06.png"
+id="zoom-default"
+alt="06.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h5 id="application-configuration">Application Configuration&lt;/h5>
+&lt;p>Change the preset &lt;code>Configuration&lt;/code> to &lt;code>Custom configuration&lt;/code>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/07.png"
+id="zoom-default"
+alt="07.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Click &lt;strong>Edit&lt;/strong> under &lt;strong>Rolling updates and deployments&lt;/strong>&lt;/p>
+&lt;p>In the default configuration, updates are distributed to all instances at the same time. This leads to application downtime, which is unacceptable for production environments.&lt;/p>
+&lt;p>We will set &lt;code>Rolling&lt;/code> and &lt;code>Batch size&lt;/code> to 30%&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/08.png"
+id="zoom-default"
+alt="08.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h5 id="network">Network&lt;/h5>
+&lt;p>Back in the main application form, click &lt;strong>Edit&lt;/strong> in the &lt;strong>Network&lt;/strong> configuration.&lt;/p>
+&lt;p>On the &lt;strong>Modify network&lt;/strong> form, configure the following values, then &lt;strong>Save&lt;/strong>.&lt;/p>
+&lt;p>&lt;strong>VPC&lt;/strong>: Select VPC with CIDR block &lt;strong>10.0.0.0/16&lt;/strong>. This will not be the default VPC.
+&lt;strong>Load balancer settings&lt;/strong>:
+&lt;strong>Load balancer subnets&lt;/strong>: Select subnets with CIDR blocks &lt;strong>10.0.100.0/24&lt;/strong>(&lt;strong>us-west-2a&lt;/strong>)and &lt;strong>10.0.101.0/24&lt;/strong> (&lt;strong>us-west-2b&lt;/strong>). These are public subnets. The application load balancer requires at least two subnets in different availability zones
+&lt;strong>Instance settings&lt;/strong>:
+* &lt;strong>Instance subnets&lt;/strong>: Select a subnet with CIDR block &lt;strong>10.0.1.0/24&lt;/strong>. This is a private subnet.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/09.png"
+id="zoom-default"
+alt="09.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/10.png"
+id="zoom-default"
+alt="10.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h5 id="confirmation">Confirmation&lt;/h5>
+&lt;p>Press &lt;code>Create app&lt;/code>.&lt;/p>
+&lt;p>The app creation process takes from 5 minutes.&lt;/p>
+&lt;p>Then go to Dasboard
+&lt;p class="md__image">
+&lt;img
+src="./img/11.png"
+id="zoom-default"
+alt="11.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>This concludes the loading phase of the app in Elastic Beanstalk. Next, let&amp;rsquo;s break down how to switch the downloading of the new version of the application to the clients.&lt;/p>
+&lt;h4 id="downloading-version-2-of-the-app">Downloading version 2 of the app&lt;/h4>
+&lt;h5 id="downloading-version-20">Downloading version 2.0&lt;/h5>
+&lt;p>Press &lt;code>Upload and deploy&lt;/code> and download the updated code. For example, you can change the text in the same source code for comparison.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/12.png"
+id="zoom-default"
+alt="12.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Specify new version and publication settings
+&lt;p class="md__image">
+&lt;img
+src="./img/13.png"
+id="zoom-default"
+alt="13.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h4 id="version-comparison">Version comparison&lt;/h4>
+&lt;p>Now we can compare both versions by following the links. In my case the applications look like this&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/15.png"
+id="zoom-default"
+alt="15.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;p class="md__image">
+&lt;img
+src="./img/14.png"
+id="zoom-default"
+alt="14.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h4 id="changing-the-url-of-the-apps">Changing the url of the apps&lt;/h4>
+&lt;p>Now let&amp;rsquo;s swap the apps around. So that a user who previously went to one address will now see the 2nd version of the app.&lt;/p>
+&lt;p>Under &lt;code>Actions&lt;/code>, click on &lt;code>Swap environment URLs&lt;/code> and then select the app you want to swap&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/16.png"
+id="zoom-default"
+alt="16.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h5 id="removing-elastic-beanstalk-resources">Removing Elastic Beanstalk resources&lt;/h5>
+&lt;p>Elastic Beanstalk runs EC2 instances as well as other services to deploy applications. But you can remove all services from a single window.&lt;/p>
+&lt;ol>
+&lt;li>go to the Applications section&lt;/li>
+&lt;li>Select an application.f&lt;/li>
+&lt;li>Click on Actions -&amp;gt; Terminate environment Translated with &amp;lt;www.DeepL.com/Translator&amp;gt; (free version)&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/17.png"
+id="zoom-default"
+alt="17.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="questions">Questions&lt;/h2>
+&lt;h3 id="q1">Q1&lt;/h3>
+&lt;p>&lt;strong>You are building a web application that will run in an AWS ElasticBeanstalk environment. You need to add and configure an Amazon ElastiCache cluster into the environment immediately after the application is deployed.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>What is the most efficient method to ensure that the cluster is deployed immediately after the EB application is deployed?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Use the AWS Management Console to create and configure the cluster.&lt;/li>
+&lt;li>Create a cron job to schedule the cluster deployment using the &lt;strong>&lt;em>aws cloudformation deploy&lt;/em>&lt;/strong> command&lt;/li>
+&lt;li>Create a configuration file with the .config extension and place it into the .ebextensions folder in the application package.&lt;/li>
+&lt;li>Build an AWS Lambda function that polls to the ElasticBeanstalk environment deployments and create and configure the Amazon ElastiCache cluster.&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>[&lt;a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-resources.html">AWS Secrets Manager&lt;/a>](&lt;a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-resources.html">https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-resources.html&lt;/a>)&lt;/p>
+&lt;p>&lt;mark style="color:white">3&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q2">Q2&lt;/h3>
+&lt;p>&lt;strong>Emily is building a web application using AWS ElasticBeanstalk. The application uses static images like icons, buttons and logos. Emily is looking for a way to serve these static images in a performant way that will not disrupt user sessions.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which of the following options would meet this requirement?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Use an Amazon Elastic File System (EFS) volume to serve the static image files.&lt;/li>
+&lt;li>Configure the AWS ElasticBeanstalk proxy server to serve the static image files.&lt;/li>
+&lt;li>Use an Amazon S3 bucket to serve the static image files.&lt;/li>
+&lt;li>Use an Amazon Elastic Block Store (EBS) volume to serve the static image files.&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-staticfiles.html">https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-staticfiles.html&lt;/a>&lt;/p>
+&lt;p>An Amazon S3 bucket would work, but the AWS ElasticBeanstalk proxy server would need to route the requests to the static files to a different place anytime they need to be shown.&lt;/p>
+&lt;p>&lt;mark style="color:white">2&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q3">Q3&lt;/h3>
+&lt;p>&lt;strong>An online shopping platform has been deployed to AWS using Elastic Beanstalk. They simply uploaded their Node.js application, and Elastic Beanstalk automatically handles the details of capacity provisioning, load balancing, scaling, and application health monitoring. Since the entire deployment process is automated, the DevOps team is not sure where to get the application log files of their shopping platform.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>In Elastic Beanstalk, where does it store the application files and server log files?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Application files are stored in S3. The server log files can only be stored in the attached EBS volumes of the EC2 instances, which were launched by AWS Elastic Beanstalk.&lt;/li>
+&lt;li>Application files are stored in S3. The server log files can be stored directly in Glacier or in CloudWatch Logs.&lt;/li>
+&lt;li>Application files are stored in S3. The server log files can be optionally stored in CloudTrail or in CloudWatch Logs.&lt;/li>
+&lt;li>Application files are stored in S3. The server log files can also optionally be stored in S3 or in CloudWatch Logs.&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>AWS Elastic Beanstalk stores your application files and optionally, server log files in Amazon S3. If you are using the AWS Management Console, the AWS Toolkit for Visual Studio, or AWS Toolkit for Eclipse, an Amazon S3 bucket will be created in your account and the files you upload will be automatically copied from your local client to Amazon S3.&lt;/p>
+&lt;p>Optionally, you may configure Elastic Beanstalk to copy your server log files every hour to Amazon S3. You do this by editing the environment configuration settings.&lt;/p>
+&lt;p>With CloudWatch Logs, you can monitor and archive your Elastic Beanstalk application, system, and custom log files from Amazon EC2 instances of your environments. You can also configure alarms that make it easier for you to react to specific log stream events that your metric filters extract.&lt;/p>
+&lt;p>The CloudWatch Logs agent installed on each Amazon EC2 instance in your environment publishes metric data points to the CloudWatch service for each log group you configure.&lt;/p>
+&lt;p>Each log group applies its own filter patterns to determine what log stream events to send to CloudWatch as data points. Log streams that belong to the same log group share the same retention, monitoring, and access control settings. You can configure Elastic Beanstalk to automatically stream logs to the CloudWatch service.&lt;/p>
+&lt;p>The option that says: &lt;em>Application files are stored in S3. The server log files can be optionally stored in CloudTrail or in CloudWatch Logs&lt;/em> is incorrect because the server log files can optionally be stored in either S3 or CloudWatch Logs, but not directly to CloudTrail as this service is primarily used for auditing API calls.&lt;/p>
+&lt;p>&lt;mark style="color:white">4&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q4">Q4&lt;/h3>
+&lt;p>&lt;strong>A former colleague reached out to you for consultation. He uploads a Django project in Elastic Beanstalk through CLI using instructions he read in a blog post, but for some reason he could not create the environment he needs for his project. He encounters an error message saying “The instance profile aws-elasticbeanstalk-ec2-role associated with the environment does not exist.”&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>What are the possible causes of this issue? (Select TWO.)&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>He selected the wrong platform for the Django code.&lt;/li>
+&lt;li>Elastic Beanstalk CLI did not create one because your IAM role has no permission to create roles.&lt;/li>
+&lt;li>Instance profile container for the role needs to be manually replaced every time a new environment is launched.&lt;/li>
+&lt;li>You have not associated an Elastic Beanstalk role to your CLI.&lt;/li>
+&lt;li>IAM role already exists but has insufficient permissions that Elastic Beanstalk needs.&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>AWS EB CLI cannot create the instance profile for your beanstalk environment if your IAM role has no access to creating roles.&lt;/p>
+&lt;p>This error is also thrown when the instance profile has insufficient or outdates policies that beanstalk needs to function. More details on this can be seen on the references provided.&lt;/p>
+&lt;p>&lt;mark style="color:white">2, 5&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/tutorials.html">https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/tutorials.html&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/tutorials.html">Tutorials and samples&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="community-posts">Community posts&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://dev.to/romankurnovskii/todo-aws-aws-elastic-beanstalk-cheat-sheet-1718">https://dev.to/romankurnovskii/todo-aws-aws-elastic-beanstalk-cheat-sheet-1718&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://dev.to/romankurnovskii/aws-elastic-beanstalk-top-questions-certified-developer-exam-478g">https://dev.to/romankurnovskii/aws-elastic-beanstalk-top-questions-certified-developer-exam-478g&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

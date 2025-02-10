@@ -1,1 +1,208 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Codeforces on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/</link><description>Recent content in Codeforces on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 03 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/index.xml" rel="self" type="application/rss+xml"/><item><title>Plan</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/plan/</link><pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/plan/</guid><description>Stage 1: Implementation and Greedy 1809A - Garland (implementation, 800) 1807A - Plus or Minus (implementation, 800) 1807B - Grab the Candies (greedy, 800) 1807C - Find and Replace (greedy, implementation, strings, 800) 1798A - Showstopper (greedy, implementation, sortings, 800) 1799A - Recent Actions (data structures, greedy, implementation, math, 800) 1788A - One and Two (brute force, implementation, math, 800) 1778A - Flip Flop Sum (greedy, implementation, 800) 1772A - A+B? (implementation, 800) 1796B - Asterisk-Minor Template (implementation, strings, 1000) Stage 2: Combinatorics and Geometry 1777A - Everybody Likes Good Arrays!</description></item><item><title>Python template for contests</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/cp-template/</link><pubDate>Tue, 07 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/cp-template/</guid><description>Clean template ############################################# Libraries ###################################################### import bisect import sys import math import os import time from queue import PriorityQueue from io import BytesIO, IOBase from collections import defaultdict, Counter from bisect import bisect_right ############################################# Definitions ###################################################### INF = sys.maxsize BUFSIZE = 4096 ############################################# Inputs ###################################################### # def inp(): return sys.stdin.readline().rstrip(&amp;#34;\r\n&amp;#34;) # read line as string # def inp_int(): return int(inp()) # read input as integer. &amp;#39;1&amp;#39; -&amp;gt; 1 # def inp_int_list(): return list(map(int, inp().split())) # def inp_str_list(): return list(inp()) ############################################# Solution ###################################################### def solve(): n = list(map(int, input().</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Codeforces on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/</link><description>Recent content in Codeforces on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 03 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/index.xml" rel="self" type="application/rss+xml"/><item><title>Plan</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/plan/</link><pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/plan/</guid><description>&lt;h2 id="stage-1-implementation-and-greedy">Stage 1: Implementation and Greedy&lt;/h2>
+&lt;ol>
+&lt;li>1809A - Garland (implementation, 800)&lt;/li>
+&lt;li>1807A - Plus or Minus (implementation, 800)&lt;/li>
+&lt;li>1807B - Grab the Candies (greedy, 800)&lt;/li>
+&lt;li>1807C - Find and Replace (greedy, implementation, strings, 800)&lt;/li>
+&lt;li>1798A - Showstopper (greedy, implementation, sortings, 800)&lt;/li>
+&lt;li>1799A - Recent Actions (data structures, greedy, implementation, math, 800)&lt;/li>
+&lt;li>1788A - One and Two (brute force, implementation, math, 800)&lt;/li>
+&lt;li>1778A - Flip Flop Sum (greedy, implementation, 800)&lt;/li>
+&lt;li>1772A - A+B? (implementation, 800)&lt;/li>
+&lt;li>1796B - Asterisk-Minor Template (implementation, strings, 1000)&lt;/li>
+&lt;/ol>
+&lt;h2 id="stage-2-combinatorics-and-geometry">Stage 2: Combinatorics and Geometry&lt;/h2>
+&lt;ol start="11">
+&lt;li>1777A - Everybody Likes Good Arrays! (greedy, math, 800)&lt;/li>
+&lt;li>1787A - Exponential Equation (constructive algorithms, math, 800)&lt;/li>
+&lt;li>1777B - Emordnilap (combinatorics, greedy, math, 900)&lt;/li>
+&lt;li>1773F - Football (constructive algorithms, 800)&lt;/li>
+&lt;li>1774A - Add Plus Minus Sign (constructive algorithms, math, 800)&lt;/li>
+&lt;li>1776A - Walking Boy (greedy, 800)&lt;/li>
+&lt;li>1776L - Controllers (binary search, math, 1500)&lt;/li>
+&lt;/ol>
+&lt;!--
+Stage 3: Brute Force and Constructive Algorithms
+1804A - Lame King (greedy, math, 800)
+1794B - Not Dividing (constructive algorithms, greedy, math, 900)
+1791C - Prepend and Append (implementation, two pointers, 800)
+1786A1 - Non-alternating Deck (easy version) (implementation, 800)
+1786A2 - Alternating Deck (hard version) (implementation, 800)
+1775A1 - Gardener and the Capybaras (easy version) (brute force, constructive algorithms, implementation, 800)
+1775A2 - Gardener and the Capybaras (hard version) (constructive algorithms, greedy, 900)
+1772D - Absolute Sorting (constructive algorithms, math, 1400)
+Stage 4: Binary Search and Two Pointers
+1809B (Points on Plane, binary search, greedy, math, 1000)
+1807E (Interview, binary search, implementation, interactive, 1300)
+1795C (Tea Tasting, binary search, data structures, implementation, 1500)
+1793C (Dora and Search, constructive algorithms, data structures, two pointers, 1200)
+1792C (Min Max Sort, binary search, brute force, greedy, math, two pointers, 1500)
+1788B (Sum of Two Numbers, constructive algorithms, greedy, implementation, math, probabilities, 1100)
+1775B (Gardener and the Array, bitmasks, constructive algorithms, 1300)
+1772B (Matrix Rotation, brute force, implementation, 800)
+Stage 5 - Sorting &amp; Binary Search
+In this stage, you will learn about sorting algorithms and binary search.
+Problems:
+1791C (Prepend and Append, implementation, two pointers, 800)
+1772D (Absolute Sorting, constructive algorithms, math, 1400)
+1774B (Coloring, constructive algorithms, greedy, math, 1500)
+1788B (Sum of Two Numbers, constructive algorithms, greedy, implementation, math, probabilities, 1100)
+1772B (Matrix Rotation, brute force, implementation, 800)
+Stage 6 - Data Structures
+In this stage, you will learn about various data structures such as arrays, stacks, queues, linked lists, trees, heaps, and graphs.
+Problems:
+1807D (Odd Queries, data structures, implementation, 900)
+1807C (Find and Replace, greedy, implementation, strings, 800)
+1795C (Tea Tasting, binary search, data structures, implementation, 1500)
+1790D (Matryoshkas, data structures, greedy, sortings, 1200)
+1781B (Going to the Cinema, brute force, greedy, sortings, 1000)
+Stage 7 - Dynamic Programming
+In this stage, you will learn about dynamic programming (DP) - a technique for solving complex problems by breaking them down into smaller, simpler subproblems.
+Problems:
+1776L (Controllers, binary search, math, 1500)
+1793C (Dora and Search, constructive algorithms, data structures, two pointers, 1200)
+1809C (Sum on Subarrays, constructive algorithms, greedy, math, 1500)
+1807G1 (Subsequence Addition (Easy Version), brute force, dp, greedy, implementation, sortings, 1100)
+1807G2 (Subsequence Addition (Hard Version), dp, greedy, implementation, sortings, 1100)
+Stage 8 - Advanced Algorithms
+In this stage, you will learn about advanced algorithms such as graph algorithms, string algorithms, and probability theory.
+Problems:
+1775B (Gardener and the Array, bitmasks, constructive algorithms, 1300)
+1789B (Serval and Inversion Magic, brute force, implementation, strings, two pointers, 800)
+1792C (Min Max Sort, binary search, brute force, greedy, math, two pointers, 1500)
+1775A1 (Gardener and the Capybaras (Easy Version), brute force, constructive algorithms, implementation, 800)
+1775A2 (Gardener and the Capybaras (Hard Version), constructive algorithms, greedy, 900)
+Stage 9 - Final Stage
+In this stage, you will solve some of the most challenging problems on the list.
+Problems:
+1787B (Number Factorization, greedy, math, number theory, 1100)
+1774C (Ice and Fire, constructive algorithms, dp, greedy, 1300)
+1772C (Different Differences, constructive algorithms, greedy, math, 1000)
+1804C (Pull Your Luck, brute force, greedy, math, number theory, 1500)
+1799B (Equalize by Divide, brute force, constructive algorithms, greedy, math, 1200)
+1780B (GCD Partition, brute force, greedy, math, number theory, 1100) --></description></item><item><title>Python template for contests</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/cp-template/</link><pubDate>Tue, 07 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/cp-template/</guid><description>&lt;h2 id="clean-template">Clean template&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">############################################# Libraries ######################################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">bisect&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">sys&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">math&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">os&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">time&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">queue&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> PriorityQueue
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">io&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> BytesIO, IOBase
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">collections&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> defaultdict, Counter
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">bisect&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> bisect_right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">############################################# Definitions ######################################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>INF &lt;span style="color:#666">=&lt;/span> sys&lt;span style="color:#666">.&lt;/span>maxsize
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>BUFSIZE &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">4096&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">############################################# Inputs ######################################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># def inp(): return sys.stdin.readline().rstrip(&amp;#34;\r\n&amp;#34;) # read line as string&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># def inp_int(): return int(inp()) # read input as integer. &amp;#39;1&amp;#39; -&amp;gt; 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># def inp_int_list(): return list(map(int, inp().split()))&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># def inp_str_list(): return list(inp())&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">############################################# Solution ######################################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">list&lt;/span>(&lt;span style="color:#007020">map&lt;/span>(&lt;span style="color:#007020">int&lt;/span>, &lt;span style="color:#007020">input&lt;/span>()&lt;span style="color:#666">.&lt;/span>split()))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(res)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>())):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> solve()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="full-template">Full template&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">############################################# Libraries ######################################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">bisect&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">sys&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">math&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">os&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">time&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">queue&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> PriorityQueue
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">io&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> BytesIO, IOBase
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">collections&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> defaultdict, Counter
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">bisect&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> bisect_right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">############################################# Definitions ######################################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>INF &lt;span style="color:#666">=&lt;/span> sys&lt;span style="color:#666">.&lt;/span>maxsize
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>BUFSIZE &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">4096&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">############################################# Inputs ######################################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">inp&lt;/span>(): &lt;span style="color:#007020;font-weight:bold">return&lt;/span> sys&lt;span style="color:#666">.&lt;/span>stdin&lt;span style="color:#666">.&lt;/span>readline()&lt;span style="color:#666">.&lt;/span>rstrip(&lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#4070a0;font-weight:bold">\r\n&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>) &lt;span style="color:#60a0b0;font-style:italic"># read line as string&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">inp_int&lt;/span>(): &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020">int&lt;/span>(inp()) &lt;span style="color:#60a0b0;font-style:italic"># read input as integer. &amp;#39;1&amp;#39; -&amp;gt; 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">inp_int_list&lt;/span>(): &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020">list&lt;/span>(&lt;span style="color:#007020">map&lt;/span>(&lt;span style="color:#007020">int&lt;/span>, inp()&lt;span style="color:#666">.&lt;/span>split()))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">inp_str_list&lt;/span>(): &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020">list&lt;/span>(inp())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">############################################# Data Structures ######################################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">SegmentTree&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic"># //O(logn) for operations and O(n) for building//&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">init&lt;/span>(arr): &lt;span style="color:#60a0b0;font-style:italic"># n shld be a power of 2...hence add extra zeros before itself if needed //O(n)//&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(arr)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tree &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">0&lt;/span>]&lt;span style="color:#666">*&lt;/span>(&lt;span style="color:#40a070">2&lt;/span>&lt;span style="color:#666">*&lt;/span>n)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># The actual array is between indices n to 2*n-1 the first nodes store sums&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tree[n&lt;span style="color:#666">+&lt;/span>i] &lt;span style="color:#666">=&lt;/span> arr[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># parent node value = child node&amp;#39;s sum i&amp;lt;&amp;lt;1 = 2*i, i&amp;lt;&amp;lt;1 |1 = 2*i+1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tree[i] &lt;span style="color:#666">=&lt;/span> tree[i &lt;span style="color:#666">&amp;lt;&amp;lt;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>]&lt;span style="color:#666">+&lt;/span>tree[(i &lt;span style="color:#666">&amp;lt;&amp;lt;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>) &lt;span style="color:#666">|&lt;/span> &lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> tree
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">add&lt;/span>(tree, i, v): &lt;span style="color:#60a0b0;font-style:italic"># Sets vertex i to value v (i shld be 0 based indexing) //O(logn)//&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># As the actual array is between n and 2*n-1, we add n to i (n = len(tree)//2)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(tree) &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tree[i] &lt;span style="color:#666">=&lt;/span> v
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> i &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tree[i &lt;span style="color:#666">&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">=&lt;/span> tree[i] &lt;span style="color:#666">+&lt;/span> tree[i &lt;span style="color:#666">^&lt;/span> &lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">&amp;gt;&amp;gt;=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Calculating the values of prev nodes. (eg if node 9 is changed 9&amp;gt;&amp;gt;1 = 4 takes values of node i(9) and node i^1(8))&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># calculates the sum of values in the range [l,r-1] (l and r take 0 based indexing) //O(logn)//&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">range_sum&lt;/span>(tree, l, r):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(tree)&lt;span style="color:#666">//&lt;/span>&lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(tree)&lt;span style="color:#666">//&lt;/span>&lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">sum&lt;/span> &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> l &lt;span style="color:#666">&amp;lt;&lt;/span> r:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l &lt;span style="color:#666">&amp;amp;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># If the index is odd, add its value to sum. if the index is even it means there would be a parent&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">sum&lt;/span> &lt;span style="color:#666">+=&lt;/span> tree[l]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># of this with odd index&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> r &lt;span style="color:#666">&amp;amp;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">sum&lt;/span> &lt;span style="color:#666">+=&lt;/span> tree[r]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l &lt;span style="color:#666">&amp;gt;&amp;gt;=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">&amp;gt;&amp;gt;=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020">sum&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">############################################# Solution ######################################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">=&lt;/span> inp()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">run&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(inp_int()):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> solve()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">if&lt;/span> __name__ &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#4070a0">&amp;#34;__main__&amp;#34;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CODE_DEBUG &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> os&lt;span style="color:#666">.&lt;/span>environ&lt;span style="color:#666">.&lt;/span>get(&lt;span style="color:#4070a0">&amp;#34;CODE_DEBUG&amp;#34;&lt;/span>) &lt;span style="color:#007020;font-weight:bold">or&lt;/span> CODE_DEBUG:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sys&lt;span style="color:#666">.&lt;/span>stdin &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">open&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;./input.txt&amp;#34;&lt;/span>, &lt;span style="color:#4070a0">&amp;#34;r&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> start_time &lt;span style="color:#666">=&lt;/span> time&lt;span style="color:#666">.&lt;/span>time()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> run()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#4070a0;font-weight:bold">\n&lt;/span>&lt;span style="color:#4070a0">--- &lt;/span>&lt;span style="color:#70a0d0">%s&lt;/span>&lt;span style="color:#4070a0"> seconds ---&lt;/span>&lt;span style="color:#4070a0;font-weight:bold">\n&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span> &lt;span style="color:#666">%&lt;/span> (time&lt;span style="color:#666">.&lt;/span>time() &lt;span style="color:#666">-&lt;/span> start_time))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> run()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

@@ -1,3 +1,101 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SMA on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/sma/</link><description>Recent content in SMA on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Tue, 13 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/sma/index.xml" rel="self" type="application/rss+xml"/><item><title>SMA - Simple Moving Average</title><link>https://romankurnovskii.com/en/posts/trading-indicators/sma/</link><pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/trading-indicators/sma/</guid><description>About The Simple Moving Average (SMA) is a technical indicator that calculates the average price over a specific number of periods, and it moves along as new data is added, making it a &amp;ldquo;moving average&amp;rdquo;.
-Calculating Formula SMA = (Sum of price data for the last N periods) / N
-For example, a 5-period SMA would sum up the last 5 closing prices and divide it by 5 to find the average. It is called a &amp;lsquo;moving&amp;rsquo; average because as new prices become available, the oldest prices are dropped and the average recalculates.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SMA on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/sma/</link><description>Recent content in SMA on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Tue, 13 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/sma/index.xml" rel="self" type="application/rss+xml"/><item><title>SMA - Simple Moving Average</title><link>https://romankurnovskii.com/en/posts/trading-indicators/sma/</link><pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/trading-indicators/sma/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>The Simple Moving Average (SMA) is a technical indicator that calculates the &lt;strong>average price&lt;/strong> over a specific number of periods, and it moves along as new data is added, making it a &amp;ldquo;moving average&amp;rdquo;.&lt;/p>
+&lt;h2 id="calculating">Calculating&lt;/h2>
+&lt;h3 id="formula">Formula&lt;/h3>
+&lt;p>&lt;mark>SMA = (Sum of price data for the last N periods) / N&lt;/mark>&lt;/p>
+&lt;p>For example, a 5-period SMA would sum up the last 5 closing prices and divide it by 5 to find the average. It is called a &amp;lsquo;moving&amp;rsquo; average because as new prices become available, the oldest prices are dropped and the average recalculates.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Minute&lt;/th>
+&lt;th>Open&lt;/th>
+&lt;th>High&lt;/th>
+&lt;th>Low&lt;/th>
+&lt;th>Close&lt;/th>
+&lt;th>SMA&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>$10.0&lt;/td>
+&lt;td>$11.0&lt;/td>
+&lt;td>$9.5&lt;/td>
+&lt;td>$10.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>$10.1&lt;/td>
+&lt;td>$12.1&lt;/td>
+&lt;td>$10.0&lt;/td>
+&lt;td>$12.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>$12.2&lt;/td>
+&lt;td>$15.2&lt;/td>
+&lt;td>$12.0&lt;/td>
+&lt;td>$15.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4&lt;/td>
+&lt;td>$15.1&lt;/td>
+&lt;td>$15.1&lt;/td>
+&lt;td>$13.9&lt;/td>
+&lt;td>$14.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td>$14.1&lt;/td>
+&lt;td>$16.1&lt;/td>
+&lt;td>$14.0&lt;/td>
+&lt;td>$16.0&lt;/td>
+&lt;td>$13.4&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Using our given market data and specifically the closing prices, here&amp;rsquo;s how the 5-minute SMA would be calculated after Minute 5:&lt;/p>
+&lt;ol>
+&lt;li>Minute 1-5 close prices: &lt;code>$10.0, $12.0, $15.0, $14.0, $16.0&lt;/code>&lt;/li>
+&lt;li>SMA = &lt;code>(10.0 + 12.0 + 15.0 + 14.0 + 16.0) / 5 = $13.4&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;p>The 5-minute SMA after the 5th minute would be $13.4.&lt;/p>
+&lt;h2 id="pros-and-cons">Pros and Cons&lt;/h2>
+&lt;p>Pros:&lt;/p>
+&lt;ul>
+&lt;li>The SMA is simple and easy to calculate and understand.&lt;/li>
+&lt;li>It smooths out price fluctuations and helps to filter out the &amp;ldquo;noise&amp;rdquo; of the market.&lt;/li>
+&lt;li>It&amp;rsquo;s useful for identifying trend directions over the specified period.&lt;/li>
+&lt;/ul>
+&lt;p>Cons:&lt;/p>
+&lt;ul>
+&lt;li>The SMA is a lagging indicator, meaning it&amp;rsquo;s based on past prices and tends to be slow to respond to recent price changes.&lt;/li>
+&lt;li>Because it equally weighs all data points, it might not accurately reflect recent changes in the market.&lt;/li>
+&lt;li>It might give false signals in volatile markets because it doesn&amp;rsquo;t adapt to market changes as quickly as some other indicators.&lt;/li>
+&lt;/ul>
+&lt;h2 id="example-of-signals">Example of signals&lt;/h2>
+&lt;p>Traders often use two SMAs: a &lt;strong>short-term&lt;/strong> one and a &lt;strong>long-term&lt;/strong> one.
+When the &lt;strong>short-term&lt;/strong> SMA crosses &lt;strong>above&lt;/strong> the long-term SMA, it&amp;rsquo;s considered a bullish (&lt;strong>buy&lt;/strong>) signal.
+When it crosses &lt;strong>below&lt;/strong>, it&amp;rsquo;s a bearish (&lt;strong>sell&lt;/strong>) signal.&lt;/p>
+&lt;p>&lt;strong>True Positive:&lt;/strong>&lt;/p>
+&lt;p>In an uptrending market, the short-term SMA might cross above the long-term SMA, correctly indicating a continuing upward trend and a good time to buy.&lt;/p>
+&lt;p>&lt;strong>False Positive:&lt;/strong>&lt;/p>
+&lt;p>Let&amp;rsquo;s say the market is in a sideways trend (prices fluctuate within a narrow range). A brief price spike could cause the short-term SMA to cross above the long-term SMA, generating a buy signal. However, this could be misleading as the overall trend hasn&amp;rsquo;t changed.&lt;/p>
+&lt;h2 id="use-in-real-trading">Use in Real Trading&lt;/h2>
+&lt;p>In real trading, SMA can be paired with other indicators for better results.&lt;/p>
+&lt;p>For instance, a trader might use SMA in conjunction with the &lt;strong>Relative Strength Index (RSI)&lt;/strong>. The RSI could help confirm whether the market is overbought or oversold when the SMAs cross.&lt;/p>
+&lt;h2 id="python-implementation">Python Implementation&lt;/h2>
+&lt;p>
+&lt;a href="https://romankurnovskii.com//jupyter/sma.html"
+>Click here to view this notebook in full screen&lt;/a
+>
+&lt;/p>
+&lt;iframe
+src="https://romankurnovskii.com//jupyter/sma.html"
+style="height:1250px;width:100%;border:none;overflow:hidden;"
+scrolling="no"
+>&lt;/iframe></description></item></channel></rss>

@@ -1,3 +1,150 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Electron on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/electron/</link><description>Recent content in Electron on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sat, 22 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/electron/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Create a React-Electron Application From Scratch</title><link>https://romankurnovskii.com/en/posts/howto-create-react-electron-app-ts/</link><pubDate>Sat, 22 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/howto-create-react-electron-app-ts/</guid><description>In this step-by-step tutorial, we&amp;rsquo;ll create a simple React-Electron application from scratch. Electron is a framework that allows you to build cross-platform desktop applications using web technologies such as HTML, CSS, and JavaScript. React is a popular JavaScript library for building user interfaces.
-I use this clean template as a boilerplate for my projects.
-TLDR Go to repo electron-react-template click Use this template to create a new repo and start coding. Prerequisites Before starting this tutorial, make sure you have the following tools installed on your system:</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Electron on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/electron/</link><description>Recent content in Electron on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sat, 22 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/electron/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Create a React-Electron Application From Scratch</title><link>https://romankurnovskii.com/en/posts/howto-create-react-electron-app-ts/</link><pubDate>Sat, 22 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/howto-create-react-electron-app-ts/</guid><description>&lt;p>In this step-by-step tutorial, we&amp;rsquo;ll create a simple React-Electron application from scratch. Electron is a framework that allows you to build cross-platform desktop applications using web technologies such as HTML, CSS, and JavaScript. React is a popular JavaScript library for building user interfaces.&lt;/p>
+&lt;p>I use this clean template as a boilerplate for my projects.&lt;/p>
+&lt;h2 id="tldr">TLDR&lt;/h2>
+&lt;ol>
+&lt;li>Go to repo &lt;a href="https://github.com/romankurnovskii/electron-react-template">electron-react-template&lt;/a>&lt;/li>
+&lt;li>click &lt;strong>Use this template&lt;/strong> to create a new repo and start coding.&lt;/li>
+&lt;/ol>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;p>Before starting this tutorial, make sure you have the following tools installed on your system:&lt;/p>
+&lt;ol>
+&lt;li>Node.js (version 12 or newer)&lt;/li>
+&lt;li>npm or yarn (npm is bundled with Node.js, and yarn can be installed separately)&lt;/li>
+&lt;li>A code editor (e.g., Visual Studio Code)&lt;/li>
+&lt;/ol>
+&lt;h2 id="step-1-set-up-the-project-structure">Step 1: Set up the project structure&lt;/h2>
+&lt;p>Create a new directory for your project and navigate to it in your terminal:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>mkdir react-electron-app
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">cd&lt;/span> react-electron-app
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Next, create the following directories and files to set up the project structure:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>mkdir -p src electron public
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>touch src/App.tsx src/index.tsx electron/main.ts
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>touch public/index.html
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Your project should now have the following structure:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>react-electron-app
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── electron
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ └── main.ts
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── public
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│ └── index.html
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>└── src
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ├── App.tsx
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └── index.tsx
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-2-initialize-the-project">Step 2: Initialize the project&lt;/h2>
+&lt;p>Run the following command in the terminal to initialize the project with a &lt;code>package.json&lt;/code> file:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>npm init -y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-3-install-dependencies">Step 3: Install dependencies&lt;/h2>
+&lt;p>Install the necessary dependencies for the project:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>npm install --save react react-dom typescript electron
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm install --save-dev concurrently electron-builder electron-is-dev wait-on cross-env
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-4-configure-typescript">Step 4: Configure TypeScript&lt;/h2>
+&lt;p>Create a &lt;code>tsconfig.json&lt;/code> file in the root of the project:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>touch tsconfig.json
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add the following content to the &lt;code>tsconfig.json&lt;/code> file:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;compilerOptions&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;target&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;ES2023&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;lib&amp;#34;&lt;/span>: [&lt;span style="color:#4070a0">&amp;#34;dom&amp;#34;&lt;/span>, &lt;span style="color:#4070a0">&amp;#34;dom.iterable&amp;#34;&lt;/span>, &lt;span style="color:#4070a0">&amp;#34;esnext&amp;#34;&lt;/span>],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;allowJs&amp;#34;&lt;/span>: &lt;span style="color:#007020;font-weight:bold">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;skipLibCheck&amp;#34;&lt;/span>: &lt;span style="color:#007020;font-weight:bold">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;esModuleInterop&amp;#34;&lt;/span>: &lt;span style="color:#007020;font-weight:bold">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;allowSyntheticDefaultImports&amp;#34;&lt;/span>: &lt;span style="color:#007020;font-weight:bold">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;strict&amp;#34;&lt;/span>: &lt;span style="color:#007020;font-weight:bold">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;forceConsistentCasingInFileNames&amp;#34;&lt;/span>: &lt;span style="color:#007020;font-weight:bold">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;noFallthroughCasesInSwitch&amp;#34;&lt;/span>: &lt;span style="color:#007020;font-weight:bold">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;module&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;esnext&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;moduleResolution&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;node&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;resolveJsonModule&amp;#34;&lt;/span>: &lt;span style="color:#007020;font-weight:bold">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;isolatedModules&amp;#34;&lt;/span>: &lt;span style="color:#007020;font-weight:bold">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;noEmit&amp;#34;&lt;/span>: &lt;span style="color:#007020;font-weight:bold">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;jsx&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;react-jsx&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;include&amp;#34;&lt;/span>: [&lt;span style="color:#4070a0">&amp;#34;src&amp;#34;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-5-set-up-the-react-app">Step 5: Set up the React app&lt;/h2>
+&lt;p>Replace the contents of &lt;code>src/App.tsx&lt;/code> with the following code:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">function&lt;/span> App() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">div&lt;/span> &lt;span style="color:#4070a0">className&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#39;App&amp;#39;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">p&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Hello World&lt;span style="color:#666">!&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">p&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> );
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">export&lt;/span> &lt;span style="color:#007020;font-weight:bold">default&lt;/span> App;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Replace the contents of &lt;code>src/index.tsx&lt;/code> with the following code:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-tsx" data-lang="tsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> React &lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#4070a0">&amp;#39;react&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> ReactDOM &lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#4070a0">&amp;#39;react-dom&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> App &lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#4070a0">&amp;#39;./App&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ReactDOM.render(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">React.StrictMode&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">App&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">React.StrictMode&lt;/span>&amp;gt;,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">document&lt;/span>.getElementById(&lt;span style="color:#4070a0">&amp;#39;root&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Replace the contents of &lt;code>public/index.html&lt;/code> with the following code:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">&amp;lt;!DOCTYPE html&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">html&lt;/span> &lt;span style="color:#4070a0">lang&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;en&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">meta&lt;/span> &lt;span style="color:#4070a0">charset&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;UTF-8&amp;#34;&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">meta&lt;/span> &lt;span style="color:#4070a0">name&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;viewport&amp;#34;&lt;/span> &lt;span style="color:#4070a0">content&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">title&lt;/span>&amp;gt;React-Electron App&amp;lt;/&lt;span style="color:#062873;font-weight:bold">title&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">div&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;root&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-6-set-up-the-electron-main-process">Step 6: Set up the Electron main process&lt;/h2>
+&lt;p>Replace the contents of electron/main.ts with the following code:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-ts" data-lang="ts">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> { app, BrowserWindow } &lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#4070a0">&amp;#39;electron&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#666">*&lt;/span> &lt;span style="color:#007020;font-weight:bold">as&lt;/span> path &lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#4070a0">&amp;#39;path&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#666">*&lt;/span> &lt;span style="color:#007020;font-weight:bold">as&lt;/span> isDev &lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#4070a0">&amp;#39;electron-is-dev&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">function&lt;/span> createWindow() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> win &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">new&lt;/span> BrowserWindow({
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> width: &lt;span style="color:#902000">800&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> height: &lt;span style="color:#902000">600&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> webPreferences&lt;span style="color:#666">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nodeIntegration: &lt;span style="color:#902000">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> win.loadURL(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> isDev
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">?&lt;/span> &lt;span style="color:#4070a0">&amp;#39;http://localhost:3000&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">:&lt;/span> &lt;span style="color:#4070a0">`file://&lt;/span>&lt;span style="color:#70a0d0">${&lt;/span>path.join(__dirname, &lt;span style="color:#4070a0">&amp;#39;../build/index.html&amp;#39;&lt;/span>)&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> );
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> win.webContents.openDevTools();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app.whenReady().then(createWindow);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app.on(&lt;span style="color:#4070a0">&amp;#39;window-all-closed&amp;#39;&lt;/span>, () &lt;span style="color:#666">=&amp;gt;&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (process.platform &lt;span style="color:#666">!==&lt;/span> &lt;span style="color:#4070a0">&amp;#39;darwin&amp;#39;&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> app.quit();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>});
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app.on(&lt;span style="color:#4070a0">&amp;#39;activate&amp;#39;&lt;/span>, () &lt;span style="color:#666">=&amp;gt;&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (BrowserWindow.getAllWindows().length &lt;span style="color:#666">===&lt;/span> &lt;span style="color:#40a070">0&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> createWindow();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>});
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-7-configure-scripts-in-packagejson">Step 7: Configure scripts in package.json&lt;/h2>
+&lt;p>Open your &lt;code>package.json&lt;/code> file and update the scripts section to include the following:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">&amp;#34;scripts&amp;#34;&lt;/span>&lt;span style="">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;start&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;react-scripts start&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;build&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;react-scripts build&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;eject&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;react-scripts eject&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;electron:dev&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;concurrently \&amp;#34;cross-env BROWSER=none yarn start\&amp;#34; \&amp;#34;wait-on http://127.0.0.1:3000 &amp;amp;&amp;amp; tsc -p electron -w\&amp;#34; \&amp;#34;wait-on http://127.0.0.1:3000 &amp;amp;&amp;amp; tsc -p electron &amp;amp;&amp;amp; electron .\&amp;#34;&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;electron:build&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;yarn build &amp;amp;&amp;amp; tsc -p electron &amp;amp;&amp;amp; electron-builder&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;electron:dist&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;yarn build &amp;amp;&amp;amp; tsc -p electron &amp;amp;&amp;amp; electron-builder --mac --dir&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>These scripts will allow you to run the React app in development mode, build the app for production, and package the Electron app for distribution.&lt;/p>
+&lt;h2 id="step-8-run-the-application">Step 8: Run the application&lt;/h2>
+&lt;p>You&amp;rsquo;re now ready to run your React-Electron application in development mode. In the terminal, run:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>npm run electron:dev
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This command will start the React development server, compile the Electron main process, and launch the Electron app. You should see a new window with your &amp;ldquo;Hello World!&amp;rdquo; message displayed.&lt;/p></description></item></channel></rss>

@@ -1,3 +1,199 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Amazon Key Management Service on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/amazon-key-management-service/</link><description>Recent content in Amazon Key Management Service on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sat, 24 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/amazon-key-management-service/index.xml" rel="self" type="application/rss+xml"/><item><title>Key Management Service</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/kms/</link><pubDate>Sat, 24 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/kms/</guid><description>About AWS Key Management Service (KMS) makes it easy for you to create and manage cryptographic keys and control their use across a wide range of AWS services and in your applications.
-Documentation User Guide AWS KMS provides management of encryption keys for use with other AWS services (e.g. EBS, S3, RDS, etc.).
-Key management on AWS is a broad range of activities from creating &amp;amp; storing public &amp;amp; private keys to creating, managing, and authorising access to AWS services with digital keys.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Amazon Key Management Service on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/amazon-key-management-service/</link><description>Recent content in Amazon Key Management Service on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sat, 24 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/amazon-key-management-service/index.xml" rel="self" type="application/rss+xml"/><item><title>Key Management Service</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/kms/</link><pubDate>Sat, 24 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/kms/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>AWS Key Management Service (KMS) makes it easy for you to create and manage cryptographic keys and control their use across a wide range of AWS services and in your applications.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/kms/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/kms/?id=docs_gateway">User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>AWS KMS provides management of encryption keys for use with other AWS services (e.g. EBS, S3, RDS, etc.).&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/Security/aws-kms/product-page-diagram_AWS-KMS.ed28d24cc0df601bfb887106f88068c9e4a1f469.png"
+id="zoom-default"
+alt="Amazon Key Management Service Flow"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Key management on AWS is a broad range of activities from creating &amp;amp; storing public &amp;amp; private keys to creating, managing, and authorising access to AWS services with digital keys. This guide explains the key management solution on AWS that is easiest to use, most secure, and provides the most flexibility for you to create and manage your keys the way you need them.&lt;/p>
+&lt;h3 id="alternatives">Alternatives&lt;/h3>
+&lt;ul>
+&lt;li>HashiCorp Vaultc&lt;/li>
+&lt;li>Azure Key Vault&lt;/li>
+&lt;li>Google Cloud Key Management Service&lt;/li>
+&lt;li>OpenSSH&lt;/li>
+&lt;li>Akeyless Vault Platform&lt;/li>
+&lt;li>Virtru&lt;/li>
+&lt;/ul>
+&lt;h3 id="concepts">Concepts&lt;/h3>
+&lt;p>&lt;strong>Key types:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Customer managed keys&lt;/li>
+&lt;li>AWS managed keys&lt;/li>
+&lt;li>AWS owned keys&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>In May 2022, AWS KMS changed the rotation schedule for AWS managed keys from every three years (approximately 1,095 days) to every year (approximately 365 days)&lt;/p>&lt;/blockquote>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Type of KMS key&lt;/th>
+&lt;th>Can view KMS key metadata&lt;/th>
+&lt;th>Can manage KMS key&lt;/th>
+&lt;th>Used only for my AWS account&lt;/th>
+&lt;th>&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">Automatic rotation&lt;/a>&lt;/th>
+&lt;th>&lt;a href="https://aws.amazon.com/kms/pricing/">Pricing&lt;/a>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">Customer managed key&lt;/a>&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Optional. Every year (approximately 365 days)&lt;/td>
+&lt;td>Monthly fee (pro-rated hourly)&lt;br>&lt;br>Per-use fee&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS managed key&lt;/a>&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Required. Every year (approximately 365 days)&lt;/td>
+&lt;td>No monthly fee&lt;br>&lt;br>Per-use fee (some AWS services pay this fee for you)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">AWS owned key&lt;/a>&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>Varies&lt;/td>
+&lt;td>Varies&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;strong>Customer Managed Keys (CMK)&lt;/strong>&lt;/p>
+&lt;p>The primary resources in AWS KMS are customer master keys (CMKs). Typically, you use CMKs to protect data encryption keys (or data keys) which are then used to encrypt or decrypt larger amounts of data outside of the service. CMKs never leave AWS KMS unencrypted, but data keys can. AWS KMS does not store, manage, or track your data keys.&lt;/p>
+&lt;p>There is one AWS-managed CMK for each service that is integrated with AWS KMS. When you create an encrypted resource in these services, you can choose to protect that resource under the AWS-managed CMK for that service. This CMK is unique to your AWS account and the AWS region in which it is used, and it protects the data keys used by the AWS services to protect your data.&lt;/p>
+&lt;p>&lt;strong>Data keys&lt;/strong>&lt;/p>
+&lt;p>Data keys are used to encrypt large data objects within an application outside AWS KMS. &lt;/p>
+&lt;p>&lt;strong>Key rotation and Backing Keys&lt;/strong>&lt;/p>
+&lt;p>When you create a customer master key (CMK) in AWS KMS, the service creates a key ID for the CMK and key material, referred to as a backing key, that is tied to the key ID of the CMK. If you choose to enable key rotation for a given CMK, AWS KMS will create a new version of the backing key for each rotation. It is the backing key that is used to perform cryptographic operations such as encryption and decryption. Automated key rotation currently retains all prior backing keys so that decryption of encrypted data can take place transparently. CMK is simply a logical resource that does not change regardless of whether or of how many times the underlying backing keys have been rotated.&lt;/p>
+&lt;p>&lt;strong>A KMS key consists of&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Alias&lt;/li>
+&lt;li>Creation date&lt;/li>
+&lt;li>Description&lt;/li>
+&lt;li>Key state&lt;/li>
+&lt;li>Key material (either customer provided or AWS provided)&lt;/li>
+&lt;/ul>
+&lt;p>A KMS key can:&lt;/p>
+&lt;ul>
+&lt;li>encrypt data up to 4KB in size&lt;/li>
+&lt;li>generate, encrypt, and decrypt Data Encryption Keys (DEKs)&lt;/li>
+&lt;li>never be exported from KMS (CloudHSM allows this).&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Aliases&lt;/strong>&lt;/p>
+&lt;p>Use an alias as a friendly name for a KMS key. For example, you can refer to a KMS key as test-key instead of 1234abcd-12ab-34cd-56ef-1234567890ab.&lt;/p>
+&lt;p>&lt;strong>Custom key stores&lt;/strong>&lt;/p>
+&lt;p>A custom key store is an AWS KMS resource associated with FIPS 140-2 Level 3 hardware security modules (HSMs) in a AWS CloudHSM cluster that you own and manage.&lt;/p>
+&lt;p>&lt;strong>Key policy&lt;/strong>&lt;/p>
+&lt;p>When you create a KMS keys, you determine who can use and manage that KMS keys.&lt;/p>
+&lt;h2 id="digest">Digest&lt;/h2>
+&lt;ul>
+&lt;li>KMS encrypts small pieces of data (usually data keys) MAX - 4 KB
+&lt;ul>
+&lt;li>Use Envelope Encryption for larger objects (CMK never leaves KMS)
+&lt;ul>
+&lt;li>Generate a data key (plain-text and encrypted) from KMS (GenerateDataKey)&lt;/li>
+&lt;li>Use data key to perform encryption/decryption on the object (within the service or client-side)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>You can assign an encryption context with cryptographic operations
+&lt;ul>
+&lt;li>If encryption context is different, decryption will NOT succeed&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/requests-per-second.html">Request quotas&lt;/a> for KMS Cryptographic operations:
+&lt;ul>
+&lt;li>5,500 to 50,000 per second (varies with Region)&lt;/li>
+&lt;li>You might get a ThrottlingException if you exceed the limit&lt;/li>
+&lt;li>Lower your request rate to AWS KMS or Retry with Exponential Backoff&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Usage of KMS CMKs can be tracked in CloudTrail&lt;/li>
+&lt;li>Key policies control access to CMKs (incl. cross account access)&lt;/li>
+&lt;li>Use AWS Encryption SDK to interact with KMS(Provides Data Key Caching)&lt;/li>
+&lt;/ul>
+&lt;h2 id="price">Price&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/ru/kms/pricing/">Current price&lt;/a>&lt;/p>
+&lt;h2 id="kms-vs-cloud-hsm">KMS vs Cloud HSM&lt;/h2>
+&lt;ul>
+&lt;li>Generate, store, use and replace your keys(symmetric &amp;amp; asymmetric)&lt;/li>
+&lt;li>&lt;strong>KMS&lt;/strong>: &lt;strong>Multi-tenant&lt;/strong> Key Management Service
+&lt;ul>
+&lt;li>KMS integrates with all storage and database services in AWS&lt;/li>
+&lt;li>Define key usage permissions (including cross account access)&lt;/li>
+&lt;li>Automatically rotate master keys once a year&lt;/li>
+&lt;li>Schedule key deletion to verify if the key is used
+&lt;ul>
+&lt;li>Mandatory minimum wait period of 7 days (max-30 days)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>CloudHSM&lt;/strong>: Dedicated &lt;strong>single-tenant&lt;/strong> HSM for regulatory compliance
+&lt;ul>
+&lt;li>AWS KMS is a Multi-tenant service&lt;/li>
+&lt;li>AWS CANNOT access your encryption master keys in CloudHSM
+&lt;ul>
+&lt;li>(Recommendation) Be ultra safe with your keys. Use two or more HSMs in separate AZs.&lt;/li>
+&lt;li>AWS KMS can use CloudHSM cluster as &amp;ldquo;custom key store&amp;rdquo; to store the keys:
+&lt;ul>
+&lt;li>AWS Services can continue to talk to KMS for data encryption&lt;/li>
+&lt;li>(AND) KMS does the necessary integration with CloudHSM cluster&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="use-cases">Use Cases&lt;/h2>
+&lt;p>Type: Data protection&lt;/p>
+&lt;p>Same type services: &lt;a href="https://aws.amazon.com/macie/">Macie&lt;/a>, Key Management Service (KMS), &lt;a href="https://aws.amazon.com/cloudhsm/">CloudHSM&lt;/a>, &lt;a href="https://aws.amazon.com/certificate-manager/">Certif­icate Manager&lt;/a>, &lt;a href="https://aws.amazon.com/secrets-manager/">Secrets Manager&lt;/a>&lt;/p>
+&lt;p>&lt;strong>CloudHSM&lt;/strong>: (Web servers) Offload SSL processing, Certificate Authority etc&lt;/p>
+&lt;h2 id="practice">Practice&lt;/h2>
+&lt;p>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/kms/encrypting-s3-objects-using-sse-kms/">How to encrypt S3 Objects Using SSE-KMS&lt;/a>&lt;/p>
+&lt;h2 id="questions">Questions&lt;/h2>
+&lt;h3 id="q1">Q1&lt;/h3>
+&lt;p>&lt;strong>Key rotation is an important concept of key management. How does Key Management Service (KMS) implement key rotation?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>KMS supports manual Key Rotation only; you can create new keys any time you want and all data will be re-encrypted with the new key.&lt;/li>
+&lt;li>KMS creates new cryptographic material for your KMS keys every rotation period, and uses the new keys for any upcoming encryption; it also maintains old keys to be able to decrypt data encrypted with those keys.&lt;/li>
+&lt;li>Key rotation is the process of synchronizing keys between configured regions; KMS will synchronize key changes in near-real time once keys are changed.&lt;/li>
+&lt;li>Key rotation is supported through the re-importing of new KMS keys; once you import a new key all data keys will be re-encrypted with the new KMS key.&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>When you enable &lt;em>automatic key rotation&lt;/em> for a customer-managed KMS key, AWS KMS generates new cryptographic material for the KMS key every year. AWS KMS also saves the KMS key&amp;rsquo;s older cryptographic material so it can be used to decrypt data that it has encrypted.&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q2">Q2&lt;/h3>
+&lt;p>&lt;strong>Alan is managing an environment with regulation and compliance requirements that mandate encryption at rest and in transit. The environment covers multiple accounts (Management, Development, and Production) and at some point in time, Alan might need to move encrypted snapshots and AMIs with encrypted volumes across accounts.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which statements are true with regard to this scenario? (Choose 2 answers)&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Create Master keys in management account and assign Development and Production accounts as users of these keys, then any media encrypted using these keys can be shared between the three accounts.&lt;/li>
+&lt;li>Can share AMIs with encrypted volumes across accounts, even with the use of custom encryption keys.&lt;/li>
+&lt;li>Make encryption keys for development and production accounts then anything encrypted using these keys can be moved across accounts.&lt;/li>
+&lt;li>You can not move encrypted snapshots across accounts if data migration is required some third-party tools must be used.&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="https://docs.aws.amazon.com/kms/latest/developerguide/overview.html">https://docs.aws.amazon.com/kms/latest/developerguide/overview.html&lt;/a>&lt;/p>
+&lt;p>&lt;mark style="color:white">1, 2&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details></description></item></channel></rss>

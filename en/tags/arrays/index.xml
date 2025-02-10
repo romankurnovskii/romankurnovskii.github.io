@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Arrays on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/arrays/</link><description>Recent content in Arrays on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Mon, 28 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/arrays/index.xml" rel="self" type="application/rss+xml"/><item><title>215. Kth Largest Element in an Array</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/215/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/215/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/kth-largest-element-in-an-array/">LeetCode задача 215&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Найти k-тый по величине элемент в неотсортированном массиве. Примечание: это k-тый по величине элемент в отсортированном порядке, а не k-тый различный элемент.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;ol>
+&lt;li>Можно отсортировать массив и просто взять k-тый элемент с конца.&lt;/li>
+&lt;li>Для более эффективного решения можно использовать алгоритм быстрой выборки.&lt;/li>
+&lt;/ol>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>В самом простом случае мы можем отсортировать массив и взять k-тый элемент с конца.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Сортируем массив.&lt;/li>
+&lt;li>Возвращаем k-тый элемент с конца.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">findKthLargest&lt;/span>(nums, k):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nums&lt;span style="color:#666">.&lt;/span>sort()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> nums[&lt;span style="color:#666">-&lt;/span>k]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>240. Search a 2D Matrix II</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/240/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/240/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/search-a-2d-matrix-ii/">LeetCode задача 240&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Вам дана двумерная матрица размера m x n, представляющая прямоугольник, и целое число &lt;code>target&lt;/code>. Отсортированные строки матрицы по неубыванию с лева направо и столбцы отсортированы по неубыванию сверху вниз.&lt;/p>
+&lt;p>Найдите элемент &lt;code>target&lt;/code> в матрице. Верните &lt;code>True&lt;/code>, если элемент &lt;code>target&lt;/code> есть в матрице, и &lt;code>False&lt;/code>, если его нет.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Попробуйте использовать двоичный поиск для каждого ряда.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Самый простой подход - использовать двоичный поиск для каждого ряда. Хотя это не самый эффективный метод, он достаточно прост для понимания.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Пройдитесь по каждому ряду в матрице.&lt;/li>
+&lt;li>В каждом ряду используйте двоичный поиск для поиска &lt;code>target&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">bisect&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> bisect_left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">searchMatrix&lt;/span>(matrix, target):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> row &lt;span style="color:#007020;font-weight:bold">in&lt;/span> matrix:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pos &lt;span style="color:#666">=&lt;/span> bisect_left(row, target)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> pos &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(row) &lt;span style="color:#007020;font-weight:bold">and&lt;/span> row[pos] &lt;span style="color:#666">==&lt;/span> target:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

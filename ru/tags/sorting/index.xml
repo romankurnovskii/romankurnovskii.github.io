@@ -1,27 +1,294 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sorting on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/sorting/</link><description>Recent content in Sorting on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Mon, 28 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/sorting/index.xml" rel="self" type="application/rss+xml"/><item><title>15. 3Sum</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/15/</link><pubDate>Thu, 03 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/15/</guid><description>LeetCode problem
-Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
-Notice that the solution set must not contain duplicate triplets.
-Example 1:
-Input: nums = [-1,0,1,2,-1,-4] Output: [[-1,-1,2],[-1,0,1]] Explanation: nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0. nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.</description></item><item><title>49. Group Anagrams</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/49/</link><pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/49/</guid><description>LeetCode problem
-Given an array of strings strs, group the anagrams together. You can return the answer in any order.
-An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
-Example 1:
-Input: strs = [&amp;quot;eat&amp;quot;,&amp;quot;tea&amp;quot;,&amp;quot;tan&amp;quot;,&amp;quot;ate&amp;quot;,&amp;quot;nat&amp;quot;,&amp;quot;bat&amp;quot;] Output: [[&amp;quot;bat&amp;quot;],[&amp;quot;nat&amp;quot;,&amp;quot;tan&amp;quot;],[&amp;quot;ate&amp;quot;,&amp;quot;eat&amp;quot;,&amp;quot;tea&amp;quot;]] Example 2:
-Input: strs = [&amp;quot;&amp;quot;] Output: [[&amp;quot;&amp;quot;]] Example 3:
-Input: strs = [&amp;quot;a&amp;quot;] Output: [[&amp;quot;a&amp;quot;]] Idea:
-class Solution: def groupAnagrams(self, strs: List[str]) -&amp;gt; List[List[str]]: dd = {} for s in strs: s_sort = &amp;#34;&amp;#34;.</description></item><item><title>56. Merge Intervals</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/56/</link><pubDate>Thu, 29 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/56/</guid><description>LeetCode problem
-Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.
-Example 1:
-Input: intervals = [[1,3],[2,6],[8,10],[15,18]] Output: [[1,6],[8,10],[15,18]] Explanation: Since intervals [1,3] and [2,6] overlap, merge them into [1,6]. Example 2:
-Input: intervals = [[1,4],[4,5]] Output: [[1,5]] Explanation: Intervals [1,4] and [4,5] are considered overlapping. Approach 1:
-class Solution: def merge(self, intervals: List[List[int]]) -&amp;gt; List[List[int]]: intervals.sort() res = [intervals[0]] for ir in range(1, len(intervals)): if intervals[ir][0] &amp;gt;= res[-1][0] and intervals[ir][0] &amp;lt;= res[-1][1]: # [1,3],[2,6] res[-1][0] = min(intervals[ir][0], res[-1][0]) res[-1][1] = max(intervals[ir][1], res[-1][1]) elif res[-1][0] &amp;gt;= intervals[ir][0] and res[-1][0] &amp;lt;= intervals[ir][1]: # [1,3],[0,4] res[-1][0] = min(intervals[ir][0], res[-1][0]) res[-1][1] = max(intervals[ir][1], res[-1][1]) else: res.</description></item><item><title>75. Sort Colors</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/75/</link><pubDate>Fri, 03 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/75/</guid><description>LeetCode problem
-This problem is also known as the Dutch National Flag problem. One solution is to use three pointers to partition the array into three sections: red, white, and blue.
-Here&amp;rsquo;s the algorithm:
-Initialize three pointers: left, mid, and right. Initialize left to 0, mid to 0, and right to n-1, where n is the length of the input array. While mid is less than or equal to right: If nums[mid] is 0, swap nums[mid] with nums[left], increment mid and left.</description></item><item><title>88. Merge Sorted Array</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/88/</link><pubDate>Sun, 30 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/88/</guid><description>LeetCode problem
-First accepted class Solution: def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -&amp;gt; None: &amp;#34;&amp;#34;&amp;#34; Do not return anything, modify nums1 in-place instead. &amp;#34;&amp;#34;&amp;#34; i = len(nums1) - n for j in nums2: nums1[i] = j i += 1 nums1.sort()</description></item><item><title>215. Kth Largest Element in an Array</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/215/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/215/</guid><description>LeetCode задача 215
-Задача Найти k-й по величине элемент в неотсортированном массиве. Примечание: это k-й по величине элемент в отсортированном порядке, а не k-й различный элемент.
-Подсказки Можно отсортировать массив и просто взять k-й элемент с конца. Для более эффективного решения можно использовать алгоритм быстрой выборки. Подход В самом простом случае мы можем отсортировать массив и взять k-й элемент с конца.
-Алгоритм Сортируем массив. Возвращаем k-й элемент с конца. Решение def findKthLargest(nums, k): nums.sort() return nums[-k] Оптимальное решение На собеседованиях обычно ожидают от кандидата более эффективного решения.</description></item><item><title>1679. Max Number of K-Sum Pairs</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1679/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1679/</guid><description>LeetCode задача 1679
-Задача Вам дан массив чисел nums и целое число k. Задача — найти максимальное количество пар в массиве, сумма элементов которых равна k.
-Подсказки Используйте технику двух указателей(pointers) после сортировки массива для оптимизации поиска пар.
-Подход Центральная идея решения задачи заключается в использовании техники двух указателей для быстрого нахождения пар чисел с заданной суммой k. Прежде чем применить эту технику, массив сортируется в возрастающем порядке. Затем создаются два указателя: один, указывающий на начало массива, и второй — на конец.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sorting on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/sorting/</link><description>Recent content in Sorting on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sun, 19 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/sorting/index.xml" rel="self" type="application/rss+xml"/><item><title>15. 3Sum</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/15/</link><pubDate>Thu, 03 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/15/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/3sum/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given an integer array nums, return all the triplets &lt;code>[nums[i], nums[j], nums[k]]&lt;/code> such that &lt;code>i != j&lt;/code>, &lt;code>i != k&lt;/code>, and &lt;code>j != k&lt;/code>, and &lt;code>nums[i] + nums[j] + nums[k] == 0&lt;/code>.&lt;/p>
+&lt;p>Notice that the solution set must not contain duplicate triplets.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: nums = [-1,0,1,2,-1,-4]
+Output: [[-1,-1,2],[-1,0,1]]
+Explanation:
+nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.
+nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.
+nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.
+The distinct triplets are [-1,0,1] and [-1,-1,2].
+Notice that the order of the output and the order of the triplets does not matter.
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: nums = [0,1,1]
+Output: []
+Explanation: The only possible triplet does not sum up to 0.
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">threeSum&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[List[&lt;span style="color:#007020">int&lt;/span>]]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nums&lt;span style="color:#666">.&lt;/span>sort()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># index&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ll &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> x &lt;span style="color:#666">&amp;lt;&lt;/span> ll &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">2&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> x &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">or&lt;/span> nums[x] &lt;span style="color:#666">!=&lt;/span> nums[x&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> y &lt;span style="color:#666">=&lt;/span> x &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> z &lt;span style="color:#666">=&lt;/span> ll &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> y &lt;span style="color:#666">&amp;lt;&lt;/span> z:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">=&lt;/span> nums[x] &lt;span style="color:#666">+&lt;/span> nums[y] &lt;span style="color:#666">+&lt;/span> nums[z]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> s &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#666">.&lt;/span>append([nums[x], nums[y], nums[z]])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> y &lt;span style="color:#666">&amp;lt;&lt;/span> z &lt;span style="color:#007020;font-weight:bold">and&lt;/span> nums[y] &lt;span style="color:#666">==&lt;/span> nums[y&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> y &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> z &lt;span style="color:#666">&amp;gt;&lt;/span> y &lt;span style="color:#007020;font-weight:bold">and&lt;/span> nums[z] &lt;span style="color:#666">==&lt;/span> nums[z&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> z &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> y &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> z &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> s &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> z &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> y &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>49. Group Anagrams</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/49/</link><pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/49/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/group-anagrams/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given an array of strings &lt;code>strs&lt;/code>, group &lt;strong>the anagrams&lt;/strong> together. You can return the answer in &lt;strong>any order&lt;/strong>.&lt;/p>
+&lt;p>An &lt;strong>Anagram&lt;/strong> is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: strs = [&amp;quot;eat&amp;quot;,&amp;quot;tea&amp;quot;,&amp;quot;tan&amp;quot;,&amp;quot;ate&amp;quot;,&amp;quot;nat&amp;quot;,&amp;quot;bat&amp;quot;]
+Output: [[&amp;quot;bat&amp;quot;],[&amp;quot;nat&amp;quot;,&amp;quot;tan&amp;quot;],[&amp;quot;ate&amp;quot;,&amp;quot;eat&amp;quot;,&amp;quot;tea&amp;quot;]]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: strs = [&amp;quot;&amp;quot;]
+Output: [[&amp;quot;&amp;quot;]]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 3:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: strs = [&amp;quot;a&amp;quot;]
+Output: [[&amp;quot;a&amp;quot;]]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">groupAnagrams&lt;/span>(self, strs: List[&lt;span style="color:#007020">str&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[List[&lt;span style="color:#007020">str&lt;/span>]]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dd &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> s &lt;span style="color:#007020;font-weight:bold">in&lt;/span> strs:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s_sort &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&amp;#34;&lt;/span>&lt;span style="color:#666">.&lt;/span>join(&lt;span style="color:#007020">sorted&lt;/span>(s))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> values &lt;span style="color:#666">=&lt;/span> dd&lt;span style="color:#666">.&lt;/span>get(s_sort, [])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> values&lt;span style="color:#666">.&lt;/span>append(s)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dd[s_sort] &lt;span style="color:#666">=&lt;/span> values
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> dd&lt;span style="color:#666">.&lt;/span>values()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Approach 2:&lt;/strong>&lt;/p>
+&lt;p>Intuition:&lt;/p>
+&lt;p>Two strings are anagrams if and only if their character counts (respective number of occurrences of each character) are the same.&lt;/p>
+&lt;p>Algorithm:&lt;/p>
+&lt;p>We can transform each string &lt;code>s&lt;/code> into a character count, count\text{count}count, consisting of 26 non-negative integers representing the number of &lt;code>a&lt;/code>&amp;rsquo;s, &lt;code>b&lt;/code>&amp;rsquo;s, z&amp;rsquo;s, etc. We use these counts as the basis for our hash map.&lt;/p>
+&lt;p>In python, the representation will be a tuple of the counts. For example, &lt;code>abbccc&lt;/code> will be &lt;code>(1, 2, 3, 0, 0, ..., 0)&lt;/code>, where again there are 26 entries total.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://leetcode.com/problems/group-anagrams/solutions/127405/Figures/49_groupanagrams2.png"
+id="zoom-default"
+alt="example"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">groupAnagrams&lt;/span>(strs):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> collections&lt;span style="color:#666">.&lt;/span>defaultdict(&lt;span style="color:#007020">list&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> s &lt;span style="color:#007020;font-weight:bold">in&lt;/span> strs:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">*&lt;/span> &lt;span style="color:#40a070">26&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> c &lt;span style="color:#007020;font-weight:bold">in&lt;/span> s:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count[&lt;span style="color:#007020">ord&lt;/span>(c) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#007020">ord&lt;/span>(&lt;span style="color:#4070a0">&amp;#39;a&amp;#39;&lt;/span>)] &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res[&lt;span style="color:#007020">tuple&lt;/span>(count)]&lt;span style="color:#666">.&lt;/span>append(s)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res&lt;span style="color:#666">.&lt;/span>values()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://leetcode.com/problems/group-anagrams/solutions/127405/group-anagrams/">LeetCode expl&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>56. Merge Intervals</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/56/</link><pubDate>Thu, 29 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/56/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/maximum-subarray/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given an array of &lt;code>intervals&lt;/code> where &lt;code>intervals[i] = [starti, endi]&lt;/code>, merge all overlapping intervals, and return an array of the &lt;em>non-overlapping intervals that cover all the intervals in the input&lt;/em>.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: intervals = [[1,3],[2,6],[8,10],[15,18]]
+Output: [[1,6],[8,10],[15,18]]
+Explanation: Since intervals [1,3] and [2,6] overlap, merge them into [1,6].
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: intervals = [[1,4],[4,5]]
+Output: [[1,5]]
+Explanation: Intervals [1,4] and [4,5] are considered overlapping.
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Approach 1:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">merge&lt;/span>(self, intervals: List[List[&lt;span style="color:#007020">int&lt;/span>]]) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[List[&lt;span style="color:#007020">int&lt;/span>]]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> intervals&lt;span style="color:#666">.&lt;/span>sort()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> [intervals[&lt;span style="color:#40a070">0&lt;/span>]]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> ir &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#007020">len&lt;/span>(intervals)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> intervals[ir][&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">&amp;gt;=&lt;/span> res[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>][&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#007020;font-weight:bold">and&lt;/span> intervals[ir][&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">&amp;lt;=&lt;/span> res[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>][&lt;span style="color:#40a070">1&lt;/span>]: &lt;span style="color:#60a0b0;font-style:italic"># [1,3],[2,6]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>][&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">min&lt;/span>(intervals[ir][&lt;span style="color:#40a070">0&lt;/span>], res[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>][&lt;span style="color:#40a070">0&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>][&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(intervals[ir][&lt;span style="color:#40a070">1&lt;/span>], res[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>][&lt;span style="color:#40a070">1&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> res[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>][&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">&amp;gt;=&lt;/span> intervals[ir][&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#007020;font-weight:bold">and&lt;/span> res[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>][&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">&amp;lt;=&lt;/span> intervals[ir][&lt;span style="color:#40a070">1&lt;/span>]: &lt;span style="color:#60a0b0;font-style:italic"># [1,3],[0,4]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>][&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">min&lt;/span>(intervals[ir][&lt;span style="color:#40a070">0&lt;/span>], res[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>][&lt;span style="color:#40a070">0&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>][&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(intervals[ir][&lt;span style="color:#40a070">1&lt;/span>], res[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>][&lt;span style="color:#40a070">1&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#666">.&lt;/span>append(intervals[ir])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Approach 2:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">merge&lt;/span>(self, intervals: List[List[&lt;span style="color:#007020">int&lt;/span>]]) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[List[&lt;span style="color:#007020">int&lt;/span>]]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> interval &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">sorted&lt;/span>(intervals):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> res &lt;span style="color:#007020;font-weight:bold">or&lt;/span> res[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>][&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">&amp;lt;&lt;/span> interval[&lt;span style="color:#40a070">0&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#666">.&lt;/span>append(interval)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>][&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(res[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>][&lt;span style="color:#40a070">1&lt;/span>], interval[&lt;span style="color:#40a070">1&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>75. Sort Colors</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/75/</link><pubDate>Fri, 03 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/75/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/sort-colors/description/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>This problem is also known as the &lt;a href="http://localhost:1313/en/tracks/algorithms-101/algorithms/#dutch-national-flag-problem">Dutch National Flag problem&lt;/a>. One solution is to use three pointers to partition the array into three sections: red, white, and blue.&lt;/p>
+&lt;p>Here&amp;rsquo;s the algorithm:&lt;/p>
+&lt;ol>
+&lt;li>Initialize three pointers: left, mid, and right.&lt;/li>
+&lt;li>Initialize left to 0, mid to 0, and right to n-1, where n is the length of the input array.&lt;/li>
+&lt;li>While mid is less than or equal to right:
+&lt;ul>
+&lt;li>If nums[mid] is 0, swap nums[mid] with nums[left], increment mid and left.&lt;/li>
+&lt;li>If nums[mid] is 1, increment mid.&lt;/li>
+&lt;li>If nums[mid] is 2, swap nums[mid] with nums[right], decrement right.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Return the sorted array.&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">sortColors&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;&amp;#34;&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Do not return anything, modify nums in-place instead.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l, m, r &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#007020">len&lt;/span>(nums) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> m &lt;span style="color:#666">&amp;lt;=&lt;/span> r:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nums[m] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nums[m], nums[l] &lt;span style="color:#666">=&lt;/span> nums[l], nums[m]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> nums[m] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nums[m], nums[r] &lt;span style="color:#666">=&lt;/span> nums[r], nums[m]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>88. Merge Sorted Array</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/88/</link><pubDate>Sun, 30 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/88/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/merge-sorted-array/">LeetCode problem&lt;/a>&lt;/p>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">merge&lt;/span>(self, nums1: List[&lt;span style="color:#007020">int&lt;/span>], m: &lt;span style="color:#007020">int&lt;/span>, nums2: List[&lt;span style="color:#007020">int&lt;/span>], n: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;&amp;#34;&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Do not return anything, modify nums1 in-place instead.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums1) &lt;span style="color:#666">-&lt;/span> n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> nums2:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nums1[i] &lt;span style="color:#666">=&lt;/span> j
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nums1&lt;span style="color:#666">.&lt;/span>sort()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>215. Kth Largest Element in an Array</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/215/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/215/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/kth-largest-element-in-an-array/">LeetCode задача 215&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Найти k-тый по величине элемент в неотсортированном массиве. Примечание: это k-тый по величине элемент в отсортированном порядке, а не k-тый различный элемент.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;ol>
+&lt;li>Можно отсортировать массив и просто взять k-тый элемент с конца.&lt;/li>
+&lt;li>Для более эффективного решения можно использовать алгоритм быстрой выборки.&lt;/li>
+&lt;/ol>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>В самом простом случае мы можем отсортировать массив и взять k-тый элемент с конца.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Сортируем массив.&lt;/li>
+&lt;li>Возвращаем k-тый элемент с конца.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">findKthLargest&lt;/span>(nums, k):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nums&lt;span style="color:#666">.&lt;/span>sort()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> nums[&lt;span style="color:#666">-&lt;/span>k]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1679. Max Number of K-Sum Pairs</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1679/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1679/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/max-number-of-k-sum-pairs/">LeetCode задача 1679&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Вам дан массив чисел &lt;code>nums&lt;/code> и целое число &lt;code>k&lt;/code>. Задача — найти максимальное количество пар в массиве, сумма элементов которых равна &lt;code>k&lt;/code>.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Используйте технику двух указателей(pointers) после сортировки массива для оптимизации поиска пар.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Центральная идея решения задачи заключается в использовании техники двух указателей для быстрого нахождения пар чисел с заданной суммой &lt;code>k&lt;/code>. Прежде чем применить эту технику, массив сортируется в возрастающем порядке. Затем создаются два указателя: один, указывающий на начало массива, и второй — на конец. Двигая эти указатели в зависимости от суммы элементов, на которые они указывают, мы можем найти все пары с суммой &lt;code>k&lt;/code>.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Отсортируйте массив в возрастающем порядке.&lt;/li>
+&lt;li>Инициализируйте два указателя: &lt;code>p1&lt;/code> на начало массива и &lt;code>p2&lt;/code> на конец.&lt;/li>
+&lt;li>Пока &lt;code>p1&lt;/code> меньше &lt;code>p2&lt;/code>:
+&lt;ul>
+&lt;li>Если &lt;code>nums[p1] + nums[p2]&lt;/code> равно &lt;code>k&lt;/code>, увеличьте счетчик на 1, и сдвиньте оба указателя.&lt;/li>
+&lt;li>Если сумма меньше &lt;code>k&lt;/code>, сдвиньте &lt;code>p1&lt;/code> вправо.&lt;/li>
+&lt;li>Если сумма больше &lt;code>k&lt;/code>, сдвиньте &lt;code>p2&lt;/code> влево.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">maxOperations&lt;/span>(nums, k) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p1 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p2 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nums&lt;span style="color:#666">.&lt;/span>sort()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> p1 &lt;span style="color:#666">&amp;lt;&lt;/span> p2:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">=&lt;/span> nums[p1] &lt;span style="color:#666">+&lt;/span> nums[p2]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> s &lt;span style="color:#666">==&lt;/span> k:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p1 &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p2 &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> s &lt;span style="color:#666">&amp;lt;&lt;/span> k:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p1 &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p2 &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> c
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1887. Reduction Operations to Make the Array Elements Equal</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1887/</link><pubDate>Sun, 19 Nov 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1887/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/reduction-operations-to-make-the-array-elements-equal/">LeetCode Problem 1887&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>The goal of this problem is to make all elements in a given integer array &lt;code>nums&lt;/code> equal, through a series of reduction operations. In each operation, we find the largest element in the array, find the next largest element that is strictly smaller than the largest, and reduce the largest element to this next largest value. The task is to return the number of such operations needed to make all array elements equal.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>One might consider a brute-force approach: repeatedly scanning the array to find the largest element and its next largest, then performing the reduction. However, this approach would have a high time complexity, especially with larger arrays.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;ul>
+&lt;li>Think about sorting the array to make it easier to find the largest and next largest elements.&lt;/li>
+&lt;li>Consider how the number of reduction operations relates to the positions of the elements in the sorted array.&lt;/li>
+&lt;/ul>
+&lt;h2 id="approach--idea">Approach / Idea&lt;/h2>
+&lt;p>Imagine you have a stack of books of different thicknesses. Your task is to make all books have the same thickness by repeatedly choosing the thickest book and trimming it down to the next thickest one. The key to doing this efficiently is to first arrange the books in order of thickness, from thickest to thinnest. Once sorted, it&amp;rsquo;s straightforward to find the thickest book and the next thickest one.&lt;/p>
+&lt;p>Applying this analogy to our problem, sorting the &lt;code>nums&lt;/code> array in descending order (non-ascending) is akin to arranging the books. The largest number in the array is like the thickest book, and the next largest is like the next thickest book in the stack. By sorting the array, we can easily keep track of when we encounter a new &amp;ldquo;largest&amp;rdquo; element (or a new &amp;ldquo;thickest book&amp;rdquo;) as we iterate through the array.&lt;/p>
+&lt;h3 id="example">Example&lt;/h3>
+&lt;p>Consider the array &lt;code>[5, 1, 3]&lt;/code>. After sorting, it becomes &lt;code>[5, 3, 1]&lt;/code>. The first largest value is &lt;code>5&lt;/code>, and the next largest is &lt;code>3&lt;/code>. To make &lt;code>5&lt;/code> equal to &lt;code>3&lt;/code>, we perform one operation. We then make &lt;code>3&lt;/code> equal to &lt;code>1&lt;/code> in the next step. Each step or operation can be counted by the position of these numbers in the sorted array.&lt;/p>
+&lt;p>Thus, we count the number of operations required to reduce each element to the next largest value, which directly correlates to its index in the sorted array.&lt;/p>
+&lt;p>The key to efficiently solving this problem lies in sorting the array. Once sorted, we can easily track the largest element and its next largest. The number of operations required to reduce an element to the next largest is directly related to its position in the sorted array.&lt;/p>
+&lt;h3 id="algorithm">Algorithm&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Sort the Array&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>Sort &lt;code>nums&lt;/code> in non-ascending order.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Count Reduction Operations&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>Iterate through the sorted array.&lt;/li>
+&lt;li>Whenever the current element is different from the previous one (indicating a new largest element), increase the operation count by its index.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Return the Count&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>The total count is the number of operations needed.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;p>Here&amp;rsquo;s the Python code implementing this approach:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">reductionOperations&lt;/span>(nums: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nums&lt;span style="color:#666">.&lt;/span>sort(reverse&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> operations &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> largest &lt;span style="color:#666">=&lt;/span> nums[&lt;span style="color:#40a070">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i, x &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">enumerate&lt;/span>(nums):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> x &lt;span style="color:#666">&amp;lt;&lt;/span> largest:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> operations &lt;span style="color:#666">+=&lt;/span> i
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> largest &lt;span style="color:#666">=&lt;/span> x
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> operations
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

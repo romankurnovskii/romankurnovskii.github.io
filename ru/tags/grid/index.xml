@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Grid on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/grid/</link><description>Recent content in Grid on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sun, 10 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/grid/index.xml" rel="self" type="application/rss+xml"/><item><title>2849. Determine if a Cell Is Reachable at a Given Time</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2849/</link><pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2849/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/determine-if-a-cell-is-reachable-at-a-given-time">LeetCode problem 2849&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>You are given starting coordinates &lt;code>(sx, sy)&lt;/code> and final coordinates &lt;code>(fx, fy)&lt;/code> on a 2D infinite grid. Starting from the initial position, you can move to any of the 8 adjacent cells in one second. The challenge is to determine if you can reach the final cell &lt;code>(fx, fy)&lt;/code> in exactly &lt;code>t&lt;/code> seconds.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A naive approach would be to use a recursive function to navigate the grid from the starting point &lt;code>(sx, sy)&lt;/code> and attempt to reach the target &lt;code>(fx, fy)&lt;/code> in &lt;code>t&lt;/code> seconds. This approach will check every possible path, which can be very inefficient, especially for larger grids and values of &lt;code>t&lt;/code>.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;ul>
+&lt;li>Understand that not all paths are equal. Moving diagonally is more efficient than moving in a straight line if both x and y distances are positive.&lt;/li>
+&lt;li>Check the constraints. If you cannot reach the destination within the given time &lt;code>t&lt;/code>, there&amp;rsquo;s no need to try any further.&lt;/li>
+&lt;/ul>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>The idea is to calculate the shortest possible time to reach the target and then compare it to the given time &lt;code>t&lt;/code>. If the starting point and the ending point are the same, we can always return to the same position unless the time is exactly 1.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Calculate the difference in x (&lt;code>diff_x&lt;/code>) and y (&lt;code>diff_y&lt;/code>) coordinates.&lt;/li>
+&lt;li>For the minimum of &lt;code>diff_x&lt;/code> and &lt;code>diff_y&lt;/code>, move diagonally. This reduces both x and y distances by 1 in a single step.&lt;/li>
+&lt;li>Move horizontally or vertically for the absolute difference between &lt;code>diff_x&lt;/code> and &lt;code>diff_y&lt;/code>.&lt;/li>
+&lt;li>If &lt;code>(diff_x + diff_y)&lt;/code> is less than or equal to &lt;code>t&lt;/code>, and &lt;code>(t - (diff_x + diff_y))&lt;/code> is an even number or zero, return &lt;code>True&lt;/code>, otherwise return &lt;code>False&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">isReachableAtTime&lt;/span>(sx: &lt;span style="color:#007020">int&lt;/span>, sy: &lt;span style="color:#007020">int&lt;/span>, fx: &lt;span style="color:#007020">int&lt;/span>, fy: &lt;span style="color:#007020">int&lt;/span>, t: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">bool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> diff_x &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(fx &lt;span style="color:#666">-&lt;/span> sx) &lt;span style="color:#60a0b0;font-style:italic"># Calculating the differences in x&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> diff_y &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(fy &lt;span style="color:#666">-&lt;/span> sy) &lt;span style="color:#60a0b0;font-style:italic"># and y coordinates&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> diff_x &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> diff_y &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic"># If both starting and ending points are same&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> t &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> diff_x &lt;span style="color:#666">&amp;lt;=&lt;/span> t &lt;span style="color:#007020;font-weight:bold">and&lt;/span> diff_y &lt;span style="color:#666">&amp;lt;=&lt;/span> t: &lt;span style="color:#60a0b0;font-style:italic"># Check if we can reach the target within given time&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

@@ -1,3 +1,167 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Xray on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/xray/</link><description>Recent content in Xray on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Mon, 19 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/xray/index.xml" rel="self" type="application/rss+xml"/><item><title>X-Ray</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/xray/</link><pubDate>Mon, 19 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/xray/</guid><description>About AWS X-Ray helps developers analyze and debug production, distributed applications, such as those built using a microservices architecture.
-Documentation User Guide X-Ray allows software engineers to view the state of a system at a glance, identify potential bottlenecks, and make informed operational decisions to improve performance and reliability. X-Ray inspects application code using a combination of machine and customer-provided data to identify potential bottlenecks and analyze performance and performance trends for each test scenario.
-Terminology AWS X-Ray receives data from services as segments.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Xray on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/xray/</link><description>Recent content in Xray on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Mon, 19 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/xray/index.xml" rel="self" type="application/rss+xml"/><item><title>X-Ray</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/xray/</link><pubDate>Mon, 19 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/xray/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>AWS X-Ray helps developers analyze and debug production, distributed applications, such as those built using a microservices architecture.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/xray/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/xray/?id=docs_gateway">User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/Products/product-name/Images/product-page-diagram_AWS-X-Ray_how-it-works%402x.0d5b08dc2f788d3003a05ddb11e383ba54f41fc4.png"
+id="zoom-default"
+alt="X-Ray Flow"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>X-Ray allows software engineers to view the state of a system at a glance, identify potential bottlenecks, and make informed operational decisions to improve performance and reliability. X-Ray inspects application code using a combination of machine and customer-provided data to identify potential bottlenecks and analyze performance and performance trends for each test scenario.&lt;/p>
+&lt;h3 id="terminology">Terminology&lt;/h3>
+&lt;p>AWS X-Ray receives data from services as &lt;strong>segments&lt;/strong>. X-Ray then groups segments that have a common request into &lt;strong>traces&lt;/strong>. X-Ray processes the traces to generate a service graph that provides a visual representation of your application&lt;/p>
+&lt;p>&lt;strong>X-Ray Trace Hierarchy&lt;/strong>: Trace &amp;gt; Segment &amp;gt; Sub Segment&lt;/p>
+&lt;p>&lt;strong>Trace&lt;/strong>&lt;/p>
+&lt;p>An X-Ray trace is a set of data points that share the same trace ID.&lt;/p>
+&lt;p>&lt;strong>Segments&lt;/strong>&lt;/p>
+&lt;p>A segment is a JSON representation of a request that your application serves.&lt;/p>
+&lt;p>A trace segment records information about the original request, information about the work that your application does locally, and subsegments with information about downstream calls that your application makes to AWS resources, HTTP APIs, and SQL databases.&lt;/p>
+&lt;p>&lt;strong>Subsegments&lt;/strong>&lt;/p>
+&lt;p>Subsegments provide more granular timing information and details about downstream calls that your application made to fulfill the original request.&lt;/p>
+&lt;p>&lt;strong>Annotations&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>An X-Ray annotation is system-defined, or user-defined data associated with a segment&lt;/li>
+&lt;li>A segment can contain multiple annotations.&lt;/li>
+&lt;li>Annotations are used to describe the request, the response, and other information about the segment&lt;/li>
+&lt;li>Can be used for adding system or user-defined data to segments and subsegments that you want to index for search.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Sampling&lt;/strong>&lt;/p>
+&lt;p>X-Ray traces are sampled at a rate that you specify. The rate is specified in the &lt;code>sampling_rate&lt;/code> field of the &lt;code>sampling&lt;/code> object in the &lt;code>config&lt;/code> object.&lt;/p>
+&lt;p>&lt;strong>Metadata&lt;/strong>&lt;/p>
+&lt;p>X-Ray traces contain metadata that is useful for understanding the trace.&lt;/p>
+&lt;ul>
+&lt;li>Metadata (Key / value pairs) is not indexed and cannot be used for searching&lt;/li>
+&lt;/ul>
+&lt;h2 id="digest">Digest&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>Trace request across microservices/AWS services&lt;/p>
+&lt;ul>
+&lt;li>Analyze, Troubleshoot errors, Solve performance issues&lt;/li>
+&lt;li>Gather tracing information
+&lt;ul>
+&lt;li>From applications/components/AWS Services&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Tools to view, filter and gain insights (Ex: Service Map)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>How does Tracing work?&lt;/p>
+&lt;ul>
+&lt;li>Unique trace ID assigned to every client request
+&lt;ul>
+&lt;li>&lt;code>X-Amzn-Trace-Id:Root=1-5759e988-bd862e3fe&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Each service in request chain sends traces to X-Ray with trace ID
+&lt;ul>
+&lt;li>X-Ray gathers all the information and provides visualization&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>How do you reduce performance impact due to tracing?
+&lt;ul>
+&lt;li>Sampling - Only a sub set of requests are sampled (Configurable)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>How can AWS Services and your applications send tracing info?
+&lt;ul>
+&lt;li>Step 1 : Update Application Code Using X-Ray SDK&lt;/li>
+&lt;li>Step 2: Use X-Ray agents (EASY to use in some services! Ex: AWS Lambda)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Segments and Sub-segments can include an annotations object containing one or more fields that X-Ray indexes for use with Filter Expressions. It is indexed. Use up to 50 annotations per trace.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Total sampled request per second = &lt;code>Reservoir size + ((incoming requests per second - reservoir size) * fixed rate)&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Default sampling X-ray SDK first request each second and 5% of any additional requests&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Tracing header can be added in &lt;em>http&lt;/em> request header&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Annotations vs Segments vs Subsegments vs metadata&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>X-ray daemon listens for traffic on UDP port 2000&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>X-ray SDK provides interceptors to add your code to trace incoming HTTP requests.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>X-ray in EC2: You need the X-Ray daemon to be running on your EC2 instances in order to send data to X-Ray. User data script could be used to install the X-Ray daemon in EC2 instance.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>X-ray in ECS: In Amazon ECS, create a Docker image that runs the X-Ray daemon, upload it to a Docker image repository, and then deploy it to your Amazon ECS cluster.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>X-ray in elastic beanstalk: Enable the X-Ray daemon by including the xray-daemon.config configuration file in the &lt;code>.ebextensions&lt;/code> directory of your source code&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>AWS X-Ray helps developers analyze and debug production, distributed applications, such as those built using a micro-service architecture.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>A segment can break down the data about the work done into subsegments. Subsegments provide more granular timing information and details about - downstream calls that your application made to fulfill the original request.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Add annotations to subsegment document if you want to trace downstream calls.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Segments and subsegment can include a metadata object containing one or more fields with values of any type, including objects and arrays.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Tracing header is added in the HTTP request header. A tracing header (&lt;code>X-Amzn-Trace-ld&lt;/code>) can originate from the X-Ray SDK, an AWS service, or the - client request.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Use the &lt;code>GetTraceSummaries&lt;/code> API to get the list of trace IDs of the application and then retrieve the list of traces using BatchGetTraces API in - order to develop the custom debug tool&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="price">Price&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/xray/pricing/">Current price&lt;/a>&lt;/p>
+&lt;h2 id="use-cases">Use Cases&lt;/h2>
+&lt;p>Type: Developer Tools&lt;/p>
+&lt;h3 id="alternatives">Alternatives&lt;/h3>
+&lt;ul>
+&lt;li>Google Stackdriver&lt;/li>
+&lt;li>Azure Monitor&lt;/li>
+&lt;li>Elastic Observability&lt;/li>
+&lt;li>Datadog&lt;/li>
+&lt;li>Splunk&lt;/li>
+&lt;/ul>
+&lt;p>AWS X-Ray supports applications running on:&lt;/p>
+&lt;ul>
+&lt;li>Amazon Elastic Compute Cloud (Amazon EC2)&lt;/li>
+&lt;li>Amazon EC2 Container Service (Amazon ECS)&lt;/li>
+&lt;li>AWS Lambda&lt;/li>
+&lt;li>WS Elastic Beanstalk&lt;/li>
+&lt;/ul>
+&lt;h2 id="practice">Practice&lt;/h2>
+&lt;!-- [Tracing Java Applications with AWS X-Ray](tracing-java-apps-with-aws-x-ray) -->
+&lt;h2 id="questions">Questions&lt;/h2>
+&lt;h3 id="q1">Q1&lt;/h3>
+&lt;p>&lt;strong>You joined an application monitoring team. Your role focuses on finding system performance and bottlenecks in Lambda functions and providing specific solutions. Another teammate focuses on auditing the systems.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which AWS service will be your main tool?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>AWS X-Ray&lt;/li>
+&lt;li>AWS IAM&lt;/li>
+&lt;li>AWS CloudTrail&lt;/li>
+&lt;li>AWS Athena&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>AWS X-Ray provides graphs of system performance and identifies bottlenecks&lt;/p>
+&lt;p>&lt;mark style="color:white">1&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details></description></item></channel></rss>

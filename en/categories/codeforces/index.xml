@@ -1,5 +1,404 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Codeforces on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/codeforces/</link><description>Recent content in Codeforces on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sat, 29 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/codeforces/index.xml" rel="self" type="application/rss+xml"/><item><title>Plan</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/plan/</link><pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/plan/</guid><description>Stage 1: Implementation and Greedy 1809A - Garland (implementation, 800) 1807A - Plus or Minus (implementation, 800) 1807B - Grab the Candies (greedy, 800) 1807C - Find and Replace (greedy, implementation, strings, 800) 1798A - Showstopper (greedy, implementation, sortings, 800) 1799A - Recent Actions (data structures, greedy, implementation, math, 800) 1788A - One and Two (brute force, implementation, math, 800) 1778A - Flip Flop Sum (greedy, implementation, 800) 1772A - A+B? (implementation, 800) 1796B - Asterisk-Minor Template (implementation, strings, 1000) Stage 2: Combinatorics and Geometry 1777A - Everybody Likes Good Arrays!</description></item><item><title>Python template for contests</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/cp-template/</link><pubDate>Tue, 07 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/cp-template/</guid><description>Clean template ############################################# Libraries ###################################################### import bisect import sys import math import os import time from queue import PriorityQueue from io import BytesIO, IOBase from collections import defaultdict, Counter from bisect import bisect_right ############################################# Definitions ###################################################### INF = sys.maxsize BUFSIZE = 4096 ############################################# Inputs ###################################################### # def inp(): return sys.stdin.readline().rstrip(&amp;#34;\r\n&amp;#34;) # read line as string # def inp_int(): return int(inp()) # read input as integer. &amp;#39;1&amp;#39; -&amp;gt; 1 # def inp_int_list(): return list(map(int, inp().split())) # def inp_str_list(): return list(inp()) ############################################# Solution ###################################################### def solve(): n = list(map(int, input().</description></item><item><title>Data Structures</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/data-structures/</link><pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/data-structures/</guid><description>Tree class Node: def __init__(self, value): self.value = value self.children = {} def insert(self, s, idx): # idx: index of the current character in s if idx != len(s): self.children.setdefault(s[idx], Node(s[idx])) self.children.get(s[idx]).insert(s, idx + 1) Fenwick Tree class Fenwick: #also known as Binary Indexed Tree (BIT) def __init__(self, n): self.n = n self.bit = [0] * (n+1) def add(self, idx, val): while idx &amp;lt;= self.n: self.bit[idx] += val idx += idx &amp;amp; -idx def add_range(self, l, r, val): self.</description></item><item><title>01: Implementation &amp; Greedy</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/</link><pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/</guid><description>Implementation Implementation problems are typically straightforward and involve writing code to solve a problem based on the given description. There are no specific techniques for implementation problems, as they can vary widely.
-However, the following tips can help you tackle these problems:
-Read the problem statement carefully and make sure you understand the requirements. Break the problem down into smaller tasks and solve each task step by step. Write clear, modular code to make debugging easier. Test your solution with the given examples and edge cases.</description></item><item><title>02: Combinatorics &amp; Geometry</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/02-combinatorics-and-geometry/</link><pubDate>Thu, 13 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/02-combinatorics-and-geometry/</guid><description>Combinatorics Combinatorics is the study of counting, arranging, and selecting discrete objects. It deals with problems that involve combinations, permutations, and the principles of counting. Combinatorics is used in problems, especially involving optimization or enumeration.
-Concepts Permutations A permutation is an arrangement of objects in a specific order. The number of possible permutations of n objects is n! (factorial of n).
-Combinations A combination is a selection of objects without considering the order. The number of combinations of n objects taken r at a time is given by the binomial coefficient: $$C(n, r) = n!</description></item><item><title>Contests</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/contests/</link><pubDate>Sat, 29 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/contests/</guid><description/></item><item><title>Codeforces</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/</link><pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/</guid><description> Python template for contests Competitive Programming Helper (cph) | VSCode extension Competitive Programming | browser extension Codeforces solutions Links Python Visualize/Debug code online Python collections.Counter https://github.com/archishmanghos/DSA-Contests/ https://github.com/debochdilamo/Competative-Programming/tree/CodeForces-Solutions https://github.com/DilamoWondimu/Competative-programming/tree/main/CodeForces-Solutions https://github.com/hkirat/Algorithmic-Resources https://github.com/valentk777/Competitive-Programming/ Competitive Programming Library Codeforces rating</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Codeforces on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/codeforces/</link><description>Recent content in Codeforces on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sat, 29 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/codeforces/index.xml" rel="self" type="application/rss+xml"/><item><title>Plan</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/plan/</link><pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/plan/</guid><description>&lt;h2 id="stage-1-implementation-and-greedy">Stage 1: Implementation and Greedy&lt;/h2>
+&lt;ol>
+&lt;li>1809A - Garland (implementation, 800)&lt;/li>
+&lt;li>1807A - Plus or Minus (implementation, 800)&lt;/li>
+&lt;li>1807B - Grab the Candies (greedy, 800)&lt;/li>
+&lt;li>1807C - Find and Replace (greedy, implementation, strings, 800)&lt;/li>
+&lt;li>1798A - Showstopper (greedy, implementation, sortings, 800)&lt;/li>
+&lt;li>1799A - Recent Actions (data structures, greedy, implementation, math, 800)&lt;/li>
+&lt;li>1788A - One and Two (brute force, implementation, math, 800)&lt;/li>
+&lt;li>1778A - Flip Flop Sum (greedy, implementation, 800)&lt;/li>
+&lt;li>1772A - A+B? (implementation, 800)&lt;/li>
+&lt;li>1796B - Asterisk-Minor Template (implementation, strings, 1000)&lt;/li>
+&lt;/ol>
+&lt;h2 id="stage-2-combinatorics-and-geometry">Stage 2: Combinatorics and Geometry&lt;/h2>
+&lt;ol start="11">
+&lt;li>1777A - Everybody Likes Good Arrays! (greedy, math, 800)&lt;/li>
+&lt;li>1787A - Exponential Equation (constructive algorithms, math, 800)&lt;/li>
+&lt;li>1777B - Emordnilap (combinatorics, greedy, math, 900)&lt;/li>
+&lt;li>1773F - Football (constructive algorithms, 800)&lt;/li>
+&lt;li>1774A - Add Plus Minus Sign (constructive algorithms, math, 800)&lt;/li>
+&lt;li>1776A - Walking Boy (greedy, 800)&lt;/li>
+&lt;li>1776L - Controllers (binary search, math, 1500)&lt;/li>
+&lt;/ol>
+&lt;!--
+Stage 3: Brute Force and Constructive Algorithms
+1804A - Lame King (greedy, math, 800)
+1794B - Not Dividing (constructive algorithms, greedy, math, 900)
+1791C - Prepend and Append (implementation, two pointers, 800)
+1786A1 - Non-alternating Deck (easy version) (implementation, 800)
+1786A2 - Alternating Deck (hard version) (implementation, 800)
+1775A1 - Gardener and the Capybaras (easy version) (brute force, constructive algorithms, implementation, 800)
+1775A2 - Gardener and the Capybaras (hard version) (constructive algorithms, greedy, 900)
+1772D - Absolute Sorting (constructive algorithms, math, 1400)
+Stage 4: Binary Search and Two Pointers
+1809B (Points on Plane, binary search, greedy, math, 1000)
+1807E (Interview, binary search, implementation, interactive, 1300)
+1795C (Tea Tasting, binary search, data structures, implementation, 1500)
+1793C (Dora and Search, constructive algorithms, data structures, two pointers, 1200)
+1792C (Min Max Sort, binary search, brute force, greedy, math, two pointers, 1500)
+1788B (Sum of Two Numbers, constructive algorithms, greedy, implementation, math, probabilities, 1100)
+1775B (Gardener and the Array, bitmasks, constructive algorithms, 1300)
+1772B (Matrix Rotation, brute force, implementation, 800)
+Stage 5 - Sorting &amp; Binary Search
+In this stage, you will learn about sorting algorithms and binary search.
+Problems:
+1791C (Prepend and Append, implementation, two pointers, 800)
+1772D (Absolute Sorting, constructive algorithms, math, 1400)
+1774B (Coloring, constructive algorithms, greedy, math, 1500)
+1788B (Sum of Two Numbers, constructive algorithms, greedy, implementation, math, probabilities, 1100)
+1772B (Matrix Rotation, brute force, implementation, 800)
+Stage 6 - Data Structures
+In this stage, you will learn about various data structures such as arrays, stacks, queues, linked lists, trees, heaps, and graphs.
+Problems:
+1807D (Odd Queries, data structures, implementation, 900)
+1807C (Find and Replace, greedy, implementation, strings, 800)
+1795C (Tea Tasting, binary search, data structures, implementation, 1500)
+1790D (Matryoshkas, data structures, greedy, sortings, 1200)
+1781B (Going to the Cinema, brute force, greedy, sortings, 1000)
+Stage 7 - Dynamic Programming
+In this stage, you will learn about dynamic programming (DP) - a technique for solving complex problems by breaking them down into smaller, simpler subproblems.
+Problems:
+1776L (Controllers, binary search, math, 1500)
+1793C (Dora and Search, constructive algorithms, data structures, two pointers, 1200)
+1809C (Sum on Subarrays, constructive algorithms, greedy, math, 1500)
+1807G1 (Subsequence Addition (Easy Version), brute force, dp, greedy, implementation, sortings, 1100)
+1807G2 (Subsequence Addition (Hard Version), dp, greedy, implementation, sortings, 1100)
+Stage 8 - Advanced Algorithms
+In this stage, you will learn about advanced algorithms such as graph algorithms, string algorithms, and probability theory.
+Problems:
+1775B (Gardener and the Array, bitmasks, constructive algorithms, 1300)
+1789B (Serval and Inversion Magic, brute force, implementation, strings, two pointers, 800)
+1792C (Min Max Sort, binary search, brute force, greedy, math, two pointers, 1500)
+1775A1 (Gardener and the Capybaras (Easy Version), brute force, constructive algorithms, implementation, 800)
+1775A2 (Gardener and the Capybaras (Hard Version), constructive algorithms, greedy, 900)
+Stage 9 - Final Stage
+In this stage, you will solve some of the most challenging problems on the list.
+Problems:
+1787B (Number Factorization, greedy, math, number theory, 1100)
+1774C (Ice and Fire, constructive algorithms, dp, greedy, 1300)
+1772C (Different Differences, constructive algorithms, greedy, math, 1000)
+1804C (Pull Your Luck, brute force, greedy, math, number theory, 1500)
+1799B (Equalize by Divide, brute force, constructive algorithms, greedy, math, 1200)
+1780B (GCD Partition, brute force, greedy, math, number theory, 1100) --></description></item><item><title>Python template for contests</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/cp-template/</link><pubDate>Tue, 07 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/cp-template/</guid><description>&lt;h2 id="clean-template">Clean template&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">############################################# Libraries ######################################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">bisect&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">sys&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">math&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">os&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">time&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">queue&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> PriorityQueue
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">io&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> BytesIO, IOBase
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">collections&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> defaultdict, Counter
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">bisect&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> bisect_right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">############################################# Definitions ######################################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>INF &lt;span style="color:#666">=&lt;/span> sys&lt;span style="color:#666">.&lt;/span>maxsize
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>BUFSIZE &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">4096&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">############################################# Inputs ######################################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># def inp(): return sys.stdin.readline().rstrip(&amp;#34;\r\n&amp;#34;) # read line as string&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># def inp_int(): return int(inp()) # read input as integer. &amp;#39;1&amp;#39; -&amp;gt; 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># def inp_int_list(): return list(map(int, inp().split()))&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># def inp_str_list(): return list(inp())&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">############################################# Solution ######################################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">list&lt;/span>(&lt;span style="color:#007020">map&lt;/span>(&lt;span style="color:#007020">int&lt;/span>, &lt;span style="color:#007020">input&lt;/span>()&lt;span style="color:#666">.&lt;/span>split()))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(res)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>())):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> solve()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="full-template">Full template&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">############################################# Libraries ######################################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">bisect&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">sys&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">math&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">os&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">time&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">queue&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> PriorityQueue
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">io&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> BytesIO, IOBase
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">collections&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> defaultdict, Counter
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">bisect&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> bisect_right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">############################################# Definitions ######################################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>INF &lt;span style="color:#666">=&lt;/span> sys&lt;span style="color:#666">.&lt;/span>maxsize
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>BUFSIZE &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">4096&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">############################################# Inputs ######################################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">inp&lt;/span>(): &lt;span style="color:#007020;font-weight:bold">return&lt;/span> sys&lt;span style="color:#666">.&lt;/span>stdin&lt;span style="color:#666">.&lt;/span>readline()&lt;span style="color:#666">.&lt;/span>rstrip(&lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#4070a0;font-weight:bold">\r\n&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>) &lt;span style="color:#60a0b0;font-style:italic"># read line as string&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">inp_int&lt;/span>(): &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020">int&lt;/span>(inp()) &lt;span style="color:#60a0b0;font-style:italic"># read input as integer. &amp;#39;1&amp;#39; -&amp;gt; 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">inp_int_list&lt;/span>(): &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020">list&lt;/span>(&lt;span style="color:#007020">map&lt;/span>(&lt;span style="color:#007020">int&lt;/span>, inp()&lt;span style="color:#666">.&lt;/span>split()))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">inp_str_list&lt;/span>(): &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020">list&lt;/span>(inp())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">############################################# Data Structures ######################################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">SegmentTree&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic"># //O(logn) for operations and O(n) for building//&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">init&lt;/span>(arr): &lt;span style="color:#60a0b0;font-style:italic"># n shld be a power of 2...hence add extra zeros before itself if needed //O(n)//&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(arr)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tree &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">0&lt;/span>]&lt;span style="color:#666">*&lt;/span>(&lt;span style="color:#40a070">2&lt;/span>&lt;span style="color:#666">*&lt;/span>n)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># The actual array is between indices n to 2*n-1 the first nodes store sums&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tree[n&lt;span style="color:#666">+&lt;/span>i] &lt;span style="color:#666">=&lt;/span> arr[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># parent node value = child node&amp;#39;s sum i&amp;lt;&amp;lt;1 = 2*i, i&amp;lt;&amp;lt;1 |1 = 2*i+1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tree[i] &lt;span style="color:#666">=&lt;/span> tree[i &lt;span style="color:#666">&amp;lt;&amp;lt;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>]&lt;span style="color:#666">+&lt;/span>tree[(i &lt;span style="color:#666">&amp;lt;&amp;lt;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>) &lt;span style="color:#666">|&lt;/span> &lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> tree
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">add&lt;/span>(tree, i, v): &lt;span style="color:#60a0b0;font-style:italic"># Sets vertex i to value v (i shld be 0 based indexing) //O(logn)//&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># As the actual array is between n and 2*n-1, we add n to i (n = len(tree)//2)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(tree) &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tree[i] &lt;span style="color:#666">=&lt;/span> v
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> i &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tree[i &lt;span style="color:#666">&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">=&lt;/span> tree[i] &lt;span style="color:#666">+&lt;/span> tree[i &lt;span style="color:#666">^&lt;/span> &lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">&amp;gt;&amp;gt;=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Calculating the values of prev nodes. (eg if node 9 is changed 9&amp;gt;&amp;gt;1 = 4 takes values of node i(9) and node i^1(8))&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># calculates the sum of values in the range [l,r-1] (l and r take 0 based indexing) //O(logn)//&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">range_sum&lt;/span>(tree, l, r):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(tree)&lt;span style="color:#666">//&lt;/span>&lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(tree)&lt;span style="color:#666">//&lt;/span>&lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">sum&lt;/span> &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> l &lt;span style="color:#666">&amp;lt;&lt;/span> r:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l &lt;span style="color:#666">&amp;amp;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># If the index is odd, add its value to sum. if the index is even it means there would be a parent&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">sum&lt;/span> &lt;span style="color:#666">+=&lt;/span> tree[l]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># of this with odd index&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> r &lt;span style="color:#666">&amp;amp;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">sum&lt;/span> &lt;span style="color:#666">+=&lt;/span> tree[r]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l &lt;span style="color:#666">&amp;gt;&amp;gt;=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">&amp;gt;&amp;gt;=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020">sum&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">############################################# Solution ######################################################&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">=&lt;/span> inp()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">run&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(inp_int()):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> solve()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">if&lt;/span> __name__ &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#4070a0">&amp;#34;__main__&amp;#34;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CODE_DEBUG &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> os&lt;span style="color:#666">.&lt;/span>environ&lt;span style="color:#666">.&lt;/span>get(&lt;span style="color:#4070a0">&amp;#34;CODE_DEBUG&amp;#34;&lt;/span>) &lt;span style="color:#007020;font-weight:bold">or&lt;/span> CODE_DEBUG:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sys&lt;span style="color:#666">.&lt;/span>stdin &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">open&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;./input.txt&amp;#34;&lt;/span>, &lt;span style="color:#4070a0">&amp;#34;r&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> start_time &lt;span style="color:#666">=&lt;/span> time&lt;span style="color:#666">.&lt;/span>time()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> run()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#4070a0;font-weight:bold">\n&lt;/span>&lt;span style="color:#4070a0">--- &lt;/span>&lt;span style="color:#70a0d0">%s&lt;/span>&lt;span style="color:#4070a0"> seconds ---&lt;/span>&lt;span style="color:#4070a0;font-weight:bold">\n&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span> &lt;span style="color:#666">%&lt;/span> (time&lt;span style="color:#666">.&lt;/span>time() &lt;span style="color:#666">-&lt;/span> start_time))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> run()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Data Structures</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/data-structures/</link><pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/data-structures/</guid><description>&lt;h3 id="tree">Tree&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Node&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, value):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>value &lt;span style="color:#666">=&lt;/span> value
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>children &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">insert&lt;/span>(self, s, idx):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># idx: index of the current character in s&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> idx &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(s):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>children&lt;span style="color:#666">.&lt;/span>setdefault(s[idx], Node(s[idx]))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>children&lt;span style="color:#666">.&lt;/span>get(s[idx])&lt;span style="color:#666">.&lt;/span>insert(s, idx &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="fenwick-tree">Fenwick Tree&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Fenwick&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic">#also known as Binary Indexed Tree (BIT)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>n &lt;span style="color:#666">=&lt;/span> n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>bit &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">*&lt;/span> (n&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">add&lt;/span>(self, idx, val):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> idx &lt;span style="color:#666">&amp;lt;=&lt;/span> self&lt;span style="color:#666">.&lt;/span>n:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>bit[idx] &lt;span style="color:#666">+=&lt;/span> val
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> idx &lt;span style="color:#666">+=&lt;/span> idx &lt;span style="color:#666">&amp;amp;&lt;/span> &lt;span style="color:#666">-&lt;/span>idx
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">add_range&lt;/span>(self, l, r, val):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>add(l, val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>add(r&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#666">-&lt;/span>val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">query&lt;/span>(self, idx):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic">#Calculates the sum of the elements from the beginning to idx&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ret &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> idx &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ret &lt;span style="color:#666">+=&lt;/span> self&lt;span style="color:#666">.&lt;/span>bit[idx]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> idx &lt;span style="color:#666">-=&lt;/span> idx &lt;span style="color:#666">&amp;amp;&lt;/span> &lt;span style="color:#666">-&lt;/span>idx
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> ret
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">range_sum&lt;/span>(self, l, r):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Return the sum of the elements from l (inclusive) to r (exclusive)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> self&lt;span style="color:#666">.&lt;/span>prefix_sum(r &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>) &lt;span style="color:#666">-&lt;/span> self&lt;span style="color:#666">.&lt;/span>prefix_sum(l &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">prefix_sum&lt;/span>(self, x):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># return sum upto and including element x&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> z &lt;span style="color:#666">=&lt;/span> x
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> z &lt;span style="color:#666">&amp;gt;=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">+=&lt;/span> self&lt;span style="color:#666">.&lt;/span>bit[z]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Strip trailing zeros from z, and then take away one&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> z &lt;span style="color:#666">=&lt;/span> (z &lt;span style="color:#666">&amp;amp;&lt;/span> (z &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;a href="https://medium.com/carpanese/a-visual-introduction-to-fenwick-tree-89b82cac5b3c">A Visual Introduction to Fenwick Tree | medium&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://cp-algorithms.com/data_structures/fenwick.html">Fenwick Tree&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ru.algorithmica.org/cs/range-queries/fenwick/">Дерево Фенвика | algorithmica&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://habr.com/ru/post/112828/">Дерево Фенвика | habr&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/OpenGenus/cosmos">data structures&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.programiz.com/dsa/algorithm">data structures tutorial | programiz&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/cheran-senthil/PyRival">Competitive Programming Library&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://cp-algorithms.com/">Algorithms for Competitive Programming&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>01: Implementation &amp; Greedy</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/</link><pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/</guid><description>&lt;h2 id="implementation">Implementation&lt;/h2>
+&lt;p>Implementation problems are typically straightforward and involve writing code to solve a problem based on the given description. There are no specific techniques for implementation problems, as they can vary widely.&lt;/p>
+&lt;p>However, the following tips can help you tackle these problems:&lt;/p>
+&lt;ol>
+&lt;li>Read the problem statement carefully and make sure you understand the requirements.&lt;/li>
+&lt;li>Break the problem down into smaller tasks and solve each task step by step.&lt;/li>
+&lt;li>Write clear, modular code to make debugging easier.&lt;/li>
+&lt;li>Test your solution with the given examples and edge cases.&lt;/li>
+&lt;/ol>
+&lt;h2 id="greedy-algorithms">Greedy Algorithms&lt;/h2>
+&lt;p>Greedy algorithms involve making the best choice at each step to find the optimal solution. They are called &amp;ldquo;greedy&amp;rdquo; because they always choose the best option available without considering the overall problem. The key to solving greedy problems is to &lt;strong>identify the optimal choice at each step&lt;/strong>.&lt;/p>
+&lt;h2 id="example-1">Example 1&lt;/h2>
+&lt;p>&lt;strong>Problem:&lt;/strong> You have a list of tasks, each with a deadline and a reward. You can only complete one task per day, and you must finish the task before its deadline. Find the maximum total reward you can earn.&lt;/p>
+&lt;p>&lt;strong>Solution:&lt;/strong> At each step, choose the task with the highest reward that you can complete before its deadline. This is the greedy choice.&lt;/p>
+&lt;p>Let&amp;rsquo;s say we have the following tasks with deadlines and rewards:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Task A: Deadline 3 days, Reward 50
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Task B: Deadline 2 days, Reward 40
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Task C: Deadline 1 day, Reward 30
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>A greedy algorithm would work as follows:&lt;/p>
+&lt;ol>
+&lt;li>On day 1, choose the task with the highest reward that you can complete before its deadline. In this case, it&amp;rsquo;s Task C with a reward of 30.&lt;/li>
+&lt;li>On day 2, choose the task with the highest reward that you can complete before its deadline. In this case, it&amp;rsquo;s Task B with a reward of 40.&lt;/li>
+&lt;li>On day 3, choose the task with the highest reward that you can complete before its deadline. In this case, it&amp;rsquo;s Task A with a reward of 50.
+So the maximum total reward is 30 + 40 + 50 = 120.&lt;/li>
+&lt;/ol>
+&lt;h2 id="example-2">Example 2&lt;/h2>
+&lt;p>&lt;strong>Problem:&lt;/strong> You are given a set of coins with different denominations and an amount you need to pay. Find the minimum number of coins needed to make the given amount, using the available denominations. You have an unlimited number of coins for each denomination.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Denominations: {1, 5, 10, 20, 50}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Amount: 67
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Solution:&lt;/strong> A greedy algorithm would choose the largest coin denomination that is less than or equal to the remaining amount at each step.&lt;/p>
+&lt;ol>
+&lt;li>Start with the remaining amount equal to 67. Choose the largest coin that is less than or equal to 67 (50). Remaining amount: 17.&lt;/li>
+&lt;li>Choose the largest coin that is less than or equal to 17 (10). Remaining amount: 7.&lt;/li>
+&lt;li>Choose the largest coin that is less than or equal to 7 (5). Remaining amount: 2.&lt;/li>
+&lt;li>Choose the largest coin that is less than or equal to 2 (1). Remaining amount: 1.&lt;/li>
+&lt;li>Choose the largest coin that is less than or equal to 1 (1). Remaining amount: 0.&lt;/li>
+&lt;li>The minimum number of coins needed is 5 (50 + 10 + 5 + 1 + 1).&lt;/li>
+&lt;/ol>
+&lt;h2 id="tips">Tips&lt;/h2>
+&lt;p>Tips for solving greedy problems&lt;/p>
+&lt;ul>
+&lt;li>Understand the problem and identify the greedy choice at each step.&lt;/li>
+&lt;li>Prove that the greedy choice leads to the optimal solution, or at least a good enough solution.&lt;/li>
+&lt;li>Implement the algorithm and test it with the given examples and edge cases.&lt;/li>
+&lt;/ul>
+&lt;h2 id="problemset">Problemset&lt;/h2>
+&lt;ol>
+&lt;li>1809A - Garland (implementation, 800)&lt;/li>
+&lt;li>1807A - Plus or Minus (implementation, 800)&lt;/li>
+&lt;li>1807B - Grab the Candies (greedy, 800)&lt;/li>
+&lt;li>1807C - Find and Replace (greedy, implementation, strings, 800)&lt;/li>
+&lt;li>1798A - Showstopper (greedy, implementation, sortings, 800)&lt;/li>
+&lt;li>1799A - Recent Actions (data structures, greedy, implementation, math, 800)&lt;/li>
+&lt;li>1788A - One and Two (brute force, implementation, math, 800)&lt;/li>
+&lt;li>1778A - Flip Flop Sum (greedy, implementation, 800)&lt;/li>
+&lt;li>1772A - A+B? (implementation, 800)&lt;/li>
+&lt;li>1796B - Asterisk-Minor Template (implementation, strings, 1000)&lt;/li>
+&lt;/ol></description></item><item><title>02: Combinatorics &amp; Geometry</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/02-combinatorics-and-geometry/</link><pubDate>Thu, 13 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/02-combinatorics-and-geometry/</guid><description>&lt;h2 id="combinatorics">Combinatorics&lt;/h2>
+&lt;p>Combinatorics is the study of counting, arranging, and selecting discrete objects. It deals with problems that involve combinations, permutations, and the principles of counting. Combinatorics is used in problems, especially involving optimization or enumeration.&lt;/p>
+&lt;h3 id="concepts">Concepts&lt;/h3>
+&lt;h3 id="permutations">Permutations&lt;/h3>
+&lt;p>A permutation is an arrangement of objects in a specific order. The number of possible permutations of &lt;code>n&lt;/code> objects is &lt;code>n!&lt;/code> (factorial of &lt;code>n&lt;/code>).&lt;/p>
+&lt;h3 id="combinations">Combinations&lt;/h3>
+&lt;p>A combination is a selection of objects without considering the order. The number of combinations of &lt;code>n&lt;/code> objects taken &lt;code>r&lt;/code> at a time is given by the binomial coefficient: $$C(n, r) = n! / (r! * (n-r)!)$$&lt;/p>
+&lt;p>Imagine you have a set of distinct objects, like fruits. Let&amp;rsquo;s say you have a &lt;strong>banana&lt;/strong>, an &lt;strong>apple&lt;/strong>, and an &lt;strong>orange&lt;/strong>. You want to make a fruit salad, but you only have &lt;strong>room for two fruits&lt;/strong>. How many different fruit salads can you make?&lt;/p>
+&lt;div style="display: flex;">
+&lt;img src="./assets/combinations.png" width="250">
+&lt;div style="margin-left: 20px; margin-top: 30px">
+&lt;mark>Combinations are a way to count the number of possible selections of objects (in this case, fruits) without considering the order. The order doesn't matter because, in a fruit salad, having a banana first and an apple second is the same as having an apple first and a banana second.&lt;/mark>
+&lt;/div>
+&lt;/div>
+&lt;p>In this example, we have 3 objects (&lt;code>n = 3&lt;/code>) and we want to select 2 of them (&lt;code>r = 2&lt;/code>). To calculate the number of possible combinations, we use the binomial coefficient formula: $$C(n, r) = n! / (r! * (n-r)!)$$&lt;/p>
+&lt;p>In our example, &lt;code>n = 3&lt;/code> and &lt;code>r = 2&lt;/code>, so the formula becomes:&lt;/p>
+&lt;p>$$C(3, 2) = 3! / (2! * (3-2)!)$$&lt;/p>
+&lt;p>Factorials (denoted by the exclamation mark) are a way to multiply a number by all the positive integers less than or equal to that number. For example:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>3! = 3 * 2 * 1 = 6
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>2! = 2 * 1 = 2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>1! = 1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Formula becomes $C(3, 2) = 6 / (2 * 1) = 3$&lt;/p>
+&lt;p>So, there are 3 different fruit salads you can make: &lt;strong>banana-apple&lt;/strong>, &lt;strong>banana-orange&lt;/strong>, and &lt;strong>apple-orange&lt;/strong>.&lt;/p>
+&lt;p>To summarize, combinations help us count the number of ways to select a certain number of objects from a larger set without considering the order of the objects. The binomial coefficient formula, $C(n, r) = n! / (r! * (n-r)!)$, allows us to calculate the number of possible combinations.&lt;/p>
+&lt;h3 id="pigeonhole-principle">Pigeonhole Principle&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://en.wikipedia.org/wiki/Pigeonhole_principle">Wikipedia&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>If &lt;code>n&lt;/code> items are put into &lt;code>m&lt;/code> containers, and &lt;code>n &amp;gt; m&lt;/code>, then at least one container must contain more than one item. This principle is often used to prove the existence of a solution.&lt;/p>
+&lt;p>Inclusion-Exclusion Principle: This principle is used to count the number of elements in the union of several sets. It helps avoid overcounting by considering the intersections of the sets.&lt;/p>
+&lt;div style="display: flex;">
+&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/TooManyPigeons.jpg/440px-TooManyPigeons.jpg" width="250">
+&lt;div style="margin-left: 20px; margin-top: 30px">
+&lt;mark>&lt;b>Pigeons in holes.&lt;/b>&lt;/mark>&lt;/br>
+&lt;mark>Pigeons in holes. Here there are n = 10 pigeons in m = 9 holes. Since 10 is greater than 9, the pigeonhole principle says that at least one hole has more than one pigeon. (The top left hole has 2 pigeons.)&lt;/mark>
+&lt;/div>
+&lt;/div>
+&lt;h3 id="inclusion-exclusion-principle">Inclusion-Exclusion Principle&lt;/h3>
+&lt;div style="display: flex;">
+&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Inclusion-exclusion.svg/440px-Inclusion-exclusion.svg.png" width="250">
+&lt;div style="margin-left: 20px; margin-top: 30px">
+&lt;mark>This principle is used to count the number of elements in the union of several sets. It helps avoid overcounting by considering the intersections of the sets.&lt;/mark>
+&lt;/div>
+&lt;/div>
+&lt;p>Imagine you have two groups of students. &lt;strong>Group A&lt;/strong> has &lt;strong>30&lt;/strong> students who like pizza, and &lt;strong>Group B&lt;/strong> has &lt;strong>20&lt;/strong> students who like burgers. However, &lt;strong>10&lt;/strong> students like &lt;strong>both&lt;/strong> pizza and burgers.&lt;/p>
+&lt;p>Now, you want to find out &lt;strong>how many students like either pizza or burgers&lt;/strong>.&lt;/p>
+&lt;p>You might think of adding the number of students who like pizza to the number of students who like burgers: &lt;code>30 + 20 = 50&lt;/code>. But this would overcount the students who like both pizza and burgers because they are counted twice.&lt;/p>
+&lt;p>This is where the &lt;em>Inclusion-Exclusion Principle&lt;/em> comes in. It helps us avoid overcounting by considering the &lt;strong>intersections of the sets&lt;/strong>. The principle states that to find the total number of students who like either pizza or burgers, we should subtract the number of students who like both pizza and burgers from the sum of students in Group A and Group B:&lt;/p>
+&lt;p>&lt;code>Total students = Students in Group A + Students in Group B - Students in both groups&lt;/code>&lt;/p>
+&lt;p>In our example:&lt;/p>
+&lt;p>Total students = &lt;code>30 (Group A) + 20 (Group B) - 10 (both) = 40&lt;/code>&lt;/p>
+&lt;p>So, 40 students like either pizza or burgers.&lt;/p>
+&lt;p>In general, the Inclusion-Exclusion Principle can be extended to more than two sets. It involves including the number of elements in each set, then subtracting the number of elements in each pair of sets&amp;rsquo; intersection, adding back the number of elements in each triple of sets&amp;rsquo; intersection, and so on.&lt;/p>
+&lt;p>In summary, the Inclusion-Exclusion Principle helps us &lt;strong>count the number of elements in the union of several sets by considering the intersections of the sets and avoiding overcounting.&lt;/strong>&lt;/p>
+&lt;h2 id="problemset">Problemset&lt;/h2>
+&lt;ol>
+&lt;li>1777A - Everybody Likes Good Arrays! (greedy, math, 800)&lt;/li>
+&lt;li>1787A - Exponential Equation (constructive algorithms, math, 800)&lt;/li>
+&lt;li>1777B - Emordnilap (combinatorics, greedy, math, 900)&lt;/li>
+&lt;li>1773F - Football (constructive algorithms, 800)&lt;/li>
+&lt;li>1774A - Add Plus Minus Sign (constructive algorithms, math, 800)&lt;/li>
+&lt;li>1776A - Walking Boy (greedy, 800)&lt;/li>
+&lt;li>1776L - Controllers (binary search, math, 1500)&lt;/li>
+&lt;/ol></description></item><item><title>Contests</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/contests/</link><pubDate>Sat, 29 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/contests/</guid><description/></item><item><title>Codeforces</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/</link><pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/</guid><description>&lt;ul>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/cp-template/">Python template for contests&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://marketplace.visualstudio.com/items?itemName=DivyanshuAgrawal.competitive-programming-helper">Competitive Programming Helper (cph) | VSCode extension&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/jmerle/competitive-companion">Competitive Programming | browser extension&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/codeforces/">Codeforces solutions&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="links">Links&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://pythontutor.com/visualize.html#mode=edit">Python Visualize/Debug code online&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.python.org/3/library/collections.html#collections.Counter">Python collections.Counter&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/archishmanghos/DSA-Contests/">https://github.com/archishmanghos/DSA-Contests/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/debochdilamo/Competative-Programming/tree/CodeForces-Solutions">https://github.com/debochdilamo/Competative-Programming/tree/CodeForces-Solutions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/DilamoWondimu/Competative-programming/tree/main/CodeForces-Solutions">https://github.com/DilamoWondimu/Competative-programming/tree/main/CodeForces-Solutions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/hkirat/Algorithmic-Resources">https://github.com/hkirat/Algorithmic-Resources&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/valentk777/Competitive-Programming/">https://github.com/valentk777/Competitive-Programming/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/cheran-senthil/PyRival">Competitive Programming Library&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://codeforces.com/ratings/country/Israel">Codeforces rating&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

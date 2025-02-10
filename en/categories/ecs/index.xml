@@ -1,2 +1,200 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ecs on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/ecs/</link><description>Recent content in Ecs on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Tue, 20 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/ecs/index.xml" rel="self" type="application/rss+xml"/><item><title>Elastic Container Service</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/ecs/</link><pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/ecs/</guid><description>About Documentation User Guide Highly secure, reliable, &amp;amp; scalable way to run contai­ners
-Alternatives Google Container Engine (GKE) Azure Container Service IBM Bluemix Container Service Jelastic Multi-Cloud PaaS Terminology Amazon ECS Term Definition Cluster Logical Grouping of EC2 Instances Container Instance EC2 instance running the ECS agent Task Definition Blueprint that describes how a docker container should launch Task A running container using settings in a Task Definition Service Defines long running tasks – can control task count with Auto Scaling and attach an ELB Digest Microservices are built in multiple programming languages Containers simplify deployment of microservices: Step 1 : Create a self contained Docker image Application Runtime (JDK or Python), Application code and Dependencies Step 2 : Run it as a container any where Local machine OR Corporate data center OR Cloud Use On-Demand instances or Spot instances Launch type: EC2 or Fargate Data volumes attached to containers Deployment type: Rolling update Blue/green deployment (powered by AWS CodeDeploy) Task Placement Strategies: binpack - Leave least amount of unused CPU or memory.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ecs on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/ecs/</link><description>Recent content in Ecs on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Tue, 20 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/ecs/index.xml" rel="self" type="application/rss+xml"/><item><title>Elastic Container Service</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/ecs/</link><pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/ecs/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/ecs/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/ecs/?id=docs_gateway">User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Highly secure, reliable, &amp;amp; scalable way to run contai­ners&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/product-page-diagram_Amazon-ECS%402x.0d872eb6fb782ddc733a27d2bb9db795fed71185.png"
+id="zoom-default"
+alt="Amazon Elastic Container Service Flow"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/ecs-scheme.jpg"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="alternatives">Alternatives&lt;/h3>
+&lt;ul>
+&lt;li>Google Container Engine (GKE)&lt;/li>
+&lt;li>Azure Container Service&lt;/li>
+&lt;li>IBM Bluemix Container Service&lt;/li>
+&lt;li>Jelastic Multi-Cloud PaaS&lt;/li>
+&lt;/ul>
+&lt;h3 id="terminology">Terminology&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Amazon ECS&lt;/th>
+&lt;th>Term Definition&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Cluster&lt;/td>
+&lt;td>Logical Grouping of EC2 Instances&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Container&lt;/td>
+&lt;td>Instance EC2 instance running the ECS agent&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Task Definition&lt;/td>
+&lt;td>Blueprint that describes how a docker container should launch&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Task&lt;/td>
+&lt;td>A running container using settings in a Task Definition&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Service&lt;/td>
+&lt;td>Defines long running tasks – can control task count with Auto Scaling and attach an ELB&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="digest">Digest&lt;/h2>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/ecs-ecr-scheme.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>Microservices are built in multiple programming languages&lt;/li>
+&lt;li>Containers simplify deployment of microservices:
+&lt;ul>
+&lt;li>Step 1 : Create a self contained Docker image
+&lt;ul>
+&lt;li>Application Runtime (JDK or Python), Application code and Dependencies&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Step 2 : Run it as a container any where Local machine OR Corporate data center OR Cloud&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Use On-Demand instances or Spot instances&lt;/li>
+&lt;li>Launch type: EC2 or Fargate&lt;/li>
+&lt;li>Data volumes attached to containers&lt;/li>
+&lt;li>Deployment type:
+&lt;ul>
+&lt;li>Rolling update&lt;/li>
+&lt;li>Blue/green deployment (powered by AWS CodeDeploy)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Task Placement Strategies:
+&lt;ul>
+&lt;li>&lt;strong>binpack&lt;/strong> - Leave least amount of unused CPU or memory. &lt;strong>Minimizes number of container instances in use&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>random&lt;/strong> - Random task placement&lt;/li>
+&lt;li>&lt;strong>spread&lt;/strong> - Based on specified values:
+&lt;ul>
+&lt;li>Host (instanceId)&lt;/li>
+&lt;li>(OR) Availability Zone(attribute:ecs.availability-zone)&lt;/li>
+&lt;li>(Alowed) Combine strategies and prioritize&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>How do you manage 100s of containers?&lt;/li>
+&lt;li>ECS - Fully managed service for container orchestration
+&lt;ul>
+&lt;li>Step 1 : Create a Cluster (Group of one or more EC2 instances)&lt;/li>
+&lt;li>Step 2: Deploy your microservice containers&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>AWS Fargate: Serverless ECS. DON&amp;rsquo;T worry about EC2 instances.&lt;/li>
+&lt;li>Cloud Neutral: Kubernetes
+&lt;ul>
+&lt;li>AWS - AWS Elastic Kubernetes Service (EKS)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Load balancing:
+&lt;ul>
+&lt;li>Performed using Application Load Balancers
+&lt;ul>
+&lt;li>&lt;strong>Dynamic host port mapping&lt;/strong>: Multiple tasks from the same service are allowed per EC2 (container) instance&lt;/li>
+&lt;li>&lt;strong>Path-based routing&lt;/strong>: Multiple services can use the same listener port on same ALB and be routed based on path (&amp;lt;www.myapp.com/microservice-a&amp;gt; and &amp;lt;www.myapp.com/microservice-b&amp;gt;)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="price">Price&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/ecs/pricing/">Current price&lt;/a>&lt;/p>
+&lt;h2 id="use-cases">Use Cases&lt;/h2>
+&lt;p>Type: Containers&lt;/p>
+&lt;p>Same type services: Elastic Container Service (ECS), Elastic Container Registry (ECR), Elastic Kubernetes Service (EKS), Fargate&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/ecs/img/amazon-ecs-service-auto-scaling.jpg"
+id="zoom-default"
+alt="ECS Auto Scaling"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Best practice:&lt;/p>
+&lt;ul>
+&lt;li>10 Microservices =&amp;gt; 10 Task Definitions =&amp;gt; 10 Task IAM Roles with individual permissions needed by each microservice&lt;/li>
+&lt;/ul>
+&lt;h3 id="ecs-vs-eks">ECS vs EKS&lt;/h3>
+&lt;p>Amazon also provides the Elastic Container Service for Kubernetes (Amazon EKS) which can be used to deploy, manage, and scale containerized applications using Kubernetes on AWS.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Amazon ECS&lt;/th>
+&lt;th>Amazon EKS&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Managed, highly available, highly scalable container platform&lt;/td>
+&lt;td>Managed, highly available, highly scalable container platform&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>AWS-specific platform that supports Docker Containers&lt;/td>
+&lt;td>Compatible with upstream Kubernetes so it’s easy to lift and shift from other Kubernetes deployments&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Considered simpler and easier to use&lt;/td>
+&lt;td>Considered more feature-rich and complex with a steep learning curve&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Leverages AWS services like Route 53, ALB, and CloudWatch&lt;/td>
+&lt;td>A hosted Kubernetes platform that handles many things internally&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>“Tasks” are instances of containers that are run on underlying compute but more of less isolated&lt;/td>
+&lt;td>“Pods” are containers collocated with one another and can have shared access to each other&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Limited extensibility&lt;/td>
+&lt;td>Extensible via a wide variety of third-party and community add-ons.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="questions">Questions&lt;/h2>
+&lt;h3 id="q1">Q1&lt;/h3>
+&lt;p>&lt;strong>You are asked to establish a baseline for normal Amazon ECS performance in your environment by measuring performance at various times and under different load conditions. To establish a baseline, Amazon recommends that you should at a minimum monitor the CPU and ____ for your Amazon ECS clusters and the CPU and ____ metrics for your Amazon ECS services.&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>memory reservation and utilization; concurrent connections&lt;/li>
+&lt;li>memory utilization; memory reservation and utilization&lt;/li>
+&lt;li>concurrent connections; memory reservation and utilization&lt;/li>
+&lt;li>memory reservation and utilization; memory utilization&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_monitoring.html">https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_monitoring.html&lt;/a>&lt;/p>
+&lt;p>&lt;mark style="color:white">1, 2&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details></description></item></channel></rss>

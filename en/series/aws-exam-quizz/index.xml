@@ -1,10 +1,248 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AWS Exam Quizz on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/series/aws-exam-quizz/</link><description>Recent content in AWS Exam Quizz on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Mon, 10 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/series/aws-exam-quizz/index.xml" rel="self" type="application/rss+xml"/><item><title>Cloud exam Quizz</title><link>https://romankurnovskii.com/en/apps/cloud-exam-quizz/</link><pubDate>Mon, 10 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/apps/cloud-exam-quizz/</guid><description>Goal: Check if you are ready to pass the Cloud exam
-The application calculates progress after each answered question. Ability to answer at least one question and get a comment at the same time. No need to pass all questions before. It is convenient to spend 20 min a day Works from web/tablet/mobile Link: https://www.cloud-exam-prepare.com</description></item><item><title>AWS Amplify - project setup with Github</title><link>https://romankurnovskii.com/en/posts/cloud-exam-quizz/amplify-setup-project/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/cloud-exam-quizz/amplify-setup-project/</guid><description>Preface For Amplify project I use eu-west region github repo has to be ready private or public New project goto https://eu-west-1.console.aws.amazon.com/amplify/home?region=eu-west-1#/
-New app → Host web app → Github
-Add access to github repo Select repository Come back to Amplify and try again to choose repo Click Next
-Update amplify.yml for node.js project
-version: 1 frontend: phases: preBuild: commands: - yarn install build: commands: - yarn run build artifacts: baseDirectory: build files: - &amp;#39;**/*&amp;#39; cache: paths: - node_modules/**/* Next → Save and deploy Amplify starts to build project and generates project url.</description></item><item><title>AWS Amplify - Set custom domain</title><link>https://romankurnovskii.com/en/posts/cloud-exam-quizz/amplify-custom-domain/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/cloud-exam-quizz/amplify-custom-domain/</guid><description>You can use any custom domain with Amplify and no need register it with AWS Route53.
-I am adding domain at the setup app stage. Another way is from console.
-Click Domain management. or
-Add domain Write domain name -&amp;gt; Configure domain -&amp;gt; Save Nest starts SSL configuration process. Amplify provides with DNS data that you need to write in the domain register account. Once SSL creation starts you can get domain data
-Action -&amp;gt; View DNS records</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AWS Exam Quizz on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/series/aws-exam-quizz/</link><description>Recent content in AWS Exam Quizz on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Wed, 12 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/series/aws-exam-quizz/index.xml" rel="self" type="application/rss+xml"/><item><title>AWS Amplify - project setup with Github</title><link>https://romankurnovskii.com/en/posts/cloud-exam-quizz/amplify-setup-project/</link><pubDate>Wed, 12 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/cloud-exam-quizz/amplify-setup-project/</guid><description>&lt;h2 id="preface">Preface&lt;/h2>
+&lt;ul>
+&lt;li>For Amplify project I use &lt;strong>eu-west&lt;/strong> region&lt;/li>
+&lt;li>github repo has to be ready private or public&lt;/li>
+&lt;/ul>
+&lt;h2 id="new-project">New project&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>goto &lt;a href="https://eu-west-1.console.aws.amazon.com/amplify/home?region=eu-west-1#/">https://eu-west-1.console.aws.amazon.com/amplify/home?region=eu-west-1#/&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>New app → Host web app → Github&lt;/p>
+&lt;ol>
+&lt;li>Add access to github repo
+&lt;p class="md__image">
+&lt;img
+src="../img/github-setup-access.png"
+id="zoom-default"
+alt="github-setup-access"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/li>
+&lt;li>Select repository
+&lt;p class="md__image">
+&lt;img
+src="../img/github-setup-access-select-repo.png"
+id="zoom-default"
+alt="github-setup-access"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>Come back to Amplify and try again to choose repo
+&lt;p class="md__image">
+&lt;img
+src="../img/amplify-setup-access-select-repo.png"
+id="zoom-default"
+alt="github-setup-access"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Next&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>Update &lt;strong>amplify.yml&lt;/strong> for &lt;em>node.js&lt;/em> project&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#062873;font-weight:bold">version&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#40a070">1&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">frontend&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">phases&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">preBuild&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">commands&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- yarn install&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">build&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">commands&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- yarn run build&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">artifacts&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">baseDirectory&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>build&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">files&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#4070a0">&amp;#39;**/*&amp;#39;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">cache&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">paths&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- node_modules/**/*&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/amplify-yml.jpg"
+id="zoom-default"
+alt="amplify-yml"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="5">
+&lt;li>Next → Save and deploy&lt;/li>
+&lt;/ol>
+&lt;p>Amplify starts to build project and generates project url.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/amplify-build-process.png"
+id="zoom-default"
+alt="amplify-build-process"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Once build done you can open project.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/amplify-success-url.png"
+id="zoom-default"
+alt="amplify-success-url"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p></description></item><item><title>AWS Amplify - Set custom domain</title><link>https://romankurnovskii.com/en/posts/cloud-exam-quizz/amplify-custom-domain/</link><pubDate>Wed, 12 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/cloud-exam-quizz/amplify-custom-domain/</guid><description>&lt;p>You can use any custom domain with Amplify and no need register it with &lt;a href="https://romankurnovskii.com/en/categories/route-53/">AWS Route53&lt;/a>.&lt;/p>
+&lt;p>I am adding domain at the &lt;em>setup app stage&lt;/em>. Another way is from console.&lt;/p>
+&lt;ol>
+&lt;li>Click &lt;strong>Domain management&lt;/strong>.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/amplify-add-custom-domain.png"
+id="zoom-default"
+alt="amplify-add-custom-domain"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>or&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/amplify-add-custom-domain-01.png"
+id="zoom-default"
+alt="amplify-add-custom-domain"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="2">
+&lt;li>Add domain&lt;/li>
+&lt;li>Write domain name -&amp;gt; Configure domain -&amp;gt; Save&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/amplify-add-custom-domain-02.png"
+id="zoom-default"
+alt="amplify-add-custom-domain"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="4">
+&lt;li>Nest starts SSL configuration process. Amplify provides with DNS data that you need to write in the domain register account.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/amplify-add-custom-domain-ssl-config.png"
+id="zoom-default"
+alt="amplify-add-custom-domain"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="5">
+&lt;li>
+&lt;p>Once SSL creation starts you can get domain data&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Action -&amp;gt; View DNS records&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/amplify-add-custom-domain-ssl-config-start.png"
+id="zoom-default"
+alt="amplify-add-custom-domain"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="7">
+&lt;li>Copy provided data (DNS records) and then set it in the domain registrar panel.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/amplify-dns-records.png"
+id="zoom-default"
+alt="amplify-add-custom-domain"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="8">
+&lt;li>Go to domain registrar&lt;/li>
+&lt;li>Set &lt;em>dns servers&lt;/em> to default&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/domain-registrar-dns-default.png"
+id="zoom-default"
+alt="amplify-add-custom-domain"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="10">
+&lt;li>In my case panel looks like this:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/set-cname-01.png"
+id="zoom-default"
+alt="amplify-add-custom-domain"
+loading="lazy"
+/>
+&lt;/p>
+&lt;p class="md__image">
+&lt;img
+src="../img/set-cname-02.png"
+id="zoom-default"
+alt="amplify-add-custom-domain"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="11">
+&lt;li>Save&lt;/li>
+&lt;li>Go to amplify and check for updates. Amplify checks DNS server and if everything is correct (CNAME set) it will proceed to the next step.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/amplify-domain-activation-stage.png"
+id="zoom-default"
+alt="amplify-add-custom-domain"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>SSL configuration passed, waiting up to 30 min for domain activation&lt;/p>
+&lt;ol start="13">
+&lt;li>Once done we can check url: &lt;a href="https://cloud-exam-prepare.com">https://cloud-exam-prepare.com&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/cloud-exam-prepare-url.png"
+id="zoom-default"
+alt="amplify-add-custom-domain"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Check url: &lt;a href="https://cloud-exam-prepare.com/">cloud-exam-prepare.com&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Resources:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/amplify/latest/userguide/to-add-a-custom-domain-managed-by-a-third-party-dns-provider.html">https://docs.aws.amazon.com/amplify/latest/userguide/to-add-a-custom-domain-managed-by-a-third-party-dns-provider.html&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Cloud exam Quizz</title><link>https://romankurnovskii.com/en/apps/cloud-exam-quizz/</link><pubDate>Mon, 10 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/apps/cloud-exam-quizz/</guid><description>&lt;p>&lt;strong>Goal:&lt;/strong> Check if you are ready to pass the Cloud exam&lt;/p>
+&lt;ul>
+&lt;li>The application calculates progress after each answered question.&lt;/li>
+&lt;li>Ability to answer at least one question and get a comment at the same time. No need to pass all questions before.&lt;/li>
+&lt;li>It is convenient to spend 20 min a day&lt;/li>
+&lt;li>Works from web/tablet/mobile&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Link:&lt;/strong> &lt;a href="https://github.com/romankurnovskii/cloud-exam-prepare">https://github.com/romankurnovskii/cloud-exam-prepare&lt;/a>&lt;/p></description></item></channel></rss>

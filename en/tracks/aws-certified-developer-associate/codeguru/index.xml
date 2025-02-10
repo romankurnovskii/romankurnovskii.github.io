@@ -1,6 +1,175 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CodeGuru on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codeguru/</link><description>Recent content in CodeGuru on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sat, 17 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codeguru/index.xml" rel="self" type="application/rss+xml"/><item><title>Automating Code Reviews with Amazon CodeGuru</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codeguru/automating-code-reviews-amazon-codeguru/</link><pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codeguru/automating-code-reviews-amazon-codeguru/</guid><description>Lab Automating Code Reviews with Amazon CodeGuru Associating Amazon CodeGuru with a CodeCommit Repository 1. Navigate to the Amazon CodeCommit console.
-2. Click java-web-app:
-3. Notice that at the moment, only a README file has been committed to the master branch. Next, you&amp;rsquo;ll associate CodeGuru with this repository, so that CodeGuru can begin to analyze the code therein.
-4. Go to the CodeGuru dashboard.
-5. Click Associate Repository and run analysis:
-6. Select AWS CodeCommit as the provider, choose java-web-app from the repository dropdown, enter _master_into Source branch and click Associate:</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CodeGuru on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codeguru/</link><description>Recent content in CodeGuru on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sat, 17 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codeguru/index.xml" rel="self" type="application/rss+xml"/><item><title>Automating Code Reviews with Amazon CodeGuru</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codeguru/automating-code-reviews-amazon-codeguru/</link><pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codeguru/automating-code-reviews-amazon-codeguru/</guid><description>&lt;h2 id="lab">Lab&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://cloudacademy.com/lab/automating-code-reviews-amazon-codeguru/">Automating Code Reviews with Amazon CodeGuru&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="associating-amazon-codeguru-with-a-codecommit-repository">Associating Amazon CodeGuru with a CodeCommit Repository&lt;/h2>
+&lt;p>1. Navigate to the &lt;a href="https://us-west-2.console.aws.amazon.com/codesuite/codecommit/repositories?region=us-west-2">Amazon CodeCommit console&lt;/a>.&lt;/p>
+&lt;p>2. Click &lt;strong>java-web-app&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid0-537419d1-3966-42f8-b41e-abe72c266bce.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>3. Notice that at the moment, only a README file has been committed to the master branch. Next, you&amp;rsquo;ll associate CodeGuru with this repository, so that CodeGuru can begin to analyze the code therein.&lt;/p>
+&lt;p>4. Go to the &lt;a href="https://us-west-2.console.aws.amazon.com/codeguru/reviewer/#/associations">CodeGuru dashboard.&lt;/a>&lt;/p>
+&lt;p>5. Click &lt;strong>Associate Repository and run analysis&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid0-f4b29bb3-4045-499f-9da7-1eb5cf29e87d.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>6. Select &lt;strong>AWS CodeCommit&lt;/strong> as the provider, choose &lt;strong>java-web-app&lt;/strong> from the repository dropdown, enter _master_into &lt;strong>Source branch&lt;/strong> and click &lt;strong>Associate&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220404095359-1-5ca07f22-addb-4ed3-9f52-94ca29b5595b.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>In roughly one minute, you&amp;rsquo;ll see that CodeGuru has associated with your repository:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid0-2d79bc2d-bde0-4262-8ad3-704fd23d63b5.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="triggering-an-amazon-codeguru-review">Triggering an Amazon CodeGuru Review&lt;/h2>
+&lt;p>1. Navigate to :8080 in your browser.&lt;/p>
+&lt;p> &lt;em>Note&lt;/em>: This is the IP of an EC2 instance that can be found in the EC2 console.&lt;/p>
+&lt;p>2. Click the file icon in the top left to open the file tree:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid3-0bae7586-5911-4930-9610-81ce558461ff.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;em>Note&lt;/em>: During the creation of this lab, two things were performed automatically. One is that the CodeCommit repository you visited earlier was cloned to the directory you&amp;rsquo;re looking at in the IDE now. Another is that the framework for a Java web app was added in addition to the single README you saw. This is so that you can see the benefits of CodeGuru without having to work heavily with code.&lt;/p>
+&lt;p>In this lab step, you&amp;rsquo;ll push all the new code to the nearly-empty Code Commit repository, to trigger a CodeGuru review.&lt;/p>
+&lt;p>3. Open the terminal in your IDE:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid0-b739c537-039a-4254-bcf2-a41e080a7cf8.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>4. In the terminal, add the new files to a Git branch, and commit and push the changes:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">cd&lt;/span> /cloudacademy/lab
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git add .
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git checkout -b trigger_branch
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git commit -m &lt;span style="color:#4070a0">&amp;#34;trigger a CodeGuru analysis by pushing Java code&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git push origin trigger_branch
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will create a Git commit that includes all the Java files in a branch called &lt;code>trigger_branch&lt;/code>, so that you can make a pull request in CodeCommit. Since CodeGuru analyses are triggered by pull requests, this is what will trigger a CodeGuru analysis.&lt;/p>
+&lt;p>5. Back on the CodeCommit dashboard, click &lt;strong>Create pull request&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220404132138-2-4c13b52f-0959-4fd3-a080-f5a83772d0a7.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>6. Set the &lt;strong>Destination&lt;/strong> to &lt;strong>master&lt;/strong> and the &lt;strong>source&lt;/strong> to &lt;strong>trigger_branch&lt;/strong> and click &lt;strong>Compare&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220404132208-3-90aa0a6c-0663-4ed4-b349-e7fb1d5ece5d.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>7. Type &lt;em>Trigger a CodeGuru Reviewer Analysis&lt;/em> into the &lt;strong>Title&lt;/strong> field and click &lt;strong>Create pull request&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid4-5b2c50b8-b6bf-4cd8-a528-6222996b8f35.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>This will create a pull request and trigger a CodeGuru review.&lt;/p>
+&lt;h2 id="viewing-amazon-codeguru-comments">Viewing Amazon CodeGuru Comments&lt;/h2>
+&lt;p>1. If you weren&amp;rsquo;t automatically brought to the pull request details page after creating your pull request, click &lt;strong>Pull Requests&lt;/strong> beneath &lt;strong>Repositories&lt;/strong> on the left side of the page:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-1ae864f3-e8d9-4741-87e3-e0d05a6245e1.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>2. Click the only available pull request:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-863ba6ee-b974-4dfb-9aa9-d002ff92d050.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>3. Notice the section mentioning CodeGuru Reviewer:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-23ca4bca-5c78-4373-8d1b-89a54963a67a.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>This section will display in each pull request made in any repository associated with CodeGuru. As of the time this lab was released, CodeGuru is still in preview. As the section on your pull request details tab mentions, because it&amp;rsquo;s in preview mode, CodeGuru can take a while to process a pull request. There isn&amp;rsquo;t a way to track its progress, and you currently won&amp;rsquo;t be alerted when that processing begins or finishes.&lt;/p>
+&lt;p>4. Select the &lt;strong>Changes&lt;/strong> tab:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-b25c1c16-40e3-49ae-bdfd-f0203bf8a178.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>5. In the &lt;strong>Go to file&lt;/strong> filter, enter dockerservlet and click the result to navigate to the file:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid1-0bd3607a-2845-47b6-9bb7-497fc1f6653f.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You may need to scroll down the page to find the DockerServlet.java file changes. This file is known to have CodeGuru Reviewer comments that usually appear a few minutes after creating the pull request.&lt;/p>
+&lt;p>6. Scroll down to line 60 to see an example of a comment from CodeGuru Reviewer (If you don&amp;rsquo;t see any comment you may try refreshing the page every minute until one appears):&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid0-b7355e55-55bd-4df7-b479-f6ebf399876d.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You can then make updates as you see fit, and submit more pull requests to see if you&amp;rsquo;ve addressed CodeGuru&amp;rsquo;s suggestions.&lt;/p></description></item></channel></rss>

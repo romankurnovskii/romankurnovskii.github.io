@@ -1,5 +1,100 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Github on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/github/</link><description>Recent content in Github on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><atom:link href="https://romankurnovskii.com/en/tags/github/index.xml" rel="self" type="application/rss+xml"/><item><title>AWS Amplify - project setup with Github</title><link>https://romankurnovskii.com/en/posts/cloud-exam-quizz/amplify-setup-project/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/cloud-exam-quizz/amplify-setup-project/</guid><description>Preface For Amplify project I use eu-west region github repo has to be ready private or public New project goto https://eu-west-1.console.aws.amazon.com/amplify/home?region=eu-west-1#/
-New app → Host web app → Github
-Add access to github repo Select repository Come back to Amplify and try again to choose repo Click Next
-Update amplify.yml for node.js project
-version: 1 frontend: phases: preBuild: commands: - yarn install build: commands: - yarn run build artifacts: baseDirectory: build files: - &amp;#39;**/*&amp;#39; cache: paths: - node_modules/**/* Next → Save and deploy Amplify starts to build project and generates project url.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Github on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/github/</link><description>Recent content in Github on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Wed, 12 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/github/index.xml" rel="self" type="application/rss+xml"/><item><title>AWS Amplify - project setup with Github</title><link>https://romankurnovskii.com/en/posts/cloud-exam-quizz/amplify-setup-project/</link><pubDate>Wed, 12 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/cloud-exam-quizz/amplify-setup-project/</guid><description>&lt;h2 id="preface">Preface&lt;/h2>
+&lt;ul>
+&lt;li>For Amplify project I use &lt;strong>eu-west&lt;/strong> region&lt;/li>
+&lt;li>github repo has to be ready private or public&lt;/li>
+&lt;/ul>
+&lt;h2 id="new-project">New project&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>goto &lt;a href="https://eu-west-1.console.aws.amazon.com/amplify/home?region=eu-west-1#/">https://eu-west-1.console.aws.amazon.com/amplify/home?region=eu-west-1#/&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>New app → Host web app → Github&lt;/p>
+&lt;ol>
+&lt;li>Add access to github repo
+&lt;p class="md__image">
+&lt;img
+src="../img/github-setup-access.png"
+id="zoom-default"
+alt="github-setup-access"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/li>
+&lt;li>Select repository
+&lt;p class="md__image">
+&lt;img
+src="../img/github-setup-access-select-repo.png"
+id="zoom-default"
+alt="github-setup-access"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>Come back to Amplify and try again to choose repo
+&lt;p class="md__image">
+&lt;img
+src="../img/amplify-setup-access-select-repo.png"
+id="zoom-default"
+alt="github-setup-access"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Next&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>Update &lt;strong>amplify.yml&lt;/strong> for &lt;em>node.js&lt;/em> project&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#062873;font-weight:bold">version&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#40a070">1&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">frontend&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">phases&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">preBuild&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">commands&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- yarn install&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">build&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">commands&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- yarn run build&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">artifacts&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">baseDirectory&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>build&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">files&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#4070a0">&amp;#39;**/*&amp;#39;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">cache&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">paths&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- node_modules/**/*&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/amplify-yml.jpg"
+id="zoom-default"
+alt="amplify-yml"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="5">
+&lt;li>Next → Save and deploy&lt;/li>
+&lt;/ol>
+&lt;p>Amplify starts to build project and generates project url.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/amplify-build-process.png"
+id="zoom-default"
+alt="amplify-build-process"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Once build done you can open project.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../img/amplify-success-url.png"
+id="zoom-default"
+alt="amplify-success-url"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p></description></item></channel></rss>

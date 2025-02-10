@@ -1,3 +1,44 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ATR on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/atr/</link><description>Recent content in ATR on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 07 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/atr/index.xml" rel="self" type="application/rss+xml"/><item><title>Average True Range (ATR) - Volatility Indicator</title><link>https://romankurnovskii.com/en/posts/trading-indicators/atr/</link><pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/trading-indicators/atr/</guid><description>About The Average True Range (ATR) is a technical analysis indicator that measures market volatility by decomposing the entire range of an asset price for that period. It was developed by J. Welles Wilder Jr. and introduced in his book &amp;ldquo;New Concepts in Technical Trading Systems&amp;rdquo; in 1978.
-Calculating Formula ATR is calculated based on the true range (TR), which is the maximum of the following:
-Current High less the current Low Absolute value of (Current High less the previous Close) Absolute value of (Current Low less the previous Close) The ATR is then the moving average over a given period of the TR.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ATR on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/atr/</link><description>Recent content in ATR on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 07 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/atr/index.xml" rel="self" type="application/rss+xml"/><item><title>Average True Range (ATR) - Volatility Indicator</title><link>https://romankurnovskii.com/en/posts/trading-indicators/atr/</link><pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/trading-indicators/atr/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>The Average True Range (ATR) is a technical analysis indicator that measures market volatility by decomposing the entire range of an asset price for that period. It was developed by J. Welles Wilder Jr. and introduced in his book &amp;ldquo;New Concepts in Technical Trading Systems&amp;rdquo; in 1978.&lt;/p>
+&lt;h2 id="calculating">Calculating&lt;/h2>
+&lt;h3 id="formula">Formula&lt;/h3>
+&lt;p>ATR is calculated based on the true range (TR), which is the maximum of the following:&lt;/p>
+&lt;ol>
+&lt;li>Current High less the current Low&lt;/li>
+&lt;li>Absolute value of (Current High less the previous Close)&lt;/li>
+&lt;li>Absolute value of (Current Low less the previous Close)&lt;/li>
+&lt;/ol>
+&lt;p>The ATR is then the moving average over a given period of the TR.&lt;/p>
+&lt;p>&lt;code>ATR = Average(TR, N)&lt;/code>&lt;/p>
+&lt;p>For the first calculation of the ATR, it&amp;rsquo;s simply the average of the TR over a specified period. But for subsequent calculations, it&amp;rsquo;s the average of the previous ATR value and the current TR.&lt;/p>
+&lt;h2 id="pros-and-cons">Pros and Cons&lt;/h2>
+&lt;p>&lt;strong>Pros:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>ATR does not provide a directional bias, it purely measures volatility.&lt;/li>
+&lt;li>It can be used in all markets such as stocks, forex, commodities etc.&lt;/li>
+&lt;li>ATR adapts to changing market conditions, increasing during market turbulence and decreasing in calm markets.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Cons:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>ATR does not indicate price direction, only volatility.&lt;/li>
+&lt;li>During periods of rapid price changes, ATR may experience sharp increases, reflecting the inherent volatility in the price series.&lt;/li>
+&lt;/ul>
+&lt;h2 id="example-of-signals">Example of signals&lt;/h2>
+&lt;p>ATR does not provide trading signals like other oscillators such as RSI or MACD. It provides a gauge of market volatility which can assist in stop loss placement or determining trade size.&lt;/p>
+&lt;p>&lt;strong>True Positive:&lt;/strong>&lt;/p>
+&lt;p>In a trending market, ATR can help a trader place their stop loss further away during high volatility periods and closer during low volatility periods, reducing the likelihood of being stopped out prematurely.&lt;/p>
+&lt;p>&lt;strong>False Positive:&lt;/strong>&lt;/p>
+&lt;p>In a ranging market, a sudden price breakout can cause a sharp increase in ATR, possibly leading to an unnecessarily wide stop loss if the breakout turns out to be a false one.&lt;/p>
+&lt;h2 id="use-in-real-trading">Use in Real Trading&lt;/h2>
+&lt;p>In real trading, ATR can be used in conjunction with other indicators for better signal confirmation. For example, ATR can be used with a trend following system to manage stop losses. As ATR increases, your stop loss can be placed further from your entry point allowing for market volatility.&lt;/p>
+&lt;h2 id="python-implementation">Python Implementation&lt;/h2>
+&lt;p>
+&lt;a href="https://romankurnovskii.com//jupyter/atr.html"
+>Click here to view this notebook in full screen&lt;/a
+>
+&lt;/p>
+&lt;iframe
+src="https://romankurnovskii.com//jupyter/atr.html"
+style="height:1350px;width:100%;border:none;overflow:hidden;"
+scrolling="no"
+>&lt;/iframe></description></item></channel></rss>

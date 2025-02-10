@@ -1,4 +1,231 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Template on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/template/</link><description>Recent content in Template on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Thu, 25 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/template/index.xml" rel="self" type="application/rss+xml"/><item><title>Linters &amp; Formatters Setup for Python, Groovy, JavaScript in VSCode</title><link>https://romankurnovskii.com/en/posts/python-groovy-lint-format-setup/</link><pubDate>Thu, 25 May 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/python-groovy-lint-format-setup/</guid><description>В этой статье мы рассмотрим, как настроить
-Black и Flake8 для Python, CodeNarc для Groovy ESLint и Prettier для JavaScript в среде разработки VSCode. Python Для настройки Python с использованием Black и Flake8 вам понадобятся файлы конфигурации: pyproject.tomlдля Black и .flake8 для Flake8.
-Black - это форматтер кода для Python, который форматирует весь файл в соответствии с строгим подмножеством стандарта PEP 8. Black упрощает процесс рецензирования кода, создавая минимально возможные различия между версиями кода.
-Flake8 - мощный инструмент, который проверяет ваш код на соответствие некоторым конвенциям стиля PEP 8, объединяя возможности нескольких других инструментов, включая PyFlakes (проверка на логические ошибки), pycodestyle (проверка на ошибки форматирования) и скрипт McCabe от Ned Batchelder (проверка сложности кода).</description></item><item><title>Python docstring templates</title><link>https://romankurnovskii.com/en/posts/python-docstring-templates/</link><pubDate>Wed, 24 May 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/python-docstring-templates/</guid><description>Template def function_name(param1: Type1, param2: Type2, ...) -&amp;gt; ReturnType: &amp;#34;&amp;#34;&amp;#34;Brief description of the function. More detailed explanation of the function if necessary. This can span multiple lines as needed. Args: param1 (Type1): Description of param1. param2 (Type2): Description of param2. ... Returns: ReturnType: Description of the return value. Raises: ExceptionType: Explanation of the conditions under which this exception is raised. Example: &amp;gt;&amp;gt;&amp;gt; function_name(param1_value, param2_value) Expected output &amp;#34;&amp;#34;&amp;#34; ... Example With Type Hints def add_numbers(num1: int, num2: int = 5) -&amp;gt; int: &amp;#34;&amp;#34;&amp;#34;Adds two numbers together.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Template on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/template/</link><description>Recent content in Template on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 25 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/template/index.xml" rel="self" type="application/rss+xml"/><item><title>Linters &amp; Formatters Setup for Python, Groovy, JavaScript in VSCode</title><link>https://romankurnovskii.com/en/posts/python-groovy-lint-format-setup/</link><pubDate>Thu, 25 May 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/python-groovy-lint-format-setup/</guid><description>&lt;h2 id="python">Python&lt;/h2>
+&lt;p>To set up Python with Black and Flake8, you will need a couple of configuration files: &lt;code>pyproject.toml&lt;/code> for Black, and &lt;code>.flake8&lt;/code> for Flake8.&lt;/p>
+&lt;p>&lt;strong>Black&lt;/strong> is a code formatter for Python. It reformats your entire file in place according to the Black code style, which is a strict subset of PEP 8. Black makes code review faster by producing the smallest diffs possible.&lt;/p>
+&lt;p>&lt;strong>Flake8&lt;/strong> is a powerful tool that checks your Python code against some of the style conventions in PEP 8. It combines the capabilities of several other tools including:&lt;/p>
+&lt;ul>
+&lt;li>PyFlakes: Checks for logical errors.&lt;/li>
+&lt;li>pycodestyle: Checks for the format errors.&lt;/li>
+&lt;li>Ned Batchelder’s McCabe script: Checks the complexity of your code.&lt;/li>
+&lt;/ul>
+&lt;h3 id="step-1-install-python">Step 1: Install Python&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>python --version
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-2-install-black-and-flake8">Step 2: Install Black and Flake8&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>pip install black
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pip install flake8
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-3-install-python-extension-for-vs-code">Step 3: Install Python Extension for VS Code&lt;/h3>
+&lt;p>Go to the Extensions view in VS Code (View -&amp;gt; Extensions), search for &amp;ldquo;Python,&amp;rdquo; and then install it.&lt;/p>
+&lt;h3 id="step-4-configure-black-and-flake8">Step 4: Configure Black and Flake8&lt;/h3>
+&lt;p>In the &lt;code>pyproject.toml&lt;/code> file, you have the following settings:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>line-length&lt;/strong>: This is the maximum line length that Black will enforce. You&amp;rsquo;ve set it to 130.
+&lt;strong>target-version&lt;/strong>: This specifies the Python versions your project supports. Black may change the way it formats code depending on the Python version targetted.&lt;/li>
+&lt;li>&lt;strong>include&lt;/strong> and &lt;strong>exclude&lt;/strong>: These options define the files Black should format and exclude from formatting, respectively.&lt;/li>
+&lt;/ul>
+&lt;p>Create a &lt;code>pyproject.toml&lt;/code> file in your project root directory with the following content for &lt;strong>Black&lt;/strong>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-toml" data-lang="toml">&lt;span style="display:flex;">&lt;span>[tool.black]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>line-length = &lt;span style="color:#40a070">130&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>target-version = [&lt;span style="color:#4070a0">&amp;#39;py38&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>include = &lt;span style="color:#4070a0">&amp;#39;\.pyi?$&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>exclude = &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&amp;#39;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">/(
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> \.git
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> | \.venv
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> | \.eggs
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> | \.hg
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> | \.mypy_cache
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> | \.nox
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> | \.tox
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> | \.venv
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> | _build
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> | buck-out
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> | build
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> | dist
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">)/
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">&amp;#39;&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>And a &lt;code>.flake8&lt;/code> file with the following content for &lt;strong>Flake8&lt;/strong>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-toml" data-lang="toml">&lt;span style="display:flex;">&lt;span>[flake8]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>max-line-length = &lt;span style="color:#40a070">150&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ignore = E203, E266, E501, W503, F403, F401
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>max-complexity = &lt;span style="color:#40a070">18&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>select = B,C,E,F,W,T4,B9
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;strong>max-complexity&lt;/strong>: This is complexity checker setting. It&amp;rsquo;s a measure of the complexity of your functions, methods, and classes. The lower this number, the less complex your code is allowed to be.&lt;/li>
+&lt;/ul>
+&lt;h3 id="step-5-configure-vs-code-settings">Step 5: Configure VS Code Settings&lt;/h3>
+&lt;p>Go to the Settings in VS Code (File -&amp;gt; Preferences -&amp;gt; Settings) and search for &amp;ldquo;&lt;strong>Python Formatting Provider&lt;/strong>.&amp;rdquo; Select &amp;ldquo;&lt;strong>black&lt;/strong>&amp;rdquo; from the dropdown list.&lt;/p>
+&lt;p>To set Flake8 as the linter, search for &amp;ldquo;&lt;strong>Python Linting&lt;/strong>&amp;rdquo; in the settings and select &amp;ldquo;flake8.&amp;rdquo;&lt;/p>
+&lt;p>Now, VS Code will automatically use &lt;strong>Black&lt;/strong> and &lt;strong>Flake8&lt;/strong> to format and lint your Python code, respectively.&lt;/p>
+&lt;h3 id="step-6-format-on-file-save">Step 6: Format on file save&lt;/h3>
+&lt;p>To run the formatter each time you save a Python file, you&amp;rsquo;ll need to modify the VS Code settings. Here&amp;rsquo;s how:&lt;/p>
+&lt;ol>
+&lt;li>Open the Command Palette with &lt;code>Ctrl+Shift+P&lt;/code> MacOs(&lt;code>Cmd+Shift+P&lt;/code>).&lt;/li>
+&lt;li>Type &amp;ldquo;Preferences: Open Settings (JSON)&amp;rdquo; and select it.
+&lt;ol>
+&lt;li>Choose &lt;code>Default Settings&lt;/code> or &lt;code>Workspace Settings&lt;/code> depend on global or project specific setup.&lt;/li>
+&lt;li>For global &amp;ldquo;Search for &amp;ldquo;Editor: Format On Save&amp;rdquo; in Command Palette search bar and check the box to enable it.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Add the following lines in the JSON file for local project/workspace setup:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">&amp;#34;python.editor.formatOnSave&amp;#34;&lt;/span>&lt;span style="">:&lt;/span> &lt;span style="color:#007020;font-weight:bold">true&lt;/span>&lt;span style="">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">&amp;#34;python.formatting.provider&amp;#34;&lt;/span>&lt;span style="">:&lt;/span> &lt;span style="color:#4070a0">&amp;#34;black&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This tells VS Code to run the Python formatter (which you&amp;rsquo;ve set to Black) every time you save a Python file.&lt;/p>
+&lt;p>You can do the same with Flake8 by enabling linting on save:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">&amp;#34;python.linting.flake8Enabled&amp;#34;&lt;/span>&lt;span style="">:&lt;/span> &lt;span style="color:#007020;font-weight:bold">true&lt;/span>&lt;span style="">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">&amp;#34;python.linting.lintOnSave&amp;#34;&lt;/span>&lt;span style="">:&lt;/span> &lt;span style="color:#007020;font-weight:bold">true&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="groovy-with-codenarc">Groovy with CodeNarc&lt;/h2>
+&lt;h3 id="step-1-install-groovy">Step 1: Install Groovy&lt;/h3>
+&lt;p>Ensure you have Groovy installed on your system. You can verify the installation by running the following command in your terminal:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>groovy --version
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-2-install-the-groovy-extension-for-vs-code">Step 2: Install the Groovy Extension for VS Code&lt;/h3>
+&lt;p>In your &lt;code>build.gradle&lt;/code> file, add:&lt;/p>
+&lt;h3 id="step-3-set-up-codenarc">Step 3: Set Up CodeNarc&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-groovy" data-lang="groovy">&lt;span style="display:flex;">&lt;span>apply &lt;span style="color:#002070;font-weight:bold">plugin:&lt;/span> &lt;span style="color:#4070a0">&amp;#39;codenarc&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dependencies &lt;span style="color:#666">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> codenarc &lt;span style="color:#4070a0">&amp;#39;org.codenarc:CodeNarc:1.6&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>codenarc &lt;span style="color:#666">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> configFile &lt;span style="color:#666">=&lt;/span> file&lt;span style="color:#666">(&lt;/span>&lt;span style="color:#4070a0">&amp;#39;config/codenarc/rules.groovy&amp;#39;&lt;/span>&lt;span style="color:#666">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create a &lt;code>config/codenarc/rules.groovy&lt;/code> file in your project root directory and add the following content:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-groovy" data-lang="groovy">&lt;span style="display:flex;">&lt;span>ruleset &lt;span style="color:#666">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> LineLength &lt;span style="color:#666">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> enabled &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> priority &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> maximumLineLength &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">150&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now, when you run your Gradle build, CodeNarc will check your Groovy files against the rules defined in &lt;code>config/codenarc/rules.groovy&lt;/code>.&lt;/p>
+&lt;h2 id="jstypescript-with-eslint-and-prettier">JS/TypeScript with ESLint and Prettier&lt;/h2>
+&lt;h3 id="step-1-install-nodejs-and-npm">Step 1: Install Node.js and npm&lt;/h3>
+&lt;p>Before you install ESLint and Prettier, ensure you have Node.js and npm installed on your system. You can verify the installation by running the following commands in your terminal:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>node --version
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm --version
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-2-install-eslint-and-prettier">Step 2: Install ESLint and Prettier&lt;/h3>
+&lt;p>You can install ESLint and Prettier as &lt;em>devDependencies&lt;/em> in your project by running the following command in your terminal:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>npm install eslint prettier --save-dev
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-3-install-the-eslint-and-prettier-extensions-for-vs-code">Step 3: Install the ESLint and Prettier Extensions for VS Code&lt;/h3>
+&lt;p>Search for ESLint and Prettier - Code formatter in the Extensions view in VS Code (&lt;strong>View -&amp;gt; Extensions&lt;/strong>) and install them.&lt;/p>
+&lt;h3 id="step-4-configure-eslint-and-prettier">Step 4: Configure ESLint and Prettier&lt;/h3>
+&lt;p>To configure ESLint and Prettier, you need to create two configuration files, &lt;code>.eslintrc.json&lt;/code> for ESLint, and &lt;code>.prettierrc&lt;/code> for Prettier, in your project root directory.&lt;/p>
+&lt;p>For example, you can create an &lt;code>.eslintrc.json&lt;/code> file with the following content for ESLint:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;env&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;browser&amp;#34;&lt;/span>: &lt;span style="color:#007020;font-weight:bold">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;es6&amp;#34;&lt;/span>: &lt;span style="color:#007020;font-weight:bold">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;extends&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;eslint:recommended&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;rules&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;indent&amp;#34;&lt;/span>: [&lt;span style="color:#4070a0">&amp;#34;error&amp;#34;&lt;/span>, &lt;span style="color:#40a070">2&lt;/span>],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;linebreak-style&amp;#34;&lt;/span>: [&lt;span style="color:#4070a0">&amp;#34;error&amp;#34;&lt;/span>, &lt;span style="color:#4070a0">&amp;#34;unix&amp;#34;&lt;/span>],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;quotes&amp;#34;&lt;/span>: [&lt;span style="color:#4070a0">&amp;#34;error&amp;#34;&lt;/span>, &lt;span style="color:#4070a0">&amp;#34;double&amp;#34;&lt;/span>],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;semi&amp;#34;&lt;/span>: [&lt;span style="color:#4070a0">&amp;#34;error&amp;#34;&lt;/span>, &lt;span style="color:#4070a0">&amp;#34;always&amp;#34;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>And a &lt;code>.prettierrc&lt;/code> file with the following content for Prettier:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;semi&amp;#34;&lt;/span>: &lt;span style="color:#007020;font-weight:bold">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;trailingComma&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;all&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;singleQuote&amp;#34;&lt;/span>: &lt;span style="color:#007020;font-weight:bold">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;printWidth&amp;#34;&lt;/span>: &lt;span style="color:#40a070">80&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;tabWidth&amp;#34;&lt;/span>: &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="step-5-configure-vs-code-settings-1">Step 5: Configure VS Code Settings&lt;/h3>
+&lt;p>Go to the Settings in VS Code (&lt;strong>File -&amp;gt; Preferences -&amp;gt; Settings&lt;/strong>) and search for &amp;ldquo;Format On Save.&amp;rdquo; Check the box to enable it.&lt;/p>
+&lt;p>In the settings, search for &amp;ldquo;Default Formatter&amp;rdquo; and select &amp;ldquo;Prettier - Code formatter&amp;rdquo; from the dropdown list.&lt;/p>
+&lt;p>You can also add these settings directly to your &lt;code>settings.json&lt;/code> file:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;editor.formatOnSave&amp;#34;&lt;/span>: &lt;span style="color:#007020;font-weight:bold">true&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;editor.defaultFormatter&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;esbenp.prettier-vscode&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;editor.codeActionsOnSave&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;source.fixAll.eslint&amp;#34;&lt;/span>: &lt;span style="color:#007020;font-weight:bold">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;[javascript]&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;editor.formatOnSave&amp;#34;&lt;/span>: &lt;span style="color:#007020;font-weight:bold">false&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;editor.defaultFormatter&amp;#34;&lt;/span>: &lt;span style="color:#007020;font-weight:bold">null&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;[javascriptreact]&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;editor.formatOnSave&amp;#34;&lt;/span>: &lt;span style="color:#007020;font-weight:bold">false&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;editor.defaultFormatter&amp;#34;&lt;/span>: &lt;span style="color:#007020;font-weight:bold">null&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;[typescript]&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;editor.formatOnSave&amp;#34;&lt;/span>: &lt;span style="color:#007020;font-weight:bold">false&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;editor.defaultFormatter&amp;#34;&lt;/span>: &lt;span style="color:#007020;font-weight:bold">null&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;[typescriptreact]&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;editor.formatOnSave&amp;#34;&lt;/span>: &lt;span style="color:#007020;font-weight:bold">false&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;editor.defaultFormatter&amp;#34;&lt;/span>: &lt;span style="color:#007020;font-weight:bold">null&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>These settings tell VS Code to run Prettier as the default formatter, and also to perform any auto-fixes that ESLint can handle on save.&lt;/p>
+&lt;p>Now, VS Code will automatically use ESLint and Prettier to lint and format your JavaScript and TypeScript code, respectively.&lt;/p></description></item><item><title>Python docstring templates</title><link>https://romankurnovskii.com/en/posts/python-docstring-templates/</link><pubDate>Wed, 24 May 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/python-docstring-templates/</guid><description>&lt;h2 id="template">Template&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">function_name&lt;/span>(param1: Type1, param2: Type2, &lt;span style="color:#666">...&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> ReturnType:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;&amp;#34;&amp;#34;Brief description of the function.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> More detailed explanation of the function if necessary. This can span
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> multiple lines as needed.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Args:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> param1 (Type1): Description of param1.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> param2 (Type2): Description of param2.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> ...
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Returns:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> ReturnType: Description of the return value.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Raises:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> ExceptionType: Explanation of the conditions under which this exception is raised.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Example:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> &amp;gt;&amp;gt;&amp;gt; function_name(param1_value, param2_value)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Expected output
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">...&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="example">Example&lt;/h2>
+&lt;h2 id="with-type-hints">With Type Hints&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">add_numbers&lt;/span>(num1: &lt;span style="color:#007020">int&lt;/span>, num2: &lt;span style="color:#007020">int&lt;/span> &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">5&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;&amp;#34;&amp;#34;Adds two numbers together.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Args:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> num1 (int): The first number to add.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> num2 (int, optional): The second number to add. Defaults to 5.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Returns:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> int: The sum of num1 and num2.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Example:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> &amp;gt;&amp;gt;&amp;gt; add_numbers(3, 2)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> 5
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> num1 &lt;span style="color:#666">+&lt;/span> num2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="without-type-hints">Without Type Hints&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">add_numbers&lt;/span>(num1, num2&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">5&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;&amp;#34;&amp;#34;Adds two numbers together.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Args:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> num1: The first number to add. Should be of type int.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> num2: The second number to add. Should be of type int. Defaults to 5.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Returns:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> The sum of num1 and num2. The return value will be of type int.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Example:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> &amp;gt;&amp;gt;&amp;gt; add_numbers(3, 2)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> 5
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> num1 &lt;span style="color:#666">+&lt;/span> num2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>Google Python Style Guide: This is a widely adopted style guide in the Python community. It has a specific section on comments and docstrings that I found particularly helpful: &lt;a href="https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings">https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>PEP 257 - Docstring Conventions: This is the Python Enhancement Proposal that describes the conventions for writing good docstrings in Python: &lt;a href="https://www.python.org/dev/peps/pep-0257/">https://www.python.org/dev/peps/pep-0257/&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>PEP 484 - Type Hints: This PEP introduced the concept of type hints to Python, and provides guidelines on how to use them: &lt;a href="https://www.python.org/dev/peps/pep-0484/">https://www.python.org/dev/peps/pep-0484/&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>

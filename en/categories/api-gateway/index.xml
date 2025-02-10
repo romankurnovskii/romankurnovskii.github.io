@@ -1,4 +1,179 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>API Gateway on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/api-gateway/</link><description>Recent content in API Gateway on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Tue, 13 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/api-gateway/index.xml" rel="self" type="application/rss+xml"/><item><title>API Gateway</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/api-gateway/</link><pubDate>Tue, 13 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/api-gateway/</guid><description>About Documentation User Guide API Gateway provides the opportunity to create and expand your own REST and WebSocket APIs at any size.
-API endpoints can be cached to accommodate for frequent similar requests.
-Use Cases Build a network for micros­ervices archit­ectures.
-Amazon CloudWatch metrics - Collects near-real-time metrics Examples: 4XXError (client-side errors), 5XXError(server-side errors), CacheHitCount Amazon CloudWatch Logs - Debug issues related to request execution AWS CloudTrail - Record of actions taken by a user, role, or an AWS service in API Gateway AWS X-Ray - Trace your request across different AWS Services Digests Concepts REST API, HTTP API, WebSocket API</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>API Gateway on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/api-gateway/</link><description>Recent content in API Gateway on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Tue, 13 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/api-gateway/index.xml" rel="self" type="application/rss+xml"/><item><title>API Gateway</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/api-gateway/</link><pubDate>Tue, 13 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/api-gateway/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/api-gateway/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/api-gateway/?id=docs_gateway">User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>API Gateway provides the opportunity to create and expand your own REST and WebSocket APIs at any size.&lt;/p>
+&lt;p>API endpoints can be cached to accommodate for frequent similar requests.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/serverless/New-API-GW-Diagram.c9fc9835d2a9aa00ef90d0ddc4c6402a2536de0d.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="use-cases">Use Cases&lt;/h2>
+&lt;p>Build a network for micros­ervices archit­ectures.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudwatch/">&lt;strong>Amazon CloudWatch&lt;/strong>&lt;/a> metrics - Collects near-real-time metrics
+&lt;ul>
+&lt;li>Examples: 4XXError (client-side errors), 5XXError(server-side errors), CacheHitCount&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Amazon CloudWatch Logs&lt;/strong> - Debug issues related to request execution&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html">&lt;strong>AWS CloudTrail&lt;/strong>&lt;/a> - Record of actions taken by a user, role, or an AWS service in API Gateway&lt;/li>
+&lt;li>&lt;a href="../xray">&lt;strong>AWS X-Ray&lt;/strong>&lt;/a> - Trace your request across different AWS Services&lt;/li>
+&lt;/ul>
+&lt;h2 id="digests">Digests&lt;/h2>
+&lt;h3 id="concepts">Concepts&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>REST API, HTTP API, WebSocket API&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Deployment - point-in-time snapshot of your API Gateway API&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Endpoint - &lt;a href="https://api-id.execute-api.region-id.amazonaws.com">https://api-id.execute-api.region-id.amazonaws.com&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>Edge-optimized&lt;/li>
+&lt;li>Private&lt;/li>
+&lt;li>Regional&lt;/li>
+&lt;li>Stage - A logical reference to a lifecycle state of your API.&lt;/li>
+&lt;li>Route - URL path, Latency based routing,&lt;/li>
+&lt;li>Integration - Lambda, HTTP, Private VPC, CORS&lt;/li>
+&lt;li>Import/Export - Open API&lt;/li>
+&lt;li>AM User should have permission to enable logging&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Amazon API Gateway is an AWS service for creating, publishing, maintaining, monitoring, and securing REST, HTTP, and WebSocket APIs at any scale.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Stage variables are name-value pairs that you can define as configuration attributes associated with a deployment stage of a REST API. The act like environment variables and can be used in your API setup and mapping templates.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>With deployment stages in API Gateway you can manage multiple release stages for each API, such as: alpha, beta, and production. Using stage variables you can configure an API deployment stage to interact with different backend endpoints.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>When you build an API Gateway API with standard Lambda integration using the API Gateway console, the &lt;strong>console&lt;/strong> &lt;strong>automatically adds&lt;/strong> the &lt;strong>required permissions&lt;/strong>. However, when you set up a &lt;strong>stage variable&lt;/strong> to call a Lambda function through our API, you must &lt;strong>manually&lt;/strong> add these permissions.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Integration timeout for AWS, Lambda, Lambda proxy, HTTP, HTTP proxy - 50 ms to 29 seconds&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You can enable &lt;strong>API caching&lt;/strong> to cache your endpoint&amp;rsquo;s responses, this reduces the number of calls made to your endpoint and improves the latency of requests to your API&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>AWS Gateway Integration types:&lt;/p>
+&lt;ul>
+&lt;li>AWS_ Proxy - lambda proxy integration&lt;/li>
+&lt;li>HTTP - http custom integration&lt;/li>
+&lt;li>HTTP_PROXY - http proxy&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="practice">Practice&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://cloudacademy.com/lab/creating-a-restful-api-using-amazon-api-gateway/">Creating a RESTful API Using Amazon API Gateway&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="questions">Questions&lt;/h2>
+&lt;h3 id="q1">Q1&lt;/h3>
+&lt;p>&lt;strong>You are developing an API in Amazon API Gateway that several mobile applications will use to interface with a back end service in AWS being written by another developer. You can use a(n)____ integration for your API methods to develop and test your client applications before the other developer has completed work on the back end.&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>A) HTTP proxy&lt;/li>
+&lt;li>B) mock&lt;/li>
+&lt;li>C) AWS service proxy&lt;/li>
+&lt;li>D) Lambda function&lt;/li>
+&lt;/ul>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-method-settings-console.html">http://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-method-settings-console.html&lt;/a>&lt;/p>
+&lt;p>Amazon API Gateway supports mock integrations for API methods.&lt;/p>
+&lt;p>&lt;mark style="color:white">B&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q2">Q2&lt;/h3>
+&lt;p>&lt;strong>A developer is designing a web application that allows the users to post comments and receive in a real-time feedback.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which architectures meet these requirements? (Select TWO.)&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Create an AWS AppSync schema and corresponding APIs. Use an &lt;a href="../dynamodb">Amazon DynamoDB&lt;/a> table as the data store.&lt;/li>
+&lt;li>Create a WebSocket API in Amazon API Gateway. Use an &lt;a href="../lambda">AWS Lambda&lt;/a> function as the backend and an &lt;a href="../dynamodb">Amazon DynamoDB&lt;/a> table as the data store&lt;/li>
+&lt;li>Create an AWS Elastic Beanstalk application backed by an Amazon RDS database. Configure the application to allow long-lived TCP/IP sockets.&lt;/li>
+&lt;li>Create a GraphQL endpoint in Amazon API Gateway. Use an &lt;a href="../dynamodb">Amazon DynamoDB&lt;/a> table as the data store.&lt;/li>
+&lt;li>Enable WebSocket on Amazon CloudFront. Use an &lt;a href="../lambda">AWS Lambda&lt;/a> function as the origin and an Amazon Aurora DB cluster as the data store&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="https://aws.amazon.com/appsync/">AWS AppSync&lt;/a> simplifies application development by letting users create a flexible API to securely access, manipulate, and combine data from one or more data sources. AWS AppSync is a managed service that uses GraphQL to make it easy for applications to get the exact data they need.&lt;/p>
+&lt;p>AWS AppSync allows users to build scalable applications, including those requiring &lt;a href="https://docs.aws.amazon.com/appsync/latest/devguide/real-time-data.html">real-time updates&lt;/a>, on a range of data sources, including Amazon DynamoDB. In &lt;a href="../api-gateway">Amazon API Gateway&lt;/a>, users can &lt;a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html">create a WebSocket API&lt;/a> as a stateful frontend for an AWS service (such as &lt;a href="../lambda">AWS Lambda&lt;/a> or DynamoDB) or for an HTTP endpoint.&lt;/p>
+&lt;p>The WebSocket API invokes the backend based on the content of the messages it receives from client applications. Unlike a REST API, which receives and responds to requests, a WebSocket API supports two-way communication between client applications and the backend.&lt;/p>
+&lt;p>&lt;mark style="color:white">1, 2&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q3">Q3&lt;/h3>
+&lt;p>&lt;strong>A company is providing services to many downstream consumers. Each consumer may connect to one or more services. This has resulted in complex architecture that is difficult to manage and does not scale well. The company needs a single interface to manage these services to consumers&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which AWS service should be used to refactor this architecture?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>&lt;a href="../xray">AWS X-Ray&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../sqs">Amazon SQS&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../lambda">AWS Lambda&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../apigateway">Amazon API Gateway&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;mark style="color:white">4&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q4">Q4&lt;/h3>
+&lt;p>&lt;strong>Veronika is writing a REST service that will add items to a shopping list. The service is built on Amazon API Gateway with &lt;a href="../lambda">AWS Lambda&lt;/a> integrations. The shopping list stems are sent as query string parameters in the method request.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>How should Veronika convert the query string parameters to arguments for the Lambda function?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Enable request validation&lt;/li>
+&lt;li>Include the Amazon Resource Name (ARN) of the Lambda function&lt;/li>
+&lt;li>Change the integration type&lt;/li>
+&lt;li>Create a mapping template&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html">API Gateway mapping template&lt;/a>&lt;/p>
+&lt;p>&lt;mark style="color:white">4&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q5">Q5&lt;/h3>
+&lt;p>&lt;strong>A developer is designing a full-stack serverless application. Files for the website are stored in an Amazon S3 bucket. AWS Lambda functions that use Amazon API Gateway endpoints return results from an Amazon DynamoDB table. The developer must create a solution that securely provides registration and authentication for the application while minimizing the amount of configuration.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which solution meets these requirements?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Create an Amazon Cognito user pool and an app client. Configure the app client to use the user pool and provide the hosted web UI provided for sign-up and sign-in.&lt;/li>
+&lt;li>Configure an Amazon Cognito identity pool. Map the users with IAM roles that are configured to access the S3 bucket that stores the website.&lt;/li>
+&lt;li>Configure and launch an Amazon EC2 instance to set up an identity provider with an Amazon Cognito user pool. Configure the user pool to provide the hosted web UI for sign-up and sign-in.&lt;/li>
+&lt;li>Create an IAM policy that allows access to the website that is stored in the S3 bucket. Attach the policy to an IAM group. Add IAM users to the group.&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;mark style="color:white">2&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q6">Q6&lt;/h3>
+&lt;p>&lt;strong>A company has moved a legacy on-premises application to AWS by performing a lift and shift. The application exposes a REST API that can be used to retrieve billing information. The application is running on a single Amazon EC2 instance. The application code cannot support concurrent invocations. Many clients access the API, and the company adds new clients all the time.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>A developer is concerned that the application might become overwhelmed by too many requests. The developer needs to limit the number of requests to the API for all current and future clients. The developer must not change the API, the application, or the client code.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>What should the developer do to meet these requirements?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Place the API behind an Amazon API Gateway API. Set the server-side throttling limits.&lt;/li>
+&lt;li>Place the API behind a Network Load Balancer. Set the target group throttling limits.&lt;/li>
+&lt;li>Place the API behind an Application Load Balancer. Set the target group throttling limits.&lt;/li>
+&lt;li>Place the API behind an Amazon API Gateway API. Set the per-client throttling limits.&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;mark style="color:white">4&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details></description></item></channel></rss>

@@ -1,3 +1,39 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LeetCode on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/series/leetcode/</link><description>Recent content in LeetCode on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 28 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/series/leetcode/index.xml" rel="self" type="application/rss+xml"/><item><title>189. Rotate Array</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/189/</link><pubDate>Fri, 28 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/189/</guid><description>LeetCode problem
-Problem Statement Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
-Naive Solution A simple, but inefficient, approach would be to rotate the array k times. In each rotation, we shift every element of the array to the right by one and move the last element to the start of the array. This solution has a time complexity of O(n*k), where n is the number of elements in the array and k is the number of rotations.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LeetCode on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/series/leetcode/</link><description>Recent content in LeetCode on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 28 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/series/leetcode/index.xml" rel="self" type="application/rss+xml"/><item><title>189. Rotate Array</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/189/</link><pubDate>Fri, 28 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/189/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/rotate-array/">LeetCode problem&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>Given an integer array &lt;code>nums&lt;/code>, rotate the array to the right by &lt;code>k&lt;/code> steps, where &lt;code>k&lt;/code> is non-negative.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A simple, but inefficient, approach would be to rotate the array &lt;code>k&lt;/code> times. In each rotation, we shift every element of the array to the right by one and move the last element to the start of the array. This solution has a time complexity of O(n*k), where n is the number of elements in the array and k is the number of rotations. This is not an optimal solution, especially when we have a large &lt;code>k&lt;/code> or a large array.&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>An efficient solution can be found by using array reversal. Here&amp;rsquo;s the plan:&lt;/p>
+&lt;ol>
+&lt;li>Reverse the entire array.&lt;/li>
+&lt;li>Reverse the first &lt;code>k&lt;/code> elements.&lt;/li>
+&lt;li>Reverse the remaining &lt;code>n-k&lt;/code> elements.&lt;/li>
+&lt;/ol>
+&lt;p>This method allows us to achieve the desired output in O(n) time and O(1) space complexity.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;p>Let&amp;rsquo;s break down the steps using an example: &lt;code>nums = [1,2,3,4,5,6,7], k = 3&lt;/code>.&lt;/p>
+&lt;ol>
+&lt;li>Reverse the entire array: &lt;code>nums = [7,6,5,4,3,2,1]&lt;/code>.&lt;/li>
+&lt;li>Reverse the first &lt;code>k&lt;/code> elements: &lt;code>nums = [5,6,7,4,3,2,1]&lt;/code>.&lt;/li>
+&lt;li>Reverse the remaining &lt;code>n-k&lt;/code> elements: &lt;code>nums = [5,6,7,1,2,3,4]&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;p>As you can see, we get the expected output &lt;code>[5,6,7,1,2,3,4]&lt;/code>.&lt;/p>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;p>Here is the Python code that implements the aforementioned logic:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">rotate&lt;/span>(self, nums, k):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">reverse&lt;/span>(start, end):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> start &lt;span style="color:#666">&amp;lt;&lt;/span> end:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nums[start], nums[end] &lt;span style="color:#666">=&lt;/span> nums[end], nums[start]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> start &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> end &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> k &lt;span style="color:#666">=&lt;/span> k &lt;span style="color:#666">%&lt;/span> n &lt;span style="color:#60a0b0;font-style:italic"># in case k &amp;gt; len(nums)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reverse(nums, &lt;span style="color:#40a070">0&lt;/span>, n &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>) &lt;span style="color:#60a0b0;font-style:italic"># 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reverse(nums, &lt;span style="color:#40a070">0&lt;/span>, k &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>) &lt;span style="color:#60a0b0;font-style:italic"># 2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reverse(nums, k, n &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>) &lt;span style="color:#60a0b0;font-style:italic"># 3&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

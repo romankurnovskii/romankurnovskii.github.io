@@ -1,5 +1,171 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cloudformation on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/cloudformation/</link><description>Recent content in Cloudformation on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Tue, 25 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/cloudformation/index.xml" rel="self" type="application/rss+xml"/><item><title>CloudFormation</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudformation/</link><pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudformation/</guid><description>About CloudF­orm­ation enables the user to design &amp;amp; provision AWS infras­tru­cture deploy­ments predic­tably &amp;amp; repeat­edly
-Documentation User Guide Terminology Component Description Templates The JSON or YAML text file that contains the instructions for building out the AWS environment Stacks The entire environment described by the template and created, updated, and deleted as a single unit StackSets AWS CloudFormation StackSets extends the functionality of stacks by enabling you to create, update, or delete stacks across multiple accounts and regions with a single operation Change Sets A summary of proposed changes to your stack that will allow you to see how those changes might impact your existing resources before implementing them Template The main sections in a CloudFormation template:</description></item><item><title>Setup OpenVPN Server on AWS EC2 Ubuntu</title><link>https://romankurnovskii.com/en/stories/002-openvpn-aws-ec2-setup/</link><pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/stories/002-openvpn-aws-ec2-setup/</guid><description>Today, I embarked on a journey to create an accessible, affordable, and easy-to-use VPN solution that anyone can set up on their devices using AWS.
-Finding a reasonably priced solution was critical. I opted for Amazon&amp;rsquo;s t3a.nano ARM Ubuntu image, which costs ~$0.0047/hour ~ $3.8/month.
-Various Amazon EC2 instances and their prices are listed on Amazon&amp;rsquo;s On-Demand Pricing page.
-Here is the list of all Ubuntu AMI images to identify the appropriate image for the project. The selected image combined with the CloudFormation template, which was inspired by the AWS CloudFormation General Reference, provides a seamless and consistent user experience.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cloudformation on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/cloudformation/</link><description>Recent content in Cloudformation on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Tue, 25 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/cloudformation/index.xml" rel="self" type="application/rss+xml"/><item><title>CloudFormation</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudformation/</link><pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudformation/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>CloudF­orm­ation enables the user to design &amp;amp; provision AWS infras­tru­cture deploy­ments predic­tably &amp;amp; repeat­edly&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/cloudformation/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/cloudformation/?id=docs_gateway">User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/Products/product-name/diagrams/product-page-diagram_CloudFormation.ad3a4c93b4fdd3366da3da0de4fb084d89a5d761.png"
+id="zoom-default"
+alt="CloudFormation Flow"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="terminology">Terminology&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Component&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Templates&lt;/td>
+&lt;td>The JSON or YAML text file that contains the instructions for building out the AWS environment&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Stacks&lt;/td>
+&lt;td>The entire environment described by the template and created, updated, and deleted as a single unit&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>StackSets&lt;/td>
+&lt;td>AWS CloudFormation StackSets extends the functionality of stacks by enabling you to create, update, or delete stacks across multiple accounts and regions with a single operation&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Change Sets&lt;/td>
+&lt;td>A summary of proposed changes to your stack that will allow you to see how those changes might impact your existing resources before implementing them&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="template">Template&lt;/h3>
+&lt;p>The main sections in a CloudFormation template:&lt;/p>
+&lt;ul>
+&lt;li>Parameters - specify variables requiring user input&lt;/li>
+&lt;li>Conditions - define entities based on a condition e.g. provision resources based on environment, or specify AMI for and EC2 instance to deploy based on region&lt;/li>
+&lt;li>Resources - the AWS resources to create&lt;/li>
+&lt;li>Mappings - create custom mappings e.g. RegionMap for Region : AMI&lt;/li>
+&lt;li>Transforms - reference code located in S3 e.g. Lambda code or reusable snippets of CloudFormation code&lt;/li>
+&lt;/ul>
+&lt;h2 id="digest">Digest&lt;/h2>
+&lt;ul>
+&lt;li>A CloudFormation template will consist of a set of resources defined. These resources will be part of a single stack, once built. CloudFormation will treat all the resources as a collection of resources&lt;/li>
+&lt;li>CloudFormation supports JSON and YAM for its template languages.&lt;/li>
+&lt;li>All ID&amp;rsquo;s are unique to each region, account, and VPC. It is best practice to not embed such IU&amp;rsquo;s inside a CloudFormation template. Instead, define parameters, mappings and conditions to create a dynamic template that could be run across VP&amp;rsquo;s, Regions or even accounts&lt;/li>
+&lt;li>Cloudformation stackset vs changeset vs nested stack&lt;/li>
+&lt;li>Nested stacks - stacks created as part of other stacks. You create a nested stack within another stack by using the AWS: CloudFormation:Stack resource. For example, assume that you have a load balancer configuration that you use for most of your stacks. Instead of copying and pasting
+the same configurations into your templates, you can create a dedicated template for the load balancer. Then, you just use the resource to reference that template from within other templates&lt;/li>
+&lt;li>Change Sets will produce a summary of changes and their impact on the resources.&lt;/li>
+&lt;li>StackSets is used for deploying or managing template resources across accounts and/or regions.&lt;/li>
+&lt;li>Sting, Number, List are supported data type in CFT&lt;/li>
+&lt;li>Including lambda function as zipfile parameter in CFT is the easiest way to deploy lambda function&lt;/li>
+&lt;li>If stack creation fails, AWS CloudFormation rolls back any changes by deleting the resources that it created.&lt;/li>
+&lt;li>Fn:FindInMap to perform a dynamic lookup in Cloud formation template&lt;/li>
+&lt;li>Transform section of Cloud formation specifies version of SAM model to use.&lt;/li>
+&lt;li>Two templates, one for Intra and one for App.&lt;/li>
+&lt;/ul>
+&lt;h2 id="price">Price&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/cloudformation/pricing/">Current price&lt;/a>&lt;/p>
+&lt;h2 id="use-cases">Use Cases&lt;/h2>
+&lt;p>Type: Provision&lt;/p>
+&lt;p>Same type services: CloudF­orm­ation, Service Catalog, OpsWorks, Market­place&lt;/p>
+&lt;p>&lt;strong>Manage infrastructure with DevOps&lt;/strong>&lt;/p>
+&lt;p>Automate, test, and deploy infrastructure templates with continuous integration and delivery (CI/CD) automations.&lt;/p>
+&lt;p>&lt;strong>Scale production stacks&lt;/strong>&lt;/p>
+&lt;p>Run anything from a single Amazon Elastic Compute Cloud (EC2) instance to a complex multi-region application.&lt;/p>
+&lt;p>&lt;strong>Share best practices&lt;/strong>&lt;/p>
+&lt;p>Define an Amazon Virtual Private Cloud (VPC) subnet or provisioning services like AWS OpsWorks or Amazon Elastic Container Service (ECS) with ease.&lt;/p>
+&lt;h2 id="compare">Compare&lt;/h2>
+&lt;h3 id="cloudformation-vs-elastic-beanstalk">CloudFormation vs Elastic Beanstalk&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>CloudFormation&lt;/th>
+&lt;th>Elastic Beanstalk&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>“Template-driven provisioning”&lt;/td>
+&lt;td>“Web apps made easy”&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Deploys infrastructure using code&lt;/td>
+&lt;td>Deploys applications on EC2 (PaaS)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Can be used to deploy almost any AWS service&lt;/td>
+&lt;td>Deploys web applications based on Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Uses JSON or YAML template files&lt;/td>
+&lt;td>Uses ZIP or WAR files&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Similar to Terraform&lt;/td>
+&lt;td>Similar to Google App Engine&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="comparing-cloudformation-init-and-ec2-user-data">Comparing CloudFormation Init and EC2 User Data&lt;/h3>
+&lt;p>CloudFormation Init and EC2 User Data&lt;/p>
+&lt;p>With EC2 Instance user data, developers are able to run commands and scripts during the launch of an EC2 instance. User data can be used to install necessary packages, update the ownership of files and directories, or even update or run services. Developers who are familiar with shell scripting may find user data as the easiest way to incorporate launch instructions for EC2 instances.&lt;/p>
+&lt;p>EC2 Instance user data allows for a procedural-based approach to configuring an instance during launch.&lt;/p>
+&lt;p>The following snippet represents a &lt;code>UserData&lt;/code> property of an EC2 instance defined within a CloudFormation template:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220421133726-17-de4b58a9-9116-45f0-9a3f-818a9173282d.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The shell script above begins with an update and installation of the &lt;code>httpd&lt;/code> Apache service using the &lt;code>yum&lt;/code> package manager. The &lt;code>systemctl start&lt;/code> and &lt;code>enable&lt;/code> commands start the Apache server and allow it to serve content from the EC2 instance. The &lt;code>cat&lt;/code> command adds an HTML snippet to the &lt;code>index.html&lt;/code> file located in the &lt;code>/var/www/html/&lt;/code> directory of the instance. Once the user data script is completed, you can view the HTML content by accessing the EC2 instance&amp;rsquo;s public URL.&lt;/p>
+&lt;p>It&amp;rsquo;s important to note that this user data script runs only when the EC2 instance is launched.&lt;/p>
+&lt;h4 id="cloudformation-init-cfn-init">CloudFormation Init (cfn-init)&lt;/h4>
+&lt;p>AWS provides CloudFormation helper scripts like cfn-init to help fine-tune your stack templates to better fit your needs. CloudFormation cfn-init allows developers to establish a desired state of their instance using metadata. This means that these configurations can be updated and run on the same instance over time.&lt;/p>
+&lt;p>The following snippet represents the &lt;code>AWS::CloudFormation::Init&lt;/code> metadata type for an EC2 instance defined within a CloudFormation template:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220421133926-18-220eb37d-1bbf-486a-8a50-33801ab9a0a9.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The &lt;code>config&lt;/code> section details the &lt;code>packages&lt;/code>, &lt;code>files&lt;/code>, and &lt;code>services&lt;/code> to be configured on the EC2 instance. This eases the burden of managing a bash script since each type of configuration is held in its own dedicated section. The snippet performs the same configuration on the EC2 instance as the previous user data example.&lt;/p>
+&lt;p>Unlike EC2 user data, the cfn-init script does not run automatically. The next lab step will cover how to utilize helper scripts in a CloudFormation stack deployment.&lt;/p>
+&lt;h4 id="key-differences">Key Differences&lt;/h4>
+&lt;ul>
+&lt;li>Instance user data is procedural-based, while CloudFormation init can be used to achieve the desired state of an instance&lt;/li>
+&lt;li>When you update the instance user data in CloudFormation and perform a stack update, the instance is terminated and &lt;strong>replaced&lt;/strong>. However, when you update the CloudFormation init metadata and perform a stack update, the instance will be updated &lt;strong>in place&lt;/strong>&lt;/li>
+&lt;li>Instance user data is run only &lt;strong>once&lt;/strong> during the instance launch&lt;/li>
+&lt;li>The success or failure of a user data script does not affect a CloudFormation stack creation process. With the CloudFormation signal helper script, a successful stack creation relies on a successful instance configuration (More on this in the next lab step)&lt;/li>
+&lt;/ul>
+&lt;h2 id="practice">Practice&lt;/h2>
+&lt;p>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudformation/initializing-ec2-with-cloudformation/">Initializing Amazon EC2 Instances with AWS CloudFormation Init&lt;/a>&lt;/p>
+&lt;h2 id="questions">Questions&lt;/h2>
+&lt;h3 id="q1">Q1&lt;/h3>
+&lt;p>&lt;strong>You are creating multiple resources using multiple CloudFormation templates. One of the resources (Resource B) needs the ARN value of another resource (resource A) before it is created.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>What steps can you take in this situation? (Choose 2 answers)&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Use a template to first create Resource A with the ARN as an output value.&lt;/li>
+&lt;li>Use a template to create Resource B and reference the ARN of Resource A using &lt;code>Fn::GetAtt&lt;/code>.&lt;/li>
+&lt;li>Hard code the ARN value output from creating Resource A into the second template.&lt;/li>
+&lt;li>Just create Resource B.&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html">http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html&lt;/a>&lt;/p>
+&lt;p>&lt;mark style="color:white">2&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details></description></item><item><title>Setup OpenVPN Server on AWS EC2 Ubuntu</title><link>https://romankurnovskii.com/en/stories/002-openvpn-aws-ec2-setup/</link><pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/stories/002-openvpn-aws-ec2-setup/</guid><description>&lt;p>Today, I embarked on a journey to create an accessible, affordable, and easy-to-use VPN solution that anyone can set up on their devices using AWS.&lt;/p>
+&lt;p>Finding a reasonably priced solution was critical. I opted for Amazon&amp;rsquo;s &lt;code>t3a.nano&lt;/code> ARM Ubuntu image, which costs &lt;strong>~$0.0047&lt;/strong>/hour ~ &lt;strong>$3.8&lt;/strong>/month.&lt;/p>
+&lt;p>Various Amazon EC2 instances and their prices are listed on &lt;a href="https://aws.amazon.com/ec2/pricing/on-demand/">Amazon&amp;rsquo;s On-Demand Pricing page&lt;/a>.&lt;/p>
+&lt;p>Here is the &lt;a href="https://cloud-images.ubuntu.com/query/bionic/server/released.current.txt">list of all Ubuntu AMI images&lt;/a> to identify the appropriate image for the project. The selected image combined with the CloudFormation template, which was inspired by the &lt;a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/quickref-general.html">AWS CloudFormation General Reference&lt;/a>, provides a seamless and consistent user experience.&lt;/p>
+&lt;p>Now it takes 2-3 minutes to create OpenVPN server using this &lt;a href="https://github.com/romankurnovskii/openvpn_ec2_cf_template">repo&lt;/a>.&lt;/p></description></item></channel></rss>

@@ -1,3 +1,113 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cloudwatch on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/cloudwatch/</link><description>Recent content in Cloudwatch on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Thu, 15 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/cloudwatch/index.xml" rel="self" type="application/rss+xml"/><item><title>CloudWatch</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudwatch/</link><pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudwatch/</guid><description>About CloudWatch offers a reliable, scalable, &amp;amp; flexible monitoring solution that can easily start.
-CloudWatch can provide a dependable, scalable, &amp;amp; flexible monitoring solution that is simple to set up.
-Documentation User Guide CloudWatch vs CloudTrail CloudWatch CloudTrail Performance monitoring Auditing Log events across AWS Services – think operations Log API activity across AWS services – think activities, or who to blame Higher-level comprehensive monitoring and event service More low-level, granular Log from multiple accounts Log from multiple accounts Logs stored indefinitely Logs stored to S3 or CloudWatch indefinitely Alarms history for 14 days No native alarming; can use CloudWatch alarms Digest Standard vs High resolution metrics.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cloudwatch on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/cloudwatch/</link><description>Recent content in Cloudwatch on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 15 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/cloudwatch/index.xml" rel="self" type="application/rss+xml"/><item><title>CloudWatch</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudwatch/</link><pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudwatch/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>CloudWatch offers a reliable, scalable, &amp;amp; flexible monitoring solution that can easily start.&lt;/p>
+&lt;p>CloudWatch can provide a dependable, scalable, &amp;amp; flexible monitoring solution that is simple to set up.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/cloudwatch/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/cloudwatch/?id=docs_gateway">User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/product-marketing/cloudwatch/product-page-diagram_Cloudwatch_v4.55c15d1cc086395cbd5ad279a2f1fc37e8452e77.png"
+id="zoom-default"
+alt="Amazon CloudWatch Flow"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="cloudwatch-vs-cloudtrail">CloudWatch vs CloudTrail&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>CloudWatch&lt;/th>
+&lt;th>CloudTrail&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Performance monitoring&lt;/td>
+&lt;td>Auditing&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Log events across AWS Services – think operations&lt;/td>
+&lt;td>Log API activity across AWS services – think activities, or who to blame&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Higher-level comprehensive monitoring and event service&lt;/td>
+&lt;td>More low-level, granular&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Log from multiple accounts&lt;/td>
+&lt;td>Log from multiple accounts&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Logs stored indefinitely&lt;/td>
+&lt;td>Logs stored to S3 or CloudWatch indefinitely&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Alarms history for 14 days&lt;/td>
+&lt;td>No native alarming; can use CloudWatch alarms&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="digest">Digest&lt;/h2>
+&lt;ul>
+&lt;li>Standard vs High resolution metrics.&lt;/li>
+&lt;li>CloudWatch unified agent collect both system metrics and log files from Amazon EC2 Instances and on-premise servers. The agent supports both Windows Server and Linux, and enables to select the metrics to be collected, including sub-resource metrics such as per-CPU core. Aside from the usual metrics, it also tracks the memory, swap, and disk space utilization metrics of your server.&lt;/li>
+&lt;li>Cloudwatch events could be used for scheduling lambda functions.&lt;/li>
+&lt;li>RAM Utilization needs custom metrics&lt;/li>
+&lt;li>which use-cases are covered in Standard metrics and which ones would need custom metrics. (memory utilization needs custom metrics)&lt;/li>
+&lt;li>Basic (5 min) vs detailed (1 min) vs high resolution (1s) monitoring.&lt;/li>
+&lt;/ul>
+&lt;h2 id="price">Price&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/cloudwatch/pricing/">Current price&lt;/a>&lt;/p>
+&lt;h2 id="use-cases">Use Cases&lt;/h2>
+&lt;p>Type: Operate&lt;/p>
+&lt;p>Same type services: CloudWatch, CloudTrail, Systems Manager, Cost &amp;amp; usage report, Cost explorer, Managed Services&lt;/p>
+&lt;h2 id="practice">Practice&lt;/h2>
+&lt;p>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudwatch/introduction-to-cloudwatch/">Introduction to CloudWatch&lt;/a>&lt;/p>
+&lt;h2 id="questions">Questions&lt;/h2>
+&lt;h3 id="q1">Q1&lt;/h3>
+&lt;p>&lt;strong>A Developer wants access to the log data of an application running on an &lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/ec2/">EC2&lt;/a> instance available to systems administrators.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which of the following enables monitoring of the metric in &lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudwatch/">Amazon CloudWatch&lt;/a>?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Retrieve the log data from AWS CloudTrail using the LookupEvents API Call&lt;/li>
+&lt;li>Retrieve the log data from &lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudwatch/">CloudWatch&lt;/a> using the GetMetricData API call&lt;/li>
+&lt;li>Launch a new &lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/ec2/">EC2&lt;/a> instance, configure &lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudwatch/">Amazon CloudWatch&lt;/a> Events, and then install the application&lt;/li>
+&lt;li>Install the &lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudwatch/">Amazon CloudWatch&lt;/a> logs agent on the &lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/ec2/">EC2&lt;/a> instance that the application is running on&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;mark style="color:white">4&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q2">Q2&lt;/h3>
+&lt;p>&lt;strong>A developer must use AWS X-Ray to monitor an application that is running on an Amazon EC2 instance. Developer has prepared the application by using the X-Ray SDK.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>What should the developer do to perform the monitoring?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Configure the X-Ray SDK sampling rule and target. Activate the X-Ray daemon from the EC2 console or the AWS CLI with the modify-instance-attribute command to set the XRayEnabled flag.&lt;/li>
+&lt;li>Install the X-Ray daemon. Assign an IAM role to the EC2 instance with a policy that allows writes to X-Ray.&lt;/li>
+&lt;li>Install the X-Ray daemon. Configure it to forward data to Amazon EventBridge (Amazon CloudWatch Events). Grant the EC2 instance permission to write to Event Bridge (CloudWatch Events).&lt;/li>
+&lt;li>Deploy the X-Ray SDK with the application, and instrument the application code. Use the SDK logger to capture and send the events.&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;mark style="color:white">3&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q3">Q3&lt;/h3>
+&lt;p>&lt;strong>A developer is designing an AWS Lambda function to perform a maintenance activity. The developer will use Amazon EventBridge (Amazon CloudWatch Events) to invoke the function on an hourly schedule. The developer wants the function to log information at different levels of detail according to the value of a log level variable. The developer must design the function so that the log level can be set without requiring a change to the function code.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which solution will meet these requirements?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>A. Add a custom log level parameter for the Lambda function. Set the parameter by using the Lambda console.&lt;/li>
+&lt;li>Set the log level in the Amazon CloudWatch Logs console.&lt;/li>
+&lt;li>Set the log level in a Lambda environment variable.&lt;/li>
+&lt;li>Add a custom log level parameter for the Lambda function. Set the parameter by using the AWS CLI.&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;mark style="color:white">3&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details></description></item></channel></rss>

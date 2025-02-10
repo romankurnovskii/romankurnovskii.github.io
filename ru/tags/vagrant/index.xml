@@ -1,4 +1,87 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vagrant on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/vagrant/</link><description>Recent content in Vagrant on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Wed, 04 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/vagrant/index.xml" rel="self" type="application/rss+xml"/><item><title>14. DevOps и Linux</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day14/</link><pubDate>Wed, 04 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day14/</guid><description>Общая картина: DevOps и Linux Linux и DevOps имеют очень схожие культуры и взгляды; оба ориентированы на настройку и масштабируемость. Оба эти аспекта Linux имеют особое значение для DevOps.
-Многие технологии начинаются с Linux, особенно если они связаны с разработкой программного обеспечения или управлением инфраструктурой.
-Кроме того, многие проекты с открытым исходным кодом, особенно инструменты DevOps, с самого начала разрабатывались для работы в Linux.
-С точки зрения DevOps или фактически с точки зрения какой-либо операционной роли вы столкнетесь с Linux, я бы сказал, в основном.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vagrant on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/vagrant/</link><description>Recent content in Vagrant on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Wed, 04 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/vagrant/index.xml" rel="self" type="application/rss+xml"/><item><title>14. DevOps и Linux</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day14/</link><pubDate>Wed, 04 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day14/</guid><description>&lt;h2 id="общая-картина-devops-и-linux">Общая картина: DevOps и Linux&lt;/h2>
+&lt;p>Linux и DevOps имеют очень схожие культуры и взгляды; оба ориентированы на настройку и масштабируемость. Оба эти аспекта Linux имеют особое значение для DevOps.&lt;/p>
+&lt;p>Многие технологии начинаются с Linux, особенно если они связаны с разработкой программного обеспечения или управлением инфраструктурой.&lt;/p>
+&lt;p>Кроме того, многие проекты с открытым исходным кодом, особенно инструменты DevOps, с самого начала разрабатывались для работы в Linux.&lt;/p>
+&lt;p>С точки зрения DevOps или фактически с точки зрения какой-либо операционной роли вы столкнетесь с Linux, я бы сказал, в основном. Есть место для WinOps, но большую часть времени вы будете администрировать и развертывать серверы Linux.&lt;/p>
+&lt;p>Я использую Linux ежедневно в течение нескольких лет, но мой настольный компьютер всегда был либо macOS, либо Windows. Однако, когда я перешел на роль Cloud Native, в которой я сейчас нахожусь, я сделал решительный шаг, чтобы убедиться, что мой ноутбук полностью основан на Linux и является моим ежедневным драйвером, в то время как мне по-прежнему нужна была Windows для рабочих приложений и многих моих аудио и видеоаппаратура не работает в Linux Я заставлял себя постоянно работать на рабочем столе Linux, чтобы лучше понять многие вещи, которые мы собираемся затронуть в течение следующих 7 дней.&lt;/p>
+&lt;h2 id="начало">Начало&lt;/h2>
+&lt;p>Я не предлагаю вам делать то же самое, что и я, в любом случае, поскольку есть более простые варианты и менее разрушительные, но я скажу, что этот полный рабочий день заставит вас быстрее научиться тому, как заставить все работать в Linux.&lt;/p>
+&lt;p>В течение большей части этих 7 дней я фактически собираюсь развернуть виртуальную машину в Virtual Box на моей машине с Windows. Я также собираюсь развернуть настольную версию дистрибутива Linux, в то время как многие серверы Linux, которыми вы будете администрировать, скорее всего, будут серверами без графического интерфейса и полностью основанными на оболочке. Однако, как я сказал в начале, многие инструменты, которые мы рассмотрели в течение всех этих 90 дней, начинались с Linux, я также настоятельно рекомендую вам погрузиться в работу этого рабочего стола Linux для этого обучения.&lt;/p>
+&lt;p>В оставшейся части этого поста мы сосредоточимся на настройке и запуске виртуальной машины Ubuntu Desktop в нашей среде Virtual Box. Теперь мы можем просто загрузить &lt;a href="https://www.virtualbox.org/">Virtual Box&lt;/a> и получить последний &lt;a href="https://ubuntu.com/download">Ubuntu ISO&lt;/a> с сайтов, на которые даны ссылки, и продолжить сборку. нашу среду рабочего стола, но это не было бы очень DevOps с нашей стороны, не так ли?&lt;/p>
+&lt;p>Еще одна веская причина использовать большинство дистрибутивов Linux заключается в том, что они бесплатны и имеют открытый исходный код. Мы также выбираем Ubuntu, поскольку это, вероятно, наиболее широко используемый дистрибутив, не думая о мобильных устройствах и корпоративных серверах RedHat Enterprise. Я могу ошибаться, но с CentOS и ее историей я уверен, что Ubuntu занимает первое место в списке, и это очень просто.&lt;/p>
+&lt;h2 id="hashicorp-vagrant">HashiCorp Vagrant&lt;/h2>
+&lt;p>Vagrant — это утилита CLI, которая управляет жизненным циклом ваших виртуальных машин. Мы можем использовать vagrant для запуска и отключения виртуальных машин на разных платформах, включая vSphere, Hyper-v, Virtual Box, а также Docker. У него есть другие провайдеры, но мы будем придерживаться того, что здесь мы используем Virtual Box, так что все готово.&lt;/p>
+&lt;p>Vagrant — свободное и открытое программное обеспечение для создания и конфигурирования виртуальной среды разработки. Является обёрткой для программного обеспечения виртуализации, например VirtualBox, и средств управления конфигурациями, таких как Chef, Salt и Puppet.&lt;/p>
+&lt;p>Первое, что нам нужно сделать, это установить Vagrant на нашу машину, когда вы перейдете на страницу загрузок, вы увидите все операционные системы, перечисленные на ваш выбор. &lt;a href="https://www.vagrantup.com/downloads">HashiCorp Vagrant&lt;/a> Я использую Windows, поэтому я взял двоичный файл для своей системы и установил его в свою систему.&lt;/p>
+&lt;p>Далее нам также нужно установить &lt;a href="https://www.virtualbox.org/wiki/Downloads">Virtual Box&lt;/a>. Опять же, это также может быть установлено на многих разных операционных системах.&lt;/p>
+&lt;h2 id="файл-vagrantfile">Файл VAGRANTFILE&lt;/h2>
+&lt;p>VAGRANTFILE описывает тип машины, которую мы хотим развернуть. Он также определяет, как мы хотим, чтобы конфигурация и подготовка этой машины выглядели.&lt;/p>
+&lt;p>Когда дело доходит до их сохранения и организации ваших VAGRANTFILE, я стараюсь помещать их в отдельные папки в своем рабочем пространстве. Ниже вы можете увидеть, как это выглядит в моей системе. Надеюсь, после этого вы поиграете с Vagrant и увидите легкость запуска разных систем, это также отлично подходит для этой кроличьей норы, известной как скачок дистрибутива для Linux Desktops.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day14_Linux1.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Давайте взглянем на этот VAGRANTFILE и посмотрим, что мы строим.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Vagrant.configure(&amp;#34;2&amp;#34;) do |config|
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> config.vm.box = &amp;#34;chenhan/ubuntu-desktop-20.04&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> config.vm.provider :virtualbox do |v|
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> v.memory = 8096
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> v.cpus = 4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> v.customize [&amp;#34;modifyvm&amp;#34;, :id, &amp;#34;--vram&amp;#34;, &amp;#34;128mb&amp;#34;]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> end
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>end
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Это очень простой VAGRANTFILE. В целом, мы говорим, что нам нужна конкретная «сборка». Сборка, возможно, является либо общедоступным образом, либо частной сборкой системы, которую вы ищете. Вы можете найти длинный список здесь, в &lt;a href="https://app.vagrantup.com/boxes/search">общедоступном каталоге Vagrant&lt;/a>&lt;/p>
+&lt;p>Далее мы говорим, что хотим использовать определенного провайдера, в данном случае это «VirtualBox», а затем мы хотим определить память нашей машины как «8 ГБ, а количество процессоров — как «4». Мой опыт также говорит мне, что вы можете также добавить следующую строку, если у вас возникли проблемы с отображением. Это установит видеопамять на то, что вы хотите, я бы увеличил ее до 128 МБ, но зависит от вашей системы.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>v.customize [&amp;#34;modifyvm&amp;#34;, :id, &amp;#34;--vram&amp;#34;, &amp;#34;&amp;#34;]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="инициализация-нашего-рабочего-стола-linux">Инициализация нашего рабочего стола Linux&lt;/h2>
+&lt;p>Теперь мы готовы запустить нашу первую машину в терминале нашего ПК. В моем случае я использую PowerShell на своем компьютере с Windows, перейдите в папку своих проектов и там, где вы найдете свой VAGRANTFILE. Оказавшись там, вы можете ввести команду &lt;code>vagrant up&lt;/code>, и если все правильно, вы увидите что-то вроде того, что показано ниже.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day14_Linux2.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Еще одна вещь, которую следует добавить, это то, что сеть будет настроена на &lt;code>NAT&lt;/code> на вашей виртуальной машине, на данном этапе нам действительно не нужно знать о NAT, и я планирую провести целую сессию в следующем разделе о сети. Но знайте, что это просто кнопка, когда дело доходит до включения машины в вашу домашнюю сеть, это также сетевой режим по умолчанию в Virtual Box. Вы можете узнать больше в &lt;a href="https://www.virtualbox.org/manual/ch06.html#network_nat">документации Virtual Box&lt;/a>&lt;/p>
+&lt;p>Как только &lt;code>vagrant up&lt;/code> завершен, мы можем использовать &lt;code>vagrant ssh&lt;/code>, чтобы перейти прямо в терминал нашей новой виртуальной машины.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day14_Linux3.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Именно здесь мы будем проводить большую часть наших исследований в течение следующих нескольких дней, но я также хочу погрузиться в некоторые настройки для вашей рабочей станции разработчика, которые я сделал, и это значительно упрощает вашу жизнь при использовании этого в качестве ежедневного драйвера, и, конечно же, а ты реально в DevOps разве что у тебя крутой нестандартный терминал?&lt;/p>
+&lt;p>Но просто для подтверждения в Virtual Box вы должны увидеть приглашение для входа в систему при выборе виртуальной машины.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day14_Linux4.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>О, и если вы зашли так далеко и спрашивали: «ЧТО ТАКОЕ ИМЯ ПОЛЬЗОВАТЕЛЯ И ПАРОЛЬ?»&lt;/p>
+&lt;ul>
+&lt;li>Username = vagrant&lt;/li>
+&lt;li>Password = vagrant&lt;/li>
+&lt;/ul>
+&lt;p>Завтра мы рассмотрим некоторые команды и то, что они делают. Терминал станет местом, где все произойдет.&lt;/p>
+&lt;h2 id="ресурсы">Ресурсы&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=kPylihJRG70">Learn the Linux Fundamentals - Part 1&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=VbEx7B_PTOE">Linux for hackers (don&amp;rsquo;t worry you don&amp;rsquo;t need be a hacker!)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://learn.hashicorp.com/vagrant">Vargant tutorial&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Как я уже упоминал, далее мы рассмотрим команды, которые мы можем использовать ежедневно в наших средах Linux.&lt;/p></description></item></channel></rss>

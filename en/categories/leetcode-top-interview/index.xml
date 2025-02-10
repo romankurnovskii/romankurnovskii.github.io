@@ -1,15 +1,137 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LeetCode Top Interview on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/leetcode-top-interview/</link><description>Recent content in LeetCode Top Interview on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Tue, 01 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/leetcode-top-interview/index.xml" rel="self" type="application/rss+xml"/><item><title>2. Add Two Numbers</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/2/</link><pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/2/</guid><description>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
-You may assume the two numbers do not contain any leading zero, except the number 0 itself.
-Example 1:
-Input: l1 = [2,4,3], l2 = [5,6,4] Output: [7,0,8] Explanation: 342 + 465 = 807. First accepted Idea:
-Loop through lists add each value to the list reverse list calculate sum create linked list from reversed sum class Solution: def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -&amp;gt; Optional[ListNode]: def createLinkedNode(values): head = ListNode(values[0]) current = head for i in values[1:]: node = ListNode(i) current.</description></item><item><title>7. Reverse Integer</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/7/</link><pubDate>Tue, 01 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/7/</guid><description>LeetCode problem
-Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.
-Assume the environment does not allow you to store 64-bit integers (signed or unsigned).
-Example 1:
-Input: x = 123 Output: 321
-Example 2:
-Input: x = -123 Output: -321
-Example 3:
-Input: x = 120 Output: 21
-First accepted Idea:
-Convert number to int Remove minus if exist (or convert module of number) reverse class Solution: def reverse(self, x: int) -&amp;gt; int: reversed_int = [] str_int = str(x) if x &amp;lt; 0: str_int = str_int[1:] for i in reversed(range(len(str_int))): reversed_int.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LeetCode Top Interview on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/leetcode-top-interview/</link><description>Recent content in LeetCode Top Interview on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Tue, 01 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/leetcode-top-interview/index.xml" rel="self" type="application/rss+xml"/><item><title>2. Add Two Numbers</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/2/</link><pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/2/</guid><description>&lt;p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.&lt;/p>
+&lt;p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: l1 = [2,4,3], l2 = [5,6,4]
+Output: [7,0,8]
+Explanation: 342 + 465 = 807.
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Loop through lists&lt;/li>
+&lt;li>add each value to the list&lt;/li>
+&lt;li>reverse list&lt;/li>
+&lt;li>calculate sum&lt;/li>
+&lt;li>create linked list from reversed sum&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">addTwoNumbers&lt;/span>(self, l1: Optional[ListNode], l2: Optional[ListNode]) &lt;span style="color:#666">-&amp;gt;&lt;/span> Optional[ListNode]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">createLinkedNode&lt;/span>(values):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> head &lt;span style="color:#666">=&lt;/span> ListNode(values[&lt;span style="color:#40a070">0&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current &lt;span style="color:#666">=&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> values[&lt;span style="color:#40a070">1&lt;/span>:]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> node &lt;span style="color:#666">=&lt;/span> ListNode(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> node
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current &lt;span style="color:#666">=&lt;/span> current&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> vals_l1 &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> l1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> cur:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> vals_l1&lt;span style="color:#666">.&lt;/span>append(cur&lt;span style="color:#666">.&lt;/span>val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> cur&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> vals_l2 &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> l2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> cur:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> vals_l2&lt;span style="color:#666">.&lt;/span>append(cur&lt;span style="color:#666">.&lt;/span>val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> cur&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s_l1 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">reversed&lt;/span>(vals_l1):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s_l1 &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#007020">str&lt;/span>(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s_l2 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">reversed&lt;/span>(vals_l2):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s_l2 &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#007020">str&lt;/span>(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ll_sum &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(s_l1) &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#007020">int&lt;/span>(s_l2)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> values &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> val &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">reversed&lt;/span>(&lt;span style="color:#007020">str&lt;/span>(ll_sum)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> values&lt;span style="color:#666">.&lt;/span>append(&lt;span style="color:#007020">int&lt;/span>(val))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> createLinkedNode(values)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="better-solution">Better solution&lt;/h2>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://leetcode.com/problems/add-two-numbers/Figures/2_add_two_numbers.svg"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;p>Just like how you would sum two numbers on a piece of paper.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/2-test-case.jpg"
+id="zoom-default"
+alt="test-case"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">addTwoNumbers&lt;/span>(self, l1: Optional[ListNode], l2: Optional[ListNode]) &lt;span style="color:#666">-&amp;gt;&lt;/span> Optional[ListNode]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dummyHead &lt;span style="color:#666">=&lt;/span> ListNode(&lt;span style="color:#40a070">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr &lt;span style="color:#666">=&lt;/span> dummyHead
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> carry &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> l1 &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span> &lt;span style="color:#007020;font-weight:bold">or&lt;/span> l2 &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span> &lt;span style="color:#007020;font-weight:bold">or&lt;/span> carry &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l1Val &lt;span style="color:#666">=&lt;/span> l1&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l1 &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l2Val &lt;span style="color:#666">=&lt;/span> l2&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l2 &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> columnSum &lt;span style="color:#666">=&lt;/span> l1Val &lt;span style="color:#666">+&lt;/span> l2Val &lt;span style="color:#666">+&lt;/span> carry
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> carry &lt;span style="color:#666">=&lt;/span> columnSum &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> newNode &lt;span style="color:#666">=&lt;/span> ListNode(columnSum &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#40a070">10&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> newNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr &lt;span style="color:#666">=&lt;/span> newNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l1 &lt;span style="color:#666">=&lt;/span> l1&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l1 &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l2 &lt;span style="color:#666">=&lt;/span> l2&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l2 &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> dummyHead&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>7. Reverse Integer</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/7/</link><pubDate>Tue, 01 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/7/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/reverse-integer/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.&lt;/p>
+&lt;p>Assume the environment does not allow you to store 64-bit integers (signed or unsigned).&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;p>Input: x = 123
+Output: 321&lt;/p>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;p>Input: x = -123
+Output: -321&lt;/p>
+&lt;p>&lt;strong>Example 3:&lt;/strong>&lt;/p>
+&lt;p>Input: x = 120
+Output: 21&lt;/p>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Convert number to int&lt;/li>
+&lt;li>Remove &lt;code>minus&lt;/code> if exist (or convert module of number)&lt;/li>
+&lt;li>reverse&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">reverse&lt;/span>(self, x: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reversed_int &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> str_int &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">str&lt;/span>(x)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> x &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> str_int &lt;span style="color:#666">=&lt;/span> str_int[&lt;span style="color:#40a070">1&lt;/span>:]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">reversed&lt;/span>(&lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(str_int))):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reversed_int&lt;span style="color:#666">.&lt;/span>append(str_int[i])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>&lt;span style="color:#666">.&lt;/span>join(reversed_int))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> x &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#666">-&lt;/span>res
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (res &lt;span style="color:#666">&amp;gt;=&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">2147483648&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> res &lt;span style="color:#666">&amp;lt;=&lt;/span> &lt;span style="color:#40a070">2147483647&lt;/span>) &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="better-solution">Better solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">reverse&lt;/span>(self, x: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">str&lt;/span>(&lt;span style="color:#007020">abs&lt;/span>(x))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rev &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(s[::&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> rev &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">2147483647&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> rev &lt;span style="color:#007020;font-weight:bold">if&lt;/span> x &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span> (rev &lt;span style="color:#666">*&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

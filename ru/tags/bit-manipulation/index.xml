@@ -1,28 +1,458 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Bit Manipulation on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/bit-manipulation/</link><description>Recent content in Bit Manipulation on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Wed, 21 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/bit-manipulation/index.xml" rel="self" type="application/rss+xml"/><item><title>29. Divide Two Integers</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/29/</link><pubDate>Sun, 20 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/29/</guid><description>LeetCode problem
-Given two integers dividend and divisor, divide two integers without using multiplication, division, and mod operator.
-The integer division should truncate toward zero, which means losing its fractional part. For example, 8.345 would be truncated to 8, and -2.7335 would be truncated to -2.
-Return the quotient after dividing dividend by divisor.
-Note: Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−231, 231 − 1]. For this problem, if the quotient is strictly greater than 231 - 1, then return 231 - 1, and if the quotient is strictly less than -231, then return -231.</description></item><item><title>33. Search in Rotated Sorted Array</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/33/</link><pubDate>Thu, 24 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/33/</guid><description>LeetCode problem
-There is an integer array nums sorted in ascending order (with distinct values).
-Prior to being passed to your function, nums is possibly rotated at an unknown pivot index k (1 &amp;lt;= k &amp;lt; nums.length) such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). For example, [0,1,2,4,5,6,7] might be rotated at pivot index 3 and become [4,5,6,7,0,1,2].
-Given the array nums after the possible rotation and an integer target, return the index of target if it is in nums, or -1 if it is not in nums.</description></item><item><title>34. Find First and Last Position of Element in Sorted Array</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/34/</link><pubDate>Fri, 25 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/34/</guid><description>LeetCode problem
-Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value.
-If target is not found in the array, return [-1, -1].
-You must write an algorithm with O(log n) runtime complexity.
-Example 1:
-Input: nums = [5,7,7,8,8,10], target = 8 Output: [3,4]
-Example 2:
-Input: nums = [5,7,7,8,8,10], target = 6 Output: [-1,-1]
-Example 3:
-Input: nums = [], target = 0 Output: [-1,-1]
-Code Idea:</description></item><item><title>78. Subsets</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/78/</link><pubDate>Sat, 04 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/78/</guid><description>LeetCode problem
-In this solution, we start with an empty list in the results array.
-For each element in the nums array, we append that element to all of the subsets in the results array to create new subsets, and then add these new subsets to the results array.
-By doing this for all elements in nums, we generate all possible subsets.
-class Solution: def subsets(self, nums: List[int]) -&amp;gt; List[List[int]]: res = [[]] for i in nums: for j in range(len(res)): cur = [] cur.</description></item><item><title>190. Reverse Bits</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/190/</link><pubDate>Sat, 17 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/190/</guid><description>LeetCode problem
-This task involves understanding how binary representation works. An unsigned integer is a 32-bit value, where each bit represents a power of 2, from 2^0 (the least significant bit) to 2^31 (the most significant bit).
-Unsigned Integers (often called &amp;ldquo;uints&amp;rdquo;) are just like integers (whole numbers) but have the property that they don&amp;rsquo;t have a + or - sign associated with them. Thus they are always non-negative (zero or positive).
-Naive Solution A naive solution to this problem could involve converting the number to a binary string, reversing the string, and then converting it back to an integer.</description></item><item><title>191. Number of 1 Bits</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/191/</link><pubDate>Wed, 21 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/191/</guid><description>LeetCode problem
-Problem Statement Given an integer value represented in binary format, we need to count the number of &amp;lsquo;1&amp;rsquo; bits in its binary representation.
-Naive Solution The naive solution for this problem would be to convert the binary number into a string and then simply iterate over the string and count the number of &amp;lsquo;1&amp;rsquo;s. However, this solution is not optimal and is not taking advantage of the properties of binary numbers.
-Algorithm The optimal solution for this problem involves using bitwise operation.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Bit Manipulation on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/bit-manipulation/</link><description>Recent content in Bit Manipulation on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Wed, 21 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/bit-manipulation/index.xml" rel="self" type="application/rss+xml"/><item><title>29. Divide Two Integers</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/29/</link><pubDate>Sun, 20 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/29/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/divide-two-integers/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given two integers &lt;code>dividend&lt;/code> and &lt;code>divisor&lt;/code>, divide two integers without using multiplication, division, and mod operator.&lt;/p>
+&lt;p>The integer division should truncate toward zero, which means losing its fractional part. For example, 8.345 would be truncated to &lt;code>8&lt;/code>, and &lt;code>-2.7335&lt;/code> would be truncated to &lt;code>-2&lt;/code>.&lt;/p>
+&lt;p>Return the quotient after dividing &lt;code>dividend&lt;/code> by &lt;code>divisor&lt;/code>.&lt;/p>
+&lt;p>Note: Assume we are dealing with an environment that could only store integers within the &lt;strong>32-bit&lt;/strong> signed integer range: &lt;code>[−231, 231 − 1]&lt;/code>. For this problem, if the quotient is strictly greater than &lt;code>231 - 1&lt;/code>, then return &lt;code>231 - 1&lt;/code>, and if the quotient is strictly less than -231, then return &lt;code>-231&lt;/code>.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;p>Input: dividend = 10, divisor = 3
+Output: 3
+Explanation: 10/3 = 3.33333.. which is truncated to 3.&lt;/p>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;p>Input: dividend = 7, divisor = -3
+Output: -2
+Explanation: 7/-3 = -2.33333.. which is truncated to -2.&lt;/p>
+&lt;h2 id="code">Code&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Remove decimals from both &lt;code>divisor&lt;/code> and &lt;code>divident&lt;/code>&lt;/li>
+&lt;li>Remember the result sign (&lt;code>positive&lt;/code> or &lt;code>&amp;lt; 0&lt;/code>)&lt;/li>
+&lt;li>Subtract &lt;code>divisor&lt;/code> from &lt;code>divident&lt;/code> until result is less or equal to zero.&lt;/li>
+&lt;/ol>
+&lt;p>Works but is too slow in case small number &lt;code>divisor&lt;/code> (&lt;em>1&lt;/em>) and greater number &lt;code>dividend&lt;/code> (&lt;em>-2147483648&lt;/em>):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">divide&lt;/span>(self, dividend: &lt;span style="color:#007020">int&lt;/span>, divisor: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dd &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(dividend)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ds &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(divisor)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sign &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (dividend &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> divisor &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>) &lt;span style="color:#007020;font-weight:bold">or&lt;/span> (dividend &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> divisor &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>) &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> dd &lt;span style="color:#666">&amp;gt;=&lt;/span> ds:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dd &lt;span style="color:#666">-=&lt;/span> ds
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> sign &lt;span style="color:#666">*&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Improve idea:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Sum &lt;code>divisor&lt;/code> after &amp;ldquo;success&amp;rdquo; subtract until result of subtract is &lt;code>&amp;gt; 0&lt;/code>&lt;/li>
+&lt;li>Subtract &lt;code>divisor&lt;/code> back until we can subtract it from &lt;code>dividend&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">divide&lt;/span>(self, dividend: &lt;span style="color:#007020">int&lt;/span>, divisor: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dd &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(dividend)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ds &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(divisor)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sign &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (dividend &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> divisor &lt;span style="color:#666">&amp;lt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#40a070">0&lt;/span>) &lt;span style="color:#007020;font-weight:bold">or&lt;/span> (dividend &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> divisor &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>) &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> divisor &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> dividend &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">2147483648&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">2147483647&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> divisor &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> sign &lt;span style="color:#666">*&lt;/span> dd
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> dd &lt;span style="color:#666">&amp;gt;=&lt;/span> ds:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tmp &lt;span style="color:#666">=&lt;/span> ds
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> multiples &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># count of subtracts&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> dd &lt;span style="color:#666">&amp;gt;=&lt;/span> tmp: &lt;span style="color:#60a0b0;font-style:italic">## sum divisor&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dd &lt;span style="color:#666">-=&lt;/span> tmp
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">+=&lt;/span> multiples &lt;span style="color:#60a0b0;font-style:italic"># hense sum count of subtracts&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tmp &lt;span style="color:#666">+=&lt;/span> tmp
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> multiples &lt;span style="color:#666">+=&lt;/span> multiples
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> dd &lt;span style="color:#666">&amp;gt;=&lt;/span> ds:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dd &lt;span style="color:#666">-=&lt;/span> ds
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> sign &lt;span style="color:#666">*&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="better-idea">Better idea&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong> &lt;a href="https://romankurnovskii.com/en/posts/python-bitwise-operators/">Bit manipulation&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">divide&lt;/span>(self, dividend, divisor):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> positive &lt;span style="color:#666">=&lt;/span> (dividend &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>) &lt;span style="color:#007020;font-weight:bold">is&lt;/span> (divisor &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dividend, divisor &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(dividend), &lt;span style="color:#007020">abs&lt;/span>(divisor)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> dividend &lt;span style="color:#666">&amp;gt;=&lt;/span> divisor:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr_divisor, num_divisors &lt;span style="color:#666">=&lt;/span> divisor, &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> dividend &lt;span style="color:#666">&amp;gt;=&lt;/span> curr_divisor:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dividend &lt;span style="color:#666">-=&lt;/span> curr_divisor
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">+=&lt;/span> num_divisors
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr_divisor &lt;span style="color:#666">=&lt;/span> curr_divisor &lt;span style="color:#666">&amp;lt;&amp;lt;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> num_divisors &lt;span style="color:#666">=&lt;/span> num_divisors &lt;span style="color:#666">&amp;lt;&amp;lt;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> positive:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#666">-&lt;/span>res
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020">min&lt;/span>(&lt;span style="color:#007020">max&lt;/span>(&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">2147483648&lt;/span>, res), &lt;span style="color:#40a070">2147483647&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Explanation:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://leetcode.com/problems/divide-two-integers/discuss/715094/Python-fast-code-with-detailed-explanation">https://leetcode.com/problems/divide-two-integers/discuss/715094/Python-fast-code-with-detailed-explanation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Another:&lt;/strong>&lt;/p>
+&lt;p>Time: $O(\log^2 n)$
+Space: $O(1)$&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">divide&lt;/span>(self, dividend: &lt;span style="color:#007020">int&lt;/span>, divisor: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> dividend &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">2&lt;/span>&lt;span style="color:#666">**&lt;/span>&lt;span style="color:#40a070">31&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> divisor &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">2&lt;/span>&lt;span style="color:#666">**&lt;/span>&lt;span style="color:#40a070">31&lt;/span> &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sign &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (dividend &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>) &lt;span style="color:#666">^&lt;/span> (divisor &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>) &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dvd &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(dividend)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dvs &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(divisor)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> dvd &lt;span style="color:#666">&amp;gt;=&lt;/span> dvs:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> k &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> k &lt;span style="color:#666">*&lt;/span> &lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">*&lt;/span> dvs &lt;span style="color:#666">&amp;lt;=&lt;/span> dvd:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> k &lt;span style="color:#666">&amp;lt;&amp;lt;=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dvd &lt;span style="color:#666">-=&lt;/span> k &lt;span style="color:#666">*&lt;/span> dvs
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">+=&lt;/span> k
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> sign &lt;span style="color:#666">*&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>33. Search in Rotated Sorted Array</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/33/</link><pubDate>Thu, 24 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/33/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/search-in-rotated-sorted-array/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>There is an integer array &lt;code>nums&lt;/code> sorted in ascending order (with &lt;strong>distinct&lt;/strong> values).&lt;/p>
+&lt;p>Prior to being passed to your function, nums is &lt;strong>possibly rotated&lt;/strong> at an unknown pivot index &lt;code>k&lt;/code> (&lt;code>1 &amp;lt;= k &amp;lt; nums.length&lt;/code>) such that the resulting array is &lt;code>[nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed)&lt;/code>. For example, &lt;code>[0,1,2,4,5,6,7]&lt;/code> might be rotated at pivot index &lt;code>3&lt;/code> and become &lt;code>[4,5,6,7,0,1,2]&lt;/code>.&lt;/p>
+&lt;p>Given the array &lt;code>nums&lt;/code> after the possible rotation and an integer target, return the index of target if it is in &lt;code>nums&lt;/code>, or &lt;code>-1&lt;/code> if it is not in &lt;code>nums&lt;/code>.&lt;/p>
+&lt;p>You must write an algorithm with &lt;code>O(log n)&lt;/code> runtime complexity.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;p>Input: nums = [4,5,6,7,0,1,2], target = 0
+Output: 4&lt;/p>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;p>Input: nums = [4,5,6,7,0,1,2], target = 3
+Output: -1&lt;/p>
+&lt;p>&lt;strong>Example 3:&lt;/strong>&lt;/p>
+&lt;p>Input: nums = [1], target = 0
+Output: -1&lt;/p>
+&lt;h2 id="code">Code&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;p>Values in the &lt;em>right&lt;/em> part of the array are &lt;strong>always lower&lt;/strong> than in the left part.&lt;/p>
+&lt;ol>
+&lt;li>Use binary search&lt;/li>
+&lt;li>Define where to move (left or right)&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">search&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>], target: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> left &lt;span style="color:#666">&amp;lt;=&lt;/span> right:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mid &lt;span style="color:#666">=&lt;/span> (left &lt;span style="color:#666">+&lt;/span> right) &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nums[mid] &lt;span style="color:#666">==&lt;/span> target:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> mid
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nums[left] &lt;span style="color:#666">&amp;lt;=&lt;/span> nums[mid]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nums[left] &lt;span style="color:#666">&amp;lt;=&lt;/span> target &lt;span style="color:#666">&amp;lt;&lt;/span> nums[mid]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#666">=&lt;/span> mid &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">=&lt;/span> mid &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nums[mid] &lt;span style="color:#666">&amp;lt;&lt;/span> target &lt;span style="color:#666">&amp;lt;=&lt;/span> nums[right]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">=&lt;/span> mid &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#666">=&lt;/span> mid &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>34. Find First and Last Position of Element in Sorted Array</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/34/</link><pubDate>Fri, 25 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/34/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given an array of integers &lt;code>nums&lt;/code> sorted in non-decreasing order, find the starting and ending position of a given &lt;code>target&lt;/code> value.&lt;/p>
+&lt;p>If &lt;code>target&lt;/code> is not found in the array, return &lt;code>[-1, -1]&lt;/code>.&lt;/p>
+&lt;p>You must write an algorithm with &lt;code>O(log n)&lt;/code> runtime complexity.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;p>Input: nums = [5,7,7,8,8,10], target = 8
+Output: [3,4]&lt;/p>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;p>Input: nums = [5,7,7,8,8,10], target = 6
+Output: [-1,-1]&lt;/p>
+&lt;p>&lt;strong>Example 3:&lt;/strong>&lt;/p>
+&lt;p>Input: nums = [], target = 0
+Output: [-1,-1]&lt;/p>
+&lt;h2 id="code">Code&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Find &lt;code>target&lt;/code> index (&lt;code>target_index&lt;/code>) using &lt;a href="https://romankurnovskii.com/en/tracks/algorithms-101/algorithms/#binary-search">Binary Search&lt;/a>
+&lt;ol>
+&lt;li>If &lt;strong>not exist&lt;/strong> then return &lt;code>[-1, -1]&lt;/code>&lt;/li>
+&lt;li>If &lt;strong>exist&lt;/strong> then goto step 2&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>We got the middle index. For now this is the &lt;em>most left&lt;/em> and &lt;em>most right&lt;/em> index.&lt;/li>
+&lt;li>Divide &lt;code>nums&lt;/code> into two arrays: &lt;code>left_nums&lt;/code> and &lt;code>right_nums&lt;/code>:
+&lt;ol>
+&lt;li>left_nums = nums[0:target_index]&lt;/li>
+&lt;li>right_nums = nums[target_index:]&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Find the &lt;em>most left&lt;/em> &lt;code>target&lt;/code> in &lt;code>left_nums&lt;/code>. (Set &lt;strong>right&lt;/strong> border in subarray)&lt;/li>
+&lt;li>Find the &lt;em>most right&lt;/em> &lt;code>target&lt;/code> in &lt;code>right_nums&lt;/code>. (Set &lt;strong>left&lt;/strong> border in subarray)&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">searchRange&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>], target: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[&lt;span style="color:#007020">int&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">find_target&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> left &lt;span style="color:#666">&amp;lt;=&lt;/span> right:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mid &lt;span style="color:#666">=&lt;/span> (left &lt;span style="color:#666">+&lt;/span> right) &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nums[mid] &lt;span style="color:#666">==&lt;/span> target:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> mid
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nums[mid] &lt;span style="color:#666">&amp;lt;&lt;/span> target:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">=&lt;/span> mid &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#666">=&lt;/span> mid &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">find_most_left&lt;/span>(right_idx):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">=&lt;/span> right_idx
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> l &lt;span style="color:#666">&amp;lt;=&lt;/span> r:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m &lt;span style="color:#666">=&lt;/span> (l &lt;span style="color:#666">+&lt;/span> r) &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nums[m] &lt;span style="color:#666">&amp;lt;&lt;/span> target:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l &lt;span style="color:#666">=&lt;/span> m &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">=&lt;/span> m &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> l
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">find_most_right&lt;/span>(left_idx):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l &lt;span style="color:#666">=&lt;/span> left_idx
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> l &lt;span style="color:#666">&amp;lt;=&lt;/span> r:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m &lt;span style="color:#666">=&lt;/span> (l &lt;span style="color:#666">+&lt;/span> r) &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nums[m] &lt;span style="color:#666">==&lt;/span> target: &lt;span style="color:#60a0b0;font-style:italic"># ex: [8, 8, 8, 9, 10]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l &lt;span style="color:#666">=&lt;/span> l &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic"># ex: [8, 8, 8, 9, 10]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">=&lt;/span> m &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> l &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> target_idx &lt;span style="color:#666">=&lt;/span> find_target()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> target_idx &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> [&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>,&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">=&lt;/span> find_most_left(target_idx)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#666">=&lt;/span> find_most_right(target_idx)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> [left, right]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="code-ver2">Code Ver2&lt;/h2>
+&lt;p>Use prebuilt Python functions:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.python.org/3/library/bisect.html#bisect.bisect_left">&lt;code>bisect_left&lt;/code>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.python.org/3/library/bisect.html#bisect.bisect_right">&lt;code>bisect_right&lt;/code>&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">searchRange&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>], target: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[&lt;span style="color:#007020">int&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l &lt;span style="color:#666">=&lt;/span> bisect_left(nums, target)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums) &lt;span style="color:#007020;font-weight:bold">or&lt;/span> nums[l] &lt;span style="color:#666">!=&lt;/span> target:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">=&lt;/span> bisect_right(nums, target) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> l, r
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>78. Subsets</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/78/</link><pubDate>Sat, 04 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/78/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/subsets/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>In this solution, we start with an empty list in the results array.&lt;/p>
+&lt;p>For each element in the &lt;code>nums&lt;/code> array, we append that element to all of the subsets in the results array to create new subsets, and then add these new subsets to the results array.&lt;/p>
+&lt;p>By doing this for all elements in &lt;code>nums&lt;/code>, we generate all possible subsets.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">subsets&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[List[&lt;span style="color:#007020">int&lt;/span>]]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> [[]]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> nums:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(res)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur&lt;span style="color:#666">.&lt;/span>append(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur&lt;span style="color:#666">.&lt;/span>extend(res[j])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#666">.&lt;/span>append(cur)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Approach 2:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">subsets&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[List[&lt;span style="color:#007020">int&lt;/span>]]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">dfs&lt;/span>(start: &lt;span style="color:#007020">int&lt;/span>, path: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#666">.&lt;/span>append(path)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(start, &lt;span style="color:#007020">len&lt;/span>(nums)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>, path &lt;span style="color:#666">+&lt;/span> [nums[i]])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(&lt;span style="color:#40a070">0&lt;/span>, [])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This is a recursive solution that uses a depth-first search (DFS) approach to generate all possible subsets of the input list &lt;code>nums&lt;/code>. The function takes two parameters &lt;code>start&lt;/code> and &lt;code>path&lt;/code>, where&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>start&lt;/code> represents the starting index of the current subset&lt;/li>
+&lt;li>&lt;code>path&lt;/code> represents the current subset being constructed.&lt;/li>
+&lt;/ul>
+&lt;p>The base case of the recursion is when &lt;code>start&lt;/code> is greater than or equal to the length of &lt;code>nums&lt;/code>, at which point the current path is added to the final result &lt;code>res&lt;/code>.&lt;/p>
+&lt;p>For each recursive call, the function iterates through the remaining elements of &lt;code>nums&lt;/code> starting at index &lt;code>start&lt;/code>, and appends each element to the &lt;code>path&lt;/code> list. Then, the function recursively calls itself with the next index &lt;code>i+1&lt;/code> as the new starting point for the next subset, and the updated &lt;code>path&lt;/code> list.&lt;/p>
+&lt;p>As the recursion returns, each subset is added to the &lt;code>res&lt;/code> list, and the &lt;code>path&lt;/code> list is updated by removing the last element that was added in the previous recursive call.&lt;/p>
+&lt;p>Finally, the function is initialized with an empty &lt;code>path&lt;/code> list and a starting index &lt;code>start&lt;/code> of &lt;code>0&lt;/code>, and the final &lt;code>res&lt;/code> list is returned after all subsets have been generated.&lt;/p>
+&lt;p>&lt;strong>LeetCode Editorial:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://leetcode.com/problems/subsets/editorial/">Editorial&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Approach 1: Cascading&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://leetcode.com/problems/subsets/Figures/78/recursion.png"
+id="zoom-default"
+alt="Cascading"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>Approach 2: Backtracking&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://leetcode.com/problems/subsets/Figures/78/combinations.png"
+id="zoom-default"
+alt="Backtracking"
+loading="lazy"
+/>
+&lt;/p>
+&lt;p class="md__image">
+&lt;img
+src="https://leetcode.com/problems/subsets/Figures/78/backtracking.png"
+id="zoom-default"
+alt="Backtracking"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>Approach 3: Lexicographic (Binary Sorted) Subsets
+&lt;p class="md__image">
+&lt;img
+src="https://leetcode.com/problems/subsets/Figures/78/bitmask4.png"
+id="zoom-default"
+alt="Lexicographic (Binary Sorted) Subsets"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/li>
+&lt;/ul></description></item><item><title>190. Reverse Bits</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/190/</link><pubDate>Sat, 17 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/190/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/reverse-bits/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>This task involves understanding how binary representation works. An unsigned integer is a 32-bit value, where each bit represents a power of 2, from &lt;code>2^0&lt;/code> (the least significant bit) to &lt;code>2^31&lt;/code> (the most significant bit).&lt;/p>
+&lt;blockquote>
+&lt;p>Unsigned Integers (often called &amp;ldquo;uints&amp;rdquo;) are just like integers (whole numbers) but have the property that they don&amp;rsquo;t have a + or - sign associated with them. Thus they are always non-negative (zero or positive).&lt;/p>&lt;/blockquote>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A naive solution to this problem could involve converting the number to a binary string, reversing the string, and then converting it back to an integer. However, this would not be the most efficient solution, especially for large numbers.&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>Using &lt;a href="https://romankurnovskii.com/en/posts/python-bitwise-operators/">bitwise operation&lt;/a>.&lt;/p>
+&lt;p>A better approach is to manipulate the bits of the number directly. This can be done by initializing an empty result and then repeatedly shifting the result to the left to make room for the next bit, and adding the last bit of the input number.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Initialize the result to 0.&lt;/li>
+&lt;li>Repeat the following steps 32 times, once for each bit in the input number:
+&lt;ol>
+&lt;li>Shift the result one bit to the left to make room for the next bit. This can be done with the &lt;code>&amp;lt;&amp;lt;&lt;/code> operator.&lt;/li>
+&lt;li>Add the last bit of the input number to the result. This can be done with the &lt;code>&amp;amp;&lt;/code> operator, which performs a bitwise &lt;code>AND&lt;/code> operation.&lt;/li>
+&lt;li>Shift the input number one bit to the right to prepare for the next iteration. This can be done with the &lt;code>&amp;gt;&amp;gt;&lt;/code> operator.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;p>At the end of this process, the result will be the input number with its bits reversed.&lt;/p>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">reverseBits&lt;/span>(self, n: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">32&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#666">=&lt;/span> (result &lt;span style="color:#666">&amp;lt;&amp;lt;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>) &lt;span style="color:#666">+&lt;/span> (n &lt;span style="color:#666">&amp;amp;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">&amp;gt;&amp;gt;=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> result
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>result &amp;lt;&amp;lt; 1&lt;/code> shifts the bits of the result one place to the left, (&lt;code>n &amp;amp; 1&lt;/code>) gets the last bit of &lt;code>n&lt;/code>, and &lt;code>n &amp;gt;&amp;gt;= 1&lt;/code> shifts the bits of &lt;code>n&lt;/code> one place to the right.&lt;/p>
+&lt;h3 id="understanding">Understanding&lt;/h3>
+&lt;p>&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;p>Our number: &lt;code>n = 0110 1010&lt;/code>&lt;/p>
+&lt;p>Our aim is to reverse these bits to get &lt;code>0101 0110&lt;/code>.&lt;/p>
+&lt;p>In the solution, we initialize our result as &lt;code>0&lt;/code> (&lt;code>0000 0000&lt;/code> in binary). We&amp;rsquo;re going to build this result bit by bit from the binary representation of &lt;code>n&lt;/code>.&lt;/p>
+&lt;p>The key point of this operation is this line of code: &lt;code>result = (result &amp;lt;&amp;lt; 1) + (n &amp;amp; 1)&lt;/code>. This line does three things:&lt;/p>
+&lt;ol>
+&lt;li>&lt;code>(result &amp;lt;&amp;lt; 1)&lt;/code>: This operation is a left shift operation. It shifts all the bits in result one place to the left. In binary, this is &lt;mark>equivalent to multiplying by 2&lt;/mark>. So if result was &lt;code>0101&lt;/code> (5 in decimal), after this operation result will be &lt;code>1010&lt;/code> (10 in decimal). You can see we&amp;rsquo;ve made room for a new bit on the right.&lt;/li>
+&lt;li>&lt;code>(n &amp;amp; 1)&lt;/code>: This operation is a bitwise &lt;code>AND&lt;/code> operation. The &lt;code>&amp;amp;&lt;/code> operator compares each binary digit of two integers and returns a new integer, with a &lt;code>1&lt;/code> wherever both numbers had a &lt;code>1&lt;/code> and a &lt;code>0&lt;/code> anywhere else.
+&lt;ul>
+&lt;li>When &lt;code>n&lt;/code> is ANDed with 1 (&lt;code>0000 0001&lt;/code>), the result will be 1 only if the least significant bit of &lt;code>n&lt;/code> is 1. This effectively gives us the last bit of &lt;code>n&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>(result &amp;lt;&amp;lt; 1) + (n &amp;amp; 1)&lt;/code>: This line combines the above two steps. It shifts the bits of result one place to the left and adds the last bit of n to result.&lt;/li>
+&lt;/ol>
+&lt;p>Let&amp;rsquo;s work through the first couple of iterations of the loop:&lt;/p>
+&lt;ol>
+&lt;li>On the first iteration, result is &lt;code>0000 0000&lt;/code>. We shift result left (it remains &lt;code>0000 0000&lt;/code>), and add the last bit of &lt;code>n&lt;/code> (which is 0). So result remains &lt;code>0000 0000&lt;/code>.
+&lt;ol>
+&lt;li>We then shift &lt;code>n&lt;/code> right to become &lt;code>0011 0101&lt;/code> (&lt;code>n&lt;/code> From &lt;code>0110 1010&lt;/code> to &lt;code>0011 0101&lt;/code>).&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>On the second iteration, result is &lt;code>0000 0000&lt;/code>. We shift result left (it remains &lt;code>0000 0000&lt;/code>), and add the last bit of &lt;code>n&lt;/code> (which is 1). So result becomes &lt;code>0000 0001&lt;/code>. We then shift &lt;code>n&lt;/code> right to become &lt;code>0001 1010&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;p>If we repeat this process 8 times (for an 8-bit number), or 32 times (for a 32-bit number like in the problem), result will be the binary number formed by reversing the bits of n.&lt;/p>
+&lt;h2 id="optimization">Optimization&lt;/h2>
+&lt;p>If this function is called many times, way to optimize it is to cache the results for each byte (8 bits) instead of each bit. This would divide the computation time by 8.&lt;/p></description></item><item><title>191. Number of 1 Bits</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/191/</link><pubDate>Wed, 21 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/191/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/number-of-1-bits/">LeetCode problem&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>Given an integer value represented in binary format, we need to count the number of &amp;lsquo;1&amp;rsquo; bits in its binary representation.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>The naive solution for this problem would be to convert the binary number into a string and then simply iterate over the string and count the number of &amp;lsquo;1&amp;rsquo;s. However, this solution is not optimal and is not taking advantage of the properties of binary numbers.&lt;/p>
+&lt;h2 id="algorithm">Algorithm&lt;/h2>
+&lt;p>The optimal solution for this problem involves using &lt;a href="https://romankurnovskii.com/en/posts/python-bitwise-operators/">&lt;mark>bitwise operation&lt;/mark>&lt;/a>. Bitwise operations are a type of operation that works on the binary representation of numbers.&lt;/p>
+&lt;p>Specifically, we&amp;rsquo;ll use the bitwise &lt;code>AND&lt;/code> operator (&lt;code>&amp;amp;&lt;/code>) and bitwise right shift operator (&lt;code>&amp;gt;&amp;gt;&lt;/code>).&lt;/p>
+&lt;p>To count the number of 1 bits in the binary representation of a number, we can &lt;code>AND&lt;/code> the number with 1. If the result is 1, that means the least significant bit of the number is 1. We then right shift the number by 1 bit to check the next bit. We continue this process until the number becomes 0.&lt;/p>
+&lt;h2 id="high-level-solution-logic">High Level Solution Logic&lt;/h2>
+&lt;ol>
+&lt;li>Initialize a counter variable to 0.&lt;/li>
+&lt;li>While the number is not 0:
+&lt;ul>
+&lt;li>AND the number with 1.&lt;/li>
+&lt;li>If the result is 1, increment the counter.&lt;/li>
+&lt;li>Right shift the number by 1 bit.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Return the counter.&lt;/li>
+&lt;/ol>
+&lt;h2 id="python-code">Python Code&lt;/h2>
+&lt;p>Here&amp;rsquo;s the Python code for this solution:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">hammingWeight&lt;/span>(self, n: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bits &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> n:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bits &lt;span style="color:#666">+=&lt;/span> n &lt;span style="color:#666">&amp;amp;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">&amp;gt;&amp;gt;=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> bits
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="example">Example&lt;/h2>
+&lt;p>Let&amp;rsquo;s say we have a binary number &lt;code>00000001011&lt;/code>, which is &lt;code>11&lt;/code> in decimal.&lt;/p>
+&lt;ol>
+&lt;li>Initialize a counter variable to 0. So, &lt;code>bits = 0&lt;/code>.&lt;/li>
+&lt;li>Start the loop. The number &lt;code>n&lt;/code> is &lt;strong>11&lt;/strong>, which is not &lt;strong>0&lt;/strong>, so we proceed.&lt;/li>
+&lt;li>We perform the operation &lt;code>n &amp;amp; 1&lt;/code>. In binary, &lt;code>1011 &amp;amp; 0001&lt;/code> equals &lt;code>0001&lt;/code>, which is 1 in decimal. This is because the bitwise &lt;code>AND&lt;/code> operation returns 1 only if both bits being compared are 1. So, since our least significant bit is 1, our &lt;code>AND&lt;/code> operation returns 1. We increment our counter bits by 1. Now &lt;code>bits = 1&lt;/code>.&lt;/li>
+&lt;li>We right shift our number by 1 bit using the operation &lt;code>n &amp;gt;&amp;gt;= 1&lt;/code>. This operation moves all the bits of the number one position to the right.
+&lt;ol>
+&lt;li>Our number &lt;code>1011&lt;/code> becomes 101 in binary or 5 in decimal.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Our updated number &lt;code>n&lt;/code> is 5, which is not 0, so we repeat the process.&lt;/li>
+&lt;li>Now, &lt;code>n &amp;amp; 1&lt;/code> is &lt;code>101 &amp;amp; 001&lt;/code> equals 001, which is 1 in decimal.
+&lt;ol>
+&lt;li>So, we increment our counter bits by 1.&lt;/li>
+&lt;li>Now bits = 2.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>We right shift our number by 1 bit. Our number 101 becomes 10 in binary or 2 in decimal.
+&lt;ol>
+&lt;li>Our updated number &lt;code>n&lt;/code> is 2, which is not 0, so we repeat the process.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Now, &lt;code>n &amp;amp; 1&lt;/code> is &lt;code>10 &amp;amp; 01&lt;/code> equals &lt;code>00&lt;/code>, which is 0 in decimal. So, we do not increment our counter bits.&lt;/li>
+&lt;li>We right shift our number by 1 bit. Our number 10 becomes 1 in binary.
+&lt;ol>
+&lt;li>Our updated number &lt;code>n&lt;/code> is 1, which is not 0, so we repeat the process.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Now, &lt;code>n &amp;amp; 1&lt;/code> is &lt;code>1 &amp;amp; 1&lt;/code> equals 1. So, we increment our counter bits by 1. &lt;code>Now bits = 3&lt;/code>.&lt;/li>
+&lt;li>We right shift our number by 1 bit. Our number 1 becomes 0 in binary.&lt;/li>
+&lt;li>Our updated number &lt;code>n&lt;/code> is 0, which stops the loop.&lt;/li>
+&lt;/ol></description></item></channel></rss>

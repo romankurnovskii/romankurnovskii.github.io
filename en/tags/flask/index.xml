@@ -1,7 +1,306 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Flask on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/flask/</link><description>Recent content in Flask on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Tue, 06 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/flask/index.xml" rel="self" type="application/rss+xml"/><item><title>Serverless: Flask+API Gateway+Lambda+MongoDB</title><link>https://romankurnovskii.com/en/posts/serverless-flask-lambda-api-gateway-mongodb/</link><pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/serverless-flask-lambda-api-gateway-mongodb/</guid><description>&amp;ldquo;mongodb&amp;rdquo; free tier vs &amp;ldquo;documentdb&amp;rdquo;
-Project structure - src - app.py - mongo.py - .env - requirements.txt - serverless.yml Sources
-Add AIM user Setup specific user for serverless deployment
-username: serverless-deployer
-aws aim documentation Set policy Create:
-ServerLessDeployerPolicyGroup ServerLessDeployerPolicy Policy:
-{ &amp;#34;Statement&amp;#34;: [ { &amp;#34;Action&amp;#34;: [ &amp;#34;apigateway:*&amp;#34;, &amp;#34;cloudformation:CancelUpdateStack&amp;#34;, &amp;#34;cloudformation:ContinueUpdateRollback&amp;#34;, &amp;#34;cloudformation:CreateChangeSet&amp;#34;, &amp;#34;cloudformation:CreateStack&amp;#34;, &amp;#34;cloudformation:CreateUploadBucket&amp;#34;, &amp;#34;cloudformation:DeleteStack&amp;#34;, &amp;#34;cloudformation:Describe*&amp;#34;, &amp;#34;cloudformation:EstimateTemplateCost&amp;#34;, &amp;#34;cloudformation:ExecuteChangeSet&amp;#34;, &amp;#34;cloudformation:Get*&amp;#34;, &amp;#34;cloudformation:List*&amp;#34;, &amp;#34;cloudformation:UpdateStack&amp;#34;, &amp;#34;cloudformation:UpdateTerminationProtection&amp;#34;, &amp;#34;cloudformation:ValidateTemplate&amp;#34;, &amp;#34;dynamodb:CreateTable&amp;#34;, &amp;#34;dynamodb:DeleteTable&amp;#34;, &amp;#34;dynamodb:DescribeTable&amp;#34;, &amp;#34;dynamodb:DescribeTimeToLive&amp;#34;, &amp;#34;dynamodb:UpdateTimeToLive&amp;#34;, &amp;#34;ec2:AttachInternetGateway&amp;#34;, &amp;#34;ec2:AuthorizeSecurityGroupIngress&amp;#34;, &amp;#34;ec2:CreateInternetGateway&amp;#34;, &amp;#34;ec2:CreateNetworkAcl&amp;#34;, &amp;#34;ec2:CreateNetworkAclEntry&amp;#34;, &amp;#34;ec2:CreateRouteTable&amp;#34;, &amp;#34;ec2:CreateSecurityGroup&amp;#34;, &amp;#34;ec2:CreateSubnet&amp;#34;, &amp;#34;ec2:CreateTags&amp;#34;, &amp;#34;ec2:CreateVpc&amp;#34;, &amp;#34;ec2:DeleteInternetGateway&amp;#34;, &amp;#34;ec2:DeleteNetworkAcl&amp;#34;, &amp;#34;ec2:DeleteNetworkAclEntry&amp;#34;, &amp;#34;ec2:DeleteRouteTable&amp;#34;, &amp;#34;ec2:DeleteSecurityGroup&amp;#34;, &amp;#34;ec2:DeleteSubnet&amp;#34;, &amp;#34;ec2:DeleteVpc&amp;#34;, &amp;#34;ec2:Describe*&amp;#34;, &amp;#34;ec2:DetachInternetGateway&amp;#34;, &amp;#34;ec2:ModifyVpcAttribute&amp;#34;, &amp;#34;events:DeleteRule&amp;#34;, &amp;#34;events:DescribeRule&amp;#34;, &amp;#34;events:ListRuleNamesByTarget&amp;#34;, &amp;#34;events:ListRules&amp;#34;, &amp;#34;events:ListTargetsByRule&amp;#34;, &amp;#34;events:PutRule&amp;#34;, &amp;#34;events:PutTargets&amp;#34;, &amp;#34;events:RemoveTargets&amp;#34;, &amp;#34;iam:AttachRolePolicy&amp;#34;, &amp;#34;iam:CreateRole&amp;#34;, &amp;#34;iam:DeleteRole&amp;#34;, &amp;#34;iam:DeleteRolePolicy&amp;#34;, &amp;#34;iam:DetachRolePolicy&amp;#34;, &amp;#34;iam:GetRole&amp;#34;, &amp;#34;iam:PassRole&amp;#34;, &amp;#34;iam:PutRolePolicy&amp;#34;, &amp;#34;iot:CreateTopicRule&amp;#34;, &amp;#34;iot:DeleteTopicRule&amp;#34;, &amp;#34;iot:DisableTopicRule&amp;#34;, &amp;#34;iot:EnableTopicRule&amp;#34;, &amp;#34;iot:ReplaceTopicRule&amp;#34;, &amp;#34;kinesis:CreateStream&amp;#34;, &amp;#34;kinesis:DeleteStream&amp;#34;, &amp;#34;kinesis:DescribeStream&amp;#34;, &amp;#34;lambda:*&amp;#34;, &amp;#34;logs:CreateLogDelivery&amp;#34;, &amp;#34;logs:CreateLogGroup&amp;#34;, &amp;#34;logs:DeleteLogGroup&amp;#34;, &amp;#34;logs:DescribeLogGroups&amp;#34;, &amp;#34;logs:DescribeLogStreams&amp;#34;, &amp;#34;logs:FilterLogEvents&amp;#34;, &amp;#34;logs:GetLogEvents&amp;#34;, &amp;#34;logs:PutSubscriptionFilter&amp;#34;, &amp;#34;s3:CreateBucket&amp;#34;, &amp;#34;s3:DeleteBucket&amp;#34;, &amp;#34;s3:DeleteBucketPolicy&amp;#34;, &amp;#34;s3:DeleteObject&amp;#34;, &amp;#34;s3:DeleteObjectVersion&amp;#34;, &amp;#34;s3:GetObject&amp;#34;, &amp;#34;s3:GetObjectVersion&amp;#34;, &amp;#34;s3:ListAllMyBuckets&amp;#34;, &amp;#34;s3:ListBucket&amp;#34;, &amp;#34;s3:PutBucketNotification&amp;#34;, &amp;#34;s3:PutBucketPolicy&amp;#34;, &amp;#34;s3:PutBucketTagging&amp;#34;, &amp;#34;s3:PutBucketWebsite&amp;#34;, &amp;#34;s3:PutEncryptionConfiguration&amp;#34;, &amp;#34;s3:PutObject&amp;#34;, &amp;#34;sns:CreateTopic&amp;#34;, &amp;#34;sns:DeleteTopic&amp;#34;, &amp;#34;sns:GetSubscriptionAttributes&amp;#34;, &amp;#34;sns:GetTopicAttributes&amp;#34;, &amp;#34;sns:ListSubscriptions&amp;#34;, &amp;#34;sns:ListSubscriptionsByTopic&amp;#34;, &amp;#34;sns:ListTopics&amp;#34;, &amp;#34;sns:SetSubscriptionAttributes&amp;#34;, &amp;#34;sns:SetTopicAttributes&amp;#34;, &amp;#34;sns:Subscribe&amp;#34;, &amp;#34;sns:Unsubscribe&amp;#34;, &amp;#34;states:CreateStateMachine&amp;#34;, &amp;#34;states:DeleteStateMachine&amp;#34; ], &amp;#34;Effect&amp;#34;: &amp;#34;Allow&amp;#34;, &amp;#34;Resource&amp;#34;: &amp;#34;*&amp;#34; } ], &amp;#34;Version&amp;#34;: &amp;#34;2012-10-17&amp;#34; } Create user copy the API Key &amp;amp; Secret</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Flask on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/flask/</link><description>Recent content in Flask on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Tue, 06 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/flask/index.xml" rel="self" type="application/rss+xml"/><item><title>Serverless: Flask+API Gateway+Lambda+MongoDB</title><link>https://romankurnovskii.com/en/posts/serverless-flask-lambda-api-gateway-mongodb/</link><pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/serverless-flask-lambda-api-gateway-mongodb/</guid><description>&lt;p>&amp;ldquo;mongodb&amp;rdquo; free tier vs &amp;ldquo;documentdb&amp;rdquo;&lt;/p>
+&lt;h2 id="project-structure">Project structure&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>- src
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - app.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - mongo.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>- .env
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>- requirements.txt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>- serverless.yml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://github.com/romankurnovskii/romankurnovskii.github.io/tree/main/content/posts/serverless-flask-lambda-api-gateway-mongodb/example">Sources&lt;/a>&lt;/p>
+&lt;h2 id="add-aim-user">Add AIM user&lt;/h2>
+&lt;p>Setup specific user for serverless deployment&lt;/p>
+&lt;p>&lt;strong>username&lt;/strong>: serverless-deployer&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://us-east-1.console.aws.amazon.com/iam/home#/users$new?step=details">aws aim&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.serverless.com/framework/docs/providers/aws/guide/credentials">documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="aws-aim-setup-user.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="set-policy">Set policy&lt;/h3>
+&lt;p>Create:&lt;/p>
+&lt;ol>
+&lt;li>ServerLessDeployerPolicyGroup&lt;/li>
+&lt;li>ServerLessDeployerPolicy&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Policy:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;Statement&amp;#34;&lt;/span>: [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;Action&amp;#34;&lt;/span>: [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;apigateway:*&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;cloudformation:CancelUpdateStack&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;cloudformation:ContinueUpdateRollback&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;cloudformation:CreateChangeSet&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;cloudformation:CreateStack&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;cloudformation:CreateUploadBucket&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;cloudformation:DeleteStack&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;cloudformation:Describe*&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;cloudformation:EstimateTemplateCost&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;cloudformation:ExecuteChangeSet&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;cloudformation:Get*&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;cloudformation:List*&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;cloudformation:UpdateStack&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;cloudformation:UpdateTerminationProtection&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;cloudformation:ValidateTemplate&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;dynamodb:CreateTable&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;dynamodb:DeleteTable&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;dynamodb:DescribeTable&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;dynamodb:DescribeTimeToLive&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;dynamodb:UpdateTimeToLive&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:AttachInternetGateway&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:AuthorizeSecurityGroupIngress&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:CreateInternetGateway&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:CreateNetworkAcl&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:CreateNetworkAclEntry&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:CreateRouteTable&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:CreateSecurityGroup&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:CreateSubnet&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:CreateTags&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:CreateVpc&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:DeleteInternetGateway&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:DeleteNetworkAcl&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:DeleteNetworkAclEntry&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:DeleteRouteTable&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:DeleteSecurityGroup&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:DeleteSubnet&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:DeleteVpc&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:Describe*&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:DetachInternetGateway&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:ModifyVpcAttribute&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;events:DeleteRule&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;events:DescribeRule&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;events:ListRuleNamesByTarget&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;events:ListRules&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;events:ListTargetsByRule&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;events:PutRule&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;events:PutTargets&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;events:RemoveTargets&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;iam:AttachRolePolicy&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;iam:CreateRole&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;iam:DeleteRole&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;iam:DeleteRolePolicy&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;iam:DetachRolePolicy&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;iam:GetRole&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;iam:PassRole&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;iam:PutRolePolicy&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;iot:CreateTopicRule&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;iot:DeleteTopicRule&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;iot:DisableTopicRule&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;iot:EnableTopicRule&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;iot:ReplaceTopicRule&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;kinesis:CreateStream&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;kinesis:DeleteStream&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;kinesis:DescribeStream&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;lambda:*&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;logs:CreateLogDelivery&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;logs:CreateLogGroup&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;logs:DeleteLogGroup&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;logs:DescribeLogGroups&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;logs:DescribeLogStreams&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;logs:FilterLogEvents&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;logs:GetLogEvents&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;logs:PutSubscriptionFilter&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:CreateBucket&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:DeleteBucket&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:DeleteBucketPolicy&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:DeleteObject&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:DeleteObjectVersion&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:GetObject&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:GetObjectVersion&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:ListAllMyBuckets&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:ListBucket&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:PutBucketNotification&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:PutBucketPolicy&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:PutBucketTagging&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:PutBucketWebsite&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:PutEncryptionConfiguration&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:PutObject&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;sns:CreateTopic&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;sns:DeleteTopic&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;sns:GetSubscriptionAttributes&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;sns:GetTopicAttributes&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;sns:ListSubscriptions&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;sns:ListSubscriptionsByTopic&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;sns:ListTopics&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;sns:SetSubscriptionAttributes&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;sns:SetTopicAttributes&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;sns:Subscribe&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;sns:Unsubscribe&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;states:CreateStateMachine&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;states:DeleteStateMachine&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;Effect&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;Allow&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;Resource&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;*&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;Version&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;2012-10-17&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="create-user">Create user&lt;/h3>
+&lt;p>copy the API Key &amp;amp; Secret&lt;/p>
+&lt;p>Need during setup aws cli/serverless&lt;/p>
+&lt;h2 id="create-serverlessyml">Create serverless.yml&lt;/h2>
+&lt;p>In the root folder create:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-yml" data-lang="yml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#062873;font-weight:bold">org&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>romankurnovskii&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">app&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>app-name&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">service&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>app-service-name&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">frameworkVersion&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#4070a0">&amp;#39;3&amp;#39;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">useDotenv&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#007020;font-weight:bold">true&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">custom&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">wsgi&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">app&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>src/app.app&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">packRequirements&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#007020;font-weight:bold">false&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">provider&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">name&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>aws&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">deploymentMethod&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>direct&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">region&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>eu-west-1&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">runtime&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>python3.9&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">architecture&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>arm64&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">versionFunctions&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#007020;font-weight:bold">false&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">memorySize&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#40a070">128&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">functions&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">api&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">handler&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>wsgi_handler.handler&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">events&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#062873;font-weight:bold">httpApi&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#4070a0">&amp;#39;*&amp;#39;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">environment&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">MONGO_CONNECTION_STRING&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>${env:MONGO_CONNECTION_STRING}&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">MONGO_COLLECTION_DB_NAME&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>${env:MONGO_COLLECTION_DB_NAME}&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">package&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">patterns&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#4070a0">&amp;#39;!.dynamodb/**&amp;#39;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#4070a0">&amp;#39;!.git/**&amp;#39;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#4070a0">&amp;#39;!.vscode/**&amp;#39;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#4070a0">&amp;#39;!.env&amp;#39;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#4070a0">&amp;#39;!node_modules/**&amp;#39;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#4070a0">&amp;#39;!tmp/**&amp;#39;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#4070a0">&amp;#39;!venv/**&amp;#39;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#4070a0">&amp;#39;!__pycache__/**&amp;#39;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">plugins&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- serverless-wsgi&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- serverless-python-requirements&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="create-flask-app">Create Flask app&lt;/h2>
+&lt;h3 id="prerequisites">Prerequisites&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>python -m venv ./venv
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">source&lt;/span> ./venv/bin/activate
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="app">App&lt;/h3>
+&lt;p>&lt;strong>src/app.py&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">flask&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> Flask, ObjectId, request, jsonify, make_response
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">flask_cors&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> CORS
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">json&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">src.mongo&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> my_db
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>users_collection &lt;span style="color:#666">=&lt;/span> my_db&lt;span style="color:#666">.&lt;/span>users
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app &lt;span style="color:#666">=&lt;/span> Flask(__name__)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cors &lt;span style="color:#666">=&lt;/span> CORS(app)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#555;font-weight:bold">@app.route&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;/&amp;#34;&lt;/span>, methods&lt;span style="color:#666">=&lt;/span>[&lt;span style="color:#4070a0">&amp;#39;GET&amp;#39;&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">get_user&lt;/span>(user_id):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> user_id &lt;span style="color:#666">=&lt;/span> request&lt;span style="color:#666">.&lt;/span>args&lt;span style="color:#666">.&lt;/span>get(&lt;span style="color:#4070a0">&amp;#39;id&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> user &lt;span style="color:#666">=&lt;/span> users_collection&lt;span style="color:#666">.&lt;/span>find_one({&lt;span style="color:#4070a0">&amp;#34;_id&amp;#34;&lt;/span>: ObjectId(user_id)})
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> user:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> jsonify({&lt;span style="color:#4070a0">&amp;#39;error&amp;#39;&lt;/span>: &lt;span style="color:#4070a0">&amp;#39;data not found&amp;#39;&lt;/span>}), &lt;span style="color:#40a070">404&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> jsonify({&lt;span style="color:#4070a0">&amp;#39;user&amp;#39;&lt;/span>: user})
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#555;font-weight:bold">@app.route&lt;/span>(&lt;span style="color:#4070a0">&amp;#39;/&amp;#39;&lt;/span>, methods&lt;span style="color:#666">=&lt;/span>[&lt;span style="color:#4070a0">&amp;#39;PUT&amp;#39;&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">create_record&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> record &lt;span style="color:#666">=&lt;/span> json&lt;span style="color:#666">.&lt;/span>loads(request&lt;span style="color:#666">.&lt;/span>data)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> user_id &lt;span style="color:#666">=&lt;/span> record&lt;span style="color:#666">.&lt;/span>get(&lt;span style="color:#4070a0">&amp;#39;user_id&amp;#39;&lt;/span>, &lt;span style="color:#007020;font-weight:bold">None&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> users_collection&lt;span style="color:#666">.&lt;/span>update_one({&lt;span style="color:#4070a0">&amp;#34;_id&amp;#34;&lt;/span>: ObjectId(user_id)}, record)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#555;font-weight:bold">@app.route&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;/&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">hello&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> jsonify(message&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#39;Hello!&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#555;font-weight:bold">@app.errorhandler&lt;/span>(&lt;span style="color:#40a070">404&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">resource_not_found&lt;/span>(e):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> make_response(jsonify(error&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#39;Not found!&amp;#39;&lt;/span>), &lt;span style="color:#40a070">404&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">internal_server_error&lt;/span>(e):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#4070a0">&amp;#39;error&amp;#39;&lt;/span>, &lt;span style="color:#40a070">500&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app&lt;span style="color:#666">.&lt;/span>register_error_handler(&lt;span style="color:#40a070">500&lt;/span>, internal_server_error)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>src/mongo.py&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">os&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">pymongo&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> MongoClient
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MONGO_CONNECTION_STRING &lt;span style="color:#666">=&lt;/span> os&lt;span style="color:#666">.&lt;/span>environ&lt;span style="color:#666">.&lt;/span>get(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;MONGO_CONNECTION_STRING&amp;#34;&lt;/span>, default&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;mongodb://localhost:27017/&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MONGO_COLLECTION_DB_NAME &lt;span style="color:#666">=&lt;/span> os&lt;span style="color:#666">.&lt;/span>environ&lt;span style="color:#666">.&lt;/span>get(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;MONGO_COLLECTION_DB_NAME&amp;#34;&lt;/span>, default&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;test-mydb&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>db_client &lt;span style="color:#666">=&lt;/span> MongoClient(MONGO_CONNECTION_STRING)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>my_db &lt;span style="color:#666">=&lt;/span> db_client[MONGO_COLLECTION_DB_NAME]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>.env&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>MONGO_CONNECTION_STRING=mongodb+srv://login:password@cluster0.XXXXX.mongodb.net/mydb?retryWrites=true&amp;amp;w=majority
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MONGO_COLLECTION_DB_NAME=mydb
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>src/requirements.txt&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>certifi==2022.6.15
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>charset-normalizer==2.1.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>click==7.1.2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dnspython==2.2.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ecdsa==0.18.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Flask==1.1.4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Flask-Cors==3.0.10
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>idna==3.3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>importlib-metadata==4.12.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>itsdangerous==1.1.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Jinja2==2.11.3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>jmespath==1.0.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MarkupSafe==2.0.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pyasn1==0.4.8
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pymongo==4.2.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python-dateutil==2.8.2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python-dotenv==0.20.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>requests==2.28.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rsa==4.9
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>six==1.16.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>urllib3==1.26.12
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Werkzeug==1.0.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>zipp==3.8.1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="deployment">Deployment&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>serverless login
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>install dependencies with:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>npm install
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>and&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>pip install -r requirements.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>and then perform deployment with:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>serverless deploy
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>After running deploy, you should see output similar to:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Deploying app-service-name to stage dev &lt;span style="color:#666">(&lt;/span>eu-west-1&lt;span style="color:#666">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>✔ Service deployed to stack app-service-name &lt;span style="color:#666">(&lt;/span>182s&lt;span style="color:#666">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="local-development">Local development&lt;/h3>
+&lt;p>Thanks to capabilities of &lt;code>serverless-wsgi&lt;/code>, it is also possible to run your application locally, however, in order to do that, you will need to first install &lt;code>werkzeug&lt;/code> dependency, as well as all other dependencies listed in &lt;code>requirements.txt&lt;/code>. It is recommended to use a dedicated virtual environment for that purpose. You can install all needed dependencies with the following commands:&lt;/p>
+&lt;p>Already in requirements.txt:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>pip install werkzeug
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pip install -r requirements.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>At this point, you can run your application locally with the following command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>serverless wsgi serve
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For additional local development capabilities of &lt;code>serverless-wsgi&lt;/code> plugin, please refer to corresponding &lt;a href="https://github.com/logandk/serverless-wsgi">GitHub repository&lt;/a>.&lt;/p></description></item></channel></rss>

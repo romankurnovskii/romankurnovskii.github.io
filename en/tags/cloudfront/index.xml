@@ -1,4 +1,118 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CloudFront on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/cloudfront/</link><description>Recent content in CloudFront on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Tue, 13 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/cloudfront/index.xml" rel="self" type="application/rss+xml"/><item><title>CloudFront</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudfront/</link><pubDate>Tue, 13 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudfront/</guid><description>About Securely deliver data, videos, applic­ations, and APIs to customers globally with low latency, and high transfer speeds
-CloudFront is a distributed content delivery network (CDN) that enables easy delivery of web content to end users from a pool of web servers around the globe
-Documentation User Guide CloudFront is a global service:
-Ingress to upload objects. Egress to distribute content. Terminology Edge Location: The location where content is cached to be accessed by users. These are READ/WRITE. CDN: A collection of Edge Locations that can distribute content around the world.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CloudFront on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/cloudfront/</link><description>Recent content in CloudFront on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Tue, 13 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/cloudfront/index.xml" rel="self" type="application/rss+xml"/><item><title>CloudFront</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudfront/</link><pubDate>Tue, 13 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudfront/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>Securely deliver data, videos, applic­ations, and APIs to customers globally with low latency, and high transfer speeds&lt;/p>
+&lt;p>CloudFront is a distributed content delivery network (CDN) that enables easy delivery of web content to end users from a pool of web servers around the globe&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/cloudfront/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/cloudfront/?id=docs_gateway">User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/products/cloudfront/product-page-diagram_CloudFront_HIW.475cd71e52ebbb9acbe55fd1b242c75ebb619a2e.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;strong>CloudFront is a global service:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Ingress to upload objects.&lt;/li>
+&lt;li>Egress to distribute content.&lt;/li>
+&lt;/ul>
+&lt;h3 id="terminology">Terminology&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Edge Location:&lt;/strong> The location where content is cached to be accessed by users. These are READ/WRITE.&lt;/li>
+&lt;li>&lt;strong>CDN:&lt;/strong> A collection of Edge Locations that can distribute content around the world.&lt;/li>
+&lt;li>&lt;strong>Origin:&lt;/strong> The origin of all files the CDN will distribute. E.g.
+&lt;ul>
+&lt;li>an S3 bucket hosting some images, or hosting a static website&lt;/li>
+&lt;li>an EC2 instance running a website with dynamic content&lt;/li>
+&lt;li>an ELB pointing to several EC2 instances&lt;/li>
+&lt;li>a DNS endpoint using Route53&lt;/li>
+&lt;li>any origin server, even non-AWS&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Distribution&lt;/strong>: The name of the CDN.
+&lt;ul>
+&lt;li>&lt;strong>Web Distribution&lt;/strong>: Used for delivering content over HTTP/HTTPS. Can be either an S3 bucket or a web server (EC2/non-AWS). Cannot serve multimedia content.&lt;/li>
+&lt;li>&lt;strong>RTMP Distribution&lt;/strong>: Uses RTMP for media streaming and flash multimedia content. Probably what Netflix uses.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="price">Price&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/cloudfront/pricing/">Current price&lt;/a>&lt;/p>
+&lt;p>There is an option for reserved capacity over 12 months or longer (starts at 10TB of data transfer in a single region).&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Pay&lt;/th>
+&lt;th>do not pay&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Data Transfer Out to Internet&lt;/td>
+&lt;td>Data transfer between AWS regions and CloudFront.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Data Transfer Out to Origin&lt;/td>
+&lt;td>Regional edge cache.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Number of HTTP/HTTPS Requests&lt;/td>
+&lt;td>AWS ACM SSL/TLS certificates.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Invalidation Requests&lt;/td>
+&lt;td>Shared CloudFront certificates.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Dedicated IP Custom SSL&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Field level encryption requests&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="use-cases">Use Cases&lt;/h2>
+&lt;p>Type: Content delivery networks&lt;/p>
+&lt;h2 id="practice">Practice&lt;/h2>
+&lt;p>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudfront/configuring-static-website-s3-and-cloudfront/">Configuring a Static Website With S3 And CloudFront&lt;/a>&lt;/p>
+&lt;h2 id="questions">Questions&lt;/h2>
+&lt;h3 id="q1">Q1&lt;/h3>
+&lt;p>&lt;strong>A company with global users is using a content delivery network service to ensure low latency for all customers. The company has several applications that require similar cache behavior.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which API command can a developer use to ensure cache storage consistency with minimal duplication?&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>A) CreateReusableDelegationSet with Route 53&lt;/li>
+&lt;li>B) CreateStackSet with CloudFormation&lt;/li>
+&lt;li>C) CreateGlobalReplicationGroup with ElastiCache&lt;/li>
+&lt;li>D) CreateCachePolicy with CloudFront&lt;/li>
+&lt;/ul>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateCachePolicy.html">https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateCachePolicy.html&lt;/a>&lt;/p>
+&lt;p>&lt;mark style="color:white">D&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q2">Q2&lt;/h3>
+&lt;p>&lt;strong>A developer is designing a web application that allows the users to post comments and receive in a real-time feedback.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which architectures meet these requirements? (Select TWO.)&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Create an AWS AppSync schema and corresponding APIs. Use an &lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/dynamodb/">Amazon DynamoDB&lt;/a> table as the data store.&lt;/li>
+&lt;li>Create a WebSocket API in Amazon API Gateway. Use an &lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/lambda/">AWS Lambda&lt;/a> function as the backend and an &lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/dynamodb/">Amazon DynamoDB&lt;/a> table as the data store&lt;/li>
+&lt;li>Create an AWS Elastic Beanstalk application backed by an Amazon RDS database. Configure the application to allow long-lived TCP/IP sockets.&lt;/li>
+&lt;li>Create a GraphQL endpoint in Amazon API Gateway. Use an &lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/dynamodb/">Amazon DynamoDB&lt;/a> table as the data store.&lt;/li>
+&lt;li>Enable WebSocket on Amazon CloudFront. Use an &lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/lambda/">AWS Lambda&lt;/a> function as the origin and an Amazon Aurora DB cluster as the data store&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="https://aws.amazon.com/appsync/">AWS AppSync&lt;/a> simplifies application development by letting users create a flexible API to securely access, manipulate, and combine data from one or more data sources. AWS AppSync is a managed service that uses GraphQL to make it easy for applications to get the exact data they need.&lt;/p>
+&lt;p>AWS AppSync allows users to build scalable applications, including those requiring &lt;a href="https://docs.aws.amazon.com/appsync/latest/devguide/real-time-data.html">real-time updates&lt;/a>, on a range of data sources, including Amazon DynamoDB. In &lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/api-gateway/">Amazon API Gateway&lt;/a>, users can &lt;a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html">create a WebSocket API&lt;/a> as a stateful frontend for an AWS service (such as &lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/lambda/">AWS Lambda&lt;/a> or DynamoDB) or for an HTTP endpoint.&lt;/p>
+&lt;p>The WebSocket API invokes the backend based on the content of the messages it receives from client applications. Unlike a REST API, which receives and responds to requests, a WebSocket API supports two-way communication between client applications and the backend.&lt;/p>
+&lt;p>&lt;mark style="color:white">1, 2&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details></description></item></channel></rss>

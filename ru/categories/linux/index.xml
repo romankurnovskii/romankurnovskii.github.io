@@ -1,6 +1,469 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/categories/linux/</link><description>Recent content in Linux on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Thu, 23 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/categories/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Установка Ubuntu Desktop 22.10 (Kinetic Kudu) на ARM CPU</title><link>https://romankurnovskii.com/ru/posts/howto-install-ubuntu-desktop-on-arm/</link><pubDate>Thu, 23 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/howto-install-ubuntu-desktop-on-arm/</guid><description>Ubuntu - одна из популярных Linux систем и достаточно много обзоров по установке Ubuntu. В этой статье мы будем устанавливать образ Ubuntu для ARM процессора на виртуальную машину UTM. Вся установка будет проходить на Mac OS.
-Загрузка установочного образа На сайте Ubuntu доступен для скачивания только образ Ubuntu Server ARM версии 22.04 - без графического интерфейса. Но можно скачать обновленный релиз Ubuntu Desktop для ARM - Daily Build по ссылке.
-Находим 64-bit ARM (ARMv8/AArch64) desktop image и скачиваем Виртуальная машина В качестве виртуальной машины для установки RHEL 9 использую бесплатную виртуальную машину UTM.</description></item><item><title>Установка Linux RHEL 9</title><link>https://romankurnovskii.com/ru/posts/howto-install-rhel-9-free/</link><pubDate>Fri, 17 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/howto-install-rhel-9-free/</guid><description>Red Hat Enterprise Linux 9 (RHEL 9) под кодовым названием Plow стал общедоступным (GA). Компания Red Hat объявила об этом 18 мая 2022 года. Она сменила бета-версию, которая существовала с 3 ноября 2021 года.
-RHEL 9 - это несколько первых релизов в семействе Red Hat. Это первый крупный релиз после приобретения Red Hat компанией IBM в июле 2019 года, а также первая крупная версия после отказа от проекта CentOS в пользу CentOS Stream, который теперь является предшественником RHEL.</description></item><item><title>Шпаргалка tar архиватор</title><link>https://romankurnovskii.com/ru/posts/cheat-sheet-command-tar/</link><pubDate>Sun, 05 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/cheat-sheet-command-tar/</guid><description>Кратко Создать:
-tar cf archive.tar directory Распаковать:
-tar xf archive.tar Создание mkdir my_dir # Создаем папку tar cf dir_archive.tar my_dir # Создаем архив с папкой ll # Проверяем содержимое текущего каталога # -rw-r--r-- 1 r staff 1.5K Jun 4 14:42 dir_archive.tar # drwxr-xr-x 2 r staff 64B Jun 4 14:42 my_dir Распаковка tar xf dir_archive.tar Сжатие tar czf dir_archive.tar.gz dir_archive.tar Распаковка сжатого файла tar xzf dir_archive.tar.gz Сжатие с помощью bzip2 tar cjf dir_archive.tar.bz2 my_dir Распаковка с помощью bzip2 tar xjf dir_archive.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/categories/linux/</link><description>Recent content in Linux on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 23 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/categories/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Установка Ubuntu Desktop 22.10 (Kinetic Kudu) на ARM CPU</title><link>https://romankurnovskii.com/ru/posts/howto-install-ubuntu-desktop-on-arm/</link><pubDate>Thu, 23 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/howto-install-ubuntu-desktop-on-arm/</guid><description>&lt;p>Ubuntu - одна из популярных Linux систем и достаточно много &lt;a href="https://mac.getutm.app/gallery/ubuntu-20-04">обзоров по установке Ubuntu&lt;/a>. В этой статье мы будем устанавливать образ Ubuntu для &lt;strong>ARM процессора&lt;/strong> на виртуальную машину UTM. Вся установка будет проходить на Mac OS.&lt;/p>
+&lt;h3 id="загрузка-установочного-образа">Загрузка установочного образа&lt;/h3>
+&lt;p>На сайте Ubuntu доступен для скачивания только образ &lt;a href="https://ubuntu.com/download/server/arm">Ubuntu Server ARM&lt;/a> версии &lt;strong>22.04&lt;/strong> - без графического интерфейса. Но можно скачать обновленный релиз Ubuntu Desktop для ARM - Daily Build по &lt;a href="https://cdimage.ubuntu.com/daily-live/current/">ссылке&lt;/a>.&lt;/p>
+&lt;p>Находим &lt;em>64-bit ARM (ARMv8/AArch64) desktop image&lt;/em> и скачиваем
+&lt;p class="md__image">
+&lt;img
+src="img/01-ubuntu-kinetic.png"
+id="zoom-default"
+alt="ARMv8/AArch64"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="виртуальная-машина">Виртуальная машина&lt;/h3>
+&lt;p>В качестве виртуальной машины для установки RHEL 9 использую бесплатную &lt;a href="https://mac.getutm.app/">виртуальную машину UTM&lt;/a>. Установить можно с помощью &lt;a href="../mac-setup-development/#homebrew">Homebrew&lt;/a>, выполнив команду &lt;code>brew install --cask utm&lt;/code>.&lt;/p>
+&lt;h2 id="установка-ubuntu-desktop">Установка Ubuntu Desktop&lt;/h2>
+&lt;h3 id="настройка-виртуальной-машины-utm">Настройка виртуальной машины UTM&lt;/h3>
+&lt;p>В UTM нажимаем &lt;code>Create a New Virtual Machine&lt;/code> -&amp;gt; Virtualize
+&lt;p class="md__image">
+&lt;img
+src="img/02.png"
+id="zoom-default"
+alt="Настройка виртуальной машины UTM"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Выбираем скачанный образ и нажимаем &lt;code>Continue&lt;/code>, далее оставляем опции по умолчанию
+&lt;p class="md__image">
+&lt;img
+src="img/03.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="запуск-live-версии">Запуск Live версии&lt;/h3>
+&lt;p>Выбираем &lt;em>Try or Install Ubuntu&lt;/em>. Запустится live образ Ubuntu. Такой образ не сохраняет свое состояние после перезагрузки.
+&lt;p class="md__image">
+&lt;img
+src="img/04.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Входим под пользователем ubuntu:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/05.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Видим рабочий стол и можем пользоваться.&lt;/p>
+&lt;h3 id="установка">Установка&lt;/h3>
+&lt;p>Внизу справа есть ярлык для стандартной установки Ubuntu. Нажимаем и запускаем обычную установку на диск.
+&lt;p class="md__image">
+&lt;img
+src="img/06.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Выбираем нужный язык
+&lt;p class="md__image">
+&lt;img
+src="img/07.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Я выбираю минимальную установку, т.к. мне не нужны будут предустановленные игры и прочие приложения. Графический интерфейс, браузер, терминал остается со всеми базовыми настройками.
+&lt;p class="md__image">
+&lt;img
+src="img/08.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Оставляем по умолчанию стирание виртуального диска перед установкой
+&lt;p class="md__image">
+&lt;img
+src="img/09.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Создаем пользователя, под которым будем входить в систему.
+&lt;p class="md__image">
+&lt;img
+src="img/10.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Как только установка закончится, нажимаем &lt;em>Restart&lt;/em>.
+&lt;p class="md__image">
+&lt;img
+src="img/11.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+У меня после перезагрузки черный экран. Поэтому я просто закрываю и снова запускаю вирутальную машину.&lt;/p>
+&lt;h3 id="вход-в-систему">Вход в систему&lt;/h3>
+&lt;p>После запуска системы выбираем *Boot from next volume. Первым по умолчанию будет запуск с вирутального образа, но у нас уже есть система на диске, поэтому выбираем запуск со следующего по очереди диска.
+&lt;p class="md__image">
+&lt;img
+src="img/12.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Входим под своим пользователем
+&lt;p class="md__image">
+&lt;img
+src="img/13.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Система предлагает скачать обновления для системы. Нажимаю установить.
+&lt;p class="md__image">
+&lt;img
+src="img/14.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Теперь можно пользоваться системой и все данные будут сохраняться после перезагрузки.
+&lt;p class="md__image">
+&lt;img
+src="img/15.png"
+id="zoom-default"
+alt="Kinetic Kudu 22.10"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="ссылки">Ссылки&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://discourse.ubuntu.com/t/kinetic-kudu-release-schedule/27263">Kinetic Kudu Release Schedule&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://cdimage.ubuntu.com/daily-live/current/">Daily Builds&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Установка Linux RHEL 9</title><link>https://romankurnovskii.com/ru/posts/howto-install-rhel-9-free/</link><pubDate>Fri, 17 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/howto-install-rhel-9-free/</guid><description>&lt;p>Red Hat Enterprise Linux 9 (RHEL 9) под кодовым названием Plow стал общедоступным (GA). Компания Red Hat объявила об этом 18 мая 2022 года. Она сменила бета-версию, которая существовала с 3 ноября 2021 года.&lt;/p>
+&lt;p>RHEL 9 - это несколько первых релизов в семействе Red Hat. Это первый крупный релиз после приобретения Red Hat компанией IBM в июле 2019 года, а также первая крупная версия после отказа от проекта CentOS в пользу CentOS Stream, который теперь является предшественником RHEL.&lt;/p>
+&lt;p>RHEL 9 является последней основной версией RHEL и поставляется с ядром 5.14, множеством новых пакетов программного обеспечения и массой усовершенствований. В ней особое внимание уделяется безопасности, стабильности, гибкости и надежности.&lt;/p>
+&lt;h2 id="описание">Описание&lt;/h2>
+&lt;p>RHEL 9 поставляется с новыми версиями программного обеспечения, включая Python 3.9. Node.JS 16, GCC 11, Perl 5.32, Ruby 3.0, PHP 8.0 и многие другие.&lt;/p>
+&lt;h2 id="подготовка-к-установке">Подготовка к установке&lt;/h2>
+&lt;h3 id="регистрация-на-портале-red-hat">Регистрация на портале Red Hat&lt;/h3>
+&lt;p>Подписка Red Hat Developer Subscription - это бесплатное предложение программы Red Hat Developer, предназначенное для индивидуальных разработчиков, которые хотят воспользоваться всеми преимуществами Red Hat Enterprise Linux.&lt;/p>
+&lt;p>Она дает разработчикам доступ ко всем версиям Red Hat Enterprise Linux, а также к другим продуктам Red Hat, таким как дополнения, обновления программного обеспечения и ошибки безопасности.&lt;/p>
+&lt;p>Прежде всего, убедитесь, что у вас есть активная учетная запись Red Hat. Если у вас еще нет учетной записи, перейдите на портал &lt;a href="https://access.redhat.com/">Red Hat Customer Portal&lt;/a>, нажмите на кнопку &amp;ldquo;Регистрация&amp;rdquo; и заполните свои данные для создания учетной записи Red Hat.
+&lt;p class="md__image">
+&lt;img
+src="img/01.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="загрузка-установочного-образа">Загрузка установочного образа&lt;/h3>
+&lt;p>После создания учетной записи Red Hat вы можете приступать к загрузке RHEL 9. Чтобы загрузить Red Hat Enterprise Linux 9 &lt;strong>абсолютно бесплатно&lt;/strong>, зайдите на &lt;a href="https://developers.redhat.com/products/rhel/overview">Red Hat Developer Portal&lt;/a> и войдите в систему, используя учетные данные своей учетной записи.
+&lt;p class="md__image">
+&lt;img
+src="img/01-01.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Затем перейдите на страницу &lt;a href="https://developers.redhat.com/products/rhel/download">загрузки RHEL 9&lt;/a> и нажмите на кнопку загрузки, показанную ниже.&lt;/p>
+&lt;p>Я использую MacBook M1, поэтому скачиваю образ RHEL 9 для M1 процессора aarch64
+&lt;p class="md__image">
+&lt;img
+src="img/01-02.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="виртуальная-машина">Виртуальная машина&lt;/h3>
+&lt;p>В качестве вирутальной машины для установки RHEL 9 использую бесплатную &lt;a href="https://mac.getutm.app/">виртуальную машину UTM&lt;/a>. Установить можно с помощью &lt;a href="../mac-setup-development/#homebrew">Homebrew&lt;/a>, выполнив команду &lt;code>brew install --cask utm&lt;/code>.&lt;/p>
+&lt;h2 id="установка-red-hat-enterprise-linux-9">Установка Red Hat Enterprise Linux 9&lt;/h2>
+&lt;h3 id="настройка-виртуальной-машины-utm">Настройка виртуальной машины UTM&lt;/h3>
+&lt;p>В UTM нажимаем &lt;code>Create a New Virtual Machine&lt;/code> -&amp;gt; Virtualize
+&lt;p class="md__image">
+&lt;img
+src="img/02-02.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Выбираем скачанный образ RHEL 9 и нажимаем &lt;code>Continue&lt;/code>
+&lt;p class="md__image">
+&lt;img
+src="img/02-01.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="главное-меню">Главное меню&lt;/h3>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/02.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Помеченные поля необходимо заполнить&lt;/p>
+&lt;p>Создаем Root Password
+&lt;p class="md__image">
+&lt;img
+src="img/03.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;strong>User Creation&lt;/strong>. Создаем пользователя, под которым будет осуществляться вход в систему.
+&lt;p class="md__image">
+&lt;img
+src="img/04.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;strong>Connect to Red Hat&lt;/strong>. Здесь используем учетную запись, созданную выше.&lt;/p>
+&lt;p>Вводим данные аккаунта, нажимаем Register
+&lt;p class="md__image">
+&lt;img
+src="img/06.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Нажимаем Done&lt;/p>
+&lt;p>В разделе &lt;strong>Installation Destination&lt;/strong> выбираем диск по умолчанию&lt;/p>
+&lt;p>Теперь можем продолижть установку. На главном экране появилась кнопка &lt;em>&lt;strong>Begin installation&lt;/strong>&lt;/em>&lt;br>
+&lt;p class="md__image">
+&lt;img
+src="img/05.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>После завершения установки перезагружаем систему.
+&lt;p class="md__image">
+&lt;img
+src="img/02-03.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Иногда после перезагрузки запускается загрузка с установочного образа опять. Неоьбходимо либо отключить диск в настройка вирутальной машины либо перезагрузить UTM.&lt;/p>
+&lt;h2 id="запуск-red-hat-enterprise-linux-9">Запуск Red Hat Enterprise Linux 9&lt;/h2>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/07.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Вводим пароль и видим рабочий стол RHEL 9
+&lt;p class="md__image">
+&lt;img
+src="img/07-01.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Для доступа к приложениям нажимаем кнопку &lt;strong>Activities&lt;/strong> в верхнем левом углу&lt;/p>
+&lt;h2 id="настройка-red-hat-enterprise-linux-9">Настройка Red Hat Enterprise Linux 9&lt;/h2>
+&lt;h3 id="проверка-пользователя-root">Проверка пользователя ROOT&lt;/h3>
+&lt;p>В системе Linux пользователи относятся к разным группам, у которых есть определенные права. Если в процессе установки мы не поставили галку сделать пользователя администратором, то по умолчанию он не сможет устанавливать некоторые системные программы.&lt;/p>
+&lt;p>Выходим из системы и заходим в систему под пользователем root (тем самым, которого создавали ранее на главном экране). Нажимаем &lt;em>&lt;strong>Log out&lt;/strong>&lt;/em>
+&lt;p class="md__image">
+&lt;img
+src="img/07-03.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Теперь входим под &lt;strong>root&lt;/strong>. Пользователя может не быть в списке. Жмем &lt;strong>Not listed&lt;/strong> и вводим данные аккаунта.
+&lt;p class="md__image">
+&lt;img
+src="img/07-04.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Открываем терминал и проверяем
+&lt;p class="md__image">
+&lt;img
+src="img/07-05.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="настройка-параметров-системы">Настройка параметров системы&lt;/h3>
+&lt;h4 id="кнопки-сворачивания-приложения">Кнопки сворачивания приложения&lt;/h4>
+&lt;p>Первое, что кажется непривычным при использовании GUI, отсутствие кнопок сворачивания окон
+&lt;p class="md__image">
+&lt;img
+src="img/07-02.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Устанавливаем необходимый пакет&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>yum install gnome-tweaks -y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/07-06.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+После установки появится приложение Tweaks. Найдем его через поиск.
+&lt;p class="md__image">
+&lt;img
+src="img/07-07.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+В приложении множество и других настроек. Мы отобразим кнопки сворачивания приложений.&lt;/p>
+&lt;p>Идем в раздел &lt;strong>Windows titlebars&lt;/strong> и включаем параметры Maximize, Minimize
+&lt;p class="md__image">
+&lt;img
+src="img/07-08.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h4 id="доступ-пользователю-на-установку-приложений">Доступ пользователю на установку приложений&lt;/h4>
+&lt;p>Чтобы постоянно не переключаться на root пользователя для устновки приложений, мы можем предоставить обычному пользвоателю доступ к установке приложений.
+Действия продолжаем делать под пользователем &lt;em>&lt;strong>root&lt;/strong>&lt;/em>.
+Открываем файл /etc/sudoers и добавляем пользователя&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>sudo vi /etc/sudoers
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Добавляем в конец файла данные пользователя. Имя моего пользователя: &lt;em>&lt;strong>rhel-user&lt;/strong>&lt;/em>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>rhel-user ALL= NOPASSWD: /usr/sbin/synaptic, /usr/bin/software-center, /usr/bin/apt-get, /usr/bin/dnf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/07-09.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Установим &lt;em>&lt;strong>Visual Studio Code&lt;/strong>&lt;/em> под обычным пользователем
+Установка состоит из следующих шагов:&lt;/p>
+&lt;ol>
+&lt;li>добавление нужного репозитория. Права на добавление репозитория (изменение файлов в директории по прежнему только у &lt;em>&lt;strong>root&lt;/strong>&lt;/em> пользователя)&lt;/li>
+&lt;li>загрузка и Установка&lt;/li>
+&lt;/ol>
+&lt;p>Первый шаг делаем под пользователем root
+Идем на сайт &lt;a href="https://code.visualstudio.com/docs/setup/linux">https://code.visualstudio.com/docs/setup/linux&lt;/a>&lt;/p>
+&lt;p>Копируем код и запускаем в терминале&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo sh -c &amp;#39;echo -e &amp;#34;[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc&amp;#34; &amp;gt; /etc/yum.repos.d/vscode.repo&amp;#39;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Переключаемся на пользователя &lt;em>&lt;strong>rhel-user&lt;/strong>&lt;/em>. Это можно сделать и в терминале.&lt;/li>
+&lt;li>Обновим репозитории&lt;/li>
+&lt;li>Установим VSCode&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>su rhel-user
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dnf check-update
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo dnf install code
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/07-10.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;p class="md__image">
+&lt;img
+src="img/07-11.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;p class="md__image">
+&lt;img
+src="img/07-12.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="ссылки">Ссылки&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://developers.redhat.com/products/rhel/getting-started">https://developers.redhat.com/products/rhel/getting-started&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.redhat.com/sysadmin/install-linux-rhel-9">https://www.redhat.com/sysadmin/install-linux-rhel-9&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Шпаргалка tar архиватор</title><link>https://romankurnovskii.com/ru/posts/cheat-sheet-command-tar/</link><pubDate>Sun, 05 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/cheat-sheet-command-tar/</guid><description>&lt;h2 id="кратко">Кратко&lt;/h2>
+&lt;p>Создать:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar cf archive.tar directory
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Распаковать:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar xf archive.tar
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="создание">Создание&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>mkdir my_dir &lt;span style="color:#60a0b0;font-style:italic"># Создаем папку&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tar cf dir_archive.tar my_dir &lt;span style="color:#60a0b0;font-style:italic"># Создаем архив с папкой&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ll &lt;span style="color:#60a0b0;font-style:italic"># Проверяем содержимое текущего каталога&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># -rw-r--r-- 1 r staff 1.5K Jun 4 14:42 dir_archive.tar&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># drwxr-xr-x 2 r staff 64B Jun 4 14:42 my_dir&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="распаковка">Распаковка&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar xf dir_archive.tar
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="сжатие">Сжатие&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar czf dir_archive.tar.gz dir_archive.tar
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="распаковка-сжатого-файла">Распаковка сжатого файла&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar xzf dir_archive.tar.gz
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="сжатие-с-помощью-bzip2">Сжатие с помощью bzip2&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar cjf dir_archive.tar.bz2 my_dir
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="распаковка-с-помощью-bzip2">Распаковка с помощью bzip2&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar xjf dir_archive.tar.bz2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="просмотр-содержимого-архива">Просмотр содержимого архива&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar -tvf dir_archive.tar
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

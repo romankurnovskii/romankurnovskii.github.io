@@ -1,5 +1,92 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Google Script on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/google-script/</link><description>Recent content in Google Script on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sat, 12 Mar 2022 11:55:25 +0200</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/google-script/index.xml" rel="self" type="application/rss+xml"/><item><title>Отображение таблицы Google Sheets в JSON</title><link>https://romankurnovskii.com/ru/posts/google-sheets-2-json/</link><pubDate>Sat, 12 Mar 2022 11:55:25 +0200</pubDate><guid>https://romankurnovskii.com/ru/posts/google-sheets-2-json/</guid><description>Задача Есть таблица google. Необходимо конвертировать ее в JSON и не делать каждый раз ручной экспорт.
-Условия таблица закрыта для общего просмотра json отображение читать по ссылке План Использовать webapps от google. Парсить google таблицу и выдавать готовый url с json.
-Подготовка Открываем Таблицу Google Extensions → Apps Script Создаем скрипт Как работает endpoint. Документация
-Когда пользователь посещает приложение или программа отправляет приложению HTTP-запрос GET, Apps Script запускает функцию doGet(e).
-Когда отправляется приложению HTTP-запрос POST, вместо этого Apps Script запускает doPost(e).</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Google Script on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/google-script/</link><description>Recent content in Google Script on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sat, 12 Mar 2022 11:55:25 +0200</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/google-script/index.xml" rel="self" type="application/rss+xml"/><item><title>Отображение таблицы Google Sheets в JSON</title><link>https://romankurnovskii.com/ru/posts/google-sheets-2-json/</link><pubDate>Sat, 12 Mar 2022 11:55:25 +0200</pubDate><guid>https://romankurnovskii.com/ru/posts/google-sheets-2-json/</guid><description>&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Есть таблица google. Необходимо конвертировать ее в JSON и не делать каждый раз ручной экспорт.&lt;/p>
+&lt;h2 id="условия">&lt;strong>Условия&lt;/strong>&lt;/h2>
+&lt;ul>
+&lt;li>таблица закрыта для общего просмотра&lt;/li>
+&lt;li>json отображение читать по ссылке&lt;/li>
+&lt;/ul>
+&lt;h2 id="план">План&lt;/h2>
+&lt;p>Использовать &lt;a href="https://developers.google.com/apps-script/guides/web">webapps&lt;/a> от google. Парсить google таблицу и выдавать готовый url с json.&lt;/p>
+&lt;h2 id="подготовка">Подготовка&lt;/h2>
+&lt;ol>
+&lt;li>Открываем Таблицу Google&lt;/li>
+&lt;li>Extensions → Apps Script&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="01.png?v1"
+id="zoom-default"
+alt="Screen Shot 2022-03-12 at 12.26.28.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="создаем-скрипт">Создаем скрипт&lt;/h2>
+&lt;p>Как работает endpoint. &lt;a href="https://developers.google.com/apps-script/guides/web?hl=en#request_parameters">Документация&lt;/a>&lt;/p>
+&lt;p>Когда пользователь посещает приложение или программа отправляет приложению HTTP-запрос GET, Apps Script запускает функцию doGet(e).&lt;/p>
+&lt;p>Когда отправляется приложению HTTP-запрос POST, вместо этого Apps Script запускает doPost(e).&lt;/p>
+&lt;p>В обоих случаях аргумент e представляет собой параметр события, который может содержать информацию о любых параметрах запроса.&lt;/p>
+&lt;p>Дополнительные условия в запрос сейчас посылать не буду.&lt;/p>
+&lt;p>Итого функция с получением массива и функция с выдачей результата:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> sheetName &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;s1&amp;#39;&lt;/span> &lt;span style="color:#60a0b0;font-style:italic">// название листа
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> sheetRange &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;A:J&amp;#39;&lt;/span> &lt;span style="color:#60a0b0;font-style:italic">// диапазон
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> sheet &lt;span style="color:#666">=&lt;/span> SpreadsheetApp.getActive().getSheetByName(sheetName)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">function&lt;/span> getData(){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> result &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> values &lt;span style="color:#666">=&lt;/span> sheet.getRange(sheetRange).getValues()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> lastRow &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">parseInt&lt;/span>(sheet.getLastRow())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> (&lt;span style="color:#007020;font-weight:bold">let&lt;/span> i &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>; i &lt;span style="color:#666">&amp;lt;&lt;/span> lastRow; i&lt;span style="color:#666">++&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result.push(values[i])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> result
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">function&lt;/span> doGet() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> data &lt;span style="color:#666">=&lt;/span> getData()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> ContentService.createTextOutput(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> JSON.stringify(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {&lt;span style="color:#4070a0">&amp;#39;result&amp;#39;&lt;/span>&lt;span style="color:#666">:&lt;/span> data}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ).setMimeType(ContentService.MimeType.JSON)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="публикуем-приложение">Публикуем приложение&lt;/h2>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="02.png?v1"
+id="zoom-default"
+alt="Google Sheets публикаиця приложения"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="03.png?v1"
+id="zoom-default"
+alt="Google Sheets публикаиця приложения"
+loading="lazy"
+/>
+&lt;/p>
+&lt;p class="md__image">
+&lt;img
+src="04.png?v1"
+id="zoom-default"
+alt="Google Sheets публикаиця приложения"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="результат">Результат&lt;/h2>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="05.png?v1"
+id="zoom-default"
+alt="Google Sheets api json"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p></description></item></channel></rss>

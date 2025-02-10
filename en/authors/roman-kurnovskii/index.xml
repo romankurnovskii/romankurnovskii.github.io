@@ -1,262 +1,175 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Roman Kurnovskii</title><link>https://romankurnovskii.com/en/authors/roman-kurnovskii/</link><description>Recent content on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><atom:link href="https://romankurnovskii.com/en/authors/roman-kurnovskii/index.xml" rel="self" type="application/rss+xml"/><item><title>1. Two Sum</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/1/</link><pubDate>Sun, 16 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/1/</guid><description>LeetCode problem
-Problem Statement In this problem, you&amp;rsquo;re given an array of integers nums and an integer target. Your task is to find the indices of two numbers in the array that add up to the target. The input array is guaranteed to have exactly one solution, and you can&amp;rsquo;t use the same element twice. The indices can be returned in any order.
-Naive Solution A naive solution would involve using two nested loops to iterate through each pair of elements in the array and check if their sum is equal to the target.</description></item><item><title>Algorithms 101</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/</link><pubDate>Sat, 15 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/</guid><description>Smart / OKR What is SMART and OKR
-SMART Specific:
-Goal: prepare for contests. Pass 50-&amp;gt;75-&amp;gt;100% of contest problems in time Improve python skills. Improve understanding of common algorithms and data structures. Measurable: How will we know that change has occurred?
-solve top 100 questions that cover common algorithms and data structures. Achievable:
-participate in LeetCode contest, solve 50%+ problems in time. Relevant: Is it possible to achieve this objective?
-achievable with practice. improve skills in solving business problems more efficiently, quickly, understandable.</description></item><item><title>Create S3 Bucket</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/create-s3-bucket/</link><pubDate>Sun, 11 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/create-s3-bucket/</guid><description>Creating an Amazon S3 Bucket Introduction You can create an Amazon S3 bucket using the AWS Management Console. As with many other AWS services, you can use the AWS API or CLI (command-line interface) as well.
-In this lab step, you will create a new Amazon S3 bucket.
-Instructions In the AWS Management Console search bar, enter S3, and click the S3 result under Services: You will be placed in the S3 console.
-From the S3 console, click the orange Create Bucket button: Enter a unique Bucket name on the Name and region screen of the wizard: Region: US West (Oregon) (This should be set for you.</description></item><item><title>AWS Certified Developer (DVA-C01 -> DVA-C02)</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/</link><pubDate>Thu, 08 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/</guid><description>TL;DR Passed exam in one month. Created an app with questions and progress that helped me a lot Note The AWS Certified Developer - Associate exam is changing February 28, 2023. The last date to take the current exam is February 27, 2023.
-To keep the docs up to date I will add new and latest information.
-DVA-C01 vs DVA-C02 new domain: Domain 3: Deployment focus will be on testing and deploying your code into different environments including development, test, and production environments.</description></item><item><title>2. Add Two Numbers</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/2/</link><pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/2/</guid><description>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
-You may assume the two numbers do not contain any leading zero, except the number 0 itself.
-Example 1:
-Input: l1 = [2,4,3], l2 = [5,6,4] Output: [7,0,8] Explanation: 342 + 465 = 807. First accepted Idea:
-Loop through lists add each value to the list reverse list calculate sum create linked list from reversed sum class Solution: def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -&amp;gt; Optional[ListNode]: def createLinkedNode(values): head = ListNode(values[0]) current = head for i in values[1:]: node = ListNode(i) current.</description></item><item><title>Create a folder inside S3 Bucket</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/create-folder-s3/</link><pubDate>Sun, 11 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/create-folder-s3/</guid><description>Creating a Folder inside an Amazon S3 Bucket Introduction The AWS S3 console allows you to create folders for grouping objects. This can be a very helpful organizational tool. However, in Amazon S3, buckets and objects are the primary resources. A folder simply becomes a prefix for object key names that are virtually archived into it.
-Instructions Return to the Buckets menu by clicking here, and click on the calabs-bucket you created earlier. (Reminder: Your bucket name will differ slightly.</description></item><item><title>3. Longest Substring Without Repeating Characters</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/3/</link><pubDate>Tue, 18 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/3/</guid><description>LeetCode problem
-Given a string s, find the length of the longest substring without repeating characters.
-Example 1:
-Input: s = &amp;quot;abcabcbb&amp;quot; Output: 3 Explanation: The answer is &amp;quot;abc&amp;quot;, with the length of 3. First accepted Idea:
-Loop through string Calculate max count of elements in substring If get double element, then go back until get this element and do step 2. Proceed the main loop class Solution: def lengthOfLongestSubstring(self, s: str) -&amp;gt; int: uniqs = set() len_max = 0 len_current = 0 idx = 0 for i in s: if i in uniqs: len_max = max(len_max, len_current) len_current = 1 uniqs = set(i) for j in reversed(s[:idx]): if j == i: break else: len_current += 1 uniqs.</description></item><item><title>Upload a file to S3</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/upload-file-to-s3/</link><pubDate>Sun, 11 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/upload-file-to-s3/</guid><description>Uploading a File to Amazon S3 Introduction When you upload a folder from your local system or another machine, Amazon S3 uploads all the files and subfolders from the specified local folder to your bucket. It then assigns a key value that is a combination of the uploaded file name and the folder name. In this lab step, you will upload a file to your bucket. The process is similar to uploading a single file, multiple files, or a folder with files in it.</description></item><item><title>Grant public access to S3 Object</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/grant-access-s3/</link><pubDate>Sun, 11 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/grant-access-s3/</guid><description>Granting Public Access to an Amazon S3 Object Introduction All uploaded files are private by default and can only be viewed, edited, or downloaded by you. In order to illustrate this point, complete the instructions below.
-Note: The terms &amp;ldquo;file&amp;rdquo; and &amp;ldquo;object&amp;rdquo; are often used interchangeably when discussing Amazon S3. Technically, Amazon S3 is an object-store. It is not a block storage device and does not contain a file system as your local computer does. However, files such as images, movies, and sound clips are often uploaded from your file system to Amazon S3.</description></item><item><title>5. Longest Palindromic Substring</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/5/</link><pubDate>Thu, 20 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/5/</guid><description>LeetCode problem
-Given a string s, return the longest palindromic substring in s.
-A string is called a palindrome string if the reverse of that string is the same as the original string.
-Example 1:
-Input: s = &amp;quot;babad&amp;quot; Output: &amp;quot;bab&amp;quot; Explanation: &amp;quot;aba&amp;quot; is also a valid answer. Example 2:
-Input: s = &amp;quot;cbbd&amp;quot; Output: &amp;quot;bb&amp;quot; First accepted Hints How can we reuse a previously computed palindrome to compute a larger palindrome?
-How can we reuse a previously computed palindrome to compute a larger palindrome?</description></item><item><title>Change metadata of S3 Object</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/how-to-change-metadata-s3/</link><pubDate>Sun, 11 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/how-to-change-metadata-s3/</guid><description>Changing the Metadata of an Amazon S3 Object Introduction Each object in Amazon S3 has a set of key/value pairs representing its metadata. There are two types of metadata: &amp;ldquo;System metadata&amp;rdquo; (for example, Content-Type and Content-Length) and custom &amp;ldquo;User metadata&amp;rdquo;. User metadata is stored with the object and returned with it.
-As an example, you might have your own taxonomy for various images, such as “logo”, “screenshot”, “diagram”, &amp;ldquo;flowchart&amp;rdquo; and so on. In this lab step, you will change the Content-Type of your image to &amp;ldquo;text/plain&amp;rdquo;.</description></item><item><title>Delete S3 Bucket</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/delete-from-s3/</link><pubDate>Sun, 11 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/delete-from-s3/</guid><description>Deleting an Amazon S3 Bucket Introduction You can delete an Amazon S3 bucket using the S3 console. You will delete all objects within the bucket as well.
-Instructions In the AWS Management Console search bar, enter S3, and click the S3 result under Services: From the top level of the S3 console, notice the Delete button is not actionable.
-2. Check the name of your bucket to select it:
-With the bucket selected, click Empty: The Empty bucket form page will load.</description></item><item><title>7. Reverse Integer</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/7/</link><pubDate>Tue, 01 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/7/</guid><description>LeetCode problem
-Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.
-Assume the environment does not allow you to store 64-bit integers (signed or unsigned).
-Example 1:
-Input: x = 123 Output: 321
-Example 2:
-Input: x = -123 Output: -321
-Example 3:
-Input: x = 120 Output: 21
-First accepted Idea:
-Convert number to int Remove minus if exist (or convert module of number) reverse class Solution: def reverse(self, x: int) -&amp;gt; int: reversed_int = [] str_int = str(x) if x &amp;lt; 0: str_int = str_int[1:] for i in reversed(range(len(str_int))): reversed_int.</description></item><item><title>11. Container With Most Water</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/11/</link><pubDate>Thu, 03 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/11/</guid><description>LeetCode problem 11
-Problem Statement The problem involves an array of integers height, where each element represents the height of a line. These lines, along with the x-axis, form a series of containers. Your goal is to find the two lines that form the container with the greatest area.
-Naive Solution The naive solution is to consider all pairs of lines and calculate the area of water each pair can contain. You would keep track of the maximum area encountered.</description></item><item><title>13. Roman to Integer</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/13/</link><pubDate>Wed, 19 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/13/</guid><description>LeetCode problem
-Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
-Symbol Value I 1 V 5 X 10 L 50 C 100 D 500 M 1000 For example, 2 is written as II in Roman numeral, just two ones added together. 12 is written as XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.
-Roman numerals are usually written largest to smallest from left to right.</description></item><item><title>14. Longest Common Prefix</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/14/</link><pubDate>Fri, 21 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/14/</guid><description>LeetCode problem
-Write a function to find the longest common prefix string amongst an array of strings.
-If there is no common prefix, return an empty string &amp;quot;&amp;quot;.
-Example 1:
-Input: strs = [&amp;quot;flower&amp;quot;,&amp;quot;flow&amp;quot;,&amp;quot;flight&amp;quot;] Output: &amp;quot;fl&amp;quot; Example 2:
-Input: strs = [&amp;quot;dog&amp;quot;,&amp;quot;racecar&amp;quot;,&amp;quot;car&amp;quot;] Output: &amp;quot;&amp;quot; Explanation: There is no common prefix among the input strings. First accepted Idea:
-class Solution: def longestCommonPrefix(self, strs: List[str]) -&amp;gt; str: strs.sort() l = strs[0] r = strs[-1] if l == r: return l res = &amp;#34;&amp;#34; for i in range(0, len(l)): if l[i] == r[i]: res += l[i] else: return res return res</description></item><item><title>15. 3Sum</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/15/</link><pubDate>Thu, 03 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/15/</guid><description>LeetCode problem
-Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
-Notice that the solution set must not contain duplicate triplets.
-Example 1:
-Input: nums = [-1,0,1,2,-1,-4] Output: [[-1,-1,2],[-1,0,1]] Explanation: nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0. nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.</description></item><item><title>17. Letter Combinations of a Phone Number</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/17/</link><pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/17/</guid><description>LeetCode problem
-Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. Return the answer in any order.
-A mapping of digits to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.
-Example 1:
-Input: digits = &amp;quot;23&amp;quot; Output: [&amp;quot;ad&amp;quot;,&amp;quot;ae&amp;quot;,&amp;quot;af&amp;quot;,&amp;quot;bd&amp;quot;,&amp;quot;be&amp;quot;,&amp;quot;bf&amp;quot;,&amp;quot;cd&amp;quot;,&amp;quot;ce&amp;quot;,&amp;quot;cf&amp;quot;] Example 2:
-Input: digits = &amp;quot;&amp;quot; Output: [] First accepted class Solution: def letterCombinations(self, digits: str) -&amp;gt; List[str]: if not digits: return [] keyboard = { &amp;#34;2&amp;#34;: &amp;#34;abc&amp;#34;, &amp;#34;3&amp;#34;: &amp;#34;def&amp;#34;, &amp;#34;4&amp;#34;: &amp;#34;ghi&amp;#34;, &amp;#34;5&amp;#34;: &amp;#34;jkl&amp;#34;, &amp;#34;6&amp;#34;: &amp;#34;mno&amp;#34;, &amp;#34;7&amp;#34;: &amp;#34;pqrs&amp;#34;, &amp;#34;8&amp;#34;: &amp;#34;tuv&amp;#34;, &amp;#34;9&amp;#34;: &amp;#34;wxyz&amp;#34; } levels = [] for d in digits: levels.</description></item><item><title>19. Remove Nth Node From End of List</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/19/</link><pubDate>Sun, 13 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/19/</guid><description>LeetCode problem
-Given the &amp;lsquo;head&amp;rsquo; of a linked list, remove the &amp;rsquo;nth&amp;rsquo; node from the end of the list and return its head.
-Example 1:
-Input: head = [1,2,3,4,5], n = 2 Output: [1,2,3,5] Example 2:
-Input: head = [1], n = 1 Output: [] Idea:
-Two pointers. Second pointer starts from nth position. Run while second pointer exist. First version:
-# Definition for singly-linked list. # class ListNode: # def __init__(self, val=0, next=None): # self.val = val # self.</description></item><item><title>20. Valid Parentheses</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/20/</link><pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/20/</guid><description>LeetCode problem
-Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
-An input string is valid if:
-Open brackets must be closed by the same type of brackets. Open brackets must be closed in the correct order. Every close bracket has a corresponding open bracket of the same type. Example 1:
-Input: s = &amp;quot;()[]{}&amp;quot; Output: true Example 2:
-Input: s = &amp;quot;()[]{}&amp;quot; Output: true First accepted Idea:</description></item><item><title>21. Merge Two Sorted Lists</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/21/</link><pubDate>Tue, 25 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/21/</guid><description>LeetCode problem
-You are given the heads of two sorted linked lists list1 and list2.
-Merge the two lists in a one sorted list. The list should be made by splicing together the nodes of the first two lists.
-Return the head of the merged linked list.
-Example 1:
-Input: list1 = [1,2,4], list2 = [1,3,4] Output: [1,1,2,3,4,4] Example 2:
-Input: list1 = [], list2 = [0] Output: [0] First accepted Idea:
-Get smallest head. Loop and update its next.</description></item><item><title>22. Generate Parentheses</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/22/</link><pubDate>Wed, 16 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/22/</guid><description>LeetCode problem
-Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
-Example 1:
-Input: n = 3 Output: [&amp;quot;((()))&amp;quot;,&amp;quot;(()())&amp;quot;,&amp;quot;(())()&amp;quot;,&amp;quot;()(())&amp;quot;,&amp;quot;()()()&amp;quot;] Example 2:
-Input: n = 1 Output: [&amp;quot;()&amp;quot;] Prerequirements Backtracking pattern
-First accepted Idea:
-class Solution: def generateParenthesis(self, n): res = [] def dfs(l: int, r: int, s: str) -&amp;gt; None: if l == 0 and r == 0: res.append(s) if l &amp;gt; 0: dfs(l - 1, r, s + &amp;#39;(&amp;#39;) if l &amp;lt; r: dfs(l, r - 1, s + &amp;#39;)&amp;#39;) dfs(n, n, &amp;#39;&amp;#39;) return res</description></item><item><title>26. Remove Duplicates from Sorted Array</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/26/</link><pubDate>Wed, 26 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/26/</guid><description>LeetCode problem
-Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.
-Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums. More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result.</description></item><item><title>28. Find the Index of the First Occurrence in a String</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/28/</link><pubDate>Sat, 19 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/28/</guid><description>LeetCode problem
-Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
-Example 1:
-Input: haystack = &amp;ldquo;sadbutsad&amp;rdquo;, needle = &amp;ldquo;sad&amp;rdquo; Output: 0 Explanation: &amp;ldquo;sad&amp;rdquo; occurs at index 0 and 6. The first occurrence is at index 0, so we return 0.
-Example 2:
-Input: haystack = &amp;ldquo;leetcode&amp;rdquo;, needle = &amp;ldquo;leeto&amp;rdquo; Output: -1 Explanation: &amp;ldquo;leeto&amp;rdquo; did not occur in &amp;ldquo;leetcode&amp;rdquo;, so we return -1.</description></item><item><title>29. Divide Two Integers</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/29/</link><pubDate>Sun, 20 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/29/</guid><description>LeetCode problem
-Given two integers dividend and divisor, divide two integers without using multiplication, division, and mod operator.
-The integer division should truncate toward zero, which means losing its fractional part. For example, 8.345 would be truncated to 8, and -2.7335 would be truncated to -2.
-Return the quotient after dividing dividend by divisor.
-Note: Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−231, 231 − 1]. For this problem, if the quotient is strictly greater than 231 - 1, then return 231 - 1, and if the quotient is strictly less than -231, then return -231.</description></item><item><title>33. Search in Rotated Sorted Array</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/33/</link><pubDate>Thu, 24 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/33/</guid><description>LeetCode problem
-There is an integer array nums sorted in ascending order (with distinct values).
-Prior to being passed to your function, nums is possibly rotated at an unknown pivot index k (1 &amp;lt;= k &amp;lt; nums.length) such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). For example, [0,1,2,4,5,6,7] might be rotated at pivot index 3 and become [4,5,6,7,0,1,2].
-Given the array nums after the possible rotation and an integer target, return the index of target if it is in nums, or -1 if it is not in nums.</description></item><item><title>34. Find First and Last Position of Element in Sorted Array</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/34/</link><pubDate>Fri, 25 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/34/</guid><description>LeetCode problem
-Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value.
-If target is not found in the array, return [-1, -1].
-You must write an algorithm with O(log n) runtime complexity.
-Example 1:
-Input: nums = [5,7,7,8,8,10], target = 8 Output: [3,4]
-Example 2:
-Input: nums = [5,7,7,8,8,10], target = 6 Output: [-1,-1]
-Example 3:
-Input: nums = [], target = 0 Output: [-1,-1]
-Code Idea:</description></item><item><title>36. Valid Sudoku</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/36/</link><pubDate>Sat, 03 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/36/</guid><description>LeetCode problem
-Determine if a 9 x 9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:
-Each row must contain the digits 1-9 without repetition. Each column must contain the digits 1-9 without repetition. Each of the nine 3 x 3 sub-boxes of the grid must contain the digits 1-9 without repetition.
-Note:
-A Sudoku board (partially filled) could be valid but is not necessarily solvable. Only the filled cells need to be validated according to the mentioned rules.</description></item><item><title>38. Count and Say</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/38/</link><pubDate>Thu, 08 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/38/</guid><description>LeetCode problem
-The count-and-say sequence is a sequence of digit strings defined by the recursive formula:
-countAndSay(1) = &amp;quot;1&amp;quot; countAndSay(n) is the way you would &amp;ldquo;say&amp;rdquo; the digit string from countAndSay(n-1), which is then converted into a different digit string. To determine how you &amp;ldquo;say&amp;rdquo; a digit string, split it into the minimal number of substrings such that each substring contains exactly one unique digit. Then for each substring, say the number of digits, then say the digit. Finally, concatenate every said digit.</description></item><item><title>46. Permutations</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/46/</link><pubDate>Sat, 17 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/46/</guid><description>LeetCode problem
-Given an array nums of distinct integers, return all the possible permutations. You can return the answer in any order.
-Example 1:
-Input: nums = [1,2,3] Output: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]] Example 2:
-Input: nums = [0,1] Output: [[0,1],[1,0]] Example 3:
-Input: nums = [1] Output: [[1]] Idea:
-Draw a decigion tree Fix when branch is ready to return Implementation:
-Recursive: Go through every value in nums Pop value call perm() with updated nums from each call(step) append &amp;lsquo;poped&amp;rsquo; value from step 2 class Solution: def permute(self, nums: List[int]) -&amp;gt; List[List[int]]: result_permutation = [] if len(nums) == 1: # base case return [nums[:]] for _ in nums: tmp_removed = nums.</description></item><item><title>48. Rotate Image</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/48/</link><pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/48/</guid><description>LeetCode problem
-You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).
-You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation.
-Example 1:
-Input: matrix = [[1,2,3],[4,5,6],[7,8,9]] Output: [[7,4,1],[8,5,2],[9,6,3]] Example 2:
-Input: matrix = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]] Output: [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]] Idea:
-class Solution: def rotate(self, matrix: List[List[int]]) -&amp;gt; None: &amp;#34;&amp;#34;&amp;#34; Do not return anything, modify matrix in-place instead.</description></item><item><title>49. Group Anagrams</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/49/</link><pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/49/</guid><description>LeetCode problem
-Given an array of strings strs, group the anagrams together. You can return the answer in any order.
-An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
-Example 1:
-Input: strs = [&amp;quot;eat&amp;quot;,&amp;quot;tea&amp;quot;,&amp;quot;tan&amp;quot;,&amp;quot;ate&amp;quot;,&amp;quot;nat&amp;quot;,&amp;quot;bat&amp;quot;] Output: [[&amp;quot;bat&amp;quot;],[&amp;quot;nat&amp;quot;,&amp;quot;tan&amp;quot;],[&amp;quot;ate&amp;quot;,&amp;quot;eat&amp;quot;,&amp;quot;tea&amp;quot;]] Example 2:
-Input: strs = [&amp;quot;&amp;quot;] Output: [[&amp;quot;&amp;quot;]] Example 3:
-Input: strs = [&amp;quot;a&amp;quot;] Output: [[&amp;quot;a&amp;quot;]] Idea:
-class Solution: def groupAnagrams(self, strs: List[str]) -&amp;gt; List[List[str]]: dd = {} for s in strs: s_sort = &amp;#34;&amp;#34;.</description></item><item><title>50. Pow(x, n)</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/50/</link><pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/50/</guid><description>LeetCode problem
-Implement pow(x, n), which calculates x raised to the power n (i.e., x^n).
-Example 1:
-Input: x = 2.00000, n = 10 Output: 1024.00000 Example 2:
-Input: x = 2.10000, n = 3 Output: 9.26100 Example 3:
-Input: x = 2.00000, n = -2 Output: 0.25000 Explanation: 2-2 = 1/22 = 1/4 = 0.25 Approach 1:
-class Solution: def myPow(self, x: float, n: int) -&amp;gt; float: return x ** n Approach 2:
-Recursive
-class Solution: def myPow(self, x, n): if not n: return 1 if n &amp;lt; 0: return 1 / self.</description></item><item><title>53. Maximum Subarray</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/53/</link><pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/53/</guid><description>LeetCode problem
-Given an integer array nums, find the subarray which has the largest sum and return its sum.
-Example 1:
-Input: nums = [-2,1,-3,4,-1,2,1,-5,4] Output: 6 Explanation: [4,-1,2,1] has the largest sum = 6. Example 2:
-Input: nums = [1] Output: 1 Example 3:
-Input: nums = [5,4,-1,7,8] Output: 23 Approach 1:
-class Solution: def maxSubArray(self, nums: List[int]) -&amp;gt; int: max_ = nums[0] max2 = nums[0] if len(nums) == 1: return max_ for i in range(1, len(nums)): max_ = max(nums[i], nums[i] + max_) max2 = max(max_, max2) return max2</description></item><item><title>55. Jump Game</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/55/</link><pubDate>Thu, 29 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/55/</guid><description>LeetCode problem
-You are given an integer array nums. You are initially positioned at the array&amp;rsquo;s first index, and each element in the array represents your maximum jump length at that position.
-Return true if you can reach the last index, or false otherwise.
-Example 1:
-Input: nums = [2,3,1,1,4] Output: true Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index. Example 2:
-Input: nums = [3,2,1,0,4] Output: false Explanation: You will always arrive at index 3 no matter what.</description></item><item><title>56. Merge Intervals</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/56/</link><pubDate>Thu, 29 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/56/</guid><description>LeetCode problem
-Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.
-Example 1:
-Input: intervals = [[1,3],[2,6],[8,10],[15,18]] Output: [[1,6],[8,10],[15,18]] Explanation: Since intervals [1,3] and [2,6] overlap, merge them into [1,6]. Example 2:
-Input: intervals = [[1,4],[4,5]] Output: [[1,5]] Explanation: Intervals [1,4] and [4,5] are considered overlapping. Approach 1:
-class Solution: def merge(self, intervals: List[List[int]]) -&amp;gt; List[List[int]]: intervals.sort() res = [intervals[0]] for ir in range(1, len(intervals)): if intervals[ir][0] &amp;gt;= res[-1][0] and intervals[ir][0] &amp;lt;= res[-1][1]: # [1,3],[2,6] res[-1][0] = min(intervals[ir][0], res[-1][0]) res[-1][1] = max(intervals[ir][1], res[-1][1]) elif res[-1][0] &amp;gt;= intervals[ir][0] and res[-1][0] &amp;lt;= intervals[ir][1]: # [1,3],[0,4] res[-1][0] = min(intervals[ir][0], res[-1][0]) res[-1][1] = max(intervals[ir][1], res[-1][1]) else: res.</description></item><item><title>62. Unique Paths</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/62/</link><pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/62/</guid><description>LeetCode problem
-There is a robot on an m x n grid. The robot is initially located at the top-left corner (i.e., grid[0][0]). The robot tries to move to the bottom-right corner (i.e., grid[m - 1][n - 1]). The robot can only move either down or right at any point in time.
-Given the two integers m and n, return the number of possible unique paths that the robot can take to reach the bottom-right corner.
-The test cases are generated so that the answer will be less than or equal to 2 * 10^9.</description></item><item><title>66. Plus One</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/66/</link><pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/66/</guid><description>LeetCode problem
-You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0&amp;rsquo;s.
-Increment the large integer by one and return the resulting array of digits.
-Example 1:
-Input: digits = [1,2,3] Output: [1,2,4] Explanation: The array represents the integer 123. Incrementing by one gives 123 + 1 = 124.</description></item><item><title>69. Sqrt(x)</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/69/</link><pubDate>Fri, 28 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/69/</guid><description>LeetCode problem
-Given a non-negative integer x, return the square root of x rounded down to the nearest integer. The returned integer should be non-negative as well.
-You must not use any built-in exponent function or operator.
-For example, do not use pow(x, 0.5) in c++ or x ** 0.5 in python.
-Example 1:
-Input: x = 4 Output: 2 Explanation: The square root of 4 is 2, so we return 2. Example 2:
-Input: x = 8 Output: 2 Explanation: The square root of 8 is 2.</description></item><item><title>70. Climbing Stairs</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/70/</link><pubDate>Sat, 29 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/70/</guid><description>LeetCode problem
-You are climbing a staircase. It takes n steps to reach the top.
-Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
-Example 1:
-Input: n = 2 Output: 2 Explanation: There are two ways to climb to the top. 1. 1 step + 1 step 2. 2 steps Example 2:
-Input: n = 3 Output: 3 Explanation: There are three ways to climb to the top.</description></item><item><title>73. Set Matrix Zeroes</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/73/</link><pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/73/</guid><description>LeetCode problem
-Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0&amp;rsquo;s.
-You must do it in place.
-Example 1:
-Input: matrix = [[1,1,1],[1,0,1],[1,1,1]] Output: [[1,0,1],[0,0,0],[1,0,1]] Example 2:
-Input: matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]] Output: [[0,0,0,0],[0,4,5,0],[0,3,1,0]] Approach 1:
-Idea:
-LeetCode Submission
-class Solution: def setZeroes(self, matrix: List[List[int]]) -&amp;gt; None: rows = len(matrix) cols = len(matrix[0]) # 1. Check first row/column for zero&amp;#39;s first_row_has_zero = 0 in matrix[0] first_col_has_zero = 0 in list(zip(*matrix))[0] # 2.</description></item><item><title>88. Merge Sorted Array</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/88/</link><pubDate>Sun, 30 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/88/</guid><description>LeetCode problem
-First accepted class Solution: def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -&amp;gt; None: &amp;#34;&amp;#34;&amp;#34; Do not return anything, modify nums1 in-place instead. &amp;#34;&amp;#34;&amp;#34; i = len(nums1) - n for j in nums2: nums1[i] = j i += 1 nums1.sort()</description></item><item><title>94. Binary Tree Inorder Traversal</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/94/</link><pubDate>Mon, 31 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/94/</guid><description>LeetCode problem
-Given the root of a binary tree, return the inorder traversal of its nodes' values.
-Example 1:
-Input: root = [1,null,2,3] Output: [1,3,2] Example 2:
-Input: root = [] Output: [] Example 3:
-Input: root = [1] Output: [1] Thoughts Don&amp;rsquo;t understand what needed. Why:
-1-null-2-3 becomes 1-3-2 [1,2,5,7,8,9,10] becomes [7,2,8,1,9,5,10] In 1-null-2-3 1 becomes the first because we loop to its left node which is null, then come back and first value here is 1.</description></item><item><title>Short description from article</title><link>https://romankurnovskii.com/en/tracks/disser/utils/text_2_short/</link><pubDate>Thu, 29 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/disser/utils/text_2_short/</guid><description> Create</description></item><item><title>3032</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/hard/3032/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/hard/3032/</guid><description>https://leetcode.com/problems/count-numbers-with-unique-digits-ii
-class Solution: def numberCount(self, a: int, b: int) -&amp;gt; int: # Initialize the count of numbers with all unique digits unique_digit_count = 0 # Loop through each number in the range from a to b, inclusive for num in range(a, b + 1): # Convert the number to a string to examine its digits num_str = str(num) # Convert the string to a set of characters to remove duplicates unique_digits = set(num_str) # If the length of the set is equal to the length of the number string, # it means all digits are unique if len(unique_digits) == len(num_str): # Increment the count for each number with all unique digits unique_digit_count += 1 # Return the total count of unique digit numbers return unique_digit_count</description></item><item><title>Questions</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/questions/</link><pubDate>Thu, 08 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/questions/</guid><description>On this page you can find 50 random questions.
-To get prepared for exam you can use cloud-exam-prepare.com
-Q1 - Q10 Q1 You are developing an API in Amazon API Gateway that several mobile applications will use to interface with a back end service in AWS being written by another developer. You can use a(n)____ integration for your API methods to develop and test your client applications before the other developer has completed work on the back end.</description></item><item><title>nmap - cheatsheet</title><link>https://romankurnovskii.com/en/posts/linux/nmap-cheatsheet/</link><pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/nmap-cheatsheet/</guid><description>Scanning Options Nmap Option Description 10.10.10.0/24 Target network range. -sn Disables port scanning. -Pn Disables ICMP Echo Requests -n Disables DNS Resolution. -PE Performs the ping scan by using ICMP Echo Requests against the target. --packet-trace Shows all packets sent and received. --reason Displays the reason for a specific result. --disable-arp-ping Disables ARP Ping Requests. --top-ports=&amp;lt;num&amp;gt; Scans the specified top ports that have been defined as most frequent. -p- Scan all ports. -p22-110 Scan all ports between 22 and 110.</description></item><item><title>Monitoring</title><link>https://romankurnovskii.com/en/posts/linux/debian-setup/</link><pubDate>Fri, 29 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/debian-setup/</guid><description>Auditing Packages dpkg --verify or
-dpkg -V # dpkg -V ??5?????? /lib/systemd/system/ssh.service ??5?????? c /etc/libvirt/qemu/networks/default.xml &amp;lsquo;ssh.service&amp;rsquo;: reports a change to SSH&amp;rsquo;s service file that the administrator made to the packaged file instead of using an appropriate /etc/systemd/system/ssh.service override &amp;lsquo;c&amp;rsquo; letter: legitimately modified Monitoring Files AIDE apt install aide aideinit # first db init aideinit creates a cron job in etc/cron.daily/aide
-DB: /var/lib/aide/aide.db
-When changes are detected, AIDE records them in log files /var/log/aide/*.log
-logcheck Monitors log files every hour by default and sends unusual log messages in emails to the administrator for further analysis</description></item><item><title>Wireless access point with hostapd on Debian</title><link>https://romankurnovskii.com/en/posts/linux/wireless-access-point/</link><pubDate>Fri, 29 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/wireless-access-point/</guid><description>hostapd is a user space daemon for access point and authentication servers. It implements IEEE 802.11 access point management, IEEE 802.1X/WPA/WPA2/EAP Authenticators and RADIUS authentication server. The current version supports Linux (Host AP, mac80211-based drivers) and FreeBSD (net80211). Configure network traffic routing and Network Address Translation (NAT) using iptables.
-Configure the system to forward packets from one network interface to another, applying NAT to the packets going out of the eth0 interface.
-Network configuration where the system is intended to function as a router or gateway between two networks (e.</description></item><item><title>How to disable IPv6 on Debian/Kali Linux</title><link>https://romankurnovskii.com/en/posts/linux/howto-disable-ipv6-on-debian/</link><pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/howto-disable-ipv6-on-debian/</guid><description>TL;DR git clone https://github.com/romankurnovskii/kali-shortcuts.git cd kali-shortcuts chmod +x disable_ipv6.sh sudo ./disable_ipv6.sh Edit sysctl Configuration In the terminal, type sudo vi /etc/sysctl.conf and press Enter. This opens the sysctl.conf file in the text editor with root privileges. Add IPv6 Disable Lines At the end of the file, add the following lines: net.ipv6.conf.all.disable_ipv6 = 1 net.ipv6.conf.default.disable_ipv6 = 1 net.ipv6.conf.lo.disable_ipv6 = 1 These lines will disable IPv6 on all network interfaces, including the loopback interface.
-Save and Exit Save /etc/sysctl.conf and exit text editor Apply Changes To apply the changes without rebooting, run `sudo sysctl -p`` in the terminal.</description></item><item><title>Telegram bot with Google Apps Script (GAS)</title><link>https://romankurnovskii.com/en/posts/howto-setup-telegram-bot-and-google-apps-script/</link><pubDate>Mon, 11 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/howto-setup-telegram-bot-and-google-apps-script/</guid><description>1. Set Up the Telegram Bot Use the BotFather on Telegram to create a new bot. Get your HTTP API token. 2. Google Apps Script Code Google Apps Script for a Telegram bot:
-var TOKEN = &amp;#39;YOUR_TELEGRAM_BOT_TOKEN&amp;#39;; var WEBHOOK_URL = &amp;#39;YOUR_WEB_APP_URL&amp;#39;; // web app URL of your GAS deployment. var USERS_SPREAD_SHEET_NAME=&amp;#39;usersAnswers&amp;#39; var COLUMN_STEP_1 = &amp;#39;E&amp;#39; var COLUMN_STEP_2 = &amp;#39;F&amp;#39; var COLUMN_DATE = &amp;#39;A&amp;#39; function setWebhook() { // run after every deploy and updated WEBHOOK_URL var url = &amp;#39;https://api.telegram.org/bot&amp;#39; + TOKEN + &amp;#39;/setWebhook?</description></item><item><title>Setup subdomains on VPS CentOS</title><link>https://romankurnovskii.com/en/posts/vps-docker-subdomains-setup/</link><pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/vps-docker-subdomains-setup/</guid><description>TLDR Code sources
-Create Projects Creating three example projects:
-node.js express server that returns json on request another node.js express server static html page Place projects data in dir &amp;lsquo;projects&amp;rsquo;.
-Structure:
-└── project ├── Dockerfile ├── nginx.conf ├── projects | ├── 1 | | ├── app.js | | └── package.json | ├── 2 | | ├── app.js | | └── package.json | └── 3 | └── index.html └── start.sh Nginx setup Server needs to &amp;ldquo;understand&amp;rdquo; the initial subdomain and where to forward.</description></item><item><title>JavaScript: convert array of objects to dictionary</title><link>https://romankurnovskii.com/en/posts/js-convert-array-to-dict/</link><pubDate>Mon, 19 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/js-convert-array-to-dict/</guid><description>type ObjectWithKeyName = { [key: string]: any; }; // transform array of objects to dict // use object provided keyName as a key of dict // expected for each object in array this keyName value is unique const transformArrayToDict = (objects: ObjectWithKeyName[], keyName: string) =&amp;gt; { const res: ObjectWithKeyName = {}; objects.forEach((obj) =&amp;gt; { res[obj[keyName]] = obj; }); return res; };</description></item><item><title>How to Render Jupyter Notebooks in Hugo with a Custom Shortcode</title><link>https://romankurnovskii.com/en/posts/howto-render-notebook-in-hugo/</link><pubDate>Sat, 17 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/howto-render-notebook-in-hugo/</guid><description>Jupyter notebooks are a fantastic tool for data scientists and programmers, allowing you to write code, visualize results, and write documentation all in one place. Hugo is a powerful and flexible static site generator that&amp;rsquo;s great for blogging and building websites. But what if you want to share your Jupyter notebooks on your Hugo website?
-This step-by-step guide will walk you through how to render Jupyter notebooks in Hugo using a custom shortcode and automate the process using GitHub Actions.</description></item><item><title>Difference between Tries and Trees?</title><link>https://romankurnovskii.com/en/posts/tree-vs-trie-data-structures/</link><pubDate>Sat, 13 May 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/tree-vs-trie-data-structures/</guid><description>Despite their similar names, these structures serve different purposes, and understanding their differences is crucial to utilizing them effectively.
-Tree A tree data structure is a collection of entities, called nodes, connected by edges.
-Each node contains a value, and a list of references to its child nodes. The first node of the tree is called the root. If we visualize it, a tree data structure resembles an inverted tree, with the root at the top and the leaves (nodes without children) at the bottom.</description></item><item><title>How to publish JavaScript package to npm registry</title><link>https://romankurnovskii.com/en/posts/howto-publish-js-npm-project/</link><pubDate>Sat, 06 May 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/howto-publish-js-npm-project/</guid><description>In this post, we&amp;rsquo;ll dive deeper into the process of creating, structuring, and publishing a JavaScript package to the npm registry. We&amp;rsquo;ll use the repository https://github.com/romankurnovskii/npm-js-package-template as a reference for this guide.
-TLDR Open template: https://github.com/romankurnovskii/npm-js-package-template Click Use this template Create repo from this template. git clone new repo update code src/index.ts, src/bin.ts How to check if bin script works from terminal:
-npm link &amp;amp;&amp;amp; npm link mypackage mypackage Publish:
-npm run prepublishOnly npm publish Folder Structure Let&amp;rsquo;s go through the folder structure of the repository:</description></item><item><title>How to Create a React-Electron Application From Scratch</title><link>https://romankurnovskii.com/en/posts/howto-create-react-electron-app-ts/</link><pubDate>Sat, 22 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/howto-create-react-electron-app-ts/</guid><description>In this step-by-step tutorial, we&amp;rsquo;ll create a simple React-Electron application from scratch. Electron is a framework that allows you to build cross-platform desktop applications using web technologies such as HTML, CSS, and JavaScript. React is a popular JavaScript library for building user interfaces.
-I use this clean template as a boilerplate for my projects.
-TLDR Go to repo electron-react-template click Use this template to create a new repo and start coding. Prerequisites Before starting this tutorial, make sure you have the following tools installed on your system:</description></item><item><title>How to upload an opensource application to SourceForge</title><link>https://romankurnovskii.com/en/posts/how-to-upload-app-to-sourceforge/</link><pubDate>Thu, 16 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/how-to-upload-app-to-sourceforge/</guid><description>Step 1: Create a SourceForge account Go to the SourceForge website at https://sourceforge.net/ Click on the &amp;ldquo;Join&amp;rdquo; button in the top-right corner. Fill in the required fields, such as username, email, and password, then click &amp;ldquo;Register&amp;rdquo; You&amp;rsquo;ll receive a confirmation email from SourceForge. Click on the link provided to confirm your account. Step 2: Start a new project Log in to your SourceForge account. Click on the &amp;ldquo;Create&amp;rdquo; button in the top-right corner of the page. Select &amp;ldquo;Create Your Project Now&amp;rdquo; from the dropdown menu.</description></item><item><title>How to publish typescript package to npm registry</title><link>https://romankurnovskii.com/en/posts/howto-publish-ts-npm-project/</link><pubDate>Tue, 07 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/howto-publish-ts-npm-project/</guid><description> Open template: https://github.com/romankurnovskii/npm-typescript-package-template Click Use this template Create repo from this template. git clone new repo update code src/index.ts, src/bin.ts How to check if bin script works from terminal:
-npm link &amp;amp;&amp;amp; npm link mypackage mypackage Publish:
-npm run prepublishOnly npm publish</description></item><item><title>How to add copy code button on HUGO highligh code block</title><link>https://romankurnovskii.com/en/posts/hugo-add-copy-button-on-highlight-block/</link><pubDate>Sat, 04 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/hugo-add-copy-button-on-highlight-block/</guid><description>function addCopyButtonToCodeBlocks() { // Get all code blocks with a class of &amp;#34;language-*&amp;#34; const codeBlocks = document.querySelectorAll(&amp;#39;code[class^=&amp;#34;language-&amp;#34;]&amp;#39;); // For each code block, add a copy button inside the block codeBlocks.forEach(codeBlock =&amp;gt; { // Create the copy button element const copyButton = document.createElement(&amp;#39;button&amp;#39;); copyButton.classList.add(&amp;#39;copy-code-button&amp;#39;); copyButton.innerHTML = &amp;#39;&amp;lt;i class=&amp;#34;far fa-copy&amp;#34;&amp;gt;&amp;lt;/i&amp;gt;&amp;#39;; // Add a click event listener to the copy button copyButton.addEventListener(&amp;#39;click&amp;#39;, () =&amp;gt; { // Copy the code inside the code block to the clipboard const codeToCopy = codeBlock.innerText; navigator.clipboard.writeText(codeToCopy); // Update the copy button text to indicate that the code has been copied copyButton.</description></item><item><title>chart</title><link>https://romankurnovskii.com/en/posts/hugo-shortcode-examples/chart/</link><pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/hugo-shortcode-examples/chart/</guid><description>Display Chart.js diagrams/blocks
-Sources</description></item><item><title>Hugo shortcode examples</title><link>https://romankurnovskii.com/en/posts/hugo-shortcode-examples/</link><pubDate>Thu, 20 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/hugo-shortcode-examples/</guid><description>Source code of examples can be found in the repo
-Image - insert resizable image in post</description></item><item><title>img</title><link>https://romankurnovskii.com/en/posts/hugo-shortcode-examples/img/</link><pubDate>Thu, 20 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/hugo-shortcode-examples/img/</guid><description>My image float right, tall Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&amp;rsquo;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</description></item><item><title>Deposit Interactive Brokers from Israel Discount bank</title><link>https://romankurnovskii.com/en/posts/interactivebrokers-deposit/</link><pubDate>Fri, 07 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/interactivebrokers-deposit/</guid><description>Web Create IB notification Login to https://www.interactivebrokers.co.uk/portal/#/ Click Deposit Click Use a new deposit method if no one exist Bank Wire -&amp;gt; Get instructions Account Number: Bank account number
-Next you get Bank Wire Instructions These data you need to make a payment from Discount bank
-Send money from Discount bank Login start.telebank.co.il Click: ביצוע העברה
-Fill the form
-Click המשך and proceed</description></item><item><title>Serverless: Flask+API Gateway+Lambda+MongoDB</title><link>https://romankurnovskii.com/en/posts/serverless-flask-lambda-api-gateway-mongodb/</link><pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/serverless-flask-lambda-api-gateway-mongodb/</guid><description>&amp;ldquo;mongodb&amp;rdquo; free tier vs &amp;ldquo;documentdb&amp;rdquo;
-Project structure - src - app.py - mongo.py - .env - requirements.txt - serverless.yml Sources
-Add AIM user Setup specific user for serverless deployment
-username: serverless-deployer
-aws aim documentation Set policy Create:
-ServerLessDeployerPolicyGroup ServerLessDeployerPolicy Policy:
-{ &amp;#34;Statement&amp;#34;: [ { &amp;#34;Action&amp;#34;: [ &amp;#34;apigateway:*&amp;#34;, &amp;#34;cloudformation:CancelUpdateStack&amp;#34;, &amp;#34;cloudformation:ContinueUpdateRollback&amp;#34;, &amp;#34;cloudformation:CreateChangeSet&amp;#34;, &amp;#34;cloudformation:CreateStack&amp;#34;, &amp;#34;cloudformation:CreateUploadBucket&amp;#34;, &amp;#34;cloudformation:DeleteStack&amp;#34;, &amp;#34;cloudformation:Describe*&amp;#34;, &amp;#34;cloudformation:EstimateTemplateCost&amp;#34;, &amp;#34;cloudformation:ExecuteChangeSet&amp;#34;, &amp;#34;cloudformation:Get*&amp;#34;, &amp;#34;cloudformation:List*&amp;#34;, &amp;#34;cloudformation:UpdateStack&amp;#34;, &amp;#34;cloudformation:UpdateTerminationProtection&amp;#34;, &amp;#34;cloudformation:ValidateTemplate&amp;#34;, &amp;#34;dynamodb:CreateTable&amp;#34;, &amp;#34;dynamodb:DeleteTable&amp;#34;, &amp;#34;dynamodb:DescribeTable&amp;#34;, &amp;#34;dynamodb:DescribeTimeToLive&amp;#34;, &amp;#34;dynamodb:UpdateTimeToLive&amp;#34;, &amp;#34;ec2:AttachInternetGateway&amp;#34;, &amp;#34;ec2:AuthorizeSecurityGroupIngress&amp;#34;, &amp;#34;ec2:CreateInternetGateway&amp;#34;, &amp;#34;ec2:CreateNetworkAcl&amp;#34;, &amp;#34;ec2:CreateNetworkAclEntry&amp;#34;, &amp;#34;ec2:CreateRouteTable&amp;#34;, &amp;#34;ec2:CreateSecurityGroup&amp;#34;, &amp;#34;ec2:CreateSubnet&amp;#34;, &amp;#34;ec2:CreateTags&amp;#34;, &amp;#34;ec2:CreateVpc&amp;#34;, &amp;#34;ec2:DeleteInternetGateway&amp;#34;, &amp;#34;ec2:DeleteNetworkAcl&amp;#34;, &amp;#34;ec2:DeleteNetworkAclEntry&amp;#34;, &amp;#34;ec2:DeleteRouteTable&amp;#34;, &amp;#34;ec2:DeleteSecurityGroup&amp;#34;, &amp;#34;ec2:DeleteSubnet&amp;#34;, &amp;#34;ec2:DeleteVpc&amp;#34;, &amp;#34;ec2:Describe*&amp;#34;, &amp;#34;ec2:DetachInternetGateway&amp;#34;, &amp;#34;ec2:ModifyVpcAttribute&amp;#34;, &amp;#34;events:DeleteRule&amp;#34;, &amp;#34;events:DescribeRule&amp;#34;, &amp;#34;events:ListRuleNamesByTarget&amp;#34;, &amp;#34;events:ListRules&amp;#34;, &amp;#34;events:ListTargetsByRule&amp;#34;, &amp;#34;events:PutRule&amp;#34;, &amp;#34;events:PutTargets&amp;#34;, &amp;#34;events:RemoveTargets&amp;#34;, &amp;#34;iam:AttachRolePolicy&amp;#34;, &amp;#34;iam:CreateRole&amp;#34;, &amp;#34;iam:DeleteRole&amp;#34;, &amp;#34;iam:DeleteRolePolicy&amp;#34;, &amp;#34;iam:DetachRolePolicy&amp;#34;, &amp;#34;iam:GetRole&amp;#34;, &amp;#34;iam:PassRole&amp;#34;, &amp;#34;iam:PutRolePolicy&amp;#34;, &amp;#34;iot:CreateTopicRule&amp;#34;, &amp;#34;iot:DeleteTopicRule&amp;#34;, &amp;#34;iot:DisableTopicRule&amp;#34;, &amp;#34;iot:EnableTopicRule&amp;#34;, &amp;#34;iot:ReplaceTopicRule&amp;#34;, &amp;#34;kinesis:CreateStream&amp;#34;, &amp;#34;kinesis:DeleteStream&amp;#34;, &amp;#34;kinesis:DescribeStream&amp;#34;, &amp;#34;lambda:*&amp;#34;, &amp;#34;logs:CreateLogDelivery&amp;#34;, &amp;#34;logs:CreateLogGroup&amp;#34;, &amp;#34;logs:DeleteLogGroup&amp;#34;, &amp;#34;logs:DescribeLogGroups&amp;#34;, &amp;#34;logs:DescribeLogStreams&amp;#34;, &amp;#34;logs:FilterLogEvents&amp;#34;, &amp;#34;logs:GetLogEvents&amp;#34;, &amp;#34;logs:PutSubscriptionFilter&amp;#34;, &amp;#34;s3:CreateBucket&amp;#34;, &amp;#34;s3:DeleteBucket&amp;#34;, &amp;#34;s3:DeleteBucketPolicy&amp;#34;, &amp;#34;s3:DeleteObject&amp;#34;, &amp;#34;s3:DeleteObjectVersion&amp;#34;, &amp;#34;s3:GetObject&amp;#34;, &amp;#34;s3:GetObjectVersion&amp;#34;, &amp;#34;s3:ListAllMyBuckets&amp;#34;, &amp;#34;s3:ListBucket&amp;#34;, &amp;#34;s3:PutBucketNotification&amp;#34;, &amp;#34;s3:PutBucketPolicy&amp;#34;, &amp;#34;s3:PutBucketTagging&amp;#34;, &amp;#34;s3:PutBucketWebsite&amp;#34;, &amp;#34;s3:PutEncryptionConfiguration&amp;#34;, &amp;#34;s3:PutObject&amp;#34;, &amp;#34;sns:CreateTopic&amp;#34;, &amp;#34;sns:DeleteTopic&amp;#34;, &amp;#34;sns:GetSubscriptionAttributes&amp;#34;, &amp;#34;sns:GetTopicAttributes&amp;#34;, &amp;#34;sns:ListSubscriptions&amp;#34;, &amp;#34;sns:ListSubscriptionsByTopic&amp;#34;, &amp;#34;sns:ListTopics&amp;#34;, &amp;#34;sns:SetSubscriptionAttributes&amp;#34;, &amp;#34;sns:SetTopicAttributes&amp;#34;, &amp;#34;sns:Subscribe&amp;#34;, &amp;#34;sns:Unsubscribe&amp;#34;, &amp;#34;states:CreateStateMachine&amp;#34;, &amp;#34;states:DeleteStateMachine&amp;#34; ], &amp;#34;Effect&amp;#34;: &amp;#34;Allow&amp;#34;, &amp;#34;Resource&amp;#34;: &amp;#34;*&amp;#34; } ], &amp;#34;Version&amp;#34;: &amp;#34;2012-10-17&amp;#34; } Create user copy the API Key &amp;amp; Secret</description></item><item><title>Add search to Hugo multilingual static site with Lunr</title><link>https://romankurnovskii.com/en/posts/hugo-add-search-lunr-popup/</link><pubDate>Sat, 16 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/hugo-add-search-lunr-popup/</guid><description>Initial I had the need to implement search functionality on my site. Content on is in different languages.
-The goal is to impelemnt search for all pages and separate search results for each and every language.
-How it works Hugo generates the search index. In this case it means that we get json file with every static page on the site.
-To make search works we need to create index. lunr.js takes care of it.
-Client send query -&amp;gt; our script &amp;ldquo;tries to find&amp;rdquo; in the index</description></item><item><title>Hugo resize a picture on click</title><link>https://romankurnovskii.com/en/posts/hugo-add-image-zoomin/</link><pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/hugo-add-image-zoomin/</guid><description>Introduction Hugo by default uses parsing of markdown files. This means that we get the html code as it is written in markdown.
-In order to understand which images we can enhance, we add a separate tag/key/id to those images
-Tools To implement the functionality, we need to:
-Write/connect a script/handler that will perform the zoomin effect on the images we need Add the necessary metadata to the images, so the script can find them zoomin script To add the ability to zoom on click, we will use the medium-zoom package.</description></item><item><title>Automating Code Reviews with Amazon CodeGuru</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codeguru/automating-code-reviews-amazon-codeguru/</link><pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codeguru/automating-code-reviews-amazon-codeguru/</guid><description>Lab Automating Code Reviews with Amazon CodeGuru Associating Amazon CodeGuru with a CodeCommit Repository 1. Navigate to the Amazon CodeCommit console.
-2. Click java-web-app:
-3. Notice that at the moment, only a README file has been committed to the master branch. Next, you&amp;rsquo;ll associate CodeGuru with this repository, so that CodeGuru can begin to analyze the code therein.
-4. Go to the CodeGuru dashboard.
-5. Click Associate Repository and run analysis:
-6. Select AWS CodeCommit as the provider, choose java-web-app from the repository dropdown, enter _master_into Source branch and click Associate:</description></item><item><title>Israel - Haifa - Bahai Gardens</title><link>https://romankurnovskii.com/en/photos/22-07-02-israel-haifa-bahai-gardens/</link><pubDate>Sat, 02 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/photos/22-07-02-israel-haifa-bahai-gardens/</guid><description>Google maps Route</description></item><item><title>How to Download and Install Linux RHEL 9 for Free</title><link>https://romankurnovskii.com/en/posts/howto-install-rhel-9-free/</link><pubDate>Fri, 17 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/howto-install-rhel-9-free/</guid><description>Red Hat Enterprise Linux 9 (RHEL 9), codenamed Plow, has gone public (GA). Red Hat announced it on May 18, 2022. It replaced the beta version, which had been in existence since November 3, 2021.
-RHEL 9 is the first few releases in the Red Hat family. It is the first major release since IBM acquired Red Hat in July 2019, and the first major release since abandoning the CentOS project in favor of CentOS Stream, which is now RHEL&amp;rsquo;s predecessor.</description></item><item><title>Top Docker Commands</title><link>https://romankurnovskii.com/en/posts/docker-commands/</link><pubDate>Tue, 07 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/docker-commands/</guid><description>most popular docker images ## lists the images docker pull imagename ## Pull an image or a repository from a registry docker ps -a ## See a list of all containers, even the ones not running docker build -t imagename . ## Create image using this directory's Dockerfile docker run -p 4000:80 imagename ## Run &amp;quot;imagename&amp;quot; mapping port 4000 to 80 docker rmi ## removes the image docker rm ## removes the container docker stop ## stops the container docker volume ls ## lists the volumes docker kill ## kills the container docker logs ## see logs docker inspect ## shows all the info of a container docker docker cp ## Copy files/folders between a container and the local filesystem docker pull imagename ## Pull an image or a repository from a registry docker build -t imagename .</description></item><item><title>Tar command Cheat Sheet</title><link>https://romankurnovskii.com/en/posts/cheat-sheet-command-tar/</link><pubDate>Sun, 05 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/cheat-sheet-command-tar/</guid><description>Common options z compress with gzip c create an archive u append files which are newer than the corresponding copy ibn the archive f filename of the archive v verbose, display what is inflated or deflated a unlike of z, determine compression based on file extension Create tar named archive.tar containing directory tar cf archive.tar /path/files Concatenate files into a single tar tar -cf archive.tar /path/files Extract the contents from archive.tar tar xf archive.tar Create a gzip compressed tar file name archive.</description></item><item><title>How to rename files in Python</title><link>https://romankurnovskii.com/en/posts/howto-rename-files-in-python/</link><pubDate>Sat, 04 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/howto-rename-files-in-python/</guid><description>Learn different ways to rename files in Python using the os and pathlib modules.
-os.rename Rename files with os
-You can use
-os.rename(old_name, new_name) For example we can combine it with os.path.splitext() to get the base name and file extension, and then combine it to a new name:
-import os for file in os.listdir(): name, ext = os.path.splitext(file) new_name = f&amp;#34;{name}_new{ext}&amp;#34; os.rename(file, new_name) pathlib Rename files with pathlib
-The same could be achieved with the pathlib module and</description></item><item><title>How to create a deep clone of an object in JavaScript</title><link>https://romankurnovskii.com/en/posts/howto-create-deepclone-js/</link><pubDate>Thu, 02 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/howto-create-deepclone-js/</guid><description>We can use recursion. Use Object.assign() and an empty object ({}) to create a shallow clone of the original. Use Object.keys() and Array.prototype.forEach() to determine which key-value pairs need to be deep cloned.
-const deepClone = obj =&amp;gt; { let clone = Object.assign({}, obj); Object.keys(clone).forEach( key =&amp;gt; (clone[key] = typeof obj[key] === &amp;#39;object&amp;#39; ? deepClone(obj[key]) : obj[key]) ); return Array.isArray(obj) &amp;amp;&amp;amp; obj.length ? (clone.length = obj.length) &amp;amp;&amp;amp; Array.from(clone) : Array.isArray(obj) ? Array.from(obj) : clone; }; const a = { foo: &amp;#39;bar&amp;#39;, obj: { a: 1, b: 2 } }; const b = deepClone(a); // a !</description></item><item><title>Mac Setup 2022</title><link>https://romankurnovskii.com/en/posts/mac-setup-development/</link><pubDate>Wed, 18 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/mac-setup-development/</guid><description>MacBook Pro Specification 13-inch Apple M1 Pro M1 2020 16 GB RAM 512 GB SSD QWERTY = English/Hebrew macOS Monterey (Update always) Homebrew Install Homebrew as package manager for macOS:
-## paste in terminal and follow the instructions /bin/bash -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&amp;#34; Update everything in Homebrew to recent version:
-brew update Add additional source for casks:
-brew tap homebrew/cask-versions Install GUI applications (read more about these in GUI Applications):
-brew install --cask \ appcleaner \ all-in-one-messenger \ anaconda \ brewmate \ deepl \ discord \ disk-inventory-x \ docker \ figma \ google-chrome \ google-drive \ grammarly \ iterm2 \ itsycal \ macx-youtube-downloader \ mongodb-compass \ notion \ obs \ postman \ rectangle \ sublime-text \ syncthing \ telegram \ tor-browser \ transmission \ utm \ viber \ visual-studio-code \ vlc \ yandex-disk \ zoom Install terminal applications (read more about these in Terminal Applications):</description></item><item><title>AWS Amplify - project setup with Github</title><link>https://romankurnovskii.com/en/posts/cloud-exam-quizz/amplify-setup-project/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/cloud-exam-quizz/amplify-setup-project/</guid><description>Preface For Amplify project I use eu-west region github repo has to be ready private or public New project goto https://eu-west-1.console.aws.amazon.com/amplify/home?region=eu-west-1#/
-New app → Host web app → Github
-Add access to github repo Select repository Come back to Amplify and try again to choose repo Click Next
-Update amplify.yml for node.js project
-version: 1 frontend: phases: preBuild: commands: - yarn install build: commands: - yarn run build artifacts: baseDirectory: build files: - &amp;#39;**/*&amp;#39; cache: paths: - node_modules/**/* Next → Save and deploy Amplify starts to build project and generates project url.</description></item><item><title>AWS Amplify - Set custom domain</title><link>https://romankurnovskii.com/en/posts/cloud-exam-quizz/amplify-custom-domain/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/cloud-exam-quizz/amplify-custom-domain/</guid><description>You can use any custom domain with Amplify and no need register it with AWS Route53.
-I am adding domain at the setup app stage. Another way is from console.
-Click Domain management. or
-Add domain Write domain name -&amp;gt; Configure domain -&amp;gt; Save Nest starts SSL configuration process. Amplify provides with DNS data that you need to write in the domain register account. Once SSL creation starts you can get domain data
-Action -&amp;gt; View DNS records</description></item><item><title>Set Up Proxy on Amazon EC2 Ubuntu</title><link>https://romankurnovskii.com/en/posts/setup-proxy-server-ec2-ubuntu/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/setup-proxy-server-ec2-ubuntu/</guid><description>1. Setting up the EC2 Instance Launch an EC2 Instance Choose an Ubuntu Server image. Select an appropriate instance type. Configure instance details, storage, and security group. Ensure your security group allows inbound traffic on the ports you plan to use for your proxy (typically port 3128 for Squid). Review and launch the instance. Create and download a key pair for SSH access. (optional, can connect through AWS console later) 2. Connect to Your Instance Use SSH client with the instance&amp;rsquo;s public DNS/IP and the key pair:</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Roman Kurnovskii</title><link>https://romankurnovskii.com/en/authors/roman-kurnovskii/</link><description>Recent content on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><atom:link href="https://romankurnovskii.com/en/authors/roman-kurnovskii/index.xml" rel="self" type="application/rss+xml"/><item><title>Automating Code Reviews with Amazon CodeGuru</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codeguru/automating-code-reviews-amazon-codeguru/</link><pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codeguru/automating-code-reviews-amazon-codeguru/</guid><description>&lt;h2 id="lab">Lab&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://cloudacademy.com/lab/automating-code-reviews-amazon-codeguru/">Automating Code Reviews with Amazon CodeGuru&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="associating-amazon-codeguru-with-a-codecommit-repository">Associating Amazon CodeGuru with a CodeCommit Repository&lt;/h2>
+&lt;p>1. Navigate to the &lt;a href="https://us-west-2.console.aws.amazon.com/codesuite/codecommit/repositories?region=us-west-2">Amazon CodeCommit console&lt;/a>.&lt;/p>
+&lt;p>2. Click &lt;strong>java-web-app&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid0-537419d1-3966-42f8-b41e-abe72c266bce.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>3. Notice that at the moment, only a README file has been committed to the master branch. Next, you&amp;rsquo;ll associate CodeGuru with this repository, so that CodeGuru can begin to analyze the code therein.&lt;/p>
+&lt;p>4. Go to the &lt;a href="https://us-west-2.console.aws.amazon.com/codeguru/reviewer/#/associations">CodeGuru dashboard.&lt;/a>&lt;/p>
+&lt;p>5. Click &lt;strong>Associate Repository and run analysis&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid0-f4b29bb3-4045-499f-9da7-1eb5cf29e87d.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>6. Select &lt;strong>AWS CodeCommit&lt;/strong> as the provider, choose &lt;strong>java-web-app&lt;/strong> from the repository dropdown, enter _master_into &lt;strong>Source branch&lt;/strong> and click &lt;strong>Associate&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220404095359-1-5ca07f22-addb-4ed3-9f52-94ca29b5595b.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>In roughly one minute, you&amp;rsquo;ll see that CodeGuru has associated with your repository:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid0-2d79bc2d-bde0-4262-8ad3-704fd23d63b5.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="triggering-an-amazon-codeguru-review">Triggering an Amazon CodeGuru Review&lt;/h2>
+&lt;p>1. Navigate to :8080 in your browser.&lt;/p>
+&lt;p> &lt;em>Note&lt;/em>: This is the IP of an EC2 instance that can be found in the EC2 console.&lt;/p>
+&lt;p>2. Click the file icon in the top left to open the file tree:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid3-0bae7586-5911-4930-9610-81ce558461ff.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;em>Note&lt;/em>: During the creation of this lab, two things were performed automatically. One is that the CodeCommit repository you visited earlier was cloned to the directory you&amp;rsquo;re looking at in the IDE now. Another is that the framework for a Java web app was added in addition to the single README you saw. This is so that you can see the benefits of CodeGuru without having to work heavily with code.&lt;/p>
+&lt;p>In this lab step, you&amp;rsquo;ll push all the new code to the nearly-empty Code Commit repository, to trigger a CodeGuru review.&lt;/p>
+&lt;p>3. Open the terminal in your IDE:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid0-b739c537-039a-4254-bcf2-a41e080a7cf8.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>4. In the terminal, add the new files to a Git branch, and commit and push the changes:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">cd&lt;/span> /cloudacademy/lab
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git add .
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git checkout -b trigger_branch
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git commit -m &lt;span style="color:#4070a0">&amp;#34;trigger a CodeGuru analysis by pushing Java code&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git push origin trigger_branch
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will create a Git commit that includes all the Java files in a branch called &lt;code>trigger_branch&lt;/code>, so that you can make a pull request in CodeCommit. Since CodeGuru analyses are triggered by pull requests, this is what will trigger a CodeGuru analysis.&lt;/p>
+&lt;p>5. Back on the CodeCommit dashboard, click &lt;strong>Create pull request&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220404132138-2-4c13b52f-0959-4fd3-a080-f5a83772d0a7.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>6. Set the &lt;strong>Destination&lt;/strong> to &lt;strong>master&lt;/strong> and the &lt;strong>source&lt;/strong> to &lt;strong>trigger_branch&lt;/strong> and click &lt;strong>Compare&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220404132208-3-90aa0a6c-0663-4ed4-b349-e7fb1d5ece5d.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>7. Type &lt;em>Trigger a CodeGuru Reviewer Analysis&lt;/em> into the &lt;strong>Title&lt;/strong> field and click &lt;strong>Create pull request&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid4-5b2c50b8-b6bf-4cd8-a528-6222996b8f35.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>This will create a pull request and trigger a CodeGuru review.&lt;/p>
+&lt;h2 id="viewing-amazon-codeguru-comments">Viewing Amazon CodeGuru Comments&lt;/h2>
+&lt;p>1. If you weren&amp;rsquo;t automatically brought to the pull request details page after creating your pull request, click &lt;strong>Pull Requests&lt;/strong> beneath &lt;strong>Repositories&lt;/strong> on the left side of the page:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-1ae864f3-e8d9-4741-87e3-e0d05a6245e1.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>2. Click the only available pull request:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-863ba6ee-b974-4dfb-9aa9-d002ff92d050.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>3. Notice the section mentioning CodeGuru Reviewer:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-23ca4bca-5c78-4373-8d1b-89a54963a67a.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>This section will display in each pull request made in any repository associated with CodeGuru. As of the time this lab was released, CodeGuru is still in preview. As the section on your pull request details tab mentions, because it&amp;rsquo;s in preview mode, CodeGuru can take a while to process a pull request. There isn&amp;rsquo;t a way to track its progress, and you currently won&amp;rsquo;t be alerted when that processing begins or finishes.&lt;/p>
+&lt;p>4. Select the &lt;strong>Changes&lt;/strong> tab:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-b25c1c16-40e3-49ae-bdfd-f0203bf8a178.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>5. In the &lt;strong>Go to file&lt;/strong> filter, enter dockerservlet and click the result to navigate to the file:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid1-0bd3607a-2845-47b6-9bb7-497fc1f6653f.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You may need to scroll down the page to find the DockerServlet.java file changes. This file is known to have CodeGuru Reviewer comments that usually appear a few minutes after creating the pull request.&lt;/p>
+&lt;p>6. Scroll down to line 60 to see an example of a comment from CodeGuru Reviewer (If you don&amp;rsquo;t see any comment you may try refreshing the page every minute until one appears):&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid0-b7355e55-55bd-4df7-b479-f6ebf399876d.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You can then make updates as you see fit, and submit more pull requests to see if you&amp;rsquo;ve addressed CodeGuru&amp;rsquo;s suggestions.&lt;/p></description></item></channel></rss>

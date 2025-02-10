@@ -1,1 +1,511 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Themes on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/themes/</link><description>Recent content in Themes on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Thu, 21 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/themes/index.xml" rel="self" type="application/rss+xml"/><item><title>Markdown Cheat Sheet</title><link>https://romankurnovskii.com/en/posts/markdown-syntax/</link><pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/markdown-syntax/</guid><description>&lt;p>This article offers an example of the basic Markdown syntax that can be used and also shows whether the basic elements of HTML are decorated with CSS.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Themes on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/themes/</link><description>Recent content in Themes on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 21 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/themes/index.xml" rel="self" type="application/rss+xml"/><item><title>Markdown Cheat Sheet</title><link>https://romankurnovskii.com/en/posts/markdown-syntax/</link><pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/markdown-syntax/</guid><description>&lt;p>This article offers an example of the basic Markdown syntax that can be used and also shows whether the basic elements of HTML are decorated with CSS.&lt;/p>
+&lt;h2 id="headers">Headers&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Header 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>========
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Header 2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>--------
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="header-1">Header 1&lt;/h1>
+&lt;h2 id="header-2">Header 2&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span># h1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>## h2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>### h3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>#### h4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>##### h5
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>###### h6
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="h1">h1&lt;/h1>
+&lt;h2 id="h2">h2&lt;/h2>
+&lt;h3 id="h3">h3&lt;/h3>
+&lt;h4 id="h4">h4&lt;/h4>
+&lt;h5 id="h5">h5&lt;/h5>
+&lt;h6 id="h6">h6&lt;/h6>
+&lt;h2 id="paragraph">Paragraph&lt;/h2>
+&lt;p>To insert an empty string, you need to put the word wrap symbol twice (press Enter)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur eius in labore quidem, sequi suscipit!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aut commodi debitis ipsam nobis perspiciatis sequi, sint unde vitae.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="images">Images&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>![Image alt text](/path/to/img.jpg)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>![Image alt text](/path/to/img.jpg &amp;#34;title&amp;#34;)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>![Image alt text][img]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[img]: http://foo.com/img.jpg
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="emphasis">Emphasis&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-mysql" data-lang="mysql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">*&lt;/span>italic&lt;span style="color:#666">*&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>_italic_&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#666">**&lt;/span>bold&lt;span style="color:#666">**&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>__bold__&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#666">***&lt;/span>bold&lt;span style="color:#bbb"> &lt;/span>italic&lt;span style="color:#666">***&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>___bold&lt;span style="color:#bbb"> &lt;/span>italic___&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#666">~~&lt;/span>strikethrough&lt;span style="color:#666">~~&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#666">`&lt;/span>code&lt;span style="color:#666">`&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;em>italic&lt;/em>
+&lt;em>italic&lt;/em>&lt;/p>
+&lt;p>&lt;strong>bold&lt;/strong>
+&lt;strong>bold&lt;/strong>
+&lt;em>&lt;strong>bold italic&lt;/strong>&lt;/em>
+&lt;em>&lt;strong>bold italic&lt;/strong>&lt;/em>&lt;/p>
+&lt;p>&lt;del>strikethrough&lt;/del>&lt;/p>
+&lt;p>&lt;code>code&lt;/code>&lt;/p>
+&lt;h2 id="links">Links&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>[link](http://google.com)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[link][google]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[google]: http://google.com
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;http://google.com&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="blockquotes">Blockquotes&lt;/h2>
+&lt;p>The blockquote element represents the content that is quoted from another source, optionally with a quotation that must be in the element &lt;code>footer&lt;/code> or &lt;code>cite&lt;/code>, and optional line changes such as annotations and abbreviations.&lt;/p>
+&lt;h3 id="block-quote-without-attribution">Block quote without attribution&lt;/h3>
+&lt;blockquote>
+&lt;p>Tiam, ad mint andaepu dandae nostion secatur sequo quae.
+&lt;strong>Note&lt;/strong>that you can use the syntax &lt;em>Markdown&lt;/em> inside the block quote.&lt;/p>&lt;/blockquote>
+&lt;h3 id="block-quote-with-authorship">Block quote with authorship&lt;/h3>
+&lt;blockquote>
+&lt;p>Don&amp;rsquo;t communicate by sharing memory, share memory by communicating.&lt;br>
+— &lt;cite>Rob Pike&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/cite>&lt;/p>&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>&amp;gt;This is an example quote,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;in which before each line
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;angle bracket is used.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;This is an example quote,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>in which the corner bracket is placed only before the beginning of the new paragraph.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;Second paragraph.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>This is an example quote,
+in which before each line
+angle bracket is used.&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>This is an example quote,
+in which the corner bracket is placed only before the beginning of the new paragraph.
+Second paragraph.&lt;/p>&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>&amp;gt; Level One Citation
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;&amp;gt; Second Level Citation
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;&amp;gt;&amp;gt; Third Level Citation
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;Level One Citation
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>Level One Citation&lt;/p>
+&lt;blockquote>
+&lt;p>Second Level Citation&lt;/p>
+&lt;blockquote>
+&lt;p>Third Level Citation&lt;/p>&lt;/blockquote>&lt;/blockquote>
+&lt;p>Level One Citation&lt;/p>&lt;/blockquote>
+&lt;h2 id="tables">Tables&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span> | Name | Age |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | ----- | --- |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | Bob | 27 |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | Alice | 23 |
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Name&lt;/th>
+&lt;th>Age&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Bob&lt;/td>
+&lt;td>27&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Alice&lt;/td>
+&lt;td>23&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>The cells in the delimitation row use only symbols &lt;code>-&lt;/code> and &lt;code>:&lt;/code>. The symbol &lt;code>:&lt;/code> is placed at the beginning, at the end, or on both sides of the cell contents of the dividing row to indicate the alignment of the text in the corresponding column on the left, right side, or center.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>| Column on the left | Column on the right | Column on the center |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>| :----------------- | ------------------: | :------------------: |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>| Text | Text | Text |
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: left">Column on the left&lt;/th>
+&lt;th style="text-align: right">Column on the right&lt;/th>
+&lt;th style="text-align: center">Column on the center&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: left">Text&lt;/td>
+&lt;td style="text-align: right">Text&lt;/td>
+&lt;td style="text-align: center">Text&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="markdown-inside-the-table">Markdown inside the table&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-mysql" data-lang="mysql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">|&lt;/span>&lt;span style="color:#bbb"> &lt;/span>Italics&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">|&lt;/span>&lt;span style="color:#bbb"> &lt;/span>Bold&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">|&lt;/span>&lt;span style="color:#bbb"> &lt;/span>Code&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">|&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#666">|&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">-------&lt;/span>&lt;span style="color:#60a0b0;font-style:italic">-- | -------- | ------ |
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>&lt;span style="color:#666">|&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">*&lt;/span>italics&lt;span style="color:#666">*&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">|&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">**&lt;/span>bold&lt;span style="color:#666">**&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">|&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">`&lt;/span>code&lt;span style="color:#666">`&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">|&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Italics&lt;/th>
+&lt;th>Bold&lt;/th>
+&lt;th>Code&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;em>italics&lt;/em>&lt;/td>
+&lt;td>&lt;strong>bold&lt;/strong>&lt;/td>
+&lt;td>&lt;code>code&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="code-blocks">Code Blocks&lt;/h2>
+&lt;h3 id="code-block-with-inverted-quotes">Code block with inverted quotes&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">&amp;lt;!doctype html&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">html&lt;/span> &lt;span style="color:#4070a0">lang&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;en&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">meta&lt;/span> &lt;span style="color:#4070a0">charset&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;utf-8&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">title&lt;/span>&amp;gt;Example HTML5 Document&amp;lt;/&lt;span style="color:#062873;font-weight:bold">title&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">p&lt;/span>&amp;gt;Test&amp;lt;/&lt;span style="color:#062873;font-weight:bold">p&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="code-block-with-four-spaces-indent">Code block with four spaces indent&lt;/h3>
+&lt;pre>&lt;code>&amp;lt;!doctype html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+&amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
+&amp;lt;title&amp;gt;Example HTML5 Document&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;p&amp;gt;Test&amp;lt;/p&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;h3 id="code-unit-with-hugo-internal-shorted-backlight">Code Unit with Hugo Internal Shorted Backlight&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">&amp;lt;!doctype html&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">html&lt;/span> &lt;span style="color:#4070a0">lang&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;en&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">meta&lt;/span> &lt;span style="color:#4070a0">charset&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;utf-8&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">title&lt;/span>&amp;gt;Example HTML5 Document&amp;lt;/&lt;span style="color:#062873;font-weight:bold">title&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">p&lt;/span>&amp;gt;Test&amp;lt;/&lt;span style="color:#062873;font-weight:bold">p&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;h2 id="lists">Lists&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>* Item 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>* Item 2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>- Item 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>- Item 2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>- [ ] Checkbox off
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>- [x] Checkbox on
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>1. Item 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>2. Item 2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>
+&lt;p>Item 1&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Item 2&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Item 1&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Item 2&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;input disabled="" type="checkbox"> Checkbox off&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;input checked="" disabled="" type="checkbox"> Checkbox on&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;ol>
+&lt;li>Item 1&lt;/li>
+&lt;li>Item 2&lt;/li>
+&lt;/ol>
+&lt;p>Make the headers uniform. At the end of the title, do not put a point.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Correct&lt;/th>
+&lt;th>Wrong&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Getting the &lt;br/> Creating a Cluster&lt;/td>
+&lt;td>Get the &lt;br/> Creating a Cluster&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Get &lt;br/> Create Cluster&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;ol>
+&lt;li>
+&lt;p>If you want to describe the sequence of actions, use the numbered list. At the end of the lines, put a period.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If the order of items is not important, use the marked list. Make it one of the ways:&lt;/p>
+&lt;ul>
+&lt;li>If the entries in the list are separate sentences, start them with a capital letter and put a period at the end.&lt;/li>
+&lt;li>If the introductory phrase and the list make up one sentence, the entries in the list should start with a lowercase letter and end with a semicolon. The last list item ends with a dot.&lt;/li>
+&lt;li>If the list consists of parameter names or values (without explanation), do not put characters at the end of lines.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h3 id="ordered-list">Ordered list&lt;/h3>
+&lt;ol>
+&lt;li>First item&lt;/li>
+&lt;li>Second item&lt;/li>
+&lt;li>Third item&lt;/li>
+&lt;/ol>
+&lt;p>To create an ordered numbered list, use the digits with the symbol &lt;code>.&lt;/code> or &lt;code>)&lt;/code>. The recommended markup format is &lt;code>1&lt;/code> and &lt;code>.&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>1. First item
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>1. Second item
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>1. Third item
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol>
+&lt;li>First item&lt;/li>
+&lt;li>Second item&lt;/li>
+&lt;li>Third item&lt;/li>
+&lt;/ol>
+&lt;p>To create a nested ordered list, add a indent to the entries in the child list. The allowed indentation is from two to five spaces. The recommended indent size is four spaces.&lt;/p>
+&lt;p>For example, markup:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>1. First paragraph
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 1. Sub-paragraph
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 1. Sub-paragraph
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>1. Second paragraph
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol>
+&lt;li>First paragraph
+&lt;ol>
+&lt;li>Sub-paragraph&lt;/li>
+&lt;li>Sub-paragraph&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Second paragraph&lt;/li>
+&lt;/ol>
+&lt;h3 id="unordered-list">Unordered list&lt;/h3>
+&lt;ul>
+&lt;li>List item&lt;/li>
+&lt;li>Another item&lt;/li>
+&lt;li>And another item&lt;/li>
+&lt;/ul>
+&lt;h3 id="nested-list">Nested list&lt;/h3>
+&lt;ul>
+&lt;li>Fruit
+&lt;ul>
+&lt;li>Apple&lt;/li>
+&lt;li>Orange&lt;/li>
+&lt;li>Banana&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Dairy
+&lt;ul>
+&lt;li>Milk&lt;/li>
+&lt;li>Cheese&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="other-elements---abbr-sub-sup-kbd-mark">Other elements - abbr, sub, sup, kbd, mark&lt;/h2>
+&lt;p>&lt;abbr title="Graphics Interchange Format">GIF&lt;/abbr> is a bitmap image format.&lt;/p>
+&lt;p>H&lt;sub>2&lt;/sub>O&lt;/p>
+&lt;p>X&lt;sup>n&lt;/sup> + Y&lt;sup>n&lt;/sup> = Z&lt;sup>n&lt;/sup>&lt;/p>
+&lt;p>Press &lt;kbd>&lt;kbd>CTRL&lt;/kbd>+&lt;kbd>ALT&lt;/kbd>+&lt;kbd>Delete&lt;/kbd>&lt;/kbd> to end the session.&lt;/p>
+&lt;p>Most &lt;mark>salamanders&lt;/mark> are nocturnal, and hunt for insects, worms, and other small creatures.&lt;/p>
+&lt;pre>&lt;code>Most &amp;lt;mark&amp;gt;salamanders&amp;lt;/mark&amp;gt; are nocturnal
+&lt;/code>&lt;/pre>
+&lt;p>💡 &lt;em>Data structure&lt;/em> is a container that stores data in a specific format. This container decides how the outside world can read or change this data.&lt;/p>
+&lt;h2 id="math-latex-syntax">Math LaTeX syntax&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Math Element&lt;/th>
+&lt;th>Code&lt;/th>
+&lt;th>Pronunciation&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>$x_{12345}$&lt;/td>
+&lt;td>&lt;code>$x_{12345}$&lt;/code>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\quad x_12$&lt;/td>
+&lt;td>&lt;code>$\quad x_12$&lt;/code>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$a_{ij}b_{kl}=\delta_{i}^{l}$&lt;/td>
+&lt;td>&lt;code>$a_{ij}b_{kl}=\delta_{i}^{l}$&lt;/code>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\alpha$&lt;/td>
+&lt;td>&lt;code>$\alpha$&lt;/code>&lt;/td>
+&lt;td>\alpha&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\beta$&lt;/td>
+&lt;td>&lt;code>$\beta$&lt;/code>&lt;/td>
+&lt;td>\beta&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\gamma$&lt;/td>
+&lt;td>&lt;code>$\gamma$&lt;/code>&lt;/td>
+&lt;td>\gamma&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\delta$&lt;/td>
+&lt;td>&lt;code>$\delta$&lt;/code>&lt;/td>
+&lt;td>\delta&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\epsilon$&lt;/td>
+&lt;td>&lt;code>$\epsilon$&lt;/code>&lt;/td>
+&lt;td>\epsilon&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\pi$&lt;/td>
+&lt;td>&lt;code>$\pi$&lt;/code>&lt;/td>
+&lt;td>\pi&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\theta$&lt;/td>
+&lt;td>&lt;code>$\theta$&lt;/code>&lt;/td>
+&lt;td>\theta&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\lambda$&lt;/td>
+&lt;td>&lt;code>$\lambda$&lt;/code>&lt;/td>
+&lt;td>\lambda&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\mu$&lt;/td>
+&lt;td>&lt;code>$\mu$&lt;/code>&lt;/td>
+&lt;td>\mu&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\sigma$&lt;/td>
+&lt;td>&lt;code>$\sigma$&lt;/code>&lt;/td>
+&lt;td>\sigma&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\omega$&lt;/td>
+&lt;td>&lt;code>$\omega$&lt;/code>&lt;/td>
+&lt;td>\omega&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\Gamma$&lt;/td>
+&lt;td>&lt;code>$\Gamma$&lt;/code>&lt;/td>
+&lt;td>\Gamma&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\Delta$&lt;/td>
+&lt;td>&lt;code>$\Delta$&lt;/code>&lt;/td>
+&lt;td>\Delta&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\Sigma$&lt;/td>
+&lt;td>&lt;code>$\Sigma$&lt;/code>&lt;/td>
+&lt;td>\Sigma&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\Theta$&lt;/td>
+&lt;td>&lt;code>$\Theta$&lt;/code>&lt;/td>
+&lt;td>\Theta&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\Omega$&lt;/td>
+&lt;td>&lt;code>$\Omega$&lt;/code>&lt;/td>
+&lt;td>\Omega&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\infty$&lt;/td>
+&lt;td>&lt;code>$\infty$&lt;/code>&lt;/td>
+&lt;td>\infty&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\sum$&lt;/td>
+&lt;td>&lt;code>$\sum$&lt;/code>&lt;/td>
+&lt;td>\sum&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\prod$&lt;/td>
+&lt;td>&lt;code>$\prod$&lt;/code>&lt;/td>
+&lt;td>\prod&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\int$&lt;/td>
+&lt;td>&lt;code>$\int$&lt;/code>&lt;/td>
+&lt;td>\int&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\oint$&lt;/td>
+&lt;td>&lt;code>$\oint$&lt;/code>&lt;/td>
+&lt;td>\oint&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\partial$&lt;/td>
+&lt;td>&lt;code>$\partial$&lt;/code>&lt;/td>
+&lt;td>\partial&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\nabla$&lt;/td>
+&lt;td>&lt;code>$\nabla$&lt;/code>&lt;/td>
+&lt;td>\nabla&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\pm$&lt;/td>
+&lt;td>&lt;code>$\pm$&lt;/code>&lt;/td>
+&lt;td>\pm&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\times$&lt;/td>
+&lt;td>&lt;code>$\times$&lt;/code>&lt;/td>
+&lt;td>\times&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\div$&lt;/td>
+&lt;td>&lt;code>$\div$&lt;/code>&lt;/td>
+&lt;td>\div&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\approx$&lt;/td>
+&lt;td>&lt;code>$\approx$&lt;/code>&lt;/td>
+&lt;td>\approx&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\geq$&lt;/td>
+&lt;td>&lt;code>$\geq$&lt;/code>&lt;/td>
+&lt;td>\geq&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\leq$&lt;/td>
+&lt;td>&lt;code>$\leq$&lt;/code>&lt;/td>
+&lt;td>\leq&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>$\neq$&lt;/td>
+&lt;td>&lt;code>$\neq$&lt;/code>&lt;/td>
+&lt;td>\neq&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/google/styleguide/blob/gh-pages/docguide/style.md">Style from Google&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>The above quote is taken from Rob Pike’s book &lt;a href="https://www.youtube.com/watch?v=PAAkCSZUG1c">talk&lt;/a> during Gopherfest, November 18, 2015.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item></channel></rss>

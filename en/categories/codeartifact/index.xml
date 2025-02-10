@@ -1,3 +1,36 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Codeartifact on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/codeartifact/</link><description>Recent content in Codeartifact on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sun, 18 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/codeartifact/index.xml" rel="self" type="application/rss+xml"/><item><title>CodeArtifact</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codeartifact/</link><pubDate>Sun, 18 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codeartifact/</guid><description>About AWS CodeArtifact is a fully managed artifact repository service that makes it easy for organizations of any size to securely store, publish, and share software packages used in their software development process.
-Documentation User Guide CodeAr­tifact is a secure storage, publishing, and sharing of software code packages used in a development process organisation&amp;rsquo;s software development. CodeAr­tifact makes it easy for small organisations to store, publish, and share software packages.
-CodeArtifact can be configured to automatically fetch software packages and dependencies from public artifact repositories.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Codeartifact on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/codeartifact/</link><description>Recent content in Codeartifact on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sun, 18 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/codeartifact/index.xml" rel="self" type="application/rss+xml"/><item><title>CodeArtifact</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codeartifact/</link><pubDate>Sun, 18 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codeartifact/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>AWS CodeArtifact is a fully managed artifact repository service that makes it easy for organizations of any size to securely store, publish, and share software packages used in their software development process.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/codeartifact/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/codeartifact/?id=docs_gateway">User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/diagrams/CodeArtifact_HIW_Diagram.9640a3361d4c20f79fbca661ee00d6a0ea706316.png"
+id="zoom-default"
+alt="Amazon CodeArtifact Flow"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>CodeAr­tifact is a secure storage, publishing, and sharing of software code packages used in a development process organisation&amp;rsquo;s software development. CodeAr­tifact makes it easy for small organisations to store, publish, and share software packages.&lt;/p>
+&lt;p>CodeArtifact can be configured to automatically fetch software packages and dependencies from public artifact repositories.&lt;/p>
+&lt;p>CodeArtifact works with commonly used package managers and build tools like Maven, Gradle, npm, yarn, twine, pip, and NuGet making it easy to integrate into existing development workflows.&lt;/p>
+&lt;h2 id="price">Price&lt;/h2>
+&lt;p>Pay only for what you use – the size of the artifacts stored, the number of requests made, and the amount of data transferred out of an AWS Region. CodeArtifact includes a monthly free tier for storage and requests&lt;/p>
+&lt;p>&lt;a href="https://aws.amazon.com/codeartifact/pricing/">Current price&lt;/a>&lt;/p>
+&lt;h2 id="use-cases">Use Cases&lt;/h2>
+&lt;p>Type: Developer Tools&lt;/p>
+&lt;h3 id="alternatives">Alternatives&lt;/h3>
+&lt;ul>
+&lt;li>JFrog Artifactory&lt;/li>
+&lt;li>Docker hub&lt;/li>
+&lt;li>Sonatype Nexus Platform&lt;/li>
+&lt;li>Helm&lt;/li>
+&lt;li>Azure DevOps Services&lt;/li>
+&lt;li>Github&lt;/li>
+&lt;/ul>
+&lt;h3 id="usage">Usage&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>aws codeartifact list-domains --region us-east-1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="practice">Practice&lt;/h2>
+&lt;p>&lt;a href="https://docs.aws.amazon.com/codeartifact/latest/ug/getting-started-console.html">Getting started using the console&lt;/a>&lt;/p></description></item></channel></rss>

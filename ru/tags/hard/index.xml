@@ -1,15 +1,137 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hard on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/hard/</link><description>Recent content in Hard on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sun, 10 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/hard/index.xml" rel="self" type="application/rss+xml"/><item><title>4. Median of Two Sorted Arrays</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/4/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/4/</guid><description>LeetCode задача 4
-Задача Даны два отсортированных массива nums1 и nums2 размера m и n соответственно. Найти медиану двух отсортированных массивов.
-Подсказки Чтобы найти медиану, нужно сначала объединить два массива и отсортировать их. После этого медиана будет либо средним элементом, если общее количество элементов нечетное, либо средним значением двух центральных элементов, если общее количество элементов четное.
-Подход Мы можем объединить два массива в один большой отсортированный массив и найти медиану этого массива. Этот подход не самый эффективный, но он прост и понятен.</description></item><item><title>42. Trapping Rain Water</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/42/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/42/</guid><description>LeetCode задача 42
-Задача Дан массив неотрицательных целых чисел, представляющих собой карту высот, где ширина каждой стойки равна 1. Вычислите, сколько воды может удерживать этот массив после дождя.
-Подсказки Мы можем решить эту задачу, двигаясь от краев массива к его центру, отслеживая текущую максимальную высоту с обеих сторон.
-Подход Простой и понятный способ решения этой задачи - пройтись по массиву и для каждого элемента вычислить, сколько воды он может удержать.
-Алгоритм Инициализируем переменную для хранения общего объема воды, который может быть удержан.</description></item><item><title>1359. Count All Valid Pickup and Delivery Options</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1359/</link><pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1359/</guid><description>LeetCode задача 1359
-Задача Дано n заказов, каждый заказ состоит из услуг по приему и доставке.
-Необходимо подсчитать все возможные последовательности приема/доставки так, чтобы доставка(i) всегда шла после приема(i).
-Так как ответ может быть очень большим, верните его по модулю 10^9 + 7.
-Подсказки Использовать комбинаторный подход.
-Для каждого нового заказа у нас есть 2 * (2n-1) способов добавить его в текущую последовательность.
-Мы используем данную формулу, так как:
-Новый заказ может быть вставлен на любое место среди существующих заказов (2n-1 мест).</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hard on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/hard/</link><description>Recent content in Hard on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sun, 10 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/hard/index.xml" rel="self" type="application/rss+xml"/><item><title>4. Median of Two Sorted Arrays</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/4/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/4/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/median-of-two-sorted-arrays">LeetCode задача 4&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Даны два отсортированных массива nums1 и nums2 размера m и n соответственно. Найти медиану двух отсортированных массивов.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Чтобы найти медиану, нужно сначала объединить два массива и отсортировать их. После этого медиана будет либо средним элементом, если общее количество элементов нечетное, либо средним значением двух центральных элементов, если общее количество элементов четное.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Мы можем объединить два массива в один большой отсортированный массив и найти медиану этого массива. Этот подход не самый эффективный, но он прост и понятен.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;p>Объедините два массива.
+Отсортируйте объединенный массив.
+Найдите медиану отсортированного массива.&lt;/p>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">findMedianSortedArrays&lt;/span>(nums1, nums2):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Шаг 1: Объединение двух массивов&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> merged &lt;span style="color:#666">=&lt;/span> nums1 &lt;span style="color:#666">+&lt;/span> nums2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Шаг 2: Сортировка объединенного массива&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> merged&lt;span style="color:#666">.&lt;/span>sort()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Шаг 3: Поиск медианы&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(merged)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> middle &lt;span style="color:#666">=&lt;/span> n &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Если n четное&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> n &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> (merged[middle &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">+&lt;/span> merged[middle]) &lt;span style="color:#666">/&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Если n нечетное&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> merged[middle]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>42. Trapping Rain Water</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/42/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/42/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/trapping-rain-water/">LeetCode задача 42&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Дан массив неотрицательных целых чисел, представляющих собой карту высот, где ширина каждой стойки равна 1. Вычислите, сколько воды может удерживать этот массив после дождя.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Мы можем решить эту задачу, двигаясь от краев массива к его центру, отслеживая текущую максимальную высоту с обеих сторон.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Простой и понятный способ решения этой задачи - пройтись по массиву и для каждого элемента вычислить, сколько воды он может удержать.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Инициализируем переменную для хранения общего объема воды, который может быть удержан.&lt;/li>
+&lt;li>Пройдемся по массиву, для каждого элемента:
+&lt;ul>
+&lt;li>Найдем максимальную высоту слева и справа от текущего элемента.&lt;/li>
+&lt;li>Объем воды, который может быть удержан над этим элементом, равен минимальному значению из этих двух максимальных высот, минус высота самого элемента.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Добавим этот объем к общему объему.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">trap&lt;/span>(height):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(height)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Инициализируем переменную для хранения общего объема воды&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> total_water &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Находим максимальную высоту слева от i&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_left &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(height[:i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Находим максимальную высоту справа от i&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_right &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(height[i:])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Объем воды для текущего элемента&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> water &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">min&lt;/span>(max_left, max_right) &lt;span style="color:#666">-&lt;/span> height[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Добавляем этот объем к общему объему&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> total_water &lt;span style="color:#666">+=&lt;/span> water
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> total_water
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1359. Count All Valid Pickup and Delivery Options</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/1359/</link><pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/1359/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/count-all-valid-pickup-and-delivery-options/">LeetCode задача 1359&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Дано &lt;code>n&lt;/code> заказов, каждый заказ состоит из услуг по приему и доставке.&lt;/p>
+&lt;p>Необходимо подсчитать все возможные последовательности приема/доставки так, чтобы доставка(i) всегда шла после приема(i).&lt;/p>
+&lt;p>Так как ответ может быть очень большим, верните его по модулю &lt;code>10^9 + 7&lt;/code>.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Использовать комбинаторный подход.&lt;/p>
+&lt;p>Для каждого нового заказа у нас есть &lt;code>2 * (2n-1)&lt;/code> способов добавить его в текущую последовательность.&lt;/p>
+&lt;p>Мы используем данную формулу, так как:&lt;/p>
+&lt;p>Новый заказ может быть вставлен на любое место среди существующих заказов (2n-1 мест). У нас 2 операции (прием и доставка) для каждого заказа.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Начнем с самого начала,&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Мы получили 1-й заказ &lt;strong>n=1&lt;/strong>&lt;/p>
+&lt;p>Мы можем расставить только в одном порядке: &lt;code>P1 D1&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Теперь мы получили 2-й заказ &lt;strong>n=2&lt;/strong>, и нужно добавить к предыдущему и расставить &lt;code>P2, D2&lt;/code>.&lt;/p>
+&lt;p>Куда мы можем поставить P2?&lt;/p>
+&lt;p>На первое место, второе или третье. И не можем поставить на последнее, т.к. последнее место всегда будет части доставки(D).&lt;/p>
+&lt;p>Попробуем расставить:&lt;/p>
+&lt;ol>
+&lt;li>Всего &lt;strong>3&lt;/strong> возможных позиции куда поставить 2-й (P2) заказ. (Обозначим перестановки от предыдущего заказа как &lt;code>X&lt;/code>):&lt;/li>
+&lt;li>Если &lt;code>P2 X X&lt;/code>, то у P2 и D2 из расстановок - 3 возможных варианта: &lt;code>P2 D2 X X&lt;/code> или &lt;code>P2 X D2 X&lt;/code> или &lt;code>P2 X X D2&lt;/code>&lt;/li>
+&lt;li>Если &lt;code>X P2 X&lt;/code>, - 2 возможных варианта: &lt;code>X P2 D2 X&lt;/code> или &lt;code>X P2 X D2&lt;/code>&lt;/li>
+&lt;li>Если &lt;code>X X P2&lt;/code>, - 1 возможный вариант: &lt;code>X X P2 D2&lt;/code>&lt;/li>
+&lt;li>Отсюда мы получаем формулу, что для &lt;code>n&lt;/code> заказа - &lt;code>n*2&lt;/code> операций, и &lt;code>n*2 -1&lt;/code> возможных комбинаций.&lt;/li>
+&lt;li>Итого получаем, что для второго заказа возможных выборов перестановок &lt;code>3+2+1&lt;/code> - &lt;strong>6&lt;/strong>&lt;/li>
+&lt;li>Также мы видим, что &lt;code>X&lt;/code> - расстановки с предыдущего заказа тоже меняли позиции, поэтому общее количество комбинаций будет равно &lt;mark>произведению количества комбинаций текущего заказа и предыдущего&lt;/mark> - &lt;strong>6*1=6&lt;/strong>&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>Теперь мы получили 3-й заказ &lt;strong>n=3&lt;/strong>,&lt;/p>
+&lt;ol>
+&lt;li>По аналогии с предыдущим, перестановок получается &lt;code>n*2=6&lt;/code>&lt;/li>
+&lt;li>Комбинаций получается &lt;code>5+4+3+2+1&lt;/code> = &lt;strong>15&lt;/strong>&lt;/li>
+&lt;li>Перемножаем с комбинациями из предыдущего заказа &lt;code>15*6=90&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>Для каждого заказа от 1 до n:&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Рассчитываем количество способов добавления заказа в текущую последовательность.&lt;/p>
+&lt;ol>
+&lt;li>Для подсчета комбинаций текущего заказа можно использовать формулу:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span> 2*n * (2*n-1) // 2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> # для n:3 2*3=6, 2*3-1=5, 6*5//2=15
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Умножаем текущее количество комбинаций на количество способов добавления заказа.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">countOrders&lt;/span>(n: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MOD &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">10&lt;/span>&lt;span style="color:#666">**&lt;/span>&lt;span style="color:#40a070">9&lt;/span> &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">7&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> x &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">2&lt;/span>, n &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev_order_combinations &lt;span style="color:#666">=&lt;/span> res
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> order_combinations &lt;span style="color:#666">=&lt;/span> (&lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">*&lt;/span> x) &lt;span style="color:#666">*&lt;/span> (&lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">*&lt;/span> x &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>) &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> prev_order_combinations &lt;span style="color:#666">*&lt;/span> order_combinations &lt;span style="color:#666">%&lt;/span> MOD
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

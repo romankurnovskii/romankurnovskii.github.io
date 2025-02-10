@@ -1,17 +1,1109 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Golang on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/golang/</link><description>Recent content in Golang on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Tue, 03 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/golang/index.xml" rel="self" type="application/rss+xml"/><item><title>7. DevOps - изучение языка программирования</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day07/</link><pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day07/</guid><description>Общая картина: DevOps и изучение языка программирования Я думаю, будет справедливо сказать, что для достижения успеха в качестве инженера DevOps в долгосрочной перспективе необходимо знать хотя бы один язык программирования на базовом уровне. Я хочу провести это первое занятие в этой статье, чтобы выяснить, почему это такой важный навык, и, надеюсь, к концу этой недели или раздела вы будете лучше понимать, почему, как и что делать. делайте, чтобы продвигаться в своем учебном путешествии.
-Я думаю, что если бы я спросил в социальных сетях, нужны ли вам навыки программирования для ролей, связанных с DevOps, ответ, скорее всего, будет утвердительным?</description></item><item><title>8. Настройка DevOps окружения для запуска Hello World на Go</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day08/</link><pubDate>Thu, 28 Apr 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day08/</guid><description>Настройка DevOps окружения для запуска Hello World на Go Прежде чем мы приступим к некоторым основам Go, мы должны установить Go на нашу рабочую станцию и сделать то, чему нас учит каждый модуль «Изучение программирования 101», а именно создать приложение Hello World. Так как здесь будут описаны шаги по установке Go на ваш ПК, мы попытаемся задокументировать процесс в картинках, чтобы людям было легко следовать за ним.
-Возможные варианты установки Golang
-Исполняемый файл Пакет из исходного кода Mac Os Homebrew #Homebrew install command brew install go Быстрый тьюториал для ознакомления с языком Go</description></item><item><title>9. Как работает hello-world на Golang</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day09/</link><pubDate>Fri, 29 Apr 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day09/</guid><description>Разберемся как работает hello-world Как работает Go Вчера мы прошли процедуру установки Go на ПК, а затем создали наше первое приложение Go.
-В этом разделе мы собираемся глубже изучить код и понять еще несколько вещей о языке Go.
-Что такое компиляция? Прежде чем мы перейдем к 6 строкам кода Hello World, которые написали вчера, нам нужно немного разобраться в компиляции.
-Языки программирования, которые мы обычно используем, такие как Python, Java, Go и C++, являются языками высокого уровня. Это означает, что они удобочитаемы для человека, но когда машина пытается выполнить программу, она должна быть в форме, понятной машине.</description></item><item><title>10. Окружение Go</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day10/</link><pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day10/</guid><description>Окружение Go В 8-м дне мы кратко рассмотрели рабочее пространство Go, чтобы запустить его и перейти к демонстрации «Hello #90DaysOfDevOps». Но мы должны немного рассказать о рабочем пространстве Go.
-Помните, что мы выбрали значения по умолчанию, а затем прошли и создали нашу папку Go в GOPATH, который уже был определен, но на самом деле этот GOPATH можно изменить, чтобы он находился там, где вы хотите.
-Если вы запустите
-echo $GOPATH Вывод должен быть похож на мой (может быть с другим именем пользователя), а именно:</description></item><item><title>11. Переменные и константы в Go</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day11/</link><pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day11/</guid><description>Прежде чем мы перейдем к темам сегодняшнего дня, я хочу выразить огромную благодарность Techworld with Nana и этому фантастическому краткому путешествию по основам Go.
-В 8-м дне мы настроили нашу среду, в 9-м дне мы разобрали код Hello #90DaysOfDevOps, а в 10-м дне) мы поработали с нашей рабочей средой Go и немного углубились в компиляцию и запуск кода.
-Сегодня мы рассмотрим переменные, константы и типы данных при написании новой программы.
-Переменные и константы в Go Давайте начнем с планирования нашего приложения, я думаю, было бы неплохо поработать над программой, которая сообщает нам, сколько дней осталось в нашем испытании #90DaysOfDevOps.</description></item><item><title>12. Golang - чтение данных и указатели</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day12/</link><pubDate>Mon, 02 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day12/</guid><description>Получение данных с клавиуатуры Вчера (Днем 11-м) мы создали нашу первую программу Go, и данные, которые мы хотели получить от пользователя, были созданы как переменные в нашем коде. Теперь мы хотим спросить пользователя данные для ввода, чтобы дать переменной значение для конечного сообщения.
-Получение пользовательских данных Прежде чем мы это сделаем, давайте еще раз взглянем на наше приложение и пройдемся по переменным, которые нам нужны в качестве теста, прежде чем получить этот пользовательский ввод.
-Давайте теперь добавим новую переменную с именем TwitterName, вы можете найти этот новый код ниже, и если мы запустим этот код, это будет наш вывод.</description></item><item><title>13. Go - подключение Twitter API</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day13/</link><pubDate>Tue, 03 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day13/</guid><description>Твитните о своем прогрессе с нашим новым приложением В последний день изучения этого языка программирования мы только коснулись его основ, но я думаю, что это начало.
-За последние несколько дней мы взяли небольшую идею для приложения и добавили функциональность, в этой статье я хочу воспользоваться преимуществами тех пакетов, которые мы упомянули, и создать функциональность для нашего приложения, чтобы не только дать вам обновление вашего прогресса на экране, но также отправьте твит с подробностями задачи и вашим статусом.
-Добавление возможности твитить свой прогресс Первое, что нам нужно сделать, это настроить доступ API разработчика к Twitter, чтобы это работало.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Golang on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/golang/</link><description>Recent content in Golang on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Tue, 03 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/golang/index.xml" rel="self" type="application/rss+xml"/><item><title>7. DevOps - изучение языка программирования</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day07/</link><pubDate>Wed, 27 Apr 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day07/</guid><description>&lt;h2 id="общая-картина-devops-и-изучение-языка-программирования">Общая картина: DevOps и изучение языка программирования&lt;/h2>
+&lt;p>Я думаю, будет справедливо сказать, что для достижения успеха в качестве инженера DevOps в долгосрочной перспективе необходимо знать хотя бы один язык программирования на базовом уровне. Я хочу провести это первое занятие в этой статье, чтобы выяснить, почему это такой важный навык, и, надеюсь, к концу этой недели или раздела вы будете лучше понимать, почему, как и что делать. делайте, чтобы продвигаться в своем учебном путешествии.&lt;/p>
+&lt;p>Я думаю, что если бы я спросил в социальных сетях, нужны ли вам навыки программирования для ролей, связанных с DevOps, ответ, скорее всего, будет утвердительным? Дайте мне знать, если вы думаете иначе? Хорошо, но тогда более важный вопрос, и здесь вы не получите такого четкого ответа, какой язык программирования? Наиболее распространенным ответом, который я видел здесь, был Python, или все чаще мы видим, что Golang или Go должны быть языком, который вы изучаете.&lt;/p>
+&lt;p>Чтобы быть успешным в DevOps, вы должны хорошо знать навыки программирования, по крайней мере, мой вывод из этого. Но мы должны понять, зачем нам это нужно, чтобы выбрать правильный путь.&lt;/p>
+&lt;h2 id="понимание-зачем-вам-нужно-изучать-язык-программирования">Понимание зачем вам нужно изучать язык программирования&lt;/h2>
+&lt;p>Причина, по которой Python и Go так часто рекомендуются инженерам DevOps, заключается в том, что многие инструменты DevOps написаны либо на Python, либо на Go, что имеет смысл, если вы собираетесь создавать инструменты DevOps. Теперь это важно, так как это действительно определит, что вы должны изучить, и это, вероятно, будет наиболее полезным. Если вы собираетесь создавать инструменты DevOps или присоединяетесь к команде, которая занимается этим, имеет смысл выучить тот же язык. Если вы собираетесь активно участвовать в Kubernetes или контейнерах, то, скорее всего, вы захотите выберите Go в качестве языка программирования. Для меня компания, в которой я работаю (Kasten by Veeam), находится в экосистеме Cloud-Native, ориентированной на управление данными для Kubernetes, и все написано на Go.&lt;/p>
+&lt;p>Но тогда у вас может не быть четких рассуждений, подобных этим, чтобы выбрать, быть ли вам студентом или менять карьеру без реального решения за вас. Я думаю, что в этой ситуации вы должны выбрать тот, который, кажется, резонирует и подходит для приложений, с которыми вы хотите работать.&lt;/p>
+&lt;p>Помните, что я не собираюсь становиться здесь разработчиком программного обеспечения, я просто хочу немного больше узнать о языке программирования, чтобы я мог читать и понимать, что делают эти инструменты, а затем это, возможно, приведет к тому, как мы можем помочь улучшить ситуацию.&lt;/p>
+&lt;p>Я также хотел бы знать, как вы взаимодействуете с этими инструментами DevOps, такими как &lt;a href="https://www.kasten.io/product/">Kasten K10&lt;/a> или &lt;a href="https://www.terraform.io/">Terraform&lt;/a> и &lt;a href="https://www.terraform.io/language/configuration-0-11/syntax">HCL&lt;/a>. Это то, что мы будем называть конфигурационными файлами, и именно так вы взаимодействуете с этими инструментами DevOps, чтобы что-то происходило, обычно это будет YAML. (Мы можем использовать последний день этого раздела, чтобы немного погрузиться в YAML)&lt;/p>
+&lt;h2 id="я-только-что-отговорил-себя-от-изучения-языка-программирования">Я только что отговорил себя от изучения языка программирования?&lt;/h2>
+&lt;p>Большую часть времени или в зависимости от роли вы будете помогать инженерным командам внедрять DevOps в свой рабочий процесс, много тестировать приложение и следить за тем, чтобы созданный рабочий процесс соответствовал тем принципам DevOps, которые мы упоминали в первые несколько дней. . Но на самом деле много времени уходит на устранение проблем с производительностью приложений или что-то в этом роде. Это возвращает меня к моей первоначальной точке зрения и рассуждениям: язык программирования, который мне нужно знать, — это тот, на котором написан код? Если их приложение написано на NodeJS, это не сильно поможет, если у вас есть значок Go или Python.&lt;/p>
+&lt;h2 id="почему-go">Почему Go&lt;/h2>
+&lt;p>Почему Golang — следующий язык программирования для DevOps? В последние годы Go стал очень популярным языком программирования. Согласно опросу StackOverflow за 2021 год, Go занял четвертое место среди самых востребованных языков программирования, сценариев и разметки, а Python был на первом месте, но выслушайте меня. &lt;a href="https://insights.stackoverflow.com/survey/2021#section-most-loved-dreaded-and-wanted-programming-scripting-and-markup-languages">StackOverflow 2021 Developer Survey – Most Wanted Link&lt;/a>&lt;/p>
+&lt;p>Как я уже упоминал, некоторые из самых известных инструментов и платформ DevOps написаны на Go, такие как Kubernetes, Docker, Grafana и Prometheus.&lt;/p>
+&lt;p>Какие характеристики Go делают его идеальным для DevOps?&lt;/p>
+&lt;h2 id="сборка-и-развертывание-программ-go">Сборка и развертывание программ Go&lt;/h2>
+&lt;p>Преимущество использования такого языка, как Python, который интерпретируется в роли DevOps, заключается в том, что вам не нужно компилировать программу Python перед ее запуском. Особенно для небольших задач автоматизации вы не хотите, чтобы процесс сборки, требующий компиляции, замедлялся, несмотря на то, что Go — компилируемый язык программирования, &lt;strong>Go компилируется непосредственно в машинный код&lt;/strong>. Go также известен быстрым временем компиляции.&lt;/p>
+&lt;h2 id="go-или-python-для-devops">Go или Python для DevOps&lt;/h2>
+&lt;p>Программы Go статически связаны, это означает, что когда вы компилируете программу Go, все включается в один исполняемый двоичный файл, не требуется никаких внешних зависимостей, которые необходимо установить на удаленной машине, это упрощает развертывание программ Go, по сравнению с программой Python, которая использует внешние библиотеки, где вы должны убедиться, что все эти библиотеки установлены на удаленной машине, на которой вы хотите работать.&lt;/p>
+&lt;p>Go — это независимый от платформы язык, что означает, что вы можете создавать двоичные исполняемые файлы для * всех операционных систем, Linux, Windows, macOS и т. д., и это очень легко сделать. С Python не так просто создавать эти двоичные исполняемые файлы для конкретных операционных систем.&lt;/p>
+&lt;p>Go — очень производительный язык, он имеет быструю компиляцию и быстрое время выполнения с меньшим использованием ресурсов, таких как процессор и память, особенно по сравнению с python, в языке Go были реализованы многочисленные оптимизации, которые делают его таким производительным. (Ресурсы ниже)&lt;/p>
+&lt;p>В отличие от Python, который часто требует использования сторонних библиотек для реализации конкретной программы Python, go включает в себя стандартную библиотеку, которая имеет большую часть функций, которые вам понадобятся для DevOps, встроенных непосредственно в нее. Это включает в себя функциональную обработку файлов, веб-службы HTTP, обработку JSON, встроенную поддержку параллелизма и параллелизма, а также встроенное тестирование.&lt;/p>
+&lt;p>Это ни в коем случае не бросает Python под автобус, я просто излагаю свои причины выбора Go, но они не являются вышеупомянутым Go против Python, это обычно потому, что это имеет смысл, поскольку компания, в которой я работаю, разрабатывает программное обеспечение на Go, вот почему.&lt;/p>
+&lt;p>Я скажу, что как только как только вы выучите свой первый язык программирования, вам станет легче осваивать другие языки. Вероятно, у вас никогда не будет ни одной работы в какой-либо компании, где бы вам не приходилось иметь дело с управлением, архитектурой, оркестровкой, отладкой приложений JavaScript и Node JS.&lt;/p>
+&lt;h2 id="источники">Источники&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://insights.stackoverflow.com/survey/2021">StackOverflow 2021 Developer Survey&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=7pLqIIAqZD4&amp;amp;t=9s">Why we are choosing Golang to learn&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=C8LgvuEBraI&amp;amp;t=312s">Jake Wright - Learn Go in 12 minutes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=yyUHQIec83I">Techworld with Nana - Golang full course - 3 hours 24 mins&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.pluralsight.com/courses/go-fundamentals">&lt;strong>NOT FREE&lt;/strong> Nigel Poulton Pluralsight - Go Fundamentals - 3 hours 26 mins&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=YS4e4q9oBaU&amp;amp;t=1025s">FreeCodeCamp - Learn Go Programming - Golang Tutorial for Beginners&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/playlist?list=PLRAV69dS1uWSR89FRQGZ6q9BR2b44Tr9N">Hitesh Choudhary - Complete playlist&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Теперь в течение следующих 6 дней этой темы я намерен работать с некоторыми из ресурсов, перечисленных выше, и документировать свои заметки на каждый день. Вы заметите, что они, как правило, составляют около 3 часов в качестве полного курса, я хотел поделиться своим полным списком, чтобы, если у вас есть время, вы могли двигаться вперед и работать над каждым, если позволяет время, я буду придерживаться моего часа обучения каждый день.&lt;/p>
+&lt;p>До встречи в &lt;a href="../day08">День 8&lt;/a>&lt;/p></description></item><item><title>8. Настройка DevOps окружения для запуска Hello World на Go</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day08/</link><pubDate>Thu, 28 Apr 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day08/</guid><description>&lt;h2 id="настройка-devops-окружения-для-запуска-hello-world-на-go">Настройка DevOps окружения для запуска Hello World на Go&lt;/h2>
+&lt;p>Прежде чем мы приступим к некоторым основам Go, мы должны установить Go на нашу рабочую станцию и сделать то, чему нас учит каждый модуль &lt;a href="https://www.udemy.com/course/programming-101/">«Изучение программирования 101»&lt;/a>, а именно создать приложение Hello World. Так как здесь будут описаны шаги по установке Go на ваш ПК, мы попытаемся задокументировать процесс в картинках, чтобы людям было легко следовать за ним.&lt;/p>
+&lt;p>Возможные варианты установки Golang&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://go.dev/dl/">Исполняемый файл&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://golang.org/doc/install/source#environment-variables">Пакет из исходного кода&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://formulae.brew.sh/formula/go">Mac Os Homebrew&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#Homebrew install command&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>brew install go
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Быстрый &lt;a href="https://go.dev/tour/welcome/1">тьюториал&lt;/a> для ознакомления с языком Go&lt;/p>
+&lt;p>Рассмотрим вараинт установки с помощью инсталляционного файла&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day8_Go1.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Если мы зашли так далеко, вы, вероятно, знаете, какая операционная система рабочей станции у вас установлена, поэтому выберите соответствующую загрузку, и тогда мы сможем приступить к установке. Я использую Windows для этого пошагового руководства. На следующем шаге мы можем оставить все значения по умолчанию. &lt;em>&lt;strong>(Отмечу, что на момент написания это была последняя версия, поэтому скриншоты могут быть устаревшими)&lt;/strong>&lt;/em>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day8_Go2.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Также обратите внимание, что если у вас установлена более старая версия Go, вам придется удалить ее перед установкой, поскольку в Windows она встроена в установщик, и она будет удалена и установлена как единое целое.&lt;/p>
+&lt;p>После завершения вы должны открыть командную строку / терминал, и мы хотим проверить, установлен ли Go. Если вы не получите вывод, который мы видим ниже, значит, Go не установлен, и вам нужно будет повторить свои шаги.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>go version
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day8_Go3.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Далее мы хотим проверить нашу среду на наличие Go. Это всегда полезно проверить, чтобы убедиться, что ваши рабочие каталоги настроены правильно, как вы можете видеть ниже, нам нужно убедиться, что в вашей системе есть следующий каталог.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day8_Go4.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day8_Go5.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Хорошо, давайте создадим этот каталог для простоты. Я собираюсь использовать команду mkdir в своем терминале &lt;a href="https://docs.microsoft.com/ru-ru/powershell/">PowerShell&lt;/a>. Нам также нужно создать 3 папки в папке Go, как вы увидите ниже.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day8_Go6.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Теперь у нас установлен Go, и у нас есть рабочий каталог Go, готовый к действию. Теперь нам нужна интегрированная среда разработки (IDE). Сейчас есть много доступных, которые вы можете использовать, но наиболее распространенным и тем, который я использую, является Visual Studio Code или Code. Вы можете узнать больше об IDE &lt;a href="https://www.youtube.com/watch?v=vUn5akOlFXQ">здесь&lt;/a>.&lt;/p>
+&lt;p>Если вы еще не загрузили и не установили VSCode на свою рабочую станцию, вы можете сделать это, перейдя по &lt;a href="https://code.visualstudio.com/download">ссылке&lt;/a>. Как вы можете видеть ниже, у вас есть разные варианты ОС.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day8_Go7.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Почти так же, как и при установке Go, мы собираемся загрузить и установить и сохранить значения по умолчанию. После завершения вы можете открыть VSCode, выбрать «Открыть файл» и перейти в наш каталог Go, который мы создали выше.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day8_Go8.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Вы можете получить всплывающее окно о доверии, прочитать его, если хотите, а затем нажать «Да, доверять авторам». (Позже я не несу ответственности, если вы начнете открывать вещи, которым не доверяете!)&lt;/p>
+&lt;p>Теперь вы должны увидеть три папки, которые мы также создали ранее, и теперь мы хотим щелкнуть правой кнопкой мыши папку src и создать новую папку с именем «Hello».&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day8_Go9.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Довольно простые вещи, я бы сказал до этого момента? Теперь мы собираемся создать нашу первую программу Go, не понимая, что мы вкладываем в этот следующий этап.&lt;/p>
+&lt;p>Затем создайте файл с именем &lt;code>main.go&lt;/code> в папке &lt;code>Hello&lt;/code>. Как только вы нажмете Enter на main.go, вас спросят, хотите ли вы установить расширение Go, а также пакеты, вы также можете проверить этот пустой файл pkg, который мы сделали несколько шагов назад, и обратите внимание, что у нас должны быть новые пакеты. там сейчас?&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day8_Go10.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Теперь давайте запустим это приложение Hello World, скопируйте следующий код в новый файл main.go и сохраните его.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">package&lt;/span> main
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#4070a0">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">func&lt;/span> &lt;span style="color:#06287e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Println&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Hello #90DaysOfDevOps&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Я понимаю, что вышеизложенное может не иметь никакого смысла, но мы подробнее расскажем о функциях, пакетах и многом другом позже. А пока давайте запустим наше приложение. Вернувшись в терминал и в нашу папку Hello, мы можем проверить, все ли работает. Используя приведенную ниже команду, мы можем проверить, работает ли наша общая программа обучения.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>go run main.go
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day8_Go11.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Однако на этом это не заканчивается, что, если теперь мы захотим взять нашу программу и запустить ее на других машинах с Windows? Мы можем сделать это, создав наш двоичный файл, используя следующую команду&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>go build main.go
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day8_Go12.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Попробуем запустить&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#Windows&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./main.exe
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#Linux/Mac Os&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./main
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day8_Go13.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="источники">Источники&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://go.dev/tour/welcome/1">Быстрое погружение в Golang&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://insights.stackoverflow.com/survey/2021">StackOverflow 2021 Developer Survey&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=7pLqIIAqZD4&amp;amp;t=9s">Why we are choosing Golang to learn&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=C8LgvuEBraI&amp;amp;t=312s">Jake Wright - Learn Go in 12 minutes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=yyUHQIec83I">Techworld with Nana - Golang full course - 3 hours 24 mins&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.pluralsight.com/courses/go-fundamentals">&lt;strong>NOT FREE&lt;/strong> Nigel Poulton Pluralsight - Go Fundamentals - 3 hours 26 mins&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=YS4e4q9oBaU&amp;amp;t=1025s">FreeCodeCamp - Learn Go Programming - Golang Tutorial for Beginners&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/playlist?list=PLRAV69dS1uWSR89FRQGZ6q9BR2b44Tr9N">Hitesh Choudhary - Complete playlist&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Увидимся на &lt;a href="../day09">9-й день&lt;/a>&lt;/p></description></item><item><title>9. Как работает hello-world на Golang</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day09/</link><pubDate>Fri, 29 Apr 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day09/</guid><description>&lt;h2 id="разберемся-как-работает-hello-world">Разберемся как работает hello-world&lt;/h2>
+&lt;h3 id="как-работает-go">Как работает Go&lt;/h3>
+&lt;p>&lt;a href="../day08">Вчера&lt;/a> мы прошли процедуру установки Go на ПК, а затем создали наше первое приложение Go.&lt;/p>
+&lt;p>В этом разделе мы собираемся глубже изучить код и понять еще несколько вещей о языке Go.&lt;/p>
+&lt;h3 id="что-такое-компиляция">Что такое компиляция?&lt;/h3>
+&lt;p>Прежде чем мы перейдем к 6 строкам кода Hello World, которые написали &lt;a href="../day08">вчера&lt;/a>, нам нужно немного разобраться в компиляции.&lt;/p>
+&lt;p>Языки программирования, которые мы обычно используем, такие как Python, Java, Go и C++, являются языками высокого уровня. Это означает, что они удобочитаемы для человека, но когда машина пытается выполнить программу, она должна быть в форме, понятной машине. Мы должны перевести наш человекочитаемый код в машинный код, что называется компиляцией.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day9_Go1.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Из приведенного выше вы можете видеть, что мы сделали в &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day08/">День 8&lt;/a> - мы создали простой Hello World main.go, а затем использовали команду &lt;code>go build main.go&lt;/code> для компиляции нашего исполняемого файла.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">package&lt;/span> main
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#4070a0">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">func&lt;/span> &lt;span style="color:#06287e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Println&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Hello #90DaysOfDevOps&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="что-такое-пакеты">Что такое пакеты?&lt;/h3>
+&lt;p>Пакет — это набор исходных файлов в одном каталоге, которые скомпилированы вместе. Мы можем упростить это еще больше, пакет — это набор файлов .go в одном каталоге. Помните нашу папку Hello из Дня 8? Когда вы попадете в более сложные программы Go, вы можете обнаружить, что у вас есть папка1, папка2 и папка3, содержащие разные файлы .go, которые составляют вашу программу с несколькими пакетами.&lt;/p>
+&lt;p>Мы используем пакеты, чтобы мы могли повторно использовать код других людей, нам не нужно писать все с нуля. Возможно, нам нужен калькулятор как часть нашей программы, вы, вероятно, могли бы найти существующий пакет Go, содержащий математические функции, которые вы могли бы импортировать в свой код, что в конечном итоге сэкономит вам много времени и усилий.&lt;/p>
+&lt;p>Go рекомендует организовывать код в пакеты, чтобы его было легко повторно использовать и поддерживать исходный код.&lt;/p>
+&lt;h3 id="hello-90daysofdevops-шаг-за-шагом">Hello #90DaysOfDevOps шаг за шагом&lt;/h3>
+&lt;p>Теперь давайте посмотрим на наш файл &lt;strong>main.go&lt;/strong> Hello #90DaysOfDevOps и пройдемся по строкам.
+&lt;p class="md__image">
+&lt;img
+src="../images/Day9_Go2.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>В первой строке у нас есть &lt;code>package main&lt;/code>, что означает, что этот файл принадлежит пакету с именем main. Все файлы .go должны принадлежать пакету, они также должны иметь «package something» в открывающей строке.&lt;/p>
+&lt;p>Пакет можно назвать как угодно. Мы должны назвать этот &lt;code>main&lt;/code>, так как это начальная точка программы, которая будет в этом пакете, это правило.
+&lt;p class="md__image">
+&lt;img
+src="../images/Day9_Go3.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Всякий раз, когда мы хотим скомпилировать и выполнить наш код, мы должны сообщить машине, где должно начаться выполнение. Мы делаем это, написав функцию с именем main. Машина будет искать функцию с именем main, чтобы найти точку входа в программу.&lt;/p>
+&lt;p>Функция — это блок кода, который может выполнять определенную задачу и может использоваться во всей программе.&lt;/p>
+&lt;p>Вы можете объявить функцию с любым именем, используя &lt;code>func&lt;/code>, но в этом случае нам нужно назвать ее &lt;code>main&lt;/code>, так как именно здесь начинается код.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day9_Go4.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Далее мы рассмотрим строку 3 нашего кода, импорт, это в основном означает, что вы хотите добавить другой пакет в свою основную программу. &lt;strong>fmt&lt;/strong> — это стандартный пакет, используемый здесь, предоставленный Go, этот пакет содержит функцию &lt;code>Println()&lt;/code>, и, поскольку мы импортировали ее, мы можем использовать ее в строке 6. Существует ряд стандартных пакетов, которые вы можете включить в свою программу и используйте или повторно используйте их в своем коде, избавляя вас от необходимости писать с нуля.
+&lt;p class="md__image">
+&lt;img
+src="../images/Day9_Go5.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;code>Println()&lt;/code>, который у нас есть, — это способ записи в стандартный вывод на терминал, где когда-либо исполняемый файл был успешно выполнен. Не стесняйтесь изменять сообщение между скобками ().
+&lt;p class="md__image">
+&lt;img
+src="../images/Day9_Go6.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="tldr">TLDR&lt;/h3>
+&lt;p>&lt;em>&lt;a href="https://ru.wikipedia.org/wiki/TL;DR">Что такое TLDR&lt;/a>&lt;/em>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Строка 1&lt;/strong> = Этот файл будет находиться в пакете с именем &lt;code>main&lt;/code>, и его нужно назвать &lt;code>main&lt;/code>, поскольку он включает точку входа программы.&lt;/li>
+&lt;li>&lt;strong>Строка 3&lt;/strong> = Чтобы использовать &lt;code>Println()&lt;/code>, мы должны импортировать пакет fmt, чтобы использовать его в строке 6.&lt;/li>
+&lt;li>&lt;strong>Строка 5&lt;/strong> = фактическая начальная точка, это функция &lt;code>main&lt;/code>.&lt;/li>
+&lt;li>&lt;strong>Строка 6&lt;/strong> = Это позволит нам напечатать «Hello #90DaysOfDevOps» в нашей системе.&lt;/li>
+&lt;/ul>
+&lt;h2 id="источники">Источники&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://pkg.go.dev/std">Стандартная библиотека Go&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=h0zxh2TPN_I">Golang | Все Основы за 4 Часа Для Начинающих&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://insights.stackoverflow.com/survey/2021">StackOverflow 2021 Developer Survey&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=7pLqIIAqZD4&amp;amp;t=9s">Why we are choosing Golang to learn&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=C8LgvuEBraI&amp;amp;t=312s">Jake Wright - Learn Go in 12 minutes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=yyUHQIec83I">Techworld with Nana - Golang full course - 3 hours 24 mins&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.pluralsight.com/courses/go-fundamentals">&lt;strong>NOT FREE&lt;/strong> Nigel Poulton Pluralsight - Go Fundamentals - 3 hours 26 mins&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=YS4e4q9oBaU&amp;amp;t=1025s">FreeCodeCamp - Learn Go Programming - Golang Tutorial for Beginners&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/playlist?list=PLRAV69dS1uWSR89FRQGZ6q9BR2b44Tr9N">Hitesh Choudhary - Complete playlist&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Увидимся на &lt;a href="../day10">10-й день&lt;/a>&lt;/p></description></item><item><title>10. Окружение Go</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day10/</link><pubDate>Sat, 30 Apr 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day10/</guid><description>&lt;h3 id="окружение-go">Окружение Go&lt;/h3>
+&lt;p>В &lt;a href="../day08">8-м дне&lt;/a> мы кратко рассмотрели рабочее пространство Go, чтобы запустить его и перейти к демонстрации «Hello #90DaysOfDevOps». Но мы должны немного рассказать о рабочем пространстве Go.&lt;/p>
+&lt;p>Помните, что мы выбрали значения по умолчанию, а затем прошли и создали нашу папку Go в GOPATH, который уже был определен, но на самом деле этот GOPATH можно изменить, чтобы он находился там, где вы хотите.&lt;/p>
+&lt;p>Если вы запустите&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>echo $GOPATH
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Вывод должен быть похож на мой (может быть с другим именем пользователя), а именно:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>/home/michael/projects/go
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Затем здесь мы создали 3 директории. &lt;strong>src&lt;/strong>, &lt;strong>pkg&lt;/strong> и &lt;strong>bin&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day10_Go1.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;strong>src&lt;/strong> is where all of your Go programs and projects are stored. This handles namespacing package management for all your Go repositories. This is where you will see on our workstation we have our Hello folder for the Hello #90DaysOfDevOps project.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day10_Go2.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;strong>pkg&lt;/strong> — это место, где хранятся ваши заархивированные файлы пакетов, которые установлены или были установлены в программах. Это помогает ускорить процесс компиляции в зависимости от того, были ли изменены используемые пакеты.
+&lt;p class="md__image">
+&lt;img
+src="../images/Day10_Go3.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;strong>bin&lt;/strong> — это место, где хранятся все ваши скомпилированные двоичные файлы.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day10_Go4.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Наш Hello #90DaysOfDevOps не является сложной программой, поэтому вот пример более сложной программы Go, взятой из другого замечательного ресурса, на который стоит обратить внимание &lt;a href="https://gochronicles.com/">GoChronicles&lt;/a>
+&lt;p class="md__image">
+&lt;img
+src="../images/Day10_Go5.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="компиляция-и-запуск-кода">Компиляция и запуск кода&lt;/h3>
+&lt;p>На &lt;a href="../day09">9-й день&lt;/a> мы также рассмотрели краткое введение в компиляцию кода, но здесь мы можем пойти немного глубже.&lt;/p>
+&lt;p>Чтобы запустить наш код, мы сначала должны его &lt;strong>скомпилировать&lt;/strong>. В Go это можно сделать тремя способами.&lt;/p>
+&lt;ul>
+&lt;li>go build&lt;/li>
+&lt;li>go install&lt;/li>
+&lt;li>go run&lt;/li>
+&lt;/ul>
+&lt;p>Прежде чем мы перейдем к описанному выше этапу компиляции, нам нужно взглянуть на то, что мы получаем при установке Go.&lt;/p>
+&lt;p>Когда мы установили Go на 8-й день, мы установили что-то, известное как инструменты Go, которые состоят из нескольких программ, которые позволяют нам создавать и обрабатывать наши исходные файлы Go. Одним из инструментов является «Go».&lt;/p>
+&lt;p>Стоит отметить, что вы можете установить дополнительные инструменты, которых нет в стандартной установке Go.&lt;/p>
+&lt;p>Если вы откроете командную строку и наберете «go», вы должны увидеть что-то вроде изображения ниже, а затем вы увидите «Дополнительные разделы справки» ниже, и пока нам не нужно беспокоиться об этом.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day10_Go6.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Возможно, вы также помните, что мы уже использовали как минимум два из этих инструментов в День 8.
+&lt;p class="md__image">
+&lt;img
+src="../images/Day10_Go7.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Мы хотим узнать больше о сборке, установке и запуске.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day10_Go8.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>go run&lt;/code> - Эта команда компилирует и запускает основной пакет, состоящий из файлов .go, указанных в командной строке. Команда компилируется во временную папку.&lt;/li>
+&lt;li>&lt;code>go build&lt;/code> - чтобы скомпилировать пакеты и зависимости, скомпилируйте пакет в текущем каталоге. Если пакет «main», поместит исполняемый файл в текущий каталог, если нет, то он поместит исполняемый файл в папку «pkg». &lt;code>go build&lt;/code> также позволяет вам создать исполняемый файл для любой платформы ОС, поддерживаемой Go.&lt;/li>
+&lt;li>&lt;code>go install&lt;/code> - то же самое, что и go build, но помещает исполняемый файл в папку &lt;code>bin&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Мы прошли через &lt;code>go build&lt;/code> и &lt;code>go run&lt;/code>, но не стесняйтесь запускать их снова здесь, если хотите, &lt;code>go install&lt;/code>, как указано выше, помещает исполняемый файл в нашу папку bin.
+&lt;p class="md__image">
+&lt;img
+src="../images/Day10_Go9.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Надеюсь, что вы следите за мной и смотрите один из плейлистов или видеороликов ниже. Я беру их по кусочкам и перевожу в свои заметки, чтобы понять основы языка Голанг. Приведенные ниже ресурсы, вероятно, дадут вам гораздо лучшее понимание многих областей, которые вам нужны в целом, но я пытаюсь задокументировать 7 дней или 7 часов путешествия с интересными вещами, которые я нашел.&lt;/p>
+&lt;h2 id="источники">Источники&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://insights.stackoverflow.com/survey/2021">StackOverflow 2021 Developer Survey&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=7pLqIIAqZD4&amp;amp;t=9s">Why we are choosing Golang to learn&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=C8LgvuEBraI&amp;amp;t=312s">Jake Wright - Learn Go in 12 minutes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=yyUHQIec83I">Techworld with Nana - Golang full course - 3 hours 24 mins&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.pluralsight.com/courses/go-fundamentals">&lt;strong>NOT FREE&lt;/strong> Nigel Poulton Pluralsight - Go Fundamentals - 3 hours 26 mins&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=YS4e4q9oBaU&amp;amp;t=1025s">FreeCodeCamp - Learn Go Programming - Golang Tutorial for Beginners&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/playlist?list=PLRAV69dS1uWSR89FRQGZ6q9BR2b44Tr9N">Hitesh Choudhary - Complete playlist&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Увидимся на &lt;a href="../day11">11-й день&lt;/a>&lt;/p></description></item><item><title>11. Переменные и константы в Go</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day11/</link><pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day11/</guid><description>&lt;p>Прежде чем мы перейдем к темам сегодняшнего дня, я хочу выразить огромную благодарность &lt;a href="https://www.youtube.com/watch?v=yyUHQIec83I">Techworld with Nana&lt;/a> и этому фантастическому краткому путешествию по основам Go.&lt;/p>
+&lt;p>В &lt;a href="../day08">8-м дне&lt;/a> мы настроили нашу среду, в &lt;a href="../day09">9-м дне&lt;/a> мы разобрали код Hello #90DaysOfDevOps, а в &lt;a href="../day10">10-м дне&lt;/a>) мы поработали с нашей рабочей средой Go и немного углубились в компиляцию и запуск кода.&lt;/p>
+&lt;p>Сегодня мы рассмотрим переменные, константы и типы данных при написании новой программы.&lt;/p>
+&lt;h2 id="переменные-и-константы-в-go">Переменные и константы в Go&lt;/h2>
+&lt;p>Давайте начнем с планирования нашего приложения, я думаю, было бы неплохо поработать над программой, которая сообщает нам, сколько дней осталось в нашем испытании #90DaysOfDevOps.&lt;/p>
+&lt;p>Первое, что нужно учитывать, это то, что, поскольку мы создаем наше приложение, мы приветствуем наших посетителей и даем пользователям отзывы о количестве дней, которые они выполнили, мы можем использовать термин #90DaysOfDevOps много раз на протяжении всей программы. Это отличный вариант использования переменной #90DaysOfDevOps в нашей программе.&lt;/p>
+&lt;ul>
+&lt;li>Переменные используются для хранения значений.&lt;/li>
+&lt;li>Как маленькая коробка с нашей сохраненной информацией или ценностями.&lt;/li>
+&lt;li>Затем мы можем использовать эту переменную во всей программе, что также выгодно тем, что если эта задача или переменная изменится, нам нужно будет изменить это только в одном месте. Это означает, что мы могли бы перенести это на другие проблемы, с которыми мы сталкиваемся в сообществе, просто изменив значение этой переменной.&lt;/li>
+&lt;/ul>
+&lt;p>Чтобы объявить это в нашей программе Go, мы определяем значение, используя &lt;strong>ключевое слово&lt;/strong> для переменных. Это будет жить в нашем блоке кода &lt;code>func main&lt;/code>, который вы увидите позже. Подробнее о &lt;a href="https://go.dev/ref/spec#Keywords">Ключевых словах&lt;/a> можно узнать здесь.&lt;/p>
+&lt;p>Не забудьте убедиться, что ваши имена переменных являются понятными. Если вы объявляете переменную, вы должны использовать ее, иначе вы получите ошибку. Это делается для того, чтобы избежать возможного неиспользованного кода. То же самое для неиспользуемых пакетов.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">var&lt;/span> challenge = &lt;span style="color:#4070a0">&amp;#34;#90DaysOfDevOps&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>С приведенным выше набором и использованием, как мы увидим в следующем фрагменте кода, вы можете видеть из вывода ниже, что мы использовали переменную.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">package&lt;/span> main
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#4070a0">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">func&lt;/span> &lt;span style="color:#06287e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> challenge = &lt;span style="color:#4070a0">&amp;#34;#90DaysOfDevOps&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Println&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Welcome to&amp;#34;&lt;/span>, challenge &lt;span style="color:#4070a0">&amp;#34;&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Затем вы увидите ниже, что мы построили наш код с помощью приведенного выше примера и получили вывод, показанный ниже.
+&lt;p class="md__image">
+&lt;img
+src="../images/Day11_Go1.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Мы также знаем, что наш челендж длится как минимум 90 дней для этой задачи, но в следующей, может быть, будет 100, поэтому мы хотим определить переменную, которая поможет нам. Однако для нашей программы мы хотим определить это как константу. Константы похожи на переменные, за исключением того, что их значение не может быть изменено в коде (мы все еще можем создать новое приложение позже с этим кодом и изменить эту константу, но это 90 не изменится, пока мы запускаем наше приложение)&lt;/p>
+&lt;p>Добавим &lt;code>const&lt;/code> в наш код и добавим еще одну строку кода, чтобы напечатать результат.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">package&lt;/span> main
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#4070a0">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">func&lt;/span> &lt;span style="color:#06287e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> challenge = &lt;span style="color:#4070a0">&amp;#34;#90DaysOfDevOps&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> daystotal = &lt;span style="color:#40a070">90&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Println&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Welcome to&amp;#34;&lt;/span>, challenge)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Println&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;This is a&amp;#34;&lt;/span>, daystotal, &lt;span style="color:#4070a0">&amp;#34;challenge&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Если мы затем снова пройдем этот процесс &lt;code>go build&lt;/code> и запустим, вы увидите результат.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day11_Go2.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Но это не будет концом нашей программы, мы вернемся к ней в &lt;a href="../day12">12-м дне&lt;/a>, чтобы добавить больше функциональности. Теперь мы хотим добавить еще одну переменную для количества дней, в течение которых мы выполнили задание.&lt;/p>
+&lt;p>Ниже я добавил переменную &lt;code>dayscomplete&lt;/code> с количеством завершенных дней.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">package&lt;/span> main
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#4070a0">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">func&lt;/span> &lt;span style="color:#06287e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> challenge = &lt;span style="color:#4070a0">&amp;#34;#90DaysOfDevOps&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> daystotal = &lt;span style="color:#40a070">90&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> dayscomplete = &lt;span style="color:#40a070">11&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Println&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Welcome to&amp;#34;&lt;/span>, challenge, &lt;span style="color:#4070a0">&amp;#34;&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Println&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;This is a&amp;#34;&lt;/span>, daystotal, &lt;span style="color:#4070a0">&amp;#34;challenge and you have completed&amp;#34;&lt;/span>, dayscomplete, &lt;span style="color:#4070a0">&amp;#34;days&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Println&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Great work&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Давайте снова запустим &lt;code>go build&lt;/code>, или вы можете просто использовать &lt;code>go run&lt;/code>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day11_Go3.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Вот несколько других примеров, которые я использовал, чтобы упростить чтение и редактирование кода. До сих пор мы использовали &lt;code>Println&lt;/code>, но мы можем упростить это, используя &lt;code>Printf&lt;/code>, используя &lt;code>%v&lt;/code>, что означает, что мы определяем наши переменные по порядку в конце строки кода. мы также используем &lt;code>\n&lt;/code> для разрыва строки.&lt;/p>
+&lt;p>Я использую &lt;code>%v&lt;/code>, поскольку здесь используется значение по умолчанию, но есть и другие параметры, которые можно найти &lt;a href="https://pkg.go.dev/fmt">документации пакета fmt&lt;/a>.&lt;/p>
+&lt;p>Переменные также могут быть определены в вашем коде в более простом формате. Вместо того, чтобы определять, что это &lt;code>var&lt;/code> и &lt;code>type&lt;/code>, вы можете закодировать это следующим образом, чтобы получить ту же функциональность, но более чистый и простой вид вашего кода. Это будет работать только для переменных, а не для констант.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">func&lt;/span> &lt;span style="color:#06287e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> challenge &lt;span style="color:#666">:=&lt;/span> &lt;span style="color:#4070a0">&amp;#34;#90DaysOfDevOps&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> daystotal = &lt;span style="color:#40a070">90&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="типы-в--go">Типы в Go&lt;/h2>
+&lt;p>В приведенных выше примерах мы не определили тип переменных, это потому, что мы можем задать им значение, Go достаточно умен, чтобы знать, что это за тип, или, по крайней мере, может сделать вывод, что это на основе значения, которое вы сохранили. . Однако, если мы хотим, чтобы пользователь ввел данные, для этого потребуется определенный тип.&lt;/p>
+&lt;p>До сих пор в нашем коде использовались строки и целые числа. Целые числа для количества дней и строки для названия задачи.&lt;/p>
+&lt;p>Также важно отметить, что каждый тип данных может выполнять разные действия и вести себя по-разному. Например, целые числа могут умножаться там, где нет строк.&lt;/p>
+&lt;p>Есть четыре категории&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Basic type&lt;/strong>: в эту категорию попадают числа, строки и логические значения.&lt;/li>
+&lt;li>&lt;strong>Aggregate type&lt;/strong>: к этой категории относятся массивы и структуры.&lt;/li>
+&lt;li>&lt;strong>Reference type&lt;/strong>: в эту категорию попадают указатели, срезы, карты, функции и каналы.&lt;/li>
+&lt;li>&lt;strong>Interface type&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>Тип данных — важная концепция в программировании. Тип данных определяет размер и тип значений переменных.&lt;/p>
+&lt;p>Go статически типизирован, а это означает, что после определения типа переменной он может хранить данные только этого типа.&lt;/p>
+&lt;p>В Go есть три основных типа данных:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>bool&lt;/strong>: представляет логическое значение и может быть либо истинным, либо ложным.&lt;/li>
+&lt;li>&lt;strong>Numeric&lt;/strong>: представляет целые типы, значения с плавающей запятой и сложные типы.&lt;/li>
+&lt;li>&lt;strong>string&lt;/strong>: представляет строковое значение.&lt;/li>
+&lt;/ul>
+&lt;p>Я нашел этот ресурс очень подробным о типах данных &lt;a href="https://golangbyexample.com/all-data-types-in-golang-with-examples/">Golang by example&lt;/a>&lt;/p>
+&lt;p>Я бы также посоветовал &lt;a href="https://www.youtube.com/watch?v=yyUHQIec83I&amp;amp;t=2023s">Techworld with Nana&lt;/a> на этом этапе довольно подробно рассказать о типах данных в Go.&lt;/p>
+&lt;p>Если нам нужно определить тип в нашей переменной, мы можем сделать это так:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">var&lt;/span> TwitterHandle &lt;span style="color:#902000">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">var&lt;/span> DaysCompleted &lt;span style="color:#902000">uint&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Поскольку Go принимает переменные, которым задано значение, мы можем распечатать эти значения следующим образом:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>fmt.&lt;span style="color:#06287e">Printf&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;challenge is %T, daystotal is %T, dayscomplete is %T\n&amp;#34;&lt;/span>, conference, daystotal, dayscomplete)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Существует много различных типов целых чисел и типов с плавающей запятой, ссылки выше подробно описывают их.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>int&lt;/strong> = целые числа&lt;/li>
+&lt;li>&lt;strong>unint&lt;/strong> = беззнаковые целые числа&lt;/li>
+&lt;li>&lt;strong>floating point types&lt;/strong> = числа с плавающей запятой&lt;/li>
+&lt;/ul>
+&lt;h2 id="источники">Источники&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="http://golang-book.ru/">Введение в Golang&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://insights.stackoverflow.com/survey/2021">StackOverflow 2021 Developer Survey&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=7pLqIIAqZD4&amp;amp;t=9s">Why we are choosing Golang to learn&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=C8LgvuEBraI&amp;amp;t=312s">Jake Wright - Learn Go in 12 minutes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=yyUHQIec83I">Techworld with Nana - Golang full course - 3 hours 24 mins&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.pluralsight.com/courses/go-fundamentals">&lt;strong>NOT FREE&lt;/strong> Nigel Poulton Pluralsight - Go Fundamentals - 3 hours 26 mins&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=YS4e4q9oBaU&amp;amp;t=1025s">FreeCodeCamp - Learn Go Programming - Golang Tutorial for Beginners&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/playlist?list=PLRAV69dS1uWSR89FRQGZ6q9BR2b44Tr9N">Hitesh Choudhary - Complete playlist&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Далее мы начнем добавлять в нашу программу некоторые функции пользовательского ввода, чтобы программа спрашивала, сколько дней было завершено.&lt;/p>
+&lt;p>Увидимся &lt;a href="../day12">завтра&lt;/a>.&lt;/p></description></item><item><title>12. Golang - чтение данных и указатели</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day12/</link><pubDate>Mon, 02 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day12/</guid><description>&lt;h2 id="получение-данных-с-клавиуатуры">Получение данных с клавиуатуры&lt;/h2>
+&lt;p>Вчера (&lt;a href="../day11">Днем 11-м&lt;/a>) мы создали нашу первую программу Go, и данные, которые мы хотели получить от пользователя, были созданы как переменные в нашем коде. Теперь мы хотим спросить пользователя данные для ввода, чтобы дать переменной значение для конечного сообщения.&lt;/p>
+&lt;h2 id="получение-пользовательских-данных">Получение пользовательских данных&lt;/h2>
+&lt;p>Прежде чем мы это сделаем, давайте еще раз взглянем на наше приложение и пройдемся по переменным, которые нам нужны в качестве теста, прежде чем получить этот пользовательский ввод.&lt;/p>
+&lt;p>Давайте теперь добавим новую переменную с именем &lt;code>TwitterName&lt;/code>, вы можете найти этот новый код ниже, и если мы запустим этот код, это будет наш вывод.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">package&lt;/span> main
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#4070a0">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">func&lt;/span> &lt;span style="color:#06287e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> challenge &lt;span style="color:#666">:=&lt;/span> &lt;span style="color:#4070a0">&amp;#34;#90DaysOfDevOps&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> daystotal = &lt;span style="color:#40a070">90&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Printf&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Welcome to %v\n&amp;#34;&lt;/span>, challenge)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Printf&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;This is a %v challenge\n&amp;#34;&lt;/span>, daystotal)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> TwitterName &lt;span style="color:#902000">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> DaysComplete &lt;span style="color:#902000">int&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic">// ask user for their twitter handle&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> TwitterName = &lt;span style="color:#4070a0">&amp;#34;@MichaelCade1&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> DaysComplete = &lt;span style="color:#40a070">12&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Printf&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;%v has completed %v days of the challenge\n&amp;#34;&lt;/span>, TwitterName, DaysComplete)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Println&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Great work&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Прежде чем мы это сделаем, давайте еще раз взглянем на наше приложение и пройдемся по переменным, которые нам нужны в качестве теста, прежде чем получить этот пользовательский ввод.&lt;/p>
+&lt;p>Вчера мы закончили с нашим кодом, выглядящим так:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">package&lt;/span> main
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#4070a0">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">func&lt;/span> &lt;span style="color:#06287e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> challenge = &lt;span style="color:#4070a0">&amp;#34;#90DaysOfDevOps&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> daystotal = &lt;span style="color:#40a070">90&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> dayscomplete = &lt;span style="color:#40a070">11&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Printf&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Welcome to %v\n&amp;#34;&lt;/span>, challenge)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Printf&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;This is a %v challenge and you have completed %v days\n&amp;#34;&lt;/span>, daystotal, dayscomplete)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Println&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Great work&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Мы вручную определили в коде наши переменные и константы &lt;code>challenge, daystotal, dayscomplete&lt;/code>.&lt;/p>
+&lt;p>Давайте теперь добавим новую переменную с именем &lt;code>TwitterName&lt;/code>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day12_Go1.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>У нас 12-й день, и нам нужно было бы менять &lt;code>dayscomplete&lt;/code> каждый день и компилировать наш код каждый день, если бы он был жестко запрограммирован, что звучит не так уж здорово.&lt;/p>
+&lt;p>Получая пользовательский ввод, мы хотим получить значение, возможно, имя и количество завершенных дней. Для этого мы можем использовать другую функцию из пакета &lt;code>fmt&lt;/code>.&lt;/p>
+&lt;p>Кратко о пакете &lt;code>fmt&lt;/code>, различные функции для: форматированного ввода и вывода (I/O) (input and output)&lt;/p>
+&lt;ul>
+&lt;li>Печать сообщений&lt;/li>
+&lt;li>Собирать пользовательский ввод&lt;/li>
+&lt;li>Записать в файл&lt;/li>
+&lt;/ul>
+&lt;p>Это вместо того, чтобы присваивать значение переменной, мы хотим попросить пользователя ввести его.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>fmt.&lt;span style="color:#06287e">Scan&lt;/span>(&lt;span style="color:#666">&amp;amp;&lt;/span>TwitterName)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Обратите внимание, что мы также используем &lt;code>&amp;amp;&lt;/code> перед переменной. Этот символ известен как указатель, который мы рассмотрим в следующем разделе.&lt;/p>
+&lt;p>В нашем коде вы можете видеть, что мы просим пользователя ввести две переменные, &lt;code>TwitterName&lt;/code> и &lt;code>DaysCompleted&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">package&lt;/span> main
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#4070a0">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">func&lt;/span> &lt;span style="color:#06287e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> DaysTotal &lt;span style="color:#902000">int&lt;/span> = &lt;span style="color:#40a070">90&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> challenge &lt;span style="color:#666">:=&lt;/span> &lt;span style="color:#4070a0">&amp;#34;#90DaysOfDevOps&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Printf&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Welcome to the %v challenge.\nThis challenge consists of %v days\n&amp;#34;&lt;/span>, challenge, DaysTotal)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> TwitterName &lt;span style="color:#902000">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> DaysCompleted &lt;span style="color:#902000">uint&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic">// asking for user input&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Println&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Enter Your Twitter Handle: &amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Scanln&lt;/span>(&lt;span style="color:#666">&amp;amp;&lt;/span>TwitterName)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Println&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;How many days have you completed?: &amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Scanln&lt;/span>(&lt;span style="color:#666">&amp;amp;&lt;/span>DaysCompleted)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Printf&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Thank you %v for taking part and completing %v days.\n&amp;#34;&lt;/span>, TwitterName, DaysCompleted)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Println&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Good luck&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Давайте теперь запустим нашу программу, и вы увидите, что у нас есть входные данные для обоих вышеперечисленных.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day12_Go2.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Хорошо, мы получили некоторый пользовательский ввод и напечатали сообщение, но как насчет того, чтобы заставить нашу программу сообщать нам, сколько дней у нас осталось в нашей задаче.&lt;/p>
+&lt;p>Для этого мы создали переменную с именем &lt;code>remainingDays&lt;/code>, и мы жестко оценили ее в нашем коде как &lt;code>90&lt;/code>. Затем нам нужно изменить значение этого значения, чтобы распечатать &lt;code>remainingDays&lt;/code>, когда мы получим пользовательский ввод &lt;code>DaysCompleted&lt;/code> мы можем сделать это с помощью этого простого изменения переменной.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>remainingDays = remainingDays - DaysCompleted
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Наша программа теперь выглядит вот так:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">package&lt;/span> main
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#4070a0">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">func&lt;/span> &lt;span style="color:#06287e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> DaysTotal &lt;span style="color:#902000">int&lt;/span> = &lt;span style="color:#40a070">90&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> remainingDays &lt;span style="color:#902000">uint&lt;/span> = &lt;span style="color:#40a070">90&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> challenge &lt;span style="color:#666">:=&lt;/span> &lt;span style="color:#4070a0">&amp;#34;#90DaysOfDevOps&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Printf&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Welcome to the %v challenge.\nThis challenge consists of %v days\n&amp;#34;&lt;/span>, challenge, DaysTotal)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> TwitterName &lt;span style="color:#902000">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> DaysCompleted &lt;span style="color:#902000">uint&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic">// asking for user input&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Println&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Enter Your Twitter Handle: &amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Scanln&lt;/span>(&lt;span style="color:#666">&amp;amp;&lt;/span>TwitterName)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Println&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;How many days have you completed?: &amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Scanln&lt;/span>(&lt;span style="color:#666">&amp;amp;&lt;/span>DaysCompleted)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic">// calculate remaining days&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> remainingDays = remainingDays &lt;span style="color:#666">-&lt;/span> DaysCompleted
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Printf&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Thank you %v for taking part and completing %v days.\n&amp;#34;&lt;/span>, TwitterName, DaysCompleted)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Printf&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;You have %v days remaining for the %v challenge\n&amp;#34;&lt;/span>, remainingDays, challenge)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Println&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Good luck&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Если мы теперь запустим эту программу, вы увидите, что простой расчет выполняется на основе пользовательского ввода и значения &lt;code>remainingDays&lt;/code>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day12_Go3.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="что-такое-указатель-специальные-переменные">Что такое указатель? (Специальные переменные)&lt;/h2>
+&lt;p>Указатель — это (специальная) переменная, которая указывает на адрес памяти другой переменной.&lt;/p>
+&lt;p>Отличное объяснение этого можно найти здесь &lt;a href="https://www.geeksforgeeks.org/pointers-in-golang/">geeksforgeeks&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">package&lt;/span> main
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#4070a0">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">func&lt;/span> &lt;span style="color:#06287e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> challenge = &lt;span style="color:#4070a0">&amp;#34;#90DaysOfDevOps&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Println&lt;/span>(challenge)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Println&lt;/span>(&lt;span style="color:#666">&amp;amp;&lt;/span>challenge)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Ниже выполняется этот код.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day12_Go4.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="ресурсы">Ресурсы&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="http://golang-book.ru/">Введение в Golang&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://insights.stackoverflow.com/survey/2021">StackOverflow 2021 Developer Survey&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=7pLqIIAqZD4&amp;amp;t=9s">Why we are choosing Golang to learn&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=C8LgvuEBraI&amp;amp;t=312s">Jake Wright - Learn Go in 12 minutes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=yyUHQIec83I">Techworld with Nana - Golang full course - 3 hours 24 mins&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.pluralsight.com/courses/go-fundamentals">&lt;strong>NOT FREE&lt;/strong> Nigel Poulton Pluralsight - Go Fundamentals - 3 hours 26 mins&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=YS4e4q9oBaU&amp;amp;t=1025s">FreeCodeCamp - Learn Go Programming - Golang Tutorial for Beginners&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/playlist?list=PLRAV69dS1uWSR89FRQGZ6q9BR2b44Tr9N">Hitesh Choudhary - Complete playlist&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Увидимся &lt;a href="../day13">завтра&lt;/a>.&lt;/p></description></item><item><title>13. Go - подключение Twitter API</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day13/</link><pubDate>Tue, 03 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day13/</guid><description>&lt;h2 id="твитните-о-своем-прогрессе-с-нашим-новым-приложением">Твитните о своем прогрессе с нашим новым приложением&lt;/h2>
+&lt;p>В последний день изучения этого языка программирования мы только коснулись его основ, но я думаю, что это начало.&lt;/p>
+&lt;p>За последние несколько дней мы взяли небольшую идею для приложения и добавили функциональность, в этой статье я хочу воспользоваться преимуществами тех пакетов, которые мы упомянули, и создать функциональность для нашего приложения, чтобы не только дать вам обновление вашего прогресса на экране, но также отправьте твит с подробностями задачи и вашим статусом.&lt;/p>
+&lt;h2 id="добавление-возможности-твитить-свой-прогресс">Добавление возможности твитить свой прогресс&lt;/h2>
+&lt;p>Первое, что нам нужно сделать, это настроить доступ API разработчика к Twitter, чтобы это работало.&lt;/p>
+&lt;p>Перейдите на &lt;a href="https://developer.twitter.com">Платформу разработчиков Twitter&lt;/a> и войдите в систему, используя свой идентификатор Twitter и данные. Оказавшись внутри, вы должны увидеть что-то вроде приведенного ниже без приложения, которое я уже создал.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day13_Go1.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Здесь вы также можете запросить дополнительный доступ. Это может занять некоторое время, но для меня это было очень быстро.&lt;/p>
+&lt;p>Затем мы должны выбрать «Projects &amp;amp; Apps» и создать наше приложение. Ограничения зависят от доступа к вашей учетной записи, при этом у вас должно быть только одно приложение и один проект, а с повышенными правами у вас может быть 3 приложения.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day13_Go2.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Дайте вашему приложению имя&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day13_Go3.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Затем вам будут предоставлены эти токены API, важно сохранить их в безопасном месте. (С тех пор я удалил это приложение) Они понадобятся нам позже с нашим приложением Go.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day13_Go4.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Теперь у нас создано наше приложение (мне пришлось изменить имя моего приложения, так как то, что на скриншоте выше, уже было сделано, эти имена должны быть уникальными)&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day13_Go5.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Ключи, которые мы собрали ранее, известны как наши потребительские ключи, и нам также понадобятся наш токен доступа и секреты. Мы можем собрать эту информацию, используя вкладку «Ключи и токены».&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day13_Go6.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Хорошо, на данный момент мы закончили работу с порталом для разработчиков Twitter. Убедитесь, что вы сохранили свои ключи, потому что они понадобятся нам позже.&lt;/p>
+&lt;h2 id="перейти-twitter-бот">Перейти Twitter бот&lt;/h2>
+&lt;p>Помните код, который мы запускаем в нашем приложении?&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span style="display:flex;">&lt;span>package main
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>import &lt;span style="color:#4070a0">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">func&lt;/span> main() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> DaysTotal &lt;span style="color:#007020">int&lt;/span> &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">90&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> remainingDays uint &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">90&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> challenge :&lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#34;#90DaysOfDevOps&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt&lt;span style="color:#666">.&lt;/span>Printf(&lt;span style="color:#4070a0">&amp;#34;Welcome to the %v challenge.&lt;/span>&lt;span style="color:#4070a0;font-weight:bold">\n&lt;/span>&lt;span style="color:#4070a0">This challenge consists of %v days&lt;/span>&lt;span style="color:#4070a0;font-weight:bold">\n&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>, challenge, DaysTotal)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> TwitterName string
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> DaysCompleted uint
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">//&lt;/span> asking &lt;span style="color:#007020;font-weight:bold">for&lt;/span> user input
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt&lt;span style="color:#666">.&lt;/span>Println(&lt;span style="color:#4070a0">&amp;#34;Enter Your Twitter Handle: &amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt&lt;span style="color:#666">.&lt;/span>Scanln(&lt;span style="color:#666">&amp;amp;&lt;/span>TwitterName)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt&lt;span style="color:#666">.&lt;/span>Println(&lt;span style="color:#4070a0">&amp;#34;How many days have you completed?: &amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt&lt;span style="color:#666">.&lt;/span>Scanln(&lt;span style="color:#666">&amp;amp;&lt;/span>DaysCompleted)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">//&lt;/span> calculate remaining days
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> remainingDays &lt;span style="color:#666">=&lt;/span> remainingDays &lt;span style="color:#666">-&lt;/span> DaysCompleted
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt&lt;span style="color:#666">.&lt;/span>Printf(&lt;span style="color:#4070a0">&amp;#34;Thank you %v for taking part and completing %v days.&lt;/span>&lt;span style="color:#4070a0;font-weight:bold">\n&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>, TwitterName, DaysCompleted)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt&lt;span style="color:#666">.&lt;/span>Printf(&lt;span style="color:#4070a0">&amp;#34;You have %v days remaining for the %v challenge&lt;/span>&lt;span style="color:#4070a0;font-weight:bold">\n&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>, remainingDays, challenge)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt&lt;span style="color:#666">.&lt;/span>Println(&lt;span style="color:#4070a0">&amp;#34;Good luck&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Теперь нам нужно подумать о коде для отправки нашего вывода или сообщения в Twitter в виде твита. Мы будем использовать &lt;a href="https://github.com/dghubble/go-twitter">go-twitter&lt;/a>. Это клиентская библиотека Go для Twitter API.&lt;/p>
+&lt;p>Чтобы проверить это, прежде чем помещать это в наше основное приложение, я создал новый каталог в нашей папке &lt;code>src&lt;/code> с именем go-twitter-bot, запустил &lt;code>go mod init github.com/michaelcade/go-twitter-bot&lt;/code> в папке который затем создал файл &lt;code>go.mod&lt;/code>, а затем мы можем начать писать наш новый main.go и протестировать его.&lt;/p>
+&lt;p>Теперь нам нужны те ключи, токены и секреты, которые мы собрали на портале разработчиков Twitter. Мы собираемся установить их в наших переменных среды. Это будет зависеть от ОС, которую вы используете:&lt;/p>
+&lt;p>Windows&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>set CONSUMER_KEY
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>set CONSUMER_SECRET
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>set ACCESS_TOKEN
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>set ACCESS_TOKEN_SECRET
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Linux / macOS&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">export&lt;/span> CONSUMER_KEY
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">export&lt;/span> CONSUMER_SECRET
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">export&lt;/span> ACCESS_TOKEN
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">export&lt;/span> ACCESS_TOKEN_SECRET
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>At this stage, you can take a look at &lt;a href="Go/day13_example2.go">day13_example2&lt;/a> at the code but you will see here that we are using a struct to define our keys, secrets and tokens.&lt;/p>
+&lt;p>We then have a &lt;code>func&lt;/code> to parse those credentials and make that connection to the Twitter API&lt;/p>
+&lt;p>Then based on the success we will then send a tweet.&lt;/p>
+&lt;p>На этом этапе вы можете взглянуть на следующий код&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">package&lt;/span> main
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic">// other imports&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;log&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;os&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;github.com/dghubble/go-twitter/twitter&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;github.com/dghubble/oauth1&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// Credentials stores all of our access/consumer tokens&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// and secret keys needed for authentication against&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// the twitter REST API.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">type&lt;/span> Credentials &lt;span style="color:#007020;font-weight:bold">struct&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ConsumerKey &lt;span style="color:#902000">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ConsumerSecret &lt;span style="color:#902000">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> AccessToken &lt;span style="color:#902000">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> AccessTokenSecret &lt;span style="color:#902000">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// getClient is a helper function that will return a twitter client&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// that we can subsequently use to send tweets, or to stream new tweets&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// this will take in a pointer to a Credential struct which will contain&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// everything needed to authenticate and return a pointer to a twitter Client&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// or an error&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">func&lt;/span> &lt;span style="color:#06287e">getClient&lt;/span>(creds &lt;span style="color:#666">*&lt;/span>Credentials) (&lt;span style="color:#666">*&lt;/span>twitter.Client, &lt;span style="color:#902000">error&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic">// Pass in your consumer key (API Key) and your Consumer Secret (API Secret)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> config &lt;span style="color:#666">:=&lt;/span> oauth1.&lt;span style="color:#06287e">NewConfig&lt;/span>(creds.ConsumerKey, creds.ConsumerSecret)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic">// Pass in your Access Token and your Access Token Secret&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> token &lt;span style="color:#666">:=&lt;/span> oauth1.&lt;span style="color:#06287e">NewToken&lt;/span>(creds.AccessToken, creds.AccessTokenSecret)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> httpClient &lt;span style="color:#666">:=&lt;/span> config.&lt;span style="color:#06287e">Client&lt;/span>(oauth1.NoContext, token)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> client &lt;span style="color:#666">:=&lt;/span> twitter.&lt;span style="color:#06287e">NewClient&lt;/span>(httpClient)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic">// Verify Credentials&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> verifyParams &lt;span style="color:#666">:=&lt;/span> &lt;span style="color:#666">&amp;amp;&lt;/span>twitter.AccountVerifyParams{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> SkipStatus: twitter.&lt;span style="color:#06287e">Bool&lt;/span>(&lt;span style="color:#007020;font-weight:bold">true&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> IncludeEmail: twitter.&lt;span style="color:#06287e">Bool&lt;/span>(&lt;span style="color:#007020;font-weight:bold">true&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic">// we can retrieve the user and verify if the credentials&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic">// we have used successfully allow us to log in!&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> user, _, err &lt;span style="color:#666">:=&lt;/span> client.Accounts.&lt;span style="color:#06287e">VerifyCredentials&lt;/span>(verifyParams)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> err &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#007020;font-weight:bold">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">nil&lt;/span>, err
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> log.&lt;span style="color:#06287e">Printf&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;User&amp;#39;s ACCOUNT:\n%+v\n&amp;#34;&lt;/span>, user)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> client, &lt;span style="color:#007020;font-weight:bold">nil&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">func&lt;/span> &lt;span style="color:#06287e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Println&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Go-Twitter Bot v0.01&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> creds &lt;span style="color:#666">:=&lt;/span> Credentials{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> AccessToken: os.&lt;span style="color:#06287e">Getenv&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;ACCESS_TOKEN&amp;#34;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> AccessTokenSecret: os.&lt;span style="color:#06287e">Getenv&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;ACCESS_TOKEN_SECRET&amp;#34;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ConsumerKey: os.&lt;span style="color:#06287e">Getenv&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;CONSUMER_KEY&amp;#34;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ConsumerSecret: os.&lt;span style="color:#06287e">Getenv&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;CONSUMER_SECRET&amp;#34;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> client, err &lt;span style="color:#666">:=&lt;/span> &lt;span style="color:#06287e">getClient&lt;/span>(&lt;span style="color:#666">&amp;amp;&lt;/span>creds)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> err &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#007020;font-weight:bold">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> log.&lt;span style="color:#06287e">Println&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Error getting Twitter Client&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> log.&lt;span style="color:#06287e">Println&lt;/span>(err)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tweet, resp, err &lt;span style="color:#666">:=&lt;/span> client.Statuses.&lt;span style="color:#06287e">Update&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;A Test Tweet from the future, testing a #90DaysOfDevOps Program that tweets, tweet tweet&amp;#34;&lt;/span>, &lt;span style="color:#007020;font-weight:bold">nil&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> err &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#007020;font-weight:bold">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> log.&lt;span style="color:#06287e">Println&lt;/span>(err)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> log.&lt;span style="color:#06287e">Printf&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;%+v\n&amp;#34;&lt;/span>, resp)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> log.&lt;span style="color:#06287e">Printf&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;%+v\n&amp;#34;&lt;/span>, tweet)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Здесь вы увидите, что мы используем структуру для определения наших ключей, секретов и токенов.&lt;/p>
+&lt;p>Затем у нас есть &lt;code>func&lt;/code>, чтобы проанализировать эти учетные данные и установить это соединение с API Twitter.&lt;/p>
+&lt;p>Затем, в зависимости от успеха, мы отправим твит.&lt;/p>
+&lt;p>Код выше либо выдаст вам ошибку в зависимости от того, что происходит, либо будет выполнен успешно, и вам будет отправлен твит с сообщением, указанным в коде.&lt;/p>
+&lt;h2 id="соединение-двух-вместе---go-twitter-bot--наше-приложение">Соединение двух вместе - Go-Twitter-Bot + наше приложение&lt;/h2>
+&lt;p>Теперь нам нужно объединить эти два файла в наш &lt;code>main.go&lt;/code>. Я уверен, что кто-то кричит, что есть лучший способ сделать это, и, пожалуйста, прокомментируйте это, поскольку вы можете иметь более одного файла &lt;code>.go&lt;/code> в одном файле. project это может иметь смысл, но это работает.&lt;/p>
+&lt;p>Так выглядит итоговый рзультат:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span style="display:flex;">&lt;span>package main
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>import (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">//&lt;/span> other imports
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;log&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;os&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;github.com/dghubble/go-twitter/twitter&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;github.com/dghubble/oauth1&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">//&lt;/span> Credentials stores all of our access&lt;span style="color:#666">/&lt;/span>consumer tokens
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">//&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> secret keys needed &lt;span style="color:#007020;font-weight:bold">for&lt;/span> authentication against
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">//&lt;/span> the twitter REST API&lt;span style="color:#666">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>type Credentials struct {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ConsumerKey string
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ConsumerSecret string
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> AccessToken string
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> AccessTokenSecret string
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">//&lt;/span> getClient is a helper function that will &lt;span style="color:#007020;font-weight:bold">return&lt;/span> a twitter client
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">//&lt;/span> that we can subsequently use to send tweets, &lt;span style="color:#007020;font-weight:bold">or&lt;/span> to stream new tweets
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">//&lt;/span> this will take &lt;span style="color:#007020;font-weight:bold">in&lt;/span> a pointer to a Credential struct which will contain
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">//&lt;/span> everything needed to authenticate &lt;span style="color:#007020;font-weight:bold">and&lt;/span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> a pointer to a twitter Client
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">//&lt;/span> &lt;span style="color:#007020;font-weight:bold">or&lt;/span> an error
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">func&lt;/span> getClient(creds &lt;span style="color:#666">*&lt;/span>Credentials) (&lt;span style="color:#666">*&lt;/span>twitter&lt;span style="color:#666">.&lt;/span>Client, error) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">//&lt;/span> Pass &lt;span style="color:#007020;font-weight:bold">in&lt;/span> your consumer key (API Key) &lt;span style="color:#007020;font-weight:bold">and&lt;/span> your Consumer Secret (API Secret)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> config :&lt;span style="color:#666">=&lt;/span> oauth1&lt;span style="color:#666">.&lt;/span>NewConfig(creds&lt;span style="color:#666">.&lt;/span>ConsumerKey, creds&lt;span style="color:#666">.&lt;/span>ConsumerSecret)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">//&lt;/span> Pass &lt;span style="color:#007020;font-weight:bold">in&lt;/span> your Access Token &lt;span style="color:#007020;font-weight:bold">and&lt;/span> your Access Token Secret
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> token :&lt;span style="color:#666">=&lt;/span> oauth1&lt;span style="color:#666">.&lt;/span>NewToken(creds&lt;span style="color:#666">.&lt;/span>AccessToken, creds&lt;span style="color:#666">.&lt;/span>AccessTokenSecret)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> httpClient :&lt;span style="color:#666">=&lt;/span> config&lt;span style="color:#666">.&lt;/span>Client(oauth1&lt;span style="color:#666">.&lt;/span>NoContext, token)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> client :&lt;span style="color:#666">=&lt;/span> twitter&lt;span style="color:#666">.&lt;/span>NewClient(httpClient)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">//&lt;/span> Verify Credentials
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> verifyParams :&lt;span style="color:#666">=&lt;/span> &lt;span style="color:#666">&amp;amp;&lt;/span>twitter&lt;span style="color:#666">.&lt;/span>AccountVerifyParams{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> SkipStatus: twitter&lt;span style="color:#666">.&lt;/span>Bool(true),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> IncludeEmail: twitter&lt;span style="color:#666">.&lt;/span>Bool(true),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">//&lt;/span> we can retrieve the user &lt;span style="color:#007020;font-weight:bold">and&lt;/span> verify &lt;span style="color:#007020;font-weight:bold">if&lt;/span> the credentials
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">//&lt;/span> we have used successfully allow us to &lt;span style="color:#007020">log&lt;/span> &lt;span style="color:#007020;font-weight:bold">in&lt;/span>&lt;span style="color:#666">!&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> user, _, err :&lt;span style="color:#666">=&lt;/span> client&lt;span style="color:#666">.&lt;/span>Accounts&lt;span style="color:#666">.&lt;/span>VerifyCredentials(verifyParams)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> err &lt;span style="color:#666">!=&lt;/span> nil {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> nil, err
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">log&lt;/span>&lt;span style="color:#666">.&lt;/span>Printf(&lt;span style="color:#4070a0">&amp;#34;User&amp;#39;s ACCOUNT:&lt;/span>&lt;span style="color:#4070a0;font-weight:bold">\n&lt;/span>&lt;span style="color:#4070a0">%+v&lt;/span>&lt;span style="color:#4070a0;font-weight:bold">\n&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>, user)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> client, nil
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">func&lt;/span> main() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> creds :&lt;span style="color:#666">=&lt;/span> Credentials{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> AccessToken: os&lt;span style="color:#666">.&lt;/span>Getenv(&lt;span style="color:#4070a0">&amp;#34;ACCESS_TOKEN&amp;#34;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> AccessTokenSecret: os&lt;span style="color:#666">.&lt;/span>Getenv(&lt;span style="color:#4070a0">&amp;#34;ACCESS_TOKEN_SECRET&amp;#34;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ConsumerKey: os&lt;span style="color:#666">.&lt;/span>Getenv(&lt;span style="color:#4070a0">&amp;#34;CONSUMER_KEY&amp;#34;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ConsumerSecret: os&lt;span style="color:#666">.&lt;/span>Getenv(&lt;span style="color:#4070a0">&amp;#34;CONSUMER_SECRET&amp;#34;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> DaysTotal &lt;span style="color:#007020">int&lt;/span> &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">90&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> remainingDays uint &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">90&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> challenge :&lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#34;#90DaysOfDevOps&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt&lt;span style="color:#666">.&lt;/span>Printf(&lt;span style="color:#4070a0">&amp;#34;Welcome to the %v challenge.&lt;/span>&lt;span style="color:#4070a0;font-weight:bold">\n&lt;/span>&lt;span style="color:#4070a0">This challenge consists of %v days&lt;/span>&lt;span style="color:#4070a0;font-weight:bold">\n&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>, challenge, DaysTotal)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> TwitterName string
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> DaysCompleted uint
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">//&lt;/span> asking &lt;span style="color:#007020;font-weight:bold">for&lt;/span> user input
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt&lt;span style="color:#666">.&lt;/span>Println(&lt;span style="color:#4070a0">&amp;#34;Enter Your Twitter Handle: &amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt&lt;span style="color:#666">.&lt;/span>Scanln(&lt;span style="color:#666">&amp;amp;&lt;/span>TwitterName)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt&lt;span style="color:#666">.&lt;/span>Println(&lt;span style="color:#4070a0">&amp;#34;How many days have you completed?: &amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt&lt;span style="color:#666">.&lt;/span>Scanln(&lt;span style="color:#666">&amp;amp;&lt;/span>DaysCompleted)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">//&lt;/span> calculate remaining days
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> remainingDays &lt;span style="color:#666">=&lt;/span> remainingDays &lt;span style="color:#666">-&lt;/span> DaysCompleted
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">//&lt;/span>fmt&lt;span style="color:#666">.&lt;/span>Printf(&lt;span style="color:#4070a0">&amp;#34;Thank you %v for taking part and completing %v days.&lt;/span>&lt;span style="color:#4070a0;font-weight:bold">\n&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>, TwitterName, DaysCompleted)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">//&lt;/span>fmt&lt;span style="color:#666">.&lt;/span>Printf(&lt;span style="color:#4070a0">&amp;#34;You have %v days remaining for the %v challenge&lt;/span>&lt;span style="color:#4070a0;font-weight:bold">\n&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>, remainingDays, challenge)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">//&lt;/span> fmt&lt;span style="color:#666">.&lt;/span>Println(&lt;span style="color:#4070a0">&amp;#34;Good luck&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> client, err :&lt;span style="color:#666">=&lt;/span> getClient(&lt;span style="color:#666">&amp;amp;&lt;/span>creds)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> err &lt;span style="color:#666">!=&lt;/span> nil {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">log&lt;/span>&lt;span style="color:#666">.&lt;/span>Println(&lt;span style="color:#4070a0">&amp;#34;Error getting Twitter Client, this is expected if you did not supply your Twitter API tokens&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">log&lt;/span>&lt;span style="color:#666">.&lt;/span>Println(err)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> message :&lt;span style="color:#666">=&lt;/span> fmt&lt;span style="color:#666">.&lt;/span>Sprintf(&lt;span style="color:#4070a0">&amp;#34;Hey I am %v I have been doing the %v for %v days and I have %v Days left&amp;#34;&lt;/span>, TwitterName, challenge, DaysCompleted, remainingDays)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tweet, resp, err :&lt;span style="color:#666">=&lt;/span> client&lt;span style="color:#666">.&lt;/span>Statuses&lt;span style="color:#666">.&lt;/span>Update(message, nil)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> err &lt;span style="color:#666">!=&lt;/span> nil {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">log&lt;/span>&lt;span style="color:#666">.&lt;/span>Println(err)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">log&lt;/span>&lt;span style="color:#666">.&lt;/span>Printf(&lt;span style="color:#4070a0">&amp;#34;%+v&lt;/span>&lt;span style="color:#4070a0;font-weight:bold">\n&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>, resp)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">log&lt;/span>&lt;span style="color:#666">.&lt;/span>Printf(&lt;span style="color:#4070a0">&amp;#34;%+v&lt;/span>&lt;span style="color:#4070a0;font-weight:bold">\n&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>, tweet)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Результатом этого должен быть твит, но если вы не указали свои переменные среды, вы должны получить сообщение об ошибке, подобное приведенному ниже.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day13_Go7.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>После того, как вы исправите это или решите не проходить аутентификацию в Twitter, вы можете использовать код, с которым мы закончили вчера. Вывод терминала в случае успеха будет выглядеть примерно так:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day13_Go8.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Полученный твит должен выглядеть примерно так:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day13_Go9.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="как-скомпилировать-для-нескольких-ос">Как скомпилировать для нескольких ОС&lt;/h2>
+&lt;p>Далее я хочу затронуть вопрос: «Как компилировать для нескольких операционных систем?» Отличительной особенностью Go является то, что он может легко компилироваться для многих различных операционных систем. Вы можете получить полный список, выполнив следующую команду:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span style="display:flex;">&lt;span>go &lt;span style="color:#007020;font-weight:bold">tool&lt;/span> dist list
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Использование наших команд &lt;code>go build&lt;/code> до сих пор было замечательным, и оно будет использовать переменные среды &lt;code>GOOS&lt;/code> и &lt;code>GOARCH&lt;/code>, чтобы определить хост-компьютер и то, для чего должна быть собрана сборка. Но мы также можем создавать другие двоичные файлы, используя приведенный ниже код в качестве примера.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>GOARCH=amd64 GOOS=darwin go build -o ${BINARY_NAME}_0.1_darwin main.go
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GOARCH=amd64 GOOS=linux go build -o ${BINARY_NAME}_0.1_linux main.go
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GOARCH=amd64 GOOS=windows go build -o ${BINARY_NAME}_0.1_windows main.go
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GOARCH=arm64 GOOS=linux go build -o ${BINARY_NAME}_0.1_linux_arm64 main.go
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GOARCH=arm64 GOOS=darwin go build -o ${BINARY_NAME}_0.1_darwin_arm64 main.go
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Это даст вам двоичные файлы в вашем каталоге для всех вышеперечисленных платформ. Затем вы можете взять это и создать make-файл для создания этих двоичных файлов всякий раз, когда вы добавляете новые функции и функции в свой код.&lt;/p>
+&lt;p>Файл: &lt;code>makefile&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>BINARY_NAME=90DaysOfDevOps
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>build:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> GOARCH=amd64 GOOS=darwin go build -o ${BINARY_NAME}_0.2_darwin main.go
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> GOARCH=amd64 GOOS=linux go build -o ${BINARY_NAME}_0.2_linux main.go
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> GOARCH=amd64 GOOS=windows go build -o ${BINARY_NAME}_0.2_windows main.go
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> GOARCH=arm64 GOOS=linux go build -o ${BINARY_NAME}_0.2_linux_arm64 main.go
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> GOARCH=arm64 GOOS=darwin go build -o ${BINARY_NAME}_0.2_darwin_arm64 main.go
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>run:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ./${BINARY_NAME}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>build_and_run: build run
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>clean:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> go clean
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rm ${BINARY_NAME}-darwin
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rm ${BINARY_NAME}-linux
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rm ${BINARY_NAME}-windows
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="источники">Источники&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://insights.stackoverflow.com/survey/2021">StackOverflow 2021 Developer Survey&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=7pLqIIAqZD4&amp;amp;t=9s">Why we are choosing Golang to learn&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=C8LgvuEBraI&amp;amp;t=312s">Jake Wright - Learn Go in 12 minutes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=yyUHQIec83I">Techworld with Nana - Golang full course - 3 hours 24 mins&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.pluralsight.com/courses/go-fundamentals">&lt;strong>NOT FREE&lt;/strong> Nigel Poulton Pluralsight - Go Fundamentals - 3 hours 26 mins&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=YS4e4q9oBaU&amp;amp;t=1025s">FreeCodeCamp - Learn Go Programming - Golang Tutorial for Beginners&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/playlist?list=PLRAV69dS1uWSR89FRQGZ6q9BR2b44Tr9N">Hitesh Choudhary - Complete playlist&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/bregman-arie/devops-exercises">A great repo full of all things DevOps &amp;amp; exercises&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://gobyexample.com/">GoByExample - Example based learning&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://go.dev/tour/list">go.dev/tour/list&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://go.dev/learn/">go.dev/learn&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>На этом блок &amp;ldquo;язык программирования&amp;rdquo;. Так много всего, что можно охватить, и я надеюсь, что вы смогли продолжить изучение вышеизложенного и понять некоторые другие аспекты языка программирования Go.&lt;/p>
+&lt;p>Затем мы сосредоточимся на Linux и некоторых основах, которые мы все должны знать.&lt;/p></description></item></channel></rss>

@@ -1,8 +1,247 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/categories/hugo/</link><description>Recent content in Hugo on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sat, 09 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/categories/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>Увеличение картинки по нажатию в Hugo</title><link>https://romankurnovskii.com/ru/posts/hugo-add-image-zoomin/</link><pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/hugo-add-image-zoomin/</guid><description>Введение В Hugo по умолчанию используется парсинг markdown файлов. Т.е. мы получаем html код в том виде, как он написан в markdown.
-Для того, чтобы нам понимать какие именно изображения мы можем увеличивать, добавим к этим изображениям отдельный тег/ключ/id
-Инструменты Для реализации функционала нам необходимо:
-написать/подключить скрипт/обработчик, который будет выполнять эффект zoomin к нужным нам изображениям Добавить необходимые метаданные к изображениям, чтобы скрипт их смог найти Скрипт zoomin Для добавления возможности увеличивать картинку при нажатии воспользуемся пакетом medium-zoom.</description></item><item><title>Как подключить React .jsx в проект на Hugo</title><link>https://romankurnovskii.com/ru/posts/integrate-hugo-react/</link><pubDate>Sun, 19 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/integrate-hugo-react/</guid><description>Hugo предлагает подключение различных JS библиотек в проект. Такие изменения влекут за собой полное обновление проекта. Сегодня мы подключим компонент react без внесения больших изменений.
-React - это библиотека. Чтобы она заработала на сайте, необходимо ее подклчюить, а далее воспользоваться внутренними функциями.
-Подключить можно двумя способоами. С помощью подгрузки скрипта с CDN или загрузки пакета в package.json, чтопозволит использовать .jsx
-package.json План:
-Импорт пакета в package.json Создание .jsx скрипта Загрузка/build пакета в Hugo Импорт В корне проекта запускаем команду</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/categories/hugo/</link><description>Recent content in Hugo on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sat, 09 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/categories/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>Увеличение картинки по нажатию в Hugo</title><link>https://romankurnovskii.com/ru/posts/hugo-add-image-zoomin/</link><pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/hugo-add-image-zoomin/</guid><description>&lt;h2 id="введение">Введение&lt;/h2>
+&lt;p>В Hugo по умолчанию используется парсинг &lt;em>markdown&lt;/em> файлов. Т.е. мы получаем html код в том виде, как он написан в markdown.&lt;/p>
+&lt;p>Для того, чтобы нам понимать какие именно изображения мы можем увеличивать, добавим к этим изображениям отдельный тег/ключ/id&lt;/p>
+&lt;h2 id="инструменты">Инструменты&lt;/h2>
+&lt;p>Для реализации функционала нам необходимо:&lt;/p>
+&lt;ul>
+&lt;li>написать/подключить скрипт/обработчик, который будет выполнять эффект &lt;strong>zoomin&lt;/strong> к нужным нам изображениям&lt;/li>
+&lt;li>Добавить необходимые &lt;em>метаданные&lt;/em> к изображениям, чтобы скрипт их смог найти&lt;/li>
+&lt;/ul>
+&lt;h2 id="скрипт-zoomin">Скрипт zoomin&lt;/h2>
+&lt;p>Для добавления возможности увеличивать картинку при нажатии воспользуемся пакетом &lt;a href="https://github.com/francoischalifour/medium-zoom">medium-zoom&lt;/a>.&lt;/p>
+&lt;p>Данный покет реализовывает данную функциональность в ненагруженном удобном стиле.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://user-images.githubusercontent.com/6137112/43369906-7623239a-9376-11e8-978b-6e089be499fb.gif"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;a href="https://medium-zoom.francoischalifour.com/">Демо сайт&lt;/a>&lt;/p>
+&lt;h3 id="логика-скрипта">Логика скрипта&lt;/h3>
+&lt;p>Скрипт находит изображения с &lt;code>id&lt;/code> и так понимает, что нужно применить свойство &lt;code>zoomin&lt;/code> к этим изображениям&lt;/p>
+&lt;p>Возможные &lt;code>id&lt;/code>:&lt;/p>
+&lt;ul>
+&lt;li>zoom-default&lt;/li>
+&lt;li>zoom-margin&lt;/li>
+&lt;li>zoom-background&lt;/li>
+&lt;li>zoom-scrollOffset&lt;/li>
+&lt;li>zoom-trigger&lt;/li>
+&lt;li>zoom-detach&lt;/li>
+&lt;li>zoom-center&lt;/li>
+&lt;/ul>
+&lt;h3 id="подключение-скриптов">Подключение скриптов&lt;/h3>
+&lt;p>Для работы скрипта, нам необходимо подключить логику, а также обработчик.&lt;/p>
+&lt;p>В Hugo в корне проекта есть папка static, которую можно использовать для хранения статических файлов (стиле, скриптов) и использовать для подключения на сайте. Если такой папки нет, то можно создать.&lt;/p>
+&lt;p>В папке &lt;em>static&lt;/em> создадим папку &lt;em>zoom-image&lt;/em> и добавим в нее 2 скрипта&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/static-scripts.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h4 id="staticjszoom-imageindexjs">static/js/zoom-image/index.js&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> zoomDefault &lt;span style="color:#666">=&lt;/span> mediumZoom(&lt;span style="color:#4070a0">&amp;#39;#zoom-default&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> zoomMargin &lt;span style="color:#666">=&lt;/span> mediumZoom(&lt;span style="color:#4070a0">&amp;#39;#zoom-margin&amp;#39;&lt;/span>, { margin&lt;span style="color:#666">:&lt;/span> &lt;span style="color:#40a070">48&lt;/span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> zoomBackground &lt;span style="color:#666">=&lt;/span> mediumZoom(&lt;span style="color:#4070a0">&amp;#39;#zoom-background&amp;#39;&lt;/span>, { background&lt;span style="color:#666">:&lt;/span> &lt;span style="color:#4070a0">&amp;#39;#212530&amp;#39;&lt;/span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> zoomScrollOffset &lt;span style="color:#666">=&lt;/span> mediumZoom(&lt;span style="color:#4070a0">&amp;#39;#zoom-scrollOffset&amp;#39;&lt;/span>, {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> scrollOffset&lt;span style="color:#666">:&lt;/span> &lt;span style="color:#40a070">0&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> background&lt;span style="color:#666">:&lt;/span> &lt;span style="color:#4070a0">&amp;#39;rgba(25, 18, 25, .9)&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>})
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// Trigger the zoom when the button is clicked
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> zoomToTrigger &lt;span style="color:#666">=&lt;/span> mediumZoom(&lt;span style="color:#4070a0">&amp;#39;#zoom-trigger&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> button &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">document&lt;/span>.querySelector(&lt;span style="color:#4070a0">&amp;#39;#button-trigger&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>button.addEventListener(&lt;span style="color:#4070a0">&amp;#39;click&amp;#39;&lt;/span>, () =&amp;gt; zoomToTrigger.open())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// Detach the zoom after having been zoomed once
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> zoomToDetach &lt;span style="color:#666">=&lt;/span> mediumZoom(&lt;span style="color:#4070a0">&amp;#39;#zoom-detach&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>zoomToDetach.on(&lt;span style="color:#4070a0">&amp;#39;closed&amp;#39;&lt;/span>, () =&amp;gt; zoomToDetach.detach())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// Observe zooms to write the history
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> observedZooms &lt;span style="color:#666">=&lt;/span> [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> zoomDefault,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> zoomMargin,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> zoomBackground,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> zoomScrollOffset,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> zoomToTrigger,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> zoomToDetach,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// Log all interactions in the history
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> history &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">document&lt;/span>.querySelector(&lt;span style="color:#4070a0">&amp;#39;#history&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>observedZooms.forEach(zoom =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> zoom.on(&lt;span style="color:#4070a0">&amp;#39;open&amp;#39;&lt;/span>, event =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> time &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">new&lt;/span> &lt;span style="color:#007020">Date&lt;/span>().toLocaleTimeString()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> history.innerHTML &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#4070a0">`&amp;lt;li&amp;gt;Image &amp;#34;&amp;lt;em&amp;gt;&lt;/span>&lt;span style="color:#70a0d0">${&lt;/span>event.target.alt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">&amp;lt;/em&amp;gt;&amp;#34; was zoomed at &lt;/span>&lt;span style="color:#70a0d0">${&lt;/span>time&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">&amp;lt;/li&amp;gt;`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> zoom.on(&lt;span style="color:#4070a0">&amp;#39;detach&amp;#39;&lt;/span>, event =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> time &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">new&lt;/span> &lt;span style="color:#007020">Date&lt;/span>().toLocaleTimeString()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> history.innerHTML &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#4070a0">`&amp;lt;li&amp;gt;Image &amp;lt;em&amp;gt;&amp;#34;&lt;/span>&lt;span style="color:#70a0d0">${&lt;/span>event.target.alt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&amp;lt;/em&amp;gt; was detached at &lt;/span>&lt;span style="color:#70a0d0">${&lt;/span>time&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">&amp;lt;/li&amp;gt;`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>})
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="staticjszoom-imageplaceholdersjs">static/js/zoom-image/placeholders.js&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// Show placeholders for paragraphs
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> paragraphs &lt;span style="color:#666">=&lt;/span> [].slice.call(&lt;span style="color:#007020">document&lt;/span>.querySelectorAll(&lt;span style="color:#4070a0">&amp;#39;p.placeholder&amp;#39;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>paragraphs.forEach(paragraph =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic">// eslint-disable-next-line no-param-reassign
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span> paragraph.innerHTML &lt;span style="color:#666">=&lt;/span> paragraph.textContent
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .split(&lt;span style="color:#4070a0">&amp;#39; &amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .filter(text =&amp;gt; text.length &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">4&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .map(text =&amp;gt; &lt;span style="color:#4070a0">`&amp;lt;span class=&amp;#34;placeholder__word&amp;#34;&amp;gt;&lt;/span>&lt;span style="color:#70a0d0">${&lt;/span>text&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">&amp;lt;/span&amp;gt;`&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .join(&lt;span style="color:#4070a0">&amp;#39; &amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>})
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="cdn-скрипт">CDN скрипт&lt;/h4>
+&lt;p>Скрипт можно скачать, а можно подгружать&lt;/p>
+&lt;p>&lt;a href="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js">Ссылка на скрипт&lt;/a>&lt;/p>
+&lt;h4 id="добавление-в-шаблон">Добавление в шаблон&lt;/h4>
+&lt;p>Для того, чтобы данные скрипты работали в шаблоне сайта, их необходимо подключить.&lt;/p>
+&lt;p>Я использую для этого шаблон &lt;strong>baseof.html&lt;/strong>. Просто добавляю ссылки на скрипта в &lt;strong>body&lt;/strong> шаблона.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span> # baseof.html
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">footer&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js&amp;#34;&lt;/span> &lt;span style="color:#4070a0">defer&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;/js/zoom-image/placeholders.js&amp;#34;&lt;/span> &lt;span style="color:#4070a0">defer&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;/js/zoom-image/index.js&amp;#34;&lt;/span> &lt;span style="color:#4070a0">defer&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="id-изображения">ID изображения&lt;/h2>
+&lt;p>Hugo позволяет изменить поведение при парсинге &lt;em>markdown&lt;/em> файлов с помощью хуков. Подробнее о рендер-хуках можно прочитать на &lt;a href="https://gohugo.io/templates/render-hooks/">сайте&lt;/a>.&lt;/p>
+&lt;p>В папке *&lt;em>layouts&lt;/em>&lt;/p>
+&lt;p>Добавим файл &lt;strong>render-image.html&lt;/strong> по следующему пути &lt;strong>layouts -&amp;gt; _default -&amp;gt; _markup&lt;/strong>
+&lt;p class="md__image">
+&lt;img
+src="img/render-image-path.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>код файла:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">p&lt;/span> &lt;span style="color:#4070a0">class&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;md__image&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">img&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;{{ .Destination | safeURL }}&amp;#34;&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;zoom-default&amp;#34;&lt;/span> &lt;span style="color:#4070a0">alt&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;{{ .Text }}&amp;#34;&lt;/span> &lt;span style="">{{&lt;/span> &lt;span style="color:#4070a0">with&lt;/span> &lt;span style="">.&lt;/span>&lt;span style="color:#4070a0">Title&lt;/span>&lt;span style="">}}&lt;/span> &lt;span style="color:#4070a0">title&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;{{ . }}&amp;#34;&lt;/span> &lt;span style="">{{&lt;/span> &lt;span style="color:#4070a0">end&lt;/span> &lt;span style="">}}&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">p&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Мы добавили только &lt;code>id=&amp;quot;zoom-default&amp;quot;&lt;/code> в код по умолчанию&lt;/p>
+&lt;h2 id="итоги">Итоги&lt;/h2>
+&lt;video controls>
+&lt;source src="img/gallery.mp4" type="video/mp4">
+Your browser does not support the video tag.
+&lt;/video>
+&lt;h3 id="процесс">Процесс&lt;/h3>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/dHwGdSaO-tk?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
+&lt;/div></description></item><item><title>Как подключить React .jsx в проект на Hugo</title><link>https://romankurnovskii.com/ru/posts/integrate-hugo-react/</link><pubDate>Sun, 19 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/integrate-hugo-react/</guid><description>&lt;p>Hugo предлагает подключение различных JS библиотек в проект. Такие изменения влекут за собой полное обновление проекта.
+Сегодня мы подключим компонент react без внесения больших изменений.&lt;/p>
+&lt;p>React - это библиотека. Чтобы она заработала на сайте, необходимо ее подклчюить, а далее воспользоваться внутренними функциями.&lt;/p>
+&lt;p>Подключить можно двумя способоами. С помощью подгрузки скрипта с CDN или загрузки пакета в package.json, чтопозволит использовать &lt;code>.jsx&lt;/code>&lt;/p>
+&lt;h2 id="packagejson">package.json&lt;/h2>
+&lt;p>&lt;strong>План:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Импорт пакета в &lt;code>package.json&lt;/code>&lt;/li>
+&lt;li>Создание &lt;code>.jsx&lt;/code> скрипта&lt;/li>
+&lt;li>Загрузка/build пакета в Hugo&lt;/li>
+&lt;/ol>
+&lt;h3 id="импорт">Импорт&lt;/h3>
+&lt;p>В корне проекта запускаем команду&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>npm i react react-dom
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="создание-jsx-скрипта">Создание jsx скрипта&lt;/h3>
+&lt;ol>
+&lt;li>В папке с темой &lt;code>assets&lt;/code> создадим файл &lt;code>my-react-script.jsx&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-jsx" data-lang="jsx">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> React from &lt;span style="color:#4070a0">&amp;#39;react&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#666">*&lt;/span> as ReactDOM from &lt;span style="color:#4070a0">&amp;#39;react-dom&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> { createRoot } from &lt;span style="color:#4070a0">&amp;#39;react-dom/client&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> App &lt;span style="color:#666">=&lt;/span> () =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">function&lt;/span> sayHello () {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> alert(&lt;span style="color:#4070a0">&amp;#39;Hello, World!&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">button&lt;/span> &lt;span style="color:#4070a0">onClick&lt;/span>&lt;span style="color:#666">=&lt;/span>{sayHello}&amp;gt;Click me&lt;span style="color:#666">!&lt;/span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">button&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ReactDOM.render(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> React.createElement(App, &lt;span style="color:#007020;font-weight:bold">null&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">document&lt;/span>.getElementById(&lt;span style="color:#4070a0">&amp;#39;root&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> container &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">document&lt;/span>.getElementById(&lt;span style="color:#4070a0">&amp;#39;my_render_block&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> root &lt;span style="color:#666">=&lt;/span> createRoot(container);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>root.render(&amp;lt;&lt;span style="color:#062873;font-weight:bold">App&lt;/span> /&amp;gt;);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>Добавим блок &lt;code>div&lt;/code> в место в шаблоне для отрисовки react приложения&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">div&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;my_render_block&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="подключение-в-hugo">Подключение в HUGO&lt;/h3>
+&lt;p>В файле &lt;code>head.html&lt;/code> или другом файте шаблона Hugo импортируем скрипт&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>{{ with resources.Get &amp;#34;my-react-script.jsx&amp;#34; }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{ $options := dict &amp;#34;defines&amp;#34; (dict &amp;#34;process.env.NODE_ENV&amp;#34; &amp;#34;\&amp;#34;development\&amp;#34;&amp;#34; &amp;#34;process.env.BaseURL&amp;#34; (printf `&amp;#34;%s&amp;#34;`
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$.Site.BaseURL)) }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{ $script := . | js.Build $options }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;{{ $script.RelPermalink }}&amp;#34;&lt;/span> &lt;span style="color:#4070a0">defer&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{ end }}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="cdn">CDN&lt;/h2>
+&lt;p>Второй способ&lt;/p>
+&lt;h3 id="подключение-библиотеки-react">Подключение библиотеки React&lt;/h3>
+&lt;p>В проекте Hugo в шаблонах обновим файл head.html. В моем проекте это шаблон, который содержит основные теги &lt;code>html и head&lt;/code>.
+Открываем &lt;code>layouts/partials/head.html&lt;/code> и добавляем скрипт в раздел &lt;code>&amp;lt;head&amp;gt;&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&amp;lt;!-- ... &amp;lt;head&amp;gt; ... --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&amp;lt;!-- Примечание: при деплое на продакшен замените «development.js» на «production.min.js» --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;https://unpkg.com/react@17/umd/react.development.js&amp;#34;&lt;/span> &lt;span style="color:#4070a0">crossorigin&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;https://unpkg.com/react-dom@17/umd/react-dom.development.js&amp;#34;&lt;/span> &lt;span style="color:#4070a0">crossorigin&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic">&amp;lt;!-- ... &amp;lt;/head&amp;gt; ... --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="выбор-места-для-отрисовки-компонента">Выбор места для отрисовки компонента&lt;/h3>
+&lt;p>Создадим &lt;code>div&lt;/code> блок в любом шаблоне Hugo, где будем отрисоывать React компонент.
+Например файл &lt;code>layouts/partials/footer.html&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">div&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;my_react_app&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>React будет искать данный блок и отрисует внутри него компонент&lt;/p>
+&lt;h3 id="создание-компонента">Создание компонента&lt;/h3>
+&lt;p>Вынесем создание компонента в отдельный &lt;code>js&lt;/code> файл. В Hugo есть директория &lt;strong>static&lt;/strong> в корне проекта. Если нету, то можно создать. Подробнее о &lt;a href="https://gohugo.io/content-management/static-files/">static folder&lt;/a>&lt;/p>
+&lt;p>Создадим файл &lt;code>static/js/my_react_component.js&lt;/code> и запишем код:&lt;/p>
+&lt;blockquote>
+&lt;p>Важно: скрипт должен подключиться в проекте &lt;strong>после&lt;/strong> блока &lt;code>&amp;lt;div id=&amp;quot;my_react_app&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&lt;/code>&lt;/p>&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> e &lt;span style="color:#666">=&lt;/span> React.createElement;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> MyCountButton &lt;span style="color:#666">=&lt;/span> () =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> [count, setCount] &lt;span style="color:#666">=&lt;/span> React.useState(&lt;span style="color:#40a070">100&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> e(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#39;button&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> { onClick&lt;span style="color:#666">:&lt;/span> () =&amp;gt; setCount(count &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>) },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> );
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// Выведем на экран компонент
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// ищем блок my_react_app и отрисовываем внутри него компонент
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>ReactDOM.render(React.createElement(MyCountButton), &lt;span style="color:#007020">document&lt;/span>.getElementById(&lt;span style="color:#4070a0">&amp;#34;my_react_app&amp;#34;&lt;/span>));
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="подключение-скрипта-с-react-компонентами">Подключение скрипта с React компонентами&lt;/h3>
+&lt;p>Так как скрипт будет искать div &amp;ldquo;my_react_app&amp;rdquo;, данный div блок должен быть загружен &lt;strong>до&lt;/strong> исполнения скрипта. Поэтому в файле &lt;code>layouts/partials/footer.html&lt;/code> добавляем скрипт в конец раздела &lt;code>&amp;lt;body&amp;gt;&lt;/code>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/01.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="пример">Пример&lt;/h2>
+&lt;p>Нажми на кнопку: &lt;div id="_react_count_example_" style="display:inline-block" class='inline-block bg-tertiary-bg rounded px-3 py-2 my-2 me-2 hover:text-yalla text-lg' >100&lt;/div>&lt;/p>
+&lt;script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js">&lt;/script>
+&lt;script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js">&lt;/script>
+&lt;div id="__react_block_render__">&lt;/div></description></item></channel></rss>

@@ -1,5 +1,91 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Codedeploy on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/codedeploy/</link><description>Recent content in Codedeploy on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 16 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/codedeploy/index.xml" rel="self" type="application/rss+xml"/><item><title>CodeDeploy</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codedeploy/</link><pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codedeploy/</guid><description>About CodeDeploy is a fully managed deployment service that automates software deploy­ments to a variety of compute services such as EC2, Fargate, Lambda, &amp;amp; on-pre­mises servers
-Documentation User Guide CodeDeploy can also deploy a serverless Lambda function.
-CodeDeploy can be connected to CodePipeline and use artifacts from there.
-Platforms Need to choose the compute platform:
-EC2/On-premises. AWS Lambda. Amazon ECS. AppSpec File The application specification file (AppSpec file) is a YAML-formatted, or JSON-formatted file used by CodeDeploy to manage a deployment.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Codedeploy on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/codedeploy/</link><description>Recent content in Codedeploy on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 16 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/codedeploy/index.xml" rel="self" type="application/rss+xml"/><item><title>CodeDeploy</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codedeploy/</link><pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codedeploy/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>CodeDeploy is a fully managed deployment service that automates software deploy­ments to a variety of compute services such as EC2, Fargate, Lambda, &amp;amp; on-pre­mises servers&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/codedeploy/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/codedeploy/?id=docs_gateway">User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>CodeDeploy can also deploy a serverless Lambda function.&lt;/p>
+&lt;p>CodeDeploy can be connected to CodePipeline and use artifacts from there.&lt;/p>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/Wx-ain8UryM?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
+&lt;/div>
+&lt;h3 id="platforms">Platforms&lt;/h3>
+&lt;p>Need to choose the compute platform:&lt;/p>
+&lt;ul>
+&lt;li>EC2/On-premises.&lt;/li>
+&lt;li>AWS Lambda.&lt;/li>
+&lt;li>Amazon ECS.&lt;/li>
+&lt;/ul>
+&lt;h3 id="appspec-file">AppSpec File&lt;/h3>
+&lt;p>The application specification file (AppSpec file) is a YAML-formatted, or JSON-formatted file used by CodeDeploy to manage a deployment.&lt;/p>
+&lt;p>The AppSpec file defines the deployment actions you want AWS CodeDeploy to execute.&lt;/p>
+&lt;h4 id="deployment-types">Deployment types&lt;/h4>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>In-place deployment (EC2 only)&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Blue/green deployments:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>AWS Lambda: Traffic is shifted from one version of a Lambda function to a new version of the same Lambda function.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Amazon ECS: Traffic is shifted from a task set in your Amazon ECS service to an updated, replacement task set in the same Amazon ECS service.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>EC2/On-Premises: Traffic is shifted from one set of instances in the original environment to a replacement set of instances.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="price">Price&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/codedeploy/pricing/">Current price&lt;/a>&lt;/p>
+&lt;h2 id="use-cases">Use Cases&lt;/h2>
+&lt;p>Type: Developer Tools&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/lab/blobid0-e29278ba-0b4a-4d62-8136-760167f7aafa.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="practice">Practice&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://cloudacademy.com/lab/continuous-integration-deployment-aws-code-services/">Continuous Integration and Deployment with AWS Code Services&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="questions">Questions&lt;/h2>
+&lt;h3 id="q1">Q1&lt;/h3>
+&lt;p>&lt;strong>What will happen if you delete an unused custom deployment configuration in AWS CodeDeploy?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>You will no longer be able to associate the deleted deployment configuration with new deployments and new deployment groups.&lt;/li>
+&lt;li>Nothing will happen, as the custom deployment configuration was unused.&lt;/li>
+&lt;li>All deployment groups associated with the custom deployment configuration will also be deleted.&lt;/li>
+&lt;li>All deployments associated with the custom deployment configuration will be terminated.&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-delete.html">https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations-delete.html&lt;/a>&lt;/p>
+&lt;p>Can delete only if unused.&lt;/p>
+&lt;p>&lt;mark style="color:white">1&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q2">Q2&lt;/h3>
+&lt;p>&lt;strong>What happens when you delete a deployment group with the AWS CLI in AWS CodeDeploy?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>All details associated with that deployment group will be moved from AWS CodeDeploy to AWS OpsWorks.&lt;/li>
+&lt;li>The instances used in the deployment group will change.&lt;/li>
+&lt;li>All details associated with that deployment group will also be deleted from AWS CodeDeploy.&lt;/li>
+&lt;li>The instances that were participating in the deployment group will run once again.&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-groups-delete.html">https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-groups-delete.html&lt;/a>&lt;/p>
+&lt;p>If you delete a deployment group, all details associated with that deployment group will also be deleted from CodeDeploy. The instances used in the deployment group will remain unchanged. This action cannot be undone.&lt;/p>
+&lt;p>&lt;mark style="color:white">3&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details></description></item></channel></rss>

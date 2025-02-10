@@ -1,6 +1,112 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LeetCode Problem Solutions on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/series/leetcode-problem-solutions/</link><description>Recent content in LeetCode Problem Solutions on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sun, 09 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/series/leetcode-problem-solutions/index.xml" rel="self" type="application/rss+xml"/><item><title>152. Maximum Product Subarray</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/152/</link><pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/152/</guid><description>LeetCode problem
-Problem Statement In this problem, we&amp;rsquo;re given an integer array nums, and our task is to find the maximum product of a contiguous subarray. A subarray is a contiguous part of an array. The interesting part of this problem is that the array can contain both positive and negative numbers, so the maximum product can be obtained by a subarray ending at any index of the array.
-Naive Solution A naive approach to this problem would be to calculate the product of all possible subarrays and return the maximum one.</description></item><item><title>166. Fraction to Recurring Decimal</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/166/</link><pubDate>Sun, 09 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/166/</guid><description>LeetCode problem 166
-Problem Statement Given two integers representing the numerator and denominator of a fraction, return the fraction in string format. If the fractional part is repeating, enclose the repeating part in parentheses.
-This problem is about converting a fraction to its decimal representation in string format. The tricky part is dealing with repeating decimals. If a decimal repeats, we should enclose the repeating part in parentheses.
-For example, if we have a fraction 1/3, the decimal representation would be 0.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LeetCode Problem Solutions on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/series/leetcode-problem-solutions/</link><description>Recent content in LeetCode Problem Solutions on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sun, 09 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/series/leetcode-problem-solutions/index.xml" rel="self" type="application/rss+xml"/><item><title>152. Maximum Product Subarray</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/152/</link><pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/152/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/maximum-product-subarray">LeetCode problem&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>In this problem, we&amp;rsquo;re given an integer array &lt;code>nums&lt;/code>, and our task is to find the maximum product of a contiguous subarray. A subarray is a contiguous part of an array. The interesting part of this problem is that the array can contain both positive and negative numbers, so the maximum product can be obtained by a subarray ending at any index of the array.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A naive approach to this problem would be to calculate the product of all possible subarrays and return the maximum one. However, this would have a time complexity of O(n²), as there are n*(n+1)/2 subarrays of an array, where n is the length of the array.&lt;/p>
+&lt;p>This would be inefficient and time-consuming for large inputs.&lt;/p>
+&lt;h2 id="dynamic-programming">Dynamic Programming&lt;/h2>
+&lt;p>We can solve this problem efficiently using Dynamic Programming.&lt;/p>
+&lt;p>The idea is to keep track of the maximum and minimum product ending at each position (as the array can contain negative numbers, and a negative number can become maximum when multiplied by another negative number).&lt;/p>
+&lt;p>We initialize two variables, &lt;code>max_prod&lt;/code> and &lt;code>min_prod&lt;/code>, to &lt;code>nums[0]&lt;/code>. Then for each number in the array (from the second number to the end), we calculate &lt;code>max_prod&lt;/code> and &lt;code>min_prod&lt;/code> using the formulas:&lt;/p>
+&lt;pre>&lt;code>max_prod = max(nums[i], max_prod * nums[i], min_prod * nums[i])
+min_prod = min(nums[i], max_prod * nums[i], min_prod * nums[i])
+&lt;/code>&lt;/pre>
+&lt;p>We also keep track of &lt;code>res&lt;/code>, which stores the maximum product of a subarray as a result.&lt;/p>
+&lt;p>If &lt;code>max_prod&lt;/code> is greater than &lt;code>res&lt;/code>, we update &lt;code>res&lt;/code>.&lt;/p>
+&lt;p>Finally, &lt;code>res&lt;/code> will hold the maximum product of a subarray.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Initialize &lt;code>max_prod&lt;/code>, &lt;code>min_prod&lt;/code>, and &lt;code>res&lt;/code> to &lt;code>nums[0]&lt;/code>.&lt;/li>
+&lt;li>For each number in the array (from the second number to the end):
+&lt;ul>
+&lt;li>Update &lt;code>max_prod&lt;/code> and &lt;code>min_prod&lt;/code>.&lt;/li>
+&lt;li>Update &lt;code>res&lt;/code> if &lt;code>max_prod&lt;/code> is greater.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Return &lt;code>res&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;h2 id="python-solution">Python Solution&lt;/h2>
+&lt;p>Here is a Python solution following the described approach:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">maxProduct&lt;/span>(nums):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> nums:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_prod &lt;span style="color:#666">=&lt;/span> min_prod &lt;span style="color:#666">=&lt;/span> res &lt;span style="color:#666">=&lt;/span> nums[&lt;span style="color:#40a070">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> num &lt;span style="color:#007020;font-weight:bold">in&lt;/span> nums[&lt;span style="color:#40a070">1&lt;/span>:]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> new_max &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(num, max_prod &lt;span style="color:#666">*&lt;/span> num, min_prod &lt;span style="color:#666">*&lt;/span> num)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> min_prod &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">min&lt;/span>(num, max_prod &lt;span style="color:#666">*&lt;/span> num, min_prod &lt;span style="color:#666">*&lt;/span> num)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_prod &lt;span style="color:#666">=&lt;/span> new_max
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(res, max_prod)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>166. Fraction to Recurring Decimal</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/166/</link><pubDate>Sun, 09 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/166/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/fraction-to-recurring-decimal/">LeetCode problem 166&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>Given two integers representing the numerator and denominator of a fraction, return the fraction in string format. If the fractional part is repeating, enclose the repeating part in parentheses.&lt;/p>
+&lt;p>This problem is about converting a fraction to its decimal representation in string format. The tricky part is dealing with repeating decimals. If a decimal repeats, we should enclose the repeating part in parentheses.&lt;/p>
+&lt;p>For example, if we have a fraction 1/3, the decimal representation would be 0.3333&amp;hellip;. In this problem, we need to represent it as &amp;ldquo;0.(3)&amp;rdquo;.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A naive solution could involve simple division - you divide the numerator by the denominator and convert it to a string. However, this wouldn&amp;rsquo;t account for recurring decimals, and it would only be correct for fractions that result in a finite decimal.&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;span class="caption-wrapper">
+&lt;img class="caption" style="float: right; width: ; height: 250px; margin: 0px 10px 10px 0px;" src="../../assets/long-division.png" title="" alt="">
+&lt;span class="caption-text">&lt;/span>
+&lt;/span>
+&lt;p>A better approach to solve this problem involves using the &lt;strong>long division method&lt;/strong> and a hash map to keep track of remainders. If the same remainder appears again, it means we have found a repeating sequence.&lt;/p>
+&lt;p>In long division, we divide the numerator by the denominator, find the remainder, and then add a zero to the remainder and repeat the process.&lt;/p>
+&lt;p>While doing this, if we encounter the same remainder that we have seen before, it means the sequence will start to repeat from here.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/166.jpg"
+id="zoom-default"
+alt="LeetCode problem 166"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>First, handle the simple case where &lt;code>numerator&lt;/code> is divisible by &lt;code>denominator&lt;/code>.&lt;/li>
+&lt;li>If the division isn&amp;rsquo;t exact, proceed with the long division method.&lt;/li>
+&lt;li>Keep dividing the &lt;code>numerator&lt;/code> by the &lt;code>denominator&lt;/code> and track the remainder.&lt;/li>
+&lt;li>Store the remainder and its corresponding index in the decimal part of the result in a dictionary.&lt;/li>
+&lt;li>If the remainder repeats, stop the division and enclose the repeating part in parentheses.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">fractionToDecimal&lt;/span>(self, numerator: &lt;span style="color:#007020">int&lt;/span>, denominator: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">str&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> numerator &lt;span style="color:#666">%&lt;/span> denominator &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020">str&lt;/span>(numerator &lt;span style="color:#666">//&lt;/span> denominator)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> integer &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">str&lt;/span>(&lt;span style="color:#007020">abs&lt;/span>(numerator) &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(denominator))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> remainder &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(numerator) &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(denominator)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> decimal &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> remainder_dict &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> remainder &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> remainder &lt;span style="color:#007020;font-weight:bold">in&lt;/span> remainder_dict:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> decimal&lt;span style="color:#666">.&lt;/span>insert(remainder_dict[remainder], &lt;span style="color:#4070a0">&amp;#34;(&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> decimal&lt;span style="color:#666">.&lt;/span>append(&lt;span style="color:#4070a0">&amp;#34;)&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># future index of starting repeating part , i.e. 1.12(345)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> remainder_dict[remainder] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(decimal)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> remainder &lt;span style="color:#666">*=&lt;/span> &lt;span style="color:#40a070">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> decimal&lt;span style="color:#666">.&lt;/span>append(&lt;span style="color:#007020">str&lt;/span>(remainder &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(denominator)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> remainder &lt;span style="color:#666">%=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(denominator)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> integer &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#4070a0">&amp;#34;.&amp;#34;&lt;/span> &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&amp;#34;&lt;/span>&lt;span style="color:#666">.&lt;/span>join(decimal)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (numerator &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>) &lt;span style="color:#666">^&lt;/span> (denominator &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Check if the result should be negative&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#34;-&amp;#34;&lt;/span> &lt;span style="color:#666">+&lt;/span> res
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>When doing the division, we are always considering the absolute value of the numerator and denominator. The remainder and the index at which it appears are stored in a dictionary. Whenever a remainder repeats, it means we have found a repeating sequence and the division process is stopped. The repeating part is then enclosed in parentheses.&lt;/p>
+&lt;p>Also, note the line if &lt;code>(numerator &amp;lt; 0) ^ (denominator &amp;lt; 0)&lt;/code>:. This is checking if the result should be negative. If either, but not both, of the numerator and denominator are negative, the result should also be negative. Here &lt;code>^&lt;/code> is the bitwise XOR operator in Python, which returns True if exactly one of the conditions is True.&lt;/p>
+&lt;p>After doing all this, if the numerator was negative, we add a negative sign to the front of our result. Otherwise, the result is returned as is.&lt;/p>
+&lt;video width="100%" controls>
+&lt;source src="../../assets/166.mp4" type="video/mp4">
+Your browser does not support the video tag.
+&lt;/video>
+&lt;figcaption>LeetCode 166 Solution&lt;/figcaption></description></item></channel></rss>

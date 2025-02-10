@@ -1,3 +1,228 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pyscript on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/pyscript/</link><description>Recent content in Pyscript on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 20 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/pyscript/index.xml" rel="self" type="application/rss+xml"/><item><title>PyScript - Python, встроенный в HTML</title><link>https://romankurnovskii.com/ru/posts/pyscript-python-embedded-in-html/</link><pubDate>Fri, 20 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/pyscript-python-embedded-in-html/</guid><description>PyScript PyScript - средство запуска Python в браузере, встроенное в HTML, был анонсирован на мероприятии PyCon в Солт-Лейк-Сити, США. Кнопка Instl здесь для шутки, так как установка не требуется
-PyScript зависит от существующего проекта Pyodide, который является скомпилированным в WebAssembly интерпретатором CPython 3.8, позволяющим запускать Python в браузере, а также скомпилированных научных пакетов Python.
-Связывание с файлами библиотеки CSS и JavaScript PyScript позволяет разработчикам встраивать код Python с помощью тега &amp;lt;py-script&amp;gt;, а также компонент &amp;lt;py-repl&amp;gt; (Read, Evaluate, Print, Loop), который позволяет Python печатать и выполняться динамически.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pyscript on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/pyscript/</link><description>Recent content in Pyscript on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 20 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/pyscript/index.xml" rel="self" type="application/rss+xml"/><item><title>PyScript - Python, встроенный в HTML</title><link>https://romankurnovskii.com/ru/posts/pyscript-python-embedded-in-html/</link><pubDate>Fri, 20 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/pyscript-python-embedded-in-html/</guid><description>&lt;h2 id="pyscript">PyScript&lt;/h2>
+&lt;p>&lt;a href="https://pyscript.net/">PyScript&lt;/a> - средство запуска Python в браузере, встроенное в HTML, был анонсирован на мероприятии PyCon в Солт-Лейк-Сити, США.
+&lt;p class="md__image">
+&lt;img
+src="images/pyscript.jpeg"
+id="zoom-default"
+alt="PyScript"
+loading="lazy"
+/>
+&lt;/p>
+&lt;em>Кнопка &lt;code>Instl&lt;/code> здесь для шутки, так как установка не требуется&lt;/em>&lt;/p>
+&lt;p>PyScript зависит от существующего проекта Pyodide, который является скомпилированным в WebAssembly интерпретатором CPython 3.8, позволяющим запускать Python в браузере, а также скомпилированных научных пакетов Python.&lt;/p>
+&lt;p>Связывание с файлами библиотеки CSS и JavaScript PyScript позволяет разработчикам встраивать код Python с помощью тега &lt;code>&amp;lt;py-script&amp;gt;&lt;/code>, а также компонент &lt;code>&amp;lt;py-repl&amp;gt;&lt;/code> (Read, Evaluate, Print, Loop), который позволяет Python печатать и выполняться динамически.&lt;/p>
+&lt;p>PyScript является открытым исходным кодом с использованием лицензии Apache 2.0.&lt;/p>
+&lt;p>Согласно сайту проекта, цели включают в себя включение Python в браузере без настройки на стороне сервера, запуск популярных пакетов Python, двунаправленную связь между JavaScript и Python и визуальную разработку с использованием «легкодоступных контролируемых компонентов пользовательского интерфейса, таких как кнопки, контейнеры, текстовые поля и многое другое».&lt;/p>
+&lt;p>Упрощение использования в браузере порадует не только ученых, разрабатывающих аналитические приложения, но и программистов любого профиля, ищущих альтернативу JavaScript — хотя разработчики проекта предупреждают, что это «чрезвычайно экспериментальный проект» и что он только проверен в веб-браузере Google Chrome.&lt;/p>
+&lt;blockquote>
+&lt;p>Please be advised that PyScript is very alpha and under heavy development. There are many known issues, from usability to loading times, and you should expect things to change often. We encourage people to play and explore with PyScript, but at this time we do not recommend using it for production.&lt;/p>&lt;/blockquote>
+&lt;h2 id="туториал-pyscript">Туториал PyScript&lt;/h2>
+&lt;p>Попробуем скачать, настроить и запустить приложение PyScript в браузере.&lt;/p>
+&lt;h3 id="рабочая-среда">Рабочая среда&lt;/h3>
+&lt;p>Разработчики PyScript пишут, что для работы не требуется никакой среды разработки, кроме веб-браузера. Попробуем запустить в Chrome.&lt;/p>
+&lt;h3 id="установка">Установка&lt;/h3>
+&lt;p>Можно скачать весь пакет с &lt;a href="https://pyscript.net/">сайта&lt;/a>, но будем использовать скрипт, с сервера pyscript.net&lt;/p>
+&lt;h3 id="hello-world">Hello World&lt;/h3>
+&lt;p>Создаем файл hello.html&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">link&lt;/span> &lt;span style="color:#4070a0">rel&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;stylesheet&amp;#34;&lt;/span> &lt;span style="color:#4070a0">href&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;https://pyscript.net/latest/pyscript.css&amp;#34;&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">defer&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;https://pyscript.net/latest/pyscript.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt; &amp;lt;&lt;span style="color:#062873;font-weight:bold">py-script&lt;/span>&amp;gt; print(&amp;#39;Hello, World!&amp;#39;) &amp;lt;/&lt;span style="color:#062873;font-weight:bold">py-script&lt;/span>&amp;gt; &amp;lt;/&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Тег &lt;code>&amp;lt;py-script&amp;gt;&lt;/code> расположен внутри HTML body. Внутри этого тега будем пиcать Python код.&lt;/p>
+&lt;p>Откроем файл в браузере
+&lt;p class="md__image">
+&lt;img
+src="images/pyscript-embedded.png"
+id="zoom-default"
+alt="PyScript"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Работает!&lt;/p>
+&lt;h3 id="тег-py-script">Тег py-script&lt;/h3>
+&lt;p>Тег &lt;code>&amp;lt;py-script&amp;gt;&lt;/code> позволяет писать многострочный код&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">link&lt;/span> &lt;span style="color:#4070a0">rel&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;stylesheet&amp;#34;&lt;/span> &lt;span style="color:#4070a0">href&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;https://pyscript.net/latest/pyscript.css&amp;#34;&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">defer&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;https://pyscript.net/latest/pyscript.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">py-script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&amp;#34;Let&amp;#39;s compute π:&amp;#34;)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> def compute_pi(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pi = 2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> for i in range(1,n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pi *= 4 * i ** 2 / (4 * i ** 2 - 1)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> return pi
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pi = compute_pi(100000)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s = f&amp;#34;π is approximately {pi:.3f}&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(s)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">py-script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Важно соблюдать отступы в самом блоке Python. Но Начальную строку кода можно начинать и с начала строки&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">link&lt;/span> &lt;span style="color:#4070a0">rel&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;stylesheet&amp;#34;&lt;/span> &lt;span style="color:#4070a0">href&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;https://pyscript.net/latest/pyscript.css&amp;#34;&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">defer&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;https://pyscript.net/latest/pyscript.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">py-script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(&amp;#34;Let&amp;#39;s compute π:&amp;#34;)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>def compute_pi(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pi = 2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> for i in range(1,n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pi *= 4 * i ** 2 / (4 * i ** 2 - 1)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> return pi
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pi = compute_pi(100000)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>s = f&amp;#34;π is approximately {pi:.3f}&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>print(s)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">py-script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="запись-внутри-html-элементов">Запись внутри HTML элементов&lt;/h4>
+&lt;p>В приведенном выше примере у нас был один тег &lt;code>&amp;lt;py-script&amp;gt;&lt;/code>, выводящий одну или несколько строк на страницу по порядку.
+Внутри &lt;code>&amp;lt;py-script&amp;gt;&lt;/code> есть доступ к модулю pyscript, который предоставляет метод .write() для отправки строк в помеченные элементы на странице.&lt;/p>
+&lt;p>Например, мы добавим некоторые элементы стиля и предоставим заполнители для тега &lt;code>&amp;lt;py-script&amp;gt;&lt;/code> для записи.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">link&lt;/span> &lt;span style="color:#4070a0">rel&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;stylesheet&amp;#34;&lt;/span> &lt;span style="color:#4070a0">href&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;https://pyscript.net/latest/pyscript.css&amp;#34;&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">defer&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;https://pyscript.net/latest/pyscript.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">link&lt;/span> &lt;span style="color:#4070a0">href&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css&amp;#34;&lt;/span> &lt;span style="color:#4070a0">rel&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;stylesheet&amp;#34;&lt;/span> &lt;span style="color:#4070a0">crossorigin&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;anonymous&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">b&lt;/span>&amp;gt;&amp;lt;&lt;span style="color:#062873;font-weight:bold">p&lt;/span>&amp;gt;Today is &amp;lt;&lt;span style="color:#062873;font-weight:bold">u&lt;/span>&amp;gt;&amp;lt;&lt;span style="color:#062873;font-weight:bold">label&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#39;today&amp;#39;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">label&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">u&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">p&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">b&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">br&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">div&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;my-custom-pi&amp;#34;&lt;/span> &lt;span style="color:#4070a0">class&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;alert alert-primary&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">py-script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>import datetime as dt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pyscript.write(&amp;#39;today&amp;#39;, dt.date.today().strftime(&amp;#39;%A %B %d, %Y&amp;#39;))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>def compute_pi(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pi = 2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> for i in range(1,n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pi *= 4 * i ** 2 / (4 * i ** 2 - 1)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> return pi
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pi = compute_pi(100000)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pyscript.write(&amp;#39;my-custom-pi&amp;#39;, f&amp;#39;π is approximately {pi:.3f}&amp;#39;)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">py-script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="images/pyscript-embedded2.png"
+id="zoom-default"
+alt="PyScript"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="тег-py-env">Тег py-env&lt;/h3>
+&lt;p>В дополнение к стандартной библиотеке Python и модулю pyscript, многие сторонние пакеты работают с PyScript. Чтобы их использовать, нужно объявить зависимости с помощью тега &lt;code>&amp;lt;py-env&amp;gt;&lt;/code> в заголовке HTML. Вы также можете ссылаться на файлы &lt;code>.whl&lt;/code> прямо на диске&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">py-env&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &amp;#39;./static/wheels/travertino-0.1.3-py3-none-any.whl&amp;#39;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &amp;#39;./static/wheels/my-other-package-0.0.1-py3-none-any.whl&amp;#39;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">py-env&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">py-script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> #my python code ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">py-script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Пример с NumPy&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">link&lt;/span> &lt;span style="color:#4070a0">rel&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;stylesheet&amp;#34;&lt;/span> &lt;span style="color:#4070a0">href&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;https://pyscript.net/latest/pyscript.css&amp;#34;&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">defer&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;https://pyscript.net/latest/pyscript.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">py-env&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - numpy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - matplotlib
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">py-env&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">h1&lt;/span>&amp;gt;Let&amp;#39;s plot random numbers&amp;lt;/&lt;span style="color:#062873;font-weight:bold">h1&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">div&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;plot&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">py-script&lt;/span> &lt;span style="color:#4070a0">output&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;plot&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>import matplotlib.pyplot as plt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>import numpy as np
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>x = np.random.randn(1000)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>y = np.random.randn(1000)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fig, ax = plt.subplots()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ax.scatter(x, y)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fig
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">py-script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="импорт-локальный-модулей">Импорт локальный модулей&lt;/h4>
+&lt;p>Мы также можем использовать собсвтенные модули, которые импортируем внутри тега &lt;code>&amp;lt;py-script&amp;gt;&lt;/code>&lt;/p>
+&lt;p>Например, создадим файл `data.py&amp;rsquo; и запишем в него собственную функцию&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># data.py&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">numpy&lt;/span> &lt;span style="color:#007020;font-weight:bold">as&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">np&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">make_x_and_y&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#666">=&lt;/span> np&lt;span style="color:#666">.&lt;/span>random&lt;span style="color:#666">.&lt;/span>randn(n)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> y &lt;span style="color:#666">=&lt;/span> np&lt;span style="color:#666">.&lt;/span>random&lt;span style="color:#666">.&lt;/span>randn(n)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> x, y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Внутри тега &lt;code>&amp;lt;py-env&amp;gt;&lt;/code> добавим стандартные модули и путь до нашего локального модуля&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">link&lt;/span> &lt;span style="color:#4070a0">rel&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;stylesheet&amp;#34;&lt;/span> &lt;span style="color:#4070a0">href&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;https://pyscript.net/latest/pyscript.css&amp;#34;&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">defer&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;https://pyscript.net/latest/pyscript.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">py-env&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - numpy
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - matplotlib
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - paths:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - /data.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">py-env&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">h1&lt;/span>&amp;gt;Let&amp;#39;s plot random numbers&amp;lt;/&lt;span style="color:#062873;font-weight:bold">h1&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">div&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;plot&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">py-script&lt;/span> &lt;span style="color:#4070a0">output&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;plot&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>import matplotlib.pyplot as plt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>from data import make_x_and_y
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>x, y = make_x_and_y(n=1000)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fig, ax = plt.subplots()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ax.scatter(x, y)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fig
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">py-script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="тег-py-repl">Тег py-repl&lt;/h3>
+&lt;p>Тег &lt;code>&amp;lt;py-repl&amp;gt;&lt;/code> создает компонент REPL(Read–eval–print loop), который отображается на странице как редактор кода, что позволяет писать исполняемый код в строке.&lt;/p>
+&lt;h3 id="тег-py-config">Тег py-config&lt;/h3>
+&lt;p>Тег &lt;code>&amp;lt;py-config&amp;gt;&lt;/code> используется для установки и настройки общих метаданных о вашем приложении PyScript в формате YAML.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">py-config&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - autoclose_loader: false
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - runtimes:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> src: &amp;#34;https://cdn.jsdelivr.net/pyodide/v0.20.0/full/pyodide.js&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> name: pyodide-0.20
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> lang: python
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">py-config&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="тег-py-title">Тег py-title&lt;/h3>
+&lt;p>Тег визуального отображения. Добавляет компонент заголовка статического текста, который стилизует текст внутри тега как заголовок страницы.&lt;/p>
+&lt;h3 id="тег-py-box">Тег py-box&lt;/h3>
+&lt;p>Создает объект-контейнер, который можно использовать для размещения одного или нескольких визуальных компонентов, определяющих, как элементы &lt;code>&amp;lt;py-box&amp;gt;&lt;/code> должны выравниваться и отображаться на странице.&lt;/p>
+&lt;h3 id="тег-py-inputbox">Тег py-inputbox&lt;/h3>
+&lt;p>Позволяет вставить окно с текстовым полем&lt;/p>
+&lt;h3 id="тег-py-button">Тег py-button&lt;/h3>
+&lt;p>Добавляет кнопку, к которой авторы могут добавлять метки и обработчики событий для действий на кнопке, таких как on_focus или on_click.&lt;/p>
+&lt;h2 id="ресурсы">Ресурсы&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://pyscript.net/examples/">Примеры использования PyScript&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://community.anaconda.cloud/c/tech-topics/pyscript/">Вопросы по PyScript&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

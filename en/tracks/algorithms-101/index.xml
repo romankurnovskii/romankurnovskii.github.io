@@ -1,2 +1,1618 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Algorithms 101 on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/</link><description>Recent content in Algorithms 101 on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sat, 15 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tracks/algorithms-101/index.xml" rel="self" type="application/rss+xml"/><item><title>Plan</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/plan/</link><pubDate>Sat, 15 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/plan/</guid><description>Q1 # Problem Difficulty Topics 1 1. Two Sum Easy Array, Hash Table 2 13. Roman to Integer Easy Hash Table, Math, String 3 14. Longest Common Prefix Easy String 4 20. Valid Parentheses Easy String, Stack 5 21. Merge Two Sorted Lists Easy Linked List, Recursion 6 26. Remove Duplicates from Sorted Array Easy Array, Two pointers 7 66. Plus One Easy Array, Math 8 69. Sqrt(x) Easy Math, Binary Search, 9 70. Climbing Stairs Easy Math, Dynamic Programming, Memoization 10 88.</description></item><item><title>LeetCode Top 75</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode75/</link><pubDate>Tue, 01 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode75/</guid><description>Array / String # Problem Difficulty Slides/Video 1 1768. Merge Strings Alternately Easy ✅ ✅ 2 1071. Greatest Common Divisor of Strings Easy ✅ ✅ 3 1431. Kids With the Greatest Number of Candies Easy ✅ ✅ 4 605. Can Place Flowers Easy 5 345. Reverse Vowels of a String Easy 6 151. Reverse Words in a String Medium ✅ 7 238. Product of Array Except Self Medium 8 334. Increasing Triplet Subsequence Medium 9 443. String Compression Medium Two Pointers # Problem Difficulty 10 283.</description></item><item><title>Algorithms</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/algorithms/</link><pubDate>Sat, 15 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/algorithms/</guid><description>Intro Big-O Cheat Sheet Sort Insertion sort sorts an array by continuously picking an element, starting from the second element, and inserting it in its correct position in the sorted part of the array to its left. It does this by shifting larger elements one position ahead of their current position, making room for the new element.
-def insertion_sort(array): for i in range(1, len(array)): value = array[i] while i &amp;gt; 0 and array[i - 1] &amp;gt; value: array[i] = array[i - 1] i -= 1 array[i] = value return array Selection sort works by repeatedly finding the minimum element from the unsorted part of the array and swapping it with the first unsorted element.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Algorithms 101 on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/</link><description>Recent content in Algorithms 101 on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sat, 15 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tracks/algorithms-101/index.xml" rel="self" type="application/rss+xml"/><item><title>Plan</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/plan/</link><pubDate>Sat, 15 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/plan/</guid><description>&lt;h2 id="q1">Q1&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th>Problem&lt;/th>
+&lt;th>Difficulty&lt;/th>
+&lt;th>Topics&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">1&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/1-two-sum">1. Two Sum&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/hash-table">Hash Table&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">2&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/13-roman-to-integer">13. Roman to Integer&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/hash-table">Hash Table&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">3&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/14-longest-common-prefix">14. Longest Common Prefix&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">4&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/20-valid-parentheses">20. Valid Parentheses&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/stack">Stack&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">5&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/21-merge-two-sorted-lists">21. Merge Two Sorted Lists&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/linked-list">Linked List&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/recursion">Recursion&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">6&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/26-remove-duplicates-from-sorted-array">26. Remove Duplicates from Sorted Array&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/two-pointers">Two pointers&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">7&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/66-plus-one">66. Plus One&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">8&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/69-sqrtx">69. Sqrt(x)&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/binary-search">Binary Search&lt;/a>,&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">9&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/70-climbing-stairs">70. Climbing Stairs&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/dynamic-programming">Dynamic Programming&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/memoization">Memoization&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">10&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/88-merge-sorted-array">88. Merge Sorted Array&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/two-pointers">Two pointers&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/sorting">Sorting&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">11&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/94-binary-tree-inorder-traversal">94. Binary Tree Inorder Traversal&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/stack">Stack&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/tree">Tree&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/depth-first-search">Depth-First Search&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/binary-tree">Binary Tree&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">12&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/2-add-two-numbers">2. Add Two Numbers&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/linked-list">Linked List&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/recursion">Recursion&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">13&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/3-longest-substring-without-repeating-characters">3. Longest Substring Without Repeating Characters&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/hash-table">Hash Table&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/sliding-window">Sliding Window&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">14&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/5-longest-palindromic-substring">5. Longest Palindromic Substring&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/dynamic-programming">Dynamic Programming&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">15&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/7-reverse-integer">7. Reverse Integer&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">16&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/11-container-with-most-water">11. Container With Most Water&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/two-pointers">Two pointers&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/greedy">Greedy&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">17&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/15-3sum">15. 3Sum&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/two-pointers">Two pointers&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/sorting">Sorting&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">18&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/17-letter-combinations-of-a-phone-number">17. Letter Combinations of a Phone Number&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/hash-table">Hash Table&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/backtracking">Backtracking&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">19&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/19-remove-nth-node-from-end-of-list">19. Remove Nth Node From End of List&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/linked-list">Linked List&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/two-pointers">Two pointers&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">20&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/22-generate-parentheses">22. Generate Parentheses&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/dynamic-programming">Dynamic Programming&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/backtracking">Backtracking&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="intermediate-results">Intermediate results&lt;/h3>
+&lt;ul>
+&lt;li>Appeared intuitive understanding of algorithms.&lt;/li>
+&lt;li>In most cases, one hour &lt;strong>is not enough&lt;/strong> to solve the problem.&lt;/li>
+&lt;/ul>
+&lt;p>If you start sketching an intuitive algorithm, then in the process comes an understanding and an improved solution.&lt;/p>
+&lt;p>Update plan by solution:&lt;/p>
+&lt;ul>
+&lt;li>After reading, if there is no exact solution:&lt;/li>
+&lt;/ul>
+&lt;ol>
+&lt;li>Assume/analyze/draw the proposed algorithm&lt;/li>
+&lt;li>View solutions with explanations&lt;/li>
+&lt;li>Compare with your own / analyze&lt;/li>
+&lt;li>Code&lt;/li>
+&lt;/ol>
+&lt;h2 id="q2">Q2&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th>Problem&lt;/th>
+&lt;th>Difficulty&lt;/th>
+&lt;th>Topics&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">21&lt;/td>
+&lt;td>&lt;a href="../problems/28-find-the-index-of-the-first-occurrence-in-a-string/">28. Find the Index of the First Occurrence in a String&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/two-pointers">Two pointers&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/string-matching">String Matching&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">22&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/29-divide-two-integers">29. Divide Two Integers&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/bit-manipulation">Bit Manipulation&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">23&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/33-search-in-rotated-sorted-arrays">33. Search in Rotated Sorted Array&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/binary-search">Binary Search&lt;/a>,&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">24&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/34-find-first-and-last-position-of-element-in-sorted-array">34. Find First and Last Position of Element in Sorted Array&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/binary-search">Binary Search&lt;/a>,&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">25&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/36-valid-sudoku">36. Valid Sudoku&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/hash-table">Hash Table&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/matrix">Matrix&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">26&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/38-count-and-say">38. Count and Say&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">27&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/46-permutations">46. Permutations&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/backtracking">Backtracking&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">28&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/48-rotate-image">48. Rotate Image&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/matrix">Matrix&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">29&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/49-group-anagrams">49. Group Anagrams&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/hash-table">Hash Table&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/string">String&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/sorting">Sorting&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">30&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/50">50. Pow(x, n)&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/recursion">Recursion&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">31&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/53">53. Maximum Subarray&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/divide-and-conquer">Divide and Conquer&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/dynamic-programming">Dynamic Programming&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="intermediate-results-1">Intermediate results&lt;/h3>
+&lt;p>Revise training tactics. Prepare list of top coding patterns.&lt;/p>
+&lt;p>Practice on each coding pattern.&lt;/p>
+&lt;h2 id="q3">Q3&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th>Problem&lt;/th>
+&lt;th>Difficulty&lt;/th>
+&lt;th>Topics&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">32&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/55">55. Jump Game&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/greedy">Greedy&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/dynamic-programming">Dynamic Programming&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">33&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/56">56. Merge Intervals&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/sorting">Sorting&lt;/a>,&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">34&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/62">62. Unique Paths&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/math">Math&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/dynamic-programming">Dynamic Programming&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/combinatorics">Combinatorics&lt;/a>]&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">35&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/73">73. Set Matrix Zeroes&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/hash-table">Hash Table&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/matrix">Matrix&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">36&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/75">75. Sort Colors&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/Two-Pointers">Two Pointers&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/Sorting">Sorting&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">37&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/78">78. Subsets&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/en/tags/array">Array&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/backtracking">Backtracking&lt;/a>, &lt;a href="https://romankurnovskii.com/en/tags/bit-manipulation">Bit Manipulation&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Started participating in &lt;a href="../codeforces">contests&lt;/a>.&lt;/p>
+&lt;h2 id="links">Links&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://leetcode.com/studyplan/top-interview-150/">Top Interview 150&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.google.com/spreadsheets/d/1hW-bfeFKSkEDzfjaDMjDQmgsupEZz3gysXpG0mrf6QE/edit#gid=1350124072">LeetCode Companies problems&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>LeetCode Top 75</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode75/</link><pubDate>Tue, 01 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode75/</guid><description>&lt;!--
+Presentation:
+CURRENT: 1004
+-->
+&lt;h2 id="array--string">Array / String&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th>Problem&lt;/th>
+&lt;th>Difficulty&lt;/th>
+&lt;th>Slides/Video&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">1&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/1768">1768. Merge Strings Alternately&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;td>✅ ✅&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">2&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/1071">1071. Greatest Common Divisor of Strings&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;td>✅ ✅&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">3&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/1431">1431. Kids With the Greatest Number of Candies&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;td>✅ ✅&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">4&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/605">605. Can Place Flowers&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">5&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/345">345. Reverse Vowels of a String&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">6&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/151">151. Reverse Words in a String&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">7&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/238">238. Product of Array Except Self&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">8&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/334">334. Increasing Triplet Subsequence&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">9&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/443">443. String Compression&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="two-pointers">Two Pointers&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th>Problem&lt;/th>
+&lt;th>Difficulty&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">10&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/283">283. Move Zeroes&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">11&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/392">392. Is Subsequence&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">12&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/11">11. Container With Most Water&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">13&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/1679">1679. Max Number of K-Sum Pairs&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="sliding-window">Sliding Window&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th>Problem&lt;/th>
+&lt;th>Difficulty&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">14&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/643">643. Maximum Average Subarray I&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">15&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/1456">1456. Maximum Number of Vowels in a Substring of Given Length&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">16&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/1004">1004. Max Consecutive Ones III&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">17&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/1493">1493. Longest Subarray of 1&amp;rsquo;s After Deleting One Element&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="prefix-sum">Prefix Sum&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th>Problem&lt;/th>
+&lt;th>Difficulty&lt;/th>
+&lt;th>Slides/Video&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">18&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/1723">1732. Find the Highest Altitude&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">19&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/724">724. Find Pivot Index&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="hash-map--set">Hash Map / Set&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th>Problem&lt;/th>
+&lt;th>Difficulty&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">20&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/2215">2215. Find the Difference of Two Arrays&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">21&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/1207">1207. Unique Number of Occurrences&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">22&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/1657">1657. Determine if Two Strings Are Close&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">23&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/2352">2352. Equal Row and Column Pairs&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="stack">Stack&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th>Problem&lt;/th>
+&lt;th>Difficulty&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">24&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/2390">2390. Removing Stars From a String&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">25&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/735">735. Asteroid Collision&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">26&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/394">394. Decode String&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="queue">Queue&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th>Problem&lt;/th>
+&lt;th>Difficulty&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">27&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/933">933. Number of Recent Calls&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">28&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/649">649. Dota2 Senate&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="linked-list">Linked List&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th>Problem&lt;/th>
+&lt;th>Difficulty&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">31&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/141">141. Linked List Cycle&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">31&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/206">206. Reverse Linked List&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">29&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/2095">2095. Delete the Middle Node of a Linked List&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">30&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/328">328. Odd Even Linked List&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">32&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/2130">2130. Maximum Twin Sum of a Linked List&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="binary-tree---dfs">Binary Tree - DFS&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th>Problem&lt;/th>
+&lt;th>Difficulty&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">33&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/104">104. Maximum Depth of Binary Tree&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">34&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/872/">872. Leaf-Similar Trees&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">35&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1448/">1448. Count Good Nodes in Binary Tree&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">36&lt;/td>
+&lt;td>&lt;a href="https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/437/">437. Path Sum III&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">37&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/1372">1372. Longest ZigZag Path in a Binary Tree&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">38&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/236">236. Lowest Common Ancestor of a Binary Tree&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="binary-tree---bfs">Binary Tree - BFS&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th>Problem&lt;/th>
+&lt;th>Difficulty&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">39&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/199">199. Binary Tree Right Side View&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">40&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/1161">1161. Maximum Level Sum of a Binary Tree&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="binary-search-tree">Binary Search Tree&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th>Problem&lt;/th>
+&lt;th>Difficulty&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">41&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/700">700. Search in a Binary Search Tree&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">42&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/450">450. Delete Node in a BST&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="graphs---dfs">Graphs - DFS&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th>Problem&lt;/th>
+&lt;th>Difficulty&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">43&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/841">841. Keys and Rooms&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">44&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/547">547. Number of Provinces&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">45&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/1466">1466. Reorder Routes to Make All Paths Lead to the City Zero&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">46&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/399">399. Evaluate Division&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="graphs---bfs">Graphs - BFS&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th>Problem&lt;/th>
+&lt;th>Difficulty&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">47&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/1926">1926. Nearest Exit from Entrance in Maze&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">48&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/994">994. Rotting Oranges&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="heap--priority-queue">Heap / Priority Queue&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th>Problem&lt;/th>
+&lt;th>Difficulty&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">49&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/49">Kth Largest Element in an Array&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">50&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/50">Smallest Number in Infinite Set&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">51&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/51">Maximum Subsequence Score&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">52&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/52">Total Cost to Hire K Workers&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="binary-search">Binary Search&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th>Problem&lt;/th>
+&lt;th>Difficulty&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">53&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/53">Guess Number Higher or Lower&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">54&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/54">Successful Pairs of Spells and Potions&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">55&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/162">162. Find Peak Element&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">56&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/56">Koko Eating Bananas&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="backtracking">Backtracking&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th>Problem&lt;/th>
+&lt;th>Difficulty&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">57&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/17">17. Letter Combinations of a Phone Number&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">58&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/58">Combination Sum III&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="dp---1d">DP - 1D&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th>Problem&lt;/th>
+&lt;th>Difficulty&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">59&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/59">N-th Tribonacci Number&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">60&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/60">Min Cost Climbing Stairs&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">61&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/61">House Robber&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">62&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/62">Domino and Tromino Tiling&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="dp---multidimensional">DP - Multidimensional&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th>Problem&lt;/th>
+&lt;th>Difficulty&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">63&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/63">Unique Paths&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">64&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/64">Longest Common Subsequence&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">65&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/65">Best Time to Buy and Sell Stock with Transaction Fee&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">66&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/66">Edit Distance&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="bit-manipulation">Bit Manipulation&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th>Problem&lt;/th>
+&lt;th>Difficulty&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">67&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/67">Counting Bits&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">68&lt;/td>
+&lt;td>&lt;a href="../leetcode/easy/136">136. Single Number&lt;/a>&lt;/td>
+&lt;td>Easy&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">69&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/69">Minimum Flips to Make a OR b Equal to c&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="trie">Trie&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th>Problem&lt;/th>
+&lt;th>Difficulty&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">70&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/208">208. Implement Trie (Prefix Tree)&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">71&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/71">Search Suggestions System&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="intervals">Intervals&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th>Problem&lt;/th>
+&lt;th>Difficulty&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">72&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/435">435. Non-overlapping Intervals&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">73&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/73">Minimum Number of Arrows to Burst Balloons&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="monotonic-stack">Monotonic Stack&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: center">#&lt;/th>
+&lt;th>Problem&lt;/th>
+&lt;th>Difficulty&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: center">74&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/74">Daily Temperatures&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align: center">75&lt;/td>
+&lt;td>&lt;a href="../leetcode/medium/75">Online Stock Span&lt;/a>&lt;/td>
+&lt;td>Medium&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="links">Links&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://leetcode.com/studyplan/leetcode-75/">LeetCode Top 75&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Algorithms</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/algorithms/</link><pubDate>Sat, 15 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/algorithms/</guid><description>&lt;h2 id="intro">Intro&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.30secondsofcode.org/articles/s/big-o-cheatsheet">Big-O Cheat Sheet&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="sort">Sort&lt;/h2>
+&lt;p>&lt;strong>Insertion sort&lt;/strong> sorts an array by continuously picking an element, starting from the second element, and inserting it in its correct position in the sorted part of the array to its left. It does this by shifting larger elements one position ahead of their current position, making room for the new element.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">insertion_sort&lt;/span>(array):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#007020">len&lt;/span>(array)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> value &lt;span style="color:#666">=&lt;/span> array[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> i &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> array[i &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">&amp;gt;&lt;/span> value:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> array[i] &lt;span style="color:#666">=&lt;/span> array[i &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> array[i] &lt;span style="color:#666">=&lt;/span> value
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> array
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Selection sort&lt;/strong> works by repeatedly finding the minimum element from the unsorted part of the array and swapping it with the first unsorted element. It continues this process until the whole array is sorted, hence effectively moving the smallest unsorted element to its correct position in each iteration.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">selection_sort&lt;/span>(array):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(array) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> min_value &lt;span style="color:#666">=&lt;/span> i
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#007020">len&lt;/span>(array)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> array[j] &lt;span style="color:#666">&amp;lt;&lt;/span> array[min_value]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> min_value &lt;span style="color:#666">=&lt;/span> j
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> temp &lt;span style="color:#666">=&lt;/span> array[min_value]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> array[min_value] &lt;span style="color:#666">=&lt;/span> array[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> array[i] &lt;span style="color:#666">=&lt;/span> temp
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> array
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Merge sort&lt;/strong> sorts an array by dividing it into &lt;mark>two halves&lt;/mark>, recursively sorting those halves, and then merging them back together in sorted order.&lt;/p>
+&lt;ol>
+&lt;li>If the array has more than one element, find the middle of the array.&lt;/li>
+&lt;li>Divide the array into two halves using the middle index: the left half (&lt;code>left_half&lt;/code>) and the right half (&lt;code>right_half&lt;/code>).&lt;/li>
+&lt;li>Recursively sort both halves by calling &lt;code>merge_sort&lt;/code> on &lt;code>left_half&lt;/code> and &lt;code>right_half&lt;/code>.&lt;/li>
+&lt;li>Merge the sorted halves back into the original array. The merge operation walks through &lt;code>left_half&lt;/code> and &lt;code>right_half&lt;/code>, and at each step, &lt;mark>it copies the smaller element&lt;/mark> from either &lt;code>left_half&lt;/code> or &lt;code>right_half&lt;/code> into the original array.&lt;/li>
+&lt;li>If there are any remaining elements in &lt;code>left_half&lt;/code> or &lt;code>right_half&lt;/code> after one has been fully copied back into the array, those elements are copied over.
+&lt;ol>
+&lt;li>This happens because those remaining elements are guaranteed to be larger than all elements already copied back into the array.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;p>First more simple example of merging already sorted two arrays:&lt;/p>
+&lt;p>&lt;strong>Merge sorted arrays:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">merge&lt;/span>(left_ar, right_ar):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left_index, right_index &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> left_index &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(left_ar) &lt;span style="color:#007020;font-weight:bold">and&lt;/span> right_index &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(right_ar):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> left_ar[left_index] &lt;span style="color:#666">&amp;lt;&lt;/span> right_ar[right_index]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#666">.&lt;/span>append(left_ar[left_index])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left_index &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#666">.&lt;/span>append(right_ar[right_index])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right_index &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">+=&lt;/span> left_ar[left_index:] &lt;span style="color:#666">+&lt;/span> right_ar[right_index:]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">merge_sort&lt;/span>(array):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mid &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(array) &lt;span style="color:#666">/&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left_ar &lt;span style="color:#666">=&lt;/span> array[:mid]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right_ar &lt;span style="color:#666">=&lt;/span> array[mid:]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> merge(left_ar, right_ar)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Sort array:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../assets/merge-sort.jpeg"
+id="zoom-default"
+alt="merge-sort"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">merge_sort&lt;/span>(array):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020">len&lt;/span>(array) &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic"># Only sort if array is larger than 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mid &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(array) &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># middle of the array&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Split the array into two halves&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left_half &lt;span style="color:#666">=&lt;/span> array[:mid]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right_half &lt;span style="color:#666">=&lt;/span> array[mid:]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Recursively sort both halves&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> merge_sort(left_half)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> merge_sort(right_half)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left_index &lt;span style="color:#666">=&lt;/span> right_index &lt;span style="color:#666">=&lt;/span> merged_index &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Merge sorted halves back into the original array&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> left_index &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(left_half) &lt;span style="color:#007020;font-weight:bold">and&lt;/span> right_index &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(right_half):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> left_half[left_index] &lt;span style="color:#666">&amp;lt;=&lt;/span> right_half[right_index]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> array[merged_index] &lt;span style="color:#666">=&lt;/span> left_half[left_index]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left_index &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> array[merged_index] &lt;span style="color:#666">=&lt;/span> right_half[right_index]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right_index &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> merged_index &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># If any elements left in either half, append them to the array&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> left_index &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(left_half):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> array[merged_index] &lt;span style="color:#666">=&lt;/span> left_half[left_index]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left_index &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> merged_index &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> right_index &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(right_half):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> array[merged_index] &lt;span style="color:#666">=&lt;/span> right_half[right_index]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right_index &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> merged_index &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;video width="100%" controls>
+&lt;source src="../assets/merge-sort-visual.mp4" type="video/mp4">
+Your browser does not support the video tag.
+&lt;/video>
+&lt;figcaption>Merge Sort&lt;/figcaption>
+&lt;video width="100%" controls>
+&lt;source src="../assets/merge-sort.mp4" type="video/mp4">
+Your browser does not support the video tag.
+&lt;/video>
+&lt;figcaption>Merge Sort&lt;/figcaption>
+&lt;/p>
+&lt;h2 id="binary-search">Binary Search&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://leetcode.com/explore/learn/card/binary-search/125/template-i/938/">Binary search template&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">find_target&lt;/span>(nums, target):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> left &lt;span style="color:#666">&amp;lt;=&lt;/span> right:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mid &lt;span style="color:#666">=&lt;/span> (left &lt;span style="color:#666">+&lt;/span> right) &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nums[mid] &lt;span style="color:#666">==&lt;/span> target:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> mid
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nums[mid] &lt;span style="color:#666">&amp;lt;&lt;/span> target:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">=&lt;/span> mid &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#666">=&lt;/span> mid &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Python build-in module&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">bisect&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> bisect_left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sorted_fruits &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#4070a0">&amp;#39;apple&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;banana&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;orange&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;plum&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>bisect_left(sorted_fruits, &lt;span style="color:#4070a0">&amp;#39;kiwi&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="sliding-window">Sliding Window&lt;/h2>
+&lt;p>&lt;mark>&lt;strong>Usage:&lt;/strong> Use when need to handle the input data in specific window size.&lt;/mark>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../assets/sliding-image.jpg"
+id="zoom-default"
+alt="sliding-image"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;center>&lt;b>Example:&lt;/b> Sliding window technique to find the &lt;b>largest&lt;/b> sum of 4 consecutive numbers.&lt;/center>
+&lt;p>&lt;strong>Template:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">while&lt;/span> j &lt;span style="color:#666">&amp;lt;&lt;/span> size:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Calculation&amp;#39;s happen&amp;#39;s here&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># ...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> condition &lt;span style="color:#666">&amp;lt;&lt;/span> k:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> j&lt;span style="color:#666">+=&lt;/span>&lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> condition &lt;span style="color:#666">==&lt;/span> k: &lt;span style="color:#60a0b0;font-style:italic"># res &amp;lt;-- calculation&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> j&lt;span style="color:#666">+=&lt;/span>&lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> condition &lt;span style="color:#666">&amp;gt;&lt;/span> k:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> condition &lt;span style="color:#666">&amp;gt;&lt;/span> k:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i&lt;span style="color:#666">+=&lt;/span>&lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># remove calculation for i&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> j&lt;span style="color:#666">+=&lt;/span>&lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Examples&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Problem:&lt;/strong> Find the largest sum of &lt;code>k&lt;/code> consecutive entries, given an array of size &lt;code>n&lt;/code>.&lt;/p>
+&lt;ol>
+&lt;li>Add the first &lt;code>k&lt;/code> components together and save the result in the &lt;code>currentSum&lt;/code> variable. Because this is the first sum, it is also the current maximum; thus, save it in the variable &lt;code>maximumSum&lt;/code>.&lt;/li>
+&lt;li>As the window size is &lt;code>ww&lt;/code>, we move the window one place to the right and compute the sum of the items in the window.&lt;/li>
+&lt;li>Update the maximum if the &lt;code>currentSum&lt;/code> is greater than the &lt;code>maximumSum&lt;/code>, and repeat step 2.&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">max_sum&lt;/span>(arr, k):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(arr) &lt;span style="color:#60a0b0;font-style:italic"># length of the array&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> n &lt;span style="color:#666">&amp;lt;&lt;/span> k: &lt;span style="color:#60a0b0;font-style:italic"># length of array must be greater window size&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Invalid&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># sum of first k elements&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> window_sum &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">sum&lt;/span>(arr[:k])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_sum &lt;span style="color:#666">=&lt;/span> window_sum
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># remove the first element of previous&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># window and add the last element of&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># the current window to calculate the &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># the sums of remaining windows&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n &lt;span style="color:#666">-&lt;/span> k):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> window_sum &lt;span style="color:#666">=&lt;/span> window_sum &lt;span style="color:#666">-&lt;/span> arr[i] &lt;span style="color:#666">+&lt;/span> arr[i &lt;span style="color:#666">+&lt;/span> k]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_sum &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(window_sum, max_sum)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> max_sum
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>arr &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">16&lt;/span>, &lt;span style="color:#40a070">12&lt;/span>, &lt;span style="color:#40a070">9&lt;/span>, &lt;span style="color:#40a070">19&lt;/span>, &lt;span style="color:#40a070">11&lt;/span>, &lt;span style="color:#40a070">8&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>k &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">print&lt;/span>(max_sum(arr, k))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Problem:&lt;/strong> Find duplicates within a range &lt;code>k&lt;/code> in an array&lt;/p>
+&lt;pre>&lt;code>Input: nums = [5, 6, 8, 2, 4, 6, 9]
+k = 2
+Ouput: False
+&lt;/code>&lt;/pre>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">get_duplicates&lt;/span>(nums, k):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> d &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(nums)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nums[i] &lt;span style="color:#007020;font-weight:bold">in&lt;/span> d &lt;span style="color:#007020;font-weight:bold">and&lt;/span> i &lt;span style="color:#666">-&lt;/span> d[nums[i]] &lt;span style="color:#666">&amp;lt;=&lt;/span> k:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> d[nums[i]] &lt;span style="color:#666">=&lt;/span> i
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;a href="https://itnext.io/sliding-window-algorithm-technique-6001d5fbe8b3">Problem/solution examples&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/explore/featured/card/leetcodes-interview-crash-course-data-structures-and-algorithms/703/arraystrings/4502/">Article on LeetCode&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tags/sliding-window/">Practice questions&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="two-pointers">Two Pointers&lt;/h2>
+&lt;p>A classic way of writing a two-pointer sliding window. The right pointer keeps moving to the right until it cannot move to the right (the specific conditions depend on the topic). When the right pointer reaches the far right, start to move the left pointer to release the left boundary of the window.&lt;/p>
+&lt;p>&lt;mark>&lt;strong>Usage:&lt;/strong> Use two pointers to iterate the input data. Generally, both pointers move in the opposite direction at a constant interval.&lt;/mark>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../assets/two-pointers.jpg"
+id="zoom-default"
+alt="two-pointers.jpg"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tags/two-pointers/">Practice questions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://algo.monster/problems/two_pointers_intro">Two pointers intro&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="two-pass-approach">Two-Pass Approach&lt;/h2>
+&lt;p>The two-pass approach is a common algorithmic pattern used to solve problems by going through the data twice. In the first pass, you gather some information that you&amp;rsquo;ll use in the second pass to solve the problem. Here is an explanation of the two-pass approach with two examples.&lt;/p>
+&lt;p>&lt;strong>First Pass:&lt;/strong> Gather Information&lt;/p>
+&lt;p>The first pass is used to collect some information from the data that will be useful to solve the problem. This could involve counting the occurrence of items, finding the maximum or minimum value, or performing some other calculation that will help in the second pass.
+Second Pass: Solve the Problem&lt;/p>
+&lt;p>Using the information gathered in the first pass, you can now go through the data again to solve the problem.
+Let&amp;rsquo;s go through two examples to understand this approach better.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong> Finding the Relative Rank of Scores&lt;/p>
+&lt;p>You have a list of scores and you want to find out the relative rank of each score in descending order.&lt;/p>
+&lt;ol>
+&lt;li>First Pass: Sort the list in descending order.&lt;/li>
+&lt;li>Second Pass: Create a new list with the rank of each score in the original list.&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>scores &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">95&lt;/span>, &lt;span style="color:#40a070">85&lt;/span>, &lt;span style="color:#40a070">90&lt;/span>, &lt;span style="color:#40a070">100&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sorted_scores &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">sorted&lt;/span>(scores, reverse&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ranking &lt;span style="color:#666">=&lt;/span> {score: i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i, score &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">enumerate&lt;/span>(sorted_scores)}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> score &lt;span style="color:#007020;font-weight:bold">in&lt;/span> scores:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Score:&amp;#34;&lt;/span>, score, &lt;span style="color:#4070a0">&amp;#34;Rank:&amp;#34;&lt;/span>, ranking[score])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Output:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Score: 95 Rank: 2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Score: 85 Rank: 4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Score: 90 Rank: 3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Score: 100 Rank: 1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Example 2:&lt;/strong> Find if there&amp;rsquo;s a pair of numbers in an array that add up to a target value&lt;/p>
+&lt;ol>
+&lt;li>First Pass: Create a diccionario that keeps track of the occurrence of each number in the list.&lt;/li>
+&lt;li>Second Pass: For each number in the array, check if there is another number in the diccionario that adds up to the target value.&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>nums &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">2&lt;/span>, &lt;span style="color:#40a070">3&lt;/span>, &lt;span style="color:#40a070">7&lt;/span>, &lt;span style="color:#40a070">11&lt;/span>, &lt;span style="color:#40a070">15&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>target &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">9&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>counter &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> num &lt;span style="color:#007020;font-weight:bold">in&lt;/span> nums:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> counter[num] &lt;span style="color:#666">=&lt;/span> counter&lt;span style="color:#666">.&lt;/span>get(num, &lt;span style="color:#40a070">0&lt;/span>) &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> num &lt;span style="color:#007020;font-weight:bold">in&lt;/span> nums:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> diff &lt;span style="color:#666">=&lt;/span> target &lt;span style="color:#666">-&lt;/span> num
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> diff &lt;span style="color:#007020;font-weight:bold">in&lt;/span> counter:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> diff &lt;span style="color:#666">!=&lt;/span> num &lt;span style="color:#007020;font-weight:bold">or&lt;/span> counter[num] &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Pair:&amp;#34;&lt;/span>, (num, diff))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">break&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Output:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Pair: (2, 7)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In both examples, the first pass through the data gathered information that was then used in the second pass to solve the problem.&lt;/p>
+&lt;h2 id="prefix-sums">Prefix Sums&lt;/h2>
+&lt;p>&lt;mark>&lt;strong>Usage:&lt;/strong> The prefix sums algorithm is a powerful technique that can simplify problems that require &lt;strong>frequent computation of sums over subarrays&lt;/strong> or subtrees.&lt;/mark>&lt;/p>
+&lt;p>The idea behind the prefix sums algorithm is to preprocess an array of numbers such that you can efficiently answer queries about the sum of elements in a given subarray.&lt;/p>
+&lt;p>Imagine you&amp;rsquo;re given an array of numbers, and you want to know the sum of numbers between the indices
+&lt;code>i&lt;/code> and &lt;code>j&lt;/code> (inclusive). If you sum up the numbers every time you receive such a query, your solution will be slow. This is where prefix sums come into play.&lt;/p>
+&lt;p>&lt;strong>Abstract Example&lt;/strong>&lt;/p>
+&lt;p>Consider an array &lt;code>arr&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>arr &lt;span style="color:#666">=&lt;/span> [a, b, c, d, e]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The prefix sum array &lt;code>prefix_arr&lt;/code>, for the above array would be:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>prefix_arr &lt;span style="color:#666">=&lt;/span> [a, a&lt;span style="color:#666">+&lt;/span>b, a&lt;span style="color:#666">+&lt;/span>b&lt;span style="color:#666">+&lt;/span>c, a&lt;span style="color:#666">+&lt;/span>b&lt;span style="color:#666">+&lt;/span>c&lt;span style="color:#666">+&lt;/span>d, a&lt;span style="color:#666">+&lt;/span>b&lt;span style="color:#666">+&lt;/span>c&lt;span style="color:#666">+&lt;/span>d&lt;span style="color:#666">+&lt;/span>e]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>arr &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">3&lt;/span>, &lt;span style="color:#40a070">4&lt;/span>, &lt;span style="color:#40a070">8&lt;/span>, &lt;span style="color:#40a070">6&lt;/span>, &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">4&lt;/span>, &lt;span style="color:#40a070">2&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>prefix_arr &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">4&lt;/span>, &lt;span style="color:#40a070">8&lt;/span>, &lt;span style="color:#40a070">16&lt;/span>, &lt;span style="color:#40a070">22&lt;/span>, &lt;span style="color:#40a070">23&lt;/span>, &lt;span style="color:#40a070">27&lt;/span>, &lt;span style="color:#40a070">29&lt;/span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now, to find the sum between indices &lt;code>i&lt;/code> and &lt;code>j&lt;/code> (inclusive) in array &lt;code>arr&lt;/code>, you can simply take:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>prefix_arr[j] &lt;span style="color:#666">-&lt;/span> prefix_arr[i&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>(Note: If &lt;code>i=0&lt;/code>, then it&amp;rsquo;s just &lt;code>prefix_arr[j]&lt;/code>)&lt;/p>
+&lt;p>&lt;strong>Example: Prefix Sums on an Array&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">prefix_sums&lt;/span>(arr):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(arr)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prefix_arr &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">*&lt;/span> (n)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prefix_arr[&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">=&lt;/span> arr[&lt;span style="color:#40a070">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prefix_arr[i] &lt;span style="color:#666">=&lt;/span> prefix_arr[i&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">+&lt;/span> arr[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> prefix_arr
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Using the prefix sum array&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">sum_from_i_to_j&lt;/span>(prefix_arr, i, j):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> i &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> prefix_arr[j]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> prefix_arr[j] &lt;span style="color:#666">-&lt;/span> prefix_arr[i&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>arr &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">2&lt;/span>, &lt;span style="color:#40a070">3&lt;/span>, &lt;span style="color:#40a070">7&lt;/span>, &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">5&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>prefix_arr &lt;span style="color:#666">=&lt;/span> prefix_sums(arr)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">print&lt;/span>(sum_from_i_to_j(prefix_arr, &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">3&lt;/span>)) &lt;span style="color:#60a0b0;font-style:italic"># Output: 11&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Python Example: Prefix Sums on a TreeNode&lt;/strong>&lt;/p>
+&lt;p>Firstly, let&amp;rsquo;s define a binary tree:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">TreeNode&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, value&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">0&lt;/span>, left&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">None&lt;/span>, right&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">None&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>value &lt;span style="color:#666">=&lt;/span> value
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">=&lt;/span> left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">=&lt;/span> right
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now, we&amp;rsquo;ll modify the tree such that each node will contain the sum of all nodes in its left subtree plus its own value:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">prefix_sum_tree&lt;/span>(node):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> node:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left_sum &lt;span style="color:#666">=&lt;/span> prefix_sum_tree(node&lt;span style="color:#666">.&lt;/span>left)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Store prefix sum in the node&amp;#39;s value&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> node&lt;span style="color:#666">.&lt;/span>value &lt;span style="color:#666">+=&lt;/span> left_sum
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prefix_sum_tree(node&lt;span style="color:#666">.&lt;/span>right)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> node&lt;span style="color:#666">.&lt;/span>value &lt;span style="color:#666">+&lt;/span> (node&lt;span style="color:#666">.&lt;/span>right&lt;span style="color:#666">.&lt;/span>value &lt;span style="color:#007020;font-weight:bold">if&lt;/span> node&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#40a070">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Example&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>root &lt;span style="color:#666">=&lt;/span> TreeNode(&lt;span style="color:#40a070">5&lt;/span>, TreeNode(&lt;span style="color:#40a070">3&lt;/span>, TreeNode(&lt;span style="color:#40a070">2&lt;/span>), TreeNode(&lt;span style="color:#40a070">4&lt;/span>)), TreeNode(&lt;span style="color:#40a070">8&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>prefix_sum_tree(root)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For the above example, the left child of the root (i.e., the node with value 3) will be updated to 8 (2 + 3 + 4), since 2 and 4 are the left children&amp;rsquo;s values.&lt;/p>
+&lt;h2 id="dynamic-programming-dp">Dynamic programming (DP)&lt;/h2>
+&lt;h2 id="breadth-first-search-bfs">Breadth First Search (BFS)&lt;/h2>
+&lt;p>&lt;strong>BFS on Tree:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">collections&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> deque
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">TreeNode&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, val&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">0&lt;/span>, left&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">None&lt;/span>, right&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">None&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">=&lt;/span> val
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">=&lt;/span> left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">=&lt;/span> right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">bfs_tree&lt;/span>(root):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> queue &lt;span style="color:#666">=&lt;/span> deque([root])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> queue:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> node &lt;span style="color:#666">=&lt;/span> queue&lt;span style="color:#666">.&lt;/span>popleft()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(node&lt;span style="color:#666">.&lt;/span>val, end&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#39; &amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> node&lt;span style="color:#666">.&lt;/span>left:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> queue&lt;span style="color:#666">.&lt;/span>append(node&lt;span style="color:#666">.&lt;/span>left)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> node&lt;span style="color:#666">.&lt;/span>right:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> queue&lt;span style="color:#666">.&lt;/span>append(node&lt;span style="color:#666">.&lt;/span>right)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>root &lt;span style="color:#666">=&lt;/span> TreeNode(&lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>root&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">=&lt;/span> TreeNode(&lt;span style="color:#40a070">2&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>root&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">=&lt;/span> TreeNode(&lt;span style="color:#40a070">3&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>root&lt;span style="color:#666">.&lt;/span>left&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">=&lt;/span> TreeNode(&lt;span style="color:#40a070">4&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>root&lt;span style="color:#666">.&lt;/span>left&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">=&lt;/span> TreeNode(&lt;span style="color:#40a070">5&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>bfs_tree(root)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>BFS on Graph:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">collections&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> defaultdict, deque
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Graph&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>graph &lt;span style="color:#666">=&lt;/span> defaultdict(&lt;span style="color:#007020">list&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">add_edge&lt;/span>(self, u, v):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>graph[u]&lt;span style="color:#666">.&lt;/span>append(v)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">bfs&lt;/span>(self, start):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> visited &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> queue &lt;span style="color:#666">=&lt;/span> deque([start])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> queue:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> node &lt;span style="color:#666">=&lt;/span> queue&lt;span style="color:#666">.&lt;/span>popleft()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> node &lt;span style="color:#007020;font-weight:bold">not&lt;/span> &lt;span style="color:#007020;font-weight:bold">in&lt;/span> visited:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(node, end&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#39; &amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> visited&lt;span style="color:#666">.&lt;/span>add(node)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> neighbor &lt;span style="color:#007020;font-weight:bold">in&lt;/span> self&lt;span style="color:#666">.&lt;/span>graph[node]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> neighbor &lt;span style="color:#007020;font-weight:bold">not&lt;/span> &lt;span style="color:#007020;font-weight:bold">in&lt;/span> visited:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> queue&lt;span style="color:#666">.&lt;/span>append(neighbor)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>g &lt;span style="color:#666">=&lt;/span> Graph()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>g&lt;span style="color:#666">.&lt;/span>add_edge(&lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>g&lt;span style="color:#666">.&lt;/span>add_edge(&lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#40a070">2&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>g&lt;span style="color:#666">.&lt;/span>add_edge(&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">2&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>g&lt;span style="color:#666">.&lt;/span>add_edge(&lt;span style="color:#40a070">2&lt;/span>, &lt;span style="color:#40a070">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>g&lt;span style="color:#666">.&lt;/span>add_edge(&lt;span style="color:#40a070">2&lt;/span>, &lt;span style="color:#40a070">3&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>g&lt;span style="color:#666">.&lt;/span>add_edge(&lt;span style="color:#40a070">3&lt;/span>, &lt;span style="color:#40a070">3&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>g&lt;span style="color:#666">.&lt;/span>bfs(&lt;span style="color:#40a070">2&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="depth-first-search-dfs">Depth-first search (DFS)&lt;/h2>
+&lt;p>&lt;strong>DFS on Tree:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">dfs&lt;/span>(root, target):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> root &lt;span style="color:#007020;font-weight:bold">is&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> root&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">==&lt;/span> target:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> root
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">=&lt;/span> dfs(root&lt;span style="color:#666">.&lt;/span>left, target)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> left &lt;span style="color:#007020;font-weight:bold">is&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> dfs(root&lt;span style="color:#666">.&lt;/span>right, target)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>DFS on Graph:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">dfs&lt;/span>(root, visited):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> neighbor &lt;span style="color:#007020;font-weight:bold">in&lt;/span> get_neighbors(root):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> neighbor &lt;span style="color:#007020;font-weight:bold">in&lt;/span> visited:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">continue&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> visited&lt;span style="color:#666">.&lt;/span>add(neighbor)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(neighbor, visited)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>DFS on two-dimensional array:&lt;/strong>&lt;/p>
+&lt;p>Let&amp;rsquo;s imagine you have a big maze made of walls and corridors, and you want to find a way from the entrance to the exit. You can put a robot at the entrance, and you want to tell the robot what to do to find the exit.&lt;/p>
+&lt;p>The first thing you might tell the robot is to always &lt;mark>go as far as it can in one direction before turning.&lt;/mark> &lt;strong>This is what depth-first search does.&lt;/strong>&lt;/p>
+&lt;p>The robot starts at the entrance and goes as far as it can down the first corridor it finds.&lt;/p>
+&lt;ul>
+&lt;li>If it comes to a dead end, it goes back to the last intersection it passed and tries the next corridor.&lt;/li>
+&lt;li>If it comes to the exit, it stops and says &amp;ldquo;I found the exit!&amp;rdquo;.&lt;/li>
+&lt;/ul>
+&lt;p>Example:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Define the maze as a two-dimensional array&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>maze &lt;span style="color:#666">=&lt;/span> [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Define the starting point and the destination&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>start &lt;span style="color:#666">=&lt;/span> (&lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#40a070">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>end &lt;span style="color:#666">=&lt;/span> (&lt;span style="color:#007020">len&lt;/span>(maze)&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#007020">len&lt;/span>(maze[&lt;span style="color:#40a070">0&lt;/span>])&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Define a function to find the exit using depth-first search&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">dfs&lt;/span>(current, visited):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Mark the current cell as visited&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> visited&lt;span style="color:#666">.&lt;/span>add(current)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Base case: If we&amp;#39;ve reached the destination, return True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># or other condition&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> current &lt;span style="color:#666">==&lt;/span> end:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Try all possible directions from the current cell&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> delta &lt;span style="color:#007020;font-weight:bold">in&lt;/span> [(&lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#40a070">1&lt;/span>), (&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">0&lt;/span>), (&lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>), (&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">0&lt;/span>)]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> next_cell &lt;span style="color:#666">=&lt;/span> (current[&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">+&lt;/span> delta[&lt;span style="color:#40a070">0&lt;/span>], current[&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">+&lt;/span> delta[&lt;span style="color:#40a070">1&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> is_valid_cell(next_cell) &lt;span style="color:#007020;font-weight:bold">and&lt;/span> next_cell &lt;span style="color:#007020;font-weight:bold">not&lt;/span> &lt;span style="color:#007020;font-weight:bold">in&lt;/span> visited:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> dfs(next_cell, visited):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#666">**&lt;/span>&lt;span style="color:#007020;font-weight:bold">True&lt;/span>&lt;span style="color:#666">**&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># If we couldn&amp;#39;t find the exit from this cell, backtrack to the previous cell&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Call the depth-first search function with the starting point and an empty set of visited cells&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>visited &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">if&lt;/span> dfs(start, visited):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;I found the exit!&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;I couldn&amp;#39;t find the exit.&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Base template:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">dfs&lt;/span>(matrix, row, col, visited):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Check if the current cell is out of bounds or has already been visited&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> row &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">or&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> row &lt;span style="color:#666">&amp;gt;=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(matrix) &lt;span style="color:#007020;font-weight:bold">or&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> col &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">or&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> col &lt;span style="color:#666">&amp;gt;=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(matrix[&lt;span style="color:#40a070">0&lt;/span>]) &lt;span style="color:#007020;font-weight:bold">or&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> visited[row][col]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Mark the current cell as visited&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> visited[row][col] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Define the possible directions to move (right, down, left, up)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> directions &lt;span style="color:#666">=&lt;/span> [(&lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#40a070">1&lt;/span>), (&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">0&lt;/span>), (&lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>), (&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">0&lt;/span>)]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Iterate through the directions and call DFS recursively on neighboring cells&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> step_row, step_col &lt;span style="color:#007020;font-weight:bold">in&lt;/span> directions:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> new_row, new_col &lt;span style="color:#666">=&lt;/span> row &lt;span style="color:#666">+&lt;/span> step_row, step_col &lt;span style="color:#666">+&lt;/span> dc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(matrix, new_row, new_col, visited)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="backtracking">Backtracking&lt;/h2>
+&lt;p>Based on &lt;a href="https://romankurnovskii.com/en/tracks/algorithms-101/algorithms/#depth-first-searchdfs">Depth-first search (DFS)&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Usage:&lt;/strong>&lt;/p>
+&lt;p>Finding all permutations, combinations, subsets and solving sudoku are classic combinatorial problems.&lt;/p>
+&lt;p>Imagine you are trying to solve a puzzle, like a Sudoku. When you are solving a puzzle, sometimes you reach a point where you can&amp;rsquo;t make any more progress using the current path. That&amp;rsquo;s when you need to &lt;em>backtrack&lt;/em>.&lt;/p>
+&lt;p>Backtracking is a general algorithmic technique that is used to find all (or some) solutions to a problem by incrementally building candidates, and checking if the candidate is feasible or not. If the candidate is not feasible, the algorithm goes back (backtracks) to the previous step and tries again with a different candidate. The process continues until a solution is found, or all candidates have been tried.&lt;/p>
+&lt;p>Backtracking is an algorithmic technique for solving problems recursively by trying to build a solution incrementally, one piece at a time, removing those solutions that fail to satisfy the constraints of the problem at any point of time.&lt;/p>
+&lt;p>Backtracking algorithm is derived from the Recursion algorithm, with the &lt;strong>option to revert&lt;/strong> if a recursive solution fails, i.e. in case a solution fails, the program traces back to the moment where it failed and builds on another solution. So basically it tries out all the possible solutions and finds the correct one.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>Backtracking == DFS on a tree&lt;/strong>&lt;/p>&lt;/blockquote>
+&lt;p>&lt;strong>Howto:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Backtracking is drawing tree&lt;/li>
+&lt;li>When drawing the tree, bear in mind:
+&lt;ul>
+&lt;li>how do we know if we have reached a solution?&lt;/li>
+&lt;li>how do we branch (generate possible children)?&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;p>Let&amp;rsquo;s say we want to generate all possible combinations of &lt;code>1&lt;/code>, &lt;code>2&lt;/code>, and &lt;code>3&lt;/code> of length &lt;code>2&lt;/code>. The possible combinations are: &lt;code>(1, 2), (1, 3), (2, 1), (2, 3), (3, 1), (3, 2)&lt;/code>.&lt;/p>
+&lt;p>This process generates all possible combinations of length &lt;code>k&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">backtrack&lt;/span>(nums, path, res, k):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># nums: the list of available numbers&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># path: the current path of selected numbers&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># res: the list of all valid combinations&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># k: the length of each combination&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020">len&lt;/span>(path) &lt;span style="color:#666">==&lt;/span> k: &lt;span style="color:#60a0b0;font-style:italic"># base case&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#666">.&lt;/span>append(path[:])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(nums)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path&lt;span style="color:#666">.&lt;/span>append(nums[i])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> backtrack(nums[:i] &lt;span style="color:#666">+&lt;/span> nums[i&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>:], path, res, k)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> path&lt;span style="color:#666">.&lt;/span>pop()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>nums &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">2&lt;/span>, &lt;span style="color:#40a070">3&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>k &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>res &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>backtrack(nums, [], res, k)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">print&lt;/span>(res)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># [[1, 2], [1, 3], [2, 1], [2, 3], [3, 1], [3, 2]]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Algorithm:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>We start with an empty path and empty result list.&lt;/li>
+&lt;li>We loop through the available numbers &lt;code>(1, 2, 3)&lt;/code> and add the first number to the path.&lt;/li>
+&lt;li>We make a recursive call to &lt;code>backtrack&lt;/code> with the remaining numbers &lt;code>(2, 3)&lt;/code> and a &lt;code>path&lt;/code> that includes the first number (e.g., &lt;code>[1]&lt;/code>). This adds all possible combinations of length &lt;code>k-1&lt;/code> with the first number.&lt;/li>
+&lt;li>After the recursive call, we remove the first number from the path.&lt;/li>
+&lt;li>We repeat this process for the other available numbers, generating all possible combinations of length k.&lt;/li>
+&lt;li>When we reach the base case (&lt;code>len(path) == k&lt;/code>), we add the current path to the result list.&lt;/li>
+&lt;li>We return the result list of all possible combinations.&lt;/li>
+&lt;/ol>
+&lt;p>The &lt;strong>base case&lt;/strong> is when the length of the path is equal to &lt;code>k&lt;/code>. At this point, we add the current path to the result list and return.&lt;/p>
+&lt;p>The recursive case involves looping through the available numbers, adding the current number to the &lt;code>path&lt;/code>, making a recursive call with the remaining numbers, and removing the current number from the &lt;code>path&lt;/code> after the recursive call.&lt;/p>
+&lt;p>&lt;strong>path:&lt;/strong>&lt;/p>
+&lt;p>In the &lt;code>backtrack&lt;/code> function, &lt;code>path&lt;/code> refers to the list of numbers that have been selected so far to form a valid combination.&lt;/p>
+&lt;p>Initially, &lt;code>path&lt;/code> is an empty list &lt;code>[]&lt;/code>. In each recursive call, a number from &lt;code>nums&lt;/code> is selected and added to &lt;code>path&lt;/code>.&lt;/p>
+&lt;p>For example, if &lt;code>nums = [1, 2, 3]&lt;/code> and the current &lt;code>path&lt;/code> is &lt;code>[1]&lt;/code>, the function will call &lt;code>backtrack([2, 3], [1], res, k)&lt;/code> to consider all possible combinations with &lt;code>1&lt;/code> in the first position, followed by all possible combinations of length &lt;code>k-1&lt;/code> of &lt;code>[2, 3]&lt;/code> in the second position.&lt;/p>
+&lt;p>Once all possible combinations with &lt;code>1&lt;/code> in the first position have been explored, the number &lt;code>1&lt;/code> will be removed from path, and the function will try the next number from &lt;code>nums&lt;/code>, which in this case is &lt;code>2&lt;/code>. The function continues in this way until all valid combinations of length &lt;code>k&lt;/code> have been found and added to the res list.&lt;/p>
+&lt;p>&lt;strong>Problem examples:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="">LeetCode 17. Letter Combinations of a Phone Number&lt;/a>&lt;/li>
+&lt;li>[LeetCode 22. Generate Parentheses]&lt;/li>
+&lt;li>[LeetCode 46. Permutations]&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Example&lt;/strong> of &lt;a href="https://leetcode.com/problems/subsets/editorial/">LeetCode 78 problem&lt;/a>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://leetcode.com/problems/subsets/Figures/78/combinations.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://leetcode.com/problems/subsets/Figures/78/backtracking.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;strong>Algorithm:&lt;/strong>&lt;/p>
+&lt;p>We define a backtrack function named &lt;code>backtrack(first, curr)&lt;/code> which takes the index of first element to add and a current combination as arguments.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>If the current combination is done, we add the combination to the final output.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Otherwise, we iterate over the indexes &lt;code>i&lt;/code> from first to the length of the entire sequence &lt;code>n&lt;/code>.&lt;/p>
+&lt;ol>
+&lt;li>Add integer &lt;code>nums[i]&lt;/code> into the current combination &lt;code>curr&lt;/code>.&lt;/li>
+&lt;li>Proceed to add more integers into the combination: &lt;code>backtrack(i + 1, curr)&lt;/code>.&lt;/li>
+&lt;li>Backtrack by removing &lt;code>nums[i]&lt;/code> from &lt;code>curr&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">subsets&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[List[&lt;span style="color:#007020">int&lt;/span>]]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">backtrack&lt;/span>(first &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>, curr &lt;span style="color:#666">=&lt;/span> []):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># if the combination is done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020">len&lt;/span>(curr) &lt;span style="color:#666">==&lt;/span> k:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> output&lt;span style="color:#666">.&lt;/span>append(curr[:])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(first, n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># add nums[i] into the current combination&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr&lt;span style="color:#666">.&lt;/span>append(nums[i])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># use next integers to complete the combination&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> backtrack(i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>, curr)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># backtrack&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr&lt;span style="color:#666">.&lt;/span>pop()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> output &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> k &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> backtrack()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> output
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># [ [], &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># [1], [3], [4], &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># [1, 3], [1, 4], [3, 4], &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># [1, 3, 4]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># ]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="trie">Trie&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">TrieNode&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>children &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>is_end &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Trie&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">insert&lt;/span>(self, word: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current_node &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>root
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> char &lt;span style="color:#007020;font-weight:bold">in&lt;/span> word:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> char &lt;span style="color:#007020;font-weight:bold">not&lt;/span> &lt;span style="color:#007020;font-weight:bold">in&lt;/span> current_node&lt;span style="color:#666">.&lt;/span>children:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> new_node &lt;span style="color:#666">=&lt;/span> TrieNode()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current_node&lt;span style="color:#666">.&lt;/span>children[char] &lt;span style="color:#666">=&lt;/span> new_node
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current_node &lt;span style="color:#666">=&lt;/span> new_node
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current_node &lt;span style="color:#666">=&lt;/span> current_node&lt;span style="color:#666">.&lt;/span>children[char]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current_node&lt;span style="color:#666">.&lt;/span>is_end &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">search&lt;/span>(self, word: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">bool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current_node &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>root
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> char &lt;span style="color:#007020;font-weight:bold">in&lt;/span> word:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> char &lt;span style="color:#007020;font-weight:bold">not&lt;/span> &lt;span style="color:#007020;font-weight:bold">in&lt;/span> current_node&lt;span style="color:#666">.&lt;/span>children:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current_node &lt;span style="color:#666">=&lt;/span> current_node&lt;span style="color:#666">.&lt;/span>children[char]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> current_node&lt;span style="color:#666">.&lt;/span>is_end
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">startsWith&lt;/span>(self, prefix: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">bool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current_node &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>root
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> char &lt;span style="color:#007020;font-weight:bold">in&lt;/span> prefix:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> char &lt;span style="color:#007020;font-weight:bold">not&lt;/span> &lt;span style="color:#007020;font-weight:bold">in&lt;/span> current_node&lt;span style="color:#666">.&lt;/span>children:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current_node &lt;span style="color:#666">=&lt;/span> current_node&lt;span style="color:#666">.&lt;/span>children[char]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="dutch-national-flag-problem">Dutch National Flag problem&lt;/h2>
+&lt;p>The Dutch National Flag problem is a sorting problem that asks us to sort an array of colors, like a bunch of different colored socks. We want to put all the socks of the same color together in the array.&lt;/p>
+&lt;p>The colors in this problem are represented by numbers. We use the numbers &lt;code>0&lt;/code>, &lt;code>1&lt;/code>, and &lt;code>2&lt;/code> to represent the colors red, white, and blue. So, we have an array of numbers, and we want to sort them in such a way that all the &lt;code>0's&lt;/code> are at the beginning of the array, then all the &lt;code>1's&lt;/code>, and finally all the &lt;code>2's&lt;/code> are at the end.&lt;/p>
+&lt;p>For example, if we have an array &lt;code>[2, 0, 2, 1, 1, 0]&lt;/code>, we want to sort it so that it becomes &lt;code>[0, 0, 1, 1, 2, 2]&lt;/code>.&lt;/p>
+&lt;p>One way to solve this problem is to use a technique called the Dutch National Flag algorithm. The idea behind this algorithm is to use &lt;strong>three pointers&lt;/strong>: a &lt;mark>low pointer&lt;/mark>, a &lt;mark>mid pointer&lt;/mark>, and a &lt;mark>high pointer&lt;/mark>.&lt;/p>
+&lt;p>The low pointer starts at the beginning of the array, the high pointer starts at the end of the array, and the mid pointer starts at the beginning of the array.&lt;/p>
+&lt;p>We then iterate through the array with the mid pointer.&lt;/p>
+&lt;ul>
+&lt;li>If the value at the mid pointer is &lt;code>0&lt;/code>, we swap it with the value at the low pointer and increment both pointers. - If the value at the mid pointer is &lt;code>1&lt;/code>, we leave it where it is and just increment the mid pointer.&lt;/li>
+&lt;li>If the value at the mid pointer is 2, we swap it with the value at the high pointer and decrement the high pointer.&lt;/li>
+&lt;/ul>
+&lt;p>We keep doing this until the mid pointer passes the high pointer, at which point the array is sorted.&lt;/p>
+&lt;p>So, in our sock example, we start with the low pointer at the beginning of the array, the mid pointer also at the beginning of the array, and the high pointer at the end of the array. Then, we iterate through the array with the mid pointer, swapping socks as needed until the array is sorted by color.&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.geeksforgeeks.org/learn-data-structures-and-algorithms-dsa-tutorial/">https://www.geeksforgeeks.org/learn-data-structures-and-algorithms-dsa-tutorial/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://algo.monster/templates">https://algo.monster/templates&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://interviewnoodle.com/grokking-leetcode-a-smarter-way-to-prepare-for-coding-interviews-e86d5c9fe4e1">https://interviewnoodle.com/grokking-leetcode-a-smarter-way-to-prepare-for-coding-interviews-e86d5c9fe4e1&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/OpenGenus/cosmos">data structures&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/cheran-senthil/PyRival">Competitive Programming Library&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://cp-algorithms.com/">Algorithms for Competitive Programming&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://walkccc.me/CLRS/">Solutions to Introduction to Algorithms Third Edition&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

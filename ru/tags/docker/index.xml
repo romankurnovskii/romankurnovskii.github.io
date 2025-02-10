@@ -1,4 +1,123 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docker on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/docker/</link><description>Recent content in Docker on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Tue, 07 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/docker/index.xml" rel="self" type="application/rss+xml"/><item><title>Популярные команды Docker</title><link>https://romankurnovskii.com/ru/posts/docker-commands/</link><pubDate>Tue, 07 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/docker-commands/</guid><description>Full in english
-Топ 10 комманд Docker docker ps — смотрим список запущенных контейнеров docker pull — загрузка образа docker build — собирает образ docker logs — смотрим логи docker run — запускаем контейнер docker stop — останавливает контейнер docker kill — «убивает» контейнер docker rm — удаляет контейнер docker rmi — удаляет образ docker volume ls — список томов docker build Документация Построить образ из Dockerfile.
-docker build [DOCKERFILE PATH] Флаги
---file -f Путь, где находится Dockerfile --force-rm Всегда удалять временные контейнеры.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docker on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/docker/</link><description>Recent content in Docker on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Tue, 07 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/docker/index.xml" rel="self" type="application/rss+xml"/><item><title>Популярные команды Docker</title><link>https://romankurnovskii.com/ru/posts/docker-commands/</link><pubDate>Tue, 07 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/docker-commands/</guid><description>&lt;p>&lt;em>&lt;a href="http://localhost:1313/en/posts/docker-commands/">Full in english&lt;/a>&lt;/em>&lt;/p>
+&lt;h2 id="топ-10-комманд-docker">Топ 10 комманд Docker&lt;/h2>
+&lt;ol>
+&lt;li>docker ps — смотрим список запущенных контейнеров&lt;/li>
+&lt;li>docker pull — загрузка образа&lt;/li>
+&lt;li>docker build — собирает образ&lt;/li>
+&lt;li>docker logs — смотрим логи&lt;/li>
+&lt;li>docker run — запускаем контейнер&lt;/li>
+&lt;li>docker stop — останавливает контейнер&lt;/li>
+&lt;li>docker kill — «убивает» контейнер&lt;/li>
+&lt;li>docker rm — удаляет контейнер&lt;/li>
+&lt;li>docker rmi — удаляет образ&lt;/li>
+&lt;li>docker volume ls — список томов&lt;/li>
+&lt;/ol>
+&lt;h2 id="docker-build">docker build&lt;/h2>
+&lt;p>&lt;a href="https://docs.docker.com/engine/reference/commandline/build/">Документация&lt;/a>
+Построить образ из Dockerfile.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker build &lt;span style="color:#666">[&lt;/span>DOCKERFILE PATH&lt;span style="color:#666">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Флаги&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>--file -f&lt;/code> Путь, где находится Dockerfile&lt;/li>
+&lt;li>&lt;code>--force-rm&lt;/code> Всегда удалять временные контейнеры.&lt;/li>
+&lt;li>&lt;code>--no-cache&lt;/code> Не использовать кэш при построении образа.&lt;/li>
+&lt;li>&lt;code>--rm&lt;/code> Удалить временные контейнеры после успешного построения.&lt;/li>
+&lt;li>&lt;code>--tag -t&lt;/code> Название и возможный тег в формате &lt;code>name:tag&lt;/code> или просто тег &lt;code>my_tag&lt;/code> (опционально)&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Примеры&lt;/strong>&lt;/p>
+&lt;p>Построить образ с меткой &lt;code>my-org/my-image&lt;/code>, используя Dockerfile в &lt;code>/tmp/Dockerfile&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker build -t my-org:my-image -f /tmp/Dockerfile
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="docker-run">docker run&lt;/h2>
+&lt;p>&lt;a href="https://docs.docker.com/engine/reference/commandline/run/">Документация&lt;/a>&lt;/p>
+&lt;p>Создает и запускает контейнер за один операционный шаг&lt;/p>
+&lt;p>&lt;strong>Примеры&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker run -it ubuntu:latest /bin/bash
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Данная команда запустит контейнер ubuntu и при старте сразу запустит &lt;code>/bin/bash&lt;/code>. Если образ ubuntu не был загружен ранее, он загрузится перед запуском.&lt;/p>
+&lt;p>&lt;strong>Флаги&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>-it&lt;/code> This will not make the container you started shut down immediately, as
+it will create a pseudo-TTY session (&lt;code>-t&lt;/code>) and keep STDIN open (&lt;code>-i&lt;/code>)&lt;/li>
+&lt;li>&lt;code>--rm&lt;/code> Automatically remove the container when it exit. Otherwise it will be
+stored and visible running &lt;code>docker ps -a&lt;/code>.&lt;/li>
+&lt;li>&lt;code>--detach -d&lt;/code> Run container in background and print container ID&lt;/li>
+&lt;li>&lt;code>--volume -v&lt;/code> Bind mount a volume. Useful for accessing folders on your local
+disk inside your docker container, like configuration files or storage that
+should be persisted (database, logs etc.).&lt;/li>
+&lt;/ul>
+&lt;h2 id="docker-exec">docker exec&lt;/h2>
+&lt;p>&lt;a href="https://docs.docker.com/engine/reference/commandline/exec/">Документация&lt;/a>
+Выполнить команду внутри &lt;strong>запущенного&lt;/strong> контейнера.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker &lt;span style="color:#007020">exec&lt;/span> &lt;span style="color:#666">[&lt;/span>CONTAINER ID&lt;span style="color:#666">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Флаги&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>--detach -d&lt;/code> Detached mode: запуск в фоновом режиме&lt;/li>
+&lt;li>&lt;code>-it&lt;/code> запуск в интерактивном режиме. запуск псевдотерминала pseudo-TTY (&lt;code>-t&lt;/code>) и перенаправление ввода-вывода (STDIN) (&lt;code>-i&lt;/code>). Даёт доступ к выполнению команд в терминале контейнера.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Примеры&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker &lt;span style="color:#007020">exec&lt;/span> &lt;span style="color:#666">[&lt;/span>CONTAINER ID&lt;span style="color:#666">]&lt;/span> touch /tmp/exec_works
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="docker-images">docker images&lt;/h2>
+&lt;p>&lt;a href="https://docs.docker.com/engine/reference/commandline/images/">Документация&lt;/a>
+Вывести список всех загруженных/созданных образов&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker images
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Флаги&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>-q&lt;/code> показать только ID образов&lt;/li>
+&lt;/ul>
+&lt;h2 id="docker-inspect">docker inspect&lt;/h2>
+&lt;p>&lt;a href="https://docs.docker.com/engine/reference/commandline/inspect">Документация&lt;/a>&lt;/p>
+&lt;p>Показать всю информацию о контейнере.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker inspect &lt;span style="color:#666">[&lt;/span>CONTAINER ID&lt;span style="color:#666">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="docker-logs">docker logs&lt;/h2>
+&lt;p>&lt;a href="https://docs.docker.com/engine/reference/commandline/logs/">Документация&lt;/a>&lt;/p>
+&lt;p>Вывести логи контейнера.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker logs &lt;span style="color:#666">[&lt;/span>CONTAINER ID&lt;span style="color:#666">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Флаги&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>--details&lt;/code> Показывает дополнительную информацию в логе.&lt;/li>
+&lt;li>&lt;code>--follow -f&lt;/code> Следить за выводом журнала&lt;/li>
+&lt;li>&lt;code>--timestamps -t&lt;/code> Показать журналы с меткой времени&lt;/li>
+&lt;/ul>
+&lt;h2 id="docker-ps">docker ps&lt;/h2>
+&lt;p>&lt;a href="https://docs.docker.com/engine/reference/commandline/ps/">Документация&lt;/a>&lt;/p>
+&lt;p>Показывает информацию о всех запущенных контейнерах.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker ps
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Флаги&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>--all -a&lt;/code> Show all containers (default shows just running)&lt;/li>
+&lt;li>&lt;code>--filter -f&lt;/code> Filter output based on conditions provided, &lt;code>docker ps -f=&amp;quot;name=&amp;quot;example&amp;quot;&lt;/code>&lt;/li>
+&lt;li>&lt;code>--quiet -q&lt;/code> Only display numeric IDs&lt;/li>
+&lt;/ul>
+&lt;h2 id="docker-rmi">docker rmi&lt;/h2>
+&lt;p>&lt;a href="https://docs.docker.com/engine/reference/commandline/rmi/">Документация&lt;/a>&lt;/p>
+&lt;p>Удалить один или несколько образов.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker rmi &lt;span style="color:#666">[&lt;/span>IMAGE ID&lt;span style="color:#666">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Флаги&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>--force -f&lt;/code> Force removal of the image&lt;/li>
+&lt;/ul>
+&lt;h2 id="советы-и-рекомендации-по-докеру">Советы и рекомендации по докеру&lt;/h2>
+&lt;p>Сборник полезных советов по Docker.&lt;/p>
+&lt;h3 id="удалить-все-контейнеры">Удалить все контейнеры&lt;/h3>
+&lt;p>&lt;strong>NOTE:&lt;/strong> Удалить ВСЕ контенеры.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker container prune
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>или&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker rm &lt;span style="color:#007020;font-weight:bold">$(&lt;/span>docker ps -a -q&lt;span style="color:#007020;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="удалить-все-непомеченные-контейнеры">Удалить все непомеченные контейнеры&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker image prune
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="вывести-сколько-памяти-занимает-docker">Вывести сколько памяти занимает Docker&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker system df
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="получить-ip-адрес-работающего-контейнера">Получить IP-адрес работающего контейнера&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker inspect &lt;span style="color:#666">[&lt;/span>CONTAINER ID&lt;span style="color:#666">]&lt;/span> | grep -wm1 IPAddress | cut -d &lt;span style="color:#4070a0">&amp;#39;&amp;#34;&amp;#39;&lt;/span> -f &lt;span style="color:#40a070">4&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="сгенерировать-образ-на-основе-файла-dockerfile-и-добавить-этому-образу-имя-и-версию">Сгенерировать образ на основе файла Dockerfile и добавить этому образу имя и версию&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker build -t new_image_name:v1 .
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>.&lt;/code> означает текущую директорию, где расположен файл Dockerfile.&lt;/p>
+&lt;h3 id="сгенерировать-из-запущенного-контейнера-новый-образ">Сгенерировать из запущенного контейнера новый образ&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker commit &lt;span style="color:#666">[&lt;/span>CONTAINER ID&lt;span style="color:#666">]&lt;/span> &lt;span style="color:#666">[&lt;/span>NEW IMAGE NAME&lt;span style="color:#666">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="убить-все-запущенные-контейнеры">&amp;ldquo;Убить&amp;rdquo; все запущенные контейнеры&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker &lt;span style="color:#007020">kill&lt;/span> &lt;span style="color:#007020;font-weight:bold">$(&lt;/span>docker ps -q&lt;span style="color:#007020;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="ссылки">Ссылки&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.docker.com/engine/reference/run/">docs.docker.com&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/wsargent/docker-cheat-sheet">docker-cheat-sheet&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://sourabhbajaj.com/mac-setup/Docker/">https://sourabhbajaj.com/mac-setup/Docker/&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

@@ -1,9 +1,65 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Matrix on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/series/matrix/</link><description>Recent content in Matrix on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Mon, 09 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/series/matrix/index.xml" rel="self" type="application/rss+xml"/><item><title>73. Set Matrix Zeroes</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/73/</link><pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/73/</guid><description>LeetCode problem
-Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0&amp;rsquo;s.
-You must do it in place.
-Example 1:
-Input: matrix = [[1,1,1],[1,0,1],[1,1,1]] Output: [[1,0,1],[0,0,0],[1,0,1]] Example 2:
-Input: matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]] Output: [[0,0,0,0],[0,4,5,0],[0,3,1,0]] Approach 1:
-Idea:
-LeetCode Submission
-class Solution: def setZeroes(self, matrix: List[List[int]]) -&amp;gt; None: rows = len(matrix) cols = len(matrix[0]) # 1. Check first row/column for zero&amp;#39;s first_row_has_zero = 0 in matrix[0] first_col_has_zero = 0 in list(zip(*matrix))[0] # 2.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Matrix on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/series/matrix/</link><description>Recent content in Matrix on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Mon, 09 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/series/matrix/index.xml" rel="self" type="application/rss+xml"/><item><title>73. Set Matrix Zeroes</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/73/</link><pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/73/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/set-matrix-zeroes/description/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given an &lt;code>m x n&lt;/code> integer matrix &lt;code>matrix&lt;/code>, if an element is &lt;code>0&lt;/code>, set its entire row and column to 0&amp;rsquo;s.&lt;/p>
+&lt;p>You must do it in place.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.leetcode.com/uploads/2020/08/17/mat1.jpg"
+id="zoom-default"
+alt="73. Set Matrix Zeroes"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;pre>&lt;code>Input: matrix = [[1,1,1],[1,0,1],[1,1,1]]
+Output: [[1,0,1],[0,0,0],[1,0,1]]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.leetcode.com/uploads/2020/08/17/mat2.jpg"
+id="zoom-default"
+alt="73. Set Matrix Zeroes"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;pre>&lt;code>Input: matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]
+Output: [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Approach 1:&lt;/strong>&lt;/p>
+&lt;p>Idea:&lt;/p>
+&lt;p>&lt;a href="https://leetcode.com/problems/set-matrix-zeroes/submissions/885540169/">LeetCode Submission&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">setZeroes&lt;/span>(self, matrix: List[List[&lt;span style="color:#007020">int&lt;/span>]]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rows &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(matrix)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cols &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(matrix[&lt;span style="color:#40a070">0&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># 1. Check first row/column for zero&amp;#39;s&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> first_row_has_zero &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">in&lt;/span> matrix[&lt;span style="color:#40a070">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> first_col_has_zero &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">list&lt;/span>(&lt;span style="color:#007020">zip&lt;/span>(&lt;span style="color:#666">*&lt;/span>matrix))[&lt;span style="color:#40a070">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># 2. Check other cells in `matrix` and save info in the 1st row/col if cell has zero&amp;#39;s&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, rows):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, cols):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> matrix[i][j] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix[&lt;span style="color:#40a070">0&lt;/span>][j] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># 1st row&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix[i][&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># 1st col&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># 3. Loop again through first row/column and overwrite cells according to the data from 1st row/column&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># except the 1st row/col&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, rows):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, cols):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> matrix[&lt;span style="color:#40a070">0&lt;/span>][j] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">or&lt;/span> matrix[i][&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix[i][j] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Fill 0s for the 1st row if needed&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> first_row_has_zero:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix[&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">*&lt;/span> cols
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Fill 0s for the 1st col if needed&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> first_col_has_zero:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> row &lt;span style="color:#007020;font-weight:bold">in&lt;/span> matrix:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> row[&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

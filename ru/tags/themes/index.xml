@@ -1,1 +1,269 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Themes on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/themes/</link><description>Recent content in Themes on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Thu, 21 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/themes/index.xml" rel="self" type="application/rss+xml"/><item><title>Руководство по оформлению Markdown файлов</title><link>https://romankurnovskii.com/ru/posts/markdown-syntax/</link><pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/markdown-syntax/</guid><description>&lt;p>Эта статья предлагает пример базового синтаксиса Markdown, который можно использовать в файлах содержимого Hugo, а также показывает, украшаются ли основные элементы HTML с помощью CSS в теме Hugo.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Themes on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/themes/</link><description>Recent content in Themes on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 21 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/themes/index.xml" rel="self" type="application/rss+xml"/><item><title>Руководство по оформлению Markdown файлов</title><link>https://romankurnovskii.com/ru/posts/markdown-syntax/</link><pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/markdown-syntax/</guid><description>&lt;p>Эта статья предлагает пример базового синтаксиса Markdown, который можно использовать в файлах содержимого Hugo, а также показывает, украшаются ли основные элементы HTML с помощью CSS в теме Hugo.&lt;/p>
+&lt;p>&lt;a href="https://github.com/yandex-cloud/docs/blob/master/guides/how-to-write.md">Рекомендации по оформления статьи&lt;/a>&lt;/p>
+&lt;h2 id="заголовки">Заголовки&lt;/h2>
+&lt;p>Заголовки первого и второго уровней, выполненные с помощью подчеркивания, выглядят следующим образом:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Заголовок первого уровня
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>========================
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Заголовок второго уровня
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-------------------------
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="заголовок-первого-уровня">Заголовок первого уровня&lt;/h1>
+&lt;h2 id="заголовок-второго-уровня">Заголовок второго уровня&lt;/h2>
+&lt;p>Заголовки всех шести уровней можно обозначать и с помощью символа («#»)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span># H1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>## H2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>### H3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>#### H4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>##### H5
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>###### H6
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="h1">H1&lt;/h1>
+&lt;h2 id="h2">H2&lt;/h2>
+&lt;h3 id="h3">H3&lt;/h3>
+&lt;h4 id="h4">H4&lt;/h4>
+&lt;h5 id="h5">H5&lt;/h5>
+&lt;h6 id="h6">H6&lt;/h6>
+&lt;h2 id="параграфы">Параграфы&lt;/h2>
+&lt;p>Для оформления абзацев в html используются теги &lt;code>&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;&lt;/code>, но в Markdown блок текста автоматически преобразуется в параграф.&lt;/p>
+&lt;p>Для вставки пустой строки необходимо два раза поставить символ переноса строки (нажать на Enter)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur eius in labore quidem, sequi suscipit!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aut commodi debitis ipsam nobis perspiciatis sequi, sint unde vitae.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="цитаты">Цитаты&lt;/h2>
+&lt;p>Элемент blockquote представляет содержимое, которое цитируется из другого источника, по желанию с цитатой, которая должна находиться в элементе &lt;code>footer&lt;/code> или &lt;code>cite&lt;/code>, и по желанию с изменениями в строке, такими как аннотации и сокращения.&lt;/p>
+&lt;h4 id="блок-цитата-без-указания-авторства">Блок-цитата без указания авторства&lt;/h4>
+&lt;blockquote>
+&lt;p>Tiam, ad mint andaepu dandae nostion secatur sequo quae.
+&lt;strong>Обратите внимание&lt;/strong>, что вы можете использовать синтаксис &lt;em>Markdown&lt;/em> внутри блочной цитаты.&lt;/p>&lt;/blockquote>
+&lt;h4 id="блок-цитата-с-указанием-авторства">Блок-цитата с указанием авторства&lt;/h4>
+&lt;blockquote>
+&lt;p>Don&amp;rsquo;t communicate by sharing memory, share memory by communicating.&lt;br>
+— &lt;cite>Rob Pike&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/cite>&lt;/p>&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>&amp;gt;Это пример цитаты,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;в которой перед каждой строкой
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;ставится угловая скобка.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;Это пример цитаты,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>в которой угловая скобка
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ставится только перед началом нового параграфа.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;Второй параграф.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>Это пример цитаты,
+в которой перед каждой строкой
+ставится угловая скобка.&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Это пример цитаты, в которой угловая скобка ставится только перед началом нового параграфа.
+Второй параграф.&lt;/p>&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>&amp;gt; Первый уровень цитирования
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;&amp;gt; Второй уровень цитирования
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;&amp;gt;&amp;gt; Третий уровень цитирования
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;Первый уровень цитирования
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>Первый уровень цитирования&lt;/p>
+&lt;blockquote>
+&lt;p>Второй уровень цитирования&lt;/p>
+&lt;blockquote>
+&lt;p>Третий уровень цитирования&lt;/p>&lt;/blockquote>&lt;/blockquote>
+&lt;p>Первый уровень цитирования&lt;/p>&lt;/blockquote>
+&lt;h2 id="таблицы">Таблицы&lt;/h2>
+&lt;p>Таблицы не являются частью основной спецификации Markdown, но Hugo поддерживает их из коробки.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span> | Name | Age |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | ----- | --- |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | Bob | 27 |
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | Alice | 23 |
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Name&lt;/th>
+&lt;th>Age&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Bob&lt;/td>
+&lt;td>27&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Alice&lt;/td>
+&lt;td>23&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>В ячейках разделительной строки используются только символы - и :. Символ : ставится в начале, в конце или с обеих сторон содержимого ячейки разделительной строки, чтобы обозначить выравнивание текста в соответствующем столбце по левой стороне, по правой стороне или по центру.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Колонка по левому краю | Колонка по правому краю | Колонка по центру
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>:--- | ---: | :---:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Текст | Текст | Текст
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align: left">Колонка по левому краю&lt;/th>
+&lt;th style="text-align: right">Колонка по правому краю&lt;/th>
+&lt;th style="text-align: center">Колонка по центру&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align: left">Текст&lt;/td>
+&lt;td style="text-align: right">Текст&lt;/td>
+&lt;td style="text-align: center">Текст&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h4 id="markdown-внутри-таблицы">Markdown внутри таблицы&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-mysql" data-lang="mysql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">|&lt;/span>&lt;span style="color:#bbb"> &lt;/span>Italics&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">|&lt;/span>&lt;span style="color:#bbb"> &lt;/span>Bold&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">|&lt;/span>&lt;span style="color:#bbb"> &lt;/span>Code&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">|&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#666">|&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">-------&lt;/span>&lt;span style="color:#60a0b0;font-style:italic">-- | -------- | ------ |
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>&lt;span style="color:#666">|&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">*&lt;/span>italics&lt;span style="color:#666">*&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">|&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">**&lt;/span>bold&lt;span style="color:#666">**&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">|&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">`&lt;/span>code&lt;span style="color:#666">`&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">|&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Italics&lt;/th>
+&lt;th>Bold&lt;/th>
+&lt;th>Code&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;em>italics&lt;/em>&lt;/td>
+&lt;td>&lt;strong>bold&lt;/strong>&lt;/td>
+&lt;td>&lt;code>code&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="блоки-кода">Блоки кода&lt;/h2>
+&lt;h4 id="блок-кода-с-обратными-кавычками">Блок кода с обратными кавычками&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">&amp;lt;!doctype html&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">html&lt;/span> &lt;span style="color:#4070a0">lang&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;en&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">meta&lt;/span> &lt;span style="color:#4070a0">charset&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;utf-8&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">title&lt;/span>&amp;gt;Example HTML5 Document&amp;lt;/&lt;span style="color:#062873;font-weight:bold">title&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">p&lt;/span>&amp;gt;Test&amp;lt;/&lt;span style="color:#062873;font-weight:bold">p&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="блок-кода-с-отступом-в-четыре-пробела">Блок кода с отступом в четыре пробела&lt;/h4>
+&lt;pre>&lt;code>&amp;lt;!doctype html&amp;gt;
+&amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt;
+&amp;lt;head&amp;gt;
+&amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
+&amp;lt;title&amp;gt;Example HTML5 Document&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;p&amp;gt;Test&amp;lt;/p&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code>&lt;/pre>
+&lt;h4 id="блок-кода-с-внутренним-шорткодом-подсветки-hugo">Блок кода с внутренним шорткодом подсветки Hugo&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">&amp;lt;!doctype html&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">html&lt;/span> &lt;span style="color:#4070a0">lang&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;en&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">meta&lt;/span> &lt;span style="color:#4070a0">charset&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;utf-8&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">title&lt;/span>&amp;gt;Example HTML5 Document&amp;lt;/&lt;span style="color:#062873;font-weight:bold">title&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">head&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">p&lt;/span>&amp;gt;Test&amp;lt;/&lt;span style="color:#062873;font-weight:bold">p&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">body&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">html&lt;/span>&amp;gt;&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;h2 id="списки">Списки&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>Оформляйте заголовки единообразно. В конце заголовка точку не ставьте.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Правильно&lt;/th>
+&lt;th>Неправильно&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Получение сертификата &lt;br/> Создание кластера&lt;/td>
+&lt;td>Получить сертификат &lt;br/> Создание кластера&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Получить сертификат &lt;br/> Создать кластер&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/li>
+&lt;li>
+&lt;p>Если требуется описать последовательность действий, используйте нумерованный список. В конце строк ставьте точку.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Если порядок пунктов неважен, используйте маркированный список. Оформляйте его одним из способов:&lt;/p>
+&lt;ul>
+&lt;li>Если элементы списка — отдельные предложения, начинайте их с заглавной буквы и ставьте точку в конце.&lt;/li>
+&lt;li>Если вводная фраза и список составляют одно предложение, то элементы списка должны начинаться со строчной буквы и завершаться точкой с запятой. Последний элемент списка завершается точкой.&lt;/li>
+&lt;li>Если список состоит из названий или значений параметров (без пояснений), знаки в конце строк не ставьте.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h4 id="упорядоченный-список">Упорядоченный список&lt;/h4>
+&lt;ol>
+&lt;li>First item&lt;/li>
+&lt;li>Second item&lt;/li>
+&lt;li>Third item&lt;/li>
+&lt;/ol>
+&lt;p>Чтобы оформить упорядоченный нумерованный список, используйте цифры с символом &lt;code>.&lt;/code> или &lt;code>)&lt;/code>. Рекомендованный формат разметки: цифра &lt;code>1&lt;/code> и символ &lt;code>.&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>1. Первый пункт
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>1. Второй пункт
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>1. Третий пункт
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>будет отображаться как:&lt;/p>
+&lt;ol>
+&lt;li>Первый пункт&lt;/li>
+&lt;li>Второй пункт&lt;/li>
+&lt;li>Третий пункт&lt;/li>
+&lt;/ol>
+&lt;p>Чтобы оформить вложенный упорядоченный список, добавьте отступ для элементов дочернего списка. Допустимый размер отступа — от двух до пяти пробелов. Рекомендуемый размер отступа — четыре пробела.&lt;/p>
+&lt;p>Например, разметка:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>1. Первый пункт
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 1. Вложенный пункт
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 1. Вложенный пункт
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>1. Второй пункт
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>будет отображаться как:&lt;/p>
+&lt;ol>
+&lt;li>Первый пункт
+&lt;ol>
+&lt;li>Вложенный пункт&lt;/li>
+&lt;li>Вложенный пункт&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Второй пункт&lt;/li>
+&lt;/ol>
+&lt;h4 id="неупорядоченный-список">Неупорядоченный список&lt;/h4>
+&lt;ul>
+&lt;li>List item&lt;/li>
+&lt;li>Another item&lt;/li>
+&lt;li>And another item&lt;/li>
+&lt;/ul>
+&lt;h4 id="вложенный-список">Вложенный список&lt;/h4>
+&lt;ul>
+&lt;li>Fruit
+&lt;ul>
+&lt;li>Apple&lt;/li>
+&lt;li>Orange&lt;/li>
+&lt;li>Banana&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Dairy
+&lt;ul>
+&lt;li>Milk&lt;/li>
+&lt;li>Cheese&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="другие-элементы---abbr-sub-sup-kbd-mark">Другие элементы - abbr, sub, sup, kbd, mark&lt;/h2>
+&lt;p>&lt;abbr title="Graphics Interchange Format">GIF&lt;/abbr> is a bitmap image format.&lt;/p>
+&lt;p>H&lt;sub>2&lt;/sub>O&lt;/p>
+&lt;p>X&lt;sup>n&lt;/sup> + Y&lt;sup>n&lt;/sup> = Z&lt;sup>n&lt;/sup>&lt;/p>
+&lt;p>Press &lt;kbd>&lt;kbd>CTRL&lt;/kbd>+&lt;kbd>ALT&lt;/kbd>+&lt;kbd>Delete&lt;/kbd>&lt;/kbd> to end the session.&lt;/p>
+&lt;p>Most &lt;mark>salamanders&lt;/mark> are nocturnal, and hunt for insects, worms, and other small creatures.&lt;/p>
+&lt;p>💡 &lt;em>Структура данных&lt;/em> — это контейнер, который хранит данные в определённом формате. Этот контейнер решает, каким образом внешний мир может эти данные считать или изменить.&lt;/p>
+&lt;div class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1">
+&lt;p>Приведенная выше цитата взята из книги Роба Пайка &lt;a href="https://www.youtube.com/watch?v=PAAkCSZUG1c">talk&lt;/a> during Gopherfest, November 18, 2015.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div></description></item></channel></rss>

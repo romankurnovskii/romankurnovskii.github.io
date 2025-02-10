@@ -1,2 +1,211 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ssh on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/ssh/</link><description>Recent content in Ssh on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sun, 08 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/ssh/index.xml" rel="self" type="application/rss+xml"/><item><title>18. Web Сервер и SSH</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day18/</link><pubDate>Sun, 08 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day18/</guid><description>SSH Как мы уже упоминали, вы, скорее всего, будете управлять множеством удаленных серверов Linux, поэтому вам необходимо убедиться, что ваше подключение к этим удаленным серверам безопасно. В этом разделе мы хотим рассказать о некоторых основах SSH (Secure Shell), которые должен знать каждый, и которые помогут вам с этим безопасным туннелем к вашим удаленным системам.
-Настройка соединения по SSH Передача файлов Создайте свой закрытый ключ Введение в SSH Безопасная оболочка (Secure Shell) Сетевой протокол (Networking Protocol) Обеспечивает безопасную связь Может защитить любой сетевой сервис Обычно используется для удаленного доступа из командной строки В нашей среде, если вы следили за нами, мы уже использовали SSH, но все это было настроено и автоматизировано с помощью нашей конфигурации vagrant, поэтому нам нужно было только запустить vagrant ssh, и мы получили доступ к нашей удаленной виртуальной машине.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ssh on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/ssh/</link><description>Recent content in Ssh on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sun, 08 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/ssh/index.xml" rel="self" type="application/rss+xml"/><item><title>18. Web Сервер и SSH</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day18/</link><pubDate>Sun, 08 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day18/</guid><description>&lt;h2 id="ssh">SSH&lt;/h2>
+&lt;p>Как мы уже упоминали, вы, скорее всего, будете управлять множеством удаленных серверов Linux, поэтому вам необходимо убедиться, что ваше подключение к этим удаленным серверам безопасно. В этом разделе мы хотим рассказать о некоторых основах SSH (Secure Shell), которые должен знать каждый, и которые помогут вам с этим безопасным туннелем к вашим удаленным системам.&lt;/p>
+&lt;ul>
+&lt;li>Настройка соединения по SSH&lt;/li>
+&lt;li>Передача файлов&lt;/li>
+&lt;li>Создайте свой закрытый ключ&lt;/li>
+&lt;/ul>
+&lt;h3 id="введение-в-ssh">Введение в SSH&lt;/h3>
+&lt;ul>
+&lt;li>Безопасная оболочка (Secure Shell)&lt;/li>
+&lt;li>Сетевой протокол (Networking Protocol)&lt;/li>
+&lt;li>Обеспечивает безопасную связь&lt;/li>
+&lt;li>Может защитить любой сетевой сервис&lt;/li>
+&lt;li>Обычно используется для удаленного доступа из командной строки&lt;/li>
+&lt;/ul>
+&lt;p>В нашей среде, если вы следили за нами, мы уже использовали SSH, но все это было настроено и автоматизировано с помощью нашей конфигурации vagrant, поэтому нам нужно было только запустить &lt;code>vagrant ssh&lt;/code>, и мы получили доступ к нашей удаленной виртуальной машине.&lt;/p>
+&lt;p>Если бы наша удаленная машина не находилась в той же системе, что и наша рабочая станция, и находилась бы в удаленном месте, возможно, в облачной системе или в центре обработки данных, к которому мы могли бы получить доступ только через Интернет, нам потребовался бы безопасный способ, чтобы получить доступ к системе для управления ею.&lt;/p>
+&lt;p>SSH обеспечивает безопасный туннель между клиентом и сервером, поэтому злоумышленники ничего не могут перехватить.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day18_Linux1.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>На сервере есть служба SSH на стороне сервера, которая всегда работает и прослушивает определенный TCP-порт (22).&lt;/p>
+&lt;p>Если мы используем наш клиент для подключения с правильными учетными данными или ключом SSH, мы получаем доступ к этому серверу.&lt;/p>
+&lt;h3 id="добавление-bridged-network-adapter-в-нашу-систему">Добавление bridged network adapter в нашу систему&lt;/h3>
+&lt;p>Чтобы мы могли использовать SSH с нашей виртуальной машиной, нам нужно добавить сетевой адаптер на нашу машину.&lt;/p>
+&lt;p>Выключите виртуальную машину, щелкните ее правой кнопкой мыши в Virtual Box и выберите настройки. В новом окне выберите сеть.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day18_Linux2.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Теперь снова включите вашу машину, и теперь у вас будет IP-адрес на вашей локальной машине. Вы можете подтвердить это с помощью команды &lt;code>ip addr&lt;/code>.&lt;/p>
+&lt;h3 id="проверка-работы-ssh-сервера">Проверка работы SSH-сервера&lt;/h3>
+&lt;p>Мы знаем, что SSH уже настроен на нашей машине, поскольку мы использовали его с vagrant, но мы можем удостовериться, что сервер бежит, запустив&lt;/p>
+&lt;p>&lt;code>sudo systemctl status ssh&lt;/code>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day18_Linux3.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Если в вашей системе нет SSH-сервера, вы можете установить его, введя эту команду &lt;code>sudo apt install openssh-server&lt;/code>&lt;/p>
+&lt;p>Затем вы хотите убедиться, что наш SSH разрешен и брандмауэр работает. Мы можем сделать это с помощью &lt;code>sudo ufw allow ssh&lt;/code>. Это не требуется в нашей конфигурации, поскольку мы автоматизировали это с помощью нашего vagrant.&lt;/p>
+&lt;h3 id="удаленный-доступ--пароль-ssh">Удаленный доступ — пароль SSH&lt;/h3>
+&lt;p>Теперь, когда наш SSH-сервер прослушивает порт 22 для любых входящих запросов на подключение, и мы добавили &amp;ldquo;мост&amp;rdquo; (bridged networking), мы можем использовать &lt;a href="https://www.ssh.com/academy/ssh/putty/download">putty&lt;/a> или SSH-клиент на нашей локальной машине для подключения к нашей системе с помощью SSH.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day18_Linux4.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Затем нажмите «Открыть», если вы впервые подключаетесь к этой системе через этот IP-адрес, вы получите это предупреждение. Мы знаем, что это наша система, поэтому вы можете выбрать «yes».&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day18_Linux5.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Затем нам будет предложено ввести имя пользователя (vagrant) и пароль (пароль по умолчанию — vagrant). Ниже вы увидите, что теперь мы используем наш SSH-клиент (Putty) для подключения к нашей машине с использованием имени пользователя и пароля.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day18_Linux6.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>На этом этапе мы подключаемся к нашей виртуальной машине с нашего удаленного клиента и можем выполнять наши команды в нашей системе.&lt;/p>
+&lt;h3 id="удаленный-доступ--ключ-ssh">Удаленный доступ — ключ SSH&lt;/h3>
+&lt;p>Вышеупомянутый простой способ получить доступ к вашим системам, однако, по-прежнему зависит от имени пользователя и пароля, и если какой-либо злоумышленник получит доступ к этой информации, а также к общедоступному адресу или IP-адресу вашей системы, это может быть легко скомпрометировано. Здесь предпочтительны SSH-ключи.&lt;/p>
+&lt;p>Ключи SSH означают, что мы предоставляем пару ключей, чтобы и клиент, и сервер знали, что это доверенное устройство.&lt;/p>
+&lt;p>Создать ключ несложно. На нашем локальном компьютере (Windows) мы можем выполнить следующую команду: если у вас установлен ssh-клиент в любой системе, я полагаю, что эта же команда будет работать?&lt;/p>
+&lt;p>&lt;code>ssh-keygen -t ed25519&lt;/code>&lt;/p>
+&lt;p>Я не буду вдаваться в подробности того, что такое ed25519 и что означает здесь, но вы можете воспользоваться поиском, если хотите узнать больше о &lt;a href="https://en.wikipedia.org/wiki/EdDSA#Ed25519">криптографии&lt;/a>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day18_Linux7.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>На данный момент у нас есть созданный ключ SSH, хранящийся в &lt;code>C:\Users\micha/.ssh/&lt;/code>&lt;/p>
+&lt;p>Но чтобы связать это с нашей виртуальной машиной Linux, нам нужно скопировать ключ. Мы можем сделать это, используя &lt;code>ssh-copy-id vagrant@192.168.169.135&lt;/code>.&lt;/p>
+&lt;p>Я использовал &lt;a href="https://docs.microsoft.com/ru-ru/powershell/">PowerShell&lt;/a> для создания своих ключей на моем клиенте Windows, но здесь нет доступного &lt;code>ssh-copy-id&lt;/code>. Есть способы, которыми вы можете сделать это в Windows, и небольшой поиск в Интернете найдет вам альтернативу, но я просто использую git bash на своем компьютере с Windows, чтобы сделать копию.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day18_Linux8.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Теперь мы можем вернуться к Powershell, чтобы проверить, что наше соединение теперь работает с нашими ключами SSH, и пароль не требуется.&lt;/p>
+&lt;p>&lt;code>ssh vagrant@192.168.169.135&lt;/code>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day18_Linux9.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>При необходимости мы могли бы защититься, используя кодовую фразу. Мы также могли бы сделать еще один шаг, заявив, что пароли вообще не нужны, что означает, что будут разрешены только пары ключей через SSH. Вы можете сделать это в следующем файле конфигурации.&lt;/p>
+&lt;p>&lt;code>sudo nano /etc/ssh/sshd_config&lt;/code>&lt;/p>
+&lt;p>здесь есть строка с &lt;code>PasswordAuthentication yes&lt;/code>, она будет закомментирована &lt;code>#&lt;/code>, вы должны раскомментировать и изменить yes на no. Затем вам нужно будет перезагрузить службу SSH с помощью «sudo systemctl reload sshd».&lt;/p>
+&lt;h2 id="настройка-веб-сервера">Настройка веб-сервера&lt;/h2>
+&lt;p>Не имеет прямого отношения к тому, что мы только что сделали с SSH выше, но я хотел рассмотрть, поскольку это снова еще одна задача, которая может показаться вам немного сложной, но на самом деле этого не должно быть.&lt;/p>
+&lt;p>У нас есть виртуальная машина с Linux, и на данном этапе мы хотим добавить веб-сервер apache к нашей виртуальной машине, чтобы мы могли разместить на нем простой веб-сайт, который обслуживает мою домашнюю сеть. Обратите внимание, что эта веб-страница не будет доступна из Интернета, это можно сделать, но здесь это не рассматривается.&lt;/p>
+&lt;p>Вы также можете увидеть, что это называется стеком LAMP.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>L&lt;/strong>inux Operating System&lt;/li>
+&lt;li>&lt;strong>A&lt;/strong>pache Web Server&lt;/li>
+&lt;li>&lt;strong>m&lt;/strong>ySQL database&lt;/li>
+&lt;li>&lt;strong>P&lt;/strong>HP&lt;/li>
+&lt;/ul>
+&lt;h3 id="apache2">Apache2&lt;/h3>
+&lt;p>Apache2 — это HTTP-сервер с открытым исходным кодом. Мы можем установить apache2 с помощью следующей команды.&lt;/p>
+&lt;p>&lt;code>sudo apt-get install apache2&lt;/code>&lt;/p>
+&lt;p>Чтобы убедиться, что apache2 установлен правильно, мы можем запустить &lt;code>sudo service apache2 restart&lt;/code>.&lt;/p>
+&lt;p>Затем, используя сетевой адрес моста из пошагового руководства по SSH, откройте браузер и перейдите по этому адресу. Мой &lt;code>http://192.168.169.135/&lt;/code>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day18_Linux10.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="mysql">mySQL&lt;/h3>
+&lt;p>MySQL — это база данных, в которой мы будем хранить данные для нашего простого веб-сайта. Чтобы установить MySQL, мы должны использовать следующую команду &lt;code>sudo apt-get install mysql-server&lt;/code>&lt;/p>
+&lt;h3 id="php">PHP&lt;/h3>
+&lt;p>PHP — это серверный язык (server-side scripting language), мы будем использовать его для взаимодействия с базой данных MySQL. Окончательная установка заключается в установке PHP и зависимостей с помощью sudo apt-get install php libapache2-mod-php php-mysql.&lt;/p>
+&lt;p>Первое изменение конфигурации, которое мы хотим внести в apache из коробки, — это использование index.html, и вместо этого мы хотим использовать index.php.&lt;/p>
+&lt;p>Мы будем использовать sudo nano /etc/apache2/mods-enabled/dir.conf и переместим index.php в первый элемент списка.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day18_Linux11.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Перезапустите службу apache2 &lt;code>sudo systemctl restart apache2&lt;/code>&lt;/p>
+&lt;p>Теперь давайте подтвердим, что наша система правильно настроена для PHP. Создайте следующий файл с помощью этой команды, это откроет пустой файл в nano.&lt;/p>
+&lt;p>&lt;code>sudo nano /var/www/html/90Days.php&lt;/code>&lt;/p>
+&lt;p>затем скопируйте следующее и используйте Ctrl + x, чтобы выйти и сохранить файл.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>&amp;lt;?php
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>phpinfo();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>?&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Теперь снова перейдите к IP-адресу виртуальной машины Linux с дополнительным 90Days.php в конце URL-адреса. &lt;code>http://192.168.169.135/90Days.php&lt;/code> вы должны увидеть что-то похожее на показанное ниже, если PHP настроен правильно.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day18_Linux12.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="установка-wordpress">Установка WordPress&lt;/h3>
+&lt;p>Я просмотрел тьюториал, чтобы установить WordPress в наш стек LAMP, некоторые команды показаны ниже, если они не показаны правильно в пошаговом руководстве [How to install wordpress on Ubuntu with LAMP](&lt;a href="https://blog.ssdnodes.com/blog/">https://blog.ssdnodes.com/blog/&lt;/a> как установить-wordpress-на-ubuntu-18-04-с-лампой-учебник/)&lt;/p>
+&lt;p>&lt;code>sudo mysql -u root -p&lt;/code>&lt;/p>
+&lt;p>&lt;code>CREATE DATABASE wordpressdb;&lt;/code>&lt;/p>
+&lt;p>&lt;code>CREATE USER 'admin-user'@'localhost' IDENTIFIED BY 'password';&lt;/code>&lt;/p>
+&lt;p>&lt;code>GRANT ALL PRIVILEGES ON wordpressdb.* TO 'admin-user'@'localhost';&lt;/code>&lt;/p>
+&lt;p>&lt;code>FLUSH PRIVILEGES;&lt;/code>&lt;/p>
+&lt;p>&lt;code>EXIT;&lt;/code>&lt;/p>
+&lt;p>&lt;code>sudo apt install php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip&lt;/code>&lt;/p>
+&lt;p>&lt;code>sudo systemctl restart apache2&lt;/code>&lt;/p>
+&lt;p>&lt;code>cd /var/www&lt;/code>&lt;/p>
+&lt;p>&lt;code>sudo curl -O https://wordpress.org/latest.tar.gz&lt;/code>&lt;/p>
+&lt;p>&lt;code>sudo tar -xvf latest.tar.gz&lt;/code>&lt;/p>
+&lt;p>&lt;code>sudo rm latest.tar.gz&lt;/code>&lt;/p>
+&lt;p>На данный момент вы находитесь на шаге 4 в связанной статье, вам нужно будет выполнить шаги, чтобы убедиться, что для каталога WordPress установлены все правильные разрешения.&lt;/p>
+&lt;p>Поскольку это только внутреннее действие, вам не нужно «генерировать ключи безопасности» на этом шаге. Перейдите к шагу 5, который меняет конфигурацию Apache на WordPress.&lt;/p>
+&lt;p>Затем, если все настроено правильно, вы сможете получить доступ через свой внутренний сетевой адрес и запустить установку WordPress.&lt;/p>
+&lt;h2 id="ресурсы">Ресурсы&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://remmina.org/">Client SSH GUI - Remmina&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=2QXkrLVsRmk">The Beginner&amp;rsquo;s guide to SSH&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=-txKSRn0qeA">Vim in 100 Seconds&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=IiwGbcd8S7I">Vim tutorial&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=kPylihJRG70">Learn the Linux Fundamentals - Part 1&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=VbEx7B_PTOE">Linux for hackers (don&amp;rsquo;t worry you don&amp;rsquo;t need to be a hacker!)&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

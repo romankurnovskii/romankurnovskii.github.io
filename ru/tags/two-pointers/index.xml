@@ -1,43 +1,600 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Two Pointers on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/two-pointers/</link><description>Recent content in Two Pointers on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Mon, 28 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/two-pointers/index.xml" rel="self" type="application/rss+xml"/><item><title>11. Container With Most Water</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/11/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/11/</guid><description>LeetCode задача 11
-Задача Вам дан массив, в котором каждый элемент представляет высоту стены. Высоты стен разные. Две стены и пространство между ними образуют контейнер. Ваша задача - найти контейнер, который может вместить максимальное количество воды.
-Подсказки Метод &amp;ldquo;Two Pointers&amp;rdquo;.
-Подход Цель этой задачи - найти пару &amp;ldquo;стен&amp;rdquo;, между которыми будет находиться максимальное количество &amp;ldquo;воды&amp;rdquo;. Вместимость контейнера определяется двумя факторами: расстоянием между стенками и минимальной высотой из двух стенок.
-Идея алгоритма заключается в следующем: начнем с самых &amp;ldquo;дальних&amp;rdquo; друг от друга стенок и будем постепенно &amp;ldquo;сужать&amp;rdquo; интервал, сдвигая одну из стенок внутрь массива.</description></item><item><title>15. 3Sum</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/15/</link><pubDate>Thu, 03 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/15/</guid><description>LeetCode problem
-Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
-Notice that the solution set must not contain duplicate triplets.
-Example 1:
-Input: nums = [-1,0,1,2,-1,-4] Output: [[-1,-1,2],[-1,0,1]] Explanation: nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0. nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.</description></item><item><title>26. Remove Duplicates from Sorted Array</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/26/</link><pubDate>Wed, 26 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/26/</guid><description>LeetCode problem
-Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.
-Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums. More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result.</description></item><item><title>28. Find the Index of the First Occurrence in a String</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/28/</link><pubDate>Sat, 19 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/28/</guid><description>LeetCode problem
-Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
-Example 1:
-Input: haystack = &amp;ldquo;sadbutsad&amp;rdquo;, needle = &amp;ldquo;sad&amp;rdquo; Output: 0 Explanation: &amp;ldquo;sad&amp;rdquo; occurs at index 0 and 6. The first occurrence is at index 0, so we return 0.
-Example 2:
-Input: haystack = &amp;ldquo;leetcode&amp;rdquo;, needle = &amp;ldquo;leeto&amp;rdquo; Output: -1 Explanation: &amp;ldquo;leeto&amp;rdquo; did not occur in &amp;ldquo;leetcode&amp;rdquo;, so we return -1.</description></item><item><title>42. Trapping Rain Water</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/42/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/42/</guid><description>LeetCode задача 42
-Задача Дан массив неотрицательных целых чисел, представляющих собой карту высот, где ширина каждой стойки равна 1. Вычислите, сколько воды может удерживать этот массив после дождя.
-Подсказки Мы можем решить эту задачу, двигаясь от краев массива к его центру, отслеживая текущую максимальную высоту с обеих сторон.
-Подход Простой и понятный способ решения этой задачи - пройтись по массиву и для каждого элемента вычислить, сколько воды он может удержать.
-Алгоритм Инициализируем переменную для хранения общего объема воды, который может быть удержан.</description></item><item><title>75. Sort Colors</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/75/</link><pubDate>Fri, 03 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/75/</guid><description>LeetCode problem
-This problem is also known as the Dutch National Flag problem. One solution is to use three pointers to partition the array into three sections: red, white, and blue.
-Here&amp;rsquo;s the algorithm:
-Initialize three pointers: left, mid, and right. Initialize left to 0, mid to 0, and right to n-1, where n is the length of the input array. While mid is less than or equal to right: If nums[mid] is 0, swap nums[mid] with nums[left], increment mid and left.</description></item><item><title>88. Merge Sorted Array</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/88/</link><pubDate>Sun, 30 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/88/</guid><description>LeetCode problem
-First accepted class Solution: def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -&amp;gt; None: &amp;#34;&amp;#34;&amp;#34; Do not return anything, modify nums1 in-place instead. &amp;#34;&amp;#34;&amp;#34; i = len(nums1) - n for j in nums2: nums1[i] = j i += 1 nums1.sort()</description></item><item><title>234. Palindrome Linked List</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/234/</link><pubDate>Mon, 03 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/234/</guid><description>LeetCode problem
-Problem Statement Given the head of a singly linked list, return true if it is a palindrome or false otherwise.
-Naive Solution A simple solution to this problem is to:
-traverse the linked list storing the value of each node in an array. Then, we could compare the array with its reversed version.
-If they match, the linked list is a palindrome. Otherwise, it is not.
-This solution takes O(n) time (where n is the number of nodes in the list), as we need to traverse the list once.</description></item><item><title>283. Move Zeroes</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/283/</link><pubDate>Sat, 26 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/283/</guid><description>LeetCode задача
-Задача Дан целочисленный массив nums. Нам необходимо переместить все 0 в конец массива, сохраняя относительный порядок ненулевых элементов.
-Примечание: вы должны сделать это на месте, без создания копии массива.
-Подсказки Используйте два указателя: один будет указывать на текущий элемент, а другой будет указывать на первое место в массиве, куда можно поместить ненулевой элемент.
-Подход Мы можем использовать два указателя: один для прохода по массиву и другой для отслеживания местоположения, куда следует поместить следующий ненулевой элемент. Этот метод позволяет нам сделать минимальное количество операций и изменений в массиве.</description></item><item><title>287. Find the Duplicate Number</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/287/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/287/</guid><description>LeetCode задача 287
-Задача Дан массив nums размера n + 1, в котором каждый элемент принимает значение от 1 до n, что означает, что как минимум одно число будет дублироваться.
-Найдите это дублирующееся число.
-Подход Один из способов решения задачи — использование двух указателей (tortoise и hare), что известно как &amp;ldquo;алгоритм зайца и черепахи&amp;rdquo; для нахождения цикла в связанном списке.
-Алгоритм Инициализируем два указателя: tortoise и hare. Используем их для прохода по массиву: tortoise двигается на один шаг, а hare — на два.</description></item><item><title>443. String Compression</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/443/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/443/</guid><description>LeetCode задача 443
-Задача Дан массив символов chars, ваша задача — сжать его с помощью следующего алгоритма: Заменить последовательность одинаковых символов одним символом, за которым идет его количество.
-Пример: &amp;ldquo;aaabbaaa&amp;rdquo; =&amp;gt; &amp;ldquo;a3b2a3&amp;rdquo;
-Подход В этой задаче у нас есть два указателя: один для чтения элементов из исходного массива (read_ptr) и второй для записи результата сжатия в тот же массив (write_ptr). Сначала оба указателя стоят на начале массива. Далее, read_ptr движется вправо, считая количество повторяющихся символов. После подсчета, мы записываем символ и его количество в массив, используя write_ptr.</description></item><item><title>1679. Max Number of K-Sum Pairs</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1679/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1679/</guid><description>LeetCode задача 1679
-Задача Вам дан массив чисел nums и целое число k. Задача — найти максимальное количество пар в массиве, сумма элементов которых равна k.
-Подсказки Используйте технику двух указателей(pointers) после сортировки массива для оптимизации поиска пар.
-Подход Центральная идея решения задачи заключается в использовании техники двух указателей для быстрого нахождения пар чисел с заданной суммой k. Прежде чем применить эту технику, массив сортируется в возрастающем порядке. Затем создаются два указателя: один, указывающий на начало массива, и второй — на конец.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Two Pointers on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/two-pointers/</link><description>Recent content in Two Pointers on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Mon, 28 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/two-pointers/index.xml" rel="self" type="application/rss+xml"/><item><title>11. Container With Most Water</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/11/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/11/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/container-with-most-water/">LeetCode задача 11&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Вам дан массив, в котором каждый элемент представляет высоту стены. Высоты стен разные. Две стены и пространство между ними образуют контейнер. Ваша задача - найти контейнер, который может вместить максимальное количество воды.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Метод &amp;ldquo;Two Pointers&amp;rdquo;.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Цель этой задачи - найти пару &amp;ldquo;стен&amp;rdquo;, между которыми будет находиться максимальное количество &amp;ldquo;воды&amp;rdquo;. Вместимость контейнера определяется двумя факторами: расстоянием между стенками и минимальной высотой из двух стенок.&lt;/p>
+&lt;p>Идея алгоритма заключается в следующем: начнем с самых &amp;ldquo;дальних&amp;rdquo; друг от друга стенок и будем постепенно &amp;ldquo;сужать&amp;rdquo; интервал, сдвигая одну из стенок внутрь массива. При этом всегда сдвигаем ту стенку, которая ниже, потому что движение более высокой стенки внутрь не приведёт к увеличению объёма контейнера (меньшая высота ограничивает его).&lt;/p>
+&lt;p>Этот подход эффективен, потому что мы однократно проходим по всему массиву, каждый раз вычисляя и сравнивая вместимость текущего &amp;ldquo;контейнера&amp;rdquo; с максимальной найденной ранее.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>Инициализация&lt;/strong>: Создаем два указателя, один на начале массива и другой на конце.&lt;/li>
+&lt;li>&lt;strong>Выбор стенки&lt;/strong>: Сначала у нас есть весь массив для выбора стенки. Мы можем взять две крайние стенки, так как расстояние между ними максимально.&lt;/li>
+&lt;li>&lt;strong>Перемещение указателей&lt;/strong>: После каждого шага, мы двигаем один из указателей внутрь массива. Указатель на меньшую стенку двигается внутрь, потому что движение указателя на большую стенку не может привести к большему контейнеру.&lt;/li>
+&lt;li>&lt;strong>Обновление максимума&lt;/strong>: На каждом шаге мы проверяем, больше ли текущий контейнер предыдущего максимума. Если да, обновляем максимум.&lt;/li>
+&lt;li>&lt;strong>Возврат результата&lt;/strong>: В конце работы алгоритма, возвращаем размер максимального контейнера.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">maxArea&lt;/span>(height: &lt;span style="color:#007020">list&lt;/span>[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Инициализация указателей и максимума&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(height) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_area &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> left &lt;span style="color:#666">&amp;lt;&lt;/span> right:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> min_height &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">min&lt;/span>(height[left], height[right])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> area &lt;span style="color:#666">=&lt;/span> min_height &lt;span style="color:#666">*&lt;/span> (right &lt;span style="color:#666">-&lt;/span> left)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_area &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(max_area, area)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> height[left] &lt;span style="color:#666">&amp;lt;=&lt;/span> height[right]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> max_area
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>15. 3Sum</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/15/</link><pubDate>Thu, 03 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/15/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/3sum/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given an integer array nums, return all the triplets &lt;code>[nums[i], nums[j], nums[k]]&lt;/code> such that &lt;code>i != j&lt;/code>, &lt;code>i != k&lt;/code>, and &lt;code>j != k&lt;/code>, and &lt;code>nums[i] + nums[j] + nums[k] == 0&lt;/code>.&lt;/p>
+&lt;p>Notice that the solution set must not contain duplicate triplets.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: nums = [-1,0,1,2,-1,-4]
+Output: [[-1,-1,2],[-1,0,1]]
+Explanation:
+nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.
+nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.
+nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.
+The distinct triplets are [-1,0,1] and [-1,-1,2].
+Notice that the order of the output and the order of the triplets does not matter.
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: nums = [0,1,1]
+Output: []
+Explanation: The only possible triplet does not sum up to 0.
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">threeSum&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[List[&lt;span style="color:#007020">int&lt;/span>]]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nums&lt;span style="color:#666">.&lt;/span>sort()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># index&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ll &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> x &lt;span style="color:#666">&amp;lt;&lt;/span> ll &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">2&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> x &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">or&lt;/span> nums[x] &lt;span style="color:#666">!=&lt;/span> nums[x&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> y &lt;span style="color:#666">=&lt;/span> x &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> z &lt;span style="color:#666">=&lt;/span> ll &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> y &lt;span style="color:#666">&amp;lt;&lt;/span> z:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">=&lt;/span> nums[x] &lt;span style="color:#666">+&lt;/span> nums[y] &lt;span style="color:#666">+&lt;/span> nums[z]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> s &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#666">.&lt;/span>append([nums[x], nums[y], nums[z]])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> y &lt;span style="color:#666">&amp;lt;&lt;/span> z &lt;span style="color:#007020;font-weight:bold">and&lt;/span> nums[y] &lt;span style="color:#666">==&lt;/span> nums[y&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> y &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> z &lt;span style="color:#666">&amp;gt;&lt;/span> y &lt;span style="color:#007020;font-weight:bold">and&lt;/span> nums[z] &lt;span style="color:#666">==&lt;/span> nums[z&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> z &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> y &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> z &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> s &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> z &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> y &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>19. Remove Nth Node From End of List</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/19/</link><pubDate>Sun, 13 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/19/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list">LeetCode problem 19&lt;/a>&lt;/p>
+&lt;p>Given the &amp;lsquo;head&amp;rsquo; of a linked list, remove the &amp;rsquo;nth&amp;rsquo; node from the end of the list and return its head.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.leetcode.com/uploads/2020/10/03/remove_ex1.jpg"
+id="zoom-default"
+alt="LeetCode 19. Remove Nth Node From End of List"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;pre>&lt;code>Input: head = [1,2,3,4,5], n = 2
+Output: [1,2,3,5]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: head = [1], n = 1
+Output: []
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Two pointers.&lt;/li>
+&lt;li>Second pointer starts from &lt;code>nth&lt;/code> position.&lt;/li>
+&lt;li>Run while second pointer exist.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Definition for singly-linked list.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># class ListNode:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># def __init__(self, val=0, next=None):&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.val = val&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.next = next&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">removeNthFromEnd&lt;/span>(self, head, n: &lt;span style="color:#007020">int&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p1 &lt;span style="color:#666">=&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p2 &lt;span style="color:#666">=&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p2 &lt;span style="color:#666">=&lt;/span> p2&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#60a0b0;font-style:italic"># fast&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> p2:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> head&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#60a0b0;font-style:italic"># in case: head=[1], n=1 -&amp;gt; return []&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> p2&lt;span style="color:#666">.&lt;/span>next:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p1 &lt;span style="color:#666">=&lt;/span> p1&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p2 &lt;span style="color:#666">=&lt;/span> p2&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p1&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> p1&lt;span style="color:#666">.&lt;/span>next&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> head
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Definition for singly-linked list.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># class ListNode:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># def __init__(self, val=0, next=None):&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.val = val&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.next = next&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">removeNthFromEnd&lt;/span>(self, head: Optional[ListNode], n: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> Optional[ListNode]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> head&lt;span style="color:#666">.&lt;/span>next:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nodes &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> cur:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nodes[i] &lt;span style="color:#666">=&lt;/span> cur
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> cur&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> i &lt;span style="color:#666">-&lt;/span> n &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> head&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> nodes[i &lt;span style="color:#666">-&lt;/span> n &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> cur&lt;span style="color:#666">.&lt;/span>next:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> cur&lt;span style="color:#666">.&lt;/span>next&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> head
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>26. Remove Duplicates from Sorted Array</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/26/</link><pubDate>Wed, 26 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/26/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given an integer array &lt;code>nums&lt;/code> sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.&lt;/p>
+&lt;p>Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array &lt;code>nums&lt;/code>. More formally, if there are k elements after removing the duplicates, then the first k elements of &lt;code>nums&lt;/code> should hold the final result. It does not matter what you leave beyond the first k elements.&lt;/p>
+&lt;p>Return k after placing the final result in the first k slots of &lt;code>nums&lt;/code>.&lt;/p>
+&lt;p>Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.&lt;/p>
+&lt;p>Custom Judge:&lt;/p>
+&lt;p>The judge will test your solution with the following code:&lt;/p>
+&lt;pre>&lt;code>int[] nums = [...]; // Input array
+int[] expectedNums = [...]; // The expected answer with correct length
+int k = removeDuplicates(nums); // Calls your implementation
+assert k == expectedNums.length;
+for (int i = 0; i &amp;lt; k; i++) {
+assert nums[i] == expectedNums[i];
+}
+&lt;/code>&lt;/pre>
+&lt;p>If all assertions pass, then your solution will be accepted.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: nums = [1,1,2]
+Output: 2, nums = [1,2,_]
+Explanation: Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively.
+It does not matter what you leave beyond the returned k (hence they are underscores).
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: nums = [0,0,1,1,1,2,2,3,3,4]
+Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
+Explanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.
+It does not matter what you leave beyond the returned k (hence they are underscores).
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/26.jpg"
+id="zoom-default"
+alt="test-case"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">removeDuplicates&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> k &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums) &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> k
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p1 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p2 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> p2 &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nums[p1] &lt;span style="color:#666">==&lt;/span> nums[p2]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p2 &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p1 &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nums[p1] &lt;span style="color:#666">=&lt;/span> nums[p2]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p2 &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> k &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> k
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="better-solution">Better solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">removeDuplicates&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums) &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> k &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> n &lt;span style="color:#007020;font-weight:bold">in&lt;/span> nums:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nums[i&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">!=&lt;/span> n:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nums[i] &lt;span style="color:#666">=&lt;/span> n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> k &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> k
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>28. Find the Index of the First Occurrence in a String</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/28/index.en./</link><pubDate>Sat, 19 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/28/index.en./</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given two strings &lt;code>needle&lt;/code> and &lt;code>haystack&lt;/code>, return the index of the first occurrence of &lt;code>needle&lt;/code> in &lt;code>haystack&lt;/code>, or -1 if &lt;code>needle&lt;/code> is not part of &lt;code>haystack&lt;/code>.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;p>Input: haystack = &amp;ldquo;sadbutsad&amp;rdquo;, needle = &amp;ldquo;sad&amp;rdquo;
+Output: 0
+Explanation: &amp;ldquo;sad&amp;rdquo; occurs at index 0 and 6.
+The first occurrence is at index 0, so we return 0.&lt;/p>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;p>Input: haystack = &amp;ldquo;leetcode&amp;rdquo;, needle = &amp;ldquo;leeto&amp;rdquo;
+Output: -1
+Explanation: &amp;ldquo;leeto&amp;rdquo; did not occur in &amp;ldquo;leetcode&amp;rdquo;, so we return -1.&lt;/p>
+&lt;h2 id="code">Code&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">strStr&lt;/span>(self, haystack: &lt;span style="color:#007020">str&lt;/span>, needle: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> haystack&lt;span style="color:#666">.&lt;/span>find(needle)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">strStr&lt;/span>(self, haystack: &lt;span style="color:#007020">str&lt;/span>, needle: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> start &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> end &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(needle)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> end &lt;span style="color:#666">&amp;lt;=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(haystack):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> haystack[start:end] &lt;span style="color:#666">==&lt;/span> needle:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> start
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> start &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> end &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>42. Trapping Rain Water</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/42/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/42/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/trapping-rain-water/">LeetCode задача 42&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Дан массив неотрицательных целых чисел, представляющих собой карту высот, где ширина каждой стойки равна 1. Вычислите, сколько воды может удерживать этот массив после дождя.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Мы можем решить эту задачу, двигаясь от краев массива к его центру, отслеживая текущую максимальную высоту с обеих сторон.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Простой и понятный способ решения этой задачи - пройтись по массиву и для каждого элемента вычислить, сколько воды он может удержать.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Инициализируем переменную для хранения общего объема воды, который может быть удержан.&lt;/li>
+&lt;li>Пройдемся по массиву, для каждого элемента:
+&lt;ul>
+&lt;li>Найдем максимальную высоту слева и справа от текущего элемента.&lt;/li>
+&lt;li>Объем воды, который может быть удержан над этим элементом, равен минимальному значению из этих двух максимальных высот, минус высота самого элемента.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Добавим этот объем к общему объему.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">trap&lt;/span>(height):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(height)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Инициализируем переменную для хранения общего объема воды&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> total_water &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Находим максимальную высоту слева от i&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_left &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(height[:i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Находим максимальную высоту справа от i&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_right &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(height[i:])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Объем воды для текущего элемента&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> water &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">min&lt;/span>(max_left, max_right) &lt;span style="color:#666">-&lt;/span> height[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Добавляем этот объем к общему объему&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> total_water &lt;span style="color:#666">+=&lt;/span> water
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> total_water
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>75. Sort Colors</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/75/</link><pubDate>Fri, 03 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/75/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/sort-colors/description/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>This problem is also known as the &lt;a href="http://localhost:1313/en/tracks/algorithms-101/algorithms/#dutch-national-flag-problem">Dutch National Flag problem&lt;/a>. One solution is to use three pointers to partition the array into three sections: red, white, and blue.&lt;/p>
+&lt;p>Here&amp;rsquo;s the algorithm:&lt;/p>
+&lt;ol>
+&lt;li>Initialize three pointers: left, mid, and right.&lt;/li>
+&lt;li>Initialize left to 0, mid to 0, and right to n-1, where n is the length of the input array.&lt;/li>
+&lt;li>While mid is less than or equal to right:
+&lt;ul>
+&lt;li>If nums[mid] is 0, swap nums[mid] with nums[left], increment mid and left.&lt;/li>
+&lt;li>If nums[mid] is 1, increment mid.&lt;/li>
+&lt;li>If nums[mid] is 2, swap nums[mid] with nums[right], decrement right.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Return the sorted array.&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">sortColors&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;&amp;#34;&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Do not return anything, modify nums in-place instead.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l, m, r &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#007020">len&lt;/span>(nums) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> m &lt;span style="color:#666">&amp;lt;=&lt;/span> r:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nums[m] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nums[m], nums[l] &lt;span style="color:#666">=&lt;/span> nums[l], nums[m]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> nums[m] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nums[m], nums[r] &lt;span style="color:#666">=&lt;/span> nums[r], nums[m]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>88. Merge Sorted Array</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/88/</link><pubDate>Sun, 30 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/88/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/merge-sorted-array/">LeetCode problem&lt;/a>&lt;/p>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">merge&lt;/span>(self, nums1: List[&lt;span style="color:#007020">int&lt;/span>], m: &lt;span style="color:#007020">int&lt;/span>, nums2: List[&lt;span style="color:#007020">int&lt;/span>], n: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;&amp;#34;&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Do not return anything, modify nums1 in-place instead.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums1) &lt;span style="color:#666">-&lt;/span> n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> nums2:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nums1[i] &lt;span style="color:#666">=&lt;/span> j
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nums1&lt;span style="color:#666">.&lt;/span>sort()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>234. Palindrome Linked List</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/234/</link><pubDate>Mon, 03 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/234/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/palindrome-linked-list/">LeetCode problem&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>Given the head of a singly linked list, return true if it is a palindrome or false otherwise.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A simple solution to this problem is to:&lt;/p>
+&lt;ol>
+&lt;li>traverse the linked list&lt;/li>
+&lt;li>storing the value of each node in an array.&lt;/li>
+&lt;/ol>
+&lt;p>Then, we could compare the array with its reversed version.&lt;/p>
+&lt;p>If they match, the linked list is a palindrome. Otherwise, it is not.&lt;/p>
+&lt;p>This solution takes &lt;code>O(n)&lt;/code> time (where &lt;code>n&lt;/code> is the number of nodes in the list), as we need to traverse the list once.&lt;/p>
+&lt;p>However, it also takes &lt;code>O(n)&lt;/code> space, as we store the value of each node in an array.&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>To solve the problem in &lt;code>O(n)&lt;/code> time and &lt;code>O(1)&lt;/code> space, we can use the &lt;mark>two-pointer technique&lt;/mark> to &lt;strong>find the middle of the linked list&lt;/strong>. Then, we can reverse the second half of the list in-place. After that, we can compare the first half with the reversed second half. If they match, the list is a palindrome.&lt;/p>
+&lt;p>Reversing a linked list in-place involves changing the next pointers of the nodes to point to the previous node. This process can be done with a constant amount of space.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Initialize two pointers: slow and fast at the head of the list.
+&lt;ol>
+&lt;li>Move slow one step at a time and fast two steps at a time.&lt;/li>
+&lt;li>When fast reaches the end of the list, slow will be at the middle.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Reverse the second half of the list starting from slow.&lt;/li>
+&lt;li>Compare the first half of the list with the reversed second half.
+&lt;ol>
+&lt;li>If they match, return true.&lt;/li>
+&lt;li>If they don&amp;rsquo;t, return false.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">isPalindrome&lt;/span>(self, head: ListNode) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">bool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> slow &lt;span style="color:#666">=&lt;/span> fast &lt;span style="color:#666">=&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># find the mid node&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> fast &lt;span style="color:#007020;font-weight:bold">and&lt;/span> fast&lt;span style="color:#666">.&lt;/span>next:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> slow &lt;span style="color:#666">=&lt;/span> slow&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fast &lt;span style="color:#666">=&lt;/span> fast&lt;span style="color:#666">.&lt;/span>next&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># reverse the second half&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> slow
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> cur: &lt;span style="color:#60a0b0;font-style:italic"># 1 [1 2 3 4]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nxt &lt;span style="color:#666">=&lt;/span> cur&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#60a0b0;font-style:italic"># 2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> prev &lt;span style="color:#60a0b0;font-style:italic"># 1.next = None &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev &lt;span style="color:#666">=&lt;/span> cur &lt;span style="color:#60a0b0;font-style:italic"># 1, at the end of loop will be 4&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> nxt &lt;span style="color:#60a0b0;font-style:italic"># 2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># compare the first and second half nodes&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> prev:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> prev&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">!=&lt;/span> head&lt;span style="color:#666">.&lt;/span>val:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev &lt;span style="color:#666">=&lt;/span> prev&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> head &lt;span style="color:#666">=&lt;/span> head&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="debug-of-reversing">Debug of Reversing&lt;/h3>
+&lt;p>Assuming we have a linked list as &lt;code>[1,2,3,4,5,6]&lt;/code> and slow initially points to &lt;code>4&lt;/code>. Result should be &lt;code>[6,5,4,3,2,1]&lt;/code>&lt;/p>
+&lt;p>Initial state:&lt;/p>
+&lt;ul>
+&lt;li>Linked list: 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; 5 -&amp;gt; 6&lt;/li>
+&lt;li>cur points to 4&lt;/li>
+&lt;li>prev = None&lt;/li>
+&lt;/ul>
+&lt;ol>
+&lt;li>First iteration:&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>nxt is assigned 5 (the next node after cur)&lt;/li>
+&lt;li>cur.next (the next node after 4) is assigned None&lt;/li>
+&lt;li>prev is assigned 4&lt;/li>
+&lt;li>cur is assigned 5 (nxt)&lt;/li>
+&lt;/ul>
+&lt;p>After first iteration:&lt;/p>
+&lt;ul>
+&lt;li>Linked list: 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; None, 5 -&amp;gt; 6&lt;/li>
+&lt;li>cur points to 5&lt;/li>
+&lt;li>prev points to 4&lt;/li>
+&lt;/ul>
+&lt;ol start="2">
+&lt;li>Second iteration:&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>nxt is assigned 6&lt;/li>
+&lt;li>cur.next (the next node after 5) is assigned 4 (prev)&lt;/li>
+&lt;li>prev is assigned 5&lt;/li>
+&lt;li>cur is assigned 6 (nxt)&lt;/li>
+&lt;/ul>
+&lt;p>After second iteration:&lt;/p>
+&lt;ul>
+&lt;li>Linked list: 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; None, 5 -&amp;gt; 4, 6&lt;/li>
+&lt;li>cur points to 6&lt;/li>
+&lt;li>prev points to 5&lt;/li>
+&lt;/ul>
+&lt;ol start="3">
+&lt;li>Third iteration:&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>nxt is assigned None&lt;/li>
+&lt;li>cur.next (the next node after 6) is assigned 5 (prev)&lt;/li>
+&lt;li>prev is assigned 6&lt;/li>
+&lt;li>cur is assigned None (nxt)&lt;/li>
+&lt;/ul>
+&lt;p>After third iteration:&lt;/p>
+&lt;ul>
+&lt;li>Linked list: 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; None, 5 -&amp;gt; 4, 6 -&amp;gt; 5&lt;/li>
+&lt;li>cur points to None&lt;/li>
+&lt;li>prev points to 6&lt;/li>
+&lt;/ul>
+&lt;ol start="4">
+&lt;li>Since &lt;code>cur&lt;/code> is &lt;code>None&lt;/code>, we exit the while loop.&lt;/li>
+&lt;/ol>
+&lt;p>Now &lt;code>prev&lt;/code> is pointing to the &lt;code>head&lt;/code> of the reversed second half of the list.&lt;/p>
+&lt;p>The list now looks like this: &lt;code>1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; None and 6 -&amp;gt; 5 -&amp;gt; 4 -&amp;gt; None&lt;/code>.&lt;/p>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/D7y_hoT_YZI?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
+&lt;/div></description></item><item><title>283. Move Zeroes</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/283/</link><pubDate>Sat, 26 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/283/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/move-zeroes/">LeetCode задача&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Дан целочисленный массив &lt;code>nums&lt;/code>. Нам необходимо переместить все &lt;code>0&lt;/code> в конец массива, сохраняя относительный порядок ненулевых элементов.&lt;/p>
+&lt;p>&lt;em>Примечание:&lt;/em> вы должны сделать это на месте, без создания копии массива.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Используйте два указателя: один будет указывать на текущий элемент, а другой будет указывать на первое место в массиве, куда можно поместить ненулевой элемент.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Мы можем использовать два указателя: один для прохода по массиву и другой для отслеживания местоположения, куда следует поместить следующий ненулевой элемент. Этот метод позволяет нам сделать минимальное количество операций и изменений в массиве.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Инициализируем два указателя на начало массива.
+&lt;ol>
+&lt;li>Первый указатель - это индексы массива. Второй с начальным значением 0,&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Используя первый указатель, проходим по массиву.
+&lt;ol>
+&lt;li>Если текущий элемент не равен нулю, помещаем его на позицию, указанную вторым указателем (меняем значения местами), и перемещаем второй указатель на одну позицию вперед.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>После завершения прохода, все числа после второго указателя должны быть установлены в 0.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">moveZeroes&lt;/span>(nums: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pos &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># Указатель для ненулевых элементов&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(nums)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nums[i] &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic"># Если текущий элемент не 0, &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nums[i], nums[pos] &lt;span style="color:#666">=&lt;/span> nums[pos], nums[i] &lt;span style="color:#60a0b0;font-style:italic"># меняем его местами с элементом на позиции pos&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pos &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>287. Find the Duplicate Number</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/287/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/287/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/find-the-duplicate-number/">LeetCode задача 287&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Дан массив &lt;code>nums&lt;/code> размера &lt;code>n + 1&lt;/code>, в котором каждый элемент принимает значение от &lt;code>1&lt;/code> до &lt;code>n&lt;/code>, что означает, что как минимум одно число будет дублироваться.&lt;/p>
+&lt;p>Найдите это дублирующееся число.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Один из способов решения задачи — использование двух указателей (&lt;code>tortoise&lt;/code> и &lt;code>hare&lt;/code>), что известно как &amp;ldquo;алгоритм зайца и черепахи&amp;rdquo; для нахождения цикла в связанном списке.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Инициализируем два указателя: &lt;code>tortoise&lt;/code> и &lt;code>hare&lt;/code>.&lt;/li>
+&lt;li>Используем их для прохода по массиву: &lt;code>tortoise&lt;/code> двигается на один шаг, а &lt;code>hare&lt;/code> — на два.&lt;/li>
+&lt;li>Как только они встретятся, начнем новый проход с &lt;code>tortoise&lt;/code> из начального положения и &lt;code>hare&lt;/code> из точки встречи, двигая их на один шаг, пока они не встретятся снова.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">findDuplicate&lt;/span>(nums):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tortoise &lt;span style="color:#666">=&lt;/span> hare &lt;span style="color:#666">=&lt;/span> nums[&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#60a0b0;font-style:italic"># 1: Using Floyd&amp;#39;s Tortoise and Hare (Cycle Detection)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tortoise &lt;span style="color:#666">=&lt;/span> nums[tortoise]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> hare &lt;span style="color:#666">=&lt;/span> nums[nums[hare]]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> tortoise &lt;span style="color:#666">==&lt;/span> hare:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tortoise &lt;span style="color:#666">=&lt;/span> nums[&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#60a0b0;font-style:italic"># 2: Find the entrance to the cycle&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> tortoise &lt;span style="color:#666">!=&lt;/span> hare:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tortoise &lt;span style="color:#666">=&lt;/span> nums[tortoise]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> hare &lt;span style="color:#666">=&lt;/span> nums[hare]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> hare
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>443. String Compression</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/443/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/443/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/string-compression/">LeetCode задача 443&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Дан массив символов &lt;code>chars&lt;/code>, ваша задача — сжать его с помощью следующего алгоритма: Заменить последовательность одинаковых символов одним символом, за которым идет его количество.&lt;/p>
+&lt;p>Пример: &amp;ldquo;aaabbaaa&amp;rdquo; =&amp;gt; &amp;ldquo;a3b2a3&amp;rdquo;&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>В этой задаче у нас есть два указателя: один для чтения элементов из исходного массива (&lt;code>read_ptr&lt;/code>) и второй для записи результата сжатия в тот же массив (&lt;code>write_ptr&lt;/code>). Сначала оба указателя стоят на начале массива. Далее, &lt;code>read_ptr&lt;/code> движется вправо, считая количество повторяющихся символов. После подсчета, мы записываем символ и его количество в массив, используя &lt;code>write_ptr&lt;/code>.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Инициализируем указатели &lt;code>read_ptr&lt;/code> и &lt;code>write_ptr&lt;/code> на начало массива.&lt;/li>
+&lt;li>Пока &lt;code>read_ptr&lt;/code> не достигнет конца массива:
+&lt;ul>
+&lt;li>Считаем количество повторяющихся символов, начиная с текущего &lt;code>read_ptr&lt;/code>.&lt;/li>
+&lt;li>Записываем символ и его количество в массив, используя &lt;code>write_ptr&lt;/code>.&lt;/li>
+&lt;li>Сдвигаем &lt;code>write_ptr&lt;/code> на количество записанных символов.&lt;/li>
+&lt;li>Перемещаем &lt;code>read_ptr&lt;/code> вправо.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">compress&lt;/span>(chars) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> read_ptr, write_ptr &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> read_ptr &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(chars):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> char &lt;span style="color:#666">=&lt;/span> chars[read_ptr]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> read_ptr &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(chars) &lt;span style="color:#007020;font-weight:bold">and&lt;/span> chars[read_ptr] &lt;span style="color:#666">==&lt;/span> char:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> read_ptr &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> chars[write_ptr] &lt;span style="color:#666">=&lt;/span> char
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> write_ptr &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> count &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> digit &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">str&lt;/span>(count):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> chars[write_ptr] &lt;span style="color:#666">=&lt;/span> digit
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> write_ptr &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> write_ptr
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1679. Max Number of K-Sum Pairs</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1679/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1679/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/max-number-of-k-sum-pairs/">LeetCode задача 1679&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Вам дан массив чисел &lt;code>nums&lt;/code> и целое число &lt;code>k&lt;/code>. Задача — найти максимальное количество пар в массиве, сумма элементов которых равна &lt;code>k&lt;/code>.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Используйте технику двух указателей(pointers) после сортировки массива для оптимизации поиска пар.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Центральная идея решения задачи заключается в использовании техники двух указателей для быстрого нахождения пар чисел с заданной суммой &lt;code>k&lt;/code>. Прежде чем применить эту технику, массив сортируется в возрастающем порядке. Затем создаются два указателя: один, указывающий на начало массива, и второй — на конец. Двигая эти указатели в зависимости от суммы элементов, на которые они указывают, мы можем найти все пары с суммой &lt;code>k&lt;/code>.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Отсортируйте массив в возрастающем порядке.&lt;/li>
+&lt;li>Инициализируйте два указателя: &lt;code>p1&lt;/code> на начало массива и &lt;code>p2&lt;/code> на конец.&lt;/li>
+&lt;li>Пока &lt;code>p1&lt;/code> меньше &lt;code>p2&lt;/code>:
+&lt;ul>
+&lt;li>Если &lt;code>nums[p1] + nums[p2]&lt;/code> равно &lt;code>k&lt;/code>, увеличьте счетчик на 1, и сдвиньте оба указателя.&lt;/li>
+&lt;li>Если сумма меньше &lt;code>k&lt;/code>, сдвиньте &lt;code>p1&lt;/code> вправо.&lt;/li>
+&lt;li>Если сумма больше &lt;code>k&lt;/code>, сдвиньте &lt;code>p2&lt;/code> влево.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">maxOperations&lt;/span>(nums, k) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p1 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p2 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nums&lt;span style="color:#666">.&lt;/span>sort()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> p1 &lt;span style="color:#666">&amp;lt;&lt;/span> p2:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">=&lt;/span> nums[p1] &lt;span style="color:#666">+&lt;/span> nums[p2]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> s &lt;span style="color:#666">==&lt;/span> k:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p1 &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p2 &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> s &lt;span style="color:#666">&amp;lt;&lt;/span> k:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p1 &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p2 &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> c
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

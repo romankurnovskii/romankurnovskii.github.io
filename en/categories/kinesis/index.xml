@@ -1,3 +1,137 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kinesis on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/kinesis/</link><description>Recent content in Kinesis on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Wed, 14 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/kinesis/index.xml" rel="self" type="application/rss+xml"/><item><title>Kinesis</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/kinesis/</link><pubDate>Wed, 14 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/kinesis/</guid><description>About Kinesis makes it easy to collect, process, &amp;amp; analyze real-time, streaming data, so one can get timely insights.
-Documentation User Guide Amazon Kinesis enables you to process and analyze data as it arrives and respond instantly instead of having to wait until all your data is collected before the processing can begin.
-Real-time-based Fully managed Scalable Capabilities Kinesis Video Streams Capture, process, and store video streams Kinesis Data Streams Capture, process, and store data streams Kinesis Data Firehose Load data streams into AWS data stores</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kinesis on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/kinesis/</link><description>Recent content in Kinesis on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Wed, 14 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/kinesis/index.xml" rel="self" type="application/rss+xml"/><item><title>Kinesis</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/kinesis/</link><pubDate>Wed, 14 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/kinesis/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>Kinesis makes it easy to collect, process, &amp;amp; analyze real-time, streaming data, so one can get timely insights.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/kinesis/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/kinesis/?id=docs_gateway">User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Amazon Kinesis enables you to process and analyze data as it arrives and respond instantly instead of having to wait until all your data is collected before the processing can begin.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/kinesis-flow.png"
+id="zoom-default"
+alt="Kinesis flow"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>Real-time-based&lt;/li>
+&lt;li>Fully managed&lt;/li>
+&lt;li>Scalable&lt;/li>
+&lt;/ul>
+&lt;h3 id="capabilities">Capabilities&lt;/h3>
+&lt;h4 id="kinesis-video-streams">Kinesis Video Streams&lt;/h4>
+&lt;p>Capture, process, and store video streams
+&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/Products/product-name/diagrams/product-page-diagram_Amazon-Kinesis-video-streams_how-it-works.5f5eaca85b3026303a5c3f34ef004c0a136bc526.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h4 id="kinesis-data-streams">Kinesis Data Streams&lt;/h4>
+&lt;p>Capture, process, and store data streams
+&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/Products/product-name/diagrams/product-page-diagram_Amazon-Kinesis-Data-Streams.074de94302fd60948e1ad070e425eeda73d350e7.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h4 id="kinesis-data-firehose">Kinesis Data Firehose&lt;/h4>
+&lt;p>Load data streams into AWS data stores&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/architecture-diagrams/product-page-diagram_Amazon-Kinesis_Data_Firehose%402x-updated.d7e297e0f79ee1a2dfe22d105fd53195e43ccfa4.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The easiest way to capture, transform, and load data streams into AWS data stores for near real-time analytics&lt;/p>
+&lt;h4 id="kinesis-data-analytics">Kinesis Data Analytics&lt;/h4>
+&lt;p>Analyze data streams with SQL or Apache Flink&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/architecture-diagrams/Product-Page-Diagram_Kinesis-Data-Analytics-How-it-Works%402x-updated.7340988926f37d36097e2f9099483e7e67692deb.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="digest">Digest&lt;/h2>
+&lt;ul>
+&lt;li>Kinesis data stream.&lt;/li>
+&lt;li>Hot shard vs cold shard.&lt;/li>
+&lt;li>Merging shards will decrease streams capacity.&lt;/li>
+&lt;li>Kinesis adapter is the recommended way to consume streams from &lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/dynamodb/">DynamoDB&lt;/a>.&lt;/li>
+&lt;li>Incoming write bandwidth and outgoing read bandwidth are used to calculate initial number of shards for kinesis stream.&lt;/li>
+&lt;li>A single Kinesis Shard can handle 1MB per second write. 2MB per second read. It can also handle 1000 writes per second, and 5 read transactions a second&lt;/li>
+&lt;/ul>
+&lt;h2 id="price">Price&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/kinesis/pricing/">Current price&lt;/a>&lt;/p>
+&lt;h2 id="use-cases">Use Cases&lt;/h2>
+&lt;p>Type: Analytics&lt;/p>
+&lt;p>Same type services: Athena, EMR, Redshift, Kinesis, Elasti­cSearch Service, Quicksight&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/Products/product-name/diagrams/product-page-diagram_Amazon-Kinesis_Build-real-time-Applications.804a73506cb53369cb137d94218457382bc1b59a.png"
+id="zoom-default"
+alt="Analysis of streaming social media data"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;blockquote>
+&lt;p>Netflix uses Amazon Kinesis to monitor the communications between all of its applications so it can detect and fix issues quickly, ensuring high service uptime and availability to its customers.&lt;/p>&lt;/blockquote>
+&lt;h2 id="practice">Practice&lt;/h2>
+&lt;p>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/kinesis/sessionizing-clickstream-data-kinesis-data-analytics/">&lt;/a>&lt;/p>
+&lt;h2 id="questions">Questions&lt;/h2>
+&lt;h3 id="q1">Q1&lt;/h3>
+&lt;p>&lt;strong>You built a data analysis application to collect and process real-time data from smart meters. Amazon Kinesis Data Streams is the backbone of your design. You received an alert that a few shards are hot.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>What steps will you take to keep a strong performance?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Remove the hot shards&lt;/li>
+&lt;li>Merge the hot shards&lt;/li>
+&lt;li>Split the hot shards&lt;/li>
+&lt;li>Increase the shard capacity&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-using-sdk-java-resharding-strategies.html">https://docs.aws.amazon.com/streams/latest/dev/kinesis-using-sdk-java-resharding-strategies.html&lt;/a>&lt;/p>
+&lt;p>Split the hot shards&lt;/p>
+&lt;p>&lt;mark style="color:white">3&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q2">Q2&lt;/h3>
+&lt;p>&lt;strong>Jasmin needs to perform ad-hoc business analytics queries on well-structured data. Data comes in constantly at a high velocity. Jasmin&amp;rsquo;s team can understand SQL.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>What AWS service(s) should Jasmin look to first?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>&lt;a href="https://aws.amazon.com/emr/">EMR&lt;/a> using &lt;a href="https://aws.amazon.com/emr/features/hive/">Hive&lt;/a>&lt;/li>
+&lt;li>EMR running &lt;a href="https://aws.amazon.com/emr/features/spark/">Apache Spark&lt;/a>&lt;/li>
+&lt;li>Kinesis Firehose + &lt;a href="https://aws.amazon.com/rds/">RDS&lt;/a>&lt;/li>
+&lt;li>Kinesis Firehose + &lt;a href="https://aws.amazon.com/redshift/">RedShift&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>RedShift supports ad-hoc queries over well-structured data using a SQL-compliant wire protocol&lt;/p>
+&lt;p>&lt;a href="https://aws.amazon.com/kinesis/data-firehose/features/">https://aws.amazon.com/kinesis/data-firehose/features/&lt;/a>&lt;/p>
+&lt;p>&lt;mark style="color:white">4&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/kinesis/streams/fags/">FAQ&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/open-guides/og-aws#inesis-streams">OpenGuide&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/streams/latest/dev/examples.html">HowTo&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=MbEfiX4sMXc">Introduction to Amazon Kinesis&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=FxCF34txNfk">AWS Webcast - Introduction to Amazon Kinesis&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

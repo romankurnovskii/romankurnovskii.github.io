@@ -1,3 +1,206 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>RSI on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/rsi/</link><description>Recent content in RSI on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Thu, 15 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/rsi/index.xml" rel="self" type="application/rss+xml"/><item><title>RSI - Relative Strength Index</title><link>https://romankurnovskii.com/en/posts/trading-indicators/rsi/</link><pubDate>Thu, 15 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/trading-indicators/rsi/</guid><description>About The Relative Strength Index (RSI) is a momentum oscillator that measures the speed and change of price movements. Developed by J. Welles Wilder, the RSI is a very popular indicator that is used primarily to identify overbought and oversold conditions in a market.
-Calculating The RSI is calculated using the following steps:
-Calculate the average gain and the average loss over the specified period (usually 14 periods). Compute the relative strength (RS) which is the ratio of average gain to average loss.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>RSI on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/rsi/</link><description>Recent content in RSI on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 15 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/rsi/index.xml" rel="self" type="application/rss+xml"/><item><title>RSI - Relative Strength Index</title><link>https://romankurnovskii.com/en/posts/trading-indicators/rsi/</link><pubDate>Thu, 15 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/trading-indicators/rsi/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>The Relative Strength Index (RSI) is a momentum oscillator that measures the speed and change of price movements. Developed by J. Welles Wilder, the RSI is a very popular indicator that is used primarily to identify &lt;strong>overbought&lt;/strong> and &lt;strong>oversold&lt;/strong> conditions in a market.&lt;/p>
+&lt;h2 id="calculating">Calculating&lt;/h2>
+&lt;p>The RSI is calculated using the following steps:&lt;/p>
+&lt;ol>
+&lt;li>Calculate the average gain and the average loss over the specified period (usually 14 periods).&lt;/li>
+&lt;li>Compute the relative strength (RS) which is the ratio of average gain to average loss.&lt;/li>
+&lt;li>The RSI is then calculated using the formula: RSI = 100 - (100 / (1 + RS))&lt;/li>
+&lt;/ol>
+&lt;h3 id="formula">Formula&lt;/h3>
+&lt;p>&lt;mark>RSI = 100 - (100 / (1 + RS))&lt;/mark>&lt;/p>
+&lt;p>Where:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>RS&lt;/strong>: (Relative Strength) = Average Gain / Average Loss&lt;/li>
+&lt;/ul>
+&lt;h2 id="pros-and-cons">Pros and Cons&lt;/h2>
+&lt;p>&lt;strong>Pros:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>RSI is a versatile indicator that can be used in trending or ranging markets.&lt;/li>
+&lt;li>It helps identify potential reversals, overbought/oversold conditions, and divergence.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Cons:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>During strong trends, the RSI may remain overbought or oversold for extended periods.&lt;/li>
+&lt;li>False signals can occur, especially during choppy market conditions.&lt;/li>
+&lt;/ul>
+&lt;h2 id="example-of-signals">Example of signals&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Minute&lt;/th>
+&lt;th>Open&lt;/th>
+&lt;th>High&lt;/th>
+&lt;th>Low&lt;/th>
+&lt;th>Close&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>$10.0&lt;/td>
+&lt;td>$11.0&lt;/td>
+&lt;td>$9.5&lt;/td>
+&lt;td>$10.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>$10.1&lt;/td>
+&lt;td>$12.1&lt;/td>
+&lt;td>$10.0&lt;/td>
+&lt;td>$12.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>$12.2&lt;/td>
+&lt;td>$15.2&lt;/td>
+&lt;td>$12.0&lt;/td>
+&lt;td>$15.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4&lt;/td>
+&lt;td>$15.1&lt;/td>
+&lt;td>$15.1&lt;/td>
+&lt;td>$13.9&lt;/td>
+&lt;td>$14.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td>$14.1&lt;/td>
+&lt;td>$16.1&lt;/td>
+&lt;td>$14.0&lt;/td>
+&lt;td>$16.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>6&lt;/td>
+&lt;td>$16.1&lt;/td>
+&lt;td>$16.1&lt;/td>
+&lt;td>$14.9&lt;/td>
+&lt;td>$15.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>7&lt;/td>
+&lt;td>$15.1&lt;/td>
+&lt;td>$17.1&lt;/td>
+&lt;td>$15.0&lt;/td>
+&lt;td>$17.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>8&lt;/td>
+&lt;td>$17.1&lt;/td>
+&lt;td>$17.1&lt;/td>
+&lt;td>$15.9&lt;/td>
+&lt;td>$16.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>9&lt;/td>
+&lt;td>$16.1&lt;/td>
+&lt;td>$18.1&lt;/td>
+&lt;td>$16.0&lt;/td>
+&lt;td>$18.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>10&lt;/td>
+&lt;td>$18.1&lt;/td>
+&lt;td>$18.1&lt;/td>
+&lt;td>$16.9&lt;/td>
+&lt;td>$17.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>11&lt;/td>
+&lt;td>$17.1&lt;/td>
+&lt;td>$19.1&lt;/td>
+&lt;td>$17.0&lt;/td>
+&lt;td>$19.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>12&lt;/td>
+&lt;td>$19.1&lt;/td>
+&lt;td>$19.1&lt;/td>
+&lt;td>$17.9&lt;/td>
+&lt;td>$18.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>13&lt;/td>
+&lt;td>$18.1&lt;/td>
+&lt;td>$20.1&lt;/td>
+&lt;td>$18.0&lt;/td>
+&lt;td>$20.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>14&lt;/td>
+&lt;td>$20.1&lt;/td>
+&lt;td>$21.1&lt;/td>
+&lt;td>$20.0&lt;/td>
+&lt;td>$21.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>15&lt;/td>
+&lt;td>$21.1&lt;/td>
+&lt;td>$21.1&lt;/td>
+&lt;td>$19.9&lt;/td>
+&lt;td>$20.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>16&lt;/td>
+&lt;td>$20.1&lt;/td>
+&lt;td>$22.1&lt;/td>
+&lt;td>$20.0&lt;/td>
+&lt;td>$21.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>17&lt;/td>
+&lt;td>$21.1&lt;/td>
+&lt;td>$23.1&lt;/td>
+&lt;td>$21.0&lt;/td>
+&lt;td>$22.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>18&lt;/td>
+&lt;td>$22.1&lt;/td>
+&lt;td>$24.1&lt;/td>
+&lt;td>$22.0&lt;/td>
+&lt;td>$23.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>19&lt;/td>
+&lt;td>$23.1&lt;/td>
+&lt;td>$25.1&lt;/td>
+&lt;td>$23.0&lt;/td>
+&lt;td>$24.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>20&lt;/td>
+&lt;td>$24.1&lt;/td>
+&lt;td>$26.1&lt;/td>
+&lt;td>$24.0&lt;/td>
+&lt;td>$25.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>21&lt;/td>
+&lt;td>$25.1&lt;/td>
+&lt;td>$27.1&lt;/td>
+&lt;td>$25.0&lt;/td>
+&lt;td>$26.0&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>For the following examples, let&amp;rsquo;s assume the RSI settings are set to the standard &lt;strong>14 periods&lt;/strong>.&lt;/p>
+&lt;p>&lt;strong>True Positive:&lt;/strong>&lt;/p>
+&lt;p>In the 6th minute, the price drops from $16 to $15. The RSI dips below the 30 level, indicating an oversold condition. In the next minute, the price increases to $17, marking a successful buy signal.&lt;/p>
+&lt;p>&lt;strong>False Positive:&lt;/strong>&lt;/p>
+&lt;p>In the 21th minute, the price jumps from $25 to $26. The RSI exceeds 70, implying an overbought condition. However, the price continues to increase in the next minutes, rendering this a false sell signal.&lt;/p>
+&lt;h2 id="use-in-real-trading">Use in Real Trading&lt;/h2>
+&lt;p>In real trading, RSI is often used in conjunction with other indicators to increase the robustness of the signals.&lt;/p>
+&lt;p>For instance, traders might look for price action patterns (like support/resistance breaks) or confirmations from other indicators before acting on an RSI signal.&lt;/p>
+&lt;h2 id="python-implementation">Python Implementation&lt;/h2>
+&lt;p>
+&lt;a href="https://romankurnovskii.com//jupyter/rsi.html"
+>Click here to view this notebook in full screen&lt;/a
+>
+&lt;/p>
+&lt;iframe
+src="https://romankurnovskii.com//jupyter/rsi.html"
+style="height:1400px;width:100%;border:none;overflow:hidden;"
+scrolling="no"
+>&lt;/iframe></description></item></channel></rss>

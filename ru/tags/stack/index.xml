@@ -1,19 +1,231 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Stack on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/stack/</link><description>Recent content in Stack on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Thu, 24 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/stack/index.xml" rel="self" type="application/rss+xml"/><item><title>20. Valid Parentheses</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/20/</link><pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/20/</guid><description>LeetCode problem
-Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
-An input string is valid if:
-Open brackets must be closed by the same type of brackets. Open brackets must be closed in the correct order. Every close bracket has a corresponding open bracket of the same type. Example 1:
-Input: s = &amp;quot;()[]{}&amp;quot; Output: true Example 2:
-Input: s = &amp;quot;()[]{}&amp;quot; Output: true First accepted Idea:</description></item><item><title>94. Binary Tree Inorder Traversal</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/94/</link><pubDate>Mon, 31 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/94/</guid><description>LeetCode problem
-Given the root of a binary tree, return the inorder traversal of its nodes' values.
-Example 1:
-Input: root = [1,null,2,3] Output: [1,3,2] Example 2:
-Input: root = [] Output: [] Example 3:
-Input: root = [1] Output: [1] Thoughts Don&amp;rsquo;t understand what needed. Why:
-1-null-2-3 becomes 1-3-2 [1,2,5,7,8,9,10] becomes [7,2,8,1,9,5,10] In 1-null-2-3 1 becomes the first because we loop to its left node which is null, then come back and first value here is 1.</description></item><item><title>394. Decode String</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/394/</link><pubDate>Thu, 10 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/394/</guid><description>LeetCode задача 394
-Задача На вход подается закодированная строка, необходимо вернуть её декодированное представление.
-Правило кодирования таково: k[encoded_string], где encoded_string - строка внутри квадратных скобок, повторяется ровно k раз. k - это всегда положительное целое число.
-Подсказки Для решения этой задачи можно использовать стек, т.к. число[строка] могут быть вложенными.
-Подход Всё, что нам нужно, это итерировать строку символ за символом и обрабатывать четыре случая: числа, буквы и скобки. Мы будем использовать один стек для хранения пар вида (префикс строки, число).</description></item><item><title>735. Asteroid Collision</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/735/</link><pubDate>Thu, 24 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/735/</guid><description>LeetCode задача 735
-Задача Мы имеем массив asteroids целых чисел, представляющих астероиды в ряду. Для каждого астероида абсолютное значение представляет его размер, а знак представляет его направление (положительное означает вправо, отрицательное влево). Все астероиды движутся с одинаковой скоростью. Необходимо определить состояние астероидов после всех столкновений.
-Подсказки Для решения задачи можно использовать стек.
-Подход Мы будем использовать стек для отслеживания движущихся вправо астероидов. Когда мы видим астероид, движущийся влево, мы проверяем, будет ли он сталкиваться с верхним элементом стека (астероидом, движущимся вправо).</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Stack on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/stack/</link><description>Recent content in Stack on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 24 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/stack/index.xml" rel="self" type="application/rss+xml"/><item><title>20. Valid Parentheses</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/20/</link><pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/20/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/valid-parentheses/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given a string s containing just the characters &lt;code>'('&lt;/code>, &lt;code>')'&lt;/code>, &lt;code>'{'&lt;/code>, &lt;code>'}'&lt;/code>, &lt;code>'['&lt;/code> and &lt;code>']'&lt;/code>, determine if the input string is valid.&lt;/p>
+&lt;p>An input string is valid if:&lt;/p>
+&lt;ol>
+&lt;li>Open brackets must be closed by the same type of brackets.&lt;/li>
+&lt;li>Open brackets must be closed in the correct order.&lt;/li>
+&lt;li>Every close bracket has a corresponding open bracket of the same type.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: s = &amp;quot;()[]{}&amp;quot;
+Output: true
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: s = &amp;quot;()[]{}&amp;quot;
+Output: true
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Loop through string&lt;/li>
+&lt;li>If &lt;em>current&lt;/em> &amp;ldquo;closes&amp;rdquo; the last in stack, then remove last from stack&lt;/li>
+&lt;li>Else: add current to stack&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">isValid&lt;/span>(self, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">bool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> par_dict &lt;span style="color:#666">=&lt;/span> {&lt;span style="color:#4070a0">&amp;#39;(&amp;#39;&lt;/span>: &lt;span style="color:#4070a0">&amp;#39;)&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;{&amp;#39;&lt;/span>: &lt;span style="color:#4070a0">&amp;#39;}&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;[&amp;#39;&lt;/span>: &lt;span style="color:#4070a0">&amp;#39;]&amp;#39;&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> last_value &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> s:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> second_value &lt;span style="color:#666">=&lt;/span> par_dict&lt;span style="color:#666">.&lt;/span>get(last_value, &lt;span style="color:#007020;font-weight:bold">None&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> i &lt;span style="color:#666">==&lt;/span> second_value:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack&lt;span style="color:#666">.&lt;/span>pop()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> last_value &lt;span style="color:#666">=&lt;/span> stack[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#007020;font-weight:bold">if&lt;/span> stack &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack&lt;span style="color:#666">.&lt;/span>append(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> last_value &lt;span style="color:#666">=&lt;/span> i
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> stack
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="better-solution">Better solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">isValid&lt;/span>(self, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">bool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> par_dict &lt;span style="color:#666">=&lt;/span> {&lt;span style="color:#4070a0">&amp;#39;(&amp;#39;&lt;/span>: &lt;span style="color:#4070a0">&amp;#39;)&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;{&amp;#39;&lt;/span>: &lt;span style="color:#4070a0">&amp;#39;}&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;[&amp;#39;&lt;/span>: &lt;span style="color:#4070a0">&amp;#39;]&amp;#39;&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> char &lt;span style="color:#007020;font-weight:bold">in&lt;/span> s:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> char &lt;span style="color:#007020;font-weight:bold">in&lt;/span> par_dict: &lt;span style="color:#60a0b0;font-style:italic"># If it&amp;#39;s an opening bracket, add it to the stack&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack&lt;span style="color:#666">.&lt;/span>append(char)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> stack: &lt;span style="color:#60a0b0;font-style:italic"># If there&amp;#39;s something in the stack&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> char &lt;span style="color:#666">==&lt;/span> par_dict[stack[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># If it&amp;#39;s a closing bracket for the last opened bracket, remove it from the stack.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack&lt;span style="color:#666">.&lt;/span>pop()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic"># It&amp;#39;s not a closing bracket for the last opened bracket. Invalid string.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic"># Not an opening bracket or closing bracket. Invalid string.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> stack &lt;span style="color:#666">==&lt;/span> []
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>94. Binary Tree Inorder Traversal</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/94/</link><pubDate>Mon, 31 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/94/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/binary-tree-inorder-traversal/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given the &lt;code>root&lt;/code> of a binary tree, return the &lt;code>inorder traversal of its nodes' values&lt;/code>.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.leetcode.com/uploads/2020/09/15/inorder_1.jpg"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;pre>&lt;code>Input: root = [1,null,2,3]
+Output: [1,3,2]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: root = []
+Output: []
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 3:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: root = [1]
+Output: [1]
+&lt;/code>&lt;/pre>
+&lt;h2 id="thoughts">Thoughts&lt;/h2>
+&lt;p>Don&amp;rsquo;t understand what needed. Why:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>1-null-2-3&lt;/code> becomes &lt;code>1-3-2&lt;/code>&lt;/li>
+&lt;li>&lt;code>[1,2,5,7,8,9,10]&lt;/code> becomes &lt;code>[7,2,8,1,9,5,10]&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>In &lt;code>1-null-2-3&lt;/code> &lt;code>1&lt;/code> becomes the first because we loop to its left node which is &lt;code>null&lt;/code>, then come back and first value here is &lt;code>1&lt;/code>.&lt;/p>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Definition for a binary tree node.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># class TreeNode:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># def __init__(self, val=0, left=None, right=None):&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.val = val&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.left = left&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.right = right&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">inorderTraversal&lt;/span>(self, root: Optional[TreeNode]) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[&lt;span style="color:#007020">int&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># add all left, then add right&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">get_child&lt;/span>(head):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> head:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> get_child(head&lt;span style="color:#666">.&lt;/span>left)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result&lt;span style="color:#666">.&lt;/span>append(head&lt;span style="color:#666">.&lt;/span>val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> get_child(head&lt;span style="color:#666">.&lt;/span>right)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> get_child(root)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> result
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="better-solution">Better solution&lt;/h2>
+&lt;p>Morris Traversal&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://leetcode.com/problems/binary-tree-inorder-traversal/solution/">LeetCode explanation&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>394. Decode String</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/394/</link><pubDate>Thu, 10 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/394/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/decode-string/">LeetCode задача 394&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>На вход подается закодированная строка, необходимо вернуть её декодированное представление.&lt;/p>
+&lt;p>Правило кодирования таково: &lt;code>k[encoded_string]&lt;/code>, где &lt;code>encoded_string&lt;/code> - строка внутри квадратных скобок, повторяется ровно &lt;code>k&lt;/code> раз. &lt;code>k&lt;/code> - это всегда положительное целое число.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Для решения этой задачи можно использовать стек, т.к. &lt;code>число[строка]&lt;/code> могут быть вложенными.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Всё, что нам нужно, это итерировать строку символ за символом и обрабатывать &lt;mark>четыре случая: числа, буквы и скобки&lt;/mark>. Мы будем использовать один стек для хранения пар вида (префикс строки, число).&lt;/p>
+&lt;p>Т.к. число и строка могут быть внутри другой строки (&lt;code>3[a2[c]] = 3 * (a + 2 * c)&lt;/code>). То используя стек, в котором можем хранить текущую строку до тех пор пока не увидим закрывающуюся скобку для этой строки.&lt;/p>
+&lt;p>Например:&lt;/p>
+&lt;ol>
+&lt;li>Число 3&lt;/li>
+&lt;li>Открывается скобка. Мы еще не знаем какая будет строка далее, но открывающаяся &lt;code>[&lt;/code> скобка сообщает, что мы уже точно знаем строку(или ее префикс), которая была &lt;strong>до&lt;/strong> это скобки.
+&lt;ol>
+&lt;li>
+&lt;p>В данном случае при первой скобке строка до нее пустая.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>А при первой скобке после 2, строка равна &lt;code>a&lt;/code>. Вот эту строку мы и будем складывать с той строкой, которая будет перед следующей открывающейся скобкой.&lt;/p>
+&lt;ol>
+&lt;li>В таком случае получится начало &lt;code>'' + 3 * ('a' + 2 * ... )&lt;/code>&lt;/li>
+&lt;li>B стек будет следующего вида:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">[&lt;/span>&lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>, 3&lt;span style="color:#666">]&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">[&lt;/span>&lt;span style="color:#4070a0">&amp;#39;a&amp;#39;&lt;/span>, 2&lt;span style="color:#666">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;li>Когда доходим до следующей строки и видим скобку закрытия &amp;lsquo;]&amp;rsquo;, то берем последние данные из стека и складываем предыдущую строку с умноженной текущей строкой.
+&lt;ol>
+&lt;li>&lt;code>a + 2*c = acc&lt;/code>&lt;/li>
+&lt;li>&lt;code>'' * 3 * acc&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Инициализируем пустой стек и две переменные для текущей строки и текущего числа.&lt;/li>
+&lt;li>Итерируемся по каждому символу в входной строке.
+&lt;ol>
+&lt;li>Если символ является числом, определяем всё число (возможно, из нескольких цифр).&lt;/li>
+&lt;li>Если символ открывающая скобка, добавляем пару (текущая строка, текущее число) в стек и сбрасываем переменные.&lt;/li>
+&lt;li>Если символ закрывающая скобка, вытаскиваем последнюю пару из стека, и обновляем текущую строку.&lt;/li>
+&lt;li>Если символ является буквой, добавляем его к текущей строке.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">decodeString&lt;/span>(s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">str&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack &lt;span style="color:#666">=&lt;/span> [] &lt;span style="color:#60a0b0;font-style:italic"># стек для пар (строка, число)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr_str &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># текущая декодированная строка&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr_num &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># текущее число&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> char &lt;span style="color:#007020;font-weight:bold">in&lt;/span> s:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> char&lt;span style="color:#666">.&lt;/span>isdigit():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr_num &lt;span style="color:#666">+=&lt;/span> char
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> char &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#4070a0">&amp;#34;[&amp;#34;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># сохраним, что есть на текущий момент&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack&lt;span style="color:#666">.&lt;/span>append((curr_str, &lt;span style="color:#007020">int&lt;/span>(curr_num)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr_str &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr_num &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> char &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#4070a0">&amp;#34;]&amp;#34;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev_str, num &lt;span style="color:#666">=&lt;/span> stack&lt;span style="color:#666">.&lt;/span>pop()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr_str &lt;span style="color:#666">=&lt;/span> prev_str &lt;span style="color:#666">+&lt;/span> num &lt;span style="color:#666">*&lt;/span> curr_str
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr_str &lt;span style="color:#666">+=&lt;/span> char
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> curr_str
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;video width="100%" controls>
+&lt;source src="../../assets/394.ru.mp4" type="video/mp4">
+Your browser does not support the video tag.
+&lt;/video>
+&lt;figcaption>LeetCode 394 Решение&lt;/figcaption></description></item><item><title>735. Asteroid Collision</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/735/</link><pubDate>Thu, 24 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/735/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/asteroid-collision/">LeetCode задача 735&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Мы имеем массив asteroids целых чисел, представляющих астероиды в ряду. Для каждого астероида абсолютное значение представляет его размер, а знак представляет его направление (положительное означает вправо, отрицательное влево). Все астероиды движутся с одинаковой скоростью. Необходимо определить состояние астероидов после всех столкновений.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Для решения задачи можно использовать стек.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Мы будем использовать стек для отслеживания движущихся вправо астероидов. Когда мы видим астероид, движущийся влево, мы проверяем, будет ли он сталкиваться с верхним элементом стека (астероидом, движущимся вправо).&lt;/p>
+&lt;p>Если сталкивается, то мы сравниваем их абсолютные значения и уничтожаем меньший астероид или оба, если их размеры равны. Это продолжается до тех пор, пока верхний элемент стека не будет больше текущего астероида или стек не опустеет.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Инициализируем пустой стек.&lt;/li>
+&lt;li>Проходимся по каждому астероиду:
+&lt;ol>
+&lt;li>Если астероид движется вправо, просто добавляем его в стек.&lt;/li>
+&lt;li>Если астероид движется влево:
+&lt;ol>
+&lt;li>Сравниваем его с верхним элементом стека.&lt;/li>
+&lt;li>Если верхний элемент меньше по абсолютному значению, удаляем его из стека.&lt;/li>
+&lt;li>Если верхний элемент равен текущему астероиду по абсолютному значению, удаляем оба.&lt;/li>
+&lt;li>Если верхний элемент больше текущего астероида по абсолютному значению, переходим к следующему астероиду&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Возвращаем стек в качестве результата.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">asteroidCollision&lt;/span>(asteroids):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> asteroid &lt;span style="color:#007020;font-weight:bold">in&lt;/span> asteroids:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Если астероид движется вправо&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> asteroid &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack&lt;span style="color:#666">.&lt;/span>append(asteroid)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Пока в стеке есть астероиды, движущиеся вправо, и они меньше текущего астероида по абсолютному значению&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> stack &lt;span style="color:#007020;font-weight:bold">and&lt;/span> stack[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> stack[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#666">-&lt;/span>asteroid:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack&lt;span style="color:#666">.&lt;/span>pop()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Если стек пуст или верхний элемент стека движется влево&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> stack &lt;span style="color:#007020;font-weight:bold">or&lt;/span> stack[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack&lt;span style="color:#666">.&lt;/span>append(asteroid)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Если верхний элемент стека равен текущему астероиду по абсолютному значению&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> stack[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#666">-&lt;/span>asteroid:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack&lt;span style="color:#666">.&lt;/span>pop()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> stack
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

@@ -1,13 +1,691 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>S3 on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/s3/</link><description>Recent content in S3 on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sun, 11 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/s3/index.xml" rel="self" type="application/rss+xml"/><item><title>Create S3 Bucket</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/create-s3-bucket/</link><pubDate>Sun, 11 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/create-s3-bucket/</guid><description>Creating an Amazon S3 Bucket Introduction You can create an Amazon S3 bucket using the AWS Management Console. As with many other AWS services, you can use the AWS API or CLI (command-line interface) as well.
-In this lab step, you will create a new Amazon S3 bucket.
-Instructions In the AWS Management Console search bar, enter S3, and click the S3 result under Services: You will be placed in the S3 console.
-From the S3 console, click the orange Create Bucket button: Enter a unique Bucket name on the Name and region screen of the wizard: Region: US West (Oregon) (This should be set for you.</description></item><item><title>Create a folder inside S3 Bucket</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/create-folder-s3/</link><pubDate>Sun, 11 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/create-folder-s3/</guid><description>Creating a Folder inside an Amazon S3 Bucket Introduction The AWS S3 console allows you to create folders for grouping objects. This can be a very helpful organizational tool. However, in Amazon S3, buckets and objects are the primary resources. A folder simply becomes a prefix for object key names that are virtually archived into it.
-Instructions Return to the Buckets menu by clicking here, and click on the calabs-bucket you created earlier. (Reminder: Your bucket name will differ slightly.</description></item><item><title>Upload a file to S3</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/upload-file-to-s3/</link><pubDate>Sun, 11 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/upload-file-to-s3/</guid><description>Uploading a File to Amazon S3 Introduction When you upload a folder from your local system or another machine, Amazon S3 uploads all the files and subfolders from the specified local folder to your bucket. It then assigns a key value that is a combination of the uploaded file name and the folder name. In this lab step, you will upload a file to your bucket. The process is similar to uploading a single file, multiple files, or a folder with files in it.</description></item><item><title>Grant public access to S3 Object</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/grant-access-s3/</link><pubDate>Sun, 11 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/grant-access-s3/</guid><description>Granting Public Access to an Amazon S3 Object Introduction All uploaded files are private by default and can only be viewed, edited, or downloaded by you. In order to illustrate this point, complete the instructions below.
-Note: The terms &amp;ldquo;file&amp;rdquo; and &amp;ldquo;object&amp;rdquo; are often used interchangeably when discussing Amazon S3. Technically, Amazon S3 is an object-store. It is not a block storage device and does not contain a file system as your local computer does. However, files such as images, movies, and sound clips are often uploaded from your file system to Amazon S3.</description></item><item><title>Change metadata of S3 Object</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/how-to-change-metadata-s3/</link><pubDate>Sun, 11 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/how-to-change-metadata-s3/</guid><description>Changing the Metadata of an Amazon S3 Object Introduction Each object in Amazon S3 has a set of key/value pairs representing its metadata. There are two types of metadata: &amp;ldquo;System metadata&amp;rdquo; (for example, Content-Type and Content-Length) and custom &amp;ldquo;User metadata&amp;rdquo;. User metadata is stored with the object and returned with it.
-As an example, you might have your own taxonomy for various images, such as “logo”, “screenshot”, “diagram”, &amp;ldquo;flowchart&amp;rdquo; and so on. In this lab step, you will change the Content-Type of your image to &amp;ldquo;text/plain&amp;rdquo;.</description></item><item><title>Delete S3 Bucket</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/delete-from-s3/</link><pubDate>Sun, 11 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/delete-from-s3/</guid><description>Deleting an Amazon S3 Bucket Introduction You can delete an Amazon S3 bucket using the S3 console. You will delete all objects within the bucket as well.
-Instructions In the AWS Management Console search bar, enter S3, and click the S3 result under Services: From the top level of the S3 console, notice the Delete button is not actionable.
-2. Check the name of your bucket to select it:
-With the bucket selected, click Empty: The Empty bucket form page will load.</description></item><item><title>S3</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/</link><pubDate>Sun, 11 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/</guid><description>About Amazon S3 (Simple Storage Service) provides object storage through a web service interface.
-Amazon S3 Amazon S3 User Guide Price Pay only for what you use. There is no minimum charge.
-Price
-S3 | EFS | EBS Amazon S3 is an object storage designed for storing large numbers of user files and backups. Good for storing backups and other static data Can be publicly accessible Web interface Object Storage Scalable Slower than EBS and EFS Amazon EBS (Amazon Elastic Block Store) is block storage for Amazon EC2 compute instances - it is similar to hard drives attached to your computers or laptops, but in a virtualized environment.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>S3 on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/s3/</link><description>Recent content in S3 on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sun, 11 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/s3/index.xml" rel="self" type="application/rss+xml"/><item><title>Create S3 Bucket</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/create-s3-bucket/</link><pubDate>Sun, 11 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/create-s3-bucket/</guid><description>&lt;h2 id="creating-an-amazon-s3-bucket">Creating an Amazon S3 Bucket&lt;/h2>
+&lt;h3 id="introduction">Introduction&lt;/h3>
+&lt;p>You can create an Amazon S3 bucket using the AWS Management Console. As with many other AWS services, you can use the AWS API or CLI (command-line interface) as well.&lt;/p>
+&lt;p>In this lab step, you will create a new Amazon S3 bucket.&lt;/p>
+&lt;h3 id="instructions">Instructions&lt;/h3>
+&lt;ol>
+&lt;li>In the AWS Management Console search bar, enter &lt;em>S3&lt;/em>, and click the &lt;strong>S3&lt;/strong> result under &lt;strong>Services&lt;/strong>:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/01.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You will be placed in the S3 console.&lt;/p>
+&lt;ol start="2">
+&lt;li>From the S3 console, click the orange &lt;strong>Create Bucket&lt;/strong> button:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/buckets.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol>
+&lt;li>Enter a unique &lt;strong>Bucket name&lt;/strong> on the &lt;strong>Name and region&lt;/strong> screen of the wizard:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/blobid0-49c0e67d-62ee-4e8c-8585-239193b5f81e.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Region&lt;/strong>: US West (Oregon) (This should be set for you. If not, please select this region.)&lt;/li>
+&lt;/ul>
+&lt;p>**&lt;em>Important!&lt;/em>**Bucket names must be globally unique, regardless of the AWS region in which you create the bucket. Buckets must also be DNS-compliant.&lt;/p>
+&lt;p>The rules for DNS-compliant bucket names are:&lt;/p>
+&lt;ul>
+&lt;li>Bucket names must be at least 3 and no more than 63 characters long.&lt;/li>
+&lt;li>Bucket names can contain lowercase letters, numbers, periods, and/or hyphens. Each label must start and end with a lowercase letter or a number.&lt;/li>
+&lt;li>Bucket names must not be formatted as an IP address (for example, 192.168.1.1).&lt;/li>
+&lt;/ul>
+&lt;p>The following examples are valid bucket names: calabs-bucket-1, cloudacademybucket , cloudacademy.bucket , calabs.1 or ca-labs-bucket.&lt;/p>
+&lt;p>&lt;em>Troubleshooting Tip&lt;/em>: If you receive an error because your bucket name is not unique, append a unique number to the bucket name in order to guarantee its uniqueness:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/image-e4e4ddd3-cb2d-45a3-8fc1-02d7cea49ecf.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>For example, change &amp;ldquo;calabs-bucket&amp;rdquo; to &amp;ldquo;calabs-bucket-1&amp;rdquo; (or a unique number/character string) and try again.&lt;/p>
+&lt;ol start="4">
+&lt;li>Leave the &lt;strong>Block public access (bucket settings)&lt;/strong> at the default values:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/blobid0-76f03294-d671-4266-a497-e310bfc8c8fc.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>No changes are needed. This is where you can set public access permissions.&lt;/p>
+&lt;p>5. Click on &lt;strong>Create bucket:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/image-20220228115141-2-3bac12a1-3fb8-4b27-8e75-b6a2ea93b730.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>A page with a table listing buckets will load and you will see a green notification that your bucket was created successfully.&lt;/p>
+&lt;ol start="6">
+&lt;li>In the &lt;strong>Buckets&lt;/strong> table, click the name of your bucket in the &lt;strong>Name&lt;/strong> column:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/image-20220228115536-3-5843c7d0-1088-4ba1-bf8d-2663810ca62b.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>A page will load with a row of tabs at the top.&lt;/p>
+&lt;ol start="7">
+&lt;li>To see details and options for your bucket, click on the &lt;strong>Properties&lt;/strong>:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/image-20220228115611-4-de3d80bb-7e11-4003-bfd0-a59d3f95f76b.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>This page allows you to configure your Amazon S3 bucket in many different ways. No changes are needed in this lab at this time.&lt;/p>
+&lt;p>Feel free to look at the other tabs and see the configuration options that are available.&lt;/p></description></item><item><title>Create a folder inside S3 Bucket</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/create-folder-s3/</link><pubDate>Sun, 11 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/create-folder-s3/</guid><description>&lt;h2 id="creating-a-folder-inside-an-amazon-s3-bucket">Creating a Folder inside an Amazon S3 Bucket&lt;/h2>
+&lt;h3 id="introduction">Introduction&lt;/h3>
+&lt;p>The AWS S3 console allows you to create folders for grouping objects. This can be a very helpful organizational tool. However, in Amazon S3, buckets and objects are the primary resources. A folder simply becomes a prefix for object key names that are virtually archived into it.&lt;/p>
+&lt;h3 id="instructions">Instructions&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>Return to the &lt;strong>Buckets&lt;/strong> menu by &lt;a href="https://s3.console.aws.amazon.com/s3/home?region=us-west-2">clicking here&lt;/a>, and click on the &lt;code>calabs-bucket&lt;/code> you created earlier. (&lt;em>Reminder&lt;/em>: Your bucket name will differ slightly.)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Create folder&lt;/strong>:&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/s3-create-folder-01.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>In the &lt;strong>Folder name&lt;/strong> textbox, enter &lt;em>cloudfolder&lt;/em>:&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Scroll to the bottom and click &lt;strong>Create folder&lt;/strong>:&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>The folder is created inside your S3 bucket:&lt;/p></description></item><item><title>Upload a file to S3</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/upload-file-to-s3/</link><pubDate>Sun, 11 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/upload-file-to-s3/</guid><description>&lt;h2 id="uploading-a-file-to-amazon-s3">Uploading a File to Amazon S3&lt;/h2>
+&lt;h3 id="introduction">Introduction&lt;/h3>
+&lt;p>When you upload a folder from your local system or another machine, Amazon S3 uploads all the files and subfolders from the specified local folder to your bucket. It then assigns a key value that is a combination of the uploaded file name and the folder name. In this lab step, you will upload a file to your bucket. The process is similar to uploading a single file, multiple files, or a folder with files in it.&lt;/p>
+&lt;p>In order to complete this lab step, you have to upload the cloudacademy-logo.png file from your local file storage into an S3 folder you created earlier.&lt;/p>
+&lt;p>Download the Cloud Academy logo from the following location: &lt;a href="https://s3-us-west-2.amazonaws.com/clouda-labs/scripts/s3/cloudacademy-logo.png">https://s3-us-west-2.amazonaws.com/clouda-labs/scripts/s3/cloudacademy-logo.png&lt;/a> (If the image is not downloaded for you, simply right-click the image and select &lt;strong>Save image as&lt;/strong> to download it to your local file system.)&lt;/p>
+&lt;h3 id="instructions">Instructions&lt;/h3>
+&lt;ol>
+&lt;li>Click on the &lt;strong>cloudfolder&lt;/strong> folder. You are placed within the empty folder in your S3 bucket:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;em>Note&lt;/em>: Click the folder name itself, not the checkbox for the folder name. If you select the folder checkbox then upload a file, it will be placed above the folder (not inside it).&lt;/p>
+&lt;ol start="2">
+&lt;li>
+&lt;p>Click the &lt;strong>Upload&lt;/strong> button.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Add Files:&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>A file picker will appear.&lt;/p>
+&lt;ol start="4">
+&lt;li>Browse to and select the local copy of &lt;em>cloudacademy-logo.png&lt;/em> file that you downloaded earlier:&lt;/li>
+&lt;/ol>
+&lt;p>The logo is added to the list of files that are ready to upload. You have several options at this point:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Add more files&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Upload&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>However, there is another method that some users prefer to add files for upload.&lt;/p>
+&lt;ol start="4">
+&lt;li>
+&lt;p>Check the file and click on &lt;strong>Remove:&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>This time, rather than browsing to a file, drag and drop the logo file onto the wizard. The wizard adds it to the list of files to upload.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Scroll to the bottom of the page and click &lt;strong>Upload&lt;/strong> to upload the file:&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>You will see a blue notification that the file is uploading and then a green notification that the upload has been completed successfully.&lt;/p>
+&lt;p>The file is placed in the folder in your bucket:&lt;/p></description></item><item><title>Grant public access to S3 Object</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/grant-access-s3/</link><pubDate>Sun, 11 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/grant-access-s3/</guid><description>&lt;h2 id="granting-public-access-to-an-amazon-s3-object">Granting Public Access to an Amazon S3 Object&lt;/h2>
+&lt;h3 id="introduction">Introduction&lt;/h3>
+&lt;p>All uploaded files are private by default and can only be viewed, edited, or downloaded by you. In order to illustrate this point, complete the instructions below.&lt;/p>
+&lt;p>&lt;em>Note&lt;/em>: The terms &amp;ldquo;file&amp;rdquo; and &amp;ldquo;object&amp;rdquo; are often used interchangeably when discussing Amazon S3. Technically, Amazon S3 is an object-store. It is not a block storage device and does not contain a file system as your local computer does. However, files such as images, movies, and sound clips are often uploaded from your file system to Amazon S3.&lt;/p>
+&lt;h3 id="instructions">Instructions&lt;/h3>
+&lt;p>1. Click on the object you just uploaded to the S3 bucket.&lt;/p>
+&lt;p>Take a look at the &lt;strong>Object overview&lt;/strong> section:&lt;/p>
+&lt;ol start="2">
+&lt;li>Under &lt;strong>Object URL&lt;/strong>, right-click the link and open the URL in a new browser tab:&lt;/li>
+&lt;/ol>
+&lt;p> You will see an XML (eXtensible Markup Language) response telling you that access is denied for this object:&lt;/p>
+&lt;p>&lt;em>Note&lt;/em>: The response may appear differently depending upon your web browser.&lt;/p>
+&lt;p>Leave the browser tab open. You will return to it shortly.&lt;/p>
+&lt;p>To allow public access to objects, you need to disable the default safety guards that prevent them from being made publicly accessible.&lt;/p>
+&lt;ol start="3">
+&lt;li>
+&lt;p>To return to the bucket view, at the top of the page, click the name of your bucket in the bread crumb trail:&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click the &lt;strong>Permissions&lt;/strong> tab and click &lt;strong>Edit&lt;/strong> in the &lt;strong>Block public access&lt;/strong> section:&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Uncheck all of the options to allow all kinds of public access:&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>You should carefully consider anytime you allow public access to S3 buckets. AWS has implemented these security features to help prevent data breaches. For this lab, there is no sensitive data and you do want to allow public access.&lt;/p>
+&lt;p>Poorly managed Amazon S3 permissions have been a contributing factor to many unauthorized data access events. AWS is making sure you understand the implications of allowing public access to an Amazon S3 bucket.&lt;/p>
+&lt;ol start="6">
+&lt;li>At the bottom of the page, click &lt;strong>Save changes&lt;/strong>:&lt;/li>
+&lt;/ol>
+&lt;p>A confirmation dialog box will appear.&lt;/p>
+&lt;ol start="7">
+&lt;li>Enter &lt;em>confirm&lt;/em> in the confirmation dialog box and click &lt;strong>Confirm&lt;/strong>:&lt;/li>
+&lt;/ol>
+&lt;p>You will see a green notification that the public access settings have been edited.&lt;/p>
+&lt;p>Turning off &lt;strong>Block all public access&lt;/strong> does not automatically make objects in an Amazon S3 bucket public. There are several ways of of explicitly granting public access including:&lt;/p>
+&lt;ul>
+&lt;li>Bucket policies&lt;/li>
+&lt;li>IAM policies&lt;/li>
+&lt;li>Access control lists&lt;/li>
+&lt;li>Pre-signed URLs&lt;/li>
+&lt;/ul>
+&lt;p>In this lab, you will use a bucket policy to grant public access to your Amazon S3 bucket.&lt;/p>
+&lt;ol start="8">
+&lt;li>Scroll down to the &lt;strong>Bucket policy&lt;/strong> section and click &lt;strong>Edit&lt;/strong>:&lt;/li>
+&lt;/ol>
+&lt;p>The &lt;strong>Edit bucket policy&lt;/strong> page will load. Here you can specify a JSON (JavaScript Object Notation) policy to control access to your Amazon S3 bucket.&lt;/p>
+&lt;ol start="9">
+&lt;li>Replace the contents of the &lt;strong>Policy&lt;/strong> editor with the following:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;#34;Version&amp;#34;: &amp;#34;2012-10-17&amp;#34;,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;#34;Statement&amp;#34;: [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;#34;Action&amp;#34;: [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;#34;s3:GetObject&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;#34;Effect&amp;#34;: &amp;#34;Allow&amp;#34;,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;#34;Resource&amp;#34;: &amp;#34;BUCKET_ARN/*&amp;#34;,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;#34;Principal&amp;#34;: &amp;#34;*&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This is a permissive policy that allows &lt;code>GetObject&lt;/code> access to anyone. More restrictive policies are possible such as&lt;/p>
+&lt;ul>
+&lt;li>Restricting access to specific principals&lt;/li>
+&lt;li>Allow cross AWS account access&lt;/li>
+&lt;li>Using conditions to restrict access to a specific IP address&lt;/li>
+&lt;/ul>
+&lt;p>Notice the Resource is currently &amp;ldquo;BUCKET_ARN/*&amp;quot;,  which is causing an error.  We need to replace this with the ARN of the bucket we created:&lt;/p>
+&lt;ol start="10">
+&lt;li>Click the copy icon under &lt;strong>Bucket ARN&lt;/strong>and replace &lt;code>BUCKET_ARN&lt;/code> in the value of the &lt;code>Resource&lt;/code> key with the ARN you just copied :&lt;/li>
+&lt;/ol>
+&lt;p>&lt;em>Note&lt;/em>: Ensure that you preserve the &lt;code>/*&lt;/code> at the end of the value. This means that the policy will apply to all objects inside the bucket recursively. Public access won&amp;rsquo;t be granted if this is not present.&lt;/p>
+&lt;ol start="12">
+&lt;li>At the bottom of the page, click &lt;strong>Save changes&lt;/strong>:&lt;/li>
+&lt;/ol>
+&lt;p>You will see a green notification that the bucket policy was edited.&lt;/p>
+&lt;ol start="13">
+&lt;li>Return to the browser tab where access was denied and fresh the browser tab.&lt;/li>
+&lt;/ol>
+&lt;p>You will see the response change from “Access Denied” to the logo:&lt;/p></description></item><item><title>Change metadata of S3 Object</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/how-to-change-metadata-s3/</link><pubDate>Sun, 11 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/how-to-change-metadata-s3/</guid><description>&lt;h2 id="changing-the-metadata-of-an-amazon-s3-object">Changing the Metadata of an Amazon S3 Object&lt;/h2>
+&lt;h3 id="introduction">Introduction&lt;/h3>
+&lt;p>Each object in Amazon S3 has a set of key/value pairs representing its metadata. There are two types of metadata: &amp;ldquo;System metadata&amp;rdquo; (for example, Content-Type and Content-Length) and custom &amp;ldquo;User metadata&amp;rdquo;. User metadata is stored with the object and returned with it.&lt;/p>
+&lt;p>As an example, you might have your own taxonomy for various images, such as “logo”, “screenshot”, “diagram”, &amp;ldquo;flowchart&amp;rdquo; and so on. In this lab step, you will change the Content-Type of your image to &amp;ldquo;text/plain&amp;rdquo;. You will also create custom user metadata.&lt;/p>
+&lt;p>&lt;em>Note&lt;/em>: With the new Amazon S3 UI you can set the metadata as part of the upload process, or add it later.&lt;/p>
+&lt;h3 id="instructions">Instructions&lt;/h3>
+&lt;ol>
+&lt;li>Return to the &lt;strong>cloudfolder/&lt;/strong> and delete the &lt;strong>cloudacademy-logo.png&lt;/strong> from your Amazon S3 bucket by checking the checkbox and clicking &lt;strong>Delete&lt;/strong>:&lt;/li>
+&lt;/ol>
+&lt;p>The &lt;strong>Delete objects&lt;/strong> form page will load. Because a deleted object is not retrievable, AWS asks you to confirm that you want to delete the object before deletion.&lt;/p>
+&lt;ol start="2">
+&lt;li>
+&lt;p>In the textbox at the bottom of the page, enter &lt;em>permanently delete&lt;/em> and click &lt;strong>Delete objects&lt;/strong>:&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>To return to the bucket object view, at the top-right, click &lt;strong>Close&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Upload&lt;/strong>, then &lt;strong>Add files&lt;/strong> and browse to the logo file (or drag-and-drop it into the &lt;strong>Upload&lt;/strong> wizard) in order to upload it again.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Near the bottom of the page, expand the &lt;strong>Properties&lt;/strong> section:&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Scroll down to the &lt;strong>Metadata&lt;/strong> section and click &lt;strong>Add metadata&lt;/strong>:&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>A row of form elements will appear.&lt;/p>
+&lt;ol start="7">
+&lt;li>Enter the following:&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>&lt;strong>Type&lt;/strong>: Select &lt;strong>System defined&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Key&lt;/strong>: Select &lt;strong>Content-Type&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Value&lt;/strong>: Enter &lt;em>text/plain&lt;/em>&lt;/li>
+&lt;/ul>
+&lt;p>The drop-down list contains the System metadata that you can set.&lt;/p>
+&lt;p>In this lab, you have set the content type to text/plain as an example to see how to add metadata to an object when uploading to Amazon S3.&lt;/p>
+&lt;p>Next you will add custom user metadata. User metadata must be prefaced with &amp;ldquo;x-amz-meta-&amp;rdquo;. The remaining instructions will add a custom user type for imagetype, and imagestatus.&lt;/p>
+&lt;ol start="8">
+&lt;li>
+&lt;p>Click &lt;strong>Add metadata&lt;/strong> again to add another row.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Enter the following to define custom metadata:&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>&lt;strong>Type&lt;/strong>: Select &lt;strong>User defined&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Key&lt;/strong>: Enter &lt;em>imagetype&lt;/em> after &lt;strong>x-amz-meta&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Value&lt;/strong>: Enter &lt;em>logo&lt;/em>&lt;/li>
+&lt;/ul>
+&lt;p>You have added two metadata key-value pairs to the object you are going to upload. One system metadata and one user-defined.&lt;/p>
+&lt;ol start="10">
+&lt;li>
+&lt;p>At the bottom of the page, click &lt;strong>Upload&lt;/strong>:&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>To exit the upload form, at the top-right, click &lt;strong>Close&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the &lt;strong>Objects&lt;/strong> table click the &lt;strong>cloudacademy-logo.png&lt;/strong> object:&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Scroll down to the &lt;strong>Metadata&lt;/strong> section and observe the key-value pairs you added:&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>This is also where you can add, remove, and edit metadata after you have uploaded objects to Amazon S3.&lt;/p></description></item><item><title>Delete S3 Bucket</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/delete-from-s3/</link><pubDate>Sun, 11 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/delete-from-s3/</guid><description>&lt;h2 id="deleting-an-amazon-s3-bucket">Deleting an Amazon S3 Bucket&lt;/h2>
+&lt;h3 id="introduction">Introduction&lt;/h3>
+&lt;p>You can delete an Amazon S3 bucket using the S3 console. You will delete all objects within the bucket as well.&lt;/p>
+&lt;h3 id="instructions">Instructions&lt;/h3>
+&lt;ol>
+&lt;li>In the AWS Management Console search bar, enter &lt;em>S3&lt;/em>, and click the &lt;strong>S3&lt;/strong> result under &lt;strong>Services&lt;/strong>:&lt;/li>
+&lt;/ol>
+&lt;p>From the top level of the S3 console, notice the &lt;strong>Delete&lt;/strong> button is not actionable.&lt;/p>
+&lt;p>2. Check the name of your bucket to select it:&lt;/p>
+&lt;ol start="3">
+&lt;li>With the bucket selected, click &lt;strong>Empty&lt;/strong>:&lt;/li>
+&lt;/ol>
+&lt;p>The &lt;strong>Empty bucket&lt;/strong> form page will load.&lt;/p>
+&lt;p>It&amp;rsquo;s not possible to delete a bucket that contains objects.&lt;/p>
+&lt;ol start="4">
+&lt;li>
+&lt;p>To confirm that you want to delete all objects in this bucket, in the textbox at the bottom, enter &lt;em>permanently delete&lt;/em> and click &lt;strong>Empty&lt;/strong>:&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>To exit the empty bucket page, at the top-right, click &lt;strong>Exit&lt;/strong>:&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>You will be returned to the &lt;strong>Buckets&lt;/strong> page.&lt;/p>
+&lt;ol start="6">
+&lt;li>
+&lt;p>To delete your bucket, select it in the list, and click &lt;strong>Delete&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>To confirm that you want to delete the bucket, in the textbox, enter the name of your bucket:&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Click &lt;strong>Delete bucket&lt;/strong> to delete the bucket.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>&lt;em>Warning&lt;/em>&lt;/strong>: Make sure to delete all the files/folders inside the bucket before deleting it, otherwise AWS won&amp;rsquo;t allow you to delete the S3 bucket.&lt;/p>
+&lt;p>&lt;strong>&lt;em>Important!&lt;/em>&lt;/strong> Notice the message from AWS: &amp;ldquo;Amazon S3 buckets are unique. If you delete this bucket, you may lose the bucket name to another AWS user.&amp;rdquo;&lt;/p>
+&lt;p>If retaining the bucket name is important to you, consider using the &lt;strong>Empty bucket&lt;/strong> feature and not actually deleting the bucket.&lt;/p></description></item><item><title>S3</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/</link><pubDate>Sun, 11 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>Amazon S3 (Simple Storage Service) provides object storage through a web service interface.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/s3/">Amazon S3&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/s3/?id=docs_gateway">Amazon S3 User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/s3-pdp-redesign/product-page-diagram_Amazon-S3_HIW.cf4c2bd7aa02f1fe77be8aa120393993e08ac86d.png"
+id="zoom-default"
+alt="Amazon S3 Flow"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="price">Price&lt;/h2>
+&lt;p>Pay only for what you use. There is no minimum charge.&lt;/p>
+&lt;p>&lt;a href="https://aws.amazon.com/s3/pricing/">Price&lt;/a>&lt;/p>
+&lt;h2 id="s3--efs--ebs">S3 | EFS | EBS&lt;/h2>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/s3-vs-ebs-vs-efs.jpg"
+id="zoom-default"
+alt="Compare S3 vs EFS vs EBS"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Amazon &lt;strong>S3&lt;/strong> is an object storage designed for storing large numbers of user files and backups. &lt;img align="right" width="100" height="100" src="https://www.mydraw.com/NIMG.axd?i=Shape-Libraries/Cloud/Amazon-Web-Services/AWS-Architecture/Storage/Amazon-Simple--Storage-Service-S3.png">&lt;/p>
+&lt;ul>
+&lt;li>Good for storing backups and other static data&lt;/li>
+&lt;li>Can be publicly accessible&lt;/li>
+&lt;li>Web interface&lt;/li>
+&lt;li>Object Storage&lt;/li>
+&lt;li>Scalable&lt;/li>
+&lt;li>Slower than EBS and EFS&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Amazon &lt;strong>EBS&lt;/strong> (&lt;a href="https://aws.amazon.com/ebs/">Amazon Elastic Block Store&lt;/a>) is block storage for Amazon EC2 compute instances - it is similar to hard drives attached to your computers or laptops, but in a virtualized environment. &lt;img align="right" width="100" height="100" src="https://www.mydraw.com/NIMG.axd?i=Shape-Libraries/Cloud/Amazon-Web-Services/AWS-Architecture/Storage/Amazon-Elastic-Block-Store-EBS.png">&lt;/p>
+&lt;ul>
+&lt;li>Is meant to be EC2 drive&lt;/li>
+&lt;li>Accessible only via the given EC2 Machine&lt;/li>
+&lt;li>File System interface&lt;/li>
+&lt;li>Block Storage&lt;/li>
+&lt;li>Hardly scalable&lt;/li>
+&lt;li>Faster than S3 and EFS&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Amazon &lt;strong>EFS&lt;/strong> (&lt;a href="https://aws.amazon.com/efs/">Amazon Elastic File System&lt;/a>) provides scalable network file storage for Amazon EC2 cloud computing service users. &lt;img align="right" width="100" height="100" src="https://www.mydraw.com/NIMG.axd?i=Shape-Libraries/Cloud/Amazon-Web-Services/AWS-Architecture/Storage/Amazon-Elastic-File-System-EFS.png">&lt;/p>
+&lt;ul>
+&lt;li>Good for applications and shareable workloads&lt;/li>
+&lt;li>Accessible via several EC2 machines and AWS services&lt;/li>
+&lt;li>Web and file system interface&lt;/li>
+&lt;li>Object storage&lt;/li>
+&lt;li>Scalable&lt;/li>
+&lt;li>Faster than S3, slower than EBS&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="features">Features&lt;/h2>
+&lt;ul>
+&lt;li>Amazon S3 allows people to store objects (files) in “buckets” (directories)&lt;/li>
+&lt;li>Buckets must have a globally unique name
+&lt;ul>
+&lt;li>Naming convention:
+&lt;ul>
+&lt;li>No uppercase&lt;/li>
+&lt;li>No underscore&lt;/li>
+&lt;li>3-63 characters long&lt;/li>
+&lt;li>Not an IP&lt;/li>
+&lt;li>Must start with lowercase letter or number&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Objects
+&lt;ul>
+&lt;li>Objects (files) have a Key. The key is the FULL path:
+&lt;ul>
+&lt;li>&amp;lt;my_bucket&amp;gt;/my_file.txt&lt;/li>
+&lt;li>&amp;lt;my_bucket&amp;gt;/my_folder/another_folder/my_file.txt&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>There’s no concept of “directories” within buckets (although the UI will trick you to think otherwise)&lt;/li>
+&lt;li>Just keys with very long names that contain slashes (“/“)&lt;/li>
+&lt;li>Object Values are the content of the body:
+&lt;ul>
+&lt;li>Max Size is 5TB&lt;/li>
+&lt;li>If uploading more than 5GB, must use “multi-part upload”&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Metadata (list of text key / value pairs - system or user metadata)&lt;/li>
+&lt;li>Tags (Unicode key / value pair - up to 10) - useful for security / lifecycle&lt;/li>
+&lt;li>Version ID (if versioning&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="versioning">Versioning&lt;/h3>
+&lt;ul>
+&lt;li>It is enabled at the bucket level&lt;/li>
+&lt;li>Same key overwrite will increment the “version”: 1, 2, 3&lt;/li>
+&lt;li>It is best practice to version your buckets
+&lt;ul>
+&lt;li>Protect against unintended deletes (ability to restore a version)&lt;/li>
+&lt;li>Easy roll back to previous versions&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Any file that is not version prior to enabling versioning will have the version “null”&lt;/li>
+&lt;/ul>
+&lt;h3 id="encryption-for-objects">Encryption for Objects&lt;/h3>
+&lt;ul>
+&lt;li>There are 4 methods of encrypt objects in S3
+&lt;ul>
+&lt;li>SSE-S3: encrypts S3 objects
+&lt;ul>
+&lt;li>Encryption using keys handled &amp;amp; managed by AWS S3&lt;/li>
+&lt;li>Object is encrypted server side&lt;/li>
+&lt;li>AES-256 encryption type&lt;/li>
+&lt;li>Must set header: “x-amz-server-side-encryption”:”AES256”&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>SSE-KMS: encryption using keys handled &amp;amp; managed by KMS
+&lt;ul>
+&lt;li>KMS Advantages: user control + audit trail&lt;/li>
+&lt;li>Object is encrypted server side&lt;/li>
+&lt;li>Maintain control of the rotation policy for the encryption keys&lt;/li>
+&lt;li>Must set header: “x-amz-server-side-encryption”:”aws:kms”&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>SSE-C: server-side encryption using data keys fully managed by the customer outside of AWS
+&lt;ul>
+&lt;li>Amazon S3 does not store the encryption key you provide&lt;/li>
+&lt;li>HTTPS must be used&lt;/li>
+&lt;li>Encryption key must be provided in HTTP headers, for every HTTP request made&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Client Side Encryption
+&lt;ul>
+&lt;li>Client library such as the amazon S3 Encryption Client&lt;/li>
+&lt;li>Clients must encrypt data themselves before sending to S3&lt;/li>
+&lt;li>Clients must decrypt data themselves when retrieving from S3&lt;/li>
+&lt;li>Customer fully manages the keys and encryption cycle&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="encryption-in-transit-ssl">Encryption in transit (SSL)&lt;/h3>
+&lt;ul>
+&lt;li>exposes:
+&lt;ul>
+&lt;li>HTTP endpoint: non encrypted&lt;/li>
+&lt;li>HTTPS endpoint: encryption in flight&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>You’re free to use the endpoint your ant, but HTTPS is recommended&lt;/li>
+&lt;li>HTTPS is mandatory for SSE-C&lt;/li>
+&lt;li>Encryption in flight is also called SSL / TLS&lt;/li>
+&lt;/ul>
+&lt;h3 id="security">Security&lt;/h3>
+&lt;p>By default, all S3 objects are private&lt;/p>
+&lt;p>A user who does not have AWS credentials or permission to access an S3 object can be granted temporary access by using a presigned URL. A &lt;strong>presigned URL&lt;/strong> is generated by an AWS user who has access to the object. The generated URL is then &lt;a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ShareObjectPreSignedURL.html">given to the unauthorized user&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>User based
+&lt;ul>
+&lt;li>IAM policies - which API calls should be allowed for a specific user from IAM console&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Resource based
+&lt;ul>
+&lt;li>Bucket policies - bucket wide rules from the S3 console - allows cross account&lt;/li>
+&lt;li>Object Access Control List (ACL) - finer grain&lt;/li>
+&lt;li>Bucket Access Control List (ACL) - less common&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Networking
+&lt;ul>
+&lt;li>Support VPC endpoints (for instances in VPC without www internet)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Logging and Audit:
+&lt;ul>
+&lt;li>S3 access logs can be stored in other S3 buckets&lt;/li>
+&lt;li>API calls can be logged in &lt;a href="https://aws.amazon.com/cloudtrail/">AWS CloudTrail&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>User Security:&lt;/li>
+&lt;li>MFA (multi factor authentication) can be required in versioned buckets to delete objects&lt;/li>
+&lt;li>Signed URLs: URLS that are valid only for a limited time (ex: premium video services for logged in users)&lt;/li>
+&lt;/ul>
+&lt;h3 id="bucket-policies">Bucket Policies&lt;/h3>
+&lt;ul>
+&lt;li>JSON based policies
+&lt;ul>
+&lt;li>Resources: buckets and objects&lt;/li>
+&lt;li>Actions: Set of API to Allow or Deny&lt;/li>
+&lt;li>Effect: Allow / Deny&lt;/li>
+&lt;li>Principal: The account or user to apply the policy to&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Use S3 bucket for policy to:
+&lt;ul>
+&lt;li>Grant public access to the bucket&lt;/li>
+&lt;li>Force objects to be encrypted at upload&lt;/li>
+&lt;li>Grant access to another account (Cross Account)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="websites">Websites&lt;/h3>
+&lt;ul>
+&lt;li>S3 can host static website sand have them accessible on the world wide web&lt;/li>
+&lt;li>The website URL will be:
+&lt;ul>
+&lt;li>&lt;code>&amp;lt;bucket-name&amp;gt;.s3-website.&amp;lt;AWS-region&amp;gt;.amzonaws.com&lt;/code>&lt;/li>
+&lt;li>OR&lt;/li>
+&lt;li>&lt;code>&amp;lt;bucket-name&amp;gt;.s3-website.&amp;lt;AWS-region&amp;gt;.amazonaws.com&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>If you get a 403 (forbidden) error, make sure the bucket policy allows public reads!&lt;/li>
+&lt;/ul>
+&lt;h3 id="cors">CORS&lt;/h3>
+&lt;ul>
+&lt;li>If you request data from another S3 bucket, you need to enable CORS&lt;/li>
+&lt;li>Cross Origin Resource Sharing allows you to limit the number of websites that can request your files in S3 (and limit your costs)&lt;/li>
+&lt;li>This is a popular exam question&lt;/li>
+&lt;/ul>
+&lt;h3 id="consistency-model">Consistency Model&lt;/h3>
+&lt;ul>
+&lt;li>Read after write consistency for PUTS of new objects
+&lt;ul>
+&lt;li>As soon as an object is written, we can retrieve itex: (PUT 200 -&amp;gt; GET 200)&lt;/li>
+&lt;li>This is true, except if we did a GET before to see if the object existedex: (GET 404 -&amp;gt; PUT 200 -&amp;gt; GET 404) - eventually consistent&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Eventual Consistency for DELETES and PUTS of existing objects
+&lt;ul>
+&lt;li>If we read an object after updating, we might get the older versionex: (PUT 200 -&amp;gt; PUT 200 -&amp;gt; GET 200 (might be older version))&lt;/li>
+&lt;li>If we delete an object, we might still be able to retrieve it for a short timeex: (DELETE 200 -&amp;gt; GET 200)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="performance">Performance&lt;/h3>
+&lt;ul>
+&lt;li>Faster upload of large objects (&amp;gt;5GB), use multipart upload
+&lt;ul>
+&lt;li>Parallelizes PUTs for greater throughput&lt;/li>
+&lt;li>Maximize your network bandwidth&lt;/li>
+&lt;li>Decrease time to retry in case a part fails&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Use CloudFront to ache S3 objects around the world (improves reads)&lt;/li>
+&lt;li>S3 Transfer Acceleration (uses edge locations) - just need to change the endpoint you write to, not the code&lt;/li>
+&lt;li>If using SSE-KMS encryption, you may be limited to your AWS limits for KMS usage (~100s - 1000s downloads / uploads per second)&lt;/li>
+&lt;/ul>
+&lt;h2 id="questions">Questions&lt;/h2>
+&lt;h3 id="q1">Q1&lt;/h3>
+&lt;p>&lt;strong>Developer wants to implement a more fine-grained control of developers S3 buckets by restricting access to S3 buckets on a case-by-case basis using S3 bucket policies.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which methods of access control can developer implement using S3 bucket policies? (Choose 3 answers)&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Control access based on the time of day&lt;/li>
+&lt;li>Control access based on IP Address&lt;/li>
+&lt;li>Control access based on Active Directory group&lt;/li>
+&lt;li>Control access based on CIDR block&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-iam-policies.html
+&lt;p>CIDRs - A set of Classless Inter-Domain Routings&lt;/p>
+&lt;p>&lt;a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html">https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html&lt;/a>&lt;/p>
+&lt;p>&lt;mark style="color:white">1, 2, 4&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q2">Q2&lt;/h3>
+&lt;p>&lt;strong>To ensure that an encryption key was not corrupted in transit, &lt;abbr title="Amazon Elastic Transcoder is media transcoding in the cloud. It is designed to be a highly scalable, easy to use and a cost effective way for developers and businesses to convert (or “transcode”) media files from their source format into versions that will playback on devices like smartphones, tablets and PCs.">Elastic Transcoder&lt;/abbr> uses a(n) ____ digest of the decryption key as a checksum.&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>BLAKE2&lt;/li>
+&lt;li>SHA-1&lt;/li>
+&lt;li>SHA-2&lt;/li>
+&lt;li>MD5&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/job-settings.html">https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/job-settings.html&lt;/a>&lt;/p>
+&lt;p>MD5 digest (or checksum)&lt;/p>
+&lt;p>&lt;mark style="color:white">4&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q3">Q3&lt;/h3>
+&lt;p>&lt;strong>Dan is responsible for supporting your company’s AWS infrastructure, consisting of multiple EC2 instances running in a VPC, DynamoDB, SQS, and S3. You are working on provisioning a new S3 bucket, which will ultimately contain sensitive data.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>What are two separate ways to ensure data is encrypted in-flight both into and out of S3? (Choose 2 answers)&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Use the encrypted SSL/TLS endpoint.&lt;/li>
+&lt;li>Enable encryption in the bucket policy.&lt;/li>
+&lt;li>Encrypt it on the client-side before uploading.&lt;/li>
+&lt;li>Set the server-side encryption option on upload.&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html">https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingEncryption.html&lt;/a>&lt;/p>
+&lt;p>&lt;mark style="color:white">1, 3&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q4">Q4&lt;/h3>
+&lt;p>&lt;strong>A company has an application that writes files to an Amazon S3 bucket. Whenever there is a new file, an S3 notification event invokes an AWS Lambda function to process the file. The Lambda function code works as expected. However, when a developer checks the Lambda function logs, the developer finds that multiple invocations occur for every file.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>What is causing the duplicate entries?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>The S3 bucket name is incorrectly specified in the application and is targeting another S3 bucket.&lt;/li>
+&lt;li>The Lambda function did not run correctly, and Lambda retried the invocation with a delay.&lt;/li>
+&lt;li>Amazon S3 is delivering the same event multiple times.&lt;/li>
+&lt;li>The application stopped intermittently and then resumed, splitting the logs into multiple smaller files.&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;mark style="color:white">1&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details></description></item></channel></rss>

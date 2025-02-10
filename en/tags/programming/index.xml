@@ -1,13 +1,504 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Programming on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/programming/</link><description>Recent content in Programming on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 07 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/programming/index.xml" rel="self" type="application/rss+xml"/><item><title>Setup subdomains on VPS CentOS</title><link>https://romankurnovskii.com/en/posts/vps-docker-subdomains-setup/</link><pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/vps-docker-subdomains-setup/</guid><description>TLDR Code sources
-Create Projects Creating three example projects:
-node.js express server that returns json on request another node.js express server static html page Place projects data in dir &amp;lsquo;projects&amp;rsquo;.
-Structure:
-└── project ├── Dockerfile ├── nginx.conf ├── projects | ├── 1 | | ├── app.js | | └── package.json | ├── 2 | | ├── app.js | | └── package.json | └── 3 | └── index.html └── start.sh Nginx setup Server needs to &amp;ldquo;understand&amp;rdquo; the initial subdomain and where to forward.</description></item><item><title>Python docstring templates</title><link>https://romankurnovskii.com/en/posts/python-docstring-templates/</link><pubDate>Wed, 24 May 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/python-docstring-templates/</guid><description>Template def function_name(param1: Type1, param2: Type2, ...) -&amp;gt; ReturnType: &amp;#34;&amp;#34;&amp;#34;Brief description of the function. More detailed explanation of the function if necessary. This can span multiple lines as needed. Args: param1 (Type1): Description of param1. param2 (Type2): Description of param2. ... Returns: ReturnType: Description of the return value. Raises: ExceptionType: Explanation of the conditions under which this exception is raised. Example: &amp;gt;&amp;gt;&amp;gt; function_name(param1_value, param2_value) Expected output &amp;#34;&amp;#34;&amp;#34; ... Example With Type Hints def add_numbers(num1: int, num2: int = 5) -&amp;gt; int: &amp;#34;&amp;#34;&amp;#34;Adds two numbers together.</description></item><item><title>Bash Special Variables $! $0 $? $$</title><link>https://romankurnovskii.com/en/posts/bash-variables/</link><pubDate>Tue, 14 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/bash-variables/</guid><description>$0 - The Name of the Script $0 represents the name of the Bash script as it was called.
-If you execute a script with bash myscript.sh, then within myscript.sh, $0 will be myscript.sh.
-$1, $2, $3, &amp;hellip; - Positional Parameters These variables correspond to the arguments passed to the script. $1 is the first argument, $2 is the second, and so on.
-In the command bash myscript.sh arg1 arg2, $1 equals arg1, and $2 equals arg2.
-$! - PID of the Last Background Process This holds the process ID of the most recent background process.</description></item><item><title>Bash code snippets</title><link>https://romankurnovskii.com/en/posts/bash-snippets/</link><pubDate>Sun, 12 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/bash-snippets/</guid><description>Rename all files in current directory / Remove prefix #!/bin/bash REMOVE_PREFIX=$1 files=(*) for file in &amp;#34;${files[@]}&amp;#34; do if [[ $file == *&amp;#34;${REMOVE_PREFIX}&amp;#34;* ]]; then # Remove everything before and including the &amp;#34;№&amp;#34; symbol new_file=${file##*&amp;#34;${REMOVE_PREFIX}&amp;#34;} mv &amp;#34;$file&amp;#34; &amp;#34;$new_file&amp;#34; echo &amp;#34;Renamed $file to $new_file&amp;#34; fi done $ ./rename_files.sh abc renamed file abc123.txt -&amp;gt; 123.txt Add substring to filename #!/bin/bash DIR=&amp;#34;/path/to/folder&amp;#34; cd &amp;#34;$DIR&amp;#34; # Rename all .png files and add &amp;#34;.ru&amp;#34; before .png for file in *.png; do base=$(basename &amp;#34;$file&amp;#34; .png) mv &amp;#34;$file&amp;#34; &amp;#34;${base}.</description></item><item><title>Python bitwise operators</title><link>https://romankurnovskii.com/en/posts/python-bitwise-operators/</link><pubDate>Sun, 20 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/python-bitwise-operators/</guid><description>&amp;laquo; Left Shift Moves the bits of its first operand to the left by the number of places specified in its second operand.
-Formula: $a &amp;laquo; n = a * 2^n$
-Shifting a single bit to the left by one place doubles its value. Shifting to two places to the left by one place quadruple its value. &amp;gt;&amp;gt;&amp;gt; 100 &amp;lt;&amp;lt; 1 200 &amp;gt;&amp;gt;&amp;gt; 100 &amp;lt;&amp;lt; 2 400 &amp;gt;&amp;gt;&amp;gt; 100 &amp;lt;&amp;lt; 3 800 &amp;raquo; Right Shift The rightmost bits always get dropped.</description></item><item><title>Some code snippets</title><link>https://romankurnovskii.com/en/posts/other-snippets/</link><pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/other-snippets/</guid><description>pandoc mardown -&amp;gt; pdf Create pdf file from .md in multiple folders
-prepare:
-brew install basictex # search for cyrillic fonts fc-list | grep к\ brew tap homebrew/cask-fonts brew install --cask font-m-plus brew tap homebrew/cask-fonts brew install --cask font-m-plus brew install --cask font-m-plus-1 brew install --cask font-m-plus-1-code ```sh pandoc --pdf-engine xelatex \ --variable mainfont=&amp;#34;M+ 1p&amp;#34; --variable sansfont=&amp;#34;M+ 1p&amp;#34; --variable monofont=&amp;#34;M+ 1m&amp;#34; \ -V geometry:&amp;#34;top=1cm, bottom=2cm, left=1cm, right=1cm&amp;#34; \ --file-scope \ --highlight-style=tango \ -s \ --toc-depth=1 \ --variable=toc-title:&amp;#34; &amp;#34; \ --top-level-division=chapter \ --standalone \ --self-contained \ --from=markdown \ $(find .</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Programming on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/programming/</link><description>Recent content in Programming on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 07 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/programming/index.xml" rel="self" type="application/rss+xml"/><item><title>Setup subdomains on VPS CentOS</title><link>https://romankurnovskii.com/en/posts/vps-docker-subdomains-setup/</link><pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/vps-docker-subdomains-setup/</guid><description>&lt;h2 id="tldr">TLDR&lt;/h2>
+&lt;p>&lt;a href="https://github.com/romankurnovskii/romankurnovskii.github.io/tree/main/content/posts/vps-docker-subdomains-setup/project">Code sources&lt;/a>&lt;/p>
+&lt;h2 id="create-projects">Create Projects&lt;/h2>
+&lt;p>Creating three example projects:&lt;/p>
+&lt;ol>
+&lt;li>node.js express server that returns json on request&lt;/li>
+&lt;li>another node.js express server&lt;/li>
+&lt;li>static html page&lt;/li>
+&lt;/ol>
+&lt;p>Place projects data in dir &amp;lsquo;projects&amp;rsquo;.&lt;/p>
+&lt;p>Structure:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>└── project
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ├── Dockerfile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ├── nginx.conf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ├── projects
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | ├── 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | | ├── app.js
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | | └── package.json
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | ├── 2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | | ├── app.js
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | | └── package.json
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | └── 3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | └── index.html
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └── start.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="nginx-setup">Nginx setup&lt;/h2>
+&lt;p>Server needs to &amp;ldquo;understand&amp;rdquo; the initial subdomain and where to forward.&lt;/p>
+&lt;p>For this use reverse proxy&lt;/p>
+&lt;p>&lt;code>nginx.conf&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span style="display:flex;">&lt;span>worker_processes &lt;span style="color:#40a070">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>events {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> worker_connections &lt;span style="color:#40a070">1024&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>http {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sendfile on;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> listen &lt;span style="color:#40a070">80&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server_name mydomain1&lt;span style="color:#666">.&lt;/span>localhost;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> location &lt;span style="color:#666">/&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> proxy_pass http:&lt;span style="color:#666">//&lt;/span>localhost:&lt;span style="color:#40a070">3000&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> listen &lt;span style="color:#40a070">80&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server_name mydomain2&lt;span style="color:#666">.&lt;/span>localhost;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> location &lt;span style="color:#666">/&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> proxy_pass http:&lt;span style="color:#666">//&lt;/span>localhost:&lt;span style="color:#40a070">4000&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> listen &lt;span style="color:#40a070">80&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server_name mydomain3&lt;span style="color:#666">.&lt;/span>localhost;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> root &lt;span style="color:#666">/&lt;/span>&lt;span style="color:#007020;font-weight:bold">var&lt;/span>&lt;span style="color:#666">/&lt;/span>www&lt;span style="color:#666">/&lt;/span>domains&lt;span style="color:#666">/&lt;/span>mydomain_with_static_files;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> location &lt;span style="color:#666">/&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> try_files &lt;span style="color:#666">$&lt;/span>uri &lt;span style="color:#666">$&lt;/span>uri&lt;span style="color:#666">/&lt;/span> &lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">404&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="start-apps">Start apps&lt;/h2>
+&lt;p>To start js applications need to run &lt;code>node&lt;/code> command.&lt;/p>
+&lt;p>&lt;code>start.sh&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">#!/bin/sh
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Start the first app&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>node /opt/projects/1/app.js &amp;amp;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Start the second app&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>node /opt/projects/2/app.js &amp;amp;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Start nginx in the foreground&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>nginx -g &lt;span style="color:#4070a0">&amp;#39;daemon off;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="docker-file">Docker file&lt;/h2>
+&lt;p>Next, we&amp;rsquo;ll create a Dockerfile to define the &amp;lsquo;centos&amp;rsquo; Docker container where we can test our setup. Here&amp;rsquo;s what the Dockerfile looks like:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-dockerfile" data-lang="dockerfile">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">FROM&lt;/span>&lt;span style="color:#4070a0"> centos:latest&lt;/span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#60a0b0;font-style:italic"># fixes&lt;/span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> &lt;span style="color:#007020">cd&lt;/span> /etc/yum.repos.d/&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> sed -i &lt;span style="color:#4070a0">&amp;#39;s/mirrorlist/#mirrorlist/g&amp;#39;&lt;/span> /etc/yum.repos.d/CentOS-*&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> sed -i &lt;span style="color:#4070a0">&amp;#39;s|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g&amp;#39;&lt;/span> /etc/yum.repos.d/CentOS-*&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> yum update -y &lt;span style="color:#666">&amp;amp;&amp;amp;&lt;/span> yum install -y curl vim git&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> curl -sL https://rpm.nodesource.com/setup_14.x | bash -&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> yum install -y nodejs&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#60a0b0;font-style:italic"># Install Nginx&lt;/span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> yum install -y epel-release&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> yum install -y nginx&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> mkdir -p /opt/projects/1&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">ADD&lt;/span> ./projects/1 /opt/projects/1&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">WORKDIR&lt;/span>&lt;span style="color:#4070a0"> /opt/projects/1&lt;/span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> npm install&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> mkdir -p /opt/projects/2&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">ADD&lt;/span> ./projects/2 /opt/projects/2&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">WORKDIR&lt;/span>&lt;span style="color:#4070a0"> /opt/projects/2&lt;/span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> npm install&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> mkdir -p /var/www/domains/mydomain_with_static_files&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">ADD&lt;/span> ./projects/3 /var/www/domains/mydomain_with_static_files&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">COPY&lt;/span> start.sh /opt/projects/start.sh&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> chmod +x /opt/projects/start.sh&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">EXPOSE&lt;/span>&lt;span style="color:#4070a0"> 80&lt;/span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">COPY&lt;/span> nginx.conf /etc/nginx/nginx.conf&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> ls -la /etc/nginx/&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#60a0b0;font-style:italic"># CMD [&amp;#34;nginx&amp;#34;, &amp;#34;-g&amp;#34;, &amp;#34;daemon off;&amp;#34;]&lt;/span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">CMD&lt;/span> [&lt;span style="color:#4070a0">&amp;#34;/opt/projects/start.sh&amp;#34;&lt;/span>]&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="test-run">Test run&lt;/h2>
+&lt;ol>
+&lt;li>Build docker image and run&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker build -t myserver .
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker run -p 80:80 myserver
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>Open in browser on host:
+&lt;ol>
+&lt;li>project 1: &lt;a href="http://mydomain1.localhost">http://mydomain1.localhost&lt;/a>&lt;/li>
+&lt;li>project 2: &lt;a href="http://mydomain2.localhost">http://mydomain2.localhost&lt;/a>&lt;/li>
+&lt;li>project 3: &lt;a href="http://mydomain3.localhost">http://mydomain3.localhost&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol></description></item><item><title>Python docstring templates</title><link>https://romankurnovskii.com/en/posts/python-docstring-templates/</link><pubDate>Wed, 24 May 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/python-docstring-templates/</guid><description>&lt;h2 id="template">Template&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">function_name&lt;/span>(param1: Type1, param2: Type2, &lt;span style="color:#666">...&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> ReturnType:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;&amp;#34;&amp;#34;Brief description of the function.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> More detailed explanation of the function if necessary. This can span
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> multiple lines as needed.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Args:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> param1 (Type1): Description of param1.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> param2 (Type2): Description of param2.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> ...
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Returns:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> ReturnType: Description of the return value.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Raises:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> ExceptionType: Explanation of the conditions under which this exception is raised.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Example:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> &amp;gt;&amp;gt;&amp;gt; function_name(param1_value, param2_value)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Expected output
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">...&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="example">Example&lt;/h2>
+&lt;h2 id="with-type-hints">With Type Hints&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">add_numbers&lt;/span>(num1: &lt;span style="color:#007020">int&lt;/span>, num2: &lt;span style="color:#007020">int&lt;/span> &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">5&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;&amp;#34;&amp;#34;Adds two numbers together.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Args:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> num1 (int): The first number to add.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> num2 (int, optional): The second number to add. Defaults to 5.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Returns:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> int: The sum of num1 and num2.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Example:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> &amp;gt;&amp;gt;&amp;gt; add_numbers(3, 2)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> 5
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> num1 &lt;span style="color:#666">+&lt;/span> num2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="without-type-hints">Without Type Hints&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">add_numbers&lt;/span>(num1, num2&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">5&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;&amp;#34;&amp;#34;Adds two numbers together.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Args:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> num1: The first number to add. Should be of type int.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> num2: The second number to add. Should be of type int. Defaults to 5.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Returns:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> The sum of num1 and num2. The return value will be of type int.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Example:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> &amp;gt;&amp;gt;&amp;gt; add_numbers(3, 2)
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> 5
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> num1 &lt;span style="color:#666">+&lt;/span> num2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>Google Python Style Guide: This is a widely adopted style guide in the Python community. It has a specific section on comments and docstrings that I found particularly helpful: &lt;a href="https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings">https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>PEP 257 - Docstring Conventions: This is the Python Enhancement Proposal that describes the conventions for writing good docstrings in Python: &lt;a href="https://www.python.org/dev/peps/pep-0257/">https://www.python.org/dev/peps/pep-0257/&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>PEP 484 - Type Hints: This PEP introduced the concept of type hints to Python, and provides guidelines on how to use them: &lt;a href="https://www.python.org/dev/peps/pep-0484/">https://www.python.org/dev/peps/pep-0484/&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul></description></item><item><title>Bash Special Variables $! $0 $? $$</title><link>https://romankurnovskii.com/en/posts/bash-variables/</link><pubDate>Tue, 14 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/bash-variables/</guid><description>&lt;h2 id="0---the-name-of-the-script">&lt;code>$0&lt;/code> - The Name of the Script&lt;/h2>
+&lt;p>&lt;code>$0&lt;/code> represents the name of the Bash script as it was called.&lt;/p>
+&lt;p>If you execute a script with &lt;code>bash myscript.sh&lt;/code>, then within &lt;code>myscript.sh&lt;/code>, &lt;code>$0&lt;/code> will be &lt;code>myscript.sh&lt;/code>.&lt;/p>
+&lt;h2 id="1-2-3----positional-parameters">&lt;code>$1&lt;/code>, &lt;code>$2&lt;/code>, &lt;code>$3&lt;/code>, &amp;hellip; - Positional Parameters&lt;/h2>
+&lt;p>These variables correspond to the arguments passed to the script. &lt;code>$1&lt;/code> is the first argument, &lt;code>$2&lt;/code> is the second, and so on.&lt;/p>
+&lt;p>In the command &lt;code>bash myscript.sh arg1 arg2&lt;/code>, &lt;code>$1&lt;/code> equals &lt;code>arg1&lt;/code>, and &lt;code>$2&lt;/code> equals &lt;code>arg2&lt;/code>.&lt;/p>
+&lt;h2 id="---pid-of-the-last-background-process">&lt;code>$!&lt;/code> - PID of the Last Background Process&lt;/h2>
+&lt;p>This holds the process ID of the most recent background process. It&amp;rsquo;s particularly useful in managing parallel processing in scripts.&lt;/p>
+&lt;h2 id="---number-of-parameters">&lt;code>$#&lt;/code> - Number of Parameters&lt;/h2>
+&lt;p>&lt;code>$#&lt;/code> provides the count of arguments passed to the script, enabling scripts to adapt based on the number of inputs.&lt;/p>
+&lt;h2 id="-and----all-positional-parameters">&lt;code>$*&lt;/code> and &lt;code>$@&lt;/code> - All Positional Parameters&lt;/h2>
+&lt;p>Both &lt;code>$*&lt;/code> and &lt;code>$@&lt;/code> expand to all positional parameters, but they behave differently when quoted. &lt;code>&amp;quot;${*}&amp;quot;&lt;/code> merges all parameters into a single string, while &lt;code>&amp;quot;${@}&amp;quot;&lt;/code> treats each as a separate word.&lt;/p>
+&lt;h2 id="---exit-status-of-the-last-command">&lt;code>$?&lt;/code> - Exit Status of the Last Command&lt;/h2>
+&lt;p>The exit status of the most recently executed command is stored in &lt;code>$?&lt;/code>, where &lt;code>0&lt;/code> typically signifies success.&lt;/p>
+&lt;h2 id="special-cases">Special Cases&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>$$&lt;/code> is the PID of the script itself.&lt;/li>
+&lt;li>&lt;code>$-&lt;/code> shows the current options set for the shell&lt;/li>
+&lt;/ul>
+&lt;h2 id="dirname">dirname&lt;/h2>
+&lt;p>Strips the last component from a file path.&lt;/p>
+&lt;p>If you have a file path &lt;code>/home/user/documents/report.txt&lt;/code>, the &lt;code>dirname&lt;/code> command will extract and return &lt;code>/home/user/documents&lt;/code>, which is the directory part of the path.&lt;/p>
+&lt;p>&lt;code>dirname&lt;/code> can be especially useful in scripting when you need to perform operations relative to the location of a script or file.&lt;/p></description></item><item><title>Bash code snippets</title><link>https://romankurnovskii.com/en/posts/bash-snippets/</link><pubDate>Sun, 12 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/bash-snippets/</guid><description>&lt;h2 id="rename-all-files-in-current-directory--remove-prefix">Rename all files in current directory / Remove prefix&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">&lt;/span>&lt;span style="color:#bb60d5">REMOVE_PREFIX&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#bb60d5">$1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bb60d5">files&lt;/span>&lt;span style="color:#666">=(&lt;/span>*&lt;span style="color:#666">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> file in &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#70a0d0">${&lt;/span>&lt;span style="color:#bb60d5">files&lt;/span>[@]&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#666">[[&lt;/span> &lt;span style="color:#bb60d5">$file&lt;/span> &lt;span style="color:#666">==&lt;/span> *&lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#70a0d0">${&lt;/span>&lt;span style="color:#bb60d5">REMOVE_PREFIX&lt;/span>&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>* &lt;span style="color:#666">]]&lt;/span>; &lt;span style="color:#007020;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Remove everything before and including the &amp;#34;№&amp;#34; symbol&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#bb60d5">new_file&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#70a0d0">${&lt;/span>&lt;span style="color:#bb60d5">file&lt;/span>##*&lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#70a0d0">${&lt;/span>&lt;span style="color:#bb60d5">REMOVE_PREFIX&lt;/span>&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#70a0d0">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mv &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$file&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$new_file&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#4070a0">&amp;#34;Renamed &lt;/span>&lt;span style="color:#bb60d5">$file&lt;/span>&lt;span style="color:#4070a0"> to &lt;/span>&lt;span style="color:#bb60d5">$new_file&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>$ ./rename_files.sh abc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>renamed file abc123.txt -&amp;gt; 123.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="add-substring-to-filename">Add substring to filename&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bb60d5">DIR&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;/path/to/folder&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">cd&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$DIR&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Rename all .png files and add &amp;#34;.ru&amp;#34; before .png&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> file in *.png; &lt;span style="color:#007020;font-weight:bold">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#bb60d5">base&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">$(&lt;/span>basename &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$file&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span> .png&lt;span style="color:#007020;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mv &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$file&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#70a0d0">${&lt;/span>&lt;span style="color:#bb60d5">base&lt;/span>&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">.ru.png&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="git-pushpull-for-all-repos-in-path">Git Push/Pull for all repos in path&lt;/h2>
+&lt;h3 id="git-pull">git pull&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bb60d5">files&lt;/span>&lt;span style="color:#666">=(&lt;/span>*&lt;span style="color:#666">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#!/bin/bash&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># For every item in the current directory&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> d in */; &lt;span style="color:#007020;font-weight:bold">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">cd&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$d&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#666">[[&lt;/span> -d &lt;span style="color:#4070a0">&amp;#34;.git&amp;#34;&lt;/span> &lt;span style="color:#666">]]&lt;/span>; &lt;span style="color:#007020;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#bb60d5">$d&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git pull
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">cd&lt;/span> ..
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="git-push">git push&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># For every item in the current directory&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> d in */; &lt;span style="color:#007020;font-weight:bold">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">cd&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$d&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#666">[[&lt;/span> -d &lt;span style="color:#4070a0">&amp;#34;.git&amp;#34;&lt;/span> &lt;span style="color:#666">]]&lt;/span>; &lt;span style="color:#007020;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#bb60d5">$d&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git add .
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git commit -m &lt;span style="color:#4070a0">&amp;#34;Auto apply&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># black . # python formatter&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># git add .&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># git commit -m &amp;#34;[chore] formatter&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git push
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">cd&lt;/span> ..
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="git-untrack">git untrack&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bb60d5">items_to_untrack&lt;/span>&lt;span style="color:#666">=(&lt;/span>&lt;span style="color:#4070a0">&amp;#34;.idea&amp;#34;&lt;/span> &lt;span style="color:#4070a0">&amp;#34;.vscode&amp;#34;&lt;/span> &lt;span style="color:#4070a0">&amp;#34;.DS_Store&amp;#34;&lt;/span> &lt;span style="color:#4070a0">&amp;#34;__pycache__&amp;#34;&lt;/span> &lt;span style="color:#4070a0">&amp;#34;node_modules&amp;#34;&lt;/span> &lt;span style="color:#4070a0">&amp;#34;.env&amp;#34;&lt;/span> &lt;span style="color:#4070a0">&amp;#34;.serverless&amp;#34;&lt;/span>&lt;span style="color:#666">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># For every item in the current directory&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> d in */; &lt;span style="color:#007020;font-weight:bold">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#bb60d5">$d&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">cd&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$d&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Iterate over each item to untrack&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> item in &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#70a0d0">${&lt;/span>&lt;span style="color:#bb60d5">items_to_untrack&lt;/span>[@]&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>; &lt;span style="color:#007020;font-weight:bold">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># If the item exists&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#666">[[&lt;/span> -e &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$item&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span> &lt;span style="color:#666">]]&lt;/span>; &lt;span style="color:#007020;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Untrack the item&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git rm -r --cached &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$item&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">cd&lt;/span> ..
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Python bitwise operators</title><link>https://romankurnovskii.com/en/posts/python-bitwise-operators/</link><pubDate>Sun, 20 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/python-bitwise-operators/</guid><description>&lt;h2 id="-left-shift">&amp;laquo; Left Shift&lt;/h2>
+&lt;p>Moves the bits of its first operand to the left by the number of places specified in its second operand.&lt;/p>
+&lt;span class="caption-wrapper">
+&lt;img class="caption" style="float: left; width: ; height: 210px; margin: 0px 10px 10px 0px;" src="#ZgotmplZ" title="" alt="">
+&lt;span class="caption-text">&lt;/span>
+&lt;/span>
+&lt;p>&lt;strong>Formula:&lt;/strong> $a &amp;laquo; n = a * 2^n$&lt;/p>
+&lt;ul>
+&lt;li>Shifting a &lt;strong>single bit&lt;/strong> to the left by one place &lt;strong>doubles its value&lt;/strong>.&lt;/li>
+&lt;li>Shifting to &lt;strong>two places&lt;/strong> to the left by one place &lt;strong>quadruple its value&lt;/strong>.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&amp;gt;&amp;gt;&amp;gt; &lt;span style="color:#40a070">100&lt;/span> &lt;span style="color:#4070a0">&amp;lt;&amp;lt; 1
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">200
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">&amp;gt;&amp;gt;&amp;gt; 1&lt;/span>&lt;span style="color:#40a070">00&lt;/span> &amp;lt;&amp;lt; &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#40a070">400&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;&amp;gt;&amp;gt; &lt;span style="color:#40a070">100&lt;/span> &amp;lt;&amp;lt; &lt;span style="color:#40a070">3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#40a070">800&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="-right-shift">&amp;raquo; Right Shift&lt;/h2>
+&lt;ul>
+&lt;li>The rightmost bits always get dropped.&lt;/li>
+&lt;li>Every time you shift a bit to the right by one position, you halve its underlying value.&lt;/li>
+&lt;/ul>
+&lt;span class="caption-wrapper">
+&lt;img class="caption" style="float: right; width: ; height: 180px; margin: 0px 10px 10px 0px;" src="#ZgotmplZ" title="" alt="">
+&lt;span class="caption-text">&lt;/span>
+&lt;/span>
+&lt;p>&lt;strong>Formula:&lt;/strong> $a &amp;raquo; n = [a/2^n]$&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&amp;gt;&amp;gt;&amp;gt; &lt;span style="color:#40a070">100&lt;/span> &amp;gt;&amp;gt; &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#40a070">50&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;&amp;gt;&amp;gt; &lt;span style="color:#40a070">100&lt;/span> &amp;gt;&amp;gt; &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#40a070">25&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;&amp;gt;&amp;gt; &lt;span style="color:#40a070">100&lt;/span> &amp;gt;&amp;gt; &lt;span style="color:#40a070">3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#40a070">12&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;&amp;gt;&amp;gt; &lt;span style="color:#40a070">5&lt;/span> &amp;gt;&amp;gt; &lt;span style="color:#40a070">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>the right shift operator automatically floors the result.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&amp;gt;&amp;gt;&amp;gt; &lt;span style="color:#40a070">5&lt;/span> &amp;gt;&amp;gt; &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># Bitwise right shift&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;&amp;gt;&amp;gt; &lt;span style="color:#40a070">5&lt;/span> // &lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># Floor division (integer division)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;&amp;gt;&amp;gt; &lt;span style="color:#40a070">5&lt;/span> / &lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># Floating-point division&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>2.5
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;&amp;gt;&amp;gt; -2 &amp;gt;&amp;gt; &lt;span style="color:#40a070">5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="-operator">&amp;amp; Operator&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>0 &amp;amp; 0 = 0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>0 &amp;amp; 1 = 0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>1 &amp;amp; 0 = 0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>1 &amp;amp; 1 = 0
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For numbers:&lt;/p>
+&lt;p>&lt;code>27 &amp;amp; 23&lt;/code>&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Covert to binary&lt;/p>
+&lt;p>&lt;code>27 -&amp;gt; 11011&lt;/code>
+&lt;code>23 -&amp;gt; 10111&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>turns to (in binary)&lt;/p>
+&lt;p>&lt;code>11011 &amp;amp; 10111 = 10011&lt;/code> -&amp;gt; 19&lt;/p>
+&lt;p>&lt;code>27 &amp;amp; 23 = 19&lt;/code>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://realpython.com/python-bitwise-operators/">https://realpython.com/python-bitwise-operators/&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Some code snippets</title><link>https://romankurnovskii.com/en/posts/other-snippets/</link><pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/other-snippets/</guid><description>&lt;h2 id="pandoc-mardown---pdf">pandoc mardown -&amp;gt; pdf&lt;/h2>
+&lt;p>Create pdf file from .md in multiple folders&lt;/p>
+&lt;p>prepare:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span style="display:flex;">&lt;span>brew install basictex
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># search for cyrillic fonts&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fc&lt;span style="color:#666">-&lt;/span>list &lt;span style="color:#666">|&lt;/span> grep &lt;span style="">к&lt;/span>\
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>brew tap homebrew&lt;span style="color:#666">/&lt;/span>cask&lt;span style="color:#666">-&lt;/span>fonts
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>brew install &lt;span style="color:#666">--&lt;/span>cask font&lt;span style="color:#666">-&lt;/span>m&lt;span style="color:#666">-&lt;/span>plus
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>brew tap homebrew&lt;span style="color:#666">/&lt;/span>cask&lt;span style="color:#666">-&lt;/span>fonts
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>brew install &lt;span style="color:#666">--&lt;/span>cask font&lt;span style="color:#666">-&lt;/span>m&lt;span style="color:#666">-&lt;/span>plus
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>brew install &lt;span style="color:#666">--&lt;/span>cask font&lt;span style="color:#666">-&lt;/span>m&lt;span style="color:#666">-&lt;/span>plus&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>brew install &lt;span style="color:#666">--&lt;/span>cask font&lt;span style="color:#666">-&lt;/span>m&lt;span style="color:#666">-&lt;/span>plus&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>&lt;span style="color:#666">-&lt;/span>code
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">```&lt;/span>sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pandoc &lt;span style="color:#666">--&lt;/span>pdf&lt;span style="color:#666">-&lt;/span>engine xelatex \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">--&lt;/span>variable mainfont&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;M+ 1p&amp;#34;&lt;/span> &lt;span style="color:#666">--&lt;/span>variable sansfont&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;M+ 1p&amp;#34;&lt;/span> &lt;span style="color:#666">--&lt;/span>variable monofont&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;M+ 1m&amp;#34;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">-&lt;/span>V geometry:&lt;span style="color:#4070a0">&amp;#34;top=1cm, bottom=2cm, left=1cm, right=1cm&amp;#34;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">--&lt;/span>file&lt;span style="color:#666">-&lt;/span>scope \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">--&lt;/span>highlight&lt;span style="color:#666">-&lt;/span>style&lt;span style="color:#666">=&lt;/span>tango \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">-&lt;/span>s \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">--&lt;/span>toc&lt;span style="color:#666">-&lt;/span>depth&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">1&lt;/span> \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">--&lt;/span>variable&lt;span style="color:#666">=&lt;/span>toc&lt;span style="color:#666">-&lt;/span>title:&lt;span style="color:#4070a0">&amp;#34; &amp;#34;&lt;/span> \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">--&lt;/span>top&lt;span style="color:#666">-&lt;/span>level&lt;span style="color:#666">-&lt;/span>division&lt;span style="color:#666">=&lt;/span>chapter \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">--&lt;/span>standalone \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">--&lt;/span>self&lt;span style="color:#666">-&lt;/span>contained \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">--&lt;/span>from&lt;span style="color:#666">=&lt;/span>markdown \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">$&lt;/span>(find &lt;span style="color:#666">.&lt;/span> &lt;span style="color:#666">-&lt;/span>name &lt;span style="color:#4070a0">&amp;#39;*.ru.md&amp;#39;&lt;/span>) \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">-&lt;/span>o book&lt;span style="color:#666">.&lt;/span>pdf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="convert-all-video-to-audio-with-ffmpeg-in-current-directory">Convert all video to audio with ffmpeg in current directory&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Check if ffmpeg is installed&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">command&lt;/span> -v ffmpeg &amp;gt;/dev/null 2&amp;gt;&amp;amp;&lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#666">||&lt;/span> &lt;span style="color:#666">{&lt;/span> &lt;span style="color:#007020">echo&lt;/span> &amp;gt;&amp;amp;&lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#4070a0">&amp;#34;ffmpeg is required but not installed. Aborting.&amp;#34;&lt;/span>; &lt;span style="color:#007020">exit&lt;/span> 1; &lt;span style="color:#666">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Get a list of all video files in the current directory&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bb60d5">video_files&lt;/span>&lt;span style="color:#666">=(&lt;/span>*.&lt;span style="color:#666">{&lt;/span>mp4,mkv,flv,avi&lt;span style="color:#666">})&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Check if there are any video files in the current directory&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#666">[&lt;/span> &lt;span style="color:#70a0d0">${#&lt;/span>&lt;span style="color:#bb60d5">video_files&lt;/span>[@]&lt;span style="color:#70a0d0">}&lt;/span> -eq &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#666">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#4070a0">&amp;#34;No video files found in the current directory.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">exit&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Loop through all video files and convert them to audio files&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> video_file in &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#70a0d0">${&lt;/span>&lt;span style="color:#bb60d5">video_files&lt;/span>[@]&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Get the file name without the extension&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#bb60d5">file_name&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#70a0d0">${&lt;/span>&lt;span style="color:#bb60d5">video_file&lt;/span>%.*&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Convert the video file to an audio file in the current directory&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ffmpeg -i &lt;span style="color:#bb60d5">$video_file&lt;/span> -vn -acodec libmp3lame -ab 128k &lt;span style="color:#bb60d5">$file_name&lt;/span>.mp3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#4070a0">&amp;#34;Conversion of &lt;/span>&lt;span style="color:#bb60d5">$video_file&lt;/span>&lt;span style="color:#4070a0"> completed. The audio file is located in the current directory.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#4070a0">&amp;#34;All conversions completed.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="remove-audio-from-video-with-ffmpeg">Remove audio from video with ffmpeg&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>ffmpeg -i input.mp4 -c copy -an output.mp4
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;code>-i input.mp4&lt;/code> specifies the input video file.&lt;/li>
+&lt;li>&lt;code>-c copy&lt;/code> tells FFmpeg to copy the video stream without re-encoding.&lt;/li>
+&lt;li>&lt;code>-an&lt;/code> removes the audio stream from the output file.&lt;/li>
+&lt;li>&lt;code>output.mp4&lt;/code> is the name you choose for the output video file.&lt;/li>
+&lt;/ul>
+&lt;h2 id="reduce-video-size-with-ffmpeg">Reduce video size with ffmpeg&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>ffmpeg -i input.mp4 -c:v libx264 -crf &lt;span style="color:#40a070">23&lt;/span> -preset medium -c:a aac -b:a 128k output.mp4
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;code>-i input.mp4&lt;/code> specifies the input video file.&lt;/li>
+&lt;li>&lt;code>-c:v libx264&lt;/code> sets the video codec to H.264, which is widely supported and provides good compression.&lt;/li>
+&lt;li>&lt;code>-crf 23&lt;/code> controls the video quality. Lower values result in higher quality but larger file sizes. A value of around 23 is a good balance between quality and size.&lt;/li>
+&lt;li>&lt;code>-preset medium&lt;/code> sets the encoding speed and compression efficiency. The &amp;ldquo;medium&amp;rdquo; preset provides a good compromise.&lt;/li>
+&lt;li>&lt;code>-c:a aac -b:a 128k&lt;/code> sets the audio codec to AAC with a bitrate of 128k. This ensures decent audio quality while keeping the file size reasonable.&lt;/li>
+&lt;li>&lt;code>output.mp4&lt;/code> is the name you choose for the output video file.&lt;/li>
+&lt;/ul>
+&lt;h2 id="create-a-new-video-from-all-the-videos-sorted-by-name-in-a-folder-using-with-ffmpeg">Create a new video from all the videos sorted by name in a folder using with ffmpeg&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>ffmpeg -f concat -safe &lt;span style="color:#40a070">0&lt;/span> -i &amp;lt;&lt;span style="color:#666">(&lt;/span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> f in &lt;span style="color:#007020;font-weight:bold">$(&lt;/span>ls -v /path/to/folder/*.mp4&lt;span style="color:#007020;font-weight:bold">)&lt;/span>; &lt;span style="color:#007020;font-weight:bold">do&lt;/span> &lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#4070a0">&amp;#34;file &amp;#39;&lt;/span>&lt;span style="color:#bb60d5">$PWD&lt;/span>&lt;span style="color:#4070a0">/&lt;/span>&lt;span style="color:#bb60d5">$f&lt;/span>&lt;span style="color:#4070a0">&amp;#39;&amp;#34;&lt;/span>; &lt;span style="color:#007020;font-weight:bold">done&lt;/span>&lt;span style="color:#666">)&lt;/span> -c copy output.mp4
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="reduce-video-size-for-all-videos-in-dir-and-sibdirs">Reduce video size for all videos in dir and sibdirs&lt;/h2>
+&lt;h3 id="python">python&lt;/h3>
+&lt;ul>
+&lt;li>Search for all videos&lt;/li>
+&lt;li>Convert&lt;/li>
+&lt;li>Set same meta data&lt;/li>
+&lt;li>Remove source video&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">os&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">subprocess&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">sys&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">datetime&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> datetime
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">convert_to_mp4&lt;/span>(src_file):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> new_file &lt;span style="color:#666">=&lt;/span> os&lt;span style="color:#666">.&lt;/span>path&lt;span style="color:#666">.&lt;/span>splitext(src_file)[&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#4070a0">&amp;#39;.mp4&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> subprocess&lt;span style="color:#666">.&lt;/span>run([&lt;span style="color:#4070a0">&amp;#39;ffmpeg&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;-i&amp;#39;&lt;/span>, src_file, new_file])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Preserve the modification date of the original file&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mod_time &lt;span style="color:#666">=&lt;/span> os&lt;span style="color:#666">.&lt;/span>path&lt;span style="color:#666">.&lt;/span>getmtime(src_file)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> os&lt;span style="color:#666">.&lt;/span>utime(new_file, (mod_time, mod_time))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> os&lt;span style="color:#666">.&lt;/span>remove(full_path)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">process_directory&lt;/span>(dir_path):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> video_extensions &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#4070a0">&amp;#39;.avi&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.mov&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.wmv&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.flv&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;.mkv&amp;#39;&lt;/span>] &lt;span style="color:#60a0b0;font-style:italic"># Define video file extensions&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> root, dirs, files &lt;span style="color:#007020;font-weight:bold">in&lt;/span> os&lt;span style="color:#666">.&lt;/span>walk(dir_path):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> file &lt;span style="color:#007020;font-weight:bold">in&lt;/span> files:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020">any&lt;/span>(file&lt;span style="color:#666">.&lt;/span>lower()&lt;span style="color:#666">.&lt;/span>endswith(ext) &lt;span style="color:#007020;font-weight:bold">for&lt;/span> ext &lt;span style="color:#007020;font-weight:bold">in&lt;/span> video_extensions):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> full_path &lt;span style="color:#666">=&lt;/span> os&lt;span style="color:#666">.&lt;/span>path&lt;span style="color:#666">.&lt;/span>join(root, file)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#39;=&amp;#39;&lt;/span>&lt;span style="color:#666">*&lt;/span>&lt;span style="color:#40a070">50&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">f&lt;/span>&lt;span style="color:#4070a0">&amp;#39;Starting path: &lt;/span>&lt;span style="color:#70a0d0">{&lt;/span>full_path&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#39;=&amp;#39;&lt;/span>&lt;span style="color:#666">*&lt;/span>&lt;span style="color:#40a070">50&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">try&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> convert_to_mp4(full_path)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">f&lt;/span>&lt;span style="color:#4070a0">&amp;#39;Processed and converted: &lt;/span>&lt;span style="color:#70a0d0">{&lt;/span>full_path&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">except&lt;/span> &lt;span style="color:#007020">Exception&lt;/span> &lt;span style="color:#007020;font-weight:bold">as&lt;/span> e:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">f&lt;/span>&lt;span style="color:#4070a0">&amp;#39;Failed to convert. Error: &lt;/span>&lt;span style="color:#70a0d0">{&lt;/span>&lt;span style="color:#007020">str&lt;/span>(e)&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">if&lt;/span> __name__ &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#4070a0">&amp;#34;__main__&amp;#34;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020">len&lt;/span>(sys&lt;span style="color:#666">.&lt;/span>argv) &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> directory_path &lt;span style="color:#666">=&lt;/span> sys&lt;span style="color:#666">.&lt;/span>argv[&lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> process_directory(directory_path)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Please provide a directory path.&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="bash">bash&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> file in *.*; &lt;span style="color:#007020;font-weight:bold">do&lt;/span> ffmpeg -i &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$file&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#70a0d0">${&lt;/span>&lt;span style="color:#bb60d5">file&lt;/span>%.*&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">.avi&amp;#34;&lt;/span>; &lt;span style="color:#007020;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

@@ -1,14 +1,428 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LeetCode Top Interview on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/leetcode-top-interview/</link><description>Recent content in LeetCode Top Interview on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Thu, 04 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/leetcode-top-interview/index.xml" rel="self" type="application/rss+xml"/><item><title>5. Longest Palindromic Substring</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/5/</link><pubDate>Thu, 20 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/5/</guid><description>LeetCode problem
-Given a string s, return the longest palindromic substring in s.
-A string is called a palindrome string if the reverse of that string is the same as the original string.
-Example 1:
-Input: s = &amp;quot;babad&amp;quot; Output: &amp;quot;bab&amp;quot; Explanation: &amp;quot;aba&amp;quot; is also a valid answer. Example 2:
-Input: s = &amp;quot;cbbd&amp;quot; Output: &amp;quot;bb&amp;quot; First accepted Hints How can we reuse a previously computed palindrome to compute a larger palindrome?
-How can we reuse a previously computed palindrome to compute a larger palindrome?</description></item><item><title>8. String to Integer (atoi)</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/8/</link><pubDate>Sat, 29 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/8/</guid><description>LeetCode problem
-// .js /** * @param {string} s * @return {number} */ var myAtoi = function(s) { let res = 0; let num = parseInt(s); if(num &amp;gt;= 2147483648){ res = 2147483647; } else if (num &amp;lt;= -2147483648){ res = -2147483648; } else if (isNaN(num)) { res = 0; } else { res = num; } return res; };</description></item><item><title>134. Gas Station</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/134/</link><pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/134/</guid><description>LeetCode problem
-Naive Solution:
-A naive solution would be to try starting from each gas station and check if you can complete the circuit. For each gas station, calculate the remaining gas in the tank after traveling to the next station.
-If the gas is not enough to travel to the next station, stop and try starting from the next gas station.
-Approach:
-In this problem, we can use a greedy algorithm
-We can keep track of the total gas and total cost while iterating through the gas stations.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LeetCode Top Interview on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/leetcode-top-interview/</link><description>Recent content in LeetCode Top Interview on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 04 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/leetcode-top-interview/index.xml" rel="self" type="application/rss+xml"/><item><title>3. Longest Substring Without Repeating Characters</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/3/</link><pubDate>Tue, 18 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/3/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given a string &lt;code>s&lt;/code>, find the length of the longest substring without repeating characters.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: s = &amp;quot;abcabcbb&amp;quot;
+Output: 3
+Explanation: The answer is &amp;quot;abc&amp;quot;, with the length of 3.
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Loop through string&lt;/li>
+&lt;li>Calculate max count of elements in substring&lt;/li>
+&lt;li>If get double element, then go back until get this element and do step 2.&lt;/li>
+&lt;li>Proceed the main loop&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/3.jpg"
+id="zoom-default"
+alt="Longest Substring Without Repeating Characters"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">lengthOfLongestSubstring&lt;/span>(self, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uniqs &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_max &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_current &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> idx &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> s:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> uniqs:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_max &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(len_max, len_current)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_current &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uniqs &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">reversed&lt;/span>(s[:idx]):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> j &lt;span style="color:#666">==&lt;/span> i:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_current &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uniqs&lt;span style="color:#666">.&lt;/span>add(j)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uniqs&lt;span style="color:#666">.&lt;/span>add(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_current &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_max &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(len_max, len_current)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> idx &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> len_max
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="better-solution">Better solution&lt;/h2>
+&lt;blockquote>
+&lt;p>Sliding Window - &lt;a href="https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/#sliding-window">template&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;p>&lt;strong>Window Sliding Technique&lt;/strong> is a computational technique which aims to reduce the use of nested loop and replace it with a single loop, thereby reducing the time complexity.
+The Sliding window technique can reduce the time complexity to O(n).&lt;/p>
+&lt;p>Tips for identifying this kind of problem where we could use the sliding window technique:&lt;/p>
+&lt;p>The problem will be based on an array, string, or list data structure.
+You need to find the subrange in this array or string that should provide the longest, shortest, or target values.
+A classic problem: to find the largest/smallest sum of given k (for example, three) consecutive numbers in an array.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">lengthOfLongestSubstring&lt;/span>(self, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(s)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># mp stores the current index of a character&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mp &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># try to extend the range [i, j]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> s[j] &lt;span style="color:#007020;font-weight:bold">in&lt;/span> mp:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(mp[s[j]], i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(res, j &lt;span style="color:#666">-&lt;/span> i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mp[s[j]] &lt;span style="color:#666">=&lt;/span> j &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">lengthOfLongestSubstring&lt;/span>(self, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> chars &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#007020;font-weight:bold">None&lt;/span>] &lt;span style="color:#666">*&lt;/span> &lt;span style="color:#40a070">128&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">=&lt;/span> right &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> right &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(s):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">=&lt;/span> s[right]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> index &lt;span style="color:#666">=&lt;/span> chars[&lt;span style="color:#007020">ord&lt;/span>(r)]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> index &lt;span style="color:#007020;font-weight:bold">is&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> left &lt;span style="color:#666">&amp;lt;=&lt;/span> index &lt;span style="color:#666">&amp;lt;&lt;/span> right:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">=&lt;/span> index &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(res, right &lt;span style="color:#666">-&lt;/span> left &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> chars[&lt;span style="color:#007020">ord&lt;/span>(r)] &lt;span style="color:#666">=&lt;/span> right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">lengthOfLongestSubstring&lt;/span>(self, s):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_len &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> substr &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> char &lt;span style="color:#007020;font-weight:bold">in&lt;/span> s:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> char &lt;span style="color:#007020;font-weight:bold">not&lt;/span> &lt;span style="color:#007020;font-weight:bold">in&lt;/span> substr:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> substr &lt;span style="color:#666">+=&lt;/span> char
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_len &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(max_len, &lt;span style="color:#007020">len&lt;/span>(substr))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> start &lt;span style="color:#666">=&lt;/span> substr&lt;span style="color:#666">.&lt;/span>index(char) &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> substr &lt;span style="color:#666">=&lt;/span> substr[start:] &lt;span style="color:#666">+&lt;/span> char
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> max_len
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/discuss/2694302/JS-or-98-or-Sliding-window-or-With-exlanation">https://leetcode.com/problems/longest-substring-without-repeating-characters/discuss/2694302/JS-or-98-or-Sliding-window-or-With-exlanation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/discuss/2133524/JavaC%2B%2B-A-reall-Detailed-Explanation">https://leetcode.com/problems/longest-substring-without-repeating-characters/discuss/2133524/JavaC%2B%2B-A-reall-Detailed-Explanation&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>5. Longest Palindromic Substring</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/5/</link><pubDate>Thu, 20 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/5/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/longest-palindromic-substring/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given a string &lt;code>s&lt;/code>, return the longest palindromic substring in &lt;code>s&lt;/code>.&lt;/p>
+&lt;p>A string is called a palindrome string if the reverse of that string is the same as the original string.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: s = &amp;quot;babad&amp;quot;
+Output: &amp;quot;bab&amp;quot;
+Explanation: &amp;quot;aba&amp;quot; is also a valid answer.
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: s = &amp;quot;cbbd&amp;quot;
+Output: &amp;quot;bb&amp;quot;
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;h3 id="hints">Hints&lt;/h3>
+&lt;blockquote>
+&lt;p>How can we reuse a previously computed palindrome to compute a larger palindrome?&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>How can we reuse a previously computed palindrome to compute a larger palindrome?&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Complexity based hint:
+If we use brute-force and check whether for every start and end position a substring is a palindrome we have O(n^2) start - end pairs and O(n) palindromic checks. Can we reduce the time for palindromic checks to O(1) by reusing some previous computation.&lt;/p>&lt;/blockquote>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;p>We start at &lt;code>index = 0&lt;/code> and iterate through all values until &lt;code>n&lt;/code>. At each index we call the function &lt;code>getPalindrome&lt;/code> that will check the values to the left and right of the provided indices. It will continue to do so until the longest palindrome within the given range is found.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/5.jpg"
+id="zoom-default"
+alt="test-case"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/5-diagram.svg"
+id="zoom-default"
+alt="LeetCode diagram explained"
+loading="lazy"
+/>
+&lt;/p>
+&lt;strong>&lt;a href="https://app.diagrams.net/#G17m7pbA_Ym4_Xi8JFBPSyMcr8zYzX_1FH">Link to diagram&lt;/a>&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">longestPalindrome&lt;/span>(self, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">str&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">getPalindrome&lt;/span>(left, right):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span>(left &lt;span style="color:#666">&amp;gt;=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(s) &lt;span style="color:#007020;font-weight:bold">and&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s[left] &lt;span style="color:#666">==&lt;/span> s[right]):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> left&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>, right&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pal_left &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pal_right &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_max &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(s)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left, right &lt;span style="color:#666">=&lt;/span> getPalindrome(i, i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pal_len&lt;span style="color:#666">=&lt;/span> right &lt;span style="color:#666">-&lt;/span> left &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> pal_len &lt;span style="color:#666">&amp;gt;&lt;/span> len_max:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pal_left &lt;span style="color:#666">=&lt;/span> left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pal_right &lt;span style="color:#666">=&lt;/span> right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_max &lt;span style="color:#666">=&lt;/span> pal_len
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left, right &lt;span style="color:#666">=&lt;/span> getPalindrome(i, i&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pal_len &lt;span style="color:#666">=&lt;/span> right &lt;span style="color:#666">-&lt;/span> left &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> pal_len &lt;span style="color:#666">&amp;gt;&lt;/span> len_max:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pal_left &lt;span style="color:#666">=&lt;/span> left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pal_right &lt;span style="color:#666">=&lt;/span> right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_max &lt;span style="color:#666">=&lt;/span> pal_len
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> s[pal_left:pal_right&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="better-solution">Better solution&lt;/h2>
+&lt;h3 id="manachers-algorithm">Manacher&amp;rsquo;s algorithm&lt;/h3>
+&lt;p>There is an &lt;code>O(n)&lt;/code> algorithm called &lt;a href="https://en.wikipedia.org/wiki/Longest_palindromic_substring#Manacher%27s_algorithm">Manacher&amp;rsquo;s algorithm&lt;/a>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">longestPalindrome&lt;/span>(self, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">str&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># @ and $ signs are sentinels appended to each end to avoid bounds checking&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> t &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>&lt;span style="color:#666">.&lt;/span>join(&lt;span style="color:#4070a0">&amp;#39;@&amp;#39;&lt;/span> &lt;span style="color:#666">+&lt;/span> s &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#4070a0">&amp;#39;$&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(t)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># t[i - maxExtends[i]..i) ==&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># t[i + 1..i + maxExtends[i]]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> maxExtends &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">*&lt;/span> n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> center &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, n &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rightBoundary &lt;span style="color:#666">=&lt;/span> center &lt;span style="color:#666">+&lt;/span> maxExtends[center]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mirrorIndex &lt;span style="color:#666">=&lt;/span> center &lt;span style="color:#666">-&lt;/span> (i &lt;span style="color:#666">-&lt;/span> center)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> maxExtends[i] &lt;span style="color:#666">=&lt;/span> rightBoundary &lt;span style="color:#666">&amp;gt;&lt;/span> i &lt;span style="color:#007020;font-weight:bold">and&lt;/span> \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">min&lt;/span>(rightBoundary &lt;span style="color:#666">-&lt;/span> i, maxExtends[mirrorIndex])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Attempt to expand palindrome centered at i&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> t[i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#666">+&lt;/span> maxExtends[i]] &lt;span style="color:#666">==&lt;/span> t[i &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#666">-&lt;/span> maxExtends[i]]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> maxExtends[i] &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># If palindrome centered at i expand past rightBoundary,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># adjust center based on expanded palindrome.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> i &lt;span style="color:#666">+&lt;/span> maxExtends[i] &lt;span style="color:#666">&amp;gt;&lt;/span> rightBoundary:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> center &lt;span style="color:#666">=&lt;/span> i
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Find the maxExtend and bestCenter&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> maxExtend, bestCenter &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>((extend, i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i, extend &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">enumerate&lt;/span>(maxExtends))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> s[(bestCenter &lt;span style="color:#666">-&lt;/span> maxExtend) &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">2&lt;/span>:(bestCenter &lt;span style="color:#666">+&lt;/span> maxExtend) &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">2&lt;/span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://en.wikipedia.org/wiki/Longest_palindromic_substring#Manacher%27s_algorithm">Manacher&amp;rsquo;s algorithm&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=0CKUjDcUYYA">Errichto:LeetCode problem Longest Palindromic Substring (two solutions)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://redquark.org/leetcode/0005-longest-palindromic-substring/">https://redquark.org/leetcode/0005-longest-palindromic-substring/&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>RU&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=sp9f7nQHqeQ&amp;amp;t=39s">Разбор задачи с интервью. Литкод 5. Longest Palindromic Substring&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ru.algorithmica.org/cs/string-searching/manacher/">Алгоритмика: Алгоритм Манакера&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9C%D0%B0%D0%BD%D0%B0%D0%BA%D0%B5%D1%80%D0%B0#:~:text=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%20%D0%9C%D0%B0%D0%BD%D0%B0%D0%BA%D0%B5%D1%80%D0%B0%20%28%D0%B0%D0%BD%D0%B3%D0%BB.%20Manacher%27s%20algorithm%29,%D1%80%D0%B5%D1%88%D0%B0%D1%82%D1%8C%20%D0%B8%20%D0%B1%D0%BE%D0%BB%D0%B5%D0%B5%20%D0%BE%D0%B1%D1%89%D0%B8%D0%B5%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8">Википедия:Алгоритм Манакера&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>8. String to Integer (atoi)</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/8/</link><pubDate>Sat, 29 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/8/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/string-to-integer-atoi/">LeetCode problem&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// .js
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>&lt;span style="color:#60a0b0;font-style:italic">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"> * @param {string} s
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"> * @return {number}
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">var&lt;/span> myAtoi &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">function&lt;/span>(s) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">let&lt;/span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">let&lt;/span> num &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">parseInt&lt;/span>(s);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span>(num &lt;span style="color:#666">&amp;gt;=&lt;/span> &lt;span style="color:#40a070">2147483648&lt;/span>){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">2147483647&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (num &lt;span style="color:#666">&amp;lt;=&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">2147483648&lt;/span>){
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">2147483648&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (&lt;span style="color:#007020">isNaN&lt;/span>(num)) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> } &lt;span style="color:#007020;font-weight:bold">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> num;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>};
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>17. Letter Combinations of a Phone Number</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/17/</link><pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/17/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/letter-combinations-of-a-phone-number/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given a string containing digits from &lt;code>2-9&lt;/code> inclusive, return all possible letter combinations that the number could represent. Return the answer in &lt;strong>any order&lt;/strong>.&lt;/p>
+&lt;p>A mapping of digits to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.leetcode.com/uploads/2022/03/15/1200px-telephone-keypad2svg.png"
+id="zoom-default"
+alt="17"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: digits = &amp;quot;23&amp;quot;
+Output: [&amp;quot;ad&amp;quot;,&amp;quot;ae&amp;quot;,&amp;quot;af&amp;quot;,&amp;quot;bd&amp;quot;,&amp;quot;be&amp;quot;,&amp;quot;bf&amp;quot;,&amp;quot;cd&amp;quot;,&amp;quot;ce&amp;quot;,&amp;quot;cf&amp;quot;]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: digits = &amp;quot;&amp;quot;
+Output: []
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">letterCombinations&lt;/span>(self, digits: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[&lt;span style="color:#007020">str&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> digits:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> letters &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;abc&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;def&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#39;ghi&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;jkl&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;mno&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#39;pqrs&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;tuv&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;wxyz&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> d &lt;span style="color:#007020;font-weight:bold">in&lt;/span> digits:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> d &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(d)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tmp &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> letter &lt;span style="color:#007020;font-weight:bold">in&lt;/span> letters[d]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> word &lt;span style="color:#007020;font-weight:bold">in&lt;/span> result:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> word &lt;span style="color:#666">+=&lt;/span> letter
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tmp&lt;span style="color:#666">.&lt;/span>append(word)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#666">=&lt;/span> tmp
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> result
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>19. Remove Nth Node From End of List</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/19/</link><pubDate>Sun, 13 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/19/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list">LeetCode problem 19&lt;/a>&lt;/p>
+&lt;p>Given the &amp;lsquo;head&amp;rsquo; of a linked list, remove the &amp;rsquo;nth&amp;rsquo; node from the end of the list and return its head.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.leetcode.com/uploads/2020/10/03/remove_ex1.jpg"
+id="zoom-default"
+alt="LeetCode 19. Remove Nth Node From End of List"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;pre>&lt;code>Input: head = [1,2,3,4,5], n = 2
+Output: [1,2,3,5]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: head = [1], n = 1
+Output: []
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Two pointers.&lt;/li>
+&lt;li>Second pointer starts from &lt;code>nth&lt;/code> position.&lt;/li>
+&lt;li>Run while second pointer exist.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Definition for singly-linked list.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># class ListNode:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># def __init__(self, val=0, next=None):&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.val = val&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.next = next&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">removeNthFromEnd&lt;/span>(self, head, n: &lt;span style="color:#007020">int&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p1 &lt;span style="color:#666">=&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p2 &lt;span style="color:#666">=&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p2 &lt;span style="color:#666">=&lt;/span> p2&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#60a0b0;font-style:italic"># fast&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> p2:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> head&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#60a0b0;font-style:italic"># in case: head=[1], n=1 -&amp;gt; return []&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> p2&lt;span style="color:#666">.&lt;/span>next:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p1 &lt;span style="color:#666">=&lt;/span> p1&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p2 &lt;span style="color:#666">=&lt;/span> p2&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p1&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> p1&lt;span style="color:#666">.&lt;/span>next&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> head
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Definition for singly-linked list.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># class ListNode:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># def __init__(self, val=0, next=None):&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.val = val&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.next = next&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">removeNthFromEnd&lt;/span>(self, head: Optional[ListNode], n: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> Optional[ListNode]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> head&lt;span style="color:#666">.&lt;/span>next:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nodes &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> cur:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nodes[i] &lt;span style="color:#666">=&lt;/span> cur
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> cur&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> i &lt;span style="color:#666">-&lt;/span> n &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> head&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> nodes[i &lt;span style="color:#666">-&lt;/span> n &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> cur&lt;span style="color:#666">.&lt;/span>next:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> cur&lt;span style="color:#666">.&lt;/span>next&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> head
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>22. Generate Parentheses</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/22/</link><pubDate>Wed, 16 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/22/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/generate-parentheses/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: n = 3
+Output: [&amp;quot;((()))&amp;quot;,&amp;quot;(()())&amp;quot;,&amp;quot;(())()&amp;quot;,&amp;quot;()(())&amp;quot;,&amp;quot;()()()&amp;quot;]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: n = 1
+Output: [&amp;quot;()&amp;quot;]
+&lt;/code>&lt;/pre>
+&lt;h2 id="prerequirements">Prerequirements&lt;/h2>
+&lt;p>&lt;a href="https://romankurnovskii.com/en/tracks/algorithms-101/algorithms/#backtracking">Backtracking pattern&lt;/a>&lt;/p>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/22.jpg"
+id="zoom-default"
+alt="test-case"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">generateParenthesis&lt;/span>(self, n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">dfs&lt;/span>(l: &lt;span style="color:#007020">int&lt;/span>, r: &lt;span style="color:#007020">int&lt;/span>, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> r &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#666">.&lt;/span>append(s)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(l &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>, r, s &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#4070a0">&amp;#39;(&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l &lt;span style="color:#666">&amp;lt;&lt;/span> r:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(l, r &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>, s &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#4070a0">&amp;#39;)&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(n, n, &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>134. Gas Station</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/134/</link><pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/134/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/gas-station/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Naive Solution:&lt;/strong>&lt;/p>
+&lt;p>A naive solution would be to try starting from each gas station and check if you can complete the circuit. For each gas station, calculate the remaining gas in the tank after traveling to the next station.&lt;/p>
+&lt;p>If the gas is not enough to travel to the next station, stop and try starting from the next gas station.&lt;/p>
+&lt;p>&lt;strong>Approach:&lt;/strong>&lt;/p>
+&lt;p>In this problem, we can use a &lt;a href="https://romankurnovskii.com/en/tags/greedy/">greedy algorithm&lt;/a>&lt;/p>
+&lt;p>We can keep track of the total gas and total cost while iterating through the gas stations.&lt;/p>
+&lt;p>If the total gas is greater than or equal to the total cost, it is guaranteed that there exists a solution.&lt;/p>
+&lt;p>&lt;strong>Solution:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">canCompleteCircuit&lt;/span>(self, gas, cost) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> total_gas &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> total_cost &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> star_idx &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current_gas &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(gas)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> total_gas &lt;span style="color:#666">+=&lt;/span> gas[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> total_cost &lt;span style="color:#666">+=&lt;/span> cost[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current_gas &lt;span style="color:#666">+=&lt;/span> gas[i] &lt;span style="color:#666">-&lt;/span> cost[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> current_gas &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> star_idx &lt;span style="color:#666">=&lt;/span> i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current_gas &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> star_idx &lt;span style="color:#007020;font-weight:bold">if&lt;/span> total_gas &lt;span style="color:#666">&amp;gt;=&lt;/span> total_cost &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;video width="100%" controls>
+&lt;source src="../../assets/134.mp4" type="video/mp4">
+Your browser does not support the video tag.
+&lt;/video>
+&lt;figcaption>LeetCode Problem 134 Video Solution&lt;/figcaption></description></item></channel></rss>

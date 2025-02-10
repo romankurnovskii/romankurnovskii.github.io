@@ -1,10 +1,163 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>02: Combinatorics &amp; Geometry on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/02-combinatorics-and-geometry/</link><description>Recent content in 02: Combinatorics &amp; Geometry on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Thu, 13 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/02-combinatorics-and-geometry/index.xml" rel="self" type="application/rss+xml"/><item><title>1777A - Everybody Likes Good Arrays! - 800</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/02-combinatorics-and-geometry/1777a/</link><pubDate>Mon, 24 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/02-combinatorics-and-geometry/1777a/</guid><description>1777A - Everybody Likes Good Arrays! (greedy, math, 800)
-Statement You have an array of numbers, and you want to make it &amp;ldquo;good.&amp;rdquo; A good array is one where every pair of adjacent numbers has different parity (one is even, and the other is odd). You can do this by performing operations on pairs of adjacent numbers with the same parity (both even or both odd), and replacing them with their product. Logic Loop through the array Check the parity of the current element and the previous element If the parity is the same, perform the operation and increment the operation counter Repeat steps 2 and 3 until the end of the array Return the operation counter Solution def solve(n, ar): res = 0 i = 0 while i &amp;lt; len(ar) - 1: if ar[i] % 2 == ar[i + 1] % 2: ar[i] = ar[i] * ar[i + 1] del ar[i + 1] res += 1 else: i += 1 return res Optimized Solution Check how many times the parity changes in the given array.</description></item><item><title>1787A - Exponential Equation - 800</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/02-combinatorics-and-geometry/1787a/</link><pubDate>Thu, 27 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/02-combinatorics-and-geometry/1787a/</guid><description>1787A - Exponential Equation (constructive algorithms, math, 800)
-Logic The equation is a mix of multiplication and exponential operations. Given the nature of exponential operations, $𝑥^𝑦$ and $𝑦^𝑥$ can grow very large very quickly as x and y increase.
-We can try to simplify the equation.
-If we can somehow set one of the variables x or y to 1, the equation simplifies.
-This is because any number (except zero) raised to the power of 1 is the number itself, and any number raised to the power of 0 is 1.</description></item><item><title>1777B - Emordnilap - 900</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/02-combinatorics-and-geometry/1777b/</link><pubDate>Thu, 27 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/02-combinatorics-and-geometry/1777b/</guid><description>1777B - Emordnilap (combinatorics, greedy, math, 900)
-Statement In this problem, we need to find the &amp;ldquo;beauty&amp;rdquo; of all permutations of a certain length n. The beauty of a permutation is defined as the number of inversions in an array that is created by combining the permutation and its reverse.
-Logic The key insight is that every permutation of length n has the same beauty.
-This is because the structure of the array created by concatenating a permutation with its reverse ensures that there will always be the same number of inversions, regardless of the order of the numbers in the original permutation.</description></item><item><title>1773F - Football - 800</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/02-combinatorics-and-geometry/1773f/</link><pubDate>Thu, 27 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/02-combinatorics-and-geometry/1773f/</guid><description>1773F - Football (constructive algorithms, 800)
-Logic Solution def solve(): n = int(input()) # number of matches a = int(input()) # goals scored b = int(input()) # goals conceded if n == 1: if a == b: print(1) else: print(0) print(f&amp;#34;{a}:{b}&amp;#34;) return matches = [[0, 0] for _ in range(n + 1)] draw = 0 match = 1 while match &amp;lt;= n and a &amp;gt; 0: a -= 1 matches[match] = [1, 0] match += 1 if a &amp;gt; 0: matches[1] = [matches[1][0] + a, 0] if b &amp;gt; 0: if match == n + 1: matches[1][0] += 1 matches[n][0] -= 1 matches[n][1] = b else: while match &amp;lt;= n and b &amp;gt; 0: b -= 1 matches[match][1] += 1 match += 1 if b &amp;gt; 0: matches[n][1] += b for i in range(1, n + 1): if matches[i][0] == matches[i][1]: draw += 1 print(draw) for i in range(1, n + 1): print(f&amp;#34;{matches[i][0]}:{matches[i][1]}&amp;#34;) solve() Codeforces Editorial PDF</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>02: Combinatorics &amp; Geometry on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/02-combinatorics-and-geometry/</link><description>Recent content in 02: Combinatorics &amp; Geometry on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 13 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/02-combinatorics-and-geometry/index.xml" rel="self" type="application/rss+xml"/><item><title>1777A - Everybody Likes Good Arrays! - 800</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/02-combinatorics-and-geometry/1777a/</link><pubDate>Mon, 24 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/02-combinatorics-and-geometry/1777a/</guid><description>&lt;p>&lt;mark>&lt;a href="https://codeforces.com/contest/1777/problem/A">1777A - Everybody Likes Good Arrays! (greedy, math, 800)&lt;/a>&lt;/mark>&lt;/p>
+&lt;h2 id="statement">Statement&lt;/h2>
+&lt;ul>
+&lt;li>You have an array of numbers, and you want to make it &amp;ldquo;good.&amp;rdquo; A good array is one where every pair of adjacent numbers has different parity (one is &lt;strong>even&lt;/strong>, and the other is &lt;strong>odd&lt;/strong>).&lt;/li>
+&lt;li>You can do this by performing operations on pairs of adjacent numbers with the same parity (both even or both odd), and replacing them with their product.&lt;/li>
+&lt;/ul>
+&lt;h2 id="logic">Logic&lt;/h2>
+&lt;ol>
+&lt;li>Loop through the array&lt;/li>
+&lt;li>Check the parity of the current element and the previous element&lt;/li>
+&lt;li>If the parity is the same, perform the operation and increment the operation counter&lt;/li>
+&lt;li>Repeat steps 2 and 3 until the end of the array&lt;/li>
+&lt;li>Return the operation counter&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>(n, ar):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> i &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(ar) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> ar[i] &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">==&lt;/span> ar[i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#40a070">2&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ar[i] &lt;span style="color:#666">=&lt;/span> ar[i] &lt;span style="color:#666">*&lt;/span> ar[i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">del&lt;/span> ar[i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="optimized-solution">Optimized Solution&lt;/h2>
+&lt;ol>
+&lt;li>Check how many times the parity changes in the given array.&lt;/li>
+&lt;li>The number of operations needed is the difference between the original length of the array and the count of parity changes.&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ar &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">list&lt;/span>(&lt;span style="color:#007020">map&lt;/span>(&lt;span style="color:#007020">int&lt;/span>, &lt;span style="color:#007020">input&lt;/span>()&lt;span style="color:#666">.&lt;/span>split()))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Count the number of times the parity changes in the array&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> last_parity &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parity_count &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> x &lt;span style="color:#007020;font-weight:bold">in&lt;/span> ar:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> x &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">!=&lt;/span> last_parity:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parity_count &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> last_parity &lt;span style="color:#666">=&lt;/span> x &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># The result is the difference between the original length and the count of parity changes&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> n &lt;span style="color:#666">-&lt;/span> parity_count
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(res)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>())):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> solve()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1787A - Exponential Equation - 800</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/02-combinatorics-and-geometry/1787a/</link><pubDate>Thu, 27 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/02-combinatorics-and-geometry/1787a/</guid><description>&lt;p>&lt;mark>&lt;a href="https://codeforces.com/contest/1787/problem/A">1787A - Exponential Equation (constructive algorithms, math, 800)&lt;/a>&lt;/mark>&lt;/p>
+&lt;h2 id="logic">Logic&lt;/h2>
+&lt;p>The equation is a mix of multiplication and exponential operations. Given the nature of exponential operations, $𝑥^𝑦$ and $𝑦^𝑥$ can grow very large very quickly as &lt;code>x&lt;/code> and &lt;code>y&lt;/code> increase.&lt;/p>
+&lt;p>We can try to simplify the equation.&lt;/p>
+&lt;p>If we can somehow set one of the variables &lt;code>x&lt;/code> or &lt;code>y&lt;/code> to 1, the equation simplifies.&lt;/p>
+&lt;p>This is because any number (except zero) raised to the power of 1 is the number itself, and any number raised to the power of 0 is 1.&lt;/p>
+&lt;p>So, if we set &lt;code>x = 1&lt;/code>, the equation simplifies to &lt;code>1^y * y + y^1 * 1 = n&lt;/code>, which further simplifies to &lt;code>y + y = n&lt;/code>, or &lt;code>2y = n&lt;/code>. This is a simple linear equation, and we can see that for any even &lt;code>n&lt;/code> greater than 2, it has a solution in integers. The solution is &lt;code>x = 1&lt;/code> and &lt;code>y = n/2&lt;/code>.&lt;/p>
+&lt;ul>
+&lt;li>For &lt;code>n = 2&lt;/code>, we can set both &lt;code>x&lt;/code> and &lt;code>y&lt;/code> to &lt;code>1&lt;/code>, and the equation holds. It can be a base case.&lt;/li>
+&lt;li>For &lt;strong>odd&lt;/strong> &lt;code>n&lt;/code> greater than 2, and for &lt;code>n = 1&lt;/code>, there&amp;rsquo;s no solution in integers.&lt;/li>
+&lt;/ul>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> n &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">2&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> n &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, n&lt;span style="color:#666">//&lt;/span>&lt;span style="color:#40a070">2&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>())):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> solve()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1777B - Emordnilap - 900</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/02-combinatorics-and-geometry/1777b/</link><pubDate>Thu, 27 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/02-combinatorics-and-geometry/1777b/</guid><description>&lt;p>&lt;mark>&lt;a href="https://codeforces.com/contest/1777/problem/B">1777B - Emordnilap (combinatorics, greedy, math, 900)&lt;/a>&lt;/mark>&lt;/p>
+&lt;h2 id="statement">Statement&lt;/h2>
+&lt;p>In this problem, we need to find the &amp;ldquo;beauty&amp;rdquo; of all permutations of a certain length &lt;code>n&lt;/code>. The beauty of a permutation is defined as the number of inversions in an array that is created by combining the permutation and its reverse.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../assets/1777B.en.jpeg"
+id="zoom-default"
+alt="1777B"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="logic">Logic&lt;/h2>
+&lt;p>The key insight is that every permutation of length &lt;code>n&lt;/code> has the same beauty.&lt;/p>
+&lt;p>This is because the structure of the array created by concatenating a permutation with its reverse ensures that there will always be the same number of inversions, regardless of the order of the numbers in the original permutation.&lt;/p>
+&lt;p>Therefore, we can calculate the beauty of a single permutation and then multiply by the number of possible permutations (which is &lt;code>n!&lt;/code>) to get the total sum of the beauties.&lt;/p>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MOD &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">10&lt;/span>&lt;span style="color:#666">**&lt;/span>&lt;span style="color:#40a070">9&lt;/span> &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">7&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Calculate the total number of inversion pairs in the array&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> inversion_pairs &lt;span style="color:#666">=&lt;/span> n &lt;span style="color:#666">*&lt;/span> (n &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Find the factorial of n&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fact &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, n&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fact &lt;span style="color:#666">=&lt;/span> fact &lt;span style="color:#666">*&lt;/span> i &lt;span style="color:#666">%&lt;/span> MOD &lt;span style="color:#60a0b0;font-style:italic"># requirement: size n modulo 1000000007(109+7)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># The sum of the beauty of all permutations can be found by multiplying&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># the number of inversion pairs by the factorial of n&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> (fact &lt;span style="color:#666">*&lt;/span> inversion_pairs) &lt;span style="color:#666">%&lt;/span> MOD
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(res)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>())):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> solve()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1773F - Football - 800</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/02-combinatorics-and-geometry/1773f/</link><pubDate>Thu, 27 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/02-combinatorics-and-geometry/1773f/</guid><description>&lt;p>&lt;mark>&lt;a href="https://codeforces.com/contest/1773/problem/F">1773F - Football (constructive algorithms, 800)&lt;/a>&lt;/mark>&lt;/p>
+&lt;h2 id="logic">Logic&lt;/h2>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>()) &lt;span style="color:#60a0b0;font-style:italic"># number of matches&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>()) &lt;span style="color:#60a0b0;font-style:italic"># goals scored&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> b &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>()) &lt;span style="color:#60a0b0;font-style:italic"># goals conceded&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> n &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> a &lt;span style="color:#666">==&lt;/span> b:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#40a070">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">f&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#70a0d0">{&lt;/span>a&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">:&lt;/span>&lt;span style="color:#70a0d0">{&lt;/span>b&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matches &lt;span style="color:#666">=&lt;/span> [[&lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> draw &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">match&lt;/span> &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> &lt;span style="color:#007020;font-weight:bold">match&lt;/span> &lt;span style="color:#666">&amp;lt;=&lt;/span> n &lt;span style="color:#007020;font-weight:bold">and&lt;/span> a &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matches[&lt;span style="color:#007020;font-weight:bold">match&lt;/span>] &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">match&lt;/span> &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> a &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matches[&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">=&lt;/span> [matches[&lt;span style="color:#40a070">1&lt;/span>][&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">+&lt;/span> a, &lt;span style="color:#40a070">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> b &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">match&lt;/span> &lt;span style="color:#666">==&lt;/span> n &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matches[&lt;span style="color:#40a070">1&lt;/span>][&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matches[n][&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matches[n][&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">=&lt;/span> b
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> &lt;span style="color:#007020;font-weight:bold">match&lt;/span> &lt;span style="color:#666">&amp;lt;=&lt;/span> n &lt;span style="color:#007020;font-weight:bold">and&lt;/span> b &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> b &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matches[&lt;span style="color:#007020;font-weight:bold">match&lt;/span>][&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">match&lt;/span> &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> b &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matches[n][&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">+=&lt;/span> b
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, n &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> matches[i][&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">==&lt;/span> matches[i][&lt;span style="color:#40a070">1&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> draw &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(draw)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, n &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">f&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#70a0d0">{&lt;/span>matches[i][&lt;span style="color:#40a070">0&lt;/span>]&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">:&lt;/span>&lt;span style="color:#70a0d0">{&lt;/span>matches[i][&lt;span style="color:#40a070">1&lt;/span>]&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>solve()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://codeforces.com/contest/1773/attachments/download/18267/nef-2022-tutorial.pdf">Codeforces Editorial PDF&lt;/a>&lt;/p></description></item></channel></rss>

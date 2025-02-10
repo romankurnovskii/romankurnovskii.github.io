@@ -1,68 +1,789 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Math on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/math/</link><description>Recent content in Math on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 08 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/math/index.xml" rel="self" type="application/rss+xml"/><item><title>2. Add Two Numbers</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2/</link><pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2/</guid><description>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
-You may assume the two numbers do not contain any leading zero, except the number 0 itself.
-Example 1:
-Input: l1 = [2,4,3], l2 = [5,6,4] Output: [7,0,8] Explanation: 342 + 465 = 807. First accepted Idea:
-Loop through lists add each value to the list reverse list calculate sum create linked list from reversed sum class Solution: def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -&amp;gt; Optional[ListNode]: def createLinkedNode(values): head = ListNode(values[0]) current = head for i in values[1:]: node = ListNode(i) current.</description></item><item><title>7. Reverse Integer</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/7/</link><pubDate>Tue, 01 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/7/</guid><description>LeetCode problem
-Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.
-Assume the environment does not allow you to store 64-bit integers (signed or unsigned).
-Example 1:
-Input: x = 123 Output: 321
-Example 2:
-Input: x = -123 Output: -321
-Example 3:
-Input: x = 120 Output: 21
-First accepted Idea:
-Convert number to int Remove minus if exist (or convert module of number) reverse class Solution: def reverse(self, x: int) -&amp;gt; int: reversed_int = [] str_int = str(x) if x &amp;lt; 0: str_int = str_int[1:] for i in reversed(range(len(str_int))): reversed_int.</description></item><item><title>9. Palindrome Number</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/9/</link><pubDate>Fri, 25 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/9/</guid><description>LeetCode задача
-Задача Определите, является ли целое число палиндромом, не преобразуя его в строку.
-Подсказки Переворачивая число и сравнивая его с оригиналом, мы можем определить, является ли оно палиндромом.
-Подход Вместо того чтобы преобразовывать число в строку, мы можем перевернуть его цифры с использованием математических операций, а затем сравнить перевернутое число с оригинальным.
-Алгоритм Если число отрицательное, то это не палиндром. Инициализируем переменную для перевернутого числа: мы будем создавать это число шаг за шагом. Переворачиваем число: Это достигается путем последовательного взятия последней цифры числа и добавления её к текущему общему количеству после сдвига текущих цифр этого общего числа.</description></item><item><title>13. Roman to Integer</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/13/</link><pubDate>Wed, 19 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/13/</guid><description>LeetCode problem
-Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
-Symbol Value I 1 V 5 X 10 L 50 C 100 D 500 M 1000 For example, 2 is written as II in Roman numeral, just two ones added together. 12 is written as XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.
-Roman numerals are usually written largest to smallest from left to right.</description></item><item><title>29. Divide Two Integers</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/29/</link><pubDate>Sun, 20 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/29/</guid><description>LeetCode problem
-Given two integers dividend and divisor, divide two integers without using multiplication, division, and mod operator.
-The integer division should truncate toward zero, which means losing its fractional part. For example, 8.345 would be truncated to 8, and -2.7335 would be truncated to -2.
-Return the quotient after dividing dividend by divisor.
-Note: Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range: [−231, 231 − 1]. For this problem, if the quotient is strictly greater than 231 - 1, then return 231 - 1, and if the quotient is strictly less than -231, then return -231.</description></item><item><title>33. Search in Rotated Sorted Array</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/33/</link><pubDate>Thu, 24 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/33/</guid><description>LeetCode problem
-There is an integer array nums sorted in ascending order (with distinct values).
-Prior to being passed to your function, nums is possibly rotated at an unknown pivot index k (1 &amp;lt;= k &amp;lt; nums.length) such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). For example, [0,1,2,4,5,6,7] might be rotated at pivot index 3 and become [4,5,6,7,0,1,2].
-Given the array nums after the possible rotation and an integer target, return the index of target if it is in nums, or -1 if it is not in nums.</description></item><item><title>48. Rotate Image</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/48/</link><pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/48/</guid><description>LeetCode problem
-You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).
-You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation.
-Example 1:
-Input: matrix = [[1,2,3],[4,5,6],[7,8,9]] Output: [[7,4,1],[8,5,2],[9,6,3]] Example 2:
-Input: matrix = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]] Output: [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]] Idea:
-class Solution: def rotate(self, matrix: List[List[int]]) -&amp;gt; None: &amp;#34;&amp;#34;&amp;#34; Do not return anything, modify matrix in-place instead.</description></item><item><title>50. Pow(x, n)</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/50/</link><pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/50/</guid><description>LeetCode problem
-Implement pow(x, n), which calculates x raised to the power n (i.e., x^n).
-Example 1:
-Input: x = 2.00000, n = 10 Output: 1024.00000 Example 2:
-Input: x = 2.10000, n = 3 Output: 9.26100 Example 3:
-Input: x = 2.00000, n = -2 Output: 0.25000 Explanation: 2-2 = 1/22 = 1/4 = 0.25 Approach 1:
-class Solution: def myPow(self, x: float, n: int) -&amp;gt; float: return x ** n Approach 2:
-Recursive
-class Solution: def myPow(self, x, n): if not n: return 1 if n &amp;lt; 0: return 1 / self.</description></item><item><title>62. Unique Paths</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/62/</link><pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/62/</guid><description>LeetCode problem
-There is a robot on an m x n grid. The robot is initially located at the top-left corner (i.e., grid[0][0]). The robot tries to move to the bottom-right corner (i.e., grid[m - 1][n - 1]). The robot can only move either down or right at any point in time.
-Given the two integers m and n, return the number of possible unique paths that the robot can take to reach the bottom-right corner.
-The test cases are generated so that the answer will be less than or equal to 2 * 10^9.</description></item><item><title>66. Plus One</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/66/</link><pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/66/</guid><description>LeetCode problem
-You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0&amp;rsquo;s.
-Increment the large integer by one and return the resulting array of digits.
-Example 1:
-Input: digits = [1,2,3] Output: [1,2,4] Explanation: The array represents the integer 123. Incrementing by one gives 123 + 1 = 124.</description></item><item><title>69. Sqrt(x)</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/69/</link><pubDate>Fri, 28 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/69/</guid><description>LeetCode problem
-Given a non-negative integer x, return the square root of x rounded down to the nearest integer. The returned integer should be non-negative as well.
-You must not use any built-in exponent function or operator.
-For example, do not use pow(x, 0.5) in c++ or x ** 0.5 in python.
-Example 1:
-Input: x = 4 Output: 2 Explanation: The square root of 4 is 2, so we return 2. Example 2:
-Input: x = 8 Output: 2 Explanation: The square root of 8 is 2.</description></item><item><title>70. Climbing Stairs</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/70/</link><pubDate>Sat, 29 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/70/</guid><description>LeetCode problem
-You are climbing a staircase. It takes n steps to reach the top.
-Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
-Example 1:
-Input: n = 2 Output: 2 Explanation: There are two ways to climb to the top. 1. 1 step + 1 step 2. 2 steps Example 2:
-Input: n = 3 Output: 3 Explanation: There are three ways to climb to the top.</description></item><item><title>118. Pascal's Triangle</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/118/</link><pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/118/</guid><description>LeetCode задача 118
-Задача Дано целое число numRows. Верните первые numRows строк Треугольника Паскаля.
-В Треугольнике Паскаля каждое число является суммой двух чисел, находящихся непосредственно над ним.
-Подсказки Для построения каждой следующей строки можно использовать последнюю строку в текущей итерации. Например, если есть строка [1, 2, 1], то следующая строка начнется и закончится с 1, а числа внутри будут получены путем сложения пар чисел: 1+2 и 2+1.
-Подход Для того чтобы построить Треугольник Паскаля, начнем с первой строки, состоящей только из числа 1.</description></item><item><title>166. Fraction to Recurring Decimal</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/166/</link><pubDate>Sun, 09 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/166/</guid><description>LeetCode problem 166
-Problem Statement Given two integers representing the numerator and denominator of a fraction, return the fraction in string format. If the fractional part is repeating, enclose the repeating part in parentheses.
-This problem is about converting a fraction to its decimal representation in string format. The tricky part is dealing with repeating decimals. If a decimal repeats, we should enclose the repeating part in parentheses.
-For example, if we have a fraction 1/3, the decimal representation would be 0.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Math on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/math/</link><description>Recent content in Math on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 06 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/math/index.xml" rel="self" type="application/rss+xml"/><item><title>2. Add Two Numbers</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2/</link><pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2/</guid><description>&lt;p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.&lt;/p>
+&lt;p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: l1 = [2,4,3], l2 = [5,6,4]
+Output: [7,0,8]
+Explanation: 342 + 465 = 807.
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Loop through lists&lt;/li>
+&lt;li>add each value to the list&lt;/li>
+&lt;li>reverse list&lt;/li>
+&lt;li>calculate sum&lt;/li>
+&lt;li>create linked list from reversed sum&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">addTwoNumbers&lt;/span>(self, l1: Optional[ListNode], l2: Optional[ListNode]) &lt;span style="color:#666">-&amp;gt;&lt;/span> Optional[ListNode]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">createLinkedNode&lt;/span>(values):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> head &lt;span style="color:#666">=&lt;/span> ListNode(values[&lt;span style="color:#40a070">0&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current &lt;span style="color:#666">=&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> values[&lt;span style="color:#40a070">1&lt;/span>:]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> node &lt;span style="color:#666">=&lt;/span> ListNode(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> node
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current &lt;span style="color:#666">=&lt;/span> current&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> vals_l1 &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> l1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> cur:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> vals_l1&lt;span style="color:#666">.&lt;/span>append(cur&lt;span style="color:#666">.&lt;/span>val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> cur&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> vals_l2 &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> l2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> cur:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> vals_l2&lt;span style="color:#666">.&lt;/span>append(cur&lt;span style="color:#666">.&lt;/span>val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> cur&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s_l1 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">reversed&lt;/span>(vals_l1):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s_l1 &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#007020">str&lt;/span>(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s_l2 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">reversed&lt;/span>(vals_l2):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s_l2 &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#007020">str&lt;/span>(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ll_sum &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(s_l1) &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#007020">int&lt;/span>(s_l2)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> values &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> val &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">reversed&lt;/span>(&lt;span style="color:#007020">str&lt;/span>(ll_sum)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> values&lt;span style="color:#666">.&lt;/span>append(&lt;span style="color:#007020">int&lt;/span>(val))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> createLinkedNode(values)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="better-solution">Better solution&lt;/h2>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://leetcode.com/problems/add-two-numbers/Figures/2_add_two_numbers.svg"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;p>Just like how you would sum two numbers on a piece of paper.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/2-test-case.jpg"
+id="zoom-default"
+alt="test-case"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">addTwoNumbers&lt;/span>(self, l1: Optional[ListNode], l2: Optional[ListNode]) &lt;span style="color:#666">-&amp;gt;&lt;/span> Optional[ListNode]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dummyHead &lt;span style="color:#666">=&lt;/span> ListNode(&lt;span style="color:#40a070">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr &lt;span style="color:#666">=&lt;/span> dummyHead
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> carry &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> l1 &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span> &lt;span style="color:#007020;font-weight:bold">or&lt;/span> l2 &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span> &lt;span style="color:#007020;font-weight:bold">or&lt;/span> carry &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l1Val &lt;span style="color:#666">=&lt;/span> l1&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l1 &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l2Val &lt;span style="color:#666">=&lt;/span> l2&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l2 &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> columnSum &lt;span style="color:#666">=&lt;/span> l1Val &lt;span style="color:#666">+&lt;/span> l2Val &lt;span style="color:#666">+&lt;/span> carry
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> carry &lt;span style="color:#666">=&lt;/span> columnSum &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> newNode &lt;span style="color:#666">=&lt;/span> ListNode(columnSum &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#40a070">10&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> newNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr &lt;span style="color:#666">=&lt;/span> newNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l1 &lt;span style="color:#666">=&lt;/span> l1&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l1 &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l2 &lt;span style="color:#666">=&lt;/span> l2&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l2 &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> dummyHead&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>7. Reverse Integer</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/7/</link><pubDate>Tue, 01 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/7/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/reverse-integer/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.&lt;/p>
+&lt;p>Assume the environment does not allow you to store 64-bit integers (signed or unsigned).&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;p>Input: x = 123
+Output: 321&lt;/p>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;p>Input: x = -123
+Output: -321&lt;/p>
+&lt;p>&lt;strong>Example 3:&lt;/strong>&lt;/p>
+&lt;p>Input: x = 120
+Output: 21&lt;/p>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Convert number to int&lt;/li>
+&lt;li>Remove &lt;code>minus&lt;/code> if exist (or convert module of number)&lt;/li>
+&lt;li>reverse&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">reverse&lt;/span>(self, x: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reversed_int &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> str_int &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">str&lt;/span>(x)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> x &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> str_int &lt;span style="color:#666">=&lt;/span> str_int[&lt;span style="color:#40a070">1&lt;/span>:]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">reversed&lt;/span>(&lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(str_int))):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reversed_int&lt;span style="color:#666">.&lt;/span>append(str_int[i])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>&lt;span style="color:#666">.&lt;/span>join(reversed_int))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> x &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#666">-&lt;/span>res
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (res &lt;span style="color:#666">&amp;gt;=&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">2147483648&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> res &lt;span style="color:#666">&amp;lt;=&lt;/span> &lt;span style="color:#40a070">2147483647&lt;/span>) &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="better-solution">Better solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">reverse&lt;/span>(self, x: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">str&lt;/span>(&lt;span style="color:#007020">abs&lt;/span>(x))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rev &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(s[::&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> rev &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">2147483647&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> rev &lt;span style="color:#007020;font-weight:bold">if&lt;/span> x &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span> (rev &lt;span style="color:#666">*&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>9. Palindrome Number</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/9/</link><pubDate>Fri, 25 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/9/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/palindrome-number/">LeetCode задача&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Определите, является ли целое число палиндромом, не преобразуя его в строку.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Переворачивая число и сравнивая его с оригиналом, мы можем определить, является ли оно палиндромом.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Вместо того чтобы преобразовывать число в строку, мы можем перевернуть его цифры с использованием математических операций, а затем сравнить перевернутое число с оригинальным.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Если число отрицательное, то это не палиндром.&lt;/li>
+&lt;li>Инициализируем переменную для перевернутого числа: мы будем создавать это число шаг за шагом.&lt;/li>
+&lt;li>Переворачиваем число:
+&lt;ul>
+&lt;li>Это достигается путем последовательного взятия последней цифры числа и добавления её к текущему общему количеству после сдвига текущих цифр этого общего числа.&lt;/li>
+&lt;li>Например, если у вас есть число 123, мы сначала возьмем 3, затем 2, и, наконец, 1, чтобы создать перевернутое число 321.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Сравним: Если перевернутое число равно оригинальному, то это палиндром.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">isPalindrome&lt;/span>(x: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">bool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Отрицательные числа не могут быть палиндромами&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> x &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Инициализируем переменную для перевернутого числа со значением 0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reversed_num &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Используем временную переменную, чтобы не менять оригинальное число&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> temp &lt;span style="color:#666">=&lt;/span> x
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Переворачиваем число&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> temp:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Извлекаем последнюю цифру текущего числа&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> last_digit &lt;span style="color:#666">=&lt;/span> temp &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#40a070">10&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># 12345 % 10 =&amp;gt; 5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Сдвигаем текущие цифры перевернутого числа и добавляем последнюю цифру из temp&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reversed_num &lt;span style="color:#666">=&lt;/span> reversed_num &lt;span style="color:#666">*&lt;/span> &lt;span style="color:#40a070">10&lt;/span> &lt;span style="color:#666">+&lt;/span> last_digit &lt;span style="color:#60a0b0;font-style:italic"># 1. 0 * 10 + 5 =&amp;gt; 5, 2. 5 * 10 + 4 =&amp;gt; 54&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Удаляем последнюю цифру из temp&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> temp &lt;span style="color:#666">//=&lt;/span> &lt;span style="color:#40a070">10&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># 12345 // 10 =&amp;gt; 1234&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Сравниваем перевернутое число с оригиналом&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> reversed_num &lt;span style="color:#666">==&lt;/span> x
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>13. Roman to Integer</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/13/</link><pubDate>Wed, 19 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/13/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/roman-to-integer/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Roman numerals are represented by seven different symbols: &lt;code>I&lt;/code>, &lt;code>V&lt;/code>, &lt;code>X&lt;/code>, &lt;code>L&lt;/code>, &lt;code>C&lt;/code>, &lt;code>D&lt;/code> and &lt;code>M&lt;/code>.&lt;/p>
+&lt;pre>&lt;code>Symbol Value
+I 1
+V 5
+X 10
+L 50
+C 100
+D 500
+M 1000
+&lt;/code>&lt;/pre>
+&lt;p>For example, &lt;code>2&lt;/code> is written as &lt;code>II&lt;/code> in Roman numeral, just two ones added together. 12 is written as &lt;code>XII&lt;/code>, which is simply &lt;code>X + II&lt;/code>. The number 27 is written as &lt;code>XXVII&lt;/code>, which is &lt;code>XX + V + II&lt;/code>.&lt;/p>
+&lt;p>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not &lt;code>IIII&lt;/code>. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:&lt;/p>
+&lt;p>I can be placed before &lt;code>V&lt;/code> (5) and &lt;code>X&lt;/code> (10) to make 4 and 9.
+X can be placed before &lt;code>L&lt;/code> (50) and &lt;code>C&lt;/code> (100) to make 40 and 90.
+C can be placed before &lt;code>D&lt;/code> (500) and &lt;code>M&lt;/code> (1000) to make 400 and 900.&lt;/p>
+&lt;p>Given a roman numeral, convert it to an integer.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: s = &amp;quot;III&amp;quot;
+Output: 3
+Explanation: III = 3.
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: s = &amp;quot;MCMXCIV&amp;quot;
+Output: 1994
+Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/13.jpg"
+id="zoom-default"
+alt="test-case"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">romanToInt&lt;/span>(self, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">dict&lt;/span> &lt;span style="color:#666">=&lt;/span> {&lt;span style="color:#4070a0">&amp;#39;I&amp;#39;&lt;/span>:&lt;span style="color:#40a070">1&lt;/span>,&lt;span style="color:#4070a0">&amp;#39;V&amp;#39;&lt;/span>:&lt;span style="color:#40a070">5&lt;/span>,&lt;span style="color:#4070a0">&amp;#39;X&amp;#39;&lt;/span>:&lt;span style="color:#40a070">10&lt;/span>,&lt;span style="color:#4070a0">&amp;#39;L&amp;#39;&lt;/span>:&lt;span style="color:#40a070">50&lt;/span>,&lt;span style="color:#4070a0">&amp;#39;C&amp;#39;&lt;/span>:&lt;span style="color:#40a070">100&lt;/span>,&lt;span style="color:#4070a0">&amp;#39;D&amp;#39;&lt;/span>:&lt;span style="color:#40a070">500&lt;/span>,&lt;span style="color:#4070a0">&amp;#39;M&amp;#39;&lt;/span>:&lt;span style="color:#40a070">1000&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n_sum &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> c &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">reversed&lt;/span>(s):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">dict&lt;/span>[c]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#666">-&lt;/span>n &lt;span style="color:#007020;font-weight:bold">if&lt;/span> n &lt;span style="color:#007020;font-weight:bold">in&lt;/span> (&lt;span style="color:#40a070">1&lt;/span>,&lt;span style="color:#40a070">10&lt;/span>,&lt;span style="color:#40a070">100&lt;/span>) &lt;span style="color:#007020;font-weight:bold">and&lt;/span> prev &lt;span style="color:#007020;font-weight:bold">in&lt;/span> (n&lt;span style="color:#666">*&lt;/span>&lt;span style="color:#40a070">5&lt;/span>, n&lt;span style="color:#666">*&lt;/span>&lt;span style="color:#40a070">10&lt;/span>) &lt;span style="color:#007020;font-weight:bold">else&lt;/span> n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n_sum &lt;span style="color:#666">+=&lt;/span> n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(n)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> n_sum
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>29. Divide Two Integers</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/29/</link><pubDate>Sun, 20 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/29/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/divide-two-integers/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given two integers &lt;code>dividend&lt;/code> and &lt;code>divisor&lt;/code>, divide two integers without using multiplication, division, and mod operator.&lt;/p>
+&lt;p>The integer division should truncate toward zero, which means losing its fractional part. For example, 8.345 would be truncated to &lt;code>8&lt;/code>, and &lt;code>-2.7335&lt;/code> would be truncated to &lt;code>-2&lt;/code>.&lt;/p>
+&lt;p>Return the quotient after dividing &lt;code>dividend&lt;/code> by &lt;code>divisor&lt;/code>.&lt;/p>
+&lt;p>Note: Assume we are dealing with an environment that could only store integers within the &lt;strong>32-bit&lt;/strong> signed integer range: &lt;code>[−231, 231 − 1]&lt;/code>. For this problem, if the quotient is strictly greater than &lt;code>231 - 1&lt;/code>, then return &lt;code>231 - 1&lt;/code>, and if the quotient is strictly less than -231, then return &lt;code>-231&lt;/code>.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;p>Input: dividend = 10, divisor = 3
+Output: 3
+Explanation: 10/3 = 3.33333.. which is truncated to 3.&lt;/p>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;p>Input: dividend = 7, divisor = -3
+Output: -2
+Explanation: 7/-3 = -2.33333.. which is truncated to -2.&lt;/p>
+&lt;h2 id="code">Code&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Remove decimals from both &lt;code>divisor&lt;/code> and &lt;code>divident&lt;/code>&lt;/li>
+&lt;li>Remember the result sign (&lt;code>positive&lt;/code> or &lt;code>&amp;lt; 0&lt;/code>)&lt;/li>
+&lt;li>Subtract &lt;code>divisor&lt;/code> from &lt;code>divident&lt;/code> until result is less or equal to zero.&lt;/li>
+&lt;/ol>
+&lt;p>Works but is too slow in case small number &lt;code>divisor&lt;/code> (&lt;em>1&lt;/em>) and greater number &lt;code>dividend&lt;/code> (&lt;em>-2147483648&lt;/em>):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">divide&lt;/span>(self, dividend: &lt;span style="color:#007020">int&lt;/span>, divisor: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dd &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(dividend)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ds &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(divisor)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sign &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (dividend &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> divisor &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>) &lt;span style="color:#007020;font-weight:bold">or&lt;/span> (dividend &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> divisor &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>) &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> dd &lt;span style="color:#666">&amp;gt;=&lt;/span> ds:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dd &lt;span style="color:#666">-=&lt;/span> ds
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> sign &lt;span style="color:#666">*&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Improve idea:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Sum &lt;code>divisor&lt;/code> after &amp;ldquo;success&amp;rdquo; subtract until result of subtract is &lt;code>&amp;gt; 0&lt;/code>&lt;/li>
+&lt;li>Subtract &lt;code>divisor&lt;/code> back until we can subtract it from &lt;code>dividend&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">divide&lt;/span>(self, dividend: &lt;span style="color:#007020">int&lt;/span>, divisor: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dd &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(dividend)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ds &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(divisor)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sign &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (dividend &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> divisor &lt;span style="color:#666">&amp;lt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#40a070">0&lt;/span>) &lt;span style="color:#007020;font-weight:bold">or&lt;/span> (dividend &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> divisor &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>) &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> divisor &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> dividend &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">2147483648&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">2147483647&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> divisor &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> sign &lt;span style="color:#666">*&lt;/span> dd
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> dd &lt;span style="color:#666">&amp;gt;=&lt;/span> ds:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tmp &lt;span style="color:#666">=&lt;/span> ds
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> multiples &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># count of subtracts&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> dd &lt;span style="color:#666">&amp;gt;=&lt;/span> tmp: &lt;span style="color:#60a0b0;font-style:italic">## sum divisor&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dd &lt;span style="color:#666">-=&lt;/span> tmp
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">+=&lt;/span> multiples &lt;span style="color:#60a0b0;font-style:italic"># hense sum count of subtracts&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tmp &lt;span style="color:#666">+=&lt;/span> tmp
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> multiples &lt;span style="color:#666">+=&lt;/span> multiples
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> dd &lt;span style="color:#666">&amp;gt;=&lt;/span> ds:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dd &lt;span style="color:#666">-=&lt;/span> ds
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> sign &lt;span style="color:#666">*&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="better-idea">Better idea&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong> &lt;a href="https://romankurnovskii.com/en/posts/python-bitwise-operators/">Bit manipulation&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">divide&lt;/span>(self, dividend, divisor):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> positive &lt;span style="color:#666">=&lt;/span> (dividend &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>) &lt;span style="color:#007020;font-weight:bold">is&lt;/span> (divisor &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dividend, divisor &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(dividend), &lt;span style="color:#007020">abs&lt;/span>(divisor)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> dividend &lt;span style="color:#666">&amp;gt;=&lt;/span> divisor:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr_divisor, num_divisors &lt;span style="color:#666">=&lt;/span> divisor, &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> dividend &lt;span style="color:#666">&amp;gt;=&lt;/span> curr_divisor:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dividend &lt;span style="color:#666">-=&lt;/span> curr_divisor
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">+=&lt;/span> num_divisors
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr_divisor &lt;span style="color:#666">=&lt;/span> curr_divisor &lt;span style="color:#666">&amp;lt;&amp;lt;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> num_divisors &lt;span style="color:#666">=&lt;/span> num_divisors &lt;span style="color:#666">&amp;lt;&amp;lt;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> positive:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#666">-&lt;/span>res
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020">min&lt;/span>(&lt;span style="color:#007020">max&lt;/span>(&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">2147483648&lt;/span>, res), &lt;span style="color:#40a070">2147483647&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Explanation:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://leetcode.com/problems/divide-two-integers/discuss/715094/Python-fast-code-with-detailed-explanation">https://leetcode.com/problems/divide-two-integers/discuss/715094/Python-fast-code-with-detailed-explanation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Another:&lt;/strong>&lt;/p>
+&lt;p>Time: $O(\log^2 n)$
+Space: $O(1)$&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">divide&lt;/span>(self, dividend: &lt;span style="color:#007020">int&lt;/span>, divisor: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> dividend &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">2&lt;/span>&lt;span style="color:#666">**&lt;/span>&lt;span style="color:#40a070">31&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> divisor &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">2&lt;/span>&lt;span style="color:#666">**&lt;/span>&lt;span style="color:#40a070">31&lt;/span> &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sign &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (dividend &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>) &lt;span style="color:#666">^&lt;/span> (divisor &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>) &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dvd &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(dividend)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dvs &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(divisor)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> dvd &lt;span style="color:#666">&amp;gt;=&lt;/span> dvs:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> k &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> k &lt;span style="color:#666">*&lt;/span> &lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">*&lt;/span> dvs &lt;span style="color:#666">&amp;lt;=&lt;/span> dvd:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> k &lt;span style="color:#666">&amp;lt;&amp;lt;=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dvd &lt;span style="color:#666">-=&lt;/span> k &lt;span style="color:#666">*&lt;/span> dvs
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">+=&lt;/span> k
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> sign &lt;span style="color:#666">*&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>33. Search in Rotated Sorted Array</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/33/</link><pubDate>Thu, 24 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/33/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/search-in-rotated-sorted-array/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>There is an integer array &lt;code>nums&lt;/code> sorted in ascending order (with &lt;strong>distinct&lt;/strong> values).&lt;/p>
+&lt;p>Prior to being passed to your function, nums is &lt;strong>possibly rotated&lt;/strong> at an unknown pivot index &lt;code>k&lt;/code> (&lt;code>1 &amp;lt;= k &amp;lt; nums.length&lt;/code>) such that the resulting array is &lt;code>[nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed)&lt;/code>. For example, &lt;code>[0,1,2,4,5,6,7]&lt;/code> might be rotated at pivot index &lt;code>3&lt;/code> and become &lt;code>[4,5,6,7,0,1,2]&lt;/code>.&lt;/p>
+&lt;p>Given the array &lt;code>nums&lt;/code> after the possible rotation and an integer target, return the index of target if it is in &lt;code>nums&lt;/code>, or &lt;code>-1&lt;/code> if it is not in &lt;code>nums&lt;/code>.&lt;/p>
+&lt;p>You must write an algorithm with &lt;code>O(log n)&lt;/code> runtime complexity.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;p>Input: nums = [4,5,6,7,0,1,2], target = 0
+Output: 4&lt;/p>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;p>Input: nums = [4,5,6,7,0,1,2], target = 3
+Output: -1&lt;/p>
+&lt;p>&lt;strong>Example 3:&lt;/strong>&lt;/p>
+&lt;p>Input: nums = [1], target = 0
+Output: -1&lt;/p>
+&lt;h2 id="code">Code&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;p>Values in the &lt;em>right&lt;/em> part of the array are &lt;strong>always lower&lt;/strong> than in the left part.&lt;/p>
+&lt;ol>
+&lt;li>Use binary search&lt;/li>
+&lt;li>Define where to move (left or right)&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">search&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>], target: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> left &lt;span style="color:#666">&amp;lt;=&lt;/span> right:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mid &lt;span style="color:#666">=&lt;/span> (left &lt;span style="color:#666">+&lt;/span> right) &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nums[mid] &lt;span style="color:#666">==&lt;/span> target:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> mid
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nums[left] &lt;span style="color:#666">&amp;lt;=&lt;/span> nums[mid]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nums[left] &lt;span style="color:#666">&amp;lt;=&lt;/span> target &lt;span style="color:#666">&amp;lt;&lt;/span> nums[mid]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#666">=&lt;/span> mid &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">=&lt;/span> mid &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nums[mid] &lt;span style="color:#666">&amp;lt;&lt;/span> target &lt;span style="color:#666">&amp;lt;=&lt;/span> nums[right]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">=&lt;/span> mid &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#666">=&lt;/span> mid &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>48. Rotate Image</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/48/</link><pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/48/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/rotate-image/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>You are given an &lt;code>n x n&lt;/code> 2D &lt;code>matrix&lt;/code> representing an image, rotate the image by &lt;strong>90 degrees&lt;/strong> (clockwise).&lt;/p>
+&lt;p>You have to rotate the image &lt;strong>in-place&lt;/strong>, which means you have to modify the input 2D matrix directly. &lt;strong>DO NOT&lt;/strong> allocate another 2D matrix and do the rotation.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.leetcode.com/uploads/2020/08/28/mat1.jpg"
+id="zoom-default"
+alt="Example LeetCode 48. Rotate Image"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;pre>&lt;code>Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
+Output: [[7,4,1],[8,5,2],[9,6,3]]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.leetcode.com/uploads/2020/08/28/mat2.jpg"
+id="zoom-default"
+alt="Example LeetCode 48. Rotate Image"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;pre>&lt;code>Input: matrix = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]
+Output: [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]
+&lt;/code>&lt;/pre>
+&lt;h2 id="idea">Idea&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">rotate&lt;/span>(self, matrix: List[List[&lt;span style="color:#007020">int&lt;/span>]]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;&amp;#34;&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Do not return anything, modify matrix in-place instead.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(matrix) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> l &lt;span style="color:#666">&amp;lt;&lt;/span> r:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(r&lt;span style="color:#666">-&lt;/span>l): &lt;span style="color:#60a0b0;font-style:italic"># for not only &amp;#34;corners&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> t &lt;span style="color:#666">=&lt;/span> l
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> b &lt;span style="color:#666">=&lt;/span> r
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> top_left &lt;span style="color:#666">=&lt;/span> matrix[t][l &lt;span style="color:#666">+&lt;/span> i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix[t][l &lt;span style="color:#666">+&lt;/span> i] &lt;span style="color:#666">=&lt;/span> matrix[b &lt;span style="color:#666">-&lt;/span> i][l] &lt;span style="color:#60a0b0;font-style:italic"># top left=bottom left&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix[b &lt;span style="color:#666">-&lt;/span> i][l] &lt;span style="color:#666">=&lt;/span> matrix[b][r &lt;span style="color:#666">-&lt;/span> i] &lt;span style="color:#60a0b0;font-style:italic"># bottom left=bottom right&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix[b][r &lt;span style="color:#666">-&lt;/span> i] &lt;span style="color:#666">=&lt;/span> matrix[t&lt;span style="color:#666">+&lt;/span>i][r] &lt;span style="color:#60a0b0;font-style:italic"># bottom right=top right&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix[t &lt;span style="color:#666">+&lt;/span> i][r] &lt;span style="color:#666">=&lt;/span> top_left &lt;span style="color:#60a0b0;font-style:italic"># top right=top left&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="approach-2-reverse">Approach 2: Reverse&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">rotate&lt;/span>(self, matrix: List[List[&lt;span style="color:#007020">int&lt;/span>]]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix&lt;span style="color:#666">.&lt;/span>reverse()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(matrix)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#007020">len&lt;/span>(matrix)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix[i][j], matrix[j][i] &lt;span style="color:#666">=&lt;/span> matrix[j][i], matrix[i][j]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=fMSJSS7eO1w">https://www.youtube.com/watch?v=fMSJSS7eO1w&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://walkccc.me/LeetCode/problems/0048/">https://walkccc.me/LeetCode/problems/0048/&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>50. Pow(x, n)</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/50/</link><pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/50/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/powx-n/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Implement &lt;code>pow(x, n)&lt;/code>, which calculates &lt;code>x&lt;/code> raised to the power &lt;code>n&lt;/code> (i.e., &lt;code>x^n&lt;/code>).&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: x = 2.00000, n = 10
+Output: 1024.00000
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: x = 2.10000, n = 3
+Output: 9.26100
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 3:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: x = 2.00000, n = -2
+Output: 0.25000
+Explanation: 2-2 = 1/22 = 1/4 = 0.25
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Approach 1:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">myPow&lt;/span>(self, x: &lt;span style="color:#007020">float&lt;/span>, n: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">float&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> x &lt;span style="color:#666">**&lt;/span> n
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Approach 2:&lt;/strong>&lt;/p>
+&lt;p>Recursive&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">myPow&lt;/span>(self, x, n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> n:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> n &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#666">/&lt;/span> self&lt;span style="color:#666">.&lt;/span>myPow(x, &lt;span style="color:#666">-&lt;/span>n)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> n &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#40a070">2&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> x &lt;span style="color:#666">*&lt;/span> self&lt;span style="color:#666">.&lt;/span>myPow(x, n&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> self&lt;span style="color:#666">.&lt;/span>myPow(x &lt;span style="color:#666">*&lt;/span> x, n&lt;span style="color:#666">/&lt;/span>&lt;span style="color:#40a070">2&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Approach 3:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">myPow&lt;/span>(self, x, n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> n &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#666">/&lt;/span> x
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#666">-&lt;/span>n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">pow&lt;/span> &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> n:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> n &lt;span style="color:#666">&amp;amp;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">pow&lt;/span> &lt;span style="color:#666">*=&lt;/span> x
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#666">*=&lt;/span> x
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">&amp;gt;&amp;gt;=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020">pow&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>62. Unique Paths</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/62/</link><pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/62/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/unique-paths/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>There is a robot on an &lt;code>m x n&lt;/code> grid. The robot is initially located at the top-left corner (i.e., &lt;code>grid[0][0]&lt;/code>). The robot tries to move to the bottom-right corner (i.e., &lt;code>grid[m - 1][n - 1]&lt;/code>). The robot can only move either down or right at any point in time.&lt;/p>
+&lt;p>Given the two integers m and n, return the number of possible unique paths that the robot can take to reach the bottom-right corner.&lt;/p>
+&lt;p>The test cases are generated so that the answer will be less than or equal to &lt;code>2 * 10^9&lt;/code>.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.leetcode.com/uploads/2018/10/22/robot_maze.png"
+id="zoom-default"
+alt="LeetCode 62. Unique Paths"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;pre>&lt;code>Input: m = 3, n = 7
+Output: 28
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: m = 3, n = 2
+Output: 3
+Explanation: From the top-left corner, there are a total of 3 ways to reach the bottom-right corner:
+1. Right -&amp;gt; Down -&amp;gt; Down
+2. Down -&amp;gt; Down -&amp;gt; Right
+3. Down -&amp;gt; Right -&amp;gt; Down
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Approach 1:&lt;/strong>&lt;/p>
+&lt;p>&lt;a href="https://leetcode.com/problems/unique-paths/submissions/874653332/">LeetCode Submission&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">uniquePaths&lt;/span>(self, m: &lt;span style="color:#007020">int&lt;/span>, n: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> m &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#007020;font-weight:bold">or&lt;/span> n &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix &lt;span style="color:#666">=&lt;/span> [ [&lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n)] &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(m)]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, m):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_above &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_left &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> i &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_above &lt;span style="color:#666">=&lt;/span> matrix[i&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>][j]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> j &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_left &lt;span style="color:#666">=&lt;/span> matrix[i][j&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix[i][j] &lt;span style="color:#666">=&lt;/span> max_above &lt;span style="color:#666">+&lt;/span> max_left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m &lt;span style="color:#666">=&lt;/span> matrix[i][j]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> m
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">uniquePaths&lt;/span>(self, m: &lt;span style="color:#007020">int&lt;/span>, n: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix &lt;span style="color:#666">=&lt;/span> [[&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">*&lt;/span> n &lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(m)]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, m):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix[i][j] &lt;span style="color:#666">=&lt;/span> matrix[i &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>][j] &lt;span style="color:#666">+&lt;/span> matrix[i][j &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> matrix[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>][&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>66. Plus One</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/66/</link><pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/66/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/plus-one/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>You are given a large integer represented as an integer array &lt;code>digits&lt;/code>, where each &lt;code>digits[i]&lt;/code> is the &lt;code>ith&lt;/code> digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading &lt;code>0&lt;/code>&amp;rsquo;s.&lt;/p>
+&lt;p>Increment the large integer by one and return the resulting array of digits.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: digits = [1,2,3]
+Output: [1,2,4]
+Explanation: The array represents the integer 123.
+Incrementing by one gives 123 + 1 = 124.
+Thus, the result should be [1,2,4].
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: digits = [4,3,2,1]
+Output: [4,3,2,2]
+Explanation: The array represents the integer 4321.
+Incrementing by one gives 4321 + 1 = 4322.
+Thus, the result should be [4,3,2,2].
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">plusOne&lt;/span>(self, digits: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[&lt;span style="color:#007020">int&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(digits) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> i &lt;span style="color:#666">&amp;gt;=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> digits[i] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">9&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> digits[i] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> i &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> [&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">+&lt;/span> digits
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> digits[i] &lt;span style="color:#666">=&lt;/span> digits[i] &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> digits
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>69. Sqrt(x)</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/69/</link><pubDate>Fri, 28 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/69/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/sqrtx/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given a non-negative integer x, return the square root of x rounded down to the nearest integer. The returned integer should be non-negative as well.&lt;/p>
+&lt;p>You must not use any built-in exponent function or operator.&lt;/p>
+&lt;p>For example, do not use &lt;code>pow(x, 0.5)&lt;/code> in c++ or &lt;code>x ** 0.5&lt;/code> in python.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: x = 4
+Output: 2
+Explanation: The square root of 4 is 2, so we return 2.
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: x = 8
+Output: 2
+Explanation: The square root of 8 is 2.82842..., and since we round it down to the nearest integer, 2 is returned.
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">mySqrt&lt;/span>(self, x: &lt;span style="color:#007020">int&lt;/span>, div&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">2&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">=&lt;/span> x &lt;span style="color:#666">//&lt;/span> div
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s1 &lt;span style="color:#666">=&lt;/span> (s &lt;span style="color:#666">+&lt;/span> div) &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> s1 &lt;span style="color:#666">*&lt;/span> s1 &lt;span style="color:#666">&amp;gt;&lt;/span> x:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s1 &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>mySqrt(x, s1)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> s1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> s1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>70. Climbing Stairs</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/70/</link><pubDate>Sat, 29 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/70/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/climbing-stairs/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>You are climbing a staircase. It takes &lt;code>n&lt;/code> steps to reach the top.&lt;/p>
+&lt;p>Each time you can either climb &lt;code>1&lt;/code> or &lt;code>2&lt;/code> steps. In how many distinct ways can you climb to the top?&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: n = 2
+Output: 2
+Explanation: There are two ways to climb to the top.
+1. 1 step + 1 step
+2. 2 steps
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: n = 3
+Output: 3
+Explanation: There are three ways to climb to the top.
+1. 1 step + 1 step + 1 step
+2. 1 step + 2 steps
+3. 2 steps + 1 step
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;p>Tried to calculate by hand. There is a &lt;a href="https://www.mathsisfun.com/numbers/fibonacci-sequence.html">sequence Fibonacci&lt;/a> here&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">climbStairs&lt;/span>(self, n: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> n &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> n &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">2&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev1 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev2 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> n &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">2&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current &lt;span style="color:#666">=&lt;/span> prev1 &lt;span style="color:#666">+&lt;/span> prev2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev1 &lt;span style="color:#666">=&lt;/span> prev2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev2 &lt;span style="color:#666">=&lt;/span> current
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> current
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>118. Pascal's Triangle</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/118/</link><pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/118/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/pascals-triangle/">LeetCode задача 118&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Дано целое число &lt;code>numRows&lt;/code>. Верните первые &lt;code>numRows&lt;/code> строк Треугольника Паскаля.&lt;/p>
+&lt;p>В Треугольнике Паскаля каждое число является суммой двух чисел, находящихся непосредственно над ним.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Для построения каждой следующей строки можно использовать последнюю строку в текущей итерации. Например, если есть строка &lt;code>[1, 2, 1]&lt;/code>, то следующая строка начнется и закончится с 1, а числа внутри будут получены путем сложения пар чисел: &lt;code>1+2&lt;/code> и &lt;code>2+1&lt;/code>.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Для того чтобы построить Треугольник Паскаля, начнем с первой строки, состоящей только из числа &lt;code>1&lt;/code>. Для каждой следующей строки мы добавляем новое число, равное сумме двух чисел из предыдущей строки, которые стоят непосредственно над ним. Индексы этих двух чисел - это индекс текущего(искомого) числа в новом массиве и предыдущий индекс от него.&lt;/p>
+&lt;p>Это повторяем до тех пор, пока не достигнем нужного количества строк.&lt;/p>
+&lt;h2 id="алгоритм--абстрактный-алгоритм">Алгоритм / Абстрактный алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Инициализируем список с первой строкой: &lt;code>[[1]]&lt;/code>.&lt;/li>
+&lt;li>Для каждой новой строки:
+&lt;ul>
+&lt;li>Начинаем строку с числа 1.&lt;/li>
+&lt;li>Для каждого числа в предыдущей строке (кроме последнего) добавляем к новой строке сумму этого числа и следующего за ним.&lt;/li>
+&lt;li>Заканчиваем строку числом 1.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">generate&lt;/span>(self, numRows: &lt;span style="color:#007020">int&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> triangle &lt;span style="color:#666">=&lt;/span> [[&lt;span style="color:#40a070">1&lt;/span>]] &lt;span style="color:#60a0b0;font-style:italic">#1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, numRows): &lt;span style="color:#60a0b0;font-style:italic">#2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev_row &lt;span style="color:#666">=&lt;/span> triangle[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#60a0b0;font-style:italic"># Последняя строка в текущем треугольнике&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> new_row &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#60a0b0;font-style:italic"># Новая строка начнется с 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(prev_row) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>): &lt;span style="color:#60a0b0;font-style:italic"># Добавляем к новой строке сумму пар чисел из предыдущей строки&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> new_row&lt;span style="color:#666">.&lt;/span>append(prev_row[j] &lt;span style="color:#666">+&lt;/span> prev_row[j &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> new_row&lt;span style="color:#666">.&lt;/span>append(&lt;span style="color:#40a070">1&lt;/span>) &lt;span style="color:#60a0b0;font-style:italic"># Заканчиваем строку числом 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> triangle&lt;span style="color:#666">.&lt;/span>append(new_row) &lt;span style="color:#60a0b0;font-style:italic"># Добавляем новую строку к треугольнику&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> triangle
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>166. Fraction to Recurring Decimal</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/166/</link><pubDate>Sun, 09 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/166/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/fraction-to-recurring-decimal/">LeetCode problem 166&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>Given two integers representing the numerator and denominator of a fraction, return the fraction in string format. If the fractional part is repeating, enclose the repeating part in parentheses.&lt;/p>
+&lt;p>This problem is about converting a fraction to its decimal representation in string format. The tricky part is dealing with repeating decimals. If a decimal repeats, we should enclose the repeating part in parentheses.&lt;/p>
+&lt;p>For example, if we have a fraction 1/3, the decimal representation would be 0.3333&amp;hellip;. In this problem, we need to represent it as &amp;ldquo;0.(3)&amp;rdquo;.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A naive solution could involve simple division - you divide the numerator by the denominator and convert it to a string. However, this wouldn&amp;rsquo;t account for recurring decimals, and it would only be correct for fractions that result in a finite decimal.&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;span class="caption-wrapper">
+&lt;img class="caption" style="float: right; width: ; height: 250px; margin: 0px 10px 10px 0px;" src="../../assets/long-division.png" title="" alt="">
+&lt;span class="caption-text">&lt;/span>
+&lt;/span>
+&lt;p>A better approach to solve this problem involves using the &lt;strong>long division method&lt;/strong> and a hash map to keep track of remainders. If the same remainder appears again, it means we have found a repeating sequence.&lt;/p>
+&lt;p>In long division, we divide the numerator by the denominator, find the remainder, and then add a zero to the remainder and repeat the process.&lt;/p>
+&lt;p>While doing this, if we encounter the same remainder that we have seen before, it means the sequence will start to repeat from here.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/166.jpg"
+id="zoom-default"
+alt="LeetCode problem 166"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>First, handle the simple case where &lt;code>numerator&lt;/code> is divisible by &lt;code>denominator&lt;/code>.&lt;/li>
+&lt;li>If the division isn&amp;rsquo;t exact, proceed with the long division method.&lt;/li>
+&lt;li>Keep dividing the &lt;code>numerator&lt;/code> by the &lt;code>denominator&lt;/code> and track the remainder.&lt;/li>
+&lt;li>Store the remainder and its corresponding index in the decimal part of the result in a dictionary.&lt;/li>
+&lt;li>If the remainder repeats, stop the division and enclose the repeating part in parentheses.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">fractionToDecimal&lt;/span>(self, numerator: &lt;span style="color:#007020">int&lt;/span>, denominator: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">str&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> numerator &lt;span style="color:#666">%&lt;/span> denominator &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020">str&lt;/span>(numerator &lt;span style="color:#666">//&lt;/span> denominator)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> integer &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">str&lt;/span>(&lt;span style="color:#007020">abs&lt;/span>(numerator) &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(denominator))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> remainder &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(numerator) &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(denominator)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> decimal &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> remainder_dict &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> remainder &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> remainder &lt;span style="color:#007020;font-weight:bold">in&lt;/span> remainder_dict:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> decimal&lt;span style="color:#666">.&lt;/span>insert(remainder_dict[remainder], &lt;span style="color:#4070a0">&amp;#34;(&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> decimal&lt;span style="color:#666">.&lt;/span>append(&lt;span style="color:#4070a0">&amp;#34;)&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># future index of starting repeating part , i.e. 1.12(345)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> remainder_dict[remainder] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(decimal)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> remainder &lt;span style="color:#666">*=&lt;/span> &lt;span style="color:#40a070">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> decimal&lt;span style="color:#666">.&lt;/span>append(&lt;span style="color:#007020">str&lt;/span>(remainder &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(denominator)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> remainder &lt;span style="color:#666">%=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(denominator)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> integer &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#4070a0">&amp;#34;.&amp;#34;&lt;/span> &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&amp;#34;&lt;/span>&lt;span style="color:#666">.&lt;/span>join(decimal)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (numerator &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>) &lt;span style="color:#666">^&lt;/span> (denominator &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Check if the result should be negative&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#34;-&amp;#34;&lt;/span> &lt;span style="color:#666">+&lt;/span> res
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>When doing the division, we are always considering the absolute value of the numerator and denominator. The remainder and the index at which it appears are stored in a dictionary. Whenever a remainder repeats, it means we have found a repeating sequence and the division process is stopped. The repeating part is then enclosed in parentheses.&lt;/p>
+&lt;p>Also, note the line if &lt;code>(numerator &amp;lt; 0) ^ (denominator &amp;lt; 0)&lt;/code>:. This is checking if the result should be negative. If either, but not both, of the numerator and denominator are negative, the result should also be negative. Here &lt;code>^&lt;/code> is the bitwise XOR operator in Python, which returns True if exactly one of the conditions is True.&lt;/p>
+&lt;p>After doing all this, if the numerator was negative, we add a negative sign to the front of our result. Otherwise, the result is returned as is.&lt;/p>
+&lt;video width="100%" controls>
+&lt;source src="../../assets/166.mp4" type="video/mp4">
+Your browser does not support the video tag.
+&lt;/video>
+&lt;figcaption>LeetCode 166 Solution&lt;/figcaption></description></item><item><title>343. Integer Break</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/343/</link><pubDate>Fri, 06 Oct 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/343/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/integer-break/">LeetCode problem 343&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>Given a positive integer &lt;code>n&lt;/code>, our task is to divide it into the sum of &lt;code>k&lt;/code> positive integers, where $k \geq 2$, in such a way that the product of these integers is maximized. Our goal is to determine the maximum possible product.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A straightforward or naive way to solve this would be to consider all potential combinations to divide the number &lt;code>n&lt;/code> and calculate the product for each division. This method, while comprehensive, would be inefficient and impractical for larger values of &lt;code>n&lt;/code>.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;ul>
+&lt;li>Try to break down &lt;code>n&lt;/code> into smaller parts and observe the pattern of the results.&lt;/li>
+&lt;li>The number 3 plays a significant role, so try to understand its impact on the problem.&lt;/li>
+&lt;/ul>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>A pattern emerges when observing how the number can be broken down to maximize the product: the number 3 becomes significant. This realization stems from the fact that 3 multiplied by any number $x \geq 3$ is always greater than $x \times 2$ and $x \times 1$.&lt;/p>
+&lt;p>The only exception is 4, where $2 \times 2$ is preferable to 3 and 1.&lt;/p>
+&lt;p>Therefore, the optimized approach becomes:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>When $n = 2$, the answer is 1 (because $1 \times 1 = 1$).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>For $n = 3$, the answer becomes 2 (as $2 \times 1 = 2$).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>If $n = 4$, the result is 4 (as $2 \times 2 = 4$).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>For any $n &amp;gt; 4$, we can repeatedly subtract 3 from &lt;code>n&lt;/code> and multiply the resulting product by 3.&lt;/p>
+&lt;p>After all the 3s are extracted, the remaining &lt;code>n&lt;/code> (which will be less than 4) will contribute its optimal value to the product (either 1, 2, or 4).&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">integerBreak&lt;/span>(n: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> n &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">2&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic"># base cases&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> n &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">3&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> n &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">4&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">4&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> product &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> n &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">4&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic"># As long as n is greater than 4,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> product &lt;span style="color:#666">*=&lt;/span> &lt;span style="color:#40a070">3&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># increase the product by a factor of 3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">3&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># and keep reducing n by 3 &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> product &lt;span style="color:#666">*=&lt;/span> n &lt;span style="color:#60a0b0;font-style:italic"># Multiply the remaining value of n to the product&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> product
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

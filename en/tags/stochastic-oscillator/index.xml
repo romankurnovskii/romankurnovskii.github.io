@@ -1,4 +1,43 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Stochastic Oscillator on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/stochastic-oscillator/</link><description>Recent content in Stochastic Oscillator on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 07 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/stochastic-oscillator/index.xml" rel="self" type="application/rss+xml"/><item><title>Stochastic Oscillator - Momentum Indicator</title><link>https://romankurnovskii.com/en/posts/trading-indicators/stochastic_oscillator/</link><pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/trading-indicators/stochastic_oscillator/</guid><description>About The Stochastic Oscillator is a momentum indicator that shows the location of the close relative to the high-low range over a set number of periods. It was developed by George Lane in the 1950s.
-Calculating Formula The Stochastic Oscillator is calculated using the following formula:
-%K = 100[(C - L14) / (H14 - L14)] where:
-C = the most recent closing price L14 = the lowest price traded of the 14 previous trading sessions H14 = the highest price traded during the same 14-day period %K = the current value of the stochastic indicator The &amp;ldquo;%D&amp;rdquo; line is then a 3-day simple moving average of %K.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Stochastic Oscillator on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/stochastic-oscillator/</link><description>Recent content in Stochastic Oscillator on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 07 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/stochastic-oscillator/index.xml" rel="self" type="application/rss+xml"/><item><title>Stochastic Oscillator - Momentum Indicator</title><link>https://romankurnovskii.com/en/posts/trading-indicators/stochastic_oscillator/</link><pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/trading-indicators/stochastic_oscillator/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>The Stochastic Oscillator is a momentum indicator that shows the location of the close relative to the high-low range over a set number of periods. It was developed by George Lane in the 1950s.&lt;/p>
+&lt;h2 id="calculating">Calculating&lt;/h2>
+&lt;h3 id="formula">Formula&lt;/h3>
+&lt;p>The Stochastic Oscillator is calculated using the following formula:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>%K &lt;span style="color:#666">=&lt;/span> 100&lt;span style="color:#666">[(&lt;/span>C - L14&lt;span style="color:#666">)&lt;/span> / &lt;span style="color:#666">(&lt;/span>H14 - L14&lt;span style="color:#666">)]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where:&lt;/p>
+&lt;ul>
+&lt;li>C = the most recent closing price&lt;/li>
+&lt;li>L14 = the lowest price traded of the 14 previous trading sessions&lt;/li>
+&lt;li>H14 = the highest price traded during the same 14-day period&lt;/li>
+&lt;li>%K = the current value of the stochastic indicator&lt;/li>
+&lt;/ul>
+&lt;p>The &amp;ldquo;%D&amp;rdquo; line is then a 3-day simple moving average of %K.&lt;/p>
+&lt;h2 id="pros-and-cons">Pros and Cons&lt;/h2>
+&lt;p>Pros:&lt;/p>
+&lt;ul>
+&lt;li>The Stochastic Oscillator can provide insights into potential overbought and oversold conditions.&lt;/li>
+&lt;li>It can also be used to identify divergences, short-term overbought and oversold conditions, and generate trading signals.&lt;/li>
+&lt;/ul>
+&lt;p>Cons:&lt;/p>
+&lt;ul>
+&lt;li>The Stochastic Oscillator can stay in overbought or oversold territory for a long time, leading to many false signals in trending markets.&lt;/li>
+&lt;li>As a lagging indicator, it might send a late signal, causing the trader to miss a big part of the trend.&lt;/li>
+&lt;/ul>
+&lt;h2 id="example-of-signals">Example of signals&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Buy Signal:&lt;/strong> A buy signal might be identified when the Stochastic Oscillator crosses above the %D line (bullish divergence).&lt;/li>
+&lt;li>&lt;strong>Sell Signal:&lt;/strong> Conversely, a sell signal might be identified when the Stochastic Oscillator crosses below the %D line (bearish divergence).&lt;/li>
+&lt;/ul>
+&lt;h2 id="use-in-real-trading">Use in Real Trading&lt;/h2>
+&lt;p>The Stochastic Oscillator is typically used with other oscillators such as the &lt;a href="../rsi">Relative Strength Index (RSI)&lt;/a> and the Commodity Channel Index (CCI) to confirm trading signals.&lt;/p>
+&lt;h2 id="python-implementation">Python Implementation&lt;/h2>
+&lt;p>
+&lt;a href="https://romankurnovskii.com//jupyter/stochastic_oscillator.html"
+>Click here to view this notebook in full screen&lt;/a
+>
+&lt;/p>
+&lt;iframe
+src="https://romankurnovskii.com//jupyter/stochastic_oscillator.html"
+style="height:1350px;width:100%;border:none;overflow:hidden;"
+scrolling="no"
+>&lt;/iframe></description></item></channel></rss>

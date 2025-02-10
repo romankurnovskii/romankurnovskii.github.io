@@ -1,3 +1,340 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Файловая Ситема Linux on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B0%D1%8F-%D1%81%D0%B8%D1%82%D0%B5%D0%BC%D0%B0-linux/</link><description>Recent content in Файловая Ситема Linux on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 06 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B0%D1%8F-%D1%81%D0%B8%D1%82%D0%B5%D0%BC%D0%B0-linux/index.xml" rel="self" type="application/rss+xml"/><item><title>16. Управление системой, файловой системой и хранилищем в Linux</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day16/</link><pubDate>Fri, 06 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day16/</guid><description>Управление системой, файловой системой и хранилищем в Linux К этому времени мы кратко рассмотрели Linux и DevOps, а затем мы настроили нашу лабораторную среду с помощью vagant 14-й день), а затем коснулись небольшой части команд, которые будут в вашем ежедневном набор инструментов во время использования терминала - (День 15).
-Сегодня мы рассмотрим три ключевые области обслуживания систем Linux с помощью обновлений, установки программного обеспечения. Поймем для чего используются системные папки, а также рассмотрим хранилище.
-Управление Ubuntu и программным обеспечением Первое, что мы собираемся рассмотреть, это то, как мы обновляем нашу операционную систему.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Файловая Ситема Linux on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B0%D1%8F-%D1%81%D0%B8%D1%82%D0%B5%D0%BC%D0%B0-linux/</link><description>Recent content in Файловая Ситема Linux on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 06 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%B0%D1%8F-%D1%81%D0%B8%D1%82%D0%B5%D0%BC%D0%B0-linux/index.xml" rel="self" type="application/rss+xml"/><item><title>16. Управление системой, файловой системой и хранилищем в Linux</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day16/</link><pubDate>Fri, 06 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day16/</guid><description>&lt;h2 id="управление-системой-файловой-системой-и-хранилищем-в-linux">Управление системой, файловой системой и хранилищем в Linux&lt;/h2>
+&lt;p>К этому времени мы кратко рассмотрели Linux и DevOps, а затем мы настроили нашу лабораторную среду с помощью vagant &lt;a href="../day14">14-й день)&lt;/a>, а затем коснулись небольшой части команд, которые будут в вашем ежедневном набор инструментов во время использования терминала - &lt;a href="../day15">(День 15)&lt;/a>.&lt;/p>
+&lt;p>Сегодня мы рассмотрим три ключевые области обслуживания систем Linux с помощью обновлений, установки программного обеспечения. Поймем для чего используются системные папки, а также рассмотрим хранилище.&lt;/p>
+&lt;h2 id="управление-ubuntu-и-программным-обеспечением">Управление Ubuntu и программным обеспечением&lt;/h2>
+&lt;p>Первое, что мы собираемся рассмотреть, это то, как мы обновляем нашу операционную систему. Большинству из вас этот процесс знаком в ОС Windows и macOS, он немного отличается на рабочем столе и сервере Linux.&lt;/p>
+&lt;p>Мы рассмотрим диспетчер пакетов apt - утилита, которую мы собираемся использовать на нашей виртуальной машине Ubuntu для обновлений и установки программного обеспечения.&lt;/p>
+&lt;p>Как правило, по крайней мере на рабочих станциях разработчиков, мы запускаем эту команду, чтобы убедиться, что у нас есть последние доступные обновления из центральных репозиториев перед установкой любого программного обеспечения.&lt;/p>
+&lt;p>&lt;code>sudo apt-get update&lt;/code>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux1.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Теперь у нас есть обновленная виртуальная машина Ubuntu с установленными последними обновлениями ОС. Теперь мы хотим установить здесь некоторое программное обеспечение.
+Давайте выберем &lt;code>figlet&lt;/code> — программу, генерирующую текстовые баннеры.
+Если мы введем «figlet» в наш терминал, вы увидите, что приложение не установлен в нашей системе.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux2.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Однако из вышеизложенного вы увидите, что утилита &lt;code>apt&lt;/code> предлагает нам некотоыре опции установки &lt;code>apt install ...&lt;/code>, которые мы можем попробовать. Это потому, что в репозиториях по умолчанию есть программа figlet. Давайте попробуем &lt;code>sudo apt install figlet&lt;/code>
+&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux3.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Теперь мы можем использовать наше приложение figlet
+&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux4.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Если мы хотим удалить эту или любую из наших установок программного обеспечения, мы также можем сделать это с помощью менеджера пакетов «apt».
+&lt;code>sudo apt remove figlet&lt;/code>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux5.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Существуют сторонние репозитории, которые мы также можем добавить в нашу систему, те, к которым у нас есть доступ из коробки, являются репозиториями Ubuntu по умолчанию.&lt;/p>
+&lt;p>Если бы, например, мы хотели установить vagrant на нашу виртуальную машину Ubuntu, мы не смогли бы сделать это прямо сейчас, и вы можете увидеть это ниже в первой введенной команде. Затем мы добавляем ключ к репозиторию HashiCorp, а затем добавляем репозиторий в нашу систему.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo apt-add-repository &amp;#34;deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main&amp;#34;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux6.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Как только мы добавим репозиторий HashiCorp, мы можем запустить &lt;code>sudo apt install vagrant&lt;/code> и установить vagrant в нашей системе.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux7.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Существует много вариантов, когда дело доходит до установки программного обеспечения, различных вариантов менеджеров пакетов, встроенных в Ubuntu, мы также могли бы использовать сохраненные темплейты (snapshots) для установки нашего программного обеспечения.&lt;/p>
+&lt;p>Надеюсь, это даст вам представление о том, как управлять установками ОС и программного обеспечения в Linux.&lt;/p>
+&lt;h2 id="файловая-система">Файловая система&lt;/h2>
+&lt;p>Linux состоит из файлов конфигурации, и если вы хотите что-то изменить, вы меняете эти файлы конфигурации.&lt;/p>
+&lt;p>В Windows у вас есть диск &lt;code>C:&lt;/code>, и это то, что мы считаем корнем. В Linux у нас есть &lt;code>/&lt;/code>, где мы собираемся найти важные папки в нашей системе Linux.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux8.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/bin&lt;/code> - Сокращенно от binary, папка bin — это место, где в основном находятся наши двоичные файлы, которые нужны вашей системе, исполняемые файлы и инструменты.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux9.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/boot&lt;/code> - Все файлы, необходимые вашей системе для загрузки. Как загрузиться и с какого диска загрузиться.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux10.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/dev&lt;/code> - Вы можете найти информацию об устройстве здесь, здесь вы найдете указатели на ваши диски &lt;code>sda&lt;/code>, которые будут вашим основным диском ОС.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux11.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/etc&lt;/code> - Вероятно, это самая важная папка в вашей системе Linux, где находится большинство ваших файлов конфигурации.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux12.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/home&lt;/code> - здесь вы найдете свои пользовательские папки и файлы. У нас есть пользовательская папка &lt;code>vagrant&lt;/code>. В ней вы найдете папки &amp;ldquo;Documents&amp;rdquo; и «Desktop», с которыми мы работали для раздела команд.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux13.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/lib&lt;/code> - Мы упомянули, что &lt;code>/bin&lt;/code> — это место, где находятся наши бинарные и исполняемые файлы, а &lt;code>/lib&lt;/code> — это место, где вы найдете разделяемые библиотеки для них.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux14.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/media&lt;/code> - Съемные носители. Флешки, диски и тд).&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux15.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/mnt&lt;/code> - Mount. Это временная точка монтирования. Подробнее мы расскажем в следующем разделе о хранении данных.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux16.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/opt&lt;/code> - Дополнительные пакеты программного обеспечения. Вы заметите, что здесь хранится некоторое программное обеспечение для vagrant и virtual box.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux17.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/proc&lt;/code> - Информация о ядре (kernel) и процессе (process), аналогичная &lt;code>/dev&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux18.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/root&lt;/code> - Домашняя папка для root. Чтобы получить доступ, вам нужно войти в эту папку с помощью sudo.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux19.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/run&lt;/code> - Каталог, содержащий PID файлы процессов, похожий на /var/run, но в отличие от него, он размещен в TMPFS, а поэтому после перезагрузки все файлы теряются. Сохраняет состояния текущих процессов&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux20.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/sbin&lt;/code> - System binaries. Так же как и /bin, содержит двоичные исполняемые файлы, которые доступны на ранних этапах загрузки, когда не примонтирован каталог /usr. Но здесь находятся программы, которые можно выполнять только с правами суперпользователя. Это разные утилиты для обслуживания системы. Например, iptables, reboot, fdisk, ifconfig,swapon и т д.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux21.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/tmp&lt;/code> - Содержит временные файлы, созданные системой, любыми программами или пользователями&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux22.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>/usr&lt;/code> - User Aplications. Если бы мы, как обычный пользователь, установили пакеты программного обеспечения, они обычно устанавливались бы в папку &lt;code>/usr/bin&lt;/code>. Здесь находятся исполняемые файлы, исходники программ, различные ресурсы приложений, картинки, музыка и документация&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>/usr/bin&lt;/code> - Содержит исполняемые файлы различных программ, которые не нужны на первых этапах загрузки системы, например, музыкальные плееры, графические редакторы, браузеры и т.д.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux23.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/var&lt;/code> - Variable. Переменные файлы. Наши приложения устанавливаются в папку &lt;code>bin&lt;/code>. Нам нужно где-то хранить все файлы журналов, это &lt;code>/var&lt;/code>. Здесь содержатся файлы системных журналов, различные кеши, базы данных и так далее&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux24.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>/var/log&lt;/code> - Logs. Здесь содержатся большинство файлов логов всех программ, установленных в операционной системе. У многих программ есть свои подкаталоги в этой папке, например, /var/log/apache - логи веб-сервера, /var/log/squid - файлы журналов кеширующего сервера squid. Если в системе что-либо сломалось, скорее всего, ответы вы найдете здесь.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>/var/run&lt;/code> - Содержит файлы с PID процессов, которые могут быть использованы, для взаимодействия между программами. В отличие от каталога /run данные сохраняются после перезагрузки.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>/sys&lt;/code> - System. Информация о системе. Назначение каталогов Linux из этой папки - получение информации о системе непосредственно от ядра. Это еще одна файловая система организуемая ядром и позволяющая просматривать и изменить многие параметры работы системы, например, работу swap, контролировать вентиляторы и многое другое.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="хранение">Хранение&lt;/h2>
+&lt;p>Когда мы подходим к системе Linux или любой другой системе, мы можем захотеть узнать о доступных дисках и о том, сколько свободного места у нас есть на этих дисках. Следующие несколько команд помогут нам идентифицировать, использовать и управлять хранилищем.&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>lsblk&lt;/code> Список заблокированных устройств. «sda» — это наш физический диск, а затем «sda1, sda2, sda3» — наши разделы на этом диске.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux25.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>df&lt;/code> дает нам немного больше информации об этих разделах, сколько всего, используется и доступно. Здесь вы можете использовать и другие флаги. Я обычно использую &lt;code>df -h&lt;/code>, чтобы дать нам &amp;ldquo;человеческий (понятный&amp;rdquo; (human) вывод данных.
+&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux26.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Если вы добавляли новый диск в свою систему, и это то же самое в Windows, вам нужно было бы отформатировать диск в управлении дисками, в терминале Linux вы можете сделать это с помощью &lt;code>sudo mkfs -t ext4 /dev/sdb&lt;/code> с sdb, относящимся к нашему недавно добавленному диску.&lt;/p>
+&lt;p>Затем нам нужно будет смонтировать наш недавно отформатированный диск, чтобы его можно было использовать. Мы сделали бы это в нашей ранее упомянутой папке &lt;code>/mnt&lt;/code> и создали бы там каталог с &lt;code>sudo mkdir NewDisk&lt;/code>, а затем использовали бы &lt;code>sudo mount /dev/sdb newdisk&lt;/code> для монтирования диска в это место.&lt;/p>
+&lt;p>Также возможно, что вам нужно будет безопасно отключить хранилище из вашей системы, а не просто вытащить его из конфигурации. Мы можем сделать это с помощью sudo umount /dev/sdb.&lt;/p>
+&lt;p>Если вы не хотите размонтировать этот диск и собираетесь использовать этот диск для базы данных или какого-либо другого варианта постоянного использования, тогда вы хотите, чтобы он был там при перезагрузке системы. Чтобы это произошло, нам нужно добавить этот диск в наш файл конфигурации &lt;code>/etc/fstab&lt;/code>, чтобы он сохранялся, если вы этого не сделаете, его нельзя будет использовать при перезагрузке машины, и вам придется вручную выполнить описанное выше. процесс. Данные по-прежнему будут на диске, но они не будут автоматически монтироваться, пока вы не добавите конфигурацию в этот файл.&lt;/p>
+&lt;p>После того, как вы отредактировали файл конфигурации &lt;code>fstab&lt;/code>, вы можете проверить свою работу с помощью &lt;code>sudo mount -a&lt;/code>, если ошибок нет, тогда ваши изменения теперь будут сохраняться при перезапусках.&lt;/p>
+&lt;p>Мы расскажем, как вы будете редактировать файл с помощью текстового редактора в будущем сеансе.&lt;/p>
+&lt;h2 id="ресурсы">Ресурсы&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://losst.ru/ctruktura-fajlovoj-sistemy-linux">Структура файловой системы Linux&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=kPylihJRG70">Learn the Linux Fundamentals - Part 1&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=VbEx7B_PTOE">Linux for hackers (don&amp;rsquo;t worry you don&amp;rsquo;t need to be a hacker!)&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

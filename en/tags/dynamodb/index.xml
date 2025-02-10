@@ -1,8 +1,756 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dynamodb on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/dynamodb/</link><description>Recent content in Dynamodb on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Mon, 12 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/dynamodb/index.xml" rel="self" type="application/rss+xml"/><item><title>DynamoDB</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/dynamodb/</link><pubDate>Mon, 12 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/dynamodb/</guid><description>About Fast and flexible NoSQL database service for performance with millisecond latency at any scale
-Amazon DynamoDB documentation Developer Guide Pricing Amazon DynamoDB pricing
-When you use the DynamoDB service, you are charged for reading, writing, and storing data in DynamoDB tables, as well as any additional features you enable. DynamoDB supports two resource provisioning modes that correspond to specific billing schemes for processing read and write operations on your tables: on-demand and with preparation. Click the following links to learn more about the billing options for each provisioning mode</description></item><item><title>Introduction to DynamoDB</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/dynamodb/introduction-dynamodb/</link><pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/dynamodb/introduction-dynamodb/</guid><description>Lab
-Creating a DynamoDB Table with a Partition Key 1. From the AWS Management Console, in the search bar at the top, enter DynamoDB, and under Services, click the DynamoDB result:
-The Amazon DynamoDB product overview page will load.
-2. To start creating a new DyanmoDB table, on the right-hand side, click Create table:
-3. In the Table details section, enter the following:
-Table Name: Partition Key: Enter Name and ensure type is 4. In the Settings section, select Customize settings:</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dynamodb on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/dynamodb/</link><description>Recent content in Dynamodb on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Mon, 12 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/dynamodb/index.xml" rel="self" type="application/rss+xml"/><item><title>DynamoDB</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/dynamodb/</link><pubDate>Mon, 12 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/dynamodb/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>Fast and flexible NoSQL database service for performance with millisecond latency at any scale&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/dynamodb/">Amazon DynamoDB documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html">Developer Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/product-page-diagram_Amazon-DynamoDBa.1f8742c44147f1aed11719df4a14ccdb0b13d9a3.png"
+id="zoom-default"
+alt="How DynamoDB works"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="pricing">Pricing&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/dynamodb/pricing/">Amazon DynamoDB pricing&lt;/a>&lt;/p>
+&lt;p>When you use the DynamoDB service, you are charged for reading, writing, and storing data in DynamoDB tables, as well as any additional features you enable. DynamoDB supports two resource provisioning modes that correspond to specific billing schemes for processing read and write operations on your tables: on-demand and with preparation. Click the following links to learn more about the billing options for each provisioning mode&lt;/p>
+&lt;h2 id="use-cases">Use Cases&lt;/h2>
+&lt;p>Type: Key-value&lt;/p>
+&lt;p>Ecommerce Websites, gaming websites etc.&lt;/p>
+&lt;h2 id="digest">Digest&lt;/h2>
+&lt;ul>
+&lt;li>Global tables are useful for having multiple copies of tables in different region.&lt;/li>
+&lt;li>All DynamoDB tables are encrypted at rest using an AWS owned CMK by default.&lt;/li>
+&lt;li>Items - in DynamoDB is similar in many ways to rows, records, or tuples in other database systems. Each DynamoDB table contains zero or more items. An item is a collection of attributes that is uniquely identifiable for each record in that table.&lt;/li>
+&lt;li>Attributes - Each item is composed of one or more attributes. Attributes in DynamoDB are similar in many ways to fields or columns in other database systems.&lt;/li>
+&lt;li>Each item in the table has a unique identifier, a primary key, or a partition key that distinguishes the item from all of the others in the table. The primary key consists of one attribute.&lt;/li>
+&lt;li>Primary key&lt;/li>
+&lt;li>Partition key&lt;/li>
+&lt;li>Partition key and sort key (range attribute)&lt;/li>
+&lt;li>A primary key can either be a sinale-attribute partition key or a composite partition-sort key.&lt;/li>
+&lt;li>Both partition and sort keys attributes must be defined as type string, number, or binary.&lt;/li>
+&lt;li>Global secondary index - a partition key and a sort key that can be different from those on the base table; query at table level across all partitions; eventual consistency:
+&lt;ul>
+&lt;li>Different partition key and sort key from base table&lt;/li>
+&lt;li>Only eventually consistent&lt;/li>
+&lt;li>Can be created after table is created&lt;/li>
+&lt;li>Using a random prefix for the GSI partition key enables to have high cardinality for the partition key&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Local secondary index - same partition key as the base table, but a different sort key: query on a single partition; eventual or strong consistency:
+&lt;ul>
+&lt;li>Same partition key, different sort key from base table&lt;/li>
+&lt;li>Eventual and strongly consistent&lt;/li>
+&lt;li>Should be created when creating a table&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Calculate RCU (read capacity unit) &amp;amp; WCU (write capacity unit):
+&lt;ul>
+&lt;li>1 RCU = 2 eventual consistent read of 4 KB, 1 strongly consistent read of 4 KB&lt;/li>
+&lt;li>1 WCU = 1 write per second for data for an item as large as 1 KB.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>DynamoDB Streams is an optional feature that captures data modification events in DynamoDB tables. The data about these events appears in the stream in near real time and in the order that the events occurred.&lt;/li>
+&lt;li>Queries or scan on GSI consume &lt;a href="https://aws.amazon.com/dynamodb/pricing/provisioned/">RCU&lt;/a> on index &lt;strong>not&lt;/strong> on table&lt;/li>
+&lt;li>Consistency:
+&lt;ul>
+&lt;li>Auto scaling&lt;/li>
+&lt;li>Storing session state could be on elastic cache or dynamodb&lt;/li>
+&lt;li>Provisioned throughput - ProvisionedThroughputExceededException&lt;/li>
+&lt;li>Reserved capacity, On-demand, Burst. Adaptive&lt;/li>
+&lt;li>On-demand backups, point-in-time recovery&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Best practices when using &lt;strong>Scan&lt;/strong> in dynamodb - &lt;strong>Use parallel scan&lt;/strong>
+&lt;ul>
+&lt;li>to control the amount of data returned per request use the &lt;strong>Limit parameter&lt;/strong>. This can help prevent situations where one worker consumes all the provisioned throuahput at the expense of all other workers&lt;/li>
+&lt;li>DynamoDB does not support item locking, and conditional writes are perfect for implementing optimistic concurrency.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="dynamodb-vs-aurora">DynamoDB vs Aurora&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Amazon DynamoDB&lt;/th>
+&lt;th>Amazon Aurora&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Was developed by Amazon in 2012&lt;/td>
+&lt;td>Was developed by Amazon in 2015.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>It is hosted, scalable database service by Amazon with data stored in Amazon cloud&lt;/td>
+&lt;td>It is MySQL and PostgreSQL compatible cloud service by Amazon&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>It does not provide &lt;a href="https://www.ibm.com/docs/en/informix-servers/14.10?topic=integrity-referential">concept of Referential Integrity&lt;/a>. Hence, no Foreign Keys&lt;/td>
+&lt;td>It provides concept of Referential Integrity. Hence, no Foreign Keys&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Eventual Consistency and Immediate Consistency are used to ensure consistency in distributed system&lt;/td>
+&lt;td>Immediate Consistency is used to ensure consistency in distributed system&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Its Primary database models are Document store and Key-value store&lt;/td>
+&lt;td>Its Primary database model is Relational DBMS&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>It does not support Server-side scripting&lt;/td>
+&lt;td>It supports Server-side scripting&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>It supports sharding as partitioning method&lt;/td>
+&lt;td>Partitioning can be done with horizontal partitioning&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>It does not support SQL query language&lt;/td>
+&lt;td>It supports SQL query language&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>It supports replication methods&lt;/td>
+&lt;td>It supports only one replication method – Master-slave replication&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>It does not offer API for user-defined Map/Reduce methods. But maybe implemented via Amazon Elastic MapReduce&lt;/td>
+&lt;td>It does not offer API for user-defined Map/Reduce methods&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>DynamoDB supports different &lt;strong>consistency models&lt;/strong> when performing reads:&lt;/p>
+&lt;ul>
+&lt;li>Eventually, &lt;a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">consistent reads&lt;/a> may not always reflect the latest data if there was recently write activity on the table. Since the data in this scenario rarely changes, eventually consistent reads, which are cheaper than strongly consistent reads, can be tolerated.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d2908q01vomqb2.cloudfront.net/887309d048beef83ad3eabf2a79a64a389ab1c9f/2018/09/10/dynamodb-partition-key-1.gif"
+id="zoom-default"
+alt="DynamoDB Partition Key"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d2908q01vomqb2.cloudfront.net/887309d048beef83ad3eabf2a79a64a389ab1c9f/2018/09/10/dynamodb-partition-key-2.gif"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="practice">Practice&lt;/h2>
+&lt;p>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/dynamodb/introduction-dynamodb/">Introduction to DynamoDB&lt;/a>&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/blogs/database/category/database/amazon-dynamodb/">AWS Database Blog&lt;/a>&lt;/p>
+&lt;h2 id="questions">Questions&lt;/h2>
+&lt;h3 id="q1">Q1&lt;/h3>
+&lt;p>&lt;strong>A developer is designing a web application that allows the users to post comments and receive in a real-time feedback.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which architectures meet these requirements? (Select TWO.)&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Create an AWS AppSync schema and corresponding APIs. Use an Amazon DynamoDB table as the data store.&lt;/li>
+&lt;li>Create a WebSocket API in Amazon API Gateway. Use an AWS Lambda function as the backend and an Amazon DynamoDB table as the data store&lt;/li>
+&lt;li>Create an AWS Elastic Beanstalk application backed by an Amazon RDS database. Configure the application to allow long-lived TCP/IP sockets.&lt;/li>
+&lt;li>Create a GraphQL endpoint in Amazon API Gateway. Use an Amazon DynamoDB table as the data store.&lt;/li>
+&lt;li>Enable WebSocket on Amazon CloudFront. Use an AWS Lambda function as the origin and an Amazon Aurora DB cluster as the data store&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="https://aws.amazon.com/appsync/">AWS AppSync&lt;/a> simplifies application development by letting users create a flexible API to securely access, manipulate, and combine data from one or more data sources. AWS AppSync is a managed service that uses GraphQL to make it easy for applications to get the exact data they need.&lt;/p>
+&lt;p>AWS AppSync allows users to build scalable applications, including those requiring &lt;a href="https://docs.aws.amazon.com/appsync/latest/devguide/real-time-data.html">real-time updates&lt;/a>, on a range of data sources, including Amazon DynamoDB. In &lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/api-gateway/">Amazon API Gateway&lt;/a>, users can &lt;a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html">create a WebSocket API&lt;/a> as a stateful frontend for an AWS service (such as AWS Lambda or DynamoDB) or for an HTTP endpoint.&lt;/p>
+&lt;p>The WebSocket API invokes the backend based on the content of the messages it receives from client applications. Unlike a REST API, which receives and responds to requests, a WebSocket API supports two-way communication between client applications and the backend.&lt;/p>
+&lt;p>&lt;mark style="color:white">1, 2&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details></description></item><item><title>Introduction to DynamoDB</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/dynamodb/introduction-dynamodb/</link><pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/dynamodb/introduction-dynamodb/</guid><description>&lt;p>&lt;a href="https://cloudacademy.com/lab/introduction-dynamodb/">Lab&lt;/a>&lt;/p>
+&lt;h2 id="creating-a-dynamodb-table-with-a-partition-key">Creating a DynamoDB Table with a Partition Key&lt;/h2>
+&lt;p>1. From the AWS Management Console, in the search bar at the top, enter &lt;em>DynamoDB&lt;/em>, and under &lt;strong>Services&lt;/strong>, click the &lt;strong>DynamoDB&lt;/strong> result:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-4efbac81-907a-4f33-b2a2-a6b8dc94c268.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The Amazon DynamoDB product overview page will load.&lt;/p>
+&lt;p>2. To start creating a new DyanmoDB table, on the right-hand side, click &lt;strong>Create table&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-e871daee-5f6d-4211-8e81-5cabc466e3f6.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>3. In the &lt;strong>Table details&lt;/strong> section, enter the following:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Table Name&lt;/strong>:&lt;/li>
+&lt;li>&lt;strong>Partition Key&lt;/strong>: Enter &lt;em>Name&lt;/em> and ensure type is&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-bb0ec381-0d8e-485d-bcad-f54bef1c4bf8.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>4. In the &lt;strong>Settings&lt;/strong> section, select &lt;strong>Customize settings&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-47cfbc0e-1ea5-4995-bc84-5b334b5d8d20.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Choosing this option allows you to specify values for the table&amp;rsquo;s read and write capacities.&lt;/p>
+&lt;p>5. In the &lt;strong>Read/write capacity settings&lt;/strong> section, under &lt;strong>Capacity mode&lt;/strong>, select &lt;strong>Provisioned&lt;/strong> and enter the following:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Read Capacity&lt;/strong>:
+&lt;ul>
+&lt;li>&lt;strong>Provisioned capacity units&lt;/strong>:&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Write Capacity&lt;/strong>:
+&lt;ul>
+&lt;li>&lt;strong>Provisioned capacity units&lt;/strong>:&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-2ceb62ef-5b16-497d-ba64-fa1e6e6d70de.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Accept the defaults for all other options on this page.&lt;/p>
+&lt;p>6. Scroll to the bottom and click &lt;strong>Create table&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-22aa9d2f-93dc-4d09-9709-659558545a25.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The &lt;strong>Tables&lt;/strong> list view will load and you will see a notification that your table is being created. After a 30 seconds or so, you will see a success notification:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-797f317a-e893-4111-9ca4-2ccb61f3b50e.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="creating-a-dynamodb-table-with-local-and-global-secondary-indexes">Creating a DynamoDB Table with Local and Global Secondary Indexes&lt;/h2>
+&lt;p>1. On the right-hand side of the page, click &lt;strong>Create table&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-ba045e84-09b5-463c-a522-3a2152a0d7a1.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>2. Enter the following in the &lt;strong>Table details&lt;/strong> section:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Table name&lt;/strong>:&lt;/li>
+&lt;li>&lt;strong>Partition key&lt;/strong>:
+&lt;ul>
+&lt;li>&lt;strong>Name&lt;/strong>: Enter&lt;/li>
+&lt;li>&lt;strong>Type&lt;/strong>: Select&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Sort key&lt;/strong>:
+&lt;ul>
+&lt;li>&lt;strong>Name&lt;/strong>: Enter&lt;/li>
+&lt;li>&lt;strong>Type&lt;/strong>: Select&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-24742caa-d087-4ba4-9541-3e4296b42021.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>3. In the &lt;strong>Settings&lt;/strong> section, select &lt;strong>Customize settings&lt;/strong>.&lt;/p>
+&lt;p>4. Under &lt;strong>Read/write capacity settings&lt;/strong>, ensure &lt;strong>Provisioned&lt;/strong> is selected for &lt;strong>Capacity mode&lt;/strong>, and enter the following:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Read capacity&lt;/strong>:
+&lt;ul>
+&lt;li>&lt;strong>Provisioned capacity units&lt;/strong>:&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Write capacity&lt;/strong>:
+&lt;ul>
+&lt;li>&lt;strong>Provisioned capacity units&lt;/strong>:&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-096ddc68-8330-4d41-959b-d1da15f8037c.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>5. Scroll down to the &lt;strong>Secondary indexes&lt;/strong> section and click &lt;strong>Create local index&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-50343626-4f31-4993-9f71-6be1fd84311d.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The &lt;strong>New local secondary index&lt;/strong> dialog box will appear.&lt;/p>
+&lt;p>6. Enter the following to configure your local secondary index:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Sort Key&lt;/strong>:
+&lt;ul>
+&lt;li>&lt;strong>Name&lt;/strong>: Enter&lt;/li>
+&lt;li>&lt;strong>Type&lt;/strong>: Select&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Attribute projections&lt;/strong>: Select&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-0b468479-bc77-4ce2-be32-c9d929d12775.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>An LSI (Local Secondary Index) has the same partition key as the table&amp;rsquo;s primary key and will share the provisioned capacity of the table in contrast to global secondary indexes which provision their own capacity.&lt;/p>
+&lt;p>7. To finish creating the local secondary index, at the bottom, click &lt;strong>Create index&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-4befeca4-11a2-4e4d-93a4-eeadf6d1834e.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>8. Scroll to the bottom and click &lt;strong>Create table&lt;/strong>.&lt;/p>
+&lt;p>After roughly 30 seconds you will the table become active:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-d33586ea-40fb-4ce9-96b5-d7c86ca5e320.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>In contrast to a Local Secondary Index, a Global Secondary Index is an index with a partition and sort key that can be different from those in the table. It is considered &amp;ldquo;global&amp;rdquo; because queries on the index can span all of the data in a table, across all partitions.&lt;/p>
+&lt;p>9. Click &lt;strong>Create table&lt;/strong> once more to start creating another table.&lt;/p>
+&lt;p>10. Enter the following in the &lt;strong>Table details&lt;/strong> section:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Table Name&lt;/strong>:&lt;/li>
+&lt;li>&lt;strong>Partition key&lt;/strong>:
+&lt;ul>
+&lt;li>&lt;strong>Name&lt;/strong>: Enter&lt;/li>
+&lt;li>&lt;strong>Type&lt;/strong>_:_Select&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Sort key&lt;/strong>:
+&lt;ul>
+&lt;li>&lt;strong>Name&lt;/strong>: Enter&lt;/li>
+&lt;li>&lt;strong>Type&lt;/strong>: Select&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-b0dcff24-1b7b-489c-988e-edcb8fcc28be.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>11. In the &lt;strong>Settings&lt;/strong> section, select &lt;strong>Customize settings&lt;/strong>.&lt;/p>
+&lt;p>12. In the &lt;strong>Read/write capacity settings&lt;/strong> section, ensure the &lt;strong>Capacity mode&lt;/strong> is &lt;strong>Provisioned&lt;/strong>, and enter the following:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Read capacity&lt;/strong>:
+&lt;ul>
+&lt;li>&lt;strong>Provisioned capacity units&lt;/strong>: Enter&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Write capacity&lt;/strong>:
+&lt;ul>
+&lt;li>&lt;strong>Provisioned capacity units&lt;/strong>: Enter&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-94be7946-9efa-4c30-adfd-edeaa2b67f61.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>13. Scroll down to the &lt;strong>Secondary indexes&lt;/strong> section, and click &lt;strong>Create global index&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-96308291-edc2-43f9-bb33-305879b88822.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The &lt;strong>New global secondary index&lt;/strong> dialog form will appear.&lt;/p>
+&lt;p>14. Enter the following:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Partition key&lt;/strong>:
+&lt;ul>
+&lt;li>&lt;strong>Name&lt;/strong>: Enter  &lt;/li>
+&lt;li>&lt;strong>Type&lt;/strong>: Select&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Sort key&lt;/strong>:
+&lt;ul>
+&lt;li>&lt;strong>Name&lt;/strong>: Enter&lt;/li>
+&lt;li>&lt;strong>Type&lt;/strong>: Select&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Attribute projections&lt;/strong>: Select&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-2a541f2e-7bd3-46f7-83c3-87436b01966e.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>15. To finish creating the global secondary index, at the bottom, click &lt;strong>Create index&lt;/strong>.&lt;/p>
+&lt;p>16. Click &lt;strong>Create global index&lt;/strong> again and enter the following:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Partition key&lt;/strong>:
+&lt;ul>
+&lt;li>&lt;strong>Name&lt;/strong>: Enter&lt;/li>
+&lt;li>&lt;strong>Type&lt;/strong>: Select&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Sort key&lt;/strong>:
+&lt;ul>
+&lt;li>&lt;strong>Name&lt;/strong>: Enter&lt;/li>
+&lt;li>&lt;strong>Type&lt;/strong>: Select&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Attribute projections&lt;/strong>: Select&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-ff09625d-20bd-413b-a54e-2754f197e33c.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>17. To finish creating the global secondary index, at the bottom, click &lt;strong>Create index&lt;/strong>.&lt;/p>
+&lt;p>18. Scroll to the bottom and click &lt;strong>Create table&lt;/strong>.&lt;/p>
+&lt;p>Once again, you will see your table created after roughly 30 seconds.&lt;/p>
+&lt;h2 id="inserting-items-into-a-dynamodb-table">Inserting Items Into a DynamoDB Table&lt;/h2>
+&lt;p>1. In the left-hand menu, click &lt;strong>Explore items&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220214144736-1-27472532-bf0a-480a-a190-361f2de3e7bf.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>2. In the &lt;strong>Tables&lt;/strong> list, select&lt;/p>
+&lt;p>You will see nothing under &lt;strong>Items returned&lt;/strong> because there are no items stored.&lt;/p>
+&lt;p>3. On the right-hand side, click &lt;strong>Create item&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220214144847-2-444e85c6-7bb4-4ff7-8106-c134b251da45.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The &lt;strong>Create item&lt;/strong> form will load and you will see a list of &lt;strong>Attributes&lt;/strong>.&lt;/p>
+&lt;p>4. In the &lt;strong>Value&lt;/strong> textbox next to &lt;strong>Name - Partition key&lt;/strong>, enter a name for your forum (can be anything you wish):&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-6154dbe5-028f-4e60-91f3-4643b67d9504.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>5. To add another attribute for this item, click &lt;strong>Add new attribute&lt;/strong> and select &lt;strong>String&lt;/strong> from the list of types:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220214145008-3-86c3533d-1e28-470a-ae4b-f04ed72f26e7.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>6. In the &lt;strong>Attribute name&lt;/strong> textbox, enter &lt;em>Description&lt;/em> and in the &lt;strong>Value&lt;/strong> textbox, enter any value you&amp;rsquo;d like:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-99bea925-2986-4d59-b1eb-7ec2359403fd.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>7. At the bottom, click &lt;strong>Create item&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220214145034-4-cbdc0480-0970-4422-a5f9-db2d70877608.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>8. Repeat steps 3-7 three more times so that end up with four entries in the  table:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-5979d5a2-3d63-406e-b6b3-370016bd08b9.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>9. Select the table and click &lt;strong>Create Item&lt;/strong>.&lt;/p>
+&lt;p>10. Provide any values you&amp;rsquo;d like for , and , keeping in mind that the value must match the name of one of your forums.&lt;/p>
+&lt;p>&lt;em>Note&lt;/em>:  is a &amp;quot; &amp;quot; table with the Local Secondary Index. For being able to save a  item, you have to provide:&lt;/p>
+&lt;ul>
+&lt;li>(the table Primary Key)&lt;/li>
+&lt;li>(the table Sort Key)&lt;/li>
+&lt;li>(the Local Secondary Index Sort Key)&lt;/li>
+&lt;/ul>
+&lt;p>&lt;em>Note&lt;/em>: You will have to click &lt;strong>Add new attribute&lt;/strong> to add the &lt;strong>CreationDate&lt;/strong> attribute and specify a value.&lt;/p>
+&lt;p>11. At the bottom, click &lt;strong>Create item&lt;/strong>.&lt;/p>
+&lt;p>12. Repeat steps 9-11 three more times until you have four items in the  table:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-ce4059e5-feca-46ff-86d8-31dbfd42807c.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="editing-dynamodb-table-items">Editing DynamoDB Table Items&lt;/h2>
+&lt;p>1. On the &lt;strong>Explore items&lt;/strong> page, select the table:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-155a26f2-3a8e-43cf-99c9-a6b37f043a76.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>2. Select any item in the table and click on its name to get to the &lt;strong>Item editor&lt;/strong> page:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-4a1b4167-e18a-4bca-a3b0-552b44fe9d99.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>3. Click inside any value and make an update to its contents:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-3de3567d-5532-4dc1-b5a9-cf1ea304ff9a.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;em>Warning&lt;/em>: Note that modifying the partition key will result in changing the values of the item keys. This will delete and recreate the item with new keys.&lt;/p>
+&lt;p>4. At the bottom of the page, click &lt;strong>Save changes&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220214145236-5-85d77722-63c4-48fe-b1de-ab24fdf81cf2.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="querying-a-dynamodb-table">Querying a DynamoDB Table&lt;/h2>
+&lt;p>1. In the left-hand menu, click &lt;strong>PartiQL editor&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220214145324-6-84062f64-ea2a-40d6-959a-e29a2cb0fb55.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The &lt;strong>PartiQL editor&lt;/strong> page will load.&lt;/p>
+&lt;p>PartiQL is a SQL (Structured Query Language) compatible language for Amazon DynamoDB. As well as querying tables, you can use it to insert new items and update existing ones.&lt;/p>
+&lt;p>2. Under &lt;strong>Tables&lt;/strong>, click the three dots next to the   and click &lt;strong>Scan table&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-1eab2ac7-4647-4431-90de-8e4fa68fd56d.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The &lt;strong>Query 1&lt;/strong> editor will be populated with a PartiQL query that selects all items from the  .&lt;/p>
+&lt;p>3. To execute the PartiQL table, under the editor, click &lt;strong>Run&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220214145401-7-519dc94f-1b87-45d6-bc28-3f1aa8e73914.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>4. Scroll down to see the results under &lt;strong>Items returned&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-ba9ccc1d-4b03-4a20-b519-82356061de24.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Notice that you have a choice of viewing the results in tabular form or in JSON (Java Script Object Notation):&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220214145431-8-0c423ab2-2094-4436-8d8b-ba963a0e83d0.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>5. To query for a specific item, replace the contents of the &lt;strong>Query 1&lt;/strong> editor with the following, and click &lt;strong>Run&lt;/strong>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">SELECT&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">*&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#007020;font-weight:bold">FROM&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#4070a0">&amp;#34;Thread&amp;#34;&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#007020;font-weight:bold">WHERE&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#4070a0">&amp;#34;Subject&amp;#34;&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#4070a0">&amp;#39;Intro to cool stuff&amp;#39;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This time, you will only see items returned that satisfy the value of the &lt;code>WHERE&lt;/code> condition.&lt;/p>
+&lt;p>&lt;em>Note&lt;/em>: Change the value of the &lt;code>WHERE&lt;/code> condition to match an item you created if you don&amp;rsquo;t see a result.&lt;/p>
+&lt;p>PartiQL supports most standard features of SQL which means you can query, select, and sort your data in sophisticated ways.&lt;/p>
+&lt;p>Typically, using the Amazon DynamoDB Console to query items is useful for one-off reports and debugging or troubleshooting. Like most databases, DynamoDB can be accessed programmatically by other systems and software applications through either the AWS SDK (software development kit) or DyanmoDB&amp;rsquo;s HTTP API (application programming interface).&lt;/p>
+&lt;p>You can learn more about using PartiQL with Amazon DynamoDB by visiting the &lt;a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ql-reference.html">Working with PartiQL Query Language&lt;/a> section of the Amazon DynamoDB developer guide.&lt;/p>
+&lt;h2 id="deleting-a-dynamodb-table">Deleting a DynamoDB Table&lt;/h2>
+&lt;p>1. In the left-hand menu, click &lt;strong>Tables&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-0aac2492-7178-486a-a607-ad9ea8403eee.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>2. In the &lt;strong>Tables&lt;/strong> table, select the &lt;strong>Thread&lt;/strong> table:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-21177ace-c16f-41b0-ac33-53d4f73b0dd2.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>3. On the right-hand side, click &lt;strong>Delete&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-37d053b8-e8d6-4794-ab3e-9391404a3129.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The &lt;strong>Delete table&lt;/strong> confirmation modal will appear.&lt;/p>
+&lt;p>Notice that you have the ability to create a backup for a table before deleting it.&lt;/p>
+&lt;p>4. In the confirmation textbox, enter &lt;em>delete&lt;/em> and click &lt;strong>Delete table&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-383f3bac-2d01-47ee-bbe7-fe5bb516ad2a.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You will see a message summarizing the deletion:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-7d30e701-f0b7-461a-b56c-9e7cf3336e92.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>5. To continue, click &lt;strong>Go to tables&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-70c6198f-06ea-49ec-bf9b-8174d7c272d5.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>6. To update the &lt;strong>Tables&lt;/strong> table, click the refresh icon:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-8779ea9b-1908-47f6-a6a9-7beccf3668d3.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You will now see only two tables listed.&lt;/p></description></item></channel></rss>

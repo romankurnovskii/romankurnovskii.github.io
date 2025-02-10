@@ -1,5 +1,134 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Nodejs on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/nodejs/</link><description>Recent content in Nodejs on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 07 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/nodejs/index.xml" rel="self" type="application/rss+xml"/><item><title>Setup subdomains on VPS CentOS</title><link>https://romankurnovskii.com/en/posts/vps-docker-subdomains-setup/</link><pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/vps-docker-subdomains-setup/</guid><description>TLDR Code sources
-Create Projects Creating three example projects:
-node.js express server that returns json on request another node.js express server static html page Place projects data in dir &amp;lsquo;projects&amp;rsquo;.
-Structure:
-└── project ├── Dockerfile ├── nginx.conf ├── projects | ├── 1 | | ├── app.js | | └── package.json | ├── 2 | | ├── app.js | | └── package.json | └── 3 | └── index.html └── start.sh Nginx setup Server needs to &amp;ldquo;understand&amp;rdquo; the initial subdomain and where to forward.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Nodejs on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/nodejs/</link><description>Recent content in Nodejs on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 07 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/nodejs/index.xml" rel="self" type="application/rss+xml"/><item><title>Setup subdomains on VPS CentOS</title><link>https://romankurnovskii.com/en/posts/vps-docker-subdomains-setup/</link><pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/vps-docker-subdomains-setup/</guid><description>&lt;h2 id="tldr">TLDR&lt;/h2>
+&lt;p>&lt;a href="https://github.com/romankurnovskii/romankurnovskii.github.io/tree/main/content/posts/vps-docker-subdomains-setup/project">Code sources&lt;/a>&lt;/p>
+&lt;h2 id="create-projects">Create Projects&lt;/h2>
+&lt;p>Creating three example projects:&lt;/p>
+&lt;ol>
+&lt;li>node.js express server that returns json on request&lt;/li>
+&lt;li>another node.js express server&lt;/li>
+&lt;li>static html page&lt;/li>
+&lt;/ol>
+&lt;p>Place projects data in dir &amp;lsquo;projects&amp;rsquo;.&lt;/p>
+&lt;p>Structure:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>└── project
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ├── Dockerfile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ├── nginx.conf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ├── projects
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | ├── 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | | ├── app.js
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | | └── package.json
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | ├── 2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | | ├── app.js
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | | └── package.json
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | └── 3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | └── index.html
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └── start.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="nginx-setup">Nginx setup&lt;/h2>
+&lt;p>Server needs to &amp;ldquo;understand&amp;rdquo; the initial subdomain and where to forward.&lt;/p>
+&lt;p>For this use reverse proxy&lt;/p>
+&lt;p>&lt;code>nginx.conf&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span style="display:flex;">&lt;span>worker_processes &lt;span style="color:#40a070">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>events {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> worker_connections &lt;span style="color:#40a070">1024&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>http {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sendfile on;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> listen &lt;span style="color:#40a070">80&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server_name mydomain1&lt;span style="color:#666">.&lt;/span>localhost;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> location &lt;span style="color:#666">/&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> proxy_pass http:&lt;span style="color:#666">//&lt;/span>localhost:&lt;span style="color:#40a070">3000&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> listen &lt;span style="color:#40a070">80&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server_name mydomain2&lt;span style="color:#666">.&lt;/span>localhost;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> location &lt;span style="color:#666">/&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> proxy_pass http:&lt;span style="color:#666">//&lt;/span>localhost:&lt;span style="color:#40a070">4000&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> listen &lt;span style="color:#40a070">80&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server_name mydomain3&lt;span style="color:#666">.&lt;/span>localhost;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> root &lt;span style="color:#666">/&lt;/span>&lt;span style="color:#007020;font-weight:bold">var&lt;/span>&lt;span style="color:#666">/&lt;/span>www&lt;span style="color:#666">/&lt;/span>domains&lt;span style="color:#666">/&lt;/span>mydomain_with_static_files;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> location &lt;span style="color:#666">/&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> try_files &lt;span style="color:#666">$&lt;/span>uri &lt;span style="color:#666">$&lt;/span>uri&lt;span style="color:#666">/&lt;/span> &lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">404&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="start-apps">Start apps&lt;/h2>
+&lt;p>To start js applications need to run &lt;code>node&lt;/code> command.&lt;/p>
+&lt;p>&lt;code>start.sh&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">#!/bin/sh
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Start the first app&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>node /opt/projects/1/app.js &amp;amp;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Start the second app&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>node /opt/projects/2/app.js &amp;amp;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Start nginx in the foreground&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>nginx -g &lt;span style="color:#4070a0">&amp;#39;daemon off;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="docker-file">Docker file&lt;/h2>
+&lt;p>Next, we&amp;rsquo;ll create a Dockerfile to define the &amp;lsquo;centos&amp;rsquo; Docker container where we can test our setup. Here&amp;rsquo;s what the Dockerfile looks like:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-dockerfile" data-lang="dockerfile">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">FROM&lt;/span>&lt;span style="color:#4070a0"> centos:latest&lt;/span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#60a0b0;font-style:italic"># fixes&lt;/span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> &lt;span style="color:#007020">cd&lt;/span> /etc/yum.repos.d/&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> sed -i &lt;span style="color:#4070a0">&amp;#39;s/mirrorlist/#mirrorlist/g&amp;#39;&lt;/span> /etc/yum.repos.d/CentOS-*&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> sed -i &lt;span style="color:#4070a0">&amp;#39;s|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g&amp;#39;&lt;/span> /etc/yum.repos.d/CentOS-*&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> yum update -y &lt;span style="color:#666">&amp;amp;&amp;amp;&lt;/span> yum install -y curl vim git&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> curl -sL https://rpm.nodesource.com/setup_14.x | bash -&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> yum install -y nodejs&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#60a0b0;font-style:italic"># Install Nginx&lt;/span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> yum install -y epel-release&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> yum install -y nginx&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> mkdir -p /opt/projects/1&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">ADD&lt;/span> ./projects/1 /opt/projects/1&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">WORKDIR&lt;/span>&lt;span style="color:#4070a0"> /opt/projects/1&lt;/span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> npm install&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> mkdir -p /opt/projects/2&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">ADD&lt;/span> ./projects/2 /opt/projects/2&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">WORKDIR&lt;/span>&lt;span style="color:#4070a0"> /opt/projects/2&lt;/span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> npm install&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> mkdir -p /var/www/domains/mydomain_with_static_files&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">ADD&lt;/span> ./projects/3 /var/www/domains/mydomain_with_static_files&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">COPY&lt;/span> start.sh /opt/projects/start.sh&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> chmod +x /opt/projects/start.sh&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">EXPOSE&lt;/span>&lt;span style="color:#4070a0"> 80&lt;/span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">COPY&lt;/span> nginx.conf /etc/nginx/nginx.conf&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> ls -la /etc/nginx/&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#60a0b0;font-style:italic"># CMD [&amp;#34;nginx&amp;#34;, &amp;#34;-g&amp;#34;, &amp;#34;daemon off;&amp;#34;]&lt;/span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">CMD&lt;/span> [&lt;span style="color:#4070a0">&amp;#34;/opt/projects/start.sh&amp;#34;&lt;/span>]&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="test-run">Test run&lt;/h2>
+&lt;ol>
+&lt;li>Build docker image and run&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker build -t myserver .
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker run -p 80:80 myserver
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>Open in browser on host:
+&lt;ol>
+&lt;li>project 1: &lt;a href="http://mydomain1.localhost">http://mydomain1.localhost&lt;/a>&lt;/li>
+&lt;li>project 2: &lt;a href="http://mydomain2.localhost">http://mydomain2.localhost&lt;/a>&lt;/li>
+&lt;li>project 3: &lt;a href="http://mydomain3.localhost">http://mydomain3.localhost&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol></description></item></channel></rss>

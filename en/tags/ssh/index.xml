@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ssh on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/ssh/</link><description>Recent content in Ssh on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 21 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/ssh/index.xml" rel="self" type="application/rss+xml"/><item><title>Set Up Your First VPS on Debian</title><link>https://romankurnovskii.com/en/posts/linux/debian-vps-initial-setup/</link><pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/debian-vps-initial-setup/</guid><description>&lt;h1 id="setting-up-your-first-vps-secure-configuration-guide">Setting Up Your First VPS: Secure Configuration Guide&lt;/h1>
+&lt;p>When setting up a new VPS, securing access is critical to prevent unauthorized usage. In this guide, you&amp;rsquo;ll create a new user, disable SSH root access, and configure SSH key-based authentication for added security.&lt;/p>
+&lt;h2 id="update-and-upgrade-packages">Update and Upgrade Packages&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>apt update
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>apt upgrade -y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-1-initial-login-as-root">Step 1: Initial Login as Root&lt;/h2>
+&lt;p>By default, VPS providers often grant root access. Start by logging in using the provided credentials:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh root@&amp;lt;your-server-ip&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-2-create-a-new-user">Step 2: Create a New User&lt;/h2>
+&lt;p>Replace &lt;username> with your preferred username:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>useradd -m -s /bin/bash -G sudo &amp;lt;username&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In case of delete the User:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>userdel -r &amp;lt;username&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>-r&lt;/code>: Removes the user&amp;rsquo;s home directory.&lt;/p>
+&lt;h2 id="step-3-configure-ssh-key-based-authentication">Step 3: Configure SSH Key-Based Authentication&lt;/h2>
+&lt;p>&lt;strong>3.1. Generate an SSH Key Pair (Local Machine)&lt;/strong>
+On your local machine (not the VPS), check if you already have an SSH key:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ls ~/.ssh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Look for files like &lt;code>id_rsa&lt;/code> and &lt;code>id_rsa.pub&lt;/code>. If these files exist, you already have an SSH key. Skip to &lt;strong>3.2&lt;/strong> to retrieve your public key.&lt;/p>
+&lt;p>If no SSH key exists, generate one with the following command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh-keygen -t rsa -b &lt;span style="color:#40a070">4096&lt;/span> -C &lt;span style="color:#4070a0">&amp;#34;your_email@example.com&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;code>-t rsa&lt;/code>: Specifies the RSA algorithm.&lt;/li>
+&lt;li>&lt;code>-b 4096&lt;/code>: Sets the key size to 4096 bits (more secure).&lt;/li>
+&lt;li>&lt;code>-C &amp;quot;your_email@example.com&amp;quot;&lt;/code>: Adds a comment to identify the key.&lt;/li>
+&lt;/ul>
+&lt;p>Follow the prompts:&lt;/p>
+&lt;ul>
+&lt;li>Press Enter to save the key in the default location (&lt;code>~/.ssh/id_rsa&lt;/code>).&lt;/li>
+&lt;li>Optionally, set a passphrase for additional security.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>3.2. Retrieve Your Public Key&lt;/strong>&lt;/p>
+&lt;p>Your public key is stored in the file &lt;code>~/.ssh/id_rsa.pub&lt;/code>. To display it, run:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cat ~/.ssh/id_rsa.pub
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You’ll see a string that starts with ssh-rsa:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>ssh-rsa AAAAB3Nza...your-key... your_email@example.com
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Copy this entire string to your clipboard.&lt;/p>
+&lt;p>&lt;strong>3.3. Add Your Public Key to the VPS&lt;/strong>
+Log in to your VPS as &lt;username>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>su - &amp;lt;username&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create the &lt;code>.ssh&lt;/code> directory in the home folder:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>mkdir -p ~/.ssh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chmod &lt;span style="color:#40a070">700&lt;/span> ~/.ssh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Open the authorized_keys file:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>vi ~/.ssh/authorized_keys
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Paste your public key into the file and save it.&lt;/p>
+&lt;p>Set the appropriate permissions:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>chmod &lt;span style="color:#40a070">600&lt;/span> ~/.ssh/authorized_keys
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>3.4. Test SSH Key Authentication&lt;/strong>
+On your local machine, test the connection to your VPS using the myuser account:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh &amp;lt;username&amp;gt;@&amp;lt;your-server-ip&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># if using port:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ssh -p &amp;lt;port&amp;gt; &amp;lt;username&amp;gt;@&amp;lt;your-server-ip&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If the setup is correct, you’ll log in without being prompted for a password.&lt;/p>
+&lt;h2 id="step-4-disable-root-ssh-login">Step 4: Disable Root SSH Login&lt;/h2>
+&lt;p>Edit the SSH Configuration File&lt;/p>
+&lt;p>Open the SSH daemon configuration file:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo vi /etc/ssh/sshd_config
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Update the Following Settings&lt;/p>
+&lt;p>Disable root login:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>PermitRootLogin no
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Disable password authentication:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>PasswordAuthentication no
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Save and Exit the file, then restart the SSH service:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo systemctl restart sshd
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-5-final-security-check">Step 5: Final Security Check&lt;/h2>
+&lt;p>Test New Configuration&lt;/p>
+&lt;p>Open a new terminal and verify that:&lt;/p>
+&lt;ul>
+&lt;li>You can log in with the new user.&lt;/li>
+&lt;li>Root login is disabled.&lt;/li>
+&lt;li>Password-based login is disabled.&lt;/li>
+&lt;li>Firewall Setup (Optional)&lt;/li>
+&lt;/ul>
+&lt;p>Enable the firewall and allow only SSH traffic:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ufw allow OpenSSH
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ufw &lt;span style="color:#007020">enable&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-6-backup-and-monitor">Step 6: Backup and Monitor&lt;/h2>
+&lt;p>Backup Your SSH Keys Ensure your private key is securely stored on your local machine.&lt;/p>
+&lt;p>Monitor Login Attempts Check login activity using:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cat /var/log/auth.log
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

@@ -1,5 +1,239 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CodeCommit on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codecommit/</link><description>Recent content in CodeCommit on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 16 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codecommit/index.xml" rel="self" type="application/rss+xml"/><item><title>Introduction to CodeCommit</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codecommit/introduction-codecommit/</link><pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codecommit/introduction-codecommit/</guid><description>Lab https://cloudacademy.com/lab/introduction-codecommit/
-Create a repository 1. In the AWS Management Console search bar, enter CodeCommit, and click the CodeCommit result under Services:
-2. Click Create repository:
-3. In the Create repository form enter the following values accepting the defaults for values not specified:
-Repository name: lab-repository You can leave the Description field empty for this lab. Usually this field would contain a short description of the purpose of the repository. Attaching meaningful descriptions to repositories makes managing large numbers of repositories easier.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CodeCommit on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codecommit/</link><description>Recent content in CodeCommit on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 16 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codecommit/index.xml" rel="self" type="application/rss+xml"/><item><title>Introduction to CodeCommit</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codecommit/introduction-codecommit/</link><pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codecommit/introduction-codecommit/</guid><description>&lt;h2 id="lab">Lab&lt;/h2>
+&lt;p>&lt;a href="https://cloudacademy.com/lab/introduction-codecommit/">https://cloudacademy.com/lab/introduction-codecommit/&lt;/a>&lt;/p>
+&lt;h2 id="create-a-repository">Create a repository&lt;/h2>
+&lt;p>1. In the AWS Management Console search bar, enter &lt;em>CodeCommit&lt;/em>, and click the &lt;strong>CodeCommit&lt;/strong> result under &lt;strong>Services&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid8-d6eda39e-5d7a-42f1-ba2a-9ff32adbe9b1.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>2. Click &lt;strong>Create repository&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets-stage.cloudacademy.com/bakery/media/uploads/content_engine/image-7bf4cd65-51d0-4c0e-a7d2-7e3bfc065eea.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>3. In the &lt;strong>Create repository&lt;/strong> form enter the following values accepting the defaults for values not specified:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Repository name:&lt;/strong> &lt;em>lab-repository&lt;/em>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets-stage.cloudacademy.com/bakery/media/uploads/blobid0-9888f6d9-4a8c-4026-9096-240ee81f6275.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You can leave the &lt;strong>Description&lt;/strong> field empty for this lab. Usually this field would contain a short description of the purpose of the repository. Attaching meaningful descriptions to repositories makes managing large numbers of repositories easier.&lt;/p>
+&lt;p>4. Click &lt;strong>Create&lt;/strong> to create the repository.&lt;/p>
+&lt;h2 id="creating-credentials-to-access-your-repository">Creating credentials to access your repository&lt;/h2>
+&lt;p>1. In the AWS Management Console search bar, enter &lt;em>IAM&lt;/em>, and click the &lt;strong>IAM&lt;/strong> result under &lt;strong>Services&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid9-3fcae8c9-b895-431c-be7a-e07458a7c81e.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>2. Under &lt;strong>Access Management&lt;/strong>, click &lt;strong>Users&lt;/strong> in the left-hand sidebar menu:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets-stage.cloudacademy.com/bakery/media/uploads/content_engine/image-c3071b07-262a-4ef6-bc9e-4dece2c76a74.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>3. In the IAM user list, click &lt;strong>student&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets-stage.cloudacademy.com/bakery/media/uploads/content_engine/image-65c97658-6123-414d-8cad-209aeb565aab.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>4. Click the &lt;strong>Security credentials&lt;/strong> tab:&lt;/p>
+&lt;p>&lt;a href="https://console.aws.amazon.com/iam/home?region=us-west-2#/home">&lt;p class="md__image">
+&lt;img
+src="https://assets-stage.cloudacademy.com/bakery/media/uploads/content_engine/image-197c67f0-5785-4d68-8eeb-d84658a0aae6.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/a>&lt;/p>
+&lt;p>5. Scroll down to the &lt;strong>HTTPS Git credentials for AWS CodeCommit&lt;/strong> section and click &lt;strong>Generate credentials&lt;/strong>:&lt;/p>
+&lt;p>&lt;a href="https://console.aws.amazon.com/iam/home?region=us-west-2#/home">&lt;p class="md__image">
+&lt;img
+src="https://assets-stage.cloudacademy.com/bakery/media/uploads/content_engine/image-953ff3aa-f6e4-455a-8d3b-dfba7dd83dca.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/a>&lt;/p>
+&lt;p>6. In the box that opens, click &lt;strong>Download credentials&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets-stage.cloudacademy.com/bakery/media/uploads/content_engine/image-adbc3a7d-afeb-47a3-8fd9-8a8068b5bf83.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Your browser will download a file called credentials.csv.&lt;/p>
+&lt;p>Keep these credentials saved, you will use them in later steps.&lt;/p>
+&lt;h2 id="accessing-a-shell-with-git-available">Accessing a shell with Git available&lt;/h2>
+&lt;p>1. In the AWS Management Console search bar, enter &lt;em>EC2&lt;/em>, and click the &lt;strong>EC2&lt;/strong> result under &lt;strong>Services&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid1-e2ff9b44-657e-4d4d-aff2-74567f20187f.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>2. In the left-hand side menu, click &lt;strong>Instances&lt;/strong>:&lt;/p>
+&lt;p>&lt;strong>&lt;strong>&lt;p class="md__image">
+&lt;img
+src="https://assets-stage.cloudacademy.com/bakery/media/uploads/blobid1-6b05c0d3-f28b-4f96-ba74-f784cc0e2626.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/strong>&lt;/strong>&lt;/p>
+&lt;p>3. Select the instance and in the row of buttons above the instance list, click &lt;strong>Connect&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-4c15bdaf-7ec0-4fe9-81a8-ab9a3483e32d.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>4. In the &lt;strong>Connect to instance&lt;/strong> dialog, ensure &lt;strong>EC2 Instance Connect&lt;/strong> is selected and enter in the &lt;strong>User name&lt;/strong> field:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-bb014d99-7672-4ace-a009-12863be0eb26.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>5. To open a shell on this instance, click &lt;strong>Connect&lt;/strong>.&lt;/p>
+&lt;p>EC2 Instance Connect allows you to connect to the instance over SSH using your web browser. With EC2 Instance Connect a new browser window opens an SSH shell on a Linux host that has git installed.&lt;/p>
+&lt;p>Keep this window open, you will use it in later steps.&lt;/p>
+&lt;h2 id="adding-files-to-your-repository">Adding files to your repository&lt;/h2>
+&lt;p>1. &lt;strong>&lt;a href="https://us-west-2.console.aws.amazon.com/codesuite/codecommit/home?region=us-west-2">Navigate to the CodeCommit Console&lt;/a>.&lt;/strong>&lt;/p>
+&lt;p>2. In the list of repositories, click &lt;strong>lab-repository&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets-stage.cloudacademy.com/bakery/media/uploads/content_engine/image-55b0588f-4c7d-4487-a140-c4a4892fb0b4.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>3. Click &lt;strong>Clone URL&lt;/strong> and select &lt;strong>Clone HTTPS&lt;/strong> in the drop-down menu that opens:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets-stage.cloudacademy.com/bakery/media/uploads/content_engine/image-81375aed-ab37-4800-8636-e99a0a392d6a.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The URL of the repository has been copied to your clipboard.&lt;/p>
+&lt;p>4. To copy the repository to your Linux host, in your shell, type &lt;code>git clone&lt;/code> followed by a space and paste the repository URL:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git clone https://git-codecommit.us-west-2.amazonaws.com/v1/repos/lab-repository
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>5. When prompted, enter the username and password from the credentials file you downloaded in the &lt;strong>Creating credentials to access your repository&lt;/strong> step:&lt;/p>
+&lt;p>&lt;strong>&lt;strong>&lt;p class="md__image">
+&lt;img
+src="https://lh3.googleusercontent.com/9eEBVdyCjpcociiU9Y0RsR9Z_PjQD6yg5ohHrg0jotejGL86VC6WOsweyNp-2zrodQLnWsY04MvtVfqyNWC7DZupN7VEv3EbUK4h7jUX5mPTOoa5OYLfbKe0874T1SWielKHL1g0"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/strong>&lt;/strong>&lt;/p>
+&lt;p>You can ignore the warning about cloning an empty repository.&lt;/p>
+&lt;p>You have copied the repository from AWS CodeCommit and stored it locally on the Linux host.&lt;/p>
+&lt;p>6. To change to the directory of the repository, enter the &lt;code>cd&lt;/code> command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>cd lab-repository
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>7. To create a file, enter the following command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>echo &amp;#34;lab&amp;#34; &amp;gt; lab.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>With this command you have created a file called lab.txt that can be added to your local repository.&lt;/p>
+&lt;p>8. To add the file to your local repository, enter the following commands:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>git add lab.txt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git commit -m &amp;#34;Lab commit&amp;#34;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In Git terminology, with the first command you are &amp;ldquo;staging&amp;rdquo; the file before you commit it. This process enables you to specify which files you want to add to the repository and which ones you want to ignore when committing.&lt;/p>
+&lt;p>You will see output similar to the following:&lt;/p>
+&lt;p>&lt;strong>&lt;strong>&lt;p class="md__image">
+&lt;img
+src="https://lh4.googleusercontent.com/lGqymmh8MeAVku-0Cntb6jzs_2Xku8kM6km5GCkYmHHhTp6uDzmWLCCV4xnRyutTDRKPc8Y4neCdTC5iwHMK5A0Uurnh6UN97JCc8D7iBF8u7cgxq_3BAW1miqlypZkrW1mTVwkC"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/strong>&lt;/strong>&lt;/p>
+&lt;p>You can ignore the message about your name and email address. Usually when using Git you will configure the name and email address so that your commits are labeled with these details.&lt;/p>
+&lt;p>You have added the &lt;code>lab.txt&lt;/code> file to your local copy of the repository on the Linux host.&lt;/p>
+&lt;h2 id="pushing-your-commit-to-your-remote-repository">Pushing your commit to your remote repository&lt;/h2>
+&lt;p>1. In the shell on the Linux host, enter the following command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>git push
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In Git terminology, with this command you are &amp;ldquo;pushing&amp;rdquo; your local commit from your &amp;ldquo;local&amp;rdquo; repository to the &amp;ldquo;remote&amp;rdquo; repository that you &amp;ldquo;cloned&amp;rdquo; from.&lt;/p>
+&lt;p>2. When prompted, enter the username and password from the credentials file you downloaded in the &lt;strong>Creating credentials to access your repository&lt;/strong> step:&lt;/p>
+&lt;p>&lt;strong>&lt;strong>&lt;p class="md__image">
+&lt;img
+src="https://lh6.googleusercontent.com/UYGyBnynHu66kEeCDL47G1he_n1A6DyvZsY75Rfeg4aShqlO1a5I1HMlP3xCp74nRZjrhXsR0Fpnre2nQTNY3H2kgXyQ9Ao51pkLUfZynAWkVlDs8RmsAVhlVpGWEmR6Ix8DEuui"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/strong>&lt;/strong>&lt;/p>
+&lt;p>You have copied the file from the local repository on the Linux host, to the repository hosted in AWS CodeCommit.&lt;/p>
+&lt;p>3. &lt;strong>&lt;a href="https://us-west-2.console.aws.amazon.com/codesuite/codecommit/home?region=us-west-2">Navigate to the CodeCommit Console&lt;/a>.&lt;/strong>&lt;/p>
+&lt;p>4. In the &lt;strong>Repositories&lt;/strong> list click &lt;strong>lab-repository&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets-stage.cloudacademy.com/bakery/media/uploads/content_engine/image-55b0588f-4c7d-4487-a140-c4a4892fb0b4.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You will see the &lt;strong>lab.txt&lt;/strong> file you pushed in the previous Lab step listed.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets-stage.cloudacademy.com/bakery/media/uploads/content_engine/image-03c172f9-0828-437c-b0fc-6e351b7aa081.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p></description></item></channel></rss>

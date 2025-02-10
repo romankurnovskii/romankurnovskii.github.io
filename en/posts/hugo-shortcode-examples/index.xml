@@ -1,2 +1,152 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo shortcode examples on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/posts/hugo-shortcode-examples/</link><description>Recent content in Hugo shortcode examples on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Thu, 20 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/posts/hugo-shortcode-examples/index.xml" rel="self" type="application/rss+xml"/><item><title>chart</title><link>https://romankurnovskii.com/en/posts/hugo-shortcode-examples/chart/</link><pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/hugo-shortcode-examples/chart/</guid><description>Display Chart.js diagrams/blocks
-Sources</description></item><item><title>img</title><link>https://romankurnovskii.com/en/posts/hugo-shortcode-examples/img/</link><pubDate>Thu, 20 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/hugo-shortcode-examples/img/</guid><description>My image float right, tall Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&amp;rsquo;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo shortcode examples on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/posts/hugo-shortcode-examples/</link><description>Recent content in Hugo shortcode examples on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 20 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/posts/hugo-shortcode-examples/index.xml" rel="self" type="application/rss+xml"/><item><title>chart</title><link>https://romankurnovskii.com/en/posts/hugo-shortcode-examples/chart/</link><pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/hugo-shortcode-examples/chart/</guid><description>&lt;p>Display &lt;a href="https://www.chartjs.org/">Chart.js&lt;/a> diagrams/blocks&lt;/p>
+&lt;p>&lt;a href="https://github.com/romankurnovskii/awesome-hugo-shortcodes/tree/main/shortcodes/chart">Sources&lt;/a>&lt;/p>
+&lt;div style="width: 100%;height: 300px;margin: 0 auto">
+&lt;canvas id="cf518ef4aa48dcc4c2cd58dbbcedcf46">&lt;/canvas>
+&lt;/div>
+&lt;script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.js">&lt;/script>
+&lt;script type="text/javascript">
+var ctx = document.getElementById('cf518ef4aa48dcc4c2cd58dbbcedcf46').getContext('2d');
+var options =
+{
+type: 'bar',
+data: {
+labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+datasets: [{
+label: 'Bar Chart',
+data: [12, 19, 18, 16, 13, 14],
+backgroundColor: [
+'rgba(255, 99, 132, 0.2)',
+'rgba(54, 162, 235, 0.2)',
+'rgba(255, 206, 86, 0.2)',
+'rgba(75, 192, 192, 0.2)',
+'rgba(153, 102, 255, 0.2)',
+'rgba(255, 159, 64, 0.2)'
+],
+borderColor: [
+'rgba(255, 99, 132, 1)',
+'rgba(54, 162, 235, 1)',
+'rgba(255, 206, 86, 1)',
+'rgba(75, 192, 192, 1)',
+'rgba(153, 102, 255, 1)',
+'rgba(255, 159, 64, 1)'
+],
+borderWidth: 1
+}]
+},
+options: {
+maintainAspectRatio: false,
+scales: {
+yAxes: [{
+ticks: {
+beginAtZero: true
+}
+}]
+}
+}
+};
+new Chart(ctx, options);
+&lt;/script>
+&lt;div style="width: 100%;height: 300px;margin: 0 auto">
+&lt;canvas id="6cbc8dd4e4821a5cdacff584ecbf4ccd">&lt;/canvas>
+&lt;/div>
+&lt;script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.js">&lt;/script>
+&lt;script type="text/javascript">
+var ctx = document.getElementById('6cbc8dd4e4821a5cdacff584ecbf4ccd').getContext('2d');
+var options =
+{
+type: 'line',
+data: {
+labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+datasets: [{
+label: 'Line Chart',
+data: [1, 2, 3231, 4324, 3, 331],
+backgroundColor: [
+'rgba(255, 99, 132, 0.2)',
+'rgba(54, 162, 235, 0.2)',
+'rgba(255, 206, 86, 0.2)',
+'rgba(75, 192, 192, 0.2)',
+'rgba(153, 102, 255, 0.2)',
+'rgba(255, 159, 64, 0.2)'
+],
+borderColor: [
+'rgba(255, 99, 132, 1)',
+'rgba(54, 162, 235, 1)',
+'rgba(255, 206, 86, 1)',
+'rgba(75, 192, 192, 1)',
+'rgba(153, 102, 255, 1)',
+'rgba(255, 159, 64, 1)'
+],
+borderWidth: 1
+}]
+},
+options: {
+maintainAspectRatio: false,
+scales: {
+yAxes: [{
+ticks: {
+beginAtZero: true
+}
+}]
+}
+}
+};
+new Chart(ctx, options);
+&lt;/script>
+&lt;div style="width: 100%;height: 300px;margin: 0 auto">
+&lt;canvas id="5af8dec8b1cf6cb5d4dc44ca8cef42dc">&lt;/canvas>
+&lt;/div>
+&lt;script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.js">&lt;/script>
+&lt;script type="text/javascript">
+var ctx = document.getElementById('5af8dec8b1cf6cb5d4dc44ca8cef42dc').getContext('2d');
+var options =
+{
+type: 'pie',
+data: {
+labels: [1, 2, 3, 4],
+datasets: [{
+data: [1, 2, 3, 4],
+backgroundColor: [
+'rgba(255, 99, 132, 0.2)',
+'rgba(255, 206, 86, 0.2)',
+'rgba(75, 192, 192, 0.2)',
+'rgba(255, 159, 64, 0.2)'
+]
+}]
+},
+options: {
+maintainAspectRatio: false,
+scales: {
+yAxes: [{
+ticks: {
+beginAtZero: true
+}
+}]
+}
+}
+};
+new Chart(ctx, options);
+&lt;/script></description></item><item><title>img</title><link>https://romankurnovskii.com/en/posts/hugo-shortcode-examples/img/</link><pubDate>Thu, 20 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/hugo-shortcode-examples/img/</guid><description>&lt;span class="caption-wrapper">
+&lt;img class="caption" style="float: right; width: ; height: 470px; margin: 0px 10px 10px 0px;" src="#ZgotmplZ" title="" alt="">
+&lt;span class="caption-text">My image float right, tall&lt;/span>
+&lt;/span>
+&lt;p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&amp;rsquo;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.&lt;/p>
+&lt;span class="caption-wrapper">
+&lt;img class="caption" style="float: ; width: ; height: 250px; margin: 0px 10px 10px 0px;" src="#ZgotmplZ" title="" alt="">
+&lt;span class="caption-text">&lt;/span>
+&lt;/span>
+&lt;p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&amp;rsquo;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.&lt;/p>
+&lt;span class="caption-wrapper">
+&lt;img class="caption" style="float: right; width: ; height: 250px; margin: 0px 10px 10px 0px;" src="#ZgotmplZ" title="" alt="">
+&lt;span class="caption-text">My image float right&lt;/span>
+&lt;/span>
+&lt;p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&amp;rsquo;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.&lt;/p>
+&lt;span class="caption-wrapper">
+&lt;img class="caption" style="float: ; width: 250px; height: ; margin: 0px 10px 10px 0px;" src="#ZgotmplZ" title="" alt="">
+&lt;span class="caption-text">My image text&lt;/span>
+&lt;/span>
+&lt;p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&amp;rsquo;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.&lt;/p>
+&lt;span class="caption-wrapper">
+&lt;img class="caption" style="float: left; width: 250px; height: ; margin: 0px 10px 10px 0px;" src="#ZgotmplZ" title="" alt="">
+&lt;span class="caption-text">My image float left&lt;/span>
+&lt;/span>
+&lt;p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&amp;rsquo;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.&lt;/p></description></item></channel></rss>

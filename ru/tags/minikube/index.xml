@@ -1,1 +1,315 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Minikube on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/minikube/</link><description>Recent content in Minikube on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 10 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/minikube/index.xml" rel="self" type="application/rss+xml"/><item><title>51. Установка minikube</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day51/</link><pubDate>Fri, 10 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day51/</guid><description>Развертывание первого кластера Kubernetes В этом посте мы собираемся запустить кластер Kubernetes на нашей локальной машине с помощью minikube, это даст нам базовый кластер Kubernetes для остальной части раздела Kubernetes, хотя позже мы рассмотрим развертывание кластера Kubernetes и в VirtualBox. Причина, по которой мы выбрали этот метод, а не развертывание управляемого кластера Kubernetes в публичном облаке, заключается в том, что это будет стоить денег даже при бесплатном уровне, однако я поделился некоторыми блогами, если вы захотите развернуть такую среду в предыдущем разделе День 50.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Minikube on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/minikube/</link><description>Recent content in Minikube on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 10 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/minikube/index.xml" rel="self" type="application/rss+xml"/><item><title>51. Установка minikube</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day51/</link><pubDate>Fri, 10 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day51/</guid><description>&lt;h2 id="развертывание-первого-кластера-kubernetes">Развертывание первого кластера Kubernetes&lt;/h2>
+&lt;p>В этом посте мы собираемся запустить кластер Kubernetes на нашей локальной машине с помощью minikube, это даст нам базовый кластер Kubernetes для остальной части раздела Kubernetes, хотя позже мы рассмотрим развертывание кластера Kubernetes и в VirtualBox. Причина, по которой мы выбрали этот метод, а не развертывание управляемого кластера Kubernetes в публичном облаке, заключается в том, что это будет стоить денег даже при бесплатном уровне, однако я поделился некоторыми блогами, если вы захотите развернуть такую среду в предыдущем разделе &lt;a href="../day50">День 50&lt;/a>.&lt;/p>
+&lt;h3 id="что-такое-minikube">Что такое Minikube?&lt;/h3>
+&lt;p>Minikube быстро создает локальный кластер Kubernetes на macOS, Linux и Windows.&lt;/p>
+&lt;p>Для начала, независимо от ОС вашей рабочей станции, вы можете запустить minikube. Сначала перейдите на &lt;a href="https://minikube.sigs.k8s.io/docs/start/">страницу проекта&lt;/a>. Первая опция, которая у вас есть, это выбор метода установки. Я не использовал этот метод, но вы можете выбрать мой способ (о моем способе речь впереди).&lt;/p>
+&lt;p>Ниже упоминается, что вам необходимо иметь &amp;ldquo;Менеджер контейнеров или виртуальных машин, такой как: Docker, Hyperkit, Hyper-V, KVM, Parallels, Podman, VirtualBox или VMware&amp;rdquo; - это то, где будет работать MiniKube, и это простой вариант, и если не указано в репозитории, я использую Docker. Вы можете установить Docker на свою систему, используя следующую &lt;a href="https://docs.docker.com/get-docker/">ссылку&lt;/a>.&lt;/p>
+&lt;p>&lt;a href="https://kubernetes.io/ru/tracks/tasks/tools/install-minikube/">Понятное руководство по установке minikube&lt;/a>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day51_Kubernetes1.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="мой-способ-установки-minikube">Мой способ установки minikube&lt;/h3>
+&lt;p>Я уже некоторое время использую arkade, чтобы получить все эти инструменты Kubernetes и CLI, вы можете посмотреть шаги установки на этом &lt;a href="https://github.com/alexellis/arkade">github репозитории&lt;/a> для начала работы с Arkade. Я также упоминал об этом в других записях блога, когда мне нужно было что-то установить. Простота установки: достаточно нажать arkade get и посмотреть, доступен ли ваш инструмент или cli, очень удобна. В разделе Linux мы говорили о менеджере пакетов и процессе получения нашего программного обеспечения, вы можете думать об Arkade как о рынке для всех ваших приложений и clis для Kubernetes. Очень удобный инструмент, который нужно иметь в своих системах, написанный на Golang и кроссплатформенный.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day51_Kubernetes2.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>В длинном списке доступных приложений в arkade minikube является одним из них, поэтому с помощью простой команды &lt;code>arkade get minikube&lt;/code> мы загружаем бинарник и можем приступать.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day51_Kubernetes3.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Нам также понадобится kubectl как часть нашего инструментария, поэтому вы можете получить его через arkade или, как я полагаю, в документации по minikube он представлен как часть команд curl, упомянутых выше. Подробнее о kubectl мы расскажем позже в этом посте.&lt;/p>
+&lt;h3 id="получение-и-запуск-кластера-kubernetes">Получение и запуск кластера Kubernetes&lt;/h3>
+&lt;p>В этом конкретном разделе я хочу рассказать о доступных нам вариантах запуска кластера Kubernetes на вашей локальной машине. Мы можем просто выполнить следующую команду, и она запустит кластер для использования.&lt;/p>
+&lt;p>minikube используется в командной строке, и, проще говоря, после того как вы все установили, вы можете выполнить команду &lt;code>minikube start&lt;/code> для развертывания вашего первого кластера Kubernetes. Ниже вы увидите, что драйвер Docker по умолчанию является местом, где мы будем запускать наш вложенный узел виртуализации. В начале статьи я упомянул о других доступных опциях, которые помогут вам расширить вид локального кластера Kubernetes.&lt;/p>
+&lt;p>Один кластер Minikube будет состоять из одного контейнера docker, в котором будут находиться узел плоскости управления и рабочий узел в одном экземпляре. Обычно вы разделяете эти узлы по отдельности. Об этом мы расскажем в следующем разделе, где мы рассмотрим домашние лабораторные среды Kubernetes, но немного ближе к производственной архитектуре.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day51_Kubernetes4.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Я уже несколько раз говорил об этом, мне очень нравится minikube из-за доступных дополнений, возможность развернуть кластер с помощью простой команды, включающей все необходимые дополнения с самого начала, действительно помогает мне каждый раз развертывать одну и ту же необходимую установку.&lt;/p>
+&lt;p>Ниже представлен список этих аддонов, я обычно использую аддоны &lt;code>csi-hostpath-driver&lt;/code> и &lt;code>volumesnapshots&lt;/code>, но вы можете увидеть длинный список ниже. Конечно, эти аддоны могут быть развернуты с помощью Helm, о чем мы расскажем позже в разделе Kubernetes, но это значительно упрощает работу.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day51_Kubernetes5.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Я также определяю в нашем проекте некоторые дополнительные конфигурации, apiserver установлен на 6433 вместо случайного порта API, я определяю время выполнения контейнера также на containerd, однако docker используется по умолчанию, и CRI-O также доступен. Я также устанавливаю определенную версию Kubernetes.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day51_Kubernetes6.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Теперь мы готовы развернуть наш первый кластер Kubernetes с помощью minikube. Я уже упоминал, что вам также понадобится &lt;code>kubectl&lt;/code> для взаимодействия с вашим кластером. Вы можете установить kubectl с помощью arkade, выполнив команду &lt;code>arkade get kubectl&lt;/code>.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day51_Kubernetes7.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>или вы можете загрузить кросс-платформенную версию со следующих сайтов&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://kubernetes.io/docs/tasks/tools/install-kubectl-linux">Linux&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://kubernetes.io/docs/tasks/tools/install-kubectl-macos">macOS&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://kubernetes.io/docs/tasks/tools/install-kubectl-windows">Windows&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>После установки kubectl мы можем взаимодействовать с нашим кластером с помощью простой команды &lt;code>kubectl get nodes&lt;/code>.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day51_Kubernetes8.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="что-такое-kubectl">Что такое kubectl?&lt;/h3>
+&lt;p>Теперь у нас есть наш кластер minikube | Kubernetes, и я попросил вас установить Minikube, где я объяснил, что он делает, но я не объяснил, что такое kubectl и что он делает.&lt;/p>
+&lt;p>kubectl - это программа, которая используется или позволяет вам взаимодействовать с кластерами Kubernetes, мы используем ее здесь для взаимодействия с нашим кластером minikube, но мы также используем kubectl для взаимодействия с нашими корпоративными кластерами в публичном облаке.&lt;/p>
+&lt;p>Мы используем kubectl для развертывания приложений, проверки и управления ресурсами кластера. Гораздо лучший &lt;a href="https://kubernetes.io/docs/reference/kubectl/overview/">Обзор kubectl&lt;/a> можно найти здесь, в официальной документации Kubernetes.&lt;/p>
+&lt;p>kubectl взаимодействует с сервером API, расположенным на узле Control Plane, о котором мы вкратце рассказывали в одном из предыдущих постов.&lt;/p>
+&lt;h3 id="kubectl-шпаргалка">kubectl шпаргалка&lt;/h3>
+&lt;p>Наряду с официальной документацией я также обнаружил, что при поиске команд kubectl у меня постоянно открыта эта страница. &lt;a href="https://unofficial-kubernetes.readthedocs.io/en/latest/">Unofficial Kubernetes&lt;/a>&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Listing Resources&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>kubectl get nodes&lt;/td>
+&lt;td>List all nodes in cluster&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>kubectl get namespaces&lt;/td>
+&lt;td>List all namespaces in cluster&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>kubectl get pods&lt;/td>
+&lt;td>List all pods in default namespace cluster&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>kubectl get pods -n name&lt;/td>
+&lt;td>List all pods in &amp;ldquo;name&amp;rdquo; namespace&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>kubectl get pods -n name&lt;/td>
+&lt;td>List all pods in &amp;ldquo;name&amp;rdquo; namespace&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Creating Resources&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>kubectl create namespace name&lt;/td>
+&lt;td>Create a namespace called &amp;ldquo;name&amp;rdquo;&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>kubectl create -f [filename]&lt;/td>
+&lt;td>Create a resource from a JSON or YAML file:&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Editing Resources&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>kubectl edit svc/servicename&lt;/td>
+&lt;td>To edit a service&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>More detail on Resources&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>kubectl describe nodes&lt;/td>
+&lt;td>display the state of any number of resources in detail,&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Delete Resources&lt;/th>
+&lt;th>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>kubectl delete pod&lt;/td>
+&lt;td>Remove resources, this can be from stdin or file&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Вы захотите узнать краткие названия некоторых команд kubectl, например, &lt;code>-n&lt;/code> - это краткое название для &lt;code>namespace&lt;/code>, что облегчает ввод команды, а также, если вы пишете скрипты, вы можете получить гораздо более аккуратный код.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Short name&lt;/th>
+&lt;th>Full name&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>csr&lt;/td>
+&lt;td>certificatesigningrequests&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>cs&lt;/td>
+&lt;td>componentstatuses&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>cm&lt;/td>
+&lt;td>configmaps&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ds&lt;/td>
+&lt;td>daemonsets&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>deploy&lt;/td>
+&lt;td>deployments&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ep&lt;/td>
+&lt;td>endpoints&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ev&lt;/td>
+&lt;td>events&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>hpa&lt;/td>
+&lt;td>horizontalpodautoscalers&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ing&lt;/td>
+&lt;td>ingresses&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>limits&lt;/td>
+&lt;td>limitranges&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>ns&lt;/td>
+&lt;td>namespaces&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>no&lt;/td>
+&lt;td>nodes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>pvc&lt;/td>
+&lt;td>persistentvolumeclaims&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>pv&lt;/td>
+&lt;td>persistentvolumes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>po&lt;/td>
+&lt;td>pods&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>pdb&lt;/td>
+&lt;td>poddisruptionbudgets&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>psp&lt;/td>
+&lt;td>podsecuritypolicies&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>rs&lt;/td>
+&lt;td>replicasets&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>rc&lt;/td>
+&lt;td>replicationcontrollers&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>quota&lt;/td>
+&lt;td>resourcequotas&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>sa&lt;/td>
+&lt;td>serviceaccounts&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>svc&lt;/td>
+&lt;td>services&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>В заключение хочу добавить, что я создал еще один проект на основе minikube, чтобы помочь мне быстро развернуть демонстрационные среды для демонстрации сервисов данных и защиты этих рабочих нагрузок с помощью Kasten K10, &lt;a href="https://github.com/MichaelCade/project_pace">Project Pace&lt;/a> можно найти там и буду рад вашим отзывам или взаимодействию, он также показывает или включает некоторые автоматизированные способы развертывания кластеров minikube и создания различных приложений сервисов данных.&lt;/p>
+&lt;p>Далее мы перейдем к развертыванию нескольких узлов в виртуальные машины с помощью VirtualBox, но здесь мы будем действовать проще, как мы делали в разделе Linux, где мы использовали vagrant для быстрого запуска машин и развертывания нашего программного обеспечения, как мы хотим.&lt;/p>
+&lt;p>Я добавил этот список к вчерашнему посту, который представляет собой блоги с описанием развертывания различных кластеров Kubernetes.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://vzilla.co.uk/vzilla-blog/building-the-home-lab-kubernetes-playground-part-1">Kubernetes playground – How to choose your platform&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://vzilla.co.uk/vzilla-blog/building-the-home-lab-kubernetes-playground-part-2">Kubernetes playground – Setting up your cluster&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://vzilla.co.uk/vzilla-blog/getting-started-with-amazon-elastic-kubernetes-service-amazon-eks">Getting started with Amazon Elastic Kubernetes Service (Amazon EKS)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://vzilla.co.uk/vzilla-blog/getting-started-with-microsoft-azure-kubernetes-service-aks">Getting started with Microsoft Azure Kubernetes Service (AKS)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://vzilla.co.uk/vzilla-blog/getting-started-with-microsoft-aks-azure-powershell-edition">Getting Started with Microsoft AKS – Azure PowerShell Edition&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://vzilla.co.uk/vzilla-blog/getting-started-with-google-kubernetes-service-gke">Getting started with Google Kubernetes Service (GKE)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://vzilla.co.uk/vzilla-blog/kubernetes-how-to-aws-bottlerocket-amazon-eks">Kubernetes, How to – AWS Bottlerocket + Amazon EKS&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://vzilla.co.uk/vzilla-blog/getting-started-with-civo-cloud">Getting started with CIVO Cloud&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://vzilla.co.uk/vzilla-blog/project_pace-kasten-k10-demo-environment-for-everyone">Minikube - Kubernetes Demo Environment For Everyone&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="ресурсы">Ресурсы&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://kubernetes.io/docs/home/">Kubernetes Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=X48VuDVv0do">TechWorld with Nana - Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=s_o8dwzRlu4">TechWorld with Nana - Kubernetes Crash Course for Absolute Beginners&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=KVBON1lA9N8">Kunal Kushwaha - Kubernetes Tutorial for Beginners | What is Kubernetes? Architecture Simplified!&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

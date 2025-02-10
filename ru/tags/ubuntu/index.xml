@@ -1,3 +1,158 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ubuntu on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/ubuntu/</link><description>Recent content in Ubuntu on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Thu, 23 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/ubuntu/index.xml" rel="self" type="application/rss+xml"/><item><title>Установка Ubuntu Desktop 22.10 (Kinetic Kudu) на ARM CPU</title><link>https://romankurnovskii.com/ru/posts/howto-install-ubuntu-desktop-on-arm/</link><pubDate>Thu, 23 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/howto-install-ubuntu-desktop-on-arm/</guid><description>Ubuntu - одна из популярных Linux систем и достаточно много обзоров по установке Ubuntu. В этой статье мы будем устанавливать образ Ubuntu для ARM процессора на виртуальную машину UTM. Вся установка будет проходить на Mac OS.
-Загрузка установочного образа На сайте Ubuntu доступен для скачивания только образ Ubuntu Server ARM версии 22.04 - без графического интерфейса. Но можно скачать обновленный релиз Ubuntu Desktop для ARM - Daily Build по ссылке.
-Находим 64-bit ARM (ARMv8/AArch64) desktop image и скачиваем Виртуальная машина В качестве виртуальной машины для установки RHEL 9 использую бесплатную виртуальную машину UTM.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ubuntu on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/ubuntu/</link><description>Recent content in Ubuntu on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 23 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/ubuntu/index.xml" rel="self" type="application/rss+xml"/><item><title>Установка Ubuntu Desktop 22.10 (Kinetic Kudu) на ARM CPU</title><link>https://romankurnovskii.com/ru/posts/howto-install-ubuntu-desktop-on-arm/</link><pubDate>Thu, 23 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/howto-install-ubuntu-desktop-on-arm/</guid><description>&lt;p>Ubuntu - одна из популярных Linux систем и достаточно много &lt;a href="https://mac.getutm.app/gallery/ubuntu-20-04">обзоров по установке Ubuntu&lt;/a>. В этой статье мы будем устанавливать образ Ubuntu для &lt;strong>ARM процессора&lt;/strong> на виртуальную машину UTM. Вся установка будет проходить на Mac OS.&lt;/p>
+&lt;h3 id="загрузка-установочного-образа">Загрузка установочного образа&lt;/h3>
+&lt;p>На сайте Ubuntu доступен для скачивания только образ &lt;a href="https://ubuntu.com/download/server/arm">Ubuntu Server ARM&lt;/a> версии &lt;strong>22.04&lt;/strong> - без графического интерфейса. Но можно скачать обновленный релиз Ubuntu Desktop для ARM - Daily Build по &lt;a href="https://cdimage.ubuntu.com/daily-live/current/">ссылке&lt;/a>.&lt;/p>
+&lt;p>Находим &lt;em>64-bit ARM (ARMv8/AArch64) desktop image&lt;/em> и скачиваем
+&lt;p class="md__image">
+&lt;img
+src="img/01-ubuntu-kinetic.png"
+id="zoom-default"
+alt="ARMv8/AArch64"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="виртуальная-машина">Виртуальная машина&lt;/h3>
+&lt;p>В качестве виртуальной машины для установки RHEL 9 использую бесплатную &lt;a href="https://mac.getutm.app/">виртуальную машину UTM&lt;/a>. Установить можно с помощью &lt;a href="../mac-setup-development/#homebrew">Homebrew&lt;/a>, выполнив команду &lt;code>brew install --cask utm&lt;/code>.&lt;/p>
+&lt;h2 id="установка-ubuntu-desktop">Установка Ubuntu Desktop&lt;/h2>
+&lt;h3 id="настройка-виртуальной-машины-utm">Настройка виртуальной машины UTM&lt;/h3>
+&lt;p>В UTM нажимаем &lt;code>Create a New Virtual Machine&lt;/code> -&amp;gt; Virtualize
+&lt;p class="md__image">
+&lt;img
+src="img/02.png"
+id="zoom-default"
+alt="Настройка виртуальной машины UTM"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Выбираем скачанный образ и нажимаем &lt;code>Continue&lt;/code>, далее оставляем опции по умолчанию
+&lt;p class="md__image">
+&lt;img
+src="img/03.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="запуск-live-версии">Запуск Live версии&lt;/h3>
+&lt;p>Выбираем &lt;em>Try or Install Ubuntu&lt;/em>. Запустится live образ Ubuntu. Такой образ не сохраняет свое состояние после перезагрузки.
+&lt;p class="md__image">
+&lt;img
+src="img/04.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Входим под пользователем ubuntu:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/05.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Видим рабочий стол и можем пользоваться.&lt;/p>
+&lt;h3 id="установка">Установка&lt;/h3>
+&lt;p>Внизу справа есть ярлык для стандартной установки Ubuntu. Нажимаем и запускаем обычную установку на диск.
+&lt;p class="md__image">
+&lt;img
+src="img/06.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Выбираем нужный язык
+&lt;p class="md__image">
+&lt;img
+src="img/07.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Я выбираю минимальную установку, т.к. мне не нужны будут предустановленные игры и прочие приложения. Графический интерфейс, браузер, терминал остается со всеми базовыми настройками.
+&lt;p class="md__image">
+&lt;img
+src="img/08.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Оставляем по умолчанию стирание виртуального диска перед установкой
+&lt;p class="md__image">
+&lt;img
+src="img/09.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Создаем пользователя, под которым будем входить в систему.
+&lt;p class="md__image">
+&lt;img
+src="img/10.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Как только установка закончится, нажимаем &lt;em>Restart&lt;/em>.
+&lt;p class="md__image">
+&lt;img
+src="img/11.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+У меня после перезагрузки черный экран. Поэтому я просто закрываю и снова запускаю вирутальную машину.&lt;/p>
+&lt;h3 id="вход-в-систему">Вход в систему&lt;/h3>
+&lt;p>После запуска системы выбираем *Boot from next volume. Первым по умолчанию будет запуск с вирутального образа, но у нас уже есть система на диске, поэтому выбираем запуск со следующего по очереди диска.
+&lt;p class="md__image">
+&lt;img
+src="img/12.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Входим под своим пользователем
+&lt;p class="md__image">
+&lt;img
+src="img/13.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Система предлагает скачать обновления для системы. Нажимаю установить.
+&lt;p class="md__image">
+&lt;img
+src="img/14.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Теперь можно пользоваться системой и все данные будут сохраняться после перезагрузки.
+&lt;p class="md__image">
+&lt;img
+src="img/15.png"
+id="zoom-default"
+alt="Kinetic Kudu 22.10"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="ссылки">Ссылки&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://discourse.ubuntu.com/t/kinetic-kudu-release-schedule/27263">Kinetic Kudu Release Schedule&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://cdimage.ubuntu.com/daily-live/current/">Daily Builds&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

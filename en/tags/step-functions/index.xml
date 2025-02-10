@@ -1,5 +1,72 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step Functions on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/step-functions/</link><description>Recent content in Step Functions on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Tue, 27 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/step-functions/index.xml" rel="self" type="application/rss+xml"/><item><title>Step Functions</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/step-functions/</link><pubDate>Tue, 27 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/step-functions/</guid><description>About AWS Step Functions is a low-code, visual workflow service that developers use to build distributed applications, automate IT and business processes, and build data and machine learning pipelines using AWS services.
-Documentation User Guide Step Functions is a serverless function orches­trator that makes it easy to sequence Lambda functions &amp;amp; multiple AWS services into busine­ss-­cri­tical applic­ations.
-Alternatives AWS lambda Airflow Google Cloud Workflows Microsoft Flow Price Pay only for what you use
-Current price
-Free Tier: 4,000 state transitions per month</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Step Functions on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/step-functions/</link><description>Recent content in Step Functions on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Tue, 27 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/step-functions/index.xml" rel="self" type="application/rss+xml"/><item><title>Step Functions</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/step-functions/</link><pubDate>Tue, 27 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/step-functions/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>AWS Step Functions is a low-code, visual workflow service that developers use to build distributed applications, automate IT and business processes, and build data and machine learning pipelines using AWS services.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/step-functions/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/step-functions/?id=docs_gateway">User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/Step%20Functions%20Workflow%20Studio%20USI%20Mock.e04623598b8abf438fc8c9f6576384b6eaf09dd4.png"
+id="zoom-default"
+alt="Step Functions Flow"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Step Functions is a serverless function orches­trator that makes it easy to sequence Lambda functions &amp;amp; multiple AWS services into busine­ss-­cri­tical applic­ations.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d2yymmf9l33ie1.cloudfront.net/how-it-works-fcfa8f363d8404db21af77604ac8d07102bb3ac9.gif"
+id="zoom-default"
+alt="Step Functions Flow"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="alternatives">Alternatives&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="../lambda">AWS lambda&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://airflow.apache.org/">Airflow&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://cloud.google.com/workflows">Google Cloud Workflows&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://powerautomate.microsoft.com/en-us/blog/welcome-to-microsoft-flow/">Microsoft Flow&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="price">Price&lt;/h2>
+&lt;p>Pay only for what you use&lt;/p>
+&lt;p>&lt;a href="https://aws.amazon.com/ru/step-functions/pricing/">Current price&lt;/a>&lt;/p>
+&lt;p>Free Tier: 4,000 state transitions per month&lt;/p>
+&lt;h2 id="use-cases">Use Cases&lt;/h2>
+&lt;p>Step Functions is an easy-to-use function orchestra that makes it possible to string Lambda functions and multiple AWS services into business-critical applications.&lt;/p>
+&lt;p>Step Functions manages the operations and underlying infrastructure for you to ensure your application is available at any scale.&lt;/p>
+&lt;p>With Step Functions, you are able to easily coordinate complex processes composed of different tasks.&lt;/p>
+&lt;p>Without using this service you have to coordinate each Lambda Function yourself and manage every kind of error in all steps of this complex process.&lt;/p>
+&lt;p>AWS Step Functions is a useful service for breaking down complex processes into smaller and easier tasks&lt;/p>
+&lt;ul>
+&lt;li>Automate Extract, Transform, and Load (ETL) process&lt;/li>
+&lt;li>Orchestrate microservices&lt;/li>
+&lt;li>Workflow configuration&lt;/li>
+&lt;li>AWS service integrations&lt;/li>
+&lt;li>Component reuse&lt;/li>
+&lt;li>Built-in error handling&lt;/li>
+&lt;/ul>
+&lt;p>Type: Orches­tration, Workflows&lt;/p>
+&lt;p>Step Function &lt;strong>Standard Workflows&lt;/strong> are optimized for long-running processes.&lt;/p>
+&lt;p>&lt;strong>Express Workflows&lt;/strong> are better for event-driven workloads.&lt;/p>
+&lt;h2 id="practice">Practice&lt;/h2>
+&lt;p>&lt;a href="introduction-aws-step-functions">Introduction to AWS Step Functions&lt;/a>&lt;/p>
+&lt;h2 id="questions">Questions&lt;/h2>
+&lt;h3 id="q1">Q1&lt;/h3>
+&lt;p>&lt;strong>A developer is adding a feedback form to a website. Upon user submission, the form should create a discount code, email the user the code and display a message on the website that tells the user to check their email. The developer wants to use separate Lambda functions to manage these processes and use a Step Function to orchestrate the interactions with minimal custom scripting.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which of the following Step Function workflows can be used to meet requirements?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Asynchronous Express Workflow&lt;/li>
+&lt;li>Standard Workflow&lt;/li>
+&lt;li>Synchronous Express Workflow&lt;/li>
+&lt;li>Standard Express Workflow&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="https://aws.amazon.com/blogs/compute/new-synchronous-express-workflows-for-aws-step-functions/">https://aws.amazon.com/blogs/compute/new-synchronous-express-workflows-for-aws-step-functions/&lt;/a>&lt;/p>
+&lt;p>&lt;mark style="color:white">3&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details></description></item></channel></rss>

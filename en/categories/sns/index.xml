@@ -1,5 +1,75 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SNS on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/sns/</link><description>Recent content in SNS on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Mon, 26 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/sns/index.xml" rel="self" type="application/rss+xml"/><item><title>Simple Notification Service</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/sns/</link><pubDate>Mon, 26 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/sns/</guid><description>About Amazon Simple Notification Service (Amazon SNS) is a fully managed messaging service for both application-to-application (A2A) and application-to-person (A2P) communication.
-Documentation User Guide SNS is a fully managed messaging service for both system­-to­-system &amp;amp; app-to­-person (A2P) commun­ica­tion.
-Amazon SNS can also send notifications via SMS text message, email, SQS queues or to any HTTP endpoint.
-Amazon SNS notifications can also trigger Lambda functions.
-Amazon SNS is inexpensive and based on a pay-as-you-go model with no upfront costs.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SNS on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/sns/</link><description>Recent content in SNS on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Mon, 26 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/sns/index.xml" rel="self" type="application/rss+xml"/><item><title>Simple Notification Service</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/sns/</link><pubDate>Mon, 26 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/sns/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>Amazon Simple Notification Service (Amazon SNS) is a fully managed messaging service for both application-to-application (A2A) and application-to-person (A2P) communication.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/sns/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/sns/?id=docs_gateway">User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/diagrams/Product-page-diagram-Amazon-SNS_event-driven-SNS-compute%402X_.4b9c0a75aa40bda9cdb12f0176930a12da2872bf.png"
+id="zoom-default"
+alt="Simple Notification Service Flow"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>SNS is a fully managed messaging service for both system­-to­-system &amp;amp; app-to­-person (A2P) commun­ica­tion.&lt;/p>
+&lt;p>Amazon SNS can also send notifications via SMS text message, email, SQS queues or to any HTTP endpoint.&lt;/p>
+&lt;p>Amazon SNS notifications can also trigger Lambda functions.&lt;/p>
+&lt;p>Amazon SNS is inexpensive and based on a pay-as-you-go model with no upfront costs.&lt;/p>
+&lt;h3 id="alternatives">Alternatives&lt;/h3>
+&lt;ul>
+&lt;li>Airship&lt;/li>
+&lt;li>Apple Push Notification&lt;/li>
+&lt;li>Beamer&lt;/li>
+&lt;li>Drift&lt;/li>
+&lt;li>Expo&lt;/li>
+&lt;li>Firebase FCM&lt;/li>
+&lt;li>MagicBell&lt;/li>
+&lt;li>OneSignal Push&lt;/li>
+&lt;/ul>
+&lt;h3 id="terminology">Terminology&lt;/h3>
+&lt;p>&lt;strong>SNS Topics&lt;/strong>&lt;/p>
+&lt;p>A topic is an “access point” for allowing recipients to dynamically subscribe for identical copies of the same notification.&lt;/p>
+&lt;p>An SNS topic is a named communication channel.&lt;/p>
+&lt;p>&lt;strong>SNS Subscribers and Endpoints&lt;/strong>&lt;/p>
+&lt;p>When subscribing to an SNS topic the following endpoint types are supported:&lt;/p>
+&lt;ul>
+&lt;li>HTTP/HTTPS&lt;/li>
+&lt;li>Email/Email-JSON&lt;/li>
+&lt;li>Amazon Kinesis Data Firehose&lt;/li>
+&lt;li>Amazon SQS&lt;/li>
+&lt;li>AWS Lambda&lt;/li>
+&lt;li>Platform application endpoint (mobile push)&lt;/li>
+&lt;li>SMS&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Topic types:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Standard Topics&lt;/li>
+&lt;li>FIFO Topics&lt;/li>
+&lt;/ul>
+&lt;h2 id="price">Price&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/ru/sns/pricing/">Current price&lt;/a>&lt;/p>
+&lt;h2 id="use-cases">Use Cases&lt;/h2>
+&lt;p>Type: Applic­ation integr­ation&lt;/p>
+&lt;p>Same type services: SNS, SQS, AppSync, EventB­ridge&lt;/p>
+&lt;p>Example: Send email notification when CloudWatch alarm is triggered&lt;/p>
+&lt;h2 id="practice">Practice&lt;/h2>
+&lt;p>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/sns/aws-lambda-sns-notifications/">Process Amazon SNS Notifications with AWS Lambda&lt;/a>&lt;/p>
+&lt;h2 id="questions">Questions&lt;/h2>
+&lt;h3 id="q1">Q1&lt;/h3>
+&lt;p>&lt;strong>You’ve decided to use autoscaling in conjunction with SNS to alert you when your auto-scaling group scales. Notifications can be delivered using SNS in several ways.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which options are supported notification methods? (Choose 3 answers)&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>HTTP or HTTPS POST notifications&lt;/li>
+&lt;li>Email using SMTP or plain text&lt;/li>
+&lt;li>Kinesis Stream&lt;/li>
+&lt;li>Invoking of a Lambda function&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-sns-notifications.html">https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-sns-notifications.html&lt;/a>&lt;/p>
+&lt;p>&lt;mark style="color:white">1, 2, 4&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details></description></item></channel></rss>

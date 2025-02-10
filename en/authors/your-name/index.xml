@@ -1,3 +1,106 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Your Name on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/authors/your-name/</link><description>Recent content in Your Name on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 16 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/authors/your-name/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Create Interactive Financial Charts using Tkinter and Plotly</title><link>https://romankurnovskii.com/en/posts/howto-tkinter-interactive-plotly-chart/</link><pubDate>Fri, 16 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/howto-tkinter-interactive-plotly-chart/</guid><description>How to Create Interactive Financial Charts using Tkinter and Plotly Data visualization is an integral part of data analysis. Python, with its strong set of libraries, has emerged as a go-to language for data visualization. In this tutorial, we will create an application that generates and displays interactive financial charts using Tkinter and Plotly.
-Prerequisites Before we get started, ensure you have the following installed on your machine:
-Python 3.6 or newer Dash, Plotly&amp;rsquo;s Python framework for building analytical web applications.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Your Name on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/authors/your-name/</link><description>Recent content in Your Name on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 16 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/authors/your-name/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Create Interactive Financial Charts using Tkinter and Plotly</title><link>https://romankurnovskii.com/en/posts/howto-tkinter-interactive-plotly-chart/</link><pubDate>Fri, 16 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/howto-tkinter-interactive-plotly-chart/</guid><description>&lt;h1 id="how-to-create-interactive-financial-charts-using-tkinter-and-plotly">How to Create Interactive Financial Charts using Tkinter and Plotly&lt;/h1>
+&lt;p>Data visualization is an integral part of data analysis. Python, with its strong set of libraries, has emerged as a go-to language for data visualization. In this tutorial, we will create an application that generates and displays interactive financial charts using Tkinter and Plotly.&lt;/p>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;p>Before we get started, ensure you have the following installed on your machine:&lt;/p>
+&lt;ul>
+&lt;li>Python 3.6 or newer&lt;/li>
+&lt;li>Dash, Plotly&amp;rsquo;s Python framework for building analytical web applications.&lt;/li>
+&lt;li>Tkinter, Python&amp;rsquo;s standard GUI package.&lt;/li>
+&lt;/ul>
+&lt;p>You can install Dash using pip:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>pip install dash plotly
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-1-python-script-imports">Step 1: Python Script Imports&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">tkinter&lt;/span> &lt;span style="color:#007020;font-weight:bold">as&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">tk&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">threading&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">webbrowser&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">random&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">plotly.graph_objs&lt;/span> &lt;span style="color:#007020;font-weight:bold">as&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">go&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">dash_html_components&lt;/span> &lt;span style="color:#007020;font-weight:bold">as&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">html&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">dash&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> Dash, dcc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">dash.dependencies&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> Output, Input
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-2-creating-a-dash-application-thread">Step 2: Creating a Dash Application Thread&lt;/h2>
+&lt;p>We&amp;rsquo;ll be running the Dash application in a separate thread. This allows the Tkinter GUI and Dash app to run simultaneously. To do this, we create a new &lt;code>DashThread&lt;/code> class that inherits from Python&amp;rsquo;s &lt;code>threading.Thread&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">DashThread&lt;/span>(threading&lt;span style="color:#666">.&lt;/span>Thread):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, data_list):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> threading&lt;span style="color:#666">.&lt;/span>Thread&lt;span style="color:#666">.&lt;/span>__init__(self)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>data_list &lt;span style="color:#666">=&lt;/span> data_list
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>app &lt;span style="color:#666">=&lt;/span> Dash(__name__)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Initialize an empty graph&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>app&lt;span style="color:#666">.&lt;/span>layout &lt;span style="color:#666">=&lt;/span> html&lt;span style="color:#666">.&lt;/span>Div(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dcc&lt;span style="color:#666">.&lt;/span>Graph(&lt;span style="color:#007020">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;live-graph&amp;#34;&lt;/span>, animate&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">True&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dcc&lt;span style="color:#666">.&lt;/span>Interval(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;graph-update&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> interval&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#666">*&lt;/span> &lt;span style="color:#40a070">1000&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#555;font-weight:bold">@self.app.callback&lt;/span>(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Output(&lt;span style="color:#4070a0">&amp;#34;live-graph&amp;#34;&lt;/span>, &lt;span style="color:#4070a0">&amp;#34;figure&amp;#34;&lt;/span>), [Input(&lt;span style="color:#4070a0">&amp;#34;graph-update&amp;#34;&lt;/span>, &lt;span style="color:#4070a0">&amp;#34;n_intervals&amp;#34;&lt;/span>)]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">update_graph&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> data &lt;span style="color:#666">=&lt;/span> [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> go&lt;span style="color:#666">.&lt;/span>Scatter(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020">list&lt;/span>(&lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(self&lt;span style="color:#666">.&lt;/span>data_list[symbol]))),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> y&lt;span style="color:#666">=&lt;/span>self&lt;span style="color:#666">.&lt;/span>data_list[symbol],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mode&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;lines+markers&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> name&lt;span style="color:#666">=&lt;/span>symbol,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> symbol &lt;span style="color:#007020;font-weight:bold">in&lt;/span> self&lt;span style="color:#666">.&lt;/span>data_list&lt;span style="color:#666">.&lt;/span>keys()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fig &lt;span style="color:#666">=&lt;/span> go&lt;span style="color:#666">.&lt;/span>Figure(data&lt;span style="color:#666">=&lt;/span>data)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Update x-axis range to show last 120 data points&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fig&lt;span style="color:#666">.&lt;/span>update_xaxes(&lt;span style="color:#007020">range&lt;/span>&lt;span style="color:#666">=&lt;/span>[&lt;span style="color:#007020">max&lt;/span>(&lt;span style="color:#40a070">0&lt;/span>, n &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">120&lt;/span>), n])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> fig
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">run&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>app&lt;span style="color:#666">.&lt;/span>run_server(debug&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">False&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-3-creating-the-main-application-class">Step 3: Creating the Main Application Class&lt;/h2>
+&lt;p>The &lt;code>App&lt;/code> class will initialize the Tkinter window and generate random prices for each of the financial symbols:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">App&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, root):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>root &lt;span style="color:#666">=&lt;/span> root
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>data_list &lt;span style="color:#666">=&lt;/span> {&lt;span style="color:#4070a0">&amp;#34;ETHUSDT&amp;#34;&lt;/span>: [], &lt;span style="color:#4070a0">&amp;#34;BTCUSD&amp;#34;&lt;/span>: [], &lt;span style="color:#4070a0">&amp;#34;BNBUSDT&amp;#34;&lt;/span>: []}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Start the Dash application in a separate thread&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dash_thread &lt;span style="color:#666">=&lt;/span> DashThread(self&lt;span style="color:#666">.&lt;/span>data_list)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dash_thread&lt;span style="color:#666">.&lt;/span>start()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Open Dash app in web browser&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> webbrowser&lt;span style="color:#666">.&lt;/span>open(&lt;span style="color:#4070a0">&amp;#34;http://localhost:8050&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Start the price generation in tkinter after Dash app is launched&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>root&lt;span style="color:#666">.&lt;/span>after(&lt;span style="color:#40a070">1000&lt;/span>, self&lt;span style="color:#666">.&lt;/span>generate_prices)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">generate_prices&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> symbol &lt;span style="color:#007020;font-weight:bold">in&lt;/span> self&lt;span style="color:#666">.&lt;/span>data_list&lt;span style="color:#666">.&lt;/span>keys():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> new_price &lt;span style="color:#666">=&lt;/span> random&lt;span style="color:#666">.&lt;/span>randint(&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">100&lt;/span>) &lt;span style="color:#60a0b0;font-style:italic"># Generate random price&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>data_list[symbol]&lt;span style="color:#666">.&lt;/span>append(new_price) &lt;span style="color:#60a0b0;font-style:italic"># Store the price in list&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Schedule the function to run again after 1 second&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>root&lt;span style="color:#666">.&lt;/span>after(&lt;span style="color:#40a070">1000&lt;/span>, self&lt;span style="color:#666">.&lt;/span>generate_prices)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-4-running-the-application">Step 4: Running the Application&lt;/h2>
+&lt;p>Finally, we create a Tkinter root window, instantiate the &lt;code>App&lt;/code> class, and start the Tkinter event loop:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">if&lt;/span> __name__ &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#4070a0">&amp;#34;__main__&amp;#34;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> root &lt;span style="color:#666">=&lt;/span> tk&lt;span style="color:#666">.&lt;/span>Tk()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> app &lt;span style="color:#666">=&lt;/span> App(root)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> root&lt;span style="color:#666">.&lt;/span>mainloop()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="chart.png"
+id="zoom-default"
+alt="chart.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="conclusion">Conclusion&lt;/h2>
+&lt;p>You&amp;rsquo;ve successfully created an application that generates and displays interactive financial charts using &lt;a href="https://docs.python.org/3/library/tkinter.html">Tkinter&lt;/a> and &lt;a href="https://plotly.com/python/getting-started/">Plotly&lt;/a>. This project can be extended with real-time data feeds and additional interactive features to fit your needs. Happy coding!&lt;/p></description></item></channel></rss>

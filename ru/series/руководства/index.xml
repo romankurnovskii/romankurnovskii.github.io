@@ -1,7 +1,175 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Руководства on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/series/%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B0/</link><description>Recent content in Руководства on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sat, 02 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/series/%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>Карманная книга по WebRTC</title><link>https://romankurnovskii.com/ru/tracks/webrtc/</link><pubDate>Sat, 02 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/webrtc/</guid><description>Создание нового приложения на базе WebRTC-технологий может стать непосильной задачей, если вы не знакомы с API. В этом разделе мы покажем, как начать работать с различными API в стандарте WebRTC, на большом количестве примеров и фрагментов кода, решающих эти задачи.
-WebRTC API Стандарт WebRTC работает с двумя различными технологиями: мультимедиа-устройства и P2P-соединение. Мультимедиа-устройства включают в себя не только камеры и микрофоны, но также и «устройства» захвата экрана. Для камер и микрофонов мы используем navigator.mediaDevices.getUserMedia() для захвата MediaStreams. Для записи же мы используем navigator.</description></item><item><title>Карманная книга по Python</title><link>https://romankurnovskii.com/ru/tracks/python-101/</link><pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/python-101/</guid><description>Скачать | PDF обновление 2023/02/27
-Здравствуйте!
-Я рад приветствовать вас на страницах этого хендбука по языку программирования Python.
-Python - это мощный и гибкий язык программирования, который находит применение в самых различных областях, от разработки веб-приложений и научных исследований до создания игр и машинного обучения. Однако, как и любой другой язык программирования, Python может показаться довольно сложным для начинающих.
-Этот хендбук призван помочь вам изучить основы языка Python, научиться использовать различные библиотеки и инструменты, а также дать ответы на самые часто задаваемые вопросы о языке.</description></item><item><title>90 дней DevOps</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/</link><pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/</guid><description>Оригинальный репозиторий на GitHub. Автор версии на английском - Michael Cade Цель данного цикла статей - быстрый обзор и прохождение по всему тьюториалу по DevOps.
-Progress [✔️] ♾️ 1 &amp;gt; Введение Что такое и почему нам нужен DevOps [✔️] ♾️ 2 &amp;gt; Задачи DevOps-инженера [✔️] ♾️ 3 &amp;gt; DevOps Lifecycle - Ориентированность на приложения [✔️] ♾️ 4 &amp;gt; DevOps &amp;amp; Agile [✔️] ♾️ 5 &amp;gt; Plan &amp;gt; Code &amp;gt; Build &amp;gt; Testing &amp;gt; Release &amp;gt; Deploy &amp;gt; Operate &amp;gt; Monitor &amp;gt; [✔️] ♾️ 6 &amp;gt; DevOps - The real stories Изучение языка программирования [✔️] ⌨️ 7 &amp;gt; The Big Picture: DevOps &amp;amp; Learning a Programming Language [✔️] ⌨️ 8 &amp;gt; Setting up your DevOps environment for Go &amp;amp; Hello World [✔️] ⌨️ 9 &amp;gt; Let&amp;rsquo;s explain the Hello World code [✔️] ⌨️ 10 &amp;gt; The Go Workspace &amp;amp; Compiling &amp;amp; running code [✔️] ⌨️ 11 &amp;gt; Variables, Constants &amp;amp; Data Types [✔️] ⌨️ 12 &amp;gt; Getting user input with Pointers and a finished program [✔️] ⌨️ 13 &amp;gt; Tweet your progress with our new App Knowing Linux Basics [✔️] 🐧 14 &amp;gt; The Big Picture: DevOps and Linux [✔️] 🐧 15 &amp;gt; Linux Commands for DevOps (Actually everyone) [✔️] 🐧 16 &amp;gt; Managing your Linux System, Filesystem &amp;amp; Storage [✔️] 🐧 17 &amp;gt; Text Editors - nano vs vim [✔️] 🐧 18 &amp;gt; SSH &amp;amp; Web Server(LAMP) [✔️] 🐧 19 &amp;gt; Automate tasks with bash scripts [✔️] 🐧 20 &amp;gt; Dev workstation setup - All the pretty things Understand Networking [✔️] 🌐 21 &amp;gt; The Big Picture: DevOps and Networking [✔️] 🌐 22 &amp;gt; The OSI Model - The 7 Layers [✔️] 🌐 23 &amp;gt; Network Protocols [✔️] 🌐 24 &amp;gt; Network Automation [✔️] 🌐 25 &amp;gt; Python for Network Automation [✔️] 🌐 26 &amp;gt; Building our Lab [✔️] 🌐 27 &amp;gt; Getting Hands-On with Python &amp;amp; Network Stick to one Cloud Provider [✔️] ☁️ 28 &amp;gt; The Big Picture: DevOps &amp;amp; The Cloud [✔️] ☁️ 29 &amp;gt; Microsoft Azure Fundamentals [✔️] ☁️ 30 &amp;gt; Модули безопасности Microsoft Azure [✔️] ☁️ 31 &amp;gt; Microsoft Azure Compute Models [✔️] ☁️ 32 &amp;gt; Microsoft Azure Storage &amp;amp; Database Models [✔️] ☁️ 33 &amp;gt; Microsoft Azure Networking Models + Azure Management [✔️] ☁️ 34 &amp;gt; Microsoft Azure Hands-On Scenarios Use Git Effectively [✔️] 📚 35 &amp;gt; The Big Picture: Git - Version Control [✔️] 📚 36 &amp;gt; Installing &amp;amp; Configuring Git [✔️] 📚 37 &amp;gt; Gitting to know Git [✔️] 📚 38 &amp;gt; Staging &amp;amp; Changing [✔️] 📚 39 &amp;gt; Viewing, unstaging, discarding &amp;amp; restoring [✔️] 📚 40 &amp;gt; Social Network for code [✔️] 📚 41 &amp;gt; The Open Source Workflow Containers [✔️] 🏗️ 42 &amp;gt; The Big Picture: Containers [✔️] 🏗️ 43 &amp;gt; What is Docker &amp;amp; Getting installed [✔️] 🏗️ 44 &amp;gt; Docker Images &amp;amp; Hands-On with Docker Desktop [✔️] 🏗️ 45 &amp;gt; The anatomy of a Docker Image [✔️] 🏗️ 46 &amp;gt; Docker Compose [✔️] 🏗️ 47 &amp;gt; Docker Networking &amp;amp; Security [✔️] 🏗️ 48 &amp;gt; Alternatives to Docker Kubernetes [✔️] ☸ 49 &amp;gt; The Big Picture: Kubernetes [✔️] ☸ 50 &amp;gt; Choosing your Kubernetes platform [✔️] ☸ 51 &amp;gt; Deploying your first Kubernetes Cluster [✔️] ☸ 52 &amp;gt; Setting up a multinode Kubernetes Cluster [✔️] ☸ 53 &amp;gt; Rancher Overview - Hands On [✔️] ☸ 54 &amp;gt; Kubernetes Application Deployment [✔️] ☸ 55 &amp;gt; State and Ingress in Kubernetes Learn Infrastructure as Code [✔️] 🤖 56 &amp;gt; The Big Picture: IaC [✔️] 🤖 57 &amp;gt; An intro to Terraform [✔️] 🤖 58 &amp;gt; HashiCorp Configuration Language (HCL) [✔️] 🤖 59 &amp;gt; Create a VM with Terraform &amp;amp; Variables [✔️] 🤖 60 &amp;gt; Docker Containers, Provisioners &amp;amp; Modules [✔️] 🤖 61 &amp;gt; Kubernetes &amp;amp; Multiple Environments [✔️] 🤖 62 &amp;gt; Testing, Tools &amp;amp; Alternatives Automate Configuration Management [✔️] 📜 63 &amp;gt; The Big Picture: Configuration Management [✔️] 📜 64 &amp;gt; Ansible: Getting Started [✔️] 📜 65 &amp;gt; Ansible Playbooks [✔️] 📜 66 &amp;gt; Ansible Playbooks Continued&amp;hellip; [✔️] 📜 67 &amp;gt; Using Roles &amp;amp; Deploying a Loadbalancer [✔️] 📜 68 &amp;gt; Tags, Variables, Inventory &amp;amp; Database Server config [✔️] 📜 69 &amp;gt; All other things Ansible - Automation Controller, AWX, Vault Create CI/CD Pipelines [✔️] 🔄 70 &amp;gt; The Big Picture: CI/CD Pipelines [✔️] 🔄 71 &amp;gt; What is Jenkins?</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Руководства on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/series/%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B0/</link><description>Recent content in Руководства on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sat, 02 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/series/%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>Карманная книга по WebRTC</title><link>https://romankurnovskii.com/ru/tracks/webrtc/</link><pubDate>Sat, 02 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/webrtc/</guid><description>&lt;p>Создание нового приложения на базе WebRTC-технологий может стать непосильной задачей, если вы не знакомы с API. В этом разделе мы покажем, как начать работать с различными API в стандарте WebRTC, на большом количестве примеров и фрагментов кода, решающих эти задачи.&lt;/p>
+&lt;h2 id="webrtc-api">WebRTC API&lt;/h2>
+&lt;p>Стандарт WebRTC работает с двумя различными технологиями: мультимедиа-устройства и P2P-соединение.
+Мультимедиа-устройства включают в себя не только камеры и микрофоны, но также и «устройства» захвата экрана. Для камер и микрофонов мы используем &lt;code>navigator.mediaDevices.getUserMedia()&lt;/code> для захвата &lt;code>MediaStreams&lt;/code>. Для записи же мы используем &lt;code>navigator.mediaDevices.getDisplayMedia()&lt;/code>.&lt;/p>
+&lt;p>P2P соединение настраивается через интерфейс &lt;code>RTCPeerConnection&lt;/code>. Это ключевой пункт для установления и управления соединением между двумя узлами в WebRTC.&lt;/p>
+&lt;h2 id="ресурсы">Ресурсы&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://webrtc.org/getting-started/overview">https://webrtc.org/getting-started/overview&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://codelabs.developers.google.com/codelabs/webrtc-web">https://codelabs.developers.google.com/codelabs/webrtc-web&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Карманная книга по Python</title><link>https://romankurnovskii.com/ru/tracks/python-101/</link><pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/python-101/</guid><description>&lt;p>&lt;mark>&lt;a href="https://romankurnovskii.com/handbooks/python-handbook.pdf">Скачать | PDF&lt;/a>&lt;/mark> &lt;em>обновление 2023/02/27&lt;/em>&lt;/p>
+&lt;p>Здравствуйте!&lt;/p>
+&lt;p>Я рад приветствовать вас на страницах этого хендбука по языку программирования Python.&lt;/p>
+&lt;p>Python - это мощный и гибкий язык программирования, который находит применение в самых различных областях, от разработки веб-приложений и научных исследований до создания игр и машинного обучения. Однако, как и любой другой язык программирования, Python может показаться довольно сложным для начинающих.&lt;/p>
+&lt;p>Этот хендбук призван помочь вам изучить основы языка Python, научиться использовать различные библиотеки и инструменты, а также дать ответы на самые часто задаваемые вопросы о языке. Я постарался сделать материал доступным и понятным для всех, даже для тех, кто никогда не программировал.&lt;/p>
+&lt;p>Хендбук по Python - это идеальное решение для тех, кто хочет быстро овладеть основами языка и начать программировать. Книга содержит более 50 тем, которые охватывают все основные конструкции языка, от простых типов данных и операторов до продвинутых тем, таких как объектно-ориентированное программирование и обработка исключений.&lt;/p>
+&lt;p>Каждая тема описывается кратко и доступно, чтение каждой занимает около 2 минут. Это означает, что вы можете быстро пройти через всю книгу и получить краткий, но полный обзор языка.&lt;/p>
+&lt;p>Хендбук по Python - это идеальный выбор для тех, кто хочет быстро начать программировать на языке Python. Вы сможете быстро овладеть основными конструкциями и перейти к созданию своих собственных программ.&lt;/p>
+&lt;p>Я уверен, что этот хендбук поможет вам стать более уверенными в использовании Python, и поможет вам создавать более эффективные программы. Не стесняйтесь задавать вопросы и искать помощи, если вам что-то не ясно - только так можно добиться настоящих результатов в программировании. Удачи!&lt;/p></description></item><item><title>90 дней DevOps</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/</link><pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/</guid><description>&lt;!-- &lt;p align="center">
+&lt;img src="./images/logo.png?raw=true" alt="90DaysOfDevOps Logo" width="50%" height="50%" />
+&lt;/p> -->
+&lt;p>Оригинальный репозиторий на &lt;a href="https://github.com/MichaelCade/90DaysOfDevOps">GitHub&lt;/a>. Автор версии на английском - &lt;strong>Michael Cade&lt;/strong>
+Цель данного цикла статей - быстрый обзор и прохождение по всему тьюториалу по DevOps.&lt;/p>
+&lt;h2 id="progress">Progress&lt;/h2>
+&lt;ul>
+&lt;li>[✔️] ♾️ 1 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day01/">Введение&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="что-такое-и-почему-нам-нужен-devops">Что такое и почему нам нужен DevOps&lt;/h3>
+&lt;ul>
+&lt;li>[✔️] ♾️ 2 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day02/">Задачи DevOps-инженера&lt;/a>&lt;/li>
+&lt;li>[✔️] ♾️ 3 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day03/">DevOps Lifecycle - Ориентированность на приложения&lt;/a>&lt;/li>
+&lt;li>[✔️] ♾️ 4 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day04/">DevOps &amp;amp; Agile&lt;/a>&lt;/li>
+&lt;li>[✔️] ♾️ 5 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day05/">Plan &amp;gt; Code &amp;gt; Build &amp;gt; Testing &amp;gt; Release &amp;gt; Deploy &amp;gt; Operate &amp;gt; Monitor &amp;gt;&lt;/a>&lt;/li>
+&lt;li>[✔️] ♾️ 6 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day06/">DevOps - The real stories&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="изучение-языка-программирования">Изучение языка программирования&lt;/h3>
+&lt;ul>
+&lt;li>[✔️] ⌨️ 7 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day07/">The Big Picture: DevOps &amp;amp; Learning a Programming Language&lt;/a>&lt;/li>
+&lt;li>[✔️] ⌨️ 8 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day08/">Setting up your DevOps environment for Go &amp;amp; Hello World&lt;/a>&lt;/li>
+&lt;li>[✔️] ⌨️ 9 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day09/">Let&amp;rsquo;s explain the Hello World code&lt;/a>&lt;/li>
+&lt;li>[✔️] ⌨️ 10 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day10/">The Go Workspace &amp;amp; Compiling &amp;amp; running code&lt;/a>&lt;/li>
+&lt;li>[✔️] ⌨️ 11 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day11/">Variables, Constants &amp;amp; Data Types&lt;/a>&lt;/li>
+&lt;li>[✔️] ⌨️ 12 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day12/">Getting user input with Pointers and a finished program&lt;/a>&lt;/li>
+&lt;li>[✔️] ⌨️ 13 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day13/">Tweet your progress with our new App&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="knowing-linux-basics">Knowing Linux Basics&lt;/h3>
+&lt;ul>
+&lt;li>[✔️] 🐧 14 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day14/">The Big Picture: DevOps and Linux&lt;/a>&lt;/li>
+&lt;li>[✔️] 🐧 15 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day15/">Linux Commands for DevOps (Actually everyone)&lt;/a>&lt;/li>
+&lt;li>[✔️] 🐧 16 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day16/">Managing your Linux System, Filesystem &amp;amp; Storage&lt;/a>&lt;/li>
+&lt;li>[✔️] 🐧 17 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day17/">Text Editors - nano vs vim&lt;/a>&lt;/li>
+&lt;li>[✔️] 🐧 18 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day18/">SSH &amp;amp; Web Server(LAMP)&lt;/a>&lt;/li>
+&lt;li>[✔️] 🐧 19 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day19/">Automate tasks with bash scripts&lt;/a>&lt;/li>
+&lt;li>[✔️] 🐧 20 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day20/">Dev workstation setup - All the pretty things&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="understand-networking">Understand Networking&lt;/h3>
+&lt;ul>
+&lt;li>[✔️] 🌐 21 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day21/">The Big Picture: DevOps and Networking&lt;/a>&lt;/li>
+&lt;li>[✔️] 🌐 22 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day22/">The OSI Model - The 7 Layers&lt;/a>&lt;/li>
+&lt;li>[✔️] 🌐 23 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day23/">Network Protocols&lt;/a>&lt;/li>
+&lt;li>[✔️] 🌐 24 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day24/">Network Automation&lt;/a>&lt;/li>
+&lt;li>[✔️] 🌐 25 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day25/">Python for Network Automation&lt;/a>&lt;/li>
+&lt;li>[✔️] 🌐 26 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day26/">Building our Lab&lt;/a>&lt;/li>
+&lt;li>[✔️] 🌐 27 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day27/">Getting Hands-On with Python &amp;amp; Network&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="stick-to-one-cloud-provider">Stick to one Cloud Provider&lt;/h3>
+&lt;ul>
+&lt;li>[✔️] ☁️ 28 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day28/">The Big Picture: DevOps &amp;amp; The Cloud&lt;/a>&lt;/li>
+&lt;li>[✔️] ☁️ 29 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day29/">Microsoft Azure Fundamentals&lt;/a>&lt;/li>
+&lt;li>[✔️] ☁️ 30 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day30/">Модули безопасности Microsoft Azure&lt;/a>&lt;/li>
+&lt;li>[✔️] ☁️ 31 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day31/">Microsoft Azure Compute Models&lt;/a>&lt;/li>
+&lt;li>[✔️] ☁️ 32 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day32/">Microsoft Azure Storage &amp;amp; Database Models&lt;/a>&lt;/li>
+&lt;li>[✔️] ☁️ 33 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day33/">Microsoft Azure Networking Models + Azure Management&lt;/a>&lt;/li>
+&lt;li>[✔️] ☁️ 34 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day34/">Microsoft Azure Hands-On Scenarios&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="use-git-effectively">Use Git Effectively&lt;/h3>
+&lt;ul>
+&lt;li>[✔️] 📚 35 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day35/">The Big Picture: Git - Version Control&lt;/a>&lt;/li>
+&lt;li>[✔️] 📚 36 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day36/">Installing &amp;amp; Configuring Git&lt;/a>&lt;/li>
+&lt;li>[✔️] 📚 37 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day37/">Gitting to know Git&lt;/a>&lt;/li>
+&lt;li>[✔️] 📚 38 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day38/">Staging &amp;amp; Changing&lt;/a>&lt;/li>
+&lt;li>[✔️] 📚 39 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day39/">Viewing, unstaging, discarding &amp;amp; restoring&lt;/a>&lt;/li>
+&lt;li>[✔️] 📚 40 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day40/">Social Network for code&lt;/a>&lt;/li>
+&lt;li>[✔️] 📚 41 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day41/">The Open Source Workflow&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="containers">Containers&lt;/h3>
+&lt;ul>
+&lt;li>[✔️] 🏗️ 42 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day42/">The Big Picture: Containers&lt;/a>&lt;/li>
+&lt;li>[✔️] 🏗️ 43 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day43/">What is Docker &amp;amp; Getting installed&lt;/a>&lt;/li>
+&lt;li>[✔️] 🏗️ 44 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day44/">Docker Images &amp;amp; Hands-On with Docker Desktop&lt;/a>&lt;/li>
+&lt;li>[✔️] 🏗️ 45 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day45/">The anatomy of a Docker Image&lt;/a>&lt;/li>
+&lt;li>[✔️] 🏗️ 46 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day46/">Docker Compose&lt;/a>&lt;/li>
+&lt;li>[✔️] 🏗️ 47 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day47/">Docker Networking &amp;amp; Security&lt;/a>&lt;/li>
+&lt;li>[✔️] 🏗️ 48 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day48/">Alternatives to Docker&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="kubernetes">Kubernetes&lt;/h3>
+&lt;ul>
+&lt;li>[✔️] ☸ 49 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day49/">The Big Picture: Kubernetes&lt;/a>&lt;/li>
+&lt;li>[✔️] ☸ 50 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day50/">Choosing your Kubernetes platform&lt;/a>&lt;/li>
+&lt;li>[✔️] ☸ 51 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day51/">Deploying your first Kubernetes Cluster&lt;/a>&lt;/li>
+&lt;li>[✔️] ☸ 52 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day52/">Setting up a multinode Kubernetes Cluster&lt;/a>&lt;/li>
+&lt;li>[✔️] ☸ 53 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day53/">Rancher Overview - Hands On&lt;/a>&lt;/li>
+&lt;li>[✔️] ☸ 54 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day54/">Kubernetes Application Deployment&lt;/a>&lt;/li>
+&lt;li>[✔️] ☸ 55 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day55/">State and Ingress in Kubernetes&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="learn-infrastructure-as-code">Learn Infrastructure as Code&lt;/h3>
+&lt;ul>
+&lt;li>[✔️] 🤖 56 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day56/">The Big Picture: IaC&lt;/a>&lt;/li>
+&lt;li>[✔️] 🤖 57 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day57/">An intro to Terraform&lt;/a>&lt;/li>
+&lt;li>[✔️] 🤖 58 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day58/">HashiCorp Configuration Language (HCL)&lt;/a>&lt;/li>
+&lt;li>[✔️] 🤖 59 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day59/">Create a VM with Terraform &amp;amp; Variables&lt;/a>&lt;/li>
+&lt;li>[✔️] 🤖 60 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day60/">Docker Containers, Provisioners &amp;amp; Modules&lt;/a>&lt;/li>
+&lt;li>[✔️] 🤖 61 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day61/">Kubernetes &amp;amp; Multiple Environments&lt;/a>&lt;/li>
+&lt;li>[✔️] 🤖 62 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day62/">Testing, Tools &amp;amp; Alternatives&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="automate-configuration-management">Automate Configuration Management&lt;/h3>
+&lt;ul>
+&lt;li>[✔️] 📜 63 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day63/">The Big Picture: Configuration Management&lt;/a>&lt;/li>
+&lt;li>[✔️] 📜 64 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day64/">Ansible: Getting Started&lt;/a>&lt;/li>
+&lt;li>[✔️] 📜 65 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day65/">Ansible Playbooks&lt;/a>&lt;/li>
+&lt;li>[✔️] 📜 66 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day66/">Ansible Playbooks Continued&amp;hellip;&lt;/a>&lt;/li>
+&lt;li>[✔️] 📜 67 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day67/">Using Roles &amp;amp; Deploying a Loadbalancer&lt;/a>&lt;/li>
+&lt;li>[✔️] 📜 68 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day68/">Tags, Variables, Inventory &amp;amp; Database Server config&lt;/a>&lt;/li>
+&lt;li>[✔️] 📜 69 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day69/">All other things Ansible - Automation Controller, AWX, Vault&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="create-cicd-pipelines">Create CI/CD Pipelines&lt;/h3>
+&lt;ul>
+&lt;li>[✔️] 🔄 70 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day70/">The Big Picture: CI/CD Pipelines&lt;/a>&lt;/li>
+&lt;li>[✔️] 🔄 71 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day71/">What is Jenkins?&lt;/a>&lt;/li>
+&lt;li>[✔️] 🔄 72 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day72/">Getting hands on with Jenkins&lt;/a>&lt;/li>
+&lt;li>[✔️] 🔄 73 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day73/">Building a Jenkins pipeline&lt;/a>&lt;/li>
+&lt;li>[✔️] 🔄 74 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day74/">Hello World - Jenkinsfile App Pipeline&lt;/a>&lt;/li>
+&lt;li>[✔️] 🔄 75 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day75/">GitHub Actions Overview&lt;/a>&lt;/li>
+&lt;li>[✔️] 🔄 76 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day76/">ArgoCD Overview&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="monitoring-log-management-and-data-visualisation">Monitoring, Log Management, and Data Visualisation&lt;/h3>
+&lt;ul>
+&lt;li>[✔️] 📈 77 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day77/">The Big Picture: Monitoring&lt;/a>&lt;/li>
+&lt;li>[✔️] 📈 78 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day78/">Hands-On Monitoring Tools&lt;/a>&lt;/li>
+&lt;li>[✔️] 📈 79 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day79/">The Big Picture: Log Management&lt;/a>&lt;/li>
+&lt;li>[✔️] 📈 80 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day80/">ELK Stack&lt;/a>&lt;/li>
+&lt;li>[✔️] 📈 81 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day81/">Fluentd &amp;amp; FluentBit&lt;/a>&lt;/li>
+&lt;li>[✔️] 📈 82 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day82/">EFK Stack&lt;/a>&lt;/li>
+&lt;li>[✔️] 📈 83 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day83/">Data Visualisation - Grafana&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="store--protect-your-data">Store &amp;amp; Protect Your Data&lt;/h3>
+&lt;ul>
+&lt;li>[✔️] 🗃️ 84 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day84/">The Big Picture: Data Management&lt;/a>&lt;/li>
+&lt;li>[✔️] 🗃️ 85 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day85/">Data Services&lt;/a>&lt;/li>
+&lt;li>[✔️] 🗃️ 86 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day86/">Backup all the platforms&lt;/a>&lt;/li>
+&lt;li>[✔️] 🗃️ 87 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day87/">Hands-On Backup &amp;amp; Recovery&lt;/a>&lt;/li>
+&lt;li>[✔️] 🗃️ 88 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day88/">Application Focused Backups&lt;/a>&lt;/li>
+&lt;li>[✔️] 🗃️ 89 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day89/">Disaster Recovery&lt;/a>&lt;/li>
+&lt;li>[✔️] 🗃️ 90 &amp;gt; &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day90/">Data &amp;amp; Application Mobility&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="license">License&lt;/h2>
+&lt;p>Shield: &lt;a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">&lt;p class="md__image">
+&lt;img
+src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg"
+id="zoom-default"
+alt="CC BY-NC-SA 4.0"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/a>&lt;/p>
+&lt;p>This work is licensed under a
+&lt;a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License&lt;/a>.&lt;/p>
+&lt;p>&lt;a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">&lt;p class="md__image">
+&lt;img
+src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png"
+id="zoom-default"
+alt="CC BY-NC-SA 4.0"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/a>&lt;/p></description></item></channel></rss>

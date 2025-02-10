@@ -1,6 +1,273 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hello-World on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/hello-world/</link><description>Recent content in Hello-World on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 29 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/hello-world/index.xml" rel="self" type="application/rss+xml"/><item><title>8. Настройка DevOps окружения для запуска Hello World на Go</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day08/</link><pubDate>Thu, 28 Apr 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day08/</guid><description>Настройка DevOps окружения для запуска Hello World на Go Прежде чем мы приступим к некоторым основам Go, мы должны установить Go на нашу рабочую станцию и сделать то, чему нас учит каждый модуль «Изучение программирования 101», а именно создать приложение Hello World. Так как здесь будут описаны шаги по установке Go на ваш ПК, мы попытаемся задокументировать процесс в картинках, чтобы людям было легко следовать за ним.
-Возможные варианты установки Golang
-Исполняемый файл Пакет из исходного кода Mac Os Homebrew #Homebrew install command brew install go Быстрый тьюториал для ознакомления с языком Go</description></item><item><title>9. Как работает hello-world на Golang</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day09/</link><pubDate>Fri, 29 Apr 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day09/</guid><description>Разберемся как работает hello-world Как работает Go Вчера мы прошли процедуру установки Go на ПК, а затем создали наше первое приложение Go.
-В этом разделе мы собираемся глубже изучить код и понять еще несколько вещей о языке Go.
-Что такое компиляция? Прежде чем мы перейдем к 6 строкам кода Hello World, которые написали вчера, нам нужно немного разобраться в компиляции.
-Языки программирования, которые мы обычно используем, такие как Python, Java, Go и C++, являются языками высокого уровня. Это означает, что они удобочитаемы для человека, но когда машина пытается выполнить программу, она должна быть в форме, понятной машине.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hello-World on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/hello-world/</link><description>Recent content in Hello-World on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 29 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/hello-world/index.xml" rel="self" type="application/rss+xml"/><item><title>8. Настройка DevOps окружения для запуска Hello World на Go</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day08/</link><pubDate>Thu, 28 Apr 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day08/</guid><description>&lt;h2 id="настройка-devops-окружения-для-запуска-hello-world-на-go">Настройка DevOps окружения для запуска Hello World на Go&lt;/h2>
+&lt;p>Прежде чем мы приступим к некоторым основам Go, мы должны установить Go на нашу рабочую станцию и сделать то, чему нас учит каждый модуль &lt;a href="https://www.udemy.com/course/programming-101/">«Изучение программирования 101»&lt;/a>, а именно создать приложение Hello World. Так как здесь будут описаны шаги по установке Go на ваш ПК, мы попытаемся задокументировать процесс в картинках, чтобы людям было легко следовать за ним.&lt;/p>
+&lt;p>Возможные варианты установки Golang&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://go.dev/dl/">Исполняемый файл&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://golang.org/doc/install/source#environment-variables">Пакет из исходного кода&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://formulae.brew.sh/formula/go">Mac Os Homebrew&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#Homebrew install command&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>brew install go
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Быстрый &lt;a href="https://go.dev/tour/welcome/1">тьюториал&lt;/a> для ознакомления с языком Go&lt;/p>
+&lt;p>Рассмотрим вараинт установки с помощью инсталляционного файла&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day8_Go1.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Если мы зашли так далеко, вы, вероятно, знаете, какая операционная система рабочей станции у вас установлена, поэтому выберите соответствующую загрузку, и тогда мы сможем приступить к установке. Я использую Windows для этого пошагового руководства. На следующем шаге мы можем оставить все значения по умолчанию. &lt;em>&lt;strong>(Отмечу, что на момент написания это была последняя версия, поэтому скриншоты могут быть устаревшими)&lt;/strong>&lt;/em>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day8_Go2.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Также обратите внимание, что если у вас установлена более старая версия Go, вам придется удалить ее перед установкой, поскольку в Windows она встроена в установщик, и она будет удалена и установлена как единое целое.&lt;/p>
+&lt;p>После завершения вы должны открыть командную строку / терминал, и мы хотим проверить, установлен ли Go. Если вы не получите вывод, который мы видим ниже, значит, Go не установлен, и вам нужно будет повторить свои шаги.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>go version
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day8_Go3.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Далее мы хотим проверить нашу среду на наличие Go. Это всегда полезно проверить, чтобы убедиться, что ваши рабочие каталоги настроены правильно, как вы можете видеть ниже, нам нужно убедиться, что в вашей системе есть следующий каталог.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day8_Go4.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day8_Go5.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Хорошо, давайте создадим этот каталог для простоты. Я собираюсь использовать команду mkdir в своем терминале &lt;a href="https://docs.microsoft.com/ru-ru/powershell/">PowerShell&lt;/a>. Нам также нужно создать 3 папки в папке Go, как вы увидите ниже.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day8_Go6.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Теперь у нас установлен Go, и у нас есть рабочий каталог Go, готовый к действию. Теперь нам нужна интегрированная среда разработки (IDE). Сейчас есть много доступных, которые вы можете использовать, но наиболее распространенным и тем, который я использую, является Visual Studio Code или Code. Вы можете узнать больше об IDE &lt;a href="https://www.youtube.com/watch?v=vUn5akOlFXQ">здесь&lt;/a>.&lt;/p>
+&lt;p>Если вы еще не загрузили и не установили VSCode на свою рабочую станцию, вы можете сделать это, перейдя по &lt;a href="https://code.visualstudio.com/download">ссылке&lt;/a>. Как вы можете видеть ниже, у вас есть разные варианты ОС.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day8_Go7.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Почти так же, как и при установке Go, мы собираемся загрузить и установить и сохранить значения по умолчанию. После завершения вы можете открыть VSCode, выбрать «Открыть файл» и перейти в наш каталог Go, который мы создали выше.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day8_Go8.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Вы можете получить всплывающее окно о доверии, прочитать его, если хотите, а затем нажать «Да, доверять авторам». (Позже я не несу ответственности, если вы начнете открывать вещи, которым не доверяете!)&lt;/p>
+&lt;p>Теперь вы должны увидеть три папки, которые мы также создали ранее, и теперь мы хотим щелкнуть правой кнопкой мыши папку src и создать новую папку с именем «Hello».&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day8_Go9.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Довольно простые вещи, я бы сказал до этого момента? Теперь мы собираемся создать нашу первую программу Go, не понимая, что мы вкладываем в этот следующий этап.&lt;/p>
+&lt;p>Затем создайте файл с именем &lt;code>main.go&lt;/code> в папке &lt;code>Hello&lt;/code>. Как только вы нажмете Enter на main.go, вас спросят, хотите ли вы установить расширение Go, а также пакеты, вы также можете проверить этот пустой файл pkg, который мы сделали несколько шагов назад, и обратите внимание, что у нас должны быть новые пакеты. там сейчас?&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day8_Go10.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Теперь давайте запустим это приложение Hello World, скопируйте следующий код в новый файл main.go и сохраните его.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">package&lt;/span> main
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#4070a0">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">func&lt;/span> &lt;span style="color:#06287e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Println&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Hello #90DaysOfDevOps&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Я понимаю, что вышеизложенное может не иметь никакого смысла, но мы подробнее расскажем о функциях, пакетах и многом другом позже. А пока давайте запустим наше приложение. Вернувшись в терминал и в нашу папку Hello, мы можем проверить, все ли работает. Используя приведенную ниже команду, мы можем проверить, работает ли наша общая программа обучения.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>go run main.go
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day8_Go11.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Однако на этом это не заканчивается, что, если теперь мы захотим взять нашу программу и запустить ее на других машинах с Windows? Мы можем сделать это, создав наш двоичный файл, используя следующую команду&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>go build main.go
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day8_Go12.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Попробуем запустить&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#Windows&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./main.exe
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#Linux/Mac Os&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./main
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="Day8_Go13.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="источники">Источники&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://go.dev/tour/welcome/1">Быстрое погружение в Golang&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://insights.stackoverflow.com/survey/2021">StackOverflow 2021 Developer Survey&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=7pLqIIAqZD4&amp;amp;t=9s">Why we are choosing Golang to learn&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=C8LgvuEBraI&amp;amp;t=312s">Jake Wright - Learn Go in 12 minutes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=yyUHQIec83I">Techworld with Nana - Golang full course - 3 hours 24 mins&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.pluralsight.com/courses/go-fundamentals">&lt;strong>NOT FREE&lt;/strong> Nigel Poulton Pluralsight - Go Fundamentals - 3 hours 26 mins&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=YS4e4q9oBaU&amp;amp;t=1025s">FreeCodeCamp - Learn Go Programming - Golang Tutorial for Beginners&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/playlist?list=PLRAV69dS1uWSR89FRQGZ6q9BR2b44Tr9N">Hitesh Choudhary - Complete playlist&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Увидимся на &lt;a href="../day09">9-й день&lt;/a>&lt;/p></description></item><item><title>9. Как работает hello-world на Golang</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day09/</link><pubDate>Fri, 29 Apr 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day09/</guid><description>&lt;h2 id="разберемся-как-работает-hello-world">Разберемся как работает hello-world&lt;/h2>
+&lt;h3 id="как-работает-go">Как работает Go&lt;/h3>
+&lt;p>&lt;a href="../day08">Вчера&lt;/a> мы прошли процедуру установки Go на ПК, а затем создали наше первое приложение Go.&lt;/p>
+&lt;p>В этом разделе мы собираемся глубже изучить код и понять еще несколько вещей о языке Go.&lt;/p>
+&lt;h3 id="что-такое-компиляция">Что такое компиляция?&lt;/h3>
+&lt;p>Прежде чем мы перейдем к 6 строкам кода Hello World, которые написали &lt;a href="../day08">вчера&lt;/a>, нам нужно немного разобраться в компиляции.&lt;/p>
+&lt;p>Языки программирования, которые мы обычно используем, такие как Python, Java, Go и C++, являются языками высокого уровня. Это означает, что они удобочитаемы для человека, но когда машина пытается выполнить программу, она должна быть в форме, понятной машине. Мы должны перевести наш человекочитаемый код в машинный код, что называется компиляцией.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day9_Go1.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Из приведенного выше вы можете видеть, что мы сделали в &lt;a href="https://romankurnovskii.com/ru/tracks/90daysofdevops/day08/">День 8&lt;/a> - мы создали простой Hello World main.go, а затем использовали команду &lt;code>go build main.go&lt;/code> для компиляции нашего исполняемого файла.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">package&lt;/span> main
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#4070a0">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">func&lt;/span> &lt;span style="color:#06287e">main&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fmt.&lt;span style="color:#06287e">Println&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Hello #90DaysOfDevOps&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="что-такое-пакеты">Что такое пакеты?&lt;/h3>
+&lt;p>Пакет — это набор исходных файлов в одном каталоге, которые скомпилированы вместе. Мы можем упростить это еще больше, пакет — это набор файлов .go в одном каталоге. Помните нашу папку Hello из Дня 8? Когда вы попадете в более сложные программы Go, вы можете обнаружить, что у вас есть папка1, папка2 и папка3, содержащие разные файлы .go, которые составляют вашу программу с несколькими пакетами.&lt;/p>
+&lt;p>Мы используем пакеты, чтобы мы могли повторно использовать код других людей, нам не нужно писать все с нуля. Возможно, нам нужен калькулятор как часть нашей программы, вы, вероятно, могли бы найти существующий пакет Go, содержащий математические функции, которые вы могли бы импортировать в свой код, что в конечном итоге сэкономит вам много времени и усилий.&lt;/p>
+&lt;p>Go рекомендует организовывать код в пакеты, чтобы его было легко повторно использовать и поддерживать исходный код.&lt;/p>
+&lt;h3 id="hello-90daysofdevops-шаг-за-шагом">Hello #90DaysOfDevOps шаг за шагом&lt;/h3>
+&lt;p>Теперь давайте посмотрим на наш файл &lt;strong>main.go&lt;/strong> Hello #90DaysOfDevOps и пройдемся по строкам.
+&lt;p class="md__image">
+&lt;img
+src="../images/Day9_Go2.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>В первой строке у нас есть &lt;code>package main&lt;/code>, что означает, что этот файл принадлежит пакету с именем main. Все файлы .go должны принадлежать пакету, они также должны иметь «package something» в открывающей строке.&lt;/p>
+&lt;p>Пакет можно назвать как угодно. Мы должны назвать этот &lt;code>main&lt;/code>, так как это начальная точка программы, которая будет в этом пакете, это правило.
+&lt;p class="md__image">
+&lt;img
+src="../images/Day9_Go3.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Всякий раз, когда мы хотим скомпилировать и выполнить наш код, мы должны сообщить машине, где должно начаться выполнение. Мы делаем это, написав функцию с именем main. Машина будет искать функцию с именем main, чтобы найти точку входа в программу.&lt;/p>
+&lt;p>Функция — это блок кода, который может выполнять определенную задачу и может использоваться во всей программе.&lt;/p>
+&lt;p>Вы можете объявить функцию с любым именем, используя &lt;code>func&lt;/code>, но в этом случае нам нужно назвать ее &lt;code>main&lt;/code>, так как именно здесь начинается код.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day9_Go4.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Далее мы рассмотрим строку 3 нашего кода, импорт, это в основном означает, что вы хотите добавить другой пакет в свою основную программу. &lt;strong>fmt&lt;/strong> — это стандартный пакет, используемый здесь, предоставленный Go, этот пакет содержит функцию &lt;code>Println()&lt;/code>, и, поскольку мы импортировали ее, мы можем использовать ее в строке 6. Существует ряд стандартных пакетов, которые вы можете включить в свою программу и используйте или повторно используйте их в своем коде, избавляя вас от необходимости писать с нуля.
+&lt;p class="md__image">
+&lt;img
+src="../images/Day9_Go5.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;code>Println()&lt;/code>, который у нас есть, — это способ записи в стандартный вывод на терминал, где когда-либо исполняемый файл был успешно выполнен. Не стесняйтесь изменять сообщение между скобками ().
+&lt;p class="md__image">
+&lt;img
+src="../images/Day9_Go6.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="tldr">TLDR&lt;/h3>
+&lt;p>&lt;em>&lt;a href="https://ru.wikipedia.org/wiki/TL;DR">Что такое TLDR&lt;/a>&lt;/em>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Строка 1&lt;/strong> = Этот файл будет находиться в пакете с именем &lt;code>main&lt;/code>, и его нужно назвать &lt;code>main&lt;/code>, поскольку он включает точку входа программы.&lt;/li>
+&lt;li>&lt;strong>Строка 3&lt;/strong> = Чтобы использовать &lt;code>Println()&lt;/code>, мы должны импортировать пакет fmt, чтобы использовать его в строке 6.&lt;/li>
+&lt;li>&lt;strong>Строка 5&lt;/strong> = фактическая начальная точка, это функция &lt;code>main&lt;/code>.&lt;/li>
+&lt;li>&lt;strong>Строка 6&lt;/strong> = Это позволит нам напечатать «Hello #90DaysOfDevOps» в нашей системе.&lt;/li>
+&lt;/ul>
+&lt;h2 id="источники">Источники&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://pkg.go.dev/std">Стандартная библиотека Go&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=h0zxh2TPN_I">Golang | Все Основы за 4 Часа Для Начинающих&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://insights.stackoverflow.com/survey/2021">StackOverflow 2021 Developer Survey&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=7pLqIIAqZD4&amp;amp;t=9s">Why we are choosing Golang to learn&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=C8LgvuEBraI&amp;amp;t=312s">Jake Wright - Learn Go in 12 minutes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=yyUHQIec83I">Techworld with Nana - Golang full course - 3 hours 24 mins&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.pluralsight.com/courses/go-fundamentals">&lt;strong>NOT FREE&lt;/strong> Nigel Poulton Pluralsight - Go Fundamentals - 3 hours 26 mins&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=YS4e4q9oBaU&amp;amp;t=1025s">FreeCodeCamp - Learn Go Programming - Golang Tutorial for Beginners&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/playlist?list=PLRAV69dS1uWSR89FRQGZ6q9BR2b44Tr9N">Hitesh Choudhary - Complete playlist&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Увидимся на &lt;a href="../day10">10-й день&lt;/a>&lt;/p></description></item></channel></rss>

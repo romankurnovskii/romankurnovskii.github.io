@@ -1,3 +1,399 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MACD on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/macd/</link><description>Recent content in MACD on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Thu, 15 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/macd/index.xml" rel="self" type="application/rss+xml"/><item><title>MACD - Moving Average Convergence Divergence</title><link>https://romankurnovskii.com/en/posts/trading-indicators/macd/</link><pubDate>Thu, 15 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/trading-indicators/macd/</guid><description>About The Moving Average Convergence Divergence (MACD) is a versatile trading indicator used in various forms of trading, including high-frequency trading (HFT).
-MACD is a trend-following momentum indicator that shows the relationship between two moving averages of a security’s price.
-Calculating Formula The MACD is calculated by subtracting the 26-period Exponential Moving Average (EMA) from the 12-period EMA. A 9-day EMA of the MACD, called the &amp;ldquo;signal line&amp;rdquo;, is then plotted on top of the MACD, functioning as a trigger for buy and sell signals.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MACD on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/macd/</link><description>Recent content in MACD on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 15 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/macd/index.xml" rel="self" type="application/rss+xml"/><item><title>MACD - Moving Average Convergence Divergence</title><link>https://romankurnovskii.com/en/posts/trading-indicators/macd/</link><pubDate>Thu, 15 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/trading-indicators/macd/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>The Moving Average Convergence Divergence (MACD) is a versatile trading indicator used in various forms of trading, including high-frequency trading (HFT).&lt;/p>
+&lt;p>MACD is a trend-following momentum indicator that shows the &lt;mark>relationship between two moving averages&lt;/mark> of a security’s price.&lt;/p>
+&lt;h2 id="calculating">Calculating&lt;/h2>
+&lt;h3 id="formula">Formula&lt;/h3>
+&lt;p>The MACD is calculated by subtracting the &lt;strong>26-period&lt;/strong> Exponential Moving Average (&lt;strong>EMA&lt;/strong>) from the &lt;strong>12-period&lt;/strong> &lt;strong>EMA&lt;/strong>. A &lt;strong>9-day EMA&lt;/strong> of the MACD, called the &amp;ldquo;signal line&amp;rdquo;, is then plotted on top of the MACD, functioning as a trigger for buy and sell signals.&lt;/p>
+&lt;p>Here&amp;rsquo;s the &lt;nark>formula&lt;/mark> for the MACD:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bb60d5">MACD&lt;/span> &lt;span style="color:#666">=&lt;/span> 12-Period EMA − 26-Period EMA
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To calculate the signal line, you take the 9-period EMA of the MACD.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>Signal &lt;span style="color:#bb60d5">Line&lt;/span> &lt;span style="color:#666">=&lt;/span> 9-Period EMA of MACD
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;p>Since MACD requires 26 periods to start, we&amp;rsquo;ll calculate from the 26th minute:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Minute&lt;/th>
+&lt;th>Open&lt;/th>
+&lt;th>High&lt;/th>
+&lt;th>Low&lt;/th>
+&lt;th>Close&lt;/th>
+&lt;th>EMA12&lt;/th>
+&lt;th>EMA26&lt;/th>
+&lt;th>EMA9 (Signal)&lt;/th>
+&lt;th>MACD&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>$10.0&lt;/td>
+&lt;td>$11.0&lt;/td>
+&lt;td>$9.5&lt;/td>
+&lt;td>$10.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>$10.1&lt;/td>
+&lt;td>$12.1&lt;/td>
+&lt;td>$10.0&lt;/td>
+&lt;td>$12.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>$12.2&lt;/td>
+&lt;td>$15.2&lt;/td>
+&lt;td>$12.0&lt;/td>
+&lt;td>$15.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4&lt;/td>
+&lt;td>$15.1&lt;/td>
+&lt;td>$15.1&lt;/td>
+&lt;td>$13.9&lt;/td>
+&lt;td>$14.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td>$14.1&lt;/td>
+&lt;td>$16.1&lt;/td>
+&lt;td>$14.0&lt;/td>
+&lt;td>$16.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>6&lt;/td>
+&lt;td>$16.1&lt;/td>
+&lt;td>$16.1&lt;/td>
+&lt;td>$14.9&lt;/td>
+&lt;td>$15.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>7&lt;/td>
+&lt;td>$15.1&lt;/td>
+&lt;td>$17.1&lt;/td>
+&lt;td>$15.0&lt;/td>
+&lt;td>$17.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>8&lt;/td>
+&lt;td>$17.1&lt;/td>
+&lt;td>$17.1&lt;/td>
+&lt;td>$15.9&lt;/td>
+&lt;td>$16.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>9&lt;/td>
+&lt;td>$16.1&lt;/td>
+&lt;td>$18.1&lt;/td>
+&lt;td>$16.0&lt;/td>
+&lt;td>$18.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>Starts here&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>10&lt;/td>
+&lt;td>$18.1&lt;/td>
+&lt;td>$18.1&lt;/td>
+&lt;td>$16.9&lt;/td>
+&lt;td>$17.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>11&lt;/td>
+&lt;td>$17.1&lt;/td>
+&lt;td>$19.1&lt;/td>
+&lt;td>$17.0&lt;/td>
+&lt;td>$19.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>12&lt;/td>
+&lt;td>$19.1&lt;/td>
+&lt;td>$19.1&lt;/td>
+&lt;td>$17.9&lt;/td>
+&lt;td>$18.0&lt;/td>
+&lt;td>Starts here&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>13&lt;/td>
+&lt;td>$18.1&lt;/td>
+&lt;td>$20.1&lt;/td>
+&lt;td>$18.0&lt;/td>
+&lt;td>$20.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>14&lt;/td>
+&lt;td>$20.1&lt;/td>
+&lt;td>$21.1&lt;/td>
+&lt;td>$20.0&lt;/td>
+&lt;td>$21.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>15&lt;/td>
+&lt;td>$21.1&lt;/td>
+&lt;td>$21.1&lt;/td>
+&lt;td>$19.9&lt;/td>
+&lt;td>$20.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>16&lt;/td>
+&lt;td>$20.1&lt;/td>
+&lt;td>$22.1&lt;/td>
+&lt;td>$20.0&lt;/td>
+&lt;td>$21.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>17&lt;/td>
+&lt;td>$21.1&lt;/td>
+&lt;td>$23.1&lt;/td>
+&lt;td>$21.0&lt;/td>
+&lt;td>$22.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>18&lt;/td>
+&lt;td>$22.1&lt;/td>
+&lt;td>$24.1&lt;/td>
+&lt;td>$22.0&lt;/td>
+&lt;td>$23.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>19&lt;/td>
+&lt;td>$23.1&lt;/td>
+&lt;td>$25.1&lt;/td>
+&lt;td>$23.0&lt;/td>
+&lt;td>$24.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>20&lt;/td>
+&lt;td>$24.1&lt;/td>
+&lt;td>$26.1&lt;/td>
+&lt;td>$24.0&lt;/td>
+&lt;td>$25.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>21&lt;/td>
+&lt;td>$25.1&lt;/td>
+&lt;td>$27.1&lt;/td>
+&lt;td>$25.0&lt;/td>
+&lt;td>$26.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>22&lt;/td>
+&lt;td>$26.1&lt;/td>
+&lt;td>$28.1&lt;/td>
+&lt;td>$26.0&lt;/td>
+&lt;td>$27.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>23&lt;/td>
+&lt;td>$27.1&lt;/td>
+&lt;td>$29.1&lt;/td>
+&lt;td>$27.0&lt;/td>
+&lt;td>$28.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>24&lt;/td>
+&lt;td>$28.1&lt;/td>
+&lt;td>$30.1&lt;/td>
+&lt;td>$28.0&lt;/td>
+&lt;td>$29.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>25&lt;/td>
+&lt;td>$29.1&lt;/td>
+&lt;td>$31.1&lt;/td>
+&lt;td>$29.0&lt;/td>
+&lt;td>$30.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>26&lt;/td>
+&lt;td>$30.1&lt;/td>
+&lt;td>$32.1&lt;/td>
+&lt;td>$30.0&lt;/td>
+&lt;td>$31.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Starts here&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Starts here&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>27&lt;/td>
+&lt;td>$31.1&lt;/td>
+&lt;td>$33.1&lt;/td>
+&lt;td>$31.0&lt;/td>
+&lt;td>$32.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>28&lt;/td>
+&lt;td>$32.1&lt;/td>
+&lt;td>$34.1&lt;/td>
+&lt;td>$32.0&lt;/td>
+&lt;td>$33.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>29&lt;/td>
+&lt;td>$33.1&lt;/td>
+&lt;td>$35.1&lt;/td>
+&lt;td>$33.0&lt;/td>
+&lt;td>$34.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>30&lt;/td>
+&lt;td>$34.1&lt;/td>
+&lt;td>$36.1&lt;/td>
+&lt;td>$34.0&lt;/td>
+&lt;td>$35.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>In python it can be calculated in the following way:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">pandas&lt;/span> &lt;span style="color:#007020;font-weight:bold">as&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">pd&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Assuming &amp;#39;df&amp;#39; is your DataFrame and &amp;#39;Close&amp;#39; is the column with closing prices&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df[&lt;span style="color:#4070a0">&amp;#39;EMA12&amp;#39;&lt;/span>] &lt;span style="color:#666">=&lt;/span> df[&lt;span style="color:#4070a0">&amp;#39;Close&amp;#39;&lt;/span>]&lt;span style="color:#666">.&lt;/span>ewm(span&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">12&lt;/span>, adjust&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">False&lt;/span>)&lt;span style="color:#666">.&lt;/span>mean()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df[&lt;span style="color:#4070a0">&amp;#39;EMA26&amp;#39;&lt;/span>] &lt;span style="color:#666">=&lt;/span> df[&lt;span style="color:#4070a0">&amp;#39;Close&amp;#39;&lt;/span>]&lt;span style="color:#666">.&lt;/span>ewm(span&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">26&lt;/span>, adjust&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">False&lt;/span>)&lt;span style="color:#666">.&lt;/span>mean()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df[&lt;span style="color:#4070a0">&amp;#39;MACD&amp;#39;&lt;/span>] &lt;span style="color:#666">=&lt;/span> df[&lt;span style="color:#4070a0">&amp;#39;EMA12&amp;#39;&lt;/span>] &lt;span style="color:#666">-&lt;/span> df[&lt;span style="color:#4070a0">&amp;#39;EMA26&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df[&lt;span style="color:#4070a0">&amp;#39;Signal&amp;#39;&lt;/span>] &lt;span style="color:#666">=&lt;/span> df[&lt;span style="color:#4070a0">&amp;#39;MACD&amp;#39;&lt;/span>]&lt;span style="color:#666">.&lt;/span>ewm(span&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">9&lt;/span>, adjust&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">False&lt;/span>)&lt;span style="color:#666">.&lt;/span>mean()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="pros-and-cons">Pros and Cons&lt;/h2>
+&lt;p>&lt;strong>Pros:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Trend Identification: MACD can identify the &lt;strong>start of a trend&lt;/strong>, providing good entry points.&lt;/li>
+&lt;li>Signal Line Crossovers: The MACD&amp;rsquo;s signal line can provide clear buy and sell signals.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Cons:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>False Signals: Like any indicator, MACD can produce &lt;strong>false signals&lt;/strong>, particularly in &lt;strong>volatile markets&lt;/strong>.&lt;/li>
+&lt;li>Lag: MACD can sometimes lag behind the market because it’s a trend-following indicator.&lt;/li>
+&lt;li>It may not work well in ranging (non-trending) markets, where price movements can be random.&lt;/li>
+&lt;/ul>
+&lt;h2 id="example-of-signals">Example of signals&lt;/h2>
+&lt;p>&lt;strong>True Positive:&lt;/strong>&lt;/p>
+&lt;p>A true positive in MACD is a situation where the MACD line crosses &lt;strong>above the signal line&lt;/strong> and the &lt;strong>price goes up&lt;/strong>, indicating a strong bullish signal, or the MACD line crosses &lt;strong>below the signal line&lt;/strong> and the &lt;strong>price goes down&lt;/strong>, indicating a strong bearish signal.&lt;/p>
+&lt;p>These signals can help traders decide when to enter or exit trades.&lt;/p>
+&lt;p>&lt;strong>False Positive:&lt;/strong>&lt;/p>
+&lt;p>A false positive in MACD is typically a situation where the MACD line crosses above the signal line (potential buy signal), but the price does not go up, or the MACD line crosses below the signal line (potential sell signal), but the price does not go down. It&amp;rsquo;s important to confirm MACD signals with other indicators or patterns to avoid false positives.&lt;/p>
+&lt;h2 id="use-in-real-trading">Use in Real Trading&lt;/h2>
+&lt;p>In a real trading scenario, traders often use MACD in conjunction with other indicators to confirm signals and minimize risks. For example, a trader may use the Relative Strength Index (&lt;strong>RSI&lt;/strong>) together with MACD.&lt;/p>
+&lt;p>If MACD gives a buy signal (MACD line crosses above the signal line), and RSI is below 30 (indicating an oversold condition), the trader may consider this as a strong buy signal.&lt;/p>
+&lt;h2 id="python-implementation">Python Implementation&lt;/h2>
+&lt;p>
+&lt;a href="https://romankurnovskii.com//jupyter/macd.html"
+>Click here to view this notebook in full screen&lt;/a
+>
+&lt;/p>
+&lt;iframe
+src="https://romankurnovskii.com//jupyter/macd.html"
+style="height:1400px;width:100%;border:none;overflow:hidden;"
+scrolling="no"
+>&lt;/iframe></description></item></channel></rss>

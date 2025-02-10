@@ -1,6 +1,406 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docker on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/docker/</link><description>Recent content in Docker on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Thu, 24 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/docker/index.xml" rel="self" type="application/rss+xml"/><item><title>Interactive vs. Non-Interactive Users in Linux</title><link>https://romankurnovskii.com/en/posts/linux-interactive-non-interactive-users/</link><pubDate>Thu, 24 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux-interactive-non-interactive-users/</guid><description>Characteristics In a Linux environment, users can be broadly categorized as &amp;ldquo;interactive&amp;rdquo; and &amp;ldquo;non-interactive&amp;rdquo;. These distinctions stem from how these user accounts interact (or don&amp;rsquo;t interact) with the system.
-Definition Interactive Users: These are users who interact directly with the system, usually through a shell. When you log into a computer using SSH or a terminal, you&amp;rsquo;re operating as an interactive user. Non-Interactive Users: These users are designed to perform specific tasks without direct human intervention. Examples include system accounts running services like apache or mysql.</description></item><item><title>Setup subdomains on VPS CentOS</title><link>https://romankurnovskii.com/en/posts/vps-docker-subdomains-setup/</link><pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/vps-docker-subdomains-setup/</guid><description>TLDR Code sources
-Create Projects Creating three example projects:
-node.js express server that returns json on request another node.js express server static html page Place projects data in dir &amp;lsquo;projects&amp;rsquo;.
-Structure:
-└── project ├── Dockerfile ├── nginx.conf ├── projects | ├── 1 | | ├── app.js | | └── package.json | ├── 2 | | ├── app.js | | └── package.json | └── 3 | └── index.html └── start.sh Nginx setup Server needs to &amp;ldquo;understand&amp;rdquo; the initial subdomain and where to forward.</description></item><item><title>Top Docker Commands</title><link>https://romankurnovskii.com/en/posts/docker-commands/</link><pubDate>Tue, 07 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/docker-commands/</guid><description>most popular docker images ## lists the images docker pull imagename ## Pull an image or a repository from a registry docker ps -a ## See a list of all containers, even the ones not running docker build -t imagename . ## Create image using this directory's Dockerfile docker run -p 4000:80 imagename ## Run &amp;quot;imagename&amp;quot; mapping port 4000 to 80 docker rmi ## removes the image docker rm ## removes the container docker stop ## stops the container docker volume ls ## lists the volumes docker kill ## kills the container docker logs ## see logs docker inspect ## shows all the info of a container docker docker cp ## Copy files/folders between a container and the local filesystem docker pull imagename ## Pull an image or a repository from a registry docker build -t imagename .</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docker on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/docker/</link><description>Recent content in Docker on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 24 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/docker/index.xml" rel="self" type="application/rss+xml"/><item><title>Interactive vs. Non-Interactive Users in Linux</title><link>https://romankurnovskii.com/en/posts/linux-interactive-non-interactive-users/</link><pubDate>Thu, 24 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux-interactive-non-interactive-users/</guid><description>&lt;h2 id="characteristics">Characteristics&lt;/h2>
+&lt;p>In a Linux environment, users can be broadly categorized as &amp;ldquo;interactive&amp;rdquo; and &amp;ldquo;non-interactive&amp;rdquo;. These distinctions stem from how these user accounts interact (or don&amp;rsquo;t interact) with the system.&lt;/p>
+&lt;h2 id="definition">Definition&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Interactive Users:&lt;/strong> These are users who interact directly with the system, usually through a shell. When you log into a computer using SSH or a terminal, you&amp;rsquo;re operating as an interactive user.&lt;/li>
+&lt;li>&lt;strong>Non-Interactive Users:&lt;/strong> These users are designed to perform specific tasks without direct human intervention. Examples include system accounts running services like &lt;em>apache&lt;/em> or &lt;em>mysql&lt;/em>.&lt;/li>
+&lt;/ul>
+&lt;h2 id="interaction-usage-environment">Interaction, Usage, Environment&lt;/h2>
+&lt;p>&lt;strong>Interaction:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Interactive: Engages with the system via interfaces like shells.&lt;/li>
+&lt;li>Non-Interactive: Executes tasks automatically, often without a shell or user interface.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Usage:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Interactive: Utilized for general-purpose tasks, from browsing directories to installing software.&lt;/li>
+&lt;li>Non-Interactive: Specific to particular duties, often system-related.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Environment:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Interactive: Has a full user environment. This includes a &lt;code>HOME&lt;/code> directory, user-specific settings, etc.&lt;/li>
+&lt;li>Non-Interactive: Limited or no user environment. Typically lacks things like a &lt;code>HOME&lt;/code> directory.&lt;/li>
+&lt;/ul>
+&lt;h2 id="creating-user">Creating user&lt;/h2>
+&lt;p>When creating users in Linux, there&amp;rsquo;s often no distinction between interactive and non-interactive users. The difference arises in &lt;mark>how the user is utilized&lt;/mark>. However, for security and operational reasons, non-interactive users might have restricted shells or no shell at all.&lt;/p>
+&lt;p>&lt;strong>Why Not Simply Create a User and Use It Non-Interactively?&lt;/strong>&lt;/p>
+&lt;p>Even if a user is created as interactive, it can be used non-interactively. However, for security reasons, services or tasks might be assigned to users with restricted permissions or shells to minimize potential risks.&lt;/p>
+&lt;h2 id="practice">Practice&lt;/h2>
+&lt;h3 id="manual">Manual&lt;/h3>
+&lt;p>Create a file &lt;code>Dockerfile&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-dockerfile" data-lang="dockerfile">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">FROM&lt;/span>&lt;span style="color:#4070a0"> ubuntu:20.04&lt;/span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#60a0b0;font-style:italic">## Create interactive and non-interactive users&lt;/span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> useradd interactiveUser &lt;span style="color:#666">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> useradd -s /sbin/nologin noninteractiveUser&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Build image&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker build -t custom-users-ubuntu .
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Connect/Switch to each user:&lt;/strong>&lt;/p>
+&lt;p>For interactiveUser:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>❯ docker run -it custom-users-ubuntu su - interactiveUser
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>su: warning: cannot change directory to /home/interactiveUser: No such file or directory
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ id
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bb60d5">uid&lt;/span>&lt;span style="color:#666">=&lt;/span>1000&lt;span style="color:#666">(&lt;/span>interactiveUser&lt;span style="color:#666">)&lt;/span> &lt;span style="color:#bb60d5">gid&lt;/span>&lt;span style="color:#666">=&lt;/span>1000&lt;span style="color:#666">(&lt;/span>interactiveUser&lt;span style="color:#666">)&lt;/span> &lt;span style="color:#bb60d5">groups&lt;/span>&lt;span style="color:#666">=&lt;/span>1000&lt;span style="color:#666">(&lt;/span>interactiveUser&lt;span style="color:#666">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For noninteractiveUser (This will not give a shell because of the nologin shell):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>❯ docker run -it custom-users-ubuntu su - noninteractiveUser
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>su: warning: cannot change directory to /home/noninteractiveUser: No such file or directory
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>This account is currently not available.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Verify that noninteractiveUser exists:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>❯ docker run -it custom-users-ubuntu bash
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>root@495500b9c069:/## cat /etc/passwd
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>root:x:0:0:root:/root:/bin/bash
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>interactiveUser:x:1000:1000::/home/interactiveUser:/bin/sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>noninteractiveUser:x:1001:1001::/home/noninteractiveUser:/sbin/nologin
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Run commands for each user:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>You&amp;rsquo;ll find that the interactiveUser can run commands, but the noninteractiveUser cannot due to its restricted shell.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Show difference in environments:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>❯ docker run -it custom-users-ubuntu /bin/bash -c &lt;span style="color:#4070a0">&amp;#34;su - interactiveUser -c env &amp;gt; /tmp/interactiveEnv; su - noninteractiveUser -c env &amp;gt; /tmp/noninteractiveEnv; diff /tmp/interactiveEnv /tmp/noninteractiveEnv&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>su: warning: cannot change directory to /home/interactiveUser: No such file or directory
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>su: warning: cannot change directory to /home/noninteractiveUser: No such file or directory
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>1,8c1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt; &lt;span style="color:#bb60d5">MAIL&lt;/span>&lt;span style="color:#666">=&lt;/span>/var/mail/interactiveUser
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt; &lt;span style="color:#bb60d5">USER&lt;/span>&lt;span style="color:#666">=&lt;/span>interactiveUser
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt; &lt;span style="color:#bb60d5">HOME&lt;/span>&lt;span style="color:#666">=&lt;/span>/home/interactiveUser
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt; &lt;span style="color:#bb60d5">LOGNAME&lt;/span>&lt;span style="color:#666">=&lt;/span>interactiveUser
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt; &lt;span style="color:#bb60d5">TERM&lt;/span>&lt;span style="color:#666">=&lt;/span>xterm
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt; &lt;span style="color:#bb60d5">PATH&lt;/span>&lt;span style="color:#666">=&lt;/span>/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt; &lt;span style="color:#bb60d5">SHELL&lt;/span>&lt;span style="color:#666">=&lt;/span>/bin/sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt; &lt;span style="color:#bb60d5">PWD&lt;/span>&lt;span style="color:#666">=&lt;/span>/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>---
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; This account is currently not available.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Setup subdomains on VPS CentOS</title><link>https://romankurnovskii.com/en/posts/vps-docker-subdomains-setup/</link><pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/vps-docker-subdomains-setup/</guid><description>&lt;h2 id="tldr">TLDR&lt;/h2>
+&lt;p>&lt;a href="https://github.com/romankurnovskii/romankurnovskii.github.io/tree/main/content/posts/vps-docker-subdomains-setup/project">Code sources&lt;/a>&lt;/p>
+&lt;h2 id="create-projects">Create Projects&lt;/h2>
+&lt;p>Creating three example projects:&lt;/p>
+&lt;ol>
+&lt;li>node.js express server that returns json on request&lt;/li>
+&lt;li>another node.js express server&lt;/li>
+&lt;li>static html page&lt;/li>
+&lt;/ol>
+&lt;p>Place projects data in dir &amp;lsquo;projects&amp;rsquo;.&lt;/p>
+&lt;p>Structure:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>└── project
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ├── Dockerfile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ├── nginx.conf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ├── projects
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | ├── 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | | ├── app.js
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | | └── package.json
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | ├── 2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | | ├── app.js
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | | └── package.json
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | └── 3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> | └── index.html
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> └── start.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="nginx-setup">Nginx setup&lt;/h2>
+&lt;p>Server needs to &amp;ldquo;understand&amp;rdquo; the initial subdomain and where to forward.&lt;/p>
+&lt;p>For this use reverse proxy&lt;/p>
+&lt;p>&lt;code>nginx.conf&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span style="display:flex;">&lt;span>worker_processes &lt;span style="color:#40a070">1&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>events {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> worker_connections &lt;span style="color:#40a070">1024&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>http {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sendfile on;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> listen &lt;span style="color:#40a070">80&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server_name mydomain1&lt;span style="color:#666">.&lt;/span>localhost;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> location &lt;span style="color:#666">/&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> proxy_pass http:&lt;span style="color:#666">//&lt;/span>localhost:&lt;span style="color:#40a070">3000&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> listen &lt;span style="color:#40a070">80&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server_name mydomain2&lt;span style="color:#666">.&lt;/span>localhost;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> location &lt;span style="color:#666">/&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> proxy_pass http:&lt;span style="color:#666">//&lt;/span>localhost:&lt;span style="color:#40a070">4000&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> listen &lt;span style="color:#40a070">80&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server_name mydomain3&lt;span style="color:#666">.&lt;/span>localhost;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> root &lt;span style="color:#666">/&lt;/span>&lt;span style="color:#007020;font-weight:bold">var&lt;/span>&lt;span style="color:#666">/&lt;/span>www&lt;span style="color:#666">/&lt;/span>domains&lt;span style="color:#666">/&lt;/span>mydomain_with_static_files;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> location &lt;span style="color:#666">/&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> try_files &lt;span style="color:#666">$&lt;/span>uri &lt;span style="color:#666">$&lt;/span>uri&lt;span style="color:#666">/&lt;/span> &lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">404&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="start-apps">Start apps&lt;/h2>
+&lt;p>To start js applications need to run &lt;code>node&lt;/code> command.&lt;/p>
+&lt;p>&lt;code>start.sh&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">#!/bin/sh
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Start the first app&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>node /opt/projects/1/app.js &amp;amp;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Start the second app&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>node /opt/projects/2/app.js &amp;amp;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Start nginx in the foreground&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>nginx -g &lt;span style="color:#4070a0">&amp;#39;daemon off;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="docker-file">Docker file&lt;/h2>
+&lt;p>Next, we&amp;rsquo;ll create a Dockerfile to define the &amp;lsquo;centos&amp;rsquo; Docker container where we can test our setup. Here&amp;rsquo;s what the Dockerfile looks like:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-dockerfile" data-lang="dockerfile">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">FROM&lt;/span>&lt;span style="color:#4070a0"> centos:latest&lt;/span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#60a0b0;font-style:italic"># fixes&lt;/span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> &lt;span style="color:#007020">cd&lt;/span> /etc/yum.repos.d/&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> sed -i &lt;span style="color:#4070a0">&amp;#39;s/mirrorlist/#mirrorlist/g&amp;#39;&lt;/span> /etc/yum.repos.d/CentOS-*&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> sed -i &lt;span style="color:#4070a0">&amp;#39;s|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g&amp;#39;&lt;/span> /etc/yum.repos.d/CentOS-*&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> yum update -y &lt;span style="color:#666">&amp;amp;&amp;amp;&lt;/span> yum install -y curl vim git&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> curl -sL https://rpm.nodesource.com/setup_14.x | bash -&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> yum install -y nodejs&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#60a0b0;font-style:italic"># Install Nginx&lt;/span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> yum install -y epel-release&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> yum install -y nginx&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> mkdir -p /opt/projects/1&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">ADD&lt;/span> ./projects/1 /opt/projects/1&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">WORKDIR&lt;/span>&lt;span style="color:#4070a0"> /opt/projects/1&lt;/span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> npm install&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> mkdir -p /opt/projects/2&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">ADD&lt;/span> ./projects/2 /opt/projects/2&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">WORKDIR&lt;/span>&lt;span style="color:#4070a0"> /opt/projects/2&lt;/span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> npm install&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> mkdir -p /var/www/domains/mydomain_with_static_files&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">ADD&lt;/span> ./projects/3 /var/www/domains/mydomain_with_static_files&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">COPY&lt;/span> start.sh /opt/projects/start.sh&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> chmod +x /opt/projects/start.sh&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">EXPOSE&lt;/span>&lt;span style="color:#4070a0"> 80&lt;/span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">COPY&lt;/span> nginx.conf /etc/nginx/nginx.conf&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> ls -la /etc/nginx/&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#60a0b0;font-style:italic"># CMD [&amp;#34;nginx&amp;#34;, &amp;#34;-g&amp;#34;, &amp;#34;daemon off;&amp;#34;]&lt;/span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">CMD&lt;/span> [&lt;span style="color:#4070a0">&amp;#34;/opt/projects/start.sh&amp;#34;&lt;/span>]&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="test-run">Test run&lt;/h2>
+&lt;ol>
+&lt;li>Build docker image and run&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker build -t myserver .
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker run -p 80:80 myserver
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>Open in browser on host:
+&lt;ol>
+&lt;li>project 1: &lt;a href="http://mydomain1.localhost">http://mydomain1.localhost&lt;/a>&lt;/li>
+&lt;li>project 2: &lt;a href="http://mydomain2.localhost">http://mydomain2.localhost&lt;/a>&lt;/li>
+&lt;li>project 3: &lt;a href="http://mydomain3.localhost">http://mydomain3.localhost&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol></description></item><item><title>Top Docker Commands</title><link>https://romankurnovskii.com/en/posts/docker-commands/</link><pubDate>Tue, 07 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/docker-commands/</guid><description>&lt;h2 id="most-popular">most popular&lt;/h2>
+&lt;pre>&lt;code>docker images ## lists the images
+docker pull imagename ## Pull an image or a repository from a registry
+docker ps -a ## See a list of all containers, even the ones not running
+docker build -t imagename . ## Create image using this directory's Dockerfile
+docker run -p 4000:80 imagename ## Run &amp;quot;imagename&amp;quot; mapping port 4000 to 80
+docker rmi ## removes the image
+docker rm ## removes the container
+docker stop ## stops the container
+docker volume ls ## lists the volumes
+docker kill ## kills the container
+docker logs ## see logs
+docker inspect ## shows all the info of a container
+&lt;/code>&lt;/pre>
+&lt;h2 id="docker">docker&lt;/h2>
+&lt;pre>&lt;code>docker cp ## Copy files/folders between a container and the local filesystem
+docker pull imagename ## Pull an image or a repository from a registry
+docker build -t imagename . ## Create image using this directory's Dockerfile
+docker run -p 4000:80 imagename ## Run &amp;quot;imagename&amp;quot; mapping port 4000 to 80
+docker run -d -p 4000:80 imagename ## Same thing, but in detached mode
+docker exec -it [container-id] bash ## Enter a running container
+docker ps ## See a list of all running containers
+docker stop &amp;lt;hash&amp;gt; ## Gracefully stop the specified container
+docker ps -a ## See a list of all containers, even the ones not running
+docker kill &amp;lt;hash&amp;gt; ## Force shutdown of the specified container
+docker rm &amp;lt;hash&amp;gt; ## Remove the specified container from this machine
+docker rm -f &amp;lt;hash&amp;gt; ## Remove force specified container from this machine
+docker rm $(docker ps -a -q) ## Remove all containers from this machine
+docker images -a ## Show all images on this machine
+docker rmi &amp;lt;imagename&amp;gt; ## Remove the specified image from this machine
+docker rmi $(docker images -q) ## Remove all images from this machine
+docker top &amp;lt;container-id&amp;gt; ## Display the running processes of a container
+docker logs &amp;lt;container-id&amp;gt; -f ## Live tail a container's logs
+docker login ## Log in this CLI session using your Docker credentials
+docker tag &amp;lt;image&amp;gt; username/repository:tag ## Tag &amp;lt;image&amp;gt; for upload to registry
+docker push username/repository:tag ## Upload tagged image to registry
+docker run username/repository:tag ## Run image from a registry
+docker system prune ## Remove all unused containers, networks, images (both dangling and unreferenced), and optionally, volumes. (Docker 17.06.1-ce and superior)
+docker system prune -a ## Remove all unused containers, networks, images not just dangling ones (Docker 17.06.1-ce and superior)
+docker volume prune ## Remove all unused local volumes
+docker network prune ## Remove all unused networks
+&lt;/code>&lt;/pre>
+&lt;h2 id="docker-compose">docker compose&lt;/h2>
+&lt;pre>&lt;code>docker-compose up # Create and start containers
+docker-compose up -d # Create and start containers in detached mode
+docker-compose down # Stop and remove containers, networks, images, and volumes
+docker-compose logs # View output from containers
+docker-compose restart # Restart all service
+docker-compose pull # Pull all image service
+docker-compose build # Build all image service
+docker-compose config # Validate and view the Compose file
+docker-compose scale &amp;lt;service_name&amp;gt;=&amp;lt;replica&amp;gt; # Scale special service(s)
+docker-compose top # Display the running processes
+docker-compose run -rm -p 2022:22 web bash # Start web service and runs bash as its command, remove old container.
+&lt;/code>&lt;/pre>
+&lt;h2 id="docker-services">docker services&lt;/h2>
+&lt;pre>&lt;code>docker service create &amp;lt;options&amp;gt; &amp;lt;image&amp;gt; &amp;lt;command&amp;gt; # Create new service
+docker service inspect --pretty &amp;lt;service_name&amp;gt; # Display detailed information Service(s)
+docker service ls # List Services
+docker service ps # List the tasks of Services
+docker service scale &amp;lt;service_name&amp;gt;=&amp;lt;replica&amp;gt; # Scale special service(s)
+docker service update &amp;lt;options&amp;gt; &amp;lt;service_name&amp;gt; # Update Service options
+&lt;/code>&lt;/pre>
+&lt;h2 id="docker-stack">docker stack&lt;/h2>
+&lt;pre>&lt;code>docker stack ls # List all running applications on this Docker host
+docker stack deploy -c &amp;lt;composefile&amp;gt; &amp;lt;appname&amp;gt; # Run the specified Compose file
+docker stack services &amp;lt;appname&amp;gt; # List the services associated with an app
+docker stack ps &amp;lt;appname&amp;gt; # List the running containers associated with an app
+docker stack rm &amp;lt;appname&amp;gt; # Tear down an application
+&lt;/code>&lt;/pre>
+&lt;h2 id="docker-machine">docker machine&lt;/h2>
+&lt;pre>&lt;code>docker-machine create --driver virtualbox myvm1 # Create a VM (Mac, Win7, Linux)
+docker-machine create -d hyperv --hyperv-virtual-switch &amp;quot;myswitch&amp;quot; myvm1 # Win10
+docker-machine env myvm1 # View basic information about your node
+docker-machine ssh myvm1 &amp;quot;docker node ls&amp;quot; # List the nodes in your swarm
+docker-machine ssh myvm1 &amp;quot;docker node inspect &amp;lt;node ID&amp;gt;&amp;quot; # Inspect a node
+docker-machine ssh myvm1 &amp;quot;docker swarm join-token -q worker&amp;quot; # View join token
+docker-machine ssh myvm1 # Open an SSH session with the VM; type &amp;quot;exit&amp;quot; to end
+docker-machine ssh myvm2 &amp;quot;docker swarm leave&amp;quot; # Make the worker leave the swarm
+docker-machine ssh myvm1 &amp;quot;docker swarm leave -f&amp;quot; # Make master leave, kill swarm
+docker-machine start myvm1 # Start a VM that is currently not running
+docker-machine stop $(docker-machine ls -q) # Stop all running VMs
+docker-machine rm $(docker-machine ls -q) # Delete all VMs and their disk images
+docker-machine scp docker-compose.yml myvm1:~ # Copy file to node's home dir
+docker-machine ssh myvm1 &amp;quot;docker stack deploy -c &amp;lt;file&amp;gt; &amp;lt;app&amp;gt;&amp;quot; # Deploy an app
+&lt;/code>&lt;/pre>
+&lt;h2 id="options-for-popular-commands">Options for popular commands&lt;/h2>
+&lt;h3 id="docker-build">docker build&lt;/h3>
+&lt;p>&lt;a href="https://docs.docker.com/engine/reference/commandline/build/">Docs&lt;/a>
+Build an image from a Dockerfile.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker build &lt;span style="color:#666">[&lt;/span>DOCKERFILE PATH&lt;span style="color:#666">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Example&lt;/strong>&lt;/p>
+&lt;p>Build an image tagged &lt;code>my-org/my-image&lt;/code> where the Dockerfile can be found at
+&lt;code>/tmp/Dockerfile&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker build -t my-org:my-image -f /tmp/Dockerfile
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;code>--file -f&lt;/code> Path where to find the Dockerfile&lt;/li>
+&lt;li>&lt;code>--force-rm&lt;/code> Always remove intermediate containers&lt;/li>
+&lt;li>&lt;code>--no-cache&lt;/code> Do not use cache when building the image&lt;/li>
+&lt;li>&lt;code>--rm&lt;/code> Remove intermediate containers after a successful build (this is
+&lt;code>true&lt;/code>) by default&lt;/li>
+&lt;li>&lt;code>--tag -t&lt;/code> Name and optionally a tag in the ‘name:tag’ format&lt;/li>
+&lt;/ul>
+&lt;h3 id="docker-run">docker run&lt;/h3>
+&lt;p>&lt;a href="https://docs.docker.com/engine/reference/commandline/run/">Docs&lt;/a>&lt;/p>
+&lt;p>Creates and starts a container in one operation. Could be used to execute a
+single command as well as start a long-running container.&lt;/p>
+&lt;p>&lt;strong>Example&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker run -it ubuntu:latest /bin/bash
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will start a ubuntu container with the entrypoint &lt;code>/bin/bash&lt;/code>. Note that
+if you do not have the &lt;code>ubuntu&lt;/code> image downloaded it will download it before
+running it.&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>-it&lt;/code> This will not make the container you started shut down immediately, as
+it will create a pseudo-TTY session (&lt;code>-t&lt;/code>) and keep STDIN open (&lt;code>-i&lt;/code>)&lt;/li>
+&lt;li>&lt;code>--rm&lt;/code> Automatically remove the container when it exit. Otherwise it will be
+stored and visible running &lt;code>docker ps -a&lt;/code>.&lt;/li>
+&lt;li>&lt;code>--detach -d&lt;/code> Run container in background and print container ID&lt;/li>
+&lt;li>&lt;code>--volume -v&lt;/code> Bind mount a volume. Useful for accessing folders on your local
+disk inside your docker container, like configuration files or storage that
+should be persisted (database, logs etc.).&lt;/li>
+&lt;/ul>
+&lt;h3 id="docker-exec">docker exec&lt;/h3>
+&lt;p>&lt;a href="https://docs.docker.com/engine/reference/commandline/exec/">Docs&lt;/a>&lt;/p>
+&lt;p>Execute a command inside a &lt;strong>running&lt;/strong> container.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker &lt;span style="color:#007020">exec&lt;/span> &lt;span style="color:#666">[&lt;/span>CONTAINER ID&lt;span style="color:#666">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Example&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker &lt;span style="color:#007020">exec&lt;/span> &lt;span style="color:#666">[&lt;/span>CONTAINER ID&lt;span style="color:#666">]&lt;/span> touch /tmp/exec_works
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;code>--detach -d&lt;/code> Detached mode: run command in the background&lt;/li>
+&lt;li>&lt;code>-it&lt;/code> This will not make the container you started shut down immediately, as
+it will create a pseudo-TTY session (&lt;code>-t&lt;/code>) and keep STDIN open (&lt;code>-i&lt;/code>)&lt;/li>
+&lt;/ul>
+&lt;h3 id="docker-images">docker images&lt;/h3>
+&lt;p>&lt;a href="https://docs.docker.com/engine/reference/commandline/images/">Docs&lt;/a>&lt;/p>
+&lt;p>List all downloaded/created images.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker images
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;code>-q&lt;/code> Only show numeric IDs&lt;/li>
+&lt;/ul>
+&lt;h3 id="docker-inspect">docker inspect&lt;/h3>
+&lt;p>&lt;a href="https://docs.docker.com/engine/reference/commandline/inspect">Docs&lt;/a>&lt;/p>
+&lt;p>Shows all the info of a container.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker inspect &lt;span style="color:#666">[&lt;/span>CONTAINER ID&lt;span style="color:#666">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="docker-logs">docker logs&lt;/h3>
+&lt;p>&lt;a href="https://docs.docker.com/engine/reference/commandline/logs/">Docs&lt;/a>&lt;/p>
+&lt;p>Gets logs from container.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker logs &lt;span style="color:#666">[&lt;/span>CONTAINER ID&lt;span style="color:#666">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;code>--details&lt;/code> Log extra details&lt;/li>
+&lt;li>&lt;code>--follow -f&lt;/code> Follow log output. Do not stop when end of file is reached, but
+rather wait for additional data to be appended to the input.&lt;/li>
+&lt;li>&lt;code>--timestamps -t&lt;/code> Show timestamps&lt;/li>
+&lt;/ul>
+&lt;h3 id="docker-ps">docker ps&lt;/h3>
+&lt;p>&lt;a href="https://docs.docker.com/engine/reference/commandline/ps/">Docs&lt;/a>&lt;/p>
+&lt;p>Shows information about all running containers.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker ps
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;code>--all -a&lt;/code> Show all containers (default shows just running)&lt;/li>
+&lt;li>&lt;code>--filter -f&lt;/code> Filter output based on conditions provided, &lt;code>docker ps -f=&amp;quot;name=&amp;quot;example&amp;quot;&lt;/code>&lt;/li>
+&lt;li>&lt;code>--quiet -q&lt;/code> Only display numeric IDs&lt;/li>
+&lt;/ul>
+&lt;h3 id="docker-rmi">docker rmi&lt;/h3>
+&lt;p>&lt;a href="https://docs.docker.com/engine/reference/commandline/rmi/">Docs&lt;/a>&lt;/p>
+&lt;p>Remove one or more images.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker rmi &lt;span style="color:#666">[&lt;/span>IMAGE ID&lt;span style="color:#666">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;code>--force -f&lt;/code> Force removal of the image&lt;/li>
+&lt;/ul>
+&lt;h2 id="snippets">Snippets&lt;/h2>
+&lt;p>A collection of useful tips and tricks for Docker.&lt;/p>
+&lt;h3 id="delete-all-containers">Delete all containers&lt;/h3>
+&lt;p>&lt;strong>NOTE:&lt;/strong> This will remove ALL your containers.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker container prune
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>OR, if you&amp;rsquo;re using an older docker client:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker rm &lt;span style="color:#007020;font-weight:bold">$(&lt;/span>docker ps -a -q&lt;span style="color:#007020;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="delete-all-untagged-containers">Delete all untagged containers&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker image prune
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>OR, if you&amp;rsquo;re using an older docker client:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker rmi &lt;span style="color:#007020;font-weight:bold">$(&lt;/span>docker images | grep &lt;span style="color:#4070a0">&amp;#39;^&amp;lt;none&amp;gt;&amp;#39;&lt;/span> | awk &lt;span style="color:#4070a0">&amp;#39;{print $3}&amp;#39;&lt;/span>&lt;span style="color:#007020;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="remove-all-images">Remove all images&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker rmi --force &lt;span style="color:#007020;font-weight:bold">$(&lt;/span>docker images -q&lt;span style="color:#007020;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="remove-all-docker-images-with-none-tag">Remove all docker images with none tag&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker rmi --force &lt;span style="color:#007020;font-weight:bold">$(&lt;/span>docker images --filter &lt;span style="color:#4070a0">&amp;#34;dangling=true&amp;#34;&lt;/span> -q&lt;span style="color:#007020;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="see-all-space-docker-take-up">See all space Docker take up&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker system df
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="get-ip-address-of-running-container">Get IP address of running container&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker inspect &lt;span style="color:#666">[&lt;/span>CONTAINER ID&lt;span style="color:#666">]&lt;/span> | grep -wm1 IPAddress | cut -d &lt;span style="color:#4070a0">&amp;#39;&amp;#34;&amp;#39;&lt;/span> -f &lt;span style="color:#40a070">4&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="kill-all-running-containers">Kill all running containers&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker &lt;span style="color:#007020">kill&lt;/span> &lt;span style="color:#007020;font-weight:bold">$(&lt;/span>docker ps -q&lt;span style="color:#007020;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.docker.com/engine/reference/run/">docs.docker.com&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/wsargent/docker-cheat-sheet">docker-cheat-sheet&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/LeCoupa/awesome-cheatsheets/blob/master/tools/docker.sh">docker-cheat-sheet&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://sourabhbajaj.com/mac-setup/Docker/">https://sourabhbajaj.com/mac-setup/Docker/&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

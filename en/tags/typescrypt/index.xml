@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Typescrypt on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/typescrypt/</link><description>Recent content in Typescrypt on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Mon, 13 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/typescrypt/index.xml" rel="self" type="application/rss+xml"/><item><title>Solana SDK migration Guide (v1 → @solana/web3.js 2.x)</title><link>https://romankurnovskii.com/en/posts/solana-migration-v1-v2/</link><pubDate>Mon, 13 Jan 2025 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/solana-migration-v1-v2/</guid><description>&lt;p>The 2.x SDK leverages modern TypeScript features for enhanced type-safety, this means you get:&lt;/p>
+&lt;ul>
+&lt;li>More compile-time errors and fewer run time errors&lt;/li>
+&lt;li>Improved IDE completions and IntelliSense&lt;/li>
+&lt;li>Harder for bugs and mistakes to make it to production&lt;/li>
+&lt;/ul>
+&lt;p>Following incidents will result in type errors:&lt;/p>
+&lt;ul>
+&lt;li>Transaction missing a blockhash&lt;/li>
+&lt;li>Transaction missing a signature&lt;/li>
+&lt;li>Instruction missing an account&lt;/li>
+&lt;li>Lookup tables passed in legacy transactions&lt;/li>
+&lt;/ul>
+&lt;h2 id="installation">Installation&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>npm install --save @solana/web3.js@next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># This repository has been archived by the owner on Jan 10, 2025. Could be skipped&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm install --save @solana/spl-token@latest &lt;span style="color:#60a0b0;font-style:italic"># seems next point to an old version&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="types">Types&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-ts" data-lang="ts">&lt;span style="display:flex;">&lt;span>Finality &lt;span style="color:#666">-&amp;gt;&lt;/span> Commitment
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>connection: &lt;span style="color:#902000">Connection&lt;/span> &lt;span style="color:#666">-&amp;gt;&lt;/span> rpc: &lt;span style="color:#902000">ReturnType&lt;/span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">typeof&lt;/span> &lt;span style="color:#4070a0">createSolanaRpc&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">-&amp;gt;&lt;/span> rpcSubscriptions: &lt;span style="color:#902000">ReturnType&lt;/span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">typeof&lt;/span> &lt;span style="color:#4070a0">rpcSubscriptions&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>V1&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-ts" data-lang="ts">&lt;span style="display:flex;">&lt;span>connection: &lt;span style="color:#902000">Connection&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">export&lt;/span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> connection &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">new&lt;/span> Connection(process.env.RPC_URL&lt;span style="color:#666">!&lt;/span>, {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> wsEndpoint: &lt;span style="color:#902000">process.env.RPC_WSS_URL&lt;/span>&lt;span style="color:#666">!&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> commitment&lt;span style="color:#666">:&lt;/span> &lt;span style="color:#4070a0">&amp;#39;confirmed&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>});
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>V2&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-ts" data-lang="ts">&lt;span style="display:flex;">&lt;span>rpc: &lt;span style="color:#902000">ReturnType&lt;/span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">typeof&lt;/span> &lt;span style="color:#4070a0">createSolanaRpc&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">export&lt;/span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> rpc &lt;span style="color:#666">=&lt;/span> createSolanaRpc(process.env.RPC_URL&lt;span style="color:#666">!&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">export&lt;/span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> rpcSubscriptions &lt;span style="color:#666">=&lt;/span> createSolanaRpcSubscriptions(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> process.env.RPC_WSS_URL&lt;span style="color:#666">!&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>);
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>V1&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-ts" data-lang="ts">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">export&lt;/span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> owner: &lt;span style="color:#902000">Keypair&lt;/span> &lt;span style="color:#666">=&lt;/span> Keypair.fromSecretKey(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bs58.decode(process.env.WALLET_PRIVATE_KEY&lt;span style="color:#666">!&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>owner.publicKey &lt;span style="color:#666">-&amp;gt;&lt;/span> owner.address
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>V2&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-ts" data-lang="ts">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> bs58 &lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#4070a0">&amp;#39;bs58&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> { createKeyPairSignerFromBytes, KeyPairSigner } &lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#4070a0">&amp;#39;@solana/web3.js&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> owner: &lt;span style="color:#902000">KeyPairSigner&lt;/span> &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">await&lt;/span> createKeyPairSignerFromBytes(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bs58.decode(process.env.WALLET_PRIVATE_KEY&lt;span style="color:#666">!&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> );
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>V1&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>await connection.getAccountInfo(owner.publicKey)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>await connection.getTokenAccountsByOwner(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> owner.address,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> { programId: TOKEN_PROGRAM_ID }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> );
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>V2&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>await rpc.getAccountInfo(owner.address).send();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>await rpc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .getTokenAccountsByOwner(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> owner.address,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> { programId: address(TOKEN_PROGRAM_ID.toBase58()) },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> { commitment: &amp;#39;confirmed&amp;#39; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .send();
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="send-transactions">Send transactions&lt;/h2>
+&lt;p>V2&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-mysql" data-lang="mysql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">//&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#40a070">1&lt;/span>&lt;span style="color:#bbb"> &lt;/span>Crete&lt;span style="color:#bbb"> &lt;/span>function&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">`&lt;/span>sendAndConfirmTransaction&lt;span style="color:#666">`&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#666">//&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#40a070">2&lt;/span>&lt;span style="color:#bbb"> &lt;/span>Setup&lt;span style="color:#bbb"> &lt;/span>lifetime&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span>&lt;span style="color:#bbb"> &lt;/span>a&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#06287e">transaction&lt;/span>&lt;span style="color:#bbb"> &lt;/span>(Every&lt;span style="color:#bbb"> &lt;/span>transaction&lt;span style="color:#bbb"> &lt;/span>needs&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#007020;font-weight:bold">to&lt;/span>&lt;span style="color:#bbb"> &lt;/span>specify&lt;span style="color:#bbb"> &lt;/span>a&lt;span style="color:#bbb"> &lt;/span>valid&lt;span style="color:#bbb"> &lt;/span>lifetime&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span>&lt;span style="color:#bbb"> &lt;/span>it&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#007020;font-weight:bold">to&lt;/span>&lt;span style="color:#bbb"> &lt;/span>be&lt;span style="color:#bbb"> &lt;/span>accepted&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span>&lt;span style="color:#bbb"> &lt;/span>execution&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#007020;font-weight:bold">on&lt;/span>&lt;span style="color:#bbb"> &lt;/span>the&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">*&lt;/span>&lt;span style="color:#bbb"> &lt;/span>network.)&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#666">//&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#40a070">3&lt;/span>&lt;span style="color:#bbb"> &lt;/span>Crete&lt;span style="color:#bbb"> &lt;/span>transaction&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#666">//&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#40a070">1&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>const&lt;span style="color:#bbb"> &lt;/span>sendAndConfirmTransaction&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#06287e">sendAndConfirmTransactionFactory&lt;/span>(&lt;span style="">{&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#60a0b0;font-style:italic">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"> * The RPC implements a `sendTransaction` method which relays transactions to the network.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"> */&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>rpc,&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#60a0b0;font-style:italic">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"> * RPC subscriptions allow the transaction sender to subscribe to the status of our transaction.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"> * The sender will resolve when the transaction is reported to have been confirmed, or will
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"> * reject in the event of an error, or a timeout if the transaction lifetime is thought to have
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"> * expired.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"> */&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>rpcSubscriptions,&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="">}&lt;/span>);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>const&lt;span style="color:#bbb"> &lt;/span>&lt;span style="">{&lt;/span>&lt;span style="color:#bbb"> &lt;/span>value:&lt;span style="color:#bbb"> &lt;/span>latestBlockhash&lt;span style="color:#bbb"> &lt;/span>&lt;span style="">}&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>await&lt;span style="color:#bbb"> &lt;/span>rpc.&lt;span style="color:#06287e">getLatestBlockhash&lt;/span>().&lt;span style="color:#06287e">send&lt;/span>();&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>const&lt;span style="color:#bbb"> &lt;/span>transactionMessage&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#06287e">pipe&lt;/span>(&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#06287e">createTransactionMessage&lt;/span>(&lt;span style="">{&lt;/span>&lt;span style="color:#bbb"> &lt;/span>version:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#40a070">0&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="">}&lt;/span>),&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>tx&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">=&amp;gt;&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#06287e">setTransactionMessageFeePayer&lt;/span>(FEE_PAYER_ADDRESS,&lt;span style="color:#bbb"> &lt;/span>tx),&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>tx&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">=&amp;gt;&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#06287e">setTransactionMessageLifetimeUsingBlockhash&lt;/span>(latestBlockhash,&lt;span style="color:#bbb"> &lt;/span>tx),&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>tx&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">=&amp;gt;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#06287e">appendTransactionMessageInstructions&lt;/span>(&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>[&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#06287e">getTransferSolInstruction&lt;/span>(&lt;span style="">{&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>amount:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#06287e">lamports&lt;/span>(&lt;span style="color:#40a070">12345678&lt;/span>n),&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>destination:&lt;span style="color:#bbb"> &lt;/span>DESTINATION_ADDRESS,&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>source:&lt;span style="color:#bbb"> &lt;/span>SOURCE_ACCOUNT_SIGNER,&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="">}&lt;/span>),&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#06287e">getAddMemoInstruction&lt;/span>(&lt;span style="">{&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>memo:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#4070a0">&amp;#39;hello from @solana/web3.js&amp;#39;&lt;/span>,&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="">}&lt;/span>),&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>],&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>tx,&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>),&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>);&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="errors">Errors&lt;/h2>
+&lt;blockquote>
+&lt;blockquote>
+&lt;p>SolanaError: JSON-RPC error: The JSON sent is not a valid &lt;code>Request&lt;/code> object (Encoded binary (base 58) data should be less than 128 bytes, please use Base64 encoding.)&lt;/p>&lt;/blockquote>&lt;/blockquote>
+&lt;p>Fix by adding encoding:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-ts" data-lang="ts">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> encoding&lt;span style="color:#666">:&lt;/span> &lt;span style="color:#4070a0">&amp;#39;base64&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-ts" data-lang="ts">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> tokenAccountsResponse &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">await&lt;/span> connection
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .getTokenAccountsByOwner(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ownerPublicKey,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> programId: &lt;span style="color:#902000">address&lt;/span>(&lt;span style="color:#4070a0">&amp;#39;TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA&amp;#39;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> encoding&lt;span style="color:#666">:&lt;/span> &lt;span style="color:#4070a0">&amp;#39;base64&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .send();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// or
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> tokenAccountsResponse &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">await&lt;/span> connection
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .getTokenAccountsByOwner(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ownerPublicKey,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> programId: &lt;span style="color:#902000">address&lt;/span>(&lt;span style="color:#4070a0">&amp;#39;TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA&amp;#39;&lt;/span>),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> encoding&lt;span style="color:#666">:&lt;/span> &lt;span style="color:#4070a0">&amp;#39;jsonParsed&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .send();
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

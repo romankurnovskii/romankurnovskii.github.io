@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LinkedList on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/linkedlist/</link><description>Recent content in LinkedList on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Mon, 28 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/linkedlist/index.xml" rel="self" type="application/rss+xml"/><item><title>328. Odd Even Linked List</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/328/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/328/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/odd-even-linked-list/">LeetCode задача 328&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Дан односвязный список и задача переставить его узлы таким образом, чтобы все узлы с нечетными индексами шли перед всеми узлами с четными индексами.&lt;/p>
+&lt;h2 id="вариант-решения-1">Вариант решения 1&lt;/h2>
+&lt;p>Рассмотрим вариант решения более простой для понимания и реализации.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Использовать два связных списка.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Во время прохода по связному списку указатель для чётных узлов добавлять связанный список с четными, то же самое делать с нечетными.&lt;/p>
+&lt;p>В конце прохода список с четными узлами добавить в конец списка с нечетными узлами.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Объявляем 2 пустых связных списка (&lt;code>even_head&lt;/code>, &lt;code>odd_head&lt;/code>)&lt;/li>
+&lt;li>Объявляем два указателя на каждый список (&lt;code>even&lt;/code>,`odd). Данные указатели будут перемещаться по своим спискам.&lt;/li>
+&lt;li>Проходим по списку &lt;code>head&lt;/code>:
+&lt;ol>
+&lt;li>если текущий указатель - четный, добавляем его в &lt;code>even_head&lt;/code> (обновляем значение указателя списка).&lt;/li>
+&lt;li>Переставляем указатель на следующий. &lt;code>even = even.next&lt;/code>&lt;/li>
+&lt;li>Шаги 1-2 для нечетного указателя соответсвенно.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Переходим к следующему указателю в &lt;code>head&lt;/code>.&lt;/li>
+&lt;li>Соединяем два списка. Список с четные указателями становится следующим после списка с нечетными указателями.
+&lt;ol>
+&lt;li>Так как четные указатели должны стоять в самом конце нового списка, то обновляем &lt;code>even.next = None&lt;/code>, потому что после него ничего не должно идти.&lt;/li>
+&lt;li>Добавляем &lt;code>even_head&lt;/code> к списку &lt;code>odd_head&lt;/code> в конец.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Возвращаем &lt;code>odd_head&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">oddEvenList&lt;/span>(self, head: Optional[ListNode]) &lt;span style="color:#666">-&amp;gt;&lt;/span> Optional[ListNode]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> odd_head &lt;span style="color:#666">=&lt;/span> ListNode(&lt;span style="color:#40a070">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> even_head &lt;span style="color:#666">=&lt;/span> ListNode(&lt;span style="color:#40a070">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> odd &lt;span style="color:#666">=&lt;/span> odd_head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> even &lt;span style="color:#666">=&lt;/span> even_head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> is_odd &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> head:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> is_odd:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> odd&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> odd &lt;span style="color:#666">=&lt;/span> odd&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> even&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> even &lt;span style="color:#666">=&lt;/span> even&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> head &lt;span style="color:#666">=&lt;/span> head&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> is_odd &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> is_odd
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> even&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># самый последний узел&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> odd&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> even_head&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#60a0b0;font-style:italic"># head в конец списка&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> odd_head&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="вариант-решения-2">Вариант решения 2&lt;/h2>
+&lt;h2 id="подсказки-1">Подсказки&lt;/h2>
+&lt;p>Использовать указатели. Четный указатель будет головным для четных, нечетный для нечетных. Четный и нечетный по мере прохождения можно менять местами.&lt;/p>
+&lt;h2 id="подход-1">Подход&lt;/h2>
+&lt;p>Абстрактная идея:&lt;/p>
+&lt;ul>
+&lt;li>превратить список &lt;code>head&lt;/code> в список из &lt;strong>нечетных&lt;/strong> по счету узлов.&lt;/li>
+&lt;li>превратить список &lt;code>even_head&lt;/code> из списка &lt;code>head&lt;/code> с содержанием только &lt;strong>четных&lt;/strong> узлов&lt;/li>
+&lt;/ul>
+&lt;ol>
+&lt;li>&lt;strong>Инициализация указателей&lt;/strong>: Инициализируем указатели для нечетных и четных узлов, а также сохраняем начальный четный узел, который будет использован после того, как пройдем весь список.&lt;/li>
+&lt;li>&lt;strong>Перестановка узлов&lt;/strong>: Проходим по списку, &lt;mark>меняя местами нечетные и четные узлы&lt;/mark>.
+&lt;ol>
+&lt;li>Обновляем &lt;code>next&lt;/code> для нечетного путем взятия &lt;code>next&lt;/code> у четного: &lt;code>odd.next = even.next&lt;/code>&lt;/li>
+&lt;li>Перемещаем указатель для нечетного вперед: &lt;code>odd = odd.next&lt;/code>&lt;/li>
+&lt;li>1 и 2 шаги проделываем для четного указателя. 💡 четный указатель обновляет ссылки с &lt;em>обновленного&lt;/em> четного указателя.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>&lt;strong>Соединение списков&lt;/strong>: После того как все узлы переставлены, последний нечетный узел должен указывать на первый четный узел.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Пример для &lt;code>1,2,3,4,5&lt;/code>:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Инициализация указателей:&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>Указатель &lt;code>odd&lt;/code> указывает на узел с значением 1. состояние списка: &lt;code>1-2-3-4-5&lt;/code>&lt;/li>
+&lt;li>Указатель &lt;code>even&lt;/code> указывает на узел с значением 2. состояние списка: &lt;code>2-3-4-5&lt;/code>&lt;/li>
+&lt;li>Указатель &lt;code>even_head&lt;/code> указывает на узел с значением 2. состояние списка: &lt;code>2-3-4-5&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;span class="caption-wrapper">
+&lt;img class="caption" style="float: right; width: ; height: 555px; margin: 0px 10px 10px 0px;" src="#ZgotmplZ" title="" alt="">
+&lt;span class="caption-text">&lt;/span>
+&lt;/span>
+&lt;ol start="2">
+&lt;li>Первый проход:&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>&lt;code>odd.next&lt;/code> будет указывать на узел, следующий за &lt;code>even&lt;/code>: 1-2 =&amp;gt; 1-3, &lt;code>odd.next = 3&lt;/code>.&lt;/li>
+&lt;li>Обновляем &lt;code>odd&lt;/code> на &lt;code>odd.next&lt;/code>. &lt;code>odd = 3&lt;/code>, &lt;code>odd.next = 4&lt;/code>.&lt;/li>
+&lt;li>&lt;code>even.next&lt;/code> будет указывать на узел, следующий за новым &lt;code>odd&lt;/code>: 2-3 =&amp;gt; 2-&amp;gt;4, &lt;code>even.next = 4&lt;/code>.&lt;/li>
+&lt;li>Перемещаем &lt;code>even&lt;/code> на &lt;code>even.next&lt;/code>&lt;/li>
+&lt;li>Текущее состояние списков &lt;code>head&lt;/code>: &lt;code>1-3-4-5&lt;/code>, &lt;code>even_head&lt;/code>: &lt;code>2-4-5&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;ol start="3">
+&lt;li>Второй проход:&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>&lt;code>odd.next&lt;/code> будет указывать на узел, следующий за &lt;code>even&lt;/code> (узел с значением 6)&lt;/li>
+&lt;li>Обновляем &lt;code>odd&lt;/code> на &lt;code>odd.next&lt;/code>. с значением 6&lt;/li>
+&lt;li>&lt;code>even.next&lt;/code> будет указывать на узел, следующий за новым &lt;code>odd&lt;/code> (узел с значением 5)&lt;/li>
+&lt;li>Перемещаем &lt;code>even&lt;/code> на узел с значением 5&lt;/li>
+&lt;li>Текущее состояние списка: &lt;code>1-3-5&lt;/code>. &lt;code>2-4&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;ol start="4">
+&lt;li>Объединение четных и нечетных:&lt;/li>
+&lt;/ol>
+&lt;p>После окончания всех проходов, установить &lt;code>odd.next&lt;/code> на узел, на который указывает &lt;code>even_head&lt;/code>.&lt;/p>
+&lt;h2 id="алгоритм-1">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Инициализируем указатели &lt;code>odd&lt;/code> и &lt;code>even&lt;/code> на начальные нечетные и четные узлы.&lt;/li>
+&lt;li>Сохраняем начальный четный узел в переменной &lt;code>even_head&lt;/code>.&lt;/li>
+&lt;li>Пока четные и нечетные узлы не &lt;code>None&lt;/code>, продолжаем перестановку.&lt;/li>
+&lt;li>В конце соединяем последний нечетный узел с &lt;code>even_head&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение-1">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">ListNode&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, val&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#007020">next&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">None&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">=&lt;/span> val
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">next&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">oddEvenList&lt;/span>(head: ListNode) &lt;span style="color:#666">-&amp;gt;&lt;/span> ListNode:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> head:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> odd &lt;span style="color:#666">=&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> even &lt;span style="color:#666">=&lt;/span> head&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> even_head &lt;span style="color:#666">=&lt;/span> even
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> even &lt;span style="color:#007020;font-weight:bold">and&lt;/span> even&lt;span style="color:#666">.&lt;/span>next:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> odd&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> even&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> odd &lt;span style="color:#666">=&lt;/span> odd&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> even&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> odd&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> even &lt;span style="color:#666">=&lt;/span> even&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Соединяем последний нечетный узел с первым четным&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> odd&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> even_head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> head
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

@@ -1,8 +1,53 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>String on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/series/string/</link><description>Recent content in String on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Wed, 21 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/series/string/index.xml" rel="self" type="application/rss+xml"/><item><title>49. Group Anagrams</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/49/</link><pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/49/</guid><description>LeetCode problem
-Given an array of strings strs, group the anagrams together. You can return the answer in any order.
-An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
-Example 1:
-Input: strs = [&amp;quot;eat&amp;quot;,&amp;quot;tea&amp;quot;,&amp;quot;tan&amp;quot;,&amp;quot;ate&amp;quot;,&amp;quot;nat&amp;quot;,&amp;quot;bat&amp;quot;] Output: [[&amp;quot;bat&amp;quot;],[&amp;quot;nat&amp;quot;,&amp;quot;tan&amp;quot;],[&amp;quot;ate&amp;quot;,&amp;quot;eat&amp;quot;,&amp;quot;tea&amp;quot;]] Example 2:
-Input: strs = [&amp;quot;&amp;quot;] Output: [[&amp;quot;&amp;quot;]] Example 3:
-Input: strs = [&amp;quot;a&amp;quot;] Output: [[&amp;quot;a&amp;quot;]] Idea:
-class Solution: def groupAnagrams(self, strs: List[str]) -&amp;gt; List[List[str]]: dd = {} for s in strs: s_sort = &amp;#34;&amp;#34;.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>String on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/series/string/</link><description>Recent content in String on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Wed, 21 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/series/string/index.xml" rel="self" type="application/rss+xml"/><item><title>49. Group Anagrams</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/49/</link><pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/49/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/group-anagrams/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given an array of strings &lt;code>strs&lt;/code>, group &lt;strong>the anagrams&lt;/strong> together. You can return the answer in &lt;strong>any order&lt;/strong>.&lt;/p>
+&lt;p>An &lt;strong>Anagram&lt;/strong> is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: strs = [&amp;quot;eat&amp;quot;,&amp;quot;tea&amp;quot;,&amp;quot;tan&amp;quot;,&amp;quot;ate&amp;quot;,&amp;quot;nat&amp;quot;,&amp;quot;bat&amp;quot;]
+Output: [[&amp;quot;bat&amp;quot;],[&amp;quot;nat&amp;quot;,&amp;quot;tan&amp;quot;],[&amp;quot;ate&amp;quot;,&amp;quot;eat&amp;quot;,&amp;quot;tea&amp;quot;]]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: strs = [&amp;quot;&amp;quot;]
+Output: [[&amp;quot;&amp;quot;]]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 3:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: strs = [&amp;quot;a&amp;quot;]
+Output: [[&amp;quot;a&amp;quot;]]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">groupAnagrams&lt;/span>(self, strs: List[&lt;span style="color:#007020">str&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[List[&lt;span style="color:#007020">str&lt;/span>]]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dd &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> s &lt;span style="color:#007020;font-weight:bold">in&lt;/span> strs:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s_sort &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&amp;#34;&lt;/span>&lt;span style="color:#666">.&lt;/span>join(&lt;span style="color:#007020">sorted&lt;/span>(s))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> values &lt;span style="color:#666">=&lt;/span> dd&lt;span style="color:#666">.&lt;/span>get(s_sort, [])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> values&lt;span style="color:#666">.&lt;/span>append(s)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dd[s_sort] &lt;span style="color:#666">=&lt;/span> values
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> dd&lt;span style="color:#666">.&lt;/span>values()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Approach 2:&lt;/strong>&lt;/p>
+&lt;p>Intuition:&lt;/p>
+&lt;p>Two strings are anagrams if and only if their character counts (respective number of occurrences of each character) are the same.&lt;/p>
+&lt;p>Algorithm:&lt;/p>
+&lt;p>We can transform each string &lt;code>s&lt;/code> into a character count, count\text{count}count, consisting of 26 non-negative integers representing the number of &lt;code>a&lt;/code>&amp;rsquo;s, &lt;code>b&lt;/code>&amp;rsquo;s, z&amp;rsquo;s, etc. We use these counts as the basis for our hash map.&lt;/p>
+&lt;p>In python, the representation will be a tuple of the counts. For example, &lt;code>abbccc&lt;/code> will be &lt;code>(1, 2, 3, 0, 0, ..., 0)&lt;/code>, where again there are 26 entries total.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://leetcode.com/problems/group-anagrams/solutions/127405/Figures/49_groupanagrams2.png"
+id="zoom-default"
+alt="example"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">groupAnagrams&lt;/span>(strs):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> collections&lt;span style="color:#666">.&lt;/span>defaultdict(&lt;span style="color:#007020">list&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> s &lt;span style="color:#007020;font-weight:bold">in&lt;/span> strs:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">*&lt;/span> &lt;span style="color:#40a070">26&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> c &lt;span style="color:#007020;font-weight:bold">in&lt;/span> s:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count[&lt;span style="color:#007020">ord&lt;/span>(c) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#007020">ord&lt;/span>(&lt;span style="color:#4070a0">&amp;#39;a&amp;#39;&lt;/span>)] &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res[&lt;span style="color:#007020">tuple&lt;/span>(count)]&lt;span style="color:#666">.&lt;/span>append(s)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res&lt;span style="color:#666">.&lt;/span>values()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://leetcode.com/problems/group-anagrams/solutions/127405/group-anagrams/">LeetCode expl&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

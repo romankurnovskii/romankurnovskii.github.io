@@ -1,3 +1,446 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Notification Service on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/sns/</link><description>Recent content in Simple Notification Service on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Mon, 26 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/sns/index.xml" rel="self" type="application/rss+xml"/><item><title>Process Amazon SNS Notifications with AWS Lambda</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/sns/aws-lambda-sns-notifications/</link><pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/sns/aws-lambda-sns-notifications/</guid><description>Lab Process Amazon SNS Notifications with AWS Lambda Creating an Amazon SNS Topic 1. In the AWS Management Console search bar, enter SNS, and click the Simple Notification Service result under Services:
-In the left-hand side menu, click Topics: If you can&amp;rsquo;t see the left-hand menu, to expand it, click the following:
-Click Create topic: In the Create topic form, ensure to have selected the Standard type, and enter the following values accepting the defaults for values not specified: Name: lab-topic You can leave the Display name field empty for this Lab.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Simple Notification Service on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/sns/</link><description>Recent content in Simple Notification Service on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Mon, 26 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/sns/index.xml" rel="self" type="application/rss+xml"/><item><title>Process Amazon SNS Notifications with AWS Lambda</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/sns/aws-lambda-sns-notifications/</link><pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/sns/aws-lambda-sns-notifications/</guid><description>&lt;h2 id="lab">Lab&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://cloudacademy.com/lab/aws-lambda-sns-notifications/">Process Amazon SNS Notifications with AWS Lambda&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="creating-an-amazon-sns-topic">Creating an Amazon SNS Topic&lt;/h2>
+&lt;p>1. In the AWS Management Console search bar, enter &lt;em>SNS&lt;/em>, and click the &lt;strong>Simple Notification Service&lt;/strong> result under &lt;strong>Services&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid0-0b2fbef7-5227-4c6c-8361-698aa1379090.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="2">
+&lt;li>In the left-hand side menu, click &lt;strong>Topics&lt;/strong>:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-79280db3-b075-4d61-bea7-e2a14c541807.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>If you can&amp;rsquo;t see the left-hand menu, to expand it, click the following:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-035c403a-fc22-4c0a-b2fe-ed66c139bdf6.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="3">
+&lt;li>Click &lt;strong>Create topic&lt;/strong>:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-38b9d655-7d7a-4cbb-bd8e-ac0392867900.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="4">
+&lt;li>In the &lt;strong>Create topic&lt;/strong> form, ensure to have selected the &lt;strong>Standard&lt;/strong> type, and enter the following values accepting the defaults for values not specified:&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>&lt;strong>Name:&lt;/strong> &lt;em>lab-topic&lt;/em>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-99dfb27f-b912-4fc7-a825-a5e6aacc1c8e.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You can leave the &lt;strong>Display name&lt;/strong> field empty for this Lab. When you create topics where the recipients receive messages over SMS (Short Message Service) you are required to provide a value.&lt;/p>
+&lt;ol start="5">
+&lt;li>At the bottom of the form, click &lt;strong>Create topic&lt;/strong>:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-1c5d53a8-6f22-4d60-8ed4-06af6a497ad5.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="creating-an-aws-lambda-function">Creating an AWS Lambda Function&lt;/h2>
+&lt;p>1. In the AWS Management Console search bar, enter &lt;em>Lambda&lt;/em>, and click the &lt;strong>Lambda&lt;/strong> result under &lt;strong>Services&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid1-94b8d8cf-4c85-45fb-87ed-196d49b83a53.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You will see the &lt;strong>Functions&lt;/strong> list page.&lt;/p>
+&lt;ol start="2">
+&lt;li>Click &lt;strong>Create function&lt;/strong>:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-bbd4879d-c59c-4a53-97b7-a63239570114.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="3">
+&lt;li>In the &lt;strong>Create function&lt;/strong> form, ensure &lt;strong>Author from scratch&lt;/strong> is selected:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-1bea0b0d-e972-463d-923f-978b984c39e2.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="4">
+&lt;li>In the &lt;strong>Create function&lt;/strong> form, enter &lt;em>lab-function&lt;/em> in the &lt;strong>Function name&lt;/strong> field:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-3b34b508-46dc-4859-a915-e2d11c1cc153.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="5">
+&lt;li>In the &lt;strong>Create function&lt;/strong> form, in the &lt;strong>Runtime&lt;/strong> drop-down, select &lt;strong>Python 3.8&lt;/strong>:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-678077dc-62b3-4d33-8a9d-4fadec5989b3.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="6">
+&lt;li>In the &lt;strong>Create function&lt;/strong> form, click &lt;strong>Change default execution role&lt;/strong> and select &lt;strong>Use an existing role&lt;/strong>:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-642b6ba4-0acd-41e5-8b26-74f982779a96.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="7">
+&lt;li>In the &lt;strong>Existing role&lt;/strong> drop-down, select &lt;strong>lambda_s3_put&lt;/strong>:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-b9f97a3f-7769-45ec-a1cc-00d853a62eea.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The role you have selected has been pre-populated for this Lab. Usually when using Lambda you will create a specific role for your function.&lt;/p>
+&lt;ol start="8">
+&lt;li>To create your function, click &lt;strong>Create function&lt;/strong>:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-4f653e54-68e8-4c0b-877f-e24ea572a316.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="implementing-an-aws-lambda-function-to-upload-to-s3">Implementing an AWS Lambda Function to Upload to S3&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>Scroll down to the &lt;strong>Code source&lt;/strong> section and double-click &lt;strong>lambda_function.py&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the code editor, replace the contents with the following Python code:&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">datetime&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> datetime
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">boto3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>account_id &lt;span style="color:#666">=&lt;/span> boto3&lt;span style="color:#666">.&lt;/span>client(&lt;span style="color:#4070a0">&amp;#39;sts&amp;#39;&lt;/span>)&lt;span style="color:#666">.&lt;/span>get_caller_identity()[&lt;span style="color:#4070a0">&amp;#34;Account&amp;#34;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>s3 &lt;span style="color:#666">=&lt;/span> boto3&lt;span style="color:#666">.&lt;/span>resource(&lt;span style="color:#4070a0">&amp;#39;s3&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">lambda_handler&lt;/span>(event, context):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> record &lt;span style="color:#666">=&lt;/span> event[&lt;span style="color:#4070a0">&amp;#39;Records&amp;#39;&lt;/span>][&lt;span style="color:#40a070">0&lt;/span>][&lt;span style="color:#4070a0">&amp;#39;Sns&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> message &lt;span style="color:#666">=&lt;/span> record[&lt;span style="color:#4070a0">&amp;#39;Message&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> subject &lt;span style="color:#666">=&lt;/span> record[&lt;span style="color:#4070a0">&amp;#39;Subject&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Subject: &lt;/span>&lt;span style="color:#70a0d0">%s&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span> &lt;span style="color:#666">%&lt;/span> subject)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Message: &lt;/span>&lt;span style="color:#70a0d0">%s&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span> &lt;span style="color:#666">%&lt;/span> message)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s3&lt;span style="color:#666">.&lt;/span>Object(&lt;span style="color:#4070a0">f&lt;/span>&lt;span style="color:#4070a0">&amp;#34;sns-lab-bucket-&lt;/span>&lt;span style="color:#70a0d0">{&lt;/span>account_id&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>, subject)&lt;span style="color:#666">.&lt;/span>put(Body&lt;span style="color:#666">=&lt;/span>message)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#4070a0">&amp;#34;SUCCESS&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The function code you entered processes a message from SNS. The code uploads a file into an S3 Bucket which was pre-created as a part of this lab. The name of the file will be the subject of the message and the content of the file will be the message body.&lt;/p>
+&lt;p>You can use a Lambda function to do many different things. Some examples include:&lt;/p>
+&lt;ul>
+&lt;li>Process web-requests&lt;/li>
+&lt;li>Put a custom metric into AWS CloudWatch&lt;/li>
+&lt;li>Add or update a record in a database&lt;/li>
+&lt;li>Post a web-request to an external service&lt;/li>
+&lt;/ul>
+&lt;ol start="3">
+&lt;li>To save your changes and deploy your function, at the top of the &lt;strong>Code source&lt;/strong> section, click &lt;strong>Deploy&lt;/strong>:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-61d557df-1b74-4669-aa47-15ded231e5c6.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You will see a notification that your function has been deployed:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-11b88c21-8827-4ea5-8285-eaa15958b8b5.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p> 4. To add an SNS trigger, in the &lt;strong>Function overview&lt;/strong> section, click &lt;strong>Add trigger&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-00c17808-f3cf-4e6f-8504-1764ca9a3f90.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid0-eb998c0b-dffb-4bae-a053-4341bce14b59.gif"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+​&lt;/p>
+&lt;ol start="5">
+&lt;li>In the &lt;strong>Select a trigger&lt;/strong> dropdown, enter &lt;em>SNS&lt;/em>, and click the &lt;strong>SNS&lt;/strong> result:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;a href="https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2#/functions">&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-5bba99fd-9c84-4d46-b7a3-8a9e482b1a3d.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/a>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid0-eb998c0b-dffb-4bae-a053-4341bce14b59.gif"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+​&lt;/p>
+&lt;ol start="6">
+&lt;li>In the &lt;strong>SNS topic&lt;/strong> drop-down, select &lt;strong>lab-topic&lt;/strong>:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-a374be19-964a-49b4-ac0e-db43e696cb58.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid0-eb998c0b-dffb-4bae-a053-4341bce14b59.gif"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+​&lt;/p>
+&lt;p>The &lt;strong>SNS topic&lt;/strong> field will be filled with the ARN (Amazon Resource Name) of your SNS topic.&lt;/p>
+&lt;ol start="7">
+&lt;li>To add your SNS trigger, click &lt;strong>Add&lt;/strong>:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-f8818ac6-fcc0-42a7-95a2-5b9f52f2988d.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid0-eb998c0b-dffb-4bae-a053-4341bce14b59.gif"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+​&lt;/p>
+&lt;p>You will see a notification that your trigger has been added:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-94d8c2cf-1c0e-4afb-bd13-a590349253fa.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>In SNS terminology, by adding an SNS trigger you have &amp;ldquo;subscribed&amp;rdquo; your Lambda function to the SNS topic.&lt;/p>
+&lt;h2 id="publishing-a-message-to-an-amazon-sns-topic">Publishing a Message to an Amazon SNS Topic&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;a href="https://us-west-2.console.aws.amazon.com/sns/v3/home?region=us-west-2#/dashboard">Navigate to the AWS SNS service&lt;/a>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In the left-hand side menu, click &lt;strong>Topics&lt;/strong>:&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;a href="https://us-west-2.console.aws.amazon.com/sns/v3/home?region=us-west-2#/dashboard">&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-051dd437-4187-483f-b25f-8aa24aea77f5.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/a>&lt;/p>
+&lt;ol start="3">
+&lt;li>In the list of topics, click &lt;strong>lab-topic&lt;/strong>:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;a href="https://us-west-2.console.aws.amazon.com/sns/v3/home?region=us-west-2#/dashboard">&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-8925257c-e409-4963-919e-a330b4182e5b.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/a>&lt;/p>
+&lt;ol start="4">
+&lt;li>Click &lt;strong>Publish message&lt;/strong>:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-56ad1cf6-bd15-4340-aa2b-8b24b7272333.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="5">
+&lt;li>In the &lt;strong>Message details&lt;/strong> section of the form, in the &lt;strong>Subject&lt;/strong> field, enter &lt;em>lab-subject&lt;/em>:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-4c1a6aef-0c39-4b71-bc64-68a2529de459.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="6">
+&lt;li>In the &lt;strong>Message body&lt;/strong> section of the form, in the &lt;strong>Message body to send to the endpoint&lt;/strong> textbox, enter &lt;em>Lab Message&lt;/em>:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;a href="https://us-west-2.console.aws.amazon.com/sns/v3/home?region=us-west-2#/dashboard">&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-a55e89f1-be47-4774-a3ad-015046738bcc.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/a>&lt;/p>
+&lt;p>Usually when you publish a message to an SNS topic, you would include meaningful data in the message body. The content of the message body is often called the &amp;ldquo;payload&amp;rdquo; of a message. In SNS, the payload can be plain text, or it can be a structured payload such as JSON, XML, or some other format. The service or device subscribed to your topic can use the data in the payload to determine what action to take in response to receiving a message.&lt;/p>
+&lt;ol start="7">
+&lt;li>To publish your message, click &lt;strong>Publish message&lt;/strong>:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;a href="https://us-west-2.console.aws.amazon.com/sns/v3/home?region=us-west-2#/dashboard">&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-28a000c2-a21a-4bcc-9666-bfd32c1a3d24.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/a>&lt;/p>
+&lt;p>You will see a notification, similar to the following, confirming your message has been published:&lt;/p>
+&lt;p>&lt;a href="https://us-west-2.console.aws.amazon.com/sns/v3/home?region=us-west-2#/dashboard">&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-4674f769-6494-4c00-836b-c6a0d96d33c1.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/a>&lt;/p>
+&lt;h2 id="verifying-the-aws-lambda-function-processed-the-message">Verifying the AWS Lambda Function Processed the Message&lt;/h2>
+&lt;p>1. In the AWS Management Console search bar, enter &lt;em>S3&lt;/em>, and click the &lt;strong>S3&lt;/strong> result under &lt;strong>Services&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid0-7a151f91-f8b4-4198-a748-41c66a569dbb.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="2">
+&lt;li>In the list of S3 Buckets, click the Bucket beginning with &lt;strong>sns-lab-bucket-&lt;/strong>:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-a1c56acd-9c78-4584-9aab-f1f173c77912.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ol start="3">
+&lt;li>In the list of objects you will see a file called &lt;strong>lab-subject&lt;/strong>:&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-3405c816-1dab-42fb-8a7f-7e4ffe92504e.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>This file was uploaded to the S3 bucket by your Lambda function.&lt;/p></description></item></channel></rss>

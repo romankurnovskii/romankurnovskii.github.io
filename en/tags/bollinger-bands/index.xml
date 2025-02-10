@@ -1,3 +1,45 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Bollinger Bands on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/bollinger-bands/</link><description>Recent content in Bollinger Bands on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Thu, 06 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/bollinger-bands/index.xml" rel="self" type="application/rss+xml"/><item><title>Bollinger Bands - Volatility and Price Level Indicator</title><link>https://romankurnovskii.com/en/posts/trading-indicators/bollinger_bands/</link><pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/trading-indicators/bollinger_bands/</guid><description>About Bollinger Bands is a technical indicator developed by John Bollinger in the 1980s. It provides a relative definition of high and low prices of a market instrument by creating a band of two standard deviations from a simple moving average (SMA).
-Calculating Formula Bollinger Bands consist of three lines:
-Middle Line: 20-day simple moving average (SMA) Upper Band: 20-day SMA + (2 * 20-day standard deviation of price) Lower Band: 20-day SMA - (2 * 20-day standard deviation of price) The standard deviation measures how spread out the prices or returns of an asset are on average.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Bollinger Bands on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/bollinger-bands/</link><description>Recent content in Bollinger Bands on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 06 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/bollinger-bands/index.xml" rel="self" type="application/rss+xml"/><item><title>Bollinger Bands - Volatility and Price Level Indicator</title><link>https://romankurnovskii.com/en/posts/trading-indicators/bollinger_bands/</link><pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/trading-indicators/bollinger_bands/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>Bollinger Bands is a technical indicator developed by John Bollinger in the 1980s. It provides a relative definition of high and low prices of a market instrument by creating a &lt;mark>band of two standard deviations from a simple moving average (SMA)&lt;/mark>.&lt;/p>
+&lt;h2 id="calculating">Calculating&lt;/h2>
+&lt;h3 id="formula">Formula&lt;/h3>
+&lt;p>Bollinger Bands consist of three lines:&lt;/p>
+&lt;ol>
+&lt;li>Middle Line: &lt;mark>20-day simple moving average (SMA)&lt;/mark>&lt;/li>
+&lt;li>Upper Band: &lt;mark>20-day SMA + (2 * 20-day standard deviation of price)&lt;/mark>&lt;/li>
+&lt;li>Lower Band: &lt;mark>20-day SMA - (2 * 20-day standard deviation of price)&lt;/mark>&lt;/li>
+&lt;/ol>
+&lt;p>The standard deviation measures how spread out the prices or returns of an asset are on average. It&amp;rsquo;s the most common way to gauge market volatility.&lt;/p>
+&lt;h2 id="pros-and-cons">Pros and Cons&lt;/h2>
+&lt;p>Pros:&lt;/p>
+&lt;ul>
+&lt;li>Bollinger Bands adjust themselves to market conditions.&lt;/li>
+&lt;li>They can be used in all markets like stocks, forex, commodities, etc.&lt;/li>
+&lt;li>The bands can provide signals for potential overbuying and overselling scenarios.&lt;/li>
+&lt;/ul>
+&lt;p>Cons:&lt;/p>
+&lt;ul>
+&lt;li>During a strong trend, the price can remain at the extremes (upper or lower band) for a long time, leading to many false sell or buy signals.&lt;/li>
+&lt;li>As a lagging indicator, Bollinger Bands might send a late signal, causing the trader to miss a big part of the trend.&lt;/li>
+&lt;/ul>
+&lt;h2 id="example-of-signals">Example of signals&lt;/h2>
+&lt;p>Bollinger Bands are often used to identify potential buy and sell signals.&lt;/p>
+&lt;p>&lt;strong>Buy Signal:&lt;/strong> A common strategy is to &lt;strong>buy&lt;/strong> when the price touches the &lt;strong>lower Bollinger Band&lt;/strong> and exit when the price touches the moving average in the center of the bands.&lt;/p>
+&lt;p>&lt;strong>Sell Signal:&lt;/strong> Conversely, a sell signal is present when the price touches the upper Bollinger Band and exit the position when it touches the moving average.&lt;/p>
+&lt;p>&lt;strong>True Positive:&lt;/strong>&lt;/p>
+&lt;p>In a ranging market, prices tend to bounce between the upper and lower band, correctly indicating good points to buy and sell.&lt;/p>
+&lt;p>&lt;strong>False Positive:&lt;/strong>&lt;/p>
+&lt;p>In a trending market, the price can touch the upper band (in an uptrend) or the lower band (in a downtrend) for extended periods, leading to potentially poor buy or sell signals.&lt;/p>
+&lt;h2 id="use-in-real-trading">Use in Real Trading&lt;/h2>
+&lt;p>Bollinger Bands can be combined with other indicators for better signal confirmation.&lt;/p>
+&lt;p>For example, using it in conjunction with the RSI could help traders avoid false signals. When the price touches the upper band and the RSI indicates overbought conditions, there might be a good chance the price will decrease, indicating a sell signal.&lt;/p>
+&lt;h2 id="python-implementation">Python Implementation&lt;/h2>
+&lt;p>
+&lt;a href="https://romankurnovskii.com//jupyter/bollinger_bands.html"
+>Click here to view this notebook in full screen&lt;/a
+>
+&lt;/p>
+&lt;iframe
+src="https://romankurnovskii.com//jupyter/bollinger_bands.html"
+style="height:1300px;width:100%;border:none;overflow:hidden;"
+scrolling="no"
+>&lt;/iframe></description></item></channel></rss>

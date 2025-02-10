@@ -1,39 +1,636 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dynamic Programming on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/dynamic-programming/</link><description>Recent content in Dynamic Programming on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sat, 09 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/dynamic-programming/index.xml" rel="self" type="application/rss+xml"/><item><title>5. Longest Palindromic Substring</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/5/</link><pubDate>Thu, 20 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/5/</guid><description>LeetCode problem
-Given a string s, return the longest palindromic substring in s.
-A string is called a palindrome string if the reverse of that string is the same as the original string.
-Example 1:
-Input: s = &amp;quot;babad&amp;quot; Output: &amp;quot;bab&amp;quot; Explanation: &amp;quot;aba&amp;quot; is also a valid answer. Example 2:
-Input: s = &amp;quot;cbbd&amp;quot; Output: &amp;quot;bb&amp;quot; First accepted Hints How can we reuse a previously computed palindrome to compute a larger palindrome?
-How can we reuse a previously computed palindrome to compute a larger palindrome?</description></item><item><title>53. Maximum Subarray</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/53/</link><pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/53/</guid><description>LeetCode problem
-Given an integer array nums, find the subarray which has the largest sum and return its sum.
-Example 1:
-Input: nums = [-2,1,-3,4,-1,2,1,-5,4] Output: 6 Explanation: [4,-1,2,1] has the largest sum = 6. Example 2:
-Input: nums = [1] Output: 1 Example 3:
-Input: nums = [5,4,-1,7,8] Output: 23 Approach 1:
-class Solution: def maxSubArray(self, nums: List[int]) -&amp;gt; int: max_ = nums[0] max2 = nums[0] if len(nums) == 1: return max_ for i in range(1, len(nums)): max_ = max(nums[i], nums[i] + max_) max2 = max(max_, max2) return max2</description></item><item><title>55. Jump Game</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/55/</link><pubDate>Thu, 29 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/55/</guid><description>LeetCode problem
-You are given an integer array nums. You are initially positioned at the array&amp;rsquo;s first index, and each element in the array represents your maximum jump length at that position.
-Return true if you can reach the last index, or false otherwise.
-Example 1:
-Input: nums = [2,3,1,1,4] Output: true Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index. Example 2:
-Input: nums = [3,2,1,0,4] Output: false Explanation: You will always arrive at index 3 no matter what.</description></item><item><title>62. Unique Paths</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/62/</link><pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/62/</guid><description>LeetCode problem
-There is a robot on an m x n grid. The robot is initially located at the top-left corner (i.e., grid[0][0]). The robot tries to move to the bottom-right corner (i.e., grid[m - 1][n - 1]). The robot can only move either down or right at any point in time.
-Given the two integers m and n, return the number of possible unique paths that the robot can take to reach the bottom-right corner.
-The test cases are generated so that the answer will be less than or equal to 2 * 10^9.</description></item><item><title>70. Climbing Stairs</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/70/</link><pubDate>Sat, 29 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/70/</guid><description>LeetCode problem
-You are climbing a staircase. It takes n steps to reach the top.
-Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
-Example 1:
-Input: n = 2 Output: 2 Explanation: There are two ways to climb to the top. 1. 1 step + 1 step 2. 2 steps Example 2:
-Input: n = 3 Output: 3 Explanation: There are three ways to climb to the top.</description></item><item><title>122. Best Time to Buy and Sell Stock II</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/122/</link><pubDate>Fri, 31 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/122/</guid><description>LeetCode problem
-To solve this problem, we can use a greedy approach.
-The idea is to keep adding the profit whenever the price on the next day is higher than the price on the current day.
-This way, we will maximize profit.
-class Solution: def maxProfit(self, prices: List[int]) -&amp;gt; int: profit = 0 for i in range(1, len(prices)): if prices[i] &amp;gt; prices[i - 1]: profit += prices[i] - prices[i - 1] return profit LeetCode Editorial:
-Editorial</description></item><item><title>152. Maximum Product Subarray</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/152/</link><pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/152/</guid><description>LeetCode problem
-Problem Statement In this problem, we&amp;rsquo;re given an integer array nums, and our task is to find the maximum product of a contiguous subarray. A subarray is a contiguous part of an array. The interesting part of this problem is that the array can contain both positive and negative numbers, so the maximum product can be obtained by a subarray ending at any index of the array.
-Naive Solution A naive approach to this problem would be to calculate the product of all possible subarrays and return the maximum one.</description></item><item><title>300. Longest Increasing Subsequence</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/300/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/300/</guid><description>LeetCode задача 300
-Задача Дан массив чисел, ваша задача — найти длину наибольшей возрастающей подпоследовательности.
-Подсказки Для решения этой задачи вы можете использовать динамическое программирование.
-Подход Инициализация: Инициализируйте массив, который будет хранить длины наибольших возрастающих подпоследовательностей для каждого элемента массива. Обход массива: Обойдите массив, и для каждого элемента обновите массив длин наибольших возрастающих подпоследовательностей. Максимум: По окончании обхода найдите максимальное значение в массиве длин. Простейший способ решения — это использовать двойной цикл для обхода массива и поиска наибольшей возрастающей подпоследовательности для каждого элемента.</description></item><item><title>377. Combination Sum IV</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/377/</link><pubDate>Sat, 09 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/377/</guid><description>LeetCode задача 377
-Задача Дан массив различных целых чисел nums и целевое целое число target от 1 до 1000. Нужно вернуть количество возможных комбинаций, которые в сумме дают target.
-Подсказки Построить дерево решений Задачу можно решить путем разложения ее на меньшие подзадачи с помощью динамического программирования. Нахождение целевого значения в дереве решений
-Your browser does not support the video tag. LeetCode 377 Решение Подход Если целевое значение - target=7 и nums=[2, 3, 4], то в дереве решений может быть несколько путей до этого числа.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dynamic Programming on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/dynamic-programming/</link><description>Recent content in Dynamic Programming on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sat, 23 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/dynamic-programming/index.xml" rel="self" type="application/rss+xml"/><item><title>5. Longest Palindromic Substring</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/5/</link><pubDate>Thu, 20 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/5/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/longest-palindromic-substring/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given a string &lt;code>s&lt;/code>, return the longest palindromic substring in &lt;code>s&lt;/code>.&lt;/p>
+&lt;p>A string is called a palindrome string if the reverse of that string is the same as the original string.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: s = &amp;quot;babad&amp;quot;
+Output: &amp;quot;bab&amp;quot;
+Explanation: &amp;quot;aba&amp;quot; is also a valid answer.
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: s = &amp;quot;cbbd&amp;quot;
+Output: &amp;quot;bb&amp;quot;
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;h3 id="hints">Hints&lt;/h3>
+&lt;blockquote>
+&lt;p>How can we reuse a previously computed palindrome to compute a larger palindrome?&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>How can we reuse a previously computed palindrome to compute a larger palindrome?&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Complexity based hint:
+If we use brute-force and check whether for every start and end position a substring is a palindrome we have O(n^2) start - end pairs and O(n) palindromic checks. Can we reduce the time for palindromic checks to O(1) by reusing some previous computation.&lt;/p>&lt;/blockquote>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;p>We start at &lt;code>index = 0&lt;/code> and iterate through all values until &lt;code>n&lt;/code>. At each index we call the function &lt;code>getPalindrome&lt;/code> that will check the values to the left and right of the provided indices. It will continue to do so until the longest palindrome within the given range is found.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/5.jpg"
+id="zoom-default"
+alt="test-case"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/5-diagram.svg"
+id="zoom-default"
+alt="LeetCode diagram explained"
+loading="lazy"
+/>
+&lt;/p>
+&lt;strong>&lt;a href="https://app.diagrams.net/#G17m7pbA_Ym4_Xi8JFBPSyMcr8zYzX_1FH">Link to diagram&lt;/a>&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">longestPalindrome&lt;/span>(self, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">str&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">getPalindrome&lt;/span>(left, right):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span>(left &lt;span style="color:#666">&amp;gt;=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(s) &lt;span style="color:#007020;font-weight:bold">and&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s[left] &lt;span style="color:#666">==&lt;/span> s[right]):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> left&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>, right&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pal_left &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pal_right &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_max &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(s)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left, right &lt;span style="color:#666">=&lt;/span> getPalindrome(i, i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pal_len&lt;span style="color:#666">=&lt;/span> right &lt;span style="color:#666">-&lt;/span> left &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> pal_len &lt;span style="color:#666">&amp;gt;&lt;/span> len_max:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pal_left &lt;span style="color:#666">=&lt;/span> left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pal_right &lt;span style="color:#666">=&lt;/span> right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_max &lt;span style="color:#666">=&lt;/span> pal_len
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left, right &lt;span style="color:#666">=&lt;/span> getPalindrome(i, i&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pal_len &lt;span style="color:#666">=&lt;/span> right &lt;span style="color:#666">-&lt;/span> left &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> pal_len &lt;span style="color:#666">&amp;gt;&lt;/span> len_max:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pal_left &lt;span style="color:#666">=&lt;/span> left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pal_right &lt;span style="color:#666">=&lt;/span> right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_max &lt;span style="color:#666">=&lt;/span> pal_len
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> s[pal_left:pal_right&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="better-solution">Better solution&lt;/h2>
+&lt;h3 id="manachers-algorithm">Manacher&amp;rsquo;s algorithm&lt;/h3>
+&lt;p>There is an &lt;code>O(n)&lt;/code> algorithm called &lt;a href="https://en.wikipedia.org/wiki/Longest_palindromic_substring#Manacher%27s_algorithm">Manacher&amp;rsquo;s algorithm&lt;/a>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">longestPalindrome&lt;/span>(self, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">str&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># @ and $ signs are sentinels appended to each end to avoid bounds checking&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> t &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;#&amp;#39;&lt;/span>&lt;span style="color:#666">.&lt;/span>join(&lt;span style="color:#4070a0">&amp;#39;@&amp;#39;&lt;/span> &lt;span style="color:#666">+&lt;/span> s &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#4070a0">&amp;#39;$&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(t)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># t[i - maxExtends[i]..i) ==&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># t[i + 1..i + maxExtends[i]]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> maxExtends &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">*&lt;/span> n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> center &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, n &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rightBoundary &lt;span style="color:#666">=&lt;/span> center &lt;span style="color:#666">+&lt;/span> maxExtends[center]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mirrorIndex &lt;span style="color:#666">=&lt;/span> center &lt;span style="color:#666">-&lt;/span> (i &lt;span style="color:#666">-&lt;/span> center)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> maxExtends[i] &lt;span style="color:#666">=&lt;/span> rightBoundary &lt;span style="color:#666">&amp;gt;&lt;/span> i &lt;span style="color:#007020;font-weight:bold">and&lt;/span> \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">min&lt;/span>(rightBoundary &lt;span style="color:#666">-&lt;/span> i, maxExtends[mirrorIndex])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Attempt to expand palindrome centered at i&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> t[i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#666">+&lt;/span> maxExtends[i]] &lt;span style="color:#666">==&lt;/span> t[i &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#666">-&lt;/span> maxExtends[i]]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> maxExtends[i] &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># If palindrome centered at i expand past rightBoundary,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># adjust center based on expanded palindrome.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> i &lt;span style="color:#666">+&lt;/span> maxExtends[i] &lt;span style="color:#666">&amp;gt;&lt;/span> rightBoundary:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> center &lt;span style="color:#666">=&lt;/span> i
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Find the maxExtend and bestCenter&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> maxExtend, bestCenter &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>((extend, i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i, extend &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">enumerate&lt;/span>(maxExtends))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> s[(bestCenter &lt;span style="color:#666">-&lt;/span> maxExtend) &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">2&lt;/span>:(bestCenter &lt;span style="color:#666">+&lt;/span> maxExtend) &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">2&lt;/span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://en.wikipedia.org/wiki/Longest_palindromic_substring#Manacher%27s_algorithm">Manacher&amp;rsquo;s algorithm&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=0CKUjDcUYYA">Errichto:LeetCode problem Longest Palindromic Substring (two solutions)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://redquark.org/leetcode/0005-longest-palindromic-substring/">https://redquark.org/leetcode/0005-longest-palindromic-substring/&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>RU&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=sp9f7nQHqeQ&amp;amp;t=39s">Разбор задачи с интервью. Литкод 5. Longest Palindromic Substring&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ru.algorithmica.org/cs/string-searching/manacher/">Алгоритмика: Алгоритм Манакера&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC_%D0%9C%D0%B0%D0%BD%D0%B0%D0%BA%D0%B5%D1%80%D0%B0#:~:text=%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%20%D0%9C%D0%B0%D0%BD%D0%B0%D0%BA%D0%B5%D1%80%D0%B0%20%28%D0%B0%D0%BD%D0%B3%D0%BB.%20Manacher%27s%20algorithm%29,%D1%80%D0%B5%D1%88%D0%B0%D1%82%D1%8C%20%D0%B8%20%D0%B1%D0%BE%D0%BB%D0%B5%D0%B5%20%D0%BE%D0%B1%D1%89%D0%B8%D0%B5%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8">Википедия:Алгоритм Манакера&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>22. Generate Parentheses</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/22/</link><pubDate>Wed, 16 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/22/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/generate-parentheses/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: n = 3
+Output: [&amp;quot;((()))&amp;quot;,&amp;quot;(()())&amp;quot;,&amp;quot;(())()&amp;quot;,&amp;quot;()(())&amp;quot;,&amp;quot;()()()&amp;quot;]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: n = 1
+Output: [&amp;quot;()&amp;quot;]
+&lt;/code>&lt;/pre>
+&lt;h2 id="prerequirements">Prerequirements&lt;/h2>
+&lt;p>&lt;a href="https://romankurnovskii.com/en/tracks/algorithms-101/algorithms/#backtracking">Backtracking pattern&lt;/a>&lt;/p>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/22.jpg"
+id="zoom-default"
+alt="test-case"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">generateParenthesis&lt;/span>(self, n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">dfs&lt;/span>(l: &lt;span style="color:#007020">int&lt;/span>, r: &lt;span style="color:#007020">int&lt;/span>, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> r &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#666">.&lt;/span>append(s)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(l &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>, r, s &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#4070a0">&amp;#39;(&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l &lt;span style="color:#666">&amp;lt;&lt;/span> r:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(l, r &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>, s &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#4070a0">&amp;#39;)&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(n, n, &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>53. Maximum Subarray</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/53/</link><pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/53/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/maximum-subarray/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given an integer array &lt;code>nums&lt;/code>, find the subarray which has the largest sum and return &lt;em>its sum&lt;/em>.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: nums = [-2,1,-3,4,-1,2,1,-5,4]
+Output: 6
+Explanation: [4,-1,2,1] has the largest sum = 6.
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: nums = [1]
+Output: 1
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 3:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: nums = [5,4,-1,7,8]
+Output: 23
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Approach 1:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">maxSubArray&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_ &lt;span style="color:#666">=&lt;/span> nums[&lt;span style="color:#40a070">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max2 &lt;span style="color:#666">=&lt;/span> nums[&lt;span style="color:#40a070">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums) &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> max_
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#007020">len&lt;/span>(nums)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_ &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(nums[i], nums[i] &lt;span style="color:#666">+&lt;/span> max_)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max2 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(max_, max2)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> max2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>55. Jump Game</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/55/</link><pubDate>Thu, 29 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/55/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/maximum-subarray/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>You are given an integer array &lt;code>nums&lt;/code>. You are initially positioned at the array&amp;rsquo;s first index, and each element in the array represents your maximum jump length at that position.&lt;/p>
+&lt;p>Return true if you can reach the last index, or false otherwise.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: nums = [2,3,1,1,4]
+Output: true
+Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: nums = [3,2,1,0,4]
+Output: false
+Explanation: You will always arrive at index 3 no matter what. Its maximum jump length is 0, which makes it impossible to reach the last index.
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Approach 1:&lt;/strong>&lt;/p>
+&lt;p>Idea: go forward on each step and &lt;em>mark&lt;/em> next cell if can achieve it.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">canJump&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">bool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> last_i &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> last_i &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nn &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">*&lt;/span> last_i
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nn[&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">=&lt;/span> nums[&lt;span style="color:#40a070">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(last_i):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> el &lt;span style="color:#666">=&lt;/span> nums[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> el &lt;span style="color:#007020;font-weight:bold">or&lt;/span> nn[i&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(el):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nn[i&lt;span style="color:#666">+&lt;/span>j&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">=&lt;/span> el
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nn[last_i &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Approach 2:&lt;/strong>&lt;/p>
+&lt;p>Going forwards. &lt;code>m&lt;/code> tells the maximum index we can reach so far.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">canJump&lt;/span>(self, nums):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i, n &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">enumerate&lt;/span>(nums):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> i &lt;span style="color:#666">&amp;gt;&lt;/span> m:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(m, i &lt;span style="color:#666">+&lt;/span> n)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">canJump&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">bool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> i &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums) &lt;span style="color:#007020;font-weight:bold">and&lt;/span> i &lt;span style="color:#666">&amp;lt;=&lt;/span> m:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(m, i &lt;span style="color:#666">+&lt;/span> nums[i])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> i &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>62. Unique Paths</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/62/</link><pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/62/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/unique-paths/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>There is a robot on an &lt;code>m x n&lt;/code> grid. The robot is initially located at the top-left corner (i.e., &lt;code>grid[0][0]&lt;/code>). The robot tries to move to the bottom-right corner (i.e., &lt;code>grid[m - 1][n - 1]&lt;/code>). The robot can only move either down or right at any point in time.&lt;/p>
+&lt;p>Given the two integers m and n, return the number of possible unique paths that the robot can take to reach the bottom-right corner.&lt;/p>
+&lt;p>The test cases are generated so that the answer will be less than or equal to &lt;code>2 * 10^9&lt;/code>.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.leetcode.com/uploads/2018/10/22/robot_maze.png"
+id="zoom-default"
+alt="LeetCode 62. Unique Paths"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;pre>&lt;code>Input: m = 3, n = 7
+Output: 28
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: m = 3, n = 2
+Output: 3
+Explanation: From the top-left corner, there are a total of 3 ways to reach the bottom-right corner:
+1. Right -&amp;gt; Down -&amp;gt; Down
+2. Down -&amp;gt; Down -&amp;gt; Right
+3. Down -&amp;gt; Right -&amp;gt; Down
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Approach 1:&lt;/strong>&lt;/p>
+&lt;p>&lt;a href="https://leetcode.com/problems/unique-paths/submissions/874653332/">LeetCode Submission&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">uniquePaths&lt;/span>(self, m: &lt;span style="color:#007020">int&lt;/span>, n: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> m &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#007020;font-weight:bold">or&lt;/span> n &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix &lt;span style="color:#666">=&lt;/span> [ [&lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n)] &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(m)]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, m):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_above &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_left &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> i &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_above &lt;span style="color:#666">=&lt;/span> matrix[i&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>][j]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> j &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_left &lt;span style="color:#666">=&lt;/span> matrix[i][j&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix[i][j] &lt;span style="color:#666">=&lt;/span> max_above &lt;span style="color:#666">+&lt;/span> max_left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m &lt;span style="color:#666">=&lt;/span> matrix[i][j]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> m
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">uniquePaths&lt;/span>(self, m: &lt;span style="color:#007020">int&lt;/span>, n: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix &lt;span style="color:#666">=&lt;/span> [[&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">*&lt;/span> n &lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(m)]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, m):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix[i][j] &lt;span style="color:#666">=&lt;/span> matrix[i &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>][j] &lt;span style="color:#666">+&lt;/span> matrix[i][j &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> matrix[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>][&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>70. Climbing Stairs</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/70/</link><pubDate>Sat, 29 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/70/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/climbing-stairs/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>You are climbing a staircase. It takes &lt;code>n&lt;/code> steps to reach the top.&lt;/p>
+&lt;p>Each time you can either climb &lt;code>1&lt;/code> or &lt;code>2&lt;/code> steps. In how many distinct ways can you climb to the top?&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: n = 2
+Output: 2
+Explanation: There are two ways to climb to the top.
+1. 1 step + 1 step
+2. 2 steps
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: n = 3
+Output: 3
+Explanation: There are three ways to climb to the top.
+1. 1 step + 1 step + 1 step
+2. 1 step + 2 steps
+3. 2 steps + 1 step
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;p>Tried to calculate by hand. There is a &lt;a href="https://www.mathsisfun.com/numbers/fibonacci-sequence.html">sequence Fibonacci&lt;/a> here&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">climbStairs&lt;/span>(self, n: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> n &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> n &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">2&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev1 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev2 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> n &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">2&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current &lt;span style="color:#666">=&lt;/span> prev1 &lt;span style="color:#666">+&lt;/span> prev2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev1 &lt;span style="color:#666">=&lt;/span> prev2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev2 &lt;span style="color:#666">=&lt;/span> current
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> current
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>122. Best Time to Buy and Sell Stock II</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/122/</link><pubDate>Fri, 31 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/122/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>To solve this problem, we can use a greedy approach.&lt;/p>
+&lt;p>The idea is to keep adding the profit whenever the price on the next day is higher than the price on the current day.&lt;/p>
+&lt;p>This way, we will maximize profit.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">maxProfit&lt;/span>(self, prices: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> profit &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#007020">len&lt;/span>(prices)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> prices[i] &lt;span style="color:#666">&amp;gt;&lt;/span> prices[i &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> profit &lt;span style="color:#666">+=&lt;/span> prices[i] &lt;span style="color:#666">-&lt;/span> prices[i &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> profit
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>LeetCode Editorial:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/editorial/">Editorial&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>152. Maximum Product Subarray</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/152/</link><pubDate>Sun, 25 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/152/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/maximum-product-subarray">LeetCode problem&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>In this problem, we&amp;rsquo;re given an integer array &lt;code>nums&lt;/code>, and our task is to find the maximum product of a contiguous subarray. A subarray is a contiguous part of an array. The interesting part of this problem is that the array can contain both positive and negative numbers, so the maximum product can be obtained by a subarray ending at any index of the array.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A naive approach to this problem would be to calculate the product of all possible subarrays and return the maximum one. However, this would have a time complexity of O(n²), as there are n*(n+1)/2 subarrays of an array, where n is the length of the array.&lt;/p>
+&lt;p>This would be inefficient and time-consuming for large inputs.&lt;/p>
+&lt;h2 id="dynamic-programming">Dynamic Programming&lt;/h2>
+&lt;p>We can solve this problem efficiently using Dynamic Programming.&lt;/p>
+&lt;p>The idea is to keep track of the maximum and minimum product ending at each position (as the array can contain negative numbers, and a negative number can become maximum when multiplied by another negative number).&lt;/p>
+&lt;p>We initialize two variables, &lt;code>max_prod&lt;/code> and &lt;code>min_prod&lt;/code>, to &lt;code>nums[0]&lt;/code>. Then for each number in the array (from the second number to the end), we calculate &lt;code>max_prod&lt;/code> and &lt;code>min_prod&lt;/code> using the formulas:&lt;/p>
+&lt;pre>&lt;code>max_prod = max(nums[i], max_prod * nums[i], min_prod * nums[i])
+min_prod = min(nums[i], max_prod * nums[i], min_prod * nums[i])
+&lt;/code>&lt;/pre>
+&lt;p>We also keep track of &lt;code>res&lt;/code>, which stores the maximum product of a subarray as a result.&lt;/p>
+&lt;p>If &lt;code>max_prod&lt;/code> is greater than &lt;code>res&lt;/code>, we update &lt;code>res&lt;/code>.&lt;/p>
+&lt;p>Finally, &lt;code>res&lt;/code> will hold the maximum product of a subarray.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Initialize &lt;code>max_prod&lt;/code>, &lt;code>min_prod&lt;/code>, and &lt;code>res&lt;/code> to &lt;code>nums[0]&lt;/code>.&lt;/li>
+&lt;li>For each number in the array (from the second number to the end):
+&lt;ul>
+&lt;li>Update &lt;code>max_prod&lt;/code> and &lt;code>min_prod&lt;/code>.&lt;/li>
+&lt;li>Update &lt;code>res&lt;/code> if &lt;code>max_prod&lt;/code> is greater.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Return &lt;code>res&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;h2 id="python-solution">Python Solution&lt;/h2>
+&lt;p>Here is a Python solution following the described approach:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">maxProduct&lt;/span>(nums):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> nums:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_prod &lt;span style="color:#666">=&lt;/span> min_prod &lt;span style="color:#666">=&lt;/span> res &lt;span style="color:#666">=&lt;/span> nums[&lt;span style="color:#40a070">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> num &lt;span style="color:#007020;font-weight:bold">in&lt;/span> nums[&lt;span style="color:#40a070">1&lt;/span>:]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> new_max &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(num, max_prod &lt;span style="color:#666">*&lt;/span> num, min_prod &lt;span style="color:#666">*&lt;/span> num)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> min_prod &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">min&lt;/span>(num, max_prod &lt;span style="color:#666">*&lt;/span> num, min_prod &lt;span style="color:#666">*&lt;/span> num)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_prod &lt;span style="color:#666">=&lt;/span> new_max
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(res, max_prod)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>300. Longest Increasing Subsequence</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/300/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/300/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/longest-increasing-subsequence/">LeetCode задача 300&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Дан массив чисел, ваша задача — найти длину наибольшей возрастающей подпоследовательности.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Для решения этой задачи вы можете использовать динамическое программирование.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>Инициализация&lt;/strong>: Инициализируйте массив, который будет хранить длины наибольших возрастающих подпоследовательностей для каждого элемента массива.&lt;/li>
+&lt;li>&lt;strong>Обход массива&lt;/strong>: Обойдите массив, и для каждого элемента обновите массив длин наибольших возрастающих подпоследовательностей.&lt;/li>
+&lt;li>&lt;strong>Максимум&lt;/strong>: По окончании обхода найдите максимальное значение в массиве длин.&lt;/li>
+&lt;/ol>
+&lt;p>Простейший способ решения — это использовать двойной цикл для обхода массива и поиска наибольшей возрастающей подпоследовательности для каждого элемента. Это не самый эффективный способ, но его легко понять.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Создать массив &lt;code>dp&lt;/code> той же длины, что и исходный массив, и заполнить его единицами.&lt;/li>
+&lt;li>Для каждого элемента &lt;code>nums[i]&lt;/code> обойти все предыдущие элементы &lt;code>nums[j]&lt;/code> и, если &lt;code>nums[i] &amp;gt; nums[j]&lt;/code>, обновить &lt;code>dp[i]&lt;/code> как &lt;code>max(dp[i], dp[j] + 1)&lt;/code>.&lt;/li>
+&lt;li>Найти и вернуть максимальное значение в массиве &lt;code>dp&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">lengthOfLIS&lt;/span>(nums):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> nums:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dp &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">*&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums) &lt;span style="color:#60a0b0;font-style:italic"># массив для хранения длин LIS для каждого элемента&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(nums)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(i):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nums[i] &lt;span style="color:#666">&amp;gt;&lt;/span> nums[j]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dp[i] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(dp[i], dp[j] &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>) &lt;span style="color:#60a0b0;font-style:italic"># обновление длины LIS для элемента nums[i]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020">max&lt;/span>(dp)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>В этом решении используется двойной цикл для обхода массива и обновления массива dp, который хранит длину наибольшей возрастающей подпоследовательности для каждого элемента. По окончании обхода находим и возвращаем максимальное значение в массиве dp.&lt;/p></description></item><item><title>377. Combination Sum IV</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/377/</link><pubDate>Sat, 09 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/377/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/combination-sum-iv/">LeetCode задача 377&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Дан массив различных целых чисел &lt;code>nums&lt;/code> и целевое целое число &lt;code>target&lt;/code> от 1 до 1000. Нужно вернуть количество возможных комбинаций, которые в сумме дают &lt;code>target&lt;/code>.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;ol>
+&lt;li>Построить дерево решений&lt;/li>
+&lt;li>Задачу можно решить путем разложения ее на меньшие подзадачи с помощью динамического программирования.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;mark>Нахождение целевого значения в дереве решений&lt;/mark>&lt;/p>
+&lt;video width="100%" controls>
+&lt;source src="../../assets/377.ru.mp4" type="video/mp4">
+Your browser does not support the video tag.
+&lt;/video>
+&lt;figcaption>LeetCode 377 Решение&lt;/figcaption>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Если целевое значение - &lt;code>target=7&lt;/code> и &lt;code>nums=[2, 3, 4]&lt;/code>, то в дереве решений может быть несколько путей до этого числа. Например: &lt;code>2-2-3&lt;/code>, &lt;code>2-3-2&lt;/code>, &lt;code>3-2-2&lt;/code>, &lt;code>3-4&lt;/code>, &lt;code>4-3&lt;/code>, &lt;code>5-2&lt;/code>.&lt;/p>
+&lt;p>Во время подсчета различных путей мы получаем различные суммы, например: &lt;code>2-2-3&lt;/code>, сначала сумма 2, потом 4, потом 7.
+Следующи возможный путь начинается с 3. Чтобы проверить, подходит данный путь или нет, мы можем рассчитать недостающее число до &lt;code>target&lt;/code>: 7-3=4. Мы получили 4, но ранее мы уже получали такую сумму и знаем, что если на данном этапе мы хотим знать будет ли какое количество вариантов для суммы 4, то в итоге мы найдем решение.&lt;/p>
+&lt;p>Это - особенность динамического программирования, когда на каждом этапе мы используем уже подсчитанные данные, пройденные до текущего момента.&lt;/p>
+&lt;p>Мы будем использовать массив &lt;code>sums&lt;/code>, где &lt;code>sums[s]&lt;/code> будет хранить количество комбинаций, которые дают сумму &lt;code>s&lt;/code>.&lt;/p>
+&lt;p>Для каждого числа &lt;code>s&lt;/code> от 1 до &lt;code>target&lt;/code>, мы будем итерировать по каждому числу в &lt;code>nums&lt;/code> и прибавлять &lt;code>sums[s-num]&lt;/code> к &lt;code>sums[s]&lt;/code>.&lt;/p>
+&lt;p>Пример:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sums&lt;span style="color:#666">[&lt;/span>4&lt;span style="color:#666">]&lt;/span> &lt;span style="color:#666">=&lt;/span> sums&lt;span style="color:#666">[&lt;/span>4-2&lt;span style="color:#666">]&lt;/span> + sums&lt;span style="color:#666">[&lt;/span>4-4&lt;span style="color:#666">]&lt;/span> + sums&lt;span style="color:#666">[&lt;/span>4-4&lt;span style="color:#666">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Почему мы рассматриваем числа от 1 до target?&lt;/strong>&lt;/p>
+&lt;p>Целью является поиск всех возможных комбинаций чисел из &lt;code>nums&lt;/code>, которые в сумме дают &lt;code>target&lt;/code>. Начиная с 1 и заканчивая &lt;code>target&lt;/code>, мы стремимся найти все возможные комбинации для каждого промежуточного значения. Таким образом, когда мы достигаем &lt;code>target&lt;/code>, у нас уже будут вычислены комбинации для всех предыдущих значений, что позволит быстро найти ответ для &lt;code>target&lt;/code>.&lt;/p>
+&lt;p>&lt;strong>Зачем нам нужен индекс с нулевым значением в массиве?&lt;/strong>&lt;/p>
+&lt;p>Значение &lt;code>sums[0] = 1&lt;/code> может показаться не совсем интуитивным, но оно имеет особый смысл. Это значение говорит нам о том, что есть один способ получить сумму 0 — не использовать ни одного числа из &lt;code>nums&lt;/code>. Это начальное условие необходимо для корректной работы алгоритма, так как при добавлении каждого нового числа из &lt;code>nums&lt;/code> к уже найденным комбинациям мы будем обращаться к этому значению.&lt;/p>
+&lt;p>Рассмотрим пример. Пусть &lt;code>nums = [1,2,3]&lt;/code> и &lt;code>target = 4&lt;/code>. Когда мы рассматриваем число 1 (первый шаг итерации), наш алгоритм будет искать число комбинаций, которые дают сумму 1 - 1 = 0. И здесь значение &lt;code>sums[0]&lt;/code> приходит на помощь: благодаря ему алгоритм &amp;ldquo;понимает&amp;rdquo;, что существует одна такая комбинация.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Создаем список &lt;code>sums&lt;/code> с длиной &lt;code>target + 1&lt;/code> и заполняем его нулями. Этот список будет представлять количество комбинаций, которые приводят к определенной (промежуточной) сумме.&lt;/li>
+&lt;li>Устанавливаем &lt;code>sums[0]&lt;/code> в 1, так как есть только один способ получить сумму 0: при пустом &lt;code>nums&lt;/code>.&lt;/li>
+&lt;li>Основной цикл (построение таблицы):
+&lt;ol>
+&lt;li>Перебираем все возможные суммы от 1 до &lt;code>target&lt;/code> (включительно). Допустим, текущее число обозначено как &lt;code>s&lt;/code>
+&lt;ol>
+&lt;li>Теперь перебираем каждое число &lt;code>n&lt;/code> из &lt;code>nums&lt;/code>.
+&lt;ol>
+&lt;li>Находим остаточную сумму &lt;code>s - n&lt;/code>&lt;/li>
+&lt;li>Прибавляем к &lt;code>sums[s]&lt;/code> значение &lt;code>sums[s-n]&lt;/code>, так как любая комбинация, ведущая к &lt;code>s-n&lt;/code>, может быть дополнена числом &lt;code>n&lt;/code>, чтобы достичь &lt;code>s&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">combinationSum4&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>], target: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sums &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">*&lt;/span> (target &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sums[&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># entrypoint of dynamic p: sum 0 can be only in case if nums is empty&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> s &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, target &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> n &lt;span style="color:#007020;font-weight:bold">in&lt;/span> nums: &lt;span style="color:#60a0b0;font-style:italic"># check all paths&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> remainder &lt;span style="color:#666">=&lt;/span> s &lt;span style="color:#666">-&lt;/span> n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> remainder &lt;span style="color:#666">&amp;gt;=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic"># use only positive indexes (sums)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sums[s] &lt;span style="color:#666">+=&lt;/span> sums[remainder] &lt;span style="color:#60a0b0;font-style:italic"># count to previous results&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> sums[target]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Данное решение можно отобразить с использованием словаря для всех сумм:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">combinationSum4&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>], target: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sums &lt;span style="color:#666">=&lt;/span> {&lt;span style="color:#40a070">0&lt;/span>:&lt;span style="color:#40a070">1&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> s &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, target &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sums[s] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> n &lt;span style="color:#007020;font-weight:bold">in&lt;/span> nums:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> remainder &lt;span style="color:#666">=&lt;/span> s &lt;span style="color:#666">-&lt;/span> n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sums[s] &lt;span style="color:#666">+=&lt;/span> sums&lt;span style="color:#666">.&lt;/span>get(remainder, &lt;span style="color:#40a070">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> sums[target]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>799. Champagne Tower</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/799/</link><pubDate>Sat, 23 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/799/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/champagne-tower/">LeetCode problem 799&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>You are tasked with modeling a champagne tower. Glasses are stacked in a pyramid, with each row having one more glass than the previous. When champagne is poured into the top glass and it overflows, the overflowed champagne is split equally between the two glasses below. The objective is to determine how full a specified glass will be after pouring a given amount of champagne.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>One could imagine a simulation, where we pour champagne into the top glass and then, glass-by-glass, simulate the overflow until we reach the desired glass. This approach, though conceptually simple, is computationally expensive and will not scale efficiently.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;p>Utilizing a &lt;mark>Dynamic Programming&lt;/mark> approach allows for efficient computation. The key realization is that each glass only receives overflow from the glass directly above and the glass above and to the left. Therefore, by working row-by-row, we can calculate the overflow for each glass efficiently.&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>To solve this problem efficiently, we can use a bottom-up dynamic programming approach. Imagine you&amp;rsquo;re looking at the champagne tower from the top. Each glass receives champagne from the one(s) above it. The relationship between glasses can be broken down as follows:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Parent-Child Relationship&lt;/strong>: Each glass has a direct influence on the two glasses directly below it (child glasses). If a glass has an excess amount of champagne, it distributes this excess equally to its two child glasses.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Calculating Overflow&lt;/strong>: For any glass (&lt;em>starting from top&lt;/em>), if the amount of champagne in it exceeds its capacity (which is 1 unit), then the overflow is given by &lt;code>(amount - 1) / 2&lt;/code>. This is because each glass can hold up to 1 unit of champagne, and any excess will be split equally between its two child glasses.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Propagation&lt;/strong>: We start our simulation from the top of the tower. After pouring the champagne into the top glass, we calculate its overflow and propagate this overflow to its child glasses. We continue this process row by row until we have processed the entire tower or until we have processed up to the row of our query. This propagation ensures that every glass in the tower has the correct amount of champagne accounting for all the overflow from the glasses above it.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Efficiency&lt;/strong>: By using a 2D array to simulate the tower and processing each glass only once, we can calculate the amount of champagne in the queried glass in an efficient manner. This avoids the need for complex simulations or recursive calculations.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>Initialize the Tower&lt;/strong>: Create a 2D array representing the glasses. Pour the given amount into the top glass: &lt;code>[[poured], [0,0], [0,0,0], ...]&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Simulate the Pour&lt;/strong>: For each glass, calculate how much overflows, and distribute this overflow to the glasses below.&lt;/li>
+&lt;li>&lt;strong>Return the Result&lt;/strong>: After completing the simulation, return the amount in the specified glass. If it&amp;rsquo;s more than 1 (the capacity of a glass), return 1.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">champagneTower&lt;/span>(poured, query_row, query_glass):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tower &lt;span style="color:#666">=&lt;/span> [[&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">*&lt;/span> k &lt;span style="color:#007020;font-weight:bold">for&lt;/span> k &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, query_row &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">3&lt;/span>)] &lt;span style="color:#60a0b0;font-style:italic"># query_row + 3 for children update&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tower[&lt;span style="color:#40a070">0&lt;/span>][&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">=&lt;/span> poured
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> row &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(query_row &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> col &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(row &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> overflow &lt;span style="color:#666">=&lt;/span> (tower[row][col] &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1.0&lt;/span>) &lt;span style="color:#666">/&lt;/span> &lt;span style="color:#40a070">2.0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> overflow &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic"># update children&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tower[row &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>][col] &lt;span style="color:#666">+=&lt;/span> overflow
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tower[row &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>][col &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">+=&lt;/span> overflow
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020">min&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, tower[query_row][query_glass])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;video width="100%" controls>
+&lt;source src="../../assets/799.mp4" type="video/mp4">
+Your browser does not support the video tag.
+&lt;/video>
+&lt;figcaption>LeetCode 799 Solution&lt;/figcaption></description></item><item><title>1048. Longest String Chain</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1048/</link><pubDate>Fri, 22 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1048/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/longest-string-chain/">LeetCode problem 1048&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>You are given an array of words where each word consists of lowercase English letters. Your task is to determine the longest string chain you can form given this list. A word A can be a predecessor of word B if by adding exactly one letter to A (at any position), B is formed. The objective is to find the longest sequence where each word is a predecessor of the next.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>The straightforward brute-force way would be to try all possible combinations of word chains. Starting with each word, try to find its successor in the list and continue this until no more successors can be found. Remember the longest chain you can form. This solution, however, will be inefficient, especially with larger lists.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;p>A valuable hint for this problem is to consider sorting the words based on their lengths. This ensures that words of length &lt;code>n&lt;/code> will only ever be predecessors to words of length &lt;code>n + 1&lt;/code>.&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>The efficient way to solve this problem is using Dynamic Programming. The core idea is to maintain a hashmap where the key is a word and the value is the maximum chain length with that word as the end. This hashmap will assist in building solutions for longer words based on the solutions of shorter ones.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>Sort the Words&lt;/strong>: First, sort the words by their lengths. This guarantees when processing a word, all potential predecessors have already been handled.&lt;/li>
+&lt;li>&lt;strong>Hashmap for Chain Length&lt;/strong>: As each word is processed, inspect all its possible predecessors (by removing one character from the word). Use the hashmap to fetch the chain length of the predecessor and add one to it.&lt;/li>
+&lt;li>&lt;strong>Determine Maximum Chain Length&lt;/strong>: As each word is processed, update the maximum chain length.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">longestStrChain&lt;/span>(words):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> words&lt;span style="color:#666">.&lt;/span>sort(key&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020">len&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dp &lt;span style="color:#666">=&lt;/span> {} &lt;span style="color:#60a0b0;font-style:italic"># remember the maximum chain length for each word&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_chain &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> word &lt;span style="color:#007020;font-weight:bold">in&lt;/span> words:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dp[word] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># Every word&amp;#39;s minimum chain length is 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(word)): &lt;span style="color:#60a0b0;font-style:italic"># For each word, explore all its potential predecessors&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev_word &lt;span style="color:#666">=&lt;/span> word[:i] &lt;span style="color:#666">+&lt;/span> word[i&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>:]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> prev_word &lt;span style="color:#007020;font-weight:bold">in&lt;/span> dp:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dp[word] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(dp[word], dp[prev_word] &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_chain &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(max_chain, dp[word])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> max_chain
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1420. Build Array Where You Can Find The Maximum Exactly K Comparisons</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/1420/</link><pubDate>Thu, 21 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/1420/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/build-array-where-you-can-find-the-maximum-exactly-k-comparisons/">LeetCode Problem 1420&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>In this problem, we have three integers, &lt;code>n&lt;/code>, &lt;code>m&lt;/code>, and &lt;code>k&lt;/code>. We need to construct an array &lt;code>arr&lt;/code> having the following properties:&lt;/p>
+&lt;ol>
+&lt;li>It consists of exactly &lt;code>n&lt;/code> integers.&lt;/li>
+&lt;li>Each integer in the array is between &lt;code>1&lt;/code> and &lt;code>m&lt;/code> inclusive.&lt;/li>
+&lt;li>After executing a certain algorithm on &lt;code>arr&lt;/code>, we get a value known as &lt;code>search_cost&lt;/code>. Our goal is to ensure &lt;code>search_cost&lt;/code> is equal to &lt;code>k&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;p>The main challenge is determining how many ways we can construct such an array &lt;code>arr&lt;/code>.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A naive approach might involve generating all possible array combinations, then determining which ones fulfill our criteria. This method, however, would be inefficient due to its exponential time complexity. Given the constraints, this naive method won&amp;rsquo;t be feasible.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;ul>
+&lt;li>Utilize dynamic programming to avoid recalculating overlapping subproblems.&lt;/li>
+&lt;li>Keeping track of the maximum value encountered so far can help narrow down the possible outcomes.&lt;/li>
+&lt;/ul>
+&lt;h2 id="approach--idea">Approach / Idea&lt;/h2>
+&lt;p>To tackle this problem efficiently, we use dynamic programming. The main idea is to maintain a three-dimensional &lt;code>dp&lt;/code> array, which keeps track of:&lt;/p>
+&lt;ol>
+&lt;li>Current length of the array we&amp;rsquo;re constructing (&lt;code>i&lt;/code>).&lt;/li>
+&lt;li>The maximum value used so far (&lt;code>max_so_far&lt;/code>).&lt;/li>
+&lt;li>Remaining comparisons (&lt;code>remain&lt;/code>).&lt;/li>
+&lt;/ol>
+&lt;p>With this DP table, we can progressively compute how many ways we can construct an array of length &lt;code>i&lt;/code> while meeting our conditions.&lt;/p>
+&lt;h2 id="steps--high-level-algorithm">Steps / High-Level Algorithm&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Initialize the DP Array&lt;/strong>:
+Create a three-dimensional &lt;code>dp&lt;/code> array filled with zeros.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Base Case&lt;/strong>:
+When the array length equals &lt;code>n&lt;/code>, the possible values for &lt;code>max_so_far&lt;/code> are already decided, hence set &lt;code>dp[n][max_so_far][0]&lt;/code> to &lt;code>1&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Fill the DP Table&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>Iterate backwards, starting from the end towards the beginning.&lt;/li>
+&lt;li>For each &lt;code>i&lt;/code>, determine the number of ways we can construct an array of that length based on &lt;code>max_so_far&lt;/code> and &lt;code>remain&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;p>Note: This is where the majority of the dynamic programming logic comes into play.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Calculate the Result&lt;/strong>:
+Once the DP table is complete, &lt;code>dp[0][0][k]&lt;/code> contains the number of ways we can construct the array.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;p>Here&amp;rsquo;s the python code:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">numOfArrays&lt;/span>(self, n: &lt;span style="color:#007020">int&lt;/span>, m: &lt;span style="color:#007020">int&lt;/span>, k: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dp &lt;span style="color:#666">=&lt;/span> [[[&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">*&lt;/span> (k &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>) &lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(m &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)] &lt;span style="color:#007020;font-weight:bold">for&lt;/span> __ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MOD &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">10&lt;/span> &lt;span style="color:#666">**&lt;/span> &lt;span style="color:#40a070">9&lt;/span> &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">7&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> num &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(dp[&lt;span style="color:#40a070">0&lt;/span>])):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dp[n][num][&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> max_so_far &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(m, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> remain &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(k &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> (max_so_far &lt;span style="color:#666">*&lt;/span> dp[i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>][max_so_far][remain]) &lt;span style="color:#666">%&lt;/span> MOD
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> remain &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> num &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(max_so_far &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>, m &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> (res &lt;span style="color:#666">+&lt;/span> dp[i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>][num][remain &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>]) &lt;span style="color:#666">%&lt;/span> MOD
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dp[i][max_so_far][remain] &lt;span style="color:#666">=&lt;/span> res
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> dp[&lt;span style="color:#40a070">0&lt;/span>][&lt;span style="color:#40a070">0&lt;/span>][k]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

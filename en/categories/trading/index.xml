@@ -1,17 +1,1402 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Trading on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/trading/</link><description>Recent content in Trading on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 07 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/trading/index.xml" rel="self" type="application/rss+xml"/><item><title>Average True Range (ATR) - Volatility Indicator</title><link>https://romankurnovskii.com/en/posts/trading-indicators/atr/</link><pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/trading-indicators/atr/</guid><description>About The Average True Range (ATR) is a technical analysis indicator that measures market volatility by decomposing the entire range of an asset price for that period. It was developed by J. Welles Wilder Jr. and introduced in his book &amp;ldquo;New Concepts in Technical Trading Systems&amp;rdquo; in 1978.
-Calculating Formula ATR is calculated based on the true range (TR), which is the maximum of the following:
-Current High less the current Low Absolute value of (Current High less the previous Close) Absolute value of (Current Low less the previous Close) The ATR is then the moving average over a given period of the TR.</description></item><item><title>EMA - Exponential Moving Average</title><link>https://romankurnovskii.com/en/posts/trading-indicators/ema/</link><pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/trading-indicators/ema/</guid><description>About Unlike the SMA, the EMA gives more weight to recent data, making it quicker to respond to price changes.
-Calculating Formula EMA = (Close - Previous EMA) * Multiplier + Previous EMA
-Where:
-Close: the closing price for a given period (Price today/now). Here close prices is for example N: the period of the EMA. Multiplier: 2 / (N + 1) Previous EMA is the EMA of the previous period. The EMA for the first period is just the Close price.</description></item><item><title>Stochastic Oscillator - Momentum Indicator</title><link>https://romankurnovskii.com/en/posts/trading-indicators/stochastic_oscillator/</link><pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/trading-indicators/stochastic_oscillator/</guid><description>About The Stochastic Oscillator is a momentum indicator that shows the location of the close relative to the high-low range over a set number of periods. It was developed by George Lane in the 1950s.
-Calculating Formula The Stochastic Oscillator is calculated using the following formula:
-%K = 100[(C - L14) / (H14 - L14)] where:
-C = the most recent closing price L14 = the lowest price traded of the 14 previous trading sessions H14 = the highest price traded during the same 14-day period %K = the current value of the stochastic indicator The &amp;ldquo;%D&amp;rdquo; line is then a 3-day simple moving average of %K.</description></item><item><title>Bollinger Bands - Volatility and Price Level Indicator</title><link>https://romankurnovskii.com/en/posts/trading-indicators/bollinger_bands/</link><pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/trading-indicators/bollinger_bands/</guid><description>About Bollinger Bands is a technical indicator developed by John Bollinger in the 1980s. It provides a relative definition of high and low prices of a market instrument by creating a band of two standard deviations from a simple moving average (SMA).
-Calculating Formula Bollinger Bands consist of three lines:
-Middle Line: 20-day simple moving average (SMA) Upper Band: 20-day SMA + (2 * 20-day standard deviation of price) Lower Band: 20-day SMA - (2 * 20-day standard deviation of price) The standard deviation measures how spread out the prices or returns of an asset are on average.</description></item><item><title>MACD - Moving Average Convergence Divergence</title><link>https://romankurnovskii.com/en/posts/trading-indicators/macd/</link><pubDate>Thu, 15 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/trading-indicators/macd/</guid><description>About The Moving Average Convergence Divergence (MACD) is a versatile trading indicator used in various forms of trading, including high-frequency trading (HFT).
-MACD is a trend-following momentum indicator that shows the relationship between two moving averages of a security’s price.
-Calculating Formula The MACD is calculated by subtracting the 26-period Exponential Moving Average (EMA) from the 12-period EMA. A 9-day EMA of the MACD, called the &amp;ldquo;signal line&amp;rdquo;, is then plotted on top of the MACD, functioning as a trigger for buy and sell signals.</description></item><item><title>RSI - Relative Strength Index</title><link>https://romankurnovskii.com/en/posts/trading-indicators/rsi/</link><pubDate>Thu, 15 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/trading-indicators/rsi/</guid><description>About The Relative Strength Index (RSI) is a momentum oscillator that measures the speed and change of price movements. Developed by J. Welles Wilder, the RSI is a very popular indicator that is used primarily to identify overbought and oversold conditions in a market.
-Calculating The RSI is calculated using the following steps:
-Calculate the average gain and the average loss over the specified period (usually 14 periods). Compute the relative strength (RS) which is the ratio of average gain to average loss.</description></item><item><title>SMA - Simple Moving Average</title><link>https://romankurnovskii.com/en/posts/trading-indicators/sma/</link><pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/trading-indicators/sma/</guid><description>About The Simple Moving Average (SMA) is a technical indicator that calculates the average price over a specific number of periods, and it moves along as new data is added, making it a &amp;ldquo;moving average&amp;rdquo;.
-Calculating Formula SMA = (Sum of price data for the last N periods) / N
-For example, a 5-period SMA would sum up the last 5 closing prices and divide it by 5 to find the average. It is called a &amp;lsquo;moving&amp;rsquo; average because as new prices become available, the oldest prices are dropped and the average recalculates.</description></item><item><title>Trading indicators</title><link>https://romankurnovskii.com/en/posts/trading-indicators/</link><pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/trading-indicators/</guid><description>Raw market data Minute Open High Low Close 1 $10.0 $11.0 $9.5 $10.0 2 $10.1 $12.1 $10.0 $12.0 3 $12.2 $15.2 $12.0 $15.0 4 $15.1 $15.1 $13.9 $14.0 5 $14.1 $16.1 $14.0 $16.0 6 $16.1 $16.1 $14.9 $15.0 7 $15.1 $17.1 $15.0 $17.0 8 $17.1 $17.1 $15.9 $16.0 9 $16.1 $18.1 $16.0 $18.0 10 $18.1 $18.1 $16.9 $17.0 11 $17.1 $19.1 $17.0 $19.0 12 $19.1 $19.1 $17.9 $18.0 13 $18.1 $20.1 $18.0 $20.0 14 $20.1 $21.1 $20.0 $21.0 15 $21.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Trading on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/trading/</link><description>Recent content in Trading on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 07 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/trading/index.xml" rel="self" type="application/rss+xml"/><item><title>Average True Range (ATR) - Volatility Indicator</title><link>https://romankurnovskii.com/en/posts/trading-indicators/atr/</link><pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/trading-indicators/atr/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>The Average True Range (ATR) is a technical analysis indicator that measures market volatility by decomposing the entire range of an asset price for that period. It was developed by J. Welles Wilder Jr. and introduced in his book &amp;ldquo;New Concepts in Technical Trading Systems&amp;rdquo; in 1978.&lt;/p>
+&lt;h2 id="calculating">Calculating&lt;/h2>
+&lt;h3 id="formula">Formula&lt;/h3>
+&lt;p>ATR is calculated based on the true range (TR), which is the maximum of the following:&lt;/p>
+&lt;ol>
+&lt;li>Current High less the current Low&lt;/li>
+&lt;li>Absolute value of (Current High less the previous Close)&lt;/li>
+&lt;li>Absolute value of (Current Low less the previous Close)&lt;/li>
+&lt;/ol>
+&lt;p>The ATR is then the moving average over a given period of the TR.&lt;/p>
+&lt;p>&lt;code>ATR = Average(TR, N)&lt;/code>&lt;/p>
+&lt;p>For the first calculation of the ATR, it&amp;rsquo;s simply the average of the TR over a specified period. But for subsequent calculations, it&amp;rsquo;s the average of the previous ATR value and the current TR.&lt;/p>
+&lt;h2 id="pros-and-cons">Pros and Cons&lt;/h2>
+&lt;p>&lt;strong>Pros:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>ATR does not provide a directional bias, it purely measures volatility.&lt;/li>
+&lt;li>It can be used in all markets such as stocks, forex, commodities etc.&lt;/li>
+&lt;li>ATR adapts to changing market conditions, increasing during market turbulence and decreasing in calm markets.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Cons:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>ATR does not indicate price direction, only volatility.&lt;/li>
+&lt;li>During periods of rapid price changes, ATR may experience sharp increases, reflecting the inherent volatility in the price series.&lt;/li>
+&lt;/ul>
+&lt;h2 id="example-of-signals">Example of signals&lt;/h2>
+&lt;p>ATR does not provide trading signals like other oscillators such as RSI or MACD. It provides a gauge of market volatility which can assist in stop loss placement or determining trade size.&lt;/p>
+&lt;p>&lt;strong>True Positive:&lt;/strong>&lt;/p>
+&lt;p>In a trending market, ATR can help a trader place their stop loss further away during high volatility periods and closer during low volatility periods, reducing the likelihood of being stopped out prematurely.&lt;/p>
+&lt;p>&lt;strong>False Positive:&lt;/strong>&lt;/p>
+&lt;p>In a ranging market, a sudden price breakout can cause a sharp increase in ATR, possibly leading to an unnecessarily wide stop loss if the breakout turns out to be a false one.&lt;/p>
+&lt;h2 id="use-in-real-trading">Use in Real Trading&lt;/h2>
+&lt;p>In real trading, ATR can be used in conjunction with other indicators for better signal confirmation. For example, ATR can be used with a trend following system to manage stop losses. As ATR increases, your stop loss can be placed further from your entry point allowing for market volatility.&lt;/p>
+&lt;h2 id="python-implementation">Python Implementation&lt;/h2>
+&lt;p>
+&lt;a href="https://romankurnovskii.com//jupyter/atr.html"
+>Click here to view this notebook in full screen&lt;/a
+>
+&lt;/p>
+&lt;iframe
+src="https://romankurnovskii.com//jupyter/atr.html"
+style="height:1350px;width:100%;border:none;overflow:hidden;"
+scrolling="no"
+>&lt;/iframe></description></item><item><title>EMA - Exponential Moving Average</title><link>https://romankurnovskii.com/en/posts/trading-indicators/ema/</link><pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/trading-indicators/ema/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>Unlike the SMA, the EMA gives more weight to recent data, making it quicker to respond to price changes.&lt;/p>
+&lt;h2 id="calculating">Calculating&lt;/h2>
+&lt;h3 id="formula">Formula&lt;/h3>
+&lt;p>&lt;mark>EMA = (Close - Previous EMA) * Multiplier + Previous EMA&lt;/mark>&lt;/p>
+&lt;p>Where:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Close&lt;/strong>: the closing price for a given period (&lt;em>Price today/now&lt;/em>). &lt;em>Here close prices is for example&lt;/em>&lt;/li>
+&lt;li>&lt;strong>N&lt;/strong>: the period of the EMA.&lt;/li>
+&lt;li>&lt;strong>Multiplier&lt;/strong>: &lt;code>2 / (N + 1)&lt;/code>&lt;/li>
+&lt;li>&lt;strong>Previous EMA&lt;/strong> is the EMA of the previous period.&lt;/li>
+&lt;/ul>
+&lt;p>The EMA for the first period is just the &lt;strong>Close price&lt;/strong>.&lt;/p>
+&lt;p>But for subsequent periods, it&amp;rsquo;s calculated as follows:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>EMA = (Close - Previous EMA) * Multiplier + Previous EMA&lt;/code>&lt;/li>
+&lt;li>&lt;code>EMA[i] = (Close[i] - EMA[i-1]) * 2/(N+1) + EMA[i-1]&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>However, the EMA&amp;rsquo;s calculation is slightly more complex for the initial period because there is &lt;strong>no previous EMA&lt;/strong>. In this case, we use the SMA as the first EMA:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>EMA&lt;span style="color:#666">(&lt;/span>first period&lt;span style="color:#666">)&lt;/span> &lt;span style="color:#666">=&lt;/span> SMA
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;p>Let&amp;rsquo;s calculate a &lt;mark>5-minute EMA&lt;/mark> at Minute &lt;nark>6&lt;/mark> with the following market data:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Minute&lt;/th>
+&lt;th>Open&lt;/th>
+&lt;th>High&lt;/th>
+&lt;th>Low&lt;/th>
+&lt;th>Close&lt;/th>
+&lt;th>EMA&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>$10.0&lt;/td>
+&lt;td>$11.0&lt;/td>
+&lt;td>$9.5&lt;/td>
+&lt;td>$10.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>$10.1&lt;/td>
+&lt;td>$12.1&lt;/td>
+&lt;td>$10.0&lt;/td>
+&lt;td>$12.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>$12.2&lt;/td>
+&lt;td>$15.2&lt;/td>
+&lt;td>$12.0&lt;/td>
+&lt;td>$15.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4&lt;/td>
+&lt;td>$15.1&lt;/td>
+&lt;td>$15.1&lt;/td>
+&lt;td>$13.9&lt;/td>
+&lt;td>$14.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td>$14.1&lt;/td>
+&lt;td>$16.1&lt;/td>
+&lt;td>$14.0&lt;/td>
+&lt;td>$16.0&lt;/td>
+&lt;td>13.4(SMA)&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>6&lt;/td>
+&lt;td>$16.1&lt;/td>
+&lt;td>$16.1&lt;/td>
+&lt;td>$14.9&lt;/td>
+&lt;td>$15.0&lt;/td>
+&lt;td>15.67&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>7&lt;/td>
+&lt;td>$15.1&lt;/td>
+&lt;td>$17.1&lt;/td>
+&lt;td>$15.0&lt;/td>
+&lt;td>$17.0&lt;/td>
+&lt;td>&amp;hellip;&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>8&lt;/td>
+&lt;td>$17.1&lt;/td>
+&lt;td>$17.1&lt;/td>
+&lt;td>$15.9&lt;/td>
+&lt;td>$16.0&lt;/td>
+&lt;td>&amp;hellip;&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>9&lt;/td>
+&lt;td>$16.1&lt;/td>
+&lt;td>$18.1&lt;/td>
+&lt;td>$16.0&lt;/td>
+&lt;td>$18.0&lt;/td>
+&lt;td>&amp;hellip;&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;em>Can be calculated from first price&lt;/em>&lt;/p>
+&lt;p>Here, &lt;code>N = 5&lt;/code>, so &lt;code>Multiplier = 2 / (5 + 1) = 0.33&lt;/code>.&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>SMA(5) = (10.0 + 12.0 + 15.0 + 14.0 + 16.0) / 5 = 13.4&lt;/code>&lt;/li>
+&lt;li>This value becomes the first EMA (&lt;code>EMA[5]&lt;/code>). Now, to calculate the EMA for the &lt;strong>6th&lt;/strong> minute, we use the EMA formula:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>EMA&lt;span style="color:#666">[&lt;/span>6&lt;span style="color:#666">]&lt;/span> &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#666">(&lt;/span>Close&lt;span style="color:#666">[&lt;/span>6&lt;span style="color:#666">]&lt;/span> - EMA&lt;span style="color:#666">[&lt;/span>5&lt;span style="color:#666">])&lt;/span> * multiplier + EMA&lt;span style="color:#666">[&lt;/span>5&lt;span style="color:#666">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#666">(&lt;/span>15.0 - 13.4&lt;span style="color:#666">)&lt;/span> * 0.33 + 13.4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">=&lt;/span> 14.13
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="pros-and-cons">Pros and Cons&lt;/h2>
+&lt;p>&lt;strong>Pros:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>More responsive: By giving more weight to recent prices, the EMA can adapt faster to price changes.&lt;/li>
+&lt;li>Combines trend and momentum: The EMA not only captures the overall trend but also shows the asset&amp;rsquo;s momentum.&lt;/li>
+&lt;li>Often used for High frequency trading.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Cons:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>More prone to false signals: The sensitivity of the EMA can sometimes lead to false signals, especially in volatile markets.&lt;/li>
+&lt;li>Complex calculation: Compared to the SMA, the EMA&amp;rsquo;s calculation is slightly more complex, especially for longer periods.&lt;/li>
+&lt;/ul>
+&lt;h2 id="example-of-signals">Example of signals&lt;/h2>
+&lt;p>Like the SMA, traders often use two EMAs: a short-term one and a long-term one. When the &lt;strong>short-term&lt;/strong> EMA &lt;strong>crosses above&lt;/strong> the long-term EMA, it&amp;rsquo;s a bullish (&lt;strong>buy&lt;/strong>) signal, and when it crosses below, it&amp;rsquo;s a bearish (sell) signal.&lt;/p>
+&lt;p>&lt;strong>True Positive:&lt;/strong>&lt;/p>
+&lt;p>In minute 7, the short EMA crosses above the long EMA, which is a buy signal. The price then goes up, confirming this was a correct signal.&lt;/p>
+&lt;p>In a stable uptrend, the short-term EMA might cross above the long-term EMA, correctly suggesting that it&amp;rsquo;s a good time to enter a long position.&lt;/p>
+&lt;p>&lt;strong>False Positive:&lt;/strong>&lt;/p>
+&lt;p>In minute 11, the short EMA dips below the long EMA, suggesting a sell signal. However, the price increases in the next minute, making this a false signal.&lt;/p>
+&lt;p>In a volatile market, the price might swing up and down sharply, causing the short-term EMA to cross the long-term EMA back and forth, generating multiple buy and sell signals that could be misleading.&lt;/p>
+&lt;h2 id="use-in-real-trading">Use in Real Trading&lt;/h2>
+&lt;p>In real trading, EMA can be used in combination with other indicators such as &lt;strong>MACD&lt;/strong> (Moving Average Convergence Divergence) or &lt;strong>Bollinger Bands&lt;/strong>.&lt;/p>
+&lt;p>For instance, a trader might look for the short-term EMA to cross above the long-term EMA and the MACD to cross above its signal line as a confirmation for a long position.&lt;/p>
+&lt;h2 id="python-implementation">Python Implementation&lt;/h2>
+&lt;p>
+&lt;a href="https://romankurnovskii.com//jupyter/ema.html"
+>Click here to view this notebook in full screen&lt;/a
+>
+&lt;/p>
+&lt;iframe
+src="https://romankurnovskii.com//jupyter/ema.html"
+style="height:1350px;width:100%;border:none;overflow:hidden;"
+scrolling="no"
+>&lt;/iframe></description></item><item><title>Stochastic Oscillator - Momentum Indicator</title><link>https://romankurnovskii.com/en/posts/trading-indicators/stochastic_oscillator/</link><pubDate>Fri, 07 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/trading-indicators/stochastic_oscillator/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>The Stochastic Oscillator is a momentum indicator that shows the location of the close relative to the high-low range over a set number of periods. It was developed by George Lane in the 1950s.&lt;/p>
+&lt;h2 id="calculating">Calculating&lt;/h2>
+&lt;h3 id="formula">Formula&lt;/h3>
+&lt;p>The Stochastic Oscillator is calculated using the following formula:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>%K &lt;span style="color:#666">=&lt;/span> 100&lt;span style="color:#666">[(&lt;/span>C - L14&lt;span style="color:#666">)&lt;/span> / &lt;span style="color:#666">(&lt;/span>H14 - L14&lt;span style="color:#666">)]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>where:&lt;/p>
+&lt;ul>
+&lt;li>C = the most recent closing price&lt;/li>
+&lt;li>L14 = the lowest price traded of the 14 previous trading sessions&lt;/li>
+&lt;li>H14 = the highest price traded during the same 14-day period&lt;/li>
+&lt;li>%K = the current value of the stochastic indicator&lt;/li>
+&lt;/ul>
+&lt;p>The &amp;ldquo;%D&amp;rdquo; line is then a 3-day simple moving average of %K.&lt;/p>
+&lt;h2 id="pros-and-cons">Pros and Cons&lt;/h2>
+&lt;p>Pros:&lt;/p>
+&lt;ul>
+&lt;li>The Stochastic Oscillator can provide insights into potential overbought and oversold conditions.&lt;/li>
+&lt;li>It can also be used to identify divergences, short-term overbought and oversold conditions, and generate trading signals.&lt;/li>
+&lt;/ul>
+&lt;p>Cons:&lt;/p>
+&lt;ul>
+&lt;li>The Stochastic Oscillator can stay in overbought or oversold territory for a long time, leading to many false signals in trending markets.&lt;/li>
+&lt;li>As a lagging indicator, it might send a late signal, causing the trader to miss a big part of the trend.&lt;/li>
+&lt;/ul>
+&lt;h2 id="example-of-signals">Example of signals&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Buy Signal:&lt;/strong> A buy signal might be identified when the Stochastic Oscillator crosses above the %D line (bullish divergence).&lt;/li>
+&lt;li>&lt;strong>Sell Signal:&lt;/strong> Conversely, a sell signal might be identified when the Stochastic Oscillator crosses below the %D line (bearish divergence).&lt;/li>
+&lt;/ul>
+&lt;h2 id="use-in-real-trading">Use in Real Trading&lt;/h2>
+&lt;p>The Stochastic Oscillator is typically used with other oscillators such as the &lt;a href="../rsi">Relative Strength Index (RSI)&lt;/a> and the Commodity Channel Index (CCI) to confirm trading signals.&lt;/p>
+&lt;h2 id="python-implementation">Python Implementation&lt;/h2>
+&lt;p>
+&lt;a href="https://romankurnovskii.com//jupyter/stochastic_oscillator.html"
+>Click here to view this notebook in full screen&lt;/a
+>
+&lt;/p>
+&lt;iframe
+src="https://romankurnovskii.com//jupyter/stochastic_oscillator.html"
+style="height:1350px;width:100%;border:none;overflow:hidden;"
+scrolling="no"
+>&lt;/iframe></description></item><item><title>Bollinger Bands - Volatility and Price Level Indicator</title><link>https://romankurnovskii.com/en/posts/trading-indicators/bollinger_bands/</link><pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/trading-indicators/bollinger_bands/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>Bollinger Bands is a technical indicator developed by John Bollinger in the 1980s. It provides a relative definition of high and low prices of a market instrument by creating a &lt;mark>band of two standard deviations from a simple moving average (SMA)&lt;/mark>.&lt;/p>
+&lt;h2 id="calculating">Calculating&lt;/h2>
+&lt;h3 id="formula">Formula&lt;/h3>
+&lt;p>Bollinger Bands consist of three lines:&lt;/p>
+&lt;ol>
+&lt;li>Middle Line: &lt;mark>20-day simple moving average (SMA)&lt;/mark>&lt;/li>
+&lt;li>Upper Band: &lt;mark>20-day SMA + (2 * 20-day standard deviation of price)&lt;/mark>&lt;/li>
+&lt;li>Lower Band: &lt;mark>20-day SMA - (2 * 20-day standard deviation of price)&lt;/mark>&lt;/li>
+&lt;/ol>
+&lt;p>The standard deviation measures how spread out the prices or returns of an asset are on average. It&amp;rsquo;s the most common way to gauge market volatility.&lt;/p>
+&lt;h2 id="pros-and-cons">Pros and Cons&lt;/h2>
+&lt;p>Pros:&lt;/p>
+&lt;ul>
+&lt;li>Bollinger Bands adjust themselves to market conditions.&lt;/li>
+&lt;li>They can be used in all markets like stocks, forex, commodities, etc.&lt;/li>
+&lt;li>The bands can provide signals for potential overbuying and overselling scenarios.&lt;/li>
+&lt;/ul>
+&lt;p>Cons:&lt;/p>
+&lt;ul>
+&lt;li>During a strong trend, the price can remain at the extremes (upper or lower band) for a long time, leading to many false sell or buy signals.&lt;/li>
+&lt;li>As a lagging indicator, Bollinger Bands might send a late signal, causing the trader to miss a big part of the trend.&lt;/li>
+&lt;/ul>
+&lt;h2 id="example-of-signals">Example of signals&lt;/h2>
+&lt;p>Bollinger Bands are often used to identify potential buy and sell signals.&lt;/p>
+&lt;p>&lt;strong>Buy Signal:&lt;/strong> A common strategy is to &lt;strong>buy&lt;/strong> when the price touches the &lt;strong>lower Bollinger Band&lt;/strong> and exit when the price touches the moving average in the center of the bands.&lt;/p>
+&lt;p>&lt;strong>Sell Signal:&lt;/strong> Conversely, a sell signal is present when the price touches the upper Bollinger Band and exit the position when it touches the moving average.&lt;/p>
+&lt;p>&lt;strong>True Positive:&lt;/strong>&lt;/p>
+&lt;p>In a ranging market, prices tend to bounce between the upper and lower band, correctly indicating good points to buy and sell.&lt;/p>
+&lt;p>&lt;strong>False Positive:&lt;/strong>&lt;/p>
+&lt;p>In a trending market, the price can touch the upper band (in an uptrend) or the lower band (in a downtrend) for extended periods, leading to potentially poor buy or sell signals.&lt;/p>
+&lt;h2 id="use-in-real-trading">Use in Real Trading&lt;/h2>
+&lt;p>Bollinger Bands can be combined with other indicators for better signal confirmation.&lt;/p>
+&lt;p>For example, using it in conjunction with the RSI could help traders avoid false signals. When the price touches the upper band and the RSI indicates overbought conditions, there might be a good chance the price will decrease, indicating a sell signal.&lt;/p>
+&lt;h2 id="python-implementation">Python Implementation&lt;/h2>
+&lt;p>
+&lt;a href="https://romankurnovskii.com//jupyter/bollinger_bands.html"
+>Click here to view this notebook in full screen&lt;/a
+>
+&lt;/p>
+&lt;iframe
+src="https://romankurnovskii.com//jupyter/bollinger_bands.html"
+style="height:1300px;width:100%;border:none;overflow:hidden;"
+scrolling="no"
+>&lt;/iframe></description></item><item><title>MACD - Moving Average Convergence Divergence</title><link>https://romankurnovskii.com/en/posts/trading-indicators/macd/</link><pubDate>Thu, 15 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/trading-indicators/macd/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>The Moving Average Convergence Divergence (MACD) is a versatile trading indicator used in various forms of trading, including high-frequency trading (HFT).&lt;/p>
+&lt;p>MACD is a trend-following momentum indicator that shows the &lt;mark>relationship between two moving averages&lt;/mark> of a security’s price.&lt;/p>
+&lt;h2 id="calculating">Calculating&lt;/h2>
+&lt;h3 id="formula">Formula&lt;/h3>
+&lt;p>The MACD is calculated by subtracting the &lt;strong>26-period&lt;/strong> Exponential Moving Average (&lt;strong>EMA&lt;/strong>) from the &lt;strong>12-period&lt;/strong> &lt;strong>EMA&lt;/strong>. A &lt;strong>9-day EMA&lt;/strong> of the MACD, called the &amp;ldquo;signal line&amp;rdquo;, is then plotted on top of the MACD, functioning as a trigger for buy and sell signals.&lt;/p>
+&lt;p>Here&amp;rsquo;s the &lt;nark>formula&lt;/mark> for the MACD:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bb60d5">MACD&lt;/span> &lt;span style="color:#666">=&lt;/span> 12-Period EMA − 26-Period EMA
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To calculate the signal line, you take the 9-period EMA of the MACD.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>Signal &lt;span style="color:#bb60d5">Line&lt;/span> &lt;span style="color:#666">=&lt;/span> 9-Period EMA of MACD
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;p>Since MACD requires 26 periods to start, we&amp;rsquo;ll calculate from the 26th minute:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Minute&lt;/th>
+&lt;th>Open&lt;/th>
+&lt;th>High&lt;/th>
+&lt;th>Low&lt;/th>
+&lt;th>Close&lt;/th>
+&lt;th>EMA12&lt;/th>
+&lt;th>EMA26&lt;/th>
+&lt;th>EMA9 (Signal)&lt;/th>
+&lt;th>MACD&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>$10.0&lt;/td>
+&lt;td>$11.0&lt;/td>
+&lt;td>$9.5&lt;/td>
+&lt;td>$10.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>$10.1&lt;/td>
+&lt;td>$12.1&lt;/td>
+&lt;td>$10.0&lt;/td>
+&lt;td>$12.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>$12.2&lt;/td>
+&lt;td>$15.2&lt;/td>
+&lt;td>$12.0&lt;/td>
+&lt;td>$15.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4&lt;/td>
+&lt;td>$15.1&lt;/td>
+&lt;td>$15.1&lt;/td>
+&lt;td>$13.9&lt;/td>
+&lt;td>$14.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td>$14.1&lt;/td>
+&lt;td>$16.1&lt;/td>
+&lt;td>$14.0&lt;/td>
+&lt;td>$16.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>6&lt;/td>
+&lt;td>$16.1&lt;/td>
+&lt;td>$16.1&lt;/td>
+&lt;td>$14.9&lt;/td>
+&lt;td>$15.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>7&lt;/td>
+&lt;td>$15.1&lt;/td>
+&lt;td>$17.1&lt;/td>
+&lt;td>$15.0&lt;/td>
+&lt;td>$17.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>8&lt;/td>
+&lt;td>$17.1&lt;/td>
+&lt;td>$17.1&lt;/td>
+&lt;td>$15.9&lt;/td>
+&lt;td>$16.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>9&lt;/td>
+&lt;td>$16.1&lt;/td>
+&lt;td>$18.1&lt;/td>
+&lt;td>$16.0&lt;/td>
+&lt;td>$18.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>Starts here&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>10&lt;/td>
+&lt;td>$18.1&lt;/td>
+&lt;td>$18.1&lt;/td>
+&lt;td>$16.9&lt;/td>
+&lt;td>$17.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>11&lt;/td>
+&lt;td>$17.1&lt;/td>
+&lt;td>$19.1&lt;/td>
+&lt;td>$17.0&lt;/td>
+&lt;td>$19.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>12&lt;/td>
+&lt;td>$19.1&lt;/td>
+&lt;td>$19.1&lt;/td>
+&lt;td>$17.9&lt;/td>
+&lt;td>$18.0&lt;/td>
+&lt;td>Starts here&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>13&lt;/td>
+&lt;td>$18.1&lt;/td>
+&lt;td>$20.1&lt;/td>
+&lt;td>$18.0&lt;/td>
+&lt;td>$20.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>14&lt;/td>
+&lt;td>$20.1&lt;/td>
+&lt;td>$21.1&lt;/td>
+&lt;td>$20.0&lt;/td>
+&lt;td>$21.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>15&lt;/td>
+&lt;td>$21.1&lt;/td>
+&lt;td>$21.1&lt;/td>
+&lt;td>$19.9&lt;/td>
+&lt;td>$20.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>16&lt;/td>
+&lt;td>$20.1&lt;/td>
+&lt;td>$22.1&lt;/td>
+&lt;td>$20.0&lt;/td>
+&lt;td>$21.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>17&lt;/td>
+&lt;td>$21.1&lt;/td>
+&lt;td>$23.1&lt;/td>
+&lt;td>$21.0&lt;/td>
+&lt;td>$22.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>18&lt;/td>
+&lt;td>$22.1&lt;/td>
+&lt;td>$24.1&lt;/td>
+&lt;td>$22.0&lt;/td>
+&lt;td>$23.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>19&lt;/td>
+&lt;td>$23.1&lt;/td>
+&lt;td>$25.1&lt;/td>
+&lt;td>$23.0&lt;/td>
+&lt;td>$24.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>20&lt;/td>
+&lt;td>$24.1&lt;/td>
+&lt;td>$26.1&lt;/td>
+&lt;td>$24.0&lt;/td>
+&lt;td>$25.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>21&lt;/td>
+&lt;td>$25.1&lt;/td>
+&lt;td>$27.1&lt;/td>
+&lt;td>$25.0&lt;/td>
+&lt;td>$26.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>22&lt;/td>
+&lt;td>$26.1&lt;/td>
+&lt;td>$28.1&lt;/td>
+&lt;td>$26.0&lt;/td>
+&lt;td>$27.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>23&lt;/td>
+&lt;td>$27.1&lt;/td>
+&lt;td>$29.1&lt;/td>
+&lt;td>$27.0&lt;/td>
+&lt;td>$28.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>24&lt;/td>
+&lt;td>$28.1&lt;/td>
+&lt;td>$30.1&lt;/td>
+&lt;td>$28.0&lt;/td>
+&lt;td>$29.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>25&lt;/td>
+&lt;td>$29.1&lt;/td>
+&lt;td>$31.1&lt;/td>
+&lt;td>$29.0&lt;/td>
+&lt;td>$30.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>26&lt;/td>
+&lt;td>$30.1&lt;/td>
+&lt;td>$32.1&lt;/td>
+&lt;td>$30.0&lt;/td>
+&lt;td>$31.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Starts here&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Starts here&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>27&lt;/td>
+&lt;td>$31.1&lt;/td>
+&lt;td>$33.1&lt;/td>
+&lt;td>$31.0&lt;/td>
+&lt;td>$32.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>28&lt;/td>
+&lt;td>$32.1&lt;/td>
+&lt;td>$34.1&lt;/td>
+&lt;td>$32.0&lt;/td>
+&lt;td>$33.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>29&lt;/td>
+&lt;td>$33.1&lt;/td>
+&lt;td>$35.1&lt;/td>
+&lt;td>$33.0&lt;/td>
+&lt;td>$34.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>30&lt;/td>
+&lt;td>$34.1&lt;/td>
+&lt;td>$36.1&lt;/td>
+&lt;td>$34.0&lt;/td>
+&lt;td>$35.0&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>In python it can be calculated in the following way:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">pandas&lt;/span> &lt;span style="color:#007020;font-weight:bold">as&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">pd&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Assuming &amp;#39;df&amp;#39; is your DataFrame and &amp;#39;Close&amp;#39; is the column with closing prices&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df[&lt;span style="color:#4070a0">&amp;#39;EMA12&amp;#39;&lt;/span>] &lt;span style="color:#666">=&lt;/span> df[&lt;span style="color:#4070a0">&amp;#39;Close&amp;#39;&lt;/span>]&lt;span style="color:#666">.&lt;/span>ewm(span&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">12&lt;/span>, adjust&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">False&lt;/span>)&lt;span style="color:#666">.&lt;/span>mean()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df[&lt;span style="color:#4070a0">&amp;#39;EMA26&amp;#39;&lt;/span>] &lt;span style="color:#666">=&lt;/span> df[&lt;span style="color:#4070a0">&amp;#39;Close&amp;#39;&lt;/span>]&lt;span style="color:#666">.&lt;/span>ewm(span&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">26&lt;/span>, adjust&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">False&lt;/span>)&lt;span style="color:#666">.&lt;/span>mean()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df[&lt;span style="color:#4070a0">&amp;#39;MACD&amp;#39;&lt;/span>] &lt;span style="color:#666">=&lt;/span> df[&lt;span style="color:#4070a0">&amp;#39;EMA12&amp;#39;&lt;/span>] &lt;span style="color:#666">-&lt;/span> df[&lt;span style="color:#4070a0">&amp;#39;EMA26&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>df[&lt;span style="color:#4070a0">&amp;#39;Signal&amp;#39;&lt;/span>] &lt;span style="color:#666">=&lt;/span> df[&lt;span style="color:#4070a0">&amp;#39;MACD&amp;#39;&lt;/span>]&lt;span style="color:#666">.&lt;/span>ewm(span&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">9&lt;/span>, adjust&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">False&lt;/span>)&lt;span style="color:#666">.&lt;/span>mean()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="pros-and-cons">Pros and Cons&lt;/h2>
+&lt;p>&lt;strong>Pros:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Trend Identification: MACD can identify the &lt;strong>start of a trend&lt;/strong>, providing good entry points.&lt;/li>
+&lt;li>Signal Line Crossovers: The MACD&amp;rsquo;s signal line can provide clear buy and sell signals.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Cons:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>False Signals: Like any indicator, MACD can produce &lt;strong>false signals&lt;/strong>, particularly in &lt;strong>volatile markets&lt;/strong>.&lt;/li>
+&lt;li>Lag: MACD can sometimes lag behind the market because it’s a trend-following indicator.&lt;/li>
+&lt;li>It may not work well in ranging (non-trending) markets, where price movements can be random.&lt;/li>
+&lt;/ul>
+&lt;h2 id="example-of-signals">Example of signals&lt;/h2>
+&lt;p>&lt;strong>True Positive:&lt;/strong>&lt;/p>
+&lt;p>A true positive in MACD is a situation where the MACD line crosses &lt;strong>above the signal line&lt;/strong> and the &lt;strong>price goes up&lt;/strong>, indicating a strong bullish signal, or the MACD line crosses &lt;strong>below the signal line&lt;/strong> and the &lt;strong>price goes down&lt;/strong>, indicating a strong bearish signal.&lt;/p>
+&lt;p>These signals can help traders decide when to enter or exit trades.&lt;/p>
+&lt;p>&lt;strong>False Positive:&lt;/strong>&lt;/p>
+&lt;p>A false positive in MACD is typically a situation where the MACD line crosses above the signal line (potential buy signal), but the price does not go up, or the MACD line crosses below the signal line (potential sell signal), but the price does not go down. It&amp;rsquo;s important to confirm MACD signals with other indicators or patterns to avoid false positives.&lt;/p>
+&lt;h2 id="use-in-real-trading">Use in Real Trading&lt;/h2>
+&lt;p>In a real trading scenario, traders often use MACD in conjunction with other indicators to confirm signals and minimize risks. For example, a trader may use the Relative Strength Index (&lt;strong>RSI&lt;/strong>) together with MACD.&lt;/p>
+&lt;p>If MACD gives a buy signal (MACD line crosses above the signal line), and RSI is below 30 (indicating an oversold condition), the trader may consider this as a strong buy signal.&lt;/p>
+&lt;h2 id="python-implementation">Python Implementation&lt;/h2>
+&lt;p>
+&lt;a href="https://romankurnovskii.com//jupyter/macd.html"
+>Click here to view this notebook in full screen&lt;/a
+>
+&lt;/p>
+&lt;iframe
+src="https://romankurnovskii.com//jupyter/macd.html"
+style="height:1400px;width:100%;border:none;overflow:hidden;"
+scrolling="no"
+>&lt;/iframe></description></item><item><title>RSI - Relative Strength Index</title><link>https://romankurnovskii.com/en/posts/trading-indicators/rsi/</link><pubDate>Thu, 15 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/trading-indicators/rsi/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>The Relative Strength Index (RSI) is a momentum oscillator that measures the speed and change of price movements. Developed by J. Welles Wilder, the RSI is a very popular indicator that is used primarily to identify &lt;strong>overbought&lt;/strong> and &lt;strong>oversold&lt;/strong> conditions in a market.&lt;/p>
+&lt;h2 id="calculating">Calculating&lt;/h2>
+&lt;p>The RSI is calculated using the following steps:&lt;/p>
+&lt;ol>
+&lt;li>Calculate the average gain and the average loss over the specified period (usually 14 periods).&lt;/li>
+&lt;li>Compute the relative strength (RS) which is the ratio of average gain to average loss.&lt;/li>
+&lt;li>The RSI is then calculated using the formula: RSI = 100 - (100 / (1 + RS))&lt;/li>
+&lt;/ol>
+&lt;h3 id="formula">Formula&lt;/h3>
+&lt;p>&lt;mark>RSI = 100 - (100 / (1 + RS))&lt;/mark>&lt;/p>
+&lt;p>Where:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>RS&lt;/strong>: (Relative Strength) = Average Gain / Average Loss&lt;/li>
+&lt;/ul>
+&lt;h2 id="pros-and-cons">Pros and Cons&lt;/h2>
+&lt;p>&lt;strong>Pros:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>RSI is a versatile indicator that can be used in trending or ranging markets.&lt;/li>
+&lt;li>It helps identify potential reversals, overbought/oversold conditions, and divergence.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Cons:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>During strong trends, the RSI may remain overbought or oversold for extended periods.&lt;/li>
+&lt;li>False signals can occur, especially during choppy market conditions.&lt;/li>
+&lt;/ul>
+&lt;h2 id="example-of-signals">Example of signals&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Minute&lt;/th>
+&lt;th>Open&lt;/th>
+&lt;th>High&lt;/th>
+&lt;th>Low&lt;/th>
+&lt;th>Close&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>$10.0&lt;/td>
+&lt;td>$11.0&lt;/td>
+&lt;td>$9.5&lt;/td>
+&lt;td>$10.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>$10.1&lt;/td>
+&lt;td>$12.1&lt;/td>
+&lt;td>$10.0&lt;/td>
+&lt;td>$12.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>$12.2&lt;/td>
+&lt;td>$15.2&lt;/td>
+&lt;td>$12.0&lt;/td>
+&lt;td>$15.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4&lt;/td>
+&lt;td>$15.1&lt;/td>
+&lt;td>$15.1&lt;/td>
+&lt;td>$13.9&lt;/td>
+&lt;td>$14.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td>$14.1&lt;/td>
+&lt;td>$16.1&lt;/td>
+&lt;td>$14.0&lt;/td>
+&lt;td>$16.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>6&lt;/td>
+&lt;td>$16.1&lt;/td>
+&lt;td>$16.1&lt;/td>
+&lt;td>$14.9&lt;/td>
+&lt;td>$15.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>7&lt;/td>
+&lt;td>$15.1&lt;/td>
+&lt;td>$17.1&lt;/td>
+&lt;td>$15.0&lt;/td>
+&lt;td>$17.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>8&lt;/td>
+&lt;td>$17.1&lt;/td>
+&lt;td>$17.1&lt;/td>
+&lt;td>$15.9&lt;/td>
+&lt;td>$16.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>9&lt;/td>
+&lt;td>$16.1&lt;/td>
+&lt;td>$18.1&lt;/td>
+&lt;td>$16.0&lt;/td>
+&lt;td>$18.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>10&lt;/td>
+&lt;td>$18.1&lt;/td>
+&lt;td>$18.1&lt;/td>
+&lt;td>$16.9&lt;/td>
+&lt;td>$17.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>11&lt;/td>
+&lt;td>$17.1&lt;/td>
+&lt;td>$19.1&lt;/td>
+&lt;td>$17.0&lt;/td>
+&lt;td>$19.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>12&lt;/td>
+&lt;td>$19.1&lt;/td>
+&lt;td>$19.1&lt;/td>
+&lt;td>$17.9&lt;/td>
+&lt;td>$18.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>13&lt;/td>
+&lt;td>$18.1&lt;/td>
+&lt;td>$20.1&lt;/td>
+&lt;td>$18.0&lt;/td>
+&lt;td>$20.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>14&lt;/td>
+&lt;td>$20.1&lt;/td>
+&lt;td>$21.1&lt;/td>
+&lt;td>$20.0&lt;/td>
+&lt;td>$21.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>15&lt;/td>
+&lt;td>$21.1&lt;/td>
+&lt;td>$21.1&lt;/td>
+&lt;td>$19.9&lt;/td>
+&lt;td>$20.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>16&lt;/td>
+&lt;td>$20.1&lt;/td>
+&lt;td>$22.1&lt;/td>
+&lt;td>$20.0&lt;/td>
+&lt;td>$21.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>17&lt;/td>
+&lt;td>$21.1&lt;/td>
+&lt;td>$23.1&lt;/td>
+&lt;td>$21.0&lt;/td>
+&lt;td>$22.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>18&lt;/td>
+&lt;td>$22.1&lt;/td>
+&lt;td>$24.1&lt;/td>
+&lt;td>$22.0&lt;/td>
+&lt;td>$23.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>19&lt;/td>
+&lt;td>$23.1&lt;/td>
+&lt;td>$25.1&lt;/td>
+&lt;td>$23.0&lt;/td>
+&lt;td>$24.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>20&lt;/td>
+&lt;td>$24.1&lt;/td>
+&lt;td>$26.1&lt;/td>
+&lt;td>$24.0&lt;/td>
+&lt;td>$25.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>21&lt;/td>
+&lt;td>$25.1&lt;/td>
+&lt;td>$27.1&lt;/td>
+&lt;td>$25.0&lt;/td>
+&lt;td>$26.0&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>For the following examples, let&amp;rsquo;s assume the RSI settings are set to the standard &lt;strong>14 periods&lt;/strong>.&lt;/p>
+&lt;p>&lt;strong>True Positive:&lt;/strong>&lt;/p>
+&lt;p>In the 6th minute, the price drops from $16 to $15. The RSI dips below the 30 level, indicating an oversold condition. In the next minute, the price increases to $17, marking a successful buy signal.&lt;/p>
+&lt;p>&lt;strong>False Positive:&lt;/strong>&lt;/p>
+&lt;p>In the 21th minute, the price jumps from $25 to $26. The RSI exceeds 70, implying an overbought condition. However, the price continues to increase in the next minutes, rendering this a false sell signal.&lt;/p>
+&lt;h2 id="use-in-real-trading">Use in Real Trading&lt;/h2>
+&lt;p>In real trading, RSI is often used in conjunction with other indicators to increase the robustness of the signals.&lt;/p>
+&lt;p>For instance, traders might look for price action patterns (like support/resistance breaks) or confirmations from other indicators before acting on an RSI signal.&lt;/p>
+&lt;h2 id="python-implementation">Python Implementation&lt;/h2>
+&lt;p>
+&lt;a href="https://romankurnovskii.com//jupyter/rsi.html"
+>Click here to view this notebook in full screen&lt;/a
+>
+&lt;/p>
+&lt;iframe
+src="https://romankurnovskii.com//jupyter/rsi.html"
+style="height:1400px;width:100%;border:none;overflow:hidden;"
+scrolling="no"
+>&lt;/iframe></description></item><item><title>SMA - Simple Moving Average</title><link>https://romankurnovskii.com/en/posts/trading-indicators/sma/</link><pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/trading-indicators/sma/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>The Simple Moving Average (SMA) is a technical indicator that calculates the &lt;strong>average price&lt;/strong> over a specific number of periods, and it moves along as new data is added, making it a &amp;ldquo;moving average&amp;rdquo;.&lt;/p>
+&lt;h2 id="calculating">Calculating&lt;/h2>
+&lt;h3 id="formula">Formula&lt;/h3>
+&lt;p>&lt;mark>SMA = (Sum of price data for the last N periods) / N&lt;/mark>&lt;/p>
+&lt;p>For example, a 5-period SMA would sum up the last 5 closing prices and divide it by 5 to find the average. It is called a &amp;lsquo;moving&amp;rsquo; average because as new prices become available, the oldest prices are dropped and the average recalculates.&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Minute&lt;/th>
+&lt;th>Open&lt;/th>
+&lt;th>High&lt;/th>
+&lt;th>Low&lt;/th>
+&lt;th>Close&lt;/th>
+&lt;th>SMA&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>$10.0&lt;/td>
+&lt;td>$11.0&lt;/td>
+&lt;td>$9.5&lt;/td>
+&lt;td>$10.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>$10.1&lt;/td>
+&lt;td>$12.1&lt;/td>
+&lt;td>$10.0&lt;/td>
+&lt;td>$12.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>$12.2&lt;/td>
+&lt;td>$15.2&lt;/td>
+&lt;td>$12.0&lt;/td>
+&lt;td>$15.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4&lt;/td>
+&lt;td>$15.1&lt;/td>
+&lt;td>$15.1&lt;/td>
+&lt;td>$13.9&lt;/td>
+&lt;td>$14.0&lt;/td>
+&lt;td>-&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td>$14.1&lt;/td>
+&lt;td>$16.1&lt;/td>
+&lt;td>$14.0&lt;/td>
+&lt;td>$16.0&lt;/td>
+&lt;td>$13.4&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Using our given market data and specifically the closing prices, here&amp;rsquo;s how the 5-minute SMA would be calculated after Minute 5:&lt;/p>
+&lt;ol>
+&lt;li>Minute 1-5 close prices: &lt;code>$10.0, $12.0, $15.0, $14.0, $16.0&lt;/code>&lt;/li>
+&lt;li>SMA = &lt;code>(10.0 + 12.0 + 15.0 + 14.0 + 16.0) / 5 = $13.4&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;p>The 5-minute SMA after the 5th minute would be $13.4.&lt;/p>
+&lt;h2 id="pros-and-cons">Pros and Cons&lt;/h2>
+&lt;p>Pros:&lt;/p>
+&lt;ul>
+&lt;li>The SMA is simple and easy to calculate and understand.&lt;/li>
+&lt;li>It smooths out price fluctuations and helps to filter out the &amp;ldquo;noise&amp;rdquo; of the market.&lt;/li>
+&lt;li>It&amp;rsquo;s useful for identifying trend directions over the specified period.&lt;/li>
+&lt;/ul>
+&lt;p>Cons:&lt;/p>
+&lt;ul>
+&lt;li>The SMA is a lagging indicator, meaning it&amp;rsquo;s based on past prices and tends to be slow to respond to recent price changes.&lt;/li>
+&lt;li>Because it equally weighs all data points, it might not accurately reflect recent changes in the market.&lt;/li>
+&lt;li>It might give false signals in volatile markets because it doesn&amp;rsquo;t adapt to market changes as quickly as some other indicators.&lt;/li>
+&lt;/ul>
+&lt;h2 id="example-of-signals">Example of signals&lt;/h2>
+&lt;p>Traders often use two SMAs: a &lt;strong>short-term&lt;/strong> one and a &lt;strong>long-term&lt;/strong> one.
+When the &lt;strong>short-term&lt;/strong> SMA crosses &lt;strong>above&lt;/strong> the long-term SMA, it&amp;rsquo;s considered a bullish (&lt;strong>buy&lt;/strong>) signal.
+When it crosses &lt;strong>below&lt;/strong>, it&amp;rsquo;s a bearish (&lt;strong>sell&lt;/strong>) signal.&lt;/p>
+&lt;p>&lt;strong>True Positive:&lt;/strong>&lt;/p>
+&lt;p>In an uptrending market, the short-term SMA might cross above the long-term SMA, correctly indicating a continuing upward trend and a good time to buy.&lt;/p>
+&lt;p>&lt;strong>False Positive:&lt;/strong>&lt;/p>
+&lt;p>Let&amp;rsquo;s say the market is in a sideways trend (prices fluctuate within a narrow range). A brief price spike could cause the short-term SMA to cross above the long-term SMA, generating a buy signal. However, this could be misleading as the overall trend hasn&amp;rsquo;t changed.&lt;/p>
+&lt;h2 id="use-in-real-trading">Use in Real Trading&lt;/h2>
+&lt;p>In real trading, SMA can be paired with other indicators for better results.&lt;/p>
+&lt;p>For instance, a trader might use SMA in conjunction with the &lt;strong>Relative Strength Index (RSI)&lt;/strong>. The RSI could help confirm whether the market is overbought or oversold when the SMAs cross.&lt;/p>
+&lt;h2 id="python-implementation">Python Implementation&lt;/h2>
+&lt;p>
+&lt;a href="https://romankurnovskii.com//jupyter/sma.html"
+>Click here to view this notebook in full screen&lt;/a
+>
+&lt;/p>
+&lt;iframe
+src="https://romankurnovskii.com//jupyter/sma.html"
+style="height:1250px;width:100%;border:none;overflow:hidden;"
+scrolling="no"
+>&lt;/iframe></description></item><item><title>Trading indicators</title><link>https://romankurnovskii.com/en/posts/trading-indicators/</link><pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/trading-indicators/</guid><description>&lt;h2 id="raw-market-data">Raw market data&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Minute&lt;/th>
+&lt;th>Open&lt;/th>
+&lt;th>High&lt;/th>
+&lt;th>Low&lt;/th>
+&lt;th>Close&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>$10.0&lt;/td>
+&lt;td>$11.0&lt;/td>
+&lt;td>$9.5&lt;/td>
+&lt;td>$10.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>$10.1&lt;/td>
+&lt;td>$12.1&lt;/td>
+&lt;td>$10.0&lt;/td>
+&lt;td>$12.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>$12.2&lt;/td>
+&lt;td>$15.2&lt;/td>
+&lt;td>$12.0&lt;/td>
+&lt;td>$15.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4&lt;/td>
+&lt;td>$15.1&lt;/td>
+&lt;td>$15.1&lt;/td>
+&lt;td>$13.9&lt;/td>
+&lt;td>$14.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td>$14.1&lt;/td>
+&lt;td>$16.1&lt;/td>
+&lt;td>$14.0&lt;/td>
+&lt;td>$16.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>6&lt;/td>
+&lt;td>$16.1&lt;/td>
+&lt;td>$16.1&lt;/td>
+&lt;td>$14.9&lt;/td>
+&lt;td>$15.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>7&lt;/td>
+&lt;td>$15.1&lt;/td>
+&lt;td>$17.1&lt;/td>
+&lt;td>$15.0&lt;/td>
+&lt;td>$17.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>8&lt;/td>
+&lt;td>$17.1&lt;/td>
+&lt;td>$17.1&lt;/td>
+&lt;td>$15.9&lt;/td>
+&lt;td>$16.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>9&lt;/td>
+&lt;td>$16.1&lt;/td>
+&lt;td>$18.1&lt;/td>
+&lt;td>$16.0&lt;/td>
+&lt;td>$18.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>10&lt;/td>
+&lt;td>$18.1&lt;/td>
+&lt;td>$18.1&lt;/td>
+&lt;td>$16.9&lt;/td>
+&lt;td>$17.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>11&lt;/td>
+&lt;td>$17.1&lt;/td>
+&lt;td>$19.1&lt;/td>
+&lt;td>$17.0&lt;/td>
+&lt;td>$19.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>12&lt;/td>
+&lt;td>$19.1&lt;/td>
+&lt;td>$19.1&lt;/td>
+&lt;td>$17.9&lt;/td>
+&lt;td>$18.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>13&lt;/td>
+&lt;td>$18.1&lt;/td>
+&lt;td>$20.1&lt;/td>
+&lt;td>$18.0&lt;/td>
+&lt;td>$20.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>14&lt;/td>
+&lt;td>$20.1&lt;/td>
+&lt;td>$21.1&lt;/td>
+&lt;td>$20.0&lt;/td>
+&lt;td>$21.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>15&lt;/td>
+&lt;td>$21.1&lt;/td>
+&lt;td>$21.1&lt;/td>
+&lt;td>$19.9&lt;/td>
+&lt;td>$20.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>16&lt;/td>
+&lt;td>$20.1&lt;/td>
+&lt;td>$22.1&lt;/td>
+&lt;td>$20.0&lt;/td>
+&lt;td>$21.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>17&lt;/td>
+&lt;td>$21.1&lt;/td>
+&lt;td>$23.1&lt;/td>
+&lt;td>$21.0&lt;/td>
+&lt;td>$22.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>18&lt;/td>
+&lt;td>$22.1&lt;/td>
+&lt;td>$24.1&lt;/td>
+&lt;td>$22.0&lt;/td>
+&lt;td>$23.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>19&lt;/td>
+&lt;td>$23.1&lt;/td>
+&lt;td>$25.1&lt;/td>
+&lt;td>$23.0&lt;/td>
+&lt;td>$24.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>20&lt;/td>
+&lt;td>$24.1&lt;/td>
+&lt;td>$26.1&lt;/td>
+&lt;td>$24.0&lt;/td>
+&lt;td>$25.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>21&lt;/td>
+&lt;td>$25.1&lt;/td>
+&lt;td>$27.1&lt;/td>
+&lt;td>$25.0&lt;/td>
+&lt;td>$26.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>22&lt;/td>
+&lt;td>$26.1&lt;/td>
+&lt;td>$28.1&lt;/td>
+&lt;td>$26.0&lt;/td>
+&lt;td>$27.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>23&lt;/td>
+&lt;td>$27.1&lt;/td>
+&lt;td>$29.1&lt;/td>
+&lt;td>$27.0&lt;/td>
+&lt;td>$28.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>24&lt;/td>
+&lt;td>$28.1&lt;/td>
+&lt;td>$30.1&lt;/td>
+&lt;td>$28.0&lt;/td>
+&lt;td>$29.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>25&lt;/td>
+&lt;td>$29.1&lt;/td>
+&lt;td>$31.1&lt;/td>
+&lt;td>$29.0&lt;/td>
+&lt;td>$30.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>26&lt;/td>
+&lt;td>$30.1&lt;/td>
+&lt;td>$32.1&lt;/td>
+&lt;td>$30.0&lt;/td>
+&lt;td>$31.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>27&lt;/td>
+&lt;td>$31.1&lt;/td>
+&lt;td>$33.1&lt;/td>
+&lt;td>$31.0&lt;/td>
+&lt;td>$32.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>28&lt;/td>
+&lt;td>$32.1&lt;/td>
+&lt;td>$34.1&lt;/td>
+&lt;td>$32.0&lt;/td>
+&lt;td>$33.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>29&lt;/td>
+&lt;td>$33.1&lt;/td>
+&lt;td>$35.1&lt;/td>
+&lt;td>$33.0&lt;/td>
+&lt;td>$34.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>30&lt;/td>
+&lt;td>$34.1&lt;/td>
+&lt;td>$36.1&lt;/td>
+&lt;td>$34.0&lt;/td>
+&lt;td>$35.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>31&lt;/td>
+&lt;td>$35.1&lt;/td>
+&lt;td>$37.1&lt;/td>
+&lt;td>$35.0&lt;/td>
+&lt;td>$36.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>32&lt;/td>
+&lt;td>$36.1&lt;/td>
+&lt;td>$38.1&lt;/td>
+&lt;td>$36.0&lt;/td>
+&lt;td>$37.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>33&lt;/td>
+&lt;td>$37.1&lt;/td>
+&lt;td>$39.1&lt;/td>
+&lt;td>$37.0&lt;/td>
+&lt;td>$38.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>34&lt;/td>
+&lt;td>$38.1&lt;/td>
+&lt;td>$40.1&lt;/td>
+&lt;td>$38.0&lt;/td>
+&lt;td>$39.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>35&lt;/td>
+&lt;td>$39.1&lt;/td>
+&lt;td>$41.1&lt;/td>
+&lt;td>$39.0&lt;/td>
+&lt;td>$40.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>36&lt;/td>
+&lt;td>$40.1&lt;/td>
+&lt;td>$42.1&lt;/td>
+&lt;td>$40.0&lt;/td>
+&lt;td>$41.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>37&lt;/td>
+&lt;td>$41.1&lt;/td>
+&lt;td>$43.1&lt;/td>
+&lt;td>$41.0&lt;/td>
+&lt;td>$42.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>38&lt;/td>
+&lt;td>$42.1&lt;/td>
+&lt;td>$44.1&lt;/td>
+&lt;td>$42.0&lt;/td>
+&lt;td>$43.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>39&lt;/td>
+&lt;td>$43.1&lt;/td>
+&lt;td>$45.1&lt;/td>
+&lt;td>$43.0&lt;/td>
+&lt;td>$44.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>40&lt;/td>
+&lt;td>$44.1&lt;/td>
+&lt;td>$46.1&lt;/td>
+&lt;td>$44.0&lt;/td>
+&lt;td>$45.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>41&lt;/td>
+&lt;td>$45.1&lt;/td>
+&lt;td>$47.1&lt;/td>
+&lt;td>$45.0&lt;/td>
+&lt;td>$46.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>42&lt;/td>
+&lt;td>$46.1&lt;/td>
+&lt;td>$48.1&lt;/td>
+&lt;td>$46.0&lt;/td>
+&lt;td>$47.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>43&lt;/td>
+&lt;td>$47.1&lt;/td>
+&lt;td>$49.1&lt;/td>
+&lt;td>$47.0&lt;/td>
+&lt;td>$48.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>44&lt;/td>
+&lt;td>$48.1&lt;/td>
+&lt;td>$50.1&lt;/td>
+&lt;td>$48.0&lt;/td>
+&lt;td>$49.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>45&lt;/td>
+&lt;td>$49.1&lt;/td>
+&lt;td>$51.1&lt;/td>
+&lt;td>$49.0&lt;/td>
+&lt;td>$50.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>46&lt;/td>
+&lt;td>$50.1&lt;/td>
+&lt;td>$52.1&lt;/td>
+&lt;td>$50.0&lt;/td>
+&lt;td>$51.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>47&lt;/td>
+&lt;td>$51.1&lt;/td>
+&lt;td>$53.1&lt;/td>
+&lt;td>$51.0&lt;/td>
+&lt;td>$52.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>48&lt;/td>
+&lt;td>$52.1&lt;/td>
+&lt;td>$54.1&lt;/td>
+&lt;td>$52.0&lt;/td>
+&lt;td>$53.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>49&lt;/td>
+&lt;td>$53.1&lt;/td>
+&lt;td>$55.1&lt;/td>
+&lt;td>$53.0&lt;/td>
+&lt;td>$54.0&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>50&lt;/td>
+&lt;td>$54.1&lt;/td>
+&lt;td>$56.1&lt;/td>
+&lt;td>$54.0&lt;/td>
+&lt;td>$55.0&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="part-1-the-basics-1-15">Part 1: The basics (1-15)&lt;/h2>
+&lt;ol>
+&lt;li>Volume&lt;/li>
+&lt;li>&lt;a href="../sma">Simple Moving Average (SMA)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../ema">Exponential Moving Average (EMA)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../macd">Moving Average Convergence Divergence (MACD)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../rsi">Relative Strength Index (RSI)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../bollinger_bands">Bollinger Bands&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../stochastic_oscillator">Stochastic Oscillator&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../atr">Average True Range (ATR)&lt;/a>&lt;/li>
+&lt;li>Average Directional Index (ADX)&lt;/li>
+&lt;li>On-Balance Volume (OBV)&lt;/li>
+&lt;li>Chaikin Money Flow (CMF)&lt;/li>
+&lt;li>Fibonacci Retracements&lt;/li>
+&lt;li>Parabolic SAR&lt;/li>
+&lt;li>Ichimoku Cloud&lt;/li>
+&lt;li>Money Flow Index (MFI)&lt;/li>
+&lt;/ol>
+&lt;h2 id="part-2-advanced-techniques-16-50">Part 2: Advanced techniques (16-50)&lt;/h2>
+&lt;ol>
+&lt;li>Accumulation/Distribution Line (A/D Line)&lt;/li>
+&lt;li>Commodity Channel Index (CCI)&lt;/li>
+&lt;li>Rate of Change (ROC)&lt;/li>
+&lt;li>Keltner Channels&lt;/li>
+&lt;li>Donchian Channels&lt;/li>
+&lt;li>Gann Fans&lt;/li>
+&lt;li>Elliott Wave Theory&lt;/li>
+&lt;li>Pivot Points&lt;/li>
+&lt;li>Volume Weighted Average Price (VWAP)&lt;/li>
+&lt;li>Chande Momentum Oscillator&lt;/li>
+&lt;li>Triple Exponential Moving Average (TEMA)&lt;/li>
+&lt;li>Awesome Oscillator&lt;/li>
+&lt;li>Detrended Price Oscillator (DPO)&lt;/li>
+&lt;li>Price Rate of Change (ROC)&lt;/li>
+&lt;li>Standard Deviation&lt;/li>
+&lt;li>True Strength Index (TSI)&lt;/li>
+&lt;li>Linear Regression&lt;/li>
+&lt;li>Hull Moving Average (HMA)&lt;/li>
+&lt;li>Fractal Adaptive Moving Average (FRAMA)&lt;/li>
+&lt;li>Know Sure Thing (KST)&lt;/li>
+&lt;li>Mass Index&lt;/li>
+&lt;li>ZigZag&lt;/li>
+&lt;li>Ulcer Index&lt;/li>
+&lt;li>Williams %R&lt;/li>
+&lt;li>Volume Oscillator&lt;/li>
+&lt;li>Trend Strength Index (TSI)&lt;/li>
+&lt;li>Moving Average Ribbon&lt;/li>
+&lt;li>TRIX&lt;/li>
+&lt;li>Ultimate Oscillator&lt;/li>
+&lt;li>Vortex Indicator (VI)&lt;/li>
+&lt;li>Rainbow Moving Average&lt;/li>
+&lt;li>Schaff Trend Cycle (STC)&lt;/li>
+&lt;li>Coppock Curve&lt;/li>
+&lt;li>Arnaud Legoux Moving Average (ALMA)&lt;/li>
+&lt;li>Zero Lag EMA&lt;/li>
+&lt;/ol></description></item></channel></rss>

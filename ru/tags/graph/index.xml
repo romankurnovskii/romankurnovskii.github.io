@@ -1,10 +1,72 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Graph on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/graph/</link><description>Recent content in Graph on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Mon, 28 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/graph/index.xml" rel="self" type="application/rss+xml"/><item><title>210. Course Schedule II</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/210/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/210/</guid><description>LeetCode задача 210
-Задача Вам дано ( n ) курсов для изучения, пронумерованных от ( 0 ) до ( n-1 ), и массив ( prerequisites ), где ( prerequisites[i] = [a, b] ) означает, что для изучения курса ( a ) предварительно необходимо пройти курс ( b ).
-Напишите функцию для нахождения порядка, в котором можно пройти курсы. Если это невозможно, верните пустой массив.
-Подсказки Топологическая сортировка может быть использована для решения этой задачи.
-Подход Создадим граф, представляющий предварительные требования для каждого курса.</description></item><item><title>277. Find the Celebrity</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/277/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/277/</guid><description>LeetCode задача 277
-Задача Предположим, у вас есть n человек и их отношения между собой неизвестны. Существует ли такая персона (знаменитость), что все знают её, но она никого не знает?
-Имплементируйте функцию int findCelebrity(n), которая вернет знаменитость если она есть, иначе вернёт -1.
-Вам дана функция bool knows(a, b), которая скажет вам, знает ли a человека b.
-Подход Чтобы найти знаменитость, можно использовать двухпроходный алгоритм. В первом проходе идентифицируем возможную знаменитость. Во втором проходе проверяем эту кандидатуру.
-Алгоритм Инициализируем переменную candidate значением 0.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Graph on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/graph/</link><description>Recent content in Graph on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Mon, 28 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/graph/index.xml" rel="self" type="application/rss+xml"/><item><title>210. Course Schedule II</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/210/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/210/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/course-schedule-ii/">LeetCode задача 210&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Вам дано ( n ) курсов для изучения, пронумерованных от ( 0 ) до ( n-1 ), и массив ( prerequisites ), где ( prerequisites[i] = [a, b] ) означает, что для изучения курса ( a ) предварительно необходимо пройти курс ( b ).&lt;/p>
+&lt;p>Напишите функцию для нахождения порядка, в котором можно пройти курсы. Если это невозможно, верните пустой массив.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Топологическая сортировка может быть использована для решения этой задачи.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;ol>
+&lt;li>Создадим граф, представляющий предварительные требования для каждого курса.&lt;/li>
+&lt;li>Применим топологическую сортировку для нахождения порядка курсов.&lt;/li>
+&lt;/ol>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Инициализируем граф и массив для хранения входящих степеней всех вершин (курсов).&lt;/li>
+&lt;li>Заполним граф и массив входящих степеней, используя массив ( prerequisites ).&lt;/li>
+&lt;li>Используем алгоритм топологической сортировки для нахождения порядка курсов.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">collections&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> deque, defaultdict
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">findOrder&lt;/span>(numCourses, prerequisites):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Создаем граф и массив для хранения входящих степеней&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> graph &lt;span style="color:#666">=&lt;/span> defaultdict(&lt;span style="color:#007020">list&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> indegree &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">*&lt;/span> numCourses
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Заполняем граф и массив входящих степеней&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> course, prereq &lt;span style="color:#007020;font-weight:bold">in&lt;/span> prerequisites:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> graph[prereq]&lt;span style="color:#666">.&lt;/span>append(course)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> indegree[course] &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Инициализация очереди для вершин с нулевой входящей степенью&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> queue &lt;span style="color:#666">=&lt;/span> deque([i &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(numCourses) &lt;span style="color:#007020;font-weight:bold">if&lt;/span> indegree[i] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Топологическая сортировка&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> order &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> queue:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prereq &lt;span style="color:#666">=&lt;/span> queue&lt;span style="color:#666">.&lt;/span>popleft()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> order&lt;span style="color:#666">.&lt;/span>append(prereq)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> course &lt;span style="color:#007020;font-weight:bold">in&lt;/span> graph[prereq]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> indegree[course] &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> indegree[course] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> queue&lt;span style="color:#666">.&lt;/span>append(course)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> order &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020">len&lt;/span>(order) &lt;span style="color:#666">==&lt;/span> numCourses &lt;span style="color:#007020;font-weight:bold">else&lt;/span> []
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>277. Find the Celebrity</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/277/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/277/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/find-the-celebrity/">LeetCode задача 277&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Предположим, у вас есть n человек и их отношения между собой неизвестны. Существует ли такая персона (знаменитость), что все знают её, но она никого не знает?&lt;/p>
+&lt;p>Имплементируйте функцию &lt;code>int findCelebrity(n)&lt;/code>, которая вернет знаменитость если она есть, иначе вернёт -1.&lt;/p>
+&lt;p>Вам дана функция &lt;code>bool knows(a, b)&lt;/code>, которая скажет вам, знает ли &lt;code>a&lt;/code> человека &lt;code>b&lt;/code>.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Чтобы найти знаменитость, можно использовать двухпроходный алгоритм. В первом проходе идентифицируем возможную знаменитость. Во втором проходе проверяем эту кандидатуру.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Инициализируем переменную &lt;code>candidate&lt;/code> значением 0.&lt;/li>
+&lt;li>Используем один проход для выявления кандидата. Если &lt;code>knows(candidate, i)&lt;/code> возвращает &lt;code>True&lt;/code>, переключаем &lt;code>candidate&lt;/code> на &lt;code>i&lt;/code>.&lt;/li>
+&lt;li>Второй проход для проверки, является ли &lt;code>candidate&lt;/code> знаменитостью.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">findCelebrity&lt;/span>(self, n: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> candidate &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#60a0b0;font-style:italic">#1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> knows(candidate, i):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> candidate &lt;span style="color:#666">=&lt;/span> i
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n): &lt;span style="color:#60a0b0;font-style:italic">#3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> i &lt;span style="color:#666">!=&lt;/span> candidate &lt;span style="color:#007020;font-weight:bold">and&lt;/span> (knows(candidate, i) &lt;span style="color:#007020;font-weight:bold">or&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> knows(i, candidate)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> candidate
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

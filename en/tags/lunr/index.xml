@@ -1,5 +1,424 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lunr on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/lunr/</link><description>Recent content in Lunr on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sat, 16 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/lunr/index.xml" rel="self" type="application/rss+xml"/><item><title>Add search to Hugo multilingual static site with Lunr</title><link>https://romankurnovskii.com/en/posts/hugo-add-search-lunr-popup/</link><pubDate>Sat, 16 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/hugo-add-search-lunr-popup/</guid><description>Initial I had the need to implement search functionality on my site. Content on is in different languages.
-The goal is to impelemnt search for all pages and separate search results for each and every language.
-How it works Hugo generates the search index. In this case it means that we get json file with every static page on the site.
-To make search works we need to create index. lunr.js takes care of it.
-Client send query -&amp;gt; our script &amp;ldquo;tries to find&amp;rdquo; in the index</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lunr on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/lunr/</link><description>Recent content in Lunr on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sat, 16 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/lunr/index.xml" rel="self" type="application/rss+xml"/><item><title>Add search to Hugo multilingual static site with Lunr</title><link>https://romankurnovskii.com/en/posts/hugo-add-search-lunr-popup/</link><pubDate>Sat, 16 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/hugo-add-search-lunr-popup/</guid><description>&lt;h2 id="initial">Initial&lt;/h2>
+&lt;p>I had the need to implement search functionality on my site. Content on is in different languages.&lt;/p>
+&lt;p>The goal is to impelemnt search for all pages and separate search results for each and every language.&lt;/p>
+&lt;h2 id="how-it-works">How it works&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>Hugo generates the search index. In this case it means that we get &lt;em>json&lt;/em> file with every static page on the site.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>To make search works we need to create &lt;em>index&lt;/em>. &lt;a href="http://lunrjs.com/">lunr.js&lt;/a> takes care of it.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Client send query -&amp;gt; our script &amp;ldquo;tries to find&amp;rdquo; in the index&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Render the results&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>This is how the logic looks like:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/logic.jpg"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="implementation">Implementation&lt;/h2>
+&lt;ol>
+&lt;li>Create search form&lt;/li>
+&lt;li>Create popup modal where will render search results&lt;/li>
+&lt;li>Connect Lunr.js script&lt;/li>
+&lt;li>Generate pages data&lt;/li>
+&lt;li>Connect search/result forms with lunr.js search&lt;/li>
+&lt;/ol>
+&lt;h3 id="tldr">TL;DR&lt;/h3>
+&lt;p>&lt;strong>Files to change/create:&lt;/strong>&lt;/p>
+&lt;details>
+&lt;summary>1. `/layouts/partials/header.html`&lt;/summary>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">form&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;search&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">input&lt;/span> &lt;span style="color:#4070a0">type&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;text&amp;#34;&lt;/span> &lt;span style="color:#4070a0">type&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;search&amp;#34;&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;search-input&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">form&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/details>
+&lt;details>
+&lt;summary>2. `/layouts/partials/components/search-list-popup.html`&lt;/summary>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">div&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;search-result&amp;#34;&lt;/span> &lt;span style="color:#4070a0">tabindex&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;-1&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">class&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 max-w-xs &amp;#34;&lt;/span> &lt;span style="color:#4070a0">hidden&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">div&lt;/span> &lt;span style="color:#4070a0">class&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;relative p-4 w-full max-w-xs h-full md:h-auto&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">div&lt;/span> &lt;span style="color:#4070a0">class&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;relative bg-white rounded-lg shadow dark:bg-gray-700&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">div&lt;/span> &lt;span style="color:#4070a0">class&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;p-6&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">h3&lt;/span>&amp;gt;Search results&amp;lt;/&lt;span style="color:#062873;font-weight:bold">h3&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">div&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;search-results&amp;#34;&lt;/span> &lt;span style="color:#4070a0">class&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;prose&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/details>
+&lt;details>
+&lt;summary>3. `/layouts/partials/footer.html`&lt;/summary>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{ $languageMode := .Site.Language }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;https://unpkg.com/lunr/lunr.min.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;/js/search.js?1&amp;#34;&lt;/span> &lt;span style="color:#4070a0">languageMode&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">{{&lt;/span> &lt;span style="">$&lt;/span>&lt;span style="color:#4070a0">languageMode&lt;/span> &lt;span style="">}}&lt;/span> &amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{ partial &amp;#34;components/search-list-popup.html&amp;#34; . }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/details>
+&lt;details>
+&lt;summary>4. `/layouts/_default/index.json`&lt;/summary>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>[
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#666">-&lt;/span> &lt;span style="color:#007020;font-weight:bold">range&lt;/span> &lt;span style="">$&lt;/span>index, &lt;span style="">$&lt;/span>page &lt;span style="color:#666">:=&lt;/span> .Site.RegularPages.ByTitle &lt;span style="color:#666">-&lt;/span>}}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#666">-&lt;/span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> gt &lt;span style="">$&lt;/span>index &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#666">-&lt;/span>}} , {{&lt;span style="color:#666">-&lt;/span> end &lt;span style="color:#666">-&lt;/span>}}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#666">-&lt;/span> &lt;span style="">$&lt;/span>entry &lt;span style="color:#666">:=&lt;/span> dict &lt;span style="color:#4070a0">&amp;#34;uri&amp;#34;&lt;/span> &lt;span style="">$&lt;/span>page.RelPermalink &lt;span style="color:#4070a0">&amp;#34;title&amp;#34;&lt;/span> &lt;span style="">$&lt;/span>page.Title &lt;span style="color:#666">-&lt;/span>}}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#666">-&lt;/span> &lt;span style="">$&lt;/span>entry = merge &lt;span style="">$&lt;/span>&lt;span style="color:#06287e">entry&lt;/span> (dict &lt;span style="color:#4070a0">&amp;#34;description&amp;#34;&lt;/span> .Description) &lt;span style="color:#666">-&lt;/span>}}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#666">-&lt;/span> &lt;span style="">$&lt;/span>entry = merge &lt;span style="">$&lt;/span>&lt;span style="color:#06287e">entry&lt;/span> (dict &lt;span style="color:#4070a0">&amp;#34;content&amp;#34;&lt;/span> (.Plain | htmlUnescape)) &lt;span style="color:#666">-&lt;/span>}}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#666">-&lt;/span> &lt;span style="">$&lt;/span>entry | jsonify &lt;span style="color:#666">-&lt;/span>}}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#666">-&lt;/span> end &lt;span style="color:#666">-&lt;/span>}}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/details>
+&lt;details>
+&lt;summary>5. `config.yaml`&lt;/summary>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># config.yaml&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#60a0b0;font-style:italic"># need for search popup service / creates search.json index fo lunr.js&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">outputFormats&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">SearchIndex&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">baseName&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>search&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">mediaType&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>application/json&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">outputs&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">home&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- HTML&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- RSS&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- SearchIndex&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/details>
+&lt;details>
+&lt;summary>6. `static/js/search.js`&lt;/summary>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> languageMode &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">window&lt;/span>.&lt;span style="color:#007020">document&lt;/span>.currentScript.getAttribute(&lt;span style="color:#4070a0">&amp;#39;languageMode&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> MAX_SEARCH_RESULTS &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">let&lt;/span> searchIndex &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">let&lt;/span> pagesStore &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// Need to create ONLY once , maybe before push | during build
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> createIndex &lt;span style="color:#666">=&lt;/span> (documents) =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> searchIndex &lt;span style="color:#666">=&lt;/span> lunr(&lt;span style="color:#007020;font-weight:bold">function&lt;/span> () {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">this&lt;/span>.field(&lt;span style="color:#4070a0">&amp;#34;title&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">this&lt;/span>.field(&lt;span style="color:#4070a0">&amp;#34;content&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">this&lt;/span>.field(&lt;span style="color:#4070a0">&amp;#34;description&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">this&lt;/span>.field(&lt;span style="color:#4070a0">&amp;#34;uri&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">this&lt;/span>.ref(&lt;span style="color:#4070a0">&amp;#39;uri&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> documents.forEach(&lt;span style="color:#007020;font-weight:bold">function&lt;/span> (doc) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pagesStore[doc[&lt;span style="color:#4070a0">&amp;#39;uri&amp;#39;&lt;/span>]] &lt;span style="color:#666">=&lt;/span> doc[&lt;span style="color:#4070a0">&amp;#39;title&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">this&lt;/span>.add(doc)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }, &lt;span style="color:#007020;font-weight:bold">this&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> loadIndexData &lt;span style="color:#666">=&lt;/span> () =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> url &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">`/&lt;/span>&lt;span style="color:#70a0d0">${&lt;/span>languageMode&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">/search.json`&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> xmlhttp &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">new&lt;/span> XMLHttpRequest();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> xmlhttp.onreadystatechange &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">function&lt;/span> () {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (&lt;span style="color:#007020;font-weight:bold">this&lt;/span>.readyState &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">4&lt;/span> &lt;span style="color:#666">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#007020;font-weight:bold">this&lt;/span>.status &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">200&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> pages_content &lt;span style="color:#666">=&lt;/span> JSON.parse(&lt;span style="color:#007020;font-weight:bold">this&lt;/span>.responseText);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> createIndex(pages_content)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> xmlhttp.open(&lt;span style="color:#4070a0">&amp;#34;GET&amp;#34;&lt;/span>, url, &lt;span style="color:#007020;font-weight:bold">true&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> xmlhttp.send();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> search &lt;span style="color:#666">=&lt;/span> (text) =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">let&lt;/span> result &lt;span style="color:#666">=&lt;/span> searchIndex.search(text)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> result
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> hideSearchResults &lt;span style="color:#666">=&lt;/span> (event, divBlock) =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> event.preventDefault()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (&lt;span style="color:#666">!&lt;/span>divBlock.contains(event.target)) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> divBlock.style.display &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;none&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> divBlock.setAttribute(&lt;span style="color:#4070a0">&amp;#39;class&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;hidden&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// TODO refactor
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> renderSearchResults &lt;span style="color:#666">=&lt;/span> (results) =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> searchResultsViewBlock &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">document&lt;/span>.getElementById(&lt;span style="color:#4070a0">&amp;#39;search-result&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic">// hide on move mouse from results block
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span> &lt;span style="color:#007020">document&lt;/span>.addEventListener(&lt;span style="color:#4070a0">&amp;#39;mouseup&amp;#39;&lt;/span>, (e) =&amp;gt; hideSearchResults(e, searchResultsViewBlock));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> searchResultsDiv &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">document&lt;/span>.getElementById(&lt;span style="color:#4070a0">&amp;#39;search-results&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> searchResultsDiv.innerHTML &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> searchResultsViewBlock.style.display &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;initial&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> searchResultsViewBlock.removeAttribute(&lt;span style="color:#4070a0">&amp;#39;hidden&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> resultsBlock &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">document&lt;/span>.createElement(&lt;span style="color:#4070a0">&amp;#39;ul&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> (&lt;span style="color:#007020;font-weight:bold">let&lt;/span> post &lt;span style="color:#007020;font-weight:bold">of&lt;/span> results) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> url &lt;span style="color:#666">=&lt;/span> post[&lt;span style="color:#4070a0">&amp;#39;ref&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> title &lt;span style="color:#666">=&lt;/span> pagesStore[url]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">let&lt;/span> commentBlock &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">document&lt;/span>.createElement(&lt;span style="color:#4070a0">&amp;#39;li&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">let&lt;/span> link &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">document&lt;/span>.createElement(&lt;span style="color:#4070a0">&amp;#39;a&amp;#39;&lt;/span>,)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">let&lt;/span> linkText &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">document&lt;/span>.createTextNode(title);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> link.appendChild(linkText)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> link.href &lt;span style="color:#666">=&lt;/span> url
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> commentBlock.appendChild(link)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> resultsBlock.appendChild(commentBlock)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> searchResultsDiv.appendChild(resultsBlock)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> searchFormObserver &lt;span style="color:#666">=&lt;/span> () =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> form &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">document&lt;/span>.getElementById(&lt;span style="color:#4070a0">&amp;#34;search&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> input &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">document&lt;/span>.getElementById(&lt;span style="color:#4070a0">&amp;#34;search-input&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> form.addEventListener(&lt;span style="color:#4070a0">&amp;#34;submit&amp;#34;&lt;/span>, &lt;span style="color:#007020;font-weight:bold">function&lt;/span> (event) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> event.preventDefault();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> term &lt;span style="color:#666">=&lt;/span> input.value.trim();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (&lt;span style="color:#666">!&lt;/span>term) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> search_results &lt;span style="color:#666">=&lt;/span> search(term, languageMode);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> renderSearchResults(search_results.slice(&lt;span style="color:#40a070">0&lt;/span>, MAX_SEARCH_RESULTS))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }, &lt;span style="color:#007020;font-weight:bold">false&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// create indexes
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>loadIndexData()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>searchFormObserver()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/details>
+&lt;h3 id="search-form">Search form&lt;/h3>
+&lt;p>I am going to add search form to the header part. For thios purpose edit &lt;code>header.html&lt;/code> file in the path &lt;code>/layouts/partials/header.html&lt;/code>&lt;/p>
+&lt;p>Set form id: &lt;code>search&lt;/code>. By this id script can find this form&lt;/p>
+&lt;p>Minimal form for work:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">form&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;search&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">input&lt;/span> &lt;span style="color:#4070a0">type&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;text&amp;#34;&lt;/span> &lt;span style="color:#4070a0">type&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;search&amp;#34;&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;search-input&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">form&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>I use Tailwind, so this is how my form looks like:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">div&lt;/span> &lt;span style="color:#4070a0">class&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;relative pt-4 md:pt-0&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">form&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;search&amp;#34;&lt;/span> &lt;span style="color:#4070a0">class&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;flex items-center&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">label&lt;/span> &lt;span style="color:#4070a0">for&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;search-input&amp;#34;&lt;/span> &lt;span style="color:#4070a0">class&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;sr-only&amp;#34;&lt;/span>&amp;gt;Search&amp;lt;/&lt;span style="color:#062873;font-weight:bold">label&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">div&lt;/span> &lt;span style="color:#4070a0">class&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;relative w-full&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">input&lt;/span> &lt;span style="color:#4070a0">type&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;text&amp;#34;&lt;/span> &lt;span style="color:#4070a0">type&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;search&amp;#34;&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;search-input&amp;#34;&lt;/span> &lt;span style="color:#4070a0">class&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500&amp;#34;&lt;/span> &lt;span style="color:#4070a0">placeholder&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;Search&amp;#34;&lt;/span> &lt;span style="color:#4070a0">required&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">form&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/search-form.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="modal-with-results">Modal with results&lt;/h3>
+&lt;p>By default this modal window is hidden. So don&amp;rsquo;t need to add this to any page. But need to add somewhere.&lt;/p>
+&lt;p>&lt;strong>1. Create .html component&lt;/strong>&lt;/p>
+&lt;p>path: &lt;code>/layouts/partials/components/search-list-popup.html&lt;/code>&lt;/p>
+&lt;p>For modal block to show or hide I use id: &lt;code>search-result&lt;/code>&lt;/p>
+&lt;p>For block with search results id is: &lt;code>search-results&lt;/code>&lt;/p>
+&lt;p>Content:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">div&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;search-result&amp;#34;&lt;/span> &lt;span style="color:#4070a0">tabindex&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;-1&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">class&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 max-w-xs &amp;#34;&lt;/span> &lt;span style="color:#4070a0">hidden&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">div&lt;/span> &lt;span style="color:#4070a0">class&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;relative p-4 w-full max-w-xs h-full md:h-auto&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">div&lt;/span> &lt;span style="color:#4070a0">class&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;relative bg-white rounded-lg shadow dark:bg-gray-700&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">div&lt;/span> &lt;span style="color:#4070a0">class&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;p-6&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">h3&lt;/span>&amp;gt;Search results&amp;lt;/&lt;span style="color:#062873;font-weight:bold">h3&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">div&lt;/span> &lt;span style="color:#4070a0">id&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;search-results&amp;#34;&lt;/span> &lt;span style="color:#4070a0">class&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;prose&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;/&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;/&lt;span style="color:#062873;font-weight:bold">div&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>2. Add component to the site&lt;/strong>&lt;/p>
+&lt;p>Add this component to the footer. File path: &lt;code>/layouts/partials/footer.html&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{ partial &lt;span style="color:#4070a0">&amp;#34;components/search-list-popup.html&amp;#34;&lt;/span> . }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">...&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="connect-lunrjs">Connect Lunr.js&lt;/h3>
+&lt;p>Add link to this script to the footer template too&lt;/p>
+&lt;p>Part of the footer template:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;https://unpkg.com/lunr/lunr.min.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{ partial &amp;#34;components/search-list-popup.html&amp;#34; . }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="generate-pages-data">Generate pages data&lt;/h3>
+&lt;p>Hugo can generate the search index the same way it generates RSS feeds for example, it’s just another output format.&lt;/p>
+&lt;p>&lt;strong>1. Generate script&lt;/strong>&lt;/p>
+&lt;p>This generator is for multilingual site&lt;/p>
+&lt;p>Creates json in each language catalog in format:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>[{&amp;#34;title&amp;#34;:&amp;#34;title01&amp;#34;,...}]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;em>Fepends on fileds inckluded in the layout &lt;code>/layouts/_default/index.json&lt;/code>&lt;/em>&lt;/p>
+&lt;p>Create file &lt;code>/layouts/_default/index.json&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>[
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#666">-&lt;/span> &lt;span style="color:#007020;font-weight:bold">range&lt;/span> &lt;span style="">$&lt;/span>index, &lt;span style="">$&lt;/span>page &lt;span style="color:#666">:=&lt;/span> .Site.RegularPages.ByTitle &lt;span style="color:#666">-&lt;/span>}}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#666">-&lt;/span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="">$&lt;/span>page.IsTranslated &lt;span style="color:#666">-&lt;/span>}}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{ &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#06287e">gt&lt;/span> (index &lt;span style="">$&lt;/span>page.Translations &lt;span style="color:#40a070">0&lt;/span>).WordCount &lt;span style="color:#40a070">0&lt;/span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{ &lt;span style="color:#007020;font-weight:bold">range&lt;/span> .Translations }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#666">-&lt;/span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> gt &lt;span style="">$&lt;/span>translatedCount &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#666">-&lt;/span>}} , {{&lt;span style="color:#666">-&lt;/span> end &lt;span style="color:#666">-&lt;/span>}}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#666">-&lt;/span> &lt;span style="">$&lt;/span>entry &lt;span style="color:#666">:=&lt;/span> dict &lt;span style="color:#4070a0">&amp;#34;uri&amp;#34;&lt;/span> .RelPermalink &lt;span style="color:#4070a0">&amp;#34;title&amp;#34;&lt;/span> .Title &lt;span style="color:#666">-&lt;/span>}}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#666">-&lt;/span> &lt;span style="">$&lt;/span>entry = merge &lt;span style="">$&lt;/span>&lt;span style="color:#06287e">entry&lt;/span> (dict &lt;span style="color:#4070a0">&amp;#34;description&amp;#34;&lt;/span> .Description) &lt;span style="color:#666">-&lt;/span>}}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#666">-&lt;/span> &lt;span style="">$&lt;/span>entry = merge &lt;span style="">$&lt;/span>&lt;span style="color:#06287e">entry&lt;/span> (dict &lt;span style="color:#4070a0">&amp;#34;content&amp;#34;&lt;/span> (.Plain | htmlUnescape)) &lt;span style="color:#666">-&lt;/span>}}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#666">-&lt;/span> &lt;span style="">$&lt;/span>entry | jsonify &lt;span style="color:#666">-&lt;/span>}}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{ &lt;span style="">$&lt;/span>translatedCount = add &lt;span style="">$&lt;/span>translatedCount &lt;span style="color:#40a070">1&lt;/span> }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{ end}}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{ end }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#666">-&lt;/span> end &lt;span style="color:#666">-&lt;/span>}}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {{&lt;span style="color:#666">-&lt;/span> end &lt;span style="color:#666">-&lt;/span>}}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Creates search.json file with page indexes in &lt;code>/public/search.json&lt;/code>&lt;/p>
+&lt;p>&lt;strong>2. Set index file path&lt;/strong>&lt;/p>
+&lt;p>Update &lt;code>config.yaml&lt;/code> file:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># config.yaml&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#60a0b0;font-style:italic"># need for search popup service / creates search.json index fo lunr.js&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">outputFormats&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">SearchIndex&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">baseName&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>search&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">mediaType&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>application/json&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">outputs&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">home&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- HTML&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- RSS&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- SearchIndex&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="connect-searchresult-forms-with-lunrjs-search">Connect search/result forms with lunr.js search&lt;/h3>
+&lt;p>Create file in the path: &lt;code>static/js/search.js&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> languageMode &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">window&lt;/span>.&lt;span style="color:#007020">document&lt;/span>.currentScript.getAttribute(&lt;span style="color:#4070a0">&amp;#39;languageMode&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> MAX_SEARCH_RESULTS &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">let&lt;/span> searchIndex &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">let&lt;/span> pagesStore &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// Need to create ONLY once , maybe before push | during build
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> createIndex &lt;span style="color:#666">=&lt;/span> (documents) =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> searchIndex &lt;span style="color:#666">=&lt;/span> lunr(&lt;span style="color:#007020;font-weight:bold">function&lt;/span> () {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">this&lt;/span>.field(&lt;span style="color:#4070a0">&amp;#34;title&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">this&lt;/span>.field(&lt;span style="color:#4070a0">&amp;#34;content&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">this&lt;/span>.field(&lt;span style="color:#4070a0">&amp;#34;description&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">this&lt;/span>.field(&lt;span style="color:#4070a0">&amp;#34;uri&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">this&lt;/span>.ref(&lt;span style="color:#4070a0">&amp;#39;uri&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> documents.forEach(&lt;span style="color:#007020;font-weight:bold">function&lt;/span> (doc) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pagesStore[doc[&lt;span style="color:#4070a0">&amp;#39;uri&amp;#39;&lt;/span>]] &lt;span style="color:#666">=&lt;/span> doc[&lt;span style="color:#4070a0">&amp;#39;title&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">this&lt;/span>.add(doc)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }, &lt;span style="color:#007020;font-weight:bold">this&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> })
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> loadIndexData &lt;span style="color:#666">=&lt;/span> () =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> url &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">`/&lt;/span>&lt;span style="color:#70a0d0">${&lt;/span>languageMode&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">/search.json`&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> xmlhttp &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">new&lt;/span> XMLHttpRequest();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> xmlhttp.onreadystatechange &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">function&lt;/span> () {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (&lt;span style="color:#007020;font-weight:bold">this&lt;/span>.readyState &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">4&lt;/span> &lt;span style="color:#666">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#007020;font-weight:bold">this&lt;/span>.status &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">200&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> pages_content &lt;span style="color:#666">=&lt;/span> JSON.parse(&lt;span style="color:#007020;font-weight:bold">this&lt;/span>.responseText);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> createIndex(pages_content)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> xmlhttp.open(&lt;span style="color:#4070a0">&amp;#34;GET&amp;#34;&lt;/span>, url, &lt;span style="color:#007020;font-weight:bold">true&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> xmlhttp.send();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> search &lt;span style="color:#666">=&lt;/span> (text) =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">let&lt;/span> result &lt;span style="color:#666">=&lt;/span> searchIndex.search(text)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> result
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> hideSearchResults &lt;span style="color:#666">=&lt;/span> (event, divBlock) =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> event.preventDefault()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (&lt;span style="color:#666">!&lt;/span>divBlock.contains(event.target)) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> divBlock.style.display &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;none&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> divBlock.setAttribute(&lt;span style="color:#4070a0">&amp;#39;class&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;hidden&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// TODO refactor
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> renderSearchResults &lt;span style="color:#666">=&lt;/span> (results) =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> searchResultsViewBlock &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">document&lt;/span>.getElementById(&lt;span style="color:#4070a0">&amp;#39;search-result&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic">// hide on move mouse from results block
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span> &lt;span style="color:#007020">document&lt;/span>.addEventListener(&lt;span style="color:#4070a0">&amp;#39;mouseup&amp;#39;&lt;/span>, (e) =&amp;gt; hideSearchResults(e, searchResultsViewBlock));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> searchResultsDiv &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">document&lt;/span>.getElementById(&lt;span style="color:#4070a0">&amp;#39;search-results&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> searchResultsDiv.innerHTML &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> searchResultsViewBlock.style.display &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;initial&amp;#39;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> searchResultsViewBlock.removeAttribute(&lt;span style="color:#4070a0">&amp;#39;hidden&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> resultsBlock &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">document&lt;/span>.createElement(&lt;span style="color:#4070a0">&amp;#39;ul&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> (&lt;span style="color:#007020;font-weight:bold">let&lt;/span> post &lt;span style="color:#007020;font-weight:bold">of&lt;/span> results) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> url &lt;span style="color:#666">=&lt;/span> post[&lt;span style="color:#4070a0">&amp;#39;ref&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> title &lt;span style="color:#666">=&lt;/span> pagesStore[url]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">let&lt;/span> commentBlock &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">document&lt;/span>.createElement(&lt;span style="color:#4070a0">&amp;#39;li&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">let&lt;/span> link &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">document&lt;/span>.createElement(&lt;span style="color:#4070a0">&amp;#39;a&amp;#39;&lt;/span>,)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">let&lt;/span> linkText &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">document&lt;/span>.createTextNode(title);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> link.appendChild(linkText)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> link.href &lt;span style="color:#666">=&lt;/span> url
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> commentBlock.appendChild(link)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> resultsBlock.appendChild(commentBlock)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> searchResultsDiv.appendChild(resultsBlock)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> searchFormObserver &lt;span style="color:#666">=&lt;/span> () =&amp;gt; {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> form &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">document&lt;/span>.getElementById(&lt;span style="color:#4070a0">&amp;#34;search&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> input &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">document&lt;/span>.getElementById(&lt;span style="color:#4070a0">&amp;#34;search-input&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> form.addEventListener(&lt;span style="color:#4070a0">&amp;#34;submit&amp;#34;&lt;/span>, &lt;span style="color:#007020;font-weight:bold">function&lt;/span> (event) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> event.preventDefault();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">var&lt;/span> term &lt;span style="color:#666">=&lt;/span> input.value.trim();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (&lt;span style="color:#666">!&lt;/span>term) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> search_results &lt;span style="color:#666">=&lt;/span> search(term, languageMode);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> renderSearchResults(search_results.slice(&lt;span style="color:#40a070">0&lt;/span>, MAX_SEARCH_RESULTS))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }, &lt;span style="color:#007020;font-weight:bold">false&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">// create indexes
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">&lt;/span>loadIndexData()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>searchFormObserver()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Next need to add this file to the site: &lt;code>/layouts/partials/footer.html&lt;/code>&lt;/p>
+&lt;p>Now footer looks like this:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{ $languageMode := .Site.Language }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;https://unpkg.com/lunr/lunr.min.js&amp;#34;&lt;/span>&amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#062873;font-weight:bold">script&lt;/span> &lt;span style="color:#4070a0">src&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;/js/search.js?1&amp;#34;&lt;/span> &lt;span style="color:#4070a0">languageMode&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">{{&lt;/span> &lt;span style="">$&lt;/span>&lt;span style="color:#4070a0">languageMode&lt;/span> &lt;span style="">}}&lt;/span> &amp;gt;&amp;lt;/&lt;span style="color:#062873;font-weight:bold">script&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{{ partial &amp;#34;components/search-list-popup.html&amp;#34; . }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

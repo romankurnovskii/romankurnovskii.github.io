@@ -6,9 +6,9 @@ const divRender = "_react_leetcode_grid_"; // Make sure this matches the ID of y
 const CELL_WIDTH = 50;
 
 const Matrix = () => {
-  const size = 3032; // Total numbers
+  const [cellsCount, setCellsCount] = useState(3100); // Total numbers
   const [columns, setColumns] = useState(10);
-  const [leetcodeProblems, setLeetCodeProblems] = useState({});
+  const [leetCodeProblems, setLeetCodeProblems] = useState({});
   const matrixRef = useRef(null); // Ref to the matrix container
 
   useEffect(() => {
@@ -23,22 +23,20 @@ const Matrix = () => {
     updateColumns(); // Initial update
 
     const leetCodeProblemsUrl =
-      "https://romankurnovskii.com/leetcode-problems.json" +
-      "?_ts=" +
-      new Date().getTime();
-    console.log("leetCodeProblemsUrl", leetCodeProblemsUrl);
+      "https://romankurnovskii.com/leetcode-problems.json";
     fetch(leetCodeProblemsUrl)
       .then((response) => response.json())
       .then((data) => setLeetCodeProblems(data))
+      .then(() => setCellsCount(Math.max(Object.keys(data)) + 50))
       .catch((error) =>
-        console.error("Failed to load leetcode problems:", error),
+        console.error("Failed to load LeetCode problems:", error),
       );
 
     return () => window.removeEventListener("resize", updateColumns);
   }, []);
 
   const getCellStyle = (number) => {
-    const problemInfo = leetcodeProblems[number.toString()];
+    const problemInfo = leetCodeProblems[number.toString()];
     const _cellStyle = {
       display: "flex",
       justifyContent: "center",
@@ -68,7 +66,7 @@ const Matrix = () => {
     return _cellStyle;
   };
 
-  const numbers = Array.from({ length: size }, (_, i) => i + 1);
+  const numbers = Array.from({ length: cellsCount }, (_, i) => i + 1);
 
   return (
     <div
@@ -81,7 +79,7 @@ const Matrix = () => {
     >
       {numbers.map((number, index) => {
         const cellStyle = getCellStyle(number);
-        const problemInfo = leetcodeProblems[number.toString()];
+        const problemInfo = leetCodeProblems[number.toString()];
         let cell = <>{number}</>;
         if (problemInfo && problemInfo.languages[userLang]) {
           cell = (
@@ -113,5 +111,5 @@ const App = () => {
 };
 
 const container = document.getElementById(divRender);
-const root = createRoot(container); // Ensure your HTML has a div with the id 'root'
+const root = createRoot(container);
 root.render(<App />);

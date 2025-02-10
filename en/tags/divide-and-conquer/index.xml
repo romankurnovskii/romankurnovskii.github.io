@@ -1,7 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Divide and Conquer on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/divide-and-conquer/</link><description>Recent content in Divide and Conquer on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Mon, 26 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/divide-and-conquer/index.xml" rel="self" type="application/rss+xml"/><item><title>53. Maximum Subarray</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/53/</link><pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/53/</guid><description>LeetCode problem
-Given an integer array nums, find the subarray which has the largest sum and return its sum.
-Example 1:
-Input: nums = [-2,1,-3,4,-1,2,1,-5,4] Output: 6 Explanation: [4,-1,2,1] has the largest sum = 6. Example 2:
-Input: nums = [1] Output: 1 Example 3:
-Input: nums = [5,4,-1,7,8] Output: 23 Approach 1:
-class Solution: def maxSubArray(self, nums: List[int]) -&amp;gt; int: max_ = nums[0] max2 = nums[0] if len(nums) == 1: return max_ for i in range(1, len(nums)): max_ = max(nums[i], nums[i] + max_) max2 = max(max_, max2) return max2</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Divide and Conquer on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/divide-and-conquer/</link><description>Recent content in Divide and Conquer on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Mon, 26 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/divide-and-conquer/index.xml" rel="self" type="application/rss+xml"/><item><title>53. Maximum Subarray</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/53/</link><pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/53/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/maximum-subarray/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given an integer array &lt;code>nums&lt;/code>, find the subarray which has the largest sum and return &lt;em>its sum&lt;/em>.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: nums = [-2,1,-3,4,-1,2,1,-5,4]
+Output: 6
+Explanation: [4,-1,2,1] has the largest sum = 6.
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: nums = [1]
+Output: 1
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 3:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: nums = [5,4,-1,7,8]
+Output: 23
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Approach 1:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">maxSubArray&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_ &lt;span style="color:#666">=&lt;/span> nums[&lt;span style="color:#40a070">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max2 &lt;span style="color:#666">=&lt;/span> nums[&lt;span style="color:#40a070">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums) &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> max_
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#007020">len&lt;/span>(nums)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_ &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(nums[i], nums[i] &lt;span style="color:#666">+&lt;/span> max_)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max2 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(max_, max2)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> max2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

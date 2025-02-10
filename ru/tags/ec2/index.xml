@@ -1,4 +1,130 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ec2 on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/ec2/</link><description>Recent content in Ec2 on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sat, 10 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/ec2/index.xml" rel="self" type="application/rss+xml"/><item><title>EC2</title><link>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/ec2/</link><pubDate>Sat, 10 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/ec2/</guid><description>Amazon EC2 Документация Amazon EC2 - 1 Документация Amazon EC2 - 2 Amazon Elastic Compute Cloud (EC2) - одна из самых популярных служб AWS. EC2 позволяет запускать различные типы облачных экземпляров и оплачивать их по модели &amp;ldquo;оплата за использование&amp;rdquo;. EC2 позволяет контролировать вычислительные ресурсы на уровне операционной системы, работая в вычислительной среде Amazon.
-Цены Актуальный прайс
-Практика Создание EC2 инстанса Заходим на страницу EC2 -&amp;gt; Launch Instance
-Образ EC2 Выбираем нужный нам образ Создание ключей Создадим ключ, чтобы использовать его для подключения к инстансу извне Вводим любое имя.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ec2 on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/ec2/</link><description>Recent content in Ec2 on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sat, 10 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/ec2/index.xml" rel="self" type="application/rss+xml"/><item><title>EC2</title><link>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/ec2/</link><pubDate>Sat, 10 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/ec2/</guid><description>&lt;h1 id="amazon-ec2">Amazon EC2&lt;/h1>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/ec2/">Документация Amazon EC2 - 1&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/ec2/?id=docs_gateway">Документация Amazon EC2 - 2&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Amazon Elastic Compute Cloud (EC2) - одна из самых популярных служб AWS. EC2 позволяет запускать различные типы облачных экземпляров и оплачивать их по модели &amp;ldquo;оплата за использование&amp;rdquo;. EC2 позволяет контролировать вычислительные ресурсы на уровне операционной системы, работая в вычислительной среде Amazon.&lt;/p>
+&lt;h2 id="цены">Цены&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/ec2/pricing/">Актуальный прайс&lt;/a>&lt;/p>
+&lt;h2 id="практика">Практика&lt;/h2>
+&lt;h3 id="создание-ec2-инстанса">Создание EC2 инстанса&lt;/h3>
+&lt;p>Заходим на &lt;a href="https://us-west-2.console.aws.amazon.com/ec2/v2/home?region=us-west-2">страницу EC2&lt;/a> -&amp;gt; Launch Instance&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/01.png"
+id="zoom-default"
+alt="01.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h4 id="образ-ec2">Образ EC2&lt;/h4>
+&lt;p>Выбираем нужный нам образ
+&lt;p class="md__image">
+&lt;img
+src="./img/02.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h4 id="создание-ключей">Создание ключей&lt;/h4>
+&lt;p>Создадим ключ, чтобы использовать его для подключения к инстансу извне
+&lt;p class="md__image">
+&lt;img
+src="./img/03.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Вводим любое имя. Остальные параметры оставляю по умолчанию
+&lt;p class="md__image">
+&lt;img
+src="./img/04.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+После создания ключа начнется автоматическое скачивание. Ключ понадобится далее для подключения к EC2 с локального терминала&lt;/p>
+&lt;h4 id="сетевые-настройки">Сетевые настройки&lt;/h4>
+&lt;p>В разделе &lt;strong>Network Settings&lt;/strong> оставляю включенным &lt;strong>Allow SSH traffic from&lt;/strong>
+&lt;p class="md__image">
+&lt;img
+src="./img/05.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h4 id="создание">Создание&lt;/h4>
+&lt;p>Нажимаем &lt;strong>Launch Instance&lt;/strong>&lt;/p>
+&lt;p>Инстанс создан и доступен для подключения&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/06.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="подключение-к-ec2-с-терминала">Подключение к EC2 с терминала&lt;/h3>
+&lt;p>Подключимся к EC2 с локального терминала&lt;/p>
+&lt;p>Перенесем созданный и скачанный ранее ключ &lt;mark>mykey&lt;/mark> в папку home текущего пользователя и дадим права на файл &lt;code>CHMOD 400&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">cd&lt;/span> ~
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">cd&lt;/span> Downloads/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mv mykey.pem &lt;span style="color:#bb60d5">$HOME&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">cd&lt;/span> ..
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chmod &lt;span style="color:#40a070">400&lt;/span> mykey.pem
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/07.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Для подключения нам необходим публичный iPv4 адрес. Находим на странице с инстансом&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/08.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Подключаемся с помощью команды &lt;code>ssh&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh -i mykey.pem ec2-user@52.24.109.78
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/03.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="вопросы">Вопросы&lt;/h2>
+&lt;h3 id="вопрос-1">Вопрос 1&lt;/h3>
+&lt;p>&lt;strong>A company is migrating a legacy application to Amazon EC2. The application uses a username and password stored in the source code to connect to a MySQL database. The database will be migrated to an Amazon RDS for MySQL DB instance. As part of the migration, the company wants to implement a secure way to store and automatically rotate the database credentials.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which approach meets these requirements?&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>A) Store the database credentials in environment variables in an Amazon Machine Image (AMI). Rotate the credentials by replacing the AMI.&lt;/li>
+&lt;li>B) Store the database credentials in AWS Systems Manager Parameter Store. Configure Parameter Store to automatically rotate the credentials.&lt;/li>
+&lt;li>C) Store the database credentials in environment variables on the EC2 instances. Rotate the credentials by relaunching the EC2 instances.&lt;/li>
+&lt;li>D) Store the database credentials in AWS Secrets Manager. Configure Secrets Manager to automatically rotate the credentials&lt;/li>
+&lt;/ul>
+&lt;details>
+&lt;summary>Ответ&lt;/summary>
+&lt;div>
+&lt;h4>Правильный ответ: D&lt;/h4>
+&lt;p>D – &lt;a href="https://aws.amazon.com/secrets-manager/">AWS Secrets Manager&lt;/a> helps to protect the credentialsneeded to access databases, applications,services, and other IT resources. The service enables users to easily rotate, manage, and retrieve database credentials, API keys, and other secrets throughout their lifecycle. Users and applications retrieve secrets with a call to the Secrets Manager APIs, eliminating the need to hardcode sensitive information in plaintext. Secrets Manager offers &lt;a href="https://aws.amazon.com/blogs/security/rotate-amazon-rds-database-credentials-automatically-with-aws-secrets-manager/">secret rotation&lt;/a> with built-in integration for Amazon RDS, Amazon Redshift, and Amazon DocumentDB.&lt;/p>
+&lt;/div>
+&lt;/details></description></item></channel></rss>

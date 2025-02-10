@@ -1,26 +1,242 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Matrix on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/matrix/</link><description>Recent content in Matrix on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sat, 10 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/matrix/index.xml" rel="self" type="application/rss+xml"/><item><title>36. Valid Sudoku</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/36/</link><pubDate>Sat, 03 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/36/</guid><description>LeetCode problem
-Determine if a 9 x 9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:
-Each row must contain the digits 1-9 without repetition. Each column must contain the digits 1-9 without repetition. Each of the nine 3 x 3 sub-boxes of the grid must contain the digits 1-9 without repetition.
-Note:
-A Sudoku board (partially filled) could be valid but is not necessarily solvable. Only the filled cells need to be validated according to the mentioned rules.</description></item><item><title>48. Rotate Image</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/48/</link><pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/48/</guid><description>LeetCode problem
-You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).
-You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation.
-Example 1:
-Input: matrix = [[1,2,3],[4,5,6],[7,8,9]] Output: [[7,4,1],[8,5,2],[9,6,3]] Example 2:
-Input: matrix = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]] Output: [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]] Idea:
-class Solution: def rotate(self, matrix: List[List[int]]) -&amp;gt; None: &amp;#34;&amp;#34;&amp;#34; Do not return anything, modify matrix in-place instead.</description></item><item><title>73. Set Matrix Zeroes</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/73/</link><pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/73/</guid><description>LeetCode problem
-Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0&amp;rsquo;s.
-You must do it in place.
-Example 1:
-Input: matrix = [[1,1,1],[1,0,1],[1,1,1]] Output: [[1,0,1],[0,0,0],[1,0,1]] Example 2:
-Input: matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]] Output: [[0,0,0,0],[0,4,5,0],[0,3,1,0]] Approach 1:
-Idea:
-LeetCode Submission
-class Solution: def setZeroes(self, matrix: List[List[int]]) -&amp;gt; None: rows = len(matrix) cols = len(matrix[0]) # 1. Check first row/column for zero&amp;#39;s first_row_has_zero = 0 in matrix[0] first_col_has_zero = 0 in list(zip(*matrix))[0] # 2.</description></item><item><title>2352. Equal Row and Column Pairs</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2352/</link><pubDate>Sat, 26 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2352/</guid><description>LeetCode задача 2352
-Задача Дана квадратная матрица целых чисел grid размером n×n. Задача состоит в том, чтобы определить, сколько пар строк и столбцов в матрице идентичны по своему содержанию и порядку.
-Строка и столбец считаются равными, если они содержат одни и те же элементы в том же порядке.
-Подсказки Для решения задачи можно воспользоваться тем фактом, что каждая строка и столбец представляют собой набор чисел. Если мы конвертируем их в строки, то можем сравнивать их друг с другом.</description></item><item><title>3030. Find the Grid of Region Average</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/3030/</link><pubDate>Sat, 10 Feb 2024 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/3030/</guid><description>LeetCode задача 3030
-Дана матрица m x n, представляющая изображение в оттенках серого, где image[i][j] представляет пиксель с интенсивностью в диапазоне от 0 до 255. Также дано неотрицательное целое число threshold (пороговое значение).
-Два пикселя image[a][b] и image[c][d] считаются соседними, если |a - c| + |b - d| == 1.
-Регионом считается матрица 3 x 3, где абсолютная разница в интенсивности между любыми двумя соседними пикселями меньше или равна threshold.
-Необходимо вычислить матрицу m x n result, где result[i][j] - это средняя интенсивность региона, к которому принадлежит image[i][j], округленная вниз до ближайшего целого числа.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Matrix on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/matrix/</link><description>Recent content in Matrix on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sat, 26 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/matrix/index.xml" rel="self" type="application/rss+xml"/><item><title>36. Valid Sudoku</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/36/</link><pubDate>Sat, 03 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/36/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/valid-sudoku/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Determine if a &lt;code>9 x 9&lt;/code> Sudoku board is valid. Only the filled cells need to be validated according to the following rules:&lt;/p>
+&lt;p>Each row must contain the digits &lt;code>1-9&lt;/code> without repetition.
+Each column must contain the digits &lt;code>1-9&lt;/code> without repetition.
+Each of the nine 3 x 3 sub-boxes of the grid must contain the digits &lt;code>1-9&lt;/code> without repetition.&lt;/p>
+&lt;p>&lt;strong>Note:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>A Sudoku board (partially filled) could be valid but is not necessarily solvable.&lt;/li>
+&lt;li>Only the filled cells need to be validated according to the mentioned rules.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Sudoku-by-L2G-20050714.svg/250px-Sudoku-by-L2G-20050714.svg.png"
+id="zoom-default"
+alt="example"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;pre>&lt;code>Input: board =
+[[&amp;quot;5&amp;quot;,&amp;quot;3&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;7&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;]
+,[&amp;quot;6&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;9&amp;quot;,&amp;quot;5&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;]
+,[&amp;quot;.&amp;quot;,&amp;quot;9&amp;quot;,&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;6&amp;quot;,&amp;quot;.&amp;quot;]
+,[&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;6&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;3&amp;quot;]
+,[&amp;quot;4&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;3&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;1&amp;quot;]
+,[&amp;quot;7&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;2&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;6&amp;quot;]
+,[&amp;quot;.&amp;quot;,&amp;quot;6&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;2&amp;quot;,&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;]
+,[&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;4&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;9&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;5&amp;quot;]
+,[&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;7&amp;quot;,&amp;quot;9&amp;quot;]]
+Output: true
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: board =
+[[&amp;quot;8&amp;quot;,&amp;quot;3&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;7&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;]
+,[&amp;quot;6&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;9&amp;quot;,&amp;quot;5&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;]
+,[&amp;quot;.&amp;quot;,&amp;quot;9&amp;quot;,&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;6&amp;quot;,&amp;quot;.&amp;quot;]
+,[&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;6&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;3&amp;quot;]
+,[&amp;quot;4&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;3&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;1&amp;quot;]
+,[&amp;quot;7&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;2&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;6&amp;quot;]
+,[&amp;quot;.&amp;quot;,&amp;quot;6&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;2&amp;quot;,&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;]
+,[&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;4&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;9&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;5&amp;quot;]
+,[&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;7&amp;quot;,&amp;quot;9&amp;quot;]]
+Output: false
+Explanation: Same as Example 1, except with the 5 in the top left corner being modified to 8. Since there are two 8's in the top left 3x3 sub-box, it is invalid.
+&lt;/code>&lt;/pre>
+&lt;h2 id="code">Code&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/36.jpg"
+id="zoom-default"
+alt="test-case"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">isValidSudoku&lt;/span>(self, board: List[List[&lt;span style="color:#007020">str&lt;/span>]]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">bool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> exist &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">9&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">9&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#666">=&lt;/span> board[i][j]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> x &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uniqs &lt;span style="color:#666">=&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (i, x),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (x, j),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#007020">int&lt;/span>(i&lt;span style="color:#666">/&lt;/span>&lt;span style="color:#40a070">3&lt;/span>), &lt;span style="color:#007020">int&lt;/span>(j&lt;span style="color:#666">/&lt;/span>&lt;span style="color:#40a070">3&lt;/span>), x) ) &lt;span style="color:#60a0b0;font-style:italic"># devide 3 because of third check in 3x3 block&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> z &lt;span style="color:#007020;font-weight:bold">in&lt;/span> uniqs:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> z &lt;span style="color:#007020;font-weight:bold">in&lt;/span> exist:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> exist&lt;span style="color:#666">.&lt;/span>add(z)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>48. Rotate Image</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/48/</link><pubDate>Sun, 18 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/48/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/rotate-image/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>You are given an &lt;code>n x n&lt;/code> 2D &lt;code>matrix&lt;/code> representing an image, rotate the image by &lt;strong>90 degrees&lt;/strong> (clockwise).&lt;/p>
+&lt;p>You have to rotate the image &lt;strong>in-place&lt;/strong>, which means you have to modify the input 2D matrix directly. &lt;strong>DO NOT&lt;/strong> allocate another 2D matrix and do the rotation.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.leetcode.com/uploads/2020/08/28/mat1.jpg"
+id="zoom-default"
+alt="Example LeetCode 48. Rotate Image"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;pre>&lt;code>Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
+Output: [[7,4,1],[8,5,2],[9,6,3]]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.leetcode.com/uploads/2020/08/28/mat2.jpg"
+id="zoom-default"
+alt="Example LeetCode 48. Rotate Image"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;pre>&lt;code>Input: matrix = [[5,1,9,11],[2,4,8,10],[13,3,6,7],[15,14,12,16]]
+Output: [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]
+&lt;/code>&lt;/pre>
+&lt;h2 id="idea">Idea&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">rotate&lt;/span>(self, matrix: List[List[&lt;span style="color:#007020">int&lt;/span>]]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;&amp;#34;&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Do not return anything, modify matrix in-place instead.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(matrix) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> l &lt;span style="color:#666">&amp;lt;&lt;/span> r:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(r&lt;span style="color:#666">-&lt;/span>l): &lt;span style="color:#60a0b0;font-style:italic"># for not only &amp;#34;corners&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> t &lt;span style="color:#666">=&lt;/span> l
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> b &lt;span style="color:#666">=&lt;/span> r
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> top_left &lt;span style="color:#666">=&lt;/span> matrix[t][l &lt;span style="color:#666">+&lt;/span> i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix[t][l &lt;span style="color:#666">+&lt;/span> i] &lt;span style="color:#666">=&lt;/span> matrix[b &lt;span style="color:#666">-&lt;/span> i][l] &lt;span style="color:#60a0b0;font-style:italic"># top left=bottom left&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix[b &lt;span style="color:#666">-&lt;/span> i][l] &lt;span style="color:#666">=&lt;/span> matrix[b][r &lt;span style="color:#666">-&lt;/span> i] &lt;span style="color:#60a0b0;font-style:italic"># bottom left=bottom right&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix[b][r &lt;span style="color:#666">-&lt;/span> i] &lt;span style="color:#666">=&lt;/span> matrix[t&lt;span style="color:#666">+&lt;/span>i][r] &lt;span style="color:#60a0b0;font-style:italic"># bottom right=top right&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix[t &lt;span style="color:#666">+&lt;/span> i][r] &lt;span style="color:#666">=&lt;/span> top_left &lt;span style="color:#60a0b0;font-style:italic"># top right=top left&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="approach-2-reverse">Approach 2: Reverse&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">rotate&lt;/span>(self, matrix: List[List[&lt;span style="color:#007020">int&lt;/span>]]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix&lt;span style="color:#666">.&lt;/span>reverse()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(matrix)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#007020">len&lt;/span>(matrix)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix[i][j], matrix[j][i] &lt;span style="color:#666">=&lt;/span> matrix[j][i], matrix[i][j]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=fMSJSS7eO1w">https://www.youtube.com/watch?v=fMSJSS7eO1w&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://walkccc.me/LeetCode/problems/0048/">https://walkccc.me/LeetCode/problems/0048/&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>73. Set Matrix Zeroes</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/73/</link><pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/73/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/set-matrix-zeroes/description/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given an &lt;code>m x n&lt;/code> integer matrix &lt;code>matrix&lt;/code>, if an element is &lt;code>0&lt;/code>, set its entire row and column to 0&amp;rsquo;s.&lt;/p>
+&lt;p>You must do it in place.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.leetcode.com/uploads/2020/08/17/mat1.jpg"
+id="zoom-default"
+alt="73. Set Matrix Zeroes"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;pre>&lt;code>Input: matrix = [[1,1,1],[1,0,1],[1,1,1]]
+Output: [[1,0,1],[0,0,0],[1,0,1]]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.leetcode.com/uploads/2020/08/17/mat2.jpg"
+id="zoom-default"
+alt="73. Set Matrix Zeroes"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;pre>&lt;code>Input: matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]
+Output: [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Approach 1:&lt;/strong>&lt;/p>
+&lt;p>Idea:&lt;/p>
+&lt;p>&lt;a href="https://leetcode.com/problems/set-matrix-zeroes/submissions/885540169/">LeetCode Submission&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">setZeroes&lt;/span>(self, matrix: List[List[&lt;span style="color:#007020">int&lt;/span>]]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rows &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(matrix)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cols &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(matrix[&lt;span style="color:#40a070">0&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># 1. Check first row/column for zero&amp;#39;s&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> first_row_has_zero &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">in&lt;/span> matrix[&lt;span style="color:#40a070">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> first_col_has_zero &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">list&lt;/span>(&lt;span style="color:#007020">zip&lt;/span>(&lt;span style="color:#666">*&lt;/span>matrix))[&lt;span style="color:#40a070">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># 2. Check other cells in `matrix` and save info in the 1st row/col if cell has zero&amp;#39;s&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, rows):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, cols):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> matrix[i][j] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix[&lt;span style="color:#40a070">0&lt;/span>][j] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># 1st row&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix[i][&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># 1st col&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># 3. Loop again through first row/column and overwrite cells according to the data from 1st row/column&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># except the 1st row/col&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, rows):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, cols):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> matrix[&lt;span style="color:#40a070">0&lt;/span>][j] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">or&lt;/span> matrix[i][&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix[i][j] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Fill 0s for the 1st row if needed&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> first_row_has_zero:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix[&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">*&lt;/span> cols
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Fill 0s for the 1st col if needed&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> first_col_has_zero:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> row &lt;span style="color:#007020;font-weight:bold">in&lt;/span> matrix:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> row[&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>2352. Equal Row and Column Pairs</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2352/</link><pubDate>Sat, 26 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/2352/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/equal-row-and-column-pairs/">LeetCode задача 2352&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Дана квадратная матрица целых чисел &lt;code>grid&lt;/code> размером &lt;code>n×n&lt;/code>. Задача состоит в том, чтобы определить, сколько пар строк и столбцов в матрице &lt;strong>идентичны&lt;/strong> по своему содержанию и порядку.&lt;/p>
+&lt;p>Строка и столбец считаются равными, если они содержат одни и те же элементы в том же порядке.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Для решения задачи можно воспользоваться тем фактом, что каждая строка и столбец представляют собой набор чисел. Если мы конвертируем их в строки, то можем сравнивать их друг с другом.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Вместо прямого сравнения каждой строки с каждым столбцом мы можем преобразовать каждую строку и столбец в кортеж(&lt;a href="https://romankurnovskii.com/ru/tracks/python-101/basis/tuples/">&lt;code>tuple&lt;/code>&lt;/a>) и использовать словарь(&lt;a href="https://romankurnovskii.com/ru/tracks/python-101/basis/dict/">&lt;code>dict&lt;/code>&lt;/a>) для учета количества вхождений каждой уникальной строки. При проходе по столбцам мы можем напрямую обращаться к нашему словарю, чтобы узнать, совпадает ли представление кортежа столбца с любой строкой.&lt;/p>
+&lt;p>&lt;strong>Почему кортежи?&lt;/strong>&lt;/p>
+&lt;p>Прежде чем углубляться в оптимизированный подход, важно понимать роль кортежей. Мы преобразуем строки и столбцы в кортежи, потому что:&lt;/p>
+&lt;ul>
+&lt;li>Кортежи неизменяемы: их содержимое не может быть изменено после создания.&lt;/li>
+&lt;li>Они могут использоваться в качестве ключей в словарях, в отличие от списков или множеств. Это свойство критически важно для нашего решения.&lt;/li>
+&lt;li>Кортежи сохраняют порядок элементов, что важно для требований нашей задачи.&lt;/li>
+&lt;/ul>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Преобразуем каждую строку в кортеж и подсчитаем ее вхождения с помощью словаря.&lt;/li>
+&lt;li>Пройдем каждый столбец, преобразуем его в кортеж.&lt;/li>
+&lt;li>Проверим, существует ли кортеж столбца в нашем словаре.
+&lt;ol>
+&lt;li>Если да, увеличиваем счетчик на &lt;strong>количество вхождений&lt;/strong> этого кортежа.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">equalPairs&lt;/span>(self, grid: List[List[&lt;span style="color:#007020">int&lt;/span>]]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rows &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Храним кортежи строк и их количество вхождений&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> row &lt;span style="color:#007020;font-weight:bold">in&lt;/span> grid:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> row &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">tuple&lt;/span>(row)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rows[row]&lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#666">+&lt;/span> rows&lt;span style="color:#666">.&lt;/span>get(row, &lt;span style="color:#40a070">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Для каждого столбца проверяем, существует ли кортеж столбца в словаре строк&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(grid)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> c &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> col &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">tuple&lt;/span>(grid[r][c] &lt;span style="color:#007020;font-weight:bold">for&lt;/span> r &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">+=&lt;/span> rows&lt;span style="color:#666">.&lt;/span>get(col, &lt;span style="color:#40a070">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> count
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

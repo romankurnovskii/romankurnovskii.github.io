@@ -1,11 +1,225 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Github on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/github/</link><description>Recent content in Github on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Mon, 07 Mar 2022 15:31:25 +0200</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/github/index.xml" rel="self" type="application/rss+xml"/><item><title>Публикация next.js приложения на github pages</title><link>https://romankurnovskii.com/ru/posts/nextjs-to-github-pages-ations/</link><pubDate>Mon, 07 Mar 2022 15:31:25 +0200</pubDate><guid>https://romankurnovskii.com/ru/posts/nextjs-to-github-pages-ations/</guid><description>Подготовка коммит все предыдущего состояния на случай вынужденного отката
-Для того чтобы Actions имели доступ к репозиторию нужно подключить ключи шифрования
-Настройка репозитория Создаю ключи
-ssh-keygen -t rsa -b 4096 -C &amp;#34;$(git config user.email)&amp;#34; -f gh-pages -N &amp;#34;&amp;#34; Создалось 2 файла с ключами:
-gh-pages - приватный gh-pages.pub - публичный в Репозитории (не профиле)
-https://github.com/romankurnovskii/notion-project/settings/keys
-Settings → Deploy keys →Add new
-из файла gh-pages.pub вставляю текст публичного ключа
-Settings → Secrets
-Имя: ACTIONS_DEPLOY_KEY
-Вставляю приватный ключ из приватного файла gh-pages</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Github on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/github/</link><description>Recent content in Github on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Mon, 07 Mar 2022 15:31:25 +0200</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/github/index.xml" rel="self" type="application/rss+xml"/><item><title>Публикация next.js приложения на github pages</title><link>https://romankurnovskii.com/ru/posts/nextjs-to-github-pages-ations/</link><pubDate>Mon, 07 Mar 2022 15:31:25 +0200</pubDate><guid>https://romankurnovskii.com/ru/posts/nextjs-to-github-pages-ations/</guid><description>&lt;h2 id="подготовка">Подготовка&lt;/h2>
+&lt;p>коммит все предыдущего состояния на случай вынужденного отката&lt;/p>
+&lt;p>Для того чтобы Actions имели доступ к репозиторию нужно подключить ключи шифрования&lt;/p>
+&lt;h2 id="настройка-репозитория">Настройка репозитория&lt;/h2>
+&lt;p>Создаю ключи&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh-keygen -t rsa -b &lt;span style="color:#40a070">4096&lt;/span> -C &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#007020;font-weight:bold">$(&lt;/span>git config user.email&lt;span style="color:#007020;font-weight:bold">)&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span> -f gh-pages -N &lt;span style="color:#4070a0">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Создалось 2 файла с ключами:&lt;/p>
+&lt;ul>
+&lt;li>gh-pages - приватный&lt;/li>
+&lt;li>gh-pages.pub - публичный&lt;/li>
+&lt;/ul>
+&lt;p>в Репозитории (не профиле)&lt;/p>
+&lt;p>&lt;a href="https://github.com/romankurnovskii/notion-project/settings/keys">https://github.com/romankurnovskii/notion-project/settings/keys&lt;/a>&lt;/p>
+&lt;p>Settings → Deploy keys →Add new&lt;/p>
+&lt;p>из файла &lt;a href="http://gh-pages.pub">gh-pages.pub&lt;/a> вставляю текст публичного ключа&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Screen_Shot_2022-03-05_at_19.50.08.png?v1"
+id="zoom-default"
+alt="Screen Shot 2022-03-05 at 19.50.08.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Settings → Secrets&lt;/p>
+&lt;p>Имя: &lt;code>ACTIONS_DEPLOY_KEY&lt;/code>&lt;/p>
+&lt;p>Вставляю приватный ключ из приватного файла gh-pages&lt;/p>
+&lt;p>&lt;a href="https://github.com/romankurnovskii/notion-project/settings/secrets/actions/new">https://github.com/romankurnovskii/notion-project/settings/secrets/actions/new&lt;/a>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="Screen_Shot_2022-03-05_at_19.52.04.png?v1"
+id="zoom-default"
+alt="Screen Shot 2022-03-05 at 19.52.04.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Удаляю ключи файлы чтобы случайно не закоммитить&lt;/p>
+&lt;p>на гитхабе создаю экшн&lt;/p>
+&lt;p>&lt;a href="https://github.com/romankurnovskii/notion-project/new/main?filename=.github%2Fworkflows%2Fmain.yml&amp;amp;workflow_template=blank">https://github.com/romankurnovskii/notion-project/new/main?filename=.github%2Fworkflows%2Fmain.yml&amp;amp;workflow_template=blank&lt;/a>&lt;/p>
+&lt;p>Actions → Create&lt;/p>
+&lt;h2 id="создание-actions">Создание Actions&lt;/h2>
+&lt;p>Выбираю стандартный action (Deploy&amp;hellip;)&lt;/p>
+&lt;p>Редактирую нижнюю часть кода&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>- &lt;span style="color:#062873;font-weight:bold">name&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>Build&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">run&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>|&lt;span style="color:#4070a0;font-style:italic">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-style:italic"> npm i
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-style:italic"> npm run build
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-style:italic"> npm run export&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>- &lt;span style="color:#062873;font-weight:bold">name&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>Deploy&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">uses&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>peaceiris/actions-gh-pages@v3&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">with&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">deploy_key&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>${{ secrets.ACTIONS_DEPLOY_KEY }}&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">publish_dir&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>./out&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>npm run export - для создания статических файлов (добавлю позже)&lt;/p>
+&lt;p>ACTIONS_DEPLOY_KEY - название ключа, что создал ранее&lt;/p>
+&lt;p>peaceiris/actions-gh-pages@v3 - action из другого популярного репозитория. Ссылаюсь на него.&lt;/p>
+&lt;p>Итого код:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#062873;font-weight:bold">name&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>Deploy to Github Pages&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">on&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">push&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">branches&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- main&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">workflow_dispatch&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">jobs&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">deployment&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">runs-on&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>ubuntu-latest&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">steps&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#062873;font-weight:bold">uses&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>actions/checkout@v2&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#062873;font-weight:bold">name&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>Setup Node&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">uses&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>actions/setup-node@v3&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">with&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">node-version&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#4070a0">&amp;#34;lts/*&amp;#34;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">cache&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#4070a0">&amp;#34;npm&amp;#34;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#062873;font-weight:bold">name&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>Build&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">run&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>|&lt;span style="color:#4070a0;font-style:italic">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-style:italic"> npm i
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-style:italic"> npm run build
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-style:italic"> npm run export&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#062873;font-weight:bold">name&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>Deploy&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">uses&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>peaceiris/actions-gh-pages@v3&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">with&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">deploy_key&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>${{ secrets.ACTIONS_DEPLOY_KEY }}&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">publish_dir&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>./out&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>открыть package.json&lt;/p>
+&lt;p>найти поле scripts, если нет создать:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">...&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;scripts&amp;#34;&lt;/span>: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;dev&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;next dev&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;build&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;next build&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;start&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;next start&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;deploy&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;vercel --prod&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;export&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;next export&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>},
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Если &lt;code>npm run build &amp;amp;&amp;amp; npm run export&lt;/code> отработала, то хорошо&lt;/p>
+&lt;h2 id="отладка">Отладка&lt;/h2>
+&lt;p>Не отработала, ошибка:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span style="display:flex;">&lt;span>info &lt;span style="color:#666">-&lt;/span> Copying &lt;span style="color:#4070a0">&amp;#34;static build&amp;#34;&lt;/span> directory
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>info &lt;span style="color:#666">-&lt;/span> No &lt;span style="color:#4070a0">&amp;#34;exportPathMap&amp;#34;&lt;/span> found &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#4070a0">&amp;#34;next.config.js&amp;#34;&lt;/span>&lt;span style="color:#666">.&lt;/span> Generating map from &lt;span style="color:#4070a0">&amp;#34;./pages&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Error: &lt;span style="color:#007020">Image&lt;/span> Optimization using Next&lt;span style="color:#666">.&lt;/span>js&lt;span style="color:#4070a0">&amp;#39; default loader is not compatible with `next export`.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Possible solutions:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">-&lt;/span> Use &lt;span style="">`&lt;/span>next start&lt;span style="">`&lt;/span> to run a server, which includes the &lt;span style="color:#007020">Image&lt;/span> Optimization API&lt;span style="color:#666">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">-&lt;/span> Use any provider which supports &lt;span style="color:#007020">Image&lt;/span> Optimization (like Vercel)&lt;span style="color:#666">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">-&lt;/span> Configure a third&lt;span style="color:#666">-&lt;/span>party loader &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="">`&lt;/span>next&lt;span style="color:#666">.&lt;/span>config&lt;span style="color:#666">.&lt;/span>js&lt;span style="">`&lt;/span>&lt;span style="color:#666">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">-&lt;/span> Use the &lt;span style="">`&lt;/span>loader&lt;span style="">`&lt;/span> prop &lt;span style="color:#007020;font-weight:bold">for&lt;/span> &lt;span style="">`&lt;/span>next&lt;span style="color:#666">/&lt;/span>image&lt;span style="">`&lt;/span>&lt;span style="color:#666">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Read more: https:&lt;span style="color:#666">//&lt;/span>nextjs&lt;span style="color:#666">.&lt;/span>org&lt;span style="color:#666">/&lt;/span>docs&lt;span style="color:#666">/&lt;/span>messages&lt;span style="color:#666">/&lt;/span>&lt;span style="color:#007020;font-weight:bold">export&lt;/span>&lt;span style="color:#666">-&lt;/span>image&lt;span style="color:#666">-&lt;/span>api
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://nextjs.org/docs/api-reference/next.config.js/exportPathMap">https://nextjs.org/docs/api-reference/next.config.js/exportPathMap&lt;/a>&lt;/p>
+&lt;p>пример кода из документации&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span style="display:flex;">&lt;span>module&lt;span style="color:#666">.&lt;/span>exports &lt;span style="color:#666">=&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> exportPathMap: async function (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> defaultPathMap,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> { dev, dir, outDir, distDir, buildId }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;/&amp;#34;&lt;/span>: { page: &lt;span style="color:#4070a0">&amp;#34;/&amp;#34;&lt;/span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;/about&amp;#34;&lt;/span>: { page: &lt;span style="color:#4070a0">&amp;#34;/about&amp;#34;&lt;/span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;/p/hello-nextjs&amp;#34;&lt;/span>: { page: &lt;span style="color:#4070a0">&amp;#34;/post&amp;#34;&lt;/span>, query: { title: &lt;span style="color:#4070a0">&amp;#34;hello-nextjs&amp;#34;&lt;/span> } },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;/p/learn-nextjs&amp;#34;&lt;/span>: { page: &lt;span style="color:#4070a0">&amp;#34;/post&amp;#34;&lt;/span>, query: { title: &lt;span style="color:#4070a0">&amp;#34;learn-nextjs&amp;#34;&lt;/span> } },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;/p/deploy-nextjs&amp;#34;&lt;/span>: { page: &lt;span style="color:#4070a0">&amp;#34;/post&amp;#34;&lt;/span>, query: { title: &lt;span style="color:#4070a0">&amp;#34;deploy-nextjs&amp;#34;&lt;/span> } },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> };
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>};
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>мой:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span style="display:flex;">&lt;span>module&lt;span style="color:#666">.&lt;/span>exports &lt;span style="color:#666">=&lt;/span> withBundleAnalyzer({
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> images: {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> domains: [&lt;span style="color:#4070a0">&amp;#34;pbs.twimg.com&amp;#34;&lt;/span>],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> },
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>});
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="Screen_Shot_2022-03-05_at_19.35.50.png?v1"
+id="zoom-default"
+alt="Screen Shot 2022-03-05 at 19.35.50.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Редактирую *&lt;strong>*&lt;a href="https://github.com/romankurnovskii/notion-project">next.config.js&lt;/a>**&lt;/strong>&lt;/p>
+&lt;p>Добавляю:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">const&lt;/span> repoName &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;/notion-project&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>module&lt;span style="color:#666">.&lt;/span>exports &lt;span style="color:#666">=&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> basePath: repoName,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> assetPrefix: repoName,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">...&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://github.com/romankurnovskii/notion-project/blob/main/next.config.js">https://github.com/romankurnovskii/notion-project/blob/main/next.config.js&lt;/a>&lt;/p>
+&lt;p>Проблема с установкой зависимости вовремя использованя npm установщика. Буду использовать yarn потому что он пропускает минорные уведомления для меня кажется более стабильным.&lt;/p>
+&lt;p>Пока разбирался с проблемы запуска экшенов и настройками нашёл новые экшены и без использования ключа. Обновлю код&lt;/p>
+&lt;p>После того как я редактирую данные нужен они не меняются на сайте. Не меняются потому что гитхаб создаёт статические файлы, то есть нужно заново сделать новый билд. Для меня моментальные изменения не критичны поэтому я поставлю задачу билда повторяться каждый день в 7:00 утра&lt;/p>
+&lt;p>Добавляю код в yaml файл&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#062873;font-weight:bold">on&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">push&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">branches&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>[main]&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">schedule&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#062873;font-weight:bold">cron&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#4070a0">&amp;#34;0 7 * * *&amp;#34;&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#60a0b0;font-style:italic">## every day 7 am&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Итоговый результат&lt;/p>
+&lt;p>&lt;a href="https://github.com/romankurnovskii/notion-project/blob/main/.github/workflows/main.yml">https://github.com/romankurnovskii/notion-project/blob/main/.github/workflows/main.yml&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>lines (32 sloc) 867 Bytes&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">name&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>Deploy to GitHub Pages&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">on&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">push&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">branches&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>[main]&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">schedule&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#062873;font-weight:bold">cron&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#4070a0">&amp;#34;0 7 * * *&amp;#34;&lt;/span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#60a0b0;font-style:italic">## every day 7 am&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">jobs&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">build&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">runs-on&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>ubuntu-latest&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">strategy&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">matrix&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">node-version&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>[&lt;span style="color:#40a070">14.&lt;/span>x]&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">steps&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#062873;font-weight:bold">name&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>Get files&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">uses&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>actions/checkout@v2&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#062873;font-weight:bold">name&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>Use Node.js ${{ matrix.node-version }}&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">uses&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>actions/setup-node@v2&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">with&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">node-version&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>${{ matrix.node-version }}&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#062873;font-weight:bold">name&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>Install packages&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">run&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>yarn install&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#062873;font-weight:bold">name&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>Build project&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">run&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>yarn run build&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#062873;font-weight:bold">name&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>Export static files&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">run&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>yarn run export&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#062873;font-weight:bold">name&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>Add .nojekyll file&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">run&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>touch ./out/.nojekyll&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#062873;font-weight:bold">name&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>Deploy&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">uses&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>JamesIves/github-pages-deploy-action@4.1.1&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#60a0b0;font-style:italic">#third party github actions / ok to use&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">with&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">branch&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>gh-pages&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">folder&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>out&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>После тестового комитета и билда получаю 2 проблемы:&lt;/p>
+&lt;ul>
+&lt;li>Стилей нет, картинки не подгружены&lt;/li>
+&lt;li>Ссылки не работают&lt;/li>
+&lt;/ul>
+&lt;p>Next.js ожидает адрес вида &lt;a href="https://username.github.io/">https://username.github.io/&lt;/a>&lt;/p>
+&lt;p>А у меня в конце ещё добавляется репозиторий. Т.е. добавился ещё один уровень в пути&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>- &lt;span style="color:#062873;font-weight:bold">name&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>Deploy&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">uses&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>JamesIves/github-pages-deploy-action@4.1.1&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#60a0b0;font-style:italic">#third party github actions / ok to use&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">with&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">branch&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>gh-pages&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">folder&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>out&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>- &lt;span style="color:#062873;font-weight:bold">name&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>Add .nojekyll file&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">run&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>touch ./out/.nojekyll&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="источники">Источники&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://wallis.dev/blog/deploying-a-next-js-app-to-github-pages" target="_blank">&lt;a href="https://wallis.dev/blog/deploying-a-next-js-app-to-github-pages">https://wallis.dev/blog/deploying-a-next-js-app-to-github-pages&lt;/a>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://gregrickaby.blog/article/nextjs-github-pages" target="_blank">&lt;a href="https://gregrickaby.blog/article/nextjs-github-pages">https://gregrickaby.blog/article/nextjs-github-pages&lt;/a>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://medium.com/@anotherplanet/git-tips-next-js-github-pages-2dbc9a819cb8" target="_blank">&lt;a href="https://medium.com/@anotherplanet/git-tips-next-js-github-pages-2dbc9a819cb8">https://medium.com/@anotherplanet/git-tips-next-js-github-pages-2dbc9a819cb8&lt;/a>&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.linkedin.com/pulse/deploy-nextjs-app-github-pages-federico-antu%C3%B1a" target="_blank">&lt;a href="https://www.linkedin.com/pulse/deploy-nextjs-app-github-pages-federico-antu%C3%B1a">https://www.linkedin.com/pulse/deploy-nextjs-app-github-pages-federico-antu%C3%B1a&lt;/a>&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

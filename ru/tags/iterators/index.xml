@@ -1,4 +1,38 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Iterators on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/iterators/</link><description>Recent content in Iterators on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Mon, 28 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/iterators/index.xml" rel="self" type="application/rss+xml"/><item><title>251. Flatten 2D Vector</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/251/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/251/</guid><description>LeetCode задача 251
-Задача Дизайн и реализация итератора для 2D вектора. Итератор должен быть инициализирован 2D вектором (vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;) и должен поддерживать следующие операции:
-next(): Возвращает следующий элемент из 2D вектора. Если нет больше элементов, возвращает 0. hasNext(): Возвращает True, если в 2D векторе есть следующий элемент, и False в противном случае. Подход Мы можем использовать две переменные: одну для текущего индекса строки и одну для текущего индекса столбца, чтобы навигироваться по 2D вектору.
-Алгоритм Инициализируем переменные row и col в конструкторе.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Iterators on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/iterators/</link><description>Recent content in Iterators on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Mon, 28 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/iterators/index.xml" rel="self" type="application/rss+xml"/><item><title>251. Flatten 2D Vector</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/251/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/251/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/flatten-2d-vector/">LeetCode задача 251&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Дизайн и реализация итератора для 2D вектора. Итератор должен быть инициализирован 2D вектором (&lt;code>vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt;&lt;/code>) и должен поддерживать следующие операции:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>next()&lt;/code>: Возвращает следующий элемент из 2D вектора. Если нет больше элементов, возвращает 0.&lt;/li>
+&lt;li>&lt;code>hasNext()&lt;/code>: Возвращает &lt;code>True&lt;/code>, если в 2D векторе есть следующий элемент, и &lt;code>False&lt;/code> в противном случае.&lt;/li>
+&lt;/ul>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Мы можем использовать две переменные: одну для текущего индекса строки и одну для текущего индекса столбца, чтобы навигироваться по 2D вектору.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Инициализируем переменные &lt;code>row&lt;/code> и &lt;code>col&lt;/code> в конструкторе.&lt;/li>
+&lt;li>В методе &lt;code>next()&lt;/code>, возвращаем элемент в текущем &lt;code>row&lt;/code> и &lt;code>col&lt;/code>, и двигаем индексы на следующий доступный элемент.&lt;/li>
+&lt;li>В методе &lt;code>hasNext()&lt;/code>, проверяем, есть ли следующий доступный элемент в 2D векторе.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Vector2D&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, vec: &lt;span style="color:#007020">list&lt;/span>[&lt;span style="color:#007020">list&lt;/span>[&lt;span style="color:#007020">int&lt;/span>]]):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>vec &lt;span style="color:#666">=&lt;/span> vec
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>row &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>col &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">next&lt;/span>(self) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>_advance_to_next()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>vec[self&lt;span style="color:#666">.&lt;/span>row][self&lt;span style="color:#666">.&lt;/span>col]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>col &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> result
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">hasNext&lt;/span>(self) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">bool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>_advance_to_next()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> self&lt;span style="color:#666">.&lt;/span>row &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(self&lt;span style="color:#666">.&lt;/span>vec)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">_advance_to_next&lt;/span>(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> self&lt;span style="color:#666">.&lt;/span>row &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(self&lt;span style="color:#666">.&lt;/span>vec) &lt;span style="color:#007020;font-weight:bold">and&lt;/span> self&lt;span style="color:#666">.&lt;/span>col &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#007020">len&lt;/span>(self&lt;span style="color:#666">.&lt;/span>vec[self&lt;span style="color:#666">.&lt;/span>row]):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>row &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>col &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

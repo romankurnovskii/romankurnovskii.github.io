@@ -1,14 +1,1452 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/linux/</link><description>Recent content in Linux on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Thu, 23 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>14. DevOps и Linux</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day14/</link><pubDate>Wed, 04 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day14/</guid><description>Общая картина: DevOps и Linux Linux и DevOps имеют очень схожие культуры и взгляды; оба ориентированы на настройку и масштабируемость. Оба эти аспекта Linux имеют особое значение для DevOps.
-Многие технологии начинаются с Linux, особенно если они связаны с разработкой программного обеспечения или управлением инфраструктурой.
-Кроме того, многие проекты с открытым исходным кодом, особенно инструменты DevOps, с самого начала разрабатывались для работы в Linux.
-С точки зрения DevOps или фактически с точки зрения какой-либо операционной роли вы столкнетесь с Linux, я бы сказал, в основном.</description></item><item><title>15. Команды Linux в DevOps</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day15/</link><pubDate>Thu, 05 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day15/</guid><description>Команды Linux для DevOps Я упомянул вчера, что мы собираемся провести много времени в терминале с некоторыми командами, чтобы что-то сделать.
-Я также упомянул, что с нашей виртуальной машиной, подготовленной с помощью vagrant, мы можем использовать vagrant ssh и получить доступ к нашей машине. Вам нужно будет находиться в том же каталоге, из которого мы его предоставили.
-Для SSH нам не понадобятся имя пользователя и пароль, они понадобятся нам только в том случае, если решим войти в консоль Virtual Box.</description></item><item><title>16. Управление системой, файловой системой и хранилищем в Linux</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day16/</link><pubDate>Fri, 06 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day16/</guid><description>Управление системой, файловой системой и хранилищем в Linux К этому времени мы кратко рассмотрели Linux и DevOps, а затем мы настроили нашу лабораторную среду с помощью vagant 14-й день), а затем коснулись небольшой части команд, которые будут в вашем ежедневном набор инструментов во время использования терминала - (День 15).
-Сегодня мы рассмотрим три ключевые области обслуживания систем Linux с помощью обновлений, установки программного обеспечения. Поймем для чего используются системные папки, а также рассмотрим хранилище.
-Управление Ubuntu и программным обеспечением Первое, что мы собираемся рассмотреть, это то, как мы обновляем нашу операционную систему.</description></item><item><title>18. Web Сервер и SSH</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day18/</link><pubDate>Sun, 08 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day18/</guid><description>SSH Как мы уже упоминали, вы, скорее всего, будете управлять множеством удаленных серверов Linux, поэтому вам необходимо убедиться, что ваше подключение к этим удаленным серверам безопасно. В этом разделе мы хотим рассказать о некоторых основах SSH (Secure Shell), которые должен знать каждый, и которые помогут вам с этим безопасным туннелем к вашим удаленным системам.
-Настройка соединения по SSH Передача файлов Создайте свой закрытый ключ Введение в SSH Безопасная оболочка (Secure Shell) Сетевой протокол (Networking Protocol) Обеспечивает безопасную связь Может защитить любой сетевой сервис Обычно используется для удаленного доступа из командной строки В нашей среде, если вы следили за нами, мы уже использовали SSH, но все это было настроено и автоматизировано с помощью нашей конфигурации vagrant, поэтому нам нужно было только запустить vagrant ssh, и мы получили доступ к нашей удаленной виртуальной машине.</description></item><item><title>Установка Ubuntu Desktop 22.10 (Kinetic Kudu) на ARM CPU</title><link>https://romankurnovskii.com/ru/posts/howto-install-ubuntu-desktop-on-arm/</link><pubDate>Thu, 23 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/howto-install-ubuntu-desktop-on-arm/</guid><description>Ubuntu - одна из популярных Linux систем и достаточно много обзоров по установке Ubuntu. В этой статье мы будем устанавливать образ Ubuntu для ARM процессора на виртуальную машину UTM. Вся установка будет проходить на Mac OS.
-Загрузка установочного образа На сайте Ubuntu доступен для скачивания только образ Ubuntu Server ARM версии 22.04 - без графического интерфейса. Но можно скачать обновленный релиз Ubuntu Desktop для ARM - Daily Build по ссылке.
-Находим 64-bit ARM (ARMv8/AArch64) desktop image и скачиваем Виртуальная машина В качестве виртуальной машины для установки RHEL 9 использую бесплатную виртуальную машину UTM.</description></item><item><title>Установка Linux RHEL 9</title><link>https://romankurnovskii.com/ru/posts/howto-install-rhel-9-free/</link><pubDate>Fri, 17 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/howto-install-rhel-9-free/</guid><description>Red Hat Enterprise Linux 9 (RHEL 9) под кодовым названием Plow стал общедоступным (GA). Компания Red Hat объявила об этом 18 мая 2022 года. Она сменила бета-версию, которая существовала с 3 ноября 2021 года.
-RHEL 9 - это несколько первых релизов в семействе Red Hat. Это первый крупный релиз после приобретения Red Hat компанией IBM в июле 2019 года, а также первая крупная версия после отказа от проекта CentOS в пользу CentOS Stream, который теперь является предшественником RHEL.</description></item><item><title>Шпаргалка tar архиватор</title><link>https://romankurnovskii.com/ru/posts/cheat-sheet-command-tar/</link><pubDate>Sun, 05 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/cheat-sheet-command-tar/</guid><description>Кратко Создать:
-tar cf archive.tar directory Распаковать:
-tar xf archive.tar Создание mkdir my_dir # Создаем папку tar cf dir_archive.tar my_dir # Создаем архив с папкой ll # Проверяем содержимое текущего каталога # -rw-r--r-- 1 r staff 1.5K Jun 4 14:42 dir_archive.tar # drwxr-xr-x 2 r staff 64B Jun 4 14:42 my_dir Распаковка tar xf dir_archive.tar Сжатие tar czf dir_archive.tar.gz dir_archive.tar Распаковка сжатого файла tar xzf dir_archive.tar.gz Сжатие с помощью bzip2 tar cjf dir_archive.tar.bz2 my_dir Распаковка с помощью bzip2 tar xjf dir_archive.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/linux/</link><description>Recent content in Linux on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 23 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>14. DevOps и Linux</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day14/</link><pubDate>Wed, 04 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day14/</guid><description>&lt;h2 id="общая-картина-devops-и-linux">Общая картина: DevOps и Linux&lt;/h2>
+&lt;p>Linux и DevOps имеют очень схожие культуры и взгляды; оба ориентированы на настройку и масштабируемость. Оба эти аспекта Linux имеют особое значение для DevOps.&lt;/p>
+&lt;p>Многие технологии начинаются с Linux, особенно если они связаны с разработкой программного обеспечения или управлением инфраструктурой.&lt;/p>
+&lt;p>Кроме того, многие проекты с открытым исходным кодом, особенно инструменты DevOps, с самого начала разрабатывались для работы в Linux.&lt;/p>
+&lt;p>С точки зрения DevOps или фактически с точки зрения какой-либо операционной роли вы столкнетесь с Linux, я бы сказал, в основном. Есть место для WinOps, но большую часть времени вы будете администрировать и развертывать серверы Linux.&lt;/p>
+&lt;p>Я использую Linux ежедневно в течение нескольких лет, но мой настольный компьютер всегда был либо macOS, либо Windows. Однако, когда я перешел на роль Cloud Native, в которой я сейчас нахожусь, я сделал решительный шаг, чтобы убедиться, что мой ноутбук полностью основан на Linux и является моим ежедневным драйвером, в то время как мне по-прежнему нужна была Windows для рабочих приложений и многих моих аудио и видеоаппаратура не работает в Linux Я заставлял себя постоянно работать на рабочем столе Linux, чтобы лучше понять многие вещи, которые мы собираемся затронуть в течение следующих 7 дней.&lt;/p>
+&lt;h2 id="начало">Начало&lt;/h2>
+&lt;p>Я не предлагаю вам делать то же самое, что и я, в любом случае, поскольку есть более простые варианты и менее разрушительные, но я скажу, что этот полный рабочий день заставит вас быстрее научиться тому, как заставить все работать в Linux.&lt;/p>
+&lt;p>В течение большей части этих 7 дней я фактически собираюсь развернуть виртуальную машину в Virtual Box на моей машине с Windows. Я также собираюсь развернуть настольную версию дистрибутива Linux, в то время как многие серверы Linux, которыми вы будете администрировать, скорее всего, будут серверами без графического интерфейса и полностью основанными на оболочке. Однако, как я сказал в начале, многие инструменты, которые мы рассмотрели в течение всех этих 90 дней, начинались с Linux, я также настоятельно рекомендую вам погрузиться в работу этого рабочего стола Linux для этого обучения.&lt;/p>
+&lt;p>В оставшейся части этого поста мы сосредоточимся на настройке и запуске виртуальной машины Ubuntu Desktop в нашей среде Virtual Box. Теперь мы можем просто загрузить &lt;a href="https://www.virtualbox.org/">Virtual Box&lt;/a> и получить последний &lt;a href="https://ubuntu.com/download">Ubuntu ISO&lt;/a> с сайтов, на которые даны ссылки, и продолжить сборку. нашу среду рабочего стола, но это не было бы очень DevOps с нашей стороны, не так ли?&lt;/p>
+&lt;p>Еще одна веская причина использовать большинство дистрибутивов Linux заключается в том, что они бесплатны и имеют открытый исходный код. Мы также выбираем Ubuntu, поскольку это, вероятно, наиболее широко используемый дистрибутив, не думая о мобильных устройствах и корпоративных серверах RedHat Enterprise. Я могу ошибаться, но с CentOS и ее историей я уверен, что Ubuntu занимает первое место в списке, и это очень просто.&lt;/p>
+&lt;h2 id="hashicorp-vagrant">HashiCorp Vagrant&lt;/h2>
+&lt;p>Vagrant — это утилита CLI, которая управляет жизненным циклом ваших виртуальных машин. Мы можем использовать vagrant для запуска и отключения виртуальных машин на разных платформах, включая vSphere, Hyper-v, Virtual Box, а также Docker. У него есть другие провайдеры, но мы будем придерживаться того, что здесь мы используем Virtual Box, так что все готово.&lt;/p>
+&lt;p>Vagrant — свободное и открытое программное обеспечение для создания и конфигурирования виртуальной среды разработки. Является обёрткой для программного обеспечения виртуализации, например VirtualBox, и средств управления конфигурациями, таких как Chef, Salt и Puppet.&lt;/p>
+&lt;p>Первое, что нам нужно сделать, это установить Vagrant на нашу машину, когда вы перейдете на страницу загрузок, вы увидите все операционные системы, перечисленные на ваш выбор. &lt;a href="https://www.vagrantup.com/downloads">HashiCorp Vagrant&lt;/a> Я использую Windows, поэтому я взял двоичный файл для своей системы и установил его в свою систему.&lt;/p>
+&lt;p>Далее нам также нужно установить &lt;a href="https://www.virtualbox.org/wiki/Downloads">Virtual Box&lt;/a>. Опять же, это также может быть установлено на многих разных операционных системах.&lt;/p>
+&lt;h2 id="файл-vagrantfile">Файл VAGRANTFILE&lt;/h2>
+&lt;p>VAGRANTFILE описывает тип машины, которую мы хотим развернуть. Он также определяет, как мы хотим, чтобы конфигурация и подготовка этой машины выглядели.&lt;/p>
+&lt;p>Когда дело доходит до их сохранения и организации ваших VAGRANTFILE, я стараюсь помещать их в отдельные папки в своем рабочем пространстве. Ниже вы можете увидеть, как это выглядит в моей системе. Надеюсь, после этого вы поиграете с Vagrant и увидите легкость запуска разных систем, это также отлично подходит для этой кроличьей норы, известной как скачок дистрибутива для Linux Desktops.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day14_Linux1.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Давайте взглянем на этот VAGRANTFILE и посмотрим, что мы строим.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Vagrant.configure(&amp;#34;2&amp;#34;) do |config|
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> config.vm.box = &amp;#34;chenhan/ubuntu-desktop-20.04&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> config.vm.provider :virtualbox do |v|
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> v.memory = 8096
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> v.cpus = 4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> v.customize [&amp;#34;modifyvm&amp;#34;, :id, &amp;#34;--vram&amp;#34;, &amp;#34;128mb&amp;#34;]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> end
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>end
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Это очень простой VAGRANTFILE. В целом, мы говорим, что нам нужна конкретная «сборка». Сборка, возможно, является либо общедоступным образом, либо частной сборкой системы, которую вы ищете. Вы можете найти длинный список здесь, в &lt;a href="https://app.vagrantup.com/boxes/search">общедоступном каталоге Vagrant&lt;/a>&lt;/p>
+&lt;p>Далее мы говорим, что хотим использовать определенного провайдера, в данном случае это «VirtualBox», а затем мы хотим определить память нашей машины как «8 ГБ, а количество процессоров — как «4». Мой опыт также говорит мне, что вы можете также добавить следующую строку, если у вас возникли проблемы с отображением. Это установит видеопамять на то, что вы хотите, я бы увеличил ее до 128 МБ, но зависит от вашей системы.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>v.customize [&amp;#34;modifyvm&amp;#34;, :id, &amp;#34;--vram&amp;#34;, &amp;#34;&amp;#34;]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="инициализация-нашего-рабочего-стола-linux">Инициализация нашего рабочего стола Linux&lt;/h2>
+&lt;p>Теперь мы готовы запустить нашу первую машину в терминале нашего ПК. В моем случае я использую PowerShell на своем компьютере с Windows, перейдите в папку своих проектов и там, где вы найдете свой VAGRANTFILE. Оказавшись там, вы можете ввести команду &lt;code>vagrant up&lt;/code>, и если все правильно, вы увидите что-то вроде того, что показано ниже.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day14_Linux2.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Еще одна вещь, которую следует добавить, это то, что сеть будет настроена на &lt;code>NAT&lt;/code> на вашей виртуальной машине, на данном этапе нам действительно не нужно знать о NAT, и я планирую провести целую сессию в следующем разделе о сети. Но знайте, что это просто кнопка, когда дело доходит до включения машины в вашу домашнюю сеть, это также сетевой режим по умолчанию в Virtual Box. Вы можете узнать больше в &lt;a href="https://www.virtualbox.org/manual/ch06.html#network_nat">документации Virtual Box&lt;/a>&lt;/p>
+&lt;p>Как только &lt;code>vagrant up&lt;/code> завершен, мы можем использовать &lt;code>vagrant ssh&lt;/code>, чтобы перейти прямо в терминал нашей новой виртуальной машины.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day14_Linux3.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Именно здесь мы будем проводить большую часть наших исследований в течение следующих нескольких дней, но я также хочу погрузиться в некоторые настройки для вашей рабочей станции разработчика, которые я сделал, и это значительно упрощает вашу жизнь при использовании этого в качестве ежедневного драйвера, и, конечно же, а ты реально в DevOps разве что у тебя крутой нестандартный терминал?&lt;/p>
+&lt;p>Но просто для подтверждения в Virtual Box вы должны увидеть приглашение для входа в систему при выборе виртуальной машины.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day14_Linux4.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>О, и если вы зашли так далеко и спрашивали: «ЧТО ТАКОЕ ИМЯ ПОЛЬЗОВАТЕЛЯ И ПАРОЛЬ?»&lt;/p>
+&lt;ul>
+&lt;li>Username = vagrant&lt;/li>
+&lt;li>Password = vagrant&lt;/li>
+&lt;/ul>
+&lt;p>Завтра мы рассмотрим некоторые команды и то, что они делают. Терминал станет местом, где все произойдет.&lt;/p>
+&lt;h2 id="ресурсы">Ресурсы&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=kPylihJRG70">Learn the Linux Fundamentals - Part 1&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=VbEx7B_PTOE">Linux for hackers (don&amp;rsquo;t worry you don&amp;rsquo;t need be a hacker!)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://learn.hashicorp.com/vagrant">Vargant tutorial&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Как я уже упоминал, далее мы рассмотрим команды, которые мы можем использовать ежедневно в наших средах Linux.&lt;/p></description></item><item><title>15. Команды Linux в DevOps</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day15/</link><pubDate>Thu, 05 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day15/</guid><description>&lt;h2 id="команды-linux-для-devops">Команды Linux для DevOps&lt;/h2>
+&lt;p>Я упомянул &lt;a href="../day14">вчера&lt;/a>, что мы собираемся провести много времени в терминале с некоторыми командами, чтобы что-то сделать.&lt;/p>
+&lt;p>Я также упомянул, что с нашей виртуальной машиной, подготовленной с помощью vagrant, мы можем использовать &lt;code>vagrant ssh&lt;/code> и получить доступ к нашей машине. Вам нужно будет находиться в том же каталоге, из которого мы его предоставили.&lt;/p>
+&lt;p>Для SSH нам не понадобятся имя пользователя и пароль, они понадобятся нам только в том случае, если решим войти в консоль Virtual Box.&lt;/p>
+&lt;p>Вот где мы хотим быть, как показано ниже:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux1.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="команды">Команды&lt;/h2>
+&lt;p>Очевидно, что я не могу охватить здесь все команды. Есть тонны документации, которые охватывают их, но также, если вы находитесь в своем терминале, и вам просто нужно понять параметры конкретной команды, у нас есть команда &lt;code>man&lt;/code>, сокращенная от manual. Мы можем использовать это, чтобы просмотреть каждую из команд, которые мы коснемся в этом посте, чтобы узнать больше вариантов для каждой из них. Мы можем запустить &lt;code>man man&lt;/code>, который поможет вам со страницами руководства. Чтобы выйти из справочных страниц, вы должны нажать &lt;code>q&lt;/code> для выхода.&lt;/p>
+&lt;p>Примеры:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>man ls
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>man whoami
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux2.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux3.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;code>sudo&lt;/code> Если вы знакомы с Windows и щелкаете правой кнопкой мыши по &lt;code>запустить от имени администратора&lt;/code>, мы можем думать о &lt;code>sudo&lt;/code> как об этом. Когда вы запускаете команду с помощью этой команды, вы будете запускать ее как «root», она запросит у вас пароль перед запуском команды.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux4.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Для разовых работ, таких как установка приложений или служб, вам может понадобиться эта команда sudo, но что, если у вас есть несколько задач, и вы хотите какое-то время пожить как sudo? Здесь вы можете снова использовать &lt;code>sudo su&lt;/code> так же, как &lt;code>sudo&lt;/code>, после ввода вам будет предложено ввести пароль &lt;code>root&lt;/code>. В тестовой виртуальной машине, такой как наша, это нормально, но мне было бы очень сложно работать как «root» в течение длительного времени, могут произойти плохие вещи. Чтобы выйти из этого возвышенного положения, вы просто набираете «exit».&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux5.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Я ловлю себя на том, что все время использую &lt;code>clear&lt;/code>. Команда &lt;code>clear&lt;/code> делает именно то, о чем говорит: она очищает экран от всех предыдущих команд, помещая курсор наверх и предоставляя вам красивое чистое рабочее пространство. Windows, это «cls» в .mdprompt.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux6.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Давайте теперь посмотрим на некоторые команды, с помощью которых мы можем создавать вещи в нашей системе, а затем визуализировать их в нашем терминале. Прежде всего, у нас есть &lt;code>mkdir&lt;/code>, это позволит нам создать папку в нашей системе. С помощью следующей команды мы можем создать папку в нашем домашнем каталоге с именем Day15 &lt;code>mkdir Day15&lt;/code>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux7.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>С помощью &lt;code>cd&lt;/code> это позволяет нам изменить каталог, поэтому для перехода в наш вновь созданный каталог мы можем сделать это с помощью вкладки &lt;code>cd Day15&lt;/code>, которая также может использоваться для автозаполнения доступного каталога. Если мы хотим вернуться к тому, с чего начали, мы можем использовать &lt;code>cd ..&lt;/code>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux8.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;code>rmdir&lt;/code> позволяет нам удалить каталог, если мы запустим &lt;code>rmdir Day15&lt;/code>, тогда папка будет удалена (обратите внимание, что это будет работать, только если у вас ничего нет в папке)&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux9.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Я уверен, что все мы делали это, когда мы переходили в глубины нашей файловой системы в каталог и не знали, где мы находимся. &lt;code>pwd&lt;/code> дает нам распечатку рабочего каталога, pwd, насколько это похоже на пароль, означает печать рабочего каталога.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux10.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Мы знаем, как создавать папки и каталоги, но как мы создаем файлы? Мы можем создавать файлы с помощью команды «touch», если бы мы запускали «touch Day15», это создало бы файл. Игнорируйте &lt;code>mkdir&lt;/code>, мы еще увидим это позже.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux11.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;code>ls&lt;/code> Я могу поставить на это свой дом, вы будете использовать эту команду так много раз, что она выведет список всех файлов и папок в текущем каталоге. Давайте посмотрим, сможем ли мы увидеть тот файл, который мы только что создали.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux12.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Как мы можем найти файлы в нашей системе Linux? &lt;code>locate&lt;/code> позволит нам искать в нашей файловой системе. Если мы используем &lt;code>locate Day15&lt;/code>, он сообщит о местонахождении файла. Бонусом является то, что если вы знаете, что файл существует, но вы получаете пустой результат, запустите &lt;code>sudo updatedb&lt;/code>, который проиндексирует все файлы в файловой системе, а затем снова запустите &lt;code>locate&lt;/code>. Если у вас нет &lt;code>locate&lt;/code>, вы можете установить его с помощью этой команды &lt;code>sudo apt install mlocate&lt;/code>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux13.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Как насчет перемещения файлов из одного места в другое? &lt;code>mv&lt;/code> позволит вам перемещать ваши файлы. Пример &lt;code>mv Day15 90DaysOfDevOps&lt;/code> переместит ваш файл в папку 90DaysOfDevOps.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux14.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Мы переместили наш файл, но что, если мы хотим переименовать его сейчас во что-то другое? Мы можем сделать это снова с помощью команды &lt;code>mv&lt;/code>. Мы можем просто использовать &lt;code>mv Day15 day15&lt;/code>, чтобы перейти к верхнему регистру, или мы могли бы использовать &lt;code>mv day15 AnotherDay&lt;/code>, чтобы полностью изменить его, теперь используйте &lt;code>ls&lt;/code> для проверки файла.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux15.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Хватит, теперь давайте избавимся (удалим) от нашего файла и, возможно, даже от нашего каталога, если он у нас есть. &lt;code>rm&lt;/code> просто &lt;code>rm AnotherDay&lt;/code> удалит наш файл. Мы также будем использовать &lt;code>rm -R&lt;/code>, который будет рекурсивно работать через папку или местоположение. Мы также можем использовать &lt;code>rm -R -f&lt;/code>, чтобы принудительно удалить все эти файлы. Спойлер, если вы запустите &lt;code>rm -R -f /&lt;/code>, добавьте к нему sudo, и вы можете попрощаться со своей системой &amp;hellip;.!&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux16.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Мы рассмотрели перемещение файлов, но что, если я просто хочу скопировать файлы из одной папки в другую, просто скажу, что это очень похоже на команду &lt;code>mv&lt;/code>, но мы используем &lt;code>cp&lt;/code>, чтобы теперь мы могли сказать &lt;code>cp Day15 Desktop&lt;/code>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux17.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Мы создали папки и файлы, но на самом деле мы не поместили никакого содержимого в нашу папку, мы можем добавить содержимое несколькими способами, но самый простой способ - это &lt;code>echo&lt;/code>, мы также можем использовать &lt;code>echo&lt;/code>, чтобы распечатать много вещей в нашей папке. терминал, я лично часто использую эхо для вывода системных переменных, чтобы узнать, установлены они или нет. мы можем использовать &lt;code>echo &amp;quot;Hello #90DaysOfDevOps&amp;quot; &amp;gt; Day15&lt;/code>, и это добавит это в наш файл. Мы также можем добавить к нашему файлу, используя &lt;code>echo &amp;quot;Commands are fun!&amp;quot; &amp;gt;&amp;gt; День15&lt;/code>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux18.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Еще одна из тех команд, которые вы будете часто использовать! &lt;code>кошка&lt;/code> сокращение от конкатенации. Мы можем использовать &lt;code>cat Day15&lt;/code>, чтобы увидеть содержимое внутри файла. Отлично подходит для быстрого чтения этих файлов конфигурации.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux19.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Если у вас есть длинный сложный файл конфигурации, и вы хотите или вам нужно найти что-то быстрое в этом файле, а не читать каждую строку, тогда &lt;code>grep&lt;/code> вам в помощь, это позволит нам искать в вашем файле определенное слово, используя &lt;code>cat Day15 | grep &amp;quot;#90DaysOfDevOps&amp;quot;&lt;/code>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux20.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Если вы похожи на меня и часто используете эту команду &lt;code>clear&lt;/code>, то вы можете пропустить некоторые из ранее запущенных команд, мы можем использовать «историю», чтобы узнать все те команды, которые мы запускали ранее. &lt;code>history -c&lt;/code> удалит историю.&lt;/p>
+&lt;p>Когда вы запускаете &lt;code>history&lt;/code> и хотите выбрать конкретную команду, вы можете использовать &lt;code>!3&lt;/code>, чтобы выбрать 3-ю команду в списке.&lt;/p>
+&lt;p>Вы также можете использовать &lt;code>history | grep &amp;quot;Команда&amp;quot;&lt;/code> для поиска чего-то определенного.&lt;/p>
+&lt;p>На серверах для отслеживания времени выполнения команды может быть полезно добавлять дату и время к каждой команде в файле истории.&lt;/p>
+&lt;p>Следующая системная переменная управляет этим поведением:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>HISTTIMEFORMAT=&amp;#34;%d-%m-%Y %T &amp;#34;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Вы можете легко добавить ее в свой bash_profile:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span style="display:flex;">&lt;span>echo &lt;span style="color:#4070a0">&amp;#39;export HISTTIMEFORMAT=&amp;#34;&lt;/span>&lt;span style="color:#70a0d0">%d&lt;/span>&lt;span style="color:#4070a0">-%m-%Y %T &amp;#34;&amp;#39;&lt;/span> &lt;span style="color:#666">&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#666">~/.&lt;/span>bash_profile
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Можем увеличить размер файла для хранения истории:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span style="display:flex;">&lt;span>echo &lt;span style="color:#4070a0">&amp;#39;export HISTSIZE=100000&amp;#39;&lt;/span> &lt;span style="color:#666">&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#666">~/.&lt;/span>bash_profile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo &lt;span style="color:#4070a0">&amp;#39;export HISTFILESIZE=10000000&amp;#39;&lt;/span> &lt;span style="color:#666">&amp;gt;&amp;gt;&lt;/span> &lt;span style="color:#666">~/.&lt;/span>bash_profile
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux21.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Нужно сменить пароль? &lt;code>passwd&lt;/code> позволит нам изменить наш пароль. Обратите внимание, что когда вы добавляете свой пароль таким образом, когда он скрыт, он не будет отображаться в &lt;code>history&lt;/code>, однако, если ваша команда имеет &lt;code>-p ПАРОЛЬ&lt;/code>, тогда он будет виден в вашей &lt;code>history&lt;/code>.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux22.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Мы также можем добавить новых пользователей в нашу систему, мы можем сделать это с помощью &lt;code>useradd&lt;/code>, мы должны добавить пользователя с помощью нашей команды &lt;code>sudo&lt;/code>, мы можем добавить нового пользователя с помощью &lt;code>sudo useradd NewUser&lt;/code>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux23.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Для повторного создания группы требуется &lt;code>sudo&lt;/code>, и мы можем использовать &lt;code>sudo groupadd DevOps&lt;/code>, тогда, если мы хотим добавить нашего нового пользователя в эту группу, мы можем сделать это, запустив &lt;code>sudo usermod -a -G DevOps&lt;/code> &lt;code>-a&lt;/code> is add а &lt;code>-G&lt;/code> это имя группы.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux24.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Как добавить пользователей в группу &lt;code>sudo&lt;/code>? Это было бы очень редким случаем но для того, чтобы сделать это, выполним: &lt;code>usermod -a -G sudo NewUser&lt;/code>&lt;/p>
+&lt;h3 id="права--permissions">Права / Permissions&lt;/h3>
+&lt;p>read, write and execute - — это права доступа ко всем нашим файлам и папкам в нашей системе Linux.&lt;/p>
+&lt;p>Полный список:&lt;/p>
+&lt;ul>
+&lt;li>0 = None &lt;code>---&lt;/code>&lt;/li>
+&lt;li>1 = Execute only &lt;code>--X&lt;/code>&lt;/li>
+&lt;li>2 = Write only &lt;code>-W-&lt;/code>&lt;/li>
+&lt;li>3 = Write &amp;amp; Exectute &lt;code>-WX&lt;/code>&lt;/li>
+&lt;li>4 = Read Only &lt;code>R--&lt;/code>&lt;/li>
+&lt;li>5 = Read &amp;amp; Execute &lt;code>R-X&lt;/code>&lt;/li>
+&lt;li>6 = Read &amp;amp; Write &lt;code>RW-&lt;/code>&lt;/li>
+&lt;li>7 = Read, Write &amp;amp; Execute &lt;code>RWX&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Вы также увидите «777» или «775», и они представляют те же числа, что и в приведенном выше списке, но каждый из них представляет &lt;strong>User - Group - Everyone&lt;/strong>*&lt;/p>
+&lt;p>Давайте посмотрим на наш файл. &lt;code>ls -al Day15&lt;/code> вы можете увидеть 3 группы, упомянутые выше, пользователь и группа могут читать и изменять (write), но все остальыне только читать (read).&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux25.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Мы можем изменить это с помощью &lt;code>chmod&lt;/code>, вы можете сделать это, если вы также создаете двоичные файлы в своих системах, и вам нужно дать возможность запускать эти двоичные файлы. &lt;code>chmod 750 Day15&lt;/code> теперь запустите &lt;code>ls -la Day15&lt;/code>, если вы хотите запустить это для всей папки, вы можете использовать &lt;code>-R&lt;/code>, чтобы сделать это рекурсивно.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux26.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Как насчет смены владельца файла? Мы можем использовать «chown» для этой операции, если мы хотим изменить владельца нашего «Day15» с пользователя «vagrant» на «NewUser», мы можем запустить «sudo chown NewUser Day15» снова, можно использовать «-R».&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux27.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Команда, с которой вы столкнетесь, это &lt;code>awk&lt;/code>, где она реально используется, когда у вас есть выходные данные, из которых вам нужны только определенные данные. например, запуская who, мы получаем строки с информацией, но, возможно, нам нужны только имена. Мы можем запустить &lt;code>кто | awk '{print $1}'&lt;/code>, чтобы получить только список этого первого столбца.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux28.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Если вы хотите читать потоки данных из стандартного ввода, то генерирует и выполняет командные строки; это означает, что он может принимать вывод команды и передавать его в качестве аргумента другой команды. &lt;code>xargs&lt;/code> — полезный инструмент для этого случая использования. Если, например, мне нужен список всех учетных записей пользователей Linux в системе, которую я могу запустить. &lt;code>cut -d: -f1 &amp;lt; /etc/passwd&lt;/code> и получите длинный список, который мы видим ниже.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux29.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Если я хочу заархивировать этот список, я могу сделать это, используя &lt;code>xargs&lt;/code> в команде вроде этой &lt;code>cut -d: -f1 &amp;lt; /etc/passwd | sort | xargs&lt;/code>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux30.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Я также не упомянул команду &lt;code>cut&lt;/code>, которая позволяет нам удалять разделы из каждой строки файла. Его можно использовать для вырезания частей строки по положению байта, символу и полю. Команда &lt;code>cut -d &amp;quot; &amp;quot; -f 2 list.txt&lt;/code> позволяет нам удалить первую букву, которая у нас есть, и просто отобразить наши числа. Есть так много комбинаций, которые можно использовать здесь с этой командой, я уверен, что потратил слишком много времени, пытаясь использовать эту команду, когда я мог бы быстрее извлечь данные вручную.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day15_Linux31.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Также обратите внимание, если вы вводите команду, и вы больше не довольны ею, и вы хотите начать снова, просто нажмите Ctrl + c, и это отменит эту строку и начнет все заново.&lt;/p>
+&lt;h2 id="ресурсы">Ресурсы&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=kPylihJRG70">Learn the Linux Fundamentals - Part 1&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=VbEx7B_PTOE">Linux for hackers (don&amp;rsquo;t worry you don&amp;rsquo;t need be a hacker!)&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Это уже довольно большой список, но я могу с уверенностью сказать, что я использую все эти команды в своей повседневной жизни, будь то администрирование серверов Linux или мой рабочий стол Linux, это очень легко, когда вы находитесь в Windows или macOS для навигации по пользовательскому интерфейсу, но в Linux Servers их нет, все делается через терминал.&lt;/p></description></item><item><title>16. Управление системой, файловой системой и хранилищем в Linux</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day16/</link><pubDate>Fri, 06 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day16/</guid><description>&lt;h2 id="управление-системой-файловой-системой-и-хранилищем-в-linux">Управление системой, файловой системой и хранилищем в Linux&lt;/h2>
+&lt;p>К этому времени мы кратко рассмотрели Linux и DevOps, а затем мы настроили нашу лабораторную среду с помощью vagant &lt;a href="../day14">14-й день)&lt;/a>, а затем коснулись небольшой части команд, которые будут в вашем ежедневном набор инструментов во время использования терминала - &lt;a href="../day15">(День 15)&lt;/a>.&lt;/p>
+&lt;p>Сегодня мы рассмотрим три ключевые области обслуживания систем Linux с помощью обновлений, установки программного обеспечения. Поймем для чего используются системные папки, а также рассмотрим хранилище.&lt;/p>
+&lt;h2 id="управление-ubuntu-и-программным-обеспечением">Управление Ubuntu и программным обеспечением&lt;/h2>
+&lt;p>Первое, что мы собираемся рассмотреть, это то, как мы обновляем нашу операционную систему. Большинству из вас этот процесс знаком в ОС Windows и macOS, он немного отличается на рабочем столе и сервере Linux.&lt;/p>
+&lt;p>Мы рассмотрим диспетчер пакетов apt - утилита, которую мы собираемся использовать на нашей виртуальной машине Ubuntu для обновлений и установки программного обеспечения.&lt;/p>
+&lt;p>Как правило, по крайней мере на рабочих станциях разработчиков, мы запускаем эту команду, чтобы убедиться, что у нас есть последние доступные обновления из центральных репозиториев перед установкой любого программного обеспечения.&lt;/p>
+&lt;p>&lt;code>sudo apt-get update&lt;/code>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux1.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Теперь у нас есть обновленная виртуальная машина Ubuntu с установленными последними обновлениями ОС. Теперь мы хотим установить здесь некоторое программное обеспечение.
+Давайте выберем &lt;code>figlet&lt;/code> — программу, генерирующую текстовые баннеры.
+Если мы введем «figlet» в наш терминал, вы увидите, что приложение не установлен в нашей системе.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux2.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Однако из вышеизложенного вы увидите, что утилита &lt;code>apt&lt;/code> предлагает нам некотоыре опции установки &lt;code>apt install ...&lt;/code>, которые мы можем попробовать. Это потому, что в репозиториях по умолчанию есть программа figlet. Давайте попробуем &lt;code>sudo apt install figlet&lt;/code>
+&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux3.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Теперь мы можем использовать наше приложение figlet
+&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux4.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Если мы хотим удалить эту или любую из наших установок программного обеспечения, мы также можем сделать это с помощью менеджера пакетов «apt».
+&lt;code>sudo apt remove figlet&lt;/code>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux5.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Существуют сторонние репозитории, которые мы также можем добавить в нашу систему, те, к которым у нас есть доступ из коробки, являются репозиториями Ubuntu по умолчанию.&lt;/p>
+&lt;p>Если бы, например, мы хотели установить vagrant на нашу виртуальную машину Ubuntu, мы не смогли бы сделать это прямо сейчас, и вы можете увидеть это ниже в первой введенной команде. Затем мы добавляем ключ к репозиторию HashiCorp, а затем добавляем репозиторий в нашу систему.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo apt-add-repository &amp;#34;deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main&amp;#34;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux6.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Как только мы добавим репозиторий HashiCorp, мы можем запустить &lt;code>sudo apt install vagrant&lt;/code> и установить vagrant в нашей системе.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux7.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Существует много вариантов, когда дело доходит до установки программного обеспечения, различных вариантов менеджеров пакетов, встроенных в Ubuntu, мы также могли бы использовать сохраненные темплейты (snapshots) для установки нашего программного обеспечения.&lt;/p>
+&lt;p>Надеюсь, это даст вам представление о том, как управлять установками ОС и программного обеспечения в Linux.&lt;/p>
+&lt;h2 id="файловая-система">Файловая система&lt;/h2>
+&lt;p>Linux состоит из файлов конфигурации, и если вы хотите что-то изменить, вы меняете эти файлы конфигурации.&lt;/p>
+&lt;p>В Windows у вас есть диск &lt;code>C:&lt;/code>, и это то, что мы считаем корнем. В Linux у нас есть &lt;code>/&lt;/code>, где мы собираемся найти важные папки в нашей системе Linux.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux8.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/bin&lt;/code> - Сокращенно от binary, папка bin — это место, где в основном находятся наши двоичные файлы, которые нужны вашей системе, исполняемые файлы и инструменты.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux9.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/boot&lt;/code> - Все файлы, необходимые вашей системе для загрузки. Как загрузиться и с какого диска загрузиться.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux10.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/dev&lt;/code> - Вы можете найти информацию об устройстве здесь, здесь вы найдете указатели на ваши диски &lt;code>sda&lt;/code>, которые будут вашим основным диском ОС.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux11.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/etc&lt;/code> - Вероятно, это самая важная папка в вашей системе Linux, где находится большинство ваших файлов конфигурации.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux12.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/home&lt;/code> - здесь вы найдете свои пользовательские папки и файлы. У нас есть пользовательская папка &lt;code>vagrant&lt;/code>. В ней вы найдете папки &amp;ldquo;Documents&amp;rdquo; и «Desktop», с которыми мы работали для раздела команд.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux13.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/lib&lt;/code> - Мы упомянули, что &lt;code>/bin&lt;/code> — это место, где находятся наши бинарные и исполняемые файлы, а &lt;code>/lib&lt;/code> — это место, где вы найдете разделяемые библиотеки для них.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux14.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/media&lt;/code> - Съемные носители. Флешки, диски и тд).&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux15.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/mnt&lt;/code> - Mount. Это временная точка монтирования. Подробнее мы расскажем в следующем разделе о хранении данных.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux16.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/opt&lt;/code> - Дополнительные пакеты программного обеспечения. Вы заметите, что здесь хранится некоторое программное обеспечение для vagrant и virtual box.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux17.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/proc&lt;/code> - Информация о ядре (kernel) и процессе (process), аналогичная &lt;code>/dev&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux18.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/root&lt;/code> - Домашняя папка для root. Чтобы получить доступ, вам нужно войти в эту папку с помощью sudo.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux19.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/run&lt;/code> - Каталог, содержащий PID файлы процессов, похожий на /var/run, но в отличие от него, он размещен в TMPFS, а поэтому после перезагрузки все файлы теряются. Сохраняет состояния текущих процессов&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux20.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/sbin&lt;/code> - System binaries. Так же как и /bin, содержит двоичные исполняемые файлы, которые доступны на ранних этапах загрузки, когда не примонтирован каталог /usr. Но здесь находятся программы, которые можно выполнять только с правами суперпользователя. Это разные утилиты для обслуживания системы. Например, iptables, reboot, fdisk, ifconfig,swapon и т д.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux21.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/tmp&lt;/code> - Содержит временные файлы, созданные системой, любыми программами или пользователями&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux22.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>/usr&lt;/code> - User Aplications. Если бы мы, как обычный пользователь, установили пакеты программного обеспечения, они обычно устанавливались бы в папку &lt;code>/usr/bin&lt;/code>. Здесь находятся исполняемые файлы, исходники программ, различные ресурсы приложений, картинки, музыка и документация&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>/usr/bin&lt;/code> - Содержит исполняемые файлы различных программ, которые не нужны на первых этапах загрузки системы, например, музыкальные плееры, графические редакторы, браузеры и т.д.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux23.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>/var&lt;/code> - Variable. Переменные файлы. Наши приложения устанавливаются в папку &lt;code>bin&lt;/code>. Нам нужно где-то хранить все файлы журналов, это &lt;code>/var&lt;/code>. Здесь содержатся файлы системных журналов, различные кеши, базы данных и так далее&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux24.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>/var/log&lt;/code> - Logs. Здесь содержатся большинство файлов логов всех программ, установленных в операционной системе. У многих программ есть свои подкаталоги в этой папке, например, /var/log/apache - логи веб-сервера, /var/log/squid - файлы журналов кеширующего сервера squid. Если в системе что-либо сломалось, скорее всего, ответы вы найдете здесь.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>/var/run&lt;/code> - Содержит файлы с PID процессов, которые могут быть использованы, для взаимодействия между программами. В отличие от каталога /run данные сохраняются после перезагрузки.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>/sys&lt;/code> - System. Информация о системе. Назначение каталогов Linux из этой папки - получение информации о системе непосредственно от ядра. Это еще одна файловая система организуемая ядром и позволяющая просматривать и изменить многие параметры работы системы, например, работу swap, контролировать вентиляторы и многое другое.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="хранение">Хранение&lt;/h2>
+&lt;p>Когда мы подходим к системе Linux или любой другой системе, мы можем захотеть узнать о доступных дисках и о том, сколько свободного места у нас есть на этих дисках. Следующие несколько команд помогут нам идентифицировать, использовать и управлять хранилищем.&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>lsblk&lt;/code> Список заблокированных устройств. «sda» — это наш физический диск, а затем «sda1, sda2, sda3» — наши разделы на этом диске.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux25.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>df&lt;/code> дает нам немного больше информации об этих разделах, сколько всего, используется и доступно. Здесь вы можете использовать и другие флаги. Я обычно использую &lt;code>df -h&lt;/code>, чтобы дать нам &amp;ldquo;человеческий (понятный&amp;rdquo; (human) вывод данных.
+&lt;p class="md__image">
+&lt;img
+src="../images/Day16_Linux26.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Если вы добавляли новый диск в свою систему, и это то же самое в Windows, вам нужно было бы отформатировать диск в управлении дисками, в терминале Linux вы можете сделать это с помощью &lt;code>sudo mkfs -t ext4 /dev/sdb&lt;/code> с sdb, относящимся к нашему недавно добавленному диску.&lt;/p>
+&lt;p>Затем нам нужно будет смонтировать наш недавно отформатированный диск, чтобы его можно было использовать. Мы сделали бы это в нашей ранее упомянутой папке &lt;code>/mnt&lt;/code> и создали бы там каталог с &lt;code>sudo mkdir NewDisk&lt;/code>, а затем использовали бы &lt;code>sudo mount /dev/sdb newdisk&lt;/code> для монтирования диска в это место.&lt;/p>
+&lt;p>Также возможно, что вам нужно будет безопасно отключить хранилище из вашей системы, а не просто вытащить его из конфигурации. Мы можем сделать это с помощью sudo umount /dev/sdb.&lt;/p>
+&lt;p>Если вы не хотите размонтировать этот диск и собираетесь использовать этот диск для базы данных или какого-либо другого варианта постоянного использования, тогда вы хотите, чтобы он был там при перезагрузке системы. Чтобы это произошло, нам нужно добавить этот диск в наш файл конфигурации &lt;code>/etc/fstab&lt;/code>, чтобы он сохранялся, если вы этого не сделаете, его нельзя будет использовать при перезагрузке машины, и вам придется вручную выполнить описанное выше. процесс. Данные по-прежнему будут на диске, но они не будут автоматически монтироваться, пока вы не добавите конфигурацию в этот файл.&lt;/p>
+&lt;p>После того, как вы отредактировали файл конфигурации &lt;code>fstab&lt;/code>, вы можете проверить свою работу с помощью &lt;code>sudo mount -a&lt;/code>, если ошибок нет, тогда ваши изменения теперь будут сохраняться при перезапусках.&lt;/p>
+&lt;p>Мы расскажем, как вы будете редактировать файл с помощью текстового редактора в будущем сеансе.&lt;/p>
+&lt;h2 id="ресурсы">Ресурсы&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://losst.ru/ctruktura-fajlovoj-sistemy-linux">Структура файловой системы Linux&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=kPylihJRG70">Learn the Linux Fundamentals - Part 1&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=VbEx7B_PTOE">Linux for hackers (don&amp;rsquo;t worry you don&amp;rsquo;t need to be a hacker!)&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>18. Web Сервер и SSH</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day18/</link><pubDate>Sun, 08 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day18/</guid><description>&lt;h2 id="ssh">SSH&lt;/h2>
+&lt;p>Как мы уже упоминали, вы, скорее всего, будете управлять множеством удаленных серверов Linux, поэтому вам необходимо убедиться, что ваше подключение к этим удаленным серверам безопасно. В этом разделе мы хотим рассказать о некоторых основах SSH (Secure Shell), которые должен знать каждый, и которые помогут вам с этим безопасным туннелем к вашим удаленным системам.&lt;/p>
+&lt;ul>
+&lt;li>Настройка соединения по SSH&lt;/li>
+&lt;li>Передача файлов&lt;/li>
+&lt;li>Создайте свой закрытый ключ&lt;/li>
+&lt;/ul>
+&lt;h3 id="введение-в-ssh">Введение в SSH&lt;/h3>
+&lt;ul>
+&lt;li>Безопасная оболочка (Secure Shell)&lt;/li>
+&lt;li>Сетевой протокол (Networking Protocol)&lt;/li>
+&lt;li>Обеспечивает безопасную связь&lt;/li>
+&lt;li>Может защитить любой сетевой сервис&lt;/li>
+&lt;li>Обычно используется для удаленного доступа из командной строки&lt;/li>
+&lt;/ul>
+&lt;p>В нашей среде, если вы следили за нами, мы уже использовали SSH, но все это было настроено и автоматизировано с помощью нашей конфигурации vagrant, поэтому нам нужно было только запустить &lt;code>vagrant ssh&lt;/code>, и мы получили доступ к нашей удаленной виртуальной машине.&lt;/p>
+&lt;p>Если бы наша удаленная машина не находилась в той же системе, что и наша рабочая станция, и находилась бы в удаленном месте, возможно, в облачной системе или в центре обработки данных, к которому мы могли бы получить доступ только через Интернет, нам потребовался бы безопасный способ, чтобы получить доступ к системе для управления ею.&lt;/p>
+&lt;p>SSH обеспечивает безопасный туннель между клиентом и сервером, поэтому злоумышленники ничего не могут перехватить.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day18_Linux1.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>На сервере есть служба SSH на стороне сервера, которая всегда работает и прослушивает определенный TCP-порт (22).&lt;/p>
+&lt;p>Если мы используем наш клиент для подключения с правильными учетными данными или ключом SSH, мы получаем доступ к этому серверу.&lt;/p>
+&lt;h3 id="добавление-bridged-network-adapter-в-нашу-систему">Добавление bridged network adapter в нашу систему&lt;/h3>
+&lt;p>Чтобы мы могли использовать SSH с нашей виртуальной машиной, нам нужно добавить сетевой адаптер на нашу машину.&lt;/p>
+&lt;p>Выключите виртуальную машину, щелкните ее правой кнопкой мыши в Virtual Box и выберите настройки. В новом окне выберите сеть.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day18_Linux2.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Теперь снова включите вашу машину, и теперь у вас будет IP-адрес на вашей локальной машине. Вы можете подтвердить это с помощью команды &lt;code>ip addr&lt;/code>.&lt;/p>
+&lt;h3 id="проверка-работы-ssh-сервера">Проверка работы SSH-сервера&lt;/h3>
+&lt;p>Мы знаем, что SSH уже настроен на нашей машине, поскольку мы использовали его с vagrant, но мы можем удостовериться, что сервер бежит, запустив&lt;/p>
+&lt;p>&lt;code>sudo systemctl status ssh&lt;/code>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day18_Linux3.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Если в вашей системе нет SSH-сервера, вы можете установить его, введя эту команду &lt;code>sudo apt install openssh-server&lt;/code>&lt;/p>
+&lt;p>Затем вы хотите убедиться, что наш SSH разрешен и брандмауэр работает. Мы можем сделать это с помощью &lt;code>sudo ufw allow ssh&lt;/code>. Это не требуется в нашей конфигурации, поскольку мы автоматизировали это с помощью нашего vagrant.&lt;/p>
+&lt;h3 id="удаленный-доступ--пароль-ssh">Удаленный доступ — пароль SSH&lt;/h3>
+&lt;p>Теперь, когда наш SSH-сервер прослушивает порт 22 для любых входящих запросов на подключение, и мы добавили &amp;ldquo;мост&amp;rdquo; (bridged networking), мы можем использовать &lt;a href="https://www.ssh.com/academy/ssh/putty/download">putty&lt;/a> или SSH-клиент на нашей локальной машине для подключения к нашей системе с помощью SSH.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day18_Linux4.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Затем нажмите «Открыть», если вы впервые подключаетесь к этой системе через этот IP-адрес, вы получите это предупреждение. Мы знаем, что это наша система, поэтому вы можете выбрать «yes».&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day18_Linux5.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Затем нам будет предложено ввести имя пользователя (vagrant) и пароль (пароль по умолчанию — vagrant). Ниже вы увидите, что теперь мы используем наш SSH-клиент (Putty) для подключения к нашей машине с использованием имени пользователя и пароля.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day18_Linux6.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>На этом этапе мы подключаемся к нашей виртуальной машине с нашего удаленного клиента и можем выполнять наши команды в нашей системе.&lt;/p>
+&lt;h3 id="удаленный-доступ--ключ-ssh">Удаленный доступ — ключ SSH&lt;/h3>
+&lt;p>Вышеупомянутый простой способ получить доступ к вашим системам, однако, по-прежнему зависит от имени пользователя и пароля, и если какой-либо злоумышленник получит доступ к этой информации, а также к общедоступному адресу или IP-адресу вашей системы, это может быть легко скомпрометировано. Здесь предпочтительны SSH-ключи.&lt;/p>
+&lt;p>Ключи SSH означают, что мы предоставляем пару ключей, чтобы и клиент, и сервер знали, что это доверенное устройство.&lt;/p>
+&lt;p>Создать ключ несложно. На нашем локальном компьютере (Windows) мы можем выполнить следующую команду: если у вас установлен ssh-клиент в любой системе, я полагаю, что эта же команда будет работать?&lt;/p>
+&lt;p>&lt;code>ssh-keygen -t ed25519&lt;/code>&lt;/p>
+&lt;p>Я не буду вдаваться в подробности того, что такое ed25519 и что означает здесь, но вы можете воспользоваться поиском, если хотите узнать больше о &lt;a href="https://en.wikipedia.org/wiki/EdDSA#Ed25519">криптографии&lt;/a>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day18_Linux7.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>На данный момент у нас есть созданный ключ SSH, хранящийся в &lt;code>C:\Users\micha/.ssh/&lt;/code>&lt;/p>
+&lt;p>Но чтобы связать это с нашей виртуальной машиной Linux, нам нужно скопировать ключ. Мы можем сделать это, используя &lt;code>ssh-copy-id vagrant@192.168.169.135&lt;/code>.&lt;/p>
+&lt;p>Я использовал &lt;a href="https://docs.microsoft.com/ru-ru/powershell/">PowerShell&lt;/a> для создания своих ключей на моем клиенте Windows, но здесь нет доступного &lt;code>ssh-copy-id&lt;/code>. Есть способы, которыми вы можете сделать это в Windows, и небольшой поиск в Интернете найдет вам альтернативу, но я просто использую git bash на своем компьютере с Windows, чтобы сделать копию.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day18_Linux8.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Теперь мы можем вернуться к Powershell, чтобы проверить, что наше соединение теперь работает с нашими ключами SSH, и пароль не требуется.&lt;/p>
+&lt;p>&lt;code>ssh vagrant@192.168.169.135&lt;/code>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day18_Linux9.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>При необходимости мы могли бы защититься, используя кодовую фразу. Мы также могли бы сделать еще один шаг, заявив, что пароли вообще не нужны, что означает, что будут разрешены только пары ключей через SSH. Вы можете сделать это в следующем файле конфигурации.&lt;/p>
+&lt;p>&lt;code>sudo nano /etc/ssh/sshd_config&lt;/code>&lt;/p>
+&lt;p>здесь есть строка с &lt;code>PasswordAuthentication yes&lt;/code>, она будет закомментирована &lt;code>#&lt;/code>, вы должны раскомментировать и изменить yes на no. Затем вам нужно будет перезагрузить службу SSH с помощью «sudo systemctl reload sshd».&lt;/p>
+&lt;h2 id="настройка-веб-сервера">Настройка веб-сервера&lt;/h2>
+&lt;p>Не имеет прямого отношения к тому, что мы только что сделали с SSH выше, но я хотел рассмотрть, поскольку это снова еще одна задача, которая может показаться вам немного сложной, но на самом деле этого не должно быть.&lt;/p>
+&lt;p>У нас есть виртуальная машина с Linux, и на данном этапе мы хотим добавить веб-сервер apache к нашей виртуальной машине, чтобы мы могли разместить на нем простой веб-сайт, который обслуживает мою домашнюю сеть. Обратите внимание, что эта веб-страница не будет доступна из Интернета, это можно сделать, но здесь это не рассматривается.&lt;/p>
+&lt;p>Вы также можете увидеть, что это называется стеком LAMP.&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>L&lt;/strong>inux Operating System&lt;/li>
+&lt;li>&lt;strong>A&lt;/strong>pache Web Server&lt;/li>
+&lt;li>&lt;strong>m&lt;/strong>ySQL database&lt;/li>
+&lt;li>&lt;strong>P&lt;/strong>HP&lt;/li>
+&lt;/ul>
+&lt;h3 id="apache2">Apache2&lt;/h3>
+&lt;p>Apache2 — это HTTP-сервер с открытым исходным кодом. Мы можем установить apache2 с помощью следующей команды.&lt;/p>
+&lt;p>&lt;code>sudo apt-get install apache2&lt;/code>&lt;/p>
+&lt;p>Чтобы убедиться, что apache2 установлен правильно, мы можем запустить &lt;code>sudo service apache2 restart&lt;/code>.&lt;/p>
+&lt;p>Затем, используя сетевой адрес моста из пошагового руководства по SSH, откройте браузер и перейдите по этому адресу. Мой &lt;code>http://192.168.169.135/&lt;/code>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day18_Linux10.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="mysql">mySQL&lt;/h3>
+&lt;p>MySQL — это база данных, в которой мы будем хранить данные для нашего простого веб-сайта. Чтобы установить MySQL, мы должны использовать следующую команду &lt;code>sudo apt-get install mysql-server&lt;/code>&lt;/p>
+&lt;h3 id="php">PHP&lt;/h3>
+&lt;p>PHP — это серверный язык (server-side scripting language), мы будем использовать его для взаимодействия с базой данных MySQL. Окончательная установка заключается в установке PHP и зависимостей с помощью sudo apt-get install php libapache2-mod-php php-mysql.&lt;/p>
+&lt;p>Первое изменение конфигурации, которое мы хотим внести в apache из коробки, — это использование index.html, и вместо этого мы хотим использовать index.php.&lt;/p>
+&lt;p>Мы будем использовать sudo nano /etc/apache2/mods-enabled/dir.conf и переместим index.php в первый элемент списка.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day18_Linux11.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Перезапустите службу apache2 &lt;code>sudo systemctl restart apache2&lt;/code>&lt;/p>
+&lt;p>Теперь давайте подтвердим, что наша система правильно настроена для PHP. Создайте следующий файл с помощью этой команды, это откроет пустой файл в nano.&lt;/p>
+&lt;p>&lt;code>sudo nano /var/www/html/90Days.php&lt;/code>&lt;/p>
+&lt;p>затем скопируйте следующее и используйте Ctrl + x, чтобы выйти и сохранить файл.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>&amp;lt;?php
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>phpinfo();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>?&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Теперь снова перейдите к IP-адресу виртуальной машины Linux с дополнительным 90Days.php в конце URL-адреса. &lt;code>http://192.168.169.135/90Days.php&lt;/code> вы должны увидеть что-то похожее на показанное ниже, если PHP настроен правильно.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day18_Linux12.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="установка-wordpress">Установка WordPress&lt;/h3>
+&lt;p>Я просмотрел тьюториал, чтобы установить WordPress в наш стек LAMP, некоторые команды показаны ниже, если они не показаны правильно в пошаговом руководстве [How to install wordpress on Ubuntu with LAMP](&lt;a href="https://blog.ssdnodes.com/blog/">https://blog.ssdnodes.com/blog/&lt;/a> как установить-wordpress-на-ubuntu-18-04-с-лампой-учебник/)&lt;/p>
+&lt;p>&lt;code>sudo mysql -u root -p&lt;/code>&lt;/p>
+&lt;p>&lt;code>CREATE DATABASE wordpressdb;&lt;/code>&lt;/p>
+&lt;p>&lt;code>CREATE USER 'admin-user'@'localhost' IDENTIFIED BY 'password';&lt;/code>&lt;/p>
+&lt;p>&lt;code>GRANT ALL PRIVILEGES ON wordpressdb.* TO 'admin-user'@'localhost';&lt;/code>&lt;/p>
+&lt;p>&lt;code>FLUSH PRIVILEGES;&lt;/code>&lt;/p>
+&lt;p>&lt;code>EXIT;&lt;/code>&lt;/p>
+&lt;p>&lt;code>sudo apt install php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip&lt;/code>&lt;/p>
+&lt;p>&lt;code>sudo systemctl restart apache2&lt;/code>&lt;/p>
+&lt;p>&lt;code>cd /var/www&lt;/code>&lt;/p>
+&lt;p>&lt;code>sudo curl -O https://wordpress.org/latest.tar.gz&lt;/code>&lt;/p>
+&lt;p>&lt;code>sudo tar -xvf latest.tar.gz&lt;/code>&lt;/p>
+&lt;p>&lt;code>sudo rm latest.tar.gz&lt;/code>&lt;/p>
+&lt;p>На данный момент вы находитесь на шаге 4 в связанной статье, вам нужно будет выполнить шаги, чтобы убедиться, что для каталога WordPress установлены все правильные разрешения.&lt;/p>
+&lt;p>Поскольку это только внутреннее действие, вам не нужно «генерировать ключи безопасности» на этом шаге. Перейдите к шагу 5, который меняет конфигурацию Apache на WordPress.&lt;/p>
+&lt;p>Затем, если все настроено правильно, вы сможете получить доступ через свой внутренний сетевой адрес и запустить установку WordPress.&lt;/p>
+&lt;h2 id="ресурсы">Ресурсы&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://remmina.org/">Client SSH GUI - Remmina&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=2QXkrLVsRmk">The Beginner&amp;rsquo;s guide to SSH&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=-txKSRn0qeA">Vim in 100 Seconds&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=IiwGbcd8S7I">Vim tutorial&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=kPylihJRG70">Learn the Linux Fundamentals - Part 1&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=VbEx7B_PTOE">Linux for hackers (don&amp;rsquo;t worry you don&amp;rsquo;t need to be a hacker!)&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Установка Ubuntu Desktop 22.10 (Kinetic Kudu) на ARM CPU</title><link>https://romankurnovskii.com/ru/posts/howto-install-ubuntu-desktop-on-arm/</link><pubDate>Thu, 23 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/howto-install-ubuntu-desktop-on-arm/</guid><description>&lt;p>Ubuntu - одна из популярных Linux систем и достаточно много &lt;a href="https://mac.getutm.app/gallery/ubuntu-20-04">обзоров по установке Ubuntu&lt;/a>. В этой статье мы будем устанавливать образ Ubuntu для &lt;strong>ARM процессора&lt;/strong> на виртуальную машину UTM. Вся установка будет проходить на Mac OS.&lt;/p>
+&lt;h3 id="загрузка-установочного-образа">Загрузка установочного образа&lt;/h3>
+&lt;p>На сайте Ubuntu доступен для скачивания только образ &lt;a href="https://ubuntu.com/download/server/arm">Ubuntu Server ARM&lt;/a> версии &lt;strong>22.04&lt;/strong> - без графического интерфейса. Но можно скачать обновленный релиз Ubuntu Desktop для ARM - Daily Build по &lt;a href="https://cdimage.ubuntu.com/daily-live/current/">ссылке&lt;/a>.&lt;/p>
+&lt;p>Находим &lt;em>64-bit ARM (ARMv8/AArch64) desktop image&lt;/em> и скачиваем
+&lt;p class="md__image">
+&lt;img
+src="img/01-ubuntu-kinetic.png"
+id="zoom-default"
+alt="ARMv8/AArch64"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="виртуальная-машина">Виртуальная машина&lt;/h3>
+&lt;p>В качестве виртуальной машины для установки RHEL 9 использую бесплатную &lt;a href="https://mac.getutm.app/">виртуальную машину UTM&lt;/a>. Установить можно с помощью &lt;a href="../mac-setup-development/#homebrew">Homebrew&lt;/a>, выполнив команду &lt;code>brew install --cask utm&lt;/code>.&lt;/p>
+&lt;h2 id="установка-ubuntu-desktop">Установка Ubuntu Desktop&lt;/h2>
+&lt;h3 id="настройка-виртуальной-машины-utm">Настройка виртуальной машины UTM&lt;/h3>
+&lt;p>В UTM нажимаем &lt;code>Create a New Virtual Machine&lt;/code> -&amp;gt; Virtualize
+&lt;p class="md__image">
+&lt;img
+src="img/02.png"
+id="zoom-default"
+alt="Настройка виртуальной машины UTM"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Выбираем скачанный образ и нажимаем &lt;code>Continue&lt;/code>, далее оставляем опции по умолчанию
+&lt;p class="md__image">
+&lt;img
+src="img/03.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="запуск-live-версии">Запуск Live версии&lt;/h3>
+&lt;p>Выбираем &lt;em>Try or Install Ubuntu&lt;/em>. Запустится live образ Ubuntu. Такой образ не сохраняет свое состояние после перезагрузки.
+&lt;p class="md__image">
+&lt;img
+src="img/04.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Входим под пользователем ubuntu:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/05.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Видим рабочий стол и можем пользоваться.&lt;/p>
+&lt;h3 id="установка">Установка&lt;/h3>
+&lt;p>Внизу справа есть ярлык для стандартной установки Ubuntu. Нажимаем и запускаем обычную установку на диск.
+&lt;p class="md__image">
+&lt;img
+src="img/06.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Выбираем нужный язык
+&lt;p class="md__image">
+&lt;img
+src="img/07.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Я выбираю минимальную установку, т.к. мне не нужны будут предустановленные игры и прочие приложения. Графический интерфейс, браузер, терминал остается со всеми базовыми настройками.
+&lt;p class="md__image">
+&lt;img
+src="img/08.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Оставляем по умолчанию стирание виртуального диска перед установкой
+&lt;p class="md__image">
+&lt;img
+src="img/09.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Создаем пользователя, под которым будем входить в систему.
+&lt;p class="md__image">
+&lt;img
+src="img/10.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Как только установка закончится, нажимаем &lt;em>Restart&lt;/em>.
+&lt;p class="md__image">
+&lt;img
+src="img/11.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+У меня после перезагрузки черный экран. Поэтому я просто закрываю и снова запускаю вирутальную машину.&lt;/p>
+&lt;h3 id="вход-в-систему">Вход в систему&lt;/h3>
+&lt;p>После запуска системы выбираем *Boot from next volume. Первым по умолчанию будет запуск с вирутального образа, но у нас уже есть система на диске, поэтому выбираем запуск со следующего по очереди диска.
+&lt;p class="md__image">
+&lt;img
+src="img/12.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Входим под своим пользователем
+&lt;p class="md__image">
+&lt;img
+src="img/13.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Система предлагает скачать обновления для системы. Нажимаю установить.
+&lt;p class="md__image">
+&lt;img
+src="img/14.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Теперь можно пользоваться системой и все данные будут сохраняться после перезагрузки.
+&lt;p class="md__image">
+&lt;img
+src="img/15.png"
+id="zoom-default"
+alt="Kinetic Kudu 22.10"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="ссылки">Ссылки&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://discourse.ubuntu.com/t/kinetic-kudu-release-schedule/27263">Kinetic Kudu Release Schedule&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://cdimage.ubuntu.com/daily-live/current/">Daily Builds&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Установка Linux RHEL 9</title><link>https://romankurnovskii.com/ru/posts/howto-install-rhel-9-free/</link><pubDate>Fri, 17 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/howto-install-rhel-9-free/</guid><description>&lt;p>Red Hat Enterprise Linux 9 (RHEL 9) под кодовым названием Plow стал общедоступным (GA). Компания Red Hat объявила об этом 18 мая 2022 года. Она сменила бета-версию, которая существовала с 3 ноября 2021 года.&lt;/p>
+&lt;p>RHEL 9 - это несколько первых релизов в семействе Red Hat. Это первый крупный релиз после приобретения Red Hat компанией IBM в июле 2019 года, а также первая крупная версия после отказа от проекта CentOS в пользу CentOS Stream, который теперь является предшественником RHEL.&lt;/p>
+&lt;p>RHEL 9 является последней основной версией RHEL и поставляется с ядром 5.14, множеством новых пакетов программного обеспечения и массой усовершенствований. В ней особое внимание уделяется безопасности, стабильности, гибкости и надежности.&lt;/p>
+&lt;h2 id="описание">Описание&lt;/h2>
+&lt;p>RHEL 9 поставляется с новыми версиями программного обеспечения, включая Python 3.9. Node.JS 16, GCC 11, Perl 5.32, Ruby 3.0, PHP 8.0 и многие другие.&lt;/p>
+&lt;h2 id="подготовка-к-установке">Подготовка к установке&lt;/h2>
+&lt;h3 id="регистрация-на-портале-red-hat">Регистрация на портале Red Hat&lt;/h3>
+&lt;p>Подписка Red Hat Developer Subscription - это бесплатное предложение программы Red Hat Developer, предназначенное для индивидуальных разработчиков, которые хотят воспользоваться всеми преимуществами Red Hat Enterprise Linux.&lt;/p>
+&lt;p>Она дает разработчикам доступ ко всем версиям Red Hat Enterprise Linux, а также к другим продуктам Red Hat, таким как дополнения, обновления программного обеспечения и ошибки безопасности.&lt;/p>
+&lt;p>Прежде всего, убедитесь, что у вас есть активная учетная запись Red Hat. Если у вас еще нет учетной записи, перейдите на портал &lt;a href="https://access.redhat.com/">Red Hat Customer Portal&lt;/a>, нажмите на кнопку &amp;ldquo;Регистрация&amp;rdquo; и заполните свои данные для создания учетной записи Red Hat.
+&lt;p class="md__image">
+&lt;img
+src="img/01.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="загрузка-установочного-образа">Загрузка установочного образа&lt;/h3>
+&lt;p>После создания учетной записи Red Hat вы можете приступать к загрузке RHEL 9. Чтобы загрузить Red Hat Enterprise Linux 9 &lt;strong>абсолютно бесплатно&lt;/strong>, зайдите на &lt;a href="https://developers.redhat.com/products/rhel/overview">Red Hat Developer Portal&lt;/a> и войдите в систему, используя учетные данные своей учетной записи.
+&lt;p class="md__image">
+&lt;img
+src="img/01-01.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Затем перейдите на страницу &lt;a href="https://developers.redhat.com/products/rhel/download">загрузки RHEL 9&lt;/a> и нажмите на кнопку загрузки, показанную ниже.&lt;/p>
+&lt;p>Я использую MacBook M1, поэтому скачиваю образ RHEL 9 для M1 процессора aarch64
+&lt;p class="md__image">
+&lt;img
+src="img/01-02.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="виртуальная-машина">Виртуальная машина&lt;/h3>
+&lt;p>В качестве вирутальной машины для установки RHEL 9 использую бесплатную &lt;a href="https://mac.getutm.app/">виртуальную машину UTM&lt;/a>. Установить можно с помощью &lt;a href="../mac-setup-development/#homebrew">Homebrew&lt;/a>, выполнив команду &lt;code>brew install --cask utm&lt;/code>.&lt;/p>
+&lt;h2 id="установка-red-hat-enterprise-linux-9">Установка Red Hat Enterprise Linux 9&lt;/h2>
+&lt;h3 id="настройка-виртуальной-машины-utm">Настройка виртуальной машины UTM&lt;/h3>
+&lt;p>В UTM нажимаем &lt;code>Create a New Virtual Machine&lt;/code> -&amp;gt; Virtualize
+&lt;p class="md__image">
+&lt;img
+src="img/02-02.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Выбираем скачанный образ RHEL 9 и нажимаем &lt;code>Continue&lt;/code>
+&lt;p class="md__image">
+&lt;img
+src="img/02-01.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="главное-меню">Главное меню&lt;/h3>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/02.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Помеченные поля необходимо заполнить&lt;/p>
+&lt;p>Создаем Root Password
+&lt;p class="md__image">
+&lt;img
+src="img/03.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;strong>User Creation&lt;/strong>. Создаем пользователя, под которым будет осуществляться вход в систему.
+&lt;p class="md__image">
+&lt;img
+src="img/04.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;strong>Connect to Red Hat&lt;/strong>. Здесь используем учетную запись, созданную выше.&lt;/p>
+&lt;p>Вводим данные аккаунта, нажимаем Register
+&lt;p class="md__image">
+&lt;img
+src="img/06.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Нажимаем Done&lt;/p>
+&lt;p>В разделе &lt;strong>Installation Destination&lt;/strong> выбираем диск по умолчанию&lt;/p>
+&lt;p>Теперь можем продолижть установку. На главном экране появилась кнопка &lt;em>&lt;strong>Begin installation&lt;/strong>&lt;/em>&lt;br>
+&lt;p class="md__image">
+&lt;img
+src="img/05.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>После завершения установки перезагружаем систему.
+&lt;p class="md__image">
+&lt;img
+src="img/02-03.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Иногда после перезагрузки запускается загрузка с установочного образа опять. Неоьбходимо либо отключить диск в настройка вирутальной машины либо перезагрузить UTM.&lt;/p>
+&lt;h2 id="запуск-red-hat-enterprise-linux-9">Запуск Red Hat Enterprise Linux 9&lt;/h2>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/07.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Вводим пароль и видим рабочий стол RHEL 9
+&lt;p class="md__image">
+&lt;img
+src="img/07-01.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Для доступа к приложениям нажимаем кнопку &lt;strong>Activities&lt;/strong> в верхнем левом углу&lt;/p>
+&lt;h2 id="настройка-red-hat-enterprise-linux-9">Настройка Red Hat Enterprise Linux 9&lt;/h2>
+&lt;h3 id="проверка-пользователя-root">Проверка пользователя ROOT&lt;/h3>
+&lt;p>В системе Linux пользователи относятся к разным группам, у которых есть определенные права. Если в процессе установки мы не поставили галку сделать пользователя администратором, то по умолчанию он не сможет устанавливать некоторые системные программы.&lt;/p>
+&lt;p>Выходим из системы и заходим в систему под пользователем root (тем самым, которого создавали ранее на главном экране). Нажимаем &lt;em>&lt;strong>Log out&lt;/strong>&lt;/em>
+&lt;p class="md__image">
+&lt;img
+src="img/07-03.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Теперь входим под &lt;strong>root&lt;/strong>. Пользователя может не быть в списке. Жмем &lt;strong>Not listed&lt;/strong> и вводим данные аккаунта.
+&lt;p class="md__image">
+&lt;img
+src="img/07-04.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Открываем терминал и проверяем
+&lt;p class="md__image">
+&lt;img
+src="img/07-05.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="настройка-параметров-системы">Настройка параметров системы&lt;/h3>
+&lt;h4 id="кнопки-сворачивания-приложения">Кнопки сворачивания приложения&lt;/h4>
+&lt;p>Первое, что кажется непривычным при использовании GUI, отсутствие кнопок сворачивания окон
+&lt;p class="md__image">
+&lt;img
+src="img/07-02.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Устанавливаем необходимый пакет&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>yum install gnome-tweaks -y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/07-06.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+После установки появится приложение Tweaks. Найдем его через поиск.
+&lt;p class="md__image">
+&lt;img
+src="img/07-07.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+В приложении множество и других настроек. Мы отобразим кнопки сворачивания приложений.&lt;/p>
+&lt;p>Идем в раздел &lt;strong>Windows titlebars&lt;/strong> и включаем параметры Maximize, Minimize
+&lt;p class="md__image">
+&lt;img
+src="img/07-08.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h4 id="доступ-пользователю-на-установку-приложений">Доступ пользователю на установку приложений&lt;/h4>
+&lt;p>Чтобы постоянно не переключаться на root пользователя для устновки приложений, мы можем предоставить обычному пользвоателю доступ к установке приложений.
+Действия продолжаем делать под пользователем &lt;em>&lt;strong>root&lt;/strong>&lt;/em>.
+Открываем файл /etc/sudoers и добавляем пользователя&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>sudo vi /etc/sudoers
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Добавляем в конец файла данные пользователя. Имя моего пользователя: &lt;em>&lt;strong>rhel-user&lt;/strong>&lt;/em>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>rhel-user ALL= NOPASSWD: /usr/sbin/synaptic, /usr/bin/software-center, /usr/bin/apt-get, /usr/bin/dnf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/07-09.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Установим &lt;em>&lt;strong>Visual Studio Code&lt;/strong>&lt;/em> под обычным пользователем
+Установка состоит из следующих шагов:&lt;/p>
+&lt;ol>
+&lt;li>добавление нужного репозитория. Права на добавление репозитория (изменение файлов в директории по прежнему только у &lt;em>&lt;strong>root&lt;/strong>&lt;/em> пользователя)&lt;/li>
+&lt;li>загрузка и Установка&lt;/li>
+&lt;/ol>
+&lt;p>Первый шаг делаем под пользователем root
+Идем на сайт &lt;a href="https://code.visualstudio.com/docs/setup/linux">https://code.visualstudio.com/docs/setup/linux&lt;/a>&lt;/p>
+&lt;p>Копируем код и запускаем в терминале&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo sh -c &amp;#39;echo -e &amp;#34;[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc&amp;#34; &amp;gt; /etc/yum.repos.d/vscode.repo&amp;#39;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Переключаемся на пользователя &lt;em>&lt;strong>rhel-user&lt;/strong>&lt;/em>. Это можно сделать и в терминале.&lt;/li>
+&lt;li>Обновим репозитории&lt;/li>
+&lt;li>Установим VSCode&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>su rhel-user
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dnf check-update
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo dnf install code
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/07-10.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;p class="md__image">
+&lt;img
+src="img/07-11.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;p class="md__image">
+&lt;img
+src="img/07-12.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="ссылки">Ссылки&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://developers.redhat.com/products/rhel/getting-started">https://developers.redhat.com/products/rhel/getting-started&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.redhat.com/sysadmin/install-linux-rhel-9">https://www.redhat.com/sysadmin/install-linux-rhel-9&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Шпаргалка tar архиватор</title><link>https://romankurnovskii.com/ru/posts/cheat-sheet-command-tar/</link><pubDate>Sun, 05 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/cheat-sheet-command-tar/</guid><description>&lt;h2 id="кратко">Кратко&lt;/h2>
+&lt;p>Создать:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar cf archive.tar directory
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Распаковать:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar xf archive.tar
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="создание">Создание&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>mkdir my_dir &lt;span style="color:#60a0b0;font-style:italic"># Создаем папку&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tar cf dir_archive.tar my_dir &lt;span style="color:#60a0b0;font-style:italic"># Создаем архив с папкой&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ll &lt;span style="color:#60a0b0;font-style:italic"># Проверяем содержимое текущего каталога&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># -rw-r--r-- 1 r staff 1.5K Jun 4 14:42 dir_archive.tar&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># drwxr-xr-x 2 r staff 64B Jun 4 14:42 my_dir&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="распаковка">Распаковка&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar xf dir_archive.tar
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="сжатие">Сжатие&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar czf dir_archive.tar.gz dir_archive.tar
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="распаковка-сжатого-файла">Распаковка сжатого файла&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar xzf dir_archive.tar.gz
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="сжатие-с-помощью-bzip2">Сжатие с помощью bzip2&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar cjf dir_archive.tar.bz2 my_dir
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="распаковка-с-помощью-bzip2">Распаковка с помощью bzip2&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar xjf dir_archive.tar.bz2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="просмотр-содержимого-архива">Просмотр содержимого архива&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar -tvf dir_archive.tar
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

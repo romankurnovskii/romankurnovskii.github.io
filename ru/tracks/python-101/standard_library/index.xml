@@ -1,30 +1,376 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>II - Стандартные модули on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tracks/python-101/standard_library/</link><description>Recent content in II - Стандартные модули on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Tue, 28 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tracks/python-101/standard_library/index.xml" rel="self" type="application/rss+xml"/><item><title>Модуль os</title><link>https://romankurnovskii.com/ru/tracks/python-101/standard_library/os/</link><pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/python-101/standard_library/os/</guid><description>Модуль os предоставляет функции для работы с операционной системой. Этот модуль позволяет получить доступ к файловой системе, управлять процессами, получать информацию об окружении и другие.
-os.listdir - получение списка файлов и директорий в указанной директории: os.mkdir() - создание директории os.system() - выполнение команды в командной строке os.getenv() os.putenv() os.remove() - удаление файла os.rename() os.startfile() os.walk() - дает способ итерации по пути корневого уровня pathlib.Path.walk() - похожий на os.walk(). (Добавлен в 3.12) os.environ: словарь, содержащий переменные окружения, доступные в текущем процессе.</description></item><item><title>Модуль sys</title><link>https://romankurnovskii.com/ru/tracks/python-101/standard_library/sys/</link><pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/python-101/standard_library/sys/</guid><description>Модуль sys предоставляет специфические для системы параметры и функции. Он содержит системную информацию и функции для взаимодействия со стандартными потоками ввода/вывода, аргументами командной строки и другими модулями Python.
-sys.argv - список аргументов командной строки, переданных в программу при ее запуске. Первым аргументом обычно является имя файла программы.
-sys.executable - путь к интерпретатору Python, который используется для запуска текущей программы.
-sys.exit([arg]) - завершает выполнение программы. Если задан аргумент, то он возвращается в качестве кода выхода.
-sys.modules - словарь, содержащий все загруженные модули Python, включая стандартные и сторонние модули.</description></item><item><title>Модуль logging</title><link>https://romankurnovskii.com/ru/tracks/python-101/standard_library/logging/</link><pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/python-101/standard_library/logging/</guid><description>Модуль логирования logging является одним из стандартных модулей Python и предоставляет возможности для записи логов в приложении. Логирование используется для записи информации о работе приложения, которую можно использовать для отслеживания ошибок и диагностики проблем.
-В модуле logging определены три основных компонента: логгеры (loggers), обработчики (handlers) и форматировщики (formatters). Логгеры представляют собой объекты, которые используются для записи сообщений лога. Обработчики определяют, куда будут записываться сообщения, а форматировщики определяют, как будут отформатированы эти сообщения.
-Пример использования модуля logging:
-import logging # Создание логгера logger = logging.</description></item><item><title>Модуль datetime/time</title><link>https://romankurnovskii.com/ru/tracks/python-101/standard_library/datetime_time/</link><pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/python-101/standard_library/datetime_time/</guid><description>datetime Модуль datetime в Python предоставляет классы для работы с датами и временем. Он позволяет создавать объекты даты, времени и даты-времени, а также выполнять операции с этими объектами.
-Класс datetime является основным классом модуля datetime и представляет дату и время в формате &amp;ldquo;ГГГГ-ММ-ДД ЧЧ:ММ:СС&amp;rdquo;. Класс date представляет только дату, а класс time - только время.
-Форматирование дат и времени может выполняться с помощью метода strftime, который позволяет создавать строку с заданным форматом даты и времени. Также существует метод strptime, который позволяет преобразовать строку в объект даты и времени.</description></item><item><title>Модуль потоков threading</title><link>https://romankurnovskii.com/ru/tracks/python-101/standard_library/threading/</link><pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/python-101/standard_library/threading/</guid><description>Модуль threading в Python предоставляет возможность создавать и управлять потоками выполнения. Потоки - это легковесные процессы, которые выполняются параллельно в пределах одного процесса, что позволяет лучше использовать ресурсы компьютера.
-Для создания нового потока необходимо создать объект Thread и передать в его конструктор функцию, которую вы хотите запустить в отдельном потоке. Затем вызовите метод start() у этого объекта, чтобы запустить поток. Если вы хотите дождаться завершения потока, вызовите метод join(), который блокирует текущий поток, пока поток, на который вы вызываете join(), не завершится.</description></item><item><title>Модуль subprocess</title><link>https://romankurnovskii.com/ru/tracks/python-101/standard_library/subprocess/</link><pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/python-101/standard_library/subprocess/</guid><description>Модуль subprocess является одним из наиболее мощных и распространенных модулей Python для управления другими процессами в операционной системе.
-Основная цель subprocess заключается в том, чтобы предоставить простой и удобный способ создания новых процессов, подключения к уже существующим процессам, их управления и взаимодействия с ними.
-Одним из основных классов в модуле subprocess является класс Popen, который представляет собой объект, связанный с запущенным в операционной системе процессом.
-Например, чтобы запустить новый процесс с помощью Popen, мы можем использовать следующий код:</description></item><item><title>Модуль argparse</title><link>https://romankurnovskii.com/ru/tracks/python-101/standard_library/argparse/</link><pubDate>Mon, 20 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/python-101/standard_library/argparse/</guid><description>Модуль argparse позволяет легко парсить аргументы командной строки.
-Это может быть полезно для создания сценариев командной строки, которые должны принимать аргументы от пользователя, например, при написании утилит командной строки.
-Пример:
-#script.py import argparse parser = argparse.ArgumentParser(description=&amp;#39;Process some integers.&amp;#39;) parser.add_argument(&amp;#39;integers&amp;#39;, metavar=&amp;#39;N&amp;#39;, type=int, nargs=&amp;#39;+&amp;#39;, help=&amp;#39;an integer for the accumulator&amp;#39;) parser.add_argument(&amp;#39;--sum&amp;#39;, dest=&amp;#39;accumulate&amp;#39;, action=&amp;#39;store_const&amp;#39;, const=sum, default=max, help=&amp;#39;sum the integers (default: find the max)&amp;#39;) args = parser.parse_args() print(args.accumulate(args.integers)) В этом примере мы создали парсер аргументов командной строки с помощью argparse, который принимает целочисленные значения и может вычислить их сумму или максимальное значение.</description></item><item><title>Модуль configparser</title><link>https://romankurnovskii.com/ru/tracks/python-101/standard_library/configparser/</link><pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/python-101/standard_library/configparser/</guid><description>Модуль configparser позволяет работать с конфигурационными файлами в Python.
-Для использования модуля configparser нужно сначала импортировать его:
-import configparser Для чтения конфигурационного файла используется метод configparser.ConfigParser() с методом read():
-config = configparser.ConfigParser() config.read(&amp;#39;config.ini&amp;#39;) Для записи в конфигурационный файл используется метод write():
-config.set(&amp;#39;section&amp;#39;, &amp;#39;option&amp;#39;, &amp;#39;value&amp;#39;) with open(&amp;#39;config.ini&amp;#39;, &amp;#39;w&amp;#39;) as f: config.write(f) Пример работы с конфигурационным файлом:
-import configparser # Создаем объект ConfigParser config = configparser.ConfigParser() # Читаем конфигурационный файл config.read(&amp;#39;config.ini&amp;#39;) # Получаем значение параметра из секции db_name = config.get(&amp;#39;database&amp;#39;, &amp;#39;db_name&amp;#39;) # Меняем значение параметра и записываем изменения в файл config.</description></item><item><title>Модуль email / smtplib</title><link>https://romankurnovskii.com/ru/tracks/python-101/standard_library/smtplib/</link><pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/python-101/standard_library/smtplib/</guid><description>Модуль smtplib в Python предоставляет возможность отправки электронных писем через Simple Mail Transfer Protocol (SMTP).
-Он предоставляет класс SMTP, который упрощает отправку электронной почты из Python-скрипта. Модуль smtplib позволяет отправлять электронные письма, как с аутентификацией, так и без, и можно отправлять как простые текстовые сообщения, так и письма с HTML-контентом.
-Вот пример кода для отправки простого текстового сообщения:
-import smtplib smtp_server = &amp;#39;smtp.yandex.ru&amp;#39; port = 587 login = &amp;#39;example@yandex.ru&amp;#39; password = &amp;#39;password&amp;#39; from_addr = &amp;#39;example@yandex.ru&amp;#39; to_addr = &amp;#39;example2@yandex.ru&amp;#39; message = &amp;#39;Hello, world!</description></item><item><title>Модуль asyncio</title><link>https://romankurnovskii.com/ru/tracks/python-101/standard_library/asyncio/</link><pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/python-101/standard_library/asyncio/</guid><description>Асинхронное программирование — это концепция программирования, при применении которой запуск длительных операций происходит без ожидания их завершения и не блокирует дальнейшее выполнение программы.
-Корутина — это более общая форма подпрограмм. Подпрограммы имеют одну точку входа и одну точку выхода. А корутины поддерживают множество точек входа, выхода и возобновления их выполнения.
-Python модуль asyncio позволяет заниматься асинхронным программированием с применением конкурентного выполнения кода, основанного на корутинах.
-Вот план использования модуля asyncio:
-import asyncio # Определение асинхронной функции с помощью ключевого слова async.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>II - Стандартные модули on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tracks/python-101/standard_library/</link><description>Recent content in II - Стандартные модули on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Tue, 28 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tracks/python-101/standard_library/index.xml" rel="self" type="application/rss+xml"/><item><title>Модуль os</title><link>https://romankurnovskii.com/ru/tracks/python-101/standard_library/os/</link><pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/python-101/standard_library/os/</guid><description>&lt;p>Модуль &lt;code>os&lt;/code> предоставляет функции для работы с операционной системой. Этот модуль позволяет получить доступ к файловой системе, управлять процессами, получать информацию об окружении и другие.&lt;/p>
+&lt;ul>
+&lt;li>os.listdir - получение списка файлов и директорий в указанной директории:&lt;/li>
+&lt;li>os.mkdir() - создание директории&lt;/li>
+&lt;li>os.system() - выполнение команды в командной строке&lt;/li>
+&lt;li>os.getenv()&lt;/li>
+&lt;li>os.putenv()&lt;/li>
+&lt;li>os.remove() - удаление файла&lt;/li>
+&lt;li>os.rename()&lt;/li>
+&lt;li>os.startfile()&lt;/li>
+&lt;li>os.walk() - дает способ итерации по пути корневого уровня&lt;/li>
+&lt;li>&lt;a href="https://docs.python.org/3.12/library/pathlib.html#pathlib.Path.walk">pathlib.Path.walk()&lt;/a> - похожий на &lt;code>os.walk()&lt;/code>. (Добавлен в 3.12)&lt;/li>
+&lt;li>os.environ: словарь, содержащий переменные окружения, доступные в текущем процессе. Можно использовать для получения значения переменной окружения или для установки ее значения.&lt;/li>
+&lt;li>os.getcwd(): возвращает текущую рабочую директорию.&lt;/li>
+&lt;li>os.chdir(path): изменяет текущую рабочую директорию на указанную.&lt;/li>
+&lt;li>os.path.join(path1, path2, &amp;hellip;): объединяет несколько путей в один, используя правильный разделитель для операционной системы.&lt;/li>
+&lt;li>os.path.exists(path): возвращает True, если файл или директория по указанному пути существует.&lt;/li>
+&lt;li>os.path.isfile(path): возвращает True, если путь указывает на существующий файл.&lt;/li>
+&lt;li>os.path.isdir(path): возвращает True, если путь указывает на существующую директорию.&lt;/li>
+&lt;li>os.makedirs(path): создает директории (в том числе вложенные), если они не существуют.&lt;/li>
+&lt;li>os.rmdir(path): удаляет директорию, если она пуста.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">os&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>files &lt;span style="color:#666">=&lt;/span> os&lt;span style="color:#666">.&lt;/span>listdir(&lt;span style="color:#4070a0">&amp;#34;.&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">f&lt;/span>&lt;span style="color:#4070a0">&amp;#34;Files in current directory: &lt;/span>&lt;span style="color:#70a0d0">{&lt;/span>files&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>) &lt;span style="color:#60a0b0;font-style:italic">#[&amp;#39;file1.txt&amp;#39;, &amp;#39;file2.txt&amp;#39;]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>os&lt;span style="color:#666">.&lt;/span>remove(&lt;span style="color:#4070a0">&amp;#34;file.txt&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>os&lt;span style="color:#666">.&lt;/span>system(&lt;span style="color:#4070a0">&amp;#34;ls -l&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Получение значения переменной окружения&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>home_dir &lt;span style="color:#666">=&lt;/span> os&lt;span style="color:#666">.&lt;/span>environ[&lt;span style="color:#4070a0">&amp;#39;HOME&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Установка значения переменной окружения&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>os&lt;span style="color:#666">.&lt;/span>environ[&lt;span style="color:#4070a0">&amp;#39;MY_VAR&amp;#39;&lt;/span>] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;my_value&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Получение текущей рабочей директории&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>current_dir &lt;span style="color:#666">=&lt;/span> os&lt;span style="color:#666">.&lt;/span>getcwd()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Смена рабочей директории&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>os&lt;span style="color:#666">.&lt;/span>chdir(&lt;span style="color:#4070a0">&amp;#39;/path/to/new/dir&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Объединение нескольких путей&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>full_path &lt;span style="color:#666">=&lt;/span> os&lt;span style="color:#666">.&lt;/span>path&lt;span style="color:#666">.&lt;/span>join(&lt;span style="color:#4070a0">&amp;#39;/path/to&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;file.txt&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Проверка наличия файла&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>file_exists &lt;span style="color:#666">=&lt;/span> os&lt;span style="color:#666">.&lt;/span>path&lt;span style="color:#666">.&lt;/span>exists(&lt;span style="color:#4070a0">&amp;#39;/path/to/file.txt&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Проверка наличия директории&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dir_exists &lt;span style="color:#666">=&lt;/span> os&lt;span style="color:#666">.&lt;/span>path&lt;span style="color:#666">.&lt;/span>isdir(&lt;span style="color:#4070a0">&amp;#39;/path/to/dir&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Создание директории&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>os&lt;span style="color:#666">.&lt;/span>makedirs(&lt;span style="color:#4070a0">&amp;#39;/path/to/new/dir&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Удаление директории&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>os&lt;span style="color:#666">.&lt;/span>rmdir(&lt;span style="color:#4070a0">&amp;#39;/path/to/dir&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Итерация по каталогам&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> root, dirs, files &lt;span style="color:#007020;font-weight:bold">in&lt;/span> os&lt;span style="color:#666">.&lt;/span>walk(path):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(root)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> _dir &lt;span style="color:#007020;font-weight:bold">in&lt;/span> dirs:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(_dir)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> _file &lt;span style="color:#007020;font-weight:bold">in&lt;/span> files:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(_file)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Модуль sys</title><link>https://romankurnovskii.com/ru/tracks/python-101/standard_library/sys/</link><pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/python-101/standard_library/sys/</guid><description>&lt;p>Модуль &lt;strong>sys&lt;/strong> предоставляет специфические для системы параметры и функции. Он содержит системную информацию и функции для взаимодействия со стандартными потоками ввода/вывода, аргументами командной строки и другими модулями Python.&lt;/p>
+&lt;p>&lt;code>sys.argv&lt;/code> - список аргументов командной строки, переданных в программу при ее запуске. Первым аргументом обычно является имя файла программы.&lt;/p>
+&lt;p>&lt;code>sys.executable&lt;/code> - путь к интерпретатору Python, который используется для запуска текущей программы.&lt;/p>
+&lt;p>&lt;code>sys.exit([arg])&lt;/code> - завершает выполнение программы. Если задан аргумент, то он возвращается в качестве кода выхода.&lt;/p>
+&lt;p>&lt;code>sys.modules&lt;/code> - словарь, содержащий все загруженные модули Python, включая стандартные и сторонние модули.&lt;/p>
+&lt;p>&lt;code>sys.path&lt;/code> - список путей поиска модулей Python. Включает директории, содержащие стандартные модули, а также директории, перечисленные в переменной окружения &lt;code>PYTHONPATH&lt;/code>.&lt;/p>
+&lt;p>&lt;code>sys.platform&lt;/code> - строка, содержащая название операционной системы, на которой запущен Python.&lt;/p>
+&lt;p>&lt;code>sys.stdin&lt;/code>, &lt;code>sys.stdout&lt;/code>, &lt;code>sys.stderr&lt;/code> - объекты для взаимодействия со стандартными потоками ввода/вывода.&lt;/p>
+&lt;p>Мы можем использовать &lt;code>sys.argv&lt;/code> для получения доступа к аргументам командной строки:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">sys&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Запуск: python my_program.py arg1 arg2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">print&lt;/span>(sys&lt;span style="color:#666">.&lt;/span>argv) &lt;span style="color:#60a0b0;font-style:italic"># [&amp;#39;my_program.py&amp;#39;, &amp;#39;arg1&amp;#39;, &amp;#39;arg2&amp;#39;]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Атрибут &lt;code>sys.executable&lt;/code> может быть полезен, если требуется запустить текущую программу с другим интерпретатором Python:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">sys&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">subprocess&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#4070a0">&amp;#39;win&amp;#39;&lt;/span> &lt;span style="color:#007020;font-weight:bold">in&lt;/span> sys&lt;span style="color:#666">.&lt;/span>platform:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> python_executable &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;python.exe&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> python_executable &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;python&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>subprocess&lt;span style="color:#666">.&lt;/span>call([python_executable, &lt;span style="color:#4070a0">&amp;#39;my_program.py&amp;#39;&lt;/span>])
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>sys.exit()&lt;/code> используется для выхода из программы. Можно передать ей код возврата в качестве аргумента, который будет использоваться для определения статуса выхода:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">sys&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020">len&lt;/span>(sys&lt;span style="color:#666">.&lt;/span>argv) &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">2&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#39;Please specify a file to read&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sys&lt;span style="color:#666">.&lt;/span>exit(&lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>filename &lt;span style="color:#666">=&lt;/span> sys&lt;span style="color:#666">.&lt;/span>argv[&lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Чтение файла...&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Мы можем использовать &lt;code>sys.modules&lt;/code> для получения списка всех загруженных модулей:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">sys&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> name, module &lt;span style="color:#007020;font-weight:bold">in&lt;/span> sys&lt;span style="color:#666">.&lt;/span>modules&lt;span style="color:#666">.&lt;/span>items():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(name)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Константы &lt;code>sys.stdin&lt;/code>, &lt;code>sys.stdout&lt;/code> и &lt;code>sys.stderr&lt;/code> являются стандартными потоками ввода, вывода и ошибок соответственно.&lt;/p>
+&lt;p>Например, если мы хотим написать программу, которая запрашивает у пользователя ввод и выводит результат на экран, мы можем использовать &lt;code>sys.stdin&lt;/code> и &lt;code>sys.stdout&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">sys&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>name &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">input&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;What is your name? &amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sys&lt;span style="color:#666">.&lt;/span>stdout&lt;span style="color:#666">.&lt;/span>write(&lt;span style="color:#4070a0">f&lt;/span>&lt;span style="color:#4070a0">&amp;#34;Hello, &lt;/span>&lt;span style="color:#70a0d0">{&lt;/span>name&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">!&lt;/span>&lt;span style="color:#4070a0;font-weight:bold">\n&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Здесь мы запрашиваем у пользователя ввод с помощью функции &lt;code>inp()&lt;/code> и выводим результат на экран с помощью &lt;code>sys.stdout.write()&lt;/code>.&lt;/p>
+&lt;p>Аналогично, мы можем перенаправить вывод в файл, например:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">sys&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">with&lt;/span> &lt;span style="color:#007020">open&lt;/span>(&lt;span style="color:#4070a0">&amp;#39;output.txt&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;w&amp;#39;&lt;/span>) &lt;span style="color:#007020;font-weight:bold">as&lt;/span> f:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sys&lt;span style="color:#666">.&lt;/span>stdout &lt;span style="color:#666">=&lt;/span> f
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#39;Hello, world!&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Здесь мы перенаправляем стандартный вывод в файл &amp;ldquo;output.txt&amp;rdquo; с помощью операции присваивания &lt;code>sys&lt;/code>.&lt;code>stdout = f&lt;/code>. Далее, когда мы вызываем функцию print(), результат будет записан в файл вместо вывода на экран.&lt;/p></description></item><item><title>Модуль logging</title><link>https://romankurnovskii.com/ru/tracks/python-101/standard_library/logging/</link><pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/python-101/standard_library/logging/</guid><description>&lt;p>Модуль логирования &lt;code>logging&lt;/code> является одним из стандартных модулей Python и предоставляет возможности для записи логов в приложении. Логирование используется для записи информации о работе приложения, которую можно использовать для отслеживания ошибок и диагностики проблем.&lt;/p>
+&lt;p>В модуле &lt;code>logging&lt;/code> определены три основных компонента: логгеры (loggers), обработчики (handlers) и форматировщики (formatters). Логгеры представляют собой объекты, которые используются для записи сообщений лога. Обработчики определяют, куда будут записываться сообщения, а форматировщики определяют, как будут отформатированы эти сообщения.&lt;/p>
+&lt;p>Пример использования модуля &lt;code>logging&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">logging&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Создание логгера&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>logger &lt;span style="color:#666">=&lt;/span> logging&lt;span style="color:#666">.&lt;/span>getLogger(&lt;span style="color:#4070a0">&amp;#39;example&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Установка уровня логирования&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>logger&lt;span style="color:#666">.&lt;/span>setLevel(logging&lt;span style="color:#666">.&lt;/span>INFO)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Создание обработчика&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>handler &lt;span style="color:#666">=&lt;/span> logging&lt;span style="color:#666">.&lt;/span>FileHandler(&lt;span style="color:#4070a0">&amp;#39;example.log&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Установка уровня логирования для обработчика&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>handler&lt;span style="color:#666">.&lt;/span>setLevel(logging&lt;span style="color:#666">.&lt;/span>INFO)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Создание форматировщика&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>formatter &lt;span style="color:#666">=&lt;/span> logging&lt;span style="color:#666">.&lt;/span>Formatter(&lt;span style="color:#4070a0">&amp;#39;&lt;/span>&lt;span style="color:#70a0d0">%(asctime)s&lt;/span>&lt;span style="color:#4070a0"> - &lt;/span>&lt;span style="color:#70a0d0">%(name)s&lt;/span>&lt;span style="color:#4070a0"> - &lt;/span>&lt;span style="color:#70a0d0">%(levelname)s&lt;/span>&lt;span style="color:#4070a0"> - &lt;/span>&lt;span style="color:#70a0d0">%(message)s&lt;/span>&lt;span style="color:#4070a0">&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Установка форматировщика для обработчика&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>handler&lt;span style="color:#666">.&lt;/span>setFormatter(formatter)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Добавление обработчика к логгеру&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>logger&lt;span style="color:#666">.&lt;/span>addHandler(handler)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Запись сообщений лога&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>logger&lt;span style="color:#666">.&lt;/span>debug(&lt;span style="color:#4070a0">&amp;#39;Debug message&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>logger&lt;span style="color:#666">.&lt;/span>info(&lt;span style="color:#4070a0">&amp;#39;Info message&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>logger&lt;span style="color:#666">.&lt;/span>warning(&lt;span style="color:#4070a0">&amp;#39;Warning message&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>logger&lt;span style="color:#666">.&lt;/span>error(&lt;span style="color:#4070a0">&amp;#39;Error message&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>logger&lt;span style="color:#666">.&lt;/span>critical(&lt;span style="color:#4070a0">&amp;#39;Critical message&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Этот пример создает логгер &lt;code>example&lt;/code>, который записывает сообщения в файл &lt;code>example.log&lt;/code>. Уровень логирования установлен на уровень INFO, что означает, что будут записаны сообщения с уровнем INFO и выше. Созданный обработчик определяет, что сообщения будут записываться в файл, а форматировщик определяет, как будут отформатированы сообщения.&lt;/p>
+&lt;p>Методы &lt;code>debug&lt;/code>, &lt;code>info&lt;/code>, &lt;code>warning&lt;/code>, &lt;code>error&lt;/code> и &lt;code>critical&lt;/code> используются для записи сообщений лога разного уровня. В этом примере мы записываем сообщения всех уровней, поэтому в лог-файле будут отображены все эти сообщения.&lt;/p>
+&lt;p>Это только базовый пример использования модуля &lt;code>logging&lt;/code>. В реальном приложении вы можете создать несколько логгеров с разными уровнями логирования и разными обработчиками для каждого из них, в зависимости от вашей конкретной задачи.&lt;/p></description></item><item><title>Модуль datetime/time</title><link>https://romankurnovskii.com/ru/tracks/python-101/standard_library/datetime_time/</link><pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/python-101/standard_library/datetime_time/</guid><description>&lt;h2 id="datetime">datetime&lt;/h2>
+&lt;p>Модуль &lt;code>datetime&lt;/code> в Python предоставляет классы для работы с датами и временем. Он позволяет создавать объекты даты, времени и даты-времени, а также выполнять операции с этими объектами.&lt;/p>
+&lt;p>Класс &lt;code>datetime&lt;/code> является основным классом модуля &lt;code>datetime&lt;/code> и представляет дату и время в формате &amp;ldquo;ГГГГ-ММ-ДД ЧЧ:ММ:СС&amp;rdquo;. Класс date представляет только дату, а класс &lt;code>time&lt;/code> - только время.&lt;/p>
+&lt;p>Форматирование дат и времени может выполняться с помощью метода &lt;code>strftime&lt;/code>, который позволяет создавать строку с заданным форматом даты и времени. Также существует метод &lt;code>strptime&lt;/code>, который позволяет преобразовать строку в объект даты и времени.&lt;/p>
+&lt;p>Для работы со временем и датами можно использовать методы класса &lt;code>datetime&lt;/code>, такие как now для получения текущей даты и времени, &lt;code>date&lt;/code> и &lt;code>time&lt;/code> для получения объектов даты и времени соответственно, а также методы &lt;code>year&lt;/code>, &lt;code>month&lt;/code>, &lt;code>day&lt;/code>, &lt;code>hour&lt;/code>, &lt;code>minute&lt;/code>, second для получения соответствующих значений.&lt;/p>
+&lt;p>Класс &lt;code>timedelta&lt;/code> позволяет выполнять арифметические операции над объектами дат и времени, такие как сложение и вычитание.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">datetime&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Создание объекта datetime&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>now &lt;span style="color:#666">=&lt;/span> datetime&lt;span style="color:#666">.&lt;/span>datetime&lt;span style="color:#666">.&lt;/span>now()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">print&lt;/span>(now)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Получение объекта date&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>today &lt;span style="color:#666">=&lt;/span> datetime&lt;span style="color:#666">.&lt;/span>date&lt;span style="color:#666">.&lt;/span>today()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">print&lt;/span>(today)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Получение объекта time&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>current_time &lt;span style="color:#666">=&lt;/span> datetime&lt;span style="color:#666">.&lt;/span>time(hour&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">12&lt;/span>, minute&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">30&lt;/span>, second&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">print&lt;/span>(current_time)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Форматирование даты и времени&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>formatted_date &lt;span style="color:#666">=&lt;/span> now&lt;span style="color:#666">.&lt;/span>strftime(&lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#70a0d0">%d&lt;/span>&lt;span style="color:#4070a0">-%m-%Y&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">print&lt;/span>(formatted_date)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Преобразование строки в объект datetime&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>date_string &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#34;2022-02-15 18:00:00&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>date_object &lt;span style="color:#666">=&lt;/span> datetime&lt;span style="color:#666">.&lt;/span>datetime&lt;span style="color:#666">.&lt;/span>strptime(date_string, &lt;span style="color:#4070a0">&amp;#34;%Y-%m-&lt;/span>&lt;span style="color:#70a0d0">%d&lt;/span>&lt;span style="color:#4070a0"> %H:%M:%S&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">print&lt;/span>(date_object)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Использование timedelta&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>one_day &lt;span style="color:#666">=&lt;/span> datetime&lt;span style="color:#666">.&lt;/span>timedelta(days&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>yesterday &lt;span style="color:#666">=&lt;/span> today &lt;span style="color:#666">-&lt;/span> one_day
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">print&lt;/span>(yesterday)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Перевод даты в строку и обратно&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>date_string &lt;span style="color:#666">=&lt;/span> today&lt;span style="color:#666">.&lt;/span>strftime(&lt;span style="color:#4070a0">&amp;#34;%Y-%m-&lt;/span>&lt;span style="color:#70a0d0">%d&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>date_object &lt;span style="color:#666">=&lt;/span> datetime&lt;span style="color:#666">.&lt;/span>datetime&lt;span style="color:#666">.&lt;/span>strptime(date_string, &lt;span style="color:#4070a0">&amp;#34;%Y-%m-&lt;/span>&lt;span style="color:#70a0d0">%d&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">print&lt;/span>(date_object)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="time">time&lt;/h2>
+&lt;p>Модуль &lt;code>time&lt;/code> в Python предоставляет доступ к системному времени и позволяет работать с временными значениями, такими как время в секундах, часах, минутах и т.д. Этот модуль также содержит функции для задержки выполнения программы, вычисления прошедшего времени и других операций, связанных со временем.&lt;/p>
+&lt;p>Вот некоторые из наиболее распространенных функций &lt;code>time&lt;/code>:&lt;/p>
+&lt;ul>
+&lt;li>time(): возвращает текущее время в секундах, начиная с начала эпохи Unix (1 января 1970 года 00:00:00 GMT).&lt;/li>
+&lt;li>ctime(): принимает время в секундах в качестве аргумента и возвращает строку с форматированным временем в удобочитаемом формате.&lt;/li>
+&lt;li>sleep(): приостанавливает выполнение программы на заданное количество секунд.&lt;/li>
+&lt;li>gmtime(): принимает время в секундах в качестве аргумента и возвращает объект структурированного времени, представленного в UTC (координированное всемирное время).&lt;/li>
+&lt;li>localtime(): принимает время в секундах в качестве аргумента и возвращает объект структурированного времени, представленного в локальной временной зоне.&lt;/li>
+&lt;li>strftime(): преобразует объект структурированного времени в строку с заданным форматом.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">time&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Получение текущего времени в секундах&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>current_time &lt;span style="color:#666">=&lt;/span> time&lt;span style="color:#666">.&lt;/span>time()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">print&lt;/span>(current_time)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Отображение времени в удобочитаемом формате&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>formatted_time &lt;span style="color:#666">=&lt;/span> time&lt;span style="color:#666">.&lt;/span>ctime(current_time)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">print&lt;/span>(formatted_time)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Приостановка выполнения программы на 5 секунд&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>time&lt;span style="color:#666">.&lt;/span>sleep(&lt;span style="color:#40a070">5&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Получение объекта структурированного времени&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>gm_time &lt;span style="color:#666">=&lt;/span> time&lt;span style="color:#666">.&lt;/span>gmtime(current_time)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">print&lt;/span>(gm_time)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Преобразование объекта структурированного времени в строку&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>formatted_gm_time &lt;span style="color:#666">=&lt;/span> time&lt;span style="color:#666">.&lt;/span>strftime(&lt;span style="color:#4070a0">&amp;#39;%Y-%m-&lt;/span>&lt;span style="color:#70a0d0">%d&lt;/span>&lt;span style="color:#4070a0"> %H:%M:%S&amp;#39;&lt;/span>, gm_time)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">print&lt;/span>(formatted_gm_time)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Модуль потоков threading</title><link>https://romankurnovskii.com/ru/tracks/python-101/standard_library/threading/</link><pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/python-101/standard_library/threading/</guid><description>&lt;p>Модуль &lt;code>threading&lt;/code> в Python предоставляет возможность создавать и управлять потоками выполнения. &lt;strong>Потоки&lt;/strong> - это легковесные процессы, которые выполняются параллельно в пределах одного процесса, что позволяет лучше использовать ресурсы компьютера.&lt;/p>
+&lt;p>Для создания нового потока необходимо создать объект &lt;code>Thread&lt;/code> и передать в его конструктор функцию, которую вы хотите запустить в отдельном потоке. Затем вызовите метод &lt;code>start()&lt;/code> у этого объекта, чтобы запустить поток. Если вы хотите дождаться завершения потока, вызовите метод &lt;code>join()&lt;/code>, который блокирует текущий поток, пока поток, на который вы вызываете &lt;code>join()&lt;/code>, не завершится.&lt;/p>
+&lt;p>Пример использования модуля &lt;code>threading&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">time&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> sleep
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">threading&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">print_numbers&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">10&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sleep(&lt;span style="color:#40a070">1&lt;/span>) &lt;span style="color:#60a0b0;font-style:italic"># задержка печати для примера&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">print_letters&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> letter &lt;span style="color:#007020;font-weight:bold">in&lt;/span> [&lt;span style="color:#4070a0">&amp;#39;a&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;b&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;c&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;d&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;e&amp;#39;&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(letter)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">if&lt;/span> __name__ &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#4070a0">&amp;#39;__main__&amp;#39;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>t1 &lt;span style="color:#666">=&lt;/span> threading&lt;span style="color:#666">.&lt;/span>Thread(target&lt;span style="color:#666">=&lt;/span>print_numbers)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>t2 &lt;span style="color:#666">=&lt;/span> threading&lt;span style="color:#666">.&lt;/span>Thread(target&lt;span style="color:#666">=&lt;/span>print_letters)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>t1&lt;span style="color:#666">.&lt;/span>start()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>t2&lt;span style="color:#666">.&lt;/span>start()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Done!&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>t1&lt;span style="color:#666">.&lt;/span>join()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>t2&lt;span style="color:#666">.&lt;/span>join()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;Done!&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Мы создали две функции &lt;code>print_numbers()&lt;/code> и &lt;code>print_letters()&lt;/code>, каждая из которых печатает набор символов в консоль. Затем мы создали два потока, один для каждой из этих функций, и запустили их, вызвав метод start(). Затем мы дождались завершения каждого потока, вызвав метод &lt;code>join()&lt;/code>, и напечатали сообщение &amp;ldquo;Done!&amp;rdquo;.&lt;/p>
+&lt;p>В последнем примере кода мы увидим, что каждый поток будет печатать свою информацию в консоль, в произвольном порядке, так как потоки будут конкурировать за доступ к ресурсу (в данном случае, к выводу в консоль).&lt;/p>
+&lt;p>Результат может отличаться от запуска к запуску программы, так как порядок выполнения потоков не гарантирован и зависит от того, как ОС распределяет ресурсы между потоками.&lt;/p>
+&lt;p>Модуль &lt;code>threading&lt;/code> также предоставляет другие полезные классы, такие как &lt;code>Lock&lt;/code>, &lt;code>Condition&lt;/code>, &lt;code>Semaphore&lt;/code>, которые помогают управлять доступом к ресурсам между несколькими потоками.&lt;/p></description></item><item><title>Модуль subprocess</title><link>https://romankurnovskii.com/ru/tracks/python-101/standard_library/subprocess/</link><pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/python-101/standard_library/subprocess/</guid><description>&lt;p>Модуль &lt;code>subprocess&lt;/code> является одним из наиболее мощных и распространенных модулей Python для управления другими процессами в операционной системе.&lt;/p>
+&lt;p>Основная цель &lt;code>subprocess&lt;/code> заключается в том, чтобы предоставить простой и удобный способ создания новых процессов, подключения к уже существующим процессам, их управления и взаимодействия с ними.&lt;/p>
+&lt;p>Одним из основных классов в модуле &lt;code>subprocess&lt;/code> является класс &lt;code>Popen&lt;/code>, который представляет собой объект, связанный с запущенным в операционной системе процессом.&lt;/p>
+&lt;p>Например, чтобы запустить новый процесс с помощью &lt;code>Popen&lt;/code>, мы можем использовать следующий код:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">subprocess&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>process &lt;span style="color:#666">=&lt;/span> subprocess&lt;span style="color:#666">.&lt;/span>Popen([&lt;span style="color:#4070a0">&amp;#39;ls&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;-l&amp;#39;&lt;/span>], stdout&lt;span style="color:#666">=&lt;/span>subprocess&lt;span style="color:#666">.&lt;/span>PIPE, stderr&lt;span style="color:#666">=&lt;/span>subprocess&lt;span style="color:#666">.&lt;/span>PIPE)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>stdout, stderr &lt;span style="color:#666">=&lt;/span> process&lt;span style="color:#666">.&lt;/span>communicate()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">print&lt;/span>(stdout&lt;span style="color:#666">.&lt;/span>decode())
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>В этом примере мы создаем новый процесс, который выполняет команду &lt;code>ls -l&lt;/code> в командной строке операционной системы.&lt;/p>
+&lt;p>Затем мы отправляем строку в стандартный ввод процесса, используя метод &lt;code>communicate()&lt;/code>, и получаем результат его работы в переменной output.&lt;/p>
+&lt;p>Наконец, мы выводим содержимое переменной output на экран.&lt;/p>
+&lt;p>Кроме того, модуль &lt;code>subprocess&lt;/code> также предоставляет удобный способ проверки состояния завершения процессов с помощью метода &lt;code>poll()&lt;/code> и ожидания их завершения с помощью метода &lt;code>wait()&lt;/code>.&lt;/p>
+&lt;p>В целом, модуль &lt;code>subprocess&lt;/code> является очень полезным инструментом для управления процессами в операционной системе и взаимодействия с ними из Python.&lt;/p></description></item><item><title>Модуль argparse</title><link>https://romankurnovskii.com/ru/tracks/python-101/standard_library/argparse/</link><pubDate>Mon, 20 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/python-101/standard_library/argparse/</guid><description>&lt;p>Модуль &lt;code>argparse&lt;/code> позволяет легко парсить аргументы командной строки.&lt;/p>
+&lt;p>Это может быть полезно для создания сценариев командной строки, которые должны принимать аргументы от пользователя, например, при написании утилит командной строки.&lt;/p>
+&lt;p>Пример:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#script.py&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">argparse&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>parser &lt;span style="color:#666">=&lt;/span> argparse&lt;span style="color:#666">.&lt;/span>ArgumentParser(description&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#39;Process some integers.&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>parser&lt;span style="color:#666">.&lt;/span>add_argument(&lt;span style="color:#4070a0">&amp;#39;integers&amp;#39;&lt;/span>, metavar&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#39;N&amp;#39;&lt;/span>, &lt;span style="color:#007020">type&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020">int&lt;/span>, nargs&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#39;+&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> help&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#39;an integer for the accumulator&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>parser&lt;span style="color:#666">.&lt;/span>add_argument(&lt;span style="color:#4070a0">&amp;#39;--sum&amp;#39;&lt;/span>, dest&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#39;accumulate&amp;#39;&lt;/span>, action&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#39;store_const&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> const&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020">sum&lt;/span>, default&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020">max&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> help&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#39;sum the integers (default: find the max)&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>args &lt;span style="color:#666">=&lt;/span> parser&lt;span style="color:#666">.&lt;/span>parse_args()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">print&lt;/span>(args&lt;span style="color:#666">.&lt;/span>accumulate(args&lt;span style="color:#666">.&lt;/span>integers))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>В этом примере мы создали парсер аргументов командной строки с помощью argparse, который принимает целочисленные значения и может вычислить их сумму или максимальное значение. При запуске скрипта мы можем указать значения, например:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>python script&lt;span style="color:#666">.&lt;/span>py &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#40a070">3&lt;/span> &lt;span style="color:#40a070">4&lt;/span> &lt;span style="color:#666">--&lt;/span>&lt;span style="color:#007020">sum&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Resources:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.python.org/3/howto/argparse.html#id1">argparse tutorial | python.org&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Модуль configparser</title><link>https://romankurnovskii.com/ru/tracks/python-101/standard_library/configparser/</link><pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/python-101/standard_library/configparser/</guid><description>&lt;p>Модуль &lt;code>configparser&lt;/code> позволяет работать с конфигурационными файлами в Python.&lt;/p>
+&lt;p>Для использования модуля &lt;code>configparser&lt;/code> нужно сначала импортировать его:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">configparser&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Для чтения конфигурационного файла используется метод &lt;code>configparser.ConfigParser()&lt;/code> с методом &lt;code>read()&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>config &lt;span style="color:#666">=&lt;/span> configparser&lt;span style="color:#666">.&lt;/span>ConfigParser()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>config&lt;span style="color:#666">.&lt;/span>read(&lt;span style="color:#4070a0">&amp;#39;config.ini&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Для записи в конфигурационный файл используется метод write():&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>config&lt;span style="color:#666">.&lt;/span>set(&lt;span style="color:#4070a0">&amp;#39;section&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;option&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;value&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">with&lt;/span> &lt;span style="color:#007020">open&lt;/span>(&lt;span style="color:#4070a0">&amp;#39;config.ini&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;w&amp;#39;&lt;/span>) &lt;span style="color:#007020;font-weight:bold">as&lt;/span> f:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> config&lt;span style="color:#666">.&lt;/span>write(f)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Пример работы с конфигурационным файлом:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">configparser&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Создаем объект ConfigParser&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>config &lt;span style="color:#666">=&lt;/span> configparser&lt;span style="color:#666">.&lt;/span>ConfigParser()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Читаем конфигурационный файл&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>config&lt;span style="color:#666">.&lt;/span>read(&lt;span style="color:#4070a0">&amp;#39;config.ini&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Получаем значение параметра из секции&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>db_name &lt;span style="color:#666">=&lt;/span> config&lt;span style="color:#666">.&lt;/span>get(&lt;span style="color:#4070a0">&amp;#39;database&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;db_name&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Меняем значение параметра и записываем изменения в файл&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>config&lt;span style="color:#666">.&lt;/span>set(&lt;span style="color:#4070a0">&amp;#39;database&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;db_name&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;new_db_name&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">with&lt;/span> &lt;span style="color:#007020">open&lt;/span>(&lt;span style="color:#4070a0">&amp;#39;config.ini&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;w&amp;#39;&lt;/span>) &lt;span style="color:#007020;font-weight:bold">as&lt;/span> f:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> config&lt;span style="color:#666">.&lt;/span>write(f)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Конфигурационный файл может иметь несколько секций, каждая из которых может иметь набор параметров со значениями. Например:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>[database]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>db_name=my_db
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>db_user=user_name
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>db_password=secret_password
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[server]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>host=127.0.0.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>port=8080
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>В данном примере есть две секции: &lt;code>[database]&lt;/code> и &lt;code>[server]&lt;/code>. Каждая секция содержит набор параметров со значениями.&lt;/p>
+&lt;p>Модуль &lt;code>configparser&lt;/code> позволяет легко работать с этими параметрами, как с обычными переменными. Например, для получения значения параметра db_name из секции database нужно выполнить следующий код:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>db_name &lt;span style="color:#666">=&lt;/span> config&lt;span style="color:#666">.&lt;/span>get(&lt;span style="color:#4070a0">&amp;#39;database&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;db_name&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Параметры в файле могут быть определены без значения, только с именем параметра. В этом случае для получения значения параметра нужно использовать метод &lt;code>getboolean()&lt;/code>, &lt;code>getint()&lt;/code> или &lt;code>getfloat()&lt;/code> в зависимости от типа значения параметра.&lt;/p></description></item><item><title>Модуль email / smtplib</title><link>https://romankurnovskii.com/ru/tracks/python-101/standard_library/smtplib/</link><pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/python-101/standard_library/smtplib/</guid><description>&lt;p>Модуль &lt;code>smtplib&lt;/code> в Python предоставляет возможность отправки электронных писем через Simple Mail Transfer Protocol (SMTP).&lt;/p>
+&lt;p>Он предоставляет класс SMTP, который упрощает отправку электронной почты из Python-скрипта. Модуль &lt;code>smtplib&lt;/code> позволяет отправлять электронные письма, как с аутентификацией, так и без, и можно отправлять как простые текстовые сообщения, так и письма с HTML-контентом.&lt;/p>
+&lt;p>Вот пример кода для отправки простого текстового сообщения:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">smtplib&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>smtp_server &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;smtp.yandex.ru&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>port &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">587&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>login &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;example@yandex.ru&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>password &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;password&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>from_addr &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;example@yandex.ru&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>to_addr &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;example2@yandex.ru&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>message &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;Hello, world!&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">with&lt;/span> smtplib&lt;span style="color:#666">.&lt;/span>SMTP(smtp_server, port) &lt;span style="color:#007020;font-weight:bold">as&lt;/span> server:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server&lt;span style="color:#666">.&lt;/span>starttls()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server&lt;span style="color:#666">.&lt;/span>login(login, password)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> server&lt;span style="color:#666">.&lt;/span>sendmail(from_addr, to_addr, message)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>В этом примере мы создаем объект SMTP, указывая адрес сервера и номер порта. Затем мы используем &lt;code>starttls()&lt;/code>, чтобы начать безопасное соединение и &lt;code>login()&lt;/code>, чтобы авторизоваться на сервере. Затем мы отправляем электронное письмо с помощью метода &lt;code>sendmail()&lt;/code>.&lt;/p></description></item><item><title>Модуль asyncio</title><link>https://romankurnovskii.com/ru/tracks/python-101/standard_library/asyncio/</link><pubDate>Tue, 10 Jan 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/python-101/standard_library/asyncio/</guid><description>&lt;blockquote>
+&lt;p>Асинхронное программирование — это концепция программирования, при применении которой запуск длительных операций происходит без ожидания их завершения и не блокирует дальнейшее выполнение программы.&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>Корутина — это более общая форма подпрограмм. Подпрограммы имеют одну точку входа и одну точку выхода. А корутины поддерживают множество точек входа, выхода и возобновления их выполнения.&lt;/p>&lt;/blockquote>
+&lt;p>Python модуль &lt;a href="https://docs.python.org/3/library/asyncio.html">&lt;code>asyncio&lt;/code>&lt;/a> позволяет заниматься асинхронным программированием с применением конкурентного выполнения кода, основанного на корутинах.&lt;/p>
+&lt;p>Вот план использования модуля &lt;code>asyncio&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">asyncio&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Определение асинхронной функции с помощью ключевого слова async.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">async&lt;/span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">my_coroutine&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># code here&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Создание цикла событий&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>loop &lt;span style="color:#666">=&lt;/span> asyncio&lt;span style="color:#666">.&lt;/span>get_event_loop()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Запуск сопрограммы &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>loop&lt;span style="color:#666">.&lt;/span>run_until_complete(my_coroutine())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># обход асинхронного итератора&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">async&lt;/span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> item &lt;span style="color:#007020;font-weight:bold">in&lt;/span> async_iterator:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(item)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Можно использовать функцию &lt;code>asyncio.gather()&lt;/code> для выполнения нескольких сопрограмм параллельно:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">async&lt;/span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">coroutine1&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;coroutine1 start&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">await&lt;/span> asyncio&lt;span style="color:#666">.&lt;/span>sleep(&lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;coroutine1 end&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">async&lt;/span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">coroutine2&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;coroutine2 start&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">await&lt;/span> asyncio&lt;span style="color:#666">.&lt;/span>sleep(&lt;span style="color:#40a070">2&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;coroutine2 end&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">async&lt;/span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">main&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">await&lt;/span> asyncio&lt;span style="color:#666">.&lt;/span>gather(coroutine1(), coroutine2())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>loop&lt;span style="color:#666">.&lt;/span>run_until_complete(main())
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>В этом примере две сопрограммы &lt;code>coroutine1()&lt;/code> и &lt;code>coroutine2()&lt;/code> запускаются параллельно с помощью функции &lt;code>asyncio.gather()&lt;/code>, которая возвращает результаты выполнения всех сопрограмм.&lt;/p>
+&lt;p>&lt;strong>Ресурсы:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://habr.com/ru/company/wunderfund/blog/700474/">руководство по модулю asyncio в Python | habr&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

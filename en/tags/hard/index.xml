@@ -1,3 +1,96 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hard on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/hard/</link><description>Recent content in Hard on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sun, 10 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/hard/index.xml" rel="self" type="application/rss+xml"/><item><title>1359. Count All Valid Pickup and Delivery Options</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/1359/</link><pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/1359/</guid><description>LeetCode problem 1359
-Problem Statement You&amp;rsquo;re tasked with finding all valid sequences of pickup and delivery events for n orders such that for every order, the delivery always comes after its respective pickup. Because the answer can be immense, you&amp;rsquo;re to return the result modulo (10^9 + 7).
-Naive Solution A straightforward approach might be to generate all potential permutations of pickup and delivery actions and then exclude the unsuitable ones. However, this method would be exceedingly inefficient and would not scale for larger n values.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hard on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/hard/</link><description>Recent content in Hard on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sun, 10 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/hard/index.xml" rel="self" type="application/rss+xml"/><item><title>4. Median of Two Sorted Arrays</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/hard/4/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/hard/4/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/median-of-two-sorted-arrays">LeetCode задача 4&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Даны два отсортированных массива nums1 и nums2 размера m и n соответственно. Найти медиану двух отсортированных массивов.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Чтобы найти медиану, нужно сначала объединить два массива и отсортировать их. После этого медиана будет либо средним элементом, если общее количество элементов нечетное, либо средним значением двух центральных элементов, если общее количество элементов четное.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Мы можем объединить два массива в один большой отсортированный массив и найти медиану этого массива. Этот подход не самый эффективный, но он прост и понятен.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;p>Объедините два массива.
+Отсортируйте объединенный массив.
+Найдите медиану отсортированного массива.&lt;/p>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">findMedianSortedArrays&lt;/span>(nums1, nums2):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Шаг 1: Объединение двух массивов&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> merged &lt;span style="color:#666">=&lt;/span> nums1 &lt;span style="color:#666">+&lt;/span> nums2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Шаг 2: Сортировка объединенного массива&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> merged&lt;span style="color:#666">.&lt;/span>sort()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Шаг 3: Поиск медианы&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(merged)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> middle &lt;span style="color:#666">=&lt;/span> n &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Если n четное&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> n &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> (merged[middle &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">+&lt;/span> merged[middle]) &lt;span style="color:#666">/&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Если n нечетное&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> merged[middle]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>42. Trapping Rain Water</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/hard/42/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/hard/42/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/trapping-rain-water/">LeetCode задача 42&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Дан массив неотрицательных целых чисел, представляющих собой карту высот, где ширина каждой стойки равна 1. Вычислите, сколько воды может удерживать этот массив после дождя.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Мы можем решить эту задачу, двигаясь от краев массива к его центру, отслеживая текущую максимальную высоту с обеих сторон.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Простой и понятный способ решения этой задачи - пройтись по массиву и для каждого элемента вычислить, сколько воды он может удержать.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Инициализируем переменную для хранения общего объема воды, который может быть удержан.&lt;/li>
+&lt;li>Пройдемся по массиву, для каждого элемента:
+&lt;ul>
+&lt;li>Найдем максимальную высоту слева и справа от текущего элемента.&lt;/li>
+&lt;li>Объем воды, который может быть удержан над этим элементом, равен минимальному значению из этих двух максимальных высот, минус высота самого элемента.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Добавим этот объем к общему объему.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">trap&lt;/span>(height):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(height)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Инициализируем переменную для хранения общего объема воды&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> total_water &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Находим максимальную высоту слева от i&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_left &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(height[:i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Находим максимальную высоту справа от i&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_right &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(height[i:])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Объем воды для текущего элемента&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> water &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">min&lt;/span>(max_left, max_right) &lt;span style="color:#666">-&lt;/span> height[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Добавляем этот объем к общему объему&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> total_water &lt;span style="color:#666">+=&lt;/span> water
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> total_water
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1359. Count All Valid Pickup and Delivery Options</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/hard/1359/</link><pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/hard/1359/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/count-all-valid-pickup-and-delivery-options/">LeetCode problem 1359&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>You&amp;rsquo;re tasked with finding all valid sequences of pickup and delivery events for &lt;code>n&lt;/code> orders such that for every order, the delivery always comes after its respective pickup. Because the answer can be immense, you&amp;rsquo;re to return the result modulo (10^9 + 7).&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A straightforward approach might be to generate all potential permutations of pickup and delivery actions and then exclude the unsuitable ones. However, this method would be exceedingly inefficient and would not scale for larger &lt;code>n&lt;/code> values.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;p>Pattern observation can greatly simplify the problem. Breaking down the problem for smaller &lt;code>n&lt;/code> values can reveal these patterns.&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>By breaking down the problem and observing patterns for initial &lt;code>n&lt;/code> values, a pattern emerges, providing insight into solving for any &lt;code>n&lt;/code>.&lt;/p>
+&lt;h3 id="observations">Observations&lt;/h3>
+&lt;ul>
+&lt;li>For &lt;code>n=1&lt;/code>, there&amp;rsquo;s only 1 sequence: &lt;code>(P1, D1)&lt;/code>.&lt;/li>
+&lt;li>For &lt;code>n=2&lt;/code>, by adding &lt;code>(P2,D2)&lt;/code> to the sequence &lt;code>(P1,D1)&lt;/code>, the number of possible sequences becomes &lt;code>3+2+1 = 6&lt;/code>.&lt;/li>
+&lt;li>For &lt;code>n=3&lt;/code>, the number of possible sequences becomes &lt;code>6 x (5+4+3+2+1) = 90&lt;/code>.&lt;/li>
+&lt;li>A pattern emerges where the result for &lt;code>n&lt;/code> can be calculated from the result for &lt;code>n-1&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;p>This pattern can be exploited to create a formula for any &lt;code>n&lt;/code>.&lt;/p>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">countOrders&lt;/span>(n: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> MOD &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">10&lt;/span>&lt;span style="color:#666">**&lt;/span>&lt;span style="color:#40a070">9&lt;/span> &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">7&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> x &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, n &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev_order_combinations &lt;span style="color:#666">=&lt;/span> res
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> order_combinations &lt;span style="color:#666">=&lt;/span> x &lt;span style="color:#666">*&lt;/span> (x &lt;span style="color:#666">*&lt;/span> &lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> prev_order_combinations &lt;span style="color:#666">*&lt;/span> order_combinations &lt;span style="color:#666">%&lt;/span> MOD
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

@@ -1,3 +1,46 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Trees on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/trees/</link><description>Recent content in Trees on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sun, 10 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/trees/index.xml" rel="self" type="application/rss+xml"/><item><title>1372. Longest ZigZag Path in a Binary Tree</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/hard/1372/</link><pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/hard/1372/</guid><description>LeetCode problem 1372
-Problem Statement Given the root of a binary tree, the task is to find the longest ZigZag path contained in that tree. A ZigZag path is defined by a sequence starting at any node and switching between left and right directions at each subsequent step.
-Naive Solution A simplistic approach would be to kick off from every node and emulate the ZigZag movement until it&amp;rsquo;s no longer feasible, all the while updating the longest path encountered.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Trees on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/trees/</link><description>Recent content in Trees on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sun, 10 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/trees/index.xml" rel="self" type="application/rss+xml"/><item><title>1372. Longest ZigZag Path in a Binary Tree</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/1372/</link><pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/1372/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/longest-zigzag-path-in-a-binary-tree/">LeetCode problem 1372&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>Given the root of a binary tree, the task is to find the longest ZigZag path contained in that tree. A ZigZag path is defined by a sequence starting at any node and switching between left and right directions at each subsequent step.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A simplistic approach would be to kick off from every node and emulate the ZigZag movement until it&amp;rsquo;s no longer feasible, all the while updating the longest path encountered. This method can be rather inefficient as it leads to a lot of recalculations.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;p>A Depth First Search (DFS) can be an efficient way to tackle this problem. The current path length and direction can be passed as arguments to the DFS function, negating the need for recalculations.&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>Imagine walking through the tree. Every time you take a step, you must decide whether to go left or right. But, the twist here is that you have to alternate your direction at every step. The challenge? Find the longest path you can take without breaking this rule.&lt;/p>
+&lt;p>To systematically explore all possible paths, we use Depth First Search (DFS), a tree traversal strategy. Instead of starting from scratch at every node, we remember our previous direction (left or right) and continue in the opposite direction, effectively extending our ZigZag path. If a move in the current direction isn&amp;rsquo;t possible, that path ends there, but the search continues. By doing so, we can explore all potential ZigZag paths efficiently.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Initialize DFS from the root, considering both left and right as potential starting directions.&lt;/li>
+&lt;li>At each node, based on your previous direction, try extending the ZigZag by moving in the opposite direction, thus increasing the length.&lt;/li>
+&lt;li>If you hit a dead end (no further movement possible in the current direction), check if this path length is your longest so far.&lt;/li>
+&lt;li>Regardless of whether the current path continues, keep exploring the tree in both directions.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">TreeNode&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, val&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">0&lt;/span>, left&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">None&lt;/span>, right&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">None&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">=&lt;/span> val
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">=&lt;/span> left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">=&lt;/span> right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">longestZigZag&lt;/span>(self, root: TreeNode) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>max_len &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">dfs&lt;/span>(node, direction, length):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> node:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>max_len &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(self&lt;span style="color:#666">.&lt;/span>max_len, length) &lt;span style="color:#60a0b0;font-style:italic"># Update the maximum length&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> direction &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#4070a0">&amp;#34;left&amp;#34;&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic"># If the last direction was left, we try to move right&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(node&lt;span style="color:#666">.&lt;/span>right, &lt;span style="color:#4070a0">&amp;#34;right&amp;#34;&lt;/span>, length &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(node&lt;span style="color:#666">.&lt;/span>left, &lt;span style="color:#4070a0">&amp;#34;left&amp;#34;&lt;/span>, &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(node&lt;span style="color:#666">.&lt;/span>left, &lt;span style="color:#4070a0">&amp;#34;left&amp;#34;&lt;/span>, length &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(node&lt;span style="color:#666">.&lt;/span>right, &lt;span style="color:#4070a0">&amp;#34;right&amp;#34;&lt;/span>, &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(root, &lt;span style="color:#4070a0">&amp;#34;left&amp;#34;&lt;/span>, &lt;span style="color:#40a070">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(root, &lt;span style="color:#4070a0">&amp;#34;right&amp;#34;&lt;/span>, &lt;span style="color:#40a070">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> self&lt;span style="color:#666">.&lt;/span>max_len
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

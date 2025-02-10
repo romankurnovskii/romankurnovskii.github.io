@@ -1,6 +1,76 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SlidingWindow on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/slidingwindow/</link><description>Recent content in SlidingWindow on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 11 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/slidingwindow/index.xml" rel="self" type="application/rss+xml"/><item><title>1456. Maximum Number of Vowels in a Substring of Given Length</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1456/</link><pubDate>Wed, 09 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1456/</guid><description>LeetCode Problem 1456
-Problem Statement Given a string s and an integer k, the task is to return the maximum number of vowel letters in any substring of s with length k.
-Vowel letters in English are &amp;lsquo;a&amp;rsquo;, &amp;rsquo;e&amp;rsquo;, &amp;lsquo;i&amp;rsquo;, &amp;lsquo;o&amp;rsquo;, and &amp;lsquo;u&amp;rsquo;.
-Naive Solution The most straightforward solution to this problem is to take every possible substring of length k and count the number of vowels in each of them. This can be done using nested loops. The outer loop runs through each character in the string while the inner loop counts the vowels for each substring of length k.</description></item><item><title>1493. Longest Subarray of 1's After Deleting One Element</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/1493/</link><pubDate>Fri, 11 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/1493/</guid><description>LeetCode Problem 1493
-Problem Statement Given a binary array nums, you should delete one element from it. The goal is to return the size of the longest subarray containing only 1&amp;rsquo;s after this deletion. If no such subarray exists, return 0.
-Naive Solution A straightforward approach is to manually try deleting each element in the array and checking the length of the longest sequence of 1&amp;rsquo;s. This would involve nested loops: an outer loop for deleting an element and an inner loop to check sequences of 1&amp;rsquo;s.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SlidingWindow on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/slidingwindow/</link><description>Recent content in SlidingWindow on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 11 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/slidingwindow/index.xml" rel="self" type="application/rss+xml"/><item><title>1456. Maximum Number of Vowels in a Substring of Given Length</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1456/</link><pubDate>Wed, 09 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1456/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/">LeetCode Problem 1456&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>Given a string &lt;code>s&lt;/code> and an integer &lt;code>k&lt;/code>, the task is to return the maximum number of vowel letters in any substring of &lt;code>s&lt;/code> with length &lt;code>k&lt;/code>.&lt;/p>
+&lt;p>Vowel letters in English are &amp;lsquo;a&amp;rsquo;, &amp;rsquo;e&amp;rsquo;, &amp;lsquo;i&amp;rsquo;, &amp;lsquo;o&amp;rsquo;, and &amp;lsquo;u&amp;rsquo;.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>The most straightforward solution to this problem is to take every possible substring of length &lt;code>k&lt;/code> and count the number of vowels in each of them. This can be done using nested loops. The outer loop runs through each character in the string while the inner loop counts the vowels for each substring of length &lt;code>k&lt;/code>. The maximum count is then returned.&lt;/p>
+&lt;p>However, this naive solution would be computationally expensive, with a time complexity of $O(n*k)$ where n is the length of the string &lt;code>s&lt;/code>.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;p>The problem can be efficiently solved using a technique called the sliding window approach.&lt;/p>
+&lt;h2 id="approach-sliding-window">Approach: Sliding Window&lt;/h2>
+&lt;p>The idea is to use a window of size &lt;code>k&lt;/code> and slide it across the string &lt;code>s&lt;/code>. Instead of counting the number of vowels in the entire window every time, we adjust the count by adding the new character and removing the leftmost character as the window slides.&lt;/p>
+&lt;p>This way, the number of operations is reduced to just two for every slide, making it a more efficient solution.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Initialize a counter for the number of vowels and a &lt;code>max_vowels&lt;/code> variable to keep track of the maximum number of vowels seen.&lt;/li>
+&lt;li>Traverse through the first &lt;code>k&lt;/code> characters of the string, increasing the counter for each vowel seen.&lt;/li>
+&lt;li>Set &lt;code>max_vowels&lt;/code> to the value of the counter.&lt;/li>
+&lt;li>Start sliding the window from the &lt;code>k&lt;/code>th character. For every new character:
+&lt;ul>
+&lt;li>If it&amp;rsquo;s a vowel, increase the counter.&lt;/li>
+&lt;li>Check the leftmost character of the previous window (i.e., &lt;code>s[i - k]&lt;/code>). If it&amp;rsquo;s a vowel, decrease the counter.&lt;/li>
+&lt;li>Update &lt;code>max_vowels&lt;/code> if the counter is greater than its current value.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">maxVowels&lt;/span>(s, k):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> vowels &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>([&lt;span style="color:#4070a0">&amp;#39;a&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;e&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;i&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;o&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;u&amp;#39;&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">sum&lt;/span>(&lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> char &lt;span style="color:#007020;font-weight:bold">in&lt;/span> s[:k] &lt;span style="color:#007020;font-weight:bold">if&lt;/span> char &lt;span style="color:#007020;font-weight:bold">in&lt;/span> vowels)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_vowels &lt;span style="color:#666">=&lt;/span> count
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(k, &lt;span style="color:#007020">len&lt;/span>(s)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Add the new character to the count if it&amp;#39;s a vowel&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">+=&lt;/span> s[i] &lt;span style="color:#007020;font-weight:bold">in&lt;/span> vowels
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Remove the leftmost character of the previous window from the count if it&amp;#39;s a vowel&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">-=&lt;/span> s[i &lt;span style="color:#666">-&lt;/span> k] &lt;span style="color:#007020;font-weight:bold">in&lt;/span> vowels
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_vowels &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(max_vowels, count)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> max_vowels
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1493. Longest Subarray of 1's After Deleting One Element</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1493/</link><pubDate>Fri, 11 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/1493/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/">LeetCode Problem 1493&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>Given a binary array &lt;code>nums&lt;/code>, you should delete one element from it. The goal is to return the size of the longest subarray containing only 1&amp;rsquo;s after this deletion. If no such subarray exists, return 0.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A straightforward approach is to manually try deleting each element in the array and checking the length of the longest sequence of 1&amp;rsquo;s. This would involve nested loops: an outer loop for deleting an element and an inner loop to check sequences of 1&amp;rsquo;s. This method, however, can be inefficient for larger arrays.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;p>Consider that we are allowed to have a subarray with a single zero. It might make things simpler! The sliding window approach will be handy here.&lt;/p>
+&lt;h2 id="approach-sliding-window-with-a-twist">Approach: Sliding Window with a Twist&lt;/h2>
+&lt;p>We can use the sliding window technique again for this problem. However, we need to adapt it slightly. This time, our window can contain at most one zero. Thus, while expanding the window, we should be mindful of the zeros.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Initialize two pointers, &lt;code>left&lt;/code> and &lt;code>right&lt;/code>, to represent the window&amp;rsquo;s boundaries. Also, initialize a counter &lt;code>zeroCount&lt;/code> to track zeros in the current window.&lt;/li>
+&lt;li>Expand the right boundary of the window by moving the &lt;code>right&lt;/code> pointer.&lt;/li>
+&lt;li>If the current number is 0, increment the &lt;code>zeroCount&lt;/code>.&lt;/li>
+&lt;li>If &lt;code>zeroCount&lt;/code> becomes 2, move the &lt;code>left&lt;/code> pointer to the right until a zero is excluded, and decrement the &lt;code>zeroCount&lt;/code>.&lt;/li>
+&lt;li>Track the maximum length of the window found.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">longestSubarray&lt;/span>(nums):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> zeroCount &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> maxLength &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> right &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(nums)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nums[right] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> zeroCount &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> zeroCount &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nums[left] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> zeroCount &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Subtract 1 because we need to delete one element.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> maxLength &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(maxLength, right &lt;span style="color:#666">-&lt;/span> left)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> maxLength
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

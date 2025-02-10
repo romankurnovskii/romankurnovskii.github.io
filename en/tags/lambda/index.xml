@@ -1,9 +1,598 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lambda on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/lambda/</link><description>Recent content in Lambda on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sun, 11 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/lambda/index.xml" rel="self" type="application/rss+xml"/><item><title>Lambda</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/lambda/</link><pubDate>Sun, 11 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/lambda/</guid><description>About AWS Lambda AWS Lambda User Guide AWS Lambda is a serverless computing service that runs program code in response to certain events and is responsible for automatically allocating the necessary computing resources.
-AWS Lambda automatically runs program code in response to various events, such as HTTP requests through Amazon API Gateway, changing objects in Amazon Simple Storage Service garbage cans (Amazon S3), updating tables in Amazon DynamoDB or changing states in AWS Step Functions.
-Supports for Java, Go, PowerShell, Node.</description></item><item><title>Serverless: Flask+API Gateway+Lambda+MongoDB</title><link>https://romankurnovskii.com/en/posts/serverless-flask-lambda-api-gateway-mongodb/</link><pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/serverless-flask-lambda-api-gateway-mongodb/</guid><description>&amp;ldquo;mongodb&amp;rdquo; free tier vs &amp;ldquo;documentdb&amp;rdquo;
-Project structure - src - app.py - mongo.py - .env - requirements.txt - serverless.yml Sources
-Add AIM user Setup specific user for serverless deployment
-username: serverless-deployer
-aws aim documentation Set policy Create:
-ServerLessDeployerPolicyGroup ServerLessDeployerPolicy Policy:
-{ &amp;#34;Statement&amp;#34;: [ { &amp;#34;Action&amp;#34;: [ &amp;#34;apigateway:*&amp;#34;, &amp;#34;cloudformation:CancelUpdateStack&amp;#34;, &amp;#34;cloudformation:ContinueUpdateRollback&amp;#34;, &amp;#34;cloudformation:CreateChangeSet&amp;#34;, &amp;#34;cloudformation:CreateStack&amp;#34;, &amp;#34;cloudformation:CreateUploadBucket&amp;#34;, &amp;#34;cloudformation:DeleteStack&amp;#34;, &amp;#34;cloudformation:Describe*&amp;#34;, &amp;#34;cloudformation:EstimateTemplateCost&amp;#34;, &amp;#34;cloudformation:ExecuteChangeSet&amp;#34;, &amp;#34;cloudformation:Get*&amp;#34;, &amp;#34;cloudformation:List*&amp;#34;, &amp;#34;cloudformation:UpdateStack&amp;#34;, &amp;#34;cloudformation:UpdateTerminationProtection&amp;#34;, &amp;#34;cloudformation:ValidateTemplate&amp;#34;, &amp;#34;dynamodb:CreateTable&amp;#34;, &amp;#34;dynamodb:DeleteTable&amp;#34;, &amp;#34;dynamodb:DescribeTable&amp;#34;, &amp;#34;dynamodb:DescribeTimeToLive&amp;#34;, &amp;#34;dynamodb:UpdateTimeToLive&amp;#34;, &amp;#34;ec2:AttachInternetGateway&amp;#34;, &amp;#34;ec2:AuthorizeSecurityGroupIngress&amp;#34;, &amp;#34;ec2:CreateInternetGateway&amp;#34;, &amp;#34;ec2:CreateNetworkAcl&amp;#34;, &amp;#34;ec2:CreateNetworkAclEntry&amp;#34;, &amp;#34;ec2:CreateRouteTable&amp;#34;, &amp;#34;ec2:CreateSecurityGroup&amp;#34;, &amp;#34;ec2:CreateSubnet&amp;#34;, &amp;#34;ec2:CreateTags&amp;#34;, &amp;#34;ec2:CreateVpc&amp;#34;, &amp;#34;ec2:DeleteInternetGateway&amp;#34;, &amp;#34;ec2:DeleteNetworkAcl&amp;#34;, &amp;#34;ec2:DeleteNetworkAclEntry&amp;#34;, &amp;#34;ec2:DeleteRouteTable&amp;#34;, &amp;#34;ec2:DeleteSecurityGroup&amp;#34;, &amp;#34;ec2:DeleteSubnet&amp;#34;, &amp;#34;ec2:DeleteVpc&amp;#34;, &amp;#34;ec2:Describe*&amp;#34;, &amp;#34;ec2:DetachInternetGateway&amp;#34;, &amp;#34;ec2:ModifyVpcAttribute&amp;#34;, &amp;#34;events:DeleteRule&amp;#34;, &amp;#34;events:DescribeRule&amp;#34;, &amp;#34;events:ListRuleNamesByTarget&amp;#34;, &amp;#34;events:ListRules&amp;#34;, &amp;#34;events:ListTargetsByRule&amp;#34;, &amp;#34;events:PutRule&amp;#34;, &amp;#34;events:PutTargets&amp;#34;, &amp;#34;events:RemoveTargets&amp;#34;, &amp;#34;iam:AttachRolePolicy&amp;#34;, &amp;#34;iam:CreateRole&amp;#34;, &amp;#34;iam:DeleteRole&amp;#34;, &amp;#34;iam:DeleteRolePolicy&amp;#34;, &amp;#34;iam:DetachRolePolicy&amp;#34;, &amp;#34;iam:GetRole&amp;#34;, &amp;#34;iam:PassRole&amp;#34;, &amp;#34;iam:PutRolePolicy&amp;#34;, &amp;#34;iot:CreateTopicRule&amp;#34;, &amp;#34;iot:DeleteTopicRule&amp;#34;, &amp;#34;iot:DisableTopicRule&amp;#34;, &amp;#34;iot:EnableTopicRule&amp;#34;, &amp;#34;iot:ReplaceTopicRule&amp;#34;, &amp;#34;kinesis:CreateStream&amp;#34;, &amp;#34;kinesis:DeleteStream&amp;#34;, &amp;#34;kinesis:DescribeStream&amp;#34;, &amp;#34;lambda:*&amp;#34;, &amp;#34;logs:CreateLogDelivery&amp;#34;, &amp;#34;logs:CreateLogGroup&amp;#34;, &amp;#34;logs:DeleteLogGroup&amp;#34;, &amp;#34;logs:DescribeLogGroups&amp;#34;, &amp;#34;logs:DescribeLogStreams&amp;#34;, &amp;#34;logs:FilterLogEvents&amp;#34;, &amp;#34;logs:GetLogEvents&amp;#34;, &amp;#34;logs:PutSubscriptionFilter&amp;#34;, &amp;#34;s3:CreateBucket&amp;#34;, &amp;#34;s3:DeleteBucket&amp;#34;, &amp;#34;s3:DeleteBucketPolicy&amp;#34;, &amp;#34;s3:DeleteObject&amp;#34;, &amp;#34;s3:DeleteObjectVersion&amp;#34;, &amp;#34;s3:GetObject&amp;#34;, &amp;#34;s3:GetObjectVersion&amp;#34;, &amp;#34;s3:ListAllMyBuckets&amp;#34;, &amp;#34;s3:ListBucket&amp;#34;, &amp;#34;s3:PutBucketNotification&amp;#34;, &amp;#34;s3:PutBucketPolicy&amp;#34;, &amp;#34;s3:PutBucketTagging&amp;#34;, &amp;#34;s3:PutBucketWebsite&amp;#34;, &amp;#34;s3:PutEncryptionConfiguration&amp;#34;, &amp;#34;s3:PutObject&amp;#34;, &amp;#34;sns:CreateTopic&amp;#34;, &amp;#34;sns:DeleteTopic&amp;#34;, &amp;#34;sns:GetSubscriptionAttributes&amp;#34;, &amp;#34;sns:GetTopicAttributes&amp;#34;, &amp;#34;sns:ListSubscriptions&amp;#34;, &amp;#34;sns:ListSubscriptionsByTopic&amp;#34;, &amp;#34;sns:ListTopics&amp;#34;, &amp;#34;sns:SetSubscriptionAttributes&amp;#34;, &amp;#34;sns:SetTopicAttributes&amp;#34;, &amp;#34;sns:Subscribe&amp;#34;, &amp;#34;sns:Unsubscribe&amp;#34;, &amp;#34;states:CreateStateMachine&amp;#34;, &amp;#34;states:DeleteStateMachine&amp;#34; ], &amp;#34;Effect&amp;#34;: &amp;#34;Allow&amp;#34;, &amp;#34;Resource&amp;#34;: &amp;#34;*&amp;#34; } ], &amp;#34;Version&amp;#34;: &amp;#34;2012-10-17&amp;#34; } Create user copy the API Key &amp;amp; Secret</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lambda on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/lambda/</link><description>Recent content in Lambda on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sun, 11 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/lambda/index.xml" rel="self" type="application/rss+xml"/><item><title>Lambda</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/lambda/</link><pubDate>Sun, 11 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/lambda/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/lambda/">AWS Lambda&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/lambda/?id=docs_gateway">AWS Lambda User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>AWS Lambda is a &lt;a href="https://aws.amazon.com/serverless/">serverless computing service&lt;/a> that runs program code in response to certain events and is responsible for automatically allocating the necessary computing resources.&lt;/p>
+&lt;p>AWS Lambda automatically runs program code in response to &lt;a href="http://docs.aws.amazon.com/lambda/latest/dg/intro-core-components.html#intro-core-components-event-sources">various events&lt;/a>, such as HTTP requests through &lt;a href="https://aws.amazon.com/api-gateway/">Amazon API Gateway&lt;/a>, changing objects in &lt;a href="https://aws.amazon.com/s3/">Amazon Simple Storage Service&lt;/a> garbage cans (Amazon S3), updating tables in &lt;a href="https://aws.amazon.com/dynamodb/">Amazon DynamoDB&lt;/a> or changing states in &lt;a href="https://aws.amazon.com/step-functions/">AWS Step Functions&lt;/a>.&lt;/p>
+&lt;p>Supports for Java, Go, PowerShell, Node.js, C#, Python and Ruby. It also provides a Runtime API which allows you to use any &lt;strong>additional programming languages&lt;/strong> to author your functions. A runtime is a program that runs a Lambda function&amp;rsquo;s handler method when the function is invoked. You can include a runtime in your function&amp;rsquo;s deployment package in the form of an executable file named bootstrap&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/product-marketing/Lambda/Diagrams/product-page-diagram_Lambda-RealTimeFileProcessing.a59577de4b6471674a540b878b0b684e0249a18c.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>When you &lt;a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html">publish a version&lt;/a>, AWS Lambda makes a snapshot copy of the Lambda function code (and configuration) in the $LATEST version. A published version is immutable.&lt;/p>
+&lt;p>&lt;strong>Lambda execution role&lt;/strong> is an IAM role that grants the function permission to access AWS services and resources. Under Attach permissions policies, choose the AWS managed policies &lt;code>AWSLambdaBasicExecutionRole&lt;/code> and &lt;code>AWSXRayDaemonWriteAccess&lt;/code>.&lt;/p>
+&lt;p>&lt;a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html#permissions-executionrole-features">AWS managed policies for Lambda features&lt;/a>&lt;/p>
+&lt;h2 id="digest">Digest&lt;/h2>
+&lt;ul>
+&lt;li>Types of lambda invocation
+&lt;ul>
+&lt;li>RequestResponse.&lt;/li>
+&lt;li>Event.&lt;/li>
+&lt;li>Dryrun.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Lambda execution context is a temporary runtime environment that initializes any external dependencies of our Lambda function code, such as database connections or HTTP endpoints&lt;/li>
+&lt;li>Lambda &lt;strong>Environment variables&lt;/strong> are variables that enable you to dynamically pass settings to your function code and libraries, without making changes to your code. Environment variables are key-value pairs that you create and modify as part of your function configuration.&lt;/li>
+&lt;li>Lambda concurrent executions = (invocations per second) x (average execution duration in seconds). Concurrency limit of lambda execution, Default 1000 Reserved - 900 unreserved 100. Will get &lt;strong>throttled&lt;/strong> if it exceeds &lt;strong>concurrency limit&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>AWS_PROXY&lt;/strong> in API gateway is primarily used for Lambda proxy integration.&lt;/li>
+&lt;li>A Lambda &lt;strong>authorizer&lt;/strong> is an API Gateway feature that uses a Lambda function to control access to your API. Lambda authorizer can be used for custom authorization scheme. 2 types:
+&lt;ul>
+&lt;li>Token based.&lt;/li>
+&lt;li>Request parameter based Lambda authorizer.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Lambda deployment configuration:
+&lt;ul>
+&lt;li>HalfAtATime&lt;/li>
+&lt;li>Canary&lt;/li>
+&lt;li>Linear.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>AWS Lambda compute platform deployments cannot use an in-place deployment type&lt;/li>
+&lt;li>Increasing memory in lambda will increase CPU in lambda&lt;/li>
+&lt;li>Lambda Versioning:
+&lt;ul>
+&lt;li>By default, each AWS Lambda function has a single current version of the code. Clients of Lambda function can call a specific version or at the latest implementation&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Lambda Alias: You can create one or more aliases for our AWS Lambda function. A Lambda alias is like a pointer to a specific Lambda function version. Users can access the function version using the alias ARN&lt;/li>
+&lt;li>Lambda@Edge is a feature of Amazon CloudFront that lets you run code closer to users of your application, which improves performance and reduces latency&lt;/li>
+&lt;li>Lambda Layer - Layer is a ZIP archive that contains libraries, a custom runtime, or other dependencies. With layers, you can use libraries in your function without needing to include them in your deployment package&lt;/li>
+&lt;li>&lt;strong>Amazon DynamoDB&lt;/strong> is integrated with AWS Lambda so that you can trigger pieces of code that automatically respond to events in DynamoDB Streams. AWSLambdaDynamoDBExecutionRole is required to enable Lambda to work with DynamoDB&lt;/li>
+&lt;li>&lt;strong>API Gateway&lt;/strong> - Stage variables are name-value pairs that you can define as configuration attributes associated with a deployment stage of a REST API.&lt;/li>
+&lt;li>Integrating &lt;strong>Cloud Watch Events&lt;/strong> with lambda can be used for &lt;strong>scheduling events&lt;/strong>&lt;/li>
+&lt;li>If there is an incompatible output returned from a Lambda proxy integration backend, it will return 502&lt;/li>
+&lt;li>To &lt;strong>resolve lambda throttled&lt;/strong> exception when using Cognito events, perform retry on sync.&lt;/li>
+&lt;li>Lambda Event hook running order:
+&lt;ul>
+&lt;li>start -&amp;gt; BeforeAllowTraffic -&amp;gt; AllowTraffic -&amp;gt; After AllowTraffic -&amp;gt; End&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>AWS Lambda runs function code securely within a VPC b default. To enable your Lambda function to access resources inside your private VPC, you must provide additional VPC-specific configuration information that includes VPC subnet IDs and security group IDs. AWS&lt;/li>
+&lt;li>Lambda uses this information to set up elastic network interfaces (&lt;a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">ENIs&lt;/a>) that enable your function to connect securely to other resources within your private VPC&lt;/li>
+&lt;li>Lambda &lt;strong>Asynchronous invocation&lt;/strong> can be triggered by Amazon Simple Storage Service, Amazon Simple Notification Service, Amazon Simple Email Service, AWS CloudFormation, Amazon CloudWatch Logs, Amazon CloudWatch Events, AWS CodeCommit, AWS Config.&lt;/li>
+&lt;li>Lambda Limits: &lt;a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html&lt;/a>&lt;/li>
+&lt;li>Lambda provides 500 MB of additional disk space as a workspace.&lt;/li>
+&lt;li>Lambda logs all stout for a lambda function to CloudWatch Logs. Any additional logging calls used in the function will also be sent to CloudWatch Logs.&lt;/li>
+&lt;li>To connect to a VPC, lambda &lt;strong>function execution role&lt;/strong> must have the following permissions: ec2:Create Networkinterface, ec2:DescribeNetworkinterfaces, ec2:Delete Networkinterface. These permissions are included in the AWSLambdaVPCAccessExecutionRole managed policy&lt;/li>
+&lt;li>When lambda execution is hit by concurrency limit, you need to request AWS to increase concurrency limit&lt;/li>
+&lt;li>For stream-based services like Dynamo b streams, that don&amp;rsquo;t invoke Lambda functions directly, the event source mapping configuration should be made on the Lambda side.&lt;/li>
+&lt;li>A deployment package is a ZIP archive that contains your function code and dependencies.&lt;/li>
+&lt;li>You can unload the package directly to lambda. Or you can use an Amazon S3 bucket and then upload it to lambda. If the deployment package is larger than 50 MB. you must use Amazon 53&lt;/li>
+&lt;li>Lambda can incur a first run penalty also called &lt;strong>cold starts.&lt;/strong> Cold starts can cause slower than expected behavior on infrequently run functions or functions with high concurrency demands&lt;/li>
+&lt;/ul>
+&lt;h2 id="price">Price&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/lambda/pricing/">Price&lt;/a>&lt;/p>
+&lt;p>Price x86&lt;/p>
+&lt;ul>
+&lt;li>0.000016667 USD per gigabyte-second&lt;/li>
+&lt;li>0,20 USD per 1 million requests&lt;/li>
+&lt;/ul>
+&lt;p>Arm price&lt;/p>
+&lt;ul>
+&lt;li>0,0000133334 USD for each gigabyte-second&lt;/li>
+&lt;li>0,20 USD for 1 million queries&lt;/li>
+&lt;/ul>
+&lt;h2 id="practice">Practice&lt;/h2>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/hxAkVn1u0cc?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
+&lt;/div>
+&lt;p>In the AWS Management Console search bar, type Lambda and select Lambda under &amp;ldquo;&lt;strong>&lt;strong>Services&lt;/strong>&lt;/strong>&amp;rdquo;:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/lambda-1.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;a href="https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2">https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2#&lt;/a>&lt;/p>
+&lt;p>On page &lt;strong>Functions&lt;/strong> click &lt;strong>Create a function&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/lambda-2.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;strong>Author from scratch&lt;/strong> is selected and enter the following values in the bottom form:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Function name&lt;/strong>: *MyCustomFunc&lt;/li>
+&lt;li>&lt;strong>Runtime&lt;/strong>: Node.js 16.X&lt;/li>
+&lt;/ul>
+&lt;p>I select this section because I use the cloudacademy account. This role gives you permission to create functions&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Permissions&lt;/strong>: &lt;strong>Change default execution role&lt;/strong>.
+&lt;ul>
+&lt;li>&lt;strong>Execution Role&lt;/strong>: Select &lt;strong>Use an existing role&lt;/strong>.&lt;/li>
+&lt;li>&lt;strong>Existing role&lt;/strong>: Select the role beginning with &lt;strong>cloudacademylabs-LambdaExecutionRole&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/lambda-3.png"
+id="zoom-default"
+alt="Lambda"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="create-function">Create function&lt;/h3>
+&lt;p>I&amp;rsquo;m writing a function to view the log, I&amp;rsquo;ll add a print to the terminal. And I&amp;rsquo;ll also add processing of the message I receive (In the next step in the testing section)&lt;/p>
+&lt;p>The function takes as an object &lt;code>event&lt;/code> which contains an array of Records. On the 1st (0) position the object &lt;code>Sns&lt;/code> (name of the service SNS Notifications).&lt;/p>
+&lt;p>In the object itself there will be 2 values:&lt;/p>
+&lt;ul>
+&lt;li>cook_secs - cooking time (microwave)&lt;/li>
+&lt;li>req_secs - cooking time (prepare)&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>console.log(&lt;span style="color:#4070a0">&amp;#39;Loading function&amp;#39;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>exports.handler &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">function&lt;/span>(event, context) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> console.log(JSON.stringify(event, &lt;span style="color:#007020;font-weight:bold">null&lt;/span>, &lt;span style="color:#40a070">2&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">const&lt;/span> message &lt;span style="color:#666">=&lt;/span> JSON.parse(event.Records[&lt;span style="color:#40a070">0&lt;/span>].Sns.Message);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (message.cook_secs &lt;span style="color:#666">&amp;lt;&lt;/span> message.req_secs) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> (message.pre) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.succeed(&lt;span style="color:#4070a0">&amp;#34;User ended &amp;#34;&lt;/span> &lt;span style="color:#666">+&lt;/span> message.pre &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#4070a0">&amp;#34; preset early&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.succeed(&lt;span style="color:#4070a0">&amp;#34;User ended custom cook time early&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> context.succeed();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>};
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="deploy">Deploy&lt;/h3>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/lambda-4.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="test">Test&lt;/h3>
+&lt;p>This functionality allows you to test how the function reacts to certain events. Let&amp;rsquo;s try to add an event from SNS Notifications.&lt;/p>
+&lt;p>Let&amp;rsquo;s choose from the list&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/lambda-5.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>We get a template in which we make some changes, adjust the field &lt;code>Message&lt;/code> - the one that we will process in our function.&lt;/p>
+&lt;p>Field &lt;code>Message&lt;/code> - string, so our object will need to be wrapped in quotes&lt;/p>
+&lt;p>To make the handler understand that we put quotation marks inside quotation marks, we must put a special symbol &lt;code>\&lt;/code> before the quotation mark.&lt;/p>
+&lt;p>Finally we update one line and save it - &lt;strong>Create&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/lambda-6.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Now we click the &lt;strong>Test&lt;/strong> button.&lt;/p>
+&lt;p>Since &lt;code>cook_secs&lt;/code> in our event was less than &lt;code>req_secs&lt;/code>, the function printed the first condition, and below in &lt;strong>Function Logs&lt;/strong> we see the message that we print when we initialize the &lt;code>Loading function&lt;/code>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/lambda-7.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="questions">Questions&lt;/h2>
+&lt;h3 id="q1">Q1&lt;/h3>
+&lt;p>&lt;strong>When working with a published version of the AWS Lambda function, you should note that the _____.&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Use the AWS Management Console to create and configure the cluster.&lt;/li>
+&lt;li>Create a cron job to schedule the cluster deployment using the &lt;code>_aws cloudformation deploy_&lt;/code> command&lt;/li>
+&lt;li>Create a configuration file with the .config extension and place it into the .ebextensions folder in the application package.&lt;/li>
+&lt;li>Build an AWS Lambda function that polls to the ElasticBeanstalk environment deployments and create and configure the Amazon ElastiCache cluster.&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-resources.html">AWS Secrets Manager&lt;/a>&lt;/p>
+&lt;p>&lt;mark style="color:white">C&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q2">Q2&lt;/h3>
+&lt;p>&lt;strong>A developer is building a streamlined development process for Lambda functions related to S3 storage.The developer needs a consistent, reusable code blueprint that can be easily customized to manage Lambda function definition and deployment, the S3 events to be managed and the Identity Access Management (IAM) policies definition.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which of the following AWS solutions offers is best suited for this objective?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>&lt;a href="https://aws.amazon.com/developer/tools/">AWS Software Development Kits (SDKs)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://aws.amazon.com/serverless/sam/">AWS Serverless Application Model (SAM)&lt;/a> templates&lt;/li>
+&lt;li>&lt;a href="https://aws.amazon.com/systems-manager/">AWS Systems Manager&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tags/step-functions/">AWS Step Functions&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html">Serverless Application Model&lt;/a>&lt;/p>
+&lt;p>&lt;mark style="color:white">2&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q3">Q3&lt;/h3>
+&lt;p>&lt;strong>A developer is adding sign-up and sign-in functionality to an application. The application is required to make an API call to a custom analytics solution to log user sign-in events&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which combination of actions should the developer take to satisfy these requirements? (Select TWO.)&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Use Amazon Cognito to provide the sign-up and sign-in functionality&lt;/li>
+&lt;li>Use AWS IAM to provide the sign-up and sign-in functionality&lt;/li>
+&lt;li>Configure an AWS Config rule to make the API call triggered by the post-authentication event&lt;/li>
+&lt;li>Invoke an Amazon API Gateway method to make the API call triggered by the post-authentication event&lt;/li>
+&lt;li>Execute an AWS Lambda function to make the API call triggered by the post-authentication event&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>Amazon Cognito adds user sign-up, sign-in, and access control to web and mobile applications quickly and easily. Users can also create an AWS Lambda function to make an API call to a custom analytics solution and then trigger that function with an Amazon Cognito post authentication trigger.&lt;/p>
+&lt;p>&lt;mark style="color:white">1, 5&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q4">Q4&lt;/h3>
+&lt;p>&lt;strong>A developer is designing a web application that allows the users to post comments and receive a real-time feedback.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which architectures meet these requirements? (Select TWO.)&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Create an AWS AppSync schema and corresponding APIs. Use an &lt;a href="../dynamodb">Amazon DynamoDB&lt;/a> table as the data store.&lt;/li>
+&lt;li>Create a WebSocket API in Amazon API Gateway. Use an &lt;a href="../lambda">AWS Lambda&lt;/a> function as the backend and an &lt;a href="../dynamodb">Amazon DynamoDB&lt;/a> table as the data store&lt;/li>
+&lt;li>Create an AWS Elastic Beanstalk application backed by an Amazon RDS database. Configure the application to allow long-lived TCP/IP sockets.&lt;/li>
+&lt;li>Create a GraphQL endpoint in Amazon API Gateway. Use an &lt;a href="../dynamodb">Amazon DynamoDB&lt;/a> table as the data store.&lt;/li>
+&lt;li>Enable WebSocket on Amazon CloudFront. Use an &lt;a href="../lambda">AWS Lambda&lt;/a> function as the origin and an Amazon Aurora DB cluster as the data store&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="https://aws.amazon.com/appsync/">AWS AppSync&lt;/a> simplifies application development by letting users create a flexible API to securely access, manipulate, and combine data from one or more data sources. AWS AppSync is a managed service that uses GraphQL to make it easy for applications to get the exact data they need.&lt;/p>
+&lt;p>AWS AppSync allows users to build scalable applications, including those requiring &lt;a href="https://docs.aws.amazon.com/appsync/latest/devguide/real-time-data.html">real-time updates&lt;/a>, on a range of data sources, including Amazon DynamoDB. In &lt;a href="../api-gateway">Amazon API Gateway&lt;/a>, users can &lt;a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api.html">create a WebSocket API&lt;/a> as a stateful frontend for an AWS service (such as &lt;a href="../lambda">AWS Lambda&lt;/a> or DynamoDB) or for an HTTP endpoint.&lt;/p>
+&lt;p>The WebSocket API invokes the backend based on the content of the messages it receives from client applications. Unlike a REST API, which receives and responds to requests, a WebSocket API supports two-way communication between client applications and the backend.&lt;/p>
+&lt;p>&lt;mark style="color:white">1, 2&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q5">Q5&lt;/h3>
+&lt;p>&lt;strong>A food delivery company is building a feature that requests reviews from customers after their orders are delivered. The solution should be a short-running process that can message customers simultaneously at various contact points including email, text, and mobile push notifications.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which approach best meets these requirements?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Use EventBridge with Kinesis Data Streams to send messages.&lt;/li>
+&lt;li>Use a Step Function to send &lt;a href="../sqs">SQS&lt;/a> messages.&lt;/li>
+&lt;li>Use a &lt;a href="../lambda">Lambda function&lt;/a> to send &lt;a href="../sns">SNS&lt;/a> messages.&lt;/li>
+&lt;li>Use AWS Batch and &lt;a href="../sns">SNS&lt;/a> to send messages.&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">https://docs.aws.amazon.com/sns/latest/dg/welcome.html&lt;/a>&lt;/p>
+&lt;p>&lt;mark style="color:white">3&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;h3 id="community-posts">Community posts&lt;/h3></description></item><item><title>Serverless: Flask+API Gateway+Lambda+MongoDB</title><link>https://romankurnovskii.com/en/posts/serverless-flask-lambda-api-gateway-mongodb/</link><pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/serverless-flask-lambda-api-gateway-mongodb/</guid><description>&lt;p>&amp;ldquo;mongodb&amp;rdquo; free tier vs &amp;ldquo;documentdb&amp;rdquo;&lt;/p>
+&lt;h2 id="project-structure">Project structure&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>- src
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - app.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - mongo.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>- .env
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>- requirements.txt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>- serverless.yml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://github.com/romankurnovskii/romankurnovskii.github.io/tree/main/content/posts/serverless-flask-lambda-api-gateway-mongodb/example">Sources&lt;/a>&lt;/p>
+&lt;h2 id="add-aim-user">Add AIM user&lt;/h2>
+&lt;p>Setup specific user for serverless deployment&lt;/p>
+&lt;p>&lt;strong>username&lt;/strong>: serverless-deployer&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://us-east-1.console.aws.amazon.com/iam/home#/users$new?step=details">aws aim&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.serverless.com/framework/docs/providers/aws/guide/credentials">documentation&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="aws-aim-setup-user.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="set-policy">Set policy&lt;/h3>
+&lt;p>Create:&lt;/p>
+&lt;ol>
+&lt;li>ServerLessDeployerPolicyGroup&lt;/li>
+&lt;li>ServerLessDeployerPolicy&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Policy:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;Statement&amp;#34;&lt;/span>: [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;Action&amp;#34;&lt;/span>: [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;apigateway:*&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;cloudformation:CancelUpdateStack&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;cloudformation:ContinueUpdateRollback&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;cloudformation:CreateChangeSet&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;cloudformation:CreateStack&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;cloudformation:CreateUploadBucket&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;cloudformation:DeleteStack&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;cloudformation:Describe*&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;cloudformation:EstimateTemplateCost&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;cloudformation:ExecuteChangeSet&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;cloudformation:Get*&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;cloudformation:List*&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;cloudformation:UpdateStack&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;cloudformation:UpdateTerminationProtection&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;cloudformation:ValidateTemplate&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;dynamodb:CreateTable&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;dynamodb:DeleteTable&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;dynamodb:DescribeTable&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;dynamodb:DescribeTimeToLive&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;dynamodb:UpdateTimeToLive&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:AttachInternetGateway&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:AuthorizeSecurityGroupIngress&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:CreateInternetGateway&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:CreateNetworkAcl&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:CreateNetworkAclEntry&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:CreateRouteTable&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:CreateSecurityGroup&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:CreateSubnet&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:CreateTags&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:CreateVpc&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:DeleteInternetGateway&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:DeleteNetworkAcl&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:DeleteNetworkAclEntry&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:DeleteRouteTable&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:DeleteSecurityGroup&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:DeleteSubnet&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:DeleteVpc&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:Describe*&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:DetachInternetGateway&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;ec2:ModifyVpcAttribute&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;events:DeleteRule&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;events:DescribeRule&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;events:ListRuleNamesByTarget&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;events:ListRules&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;events:ListTargetsByRule&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;events:PutRule&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;events:PutTargets&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;events:RemoveTargets&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;iam:AttachRolePolicy&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;iam:CreateRole&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;iam:DeleteRole&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;iam:DeleteRolePolicy&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;iam:DetachRolePolicy&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;iam:GetRole&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;iam:PassRole&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;iam:PutRolePolicy&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;iot:CreateTopicRule&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;iot:DeleteTopicRule&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;iot:DisableTopicRule&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;iot:EnableTopicRule&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;iot:ReplaceTopicRule&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;kinesis:CreateStream&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;kinesis:DeleteStream&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;kinesis:DescribeStream&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;lambda:*&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;logs:CreateLogDelivery&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;logs:CreateLogGroup&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;logs:DeleteLogGroup&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;logs:DescribeLogGroups&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;logs:DescribeLogStreams&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;logs:FilterLogEvents&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;logs:GetLogEvents&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;logs:PutSubscriptionFilter&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:CreateBucket&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:DeleteBucket&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:DeleteBucketPolicy&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:DeleteObject&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:DeleteObjectVersion&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:GetObject&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:GetObjectVersion&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:ListAllMyBuckets&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:ListBucket&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:PutBucketNotification&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:PutBucketPolicy&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:PutBucketTagging&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:PutBucketWebsite&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:PutEncryptionConfiguration&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:PutObject&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;sns:CreateTopic&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;sns:DeleteTopic&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;sns:GetSubscriptionAttributes&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;sns:GetTopicAttributes&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;sns:ListSubscriptions&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;sns:ListSubscriptionsByTopic&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;sns:ListTopics&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;sns:SetSubscriptionAttributes&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;sns:SetTopicAttributes&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;sns:Subscribe&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;sns:Unsubscribe&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;states:CreateStateMachine&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;states:DeleteStateMachine&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;Effect&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;Allow&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;Resource&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;*&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ],
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;Version&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;2012-10-17&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="create-user">Create user&lt;/h3>
+&lt;p>copy the API Key &amp;amp; Secret&lt;/p>
+&lt;p>Need during setup aws cli/serverless&lt;/p>
+&lt;h2 id="create-serverlessyml">Create serverless.yml&lt;/h2>
+&lt;p>In the root folder create:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-yml" data-lang="yml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#062873;font-weight:bold">org&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>romankurnovskii&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">app&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>app-name&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">service&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>app-service-name&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">frameworkVersion&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#4070a0">&amp;#39;3&amp;#39;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">useDotenv&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#007020;font-weight:bold">true&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">custom&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">wsgi&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">app&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>src/app.app&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">packRequirements&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#007020;font-weight:bold">false&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">provider&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">name&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>aws&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">deploymentMethod&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>direct&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">region&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>eu-west-1&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">runtime&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>python3.9&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">architecture&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>arm64&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">versionFunctions&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#007020;font-weight:bold">false&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">memorySize&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#40a070">128&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">functions&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">api&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">handler&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>wsgi_handler.handler&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">events&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#062873;font-weight:bold">httpApi&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#4070a0">&amp;#39;*&amp;#39;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">environment&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">MONGO_CONNECTION_STRING&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>${env:MONGO_CONNECTION_STRING}&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">MONGO_COLLECTION_DB_NAME&lt;/span>:&lt;span style="color:#bbb"> &lt;/span>${env:MONGO_COLLECTION_DB_NAME}&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">package&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#062873;font-weight:bold">patterns&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#4070a0">&amp;#39;!.dynamodb/**&amp;#39;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#4070a0">&amp;#39;!.git/**&amp;#39;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#4070a0">&amp;#39;!.vscode/**&amp;#39;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#4070a0">&amp;#39;!.env&amp;#39;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#4070a0">&amp;#39;!node_modules/**&amp;#39;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#4070a0">&amp;#39;!tmp/**&amp;#39;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#4070a0">&amp;#39;!venv/**&amp;#39;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- &lt;span style="color:#4070a0">&amp;#39;!__pycache__/**&amp;#39;&lt;/span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#062873;font-weight:bold">plugins&lt;/span>:&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- serverless-wsgi&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>- serverless-python-requirements&lt;span style="color:#bbb">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="create-flask-app">Create Flask app&lt;/h2>
+&lt;h3 id="prerequisites">Prerequisites&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>python -m venv ./venv
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">source&lt;/span> ./venv/bin/activate
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="app">App&lt;/h3>
+&lt;p>&lt;strong>src/app.py&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">flask&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> Flask, ObjectId, request, jsonify, make_response
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">flask_cors&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> CORS
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">json&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">src.mongo&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> my_db
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>users_collection &lt;span style="color:#666">=&lt;/span> my_db&lt;span style="color:#666">.&lt;/span>users
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app &lt;span style="color:#666">=&lt;/span> Flask(__name__)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cors &lt;span style="color:#666">=&lt;/span> CORS(app)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#555;font-weight:bold">@app.route&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;/&amp;#34;&lt;/span>, methods&lt;span style="color:#666">=&lt;/span>[&lt;span style="color:#4070a0">&amp;#39;GET&amp;#39;&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">get_user&lt;/span>(user_id):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> user_id &lt;span style="color:#666">=&lt;/span> request&lt;span style="color:#666">.&lt;/span>args&lt;span style="color:#666">.&lt;/span>get(&lt;span style="color:#4070a0">&amp;#39;id&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> user &lt;span style="color:#666">=&lt;/span> users_collection&lt;span style="color:#666">.&lt;/span>find_one({&lt;span style="color:#4070a0">&amp;#34;_id&amp;#34;&lt;/span>: ObjectId(user_id)})
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> user:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> jsonify({&lt;span style="color:#4070a0">&amp;#39;error&amp;#39;&lt;/span>: &lt;span style="color:#4070a0">&amp;#39;data not found&amp;#39;&lt;/span>}), &lt;span style="color:#40a070">404&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> jsonify({&lt;span style="color:#4070a0">&amp;#39;user&amp;#39;&lt;/span>: user})
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#555;font-weight:bold">@app.route&lt;/span>(&lt;span style="color:#4070a0">&amp;#39;/&amp;#39;&lt;/span>, methods&lt;span style="color:#666">=&lt;/span>[&lt;span style="color:#4070a0">&amp;#39;PUT&amp;#39;&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">create_record&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> record &lt;span style="color:#666">=&lt;/span> json&lt;span style="color:#666">.&lt;/span>loads(request&lt;span style="color:#666">.&lt;/span>data)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> user_id &lt;span style="color:#666">=&lt;/span> record&lt;span style="color:#666">.&lt;/span>get(&lt;span style="color:#4070a0">&amp;#39;user_id&amp;#39;&lt;/span>, &lt;span style="color:#007020;font-weight:bold">None&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> users_collection&lt;span style="color:#666">.&lt;/span>update_one({&lt;span style="color:#4070a0">&amp;#34;_id&amp;#34;&lt;/span>: ObjectId(user_id)}, record)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#555;font-weight:bold">@app.route&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;/&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">hello&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> jsonify(message&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#39;Hello!&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#555;font-weight:bold">@app.errorhandler&lt;/span>(&lt;span style="color:#40a070">404&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">resource_not_found&lt;/span>(e):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> make_response(jsonify(error&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#39;Not found!&amp;#39;&lt;/span>), &lt;span style="color:#40a070">404&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">internal_server_error&lt;/span>(e):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#4070a0">&amp;#39;error&amp;#39;&lt;/span>, &lt;span style="color:#40a070">500&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>app&lt;span style="color:#666">.&lt;/span>register_error_handler(&lt;span style="color:#40a070">500&lt;/span>, internal_server_error)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>src/mongo.py&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">os&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">pymongo&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> MongoClient
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MONGO_CONNECTION_STRING &lt;span style="color:#666">=&lt;/span> os&lt;span style="color:#666">.&lt;/span>environ&lt;span style="color:#666">.&lt;/span>get(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;MONGO_CONNECTION_STRING&amp;#34;&lt;/span>, default&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;mongodb://localhost:27017/&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MONGO_COLLECTION_DB_NAME &lt;span style="color:#666">=&lt;/span> os&lt;span style="color:#666">.&lt;/span>environ&lt;span style="color:#666">.&lt;/span>get(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;MONGO_COLLECTION_DB_NAME&amp;#34;&lt;/span>, default&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;test-mydb&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>db_client &lt;span style="color:#666">=&lt;/span> MongoClient(MONGO_CONNECTION_STRING)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>my_db &lt;span style="color:#666">=&lt;/span> db_client[MONGO_COLLECTION_DB_NAME]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>.env&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>MONGO_CONNECTION_STRING=mongodb+srv://login:password@cluster0.XXXXX.mongodb.net/mydb?retryWrites=true&amp;amp;w=majority
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MONGO_COLLECTION_DB_NAME=mydb
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>src/requirements.txt&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>certifi==2022.6.15
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>charset-normalizer==2.1.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>click==7.1.2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dnspython==2.2.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ecdsa==0.18.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Flask==1.1.4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Flask-Cors==3.0.10
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>idna==3.3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>importlib-metadata==4.12.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>itsdangerous==1.1.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Jinja2==2.11.3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>jmespath==1.0.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>MarkupSafe==2.0.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pyasn1==0.4.8
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pymongo==4.2.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python-dateutil==2.8.2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python-dotenv==0.20.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>requests==2.28.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rsa==4.9
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>six==1.16.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>urllib3==1.26.12
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Werkzeug==1.0.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>zipp==3.8.1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="deployment">Deployment&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>serverless login
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>install dependencies with:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>npm install
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>and&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>pip install -r requirements.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>and then perform deployment with:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>serverless deploy
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>After running deploy, you should see output similar to:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>Deploying app-service-name to stage dev &lt;span style="color:#666">(&lt;/span>eu-west-1&lt;span style="color:#666">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>✔ Service deployed to stack app-service-name &lt;span style="color:#666">(&lt;/span>182s&lt;span style="color:#666">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="local-development">Local development&lt;/h3>
+&lt;p>Thanks to capabilities of &lt;code>serverless-wsgi&lt;/code>, it is also possible to run your application locally, however, in order to do that, you will need to first install &lt;code>werkzeug&lt;/code> dependency, as well as all other dependencies listed in &lt;code>requirements.txt&lt;/code>. It is recommended to use a dedicated virtual environment for that purpose. You can install all needed dependencies with the following commands:&lt;/p>
+&lt;p>Already in requirements.txt:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>pip install werkzeug
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pip install -r requirements.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>At this point, you can run your application locally with the following command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>serverless wsgi serve
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For additional local development capabilities of &lt;code>serverless-wsgi&lt;/code> plugin, please refer to corresponding &lt;a href="https://github.com/logandk/serverless-wsgi">GitHub repository&lt;/a>.&lt;/p></description></item></channel></rss>

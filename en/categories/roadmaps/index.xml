@@ -1,8 +1,343 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Roadmaps on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/roadmaps/</link><description>Recent content in Roadmaps on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sat, 15 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/roadmaps/index.xml" rel="self" type="application/rss+xml"/><item><title>Algorithms 101</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/</link><pubDate>Sat, 15 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/</guid><description>Smart / OKR What is SMART and OKR
-SMART Specific:
-Goal: prepare for contests. Pass 50-&amp;gt;75-&amp;gt;100% of contest problems in time Improve python skills. Improve understanding of common algorithms and data structures. Measurable: How will we know that change has occurred?
-solve top 100 questions that cover common algorithms and data structures. Achievable:
-participate in LeetCode contest, solve 50%+ problems in time. Relevant: Is it possible to achieve this objective?
-achievable with practice. improve skills in solving business problems more efficiently, quickly, understandable.</description></item><item><title>AWS Certified Developer (DVA-C01 -> DVA-C02)</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/</link><pubDate>Thu, 08 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/</guid><description>TL;DR Passed exam in one month. Created an app with questions and progress that helped me a lot Note The AWS Certified Developer - Associate exam is changing February 28, 2023. The last date to take the current exam is February 27, 2023.
-To keep the docs up to date I will add new and latest information.
-DVA-C01 vs DVA-C02 new domain: Domain 3: Deployment focus will be on testing and deploying your code into different environments including development, test, and production environments.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Roadmaps on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/roadmaps/</link><description>Recent content in Roadmaps on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sat, 15 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/roadmaps/index.xml" rel="self" type="application/rss+xml"/><item><title>Algorithms 101</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/</link><pubDate>Sat, 15 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/</guid><description>&lt;h2 id="smart--okr">Smart / OKR&lt;/h2>
+&lt;p>What is &lt;a href="https://www.atlassian.com/blog/productivity/how-to-write-smart-goals">SMART&lt;/a> and &lt;a href="https://learn.microsoft.com/en-us/viva/goals/get-to-know-okrs">OKR&lt;/a>&lt;/p>
+&lt;h3 id="smart">SMART&lt;/h3>
+&lt;p>&lt;span style="font-size:1.2em; color: #427039">S&lt;/span>pecific:&lt;/p>
+&lt;ul>
+&lt;li>Goal: prepare for contests. Pass 50-&amp;gt;75-&amp;gt;100% of contest problems in time
+&lt;ul>
+&lt;li>Improve python skills.&lt;/li>
+&lt;li>Improve understanding of common algorithms and data structures.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;span style="font-size:1.2em; color: #427039">M&lt;/span>easurable: &lt;em>How will we know that change has occurred?&lt;/em>&lt;/p>
+&lt;ul>
+&lt;li>solve top 100 questions that cover common algorithms and data structures.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;span style="font-size:1.2em; color: #427039">A&lt;/span>chievable:&lt;/p>
+&lt;ul>
+&lt;li>participate in &lt;a href="https://leetcode.com/contest/">LeetCode contest&lt;/a>, solve 50%+ problems in time.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;span style="font-size:1.2em; color: #427039">R&lt;/span>elevant: &lt;em>Is it possible to achieve this objective?&lt;/em>&lt;/p>
+&lt;ul>
+&lt;li>achievable with practice.&lt;/li>
+&lt;li>improve skills in solving business problems more efficiently, quickly, understandable.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;span style="font-size:1.2em; color: #427039">T&lt;/span>ime-Bound: &lt;em>When will this objective be accomplished?&lt;/em>&lt;/p>
+&lt;ul>
+&lt;li>1-2 hours a day, 5-6 days a week, ~5 problems a week&lt;/li>
+&lt;li>first contest after 20% problems pass.&lt;/li>
+&lt;li>20 weeks from start.&lt;/li>
+&lt;li>Summarize results on 28 Feb 2023&lt;/li>
+&lt;/ul>
+&lt;h3 id="okr--roadmap">OKR + roadmap&lt;/h3>
+&lt;ul>
+&lt;li>pass 20 problems: (4 weeks, 12 Nov 2022)
+&lt;ul>
+&lt;li>Ability to define algorithm/idea of solving problem.&lt;/li>
+&lt;li>participate in contest, solve minimum 1-2 problems in time.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>next participate in contest/solve contest tasks &lt;strong>every week&lt;/strong>:
+&lt;ul>
+&lt;li>solve minimum 1-2 problems.&lt;/li>
+&lt;li>fix results, correct next goal keys if I go ahead.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>pass 40 problems: (10 Dec 2022)
+&lt;ul>
+&lt;li>participate in contest, solve minimum 2 problems in time.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>after 50 problems have a rest one week. (24 Dec 2022)&lt;/li>
+&lt;li>pass 70 problems: (28 Jan 2023)
+&lt;ul>
+&lt;li>solve next 10 medium problems without hints effectively.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>80-100 problems: (28 Feb 2023)
+&lt;ul>
+&lt;li>have understanding in which topics I have gaps.&lt;/li>
+&lt;li>emphasize problem solving on these topics in addition to the tasks on the list.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Sum up results (28 Feb 2023)&lt;/li>
+&lt;/ul>
+&lt;h2 id="solving-plan">Solving plan&lt;/h2>
+&lt;ol>
+&lt;li>open task&lt;/li>
+&lt;li>read&lt;/li>
+&lt;li>first thoughts&lt;/li>
+&lt;li>spend &lt;del>15&lt;/del>10 minutes on coding/drawing/understanding algo&lt;/li>
+&lt;li>finished or not, read hints&lt;/li>
+&lt;li>spend 10 minutes on fixing if needed&lt;/li>
+&lt;li>read solution, discussions&lt;/li>
+&lt;li>if there is a new algo, read theory the rest of first hour, practice&lt;/li>
+&lt;li>code from scratch with comments/code snippets&lt;/li>
+&lt;li>repeat 7-9 until tests pass&lt;/li>
+&lt;/ol>
+&lt;h2 id="prepare-environment">Prepare environment&lt;/h2>
+&lt;ul>
+&lt;li>vscode&lt;/li>
+&lt;/ul>
+&lt;p>to observe any change in python use &lt;strong>nodemon&lt;/strong> npm package&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>npm i -g nodemon
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>run python file:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>nodemon --exec python p.py
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="template">Template&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">typing&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> List
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">twoSum&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>], target: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[&lt;span style="color:#007020">int&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>nums &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">1&lt;/span>,&lt;span style="color:#40a070">2&lt;/span>,&lt;span style="color:#40a070">3&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>target &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">5&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>s &lt;span style="color:#666">=&lt;/span> Solution()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>res &lt;span style="color:#666">=&lt;/span> s&lt;span style="color:#666">.&lt;/span>twoSum(nums, target)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">print&lt;/span>(res)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="problems-list">Problems list&lt;/h2>
+&lt;p>&lt;a href="https://leetcode.com/problem-list/top-interview-questions/">leetcode Top 100 Interview Questions&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>List of problems cis mutable. Will take first not solved until all first top 100 problems are solved. It can take + ~5-15 problems&lt;/p>&lt;/blockquote>
+&lt;p>&lt;a href="https://romankurnovskii.com/en/tracks/algorithms-101/plan/">Problems order&lt;/a>&lt;/p>
+&lt;p>&lt;strong>More info:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.google.com/spreadsheets/d/1Axa5A3HrAEJx_HSOwPs1zStolnPJPmKAfIYxGTLPtQc/edit#gid=1436140231">Top MAANG interview questions 2022&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="tutorial-subscriptions">Tutorial subscriptions&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.enjoyalgorithms.com/data-structures-and-algorithms-course/">https://www.enjoyalgorithms.com/data-structures-and-algorithms-course/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.scaler.com/topics/data-structures/">https://www.scaler.com/topics/data-structures/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/subscribe/">https://leetcode.com/subscribe/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://algo.monster/subscribe">https://algo.monster/subscribe&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.algoexpert.io/purchase#algoexpert">https://www.algoexpert.io/purchase#algoexpert&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://opendsa-server.cs.vt.edu/OpenDSA/Books/CS4104/html/">Senior Algorithms | Interactive tutorial&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://canvas.instructure.com/courses/3330793/assignments/24440259?module_item_id=52268669">01.01 Data Structures and Algorithms | Interactive&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://clist.by/resources/">Contests&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>AWS Certified Developer (DVA-C01 -> DVA-C02)</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/</link><pubDate>Thu, 08 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/</guid><description>&lt;h2 id="tldr">TL;DR&lt;/h2>
+&lt;ol>
+&lt;li>Passed exam in one month.&lt;/li>
+&lt;li>Created an &lt;a href="https://www.cloud-exam-prepare.com/">app with questions and progress&lt;/a> that helped me a lot
+&lt;p class="md__image">
+&lt;img
+src="images/AWS-Certified-Developer-Associate-certificate.jpg"
+id="zoom-default"
+alt="LQVKGDT16BF1Q6CX"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="note">Note&lt;/h2>
+&lt;blockquote>
+&lt;p>The AWS Certified Developer - Associate exam is changing February 28, 2023. The last date to take the current exam is February 27, 2023.&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>To keep the docs up to date I will add new and latest information.&lt;/p>&lt;/blockquote>
+&lt;h2 id="dva-c01-vs-dva-c02">DVA-C01 vs DVA-C02&lt;/h2>
+&lt;ul>
+&lt;li>new domain: &lt;strong>Domain 3: Deployment&lt;/strong>
+&lt;ul>
+&lt;li>focus will be on testing and deploying your code into different environments including development, test, and production environments. You’ll need to know how CloudFormation, the AWS Cloud Development Kit (CDK), and AWS SAM are used to deploy applications.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Domains 4 and 5 (“Refactoring” along with “Monitoring and Troubleshooting”) from the DVA-C01 exam guide have been consolidated into Domain 4 (“Troubleshooting and Optimization”) in the DVA-C02 exam guide&lt;/li>
+&lt;li>Plus 2% questions in &lt;strong>Development with AWS Services&lt;/strong> domain&lt;/li>
+&lt;/ul>
+&lt;p>Test questions for DVA-C02 - &lt;a href="https://explore.skillbuilder.aws/learn/course/external/view/elearning/13757/aws-certified-developer-associate-official-question-set-dva-c02-english">here&lt;/a> and &lt;a href="https://d1.awsstatic.com/training-and-certification/docs-dev-associate/AWS-Certified-Developer-Associate_Sample-Questions_C02.pdf">here&lt;/a>&lt;/p>
+&lt;h2 id="criteria">Criteria&lt;/h2>
+&lt;p>In order to pass the exam, you must score more than 720/1000 (unspecified) points. Criterion will be a minimum threshold of &lt;strong>75/100%&lt;/strong>, unless conditions change in preparation.&lt;/p>
+&lt;h3 id="study-plan">Study Plan&lt;/h3>
+&lt;ol>
+&lt;li>Find out what the exam requirements are&lt;/li>
+&lt;li>Have a list of topics that will be on the exam&lt;/li>
+&lt;li>Practice each service for comprehension&lt;/li>
+&lt;li>Read extra theory that will not be covered during practice&lt;/li>
+&lt;li>Go through the test general questions&lt;/li>
+&lt;li>Repeat 3-5 repeat until the result of &lt;em>failed&lt;/em> block greater than 80 points&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Entrypoint:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/certification/certified-developer-associate/">AWS Certified Developer Exam Information&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="prepare">Prepare&lt;/h2>
+&lt;p>The AWS website has:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://d1.awsstatic.com/training-and-certification/docs-dev-associate/AWS-Certified-Developer-Associate_Exam-Guide.pdf">Exam Preparation Guide DVA-C01&lt;/a>&lt;/li>
+&lt;li>&lt;em>From 27 Feb 2023&lt;/em> &lt;a href="https://d1.awsstatic.com/training-and-certification/docs-dev-associate/AWS-Certified-Developer-Associate_Exam-Guide_C02.pdf">Exam Preparation Guide DVA-C02&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>To pass the exam, you need to know certain services from the 4 domains: &lt;code>Development with AWS Services&lt;/code>, &lt;code>Security&lt;/code>, &lt;code>Deployment&lt;/code>, &lt;del>&lt;code>Refactoring&lt;/code>&lt;/del>, &lt;code>Monitoring and Troubleshooting&lt;/code>&lt;/p>
+&lt;h3 id="list-of-services-on-the-exam">List of services on the exam&lt;/h3>
+&lt;blockquote>
+&lt;p>&lt;del>Version 2.1 DVA-C01&lt;/del>
+Version 1.0 DVA-C02&lt;/p>&lt;/blockquote>
+&lt;p>Analytics:&lt;/p>
+&lt;ul>
+&lt;li>Amazon Athena (new in DVA-C02)&lt;/li>
+&lt;li>Amazon OpenSearch Service (Amazon Elasticsearch Service)&lt;/li>
+&lt;li>Amazon Kinesis&lt;/li>
+&lt;/ul>
+&lt;p>Application Integration:&lt;/p>
+&lt;ul>
+&lt;li>AWS AppSync (new in DVA-C02)&lt;/li>
+&lt;li>Amazon EventBridge (Amazon CloudWatch Events)&lt;/li>
+&lt;li>Amazon Simple Notification Service (Amazon SNS)&lt;/li>
+&lt;li>Amazon Simple Queue Service (Amazon SQS)&lt;/li>
+&lt;li>AWS Step Functions&lt;/li>
+&lt;/ul>
+&lt;p>Compute:&lt;/p>
+&lt;ul>
+&lt;li>Amazon EC2&lt;/li>
+&lt;li>AWS Elastic Beanstalk&lt;/li>
+&lt;li>AWS Lambda&lt;/li>
+&lt;li>AWS Serverless Application Model (AWS SAM) (new in DVA-C02)&lt;/li>
+&lt;/ul>
+&lt;p>Containers:&lt;/p>
+&lt;ul>
+&lt;li>AWS Copilot (new in DVA-C02)&lt;/li>
+&lt;li>Amazon Elastic Container Registry (Amazon ECR)&lt;/li>
+&lt;li>Amazon Elastic Container Service (Amazon ECS)&lt;/li>
+&lt;li>Amazon Elastic Kubernetes Services (Amazon EKS)&lt;/li>
+&lt;/ul>
+&lt;p>Database:&lt;/p>
+&lt;ul>
+&lt;li>Amazon Aurora (new in DVA-C02)&lt;/li>
+&lt;li>Amazon DynamoDB&lt;/li>
+&lt;li>Amazon ElastiCache&lt;/li>
+&lt;li>Amazon MemoryDB for Redis (new in DVA-C02)&lt;/li>
+&lt;li>Amazon RDS&lt;/li>
+&lt;/ul>
+&lt;p>Developer Tools:&lt;/p>
+&lt;ul>
+&lt;li>AWS Amplify (new in DVA-C02)&lt;/li>
+&lt;li>AWS Cloud9 (new in DVA-C02)&lt;/li>
+&lt;li>AWS CloudShell (new in DVA-C02)&lt;/li>
+&lt;li>AWS CodeArtifact&lt;/li>
+&lt;li>AWS CodeBuild&lt;/li>
+&lt;li>AWS CodeCommit&lt;/li>
+&lt;li>AWS CodeDeploy&lt;/li>
+&lt;li>Amazon CodeGuru&lt;/li>
+&lt;li>AWS CodePipeline&lt;/li>
+&lt;li>AWS CodeStar&lt;/li>
+&lt;li>AWS Fault Injection Simulator&lt;/li>
+&lt;li>AWS X-Ray&lt;/li>
+&lt;/ul>
+&lt;p>Management and Governance:&lt;/p>
+&lt;ul>
+&lt;li>AWS AppConfig (new in DVA-C02)&lt;/li>
+&lt;li>AWS Cloud Development Kit (AWS CDK) (new in DVA-C02)&lt;/li>
+&lt;li>AWS CloudFormation&lt;/li>
+&lt;li>AWS CloudTrail (new in DVA-C02)&lt;/li>
+&lt;li>Amazon CloudWatch&lt;/li>
+&lt;li>Amazon CloudWatch Logs (new in DVA-C02)&lt;/li>
+&lt;li>AWS Command Line Interface (AWS CLI) (new in DVA-C02)&lt;/li>
+&lt;li>AWS Systems Manager (new in DVA-C02)&lt;/li>
+&lt;/ul>
+&lt;p>Networking and Content Delivery:&lt;/p>
+&lt;ul>
+&lt;li>Amazon API Gateway&lt;/li>
+&lt;li>Amazon CloudFront&lt;/li>
+&lt;li>Elastic Load Balancing&lt;/li>
+&lt;li>Amazon Route 53 (new in DVA-C02)&lt;/li>
+&lt;li>Amazon VPC (new in DVA-C02)&lt;/li>
+&lt;/ul>
+&lt;p>Security, Identity, and Compliance:&lt;/p>
+&lt;ul>
+&lt;li>AWS Certificate Manager (ACM) (new in DVA-C02)&lt;/li>
+&lt;li>AWS Certificate Manager Private Certificate Authority (new in DVA-C02)&lt;/li>
+&lt;li>Amazon Cognito&lt;/li>
+&lt;li>AWS Identity and Access Management (IAM)&lt;/li>
+&lt;li>AWS Key Management Service (AWS KMS)&lt;/li>
+&lt;li>AWS Secrets Manager (new in DVA-C02)&lt;/li>
+&lt;li>AWS Security Token Service (AWS STS) (new in DVA-C02)&lt;/li>
+&lt;li>AWS WAF (new in DVA-C02)&lt;/li>
+&lt;/ul>
+&lt;p>Storage:&lt;/p>
+&lt;ul>
+&lt;li>Amazon Elastic Block Store (Amazon EBS) (new in DVA-C02)&lt;/li>
+&lt;li>Amazon Elastic File System (Amazon EFS) (new in DVA-C02)&lt;/li>
+&lt;li>Amazon S3&lt;/li>
+&lt;li>Amazon S3 Glacier (new in DVA-C02)&lt;/li>
+&lt;/ul>
+&lt;h3 id="training-plan">Training plan&lt;/h3>
+&lt;p>Opened a training plan for any tutorial to understand where to start learning. Have chosen &lt;strong>cloudacademy&lt;/strong> service (but for example FreeCodeCamp has a free course with content).&lt;/p>
+&lt;p>Another option is to use free &lt;a href="https://workshops.aws/">AWS Workshops&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://cloudacademy.com/learning-paths/aws-developer-associate-dva-c01-certification-preparation-4364/">AWS Developer - Associate (DVA-C01) Certification Preparation&lt;/a>&lt;/p>
+&lt;p>Don&amp;rsquo;t see coverage of the following services, so I add them to the block when related topics are covered:&lt;/p>
+&lt;p>&lt;strong>Analytics&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>Amazon Elasticsearch Service (Amazon ES) -&amp;gt; OpenSearch Service&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Developer Tools&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>AWS CodeArtifact&lt;/li>
+&lt;li>AWS Fault Injection Simulator&lt;/li>
+&lt;/ul>
+&lt;h2 id="my-roadmap">My roadmap&lt;/h2>
+&lt;p>The following is my roadmap for the study. There may be adjustments.&lt;/p>
+&lt;ol>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/iam/">AWS Identity and Access Management (IAM)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/ec2/">Amazon EC2&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/elasticbeanstalk/">AWS Elastic Beanstalk&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/lambda/">AWS Lambda&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/s3/">Amazon S3&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/dynamodb/">Amazon DynamoDB&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/elasticache/">Amazon ElastiCache&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/rds/">Amazon RDS&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/api-gateway/">Amazon API Gateway&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudfront/">Amazon CloudFront&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/elasticloadbalancing/">Elastic Load Balancing (ELB)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/kinesis/">Amazon Kinesis&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/opensearch-service/">Amazon OpenSearch Service (Amazon Elasticsearch Service)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudwatch/">Amazon CloudWatch&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudformation/">AWS CloudFormation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codecommit/">AWS CodeCommit&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codedeploy/">AWS CodeDeploy&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codebuild/">AWS CodeBuild&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codepipeline/">AWS CodePipeline&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codeguru/">Amazon CodeGuru&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codestar/">AWS CodeStar&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codeartifact/">AWS CodeArtifact&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/xray/">AWS X-Ray&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/fis/">AWS Fault Injection Simulator&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/ecr/">Amazon Elastic Container Registry (Amazon ECR)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/ecs/">Amazon Elastic Container Service (Amazon ECS)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/fargate/">AWS Fargate&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/eks/">Amazon Elastic Kubernetes Services (Amazon EKS)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cognito/">Amazon Cognito&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/route53/">Route 53&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/kms/">AWS Key Management Service (AWS KMS)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/eventbridge/">Amazon EventBridge (Amazon CloudWatch Events)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/sns/">Amazon Simple Notification Service (Amazon SNS)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/sqs/">Amazon Simple Queue Service (Amazon SQS)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/step-functions/">AWS Step Functions&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/certification/certified-developer-associate/">AWS Certified Developer&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/index.html">A brief overview of the official documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://d1.awsstatic.com/training-and-certification/docs-dev-associate/AWS-Certified-Developer-Associate_Exam-Guide.pdf">Exam Preparation Guide&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://d1.awsstatic.com/training-and-certification/docs-dev-associate/AWS-Certified-Developer-Associate_Sample-Questions.pdf">Sample Exam Questions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/itsmostafa/certified-aws-developer-associate-notes">https://github.com/itsmostafa/certified-aws-developer-associate-notes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/arnaudj/mooc-aws-certified-developer-associate-2020-notes">https://github.com/arnaudj/mooc-aws-certified-developer-associate-2020-notes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=RrKRN9zRBWs">FreeCodeCamp Youtube - AWS Certified Developer - Associate 2020&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://aws.amazon.com/getting-started/hands-on/?getting-started-all.sort-by=item.additionalFields.sortOrder&amp;amp;getting-started-all.sort-order=asc&amp;amp;awsf.getting-started-category=*all&amp;amp;awsf.getting-started-level=*all&amp;amp;awsf.getting-started-content-type=*all">How-To Labs from AWS&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://aws.amazon.com/training/ramp-up-guides">AWS Ramp-Up guides&lt;/a>: Downloadable AWS Ramp-Up Guides offer a variety of resources to help you build your skills and knowledge of the AWS Cloud.&lt;/li>
+&lt;li>&lt;a href="https://www.coursera.org/aws">Coursera&amp;rsquo;s AWS Courses(Free to enroll via audit)&lt;/a>: AWS also provides various specializations in partnership with coursera&lt;/li>
+&lt;li>&lt;a href="https://aws.amazon.com/architecture/?nc2=h_ql_le_arc&amp;amp;cards-all.sort-by=item.additionalFields.sortDate&amp;amp;cards-all.sort-order=desc&amp;amp;awsf.content-type=*all&amp;amp;awsf.methodology=*all&amp;amp;awsf.tech-category=*all&amp;amp;awsf.industries=*all">AWS Architecture center&lt;/a>: Provides reference architecture diagrams, vetted architecture solutions, Well-Architected best practices, patterns, icons, and more. This expert guidance was contributed by cloud architecture experts from AWS, including AWS Solutions Architects, Professional Services Consultants, and Partners.&lt;/li>
+&lt;li>&lt;a href="https://aws.amazon.com/whitepapers">AWS Whitepapers&lt;/a>: Expand your knowledge of the cloud with AWS technical content authored by AWS and the AWS community, including technical whitepapers, technical guides, reference material, and reference architecture diagrams.&lt;/li>
+&lt;li>&lt;a href="https://aws.amazon.com/architecture/back-to-basics">Back to Basics&lt;/a>: Back to Basics&amp;rsquo; is a video series that explains, examines, and decomposes basic cloud architecture pattern best practices.&lt;/li>
+&lt;li>&lt;a href="https://aws.amazon.com/developer/community/heroes/content-library">AWS Heroes Content Library&lt;/a>: AWS Hero authored content including blogs, videos, slide presentations, podcasts, and more.&lt;/li>
+&lt;li>&lt;a href="https://amazon.qwiklabs.com/catalog">https://amazon.qwiklabs.com/catalog&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://workshops.aws">AWS Workshops&lt;/a>: This website lists workshops created by the teams at Amazon Web Services (AWS). Workshops are hands-on events designed to teach or introduce practical skills, techniques, or concepts which you can use to solve business problems.&lt;/li>
+&lt;li>&lt;a href="https://wellarchitectedlabs.com/">https://wellarchitectedlabs.com/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://testseries.edugorilla.com/tests/1359/aws-certified-developer-associate">https://testseries.edugorilla.com/tests/1359/aws-certified-developer-associate&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="community-posts">Community posts&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://dev.to/romankurnovskii/aws-certified-developer-associate-prepare-2np">https://dev.to/romankurnovskii/aws-certified-developer-associate-prepare-2np&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.reddit.com/user/romankurnovskii/comments/x8rgig/what_is_the_topics_order_to_cover_to_get_prepared/?utm_source=share&amp;amp;utm_medium=web2x&amp;amp;context=3">https://www.reddit.com/user/romankurnovskii/comments/x8rgig/what_is_the_topics_order_to_cover_to_get_prepared/?utm_source=share&amp;utm_medium=web2x&amp;context=3&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://twitter.com/romankurnovskii/status/1567746601136832512">https://twitter.com/romankurnovskii/status/1567746601136832512&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

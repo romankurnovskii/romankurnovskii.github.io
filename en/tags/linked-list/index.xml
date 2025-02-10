@@ -1,25 +1,586 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linked List on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/linked-list/</link><description>Recent content in Linked List on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Mon, 03 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/linked-list/index.xml" rel="self" type="application/rss+xml"/><item><title>2. Add Two Numbers</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/2/</link><pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/2/</guid><description>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
-You may assume the two numbers do not contain any leading zero, except the number 0 itself.
-Example 1:
-Input: l1 = [2,4,3], l2 = [5,6,4] Output: [7,0,8] Explanation: 342 + 465 = 807. First accepted Idea:
-Loop through lists add each value to the list reverse list calculate sum create linked list from reversed sum class Solution: def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -&amp;gt; Optional[ListNode]: def createLinkedNode(values): head = ListNode(values[0]) current = head for i in values[1:]: node = ListNode(i) current.</description></item><item><title>19. Remove Nth Node From End of List</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/19/</link><pubDate>Sun, 13 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/19/</guid><description>LeetCode problem
-Given the &amp;lsquo;head&amp;rsquo; of a linked list, remove the &amp;rsquo;nth&amp;rsquo; node from the end of the list and return its head.
-Example 1:
-Input: head = [1,2,3,4,5], n = 2 Output: [1,2,3,5] Example 2:
-Input: head = [1], n = 1 Output: [] Idea:
-Two pointers. Second pointer starts from nth position. Run while second pointer exist. First version:
-# Definition for singly-linked list. # class ListNode: # def __init__(self, val=0, next=None): # self.val = val # self.</description></item><item><title>21. Merge Two Sorted Lists</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/21/</link><pubDate>Tue, 25 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/21/</guid><description>LeetCode problem
-You are given the heads of two sorted linked lists list1 and list2.
-Merge the two lists in a one sorted list. The list should be made by splicing together the nodes of the first two lists.
-Return the head of the merged linked list.
-Example 1:
-Input: list1 = [1,2,4], list2 = [1,3,4] Output: [1,1,2,3,4,4] Example 2:
-Input: list1 = [], list2 = [0] Output: [0] First accepted Idea:
-Get smallest head. Loop and update its next.</description></item><item><title>116. Populating Next Right Pointers in Each Node</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/116/</link><pubDate>Fri, 31 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/116/</guid><description>LeetCode problem
-from collections import deque class Solution: def connect(self, root: &amp;#39;Optional[Node]&amp;#39;) -&amp;gt; &amp;#39;Optional[Node]&amp;#39;: if not root: return root queue = deque([root]) while queue: level_size = len(queue) for i in range(level_size): node = queue.popleft() if i &amp;lt; level_size - 1: node.next = queue[0] if node.left: queue.append(node.left) if node.right: queue.append(node.right) return root LeetCode Editorial:
-Editorial</description></item><item><title>234. Palindrome Linked List</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/234/</link><pubDate>Mon, 03 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/234/</guid><description>LeetCode problem
-Problem Statement Given the head of a singly linked list, return true if it is a palindrome or false otherwise.
-Naive Solution A simple solution to this problem is to:
-traverse the linked list storing the value of each node in an array. Then, we could compare the array with its reversed version.
-If they match, the linked list is a palindrome. Otherwise, it is not.
-This solution takes O(n) time (where n is the number of nodes in the list), as we need to traverse the list once.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linked List on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/linked-list/</link><description>Recent content in Linked List on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 07 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/linked-list/index.xml" rel="self" type="application/rss+xml"/><item><title>2. Add Two Numbers</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/2/</link><pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/2/</guid><description>&lt;p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.&lt;/p>
+&lt;p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: l1 = [2,4,3], l2 = [5,6,4]
+Output: [7,0,8]
+Explanation: 342 + 465 = 807.
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Loop through lists&lt;/li>
+&lt;li>add each value to the list&lt;/li>
+&lt;li>reverse list&lt;/li>
+&lt;li>calculate sum&lt;/li>
+&lt;li>create linked list from reversed sum&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">addTwoNumbers&lt;/span>(self, l1: Optional[ListNode], l2: Optional[ListNode]) &lt;span style="color:#666">-&amp;gt;&lt;/span> Optional[ListNode]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">createLinkedNode&lt;/span>(values):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> head &lt;span style="color:#666">=&lt;/span> ListNode(values[&lt;span style="color:#40a070">0&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current &lt;span style="color:#666">=&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> values[&lt;span style="color:#40a070">1&lt;/span>:]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> node &lt;span style="color:#666">=&lt;/span> ListNode(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> node
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current &lt;span style="color:#666">=&lt;/span> current&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> vals_l1 &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> l1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> cur:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> vals_l1&lt;span style="color:#666">.&lt;/span>append(cur&lt;span style="color:#666">.&lt;/span>val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> cur&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> vals_l2 &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> l2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> cur:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> vals_l2&lt;span style="color:#666">.&lt;/span>append(cur&lt;span style="color:#666">.&lt;/span>val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> cur&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s_l1 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">reversed&lt;/span>(vals_l1):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s_l1 &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#007020">str&lt;/span>(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s_l2 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">reversed&lt;/span>(vals_l2):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s_l2 &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#007020">str&lt;/span>(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ll_sum &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(s_l1) &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#007020">int&lt;/span>(s_l2)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> values &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> val &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">reversed&lt;/span>(&lt;span style="color:#007020">str&lt;/span>(ll_sum)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> values&lt;span style="color:#666">.&lt;/span>append(&lt;span style="color:#007020">int&lt;/span>(val))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> createLinkedNode(values)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="better-solution">Better solution&lt;/h2>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://leetcode.com/problems/add-two-numbers/Figures/2_add_two_numbers.svg"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;p>Just like how you would sum two numbers on a piece of paper.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/2-test-case.jpg"
+id="zoom-default"
+alt="test-case"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">addTwoNumbers&lt;/span>(self, l1: Optional[ListNode], l2: Optional[ListNode]) &lt;span style="color:#666">-&amp;gt;&lt;/span> Optional[ListNode]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dummyHead &lt;span style="color:#666">=&lt;/span> ListNode(&lt;span style="color:#40a070">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr &lt;span style="color:#666">=&lt;/span> dummyHead
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> carry &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> l1 &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span> &lt;span style="color:#007020;font-weight:bold">or&lt;/span> l2 &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span> &lt;span style="color:#007020;font-weight:bold">or&lt;/span> carry &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l1Val &lt;span style="color:#666">=&lt;/span> l1&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l1 &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l2Val &lt;span style="color:#666">=&lt;/span> l2&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l2 &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> columnSum &lt;span style="color:#666">=&lt;/span> l1Val &lt;span style="color:#666">+&lt;/span> l2Val &lt;span style="color:#666">+&lt;/span> carry
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> carry &lt;span style="color:#666">=&lt;/span> columnSum &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> newNode &lt;span style="color:#666">=&lt;/span> ListNode(columnSum &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#40a070">10&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> newNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr &lt;span style="color:#666">=&lt;/span> newNode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l1 &lt;span style="color:#666">=&lt;/span> l1&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l1 &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l2 &lt;span style="color:#666">=&lt;/span> l2&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l2 &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> dummyHead&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>19. Remove Nth Node From End of List</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/19/</link><pubDate>Sun, 13 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/19/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list">LeetCode problem 19&lt;/a>&lt;/p>
+&lt;p>Given the &amp;lsquo;head&amp;rsquo; of a linked list, remove the &amp;rsquo;nth&amp;rsquo; node from the end of the list and return its head.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.leetcode.com/uploads/2020/10/03/remove_ex1.jpg"
+id="zoom-default"
+alt="LeetCode 19. Remove Nth Node From End of List"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;pre>&lt;code>Input: head = [1,2,3,4,5], n = 2
+Output: [1,2,3,5]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: head = [1], n = 1
+Output: []
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Two pointers.&lt;/li>
+&lt;li>Second pointer starts from &lt;code>nth&lt;/code> position.&lt;/li>
+&lt;li>Run while second pointer exist.&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Definition for singly-linked list.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># class ListNode:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># def __init__(self, val=0, next=None):&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.val = val&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.next = next&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">removeNthFromEnd&lt;/span>(self, head, n: &lt;span style="color:#007020">int&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p1 &lt;span style="color:#666">=&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p2 &lt;span style="color:#666">=&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p2 &lt;span style="color:#666">=&lt;/span> p2&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#60a0b0;font-style:italic"># fast&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> p2:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> head&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#60a0b0;font-style:italic"># in case: head=[1], n=1 -&amp;gt; return []&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> p2&lt;span style="color:#666">.&lt;/span>next:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p1 &lt;span style="color:#666">=&lt;/span> p1&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p2 &lt;span style="color:#666">=&lt;/span> p2&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p1&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> p1&lt;span style="color:#666">.&lt;/span>next&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> head
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Definition for singly-linked list.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># class ListNode:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># def __init__(self, val=0, next=None):&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.val = val&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.next = next&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">removeNthFromEnd&lt;/span>(self, head: Optional[ListNode], n: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> Optional[ListNode]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> head&lt;span style="color:#666">.&lt;/span>next:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nodes &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> cur:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nodes[i] &lt;span style="color:#666">=&lt;/span> cur
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> cur&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> i &lt;span style="color:#666">-&lt;/span> n &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> head&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> nodes[i &lt;span style="color:#666">-&lt;/span> n &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> cur&lt;span style="color:#666">.&lt;/span>next:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> cur&lt;span style="color:#666">.&lt;/span>next&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> head
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>21. Merge Two Sorted Lists</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/21/</link><pubDate>Tue, 25 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/21/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/merge-two-sorted-lists/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>You are given the heads of two sorted linked lists list1 and list2.&lt;/p>
+&lt;p>Merge the two lists in a one sorted list. The list should be made by splicing together the nodes of the first two lists.&lt;/p>
+&lt;p>Return the head of the merged linked list.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.leetcode.com/uploads/2020/10/03/merge_ex1.jpg"
+id="zoom-default"
+alt="21. Merge Two Sorted Lists"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;pre>&lt;code>Input: list1 = [1,2,4], list2 = [1,3,4]
+Output: [1,1,2,3,4,4]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: list1 = [], list2 = [0]
+Output: [0]
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;p>Get smallest &lt;em>head&lt;/em>. Loop and update its next.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Definition for singly-linked list.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># class ListNode:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># def __init__(self, val=0, next=None):&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.val = val&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.next = next&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">mergeTwoLists&lt;/span>(self, l1: Optional[ListNode], l2: Optional[ListNode]) &lt;span style="color:#666">-&amp;gt;&lt;/span> Optional[ListNode]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> ListNode()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current &lt;span style="color:#666">=&lt;/span> res
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> l1 &lt;span style="color:#007020;font-weight:bold">and&lt;/span> l2:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l1&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">&amp;lt;=&lt;/span> l2&lt;span style="color:#666">.&lt;/span>val:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> node &lt;span style="color:#666">=&lt;/span> ListNode(l1&lt;span style="color:#666">.&lt;/span>val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l1 &lt;span style="color:#666">=&lt;/span> l1&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> node &lt;span style="color:#666">=&lt;/span> ListNode(l2&lt;span style="color:#666">.&lt;/span>val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l2 &lt;span style="color:#666">=&lt;/span> l2&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> node
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current &lt;span style="color:#666">=&lt;/span> current&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l1:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> l1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l2:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> l2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="better-solution">Better solution&lt;/h2>
+&lt;blockquote>
+&lt;p>Recursion&lt;/p>&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">mergeTwoLists&lt;/span>(self, l1: Optional[ListNode], l2: Optional[ListNode]) &lt;span style="color:#666">-&amp;gt;&lt;/span> Optional[ListNode]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l1 &lt;span style="color:#007020;font-weight:bold">and&lt;/span> l2:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l1&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">&amp;gt;&lt;/span> l2&lt;span style="color:#666">.&lt;/span>val:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l1, l2 &lt;span style="color:#666">=&lt;/span> l2, l1 &lt;span style="color:#60a0b0;font-style:italic">#swap smaller and larger: make l1 the one with the smaller first value&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l1&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>mergeTwoLists(l1&lt;span style="color:#666">.&lt;/span>next, l2) &lt;span style="color:#60a0b0;font-style:italic"># move forward in the list which starts with the smaller value&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> l1 &lt;span style="color:#007020;font-weight:bold">or&lt;/span> l2 &lt;span style="color:#60a0b0;font-style:italic"># return whichever of the two lists remains at the end&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>Loop&lt;/p>&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">mergeTwoLists&lt;/span>(self, l1: Optional[ListNode], l2: Optional[ListNode]) &lt;span style="color:#666">-&amp;gt;&lt;/span> Optional[ListNode]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> ListNode()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current &lt;span style="color:#666">=&lt;/span> res
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> l1 &lt;span style="color:#007020;font-weight:bold">and&lt;/span> l2:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l1&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">&amp;lt;=&lt;/span> l2&lt;span style="color:#666">.&lt;/span>val:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> l1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l1 &lt;span style="color:#666">=&lt;/span> l1&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> l2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l2 &lt;span style="color:#666">=&lt;/span> l2&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current &lt;span style="color:#666">=&lt;/span> current&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">mergeTwoLists&lt;/span>(self, a, b):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> a &lt;span style="color:#007020;font-weight:bold">and&lt;/span> b:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> a&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">&amp;gt;&lt;/span> b&lt;span style="color:#666">.&lt;/span>val:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a, b &lt;span style="color:#666">=&lt;/span> b, a
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>mergeTwoLists(a&lt;span style="color:#666">.&lt;/span>next, b)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> a &lt;span style="color:#007020;font-weight:bold">or&lt;/span> b
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>First make sure that a is the &amp;ldquo;better&amp;rdquo; one (meaning b is None or has larger/equal value). Then merge the remainders behind a.&lt;/p>&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">mergeTwoLists&lt;/span>(self, a, b):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> a &lt;span style="color:#007020;font-weight:bold">or&lt;/span> b &lt;span style="color:#007020;font-weight:bold">and&lt;/span> a&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">&amp;gt;&lt;/span> b&lt;span style="color:#666">.&lt;/span>val:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a, b &lt;span style="color:#666">=&lt;/span> b, a
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> a:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>mergeTwoLists(a&lt;span style="color:#666">.&lt;/span>next, b)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> a
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>92. Reverse Linked List II</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/92/</link><pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/92/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/reverse-linked-list-ii/">LeetCode задача 92&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Дан односвязный список и два целых числа &lt;code>left&lt;/code> и &lt;code>right&lt;/code>, где &lt;code>left &amp;lt;= right&lt;/code>. Задача заключается в том, чтобы перевернуть узлы списка с позиции &lt;code>left&lt;/code> до &lt;code>right&lt;/code>&lt;/p>
+&lt;p>Т.е. если список 1-2-3-4-5-6-7-8-9, left=2, right=7, то итоговый список будет 1-&lt;strong>7-6-5-4-3-2&lt;/strong>-8-9.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Для решения задачи удобно использовать два указателя: один для сохранения начальной позиции участка, который нужно перевернуть, и второй для выполнения самого разворота.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Основная идея решения заключается в использовании двух указателей: одного для начала подсписка, который нужно перевернуть, и второго для его конца. После этого, можно перевернуть этот подсписок &amp;ldquo;на лету&amp;rdquo;, обновляя ссылки между узлами.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;p>Основная логика разворота заключается в следующих действиях:&lt;/p>
+&lt;ol>
+&lt;li>Определяем узел &lt;code>next&lt;/code> как следующий узел от current.&lt;/li>
+&lt;li>Обновляем указатель &lt;code>current.next&lt;/code>, чтобы он указывал на узел после узла &lt;code>next&lt;/code>.&lt;/li>
+&lt;li>Обновляем указатель &lt;code>next.next&lt;/code>, чтобы он указывал на узел, на который указывает &lt;code>prev.next&lt;/code>.&lt;/li>
+&lt;li>Обновляем указатель &lt;code>prev.next&lt;/code>, чтобы он указывал на узел &lt;code>next&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/assets/92.jpg"
+id="zoom-default"
+alt="LeetCode problem 166"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Definition for singly-linked list.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># class ListNode:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># def __init__(self, val=0, next=None):&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.val = val&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.next = next&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">reverseBetween&lt;/span>(self, head, left, right):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Создаем новый узел&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">reversed&lt;/span> &lt;span style="color:#666">=&lt;/span> ListNode(&lt;span style="color:#40a070">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">reversed&lt;/span>&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">reversed&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Пройдем до узла, предшествующего левой границе&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(left &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev &lt;span style="color:#666">=&lt;/span> prev&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current &lt;span style="color:#666">=&lt;/span> prev&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(right&lt;span style="color:#666">-&lt;/span>left):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># 1-&amp;gt;2-&amp;gt;3-&amp;gt;4, current = 2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># rule: &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># 1. next should look to current (prev.next)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># for this need to switch links in proper order&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># 2. current.next should look to next.next&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># 3. prev.next should look to next&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># 4. next.next (3) should look to current (prev.next)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># prev.next instead of current because of avoid cycle&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># define next&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">next&lt;/span> &lt;span style="color:#666">=&lt;/span> current&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#60a0b0;font-style:italic">#1 (3-&amp;gt;4), need 2&amp;lt;-3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># switch links&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">next&lt;/span>&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#60a0b0;font-style:italic">#2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">next&lt;/span>&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> prev&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#60a0b0;font-style:italic">#4&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">next&lt;/span> &lt;span style="color:#60a0b0;font-style:italic">#3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020">reversed&lt;/span>&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>116. Populating Next Right Pointers in Each Node</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/116/</link><pubDate>Fri, 31 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/116/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/populating-next-right-pointers-in-each-node/">LeetCode problem&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">collections&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> deque
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">connect&lt;/span>(self, root: &lt;span style="color:#4070a0">&amp;#39;Optional[Node]&amp;#39;&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#4070a0">&amp;#39;Optional[Node]&amp;#39;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> root:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> root
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> queue &lt;span style="color:#666">=&lt;/span> deque([root])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> queue:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> level_size &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(queue)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(level_size):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> node &lt;span style="color:#666">=&lt;/span> queue&lt;span style="color:#666">.&lt;/span>popleft()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> i &lt;span style="color:#666">&amp;lt;&lt;/span> level_size &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> node&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> queue[&lt;span style="color:#40a070">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> node&lt;span style="color:#666">.&lt;/span>left:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> queue&lt;span style="color:#666">.&lt;/span>append(node&lt;span style="color:#666">.&lt;/span>left)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> node&lt;span style="color:#666">.&lt;/span>right:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> queue&lt;span style="color:#666">.&lt;/span>append(node&lt;span style="color:#666">.&lt;/span>right)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> root
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>LeetCode Editorial:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/editorial/">Editorial&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>234. Palindrome Linked List</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/234/</link><pubDate>Mon, 03 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/easy/234/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/palindrome-linked-list/">LeetCode problem&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>Given the head of a singly linked list, return true if it is a palindrome or false otherwise.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A simple solution to this problem is to:&lt;/p>
+&lt;ol>
+&lt;li>traverse the linked list&lt;/li>
+&lt;li>storing the value of each node in an array.&lt;/li>
+&lt;/ol>
+&lt;p>Then, we could compare the array with its reversed version.&lt;/p>
+&lt;p>If they match, the linked list is a palindrome. Otherwise, it is not.&lt;/p>
+&lt;p>This solution takes &lt;code>O(n)&lt;/code> time (where &lt;code>n&lt;/code> is the number of nodes in the list), as we need to traverse the list once.&lt;/p>
+&lt;p>However, it also takes &lt;code>O(n)&lt;/code> space, as we store the value of each node in an array.&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>To solve the problem in &lt;code>O(n)&lt;/code> time and &lt;code>O(1)&lt;/code> space, we can use the &lt;mark>two-pointer technique&lt;/mark> to &lt;strong>find the middle of the linked list&lt;/strong>. Then, we can reverse the second half of the list in-place. After that, we can compare the first half with the reversed second half. If they match, the list is a palindrome.&lt;/p>
+&lt;p>Reversing a linked list in-place involves changing the next pointers of the nodes to point to the previous node. This process can be done with a constant amount of space.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Initialize two pointers: slow and fast at the head of the list.
+&lt;ol>
+&lt;li>Move slow one step at a time and fast two steps at a time.&lt;/li>
+&lt;li>When fast reaches the end of the list, slow will be at the middle.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Reverse the second half of the list starting from slow.&lt;/li>
+&lt;li>Compare the first half of the list with the reversed second half.
+&lt;ol>
+&lt;li>If they match, return true.&lt;/li>
+&lt;li>If they don&amp;rsquo;t, return false.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">isPalindrome&lt;/span>(self, head: ListNode) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">bool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> slow &lt;span style="color:#666">=&lt;/span> fast &lt;span style="color:#666">=&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># find the mid node&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> fast &lt;span style="color:#007020;font-weight:bold">and&lt;/span> fast&lt;span style="color:#666">.&lt;/span>next:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> slow &lt;span style="color:#666">=&lt;/span> slow&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fast &lt;span style="color:#666">=&lt;/span> fast&lt;span style="color:#666">.&lt;/span>next&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># reverse the second half&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> slow
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> cur: &lt;span style="color:#60a0b0;font-style:italic"># 1 [1 2 3 4]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nxt &lt;span style="color:#666">=&lt;/span> cur&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#60a0b0;font-style:italic"># 2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> prev &lt;span style="color:#60a0b0;font-style:italic"># 1.next = None &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev &lt;span style="color:#666">=&lt;/span> cur &lt;span style="color:#60a0b0;font-style:italic"># 1, at the end of loop will be 4&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> nxt &lt;span style="color:#60a0b0;font-style:italic"># 2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># compare the first and second half nodes&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> prev:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> prev&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">!=&lt;/span> head&lt;span style="color:#666">.&lt;/span>val:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev &lt;span style="color:#666">=&lt;/span> prev&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> head &lt;span style="color:#666">=&lt;/span> head&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="debug-of-reversing">Debug of Reversing&lt;/h3>
+&lt;p>Assuming we have a linked list as &lt;code>[1,2,3,4,5,6]&lt;/code> and slow initially points to &lt;code>4&lt;/code>. Result should be &lt;code>[6,5,4,3,2,1]&lt;/code>&lt;/p>
+&lt;p>Initial state:&lt;/p>
+&lt;ul>
+&lt;li>Linked list: 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; 5 -&amp;gt; 6&lt;/li>
+&lt;li>cur points to 4&lt;/li>
+&lt;li>prev = None&lt;/li>
+&lt;/ul>
+&lt;ol>
+&lt;li>First iteration:&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>nxt is assigned 5 (the next node after cur)&lt;/li>
+&lt;li>cur.next (the next node after 4) is assigned None&lt;/li>
+&lt;li>prev is assigned 4&lt;/li>
+&lt;li>cur is assigned 5 (nxt)&lt;/li>
+&lt;/ul>
+&lt;p>After first iteration:&lt;/p>
+&lt;ul>
+&lt;li>Linked list: 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; None, 5 -&amp;gt; 6&lt;/li>
+&lt;li>cur points to 5&lt;/li>
+&lt;li>prev points to 4&lt;/li>
+&lt;/ul>
+&lt;ol start="2">
+&lt;li>Second iteration:&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>nxt is assigned 6&lt;/li>
+&lt;li>cur.next (the next node after 5) is assigned 4 (prev)&lt;/li>
+&lt;li>prev is assigned 5&lt;/li>
+&lt;li>cur is assigned 6 (nxt)&lt;/li>
+&lt;/ul>
+&lt;p>After second iteration:&lt;/p>
+&lt;ul>
+&lt;li>Linked list: 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; None, 5 -&amp;gt; 4, 6&lt;/li>
+&lt;li>cur points to 6&lt;/li>
+&lt;li>prev points to 5&lt;/li>
+&lt;/ul>
+&lt;ol start="3">
+&lt;li>Third iteration:&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>nxt is assigned None&lt;/li>
+&lt;li>cur.next (the next node after 6) is assigned 5 (prev)&lt;/li>
+&lt;li>prev is assigned 6&lt;/li>
+&lt;li>cur is assigned None (nxt)&lt;/li>
+&lt;/ul>
+&lt;p>After third iteration:&lt;/p>
+&lt;ul>
+&lt;li>Linked list: 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; None, 5 -&amp;gt; 4, 6 -&amp;gt; 5&lt;/li>
+&lt;li>cur points to None&lt;/li>
+&lt;li>prev points to 6&lt;/li>
+&lt;/ul>
+&lt;ol start="4">
+&lt;li>Since &lt;code>cur&lt;/code> is &lt;code>None&lt;/code>, we exit the while loop.&lt;/li>
+&lt;/ol>
+&lt;p>Now &lt;code>prev&lt;/code> is pointing to the &lt;code>head&lt;/code> of the reversed second half of the list.&lt;/p>
+&lt;p>The list now looks like this: &lt;code>1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; None and 6 -&amp;gt; 5 -&amp;gt; 4 -&amp;gt; None&lt;/code>.&lt;/p>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/D7y_hoT_YZI?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
+&lt;/div></description></item><item><title>237. Delete Node in a Linked List</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/237/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/237/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/delete-node-in-a-linked-list/">LeetCode задача 237&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Написать функцию для удаления узла (за исключением хвостового) в односвязном списке, дан только доступ к этому узлу.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;ol>
+&lt;li>Обычно, для удаления узла из односвязного списка, нам нужен доступ к предыдущему узлу. В этом случае, у нас такого доступа нет. Как это обойти?&lt;/li>
+&lt;/ol>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Поскольку доступа к предыдущему узлу нет, мы не можем просто &amp;ldquo;вырезать&amp;rdquo; текущий узел. Однако мы можем переписать значение текущего узла значением следующего узла и затем удалить следующий узел.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Перезаписываем значение текущего узла значением следующего узла.&lt;/li>
+&lt;li>Удаляем следующий узел.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">ListNode&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, val&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#007020">next&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">None&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">=&lt;/span> val
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">next&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">deleteNode&lt;/span>(node):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> node&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">=&lt;/span> node&lt;span style="color:#666">.&lt;/span>next&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#60a0b0;font-style:italic"># Перезаписываем значение узла значением следующего узла&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> node&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> node&lt;span style="color:#666">.&lt;/span>next&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#60a0b0;font-style:italic"># Удаляем следующий узел&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>2095. Delete the Middle Node of a Linked List</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/2095/</link><pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/2095/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/">LeetCode задача 2095&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Дан связный список (linked list). Задача — удалить средний узел из этого списка и вернуть начало(head) измененного списка.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Мы можем использовать метод двух указателей для того, чтобы найти средний узел в одном проходе по списку, где второй указатель проходит весь список в два раза быстрее первого указателя.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;ol>
+&lt;li>Используем два указателя для прохода по списку: один медленный и один быстрый. Оба начинают с головного узла списка.&lt;/li>
+&lt;li>Быстрый указатель будет двигаться в два раза быстрее медленного. Каждый шаг он перескакивает через два узла, в то время как медленный только на один. Таким образом, когда быстрый указатель достигнет конца список, первый указатель будет на середине.&lt;/li>
+&lt;li>По мере продвижения указателей сохраняем узел, предшествующий медленному поинтеру (&lt;code>prev&lt;/code>), так как именно его &lt;code>next&lt;/code> нам нужно будет изменить.&lt;/li>
+&lt;li>Когда быстрый указатель достигнет конца списка или окажется на последнем узле, медленный указатель будет указывать на средний узел.&lt;/li>
+&lt;li>Удаляем средний узел.&lt;/li>
+&lt;/ol>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Инициализируем два указателя: один медленный (&lt;code>p1&lt;/code>), другой быстрый (&lt;code>p2&lt;/code>), и третий указатель &lt;code>prev&lt;/code>.&lt;/li>
+&lt;li>Обновляем указатели до момента достижения быстрым конца списка:
+&lt;ul>
+&lt;li>Быстрый указатель на каждом шаге &lt;em>перепрыгивает через&lt;/em> &lt;code>next&lt;/code>.&lt;/li>
+&lt;li>Временный (&lt;code>prev&lt;/code>) указатель сохраняет ссылку на медленный указатель до его изменения&lt;/li>
+&lt;li>Медленный указатель на каждом шаге обновляется до &lt;code>next&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Удаляем средний элемент путем обновления ссылки в указателе &lt;code>prev.next&lt;/code> на &lt;code>p1.next&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">ListNode&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, val&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#007020">next&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">None&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">=&lt;/span> val
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">next&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">deleteMiddleNode&lt;/span>(head: ListNode) &lt;span style="color:#666">-&amp;gt;&lt;/span> ListNode:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> head&lt;span style="color:#666">.&lt;/span>next:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p1 &lt;span style="color:#666">=&lt;/span> head &lt;span style="color:#60a0b0;font-style:italic"># быстрый&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p2 &lt;span style="color:#666">=&lt;/span> head &lt;span style="color:#60a0b0;font-style:italic"># медленный&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># предыдущий. Будет в середине&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> p2 &lt;span style="color:#007020;font-weight:bold">and&lt;/span> p2&lt;span style="color:#666">.&lt;/span>next:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev &lt;span style="color:#666">=&lt;/span> p1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p1 &lt;span style="color:#666">=&lt;/span> p1&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p2 &lt;span style="color:#666">=&lt;/span> p2&lt;span style="color:#666">.&lt;/span>next&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> p1&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> head
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>2130. Maximum Twin Sum of a Linked List</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/2130/</link><pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/2130/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/">LeetCode задача 2130&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Дан односвязный список четной длины. Узлы в этом списке имеют &amp;ldquo;близнецов&amp;rdquo; по определенным правилам. Задача — найти максимальную сумму &amp;ldquo;близнецов&amp;rdquo;.&lt;/p>
+&lt;p>Т.е. у первой половины узлов списка есть свой близнец из второй половины.&lt;/p>
+&lt;p>Пример:
+для списка длиной n = 8
+i = 0, twin = n-1-i = 8-1-0 = 7
+i = 1, twin = n-1-1 = 6
+i = 2, twin = n-1-2 = 5
+&amp;hellip;&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>У первой половины узлов списка есть свой близнец из второй половины, т.е. нужно получить значения узлов и сложить значения из первой половины со значением из второй.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;p>Мы можем решить эту задачу, проходя список дважды. В первый проход мы можем сохранить все значения узлов в массиве для удобства доступа. Во втором проходе, мы используем этот массив для вычисления суммы &amp;ldquo;близнецов&amp;rdquo; и отслеживания максимальной такой суммы.&lt;/p>
+&lt;p>Массив здесь нужен для того, чтобы мы могли быстро получить доступ к &amp;ldquo;близнецу&amp;rdquo; каждого узла, не проходя список заново.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Пройдемся по связному списку, сохраняя значения всех узлов в массиве.&lt;/li>
+&lt;li>Инициализируем переменную &lt;code>max_twin_sum&lt;/code> как 0, которая будет хранить максимальную сумму &amp;ldquo;близнецов&amp;rdquo;.&lt;/li>
+&lt;li>Снова пройдемся по связному списку, вычисляя сумму &amp;ldquo;близнецов&amp;rdquo; для каждого узла и обновляя &lt;code>max_twin_sum&lt;/code>, если текущая сумма больше максимальной.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Определение односвязного списка.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">ListNode&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, val&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#007020">next&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">None&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">=&lt;/span> val
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">next&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">maxTwinSum&lt;/span>(self, head: ListNode) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Проходим по списку, сохраняя все значения в массив.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> vals &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr &lt;span style="color:#666">=&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> curr:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> vals&lt;span style="color:#666">.&lt;/span>append(curr&lt;span style="color:#666">.&lt;/span>val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> curr &lt;span style="color:#666">=&lt;/span> curr&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Инициализация максимальной суммы &amp;#34;близнецов&amp;#34;.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_twin_sum &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(vals) &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>): &lt;span style="color:#60a0b0;font-style:italic"># проходим по первой половине&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> twin_i &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#666">-&lt;/span>i &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> twin_sum &lt;span style="color:#666">=&lt;/span> vals[i] &lt;span style="color:#666">+&lt;/span> vals[twin_i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_twin_sum &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(max_twin_sum, twin_sum)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> max_twin_sum
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

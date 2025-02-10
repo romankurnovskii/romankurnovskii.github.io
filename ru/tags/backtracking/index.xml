@@ -1,12 +1,228 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Backtracking on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/backtracking/</link><description>Recent content in Backtracking on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sat, 04 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/backtracking/index.xml" rel="self" type="application/rss+xml"/><item><title>46. Permutations</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/46/</link><pubDate>Sat, 17 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/46/</guid><description>LeetCode problem
-Given an array nums of distinct integers, return all the possible permutations. You can return the answer in any order.
-Example 1:
-Input: nums = [1,2,3] Output: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]] Example 2:
-Input: nums = [0,1] Output: [[0,1],[1,0]] Example 3:
-Input: nums = [1] Output: [[1]] Idea:
-Draw a decigion tree Fix when branch is ready to return Implementation:
-Recursive: Go through every value in nums Pop value call perm() with updated nums from each call(step) append &amp;lsquo;poped&amp;rsquo; value from step 2 class Solution: def permute(self, nums: List[int]) -&amp;gt; List[List[int]]: result_permutation = [] if len(nums) == 1: # base case return [nums[:]] for _ in nums: tmp_removed = nums.</description></item><item><title>78. Subsets</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/78/</link><pubDate>Sat, 04 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/78/</guid><description>LeetCode problem
-In this solution, we start with an empty list in the results array.
-For each element in the nums array, we append that element to all of the subsets in the results array to create new subsets, and then add these new subsets to the results array.
-By doing this for all elements in nums, we generate all possible subsets.
-class Solution: def subsets(self, nums: List[int]) -&amp;gt; List[List[int]]: res = [[]] for i in nums: for j in range(len(res)): cur = [] cur.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Backtracking on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/backtracking/</link><description>Recent content in Backtracking on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sat, 04 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/backtracking/index.xml" rel="self" type="application/rss+xml"/><item><title>17. Letter Combinations of a Phone Number</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/17/</link><pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/17/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/letter-combinations-of-a-phone-number/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given a string containing digits from &lt;code>2-9&lt;/code> inclusive, return all possible letter combinations that the number could represent. Return the answer in &lt;strong>any order&lt;/strong>.&lt;/p>
+&lt;p>A mapping of digits to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.leetcode.com/uploads/2022/03/15/1200px-telephone-keypad2svg.png"
+id="zoom-default"
+alt="17"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: digits = &amp;quot;23&amp;quot;
+Output: [&amp;quot;ad&amp;quot;,&amp;quot;ae&amp;quot;,&amp;quot;af&amp;quot;,&amp;quot;bd&amp;quot;,&amp;quot;be&amp;quot;,&amp;quot;bf&amp;quot;,&amp;quot;cd&amp;quot;,&amp;quot;ce&amp;quot;,&amp;quot;cf&amp;quot;]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: digits = &amp;quot;&amp;quot;
+Output: []
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">letterCombinations&lt;/span>(self, digits: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[&lt;span style="color:#007020">str&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> digits:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> letters &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;abc&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;def&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#39;ghi&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;jkl&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;mno&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#39;pqrs&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;tuv&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;wxyz&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> d &lt;span style="color:#007020;font-weight:bold">in&lt;/span> digits:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> d &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(d)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tmp &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> letter &lt;span style="color:#007020;font-weight:bold">in&lt;/span> letters[d]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> word &lt;span style="color:#007020;font-weight:bold">in&lt;/span> result:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> word &lt;span style="color:#666">+=&lt;/span> letter
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tmp&lt;span style="color:#666">.&lt;/span>append(word)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#666">=&lt;/span> tmp
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> result
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>22. Generate Parentheses</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/22/</link><pubDate>Wed, 16 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/22/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/generate-parentheses/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: n = 3
+Output: [&amp;quot;((()))&amp;quot;,&amp;quot;(()())&amp;quot;,&amp;quot;(())()&amp;quot;,&amp;quot;()(())&amp;quot;,&amp;quot;()()()&amp;quot;]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: n = 1
+Output: [&amp;quot;()&amp;quot;]
+&lt;/code>&lt;/pre>
+&lt;h2 id="prerequirements">Prerequirements&lt;/h2>
+&lt;p>&lt;a href="https://romankurnovskii.com/en/tracks/algorithms-101/algorithms/#backtracking">Backtracking pattern&lt;/a>&lt;/p>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/22.jpg"
+id="zoom-default"
+alt="test-case"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">generateParenthesis&lt;/span>(self, n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">dfs&lt;/span>(l: &lt;span style="color:#007020">int&lt;/span>, r: &lt;span style="color:#007020">int&lt;/span>, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> r &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#666">.&lt;/span>append(s)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(l &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>, r, s &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#4070a0">&amp;#39;(&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l &lt;span style="color:#666">&amp;lt;&lt;/span> r:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(l, r &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>, s &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#4070a0">&amp;#39;)&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(n, n, &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>46. Permutations</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/46/</link><pubDate>Sat, 17 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/46/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/permutations/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given an array &lt;code>nums&lt;/code> of distinct integers, return &lt;em>all the possible permutations&lt;/em>. You can return the answer in &lt;strong>any order&lt;/strong>.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: nums = [1,2,3]
+Output: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: nums = [0,1]
+Output: [[0,1],[1,0]]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 3:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: nums = [1]
+Output: [[1]]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Draw a decigion tree&lt;/li>
+&lt;li>Fix when &lt;em>branch&lt;/em> is &lt;em>ready&lt;/em> to return&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/46.jpg"
+id="zoom-default"
+alt="test-case"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Implementation:&lt;/p>
+&lt;ol>
+&lt;li>Recursive:
+&lt;ol>
+&lt;li>Go through every value in &lt;code>nums&lt;/code>&lt;/li>
+&lt;li>Pop value&lt;/li>
+&lt;li>call &lt;code>perm()&lt;/code> with updated &lt;code>nums&lt;/code>&lt;/li>
+&lt;li>from each call(step) append &amp;lsquo;poped&amp;rsquo; value from step 2&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">permute&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[List[&lt;span style="color:#007020">int&lt;/span>]]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result_permutation &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums) &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic"># base case&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> [nums[:]]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> nums:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tmp_removed &lt;span style="color:#666">=&lt;/span> nums&lt;span style="color:#666">.&lt;/span>pop(&lt;span style="color:#40a070">0&lt;/span>) &lt;span style="color:#60a0b0;font-style:italic"># remove current element before next step&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> permutations &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>permute(nums)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> perm &lt;span style="color:#007020;font-weight:bold">in&lt;/span> permutations:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> perm&lt;span style="color:#666">.&lt;/span>append(tmp_removed)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nums&lt;span style="color:#666">.&lt;/span>append(tmp_removed)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result_permutation&lt;span style="color:#666">.&lt;/span>extend(permutations)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> result_permutation
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=s7AvT7cGdSo">https://www.youtube.com/watch?v=s7AvT7cGdSo&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://walkccc.me/LeetCode/problems/0046/">https://walkccc.me/LeetCode/problems/0046/&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>78. Subsets</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/78/</link><pubDate>Sat, 04 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/78/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/subsets/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>In this solution, we start with an empty list in the results array.&lt;/p>
+&lt;p>For each element in the &lt;code>nums&lt;/code> array, we append that element to all of the subsets in the results array to create new subsets, and then add these new subsets to the results array.&lt;/p>
+&lt;p>By doing this for all elements in &lt;code>nums&lt;/code>, we generate all possible subsets.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">subsets&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[List[&lt;span style="color:#007020">int&lt;/span>]]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> [[]]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> nums:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(res)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur&lt;span style="color:#666">.&lt;/span>append(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur&lt;span style="color:#666">.&lt;/span>extend(res[j])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#666">.&lt;/span>append(cur)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Approach 2:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">subsets&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[List[&lt;span style="color:#007020">int&lt;/span>]]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">dfs&lt;/span>(start: &lt;span style="color:#007020">int&lt;/span>, path: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#666">.&lt;/span>append(path)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(start, &lt;span style="color:#007020">len&lt;/span>(nums)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>, path &lt;span style="color:#666">+&lt;/span> [nums[i]])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(&lt;span style="color:#40a070">0&lt;/span>, [])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This is a recursive solution that uses a depth-first search (DFS) approach to generate all possible subsets of the input list &lt;code>nums&lt;/code>. The function takes two parameters &lt;code>start&lt;/code> and &lt;code>path&lt;/code>, where&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>start&lt;/code> represents the starting index of the current subset&lt;/li>
+&lt;li>&lt;code>path&lt;/code> represents the current subset being constructed.&lt;/li>
+&lt;/ul>
+&lt;p>The base case of the recursion is when &lt;code>start&lt;/code> is greater than or equal to the length of &lt;code>nums&lt;/code>, at which point the current path is added to the final result &lt;code>res&lt;/code>.&lt;/p>
+&lt;p>For each recursive call, the function iterates through the remaining elements of &lt;code>nums&lt;/code> starting at index &lt;code>start&lt;/code>, and appends each element to the &lt;code>path&lt;/code> list. Then, the function recursively calls itself with the next index &lt;code>i+1&lt;/code> as the new starting point for the next subset, and the updated &lt;code>path&lt;/code> list.&lt;/p>
+&lt;p>As the recursion returns, each subset is added to the &lt;code>res&lt;/code> list, and the &lt;code>path&lt;/code> list is updated by removing the last element that was added in the previous recursive call.&lt;/p>
+&lt;p>Finally, the function is initialized with an empty &lt;code>path&lt;/code> list and a starting index &lt;code>start&lt;/code> of &lt;code>0&lt;/code>, and the final &lt;code>res&lt;/code> list is returned after all subsets have been generated.&lt;/p>
+&lt;p>&lt;strong>LeetCode Editorial:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://leetcode.com/problems/subsets/editorial/">Editorial&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Approach 1: Cascading&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://leetcode.com/problems/subsets/Figures/78/recursion.png"
+id="zoom-default"
+alt="Cascading"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>Approach 2: Backtracking&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://leetcode.com/problems/subsets/Figures/78/combinations.png"
+id="zoom-default"
+alt="Backtracking"
+loading="lazy"
+/>
+&lt;/p>
+&lt;p class="md__image">
+&lt;img
+src="https://leetcode.com/problems/subsets/Figures/78/backtracking.png"
+id="zoom-default"
+alt="Backtracking"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>Approach 3: Lexicographic (Binary Sorted) Subsets
+&lt;p class="md__image">
+&lt;img
+src="https://leetcode.com/problems/subsets/Figures/78/bitmask4.png"
+id="zoom-default"
+alt="Lexicographic (Binary Sorted) Subsets"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>

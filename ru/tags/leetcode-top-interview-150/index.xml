@@ -1,3 +1,41 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LeetCode Top Interview 150 on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/leetcode-top-interview-150/</link><description>Recent content in LeetCode Top Interview 150 on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sun, 16 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/leetcode-top-interview-150/index.xml" rel="self" type="application/rss+xml"/><item><title>1. Two Sum</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/1/</link><pubDate>Sun, 16 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/1/</guid><description>LeetCode problem
-Problem Statement In this problem, you&amp;rsquo;re given an array of integers nums and an integer target. Your task is to find the indices of two numbers in the array that add up to the target. The input array is guaranteed to have exactly one solution, and you can&amp;rsquo;t use the same element twice. The indices can be returned in any order.
-Naive Solution A naive solution would involve using two nested loops to iterate through each pair of elements in the array and check if their sum is equal to the target.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LeetCode Top Interview 150 on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/leetcode-top-interview-150/</link><description>Recent content in LeetCode Top Interview 150 on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sun, 16 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/leetcode-top-interview-150/index.xml" rel="self" type="application/rss+xml"/><item><title>1. Two Sum</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/1/</link><pubDate>Sun, 16 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/1/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/two-sum/">LeetCode problem&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>In this problem, you&amp;rsquo;re given an array of integers &lt;code>nums&lt;/code> and an integer &lt;code>target&lt;/code>. Your task is to find the indices of two numbers in the array that add up to the target. The input array is guaranteed to have exactly one solution, and you can&amp;rsquo;t use the same element twice. The indices can be returned in any order.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A naive solution would involve using two nested loops to iterate through each pair of elements in the array and check if their sum is equal to the target. This approach has a time complexity of O(n^2), where n is the length of the input array. However, there is a more efficient solution that uses a hash table and has a time complexity of O(n).&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;p>A hash table (or dictionary in Python) is a data structure that allows you to store and retrieve values in O(1) time on average. It uses key-value pairs, where each key is unique and maps to a specific value.&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>To solve this problem efficiently, we&amp;rsquo;ll use a hash table to store the indices of the numbers we&amp;rsquo;ve seen so far. For each number, we&amp;rsquo;ll check if the difference between the target and the current number is already in the hash table. If it is, we&amp;rsquo;ve found the two numbers that add up to the target, and we&amp;rsquo;ll return their indices.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Initialize an empty hash table to store the indices of the numbers we&amp;rsquo;ve seen so far.&lt;/li>
+&lt;li>Iterate through the input array, for each number:
+&lt;ol>
+&lt;li>Calculate the difference between the target and the current number.&lt;/li>
+&lt;li>Check if the difference is already in the hash table. If it is, return the indices of the current number and the number that corresponds to the difference.&lt;/li>
+&lt;li>If the difference is not in the hash table, add the current number and its index to the hash table.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Since the problem guarantees that there is always a solution, we&amp;rsquo;ll always find the two numbers that add up to the target.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;p>Here&amp;rsquo;s the Python code to implement this approach:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">typing&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> List
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">twoSum&lt;/span>(nums: List[&lt;span style="color:#007020">int&lt;/span>], target: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[&lt;span style="color:#007020">int&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> seen &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Iterate through the input array&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i, num &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">enumerate&lt;/span>(nums):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Calculate the difference between the target and the current number&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> diff &lt;span style="color:#666">=&lt;/span> target &lt;span style="color:#666">-&lt;/span> num
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Check if the difference is already in the hash table&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> diff &lt;span style="color:#007020;font-weight:bold">in&lt;/span> seen:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Return the indices of the current number and the number that corresponds to the difference&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> [seen[diff], i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Add the current number and its index to the hash table&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> seen[num] &lt;span style="color:#666">=&lt;/span> i
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

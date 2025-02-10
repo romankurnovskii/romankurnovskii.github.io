@@ -1,4 +1,75 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SQS on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/sqs/</link><description>Recent content in SQS on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Mon, 26 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/sqs/index.xml" rel="self" type="application/rss+xml"/><item><title>Simple Queue Service</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/sqs/</link><pubDate>Mon, 26 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/sqs/</guid><description>About Fully managed message queues for microservices, distributed systems, and serverless applications
-Documentation User Guide SQS offers two types of message queues. Standard queues offer maximum throughput, best-effort ordering, and at-least-once delivery. SQS FIFO queues are designed to guarantee that messages are processed exactly once, in the exact order that they are sent.
-SQS is a fully managed message queuing service that enables to decouple &amp;amp; scale micros­erv­ices, distri­buted systems, &amp;amp; serverless applic­ations.
-Messages are published to an Amazon SNS topic and then pushed to Amazon SQS subscriber queues.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SQS on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/sqs/</link><description>Recent content in SQS on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Mon, 26 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/sqs/index.xml" rel="self" type="application/rss+xml"/><item><title>Simple Queue Service</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/sqs/</link><pubDate>Mon, 26 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/sqs/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>Fully managed message queues for microservices, distributed systems, and serverless applications&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/sqs/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/sqs/?id=docs_gateway">User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>SQS offers two types of message queues. Standard queues offer maximum throughput, best-effort ordering, and at-least-once delivery. SQS FIFO queues are designed to guarantee that messages are processed exactly once, in the exact order that they are sent.&lt;/p>
+&lt;p>SQS is a fully managed message queuing service that enables to decouple &amp;amp; scale micros­erv­ices, distri­buted systems, &amp;amp; serverless applic­ations.&lt;/p>
+&lt;p>Messages are published to an Amazon SNS topic and then pushed to Amazon SQS subscriber queues. This eliminates the need for periodic polling and allows for messages to be processed in parallel asynchronously by the subscribers.&lt;/p>
+&lt;h3 id="alternatives">Alternatives&lt;/h3>
+&lt;ul>
+&lt;li>Apache Kafka&lt;/li>
+&lt;li>Google Cloud Pub/Sub&lt;/li>
+&lt;li>RabbitMQ&lt;/li>
+&lt;li>IBM MQ&lt;/li>
+&lt;li>TIBCO Enterprise Message Service&lt;/li>
+&lt;li>AWS IoT Core&lt;/li>
+&lt;li>Amazon CloudWatch&lt;/li>
+&lt;li>Azure Service Bus&lt;/li>
+&lt;/ul>
+&lt;h3 id="configuration">Configuration&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Visibility timeout&lt;/strong>:
+&lt;ul>
+&lt;li>Other consumers will not receive a message being processed for the configured time period (default 30 seconds, min - 0, max - 12 hours)&lt;/li>
+&lt;li>Consumer processing a message can call ChangeMessageVisibility to increase visibility timeout of a message (before visibility timeout)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>DelaySeconds&lt;/strong>:
+&lt;ul>
+&lt;li>Time period before a new message is visible on the queue&lt;/li>
+&lt;li>Delay Queue = Create Queue + Delay Seconds default - 0, max - 15 minutes&lt;/li>
+&lt;li>Can be set at Queue creation or updated using SetQueueAttributes&lt;/li>
+&lt;li>Use message timers to configure a message specific DelaySeconds value&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>M&lt;strong>essage retention period&lt;/strong>:
+Maximum period a message can be on the queue Default - 4 days, Min - 60 seconds, Max - 14 days&lt;/li>
+&lt;li>&lt;strong>MaxReceiveCount&lt;/strong>:
+Maximum number of failures in processing a message&lt;/li>
+&lt;/ul>
+&lt;h2 id="digest">Digest&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Long polling&lt;/strong>: Long polling will reduce the overhead of the CPU and not require excessive dolls.&lt;/li>
+&lt;li>&lt;strong>Visibility timeout&lt;/strong>: a period of time during which Amazon SOS prevents other consumers from receiving and processing the message. The default visibility timeout for a message is 30 seconds. The minimum is O seconds. The maximum is 12 hours&lt;/li>
+&lt;li>&lt;strong>Delay queue&lt;/strong>: Delay queues let you postpone the delivery of new messages to a queue for a number of seconds. If you create a delay queue, any messages that you send to the queue remain invisible to consumers for the duration of the delay period
+Know FIFO vs Standard Queue&lt;/li>
+&lt;li>&lt;strong>SQS&lt;/strong> is a fully managed message queuing service that enables you to decouple and scale micro-services, distributed systems, and Serverless applications&lt;/li>
+&lt;li>&lt;strong>SNS&lt;/strong>: To receive subset of messages, subscriber can apply filter policy to topic subscription.&lt;/li>
+&lt;li>If use case has subscribed to email notification, go with SNS as opposed to SQS.&lt;/li>
+&lt;li>By default only the queue owner is allowed to use the queue. Configure SQS Queue Access Policy to provide access to other AWS accounts&lt;/li>
+&lt;/ul>
+&lt;h2 id="price">Price&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/ru/sqs/pricing/">Current price&lt;/a>&lt;/p>
+&lt;h2 id="use-cases">Use Cases&lt;/h2>
+&lt;p>Type: Applic­ation integr­ation&lt;/p>
+&lt;p>Same type services: SNS, SQS, AppSync, EventB­ridge&lt;/p>
+&lt;h2 id="practice">Practice&lt;/h2>
+&lt;p>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/sqs/fan-out-orders-with-sns-sqs/">Fan-Out Orders using Amazon SNS and SQS&lt;/a>&lt;/p>
+&lt;h2 id="questions">Questions&lt;/h2>
+&lt;h3 id="q1">Q1&lt;/h3>
+&lt;p>&lt;strong>Which endpoint is considered to be best practice when analyzing data within a Configuration Stream of &lt;a href="https://aws.amazon.com/config/">AWS Config&lt;/a>?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>SNS&lt;/li>
+&lt;li>E-Mail&lt;/li>
+&lt;li>SQS&lt;/li>
+&lt;li>Kinesis&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="https://docs.aws.amazon.com/config/latest/developerguide/monitor-resource-changes.html">https://docs.aws.amazon.com/config/latest/developerguide/monitor-resource-changes.html&lt;/a>&lt;/p>
+&lt;p>&lt;mark style="color:white">3&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details></description></item></channel></rss>

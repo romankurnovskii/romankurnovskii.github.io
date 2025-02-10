@@ -1,7 +1,400 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Data Structures on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/data-structures/</link><description>Recent content in Data Structures on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Thu, 09 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/data-structures/index.xml" rel="self" type="application/rss+xml"/><item><title>Binary Tree</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/data-structures/binary-tree/</link><pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/data-structures/binary-tree/</guid><description>1. What is a Binary Tree?
-A binary tree is a data structure in which each node has at most two children, which are referred to as the left child and the right child.
-2. Representing a Binary Tree in Python
-To represent a binary tree in Python, we can create a class called Node to represent each node in the tree. Each node will have a value and references to its left and right children.
-If a node doesn&amp;rsquo;t have a left or right child, the reference will be set to None.</description></item><item><title>Segment Tree</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/data-structures/segment-tree/</link><pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/data-structures/segment-tree/</guid><description>A Segment Tree is a data structure used for efficiently processing queries over intervals or ranges. It is commonly used for solving problems that involve finding information about a set of elements and their sub-intervals.
-Since a Segment Tree is a binary tree, a simple linear array can be used to represent the Segment Tree. Before building the Segment Tree, one must figure what needs to be stored in the Segment Tree&amp;rsquo;s node?.
-Each leaf node represents a single element, and each internal node represents the union of its children&amp;rsquo;s ranges.</description></item><item><title>Data Structures</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/data-structures/</link><pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/data-structures/</guid><description>Tree class Node: def __init__(self, value): self.value = value self.children = {} def insert(self, s, idx): # idx: index of the current character in s if idx != len(s): self.children.setdefault(s[idx], Node(s[idx])) self.children.get(s[idx]).insert(s, idx + 1) Fenwick Tree class Fenwick: #also known as Binary Indexed Tree (BIT) def __init__(self, n): self.n = n self.bit = [0] * (n+1) def add(self, idx, val): while idx &amp;lt;= self.n: self.bit[idx] += val idx += idx &amp;amp; -idx def add_range(self, l, r, val): self.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Data Structures on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/data-structures/</link><description>Recent content in Data Structures on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 09 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/data-structures/index.xml" rel="self" type="application/rss+xml"/><item><title>Binary Tree</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/data-structures/binary-tree/</link><pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/data-structures/binary-tree/</guid><description>&lt;p>&lt;strong>1. What is a Binary Tree?&lt;/strong>&lt;/p>
+&lt;p>A binary tree is a data structure in which each node has at most &lt;strong>two children&lt;/strong>, which are referred to as the left child and the right child.&lt;/p>
+&lt;p>&lt;strong>2. Representing a Binary Tree in Python&lt;/strong>&lt;/p>
+&lt;p>To represent a binary tree in Python, we can create a class called &lt;code>Node&lt;/code> to represent each node in the tree. Each node will have a value and references to its left and right children.&lt;/p>
+&lt;p>If a node doesn&amp;rsquo;t have a left or right child, the reference will be set to &lt;code>None&lt;/code>. Here&amp;rsquo;s an example implementation:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Node&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, value, left&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">None&lt;/span>, right&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">None&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>value &lt;span style="color:#666">=&lt;/span> value
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">=&lt;/span> left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">=&lt;/span> right
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>On this step &lt;code>None&lt;/code> will look like this:&lt;/p>
+&lt;p>&lt;strong>3. Adding Nodes to a Binary Tree&lt;/strong>&lt;/p>
+&lt;p>Once we have a representation of a node, we can start adding nodes to the tree to create the structure of the binary tree.&lt;/p>
+&lt;p>To add a node, we &lt;strong>need to find the correct position&lt;/strong> in the tree where the new node should be added. This is typically done by starting at the root node and comparing the value of the new node to the value of the current node.&lt;/p>
+&lt;p>If the new node&amp;rsquo;s value is &lt;strong>less than the current node&amp;rsquo;s value&lt;/strong>, we &lt;strong>move to the left child&lt;/strong>. If the new node&amp;rsquo;s value is &lt;strong>greater&lt;/strong> than the current node&amp;rsquo;s value, we &lt;strong>move to the right&lt;/strong> child. We &lt;strong>repeat&lt;/strong> this process until we find a position where &lt;strong>there is no left or right child&lt;/strong> (i.e., the current node is a leaf node), and we can add the new node there.&lt;/p>
+&lt;p>Here&amp;rsquo;s an example implementation of a function to add a node to a binary tree:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">insert&lt;/span>(root, value):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> root &lt;span style="color:#007020;font-weight:bold">is&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> Node(value) &lt;span style="color:#60a0b0;font-style:italic"># basicaly create a new root Node&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> value &lt;span style="color:#666">&amp;lt;&lt;/span> root&lt;span style="color:#666">.&lt;/span>value:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> root&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">=&lt;/span> insert(root&lt;span style="color:#666">.&lt;/span>left, value)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> root&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">=&lt;/span> insert(root&lt;span style="color:#666">.&lt;/span>right, value)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> root
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;mark>&lt;a href="https://www.cs.usfca.edu/~galles/visualization/BST.html">Visualize Binary Tree&lt;/a>&lt;/mark>&lt;/p>
+&lt;p>&lt;strong>4. Full Binary Tree Class&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Node&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, value):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>value &lt;span style="color:#666">=&lt;/span> value
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">insert&lt;/span>(self, value):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> self&lt;span style="color:#666">.&lt;/span>value:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> value &lt;span style="color:#666">&amp;lt;&lt;/span> self&lt;span style="color:#666">.&lt;/span>value:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> self&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#007020;font-weight:bold">is&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">=&lt;/span> Node(value)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>left&lt;span style="color:#666">.&lt;/span>insert(value)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#007020;font-weight:bold">is&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">=&lt;/span> Node(value)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>right&lt;span style="color:#666">.&lt;/span>insert(value)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>value &lt;span style="color:#666">=&lt;/span> value
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">search&lt;/span>(self, value):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> value &lt;span style="color:#666">&amp;lt;&lt;/span> self&lt;span style="color:#666">.&lt;/span>value:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> self&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#007020;font-weight:bold">is&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> self&lt;span style="color:#666">.&lt;/span>left&lt;span style="color:#666">.&lt;/span>search(value)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> value &lt;span style="color:#666">&amp;gt;&lt;/span> self&lt;span style="color:#666">.&lt;/span>value:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#007020;font-weight:bold">is&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> self&lt;span style="color:#666">.&lt;/span>right&lt;span style="color:#666">.&lt;/span>search(value)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">remove&lt;/span>(self, value, parent&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">None&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> value &lt;span style="color:#666">&amp;lt;&lt;/span> self&lt;span style="color:#666">.&lt;/span>value:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> self&lt;span style="color:#666">.&lt;/span>left:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>left&lt;span style="color:#666">.&lt;/span>remove(value, self)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> value &lt;span style="color:#666">&amp;gt;&lt;/span> self&lt;span style="color:#666">.&lt;/span>value:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> self&lt;span style="color:#666">.&lt;/span>right:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>right&lt;span style="color:#666">.&lt;/span>remove(value, self)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> self&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#007020;font-weight:bold">is&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#007020;font-weight:bold">is&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> parent:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> parent&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">==&lt;/span> self:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parent&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parent&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>value &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> self&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#007020;font-weight:bold">and&lt;/span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#007020;font-weight:bold">is&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> parent:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> parent&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">==&lt;/span> self:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parent&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parent&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>value &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>left&lt;span style="color:#666">.&lt;/span>value
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>left&lt;span style="color:#666">.&lt;/span>right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>left&lt;span style="color:#666">.&lt;/span>left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#007020;font-weight:bold">and&lt;/span> self&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#007020;font-weight:bold">is&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> parent:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> parent&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">==&lt;/span> self:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parent&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> parent&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>value &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>right&lt;span style="color:#666">.&lt;/span>value
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>right&lt;span style="color:#666">.&lt;/span>left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>right&lt;span style="color:#666">.&lt;/span>right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> min_larger_node &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> min_larger_node&lt;span style="color:#666">.&lt;/span>left:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> min_larger_node &lt;span style="color:#666">=&lt;/span> min_larger_node&lt;span style="color:#666">.&lt;/span>left
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>value &lt;span style="color:#666">=&lt;/span> min_larger_node&lt;span style="color:#666">.&lt;/span>value
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">==&lt;/span> min_larger_node:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>right &lt;span style="color:#666">=&lt;/span> min_larger_node&lt;span style="color:#666">.&lt;/span>right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> min_larger_node&lt;span style="color:#666">.&lt;/span>parent&lt;span style="color:#666">.&lt;/span>left &lt;span style="color:#666">=&lt;/span> min_larger_node&lt;span style="color:#666">.&lt;/span>right
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="links">Links&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.cs.usfca.edu/~galles/visualization/BST.html">Visualize Binary Tree&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Segment Tree</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/data-structures/segment-tree/</link><pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/data-structures/segment-tree/</guid><description>&lt;p>A Segment Tree is a data structure used for efficiently processing queries over &lt;strong>intervals&lt;/strong> or &lt;strong>ranges&lt;/strong>. It is commonly used for solving problems that involve finding information about a &lt;strong>set of elements and their sub-intervals&lt;/strong>.&lt;/p>
+&lt;p>Since a Segment Tree is a &lt;strong>binary tree&lt;/strong>, a simple linear array can be used to represent the Segment Tree. Before building the Segment Tree, one must figure &lt;strong>what needs to be stored in the Segment Tree&amp;rsquo;s node?.&lt;/strong>&lt;/p>
+&lt;p>Each leaf node represents a single element, and each internal node represents the union of its children&amp;rsquo;s ranges. Queries are performed by traversing the tree from the root to the leaves, and aggregating information about the ranges that intersect with the query interval.&lt;/p>
+&lt;p>&lt;strong>Example 1&lt;/strong>, consider a set of numbers and the task of finding the minimum value in a range of these numbers. The Segment Tree can be used to solve this problem by storing the minimum value of each range in the tree&amp;rsquo;s internal nodes, and answering queries by searching for the smallest value in the portion of the tree that covers the query interval.&lt;/p>
+&lt;p>&lt;strong>Example 2&lt;/strong>, if the question is to find the sum of all the elements in an array from &lt;code>L&lt;/code> indices to &lt;code>R&lt;/code>, then at each node (except leaf nodes) the sum of its children nodes is stored.&lt;/p>
+&lt;p>The Segment Tree can be constructed in &lt;code>O(n log n)&lt;/code> time, where &lt;code>n&lt;/code> is the number of elements in the original set, and it can answer queries in &lt;code>O(log n)&lt;/code> time. This makes it an efficient data structure for processing queries over large datasets.&lt;/p>
+&lt;p>To study the topic &amp;ldquo;segment tree&amp;rdquo; you need to know the following concepts:&lt;/p>
+&lt;ul>
+&lt;li>arrays&lt;/li>
+&lt;li>loops&lt;/li>
+&lt;li>conditional operators&lt;/li>
+&lt;li>bitwise operations&lt;/li>
+&lt;/ul>
+&lt;p>A Segment Tree is a dynamic data structure used to perform operations on and update intervals. It supports two operations: &lt;strong>Element update&lt;/strong> (update) on a given range and &lt;strong>request&lt;/strong> (query) on the sum of elements in a given range.&lt;/p>
+&lt;p>&lt;strong>Let&amp;rsquo;s perform the following task:&lt;/strong> we have an array and we want to find the sum of the elements in a given range.&lt;/p>
+&lt;p>For this task, we can use a segment tree. It is constructed as a &lt;strong>binary tree&lt;/strong>, where each node represents an interval and the value of the node is the sum of the elements in that interval.&lt;/p>
+&lt;p>&lt;strong>Fundamentals:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Definition of a sum element in a segment tree:&lt;/li>
+&lt;/ol>
+&lt;p>A sum element in a segment tree is the sum of all elements in the range it represents.&lt;/p>
+&lt;ol start="2">
+&lt;li>Constructing a segment tree:&lt;/li>
+&lt;/ol>
+&lt;p>A segment tree can be constructed from an array of numbers. Each node in the tree represents a range of elements in the array and stores the sum of the elements in that range.&lt;/p>
+&lt;ol start="3">
+&lt;li>Implementation of operations:&lt;/li>
+&lt;/ol>
+&lt;p>The implementation of various operations in a segment tree essentially depends on its structure. However, there are several operations that are often used in various tasks:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Update&lt;/strong> value in the array: This operation allows you to change the value of an element in an array. It is usually implemented using a recursive tree traversal.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Query Value&lt;/strong>: This operation allows you to query the value of an element in an array. It is also usually implemented using recursive tree traversal.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Query for a sum&lt;/strong>: This operation allows you to query the sum of values in an array on a given interval. It is usually implemented by recursive tree traversal and sum counting&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="building-a-spanning-tree">Building a spanning tree&lt;/h2>
+&lt;p>Since the tree is binary, each vertex will have up to two descendants.&lt;/p>
+&lt;p>Graphically it looks as follows (for an array of 8 elements):&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../assets/segment-tree-structure.png"
+id="zoom-default"
+alt="segment-tree-structure.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>At the topmost vertex the segment from the beginning of the array to the last element is fixed.&lt;/p>
+&lt;p>On the left is the left half of the &lt;em>parent&lt;/em> (&lt;code>[0 1 2 3]&lt;/code>). On the right is the right half ()&lt;code>[4 5 6 7]&lt;/code>). And so on up to the last node with a segment of one element.&lt;/p>
+&lt;p>Take the array &lt;code>a = [1, 3, -2, 8, -7]&lt;/code>. We use it to build a tree of segments to write the sums of these segments in each node.&lt;/p>
+&lt;p>The structure of such a tree is as follows:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../assets/segment-tree-sum.png"
+id="zoom-default"
+alt="segment-tree-sum.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>💡 The tree contains less than &lt;strong>2n&lt;/strong> vertices. &lt;code>2*n-1&lt;/code>&lt;/p>
+&lt;p>The number of vertices in the worst case is estimated by the sum $n + \frac{n}{2} + \frac{n}{4} + \frac{n}{8} + \ldots + 1 &amp;lt; 2n$&lt;/p>
+&lt;p>Let us display such a tree as an array:&lt;/p>
+&lt;ol>
+&lt;li>There are 9 vertices in such a tree. The array will consist of 9 elements.&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>tree[0] = A[0:4]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tree[1] = A[0:2]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tree[2] = A[3:4]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tree[3] = A[0:1]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tree[4] = A[2:2]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tree[5] = A[3:3]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tree[6] = A[4:4]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tree[7] = A[0:0]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tree[8] = A[1:1]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This tree &lt;em>covers&lt;/em> all vertices.&lt;/p>
+&lt;p>With this structure, you can store different data in the vertex values, such as the sum of the segment, the smallest/the largest number, or other aggregate data on the segments.&lt;/p>
+&lt;h2 id="implementing-a-segment-tree-in-python">Implementing a segment tree in Python&lt;/h2>
+&lt;p>Initializing the tree&lt;/p>
+&lt;p>&lt;code>a = [1, 3, -2, 8, -7]&lt;/code>&lt;/p>
+&lt;p>Since the most recent nodes are segments of length == &lt;code>1&lt;/code>. So we start the process of creation with them, gradually rising to the level above.&lt;/p>
+&lt;p>💡 The tree contains less than &lt;strong>2n&lt;/strong> vertices.
+💡 Bottom vertex - the length of the segment is equal to 1.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">build_tree&lt;/span>(array):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(array)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tree &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">*&lt;/span> &lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">*&lt;/span> n &lt;span style="color:#60a0b0;font-style:italic"># The tree contains less than **2n** vertices.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tree[n &lt;span style="color:#666">+&lt;/span> i] &lt;span style="color:#666">=&lt;/span> a[i] &lt;span style="color:#60a0b0;font-style:italic"># the lowest tops of the tree&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># add parent nodes&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">reversed&lt;/span>(&lt;span style="color:#007020">range&lt;/span>(n)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tree[i] &lt;span style="color:#666">=&lt;/span> tree[&lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">*&lt;/span> i] &lt;span style="color:#666">+&lt;/span> tree[&lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">*&lt;/span> i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(i, tree)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&amp;gt;&amp;gt;&lt;/span> array &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">3&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">2&lt;/span>, &lt;span style="color:#40a070">8&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">7&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&amp;gt;&amp;gt;&lt;/span> build_tree(array)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#40a070">4&lt;/span> [&lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">3&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">2&lt;/span>, &lt;span style="color:#40a070">8&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">7&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#40a070">3&lt;/span> [&lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">3&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">2&lt;/span>, &lt;span style="color:#40a070">8&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">7&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#40a070">2&lt;/span> [&lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#40a070">2&lt;/span>, &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">3&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">2&lt;/span>, &lt;span style="color:#40a070">8&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">7&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#40a070">1&lt;/span> [&lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#40a070">3&lt;/span>, &lt;span style="color:#40a070">2&lt;/span>, &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">3&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">2&lt;/span>, &lt;span style="color:#40a070">8&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">7&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#40a070">0&lt;/span> [&lt;span style="color:#40a070">3&lt;/span>, &lt;span style="color:#40a070">3&lt;/span>, &lt;span style="color:#40a070">2&lt;/span>, &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">3&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">2&lt;/span>, &lt;span style="color:#40a070">8&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">7&lt;/span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Calculating the sum on the segment:&lt;/strong>&lt;/p>
+&lt;p>The function gets the indexes of the original array.&lt;/p>
+&lt;p>When we created the tree from the source array, we placed each individual element on the new index &lt;code>[n + i]&lt;/code>.&lt;/p>
+&lt;p>💡 So when the function takes an index, we first find the &lt;em>bottommost element&lt;/em> in the tree. It is located in the new array by the index &lt;code>[length_of_source_array + index]&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># calculate the sum on the segment&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">query_tree&lt;/span>(l, r):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">global&lt;/span> tree, n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">sum&lt;/span> &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l &lt;span style="color:#666">+=&lt;/span> n &lt;span style="color:#60a0b0;font-style:italic"># current item index&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">+=&lt;/span> n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> l &lt;span style="color:#666">&amp;lt;=&lt;/span> r:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic"># if the index is odd&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">sum&lt;/span> &lt;span style="color:#666">+=&lt;/span> tree[l]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> r &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">sum&lt;/span> &lt;span style="color:#666">+=&lt;/span> tree[r]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l &lt;span style="color:#666">//=&lt;/span> &lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># floor division. 8 // 3 = 2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">//=&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020">sum&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&amp;gt;&amp;gt;&lt;/span> a &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">3&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">2&lt;/span>, &lt;span style="color:#40a070">8&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">7&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&amp;gt;&amp;gt;&lt;/span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(a)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&amp;gt;&amp;gt;&lt;/span> tree &lt;span style="color:#666">=&lt;/span> build_tree(a)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&amp;gt;&amp;gt;&lt;/span> query_tree(&lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#40a070">4&lt;/span>) &lt;span style="color:#60a0b0;font-style:italic"># sum([1, 3, -2, 8, -7])&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#40a070">3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&amp;gt;&amp;gt;&lt;/span> query_tree(&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">3&lt;/span>) &lt;span style="color:#60a0b0;font-style:italic"># sum([3, -2, 8])&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#40a070">9&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">&amp;gt;&amp;gt;&lt;/span> query_tree(&lt;span style="color:#40a070">4&lt;/span>, &lt;span style="color:#40a070">4&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">7&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We get the &lt;code>SegmentTree&lt;/code> class:&lt;/p>
+&lt;p>&lt;strong>Sum function or any other function can be turned on at the time of tree generation&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">SegmentTree&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, a):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(a)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>tree &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">*&lt;/span> &lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">*&lt;/span> self&lt;span style="color:#666">.&lt;/span>n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(self&lt;span style="color:#666">.&lt;/span>n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>tree[self&lt;span style="color:#666">.&lt;/span>n &lt;span style="color:#666">+&lt;/span> i] &lt;span style="color:#666">=&lt;/span> a[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(self&lt;span style="color:#666">.&lt;/span>n &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>tree[i] &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>tree[&lt;span style="color:#40a070">2&lt;/span>&lt;span style="color:#666">*&lt;/span>i] &lt;span style="color:#666">+&lt;/span> self&lt;span style="color:#666">.&lt;/span>tree[&lt;span style="color:#40a070">2&lt;/span>&lt;span style="color:#666">*&lt;/span>i&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">calculate_sum&lt;/span>(self, l, r):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">sum&lt;/span> &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l &lt;span style="color:#666">+=&lt;/span> self&lt;span style="color:#666">.&lt;/span>n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">+=&lt;/span> self&lt;span style="color:#666">.&lt;/span>n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> l &lt;span style="color:#666">&amp;lt;=&lt;/span> r:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">sum&lt;/span> &lt;span style="color:#666">+=&lt;/span> self&lt;span style="color:#666">.&lt;/span>tree[l]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> r &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">sum&lt;/span> &lt;span style="color:#666">+=&lt;/span> self&lt;span style="color:#666">.&lt;/span>tree[r]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l &lt;span style="color:#666">//=&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">//=&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020">sum&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">find_value&lt;/span>(self, l, r):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l &lt;span style="color:#666">+=&lt;/span> self&lt;span style="color:#666">.&lt;/span>n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">+=&lt;/span> self&lt;span style="color:#666">.&lt;/span>n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> l &lt;span style="color:#666">&amp;lt;&lt;/span> r:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> r &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> l &lt;span style="color:#666">-&lt;/span> self&lt;span style="color:#666">.&lt;/span>n
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="segment-tree-template">Segment Tree template&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">SegmentTree&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, data, default&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">0&lt;/span>, func&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020">max&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>_default &lt;span style="color:#666">=&lt;/span> default
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>_func &lt;span style="color:#666">=&lt;/span> func
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>_len &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(data)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>_size &lt;span style="color:#666">=&lt;/span> _size &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#666">&amp;lt;&amp;lt;&lt;/span> (self&lt;span style="color:#666">.&lt;/span>_len &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)&lt;span style="color:#666">.&lt;/span>bit_length()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>data &lt;span style="color:#666">=&lt;/span> [default] &lt;span style="color:#666">*&lt;/span> (&lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">*&lt;/span> _size)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>data[_size:_size &lt;span style="color:#666">+&lt;/span> self&lt;span style="color:#666">.&lt;/span>_len] &lt;span style="color:#666">=&lt;/span> data
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">reversed&lt;/span>(&lt;span style="color:#007020">range&lt;/span>(_size)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>data[i] &lt;span style="color:#666">=&lt;/span> func(self&lt;span style="color:#666">.&lt;/span>data[i &lt;span style="color:#666">+&lt;/span> i], self&lt;span style="color:#666">.&lt;/span>data[i &lt;span style="color:#666">+&lt;/span> i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> __delitem__(self, idx):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self[idx] &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>_default
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> __getitem__(self, idx):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> self&lt;span style="color:#666">.&lt;/span>data[idx &lt;span style="color:#666">+&lt;/span> self&lt;span style="color:#666">.&lt;/span>_size]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> __setitem__(self, idx, value):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> idx &lt;span style="color:#666">+=&lt;/span> self&lt;span style="color:#666">.&lt;/span>_size
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>data[idx] &lt;span style="color:#666">=&lt;/span> value
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> idx &lt;span style="color:#666">&amp;gt;&amp;gt;=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> idx:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>data[idx] &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>_func(self&lt;span style="color:#666">.&lt;/span>data[&lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">*&lt;/span> idx], self&lt;span style="color:#666">.&lt;/span>data[&lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">*&lt;/span> idx &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> idx &lt;span style="color:#666">&amp;gt;&amp;gt;=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> __len__(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> self&lt;span style="color:#666">.&lt;/span>_len
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">query&lt;/span>(self, start, stop):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;&amp;#34;&amp;#34;func of data[start, stop)&amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> start &lt;span style="color:#666">+=&lt;/span> self&lt;span style="color:#666">.&lt;/span>_size
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stop &lt;span style="color:#666">+=&lt;/span> self&lt;span style="color:#666">.&lt;/span>_size
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> start&lt;span style="color:#666">==&lt;/span>stop:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> self&lt;span style="color:#666">.&lt;/span>_default
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res_left &lt;span style="color:#666">=&lt;/span> res_right &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>_default
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> start &lt;span style="color:#666">&amp;lt;&lt;/span> stop:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> start &lt;span style="color:#666">&amp;amp;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res_left &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>_func(res_left, self&lt;span style="color:#666">.&lt;/span>data[start])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> start &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> stop &lt;span style="color:#666">&amp;amp;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stop &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res_right &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>_func(self&lt;span style="color:#666">.&lt;/span>data[stop], res_right)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> start &lt;span style="color:#666">&amp;gt;&amp;gt;=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stop &lt;span style="color:#666">&amp;gt;&amp;gt;=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> self&lt;span style="color:#666">.&lt;/span>_func(res_left, res_right)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> __repr__(self):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#4070a0">&amp;#34;SegmentTree(&lt;/span>&lt;span style="color:#70a0d0">{0}&lt;/span>&lt;span style="color:#4070a0">)&amp;#34;&lt;/span>&lt;span style="color:#666">.&lt;/span>format(self&lt;span style="color:#666">.&lt;/span>data)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The &lt;code>build_tree&lt;/code> method builds a segment tree, and &lt;code>query&lt;/code> allows you to perform query operations.&lt;/p>
+&lt;h2 id="links">Links&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.hackerearth.com/practice/data-structures/advanced-data-structures/segment-trees/tutorial/">https://www.hackerearth.com/practice/data-structures/advanced-data-structures/segment-trees/tutorial/&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Data Structures</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/data-structures/</link><pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/data-structures/</guid><description>&lt;h3 id="tree">Tree&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Node&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, value):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>value &lt;span style="color:#666">=&lt;/span> value
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>children &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">insert&lt;/span>(self, s, idx):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># idx: index of the current character in s&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> idx &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(s):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>children&lt;span style="color:#666">.&lt;/span>setdefault(s[idx], Node(s[idx]))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>children&lt;span style="color:#666">.&lt;/span>get(s[idx])&lt;span style="color:#666">.&lt;/span>insert(s, idx &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="fenwick-tree">Fenwick Tree&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Fenwick&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic">#also known as Binary Indexed Tree (BIT)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>n &lt;span style="color:#666">=&lt;/span> n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>bit &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">*&lt;/span> (n&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">add&lt;/span>(self, idx, val):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> idx &lt;span style="color:#666">&amp;lt;=&lt;/span> self&lt;span style="color:#666">.&lt;/span>n:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>bit[idx] &lt;span style="color:#666">+=&lt;/span> val
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> idx &lt;span style="color:#666">+=&lt;/span> idx &lt;span style="color:#666">&amp;amp;&lt;/span> &lt;span style="color:#666">-&lt;/span>idx
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">add_range&lt;/span>(self, l, r, val):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>add(l, val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>add(r&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#666">-&lt;/span>val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">query&lt;/span>(self, idx):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic">#Calculates the sum of the elements from the beginning to idx&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ret &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> idx &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ret &lt;span style="color:#666">+=&lt;/span> self&lt;span style="color:#666">.&lt;/span>bit[idx]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> idx &lt;span style="color:#666">-=&lt;/span> idx &lt;span style="color:#666">&amp;amp;&lt;/span> &lt;span style="color:#666">-&lt;/span>idx
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> ret
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">range_sum&lt;/span>(self, l, r):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Return the sum of the elements from l (inclusive) to r (exclusive)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> self&lt;span style="color:#666">.&lt;/span>prefix_sum(r &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>) &lt;span style="color:#666">-&lt;/span> self&lt;span style="color:#666">.&lt;/span>prefix_sum(l &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">prefix_sum&lt;/span>(self, x):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># return sum upto and including element x&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> z &lt;span style="color:#666">=&lt;/span> x
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> z &lt;span style="color:#666">&amp;gt;=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">+=&lt;/span> self&lt;span style="color:#666">.&lt;/span>bit[z]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Strip trailing zeros from z, and then take away one&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> z &lt;span style="color:#666">=&lt;/span> (z &lt;span style="color:#666">&amp;amp;&lt;/span> (z &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;a href="https://medium.com/carpanese/a-visual-introduction-to-fenwick-tree-89b82cac5b3c">A Visual Introduction to Fenwick Tree | medium&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://cp-algorithms.com/data_structures/fenwick.html">Fenwick Tree&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ru.algorithmica.org/cs/range-queries/fenwick/">Дерево Фенвика | algorithmica&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://habr.com/ru/post/112828/">Дерево Фенвика | habr&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/OpenGenus/cosmos">data structures&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.programiz.com/dsa/algorithm">data structures tutorial | programiz&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/cheran-senthil/PyRival">Competitive Programming Library&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://cp-algorithms.com/">Algorithms for Competitive Programming&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

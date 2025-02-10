@@ -1,3 +1,179 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Key Management Service on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/kms/</link><description>Recent content in Key Management Service on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sat, 24 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/kms/index.xml" rel="self" type="application/rss+xml"/><item><title>Encrypting S3 Objects Using SSE-KMS</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/kms/encrypting-s3-objects-using-sse-kms/</link><pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/kms/encrypting-s3-objects-using-sse-kms/</guid><description>Lab Encrypting S3 Objects Using SSE-KMS Creating a Customer Master Key (CMK) 1. In the AWS Management Console search bar, enter KMS, and click the KMS result under Services:
-2. Select Customer managed****keys in the left pane of the KMS console.
-Warning: Cloud Academy cleans up the lab environment for you after a lab is completed or terminated. As a precaution, AWS prevents keys from being deleted immediately. Rather, they are queued for deletion, and an expiration period is set (of 7-30 days).</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Key Management Service on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/kms/</link><description>Recent content in Key Management Service on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sat, 24 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/kms/index.xml" rel="self" type="application/rss+xml"/><item><title>Encrypting S3 Objects Using SSE-KMS</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/kms/encrypting-s3-objects-using-sse-kms/</link><pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/kms/encrypting-s3-objects-using-sse-kms/</guid><description>&lt;h2 id="lab">Lab&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://cloudacademy.com/lab/encrypting-s3-objects-using-sse-kms/">Encrypting S3 Objects Using SSE-KMS&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="creating-a-customer-master-key-cmk">Creating a Customer Master Key (CMK)&lt;/h2>
+&lt;p>1. In the AWS Management Console search bar, enter &lt;em>KMS&lt;/em>, and click the &lt;strong>KMS&lt;/strong> result under &lt;strong>Services&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220425095454-1-e48ba6b5-dcaa-439c-a208-610a83f92d03.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>2. Select &lt;strong>Customer managed****keys&lt;/strong> in the left pane of the KMS console.&lt;/p>
+&lt;p>&lt;em>Warning&lt;/em>: Cloud Academy cleans up the lab environment for you after a lab is completed or terminated. As a precaution, &lt;em>AWS prevents keys from being deleted immediately&lt;/em>. Rather, they are queued for deletion, and an expiration period is set (of 7-30 days). For this reason, you may see residual keys from other students within the last week. For this reason, you may need to append a unique number to the &lt;strong>Alias&lt;/strong> field in the next instruction.&lt;/p>
+&lt;p>3. Click &lt;strong>Create Key&lt;/strong>, then expand &lt;strong>Advanced Options&lt;/strong>and set the following values:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Key type&lt;/strong>: &lt;strong>Symmetric&lt;/strong>(Symmetric keys are suitable for most data encryption applications. The same key is used for both encrypt and decrypt operations with symmetric key algorithms.)&lt;/li>
+&lt;li>&lt;strong>Key usage&lt;/strong>: &lt;strong>Encrypt and decrypt&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Advanced options&lt;/strong>:
+&lt;ul>
+&lt;li>&lt;strong>Key Material Origin&lt;/strong>:  Leave as &lt;strong>KMS&lt;/strong> (default). AWS will generate the key material for encryption. Note that another common use case is for customers to generate their own keys, and have AWS keep a back up encrypted copy and help manage them with KMS.&lt;/li>
+&lt;li>&lt;strong>Regionality&lt;/strong>:&lt;strong>Single-Region key&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220425100026-3-09f50f48-3b36-4766-b33c-1f8068c65af7.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>4. Click &lt;strong>Next&lt;/strong> to advance to the &lt;strong>Add Labels&lt;/strong> page of the wizard.&lt;/p>
+&lt;p>5. Set the following values before clicking &lt;strong>Next&lt;/strong> (leave the default values for other fields)&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Alias&lt;/strong>: &lt;em>calabs-CMK-key&lt;/em>(Append a unique number to the key&amp;rsquo;s Alias if needed to be unique. For example, &lt;em>calabs-CMK-key2&lt;/em>.)&lt;/li>
+&lt;li>&lt;strong>Description&lt;/strong>:&lt;/li>
+&lt;/ul>
+&lt;p>6. Click &lt;strong>Next&lt;/strong> to advance to &lt;strong>Define Key Administrative Permissions&lt;/strong> and leave the default values.&lt;/p>
+&lt;p>Administrative permissions allow users and roles to administer CMKs but not to perform cryptographic operations. In production environments, this is sometimes used to easily grant limited access to other users. The &lt;strong>Allow key administrators to delete this key&lt;/strong>checkbox makes it explicit if deleting keys is allowed, since the key can&amp;rsquo;t be recovered once deleted, making recovery of encrypted data impossible. Note that key deletion is not immediate and first enters into a pending state before the key is deleted. The delete operation can be canceled while in the pending state.&lt;/p>
+&lt;p>These settings generate a key policy. The default policy allows IAM policies to grant access the key, which is why you don&amp;rsquo;t require selecting your student user as an administrator. The lab IAM policy of your student user allows you to perform the required actions of the lab.&lt;/p>
+&lt;p>7. Click &lt;strong>Next&lt;/strong> to advance to &lt;strong>Define Key Usage Permissions&lt;/strong>.&lt;/p>
+&lt;p>Usage permissions grant access to perform cryptographic operations such as encrypting and decrypting. Enterprises usually have different permissions for administrators and users, hence the wizard walks you through defining both.&lt;/p>
+&lt;p>Notice that you can grant access to the key so other AWS accounts can use it for encryption/decryption.&lt;/p>
+&lt;p>8. Click &lt;strong>Next&lt;/strong>to preview the &lt;strong>key policy&lt;/strong> and then click &lt;strong>Finish&lt;/strong> when ready.  &lt;/p>
+&lt;p>The CMK is created.&lt;/p>
+&lt;p>9. Confirm the key created correctly and that the &lt;strong>Status&lt;/strong> is &lt;strong>Enabled&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid0-d328c4c4-a137-4606-96c5-ece1c1cf35fd.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="encrypting-s3-data-using-server-side-encryption-with-kms-managed-keys-sse-kms">Encrypting S3 Data using Server-Side Encryption with KMS Managed Keys (SSE-KMS)&lt;/h2>
+&lt;p>You will upload a file and encrypt it using SSE-KMS in this lab step.&lt;/p>
+&lt;p>1. In the AWS Management Console search bar, enter &lt;em>S3&lt;/em>, and click the &lt;strong>S3&lt;/strong> result under &lt;strong>Services&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220425100405-4-564781e4-298f-4b84-a1b7-cc884e6eb5e7.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>2. Click the name of the bucket the Cloud Academy lab environment created for you (name begins with &lt;strong>cloudacademylabs-ssekms&lt;/strong>):&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220425101859-5-5a297f45-dceb-45e5-927a-4de7c2c07938.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>3. Click &lt;strong>Upload&lt;/strong>.&lt;/p>
+&lt;p>4. Click &lt;strong>Add files&lt;/strong> and select a small file, or &lt;a href="https://github.com/cloudacademy/aws-lab-artifacts/raw/master/sse-kms/ca.png">download this sample file&lt;/a> and select it.&lt;/p>
+&lt;p>5. Expand the &lt;strong>Properties&lt;/strong> tab and scroll until the &lt;strong>Server-side encryption settings&lt;/strong>.&lt;/p>
+&lt;p>6. Check the &lt;strong>Specify an encryption key&lt;/strong> checkbox.&lt;/p>
+&lt;p>7. Check the &lt;strong>AWS Key Management Service key (SSE-KMS)&lt;/strong> checkbox and then the &lt;strong>Choose from your AWS KMS keys&lt;/strong> checkbox:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid1-9d522bf2-9821-4eaa-b581-cb9e3745675d.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>8. Choose the AWS KMS key you previously generated:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid2-0cf9506e-ec09-4563-9eb4-1a8b306b7c09.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>9. Click on &lt;strong>Upload&lt;/strong>.&lt;/p>
+&lt;p>10. Click &lt;strong>Close&lt;/strong> and then click the name of the object to open its properties panel:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid0-a6b953d7-c50d-4c84-9a6c-8cbc52ea4877.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You can verify the object is encrypted using SSE-KMS by checking that the &lt;strong>Encryption&lt;/strong> field is &lt;strong>AWS-KMS&lt;/strong>.&lt;/p>
+&lt;h2 id="enforcing-s3-encryption-using-bucket-policies">Enforcing S3 Encryption Using Bucket Policies&lt;/h2>
+&lt;p>1. In the S3 bucket console, click the &lt;strong>Permissions&lt;/strong> tab followed by &lt;strong>Bucket Policy&lt;/strong> to open the &lt;strong>Bucket policy editor&lt;/strong>:&lt;/p>
+&lt;p>Bucket policies are IAM policies applied to a bucket rather than to a user or role as is conventionally done with IAM policies. Similar to how a key policy applied to the CMK. These are examples of resource-based policies in AWS.&lt;/p>
+&lt;p>2. Paste the following bucket policy into the policy editor:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;Version&amp;#34;&lt;/span>&lt;span style="color:#666">:&lt;/span> &lt;span style="color:#4070a0">&amp;#34;2012-10-17&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;Id&amp;#34;&lt;/span>&lt;span style="color:#666">:&lt;/span> &lt;span style="color:#4070a0">&amp;#34;RequireSSEKMS&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;Statement&amp;#34;&lt;/span>&lt;span style="color:#666">:&lt;/span> [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;Sid&amp;#34;&lt;/span>&lt;span style="color:#666">:&lt;/span> &lt;span style="color:#4070a0">&amp;#34;DenyUploadIfNotSSEKMSEncrypted&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;Effect&amp;#34;&lt;/span>&lt;span style="color:#666">:&lt;/span> &lt;span style="color:#4070a0">&amp;#34;Deny&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;Principal&amp;#34;&lt;/span>&lt;span style="color:#666">:&lt;/span> &lt;span style="color:#4070a0">&amp;#34;*&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;Action&amp;#34;&lt;/span>&lt;span style="color:#666">:&lt;/span> &lt;span style="color:#4070a0">&amp;#34;s3:PutObject&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;Resource&amp;#34;&lt;/span>&lt;span style="color:#666">:&lt;/span> &lt;span style="color:#4070a0">&amp;#34;arn:aws:s3:::&amp;lt;Your_Bucket_Name&amp;gt;/*&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;Condition&amp;#34;&lt;/span>&lt;span style="color:#666">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;StringNotEquals&amp;#34;&lt;/span>&lt;span style="color:#666">:&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;s3:x-amz-server-side-encryption&amp;#34;&lt;/span>&lt;span style="color:#666">:&lt;/span> &lt;span style="color:#4070a0">&amp;#34;aws:kms&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This policy denies (&lt;code>&amp;quot;Effect&amp;quot;: &amp;quot;Deny&amp;quot;&lt;/code>) all users&amp;rsquo; (&lt;code>&amp;quot;Principal&amp;quot;: &amp;quot;*&amp;quot;&lt;/code>) uploads (&lt;code>&amp;quot;Action&amp;quot;: &amp;quot;s3:PutObject&amp;quot;&lt;/code>) to the bucket (&lt;code>&amp;quot;Resource&amp;quot;: &amp;quot;arn:aws:s3:::&amp;lt;Your_Bucket_Name&amp;gt;/*&amp;quot;&lt;/code>) if the &lt;code>s3:x-amz-server-side-encryption&lt;/code> is not set to &lt;code>aws:kms&lt;/code>, which corresponds to SSE-KMS. The lab provides you with the policy but you could recreate it using the policy generator linked to beneath the policy editor.&lt;/p>
+&lt;p>3. Replace &amp;lt;Your_Bucket_Name&amp;gt; with the name of your lab bucket (it begins with &lt;em>cloudacademylabs-ssekms-&lt;/em> and can be copied from the S3 console):&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220425102031-6-bd9a811b-e7a0-4529-a500-368d894c976b.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>4. Click &lt;strong>Save changes&lt;/strong> to save the policy and have it start being enforced.&lt;/p>
+&lt;p>5. Click the &lt;strong>Objects&lt;/strong>tab followed by &lt;strong>Upload&lt;/strong>.&lt;/p>
+&lt;p>6. Click &lt;strong>Add files&lt;/strong> and select a small file, or &lt;a href="https://github.com/cloudacademy/aws-lab-artifacts/raw/master/sse-kms/aws.png">download this sample file&lt;/a> and select it.&lt;/p>
+&lt;p>7. Click &lt;strong>Upload&lt;/strong> and observe the image does not appear in the bucket contents table.&lt;/p>
+&lt;p>Clicking upload without configuring any properties of the object uses the default of no encryption.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220425102311-7-0becc3f0-e164-49fc-b31f-fab1bc208937.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You can see the upload &lt;strong>Failed&lt;/strong>.&lt;/p>
+&lt;p>8. Retry the upload but this time use the &lt;strong>Set properties&lt;/strong> step to configure &lt;strong>Encryption&lt;/strong>to &lt;strong>AWS KMS master-key&lt;/strong> using your CMK.&lt;/p>
+&lt;p>The upload now succeeds since the bucket policy condition is satisfied:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220425102513-8-6f4c63db-e2e5-4d2e-9203-38278b614903.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The policy does not require the use of your CMK however, so the default S3 KMS key in the region is also allowed. You can change the policy condition to enforce a specific CMK is used.&lt;/p></description></item></channel></rss>

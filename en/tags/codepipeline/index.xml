@@ -1,3 +1,67 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Codepipeline on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/codepipeline/</link><description>Recent content in Codepipeline on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 16 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/codepipeline/index.xml" rel="self" type="application/rss+xml"/><item><title>CodePipeline</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codepipeline/</link><pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codepipeline/</guid><description>About AWS CodePipeline is a fully managed continuous delivery service that helps you automate your release pipelines for fast and reliable application and infrastructure updates.
-Documentation User Guide CodePipeline automates the build, test, and deploy phases of your release process every time there is a code change, based on the release model you define.
-You can easily integrate AWS CodePipeline with third-party services such as GitHub or with your own custom plugin. With AWS CodePipeline, you only pay for what you use.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Codepipeline on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/codepipeline/</link><description>Recent content in Codepipeline on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 16 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/codepipeline/index.xml" rel="self" type="application/rss+xml"/><item><title>CodePipeline</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codepipeline/</link><pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/codepipeline/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>AWS CodePipeline is a fully managed continuous delivery service that helps you automate your release pipelines for fast and reliable application and infrastructure updates.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/codepipeline/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/codepipeline/?id=docs_gateway">User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>CodePipeline automates the build, test, and deploy phases of your release process every time there is a code change, based on the release model you define.&lt;/p>
+&lt;p>You can easily integrate AWS CodePipeline with third-party services such as GitHub or with your own custom plugin. With AWS CodePipeline, you only pay for what you use.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/Products/product-name/diagrams/product-page-diagram_CodePipeLine.7b8dd19eb6478b7f6f747d936c2f0b0b66757bbf.png"
+id="zoom-default"
+alt="CodePipeline Flow"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="alternatives">Alternatives&lt;/h3>
+&lt;ul>
+&lt;li>Bamboo.&lt;/li>
+&lt;li>CircleCI.&lt;/li>
+&lt;li>Jenkins.&lt;/li>
+&lt;li>Travis CI.&lt;/li>
+&lt;li>GitLab.&lt;/li>
+&lt;li>TeamCity.&lt;/li>
+&lt;li>Azure DevOps Server.&lt;/li>
+&lt;li>Google Cloud Build.&lt;/li>
+&lt;/ul>
+&lt;h3 id="terminology">Terminology&lt;/h3>
+&lt;p>&lt;strong>Pipelines&lt;/strong>&lt;/p>
+&lt;p>A workflow that describes how software changes go through the release process.&lt;/p>
+&lt;p>&lt;strong>Artifacts&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Files or changes that will be worked on by the actions and stages in the pipeline.&lt;/li>
+&lt;li>Each pipeline stage can create “artifacts”.&lt;/li>
+&lt;li>Artifacts are passed, stored in Amazon S3, and then passed on to the next stage.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Stages&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Pipelines are broken up into stages, e.g., build stage, deployment stage.&lt;/li>
+&lt;li>Each stage can have sequential actions and or parallel actions.&lt;/li>
+&lt;li>Stage examples would be build, test, deploy, load test etc.&lt;/li>
+&lt;li>Manual approval can be defined at any stage.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Actions&lt;/strong>&lt;/p>
+&lt;p>Stages contain at least one action, these actions take some action on artifacts and will have artifacts as either an input, and output, or both.&lt;/p>
+&lt;p>&lt;strong>Transitions&lt;/strong>&lt;/p>
+&lt;p>The progressing from one stage to another inside of a pipeline.&lt;/p>
+&lt;h2 id="price">Price&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/codepipeline/pricing/">Current price&lt;/a>&lt;/p>
+&lt;h2 id="questions">Questions&lt;/h2>
+&lt;h3 id="q1">Q1&lt;/h3>
+&lt;p>&lt;strong>You are configuring a Jenkins project that is installed on an Amazon EC2 instance running a Windows operating system. You want this Jenkins project to integrate with AWS CodePipeline.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which actions should you take to make this function perform correctly? (2 answers)&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Restart all Amazon EC2 instances that are running a Windows operating system.&lt;/li>
+&lt;li>Provide the IAM user credentials to integrate AWS CodePipeline.&lt;/li>
+&lt;li>Fill out the required fields for your proxy host.&lt;/li>
+&lt;li>Modify the PATH variable to include the directory where you installed Jenkins on all Amazon EC2 instance that are running a Windows operating system.&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/tutorials-four-stage-pipeline.html">https://docs.aws.amazon.com/codepipeline/latest/userguide/tutorials-four-stage-pipeline.html&lt;/a>&lt;/p>
+&lt;p>&lt;mark style="color:white">2, 3&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details></description></item></channel></rss>

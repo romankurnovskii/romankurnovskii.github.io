@@ -1,33 +1,479 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hash Table on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/hash-table/</link><description>Recent content in Hash Table on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sat, 10 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/hash-table/index.xml" rel="self" type="application/rss+xml"/><item><title>1. Two Sum</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/1/</link><pubDate>Sun, 16 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/1/</guid><description>LeetCode problem
-Problem Statement In this problem, you&amp;rsquo;re given an array of integers nums and an integer target. Your task is to find the indices of two numbers in the array that add up to the target. The input array is guaranteed to have exactly one solution, and you can&amp;rsquo;t use the same element twice. The indices can be returned in any order.
-Naive Solution A naive solution would involve using two nested loops to iterate through each pair of elements in the array and check if their sum is equal to the target.</description></item><item><title>13. Roman to Integer</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/13/</link><pubDate>Wed, 19 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/13/</guid><description>LeetCode problem
-Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
-Symbol Value I 1 V 5 X 10 L 50 C 100 D 500 M 1000 For example, 2 is written as II in Roman numeral, just two ones added together. 12 is written as XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.
-Roman numerals are usually written largest to smallest from left to right.</description></item><item><title>36. Valid Sudoku</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/36/</link><pubDate>Sat, 03 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/36/</guid><description>LeetCode problem
-Determine if a 9 x 9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:
-Each row must contain the digits 1-9 without repetition. Each column must contain the digits 1-9 without repetition. Each of the nine 3 x 3 sub-boxes of the grid must contain the digits 1-9 without repetition.
-Note:
-A Sudoku board (partially filled) could be valid but is not necessarily solvable. Only the filled cells need to be validated according to the mentioned rules.</description></item><item><title>49. Group Anagrams</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/49/</link><pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/49/</guid><description>LeetCode problem
-Given an array of strings strs, group the anagrams together. You can return the answer in any order.
-An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
-Example 1:
-Input: strs = [&amp;quot;eat&amp;quot;,&amp;quot;tea&amp;quot;,&amp;quot;tan&amp;quot;,&amp;quot;ate&amp;quot;,&amp;quot;nat&amp;quot;,&amp;quot;bat&amp;quot;] Output: [[&amp;quot;bat&amp;quot;],[&amp;quot;nat&amp;quot;,&amp;quot;tan&amp;quot;],[&amp;quot;ate&amp;quot;,&amp;quot;eat&amp;quot;,&amp;quot;tea&amp;quot;]] Example 2:
-Input: strs = [&amp;quot;&amp;quot;] Output: [[&amp;quot;&amp;quot;]] Example 3:
-Input: strs = [&amp;quot;a&amp;quot;] Output: [[&amp;quot;a&amp;quot;]] Idea:
-class Solution: def groupAnagrams(self, strs: List[str]) -&amp;gt; List[List[str]]: dd = {} for s in strs: s_sort = &amp;#34;&amp;#34;.</description></item><item><title>73. Set Matrix Zeroes</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/73/</link><pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/73/</guid><description>LeetCode problem
-Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0&amp;rsquo;s.
-You must do it in place.
-Example 1:
-Input: matrix = [[1,1,1],[1,0,1],[1,1,1]] Output: [[1,0,1],[0,0,0],[1,0,1]] Example 2:
-Input: matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]] Output: [[0,0,0,0],[0,4,5,0],[0,3,1,0]] Approach 1:
-Idea:
-LeetCode Submission
-class Solution: def setZeroes(self, matrix: List[List[int]]) -&amp;gt; None: rows = len(matrix) cols = len(matrix[0]) # 1. Check first row/column for zero&amp;#39;s first_row_has_zero = 0 in matrix[0] first_col_has_zero = 0 in list(zip(*matrix))[0] # 2.</description></item><item><title>128. Longest Consecutive Sequence</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/128/</link><pubDate>Thu, 13 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/128/</guid><description>LeetCode problem
-Save all numbers in set to make it possible to get number at O(1). For each element look for the current+1 element if exists. class Solution: def longestConsecutive(self, nums: List[int]) -&amp;gt; int: res = 0 nset = set(nums) for x in nset: if x - 1 not in nset: # prevent double calculations _max = 1 cur = x while cur + 1 in nset: _max += 1 cur += 1 res = max(_max, res) return res</description></item><item><title>387. First Unique Character in a String</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/387/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/387/</guid><description>LeetCode задача 387
-Задача Дана строка s. Найдите первый уникальный символ в строке и верните его индекс. Если такого символа нет, верните -1.
-Подсказки Использование хеш-таблицы может ускорить процесс поиска уникальных символов.
-Подход Инициализация: Создайте хеш-таблицу для хранения частоты каждого символа в строке. Первый проход: Пройдите по строке и заполните хеш-таблицу. Второй проход: Пройдите по строке второй раз и проверьте частоту каждого символа в хеш-таблице. Первый символ с частотой 1 будет ответом. Этот подход прост для понимания и реализации.</description></item><item><title>2013. Detect Squares</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/2013/</link><pubDate>Sat, 10 Feb 2024 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/hard/2013/</guid><description>LeetCode задача 2013
-В данное задаче решение будет с использованием переменных на русском языке
-Задача Задача заключается в разработке структуры данных, которая позволяет добавлять точки на плоскости и подсчитывать количество квадратов, которые можно образовать, добавив новую точку.
-Подсказки Решение включает в себя поддержку двух типов данных:
-Счётчик точек счетчик_точек, который хранит информацию о количестве каждой точки на плоскости. Словарь координат по оси X координаты_по_x, который для каждой координаты x содержит счётчик координат y, позволяющий быстро находить все точки с данной координатой x.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hash Table on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/hash-table/</link><description>Recent content in Hash Table on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Mon, 28 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/hash-table/index.xml" rel="self" type="application/rss+xml"/><item><title>1. Two Sum</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/1/</link><pubDate>Sun, 16 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/1/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/two-sum/">LeetCode problem&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>In this problem, you&amp;rsquo;re given an array of integers &lt;code>nums&lt;/code> and an integer &lt;code>target&lt;/code>. Your task is to find the indices of two numbers in the array that add up to the target. The input array is guaranteed to have exactly one solution, and you can&amp;rsquo;t use the same element twice. The indices can be returned in any order.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A naive solution would involve using two nested loops to iterate through each pair of elements in the array and check if their sum is equal to the target. This approach has a time complexity of O(n^2), where n is the length of the input array. However, there is a more efficient solution that uses a hash table and has a time complexity of O(n).&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;p>A hash table (or dictionary in Python) is a data structure that allows you to store and retrieve values in O(1) time on average. It uses key-value pairs, where each key is unique and maps to a specific value.&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>To solve this problem efficiently, we&amp;rsquo;ll use a hash table to store the indices of the numbers we&amp;rsquo;ve seen so far. For each number, we&amp;rsquo;ll check if the difference between the target and the current number is already in the hash table. If it is, we&amp;rsquo;ve found the two numbers that add up to the target, and we&amp;rsquo;ll return their indices.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Initialize an empty hash table to store the indices of the numbers we&amp;rsquo;ve seen so far.&lt;/li>
+&lt;li>Iterate through the input array, for each number:
+&lt;ol>
+&lt;li>Calculate the difference between the target and the current number.&lt;/li>
+&lt;li>Check if the difference is already in the hash table. If it is, return the indices of the current number and the number that corresponds to the difference.&lt;/li>
+&lt;li>If the difference is not in the hash table, add the current number and its index to the hash table.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Since the problem guarantees that there is always a solution, we&amp;rsquo;ll always find the two numbers that add up to the target.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;p>Here&amp;rsquo;s the Python code to implement this approach:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">typing&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> List
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">twoSum&lt;/span>(nums: List[&lt;span style="color:#007020">int&lt;/span>], target: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[&lt;span style="color:#007020">int&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> seen &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Iterate through the input array&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i, num &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">enumerate&lt;/span>(nums):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Calculate the difference between the target and the current number&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> diff &lt;span style="color:#666">=&lt;/span> target &lt;span style="color:#666">-&lt;/span> num
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Check if the difference is already in the hash table&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> diff &lt;span style="color:#007020;font-weight:bold">in&lt;/span> seen:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Return the indices of the current number and the number that corresponds to the difference&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> [seen[diff], i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Add the current number and its index to the hash table&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> seen[num] &lt;span style="color:#666">=&lt;/span> i
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>3. Longest Substring Without Repeating Characters</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/3/</link><pubDate>Tue, 18 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/3/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given a string &lt;code>s&lt;/code>, find the length of the longest substring without repeating characters.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: s = &amp;quot;abcabcbb&amp;quot;
+Output: 3
+Explanation: The answer is &amp;quot;abc&amp;quot;, with the length of 3.
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Loop through string&lt;/li>
+&lt;li>Calculate max count of elements in substring&lt;/li>
+&lt;li>If get double element, then go back until get this element and do step 2.&lt;/li>
+&lt;li>Proceed the main loop&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/3.jpg"
+id="zoom-default"
+alt="Longest Substring Without Repeating Characters"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">lengthOfLongestSubstring&lt;/span>(self, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uniqs &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_max &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_current &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> idx &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> s:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> uniqs:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_max &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(len_max, len_current)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_current &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uniqs &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">reversed&lt;/span>(s[:idx]):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> j &lt;span style="color:#666">==&lt;/span> i:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_current &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uniqs&lt;span style="color:#666">.&lt;/span>add(j)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uniqs&lt;span style="color:#666">.&lt;/span>add(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_current &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> len_max &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(len_max, len_current)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> idx &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> len_max
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="better-solution">Better solution&lt;/h2>
+&lt;blockquote>
+&lt;p>Sliding Window - &lt;a href="https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/#sliding-window">template&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;p>&lt;strong>Window Sliding Technique&lt;/strong> is a computational technique which aims to reduce the use of nested loop and replace it with a single loop, thereby reducing the time complexity.
+The Sliding window technique can reduce the time complexity to O(n).&lt;/p>
+&lt;p>Tips for identifying this kind of problem where we could use the sliding window technique:&lt;/p>
+&lt;p>The problem will be based on an array, string, or list data structure.
+You need to find the subrange in this array or string that should provide the longest, shortest, or target values.
+A classic problem: to find the largest/smallest sum of given k (for example, three) consecutive numbers in an array.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">lengthOfLongestSubstring&lt;/span>(self, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(s)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># mp stores the current index of a character&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mp &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># try to extend the range [i, j]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> s[j] &lt;span style="color:#007020;font-weight:bold">in&lt;/span> mp:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(mp[s[j]], i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(res, j &lt;span style="color:#666">-&lt;/span> i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mp[s[j]] &lt;span style="color:#666">=&lt;/span> j &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">lengthOfLongestSubstring&lt;/span>(self, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> chars &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#007020;font-weight:bold">None&lt;/span>] &lt;span style="color:#666">*&lt;/span> &lt;span style="color:#40a070">128&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">=&lt;/span> right &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> right &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(s):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">=&lt;/span> s[right]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> index &lt;span style="color:#666">=&lt;/span> chars[&lt;span style="color:#007020">ord&lt;/span>(r)]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> index &lt;span style="color:#007020;font-weight:bold">is&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> left &lt;span style="color:#666">&amp;lt;=&lt;/span> index &lt;span style="color:#666">&amp;lt;&lt;/span> right:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> left &lt;span style="color:#666">=&lt;/span> index &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(res, right &lt;span style="color:#666">-&lt;/span> left &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> chars[&lt;span style="color:#007020">ord&lt;/span>(r)] &lt;span style="color:#666">=&lt;/span> right
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> right &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">lengthOfLongestSubstring&lt;/span>(self, s):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_len &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> substr &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> char &lt;span style="color:#007020;font-weight:bold">in&lt;/span> s:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> char &lt;span style="color:#007020;font-weight:bold">not&lt;/span> &lt;span style="color:#007020;font-weight:bold">in&lt;/span> substr:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> substr &lt;span style="color:#666">+=&lt;/span> char
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_len &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(max_len, &lt;span style="color:#007020">len&lt;/span>(substr))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> start &lt;span style="color:#666">=&lt;/span> substr&lt;span style="color:#666">.&lt;/span>index(char) &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> substr &lt;span style="color:#666">=&lt;/span> substr[start:] &lt;span style="color:#666">+&lt;/span> char
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> max_len
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/discuss/2694302/JS-or-98-or-Sliding-window-or-With-exlanation">https://leetcode.com/problems/longest-substring-without-repeating-characters/discuss/2694302/JS-or-98-or-Sliding-window-or-With-exlanation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/discuss/2133524/JavaC%2B%2B-A-reall-Detailed-Explanation">https://leetcode.com/problems/longest-substring-without-repeating-characters/discuss/2133524/JavaC%2B%2B-A-reall-Detailed-Explanation&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>13. Roman to Integer</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/13/</link><pubDate>Wed, 19 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/13/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/roman-to-integer/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Roman numerals are represented by seven different symbols: &lt;code>I&lt;/code>, &lt;code>V&lt;/code>, &lt;code>X&lt;/code>, &lt;code>L&lt;/code>, &lt;code>C&lt;/code>, &lt;code>D&lt;/code> and &lt;code>M&lt;/code>.&lt;/p>
+&lt;pre>&lt;code>Symbol Value
+I 1
+V 5
+X 10
+L 50
+C 100
+D 500
+M 1000
+&lt;/code>&lt;/pre>
+&lt;p>For example, &lt;code>2&lt;/code> is written as &lt;code>II&lt;/code> in Roman numeral, just two ones added together. 12 is written as &lt;code>XII&lt;/code>, which is simply &lt;code>X + II&lt;/code>. The number 27 is written as &lt;code>XXVII&lt;/code>, which is &lt;code>XX + V + II&lt;/code>.&lt;/p>
+&lt;p>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not &lt;code>IIII&lt;/code>. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:&lt;/p>
+&lt;p>I can be placed before &lt;code>V&lt;/code> (5) and &lt;code>X&lt;/code> (10) to make 4 and 9.
+X can be placed before &lt;code>L&lt;/code> (50) and &lt;code>C&lt;/code> (100) to make 40 and 90.
+C can be placed before &lt;code>D&lt;/code> (500) and &lt;code>M&lt;/code> (1000) to make 400 and 900.&lt;/p>
+&lt;p>Given a roman numeral, convert it to an integer.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: s = &amp;quot;III&amp;quot;
+Output: 3
+Explanation: III = 3.
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: s = &amp;quot;MCMXCIV&amp;quot;
+Output: 1994
+Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/13.jpg"
+id="zoom-default"
+alt="test-case"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">romanToInt&lt;/span>(self, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">dict&lt;/span> &lt;span style="color:#666">=&lt;/span> {&lt;span style="color:#4070a0">&amp;#39;I&amp;#39;&lt;/span>:&lt;span style="color:#40a070">1&lt;/span>,&lt;span style="color:#4070a0">&amp;#39;V&amp;#39;&lt;/span>:&lt;span style="color:#40a070">5&lt;/span>,&lt;span style="color:#4070a0">&amp;#39;X&amp;#39;&lt;/span>:&lt;span style="color:#40a070">10&lt;/span>,&lt;span style="color:#4070a0">&amp;#39;L&amp;#39;&lt;/span>:&lt;span style="color:#40a070">50&lt;/span>,&lt;span style="color:#4070a0">&amp;#39;C&amp;#39;&lt;/span>:&lt;span style="color:#40a070">100&lt;/span>,&lt;span style="color:#4070a0">&amp;#39;D&amp;#39;&lt;/span>:&lt;span style="color:#40a070">500&lt;/span>,&lt;span style="color:#4070a0">&amp;#39;M&amp;#39;&lt;/span>:&lt;span style="color:#40a070">1000&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n_sum &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> c &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">reversed&lt;/span>(s):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">dict&lt;/span>[c]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#666">-&lt;/span>n &lt;span style="color:#007020;font-weight:bold">if&lt;/span> n &lt;span style="color:#007020;font-weight:bold">in&lt;/span> (&lt;span style="color:#40a070">1&lt;/span>,&lt;span style="color:#40a070">10&lt;/span>,&lt;span style="color:#40a070">100&lt;/span>) &lt;span style="color:#007020;font-weight:bold">and&lt;/span> prev &lt;span style="color:#007020;font-weight:bold">in&lt;/span> (n&lt;span style="color:#666">*&lt;/span>&lt;span style="color:#40a070">5&lt;/span>, n&lt;span style="color:#666">*&lt;/span>&lt;span style="color:#40a070">10&lt;/span>) &lt;span style="color:#007020;font-weight:bold">else&lt;/span> n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n_sum &lt;span style="color:#666">+=&lt;/span> n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(n)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> n_sum
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>17. Letter Combinations of a Phone Number</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/17/</link><pubDate>Fri, 11 Nov 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/17/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/letter-combinations-of-a-phone-number/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given a string containing digits from &lt;code>2-9&lt;/code> inclusive, return all possible letter combinations that the number could represent. Return the answer in &lt;strong>any order&lt;/strong>.&lt;/p>
+&lt;p>A mapping of digits to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.leetcode.com/uploads/2022/03/15/1200px-telephone-keypad2svg.png"
+id="zoom-default"
+alt="17"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: digits = &amp;quot;23&amp;quot;
+Output: [&amp;quot;ad&amp;quot;,&amp;quot;ae&amp;quot;,&amp;quot;af&amp;quot;,&amp;quot;bd&amp;quot;,&amp;quot;be&amp;quot;,&amp;quot;bf&amp;quot;,&amp;quot;cd&amp;quot;,&amp;quot;ce&amp;quot;,&amp;quot;cf&amp;quot;]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: digits = &amp;quot;&amp;quot;
+Output: []
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">letterCombinations&lt;/span>(self, digits: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[&lt;span style="color:#007020">str&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> digits:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> letters &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;abc&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;def&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#39;ghi&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;jkl&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;mno&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#39;pqrs&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;tuv&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;wxyz&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#4070a0">&amp;#39;&amp;#39;&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> d &lt;span style="color:#007020;font-weight:bold">in&lt;/span> digits:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> d &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(d)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tmp &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> letter &lt;span style="color:#007020;font-weight:bold">in&lt;/span> letters[d]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> word &lt;span style="color:#007020;font-weight:bold">in&lt;/span> result:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> word &lt;span style="color:#666">+=&lt;/span> letter
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tmp&lt;span style="color:#666">.&lt;/span>append(word)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#666">=&lt;/span> tmp
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> result
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>36. Valid Sudoku</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/36/</link><pubDate>Sat, 03 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/36/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/valid-sudoku/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Determine if a &lt;code>9 x 9&lt;/code> Sudoku board is valid. Only the filled cells need to be validated according to the following rules:&lt;/p>
+&lt;p>Each row must contain the digits &lt;code>1-9&lt;/code> without repetition.
+Each column must contain the digits &lt;code>1-9&lt;/code> without repetition.
+Each of the nine 3 x 3 sub-boxes of the grid must contain the digits &lt;code>1-9&lt;/code> without repetition.&lt;/p>
+&lt;p>&lt;strong>Note:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>A Sudoku board (partially filled) could be valid but is not necessarily solvable.&lt;/li>
+&lt;li>Only the filled cells need to be validated according to the mentioned rules.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Sudoku-by-L2G-20050714.svg/250px-Sudoku-by-L2G-20050714.svg.png"
+id="zoom-default"
+alt="example"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;pre>&lt;code>Input: board =
+[[&amp;quot;5&amp;quot;,&amp;quot;3&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;7&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;]
+,[&amp;quot;6&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;9&amp;quot;,&amp;quot;5&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;]
+,[&amp;quot;.&amp;quot;,&amp;quot;9&amp;quot;,&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;6&amp;quot;,&amp;quot;.&amp;quot;]
+,[&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;6&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;3&amp;quot;]
+,[&amp;quot;4&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;3&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;1&amp;quot;]
+,[&amp;quot;7&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;2&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;6&amp;quot;]
+,[&amp;quot;.&amp;quot;,&amp;quot;6&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;2&amp;quot;,&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;]
+,[&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;4&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;9&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;5&amp;quot;]
+,[&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;7&amp;quot;,&amp;quot;9&amp;quot;]]
+Output: true
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: board =
+[[&amp;quot;8&amp;quot;,&amp;quot;3&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;7&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;]
+,[&amp;quot;6&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;9&amp;quot;,&amp;quot;5&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;]
+,[&amp;quot;.&amp;quot;,&amp;quot;9&amp;quot;,&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;6&amp;quot;,&amp;quot;.&amp;quot;]
+,[&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;6&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;3&amp;quot;]
+,[&amp;quot;4&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;3&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;1&amp;quot;]
+,[&amp;quot;7&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;2&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;6&amp;quot;]
+,[&amp;quot;.&amp;quot;,&amp;quot;6&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;2&amp;quot;,&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;]
+,[&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;4&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;9&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;5&amp;quot;]
+,[&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;8&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;.&amp;quot;,&amp;quot;7&amp;quot;,&amp;quot;9&amp;quot;]]
+Output: false
+Explanation: Same as Example 1, except with the 5 in the top left corner being modified to 8. Since there are two 8's in the top left 3x3 sub-box, it is invalid.
+&lt;/code>&lt;/pre>
+&lt;h2 id="code">Code&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/36.jpg"
+id="zoom-default"
+alt="test-case"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">isValidSudoku&lt;/span>(self, board: List[List[&lt;span style="color:#007020">str&lt;/span>]]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">bool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> exist &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">9&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">9&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#666">=&lt;/span> board[i][j]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> x &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#4070a0">&amp;#39;.&amp;#39;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uniqs &lt;span style="color:#666">=&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (i, x),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (x, j),
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#007020">int&lt;/span>(i&lt;span style="color:#666">/&lt;/span>&lt;span style="color:#40a070">3&lt;/span>), &lt;span style="color:#007020">int&lt;/span>(j&lt;span style="color:#666">/&lt;/span>&lt;span style="color:#40a070">3&lt;/span>), x) ) &lt;span style="color:#60a0b0;font-style:italic"># devide 3 because of third check in 3x3 block&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> z &lt;span style="color:#007020;font-weight:bold">in&lt;/span> uniqs:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> z &lt;span style="color:#007020;font-weight:bold">in&lt;/span> exist:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> exist&lt;span style="color:#666">.&lt;/span>add(z)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>49. Group Anagrams</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/49/</link><pubDate>Wed, 21 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/49/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/group-anagrams/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given an array of strings &lt;code>strs&lt;/code>, group &lt;strong>the anagrams&lt;/strong> together. You can return the answer in &lt;strong>any order&lt;/strong>.&lt;/p>
+&lt;p>An &lt;strong>Anagram&lt;/strong> is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: strs = [&amp;quot;eat&amp;quot;,&amp;quot;tea&amp;quot;,&amp;quot;tan&amp;quot;,&amp;quot;ate&amp;quot;,&amp;quot;nat&amp;quot;,&amp;quot;bat&amp;quot;]
+Output: [[&amp;quot;bat&amp;quot;],[&amp;quot;nat&amp;quot;,&amp;quot;tan&amp;quot;],[&amp;quot;ate&amp;quot;,&amp;quot;eat&amp;quot;,&amp;quot;tea&amp;quot;]]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: strs = [&amp;quot;&amp;quot;]
+Output: [[&amp;quot;&amp;quot;]]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 3:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: strs = [&amp;quot;a&amp;quot;]
+Output: [[&amp;quot;a&amp;quot;]]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">groupAnagrams&lt;/span>(self, strs: List[&lt;span style="color:#007020">str&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[List[&lt;span style="color:#007020">str&lt;/span>]]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dd &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> s &lt;span style="color:#007020;font-weight:bold">in&lt;/span> strs:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s_sort &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&amp;#34;&lt;/span>&lt;span style="color:#666">.&lt;/span>join(&lt;span style="color:#007020">sorted&lt;/span>(s))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> values &lt;span style="color:#666">=&lt;/span> dd&lt;span style="color:#666">.&lt;/span>get(s_sort, [])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> values&lt;span style="color:#666">.&lt;/span>append(s)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dd[s_sort] &lt;span style="color:#666">=&lt;/span> values
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> dd&lt;span style="color:#666">.&lt;/span>values()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Approach 2:&lt;/strong>&lt;/p>
+&lt;p>Intuition:&lt;/p>
+&lt;p>Two strings are anagrams if and only if their character counts (respective number of occurrences of each character) are the same.&lt;/p>
+&lt;p>Algorithm:&lt;/p>
+&lt;p>We can transform each string &lt;code>s&lt;/code> into a character count, count\text{count}count, consisting of 26 non-negative integers representing the number of &lt;code>a&lt;/code>&amp;rsquo;s, &lt;code>b&lt;/code>&amp;rsquo;s, z&amp;rsquo;s, etc. We use these counts as the basis for our hash map.&lt;/p>
+&lt;p>In python, the representation will be a tuple of the counts. For example, &lt;code>abbccc&lt;/code> will be &lt;code>(1, 2, 3, 0, 0, ..., 0)&lt;/code>, where again there are 26 entries total.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://leetcode.com/problems/group-anagrams/solutions/127405/Figures/49_groupanagrams2.png"
+id="zoom-default"
+alt="example"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">groupAnagrams&lt;/span>(strs):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> collections&lt;span style="color:#666">.&lt;/span>defaultdict(&lt;span style="color:#007020">list&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> s &lt;span style="color:#007020;font-weight:bold">in&lt;/span> strs:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">*&lt;/span> &lt;span style="color:#40a070">26&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> c &lt;span style="color:#007020;font-weight:bold">in&lt;/span> s:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count[&lt;span style="color:#007020">ord&lt;/span>(c) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#007020">ord&lt;/span>(&lt;span style="color:#4070a0">&amp;#39;a&amp;#39;&lt;/span>)] &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res[&lt;span style="color:#007020">tuple&lt;/span>(count)]&lt;span style="color:#666">.&lt;/span>append(s)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res&lt;span style="color:#666">.&lt;/span>values()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://leetcode.com/problems/group-anagrams/solutions/127405/group-anagrams/">LeetCode expl&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>73. Set Matrix Zeroes</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/73/</link><pubDate>Mon, 09 Jan 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/73/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/set-matrix-zeroes/description/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given an &lt;code>m x n&lt;/code> integer matrix &lt;code>matrix&lt;/code>, if an element is &lt;code>0&lt;/code>, set its entire row and column to 0&amp;rsquo;s.&lt;/p>
+&lt;p>You must do it in place.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.leetcode.com/uploads/2020/08/17/mat1.jpg"
+id="zoom-default"
+alt="73. Set Matrix Zeroes"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;pre>&lt;code>Input: matrix = [[1,1,1],[1,0,1],[1,1,1]]
+Output: [[1,0,1],[0,0,0],[1,0,1]]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.leetcode.com/uploads/2020/08/17/mat2.jpg"
+id="zoom-default"
+alt="73. Set Matrix Zeroes"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;pre>&lt;code>Input: matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]
+Output: [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Approach 1:&lt;/strong>&lt;/p>
+&lt;p>Idea:&lt;/p>
+&lt;p>&lt;a href="https://leetcode.com/problems/set-matrix-zeroes/submissions/885540169/">LeetCode Submission&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">setZeroes&lt;/span>(self, matrix: List[List[&lt;span style="color:#007020">int&lt;/span>]]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> rows &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(matrix)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cols &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(matrix[&lt;span style="color:#40a070">0&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># 1. Check first row/column for zero&amp;#39;s&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> first_row_has_zero &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">in&lt;/span> matrix[&lt;span style="color:#40a070">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> first_col_has_zero &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">list&lt;/span>(&lt;span style="color:#007020">zip&lt;/span>(&lt;span style="color:#666">*&lt;/span>matrix))[&lt;span style="color:#40a070">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># 2. Check other cells in `matrix` and save info in the 1st row/col if cell has zero&amp;#39;s&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, rows):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, cols):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> matrix[i][j] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix[&lt;span style="color:#40a070">0&lt;/span>][j] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># 1st row&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix[i][&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># 1st col&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># 3. Loop again through first row/column and overwrite cells according to the data from 1st row/column&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># except the 1st row/col&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, rows):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, cols):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> matrix[&lt;span style="color:#40a070">0&lt;/span>][j] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">or&lt;/span> matrix[i][&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix[i][j] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Fill 0s for the 1st row if needed&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> first_row_has_zero:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> matrix[&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">*&lt;/span> cols
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Fill 0s for the 1st col if needed&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> first_col_has_zero:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> row &lt;span style="color:#007020;font-weight:bold">in&lt;/span> matrix:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> row[&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>128. Longest Consecutive Sequence</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/128/</link><pubDate>Thu, 13 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/128/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/longest-consecutive-sequence/description/">LeetCode problem&lt;/a>&lt;/p>
+&lt;ol>
+&lt;li>Save all numbers in set to make it possible to get number at &lt;code>O(1)&lt;/code>.&lt;/li>
+&lt;li>For each element look for the &lt;code>current+1&lt;/code> element if exists.&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">longestConsecutive&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nset &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>(nums)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> x &lt;span style="color:#007020;font-weight:bold">in&lt;/span> nset:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> x &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> &lt;span style="color:#007020;font-weight:bold">in&lt;/span> nset: &lt;span style="color:#60a0b0;font-style:italic"># prevent double calculations&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _max &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> x
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> cur &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#007020;font-weight:bold">in&lt;/span> nset:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _max &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(_max, res)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>387. First Unique Character in a String</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/387/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/387/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/first-unique-character-in-a-string/">LeetCode задача 387&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Дана строка &lt;code>s&lt;/code>. Найдите первый уникальный символ в строке и верните его индекс. Если такого символа нет, верните -1.&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Использование хеш-таблицы может ускорить процесс поиска уникальных символов.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>Инициализация&lt;/strong>: Создайте хеш-таблицу для хранения частоты каждого символа в строке.&lt;/li>
+&lt;li>&lt;strong>Первый проход&lt;/strong>: Пройдите по строке и заполните хеш-таблицу.&lt;/li>
+&lt;li>&lt;strong>Второй проход&lt;/strong>: Пройдите по строке второй раз и проверьте частоту каждого символа в хеш-таблице. Первый символ с частотой 1 будет ответом.&lt;/li>
+&lt;/ol>
+&lt;p>Этот подход прост для понимания и реализации. Он требует двух проходов по строке, но временная сложность остается линейной.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Создайте хеш-таблицу для хранения частот символов.&lt;/li>
+&lt;li>Пройдите по строке, заполняя хеш-таблицу.&lt;/li>
+&lt;li>Пройдите по строке второй раз, и для каждого символа проверьте его частоту в хеш-таблице. Верните индекс первого символа с частотой 1.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">firstUniqChar&lt;/span>(s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Хеш-таблица для хранения частот символов&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> char_count &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Первый проход: заполнение хеш-таблицы&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> char &lt;span style="color:#007020;font-weight:bold">in&lt;/span> s:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> char_count[char] &lt;span style="color:#666">=&lt;/span> char_count&lt;span style="color:#666">.&lt;/span>get(char, &lt;span style="color:#40a070">0&lt;/span>) &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Второй проход: проверка частоты символов&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> index, char &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">enumerate&lt;/span>(s):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> char_count[char] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> index
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

@@ -1,6 +1,98 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ecr on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/ecr/</link><description>Recent content in Ecr on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Tue, 20 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/ecr/index.xml" rel="self" type="application/rss+xml"/><item><title>Elastic Container Registry</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/ecr/</link><pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/ecr/</guid><description>About Amazon Elastic Container Registry (Amazon ECR) - Fully managed container registry offering high-performance hosting, so you can reliably deploy application images and artifacts anywhere
-Documentation User Guide Hosted private Docker registry
-Alternatives Docker Hub JFrog Artifactory Azure Container Registry Harbor Google Container Registry Red Hat Quay JFrog Container Registry Price Current price
-Use Cases Store, encrypt, and manage container images
-Manage software vulnerabilities Streamline your deployment workloads Manage image lifecycle policies Type: Containers
-Same type services: Elastic Container Service (ECS), Elastic Container Registry (ECR), Elastic Kubernetes Service (EKS), Fargate</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ecr on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/ecr/</link><description>Recent content in Ecr on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Tue, 20 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/ecr/index.xml" rel="self" type="application/rss+xml"/><item><title>Elastic Container Registry</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/ecr/</link><pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/ecr/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>Amazon Elastic Container Registry (Amazon ECR) - Fully managed container registry offering high-performance hosting, so you can reliably deploy application images and artifacts anywhere&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/ecr/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/ecr/?id=docs_gateway">User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Hosted private Docker registry&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/legal/AmazonElasticContainerRegistry/Product-Page-Diagram_Amazon-ECR.2f9e7f26ef78f4dc6f058f7eeb07cf696f6951c1.png"
+id="zoom-default"
+alt="Elastic Container Registry Flow"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="alternatives">Alternatives&lt;/h3>
+&lt;ul>
+&lt;li>Docker Hub&lt;/li>
+&lt;li>JFrog Artifactory&lt;/li>
+&lt;li>Azure Container Registry&lt;/li>
+&lt;li>Harbor&lt;/li>
+&lt;li>Google Container Registry&lt;/li>
+&lt;li>Red Hat Quay&lt;/li>
+&lt;li>JFrog Container Registry&lt;/li>
+&lt;/ul>
+&lt;h2 id="price">Price&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/ecr/pricing/">Current price&lt;/a>&lt;/p>
+&lt;h2 id="use-cases">Use Cases&lt;/h2>
+&lt;p>Store, encrypt, and manage container images&lt;/p>
+&lt;ul>
+&lt;li>Manage software vulnerabilities&lt;/li>
+&lt;li>Streamline your deployment workloads&lt;/li>
+&lt;li>Manage image lifecycle policies&lt;/li>
+&lt;/ul>
+&lt;p>Type: Containers&lt;/p>
+&lt;p>Same type services: Elastic Container Service (ECS), Elastic Container Registry (ECR), Elastic Kubernetes Service (EKS), Fargate&lt;/p>
+&lt;h2 id="practice">Practice&lt;/h2>
+&lt;p>This commands returns the command to execute to be able to login to ECR:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Login&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>get-login-password:&lt;/strong>&lt;code>aws ecr get-login-password --region region | docker login --username AWS --password-stdin aws_account_id.dkr.ecr.region.amazonaws.com&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Create a repository:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>aws ecr create-repository &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> --repository-name hello-repository &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> --image-scanning-configuration &lt;span style="color:#bb60d5">scanOnPush&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020">true&lt;/span> &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> --region region
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Tag image&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>docker tag hello-world:latest aws_account_id.dkr.ecr.region.amazonaws.com/hello-repository&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Push&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>docker push aws_account_id.dkr.ecr.region.amazonaws.com/hello-repository&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Pull&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>docker pull aws_account_id.dkr.ecr.region.amazonaws.com/hello-repository:latest&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Delete an image&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>aws ecr batch-delete-image \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --repository-name hello-repository \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --image-ids imageTag=latest \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --region region
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Delete a repository&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>aws ecr delete-repository \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --repository-name hello-repository \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --force \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --region region
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;p>Labs:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://cloudacademy.com/lab/use-aws-fargate-serverless-deployment-container-applications/">Use AWS Fargate for Serverless Deployment of Container Applications&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/AmazonECR/latest/public/getting-started-cli.html">Quick start: Publishing to Amazon ECR Public using the AWS CLI&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/tANNsV6bGbQ?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
+&lt;/div>
+&lt;p>Notes:&lt;/p>
+&lt;ul>
+&lt;li>If you get a &lt;strong>503 Service Temporarily Unavailable&lt;/strong> error, try again after 30 seconds to let the load balancer finish adding the task to the target group.&lt;/li>
+&lt;/ul></description></item></channel></rss>

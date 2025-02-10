@@ -1,3 +1,100 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Amazon EventBridge on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/amazon-eventbridge/</link><description>Recent content in Amazon EventBridge on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sun, 25 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/amazon-eventbridge/index.xml" rel="self" type="application/rss+xml"/><item><title>EventBridge</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/eventbridge/</link><pubDate>Sun, 25 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/eventbridge/</guid><description>About EventB­ridge is a serverless event bus that makes it easy to connect applic­ations together using data from apps, integrated SaaS apps, &amp;amp; AWS services.
-Documentation User Guide EventB­ridge is a low-cost alternative to building a new backend infrastructure for every new app. With Serverless EventB­ridge, you can connect your existing apps with a few lines of code. You don’t have to build a new backend for every new app you want to connect to.
-You can use existing infrastructure as a provider of event data, and connect your apps using Serverless EventB­ridge.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Amazon EventBridge on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/amazon-eventbridge/</link><description>Recent content in Amazon EventBridge on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sun, 25 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/amazon-eventbridge/index.xml" rel="self" type="application/rss+xml"/><item><title>EventBridge</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/eventbridge/</link><pubDate>Sun, 25 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/eventbridge/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>EventB­ridge is a serverless event bus that makes it easy to connect applic­ations together using data from apps, integrated SaaS apps, &amp;amp; AWS services.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/eventbridge/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/eventbridge/?id=docs_gateway">User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/product-marketing/Product-Page-Diagram_Amazon-EventBridge%402x.90618a37067770ba7994eb9c4eac38f4a5fecc7c.png"
+id="zoom-default"
+alt="Amazon EventBridge Flow"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>EventB­ridge is a low-cost alternative to building a new backend infrastructure for every new app. With Serverless EventB­ridge, you can connect your existing apps with a few lines of code. You don’t have to build a new backend for every new app you want to connect to.&lt;/p>
+&lt;p>You can use existing infrastructure as a provider of event data, and connect your apps using Serverless EventB­ridge.&lt;/p>
+&lt;h3 id="alternatives">Alternatives&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview">Azure Service Bus&lt;/a>&lt;/li>
+&lt;li>TIBCO Cloud Integration (including BusinessWorks and Scribe)&lt;/li>
+&lt;li>IBM App Connect&lt;/li>
+&lt;li>&lt;a href="https://cloud.google.com/pubsub">Google Cloud Pub/Sub&lt;/a>&lt;/li>
+&lt;li>Apache Camel&lt;/li>
+&lt;li>Peregrine Connect&lt;/li>
+&lt;li>Software AG webMethods&lt;/li>
+&lt;li>&lt;a href="https://www.ibm.com/cloud/cloud-pak-for-integration">IBM Cloud Pak for Integration&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="price">Price&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/ru/eventbridge/pricing/">Current price&lt;/a>&lt;/p>
+&lt;h2 id="use-cases">Use Cases&lt;/h2>
+&lt;p>Type: Applic­ation integr­ation&lt;/p>
+&lt;p>Same type services: &lt;a href="../sns">SNS&lt;/a>, &lt;a href="../sqs">SQS&lt;/a>, &lt;a href="https://aws.amazon.com/appsync/">AppSync&lt;/a>, EventBridge&lt;/p>
+&lt;ul>
+&lt;li>Re-architect for speed&lt;/li>
+&lt;li>Extend functionality via SaaS integrations&lt;/li>
+&lt;li>Monitoring and Auditing&lt;/li>
+&lt;li>Customize SaaS with AI/ML&lt;/li>
+&lt;/ul>
+&lt;h3 id="eventbridge-vs-amazon-sns">EventBridge vs Amazon SNS&lt;/h3>
+&lt;p>In comparison with Amazon SNS, EventBridge:&lt;/p>
+&lt;ul>
+&lt;li>Integrates with more AWS services than SNS&lt;/li>
+&lt;li>Supports registering message schemas&lt;/li>
+&lt;li>Has sophisticated third-party integrations available&lt;/li>
+&lt;li>Supports transforming event messages before sending them&lt;/li>
+&lt;/ul>
+&lt;p>You should choose to use Amazon EventBridge over Amazon SNS when the system you are building is expected to:&lt;/p>
+&lt;ul>
+&lt;li>Support significant asynchronous functionality&lt;/li>
+&lt;li>Grow significantly in terms of both usage and complexity&lt;/li>
+&lt;li>Have changing requirements over time&lt;/li>
+&lt;li>Have components built by different teams that interact&lt;/li>
+&lt;li>Need support for disparate event sources and targets&lt;/li>
+&lt;/ul>
+&lt;h3 id="amazon-eventbridge-vs-cloudwatch-events">Amazon EventBridge vs CloudWatch Events&lt;/h3>
+&lt;ul>
+&lt;li>Amazon EventBridge &lt;strong>extends&lt;/strong> &lt;a href="../cloudwatch">CloudWatch Events&lt;/a> - Build event-driven architectures&lt;/li>
+&lt;li>Original goal with CloudWatch Events was to help with monitoring usecases specific to AWS services.
+&lt;ul>
+&lt;li>React to events from Your Applications, AWS services and Partner Services
+&lt;ul>
+&lt;li>Example: EC2 status change, change in your application or SaaS partner application&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Event Targets can be a Lambda function, an SNS Topic, an SQS queues etc&lt;/li>
+&lt;li>Rules map events to targets (Make sure that IAM Roles have permissions)&lt;/li>
+&lt;li>Event buses receive the events:
+&lt;ul>
+&lt;li>Default event bus (for AWS services)&lt;/li>
+&lt;li>Custom event bus (custom applications)&lt;/li>
+&lt;li>Partner event bus (partner applications)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Over time, Amazon EventBridge will replace Amazon CloudWatch Events&lt;/li>
+&lt;/ul>
+&lt;h2 id="practice">Practice&lt;/h2>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/OvpYjr00Bfs?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
+&lt;/div>
+&lt;p>&lt;a href="processing-file-uploads-asyncronously-with-amazon-eventbridge">Processing File Uploads Asynchronously with Amazon EventBridge&lt;/a>&lt;/p>
+&lt;h2 id="questions">Questions&lt;/h2>
+&lt;h3 id="q1">Q1&lt;/h3>
+&lt;p>&lt;strong>A food delivery company is building a feature that requests reviews from customers after their orders are delivered. The solution should be a short-running process that can message customers simultaneously at various contact points including email, text, and mobile push notifications.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which approach best meets these requirements?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Use EventBridge with &lt;a href="../kinesis">Kinesis Data Streams&lt;/a> to send messages.&lt;/li>
+&lt;li>Use a &lt;a href="../step-functions">Step Function&lt;/a> to send SQS messages.&lt;/li>
+&lt;li>Use a &lt;a href="../lambda">Lambda&lt;/a> function to send SNS messages.&lt;/li>
+&lt;li>Use &lt;a href="https://aws.amazon.com/batch/">AWS Batch&lt;/a> and &lt;a href="../sns">SNS&lt;/a> to send messages.&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">https://docs.aws.amazon.com/sns/latest/dg/welcome.html&lt;/a>&lt;/p>
+&lt;p>&lt;mark style="color:white">3&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details></description></item></channel></rss>

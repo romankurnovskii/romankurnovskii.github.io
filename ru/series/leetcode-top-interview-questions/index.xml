@@ -1,55 +1,663 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LeetCode Top Interview Questions on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/series/leetcode-top-interview-questions/</link><description>Recent content in LeetCode Top Interview Questions on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Wed, 21 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/series/leetcode-top-interview-questions/index.xml" rel="self" type="application/rss+xml"/><item><title>14. Longest Common Prefix</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/14/</link><pubDate>Fri, 21 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/14/</guid><description>LeetCode problem
-Write a function to find the longest common prefix string amongst an array of strings.
-If there is no common prefix, return an empty string &amp;quot;&amp;quot;.
-Example 1:
-Input: strs = [&amp;quot;flower&amp;quot;,&amp;quot;flow&amp;quot;,&amp;quot;flight&amp;quot;] Output: &amp;quot;fl&amp;quot; Example 2:
-Input: strs = [&amp;quot;dog&amp;quot;,&amp;quot;racecar&amp;quot;,&amp;quot;car&amp;quot;] Output: &amp;quot;&amp;quot; Explanation: There is no common prefix among the input strings. First accepted Idea:
-class Solution: def longestCommonPrefix(self, strs: List[str]) -&amp;gt; str: strs.sort() l = strs[0] r = strs[-1] if l == r: return l res = &amp;#34;&amp;#34; for i in range(0, len(l)): if l[i] == r[i]: res += l[i] else: return res return res</description></item><item><title>20. Valid Parentheses</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/20/</link><pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/20/</guid><description>LeetCode problem
-Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
-An input string is valid if:
-Open brackets must be closed by the same type of brackets. Open brackets must be closed in the correct order. Every close bracket has a corresponding open bracket of the same type. Example 1:
-Input: s = &amp;quot;()[]{}&amp;quot; Output: true Example 2:
-Input: s = &amp;quot;()[]{}&amp;quot; Output: true First accepted Idea:</description></item><item><title>21. Merge Two Sorted Lists</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/21/</link><pubDate>Tue, 25 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/21/</guid><description>LeetCode problem
-You are given the heads of two sorted linked lists list1 and list2.
-Merge the two lists in a one sorted list. The list should be made by splicing together the nodes of the first two lists.
-Return the head of the merged linked list.
-Example 1:
-Input: list1 = [1,2,4], list2 = [1,3,4] Output: [1,1,2,3,4,4] Example 2:
-Input: list1 = [], list2 = [0] Output: [0] First accepted Idea:
-Get smallest head. Loop and update its next.</description></item><item><title>26. Remove Duplicates from Sorted Array</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/26/</link><pubDate>Wed, 26 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/26/</guid><description>LeetCode problem
-Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.
-Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums. More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result.</description></item><item><title>66. Plus One</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/66/</link><pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/66/</guid><description>LeetCode problem
-You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0&amp;rsquo;s.
-Increment the large integer by one and return the resulting array of digits.
-Example 1:
-Input: digits = [1,2,3] Output: [1,2,4] Explanation: The array represents the integer 123. Incrementing by one gives 123 + 1 = 124.</description></item><item><title>69. Sqrt(x)</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/69/</link><pubDate>Fri, 28 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/69/</guid><description>LeetCode problem
-Given a non-negative integer x, return the square root of x rounded down to the nearest integer. The returned integer should be non-negative as well.
-You must not use any built-in exponent function or operator.
-For example, do not use pow(x, 0.5) in c++ or x ** 0.5 in python.
-Example 1:
-Input: x = 4 Output: 2 Explanation: The square root of 4 is 2, so we return 2. Example 2:
-Input: x = 8 Output: 2 Explanation: The square root of 8 is 2.</description></item><item><title>70. Climbing Stairs</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/70/</link><pubDate>Sat, 29 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/70/</guid><description>LeetCode problem
-You are climbing a staircase. It takes n steps to reach the top.
-Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
-Example 1:
-Input: n = 2 Output: 2 Explanation: There are two ways to climb to the top. 1. 1 step + 1 step 2. 2 steps Example 2:
-Input: n = 3 Output: 3 Explanation: There are three ways to climb to the top.</description></item><item><title>88. Merge Sorted Array</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/88/</link><pubDate>Sun, 30 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/88/</guid><description>LeetCode problem
-First accepted class Solution: def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -&amp;gt; None: &amp;#34;&amp;#34;&amp;#34; Do not return anything, modify nums1 in-place instead. &amp;#34;&amp;#34;&amp;#34; i = len(nums1) - n for j in nums2: nums1[i] = j i += 1 nums1.sort()</description></item><item><title>94. Binary Tree Inorder Traversal</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/94/</link><pubDate>Mon, 31 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/94/</guid><description>LeetCode problem
-Given the root of a binary tree, return the inorder traversal of its nodes' values.
-Example 1:
-Input: root = [1,null,2,3] Output: [1,3,2] Example 2:
-Input: root = [] Output: [] Example 3:
-Input: root = [1] Output: [1] Thoughts Don&amp;rsquo;t understand what needed. Why:
-1-null-2-3 becomes 1-3-2 [1,2,5,7,8,9,10] becomes [7,2,8,1,9,5,10] In 1-null-2-3 1 becomes the first because we loop to its left node which is null, then come back and first value here is 1.</description></item><item><title>141. Linked List Cycle</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/141/</link><pubDate>Wed, 24 May 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/141/</guid><description>LeetCode problem 141
-Problem Statement The problem asks us to determine if a given linked list contains a cycle. A cycle in a linked list occurs when a node&amp;rsquo;s next pointer points back to a previous node in the list, causing an infinite loop.
-Hints &amp;amp; Tips In this problem, you can take advantage of the Floyd&amp;rsquo;s &amp;ldquo;Tortoise and Hare&amp;rdquo; cycle detection algorithm. This algorithm allows you to detect a cycle in O(1) space and O(n) time complexity, where n is the number of nodes.</description></item><item><title>160. Intersection of Two Linked Lists</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/160/</link><pubDate>Mon, 05 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/160/</guid><description>LeetCode problem
-Solution 1 Using hashmap.
-# Definition for singly-linked list. class ListNode: def __init__(self, x): self.val = x self.next = None class Solution: def getIntersectionNode(self, headA: ListNode, headB: ListNode): nodes = set() cur = headA while cur: nodes.add(cur) cur = cur.next cur = headB while cur: if cur in nodes: return cur cur = cur.next return None Solution 2 Initialize two pointers, one for each head. Move each pointer to the next node in its list. If a pointer reaches the end of its list, move it to the start of the other list.</description></item><item><title>171. Excel Sheet Column Number</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/171/</link><pubDate>Thu, 15 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/171/</guid><description>LeetCode problem
-The column titles in an Excel sheet are designed similar to a base-26 number system. The columns start from &amp;lsquo;A&amp;rsquo; (which is 1) to &amp;lsquo;Z&amp;rsquo; (which is 26), then after &amp;lsquo;Z&amp;rsquo;, the column titles go to &amp;lsquo;AA&amp;rsquo; (which is 27), &amp;lsquo;AB&amp;rsquo; (28), and so on.
-This problem is essentially asking us to convert a base-26 number (represented by uppercase English letters) to a decimal number.
-That means that for each &amp;ldquo;new&amp;rdquo; index in columnTitle we already pass alphabet.</description></item><item><title>191. Number of 1 Bits</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/191/</link><pubDate>Wed, 21 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/191/</guid><description>LeetCode problem
-Problem Statement Given an integer value represented in binary format, we need to count the number of &amp;lsquo;1&amp;rsquo; bits in its binary representation.
-Naive Solution The naive solution for this problem would be to convert the binary number into a string and then simply iterate over the string and count the number of &amp;lsquo;1&amp;rsquo;s. However, this solution is not optimal and is not taking advantage of the properties of binary numbers.
-Algorithm The optimal solution for this problem involves using bitwise operation.</description></item><item><title>202. Happy Number</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/202/</link><pubDate>Sun, 18 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/202/</guid><description>LeetCode problem
-Problem Statement In this problem, we are given a number n. We have to determine whether this number is a &amp;ldquo;happy&amp;rdquo; number or not. A happy number is a number defined by the following process:
-Starting with any positive integer, replace the number by the sum of the squares of its digits. Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1. Those numbers for which this process ends in 1 are happy.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LeetCode Top Interview Questions on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/series/leetcode-top-interview-questions/</link><description>Recent content in LeetCode Top Interview Questions on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Wed, 21 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/series/leetcode-top-interview-questions/index.xml" rel="self" type="application/rss+xml"/><item><title>14. Longest Common Prefix</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/14/</link><pubDate>Fri, 21 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/14/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/longest-common-prefix/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Write a function to find the longest common prefix string amongst an array of strings.&lt;/p>
+&lt;p>If there is no common prefix, return an empty string &lt;code>&amp;quot;&amp;quot;&lt;/code>.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: strs = [&amp;quot;flower&amp;quot;,&amp;quot;flow&amp;quot;,&amp;quot;flight&amp;quot;]
+Output: &amp;quot;fl&amp;quot;
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: strs = [&amp;quot;dog&amp;quot;,&amp;quot;racecar&amp;quot;,&amp;quot;car&amp;quot;]
+Output: &amp;quot;&amp;quot;
+Explanation: There is no common prefix among the input strings.
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/14.jpg"
+id="zoom-default"
+alt="test-case"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">longestCommonPrefix&lt;/span>(self, strs: List[&lt;span style="color:#007020">str&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">str&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> strs&lt;span style="color:#666">.&lt;/span>sort()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l &lt;span style="color:#666">=&lt;/span> strs[&lt;span style="color:#40a070">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> r &lt;span style="color:#666">=&lt;/span> strs[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l &lt;span style="color:#666">==&lt;/span> r:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> l
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#007020">len&lt;/span>(l)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l[i] &lt;span style="color:#666">==&lt;/span> r[i]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">+=&lt;/span> l[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>20. Valid Parentheses</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/20/</link><pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/20/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/valid-parentheses/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given a string s containing just the characters &lt;code>'('&lt;/code>, &lt;code>')'&lt;/code>, &lt;code>'{'&lt;/code>, &lt;code>'}'&lt;/code>, &lt;code>'['&lt;/code> and &lt;code>']'&lt;/code>, determine if the input string is valid.&lt;/p>
+&lt;p>An input string is valid if:&lt;/p>
+&lt;ol>
+&lt;li>Open brackets must be closed by the same type of brackets.&lt;/li>
+&lt;li>Open brackets must be closed in the correct order.&lt;/li>
+&lt;li>Every close bracket has a corresponding open bracket of the same type.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: s = &amp;quot;()[]{}&amp;quot;
+Output: true
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: s = &amp;quot;()[]{}&amp;quot;
+Output: true
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Loop through string&lt;/li>
+&lt;li>If &lt;em>current&lt;/em> &amp;ldquo;closes&amp;rdquo; the last in stack, then remove last from stack&lt;/li>
+&lt;li>Else: add current to stack&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">isValid&lt;/span>(self, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">bool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> par_dict &lt;span style="color:#666">=&lt;/span> {&lt;span style="color:#4070a0">&amp;#39;(&amp;#39;&lt;/span>: &lt;span style="color:#4070a0">&amp;#39;)&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;{&amp;#39;&lt;/span>: &lt;span style="color:#4070a0">&amp;#39;}&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;[&amp;#39;&lt;/span>: &lt;span style="color:#4070a0">&amp;#39;]&amp;#39;&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> last_value &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> s:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> second_value &lt;span style="color:#666">=&lt;/span> par_dict&lt;span style="color:#666">.&lt;/span>get(last_value, &lt;span style="color:#007020;font-weight:bold">None&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> i &lt;span style="color:#666">==&lt;/span> second_value:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack&lt;span style="color:#666">.&lt;/span>pop()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> last_value &lt;span style="color:#666">=&lt;/span> stack[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#007020;font-weight:bold">if&lt;/span> stack &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack&lt;span style="color:#666">.&lt;/span>append(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> last_value &lt;span style="color:#666">=&lt;/span> i
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> stack
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="better-solution">Better solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">isValid&lt;/span>(self, s: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">bool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> par_dict &lt;span style="color:#666">=&lt;/span> {&lt;span style="color:#4070a0">&amp;#39;(&amp;#39;&lt;/span>: &lt;span style="color:#4070a0">&amp;#39;)&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;{&amp;#39;&lt;/span>: &lt;span style="color:#4070a0">&amp;#39;}&amp;#39;&lt;/span>, &lt;span style="color:#4070a0">&amp;#39;[&amp;#39;&lt;/span>: &lt;span style="color:#4070a0">&amp;#39;]&amp;#39;&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> char &lt;span style="color:#007020;font-weight:bold">in&lt;/span> s:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> char &lt;span style="color:#007020;font-weight:bold">in&lt;/span> par_dict: &lt;span style="color:#60a0b0;font-style:italic"># If it&amp;#39;s an opening bracket, add it to the stack&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack&lt;span style="color:#666">.&lt;/span>append(char)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> stack: &lt;span style="color:#60a0b0;font-style:italic"># If there&amp;#39;s something in the stack&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> char &lt;span style="color:#666">==&lt;/span> par_dict[stack[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># If it&amp;#39;s a closing bracket for the last opened bracket, remove it from the stack.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> stack&lt;span style="color:#666">.&lt;/span>pop()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic"># It&amp;#39;s not a closing bracket for the last opened bracket. Invalid string.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic"># Not an opening bracket or closing bracket. Invalid string.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> stack &lt;span style="color:#666">==&lt;/span> []
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>21. Merge Two Sorted Lists</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/21/</link><pubDate>Tue, 25 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/21/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/merge-two-sorted-lists/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>You are given the heads of two sorted linked lists list1 and list2.&lt;/p>
+&lt;p>Merge the two lists in a one sorted list. The list should be made by splicing together the nodes of the first two lists.&lt;/p>
+&lt;p>Return the head of the merged linked list.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.leetcode.com/uploads/2020/10/03/merge_ex1.jpg"
+id="zoom-default"
+alt="21. Merge Two Sorted Lists"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;pre>&lt;code>Input: list1 = [1,2,4], list2 = [1,3,4]
+Output: [1,1,2,3,4,4]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: list1 = [], list2 = [0]
+Output: [0]
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;p>Get smallest &lt;em>head&lt;/em>. Loop and update its next.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Definition for singly-linked list.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># class ListNode:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># def __init__(self, val=0, next=None):&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.val = val&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.next = next&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">mergeTwoLists&lt;/span>(self, l1: Optional[ListNode], l2: Optional[ListNode]) &lt;span style="color:#666">-&amp;gt;&lt;/span> Optional[ListNode]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> ListNode()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current &lt;span style="color:#666">=&lt;/span> res
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> l1 &lt;span style="color:#007020;font-weight:bold">and&lt;/span> l2:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l1&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">&amp;lt;=&lt;/span> l2&lt;span style="color:#666">.&lt;/span>val:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> node &lt;span style="color:#666">=&lt;/span> ListNode(l1&lt;span style="color:#666">.&lt;/span>val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l1 &lt;span style="color:#666">=&lt;/span> l1&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> node &lt;span style="color:#666">=&lt;/span> ListNode(l2&lt;span style="color:#666">.&lt;/span>val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l2 &lt;span style="color:#666">=&lt;/span> l2&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> node
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current &lt;span style="color:#666">=&lt;/span> current&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l1:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> l1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l2:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> l2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="better-solution">Better solution&lt;/h2>
+&lt;blockquote>
+&lt;p>Recursion&lt;/p>&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">mergeTwoLists&lt;/span>(self, l1: Optional[ListNode], l2: Optional[ListNode]) &lt;span style="color:#666">-&amp;gt;&lt;/span> Optional[ListNode]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l1 &lt;span style="color:#007020;font-weight:bold">and&lt;/span> l2:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l1&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">&amp;gt;&lt;/span> l2&lt;span style="color:#666">.&lt;/span>val:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l1, l2 &lt;span style="color:#666">=&lt;/span> l2, l1 &lt;span style="color:#60a0b0;font-style:italic">#swap smaller and larger: make l1 the one with the smaller first value&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l1&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>mergeTwoLists(l1&lt;span style="color:#666">.&lt;/span>next, l2) &lt;span style="color:#60a0b0;font-style:italic"># move forward in the list which starts with the smaller value&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> l1 &lt;span style="color:#007020;font-weight:bold">or&lt;/span> l2 &lt;span style="color:#60a0b0;font-style:italic"># return whichever of the two lists remains at the end&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>Loop&lt;/p>&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">mergeTwoLists&lt;/span>(self, l1: Optional[ListNode], l2: Optional[ListNode]) &lt;span style="color:#666">-&amp;gt;&lt;/span> Optional[ListNode]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> ListNode()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current &lt;span style="color:#666">=&lt;/span> res
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> l1 &lt;span style="color:#007020;font-weight:bold">and&lt;/span> l2:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> l1&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">&amp;lt;=&lt;/span> l2&lt;span style="color:#666">.&lt;/span>val:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> l1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l1 &lt;span style="color:#666">=&lt;/span> l1&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> l2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l2 &lt;span style="color:#666">=&lt;/span> l2&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current &lt;span style="color:#666">=&lt;/span> current&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">mergeTwoLists&lt;/span>(self, a, b):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> a &lt;span style="color:#007020;font-weight:bold">and&lt;/span> b:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> a&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">&amp;gt;&lt;/span> b&lt;span style="color:#666">.&lt;/span>val:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a, b &lt;span style="color:#666">=&lt;/span> b, a
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>mergeTwoLists(a&lt;span style="color:#666">.&lt;/span>next, b)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> a &lt;span style="color:#007020;font-weight:bold">or&lt;/span> b
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;blockquote>
+&lt;p>First make sure that a is the &amp;ldquo;better&amp;rdquo; one (meaning b is None or has larger/equal value). Then merge the remainders behind a.&lt;/p>&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">mergeTwoLists&lt;/span>(self, a, b):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> a &lt;span style="color:#007020;font-weight:bold">or&lt;/span> b &lt;span style="color:#007020;font-weight:bold">and&lt;/span> a&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">&amp;gt;&lt;/span> b&lt;span style="color:#666">.&lt;/span>val:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a, b &lt;span style="color:#666">=&lt;/span> b, a
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> a:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>mergeTwoLists(a&lt;span style="color:#666">.&lt;/span>next, b)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> a
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>26. Remove Duplicates from Sorted Array</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/26/</link><pubDate>Wed, 26 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/26/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given an integer array &lt;code>nums&lt;/code> sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.&lt;/p>
+&lt;p>Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array &lt;code>nums&lt;/code>. More formally, if there are k elements after removing the duplicates, then the first k elements of &lt;code>nums&lt;/code> should hold the final result. It does not matter what you leave beyond the first k elements.&lt;/p>
+&lt;p>Return k after placing the final result in the first k slots of &lt;code>nums&lt;/code>.&lt;/p>
+&lt;p>Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.&lt;/p>
+&lt;p>Custom Judge:&lt;/p>
+&lt;p>The judge will test your solution with the following code:&lt;/p>
+&lt;pre>&lt;code>int[] nums = [...]; // Input array
+int[] expectedNums = [...]; // The expected answer with correct length
+int k = removeDuplicates(nums); // Calls your implementation
+assert k == expectedNums.length;
+for (int i = 0; i &amp;lt; k; i++) {
+assert nums[i] == expectedNums[i];
+}
+&lt;/code>&lt;/pre>
+&lt;p>If all assertions pass, then your solution will be accepted.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: nums = [1,1,2]
+Output: 2, nums = [1,2,_]
+Explanation: Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively.
+It does not matter what you leave beyond the returned k (hence they are underscores).
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: nums = [0,0,1,1,1,2,2,3,3,4]
+Output: 5, nums = [0,1,2,3,4,_,_,_,_,_]
+Explanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.
+It does not matter what you leave beyond the returned k (hence they are underscores).
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../../assets/26.jpg"
+id="zoom-default"
+alt="test-case"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">removeDuplicates&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> k &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums) &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> k
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p1 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p2 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> p2 &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nums[p1] &lt;span style="color:#666">==&lt;/span> nums[p2]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p2 &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p1 &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nums[p1] &lt;span style="color:#666">=&lt;/span> nums[p2]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> p2 &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> k &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> k
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="better-solution">Better solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">removeDuplicates&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums) &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> k &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> n &lt;span style="color:#007020;font-weight:bold">in&lt;/span> nums:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> nums[i&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">!=&lt;/span> n:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nums[i] &lt;span style="color:#666">=&lt;/span> n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> k &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> k
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>66. Plus One</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/66/</link><pubDate>Thu, 27 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/66/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/plus-one/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>You are given a large integer represented as an integer array &lt;code>digits&lt;/code>, where each &lt;code>digits[i]&lt;/code> is the &lt;code>ith&lt;/code> digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading &lt;code>0&lt;/code>&amp;rsquo;s.&lt;/p>
+&lt;p>Increment the large integer by one and return the resulting array of digits.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: digits = [1,2,3]
+Output: [1,2,4]
+Explanation: The array represents the integer 123.
+Incrementing by one gives 123 + 1 = 124.
+Thus, the result should be [1,2,4].
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: digits = [4,3,2,1]
+Output: [4,3,2,2]
+Explanation: The array represents the integer 4321.
+Incrementing by one gives 4321 + 1 = 4322.
+Thus, the result should be [4,3,2,2].
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">plusOne&lt;/span>(self, digits: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[&lt;span style="color:#007020">int&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(digits) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> i &lt;span style="color:#666">&amp;gt;=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> digits[i] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">9&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> digits[i] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> i &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> [&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">+&lt;/span> digits
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> digits[i] &lt;span style="color:#666">=&lt;/span> digits[i] &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> digits
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>69. Sqrt(x)</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/69/</link><pubDate>Fri, 28 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/69/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/sqrtx/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given a non-negative integer x, return the square root of x rounded down to the nearest integer. The returned integer should be non-negative as well.&lt;/p>
+&lt;p>You must not use any built-in exponent function or operator.&lt;/p>
+&lt;p>For example, do not use &lt;code>pow(x, 0.5)&lt;/code> in c++ or &lt;code>x ** 0.5&lt;/code> in python.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: x = 4
+Output: 2
+Explanation: The square root of 4 is 2, so we return 2.
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: x = 8
+Output: 2
+Explanation: The square root of 8 is 2.82842..., and since we round it down to the nearest integer, 2 is returned.
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">mySqrt&lt;/span>(self, x: &lt;span style="color:#007020">int&lt;/span>, div&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">2&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">=&lt;/span> x &lt;span style="color:#666">//&lt;/span> div
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s1 &lt;span style="color:#666">=&lt;/span> (s &lt;span style="color:#666">+&lt;/span> div) &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> s1 &lt;span style="color:#666">*&lt;/span> s1 &lt;span style="color:#666">&amp;gt;&lt;/span> x:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s1 &lt;span style="color:#666">=&lt;/span> self&lt;span style="color:#666">.&lt;/span>mySqrt(x, s1)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> s1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> s1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>70. Climbing Stairs</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/70/</link><pubDate>Sat, 29 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/70/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/climbing-stairs/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>You are climbing a staircase. It takes &lt;code>n&lt;/code> steps to reach the top.&lt;/p>
+&lt;p>Each time you can either climb &lt;code>1&lt;/code> or &lt;code>2&lt;/code> steps. In how many distinct ways can you climb to the top?&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: n = 2
+Output: 2
+Explanation: There are two ways to climb to the top.
+1. 1 step + 1 step
+2. 2 steps
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: n = 3
+Output: 3
+Explanation: There are three ways to climb to the top.
+1. 1 step + 1 step + 1 step
+2. 1 step + 2 steps
+3. 2 steps + 1 step
+&lt;/code>&lt;/pre>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;p>&lt;strong>Idea:&lt;/strong>&lt;/p>
+&lt;p>Tried to calculate by hand. There is a &lt;a href="https://www.mathsisfun.com/numbers/fibonacci-sequence.html">sequence Fibonacci&lt;/a> here&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">climbStairs&lt;/span>(self, n: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> n &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> n &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">2&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev1 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev2 &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> n &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">2&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current &lt;span style="color:#666">=&lt;/span> prev1 &lt;span style="color:#666">+&lt;/span> prev2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev1 &lt;span style="color:#666">=&lt;/span> prev2
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev2 &lt;span style="color:#666">=&lt;/span> current
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> current
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>88. Merge Sorted Array</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/88/</link><pubDate>Sun, 30 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/88/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/merge-sorted-array/">LeetCode problem&lt;/a>&lt;/p>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">merge&lt;/span>(self, nums1: List[&lt;span style="color:#007020">int&lt;/span>], m: &lt;span style="color:#007020">int&lt;/span>, nums2: List[&lt;span style="color:#007020">int&lt;/span>], n: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">&amp;#34;&amp;#34;&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> Do not return anything, modify nums1 in-place instead.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0"> &amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">len&lt;/span>(nums1) &lt;span style="color:#666">-&lt;/span> n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> nums2:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nums1[i] &lt;span style="color:#666">=&lt;/span> j
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nums1&lt;span style="color:#666">.&lt;/span>sort()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>94. Binary Tree Inorder Traversal</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/94/</link><pubDate>Mon, 31 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/94/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/binary-tree-inorder-traversal/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>Given the &lt;code>root&lt;/code> of a binary tree, return the &lt;code>inorder traversal of its nodes' values&lt;/code>.&lt;/p>
+&lt;p>&lt;strong>Example 1:&lt;/strong>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.leetcode.com/uploads/2020/09/15/inorder_1.jpg"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;pre>&lt;code>Input: root = [1,null,2,3]
+Output: [1,3,2]
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 2:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: root = []
+Output: []
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Example 3:&lt;/strong>&lt;/p>
+&lt;pre>&lt;code>Input: root = [1]
+Output: [1]
+&lt;/code>&lt;/pre>
+&lt;h2 id="thoughts">Thoughts&lt;/h2>
+&lt;p>Don&amp;rsquo;t understand what needed. Why:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>1-null-2-3&lt;/code> becomes &lt;code>1-3-2&lt;/code>&lt;/li>
+&lt;li>&lt;code>[1,2,5,7,8,9,10]&lt;/code> becomes &lt;code>[7,2,8,1,9,5,10]&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>In &lt;code>1-null-2-3&lt;/code> &lt;code>1&lt;/code> becomes the first because we loop to its left node which is &lt;code>null&lt;/code>, then come back and first value here is &lt;code>1&lt;/code>.&lt;/p>
+&lt;h2 id="first-accepted">First accepted&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Definition for a binary tree node.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># class TreeNode:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># def __init__(self, val=0, left=None, right=None):&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.val = val&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.left = left&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># self.right = right&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">inorderTraversal&lt;/span>(self, root: Optional[TreeNode]) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[&lt;span style="color:#007020">int&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># add all left, then add right&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">get_child&lt;/span>(head):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> head:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> get_child(head&lt;span style="color:#666">.&lt;/span>left)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result&lt;span style="color:#666">.&lt;/span>append(head&lt;span style="color:#666">.&lt;/span>val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> get_child(head&lt;span style="color:#666">.&lt;/span>right)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> get_child(root)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> result
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="better-solution">Better solution&lt;/h2>
+&lt;p>Morris Traversal&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://leetcode.com/problems/binary-tree-inorder-traversal/solution/">LeetCode explanation&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>141. Linked List Cycle</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/141/</link><pubDate>Wed, 24 May 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/141/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/linked-list-cycle/">LeetCode problem 141&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>The problem asks us to determine if a given linked list contains a cycle. A cycle in a linked list occurs when a node&amp;rsquo;s &lt;code>next&lt;/code> pointer points back to a previous node in the list, causing an infinite loop.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;p>In this problem, you can take advantage of the Floyd&amp;rsquo;s &amp;ldquo;Tortoise and Hare&amp;rdquo; cycle detection algorithm. This algorithm allows you to detect a cycle in O(1) space and O(n) time complexity, where n is the number of nodes.&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;ol>
+&lt;li>Use two pointers, slow and fast. Initially, point them to the head of the linked list.&lt;/li>
+&lt;li>Move the slow pointer one step at a time, and the fast pointer two steps at a time.&lt;/li>
+&lt;li>If there&amp;rsquo;s a cycle, the fast pointer will eventually catch up to the slow pointer. If not, the fast pointer will reach the end of the list (&lt;code>None&lt;/code>).&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>&lt;strong>Step 1:&lt;/strong> Initialize &lt;code>slow = head&lt;/code> and &lt;code>fast = head&lt;/code>.&lt;/li>
+&lt;li>&lt;strong>Step 2:&lt;/strong> Move &lt;code>slow&lt;/code> one step and &lt;code>fast&lt;/code> two steps in a loop.&lt;/li>
+&lt;li>&lt;strong>Step 3:&lt;/strong> If &lt;code>fast&lt;/code> and &lt;code>slow&lt;/code> meet at any point, return &lt;code>True&lt;/code>. If &lt;code>fast&lt;/code> reaches the end, return &lt;code>False&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;h2 id="solution--pointers">Solution | Pointers&lt;/h2>
+&lt;p>Here&amp;rsquo;s the Python code for this algorithm, commented for clarity:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">ListNode&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, x):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">=&lt;/span> x
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">hasCycle&lt;/span>(head: ListNode) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">bool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Initialize slow and fast pointers to head&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> slow &lt;span style="color:#666">=&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fast &lt;span style="color:#666">=&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> fast &lt;span style="color:#007020;font-weight:bold">and&lt;/span> fast&lt;span style="color:#666">.&lt;/span>next:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> slow &lt;span style="color:#666">=&lt;/span> slow&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#60a0b0;font-style:italic"># Move slow one step&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fast &lt;span style="color:#666">=&lt;/span> fast&lt;span style="color:#666">.&lt;/span>next&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#60a0b0;font-style:italic"># Move fast two steps&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> slow &lt;span style="color:#666">==&lt;/span> fast:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="solution--visited">Solution | Visited&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">hasCycle&lt;/span>(self, head: Optional[ListNode]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">bool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> visited &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> cur:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> cur&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#007020;font-weight:bold">in&lt;/span> visited:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> cur&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> visited&lt;span style="color:#666">.&lt;/span>add(cur)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>160. Intersection of Two Linked Lists</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/160/</link><pubDate>Mon, 05 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/160/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/intersection-of-two-linked-lists/">LeetCode problem&lt;/a>&lt;/p>
+&lt;h2 id="solution-1">Solution 1&lt;/h2>
+&lt;p>Using hashmap.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Definition for singly-linked list.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">ListNode&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, x):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">=&lt;/span> x
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">getIntersectionNode&lt;/span>(self, headA: ListNode, headB: ListNode):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nodes &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> headA
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> cur:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nodes&lt;span style="color:#666">.&lt;/span>add(cur)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> cur&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> headB
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> cur:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> cur &lt;span style="color:#007020;font-weight:bold">in&lt;/span> nodes:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> cur
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> cur&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="solution-2">Solution 2&lt;/h2>
+&lt;ol>
+&lt;li>Initialize two pointers, one for each head.&lt;/li>
+&lt;li>Move each pointer to the next node in its list.&lt;/li>
+&lt;li>If a pointer reaches the end of its list, move it to the start of the other list.&lt;/li>
+&lt;li>Repeat steps 2 and 3 until the two pointers meet, or until both pointers have switched lists and reached the end (meaning there is no intersection).&lt;/li>
+&lt;/ol>
+&lt;p>The key insight is that by switching lists when a pointer reaches the end, each pointer traverses the same total number of nodes. This means they must meet at the intersection if one exists.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">getIntersectionNode&lt;/span>(self, headA: ListNode, headB: ListNode):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pointerA, pointerB &lt;span style="color:#666">=&lt;/span> headA, headB
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Continue until the pointers meet&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> pointerA &lt;span style="color:#666">!=&lt;/span> pointerB:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Move each pointer to the next node, &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># or to the start of the other list if it reached the end&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pointerA &lt;span style="color:#666">=&lt;/span> pointerA&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#007020;font-weight:bold">if&lt;/span> pointerA &lt;span style="color:#007020;font-weight:bold">else&lt;/span> headB
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pointerB &lt;span style="color:#666">=&lt;/span> pointerB&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#007020;font-weight:bold">if&lt;/span> pointerB &lt;span style="color:#007020;font-weight:bold">else&lt;/span> headA
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Return the intersecting node, or None if there is no intersection&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> pointerA
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It may seem like the loop could run forever because it continues until the two pointers meet and each pointer is always moved forward (to the next node or to the start of the other list).&lt;/p>
+&lt;p>If the two linked lists intersect, then from the point of intersection, they &lt;strong>share the same nodes until the end&lt;/strong>. The two pointers will meet at the intersection point because when each pointer has traversed its own list once and then the other list, they have both traversed exactly the &lt;strong>same number of nodes in total&lt;/strong> (the length of list A plus the length of list B). So, they must meet at the intersection point if one exists.&lt;/p>
+&lt;p>If the linked lists do not intersect, the pointers will both reach the end of the other list after traversing both lists. They&amp;rsquo;ll be both set to &lt;code>None&lt;/code>, and the loop condition &lt;code>pointerA != pointerB&lt;/code> will fail, terminating the loop.&lt;/p>
+&lt;p>So, regardless of whether the linked lists intersect, the loop will eventually terminate. This is why the solution has a time complexity of &lt;code>O(m + n)&lt;/code>, where &lt;code>m&lt;/code> and &lt;code>n&lt;/code> are the lengths of the two linked lists.&lt;/p></description></item><item><title>171. Excel Sheet Column Number</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/171/</link><pubDate>Thu, 15 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/171/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/excel-sheet-column-number/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>The column titles in an Excel sheet are designed similar to a base-26 number system. The columns start from &amp;lsquo;A&amp;rsquo; (which is 1) to &amp;lsquo;Z&amp;rsquo; (which is 26), then after &amp;lsquo;Z&amp;rsquo;, the column titles go to &amp;lsquo;AA&amp;rsquo; (which is 27), &amp;lsquo;AB&amp;rsquo; (28), and so on.&lt;/p>
+&lt;p>This problem is essentially asking us to convert a base-26 number (represented by uppercase English letters) to a decimal number.&lt;/p>
+&lt;p>That means that for each &amp;ldquo;new&amp;rdquo; index in &lt;code>columnTitle&lt;/code> we already pass alphabet.
+Example:&lt;/p>
+&lt;ul>
+&lt;li>If &lt;code>columnTitle&lt;/code> length is 1 =&amp;gt; result in range of (1-26)&lt;/li>
+&lt;li>If &lt;code>columnTitle&lt;/code> length is 2 (&amp;lsquo;AB&amp;rsquo;) =&amp;gt; first index passed alphabet (26), next B equals 2 in alphabet. Hence 1 * 26 + index(B)&lt;/li>
+&lt;/ul>
+&lt;h2 id="solution-1">Solution 1&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">import&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">titleToNumber&lt;/span>(self, columnTitle: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> alphabet &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">list&lt;/span>(string&lt;span style="color:#666">.&lt;/span>ascii_uppercase)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> letter &lt;span style="color:#007020;font-weight:bold">in&lt;/span> columnTitle:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> letter_idx &lt;span style="color:#666">=&lt;/span> alphabet&lt;span style="color:#666">.&lt;/span>index(letter) &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">=&lt;/span> s&lt;span style="color:#666">*&lt;/span>&lt;span style="color:#40a070">26&lt;/span> &lt;span style="color:#666">+&lt;/span> letter_idx
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> s
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="optimized-solution">Optimized Solution&lt;/h2>
+&lt;p>Using &lt;code>ord&lt;/code> function that returns index of letter.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&amp;gt;&amp;gt;&amp;gt; ord&lt;span style="color:#666">(&lt;/span>&lt;span style="color:#4070a0">&amp;#39;A&amp;#39;&lt;/span>&lt;span style="color:#666">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#40a070">65&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Because here index is 65, will create a number to convert it to the correct one: &lt;code>result_number - ord('A) + 1&lt;/code>&lt;/p>
+&lt;p>Example:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bb60d5">idxA&lt;/span> &lt;span style="color:#666">=&lt;/span> ord&lt;span style="color:#666">(&lt;/span>&lt;span style="color:#4070a0">&amp;#39;A&amp;#39;&lt;/span>&lt;span style="color:#666">)&lt;/span> - ord&lt;span style="color:#666">(&lt;/span>&lt;span style="color:#4070a0">&amp;#39;A&amp;#39;&lt;/span>&lt;span style="color:#666">)&lt;/span> + &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bb60d5">idxB&lt;/span> &lt;span style="color:#666">=&lt;/span> ord&lt;span style="color:#666">(&lt;/span>&lt;span style="color:#4070a0">&amp;#39;B&amp;#39;&lt;/span>&lt;span style="color:#666">)&lt;/span> - ord&lt;span style="color:#666">(&lt;/span>&lt;span style="color:#4070a0">&amp;#39;A&amp;#39;&lt;/span>&lt;span style="color:#666">)&lt;/span> + &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">titleToNumber&lt;/span>(self, columnTitle: &lt;span style="color:#007020">str&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> correct_sum &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#007020">ord&lt;/span>(&lt;span style="color:#4070a0">&amp;#39;A&amp;#39;&lt;/span>) &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> letter &lt;span style="color:#007020;font-weight:bold">in&lt;/span> columnTitle:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">=&lt;/span> s &lt;span style="color:#666">*&lt;/span> &lt;span style="color:#40a070">26&lt;/span> &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#007020">ord&lt;/span>(letter) &lt;span style="color:#666">+&lt;/span> correct_sum
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> s
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>191. Number of 1 Bits</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/191/</link><pubDate>Wed, 21 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/191/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/number-of-1-bits/">LeetCode problem&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>Given an integer value represented in binary format, we need to count the number of &amp;lsquo;1&amp;rsquo; bits in its binary representation.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>The naive solution for this problem would be to convert the binary number into a string and then simply iterate over the string and count the number of &amp;lsquo;1&amp;rsquo;s. However, this solution is not optimal and is not taking advantage of the properties of binary numbers.&lt;/p>
+&lt;h2 id="algorithm">Algorithm&lt;/h2>
+&lt;p>The optimal solution for this problem involves using &lt;a href="https://romankurnovskii.com/en/posts/python-bitwise-operators/">&lt;mark>bitwise operation&lt;/mark>&lt;/a>. Bitwise operations are a type of operation that works on the binary representation of numbers.&lt;/p>
+&lt;p>Specifically, we&amp;rsquo;ll use the bitwise &lt;code>AND&lt;/code> operator (&lt;code>&amp;amp;&lt;/code>) and bitwise right shift operator (&lt;code>&amp;gt;&amp;gt;&lt;/code>).&lt;/p>
+&lt;p>To count the number of 1 bits in the binary representation of a number, we can &lt;code>AND&lt;/code> the number with 1. If the result is 1, that means the least significant bit of the number is 1. We then right shift the number by 1 bit to check the next bit. We continue this process until the number becomes 0.&lt;/p>
+&lt;h2 id="high-level-solution-logic">High Level Solution Logic&lt;/h2>
+&lt;ol>
+&lt;li>Initialize a counter variable to 0.&lt;/li>
+&lt;li>While the number is not 0:
+&lt;ul>
+&lt;li>AND the number with 1.&lt;/li>
+&lt;li>If the result is 1, increment the counter.&lt;/li>
+&lt;li>Right shift the number by 1 bit.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Return the counter.&lt;/li>
+&lt;/ol>
+&lt;h2 id="python-code">Python Code&lt;/h2>
+&lt;p>Here&amp;rsquo;s the Python code for this solution:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">hammingWeight&lt;/span>(self, n: &lt;span style="color:#007020">int&lt;/span>) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">int&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bits &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> n:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bits &lt;span style="color:#666">+=&lt;/span> n &lt;span style="color:#666">&amp;amp;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">&amp;gt;&amp;gt;=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> bits
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="example">Example&lt;/h2>
+&lt;p>Let&amp;rsquo;s say we have a binary number &lt;code>00000001011&lt;/code>, which is &lt;code>11&lt;/code> in decimal.&lt;/p>
+&lt;ol>
+&lt;li>Initialize a counter variable to 0. So, &lt;code>bits = 0&lt;/code>.&lt;/li>
+&lt;li>Start the loop. The number &lt;code>n&lt;/code> is &lt;strong>11&lt;/strong>, which is not &lt;strong>0&lt;/strong>, so we proceed.&lt;/li>
+&lt;li>We perform the operation &lt;code>n &amp;amp; 1&lt;/code>. In binary, &lt;code>1011 &amp;amp; 0001&lt;/code> equals &lt;code>0001&lt;/code>, which is 1 in decimal. This is because the bitwise &lt;code>AND&lt;/code> operation returns 1 only if both bits being compared are 1. So, since our least significant bit is 1, our &lt;code>AND&lt;/code> operation returns 1. We increment our counter bits by 1. Now &lt;code>bits = 1&lt;/code>.&lt;/li>
+&lt;li>We right shift our number by 1 bit using the operation &lt;code>n &amp;gt;&amp;gt;= 1&lt;/code>. This operation moves all the bits of the number one position to the right.
+&lt;ol>
+&lt;li>Our number &lt;code>1011&lt;/code> becomes 101 in binary or 5 in decimal.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Our updated number &lt;code>n&lt;/code> is 5, which is not 0, so we repeat the process.&lt;/li>
+&lt;li>Now, &lt;code>n &amp;amp; 1&lt;/code> is &lt;code>101 &amp;amp; 001&lt;/code> equals 001, which is 1 in decimal.
+&lt;ol>
+&lt;li>So, we increment our counter bits by 1.&lt;/li>
+&lt;li>Now bits = 2.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>We right shift our number by 1 bit. Our number 101 becomes 10 in binary or 2 in decimal.
+&lt;ol>
+&lt;li>Our updated number &lt;code>n&lt;/code> is 2, which is not 0, so we repeat the process.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Now, &lt;code>n &amp;amp; 1&lt;/code> is &lt;code>10 &amp;amp; 01&lt;/code> equals &lt;code>00&lt;/code>, which is 0 in decimal. So, we do not increment our counter bits.&lt;/li>
+&lt;li>We right shift our number by 1 bit. Our number 10 becomes 1 in binary.
+&lt;ol>
+&lt;li>Our updated number &lt;code>n&lt;/code> is 1, which is not 0, so we repeat the process.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Now, &lt;code>n &amp;amp; 1&lt;/code> is &lt;code>1 &amp;amp; 1&lt;/code> equals 1. So, we increment our counter bits by 1. &lt;code>Now bits = 3&lt;/code>.&lt;/li>
+&lt;li>We right shift our number by 1 bit. Our number 1 becomes 0 in binary.&lt;/li>
+&lt;li>Our updated number &lt;code>n&lt;/code> is 0, which stops the loop.&lt;/li>
+&lt;/ol></description></item><item><title>202. Happy Number</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/202/</link><pubDate>Sun, 18 Jun 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/202/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/happy-number/">LeetCode problem&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>In this problem, we are given a number &lt;code>n&lt;/code>. We have to determine whether this number is a &amp;ldquo;happy&amp;rdquo; number or not. A happy number is a number defined by the following process:&lt;/p>
+&lt;ol>
+&lt;li>Starting with any positive integer, replace the number by the sum of the squares of its digits.&lt;/li>
+&lt;li>Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1.&lt;/li>
+&lt;li>Those numbers for which this process ends in 1 are happy.&lt;/li>
+&lt;/ol>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A naive solution would be to follow the process as stated in the problem description and use a data structure such as a set to check for repetitions indicating a cycle. If during the process, the number becomes 1, we can conclude that the number is happy. However, if we encounter a number that was already visited, it means we are stuck in a cycle, and the number is not happy.&lt;/p>
+&lt;ol>
+&lt;li>We calculate the sum of squares of the digits of n in each iteration, and check if this sum is 1 or a number we&amp;rsquo;ve seen before.&lt;/li>
+&lt;li>If it&amp;rsquo;s 1, we return true.&lt;/li>
+&lt;li>If it&amp;rsquo;s a number we&amp;rsquo;ve seen before, we return false, as this means we&amp;rsquo;re in an endless loop.&lt;/li>
+&lt;/ol>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;p>However, continuously checking if a number was already visited can be costly in terms of time complexity. A more efficient way to detect cycles is to use the Floyd Cycle detection algorithm (also known as the &lt;a href="https://www.youtube.com/watch?v=S5TcPmTl6ww">&amp;ldquo;Tortoise and the Hare&amp;rdquo; algorithm&lt;/a>).&lt;/p>
+&lt;p>This algorithm allows us to detect a cycle in the sequence without having to store all previously seen numbers, making it more efficient in terms of space usage.&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>Floyd Cycle detection algorithm works by moving two pointers at different speeds - a slow pointer (tortoise) and a fast pointer (hare). If there is a cycle, the fast pointer will eventually meet the slow pointer again.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Initialize two pointers slow and fast as &lt;code>n&lt;/code>.&lt;/li>
+&lt;li>Replace
+&lt;ol>
+&lt;li>slow with the sum of the squares of its digits,&lt;/li>
+&lt;li>and fast with the sum of squares of the next number in the sequence.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>If fast becomes 1, return &lt;code>True&lt;/code>. - &lt;code>n&lt;/code> is a happy number.&lt;/li>
+&lt;li>If slow meets fast and the number is not 1, return &lt;code>False&lt;/code>. - &lt;code>n&lt;/code> is not a happy number as we have detected a cycle.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">isHappy&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">get_next&lt;/span>(num): &lt;span style="color:#60a0b0;font-style:italic"># get the next number in the sequence&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> total_sum &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> num &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># get the last digit of the number and the remaining part&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> num, digit &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">divmod&lt;/span>(num, &lt;span style="color:#40a070">10&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> total_sum &lt;span style="color:#666">+=&lt;/span> digit &lt;span style="color:#666">**&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> total_sum
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> slow &lt;span style="color:#666">=&lt;/span> n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fast &lt;span style="color:#666">=&lt;/span> get_next(n)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> visited &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> fast &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> slow &lt;span style="color:#666">!=&lt;/span> fast:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> slow &lt;span style="color:#666">=&lt;/span> get_next(slow)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fast &lt;span style="color:#666">=&lt;/span> get_next(get_next(fast))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> visited&lt;span style="color:#666">.&lt;/span>add(slow)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> fast &lt;span style="color:#007020;font-weight:bold">in&lt;/span> visited:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> fast &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In this solution, the function &lt;code>get_next(n)&lt;/code> is used to get the next number in the sequence by replacing &lt;code>n&lt;/code> with the sum of the squares of its digits.&lt;/p>
+&lt;p>We initialize &lt;code>slow&lt;/code> and &lt;code>fast&lt;/code> to &lt;code>n&lt;/code> and &lt;code>get_next(n)&lt;/code> respectively.&lt;/p>
+&lt;p>Then, until &lt;code>fast&lt;/code> equals 1 or &lt;code>slow&lt;/code> catches up to &lt;code>fast&lt;/code>, we continue moving &lt;code>slow&lt;/code> one step at a time and &lt;code>fast&lt;/code> two steps at a time. If &lt;code>fast&lt;/code> equals 1 at the end of the loop, &lt;code>n&lt;/code> is a happy number.&lt;/p></description></item></channel></rss>

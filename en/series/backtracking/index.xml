@@ -1,5 +1,86 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Backtracking on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/series/backtracking/</link><description>Recent content in Backtracking on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sat, 04 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/series/backtracking/index.xml" rel="self" type="application/rss+xml"/><item><title>78. Subsets</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/78/</link><pubDate>Sat, 04 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/78/</guid><description>LeetCode problem
-In this solution, we start with an empty list in the results array.
-For each element in the nums array, we append that element to all of the subsets in the results array to create new subsets, and then add these new subsets to the results array.
-By doing this for all elements in nums, we generate all possible subsets.
-class Solution: def subsets(self, nums: List[int]) -&amp;gt; List[List[int]]: res = [[]] for i in nums: for j in range(len(res)): cur = [] cur.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Backtracking on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/series/backtracking/</link><description>Recent content in Backtracking on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sat, 04 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/series/backtracking/index.xml" rel="self" type="application/rss+xml"/><item><title>78. Subsets</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/78/</link><pubDate>Sat, 04 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/78/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/subsets/">LeetCode problem&lt;/a>&lt;/p>
+&lt;p>In this solution, we start with an empty list in the results array.&lt;/p>
+&lt;p>For each element in the &lt;code>nums&lt;/code> array, we append that element to all of the subsets in the results array to create new subsets, and then add these new subsets to the results array.&lt;/p>
+&lt;p>By doing this for all elements in &lt;code>nums&lt;/code>, we generate all possible subsets.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">subsets&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[List[&lt;span style="color:#007020">int&lt;/span>]]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> [[]]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> nums:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(res)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur&lt;span style="color:#666">.&lt;/span>append(i)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur&lt;span style="color:#666">.&lt;/span>extend(res[j])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#666">.&lt;/span>append(cur)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Approach 2:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">subsets&lt;/span>(self, nums: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> List[List[&lt;span style="color:#007020">int&lt;/span>]]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">dfs&lt;/span>(start: &lt;span style="color:#007020">int&lt;/span>, path: List[&lt;span style="color:#007020">int&lt;/span>]) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res&lt;span style="color:#666">.&lt;/span>append(path)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(start, &lt;span style="color:#007020">len&lt;/span>(nums)):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>, path &lt;span style="color:#666">+&lt;/span> [nums[i]])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dfs(&lt;span style="color:#40a070">0&lt;/span>, [])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This is a recursive solution that uses a depth-first search (DFS) approach to generate all possible subsets of the input list &lt;code>nums&lt;/code>. The function takes two parameters &lt;code>start&lt;/code> and &lt;code>path&lt;/code>, where&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>start&lt;/code> represents the starting index of the current subset&lt;/li>
+&lt;li>&lt;code>path&lt;/code> represents the current subset being constructed.&lt;/li>
+&lt;/ul>
+&lt;p>The base case of the recursion is when &lt;code>start&lt;/code> is greater than or equal to the length of &lt;code>nums&lt;/code>, at which point the current path is added to the final result &lt;code>res&lt;/code>.&lt;/p>
+&lt;p>For each recursive call, the function iterates through the remaining elements of &lt;code>nums&lt;/code> starting at index &lt;code>start&lt;/code>, and appends each element to the &lt;code>path&lt;/code> list. Then, the function recursively calls itself with the next index &lt;code>i+1&lt;/code> as the new starting point for the next subset, and the updated &lt;code>path&lt;/code> list.&lt;/p>
+&lt;p>As the recursion returns, each subset is added to the &lt;code>res&lt;/code> list, and the &lt;code>path&lt;/code> list is updated by removing the last element that was added in the previous recursive call.&lt;/p>
+&lt;p>Finally, the function is initialized with an empty &lt;code>path&lt;/code> list and a starting index &lt;code>start&lt;/code> of &lt;code>0&lt;/code>, and the final &lt;code>res&lt;/code> list is returned after all subsets have been generated.&lt;/p>
+&lt;p>&lt;strong>LeetCode Editorial:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://leetcode.com/problems/subsets/editorial/">Editorial&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Approach 1: Cascading&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://leetcode.com/problems/subsets/Figures/78/recursion.png"
+id="zoom-default"
+alt="Cascading"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>Approach 2: Backtracking&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://leetcode.com/problems/subsets/Figures/78/combinations.png"
+id="zoom-default"
+alt="Backtracking"
+loading="lazy"
+/>
+&lt;/p>
+&lt;p class="md__image">
+&lt;img
+src="https://leetcode.com/problems/subsets/Figures/78/backtracking.png"
+id="zoom-default"
+alt="Backtracking"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;ul>
+&lt;li>Approach 3: Lexicographic (Binary Sorted) Subsets
+&lt;p class="md__image">
+&lt;img
+src="https://leetcode.com/problems/subsets/Figures/78/bitmask4.png"
+id="zoom-default"
+alt="Lexicographic (Binary Sorted) Subsets"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>

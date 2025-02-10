@@ -1,3 +1,365 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ELB on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/elb/</link><description>Recent content in ELB on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Tue, 13 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/elb/index.xml" rel="self" type="application/rss+xml"/><item><title>Elastic Load Balancing</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/elasticloadbalancing/</link><pubDate>Tue, 13 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/elasticloadbalancing/</guid><description>About Elastic Load Balancing (ELB) automa­tically distri­butes incoming applic­ation traffic across multiple targets, such as EC2&amp;rsquo;s, contai­ners, IP addresses, &amp;amp; Lambda functions.
-Elastic Load Balancing is a best practice to assign incoming traffic to a single target, such as an EC2 Instance, and then distribute the rest of the traffic across the target&amp;rsquo;s resources. An elastic load balancer distributes traffic across an arbitrary number of targets.
-Documentation User Guide Types of Load Balancers Type Description Application Load Balancer (ALB) Operates at the Application Layer (OSI L7), handling HTTP/HTTPS traffic.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ELB on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/elb/</link><description>Recent content in ELB on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Tue, 13 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/elb/index.xml" rel="self" type="application/rss+xml"/><item><title>Elastic Load Balancing</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/elasticloadbalancing/</link><pubDate>Tue, 13 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/elasticloadbalancing/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>Elastic Load Balancing (ELB) automa­tically distri­butes incoming applic­ation traffic across multiple targets, such as EC2&amp;rsquo;s, contai­ners, IP addresses, &amp;amp; Lambda functions.&lt;/p>
+&lt;p>Elastic Load Balancing is a best practice to assign incoming traffic to a single target, such as an EC2 Instance, and then distribute the rest of the traffic across the target&amp;rsquo;s resources. An elastic load balancer distributes traffic across an arbitrary number of targets.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/elasticloadbalancing/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/elasticloadbalancing/?id=docs_gateway">User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/Digital%20Marketing/House/1up/products/elb/Product-Page-Diagram_Elastic-Load-Balancing_ALB_HIW%402x.cb3ce6cfd5dd549c99645ed51eef9e8be8a27aa3.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="types-of-load-balancers">Types of Load Balancers&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Type&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Application Load Balancer (ALB)&lt;/td>
+&lt;td>Operates at the Application Layer (OSI L7), handling HTTP/HTTPS traffic. Allows routing requests to specific web servers.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Network Load Balancer (NLB)&lt;/td>
+&lt;td>Operates at the Network Layer (OSI L4), handling TCP traffic. Recommended for performance.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Classic Load Balancer (CLB)&lt;/td>
+&lt;td>Operates at OSI L7 and OSI L4, however has limited functions. Requests are forwarded by the load balancer without “looking into” any of these requests. They just get forwarded to the backend section. Not recommended for use except for apps built in the EC2-Classic network.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="compare-alb-vs-nlb-vs-clb">Compare ALB vs NLB vs CLB&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Basic load balancing features&lt;/th>
+&lt;th>ALB&lt;/th>
+&lt;th>NLB&lt;/th>
+&lt;th>CLB&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Balance load between targets&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Perform health checks on targets&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Highly available&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Elastic&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>TLS Termination&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Performance&lt;/td>
+&lt;td>Good&lt;/td>
+&lt;td>Very high&lt;/td>
+&lt;td>Good&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Send logs and metrics to CloudWatch&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Layer 4 (TCP)&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Layer 7 (HTTP)&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Running costs&lt;/td>
+&lt;td>Low&lt;/td>
+&lt;td>Low&lt;/td>
+&lt;td>Low&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Advanced load balancing features&lt;/th>
+&lt;th>ALB&lt;/th>
+&lt;th>NLB&lt;/th>
+&lt;th>CLB&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Advanced routing options&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;td>No&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Can send fixed response without backend&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>No&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Supports user authentication&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>No&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Can serve multiple domains over HTTPS&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>No&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Preserve source IP&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>No&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Can be used in EC2-Classic&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Supports application-defined sticky session cookies&lt;/td>
+&lt;td>No&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Supports Docker containers&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Supports targets outside AWS&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>No&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Supports websockets&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>N/A&lt;/td>
+&lt;td>No&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Can route to many ports on a given target&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>Yes&lt;/td>
+&lt;td>No&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/aws-elb-comparison-table.png"
+id="zoom-default"
+alt="Compare ALB vs NLB vs CLB"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="scaling">Scaling&lt;/h3>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/elb-02.png"
+id="zoom-default"
+alt="flow"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;strong>Vertical Scaling&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Increasing the size of the instances (ie- increase in RAM and vCPUs )&lt;/li>
+&lt;li>Ex: from t2.micro to t3.2xlarge (doesn&amp;rsquo;t have to be the same instance family)&lt;/li>
+&lt;li>In vertical scaling, you scale up/down&lt;/li>
+&lt;li>Vertical scaling usually happens in databases, to handle high workloads as your application grows&lt;/li>
+&lt;/ul>
+&lt;p>*&lt;strong>Horizontal Scaling&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Increasing the no. of instances&lt;/li>
+&lt;li>In horizontal scaling, you scale out/in&lt;/li>
+&lt;li>Ex: ASG scaling out EC2 instances to match increased workload for your web application&lt;/li>
+&lt;/ul>
+&lt;h3 id="cross-zone-load-balancing">Cross Zone Load Balancing&lt;/h3>
+&lt;p>&lt;strong>ALB&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Enabled by default. Cannot disable it&lt;/li>
+&lt;li>Not charges for data transfer between AZs (inter AZ data transfer)&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/elb-01.jpeg"
+id="zoom-default"
+alt="flow"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;strong>CLB&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Enabled by default. Can disable it&lt;/li>
+&lt;li>Not charged for data transfer between AZs&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="./img/elb-clb.jpeg"
+id="zoom-default"
+alt="flow"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;strong>NLB&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Disabled by default. Can enable it&lt;/li>
+&lt;li>Charged for data transfer between AZs&lt;/li>
+&lt;/ul>
+&lt;h2 id="digest">Digest&lt;/h2>
+&lt;ul>
+&lt;li>ELB(Elastic Load Balancing) distributes application or network traffic across multiple targets, such as EC2 instances, containers(ECS), and IP addresses, in multiple AZs.&lt;/li>
+&lt;li>Cross Zone Load Balancing – when enabled, each load balancer node distributes traffic across the registered targets in all enabled AZs.&lt;/li>
+&lt;li>3 Types of Load balancers - Application, Network, Classic&lt;/li>
+&lt;li>Deleting ELB won&amp;rsquo;t delete the instances registered to it.&lt;/li>
+&lt;li>Termination protection will be disabled by default; enable it to prevent accidental delete.&lt;/li>
+&lt;li>504 error means the gateway has timed out and the application is not responding within the idle timeout period&lt;/li>
+&lt;li>Look for the X-Forwarded-For header, if you need the end user IPv4 address&lt;/li>
+&lt;li>ASG (Auto Scaling Group) ensures you&amp;rsquo;ve the correct number of EC2 instances available. Specify minimum, maximum and desired number of instances.&lt;/li>
+&lt;li>Lifecycle hook - perform custom actions when instances launch or terminate&lt;/li>
+&lt;li>Cool down period - ensure not to launch additional instances before previous scaling activities complete&lt;/li>
+&lt;li>Launch configuration - Instance configuration template the ASG uses to launch EC2 instances&lt;/li>
+&lt;/ul>
+&lt;h2 id="price">Price&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/elasticloadbalancing/pricing/">Current price&lt;/a>&lt;/p>
+&lt;h2 id="use-cases">Use Cases&lt;/h2>
+&lt;p>Type: Scale your network design&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>AWS discourages the use of Classic Load Balancer in favor of its newer load balancers&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Application Load Balancer is typically used for web applications.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Network Load Balancer would be used for anything that ALBs don’t cover. A typical use case would be a near real-time data streaming service (video, stock quotes, etc.) Another typical case is that you would need to use an NLB if your application uses non-HTTP protocols&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="practice">Practice&lt;/h2>
+&lt;p>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/elasticloadbalancing/create-amazon-load-balancing/">Create Classic Load Balancer&lt;/a>&lt;/p>
+&lt;h2 id="questions">Questions&lt;/h2>
+&lt;h3 id="q1">Q1&lt;/h3>
+&lt;p>&lt;strong>Which load balancer would you use for services which use HTTP or HTTPS traffic?&lt;/strong>&lt;/p>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+Application Load Balancer (ALB).
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q2">Q2&lt;/h3>
+&lt;p>&lt;strong>What are possible target groups for ALB (Application Load Balancer)?&lt;/strong>&lt;/p>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;ul>
+&lt;li>EC2 tasks&lt;/li>
+&lt;li>ECS instances&lt;/li>
+&lt;li>Lambda functions&lt;/li>
+&lt;li>Private IP Addresses&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q3">Q3&lt;/h3>
+&lt;p>&lt;strong>Your would like to optimize the performance of their web application by routing inbound traffic to api.mysite.com to Compute Optimized EC2 instances and inbound traffic to mobile.mysite.com to Memory Optimized EC2 instances.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which solution below would be best to implement for this?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Enable X-Forwarded For on the web servers and use a Classic Load Balancer&lt;/li>
+&lt;li>Configure proxy servers to forward the traffic to the correct instances&lt;/li>
+&lt;li>Use an Application Load Balancer with path-based routing rules to forward the traffic to the correct instances&lt;/li>
+&lt;li>Use an Application Load Balancer with host-based routing rules to forward the traffic to the correct instances&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>Application Load Balancer with host-based routing rules&lt;/p>
+&lt;p>&lt;a href="https://aws.amazon.com/blogs/aws/new-host-based-routing-support-for-aws-application-load-balancers/">https://aws.amazon.com/blogs/aws/new-host-based-routing-support-for-aws-application-load-balancers/&lt;/a>&lt;/p>
+&lt;p>&lt;mark style="color:white">4&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q4">Q4&lt;/h3>
+&lt;p>&lt;strong>What is the primary reason why you should be using an elastic load balancer for a website with high activity?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>ELBs help you scale servers easily without manual intervention&lt;/li>
+&lt;li>ELBs can distribute traffic equally to your backend targets to handle the incoming traffic load&lt;/li>
+&lt;li>ELBs help tighten security through the use of security groups&lt;/li>
+&lt;li>ELBs boost your website’s overall performance&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>Elastic Load Balancing automatically distributes incoming application traffic across multiple targets, such as Amazon EC2 instances, containers, IP addresses, and Lambda functions. It can handle the varying load of your application traffic in a single Availability Zone or across multiple Availability Zones.&lt;/p>
+&lt;p>Elastic Load Balancing offers three types of load balancers that all feature the high availability, automatic scaling, and robust security necessary to make your applications fault-tolerant. They are Application Load Balancer, Network Load Balancer, Classic Load Balancer, and Gateway Load Balancer.&lt;/p>
+&lt;p>&lt;mark style="color:white">2&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q5">Q5&lt;/h3>
+&lt;p>&lt;strong>After a year of development, the company’s 100-node high-performance computing (HPC) application is now ready to be deployed to an Amazon Elastic Kubernetes Service (Amazon EKS) cluster with Horizontal Pod Autoscaler (HPA). The application must be capable of receiving millions of UDP traffic per second from the public Internet while maintaining low latency.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which of the following is the most operationally efficient solution that should be implemented to meet the above requirements?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Launch a Gateway Load Balancer and integrate an Elastic Fabric Adapter (EFA) to each Kubernetes pod deployed in the Amazon EKS cluster&lt;/li>
+&lt;li>Integrate the AWS Load Balancer Controller add-on to the EKS cluster. Launch a Network Load Balancer to load balance network traffic to individual Kubernetes pods.&lt;/li>
+&lt;li>Install the AWS Load Balancer Controller add-on to the EKS cluster and launch an Application Load Balancer to distribute the incoming traffic to the Kubernetes pods.&lt;/li>
+&lt;li>Set up the &lt;code>kube-proxy&lt;/code> Amazon EKS add-on to the cluster and configure the Source Network Address Translation (&lt;a href="https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-outbound-connections">SNAT&lt;/a>) of the Kubernetes pods by setting the &lt;code>AWS_VPC_K8S_CNI_EXTERNALSNAT&lt;/code> configuration to true.&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>Network Load Balancer operates at the connection level (Layer 4), routing connections to targets – Amazon EC2 instances, microservices, and containers – within Amazon Virtual Private Cloud (Amazon VPC) based on IP protocol data.&lt;/p>
+&lt;p>Ideal for load balancing of both TCP and UDP traffic, Network Load Balancer is capable of handling millions of requests per second while maintaining ultra-low latencies. Network Load Balancer is optimized to handle sudden and volatile traffic patterns while using a single static IP address per Availability Zone.&lt;/p>
+&lt;p>It is integrated with other popular AWS services such as Auto Scaling, Amazon EC2 Container Service (ECS), Amazon CloudFormation, and AWS Certificate Manager (ACM).&lt;/p>
+&lt;p>Network Load Balancer preserves the client-side source IP address, allowing the back-end EC2 instances to see the IP address of the client. This can then be used by applications for further processing.&lt;/p>
+&lt;p>Network traffic is load balanced at L4 of the OSI model. To load balance application traffic at L7, you deploy a Kubernetes ingress, which provisions an AWS Application Load Balancer. An AWS Network Load Balancer can load balance network traffic to pods deployed to Amazon EC2 IP and instance targets or to AWS Fargate IP targets.&lt;/p>
+&lt;p>The AWS Load Balancer Controller manages AWS Elastic Load Balancers for a Kubernetes cluster. The controller provisions the following resources:&lt;/p>
+&lt;p>– An AWS Application Load Balancer (ALB) when you create a Kubernetes Ingress.&lt;/p>
+&lt;p>– An AWS Network Load Balancer (NLB) when you create a Kubernetes service of type LoadBalancer.&lt;/p>
+&lt;p>&lt;mark style="color:white">2&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details></description></item></channel></rss>

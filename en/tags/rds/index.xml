@@ -1,5 +1,115 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rds on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/rds/</link><description>Recent content in Rds on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Mon, 12 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/rds/index.xml" rel="self" type="application/rss+xml"/><item><title>RDS</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/rds/</link><pubDate>Mon, 12 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/rds/</guid><description>About Relational Database Service Managed DB service that uses SQL as query language Amazon Relational Database Service (Amazon RDS) is a collection of managed services that makes it simple to set up, operate, and scale databases in the cloud.
-Documentation User Guide Supports engines:
-Amazon Aurora with MySQL compatibility: 5432 Amazon Aurora with PostgreSQL compatibility: 5432 MySQL: 3306 MariaDB: 3306 PostgreSQL: 5432 Oracle: 1521 SQL Server: 1433 Engine modes:
-Used in CreateDBCluster
-global parallelquery serverless multimaster Backups Backups are enabled by default in RDS Automated backups</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rds on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/rds/</link><description>Recent content in Rds on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Mon, 12 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/rds/index.xml" rel="self" type="application/rss+xml"/><item><title>RDS</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/rds/</link><pubDate>Mon, 12 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/rds/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;ul>
+&lt;li>Relational Database Service&lt;/li>
+&lt;li>Managed DB service that uses SQL as query language&lt;/li>
+&lt;/ul>
+&lt;p>Amazon Relational Database Service (Amazon RDS) is a collection of managed services that makes it simple to set up, operate, and scale databases in the cloud.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/rds/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/rds/?id=docs_gateway">User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/video-thumbs/RDS/product-page-diagram_Amazon-RDS-Regular-Deployment_HIW-V2.96bc5b3027474538840af756a5f2c636093f311f.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Supports &lt;strong>engines&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>Amazon Aurora with MySQL compatibility: 5432&lt;/li>
+&lt;li>Amazon Aurora with PostgreSQL compatibility: 5432&lt;/li>
+&lt;li>MySQL: 3306&lt;/li>
+&lt;li>MariaDB: 3306&lt;/li>
+&lt;li>PostgreSQL: 5432&lt;/li>
+&lt;li>Oracle: 1521&lt;/li>
+&lt;li>SQL Server: 1433&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Engine modes:&lt;/strong>&lt;/p>
+&lt;p>Used in &lt;a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">CreateDBCluster&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>global&lt;/li>
+&lt;li>parallelquery&lt;/li>
+&lt;li>serverless&lt;/li>
+&lt;li>multimaster&lt;/li>
+&lt;/ul>
+&lt;h3 id="backups">Backups&lt;/h3>
+&lt;ul>
+&lt;li>Backups are enabled by default in RDS&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Automated backups&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Daily full backup (during maintenance window)&lt;/li>
+&lt;li>Backups of transaction logs (every 5 minutes)&lt;/li>
+&lt;li>7 days retention (can increase upto 35)&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>DB Snapshots&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Manually triggered by the user&lt;/li>
+&lt;li>Can retain backup as long as you want&lt;/li>
+&lt;/ul>
+&lt;h3 id="auto-scaling">Auto scaling&lt;/h3>
+&lt;ul>
+&lt;li>When RDS detects you&amp;rsquo;re running out of space, it scales automatically&lt;/li>
+&lt;/ul>
+&lt;h2 id="digest">Digest&lt;/h2>
+&lt;ul>
+&lt;li>To verify slowly running queries enable &lt;strong>slow query log&lt;/strong>.&lt;/li>
+&lt;li>TDE (Transparent data encryption) supports encryption on Microsoft SQL server&lt;/li>
+&lt;li>AWS Systems Manager Parameter Store provides secure, hierarchical storage for confiquration data management and secrets management. You can store data such as passwords, database strings, Amazon Machine Image (AMI) IDs, and license codes as
+parameter values&lt;/li>
+&lt;li>AWS Secrets Manager is an AWS service that can be used to securely &lt;strong>store&lt;/strong>, &lt;strong>retrieve&lt;/strong>, and automatically &lt;strong>rotate&lt;/strong> &lt;strong>database credentials&lt;/strong>. AWS Secrets Manager has built-in integration for RDS databases.&lt;/li>
+&lt;/ul>
+&lt;h2 id="price">Price&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/rds/pricing/">Current price&lt;/a>&lt;/p>
+&lt;h2 id="use-cases">Use Cases&lt;/h2>
+&lt;p>Type: Relational&lt;/p>
+&lt;p>This type services: Aurora, Redshift, RDS&lt;/p>
+&lt;p>Ecommerce websites, Traditional sites etc.&lt;/p>
+&lt;p>Amazon Relational Database Service (Amazon RDS) on [AWS Outposts](AWS Outposts) allows you to deploy fully managed database instances in your on-premises environment&lt;/p>
+&lt;h2 id="questions">Questions&lt;/h2>
+&lt;h3 id="q1">Q1&lt;/h3>
+&lt;p>&lt;strong>Explain RDS Multi Availability Zone&lt;/strong>&lt;/p>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;ul>
+&lt;li>RDS multi AZ used mainly for disaster recovery purposes&lt;/li>
+&lt;li>There is an RDS master instance and in another AZ an RDS standby instance&lt;/li>
+&lt;li>The data is synced synchronously between them&lt;/li>
+&lt;li>The user, application is accessing one DNS name and where there is a failure with the master instance, the DNS name moves to the standby instance, so the failover done automatically&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q2">Q2&lt;/h3>
+&lt;p>&lt;strong>A company is migrating a legacy application to Amazon EC2. The application uses a username and password stored in the source code to connect to a MySQL database. The database will be migrated to an Amazon RDS for MySQL DB instance. As part of the migration, the company wants to implement a secure way to store and automatically rotate the database credentials.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Which approach meets these requirements?&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Store the database credentials in environment variables in an Amazon Machine Image (AMI). Rotate the credentials by replacing the AMI.&lt;/li>
+&lt;li>Store the database credentials in AWS Systems Manager Parameter Store. Configure Parameter Store to automatically rotate the credentials.&lt;/li>
+&lt;li>Store the database credentials in environment variables on the &lt;a href="../ec2">EC2&lt;/a> instances. Rotate the credentials by relaunching the &lt;a href="../ec2">EC2&lt;/a> instances.&lt;/li>
+&lt;li>Store the database credentials in AWS Secrets Manager. Configure Secrets Manager to automatically rotate the credentials&lt;/li>
+&lt;/ol>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;p>&lt;a href="https://aws.amazon.com/secrets-manager/">AWS Secrets Manager&lt;/a>&lt;/p>
+&lt;p>Secrets Manager offers &lt;a href="https://aws.amazon.com/blogs/security/rotate-amazon-rds-database-credentials-automatically-with-aws-secrets-manager/">secret rotation&lt;/a>&lt;/p>
+&lt;p>&lt;mark style="color:white">4&lt;/mark>&lt;/p>
+&lt;/div>
+&lt;/details>
+&lt;h3 id="q3">Q3&lt;/h3>
+&lt;p>&lt;strong>Explain RDS Multi Availability Zone&lt;/strong>&lt;/p>
+&lt;details>
+&lt;summary>Explanation&lt;/summary>
+&lt;div>
+&lt;ul>
+&lt;li>RDS multi AZ used mainly for disaster recovery purposes&lt;/li>
+&lt;li>There is an RDS master instance and in another AZ an RDS standby instance&lt;/li>
+&lt;li>The data is synced synchronously between them&lt;/li>
+&lt;li>The user, application is accessing one DNS name and where there is a failure with the master instance, the DNS name moves to the standby instance, so the failover done automatically&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/details></description></item></channel></rss>

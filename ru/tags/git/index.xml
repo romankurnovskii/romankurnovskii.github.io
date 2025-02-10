@@ -1,5 +1,630 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/git/</link><description>Recent content in Git on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 27 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>35. Git — контроль версий</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day35/</link><pubDate>Wed, 25 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day35/</guid><description>Общая картина: Git — контроль версий Прежде чем мы перейдем к git, нам нужно понять, что такое контроль версий? В этой статье мы рассмотрим, что такое контроль версий и основы git.
-Что такое контроль версий? Git — не единственная система контроля версий, поэтому рассмотрим, какие варианты и какие методологии доступны для контроля версий.
-Наиболее очевидным и большим преимуществом контроля версий является возможность отслеживать историю проекта. Мы можем посмотреть на этот репозиторий с помощью git log и увидеть, что у нас есть много коммитов и много комментариев, а также то, что произошло на данный момент в проекте.</description></item><item><title>37. Шпаргалка по Git</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day37/</link><pubDate>Fri, 27 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day37/</guid><description>Знакомство с Git В последних двух постах мы узнали о системах контроля версий и некоторых основных рабочих процессах git как системы контроля версий День 35. Затем мы установили git в нашу систему, обновили и настроили. Мы также немного углубились в теорию между системой контроля версий клиент-сервер и Git, которая является распределенной системой контроля версий День 36.
-Теперь мы пройдемся по некоторым командам и вариантам использования, которые мы все обычно видим в git.
-Где получить помощь по git? Будут времена, когда вы просто не сможете вспомнить или просто не знаете команду, которая вам нужна для работы с git.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/git/</link><description>Recent content in Git on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 27 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>35. Git — контроль версий</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day35/</link><pubDate>Wed, 25 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day35/</guid><description>&lt;h2 id="общая-картина-git--контроль-версий">Общая картина: Git — контроль версий&lt;/h2>
+&lt;p>Прежде чем мы перейдем к git, нам нужно понять, что такое контроль версий? В этой статье мы рассмотрим, что такое контроль версий и основы git.&lt;/p>
+&lt;h3 id="что-такое-контроль-версий">Что такое контроль версий?&lt;/h3>
+&lt;p>Git — не единственная система контроля версий, поэтому рассмотрим, какие варианты и какие методологии доступны для контроля версий.&lt;/p>
+&lt;p>Наиболее очевидным и большим преимуществом контроля версий является возможность отслеживать историю проекта. Мы можем посмотреть на этот репозиторий с помощью &lt;code>git log&lt;/code> и увидеть, что у нас есть много коммитов и много комментариев, а также то, что произошло на данный момент в проекте. Не волнуйтесь, мы перейдем к командам позже. А теперь подумайте, если бы это был настоящий программный проект, полный исходного кода, и несколько человек в разное время принимают участие в нашем программном обеспечении, разные авторы, а затем и рецензенты, все регистрируются здесь, чтобы мы знали, что произошло, когда, кем и кто рецензировал.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day35_Git1.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Управление версиями, прежде чем это стало крутым, было чем-то вроде ручного создания копии вашей версии, прежде чем вы вносили изменения. Возможно, вы также закомментируете старый бесполезный код на всякий случай.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day35_Git2.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Тем не менее, &lt;strong>Управление версиями не является резервной копией!&lt;/strong>&lt;/p>
+&lt;p>Еще одним преимуществом контроля версий является возможность управления несколькими версиями проекта. Давайте создадим пример, у нас есть бесплатное приложение, доступное во всех операционных системах, а затем у нас есть платное приложение, также доступное во всех операционных системах. БОльшая часть кода используется обоими приложениями. Мы могли бы копировать и вставлять наш код при каждом коммите в каждое приложение, но это будет очень грязно, особенно если вы масштабируете свою разработку более чем на одного человека, а также будут допущены ошибки.&lt;/p>
+&lt;p>В премиум-приложении у нас будут дополнительные функции, назовем их премиальными коммитами, бесплатная версия будет содержать только обычные коммиты.&lt;/p>
+&lt;p>Способ, которым это достигается в системе управления версиями, — это ветвление (branching).&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day35_Git3.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Ветвление позволяет использовать два потока кода для одного и того же приложения, как мы указали выше. Но мы по-прежнему хотим, чтобы новые функции, которые появляются в нашей бесплатной версии исходного кода, были в нашей премиум-версии, и для этого у нас есть то, что называется слиянием.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day35_Git4.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Теперь это такое же простое, но слияние может быть сложным, потому что у вас может быть команда, работающая над бесплатной версией, и другая команда, работающая над платной премиальной версией, и что, если обе они изменят код, который влияет на аспекты общего кода. Может быть, переменная обновляется и что-то ломает. Тогда у вас есть конфликт, который нарушает одну из функций. Контроль версий не может устранить конфликты, которые зависят от вас. Но контроль версий позволяет легко управлять этим.&lt;/p>
+&lt;p>Основная причина, по которой вы до сих пор не взялись за управление версиями, — это возможность совместной работы. Возможность делиться кодом между разработчиками, и когда я говорю код, как я уже говорил раньше, все чаще и чаще мы видим гораздо больше вариантов использования по другим причинам для использования системы управления версиями, может быть, это совместная презентация, над которой вы работаете с коллегой, или вызов 90DaysOfDevOps. где у вас есть сообщество, предлагающее свои исправления и обновления на протяжении всего проекта.&lt;/p>
+&lt;p>Без контроля версий, как команды разработчиков программного обеспечения вообще справлялись с этим? Когда я работаю над своими проектами, мне достаточно трудно следить за вещами. Я ожидаю, что они разделят код на каждый функциональный модуль. Возможно, небольшая часть головоломки заключалась в том, чтобы собрать воедино кусочки, а затем решить проблемы и проблемы, прежде чем что-либо было выпущено.&lt;/p>
+&lt;p>С контролем версий у нас есть единственный источник правды. Мы все еще можем работать над разными модулями, но это позволяет нам лучше взаимодействовать.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day35_Git5.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Еще одна вещь, которую следует упомянуть здесь, это то, что не только разработчики могут извлечь выгоду из контроля версий. Все члены команды должны иметь представление, но также и инструменты управления проектом и т.д.
+У нас также может быть build машина, например Jenkins, о которой мы поговорим в другом модуле. Зада подобных инструментов - создать и упаковывать систему, автоматизируя тесты и предоставляя метрики.&lt;/p>
+&lt;h3 id="что-такое-git">Что такое Git?&lt;/h3>
+&lt;p>Git — это инструмент, который отслеживает изменения в исходном коде или любом файле, или мы могли бы также сказать, что Git — это распределенная система контроля версий с открытым исходным кодом.&lt;/p>
+&lt;p>Есть много способов, которыми git можно использовать в наших системах, чаще всего или, по крайней мере, для меня я видел его в командной строке, но у нас также есть графические пользовательские интерфейсы и инструменты, такие как Visual Studio Code, которые имеют операции с поддержкой git, которые мы может воспользоваться.&lt;/p>
+&lt;p>Теперь мы пройдемся по общему обзору еще до того, как установим Git на нашу локальную машину.&lt;/p>
+&lt;p>Возьмем папку, которую мы создали ранее.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day35_Git2.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Чтобы использовать эту папку с контролем версий, нам сначала нужно инициировать этот каталог с помощью команды `git init. А пока представьте, что эта команда помещает наш каталог в качестве репозитория в базу данных где-то на нашем компьютере.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day35_Git6.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Теперь мы можем создать несколько файлов и папок, и наш исходный код может начаться, или, может быть, он уже есть, и у нас уже есть что-то здесь. Мы можем использовать команду &lt;code>git add .&lt;/code>, которая помещает все файлы и папки в нашем каталоге в снимок, но мы еще ничего не зафиксировали в этой базе данных. Мы просто говорим, что все файлы с &lt;code>.&lt;/code> готовы к добавлению.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day35_Git7.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Затем мы хотим продолжить и зафиксировать наши файлы, мы делаем это с помощью команды &lt;code>git commit -m &amp;quot;My First Commit&amp;quot;&lt;/code>. Мы можем указать причину нашей фиксации, и это предлагается, чтобы мы знали, что произошло для каждой фиксации.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day35_Git8.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Теперь мы можем увидеть, что произошло в истории проекта. С помощью команды &lt;code>git log&lt;/code>.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day35_Git9.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Мы также можем проверить состояние нашего репозитория с помощью &lt;code>git status&lt;/code>, это показывает, что нам нечего коммитить, и мы можем добавить новый файл с именем samplecode.ps1. Если мы затем запустим тот же статус `git, вы увидите, что мы файл для фиксации.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day35_Git10.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Добавьте наш новый файл с помощью команды &lt;code>git add samplecode.ps1&lt;/code>, а затем мы снова запустим &lt;code>git status&lt;/code> и увидим, что наш файл готов к фиксации.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day35_Git11.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Затем выполните команду git commit -m &amp;ldquo;My Second Commit&amp;rdquo;.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day35_Git12.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Другой &lt;code>git status&lt;/code> теперь показывает, что все снова чисто.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day35_Git13.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Затем мы можем использовать команду &lt;code>git log&lt;/code>, которая показывает последние изменения и первую фиксацию.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day35_Git14.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Если мы хотим увидеть изменения между нашими коммитами, то есть какие файлы были добавлены или изменены, мы можем использовать &lt;code>git diff b8f8 709a&lt;/code>&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day35_Git15.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Затем отображается то, что изменилось, в нашем случае мы добавили новый файл.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day35_Git16.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Мы также можем, и мы углубимся в это позже, но мы можем прыгать вокруг наших коммитов, то есть мы можем путешествовать во времени! Используя наш номер фиксации, мы можем использовать команду &lt;code>git checkout 709a&lt;/code>, чтобы вернуться назад во времени, не теряя наш новый файл.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day35_Git17.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Но в равной степени мы также захотим двигаться вперед, и мы можем сделать это таким же образом с номером коммита, или вы можете видеть здесь, что мы используем команду &lt;code>git switch -&lt;/code>, чтобы отменить нашу операцию.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day35_Git18.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;a href="https://ru.wikipedia.org/wiki/TL;DR">TLDR&lt;/a>;&lt;/p>
+&lt;ul>
+&lt;li>Отслеживание истории проектов&lt;/li>
+&lt;li>Управление несколькими версиями проекта&lt;/li>
+&lt;li>Обмен кодом между разработчиками и более широкий круг команд и инструментов&lt;/li>
+&lt;li>Координация работы в команде&lt;/li>
+&lt;/ul>
+&lt;p>Это могло показаться прыжком, но, надеюсь, вы можете увидеть, даже не зная, что команды использовали возможности и общую картину, лежащую в основе контроля версий.&lt;/p>
+&lt;p>Далее мы установим и настроим git на вашем локальном компьютере и немного углубимся в некоторые другие варианты использования и команды, которые мы можем реализовать в Git.&lt;/p>
+&lt;h2 id="ресурсы">Ресурсы&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=Yc8sCSeMhi4">What is Version Control?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=kr62e_n6QuQ">Types of Version Control System&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=8JJ101D3knE&amp;amp;t=52s">Git Tutorial for Beginners&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=Uszj_k0DGsg">Git for Professionals Tutorial&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=RGOj5yH7evk&amp;amp;t=8s">Git and GitHub for Beginners - Crash Course&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=apGV9Kg7ics">Complete Git and GitHub Tutorial&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>37. Шпаргалка по Git</title><link>https://romankurnovskii.com/ru/tracks/90daysofdevops/day37/</link><pubDate>Fri, 27 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/90daysofdevops/day37/</guid><description>&lt;h2 id="знакомство-с-git">Знакомство с Git&lt;/h2>
+&lt;p>В последних двух постах мы узнали о системах контроля версий и некоторых основных рабочих процессах git как системы контроля версий &lt;a href="../day35">День 35&lt;/a>. Затем мы установили git в нашу систему, обновили и настроили. Мы также немного углубились в теорию между системой контроля версий клиент-сервер и Git, которая является распределенной системой контроля версий &lt;a href="../day36">День 36&lt;/a>.&lt;/p>
+&lt;p>Теперь мы пройдемся по некоторым командам и вариантам использования, которые мы все обычно видим в git.&lt;/p>
+&lt;h3 id="где-получить-помощь-по-git">Где получить помощь по git?&lt;/h3>
+&lt;p>Будут времена, когда вы просто не сможете вспомнить или просто не знаете команду, которая вам нужна для работы с git. Вам понадобится помощь.&lt;/p>
+&lt;p>Само собой разумеется, что Google или любая другая поисковая система, вероятно, будет вашим первым портом захода при поиске помощи.&lt;/p>
+&lt;p>Во-вторых, следующим местом будет официальный сайт git и документация. &lt;a href="http://git-scm.com/docs">git-scm.com/docs&lt;/a> Здесь вы найдете не только подробные ссылки на все доступные команды, но и множество различных ресурсов.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day37_Git1.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Мы также можем получить доступ к этой же документации, которая очень полезна, если у вас нет подключения к терминалу. Например, если мы выбрали команду &lt;code>git add&lt;/code>, мы можем запустить &lt;code>git add --help&lt;/code>, и мы увидим ниже руководство.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day37_Git2.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Мы также можем в оболочке использовать &lt;code>git add -h&lt;/code>, который даст нам краткий обзор доступных опций.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../images/Day37_Git3.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;p class="md__image">
+&lt;img
+src="../images/Day37_Git3.ru.png?v1"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="мифы-git">Мифы Git&lt;/h3>
+&lt;p>«У Git нет контроля доступа» — вы можете уполномочить &amp;ldquo;лидера&amp;rdquo; поддерживать исходный код.&lt;/p>
+&lt;p>«Git слишком тяжелый» — у Git есть возможность предоставлять неглубокие репозитории, что в основном означает меньший объем истории, если у вас большие проекты.&lt;/p>
+&lt;h3 id="недостатки">Недостатки&lt;/h3>
+&lt;p>Не идеально подходит для двоичных файлов. Отлично подходит для исходного кода, но не подходит, например, для исполняемых файлов или видео.&lt;/p>
+&lt;p>Git не удобен для пользователя, тот факт, что нам приходится тратить время на обсуждение команд и функций инструмента, вероятно, является ключевым признаком этого.&lt;/p>
+&lt;p>В целом, git сложно освоить, но легко использовать.&lt;/p>
+&lt;h3 id="экосистема-git">Экосистема git&lt;/h3>
+&lt;p>Я хочу кратко рассказать об экосистеме вокруг git, но не углубляться в некоторые из этих областей, но я думаю, что важно отметить их здесь на высоком уровне.&lt;/p>
+&lt;p>Почти все современные инструменты разработки поддерживают Git.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Инструменты разработчика. Мы уже упоминали код Visual Studio, но вы найдете плагины git и интеграции в возвышенный текст и другие текстовые редакторы и IDE.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Командные инструменты. Также упоминаются такие инструменты, как &lt;a href="https://www.jenkins.io/">Jenkins&lt;/a> с точки зрения CI/CD, &lt;a href="https://slack.com/features">Slack&lt;/a> из среды обмена сообщениями и &lt;a href="https://www.atlassian.com/ru/software/jira">Jira&lt;/a> для управления проектами и отслеживания проблем.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Облачные провайдеры. Все крупные облачные провайдеры поддерживают git, Microsoft Azure, Amazon AWS, Google Cloud Platform.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Сервисы на основе Git. Затем у нас есть GitHub, GitLab и BitBucket, о которых мы поговорим более подробно позже. Я слышал об этих сервисах как о социальной сети для кода!&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="шпаргалка-по-git">Шпаргалка по Git&lt;/h3>
+&lt;p>Мы не рассмотрели большинство этих команд, но просмотрев некоторые шпаргалки, доступные в Интернете, я хотел задокументировать некоторые из команд git и их назначение. Нам не нужно запоминать все это, и с большей практикой и использованием вы выберете, по крайней мере, основы git.&lt;/p>
+&lt;h3 id="основы-git">Основы Git&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Command&lt;/th>
+&lt;th>Example&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>git init&lt;/td>
+&lt;td>&lt;code>git init &amp;lt;directory&amp;gt;&lt;/code>&lt;/td>
+&lt;td>создает пустой репозиторий git в указанном каталоге.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>git clone&lt;/td>
+&lt;td>&lt;code>git clone &amp;lt;repo&amp;gt;&lt;/code>&lt;/td>
+&lt;td>клонирует репозиторий, расположенный в &lt;repo>, на локальный компьютер.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>git config&lt;/td>
+&lt;td>&lt;code>git config user.name&lt;/code>&lt;/td>
+&lt;td>определяет имя автора, которое будет использоваться для всех коммитов в текущем репозитории, &lt;code>system&lt;/code>, &lt;code>global&lt;/code>, &lt;code>local&lt;/code> флаг для установки параметров конфигурации.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>git add&lt;/td>
+&lt;td>&lt;code>git add &amp;lt;directory&amp;gt;&lt;/code>&lt;/td>
+&lt;td>он подготовит все изменения в &lt;directory> для следующего коммита. Мы также можем добавить &lt;files> и &amp;lt;.&amp;gt; для добавления всех изменененных файлов всего.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>git commit -m&lt;/td>
+&lt;td>&lt;code>git commit -m &amp;quot;&amp;lt;message&amp;gt;&amp;quot;&lt;/code>&lt;/td>
+&lt;td>фиксирует промежуточный коммит, запишет &lt;message>, чтобы подробно описать, что точно сохраняем.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>git status&lt;/td>
+&lt;td>&lt;code>git status&lt;/code>&lt;/td>
+&lt;td>выведит список файлов, которые помещены в архив, не помещены в архив и не отслеживаются.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>git log&lt;/td>
+&lt;td>&lt;code>git log&lt;/code>&lt;/td>
+&lt;td>Отображение всей истории коммитов в формате по умолчанию. У этой команды есть дополнительные параметры.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>git diff&lt;/td>
+&lt;td>&lt;code>git diff&lt;/code>&lt;/td>
+&lt;td>Показать неустановленные изменения между вашим индексом и рабочим каталогом.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="git-отмена-изменений">Git Отмена изменений&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Command&lt;/th>
+&lt;th>Example&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>git revert&lt;/td>
+&lt;td>&lt;code>git revert &amp;lt;commit&amp;gt;&lt;/code>&lt;/td>
+&lt;td>создает новую фиксацию, которая отменяет все изменения, сделанные в &lt;commit>, а затем примените ее к текущей ветке.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>git reset&lt;/td>
+&lt;td>&lt;code>git reset &amp;lt;file&amp;gt;&lt;/code>&lt;/td>
+&lt;td>убрать &lt;file> из индекса коммита (изменения не теряются).&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>git clean&lt;/td>
+&lt;td>&lt;code>git clean -n&lt;/code>&lt;/td>
+&lt;td>увидеть, какие файлы являются лишними, перед их непосредственным удалением&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>git clean&lt;/td>
+&lt;td>&lt;code>git clean -f&lt;/code>&lt;/td>
+&lt;td>удалить неотслеживаемые файлы и папки из рабочей копии&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>git clean&lt;/td>
+&lt;td>&lt;code>git clean -fd&lt;/code>&lt;/td>
+&lt;td>удалить их&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="git-переписать-историю">Git переписать историю&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Command&lt;/th>
+&lt;th>Example&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>git commit&lt;/td>
+&lt;td>&lt;code>git commit --amend&lt;/code>&lt;/td>
+&lt;td>Заменяет последний коммит поэтапными изменениями и последним коммитом. Используйте без статуса &lt;em>stage&lt;/em>, чтобы отредактировать сообщение последнего коммита.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>git rebase&lt;/td>
+&lt;td>&lt;code>git rebase &amp;lt;base&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Перебазировать текущую ветку на &lt;base>. &lt;base> может быть идентификатором фиксации, именем ветки, тегом или относительной ссылкой на HEAD.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>git reflog&lt;/td>
+&lt;td>&lt;code>git reflog&lt;/code>&lt;/td>
+&lt;td>Показать журнал изменений в HEAD локального репозитория. Добавьте флаг &amp;ndash;relative-date для отображения информации о дате или &amp;ndash;all для отображения всех ссылок.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="git-branches">Git Branches&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Command&lt;/th>
+&lt;th>Example&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>git branch&lt;/td>
+&lt;td>&lt;code>git branch&lt;/code>&lt;/td>
+&lt;td>Перечислите все ветки в вашем репо. Добавьте аргумент &lt;branch>, чтобы создать новую ветку с именем &lt;branch>.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>git checkout&lt;/td>
+&lt;td>&lt;code>git checkout -b &amp;lt;branch&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Создайте и извлеките новую ветку с именем &lt;branch>. Отбросьте флаг -b, чтобы проверить существующую ветку.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>git merge&lt;/td>
+&lt;td>&lt;code>git merge &amp;lt;branch&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Объединить ветку &lt;branch> с текущей веткой.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="git-remote-repositories">Git Remote Repositories&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Command&lt;/th>
+&lt;th>Example&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>git remote add&lt;/td>
+&lt;td>&lt;code>git remote add &amp;lt;name&amp;gt; &amp;lt;url&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Создайте новое подключение к удаленному репозиторию. После добавления пульта вы можете использовать &lt;name> в качестве ярлыка для &lt;url> в других командах.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>git fetch&lt;/td>
+&lt;td>&lt;code>git fetch &amp;lt;remote&amp;gt; &amp;lt;branch&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Выбирает конкретную &amp;lt;ветку&amp;gt; из репозитория. Оставьте &lt;branch>, чтобы получить все удаленные ссылки.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>git pull&lt;/td>
+&lt;td>&lt;code>git pull &amp;lt;remote&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Получить указанную удаленную копию текущей ветки и немедленно объединить ее с локальной копией.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>git push&lt;/td>
+&lt;td>&lt;code>git push &amp;lt;remote&amp;gt; &amp;lt;branch&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Отправьте ветку на &lt;remote> вместе с необходимыми коммитами и объектами. Создает именованную ветку в удаленном репо, если она не существует.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="git-diff">Git Diff&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Command&lt;/th>
+&lt;th>Example&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>git diff HEAD&lt;/td>
+&lt;td>&lt;code>git diff HEAD&lt;/code>&lt;/td>
+&lt;td>Показать разницу между рабочим каталогом и последним коммитом.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>git diff &amp;ndash;cached&lt;/td>
+&lt;td>&lt;code>git diff --cached&lt;/code>&lt;/td>
+&lt;td>Показать разницу между поэтапными изменениями и последней фиксацией&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="git-config">Git Config&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Command&lt;/th>
+&lt;th>Example&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>git config &amp;ndash;global user.name &amp;lt;имя&amp;gt;&lt;/td>
+&lt;td>&lt;code>git config --global user.name &amp;lt;имя&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Определите имя автора, которое будет использоваться для всех коммитов текущим пользователем.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>git config &amp;ndash;global user.email &lt;email>&lt;/td>
+&lt;td>&lt;code>git config --global user.email &amp;lt;email&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Определите адрес электронной почты автора, который будет использоваться для всех коммитов текущего пользователя.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>git config &amp;ndash;global alias &amp;lt;алиас-имя&amp;gt; &lt;git-command>&lt;/td>
+&lt;td>&lt;code>git config --global alias &amp;lt;alias-name&amp;gt; &amp;lt;git-command&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Создать ярлык для команды git.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>git config &amp;ndash;system core.editor &amp;lt;редактор&amp;gt;&lt;/td>
+&lt;td>&lt;code>git config --system core.editor &amp;lt;редактор&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Установите текстовый редактор, который будет использоваться командами для всех пользователей на машине. Аргумент &lt;editor> должен быть командой, запускающей нужный редактор.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>git config &amp;ndash;global &amp;ndash;edit&lt;/td>
+&lt;td>&lt;code>git config --global --edit&lt;/code>&lt;/td>
+&lt;td>Откройте файл глобальной конфигурации в текстовом редакторе для редактирования вручную.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="git-rebase">Git Rebase&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Command&lt;/th>
+&lt;th>Example&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>git rebase -i &lt;base>&lt;/td>
+&lt;td>&lt;code>git rebase -i &amp;lt;base&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Интерактивно перебазировать текущую ветку на &lt;base>. Запускает редактор для ввода команд того, как каждый коммит будет перенесен в новую базу.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="git-pull">Git Pull&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Command&lt;/th>
+&lt;th>Example&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>git pull &amp;ndash;rebase &lt;remote>&lt;/td>
+&lt;td>&lt;code>git pull --rebase &amp;lt;remote&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Получить удаленную копию текущей ветки и перебазировать ее в локальную копию. Использует git rebase вместо слияния для интеграции веток.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="git-reset">Git Reset&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Command&lt;/th>
+&lt;th>Example&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>git reset&lt;/td>
+&lt;td>&lt;code>git reset&lt;/code>&lt;/td>
+&lt;td>Сбросьте промежуточную область, чтобы она соответствовала самой последней фиксации, но оставьте рабочий каталог без изменений.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>git reset &amp;ndash;hard&lt;/td>
+&lt;td>&lt;code>git reset --hard&lt;/code>&lt;/td>
+&lt;td>Сбросить промежуточную область и рабочий каталог, чтобы они соответствовали самой последней фиксации, и перезаписать все изменения в рабочем каталоге&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>git reset &lt;commit>&lt;/td>
+&lt;td>&lt;code>git reset &amp;lt;commit&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Переместите конец текущей ветки назад к &lt;commit>, сбросьте промежуточную область, чтобы она соответствовала, но оставьте рабочий каталог в покое&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>git reset &amp;ndash;hard &lt;commit>&lt;/td>
+&lt;td>&lt;code>git reset --hard &amp;lt;commit&amp;gt;&lt;/code>&lt;/td>
+&lt;td>То же, что и предыдущее, но сбрасывает и промежуточную область, и рабочий каталог, чтобы они совпадали. Удаляет незафиксированные изменения и все фиксации после &lt;commit>.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h3 id="git-push">Git Push&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Command&lt;/th>
+&lt;th>Example&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>git push &lt;remote> &amp;ndash;force&lt;/td>
+&lt;td>&lt;code>git push &amp;lt;remote&amp;gt; --force&lt;/code>&lt;/td>
+&lt;td>Делает git push, даже если это приводит к слиянию без быстрой перемотки вперед. Не используйте флаг &amp;ndash;force, если вы абсолютно не уверены, что знаете, что делаете.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>git push &lt;remote> &amp;ndash;all&lt;/td>
+&lt;td>&lt;code>git push &amp;lt;remote&amp;gt; --all&lt;/code>&lt;/td>
+&lt;td>Переместите все свои локальные ветки на указанный удаленный сервер.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>git push &lt;remote> &amp;ndash;tags&lt;/td>
+&lt;td>&lt;code>git push &amp;lt;remote&amp;gt; --tags&lt;/code>&lt;/td>
+&lt;td>Теги не добавляются автоматически при отправке ветки или использовании флага &amp;ndash;all. Флаг &amp;ndash;tags отправляет все ваши локальные теги в удаленное репо.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="ресурсы">Ресурсы&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=Yc8sCSeMhi4">What is Version Control?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=kr62e_n6QuQ">Types of Version Control System&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=8JJ101D3knE&amp;amp;t=52s">Git Tutorial for Beginners&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=Uszj_k0DGsg">Git for Professionals Tutorial&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=RGOj5yH7evk&amp;amp;t=8s">Git and GitHub for Beginners - Crash Course&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=apGV9Kg7ics">Complete Git and GitHub Tutorial&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet">Git cheatsheet&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

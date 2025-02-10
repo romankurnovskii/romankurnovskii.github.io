@@ -1,2 +1,291 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhel on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/rhel/</link><description>Recent content in Rhel on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 17 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/rhel/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Download and Install Linux RHEL 9 for Free</title><link>https://romankurnovskii.com/en/posts/howto-install-rhel-9-free/</link><pubDate>Fri, 17 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/howto-install-rhel-9-free/</guid><description>Red Hat Enterprise Linux 9 (RHEL 9), codenamed Plow, has gone public (GA). Red Hat announced it on May 18, 2022. It replaced the beta version, which had been in existence since November 3, 2021.
-RHEL 9 is the first few releases in the Red Hat family. It is the first major release since IBM acquired Red Hat in July 2019, and the first major release since abandoning the CentOS project in favor of CentOS Stream, which is now RHEL&amp;rsquo;s predecessor.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rhel on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/rhel/</link><description>Recent content in Rhel on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 17 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/rhel/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Download and Install Linux RHEL 9 for Free</title><link>https://romankurnovskii.com/en/posts/howto-install-rhel-9-free/</link><pubDate>Fri, 17 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/howto-install-rhel-9-free/</guid><description>&lt;p>Red Hat Enterprise Linux 9 (RHEL 9), codenamed Plow, has gone public (GA). Red Hat announced it on May 18, 2022. It replaced the beta version, which had been in existence since November 3, 2021.&lt;/p>
+&lt;p>RHEL 9 is the first few releases in the Red Hat family. It is the first major release since IBM acquired Red Hat in July 2019, and the first major release since abandoning the CentOS project in favor of CentOS Stream, which is now RHEL&amp;rsquo;s predecessor.&lt;/p>
+&lt;p>RHEL 9 is the latest major version of RHEL and comes with a 5.14 kernel, lots of new software packages and a host of improvements. It emphasizes security, stability, flexibility and reliability.&lt;/p>
+&lt;h2 id="description">Description&lt;/h2>
+&lt;p>RHEL 9 ships with new versions of software including Python 3.9. Node.JS 16, GCC 11, Perl 5.32, Ruby 3.0, PHP 8.0, and many more.&lt;/p>
+&lt;h2 id="preparing-for-installation">Preparing for installation&lt;/h2>
+&lt;h3 id="registration-on-the-red-hat-portal">Registration on the Red Hat portal&lt;/h3>
+&lt;p>Red Hat Developer Subscription is a free Red Hat Developer Program offer designed for individual developers who want to take full advantage of Red Hat Enterprise Linux.&lt;/p>
+&lt;p>It gives developers access to all versions of Red Hat Enterprise Linux, as well as other Red Hat products such as add-ons, software updates and security bugs.&lt;/p>
+&lt;p>First of all, make sure you have an active Red Hat account. If you don&amp;rsquo;t already have an account, go to the &lt;a href="https://access.redhat.com/">Red Hat Customer Portal&lt;/a>, click on &amp;ldquo;Register&amp;rdquo; and fill out your information to create a Red Hat account.
+&lt;p class="md__image">
+&lt;img
+src="img/01.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="downloading-the-installation-image">Downloading the installation image&lt;/h3>
+&lt;p>After creating a Red Hat account, you can start downloading RHEL 9. To download Red Hat Enterprise Linux 9 &lt;strong>absolutely free&lt;/strong>, go to &lt;a href="https://developers.redhat.com/products/rhel/overview">Red Hat Developer Portal&lt;/a> and log in with your account credentials.
+&lt;p class="md__image">
+&lt;img
+src="img/01-01.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Then go to the &lt;a href="https://developers.redhat.com/products/rhel/download">download RHEL 9&lt;/a> page and click on the download button shown below.&lt;/p>
+&lt;p>I&amp;rsquo;m using a MacBook M1, so I download the RHEL 9 image for the M1 processor aarch64
+&lt;p class="md__image">
+&lt;img
+src="img/01-02.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="virtual-machine">Virtual machine&lt;/h3>
+&lt;p>I use the free &lt;a href="https://mac.getutm.app/">UTM virtual machine&lt;/a> as a virtual machine to install RHEL 9. You can install using &lt;a href="../mac-setup-development/#homebrew">Homebrew&lt;/a> by running the command &lt;code>brew install --cask utm&lt;/code>.&lt;/p>
+&lt;h2 id="installing-red-hat-enterprise-linux-9">Installing Red Hat Enterprise Linux 9&lt;/h2>
+&lt;h3 id="setting-up-the-utm-virtual-machine">Setting up the UTM virtual machine&lt;/h3>
+&lt;p>In UTM click &lt;code>Create a New Virtual Machine&lt;/code> -&amp;gt; Virtualize
+&lt;p class="md__image">
+&lt;img
+src="img/02-02.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Choose the downloaded RHEL 9 image and click &lt;code>Continue&lt;/code>.
+&lt;p class="md__image">
+&lt;img
+src="img/02-01.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="main-setup-menu">Main Setup Menu&lt;/h3>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/02.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The marked fields need to be filled in&lt;/p>
+&lt;p>Create Root Password
+&lt;p class="md__image">
+&lt;img
+src="img/03.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;strong>User Creation&lt;/strong>. Create the user you want to log in with.
+&lt;p class="md__image">
+&lt;img
+src="img/04.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;strong>Connect to Red Hat&lt;/strong>. Here we will use the account created above.&lt;/p>
+&lt;p>Here you will enter your account data and click Register.
+&lt;p class="md__image">
+&lt;img
+src="img/06.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Press Done&lt;/p>
+&lt;p>Under &lt;strong>Installation Destination&lt;/strong> choose your default drive.&lt;/p>
+&lt;p>We can now continue with the installation. A &lt;em>&lt;strong>Begin installation&lt;/strong>&lt;/em> button will appear on the main screen&lt;br>
+&lt;p class="md__image">
+&lt;img
+src="img/05.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>After installation is complete, we will have to reboot the system.
+&lt;p class="md__image">
+&lt;img
+src="img/02-03.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Sometimes rebooting will unload the installation image again. It&amp;rsquo;s necessary to either disable the disk in the installer setup or reboot the UTM.&lt;/p>
+&lt;h2 id="running-red-hat-enterprise-linux-9">Running Red Hat Enterprise Linux 9&lt;/h2>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/07.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Enter your password and see the RHEL 9 desktop
+&lt;p class="md__image">
+&lt;img
+src="img/07-01.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>To access the applications, click the &lt;strong>Activities&lt;/strong> button in the upper left corner&lt;/p>
+&lt;h2 id="configuring-red-hat-enterprise-linux-9">Configuring Red Hat Enterprise Linux 9&lt;/h2>
+&lt;h3 id="checking-the-root-user">Checking the ROOT user&lt;/h3>
+&lt;p>In a Linux system users belong to different groups which have certain rights. If during the installation process we did not check the checkbox to make the user an administrator, by default he will not be able to install some system programs.&lt;/p>
+&lt;p>Exit and log in as root (the same user we created earlier on the main screen). Press &lt;em>&lt;strong>Log out&lt;/strong>&lt;/em>
+&lt;p class="md__image">
+&lt;img
+src="img/07-03.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Now log in as &lt;strong>root&lt;/strong>. The user may not be listed. Press &lt;strong>Not listed&lt;/strong> and enter the account data.
+&lt;p class="md__image">
+&lt;img
+src="img/07-04.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Open terminal and check
+&lt;p class="md__image">
+&lt;img
+src="img/07-05.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="configuring-system-settings">Configuring system settings&lt;/h3>
+&lt;h4 id="button-to-minimize-the-application">Button to minimize the application&lt;/h4>
+&lt;p>The first thing that seems unusual about using the GUI is that there are no buttons to minimize windows
+&lt;p class="md__image">
+&lt;img
+src="img/07-02.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Install the necessary package&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>yum install gnome-tweaks -y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/07-06.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>After installation, the Tweaks application will appear. Find it by searching.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/07-07.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>There are many other tweaks in the app as well. We will show you the minimize buttons for the applications.&lt;/p>
+&lt;p>Let&amp;rsquo;s go to &lt;strong>Windows titlebars&lt;/strong> and set the Maximize, Minimize options&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/07-08.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h4 id="user-access-to-install-applications">User access to install applications&lt;/h4>
+&lt;p>To avoid constantly switching to a root user to install applications, we can give the normal user access to install applications.
+We will continue to do this as &lt;em>&lt;strong>root&lt;/strong>&lt;/em>.
+Open /etc/sudoers and add the user&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo vi /etc/sudoers
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add user data to the end of the file. My user name: &lt;em>&lt;strong>rhel-user&lt;/strong>&lt;/em>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>rhel-user &lt;span style="color:#bb60d5">ALL&lt;/span>&lt;span style="color:#666">=&lt;/span> NOPASSWD: /usr/sbin/synaptic, /usr/bin/software-center, /usr/bin/apt-get, /usr/bin/dnf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/07-09.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Let&amp;rsquo;s install &lt;em>&lt;strong>Visual Studio Code&lt;/strong>&lt;/em> as a normal user
+Installation consists of the following steps:&lt;/p>
+&lt;ol>
+&lt;li>adding the desired repository. Rights to add the repository (changing the files in the directory is still only for &lt;em>&lt;strong>root&lt;/strong>&lt;/em> user)&lt;/li>
+&lt;li>Downloading and installing.&lt;/li>
+&lt;/ol>
+&lt;p>First step is done as root user
+Go to &lt;a href="https://code.visualstudio.com/docs/setup/linux">https://code.visualstudio.com/docs/setup/linux&lt;/a>&lt;/p>
+&lt;p>Copy the code and run it in the terminal&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo sh -c &lt;span style="color:#4070a0">&amp;#39;echo -e &amp;#34;[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc&amp;#34; &amp;gt; /etc/yum.repos.d/vscode.repo&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Switch to user &lt;em>&lt;strong>rhel-user&lt;/strong>&lt;/em>. This can also be done in the terminal.&lt;/li>
+&lt;li>Updating the repositories&lt;/li>
+&lt;li>Install VSCode&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>su rhel-user
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dnf check-update
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo dnf install code
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/07-10.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;p class="md__image">
+&lt;img
+src="img/07-11.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;p class="md__image">
+&lt;img
+src="img/07-12.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="references">References&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://developers.redhat.com/products/rhel/getting-started">https://developers.redhat.com/products/rhel/getting-started&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.redhat.com/sysadmin/install-linux-rhel-9">https://www.redhat.com/sysadmin/install-linux-rhel-9&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

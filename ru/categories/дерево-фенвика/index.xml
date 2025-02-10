@@ -1,3 +1,61 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Дерево Фенвика on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/categories/%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%BE-%D1%84%D0%B5%D0%BD%D0%B2%D0%B8%D0%BA%D0%B0/</link><description>Recent content in Дерево Фенвика on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 10 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/categories/%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%BE-%D1%84%D0%B5%D0%BD%D0%B2%D0%B8%D0%BA%D0%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>Дерево Фенвика</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/data-structures/fenwick-tree/</link><pubDate>Fri, 10 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/data-structures/fenwick-tree/</guid><description>Дерево Фенвика, также известное как двоичное индексированное дерево (Binary Indexed Tree, BIT).
-Терминология:
-a - исходный массив tree - массив дерева, полученный в результате преобразований массива 'a' i - индекс массива k - индекс массива F(i) - еще не определенный индекс, полученный в реузльтате преобразования индекса `i`. F(i) &amp;lt;= i F(i) - функция, которую создадим позже. 0 1 2 3 4 5 6 7 a[ 5, 7, 9, 3, 8, 2, 4, 6] Сумма по текущему индексу содержит данные только с предыдущих индексов, не обязательно с нулевого.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Дерево Фенвика on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/categories/%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%BE-%D1%84%D0%B5%D0%BD%D0%B2%D0%B8%D0%BA%D0%B0/</link><description>Recent content in Дерево Фенвика on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 10 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/categories/%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%BE-%D1%84%D0%B5%D0%BD%D0%B2%D0%B8%D0%BA%D0%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>Дерево Фенвика</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/data-structures/fenwick-tree/</link><pubDate>Fri, 10 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/data-structures/fenwick-tree/</guid><description>&lt;p>Дерево Фенвика, также известное как двоичное индексированное дерево (Binary Indexed Tree, BIT).&lt;/p>
+&lt;p>Терминология:&lt;/p>
+&lt;pre>&lt;code>a - исходный массив
+tree - массив дерева, полученный в результате преобразований массива 'a'
+i - индекс массива
+k - индекс массива
+F(i) - еще не определенный индекс, полученный в реузльтате преобразования индекса `i`. F(i) &amp;lt;= i
+F(i) - функция, которую создадим позже.
+&lt;/code>&lt;/pre>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span> 0 1 2 3 4 5 6 7
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>a[ 5, 7, 9, 3, 8, 2, 4, 6]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol>
+&lt;li>
+&lt;p>Сумма по текущему индексу содержит данные &lt;strong>только с предыдущих&lt;/strong> индексов, &lt;strong>не обязательно с нулевого&lt;/strong>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>В каждой ячейке реузльтируещего массива хранится сумма ячеек отрезка &lt;code>k&lt;/code>. &lt;code>k&lt;/code>- не константное число и может меняться.&lt;/p>
+&lt;p>Т.е. в одной ячейке может храниться сумма за предудущий отрезок длинною 2 символа, а в другой ячейке за отрезок длиною 5 символов.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../assets/fenwick-tree.ru.jpg"
+id="zoom-default"
+alt="fenwick-tree.ru.jpg"
+loading="lazy"
+/>
+&lt;/p>
+&lt;p class="md__image">
+&lt;img
+src="../assets/fenwick-tree-prefix-sum-compare.ru.png"
+id="zoom-default"
+alt="fenwick-tree-prefix-sum-compare.ru.png"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;strong>По вертикали — индексы массива &lt;code>a&lt;/code>&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>По горизонтали — индексы массива &lt;code>tree&lt;/code>&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>($T_i$ является суммой элементов массива &lt;code>a&lt;/code>, индексы которых заштрихованы), по вертикали — индексы массива &lt;code>a&lt;/code>&lt;/strong>&lt;/p>
+&lt;p>В данном примере в &lt;code>tree[1]&lt;/code> хранится сумма элементов на отрезве &lt;code>a[0:2]&lt;/code> . &lt;strong>2 - потому что последний элемент по индексу не включается&lt;/strong>.&lt;/p>
+&lt;pre>&lt;code>tree[9] = sum(a[8:10])
+tree[7] = sum(a[0:8])
+&lt;/code>&lt;/pre>
+&lt;hr>
+&lt;p>На данном этапе получаем структуру дерева вида: &lt;code>tree[i] = sum(a[F(i):i+1])&lt;/code>. Примечание: &lt;code>i+1&lt;/code> - чтобы &lt;em>захватить&lt;/em> последний элемент по индексу.&lt;/p>
+&lt;p>Если мы рассчитаем такое &lt;code>F(i)&lt;/code> и умеем считать &lt;a href="../prefix-sum">сумму на префиксе&lt;/a>, то сможем находить сумму любого подотрезка за &lt;code>O(logn)&lt;/code>.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;a href="https://youtu.be/BzFN9YwR-NM?t=1830">Как формируется массив дерева | youtube&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;p>Подсчет префиксных сумм:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">prefix_sum&lt;/span>(k):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">=&lt;/span> k
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> i &lt;span style="color:#666">&amp;gt;=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> result &lt;span style="color:#666">+=&lt;/span> tree[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> i &lt;span style="color:#666">=&lt;/span> F(i) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="ресурсы">Ресурсы&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=BzFN9YwR-NM">https://www.youtube.com/watch?v=BzFN9YwR-NM&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://neerc.ifmo.ru/wiki/index.php?title=%D0%94%D0%B5%D1%80%D0%B5%D0%B2%D0%BE_%D0%A4%D0%B5%D0%BD%D0%B2%D0%B8%D0%BA%D0%B0">Дерево Фенвика | wiki&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

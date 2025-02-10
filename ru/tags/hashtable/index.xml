@@ -1,4 +1,39 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>HashTable on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/hashtable/</link><description>Recent content in HashTable on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Mon, 28 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/hashtable/index.xml" rel="self" type="application/rss+xml"/><item><title>454. 4Sum II</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/454/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/454/</guid><description>LeetCode задача 454
-Задача Даны четыре списка A, B, C, D целых чисел. Вычислите, сколько существует таких кортежей (i, j, k, l), что ( A[i] + B[j] + C[k] + D[l] = 0 ).
-Подсказки Используйте хэш-таблицу для ускорения решения.
-Подход Создание хэш-таблицы: Сначала создайте хэш-таблицу, которая будет хранить суммы пар чисел из массивов A и B. Подсчет сумм: Для каждой пары (i, j) из A и B, увеличьте соответствующий элемент хэш-таблицы на 1. Поиск в хэш-таблице: Для каждой пары (k, l) из C и D, проверьте, существует ли -(C[k] + D[l]) в хэш-таблице.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>HashTable on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/hashtable/</link><description>Recent content in HashTable on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Mon, 28 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/hashtable/index.xml" rel="self" type="application/rss+xml"/><item><title>454. 4Sum II</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/454/</link><pubDate>Mon, 28 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/medium/454/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/4sum-ii/">LeetCode задача 454&lt;/a>&lt;/p>
+&lt;h2 id="задача">Задача&lt;/h2>
+&lt;p>Даны четыре списка &lt;code>A&lt;/code>, &lt;code>B&lt;/code>, &lt;code>C&lt;/code>, &lt;code>D&lt;/code> целых чисел. Вычислите, сколько существует таких кортежей &lt;code>(i, j, k, l)&lt;/code>, что ( A[i] + B[j] + C[k] + D[l] = 0 ).&lt;/p>
+&lt;h2 id="подсказки">Подсказки&lt;/h2>
+&lt;p>Используйте хэш-таблицу для ускорения решения.&lt;/p>
+&lt;h2 id="подход">Подход&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>Создание хэш-таблицы&lt;/strong>: Сначала создайте хэш-таблицу, которая будет хранить суммы пар чисел из массивов &lt;code>A&lt;/code> и &lt;code>B&lt;/code>.&lt;/li>
+&lt;li>&lt;strong>Подсчет сумм&lt;/strong>: Для каждой пары &lt;code>(i, j)&lt;/code> из &lt;code>A&lt;/code> и &lt;code>B&lt;/code>, увеличьте соответствующий элемент хэш-таблицы на 1.&lt;/li>
+&lt;li>&lt;strong>Поиск в хэш-таблице&lt;/strong>: Для каждой пары &lt;code>(k, l)&lt;/code> из &lt;code>C&lt;/code> и &lt;code>D&lt;/code>, проверьте, существует ли &lt;code>-(C[k] + D[l])&lt;/code> в хэш-таблице. Если да, увеличьте счетчик на соответствующее значение из хэш-таблицы.&lt;/li>
+&lt;li>&lt;strong>Возврат результата&lt;/strong>: Верните значение счетчика.&lt;/li>
+&lt;/ol>
+&lt;p>Этот метод является простым и эффективным с точки зрения времени.&lt;/p>
+&lt;h2 id="алгоритм">Алгоритм&lt;/h2>
+&lt;ol>
+&lt;li>Инициализируйте &lt;code>counter = 0&lt;/code> и хэш-таблицу &lt;code>sums&lt;/code>.&lt;/li>
+&lt;li>Посчитайте суммы для всех пар &lt;code>(i, j)&lt;/code> из &lt;code>A&lt;/code> и &lt;code>B&lt;/code> и сохраните их в &lt;code>sums&lt;/code>.&lt;/li>
+&lt;li>Переберите все пары &lt;code>(k, l)&lt;/code> из &lt;code>C&lt;/code> и &lt;code>D&lt;/code> и проверьте наличие &lt;code>-(C[k] + D[l])&lt;/code> в &lt;code>sums&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;h2 id="решение">Решение&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">collections&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> defaultdict
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">fourSumCount&lt;/span>(A, B, C, D):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> counter &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sums &lt;span style="color:#666">=&lt;/span> defaultdict(&lt;span style="color:#007020">int&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Считаем суммы для всех пар из A и B&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> A:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> j &lt;span style="color:#007020;font-weight:bold">in&lt;/span> B:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sums[i &lt;span style="color:#666">+&lt;/span> j] &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Проверяем наличие -(C[k] + D[l]) в хэш-таблице&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> k &lt;span style="color:#007020;font-weight:bold">in&lt;/span> C:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> l &lt;span style="color:#007020;font-weight:bold">in&lt;/span> D:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#666">-&lt;/span>(k &lt;span style="color:#666">+&lt;/span> l) &lt;span style="color:#007020;font-weight:bold">in&lt;/span> sums:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> counter &lt;span style="color:#666">+=&lt;/span> sums[&lt;span style="color:#666">-&lt;/span>(k &lt;span style="color:#666">+&lt;/span> l)]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> counter
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

@@ -1,11 +1,490 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Contests on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/contests/</link><description>Recent content in Contests on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sat, 29 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/contests/index.xml" rel="self" type="application/rss+xml"/><item><title>Round #849/1791 (Div. 4)</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/contests/849-div-4-1791/</link><pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/contests/849-div-4-1791/</guid><description>TODO G2 Contest date: 2023-02-03
-Contest problems
-Editorial
-Template with function snippets
-A. Codeforces Checking https://codeforces.com/contest/1791/problem/A
-Solution:
-def solve(letter): code = &amp;#34;codeforces&amp;#34; if letter in code: print(&amp;#34;YES&amp;#34;) else: print(&amp;#34;NO&amp;#34;) for _ in range(int(inp())): letter = inp() solve(letter) B. Following Directions https://codeforces.com/contest/1791/problem/B
-geometry, implementation, *800
-Solution:
-def solve(n, s): x = 0 y = 0 for move in s: if move == &amp;#39;L&amp;#39;: x -= 1 elif move == &amp;#39;R&amp;#39;: x += 1 elif move == &amp;#39;U&amp;#39;: y += 1 elif move == &amp;#39;D&amp;#39;: y -= 1 if x == 1 and y == 1: print(&amp;#34;YES&amp;#34;) break else: print(&amp;#34;NO&amp;#34;) for _ in range(int(inp())): # attempts num = int(inp()) letter = inp() solve(num, letter) C.</description></item><item><title>Round #867/1822 (Div. 3)</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/contests/867-div-3-1822/</link><pubDate>Sat, 29 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/contests/867-div-3-1822/</guid><description>Contest problems A. TubeTube Feed Mushroom Filippov is having lunch and wants to watch a video on TubeTube. He has a specific amount of time for lunch, and he wants to make the best use of it by watching the most entertaining video that fits into his lunch break.
-Given a list of videos, each with its duration and entertainment value, your task is to help Mushroom Filippov choose the best video to watch. He can only watch one video, and the video must not exceed his lunch break time.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Contests on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/contests/</link><description>Recent content in Contests on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sat, 29 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/contests/index.xml" rel="self" type="application/rss+xml"/><item><title>Round #849/1791 (Div. 4)</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/contests/849-div-4-1791/</link><pubDate>Fri, 03 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/contests/849-div-4-1791/</guid><description>&lt;h1 id="todo-g2">TODO G2&lt;/h1>
+&lt;p>&lt;mark>Contest date: 2023-02-03&lt;/mark>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://codeforces.com/contest/1791">Contest problems&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://codeforces.com/blog/entry/112282">Editorial&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/cp-template/">Template with function snippets&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="a-codeforces-checking">A. Codeforces Checking&lt;/h2>
+&lt;p>&lt;a href="https://codeforces.com/contest/1791/problem/A">https://codeforces.com/contest/1791/problem/A&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Solution:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>(letter):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> code &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#4070a0">&amp;#34;codeforces&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> letter &lt;span style="color:#007020;font-weight:bold">in&lt;/span> code:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;YES&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;NO&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">int&lt;/span>(inp())):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> letter &lt;span style="color:#666">=&lt;/span> inp()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> solve(letter)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="b-following-directions">B. Following Directions&lt;/h2>
+&lt;p>&lt;a href="https://codeforces.com/contest/1791/problem/B">https://codeforces.com/contest/1791/problem/B&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>geometry, implementation, *800&lt;/p>&lt;/blockquote>
+&lt;p>&lt;strong>Solution:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>(n, s):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> y &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> move &lt;span style="color:#007020;font-weight:bold">in&lt;/span> s:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> move &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#4070a0">&amp;#39;L&amp;#39;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> move &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#4070a0">&amp;#39;R&amp;#39;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> move &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#4070a0">&amp;#39;U&amp;#39;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> y &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> move &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#4070a0">&amp;#39;D&amp;#39;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> y &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> x &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#007020;font-weight:bold">and&lt;/span> y &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;YES&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;NO&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">int&lt;/span>(inp())): &lt;span style="color:#60a0b0;font-style:italic"># attempts&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> num &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(inp())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> letter &lt;span style="color:#666">=&lt;/span> inp()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> solve(num, letter)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="c-prepend-and-append">C. Prepend and Append&lt;/h2>
+&lt;p>&lt;a href="https://codeforces.com/contest/1791/problem/C">https://codeforces.com/contest/1791/problem/C&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>implementation, two pointers, *800&lt;/p>&lt;/blockquote>
+&lt;p>In this problem we are allowed:&lt;/p>
+&lt;ul>
+&lt;li>to remove &lt;strong>first&lt;/strong> letter of the binary string and &lt;strong>last&lt;/strong>.&lt;/li>
+&lt;li>We can do this while &lt;strong>first&lt;/strong> letter is not equal to the &lt;strong>last&lt;/strong> according to the definition of the problem. (&lt;em>Add 𝟶 to one end of the string and 𝟷 to the other end of the string.&lt;/em>)&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Solution:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>(n, s):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> res &lt;span style="color:#666">&amp;lt;=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> res &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> first &lt;span style="color:#666">=&lt;/span> s[&lt;span style="color:#40a070">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> last &lt;span style="color:#666">=&lt;/span> s[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> first &lt;span style="color:#666">==&lt;/span> last:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">=&lt;/span> s[&lt;span style="color:#40a070">1&lt;/span>:&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">int&lt;/span>(inp())): &lt;span style="color:#60a0b0;font-style:italic"># attempts&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(inp())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">=&lt;/span> inp()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(solve(n, s))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Optimized:&lt;/strong>&lt;/p>
+&lt;p>Use &lt;a href="https://docs.python.org/3/library/collections.html#collections.deque">&lt;code>deque&lt;/code>&lt;/a> from &lt;code>collection&lt;/code> module&lt;/p>
+&lt;pre>&lt;code>&amp;gt;&amp;gt;&amp;gt; deque('123')
+deque(['1', '2', '3'])
+&lt;/code>&lt;/pre>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">collections&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> deque
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>(n, s):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">=&lt;/span> deque(s)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> &lt;span style="color:#007020">len&lt;/span>(s) &lt;span style="color:#007020;font-weight:bold">and&lt;/span> s[&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">!=&lt;/span> s[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s&lt;span style="color:#666">.&lt;/span>popleft()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s&lt;span style="color:#666">.&lt;/span>pop()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(s))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="d-distinct-split">D. Distinct Split&lt;/h2>
+&lt;p>&lt;a href="https://codeforces.com/contest/1791/problem/D">https://codeforces.com/contest/1791/problem/D&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>brute force, greedy, strings, *1000&lt;/p>&lt;/blockquote>
+&lt;p>If we get a string &lt;code>abcabcd&lt;/code> we need to split into two strings.&lt;/p>
+&lt;p>&lt;strong>Note 1:&lt;/strong> result number could not be more than string &lt;code>length&lt;/code>.&lt;/p>
+&lt;p>&lt;code>abcabcd&lt;/code> can be splited into &lt;code>abc&lt;/code> and &lt;code>abcd&lt;/code>.
+len(&amp;lsquo;abc&amp;rsquo;) = 3 #3 distinct letters
+len(&amp;lsquo;abcd&amp;rsquo;) = 4
+3 + 4 = 7&lt;/p>
+&lt;p>Output: maximum possible value of &lt;code>𝑓(𝑎)+𝑓(𝑏)&lt;/code> such that &lt;code>𝑎+𝑏=𝑠&lt;/code>.&lt;/p>
+&lt;p>Let&amp;rsquo;s look at other examples and possible edge cases.&lt;/p>
+&lt;p>&lt;strong>Note 2:&lt;/strong> function for a string 𝑥 - is the number of &lt;strong>distinct&lt;/strong> characters. (&lt;em>From problem statement.&lt;/em>)&lt;/p>
+&lt;pre>&lt;code>'aaaaa' =&amp;gt; 1 # 1 distinct
+&lt;/code>&lt;/pre>
+&lt;ol>
+&lt;li>If we concatenate two strings into one &lt;code>s&lt;/code>, we need to keep order of the letters.&lt;/li>
+&lt;li>Need to split this string &lt;code>s&lt;/code> in a such a way so that &lt;strong>repeated letters&lt;/strong> fall into different parts of string &lt;code>s&lt;/code> (&lt;code>a&lt;/code> and &lt;code>b&lt;/code>).&lt;/li>
+&lt;/ol>
+&lt;p>&lt;code>abcab&lt;/code> =&amp;gt; &lt;code>abc&lt;/code> and &lt;code>ab&lt;/code> better that &lt;code>abca&lt;/code> and &lt;code>b&lt;/code> because:&lt;/p>
+&lt;pre>&lt;code>f('abc') = 3 f('abca') = 3
+f('ab') = 2 f('b') = 1
+5 &amp;gt; 4
+&lt;/code>&lt;/pre>
+&lt;p>&lt;strong>Approach 1:&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Divide string into two parts starting left part from &lt;code>len 1&lt;/code>. For example:
+s = &amp;lsquo;abcabc&amp;rsquo;
+a = &amp;lsquo;a&amp;rsquo;
+b = &amp;lsquo;bcabc&amp;rsquo;&lt;/li>
+&lt;li>Increase left part and decrease right part.
+&lt;ol>
+&lt;li>On each step calculate sum of distinct letters. For example:
+set(a) + set(b)
+max_result = max(max_result, len(set(a)) + len(set(b)))&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Solution:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># input&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(inp())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">=&lt;/span> inp()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> point &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a_set &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>(s[point])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> b_set &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>(s[point&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>:])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> point &lt;span style="color:#666">&amp;lt;&lt;/span> n &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(max_n, &lt;span style="color:#007020">len&lt;/span>(a_set) &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#007020">len&lt;/span>(b_set))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a_set&lt;span style="color:#666">.&lt;/span>add(s[point &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> b_set &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>(s[point&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">2&lt;/span>:])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> point &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> max_n &lt;span style="color:#666">==&lt;/span> n:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> max_n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">run&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(inp_int()):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(solve())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">if&lt;/span> __name__ &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#4070a0">&amp;#34;__main__&amp;#34;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> os&lt;span style="color:#666">.&lt;/span>environ&lt;span style="color:#666">.&lt;/span>get(&lt;span style="color:#4070a0">&amp;#34;CODE_DEBUG&amp;#34;&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sys&lt;span style="color:#666">.&lt;/span>stdin &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">open&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;./input.txt&amp;#34;&lt;/span>, &lt;span style="color:#4070a0">&amp;#34;r&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> start_time &lt;span style="color:#666">=&lt;/span> time&lt;span style="color:#666">.&lt;/span>time()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> run()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#4070a0;font-weight:bold">\n&lt;/span>&lt;span style="color:#4070a0">--- &lt;/span>&lt;span style="color:#70a0d0">%s&lt;/span>&lt;span style="color:#4070a0"> seconds ---&lt;/span>&lt;span style="color:#4070a0;font-weight:bold">\n&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span> &lt;span style="color:#666">%&lt;/span> (time&lt;span style="color:#666">.&lt;/span>time() &lt;span style="color:#666">-&lt;/span> start_time))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> run()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Optimization:&lt;/strong>&lt;/p>
+&lt;p>&lt;code>b_set = set(s[point+2:])&lt;/code> is very heavy on each step in the loop.&lt;/p>
+&lt;p>Use &lt;code>Counter&lt;/code> instead.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># input&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(inp())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">=&lt;/span> inp()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> point &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>(s[point])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> b &lt;span style="color:#666">=&lt;/span> Counter(s[point&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>:])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> point &lt;span style="color:#666">&amp;lt;&lt;/span> n &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(max_n, &lt;span style="color:#007020">len&lt;/span>(a) &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#007020">len&lt;/span>(b))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> point &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> b_letter &lt;span style="color:#666">=&lt;/span> s[point]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a&lt;span style="color:#666">.&lt;/span>add(b_letter)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> b[b_letter] &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> b[b_letter] &lt;span style="color:#666">&amp;lt;=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">del&lt;/span> b[b_letter]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> max_n &lt;span style="color:#666">==&lt;/span> n:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> max_n
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Explanation from Codeforces:&lt;/strong>&lt;/p>
+&lt;p>Let&amp;rsquo;s check all splitting points &lt;code>𝑖&lt;/code> for all (&lt;code>1≤𝑖≤𝑛−1&lt;/code>). We denote a splitting point as the last index of the first string we take (and all the remaining characters will go to the second string).
+We need to keep a dynamic count of the number of distinct characters in both strings &lt;code>𝑎&lt;/code> (the first string) and &lt;code>𝑏&lt;/code> (the second string).
+We can do this using two frequency arrays (and adding one to the distinct count of either string &lt;code>𝑎&lt;/code> or &lt;code>𝑏&lt;/code> when the frequency of a character is greater than zero.&lt;/p>
+&lt;h2 id="e-negatives-and-positives">E. Negatives and Positives&lt;/h2>
+&lt;p>&lt;a href="https://codeforces.com/contest/1791/problem/E">https://codeforces.com/contest/1791/problem/E&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>dp, greedy, sortings, *1100&lt;/p>&lt;/blockquote>
+&lt;p>&lt;strong>Explanation from Codeforces:&lt;/strong>&lt;/p>
+&lt;p>We can notice that by performing any number of operations, the parity of the count of negative numbers won&amp;rsquo;t ever change.&lt;/p>
+&lt;p>Thus, if the number of negative numbers is initially even, we can make it equal to 0 by performing some operations.&lt;/p>
+&lt;p>So, for an even count of negative numbers, the answer is the sum of the absolute values of all numbers (since we can make all of them positive). And if the count of negative numbers is odd, we must have one negative number at the end.&lt;/p>
+&lt;p>We will choose the one smallest by absolute value and keep the rest positive (for simplicity, we consider −0 as a negative number).&lt;/p>
+&lt;p>&lt;strong>Solution:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> inp_int()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a &lt;span style="color:#666">=&lt;/span> inp_int_list()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count_minus &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count_zeros &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> min_val &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(a[&lt;span style="color:#40a070">0&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># sum&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> a[i] &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count_minus &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> a[i] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count_zeros &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> v &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(a[i])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">+=&lt;/span> v
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> min_val &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">min&lt;/span>(min_val, v)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count_minus &lt;span style="color:#666">=&lt;/span> count_minus &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># if count of odd numbers is negative &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count_minus &lt;span style="color:#666">-=&lt;/span> count_zeros
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> count_minus &lt;span style="color:#666">&amp;lt;=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> s
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> count_minus &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(min_val &lt;span style="color:#666">*&lt;/span> &lt;span style="color:#40a070">2&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> s
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> s
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">run&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(inp_int()):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(solve())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>run()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Optimization:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> inp_int()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a &lt;span style="color:#666">=&lt;/span> inp_int_list()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count_minus &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> a[i] &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count_minus &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a[i] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">abs&lt;/span>(a[i])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">sum&lt;/span>(a) &lt;span style="color:#60a0b0;font-style:italic"># sum&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> count_minus &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#40a070">2&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> s &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#007020">min&lt;/span>(a) &lt;span style="color:#666">*&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> s
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="f-range-update-point-query">F. Range Update Point Query&lt;/h2>
+&lt;p>&lt;a href="https://codeforces.com/contest/1791/problem/F">https://codeforces.com/contest/1791/problem/F&lt;/a>&lt;/p>
+&lt;p>There are two types of inputs (cases) (in addition to array &lt;code>a&lt;/code> and &lt;code>n&lt;/code> of test cases):&lt;/p>
+&lt;ol>
+&lt;li>line with &lt;strong>two&lt;/strong> elements: &lt;code>2 x&lt;/code>. Starts with &lt;code>2&lt;/code>&lt;/li>
+&lt;li>line with &lt;strong>three&lt;/strong> elements: &lt;code>1 l r&lt;/code>. Starts with &lt;code>1&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;p>In 1st case: print array &lt;code>a&lt;/code>&lt;/p>
+&lt;p>In 2nd case: update the value of &lt;code>𝑎𝑖&lt;/code> to the sum of its digits.&lt;/p>
+&lt;p>&lt;strong>Slow Solution:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">sum_of_digits&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">sum&lt;/span> &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> n:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">sum&lt;/span> &lt;span style="color:#666">+=&lt;/span> n &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#40a070">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">//=&lt;/span> &lt;span style="color:#40a070">10&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020">sum&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n, q &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">map&lt;/span>(&lt;span style="color:#007020">int&lt;/span>, inp()&lt;span style="color:#666">.&lt;/span>split())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">list&lt;/span>(&lt;span style="color:#007020">map&lt;/span>(&lt;span style="color:#007020">int&lt;/span>, inp()&lt;span style="color:#666">.&lt;/span>split()))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> q:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> q &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> t, &lt;span style="color:#666">*&lt;/span>params &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">map&lt;/span>(&lt;span style="color:#007020">int&lt;/span>, inp()&lt;span style="color:#666">.&lt;/span>split())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> t &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l, r &lt;span style="color:#666">=&lt;/span> params
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(l&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>, r):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a[i] &lt;span style="color:#666">=&lt;/span> sum_of_digits(a[i])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x, &lt;span style="color:#666">=&lt;/span> params
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(a[x&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>t &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(inp()&lt;span style="color:#666">.&lt;/span>strip())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(t): &lt;span style="color:#60a0b0;font-style:italic"># attempts&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> solve()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This solution is slow because of loop:&lt;/p>
+&lt;pre>&lt;code>for i in range(l-1, r):
+a[i] = sum_of_digits(a[i])
+&lt;/code>&lt;/pre>
+&lt;p>The key here is the following: after the operation is applied on &lt;strong>a&lt;sub>i&lt;/sub>&lt;/strong> thrice, it won&amp;rsquo;t change after any further operations.&lt;/p>
+&lt;p>Problem here is to implement a solution how to save information how many times there was a change of &lt;code>a[i]&lt;/code>.&lt;/p>
+&lt;p>One way is to use &lt;strong>Fenwick Tree&lt;/strong>&lt;/p>
+&lt;ol>
+&lt;li>Use &lt;a href="https://romankurnovskii.com/en/tracks/algorithms-101/data-structures/#fenwick-tree">FenwickTree template&lt;/a>&lt;/li>
+&lt;li>Save there count of &lt;code>a[i]&lt;/code> changes. No need to calculate more than 3 times&lt;/li>
+&lt;li>When need to print &lt;code>a[x]&lt;/code> calculate up to three times and print result.&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Fenwick&lt;/span>: &lt;span style="color:#60a0b0;font-style:italic">#also known as Binary Indexed Tree (BIT)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># no need to change here anything&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> __init__(self, n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>n &lt;span style="color:#666">=&lt;/span> n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>bit &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">*&lt;/span> (n&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">add&lt;/span>(self, idx, val):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> idx &lt;span style="color:#666">&amp;lt;=&lt;/span> self&lt;span style="color:#666">.&lt;/span>n:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>bit[idx] &lt;span style="color:#666">+=&lt;/span> val
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> idx &lt;span style="color:#666">+=&lt;/span> idx &lt;span style="color:#666">&amp;amp;&lt;/span> &lt;span style="color:#666">-&lt;/span>idx
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">add_range&lt;/span>(self, l, r, val):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>add(l, val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> self&lt;span style="color:#666">.&lt;/span>add(r&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#666">-&lt;/span>val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">query&lt;/span>(self, idx):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic">#Calculates the sum of the elements from the beginning to idx&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ret &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> idx &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ret &lt;span style="color:#666">+=&lt;/span> self&lt;span style="color:#666">.&lt;/span>bit[idx]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> idx &lt;span style="color:#666">-=&lt;/span> idx &lt;span style="color:#666">&amp;amp;&lt;/span> &lt;span style="color:#666">-&lt;/span>idx
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> ret
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">range_sum&lt;/span>(self, l, r):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Return the sum of the elements from l (inclusive) to r (exclusive)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> self&lt;span style="color:#666">.&lt;/span>prefix_sum(r &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>) &lt;span style="color:#666">-&lt;/span> self&lt;span style="color:#666">.&lt;/span>prefix_sum(l &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">prefix_sum&lt;/span>(self, x):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># return sum upto and including element x&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> z &lt;span style="color:#666">=&lt;/span> x
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> z &lt;span style="color:#666">&amp;gt;=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">+=&lt;/span> self&lt;span style="color:#666">.&lt;/span>bit[z]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Strip trailing zeros from z, and then take away one&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> z &lt;span style="color:#666">=&lt;/span> (z &lt;span style="color:#666">&amp;amp;&lt;/span> (z &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>)) &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> res
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n, q &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">list&lt;/span>(&lt;span style="color:#007020">map&lt;/span>(&lt;span style="color:#007020">int&lt;/span>, inp()&lt;span style="color:#666">.&lt;/span>split()))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">list&lt;/span>(&lt;span style="color:#007020">map&lt;/span>(&lt;span style="color:#007020">int&lt;/span>, inp()&lt;span style="color:#666">.&lt;/span>split()))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tree &lt;span style="color:#666">=&lt;/span> BIT(n)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> q:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> q &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> t, &lt;span style="color:#666">*&lt;/span>params &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">map&lt;/span>(&lt;span style="color:#007020">int&lt;/span>, inp()&lt;span style="color:#666">.&lt;/span>split())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> t &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> l, r &lt;span style="color:#666">=&lt;/span> params
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tree&lt;span style="color:#666">.&lt;/span>add(l, &lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tree&lt;span style="color:#666">.&lt;/span>add(r &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>, &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> x, &lt;span style="color:#666">=&lt;/span> params
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> need &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">min&lt;/span>(&lt;span style="color:#40a070">3&lt;/span>, tree&lt;span style="color:#666">.&lt;/span>query(x)) &lt;span style="color:#60a0b0;font-style:italic"># get count of times need to change a[i]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> a[x &lt;span style="color:#666">-&lt;/span> &lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(need):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> sum_of_digits(cur)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(cur)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Good to know&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="../data-structures/segment-tree">Segment Tree template tutorial&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://medium.com/carpanese/a-visual-introduction-to-fenwick-tree-89b82cac5b3c">A Visual Introduction to Fenwick Tree | medium&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://cp-algorithms.com/data_structures/fenwick.html">Fenwick Tree | cp-algorithms&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://cp-algorithms.com/data_structures/segment_tree.html">Segment Tree | cp-algorithms&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ru.algorithmica.org/cs/segment-tree/">Дерево отрезков | algorithmica&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://ru.algorithmica.org/cs/range-queries/fenwick/">Дерево Фенвика | algorithmica&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://habr.com/ru/post/112828/">Дерево Фенвика | habr&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="g1-teleporters-easy-version">G1. Teleporters (Easy Version)&lt;/h2>
+&lt;p>&lt;a href="https://codeforces.com/contest/1791/problem/G1">https://codeforces.com/contest/1791/problem/G1&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>greedy, sortings *1100&lt;/p>&lt;/blockquote>
+&lt;p>&lt;strong>Statement:&lt;/strong>&lt;/p>
+&lt;p>You are playing a game where you are given a &lt;strong>list&lt;/strong> of &lt;strong>teleporters&lt;/strong> (&lt;code>0,2,…,𝑛&lt;/code>), each located at a point on the number line. The number line includes all integers from &lt;code>0&lt;/code> to &lt;code>n&lt;/code>.&lt;/p>
+&lt;p>At point &lt;code>i&lt;/code>, you can do one of three actions:&lt;/p>
+&lt;ul>
+&lt;li>Move left &lt;strong>one&lt;/strong> unit: this action costs &lt;code>1&lt;/code> coin.&lt;/li>
+&lt;li>Move right &lt;strong>one&lt;/strong> unit: this action also costs &lt;code>1&lt;/code> coin.&lt;/li>
+&lt;li>Use a teleporter at point &lt;code>i&lt;/code>: this action costs $a_i$ coins. When you use a teleporter, you are immediately teleported back to point &lt;code>0&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>Last statement in the problem means that at any point i on the number line, you have the option to use a teleporter located at that point, which will immediately transport you back to point &lt;code>0&lt;/code>. However, using a teleporter costs a certain number of coins, denoted by $a_i$. For example, if you are at point &lt;code>i = 5&lt;/code>, and you use the teleporter located at point &lt;code>5&lt;/code>, you will be immediately transported back to point &lt;code>0&lt;/code>, but you will have to pay the cost $a_i$ in coins to do so.&lt;/p>
+&lt;p>Essentially, the teleporters provide a way for you to quickly move back to the starting point (point &lt;code>0&lt;/code>) without having to take multiple steps, but this convenience comes at a cost. You can only use each teleporter once, and you must have enough coins to pay the cost of using it.&lt;/p>&lt;/blockquote>
+&lt;p>You start at point &lt;code>0&lt;/code>, and you have &lt;code>c&lt;/code> coins to spend. Your goal is to use as many teleporters as possible while still having at least 1 coin left over. You cannot use a teleporter more than once.&lt;/p>
+&lt;p>Write a function &lt;code>max_teleporters(n, c, a)&lt;/code> that takes in&lt;/p>
+&lt;ul>
+&lt;li>the length of the number line &lt;code>n&lt;/code>&lt;/li>
+&lt;li>the number of coins you have &lt;code>c&lt;/code>&lt;/li>
+&lt;li>the list of teleporter costs &lt;code>a&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;p>The function should return the maximum number of teleporters you can use given your starting position at &lt;code>0&lt;/code> and the number of coins you have to spend.&lt;/p>
+&lt;p>You may assume that &lt;code>n&lt;/code>, &lt;code>c&lt;/code>, and all elements of &lt;code>a&lt;/code> are &lt;strong>positive&lt;/strong> integers.&lt;/p>
+&lt;p>For example, the following input should return &lt;code>2&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">8&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>c &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">32&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>a &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#40a070">100&lt;/span>, &lt;span style="color:#40a070">52&lt;/span>, &lt;span style="color:#40a070">13&lt;/span>, &lt;span style="color:#40a070">6&lt;/span>, &lt;span style="color:#40a070">9&lt;/span>, &lt;span style="color:#40a070">4&lt;/span>, &lt;span style="color:#40a070">100&lt;/span>, &lt;span style="color:#40a070">35&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>max_teleporters(n, c, a) &lt;span style="color:#666">=&amp;gt;&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Will use &lt;a href="https://romankurnovskii.com/en/tags/greedy/">greedy&lt;/a> algorithm.&lt;/p>
+&lt;p>&lt;strong>Approach:&lt;/strong>&lt;/p>
+&lt;p>Given input: &lt;code>n = 8&lt;/code>, &lt;code>c = 32&lt;/code>, &lt;code>a = [100, 52, 13, 6, 9, 4, 100, 35]&lt;/code>&lt;/p>
+&lt;p>&lt;strong>Step 1:&lt;/strong> Calculate the cost of each teleporter&lt;/p>
+&lt;ul>
+&lt;li>For each teleporter at position i, add the index i and the cost a[i]&lt;/li>
+&lt;li>The resulting array cost contains the costs to use each teleporter, accounting for the cost of moving to that teleporter&amp;rsquo;s position: [101, 54, 16, 10, 14, 10, 107, 43]&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Step 2:&lt;/strong> Sort the cost array in ascending order&lt;/p>
+&lt;ul>
+&lt;li>Sorting the array ensures that we use the cheapest teleporters first&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Step 3:&lt;/strong> Compute the maximum number of teleporters we can use&lt;/p>
+&lt;ul>
+&lt;li>Initialize a variable used to 0 to keep track of how many teleporters we&amp;rsquo;ve used&lt;/li>
+&lt;li>Iterate over the sorted cost array, adding the cost of each teleporter to a running total total&lt;/li>
+&lt;li>If the current total is less than or equal to c, we can use the current teleporter, so increment used&lt;/li>
+&lt;li>If the current total is greater than c, we&amp;rsquo;ve run out of coins and can&amp;rsquo;t use any more teleporters, so exit the loop&lt;/li>
+&lt;li>Return the final value of used&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Step 4:&lt;/strong> Return the maximum number of teleporters we can use&lt;/p>
+&lt;ul>
+&lt;li>The maximum number of teleporters we can use is the value of used computed in &lt;strong>Step 3&lt;/strong>: &lt;code>2&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Solution:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">max_teleporters&lt;/span>(n, c, a):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># First, we add the index of each teleporter to its cost, so that we can easily&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># calculate the cost to reach each teleporter from the starting position (0).&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a[i] &lt;span style="color:#666">+=&lt;/span> i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># We then sort the list of teleporter costs in ascending order, so that we can&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># use the cheapest teleporters first.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a&lt;span style="color:#666">.&lt;/span>sort()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># We iterate over the sorted list of teleporter costs, using as many teleporters&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># as possible while still having at least one coin remaining. We keep track of the&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># number of teleporters used in the &amp;#34;used&amp;#34; variable.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> used &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> cost &lt;span style="color:#007020;font-weight:bold">in&lt;/span> a:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> cost &lt;span style="color:#666">&amp;lt;=&lt;/span> c:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> used &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> c &lt;span style="color:#666">-=&lt;/span> cost
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Finally, we return the number of teleporters used.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> used
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Explanation from Codeforces:&lt;/strong>&lt;/p>
+&lt;p>It&amp;rsquo;s easy to see that it&amp;rsquo;s optimal to only move right or to use a portal once we are at it. We can notice that when we teleport back, the problem is independent of the previous choices.&lt;/p>
+&lt;p>We still are at point &lt;code>0&lt;/code> and have some portals left. Thus, we can just find out the individual cost of each portal, sort portals by individual costs, and take them from smallest to largest by cost as long as we can.&lt;/p>
+&lt;p>The cost of portal &lt;code>𝑖&lt;/code> is $𝑖+𝑎𝑖_$ (since we pay &amp;amp;𝑎_𝑖&amp;amp; to use it and need &lt;code>𝑖&lt;/code> moves to get to it).&lt;/p>
+&lt;h2 id="g2-teleporters-hard-version">G2. Teleporters (Hard Version)&lt;/h2>
+&lt;p>&lt;a href="https://codeforces.com/contest/1791/problem/G2">https://codeforces.com/contest/1791/problem/G2&lt;/a>&lt;/p>
+&lt;blockquote>
+&lt;p>binary, search, greedy, sortings *1900&lt;/p>&lt;/blockquote>
+&lt;p>&lt;strong>Explanation from Codeforces:&lt;/strong>&lt;/p>
+&lt;p>Please also refer to the tutorial for the easy version.&lt;/p>
+&lt;p>If we are not at the first taken portal, the problem is still independent for each portal, but this time the cost of a portal is $𝑚𝑖𝑛(𝑎_𝑖+𝑖,𝑎_𝑖+𝑛+1−𝑖)$ (since we can come to a portal either from point 0 or point $𝑛+1$).&lt;/p>
+&lt;p>So, we again sort the portals by their costs. But this time, we need to make sure that the first taken portal is taken from point &lt;code>0&lt;/code>, so we will iterate over all portals and check the maximum amount of portals we can take if we use it as the first one.&lt;/p>
+&lt;p>We can check this using prefix sums over the minimum cost array and binary searching, checking if the amount of considered portals taken doesn&amp;rsquo;t exceed the number of coins we initially have (we also have to deal with the case when the portal we are considering is included both times as the initial portal and in the minimum cost prefix).&lt;/p></description></item><item><title>Round #867/1822 (Div. 3)</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/contests/867-div-3-1822/</link><pubDate>Sat, 29 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/contests/867-div-3-1822/</guid><description>&lt;ul>
+&lt;li>&lt;a href="https://codeforces.com/contest/1822">Contest problems&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="a-tubetube-feed">A. TubeTube Feed&lt;/h2>
+&lt;p>Mushroom Filippov is having lunch and wants to watch a video on TubeTube. He has a specific amount of time for lunch, and he wants to make the best use of it by watching the most entertaining video that fits into his lunch break.&lt;/p>
+&lt;p>Given a list of videos, each with its duration and entertainment value, your task is to help Mushroom Filippov choose the best video to watch. He can only watch one video, and the video must not exceed his lunch break time.&lt;/p>
+&lt;p>If there are multiple videos that fit into his lunch time, choose the one with the highest entertainment value.&lt;/p>
+&lt;p>&lt;strong>Logic:&lt;/strong>&lt;/p>
+&lt;p>Iterate through the list of videos and checking if the video duration is less than or equal to the lunch time.&lt;/p>
+&lt;ul>
+&lt;li>If it is, you then check if the entertainment value of that video is higher than the current highest entertainment value.&lt;/li>
+&lt;li>If it is, update the highest entertainment value and remember the index of that video. After going through all the videos, you will have the index of the most entertaining video that fits into the lunch break time.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>1822A Solution:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n, t &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">map&lt;/span>(&lt;span style="color:#007020">int&lt;/span>, &lt;span style="color:#007020">input&lt;/span>()&lt;span style="color:#666">.&lt;/span>split())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> durations &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">list&lt;/span>(&lt;span style="color:#007020">map&lt;/span>(&lt;span style="color:#007020">int&lt;/span>, &lt;span style="color:#007020">input&lt;/span>()&lt;span style="color:#666">.&lt;/span>split()))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> values &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">list&lt;/span>(&lt;span style="color:#007020">map&lt;/span>(&lt;span style="color:#007020">int&lt;/span>, &lt;span style="color:#007020">input&lt;/span>()&lt;span style="color:#666">.&lt;/span>split()))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_value &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># max entertainment value&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_index &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Iterate through the videos&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># If the video can be watched within the lunch break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> i &lt;span style="color:#666">+&lt;/span> durations[i] &lt;span style="color:#666">&amp;lt;=&lt;/span> t:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> values[i] &lt;span style="color:#666">&amp;gt;&lt;/span> max_value:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_value &lt;span style="color:#666">=&lt;/span> values[i]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_index &lt;span style="color:#666">=&lt;/span> i &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(max_index)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>())):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> solve()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

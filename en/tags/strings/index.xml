@@ -1,6 +1,110 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Strings on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/strings/</link><description>Recent content in Strings on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Tue, 22 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/strings/index.xml" rel="self" type="application/rss+xml"/><item><title>443. String Compression</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/443/</link><pubDate>Sun, 06 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/443/</guid><description>LeetCode problem
-Problem Statement Given a list of characters, chars, you are required to compress the list using the following algorithm:
-Start with an empty string, s. For each group of consecutive repeating characters in chars: If the group&amp;rsquo;s length is 1, append the character to s. Otherwise, append the character followed by the group&amp;rsquo;s length. The compressed string s should be stored back in the chars list. The length of the group that is 10 or longer will be split into multiple characters in chars.</description></item><item><title>1657. Determine if Two Strings Are Close</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/1657/</link><pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/1657/</guid><description>LeetCode problem
-Problem Statement Two strings are considered close if you can attain one from the other using two operations:
-Swap any two existing characters. Transform every occurrence of one existing character into another existing character, and do the same with the other character. The challenge is to determine whether two given strings are close or not.
-Naive Solution A naive approach might involve trying every possible combination of operations on the two strings until they match or until you&amp;rsquo;ve exhausted all possibilities.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Strings on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/strings/</link><description>Recent content in Strings on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Tue, 22 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/strings/index.xml" rel="self" type="application/rss+xml"/><item><title>443. String Compression</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/443/</link><pubDate>Sun, 06 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/443/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/string-compression/">LeetCode problem&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>Given a list of characters, &lt;code>chars&lt;/code>, you are required to compress the list using the following algorithm:&lt;/p>
+&lt;ul>
+&lt;li>Start with an empty string, &lt;code>s&lt;/code>.&lt;/li>
+&lt;li>For each group of consecutive repeating characters in &lt;code>chars&lt;/code>:
+&lt;ul>
+&lt;li>If the group&amp;rsquo;s length is 1, append the character to &lt;code>s&lt;/code>.&lt;/li>
+&lt;li>Otherwise, append the character followed by the group&amp;rsquo;s length.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>The compressed string &lt;code>s&lt;/code> should be stored back in the &lt;code>chars&lt;/code> list. The length of the group that is 10 or longer will be split into multiple characters in &lt;code>chars&lt;/code>.&lt;/p>
+&lt;p>After modifying the input list, return the new length of the list.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A simple approach would be to iterate over the &lt;code>chars&lt;/code> list and, for each character, start another loop that counts the number of repeated characters. This would give us both the character and its count. We can then modify the list in place with this information. However, this would involve nested loops leading to a higher time complexity.&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>A more efficient approach would be to use a read and write pointer technique:&lt;/p>
+&lt;ol>
+&lt;li>Initialize two pointers &lt;code>read&lt;/code> and &lt;code>write&lt;/code> at the start of the list.&lt;/li>
+&lt;li>While &lt;code>read&lt;/code> hasn&amp;rsquo;t reached the end of the list:
+&lt;ul>
+&lt;li>Count how many times the character at the &lt;code>read&lt;/code> pointer is consecutively repeated.&lt;/li>
+&lt;li>Write the character and its count (if greater than 1) at the &lt;code>write&lt;/code> pointer location.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Initialize &lt;code>read&lt;/code> and &lt;code>write&lt;/code> pointers to 0.&lt;/li>
+&lt;li>While &lt;code>read&lt;/code> is less than the length of &lt;code>chars&lt;/code>:
+&lt;ol>
+&lt;li>Store the current character.&lt;/li>
+&lt;li>Count its consecutive repetitions and move the &lt;code>read&lt;/code> pointer accordingly.&lt;/li>
+&lt;li>Write the character at the &lt;code>write&lt;/code> pointer location.&lt;/li>
+&lt;li>If the count is greater than 1, write the count&amp;rsquo;s digits individually.&lt;/li>
+&lt;li>Move the &lt;code>write&lt;/code> pointer.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">compress&lt;/span>(self, chars):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> read, write &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>, &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Continue while there are characters left to read.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> read &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(chars):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Store the current character.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> current_char &lt;span style="color:#666">=&lt;/span> chars[read]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># for each new character group&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Count consecutive repetitions of the current character.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> read &lt;span style="color:#666">&amp;lt;&lt;/span> &lt;span style="color:#007020">len&lt;/span>(chars) &lt;span style="color:#007020;font-weight:bold">and&lt;/span> chars[read] &lt;span style="color:#666">==&lt;/span> current_char:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> read &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Write the character to the current write pointer position.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> chars[write] &lt;span style="color:#666">=&lt;/span> current_char
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> write &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># If the character was repeated more than once, &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># write the count of repetitions next to it.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> count &lt;span style="color:#666">&amp;gt;&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> digit &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">str&lt;/span>(count): &lt;span style="color:#60a0b0;font-style:italic"># Convert count to its string representation&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> chars[write] &lt;span style="color:#666">=&lt;/span> digit &lt;span style="color:#60a0b0;font-style:italic"># Write each digit of the count&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> write &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> write
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1657. Determine if Two Strings Are Close</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/1657/</link><pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/leetcode/medium/1657/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/determine-if-two-strings-are-close/">LeetCode problem&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>Two strings are considered close if you can attain one from the other using two operations:&lt;/p>
+&lt;ol>
+&lt;li>Swap any two existing characters.&lt;/li>
+&lt;li>Transform every occurrence of one existing character into another existing character, and do the same with the other character.&lt;/li>
+&lt;/ol>
+&lt;p>The challenge is to determine whether two given strings are close or not.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A naive approach might involve trying every possible combination of operations on the two strings until they match or until you&amp;rsquo;ve exhausted all possibilities. This approach is inefficient and not feasible for longer strings.&lt;/p>
+&lt;h2 id="hints--tips">Hints &amp;amp; Tips&lt;/h2>
+&lt;p>A more efficient way to solve this problem is by understanding the core logic behind the operations. We can make use of frequency counts.&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>Check for Unique Characters:&lt;/strong> Both strings should have the same unique characters for them to be close.&lt;/li>
+&lt;li>&lt;strong>Frequency Counts Matter:&lt;/strong> The counts of characters in both strings should have the same frequency distribution.&lt;/li>
+&lt;/ol>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Calculate the frequency of each character in both strings.&lt;/li>
+&lt;li>Check if the sets of unique characters in both strings are the same.&lt;/li>
+&lt;li>Check if the sorted list of frequency counts of characters in both strings are the same.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">from&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">collections&lt;/span> &lt;span style="color:#007020;font-weight:bold">import&lt;/span> Counter
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">closeStrings&lt;/span>(word1, word2):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Calculate character frequency for both words&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> counter1 &lt;span style="color:#666">=&lt;/span> Counter(word1)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> counter2 &lt;span style="color:#666">=&lt;/span> Counter(word2)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Check if unique characters are the same in both words&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020">set&lt;/span>(counter1&lt;span style="color:#666">.&lt;/span>keys()) &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#007020">set&lt;/span>(counter2&lt;span style="color:#666">.&lt;/span>keys()):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Check if the frequency distribution is the same for both words&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020">sorted&lt;/span>(counter1&lt;span style="color:#666">.&lt;/span>values()) &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#007020">sorted&lt;/span>(counter2&lt;span style="color:#666">.&lt;/span>values()):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

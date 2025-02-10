@@ -1,6 +1,121 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LeetCode Solutions on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/series/leetcode-solutions/</link><description>Recent content in LeetCode Solutions on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Mon, 03 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/series/leetcode-solutions/index.xml" rel="self" type="application/rss+xml"/><item><title>234. Palindrome Linked List</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/234/</link><pubDate>Mon, 03 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/234/</guid><description>LeetCode problem
-Problem Statement Given the head of a singly linked list, return true if it is a palindrome or false otherwise.
-Naive Solution A simple solution to this problem is to:
-traverse the linked list storing the value of each node in an array. Then, we could compare the array with its reversed version.
-If they match, the linked list is a palindrome. Otherwise, it is not.
-This solution takes O(n) time (where n is the number of nodes in the list), as we need to traverse the list once.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LeetCode Solutions on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/series/leetcode-solutions/</link><description>Recent content in LeetCode Solutions on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Mon, 03 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/series/leetcode-solutions/index.xml" rel="self" type="application/rss+xml"/><item><title>234. Palindrome Linked List</title><link>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/234/</link><pubDate>Mon, 03 Jul 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/algorithms-101/leetcode/easy/234/</guid><description>&lt;p>&lt;a href="https://leetcode.com/problems/palindrome-linked-list/">LeetCode problem&lt;/a>&lt;/p>
+&lt;h2 id="problem-statement">Problem Statement&lt;/h2>
+&lt;p>Given the head of a singly linked list, return true if it is a palindrome or false otherwise.&lt;/p>
+&lt;h2 id="naive-solution">Naive Solution&lt;/h2>
+&lt;p>A simple solution to this problem is to:&lt;/p>
+&lt;ol>
+&lt;li>traverse the linked list&lt;/li>
+&lt;li>storing the value of each node in an array.&lt;/li>
+&lt;/ol>
+&lt;p>Then, we could compare the array with its reversed version.&lt;/p>
+&lt;p>If they match, the linked list is a palindrome. Otherwise, it is not.&lt;/p>
+&lt;p>This solution takes &lt;code>O(n)&lt;/code> time (where &lt;code>n&lt;/code> is the number of nodes in the list), as we need to traverse the list once.&lt;/p>
+&lt;p>However, it also takes &lt;code>O(n)&lt;/code> space, as we store the value of each node in an array.&lt;/p>
+&lt;h2 id="approach">Approach&lt;/h2>
+&lt;p>To solve the problem in &lt;code>O(n)&lt;/code> time and &lt;code>O(1)&lt;/code> space, we can use the &lt;mark>two-pointer technique&lt;/mark> to &lt;strong>find the middle of the linked list&lt;/strong>. Then, we can reverse the second half of the list in-place. After that, we can compare the first half with the reversed second half. If they match, the list is a palindrome.&lt;/p>
+&lt;p>Reversing a linked list in-place involves changing the next pointers of the nodes to point to the previous node. This process can be done with a constant amount of space.&lt;/p>
+&lt;h2 id="steps">Steps&lt;/h2>
+&lt;ol>
+&lt;li>Initialize two pointers: slow and fast at the head of the list.
+&lt;ol>
+&lt;li>Move slow one step at a time and fast two steps at a time.&lt;/li>
+&lt;li>When fast reaches the end of the list, slow will be at the middle.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Reverse the second half of the list starting from slow.&lt;/li>
+&lt;li>Compare the first half of the list with the reversed second half.
+&lt;ol>
+&lt;li>If they match, return true.&lt;/li>
+&lt;li>If they don&amp;rsquo;t, return false.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">class&lt;/span> &lt;span style="color:#0e84b5;font-weight:bold">Solution&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">isPalindrome&lt;/span>(self, head: ListNode) &lt;span style="color:#666">-&amp;gt;&lt;/span> &lt;span style="color:#007020">bool&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> slow &lt;span style="color:#666">=&lt;/span> fast &lt;span style="color:#666">=&lt;/span> head
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># find the mid node&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> fast &lt;span style="color:#007020;font-weight:bold">and&lt;/span> fast&lt;span style="color:#666">.&lt;/span>next:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> slow &lt;span style="color:#666">=&lt;/span> slow&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fast &lt;span style="color:#666">=&lt;/span> fast&lt;span style="color:#666">.&lt;/span>next&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># reverse the second half&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> slow
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> cur: &lt;span style="color:#60a0b0;font-style:italic"># 1 [1 2 3 4]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> nxt &lt;span style="color:#666">=&lt;/span> cur&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#60a0b0;font-style:italic"># 2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur&lt;span style="color:#666">.&lt;/span>next &lt;span style="color:#666">=&lt;/span> prev &lt;span style="color:#60a0b0;font-style:italic"># 1.next = None &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev &lt;span style="color:#666">=&lt;/span> cur &lt;span style="color:#60a0b0;font-style:italic"># 1, at the end of loop will be 4&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cur &lt;span style="color:#666">=&lt;/span> nxt &lt;span style="color:#60a0b0;font-style:italic"># 2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># compare the first and second half nodes&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">while&lt;/span> prev:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> prev&lt;span style="color:#666">.&lt;/span>val &lt;span style="color:#666">!=&lt;/span> head&lt;span style="color:#666">.&lt;/span>val:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> prev &lt;span style="color:#666">=&lt;/span> prev&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> head &lt;span style="color:#666">=&lt;/span> head&lt;span style="color:#666">.&lt;/span>next
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="debug-of-reversing">Debug of Reversing&lt;/h3>
+&lt;p>Assuming we have a linked list as &lt;code>[1,2,3,4,5,6]&lt;/code> and slow initially points to &lt;code>4&lt;/code>. Result should be &lt;code>[6,5,4,3,2,1]&lt;/code>&lt;/p>
+&lt;p>Initial state:&lt;/p>
+&lt;ul>
+&lt;li>Linked list: 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; 5 -&amp;gt; 6&lt;/li>
+&lt;li>cur points to 4&lt;/li>
+&lt;li>prev = None&lt;/li>
+&lt;/ul>
+&lt;ol>
+&lt;li>First iteration:&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>nxt is assigned 5 (the next node after cur)&lt;/li>
+&lt;li>cur.next (the next node after 4) is assigned None&lt;/li>
+&lt;li>prev is assigned 4&lt;/li>
+&lt;li>cur is assigned 5 (nxt)&lt;/li>
+&lt;/ul>
+&lt;p>After first iteration:&lt;/p>
+&lt;ul>
+&lt;li>Linked list: 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; None, 5 -&amp;gt; 6&lt;/li>
+&lt;li>cur points to 5&lt;/li>
+&lt;li>prev points to 4&lt;/li>
+&lt;/ul>
+&lt;ol start="2">
+&lt;li>Second iteration:&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>nxt is assigned 6&lt;/li>
+&lt;li>cur.next (the next node after 5) is assigned 4 (prev)&lt;/li>
+&lt;li>prev is assigned 5&lt;/li>
+&lt;li>cur is assigned 6 (nxt)&lt;/li>
+&lt;/ul>
+&lt;p>After second iteration:&lt;/p>
+&lt;ul>
+&lt;li>Linked list: 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; None, 5 -&amp;gt; 4, 6&lt;/li>
+&lt;li>cur points to 6&lt;/li>
+&lt;li>prev points to 5&lt;/li>
+&lt;/ul>
+&lt;ol start="3">
+&lt;li>Third iteration:&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>nxt is assigned None&lt;/li>
+&lt;li>cur.next (the next node after 6) is assigned 5 (prev)&lt;/li>
+&lt;li>prev is assigned 6&lt;/li>
+&lt;li>cur is assigned None (nxt)&lt;/li>
+&lt;/ul>
+&lt;p>After third iteration:&lt;/p>
+&lt;ul>
+&lt;li>Linked list: 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; None, 5 -&amp;gt; 4, 6 -&amp;gt; 5&lt;/li>
+&lt;li>cur points to None&lt;/li>
+&lt;li>prev points to 6&lt;/li>
+&lt;/ul>
+&lt;ol start="4">
+&lt;li>Since &lt;code>cur&lt;/code> is &lt;code>None&lt;/code>, we exit the while loop.&lt;/li>
+&lt;/ol>
+&lt;p>Now &lt;code>prev&lt;/code> is pointing to the &lt;code>head&lt;/code> of the reversed second half of the list.&lt;/p>
+&lt;p>The list now looks like this: &lt;code>1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 -&amp;gt; None and 6 -&amp;gt; 5 -&amp;gt; 4 -&amp;gt; None&lt;/code>.&lt;/p>
+&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+&lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/D7y_hoT_YZI?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
+&lt;/div></description></item></channel></rss>

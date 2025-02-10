@@ -1,5 +1,331 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MacOS on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/macos/</link><description>Recent content in MacOS on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sun, 05 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/macos/index.xml" rel="self" type="application/rss+xml"/><item><title>Tar command Cheat Sheet</title><link>https://romankurnovskii.com/en/posts/cheat-sheet-command-tar/</link><pubDate>Sun, 05 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/cheat-sheet-command-tar/</guid><description>Common options z compress with gzip c create an archive u append files which are newer than the corresponding copy ibn the archive f filename of the archive v verbose, display what is inflated or deflated a unlike of z, determine compression based on file extension Create tar named archive.tar containing directory tar cf archive.tar /path/files Concatenate files into a single tar tar -cf archive.tar /path/files Extract the contents from archive.tar tar xf archive.tar Create a gzip compressed tar file name archive.</description></item><item><title>Mac Setup 2022</title><link>https://romankurnovskii.com/en/posts/mac-setup-development/</link><pubDate>Wed, 18 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/mac-setup-development/</guid><description>MacBook Pro Specification 13-inch Apple M1 Pro M1 2020 16 GB RAM 512 GB SSD QWERTY = English/Hebrew macOS Monterey (Update always) Homebrew Install Homebrew as package manager for macOS:
-## paste in terminal and follow the instructions /bin/bash -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&amp;#34; Update everything in Homebrew to recent version:
-brew update Add additional source for casks:
-brew tap homebrew/cask-versions Install GUI applications (read more about these in GUI Applications):
-brew install --cask \ appcleaner \ all-in-one-messenger \ anaconda \ brewmate \ deepl \ discord \ disk-inventory-x \ docker \ figma \ google-chrome \ google-drive \ grammarly \ iterm2 \ itsycal \ macx-youtube-downloader \ mongodb-compass \ notion \ obs \ postman \ rectangle \ sublime-text \ syncthing \ telegram \ tor-browser \ transmission \ utm \ viber \ visual-studio-code \ vlc \ yandex-disk \ zoom Install terminal applications (read more about these in Terminal Applications):</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MacOS on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/macos/</link><description>Recent content in MacOS on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sun, 05 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/macos/index.xml" rel="self" type="application/rss+xml"/><item><title>Tar command Cheat Sheet</title><link>https://romankurnovskii.com/en/posts/cheat-sheet-command-tar/</link><pubDate>Sun, 05 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/cheat-sheet-command-tar/</guid><description>&lt;h2 id="common-options">Common options&lt;/h2>
+&lt;pre>&lt;code>z compress with gzip
+c create an archive
+u append files which are newer than
+the corresponding copy ibn the archive
+f filename of the archive
+v verbose, display what is inflated or deflated
+a unlike of z, determine compression based on file extension
+&lt;/code>&lt;/pre>
+&lt;h2 id="create-tar-named-archivetar-containing-directory">Create tar named archive.tar containing directory&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar cf archive.tar /path/files
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="concatenate-files-into-a-single-tar">Concatenate files into a single tar&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar -cf archive.tar /path/files
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="extract-the-contents-from-archivetar">Extract the contents from archive.tar&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar xf archive.tar
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="create-a-gzip-compressed-tar-file-name-archivetargz">Create a gzip compressed tar file name archive.tar.gz&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar czf archive.tar.gz /path/files
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="extract-a-gzip-compressed-tar-file">Extract a gzip compressed tar file&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar xzf archive.tar.gz
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="create-a-tar-file-with-bzip2-compression">Create a tar file with bzip2 compression&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar cjf archive.tar.bz2 /path/files
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="extract-a-bzip2-compressed-tar-file">Extract a bzip2 compressed tar file&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar xjf archive.tar.bz2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="list-content-of-tar-file">List content of tar file&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar -tvf archive.tar
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Mac Setup 2022</title><link>https://romankurnovskii.com/en/posts/mac-setup-development/</link><pubDate>Wed, 18 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/mac-setup-development/</guid><description>&lt;h2 id="macbook-pro-specification">MacBook Pro Specification&lt;/h2>
+&lt;ul>
+&lt;li>13-inch&lt;/li>
+&lt;li>Apple M1 Pro M1 2020&lt;/li>
+&lt;li>16 GB RAM&lt;/li>
+&lt;li>512 GB SSD&lt;/li>
+&lt;li>QWERTY = English/Hebrew&lt;/li>
+&lt;li>macOS Monterey (Update always)&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/mac-monitors.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="homebrew">Homebrew&lt;/h2>
+&lt;p>Install &lt;a href="https://brew.sh">Homebrew&lt;/a> as package manager for macOS:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">## paste in terminal and follow the instructions&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/bin/bash -c &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#007020;font-weight:bold">$(&lt;/span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh&lt;span style="color:#007020;font-weight:bold">)&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Update everything in Homebrew to recent version:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>brew update
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add additional &lt;a href="https://github.com/Homebrew/homebrew-cask-versions">source for casks&lt;/a>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>brew tap homebrew/cask-versions
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Install GUI applications (read more about these in GUI Applications):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>brew install --cask &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> appcleaner &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> all-in-one-messenger &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> anaconda &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> brewmate &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> deepl &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> discord &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> disk-inventory-x &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> docker &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> figma &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> google-chrome &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> google-drive &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> grammarly &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> iterm2 &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> itsycal &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> macx-youtube-downloader &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> mongodb-compass &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> notion &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> obs &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> postman &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> rectangle &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> sublime-text &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> syncthing &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> telegram &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> tor-browser &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> transmission &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> utm &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> viber &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> visual-studio-code &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> vlc &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> yandex-disk &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> zoom
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Install terminal applications (read more about these in Terminal Applications):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>brew install &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> git &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> jupyterlab &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> ffmpeg &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> nvm
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="additional-gui-applications">Additional GUI Applications&lt;/h2>
+&lt;h2 id="gui-applications">GUI Applications&lt;/h2>
+&lt;h3 id="google-chrome">Google Chrome&lt;/h3>
+&lt;p>&lt;a href="https://www.google.com/chrome/">Google Chrome&lt;/a> (web development, web browsing)&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Preferences&lt;/p>
+&lt;ul>
+&lt;li>set default browser&lt;/li>
+&lt;li>always show bookmarks&lt;/li>
+&lt;li>import bookmarks from previous machine&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Chrome Developer Tools&lt;/p>
+&lt;ul>
+&lt;li>Network -&amp;gt; only &amp;ldquo;Fetch/XHR&amp;rdquo;&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Search Shortcuts. Add Shortucts for different search engines.&lt;/p>
+&lt;ul>
+&lt;li>chrome://settings/searchEngines&lt;/li>
+&lt;li>Yandex, search only in Russia.
+&lt;ul>
+&lt;li>Shortcut: &lt;code>vv&lt;/code>&lt;/li>
+&lt;li>url: &lt;code>https://yandex.ru/{yandex:searchPath}?text=%s&amp;amp;{yandex:referralID}&amp;amp;lr=101443&amp;amp;rstr=-225&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Youtube
+&lt;ul>
+&lt;li>Shortcut: &lt;code>yy&lt;/code>&lt;/li>
+&lt;li>url: &lt;code>https://www.youtube.com/results?search_query=%s&amp;amp;page={startPage?}&amp;amp;utm_source=opensearch&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Chrome Extensions&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://chrome.google.com/webstore/detail/chatgpt-for-search-engine/feeonheemodpkdckaljcjogdncpiiban">ChatGPT for Search Engines&lt;/a> - Show ChatGPT output on every search request&lt;/li>
+&lt;li>&lt;a href="https://chrome.google.com/webstore/detail/deepl-translate-beta-vers/cofdbpoegempjloogbagkncekinflcnj/related?hl=en">DeepL Translate&lt;/a> - AI translator&lt;/li>
+&lt;li>&lt;a href="https://chrome.google.com/webstore/detail/doublesubs/cfmeoknomhdgcbcmgmpbbjiggfboniie">DoubleSubs&lt;/a> - dual subs on youtube/netflix + web translator&lt;/li>
+&lt;li>&lt;a href="https://chrome.google.com/webstore/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb">Google Translate&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi">React Developer Tools&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://chrome.google.com/webstore/detail/save-to-pocket/niloccemoadcdkdjlinkgdfekeahmflj">Pocket&lt;/a> - The easiest, fastest way to capture articles, videos, and more.&lt;/li>
+&lt;li>&lt;a href="https://chrome.google.com/webstore/detail/session-buddy/edacconmaakjimmfgnblocblbcdcpbko">Session Buddy&lt;/a> (Manage Browser Tabs and Bookmarks)&lt;/li>
+&lt;li>&lt;a href="https://chrome.google.com/webstore/detail/grammar-spell-checker-%E2%80%94-l/oldceeleldhonbafppcapldpdifcinji">LanguageTool&lt;/a> (multilingual grammar, style, and spell checker)&lt;/li>
+&lt;li>&lt;a href="https://chrome.google.com/webstore/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp">RSS Feed Reader&lt;/a> (Easy to subscribe/unsubscribe to blogs/no need email + iOS/Android)&lt;/li>
+&lt;li>&lt;a href="https://inoreader.com">Inoreader&lt;/a> (Easy to subscribe/unsubscribe to blogs/no need email + iOS/Android)&lt;/li>
+&lt;li>&lt;a href="https://chrome.google.com/webstore/search/https%3A%2F%2F30secondsofknowledge.com%2F">30 Seconds of Knowledge&lt;/a> (random code snippet on a new tab)&lt;/li>
+&lt;li>&lt;a href="https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa">JSON Formatter&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://chrome.google.com/webstore/detail/picture-in-picture-extens/hkgfoiooedgoejojocmhlaklaeopbecg">picture-in-picture&lt;/a> (youtube/video above other screens)&lt;/li>
+&lt;li>&lt;a href="https://chrome.google.com/webstore/detail/visual-css-editor/cibffnhhlfippmhdmdkcfecncoaegdkh">Visual CSS Editor&lt;/a> (Customize any website visually)&lt;/li>
+&lt;li>&lt;a href="#ZgotmplZ">Squish&lt;/a> - AI-powered summary tool. Turn any body of text into a few sentences with one click.&lt;/li>
+&lt;li>&lt;a href="#ZgotmplZ">Zotero&lt;/a> - Add/sync scientific PDF documents&lt;/li>
+&lt;li>&lt;a href="#ZgotmplZ">Video Downloader Plus&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://chrome.google.com/webstore/detail/opus%E2%97%8Fguide/fpnkogmkokahibbdbfoligochippakeb">Opus Guide&lt;/a> (Step-by-step for instructions)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="disk-inventory-x">Disk Inventory X&lt;/h3>
+&lt;p>&lt;a href="http://www.derlien.com/">Disk Inventory X&lt;/a> (disk usage utility for macOS)&lt;/p>
+&lt;h3 id="docker">Docker&lt;/h3>
+&lt;p>&lt;a href="https://www.docker.com/products/docker-desktop">Docker&lt;/a> (Docker, see &lt;a href="https://romankurnovskii.com/docker-macos/">setup&lt;/a>)&lt;/p>
+&lt;ul>
+&lt;li>used for running databases (e.g. PostgreSQL, MongoDB) in container without cluttering the Mac&lt;/li>
+&lt;li>Preferences
+&lt;ul>
+&lt;li>enable &amp;ldquo;Use Docker Compose&amp;rdquo;&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="firefox">Firefox&lt;/h3>
+&lt;p>&lt;a href="https://www.google.com/chrome/">Firefox&lt;/a> (web development)&lt;/p>
+&lt;h3 id="visual-studio-code">Visual Studio Code&lt;/h3>
+&lt;p>&lt;a href="https://code.visualstudio.com/">Visual Studio Code&lt;/a> (web development IDE)&lt;/p>
+&lt;p>&lt;del>&lt;a href="https://github.com/romankurnovskii/romankurnovskii.github.io/tree/main/content/posts/mac-setup-development/files/vscode">Settings&lt;/a>&lt;/del> / Synced&lt;/p>
+&lt;h3 id="sublime-text">Sublime Text&lt;/h3>
+&lt;p>&lt;a href="https://www.sublimetext.com/">Sublime Text&lt;/a> (editor)&lt;/p>
+&lt;h3 id="maccy">Maccy&lt;/h3>
+&lt;p>&lt;a href="https://maccy.app/">Maccy&lt;/a> (clipboard manager)&lt;/p>
+&lt;ul>
+&lt;li>enable &amp;ldquo;Launch at Login&amp;rdquo;&lt;/li>
+&lt;/ul>
+&lt;h3 id="rectangle">Rectangle&lt;/h3>
+&lt;p>Move and resize windows in macOS using keyboard shortcuts or snap areas&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://rectangleapp.com">https://rectangleapp.com&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="obs">OBS&lt;/h3>
+&lt;p>&lt;a href="https://obsproject.com/">OBS&lt;/a> (for video recording and live streaming)&lt;/p>
+&lt;ul>
+&lt;li>for Native Mac Screen recorder
+&lt;ul>
+&lt;li>Base (Canvas) 2880x1800 (Ratio: 16:10)&lt;/li>
+&lt;li>Output 1728x1080
+&lt;p class="md__image">
+&lt;img
+src="img/obs-base-canvas.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>&lt;del>### Spotify&lt;/del>
+&lt;del>&lt;a href="https://www.spotify.com/">Spotify&lt;/a>&lt;/del>&lt;/p>
+&lt;h3 id="soundcloud">Soundcloud&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://soundcloud.com">https://soundcloud.com&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="syncthing">Syncthing&lt;/h3>
+&lt;p>&lt;a href="https://syncthing.net/">syncthing&lt;/a> - Sync folders/files between devices. I use to backup all photos/video from mobile to PC&lt;/p>
+&lt;h3 id="transmission">Transmission&lt;/h3>
+&lt;p>&lt;a href="https://www.transmissionbt.com/">Transmission&lt;/a> (A torrent client that I use. Very minimal in its UI but very powerful and has all the features that I need)&lt;/p>
+&lt;h3 id="utm">UTM&lt;/h3>
+&lt;p>&lt;a href="https://mac.getutm.app/">UTM&lt;/a> (Virtual machines UI using QEMU)&lt;/p>
+&lt;ul>
+&lt;li>download ubuntu for arm, &lt;a href="https://mac.getutm.app/gallery/ubuntu-20-04">doc&lt;/a>&lt;/li>
+&lt;li>On error with shared folder: &lt;em>Could not connect: Connection refused&lt;/em> open in browser: &lt;a href="http://127.0.0.1:9843/">http://127.0.0.1:9843/&lt;/a>&lt;/li>
+&lt;li>For Debian install &lt;code>spice-webdavd&lt;/code> for shared folder. &lt;a href="https://packages.debian.org/search?keywords=spice-webdavd">https://packages.debian.org/search?keywords=spice-webdavd&lt;/a>, &lt;a href="https://github.com/utmapp/UTM/issues/1204">https://github.com/utmapp/UTM/issues/1204&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo apt install spice-vdagent spice-webdavd -y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="vlc">VLC&lt;/h3>
+&lt;p>&lt;a href="https://www.videolan.org/vlc/">VLC&lt;/a> (video player)&lt;/p>
+&lt;ul>
+&lt;li>use as default for video files&lt;/li>
+&lt;/ul>
+&lt;h2 id="terminal-applications">Terminal Applications&lt;/h2>
+&lt;h3 id="nvm">nvm&lt;/h3>
+&lt;p>&lt;a href="https://github.com/nvm-sh/nvm">nvm&lt;/a> (node version manager)&lt;/p>
+&lt;h3 id="jupyterlab">jupyterlab&lt;/h3>
+&lt;p>&lt;a href="https://jupyter.org/">jupyterlab&lt;/a> (Jupyter - python development, fast code snippets)&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>jupyter notebook&lt;/code> - to start jupyter notebook&lt;/li>
+&lt;/ul>
+&lt;h3 id="ffmpeg">ffmpeg&lt;/h3>
+&lt;p>&lt;a href="https://ffmpeg.org/">ffmpeg&lt;/a> (Converting video and audio)&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>compress video:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ffmpeg -i input.mp4 -c:v libx264 -crf &lt;span style="color:#40a070">23&lt;/span> -preset slow -c:a aac -b:a 192k output.mp4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># or&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ffmpeg -i input.mp4 output.avi
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>convert video to .gif:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>- ffmpeg &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span>-i input.mp4 &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span>-ss 00:00:00.000 &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span>-pix_fmt rgb24 &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span>-r &lt;span style="color:#40a070">10&lt;/span> &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span>-s 960x540 &lt;span style="color:#4070a0;font-weight:bold">\ &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>-t 00:00:10.000 &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span>output.gif
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;h2 id="nvm-for-nodenpm">NVM for Node/npm&lt;/h2>
+&lt;p>The &lt;a href="https://github.com/nvm-sh/nvm">node version manager (NVM)&lt;/a> is used to install and manage multiple Node versions. After you have installed it via Homebrew in a previous step, type the following commands to complete the installation:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#4070a0">&amp;#34;source &lt;/span>&lt;span style="color:#007020;font-weight:bold">$(&lt;/span>brew --prefix nvm&lt;span style="color:#007020;font-weight:bold">)&lt;/span>&lt;span style="color:#4070a0">/nvm.sh&amp;#34;&lt;/span> &amp;gt;&amp;gt; ~/.zshrc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">source&lt;/span> ~/.zshrc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">## or alias&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">## zshsource&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now install the latest LTS version on the command line:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>nvm install &amp;lt;latest LTS version from https://nodejs.org/en/&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Afterward, check whether the installation was successful and whether the &lt;a href="https://www.npmjs.com/">node package manager (npm)&lt;/a> got installed along the way:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>node -v &amp;amp;&amp;amp; npm -v
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Update npm to its latest version:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>npm install -g npm@latest
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>And set defaults for npm:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>npm &lt;span style="color:#007020">set&lt;/span> init-author-name &lt;span style="color:#4070a0">&amp;#34;Roman Kurnovskii&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm &lt;span style="color:#007020">set&lt;/span> init-author-email &lt;span style="color:#4070a0">&amp;#34;you@example.com&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm &lt;span style="color:#007020">set&lt;/span> init-author-url &lt;span style="color:#4070a0">&amp;#34;https://romankurnovskii.com&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you are a library author, log in to npm too:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>npm adduser
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>That&amp;rsquo;s it. If you want to list all your Node.js installation, type the following:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>nvm list
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you want to install a newer Node.js version, then type:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>nvm install &amp;lt;version&amp;gt; --reinstall-packages-from&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">$(&lt;/span>nvm current&lt;span style="color:#007020;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>nvm use &amp;lt;version&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>nvm &lt;span style="color:#007020">alias&lt;/span> default &amp;lt;version&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Optionally install &lt;a href="https://yarnpkg.com/">yarn&lt;/a> if you use it as alternative to npm:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>npm install -g yarn
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>yarn -v
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;p>If you want to list all globally installed packages, run this command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>npm list -g --depth&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>That&amp;rsquo;s it. You have a running version of Node.js and its package manager.&lt;/p>
+&lt;h2 id="oh-my-zsh">OH MY ZSH&lt;/h2>
+&lt;p>MacOS already comes with zsh as default shell. Install &lt;a href="https://ohmyz.sh/#install">Oh My Zsh&lt;/a> for an improved (plugins, themes, &amp;hellip;) experience. Oh My Zsh is an open source, community-driven framework for managing your zsh configuration. It comes with a bunch of features out of the box and improves your terminal experience.&lt;/p>
+&lt;p>Install:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sh -c &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#007020;font-weight:bold">$(&lt;/span>curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh&lt;span style="color:#007020;font-weight:bold">)&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Update everything (e.g. plugins) in Oh My Zsh to recent version:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>omz update
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Install fonts for themes:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>brew tap homebrew/cask-fonts
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>brew install --cask font-hack-nerd-font
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="iterm2">iTerm2&lt;/h2>
+&lt;h3 id="install-theme">Install theme&lt;/h3>
+&lt;p>&lt;a href="https://github.com/romkatv/powerlevel10k#batteries-included">Theme description&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>brew install romkatv/powerlevel10k/powerlevel10k
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#4070a0">&amp;#34;source &lt;/span>&lt;span style="color:#007020;font-weight:bold">$(&lt;/span>brew --prefix&lt;span style="color:#007020;font-weight:bold">)&lt;/span>&lt;span style="color:#4070a0">/opt/powerlevel10k/powerlevel10k.zsh-theme&amp;#34;&lt;/span> &amp;gt;&amp;gt;~/.zshrc
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="enable-suggestions">Enable suggestions&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git clone https://github.com/zsh-users/zsh-autosuggestions &lt;span style="color:#70a0d0">${&lt;/span>&lt;span style="color:#bb60d5">ZSH_CUSTOM&lt;/span>&lt;span style="color:#007020;font-weight:bold">:-&lt;/span>~/.oh-my-zsh/custom&lt;span style="color:#70a0d0">}&lt;/span>/plugins/zsh-autosuggestions
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#4070a0">&amp;#34;plugins=(zsh-autosuggestions)&amp;#34;&lt;/span> &amp;gt;&amp;gt;~/.zshrc
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Open new tab(CMD+T)/restart &lt;code>iTerm&lt;/code> to proceed with theme setup.&lt;/p>
+&lt;h2 id="terminal-script-and-aliases">Terminal Script and Aliases&lt;/h2>
+&lt;p>Update &lt;code>.zprofile&lt;/code>. The changes will take effect after restarting the terminal&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>vi ~/.zprofile
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="automatic-software-updates">Automatic software updates&lt;/h3>
+&lt;p>Add script to zprofile that updates everything:&lt;/p>
+&lt;ol>
+&lt;li>Update, upgrade all and cleanup&lt;/li>
+&lt;li>softwareupdate - system software update tool&lt;/li>
+&lt;/ol>
+&lt;p>We can execute this command on startup, but i prefer handle it. When I kick of &lt;code>upd&lt;/code> command in terminal, it will update everything I need:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">alias&lt;/span> &lt;span style="color:#bb60d5">upd&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#39;brew update; brew upgrade; brew cu -a --cleanup -y -v; brew cleanup; softwareupdate -i -a; i&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add aliases to the latest versions pip &amp;amp; python&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># А &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># ❯ which pip&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># /opt/homebrew/bin/pip&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># ❯ which python&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># /opt/homebrew/anaconda3/bin//python&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># snippet creates python virtual env in current folder&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">alias&lt;/span> &lt;span style="color:#bb60d5">penv&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#39;python -m venv venv &amp;amp;&amp;amp; source ./venv/bin/activate &amp;amp;&amp;amp; pip install --upgrade pip &amp;amp;&amp;amp; echo &amp;#34;\n&amp;#34; &amp;gt;&amp;gt; requirements.txt &amp;amp;&amp;amp; pip install -r requirements.txt &amp;amp;&amp;amp; pip freeze &amp;gt; requirements_freeze.txt &amp;amp;&amp;amp; echo &amp;#34;venv/&amp;#34; &amp;gt;&amp;gt; .gitignore&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">alias&lt;/span> &lt;span style="color:#bb60d5">jp&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;jupyter notebook &lt;/span>&lt;span style="color:#bb60d5">$@&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="clean-space">Clean space&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">alias&lt;/span> &lt;span style="color:#bb60d5">clean&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;brew cleanup --prune=all; rm -rf ~/Library/Caches&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="links">Links&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://www.robinwieruch.de/mac-setup-web-development/">https://www.robinwieruch.de/mac-setup-web-development/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://sourabhbajaj.com/mac-setup/iTerm/ack.html">https://sourabhbajaj.com/mac-setup/iTerm/ack.html&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.engineeringwithutsav.com/blog/spice-up-your-macos-terminal">https://www.engineeringwithutsav.com/blog/spice-up-your-macos-terminal&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

@@ -1,12 +1,314 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Roadmaps on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/categories/roadmaps/</link><description>Recent content in Roadmaps on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Thu, 22 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/categories/roadmaps/index.xml" rel="self" type="application/rss+xml"/><item><title>AWS Certified Developer (DVA-C01 -> DVA-C02)</title><link>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/</link><pubDate>Thu, 08 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/</guid><description>TL;DR Passed exam in one month. Created an app with questions and progress that helped me a lot Note The AWS Certified Developer - Associate exam is changing February 28, 2023. The last date to take the current exam is February 27, 2023.
-To keep the docs up to date I will add new and latest information.
-DVA-C01 vs DVA-C02 new domain: Domain 3: Deployment focus will be on testing and deploying your code into different environments including development, test, and production environments.</description></item><item><title>Диссертация</title><link>https://romankurnovskii.com/ru/tracks/disser/</link><pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/disser/</guid><description>План Публикационный профиль Следует вовремя обновлять идентификаторы автора (ORCID, ResearcherID, Scopus AuthorId) Зарегистрироваться как автор:
-Science Index Scopus - Профиль создается автоматически при первой публикации в изданиях, индексируемых Scopus https://scienceadmin.rudn.ru/ru/auth/ - (с корпоративной почты @rudn.ru) Ресурсы:
-Публикационные профили автора. Ресурсы РУДН (Бит.Наука, Science Admin, Репозиторий РУДН) Оформление ссылок / источников литературы ПО, редназначенное для хранения и систематизации библиографических данных, полных текстов документов, а также оформления ссылок в тексте и списков литературы.
-Автоматический подбор/выбор стилей цитирования из базы:
-Mendeley - Бесплатно - идеально совместим с базами Scopus, ScienceDirect Zotero - Бесплатно - раcпознает публикации с eLibrary Задачи:</description></item><item><title>Карманная книга по WebRTC</title><link>https://romankurnovskii.com/ru/tracks/webrtc/</link><pubDate>Sat, 02 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/webrtc/</guid><description>Создание нового приложения на базе WebRTC-технологий может стать непосильной задачей, если вы не знакомы с API. В этом разделе мы покажем, как начать работать с различными API в стандарте WebRTC, на большом количестве примеров и фрагментов кода, решающих эти задачи.
-WebRTC API Стандарт WebRTC работает с двумя различными технологиями: мультимедиа-устройства и P2P-соединение. Мультимедиа-устройства включают в себя не только камеры и микрофоны, но также и «устройства» захвата экрана. Для камер и микрофонов мы используем navigator.mediaDevices.getUserMedia() для захвата MediaStreams. Для записи же мы используем navigator.</description></item><item><title>Карманная книга по Python</title><link>https://romankurnovskii.com/ru/tracks/python-101/</link><pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/python-101/</guid><description>Скачать | PDF обновление 2023/02/27
-Здравствуйте!
-Я рад приветствовать вас на страницах этого хендбука по языку программирования Python.
-Python - это мощный и гибкий язык программирования, который находит применение в самых различных областях, от разработки веб-приложений и научных исследований до создания игр и машинного обучения. Однако, как и любой другой язык программирования, Python может показаться довольно сложным для начинающих.
-Этот хендбук призван помочь вам изучить основы языка Python, научиться использовать различные библиотеки и инструменты, а также дать ответы на самые часто задаваемые вопросы о языке.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Roadmaps on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/categories/roadmaps/</link><description>Recent content in Roadmaps on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 22 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/categories/roadmaps/index.xml" rel="self" type="application/rss+xml"/><item><title>AWS Certified Developer (DVA-C01 -> DVA-C02)</title><link>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/</link><pubDate>Thu, 08 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/</guid><description>&lt;h2 id="tldr">TL;DR&lt;/h2>
+&lt;ol>
+&lt;li>Passed exam in one month.&lt;/li>
+&lt;li>Created an &lt;a href="https://www.cloud-exam-prepare.com/">app with questions and progress&lt;/a> that helped me a lot
+&lt;p class="md__image">
+&lt;img
+src="images/AWS-Certified-Developer-Associate-certificate.ru.jpg"
+id="zoom-default"
+alt="LQVKGDT16BF1Q6CX"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="note">Note&lt;/h2>
+&lt;blockquote>
+&lt;p>The AWS Certified Developer - Associate exam is changing February 28, 2023. The last date to take the current exam is February 27, 2023.&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>To keep the docs up to date I will add new and latest information.&lt;/p>&lt;/blockquote>
+&lt;h2 id="dva-c01-vs-dva-c02">DVA-C01 vs DVA-C02&lt;/h2>
+&lt;ul>
+&lt;li>new domain: &lt;strong>Domain 3: Deployment&lt;/strong>
+&lt;ul>
+&lt;li>focus will be on testing and deploying your code into different environments including development, test, and production environments. You’ll need to know how CloudFormation, the AWS Cloud Development Kit (CDK), and AWS SAM are used to deploy applications.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Domains 4 and 5 (“Refactoring” along with “Monitoring and Troubleshooting”) from the DVA-C01 exam guide have been consolidated into Domain 4 (“Troubleshooting and Optimization”) in the DVA-C02 exam guide&lt;/li>
+&lt;li>Plus 2% questions in &lt;strong>Development with AWS Services&lt;/strong> domain&lt;/li>
+&lt;/ul>
+&lt;p>Test questions for DVA-C02 - &lt;a href="https://explore.skillbuilder.aws/learn/course/external/view/elearning/13757/aws-certified-developer-associate-official-question-set-dva-c02-english">here&lt;/a> and &lt;a href="https://d1.awsstatic.com/training-and-certification/docs-dev-associate/AWS-Certified-Developer-Associate_Sample-Questions_C02.pdf">here&lt;/a>&lt;/p>
+&lt;h2 id="criteria">Criteria&lt;/h2>
+&lt;p>In order to pass the exam, you must score more than 720/1000 (unspecified) points. Criterion will be a minimum threshold of &lt;strong>75/100%&lt;/strong>, unless conditions change in preparation.&lt;/p>
+&lt;h3 id="study-plan">Study Plan&lt;/h3>
+&lt;ol>
+&lt;li>Find out what the exam requirements are&lt;/li>
+&lt;li>Have a list of topics that will be on the exam&lt;/li>
+&lt;li>Practice each service for comprehension&lt;/li>
+&lt;li>Read extra theory that will not be covered during practice&lt;/li>
+&lt;li>Go through the test general questions&lt;/li>
+&lt;li>Repeat 3-5 repeat until the result of &lt;em>failed&lt;/em> block greater than 80 points&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>Entrypoint:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/certification/certified-developer-associate/">AWS Certified Developer Exam Information&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="prepare">Prepare&lt;/h2>
+&lt;p>The AWS website has:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://d1.awsstatic.com/training-and-certification/docs-dev-associate/AWS-Certified-Developer-Associate_Exam-Guide.pdf">Exam Preparation Guide DVA-C01&lt;/a>&lt;/li>
+&lt;li>&lt;em>From 27 Feb 2023&lt;/em> &lt;a href="https://d1.awsstatic.com/training-and-certification/docs-dev-associate/AWS-Certified-Developer-Associate_Exam-Guide_C02.pdf">Exam Preparation Guide DVA-C02&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>To pass the exam, you need to know certain services from the 4 domains: &lt;code>Development with AWS Services&lt;/code>, &lt;code>Security&lt;/code>, &lt;code>Deployment&lt;/code>, &lt;del>&lt;code>Refactoring&lt;/code>&lt;/del>, &lt;code>Monitoring and Troubleshooting&lt;/code>&lt;/p>
+&lt;h3 id="list-of-services-on-the-exam">List of services on the exam&lt;/h3>
+&lt;blockquote>
+&lt;p>&lt;del>Version 2.1 DVA-C01&lt;/del>
+Version 1.0 DVA-C02&lt;/p>&lt;/blockquote>
+&lt;p>Analytics:&lt;/p>
+&lt;ul>
+&lt;li>Amazon Athena (new in DVA-C02)&lt;/li>
+&lt;li>Amazon OpenSearch Service (Amazon Elasticsearch Service)&lt;/li>
+&lt;li>Amazon Kinesis&lt;/li>
+&lt;/ul>
+&lt;p>Application Integration:&lt;/p>
+&lt;ul>
+&lt;li>AWS AppSync (new in DVA-C02)&lt;/li>
+&lt;li>Amazon EventBridge (Amazon CloudWatch Events)&lt;/li>
+&lt;li>Amazon Simple Notification Service (Amazon SNS)&lt;/li>
+&lt;li>Amazon Simple Queue Service (Amazon SQS)&lt;/li>
+&lt;li>AWS Step Functions&lt;/li>
+&lt;/ul>
+&lt;p>Compute:&lt;/p>
+&lt;ul>
+&lt;li>Amazon EC2&lt;/li>
+&lt;li>AWS Elastic Beanstalk&lt;/li>
+&lt;li>AWS Lambda&lt;/li>
+&lt;li>AWS Serverless Application Model (AWS SAM) (new in DVA-C02)&lt;/li>
+&lt;/ul>
+&lt;p>Containers:&lt;/p>
+&lt;ul>
+&lt;li>AWS Copilot (new in DVA-C02)&lt;/li>
+&lt;li>Amazon Elastic Container Registry (Amazon ECR)&lt;/li>
+&lt;li>Amazon Elastic Container Service (Amazon ECS)&lt;/li>
+&lt;li>Amazon Elastic Kubernetes Services (Amazon EKS)&lt;/li>
+&lt;/ul>
+&lt;p>Database:&lt;/p>
+&lt;ul>
+&lt;li>Amazon Aurora (new in DVA-C02)&lt;/li>
+&lt;li>Amazon DynamoDB&lt;/li>
+&lt;li>Amazon ElastiCache&lt;/li>
+&lt;li>Amazon MemoryDB for Redis (new in DVA-C02)&lt;/li>
+&lt;li>Amazon RDS&lt;/li>
+&lt;/ul>
+&lt;p>Developer Tools:&lt;/p>
+&lt;ul>
+&lt;li>AWS Amplify (new in DVA-C02)&lt;/li>
+&lt;li>AWS Cloud9 (new in DVA-C02)&lt;/li>
+&lt;li>AWS CloudShell (new in DVA-C02)&lt;/li>
+&lt;li>AWS CodeArtifact&lt;/li>
+&lt;li>AWS CodeBuild&lt;/li>
+&lt;li>AWS CodeCommit&lt;/li>
+&lt;li>AWS CodeDeploy&lt;/li>
+&lt;li>Amazon CodeGuru&lt;/li>
+&lt;li>AWS CodePipeline&lt;/li>
+&lt;li>AWS CodeStar&lt;/li>
+&lt;li>AWS Fault Injection Simulator&lt;/li>
+&lt;li>AWS X-Ray&lt;/li>
+&lt;/ul>
+&lt;p>Management and Governance:&lt;/p>
+&lt;ul>
+&lt;li>AWS AppConfig (new in DVA-C02)&lt;/li>
+&lt;li>AWS Cloud Development Kit (AWS CDK) (new in DVA-C02)&lt;/li>
+&lt;li>AWS CloudFormation&lt;/li>
+&lt;li>AWS CloudTrail (new in DVA-C02)&lt;/li>
+&lt;li>Amazon CloudWatch&lt;/li>
+&lt;li>Amazon CloudWatch Logs (new in DVA-C02)&lt;/li>
+&lt;li>AWS Command Line Interface (AWS CLI) (new in DVA-C02)&lt;/li>
+&lt;li>AWS Systems Manager (new in DVA-C02)&lt;/li>
+&lt;/ul>
+&lt;p>Networking and Content Delivery:&lt;/p>
+&lt;ul>
+&lt;li>Amazon API Gateway&lt;/li>
+&lt;li>Amazon CloudFront&lt;/li>
+&lt;li>Elastic Load Balancing&lt;/li>
+&lt;li>Amazon Route 53 (new in DVA-C02)&lt;/li>
+&lt;li>Amazon VPC (new in DVA-C02)&lt;/li>
+&lt;/ul>
+&lt;p>Security, Identity, and Compliance:&lt;/p>
+&lt;ul>
+&lt;li>AWS Certificate Manager (ACM) (new in DVA-C02)&lt;/li>
+&lt;li>AWS Certificate Manager Private Certificate Authority (new in DVA-C02)&lt;/li>
+&lt;li>Amazon Cognito&lt;/li>
+&lt;li>AWS Identity and Access Management (IAM)&lt;/li>
+&lt;li>AWS Key Management Service (AWS KMS)&lt;/li>
+&lt;li>AWS Secrets Manager (new in DVA-C02)&lt;/li>
+&lt;li>AWS Security Token Service (AWS STS) (new in DVA-C02)&lt;/li>
+&lt;li>AWS WAF (new in DVA-C02)&lt;/li>
+&lt;/ul>
+&lt;p>Storage:&lt;/p>
+&lt;ul>
+&lt;li>Amazon Elastic Block Store (Amazon EBS) (new in DVA-C02)&lt;/li>
+&lt;li>Amazon Elastic File System (Amazon EFS) (new in DVA-C02)&lt;/li>
+&lt;li>Amazon S3&lt;/li>
+&lt;li>Amazon S3 Glacier (new in DVA-C02)&lt;/li>
+&lt;/ul>
+&lt;h3 id="training-plan">Training plan&lt;/h3>
+&lt;p>Opened a training plan for any tutorial to understand where to start learning. Have chosen &lt;strong>cloudacademy&lt;/strong> service (but for example FreeCodeCamp has a free course with content).&lt;/p>
+&lt;p>Another option is to use free &lt;a href="https://workshops.aws/">AWS Workshops&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://cloudacademy.com/learning-paths/aws-developer-associate-dva-c01-certification-preparation-4364/">AWS Developer - Associate (DVA-C01) Certification Preparation&lt;/a>&lt;/p>
+&lt;p>Don&amp;rsquo;t see coverage of the following services, so I add them to the block when related topics are covered:&lt;/p>
+&lt;p>&lt;strong>Analytics&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>Amazon Elasticsearch Service (Amazon ES) -&amp;gt; OpenSearch Service&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Developer Tools&lt;/strong>:&lt;/p>
+&lt;ul>
+&lt;li>AWS CodeArtifact&lt;/li>
+&lt;li>AWS Fault Injection Simulator&lt;/li>
+&lt;/ul>
+&lt;h2 id="my-roadmap">My roadmap&lt;/h2>
+&lt;p>The following is my roadmap for the study. There may be adjustments.&lt;/p>
+&lt;ol>
+&lt;li>&lt;a href="https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/iam/">AWS Identity and Access Management (IAM)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/ec2/">Amazon EC2&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/elasticbeanstalk/">AWS Elastic Beanstalk&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://romankurnovskii.com/ru/tracks/aws-certified-developer-associate/lambda/">AWS Lambda&lt;/a>&lt;/li>
+&lt;li>&lt;a href="s3">Amazon S3&lt;/a>&lt;/li>
+&lt;li>&lt;a href="dynamodb">Amazon DynamoDB&lt;/a>&lt;/li>
+&lt;li>&lt;a href="elasticache">Amazon ElastiCache&lt;/a>&lt;/li>
+&lt;li>&lt;a href="rds">Amazon RDS&lt;/a>&lt;/li>
+&lt;li>&lt;a href="api-gateway">Amazon API Gateway&lt;/a>&lt;/li>
+&lt;li>&lt;a href="cloudfront">Amazon CloudFront&lt;/a>&lt;/li>
+&lt;li>&lt;a href="elasticloadbalancing">Elastic Load Balancing (ELB)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="kinesis">Amazon Kinesis&lt;/a>&lt;/li>
+&lt;li>&lt;a href="opensearch-service">Amazon OpenSearch Service (Amazon Elasticsearch Service)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="cloudwatch">Amazon CloudWatch&lt;/a>&lt;/li>
+&lt;li>&lt;a href="cloudformation">AWS CloudFormation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="codecommit">AWS CodeCommit&lt;/a>&lt;/li>
+&lt;li>&lt;a href="codedeploy">AWS CodeDeploy&lt;/a>&lt;/li>
+&lt;li>&lt;a href="codebuild">AWS CodeBuild&lt;/a>&lt;/li>
+&lt;li>&lt;a href="codepipeline">AWS CodePipeline&lt;/a>&lt;/li>
+&lt;li>&lt;a href="codeguru">Amazon CodeGuru&lt;/a>&lt;/li>
+&lt;li>&lt;a href="codestar">AWS CodeStar&lt;/a>&lt;/li>
+&lt;li>&lt;a href="codeartifact">AWS CodeArtifact&lt;/a>&lt;/li>
+&lt;li>&lt;a href="xray">AWS X-Ray&lt;/a>&lt;/li>
+&lt;li>&lt;a href="fis">AWS Fault Injection Simulator&lt;/a>&lt;/li>
+&lt;li>&lt;a href="ecr">Amazon Elastic Container Registry (Amazon ECR)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="ecs">Amazon Elastic Container Service (Amazon ECS)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="fargate">AWS Fargate&lt;/a>&lt;/li>
+&lt;li>&lt;a href="eks">Amazon Elastic Kubernetes Services (Amazon EKS)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="cognito">Amazon Cognito&lt;/a>&lt;/li>
+&lt;li>&lt;a href="route53">Route 53&lt;/a>&lt;/li>
+&lt;li>&lt;a href="kms">AWS Key Management Service (AWS KMS)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="eventbridge">Amazon EventBridge (Amazon CloudWatch Events)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="sns">Amazon Simple Notification Service (Amazon SNS)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="sqs">Amazon Simple Queue Service (Amazon SQS)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="step-functions">AWS Step Functions&lt;/a>&lt;/li>
+&lt;/ol>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/certification/certified-developer-associate/">AWS Certified Developer&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/index.html">A brief overview of the official documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://d1.awsstatic.com/training-and-certification/docs-dev-associate/AWS-Certified-Developer-Associate_Exam-Guide.pdf">Exam Preparation Guide&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://d1.awsstatic.com/training-and-certification/docs-dev-associate/AWS-Certified-Developer-Associate_Sample-Questions.pdf">Sample Exam Questions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/itsmostafa/certified-aws-developer-associate-notes">https://github.com/itsmostafa/certified-aws-developer-associate-notes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/arnaudj/mooc-aws-certified-developer-associate-2020-notes">https://github.com/arnaudj/mooc-aws-certified-developer-associate-2020-notes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.youtube.com/watch?v=RrKRN9zRBWs">FreeCodeCamp Youtube - AWS Certified Developer - Associate 2020&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://aws.amazon.com/getting-started/hands-on/?getting-started-all.sort-by=item.additionalFields.sortOrder&amp;amp;getting-started-all.sort-order=asc&amp;amp;awsf.getting-started-category=*all&amp;amp;awsf.getting-started-level=*all&amp;amp;awsf.getting-started-content-type=*all">How-To Labs from AWS&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://aws.amazon.com/training/ramp-up-guides">AWS Ramp-Up guides&lt;/a>: Downloadable AWS Ramp-Up Guides offer a variety of resources to help you build your skills and knowledge of the AWS Cloud.&lt;/li>
+&lt;li>&lt;a href="https://www.coursera.org/aws">Coursera&amp;rsquo;s AWS Courses(Free to enroll via audit)&lt;/a>: AWS also provides various specializations in partnership with coursera&lt;/li>
+&lt;li>&lt;a href="https://aws.amazon.com/architecture/?nc2=h_ql_le_arc&amp;amp;cards-all.sort-by=item.additionalFields.sortDate&amp;amp;cards-all.sort-order=desc&amp;amp;awsf.content-type=*all&amp;amp;awsf.methodology=*all&amp;amp;awsf.tech-category=*all&amp;amp;awsf.industries=*all">AWS Architecture center&lt;/a>: Provides reference architecture diagrams, vetted architecture solutions, Well-Architected best practices, patterns, icons, and more. This expert guidance was contributed by cloud architecture experts from AWS, including AWS Solutions Architects, Professional Services Consultants, and Partners.&lt;/li>
+&lt;li>&lt;a href="https://aws.amazon.com/whitepapers">AWS Whitepapers&lt;/a>: Expand your knowledge of the cloud with AWS technical content authored by AWS and the AWS community, including technical whitepapers, technical guides, reference material, and reference architecture diagrams.&lt;/li>
+&lt;li>&lt;a href="https://aws.amazon.com/architecture/back-to-basics">Back to Basics&lt;/a>: Back to Basics&amp;rsquo; is a video series that explains, examines, and decomposes basic cloud architecture pattern best practices.&lt;/li>
+&lt;li>&lt;a href="https://aws.amazon.com/developer/community/heroes/content-library">AWS Heroes Content Library&lt;/a>: AWS Hero authored content including blogs, videos, slide presentations, podcasts, and more.&lt;/li>
+&lt;li>&lt;a href="https://amazon.qwiklabs.com/catalog">https://amazon.qwiklabs.com/catalog&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://workshops.aws">AWS Workshops&lt;/a>: This website lists workshops created by the teams at Amazon Web Services (AWS). Workshops are hands-on events designed to teach or introduce practical skills, techniques, or concepts which you can use to solve business problems.&lt;/li>
+&lt;li>&lt;a href="https://wellarchitectedlabs.com/">https://wellarchitectedlabs.com/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://testseries.edugorilla.com/tests/1359/aws-certified-developer-associate">https://testseries.edugorilla.com/tests/1359/aws-certified-developer-associate&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="community-posts">Community posts&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://dev.to/romankurnovskii/aws-certified-developer-associate-prepare-2np">https://dev.to/romankurnovskii/aws-certified-developer-associate-prepare-2np&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.reddit.com/user/romankurnovskii/comments/x8rgig/what_is_the_topics_order_to_cover_to_get_prepared/?utm_source=share&amp;amp;utm_medium=web2x&amp;amp;context=3">https://www.reddit.com/user/romankurnovskii/comments/x8rgig/what_is_the_topics_order_to_cover_to_get_prepared/?utm_source=share&amp;utm_medium=web2x&amp;context=3&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://twitter.com/romankurnovskii/status/1567746601136832512">https://twitter.com/romankurnovskii/status/1567746601136832512&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Диссертация</title><link>https://romankurnovskii.com/ru/tracks/disser/</link><pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/disser/</guid><description>&lt;h2 id="план">План&lt;/h2>
+&lt;ol>
+&lt;li>Публикационный профиль&lt;/li>
+&lt;/ol>
+&lt;p>Следует вовремя обновлять идентификаторы автора (ORCID, ResearcherID, Scopus AuthorId)
+Зарегистрироваться как автор:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://www.elibrary.ru/defaultx.asp">Science Index&lt;/a>&lt;/li>
+&lt;li>Scopus - Профиль создается автоматически при первой публикации в изданиях, индексируемых Scopus&lt;/li>
+&lt;li>&lt;a href="https://scienceadmin.rudn.ru/ru/auth/">https://scienceadmin.rudn.ru/ru/auth/&lt;/a> - (с корпоративной почты @rudn.ru)&lt;/li>
+&lt;/ul>
+&lt;p>Ресурсы:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://esystem.rudn.ru/pluginfile.php/1402513/mod_resource/content/3/_%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%208%20%D0%9F%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%D1%86.%20%D0%BF%D1%80%D0%BE%D1%84%D0%B8%D0%BB%D1%8C%20%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D0%B0.%20%D0%A0%D0%98%D0%9D%D0%A6.%20%D0%A0%D0%B5%D1%81%D1%83%D1%80%D1%81%D1%8B%20%D0%A0%D0%A3%D0%94%D0%9D%20%281%29.pdf">Публикационные профили автора. Ресурсы РУДН (Бит.Наука, Science Admin, Репозиторий РУДН)&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="оформление-ссылок--источников-литературы">Оформление ссылок / источников литературы&lt;/h2>
+&lt;p>ПО, редназначенное для хранения и систематизации библиографических данных, полных текстов документов, а также оформления ссылок в тексте и списков литературы.&lt;/p>
+&lt;p>Автоматический подбор/выбор стилей цитирования из базы:&lt;/p>
+&lt;ul>
+&lt;li>Mendeley - Бесплатно - идеально совместим с базами Scopus, ScienceDirect&lt;/li>
+&lt;li>Zotero - Бесплатно - раcпознает публикации с eLibrary&lt;/li>
+&lt;/ul>
+&lt;p>Задачи:&lt;/p>
+&lt;p>• создание личной электронной библиотеки публикаций
+• хранение и систематизация библиографической информации и полных текстов публикаций
+• возможность настраивать нужный стиль цитирования (библиографических ссылок)
+• синхронизация работы со всех устройств
+• возможность интегрировать библиографические ссылки в текст исследовательской работы в Word&lt;/p>
+&lt;p>&lt;a href="https://esystem.rudn.ru/pluginfile.php/1402512/mod_resource/content/5/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%207%20%D0%9E%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8.pdf">Оформление публикации. Библиографические менеджеры Zotero, Mendeley&lt;/a>&lt;/p>
+&lt;h3 id="варианты-расположения">Варианты расположения&lt;/h3>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Алфавитное.&lt;/strong> Как правило, сначала приводится перечень документов на кириллице, затем на латинице, далее – на других иностранных языках (при наличии)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Систематическое.&lt;/strong> Источники подбираются по типам документа (сначала – официальные документы, нормативно-правовые акты, затем – учебная и научная литература (монографии, статьи), потом – интернет-ресурсы&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Хронологическое:&lt;/strong> применяют, как правило, в исследованиях историографического плана, посвященных развитию науки, проблемы и т.д. В пределах каждого года записи дают в алфавитном порядке&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Комбинированное.&lt;/strong> например, внутри систематического списка источники располагаются в алфавитном порядке&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Официальные документы ставятся в начале списка и располагаются по значимости&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Библиографическая ссылка оформляется в соответствии с &lt;a href="http://protect.gost.ru/document.aspx?control=7&amp;amp;id=173511">ГОСТ Р 7.0.5-2008&lt;/a> и &lt;a href="https://protect.gost.ru/document1.aspx?control=31&amp;amp;baseC=6&amp;amp;page=0&amp;amp;month=1&amp;amp;year=-1&amp;amp;search=%D0%B3%D0%BE%D1%81%D1%82%20%D0%A0%207.0.108&amp;amp;id=244975">ГОСТ Р 7.0.108-2022&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="зарубежные-стили-цитирования">Зарубежные стили цитирования&lt;/h3>
+&lt;p>Требования к оформлению статей в зарубежных изданиях, как правило, основаны
+на руководствах (Manuals of Styles) различных профессиональных сообществ.&lt;/p>
+&lt;p>Наиболее распространены следующие стили:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://www.chicagomanualofstyle.org/home.html">Chicago&lt;/a> - используется для социально-научных публикаций и в большинстве исторических журналов&lt;/li>
+&lt;li>&lt;a href="https://rassep.ru/academy/biblioteka/106597/">Vancouver&lt;/a> - популярен в медицине и физических науках&lt;/li>
+&lt;li>&lt;a href="https://apastyle.apa.org/style-grammar-guidelines/citations/appropriate-citation">APA (American Psychological Association) Style&lt;/a> - используется для оформления публикаций по психологии, образованию, социальным наукам&lt;/li>
+&lt;li>&lt;a href="https://style.mla.org/works-cited/citations-by-format/">MLA (Modern Language Association) Style&lt;/a> - используется при написании работ в области гуманитарных наук&lt;/li>
+&lt;li>&lt;a href="https://www.ieee.org/content/dam/ieee-org/ieee/web/org/conferences/style_references_manual.pdf">Institute of Electrical &amp;amp; Electronics Engineers Style (IEEE) Style&lt;/a> - широко используется во всех областях техники, компьютерных наук и других технологических областях&lt;/li>
+&lt;/ul>
+&lt;h3 id="библиографические-ссылки-служат-для-выделения-в-тексте-цитат">Библиографические ссылки служат для выделения в тексте цитат&lt;/h3>
+&lt;p>При цитировании наибольшего внимания должна заслуживать современная
+литература и первоисточники.&lt;/p>
+&lt;p>Возможны два способа цитирования:&lt;/p>
+&lt;ul>
+&lt;li>прямое — в этом случае в кавычках дословно повторяется текст из
+соответствующего источника (в ссылке на источник через запятую необходимо
+указать страницу, на которой находится цитируемый текст);&lt;/li>
+&lt;li>косвенное — когда одна или несколько мыслей из источника излагаются автором
+своии словами, но близко к оригинальному тексту.&lt;/li>
+&lt;/ul>
+&lt;p>Все источники транслитерируются с помощью сайта &lt;a href="http://translit-online.ru/">http://translit-online.ru/&lt;/a>.&lt;/p>
+&lt;h2 id="источники">Источники&lt;/h2></description></item><item><title>Карманная книга по WebRTC</title><link>https://romankurnovskii.com/ru/tracks/webrtc/</link><pubDate>Sat, 02 Jul 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/webrtc/</guid><description>&lt;p>Создание нового приложения на базе WebRTC-технологий может стать непосильной задачей, если вы не знакомы с API. В этом разделе мы покажем, как начать работать с различными API в стандарте WebRTC, на большом количестве примеров и фрагментов кода, решающих эти задачи.&lt;/p>
+&lt;h2 id="webrtc-api">WebRTC API&lt;/h2>
+&lt;p>Стандарт WebRTC работает с двумя различными технологиями: мультимедиа-устройства и P2P-соединение.
+Мультимедиа-устройства включают в себя не только камеры и микрофоны, но также и «устройства» захвата экрана. Для камер и микрофонов мы используем &lt;code>navigator.mediaDevices.getUserMedia()&lt;/code> для захвата &lt;code>MediaStreams&lt;/code>. Для записи же мы используем &lt;code>navigator.mediaDevices.getDisplayMedia()&lt;/code>.&lt;/p>
+&lt;p>P2P соединение настраивается через интерфейс &lt;code>RTCPeerConnection&lt;/code>. Это ключевой пункт для установления и управления соединением между двумя узлами в WebRTC.&lt;/p>
+&lt;h2 id="ресурсы">Ресурсы&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://webrtc.org/getting-started/overview">https://webrtc.org/getting-started/overview&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://codelabs.developers.google.com/codelabs/webrtc-web">https://codelabs.developers.google.com/codelabs/webrtc-web&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Карманная книга по Python</title><link>https://romankurnovskii.com/ru/tracks/python-101/</link><pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/tracks/python-101/</guid><description>&lt;p>&lt;mark>&lt;a href="https://romankurnovskii.com/handbooks/python-handbook.pdf">Скачать | PDF&lt;/a>&lt;/mark> &lt;em>обновление 2023/02/27&lt;/em>&lt;/p>
+&lt;p>Здравствуйте!&lt;/p>
+&lt;p>Я рад приветствовать вас на страницах этого хендбука по языку программирования Python.&lt;/p>
+&lt;p>Python - это мощный и гибкий язык программирования, который находит применение в самых различных областях, от разработки веб-приложений и научных исследований до создания игр и машинного обучения. Однако, как и любой другой язык программирования, Python может показаться довольно сложным для начинающих.&lt;/p>
+&lt;p>Этот хендбук призван помочь вам изучить основы языка Python, научиться использовать различные библиотеки и инструменты, а также дать ответы на самые часто задаваемые вопросы о языке. Я постарался сделать материал доступным и понятным для всех, даже для тех, кто никогда не программировал.&lt;/p>
+&lt;p>Хендбук по Python - это идеальное решение для тех, кто хочет быстро овладеть основами языка и начать программировать. Книга содержит более 50 тем, которые охватывают все основные конструкции языка, от простых типов данных и операторов до продвинутых тем, таких как объектно-ориентированное программирование и обработка исключений.&lt;/p>
+&lt;p>Каждая тема описывается кратко и доступно, чтение каждой занимает около 2 минут. Это означает, что вы можете быстро пройти через всю книгу и получить краткий, но полный обзор языка.&lt;/p>
+&lt;p>Хендбук по Python - это идеальный выбор для тех, кто хочет быстро начать программировать на языке Python. Вы сможете быстро овладеть основными конструкциями и перейти к созданию своих собственных программ.&lt;/p>
+&lt;p>Я уверен, что этот хендбук поможет вам стать более уверенными в использовании Python, и поможет вам создавать более эффективные программы. Не стесняйтесь задавать вопросы и искать помощи, если вам что-то не ясно - только так можно добиться настоящих результатов в программировании. Удачи!&lt;/p></description></item></channel></rss>

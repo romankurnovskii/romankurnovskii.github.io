@@ -1,5 +1,53 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Opensearch on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/opensearch/</link><description>Recent content in Opensearch on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Wed, 14 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/opensearch/index.xml" rel="self" type="application/rss+xml"/><item><title>OpenSearch Service</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/opensearch-service/</link><pubDate>Wed, 14 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/opensearch-service/</guid><description>About OpenSearch Service is a fully managed service that makes it easy to deploy, secure
-Amazon OpenSearch Service is an open source, distributed search and analytics suite based on Elasticsearch.
-Documentation User Guide You can load streaming data from the following sources using AWS Lambda event handlers:
-Amazon S3 Amazon Kinesis Data Streams and Data Firehose Amazon DynamoDB Amazon CloudWatch AWS IoT Exposes three Elasticsearch logs through CloudWatch Logs:
-error logs. search slow logs – These logs help fine tune the performance of any kind of search operation on Elasticsearch.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Opensearch on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/opensearch/</link><description>Recent content in Opensearch on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Wed, 14 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/opensearch/index.xml" rel="self" type="application/rss+xml"/><item><title>OpenSearch Service</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/opensearch-service/</link><pubDate>Wed, 14 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/opensearch-service/</guid><description>&lt;h2 id="about">About&lt;/h2>
+&lt;p>OpenSearch Service is a fully managed service that makes it easy to deploy, secure&lt;/p>
+&lt;p>Amazon OpenSearch Service is an open source, distributed search and analytics suite based on Elasticsearch.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://aws.amazon.com/opensearch-service/">Documentation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.aws.amazon.com/opensearch-service/?id=docs_gateway">User Guide&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://d1.awsstatic.com/product-marketing/Elasticsearch/product-page-diagram_Amazon-OpenSearch-Service_HIW%402x.f20d73b8aa110b5fb6ca1d9ebb439066a5e31ef5.png"
+id="zoom-default"
+alt="OpenSearch Service Flow"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You can load streaming data from the following sources using AWS Lambda event handlers:&lt;/p>
+&lt;ul>
+&lt;li>Amazon S3&lt;/li>
+&lt;li>Amazon Kinesis Data Streams and Data Firehose&lt;/li>
+&lt;li>Amazon DynamoDB&lt;/li>
+&lt;li>Amazon CloudWatch&lt;/li>
+&lt;li>AWS IoT&lt;/li>
+&lt;/ul>
+&lt;p>Exposes three Elasticsearch logs through CloudWatch Logs:&lt;/p>
+&lt;ul>
+&lt;li>error logs.&lt;/li>
+&lt;li>search slow logs – These logs help fine tune the performance of any kind of search operation on Elasticsearch.&lt;/li>
+&lt;li>index slow logs – These logs provide insights into the indexing process and can be used to fine-tune the index setup.&lt;/li>
+&lt;li>Indexing&lt;/li>
+&lt;li>Before you can search data, you must index it. Indexing is the method by which search engines organize data for fast retrieval.&lt;/li>
+&lt;li>the basic unit of data is a JSON document.&lt;/li>
+&lt;li>Within an index, Elasticsearch organizes documents into types (arbitrary data categories that you define) and identifies them using a unique ID.&lt;/li>
+&lt;/ul>
+&lt;h2 id="price">Price&lt;/h2>
+&lt;p>&lt;a href="https://aws.amazon.com/opensearch-service/pricing/">Current price&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>Has free tier.&lt;/li>
+&lt;li>You pay for each hour of use of an EC2 instance and for the cumulative size of any EBS storage volumes attached to your instances.&lt;/li>
+&lt;li>You can use Reserved Instances to reduce long term cost on your EC2 instances.&lt;/li>
+&lt;/ul>
+&lt;h2 id="use-cases">Use Cases&lt;/h2>
+&lt;p>Type: Analytics&lt;/p>
+&lt;p>Same type services: Athena, EMR, Redshift, Kinesis, Elasti­csearch Service, Quicksight&lt;/p>
+&lt;ul>
+&lt;li>Log Analytics&lt;/li>
+&lt;li>Real-Time Application Monitoring&lt;/li>
+&lt;li>Security Analytics&lt;/li>
+&lt;li>Full Text Search&lt;/li>
+&lt;li>Clickstream Analytics&lt;/li>
+&lt;/ul>
+&lt;h2 id="practice">Practice&lt;/h2>
+&lt;p>&lt;a href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/opensearch-service/build-log-aggregation-system/">Build A Log Aggregation System in AWS&lt;/a>&lt;/p></description></item></channel></rss>

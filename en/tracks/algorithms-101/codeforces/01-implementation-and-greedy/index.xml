@@ -1,16 +1,381 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>01: Implementation &amp; Greedy on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/</link><description>Recent content in 01: Implementation &amp; Greedy on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Fri, 03 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/index.xml" rel="self" type="application/rss+xml"/><item><title>1809A - Garland - 800</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1809a/</link><pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1809a/</guid><description>1809A - Garland (implementation, 800)
-Explanation If all the light bulbs have the same color, it is impossible to turn them all on, as you can&amp;rsquo;t perform the operation on the same color consecutively. In this case, print -1. If there are 3 light bulbs of the same color and one light bulb of a different color, it takes 6 operations to turn them all on: Turn on the different colored light bulb Turn on one of the other colored light bulbs Turn off the different colored light bulb Turn on the second light bulb of the same color Turn on the different colored light bulb Turn on the third light bulb of the same color In all other cases, it takes 4 operations to turn all the light bulbs on, as you can switch the light bulbs on in a sequence without violating the color restriction.</description></item><item><title>1807A - Plus or Minus - 800</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1807a/</link><pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1807a/</guid><description>1807A - Plus or Minus (implementation, 800)
-Solution t = int(input()) for _ in range(t): a, b, c = map(int, input().split()) print(&amp;#39;+&amp;#39; if a + b == c else &amp;#39;-&amp;#39;)</description></item><item><title>1807B - Grab the Candies - 800</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1807b/</link><pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1807b/</guid><description>1807B - Grab the Candies (greedy, 800)
-Explanation Read the number of bags and the list of candies in the bags. Calculate the total number of candies with even and odd amounts separately. Compare the total amount of candies with even and odd amounts. If Mihai has strictly more candies than Bianca, output &amp;ldquo;YES&amp;rdquo;. Otherwise, output &amp;ldquo;NO&amp;rdquo;. Solution t = int(input()) for _ in range(t): n = int(input()) ar = list(map(int, input().split())) m = 0 b = 0 if n == 1: print(&amp;#39;YES&amp;#39; if ar[0] % 2 == 0 else &amp;#39;NO&amp;#39;) else: for x in ar: if x % 2 == 0: m += x else: b += x print(&amp;#39;YES&amp;#39; if m &amp;gt; b else &amp;#39;NO&amp;#39;)</description></item><item><title>1807C - Find and Replace - 800</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1807c/</link><pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1807c/</guid><description>1807C - Find and Replace (greedy, implementation, strings, 800)
-Solution t = int(input()) for _ in range(t): n = int(input()) s = input() reserved_binaries = {} binary_values = [] for c in s: val = reserved_binaries.get(c, None) if not binary_values: binary_values.append(1) if val == binary_values[-1]: print(&amp;#39;NO&amp;#39;) break if not val: val = 1 if binary_values[-1] == 0 else 0 reserved_binaries[c] = val binary_values.append(val) else: print(&amp;#39;YES&amp;#39;)</description></item><item><title>1798A - Showstopper - 800</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1798a/</link><pubDate>Sun, 26 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1798a/</guid><description>1798A - Showstopper (greedy, implementation, sortings, 800)
-Update a and b in a such way so in a always put the largest and in b smallest.
-Solution def solve(a,b,n): a_max = a[0] for i in range(n): max_v = max(a[i], b[i]) min_v = min(a[i], b[i]) a[i] = max_v b[i] = min_v a_max = max(a_max, max_v) if a[-1] &amp;gt;= a_max and b[-1] &amp;gt;= max(b): return &amp;#39;Yes&amp;#39; return &amp;#39;No&amp;#39; t = int(input()) for _ in range(t): n = int(input()) a = list(map(int, input().</description></item><item><title>1799A - Recent Actions - 800</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1799a/</link><pubDate>Sun, 26 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1799a/</guid><description>1799A - Recent Actions (data structures, greedy, implementation, math, 800)
-Explanation On Codeforces, the &amp;ldquo;Recent Actions&amp;rdquo; field shows the last n posts with recent actions. Initially, there are posts numbered 1 to n in the field, in order from top to bottom. There are also infinitely many posts not in the field, numbered with integers n+1, n+2, and so on.
-When a recent action happens in post p:
-If it is in the &amp;ldquo;Recent Actions&amp;rdquo; field, it moves from its position to the top position.</description></item><item><title>1788A - One and Two - 800</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1788a/</link><pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1788a/</guid><description>1788A - One and Two (brute force, implementation, math, 800)
-This problem is about finding a specific index 𝑘 in a given sequence of integers $𝑎_1,𝑎_2,…,𝑎_𝑛$, where each element is either 1 or 2. The goal is to determine whether there exists an integer 𝑘 such that the product of all elements from $𝑎_1$ to $𝑎_𝑘$ is equal to the product of all elements from $𝑎_𝑘+1$ to $𝑎_𝑛$.
-Because of product of 1 doesn&amp;rsquo;t change the result we can focus on 2.</description></item><item><title>1778A - Flip Flop Sum - 800</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1778a/</link><pubDate>Fri, 31 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1778a/</guid><description>1778A - Flip Flop Sum (greedy, implementation, 800)
-There are three possible conditions:
--1 -1 - all negative. In this case sum -2 becomes sum 2. Plus 4. -1 1 - different, no sum change. 1 1 - all positive. 2 becomes -2. Diff is -4. Solution def solve(): n = int(input()) ar = list(map(int, input().split())) s = 0 # sum # three conditions: all 1, all -1, at least one -1 has_diff = False has2_positive = 0 has2_negative = 0 s += ar[0] for idx in range(1, n): if ar[idx] == ar[idx-1]: if ar[idx] == -1: has2_negative = 4 # -2 -&amp;gt; +2, diff 4 else: has2_positive = -4 # +2 =&amp;gt; +1, diff 1 else: has_diff = True s += ar[idx] if has2_negative: s += has2_negative elif has_diff: .</description></item><item><title>1772A - A+B? - 800</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1772a/</link><pubDate>Mon, 03 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1772a/</guid><description>1772A - A+B? (implementation, 800)
-Solution def solve(): a, b = input().split(&amp;#39;+&amp;#39;) res = int(a) + int(b) print(res) for _ in range(int(input())): solve()</description></item><item><title>1796B - One and Two - 800</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1796b/</link><pubDate>Mon, 03 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1796b/</guid><description>Asterisk-Minor Template (implementation, strings, 1000)
-If the first characters of both strings are the same, create a template that consists of the common character followed by an asterisk (e.g., a*). If the last characters of both strings are the same, create a template that consists of an asterisk followed by the common character (e.g., *b). If neither the first nor the last characters are the same, iterate through string a and check for any 2-character substring that also appears in string b.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>01: Implementation &amp; Greedy on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/</link><description>Recent content in 01: Implementation &amp; Greedy on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 03 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/index.xml" rel="self" type="application/rss+xml"/><item><title>1809A - Garland - 800</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1809a/</link><pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1809a/</guid><description>&lt;p>&lt;mark>&lt;a href="https://codeforces.com/contest/1809/problem/A">1809A - Garland (implementation, 800)&lt;/a>&lt;/mark>&lt;/p>
+&lt;h2 id="explanation">Explanation&lt;/h2>
+&lt;ol>
+&lt;li>If all the light bulbs have the same color, it is impossible to turn them all on, as you can&amp;rsquo;t perform the operation on the same color consecutively. In this case, print -1.&lt;/li>
+&lt;li>If there are 3 light bulbs of the same color and one light bulb of a different color, it takes 6 operations to turn them all on:
+&lt;ol>
+&lt;li>Turn on the different colored light bulb&lt;/li>
+&lt;li>Turn on one of the other colored light bulbs&lt;/li>
+&lt;li>Turn off the different colored light bulb&lt;/li>
+&lt;li>Turn on the second light bulb of the same color&lt;/li>
+&lt;li>Turn on the different colored light bulb&lt;/li>
+&lt;li>Turn on the third light bulb of the same color&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>In all other cases, it takes 4 operations to turn all the light bulbs on, as you can switch the light bulbs on in a sequence without violating the color restriction.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>(s):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020">all&lt;/span>(c &lt;span style="color:#666">==&lt;/span> s[&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#007020;font-weight:bold">for&lt;/span> c &lt;span style="color:#007020;font-weight:bold">in&lt;/span> s):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> s&lt;span style="color:#666">.&lt;/span>count(s[&lt;span style="color:#40a070">0&lt;/span>]) &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">3&lt;/span> &lt;span style="color:#007020;font-weight:bold">or&lt;/span> s&lt;span style="color:#666">.&lt;/span>count(s[&lt;span style="color:#40a070">1&lt;/span>]) &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">3&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">6&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#40a070">4&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>t &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(t):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">input&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(solve(s))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1807A - Plus or Minus - 800</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1807a/</link><pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1807a/</guid><description>&lt;p>&lt;mark>&lt;a href="https://codeforces.com/contest/1807/problem/A">1807A - Plus or Minus (implementation, 800)&lt;/a>&lt;/mark>&lt;/p>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>t &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(t):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a, b, c &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">map&lt;/span>(&lt;span style="color:#007020">int&lt;/span>, &lt;span style="color:#007020">input&lt;/span>()&lt;span style="color:#666">.&lt;/span>split())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#39;+&amp;#39;&lt;/span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> a &lt;span style="color:#666">+&lt;/span> b &lt;span style="color:#666">==&lt;/span> c &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#4070a0">&amp;#39;-&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1807B - Grab the Candies - 800</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1807b/</link><pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1807b/</guid><description>&lt;p>&lt;mark>&lt;a href="https://codeforces.com/contest/1807/problem/B">1807B - Grab the Candies (greedy, 800)&lt;/a>&lt;/mark>&lt;/p>
+&lt;h2 id="explanation">Explanation&lt;/h2>
+&lt;ol>
+&lt;li>Read the number of bags and the list of candies in the bags.&lt;/li>
+&lt;li>Calculate the total number of candies with even and odd amounts separately.&lt;/li>
+&lt;li>Compare the total amount of candies with even and odd amounts.&lt;/li>
+&lt;li>If Mihai has strictly more candies than Bianca, output &amp;ldquo;YES&amp;rdquo;. Otherwise, output &amp;ldquo;NO&amp;rdquo;.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>t &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(t):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ar &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">list&lt;/span>(&lt;span style="color:#007020">map&lt;/span>(&lt;span style="color:#007020">int&lt;/span>, &lt;span style="color:#007020">input&lt;/span>()&lt;span style="color:#666">.&lt;/span>split()))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> b &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> n &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#39;YES&amp;#39;&lt;/span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> ar[&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#4070a0">&amp;#39;NO&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> x &lt;span style="color:#007020;font-weight:bold">in&lt;/span> ar:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> x &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> m &lt;span style="color:#666">+=&lt;/span> x
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> b &lt;span style="color:#666">+=&lt;/span> x
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#39;YES&amp;#39;&lt;/span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> m &lt;span style="color:#666">&amp;gt;&lt;/span> b &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#4070a0">&amp;#39;NO&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1807C - Find and Replace - 800</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1807c/</link><pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1807c/</guid><description>&lt;p>&lt;mark>&lt;a href="https://codeforces.com/contest/1807/problem/C">1807C - Find and Replace (greedy, implementation, strings, 800)&lt;/a>&lt;/mark>&lt;/p>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>t &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(t):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">input&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reserved_binaries &lt;span style="color:#666">=&lt;/span> {}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> binary_values &lt;span style="color:#666">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> c &lt;span style="color:#007020;font-weight:bold">in&lt;/span> s:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> val &lt;span style="color:#666">=&lt;/span> reserved_binaries&lt;span style="color:#666">.&lt;/span>get(c, &lt;span style="color:#007020;font-weight:bold">None&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> binary_values:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> binary_values&lt;span style="color:#666">.&lt;/span>append(&lt;span style="color:#40a070">1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> val &lt;span style="color:#666">==&lt;/span> binary_values[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#39;NO&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#007020;font-weight:bold">not&lt;/span> val:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> val &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">1&lt;/span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> binary_values[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> reserved_binaries[c] &lt;span style="color:#666">=&lt;/span> val
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> binary_values&lt;span style="color:#666">.&lt;/span>append(val)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#39;YES&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1798A - Showstopper - 800</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1798a/</link><pubDate>Sun, 26 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1798a/</guid><description>&lt;p>&lt;mark>&lt;a href="https://codeforces.com/contest/1798/problem/A">1798A - Showstopper (greedy, implementation, sortings, 800)&lt;/a>&lt;/mark>&lt;/p>
+&lt;p>Update &lt;code>a&lt;/code> and &lt;code>b&lt;/code> in a such way so in &lt;code>a&lt;/code> always put the largest and in &lt;code>b&lt;/code> smallest.&lt;/p>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>(a,b,n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a_max &lt;span style="color:#666">=&lt;/span> a[&lt;span style="color:#40a070">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> max_v &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(a[i], b[i])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> min_v &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">min&lt;/span>(a[i], b[i])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a[i] &lt;span style="color:#666">=&lt;/span> max_v
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> b[i] &lt;span style="color:#666">=&lt;/span> min_v
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a_max &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(a_max, max_v)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> a[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">&amp;gt;=&lt;/span> a_max &lt;span style="color:#007020;font-weight:bold">and&lt;/span> b[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">&amp;gt;=&lt;/span> &lt;span style="color:#007020">max&lt;/span>(b):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#4070a0">&amp;#39;Yes&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#4070a0">&amp;#39;No&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>t &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(t):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">list&lt;/span>(&lt;span style="color:#007020">map&lt;/span>(&lt;span style="color:#007020">int&lt;/span>, &lt;span style="color:#007020">input&lt;/span>()&lt;span style="color:#666">.&lt;/span>split()))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> b &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">list&lt;/span>(&lt;span style="color:#007020">map&lt;/span>(&lt;span style="color:#007020">int&lt;/span>, &lt;span style="color:#007020">input&lt;/span>()&lt;span style="color:#666">.&lt;/span>split()))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(solve(a, b, n))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1799A - Recent Actions - 800</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1799a/</link><pubDate>Sun, 26 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1799a/</guid><description>&lt;p>&lt;mark>&lt;a href="https://codeforces.com/contest/1799/problem/A">1799A - Recent Actions (data structures, greedy, implementation, math, 800)&lt;/a>&lt;/mark>&lt;/p>
+&lt;h2 id="explanation">Explanation&lt;/h2>
+&lt;p>On Codeforces, the &amp;ldquo;Recent Actions&amp;rdquo; field shows the last &lt;code>n&lt;/code> posts with recent actions. Initially, there are posts numbered &lt;code>1&lt;/code> to &lt;code>n&lt;/code> in the field, in order from top to bottom. There are also infinitely many posts not in the field, numbered with integers &lt;code>n+1&lt;/code>, &lt;code>n+2&lt;/code>, and so on.&lt;/p>
+&lt;p>When a recent action happens in post &lt;code>p&lt;/code>:&lt;/p>
+&lt;ul>
+&lt;li>If it is in the &amp;ldquo;Recent Actions&amp;rdquo; field, it moves from its position to the top position.&lt;/li>
+&lt;li>Otherwise, it is added to the top position, and the post in the bottom position is removed from the &amp;ldquo;Recent Actions&amp;rdquo; field.&lt;/li>
+&lt;/ul>
+&lt;p>You know that the next &lt;code>m&lt;/code> recent actions (&lt;strong>Note, that recent actions only happen with posts with numbers ≥+1.&lt;/strong>) will happen in the posts &lt;code>p1, p2, ..., pm (n+1 ≤ pi ≤ n+m)&lt;/code> at moments of time &lt;code>1, 2, ..., m&lt;/code>. Note that recent actions only happen with posts with numbers &lt;code>≥ n+1&lt;/code>.&lt;/p>
+&lt;p>For each post i (1 ≤ i ≤ n), find the first time it will be removed from the &amp;ldquo;Recent Actions&amp;rdquo; field or say that it won&amp;rsquo;t be removed.&lt;/p>
+&lt;h2 id="example">Example&lt;/h2>
+&lt;p>Analyze example #7:&lt;/p>
+&lt;p>Input:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>3 5
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>4 5 5 5 4
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Consider there is only one test case with &lt;code>n = 3&lt;/code> and &lt;code>m = 5&lt;/code>.&lt;/p>
+&lt;p>The recent actions are &lt;code>p1 = 4&lt;/code>, &lt;code>p2 = 5&lt;/code>, &lt;code>p3 = 5&lt;/code>, &lt;code>p4 = 5&lt;/code>, &lt;code>p5 = 4&lt;/code>.&lt;/p>
+&lt;p>Initial state of the &amp;ldquo;Recent Actions&amp;rdquo; field: &lt;code>[1, 2, 3]&lt;/code>.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>At moment 1 (post 4):&lt;/p>
+&lt;ul>
+&lt;li>Post 4 is not in the &amp;ldquo;Recent Actions&amp;rdquo; field. So, it is added to the top position, and the post at the bottom (post 3) is removed.&lt;/li>
+&lt;li>&amp;ldquo;Recent Actions&amp;rdquo; field becomes &lt;code>[4, 1, 2]&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>At moment 2 (post 5):&lt;/p>
+&lt;ul>
+&lt;li>Post 5 is not in the &amp;ldquo;Recent Actions&amp;rdquo; field. So, it is added to the top position, and the post at the bottom (post 2) is removed.&lt;/li>
+&lt;li>&amp;ldquo;Recent Actions&amp;rdquo; field becomes &lt;code>[5, 4, 1]&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>At moment 3 (post 5):&lt;/p>
+&lt;ul>
+&lt;li>Post 5 is already in the &amp;ldquo;Recent Actions&amp;rdquo; field. So, it moves to the top position.&lt;/li>
+&lt;li>&amp;ldquo;Recent Actions&amp;rdquo; field remains &lt;code>[5, 4, 1]&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>At moment 4 (post 5):&lt;/p>
+&lt;ul>
+&lt;li>Post 5 is already in the &amp;ldquo;Recent Actions&amp;rdquo; field. So, it moves to the top position.&lt;/li>
+&lt;li>&amp;ldquo;Recent Actions&amp;rdquo; field remains &lt;code>[5, 4, 1]&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>At moment 5 (post 4):&lt;/p>
+&lt;ul>
+&lt;li>Post 4 is already in the &amp;ldquo;Recent Actions&amp;rdquo; field. So, it moves to the top position.&lt;/li>
+&lt;li>&amp;ldquo;Recent Actions&amp;rdquo; field becomes &lt;code>[4, 5, 1]&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;p>In this example, post &lt;code>1&lt;/code> is never removed, post &lt;code>2&lt;/code> is removed at moment &lt;strong>2&lt;/strong>, and post &lt;code>3&lt;/code> is removed at moment &lt;strong>1&lt;/strong>.
+m
+As initial &amp;ldquo;Recent Actions&amp;rdquo; was &lt;code>[1,2,3]&lt;/code>, the output for this input would be: &lt;code>-1 2 1&lt;/code>&lt;/p>
+&lt;h2 id="logic">Logic&lt;/h2>
+&lt;ol>
+&lt;li>Initialize an array &lt;code>tracked_data&lt;/code> of size &lt;code>n&lt;/code> with all elements set to &lt;code>-1&lt;/code>.
+&lt;ol>
+&lt;li>This array will be a result array. Set &lt;code>-1&lt;/code> for all elements setting initially that no one element will be removed.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Initialize an array &lt;code>recent_posts&lt;/code> to keep track on current &amp;ldquo;recent actions&amp;rdquo;.&lt;/li>
+&lt;li>Iterate through &lt;code>posts&lt;/code> that got from output.
+&lt;ol>
+&lt;li>If &lt;code>post&lt;/code> is already in &lt;code>recent_posts&lt;/code>, it means no need to remove anything, move this &amp;ldquo;found&amp;rdquo; post to index &lt;code>0&lt;/code> and shift other elements in &lt;code>recent_posts&lt;/code>.&lt;/li>
+&lt;li>If &lt;code>post&lt;/code> is &lt;strong>not in&lt;/strong> &lt;code>recent_posts&lt;/code>, then
+&lt;ol>
+&lt;li>add it to index &lt;code>0&lt;/code> of &lt;code>recent_posts&lt;/code> and remove &amp;ldquo;last&amp;rdquo; post from &lt;code>recent_posts&lt;/code>.&lt;/li>
+&lt;li>if &amp;ldquo;last&amp;rdquo; post in &lt;code>recent_posts&lt;/code> is &lt;code>&amp;lt;=n&lt;/code> that means that it is to be removed. In &lt;code>tracked_data&lt;/code> set current &lt;code>moment&lt;/code> when it is removed.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Print &lt;code>tracked_data&lt;/code>&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;p>This solution works but &lt;strong>slow&lt;/strong>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n, m &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">list&lt;/span>(&lt;span style="color:#007020">map&lt;/span>(&lt;span style="color:#007020">int&lt;/span>, inp()&lt;span style="color:#666">.&lt;/span>split()))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> posts &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">list&lt;/span>(&lt;span style="color:#007020">map&lt;/span>(&lt;span style="color:#007020">int&lt;/span>, inp()&lt;span style="color:#666">.&lt;/span>split()))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tracked_data &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">*&lt;/span> n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> recent_posts &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">list&lt;/span>(&lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, n&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> moment, post &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">enumerate&lt;/span>(posts, &lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> post &lt;span style="color:#007020;font-weight:bold">in&lt;/span> recent_posts:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> idx &lt;span style="color:#666">=&lt;/span> recent_posts&lt;span style="color:#666">.&lt;/span>index(post)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> recent_posts &lt;span style="color:#666">=&lt;/span> [post] &lt;span style="color:#666">+&lt;/span> recent_posts[&lt;span style="color:#40a070">0&lt;/span>:idx] &lt;span style="color:#666">+&lt;/span> recent_posts[idx&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>:]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> last &lt;span style="color:#666">=&lt;/span> recent_posts[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#60a0b0;font-style:italic"># set at what moment removed&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> last &lt;span style="color:#666">&amp;lt;=&lt;/span> n:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tracked_data[last&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">=&lt;/span> moment
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> post &lt;span style="color:#666">&amp;lt;=&lt;/span> n:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tracked_data[post&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> recent_posts &lt;span style="color:#666">=&lt;/span> [post] &lt;span style="color:#666">+&lt;/span> recent_posts[&lt;span style="color:#40a070">0&lt;/span>:&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#666">*&lt;/span>tracked_data)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">int&lt;/span>(inp())):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> solve()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>As a result no need to keep &lt;code>recent_posts&lt;/code> always uptodate. We need to follow for the posts that are in &lt;code>range&amp;lt;=n&lt;/code>.&lt;/p>
+&lt;p>All what we need is:&lt;/p>
+&lt;ol>
+&lt;li>to keep &lt;code>last&lt;/code> post index to know what &lt;code>post&lt;/code> is going to be removed. No need to rearrange array for this.&lt;/li>
+&lt;li>keep data on &amp;ldquo;already used&amp;rdquo; posts.&lt;/li>
+&lt;/ol>
+&lt;h2 id="optimized-solution">Optimized solution&lt;/h2>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="../assets/1799A.gif"
+id="zoom-default"
+alt="1799A.gif"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n, m &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">list&lt;/span>(&lt;span style="color:#007020">map&lt;/span>(&lt;span style="color:#007020">int&lt;/span>, &lt;span style="color:#007020">input&lt;/span>()&lt;span style="color:#666">.&lt;/span>split()))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> posts &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">list&lt;/span>(&lt;span style="color:#007020">map&lt;/span>(&lt;span style="color:#007020">int&lt;/span>, &lt;span style="color:#007020">input&lt;/span>()&lt;span style="color:#666">.&lt;/span>split()))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tracked_data &lt;span style="color:#666">=&lt;/span> [&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">*&lt;/span> n
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> last &lt;span style="color:#666">=&lt;/span> n&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> used_posts &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">set&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> moment, post &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">enumerate&lt;/span>(posts, &lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> post &lt;span style="color:#007020;font-weight:bold">not&lt;/span> &lt;span style="color:#007020;font-weight:bold">in&lt;/span> used_posts:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> last &lt;span style="color:#666">&amp;gt;=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> tracked_data[last] &lt;span style="color:#666">=&lt;/span> moment
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> last &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> used_posts&lt;span style="color:#666">.&lt;/span>add(post)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#666">*&lt;/span>tracked_data)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>())):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> solve()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1788A - One and Two - 800</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1788a/</link><pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1788a/</guid><description>&lt;p>&lt;mark>&lt;a href="https://codeforces.com/contest/1788/problem/A">1788A - One and Two (brute force, implementation, math, 800)&lt;/a>&lt;/mark>&lt;/p>
+&lt;p>This problem is about finding a specific index &lt;code>𝑘&lt;/code> in a given sequence of integers $𝑎_1,𝑎_2,…,𝑎_𝑛$, where each element is either &lt;code>1&lt;/code> or &lt;code>2&lt;/code>. The goal is to determine whether there exists an integer &lt;code>𝑘&lt;/code> such that the product of all elements from $𝑎_1$ to $𝑎_𝑘$ is equal to the product of all elements from $𝑎_𝑘+1$ to $𝑎_𝑛$.&lt;/p>
+&lt;p>Because of product of &lt;code>1&lt;/code> doesn&amp;rsquo;t change the result we can focus on &lt;code>2&lt;/code>. Product in left side and in the right side can be equal only if count of &lt;code>2&lt;/code> is even or equal &lt;code>0&lt;/code>.&lt;/p>
+&lt;ol>
+&lt;li>We can count number of &lt;code>2&lt;/code>.&lt;/li>
+&lt;li>The result will be the index of the &lt;em>middle&lt;/em> &lt;code>2&lt;/code> in array.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>(ar):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> twos &lt;span style="color:#666">=&lt;/span> ar&lt;span style="color:#666">.&lt;/span>count(&lt;span style="color:#40a070">2&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> twos &lt;span style="color:#666">%&lt;/span> &lt;span style="color:#40a070">2&lt;/span> &lt;span style="color:#666">!=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> passed_twos &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> need_twos &lt;span style="color:#666">=&lt;/span> twos &lt;span style="color:#666">//&lt;/span> &lt;span style="color:#40a070">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i, x &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">enumerate&lt;/span>(ar):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> x &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#40a070">2&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> passed_twos &lt;span style="color:#666">+=&lt;/span> &lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> passed_twos &lt;span style="color:#666">==&lt;/span> need_twos:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span> i&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>t &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(t):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ar &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">list&lt;/span>(&lt;span style="color:#007020">map&lt;/span>(&lt;span style="color:#007020">int&lt;/span>, &lt;span style="color:#007020">input&lt;/span>()&lt;span style="color:#666">.&lt;/span>split()))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(solve(ar))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1778A - Flip Flop Sum - 800</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1778a/</link><pubDate>Fri, 31 Mar 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1778a/</guid><description>&lt;p>&lt;mark>&lt;a href="https://codeforces.com/contest/1778/problem/A">1778A - Flip Flop Sum (greedy, implementation, 800)&lt;/a>&lt;/mark>&lt;/p>
+&lt;p>There are three possible conditions:&lt;/p>
+&lt;ol>
+&lt;li>&lt;code>-1 -1&lt;/code> - all negative. In this case sum &lt;code>-2&lt;/code> becomes sum &lt;code>2&lt;/code>. Plus 4.&lt;/li>
+&lt;li>&lt;code>-1 1&lt;/code> - different, no sum change.&lt;/li>
+&lt;li>&lt;code>1 1&lt;/code> - all positive. 2 becomes -2. Diff is -4.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ar &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">list&lt;/span>(&lt;span style="color:#007020">map&lt;/span>(&lt;span style="color:#007020">int&lt;/span>, &lt;span style="color:#007020">input&lt;/span>()&lt;span style="color:#666">.&lt;/span>split()))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># sum&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># three conditions: all 1, all -1, at least one -1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> has_diff &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">False&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> has2_positive &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> has2_negative &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">+=&lt;/span> ar[&lt;span style="color:#40a070">0&lt;/span>]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> idx &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#40a070">1&lt;/span>, n):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> ar[idx] &lt;span style="color:#666">==&lt;/span> ar[idx&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> ar[idx] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> has2_negative &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#40a070">4&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># -2 -&amp;gt; +2, diff 4&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> has2_positive &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">4&lt;/span> &lt;span style="color:#60a0b0;font-style:italic"># +2 =&amp;gt; +1, diff 1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> has_diff &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020;font-weight:bold">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">+=&lt;/span> ar[idx]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> has2_negative:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">+=&lt;/span> has2_negative
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> has_diff:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> has2_positive:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> s &lt;span style="color:#666">+=&lt;/span> has2_positive
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(s)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>())):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> solve()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Optimized solution:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> n &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>())
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ar &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">list&lt;/span>(&lt;span style="color:#007020">map&lt;/span>(&lt;span style="color:#007020">int&lt;/span>, &lt;span style="color:#007020">input&lt;/span>()&lt;span style="color:#666">.&lt;/span>split()))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">sum&lt;/span>(ar)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(n&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> ar[i] &lt;span style="color:#666">==&lt;/span> ar[i&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">==&lt;/span> &lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(res &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#40a070">4&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> res &lt;span style="color:#666">==&lt;/span> n:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">-=&lt;/span> &lt;span style="color:#40a070">4&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(res)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>())):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> solve()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1772A - A+B? - 800</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1772a/</link><pubDate>Mon, 03 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1772a/</guid><description>&lt;p>&lt;mark>&lt;a href="https://codeforces.com/contest/1772/problem/A">1772A - A+B? (implementation, 800)&lt;/a>&lt;/mark>&lt;/p>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a, b &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">input&lt;/span>()&lt;span style="color:#666">.&lt;/span>split(&lt;span style="color:#4070a0">&amp;#39;+&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> res &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">int&lt;/span>(a) &lt;span style="color:#666">+&lt;/span> &lt;span style="color:#007020">int&lt;/span>(b)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(res)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>())):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> solve()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>1796B - One and Two - 800</title><link>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1796b/</link><pubDate>Mon, 03 Apr 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/algorithms-101/codeforces/01-implementation-and-greedy/1796b/</guid><description>&lt;p>&lt;mark>&lt;a href="https://codeforces.com/contest/1796/problem/B">Asterisk-Minor Template (implementation, strings, 1000)&lt;/a>&lt;/mark>&lt;/p>
+&lt;ol>
+&lt;li>If the &lt;strong>first&lt;/strong> characters of both strings are the same, create a template that consists of the common character followed by an asterisk (e.g., &lt;code>a*&lt;/code>).&lt;/li>
+&lt;li>If the &lt;strong>last&lt;/strong> characters of both strings are the same, create a template that consists of an asterisk followed by the common character (e.g., &lt;code>*b&lt;/code>).&lt;/li>
+&lt;li>If neither the first nor the last characters are the same, iterate through string &lt;code>a&lt;/code> and check for any 2-character substring that also appears in string &lt;code>b&lt;/code>.
+&lt;ol>
+&lt;li>If a match is found, create a template that consists of an asterisk, the 2-character substring, and another asterisk (e.g., &lt;code>ab&lt;/code>).&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>If no template is found, print &lt;code>NO&lt;/code>.&lt;/li>
+&lt;/ol>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">def&lt;/span> &lt;span style="color:#06287e">solve&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> a &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">input&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> b &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#007020">input&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> a[&lt;span style="color:#40a070">0&lt;/span>] &lt;span style="color:#666">==&lt;/span> b[&lt;span style="color:#40a070">0&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#39;YES&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">f&lt;/span>&lt;span style="color:#4070a0">&amp;#39;&lt;/span>&lt;span style="color:#70a0d0">{&lt;/span>a[&lt;span style="color:#40a070">0&lt;/span>]&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">*&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">elif&lt;/span> a[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>] &lt;span style="color:#666">==&lt;/span> b[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#39;YES&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">f&lt;/span>&lt;span style="color:#4070a0">&amp;#39;*&lt;/span>&lt;span style="color:#70a0d0">{&lt;/span>a[&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>]&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> i &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">len&lt;/span>(a)&lt;span style="color:#666">-&lt;/span>&lt;span style="color:#40a070">1&lt;/span>):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> a[i:i&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">2&lt;/span>] &lt;span style="color:#007020;font-weight:bold">in&lt;/span> b:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#39;YES&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">f&lt;/span>&lt;span style="color:#4070a0">&amp;#39;*&lt;/span>&lt;span style="color:#70a0d0">{&lt;/span>a[i:i&lt;span style="color:#666">+&lt;/span>&lt;span style="color:#40a070">2&lt;/span>]&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">*&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">return&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">print&lt;/span>(&lt;span style="color:#4070a0">&amp;#39;NO&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> _ &lt;span style="color:#007020;font-weight:bold">in&lt;/span> &lt;span style="color:#007020">range&lt;/span>(&lt;span style="color:#007020">int&lt;/span>(&lt;span style="color:#007020">input&lt;/span>())):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> solve()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

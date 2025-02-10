@@ -1,6 +1,400 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CloudFront on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudfront/</link><description>Recent content in CloudFront on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Tue, 13 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudfront/index.xml" rel="self" type="application/rss+xml"/><item><title>Configuring a Static Website With S3 And CloudFront</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudfront/configuring-static-website-s3-and-cloudfront/</link><pubDate>Sat, 21 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudfront/configuring-static-website-s3-and-cloudfront/</guid><description>Practice Lab link Creating an Amazon S3 Bucket for a Static Website 1. In the AWS Management Console search bar, enter S3, and click the S3 result under Services:
-You will be placed in the Amazon S3 console.
-2. To start creating a new Amazon S3 bucket, in the top-right, click Create bucket:
-The Amazon S3 bucket creation form will load.
-3. Under General configuration, enter the following:
-Bucket name: Enter calabs-bucket-&amp;lt;UniqueNumber&amp;gt;(Append a unique number to the end of calabs-bucket-) Region: Ensure US West (Oregon) us-west-2 is selected You have added a unique number to the bucket name because Amazon S3 bucket names must be unique regardless of the AWS region in which the bucket is created.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CloudFront on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudfront/</link><description>Recent content in CloudFront on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Tue, 13 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudfront/index.xml" rel="self" type="application/rss+xml"/><item><title>Configuring a Static Website With S3 And CloudFront</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudfront/configuring-static-website-s3-and-cloudfront/</link><pubDate>Sat, 21 May 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/cloudfront/configuring-static-website-s3-and-cloudfront/</guid><description>&lt;h2 id="practice">Practice&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://cloudacademy.com/lab/configuring-static-website-s3-and-cloudfront/">Lab link&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="creating-an-amazon-s3-bucket-for-a-static-website">Creating an Amazon S3 Bucket for a Static Website&lt;/h2>
+&lt;p>1. In the AWS Management Console search bar, enter &lt;em>S3&lt;/em>, and click the &lt;strong>S3&lt;/strong> result under &lt;strong>Services&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid0-7a151f91-f8b4-4198-a748-41c66a569dbb.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You will be placed in the Amazon S3 console.&lt;/p>
+&lt;p>2. To start creating a new Amazon S3 bucket, in the top-right, click &lt;strong>Create bucket&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-897a8c73-fbbc-4cb2-850c-73ae0c2c166f.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The Amazon S3 bucket creation form will load.&lt;/p>
+&lt;p>3. Under General configuration, enter the following:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Bucket name&lt;/strong>: Enter &lt;em>calabs-bucket-&amp;lt;UniqueNumber&amp;gt;&lt;/em>(Append a unique number to the end of calabs-bucket-)&lt;/li>
+&lt;li>&lt;strong>Region&lt;/strong>: Ensure &lt;strong>US West (Oregon) us-west-2&lt;/strong> is selected&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-a1eb5e1b-1f7a-4f1e-b59d-7c653f9c234f.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You have added a unique number to the bucket name because Amazon S3 bucket names must be unique regardless of the AWS region in which the bucket is created.&lt;/p>
+&lt;p>A bucket name must also be DNS compliant. Here are some of the rules it must adhere to:&lt;/p>
+&lt;ul>
+&lt;li>They must be at least 3 and no more than 63 characters long.&lt;/li>
+&lt;li>They may contain lowercase letters, numbers, periods, and/or hyphens.&lt;/li>
+&lt;li>Each label must start and end with a lowercase letter or a number.&lt;/li>
+&lt;li>They cannot be formatted as an IP address (for example, 192.168.1.1).&lt;/li>
+&lt;/ul>
+&lt;p>The following are examples of valid bucket names:&lt;/p>
+&lt;ul>
+&lt;li>calabs-bucket-1&lt;/li>
+&lt;li>cloudacademybucket&lt;/li>
+&lt;li>cloudacademy.bucket&lt;/li>
+&lt;li>calabs.1&lt;/li>
+&lt;li>ca-labs-bucket&lt;/li>
+&lt;/ul>
+&lt;p>Make a note of the name of your bucket, you will use it later.&lt;/p>
+&lt;p>4. Make sure to select &lt;strong>ACLs Enabled&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-20220421155140-1-7729aeab-62f8-4960-86d5-b1043253e876.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>5. In the &lt;strong>Block Public Access&lt;/strong> section, un-check the &lt;strong>Block all public access&lt;/strong> check-box:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-1e5a5a80-7d88-49f9-bd9f-32d3dcb33e7e.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>6. To acknowledge that you want to make this bucket publicly accessible, check &lt;strong>I acknowledge that the current settings might result in this bucket and the objects within becoming public&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-72743ad6-61e6-4982-8779-6725c406ced4.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>7. To finish creating your Amazon S3 bucket, scroll to the bottom of the form and click &lt;strong>Create bucket&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-dac36bd9-4e0b-4794-9787-0d788ef7e1a9.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;em>Note&lt;/em>: If you see an error because your bucket name is not unique, append a different unique number to the bucket name. For example, change &amp;ldquo;calabs-bucket&amp;rdquo; to &amp;ldquo;calabs-bucket-1&amp;rdquo; (or a unique number/character string) and click &lt;strong>Create bucket&lt;/strong> again.&lt;/p>
+&lt;p>The &lt;strong>Buckets&lt;/strong> list page will load and you will see a notification that your bucket has been created:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-b4b1a3af-28e4-4c4d-a8dc-d9f232954b01.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Next, you will enable static website hosting for your bucket.&lt;/p>
+&lt;p>8. In the list, click the name of your bucket:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-86a57e47-2d56-4bfe-9c10-70e36e9b974d.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You will see an overview of your Amazon S3 bucket, and a row of tabs with &lt;strong>Objects&lt;/strong> selected.&lt;/p>
+&lt;p>9. In the row of tabs under &lt;strong>Bucket overview&lt;/strong>, click &lt;strong>Properties&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-3777675f-a4ed-4421-a453-ff2aa3a4148b.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The &lt;strong>Properties&lt;/strong> tab allows you to enable and disable various Amazon S3 bucket features, including:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Bucket Versioning&lt;/strong>: Old versions can be kept when objects are updated&lt;/li>
+&lt;li>&lt;strong>Default encryption&lt;/strong>: A bucket can be configured to encrypt all objects by default&lt;/li>
+&lt;li>&lt;strong>Server access logging&lt;/strong>: Web-server style access logs can be enabled&lt;/li>
+&lt;li>&lt;strong>Requester pays&lt;/strong>: When enabled, the entity downloading data from this bucket will pay data transfer costs incurred&lt;/li>
+&lt;/ul>
+&lt;p>10. Scroll to the bottom of the &lt;strong>Properties&lt;/strong> page and in the &lt;strong>Static website hosting&lt;/strong> section, on the right, click &lt;strong>Edit&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-e531a358-1cd8-493b-b473-8bbdd597a182.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The &lt;strong>Edit static website hosting&lt;/strong> form will load.&lt;/p>
+&lt;p>11. In the &lt;strong>Static website hosting&lt;/strong> field, select &lt;strong>Enable&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-665b7257-5488-47ce-88fd-385f2f0c4e18.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The form will expand to reveal more configuration options.&lt;/p>
+&lt;p>12. Enter the following, leaving all other fields at their defaults:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Index document&lt;/strong>: Enter &lt;em>index.html&lt;/em>&lt;/li>
+&lt;li>&lt;strong>Error document&lt;/strong>: Enter &lt;em>error/index.html&lt;/em>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-9a026970-552f-4048-9122-f96cec7b1e5b.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>13. To finish enabling static website hosting, scroll to the bottom, and click &lt;strong>Save changes&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-c1b9ba47-c8d9-429d-823b-38effeab7540.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The bucket overview page will load and you&amp;rsquo;ll see a notification that you have successfully enabled static website hosting:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-1acae611-41f8-420e-aef0-1b9b04e403a0.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Your S3 bucket is ready to host content.&lt;/p>
+&lt;p>Next, you will create a bucket policy that will apply to all objects uploaded to your bucket.&lt;/p>
+&lt;p>14. In the row of tabs, click &lt;strong>Permissions&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-b1bd273d-ec23-4b5e-9947-e142463bf575.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>15. Scroll down to the &lt;strong>Bucket policy&lt;/strong> section, and on the right, click &lt;strong>Edit&lt;/strong>.&lt;/p>
+&lt;p>The &lt;strong>Edit bucket policy&lt;/strong> form will load.&lt;/p>
+&lt;p>Amazon S3 bucket policies are defined in JavaScript Object Notation, commonly referred to as JSON.&lt;/p>
+&lt;p>16. In the &lt;strong>Policy&lt;/strong> editor, copy and paste the following and replace &lt;code>YOUR_BUCKET_NAME&lt;/code> with the name of your S3 bucket:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-json" data-lang="json">&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;Version&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;2012-10-17&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;Statement&amp;#34;&lt;/span>: [
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;Sid&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;AddPerm&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;Effect&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;Allow&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;Principal&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;*&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;Action&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;s3:GetObject&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#062873;font-weight:bold">&amp;#34;Resource&amp;#34;&lt;/span>: &lt;span style="color:#4070a0">&amp;#34;arn:aws:s3:::YOUR_BUCKET_NAME/*&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This policy will allow public access to all objects in your S3 bucket.&lt;/p>
+&lt;p>This is a permissive policy. In a non-lab environment, security concerns may require you to implement a more restrictive policy. To learn more about bucket policies, visit the AWS &lt;a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-policy-language-overview.html">Policies and Permissions in Amazon S3 documentation&lt;/a>.&lt;/p>
+&lt;p>17. To save your bucket policy, at the bottom of the page, click &lt;strong>Save changes&lt;/strong>.&lt;/p>
+&lt;p>The bucket overview page will load and you will see a notification that the policy has been edited.&lt;/p>
+&lt;p>Next, you will download a basic website from a public GitHub repository and load it into your S3 bucket.&lt;/p>
+&lt;p>18. To download a zip file containing a basic website, click &lt;a href="https://github.com/cloudacademy/static-website-example/archive/master.zip">here&lt;/a>.&lt;/p>
+&lt;p>This is an example website provided by CloudAcademy that is suitable for static website hosting.&lt;/p>
+&lt;p>19. Extract the zip to your local file system.&lt;/p>
+&lt;p>Exact instructions will vary depending on your operating system and browser. In most browsers, you can click the downloaded file and a file extraction utility will open.&lt;/p>
+&lt;p>20. In the row of tabs, click &lt;strong>Objects&lt;/strong>.&lt;/p>
+&lt;p>21. To begin uploading the website to your Amazon S3 bucket, scroll down and click &lt;strong>Upload&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-3ba6120b-b9b1-4cbf-bca0-f565d63d1709.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The &lt;strong>Upload&lt;/strong> form will load.&lt;/p>
+&lt;p>22. In the &lt;strong>Files and folders&lt;/strong> section, click &lt;strong>Add files&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-bf61f1e8-d32d-45bc-bd9c-aa2ed7c1e0af.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>A file picker will open.&lt;/p>
+&lt;p>23. Using the file picker, select all files and folders from inside the zip file you downloaded and extracted earlier.&lt;/p>
+&lt;p>If your extraction utility extracted the files to a folder called &lt;strong>static-website-example-master&lt;/strong>, ensure you upload all the files and folders inside it but not the &lt;strong>static-website-example-master&lt;/strong> folder itself. To be able to access the website, the &lt;strong>index.html&lt;/strong> file must be at the top-level of your Amazon S3 bucket.&lt;/p>
+&lt;p>You may find it easier to drag and drop the files and folders onto the &lt;strong>Upload&lt;/strong> page instead of using the file picker.&lt;/p>
+&lt;p>You may also see a browser confirmation dialog asking you to confirm you want to upload the files.&lt;/p>
+&lt;p>Once selected, the files and folders from the zip file will appear in the &lt;strong>Files and folders&lt;/strong> section.&lt;/p>
+&lt;p>24. Scroll to the bottom of the page and click &lt;strong>Upload&lt;/strong>.&lt;/p>
+&lt;p>You will see a blue notification displaying the progress of the upload, and when complete you will see a green &lt;strong>Upload succeeded&lt;/strong> notification.&lt;/p>
+&lt;p>25. To exit the &lt;strong>Upload&lt;/strong> form, on the right, click &lt;strong>Close&lt;/strong>.&lt;/p>
+&lt;p>The bucket overview page will load.&lt;/p>
+&lt;p>Your &lt;strong>Objects&lt;/strong> section should look similar to:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-22a40588-81a8-42d7-a412-a436cae6df53.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Next, you will test that your website is accessible.&lt;/p>
+&lt;p>26. To retrieve the endpoint for your bucket, click the &lt;strong>Properties&lt;/strong> tab, scroll to the bottom, and click the copy icon next to the &lt;strong>Bucket website endpoint&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-71b42d84-00b9-4786-abcd-3c890b00745c.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>27. Paste the endpoint into the address bar of a new browser tab.&lt;/p>
+&lt;p>You will see a website load that looks like this:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-f82e16a8-bf48-41dd-8537-51dadca74c0e.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>This website is being served by your Amazon S3 bucket.&lt;/p>
+&lt;h2 id="creating-an-amazon-cloudfront-distribution-for-the-static-website">Creating an Amazon CloudFront Distribution for the Static Website&lt;/h2>
+&lt;p>1. In the AWS Management Console search bar, enter &lt;em>CloudFront&lt;/em>, and click the &lt;strong>CloudFront&lt;/strong> result under &lt;strong>Services&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid0-1cbf7c5b-ada2-4169-a9f1-08cf0fb62d6d.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The Amazon CloudFront console will load.&lt;/p>
+&lt;p>2. To start creating a distribution, click &lt;strong>Create a CloudFront Distribution&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid0-cf223bb2-6bef-40c8-a299-cf86ba4b56e6.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>3. Under &lt;strong>Origin&lt;/strong>, in the &lt;strong>Origin Domain&lt;/strong> text-box, enter the Amazon S3 static website hosting endpoint that you created earlier:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid1-a65ddf79-4df6-479a-a895-9da323584ca1.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>4. Scroll down to the&lt;strong>Settings&lt;/strong> settings, in the &lt;strong>Default Root Object&lt;/strong> text-box, enter &lt;em>index.html&lt;/em>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-47adcf25-c8bb-4839-9ca0-7085917f8bf2.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You are setting this field because Amazon CloudFront doesn&amp;rsquo;t always transparently relay requests to the origin. If you did not set a default root object on the distribution you would see an AccessDenied error when you access the CloudFront distribution&amp;rsquo;s domain later in this lab step.&lt;/p>
+&lt;p>To learn more, see the &lt;strong>How CloudFront Works if You Don&amp;rsquo;t Define a Root Object&lt;/strong> section of the AWS developer guide for &lt;a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html#DefaultRootObjectNotSet">Specifying a Default Root Object&lt;/a>.&lt;/p>
+&lt;p>5. Leave all other settings at their default values, scroll to the bottom, and click &lt;strong>Create Distribution&lt;/strong>.&lt;/p>
+&lt;p>The CloudFront distribution list page will load and you will see your distribution listed.&lt;/p>
+&lt;p>You will see the &lt;strong>Last Modified&lt;/strong> of your distribution is &lt;strong>Deploying&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid3-6f284322-536b-41ce-9847-3bfcb54645ee.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>It can take up to 15 minutes to deploy a new Amazon CloudFront distribution. Once complete, the &lt;strong>Status&lt;/strong> will change to &lt;strong>Enabled&lt;/strong>.&lt;/p>
+&lt;p>There are two main types of origin that Amazon CloudFront supports, Amazon S3 buckets, and custom origins. A custom origin could be a website being served by an EC2 instance, or it could be a web server outside of AWS. To learn more while your CloudFront distribution is deploying, visit the AWS &lt;a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistS3AndCustomOrigins.html">Using Amazon S3 Origins, MediaPackage Channels, and Custom Origins for Web Distributions&lt;/a> page.&lt;/p>
+&lt;p>Once your deployment is complete, continue with the instructions.&lt;/p>
+&lt;p>6. To view details of your distribution, click the random alphanumeric &lt;strong>ID&lt;/strong>:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-8a62e743-9938-49ee-9682-e77b2ced1aae.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;em>Note&lt;/em>: Your &lt;strong>ID&lt;/strong> will be different.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid4-b17e84b7-555d-4ca6-9a8c-223830b58ee7.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>7. Copy the value of the &lt;strong>Distribution Domain Name&lt;/strong> field:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/blobid5-21cef212-409a-439f-967e-b7fbea1196a4.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>8. Paste the domain name into the address bar of a new browser tab.&lt;/p>
+&lt;p>You will see the website that you uploaded to your Amazon S3 bucket display:&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="https://assets.cloudacademy.com/bakery/media/uploads/content_engine/image-f82e16a8-bf48-41dd-8537-51dadca74c0e.png"
+id="zoom-default"
+alt="alt"
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>You are accessing the website through your Amazon CloudFront distribution.&lt;/p>
+&lt;p>&lt;em>Note&lt;/em>: The instructions below are optional. Perform them if there is enough time left in the lab.&lt;/p>
+&lt;p>9. On the website, click through and visit the different pages a few times to generate traffic.&lt;/p>
+&lt;p>If you have a different web browser available, try accessing the site in the other browser.&lt;/p></description></item></channel></rss>

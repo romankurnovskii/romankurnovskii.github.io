@@ -1,14 +1,925 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/linux/</link><description>Recent content in Linux on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2023 Personal page</copyright><lastBuildDate>Sat, 30 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>nmap - cheatsheet</title><link>https://romankurnovskii.com/en/posts/linux/nmap-cheatsheet/</link><pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/nmap-cheatsheet/</guid><description>Scanning Options Nmap Option Description 10.10.10.0/24 Target network range. -sn Disables port scanning. -Pn Disables ICMP Echo Requests -n Disables DNS Resolution. -PE Performs the ping scan by using ICMP Echo Requests against the target. --packet-trace Shows all packets sent and received. --reason Displays the reason for a specific result. --disable-arp-ping Disables ARP Ping Requests. --top-ports=&amp;lt;num&amp;gt; Scans the specified top ports that have been defined as most frequent. -p- Scan all ports. -p22-110 Scan all ports between 22 and 110.</description></item><item><title>Monitoring</title><link>https://romankurnovskii.com/en/posts/linux/debian-setup/</link><pubDate>Fri, 29 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/debian-setup/</guid><description>Auditing Packages dpkg --verify or
-dpkg -V # dpkg -V ??5?????? /lib/systemd/system/ssh.service ??5?????? c /etc/libvirt/qemu/networks/default.xml &amp;lsquo;ssh.service&amp;rsquo;: reports a change to SSH&amp;rsquo;s service file that the administrator made to the packaged file instead of using an appropriate /etc/systemd/system/ssh.service override &amp;lsquo;c&amp;rsquo; letter: legitimately modified Monitoring Files AIDE apt install aide aideinit # first db init aideinit creates a cron job in etc/cron.daily/aide
-DB: /var/lib/aide/aide.db
-When changes are detected, AIDE records them in log files /var/log/aide/*.log
-logcheck Monitors log files every hour by default and sends unusual log messages in emails to the administrator for further analysis</description></item><item><title>Wireless access point with hostapd on Debian</title><link>https://romankurnovskii.com/en/posts/linux/wireless-access-point/</link><pubDate>Fri, 29 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/wireless-access-point/</guid><description>hostapd is a user space daemon for access point and authentication servers. It implements IEEE 802.11 access point management, IEEE 802.1X/WPA/WPA2/EAP Authenticators and RADIUS authentication server. The current version supports Linux (Host AP, mac80211-based drivers) and FreeBSD (net80211). Configure network traffic routing and Network Address Translation (NAT) using iptables.
-Configure the system to forward packets from one network interface to another, applying NAT to the packets going out of the eth0 interface.
-Network configuration where the system is intended to function as a router or gateway between two networks (e.</description></item><item><title>How to disable IPv6 on Debian/Kali Linux</title><link>https://romankurnovskii.com/en/posts/linux/howto-disable-ipv6-on-debian/</link><pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/howto-disable-ipv6-on-debian/</guid><description>TL;DR git clone https://github.com/romankurnovskii/kali-shortcuts.git cd kali-shortcuts chmod +x disable_ipv6.sh sudo ./disable_ipv6.sh Edit sysctl Configuration In the terminal, type sudo vi /etc/sysctl.conf and press Enter. This opens the sysctl.conf file in the text editor with root privileges. Add IPv6 Disable Lines At the end of the file, add the following lines: net.ipv6.conf.all.disable_ipv6 = 1 net.ipv6.conf.default.disable_ipv6 = 1 net.ipv6.conf.lo.disable_ipv6 = 1 These lines will disable IPv6 on all network interfaces, including the loopback interface.
-Save and Exit Save /etc/sysctl.conf and exit text editor Apply Changes To apply the changes without rebooting, run `sudo sysctl -p`` in the terminal.</description></item><item><title>Interactive vs. Non-Interactive Users in Linux</title><link>https://romankurnovskii.com/en/posts/linux-interactive-non-interactive-users/</link><pubDate>Thu, 24 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux-interactive-non-interactive-users/</guid><description>Characteristics In a Linux environment, users can be broadly categorized as &amp;ldquo;interactive&amp;rdquo; and &amp;ldquo;non-interactive&amp;rdquo;. These distinctions stem from how these user accounts interact (or don&amp;rsquo;t interact) with the system.
-Definition Interactive Users: These are users who interact directly with the system, usually through a shell. When you log into a computer using SSH or a terminal, you&amp;rsquo;re operating as an interactive user. Non-Interactive Users: These users are designed to perform specific tasks without direct human intervention. Examples include system accounts running services like apache or mysql.</description></item><item><title>Bash Special Variables $! $0 $? $$</title><link>https://romankurnovskii.com/en/posts/bash-variables/</link><pubDate>Tue, 14 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/bash-variables/</guid><description>$0 - The Name of the Script $0 represents the name of the Bash script as it was called.
-If you execute a script with bash myscript.sh, then within myscript.sh, $0 will be myscript.sh.
-$1, $2, $3, &amp;hellip; - Positional Parameters These variables correspond to the arguments passed to the script. $1 is the first argument, $2 is the second, and so on.
-In the command bash myscript.sh arg1 arg2, $1 equals arg1, and $2 equals arg2.
-$! - PID of the Last Background Process This holds the process ID of the most recent background process.</description></item><item><title>Bash code snippets</title><link>https://romankurnovskii.com/en/posts/bash-snippets/</link><pubDate>Sun, 12 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/bash-snippets/</guid><description>Rename all files in current directory / Remove prefix #!/bin/bash REMOVE_PREFIX=$1 files=(*) for file in &amp;#34;${files[@]}&amp;#34; do if [[ $file == *&amp;#34;${REMOVE_PREFIX}&amp;#34;* ]]; then # Remove everything before and including the &amp;#34;№&amp;#34; symbol new_file=${file##*&amp;#34;${REMOVE_PREFIX}&amp;#34;} mv &amp;#34;$file&amp;#34; &amp;#34;$new_file&amp;#34; echo &amp;#34;Renamed $file to $new_file&amp;#34; fi done $ ./rename_files.sh abc renamed file abc123.txt -&amp;gt; 123.txt Add substring to filename #!/bin/bash DIR=&amp;#34;/path/to/folder&amp;#34; cd &amp;#34;$DIR&amp;#34; # Rename all .png files and add &amp;#34;.ru&amp;#34; before .png for file in *.png; do base=$(basename &amp;#34;$file&amp;#34; .png) mv &amp;#34;$file&amp;#34; &amp;#34;${base}.</description></item><item><title>How to Download and Install Linux RHEL 9 for Free</title><link>https://romankurnovskii.com/en/posts/howto-install-rhel-9-free/</link><pubDate>Fri, 17 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/howto-install-rhel-9-free/</guid><description>Red Hat Enterprise Linux 9 (RHEL 9), codenamed Plow, has gone public (GA). Red Hat announced it on May 18, 2022. It replaced the beta version, which had been in existence since November 3, 2021.
-RHEL 9 is the first few releases in the Red Hat family. It is the first major release since IBM acquired Red Hat in July 2019, and the first major release since abandoning the CentOS project in favor of CentOS Stream, which is now RHEL&amp;rsquo;s predecessor.</description></item><item><title>Tar command Cheat Sheet</title><link>https://romankurnovskii.com/en/posts/cheat-sheet-command-tar/</link><pubDate>Sun, 05 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/cheat-sheet-command-tar/</guid><description>Common options z compress with gzip c create an archive u append files which are newer than the corresponding copy ibn the archive f filename of the archive v verbose, display what is inflated or deflated a unlike of z, determine compression based on file extension Create tar named archive.tar containing directory tar cf archive.tar /path/files Concatenate files into a single tar tar -cf archive.tar /path/files Extract the contents from archive.tar tar xf archive.tar Create a gzip compressed tar file name archive.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/linux/</link><description>Recent content in Linux on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 21 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Set Up Your First VPS on Debian</title><link>https://romankurnovskii.com/en/posts/linux/debian-vps-initial-setup/</link><pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/debian-vps-initial-setup/</guid><description>&lt;h1 id="setting-up-your-first-vps-secure-configuration-guide">Setting Up Your First VPS: Secure Configuration Guide&lt;/h1>
+&lt;p>When setting up a new VPS, securing access is critical to prevent unauthorized usage. In this guide, you&amp;rsquo;ll create a new user, disable SSH root access, and configure SSH key-based authentication for added security.&lt;/p>
+&lt;h2 id="update-and-upgrade-packages">Update and Upgrade Packages&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>apt update
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>apt upgrade -y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-1-initial-login-as-root">Step 1: Initial Login as Root&lt;/h2>
+&lt;p>By default, VPS providers often grant root access. Start by logging in using the provided credentials:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh root@&amp;lt;your-server-ip&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-2-create-a-new-user">Step 2: Create a New User&lt;/h2>
+&lt;p>Replace &lt;username> with your preferred username:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>useradd -m -s /bin/bash -G sudo &amp;lt;username&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In case of delete the User:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>userdel -r &amp;lt;username&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>-r&lt;/code>: Removes the user&amp;rsquo;s home directory.&lt;/p>
+&lt;h2 id="step-3-configure-ssh-key-based-authentication">Step 3: Configure SSH Key-Based Authentication&lt;/h2>
+&lt;p>&lt;strong>3.1. Generate an SSH Key Pair (Local Machine)&lt;/strong>
+On your local machine (not the VPS), check if you already have an SSH key:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ls ~/.ssh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Look for files like &lt;code>id_rsa&lt;/code> and &lt;code>id_rsa.pub&lt;/code>. If these files exist, you already have an SSH key. Skip to &lt;strong>3.2&lt;/strong> to retrieve your public key.&lt;/p>
+&lt;p>If no SSH key exists, generate one with the following command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh-keygen -t rsa -b &lt;span style="color:#40a070">4096&lt;/span> -C &lt;span style="color:#4070a0">&amp;#34;your_email@example.com&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;code>-t rsa&lt;/code>: Specifies the RSA algorithm.&lt;/li>
+&lt;li>&lt;code>-b 4096&lt;/code>: Sets the key size to 4096 bits (more secure).&lt;/li>
+&lt;li>&lt;code>-C &amp;quot;your_email@example.com&amp;quot;&lt;/code>: Adds a comment to identify the key.&lt;/li>
+&lt;/ul>
+&lt;p>Follow the prompts:&lt;/p>
+&lt;ul>
+&lt;li>Press Enter to save the key in the default location (&lt;code>~/.ssh/id_rsa&lt;/code>).&lt;/li>
+&lt;li>Optionally, set a passphrase for additional security.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>3.2. Retrieve Your Public Key&lt;/strong>&lt;/p>
+&lt;p>Your public key is stored in the file &lt;code>~/.ssh/id_rsa.pub&lt;/code>. To display it, run:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cat ~/.ssh/id_rsa.pub
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You’ll see a string that starts with ssh-rsa:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>ssh-rsa AAAAB3Nza...your-key... your_email@example.com
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Copy this entire string to your clipboard.&lt;/p>
+&lt;p>&lt;strong>3.3. Add Your Public Key to the VPS&lt;/strong>
+Log in to your VPS as &lt;username>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>su - &amp;lt;username&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create the &lt;code>.ssh&lt;/code> directory in the home folder:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>mkdir -p ~/.ssh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chmod &lt;span style="color:#40a070">700&lt;/span> ~/.ssh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Open the authorized_keys file:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>vi ~/.ssh/authorized_keys
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Paste your public key into the file and save it.&lt;/p>
+&lt;p>Set the appropriate permissions:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>chmod &lt;span style="color:#40a070">600&lt;/span> ~/.ssh/authorized_keys
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>3.4. Test SSH Key Authentication&lt;/strong>
+On your local machine, test the connection to your VPS using the myuser account:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh &amp;lt;username&amp;gt;@&amp;lt;your-server-ip&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># if using port:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ssh -p &amp;lt;port&amp;gt; &amp;lt;username&amp;gt;@&amp;lt;your-server-ip&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If the setup is correct, you’ll log in without being prompted for a password.&lt;/p>
+&lt;h2 id="step-4-disable-root-ssh-login">Step 4: Disable Root SSH Login&lt;/h2>
+&lt;p>Edit the SSH Configuration File&lt;/p>
+&lt;p>Open the SSH daemon configuration file:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo vi /etc/ssh/sshd_config
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Update the Following Settings&lt;/p>
+&lt;p>Disable root login:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>PermitRootLogin no
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Disable password authentication:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>PasswordAuthentication no
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Save and Exit the file, then restart the SSH service:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo systemctl restart sshd
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-5-final-security-check">Step 5: Final Security Check&lt;/h2>
+&lt;p>Test New Configuration&lt;/p>
+&lt;p>Open a new terminal and verify that:&lt;/p>
+&lt;ul>
+&lt;li>You can log in with the new user.&lt;/li>
+&lt;li>Root login is disabled.&lt;/li>
+&lt;li>Password-based login is disabled.&lt;/li>
+&lt;li>Firewall Setup (Optional)&lt;/li>
+&lt;/ul>
+&lt;p>Enable the firewall and allow only SSH traffic:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ufw allow OpenSSH
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ufw &lt;span style="color:#007020">enable&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-6-backup-and-monitor">Step 6: Backup and Monitor&lt;/h2>
+&lt;p>Backup Your SSH Keys Ensure your private key is securely stored on your local machine.&lt;/p>
+&lt;p>Monitor Login Attempts Check login activity using:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cat /var/log/auth.log
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Initial Setup Guide for Ubuntu 22.04 on a VPS</title><link>https://romankurnovskii.com/en/posts/linux/ubuntu-server-initial-setup/</link><pubDate>Thu, 02 May 2024 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/ubuntu-server-initial-setup/</guid><description>&lt;h2 id="update-and-upgrade-packages">Update and Upgrade Packages&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>apt update
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>apt upgrade -y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="setting-up-ssh-keys">Setting Up SSH Keys&lt;/h2>
+&lt;p>Using SSH keys instead of passwords enhances security. First, generate an SSH key pair on your local machine (if you don&amp;rsquo;t already have one):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh-keygen -t ed25519 -C &lt;span style="color:#4070a0">&amp;#34;your_email@example.com&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Next, copy your public SSH key to the new user&amp;rsquo;s account on your server. You can do this from your local machine:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh-copy-id username@your_server_ip
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># or with provided port&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ssh-copy-id -p &lt;span style="color:#40a070">1234&lt;/span> username@your_server_ip
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This command uploads your public SSH key and configures the server to recognize it.&lt;/p>
+&lt;h2 id="disabling-password-authentication">Disabling Password Authentication&lt;/h2>
+&lt;p>To prevent SSH login using a username and password, edit the SSH configuration file:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo nano /etc/ssh/sshd_config
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Find the following lines and modify them as shown:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span style="display:flex;">&lt;span>PasswordAuthentication no
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>UsePAM no
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>After making these changes, restart the SSH service to apply them:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo systemctl restart sshd
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>nmap - cheatsheet</title><link>https://romankurnovskii.com/en/posts/linux/nmap-cheatsheet/</link><pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/nmap-cheatsheet/</guid><description>&lt;h2 id="scanning-options">Scanning Options&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;strong>Nmap Option&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>Description&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>10.10.10.0/24&lt;/code>&lt;/td>
+&lt;td>Target network range.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-sn&lt;/code>&lt;/td>
+&lt;td>Disables port scanning.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-Pn&lt;/code>&lt;/td>
+&lt;td>Disables ICMP Echo Requests&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-n&lt;/code>&lt;/td>
+&lt;td>Disables DNS Resolution.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-PE&lt;/code>&lt;/td>
+&lt;td>Performs the ping scan by using ICMP Echo Requests against the target.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--packet-trace&lt;/code>&lt;/td>
+&lt;td>Shows all packets sent and received.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--reason&lt;/code>&lt;/td>
+&lt;td>Displays the reason for a specific result.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--disable-arp-ping&lt;/code>&lt;/td>
+&lt;td>Disables ARP Ping Requests.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--top-ports=&amp;lt;num&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Scans the specified top ports that have been defined as most frequent.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-p-&lt;/code>&lt;/td>
+&lt;td>Scan all ports.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-p22-110&lt;/code>&lt;/td>
+&lt;td>Scan all ports between 22 and 110.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-p22,25&lt;/code>&lt;/td>
+&lt;td>Scans only the specified ports 22 and 25.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-F&lt;/code>&lt;/td>
+&lt;td>Scans top 100 ports.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-sS&lt;/code>&lt;/td>
+&lt;td>Performs an TCP SYN-Scan.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-sA&lt;/code>&lt;/td>
+&lt;td>Performs an TCP ACK-Scan.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-sU&lt;/code>&lt;/td>
+&lt;td>Performs an UDP Scan.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-sV&lt;/code>&lt;/td>
+&lt;td>Scans the discovered services for their versions.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-sC&lt;/code>&lt;/td>
+&lt;td>Perform a Script Scan with scripts that are categorized as &amp;ldquo;default&amp;rdquo;.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--script &amp;lt;script&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Performs a Script Scan by using the specified scripts.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-O&lt;/code>&lt;/td>
+&lt;td>Performs an OS Detection Scan to determine the OS of the target.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-A&lt;/code>&lt;/td>
+&lt;td>Performs OS Detection, Service Detection, and traceroute scans.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-D RND:5&lt;/code>&lt;/td>
+&lt;td>Sets the number of random Decoys that will be used to scan the target.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-e&lt;/code>&lt;/td>
+&lt;td>Specifies the network interface that is used for the scan.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-S 10.10.10.200&lt;/code>&lt;/td>
+&lt;td>Specifies the source IP address for the scan.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-g&lt;/code>&lt;/td>
+&lt;td>Specifies the source port for the scan.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--dns-server &amp;lt;ns&amp;gt;&lt;/code>&lt;/td>
+&lt;td>DNS resolution is performed by using a specified name server.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="output-options">Output Options&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;strong>Nmap Option&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>Description&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>-oA filename&lt;/code>&lt;/td>
+&lt;td>Stores the results in all available formats starting with the name of &amp;ldquo;filename&amp;rdquo;.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-oN filename&lt;/code>&lt;/td>
+&lt;td>Stores the results in normal format with the name &amp;ldquo;filename&amp;rdquo;.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-oG filename&lt;/code>&lt;/td>
+&lt;td>Stores the results in &amp;ldquo;grepable&amp;rdquo; format with the name of &amp;ldquo;filename&amp;rdquo;.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-oX filename&lt;/code>&lt;/td>
+&lt;td>Stores the results in XML format with the name of &amp;ldquo;filename&amp;rdquo;.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="performance-options">Performance Options&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;strong>Nmap Option&lt;/strong>&lt;/th>
+&lt;th>&lt;strong>Description&lt;/strong>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>--max-retries &amp;lt;num&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Sets the number of retries for scans of specific ports.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--stats-every=5s&lt;/code>&lt;/td>
+&lt;td>Displays scan&amp;rsquo;s status every 5 seconds.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-v/-vv&lt;/code>&lt;/td>
+&lt;td>Displays verbose output during the scan.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--initial-rtt-timeout 50ms&lt;/code>&lt;/td>
+&lt;td>Sets the specified time value as initial RTT timeout.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--max-rtt-timeout 100ms&lt;/code>&lt;/td>
+&lt;td>Sets the specified time value as maximum RTT timeout.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>--min-rate 300&lt;/code>&lt;/td>
+&lt;td>Sets the number of packets that will be sent simultaneously.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>-T &amp;lt;0-5&amp;gt;&lt;/code>&lt;/td>
+&lt;td>Specifies the specific timing template.&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Monitoring Linux OS</title><link>https://romankurnovskii.com/en/posts/linux/debian-setup/</link><pubDate>Fri, 29 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/debian-setup/</guid><description>&lt;h2 id="auditing-packages">Auditing Packages&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>dpkg --verify
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>or&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>dpkg -V
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span># dpkg -V
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>??5?????? /lib/systemd/system/ssh.service
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>??5?????? c /etc/libvirt/qemu/networks/default.xml
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&amp;lsquo;ssh.service&amp;rsquo;: reports a change to SSH&amp;rsquo;s service file that the administrator made to the packaged file instead of using an appropriate /etc/systemd/system/ssh.service override&lt;/li>
+&lt;li>&amp;lsquo;c&amp;rsquo; letter: legitimately modified&lt;/li>
+&lt;/ul>
+&lt;h2 id="monitoring-files">Monitoring Files&lt;/h2>
+&lt;h3 id="aide">AIDE&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>apt install aide
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>aideinit # first db init
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>aideinit&lt;/code> creates a cron job in &lt;code>etc/cron.daily/aide&lt;/code>&lt;/p>
+&lt;p>DB: &lt;code>/var/lib/aide/aide.db&lt;/code>&lt;/p>
+&lt;p>When changes are detected, AIDE records them in log files &lt;code>/var/log/aide/*.log&lt;/code>&lt;/p>
+&lt;h3 id="logcheck">logcheck&lt;/h3>
+&lt;p>Monitors log files every hour by default and sends unusual log messages in emails to the administrator for further analysis&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>sudo apt install logcheck
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>sudo -u logcheck logcheck -o
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>debian@debian:~$ sudo -u logcheck logcheck -help
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>usage: logcheck [-c CFG] [-d] [-h] [-H HOST] [-l LOG] [-L CFG] [-D DIR] [-m MAIL] [-o]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [-r DIR] [-s|-p|-w] [-R] [-S DIR] [-t] [-T] [-u]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -c CFG = override default configuration file
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -d = debug mode
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -h = print this usage information and exit
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -H HOST = use this hostname in the subject of any generated mail
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -l LOG = check the specified logfile
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -L CFG = override default logfiles list
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -D DIR = override default logfiles lists directory
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -m MAIL = send the report to the specified recipient
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -o = send the report to stdout, no mail will be sent
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -p = use the &amp;#34;paranoid&amp;#34; runlevel
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -r DIR = override default rules directory
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -R = adds &amp;#34;Reboot:&amp;#34; to email subject
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -s = use the &amp;#34;server&amp;#34; runlevel
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -S DIR = override default state directory
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -t = testing mode, don&amp;#39;t update the logfile offsets
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -T = do not remove the TMPDIR
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -u = enable syslog-summary
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -v = print version
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -w = use the &amp;#34;workstation&amp;#34; runlevel
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Save log to some dir path&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>mkdir -p /data/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo -u logcheck logcheck -o &amp;gt; /data/$(date +&amp;#34;%m-%d-%Y-%T&amp;#34;).log
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Run every hour
+&lt;ul>
+&lt;li>Create script, make it executable and drop it in &lt;code>/etc/cron.hourly&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://portal.offsec.com/courses/pen-103/books-and-videos/modal/modules/securing-and-monitoring-kali-linux/exercises/monitoring-kali-services">https://portal.offsec.com/courses/pen-103/books-and-videos/modal/modules/securing-and-monitoring-kali-linux/exercises/monitoring-kali-services&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.digitalocean.com/community/tutorials/iptables-essentials-common-firewall-rules-and-commands#listing-and-deleting-rules">https://www.digitalocean.com/community/tutorials/iptables-essentials-common-firewall-rules-and-commands#listing-and-deleting-rules&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Wireless access point with hostapd on Debian</title><link>https://romankurnovskii.com/en/posts/linux/wireless-access-point/</link><pubDate>Fri, 29 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/wireless-access-point/</guid><description>&lt;blockquote>
+&lt;p>&lt;a href="https://manpages.debian.org/testing/hostapd/hostapd.8.en.html">hostapd&lt;/a> is a user space daemon for access point and authentication servers. It implements IEEE 802.11 access point management, IEEE 802.1X/WPA/WPA2/EAP Authenticators and RADIUS authentication server. The current version supports Linux (Host AP, mac80211-based drivers) and FreeBSD (net80211).
+Configure network traffic routing and Network Address Translation (NAT) using &lt;code>iptables&lt;/code>.&lt;/p>&lt;/blockquote>
+&lt;p>Configure the system to forward packets from one network interface to another, applying NAT to the packets going out of the &lt;code>eth0&lt;/code> interface.&lt;/p>
+&lt;p>Network configuration where the system is intended to function as a router or gateway between two networks (e.g., forwarding packets from a Wi-Fi network to an Ethernet network).&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>kali@kali:~$ sudo iptables -t nat -F
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kali@kali:~$
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kali@kali:~$ sudo iptables -F
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kali@kali:~$
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kali@kali:~$ sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kali@kali:~$
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kali@kali:~$ sudo iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kali@kali:~$
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kali@kali:~$ &lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#40a070">1&lt;/span> | sudo tee /proc/sys/net/ipv4/ip_forward &lt;span style="color:#60a0b0;font-style:italic"># (DNS, dhcp still required)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kali@kali:~$
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="1-sudo-iptables--t-nat--f">1. sudo iptables -t nat -F&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>iptables&lt;/code> is a command-line utility used to set up, maintain, and inspect the tables of IP packet filter rules in the Linux kernel.&lt;/li>
+&lt;li>&lt;code>-t nat&lt;/code> specifies the NAT table, one of the several tables in the &lt;code>iptables&lt;/code> utility used for network address translation.&lt;/li>
+&lt;li>&lt;code>-F&lt;/code> stands for &amp;lsquo;flush&amp;rsquo;, which clears or deletes all the rules in the selected table (in this case, the NAT table).&lt;/li>
+&lt;li>Essentially, this command clears all NAT rules that may have been previously set up.&lt;/li>
+&lt;/ul>
+&lt;h2 id="2-sudo-iptables--f">2. sudo iptables -F&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>-F&lt;/code> command is used without the &lt;code>-t&lt;/code> option, which means it applies to the default filter table.&lt;/li>
+&lt;li>This command clears all the rules in the filter table, which is responsible for packet filtering.&lt;/li>
+&lt;/ul>
+&lt;h2 id="3-sudo-iptables--t-nat--a-postrouting--o-eth0--j-masquerade">3. sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE&lt;/h2>
+&lt;p>&lt;code>-A POSTROUTING&lt;/code> adds a rule to the POSTROUTING chain. The POSTROUTING chain is used for altering packets after they have been routed.
+&lt;code>-o eth0&lt;/code> specifies the outgoing network interface, &lt;code>eth0&lt;/code> in this case.
+&lt;code>-j MASQUERADE&lt;/code> sets the &lt;code>MASQUERADE&lt;/code> target. This is used for NAT. It enables IP masquerading, which hides your private IP address behind the public IP address of your network interface (here, &lt;code>eth0&lt;/code>). It&amp;rsquo;s often used in situations where your IP address is dynamically assigned, such as a dial-up or DSL connection.
+This command sets up NAT for packets going out of the &lt;code>eth0&lt;/code> interface.&lt;/p>
+&lt;h2 id="4-sudo-iptables--a-forward--i-wlan0--o-eth0--j-accept">4. sudo iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>-A FORWARD&lt;/code> adds a rule to the FORWARD chain. The FORWARD chain is used for packets that are being routed through the device.&lt;/li>
+&lt;li>&lt;code>-i wlan0&lt;/code> specifies the incoming interface, &lt;code>wlan0&lt;/code> in this case.&lt;/li>
+&lt;li>&lt;code>-o eth0&lt;/code> specifies the outgoing interface, eth0.&lt;/li>
+&lt;li>&lt;code>-j ACCEPT&lt;/code> means that these packets will be accepted and forwarded from &lt;code>wlan0&lt;/code> to &lt;code>eth0&lt;/code>.&lt;/li>
+&lt;li>This command is typically part of configuring the device to act as a router or gateway, forwarding packets from one interface to another.&lt;/li>
+&lt;/ul>
+&lt;h2 id="5-echo-1--sudo-tee-procsysnetipv4ip_forward">5. echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>/proc/sys/net/ipv4/ip_forward&lt;/code> is a system file that controls the IP forwarding setting of the kernel. When this is set to 1, it enables the system to forward IP packets from one network to another, effectively functioning as a router.&lt;/li>
+&lt;li>echo 1 outputs 1, and the | sudo tee part is used to write this value into the &lt;code>ip_forward&lt;/code> file with the necessary permissions.&lt;/li>
+&lt;li>This command is crucial for enabling IP forwarding, allowing the system to route packets between interfaces.&lt;/li>
+&lt;/ul>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://portal.offsec.com/courses/pen-103/books-and-videos/modal/modules/securing-and-monitoring-kali-linux/exercises/securing-the-kali-file-system">https://portal.offsec.com/courses/pen-103/books-and-videos/modal/modules/securing-and-monitoring-kali-linux/exercises/securing-the-kali-file-system&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>How to disable IPv6 on Debian/Kali Linux</title><link>https://romankurnovskii.com/en/posts/linux/howto-disable-ipv6-on-debian/</link><pubDate>Sun, 24 Dec 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/howto-disable-ipv6-on-debian/</guid><description>&lt;h2 id="tldr">TL;DR&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>git clone https://github.com/romankurnovskii/kali-shortcuts.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">cd&lt;/span> kali-shortcuts
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chmod +x disable_ipv6.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo ./disable_ipv6.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="edit-sysctl-configuration">Edit sysctl Configuration&lt;/h2>
+&lt;ul>
+&lt;li>In the terminal, type &lt;code>sudo vi /etc/sysctl.conf&lt;/code> and press Enter. This opens the &lt;code>sysctl.conf&lt;/code> file in the text editor with root privileges.&lt;/li>
+&lt;/ul>
+&lt;h2 id="add-ipv6-disable-lines">Add IPv6 Disable Lines&lt;/h2>
+&lt;ul>
+&lt;li>At the end of the file, add the following lines:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>net.ipv6.conf.all.disable_ipv6 = 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>net.ipv6.conf.default.disable_ipv6 = 1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>net.ipv6.conf.lo.disable_ipv6 = 1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>These lines will disable IPv6 on all network interfaces, including the loopback interface.&lt;/p>
+&lt;h2 id="save-and-exit">Save and Exit&lt;/h2>
+&lt;ul>
+&lt;li>Save &lt;code>/etc/sysctl.conf&lt;/code> and exit text editor&lt;/li>
+&lt;/ul>
+&lt;h2 id="apply-changes">Apply Changes&lt;/h2>
+&lt;ul>
+&lt;li>To apply the changes without rebooting, run `sudo sysctl -p`` in the terminal. This will reload the sysctl configuration with your changes.&lt;/li>
+&lt;/ul>
+&lt;h2 id="verify-changes-optional">Verify Changes (Optional)&lt;/h2>
+&lt;p>To confirm that IPv6 is disabled, you can run `cat /proc/sys/net/ipv6/conf/all/disable_ipv6``. If it returns 1, then IPv6 has been successfully disabled.&lt;/p>
+&lt;h2 id="reboot-optional">Reboot (Optional)&lt;/h2>
+&lt;p>While the &lt;code>sysctl -p&lt;/code> command applies changes immediately, it&amp;rsquo;s a good idea to reboot your system to ensure that the changes persist after a restart. You can reboot by typing &lt;code>sudo reboot&lt;/code> in the terminal.&lt;/p>
+&lt;h2 id="troubleshooting">Troubleshooting&lt;/h2>
+&lt;h3 id="linux-cant-add-ipv6-to-interface-tun0">Linux can&amp;rsquo;t add IPv6 to interface tun0&lt;/h3>
+&lt;p>Can happen when trying to connect through OpenVPN.&lt;/p>
+&lt;p>In the client file &lt;code>.ovpn&lt;/code> add lines:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>pull-filter ignore &amp;#34;ifconfig-ipv6&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pull-filter ignore &amp;#34;route-ipv6&amp;#34;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Interactive vs. Non-Interactive Users in Linux</title><link>https://romankurnovskii.com/en/posts/linux-interactive-non-interactive-users/</link><pubDate>Thu, 24 Aug 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux-interactive-non-interactive-users/</guid><description>&lt;h2 id="characteristics">Characteristics&lt;/h2>
+&lt;p>In a Linux environment, users can be broadly categorized as &amp;ldquo;interactive&amp;rdquo; and &amp;ldquo;non-interactive&amp;rdquo;. These distinctions stem from how these user accounts interact (or don&amp;rsquo;t interact) with the system.&lt;/p>
+&lt;h2 id="definition">Definition&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Interactive Users:&lt;/strong> These are users who interact directly with the system, usually through a shell. When you log into a computer using SSH or a terminal, you&amp;rsquo;re operating as an interactive user.&lt;/li>
+&lt;li>&lt;strong>Non-Interactive Users:&lt;/strong> These users are designed to perform specific tasks without direct human intervention. Examples include system accounts running services like &lt;em>apache&lt;/em> or &lt;em>mysql&lt;/em>.&lt;/li>
+&lt;/ul>
+&lt;h2 id="interaction-usage-environment">Interaction, Usage, Environment&lt;/h2>
+&lt;p>&lt;strong>Interaction:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Interactive: Engages with the system via interfaces like shells.&lt;/li>
+&lt;li>Non-Interactive: Executes tasks automatically, often without a shell or user interface.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Usage:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Interactive: Utilized for general-purpose tasks, from browsing directories to installing software.&lt;/li>
+&lt;li>Non-Interactive: Specific to particular duties, often system-related.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Environment:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Interactive: Has a full user environment. This includes a &lt;code>HOME&lt;/code> directory, user-specific settings, etc.&lt;/li>
+&lt;li>Non-Interactive: Limited or no user environment. Typically lacks things like a &lt;code>HOME&lt;/code> directory.&lt;/li>
+&lt;/ul>
+&lt;h2 id="creating-user">Creating user&lt;/h2>
+&lt;p>When creating users in Linux, there&amp;rsquo;s often no distinction between interactive and non-interactive users. The difference arises in &lt;mark>how the user is utilized&lt;/mark>. However, for security and operational reasons, non-interactive users might have restricted shells or no shell at all.&lt;/p>
+&lt;p>&lt;strong>Why Not Simply Create a User and Use It Non-Interactively?&lt;/strong>&lt;/p>
+&lt;p>Even if a user is created as interactive, it can be used non-interactively. However, for security reasons, services or tasks might be assigned to users with restricted permissions or shells to minimize potential risks.&lt;/p>
+&lt;h2 id="practice">Practice&lt;/h2>
+&lt;h3 id="manual">Manual&lt;/h3>
+&lt;p>Create a file &lt;code>Dockerfile&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-dockerfile" data-lang="dockerfile">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">FROM&lt;/span>&lt;span style="color:#4070a0"> ubuntu:20.04&lt;/span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#60a0b0;font-style:italic">## Create interactive and non-interactive users&lt;/span>&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="">&lt;/span>&lt;span style="color:#007020;font-weight:bold">RUN&lt;/span> useradd interactiveUser &lt;span style="color:#666">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#4070a0;font-weight:bold">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0;font-weight:bold">&lt;/span> useradd -s /sbin/nologin noninteractiveUser&lt;span style="">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Build image&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>docker build -t custom-users-ubuntu .
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Connect/Switch to each user:&lt;/strong>&lt;/p>
+&lt;p>For interactiveUser:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>❯ docker run -it custom-users-ubuntu su - interactiveUser
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>su: warning: cannot change directory to /home/interactiveUser: No such file or directory
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ id
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bb60d5">uid&lt;/span>&lt;span style="color:#666">=&lt;/span>1000&lt;span style="color:#666">(&lt;/span>interactiveUser&lt;span style="color:#666">)&lt;/span> &lt;span style="color:#bb60d5">gid&lt;/span>&lt;span style="color:#666">=&lt;/span>1000&lt;span style="color:#666">(&lt;/span>interactiveUser&lt;span style="color:#666">)&lt;/span> &lt;span style="color:#bb60d5">groups&lt;/span>&lt;span style="color:#666">=&lt;/span>1000&lt;span style="color:#666">(&lt;/span>interactiveUser&lt;span style="color:#666">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>For noninteractiveUser (This will not give a shell because of the nologin shell):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>❯ docker run -it custom-users-ubuntu su - noninteractiveUser
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>su: warning: cannot change directory to /home/noninteractiveUser: No such file or directory
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>This account is currently not available.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Verify that noninteractiveUser exists:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>❯ docker run -it custom-users-ubuntu bash
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>root@495500b9c069:/## cat /etc/passwd
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>root:x:0:0:root:/root:/bin/bash
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>interactiveUser:x:1000:1000::/home/interactiveUser:/bin/sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>noninteractiveUser:x:1001:1001::/home/noninteractiveUser:/sbin/nologin
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Run commands for each user:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>You&amp;rsquo;ll find that the interactiveUser can run commands, but the noninteractiveUser cannot due to its restricted shell.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Show difference in environments:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>❯ docker run -it custom-users-ubuntu /bin/bash -c &lt;span style="color:#4070a0">&amp;#34;su - interactiveUser -c env &amp;gt; /tmp/interactiveEnv; su - noninteractiveUser -c env &amp;gt; /tmp/noninteractiveEnv; diff /tmp/interactiveEnv /tmp/noninteractiveEnv&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>su: warning: cannot change directory to /home/interactiveUser: No such file or directory
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>su: warning: cannot change directory to /home/noninteractiveUser: No such file or directory
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>1,8c1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt; &lt;span style="color:#bb60d5">MAIL&lt;/span>&lt;span style="color:#666">=&lt;/span>/var/mail/interactiveUser
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt; &lt;span style="color:#bb60d5">USER&lt;/span>&lt;span style="color:#666">=&lt;/span>interactiveUser
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt; &lt;span style="color:#bb60d5">HOME&lt;/span>&lt;span style="color:#666">=&lt;/span>/home/interactiveUser
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt; &lt;span style="color:#bb60d5">LOGNAME&lt;/span>&lt;span style="color:#666">=&lt;/span>interactiveUser
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt; &lt;span style="color:#bb60d5">TERM&lt;/span>&lt;span style="color:#666">=&lt;/span>xterm
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt; &lt;span style="color:#bb60d5">PATH&lt;/span>&lt;span style="color:#666">=&lt;/span>/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt; &lt;span style="color:#bb60d5">SHELL&lt;/span>&lt;span style="color:#666">=&lt;/span>/bin/sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;lt; &lt;span style="color:#bb60d5">PWD&lt;/span>&lt;span style="color:#666">=&lt;/span>/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>---
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt; This account is currently not available.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Bash Special Variables $! $0 $? $$</title><link>https://romankurnovskii.com/en/posts/bash-variables/</link><pubDate>Tue, 14 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/bash-variables/</guid><description>&lt;h2 id="0---the-name-of-the-script">&lt;code>$0&lt;/code> - The Name of the Script&lt;/h2>
+&lt;p>&lt;code>$0&lt;/code> represents the name of the Bash script as it was called.&lt;/p>
+&lt;p>If you execute a script with &lt;code>bash myscript.sh&lt;/code>, then within &lt;code>myscript.sh&lt;/code>, &lt;code>$0&lt;/code> will be &lt;code>myscript.sh&lt;/code>.&lt;/p>
+&lt;h2 id="1-2-3----positional-parameters">&lt;code>$1&lt;/code>, &lt;code>$2&lt;/code>, &lt;code>$3&lt;/code>, &amp;hellip; - Positional Parameters&lt;/h2>
+&lt;p>These variables correspond to the arguments passed to the script. &lt;code>$1&lt;/code> is the first argument, &lt;code>$2&lt;/code> is the second, and so on.&lt;/p>
+&lt;p>In the command &lt;code>bash myscript.sh arg1 arg2&lt;/code>, &lt;code>$1&lt;/code> equals &lt;code>arg1&lt;/code>, and &lt;code>$2&lt;/code> equals &lt;code>arg2&lt;/code>.&lt;/p>
+&lt;h2 id="---pid-of-the-last-background-process">&lt;code>$!&lt;/code> - PID of the Last Background Process&lt;/h2>
+&lt;p>This holds the process ID of the most recent background process. It&amp;rsquo;s particularly useful in managing parallel processing in scripts.&lt;/p>
+&lt;h2 id="---number-of-parameters">&lt;code>$#&lt;/code> - Number of Parameters&lt;/h2>
+&lt;p>&lt;code>$#&lt;/code> provides the count of arguments passed to the script, enabling scripts to adapt based on the number of inputs.&lt;/p>
+&lt;h2 id="-and----all-positional-parameters">&lt;code>$*&lt;/code> and &lt;code>$@&lt;/code> - All Positional Parameters&lt;/h2>
+&lt;p>Both &lt;code>$*&lt;/code> and &lt;code>$@&lt;/code> expand to all positional parameters, but they behave differently when quoted. &lt;code>&amp;quot;${*}&amp;quot;&lt;/code> merges all parameters into a single string, while &lt;code>&amp;quot;${@}&amp;quot;&lt;/code> treats each as a separate word.&lt;/p>
+&lt;h2 id="---exit-status-of-the-last-command">&lt;code>$?&lt;/code> - Exit Status of the Last Command&lt;/h2>
+&lt;p>The exit status of the most recently executed command is stored in &lt;code>$?&lt;/code>, where &lt;code>0&lt;/code> typically signifies success.&lt;/p>
+&lt;h2 id="special-cases">Special Cases&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>$$&lt;/code> is the PID of the script itself.&lt;/li>
+&lt;li>&lt;code>$-&lt;/code> shows the current options set for the shell&lt;/li>
+&lt;/ul>
+&lt;h2 id="dirname">dirname&lt;/h2>
+&lt;p>Strips the last component from a file path.&lt;/p>
+&lt;p>If you have a file path &lt;code>/home/user/documents/report.txt&lt;/code>, the &lt;code>dirname&lt;/code> command will extract and return &lt;code>/home/user/documents&lt;/code>, which is the directory part of the path.&lt;/p>
+&lt;p>&lt;code>dirname&lt;/code> can be especially useful in scripting when you need to perform operations relative to the location of a script or file.&lt;/p></description></item><item><title>Bash code snippets</title><link>https://romankurnovskii.com/en/posts/bash-snippets/</link><pubDate>Sun, 12 Feb 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/bash-snippets/</guid><description>&lt;h2 id="rename-all-files-in-current-directory--remove-prefix">Rename all files in current directory / Remove prefix&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">&lt;/span>&lt;span style="color:#bb60d5">REMOVE_PREFIX&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#bb60d5">$1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bb60d5">files&lt;/span>&lt;span style="color:#666">=(&lt;/span>*&lt;span style="color:#666">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> file in &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#70a0d0">${&lt;/span>&lt;span style="color:#bb60d5">files&lt;/span>[@]&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#666">[[&lt;/span> &lt;span style="color:#bb60d5">$file&lt;/span> &lt;span style="color:#666">==&lt;/span> *&lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#70a0d0">${&lt;/span>&lt;span style="color:#bb60d5">REMOVE_PREFIX&lt;/span>&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>* &lt;span style="color:#666">]]&lt;/span>; &lt;span style="color:#007020;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Remove everything before and including the &amp;#34;№&amp;#34; symbol&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#bb60d5">new_file&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#70a0d0">${&lt;/span>&lt;span style="color:#bb60d5">file&lt;/span>##*&lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#70a0d0">${&lt;/span>&lt;span style="color:#bb60d5">REMOVE_PREFIX&lt;/span>&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#70a0d0">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mv &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$file&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$new_file&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#4070a0">&amp;#34;Renamed &lt;/span>&lt;span style="color:#bb60d5">$file&lt;/span>&lt;span style="color:#4070a0"> to &lt;/span>&lt;span style="color:#bb60d5">$new_file&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>$ ./rename_files.sh abc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>renamed file abc123.txt -&amp;gt; 123.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="add-substring-to-filename">Add substring to filename&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bb60d5">DIR&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#4070a0">&amp;#34;/path/to/folder&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">cd&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$DIR&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># Rename all .png files and add &amp;#34;.ru&amp;#34; before .png&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> file in *.png; &lt;span style="color:#007020;font-weight:bold">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#bb60d5">base&lt;/span>&lt;span style="color:#666">=&lt;/span>&lt;span style="color:#007020;font-weight:bold">$(&lt;/span>basename &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$file&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span> .png&lt;span style="color:#007020;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mv &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$file&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#70a0d0">${&lt;/span>&lt;span style="color:#bb60d5">base&lt;/span>&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">.ru.png&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="git-pushpull-for-all-repos-in-path">Git Push/Pull for all repos in path&lt;/h2>
+&lt;h3 id="git-pull">git pull&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bb60d5">files&lt;/span>&lt;span style="color:#666">=(&lt;/span>*&lt;span style="color:#666">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic">#!/bin/bash&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># For every item in the current directory&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> d in */; &lt;span style="color:#007020;font-weight:bold">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">cd&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$d&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#666">[[&lt;/span> -d &lt;span style="color:#4070a0">&amp;#34;.git&amp;#34;&lt;/span> &lt;span style="color:#666">]]&lt;/span>; &lt;span style="color:#007020;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#bb60d5">$d&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git pull
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">cd&lt;/span> ..
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="git-push">git push&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># For every item in the current directory&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> d in */; &lt;span style="color:#007020;font-weight:bold">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">cd&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$d&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#666">[[&lt;/span> -d &lt;span style="color:#4070a0">&amp;#34;.git&amp;#34;&lt;/span> &lt;span style="color:#666">]]&lt;/span>; &lt;span style="color:#007020;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#bb60d5">$d&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git add .
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git commit -m &lt;span style="color:#4070a0">&amp;#34;Auto apply&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># black . # python formatter&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># git add .&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># git commit -m &amp;#34;[chore] formatter&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git push
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">cd&lt;/span> ..
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="git-untrack">git untrack&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bb60d5">items_to_untrack&lt;/span>&lt;span style="color:#666">=(&lt;/span>&lt;span style="color:#4070a0">&amp;#34;.idea&amp;#34;&lt;/span> &lt;span style="color:#4070a0">&amp;#34;.vscode&amp;#34;&lt;/span> &lt;span style="color:#4070a0">&amp;#34;.DS_Store&amp;#34;&lt;/span> &lt;span style="color:#4070a0">&amp;#34;__pycache__&amp;#34;&lt;/span> &lt;span style="color:#4070a0">&amp;#34;node_modules&amp;#34;&lt;/span> &lt;span style="color:#4070a0">&amp;#34;.env&amp;#34;&lt;/span> &lt;span style="color:#4070a0">&amp;#34;.serverless&amp;#34;&lt;/span>&lt;span style="color:#666">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># For every item in the current directory&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">for&lt;/span> d in */; &lt;span style="color:#007020;font-weight:bold">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">echo&lt;/span> &lt;span style="color:#bb60d5">$d&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">cd&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$d&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Iterate over each item to untrack&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">for&lt;/span> item in &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#70a0d0">${&lt;/span>&lt;span style="color:#bb60d5">items_to_untrack&lt;/span>[@]&lt;span style="color:#70a0d0">}&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>; &lt;span style="color:#007020;font-weight:bold">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># If the item exists&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">if&lt;/span> &lt;span style="color:#666">[[&lt;/span> -e &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$item&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span> &lt;span style="color:#666">]]&lt;/span>; &lt;span style="color:#007020;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#60a0b0;font-style:italic"># Untrack the item&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> git rm -r --cached &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#bb60d5">$item&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#007020">cd&lt;/span> ..
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>How to Download and Install Linux RHEL 9 for Free</title><link>https://romankurnovskii.com/en/posts/howto-install-rhel-9-free/</link><pubDate>Fri, 17 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/howto-install-rhel-9-free/</guid><description>&lt;p>Red Hat Enterprise Linux 9 (RHEL 9), codenamed Plow, has gone public (GA). Red Hat announced it on May 18, 2022. It replaced the beta version, which had been in existence since November 3, 2021.&lt;/p>
+&lt;p>RHEL 9 is the first few releases in the Red Hat family. It is the first major release since IBM acquired Red Hat in July 2019, and the first major release since abandoning the CentOS project in favor of CentOS Stream, which is now RHEL&amp;rsquo;s predecessor.&lt;/p>
+&lt;p>RHEL 9 is the latest major version of RHEL and comes with a 5.14 kernel, lots of new software packages and a host of improvements. It emphasizes security, stability, flexibility and reliability.&lt;/p>
+&lt;h2 id="description">Description&lt;/h2>
+&lt;p>RHEL 9 ships with new versions of software including Python 3.9. Node.JS 16, GCC 11, Perl 5.32, Ruby 3.0, PHP 8.0, and many more.&lt;/p>
+&lt;h2 id="preparing-for-installation">Preparing for installation&lt;/h2>
+&lt;h3 id="registration-on-the-red-hat-portal">Registration on the Red Hat portal&lt;/h3>
+&lt;p>Red Hat Developer Subscription is a free Red Hat Developer Program offer designed for individual developers who want to take full advantage of Red Hat Enterprise Linux.&lt;/p>
+&lt;p>It gives developers access to all versions of Red Hat Enterprise Linux, as well as other Red Hat products such as add-ons, software updates and security bugs.&lt;/p>
+&lt;p>First of all, make sure you have an active Red Hat account. If you don&amp;rsquo;t already have an account, go to the &lt;a href="https://access.redhat.com/">Red Hat Customer Portal&lt;/a>, click on &amp;ldquo;Register&amp;rdquo; and fill out your information to create a Red Hat account.
+&lt;p class="md__image">
+&lt;img
+src="img/01.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="downloading-the-installation-image">Downloading the installation image&lt;/h3>
+&lt;p>After creating a Red Hat account, you can start downloading RHEL 9. To download Red Hat Enterprise Linux 9 &lt;strong>absolutely free&lt;/strong>, go to &lt;a href="https://developers.redhat.com/products/rhel/overview">Red Hat Developer Portal&lt;/a> and log in with your account credentials.
+&lt;p class="md__image">
+&lt;img
+src="img/01-01.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Then go to the &lt;a href="https://developers.redhat.com/products/rhel/download">download RHEL 9&lt;/a> page and click on the download button shown below.&lt;/p>
+&lt;p>I&amp;rsquo;m using a MacBook M1, so I download the RHEL 9 image for the M1 processor aarch64
+&lt;p class="md__image">
+&lt;img
+src="img/01-02.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="virtual-machine">Virtual machine&lt;/h3>
+&lt;p>I use the free &lt;a href="https://mac.getutm.app/">UTM virtual machine&lt;/a> as a virtual machine to install RHEL 9. You can install using &lt;a href="../mac-setup-development/#homebrew">Homebrew&lt;/a> by running the command &lt;code>brew install --cask utm&lt;/code>.&lt;/p>
+&lt;h2 id="installing-red-hat-enterprise-linux-9">Installing Red Hat Enterprise Linux 9&lt;/h2>
+&lt;h3 id="setting-up-the-utm-virtual-machine">Setting up the UTM virtual machine&lt;/h3>
+&lt;p>In UTM click &lt;code>Create a New Virtual Machine&lt;/code> -&amp;gt; Virtualize
+&lt;p class="md__image">
+&lt;img
+src="img/02-02.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Choose the downloaded RHEL 9 image and click &lt;code>Continue&lt;/code>.
+&lt;p class="md__image">
+&lt;img
+src="img/02-01.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="main-setup-menu">Main Setup Menu&lt;/h3>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/02.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>The marked fields need to be filled in&lt;/p>
+&lt;p>Create Root Password
+&lt;p class="md__image">
+&lt;img
+src="img/03.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;strong>User Creation&lt;/strong>. Create the user you want to log in with.
+&lt;p class="md__image">
+&lt;img
+src="img/04.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>&lt;strong>Connect to Red Hat&lt;/strong>. Here we will use the account created above.&lt;/p>
+&lt;p>Here you will enter your account data and click Register.
+&lt;p class="md__image">
+&lt;img
+src="img/06.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Press Done&lt;/p>
+&lt;p>Under &lt;strong>Installation Destination&lt;/strong> choose your default drive.&lt;/p>
+&lt;p>We can now continue with the installation. A &lt;em>&lt;strong>Begin installation&lt;/strong>&lt;/em> button will appear on the main screen&lt;br>
+&lt;p class="md__image">
+&lt;img
+src="img/05.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>After installation is complete, we will have to reboot the system.
+&lt;p class="md__image">
+&lt;img
+src="img/02-03.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+Sometimes rebooting will unload the installation image again. It&amp;rsquo;s necessary to either disable the disk in the installer setup or reboot the UTM.&lt;/p>
+&lt;h2 id="running-red-hat-enterprise-linux-9">Running Red Hat Enterprise Linux 9&lt;/h2>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/07.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Enter your password and see the RHEL 9 desktop
+&lt;p class="md__image">
+&lt;img
+src="img/07-01.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>To access the applications, click the &lt;strong>Activities&lt;/strong> button in the upper left corner&lt;/p>
+&lt;h2 id="configuring-red-hat-enterprise-linux-9">Configuring Red Hat Enterprise Linux 9&lt;/h2>
+&lt;h3 id="checking-the-root-user">Checking the ROOT user&lt;/h3>
+&lt;p>In a Linux system users belong to different groups which have certain rights. If during the installation process we did not check the checkbox to make the user an administrator, by default he will not be able to install some system programs.&lt;/p>
+&lt;p>Exit and log in as root (the same user we created earlier on the main screen). Press &lt;em>&lt;strong>Log out&lt;/strong>&lt;/em>
+&lt;p class="md__image">
+&lt;img
+src="img/07-03.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Now log in as &lt;strong>root&lt;/strong>. The user may not be listed. Press &lt;strong>Not listed&lt;/strong> and enter the account data.
+&lt;p class="md__image">
+&lt;img
+src="img/07-04.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Open terminal and check
+&lt;p class="md__image">
+&lt;img
+src="img/07-05.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h3 id="configuring-system-settings">Configuring system settings&lt;/h3>
+&lt;h4 id="button-to-minimize-the-application">Button to minimize the application&lt;/h4>
+&lt;p>The first thing that seems unusual about using the GUI is that there are no buttons to minimize windows
+&lt;p class="md__image">
+&lt;img
+src="img/07-02.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Install the necessary package&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>yum install gnome-tweaks -y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/07-06.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>After installation, the Tweaks application will appear. Find it by searching.&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/07-07.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>There are many other tweaks in the app as well. We will show you the minimize buttons for the applications.&lt;/p>
+&lt;p>Let&amp;rsquo;s go to &lt;strong>Windows titlebars&lt;/strong> and set the Maximize, Minimize options&lt;/p>
+&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/07-08.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h4 id="user-access-to-install-applications">User access to install applications&lt;/h4>
+&lt;p>To avoid constantly switching to a root user to install applications, we can give the normal user access to install applications.
+We will continue to do this as &lt;em>&lt;strong>root&lt;/strong>&lt;/em>.
+Open /etc/sudoers and add the user&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo vi /etc/sudoers
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add user data to the end of the file. My user name: &lt;em>&lt;strong>rhel-user&lt;/strong>&lt;/em>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>rhel-user &lt;span style="color:#bb60d5">ALL&lt;/span>&lt;span style="color:#666">=&lt;/span> NOPASSWD: /usr/sbin/synaptic, /usr/bin/software-center, /usr/bin/apt-get, /usr/bin/dnf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/07-09.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;p>Let&amp;rsquo;s install &lt;em>&lt;strong>Visual Studio Code&lt;/strong>&lt;/em> as a normal user
+Installation consists of the following steps:&lt;/p>
+&lt;ol>
+&lt;li>adding the desired repository. Rights to add the repository (changing the files in the directory is still only for &lt;em>&lt;strong>root&lt;/strong>&lt;/em> user)&lt;/li>
+&lt;li>Downloading and installing.&lt;/li>
+&lt;/ol>
+&lt;p>First step is done as root user
+Go to &lt;a href="https://code.visualstudio.com/docs/setup/linux">https://code.visualstudio.com/docs/setup/linux&lt;/a>&lt;/p>
+&lt;p>Copy the code and run it in the terminal&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo sh -c &lt;span style="color:#4070a0">&amp;#39;echo -e &amp;#34;[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc&amp;#34; &amp;gt; /etc/yum.repos.d/vscode.repo&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Switch to user &lt;em>&lt;strong>rhel-user&lt;/strong>&lt;/em>. This can also be done in the terminal.&lt;/li>
+&lt;li>Updating the repositories&lt;/li>
+&lt;li>Install VSCode&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>su rhel-user
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dnf check-update
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo dnf install code
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;p class="md__image">
+&lt;img
+src="img/07-10.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;p class="md__image">
+&lt;img
+src="img/07-11.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;p class="md__image">
+&lt;img
+src="img/07-12.png"
+id="zoom-default"
+alt=""
+loading="lazy"
+/>
+&lt;/p>
+&lt;/p>
+&lt;h2 id="references">References&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://developers.redhat.com/products/rhel/getting-started">https://developers.redhat.com/products/rhel/getting-started&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.redhat.com/sysadmin/install-linux-rhel-9">https://www.redhat.com/sysadmin/install-linux-rhel-9&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Tar command Cheat Sheet</title><link>https://romankurnovskii.com/en/posts/cheat-sheet-command-tar/</link><pubDate>Sun, 05 Jun 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/cheat-sheet-command-tar/</guid><description>&lt;h2 id="common-options">Common options&lt;/h2>
+&lt;pre>&lt;code>z compress with gzip
+c create an archive
+u append files which are newer than
+the corresponding copy ibn the archive
+f filename of the archive
+v verbose, display what is inflated or deflated
+a unlike of z, determine compression based on file extension
+&lt;/code>&lt;/pre>
+&lt;h2 id="create-tar-named-archivetar-containing-directory">Create tar named archive.tar containing directory&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar cf archive.tar /path/files
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="concatenate-files-into-a-single-tar">Concatenate files into a single tar&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar -cf archive.tar /path/files
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="extract-the-contents-from-archivetar">Extract the contents from archive.tar&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar xf archive.tar
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="create-a-gzip-compressed-tar-file-name-archivetargz">Create a gzip compressed tar file name archive.tar.gz&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar czf archive.tar.gz /path/files
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="extract-a-gzip-compressed-tar-file">Extract a gzip compressed tar file&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar xzf archive.tar.gz
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="create-a-tar-file-with-bzip2-compression">Create a tar file with bzip2 compression&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar cjf archive.tar.bz2 /path/files
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="extract-a-bzip2-compressed-tar-file">Extract a bzip2 compressed tar file&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar xjf archive.tar.bz2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="list-content-of-tar-file">List content of tar file&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>tar -tvf archive.tar
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
