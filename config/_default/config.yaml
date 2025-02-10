@@ -24,7 +24,7 @@ Services:
 markup:
   tableOfContents:
     startLevel: 2
-    endLevel: 6
+    endLevel: 7
     ordered: false
   highlight:
     codeFences: true
@@ -37,7 +37,7 @@ markup:
     lineNumbersInTable: true
     noHl: false
     style: friendly # nord rose-pine-dawn  autumn monokailight lovelace emacs tango friendly manni catppuccin-latte  # https://xyproto.github.io/splash/docs/
-    tabWidth: 4
+    tabWidth: 2
   goldmark:
     renderer:
       unsafe: true
