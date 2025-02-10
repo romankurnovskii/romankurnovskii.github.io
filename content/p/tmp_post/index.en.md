@@ -25,4 +25,4 @@ style="display:inline-block"
 
 <div id="_react_leetcode_grid_" class='bg-tertiary-bg rounded px-3 py-2 my-2 me-2 text-lg'></div>
 
-{{< reactblock src="http://localhost:1313/en/p/tmp_post/react/leetcode-grid.jsx?a2" divRender="_react_leetcode_grid_">}}
+{{< reactblock src="<http://localhost:1313/en/p/tmp_post/react/leetcode-grid.jsx?a2>" divRender="_react_leetcode_grid_">}}
