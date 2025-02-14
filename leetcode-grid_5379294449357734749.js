@@ -15309,13 +15309,13 @@
           suspenseInstance = suspenseInstance.nextSibling;
           for (var depth = 0; suspenseInstance; ) {
             if (8 === suspenseInstance.nodeType) {
-              var data = suspenseInstance.data;
-              if (data === SUSPENSE_END_DATA) {
+              var data2 = suspenseInstance.data;
+              if (data2 === SUSPENSE_END_DATA) {
                 if (0 === depth)
                   return getNextHydratable(suspenseInstance.nextSibling);
                 depth--;
               } else
-                data !== SUSPENSE_START_DATA && data !== SUSPENSE_FALLBACK_START_DATA && data !== SUSPENSE_PENDING_START_DATA || depth++;
+                data2 !== SUSPENSE_START_DATA && data2 !== SUSPENSE_FALLBACK_START_DATA && data2 !== SUSPENSE_PENDING_START_DATA || depth++;
             }
             suspenseInstance = suspenseInstance.nextSibling;
           }
@@ -15325,11 +15325,11 @@
           targetInstance = targetInstance.previousSibling;
           for (var depth = 0; targetInstance; ) {
             if (8 === targetInstance.nodeType) {
-              var data = targetInstance.data;
-              if (data === SUSPENSE_START_DATA || data === SUSPENSE_FALLBACK_START_DATA || data === SUSPENSE_PENDING_START_DATA) {
+              var data2 = targetInstance.data;
+              if (data2 === SUSPENSE_START_DATA || data2 === SUSPENSE_FALLBACK_START_DATA || data2 === SUSPENSE_PENDING_START_DATA) {
                 if (0 === depth) return targetInstance;
                 depth--;
-              } else data === SUSPENSE_END_DATA && depth++;
+              } else data2 === SUSPENSE_END_DATA && depth++;
             }
             targetInstance = targetInstance.previousSibling;
           }
@@ -19290,9 +19290,9 @@
   var divRender = "_react_leetcode_grid_";
   var CELL_WIDTH = 50;
   var Matrix = () => {
-    const size = 3032;
+    const [cellsCount, setCellsCount] = (0, import_react.useState)(3100);
     const [columns, setColumns] = (0, import_react.useState)(10);
-    const [leetcodeProblems, setLeetCodeProblems] = (0, import_react.useState)({});
+    const [leetCodeProblems, setLeetCodeProblems] = (0, import_react.useState)({});
     const matrixRef = (0, import_react.useRef)(null);
     (0, import_react.useEffect)(() => {
       const updateColumns = () => {
@@ -19303,15 +19303,14 @@
       };
       window.addEventListener("resize", updateColumns);
       updateColumns();
-      const leetCodeProblemsUrl = "https://romankurnovskii.com/leetcode-problems.json?_ts=" + (/* @__PURE__ */ new Date()).getTime();
-      console.log("leetCodeProblemsUrl", leetCodeProblemsUrl);
-      fetch(leetCodeProblemsUrl).then((response) => response.json()).then((data) => setLeetCodeProblems(data)).catch(
-        (error) => console.error("Failed to load leetcode problems:", error)
+      const leetCodeProblemsUrl = "https://romankurnovskii.com/leetcode-problems.json";
+      fetch(leetCodeProblemsUrl).then((response) => response.json()).then((data2) => setLeetCodeProblems(data2)).then(() => setCellsCount(Math.max(Object.keys(data)) + 50)).catch(
+        (error) => console.error("Failed to load LeetCode problems:", error)
       );
       return () => window.removeEventListener("resize", updateColumns);
     }, []);
     const getCellStyle = (number) => {
-      const problemInfo = leetcodeProblems[number.toString()];
+      const problemInfo = leetCodeProblems[number.toString()];
       const _cellStyle = {
         display: "flex",
         justifyContent: "center",
@@ -19338,7 +19337,7 @@
       }
       return _cellStyle;
     };
-    const numbers = Array.from({ length: size }, (_, i) => i + 1);
+    const numbers = Array.from({ length: cellsCount }, (_, i) => i + 1);
     return /* @__PURE__ */ React.createElement(
       "div",
       {
@@ -19351,7 +19350,7 @@
       },
       numbers.map((number, index) => {
         const cellStyle = getCellStyle(number);
-        const problemInfo = leetcodeProblems[number.toString()];
+        const problemInfo = leetCodeProblems[number.toString()];
         let cell = /* @__PURE__ */ React.createElement(React.Fragment, null, number);
         if (problemInfo && problemInfo.languages[userLang]) {
           cell = /* @__PURE__ */ React.createElement(

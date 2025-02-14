@@ -99,7 +99,8 @@ loading="lazy"
 &lt;p>Нажми на кнопку: &lt;div id="_react_count_example_" style="display:inline-block" class='inline-block bg-tertiary-bg rounded px-3 py-2 my-2 me-2 hover:text-yalla text-lg' >100&lt;/div>&lt;/p>
 &lt;script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js">&lt;/script>
 &lt;script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js">&lt;/script>
-&lt;div id="__react_block_render__">&lt;/div></description></item><item><title>Публикация next.js приложения на github pages</title><link>https://romankurnovskii.com/ru/posts/nextjs-to-github-pages-ations/</link><pubDate>Mon, 07 Mar 2022 15:31:25 +0200</pubDate><guid>https://romankurnovskii.com/ru/posts/nextjs-to-github-pages-ations/</guid><description>&lt;h2 id="подготовка">Подготовка&lt;/h2>
+&lt;div id="__react_block_render__">&lt;/div>
+&lt;script src="https://romankurnovskii.com/react-count-example_18208685131867761344.js" divRender="_react_count_example_" defer>&lt;/script></description></item><item><title>Публикация next.js приложения на github pages</title><link>https://romankurnovskii.com/ru/posts/nextjs-to-github-pages-ations/</link><pubDate>Mon, 07 Mar 2022 15:31:25 +0200</pubDate><guid>https://romankurnovskii.com/ru/posts/nextjs-to-github-pages-ations/</guid><description>&lt;h2 id="подготовка">Подготовка&lt;/h2>
 &lt;p>коммит все предыдущего состояния на случай вынужденного отката&lt;/p>
 &lt;p>Для того чтобы Actions имели доступ к репозиторию нужно подключить ключи шифрования&lt;/p>
 &lt;h2 id="настройка-репозитория">Настройка репозитория&lt;/h2>
