@@ -1,13 +1,13 @@
 ---
 title: Установка Ubuntu Desktop 22.10 (Kinetic Kudu) на ARM CPU
-seoTitle: 2023 - Установка Ubuntu 22.10 (Kinetic Kudu) на ARM CPU
+seoTitle: 2025 - Установка Ubuntu 22.10 (Kinetic Kudu) на ARM CPU
 description: Быстрая базовая установка Ubuntu Desktop 22.10 на виртуальную машину UTM с процессором ARM M1
 toc: true
 tags: [linux, ubuntu]
 series: ['Установка ОС']
 categories: [OS, Linux]
-date: "2022-06-23"
-lastMod: 2023-02-24
+date: 2022-06-23
+lastMod: 2025-02-15
 featuredImage: img/featured.jpg
 authors: []
 ---

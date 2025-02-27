@@ -4,9 +4,9 @@ description: Отслеживает истечение срока действи
 date: 2022-08-28
 tags: ['npm']
 categories: ['npm packages']
-featuredImage: https://romankurnovskii.com/en/apps/npm/cognito-token-observer/icon.png
+featuredImage: icon.png
 imgWidth: 88px
-iconImage: https://romankurnovskii.com/en/apps/npm/cognito-token-observer/icon.png
+iconImage: icon.png
 packageType: npm
 packageName: cognito-token-observer
 packageUrl: https://www.npmjs.com/package/cognito-token-observer

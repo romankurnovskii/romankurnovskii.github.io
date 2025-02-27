@@ -7,13 +7,19 @@ series:
 categories: [Linux, Debian]
 date: 2024-11-21
 authors: []
-featuredImage: https://picsum.photos/700/229?grayscale
+featuredImage: https://picsum.photos/700/129?grayscale
 ---
 
 
 # Setting Up Your First VPS: Secure Configuration Guide
 
-When setting up a new VPS, securing access is critical to prevent unauthorized usage. In this guide, you'll create a new user, disable SSH root access, and configure SSH key-based authentication for added security.
+When setting up a new VPS, securing access is critical to prevent unauthorized usage.
+
+In this guide, you'll:
+
+- create a new user
+- disable SSH root access
+- configure SSH key-based authentication for added security.
 
 ## Update and Upgrade Packages
 
@@ -48,7 +54,8 @@ userdel -r <username>
 
 ## Step 3: Configure SSH Key-Based Authentication
 
-**3.1. Generate an SSH Key Pair (Local Machine)**
+### 3.1. Generate an SSH Key Pair (Local Machine)
+
 On your local machine (not the VPS), check if you already have an SSH key:
 
 ```bash
@@ -72,7 +79,7 @@ Follow the prompts:
 - Press Enter to save the key in the default location (`~/.ssh/id_rsa`).
 - Optionally, set a passphrase for additional security.
 
-**3.2. Retrieve Your Public Key**
+### 3.2. Retrieve Your Public Key
 
 Your public key is stored in the file `~/.ssh/id_rsa.pub`. To display it, run:
 
@@ -82,13 +89,14 @@ cat ~/.ssh/id_rsa.pub
 
 You’ll see a string that starts with ssh-rsa:
 
-```text
+```sh
 ssh-rsa AAAAB3Nza...your-key... your_email@example.com
 ```
 
 Copy this entire string to your clipboard.
 
-**3.3. Add Your Public Key to the VPS**
+### 3.3. Add Your Public Key to the VPS
+
 Log in to your VPS as <username>:
 
 ```bash
@@ -116,7 +124,8 @@ Set the appropriate permissions:
 chmod 600 ~/.ssh/authorized_keys
 ```
 
-**3.4. Test SSH Key Authentication**
+### 3.4. Test SSH Key Authentication
+
 On your local machine, test the connection to your VPS using the myuser account:
 
 ```bash

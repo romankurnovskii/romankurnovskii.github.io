@@ -23,7 +23,7 @@ package:
       link: "#faq"
     - name: Github
       link: "https://github.com/romankurnovskii/BrewMate"
-iconImage: icon.png
+iconImage: icon.en.png
 type: apps
 layout: single-app
 ---
@@ -41,13 +41,13 @@ BrewMate is a macOS GUI application that makes it easy to search for, install, a
 
 or
 
-```
+```sh
 brew install romankurnovskii/cask/brewmate --cask
 ```
 
 or
 
-```
+```sh
 brew tap romankurnovskii/cask
 brew update
 brew install brewmate --cask

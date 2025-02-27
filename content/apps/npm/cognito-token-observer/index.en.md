@@ -4,9 +4,9 @@ description: Monitors date expiration of access and id tokens provided by Amazon
 date: 2022-08-28
 tags: ['npm']
 categories: ['npm packages']
-featuredImage: https://romankurnovskii.com/en/apps/npm/cognito-token-observer/icon.png
+featuredImage: icon.en.png
 imgWidth: 88px
-iconImage: https://romankurnovskii.com/en/apps/npm/cognito-token-observer/icon.png
+iconImage: icon.en.png
 packageType: npm
 packageName: cognito-token-observer
 packageUrl: https://www.npmjs.com/package/cognito-token-observer

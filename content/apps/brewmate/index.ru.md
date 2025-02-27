@@ -9,7 +9,6 @@ categories: []
 series: []
 date: 2023-03-13
 featuredVideo:
-featuredImage: https://romankurnovskii.com/en/apps/brewmate/icon.png
 imgWidth: 100px
 draft: false
 package:
@@ -22,7 +21,8 @@ package:
       link: "#faq"
     - name: Github
       link: "https://github.com/romankurnovskii/BrewMate"
-iconImage: https://romankurnovskii.com/en/apps/brewmate/icon.png
+featuredImage: icon.ru.png
+iconImage: icon.ru.png
 type: apps
 layout: single-app
 ---

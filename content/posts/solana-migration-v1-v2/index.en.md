@@ -3,12 +3,12 @@ title: Solana SDK migration Guide (v1 → @solana/web3.js 2.x)
 seoTitle: Solana SDK migration Guide (v1 → @solana/web3.js 2.x)
 description: Solana SDK migration Guide (v1 → @solana/web3.js 2.x)
 toc: true
-tags: [solana,typescrypt,javascript]
+tags: [solana,typescript,javascript]
 series: []
 categories: [Programming]
 date: 2025-01-13
-lastMod: 2025-01-13
-featuredImage: https://picsum.photos/700/238?grayscale
+lastMod: 2025-02-24
+featuredImage: https://picsum.photos/700/138?grayscale
 authors: []
 ---
 

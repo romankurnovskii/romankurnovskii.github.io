@@ -3,28 +3,30 @@ title: Initial Setup Guide for Ubuntu 22.04 on a VPS
 seoTitle: Initial Setup Guide for Ubuntu 22.04 on a VPS
 description: Initial Setup Guide for Ubuntu 22.04 on a VPS
 toc: true
-tags: [Linux, Ubuntu]
-series: []
-categories: []
+categories: ["EC2", "Ubuntu", "Linux" ]
 date: 2024-05-02
-lastMod: 2024-05-02
-featuredImage: https://picsum.photos/700/225?grayscale
+lastMod: 2025-02-02
+tags: [Linux, Ubuntu, Setup]
+series: []
+featuredImage: https://picsum.photos/700/125?grayscale
 authors: []
 ---
 
 
 ## Update and Upgrade Packages
 
-```
+```sh
 apt update
 apt upgrade -y
 ```
 
 ## Setting Up SSH Keys
 
-Using SSH keys instead of passwords enhances security. First, generate an SSH key pair on your local machine (if you don't already have one):
+Using SSH keys instead of passwords enhances security.
 
-```bash
+On **local machine**, generate an SSH key pair (if you don't already have one):
+
+```sh
 ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
 

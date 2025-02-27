@@ -60,15 +60,19 @@ wget https://repo1.maven.org/maven2/com/madgag/bfg/1.14.0/bfg-1.14.0.jar
 
 Remove *history* files bigger than 100Kb:
 
+    ```sh
     cd repo
     java -jar bfg-1.14.0.jar --strip-blobs-bigger-than 100K .
     git reflog expire --expire=now --all && git gc --prune=now --aggressive
+    ```
 
 ### Removing an entire commit
 
 Replace "SHA" with the reference you want to get rid of. The "^" in that command is literal.
 
+    ```sh
     git rebase -p --onto SHA^ SHA
+    ```
 
 We want to remove commits 2 & 4 from the repo. (Higher the the number newer the commit; 0 is the oldest commit and 4 is the latest commit)
 
