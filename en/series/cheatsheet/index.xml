@@ -141,13 +141,17 @@
 &lt;p>or&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>wget https://repo1.maven.org/maven2/com/madgag/bfg/1.14.0/bfg-1.14.0.jar
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Remove &lt;em>history&lt;/em> files bigger than 100Kb:&lt;/p>
-&lt;pre>&lt;code>cd repo
+&lt;pre>&lt;code>```sh
+cd repo
 java -jar bfg-1.14.0.jar --strip-blobs-bigger-than 100K .
 git reflog expire --expire=now --all &amp;amp;&amp;amp; git gc --prune=now --aggressive
+```
 &lt;/code>&lt;/pre>
 &lt;h3 id="removing-an-entire-commit">Removing an entire commit&lt;/h3>
 &lt;p>Replace &amp;ldquo;SHA&amp;rdquo; with the reference you want to get rid of. The &amp;ldquo;^&amp;rdquo; in that command is literal.&lt;/p>
-&lt;pre>&lt;code>git rebase -p --onto SHA^ SHA
+&lt;pre>&lt;code>```sh
+git rebase -p --onto SHA^ SHA
+```
 &lt;/code>&lt;/pre>
 &lt;p>We want to remove commits 2 &amp;amp; 4 from the repo. (Higher the the number newer the commit; 0 is the oldest commit and 4 is the latest commit)&lt;/p>
 &lt;pre>&lt;code>commit 0 : b3d92c5

@@ -8,9 +8,9 @@
 &lt;li>Launch BrewMate from your Applications folder.&lt;/li>
 &lt;/ol>
 &lt;p>or&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>brew install romankurnovskii/cask/brewmate --cask
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>brew install romankurnovskii/cask/brewmate --cask
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>or&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>brew tap romankurnovskii/cask
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>brew tap romankurnovskii/cask
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>brew update
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>brew install brewmate --cask
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="faq">FAQ&lt;/h2>

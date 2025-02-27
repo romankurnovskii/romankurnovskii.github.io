@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Setup on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/setup/</link><description>Recent content in Setup on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 02 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/setup/index.xml" rel="self" type="application/rss+xml"/><item><title>Initial Setup Guide for Ubuntu 22.04 on a VPS</title><link>https://romankurnovskii.com/en/posts/linux/ubuntu-server-initial-setup/</link><pubDate>Thu, 02 May 2024 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/ubuntu-server-initial-setup/</guid><description>&lt;h2 id="update-and-upgrade-packages">Update and Upgrade Packages&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>apt update
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>apt upgrade -y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="setting-up-ssh-keys">Setting Up SSH Keys&lt;/h2>
+&lt;p>Using SSH keys instead of passwords enhances security.&lt;/p>
+&lt;p>On &lt;strong>local machine&lt;/strong>, generate an SSH key pair (if you don&amp;rsquo;t already have one):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>ssh-keygen -t ed25519 -C &lt;span style="color:#4070a0">&amp;#34;your_email@example.com&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Next, copy your public SSH key to the new user&amp;rsquo;s account on your server. You can do this from your local machine:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh-copy-id username@your_server_ip
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># or with provided port&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ssh-copy-id -p &lt;span style="color:#40a070">1234&lt;/span> username@your_server_ip
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This command uploads your public SSH key and configures the server to recognize it.&lt;/p>
+&lt;h2 id="disabling-password-authentication">Disabling Password Authentication&lt;/h2>
+&lt;p>To prevent SSH login using a username and password, edit the SSH configuration file:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>sudo nano /etc/ssh/sshd_config
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Find the following lines and modify them as shown:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span style="display:flex;">&lt;span>PasswordAuthentication no
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>UsePAM no
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>After making these changes, restart the SSH service to apply them:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo systemctl restart sshd
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

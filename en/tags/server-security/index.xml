@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Server-Security on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/server-security/</link><description>Recent content in Server-Security on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Thu, 21 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/server-security/index.xml" rel="self" type="application/rss+xml"/><item><title>Set Up Your First VPS on Debian</title><link>https://romankurnovskii.com/en/posts/linux/debian-vps-initial-setup/</link><pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/debian-vps-initial-setup/</guid><description>&lt;h1 id="setting-up-your-first-vps-secure-configuration-guide">Setting Up Your First VPS: Secure Configuration Guide&lt;/h1>
-&lt;p>When setting up a new VPS, securing access is critical to prevent unauthorized usage. In this guide, you&amp;rsquo;ll create a new user, disable SSH root access, and configure SSH key-based authentication for added security.&lt;/p>
+&lt;p>When setting up a new VPS, securing access is critical to prevent unauthorized usage.&lt;/p>
+&lt;p>In this guide, you&amp;rsquo;ll:&lt;/p>
+&lt;ul>
+&lt;li>create a new user&lt;/li>
+&lt;li>disable SSH root access&lt;/li>
+&lt;li>configure SSH key-based authentication for added security.&lt;/li>
+&lt;/ul>
 &lt;h2 id="update-and-upgrade-packages">Update and Upgrade Packages&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>apt update
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>apt upgrade -y
@@ -13,8 +19,8 @@
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>userdel -r &amp;lt;username&amp;gt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>-r&lt;/code>: Removes the user&amp;rsquo;s home directory.&lt;/p>
 &lt;h2 id="step-3-configure-ssh-key-based-authentication">Step 3: Configure SSH Key-Based Authentication&lt;/h2>
-&lt;p>&lt;strong>3.1. Generate an SSH Key Pair (Local Machine)&lt;/strong>
-On your local machine (not the VPS), check if you already have an SSH key:&lt;/p>
+&lt;h3 id="31-generate-an-ssh-key-pair-local-machine">3.1. Generate an SSH Key Pair (Local Machine)&lt;/h3>
+&lt;p>On your local machine (not the VPS), check if you already have an SSH key:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ls ~/.ssh
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Look for files like &lt;code>id_rsa&lt;/code> and &lt;code>id_rsa.pub&lt;/code>. If these files exist, you already have an SSH key. Skip to &lt;strong>3.2&lt;/strong> to retrieve your public key.&lt;/p>
 &lt;p>If no SSH key exists, generate one with the following command:&lt;/p>
@@ -29,14 +35,14 @@ On your local machine (not the VPS), check if you already have an SSH key:&lt;/p
 &lt;li>Press Enter to save the key in the default location (&lt;code>~/.ssh/id_rsa&lt;/code>).&lt;/li>
 &lt;li>Optionally, set a passphrase for additional security.&lt;/li>
 &lt;/ul>
-&lt;p>&lt;strong>3.2. Retrieve Your Public Key&lt;/strong>&lt;/p>
+&lt;h3 id="32-retrieve-your-public-key">3.2. Retrieve Your Public Key&lt;/h3>
 &lt;p>Your public key is stored in the file &lt;code>~/.ssh/id_rsa.pub&lt;/code>. To display it, run:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cat ~/.ssh/id_rsa.pub
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You’ll see a string that starts with ssh-rsa:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>ssh-rsa AAAAB3Nza...your-key... your_email@example.com
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>ssh-rsa AAAAB3Nza...your-key... your_email@example.com
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Copy this entire string to your clipboard.&lt;/p>
-&lt;p>&lt;strong>3.3. Add Your Public Key to the VPS&lt;/strong>
-Log in to your VPS as &lt;username>:&lt;/p>
+&lt;h3 id="33-add-your-public-key-to-the-vps">3.3. Add Your Public Key to the VPS&lt;/h3>
+&lt;p>Log in to your VPS as &lt;username>:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>su - &amp;lt;username&amp;gt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create the &lt;code>.ssh&lt;/code> directory in the home folder:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>mkdir -p ~/.ssh
@@ -46,8 +52,8 @@ Log in to your VPS as &lt;username>:&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Paste your public key into the file and save it.&lt;/p>
 &lt;p>Set the appropriate permissions:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>chmod &lt;span style="color:#40a070">600&lt;/span> ~/.ssh/authorized_keys
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>3.4. Test SSH Key Authentication&lt;/strong>
-On your local machine, test the connection to your VPS using the myuser account:&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="34-test-ssh-key-authentication">3.4. Test SSH Key Authentication&lt;/h3>
+&lt;p>On your local machine, test the connection to your VPS using the myuser account:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh &amp;lt;username&amp;gt;@&amp;lt;your-server-ip&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># if using port:&lt;/span>

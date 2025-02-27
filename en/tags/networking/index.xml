@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Networking on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/networking/</link><description>Recent content in Networking on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Tue, 28 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/networking/index.xml" rel="self" type="application/rss+xml"/><item><title>Set Up Proxy on Amazon EC2 Ubuntu</title><link>https://romankurnovskii.com/en/posts/setup-proxy-server-ec2-ubuntu/</link><pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/setup-proxy-server-ec2-ubuntu/</guid><description>&lt;h2 id="1-setting-up-the-ec2-instance">1. Setting up the EC2 Instance&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Networking on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/networking/</link><description>Recent content in Networking on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Tue, 28 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/networking/index.xml" rel="self" type="application/rss+xml"/><item><title>Set Up Proxy on Amazon EC2 Ubuntu</title><link>https://romankurnovskii.com/en/posts/linux/setup-proxy-server-ec2-ubuntu/</link><pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/setup-proxy-server-ec2-ubuntu/</guid><description>&lt;h2 id="1-setting-up-the-ec2-instance">1. Setting up the EC2 Instance&lt;/h2>
 &lt;h2 id="launch-an-ec2-instance">Launch an EC2 Instance&lt;/h2>
 &lt;ol>
 &lt;li>Choose an Ubuntu Server image.&lt;/li>
 &lt;li>Select an appropriate instance type.&lt;/li>
-&lt;li>Configure instance details, storage, and security group. Ensure your security group allows inbound traffic on the ports you plan to use for your proxy (typically port 3128 for Squid).&lt;/li>
+&lt;li>Configure instance details, storage, and security group. Ensure your security group allows inbound traffic on the ports you plan to use for your proxy (typically port &lt;code>3128&lt;/code> for Squid).&lt;/li>
 &lt;li>Review and launch the instance.&lt;/li>
 &lt;li>Create and download a key pair for SSH access. (optional, can connect through AWS console later)&lt;/li>
 &lt;/ol>
 &lt;p>&lt;p class="md__image">
 &lt;img
-src="./assets/ec2-security-group-inbound-setup.png"
+src="./ec2-security-group-inbound-setup.en.png"
 id="zoom-default"
 alt="ec2-security-group-inbound-setup"
 loading="lazy"
@@ -29,16 +29,16 @@ loading="lazy"
 &lt;h2 id="installing-and-configuring-squid">Installing and Configuring Squid&lt;/h2>
 &lt;h3 id="install-squid">Install Squid&lt;/h3>
 &lt;ol>
-&lt;li>Update package lists: sudo apt-get update&lt;/li>
-&lt;li>Install Squid: sudo apt-get install squid apache2-utils&lt;/li>
+&lt;li>Update package lists: &lt;code>sudo apt-get update&lt;/code>&lt;/li>
+&lt;li>Install Squid: &lt;code>sudo apt-get install squid apache2-utils&lt;/code>&lt;/li>
 &lt;/ol>
 &lt;h3 id="configure-squid-with-authentication">Configure Squid with Authentication&lt;/h3>
 &lt;ul>
-&lt;li>Open the Squid configuration file: sudo nano /etc/squid/squid.conf&lt;/li>
+&lt;li>Open the Squid configuration file: &lt;code>sudo nano /etc/squid/squid.conf&lt;/code>&lt;/li>
 &lt;li>Configure basic settings:
 &lt;ul>
 &lt;li>
-&lt;p>Set http_port to your desired port, typically 3128.&lt;/p>
+&lt;p>Set &lt;code>http_port&lt;/code> to your desired port, typically &lt;code>3128&lt;/code>.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Add the following lines for basic authentication:&lt;/p>

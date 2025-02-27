@@ -1,4 +1,159 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Notes on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/posts/</link><description>Recent content in Notes on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><atom:link href="https://romankurnovskii.com/en/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Solana SDK migration Guide (v1 → @solana/web3.js 2.x)</title><link>https://romankurnovskii.com/en/posts/solana-migration-v1-v2/</link><pubDate>Mon, 13 Jan 2025 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/solana-migration-v1-v2/</guid><description>&lt;p>The 2.x SDK leverages modern TypeScript features for enhanced type-safety, this means you get:&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Notes on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/posts/</link><description>Recent content in Notes on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><atom:link href="https://romankurnovskii.com/en/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Access Private GitHub Repositories on an EC2 Server</title><link>https://romankurnovskii.com/en/posts/github-private-repo-access/</link><pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/github-private-repo-access/</guid><description>&lt;h2 id="step-1-generate-an-ssh-key-on-ec2">&lt;strong>Step 1: Generate an SSH Key on EC2&lt;/strong>&lt;/h2>
+&lt;p>To securely authenticate with GitHub, generate an SSH key on your EC2 instance.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Connect to your EC2 instance via SSH:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh ec2-user@your-ec2-public-ip
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Generate an SSH key:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh-keygen -t rsa -b &lt;span style="color:#40a070">4096&lt;/span> -C &lt;span style="color:#4070a0">&amp;#34;your-email@example.com&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Press &lt;strong>Enter&lt;/strong> to save the key in the default location (&lt;code>~/.ssh/id_rsa&lt;/code>).&lt;/li>
+&lt;li>Set a passphrase or leave it empty.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Start the SSH agent and add the key:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">eval&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#007020;font-weight:bold">$(&lt;/span>ssh-agent -s&lt;span style="color:#007020;font-weight:bold">)&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ssh-add ~/.ssh/id_rsa
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h2 id="step-2-add-the-ssh-key-to-github">&lt;strong>Step 2: Add the SSH Key to GitHub&lt;/strong>&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>Display the &lt;strong>public key&lt;/strong>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cat ~/.ssh/id_rsa.pub
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Copy the output and add it to GitHub:&lt;/p>
+&lt;ul>
+&lt;li>Go to &lt;strong>GitHub&lt;/strong> → &lt;strong>Settings&lt;/strong> → &lt;strong>SSH and GPG keys&lt;/strong> &lt;a href="https://github.com/settings/keys">link&lt;/a>&lt;/li>
+&lt;li>Click &lt;strong>New SSH key&lt;/strong>.&lt;/li>
+&lt;li>Paste the key and save.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="step-3-test-ssh-connection-to-github">&lt;strong>Step 3: Test SSH Connection to GitHub&lt;/strong>&lt;/h2>
+&lt;p>Verify that the connection is successful:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh -T git@github.com
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Expected output:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Hi your-github-username! You&amp;#39;ve successfully authenticated, but GitHub does not provide shell access.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-4-clone-a-private-repository">&lt;strong>Step 4: Clone a Private Repository&lt;/strong>&lt;/h2>
+&lt;p>Now that authentication is set up, clone the private repository:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git clone git@github.com:your-username/private-repo.git
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Replace &lt;code>your-username&lt;/code> and &lt;code>private-repo&lt;/code> with the actual repository details.&lt;/p>
+&lt;hr>
+&lt;h2 id="step-5-configure-git-optional">&lt;strong>Step 5: Configure Git (Optional)&lt;/strong>&lt;/h2>
+&lt;p>To avoid re-entering your username and email, configure Git globally:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git config --global user.name &lt;span style="color:#4070a0">&amp;#34;Your Name&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git config --global user.email &lt;span style="color:#4070a0">&amp;#34;your-email@example.com&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="alternative-using-a-personal-access-token">&lt;strong>Alternative: Using a Personal Access Token&lt;/strong>&lt;/h2>
+&lt;p>If you prefer HTTPS authentication instead of SSH:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Generate a &lt;strong>Personal Access Token (PAT)&lt;/strong> on GitHub:&lt;/p>
+&lt;ul>
+&lt;li>Go to &lt;strong>GitHub → Settings → Developer Settings → Personal Access Tokens&lt;/strong>.&lt;/li>
+&lt;li>Generate a token with &lt;strong>repo&lt;/strong> permissions.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Use the token instead of a password:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git clone https://your-username:your-token@github.com/your-username/private-repo.git
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol></description></item><item><title>EC2 Initial Setup and SSH Connection</title><link>https://romankurnovskii.com/en/posts/linux/ec2-initial-setup/</link><pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/ec2-initial-setup/</guid><description>&lt;h2 id="step-1-launch-an-ec2-instance">Step 1: Launch an EC2 Instance&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>Go to the AWS Console&lt;/strong> → Navigate to &lt;strong>EC2&lt;/strong>.&lt;/li>
+&lt;li>Click &lt;strong>Launch Instance&lt;/strong>.&lt;/li>
+&lt;li>Choose an &lt;strong>AMI&lt;/strong> (e.g., Amazon Linux, Ubuntu).&lt;/li>
+&lt;li>Select an &lt;strong>instance type&lt;/strong> (e.g., &lt;code>t2.micro&lt;/code> for free tier).&lt;/li>
+&lt;li>Configure &lt;strong>instance details&lt;/strong> (default settings are fine).&lt;/li>
+&lt;li>Add &lt;strong>storage&lt;/strong> (default 8GB is sufficient, adjust as needed).&lt;/li>
+&lt;li>Configure &lt;strong>security groups&lt;/strong>:
+&lt;ul>
+&lt;li>Allow &lt;strong>SSH (port 22)&lt;/strong> from &lt;code>My IP&lt;/code> (recommended).&lt;/li>
+&lt;li>Add rules for other services (e.g., HTTP, HTTPS) if needed.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Choose or &lt;strong>create a key pair&lt;/strong> (important for SSH access).
+&lt;img src="select-pem.en.png" width="50%" id="zoom-default" class="medium-zoom-image" loading="lazy">&lt;/li>
+&lt;li>Click &lt;strong>Launch&lt;/strong>.
+&lt;img src="launch.en.png" width="50%" id="zoom-default" class="medium-zoom-image" loading="lazy">&lt;/li>
+&lt;/ol>
+&lt;h2 id="step-2-connect-to-ec2-via-ssh">Step 2: Connect to EC2 via SSH&lt;/h2>
+&lt;h3 id="using-a-pem-key-linuxmacos">Using a &lt;code>.pem&lt;/code> Key (Linux/macOS)&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>Move the key to a secure location:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>mv ~/Downloads/my-key.pem ~/.ssh/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Set permissions:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>chmod &lt;span style="color:#40a070">400&lt;/span> ~/.ssh/my-key.pem
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Connect:
+&lt;img src="public-ip.en.png" width="30%" id="zoom-default" class="medium-zoom-image" loading="lazy">&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh -i ~/.ssh/my-key.pem admin@your-ec2-public-ip
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># ssh -i ~/.ssh/my-key.pem admin@52.31.239.202&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>Replace &lt;code>ec2-user/admin&lt;/code> with &lt;code>ubuntu&lt;/code> for Ubuntu AMIs.&lt;/li>
+&lt;li>Replace your-ec2-public-ip with the instance’s public IP.&lt;/li>
+&lt;/ul>
+&lt;h3 id="using-putty-windows">Using PuTTY (Windows)&lt;/h3>
+&lt;ol>
+&lt;li>Convert .pem to .ppk using PuTTYgen.&lt;/li>
+&lt;li>Open PuTTY.&lt;/li>
+&lt;li>Under Session, enter your-ec2-public-ip in Host Name.&lt;/li>
+&lt;li>Go to SSH → Auth, load the .ppk file.&lt;/li>
+&lt;li>Click Open.&lt;/li>
+&lt;/ol>
+&lt;h2 id="step-3-configure-automatic-ssh-login">Step 3: Configure Automatic SSH Login&lt;/h2>
+&lt;h3 id="method-1-add-key-to-ssh-agent-recommended">Method 1: Add Key to SSH Agent (Recommended)&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>Start the SSH agent (if required):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">eval&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#007020;font-weight:bold">$(&lt;/span>ssh-agent -s&lt;span style="color:#007020;font-weight:bold">)&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add the key:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>ssh-add ~/.ssh/my-key.pem
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Now, connect with:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh admin@your-ec2-public-ip
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h3 id="method-2-add-key-to-ssh-config-file">Method 2: Add Key to SSH Config File&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>Open (or create) the SSH config file:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>nano ~/.ssh/config
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add the following:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">Host my-ec2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">HostName your-ec2-public-ip&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">User ec2-user&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">IdentityFile ~/.ssh/my-key.pem&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Save and exit (&lt;code>CTRL+X&lt;/code>, then &lt;code>Y&lt;/code>, then &lt;code>ENTER&lt;/code>).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Now, connect easily with:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh my-ec2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h2 id="connected">Connected&lt;/h2>
+&lt;p>Once connected:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="../debian-vps-initial-setup/">Debian initial Setup&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../ubuntu-server-initial-setup/">Ubuntu initial Setup&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Solana SDK migration Guide (v1 → @solana/web3.js 2.x)</title><link>https://romankurnovskii.com/en/posts/solana-migration-v1-v2/</link><pubDate>Mon, 13 Jan 2025 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/solana-migration-v1-v2/</guid><description>&lt;p>The 2.x SDK leverages modern TypeScript features for enhanced type-safety, this means you get:&lt;/p>
 &lt;ul>
 &lt;li>More compile-time errors and fewer run time errors&lt;/li>
 &lt;li>Improved IDE completions and IntelliSense&lt;/li>
@@ -139,7 +294,13 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> .send();
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Set Up Your First VPS on Debian</title><link>https://romankurnovskii.com/en/posts/linux/debian-vps-initial-setup/</link><pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/debian-vps-initial-setup/</guid><description>&lt;h1 id="setting-up-your-first-vps-secure-configuration-guide">Setting Up Your First VPS: Secure Configuration Guide&lt;/h1>
-&lt;p>When setting up a new VPS, securing access is critical to prevent unauthorized usage. In this guide, you&amp;rsquo;ll create a new user, disable SSH root access, and configure SSH key-based authentication for added security.&lt;/p>
+&lt;p>When setting up a new VPS, securing access is critical to prevent unauthorized usage.&lt;/p>
+&lt;p>In this guide, you&amp;rsquo;ll:&lt;/p>
+&lt;ul>
+&lt;li>create a new user&lt;/li>
+&lt;li>disable SSH root access&lt;/li>
+&lt;li>configure SSH key-based authentication for added security.&lt;/li>
+&lt;/ul>
 &lt;h2 id="update-and-upgrade-packages">Update and Upgrade Packages&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>apt update
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>apt upgrade -y
@@ -153,8 +314,8 @@
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>userdel -r &amp;lt;username&amp;gt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;code>-r&lt;/code>: Removes the user&amp;rsquo;s home directory.&lt;/p>
 &lt;h2 id="step-3-configure-ssh-key-based-authentication">Step 3: Configure SSH Key-Based Authentication&lt;/h2>
-&lt;p>&lt;strong>3.1. Generate an SSH Key Pair (Local Machine)&lt;/strong>
-On your local machine (not the VPS), check if you already have an SSH key:&lt;/p>
+&lt;h3 id="31-generate-an-ssh-key-pair-local-machine">3.1. Generate an SSH Key Pair (Local Machine)&lt;/h3>
+&lt;p>On your local machine (not the VPS), check if you already have an SSH key:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ls ~/.ssh
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Look for files like &lt;code>id_rsa&lt;/code> and &lt;code>id_rsa.pub&lt;/code>. If these files exist, you already have an SSH key. Skip to &lt;strong>3.2&lt;/strong> to retrieve your public key.&lt;/p>
 &lt;p>If no SSH key exists, generate one with the following command:&lt;/p>
@@ -169,14 +330,14 @@ On your local machine (not the VPS), check if you already have an SSH key:&lt;/p
 &lt;li>Press Enter to save the key in the default location (&lt;code>~/.ssh/id_rsa&lt;/code>).&lt;/li>
 &lt;li>Optionally, set a passphrase for additional security.&lt;/li>
 &lt;/ul>
-&lt;p>&lt;strong>3.2. Retrieve Your Public Key&lt;/strong>&lt;/p>
+&lt;h3 id="32-retrieve-your-public-key">3.2. Retrieve Your Public Key&lt;/h3>
 &lt;p>Your public key is stored in the file &lt;code>~/.ssh/id_rsa.pub&lt;/code>. To display it, run:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cat ~/.ssh/id_rsa.pub
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You’ll see a string that starts with ssh-rsa:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>ssh-rsa AAAAB3Nza...your-key... your_email@example.com
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>ssh-rsa AAAAB3Nza...your-key... your_email@example.com
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Copy this entire string to your clipboard.&lt;/p>
-&lt;p>&lt;strong>3.3. Add Your Public Key to the VPS&lt;/strong>
-Log in to your VPS as &lt;username>:&lt;/p>
+&lt;h3 id="33-add-your-public-key-to-the-vps">3.3. Add Your Public Key to the VPS&lt;/h3>
+&lt;p>Log in to your VPS as &lt;username>:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>su - &amp;lt;username&amp;gt;
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create the &lt;code>.ssh&lt;/code> directory in the home folder:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>mkdir -p ~/.ssh
@@ -186,8 +347,8 @@ Log in to your VPS as &lt;username>:&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Paste your public key into the file and save it.&lt;/p>
 &lt;p>Set the appropriate permissions:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>chmod &lt;span style="color:#40a070">600&lt;/span> ~/.ssh/authorized_keys
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>3.4. Test SSH Key Authentication&lt;/strong>
-On your local machine, test the connection to your VPS using the myuser account:&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="34-test-ssh-key-authentication">3.4. Test SSH Key Authentication&lt;/h3>
+&lt;p>On your local machine, test the connection to your VPS using the myuser account:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh &amp;lt;username&amp;gt;@&amp;lt;your-server-ip&amp;gt;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># if using port:&lt;/span>
@@ -221,11 +382,12 @@ On your local machine, test the connection to your VPS using the myuser account:
 &lt;p>Monitor Login Attempts Check login activity using:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cat /var/log/auth.log
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Initial Setup Guide for Ubuntu 22.04 on a VPS</title><link>https://romankurnovskii.com/en/posts/linux/ubuntu-server-initial-setup/</link><pubDate>Thu, 02 May 2024 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/ubuntu-server-initial-setup/</guid><description>&lt;h2 id="update-and-upgrade-packages">Update and Upgrade Packages&lt;/h2>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>apt update
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>apt update
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>apt upgrade -y
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="setting-up-ssh-keys">Setting Up SSH Keys&lt;/h2>
-&lt;p>Using SSH keys instead of passwords enhances security. First, generate an SSH key pair on your local machine (if you don&amp;rsquo;t already have one):&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh-keygen -t ed25519 -C &lt;span style="color:#4070a0">&amp;#34;your_email@example.com&amp;#34;&lt;/span>
+&lt;p>Using SSH keys instead of passwords enhances security.&lt;/p>
+&lt;p>On &lt;strong>local machine&lt;/strong>, generate an SSH key pair (if you don&amp;rsquo;t already have one):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>ssh-keygen -t ed25519 -C &lt;span style="color:#4070a0">&amp;#34;your_email@example.com&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Next, copy your public SSH key to the new user&amp;rsquo;s account on your server. You can do this from your local machine:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh-copy-id username@your_server_ip
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -564,18 +726,18 @@ This command sets up NAT for packets going out of the &lt;code>eth0&lt;/code> in
 &lt;p>In the client file &lt;code>.ovpn&lt;/code> add lines:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>pull-filter ignore &amp;#34;ifconfig-ipv6&amp;#34;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pull-filter ignore &amp;#34;route-ipv6&amp;#34;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Set Up Proxy on Amazon EC2 Ubuntu</title><link>https://romankurnovskii.com/en/posts/setup-proxy-server-ec2-ubuntu/</link><pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/setup-proxy-server-ec2-ubuntu/</guid><description>&lt;h2 id="1-setting-up-the-ec2-instance">1. Setting up the EC2 Instance&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Set Up Proxy on Amazon EC2 Ubuntu</title><link>https://romankurnovskii.com/en/posts/linux/setup-proxy-server-ec2-ubuntu/</link><pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/setup-proxy-server-ec2-ubuntu/</guid><description>&lt;h2 id="1-setting-up-the-ec2-instance">1. Setting up the EC2 Instance&lt;/h2>
 &lt;h2 id="launch-an-ec2-instance">Launch an EC2 Instance&lt;/h2>
 &lt;ol>
 &lt;li>Choose an Ubuntu Server image.&lt;/li>
 &lt;li>Select an appropriate instance type.&lt;/li>
-&lt;li>Configure instance details, storage, and security group. Ensure your security group allows inbound traffic on the ports you plan to use for your proxy (typically port 3128 for Squid).&lt;/li>
+&lt;li>Configure instance details, storage, and security group. Ensure your security group allows inbound traffic on the ports you plan to use for your proxy (typically port &lt;code>3128&lt;/code> for Squid).&lt;/li>
 &lt;li>Review and launch the instance.&lt;/li>
 &lt;li>Create and download a key pair for SSH access. (optional, can connect through AWS console later)&lt;/li>
 &lt;/ol>
 &lt;p>&lt;p class="md__image">
 &lt;img
-src="./assets/ec2-security-group-inbound-setup.png"
+src="./ec2-security-group-inbound-setup.en.png"
 id="zoom-default"
 alt="ec2-security-group-inbound-setup"
 loading="lazy"
@@ -595,16 +757,16 @@ loading="lazy"
 &lt;h2 id="installing-and-configuring-squid">Installing and Configuring Squid&lt;/h2>
 &lt;h3 id="install-squid">Install Squid&lt;/h3>
 &lt;ol>
-&lt;li>Update package lists: sudo apt-get update&lt;/li>
-&lt;li>Install Squid: sudo apt-get install squid apache2-utils&lt;/li>
+&lt;li>Update package lists: &lt;code>sudo apt-get update&lt;/code>&lt;/li>
+&lt;li>Install Squid: &lt;code>sudo apt-get install squid apache2-utils&lt;/code>&lt;/li>
 &lt;/ol>
 &lt;h3 id="configure-squid-with-authentication">Configure Squid with Authentication&lt;/h3>
 &lt;ul>
-&lt;li>Open the Squid configuration file: sudo nano /etc/squid/squid.conf&lt;/li>
+&lt;li>Open the Squid configuration file: &lt;code>sudo nano /etc/squid/squid.conf&lt;/code>&lt;/li>
 &lt;li>Configure basic settings:
 &lt;ul>
 &lt;li>
-&lt;p>Set http_port to your desired port, typically 3128.&lt;/p>
+&lt;p>Set &lt;code>http_port&lt;/code> to your desired port, typically &lt;code>3128&lt;/code>.&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Add the following lines for basic authentication:&lt;/p>
@@ -1969,13 +2131,17 @@ loading="lazy"
 &lt;p>or&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>wget https://repo1.maven.org/maven2/com/madgag/bfg/1.14.0/bfg-1.14.0.jar
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Remove &lt;em>history&lt;/em> files bigger than 100Kb:&lt;/p>
-&lt;pre>&lt;code>cd repo
+&lt;pre>&lt;code>```sh
+cd repo
 java -jar bfg-1.14.0.jar --strip-blobs-bigger-than 100K .
 git reflog expire --expire=now --all &amp;amp;&amp;amp; git gc --prune=now --aggressive
+```
 &lt;/code>&lt;/pre>
 &lt;h3 id="removing-an-entire-commit">Removing an entire commit&lt;/h3>
 &lt;p>Replace &amp;ldquo;SHA&amp;rdquo; with the reference you want to get rid of. The &amp;ldquo;^&amp;rdquo; in that command is literal.&lt;/p>
-&lt;pre>&lt;code>git rebase -p --onto SHA^ SHA
+&lt;pre>&lt;code>```sh
+git rebase -p --onto SHA^ SHA
+```
 &lt;/code>&lt;/pre>
 &lt;p>We want to remove commits 2 &amp;amp; 4 from the repo. (Higher the the number newer the commit; 0 is the oldest commit and 4 is the latest commit)&lt;/p>
 &lt;pre>&lt;code>commit 0 : b3d92c5

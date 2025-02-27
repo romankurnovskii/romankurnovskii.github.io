@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cloud on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/tags/cloud/</link><description>Recent content in Cloud on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Mon, 24 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/tags/cloud/index.xml" rel="self" type="application/rss+xml"/><item><title>EC2 Initial Setup and SSH Connection</title><link>https://romankurnovskii.com/en/posts/linux/ec2-initial-setup/</link><pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/linux/ec2-initial-setup/</guid><description>&lt;h2 id="step-1-launch-an-ec2-instance">Step 1: Launch an EC2 Instance&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>Go to the AWS Console&lt;/strong> → Navigate to &lt;strong>EC2&lt;/strong>.&lt;/li>
+&lt;li>Click &lt;strong>Launch Instance&lt;/strong>.&lt;/li>
+&lt;li>Choose an &lt;strong>AMI&lt;/strong> (e.g., Amazon Linux, Ubuntu).&lt;/li>
+&lt;li>Select an &lt;strong>instance type&lt;/strong> (e.g., &lt;code>t2.micro&lt;/code> for free tier).&lt;/li>
+&lt;li>Configure &lt;strong>instance details&lt;/strong> (default settings are fine).&lt;/li>
+&lt;li>Add &lt;strong>storage&lt;/strong> (default 8GB is sufficient, adjust as needed).&lt;/li>
+&lt;li>Configure &lt;strong>security groups&lt;/strong>:
+&lt;ul>
+&lt;li>Allow &lt;strong>SSH (port 22)&lt;/strong> from &lt;code>My IP&lt;/code> (recommended).&lt;/li>
+&lt;li>Add rules for other services (e.g., HTTP, HTTPS) if needed.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Choose or &lt;strong>create a key pair&lt;/strong> (important for SSH access).
+&lt;img src="select-pem.en.png" width="50%" id="zoom-default" class="medium-zoom-image" loading="lazy">&lt;/li>
+&lt;li>Click &lt;strong>Launch&lt;/strong>.
+&lt;img src="launch.en.png" width="50%" id="zoom-default" class="medium-zoom-image" loading="lazy">&lt;/li>
+&lt;/ol>
+&lt;h2 id="step-2-connect-to-ec2-via-ssh">Step 2: Connect to EC2 via SSH&lt;/h2>
+&lt;h3 id="using-a-pem-key-linuxmacos">Using a &lt;code>.pem&lt;/code> Key (Linux/macOS)&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>Move the key to a secure location:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>mv ~/Downloads/my-key.pem ~/.ssh/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Set permissions:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>chmod &lt;span style="color:#40a070">400&lt;/span> ~/.ssh/my-key.pem
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Connect:
+&lt;img src="public-ip.en.png" width="30%" id="zoom-default" class="medium-zoom-image" loading="lazy">&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh -i ~/.ssh/my-key.pem admin@your-ec2-public-ip
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#60a0b0;font-style:italic"># ssh -i ~/.ssh/my-key.pem admin@52.31.239.202&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>Replace &lt;code>ec2-user/admin&lt;/code> with &lt;code>ubuntu&lt;/code> for Ubuntu AMIs.&lt;/li>
+&lt;li>Replace your-ec2-public-ip with the instance’s public IP.&lt;/li>
+&lt;/ul>
+&lt;h3 id="using-putty-windows">Using PuTTY (Windows)&lt;/h3>
+&lt;ol>
+&lt;li>Convert .pem to .ppk using PuTTYgen.&lt;/li>
+&lt;li>Open PuTTY.&lt;/li>
+&lt;li>Under Session, enter your-ec2-public-ip in Host Name.&lt;/li>
+&lt;li>Go to SSH → Auth, load the .ppk file.&lt;/li>
+&lt;li>Click Open.&lt;/li>
+&lt;/ol>
+&lt;h2 id="step-3-configure-automatic-ssh-login">Step 3: Configure Automatic SSH Login&lt;/h2>
+&lt;h3 id="method-1-add-key-to-ssh-agent-recommended">Method 1: Add Key to SSH Agent (Recommended)&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>Start the SSH agent (if required):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">eval&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#007020;font-weight:bold">$(&lt;/span>ssh-agent -s&lt;span style="color:#007020;font-weight:bold">)&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add the key:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>ssh-add ~/.ssh/my-key.pem
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Now, connect with:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh admin@your-ec2-public-ip
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h3 id="method-2-add-key-to-ssh-config-file">Method 2: Add Key to SSH Config File&lt;/h3>
+&lt;ol>
+&lt;li>
+&lt;p>Open (or create) the SSH config file:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>nano ~/.ssh/config
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Add the following:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-ini" data-lang="ini">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4070a0">Host my-ec2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">HostName your-ec2-public-ip&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">User ec2-user&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#4070a0">IdentityFile ~/.ssh/my-key.pem&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Save and exit (&lt;code>CTRL+X&lt;/code>, then &lt;code>Y&lt;/code>, then &lt;code>ENTER&lt;/code>).&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Now, connect easily with:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh my-ec2
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h2 id="connected">Connected&lt;/h2>
+&lt;p>Once connected:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="../debian-vps-initial-setup/">Debian initial Setup&lt;/a>&lt;/li>
+&lt;li>&lt;a href="../ubuntu-server-initial-setup/">Ubuntu initial Setup&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>

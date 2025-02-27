@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Aws on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/aws/</link><description>Recent content in Aws on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Tue, 27 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/aws/index.xml" rel="self" type="application/rss+xml"/><item><title>AWS Certified Developer (DVA-C01 -> DVA-C02)</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/</link><pubDate>Thu, 08 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/</guid><description>&lt;h2 id="tldr">TL;DR&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Aws on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/aws/</link><description>Recent content in Aws on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Tue, 25 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/aws/index.xml" rel="self" type="application/rss+xml"/><item><title>AWS Certified Developer (DVA-C01 -> DVA-C02)</title><link>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/</link><pubDate>Thu, 08 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/tracks/aws-certified-developer-associate/</guid><description>&lt;h2 id="tldr">TL;DR&lt;/h2>
 &lt;ol>
 &lt;li>Passed exam in one month.&lt;/li>
 &lt;li>Created an &lt;a href="https://www.cloud-exam-prepare.com/">app with questions and progress&lt;/a> that helped me a lot
@@ -4990,7 +4990,71 @@ loading="lazy"
 &lt;p>&lt;a href="https://aws.amazon.com/blogs/compute/new-synchronous-express-workflows-for-aws-step-functions/">https://aws.amazon.com/blogs/compute/new-synchronous-express-workflows-for-aws-step-functions/&lt;/a>&lt;/p>
 &lt;p>&lt;mark style="color:white">3&lt;/mark>&lt;/p>
 &lt;/div>
-&lt;/details></description></item><item><title>Serverless: Flask+API Gateway+Lambda+MongoDB</title><link>https://romankurnovskii.com/en/posts/serverless-flask-lambda-api-gateway-mongodb/</link><pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/serverless-flask-lambda-api-gateway-mongodb/</guid><description>&lt;p>&amp;ldquo;mongodb&amp;rdquo; free tier vs &amp;ldquo;documentdb&amp;rdquo;&lt;/p>
+&lt;/details></description></item><item><title>Access Private GitHub Repositories on an EC2 Server</title><link>https://romankurnovskii.com/en/posts/github-private-repo-access/</link><pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/github-private-repo-access/</guid><description>&lt;h2 id="step-1-generate-an-ssh-key-on-ec2">&lt;strong>Step 1: Generate an SSH Key on EC2&lt;/strong>&lt;/h2>
+&lt;p>To securely authenticate with GitHub, generate an SSH key on your EC2 instance.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Connect to your EC2 instance via SSH:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh ec2-user@your-ec2-public-ip
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Generate an SSH key:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh-keygen -t rsa -b &lt;span style="color:#40a070">4096&lt;/span> -C &lt;span style="color:#4070a0">&amp;#34;your-email@example.com&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Press &lt;strong>Enter&lt;/strong> to save the key in the default location (&lt;code>~/.ssh/id_rsa&lt;/code>).&lt;/li>
+&lt;li>Set a passphrase or leave it empty.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Start the SSH agent and add the key:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#007020">eval&lt;/span> &lt;span style="color:#4070a0">&amp;#34;&lt;/span>&lt;span style="color:#007020;font-weight:bold">$(&lt;/span>ssh-agent -s&lt;span style="color:#007020;font-weight:bold">)&lt;/span>&lt;span style="color:#4070a0">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ssh-add ~/.ssh/id_rsa
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol>
+&lt;h2 id="step-2-add-the-ssh-key-to-github">&lt;strong>Step 2: Add the SSH Key to GitHub&lt;/strong>&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>Display the &lt;strong>public key&lt;/strong>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cat ~/.ssh/id_rsa.pub
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Copy the output and add it to GitHub:&lt;/p>
+&lt;ul>
+&lt;li>Go to &lt;strong>GitHub&lt;/strong> → &lt;strong>Settings&lt;/strong> → &lt;strong>SSH and GPG keys&lt;/strong> &lt;a href="https://github.com/settings/keys">link&lt;/a>&lt;/li>
+&lt;li>Click &lt;strong>New SSH key&lt;/strong>.&lt;/li>
+&lt;li>Paste the key and save.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="step-3-test-ssh-connection-to-github">&lt;strong>Step 3: Test SSH Connection to GitHub&lt;/strong>&lt;/h2>
+&lt;p>Verify that the connection is successful:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh -T git@github.com
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Expected output:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Hi your-github-username! You&amp;#39;ve successfully authenticated, but GitHub does not provide shell access.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="step-4-clone-a-private-repository">&lt;strong>Step 4: Clone a Private Repository&lt;/strong>&lt;/h2>
+&lt;p>Now that authentication is set up, clone the private repository:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git clone git@github.com:your-username/private-repo.git
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Replace &lt;code>your-username&lt;/code> and &lt;code>private-repo&lt;/code> with the actual repository details.&lt;/p>
+&lt;hr>
+&lt;h2 id="step-5-configure-git-optional">&lt;strong>Step 5: Configure Git (Optional)&lt;/strong>&lt;/h2>
+&lt;p>To avoid re-entering your username and email, configure Git globally:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git config --global user.name &lt;span style="color:#4070a0">&amp;#34;Your Name&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git config --global user.email &lt;span style="color:#4070a0">&amp;#34;your-email@example.com&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="alternative-using-a-personal-access-token">&lt;strong>Alternative: Using a Personal Access Token&lt;/strong>&lt;/h2>
+&lt;p>If you prefer HTTPS authentication instead of SSH:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Generate a &lt;strong>Personal Access Token (PAT)&lt;/strong> on GitHub:&lt;/p>
+&lt;ul>
+&lt;li>Go to &lt;strong>GitHub → Settings → Developer Settings → Personal Access Tokens&lt;/strong>.&lt;/li>
+&lt;li>Generate a token with &lt;strong>repo&lt;/strong> permissions.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Use the token instead of a password:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git clone https://your-username:your-token@github.com/your-username/private-repo.git
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ol></description></item><item><title>Serverless: Flask+API Gateway+Lambda+MongoDB</title><link>https://romankurnovskii.com/en/posts/serverless-flask-lambda-api-gateway-mongodb/</link><pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/serverless-flask-lambda-api-gateway-mongodb/</guid><description>&lt;p>&amp;ldquo;mongodb&amp;rdquo; free tier vs &amp;ldquo;documentdb&amp;rdquo;&lt;/p>
 &lt;h2 id="project-structure">Project structure&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>- src
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - app.py

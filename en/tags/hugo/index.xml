@@ -59,11 +59,11 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>chart</title><link>https://romankurnovskii.com/en/posts/hugo-shortcode-examples/chart/</link><pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/hugo-shortcode-examples/chart/</guid><description>&lt;p>Display &lt;a href="https://www.chartjs.org/">Chart.js&lt;/a> diagrams/blocks&lt;/p>
 &lt;p>&lt;a href="https://github.com/romankurnovskii/awesome-hugo-shortcodes/tree/main/shortcodes/chart">Sources&lt;/a>&lt;/p>
 &lt;div style="width: 100%;height: 300px;margin: 0 auto">
-&lt;canvas id="fade8ddc4ccc8544f5e1c8bbacf462dc">&lt;/canvas>
+&lt;canvas id="b8eefbcd8cdcc5f6c421f4ca4485dacd">&lt;/canvas>
 &lt;/div>
 &lt;script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.js">&lt;/script>
 &lt;script type="text/javascript">
-var ctx = document.getElementById('fade8ddc4ccc8544f5e1c8bbacf462dc').getContext('2d');
+var ctx = document.getElementById('b8eefbcd8cdcc5f6c421f4ca4485dacd').getContext('2d');
 var options =
 {
 type: 'bar',
@@ -105,11 +105,11 @@ beginAtZero: true
 new Chart(ctx, options);
 &lt;/script>
 &lt;div style="width: 100%;height: 300px;margin: 0 auto">
-&lt;canvas id="a6cec4afd5c85cddcccb2fb4488f14de">&lt;/canvas>
+&lt;canvas id="a1fd5f62cfec4c8dbd454bc8caeccd48">&lt;/canvas>
 &lt;/div>
 &lt;script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.js">&lt;/script>
 &lt;script type="text/javascript">
-var ctx = document.getElementById('a6cec4afd5c85cddcccb2fb4488f14de').getContext('2d');
+var ctx = document.getElementById('a1fd5f62cfec4c8dbd454bc8caeccd48').getContext('2d');
 var options =
 {
 type: 'line',
@@ -151,11 +151,11 @@ beginAtZero: true
 new Chart(ctx, options);
 &lt;/script>
 &lt;div style="width: 100%;height: 300px;margin: 0 auto">
-&lt;canvas id="5c6be8f4fa4c41cccb88cd2dcf5dde4a">&lt;/canvas>
+&lt;canvas id="ca4bd16bcc5f8e2ded4c5cc88f44cafd">&lt;/canvas>
 &lt;/div>
 &lt;script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.js">&lt;/script>
 &lt;script type="text/javascript">
-var ctx = document.getElementById('5c6be8f4fa4c41cccb88cd2dcf5dde4a').getContext('2d');
+var ctx = document.getElementById('ca4bd16bcc5f8e2ded4c5cc88f44cafd').getContext('2d');
 var options =
 {
 type: 'pie',
