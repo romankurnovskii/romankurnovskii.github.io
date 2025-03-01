@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pump.fun on Roman Kurnovskii</title><link>https://romankurnovskii.com/ru/tags/pump.fun/</link><description>Recent content in Pump.fun on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>ru</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Fri, 14 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/ru/tags/pump.fun/index.xml" rel="self" type="application/rss+xml"/><item><title>Market Cap на примере Pump.fun</title><link>https://romankurnovskii.com/ru/posts/market-cap-pump-fun/</link><pubDate>Fri, 14 Feb 2025 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/market-cap-pump-fun/</guid><description>&lt;h2 id="что-такое-market-cap">Что такое Market Cap?&lt;/h2>
 &lt;p>Рыночная капитализация (Market Cap) — это общий объём денег, вложенных в определённую криптовалюту.&lt;/p>
 &lt;p>Рассчитывается по формуле:&lt;/p>
-&lt;p>$Market Cap = Цена 1 токена * Общее количество в обращении$&lt;/p>
+&lt;p>&lt;code>Market Cap = Цена 1 токена * Общее количество в обращении&lt;/code>&lt;/p>
 &lt;p>Если, например, у токена в обращении 10_000_000 монет, и каждая стоит 0.01 SOL, то его рыночная капитализация составляет:&lt;/p>
 &lt;p>$10.000.000 × 0.01 SOl = 100.000 SOL$&lt;/p>
 &lt;h2 id="пример-pumpfun">Пример Pump.fun&lt;/h2>
@@ -113,4 +113,82 @@ loading="lazy"
 &lt;li>&lt;code>vSolInBondingCurve = 33.000000099-2.999999 = 30&lt;/code>&lt;/li>
 &lt;li>&lt;code>tokenPriceSol = 30 / 1073000000 = 0.000000027958&lt;/code>&lt;/li>
 &lt;li>&lt;code>marketCapSol = 0.000000027958 * 1_000_000_000 = 27.958&lt;/code>&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/ul></description></item><item><title>Ликвидность на примере Pump.fun</title><link>https://romankurnovskii.com/ru/posts/liquidity-pump-fun/</link><pubDate>Fri, 14 Feb 2025 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/ru/posts/liquidity-pump-fun/</guid><description>&lt;h2 id="что-такое-ликвидность">Что такое ликвидность?&lt;/h2>
+&lt;p>Ликвидность — это способность актива быть быстро проданным или купленным на рынке без значительного изменения его цены. В контексте криптовалют ликвидность часто измеряется объёмом средств, заблокированных в пулах ликвидности на децентрализованных биржах (DEX).&lt;/p>
+&lt;p>Ликвидность рассчитывается как суммарная стоимость всех токенов в пуле:&lt;/p>
+&lt;p>&lt;code>Ликвидность = Количество токенов A * Цена токена A + Количество токенов B * Цена токена B&lt;/code>&lt;/p>
+&lt;h2 id="пример-pumpfun">Пример Pump.fun&lt;/h2>
+&lt;p>На примере токена, созданного на платформе Pump.fun, рассмотрим, как рассчитывается ликвидность.&lt;/p>
+&lt;h3 id="исходные-данные">Исходные данные&lt;/h3>
+&lt;p>При создании токена на Pump.fun устанавливаются следующие параметры:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Количество токенов в резерве&lt;/strong> (&lt;code>vTokensInBondingCurve&lt;/code>): 1,073,000,000 штук&lt;/li>
+&lt;li>&lt;strong>Количество SOL в резерве&lt;/strong> (&lt;code>vSolInBondingCurve&lt;/code>): 30 SOL&lt;/li>
+&lt;li>&lt;strong>Общее количество токенов в пуле&lt;/strong> (&lt;code>Current Supply&lt;/code>): 1,000,000,000&lt;/li>
+&lt;/ul>
+&lt;h3 id="шаг-1-инициализация-токена">Шаг 1: Инициализация токена&lt;/h3>
+&lt;p>При создании токена &lt;code>VDOG&lt;/code> пользователь не вносит SOL (&lt;code>initialBuy = 0&lt;/code>). В этом случае:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>vTokensInBondingCurve&lt;/code> = 1,073,000,000&lt;/li>
+&lt;li>&lt;code>vSolInBondingCurve&lt;/code> = 30 SOL&lt;/li>
+&lt;/ul>
+&lt;p>Используя модель CLMM (Concentrated Liquidity Market Maker), начальная цена токена рассчитывается как:&lt;/p>
+&lt;p>&lt;code>Цена токена = vSolInBondingCurve / vTokensInBondingCurve = 30/1,073,000,000 = 0.00000002795899347623485 SOL&lt;/code>&lt;/p>
+&lt;h3 id="шаг-2-расчёт-ликвидности">Шаг 2: Расчёт ликвидности&lt;/h3>
+&lt;p>Ликвидность пула рассчитывается как суммарная стоимость токенов и SOL в пуле:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Ликвидность = (vTokensInBondingCurve * Цена токена) + (vSolInBondingCurve * Цена SOL)&lt;/code>&lt;/li>
+&lt;li>&lt;code>Liquidity = (vTokensInBondingCurve * tokenPriceSol) + (vSolInBondingCurve * priceOfSOL)&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Подставляем значения:&lt;/p>
+&lt;ul>
+&lt;li>Ликвидность в токенах: &lt;code>1,073,000,000 * 0.00000002795899347623485 = 30 SOL&lt;/code>&lt;/li>
+&lt;li>Ликвидность в SOL: &lt;code>30 SOL * 1 = 30 SOL&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Итого, начальная ликвидность пула составляет &lt;strong>60 SOL&lt;/strong>.&lt;/p>
+&lt;h3 id="шаг-3-покупка-токенов">Шаг 3: Покупка токенов&lt;/h3>
+&lt;p>Пользователь покупает токены на 3 SOL. В результате:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>vTokensInBondingCurve&lt;/code> уменьшается на количество купленных токенов.&lt;/li>
+&lt;li>&lt;code>vSolInBondingCurve&lt;/code> увеличивается на 3 SOL.&lt;/li>
+&lt;/ul>
+&lt;p>Новые значения:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>vTokensInBondingCurve&lt;/code> = 975,454,545.457502&lt;/li>
+&lt;li>&lt;code>vSolInBondingCurve&lt;/code> = 33 SOL&lt;/li>
+&lt;/ul>
+&lt;p>Цена токена после покупки:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>tokenPriceSol = vSolInBondingCurve / vTokensInBondingCurve&lt;/code>&lt;/li>
+&lt;li>&lt;code>Цена токена = 33/975,454,545.457502 = 0.00000003383038 SOL&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Ликвидность после покупки:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Ликвидность = (vTokensInBondingCurve * tokenPriceSol) + (vSolInBondingCurve * priceOfSOL)&lt;/code>&lt;/li>
+&lt;li>&lt;code>Liquidity = (975,454,545.457502 * 0.00000003383038) + (33 * 1)&lt;/code>&lt;/li>
+&lt;li>&lt;code>Liquidity = 33 SOL&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>Итого, ликвидность пула после покупки составляет &lt;strong>66 SOL&lt;/strong>.&lt;/p>
+&lt;h3 id="шаг-4-продажа-токенов">Шаг 4: Продажа токенов&lt;/h3>
+&lt;p>Пользователь продаёт токены на 0.099 SOL. В результате:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>vTokensInBondingCurve&lt;/code> увеличивается на количество проданных токенов.&lt;/li>
+&lt;li>&lt;code>vSolInBondingCurve&lt;/code> уменьшается на 0.099 SOL.&lt;/li>
+&lt;/ul>
+&lt;p>Новые значения:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>vTokensInBondingCurve&lt;/code> = 972,536,934.653542&lt;/li>
+&lt;li>&lt;code>vSolInBondingCurve&lt;/code> = 33.099 SOL&lt;/li>
+&lt;/ul>
+&lt;p>Цена токена после продажи:
+[
+Цена токена} = \frac{33.099}{972,536,934.653542} = 0.000000034033668 SOL}
+]&lt;/p>
+&lt;p>Ликвидность после продажи:&lt;/p>
+&lt;ul>
+&lt;li>Ликвидность в токенах: (972,536,934.653542 \times 0.000000034033668 = 33.099 SOL})&lt;/li>
+&lt;li>Ликвидность в SOL: (33.099 SOL} \times 1 = 33.099 SOL})&lt;/li>
+&lt;/ul>
+&lt;p>Итого, ликвидность пула после продажи составляет &lt;strong>66.198 SOL&lt;/strong>.&lt;/p>
+&lt;h3 id="заключение">Заключение&lt;/h3>
+&lt;p>Ликвидность пула напрямую зависит от количества токенов и SOL в резерве, а также от текущей цены токена. Каждая операция покупки или продажи влияет на ликвидность, изменяя баланс токенов и SOL в пуле.&lt;/p></description></item></channel></rss>

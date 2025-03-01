@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo Shorcodes on Roman Kurnovskii</title><link>https://romankurnovskii.com/en/categories/hugo-shorcodes/</link><description>Recent content in Hugo Shorcodes on Roman Kurnovskii</description><generator>Hugo -- gohugo.io</generator><language>en</language><copyright>&amp;copy; 2025</copyright><lastBuildDate>Sun, 23 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://romankurnovskii.com/en/categories/hugo-shorcodes/index.xml" rel="self" type="application/rss+xml"/><item><title>chart</title><link>https://romankurnovskii.com/en/posts/hugo-shortcode-examples/chart/</link><pubDate>Sun, 23 Oct 2022 00:00:00 +0000</pubDate><guid>https://romankurnovskii.com/en/posts/hugo-shortcode-examples/chart/</guid><description>&lt;p>Display &lt;a href="https://www.chartjs.org/">Chart.js&lt;/a> diagrams/blocks&lt;/p>
 &lt;p>&lt;a href="https://github.com/romankurnovskii/awesome-hugo-shortcodes/tree/main/shortcodes/chart">Sources&lt;/a>&lt;/p>
 &lt;div style="width: 100%;height: 300px;margin: 0 auto">
-&lt;canvas id="b8eefbcd8cdcc5f6c421f4ca4485dacd">&lt;/canvas>
+&lt;canvas id="ce84cebad52cd1454cacc4cb86fddff8">&lt;/canvas>
 &lt;/div>
 &lt;script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.js">&lt;/script>
 &lt;script type="text/javascript">
-var ctx = document.getElementById('b8eefbcd8cdcc5f6c421f4ca4485dacd').getContext('2d');
+var ctx = document.getElementById('ce84cebad52cd1454cacc4cb86fddff8').getContext('2d');
 var options =
 {
 type: 'bar',
@@ -47,11 +47,11 @@ beginAtZero: true
 new Chart(ctx, options);
 &lt;/script>
 &lt;div style="width: 100%;height: 300px;margin: 0 auto">
-&lt;canvas id="a1fd5f62cfec4c8dbd454bc8caeccd48">&lt;/canvas>
+&lt;canvas id="8fc4cdfcdf844acd4d86c5e51abeccb2">&lt;/canvas>
 &lt;/div>
 &lt;script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.js">&lt;/script>
 &lt;script type="text/javascript">
-var ctx = document.getElementById('a1fd5f62cfec4c8dbd454bc8caeccd48').getContext('2d');
+var ctx = document.getElementById('8fc4cdfcdf844acd4d86c5e51abeccb2').getContext('2d');
 var options =
 {
 type: 'line',
@@ -93,11 +93,11 @@ beginAtZero: true
 new Chart(ctx, options);
 &lt;/script>
 &lt;div style="width: 100%;height: 300px;margin: 0 auto">
-&lt;canvas id="ca4bd16bcc5f8e2ded4c5cc88f44cafd">&lt;/canvas>
+&lt;canvas id="2b4dc4c8d4c8d54e1b5afeaffcc6cc8d">&lt;/canvas>
 &lt;/div>
 &lt;script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.js">&lt;/script>
 &lt;script type="text/javascript">
-var ctx = document.getElementById('ca4bd16bcc5f8e2ded4c5cc88f44cafd').getContext('2d');
+var ctx = document.getElementById('2b4dc4c8d4c8d54e1b5afeaffcc6cc8d').getContext('2d');
 var options =
 {
 type: 'pie',
